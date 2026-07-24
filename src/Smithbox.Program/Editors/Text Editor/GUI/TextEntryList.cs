@@ -91,6 +91,20 @@ public class TextEntryList
         GUI.Tooltip(
             LOC.Get("TEXT_EntryList_Focus_Selection_TT", InputManager.GetHint(KeybindID.Jump)));
 
+        // Toggle Null Entries
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}"))
+        {
+            CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries = !CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries;
+        }
+
+        var nullEntriesMode = LOC.Get("TEXT_EntryList_NullEntries_Hidden");
+        if (CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries)
+            nullEntriesMode = LOC.Get("TEXT_EntryList_NullEntries_Visible");
+
+        GUI.Tooltip(LOC.Get("TEXT_EntryList_NullEntries_Hint", nullEntriesMode));
+
         ImGui.EndChild();
     }
 
@@ -147,6 +161,12 @@ public class TextEntryList
 
             var isMatch = EditorFilters.IsMatch(
                 EntryListFilter, entry.ID.ToString(), ExactEntryListFilter, entry.Text);
+
+            if(!CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries)
+            {
+                if (entry.Text == null)
+                    continue;
+            }
 
             // Ignore normal match if a special conditional commands has been used
             if (UsedMatchCommands(EntryListFilter))

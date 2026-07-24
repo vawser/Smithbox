@@ -782,6 +782,7 @@ public class CFG
 
     public bool TextEditor_Text_Entry_List_Display_Null_Text = true;
     public bool TextEditor_Text_Entry_List_Truncate_Name = true;
+    public bool TextEditor_Text_Entry_List_Display_Null_Entries = true;
 
     public bool TextEditor_Text_Entry_Enable_Grouped_Entries = true;
     public bool TextEditor_Text_Entry_Allow_Duplicate_ID = false;
