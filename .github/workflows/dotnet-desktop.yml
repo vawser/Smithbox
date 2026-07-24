@@ -31,16 +31,17 @@ jobs:
         run: dotnet restore /p:Configuration=Release-win
       - name: Build
         run: dotnet build --configuration Release-win --no-restore
-      -- name: Upload artifacts
-        uses: actions/upload-artifact@v6
-        with:
-          name: "Smithbox-SHA${{ github.sha }}"
-          path: "${{ github.workspace }}/Smithbox.Release/Output"
       - name: Generate timestamp tag
         if: github.event_name == 'push' && contains(github.event.head_commit.message, '[Release]')
         id: tag
         shell: bash
         run: echo "name=build-$(date -u +'%Y%m%d-%H%M%S')" >> "$GITHUB_OUTPUT"
+      - name: Upload artifacts
+        if: steps.tag.outcome == 'success'
+        uses: actions/upload-artifact@v6
+        with:
+          name: "Smithbox-SHA${{ github.sha }}"
+          path: "${{ github.workspace }}/Smithbox.Release/Output"
       - name: Zip release output
         if: steps.tag.outcome == 'success'
         shell: pwsh

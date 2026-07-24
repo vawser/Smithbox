@@ -778,7 +778,7 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize graph annotation groups: {file}", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Graph_Annotation", file), LogPriority.High, e);
                 }
             }
         }
@@ -799,7 +799,7 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize graph annotation groups: {file}", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Graph_Annotation", file), LogPriority.High, e);
                 }
             }
         }
@@ -829,7 +829,7 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize row FMG annotations: {file}", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Row_FMG_Annotation", file), LogPriority.High, e);
                 }
             }
         }
@@ -850,7 +850,7 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize row FMG annotation groups: {file}", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Row_FMG_Annotation", file), LogPriority.High, e);
                 }
             }
         }
