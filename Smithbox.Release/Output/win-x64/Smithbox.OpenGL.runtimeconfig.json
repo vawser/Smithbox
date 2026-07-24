@@ -12,7 +12,6 @@
       }
     ],
     "configProperties": {
-      "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
       "SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_1": false,
       "SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_0": false
