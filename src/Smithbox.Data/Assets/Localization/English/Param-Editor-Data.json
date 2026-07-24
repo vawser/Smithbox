@@ -102,47 +102,139 @@
     },
     {
       "Key": "PARAM_Data_Setup_ParamDefs_PASS",
-      "Text": "Setup the PARAM definitions."
+      "Text": "Setup PARAM definitions."
     },
     {
       "Key": "PARAM_Data_Setup_ParamDefs_FAIL",
-      "Text": "Failed to setup the PARAM definitions."
+      "Text": "Failed to setup PARAM definitions."
     },
     {
       "Key": "PARAM_Data_Setup_ParamMeta_PASS",
-      "Text": "Setup the PARAM meta."
+      "Text": "Setup PARAM meta."
     },
     {
       "Key": "PARAM_Data_Setup_ParamMeta_FAIL",
-      "Text": "Failed to setup the PARAM meta."
+      "Text": "Failed to setup PARAM meta."
     },
     {
       "Key": "PARAM_Data_Setup_ParamAnnotations_PASS",
-      "Text": "Setup the PARAM annotations."
+      "Text": "Setup PARAM annotations."
     },
     {
       "Key": "PARAM_Data_Setup_ParamAnnotations_FAIL",
-      "Text": "Failed to setup the PARAM annotations."
+      "Text": "Failed to setup PARAM annotations."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Setup_ParamEnums_PASS",
+      "Text": "Setup PARAM enums."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Setup_ParamEnums_FAIL",
+      "Text": "Failed to setup PARAM enums."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Setup_RowImportLanguage_PASS",
+      "Text": "Setup Row Import Language options"
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Setup_RowImportLanguage_FAIL",
+      "Text": "Failed to setup Row Import Language options."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Setup_GraphAnnotations_PASS",
+      "Text": "Setup Graph annotations."
+    },
+    {
+      "Key": "PARAM_Data_Setup_GraphAnnotations_FAIL",
+      "Text": "Failed to setup Graph annotations."
+    },
+    {
+      "Key": "PARAM_Data_Setup_RowFmgAnnotations_PASS",
+      "Text": "Setup Row FMG annotations."
+    },
+    {
+      "Key": "PARAM_Data_Setup_RowFmgAnnotations_FAIL",
+      "Text": "Failed to setup Row FMG annotations."
+    },
+    {
+      "Key": "PARAM_Data_Setup_IconConfiguration_PASS",
+      "Text": "Setup Icon Configuration data."
+    },
+    {
+      "Key": "PARAM_Data_Setup_IconConfiguration_FAIL",
+      "Text": "Failed to setup Icon Configuration data."
+    },
+    {
+      "Key": "PARAM_Data_Setup_TableParamList_PASS",
+      "Text": "Setup the Table Param list."
+    },
+    {
+      "Key": "PARAM_Data_Setup_TableGroupNames_PASS",
+      "Text": "Setup the Table Group Name data."
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamReloaderOffsets_PASS",
+      "Text": "Setup Param Reloader offsets."
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamReloaderOffsets_FAIL",
+      "Text": "Failed to setup Param Reloader offsets."
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamCategories_PASS",
+      "Text": "Failed to setup Param Categories."
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamCategories_FAIL",
+      "Text": "Setup Param Categories"
+    },
+    {
+      "Key": "PARAM_Data_Setup_CommutativeParamGroups_PASS",
+      "Text": "Setup Commutative Param Groups."
+    },
+    {
+      "Key": "PARAM_Data_Setup_CommutativeParamGroups_FAIL",
+      "Text": "Failed to setup Commutative Param Groups."
+    },
+    {
+      "Key": "PARAM_Data_Setup_FieldReferenceGroups_PASS",
+      "Text": "Setup Field Reference Groups."
+    },
+    {
+      "Key": "PARAM_Data_Setup_FieldReferenceGroups_FAIL",
+      "Text": "Failed to setup Field Reference Groups."
+    },
+    {
+      "Key": "PARAM_Data_Setup_FieldLayouts_PASS",
+      "Text": "Setup Field Layouts."
+    },
+    {
+      "Key": "PARAM_Data_Setup_FieldLayouts_FAIL",
+      "Text": "Failed to setup Field Layouts."
+    },
+    {
+      "Key": "PARAM_Data_Setup_PrimaryBank_PASS",
+      "Text": "Setup the Primary Param Bank."
+    },
+    {
+      "Key": "PARAM_Data_Setup_PrimaryBank_FAIL",
+      "Text": "Failed to setup the Primary Param Bank."
+    },
+    {
+      "Key": "PARAM_Data_Setup_VanillaBank_PASS",
+      "Text": "Setup the Vanilla Param Bank."
+    },
+    {
+      "Key": "PARAM_Data_Setup_VanillaBank_FAIL",
+      "Text": "Failed to setup the Vanilla Param Bank."
+    },
+    {
+      "Key": "PARAM_Data_Setup_AuxBank_PASS",
+      "Text": "Setup Auxilary Param Bank for {0}"
+    },
+    {
+      "Key": "PARAM_Data_Setup_AuxBank_FAIL",
+      "Text": "Failed to setup Auxilary Param Bank for {0}."
     },
     {
       "Key": "PARAM_Data_",

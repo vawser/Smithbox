@@ -108,11 +108,11 @@ public class ParamData : IDisposable
 
         if (!paramEnumsTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM enums.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_ParamEnums_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the PARAM enums.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_ParamEnums_PASS"));
         }
 
         // Secondary Language Options
@@ -121,11 +121,11 @@ public class ParamData : IDisposable
 
         if (!secondaryLanguageOptionsTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM language options.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_RowImportLanguage_PASS"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the PARAM language options.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_RowImportLanguage_FAIL"));
         }
 
         // Graph Annotations
@@ -134,11 +134,11 @@ public class ParamData : IDisposable
 
         if (!graphLegendsTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Graph annotations.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_GraphAnnotations_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the Graph annotations.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_GraphAnnotations_PASS"));
         }
 
         // Row FMG Annotations
@@ -147,11 +147,11 @@ public class ParamData : IDisposable
 
         if (!rowFmgAnnotationTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Row FMG annotations.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_RowFmgAnnotations_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the Graph annotations.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_RowFmgAnnotations_PASS"));
         }
 
         // Icon Configurations
@@ -160,37 +160,29 @@ public class ParamData : IDisposable
 
         if (!iconConfigTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Icon Configuration data.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_IconConfiguration_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the Icon Configuration data.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_IconConfiguration_PASS"));
         }
 
         // Table Param List
         Task<bool> tableParamTask = SetupTableParamList();
         bool tableParamTaskResult = await tableParamTask;
 
-        if (!tableParamTaskResult)
+        if (tableParamTaskResult)
         {
-            //Smithbox.LogError(this, $"[Param Editor] Failed to setup table param list.");
-        }
-        else
-        {
-            Smithbox.Log(this, $"[Param Editor] Setup the Table Param list.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_TableParamList_PASS"));
         }
 
         // Table Group Names
         Task<bool> tableGroupNameTask = SetupTableGroupNames();
         bool tableGroupNameTaskResult = await tableGroupNameTask;
 
-        if (!tableGroupNameTaskResult)
+        if (tableGroupNameTaskResult)
         {
-            // Smithbox.LogError(this, $"[Param Editor] Failed to setup table group name bank.");
-        }
-        else
-        {
-            Smithbox.Log(this, $"[Param Editor] Setup the Table Group Name data.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_TableGroupNames_PASS"));
         }
 
         // Game Offsets (per project)
@@ -199,11 +191,11 @@ public class ParamData : IDisposable
 
         if (!gameOffsetResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Param Memory Offset data.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_ParamReloaderOffsets_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the Param Memory Offset data.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_ParamReloaderOffsets_PASS"));
         }
 
         // Param Categories (per project)
@@ -212,11 +204,11 @@ public class ParamData : IDisposable
 
         if (!paramCategoryResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Param Categories data.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_ParamCategories_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the Param Categories data.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_ParamCategories_PASS"));
         }
 
         // Commutative Param Groups (per project)
@@ -225,11 +217,11 @@ public class ParamData : IDisposable
 
         if (!commutativeParamGroupResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Commutative Param Groups data.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_CommutativeParamGroups_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the Commutative Param Groups data.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_CommutativeParamGroups_PASS"));
         }
 
         // Field Reference Groups
@@ -238,11 +230,11 @@ public class ParamData : IDisposable
 
         if (!groupRefTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Group Reference data.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_FieldReferenceGroups_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the Group Reference data.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_FieldReferenceGroups_PASS"));
         }
 
         // Field Layouts
@@ -251,11 +243,11 @@ public class ParamData : IDisposable
 
         if (!fieldLayoutsTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Field Layout data.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_FieldLayouts_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the Field Layout data.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_FieldLayouts_PASS"));
         }
 
 
@@ -265,11 +257,11 @@ public class ParamData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Primary Bank.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_PrimaryBank_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the Primary Bank.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_PrimaryBank_PASS"));
         }
 
         // Vanilla Bank
@@ -278,11 +270,11 @@ public class ParamData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup Vanilla Bank.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_VanillaBank_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the Vanilla Bank.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_VanillaBank_PASS"));
         }
 
         switch (Project.Descriptor.ProjectType)
@@ -364,7 +356,7 @@ public class ParamData : IDisposable
 
         if (!auxBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup Aux PARAM Bank for {targetProject.Descriptor.ProjectName}.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_AuxBank_FAIL", targetProject.Descriptor.ProjectName));
         }
 
         if (AuxBanks.ContainsKey(targetProject.Descriptor.ProjectName))
@@ -376,7 +368,7 @@ public class ParamData : IDisposable
             AuxBanks.Add(targetProject.Descriptor.ProjectName, newAuxBank);
         }
 
-        Smithbox.Log(this, $"[Param Editor] Setup Aux PARAM Bank for {targetProject.Descriptor.ProjectName}.");
+        Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_AuxBank_PASS", targetProject.Descriptor.ProjectName));
 
         return true;
     }
