@@ -35,7 +35,7 @@ jobs:
         run: dotnet build --configuration Release-win --no-restore
 
       - name: Publish
-        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release-win -o deploy
+        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox.Vulkan/Smithbox.Vulkan.csproj' --configuration Release-win -o deploy
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
