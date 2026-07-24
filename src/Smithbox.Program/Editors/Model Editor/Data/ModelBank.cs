@@ -212,7 +212,7 @@ public class ModelContainerWrapper
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Model Editor] Failed to read {Path} during model load.", e);
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Invalid_Model_Read", Path), e);
                 }
             }
             else
@@ -238,7 +238,7 @@ public class ModelContainerWrapper
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Model Editor] Failed to read {Path} during model load.", e);
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Invalid_Model_Read", Path), e);
                 }
             }
         }
@@ -257,7 +257,8 @@ public class ModelContainerWrapper
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Model Editor] Failed to read {targetBhdPath} during model load.", e);
+                Smithbox.LogError(this, 
+                    LOC.Get("MODEL_Data_Log_Invalid_Model_Binder_Read", targetBhdPath), e);
             }
 
             try
@@ -266,7 +267,8 @@ public class ModelContainerWrapper
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Model Editor] Failed to read {targetBdtPath} during model load.", e);
+                Smithbox.LogError(this,
+                    LOC.Get("MODEL_Data_Log_Invalid_Model_Binder_Read", targetBhdPath), e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
@@ -365,7 +367,8 @@ public class ModelWrapper
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Model Editor] Failed to read {Parent.Path} during model load.", e);
+                    Smithbox.LogError(this, 
+                        LOC.Get("MODEL_Data_Log_Invalid_Model_Read", Parent.Path), e);
                 }
             }
             else
@@ -394,7 +397,8 @@ public class ModelWrapper
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Model Editor] Failed to read {Parent.Path} during model load.", e);
+                    Smithbox.LogError(this,
+                        LOC.Get("MODEL_Data_Log_Invalid_Model_Read", Parent.Path), e);
                 }
             }
         }
@@ -413,7 +417,8 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Model Editor] Failed to read {targetBhdPath} during model load.", e);
+                Smithbox.LogError(this,
+                    LOC.Get("MODEL_Data_Log_Invalid_Model_Binder_Read", targetBhdPath), e);
             }
 
             try
@@ -422,7 +427,8 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Model Editor] Failed to read {targetBdtPath} during model load.", e);
+                Smithbox.LogError(this,
+                    LOC.Get("MODEL_Data_Log_Invalid_Model_Binder_Read", targetBhdPath), e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
@@ -569,11 +575,12 @@ public class ModelWrapper
             try
             {
                 project.VFS.ProjectFS.WriteFile(containerPath, flverData);
-                Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
+
+                Smithbox.Log(this, LOC.Get("MODEL_Data_Log_Save_FLVER", containerPath));
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Model Editor] Failed to write {containerPath} during model save.", e);
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Save_FLVER_Failed", containerPath), e);
             }
         }
 
@@ -604,12 +611,12 @@ public class ModelWrapper
                         var outBinderData = binder.Write();
                         project.VFS.ProjectFS.WriteFile(containerPath, outBinderData);
 
-                        Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
+                        Smithbox.Log(this, LOC.Get("MODEL_Data_Log_Save_FLVER", containerPath));
                     }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Model Editor] Failed to write {containerPath} during model save.", e);
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Save_FLVER_Failed", containerPath), e);
                 }
             }
             else
@@ -637,12 +644,12 @@ public class ModelWrapper
                         var outBinderData = binder.Write();
                         project.VFS.ProjectFS.WriteFile(containerPath, outBinderData);
 
-                        Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
+                        Smithbox.Log(this, LOC.Get("MODEL_Data_Log_Save_FLVER", containerPath));
                     }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Model Editor] Failed to write {containerPath} during model save.", e);
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Save_FLVER_Failed", containerPath), e);
                 }
             }
         }
@@ -664,7 +671,7 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Model Editor] Failed to write {targetBhdPath} during model save.", e);
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Save_FLVER_Failed", targetBhdPath), e);
             }
 
             try
@@ -673,7 +680,7 @@ public class ModelWrapper
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Model Editor] Failed to write {targetBdtPath} during model save.", e);
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Save_FLVER_Failed", targetBdtPath), e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
@@ -705,7 +712,7 @@ public class ModelWrapper
                     project.VFS.ProjectFS.WriteFile(writePathBhd, bhdData);
                     project.VFS.ProjectFS.WriteFile(writePathBdt, bdtData);
 
-                    Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
+                    Smithbox.Log(this, LOC.Get("MODEL_Data_Log_Save_FLVER", containerPath));
                 }
                 else
                 {
@@ -732,7 +739,7 @@ public class ModelWrapper
                     project.VFS.ProjectFS.WriteFile(writePathBhd, bhdData);
                     project.VFS.ProjectFS.WriteFile(writePathBdt, bdtData);
 
-                    Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
+                    Smithbox.Log(this, LOC.Get("MODEL_Data_Log_Save_FLVER", containerPath));
                 }
             }
         }

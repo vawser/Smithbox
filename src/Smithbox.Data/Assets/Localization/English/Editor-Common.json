@@ -171,6 +171,14 @@
     {
       "Key": "EDITOR_SaveOutput_PARAM_TT",
       "Text": "If enabled, the param files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_FLVER",
+      "Text": "FLVER"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_FLVER_TT",
+      "Text": "If enabled, the flver files are outputted on save."
     }
   ]
 }

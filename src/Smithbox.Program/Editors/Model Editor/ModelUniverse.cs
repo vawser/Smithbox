@@ -1,17 +1,8 @@
-﻿using HKLib.hk2018.hkHashMapDetail;
-using Microsoft.Extensions.Logging;
-using Org.BouncyCastle.Crypto;
-using SoulsFormats;
-using SoulsFormats.KF4;
-using StudioCore.Application;
+﻿using Microsoft.Extensions.Logging;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Logger;
 using StudioCore.Renderer;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -67,8 +58,8 @@ public class ModelUniverse : IUniverse
     {
         if (modelWrapper.Container != null)
         {
-            Smithbox.Log(this, $"Model \"{modelWrapper.Name}\" is already loaded",
-                LogLevel.Information, LogPriority.Normal);
+            Smithbox.LogError(this,
+                LOC.Get("MODEL_Universe_Model_Already_Loaded", modelWrapper.Name));
             return;
         }
 

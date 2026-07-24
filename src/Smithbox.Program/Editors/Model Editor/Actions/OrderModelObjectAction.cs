@@ -40,7 +40,7 @@ public class OrderModelObjectAction : ViewportAction
         // Will require more rigorous validation of the indices
         if (Selection.Count > 1)
         {
-            PlatformUtils.Instance.MessageBox("You can only order one map object at a time.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError(this, LOC.Get("MODEL_Action_Order_Map_Object_Error"));
         }
         else
         {
