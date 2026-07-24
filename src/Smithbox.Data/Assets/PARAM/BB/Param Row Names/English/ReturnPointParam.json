@@ -10,253 +10,253 @@
     {
       "ID": 2102950,
       "Entries": [
-        "Location 00_ Gravestone _ Ground 0"
+        "Hunter's Dream - Yharnam Headstone"
       ]
     },
     {
       "ID": 2102951,
       "Entries": [
-        "Location 01_ Gravestone _ Ground 1"
+        "Hunter's Dream - Frontier Headstone"
       ]
     },
     {
       "ID": 2102952,
       "Entries": [
-        "Location 00_ Gravestone _ Ground 1"
+        "Hunter's Dream - Unseen Headstone"
       ]
     },
     {
       "ID": 2102953,
       "Entries": [
-        "Location 01_ Gravestone _ Ground 2"
+        "Hunter's Dream - Nightmare Headstone"
       ]
     },
     {
       "ID": 2102954,
       "Entries": [
-        "Location 04_ Gravestone _ Quick Dungeon"
+        "Hunter's Dream - Makeshift Altar"
       ]
     },
     {
       "ID": 2102955,
       "Entries": [
-        "Location 05_ Gravestone _ Channel Dungeon 1"
+        "Hunter's Dream - Chalice Altar: 1"
       ]
     },
     {
       "ID": 2102956,
       "Entries": [
-        "Location 06_ Gravestone _ Channel Dungeon 2"
+        "Hunter's Dream - Chalice Altar: 2"
       ]
     },
     {
       "ID": 2102957,
       "Entries": [
-        "Location 07_ Gravestone _ Channel Dungeon 3"
+        "Hunter's Dream - Chalice Altar: 3"
       ]
     },
     {
       "ID": 2102958,
       "Entries": [
-        "Location 08_ Gravestone _ Channel Dungeon 4"
+        "Hunter's Dream - Chalice Altar: 4"
       ]
     },
     {
       "ID": 2102959,
       "Entries": [
-        "Location 09_ Gravestone _ Channel Dungeon 5"
+        "Hunter's Dream - Chalice Altar: 5"
       ]
     },
     {
       "ID": 2102960,
       "Entries": [
-        "Location 10_ Gravestone _ Channel Dungeon 6"
+        "Hunter's Dream - Chalice Altar: 6"
       ]
     },
     {
       "ID": 2102961,
       "Entries": [
-        "Location 11_ Restart point when you die at the base"
+        "Hunter's Dream - Respawn Point"
       ]
     },
     {
       "ID": 2102962,
       "Entries": [
-        "Location 12_ After the first police death drama"
+        "Hunter's Dream - After the first police death drama"
       ]
     },
     {
       "ID": 2112950,
       "Entries": [
-        "Reality Base _ Inside the building"
+        "Abandoned Old Workshop - Abandoned Old Workshop"
       ]
     },
     {
       "ID": 2202950,
       "Entries": [
-        "Cemetery Street _ chair _ start"
+        "Hemwick Charnel Lane - Hemwick Charnel Lane"
       ]
     },
     {
       "ID": 2202951,
       "Entries": [
-        "Cemetery Street _ chair _ Defeat the Eye Collector"
+        "Hemwick Charnel Lane - Witch's Abode"
       ]
     },
     {
       "ID": 2302950,
       "Entries": [
-        "ruins _ chair _ start"
+        "Old Yharnam - Old Yharnam"
       ]
     },
     {
       "ID": 2302951,
       "Entries": [
-        "ruins _ chair _ Defeat the Bloodthirsty Beast"
+        "Old Yharnam - Church of the Good Chalice"
       ]
     },
     {
       "ID": 2302952,
       "Entries": [
-        "ruins _ chair _ Defeat Storm Beast (Bone)"
+        "Old Yharnam - Graveyard of the Darkbeast"
       ]
     },
     {
       "ID": 2402950,
       "Entries": [
-        "Cathedral Quarter A_ chair _ start"
+        "Cathedral Ward - Cathedral Ward"
       ]
     },
     {
       "ID": 2402951,
       "Entries": [
-        "Cathedral Quarter A_ chair _ Defeat the Saint Beast"
+        "Cathedral Ward - Grand Cathedral"
       ]
     },
     {
       "ID": 2412950,
       "Entries": [
-        "Cathedral Quarter B_ chair _ Clinic"
+        "Central Yharnam - 1st Floor Sickroom"
       ]
     },
     {
       "ID": 2412951,
       "Entries": [
-        "Cathedral Quarter B_ chair _ On top of the ladder"
+        "Central Yharnam - Central Yharnam"
       ]
     },
     {
       "ID": 2412952,
       "Entries": [
-        "Cathedral Quarter B_ chair _ Defeat the Parish Priest"
+        "Central Yharnam - Great Bridge"
       ]
     },
     {
       "ID": 2412953,
       "Entries": [
-        "Cathedral Quarter B_ chair _ Defeat Father Gascoigne"
+        "Central Yharnam - Tomb of Oedon"
       ]
     },
     {
       "ID": 2412959,
       "Entries": [
-        "Cathedral Quarter B_ special _ Starting point"
+        "Central Yharnam - 1st Floor Sickroom"
       ]
     },
     {
       "ID": 2422950,
       "Entries": [
-        "Cathedral Quarter A_ chair _C Start (Towards Otoko)"
+        "Upper Cathedral Ward - Upper Cathedral Ward"
       ]
     },
     {
       "ID": 2422951,
       "Entries": [
-        "Cathedral Quarter C_ chair _Defeat Moon Child"
+        "Upper Cathedral Ward - Altar of Despair"
       ]
     },
     {
       "ID": 2422952,
       "Entries": [
-        "Cathedral Quarter C_ chair _ Defeat the Messengers from the Moon"
+        "Upper Cathedral Ward - Lumenflower Gardens"
       ]
     },
     {
       "ID": 2502950,
       "Entries": [
-        "Old castle _ chair _ start"
+        "Forsaken Castle Cainhurst - Forsaken Castle Cainhurst"
       ]
     },
     {
       "ID": 2502951,
       "Entries": [
-        "Old castle _ chair _ Queen's Chamber"
+        "Forsaken Castle Cainhurst - Vileblood Queen's Chamber"
       ]
     },
     {
       "ID": 2502952,
       "Entries": [
-        "Old castle _ chair _ Defeat the King's Reaper"
+        "Forsaken Castle Cainhurst - Logarius' Seat"
       ]
     },
     {
       "ID": 2502958,
       "Entries": [
-        "Old castle _ special _ When warping from the cemetery 2"
+        "Forsaken Castle Cainhurst - Special: When warping from Cemetery 2"
       ]
     },
     {
       "ID": 2502959,
       "Entries": [
-        "Old castle _ special _ When warping from the cemetery 2"
+        "Forsaken Castle Cainhurst - Special: When warping from Cemetery 2"
       ]
     },
     {
       "ID": 2602950,
       "Entries": [
-        "Trap Lord _ chair _ start"
+        "Nightmare of Mensis - Nightmare of Mensis"
       ]
     },
     {
       "ID": 2602951,
       "Entries": [
-        "Trap Lord _ chair _ Defeat Death and Darkness Lesser"
+        "Nightmare of Mensis - Mergo's Loft Middle"
       ]
     },
     {
       "ID": 2602952,
       "Entries": [
-        "Trap Lord _ chair _ Defeat the Nightmare Lord"
+        "Nightmare of Mensis - Wet Nurse's Lunarium "
       ]
     },
     {
       "ID": 2602953,
       "Entries": [
-        "Trap Lord _ chair _ First SC In front of the elevator"
+        "Nightmare of Mensis - Mergo's Loft Base"
       ]
     },
     {
       "ID": 2602958,
       "Entries": [
-        "Trap Lord _ special _ When I warped from the Nightmare Classroom 2"
+        "Nightmare of Mensis - Special: Warp from Byrgenwerth"
       ]
     },
     {
       "ID": 2602959,
       "Entries": [
-        "Trap Lord _ special _ When I warped from the Nightmare Classroom"
+        "Nightmare of Mensis - Special: Warp from Byrgenwerth"
       ]
     },
     {
       "ID": 2702950,
       "Entries": [
-        "forest _ chair _start"
+        "Forbidden Woods - Forbidden Woods"
       ]
     },
     {
       "ID": 2702951,
       "Entries": [
-        "forest _ chair _ Defeat the Snake Ball"
+        "Forbidden Woods - Forbidden Grave"
       ]
     },
     {
