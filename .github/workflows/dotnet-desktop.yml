@@ -1,14 +1,12 @@
 name: .NET
+
 on:
   push:
     branches:
       - main
   pull_request:
-permissions:
-  contents: write   # needed to create tags/releases
 jobs:
   build:
-    if: github.event_name == 'push' && contains(github.event.head_commit.message, '[Release]')
     runs-on: windows-latest
     name: "Build"
     env:
@@ -21,6 +19,7 @@ jobs:
         with:
           dotnet-version: "9.0.x"
           cache: false
+
       - name: Cache NuGet packages
         uses: actions/cache@v5.0.1
         with:
@@ -28,29 +27,18 @@ jobs:
           key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
             nuget-${{ runner.os }}-
+
       - name: Restore
         run: dotnet restore /p:Configuration=Release-win
+
       - name: Build
         run: dotnet build --configuration Release-win --no-restore
-      - name: Generate timestamp tag
-        id: tag
-        shell: bash
-        run: echo "name=build-$(date -u +'%Y%m%d-%H%M%S')" >> "$GITHUB_OUTPUT"
+
+      - name: Publish
+        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release-win -o deploy
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
           name: "Smithbox-SHA${{ github.sha }}"
-          path: "${{ github.workspace }}/Smithbox.Release/Output"
-      - name: Zip release output
-        shell: pwsh
-        run: Compress-Archive -Path "${{ github.workspace }}/Smithbox.Release/Output/*" -DestinationPath "Smithbox-${{ steps.tag.outputs.name }}-win-x64.zip"
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ steps.tag.outputs.name }}
-          name: ${{ steps.tag.outputs.name }}
-          prerelease: true
-          generate_release_notes: true
-          files: Smithbox-${{ steps.tag.outputs.name }}-win-x64.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: "${{ runner.workspace }}/Smithbox/deploy"
