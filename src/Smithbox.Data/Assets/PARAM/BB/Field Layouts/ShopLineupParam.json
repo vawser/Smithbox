@@ -1,0 +1,47 @@
+{
+  "Name": "ShopLineupParam",
+  "Groups": [
+    {
+      "Key": "Item",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Item"
+        }
+      ],
+      "Fields": [
+        "equipId",
+        "mtrlId",
+        "equipType",
+        "sellQuantity"
+      ]
+    },
+    {
+      "Key": "Event Flags",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Event Flags"
+        }
+      ],
+      "Fields": [
+        "eventFlag",
+        "qwcId"
+      ]
+    },
+    {
+      "Key": "Value",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Value"
+        }
+      ],
+      "Fields": [
+        "value",
+        "shopType",
+        "value_SAN"
+      ]
+    }
+  ]
+}

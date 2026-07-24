@@ -6,7 +6,7 @@
   "Fields": [
     {
       "Field": "equipId",
-      "Name": "Reference ID",
+      "Name": "Item ID",
       "Description": "ID of the equipment for sale"
     },
     {
@@ -16,22 +16,22 @@
     },
     {
       "Field": "mtrlId",
-      "Name": "Required Material ID",
+      "Name": "Material ID for Purchase",
       "Description": "Material ID required for purchase (-1: None)"
     },
     {
       "Field": "eventFlag",
-      "Name": "Quantity - Event Flag ID",
+      "Name": "Event Flag ID: Quantity",
       "Description": "Event flag value that holds the number"
     },
     {
       "Field": "qwcId",
-      "Name": "Visibility - Event Flag ID",
+      "Name": "Event Flag ID: Visibility",
       "Description": "Sales ban event flag"
     },
     {
       "Field": "sellQuantity",
-      "Name": "Amount to Sell",
+      "Name": "Quantity",
       "Description": "Number of units sold"
     },
     {
@@ -41,7 +41,7 @@
     },
     {
       "Field": "equipType",
-      "Name": "Equipment Type",
+      "Name": "Item Type",
       "Description": "Types of equipment for sale"
     },
     {
