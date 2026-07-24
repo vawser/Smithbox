@@ -17,11 +17,20 @@
       ]
     },
     {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Self Harm"
+        }
+      ]
+    },
+    {
       "Key": "2",
       "Names": [
         {
           "Language": "English",
-          "Text": "Poison"
+          "Text": "Apply Status: Slow Poison"
         }
       ]
     },
@@ -30,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Special Attack Mode"
         }
       ]
     },
@@ -48,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Toxic"
+          "Text": "Apply Status: Toxic"
         }
       ]
     },
@@ -57,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bleed"
+          "Text": "Apply Status: Rapid Poison"
         }
       ]
     },
@@ -66,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ghost"
+          "Text": "Apply Ghost Camouflage"
         }
       ]
     },
@@ -84,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Tranquil Walk of Peace"
+          "Text": "Slow Walk"
         }
       ]
     },
@@ -93,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Poison"
+          "Text": "Remove Status: Slow Poison"
         }
       ]
     },
@@ -102,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Toxic"
+          "Text": "Remove Status: Toxic"
         }
       ]
     },
@@ -111,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Bleed"
+          "Text": "Remove Status: Rapis Poison"
         }
       ]
     },
@@ -120,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove All Status"
+          "Text": "Remove All Status Effects"
         }
       ]
     },
@@ -129,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Humanity Stolen"
+          "Text": "Soul Drain"
         }
       ]
     },
@@ -138,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Telescope"
+          "Text": "Monocular"
         }
       ]
     },
@@ -147,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace"
+          "Text": "Warp to Lamp A"
         }
       ]
     },
@@ -157,6 +166,15 @@
         {
           "Language": "English",
           "Text": "Revival"
+        }
+      ]
+    },
+    {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Disppears"
         }
       ]
     },
@@ -174,7 +192,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Black Phantom"
         }
       ]
     },
@@ -183,7 +201,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "OnReviveMagic"
+          "Text": "Revive"
         }
       ]
     },
@@ -197,11 +215,20 @@
       ]
     },
     {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon Repair"
+        }
+      ]
+    },
+    {
       "Key": "28",
       "Names": [
         {
           "Language": "English",
-          "Text": "Right-hand Buff VFX"
+          "Text": "Apply Physical Enhancement"
         }
       ]
     },
@@ -211,6 +238,15 @@
         {
           "Language": "English",
           "Text": "Body Buff VFX"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Electrostatic Body VFX"
         }
       ]
     },
@@ -233,11 +269,20 @@
       ]
     },
     {
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Electrostatic Burn VFX"
+        }
+      ]
+    },
+    {
       "Key": "34",
       "Names": [
         {
           "Language": "English",
-          "Text": "Giant Slime Freezing"
+          "Text": "One Reborn: Foot Slam Effect: A"
         }
       ]
     },
@@ -246,7 +291,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "One Reborn: Foot Slam Effect: B"
         }
       ]
     },
@@ -255,7 +300,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "One Reborn: Foot Slam Effect: C"
         }
       ]
     },
@@ -264,7 +309,16 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "One Reborn: Foot Slam Effect: D"
+        }
+      ]
+    },
+    {
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Auditory Illusion"
         }
       ]
     },
@@ -354,7 +408,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Increase Damage"
+          "Text": "Modify Attack Power"
         }
       ]
     },
@@ -372,7 +426,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "HP/FP/Stamina Recovery"
+          "Text": "Modify HP Recovery"
         }
       ]
     },
@@ -404,6 +458,24 @@
       ]
     },
     {
+      "Key": "56",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Frenzy Enhancement"
+        }
+      ]
+    },
+    {
+      "Key": "57",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
       "Key": "58",
       "Names": [
         {
@@ -426,7 +498,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magic Buff VFX"
+          "Text": "Apply Arcane Enhancement"
         }
       ]
     },
@@ -435,7 +507,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magic Weapon Buff VFX"
+          "Text": "Apply Bolt Enhancement"
         }
       ]
     },
@@ -444,7 +516,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fire Weapon Buff VFX"
+          "Text": "Apply Fire Enhancement"
         }
       ]
     },
@@ -498,7 +570,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spell Power Boost"
+          "Text": "Modify Spell Power"
         }
       ]
     },
@@ -507,7 +579,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Green Blossom VFX"
+          "Text": "Stamina Recovery VFX"
         }
       ]
     },
@@ -516,7 +588,16 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Soul Gain"
+          "Text": "Modify Blood Echo Gain"
+        }
+      ]
+    },
+    {
+      "Key": "77",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
         }
       ]
     },
@@ -561,7 +642,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Applies Dragon Form effect"
+          "Text": "Beast Claw: Half Transform - Body Armor"
         }
       ]
     },
@@ -570,7 +651,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "MP Detection"
+          "Text": "Item Detection Spell"
         }
       ]
     },
@@ -606,7 +687,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Wax Slow Down"
+          "Text": "Slow Walk"
         }
       ]
     },
@@ -651,7 +732,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "MP Cooperation LV 3"
+          "Text": "Player: Jump Dash Judgement"
         }
       ]
     },
@@ -683,11 +764,20 @@
       ]
     },
     {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player: Dash Judgment"
+        }
+      ]
+    },
+    {
       "Key": "112",
       "Names": [
         {
           "Language": "English",
-          "Text": "1409F7282_HKS"
+          "Text": "Player: Evasion Judgment"
         }
       ]
     },
@@ -696,7 +786,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Player: Backstep Judgment"
         }
       ]
     },
@@ -723,7 +813,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Curse"
+          "Text": "Apply Status: Frenzy"
         }
       ]
     },
@@ -741,7 +831,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cure Curse"
+          "Text": "Remove Status: Frenzy"
         }
       ]
     },
@@ -750,7 +840,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Increase Sale Price"
         }
       ]
     },
@@ -786,7 +876,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger on Roll (Head)"
+          "Text": "Apply Damage from Collision (Head)"
         }
       ]
     },
@@ -795,7 +885,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger on Roll (Body)"
+          "Text": "Apply Damage from Collision (Body)"
         }
       ]
     },
@@ -804,7 +894,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger on Roll (Hands)"
+          "Text": "Apply Damage from Collision (Hands)"
         }
       ]
     },
@@ -813,7 +903,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger on Roll (Legs)"
+          "Text": "Apply Damage from Collision (Legs)"
         }
       ]
     },
@@ -948,7 +1038,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "NPC Behavior ID Change"
+          "Text": "Apply Behavior in behaviorId (Enemy)"
         }
       ]
     },
@@ -984,7 +1074,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cast Light"
+          "Text": "Display Light Source"
         }
       ]
     },
@@ -1029,7 +1119,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enable Attack Effect against Enemy"
+          "Text": "Enable atkOccurrenceSpEffectId Field (Enemy)"
         }
       ]
     },
@@ -1038,7 +1128,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enable Attack Effect against Player"
+          "Text": "Enable atkOccurrenceSpEffectId Field (Player"
         }
       ]
     },
@@ -1047,7 +1137,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Block Estus usage"
+          "Text": "Prevent Blood Vial Activation"
         }
       ]
     },
@@ -1074,7 +1164,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Transient Curse"
+          "Text": "Allow Attacks against Ghosts"
         }
       ]
     },
@@ -1110,7 +1200,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace"
+          "Text": "Warp to Lamp B"
         }
       ]
     },
@@ -1119,7 +1209,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace"
+          "Text": "Warp to Lamp C"
         }
       ]
     },
@@ -1128,7 +1218,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace"
+          "Text": "Warp to Lamp D"
         }
       ]
     },
@@ -1137,7 +1227,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace"
+          "Text": "Warp to Lamp E"
         }
       ]
     },
@@ -1200,7 +1290,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Used for Behavior Change"
+          "Text": "Apply Behavior in behaviorId "
         }
       ]
     },
@@ -1227,7 +1317,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Revival Production"
+          "Text": "Decrease Sale Price"
         }
       ]
     },
@@ -1246,6 +1336,15 @@
         {
           "Language": "English",
           "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "178",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Surrounding Buff Cancel Trigger"
         }
       ]
     },
@@ -1317,7 +1416,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Reduce Lava Harm"
         }
       ]
     },
@@ -1326,7 +1425,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Allow Normal Cooperation"
         }
       ]
     },
@@ -1335,7 +1434,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Request Normal Cooperation"
         }
       ]
     },
@@ -1344,7 +1443,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Allow Normal Invasion"
         }
       ]
     },
@@ -1353,7 +1452,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Allow Normal Entry"
         }
       ]
     },
@@ -1380,7 +1479,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "CompareWith203"
+          "Text": "Modify Spell Casts"
         }
       ]
     },
@@ -1407,7 +1506,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enhance Thrusting Counter Attacks"
+          "Text": "Modify Counter Damage Multiplier"
         }
       ]
     },
@@ -1425,7 +1524,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Kill Effect"
+          "Text": "Apply On-Hit Effect"
         }
       ]
     },
@@ -1434,7 +1533,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Power Within VFX"
+          "Text": "Frosty Breath VFX"
         }
       ]
     },
@@ -1461,7 +1560,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "CompareWith194"
+          "Text": "Halve Spell Casts"
         }
       ]
     },
@@ -1488,7 +1587,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Apply Full Body Flames VFX"
         }
       ]
     },
@@ -1497,7 +1596,52 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Jailer HP Drain"
+          "Text": "Flame Light Source"
+        }
+      ]
+    },
+    {
+      "Key": "208",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Flame Weapon VFX"
+        }
+      ]
+    },
+    {
+      "Key": "209",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Snatcher: Anger VFX"
+        }
+      ]
+    },
+    {
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Display Darkness Shroud"
+        }
+      ]
+    },
+    {
+      "Key": "211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Church Seal"
+        }
+      ]
+    },
+    {
+      "Key": "212",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
         }
       ]
     },
@@ -1506,7 +1650,70 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger on Enemy Backstab"
+          "Text": "Apply on Backstab (Enemy)"
+        }
+      ]
+    },
+    {
+      "Key": "214",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Berserk"
+        }
+      ]
+    },
+    {
+      "Key": "215",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vampire - HP Drain"
+        }
+      ]
+    },
+    {
+      "Key": "216",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beast Transformation"
+        }
+      ]
+    },
+    {
+      "Key": "217",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison Attribute Enhancement"
+        }
+      ]
+    },
+    {
+      "Key": "218",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire Attribute Enhancement"
+        }
+      ]
+    },
+    {
+      "Key": "219",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire Attribute Enhancement"
+        }
+      ]
+    },
+    {
+      "Key": "220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invisibility"
         }
       ]
     },
@@ -1515,7 +1722,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Nightmare of Mensis: Brain Eye Directory"
         }
       ]
     },
@@ -1533,7 +1740,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Apply Transparency (Enemy)"
         }
       ]
     },
@@ -1542,7 +1749,61 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Apply Transparency (Enemy)"
+        }
+      ]
+    },
+    {
+      "Key": "225",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Translucency (Enemy)"
+        }
+      ]
+    },
+    {
+      "Key": "226",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vampire"
+        }
+      ]
+    },
+    {
+      "Key": "227",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cramped Casket: Burning Pile Debuff"
+        }
+      ]
+    },
+    {
+      "Key": "228",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Transformed Huntsman: Torch VFX (Axe)"
+        }
+      ]
+    },
+    {
+      "Key": "229",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Transformed Huntsman: Torch VFX (Shield)"
+        }
+      ]
+    },
+    {
+      "Key": "230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wind Armor VFX"
         }
       ]
     },
@@ -1551,7 +1812,43 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "DisableUseAtColiseum"
+          "Text": "Disable Item Use in Coliseum"
+        }
+      ]
+    },
+    {
+      "Key": "233",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shadow of Yharnam: Flame Weapon VFX"
+        }
+      ]
+    },
+    {
+      "Key": "234",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Empower Hazards (Small)"
+        }
+      ]
+    },
+    {
+      "Key": "235",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Empower Hazards (Large)"
+        }
+      ]
+    },
+    {
+      "Key": "236",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
         }
       ]
     },
@@ -1560,7 +1857,52 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Calamity Ring"
+          "Text": "Bind Player"
+        }
+      ]
+    },
+    {
+      "Key": "238",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Empower Chalice Mini-boss"
+        }
+      ]
+    },
+    {
+      "Key": "239",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Chalice Mini-boss"
+        }
+      ]
+    },
+    {
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Eyes VFX"
+        }
+      ]
+    },
+    {
+      "Key": "241",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Glowing Butterfly VFX"
+        }
+      ]
+    },
+    {
+      "Key": "248",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beast Transformation Aura"
         }
       ]
     },
@@ -1569,7 +1911,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Oil"
+          "Text": "Apply Status: Oil"
         }
       ]
     },
@@ -1583,11 +1925,47 @@
       ]
     },
     {
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Append Poison Spew VFX"
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Magic VFX"
+        }
+      ]
+    },
+    {
+      "Key": "256",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ebrietas: Kojima Particle"
+        }
+      ]
+    },
+    {
+      "Key": "257",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yahar'gul: Burning Pile Effect"
+        }
+      ]
+    },
+    {
       "Key": "258",
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Hemwick Grave-woman: Weapon VFX"
         }
       ]
     },
@@ -1605,7 +1983,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Frostbite"
+          "Text": "Apply Status: Beasthood"
         }
       ]
     },
@@ -1623,7 +2001,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "WormRecovery(Torch)"
+          "Text": "Shadow of Yharnam: Flame Weapon VFX"
         }
       ]
     },
@@ -1655,11 +2033,20 @@
       ]
     },
     {
+      "Key": "268",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beast Mode: Effect"
+        }
+      ]
+    },
+    {
       "Key": "269",
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Await Cooperation Request"
         }
       ]
     },
@@ -1686,7 +2073,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Normal Cooperation - Guest Play"
         }
       ]
     },
@@ -1695,7 +2082,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Player Behavior ID Change"
+          "Text": "Apply Behavior in behaviorId (Player)"
         }
       ]
     },
@@ -1704,7 +2091,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cure Frostbite"
+          "Text": "Normal Invasion - Guest Play"
         }
       ]
     },
@@ -1821,7 +2208,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extend Roll Invincibility"
+          "Text": "Beast Mode: A"
         }
       ]
     },
@@ -1830,7 +2217,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Grants roll invisibility"
+          "Text": "Beast Mode: B"
         }
       ]
     },
@@ -1839,7 +2226,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Repair1"
+          "Text": "Enemy Blood Echo Hold"
         }
       ]
     },
@@ -1848,7 +2235,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Change Durability"
+          "Text": "Moidfy Rally Gain"
         }
       ]
     },
@@ -1857,7 +2244,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Display Beasthood Gauge"
         }
       ]
     },
@@ -1866,7 +2253,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Apply Gun Enhancement"
         }
       ]
     },
@@ -1875,7 +2262,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Modify Quicksilver Bullet Limit"
         }
       ]
     },
@@ -1884,7 +2271,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Not in Multiplayer Session"
+          "Text": "Modify Blood Vial Limit"
         }
       ]
     },
@@ -1893,7 +2280,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger on Player Backstab"
+          "Text": "Apply on Backstab (Player)"
         }
       ]
     },
@@ -1902,7 +2289,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enemies attack Invaders"
+          "Text": "Fire VFX in Both Hands"
         }
       ]
     },
@@ -1911,7 +2298,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enemies attack Invaders"
+          "Text": "Poison Coat (Small)"
         }
       ]
     },
@@ -1920,7 +2307,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Law of Regression"
+          "Text": "Poison Coat (Large)"
         }
       ]
     },
@@ -1929,7 +2316,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace"
+          "Text": "Empower Chalice Enemies"
         }
       ]
     },
@@ -2019,7 +2406,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Church Servant: Blue Flame Scythe VFX"
         }
       ]
     },
@@ -2028,7 +2415,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Seek Guidance"
+          "Text": "Church Servant: Cross VFX"
         }
       ]
     },
@@ -2073,7 +2460,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dead Again"
+          "Text": "Gerhman: Empowerment"
         }
       ]
     },
@@ -2082,7 +2469,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Normal Invasion Request"
         }
       ]
     },
@@ -2091,7 +2478,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Apply Translucency (Weak)"
         }
       ]
     },
@@ -2100,7 +2487,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Reverse Hollowing"
+          "Text": "Apply Translucency (Strong)"
         }
       ]
     },
@@ -2109,7 +2496,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "ChrAsmStyle_HKS_LEFTHAND"
+          "Text": "Messenger Evaluation"
         }
       ]
     },
@@ -2118,7 +2505,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "ChrAsmStyle_HKS_RIGHTHAND"
+          "Text": "Natural Enemy (Blood Relative) - Guest Play"
         }
       ]
     },
@@ -2127,7 +2514,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Natural Enemy (Blood Hunter) - Guest Play"
         }
       ]
     },
@@ -2136,7 +2523,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Wet Aspect Param"
+          "Text": "Natural Enemy (Hunter vs. Hunter) - Guest Play"
         }
       ]
     },
@@ -2154,7 +2541,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ember"
+          "Text": "Stone Cap Effect after World Shift"
         }
       ]
     },
@@ -2231,11 +2618,182 @@
       ]
     },
     {
-      "Key": "465",
+      "Key": "337",
       "Names": [
         {
           "Language": "English",
-          "Text": "Memory of Grace"
+          "Text": "Boom Hammer - Smoke VFX"
+        }
+      ]
+    },
+    {
+      "Key": "338",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Temporary Self-Improvement"
+        }
+      ]
+    },
+    {
+      "Key": "339",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Bell Enhancement"
+        }
+      ]
+    },
+    {
+      "Key": "340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "341",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Torch VFX"
+        }
+      ]
+    },
+    {
+      "Key": "344",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Eye Light VFX"
+        }
+      ]
+    },
+    {
+      "Key": "345",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enlarged Head Patient Voices"
+        }
+      ]
+    },
+    {
+      "Key": "346",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Weapon Glow VFX"
+        }
+      ]
+    },
+    {
+      "Key": "347",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Poison Weapon VFX"
+        }
+      ]
+    },
+    {
+      "Key": "348",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Glowing Eyes VFX"
+        }
+      ]
+    },
+    {
+      "Key": "349",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight Greatsword - Light VFX"
+        }
+      ]
+    },
+    {
+      "Key": "351",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beast Claw: Half Transform - Head and Body Armor"
+        }
+      ]
+    },
+    {
+      "Key": "352",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beast Claw: Full Transform"
+        }
+      ]
+    },
+    {
+      "Key": "353",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kos Parasite: Half Transform - Armor"
+        }
+      ]
+    },
+    {
+      "Key": "354",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kos Parasite: Full Transform"
+        }
+      ]
+    },
+    {
+      "Key": "355",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reset Poise Value"
+        }
+      ]
+    },
+    {
+      "Key": "356",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beast Claw: Half Transform - Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "357",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kos Parasite: Half Transform - Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "358",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kos Parasite: Weapon Judgment"
         }
       ]
     },
