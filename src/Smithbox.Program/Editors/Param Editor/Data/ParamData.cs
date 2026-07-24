@@ -545,6 +545,18 @@ public class ParamData : IDisposable
         }
     }
 
+    public ParamFieldMeta GetParamFieldMeta(ParamMeta curMeta, string internalFieldName)
+    {
+        if (curMeta != null && curMeta.Fields != null && curMeta.Fields.Any(e => e.Key.InternalName == internalFieldName))
+        {
+            return curMeta.Fields.FirstOrDefault(e => e.Key.InternalName == internalFieldName).Value;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public async Task<bool> SetupParamMeta()
     {
         await Task.Yield();

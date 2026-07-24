@@ -1,0 +1,44 @@
+{
+  "Name": "TalkParam",
+  "Groups": [
+    {
+      "Key": "Common",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Common"
+        }
+      ],
+      "Fields": [
+        "msgId",
+        "voiceId",
+        "returnPos",
+        "reactionId",
+        "eventId"
+      ]
+    },
+    {
+      "Key": "Motion",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Motion"
+        }
+      ],
+      "Fields": [
+        "motionId0",
+        "motionId1",
+        "motionId2",
+        "motionId3",
+        "motionId4",
+        "motionId5",
+        "spEffectId0",
+        "spEffectId1",
+        "spEffectId2",
+        "spEffectId3",
+        "spEffectId4",
+        "spEffectId5"
+      ]
+    }
+  ]
+}

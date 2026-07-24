@@ -61,7 +61,7 @@
     },
     {
       "Field": "magicDamageCutRate",
-      "Name": "Absorption %: Magic",
+      "Name": "Absorption %: Arcane",
       "Description": "Magic damage multiplier: The calculated damage is corrected by XX times. 1 is normal."
     },
     {
@@ -71,7 +71,7 @@
     },
     {
       "Field": "thunderDamageCutRate",
-      "Name": "Absorption %: Lightning",
+      "Name": "Absorption %: Bolt",
       "Description": "Electric shock damage ratio: Correct the calculated damage by XX times. 1 is normal."
     },
     {
@@ -81,7 +81,7 @@
     },
     {
       "Field": "magicAttackRate",
-      "Name": "Attack %: Magic",
+      "Name": "Attack %: Arcane",
       "Description": "Magic damage multiplier: The calculated damage is corrected by XX times. 1 is normal."
     },
     {
@@ -91,7 +91,7 @@
     },
     {
       "Field": "thunderAttackRate",
-      "Name": "Attack %: Lightning",
+      "Name": "Attack %: Bolt",
       "Description": "Electric shock damage ratio: Correct the calculated damage by XX times. 1 is normal."
     },
     {
@@ -101,7 +101,7 @@
     },
     {
       "Field": "magicAttackPowerRate",
-      "Name": "Power %: Magic",
+      "Name": "Power %: Arcane",
       "Description": "Multiply the magic attack power by the set value"
     },
     {
@@ -111,7 +111,7 @@
     },
     {
       "Field": "thunderAttackPowerRate",
-      "Name": "Power %: Lightning",
+      "Name": "Power %: Bolt",
       "Description": "Multiply the electric shock attack power by the set value"
     },
     {
@@ -121,7 +121,7 @@
     },
     {
       "Field": "magicAttackPower",
-      "Name": "Damage +: Magic",
+      "Name": "Damage +: Arcane",
       "Description": "Add or subtract the value set for the magic attack power"
     },
     {
@@ -131,7 +131,7 @@
     },
     {
       "Field": "thunderAttackPower",
-      "Name": "Damage +: Lighting",
+      "Name": "Damage +: Bolt",
       "Description": "Add or subtract the value set for the electric shock attack power"
     },
     {
@@ -141,7 +141,7 @@
     },
     {
       "Field": "magicDiffenceRate",
-      "Name": "Defence %: Magic",
+      "Name": "Defence %: Arcane",
       "Description": "Multiply the value set for magic defense"
     },
     {
@@ -151,7 +151,7 @@
     },
     {
       "Field": "thunderDiffenceRate",
-      "Name": "Defence %: Lightning",
+      "Name": "Defence %: Bolt",
       "Description": "Multiply the value set for the electric shock defense"
     },
     {
@@ -161,7 +161,7 @@
     },
     {
       "Field": "magicDiffence",
-      "Name": "Defence +: Magic",
+      "Name": "Defence +: Arcane",
       "Description": "Add or subtract the value set for magic defense"
     },
     {
@@ -171,7 +171,7 @@
     },
     {
       "Field": "thunderDiffence",
-      "Name": "Defence +: Lightning",
+      "Name": "Defence +: Bolt",
       "Description": "Add or subtract the value set for the electric shock defense"
     },
     {
@@ -261,7 +261,7 @@
     },
     {
       "Field": "poizonAttackPower",
-      "Name": "Aux Inflict +: Poison",
+      "Name": "Aux Inflict +: Slow Poison",
       "Description": "A value to be added to the target's [poison resistance value] when it hits\nRequires State Info 2"
     },
     {
@@ -271,12 +271,12 @@
     },
     {
       "Field": "registBlood",
-      "Name": "Aux Inflict +: Bleed",
+      "Name": "Aux Inflict +: Rapid Poison",
       "Description": "A value to be added to the target's [bleeding resistance value] when it hits\nRequires State Info 6"
     },
     {
       "Field": "registCurse",
-      "Name": "Aux Inflict +: Curse",
+      "Name": "Aux Inflict +: Frenzy",
       "Description": "A number to be added to the target [curse resistance value] when hit\nRequires State Info 116"
     },
     {
@@ -336,7 +336,7 @@
     },
     {
       "Field": "registPoizonChangeRate",
-      "Name": "Aux Resist %: Poison",
+      "Name": "Aux Resist %: Slow Poison",
       "Description": "Multiply the poison resistance value by the set multiplier"
     },
     {
@@ -346,12 +346,12 @@
     },
     {
       "Field": "registBloodChangeRate",
-      "Name": "Aux Resist %: Bleed",
+      "Name": "Aux Resist %: Rapid Poison",
       "Description": "Multiply the bleeding resistance value by the set magnification"
     },
     {
       "Field": "registCurseChangeRate",
-      "Name": "Aux Resist %: Curse",
+      "Name": "Aux Resist %: Frenzy",
       "Description": "Multiply the spell resistance value by the set multiplier"
     },
     {
@@ -451,7 +451,7 @@
     },
     {
       "Field": "bloodDamageRate",
-      "Name": "Damage Correction %: Bleed",
+      "Name": "Damage Correction %: Rapid Poison",
       "Description": "Point damage of state change type [bleeding], correction value used only when% damage"
     },
     {
@@ -731,7 +731,7 @@
     },
     {
       "Field": "disablePoison",
-      "Name": "Disable Poison",
+      "Name": "Disable Slow Poison",
       "Description": "If this effect is applied, it will not be poisoned."
     },
     {
@@ -741,12 +741,12 @@
     },
     {
       "Field": "disableBlood",
-      "Name": "Disable Bleed",
+      "Name": "Disable Rapid Poison",
       "Description": "With this effect, you won't get bleeding"
     },
     {
       "Field": "disableCurse",
-      "Name": "Disable Curse",
+      "Name": "Disable Frenzy",
       "Description": "With this effect, you won't be cursed"
     },
     {
@@ -1021,7 +1021,7 @@
     },
     {
       "Field": "addBulletNum",
-      "Name": "QS Bullet Addition",
+      "Name": "Quicksilver Bullet Addition",
       "Description": "Number of QS Bullets to add"
     },
     {
@@ -1061,7 +1061,7 @@
     },
     {
       "Field": "changePoisonResistPoint",
-      "Name": "Aux Resist +: Poison",
+      "Name": "Aux Resist +: Slow Poison",
       "Description": "Increase or decrease the state resistance value"
     },
     {
@@ -1071,12 +1071,12 @@
     },
     {
       "Field": "changeBloodResistPoint",
-      "Name": "Aux Resist +: Bleed",
+      "Name": "Aux Resist +: Rapid Poison",
       "Description": "Increase or decrease the state resistance value"
     },
     {
       "Field": "changeCurseResistPoint",
-      "Name": "Aux Resist +: Curse",
+      "Name": "Aux Resist +: Frenzy",
       "Description": "Increase or decrease the state resistance value"
     },
     {
@@ -1086,23 +1086,23 @@
     },
     {
       "Field": "antiDemonDamageCorrectRate",
-      "Name": "Anti-Demon Multiplier %",
-      "Description": ""
+      "Name": "Enemy Type - Damage Multiplier %: Animal Beast",
+      "Description": "Modifies the damage output against characters tagged as this type."
     },
     {
       "Field": "antiSaintDamageCorrectRate",
-      "Name": "Anti-Undead Multiplier %",
-      "Description": ""
+      "Name": "Enemy Type - Damage Multiplier %: Human Beast",
+      "Description": "Modifies the damage output against characters tagged as this type."
     },
     {
       "Field": "antiWeakA_DamageCorrectRate",
-      "Name": "Anti-Weak A Multiplier %",
-      "Description": ""
+      "Name": "Enemy Type - Damage Multiplier %: Unholy",
+      "Description": "Modifies the damage output against characters tagged as this type."
     },
     {
       "Field": "antiWeakB_DamageCorrectRate",
-      "Name": "Anti-Weak B Multiplier %",
-      "Description": ""
+      "Name": "Enemy Type - Damage Multiplier %: Moon",
+      "Description": "Modifies the damage output against characters tagged as this type."
     },
     {
       "Field": "regainRate",
@@ -1121,17 +1121,17 @@
     },
     {
       "Field": "transfusionHpRate",
-      "Name": "Transfusion Vial: HP %",
+      "Name": "Blood Vial: HP %",
       "Description": "Transfusion blood HP damage amount"
     },
     {
       "Field": "transfusionHpPoint",
-      "Name": "Transfusion Vial: HP +",
+      "Name": "Blood Vial: HP +",
       "Description": "Transfusion blood HP damage amount"
     },
     {
       "Field": "transfusionHpRecoverRate",
-      "Name": "Transfusion Vial: HP Recovery",
+      "Name": "Blood Vial: HP Recovery",
       "Description": ""
     },
     {

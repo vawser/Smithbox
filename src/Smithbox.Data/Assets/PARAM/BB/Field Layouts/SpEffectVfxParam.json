@@ -1,0 +1,80 @@
+{
+  "Name": "SpEffectVfxParam",
+  "Groups": [
+    {
+      "Key": "Common",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Common"
+        }
+      ],
+      "Fields": [
+        "midstSfxId",
+        "midstSeId",
+        "initSfxId",
+        "initSeId",
+        "finishSfxId",
+        "finishSeId",
+        "midstDmyId",
+        "initDmyId",
+        "finishDmyId"
+      ]
+    },
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "effectType",
+        "soulParamIdForWepEnchant",
+        "playCategory",
+        "playPriority",
+        "existEffectForLarge",
+        "existEffectForSoul",
+        "addMapAreaBlockOffset",
+        "isInvisibleWeapon",
+        "isSilence"
+      ]
+    },
+    {
+      "Key": "Camouflage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Camouflage"
+        }
+      ],
+      "Fields": [
+        "camouflageBeginDist",
+        "camouflageEndDist",
+        "effectInvisibleAtCamouflage",
+        "useCamouflage",
+        "invisibleAtFriendCamouflage",
+        "halfCamouflage"
+      ]
+    },
+    {
+      "Key": "Transform",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Transform"
+        }
+      ],
+      "Fields": [
+        "transformProtectorId",
+        "transformArmor",
+        "transformGauntlet",
+        "transformHelmet",
+        "transformLeggings",
+        "transformPriority",
+        "transformWeaponId"
+      ]
+    }
+  ]
+}

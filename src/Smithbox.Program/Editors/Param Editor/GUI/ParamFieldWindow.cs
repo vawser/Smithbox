@@ -912,6 +912,15 @@ public class ParamFieldWindow
 
         foreach (var f in fieldOrder)
         {
+            var fieldMeta = Project.Handler.ParamData.GetParamFieldMeta(meta, f);
+
+            // Ignore padding fields
+            if(fieldMeta != null)
+            {
+                if (fieldMeta.IsPaddingField)
+                    continue;
+            }
+
             if (f.Equals("-"))
             {
                 if (prevWasMisc)
