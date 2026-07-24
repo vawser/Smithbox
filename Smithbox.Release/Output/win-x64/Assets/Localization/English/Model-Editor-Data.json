@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_Data_Log_Invalid_Model_Read",
+      "Text": "Failed to read {0} for FLVER."
+    },
+    {
+      "Key": "MODEL_Data_Log_Invalid_Model_Binder_Read",
+      "Text": "Failed to read {0} for BND."
+    },
+    {
+      "Key": "MODEL_Data_Log_Save_FLVER",
+      "Text": "Saved FLVER: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Log_Save_FLVER_Failed",
+      "Text": "Failed to write FLVER: {0}"
+    }
+  ]
+}

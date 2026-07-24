@@ -17,13 +17,6 @@
       </ProjectReference>
     </ItemGroup>
 
-    <PropertyGroup Condition="$(Configuration.EndsWith('-win')) Or !$(Configuration.Contains('-'))">
-      <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    </PropertyGroup>
-    <PropertyGroup Condition="$(Configuration.EndsWith('-linux'))">
-      <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
-    </PropertyGroup>
-
   <Target Name="AssembleRelease" AfterTargets="Build">
 
     <PropertyGroup>

@@ -1,0 +1,56 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_Editor_View_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "MODEL_Editor_View_Screenshot_Mode",
+      "Text": "Screenshot Mode"
+    },
+    {
+      "Key": "MODEL_Editor_View_Screenshot_Mode_TT",
+      "Text": "Hides all windows but the viewport."
+    },
+    {
+      "Key": "MODEL_Editor_Option_Container_Header",
+      "Text": "Containers"
+    },
+    {
+      "Key": "MODEL_Editor_Option_Files_Header",
+      "Text": "Files"
+    },
+    {
+      "Key": "MODEL_Editor_Option_Contents_Header",
+      "Text": "Contents"
+    },
+    {
+      "Key": "MODEL_Editor_Container_Include_Alias_in_Search",
+      "Text": "Include Alias in Search"
+    },
+    {
+      "Key": "MODEL_Editor_Container_Include_Alias_in_Search_TT",
+      "Text": "If enabled, when filtering the source list, alias will be included. Can be slower than normal."
+    },
+    {
+      "Key": "MODEL_Editor_Files_AutoSelect_First",
+      "Text": "Auto-Select First Entries"
+    },
+    {
+      "Key": "MODEL_Editor_Files_AutoSelect_First_TT",
+      "Text": "If enabled, the first entry in the list will be loaded automatically."
+    },
+    {
+      "Key": "MODEL_Editor_Contents_Display_Node_Name_in_Mesh_Entry",
+      "Text": "Display Node Name in Mesh Entry"
+    },
+    {
+      "Key": "MODEL_Editor_Contents_Display_Node_Name_in_Mesh_Entry_TT",
+      "Text": "If enabled, the linked node name is displayed in the mesh entry name."
+    },
+    {
+      "Key": "MODEL_Editor_Invalid_Save_Project_Type_DES",
+      "Text": "Model Editor is not supported for DES."
+    }
+  ]
+}
