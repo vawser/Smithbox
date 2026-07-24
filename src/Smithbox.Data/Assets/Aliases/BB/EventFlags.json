@@ -1,231 +1,7 @@
 [
   {
     "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
-    "Tags": [
-      "flag"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "X_1_1_1",
+    "Name": "",
     "Tags": [
       "flag"
     ]
@@ -233,6 +9,13 @@
   {
     "ID": "5000",
     "Name": "Acquired Pthumeru Chalice",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5003",
+    "Name": "Acquired Lower Pthumeru Chalice",
     "Tags": [
       "flag"
     ]
@@ -252,6 +35,13 @@
     ]
   },
   {
+    "ID": "5006",
+    "Name": "Entered New Game Plus",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
     "ID": "5007",
     "Name": "Acquired Great Pthumeru Ihyll Chalice",
     "Tags": [
@@ -259,8 +49,29 @@
     ]
   },
   {
+    "ID": "5009",
+    "Name": "Acquired Isz Chalice",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
     "ID": "5053",
     "Name": "Defeated Yharnam, Pthumerian Queen",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5090",
+    "Name": "Defeated Keeper of the Old Lords",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5091",
+    "Name": "Defeated Forgotten Madman",
     "Tags": [
       "flag"
     ]
@@ -329,6 +140,41 @@
     ]
   },
   {
+    "ID": "5200",
+    "Name": "Obtained Ludwig's Holy Blade in Cursed and Defiled Pthumeru",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5201",
+    "Name": "Obtained Chikage in Cursed and Defiled Pthumeru",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5202",
+    "Name": "Obtained Logarius's Wheel in Great Pthumeru Ihyll",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5203",
+    "Name": "Obtained Reiterpallasch in Cursed and Defiled Pthumeru",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5220",
+    "Name": "Obtained Beast Claw in Ailing Loran",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
     "ID": "5221",
     "Name": "Obtained Hunter Axe in Ailing Loran",
     "Tags": [
@@ -364,6 +210,34 @@
     ]
   },
   {
+    "ID": "5242",
+    "Name": "Obtained Chikage in Great Pthumeru Ihyll",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5243",
+    "Name": "Obtained Logarius's Wheel in Great Pthumeru Ihyll",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5244",
+    "Name": "Obtained Reiterpallasch in Great Pthumeru Ihyll",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5260",
+    "Name": "Obtained Beast Claw in Lower Loran",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
     "ID": "5261",
     "Name": "Obtained Burial Blade in Lower Loran",
     "Tags": [
@@ -392,6 +266,13 @@
     ]
   },
   {
+    "ID": "5280",
+    "Name": "Obtained Ludwig's Holy Blade in Great Isz",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
     "ID": "5281",
     "Name": "Obtained Kirkhammer in Great Isz",
     "Tags": [
@@ -406,8 +287,386 @@
     ]
   },
   {
+    "ID": "5500",
+    "Name": "Obtained Beasthunter Saif from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5501",
+    "Name": "Obtained Beasthunter Saif from Chalice Bath Messengers (Lost)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5502",
+    "Name": "Obtained Beast Cutter from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5503",
+    "Name": "Obtained Beast Cutter from Chalice Bath Messengers (Lost)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5504",
+    "Name": "Obtained Churchk Pick from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5505",
+    "Name": "Obtained Churchk Pick from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5506",
+    "Name": "Obtained Simon's Bowblade from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5507",
+    "Name": "Obtained Simon's Bowblade from Chalice Bath Messengers (Lost)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5508",
+    "Name": "Obtained Holy Moonlight Sword from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5509",
+    "Name": "Obtained Holy Moonlight Sword from Chalice Bath Messengers (Lost)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5510",
+    "Name": "Obtained Rakuyo from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5511",
+    "Name": "Obtained Rakuyo from Chalice Bath Messengers (Lost)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5512",
+    "Name": "Obtained Whirligig Saw from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5513",
+    "Name": "Obtained Whirligig Saw from Chalice Bath Messengers (Lost)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5514",
+    "Name": "Obtained Boom Hammer from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5515",
+    "Name": "Obtained Boom Hammer from Chalice Bath Messengers (Lost)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5516",
+    "Name": "Obtained Bloodletter from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5517",
+    "Name": "Obtained Bloodletter from Chalice Bath Messengers (Lost)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5518",
+    "Name": "Obtained Amygdalan Arm from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5519",
+    "Name": "Obtained Amygdalan Arm from Chalice Bath Messengers (Lost)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5520",
+    "Name": "Obtained Kos Parasite from Chalice Bath Messengers (Uncanny)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5521",
+    "Name": "Obtained Kos Parasite from Chalice Bath Messengers (Lost)",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5901",
+    "Name": "Game Progression: Nighttime",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5902",
+    "Name": "Game Progression: Blood Moon",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5903",
+    "Name": "Defeated the One Reborn",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5910",
+    "Name": "Defeated Father Gascoigne",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5911",
+    "Name": "Defeated Witch of Hemwick",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5912",
+    "Name": "Defeated Henryk at the Tomb of Oedon",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5913",
+    "Name": "Defeated Brain of Mensis",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "5914",
+    "Name": "Defeated Retired Hunter Djura in Old Yharnam",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6192",
+    "Name": "Cleared Pthumeru Ihyll Dungeon",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
     "ID": "6603",
     "Name": "Entered New Game Plus",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6610",
+    "Name": "Stock: Small Resonant Bell",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6622",
+    "Name": "Acquired Beckoning Bell",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6650",
+    "Name": "Stock: Sinister Resonant Bell",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6671",
+    "Name": "Acquired Firing Hammer Badge",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6675",
+    "Name": "Defeated Lady Maria of the Astral Clocktower",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6680",
+    "Name": "Obtained Beast Claw in Chalice Dungeon",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6681",
+    "Name": "Collected Treasure: Cannon",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6682",
+    "Name": "Collected Treasure: Hunter's Torch",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6683",
+    "Name": "Collected Treasure: Beasthunter Saif",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6684",
+    "Name": "Collected Treasure: Beast Cutter",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6685",
+    "Name": "Collected Treasure: Church Pick - Defeated Yahar'gul Hunter in Hunter's Nightmare",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6686",
+    "Name": "Collected Treasure: Simon's Bow Blade - Spoken/Looted Simon, Seeker of Secrets in Fishing Hamlet",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6687",
+    "Name": "Collected Treasure: Holy Moonlight Sword - Defeated Ludwig's Head",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6688",
+    "Name": "Collected Treasure: Rakuyo",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6689",
+    "Name": "Collected Treasure: Whirligig Saw",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6690",
+    "Name": "Collected Treasure: Boom Hammer",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6691",
+    "Name": "Collected Treasure: Bloodletter - Defeat Brador, Church Assassin",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6692",
+    "Name": "Collected Treasure: Amygdalan Arm",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6693",
+    "Name": "Collected Treasure: Kos Parasite - Defeat Orphan of Kos",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6694",
+    "Name": "Collected Treasure: Gatling Gun",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6695",
+    "Name": "Collected Treasure: Church Cannon",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6696",
+    "Name": "Collected Treasure: Fist of Gratia",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "6697",
+    "Name": "Collected Treasure: Loch Shield",
     "Tags": [
       "flag"
     ]
@@ -448,8 +707,43 @@
     ]
   },
   {
+    "ID": "12101005",
+    "Name": "Acquired Radiant Sword Hunter Badge",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "12101006",
+    "Name": "Acquired Wheel Hunter Badge",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "12101007",
+    "Name": "Acquired Cainhurst Badge",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
     "ID": "12101008",
     "Name": "Acquired Spark Hunter Badge",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "12101009",
+    "Name": "Acquired Cosmic Eye Watcher Badge",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70006504",
+    "Name": "Stock: Great One Beast Chalice",
     "Tags": [
       "flag"
     ]
@@ -532,8 +826,274 @@
     ]
   },
   {
+    "ID": "70009110",
+    "Name": "Stock: Tomb Prospector Hood",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009120",
+    "Name": "Stock: Tomb Prospector Garb",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009130",
+    "Name": "Stock: Tomb Prospector Gloves",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009140",
+    "Name": "Stock: Tomb Prospector Trousers",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009150",
+    "Name": "Stock: Gold Ardeo",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009160",
+    "Name": "Stock: Cainhurst Helmet",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009170",
+    "Name": "Stock: Cainhurst Armor",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009180",
+    "Name": "Stock: Cainhurst Gauntlets",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009190",
+    "Name": "Stock: Cainhurst Leggings",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009200",
+    "Name": "Stock: Sinister Lower Pthumeru Root Chalice",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009210",
+    "Name": "Stock: Sinister Hintertomb Root Chalice",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009220",
+    "Name": "Stock: Sinister Pthumeru Ihyll Root Chalice",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009230",
+    "Name": "Stock: Sinister Lower Loran Root Chalice",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009240",
+    "Name": "Stock: Sinister Isz Root Chalice",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
     "ID": "70009250",
     "Name": "Stock: Hunter Chief Emblem",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009260",
+    "Name": "Stock: Henryk Hunter's Cap",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009270",
+    "Name": "Stock: Henryk Hunter's Garb",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009280",
+    "Name": "Stock: Henryk Hunter's Gloves",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009290",
+    "Name": "Stock: Henryk Hunter's Trousers",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009300",
+    "Name": "Stock: Gascoigne's Cap",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009310",
+    "Name": "Stock: Gascoigne's Garb",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009320",
+    "Name": "Stock: Gascoigne's Gloves",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009330",
+    "Name": "Stock: Gascoigne's Trousers",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009340",
+    "Name": "Stock: Gray Wolf Cap",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009350",
+    "Name": "Stock: Ashen Hunter Garb",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009360",
+    "Name": "Stock: Ashen Hunter Gloves",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009370",
+    "Name": "Stock: Ashen Hunter Trousers",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009380",
+    "Name": "Stock: Bone Ash Mask",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009390",
+    "Name": "Stock: Bone Ash Armor",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009400",
+    "Name": "Stock: Bone Ash Gauntlets",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009410",
+    "Name": "Stock: Bone Ash Leggings",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009420",
+    "Name": "Stock: Madman Hood",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009430",
+    "Name": "Stock: Madman Garb",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009440",
+    "Name": "Stock: Madman Manchettes",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009450",
+    "Name": "Stock: Madman Leggings",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009460",
+    "Name": "Stock: Maria Hunter Cap",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009470",
+    "Name": "Stock: Maria Hunter Garb",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009480",
+    "Name": "Stock: Maria Hunter Gloves",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "70009490",
+    "Name": "Stock: Maria Hunter Trousers",
     "Tags": [
       "flag"
     ]
@@ -569,6 +1129,41 @@
   {
     "ID": "72101011",
     "Name": "Stock: Hunter Pistol",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "92905385",
+    "Name": "Reached Lower Pthumerian Labyrinth Layer 1",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "92905386",
+    "Name": "Reached Lower Hintertomb Layer 3",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "92905387",
+    "Name": "Reached Great Pthumeru Ihyll Layer 3",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "92905388",
+    "Name": "Reached Lower Loran Layer 3",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
+    "ID": "92905389",
+    "Name": "Reached Isz Gravestone Layer 3",
     "Tags": [
       "flag"
     ]
