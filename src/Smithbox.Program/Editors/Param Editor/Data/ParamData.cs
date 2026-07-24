@@ -592,7 +592,7 @@ public class ParamData : IDisposable
 
     public async Task<bool> SetupParamAnnotations()
     {
-        await Task.Yield();
+        await Task.Yield(); 
 
         ParamAnnotationLanguages = new();
 
