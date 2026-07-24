@@ -178,23 +178,26 @@ public class ParamEditorView
         }
 
         // Tools
-        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
-        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Tool_Window")}###paramEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+        if (CFG.Current.Interface_ParamEditor_ToolWindow)
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
+            if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Tool_Window")}###paramEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
             {
-                FocusManager.SetFocus(EditorFocusContext.ParamEditor_Tools);
-                Editor.ViewHandler.ActiveView = this;
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.ParamEditor_Tools);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                ToolMenu.Draw();
             }
 
-            ToolMenu.Draw();
+            ImGui.End();
         }
-
-        ImGui.End();
 
     }
 

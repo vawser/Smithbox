@@ -106,9 +106,6 @@ public class ParamToolMenu
 
     public void Draw()
     {
-        if (!CFG.Current.Interface_ParamEditor_ToolWindow)
-            return;
-
         if (ImGui.BeginMenuBar())
         {
             // View
