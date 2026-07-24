@@ -237,36 +237,36 @@
       "Text": "Failed to setup Auxilary Param Bank for {0}."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Derseralize_ParamDef",
+      "Text": "Failed to deseralize {0} as PARAMDEF."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Derseralize_ParamTypeInfo",
+      "Text": "Failed to deserialize {0} as Param Type Info."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Read_ParamTypeInfo",
+      "Text": "Failed to read Param Type Info file: {0}"
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Reload_Param_Meta_PASS",
+      "Text": "Reloaded Param META."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Reload_Param_Meta_FAIL",
+      "Text": "Failed to reload Param META."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Task_Refresh_Diff_Cache_PASS",
+      "Text": "Difference cache between param banks has been refreshed."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Task_Refresh_Diff_Cache_FAIL",
+      "Text": "Difference cache refresh has failed."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Derseralize_PARAM_META",
+      "Text": "Failed to deseralize {0} as PARAMMETA."
     },
     {
       "Key": "PARAM_Data_",

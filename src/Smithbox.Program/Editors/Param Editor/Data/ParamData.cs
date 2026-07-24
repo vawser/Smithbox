@@ -398,7 +398,7 @@ public class ParamData : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Param Editor] Failed to deseralize {f} as PARAMDEF", e);
+                Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Derseralize_ParamDef", f), e);
             }
         }
 
@@ -424,12 +424,12 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize Param Type Info: {paramTypeInfoPath}", e);
+                    Smithbox.LogError(this, LOC.Get("Failed to deserialize Param Type Info: {paramTypeInfoPath}", paramTypeInfoPath), e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Param Editor] Failed to read Param Type Info: {paramTypeInfoPath}", e);
+                Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Read_ParamTypeInfo", paramTypeInfoPath), e);
             }
         }
 
@@ -444,11 +444,11 @@ public class ParamData : IDisposable
 
         if (paramMetaTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Reloaded PARAM meta.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Reload_Param_Meta_PASS"));
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to reload PARAM meta.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Reload_Param_Meta_FAIL"));
         }
     }
 
@@ -457,9 +457,9 @@ public class ParamData : IDisposable
         // Refresh diff cache
         TaskManager.LiveTask task = new(
             "paramEditor_refreshDifferenceCache",
-            "[Param Editor]",
-            "Difference cache between param banks has been refreshed.",
-            "Difference cache refresh has failed.",
+            LOC.Get("SYS_Header"),
+            LOC.Get("PARAM_Data_Task_Refresh_Diff_Cache_PASS"),
+            LOC.Get("PARAM_Data_Task_Refresh_Diff_Cache_FAIL"),
             TaskManager.RequeueType.Repeat,
             true,
             LogPriority.Low,
@@ -583,7 +583,7 @@ public class ParamData : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Param Editor] Failed to deseralize {fName} as PARAMMETA", e);
+                Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Derseralize_PARAM_META", fName), e);
             }
         }
 
