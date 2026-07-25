@@ -4516,7 +4516,7 @@
       <Maximum>1</Maximum>
       <SortID>10199000</SortID>
     </Field>
-    <Field Def="u8 unk54c_3:1" />
+    <Field Def="u8 tankSkipSecondaryWindupWhenFiring:1" />
     <Field Def="dummy8 pad25:4">
       <DisplayName>pad</DisplayName>
       <SortID>90000000</SortID>
