@@ -77,7 +77,9 @@ namespace Andre.IO.VFS
                     else
                     {
                         f = new(null, h, b.BdtStream, b.BdtMmf);
+#if DEBUG
                         AndreLogging.For(this).LogWarning("Couldn't find name for file hash: {}", h.FileNameHash);
+#endif
                     }
                     fileList.Add(f);
                 }
@@ -154,7 +156,9 @@ namespace Andre.IO.VFS
                     //AndreLogging.For(this).LogWarning($"Warning: Found more than one file for path: \"{canonicalPath}\", hash: {hash}");
                     break;
             }
+#if DEBUG
             AndreLogging.For(this).LogWarning("File for path \"{p}\" wasn't cached in the file lookup table correctly. Hash: {h}", canonicalPath, hash);
+#endif
             file = tmp[0];
             return true;
 

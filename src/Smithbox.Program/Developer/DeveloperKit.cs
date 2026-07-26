@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Utilities;
 using System.Numerics;
 using System.Text.Json;
@@ -212,7 +213,12 @@ public class DeveloperKit
             "validateFileDictionary",
             "Validate File Dictionary",
             "",
-            ValidateFileDictionary);
+            ValidateFileDictionary,
+
+            "generateSpeedTreeList",
+            "Generate SpeedTree List",
+            "",
+            GenerateSpeedTreeList);
     }
 
     public void ValidateFileDictionary()
@@ -244,5 +250,60 @@ public class DeveloperKit
         var writePath = Path.Join(CFG.Current.DEVKIT_DataPath_OutputFolder, "validated_file_dictionary.json");
         var jsonString = JsonSerializer.Serialize(newFileDictionary, ProjectJsonSerializerContext.Default.FileDictionary);
         File.WriteAllText(writePath, jsonString);
+    }
+
+    public Dictionary<ProjectType, List<string>> SpeedTreeAssets = new();
+
+    public void GenerateSpeedTreeList()
+    {
+        var success = Projects.TryGetValue(TargetProject, out var targetProject);
+        if (!success)
+            return;
+
+        if(!SpeedTreeAssets.ContainsKey(targetProject.Descriptor.ProjectType))
+        {
+            SpeedTreeAssets.Add(targetProject.Descriptor.ProjectType, new List<string>());
+        }
+
+        var assets = targetProject.Locator.AssetFiles;
+        foreach(var entry in assets.Entries)
+        {
+            if(targetProject.VFS.FS.FileExists(entry.Path))
+            {
+                try
+                {
+                    var data = targetProject.VFS.FS.ReadFileOrThrow(entry.Path);
+
+                    var binder = BND4.Read(data);
+                    var flverFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".flver"));
+
+                    if(flverFile != null)
+                    {
+                        var flver = FLVER2.Read(flverFile.Bytes);
+                        if (flver.IsSpeedtree())
+                        {
+                            SpeedTreeAssets[targetProject.Descriptor.ProjectType].Add(entry.Filename);
+                            Smithbox.Log(this, $"SpeedTree added: {entry.Filename}");
+                        }
+
+                        flver = null;
+                    }
+
+                    binder = null;
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, ex.ToString());
+                }
+            }
+        }
+
+        foreach(var entry in SpeedTreeAssets)
+        {
+            var writePath = Path.Join(CFG.Current.DEVKIT_DataPath_OutputFolder, $"{entry.Key}_SpeedTreeAssets.json");
+            var text = string.Join("\n", entry.Value);
+
+            File.WriteAllText(writePath, text);
+        }
     }
 }
