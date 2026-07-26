@@ -499,46 +499,6 @@ public class ProjectOrchestrator : IDisposable
         }
     }
 
-    #region Updater
-    public unsafe void DisplayUpdater(float dt, uint mainDockspaceID)
-    {
-        if (Smithbox.Instance._context.Device == null)
-        {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, *ImGui.GetStyleColorVec4(ImGuiCol.WindowBg));
-        }
-        else
-        {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.0f, 0.0f, 0.0f, 0.0f));
-        }
-
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
-
-        ImGui.SetNextWindowDockID(mainDockspaceID, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-
-        if (ImGui.Begin($"{LOC.Get("UPDATER_Window_Title")}###ProgramUpdater", GUI.GetInnerWindowFlags()))
-        {
-            ImGui.PopStyleColor(1);
-            ImGui.PopStyleVar(1);
-
-            DisplayUpdater();
-
-            ImGui.End();
-        }
-        else
-        {
-            ImGui.PopStyleColor(1);
-            ImGui.PopStyleVar(1);
-            ImGui.End();
-        }
-    }
-
-    public void DisplayUpdater()
-    {
-        ImGui.Text("HI");
-    }
-    #endregion
-
     #region Dispose
     private bool _disposed;
 

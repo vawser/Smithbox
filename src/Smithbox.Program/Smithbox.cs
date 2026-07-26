@@ -637,7 +637,7 @@ public class Smithbox
         }
         else if(ProgramType is ProgramType.Updater)
         {
-            Orchestrator.DisplayUpdater(deltaseconds, dockspaceID);
+            ProgramUpdater.Display(deltaseconds, dockspaceID);
         }
 
         DeveloperPanel.Display(dockspaceID);
