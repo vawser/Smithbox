@@ -16,7 +16,7 @@ namespace SoapstoneLib
         /// <summary>
         /// Standard server info for DSMapStudio and DSMapStudio fork Smithbox.
         /// </summary>
-        public static readonly KnownServer DSMapStudio = new KnownServer(22720, "DSMapStudio", "Smithbox");
+        public static readonly KnownServer DSMapStudio = new KnownServer(22720, "DSMapStudio", "Smithbox.Vulkan", "Smithbox.OpenGL");
 
         /// <summary>
         /// Alternate name for DSMapstudio/Smithbox server info.
