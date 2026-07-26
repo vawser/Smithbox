@@ -1,0 +1,136 @@
+{
+  "Entries": [
+    {
+      "Key": "UPDATER_Window_Title",
+      "Text": "Updater"
+    },
+    {
+      "Key": "UPDATER_Modal_Title",
+      "Text": "Updater Progress"
+    },
+    {
+      "Key": "UPDATER_Update_Hint",
+      "Text": "Use this tool to quickly update Smithbox."
+    },
+    {
+      "Key": "UPDATER_Updater_Version_Header",
+      "Text": "Updater Executable"
+    },
+    {
+      "Key": "UPDATER_Updater_Version_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "UPDATER_Vulkan_Version_Header",
+      "Text": "Vulkan Executable"
+    },
+    {
+      "Key": "UPDATER_Vulkan_Version_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "UPDATER_OpenGL_Version_Header",
+      "Text": "OpenGL Executable"
+    },
+    {
+      "Key": "UPDATER_OpenGL_Version_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "UPDATER_File_Version",
+      "Text": "File Version: {0}"
+    },
+    {
+      "Key": "UPDATER_Is_Debug_Build",
+      "Text": "Is Debug: {0}"
+    },
+    {
+      "Key": "UPDATER_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "UPDATER_Actions_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "UPDATER_Download_Latest_Action",
+      "Text": "Download and Extract Latest Release"
+    },
+    {
+      "Key": "UPDATER_Download_Latest_Action_TT",
+      "Text": "Select a folder to extract and download the latest Smithbox release into."
+    },
+    {
+      "Key": "UPDATER_Phase_Starting",
+      "Text": "Starting..."
+    },
+    {
+      "Key": "UPDATER_Phase_Checking",
+      "Text": "Checking..."
+    },
+    {
+      "Key": "UPDATER_Step_FetchingMetadata",
+      "Text": "Fetching metadata"
+    },
+    {
+      "Key": "UPDATER_Log_No_Assets_Found",
+      "Text": "No assets found in the latest release."
+    },
+    {
+      "Key": "UPDATER_Log_No_Zip_Asset_Found",
+      "Text": "No .zip asset found in the latest release."
+    },
+    {
+      "Key": "UPDATER_Step_Downloading_Known",
+      "Text": "Downloaded {0} out of {1}"
+    },
+    {
+      "Key": "UPDATER_Step_Downloading_Unknown",
+      "Text": "Downloaded {0}"
+    },
+    {
+      "Key": "UPDATER_Phase_Downloading",
+      "Text": "Downloading..."
+    },
+    {
+      "Key": "UPDATER_Log_Entry_Outside_of_Dest_Folder",
+      "Text": "Entry is outside the destination folder: {0}"
+    },
+    {
+      "Key": "UPDATER_Phase_Extracting",
+      "Text": "Extracting..."
+    },
+    {
+      "Key": "UPDATER_Step_Extracting_File",
+      "Text": "Extracting {0}"
+    },
+    {
+      "Key": "UPDATER_Phase_Complete",
+      "Text": "Completed"
+    },
+    {
+      "Key": "UPDATER_Step_Complete",
+      "Text": ""
+    },
+    {
+      "Key": "UPDATER_Phase_Failed",
+      "Text": "Failed"
+    },
+    {
+      "Key": "UPDATER_OutOfDate_Warning",
+      "Text": "Program is out-of-date: {0} is older than {1}"
+    },
+    {
+      "Key": "UPDATER_UpToDate_Message",
+      "Text": "Program is up-to-date."
+    },
+    {
+      "Key": "UPDATER_VersionCheck_Failed",
+      "Text": "Program version check failed."
+    },
+    {
+      "Key": "UPDATER_VersionCheck_ParseWarning",
+      "Text": "Couldn't parse one or both versions as a System.Version."
+    }
+  ]
+}

@@ -89,6 +89,10 @@
       "Text": "Go to Github Repository"
     },
     {
+      "Key": "HELP_Action_Go_To_Github_TT",
+      "Text": "Go to the Github repository page."
+    },
+    {
       "Key": "HELP_Action_Go_To_Wiki_TT",
       "Text": "Go to the SoulsModding Wiki."
     },

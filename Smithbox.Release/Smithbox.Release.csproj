@@ -8,17 +8,83 @@
     <Configurations>Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
   </PropertyGroup>
 
+  <!--
+    RuntimeIdentifier is NOT inferred from the Configuration name.
+    Without this, $(RuntimeIdentifier) is empty, the bin paths below
+    resolve to the wrong (non-RID) folder, the file globs match
+    nothing, and the Copy tasks silently no-op with no error.
+  -->
+  <PropertyGroup Condition="'$(Configuration)'=='Release-win' Or '$(Configuration)'=='Debug-win'">
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release-linux' Or '$(Configuration)'=='Debug-linux'">
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release-osx' Or '$(Configuration)'=='Debug-osx'">
+    <RuntimeIdentifier>osx-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <!--
+    Fallback for when the solution's active configuration is plain
+    "Debug"/"Release" (Any CPU) rather than one of the -win/-linux/-osx
+    configurations above - e.g. Visual Studio's default. In that case
+    none of the conditions above fire and RuntimeIdentifier is still
+    empty, so infer it from the host OS instead of leaving it blank.
+    Prefer explicitly switching the solution configuration to
+    Debug-win/Release-win/etc. in Configuration Manager - this is a
+    safety net, not a substitute for that.
+  -->
+  <PropertyGroup Condition="'$(RuntimeIdentifier)'=='' And $([MSBuild]::IsOSPlatform('Windows'))">
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RuntimeIdentifier)'=='' And $([MSBuild]::IsOSPlatform('Linux'))">
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RuntimeIdentifier)'=='' And $([MSBuild]::IsOSPlatform('OSX'))">
+    <RuntimeIdentifier>osx-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\Smithbox.Vulkan\Smithbox.Vulkan.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\src\Smithbox.OpenGL\Smithbox.OpenGL.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\src\Smithbox.Updater\Smithbox.Updater.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+
+  <!--
+    Safety net: explicitly (re)build the three dependent projects with the
+    exact same Configuration/RuntimeIdentifier this project is using.
+    Under "Build Solution" in VS this is effectively a no-op (they're
+    already up to date), but it guarantees correctness if this project is
+    ever built standalone, from the CLI, or if solution build order
+    changes for any reason.
+  -->
+  <Target Name="BuildDependencies" BeforeTargets="AssembleRelease">
     <ItemGroup>
-      <ProjectReference Include="..\src\Smithbox.Vulkan\Smithbox.Vulkan.csproj">
-        <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      </ProjectReference>
-      <ProjectReference Include="..\src\Smithbox.OpenGL\Smithbox.OpenGL.csproj">
-        <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      </ProjectReference>
-      <ProjectReference Include="..\src\Smithbox.Updater\Smithbox.Updater.csproj">
-        <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      </ProjectReference>
+      <ProjectsToBuild Include="..\src\Smithbox.Vulkan\Smithbox.Vulkan.csproj" />
+      <ProjectsToBuild Include="..\src\Smithbox.OpenGL\Smithbox.OpenGL.csproj" />
+      <ProjectsToBuild Include="..\src\Smithbox.Updater\Smithbox.Updater.csproj" />
     </ItemGroup>
+    <!--
+      Only forward RuntimeIdentifier when it's actually set. Passing
+      RuntimeIdentifier="" as a global property overrides the child
+      projects' own RID inference and breaks SelfContained-inferring
+      SDK logic (NETSDK1191), which is worse than not passing it.
+    -->
+    <MSBuild Projects="@(ProjectsToBuild)"
+             Targets="Build"
+             Properties="Configuration=$(Configuration);Platform=$(Platform)"
+             Condition="'$(RuntimeIdentifier)'==''" />
+    <MSBuild Projects="@(ProjectsToBuild)"
+             Targets="Build"
+             Properties="Configuration=$(Configuration);Platform=$(Platform);RuntimeIdentifier=$(RuntimeIdentifier)"
+             Condition="'$(RuntimeIdentifier)'!=''" />
+  </Target>
 
   <Target Name="AssembleRelease" AfterTargets="Build">
 
@@ -29,28 +95,35 @@
       <UpdaterOutDir>$(SolutionDir)src\Smithbox.Updater\bin\$(Configuration)\net10.0\$(RuntimeIdentifier)\</UpdaterOutDir>
     </PropertyGroup>
 
+    <!-- Fail loudly instead of silently copying nothing if a RID/path is wrong -->
+    <Error Text="RuntimeIdentifier is empty for Configuration '$(Configuration)'. Cannot locate build outputs."
+           Condition="'$(RuntimeIdentifier)'==''" />
+    <Error Text="Vulkan output folder not found: $(VulkanOutDir)"
+           Condition="!Exists('$(VulkanOutDir)')" />
+    <Error Text="OpenGL output folder not found: $(OpenGLOutDir)"
+           Condition="!Exists('$(OpenGLOutDir)')" />
+    <Error Text="Updater output folder not found: $(UpdaterOutDir)"
+           Condition="!Exists('$(UpdaterOutDir)')" />
+
     <RemoveDir Directories="$(ReleaseDir)" Condition="Exists('$(ReleaseDir)')" />
 
     <ItemGroup>
       <VulkanFiles Include="$(VulkanOutDir)**\*" />
-    </ItemGroup>
-    <Copy SourceFiles="@(VulkanFiles)"
-          DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
-          SkipUnchangedFiles="true" />
-
-    <ItemGroup>
       <OpenGLFiles Include="$(OpenGLOutDir)**\*" />
-    </ItemGroup>
-    <Copy SourceFiles="@(OpenGLFiles)"
-          DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
-          SkipUnchangedFiles="true" />
-
-    <ItemGroup>
       <UpdaterFiles Include="$(UpdaterOutDir)**\*" />
     </ItemGroup>
+
+    <Copy SourceFiles="@(VulkanFiles)"
+          DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
+          SkipUnchangedFiles="false" />
+
+    <Copy SourceFiles="@(OpenGLFiles)"
+          DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
+          SkipUnchangedFiles="false" />
+
     <Copy SourceFiles="@(UpdaterFiles)"
           DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
-          SkipUnchangedFiles="true" />
+          SkipUnchangedFiles="false" />
 
     <Message Importance="high" Text="Release folder assembled at $(ReleaseDir)" />
 
