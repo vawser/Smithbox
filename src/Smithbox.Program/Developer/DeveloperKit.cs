@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Utilities;
 using System.Numerics;
+using System.Text.Json;
 
 namespace StudioCore.Developer;
 
@@ -202,6 +203,46 @@ public class DeveloperKit
     // Single-click actions
     public void DisplayCommonActions()
     {
+        var success = Projects.TryGetValue(TargetProject, out var targetProject);
 
+        if (!success)
+            return;
+
+        GUI.MultiButtonInput("commonActions",
+            "validateFileDictionary",
+            "Validate File Dictionary",
+            "",
+            ValidateFileDictionary);
+    }
+
+    public void ValidateFileDictionary()
+    {
+        var success = Projects.TryGetValue(TargetProject, out var targetProject);
+        if (!success)
+            return;
+
+        var newFileDictionary = new FileDictionary();
+
+        foreach(var entry in targetProject.Locator.FileDictionary.Entries)
+        {
+            var newFileEntry = entry.Clone();
+
+            var exists = targetProject.VFS.FS.FileExists(entry.Path);
+
+            if(exists)
+            {
+                newFileEntry.Validated = true;
+            }
+            else
+            {
+                newFileEntry.Validated = false;
+            }
+
+            newFileDictionary.Entries.Add(newFileEntry);
+        }
+
+        var writePath = Path.Join(CFG.Current.DEVKIT_DataPath_OutputFolder, "validated_file_dictionary.json");
+        var jsonString = JsonSerializer.Serialize(newFileDictionary, ProjectJsonSerializerContext.Default.FileDictionary);
+        File.WriteAllText(writePath, jsonString);
     }
 }

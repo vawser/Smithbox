@@ -19,6 +19,8 @@ public class FileDictionaryEntry : IComparable
     public string Filename { get; set; }
     public string Extension { get; set; }
 
+    public bool Validated { get; set; }
+
     public int CompareTo(object obj)
     {
         var compare = (FileDictionaryEntry)obj;

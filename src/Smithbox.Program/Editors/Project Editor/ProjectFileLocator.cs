@@ -124,6 +124,16 @@ public class ProjectFileLocator : IDisposable
             }
         }
 
+        var baseDictionary = new FileDictionary();
+        // Add only validated entries
+        foreach(var entry in jsonFileDictionary.Entries)
+        {
+            if(entry.Validated)
+            {
+                baseDictionary.Entries.Add(entry);
+            }
+        }
+
         if (!silent)
         {
             reportProgress?.Invoke(new()
@@ -138,13 +148,13 @@ public class ProjectFileLocator : IDisposable
         {
             var projectFileDictionary = BuildProjectFileDictionary(
                 Project.Descriptor.ProjectPath,
-                jsonFileDictionary, Project.Descriptor.ProjectType);
+                baseDictionary, Project.Descriptor.ProjectType);
 
-            FileDictionary = MergeFileDictionaries(jsonFileDictionary, projectFileDictionary);
+            FileDictionary = MergeFileDictionaries(baseDictionary, projectFileDictionary);
         }
         else
         {
-            FileDictionary = jsonFileDictionary;
+            FileDictionary = baseDictionary;
         }
 
         if (!silent)
