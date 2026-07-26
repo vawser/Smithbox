@@ -2,10 +2,6 @@
 # TODO 
 #---------------------
 
-# Program
-- Find issue with Soapstone Server not appearing in DarkScript 
- - May require revert of the MCP PR
-
 # Map Editor:
  - Speed tree placeholders not working
   - Generate list of 'speedtree' assets to JSON for each project type

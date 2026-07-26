@@ -9,6 +9,10 @@
       "Text": "Smithbox Updater"
     },
     {
+      "Key": "PROGRAM_DEVELOPER_TITLE",
+      "Text": "Developer Tools"
+    },
+    {
       "Key": "GIT_REPO_NAME",
       "Text": "Smithbox"
     },

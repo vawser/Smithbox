@@ -60,6 +60,10 @@ public class Smithbox
     public RenderingBackend CurrentBackend = RenderingBackend.Vulkan;
     public ProgramType ProgramType = ProgramType.Editor;
 
+    // Updater
+    public ProgramUpdater Updater;
+    public DeveloperKit DeveloperKit;
+
     public unsafe Smithbox(string version, RenderingBackend backendType, ProgramType programType)
     {
         ProgramType = programType;
@@ -76,6 +80,19 @@ public class Smithbox
         else if(ProgramType is ProgramType.Updater)
         {
             _programTitle = $"{LOC.Get("PROGRAM_UPDATER_TITLE")} - {_version}";
+        }
+        else if (ProgramType is ProgramType.Developer)
+        {
+            _programTitle = $"{LOC.Get("PROGRAM_DEVELOPER_TITLE")} - {_version}";
+        }
+
+        if (ProgramType is ProgramType.Updater)
+        {
+            Updater = new();
+        }
+        if (ProgramType is ProgramType.Developer)
+        {
+            DeveloperKit = new();
         }
 
         GUI.RestoreImguiIfMissing();
@@ -408,11 +425,7 @@ public class Smithbox
 
             if (!_context.Window.Exists)
             {
-                if (ProgramType is ProgramType.Editor)
-                {
-                    Orchestrator.Exit();
-                }
-
+                Orchestrator.Exit();
                 Exit();
 
                 break;
@@ -637,7 +650,17 @@ public class Smithbox
         }
         else if(ProgramType is ProgramType.Updater)
         {
-            ProgramUpdater.Display(deltaseconds, dockspaceID);
+            if(Updater != null)
+            {
+                Updater.Display(deltaseconds, dockspaceID);
+            }
+        }
+        else if (ProgramType is ProgramType.Developer)
+        {
+            if (DeveloperKit != null)
+            {
+                DeveloperKit.Display(deltaseconds, dockspaceID);
+            }
         }
 
         DeveloperPanel.Display(dockspaceID);

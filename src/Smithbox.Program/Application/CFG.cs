@@ -26,6 +26,28 @@ public class CFG
     // Options: exposes via ImGui elements such as checkboxes or combo-lists
     // Internal: used for persistent state
 
+    #region Developer Kit
+    public bool DEVKIT_DisplayDataSources = true;
+    public string DEVKIT_DataPath_DataFolder = "";
+    public string DEVKIT_DataPath_OutputFolder = "";
+    public string DEVKIT_DataPath_DES = "";
+    public string DEVKIT_DataPath_DS1 = "";
+    public string DEVKIT_DataPath_DS1R = "";
+    public string DEVKIT_DataPath_DS2 = "";
+    public string DEVKIT_DataPath_DS2S = "";
+    public string DEVKIT_DataPath_DS3 = "";
+    public string DEVKIT_DataPath_BB = "";
+    public string DEVKIT_DataPath_SDT = "";
+    public string DEVKIT_DataPath_ER = "";
+    public string DEVKIT_DataPath_AC6 = "";
+    public string DEVKIT_DataPath_NR = "";
+
+    #endregion
+
+    #region Updater
+
+    #endregion
+
     #region GFX
     ///------------------------------------------------------------
     /// GFX

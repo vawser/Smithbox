@@ -57,6 +57,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Release", "Smithbo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Updater", "src\Smithbox.Updater\Smithbox.Updater.csproj", "{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Developer", "src\Smithbox.Developer\Smithbox.Developer.csproj", "{3592B851-4CAB-FF8A-BFEB-44088C45D38B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -941,6 +943,38 @@ Global
 		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-win|Any CPU.Build.0 = Release-win|Any CPU
 		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-win|x64.ActiveCfg = Release-win|Any CPU
 		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-win|x64.Build.0 = Release-win|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug|x64.Build.0 = Debug|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-linux|Any CPU.ActiveCfg = Debug-linux|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-linux|Any CPU.Build.0 = Debug-linux|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-linux|x64.ActiveCfg = Debug-linux|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-linux|x64.Build.0 = Debug-linux|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-osx|Any CPU.ActiveCfg = Debug-osx|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-osx|Any CPU.Build.0 = Debug-osx|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-osx|x64.ActiveCfg = Debug-osx|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-osx|x64.Build.0 = Debug-osx|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-win|Any CPU.ActiveCfg = Debug-win|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-win|Any CPU.Build.0 = Debug-win|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-win|x64.ActiveCfg = Debug-win|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Debug-win|x64.Build.0 = Debug-win|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release|x64.ActiveCfg = Release|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release|x64.Build.0 = Release|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-linux|Any CPU.ActiveCfg = Release-linux|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-linux|Any CPU.Build.0 = Release-linux|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-linux|x64.ActiveCfg = Release-linux|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-linux|x64.Build.0 = Release-linux|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-osx|Any CPU.ActiveCfg = Release-osx|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-osx|Any CPU.Build.0 = Release-osx|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-osx|x64.ActiveCfg = Release-osx|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-osx|x64.Build.0 = Release-osx|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-win|Any CPU.ActiveCfg = Release-win|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-win|Any CPU.Build.0 = Release-win|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-win|x64.ActiveCfg = Release-win|Any CPU
+		{3592B851-4CAB-FF8A-BFEB-44088C45D38B}.Release-win|x64.Build.0 = Release-win|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

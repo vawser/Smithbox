@@ -12,17 +12,23 @@ using System.Text.Json;
 
 namespace StudioCore.Application;
 
-public static class ProgramUpdater
+public class ProgramUpdater
 {
     private const string Owner = "vawser";
     private const string Repo = "Smithbox";
 
-    private static readonly HttpClient _httpClient = CreateHttpClient();
+    private readonly HttpClient _httpClient;
 
-    public static UpdaterProgress LoadProgress;
-    public static Action<UpdaterProgress> ReportProgress = SetProgress;
+    public UpdaterProgress LoadProgress;
+    public Action<UpdaterProgress> ReportProgress;
 
-    private static void SetProgress(UpdaterProgress progress)
+    public ProgramUpdater()
+    {
+        _httpClient = CreateHttpClient();
+        ReportProgress = SetProgress;
+    }
+
+    private void SetProgress(UpdaterProgress progress)
     {
         lock (_progressLock)
         {
@@ -30,12 +36,12 @@ public static class ProgramUpdater
         }
     }
 
-    public static readonly object _progressLock = new();
+    public readonly object _progressLock = new();
 
-    public static bool DisplayModal = false;
-    public static bool InitialLayout = false;
+    public bool DisplayModal = false;
+    public bool InitialLayout = false;
 
-    private static HttpClient CreateHttpClient()
+    private HttpClient CreateHttpClient()
     {
         var client = new HttpClient();
         // GitHub API requires a User-Agent header
@@ -44,7 +50,7 @@ public static class ProgramUpdater
         return client;
     }
 
-    public static unsafe void Display(float dt, uint mainDockspaceID)
+    public unsafe void Display(float dt, uint mainDockspaceID)
     {
         CheckForUpdate();
 
@@ -81,7 +87,7 @@ public static class ProgramUpdater
         DisplayUpdaterModal();
     }
 
-    public static void DisplayUpdater()
+    public void DisplayUpdater()
     {
         var baseDir = AppContext.BaseDirectory;
 
@@ -167,7 +173,7 @@ public static class ProgramUpdater
         ImGui.EndChild();
     }
 
-    public static void DownloadLatestRelease()
+    public void DownloadLatestRelease()
     {
         var success = PlatformUtils.Instance.OpenFolderDialog(
             LOC.Get("DIALOG_Select_Directory"), out var path);
@@ -187,7 +193,7 @@ public static class ProgramUpdater
             _ = DownloadLatestReleaseAsync(path);
         }
     }
-    private static async Task DownloadLatestReleaseAsync(string destinationFolder)
+    private async Task DownloadLatestReleaseAsync(string destinationFolder)
     {
         try
         {
@@ -353,7 +359,7 @@ public static class ProgramUpdater
             DisplayModal = false;
         }
     }
-    private static string FormatBytes(long bytes)
+    private string FormatBytes(long bytes)
     {
         string[] sizes = { "B", "KB", "MB", "GB" };
         double len = bytes;
@@ -366,7 +372,7 @@ public static class ProgramUpdater
         return $"{len:0.##} {sizes[order]}";
     }
 
-    public static void DisplayUpdaterModal()
+    public void DisplayUpdaterModal()
     {
         if (!DisplayModal)
             return;
@@ -411,13 +417,13 @@ public static class ProgramUpdater
         }
     }
 
-    private static bool _hasCheckedForUpdate = false;
-    private static bool _isCheckingForUpdate = false;
-    private static bool _isOutOfDate = false;
-    private static string _latestVersionTag = "";
-    private static string _versionCheckError = "";
+    private bool _hasCheckedForUpdate = false;
+    private bool _isCheckingForUpdate = false;
+    private bool _isOutOfDate = false;
+    private string _latestVersionTag = "";
+    private string _versionCheckError = "";
 
-    public static void CheckForUpdate()
+    public void CheckForUpdate()
     {
         if (_hasCheckedForUpdate || _isCheckingForUpdate)
             return;
@@ -426,7 +432,7 @@ public static class ProgramUpdater
         _ = CheckForUpdateAsync();
     }
 
-    private static async Task CheckForUpdateAsync()
+    private async Task CheckForUpdateAsync()
     {
         try
         {

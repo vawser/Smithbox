@@ -10,5 +10,6 @@ namespace StudioCore.Application;
 public enum ProgramType
 {
     Editor,
-    Updater
+    Updater,
+    Developer
 }
