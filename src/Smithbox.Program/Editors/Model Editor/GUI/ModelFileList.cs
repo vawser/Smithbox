@@ -30,7 +30,9 @@ public class ModelFileList
 
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader("Files", "");
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_FileList_Header"),
+            LOC.Get("MODEL_FileList_Header_TT"));
 
         EditorFilters.DisplayFramedListFilter("modelEditor_fileList",
             ref FileListFilter, ref ExactFileListFilter);
@@ -142,7 +144,8 @@ public class ModelFileList
     {
         if (ImGui.BeginPopupContextItem($@"modelSelectListEntryContext_{wrapper.Name}"))
         {
-            if (ImGui.Selectable("Load"))
+            // Load
+            if (ImGui.Selectable($"{LOC.Get("MODEL_FileList_Context_Load_Action")}##loadAction"))
             {
                 if (View.Selection.SelectedModelWrapper != null)
                 {
@@ -157,7 +160,8 @@ public class ModelFileList
                 wrapper.Load();
             }
 
-            if (ImGui.Selectable("Unload"))
+            // Unload
+            if (ImGui.Selectable($"{LOC.Get("MODEL_FileList_Context_Unload_Action")}##unloadAction"))
             {
                 View.Selection.SelectedModelWrapper = null;
 

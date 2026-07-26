@@ -71,7 +71,6 @@ public class ModelShortcuts
         }
 
         // Actions
-        activeView.CreateAction.OnShortcut();
         activeView.DuplicateAction.OnShortcut();
         activeView.DeleteAction.OnShortcut();
         activeView.FrameAction.OnShortcut();

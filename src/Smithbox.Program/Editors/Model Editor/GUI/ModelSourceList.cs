@@ -47,7 +47,9 @@ public class ModelContainerList
 
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader("Containers", "");
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_SourceList_Header"),
+            LOC.Get("MODEL_SourceList_Header_TT"));
 
         DisplayHeader();
 
@@ -55,7 +57,8 @@ public class ModelContainerList
 
         ImGui.BeginTabBar("sourceTabs");
 
-        if (ImGui.BeginTabItem("Characters"))
+        // Characters
+        if (ImGui.BeginTabItem($"{LOC.Get("MODEL_SourceList_Tab_Characters")}##characterTab"))
         {
             CurrentTab = ModelListType.Character;
 
@@ -67,13 +70,14 @@ public class ModelContainerList
             ImGui.EndTabItem();
         }
 
-        var name = "Objects";
+        // Objects / Assets
+        var name = LOC.Get("MODEL_SourceList_Tab_Objects");
         if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
-            name = "Assets";
+            name = LOC.Get("MODEL_SourceList_Tab_Assets");
         }
 
-        if (ImGui.BeginTabItem($"{name}"))
+        if (ImGui.BeginTabItem($"{name}##objectTab"))
         {
             CurrentTab = ModelListType.Asset;
 
@@ -85,7 +89,8 @@ public class ModelContainerList
             ImGui.EndTabItem();
         }
 
-        if (ImGui.BeginTabItem("Parts"))
+        // Parts
+        if (ImGui.BeginTabItem($"{LOC.Get("MODEL_SourceList_Tab_Parts")}##partsTab"))
         {
             CurrentTab = ModelListType.Part;
 
@@ -97,7 +102,8 @@ public class ModelContainerList
             ImGui.EndTabItem();
         }
 
-        if (ImGui.BeginTabItem("Map Pieces"))
+        // Map Pieces
+        if (ImGui.BeginTabItem($"{LOC.Get("MODEL_SourceList_MapPieces")}##mapPieceTab"))
         {
             CurrentTab = ModelListType.MapPiece;
 
@@ -124,21 +130,21 @@ public class ModelContainerList
         bool filterChanged = ImGui.IsItemDeactivatedAfterEdit();
         bool tabChanged = _previousTab != CurrentTab;
 
-        GUI.Tooltip("Filter the model list entries.");
+        GUI.Tooltip(LOC.Get("MODEL_SourceList_Filter_TT"));
 
         ImGui.SameLine();
 
         // Load Mode
-        var loadMode = "Load on Select";
+        var loadMode = LOC.Get("MODEL_SourceList_Toggle_Load_Mode_Select");
         if (CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick)
-            loadMode = "Load on Double-Click";
+            loadMode = LOC.Get("MODEL_SourceList_Toggle_Load_Mode_Double_Click");
 
         ImGui.AlignTextToFramePadding();
         if (ImGui.Button($"{Icons.Bars}"))
         {
             CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick = !CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick;
         }
-        GUI.Tooltip($"Determines the loading behavior in the model source lists.\nLoad Type: {loadMode}");
+        GUI.Tooltip(LOC.Get("MODEL_SourceList_Toggle_Load_Mode_TT", loadMode));
 
         ImGui.EndChild();
 
@@ -294,7 +300,8 @@ public class ModelContainerList
     {
         if (ImGui.BeginPopupContextItem($@"modelSourceListEntryContext_{fileEntry.Filename}"))
         {
-            if (ImGui.Selectable("Load"))
+            // Load
+            if (ImGui.Selectable($"{LOC.Get("MODEL_SourceList_Context_Action_Load")}##loadAction"))
             {
                 var entry = Project.Handler.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
                 if (entry.Value != null)
@@ -309,18 +316,21 @@ public class ModelContainerList
                 }
             }
 
-            if (ImGui.Selectable("Copy Name"))
+            // Copy Name
+            if (ImGui.Selectable($"{LOC.Get("MODEL_SourceList_Context_Action_Copy_Name")}##copyNameAction"))
             {
                 PlatformUtils.Instance.SetClipboardText($"{fileEntry.Filename}");
             }
+            GUI.Tooltip(LOC.Get("MODEL_SourceList_Context_Action_Copy_Name_TT"));
 
-            // Action to quickly update the alias JSON, makes sense here since you can view model -> decide alias
-            if (ImGui.BeginMenu("Update Alias"))
+            // Update Alias
+            if (ImGui.BeginMenu($"{LOC.Get("MODEL_SourceList_Context_Action_Update_Alias_Header")}##updateAliasMenuHeader"))
             {
                 DisplayAliasUpdateMenu(fileEntry, modelListType);
 
                 ImGui.EndMenu();
             }
+            GUI.Tooltip(LOC.Get("MODEL_SourceList_Context_Action_Update_Alias_TT"));
 
             ImGui.EndPopup();
         }
@@ -336,7 +346,10 @@ public class ModelContainerList
         var entries = Project.Handler.ProjectData.Aliases[aliasType];
         var existing = entries.FirstOrDefault(e => e.ID == fileEntry.Filename);
 
-        GUI.SimpleHeader("Alias Name", "");
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_SourceList_Alias_Name"),
+            LOC.Get("MODEL_SourceList_Alias_Name_TT"));
+
         ImGui.InputText("##aliasName", ref CurrentAliasName, 255);
 
         var tblFlags = ImGuiTableFlags.SizingFixedFit;
@@ -350,7 +363,7 @@ public class ModelContainerList
 
             ImGui.PushStyleVar(ImGuiStyleVar.ButtonTextAlign, new Vector2(0.01f, 0.5f));
 
-            if (ImGui.Button("Commit##commitAlias"))
+            if (ImGui.Button($"{LOC.Get("MODEL_SourceList_Commit_Alias")}##commitAlias"))
             {
                 if (existing != null)
                 {
@@ -364,8 +377,9 @@ public class ModelContainerList
                 Project.Handler.ProjectData.Aliases[aliasType] = entries;
                 Smithbox.Orchestrator.ProjectMetadataEditor.AliasMenu.SaveIndividualAlias(aliasType);
 
-                Smithbox.Log<ModelContainerList>("Updated aliases.");
+                Smithbox.Log<ModelContainerList>(LOC.Get("MODEL_SourceList_Log_Update_Alias"));
             }
+            GUI.Tooltip(LOC.Get("MODEL_SourceList_Commit_Alias_TT"));
 
             ImGui.PopStyleVar();
 

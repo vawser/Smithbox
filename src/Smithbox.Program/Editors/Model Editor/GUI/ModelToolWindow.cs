@@ -22,7 +22,8 @@ public class ModelToolWindow
 
     public void DisplayDropdown()
     {
-        if (ImGui.BeginMenu("Tools"))
+        // Tools
+        if (ImGui.BeginMenu($"{LOC.Get("MODEL_ToolWindow_Tools_Header")}##toolsMenuHeader"))
         {
             DataTransferTool.DisplayDropdown();
 
@@ -45,27 +46,9 @@ public class ModelToolWindow
             ImGui.EndMenuBar();
         }
 
-        //if (CFG.Current.MaterialEditor_Tool_Data_Transfer)
-        //{
-        //    if (ImGui.CollapsingHeader("Data Transfer"))
-        //    {
-        //        DataTransferTool.Display();
-        //    }
-        //}
-
-        if (CFG.Current.Interface_ModelEditor_Tool_CreateAction)
-        {
-            View.CreateAction.OnToolWindow();
-        }
-
         if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
         {
             View.ModelGridTool.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_ModelInsight)
-        {
-            //View.ModelInsightMenu.OnToolWindow();
         }
 
         if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
@@ -86,39 +69,25 @@ public class ModelToolWindow
 
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        // View
+        if (ImGui.BeginMenu($"{LOC.Get("MODEL_ToolWindow_View_Header")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem("Data Transfer"))
-            {
-                CFG.Current.MaterialEditor_Tool_Data_Transfer = !CFG.Current.MaterialEditor_Tool_Data_Transfer;
-            }
-            GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Tool_Data_Transfer);
-
-            if (ImGui.MenuItem("Create"))
-            {
-                CFG.Current.Interface_ModelEditor_Tool_CreateAction = !CFG.Current.Interface_ModelEditor_Tool_CreateAction;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_CreateAction);
-
-            if (ImGui.MenuItem("Model Grid Configuration"))
+            // Grid Configuration
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Grid_Configuration")}##toggleGridConfigTool"))
             {
                 CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration = !CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration);
 
-            if (ImGui.MenuItem("Model Insight"))
-            {
-                CFG.Current.Interface_ModelEditor_Tool_ModelInsight = !CFG.Current.Interface_ModelEditor_Tool_ModelInsight;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelInsight);
-
-            if (ImGui.MenuItem("Model Instance Finder"))
+            // Model Instance Finder
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Instance_Finder")}##toggleInstanceFinder"))
             {
                 CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder = !CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder);
 
-            if (ImGui.MenuItem("Model Mask Toggler"))
+            // Model Mask Toggler
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Mask_Toggler")}##modelMaskToggler"))
             {
                 CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler = !CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler;
             }

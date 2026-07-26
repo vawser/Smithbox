@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_Properties_Toggle_Community_Names_Internal",
+      "Text": "Internal"
+    },
+    {
+      "Key": "MODEL_Properties_Toggle_Community_Names_Community",
+      "Text": "Community"
+    },
+    {
+      "Key": "MODEL_Properties_Toggle_Community_Names_TT",
+      "Text": "Toggle field name display type between Internal and Community.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "MODEL_Properties_Multi_Edit",
+      "Text": "Editing Multiple Objects.\nChanges will be applied to all selected objects."
+    },
+    {
+      "Key": "MODEL_Properties_Select_to_Edit",
+      "Text": "Select a map object to edit its properties."
+    },
+    {
+      "Key": "MODEL_Properties_No_Selection",
+      "Text": "Nothing has been selected."
+    },
+    {
+      "Key": "MODEL_Properties_Col_Object_Type",
+      "Text": "Object Type"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_Array_Type",
+      "Text": "Array Type: {0}"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_Array_Length",
+      "Text": " (Length: {0})"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_Value_Type",
+      "Text": "Value Type: {0}"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_Value_Min_Max",
+      "Text": " (Min {0}, Max {1})"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_String_Type",
+      "Text": "String Type: {0}"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_String_Length",
+      "Text": " (Length: {0})"
+    },
+    {
+      "Key": "MODEL_Properties_Dummy_Ref_Hint",
+      "Text": "Dummy {0}: {1}"
+    },
+    {
+      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Name",
+      "Text": "Copy Property Name"
+    },
+    {
+      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Name_TT",
+      "Text": "Copy the name of this property to the clipboard."
+    },
+    {
+      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Type",
+      "Text": "Copy Property Type"
+    },
+    {
+      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Type_TT",
+      "Text": "Copy the type name of this property to the clipboard."
+    }
+  ]
+}

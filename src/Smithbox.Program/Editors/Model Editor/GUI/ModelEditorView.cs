@@ -48,7 +48,6 @@ public class ModelEditorView
     public ResourceListTool ResourceListTool;
 
     // Actions
-    public CreateAction CreateAction;
     public DuplicateAction DuplicateAction;
     public DeleteAction DeleteAction;
     public FrameAction FrameAction;
@@ -87,7 +86,6 @@ public class ModelEditorView
         ResourceListTool = new ResourceListTool();
 
         // Actions
-        CreateAction = new CreateAction(this, Project);
         DuplicateAction = new DuplicateAction(this, Project);
         DeleteAction = new DeleteAction(this, Project);
         FrameAction = new FrameAction(this, Project);

@@ -1,100 +1,20 @@
 {
   "Entries": [
     {
-      "Key": "MODEL_FileList_",
+      "Key": "MODEL_FileList_Header",
+      "Text": "Files"
+    },
+    {
+      "Key": "MODEL_FileList_Header_TT",
       "Text": ""
     },
     {
-      "Key": "MODEL_FileList_",
-      "Text": ""
+      "Key": "MODEL_FileList_Context_Load_Action",
+      "Text": "Load"
     },
     {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_FileList_",
-      "Text": ""
-    },
+      "Key": "MODEL_FileList_Context_Unload_Action",
+      "Text": "Unload"
+    }
   ]
 }

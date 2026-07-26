@@ -169,7 +169,6 @@ public class ModelEditorScreen : EditorScreen
                 ImGui.Separator();
 
                 // Actions
-                activeView.CreateAction.OnMenu();
                 activeView.DuplicateAction.OnMenu();
                 activeView.DeleteAction.OnMenu();
 

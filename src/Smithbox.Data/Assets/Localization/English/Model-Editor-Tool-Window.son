@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_ToolWindow_Tools_Header",
+      "Text": "Tools"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Header",
+      "Text": "View"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Grid_Configuration",
+      "Text": "Grid Configuration"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Instance_Finder",
+      "Text": "Model Instance Finder"
+    }
+  ]
+}

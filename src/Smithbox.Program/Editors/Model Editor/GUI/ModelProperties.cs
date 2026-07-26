@@ -56,11 +56,11 @@ public class ModelProperties
             CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names = !CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names;
         }
 
-        var communityFieldNameMode = "Internal";
+        var communityFieldNameMode = LOC.Get("MODEL_Properties_Toggle_Community_Names_Internal");
         if (CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names)
-            communityFieldNameMode = "Community";
+            communityFieldNameMode = LOC.Get("MODEL_Properties_Toggle_Community_Names_Community");
 
-        GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
+        GUI.Tooltip(LOC.Get("MODEL_Properties_Toggle_Community_Names_TT", communityFieldNameMode));
 
         ImGui.EndChild();
 
@@ -73,8 +73,7 @@ public class ModelProperties
             {
                 Entity firstEnt = entSelection.First();
 
-                ImGui.TextColored(new Vector4(0.5f, 1.0f, 0.0f, 1.0f),
-                    " Editing Multiple Objects.\n Changes will be applied to all selected objects.");
+                ImGui.TextColored(new Vector4(0.5f, 1.0f, 0.0f, 1.0f), LOC.Get("MODEL_Properties_Multi_Edit"));
 
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_MultipleInput_Background);
@@ -91,7 +90,7 @@ public class ModelProperties
 
                 if (firstEnt.WrappedObject == null)
                 {
-                    ImGui.Text("Select a map object to edit its properties.");
+                    ImGui.Text(LOC.Get("MODEL_Properties_Select_to_Edit"));
                     ImGui.EndChild();
                     ImGui.End();
                     ImGui.PopStyleColor(2);
@@ -102,7 +101,7 @@ public class ModelProperties
             }
             else
             {
-                ImGui.Text("Nothing has been selected.");
+                ImGui.Text(LOC.Get("MODEL_Properties_No_Selection"));
             }
         }
 
@@ -126,7 +125,7 @@ public class ModelProperties
         ImGui.Columns(2);
 
         ImGui.AlignTextToFramePadding();
-        ImGui.Text("Object Type");
+        ImGui.Text(LOC.Get("MODEL_Properties_Col_Object_Type"));
 
         //if (meta != null)
         //{
@@ -362,10 +361,10 @@ public class ModelProperties
         {
             var a = (Array)prop.GetValue(obj);
 
-            var str = $"Array Type: {prop.ReflectedType.Name}";
+            var str = LOC.Get("MODEL_Properties_Field_Hint_Array_Type", prop.ReflectedType.Name);
             if (a.Length > 0)
             {
-                str += $" (Length: {a.Length})";
+                str += LOC.Get("MODEL_Properties_Field_Hint_Array_Length", a.Length);
             }
 
             text = $"{text}\n{str}";
@@ -373,12 +372,12 @@ public class ModelProperties
 
         if (propType.IsValueType)
         {
-            var str = $"Value Type: {propType.Name}";
+            var str = LOC.Get("MODEL_Properties_Field_Hint_Value_Type", propType.Name);
             var min = propType.GetField("MinValue")?.GetValue(propType);
             var max = propType.GetField("MaxValue")?.GetValue(propType);
             if (min != null && max != null)
             {
-                str += $" (Min {min}, Max {max})";
+                str += LOC.Get("MODEL_Properties_Field_Hint_Value_Min_Max", min, max);
             }
 
             text = $"{text}\n{str}";
@@ -387,10 +386,10 @@ public class ModelProperties
         {
             var a = (Array)prop.GetValue(obj);
 
-            var str = $"String Type: {propType.Name}";
+            var str = LOC.Get("MODEL_Properties_Field_Hint_String_Type", propType.Name);
             if (a.Length > 0)
             {
-                str += $" (Length: {a.Length})";
+                str += LOC.Get("MODEL_Properties_Field_Hint_String_Length", a.Length);
             }
 
             text = $"{text}\n{str}";
@@ -487,7 +486,7 @@ public class ModelProperties
 
                     ImGui.SameLine();
 
-                    ImGui.Text($"Dummy {i}: {dummy.ReferenceID}");
+                    ImGui.Text(LOC.Get("MODEL_Properties_Dummy_Ref_Hint", i, dummy.ReferenceID));
                 }
             }
         }
@@ -585,12 +584,15 @@ public class ModelProperties
 
         if (ImGui.BeginPopup("ModelPropContextMenu"))
         {
-            if (ImGui.Selectable(@"Copy Property Name##CopyPropName"))
+            // Copy Property Name
+            if (ImGui.Selectable($"{LOC.Get("MODEL_Properties_Context_Action_Copy_Prop_Name")}##CopyPropName"))
             {
                 PlatformUtils.Instance.SetClipboardText(fieldName);
             }
+            GUI.Tooltip(LOC.Get("MODEL_Properties_Context_Action_Copy_Prop_Name_TT"));
 
-            if (ImGui.Selectable(@"Copy Property Type##CopyPropType"))
+            // Copy Property Type
+            if (ImGui.Selectable($"{LOC.Get("MODEL_Properties_Context_Action_Copy_Prop_Type")}##CopyPropType"))
             {
                 var propType = prop.PropertyType;
 
@@ -600,6 +602,7 @@ public class ModelProperties
                     PlatformUtils.Instance.SetClipboardText(primitiveType);
                 }
             }
+            GUI.Tooltip(LOC.Get("MODEL_Properties_Context_Action_Copy_Prop_Type_TT"));
 
             ImGui.EndPopup();
         }
