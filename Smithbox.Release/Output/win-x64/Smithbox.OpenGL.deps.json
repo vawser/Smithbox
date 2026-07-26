@@ -7,7 +7,7 @@
   "targets": {
     ".NETCoreApp,Version=v10.0": {},
     ".NETCoreApp,Version=v10.0/win-x64": {
-      "Smithbox.OpenGL/2.2.4": {
+      "Smithbox.OpenGL/2.2.5": {
         "dependencies": {
           "Smithbox.Data": "1.0.0",
           "Smithbox.Program": "1.0.0",
@@ -2066,7 +2066,7 @@
     }
   },
   "libraries": {
-    "Smithbox.OpenGL/2.2.4": {
+    "Smithbox.OpenGL/2.2.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

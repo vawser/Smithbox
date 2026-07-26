@@ -50,7 +50,7 @@
     </ItemGroup>
     <Copy SourceFiles="@(UpdaterFiles)"
           DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
-          SkipUnchangedFiles="false" />
+          SkipUnchangedFiles="true" />
 
     <Message Importance="high" Text="Release folder assembled at $(ReleaseDir)" />
 
