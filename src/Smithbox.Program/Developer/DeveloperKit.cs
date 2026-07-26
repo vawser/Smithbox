@@ -220,9 +220,15 @@ public class DeveloperKit
             "generateSpeedTreeList",
             "Generate SpeedTree List",
             "",
-            GenerateSpeedTreeList);
+            GenerateSpeedTreeList,
+
+            "generateGrassList",
+            "Generate Grass List",
+            "",
+            GenerateGrassList);
     }
 
+    #region Validate File Dictionary
     public void ValidateFileDictionary()
     {
         var success = Projects.TryGetValue(TargetProject, out var targetProject);
@@ -254,6 +260,10 @@ public class DeveloperKit
         File.WriteAllText(writePath, jsonString);
     }
 
+    #endregion
+
+
+    #region Generate Speed Tree List
     public Dictionary<ProjectType, List<string>> SpeedTreeAssets = new();
 
     public void GenerateSpeedTreeList()
@@ -265,6 +275,39 @@ public class DeveloperKit
         if(!SpeedTreeAssets.ContainsKey(targetProject.Descriptor.ProjectType))
         {
             SpeedTreeAssets.Add(targetProject.Descriptor.ProjectType, new List<string>());
+        }
+
+        var mapPieceAssets = targetProject.Locator.MapPieceFiles;
+        foreach (var entry in mapPieceAssets.Entries)
+        {
+            if (targetProject.VFS.FS.FileExists(entry.Path))
+            {
+                try
+                {
+                    var data = targetProject.VFS.FS.ReadFileOrThrow(entry.Path);
+
+                    var binder = BND4.Read(data);
+                    var flverFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".flver"));
+
+                    if (flverFile != null)
+                    {
+                        var flver = FLVER2.Read(flverFile.Bytes);
+                        if (flver.IsSpeedtree())
+                        {
+                            SpeedTreeAssets[targetProject.Descriptor.ProjectType].Add(entry.Filename);
+                            Smithbox.Log(this, $"SpeedTree added: {entry.Filename}");
+                        }
+
+                        flver = null;
+                    }
+
+                    binder = null;
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, ex.ToString());
+                }
+            }
         }
 
         var assets = targetProject.Locator.AssetFiles;
@@ -315,4 +358,92 @@ public class DeveloperKit
             File.WriteAllText(writePath, jsonString);
         }
     }
+    #endregion
+
+    #region Generate Grass List
+
+    public Dictionary<ProjectType, List<string>> GrassAssets = new();
+
+    public void GenerateGrassList()
+    {
+        var success = Projects.TryGetValue(TargetProject, out var targetProject);
+        if (!success)
+            return;
+
+        if (!GrassAssets.ContainsKey(targetProject.Descriptor.ProjectType))
+        {
+            GrassAssets.Add(targetProject.Descriptor.ProjectType, new List<string>());
+        }
+
+        var mapPieceAssets = targetProject.Locator.MapPieceFiles;
+        foreach (var entry in mapPieceAssets.Entries)
+        {
+            if (targetProject.VFS.FS.FileExists(entry.Path))
+            {
+                try
+                {
+                    var data = targetProject.VFS.FS.ReadFileOrThrow(entry.Path);
+
+                    var binder = BND4.Read(data);
+                    var grassFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".grass"));
+
+                    if (grassFile != null)
+                    {
+                        GrassAssets[targetProject.Descriptor.ProjectType].Add(entry.Filename);
+                        Smithbox.Log(this, $"GRASS added: {entry.Filename}");
+                    }
+
+                    binder = null;
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, ex.ToString());
+                }
+            }
+        }
+
+        var assets = targetProject.Locator.AssetFiles;
+        foreach (var entry in assets.Entries)
+        {
+            if (targetProject.VFS.FS.FileExists(entry.Path))
+            {
+                try
+                {
+                    var data = targetProject.VFS.FS.ReadFileOrThrow(entry.Path);
+
+                    var binder = BND4.Read(data);
+                    var grassFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".grass"));
+
+                    if (grassFile != null)
+                    {
+                        GrassAssets[targetProject.Descriptor.ProjectType].Add(entry.Filename);
+                        Smithbox.Log(this, $"GRASS added: {entry.Filename}");
+                    }
+
+                    binder = null;
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, ex.ToString());
+                }
+            }
+        }
+
+        foreach (var entry in GrassAssets)
+        {
+            var writePath = Path.Join(CFG.Current.DEVKIT_DataPath_OutputFolder, $"{entry.Key}_GrassAssets.json");
+
+            var grassList = new GrassList();
+
+            foreach (var val in entry.Value)
+            {
+                grassList.Entries.Add(val);
+            }
+
+            var jsonString = JsonSerializer.Serialize(grassList, MapEditorJsonSerializerContext.Default.GrassList);
+            File.WriteAllText(writePath, jsonString);
+        }
+    }
+
+    #endregion
 }

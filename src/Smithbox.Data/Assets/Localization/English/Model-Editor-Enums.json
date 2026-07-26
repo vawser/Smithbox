@@ -1,8 +1,28 @@
 {
   "Entries": [
     {
-      "Key": "MODEL_ENUM_",
-      "Text": ""
+      "Key": "MODEL_ENUM_ModelListType_Characters",
+      "Text": "Characters"
+    },
+    {
+      "Key": "MODEL_ENUM_ModelListType_Assets",
+      "Text": "Assets"
+    },
+    {
+      "Key": "MODEL_ENUM_ModelListType_Parts",
+      "Text": "Parts"
+    },
+    {
+      "Key": "MODEL_ENUM_ModelListType_MapPieces",
+      "Text": "Map Pieces"
+    },
+    {
+      "Key": "MODEL_ENUM_ModelListType_Collisions",
+      "Text": "Collisions"
+    },
+    {
+      "Key": "MODEL_ENUM_ModelListType_Navmesh",
+      "Text": "Navmesh"
     }
   ]
 }

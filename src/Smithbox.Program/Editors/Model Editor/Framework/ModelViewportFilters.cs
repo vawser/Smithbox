@@ -19,44 +19,43 @@ public class ModelViewportFilters
     {
         bool ticked;
 
-        if (ImGui.BeginMenu("Filters"))
+        if (ImGui.BeginMenu($"{LOC.Get("MODEL_Framework_Filters_Header")}##filtersMenuHeader"))
         {
             // Meshes
-            if (ImGui.MenuItem("Meshes"))
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Mesh")}##meshToggle"))
             {
                 View.RenderScene.ToggleDrawFilter(RenderFilter.Meshes);
             }
             ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Meshes);
+            GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Mesh_TT"));
             GUI.ShowActiveStatus(ticked);
-            GUI.Tooltip("Toggle the display of meshes.");
 
             // Dummies
-            if (ImGui.MenuItem("Dummy Polygons"))
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_DummyPoly")}##dummyPolyToggle"))
             {
                 View.RenderScene.ToggleDrawFilter(RenderFilter.Dummies);
             }
             ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Dummies);
+            GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_DummyPoly_TT"));
             GUI.ShowActiveStatus(ticked);
-            GUI.Tooltip("Toggle the display of dummy polygons.");
-
 
             // Nodes
-            if (ImGui.MenuItem("Bones"))
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Bone")}##boneToggle"))
             {
                 View.RenderScene.ToggleDrawFilter(RenderFilter.Nodes);
             }
             ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Nodes);
+            GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Bone_TT"));
             GUI.ShowActiveStatus(ticked);
-            GUI.Tooltip("Toggle the display of bones.");
 
             // Collision
-            if (ImGui.MenuItem("Collision"))
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Collision")}##collisionToggle"))
             {
                 View.RenderScene.ToggleDrawFilter(RenderFilter.Collision);
             }
             ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
+            GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Collision_TT"));
             GUI.ShowActiveStatus(ticked);
-            GUI.Tooltip("Toggle the display of collision.");
 
             ImGui.EndMenu();
         }

@@ -41,8 +41,8 @@ public class MapData : IDisposable
     // DS2-specific
     public SpawnStates SpawnStates;
 
-    // SpeedTree
     public SpeedTreeList SpeedTreeList;
+    public GrassList GrassList;
 
     public MapData(ProjectEntry project)
     {
@@ -160,6 +160,19 @@ public class MapData : IDisposable
         else
         {
             Smithbox.Log(this, $"[Map Editor] Setup Speed Tree List.");
+        }
+
+        // Grass List
+        Task<bool> grassListTask = SetupGrassList();
+        bool grassListTaskResult = await grassListTask;
+
+        if (!grassListTaskResult)
+        {
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup Grass List.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Map Editor] Setup Grass List.");
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
@@ -569,6 +582,32 @@ public class MapData : IDisposable
             catch (Exception e)
             {
                 Smithbox.LogError(this, $"[Map Editor] Failed to deserialize speed tree list: {file}", LogPriority.High, e);
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupGrassList()
+    {
+        await Task.Yield();
+
+        SpeedTreeList = new();
+
+        var sourcePath = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "GrassAssets.json");
+
+        if (File.Exists(sourcePath))
+        {
+            var file = File.ReadAllText(sourcePath);
+            try
+            {
+                var grassList = JsonSerializer.Deserialize(file, MapEditorJsonSerializerContext.Default.GrassList);
+
+                GrassList = grassList;
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, $"[Map Editor] Failed to deserialize grass list: {file}", LogPriority.High, e);
             }
         }
 

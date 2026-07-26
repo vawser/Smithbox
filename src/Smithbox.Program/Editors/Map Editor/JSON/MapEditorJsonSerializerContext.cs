@@ -32,6 +32,7 @@ namespace StudioCore.Editors.MapEditor;
 [JsonSerializable(typeof(SpawnStateContents))]
 
 [JsonSerializable(typeof(SpeedTreeList))]
+[JsonSerializable(typeof(GrassList))]
 
 internal partial class MapEditorJsonSerializerContext : JsonSerializerContext
 {

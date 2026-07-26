@@ -4,21 +4,21 @@ namespace StudioCore.Editors.ModelEditor;
 
 public enum ModelListType
 {
-    [Display(Name ="Characters")]
+    [Display(Name = "MODEL_ENUM_ModelListType_Characters")]
     Character,
 
-    [Display(Name = "Assets")]
+    [Display(Name = "MODEL_ENUM_ModelListType_Assets")]
     Asset,
 
-    [Display(Name = "Parts")]
+    [Display(Name = "MODEL_ENUM_ModelListType_Parts")]
     Part,
 
-    [Display(Name = "Map Pieces")]
+    [Display(Name = "MODEL_ENUM_ModelListType_MapPieces")]
     MapPiece,
 
-    [Display(Name = "Collisions")]
+    [Display(Name = "MODEL_ENUM_ModelListType_Collisions")]
     Collision,
 
-    [Display(Name = "Navmesh")]
+    [Display(Name = "MODEL_ENUM_ModelListType_Navmesh")]
     Navmesh
 }

@@ -36,11 +36,11 @@ public class ModelData : IDisposable
 
         if (!flverInfoResult)
         {
-            Smithbox.LogError(this, $"[Model Editor] Failed to setup the FLVER annotations.");
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Setup_FlverAnnotations_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Model Editor] Setup the FLVER annotations.");
+            Smithbox.Log(this, LOC.Get("MODEL_Data_Setup_FlverAnnotations_PASS"));
         }
 
         // Primary Bank
@@ -49,11 +49,11 @@ public class ModelData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Model Editor] Failed to setup the Primary Bank.");
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Setup_Primary_Bank_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Model Editor] Setup the Primary Bank.");
+            Smithbox.Log(this, LOC.Get("MODEL_Data_Setup_Primary_Bank_PASS"));
         }
 
         return primaryBankTaskResult;
@@ -97,12 +97,12 @@ public class ModelData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Model Editor] Failed to deserialize the FLVER annotations", e);
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Failed_Deserialize_Flver_Annotations", targetFile), e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Model Editor] Failed to read the FLVER annotations: {targetFile}", e);
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Failed_Read_Flver_Annotations", targetFile), e);
             }
         }
 
@@ -130,12 +130,12 @@ public class ModelData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Model Editor] Failed to deserialize the FLVER enums: {targetFile}", e);
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Failed_Deserialize_Flver_Enums", targetFile), e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Model Editor] Failed to read the FLVER enums: {targetFile}", e);
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Failed_Read_Flver_Enums", targetFile), e);
             }
         }
 

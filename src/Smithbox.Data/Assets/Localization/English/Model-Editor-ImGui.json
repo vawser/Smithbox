@@ -3,6 +3,26 @@
     {
       "Key": "MODEL_Window_Model_Editor",
       "Text": "Model Editor"
+    },
+    {
+      "Key": "MODEL_Window_Source_List",
+      "Text": "Source List"
+    },
+    {
+      "Key": "MODEL_Window_File_List",
+      "Text": "File List"
+    },
+    {
+      "Key": "MODEL_Window_Model_Contents",
+      "Text": "Model Contents"
+    },
+    {
+      "Key": "MODEL_Window_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "MODEL_Window_Properties",
+      "Text": "Properties"
     }
   ]
 }

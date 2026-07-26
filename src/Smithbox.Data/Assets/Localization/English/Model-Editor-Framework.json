@@ -1,0 +1,40 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_Framework_Filters_Header",
+      "Text": "Filters"
+    },
+    {
+      "Key": "MODEL_Framework_Filter_Mesh",
+      "Text": "Mesh"
+    },
+    {
+      "Key": "MODEL_Framework_Filter_Mesh_TT",
+      "Text": "Toggle the display of meshes."
+    },
+    {
+      "Key": "MODEL_Framework_Filter_DummyPoly",
+      "Text": "Dummy Polygon"
+    },
+    {
+      "Key": "MODEL_Framework_Filter_DummyPoly_TT",
+      "Text": "Toggle the display of dummy polygons."
+    },
+    {
+      "Key": "MODEL_Framework_Filter_Bone",
+      "Text": "Bone"
+    },
+    {
+      "Key": "MODEL_Framework_Filter_Bone_TT",
+      "Text": "Toggle the display of bones."
+    },
+    {
+      "Key": "MODEL_Framework_Filter_Collision",
+      "Text": "Collision"
+    },
+    {
+      "Key": "MODEL_Framework_Filter_Collision_TT",
+      "Text": "Toggle the display of collision."
+    }
+  ]
+}

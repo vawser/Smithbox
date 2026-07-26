@@ -105,7 +105,7 @@ public class ModelEditorView
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"Source List##modelEditor_SourceList_{viewIndex}", GUI.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("MODEL_Window_Source_List")}##modelEditor_SourceList_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -124,7 +124,7 @@ public class ModelEditorView
             // File List
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"File List##modelEditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("MODEL_Window_File_List")}##modelEditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -143,7 +143,7 @@ public class ModelEditorView
             // Contents
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"Contents##modelEditor_Contents_{viewIndex}", GUI.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("MODEL_Window_Model_Contents")}##modelEditor_Contents_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -162,7 +162,7 @@ public class ModelEditorView
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"Tools##modelEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("MODEL_Window_Tools")}##modelEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -188,7 +188,7 @@ public class ModelEditorView
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"Properties##modelEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("MODEL_Window_Properties")}##modelEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;

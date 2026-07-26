@@ -38,7 +38,9 @@ public class ModelContents : IActionEventHandler
 
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader("Contents", "");
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_Contents_Header"),
+            LOC.Get("MODEL_Contents_Header_TT"));
 
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_modelEditor_ContentTree", searchHeight, ImGuiChildFlags.Borders);
@@ -64,7 +66,7 @@ public class ModelContents : IActionEventHandler
         }
         else
         {
-            ImGui.Text("No FLVER has been loaded yet.");
+            ImGui.Text(LOC.Get("MODEL_Contents_No_Flver_Hint"));
         }
 
         ImGui.EndChild();
@@ -99,7 +101,7 @@ public class ModelContents : IActionEventHandler
                 }
             }
         }
-        GUI.Tooltip("Force all model objects to be shown.");
+        GUI.Tooltip(LOC.Get("MODEL_Contents_Toggle_Show_All_TT"));
 
         // Hide All
         ImGui.SameLine();
@@ -113,7 +115,7 @@ public class ModelContents : IActionEventHandler
                 }
             }
         }
-        GUI.Tooltip("Force all model objects to be hidden.");
+        GUI.Tooltip(LOC.Get("MODEL_Contents_Toggle_Hide_All_TT"));
     }
 
     public void DisplayContentTree(ModelContainer container)
@@ -177,12 +179,15 @@ public class ModelContents : IActionEventHandler
     {
         if (ImGui.BeginPopupContextItem($@"modelTopContext_{map.Name}"))
         {
-            if (ImGui.BeginMenu("Information"))
+            // Information
+            if (ImGui.BeginMenu($"{LOC.Get("MODEL_Contents_Context_Info_Header")}##infoMenuHeader"))
             {
-                if (ImGui.Selectable("Copy Model Name"))
+                // Copy Model Name
+                if (ImGui.Selectable($"{LOC.Get("MODEL_Contents_Action_Copy_Model_Name")}##copyModelNameAction"))
                 {
                     PlatformUtils.Instance.SetClipboardText(map.Name);
                 }
+                GUI.Tooltip(LOC.Get("MODEL_Contents_Action_Copy_Model_Name_TT"));
 
                 ImGui.EndMenu();
             }
@@ -315,7 +320,7 @@ public class ModelContents : IActionEventHandler
     {
         var scale = DPI.UIScale();
 
-        var key = $"Entry {index}";
+        var key = $"{LOC.Get("MODEL_Contents_Entry_Title")} {index}";
 
         if (e.SupportsName)
         {
@@ -361,7 +366,7 @@ public class ModelContents : IActionEventHandler
             var matIndex = mesh.MaterialIndex;
             var nodeIndex = mesh.NodeIndex;
 
-            var meshName = "Mesh";
+            var meshName = LOC.Get("MODEL_Contents_Mesh_Title");
             var nodeName = "";
 
             if (matIndex != -1)
@@ -598,7 +603,7 @@ public class ModelContents : IActionEventHandler
         ImGui.PopItemFlag();
         ImGui.SameLine();
 
-        GUI.Tooltip("Toggle visibility state of this model object.");
+        GUI.Tooltip(LOC.Get("MODEL_Contents_Visibility_Button_TT"));
 
     }
 
