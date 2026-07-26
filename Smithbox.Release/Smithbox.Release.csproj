@@ -15,6 +15,9 @@
       <ProjectReference Include="..\src\Smithbox.OpenGL\Smithbox.OpenGL.csproj">
         <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       </ProjectReference>
+      <ProjectReference Include="..\src\Smithbox.Updater\Smithbox.Updater.csproj">
+        <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      </ProjectReference>
     </ItemGroup>
 
   <Target Name="AssembleRelease" AfterTargets="Build">
@@ -23,6 +26,7 @@
       <ReleaseDir>$(SolutionDir)Smithbox.Release\Output\</ReleaseDir>
       <VulkanOutDir>$(SolutionDir)src\Smithbox.Vulkan\bin\$(Configuration)\net10.0\$(RuntimeIdentifier)\</VulkanOutDir>
       <OpenGLOutDir>$(SolutionDir)src\Smithbox.OpenGL\bin\$(Configuration)\net10.0\$(RuntimeIdentifier)\</OpenGLOutDir>
+      <UpdaterOutDir>$(SolutionDir)src\Smithbox.Updater\bin\$(Configuration)\net10.0\$(RuntimeIdentifier)\</UpdaterOutDir>
     </PropertyGroup>
 
     <RemoveDir Directories="$(ReleaseDir)" Condition="Exists('$(ReleaseDir)')" />
@@ -40,6 +44,13 @@
     <Copy SourceFiles="@(OpenGLFiles)"
           DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
           SkipUnchangedFiles="true" />
+
+    <ItemGroup>
+      <UpdaterFiles Include="$(UpdaterOutDir)**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(UpdaterFiles)"
+          DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
+          SkipUnchangedFiles="false" />
 
     <Message Importance="high" Text="Release folder assembled at $(ReleaseDir)" />
 

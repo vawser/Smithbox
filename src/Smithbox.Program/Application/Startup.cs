@@ -19,8 +19,6 @@ public class Startup
 
     public string Program_Language = "English";
 
-    public bool System_Check_Program_Update = true;
-
     public bool System_Enable_Soapstone_Server = true;
 
     #endregion

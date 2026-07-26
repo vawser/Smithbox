@@ -5,6 +5,10 @@
       "Text": "Smithbox"
     },
     {
+      "Key": "PROGRAM_UPDATER_TITLE",
+      "Text": "Smithbox Updater"
+    },
+    {
       "Key": "GIT_REPO_NAME",
       "Text": "Smithbox"
     },
@@ -81,36 +85,16 @@
       "Text": "Go to Wiki"
     },
     {
+      "Key": "HELP_Action_Go_To_Github",
+      "Text": "Go to Github Repository"
+    },
+    {
       "Key": "HELP_Action_Go_To_Wiki_TT",
       "Text": "Go to the SoulsModding Wiki."
     },
     {
       "Key": "HELP_Wiki_Link",
       "Text": "https://soulsmodding.com/doku.php?id=smithbox"
-    },
-    {
-      "Key": "HELP_Action_Go_To_Github",
-      "Text": "Go to Github Repository"
-    },
-    {
-      "Key": "HELP_Action_Go_To_Github_TT",
-      "Text": "Go to the Github repository page."
-    },
-    {
-      "Key": "HELP_Github_Link",
-      "Text": "https://github.com/vawser/Smithbox"
-    },
-    {
-      "Key": "SYS_Menu_Header_Update",
-      "Text": "Update"
-    },
-    {
-      "Key": "SYS_Menu_Go_To_Release",
-      "Text": "Go to Release"
-    },
-    {
-      "Key": "SYS_Failed_Smithbox_Release",
-      "Text": "Failed to find Smithbox release."
     },
     {
       "Key": "DIALOG_Select",

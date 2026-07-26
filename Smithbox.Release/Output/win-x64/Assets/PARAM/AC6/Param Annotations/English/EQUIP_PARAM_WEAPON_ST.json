@@ -2625,9 +2625,9 @@
       "Description": "Is a heavyweight additive animation used for this weapon. Affects hand weapons only."
     },
     {
-      "Field": "unk54c_3",
-      "Name": "Unknown: 54C_3",
-      "Description": ""
+      "Field": "tankSkipSecondaryWindupWhenFiring",
+      "Name": "Skip Secondary Windup when Firing",
+      "Description": "If enabled, tank ACs will skip the firing windup animation for their secondary weapon (i.e. grenade launcher) if already firing their primary automatic weapon."
     },
     {
       "Field": "pad25",

@@ -58,15 +58,25 @@ public class Smithbox
     public LogSubscription HighPriorityLogSubscription;
 
     public RenderingBackend CurrentBackend = RenderingBackend.Vulkan;
+    public ProgramType ProgramType = ProgramType.Editor;
 
-    public unsafe Smithbox(string version, RenderingBackend backendType)
+    public unsafe Smithbox(string version, RenderingBackend backendType, ProgramType programType)
     {
+        ProgramType = programType;
         CurrentBackend = backendType;
 
         Instance = this;
 
         _version = version;
-        _programTitle = $"{LOC.Get("PROGRAM_TITLE")} - {_version}";
+
+        if(ProgramType is ProgramType.Editor)
+        {
+            _programTitle = $"{LOC.Get("PROGRAM_TITLE")} - {_version}";
+        }
+        else if(ProgramType is ProgramType.Updater)
+        {
+            _programTitle = $"{LOC.Get("PROGRAM_UPDATER_TITLE")} - {_version}";
+        }
 
         GUI.RestoreImguiIfMissing();
         // Hack to make sure dialogs work before the main window is created
@@ -148,9 +158,12 @@ public class Smithbox
         PreferencesMenu = new();
         DeveloperPanel = new();
 
-        _soapstoneService = new(version);
+        if (ProgramType is ProgramType.Editor)
+        {
+            _soapstoneService = new(version);
 
-        TextureManager = new();
+            TextureManager = new();
+        }
     }
 
     private void Setup()
@@ -170,8 +183,6 @@ public class Smithbox
         BinaryReaderEx.CurrentProjectType = "";
         BinaryReaderEx.IgnoreAsserts = CFG.Current.System_Ignore_Read_Asserts;
         BinaryReaderEx.UseDCXHeuristicOnReadFailure = CFG.Current.System_Apply_DCX_Heuristic;
-
-        CheckProgramUpdate();
     }
 
 
@@ -336,22 +347,25 @@ public class Smithbox
         CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
         CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
 
-        if (_soapstoneService != null)
+        if (ProgramType is ProgramType.Editor)
         {
-            TaskManager.LiveTask task = new(
-                "system_setupSoapstoneServer",
-                LOC.Get("SYS_Header"),
-                LOC.Get("SYS_SOAPSTONE_SERVER_RUNNING"),
-                LOC.Get("SYS_SOAPSTONE_SERVER_STOPPED"),
-                TaskManager.RequeueType.None,
-                true,
-                () =>
-                {
-                    SoapstoneServer.RunAsync(KnownServer.DSMapStudio, _soapstoneService).Wait();
-                }
-            );
+            if (_soapstoneService != null)
+            {
+                TaskManager.LiveTask task = new(
+                    "system_setupSoapstoneServer",
+                    LOC.Get("SYS_Header"),
+                    LOC.Get("SYS_SOAPSTONE_SERVER_RUNNING"),
+                    LOC.Get("SYS_SOAPSTONE_SERVER_STOPPED"),
+                    TaskManager.RequeueType.None,
+                    true,
+                    () =>
+                    {
+                        SoapstoneServer.RunAsync(KnownServer.DSMapStudio, _soapstoneService).Wait();
+                    }
+                );
 
-            TaskManager.RunPassiveTask(task);
+                TaskManager.RunPassiveTask(task);
+            }
         }
 
         long previousFrameTicks = 0;
@@ -394,17 +408,23 @@ public class Smithbox
 
             if (!_context.Window.Exists)
             {
-                Orchestrator.Exit();
+                if (ProgramType is ProgramType.Editor)
+                {
+                    Orchestrator.Exit();
+                }
+
                 Exit();
 
                 break;
             }
 
             _context.Draw(Orchestrator);
+
             Profiler.TracyCFrameMark();
         }
 
         Orchestrator.Exit();
+
         Exit();
         ResourceManager.Shutdown();
         _context.Dispose();
@@ -611,7 +631,14 @@ public class Smithbox
             ImGui.SetNextWindowFocus();
         }
 
-        Orchestrator.Update(deltaseconds, dockspaceID);
+        if (ProgramType is ProgramType.Editor)
+        {
+            Orchestrator.Update(deltaseconds, dockspaceID);
+        }
+        else if(ProgramType is ProgramType.Updater)
+        {
+            Orchestrator.DisplayUpdater(deltaseconds, dockspaceID);
+        }
 
         DeveloperPanel.Display(dockspaceID);
 
@@ -620,29 +647,8 @@ public class Smithbox
             ImGui.ShowDemoWindow();
         }
 
-
         KeybindsMenu.Draw();
         PreferencesMenu.Draw();
-
-        if (_programUpdateAvailable)
-        {
-            ImGui.Separator();
-
-            if (ImGui.BeginMenu($"{LOC.Get("SYS_Menu_Header_Update")}##updateMenuHeader"))
-            {
-                if (ImGui.MenuItem($"{LOC.Get("SYS_Menu_Go_To_Release")}##releaseAction"))
-                {
-                    Process myProcess = new();
-                    myProcess.StartInfo.UseShellExecute = true;
-                    myProcess.StartInfo.FileName = _releaseUrl;
-                    myProcess.Start();
-                }
-
-                ImGui.EndMenu();
-            }
-
-            ImGui.Separator();
-        }
 
         ImGui.PopStyleVar(2);
 
@@ -664,62 +670,6 @@ public class Smithbox
         }
 
         _firstframe = false;
-    }
-
-    private bool _programUpdateAvailable = false;
-    private string _releaseUrl = "";
-
-    private void CheckProgramUpdate()
-    {
-        if (!Startup.Current.System_Check_Program_Update)
-            return;
-
-        var gitHubClient = new GitHubClient(new ProductHeaderValue(LOC.Get("GIT_REPO_NAME")));
-
-        if (gitHubClient != null)
-        {
-            try
-            {
-                var release = gitHubClient.Repository.Release.GetLatest(
-                    LOC.Get("GIT_REPO_OWNER"), 
-                    LOC.Get("GIT_REPO_NAME")).Result;
-
-                if (release != null)
-                {
-                    var isVer = false;
-                    var verstring = "";
-                    foreach (var c in release.TagName)
-                    {
-                        if (char.IsDigit(c) || (isVer && c == '.'))
-                        {
-                            verstring += c;
-                            isVer = true;
-                        }
-                        else
-                        {
-                            isVer = false;
-                        }
-                    }
-
-                    if (Version.Parse(verstring) > Version.Parse(_version.ToString()))
-                    {
-                        _programUpdateAvailable = true;
-                        _releaseUrl = release.HtmlUrl;
-                    }
-                }
-                else
-                {
-                    Smithbox.LogError<Smithbox>(LOC.Get("SYS_Failed_Smithbox_Release"));
-                }
-            }
-            catch(Exception)
-            {
-            }
-        }
-        else
-        {
-            Smithbox.LogError<Smithbox>(LOC.Get("SYS_Failed_Smithbox_Release"));
-        }
     }
 
 #nullable enable

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.7.11919.86 stable
+VisualStudioVersion = 18.7.11919.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veldrid", "src\Veldrid\Veldrid\Veldrid.csproj", "{E22C07F4-D305-4093-B44B-2A9914DF06A4}"
 EndProject
@@ -54,6 +54,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.OpenGL", "src\Smithbox.OpenGL\Smithbox.OpenGL.csproj", "{E0BD21BF-C724-D1B6-F36C-B76FC1331D24}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Release", "Smithbox.Release\Smithbox.Release.csproj", "{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Updater", "src\Smithbox.Updater\Smithbox.Updater.csproj", "{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -907,6 +909,38 @@ Global
 		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-win|Any CPU.Build.0 = Release|Any CPU
 		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-win|x64.ActiveCfg = Release|Any CPU
 		{EC28AE2E-2BBF-4870-9023-F5A513CB4A82}.Release-win|x64.Build.0 = Release|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|x64.Build.0 = Debug|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-linux|Any CPU.ActiveCfg = Debug-linux|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-linux|Any CPU.Build.0 = Debug-linux|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-linux|x64.ActiveCfg = Debug-linux|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-linux|x64.Build.0 = Debug-linux|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-osx|Any CPU.ActiveCfg = Debug-osx|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-osx|Any CPU.Build.0 = Debug-osx|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-osx|x64.ActiveCfg = Debug-osx|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-osx|x64.Build.0 = Debug-osx|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-win|Any CPU.ActiveCfg = Debug-win|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-win|Any CPU.Build.0 = Debug-win|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-win|x64.ActiveCfg = Debug-win|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-win|x64.Build.0 = Debug-win|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|x64.ActiveCfg = Release|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|x64.Build.0 = Release|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-linux|Any CPU.ActiveCfg = Release-linux|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-linux|Any CPU.Build.0 = Release-linux|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-linux|x64.ActiveCfg = Release-linux|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-linux|x64.Build.0 = Release-linux|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-osx|Any CPU.ActiveCfg = Release-osx|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-osx|Any CPU.Build.0 = Release-osx|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-osx|x64.ActiveCfg = Release-osx|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-osx|x64.Build.0 = Release-osx|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-win|Any CPU.ActiveCfg = Release-win|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-win|Any CPU.Build.0 = Release-win|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-win|x64.ActiveCfg = Release-win|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-win|x64.Build.0 = Release-win|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

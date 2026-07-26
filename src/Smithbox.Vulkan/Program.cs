@@ -45,7 +45,7 @@ public static class Program
 
         _version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion ?? "undefined";
 
-        Instance = new Smithbox(_version, RenderingBackend.Vulkan);
+        Instance = new Smithbox(_version, RenderingBackend.Vulkan, ProgramType.Editor);
 
         if (Instance != null)
         {

@@ -38,6 +38,7 @@ public static class Program
         IsDebug = true;
         #endif
 
+
         AppDomain currentDomain = AppDomain.CurrentDomain;
         currentDomain.UnhandledException += CrashHandler;
 
@@ -45,7 +46,7 @@ public static class Program
 
         _version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion ?? "undefined";
 
-        Instance = new Smithbox(_version, RenderingBackend.OpenGL, ProgramType.Editor);
+        Instance = new Smithbox(_version, RenderingBackend.OpenGL, ProgramType.Updater);
 
         if (Instance != null)
         {

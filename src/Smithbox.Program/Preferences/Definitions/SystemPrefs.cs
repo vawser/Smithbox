@@ -61,25 +61,6 @@ public class SystemPrefs
         };
     }
 
-    public static PreferenceItem System_Check_Program_Update()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 2,
-            Category = PreferenceCategory.System,
-            Spacer = true,
-
-            Section = SectionCategory.General,
-
-            Title = "PREF_System_Check_Program_Update",
-            Description = "PREF_System_Check_Program_Update_TT",
-
-            Draw = () => {
-                ImGui.Checkbox("##inputValue", ref Startup.Current.System_Check_Program_Update);
-            }
-        };
-    }
-
     public static PreferenceItem System_Ignore_Read_Asserts()
     {
         return new PreferenceItem
