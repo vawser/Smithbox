@@ -108,6 +108,16 @@ public class MsbEntity : Entity
         }
     }
 
+    private void SetRenderSceneMesh(RenderableProxy newMesh)
+    {
+        if (RenderSceneMesh != null && !ReferenceEquals(RenderSceneMesh, newMesh))
+        {
+            RenderSceneMesh.Dispose();
+        }
+
+        RenderSceneMesh = newMesh;
+    }
+
     public void AssignPartDrawable()
     {
         var curUniverse = Owner as MapUniverse;
@@ -136,42 +146,20 @@ public class MsbEntity : Entity
         if (EntityHelper.IsPartEnemy(this) || EntityHelper.IsPartDummyEnemy(this))
         {
             asset = ModelLocator.GetChrModel(curProject, modelName, modelName);
-
-            RenderSceneMesh = CreateCharacterMesh(asset);
-
-            if (RenderSceneMesh is MeshRenderableProxy meshProxy)
-            {
-                if(IsCharacterPlaceholder(meshProxy, modelName, ProjectAliasType.Characters))
-                {
-                    RenderSceneMesh = CreateCharacterProxyMesh();
-                }
-                else if (IsInteractablePlaceholder(meshProxy, modelName, ProjectAliasType.Characters))
-                {
-                    RenderSceneMesh = CreateInteractableProxyMesh();
-                }
-            }
+            AssignCharacterOrPlaceholder(asset, modelName);
         }
 
         // Player
         if (EntityHelper.IsPartPlayer(this))
         {
-            RenderSceneMesh = CreatePlayerProxyMesh();
+            SetRenderSceneMesh(CreatePlayerProxyMesh());
         }
 
         // Asset
         if (EntityHelper.IsPartAsset(this) || EntityHelper.IsPartDummyAsset(this))
         {
             asset = ModelLocator.GetObjModel(curProject, modelName, modelName);
-
-            RenderSceneMesh = CreateObjectMesh(asset);
-
-            if (RenderSceneMesh is MeshRenderableProxy meshProxy)
-            {
-                if (IsAssetPlaceholder(meshProxy, modelName, ProjectAliasType.Assets))
-                {
-                    RenderSceneMesh = CreateObjectProxyMesh();
-                }
-            }
+            AssignAssetOrPlaceholder(asset, modelName);
         }
 
         // Collision
@@ -379,6 +367,21 @@ public class MsbEntity : Entity
         return mesh;
     }
 
+    public DebugPrimitiveRenderableProxy CreateSpeedTreeProxyMesh()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = RenderableHelper.GetSpeedTreeProxy(scene);
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.SpeedTree;
+
+        return mesh;
+    }
+
     public void AssignRegionDrawable()
     {
         var curUniverse = Owner as MapUniverse;
@@ -545,20 +548,7 @@ public class MsbEntity : Entity
         if (ModelName != "")
         {
             var asset = ModelLocator.GetChrModel(curProject, ModelName, ModelName);
-
-            RenderSceneMesh = CreateCharacterMesh(asset);
-
-            if (RenderSceneMesh is MeshRenderableProxy meshProxy)
-            {
-                if (IsCharacterPlaceholder(meshProxy, ModelName, ProjectAliasType.Characters))
-                {
-                    RenderSceneMesh = CreateCharacterProxyMesh();
-                }
-                else if (IsInteractablePlaceholder(meshProxy, ModelName, ProjectAliasType.Characters))
-                {
-                    RenderSceneMesh = CreateInteractableProxyMesh();
-                }
-            }
+            AssignCharacterOrPlaceholder(asset, ModelName);
         }
     }
 
@@ -964,7 +954,7 @@ public class MsbEntity : Entity
         base.UpdateRenderModel();
     }
 
-    public bool IsCharacterPlaceholder(MeshRenderableProxy meshProxy, string modelName, ProjectAliasType aliasType)
+    public bool IsCharacterPlaceholder(string modelName, ProjectAliasType aliasType)
     {
         var curUniverse = Owner as MapUniverse;
         var curProject = curUniverse.Project;
@@ -987,7 +977,7 @@ public class MsbEntity : Entity
         return false;
     }
 
-    public bool IsInteractablePlaceholder(MeshRenderableProxy meshProxy, string modelName, ProjectAliasType aliasType)
+    public bool IsInteractablePlaceholder(string modelName, ProjectAliasType aliasType)
     {
         var curUniverse = Owner as MapUniverse;
         var curProject = curUniverse.Project;
@@ -1010,7 +1000,7 @@ public class MsbEntity : Entity
         return false;
     }
 
-    public bool IsAssetPlaceholder(MeshRenderableProxy meshProxy, string modelName, ProjectAliasType aliasType)
+    public bool IsAssetPlaceholder(string modelName, ProjectAliasType aliasType)
     {
         var curUniverse = Owner as MapUniverse;
         var curProject = curUniverse.Project;
@@ -1033,9 +1023,78 @@ public class MsbEntity : Entity
         return false;
     }
 
+    public bool IsSpeedTreePlaceholder(string modelName)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+
+        if(curProject.Handler.MapData.SpeedTreeList.Entries.Any(e => e.ToLower() == modelName.ToLower()))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private void AssignCharacterOrPlaceholder(ResourceDescriptor asset, string modelName)
+    {
+        if (IsCharacterPlaceholder(modelName, ProjectAliasType.Characters))
+        {
+            SetRenderSceneMesh(CreateCharacterProxyMesh());
+            return;
+        }
+
+        if (IsInteractablePlaceholder(modelName, ProjectAliasType.Characters))
+        {
+            SetRenderSceneMesh(CreateInteractableProxyMesh());
+            return;
+        }
+
+        var meshProxy = CreateCharacterMesh(asset);
+        SetRenderSceneMesh(meshProxy);
+
+        // Fall back to a generic marker if the model turns out to have no real geometry once loaded
+        // (missing/corrupt FLVER), instead of silently rendering nothing.
+        meshProxy.MeshAvailabilityChanged += proxy =>
+        {
+            if (ReferenceEquals(RenderSceneMesh, proxy) && !proxy.HasRenderableGeometry())
+            {
+                SetRenderSceneMesh(CreateCharacterProxyMesh());
+            }
+        };
+    }
+
+    private void AssignAssetOrPlaceholder(ResourceDescriptor asset, string modelName)
+    {
+        if (IsSpeedTreePlaceholder(modelName))
+        {
+            SetRenderSceneMesh(CreateSpeedTreeProxyMesh());
+            return;
+        }
+
+        if (IsAssetPlaceholder(modelName, ProjectAliasType.Assets))
+        {
+            SetRenderSceneMesh(CreateObjectProxyMesh());
+            return;
+        }
+
+        var meshProxy = CreateObjectMesh(asset);
+        SetRenderSceneMesh(meshProxy);
+
+        meshProxy.MeshAvailabilityChanged += proxy =>
+        {
+            if (ReferenceEquals(RenderSceneMesh, proxy) && !proxy.HasRenderableGeometry())
+            {
+                SetRenderSceneMesh(CreateObjectProxyMesh());
+            }
+        };
+    }
+
+    #region Dispose
     protected override void Dispose(bool disposing)
     {
         SetupRenderMesh = false;
         base.Dispose(disposing);
     }
+    #endregion
 }

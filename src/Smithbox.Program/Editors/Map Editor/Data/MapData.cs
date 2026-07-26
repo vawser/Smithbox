@@ -41,6 +41,9 @@ public class MapData : IDisposable
     // DS2-specific
     public SpawnStates SpawnStates;
 
+    // SpeedTree
+    public SpeedTreeList SpeedTreeList;
+
     public MapData(ProjectEntry project)
     {
         Project = project;
@@ -144,6 +147,19 @@ public class MapData : IDisposable
         else
         {
             Smithbox.Log(this, $"[Map Editor] Setup the the Spawn States annotations.");
+        }
+
+        // Speed Tree List
+        Task<bool> speedTreeListTask = SetupSpeedTreeList();
+        bool speedTreeListTaskResult = await speedTreeListTask;
+
+        if (!speedTreeListTaskResult)
+        {
+            Smithbox.LogError(this, $"[Map Editor] Failed to setup Speed Tree List.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Map Editor] Setup Speed Tree List.");
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
@@ -531,6 +547,32 @@ public class MapData : IDisposable
                 File.WriteAllText(targetFile, jsonString);
             }
         }
+    }
+
+    public async Task<bool> SetupSpeedTreeList()
+    {
+        await Task.Yield();
+
+        SpeedTreeList = new();
+
+        var sourcePath = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "SpeedTreeAssets.json");
+
+        if (File.Exists(sourcePath))
+        {
+            var file = File.ReadAllText(sourcePath);
+            try
+            {
+                var speedTreeList = JsonSerializer.Deserialize(file, MapEditorJsonSerializerContext.Default.SpeedTreeList);
+
+                SpeedTreeList = speedTreeList;
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, $"[Map Editor] Failed to deserialize speed tree list: {file}", LogPriority.High, e);
+            }
+        }
+
+        return true;
     }
 
     #region Dispose

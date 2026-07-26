@@ -31,7 +31,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     public Pipeline? _pickingPipeline;
 
     public Pipeline? _pipeline;
-    public RenderableProxy? _placeholderProxy;
 
     public int _renderable = -1;
 
@@ -46,6 +45,8 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     public Matrix4x4 _world = Matrix4x4.Identity;
     public GPUBufferAllocator.GPUBufferHandle? _worldBuffer;
+
+    public event Action<MeshRenderableProxy>? MeshAvailabilityChanged;
 
     public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true, string virtPath = "")
     {
@@ -104,11 +105,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             {
                 sm.World = _world;
             }
-
-            if (_placeholderProxy != null)
-            {
-                _placeholderProxy.World = value;
-            }
         }
     }
 
@@ -135,11 +131,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             {
                 sm.Visible = _visible;
             }
-
-            if (_placeholderProxy != null)
-            {
-                _placeholderProxy.Visible = _visible;
-            }
         }
     }
 
@@ -157,11 +148,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             foreach (MeshRenderableProxy sm in _submeshes)
             {
                 sm.DrawFilter = _drawfilter;
-            }
-
-            if (_placeholderProxy != null)
-            {
-                _placeholderProxy.DrawFilter = value;
             }
         }
     }
@@ -181,11 +167,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             {
                 sm.DrawGroups = _drawgroups;
             }
-
-            if (_placeholderProxy != null)
-            {
-                _placeholderProxy.DrawGroups = value;
-            }
         }
     }
 
@@ -204,19 +185,12 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             {
                 child.RenderSelectionOutline = value;
             }
-
-            if (_placeholderProxy != null)
-            {
-                _placeholderProxy.RenderSelectionOutline = value;
-            }
         }
     }
 
     public void OnProviderAvailable()
     {
         var needsPlaceholder = _placeholderType != ModelMarkerType.None;
-        var useTreePlaceholder = false;
-        var useBushPlaceholder = false;
 
         for (var i = 0; i < _meshProvider.ChildCount; i++)
         {
@@ -252,73 +226,9 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         if (_meshProvider.HasMeshData())
         {
             ScheduleRenderableConstruction();
-            if (_meshProvider != null && _meshProvider.IndexCount > 0)
-            {
-                needsPlaceholder = false;
-            }
         }
 
-        if (_placeholderType != ModelMarkerType.None)
-        {
-            // Speed Tree asset
-            var speedTreeType = RenderableHelper.IsSpeedTreeAsset(_meshProvider);
-            if (speedTreeType != RenderableHelper.SpeedTreeType.None)
-            {
-                needsPlaceholder = true;
-                if (speedTreeType == RenderableHelper.SpeedTreeType.Tree)
-                    useTreePlaceholder = true;
-                else
-                    useBushPlaceholder = true;
-            }
-
-            if (needsPlaceholder)
-            {
-                if(useTreePlaceholder)
-                {
-                    _placeholderProxy =
-                    RenderableHelper.GetTreeProxy(_renderablesSet);
-                    _placeholderProxy.DrawFilter = RenderFilter.SpeedTree;
-                }
-                else if (useBushPlaceholder)
-                {
-                    _placeholderProxy =
-                        RenderableHelper.GetBushProxy(_renderablesSet);
-                    _placeholderProxy.DrawFilter = RenderFilter.SpeedTree;
-                }
-                else if(_placeholderType is ModelMarkerType.Enemy)
-                {
-                    _placeholderProxy = RenderableHelper.GetPartProxy(_renderablesSet);
-                }
-                else if (_placeholderType is ModelMarkerType.Object)
-                {
-                    _placeholderProxy = RenderableHelper.GetPartProxy(_renderablesSet);
-                }
-                else if (_placeholderType is ModelMarkerType.Player)
-                {
-                    //_placeholderProxy = RenderableHelper.GetPartProxy(_renderablesSet);
-                }
-
-                if (_placeholderProxy != null)
-                {
-                    _placeholderProxy.World = World;
-                    _placeholderProxy.Visible = Visible;
-                    _placeholderProxy.DrawGroups = _drawgroups;
-                    if (_selectable != null)
-                    {
-                        _selectable.TryGetTarget(out ISelectable? sel);
-                        if (sel != null)
-                        {
-                            _placeholderProxy.SetSelectable(sel);
-                        }
-                    }
-
-                    if (!_registered)
-                    {
-                        _placeholderProxy.Register();
-                    }
-                }
-            }
-        }
+        MeshAvailabilityChanged?.Invoke(this);
     }
 
     public void OnProviderUnavailable()
@@ -334,12 +244,19 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
             _submeshes.Clear();
         }
+    }
+    public bool HasRenderableGeometry()
+    {
+        if (_meshProvider != null && _meshProvider.IsAvailable() && _meshProvider.IndexCount > 0)
+            return true;
 
-        if (_placeholderProxy != null)
+        foreach (MeshRenderableProxy sm in _submeshes)
         {
-            _placeholderProxy.Dispose();
-            _placeholderProxy = null;
+            if (sm.HasRenderableGeometry())
+                return true;
         }
+
+        return false;
     }
 
     public override BoundingBox GetBounds()
@@ -381,7 +298,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             c.Register();
         }
 
-        _placeholderProxy?.Register();
         _registered = true;
         ScheduleRenderableConstruction();
     }
@@ -398,8 +314,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         {
             c.UnregisterWithScene();
         }
-
-        _placeholderProxy?.UnregisterWithScene();
     }
 
     public override void UnregisterAndRelease()
@@ -413,8 +327,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         {
             c.UnregisterAndRelease();
         }
-
-        _placeholderProxy?.UnregisterAndRelease();
 
         if (_meshProvider != null)
         {
@@ -713,8 +625,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         {
             c.DestroyRenderables();
         }
-
-        _placeholderProxy?.DestroyRenderables();
     }
 
     public override void SetSelectable(ISelectable sel)
@@ -729,8 +639,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         {
             child.SetSelectable(sel);
         }
-
-        _placeholderProxy?.SetSelectable(sel);
     }
 
     public RenderKey GetRenderKey(float distance)

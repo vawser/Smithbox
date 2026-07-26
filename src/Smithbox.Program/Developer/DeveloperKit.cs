@@ -1,5 +1,7 @@
-﻿using Hexa.NET.ImGui;
+﻿using DotNext;
+using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Utilities;
 using System.Numerics;
 using System.Text.Json;
@@ -268,7 +270,7 @@ public class DeveloperKit
         var assets = targetProject.Locator.AssetFiles;
         foreach(var entry in assets.Entries)
         {
-            if(targetProject.VFS.FS.FileExists(entry.Path))
+            if (targetProject.VFS.FS.FileExists(entry.Path))
             {
                 try
                 {
@@ -277,7 +279,7 @@ public class DeveloperKit
                     var binder = BND4.Read(data);
                     var flverFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".flver"));
 
-                    if(flverFile != null)
+                    if (flverFile != null)
                     {
                         var flver = FLVER2.Read(flverFile.Bytes);
                         if (flver.IsSpeedtree())
@@ -298,12 +300,19 @@ public class DeveloperKit
             }
         }
 
-        foreach(var entry in SpeedTreeAssets)
+        foreach (var entry in SpeedTreeAssets)
         {
             var writePath = Path.Join(CFG.Current.DEVKIT_DataPath_OutputFolder, $"{entry.Key}_SpeedTreeAssets.json");
-            var text = string.Join("\n", entry.Value);
 
-            File.WriteAllText(writePath, text);
+            var speedTreeList = new SpeedTreeList();
+
+            foreach(var val in entry.Value)
+            {
+                speedTreeList.Entries.Add(val);
+            }
+
+            var jsonString = JsonSerializer.Serialize(speedTreeList, MapEditorJsonSerializerContext.Default.SpeedTreeList);
+            File.WriteAllText(writePath, jsonString);
         }
     }
 }
