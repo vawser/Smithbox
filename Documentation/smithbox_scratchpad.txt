@@ -2,6 +2,10 @@
 # TODO 
 #---------------------
 
+# Map Editor
+- ER offset for load related maps is a bit off sometimes 
+ - (_02 is not aligned with _01 or _00) - Weeping Penisula example
+
 # Gparam Editor:
  - DS2 fog color values are inverted (BGR, not RGB)
 

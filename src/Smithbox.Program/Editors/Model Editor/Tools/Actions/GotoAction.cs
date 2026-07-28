@@ -36,32 +36,14 @@ public class GotoAction
     }
 
     /// <summary>
-    /// Context Menu
-    /// </summary>
-    public void OnContext()
-    {
-        // Not shown here
-    }
-
-    /// <summary>
     /// Edit Menu
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Go to in List", InputManager.GetHint(KeybindID.Jump)))
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_GoTo_Title")}##gotoAction", InputManager.GetHint(KeybindID.Jump)))
         {
             GotoModelObjectEntry();
         }
-    }
-
-    /// <summary>
-    /// Tool Window
-    /// </summary>
-    public void OnToolWindow()
-    {
-        var windowWidth = ImGui.GetWindowWidth();
-
-        // Not shown here
     }
 
     /// <summary>
@@ -75,7 +57,7 @@ public class GotoAction
         }
         else
         {
-            Smithbox.LogError<GotoAction>("No object selected.");
+            Smithbox.LogError<GotoAction>(LOC.Get("MODEL_Tools_Log_No_Object_Selected"));
         }
     }
 }

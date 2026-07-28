@@ -41,11 +41,12 @@ public class PullToCameraAction
     /// </summary>
     public void OnContext()
     {
-        if (ImGui.Selectable("Pull to Camera"))
+        // Pull to Camera
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Pull_Title")}##pullAction"))
         {
             ApplyMoveToCamera();
         }
-        GUI.Tooltip($"Move the current selection to the camera position.\n\nShortcut: {InputManager.GetHint(KeybindID.Pull)}");
+        GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Pull_Context_TT", InputManager.GetHint(KeybindID.Pull)));
     }
 
     /// <summary>
@@ -53,11 +54,12 @@ public class PullToCameraAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Pull to Camera", InputManager.GetHint(KeybindID.Pull)))
+        // Pull to Camera
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Pull_Title")}##pullAction", InputManager.GetHint(KeybindID.Pull)))
         {
             ApplyMoveToCamera();
         }
-        GUI.Tooltip("Move the current selection to the camera position.");
+        GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Pull_Menu_TT"));
     }
 
     /// <summary>
@@ -132,7 +134,7 @@ public class PullToCameraAction
         }
         else
         {
-            Smithbox.LogError<PullToCameraAction>("No object selected.");
+            Smithbox.LogError<PullToCameraAction>(LOC.Get("MODEL_Tools_Log_No_Object_Selected"));
         }
     }
 }

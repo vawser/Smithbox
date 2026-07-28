@@ -38,11 +38,12 @@ public class FrameAction
     /// </summary>
     public void OnContext()
     {
-        if (ImGui.Selectable("Frame in Viewport"))
+        // Frame
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Frame_Context_Title")}##frameAction"))
         {
             ApplyViewportFrame();
         }
-        GUI.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {InputManager.GetHint(KeybindID.Frame)}");
+        GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Frame_Context_TT", InputManager.GetHint(KeybindID.Frame)));
     }
 
     /// <summary>
@@ -50,11 +51,12 @@ public class FrameAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Frame Selected in Viewport", InputManager.GetHint(KeybindID.Frame)))
+        // Frame Selected in Viewport
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Frame_Menu_Title")}##frameAction", InputManager.GetHint(KeybindID.Frame)))
         {
             ApplyViewportFrame();
         }
-        GUI.Tooltip("Frames the current selection in the viewport.");
+        GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Frame_Menu_TT"));
     }
 
     /// <summary>
@@ -88,7 +90,7 @@ public class FrameAction
         }
         else
         {
-            Smithbox.LogError<FrameAction>("No object selected.");
+            Smithbox.LogError<FrameAction>(LOC.Get("MODEL_Tools_Log_No_Object_Selected"));
         }
     }
 

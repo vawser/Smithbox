@@ -29,216 +29,68 @@
       "Text": "Duplicate the currently selected map objects."
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Frame_Context_Title",
+      "Text": "Frame in Viewport"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Frame_Context_TT",
+      "Text": "Frames the current selection in the viewport.\n\nShortcut: {0}"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Frame_Menu_Title",
+      "Text": "Frame Selected in Viewport"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Frame_Menu_TT",
+      "Text": "Frames the current selection in the viewport."
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_GoTo_Title",
+      "Text": "Go to in List"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Pull_Title",
+      "Text": "Pull to Camera"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Pull_Context_TT",
+      "Text": "Move the current selection to the camera position.\n\nShortcut: {0}"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Pull_Menu_TT",
+      "Text": "Move the current selection to the camera position."
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Reorder_Up_Title",
+      "Text": "Move Up"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Reorder_Up_Context_TT",
+      "Text": "Move the currently selected model objects up by one in the model object list  for this object type.\n\nShortcut: {0}"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Reorder_Down_Title",
+      "Text": "Move Down"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Reorder_Down_Context_TT",
+      "Text": "Move the currently selected model objects down by one in the model object list  for this object type.\n\nShortcut: {0}"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Reorder_Top_Title",
+      "Text": "Move to Top"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Reorder_Top_Context_TT",
+      "Text": "Move the currently selected model objects to the top of the model object list for this object type.\n\nShortcut: {0}"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Reorder_Bottom_Title",
+      "Text": "Move to Bottom"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Tools_",
-      "Text": ""
-    },
+      "Key": "MODEL_Tools_Action_Reorder_Bottom_Context_TT",
+      "Text": "Move the currently selected model objects to the bottom of the model object list for this object type.\n\nShortcut: {0}"
+    }
   ]
 }

@@ -21,7 +21,8 @@ public class ModelDataTransferTool
 
     public void DisplayDropdown()
     {
-        if (ImGui.BeginMenu("Data Transfer"))
+        // Data Transfer
+        if (ImGui.BeginMenu($"{LOC.Get("MODEL_DataTransfer_Menu_Title")}##dataTransferMenuHeader"))
         {
             ImportMenu();
             ExportMenu();

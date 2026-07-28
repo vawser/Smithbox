@@ -58,32 +58,33 @@ public class ReorderAction
     /// </summary>
     public void OnContext()
     {
-        if (ImGui.Selectable("Move Up"))
+        // Move Up
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Up_Title")}##moveUpAction"))
         {
             ApplyReorder(TreeObjectOrderMovementType.Up);
         }
-        GUI.Tooltip($"Move the currently selected model objects up by one in the model object list  for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Up)}");
+        GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Reorder_Up_Context_TT", InputManager.GetHint(KeybindID.Reorder_Up)));
 
         // Move Down
-        if (ImGui.Selectable("Move Down"))
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Down_Title")}##moveDownAction"))
         {
             ApplyReorder(TreeObjectOrderMovementType.Down);
         }
-        GUI.Tooltip($"Move the currently selected model objects down by one in the model object list  for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Down)}");
+        GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Reorder_Down_Context_TT", InputManager.GetHint(KeybindID.Reorder_Down)));
 
-        // Move Top
-        if (ImGui.Selectable("Move to Top"))
+        // Move to Top
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Top_Title")}##moveToTopAction"))
         {
             ApplyReorder(TreeObjectOrderMovementType.Top);
         }
-        GUI.Tooltip($"Move the currently selected model objects to the top of the model object list for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Top)}");
+        GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Reorder_Top_Context_TT", InputManager.GetHint(KeybindID.Reorder_Top)));
 
-        // Move Bottom
-        if (ImGui.Selectable("Move to Bottom"))
+        // Move to Bottom
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Bottom_Title")}##moveToBottomAction"))
         {
             ApplyReorder(TreeObjectOrderMovementType.Bottom);
         }
-        GUI.Tooltip($"Move the currently selected model objects to the bottom of the model object list for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Bottom)}");
+        GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Reorder_Bottom_Context_TT", InputManager.GetHint(KeybindID.Reorder_Bottom)));
     }
 
     /// <summary>
@@ -91,35 +92,30 @@ public class ReorderAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Move Up", InputManager.GetHint(KeybindID.Reorder_Up)))
+        // Move Up
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Up_Title")}##moveUpAction", InputManager.GetHint(KeybindID.Reorder_Up)))
         {
             ApplyReorder(TreeObjectOrderMovementType.Up);
         }
 
-        if (ImGui.MenuItem("Move Down", InputManager.GetHint(KeybindID.Reorder_Down)))
+        // Move Down
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Down_Title")}##moveDownAction", InputManager.GetHint(KeybindID.Reorder_Down)))
         {
             ApplyReorder(TreeObjectOrderMovementType.Down);
         }
 
-        if (ImGui.MenuItem("Move to Top", InputManager.GetHint(KeybindID.Reorder_Top)))
+        // Move to Top
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Top_Title")}##moveToTopAction", InputManager.GetHint(KeybindID.Reorder_Top)))
         {
             ApplyReorder(TreeObjectOrderMovementType.Top);
         }
 
-        if (ImGui.MenuItem("Move to Bottom", InputManager.GetHint(KeybindID.Reorder_Bottom)))
+        // Move to Bottom
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Bottom_Title")}##moveToBottomAction", InputManager.GetHint(KeybindID.Reorder_Bottom)))
         {
             ApplyReorder(TreeObjectOrderMovementType.Bottom);
         }
     }
-
-    /// <summary>
-    /// Tool Window
-    /// </summary>
-    public void OnToolWindow()
-    {
-        // Not shown here
-    }
-
 
     /// <summary>
     /// Effect
@@ -144,7 +140,7 @@ public class ReorderAction
         }
         else
         {
-            Smithbox.LogError<ReorderAction>("No object selected.");
+            Smithbox.LogError<ReorderAction>(LOC.Get("MODEL_Tools_Log_No_Object_Selected"));
         }
     }
 }

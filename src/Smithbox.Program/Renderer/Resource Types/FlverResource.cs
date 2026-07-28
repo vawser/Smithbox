@@ -347,17 +347,6 @@ public class FlverResource : IResource, IDisposable
                 }
             }
 
-            if (handler.FocusedEditor is ModelEditorScreen)
-            {
-                var modelEditor = (ModelEditorScreen)handler.FocusedEditor;
-
-                var activeView = modelEditor.ViewHandler.ActiveView;
-                if (activeView != null)
-                {
-                    activeView.ModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
-                }
-            }
-
             ResourceManager.AddResourceListener<TextureResource>(textureVirtPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;
         }

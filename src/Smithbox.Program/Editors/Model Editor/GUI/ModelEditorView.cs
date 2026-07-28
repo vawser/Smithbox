@@ -44,7 +44,6 @@ public class ModelEditorView
     //public ModelInsightView ModelInsightMenu;
     public ModelInstanceFinder ModelInstanceFinder;
     public ModelMaskToggler ModelMaskToggler;
-    public ModelInsightHelper ModelInsightHelper;
     public ResourceListTool ResourceListTool;
 
     // Actions
@@ -92,8 +91,6 @@ public class ModelEditorView
         GotoAction = new GotoAction(this, Project);
         PullToCameraAction = new PullToCameraAction(this, Project);
         ReorderAction = new ReorderAction(this, Project);
-
-        ModelInsightHelper = new ModelInsightHelper(this, Project);
     }
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
