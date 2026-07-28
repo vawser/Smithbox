@@ -1,32 +1,32 @@
 {
   "Entries": [
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Log_No_Object_Selected",
+      "Text": "No object selected."
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Delete_Title",
+      "Text": "Delete"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Delete_Context_TT",
+      "Text": "Delete the currently selected model objects.\n\nShortcut: {0}"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Delete_Menu_TT",
+      "Text": "Delete the currently selected model objects."
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Duplicate_Title",
+      "Text": "Duplicate"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Duplicate_Context_TT",
+      "Text": "Duplicate the currently selected map objects.\n\nShortcut: {0}"
     },
     {
-      "Key": "MODEL_Tools_",
-      "Text": ""
+      "Key": "MODEL_Tools_Action_Duplicate_Menu_TT",
+      "Text": "Duplicate the currently selected map objects."
     },
     {
       "Key": "MODEL_Tools_",

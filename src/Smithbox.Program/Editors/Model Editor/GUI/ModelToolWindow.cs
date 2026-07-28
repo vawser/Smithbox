@@ -93,6 +93,13 @@ public class ModelToolWindow
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler);
 
+            // Resource Monitor
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Resource_Monitor")}##resourceMonitorToggle"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor = !CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor);
+
             ImGui.EndMenu();
         }
     }

@@ -26,11 +26,11 @@
     },
     {
       "Key": "PROJECT_Configuration_Global_Action_Create_Project",
-      "Text": "Create Project"
+      "Text": "Define New Project"
     },
     {
       "Key": "PROJECT_Configuration_Global_Action_Create_Project_TT",
-      "Text": "Create a new project entry, and set the Project Configuration input to 'Create'."
+      "Text": "Define a new project entry in the Project Configuration window."
     },
     {
       "Key": "PROJECT_Configuration_Global_Action_Create_Project_From_JSON",

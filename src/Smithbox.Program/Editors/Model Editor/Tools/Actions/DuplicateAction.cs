@@ -43,11 +43,12 @@ public class DuplicateAction
     /// </summary>
     public void OnContext()
     {
-        if (ImGui.Selectable("Duplicate"))
+        // Duplicate
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Duplicate_Title")}##duplicateAction"))
         {
             ApplyDuplicate();
         }
-        GUI.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Duplicate)}");
+        GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Duplicate_Context_TT", InputManager.GetHint(KeybindID.Duplicate)));
 
     }
 
@@ -56,37 +57,12 @@ public class DuplicateAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Duplicate", InputManager.GetHint(KeybindID.Duplicate)))
+        // Duplicate
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Duplicate_Title")}##duplicateAction", InputManager.GetHint(KeybindID.Duplicate)))
         {
             ApplyDuplicate();
         }
-        GUI.Tooltip($"Duplicate the currently selected map objects.");
-    }
-
-    /// <summary>
-    /// Tool Window
-    /// </summary>
-    public void OnToolWindow()
-    {
-        var windowWidth = ImGui.GetWindowWidth();
-
-        if (ImGui.CollapsingHeader("Duplicate"))
-        {
-            DisplayMenu();
-        }
-    }
-
-    /// <summary>
-    /// Menu
-    /// </summary>
-    public void DisplayMenu()
-    {
-        var windowWidth = ImGui.GetWindowWidth();
-
-        if (ImGui.Button("Duplicate Selection", DPI.WholeWidthButton(windowWidth, 24)))
-        {
-            ApplyDuplicate();
-        }
+        GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Duplicate_Menu_TT"));
     }
 
     /// <summary>
@@ -110,7 +86,7 @@ public class DuplicateAction
         }
         else
         {
-            Smithbox.LogError<DuplicateAction>("No object selected.");
+            Smithbox.LogError<DuplicateAction>(LOC.Get("MODEL_Tools_Log_No_Object_Selected"));
         }
     }
 }

@@ -38,11 +38,12 @@ public class DeleteAction
     /// </summary>
     public void OnContext()
     {
-        if (ImGui.Selectable("Delete"))
+        // Delete
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Delete_Title")}##deleteAction"))
         {
             ApplyDelete();
         }
-        GUI.Tooltip($"Delete the currently selected model objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Delete)}");
+        GUI.Tooltip($"{LOC.Get("MODEL_Tools_Action_Delete_Context_TT", InputManager.GetHint(KeybindID.Delete))}");
     }
 
     /// <summary>
@@ -50,21 +51,12 @@ public class DeleteAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
+        // Delete
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Delete_Title")}##deleteAction",  InputManager.GetHint(KeybindID.Delete)))
         {
             ApplyDelete();
         }
-        GUI.Tooltip($"Delete the currently selected model objects.");
-    }
-
-    /// <summary>
-    /// Tool Window
-    /// </summary>
-    public void OnToolWindow()
-    {
-        var windowWidth = ImGui.GetWindowWidth();
-
-        // Not shown here
+        GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Delete_Menu_TT"));
     }
 
     /// <summary>
@@ -88,7 +80,7 @@ public class DeleteAction
         }
         else
         {
-            Smithbox.LogError<DeleteAction>("No object selected.");
+            Smithbox.LogError<DeleteAction>(LOC.Get("MODEL_Tools_Log_No_Object_Selected"));
         }
     }
 }

@@ -33,20 +33,19 @@ public class ModelMaskToggler
 
     public void OnToolWindow()
     {
-        // TODO: re-enable once we've sorted the sub-mesh thing
-        //var windowWidth = ImGui.GetWindowWidth();
+        var windowWidth = ImGui.GetWindowWidth();
 
-        //if (ImGui.CollapsingHeader("Model Mask Toggler"))
-        //{
-        //    UIHelper.WrappedText("Quickly toggle between model mask combinations by selecting a NPC Param entry.");
-        //    UIHelper.WrappedText("");
+        if (ImGui.CollapsingHeader("Model Mask Toggler"))
+        {
+            GUI.WrappedText("Quickly toggle between model mask combinations by selecting a NPC Param entry.");
+            GUI.Spacer();
 
-        //    ImGui.Separator();
+            ImGui.Separator();
 
-        //ImGui.BeginChild("ModelMAskToolSection");
-        //    Display();
-        //ImGui.EndChild();
-        //}
+            ImGui.BeginChild("ModelMaskToolSection");
+            Display();
+            ImGui.EndChild();
+        }
     }
 
     public void Display()
