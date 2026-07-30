@@ -1334,7 +1334,7 @@
       <UnkC0>QUICK_MATCH</UnkC0>
       <UnkC8>クイックマッチ</UnkC8>
     </Field>
-    <Field Def="u32 quickMatchSearchTimeout = 1">
+    <Field Def="f32 quickMatchSearchTimeout = 1">
       <DisplayName>アバター戦検索時の最大人数(未使用)</DisplayName>
       <Description>本当はu8くらいで十分</Description>
       <DisplayFormat>%u</DisplayFormat>
