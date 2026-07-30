@@ -1,19 +1,8 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.Extensions.Logging;
-using Octokit;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Keybinds;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Veldrid;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -35,9 +24,10 @@ public class ModelMaskToggler
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (ImGui.CollapsingHeader("Model Mask Toggler"))
+        // Model Mask Toggler
+        if (ImGui.CollapsingHeader($"{LOC.Get("MODEL_MaskToggler_Header")}##modelMaskTogglerHeader"))
         {
-            GUI.WrappedText("Quickly toggle between model mask combinations by selecting a NPC Param entry.");
+            GUI.WrappedText(LOC.Get("MODEL_MaskToggler_Hint"));
             GUI.Spacer();
 
             ImGui.Separator();
@@ -52,20 +42,20 @@ public class ModelMaskToggler
     {
         if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            GUI.WrappedText("This project type is not supported by this tool.");
+            GUI.WrappedText(LOC.Get("MODEL_MaskToggler_Invalid_Project"));
             return;
         }
 
         if (View.Project.Handler.ParamEditor == null)
         {
-            GUI.WrappedText("The Param Editor must be enabled for this tool to work.");
+            GUI.WrappedText(LOC.Get("MODEL_MaskToggler_No_Param_Editor"));
 
             return;
         }
 
         if(View.Selection.SelectedModelWrapper == null)
         {
-            GUI.WrappedText("A model must be loaded first for this tool to work.");
+            GUI.WrappedText(LOC.Get("MODEL_MaskToggler_No_Model"));
 
             return;
         }
@@ -75,7 +65,7 @@ public class ModelMaskToggler
 
         if (!View.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(npcParamKey))
         {
-            GUI.WrappedText("Failed to find associated NpcParam entry.");
+            GUI.WrappedText(LOC.Get("MODEL_MaskToggler_No_Npc_Param"));
 
             return;
         }
@@ -84,7 +74,7 @@ public class ModelMaskToggler
 
         if (npcParam == null)
         {
-            GUI.WrappedText("Failed to find associated NpcParam entry.");
+            GUI.WrappedText(LOC.Get("MODEL_MaskToggler_No_Npc_Param"));
 
             return;
         }
@@ -196,7 +186,8 @@ public class ModelMaskToggler
                     }
                     catch (Exception e)
                     {
-                        Smithbox.Log(this, $"Failed to parse Mask ID: {e.Message}", LogLevel.Warning);
+                        Smithbox.LogError(this, 
+                            LOC.Get("MODEL_MaskToggler_Invalid_Mask_ID", maskIdStr), e);
                     }
                 }
                 else

@@ -1,0 +1,80 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_InstanceFinder_Header",
+      "Text": "Model Instance Finder"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Hint",
+      "Text": "Search through all maps for usage of the specificed model name."
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Model_Name_Header",
+      "Text": "Model Name"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Model_Name_Header_TT",
+      "Text": "The name of the model to search for. cXXXX is the typicall format for model names."
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Options_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Checkbox_Target_Project",
+      "Text": "Target Project Files"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Checkbox_Target_Project_TT",
+      "Text": "Uses the project map files instead of game root."
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Checkbox_Loose_Name_Match",
+      "Text": "Loose Name Match"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Checkbox_Loose_Name_Match_TT",
+      "Text": "Only require the Model Name field to contain the search string, instead of requiring an exact match."
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Actions_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Search_Action",
+      "Text": "Search"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Search_Action_TT",
+      "Text": "Search through all maps for instances of the specified model name."
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Results_Header",
+      "Text": "Results"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Results_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Instances_TT",
+      "Text": "The value in the [] is the number of instances with the map."
+    },
+    {
+      "Key": "MODEL_InstanceFinder_No_Results",
+      "Text": "No results."
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Log_Failed_MSB_Read",
+      "Text": "Failed to read MSB: {0}"
+    }
+  ]
+}

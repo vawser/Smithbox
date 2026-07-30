@@ -33,7 +33,7 @@
   Map Data Editor
   Map Editor
   Material Editor
-  Model Editor
+  ### Model Editor
   ### Param Editor
   ### Project Metadata Editor
   ### Text Editor

@@ -38,34 +38,52 @@ public class ModelInstanceFinder
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (ImGui.CollapsingHeader("Model Instance Finder"))
+        // Model Instance Finder
+        if (ImGui.CollapsingHeader($"{LOC.Get("MODEL_InstanceFinder_Header")}##modelInstanceFinder"))
         {
             ImGui.BeginChild("ModelInstanceFinderToolSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText("Search through all maps for usage of the specificed model name.");
+            GUI.WrappedText(LOC.Get("MODEL_InstanceFinder_Hint"));
 
+            // Model Name
             GUI.Spacer();
-            GUI.SimpleHeader("Model Name", "");
+            GUI.SimpleHeader(
+                LOC.Get("MODEL_InstanceFinder_Model_Name_Header"),
+                LOC.Get("MODEL_InstanceFinder_Model_Name_Header_TT"));
 
             GUI.SinglelineTextInput("ModelNameInput", ref _searchInput);
 
+            // Options
             GUI.Spacer();
-            GUI.SimpleHeader("Options", "");
+            GUI.SimpleHeader(
+                LOC.Get("MODEL_InstanceFinder_Options_Header"),
+                LOC.Get("MODEL_InstanceFinder_Options_Header_TT"));
 
-            ImGui.Checkbox("Target Project Files", ref _targetProjectFiles);
-            GUI.Tooltip("Uses the project map files instead of game root.");
+            // Target Project Files
+            ImGui.Checkbox($"{LOC.Get("MODEL_InstanceFinder_Checkbox_Target_Project")}##toggleProjectFileTarget", ref _targetProjectFiles);
+            GUI.Tooltip(LOC.Get("MODEL_InstanceFinder_Checkbox_Target_Project_TT"));
 
-            ImGui.Checkbox("Loose Name Match", ref _looseModelNameMatch);
-            GUI.Tooltip("Only require the Model Name field to contain the search string, instead of requiring an exact match.");
+            // Loose Name Match
+            ImGui.Checkbox($"{LOC.Get("MODEL_InstanceFinder_Checkbox_Loose_Name_Match")}##toggleLooseNameMatch", ref _looseModelNameMatch);
+            GUI.Tooltip(LOC.Get("MODEL_InstanceFinder_Checkbox_Loose_Name_Match_TT"));
 
+            // Actions
             GUI.Spacer();
-            GUI.SimpleHeader("Actions", "");
+            GUI.SimpleHeader(
+                LOC.Get("MODEL_InstanceFinder_Actions_Header"),
+                LOC.Get("MODEL_InstanceFinder_Actions_Header_TT"));
 
             GUI.MultiButtonInput("instanceActions",
-                "search", "Search", "", SearchMaps);
+                "search",
+                LOC.Get("MODEL_InstanceFinder_Search_Action"),
+                LOC.Get("MODEL_InstanceFinder_Search_Action_TT"),
+                SearchMaps);
 
+            // Results
             GUI.Spacer();
-            GUI.SimpleHeader("Results", "");
+            GUI.SimpleHeader(
+                LOC.Get("MODEL_InstanceFinder_Results_Header"),
+                LOC.Get("MODEL_InstanceFinder_Results_Header_TT"));
 
             DisplayInstances();
 
@@ -88,14 +106,14 @@ public class ModelInstanceFinder
                 }
                 var aliasName = AliasHelper.GetMapNameAlias(View.Project, entry.MapName);
                 GUI.DisplayAlias(aliasName);
-                GUI.Tooltip("The value in the [] is the number of instances with the map.");
+                GUI.Tooltip(LOC.Get("MODEL_InstanceFinder_Instances_TT"));
             }
 
             ImGui.EndChild();
         }
         else
         {
-            GUI.WrappedText("No results.");
+            GUI.WrappedText(LOC.Get("MODEL_InstanceFinder_No_Results"));
         }
     }
 
@@ -128,7 +146,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
                         }
                     }
                     break;
@@ -146,7 +164,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
                         }
                     }
                     break;
@@ -164,7 +182,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
                         }
                     }
                     break;
@@ -181,7 +199,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
                         }
                     }
                     break;
@@ -198,7 +216,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
                         }
                     }
                     break;
@@ -215,7 +233,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
                         }
                     }
                     break;
@@ -232,7 +250,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
                         }
                     }
                     break;
@@ -249,7 +267,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
                         }
                     }
                     break;
@@ -266,7 +284,7 @@ public class ModelInstanceFinder
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Model Editor] Failed to read MSB: {entry.Path}", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
                         }
                     }
                     break;

@@ -1,0 +1,172 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_GridConfig_ModelGridConfiguration_Header",
+      "Text": "Model Grid Configuration"
+    },
+    {
+      "Key": "MODEL_GridConfig_Primary_Grid_Header",
+      "Text": "Primary Grid"
+    },
+    {
+      "Key": "MODEL_GridConfig_Primary_Grid_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_GridConfig_Secondary_Grid_Header",
+      "Text": "Secondary Grid"
+    },
+    {
+      "Key": "MODEL_GridConfig_Secondary_Grid_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_GridConfig_Tertiary_Grid_Header",
+      "Text": "Tertiary Grid"
+    },
+    {
+      "Key": "MODEL_GridConfig_Tertiary_Grid_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_GridConfig_Action_Toggle_Grid_Visibility",
+      "Text": "Toggle Grid Visibility"
+    },
+    {
+      "Key": "MODEL_GridConfig_Action_Toggle_Grid_Visibility_TT",
+      "Text": "Toggle the visibility of the currently selected grid."
+    },
+    {
+      "Key": "MODEL_GridConfig_Grid_Position_Header",
+      "Text": "Grid Position"
+    },
+    {
+      "Key": "MODEL_GridConfig_Grid_Position_Header_TT",
+      "Text": "The position configuration for the grid."
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_X",
+      "Text": "X"
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_X_TT",
+      "Text": "The position of the grid on the X-axis."
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_Y",
+      "Text": "Y"
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_Y_TT",
+      "Text": "The position of the grid on the Y-axis."
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_Z",
+      "Text": "Z"
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_Z_TT",
+      "Text": "The position of the grid on the Z-axis."
+    },
+    {
+      "Key": "MODEL_GridConfig_Grid_Rotation_Header",
+      "Text": "Grid Rotation"
+    },
+    {
+      "Key": "MODEL_GridConfig_Grid_Rotation_Header_TT",
+      "Text": "The rotation configuration for the grid."
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_X",
+      "Text": "X"
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_X_TT",
+      "Text": "The rotation of the grid on the X-axis."
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_Y",
+      "Text": "Y"
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_Y_TT",
+      "Text": "The rotation of the grid on the Y-axis."
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_Z",
+      "Text": "Z"
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_Z_TT",
+      "Text": "The rotation of the grid on the Z-axis."
+    },
+    {
+      "Key": "MODEL_GridConfig_Color_Header",
+      "Text": "Grid Color"
+    },
+    {
+      "Key": "MODEL_GridConfig_Color_Header_TT",
+      "Text": "The color configuration for the grid."
+    },
+    {
+      "Key": "MODEL_GridConfig_Color_Input_TT",
+      "Text": "The color of the grid."
+    },
+    {
+      "Key": "MODEL_GridConfig_Square_Size_Header",
+      "Text": "Grid Square Size"
+    },
+    {
+      "Key": "MODEL_GridConfig_Square_Size_Header_TT",
+      "Text": "The grid square size configuration for the grid."
+    },
+    {
+      "Key": "MODEL_GridConfig_Square_Size_Input_TT",
+      "Text": "The size of an individual grid square."
+    },
+    {
+      "Key": "MODEL_GridConfig_Size",
+      "Text": "Grid Size"
+    },
+    {
+      "Key": "MODEL_GridConfig_Size_TT",
+      "Text": "The size configuration for the grid."
+    },
+    {
+      "Key": "MODEL_GridConfig_Size_Input_TT",
+      "Text": "The number of grid squares that make up the grid."
+    },
+    {
+      "Key": "MODEL_GridConfig_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "MODEL_GridConfig_Actions_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Primary_Grid_Action",
+      "Text": "Toggle Primary Grid"
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Primary_Grid_Action_TT",
+      "Text": "Toggle the display of the Primary Grid."
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Secondary_Grid_Action",
+      "Text": "Toggle Secondary Grid"
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Secondary_Grid_Action_TT",
+      "Text": "Toggle the display of the Secondary Grid."
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Tertiary_Grid_Action",
+      "Text": "Toggle Tertiary Grid"
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Tertiary_Grid_Action_TT",
+      "Text": "Toggle the display of the Tertiary Grid."
+    }
+  ]
+}

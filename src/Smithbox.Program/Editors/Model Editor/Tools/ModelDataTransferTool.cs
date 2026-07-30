@@ -30,6 +30,7 @@ public class ModelDataTransferTool
             ImGui.EndMenu();
         }
     }
+
     public void Display()
     {
         ImGui.BeginChild("DataTransferSection", ImGuiChildFlags.Borders);
@@ -47,9 +48,10 @@ public class ModelDataTransferTool
     #region Import
     public void ImportTab()
     {
-        if (ImGui.BeginTabItem($"Import"))
+        // Import
+        if (ImGui.BeginTabItem($"{LOC.Get("MODEL_DataTransfer_Tab_Import")}##importTab"))
         {
-            GUI.WrappedText("Use this section to import JSON data, applying the data to your current project.");
+            GUI.WrappedText(LOC.Get("MODEL_DataTransfer_Tab_Import_Hint"));
 
             // TODO
 
@@ -59,7 +61,8 @@ public class ModelDataTransferTool
 
     public void ImportMenu()
     {
-        if (ImGui.BeginMenu("Import"))
+        // Import
+        if (ImGui.BeginTabItem($"{LOC.Get("MODEL_DataTransfer_Tab_Import")}##importHeader"))
         {
             // TODO
 
@@ -71,9 +74,10 @@ public class ModelDataTransferTool
     #region Export
     public void ExportTab()
     {
-        if (ImGui.BeginTabItem($"Export"))
+        // Export
+        if (ImGui.BeginTabItem($"{LOC.Get("MODEL_DataTransfer_Tab_Export")}##exportTab"))
         {
-            GUI.WrappedText("Use this section to export JSON data from your current project.");
+            GUI.WrappedText(LOC.Get("MODEL_DataTransfer_Tab_Export_Hint"));
 
             // TODO
 
@@ -83,7 +87,8 @@ public class ModelDataTransferTool
 
     public void ExportMenu()
     {
-        if (ImGui.BeginMenu("Export"))
+        // Export
+        if (ImGui.BeginTabItem($"{LOC.Get("MODEL_DataTransfer_Tab_Export")}##exportHeader"))
         {
             // TODO
 
