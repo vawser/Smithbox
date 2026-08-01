@@ -18,7 +18,7 @@
     },
     {
       "Key": "TEXT_TextMerge_Header_Options_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_TextMerge_Checkbox_Merge_Primary_Lang",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "TEXT_TextMerge_Header_Actions_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_TextMerge_Action_Merge",

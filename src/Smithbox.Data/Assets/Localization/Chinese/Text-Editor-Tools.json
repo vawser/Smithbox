@@ -51,6 +51,18 @@
     {
       "Key": "TEXT_Tools_View_Text_Merge",
       "Text": "文本合并"
+    },
+    {
+      "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_PASS",
+      "Text": "已将选中的文本条目复制到剪贴板。"
+    },
+    {
+      "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_FAIL",
+      "Text": "剪贴板复制失败。"
+    },
+    {
+      "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_Result",
+      "Text": "文本条目内容已复制到剪贴板。"
     }
   ]
 }

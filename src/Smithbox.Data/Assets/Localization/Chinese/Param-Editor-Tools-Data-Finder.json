@@ -1,0 +1,304 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_DataFinder_Tab_Field_Names",
+      "Text": "字段名"
+    },
+    {
+      "Key": "PARAM_DataFinder_Tab_Field_Values",
+      "Text": "字段值"
+    },
+    {
+      "Key": "PARAM_DataFinder_Tab_Row_Names",
+      "Text": "行名"
+    },
+    {
+      "Key": "PARAM_DataFinder_Tab_Row_IDs",
+      "Text": "行 ID"
+    },
+    {
+      "Key": "PARAM_DataFinder_Tab_Field_Value_Sets",
+      "Text": "字段值集合"
+    },
+    {
+      "Key": "PARAM_DataFinder_Tab_Row_ID_Sets",
+      "Text": "行 ID 集合"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Target_Params",
+      "Text": "目标参数"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Target_Params_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Add_Param_Target_TT",
+      "Text": "添加新的参数目标输入行。"
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Remove_Param_Target_TT",
+      "Text": "移除最后添加的参数目标输入行。"
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Reset_Param_Target",
+      "Text": "重置"
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Reset_Param_Target_TT",
+      "Text": "重置参数目标输入行。"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Options_TT",
+      "Text": "要搜索的参数。留空则目标为所有参数。"
+    },
+    {
+      "Key": "PARAM_DataFinder_Param_Target_Include_TT",
+      "Text": "要包含的参数目标。"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Search",
+      "Text": "搜索"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Search_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_DataFinder_Search_Hint",
+      "Text": "要搜索的词条..."
+    },
+    {
+      "Key": "PARAM_DataFinder_Search_Value_Hint",
+      "Text": "要搜索的值..."
+    },
+    {
+      "Key": "PARAM_DataFinder_Search_ID_Set_Hint",
+      "Text": "要搜索的 ID 集合..."
+    },
+    {
+      "Key": "PARAM_DataFinder_Search_Value_Set_Hint",
+      "Text": "要搜索的值集合..."
+    },
+    {
+      "Key": "PARAM_DataFinder_Search_RangeStart_Hint",
+      "Text": "搜索范围的起始值..."
+    },
+    {
+      "Key": "PARAM_DataFinder_Search_RangeEnd_Hint",
+      "Text": "搜索范围的结束值..."
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Search",
+      "Text": "搜索"
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Search_TT",
+      "Text": "在目标参数中执行搜索，查找指定词条（如适用）。"
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Clear",
+      "Text": "清除结果"
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Clear_TT",
+      "Text": "清除搜索结果列表。"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Search_Results",
+      "Text": "搜索结果"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Search_Results_TT",
+      "Text": "上次执行的搜索结果。"
+    },
+    {
+      "Key": "PARAM_DataFinder_Search_Term",
+      "Text": "搜索词条："
+    },
+    {
+      "Key": "PARAM_DataFinder_Result_Count",
+      "Text": "搜索词条："
+    },
+    {
+      "Key": "PARAM_DataFinder_No_Results",
+      "Text": "无结果显示。"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Hint",
+      "Text": "根据搜索文本显示所有字段及其出现的相应参数。"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Include_Community_Name",
+      "Text": "搜索中包含社区名称"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Include_Community_Name_TT",
+      "Text": "在搜索中包含字段的社区名称文本。"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Include_Description",
+      "Text": "搜索中包含描述"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Include_Description_TT",
+      "Text": "在搜索中包含字段的描述文本。"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Complete_Word_Match",
+      "Text": "完整单词匹配"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Complete_Word_Match_TT",
+      "Text": "匹配时确保搜索词条与整个单词完全匹配，而非单词的部分内容。\n对于内部名称，将在检查前根据大小写拆分字符串。"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Display_Community_Name",
+      "Text": "结果显示社区名称"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Display_Community_Name_TT",
+      "Text": "显示字段的社区名称而非内部名称。"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Results_Column_Header",
+      "Text": "<Param>: <行名>"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Name",
+      "Text": "名称"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Hint",
+      "Text": "显示指定字段值的所有实例。"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Enable_Range_Search",
+      "Text": "启用范围搜索"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Enable_Range_Search_TT",
+      "Text": "启用后，搜索将在起始值和结束值之间查找匹配项。"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Display_First_Match",
+      "Text": "仅显示首个匹配"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Display_First_Match_TT",
+      "Text": "仅显示参数内的首个匹配，而非所有匹配。"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Display_Community_Name",
+      "Text": "结果显示社区名称"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Display_Community_Name_TT",
+      "Text": "显示字段的社区名称而非内部名称。"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Results_Column_Header",
+      "Text": "<Param>: <行 ID>: <字段名>: <字段值>"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Context_Action_Copy_Row_ID",
+      "Text": "复制行 ID"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Context_Action_Copy_Row_Name",
+      "Text": "复制行名"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Value",
+      "Text": "值"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Value_Start",
+      "Text": "起始值"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Value_End",
+      "Text": "结束值"
+    },
+    {
+      "Key": "PARAM_RowNameFinder_Hint",
+      "Text": "显示指定行名的所有实例。"
+    },
+    {
+      "Key": "PARAM_RowNameFinder_Input_Row_Index",
+      "Text": "行索引"
+    },
+    {
+      "Key": "PARAM_RowNameFinder_Input_Row_Index_TT",
+      "Text": "要搜索的行索引。-1 表示任意行。"
+    },
+    {
+      "Key": "PARAM_RowNameFinder_Results_Column_Header",
+      "Text": "<Param>: <行名>"
+    },
+    {
+      "Key": "PARAM_RowNameFinder_Row_Name",
+      "Text": "行名"
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Hint",
+      "Text": "显示指定行 ID 的所有实例。"
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Input_Row_Index",
+      "Text": "行索引"
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Input_Row_Index_TT",
+      "Text": "要搜索的行索引。-1 表示任意行。"
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Input_Row_ID",
+      "Text": "行 ID"
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Input_Row_ID_TT",
+      "Text": "要搜索的行 ID。"
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Results_Column_Header",
+      "Text": "<Param>"
+    },
+    {
+      "Key": "PARAM_IdSetFinder_Hint",
+      "Text": "显示包含指定行集合的参数。"
+    },
+    {
+      "Key": "PARAM_IdSetFinder_Search_TT",
+      "Text": "要搜索的 ID 集合。用空格分隔。"
+    },
+    {
+      "Key": "PARAM_IdSetFinder_Results_Column_Header",
+      "Text": "<Param>: <行 ID>: <字段名>: <字段值>"
+    },
+    {
+      "Key": "PARAM_IdSetFinder_ID_Set",
+      "Text": "ID 集合"
+    },
+    {
+      "Key": "PARAM_ValueSetFinder_Hint",
+      "Text": "显示使用了指定值集合的字段。"
+    },
+    {
+      "Key": "PARAM_ValueSetFinder_Search_TT",
+      "Text": "要搜索的值集合。用空格分隔。"
+    },
+    {
+      "Key": "PARAM_ValueSetFinder_Results_Column_Header",
+      "Text": "<Param>: <行 ID>: <字段名>: <字段值>"
+    },
+    {
+      "Key": "PARAM_ValueSetFinder_Value_Set",
+      "Text": "值集合"
+    }
+  ]
+}

@@ -42,7 +42,7 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Header_Export_Directory_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXVIEW_TexExport_Header_Export_File_Type",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Header_Export_File_Type_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXVIEW_TexExport_Export_Type_Select_TT",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Header_Options_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXVIEW_TexExport_Checkbox_Include_Container_Folder",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Header_Actions_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXVIEW_TexExport_Action_Select_Export_Folder",

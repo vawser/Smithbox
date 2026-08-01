@@ -1,0 +1,96 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Tools_Header_Tools",
+      "Text": "工具"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Data_Comparison",
+      "Text": "数据对比"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Data_Transfer",
+      "Text": "数据传输"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Row_Names",
+      "Text": "行名称"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Memory",
+      "Text": "内存"
+    },
+    {
+      "Key": "PARAM_Tools_Header_View",
+      "Text": "视图"
+    },
+    {
+      "Key": "PARAM_Tools_View_Sort_Rows",
+      "Text": "排序行"
+    },
+    {
+      "Key": "PARAM_Tools_View_Row_Names",
+      "Text": "行名称"
+    },
+    {
+      "Key": "PARAM_Tools_View_Data_Transfer",
+      "Text": "数据传输"
+    },
+    {
+      "Key": "PARAM_Tools_View_Data_Comparison",
+      "Text": "数据对比"
+    },
+    {
+      "Key": "PARAM_Tools_View_Data_Finders",
+      "Text": "数据查找器"
+    },
+    {
+      "Key": "PARAM_Tools_View_Param_Upgrader",
+      "Text": "Param 升级器"
+    },
+    {
+      "Key": "PARAM_Tools_View_Param_Merger",
+      "Text": "Param 合并器"
+    },
+    {
+      "Key": "PARAM_Tools_View_Param_Delta_Patcher",
+      "Text": "Param 差异补丁器"
+    },
+    {
+      "Key": "PARAM_Tools_View_Param_Reloader",
+      "Text": "Param 重新加载器"
+    },
+    {
+      "Key": "PARAM_Tools_View_Item_Gib",
+      "Text": "物品生成"
+    },
+    {
+      "Key": "PARAM_Tools_View_Mass_Edit",
+      "Text": "批量编辑"
+    },
+    {
+      "Key": "PARAM_Tools_View_Param_List_Categories",
+      "Text": "Param 列表分类"
+    },
+    {
+      "Key": "PARAM_Tools_View_Pin_Groups",
+      "Text": "固定分组"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Data_Finders",
+      "Text": "数据查找器"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Mass_Edit",
+      "Text": "批量编辑"
+    },
+    {
+      "Key": "PARAM_Tools_View_Row_Name_Manipulation",
+      "Text": "行名称操作"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Row_Name_Manipulation",
+      "Text": "行名称操作"
+    }
+  ]
+}

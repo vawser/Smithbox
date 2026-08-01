@@ -1,0 +1,108 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Upgrader_Header",
+      "Text": "Param 升级器"
+    },
+    {
+      "Key": "PARAM_Upgrader_Version_Mismatch_Hint",
+      "Text": "项目主库版本低于当前游戏版本：{0} < {1} —— 请在工具窗口中打开 Param 升级器工具。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Hint",
+      "Text": "升级此项目 Param 的版本。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Version",
+      "Text": "版本"
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Version_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_Upgrader_Primary_Version",
+      "Text": "主 Param 版本：{0}"
+    },
+    {
+      "Key": "PARAM_Upgrader_Source_Version",
+      "Text": "源 Param 版本：{0}"
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Actions_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_Upgrader_Action_Start",
+      "Text": "开始"
+    },
+    {
+      "Key": "PARAM_Upgrader_No_Upgrade_Needed",
+      "Text": "无需升级 Param。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Action_Check_for_Conflicts",
+      "Text": "检查冲突"
+    },
+    {
+      "Key": "PARAM_Upgrader_Action_Apply_Upgrade",
+      "Text": "应用升级"
+    },
+    {
+      "Key": "PARAM_Upgrader_Action_Apply_Mass_Edits",
+      "Text": "应用批量编辑"
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Conflicts",
+      "Text": "冲突"
+    },
+    {
+      "Key": "PARAM_Upgrader_Header_Conflicts_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_Upgrader_Log_Missing_Upgrader_Info",
+      "Text": "未能加载升级器信息。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Log_Missing_Old_Regulation_File",
+      "Text": "未能找到旧版本 regulation 文件。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Upgraded_Primary_Bank_Params",
+      "Text": "已成功升级主库 Param。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Primary_Already_Upgraded",
+      "Text": "主库已完全升级。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Failed_SpEffect_Store",
+      "Text": "未能存储 SpEffect 数据。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Applied_MassEdit_Commands",
+      "Text": "已应用升级器批量编辑命令。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Conflict_Check_Passed",
+      "Text": "冲突检查成功。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Conflict_Check_Failed",
+      "Text": "冲突检查失败。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Deserialize_Upgrader_Info_Failed",
+      "Text": "未能反序列化升级器信息。"
+    },
+    {
+      "Key": "PARAM_Upgrader_Read_Upgrader_Info_Failed",
+      "Text": "未能加载升级器信息。"
+    }
+  ]
+}

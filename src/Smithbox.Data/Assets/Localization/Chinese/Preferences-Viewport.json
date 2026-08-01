@@ -150,7 +150,7 @@
     },
     {
       "Key": "PREF_Viewport_Header_General_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Viewport_Header_Gizmo",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "PREF_Viewport_Header_Gizmo_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Viewport_Header_Parts",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "PREF_Viewport_Header_Parts_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Viewport_Header_Wireframes",
@@ -174,7 +174,7 @@
     },
     {
       "Key": "PREF_Viewport_Header_Wireframes_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Viewport_Bg_Color",
@@ -414,7 +414,7 @@
     },
     {
       "Key": "PREF_FilterPreset_Header_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_FilerPreset_Name",

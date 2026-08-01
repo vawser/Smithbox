@@ -50,7 +50,7 @@
     },
     {
       "Key": "SYS_Blank",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "SYS_CFG_Failed_To_Deserialize",
@@ -97,22 +97,6 @@
       "Text": "前往 Github 仓库页面。"
     },
     {
-      "Key": "HELP_Github_Link",
-      "Text": "https://github.com/vawser/Smithbox"
-    },
-    {
-      "Key": "SYS_Menu_Header_Update",
-      "Text": "更新"
-    },
-    {
-      "Key": "SYS_Menu_Go_To_Release",
-      "Text": "前往发布页"
-    },
-    {
-      "Key": "SYS_Failed_Smithbox_Release",
-      "Text": "未找到 Smithbox 发布版本。"
-    },
-    {
       "Key": "DIALOG_Select",
       "Text": "选择"
     },
@@ -131,6 +115,14 @@
     {
       "Key": "SYS_Editor_Loading",
       "Text": "编辑器加载中..."
+    },
+    {
+      "Key": "PROGRAM_UPDATER_TITLE",
+      "Text": "Smithbox 更新器"
+    },
+    {
+      "Key": "PROGRAM_DEVELOPER_TITLE",
+      "Text": "开发者工具"
     }
   ]
 }

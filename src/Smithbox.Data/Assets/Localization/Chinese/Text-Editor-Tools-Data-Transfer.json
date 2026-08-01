@@ -18,7 +18,7 @@
     },
     {
       "Key": "TEXT_DataTransfer_Header_Import_Type_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_DataTransfer_Header_Actions",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "TEXT_DataTransfer_Header_Actions_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_DataTransfer_Action_Import_From_File",
@@ -45,32 +45,208 @@
       "Text": "选择的文件无效。"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Header_Import",
+      "Text": "导入"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Header_Import_Container",
+      "Text": "容器"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Import_Container_TT",
+      "Text": "在容器级别导入所选文本文件，替换所有 FMG 及其关联条目（如适用）。"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Header_Import_Text_File",
+      "Text": "文本文件"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Import_Text_File_TT",
+      "Text": "在 FMG 级别导入所选文本文件，替换所有关联条目（如适用）。"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Header_Import_Text_Entry",
+      "Text": "文本条目"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Import_Text_Entry_TT",
+      "Text": "在 FMG 条目级别导入所选文本文件，替换所有匹配的条目。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Tab_Export",
+      "Text": "导出"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Hint",
+      "Text": "使用此部分从当前项目导出 JSON 数据。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Directory",
+      "Text": "导出目录"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Directory_TT",
+      "Text": "JSON 数据的导出目录。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Set_Export_Directory",
+      "Text": "设置导出目录"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Set_Export_Directory_TT",
+      "Text": "设置导出 JSON 文件的当前导出目录。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Open_Export_Directory",
+      "Text": "打开导出目录"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Open_Export_Directory_TT",
+      "Text": "在文件资源管理器中打开当前导出目录。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Filename",
+      "Text": "导出文件名"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Filename_TT",
+      "Text": "导出文件使用的文件名（留空将使用自动生成的名称）"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Type",
+      "Text": "导出类型"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Type_TT",
+      "Text": "决定导出哪些数据。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Output",
+      "Text": "导出输出"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Output_TT",
+      "Text": "导出的字符串内容。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Copy_To_Clipboard",
+      "Text": "复制到剪贴板"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Copy_To_Clipboard_TT",
+      "Text": "将输出字符串复制到剪贴板。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Container",
+      "Text": "导出所选容器"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Container_TT",
+      "Text": "生成当前所选容器的导出字符串。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_File",
+      "Text": "导出所选文本文件"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_File_TT",
+      "Text": "生成当前所选文件的导出字符串。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Entry",
+      "Text": "导出所选文本条目"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Entry_TT",
+      "Text": "生成当前所选条目的导出字符串。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Dialog_Select_Export_Dest",
+      "Text": "选择导出目标"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Container_Selected",
+      "Text": "未选择容器。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Export_Directory_Defined",
+      "Text": "未定义导出目录。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_Filename_Empty",
+      "Text": "文件名为空。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Text_File_Selected",
+      "Text": "未选择文本文件。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Text_Entry_Selected",
+      "Text": "未选择文本条目。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Export",
+      "Text": "导出"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Container",
+      "Text": "容器"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Container_TT",
+      "Text": "将当前所选文件（包括其所有文本文件和文本条目）导出到导出文本文件。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_File",
+      "Text": "文本文件"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_File_TT",
+      "Text": "将当前所选文本文件（包括其所有条目）导出到导出文本文件。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_Entry",
+      "Text": "文本条目"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_Entry_TT",
+      "Text": "将当前所选 FMG 条目导出到导出文本文件。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Selected_Container",
+      "Text": "导出容器"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Selected_Text_File",
+      "Text": "导出文本文件"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Selected_Text_Entry",
+      "Text": "导出文本条目"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Modified_Text",
+      "Text": "导出已修改文本"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Modified_Text_TT",
+      "Text": "仅包含被视为\"已修改\"的文本条目（以及关联的文本文件）。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Entry_Modified_Text_TT",
+      "Text": "仅包含被视为\"已修改\"的 FMG 条目。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Unique_Text",
+      "Text": "导出独有文本"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Unique_Text_TT",
+      "Text": "仅包含被视为\"独有\"的文本条目（以及关联的文本文件）。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Entry_Unique_Text_TT",
+      "Text": "仅包含被视为\"独有\"的 FMG 条目。"
     }
   ]
 }

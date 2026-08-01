@@ -1,0 +1,356 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_DeltaPatcher_Import_Modal_Name",
+      "Text": "差异导入"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Export_Modal_Name",
+      "Text": "差异导出"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Patcher",
+      "Text": "Param 差异补丁"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Tab_Import",
+      "Text": "导入"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Tab_Export",
+      "Text": "导出"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Import_Hint",
+      "Text": "在此导入参数差异文件。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Import_Mode",
+      "Text": "导入模式"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Import_Mode_TT",
+      "Text": "决定导入时使用的内部逻辑。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Options_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Display_All",
+      "Text": "显示全部"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Display_All_TT",
+      "Text": "启用后，将显示所有项目类型的差异条目。否则只显示当前项目类型的条目。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Include_Modified",
+      "Text": "包含修改的行"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Include_Modified_TT",
+      "Text": "启用后，将应用差异中视为“已修改”的行。即导入时会修改主库中与差异行 ID 和索引相同的行。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbx_Include_Added",
+      "Text": "包含添加的行"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbx_Include_Added_TT",
+      "Text": "启用后，将应用差异中视为“已添加”的行。即导入时会将这些行添加到主库中。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Include_Deleted",
+      "Text": "包含删除的行"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Include_Deleted_TT",
+      "Text": "启用后，将应用差异中视为“已删除”的行。即导入时会从主库中删除这些行。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Restrict_Modify",
+      "Text": "限制行修改"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Restrict_Modify_TT",
+      "Text": "启用后，仅当行尚未被修改时才执行行修改。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Restrict_Addition",
+      "Text": "限制行添加"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Restrict_Addition_TT",
+      "Text": "启用后，仅当主库中不存在该行 ID 时才执行行添加。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Allow_Overwrite",
+      "Text": "允许行覆盖"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Allow_Overwrite_TT",
+      "Text": "启用后，与已有行 ID 冲突的行添加将覆盖原有行（而非并排插入）。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Actions_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Action_Import_Delta",
+      "Text": "导入差异"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Action_Import_Delta_TT",
+      "Text": "导入当前选中的导入条目。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Action_Refresh_List",
+      "Text": "刷新列表"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Action_Refresh_List_TT",
+      "Text": "刷新差异导入列表（以包含新增的差异文件）。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Entries",
+      "Text": "条目"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Entries_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_General_Folder",
+      "Text": "常规"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_ImportContext_Header_Edit",
+      "Text": "编辑"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_ImportContext_Name",
+      "Text": "名称"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_ImportContext_Tag",
+      "Text": "标签"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_ImportContext_Action_Update",
+      "Text": "更新"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_ImportContext_Action_Delete",
+      "Text": "删除"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_ImportContext_Action_Delete_TT",
+      "Text": "删除此差异文件。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Export_Hint",
+      "Text": "在此导出参数差异文件。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Filename",
+      "Text": "文件名"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Filename_TT",
+      "Text": "分配给差异文件的名称。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Tags",
+      "Text": "标签"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Tags_TT",
+      "Text": "分配给差异文件的标签。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Filename_Input_Hint",
+      "Text": "输入导出文件的名称..."
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Tags_Input_Hint",
+      "Text": "输入导出文件的相关标签..."
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Param_Type",
+      "Text": "参数选择类型"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Param_Type_TT",
+      "Text": "决定选择哪些参数进行导出。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Selection_Type",
+      "Text": "行选择类型"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Header_Selection_Type_TT",
+      "Text": "决定选择哪些行进行导出。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Ignore_Indexed",
+      "Text": "忽略索引参数"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Checkbox_Ignore_Indexed_TT",
+      "Text": "启用后，生成差异时将忽略行依赖于行索引和 ID 的索引参数。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Action_Export_Delta",
+      "Text": "导出差异"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Action_Export_Delta_TT",
+      "Text": "将参数差异导出到导出目录。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Action_Open_Delta_Folder",
+      "Text": "打开导出目录"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Action_Open_Delta_Folder_TT",
+      "Text": "打开存储导出差异文件的目录。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Deserialize_Patch_FAIL",
+      "Text": "反序列化差异补丁失败：{0}"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Read_Patch_FAIL",
+      "Text": "读取差异补丁失败：{0}"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Find_Patch_FAIL",
+      "Text": "查找差异补丁失败：{0}"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Write_Missing_Filename",
+      "Text": "写入差异补丁 {0} 失败，文件名为空。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Write_Patch_FAIL",
+      "Text": "写入差异补丁失败：{0}"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Import_Preview_Modal",
+      "Text": "导入预览"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Export_Preview_Modal",
+      "Text": "导出预览"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Project_Type",
+      "Text": "项目类型：{0}"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Param_Version",
+      "Text": "Param 版本：{0}"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Param_Change_Count",
+      "Text": "已更改参数：{0}"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Action_Enable_All",
+      "Text": "全部启用"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Action_Disable_All",
+      "Text": "全部禁用"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Row_State_Mixed",
+      "Text": "(混合)"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Row_State_Added",
+      "Text": "[已添加]"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Row_State_Modified",
+      "Text": "[已修改]"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Row_State_Deleted",
+      "Text": "[已删除]"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Row_State_Unknown",
+      "Text": "[未知]"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Row_Display_Name",
+      "Text": "{0} ID={1} ({2})"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Action_Import",
+      "Text": "导入"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Log_Import_PASS",
+      "Text": "已导入所选参数差异补丁：{0}"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Action_Cancel",
+      "Text": "取消"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Export_Param_Toggle_TT",
+      "Text": "决定此元素是否包含在差异导出中。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Export_Row_Toggle_TT",
+      "Text": "决定此元素是否包含在差异导出中。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Export_Field_Toggle_TT",
+      "Text": "决定此元素是否包含在差异导出中。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Action_Export",
+      "Text": "导出"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Log_Export_PASS",
+      "Text": "已保存参数差异：{0}.json"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Importer_Finished_Import",
+      "Text": "已完成「{0}」参数差异导入。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Importer_Failed_Import",
+      "Text": "「{0}」参数差异导入失败。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Phase_Processing",
+      "Text": "处理中"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Exporter_Filename_Empty",
+      "Text": "文件名不能为空。"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Exporter_Overwrite_Patch",
+      "Text": "是否要覆盖此差异补丁文件：{0}"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Exporter_Delta_Failed",
+      "Text": "差异构建失败"
+    }
+  ]
+}

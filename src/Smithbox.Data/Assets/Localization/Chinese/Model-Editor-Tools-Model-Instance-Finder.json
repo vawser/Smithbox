@@ -1,0 +1,80 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_InstanceFinder_Header",
+      "Text": "模型实例查找器"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Hint",
+      "Text": "在所有地图中搜索指定模型名称的使用情况。"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Model_Name_Header",
+      "Text": "模型名称"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Model_Name_Header_TT",
+      "Text": "要搜索的模型名称。cXXXX 是模型名称的典型格式。"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Options_Header",
+      "Text": "选项"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Options_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Checkbox_Target_Project",
+      "Text": "目标项目文件"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Checkbox_Target_Project_TT",
+      "Text": "使用项目地图文件而非游戏根目录。"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Checkbox_Loose_Name_Match",
+      "Text": "模糊名称匹配"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Checkbox_Loose_Name_Match_TT",
+      "Text": "仅要求模型名称字段包含搜索字符串，而非完全匹配。"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Actions_Header",
+      "Text": "操作"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Actions_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Search_Action",
+      "Text": "搜索"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Search_Action_TT",
+      "Text": "在所有地图中搜索指定模型名称的实例。"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Results_Header",
+      "Text": "结果"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Results_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Instances_TT",
+      "Text": "[] 中的数值为该地图中的实例数量。"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_No_Results",
+      "Text": "无结果。"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Log_Failed_MSB_Read",
+      "Text": "读取 MSB 失败：{0}"
+    }
+  ]
+}

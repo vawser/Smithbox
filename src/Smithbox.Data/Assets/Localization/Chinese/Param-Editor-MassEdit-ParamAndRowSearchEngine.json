@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_PARSE_Selection_TT",
+      "Text": "选择当前参数选区和该参数中选定的行。"
+    },
+    {
+      "Key": "PARAM_PARSE_Clipboard_TT",
+      "Text": "选择剪贴板中的参数和行。"
+    }
+  ]
+}

@@ -10,7 +10,7 @@
     },
     {
       "Key": "TEXT_Exporter_Header_Filename_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_Exporter_Modal_Action_Export",
@@ -31,6 +31,70 @@
     {
       "Key": "TEXT_Exporter_Log_Filename_Empty",
       "Text": "文件名为空。"
+    },
+    {
+      "Key": "TEXT_Exporter_Header_Export_Text",
+      "Text": "导出文本"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Container",
+      "Text": "导出所选容器"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Container_TT",
+      "Text": "导出此容器内所有关联的文本文件和文本条目。"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Text_File",
+      "Text": "导出所选文本文件"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Text_File_TT",
+      "Text": "导出此文本文件内所有关联的条目。"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Text_Entry",
+      "Text": "导出所选文本条目"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Text_Entry_TT",
+      "Text": "导出所有选中的文本条目。"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Modified",
+      "Text": "导出已修改文本"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Modified_TT",
+      "Text": "仅包含被视为“已修改”的文本条目（以及关联的文本文件）。"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Modified_TextEntry_TT",
+      "Text": "仅包含被视为“已修改”的文本条目。"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Unique",
+      "Text": "导出独有文本"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Unique_TT",
+      "Text": "仅包含被视为“独有”的文本条目（以及关联的文本文件）。"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Unique_TextEntry_TT",
+      "Text": "仅包含被视为“独有”的文本条目。"
+    },
+    {
+      "Key": "TEXT_Exporter_Export_Text_Exists_Overwrite",
+      "Text": "已存在同名导出文本。是否覆盖？"
+    },
+    {
+      "Key": "TEXT_Exporter_Exported_Text_PASS",
+      "Text": "已导出文本: {0}，位于 {1}"
+    },
+    {
+      "Key": "TEXT_Exporter_Exported_Text_FAIL",
+      "Text": "导出文本失败: {0}，位于 {1}"
     }
   ]
 }

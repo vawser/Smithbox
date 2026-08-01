@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_RowDecorator_Action_Go_To_Text",
+      "Text": "跳转到文本"
+    },
+    {
+      "Key": "PARAM_RowDecorator_Action_Go_To_Text_TT",
+      "Text": "跳转到文本编辑器中与此行关联的文本条目。"
+    }
+  ]
+}

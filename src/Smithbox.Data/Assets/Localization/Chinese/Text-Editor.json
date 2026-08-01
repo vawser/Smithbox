@@ -17,24 +17,48 @@
       "Text": "{0}: {1} 未定义。"
     },
     {
-      "Key": "TEXT_ENUM_ExportModifier_All",
-      "Text": "全部"
+      "Key": "TEXT_Save_File_PASS",
+      "Text": "已保存 {0}"
     },
     {
-      "Key": "TEXT_ENUM_ExportModifier_Modified_Only",
-      "Text": "仅已修改"
+      "Key": "TEXT_Save_File_FAIL",
+      "Text": "保存 {0} 失败"
     },
     {
-      "Key": "TEXT_ENUM_ExportModifier_Unique_Only",
-      "Text": "仅独有"
+      "Key": "TEXT_Save_All_File_PASS",
+      "Text": "已保存所有已修改的文本文件。"
     },
     {
-      "Key": "TEXT_ENUM_TextImportMode_Append",
-      "Text": "追加"
+      "Key": "TEXT_Save_All_File_FAIL",
+      "Text": "保存所有已修改的文本文件失败"
     },
     {
-      "Key": "TEXT_ENUM_TextImportMode_Overwrite",
-      "Text": "覆盖"
+      "Key": "TEXT_Menubar_Action_Create",
+      "Text": "创建"
+    },
+    {
+      "Key": "TEXT_Menubar_Action_Create_TT",
+      "Text": "打开文本条目创建器菜单。"
+    },
+    {
+      "Key": "TEXT_Menubar_Action_Duplicate",
+      "Text": "复制"
+    },
+    {
+      "Key": "TEXT_Menubar_Action_Duplicate_TT",
+      "Text": "复制当前选中的文本条目。"
+    },
+    {
+      "Key": "TEXT_Menubar_Action_Delete",
+      "Text": "删除"
+    },
+    {
+      "Key": "TEXT_Menubar_Action_Delete_TT",
+      "Text": "删除当前选中的文本条目。"
+    },
+    {
+      "Key": "TEXT_Menubar_View_Tool_Window",
+      "Text": "工具"
     }
   ]
 }

@@ -1,0 +1,172 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_GridConfig_ModelGridConfiguration_Header",
+      "Text": "模型网格配置"
+    },
+    {
+      "Key": "MODEL_GridConfig_Primary_Grid_Header",
+      "Text": "主网格"
+    },
+    {
+      "Key": "MODEL_GridConfig_Primary_Grid_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "MODEL_GridConfig_Secondary_Grid_Header",
+      "Text": "次网格"
+    },
+    {
+      "Key": "MODEL_GridConfig_Secondary_Grid_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "MODEL_GridConfig_Tertiary_Grid_Header",
+      "Text": "第三网格"
+    },
+    {
+      "Key": "MODEL_GridConfig_Tertiary_Grid_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "MODEL_GridConfig_Action_Toggle_Grid_Visibility",
+      "Text": "切换网格可见性"
+    },
+    {
+      "Key": "MODEL_GridConfig_Action_Toggle_Grid_Visibility_TT",
+      "Text": "切换当前选中网格的可见性。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Grid_Position_Header",
+      "Text": "网格位置"
+    },
+    {
+      "Key": "MODEL_GridConfig_Grid_Position_Header_TT",
+      "Text": "网格的位置配置。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_X",
+      "Text": "X"
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_X_TT",
+      "Text": "网格在 X 轴上的位置。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_Y",
+      "Text": "Y"
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_Y_TT",
+      "Text": "网格在 Y 轴上的位置。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_Z",
+      "Text": "Z"
+    },
+    {
+      "Key": "MODEL_GridConfig_Position_Z_TT",
+      "Text": "网格在 Z 轴上的位置。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Grid_Rotation_Header",
+      "Text": "网格旋转"
+    },
+    {
+      "Key": "MODEL_GridConfig_Grid_Rotation_Header_TT",
+      "Text": "网格的旋转配置。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_X",
+      "Text": "X"
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_X_TT",
+      "Text": "网格绕 X 轴的旋转。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_Y",
+      "Text": "Y"
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_Y_TT",
+      "Text": "网格绕 Y 轴的旋转。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_Z",
+      "Text": "Z"
+    },
+    {
+      "Key": "MODEL_GridConfig_Rotation_Z_TT",
+      "Text": "网格绕 Z 轴的旋转。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Color_Header",
+      "Text": "网格颜色"
+    },
+    {
+      "Key": "MODEL_GridConfig_Color_Header_TT",
+      "Text": "网格的颜色配置。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Color_Input_TT",
+      "Text": "网格的颜色。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Square_Size_Header",
+      "Text": "网格方格大小"
+    },
+    {
+      "Key": "MODEL_GridConfig_Square_Size_Header_TT",
+      "Text": "网格方格的大小配置。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Square_Size_Input_TT",
+      "Text": "单个网格方格的大小。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Size",
+      "Text": "网格大小"
+    },
+    {
+      "Key": "MODEL_GridConfig_Size_TT",
+      "Text": "网格的大小配置。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Size_Input_TT",
+      "Text": "组成网格的方格数量。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Actions_Header",
+      "Text": "操作"
+    },
+    {
+      "Key": "MODEL_GridConfig_Actions_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Primary_Grid_Action",
+      "Text": "切换主网格"
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Primary_Grid_Action_TT",
+      "Text": "切换主网格的显示。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Secondary_Grid_Action",
+      "Text": "切换次网格"
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Secondary_Grid_Action_TT",
+      "Text": "切换次网格的显示。"
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Tertiary_Grid_Action",
+      "Text": "切换第三网格"
+    },
+    {
+      "Key": "MODEL_GridConfig_Toggle_Tertiary_Grid_Action_TT",
+      "Text": "切换第三网格的显示。"
+    }
+  ]
+}

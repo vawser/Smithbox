@@ -1,0 +1,136 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_CellOp_Equals_Hint_1",
+      "Text": "数字或文本"
+    },
+    {
+      "Key": "PARAM_CellOp_Equals_TT",
+      "Text": "将给定值赋给选定值。会尝试转换为目标值的数据类型。"
+    },
+    {
+      "Key": "PARAM_CellOp_Addition_Hint_1",
+      "Text": "数字或文本"
+    },
+    {
+      "Key": "PARAM_CellOp_Addition_TT",
+      "Text": "将数字加到选定值上，如果值的数据类型是文本则进行文本追加。"
+    },
+    {
+      "Key": "PARAM_CellOp_Subtract_Hint_1",
+      "Text": "数字"
+    },
+    {
+      "Key": "PARAM_CellOp_Subtract_TT",
+      "Text": "从选定值中减去该数字。"
+    },
+    {
+      "Key": "PARAM_CellOp_Multiply_Hint_1",
+      "Text": "数字"
+    },
+    {
+      "Key": "PARAM_CellOp_Multiply_TT",
+      "Text": "将选定值乘以该数字。"
+    },
+    {
+      "Key": "PARAM_CellOp_Divide_Hint_1",
+      "Text": "数字"
+    },
+    {
+      "Key": "PARAM_CellOp_Divide_TT",
+      "Text": "将选定值除以该数字。"
+    },
+    {
+      "Key": "PARAM_CellOp_Modulo_Hint_1",
+      "Text": "数字"
+    },
+    {
+      "Key": "PARAM_CellOp_Modulo_TT",
+      "Text": "返回选定值除以该数字后的余数。"
+    },
+    {
+      "Key": "PARAM_CellOp_Scale_Hint_1",
+      "Text": "系数"
+    },
+    {
+      "Key": "PARAM_CellOp_Scale_Hint_2",
+      "Text": "中心值"
+    },
+    {
+      "Key": "PARAM_CellOp_Scale_TT",
+      "Text": "将选定值与中心值之差乘以系数。"
+    },
+    {
+      "Key": "PARAM_CellOp_Replace_Hint_1",
+      "Text": "要替换的文本"
+    },
+    {
+      "Key": "PARAM_CellOp_Replace_Hint_2",
+      "Text": "新文本"
+    },
+    {
+      "Key": "PARAM_CellOp_Replace_TT",
+      "Text": "将选定值作为文本，把所有要替换的文本替换为新文本"
+    },
+    {
+      "Key": "PARAM_CellOp_ReplaceEx_Hint_1",
+      "Text": "要替换的文本（正则表达式）"
+    },
+    {
+      "Key": "PARAM_CellOp_ReplaceEx_Hint_2",
+      "Text": "新文本（含分组）"
+    },
+    {
+      "Key": "PARAM_CellOp_ReplaceEx_TT",
+      "Text": "将选定值作为文本，用支持正则分组的替换文本替换所有匹配给定正则表达式的部分"
+    },
+    {
+      "Key": "PARAM_CellOp_Max_Hint_1",
+      "Text": "数字"
+    },
+    {
+      "Key": "PARAM_CellOp_Max_TT",
+      "Text": "返回当前值和该数字中较大的一个。"
+    },
+    {
+      "Key": "PARAM_CellOp_Min_Hint_1",
+      "Text": "数字"
+    },
+    {
+      "Key": "PARAM_CellOp_Min_TT",
+      "Text": "返回当前值和该数字中较小的一个。"
+    },
+    {
+      "Key": "PARAM_CellOp_Round_Hint_1",
+      "Text": "数字"
+    },
+    {
+      "Key": "PARAM_CellOp_Round_TT",
+      "Text": "将当前值四舍五入到指定小数位数。"
+    },
+    {
+      "Key": "PARAM_CellOp_Ceil_Hint_1",
+      "Text": "数字"
+    },
+    {
+      "Key": "PARAM_CellOp_Ceil_TT",
+      "Text": "将当前值向上取整为最接近的整数。"
+    },
+    {
+      "Key": "PARAM_CellOp_Floor_Hint_1",
+      "Text": "数字"
+    },
+    {
+      "Key": "PARAM_CellOp_Floor_TT",
+      "Text": "将当前值向下取整为最接近的整数。"
+    },
+    {
+      "Key": "PARAM_CellOp_Prepend_Hint_1",
+      "Text": "要前置的文本"
+    },
+    {
+      "Key": "PARAM_CellOp_Prepend_TT",
+      "Text": "在当前文本值前添加文本。"
+    }
+  ]
+}

@@ -82,7 +82,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_View_Mode_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "VIEWPORT_Menubar_View_Parameters",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_View_Parameters_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "VIEWPORT_Menubar_View_Near_Clip",

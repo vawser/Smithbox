@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Window_Param_Editor",
+      "Text": "Param 编辑器"
+    },
+    {
+      "Key": "PARAM_Window_Params",
+      "Text": "参数"
+    },
+    {
+      "Key": "PARAM_Window_Tables",
+      "Text": "表"
+    },
+    {
+      "Key": "PARAM_Window_Rows",
+      "Text": "行"
+    },
+    {
+      "Key": "PARAM_Window_Fields",
+      "Text": "字段"
+    },
+    {
+      "Key": "PARAM_Window_StayParam_Fields",
+      "Text": "字段"
+    },
+    {
+      "Key": "PARAM_Window_Tool_Window",
+      "Text": "工具"
+    }
+  ]
+}

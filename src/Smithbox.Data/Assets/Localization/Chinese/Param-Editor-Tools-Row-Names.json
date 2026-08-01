@@ -1,0 +1,264 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_RowNames_Header",
+      "Text": "行名"
+    },
+    {
+      "Key": "PARAM_RowNames_Tab_Import",
+      "Text": "导入"
+    },
+    {
+      "Key": "PARAM_RowNames_Import_Hint",
+      "Text": "使用此部分从 Smithbox 提供的内部文件或外部文件导入行名。这些行名将覆盖当前项目中的已有行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Import_Language",
+      "Text": "语言"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Import_Language_TT",
+      "Text": "标准导入时提取名称的源语言"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Standard",
+      "Text": "标准"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Standard_TT",
+      "Text": "Smithbox 提供的行名"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_JSON",
+      "Text": "JSON"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_JSON_TT",
+      "Text": "从 JSON 文件导入行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_CSV",
+      "Text": "CSV"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_CSV_TT",
+      "Text": "从 CSV 文件导入行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Legacy",
+      "Text": "旧版文本"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Legacy_TT",
+      "Text": "从旧版文本文件导入行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Import_Selected_Param",
+      "Text": "导入所选参数"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Import_Selected_Param_TT",
+      "Text": "导入所选参数的行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Import_All_Params",
+      "Text": "导入所有参数"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Import_All_Params_TT",
+      "Text": "导入所有参数的行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Menu_Header_Import",
+      "Text": "导入"
+    },
+    {
+      "Key": "PARAM_RowNames_Language_Names",
+      "Text": "{0} 名称"
+    },
+    {
+      "Key": "PARAM_RowNames_Language_Selected_Param",
+      "Text": "所选参数"
+    },
+    {
+      "Key": "PARAM_RowNames_Language_All_Params",
+      "Text": "所有参数"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_From_JSON_File",
+      "Text": "从 JSON 文件"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Selected_Param",
+      "Text": "所选参数"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_All_Params",
+      "Text": "所有参数"
+    },
+    {
+      "Key": "PARAM_RowNames_JSON_Selected_Param_TT",
+      "Text": "从所选文件夹导入当前所选参数的行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_JSON_All_Params_TT",
+      "Text": "从所选文件夹导入所有参数的行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_From_CSV_File",
+      "Text": "从 CSV 文件"
+    },
+    {
+      "Key": "PARAM_RowNames_CSV_Selected_Param_TT",
+      "Text": "从 CSV 文件导入外部名称，通过行 ID 匹配。"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_From_Legacy_Folder",
+      "Text": "从旧版名称文件夹"
+    },
+    {
+      "Key": "PARAM_RowNames_Legacy_Selected_Param_TT",
+      "Text": "从旧版行名文件（剥离行名文件夹）导入外部名称，通过行索引匹配。"
+    },
+    {
+      "Key": "PARAM_RowNames_Legacy_All_Params_TT",
+      "Text": "从旧版行名文件（较早的剥离行名文件夹）导入外部名称，通过行索引匹配。"
+    },
+    {
+      "Key": "PARAM_RowNames_Checkbox_Replace_Empty_Names_Only",
+      "Text": "仅替换空名称"
+    },
+    {
+      "Key": "PARAM_RowNames_Checkbox_Replace_Empty_Names_Only_TT",
+      "Text": "启用后，只有名称为空的行才会被导入名称替换。"
+    },
+    {
+      "Key": "PARAM_RowNames_Export_Tab",
+      "Text": "导出"
+    },
+    {
+      "Key": "PARAM_RowNames_Export_Tab_Hint",
+      "Text": "使用此部分将当前项目的行名导出到外部文件。"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Export_JSON",
+      "Text": "JSON"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Export_JSON_TT",
+      "Text": "将行名导出到 JSON 文件。"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Export_Text",
+      "Text": "文本"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Export_Text_TT",
+      "Text": "将行名导出到文本文件。"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Export_Selected_Param",
+      "Text": "导出所选参数"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Export_Selected_Param_TT",
+      "Text": "导出当前所选参数的行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Export_All_Params",
+      "Text": "导出所有参数"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Export_All_Params_TT",
+      "Text": "导出所有参数的行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Export",
+      "Text": "导出"
+    },
+    {
+      "Key": "PARAM_RowNames_JSON_Export_TT",
+      "Text": "导出文件将使用 JSON 存储格式。"
+    },
+    {
+      "Key": "PARAM_RowNames_Text_Export_TT",
+      "Text": "导出文件将使用文本存储格式。此格式无法再导入。"
+    },
+    {
+      "Key": "PARAM_RowNames_Dialog_Select_Folder",
+      "Text": "选择文件夹"
+    },
+    {
+      "Key": "PARAM_RowNames_Log_Imported_Names_PASS",
+      "Text": "已导入行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Log_Imported_Names_FAIL",
+      "Text": "导入行名失败。"
+    },
+    {
+      "Key": "PARAM_RowNames_Log_Imported_Specific_Names_PASS",
+      "Text": "已导入 {0} 的行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Log_Imported_Specific_Names_FAIL",
+      "Text": "导入 {0} 的行名失败。"
+    },
+    {
+      "Key": "PARAM_RowNames_Failed_To_Find_Row_Name_Dir",
+      "Text": "未找到 {0}。"
+    },
+    {
+      "Key": "PARAM_RowNames_Failed_to_Load_Row_Name_Import",
+      "Text": "加载 {0} 用于行名导入失败。"
+    },
+    {
+      "Key": "PARAM_RowNames_Log_Exported_Names_PASS",
+      "Text": "已将行名导出到 {0}"
+    },
+    {
+      "Key": "PARAM_RowNames_Log_Exported_Names_FAIL",
+      "Text": "将行名导出到 {0} 失败"
+    },
+    {
+      "Key": "PARAM_RowNames_Exported_Names",
+      "Text": "已将行名导出到 {0}"
+    },
+    {
+      "Key": "PARAM_RowNames_Missing_Stripped_Row_Names",
+      "Text": "未找到 {0} 用于行名恢复。"
+    },
+    {
+      "Key": "PARAM_RowNames_Restored_Stripped_Row_Names",
+      "Text": "已恢复剥离的行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Failed_Stripped_Row_Names_Load",
+      "Text": "加载 {0} 用于行名恢复失败。"
+    },
+    {
+      "Key": "PARAM_RowNames_Import_Specific_Row_Names_PASS",
+      "Text": "已导入 {0} 的行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Import_Specific_Row_Names_FAIL",
+      "Text": "导入 {0} 的行名失败。"
+    },
+    {
+      "Key": "PARAM_RowNames_Failed_Find_Import_Path",
+      "Text": "未找到 {0}。"
+    },
+    {
+      "Key": "PARAM_RowNames_Failed_Load_Import",
+      "Text": "加载 {0} 用于行名导入失败。"
+    },
+    {
+      "Key": "PARAM_RowNames_Legacy_Import_Row_Names_PASS",
+      "Text": "已从旧版行名存储导入行名。"
+    },
+    {
+      "Key": "PARAM_RowNames_Legacy_Import_Row_Names_FAIL",
+      "Text": "从旧版行名存储导入行名失败。"
+    }
+  ]
+}

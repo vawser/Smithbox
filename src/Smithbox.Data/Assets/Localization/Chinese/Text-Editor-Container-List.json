@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_ContainerList_Header_Containers",
+      "Text": "容器"
+    },
+    {
+      "Key": "TEXT_ContainerList_Header_Containers_TT",
+      "Text": null
+    },
+    {
+      "Key": "TEXT_ContainerList_Category_Mode_Primary_Only",
+      "Text": "仅主类别"
+    },
+    {
+      "Key": "TEXT_ContainerList_Category_Mode_All",
+      "Text": "所有类别"
+    },
+    {
+      "Key": "TEXT_ContainerList_Category_Mode_TT",
+      "Text": "切换列表中显示的类别。\n当前模式: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_DS2_Common",
+      "Text": "通用"
+    },
+    {
+      "Key": "TEXT_ContainerList_DS2_Blood_Message",
+      "Text": "血言"
+    },
+    {
+      "Key": "TEXT_ContainerList_DS2_Talk",
+      "Text": "对话"
+    },
+    {
+      "Key": "TEXT_ContainerList_Is_Primary_Container_TT",
+      "Text": "此容器是游戏唯一使用的容器。\n请只使用此容器。"
+    },
+    {
+      "Key": "TEXT_ContainerList_Obsolete_Container_TT",
+      "Text": "此容器已不再被游戏使用。\n请勿使用此容器。"
+    },
+    {
+      "Key": "TEXT_ContainerList_Source_Path_TT",
+      "Text": "源文件: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Header_Information",
+      "Text": "信息"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Filename",
+      "Text": "文件名: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Path",
+      "Text": "路径: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Type",
+      "Text": "类型: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Display_Category",
+      "Text": "显示类别: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Display_Sub_Category",
+      "Text": "显示子类别: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Compression_Type",
+      "Text": "压缩类型: {0}"
+    }
+  ]
+}

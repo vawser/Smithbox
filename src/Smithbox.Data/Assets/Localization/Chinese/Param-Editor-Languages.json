@@ -99,6 +99,10 @@
     {
       "Key": "PARAM_Language_Turkish",
       "Text": "土耳其文"
+    },
+    {
+      "Key": "PARAM_Language_English_MT",
+      "Text": "英文（机器翻译）"
     }
   ]
 }

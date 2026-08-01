@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Meta_Mismatched_XML_Version",
+      "Text": "XML 版本不匹配；当前版本：{0}，文件版本：{1}"
+    },
+    {
+      "Key": "PARAM_Meta_Color_Edit_Missing_Name_Property",
+      "Text": "PARAM META：{0} - 无法为 {1} 填充 ParamColorEdit Name 属性"
+    },
+    {
+      "Key": "PARAM_Meta_Color_Edit_Missing_Fields_Property",
+      "Text": "PARAM META：{0} - 无法为 {1} 填充 ParamColorEdit Fields 属性"
+    },
+    {
+      "Key": "PARAM_Meta_Color_Edit_Missing_PlacedField_Property",
+      "Text": "PARAM META：{0} - 无法为 {1} 填充 ParamColorEdit PlacedField 属性"
+    },
+    {
+      "Key": "PARAM_Meta_ParamRef_Missing_String",
+      "Text": "PARAM META：{0} - ParamRef 字符串为空。"
+    },
+    {
+      "Key": "PARAM_Meta_ParamDisplayName_Missing_Param_Property",
+      "Text": "PARAM META：{0} - 无法为 {1} 填充 ParamDisplayName Param 属性"
+    },
+    {
+      "Key": "PARAM_Meta_ParamDisplayName_Missing_Name_Property",
+      "Text": "PARAM META：{0} - 无法为 {1} 填充 ParamDisplayName Name 属性"
+    }
+  ]
+}

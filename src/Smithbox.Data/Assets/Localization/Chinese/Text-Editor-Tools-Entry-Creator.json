@@ -22,7 +22,7 @@
     },
     {
       "Key": "TEXT_Creator_Header_Actions_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_Creator_Action_Create_Entries",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "TEXT_Creator_Header_Parameters_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_Creator_Header_Base_ID",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "TEXT_Creator_Header_Options_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_Creator_Checkbox_Update_On_Selection",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "TEXT_Creator_Template_Header_Options_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_Creator_Template_Enable",
@@ -194,7 +194,7 @@
     },
     {
       "Key": "TEXT_Creator_Template_Header_Templates_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_Creator_Template_Add_TT",
@@ -202,7 +202,7 @@
     },
     {
       "Key": "TEXT_Creator_Template_Remove_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_Creator_Template_Reset_Action",
@@ -210,7 +210,7 @@
     },
     {
       "Key": "TEXT_Creator_Template_Reset_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_Creator_Template_Entry_TT",

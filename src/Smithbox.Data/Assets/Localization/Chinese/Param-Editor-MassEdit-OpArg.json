@@ -1,0 +1,296 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_OpArg_Default_TT",
+      "Text": "返回指定的值。"
+    },
+    {
+      "Key": "PARAM_OpArg_Self_TT",
+      "Text": "返回当前选定值的值。"
+    },
+    {
+      "Key": "PARAM_OpArg_Field_Hint",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_OpArg_Field_TT",
+      "Text": "返回当前选定行和参数中指定单元格/字段的值。"
+    },
+    {
+      "Key": "PARAM_OpArg_Field_Error_Locate_Field",
+      "Text": "未找到字段 {0}。"
+    },
+    {
+      "Key": "PARAM_OpArg_Vanilla_TT",
+      "Text": "返回当前选定单元格/字段、行和参数在原版 regulation 或 parambnd 中对应单元格/字段的值。\n如果行没有原版对应项则会失败。建议使用 && !added。"
+    },
+    {
+      "Key": "PARAM_OpArg_Vanilla_Error_Locate_Vanilla_Param",
+      "Text": "未找到 {0} 的原版参数。"
+    },
+    {
+      "Key": "PARAM_OpArg_Vanilla_Error_Locate_Vanilla_Row",
+      "Text": "未找到原版行 {0}。"
+    },
+    {
+      "Key": "PARAM_OpArg_Vanilla_Error_Locate_Property",
+      "Text": "未找到指定的字段或属性。"
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_Hint",
+      "Text": "parambank 名称"
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_TT",
+      "Text": "返回当前选定单元格/字段、行和参数在指定 regulation 或 parambnd 中对应单元格/字段的值。\n如果行没有 aux 对应项则会失败。建议使用 && auxprop ID .*"
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_Error_Locate_Param_Bank",
+      "Text": "未找到 paramBank {0}。"
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_Error_Locate_Aux_Param",
+      "Text": "未找到 {0} 的 aux 参数。"
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_Error_Locate_Aux_Row",
+      "Text": "未找到 aux 行 {0}。"
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_Error_Locate_Property",
+      "Text": "未找到指定的字段或属性。"
+    },
+    {
+      "Key": "PARAM_OpArg_VanillaField_Hint",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_OpArg_VanillaField_TT",
+      "Text": "返回当前选定行和参数在原版 regulation 或 parambnd 中指定单元格/字段的值。\n如果行没有原版对应项则会失败。建议使用 && !added"
+    },
+    {
+      "Key": "PARAM_OpArg_VanillaField_Error_Locate_Vanilla_Param",
+      "Text": "未找到 {0} 的原版参数"
+    },
+    {
+      "Key": "PARAM_OpArg_VanillaField_Error_Locate_Field",
+      "Text": "未找到字段 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_VanillaField_Error_Locate_Vanilla_Row",
+      "Text": "未找到原版行 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Hint_1",
+      "Text": "parambank 名称"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Hint_2",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_TT",
+      "Text": "返回当前选定行和参数在指定 regulation 或 parambnd 中指定单元格/字段的值。\n如果行没有 aux 对应项则会失败。建议使用 && auxprop ID .*"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Error_Locate_Param_Bank",
+      "Text": "未找到 paramBank {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Error_Locate_Aux_Param",
+      "Text": "未找到 {0} 的 aux 参数"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Error_Locate_Field",
+      "Text": "未找到字段 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Error_Locate_Aux_Row",
+      "Text": "未找到 aux 行 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Hint_1",
+      "Text": "参数名称"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Hint_2",
+      "Text": "行 ID"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Hint_3",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_TT",
+      "Text": "返回由确切参数、行和字段指定的特定值。"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Error_Locate_Param",
+      "Text": "未找到参数 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Error_Locate_Field",
+      "Text": "在参数 {1} 中未找到字段 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Error_Locate_Row",
+      "Text": "在参数 {1} 中未找到行 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_Average_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_OpArg_Average_Hint_2",
+      "Text": "行选择器"
+    },
+    {
+      "Key": "PARAM_OpArg_Average_TT",
+      "Text": "返回当前选定参数中使用给定选择器找到的单元格/字段的平均值。"
+    },
+    {
+      "Key": "PARAM_OpArg_Average_Error_Locate_Field",
+      "Text": "未找到字段 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_Average_Error_Invalid_Type",
+      "Text": "无法对字段 {0} 求平均值"
+    },
+    {
+      "Key": "PARAM_OpArg_Median_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_OpArg_Median_Hint_2",
+      "Text": "行选择器"
+    },
+    {
+      "Key": "PARAM_OpArg_Median_TT",
+      "Text": "返回当前选定参数中使用给定选择器找到的单元格/字段的中位值。"
+    },
+    {
+      "Key": "PARAM_OpArg_Median_Error_Locate_Field",
+      "Text": "未找到字段 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_Mode_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_OpArg_Mode_Hint_2",
+      "Text": "行选择器"
+    },
+    {
+      "Key": "PARAM_OpArg_Mode_TT",
+      "Text": "返回当前选定参数中使用给定选择器找到的单元格/字段中出现最多的值。"
+    },
+    {
+      "Key": "PARAM_OpArg_Mode_Error_Locate_Field",
+      "Text": "未找到字段 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_Min_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_OpArg_Min_Hint_2",
+      "Text": "行选择器"
+    },
+    {
+      "Key": "PARAM_OpArg_Min_TT",
+      "Text": "返回使用给定参数、行选择器和字段找到的单元格/字段中的最小值。"
+    },
+    {
+      "Key": "PARAM_OpArg_Min_Error_Locate_Field",
+      "Text": "未找到字段 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_Max_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_OpArg_Max_Hint_2",
+      "Text": "行选择器"
+    },
+    {
+      "Key": "PARAM_OpArg_Max_TT",
+      "Text": "返回使用给定参数、行选择器和字段找到的单元格/字段中的最大值。"
+    },
+    {
+      "Key": "PARAM_OpArg_Max_Error_Locate_Field",
+      "Text": "未找到字段 {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_Random_Hint_1",
+      "Text": "最小值（含）"
+    },
+    {
+      "Key": "PARAM_OpArg_Random_Hint_2",
+      "Text": "最大值（不含）"
+    },
+    {
+      "Key": "PARAM_OpArg_Random_Hint_TT",
+      "Text": "为每个选定值返回给定值之间的随机小数"
+    },
+    {
+      "Key": "PARAM_OpArg_Random_Error_Parse_Min_Max_Values",
+      "Text": "无法解析随机值的最小值和最大值"
+    },
+    {
+      "Key": "PARAM_OpArg_Random_Error_Max_Higher_Than_Min",
+      "Text": "随机最大值必须大于最小值"
+    },
+    {
+      "Key": "PARAM_OpArg_RandInt_Hint_1",
+      "Text": "最小整数（含）"
+    },
+    {
+      "Key": "PARAM_OpArg_RandInt_Hint_2",
+      "Text": "最大整数（含）"
+    },
+    {
+      "Key": "PARAM_OpArg_RandInt_TT",
+      "Text": "为每个选定值返回给定值之间的随机整数。"
+    },
+    {
+      "Key": "PARAM_OpArg_RandInt_Error_Parse_Min_Max_Values",
+      "Text": "无法解析随机整数的最小值和最大值"
+    },
+    {
+      "Key": "PARAM_OpArg_RandInt_Error_Max_Higher_Than_Min",
+      "Text": "随机最大值必须大于最小值"
+    },
+    {
+      "Key": "PARAM_OpArg_RandFrom_Hint_1",
+      "Text": "参数名称"
+    },
+    {
+      "Key": "PARAM_OpArg_RandFrom_Hint_2",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_OpArg_RandFrom_Hint_3",
+      "Text": "行选择器"
+    },
+    {
+      "Key": "PARAM_OpArg_RandFrom_TT",
+      "Text": "为每个选定值，从使用给定参数、行选择器和字段找到的单元格/字段中随机取一个值。"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamIndex_TT",
+      "Text": "返回当前选定参数的整数索引，从 0 开始，每选定一个参数递增 1。"
+    },
+    {
+      "Key": "PARAM_OpArg_RowIndex_TT",
+      "Text": "返回当前选定行的整数索引，从 0 开始，每选定一行递增 1。"
+    },
+    {
+      "Key": "PARAM_OpArg_FieldIndex_TT",
+      "Text": "返回当前选定单元格/字段的整数索引，从 0 开始，每选定一个单元格/字段递增 1。"
+    },
+    {
+      "Key": "PARAM_OpArg_ContextualArg_Wrong_Arg_Count",
+      "Text": "上下文值 {0} 的参数数量错误。预期 {1} 个"
+    }
+  ]
+}

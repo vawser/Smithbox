@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_VSE_Vars_Hint",
+      "Text": "变量名称（正则表达式）"
+    },
+    {
+      "Key": "PARAM_VSE_Vars_TT",
+      "Text": "选择名称匹配给定正则表达式的变量。"
+    }
+  ]
+}

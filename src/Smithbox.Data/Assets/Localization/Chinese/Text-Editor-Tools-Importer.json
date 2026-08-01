@@ -1,0 +1,52 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Importer_Header_Import_Text",
+      "Text": "导入文本"
+    },
+    {
+      "Key": "TEXT_Importer_Header_Append",
+      "Text": "追加"
+    },
+    {
+      "Key": "TEXT_Importer_Header_Append_TT",
+      "Text": "将导入的文本条目追加到现有文本条目列表中。"
+    },
+    {
+      "Key": "TEXT_Importer_Action_From_External_File",
+      "Text": "从外部文件"
+    },
+    {
+      "Key": "TEXT_Importer_Header_Replace",
+      "Text": "替换"
+    },
+    {
+      "Key": "TEXT_Importer_Header_Replace_TT",
+      "Text": "用导入的文本条目替换现有文本条目。"
+    },
+    {
+      "Key": "TEXT_Importer_No_Exported_Text",
+      "Text": "尚不存在已导出的文本。"
+    },
+    {
+      "Key": "TEXT_Importer_Stored_Text_Key_Collision",
+      "Text": "尝试添加已存在键的存储文本: {0}"
+    },
+    {
+      "Key": "TEXT_Importer_Failed_JSON_String_Deserialization",
+      "Text": "反序列化 JSON 文件字符串失败。"
+    },
+    {
+      "Key": "TEXT_Importer_Failed_JSON_File_Deserialization",
+      "Text": "反序列化 JSON 文件失败: {0}。"
+    },
+    {
+      "Key": "TEXT_Importer_Select_Stored_JSON",
+      "Text": "选择已存储的文本 JSON"
+    },
+    {
+      "Key": "TEXT_Importer_Invalid_Selected_File",
+      "Text": "所选文件无效。"
+    }
+  ]
+}

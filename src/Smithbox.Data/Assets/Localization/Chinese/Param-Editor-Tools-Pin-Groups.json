@@ -1,0 +1,212 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_PinGroups_Header",
+      "Text": "固定组"
+    },
+    {
+      "Key": "PARAM_PinGroups_Hint",
+      "Text": "从当前固定的参数、行或字段创建固定组，或选择已有固定组来替换当前固定的参数、行或字段。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Options_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Params_Only",
+      "Text": "仅显示已固定参数"
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Params_Only_TT",
+      "Text": "启用后，参数列表中仅显示已固定的参数。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Rows_Only",
+      "Text": "仅显示已固定行"
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Rows_Only_TT",
+      "Text": "启用后，行列表中仅显示已固定的行。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Fields_Only",
+      "Text": "仅显示已固定字段"
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Fields_Only_TT",
+      "Text": "启用后，参数列表中仅显示已固定的字段。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Display",
+      "Text": "显示"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Display_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Param_Pins",
+      "Text": "清除参数固定"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Param_Pins_TT",
+      "Text": "清除当前固定的参数。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Row_Pins",
+      "Text": "清除行固定"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Row_Pins_TT",
+      "Text": "清除当前固定的行。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Field_Pins",
+      "Text": "清除字段固定"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Field_Pins_TT",
+      "Text": "清除当前固定的字段。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Creation",
+      "Text": "创建"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Creation_TT",
+      "Text": "基于当前固定的参数、行或字段创建新固定组的操作。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Input_Name_Hint",
+      "Text": "输入固定组名称..."
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Param_Pin_Group",
+      "Text": "创建参数固定组"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Param_Pin_Group_TT",
+      "Text": "基于当前固定的参数创建新固定组。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Row_Pin_Group",
+      "Text": "创建行固定组"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Row_Pin_Group_TT",
+      "Text": "基于当前固定的行创建新固定组。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Field_Pin_Group",
+      "Text": "创建字段固定组"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Field_Pin_Group_TT",
+      "Text": "基于当前固定的字段创建新固定组。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Param_Pin_Group",
+      "Text": "显示参数固定组"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Param_Pin_Group_TT",
+      "Text": "显示当前参数固定组。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Row_Pin_Group",
+      "Text": "显示行固定组"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Row_Pin_Group_TT",
+      "Text": "显示当前行固定组。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Field_Pin_Group",
+      "Text": "显示字段固定组"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Field_Pin_Group_TT",
+      "Text": "显示当前字段固定组。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Param_Groups",
+      "Text": "参数组"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Param_Groups_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Row_Groups",
+      "Text": "行组"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Row_Groups_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Field_Groups",
+      "Text": "字段组"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Field_Groups_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_PinGroups_ParamGroup_Set_TT",
+      "Text": "双击将当前参数固定设置为此组。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Delete",
+      "Text": "删除"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Delete_TT",
+      "Text": "删除此固定组。"
+    },
+    {
+      "Key": "PARAM_PinGroups_RowGroup_Set_TT",
+      "Text": "双击将当前行固定设置为此组。"
+    },
+    {
+      "Key": "PARAM_PinGroups_FieldGroup_Set_TT",
+      "Text": "双击将当前字段固定设置为此组。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Alias_Params",
+      "Text": "参数："
+    },
+    {
+      "Key": "PARAM_PinGroups_Alias_Rows",
+      "Text": "行："
+    },
+    {
+      "Key": "PARAM_PinGroups_Alias_Fields",
+      "Text": "字段："
+    },
+    {
+      "Key": "PARAM_PinGroups_Empty_Group_Name",
+      "Text": "组名不能为空。"
+    },
+    {
+      "Key": "PARAM_PinGroups_Load_Pin_Group_FAIL",
+      "Text": "加载固定组失败：{0} 于 {1}"
+    },
+    {
+      "Key": "PARAM_PinGroups_Dialog_Overwrite_Existing_Group",
+      "Text": "{0} 已作为 {1} 存在。确定要覆盖吗？"
+    },
+    {
+      "Key": "PARAM_PinGroups_Save_Pin_Group_PASS",
+      "Text": "已保存固定组：{0} 于 {1}"
+    },
+    {
+      "Key": "PARAM_PinGroups_Save_Pin_Group_FAIL",
+      "Text": "保存固定组失败：{0} 于 {1}"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_ENUM_ExportModifier_All",
+      "Text": "全部"
+    },
+    {
+      "Key": "TEXT_ENUM_ExportModifier_Modified_Only",
+      "Text": "仅已修改"
+    },
+    {
+      "Key": "TEXT_ENUM_ExportModifier_Unique_Only",
+      "Text": "仅独有"
+    },
+    {
+      "Key": "TEXT_ENUM_TextImportMode_Append",
+      "Text": "追加"
+    },
+    {
+      "Key": "TEXT_ENUM_TextImportMode_Overwrite",
+      "Text": "覆盖"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchFilterType_Primary_Category",
+      "Text": "主类别"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchFilterType_All_Categories",
+      "Text": "所有类别"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchMatchType_All",
+      "Text": "全部"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchMatchType_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchMatchType_Text",
+      "Text": "文本"
+    },
+    {
+      "Key": "TEXT_ENUM_TextContainerType_Loose",
+      "Text": "散装"
+    },
+    {
+      "Key": "TEXT_ENUM_TextContainerType_BND",
+      "Text": "BND"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_None",
+      "Text": "无"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_Common",
+      "Text": "通用"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_Blood_Message",
+      "Text": "血言"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_Talk",
+      "Text": "对话"
+    }
+  ]
+}

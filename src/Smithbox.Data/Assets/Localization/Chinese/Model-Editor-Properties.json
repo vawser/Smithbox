@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_Properties_Toggle_Community_Names_Internal",
+      "Text": "内部"
+    },
+    {
+      "Key": "MODEL_Properties_Toggle_Community_Names_Community",
+      "Text": "社区"
+    },
+    {
+      "Key": "MODEL_Properties_Toggle_Community_Names_TT",
+      "Text": "在内部和社区字段名称显示类型之间切换。\n当前模式：{0}"
+    },
+    {
+      "Key": "MODEL_Properties_Multi_Edit",
+      "Text": "正在编辑多个对象。\n更改将应用于所有选中的对象。"
+    },
+    {
+      "Key": "MODEL_Properties_Select_to_Edit",
+      "Text": "选择一个地图对象以编辑其属性。"
+    },
+    {
+      "Key": "MODEL_Properties_No_Selection",
+      "Text": "未选择任何对象。"
+    },
+    {
+      "Key": "MODEL_Properties_Col_Object_Type",
+      "Text": "对象类型"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_Array_Type",
+      "Text": "数组类型：{0}"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_Array_Length",
+      "Text": "（长度：{0}）"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_Value_Type",
+      "Text": "值类型：{0}"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_Value_Min_Max",
+      "Text": "（最小 {0}，最大 {1}）"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_String_Type",
+      "Text": "字符串类型：{0}"
+    },
+    {
+      "Key": "MODEL_Properties_Field_Hint_String_Length",
+      "Text": "（长度：{0}）"
+    },
+    {
+      "Key": "MODEL_Properties_Dummy_Ref_Hint",
+      "Text": "Dummy {0}：{1}"
+    },
+    {
+      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Name",
+      "Text": "复制属性名称"
+    },
+    {
+      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Name_TT",
+      "Text": "将此属性的名称复制到剪贴板。"
+    },
+    {
+      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Type",
+      "Text": "复制属性类型"
+    },
+    {
+      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Type_TT",
+      "Text": "将此属性的类型名称复制到剪贴板。"
+    }
+  ]
+}

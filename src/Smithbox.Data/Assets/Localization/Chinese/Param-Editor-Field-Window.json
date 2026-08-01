@@ -1,0 +1,236 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_FieldWindow_SelectRow_Hint",
+      "Text": "选择一行以查看属性。"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Title",
+      "Text": "字段列表"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Title_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_FieldWindow_Col_Current",
+      "Text": "当前"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Col_Vanilla",
+      "Text": "原版"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Search_Hint",
+      "Text": "搜索..."
+    },
+    {
+      "Key": "PARAM_FieldWindow_Search_TT",
+      "Text": "搜索 <{0}>"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldNameMode_Hint",
+      "Text": "在内部名称和社区名称之间切换字段名称显示类型。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_VanillaCol_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_FieldWindow_VanillaCol_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_FieldWindow_VanillaCol_Hint",
+      "Text": "切换原版列的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_AuxCol_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_FieldWindow_AuxCol_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_FieldWindow_AuxCol_Hint",
+      "Text": "切换辅助列的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldLayout_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldLayout_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldLayout_Hint",
+      "Text": "切换字段布局的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldOffset_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldOffset_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldOffset_Hint",
+      "Text": "切换字段偏移列的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldPadding_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldPadding_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldPadding_Hint",
+      "Text": "切换填充字段的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_ModifiedBg_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_FieldWindow_ModifiedBg_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_FieldWindow_ModifiedBg_Hint",
+      "Text": "切换已修改字段上背景颜色的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Name_Prop",
+      "Text": "名称"
+    },
+    {
+      "Key": "PARAM_FieldWindow_ID_Prop",
+      "Text": "ID"
+    },
+    {
+      "Key": "PARAM_FieldWindow_LotChance_Always",
+      "Text": "此掉落必定出现。"
+    },
+    {
+      "Key": "PARAM_FieldWindow_LotChance_Never",
+      "Text": "此掉落永远不会出现。"
+    },
+    {
+      "Key": "PARAM_FieldWindow_LotChance_Percent",
+      "Text": "此掉落有 {0}%% 的概率出现。"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Header_Unsorted",
+      "Text": "未排序"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Info_Header",
+      "Text": "信息"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_No_Desc",
+      "Text": "尚未编写此字段的相关信息。"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Copy_Field_Name",
+      "Text": "复制字段名称"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Search_Header",
+      "Text": "搜索"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Add_to_Searchbar",
+      "Text": "添加到搜索栏"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Search_NonDefault_Vals",
+      "Text": "搜索非默认值"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Value_Header",
+      "Text": "值"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Reset_to_Vanilla",
+      "Text": "重置为原版值"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_View_Value_Distribution",
+      "Text": "查看值分布"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_MassEdit_Header",
+      "Text": "批量编辑"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Add_to_Palette",
+      "Text": "添加到面板"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Add_to_Palette_TT",
+      "Text": "将此字段添加到批量编辑命令面板。"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_View_Command_Palette",
+      "Text": "命令面板"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_View_Command_Palette_TT",
+      "Text": "打开浮动命令面板。"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_AutoFill_Header",
+      "Text": "自动填充"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_AutoFill_TT",
+      "Text": "打开自动填充菜单。"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Pin_Header",
+      "Text": "固定"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Pin",
+      "Text": "固定 "
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Unpin",
+      "Text": "取消固定 "
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Unpin_All",
+      "Text": "全部取消固定"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Comparison_Header",
+      "Text": "比较"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Set_Compare_Field",
+      "Text": "设置比较字段"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Clear_Compare_Field",
+      "Text": "清除比较字段"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Comparison_Name_Manipulation",
+      "Text": "名称操作"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Set_Target_Field",
+      "Text": "设置目标字段"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Set_Target_Field_TT",
+      "Text": "将行上下文菜单中名称操作继承动作的目标字段设置为此字段的内部名称。"
+    }
+  ]
+}

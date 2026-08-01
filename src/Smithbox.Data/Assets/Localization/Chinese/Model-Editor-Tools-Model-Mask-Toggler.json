@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_MaskToggler_Header",
+      "Text": "模型遮罩切换器"
+    },
+    {
+      "Key": "MODEL_MaskToggler_Hint",
+      "Text": "通过选择 NPC Param 条目快速切换模型遮罩组合。"
+    },
+    {
+      "Key": "MODEL_MaskToggler_Invalid_Project",
+      "Text": "此工具不支持该项目类型。"
+    },
+    {
+      "Key": "MODEL_MaskToggler_No_Param_Editor",
+      "Text": "必须启用 Param 编辑器此工具才能工作。"
+    },
+    {
+      "Key": "MODEL_MaskToggler_No_Model",
+      "Text": "必须先加载模型此工具才能工作。"
+    },
+    {
+      "Key": "MODEL_MaskToggler_No_Npc_Param",
+      "Text": "未能找到关联的 NpcParam 条目。"
+    },
+    {
+      "Key": "MODEL_MaskToggler_Invalid_Mask_ID",
+      "Text": "解析遮罩 ID 失败：{0}"
+    }
+  ]
+}

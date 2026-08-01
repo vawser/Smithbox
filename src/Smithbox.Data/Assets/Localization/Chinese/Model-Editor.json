@@ -1,0 +1,56 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_Editor_View_Tools",
+      "Text": "工具"
+    },
+    {
+      "Key": "MODEL_Editor_View_Screenshot_Mode",
+      "Text": "截图模式"
+    },
+    {
+      "Key": "MODEL_Editor_View_Screenshot_Mode_TT",
+      "Text": "隐藏除视口外的所有窗口。"
+    },
+    {
+      "Key": "MODEL_Editor_Option_Container_Header",
+      "Text": "容器"
+    },
+    {
+      "Key": "MODEL_Editor_Option_Files_Header",
+      "Text": "文件"
+    },
+    {
+      "Key": "MODEL_Editor_Option_Contents_Header",
+      "Text": "内容"
+    },
+    {
+      "Key": "MODEL_Editor_Container_Include_Alias_in_Search",
+      "Text": "在搜索中包含别名"
+    },
+    {
+      "Key": "MODEL_Editor_Container_Include_Alias_in_Search_TT",
+      "Text": "启用后，筛选来源列表时将包含别名。可能比正常搜索慢。"
+    },
+    {
+      "Key": "MODEL_Editor_Files_AutoSelect_First",
+      "Text": "自动选择首个条目"
+    },
+    {
+      "Key": "MODEL_Editor_Files_AutoSelect_First_TT",
+      "Text": "启用后，列表中的第一个条目将被自动加载。"
+    },
+    {
+      "Key": "MODEL_Editor_Contents_Display_Node_Name_in_Mesh_Entry",
+      "Text": "在网格条目中显示节点名称"
+    },
+    {
+      "Key": "MODEL_Editor_Contents_Display_Node_Name_in_Mesh_Entry_TT",
+      "Text": "启用后，关联的节点名称将显示在网格条目名称中。"
+    },
+    {
+      "Key": "MODEL_Editor_Invalid_Save_Project_Type_DES",
+      "Text": "模型编辑器不支持 DES。"
+    }
+  ]
+}

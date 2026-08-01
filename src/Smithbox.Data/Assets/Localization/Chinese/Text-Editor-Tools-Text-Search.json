@@ -1,0 +1,108 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_TextSearch_Header_Search_Filter",
+      "Text": "搜索筛选"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Search_Filter_TT",
+      "Text": "用于筛选的搜索词。\n可使用正则表达式。"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Filter_Type",
+      "Text": "筛选类型"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Filter_Type_TT",
+      "Text": "搜索将包含的文本类别。"
+    },
+    {
+      "Key": "TEXT_TextSearch_Filter_Type_TT",
+      "Text": "搜索使用的筛选类型。"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Match_Type",
+      "Text": "匹配类型"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Match_Type_TT",
+      "Text": "匹配文本条目的哪个元素。"
+    },
+    {
+      "Key": "TEXT_TextSearch_Match_Type_TT",
+      "Text": "文本条目中被匹配的元素。"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Options_TT",
+      "Text": null
+    },
+    {
+      "Key": "TEXT_TextSearch_Checkbox_Ignore_Case",
+      "Text": "忽略大小写"
+    },
+    {
+      "Key": "TEXT_TextSearch_Checkbox_Ignore_Case_TT",
+      "Text": "启用后将忽略大小写。"
+    },
+    {
+      "Key": "TEXT_TextSearch_Heder_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "TEXT_TextSearch_Heder_Actions_TT",
+      "Text": null
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Search",
+      "Text": "搜索"
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Search_TT",
+      "Text": "使用指定参数执行文本搜索。"
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Clear_Result",
+      "Text": "清除结果列表"
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Clear_Result_TT",
+      "Text": "清除结果列表。"
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Copy_Results",
+      "Text": "复制结果到剪贴板"
+    },
+    {
+      "Key": "TEXT_TextSearch_Action_Copy_Results_TT",
+      "Text": "将结果列表复制到剪贴板。"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Results",
+      "Text": "结果"
+    },
+    {
+      "Key": "TEXT_TextSearch_Header_Results_TT",
+      "Text": "文本搜索的结果。"
+    },
+    {
+      "Key": "TEXT_TextSearch_Already_Searched",
+      "Text": "未找到匹配筛选条件的文本条目。"
+    },
+    {
+      "Key": "TEXT_TextSearch_No_Search_Term",
+      "Text": "未指定搜索词。"
+    },
+    {
+      "Key": "TEXT_TextSearch_Invalid_Regex",
+      "Text": "搜索筛选中的正则表达式无效。"
+    },
+    {
+      "Key": "TEXT_TextSearch_No_Results_To_Copy",
+      "Text": "没有可复制的结果。"
+    }
+  ]
+}

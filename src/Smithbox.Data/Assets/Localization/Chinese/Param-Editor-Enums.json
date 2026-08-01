@@ -43,6 +43,110 @@
     {
       "Key": "PARAM_ENUM_Field_Layout_Placement_Unsorted_Bottom",
       "Text": "底部"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaExportMode_All",
+      "Text": "全部"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaExportMode_Selected",
+      "Text": "已选择"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaExportMode_All_TT",
+      "Text": "导出全部参数。"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaExportMode_Selected_TT",
+      "Text": "导出当前已选择的参数。"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_Modified",
+      "Text": "已修改"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_Selected",
+      "Text": "已选择"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_All",
+      "Text": "全部"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_Modified_TT",
+      "Text": "导出所有已修改的行。"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_Selected_TT",
+      "Text": "导出所有已选择的行。"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_All_TT",
+      "Text": "导出所有行。"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaImportMode_Insert_Overwrite",
+      "Text": "插入并覆盖"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaImportMode_Conditional",
+      "Text": "以行差异为条件"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamUpgradeRowGetType_All",
+      "Text": "所有行"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamUpgradeRowGetType_Modified",
+      "Text": "已修改的行"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamUpgradeRowGetType_Selected",
+      "Text": "已选择的行"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportType_All_Params",
+      "Text": "全部参数"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportType_Modified_Params",
+      "Text": "已修改的参数"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportType_Selected_Param",
+      "Text": "已选择的参数"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportType_Modified_Rows",
+      "Text": "已修改的行"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportType_Selected_Rows",
+      "Text": "已选择的行"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvImportType_All_Fields",
+      "Text": "所有字段"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvImportType_Row_Name",
+      "Text": "行名称"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvImportType_Specific_Field",
+      "Text": "指定字段"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamRowCopyBehavior_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamRowCopyBehavior_Name",
+      "Text": "名称"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamRowCopyBehavior_ID_and_Name",
+      "Text": "ID 和名称"
     }
   ]
 }

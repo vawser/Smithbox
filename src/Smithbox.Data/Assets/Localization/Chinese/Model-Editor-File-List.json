@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_FileList_Header",
+      "Text": "文件"
+    },
+    {
+      "Key": "MODEL_FileList_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "MODEL_FileList_Context_Load_Action",
+      "Text": "加载"
+    },
+    {
+      "Key": "MODEL_FileList_Context_Unload_Action",
+      "Text": "卸载"
+    }
+  ]
+}

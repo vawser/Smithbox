@@ -1,0 +1,88 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_SourceList_Header",
+      "Text": "容器"
+    },
+    {
+      "Key": "MODEL_SourceList_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "MODEL_SourceList_Tab_Characters",
+      "Text": "角色"
+    },
+    {
+      "Key": "MODEL_SourceList_Tab_Objects",
+      "Text": "对象"
+    },
+    {
+      "Key": "MODEL_SourceList_Tab_Assets",
+      "Text": "资源"
+    },
+    {
+      "Key": "MODEL_SourceList_Tab_Parts",
+      "Text": "部件"
+    },
+    {
+      "Key": "MODEL_SourceList_MapPieces",
+      "Text": "地图碎片"
+    },
+    {
+      "Key": "MODEL_SourceList_Filter_TT",
+      "Text": "筛选模型列表条目。"
+    },
+    {
+      "Key": "MODEL_SourceList_Toggle_Load_Mode_Select",
+      "Text": "选中时加载"
+    },
+    {
+      "Key": "MODEL_SourceList_Toggle_Load_Mode_Double_Click",
+      "Text": "双击时加载"
+    },
+    {
+      "Key": "MODEL_SourceList_Toggle_Load_Mode_TT",
+      "Text": "决定模型来源列表中的加载行为。\n加载方式：{0}"
+    },
+    {
+      "Key": "MODEL_SourceList_Context_Action_Load",
+      "Text": "加载"
+    },
+    {
+      "Key": "MODEL_SourceList_Context_Action_Copy_Name",
+      "Text": "复制名称"
+    },
+    {
+      "Key": "MODEL_SourceList_Context_Action_Copy_Name_TT",
+      "Text": "将此容器的名称复制到剪贴板。"
+    },
+    {
+      "Key": "MODEL_SourceList_Context_Action_Update_Alias_Header",
+      "Text": "更新别名"
+    },
+    {
+      "Key": "MODEL_SourceList_Context_Action_Update_Alias_TT",
+      "Text": "更新与此容器名称关联的别名。"
+    },
+    {
+      "Key": "MODEL_SourceList_Alias_Name",
+      "Text": "别名"
+    },
+    {
+      "Key": "MODEL_SourceList_Alias_Name_TT",
+      "Text": "与此模型名称关联的别名。"
+    },
+    {
+      "Key": "MODEL_SourceList_Commit_Alias",
+      "Text": "提交"
+    },
+    {
+      "Key": "MODEL_SourceList_Commit_Alias_TT",
+      "Text": "更新此模型名称的别名词条。"
+    },
+    {
+      "Key": "MODEL_SourceList_Log_Update_Alias",
+      "Text": "已更新别名。"
+    }
+  ]
+}

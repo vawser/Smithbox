@@ -1,0 +1,24 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Dumper_Header_Text_Dump",
+      "Text": "文本转储"
+    },
+    {
+      "Key": "TEXT_Dumper_Action_Dump",
+      "Text": "转储"
+    },
+    {
+      "Key": "TEXT_Dumper_Action_Dump_TT",
+      "Text": "将所有 FMG 内容转储为单独的文本文件，用于数据挖掘。"
+    },
+    {
+      "Key": "TEXT_Dumper_Dialog_Select_Directory",
+      "Text": "选择目录"
+    },
+    {
+      "Key": "TEXT_Dumper_Finished_Dump",
+      "Text": "已转储所有文本条目。"
+    }
+  ]
+}

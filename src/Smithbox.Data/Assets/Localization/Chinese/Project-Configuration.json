@@ -18,11 +18,11 @@
     },
     {
       "Key": "PROJECT_Configuration_Header_Available_Projects_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PROJECT_Configuration_Header_Global_Actions_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PROJECT_Configuration_Global_Action_Create_Project",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "PROJECT_Configuration_Action_Create_Project_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PROJECT_Configuration_Action_Update_Project",

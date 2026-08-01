@@ -34,7 +34,7 @@
     },
     {
       "Key": "TEXT_LanguageSync_Header_Options_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_LanguageSync_Checkbox_Include_Default",
@@ -82,7 +82,7 @@
     },
     {
       "Key": "TEXT_LanguageSync_Header_Actions_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_LanguageSync_Action_Sync",
@@ -105,12 +105,12 @@
       "Text": "将另一个类别的所有独有更改同步到此类别。\n\n在您希望将更改导入到的类别上使用此功能。"
     },
     {
-      "Key": "TEXT_LanguageSync_Action_Sync_TT",
-      "Text": "将 {0} 类别的更改带入此类别。"
-    },
-    {
       "Key": "TEXT_LanguageSync_Sync_Operation_PASS",
       "Text": "已将 {0} {1} 与 {2} 版本同步。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Action_Sync_With_TT",
+      "Text": "将 {0} 类别中的更改导入到此类别。"
     }
   ]
 }

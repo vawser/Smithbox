@@ -1,0 +1,24 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_GlobalOp_Clear_TT",
+      "Text": "清除剪贴板参数和行。"
+    },
+    {
+      "Key": "PARAM_GlobalOp_NewVar_Hint_1",
+      "Text": "变量名称"
+    },
+    {
+      "Key": "PARAM_GlobalOp_NewVar_Hint_2",
+      "Text": "值"
+    },
+    {
+      "Key": "PARAM_GlobalOp_NewVar_TT",
+      "Text": "创建一个具有给定值和该值类型的变量。"
+    },
+    {
+      "Key": "PARAM_GlobalOp_ClearVars_Hint",
+      "Text": "删除所有变量。"
+    }
+  ]
+}

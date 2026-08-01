@@ -217,14 +217,6 @@
       "Text": "Copy the export output to the clipboard."
     },
     {
-      "Key": "PARAM_DataTransfer_Header_Actions",
-      "Text": "Actions"
-    },
-    {
-      "Key": "PARAM_DataTransfer_Header_Actions_TT",
-      "Text": ""
-    },
-    {
       "Key": "PARAM_DataTransfer_Action_Export_to_File",
       "Text": "Export to File"
     },

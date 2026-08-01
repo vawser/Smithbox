@@ -6,7 +6,7 @@
     },
     {
       "Key": "TEXT_FileList_Header_Files_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "TEXT_FileList_Toggle_Grouped_Display",
@@ -71,6 +71,18 @@
     {
       "Key": "TEXT_FileList_DLC2_Priority_TT",
       "Text": "此FMG包含与DLC 2关联的条目，请在此编辑。\n\n但是，不建议在此FMG中添加新条目，因为基础或DLC 1部分的FMG中具有相同ID的条目将优先。"
+    },
+    {
+      "Key": "TEXT_FileList_Context_Header_Information",
+      "Text": "信息"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_ID",
+      "Text": "ID: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Name",
+      "Text": "名称: {0}"
     }
   ]
 }

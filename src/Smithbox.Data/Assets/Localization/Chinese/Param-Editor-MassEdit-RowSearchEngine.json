@@ -1,0 +1,260 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_RSE_All_TT",
+      "Text": "选择所有行。"
+    },
+    {
+      "Key": "PARAM_RSE_Modified_TT",
+      "Text": "选择与原版不匹配或已添加的行。忽略行名称。"
+    },
+    {
+      "Key": "PARAM_RSE_AuxModified_TT",
+      "Text": "选择与 aux 版本不匹配或已添加的行。忽略行名称。"
+    },
+    {
+      "Key": "PARAM_RSE_Named_TT",
+      "Text": "选择名称不为空或 null 的行。"
+    },
+    {
+      "Key": "PARAM_RSE_Selected_TT",
+      "Text": "选择已手动选中的行。"
+    },
+    {
+      "Key": "PARAM_RSE_Added_TT",
+      "Text": "选择 ID 在原版参数中不存在的行。"
+    },
+    {
+      "Key": "PARAM_RSE_Mergable",
+      "Text": "选择在主 regulation 或 parambnd 中未修改，且在另一个 regulation 或 parambnd 中有且仅有一个已修改的对应行的行。"
+    },
+    {
+      "Key": "PARAM_RSE_Conflicts_TT",
+      "Text": "选择在主 regulation 和附加 regulation 或 parambnd 的所有对应行中，有超过 1 行被修改的行。"
+    },
+    {
+      "Key": "PARAM_RSE_ID_Hint_1",
+      "Text": "行 ID（正则表达式）"
+    },
+    {
+      "Key": "PARAM_RSE_ID_Hint",
+      "Text": "选择 ID 匹配给定正则表达式的行"
+    },
+    {
+      "Key": "PARAM_RSE_IdRange_Hint_1",
+      "Text": "行 ID 最小值（含）"
+    },
+    {
+      "Key": "PARAM_RSE_IdRange_Hint_2",
+      "Text": "行 ID 最大值（含）"
+    },
+    {
+      "Key": "PARAM_RSE_IdRange_TT",
+      "Text": "选择 ID 在给定数值范围内的行。"
+    },
+    {
+      "Key": "PARAM_RSE_Name_Hint_1",
+      "Text": "行名称（正则表达式）"
+    },
+    {
+      "Key": "PARAM_RSE_Name_TT",
+      "Text": "选择名称匹配给定正则表达式的行。"
+    },
+    {
+      "Key": "PARAM_RSE_Prop_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_RSE_Prop_Hint_2",
+      "Text": "字段值（正则表达式）"
+    },
+    {
+      "Key": "PARAM_RSE_Prop_Hint_TT",
+      "Text": "选择指定字段的值匹配给定正则表达式的行。"
+    },
+    {
+      "Key": "PARAM_RSE_PropRange_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_RSE_PropRange_Hint_2",
+      "Text": "字段值最小值（含）"
+    },
+    {
+      "Key": "PARAM_RSE_PropRange_Hint_3",
+      "Text": "字段值最大值（含）"
+    },
+    {
+      "Key": "PARAM_RSE_PropRange_TT",
+      "Text": "选择指定字段的值在给定数值范围内的行"
+    },
+    {
+      "Key": "PARAM_RSE_Positive_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_RSE_Positive_TT",
+      "Text": "选择指定字段的值为正非零数的行。"
+    },
+    {
+      "Key": "PARAM_RSE_Negative_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_RSE_Negative_TT",
+      "Text": "选择指定字段的值为负非零数的行。"
+    },
+    {
+      "Key": "PARAM_RSE_PropRef_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_RSE_PropRef_Hint_2",
+      "Text": "引用的行名称（正则表达式）"
+    },
+    {
+      "Key": "PARAM_RSE_PropRef_TT",
+      "Text": "选择指定字段引用了另一个参数，且被引用行的名称匹配给定正则表达式的行。"
+    },
+    {
+      "Key": "PARAM_RSE_PropWhere_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_RSE_PropWhere_Hint_2",
+      "Text": "单元格/字段选择器"
+    },
+    {
+      "Key": "PARAM_RSE_PropWhere_TT",
+      "Text": "选择在给定单元格/字段搜索条件下出现指定字段的行。"
+    },
+    {
+      "Key": "PARAM_RSE_Fmg_Hint_1",
+      "Text": "文本（正则表达式）"
+    },
+    {
+      "Key": "PARAM_RSE_Fmg_TT",
+      "Text": "选择附有 FMG 且 FMG 文本匹配给定正则表达式的行。"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaProp_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaProp_Hint_2",
+      "Text": "字段值（正则表达式）"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaProp_TT",
+      "Text": "选择原版对应行中指定字段的值匹配给定正则表达式的行。"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaPropRange_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaPropRange_Hint_2",
+      "Text": "字段值最小值（含）"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaPropRange_Hint_3",
+      "Text": "字段值最大值（含）"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaPropRange_TT",
+      "Text": "选择原版对应行中指定字段的值在给定数值范围内的行。"
+    },
+    {
+      "Key": "PARAM_RSE_AuxProp_Hint_1",
+      "Text": "parambank 名称"
+    },
+    {
+      "Key": "PARAM_RSE_AuxProp_Hint_2",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_RSE_AuxProp_Hint_3",
+      "Text": "字段值（正则表达式）"
+    },
+    {
+      "Key": "PARAM_RSE_AuxProp_TT",
+      "Text": "选择在给定 regulation 或 parambnd 中的对应行里，指定字段的值匹配给定正则表达式的行。\n可用于判断 aux 行是否存在。"
+    },
+    {
+      "Key": "PARAM_RSE_AuxProp_Error_Missing_AuxBank",
+      "Text": "未找到 auxbank：{0}"
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_Hint_1",
+      "Text": "parambank 名称"
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_Hint_2",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_Hint_3",
+      "Text": "字段值最小值（含）"
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_Hint_4",
+      "Text": "字段值最大值（含）"
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_TT",
+      "Text": "选择在给定 regulation 或 parambnd 中的对应行里，指定字段的值在给定范围内的行。"
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_Error_Missing_AuxBank",
+      "Text": "未找到 auxbank：{0}"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Hint_1",
+      "Text": "字段名称（当前）"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Hint_2",
+      "Text": "参数名称（目标）"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Hint_3",
+      "Text": "字段名称（目标）"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Hint_4",
+      "Text": "行选择器（目标）"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_TT",
+      "Text": "选择指定字段的值属于给定参数中用给定行选择器找到的第二个指定字段的值集合的所有行。"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Error_Cannot_Find_Param",
+      "Text": "未找到参数：{0}"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Error_Cannot_Find_Field",
+      "Text": "未找到字段：{0}"
+    },
+    {
+      "Key": "PARAM_RSE_Unique_Hint_1",
+      "Text": "字段名称"
+    },
+    {
+      "Key": "PARAM_RSE_Unique_TT",
+      "Text": "选择指定字段的值唯一的所有行。"
+    },
+    {
+      "Key": "PARAM_RSE_Unique_Error_Cannot_Find_Field",
+      "Text": "未找到字段：{0}"
+    },
+    {
+      "Key": "PARAM_RSE_Default_Hint_1",
+      "Text": "行 ID 或名称（正则表达式）"
+    },
+    {
+      "Key": "PARAM_RSE_Default_TT",
+      "Text": "选择 ID 或名称匹配给定正则表达式的行，但在 strict/massedit 模式下除外。"
+    }
+  ]
+}
