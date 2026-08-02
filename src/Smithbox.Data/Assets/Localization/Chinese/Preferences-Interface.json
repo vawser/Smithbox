@@ -150,7 +150,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Theme_Editor_Moveable_Window",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_Moveable_Window_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Theme_Editor_Scrollbar",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_Scrollbar_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Theme_Editor_Tab",
@@ -174,7 +174,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_Tab_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Theme_Editor_Button",
@@ -182,7 +182,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_Button_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Theme_Editor_Selection",
@@ -190,7 +190,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_Selection_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Theme_Editor_Inputs",
@@ -198,7 +198,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_Inputs_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Theme_Editor_Backgrounds",
@@ -206,7 +206,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_Backgrounds_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Theme_Editor_Text",
@@ -214,7 +214,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_Text_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Theme_Editor_Logger",
@@ -222,7 +222,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_Logger_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_Theme_Editor_Display_Group",
@@ -230,7 +230,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_Display_Group_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "PREF_CE_ImGui_MainBg",

@@ -70,7 +70,7 @@
     },
     {
       "Key": "META_EnumMenu_Header_Enums_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "META_EnumMenu_Paran_Editor_Enable_Hint",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "META_EnumMenu_Add_Enum_Option_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "META_EnumMenu_Drag_Action_TT",

@@ -1,0 +1,468 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Params",
+      "Text": "选择参数..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Rows",
+      "Text": "选择行..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Fields",
+      "Text": "选择字段..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Add_Command",
+      "Text": "添加命令..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Param_And_Rows",
+      "Text": "选择参数和行..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Field_Op",
+      "Text": "选择字段操作..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Row_Op",
+      "Text": "选择行操作..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Global_Op",
+      "Text": "选择全局操作..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Variables",
+      "Text": "选择变量..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Value_Op",
+      "Text": "选择值操作..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Defined_Variables",
+      "Text": "已定义的变量..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Exactly",
+      "Text": "精确匹配..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_LiteralVal_Hint",
+      "Text": "字面值..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_InvertSelection",
+      "Text": "反转选区？"
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_AddCondition",
+      "Text": "添加另一个条件？"
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_DefaultFilter",
+      "Text": "默认筛选器..."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header",
+      "Text": "批量编辑"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Menu_Hint",
+      "Text": "param PARAM: id VALUE: FIELD: = VALUE;"
+    },
+    {
+      "Key": "PARAM_MassEdit_Menu_Input",
+      "Text": "输入"
+    },
+    {
+      "Key": "PARAM_MassEdit_Menu_Input_TT",
+      "Text": "在此输入你要应用的批量编辑命令。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Output",
+      "Text": "输出"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Output_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Actions_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Submit",
+      "Text": "执行"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Submit_TT",
+      "Text": "执行当前的批量编辑命令。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Export",
+      "Text": "CSV 导出"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Export_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Copy_to_Clipboard",
+      "Text": "复制到剪贴板"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Copy_to_Clipboard_TT",
+      "Text": "将当前输出复制到剪贴板。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Export_Field",
+      "Text": "CSV 导出 ({0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Import",
+      "Text": "CSV 导入"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Import_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Delimiter",
+      "Text": "分隔符"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Delimiter_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Options_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Checkbox_Append_Mode",
+      "Text": "追加新行"
+    },
+    {
+      "Key": "PARAM_MassEdit_Checkbox_Append_Mode_TT",
+      "Text": "追加新行而非基于 ID 的插入（这将产生乱序 ID）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Checkbox_Replace_Existing",
+      "Text": "替换已有行"
+    },
+    {
+      "Key": "PARAM_MassEdit_Checkbox_Replace_Existing_TT",
+      "Text": "替换已有行而非更新它们（它们将被移至末尾）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Import_CSV",
+      "Text": "导入"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Import_CSV_TT",
+      "Text": "导入当前 CSV。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Result",
+      "Text": "结果"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Result_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Import_Field",
+      "Text": "CSV 导入 ({0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Tab_Command_Palette",
+      "Text": "命令面板"
+    },
+    {
+      "Key": "PARAM_MassEdit_Tab_Templates",
+      "Text": "模板"
+    },
+    {
+      "Key": "PARAM_MassEdit_Command_Palette_TT",
+      "Text": "在此编写并执行批量编辑命令。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Input",
+      "Text": "输入"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Input_TT",
+      "Text": "在此输入你要应用的批量编辑命令。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Apply_Script",
+      "Text": "应用"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Apply_Script_TT",
+      "Text": "应用此脚本。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Clear_Script",
+      "Text": "清除"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Clear_Script_TT",
+      "Text": "清除此脚本。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Templates",
+      "Text": "模板"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Templates_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Load_Script",
+      "Text": "加载"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Load_Script_TT",
+      "Text": "加载此脚本。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Output_Command_Palette",
+      "Text": "上次使用的批量编辑命令的成功状态。\n\n请记得在编辑之间使用 'clear' 命令处理剪贴板状态"
+    },
+    {
+      "Key": "PARAM_MassEdit_Template_Hint",
+      "Text": "在此创建和编辑批量编辑模板。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Template_Header_Existing",
+      "Text": "已有模板"
+    },
+    {
+      "Key": "PARAM_MassEdit_Template_Header_Existing_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Edit_Template_Script",
+      "Text": "编辑"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Edit_Template_Script_TT",
+      "Text": "编辑当前选中的模板脚本。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Update_Template_List",
+      "Text": "更新模板列表"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Update_Template_List_TT",
+      "Text": "更新模板列表的来源以反映新添加的脚本。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Open_Template_Folder",
+      "Text": "打开模板目录"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Open_Template_Folder_TT",
+      "Text": "用文件管理器打开存储模板的目录。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Template_Contents",
+      "Text": "模板内容"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Template_Contents_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Save_Script",
+      "Text": "保存"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Save_Script_TT",
+      "Text": "保存脚本。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_New_Template",
+      "Text": "新模板"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_New_Template_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_MassEdit_Input_New_Template",
+      "Text": "名称"
+    },
+    {
+      "Key": "PARAM_MassEdit_Input_New_Template_TT",
+      "Text": "此模板使用的文件名。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Template_Name_Empty",
+      "Text": "批量编辑模板名称不能为空。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Saved_Template",
+      "Text": "已在 {1} 保存批量编辑模板 {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Failed_Save_Template",
+      "Text": "在 {1} 保存批量编辑模板 {0} 失败"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Template_Name_Exists",
+      "Text": "已存在同名批量编辑模板：{0}。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Failed_Template_Load",
+      "Text": "加载批量编辑模板失败：{0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Missing_Template_Dir",
+      "Text": "未找到批量编辑模板目录：{0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Delimiter_Hint",
+      "Text": "定义分隔符..."
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Success_Cells_Affected",
+      "Text": "已影响 {0} 个单元格。"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Unknown",
+      "Text": "第 {0} 行出现未知解析错误：{1}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Global_Op",
+      "Text": "未知的全局操作 {0}（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Global_Op_Arg_Count",
+      "Text": "操作 {0} 的参数数量无效（第 {1} 行）- 读取了 {2} 个参数，预期 {3} 个"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Missing_Variable_Filter",
+      "Text": "未找到变量筛选器。添加 : 和以下之一 {0}（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op",
+      "Text": "未找到变量操作。请检查冒号位置。（第 {0} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op_Symbol",
+      "Text": "未找到要执行的操作。添加 : 和以下之一 + - * / replace（第 {0} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Var_Op_Arg_Count",
+      "Text": "操作 {0} 的参数数量无效（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Param_Row_Filter_Missing",
+      "Text": "未找到参数行筛选器。添加 : 和以下之一 {0}（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Filter_Row_Op_Missing",
+      "Text": "未找到单元格筛选器或行操作。请检查冒号位置。（第 {0} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Param_Filter_Missing",
+      "Text": "未找到参数筛选器。添加 : 和以下之一 {0}（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Row_Filter_Missing",
+      "Text": "未找到行筛选器。请检查冒号位置。（第 {0} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Row_Filter_Missing_Op",
+      "Text": "未找到行筛选器。添加 : 和以下之一 {0}（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Filter_Missing",
+      "Text": "未找到单元格/属性筛选器。添加 : 和以下之一 {0} 或 Name（0 个参数）（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Missing_Cell_Op",
+      "Text": "未找到要执行的操作。请检查冒号位置。（第 {0} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Row_Op_Unknown",
+      "Text": "未知的行操作 {0}（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Row_Op_Invalid_Arg_Count",
+      "Text": "操作 {0} 的参数数量无效（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Missing_Symbol",
+      "Text": "未找到要执行的操作。添加 : 和以下之一 + - * / replace（第 {0} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Unknown",
+      "Text": "未知的单元格操作 {0}（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Invalid_Arg_Count",
+      "Text": "操作 {0} 的参数数量无效（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_On_Line",
+      "Text": "第 {0} 行出错\n{1}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Global_Op",
+      "Text": "执行全局操作 {0} 出错（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Var_Op",
+      "Text": "执行变量操作 {0} 出错（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Param_Stage_Invalid_Arg_Count",
+      "Text": "操作 {0} 的参数数量无效（第 {1} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Row_Op",
+      "Text": "无法对行执行操作 {0} {1}（第 {2} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Bad_Type",
+      "Text": "类型不正确：{0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Bad_Cast",
+      "Text": "无法转换为正确类型：{0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Unknown_Error",
+      "Text": "未知错误：{0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_ID",
+      "Text": "无法对 ID ({2}) 执行操作 {0} {1}（第 {3} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_Name",
+      "Text": "无法对名称 ({2}) 执行操作 {0} {1}（第 {3} 行）"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_Field",
+      "Text": "无法对字段 {2} ({3}) 执行操作 {0} {1}（第 {4} 行）"
+    }
+  ]
+}

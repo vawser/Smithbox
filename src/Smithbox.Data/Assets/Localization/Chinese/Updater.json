@@ -1,0 +1,136 @@
+{
+  "Entries": [
+    {
+      "Key": "UPDATER_Window_Title",
+      "Text": "更新器"
+    },
+    {
+      "Key": "UPDATER_Modal_Title",
+      "Text": "更新器进度"
+    },
+    {
+      "Key": "UPDATER_Update_Hint",
+      "Text": "使用此工具快速更新 Smithbox。"
+    },
+    {
+      "Key": "UPDATER_Updater_Version_Header",
+      "Text": "更新器可执行文件"
+    },
+    {
+      "Key": "UPDATER_Updater_Version_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "UPDATER_Vulkan_Version_Header",
+      "Text": "Vulkan 可执行文件"
+    },
+    {
+      "Key": "UPDATER_Vulkan_Version_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "UPDATER_OpenGL_Version_Header",
+      "Text": "OpenGL 可执行文件"
+    },
+    {
+      "Key": "UPDATER_OpenGL_Version_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "UPDATER_File_Version",
+      "Text": "文件版本：{0}"
+    },
+    {
+      "Key": "UPDATER_Is_Debug_Build",
+      "Text": "调试版本：{0}"
+    },
+    {
+      "Key": "UPDATER_Actions_Header",
+      "Text": "操作"
+    },
+    {
+      "Key": "UPDATER_Actions_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "UPDATER_Download_Latest_Action",
+      "Text": "下载并解压最新版本"
+    },
+    {
+      "Key": "UPDATER_Download_Latest_Action_TT",
+      "Text": "选择一个文件夹，将最新的 Smithbox 版本下载并解压到其中。"
+    },
+    {
+      "Key": "UPDATER_Phase_Starting",
+      "Text": "正在启动..."
+    },
+    {
+      "Key": "UPDATER_Phase_Checking",
+      "Text": "正在检查..."
+    },
+    {
+      "Key": "UPDATER_Step_FetchingMetadata",
+      "Text": "正在获取元数据"
+    },
+    {
+      "Key": "UPDATER_Log_No_Assets_Found",
+      "Text": "最新版本中未找到资源文件。"
+    },
+    {
+      "Key": "UPDATER_Log_No_Zip_Asset_Found",
+      "Text": "最新版本中未找到 .zip 资源文件。"
+    },
+    {
+      "Key": "UPDATER_Step_Downloading_Known",
+      "Text": "已下载 {0}/{1}"
+    },
+    {
+      "Key": "UPDATER_Step_Downloading_Unknown",
+      "Text": "已下载 {0}"
+    },
+    {
+      "Key": "UPDATER_Phase_Downloading",
+      "Text": "正在下载..."
+    },
+    {
+      "Key": "UPDATER_Log_Entry_Outside_of_Dest_Folder",
+      "Text": "条目位于目标文件夹之外：{0}"
+    },
+    {
+      "Key": "UPDATER_Phase_Extracting",
+      "Text": "正在解压..."
+    },
+    {
+      "Key": "UPDATER_Step_Extracting_File",
+      "Text": "正在解压 {0}"
+    },
+    {
+      "Key": "UPDATER_Phase_Complete",
+      "Text": "已完成"
+    },
+    {
+      "Key": "UPDATER_Step_Complete",
+      "Text": null
+    },
+    {
+      "Key": "UPDATER_Phase_Failed",
+      "Text": "失败"
+    },
+    {
+      "Key": "UPDATER_OutOfDate_Warning",
+      "Text": "程序版本过旧：{0} 早于 {1}"
+    },
+    {
+      "Key": "UPDATER_UpToDate_Message",
+      "Text": "程序已是最新版本。"
+    },
+    {
+      "Key": "UPDATER_VersionCheck_Failed",
+      "Text": "程序版本检查失败。"
+    },
+    {
+      "Key": "UPDATER_VersionCheck_ParseWarning",
+      "Text": "无法将一个或两个版本号解析为 System.Version。"
+    }
+  ]
+}

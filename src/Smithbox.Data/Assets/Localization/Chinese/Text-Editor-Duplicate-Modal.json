@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_DuplicateModal_Offset_Input",
+      "Text": "偏移量"
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Offset_Input_TT",
+      "Text": "每个重复实例应用于条目ID的偏移量。"
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Amount_Input",
+      "Text": "数量"
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Amount_Input_TT",
+      "Text": "每个条目要生成的重复实例数量。"
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Checkbox_Auto_Adjust",
+      "Text": "自动调整偏移量"
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Checkbox_Auto_Adjust_TT",
+      "Text": "当定义了超过 1 个重复实例时，如果启用此项，偏移量将自动调整（例如偏移量设为 100，第一个实例为 ID + 100，第二个为 ID + 200，以此类推）"
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Action_Submit",
+      "Text": "提交"
+    }
+  ]
+}

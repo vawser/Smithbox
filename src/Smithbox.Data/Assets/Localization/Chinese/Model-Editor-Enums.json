@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_ENUM_ModelListType_Characters",
+      "Text": "角色"
+    },
+    {
+      "Key": "MODEL_ENUM_ModelListType_Assets",
+      "Text": "资源"
+    },
+    {
+      "Key": "MODEL_ENUM_ModelListType_Parts",
+      "Text": "部件"
+    },
+    {
+      "Key": "MODEL_ENUM_ModelListType_MapPieces",
+      "Text": "地图碎片"
+    },
+    {
+      "Key": "MODEL_ENUM_ModelListType_Collisions",
+      "Text": "碰撞体"
+    },
+    {
+      "Key": "MODEL_ENUM_ModelListType_Navmesh",
+      "Text": "导航网格"
+    }
+  ]
+}

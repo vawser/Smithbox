@@ -1,0 +1,140 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_TextReplacement_Header_Search_Filter",
+      "Text": "搜索筛选"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Search_Filter_TT",
+      "Text": "用于筛选的搜索词。\n可使用正则表达式。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Replacement_Filter",
+      "Text": "替换词"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Replacement_Filter_TT",
+      "Text": "应用于筛选结果以替换文本的词。\n可使用正则表达式。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Filter_Type",
+      "Text": "筛选类型"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Filter_Type_TT",
+      "Text": "搜索将包含的文本类别。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Filter_Type_TT",
+      "Text": "搜索使用的筛选类型。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Match_Type",
+      "Text": "匹配类型"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Match_Type_TT",
+      "Text": "匹配文本条目的哪个元素。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Match_Type_TT",
+      "Text": "文本条目中被匹配的元素。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Options_TT",
+      "Text": null
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Ignore_Case",
+      "Text": "忽略大小写"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Ignore_Case_TT",
+      "Text": "指定正则表达式的不区分大小写匹配。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Multiline_Regex",
+      "Text": "使用多行正则"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Multiline_Regex_TT",
+      "Text": "正则表达式的多行模式。更改 ^ 和 $ 的含义，使其分别匹配任意行的开头和结尾，而不仅仅是整个字符串的开头和结尾。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Singleline_Regex",
+      "Text": "使用单行正则"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Singleline_Regex_TT",
+      "Text": "指定正则表达式的单行模式。更改点号 (.) 的含义，使其匹配每个字符（而不是除 \\n 外的每个字符）。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Ignore_Pattern_Whitespace",
+      "Text": "忽略模式中的空白"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Checkbox_Ignore_Pattern_Whitespace_TT",
+      "Text": "消除模式中未转义的空白，并启用以 # 标记的注释。但是，此值不影响或消除字符类、数值量词或标记单个正则表达式语言元素开头的标记中的空白。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Actions_TT",
+      "Text": null
+    },
+    {
+      "Key": "TEXT_TextReplacement_Action_Preview_Edit",
+      "Text": "预览编辑"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Action_Preview_Edit_TT",
+      "Text": "生成潜在编辑的预览列表。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Action_Clear_Preview",
+      "Text": "清除预览"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Action_Clear_Preview_TT",
+      "Text": "清除预览列表。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Apply_Replacement",
+      "Text": "应用替换"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Apply_Replacement_TT",
+      "Text": "预览列表中的所有条目都将应用替换词正则表达式。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Preview_List",
+      "Text": "预览列表"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Header_Preview_List_TT",
+      "Text": "基于搜索筛选条件的潜在编辑列表。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Preview_List_Hint",
+      "Text": "将受影响的条目："
+    },
+    {
+      "Key": "TEXT_TextReplacement_Already_Searched",
+      "Text": "未找到匹配筛选条件的文本条目。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Invalid_Regex_Search",
+      "Text": "搜索筛选中的正则表达式无效。"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Invalid_Regex_Replace",
+      "Text": "替换筛选中的正则表达式无效。"
+    }
+  ]
+}

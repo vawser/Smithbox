@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_ToolWindow_Tools_Header",
+      "Text": "工具"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Header",
+      "Text": "视图"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Grid_Configuration",
+      "Text": "模型网格配置"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Instance_Finder",
+      "Text": "模型实例查找器"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Mask_Toggler",
+      "Text": "模型遮罩切换器"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Resource_Monitor",
+      "Text": "资源监视器"
+    }
+  ]
+}

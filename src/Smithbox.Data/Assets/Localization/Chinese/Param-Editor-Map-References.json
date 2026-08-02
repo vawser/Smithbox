@@ -1,0 +1,40 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_MapRef_Action_View_In_Map",
+      "Text": "在地图中查看"
+    },
+    {
+      "Key": "PARAM_MapRef_Action_View_In_Map_Bonfire_TT",
+      "Text": "加载此篝火所在的地图并自动选中篝火 Enemy 地图对象，以便立即定位。"
+    },
+    {
+      "Key": "PARAM_MapRef_Action_View_In_Map_Lamp_TT",
+      "Text": "加载此灯火所在的地图并自动选中篝火 Enemy 地图对象，以便立即定位。"
+    },
+    {
+      "Key": "PARAM_MapRef_Action_View_In_Map_Boss_TT",
+      "Text": "加载此 BOSS 所在的地图并自动选中 BOSS Enemy 地图对象，以便立即定位。"
+    },
+    {
+      "Key": "PARAM_MapRef_Action_View_Model",
+      "Text": "查看模型"
+    },
+    {
+      "Key": "PARAM_MapRef_Action_View_Model_TT",
+      "Text": "在模型编辑器中查看此模型，并自动加载。"
+    },
+    {
+      "Key": "PARAM_MapRef_Action_View_Model_ID",
+      "Text": "查看模型：{0}"
+    },
+    {
+      "Key": "PARAM_MapRef_Action_View_In_Map_BuddyStone_TT",
+      "Text": "加载地图并选中 buddy stone enemy 地图对象。"
+    },
+    {
+      "Key": "PARAM_MapRef_Action_View_In_Map_treasure_TT",
+      "Text": "加载地图并选中持有此宝物的资产。"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_RowNameManip_Header",
+      "Text": "行名称操作"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Adjust_Tab",
+      "Text": "调整"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Adjust_Tab_Hint",
+      "Text": "使用此工具快速添加或移除当前所选行的行名称内容。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Inherit_Tab",
+      "Text": "继承"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Inherit_Tab_Hint",
+      "Text": "使用此工具根据当前所选行及其内部链接的参数引用快速填充行名称。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Replace_Tab",
+      "Text": "替换"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Replace_Tab_Hint",
+      "Text": "使用此工具在当前所选行的行名称中搜索并替换字符串，便于统一命名。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Text_To_Add_Header",
+      "Text": "要添加的文本"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Text_To_Add_Header_TT",
+      "Text": "要前置添加或后置追加到现有名称的字符串。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Actions_Header",
+      "Text": "操作"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Actions_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Clear_Row_Name",
+      "Text": "清除行名称"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Clear_Row_Name_TT",
+      "Text": "清除当前所选行的行名称。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Prepend_Row_Name",
+      "Text": "前置添加文本到行名称"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Prepend_Row_Name_TT",
+      "Text": "将指定文本前置添加到当前所选行的行名称中。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Postpend_Row_Name",
+      "Text": "后置追加文本到行名称"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Postpend_Row_Name_TT",
+      "Text": "将指定文本后置追加到当前所选行的行名称中。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Remove_Row_Name",
+      "Text": "从行名称中移除文本"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_Field_Header",
+      "Text": "目标字段"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_Field_Header_TT",
+      "Text": "用于名称操作的目标字段的内部名称。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Proliferate_Name",
+      "Text": "将名称传播到 Param 引用"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Proliferate_Name_TT",
+      "Text": "将此行的名称传播到该行中指定字段所指向的引用。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_Ref",
+      "Text": "从 Param 引用继承名称"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_Ref_TT",
+      "Text": "通过目标字段继承所连接引用行的名称。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_FMG",
+      "Text": "从 FMG 引用继承名称"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_FMG_TT",
+      "Text": "通过目标字段继承所连接引用 FMG 的名称。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_Alias",
+      "Text": "从别名继承名称"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_Alias_TT",
+      "Text": "通过目标字段继承所连接引用别名的名称。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_Strings_Header",
+      "Text": "目标字符串"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_Strings_Header_TT",
+      "Text": "行名称中要作为目标的字符串。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Replacement_String_Header",
+      "Text": "替换字符串"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Replacement_String_Header_TT",
+      "Text": "用于替换行名称中目标字符串的字符串。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_String_Add_TT",
+      "Text": "添加新的目标字符串条目。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_String_Remove_TT",
+      "Text": "移除最后添加的目标字符串条目。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_String_Reset",
+      "Text": "重置"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_String_Reset_TT",
+      "Text": "重置目标字符串条目列表。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_String_Entry_TT",
+      "Text": "要在行名称中替换的目标字符串。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Replace",
+      "Text": "替换"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Replace_TT",
+      "Text": "将当前所选行名称中的目标字符串替换为替换字符串。"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Remove_Row_Name_TT",
+      "Text": "从当前所选行的行名称中移除指定文本。"
+    }
+  ]
+}

@@ -297,14 +297,6 @@
       "Text": "Save the script."
     },
     {
-      "Key": "PARAM_MassEdit_Action_Clear_Script",
-      "Text": "Clear"
-    },
-    {
-      "Key": "PARAM_MassEdit_Action_Clear_Script_TT",
-      "Text": "Clear the script."
-    },
-    {
       "Key": "PARAM_MassEdit_Header_New_Template",
       "Text": "New Template"
     },

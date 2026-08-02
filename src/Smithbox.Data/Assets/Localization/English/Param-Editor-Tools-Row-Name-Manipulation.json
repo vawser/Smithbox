@@ -73,7 +73,7 @@
       "Text": "Remove Text to Row Name"
     },
     {
-      "Key": "PARAM_RowNameManip_Action_Postpend_Row_Name_TT",
+      "Key": "PARAM_RowNameManip_Action_Remove_Row_Name_TT",
       "Text": "Remove the specific text from the row names from the current row selection."
     },
     {
@@ -139,10 +139,6 @@
     {
       "Key": "PARAM_RowNameManip_Target_String_Remove_TT",
       "Text": "Remove the last-added target string entry."
-    },
-    {
-      "Key": "PARAM_RowNameManip_Target_String_Add_TT",
-      "Text": "Add a new target string entry."
     },
     {
       "Key": "PARAM_RowNameManip_Target_String_Reset",

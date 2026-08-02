@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_Contents_Header",
+      "Text": "内容"
+    },
+    {
+      "Key": "MODEL_Contents_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "MODEL_Contents_No_Flver_Hint",
+      "Text": "尚未加载任何 FLVER。"
+    },
+    {
+      "Key": "MODEL_Contents_Toggle_Show_All_TT",
+      "Text": "强制显示所有模型对象。"
+    },
+    {
+      "Key": "MODEL_Contents_Toggle_Hide_All_TT",
+      "Text": "强制隐藏所有模型对象。"
+    },
+    {
+      "Key": "MODEL_Contents_Context_Info_Header",
+      "Text": "信息"
+    },
+    {
+      "Key": "MODEL_Contents_Action_Copy_Model_Name",
+      "Text": "复制模型名称"
+    },
+    {
+      "Key": "MODEL_Contents_Action_Copy_Model_Name_TT",
+      "Text": "将模型名称复制到剪贴板。"
+    },
+    {
+      "Key": "MODEL_Contents_Entry_Title",
+      "Text": "条目"
+    },
+    {
+      "Key": "MODEL_Contents_Mesh_Title",
+      "Text": null
+    },
+    {
+      "Key": "MODEL_Contents_Visibility_Button_TT",
+      "Text": "切换此模型对象的可见状态。"
+    }
+  ]
+}

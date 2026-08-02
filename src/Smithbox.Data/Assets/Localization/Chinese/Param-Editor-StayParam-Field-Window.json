@@ -1,0 +1,36 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_SP_FieldWindow_Title",
+      "Text": "字段列表"
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_Title_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_Search_Hint",
+      "Text": "搜索..."
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_Search_TT",
+      "Text": "搜索 <{0}>"
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_FieldNameMode_Hint",
+      "Text": "在内部名称和社区名称之间切换字段名称显示类型。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_FieldPadding_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_FieldPadding_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_FieldPadding_Hint",
+      "Text": "切换填充字段的显示。\n当前模式：{0}"
+    }
+  ]
+}

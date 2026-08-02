@@ -137,14 +137,6 @@
       "Text": "Copy the output string to clipboard."
     },
     {
-      "Key": "TEXT_DataTransfer_Header_Actions",
-      "Text": "Actions"
-    },
-    {
-      "Key": "TEXT_DataTransfer_Header_Actions_TT",
-      "Text": ""
-    },
-    {
       "Key": "TEXT_DataTransfer_Action_Export_Container",
       "Text": "Export Selected Container"
     },

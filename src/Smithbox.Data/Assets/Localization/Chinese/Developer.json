@@ -6,7 +6,7 @@
     },
     {
       "Key": "DEV_Tool_Header_Actions_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Header_Options",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "DEV_Tool_Header_Options_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Header_Map",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "DEV_Tool_Header_Map_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Header_Data",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "DEV_Tool_Header_Data_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Header_Entries",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "DEV_Tool_Header_Entries_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Dialog_Flver_Layout_Dump",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "DEV_Tool_Validate_For_BP_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Display_Size_Diffs_Only",
@@ -150,7 +150,7 @@
     },
     {
       "Key": "DEV_Tool_Action_Export_Table_Information_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Header_Specific_Param_Info",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "DEV_Tool_Header_Specific_Param_Info_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Header_File_Path",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "DEV_Tool_Header_File_Path_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Action_Select_Directory",
@@ -174,7 +174,7 @@
     },
     {
       "Key": "DEV_Tool_Action_Select_Directory_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Action_Generate_File_Dictionary",
@@ -182,7 +182,7 @@
     },
     {
       "Key": "DEV_Tool_Action_Generate_File_Dictionary_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Dialog_Select_File",
@@ -198,7 +198,7 @@
     },
     {
       "Key": "DEV_Tool_Action_Clear_Tracked_Consumption_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Header_Load_Consumption",
@@ -206,7 +206,7 @@
     },
     {
       "Key": "DEV_Tool_Header_Load_Consumption_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Mesh_Consumption_B",
@@ -254,7 +254,7 @@
     },
     {
       "Key": "DEV_Tool_Header_Task_Viewer_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Task_Information",
@@ -266,7 +266,7 @@
     },
     {
       "Key": "DEV_Tool_Header_Soapstone_Server_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Running_On_Port",
@@ -286,7 +286,7 @@
     },
     {
       "Key": "DEV_Tool_Header_Export_Directory_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Action_Select_Export_Directory",
@@ -294,7 +294,7 @@
     },
     {
       "Key": "DEV_Tool_Action_Select_Export_Directory_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Tool_Checkbox_Generate_DLC_Map",
@@ -306,7 +306,7 @@
     },
     {
       "Key": "DEV_Tool_Action_Generate_Map_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_Dialog_Select_Export_Folder",
@@ -326,7 +326,7 @@
     },
     {
       "Key": "DEV_PNL_Action_Execute_Script_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_PNL_Tab_Script",
@@ -362,11 +362,27 @@
     },
     {
       "Key": "DEV_PNL_Header_Validator_Type_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "DEV_PNL_No_Validator_Type_Selected",
       "Text": "未选择验证器类型。"
+    },
+    {
+      "Key": "DEV_Param_Log_Export_Table_Names",
+      "Text": "已将表名导出到 {0}"
+    },
+    {
+      "Key": "DEV_Param_Export_Table_Names_TT",
+      "Text": "将当前参数的当前表名直接导出到 Smithbox.Data 文件夹。"
+    },
+    {
+      "Key": "DEV_Param_Log_Export_Row_Names",
+      "Text": "已将行名导出到 {0}"
+    },
+    {
+      "Key": "DEV_Param_Export_Row_Names_TT",
+      "Text": "将当前参数的当前行名直接导出到 Smithbox.Data 文件夹。"
     }
   ]
 }

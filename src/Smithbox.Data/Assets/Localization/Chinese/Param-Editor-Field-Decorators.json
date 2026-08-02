@@ -1,0 +1,176 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_FieldDecorator_Label_Map_FMGs",
+      "Text": "MAP FMG"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Label_Particles",
+      "Text": "粒子"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Label_Sounds",
+      "Text": "声音"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Label_Flags",
+      "Text": "标志"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Label_Cutscenes",
+      "Text": "过场动画"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Label_Movies",
+      "Text": "影片"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Label_Characters",
+      "Text": "角色"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_FieldTooltip_Description",
+      "Text": "{0}\n最小值：{1}\n最大值：{2}\n增量：{3}"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_EnumHelper_Not_Enumerated",
+      "Text": "未枚举"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_EnumHelper_None",
+      "Text": "无"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_ParamRef_Go_To_Action",
+      "Text": "跳转到 {0}"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_ParamRef_Go_To_New_View_Action",
+      "Text": "在新视图中跳转到 {0}"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_ParamRef_Inherit_Ref_Row_Name_Action",
+      "Text": "继承引用行的名称（{0}）"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_ParamRef_Proliferate_Name_to_Ref_Action",
+      "Text": "将名称传播到引用行（{0}）"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_ParamRef_EntrySearch_Hint",
+      "Text": "搜索以查找行..."
+    },
+    {
+      "Key": "PARAM_FieldDecorator_ParamRef_EntrySearch_TT",
+      "Text": "通过搜索行名称或 ID 中的关键词，快速在引用的 Param 中查找行。点击结果可将该字段的值设为该行的 ID。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_ParamRef_EntrySearch_Invalid_Convert",
+      "Text": "无法将值转换为 Param 字段的类型。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_ParamRef_EntrySearch_Selectable_TT",
+      "Text": "来自 {0}"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_VirtParamRef_Search_Action",
+      "Text": "在 {0} 中搜索（{1}）"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_ExtRef_Go_To_File_Action",
+      "Text": "跳转到 {0} 文件..."
+    },
+    {
+      "Key": "PARAM_FieldDecorator_ExtRef_Go_To_File_Error",
+      "Text": "无法找到 '{0}'。它可能是地图或角色专用的。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_FmgRef_Null",
+      "Text": "%null%"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_FmgRef_Go_to_Entry_Action",
+      "Text": "跳转到文本条目"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_FmgRef_Go_to_Entry_Action_TT",
+      "Text": "切换焦点到文本编辑器并选中所引用的文本条目。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_FmgRef_Replace_Row_Name_Fmg_Entry_Text",
+      "Text": "用文本条目内容替换行名称"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_FmgRef_Replace_Row_Name_Fmg_Entry_Text_TT",
+      "Text": "将此字段所属行的行名称替换为文本条目的内容。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_FmgRef_Replace_Fmg_Entry_Text_Row_Name",
+      "Text": "用行名称替换文本条目内容"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_FmgRef_Replace_Fmg_Entry_Text_Row_Name_TT",
+      "Text": "将所引用文本条目的内容替换为此字段所属行的行名称。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_TexRef_Label",
+      "Text": "   [图标]"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_AC6_FieldOffset_Label_1",
+      "Text": "   <PARAM>"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_AC6_FieldOffset_Label_2",
+      "Text": "   <FIELD>"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_AC6_FieldOffset_Label_3",
+      "Text": "   <NAME>"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Graph_Title",
+      "Text": "图表"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Graph_Error_Invalid_Axis_Limits",
+      "Text": "无效的坐标轴范围。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Graph_Error_Mismatched_Data",
+      "Text": "图表数据不匹配。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Graph_Error_Invalid_Values",
+      "Text": "图表包含无效值。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Graph_Action_Export_To_CSV",
+      "Text": "导出为 CSV"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Graph_Action_Export_To_CSV_TT",
+      "Text": "将导出由此行生成的图表中每个点的图表数据。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Graph_Export_Data_PASS",
+      "Text": "已导出行 {0} 的图表数据。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Graph_Export_Data_FAIL",
+      "Text": "未能导出行 {0} 的图表数据。"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Graph_Export_Select_Folder",
+      "Text": "选择文件夹"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Graph_Error_Unable_to_Draw",
+      "Text": "无法绘制图表"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_TileRef_Label",
+      "Text": "   <Tile>"
+    }
+  ]
+}

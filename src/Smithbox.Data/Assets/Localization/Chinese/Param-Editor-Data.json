@@ -1,0 +1,332 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Data_Failed_Regulation_Load",
+      "Text": "获取 regulation 版本失败。参数可能已损坏。"
+    },
+    {
+      "Key": "PARAM_Data_Missing_ParamDef",
+      "Text": "找不到参数 {0} 的 ParamDef，且不存在备选 ParamType。"
+    },
+    {
+      "Key": "PARAM_Data_Missing_ParamType",
+      "Text": "无法读取 {0} 的 ParamType，且不存在备选 ParamType。"
+    },
+    {
+      "Key": "PARAM_Data_Missing_ParamDef_ParamType",
+      "Text": "找不到参数 {0} 的 ParamDef，ParamType 为 '{1}'。"
+    },
+    {
+      "Key": "PARAM_Data_Fixed_Up_Param",
+      "Text": "{0} 已修复。"
+    },
+    {
+      "Key": "PARAM_Data_Param_Type_Null",
+      "Text": "参数类型意外为 null。"
+    },
+    {
+      "Key": "PARAM_Data_Skipped_Param",
+      "Text": "已跳过此参数：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Apply_ParamDef",
+      "Text": "无法为 {0} 应用 ParamDef"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Apply_ParamDef_Bank",
+      "Text": "无法在 {1} 中为 {0} 应用 ParamDef"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Find_Param_Path",
+      "Text": "未能为 {1} 找到 {0}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Load_GameParam",
+      "Text": "未能加载游戏参数，路径 {0}，参数 {1}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Load_DrawParam",
+      "Text": "未能加载 draw param，路径 {0}，参数 {1}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Locate_Param_Path",
+      "Text": "无法定位 {0} 的参数文件。保存失败。"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Load_Encrypted_GameParam",
+      "Text": "未能加载加密游戏参数，路径 {0}，参数 {1}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Load_SystemParam",
+      "Text": "未能加载系统参数，路径 {0}，参数 {1}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Load_EventParam",
+      "Text": "未能加载事件参数，路径 {0}，参数 {1}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Load_GraphicsParam",
+      "Text": "未能加载图形参数，路径 {0}，参数 {1}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Locate_System_Param_Path",
+      "Text": "无法定位 {0} 的系统参数文件。保存失败。"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Locate_Event_Param_Path",
+      "Text": "无法定位 {0} 的事件参数文件。保存失败。"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Locate_Graphics_Param_Path",
+      "Text": "无法定位 {0} 的图形参数文件。保存失败。"
+    },
+    {
+      "Key": "PARAM_Data_GetParamDiff_Missing_Vanilla_Param",
+      "Text": "缺少原版参数 {0}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Find_StayParamContainer",
+      "Text": "缺少 stay param 容器 {0}，参数 {1}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Load_StayParamContainer",
+      "Text": "未能加载 stay params，路径 {0}，参数 {1}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Load_StayParam",
+      "Text": "未能加载 stay param：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Write_StayParam",
+      "Text": "未能写入 stay params：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamDefs_PASS",
+      "Text": "已设置 PARAM 定义。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamDefs_FAIL",
+      "Text": "设置 PARAM 定义失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamMeta_PASS",
+      "Text": "已设置 PARAM 元数据。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamMeta_FAIL",
+      "Text": "设置 PARAM 元数据失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamAnnotations_PASS",
+      "Text": "已设置 PARAM 注释。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamAnnotations_FAIL",
+      "Text": "设置 PARAM 注释失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamEnums_PASS",
+      "Text": "已设置 PARAM 枚举。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamEnums_FAIL",
+      "Text": "设置 PARAM 枚举失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_RowImportLanguage_PASS",
+      "Text": "已设置行导入语言选项"
+    },
+    {
+      "Key": "PARAM_Data_Setup_RowImportLanguage_FAIL",
+      "Text": "设置行导入语言选项失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_GraphAnnotations_PASS",
+      "Text": "已设置图表注释。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_GraphAnnotations_FAIL",
+      "Text": "设置图表注释失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_RowFmgAnnotations_PASS",
+      "Text": "已设置行 FMG 注释。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_RowFmgAnnotations_FAIL",
+      "Text": "设置行 FMG 注释失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_IconConfiguration_PASS",
+      "Text": "已设置图标配置数据。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_IconConfiguration_FAIL",
+      "Text": "设置图标配置数据失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_TableParamList_PASS",
+      "Text": "已设置表参数列表。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_TableGroupNames_PASS",
+      "Text": "已设置表组名称数据。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamReloaderOffsets_PASS",
+      "Text": "已设置参数重载偏移量。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamReloaderOffsets_FAIL",
+      "Text": "设置参数重载偏移量失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamCategories_PASS",
+      "Text": "设置参数分类失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_ParamCategories_FAIL",
+      "Text": "已设置参数分类。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_CommutativeParamGroups_PASS",
+      "Text": "已设置交换参数组。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_CommutativeParamGroups_FAIL",
+      "Text": "设置交换参数组失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_FieldReferenceGroups_PASS",
+      "Text": "已设置字段引用组。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_FieldReferenceGroups_FAIL",
+      "Text": "设置字段引用组失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_FieldLayouts_PASS",
+      "Text": "已设置字段布局。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_FieldLayouts_FAIL",
+      "Text": "设置字段布局失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_PrimaryBank_PASS",
+      "Text": "已设置主参数库。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_PrimaryBank_FAIL",
+      "Text": "设置主参数库失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_VanillaBank_PASS",
+      "Text": "已设置原版参数库。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_VanillaBank_FAIL",
+      "Text": "设置原版参数库失败。"
+    },
+    {
+      "Key": "PARAM_Data_Setup_AuxBank_PASS",
+      "Text": "已为 {0} 设置辅助参数库"
+    },
+    {
+      "Key": "PARAM_Data_Setup_AuxBank_FAIL",
+      "Text": "为 {0} 设置辅助参数库失败。"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_ParamDef",
+      "Text": "将 {0} 反序列化为 PARAMDEF 失败。"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_ParamTypeInfo",
+      "Text": "将 {0} 反序列化为 Param Type Info 失败。"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Read_ParamTypeInfo",
+      "Text": "读取 Param Type Info 文件失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Reload_Param_Meta_PASS",
+      "Text": "已重新加载 Param META。"
+    },
+    {
+      "Key": "PARAM_Data_Reload_Param_Meta_FAIL",
+      "Text": "重新加载 Param META 失败。"
+    },
+    {
+      "Key": "PARAM_Data_Task_Refresh_Diff_Cache_PASS",
+      "Text": "参数库之间的差异缓存已刷新。"
+    },
+    {
+      "Key": "PARAM_Data_Task_Refresh_Diff_Cache_FAIL",
+      "Text": "差异缓存刷新失败。"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_PARAM_META",
+      "Text": "将 {0} 反序列化为 PARAMMETA 失败。"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Annotation_Languages",
+      "Text": "反序列化参数注释语言失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Annotation_Entry",
+      "Text": "反序列化参数注释条目失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Row_Name_Import_Languages",
+      "Text": "反序列化行名称导入语言失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Enum_Entry",
+      "Text": "反序列化参数枚举条目失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Graph_Annotation",
+      "Text": "反序列化图表注释组失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Row_FMG_Annotation",
+      "Text": "反序列化行 FMG 注释失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Icon_Configuration",
+      "Text": "反序列化图标配置组失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Reloader_Offsets",
+      "Text": "反序列化参数重载偏移数据失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Categories",
+      "Text": "反序列化参数分类组失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Commutative_Groups",
+      "Text": "反序列化参数交换性组失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Field_Reference_Group",
+      "Text": "反序列化字段引用组失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Field_Layouts",
+      "Text": "反序列化字段布局失败：{0}"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Table_Group_Load",
+      "Text": "在 Base Store 步骤中加载 {0} 以导入表组名称失败。"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Table_Group_Load_Project",
+      "Text": "在 Project Store 步骤中加载 {0} 以导入表组名称失败。"
+    },
+    {
+      "Key": "PARAM_Data_Log_Failed_Table_Param_List",
+      "Text": "加载表参数列表失败。"
+    }
+  ]
+}

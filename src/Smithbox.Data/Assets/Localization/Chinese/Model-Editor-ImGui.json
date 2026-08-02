@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_Window_Model_Editor",
+      "Text": "模型编辑器"
+    },
+    {
+      "Key": "MODEL_Window_Source_List",
+      "Text": "来源列表"
+    },
+    {
+      "Key": "MODEL_Window_File_List",
+      "Text": "文件列表"
+    },
+    {
+      "Key": "MODEL_Window_Model_Contents",
+      "Text": "模型内容"
+    },
+    {
+      "Key": "MODEL_Window_Tools",
+      "Text": "工具"
+    },
+    {
+      "Key": "MODEL_Window_Properties",
+      "Text": "属性"
+    }
+  ]
+}

@@ -105,7 +105,7 @@
       "Text": "Sync all unique changes from another category into this category.\n\nUse this on the category you want to bring the changes IN TO."
     },
     {
-      "Key": "TEXT_LanguageSync_Action_Sync_TT",
+      "Key": "TEXT_LanguageSync_Action_Sync_With_TT",
       "Text": "Bring changes in the {0} category into this category."
     },
     {

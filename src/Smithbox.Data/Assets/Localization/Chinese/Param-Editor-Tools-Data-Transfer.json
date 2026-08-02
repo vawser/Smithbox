@@ -1,0 +1,412 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_CSV",
+      "Text": "导出 CSV"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Import_CSV",
+      "Text": "导入 CSV"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_CSV_Settings",
+      "Text": "CSV 设置"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Data_Transfer",
+      "Text": "数据转移"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Tab_Import",
+      "Text": "导入"
+    },
+    {
+      "Key": "PARAM_DataTransfer_ImportTab_Hint",
+      "Text": "使用此部分导入逗号分隔值，将数据应用到当前项目。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_CSV_Input",
+      "Text": "CSV 输入"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_CSV_Input_TT",
+      "Text": "要导入为参数数据的 CSV。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Import_Type",
+      "Text": "导入类型"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Import_Type_TT",
+      "Text": "要应用的导入类型。决定如何解释 CSV 数据。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Specific_Field",
+      "Text": "导入指定字段"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Specific_Field_TT",
+      "Text": "从导入来源中指定的目标字段。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Specific_Field_Hint",
+      "Text": "指定目标字段..."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Delimiter",
+      "Text": "分隔符"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Delimiter_TT",
+      "Text": "用于将数据拆分为列的分隔字符。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Options_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_DataTransfer_Checkbox_Append_Mode",
+      "Text": "追加新行"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Checkbox_Append_Mode_TT",
+      "Text": "追加新行而非基于 ID 的插入（这将产生乱序 ID）"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Checkbox_Replace_Existing",
+      "Text": "替换已有行"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Checkbox_Replace_Existing_TT",
+      "Text": "替换已有行而非更新它们（将被移至末尾）"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Actions_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Import",
+      "Text": "导入"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Import_TT",
+      "Text": "从上方的文本输入中导入。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_File_Import",
+      "Text": "从文件导入"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_File_Import_TT",
+      "Text": "从外部文件导入。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Result",
+      "Text": "结果"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Result_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_DataTransfer_Log_No_Param_Selected",
+      "Text": "未选择参数。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Dialog_Select_File",
+      "Text": "选择文件"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Import_All_Fields",
+      "Text": "所有字段"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Import_Row_Name",
+      "Text": "行名"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Import_Specific_Field",
+      "Text": "指定字段"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_From_File",
+      "Text": "从文件"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Log_Failed_CSV_Import",
+      "Text": "导入 CSV 失败：{0}"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Tab_Export",
+      "Text": "导出"
+    },
+    {
+      "Key": "PARAM_DataTransfer_ExportTab_Hint",
+      "Text": "使用此部分从当前项目导出逗号分隔值。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Type",
+      "Text": "导出类型"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Type_TT",
+      "Text": "决定导出参数和行数据的哪些元素。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Directory",
+      "Text": "导出目录"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Directory_TT",
+      "Text": "导出 CSV 数据的目标目录。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Dir_Hint",
+      "Text": "指定目录..."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Set_Export_Directory",
+      "Text": "设置导出目录"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Set_Export_Directory_TT",
+      "Text": "设置导出 CSV 文件的目录。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Open_Export_Directory",
+      "Text": "打开导出目录"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Open_Export_Directory_TT",
+      "Text": "在文件资源管理器中打开导出目录。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Filename",
+      "Text": "导出文件名"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Filename_TT",
+      "Text": "导出 CSV 数据的文件名（留空则使用参数名）"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Filename_Hint",
+      "Text": "导出文件的名称..."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Output",
+      "Text": "导出输出"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Output_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Copy_to_Clipboard",
+      "Text": "复制到剪贴板"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Copy_to_Clipboard_TT",
+      "Text": "将导出输出复制到剪贴板。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Export_to_File",
+      "Text": "导出到文件"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Export_to_File_TT",
+      "Text": "将 CSV 参数数据导出到文件。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Dialog_Select_Export_Destination",
+      "Text": "选择导出目标"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Log_No_Export_Directory",
+      "Text": "未设置导出目录。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Log_Invalid_Export_Directory",
+      "Text": "导出目录无效。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_String",
+      "Text": "导出多个参数时不生成。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Save_Param_CSV_to_File",
+      "Text": "已将 {0} 参数 CSV 保存到文件。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Save_Modified_Param_CSV_to_File",
+      "Text": "已将修改后的 {0} 参数 CSV 保存到文件。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Log_No_Selected_Param",
+      "Text": "未选择参数。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Log_Missing_Param_Data",
+      "Text": "未找到参数数据。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Selected_Param_CSV_to_Clipboard",
+      "Text": "已将所选参数 CSV 保存到剪贴板。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Modified_Rows_CSV_to_Clipboard",
+      "Text": "已将修改的行 CSV 保存到剪贴板。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Selected_Rows_CSV_to_Clipboard",
+      "Text": "已将所选行 CSV 保存到剪贴板。"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Selected_Param_CSV_to_File",
+      "Text": "已将所选参数 CSV 保存到文件：{0}"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Modified_Rows_CSV_to_File",
+      "Text": "已将修改的行 CSV 保存到文件：{0}"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Selected_Rows_CSV_to_File",
+      "Text": "已将所选行 CSV 保存到文件：{0}"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Header_All_Rows",
+      "Text": "所有行"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Header_Quick_Action",
+      "Text": "快捷操作"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Export_Selected_Names_Wnd",
+      "Text": "将所选名称导出到窗口"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Export_Selected_Param_Wnd",
+      "Text": "将所选参数导出到窗口"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Export_Selected_Param_File",
+      "Text": "将所选参数导出到文件"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Dialog_Select_Folder",
+      "Text": "选择文件夹"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Header_Modified_Rows",
+      "Text": "修改的行"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Header_Selected_Rows",
+      "Text": "所选行"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Header_All_Params",
+      "Text": "所有参数"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_All_Params_to_File",
+      "Text": "将所有参数导出到文件"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_All_Modified_Params_to_File",
+      "Text": "将所有修改的参数导出到文件"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_to_Window",
+      "Text": "导出到窗口"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_All_Fields",
+      "Text": "导出所有字段"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Specific_Field",
+      "Text": "导出指定字段"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Row_Name",
+      "Text": "行名"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_to_File",
+      "Text": "导出到文件"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Write_File_FAIL",
+      "Text": "写入 CSV 文件失败：{0}"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Write_file_PASS",
+      "Text": "已导出 CSV 文件：{0}"
+    },
+    {
+      "Key": "PARAM_CSV_Invalid_Param_Name",
+      "Text": "参数名无效。"
+    },
+    {
+      "Key": "PARAM_CSV_No_Param_Selected",
+      "Text": "未选择参数。"
+    },
+    {
+      "Key": "PARAM_CSV_Invalid_Data_Type_Parse",
+      "Text": "无法将 CSV 解析为正确的数据类型。"
+    },
+    {
+      "Key": "PARAM_CSV_Empty_File",
+      "Text": "CSV 为空。"
+    },
+    {
+      "Key": "PARAM_CSV_Missing_Header",
+      "Text": "CSV 缺少以 ID 和 Name 开头的预期表头行。"
+    },
+    {
+      "Key": "PARAM_CSV_Failed_to_Assign_Value_To_Field",
+      "Text": "无法将 {0} 赋值给字段 {1}。"
+    },
+    {
+      "Key": "PARAM_CSV_Failed_to_Convert_String_to_Value",
+      "Text": "将 CSV 字符串转换为值失败。"
+    },
+    {
+      "Key": "PARAM_CSV_Result_Effect",
+      "Text": "影响了 {0} 个单元格，添加了 {1} 行。"
+    },
+    {
+      "Key": "PARAM_CSV_Wrong_Field_Name",
+      "Text": "CSV 字段名错误。"
+    },
+    {
+      "Key": "PARAM_CSV_Wrong_Value_Count",
+      "Text": "CSV 值数量错误。"
+    },
+    {
+      "Key": "PARAM_CSV_Failed_to_Locate_Row",
+      "Text": "无法定位行 {0}"
+    },
+    {
+      "Key": "PARAM_CSV_Failed_to_Locate_Row_Iteration",
+      "Text": "无法定位行 {0}，迭代 {1}"
+    },
+    {
+      "Key": "PARAM_CSV_Failed_to_Locate_Field",
+      "Text": "无法定位字段 {0}。"
+    },
+    {
+      "Key": "PARAM_CSV_Row_Result_Effect",
+      "Text": "影响了 {0} 行。"
+    }
+  ]
+}

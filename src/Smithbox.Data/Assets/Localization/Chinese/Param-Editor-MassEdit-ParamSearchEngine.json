@@ -1,0 +1,44 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_PSE_Modified_TT",
+      "Text": "选择任意行与原版不匹配或已添加的参数。忽略行名称。"
+    },
+    {
+      "Key": "PARAM_PSE_Param_Hint_1",
+      "Text": "参数名称（正则表达式）"
+    },
+    {
+      "Key": "PARAM_PSE_Param_TT",
+      "Text": "选择名称匹配给定正则表达式的所有参数"
+    },
+    {
+      "Key": "PARAM_PSE_AuxParam_Hint_1",
+      "Text": "parambank 名称"
+    },
+    {
+      "Key": "PARAM_PSE_AuxParam_Hint_2",
+      "Text": "参数名称（正则表达式）"
+    },
+    {
+      "Key": "PARAM_PSE_AuxParam_TT",
+      "Text": "从指定 regulation 或 parambnd 中选择参数名称匹配给定正则表达式的参数。"
+    },
+    {
+      "Key": "PARAM_PSE_ParamType_Hint_1",
+      "Text": "参数类型（正则表达式）"
+    },
+    {
+      "Key": "PARAM_PSE_ParamType_TT",
+      "Text": "选择参数类型匹配给定正则表达式的所有参数。"
+    },
+    {
+      "Key": "PARAM_PSE_Default_Hint_1",
+      "Text": "参数名称（正则表达式）"
+    },
+    {
+      "Key": "PARAM_PSE_Default_TT",
+      "Text": "选择名称匹配给定正则表达式的所有参数。"
+    }
+  ]
+}

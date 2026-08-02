@@ -1,0 +1,60 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_PasteMenu_",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_PasteMenu_Checkbox_Select_New_Rows",
+      "Text": "粘贴后选中新行"
+    },
+    {
+      "Key": "PARAM_PasteMenu_Checkbox_Paste_After_Selection",
+      "Text": "在选中项之后粘贴"
+    },
+    {
+      "Key": "PARAM_PasteMenu_Row_Title",
+      "Text": "行"
+    },
+    {
+      "Key": "PARAM_PasteMenu_Offset_Title",
+      "Text": "偏移量"
+    },
+    {
+      "Key": "PARAM_PasteMenu_No_Selection_Exists",
+      "Text": "不存在选中项。"
+    },
+    {
+      "Key": "PARAM_PasteMenu_Action_Submit",
+      "Text": "提交"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Occurences",
+      "Text": "{0} 的出现次数"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Action_Sort_Value",
+      "Text": "排序（值）"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Action_Sort_Count",
+      "Text": "排序（计数）"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Times",
+      "Text": "  次"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Failed",
+      "Text": "统计弹窗按钮失败。"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Value_Count",
+      "Text": "值"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Count",
+      "Text": "    计数"
+    }
+  ]
+}

@@ -73,10 +73,6 @@
       "Text": "Source Bytes: {0}"
     },
     {
-      "Key": "DEV_Tool_Source_Bytes",
-      "Text": "Source Bytes: {0}"
-    },
-    {
       "Key": "DEV_Tool_Write_Bytes",
       "Text": "Write Bytes: {0}"
     },

@@ -1,0 +1,100 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Merger_Header",
+      "Text": "Param 合并器"
+    },
+    {
+      "Key": "PARAM_Merger_Hint",
+      "Text": "在下方选择一个兼容的项目合并到当前项目中。\n您需要先为外部 mod 创建一个项目，之后它会显示在下方"
+    },
+    {
+      "Key": "PARAM_Merger_Header_Compatible_Projects",
+      "Text": "兼容项目"
+    },
+    {
+      "Key": "PARAM_Merger_Header_Compatible_Projects_TT",
+      "Text": "可合并到当前项目的项目列表。"
+    },
+    {
+      "Key": "PARAM_Merger_Action_Load_Project",
+      "Text": "加载项目"
+    },
+    {
+      "Key": "PARAM_Merger_Action_Load_Project_TT",
+      "Text": "加载当前选中的项目。"
+    },
+    {
+      "Key": "PARAM_Merger_Action_Merge_Project",
+      "Text": "合并项目"
+    },
+    {
+      "Key": "PARAM_Merger_Action_Merge_Project_TT",
+      "Text": "如果已加载，将当前选中的项目合并到此项目中。"
+    },
+    {
+      "Key": "PARAM_Merger_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "PARAM_Merger_Header_Options_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_Merger_Checkbox_Include_Added",
+      "Text": "包含新增行"
+    },
+    {
+      "Key": "PARAM_Merger_Checkbox_Include_Added_TT",
+      "Text": "如果启用，目标项目中新增的行将被合并到此项目中。"
+    },
+    {
+      "Key": "PARAM_Merger_Checkbox_Include_Modified",
+      "Text": "包含修改行"
+    },
+    {
+      "Key": "PARAM_Merger_Checkbox_Include_Modified_TT",
+      "Text": "如果启用，目标项目中已修改的行（与此项目相比）将被合并到此项目中。"
+    },
+    {
+      "Key": "PARAM_Merger_Header_Target_Params",
+      "Text": "目标 Param"
+    },
+    {
+      "Key": "PARAM_Merger_Header_Target_Params_TT",
+      "Text": "确定要合并哪些 Param。"
+    },
+    {
+      "Key": "PARAM_Merger_Param_Filter_Hint",
+      "Text": "筛选 Param 列表..."
+    },
+    {
+      "Key": "PARAM_Merger_Action_Toggle_All_Params",
+      "Text": "全选/全不选所有 Param"
+    },
+    {
+      "Key": "PARAM_Merger_Action_Toggle_All_Params_TT",
+      "Text": "切换所有目标 Param 的状态。"
+    },
+    {
+      "Key": "PARAM_Merger_Log_Loaded_Project",
+      "Text": "已加载目标项目：{0}，用于 Param 合并。"
+    },
+    {
+      "Key": "PARAM_Merger_Log_No_Target_Project",
+      "Text": "未选择目标项目。无法合并。"
+    },
+    {
+      "Key": "PARAM_Merger_Log_Param_Data_Not_Loaded",
+      "Text": "目标项目尚未加载 Param 数据。"
+    },
+    {
+      "Key": "PARAM_Merger_Log_Project_Not_Loaded",
+      "Text": "目标项目：{0} 未加载，无法合并。"
+    },
+    {
+      "Key": "PARAM_Merger_Log_Merged_Project",
+      "Text": "已将目标项目的行：{0} 合并到此项目中。"
+    }
+  ]
+}

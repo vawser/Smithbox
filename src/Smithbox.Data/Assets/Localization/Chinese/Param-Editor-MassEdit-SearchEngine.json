@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_SE_Exists_TT",
+      "Text": "选择所有元素"
+    },
+    {
+      "Key": "PARAM_SE_CommandsForHelp_Args",
+      "Text": "{0}（{1} 个参数）"
+    },
+    {
+      "Key": "PARAM_SE_CommandsForHelp_Default_Args",
+      "Text": "或省略指定并使用默认值（{0} 个参数）"
+    }
+  ]
+}

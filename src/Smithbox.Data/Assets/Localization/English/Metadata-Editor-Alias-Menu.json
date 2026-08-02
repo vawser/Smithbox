@@ -89,10 +89,6 @@
       "Text": "If enabled, empty entries will be ignored by the 'Copy Entries as Text' action."
     },
     {
-      "Key": "META_AliasMenu_Menu_Data_Source",
-      "Text": "Save"
-    },
-    {
       "Key": "META_AliasMenu_Menu_Regenerate_Project_Source",
       "Text": "Regenerate Project Source"
     },

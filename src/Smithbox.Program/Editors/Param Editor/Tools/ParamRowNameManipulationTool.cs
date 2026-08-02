@@ -224,7 +224,7 @@ public class ParamRowNameManipulationTool
 
                 "removeText",
                 LOC.Get("PARAM_RowNameManip_Action_Remove_Row_Name"),
-                LOC.Get("PARAM_RowNameManip_Action_Postpend_Row_Name_TT"),
+                LOC.Get("PARAM_RowNameManip_Action_Remove_Row_Name_TT"),
                 RemoveTextFromName,
                 CanUseAdjustAction()
                 );

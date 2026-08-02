@@ -1,0 +1,96 @@
+{
+  "Entries": [
+    {
+      "Key": "DEV_KIT_Window_Name",
+      "Text": "开发者工具包"
+    },
+    {
+      "Key": "DEV_KIT_Script_Tab",
+      "Text": "脚本"
+    },
+    {
+      "Key": "DEV_KIT_Data_Sources_Header",
+      "Text": "数据来源"
+    },
+    {
+      "Key": "DEV_KIT_Data_Sources_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "DEV_KIT_Col_Data_Folder",
+      "Text": "数据文件夹"
+    },
+    {
+      "Key": "DEV_KIT_Col_Output_Folder",
+      "Text": "输出文件夹"
+    },
+    {
+      "Key": "DEV_KIT_Col_DES",
+      "Text": "Demon's Souls"
+    },
+    {
+      "Key": "DEV_KIT_Col_DS1",
+      "Text": "Dark Souls: Prepare to Die"
+    },
+    {
+      "Key": "DEV_KIT_Col_DS1R",
+      "Text": "Dark Souls: Remastered"
+    },
+    {
+      "Key": "DEV_KIT_Col_DS2",
+      "Text": "Dark Souls II"
+    },
+    {
+      "Key": "DEV_KIT_Col_DS2S",
+      "Text": "Dark Souls II: Scholar of the First Sin"
+    },
+    {
+      "Key": "DEV_KIT_Col_DS3",
+      "Text": "Dark Souls III"
+    },
+    {
+      "Key": "DEV_KIT_Col_BB",
+      "Text": "Bloodborne"
+    },
+    {
+      "Key": "DEV_KIT_Col_SDT",
+      "Text": "Sekiro: Shadows Die Twice"
+    },
+    {
+      "Key": "DEV_KIT_Col_ER",
+      "Text": "Elden Ring"
+    },
+    {
+      "Key": "DEV_KIT_Col_AC6",
+      "Text": "Armored Core VI: Fires of Rubicon"
+    },
+    {
+      "Key": "DEV_KIT_Col_NR",
+      "Text": "Elden Ring: Nightreign"
+    },
+    {
+      "Key": "DEV_KIT_Action_Generate_Projects",
+      "Text": "生成项目"
+    },
+    {
+      "Key": "DEV_KIT_Action_Generate_Projects_TT",
+      "Text": null
+    },
+    {
+      "Key": "DEV_KIT_Dialog_Select_Folder",
+      "Text": "选择文件夹"
+    },
+    {
+      "Key": "DEV_KIT_Action_Select",
+      "Text": "选择"
+    },
+    {
+      "Key": "DEV_KIT_No_Projects_Generated_Hint",
+      "Text": "尚未生成任何项目。"
+    },
+    {
+      "Key": "DEV_KIT_Tab_Common",
+      "Text": "通用"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Primary_Bank_FAIL",
+      "Text": "主纹理库设置失败。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Primary_Bank_PASS",
+      "Text": "主纹理库已设置。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Preview_Bank_FAIL",
+      "Text": "预览纹理库设置失败。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Load_Preview_Bank_PASS",
+      "Text": "预览纹理库已设置。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Log_Failed_TPF_Read",
+      "Text": "无法在 {1} 中将 {0} 作为 TPF 读取。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Log_Failed_BND4_Read",
+      "Text": "无法在 {1} 中将 {0} 作为 BND4 读取。"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Log_Failed_VFS_Read",
+      "Text": "无法在 {1} 中从 VFS 读取 {0}"
+    }
+  ]
+}

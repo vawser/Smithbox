@@ -1,0 +1,360 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_RowWindow_Hint",
+      "Text": "选择一个参数以查看行。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Title",
+      "Text": "行列表"
+    },
+    {
+      "Key": "PARAM_RowWindow_Search_Hint",
+      "Text": "搜索..."
+    },
+    {
+      "Key": "PARAM_RowWindow_Search_TT",
+      "Text": "搜索 <{0}>"
+    },
+    {
+      "Key": "PARAM_RowWindow_Action_Go_To_TT",
+      "Text": "跳转到选中的 <{0}>"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Modified_Background_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Modified_Background_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Modified_Background_Hint",
+      "Text": "切换已修改行上修改背景的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Text_Decorator_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Text_Decorator_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Text_Decorator_Hint",
+      "Text": "切换行上 FMG 文本的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_RowWindow_Col_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "PARAM_RowWindow_Col_Name",
+      "Text": "名称"
+    },
+    {
+      "Key": "PARAM_RowWindow_Row_Drag_TT",
+      "Text": "行 {0}"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy",
+      "Text": "复制"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_TT",
+      "Text": "快捷键：{0}\n\n将当前选中的行复制到剪贴板。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Paste",
+      "Text": "粘贴"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Paste_TT",
+      "Text": "快捷键：{0}\n\n将当前行剪贴板粘贴到当前参数中。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Delete",
+      "Text": "删除"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Delete_TT",
+      "Text": "快捷键：{0}\n\n从参数中删除当前选中的行。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Duplicate_Header",
+      "Text": "复制"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateOffset",
+      "Text": "偏移量"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateOffset_TT",
+      "Text": "复制时应用的 ID 偏移量。\n对于按行索引的参数，设为 0 即可正常复制。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateAmount",
+      "Text": "数量"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateAmount_TT",
+      "Text": "当前选中内容将被复制的次数。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateApply",
+      "Text": "应用"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateApply_TT",
+      "Text": "快捷键：{0}\n\n复制当前选中的行，并自动递增行 ID。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateTo_Header",
+      "Text": "复制到"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateTo_Header_TT",
+      "Text": "将当前选中的行复制到选定的目标参数中。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Jump_Header",
+      "Text": "跳转"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Value_Header",
+      "Text": "值"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_MassEdit_Header",
+      "Text": "批量编辑"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Revert_to_Default",
+      "Text": "恢复默认值"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Revert_to_Default_TT",
+      "Text": "将当前选中行的字段值恢复为原版字段值。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Command_Palette",
+      "Text": "命令面板"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Command_Palette_TT",
+      "Text": "打开浮动命令面板。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Autofill_Header",
+      "Text": "自动填充"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Autofill_Header_TT",
+      "Text": "打开自动填充菜单。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Pinning_Header",
+      "Text": "固定"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Pin",
+      "Text": "固定"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Pin_TT",
+      "Text": "将当前选中的行固定到行列表顶部。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Unpin",
+      "Text": "取消固定"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Unpin_TT",
+      "Text": "取消当前选中行在行列表顶部的固定。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Unpin_All",
+      "Text": "全部取消固定"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Unpin_All_TT",
+      "Text": "取消所有当前已固定行的固定。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Search_Header",
+      "Text": "搜索"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Comparison_Header",
+      "Text": "比较"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Set_Compare_Row",
+      "Text": "设置比较行"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Set_Compare_Row_TT",
+      "Text": "将此行设置为字段窗口中的行比较目标。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Clear_Compare_Row",
+      "Text": "清除比较行"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Clear_Compare_Row_TT",
+      "Text": "清除当前设置的比较行。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Name_Manipulation_Header",
+      "Text": "名称操作"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Adjust_Header",
+      "Text": "调整"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Inherit_Header",
+      "Text": "继承"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Replace_Header",
+      "Text": "替换"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Clear_Text_From_Name",
+      "Text": "清除名称中的文本"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Clear_Text_From_Name_TT",
+      "Text": "清除所有当前选中行名称中的文本。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Prepend_Text_To_Name",
+      "Text": "在名称前添加文本"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Prepend_Text_To_Name_TT",
+      "Text": "在所有当前选中行的名称前添加文本。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Postpend_Text_To_Name",
+      "Text": "在名称后添加文本"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Postpend_Text_To_Name_TT",
+      "Text": "在所有当前选中行的名称后添加文本。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Remove_Text_To_Name",
+      "Text": "从名称中移除文本"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Remove_Text_To_Name_TT",
+      "Text": "从所有当前选中行的名称中移除文本。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Text_To_Apply_Input",
+      "Text": "要应用的文本"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Text_To_Apply_Input_TT",
+      "Text": "要添加到现有名称前或后的字符串。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Proliferate_Name",
+      "Text": "将名称传播到参数引用"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Proliferate_Name_TT",
+      "Text": "将此行的名称传播到此行中指定字段所指向的引用。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Ref",
+      "Text": "从参数引用继承名称"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Ref_TT",
+      "Text": "通过目标字段继承所连接引用行的名称。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_FMG",
+      "Text": "从 FMG 引用继承名称"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_FMG_TT",
+      "Text": "通过目标字段继承所连接引用 FMG 的名称。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Alias",
+      "Text": "从别名继承名称"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Alias_TT",
+      "Text": "通过目标字段继承所连接引用别名的名称。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Target_Field",
+      "Text": "目标字段"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Target_Field_TT",
+      "Text": "名称操作的目标字段的内部名称。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Target_String",
+      "Text": "目标字符串"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Target_String_TT",
+      "Text": "行名称中要作为目标的字符串。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Replace_String",
+      "Text": "替换字符串"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Replace_String_TT",
+      "Text": "替换行名称中目标字符串的字符串。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Replace",
+      "Text": "替换"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Replace_TT",
+      "Text": "用替换字符串替换当前选中行名称中的目标字符串。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Info_Header",
+      "Text": "信息"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_ID",
+      "Text": "复制行 ID"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_ID_TT",
+      "Text": "将当前选中行的行 ID 复制到剪贴板。以换行符分隔。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_Name",
+      "Text": "复制行名称"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_Name_TT",
+      "Text": "将当前选中行的行名称复制到剪贴板。以换行符分隔。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_ID_And_Name",
+      "Text": "复制行 ID 和名称"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_ID_And_Name_TT",
+      "Text": "将当前选中行的行 ID 和名称复制到剪贴板。以换行符分隔。"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Row_Selection_Count_TT",
+      "Text": "当前已选中 {0} 行。"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_ListCat_Header",
+      "Text": "Param 列表分类"
+    },
+    {
+      "Key": "PARAM_ListCat_No_Categories",
+      "Text": "未找到 Param 分类。"
+    },
+    {
+      "Key": "PARAM_ListCat_Hint",
+      "Text": "创建或修改项目专用的 Param 分类。"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Save",
+      "Text": "保存"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Save_TT",
+      "Text": "保存对分类的当前更改。"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Restore",
+      "Text": "恢复"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Restore_TT",
+      "Text": "恢复基础分类列表。"
+    },
+    {
+      "Key": "PARAM_ListCat_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "PARAM_ListCat_Header_Actions_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_ListCat_Header_List",
+      "Text": "列表"
+    },
+    {
+      "Key": "PARAM_ListCat_Header_List_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Create_Entry",
+      "Text": "创建分类"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Create_Entry_TT",
+      "Text": "创建新分类。"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Edit_Entry",
+      "Text": "编辑分类"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Edit_Entry_TT",
+      "Text": "编辑现有分类。"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Delete_Entry",
+      "Text": "删除分类"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Delete_Entry_TT",
+      "Text": "删除现有分类。"
+    },
+    {
+      "Key": "PARAM_ListCat_NewEntry_Header",
+      "Text": "新分类"
+    },
+    {
+      "Key": "PARAM_ListCat_NewEntry_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_ListCat_NewEntry_TT",
+      "Text": "新 Param 分类的名称。"
+    },
+    {
+      "Key": "PARAM_ListCat_NewEntry_Action_Finalize",
+      "Text": "完成"
+    },
+    {
+      "Key": "PARAM_ListCat_NewEntry_Action_Finalize_TT",
+      "Text": "完成此新分类的创建。"
+    },
+    {
+      "Key": "PARAM_ListCat_Entry_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "PARAM_ListCat_Entry_Options_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_ListCat_Checkbox_Force_Top",
+      "Text": "强制置顶"
+    },
+    {
+      "Key": "PARAM_ListCat_Checkbox_Force_Top_TT",
+      "Text": "如果启用，此 Param 分类将始终显示在顶部（与具有相同设置的其他分类按字母顺序排列）。"
+    },
+    {
+      "Key": "PARAM_ListCat_Checkbox_Force_Bottom",
+      "Text": "强制置底"
+    },
+    {
+      "Key": "PARAM_ListCat_Checkbox_Force_Bottom_TT",
+      "Text": "如果启用，此 Param 分类将始终显示在底部（与具有相同设置的其他分类按字母顺序排列）。"
+    },
+    {
+      "Key": "PARAM_ListCat_Entry_Header_Parameters",
+      "Text": "参数"
+    },
+    {
+      "Key": "PARAM_ListCat_Entry_Header_Parameters_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_ListCat_Add_Param_Target_TT",
+      "Text": "添加新的 Param 目标输入行。"
+    },
+    {
+      "Key": "PARAM_ListCat_Remove_Param_Target_TT",
+      "Text": "移除最后添加的 Param 目标输入行。"
+    },
+    {
+      "Key": "PARAM_ListCat_Reset_Param_Target",
+      "Text": "重置"
+    },
+    {
+      "Key": "PARAM_ListCat_Reset_Param_Target_TT",
+      "Text": "重置 Param 目标输入行。"
+    },
+    {
+      "Key": "PARAM_ListCat_Param_Target_Include_TT",
+      "Text": "要包含在此分类中的 Param。"
+    },
+    {
+      "Key": "PARAM_ListCat_EditEntry_Header",
+      "Text": "编辑条目"
+    },
+    {
+      "Key": "PARAM_ListCat_EditEntry_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_ListCat_EditEntry_Action_Finalize",
+      "Text": "完成"
+    },
+    {
+      "Key": "PARAM_ListCat_EditEntry_Action_Finalize_TT",
+      "Text": "完成此分类的编辑。"
+    },
+    {
+      "Key": "PARAM_ListCat_Failed_Write",
+      "Text": "未能写入项目 Param 分类。"
+    }
+  ]
+}

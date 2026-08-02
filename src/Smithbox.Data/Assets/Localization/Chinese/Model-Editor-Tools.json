@@ -1,0 +1,96 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_Tools_Log_No_Object_Selected",
+      "Text": "未选择任何对象。"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Delete_Title",
+      "Text": "删除"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Delete_Context_TT",
+      "Text": "删除当前选中的模型对象。\n\n快捷键：{0}"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Delete_Menu_TT",
+      "Text": "删除当前选中的模型对象。"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Duplicate_Title",
+      "Text": "复制"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Duplicate_Context_TT",
+      "Text": "复制当前选中的地图对象。\n\n快捷键：{0}"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Duplicate_Menu_TT",
+      "Text": "复制当前选中的地图对象。"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Frame_Context_Title",
+      "Text": "在视口中居中显示"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Frame_Context_TT",
+      "Text": "在视口中居中显示当前选中的对象。\n\n快捷键：{0}"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Frame_Menu_Title",
+      "Text": "在视口中居中显示选中对象"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Frame_Menu_TT",
+      "Text": "在视口中居中显示当前选中的对象。"
+    },
+    {
+      "Key": "MODEL_Tools_Action_GoTo_Title",
+      "Text": "在列表中定位"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Pull_Title",
+      "Text": "拉至相机位置"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Pull_Context_TT",
+      "Text": "将当前选中的对象移动至相机位置。\n\n快捷键：{0}"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Pull_Menu_TT",
+      "Text": "将当前选中的对象移动至相机位置。"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Reorder_Up_Title",
+      "Text": "上移"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Reorder_Up_Context_TT",
+      "Text": "将当前选中的模型对象在该对象类型的模型对象列表中上移一位。\n\n快捷键：{0}"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Reorder_Down_Title",
+      "Text": "下移"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Reorder_Down_Context_TT",
+      "Text": "将当前选中的模型对象在该对象类型的模型对象列表中下移一位。\n\n快捷键：{0}"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Reorder_Top_Title",
+      "Text": "移至顶部"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Reorder_Top_Context_TT",
+      "Text": "将当前选中的模型对象移至该对象类型的模型对象列表顶部。\n\n快捷键：{0}"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Reorder_Bottom_Title",
+      "Text": "移至底部"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Reorder_Bottom_Context_TT",
+      "Text": "将当前选中的模型对象移至该对象类型的模型对象列表底部。\n\n快捷键：{0}"
+    }
+  ]
+}

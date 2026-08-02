@@ -1,0 +1,152 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_ParamWindow_Title",
+      "Text": "参数列表"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Title_Version",
+      "Text": "参数列表 - 版本 {0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Title_Version_Out_of_Date",
+      "Text": "参数列表 - 版本 {0}（已过期）"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Search_Hint",
+      "Text": "搜索..."
+    },
+    {
+      "Key": "PARAM_ParamWindow_Search_Hint_TT",
+      "Text": "搜索 <{0}>"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleTableGroup_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleTableGroup_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleTableGroup_Hint",
+      "Text": "切换表组窗口的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCommunityNames_Source",
+      "Text": "源"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCommunityNames_Community",
+      "Text": "社区"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCommunityNames_Hint",
+      "Text": "切换参数社区名称的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCategories_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCategories_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCategories_Hint",
+      "Text": "切换参数分类的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleStayParams_Hidden",
+      "Text": "隐藏"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleStayParams_Visible",
+      "Text": "可见"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleStayParams_Hint",
+      "Text": "切换 stay params 的显示。\n当前模式：{0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Category_General",
+      "Text": "常规"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Info_Header",
+      "Text": "信息"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_ParamType",
+      "Text": "参数类型：{0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Copy_Name",
+      "Text": "复制名称"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Copy_Type",
+      "Text": "复制参数类型"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Pin_Header",
+      "Text": "固定"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Pin",
+      "Text": "固定"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Pin_TT",
+      "Text": "将当前选中的参数固定到参数列表顶部。"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Unpin",
+      "Text": "取消固定"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Unpin_TT",
+      "Text": "取消当前选中参数在参数列表顶部的固定。"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Export_Header",
+      "Text": "导出"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Export_Loose_Param",
+      "Text": "将参数导出为独立文件"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Export_Loose_Param_TT",
+      "Text": "提取此参数并将其保存为独立的 .PARAM 文件。"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Wiki_Header",
+      "Text": "Wiki"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Action_Copy_Param_List",
+      "Text": "导出参数列表"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Action_Copy_Param_TT",
+      "Text": "将参数列表表格导出到剪贴板，用于 SoulsModding wiki。"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Action_Copy_Field_List",
+      "Text": "导出字段列表"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Action_Copy_Field_TT",
+      "Text": "将此参数的字段列表表格导出到剪贴板，用于 SoulsModding wiki。"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ExportParam_Error_Invalid_ParamData",
+      "Text": "未能找到 {0} 的有效参数数据"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ExportParam_Log",
+      "Text": "已将参数导出到 {0}"
+    }
+  ]
+}

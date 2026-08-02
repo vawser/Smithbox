@@ -1,0 +1,316 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Comparison_Header",
+      "Text": "数据对比"
+    },
+    {
+      "Key": "PARAM_Comparison_Tab_Report",
+      "Text": "对比报告"
+    },
+    {
+      "Key": "PARAM_Comparison_Tab_Param_Compare",
+      "Text": "Param 对比"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Loaded_Projects",
+      "Text": "已加载项目"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Loaded_Projects_TT",
+      "Text": "这些项目已加载并显示在对比列中。"
+    },
+    {
+      "Key": "PARAM_Comparison_Project_Context_Unload",
+      "Text": "卸载"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Available_Projects",
+      "Text": "可用项目"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Available_Projects_TT",
+      "Text": "这些项目可以加载用于对比。"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Options_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_Comparison_Checkbox_Primary_Row_Name_Import",
+      "Text": "生成报告时导入主库行名"
+    },
+    {
+      "Key": "PARAM_Comparison_Checkbox_Comparison_Row_Name_Import",
+      "Text": "生成报告时导入对比库行名"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Actions_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_All",
+      "Text": "全部清除"
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_All_TT",
+      "Text": "清除所有当前参数对比。"
+    },
+    {
+      "Key": "PARAM_Comparison_Tab_Row_Compare",
+      "Text": "行对比"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Current_Row_Compare",
+      "Text": "当前行对比"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Current_Row_Compare_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_Comparison_No_Row_Compare",
+      "Text": "未设置行对比目标。"
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_Row_Compare",
+      "Text": "清除"
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_Row_Compare_TT",
+      "Text": "清除当前行对比目标。"
+    },
+    {
+      "Key": "PARAM_Comparison_Tab_Field_Compare",
+      "Text": "字段对比"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Current_Field_Compare",
+      "Text": "当前字段对比"
+    },
+    {
+      "Key": "PARAM_Comparison_Header_Current_Field_Compare_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_Comparison_No_Field_Compare",
+      "Text": "未设置字段对比目标。"
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_Field_Compare",
+      "Text": "清除"
+    },
+    {
+      "Key": "PARAM_Comparison_Action_Clear_Field_Compare_TT",
+      "Text": "清除当前字段对比目标。"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Report",
+      "Text": "对比报告"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_View_Report",
+      "Text": "查看"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_View_Report_TT",
+      "Text": "查看文本报告，详细说明当前项目参数与原版参数之间的差异。"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Param_Compare",
+      "Text": "Param 对比"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Select_Project",
+      "Text": "选择用于参数对比的项目"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Clear_Param_Compare",
+      "Text": "清除指定参数对比"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_All",
+      "Text": "全部清除"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_All_TT",
+      "Text": "卸载所有对比参数库。"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Row_Compare",
+      "Text": "行对比"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_Row_Compare",
+      "Text": "清除"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_Row_Compare_TT",
+      "Text": "清除当前行对比目标。"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Header_Field_Compare",
+      "Text": "字段对比"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_Field_Compare",
+      "Text": "清除"
+    },
+    {
+      "Key": "PARAM_Comparison_Menu_Clear_Field_Compare_TT",
+      "Text": "清除当前字段对比目标。"
+    },
+    {
+      "Key": "PARAM_Comparison_Report_Hint",
+      "Text": "# 字段值遵循此格式：[对比值] -> [主库值]"
+    },
+    {
+      "Key": "PARAM_Comparison_Report_Missing_Param_Key",
+      "Text": "{0} 在对比中不存在。"
+    },
+    {
+      "Key": "PARAM_Comparison_Report_Missing_Row_ID",
+      "Text": "{0} 在对比中不存在。"
+    },
+    {
+      "Key": "PARAM_Comparison_Report_Missing_Row_ID_With_Name",
+      "Text": "  {0} ({1}) 在对比中不存在。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header",
+      "Text": "对比报告"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Primary_Bank_Version",
+      "Text": "主库 - Param 版本：{0}"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Comparison_Bank_Version",
+      "Text": "对比库 - Param 版本：{0}"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Comparison_Bank_No_Load",
+      "Text": "对比库 - 未加载对比库。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Project_to_Compare",
+      "Text": "对比项目："
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Project_to_Compare_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Vanilla_Select",
+      "Text": "原版"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Options_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Targeted_Params",
+      "Text": "目标参数"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Targeted_Params_TT",
+      "Text": "对比报告中要作为目标的参数。留空则目标为所有参数。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Param_Target_Add_TT",
+      "Text": "添加新的参数目标输入行。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Param_Target_Remove_TT",
+      "Text": "移除最后添加的参数目标输入行。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Param_Target_Reset",
+      "Text": "重置"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Param_Target_Reset_TT",
+      "Text": "要包含的参数目标。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Param_to_Include_TT",
+      "Text": "要包含的参数目标。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Action",
+      "Text": "操作"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Action_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Generate_Report",
+      "Text": "生成报告"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Generate_Report_TT",
+      "Text": "生成参数对比报告。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Copy_Report",
+      "Text": "复制报告"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Copy_Report_TT",
+      "Text": "将参数对比报告复制到剪贴板。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Close_Report",
+      "Text": "关闭报告"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Action_Close_Report_TT",
+      "Text": "关闭参数对比报告菜单。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Report",
+      "Text": "报告"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Header_Report_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Generating_Report",
+      "Text": "正在生成报告..."
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Current_Param",
+      "Text": "当前参数：{0}"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Task_Generate_PASS",
+      "Text": "对比报告已生成。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Task_Generate_FAIL",
+      "Text": "对比报告生成失败。"
+    },
+    {
+      "Key": "PARAM_ComparisonReport_Modal_Name",
+      "Text": "Param 对比报告"
+    }
+  ]
+}

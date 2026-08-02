@@ -1,0 +1,52 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Contents_Header_Contents",
+      "Text": "文本内容"
+    },
+    {
+      "Key": "TEXT_Contents_Header_Contents_TT",
+      "Text": null
+    },
+    {
+      "Key": "TEXT_Contents_Column_Header_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "TEXT_Contents_Column_Header_Text",
+      "Text": "文本"
+    },
+    {
+      "Key": "TEXT_Contents_Column_Header_Title",
+      "Text": "标题"
+    },
+    {
+      "Key": "TEXT_Contents_Add_Title_Entry",
+      "Text": "添加标题条目"
+    },
+    {
+      "Key": "TEXT_Contents_Column_Header_Summary",
+      "Text": "概要"
+    },
+    {
+      "Key": "TEXT_Contents_Add_Summary_Entry",
+      "Text": "添加概要条目"
+    },
+    {
+      "Key": "TEXT_Contents_Column_Header_Description",
+      "Text": "描述"
+    },
+    {
+      "Key": "TEXT_Contents_Add_Description_Entry",
+      "Text": "添加描述条目"
+    },
+    {
+      "Key": "TEXT_Contents_Column_Header_Effect",
+      "Text": "效果"
+    },
+    {
+      "Key": "TEXT_Contents_Add_Effect_Entry",
+      "Text": "添加效果条目"
+    }
+  ]
+}

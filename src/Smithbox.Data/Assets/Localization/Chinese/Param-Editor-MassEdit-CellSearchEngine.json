@@ -1,0 +1,96 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_CSE_Default_Hint",
+      "Text": "字段内部名称（正则表达式）"
+    },
+    {
+      "Key": "PARAM_CSE_Default_TT",
+      "Text": "选择字段内部名称匹配给定正则表达式的单元格/字段。"
+    },
+    {
+      "Key": "PARAM_CSE_Field_Value_Hint",
+      "Text": "字段值"
+    },
+    {
+      "Key": "PARAM_CSE_Field_Value_TT",
+      "Text": "选择具有指定值的单元格/字段。"
+    },
+    {
+      "Key": "PARAM_CSE_Field_Value_Cannot_Check_Cell",
+      "Text": "无法检查单元格 - 不属于任何参数。"
+    },
+    {
+      "Key": "PARAM_CSE_Field_Value_No_Param",
+      "Text": "无法检查单元格 - 无参数。"
+    },
+    {
+      "Key": "PARAM_CSE_Field_Range_Hint_1",
+      "Text": "字段起始值"
+    },
+    {
+      "Key": "PARAM_CSE_Field_Range_Hint_2",
+      "Text": "字段结束值"
+    },
+    {
+      "Key": "PARAM_CSE_Field_Range_TT",
+      "Text": "选择值在指定的起始值和结束值之间的单元格/字段。"
+    },
+    {
+      "Key": "PARAM_CSE_Modified_TT",
+      "Text": "选择在原版 regulation 或 parambnd中对应单元格有不同值的单元格/字段。"
+    },
+    {
+      "Key": "PARAM_CSE_Modified_Cannot_Check_Cell",
+      "Text": "无法检查单元格是否已修改 - 不属于任何参数。"
+    },
+    {
+      "Key": "PARAM_CSE_Modified_No_Param",
+      "Text": "无法检查单元格是否已修改 - 无原版参数。"
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_Hint",
+      "Text": "parambank 名称"
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_TT",
+      "Text": "选择在指定 regulation 或 parambnd 中对应单元格有不同值的单元格/字段。"
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_No_ParamBank",
+      "Text": "无法检查单元格是否已修改 - 未找到 parambank"
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_Not_Part_of_Param",
+      "Text": "无法检查单元格是否已修改 - 不属于任何参数"
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_No_Aux_Param",
+      "Text": "无法检查单元格是否已修改 - 无 aux 参数"
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_No_Vanilla_Param",
+      "Text": "无法检查单元格是否已修改 - 无原版参数"
+    },
+    {
+      "Key": "PARAM_CSE_SfType_Hint",
+      "Text": "PARAMDEF 类型"
+    },
+    {
+      "Key": "PARAM_CSE_SfType_TT",
+      "Text": "选择字段数据类型（由 soulsformats 枚举）匹配给定正则表达式的单元格/字段"
+    },
+    {
+      "Key": "PARAM_CSE_DefaultValue_TT",
+      "Text": "选择单元格值与字段默认值相同的单元格/字段。"
+    },
+    {
+      "Key": "PARAM_CSE_DefaultValue_Not_Part_of_Param",
+      "Text": "无法检查单元格 - 不属于任何参数"
+    },
+    {
+      "Key": "PARAM_CSE_DefaultValue_No_Param",
+      "Text": "无法检查单元格 - 无参数"
+    }
+  ]
+}

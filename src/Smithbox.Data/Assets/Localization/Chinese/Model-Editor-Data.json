@@ -1,0 +1,52 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_Data_Log_Invalid_Model_Read",
+      "Text": "读取 FLVER 的 {0} 失败。"
+    },
+    {
+      "Key": "MODEL_Data_Log_Invalid_Model_Binder_Read",
+      "Text": "读取 BND 的 {0} 失败。"
+    },
+    {
+      "Key": "MODEL_Data_Log_Save_FLVER",
+      "Text": "已保存 FLVER：{0}"
+    },
+    {
+      "Key": "MODEL_Data_Log_Save_FLVER_Failed",
+      "Text": "写入 FLVER 失败：{0}"
+    },
+    {
+      "Key": "MODEL_Data_Setup_FlverAnnotations_PASS",
+      "Text": "已设置 FLVER 注解。"
+    },
+    {
+      "Key": "MODEL_Data_Setup_FlverAnnotations_FAIL",
+      "Text": "设置 FLVER 注解失败。"
+    },
+    {
+      "Key": "MODEL_Data_Setup_Primary_Bank_PASS",
+      "Text": "已设置主库。"
+    },
+    {
+      "Key": "MODEL_Data_Setup_Primary_Bank_FAIL",
+      "Text": "设置主库失败。"
+    },
+    {
+      "Key": "MODEL_Data_Log_Failed_Deserialize_Flver_Annotations",
+      "Text": "反序列化 FLVER 注解失败：{0}"
+    },
+    {
+      "Key": "MODEL_Data_Log_Failed_Read_Flver_Annotations",
+      "Text": "读取 FLVER 注解失败：{0}"
+    },
+    {
+      "Key": "MODEL_Data_Log_Failed_Deserialize_Flver_Enums",
+      "Text": "反序列化 FLVER 枚举失败：{0}"
+    },
+    {
+      "Key": "MODEL_Data_Log_Failed_Read_Flver_Enums",
+      "Text": "读取 FLVER 枚举失败：{0}"
+    }
+  ]
+}

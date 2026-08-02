@@ -3,6 +3,26 @@
     {
       "Key": "TEXT_Window_Tools",
       "Text": "工具"
+    },
+    {
+      "Key": "TEXT_Window_TextEditor",
+      "Text": "文本编辑器"
+    },
+    {
+      "Key": "TEXT_Window_Container_List",
+      "Text": "容器列表"
+    },
+    {
+      "Key": "TEXT_Window_File_List",
+      "Text": "文件列表"
+    },
+    {
+      "Key": "TEXT_Window_Text_Entries",
+      "Text": "文本条目"
+    },
+    {
+      "Key": "TEXT_Window_Text_Content",
+      "Text": "文本内容"
     }
   ]
 }

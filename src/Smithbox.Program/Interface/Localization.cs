@@ -89,7 +89,10 @@ public static class LOC
 
                 foreach (var entry in locEntry.Entries)
                 {
-                    Localization.TryAdd(entry.Key, entry.Text);
+                    // null Text marks an untranslated placeholder; skip it so
+                    // Get() falls back to the English source for that key.
+                    if (entry.Text != null)
+                        Localization.TryAdd(entry.Key, entry.Text);
                 }
             }
             catch (Exception)
@@ -115,7 +118,8 @@ public static class LOC
 
                 foreach (var entry in locEntry.Entries)
                 {
-                    FallbackLocalization.TryAdd(entry.Key, entry.Text);
+                    if (entry.Text != null)
+                        FallbackLocalization.TryAdd(entry.Key, entry.Text);
                 }
             }
             catch (Exception)

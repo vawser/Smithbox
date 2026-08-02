@@ -1,0 +1,188 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Tools_Memory_Missing_AOB",
+      "Text": "无法在内存中找到 {0} 的 AOB。"
+    },
+    {
+      "Key": "PARAM_Tools_Memory_ERItemGiveFuncOffset_Missing",
+      "Text": "GameOffsetBaseEntry 中未设置 ERItemGiveFuncOffset。"
+    },
+    {
+      "Key": "PARAM_Tools_Memory_ERMapItemManOffset_Missing",
+      "Text": "GameOffsetBaseEntry 中未设置 ERMapItemManOffset。"
+    },
+    {
+      "Key": "PARAM_Tools_Memory_No_Game_Process",
+      "Text": "未找到 {0} 的游戏进程。请先启动游戏。"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Param_ID",
+      "Text": "{0} ID"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Header",
+      "Text": "物品生成"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Hint",
+      "Text": "使用此工具在游戏中生成物品。"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Active_Row",
+      "Text": "未选择活动行。请在 Param 编辑器中选择一行。"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Number_of_Spawned_Items",
+      "Text": "生成物品数量"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Reinforcement_Level",
+      "Text": "强化等级"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Durability",
+      "Text": "耐久度"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Action_Give_Item",
+      "Text": "给予物品"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Offsets",
+      "Text": "未找到 ItemGib 偏移量。"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Param",
+      "Text": "尚未为物品生成选择 Param。"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Rows",
+      "Text": "尚未为物品生成选择行。"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Base_Weapon",
+      "Text": "未找到 EquipParamCustomWeapon 的基础武器 ID。"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_EquipParamWeapon",
+      "Text": "未找到 ID 为 {0} 的 EquipParamWeapon。"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Game_Offset",
+      "Text": "不存在用于物品生成的 GameOffset。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Header",
+      "Text": "Param 重载器"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Hint",
+      "Text": "警告：Param 重载器仅对已存在的行条目生效。\n对于新增行和修改的行 ID，必须重启游戏。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Header_Actions_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Reload_Individual",
+      "Text": "重载所选 Param"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Reload_Individual_TT",
+      "Text": "在游戏中重载当前选中的 Param。\n快捷键：{0}"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Reload_All",
+      "Text": "重载所有 Param"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Reload_All_TT",
+      "Text": "在游戏中重载所有 Param。\n快捷键：{0}"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Current_Param",
+      "Text": "当前 Param"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_Current_Param_TT",
+      "Text": "警告：Param 重载器仅对已存在的行条目生效。\n对于新增行和修改的行 ID，必须重启游戏。\n快捷键：{0}"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_All_Params",
+      "Text": "所有 Param"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Action_All_Params_TT",
+      "Text": "警告：Param 重载器仅对已存在的行条目生效。\n对于新增行和修改的行 ID，必须重启游戏。\n快捷键：{0}"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_No_Actions",
+      "Text": "此项目类型没有可用的操作。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Task_Success",
+      "Text": "Param 重载器已更新游戏内的 Param。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Task_Fail",
+      "Text": "Param 重载器执行失败。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_Game",
+      "Text": "无法找到正在运行的游戏。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Invalid_Param",
+      "Text": "无法在 Param 重载器中重载 {0}。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_AOB",
+      "Text": "Param 重载器无法重载 {0}，因为未找到指定的 AOB。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_Base_Address",
+      "Text": "未能找到基地址。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_Param_Offset",
+      "Text": "在 Param 重载器中找不到 {0} 的 Param 偏移量。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Invalid_Offset",
+      "Text": "ParamType {0} 的偏移量无效或没有可供 Param 重载器使用的行。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_In_Editor",
+      "Text": "ParamType {0}：行 {1} 索引 {2} 在内存中存在，但在 Param 重载器操作期间未在编辑器中找到。\n请尝试保存 Param 并重启游戏。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_Bitfield_Type",
+      "Text": "意外的 BitField 类型"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Missing_Field_Type",
+      "Text": "意外的字段类型"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Unknown_Bitfield_Length",
+      "Text": "未知的位域长度"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Failed_Game_Offset_Creation",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_No_Param_Selected",
+      "Text": "尚未为 Param 重载器选择 Param。"
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Cannot_Reload",
+      "Text": "Param 重载器无法为此项目进行重载。"
+    }
+  ]
+}

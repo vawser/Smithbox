@@ -1,0 +1,84 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Data_FMG_Descriptor_Setup_PASS",
+      "Text": "已设置 FMG 描述符数据。"
+    },
+    {
+      "Key": "TEXT_Data_FMG_Descriptor_Setup_FAIL",
+      "Text": "设置 FMG 描述符数据失败。"
+    },
+    {
+      "Key": "TEXT_Data_Incremental_Templates_Setup_PASS",
+      "Text": "已设置增量模板。"
+    },
+    {
+      "Key": "TEXT_Data_Incremental_Templates_Setup_FAIL",
+      "Text": "设置增量模板失败。"
+    },
+    {
+      "Key": "TEXT_Data_Primary_Bank_Setup_PASS",
+      "Text": "已设置主库。"
+    },
+    {
+      "Key": "TEXT_Data_Primary_Bank_Setup_FAIL",
+      "Text": "设置主库失败。"
+    },
+    {
+      "Key": "TEXT_Data_Vanilla_Bank_Setup_PASS",
+      "Text": "已设置原版库。"
+    },
+    {
+      "Key": "TEXT_Data_Vanilla_Bank_Setup_FAIL",
+      "Text": "设置原版库失败。"
+    },
+    {
+      "Key": "TEXT_Data_Aux_Bank_Setup_PASS",
+      "Text": "已设置 {0} 的辅助库。"
+    },
+    {
+      "Key": "TEXT_Data_Aux_Bank_Setup_FAIL",
+      "Text": "设置 {0} 的辅助库失败。"
+    },
+    {
+      "Key": "TEXT_Data_Deserialize_Incremental_Template_FAIL",
+      "Text": "反序列化增量模板失败: {0}"
+    },
+    {
+      "Key": "TEXT_Data_Read_Incremental_Template_FAIL",
+      "Text": "读取增量模板失败: {0}"
+    },
+    {
+      "Key": "TEXT_Data_Deserialize_FMG_Descriptors_FAIL",
+      "Text": "反序列化 FMG 描述符注册表失败: {0}"
+    },
+    {
+      "Key": "TEXT_Data_Read_FMG_Descriptors_FAIL",
+      "Text": "读取 FMG 描述符注册表失败: {0}"
+    },
+    {
+      "Key": "TEXT_Data_Load_FMG_Container_FAIL",
+      "Text": "加载 FMG 容器失败: {0}，位于 {1}，用于 {2}"
+    },
+    {
+      "Key": "TEXT_Data_Load_FMG_Wrapper_FAIL",
+      "Text": "FMG 包装器加载失败。"
+    },
+    {
+      "Key": "TEXT_Data_Load_FMG_FAIL",
+      "Text": "加载 FMG 失败: {0}，位于 {1}，用于 {2}"
+    },
+    {
+      "Key": "TEXT_Data_Read_File_VFS_FAIL",
+      "Text": "从 VFS 读取 {0} 失败，用于 {1}。"
+    },
+    {
+      "Key": "TEXT_Data_Write_File_FAIL",
+      "Text": "将 {0} 写入文件失败，用于 {1}。"
+    },
+    {
+      "Key": "TEXT_Data_Write_FMG_FAIL",
+      "Text": "写入 FMG 文件失败: {0}，用于 {1}。"
+    }
+  ]
+}

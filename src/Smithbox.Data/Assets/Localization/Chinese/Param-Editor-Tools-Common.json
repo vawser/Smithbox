@@ -1,0 +1,68 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_DuplicateTool_Target_Param",
+      "Text": "目标 Param："
+    },
+    {
+      "Key": "PARAM_ProliferateRowName_Log_Failed_to_Find_Field",
+      "Text": "未能找到内部名称为 {0} 的字段。"
+    },
+    {
+      "Key": "PARAM_QuickSearch_Search_For_References",
+      "Text": "在字段值查找器中搜索引用"
+    },
+    {
+      "Key": "PARAM_QuickSearch_Search_For_References_TT",
+      "Text": "跳转到「字段值查找器」工具，搜索此行 ID。"
+    },
+    {
+      "Key": "PARAM_ReverseLookup_Search_for_References",
+      "Text": "搜索引用"
+    },
+    {
+      "Key": "PARAM_ReverseLookup_No_Rows",
+      "Text": "未找到行"
+    },
+    {
+      "Key": "PARAM_ReverseLookup_No_Reference",
+      "Text": "此 Param 未被引用。"
+    },
+    {
+      "Key": "PARAM_RowSort_Sort_Rows",
+      "Text": "排序行"
+    },
+    {
+      "Key": "PARAM_RowSort_Sort_Rows_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_RowSort_Header_Sort_Rows",
+      "Text": "排序行"
+    },
+    {
+      "Key": "PARAM_RowSort_Sort_Rows_Hint",
+      "Text": "使用此功能对当前所选 Param 中的行进行排序。\n此工具会针对具有相同 ID 的多行 Param 保持相应的行索引顺序。"
+    },
+    {
+      "Key": "PARAM_RowSort_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "PARAM_RowSort_Header_Actions_TT",
+      "Text": null
+    },
+    {
+      "Key": "PARAM_RowSort_Sort_Rows_Action",
+      "Text": "排序行"
+    },
+    {
+      "Key": "PARAM_RowSort_Sort_Rows_Action_TT",
+      "Text": "应用行排序算法。"
+    },
+    {
+      "Key": "PARAM_RowSort_Log_Sort_Rows",
+      "Text": "已对 {0} 的 Param 行进行排序"
+    }
+  ]
+}

@@ -89,10 +89,6 @@
       "Text": "启用后，\"将条目复制为文本\"操作将忽略空条目。"
     },
     {
-      "Key": "META_AliasMenu_Menu_Data_Source",
-      "Text": "保存"
-    },
-    {
       "Key": "META_AliasMenu_Menu_Regenerate_Project_Source",
       "Text": "重新生成项目源"
     },
@@ -126,7 +122,7 @@
     },
     {
       "Key": "META_AliasMenu_Header_Aliases_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "META_AliasMenu_Action_Copy_Entries_As_Text",
@@ -146,7 +142,7 @@
     },
     {
       "Key": "META_AliasMenu_Action_Add_Alias_TT",
-      "Text": ""
+      "Text": null
     },
     {
       "Key": "META_AliasMenu_Alias_Filter_Hint",
