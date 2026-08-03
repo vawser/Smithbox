@@ -154,7 +154,7 @@ public class MTDWrapper
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Material Editor] Failed to read {entry.Name} as MTD", e);
+                            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_MTD", entry.Name), e);
 
                             return false;
                         }
@@ -184,7 +184,7 @@ public class MTDWrapper
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Material Editor] Failed to read {entry.Name} as MTD", e);
+                            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_MTD", entry.Name), e);
 
                             return false;
                         }
@@ -196,7 +196,7 @@ public class MTDWrapper
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"[Material Editor] Failed to read {Path}", e);
+            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_File", Path), e);
             return false;
         }
     }
@@ -222,7 +222,7 @@ public class MTDWrapper
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Material Editor] Failed to write {entry.Name} as MTD", e);
+                            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Write_MTD", entry.Name), e);
                         }
                     }
                 }
@@ -232,7 +232,7 @@ public class MTDWrapper
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Material Editor] Failed to write {Path}", e);
+                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Write_File", Path), e);
 
                 return false;
             }
@@ -254,7 +254,7 @@ public class MTDWrapper
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[aterial Editor] Failed to write {entry.Name} as MTD", e);
+                            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Write_MTD", entry.Name), e);
                         }
                     }
                 }
@@ -264,7 +264,7 @@ public class MTDWrapper
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Material Editor] Failed to write {Path}", e);
+                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Write_File", Path), e);
                 return false;
             }
         }
@@ -316,7 +316,7 @@ public class MATBINWrapper
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Material Editor] Failed to read {entry.Name} as MATBIN", e);
+                        Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_MATBIN", entry.Name), e);
                         return false;
                     }
                 }
@@ -326,7 +326,7 @@ public class MATBINWrapper
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"[Material Editor] Failed to read {Path}", e);
+            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_File", Path), e);
             return false;
         }
     }
@@ -350,7 +350,8 @@ public class MATBINWrapper
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Material Editor] Failed to write {entry.Name} as MATBIN", e);
+                        Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Write_MATBIN", entry.Name), e);
+                        return false;
                     }
                 }
             }
@@ -360,7 +361,7 @@ public class MATBINWrapper
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"[Material Editor] Failed to write {Path}", e);
+            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_File", Path), e);
             return false;
         }
 

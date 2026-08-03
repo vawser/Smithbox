@@ -1,13 +1,7 @@
 ﻿using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.TextEditor;
 using StudioCore.Keybinds;
-using StudioCore.Utilities;
-using System.IO;
 using System.Numerics;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MaterialEditor;
 
@@ -69,54 +63,62 @@ public class MaterialEditorScreen : EditorScreen
 
     public void FileMenu()
     {
-        if (ImGui.BeginMenu("File"))
+        // File
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fileMenuHeader"))
         {
-            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
+            // Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 Save();
             }
 
             ImGui.Separator();
 
-            if (ImGui.BeginMenu("Output on Manual Save"))
+            // Manual Save Output
+            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Manual_Save_Output")}##manualSaveMenuHeader"))
             {
-                if (ImGui.MenuItem($"MTD"))
+                // MTD
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_MTD")}##manualToggle_mtd"))
                 {
                     CFG.Current.MaterialEditor_ManualSave_IncludeMTD = !CFG.Current.MaterialEditor_ManualSave_IncludeMTD;
                 }
-                GUI.Tooltip("If enabled, the material files are outputted on save.");
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_MTD_TT"));
                 GUI.ShowActiveStatus(CFG.Current.MaterialEditor_ManualSave_IncludeMTD);
 
-                if (ImGui.MenuItem($"MATBIN"))
+                // MATBIN
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_MATBIN")}##manualToggle_matbin"))
                 {
                     CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN = !CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN;
                 }
-                GUI.Tooltip("If enabled, the material bin files are outputted on save.");
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_MATBIN_TT"));
                 GUI.ShowActiveStatus(CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN);
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Determines which files are outputted during the manual saving process.");
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
 
-            if (ImGui.BeginMenu("Output on Automatic Save"))
+            // Automatic Save Output
+            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
             {
-                if (ImGui.MenuItem($"MTD"))
+                // MTD
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_MTD")}##autoToggle_mtd"))
                 {
                     CFG.Current.MaterialEditor_AutomaticSave_IncludeMTD = !CFG.Current.MaterialEditor_AutomaticSave_IncludeMTD;
                 }
-                GUI.Tooltip("If enabled, the material files are outputted on save.");
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_MTD_TT"));
                 GUI.ShowActiveStatus(CFG.Current.MaterialEditor_AutomaticSave_IncludeMTD);
 
-                if (ImGui.MenuItem($"MATBIN"))
+                // MATBIN
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_MATBIN")}##autoToggle_matbin"))
                 {
                     CFG.Current.MaterialEditor_AutomaticSave_IncludeMATBIN = !CFG.Current.MaterialEditor_AutomaticSave_IncludeMATBIN;
                 }
-                GUI.Tooltip("If enabled, the material bin files are outputted on save.");
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_MATBIN_TT"));
                 GUI.ShowActiveStatus(CFG.Current.MaterialEditor_AutomaticSave_IncludeMATBIN);
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Determines which files are outputted during the automatic saving process.");
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
 
 
             ImGui.EndMenu();
@@ -127,12 +129,13 @@ public class MaterialEditorScreen : EditorScreen
     {
         var activeView = ViewHandler.ActiveView;
 
-        if (ImGui.BeginMenu("Edit"))
+        // Edit
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Edit")}##editMenuHeader"))
         {
             if (activeView != null)
             {
                 // Undo
-                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
                     if (activeView.ActionManager.CanUndo())
                     {
@@ -141,7 +144,7 @@ public class MaterialEditorScreen : EditorScreen
                 }
 
                 // Undo All
-                if (ImGui.MenuItem($"Undo All"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##undoAllAction"))
                 {
                     if (activeView.ActionManager.CanUndo())
                     {
@@ -150,7 +153,7 @@ public class MaterialEditorScreen : EditorScreen
                 }
 
                 // Redo
-                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
                     if (activeView.ActionManager.CanRedo())
                     {
@@ -165,9 +168,11 @@ public class MaterialEditorScreen : EditorScreen
 
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        // View
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem("Tools"))
+            // Tools
+            if (ImGui.MenuItem($"{LOC.Get("MAT_View_Toggle_Tools")}##toolsToggle"))
             {
                 CFG.Current.Interface_MaterialEditor_ToolWindow = !CFG.Current.Interface_MaterialEditor_ToolWindow;
             }
@@ -177,14 +182,6 @@ public class MaterialEditorScreen : EditorScreen
 
             ViewHandler.DisplayMenu();
 
-            ImGui.EndMenu();
-        }
-    }
-
-    public void OptionsMenu()
-    {
-        if (ImGui.BeginMenu("Options"))
-        {
             ImGui.EndMenu();
         }
     }
@@ -239,11 +236,11 @@ public class MaterialEditorScreen : EditorScreen
 
         if (saveTaskResult)
         {
-            Smithbox.Log(this, $"[Material Editor] Saved {displayName} in {activeView.Selection.SelectedBinderEntry.Filename}.");
+            Smithbox.Log(this, LOC.Get("MAT_Save_Entry", displayName, activeView.Selection.SelectedBinderEntry.Filename));
         }
         else
         {
-            Smithbox.LogError(this, $"[Material Editor] Failed to save {displayName} in {activeView.Selection.SelectedBinderEntry.Filename}.");
+            Smithbox.Log(this, LOC.Get("MAT_Failed_Save_Entry", displayName, activeView.Selection.SelectedBinderEntry.Filename));
         }
 
         // Save the configuration JSONs

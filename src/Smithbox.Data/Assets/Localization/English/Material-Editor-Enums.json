@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_ENUM_MaterialSourceType_MTD",
+      "Text": "MTD"
+    },
+    {
+      "Key": "MAT_ENUM_MaterialSourceType_MATBIN",
+      "Text": "MATBIN"
+    }
+  ]
+}

@@ -44,7 +44,7 @@ public class MaterialEditorStub : IEditorStub
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
         ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin(EditorName, ImGuiWindowFlags.MenuBar))
+        if (ImGui.Begin($"{LOC.Get("MAT_Editor_Stub")}###materialEditor", ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
@@ -55,8 +55,8 @@ public class MaterialEditorStub : IEditorStub
             }
             else
             {
-                ImGui.Text("");
-                ImGui.Text("   Editor is loading...");
+                GUI.Spacer();
+                ImGui.Text(LOC.Get("EDITOR_Editor_Is_Loading"));
             }
 
             ImGui.End();

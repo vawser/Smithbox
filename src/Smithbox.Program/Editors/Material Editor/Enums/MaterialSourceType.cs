@@ -9,8 +9,8 @@ namespace StudioCore.Editors.MaterialEditor;
 
 public enum MaterialSourceType
 {
-    [Display(Name = "MTD")]
+    [Display(Name = "MAT_ENUM_MaterialSourceType_MTD")]
     MTD,
-    [Display(Name = "MATBIN")]
+    [Display(Name = "MAT_ENUM_MaterialSourceType_MATBIN")]
     MATBIN
 }

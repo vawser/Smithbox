@@ -179,6 +179,22 @@
     {
       "Key": "EDITOR_SaveOutput_FLVER_TT",
       "Text": "If enabled, the flver files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_MTD",
+      "Text": "MTD"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_MTD_TT",
+      "Text": "If enabled, the material files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_MATBIN",
+      "Text": "MATBIN"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_MATBIN_TT",
+      "Text": "If enabled, the material bin files are outputted on save."
     }
   ]
 }

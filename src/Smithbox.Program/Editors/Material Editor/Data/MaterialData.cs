@@ -44,11 +44,11 @@ public class MaterialData : IDisposable
 
         if (!matDispTaskResult)
         {
-            Smithbox.LogError(this, $"[Material Editor] Failed to setup the Material Display Configuration data.");
+            Smithbox.LogError(this, LOC.Get("MAT_Data_Setup_Material_Display_Config_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Material Editor] Setup the Material Display Configuration data.");
+            Smithbox.Log(this, LOC.Get("MAT_Data_Setup_Material_Display_Config_PASS"));
         }
 
         // Primary Bank
@@ -57,11 +57,11 @@ public class MaterialData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Material Editor] Failed to setup the Primary Bank.");
+            Smithbox.LogError(this, LOC.Get("MAT_Data_Setup_Primary_Bank_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Material Editor] Setup the Primary Bank.");
+            Smithbox.Log(this, LOC.Get("MAT_Data_Setup_Primary_Bank_PASS"));
         }
 
         return true;
@@ -103,12 +103,12 @@ public class MaterialData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Material Editor] Failed to deserialize the Material Display Configuration: {targetFile}", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Deserialize_Material_Display_Config", targetFile), e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Material Editor] Failed to read the Material Display Configuration: {targetFile}", LogPriority.High, e);
+                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_Material_Display_Config", targetFile), e);
             }
         }
 
