@@ -1,121 +1,20 @@
 {
   "Entries": [
     {
-      "Key": "MAT_ContainerList_",
+      "Key": "MAT_ContainerList_Header_Containers",
+      "Text": "Containers"
+    },
+    {
+      "Key": "MAT_ContainerList_Header_Containers_TT",
       "Text": ""
     },
     {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
+      "Key": "MAT_ContainerList_Tab_MTD",
+      "Text": "MTD"
     },
     {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    {
-      "Key": "MAT_ContainerList_",
-      "Text": ""
-    },
-    
+      "Key": "MAT_ContainerList_Tab_MATBIN",
+      "Text": "MATBIN"
+    }
   ]
 }

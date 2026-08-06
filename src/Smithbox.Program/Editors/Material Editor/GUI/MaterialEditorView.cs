@@ -58,7 +58,7 @@ public class MaterialEditorView
         // Container List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
-        if (ImGui.Begin($@"Container List##materialEditor_ContainerList_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAT_Window_Container_List")}###materialEditor_ContainerList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -77,7 +77,7 @@ public class MaterialEditorView
         // File List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
-        if (ImGui.Begin($@"File List##materialEditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAT_Window_File_List")}###materialEditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -96,7 +96,7 @@ public class MaterialEditorView
         // Properties
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
-        if (ImGui.Begin($@"Properties##materialEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAT_Window_Properties")}###materialEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -115,7 +115,7 @@ public class MaterialEditorView
         // Tools
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
-        if (ImGui.Begin($@"Tools##materialEditor_ToolWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAT_Window_Tools")}###materialEditor_ToolWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;

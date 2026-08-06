@@ -50,9 +50,11 @@ public class MaterialToolWindow
 
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        // View
+        if (ImGui.BeginMenu($"{LOC.Get("MAT_Tools_Header_View")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem("Data Transfer"))
+            // Data Transfer
+            if (ImGui.MenuItem($"{LOC.Get("MAT_Tools_Data_Transfer")}##dataTransferToggle"))
             {
                 CFG.Current.MaterialEditor_Tool_Data_Transfer = !CFG.Current.MaterialEditor_Tool_Data_Transfer;
             }
@@ -64,7 +66,8 @@ public class MaterialToolWindow
 
     public void ToolMenu()
     {
-        if (ImGui.BeginMenu("Tools"))
+        // Tools
+        if (ImGui.BeginMenu($"{LOC.Get("MAT_Tools_Header_Tools")}##toolsMenuHeader"))
         {
             DataTransferTool.DisplayDropdown();
 

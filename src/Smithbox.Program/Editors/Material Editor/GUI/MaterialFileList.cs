@@ -36,7 +36,10 @@ public class MaterialFileList
 
     public void DisplayTitle()
     {
-        GUI.SimpleHeader($"File List", "");
+        // File List
+        GUI.SimpleHeader(
+            LOC.Get("MAT_FileList_Header_File_List"),
+            LOC.Get("MAT_FileList_Header_File_List_TT"));
     }
 
     public void DisplayHeader()
@@ -55,11 +58,11 @@ public class MaterialFileList
             CFG.Current.MaterialEditor_FileList_DisplayFullPath = !CFG.Current.MaterialEditor_FileList_DisplayFullPath;
         }
 
-        var displayPathMode = "Hide Full Path";
+        var displayPathMode = LOC.Get("MAT_FileList_DisplayFullPath_Toggle_Hide");
         if (CFG.Current.MaterialEditor_FileList_DisplayFullPath)
-            displayPathMode = "Display Full Path";
+            displayPathMode = LOC.Get("MAT_FileList_DisplayFullPath_Toggle_Show");
 
-        GUI.Tooltip($"Toggle the display of the full path.\nCurrent Mode: {displayPathMode}");
+        GUI.Tooltip(LOC.Get("MAT_FileList_DisplayFullPath_Toggle_Hint", displayPathMode));
 
         ImGui.EndChild();
     }

@@ -23,7 +23,8 @@ public class MatDataTransferTool
 
     public void DisplayDropdown()
     {
-        if (ImGui.BeginMenu("Data Transfer"))
+        // Data Transfer
+        if (ImGui.BeginMenu($"{LOC.Get("MAT_Tools_DataTransfer_Header")}##dataTransferMenuHeader"))
         {
             ImportMenu();
             ExportMenu();
@@ -48,9 +49,10 @@ public class MatDataTransferTool
     #region Import
     public void ImportTab()
     {
-        if (ImGui.BeginTabItem($"Import"))
+        // Import
+        if (ImGui.BeginTabItem($"{LOC.Get("MAT_Tools_DataTransfer_Tab_Import")}##importTab"))
         {
-            GUI.WrappedText("Use this section to import JSON data, applying the data to your current project.");
+            GUI.WrappedText(LOC.Get("MAT_Tools_DataTransfer_Import_Hint"));
 
             // TODO
 
@@ -60,7 +62,8 @@ public class MatDataTransferTool
 
     public void ImportMenu()
     {
-        if (ImGui.BeginMenu("Import"))
+        // Import
+        if (ImGui.BeginMenu($"{LOC.Get("MAT_Tools_DataTransfer_Header_Import")}##importHeader"))
         {
             // TODO
 
@@ -72,9 +75,10 @@ public class MatDataTransferTool
     #region Export
     public void ExportTab()
     {
-        if (ImGui.BeginTabItem($"Export"))
+        // Export
+        if (ImGui.BeginTabItem($"{LOC.Get("MAT_Tools_DataTransfer_Tab_Export")}##exportTab"))
         {
-            GUI.WrappedText("Use this section to export JSON data from your current project.");
+            GUI.WrappedText(LOC.Get("MAT_Tools_DataTransfer_Export_Hint"));
 
             // TODO
 
@@ -84,7 +88,8 @@ public class MatDataTransferTool
 
     public void ExportMenu()
     {
-        if (ImGui.BeginMenu("Export"))
+        // Export
+        if (ImGui.BeginMenu($"{LOC.Get("MAT_Tools_DataTransfer_Header_Export")}##exportHeader"))
         {
             // TODO
 

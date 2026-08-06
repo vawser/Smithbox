@@ -1,14 +1,9 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using static SoulsFormats.MTD;
 
 namespace StudioCore.Editors.MaterialEditor;
 
@@ -39,7 +34,9 @@ public class MaterialProperties
 
     public void DisplayTitle()
     {
-        GUI.SimpleHeader($"Properties", "");
+        GUI.SimpleHeader(
+            LOC.Get("MAT_Properties_Header_Properties"),
+            LOC.Get("MAT_Properties_Header_Properties_TT"));
     }
 
     public void DisplayHeader()
@@ -58,11 +55,11 @@ public class MaterialProperties
             CFG.Current.MaterialEditor_Properties_Display_Community_Names = !CFG.Current.MaterialEditor_Properties_Display_Community_Names;
         }
 
-        var communityFieldNameMode = "Internal";
+        var communityFieldNameMode = LOC.Get("MAT_Properties_DisplayCommunityNames_Internal");
         if (CFG.Current.MaterialEditor_Properties_Display_Community_Names)
-            communityFieldNameMode = "Community";
+            communityFieldNameMode = LOC.Get("MAT_Properties_DisplayCommunityNames_Community");
 
-        GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
+        GUI.Tooltip(LOC.Get("MAT_Properties_DisplayCommunityNames_Hint", communityFieldNameMode));
 
         ImGui.EndChild();
     }
@@ -78,7 +75,7 @@ public class MaterialProperties
         // Header
         {
             ImGui.AlignTextToFramePadding();
-            ImGui.Text("Object Type");
+            ImGui.Text(LOC.Get("MAT_Properties_Object_Type"));
 
             //if (meta != null)
             //{
@@ -287,7 +284,7 @@ public class MaterialProperties
                                     {
                                         DuplicateListEntry(arrtyp, obj, i);
                                     }
-                                    GUI.Tooltip("Duplicate this entry");
+                                    GUI.Tooltip(LOC.Get("MAT_Properties_Action_Duplicate_TT"));
 
                                     ImGui.SameLine();
 
@@ -295,7 +292,7 @@ public class MaterialProperties
                                     {
                                         RemoveListEntry(arrtyp, obj, i);
                                     }
-                                    GUI.Tooltip("Remove this entry");
+                                    GUI.Tooltip(LOC.Get("MAT_Properties_Action_Delete_TT"));
                                 }
 
                                 ImGui.NextColumn();
@@ -562,10 +559,10 @@ public class MaterialProperties
         {
             var a = (Array)prop.GetValue(obj);
 
-            var str = $"Array Type: {prop.ReflectedType.Name}";
+            var str = LOC.Get("MAT_Properties_FieldHint_Array_Type", prop.ReflectedType.Name);
             if (a.Length > 0)
             {
-                str += $" (Length: {a.Length})";
+                str += LOC.Get("MAT_Properties_FieldHint_Array_Length", a.Length);
             }
 
             text = $"{text}\n{str}";
@@ -573,12 +570,12 @@ public class MaterialProperties
 
         if (propType.IsValueType)
         {
-            var str = $"Value Type: {propType.Name}";
+            var str = LOC.Get("MAT_Properties_FieldHint_Value_Type", propType.Name);
             var min = propType.GetField("MinValue")?.GetValue(propType);
             var max = propType.GetField("MaxValue")?.GetValue(propType);
             if (min != null && max != null)
             {
-                str += $" (Min {min}, Max {max})";
+                str += LOC.Get("MAT_Properties_FieldHint_Value_Min_Max", min, max);
             }
 
             text = $"{text}\n{str}";
@@ -587,10 +584,10 @@ public class MaterialProperties
         {
             var a = (Array)prop.GetValue(obj);
 
-            var str = $"String Type: {propType.Name}";
+            var str = LOC.Get("MAT_Properties_FieldHint_String_Type", propType.Name);
             if (a.Length > 0)
             {
-                str += $" (Length: {a.Length})";
+                str += LOC.Get("MAT_Properties_FieldHint_String_Length", a.Length);
             }
 
             text = $"{text}\n{str}";
@@ -622,12 +619,15 @@ public class MaterialProperties
 
         if (ImGui.BeginPopup("MaterialPropContextMenu"))
         {
-            if (ImGui.Selectable(@"Copy Property Name##CopyPropName"))
+            // Copy Property Name
+            if (ImGui.Selectable($"{LOC.Get("MAT_Properties_Action_Copy_Property_Name")}###CopyPropName"))
             {
                 PlatformUtils.Instance.SetClipboardText(fieldName);
             }
+            GUI.Tooltip(LOC.Get("MAT_Properties_Action_Copy_Property_Name_TT"));
 
-            if (ImGui.Selectable(@"Copy Property Type##CopyPropType"))
+            // Copy Property Type
+            if (ImGui.Selectable($"{LOC.Get("MAT_Properties_Action_Copy_Property_Name")}###CopyPropType"))
             {
                 var propType = prop.PropertyType;
 
@@ -637,6 +637,7 @@ public class MaterialProperties
                     PlatformUtils.Instance.SetClipboardText(primitiveType);
                 }
             }
+            GUI.Tooltip(LOC.Get("MAT_Properties_Action_Copy_Property_Type_TT"));
 
             ImGui.EndPopup();
         }

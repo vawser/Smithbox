@@ -26,7 +26,9 @@ public class MaterialContainerList
 
     public void Draw(float width, float height)
     {
-        GUI.SimpleHeader("Containers", "");
+        GUI.SimpleHeader(
+            LOC.Get("MAT_ContainerList_Header_Containers"),
+            LOC.Get("MAT_ContainerList_Header_Containers_TT"));
 
         EditorFilters.DisplayFramedListFilter("materialEditor_ContainerList",
             ref ContainerListFilter, ref ExactContainerListFilter);
@@ -35,7 +37,8 @@ public class MaterialContainerList
 
         ImGui.BeginTabBar("sourceTabs");
 
-        if (ImGui.BeginTabItem($"MTD"))
+        // MTD
+        if (ImGui.BeginTabItem($"{LOC.Get("MAT_ContainerList_Tab_MTD")}##mtdTab"))
         {
             Parent.Selection.SourceType = MaterialSourceType.MTD;
 
@@ -50,7 +53,8 @@ public class MaterialContainerList
 
         if (MaterialUtils.SupportsMATBIN(Project))
         {
-            if (ImGui.BeginTabItem($"MATBIN"))
+            // MATBIN
+            if (ImGui.BeginTabItem($"{LOC.Get("MAT_ContainerList_Tab_MATBIN")}##matbinTab"))
             {
                 Parent.Selection.SourceType = MaterialSourceType.MATBIN;
 

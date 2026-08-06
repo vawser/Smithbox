@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_Tools_DataTransfer_Header",
+      "Text": "Data Transfer"
+    },
+    {
+      "Key": "MAT_Tools_DataTransfer_Tab_Import",
+      "Text": "Import"
+    },
+    {
+      "Key": "MAT_Tools_DataTransfer_Header_Import",
+      "Text": "Import"
+    },
+    {
+      "Key": "MAT_Tools_DataTransfer_Import_Hint",
+      "Text": "Use this section to import JSON data, applying the data to your current project."
+    },
+    {
+      "Key": "MAT_Tools_DataTransfer_Tab_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "MAT_Tools_DataTransfer_Export_Hint",
+      "Text": "Use this section to export JSON data from your current project."
+    },
+    {
+      "Key": "MAT_Tools_DataTransfer_Header_Export",
+      "Text": "Export"
+    }
+  ]
+}
