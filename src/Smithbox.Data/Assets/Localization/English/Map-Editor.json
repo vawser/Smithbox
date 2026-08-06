@@ -1,9 +1,260 @@
 {
   "Entries": [
     {
-      "Key": "MAP_",
-      "Text": ""
+      "Key": "MAP_Editor_Stub",
+      "Text": "Map Editor"
     },
-    
+    {
+      "Key": "MAP_View_Toggle_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "MAP_Filter_Header",
+      "Text": "Filters"
+    },
+    {
+      "Key": "MAP_Filter_Header_FilterPresets",
+      "Text": "Filter Presets"
+    },
+    {
+      "Key": "MAP_Filter_Header_Region_Visibility",
+      "Text": "Region Visibility"
+    },
+    {
+      "Key": "MAP_Filter_Header_Collision_Visibility",
+      "Text": "Collision Visibility"
+    },
+    {
+      "Key": "MAP_Filter_Header_Patrol_Route_Visibility",
+      "Text": "Patrol Route Visibility"
+    },
+    {
+      "Key": "MAP_Filter_Header_Patrol_Route_Visibility_Action_Display",
+      "Text": "Display"
+    },
+    {
+      "Key": "MAP_Filter_Header_Patrol_Route_Visibility_Action_Display_TT",
+      "Text": "Display the connections between patrol route nodes."
+    },
+    {
+      "Key": "MAP_Filter_Header_Patrol_Route_Visibility_Action_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "MAP_Filter_Header_Patrol_Route_Visibility_Action_Clear_TT",
+      "Text": "Clear the display of connections between patrol route nodes."
+    },
+    {
+      "Key": "MAP_Collision_Header_Low",
+      "Text": "Low Collision"
+    },
+    {
+      "Key": "MAP_Collision_Header_Low_TT",
+      "Text": "Visible collision will use the low-detail mesh.\nUsed for standard collision."
+    },
+    {
+      "Key": "MAP_Collision_Header_High",
+      "Text": "High Collision"
+    },
+    {
+      "Key": "MAP_Collision_Header_High_TT",
+      "Text": "Visible collision will use the high-detail mesh.\nUsed for IK."
+    },
+    {
+      "Key": "MAP_Collision_Header_Fall_Protection",
+      "Text": "Fall Protection Collision"
+    },
+    {
+      "Key": "MAP_Collision_Header_Fall_Protection_TT",
+      "Text": "Visible collision will use the fall-protection mesh.\nUsed for enemy fall protection."
+    },
+    {
+      "Key": "MAP_Options_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "MAP_Options_Header_MapList",
+      "Text": "Map List"
+    },
+    {
+      "Key": "MAP_Options_Action_Unload_Current",
+      "Text": "Unload Current"
+    },
+    {
+      "Key": "MAP_Options_Action_Unload_Current_TT",
+      "Text": "Unload the currently loaded and selected map."
+    },
+    {
+      "Key": "MAP_Options_Action_Unload_All",
+      "Text": "Unload All"
+    },
+    {
+      "Key": "MAP_Options_Action_Unload_All_TT",
+      "Text": "Unload all loaded maps."
+    },
+    {
+      "Key": "MAP_Options_Dialog_Unload_Current",
+      "Text": "Unload current?"
+    },
+    {
+      "Key": "MAP_Options_Dialog_Confirm",
+      "Text": "Confirm"
+    },
+    {
+      "Key": "MAP_Options_Dialog_Unload_All",
+      "Text": "Unload all maps?"
+    },
+    {
+      "Key": "MAP_Options_Header_List_Filters",
+      "Text": "List Filters"
+    },
+    {
+      "Key": "MAP_Options_Header_List_Filters_TT",
+      "Text": "Select a list filter to narrow the map list down to a pre-defined set of maps."
+    },
+    {
+      "Key": "MAP_Options_ListFilter_Action_Select",
+      "Text": "Select"
+    },
+    {
+      "Key": "MAP_Options_ListFilter_Action_Select_TT",
+      "Text": "Select an existing list filter to apply to the map list."
+    },
+    {
+      "Key": "MAP_Options_ListFilter_Action_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "MAP_Options_ListFilter_Action_Clear_TT",
+      "Text": "Clear the current list filter, resetting the filtering of the map list."
+    },
+    {
+      "Key": "MAP_Options_ListFilter_Action_Create",
+      "Text": "Create"
+    },
+    {
+      "Key": "MAP_Options_ListFilter_Action_Create_TT",
+      "Text": "Create a new list filter. The filter terms support regular expressions."
+    },
+    {
+      "Key": "MAP_Options_ListFilter_Action_Edit",
+      "Text": "Edit"
+    },
+    {
+      "Key": "MAP_Options_ListFilter_Action_Edit_TT",
+      "Text": "Edit an existing list filter."
+    },
+    {
+      "Key": "MAP_Options_ListFilter_Action_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "MAP_Options_ListFilter_Action_Delete_TT",
+      "Text": "Delete an existing list filter."
+    },
+    {
+      "Key": "MAP_Options_Header_Contents",
+      "Text": "Contents"
+    },
+    {
+      "Key": "MAP_Options_Header_Content_Display",
+      "Text": "Content Display"
+    },
+    {
+      "Key": "MAP_Options_ContentDisplay_Action_Tree",
+      "Text": "Tree"
+    },
+    {
+      "Key": "MAP_Options_ContentDisplay_Action_Tree_TT",
+      "Text": "Display the content in the object type tree form."
+    },
+    {
+      "Key": "MAP_Options_ContentDisplay_Action_Flat",
+      "Text": "Flat"
+    },
+    {
+      "Key": "MAP_Options_ContentDisplay_Action_Flat_TT",
+      "Text": "Display the content in the flat form."
+    },
+    {
+      "Key": "MAP_Options_Header_NameDisplay",
+      "Text": "Name Display"
+    },
+    {
+      "Key": "MAP_Options_NameDisplay_Action_Internal",
+      "Text": "Internal"
+    },
+    {
+      "Key": "MAP_Options_NameDisplay_Action_Internal_TT",
+      "Text": "Display the internal map object name only."
+    },
+    {
+      "Key": "MAP_Options_NameDisplay_Action_Internal_Text",
+      "Text": "Internal and Text"
+    },
+    {
+      "Key": "MAP_Options_NameDisplay_Action_Internal_Text_TT",
+      "Text": "Display the internal map object name with the associated FMG name as the alias."
+    },
+    {
+      "Key": "MAP_SaveException_Error_Log",
+      "Text": "{0}\nSelect referring map entity?"
+    },
+    {
+      "Key": "MAP_SaveException_Error_Log_Title",
+      "Text": "Failed to save map"
+    },
+    {
+      "Key": "MAP_SaveException_Error_MapEntity",
+      "Text": "Unable to find map entity {0}"
+    },
+    {
+      "Key": "MAP_Options_LightAtlas_Header",
+      "Text": "Light Atlases"
+    },
+    {
+      "Key": "MAP_Options_LightAtlas_Automatic_Adjust_Toggle",
+      "Text": "Automatically adjust entries"
+    },
+    {
+      "Key": "MAP_Options_LightAtlas_Automatic_Adjust_Toggle_TT",
+      "Text": "If enabled, when a part is renamed, if a light atlas entry points to it, the name reference within the entry is updated to the new name."
+    },
+    {
+      "Key": "MAP_Options_LightAtlas_Automatic_Add_Toggle",
+      "Text": "Automatically add entries"
+    },
+    {
+      "Key": "MAP_Options_LightAtlas_Automatic_Add_Toggle_TT",
+      "Text": "If enabled, when new parts are duplicated, the a new light atlas entry pointing to the newly duplicated part is created (deriving the other properties from the source part)."
+    },
+    {
+      "Key": "MAP_Options_LightAtlas_Automatic_Delete_Toggle",
+      "Text": "Automatically delete entries"
+    },
+    {
+      "Key": "MAP_Options_LightAtlas_Automatic_Delete_Toggle_TT",
+      "Text": "If enabled, when parts are deleted, if there is a light atlas entry pointing to that part, the entry is deleted."
+    },
+    {
+      "Key": "MAP_Universe_Log_Map_Already_Loading",
+      "Text": "A map is already in the process of loading."
+    },
+    {
+      "Key": "MAP_Universe_Log_DS2_Params_Not_Ready_for_Map",
+      "Text": "Cannot load DS2 maps when params are not loaded."
+    },
+    {
+      "Key": "MAP_Universe_Log_Map_Already_Loaded",
+      "Text": "Map already loaded: {0}"
+    },
+    {
+      "Key": "MAP_Universe_Map_Load_Failed",
+      "Text": "Map Load Failed (debug build)"
+    },
+    {
+      "Key": "MAP_Universe_DuplicateCheck_Hit",
+      "Text": "Duplicate EntityID: {0} is being used by multiple regions {1} and {2}"
+    }
   ]
 }

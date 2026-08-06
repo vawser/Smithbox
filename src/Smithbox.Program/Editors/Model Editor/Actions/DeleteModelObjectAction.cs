@@ -184,9 +184,4 @@ public class DeleteModelObjectAction : ViewportAction
         }
         return false;
     }
-
-    public override string GetEditMessage()
-    {
-        return $"Deleted {Records.Count} object(s)";
-    }
 }

@@ -98,33 +98,31 @@ public class HavokNavmeshBank
                     using (MemoryStream memoryStream = new MemoryStream(FileBytes))
                     {
                         hkRootLevelContainer fileHkx;
+
                         try
                         {
                             fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
-                        }
-                        catch (InvalidDataException)
-                        {
-                            if (xmlSerializer == null)
-                                xmlSerializer = new HavokXmlSerializer();
-                            memoryStream.Position = 0;
-                            fileHkx = (hkRootLevelContainer)xmlSerializer.Read(memoryStream);
-                        }
 
-                        if (!HKX3_Containers.ContainsKey(name))
+                            if (!HKX3_Containers.ContainsKey(name))
+                            {
+                                HKX3_Containers.Add(name, fileHkx);
+                            }
+                        }
+                        catch (InvalidDataException ex)
                         {
-                            HKX3_Containers.Add(name, fileHkx);
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA_HKX", name), ex);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Smithbox.LogError(this, $"[{Project}:Map Editor] Failed to serialize havok file: {name}", LogPriority.High, ex);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_NVA_HKX", name), ex);
                 }
             }
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"[{Project}:Map Editor] Failed to load navmesh models: {binderEntry.Path}", LogPriority.High, e);
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA_HKXBND", binderEntry.Path), e);
         }
     }
 
@@ -173,7 +171,7 @@ public class HavokNavmeshBank
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as NVA", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA", entry.Path), e);
                         }
                     }
                     else
@@ -189,13 +187,13 @@ public class HavokNavmeshBank
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as NVA", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA", entry.Path), e);
                         }
                     }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} from VFS", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_VPS", entry.Path), e);
                 }
             }
         }
@@ -243,7 +241,7 @@ public class HavokNavmeshBank
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as NVA", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_NVA", entry.Path), e);
                 }
             }
             else
@@ -274,7 +272,7 @@ public class HavokNavmeshBank
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as NVA", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_NVA", entry.Path), e);
                 }
             }
         }

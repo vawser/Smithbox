@@ -226,9 +226,4 @@ public class OrderModelObjectAction : ViewportAction
 
         return ActionEvent.ObjectAddedRemoved;
     }
-
-    public override string GetEditMessage()
-    {
-        return "";
-    }
 }

@@ -102,9 +102,4 @@ public class EntAddAction : ViewportAction
         View.ViewportSelection.ClearSelection();
         return ActionEvent.ObjectAddedRemoved;
     }
-
-    public override string GetEditMessage()
-    {
-        return "";
-    }
 }

@@ -44,7 +44,8 @@ public class MassEditGroupAction : ViewportAction
                 }
             }
 
-            Smithbox.Log(this, $"Applied MSB mass edit affecting {tAction.Count} map objects for {name}");
+            Smithbox.Log(this, 
+                LOC.Get("MAP_Actions_MsbMassEdit_Effect", tAction.Count, name));
         }
 
         if (PostExecutionAction != null)
@@ -76,7 +77,8 @@ public class MassEditGroupAction : ViewportAction
                 }
             }
 
-            Smithbox.Log(this, $"Reverted MSB mass edit affecting {tAction.Count} map objects for {name}");
+            Smithbox.Log(this,
+                LOC.Get("MAP_Actions_MsbMassEdit_Revert", tAction.Count, name));
         }
 
         if (PostExecutionAction != null)
@@ -85,10 +87,5 @@ public class MassEditGroupAction : ViewportAction
         }
 
         return evt;
-    }
-
-    public override string GetEditMessage()
-    {
-        return "";
     }
 }

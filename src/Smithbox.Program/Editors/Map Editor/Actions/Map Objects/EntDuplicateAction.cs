@@ -51,8 +51,8 @@ public class EntDuplicateAction : ViewportAction
         {
             if (Clonables[i].MapID == null)
             {
-                Smithbox.Log(this, $"Failed to dupe {Clonables[i].Name}, as it had no defined MapID",
-                    LogLevel.Warning);
+                Smithbox.LogError(this,
+                    LOC.Get("MAP_Actions_Duplicate_Failed", Clonables[i].Name));
                 continue;
             }
 
@@ -243,10 +243,5 @@ public class EntDuplicateAction : ViewportAction
                 objectnames[source.MapID].Add(clone.Name);
             }
         }
-    }
-
-    public override string GetEditMessage()
-    {
-        return "";
     }
 }

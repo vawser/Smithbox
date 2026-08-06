@@ -59,9 +59,4 @@ public class EntRenameAction : ViewportAction
         //    entity.Name = name;
         //}
     }
-
-    public override string GetEditMessage()
-    {
-        return "";
-    }
 }

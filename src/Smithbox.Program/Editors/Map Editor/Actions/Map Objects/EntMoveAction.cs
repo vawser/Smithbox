@@ -42,8 +42,8 @@ public class EntMoveAction : ViewportAction
         {
             if (Moveables[i].MapID == null)
             {
-                Smithbox.Log(this, $"Failed to move {Moveables[i].Name}, as it had no defined MapID",
-                    LogLevel.Warning);
+                Smithbox.LogError(this,
+                    LOC.Get("MAP_Actions_Duplicate_Failed", Moveables[i].Name));
                 continue;
             }
 
@@ -221,10 +221,5 @@ public class EntMoveAction : ViewportAction
         }
 
         return ActionEvent.ObjectAddedRemoved;
-    }
-
-    public override string GetEditMessage()
-    {
-        return $"Move {Moveables.Count} object(s)";
     }
 }

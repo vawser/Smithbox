@@ -132,23 +132,19 @@ public class HavokCollisionBank
                         }
                         catch (InvalidDataException ex)
                         {
-                            Smithbox.LogError(this, $"[{Project}:Map Editor] Failed to read havok file: {name}", LogPriority.High, ex);
-                            //if (xmlSerializer == null)
-                            //    xmlSerializer = new HavokXmlSerializer();
-                            //memoryStream.Position = 0;
-                            //fileHkx = (hkRootLevelContainer)xmlSerializer.Read(memoryStream);
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", name), ex);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Smithbox.LogError(this, $"[{Project}:Map Editor] Failed to serialize havok file: {name}", LogPriority.High, ex);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
                 }
             }
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"[{Project}:Map Editor] Failed to load map collision: {bdtPath}", LogPriority.High, e);
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", bdtPath), e);
         }
     }
 

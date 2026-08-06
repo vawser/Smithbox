@@ -59,18 +59,18 @@ public class AutoInvadeBank
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Map Editor] Failed to read {file.Name} as AIP", LogPriority.High, e);
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_AIP", file.Name), e);
                         }
                     }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as AIPBND", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_AIPBND", entry.Path), e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} from VFS", LogPriority.High, e);
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_VPS", entry.Path), e);
             }
         }
     }
@@ -148,12 +148,12 @@ public class AutoInvadeBank
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as AIPBND", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_AIPBND", entry.Path), e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} from VFS", LogPriority.High, e);
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_VFS", entry.Path), e);
             }
         }
     }

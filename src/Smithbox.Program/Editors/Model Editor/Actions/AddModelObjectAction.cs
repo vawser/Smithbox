@@ -73,9 +73,4 @@ public class AddModelObjectAction : ViewportAction
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    public override string GetEditMessage()
-    {
-        return "";
-    }
-
 }

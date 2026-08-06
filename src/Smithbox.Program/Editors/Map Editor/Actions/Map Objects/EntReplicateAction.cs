@@ -75,8 +75,9 @@ public class EntReplicateAction : ViewportAction
             {
                 if (Clonables[i].MapID == null)
                 {
-                    Smithbox.Log(this, $"Failed to dupe {Clonables[i].Name}, as it had no defined MapID",
-                        LogLevel.Warning);
+                    Smithbox.LogError(this,
+                        LOC.Get("MAP_Actions_Duplicate_Failed", Clonables[i].Name));
+
                     continue;
                 }
 
@@ -436,10 +437,6 @@ public class EntReplicateAction : ViewportAction
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    public override string GetEditMessage()
-    {
-        return "";
-    }
     private void GenerateUniqueName(MsbEntity source, MsbEntity clone, Dictionary<string, HashSet<string>> objectnames)
     {
         if (source.Name == null)

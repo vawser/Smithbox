@@ -143,11 +143,6 @@ public class EntDeleteAction : ViewportAction
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    public override string GetEditMessage()
-    {
-        return "";
-    }
-
     private struct DeleteRecord
     {
         public MapContainer Map;

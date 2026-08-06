@@ -318,6 +318,12 @@ public class MapToolWindow
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_AssetBrowser);
 
+            if (ImGui.MenuItem("Resource List"))
+            {
+                CFG.Current.Interface_MapEditor_ResourceList = !CFG.Current.Interface_MapEditor_ResourceList;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
+
             ImGui.EndMenu();
         }
     }

@@ -32,7 +32,8 @@ public class EntReorderAction : ViewportAction
         // Will require more rigorous validation of the indices
         if (selection.Count > 1)
         {
-            PlatformUtils.Instance.MessageBox("You can only order one map object at a time.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError(this,
+                LOC.Get("MAP_Actions_Reorder_Selection_Exceeded"));
         }
         else
         {
@@ -218,10 +219,5 @@ public class EntReorderAction : ViewportAction
         }
 
         return ActionEvent.ObjectAddedRemoved;
-    }
-
-    public override string GetEditMessage()
-    {
-        return "";
     }
 }

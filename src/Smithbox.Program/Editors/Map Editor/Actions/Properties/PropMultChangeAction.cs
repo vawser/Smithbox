@@ -173,11 +173,6 @@ public class PropMultChangeAction : ViewportAction
         return ActionEvent.NoEvent;
     }
 
-    public override string GetEditMessage()
-    {
-        return "";
-    }
-
     private class PropertyChange
     {
         public int ArrayIndex;

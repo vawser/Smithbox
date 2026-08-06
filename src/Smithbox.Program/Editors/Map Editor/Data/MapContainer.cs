@@ -1191,7 +1191,7 @@ public class MapContainer : ObjectContainer
                     }
                     else
                     {
-                        throw new Exception($"WrappedObject \"{e.WrappedObject}\" is not a BTL Light.");
+                        throw new Exception(LOC.Get("MAP_Data_BTL_Seralize_FAIL", e.WrappedObject));
                     }
                 }
             }
@@ -1208,7 +1208,7 @@ public class MapContainer : ObjectContainer
                         }
                         else
                         {
-                            throw new Exception($"WrappedObject \"{e.WrappedObject}\" is not a BTL Light.");
+                            throw new Exception(LOC.Get("MAP_Data_BTL_Seralize_FAIL", e.WrappedObject));
                         }
                     }
                 }
@@ -1237,9 +1237,7 @@ public class MapContainer : ObjectContainer
                 }
                 else
                 {
-                    PlatformUtils.Instance.MessageBox(
-                        $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
-                        "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_DS2_Generator_ID_Collision", mp.ID, mp.Name));
                     return false;
                 }
 
@@ -1282,9 +1280,7 @@ public class MapContainer : ObjectContainer
                 }
                 else
                 {
-                    PlatformUtils.Instance.MessageBox(
-                        $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
-                        "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_DS2_Generator_ID_Collision", mp.ID, mp.Name));
                     return false;
                 }
 
@@ -1308,9 +1304,7 @@ public class MapContainer : ObjectContainer
                 }
                 else
                 {
-                    PlatformUtils.Instance.MessageBox(
-                        $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
-                        "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_DS2_Generator_ID_Collision", mp.ID, mp.Name));
                     return false;
                 }
 
@@ -1336,9 +1330,7 @@ public class MapContainer : ObjectContainer
                 }
                 else
                 {
-                    PlatformUtils.Instance.MessageBox(
-                        $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
-                        "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_DS2_Generator_ID_Collision", mp.ID, mp.Name));
                     return false;
                 }
 
@@ -1371,9 +1363,7 @@ public class MapContainer : ObjectContainer
                 }
                 else
                 {
-                    PlatformUtils.Instance.MessageBox(
-                        $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
-                        "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_DS2_Generator_ID_Collision", mp.ID, mp.Name));
                     return false;
                 }
 

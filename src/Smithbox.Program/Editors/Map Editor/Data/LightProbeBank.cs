@@ -62,7 +62,7 @@ public class LightProbeBank
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to load GI file.", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_GI", bhdPath), e);
                 }
             }
         }
@@ -82,7 +82,7 @@ public class LightProbeBank
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as BTPB", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_BTPB", entry.Path), e);
                     }
                 }
             }
@@ -195,7 +195,7 @@ public class LightProbeBank
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to load GI file.", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_GI", bhdPath), e);
                 }
             }
         }
@@ -248,7 +248,7 @@ public class LightProbeBank
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as BTPB", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_BTPB", entry.Path), e);
                     }
                 }
             }

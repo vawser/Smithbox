@@ -94,9 +94,4 @@ public class CloneModelObjectAction : ViewportAction
 
         return ActionEvent.ObjectAddedRemoved;
     }
-
-    public override string GetEditMessage()
-    {
-        return "";
-    }
 }

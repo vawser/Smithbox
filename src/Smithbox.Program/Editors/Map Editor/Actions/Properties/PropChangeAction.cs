@@ -13,8 +13,6 @@ public class PropChangeAction : ViewportAction
     private readonly List<PropertyChange> Changes = new();
     private Action<bool> PostExecutionAction;
 
-    private string EditMessage = "";
-
     private Entity TargetEnt;
 
     public PropChangeAction(object changed)
@@ -32,8 +30,6 @@ public class PropChangeAction : ViewportAction
         change.NewValue = newval;
         change.ArrayIndex = -1;
         Changes.Add(change);
-
-        EditMessage = $"{entityName} -> {prop.Name} was changed to {change.NewValue}";
     }
 
     public PropChangeAction(Entity ent, PropertyInfo prop, int index, object changed, object newval, string entityName = "")
@@ -63,12 +59,6 @@ public class PropChangeAction : ViewportAction
         change.NewValue = newval;
         change.ArrayIndex = index;
         Changes.Add(change);
-
-        EditMessage = $"{entityName} -> {prop.Name} was changed to {change.NewValue}";
-        if (change.ArrayIndex != -1)
-        {
-            EditMessage = $"{entityName} -> {prop.Name}[{change.ArrayIndex}] was changed to {change.NewValue}";
-        }
     }
 
     public void AddPropertyChange(PropertyInfo prop, object newval, int index = -1)
@@ -176,11 +166,6 @@ public class PropChangeAction : ViewportAction
         }
 
         return ActionEvent.NoEvent;
-    }
-
-    public override string GetEditMessage()
-    {
-        return EditMessage;
     }
 
     private class PropertyChange

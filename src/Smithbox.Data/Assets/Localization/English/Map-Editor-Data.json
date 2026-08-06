@@ -1,6 +1,202 @@
 {
   "Entries": [
     {
+      "Key": "MAP_Universe_Save_Map_PASS",
+      "Text": "Saved map: {0}"
+    },
+    {
+      "Key": "MAP_Universe_Save_Map_FAIL",
+      "Text": "Failed to save map: {0}"
+    },
+    {
+      "Key": "MAP_Universe_Save_BTL_PASS",
+      "Text": "Saved map BTL file: {0}"
+    },
+    {
+      "Key": "MAP_Universe_Save_BTL_FAIL",
+      "Text": "Failed to save map BTL file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_AIP",
+      "Text": "Failed to read {0} as AIP"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_AIPBND",
+      "Text": "Failed to read {0} as AIPBND"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_VPS",
+      "Text": "Failed to read {0} from VFS"
+    },
+    {
+      "Key": "MAP_Data_Failed_Write_AIPBND",
+      "Text": "Failed to write {0} as AIPBND"
+    },
+    {
+      "Key": "MAP_Data_Failed_Write_VFS",
+      "Text": "Failed to read {0} from VFS"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_HKX",
+      "Text": "Failed to read collision HKX file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Serialize_HKX",
+      "Text": "Failed to serialize collision HKX file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_HKXBND",
+      "Text": "Failed to load collision HKXBND: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_NVA_HKX",
+      "Text": "Failed to read navmesh HKX file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Serialize_NVA_HKX",
+      "Text": "Failed to serialize navmesh HKX file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_NVA_HKXBND",
+      "Text": "Failed to load navmesh HKXBND: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_NVA",
+      "Text": "Failed to read NVA file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Write_NVA",
+      "Text": "Failed to write NVA file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_GI",
+      "Text": "Failed to read GI file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_BTAB",
+      "Text": "Failed to read BTAB file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Write_GI",
+      "Text": "Failed to write GI file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Write_BTAB",
+      "Text": "Failed to write BTAB file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_BTPB",
+      "Text": "Failed to read BTPB file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Write_BTPB",
+      "Text": "Failed to write BTPB file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_MSB",
+      "Text": "Failed to read MSB file: {0}"
+    },
+    {
+      "Key": "MAP_Data_BTL_Seralize_FAIL",
+      "Text": "WrappedObject {0} is not a BTL Light."
+    },
+    {
+      "Key": "MAP_Data_DS2_Generator_ID_Collision",
+      "Text": "{0}:{1} has an ID that's already used. Change it to an unique value."
+    },
+    {
+      "Key": "MAP_Data_Setup_Primary_Bank_PASS",
+      "Text": "Setup the Primary Bank."
+    },
+    {
+      "Key": "MAP_Data_Setup_Primary_Bank_FAIL",
+      "Text": "Failed to setup the Primary Bank."
+    },
+    {
+      "Key": "MAP_Data_Setup_Vanilla_Bank_PASS",
+      "Text": "Setup the Vanilla Bank."
+    },
+    {
+      "Key": "MAP_Data_Setup_Vanilla_Bank_FAIL",
+      "Text": "Failed to setup the Vanilla Bank."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Meta_PASS",
+      "Text": "Setup the MSB meta."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Meta_FAIL",
+      "Text": "Failed to setup the MSB meta."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Map_Object_Names_PASS",
+      "Text": "Setup Map Object Name lists."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Map_Object_Names_FAIL",
+      "Text": "Failed to setup Map Object Name lists."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Map_Object_Selections_PASS",
+      "Text": "Setup Map Object Selection lists."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Map_Object_Selections_FAIL",
+      "Text": "Failed to setup Map Object Selection lists."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Asset_Masks_PASS",
+      "Text": "Setup MSB asset masks."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Asset_Masks_FAIL",
+      "Text": "Failed to setup MSB asset masks."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Spawn_States_PASS",
+      "Text": "Setup Spawn States annotations."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Spawn_States_FAIL",
+      "Text": "Failed to setup Spawn States annotations."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Speed_Tree_List_PASS",
+      "Text": "Setup Speed Tree List."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Speed_Tree_List_FAIL",
+      "Text": "Failed to setup Speed Tree List."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Grass_List_PASS",
+      "Text": "Setup Grass List."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Grass_List_FAIL",
+      "Text": "Failed to setup Grass List."
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
       "Key": "MAP_",
       "Text": ""
     },

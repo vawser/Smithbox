@@ -56,10 +56,5 @@ public class ViewportCompoundAction : ViewportAction
 
         return evt;
     }
-
-    public override string GetEditMessage()
-    {
-        return "";
-    }
 }
 

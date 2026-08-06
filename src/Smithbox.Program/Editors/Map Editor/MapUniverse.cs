@@ -1,19 +1,13 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Logger;
 using StudioCore.Renderer;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using Tracy;
 
 namespace StudioCore.Editors.MapEditor;
@@ -50,7 +44,7 @@ public class MapUniverse : IUniverse
     {
         if(!allowConcurrentMapLoad && IsLoading)
         {
-            Smithbox.LogError<MapUniverse>("A map is already in the process of loading.");
+            Smithbox.LogError<MapUniverse>(LOC.Get("MAP_Universe_Log_Map_Already_Loading"));
             return false;
         }
 
@@ -58,9 +52,7 @@ public class MapUniverse : IUniverse
         {
             if (Project.Handler.ParamEditor == null)
             {
-                // ParamBank must be loaded for DS2 maps
-                Smithbox.Log(this, "Cannot load DS2 maps when params are not loaded.",
-                    LogLevel.Warning, LogPriority.High);
+                Smithbox.LogError(this, LOC.Get("MAP_Universe_Log_DS2_Params_Not_Ready_for_Map"));
                 return false;
             }
         }
@@ -106,8 +98,7 @@ public class MapUniverse : IUniverse
         if (existingMap != null && 
             existingMap.LoadState is MapContentLoadState.Loaded)
         {
-            Smithbox.Log(this, $"Map \"{mapid}\" is already loaded",
-                LogLevel.Information, LogPriority.Normal);
+            Smithbox.LogError(this, LOC.Get("MAP_Universe_Log_Map_Already_Loaded", mapid));
 
             return false;
         }
@@ -255,8 +246,7 @@ public class MapUniverse : IUniverse
         catch (Exception e)
         {
 #if DEBUG
-            Smithbox.Log(this, "Map Load Failed (debug build)",
-                LogLevel.Error, LogPriority.High, e);
+            Smithbox.LogError(this, LOC.Get("MAP_Universe_Map_Load_Failed"), e);
             throw;
 #else
                 // Store async exception so it can be caught by crash handler.
@@ -387,7 +377,7 @@ public class MapUniverse : IUniverse
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Map Editor] Failed to load GI file.", LogPriority.High, e);
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_GI", bhdPath), e);
             }
         }
         else
@@ -525,11 +515,11 @@ public class MapUniverse : IUniverse
                     CheckDupeEntityIDs(map);
 
                     map.HasUnsavedChanges = false;
-                    Smithbox.Log(this, $"[Map Editor] Saved map: {curEntry.Filename}");
+                    Smithbox.Log(this, LOC.Get("MAP_Universe_Save_Map_PASS", curEntry.Filename));
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to save map: {curEntry.Filename}", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Universe_Save_Map_FAIL", curEntry.Filename), e);
 
                     if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
                     {
@@ -751,8 +741,8 @@ public class MapUniverse : IUniverse
                         var entryExists = entityIDList.TryGetValue(entityID, out var name);
                         if (entryExists)
                         {
-                            Smithbox.Log<MapUniverse>($"Duplicate EntityID: \"{entityID}\" is being used by multiple regions \"{obj.PrettyName}\" and \"{name}\"",
-                                LogLevel.Warning);
+                            Smithbox.LogError<MapUniverse>(
+                                LOC.Get("MAP_Universe_DuplicateCheck_Hit", entityID, obj.PrettyName, name));
                         }
                         else
                         {
@@ -1076,7 +1066,7 @@ public class MapUniverse : IUniverse
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to load BTL file.", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Universe_Save_BTL_FAIL", entry.Path), e);
                 }
             }
             else
@@ -1102,6 +1092,7 @@ public class MapUniverse : IUniverse
                 }
 
                 Project.VFS.ProjectFS.WriteFile(entry.Path, btlFile.ToArray());
+                Smithbox.Log(this, LOC.Get("MAP_Universe_Save_BTL_PASS", entry.Path));
             }
         }
     }

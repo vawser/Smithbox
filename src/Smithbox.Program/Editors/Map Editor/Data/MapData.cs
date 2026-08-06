@@ -1,18 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
-using StudioCore.Application;
-using StudioCore.Editors.FileBrowser;
-using StudioCore.Editors.ParamEditor;
+﻿using StudioCore.Editors.ParamEditor;
 using StudioCore.Logger;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Formats.Tar;
-using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -62,11 +52,11 @@ public class MapData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup the Primary Bank.");
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Primary_Bank_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Map Editor] Setup the Primary Bank.");
+            Smithbox.Log(this, LOC.Get("MAP_Data_Setup_Primary_Bank_PASS"));
         }
 
         // Vanilla Bank
@@ -75,11 +65,11 @@ public class MapData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup the Vanilla Bank.");
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Vanilla_Bank_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Map Editor] Setup the Vanilla Bank.");
+            Smithbox.Log(this, LOC.Get("MAP_Data_Setup_Vanilla_Bank_PASS"));
         }
 
         // META
@@ -90,11 +80,11 @@ public class MapData : IDisposable
 
         if (!metaTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup the MSB meta.");
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_MSB_Meta_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Map Editor] Setup the MSB meta.");
+            Smithbox.Log(this, LOC.Get("MAP_Data_Setup_MSB_Meta_PASS"));
         }
 
         // Map Object Names
@@ -103,11 +93,11 @@ public class MapData : IDisposable
 
         if (!mapObjNamesTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup the Map Object Name lists.");
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_MSB_Map_Object_Names_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Map Editor] Setup the the Map Object Name lists.");
+            Smithbox.Log(this, LOC.Get("MAP_Data_Setup_MSB_Map_Object_Names_PASS"));
         }
 
         // Map Object Selections
@@ -116,11 +106,11 @@ public class MapData : IDisposable
 
         if (!mapObjSelectionTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup the Map Object Selection lists.");
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_MSB_Map_Object_Selections_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Map Editor] Setup the the Map Object Selection lists.");
+            Smithbox.Log(this, LOC.Get("MAP_Data_Setup_MSB_Map_Object_Selections_PASS"));
         }
 
         // Asset Masks
@@ -129,11 +119,11 @@ public class MapData : IDisposable
 
         if (!assetMaskTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup MSB asset masks.");
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_MSB_Asset_Masks_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Map Editor] Setup the MSB asset masks.");
+            Smithbox.Log(this, LOC.Get("MAP_Data_Setup_MSB_Asset_Masks_PASS"));
         }
 
         // Spawn States
@@ -142,11 +132,11 @@ public class MapData : IDisposable
 
         if (!spawnStatesTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup the Spawn States annotations.");
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_MSB_Spawn_States_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Map Editor] Setup the the Spawn States annotations.");
+            Smithbox.Log(this, LOC.Get("MAP_Data_Setup_MSB_Spawn_States_PASS"));
         }
 
         // Speed Tree List
@@ -155,11 +145,11 @@ public class MapData : IDisposable
 
         if (!speedTreeListTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup Speed Tree List.");
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_MSB_Speed_Tree_List_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Map Editor] Setup Speed Tree List.");
+            Smithbox.Log(this, LOC.Get("MAP_Data_Setup_MSB_Speed_Tree_List_PASS"));
         }
 
         // Grass List
@@ -168,11 +158,11 @@ public class MapData : IDisposable
 
         if (!grassListTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup Grass List.");
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_MSB_Grass_List_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Map Editor] Setup Grass List.");
+            Smithbox.Log(this, LOC.Get("MAP_Data_Setup_MSB_Grass_List_PASS"));
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;

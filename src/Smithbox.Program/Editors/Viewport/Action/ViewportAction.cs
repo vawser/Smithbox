@@ -10,5 +10,4 @@ public abstract class ViewportAction
 {
     public abstract ActionEvent Execute(bool isRedo = false);
     public abstract ActionEvent Undo();
-    public abstract string GetEditMessage();
 }

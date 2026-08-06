@@ -1,15 +1,5 @@
-﻿using HKLib.hk2018.hke;
-using Microsoft.Extensions.Logging;
-using SoulsFormats;
-using SoulsFormats.KF4;
-using StudioCore.Application;
+﻿using SoulsFormats;
 using StudioCore.Logger;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks.Dataflow;
-using static SoulsFormats.NVA;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -65,7 +55,7 @@ public class LightAtlasBank
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to load GI file.", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_GI", bhdPath), e);
                 }
             }
         }
@@ -85,7 +75,7 @@ public class LightAtlasBank
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Map Editor] Failed to read {entry.Path} as BTAB", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_BTAB", entry.Path), e);
                     }
                 }
             }
@@ -196,7 +186,7 @@ public class LightAtlasBank
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to load GI file.", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_GI", bhdPath), e);
                 }
             }
         }
@@ -247,7 +237,7 @@ public class LightAtlasBank
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Map Editor] Failed to write {entry.Path} as BTAB", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_BTAB", entry.Path), e);
                     }
                 }
             }

@@ -122,8 +122,4 @@ public class EntChangeTypeAction : ViewportAction
 
     private record MapObjectChange(object OldObject, object NewObject, MsbEntity Entity);
 
-    public override string GetEditMessage()
-    {
-        return "";
-    }
 }
