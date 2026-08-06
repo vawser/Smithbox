@@ -127,7 +127,7 @@ public class MassEditPopupMenu
             LOC.Get("PARAM_MassEdit_Header_CSV_Export"),
             LOC.Get("PARAM_MassEdit_Header_CSV_Export_TT"));
 
-        GUI.MultilineTextInput("csvExportText", ref Parent.State.MassEditOutput_CSV);
+        GUI.MultilineTextInput("csvExportText", ref Parent.State.MassEditOutput_CSV, true);
 
         // Actions
         GUI.Spacer();
@@ -149,7 +149,7 @@ public class MassEditPopupMenu
             LOC.Get("PARAM_MassEdit_Header_CSV_Export_Field", Parent.State.MassEdit_SingleField_CSV),
             LOC.Get("PARAM_MassEdit_Header_CSV_Export_TT"));
 
-        GUI.MultilineTextInput("csvExportText", ref Parent.State.MassEditOutput_CSV);
+        GUI.MultilineTextInput("csvExportText", ref Parent.State.MassEditOutput_CSV, true);
 
         // Actions
         GUI.Spacer();
@@ -187,7 +187,7 @@ public class MassEditPopupMenu
             LOC.Get("PARAM_MassEdit_Header_Options"),
             LOC.Get("PARAM_MassEdit_Header_Options_TT"));
 
-        // Toggle: Append New ROws
+        // Toggle: Append New Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_MassEdit_Checkbox_Append_Mode")}##toggleAppendMode", 
             ref CFG.Current.Param_CSV_Append_Only);
         GUI.Tooltip(LOC.Get("PARAM_MassEdit_Checkbox_Append_Mode_TT"));
@@ -210,7 +210,12 @@ public class MassEditPopupMenu
             "importCsv", 
             LOC.Get("PARAM_MassEdit_Action_Import_CSV"),
             LOC.Get("PARAM_MassEdit_Action_Import_CSV_TT"),
-            ImportCsv);
+            ImportCsv,
+
+            "pasteFromClipboard",
+            LOC.Get("PARAM_MassEdit_Action_Paste_Clipboard"),
+            LOC.Get("PARAM_MassEdit_Action_Paste_Clipboard_TT"),
+            PasteFromClipboard);
 
         // Result
         GUI.Spacer();
@@ -247,8 +252,13 @@ public class MassEditPopupMenu
         GUI.MultiButtonInput("csvImportActions",
             "importCsv",
             LOC.Get("PARAM_MassEdit_Action_Import_CSV"),
-            LOC.Get("PARAM_MassEdit_Action_Import_CSV_TT"), 
-            ImportSingleCsv);
+            LOC.Get("PARAM_MassEdit_Action_Import_CSV_TT"),
+            ImportSingleCsv,
+
+            "pasteFromClipboard",
+            LOC.Get("PARAM_MassEdit_Action_Paste_Clipboard"),
+            LOC.Get("PARAM_MassEdit_Action_Paste_Clipboard_TT"),
+            PasteFromClipboard);
 
         // Result
         GUI.Spacer();
@@ -299,5 +309,10 @@ public class MassEditPopupMenu
         }
 
         Parent.State.MassEditResult_CSV = result;
+    }
+
+    public void PasteFromClipboard()
+    {
+        Parent.State.MassEditInput_CSV = PlatformUtils.Instance.GetClipboardText();
     }
 }

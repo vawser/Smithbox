@@ -715,7 +715,7 @@ public static class GUI
         }
     }
 
-    public static void MultilineTextInput(string id, ref string input)
+    public static void MultilineTextInput(string id, ref string input, bool readOnly = false)
     {
         var tblFlags = ImGuiTableFlags.SizingFixedFit;
 
@@ -727,12 +727,20 @@ public static class GUI
             ImGui.TableSetColumnIndex(0);
 
             var inputSize = GetMultilineTextSize();
-            ImGui.InputTextMultiline($"##{id}_input", ref input, 65536, inputSize);
+
+            var contentBytes = input != null ? Encoding.UTF8.GetByteCount(input) : 0;
+            uint bufferSize = readOnly ? (uint)(contentBytes + 1) : (uint)Math.Max(contentBytes * 2 + 4096, 65536);
+            var flags = ImGuiInputTextFlags.NoUndoRedo;
+            if (readOnly)
+                flags = flags | ImGuiInputTextFlags.ReadOnly;
+
+            ImGui.InputTextMultiline($"##{id}_input", ref input, bufferSize, inputSize, flags);
 
             ImGui.EndTable();
         }
     }
-    public static void SinglelineTextInputWithHint(string id, ref string input, string hint)
+
+    public static void SinglelineTextInputWithHint(string id, ref string input, string hint, bool readOnly = false)
     {
         var tblFlags = ImGuiTableFlags.SizingFixedFit;
 

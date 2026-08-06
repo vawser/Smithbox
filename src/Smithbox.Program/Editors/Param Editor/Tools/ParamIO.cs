@@ -56,6 +56,7 @@ public static class ParamIO
         _reportBuilder.Clear();
 
         _reportBuilder.Append($@"ID{separator}{field}");
+        _reportBuilder.Append("\n");
 
         foreach (Param.Row row in rows)
         {

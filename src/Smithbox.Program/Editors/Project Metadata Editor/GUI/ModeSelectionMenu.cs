@@ -27,7 +27,7 @@ public class ModeSelectionMenu
 
         if(curProject == null)
         {
-            ImGui.Text("META_Select_Project_First");
+            ImGui.Text(LOC.Get("META_Select_Project_First"));
             return;
         }
 

@@ -177,6 +177,14 @@
       "Text": "Import the current CSV."
     },
     {
+      "Key": "PARAM_MassEdit_Action_Paste_Clipboard",
+      "Text": "Paste from Clipboard"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Paste_Clipboard_TT",
+      "Text": "Paste text from the clipboard into the Import text box. Use this for large text pastes."
+    },
+    {
       "Key": "PARAM_MassEdit_Header_Result",
       "Text": "Result"
     },

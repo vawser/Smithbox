@@ -128,7 +128,7 @@ public class ParamDataTransferTool
                 ImGui.EndCombo();
             }
 
-            // Specific Field for Impot
+            // Specific Field for Import
             if (ImportType is CsvImportType.SpecificField)
             {
                 GUI.Spacer();
@@ -184,7 +184,12 @@ public class ParamDataTransferTool
                 "importCsvFromFile",
                 LOC.Get("PARAM_DataTransfer_Action_File_Import"),
                 LOC.Get("PARAM_DataTransfer_Action_File_Import_TT"), 
-                ImportCsvFromFile);
+                ImportCsvFromFile,
+
+                "pasteFromClipboard",
+                LOC.Get("PARAM_MassEdit_Action_Paste_Clipboard"),
+                LOC.Get("PARAM_MassEdit_Action_Paste_Clipboard_TT"),
+                PasteFromClipboard);
 
             // Result
             GUI.Spacer();
@@ -427,6 +432,10 @@ public class ParamDataTransferTool
         {
             View.MassEdit.State.MassEditResult_CSV = result;
         }
+    }
+    public void PasteFromClipboard()
+    {
+        View.MassEdit.State.MassEditInput_CSV = PlatformUtils.Instance.GetClipboardText();
     }
     #endregion
 
