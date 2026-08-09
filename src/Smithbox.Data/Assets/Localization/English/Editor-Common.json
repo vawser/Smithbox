@@ -243,6 +243,6 @@
     {
       "Key": "EDITOR_SaveOutput_BTPB_TT",
       "Text": "If enabled, the BTPB files are outputted on save."
-    },
+    }
   ]
 }

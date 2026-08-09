@@ -27,7 +27,7 @@ public static class MeshProviderCache
 
             foreach (var key in keysToRemove)
             {
-                _cache.TryRemove(key);
+                _cache.Remove(key);
             }
         }
     }
@@ -60,95 +60,91 @@ public static class MeshProviderCache
 
         lock (_lock)
         {
-            if (_cache.ContainsKey(cacheKey))
+            if (_cache.TryGetValue(cacheKey, out var existing))
             {
-                if (_cache[cacheKey] is FlverMeshProvider fmp)
+                if (existing is FlverMeshProvider fmp)
                 {
                     return fmp;
                 }
 
                 throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
             }
+
+            FlverMeshProvider nfmp = new(virtualResourcePath);
+            _cache.Add(cacheKey, nfmp);
+            return nfmp;
         }
-
-        FlverMeshProvider nfmp = new(virtualResourcePath);
-
-        _cache.Add(cacheKey, nfmp);
-        return nfmp;
     }
 
     public static CollisionMeshProvider GetCollisionMeshProvider(string virtualResourcePath)
     {
         lock (_lock)
         {
-            if (_cache.ContainsKey(virtualResourcePath))
+            if (_cache.TryGetValue(virtualResourcePath, out var existing))
             {
-                if (_cache[virtualResourcePath] is CollisionMeshProvider fmp)
+                if (existing is CollisionMeshProvider fmp)
                 {
                     return fmp;
                 }
 
                 throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
             }
-        }
 
-        CollisionMeshProvider nfmp = new(virtualResourcePath);
-        _cache.Add(virtualResourcePath, nfmp);
-        return nfmp;
+            CollisionMeshProvider nfmp = new(virtualResourcePath);
+            _cache.Add(virtualResourcePath, nfmp);
+            return nfmp;
+        }
     }
 
     public static NavmeshProvider GetNVMMeshProvider(string virtualResourcePath)
     {
         lock (_lock)
         {
-            if (_cache.ContainsKey(virtualResourcePath))
+            if (_cache.TryGetValue(virtualResourcePath, out var existing))
             {
-                if (_cache[virtualResourcePath] is NavmeshProvider fmp)
+                if (existing is NavmeshProvider fmp)
                 {
                     return fmp;
                 }
 
                 throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
             }
-        }
 
-        NavmeshProvider nfmp = new(virtualResourcePath);
-        _cache.Add(virtualResourcePath, nfmp);
-        return nfmp;
+            NavmeshProvider nfmp = new(virtualResourcePath);
+            _cache.Add(virtualResourcePath, nfmp);
+            return nfmp;
+        }
     }
 
     public static HavokNavmeshProvider GetHavokNavMeshProvider(string virtualResourcePath, bool temp = false)
     {
         lock (_lock)
         {
-            if (!temp && _cache.ContainsKey(virtualResourcePath))
+            if (!temp && _cache.TryGetValue(virtualResourcePath, out var existing))
             {
-                if (_cache[virtualResourcePath] is HavokNavmeshProvider fmp)
+                if (existing is HavokNavmeshProvider fmp)
                 {
                     return fmp;
                 }
 
                 throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
             }
-        }
 
-        HavokNavmeshProvider nfmp = new(virtualResourcePath);
-        if (!temp)
-        {
-            _cache.Add(virtualResourcePath, nfmp);
-        }
+            HavokNavmeshProvider nfmp = new(virtualResourcePath);
+            if (!temp)
+            {
+                _cache.Add(virtualResourcePath, nfmp);
+            }
 
-        return nfmp;
+            return nfmp;
+        }
     }
 
     public static void InvalidateMeshProvider(IResourceHandle handle)
     {
         lock (_lock)
         {
-            if (_cache.ContainsKey(handle.AssetVirtualPath))
-            {
-                _cache.Remove(handle.AssetVirtualPath);
-            }
+            _cache.Remove(handle.AssetVirtualPath);
         }
     }
 }
