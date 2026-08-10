@@ -177,6 +177,166 @@
       "Text": "Failed to setup Grass List."
     },
     {
+      "Key": "MAP_Data_Setup_Aux_Bank_FAIL",
+      "Text": "Failed to setup Auxiliary MSB Bank for {0}."
+    },
+    {
+      "Key": "MAP_Data_Setup_Aux_Bank_PASS",
+      "Text": "Setup Auxiliary MSB Bank for {0}."
+    },
+    {
+      "Key": "MAP_Data_Setup_Map_Object_Name_Lists_FAIL",
+      "Text": "Failed to to load Map Object Name lists: {0}"
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
+      "Key": "MAP_",
+      "Text": ""
+    },
+    {
       "Key": "MAP_",
       "Text": ""
     },

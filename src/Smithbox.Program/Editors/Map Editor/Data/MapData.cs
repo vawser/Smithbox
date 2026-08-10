@@ -179,7 +179,7 @@ public class MapData : IDisposable
 
         if (!auxBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Map Editor] Failed to setup Aux MSB Bank for {targetProject.Descriptor.ProjectName}.");
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Aux_Bank_FAIL", targetProject.Descriptor.ProjectName));
             return false;
         }
 
@@ -192,7 +192,7 @@ public class MapData : IDisposable
             AuxBanks.Add(targetProject.Descriptor.ProjectName, newAuxBank);
         }
 
-        Smithbox.LogError(this, $"[Map Editor] Setup Aux MSB Bank for {targetProject.Descriptor.ProjectName}.");
+        Smithbox.Log(this, LOC.Get("MAP_Data_Setup_Aux_Bank_PASS", targetProject.Descriptor.ProjectName));
 
         return true;
     }
@@ -232,7 +232,7 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to load {file} for Map Object Name lists.", e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Map_Object_Name_Lists_FAIL", file), e);
                 }
             }
         }

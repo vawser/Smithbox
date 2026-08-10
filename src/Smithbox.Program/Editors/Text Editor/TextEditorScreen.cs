@@ -247,6 +247,12 @@ public class TextEditorScreen : EditorScreen
 
             // Save the configuration JSONs
             Smithbox.Instance.SaveConfiguration();
+
+            // Refresh FMG text cache in Param Editor on save
+            if(Project.Handler.ParamEditor != null)
+            {
+                RefreshFmgTextCache();
+            }
         }
     }
 
@@ -272,5 +278,18 @@ public class TextEditorScreen : EditorScreen
 
         // Save the configuration JSONs
         Smithbox.Instance.SaveConfiguration();
+
+        // Refresh FMG text cache in Param Editor on save
+        if (Project.Handler.ParamEditor != null)
+        {
+            RefreshFmgTextCache();
+        }
+    }
+
+    public void RefreshFmgTextCache()
+    {
+        var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
+
+        activeView.RowDecorators.SetupFmgDecorators();
     }
 }
