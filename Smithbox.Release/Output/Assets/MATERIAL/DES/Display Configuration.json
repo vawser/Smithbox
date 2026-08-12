@@ -1,9 +1,0 @@
-{
-  "FileListConfigurations": [
-    {
-        "SourceType": "MTD",
-        "Binder": "mtd",
-        "CommonPath": "N:\\DemonsSoul\\data\\DVDROOT\\mtd\\"
-    }
-  ]
-}

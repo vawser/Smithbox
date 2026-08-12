@@ -1,8 +1,0 @@
-{
-  "Name": "Emblem",
-  "File": "01_common",
-  "InternalFiles": [
-    "SB_PieceThumbnails"
-  ],
-  "SubTexturePrefix": "Piece_tmb_"
-}

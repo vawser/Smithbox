@@ -1,8 +1,0 @@
-{
-  "Name": "OS",
-  "File": "01_common",
-  "InternalFiles": [
-    "SB_OsIcon"
-  ],
-  "SubTexturePrefix": "OsIcon_"
-}
