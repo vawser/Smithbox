@@ -11,6 +11,7 @@ public class ModelToolWindow
     public ProjectEntry Project;
 
     public ModelDataTransferTool DataTransferTool;
+    public GltfExportTool GltfExportTool;
 
     public ModelToolWindow(ModelEditorView view, ProjectEntry project)
     {
@@ -18,6 +19,7 @@ public class ModelToolWindow
         Project = project;
 
         DataTransferTool = new(view, project);
+        GltfExportTool = new(view, project);
     }
 
     public void DisplayDropdown()
@@ -65,6 +67,14 @@ public class ModelToolWindow
         {
             View.ResourceListTool.Display("modelEditor", View.Universe);
         }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_GltfExport)
+        {
+            if (ImGui.CollapsingHeader($"{LOC.Get("MODEL_ToolWindow_GltfExport_Header")}##gltfExportHeader"))
+            {
+                GltfExportTool.OnToolWindow();
+            }
+        }
     }
 
     public void ViewMenu()
@@ -99,6 +109,13 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor = !CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor);
+
+            // glTF Export
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_GltfExport")}##gltfExportToggle"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_GltfExport = !CFG.Current.Interface_ModelEditor_Tool_GltfExport;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_GltfExport);
 
             ImGui.EndMenu();
         }

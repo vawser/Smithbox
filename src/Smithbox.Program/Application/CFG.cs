@@ -452,6 +452,10 @@ public class CFG
     public bool Interface_MapEditor_Tool_DisplayGroups = true;
     public bool Interface_MapEditor_Tool_Validation = true;
     public bool Interface_MapEditor_Tool_AssetBrowser = true;
+    public bool Interface_MapEditor_Tool_GltfExport = true;
+
+    public string MapEditor_GltfExport_OutputFolder = "";
+    public bool MapEditor_GltfExport_IncludeNormals = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Map_Editor = true;
@@ -539,6 +543,10 @@ public class CFG
     public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
     public bool Interface_ModelEditor_Tool_ResourceMonitor = true;
     public bool Interface_ModelEditor_Tool_Data_Transfer = true;
+    public bool Interface_ModelEditor_Tool_GltfExport = true;
+
+    public string ModelEditor_GltfExport_OutputFolder = "";
+    public bool ModelEditor_GltfExport_IncludeNormals = true;
 
     // Saving
     public bool ModelEditor_AutomaticSave_IncludeFLVER = true;

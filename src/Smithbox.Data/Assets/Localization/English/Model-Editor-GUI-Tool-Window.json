@@ -23,6 +23,14 @@
     {
       "Key": "MODEL_ToolWindow_View_Resource_Monitor",
       "Text": "Resource Monitor"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_GltfExport",
+      "Text": "glTF Export"
+    },
+    {
+      "Key": "MODEL_ToolWindow_GltfExport_Header",
+      "Text": "glTF Export"
     }
   ]
 }

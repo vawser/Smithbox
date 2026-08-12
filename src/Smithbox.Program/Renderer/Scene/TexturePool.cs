@@ -87,7 +87,7 @@ public class TexturePool
         }
     }
 
-    private static VkFormat GetPixelFormatFromDXGI(DDS.DXGI_FORMAT fmt)
+    internal static VkFormat GetPixelFormatFromDXGI(DDS.DXGI_FORMAT fmt)
     {
         switch (fmt)
         {
@@ -151,7 +151,7 @@ public class TexturePool
 
     // From MonoGame.Framework/Graphics/Texture2D.cs and MonoGame.Framework/Graphics/TextureCube.cs
     //private static (int ByteCount, Rectangle Rect) GetMipInfo(PixelFormat sf, int width, int height, int mip, bool isCubemap)
-    private static int GetMipInfo(VkFormat sf, int width, int height, int mip, bool isCubemap)
+    internal static int GetMipInfo(VkFormat sf, int width, int height, int mip, bool isCubemap)
     {
         width = Math.Max(width >> mip, 1);
         height = Math.Max(height >> mip, 1);

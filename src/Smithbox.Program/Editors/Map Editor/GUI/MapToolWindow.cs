@@ -15,6 +15,7 @@ public class MapToolWindow
     public SelectActionTool SelectActionTool;
     public VisibilityActionTool VisibilityActionTool;
     public MapDataTransferTool DataTransferTool;
+    public GltfExportTool GltfExportTool;
 
     public MapToolWindow(MapEditorView view, ProjectEntry project)
     {
@@ -25,6 +26,7 @@ public class MapToolWindow
         SelectActionTool = new(view, project);
         VisibilityActionTool = new(view, project);
         DataTransferTool = new(view, project);
+        GltfExportTool = new(view, project);
     }
 
     public void DisplayDropdown()
@@ -239,6 +241,14 @@ public class MapToolWindow
             View.ResourceListTool.Display("mapEditor", View.Universe);
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_GltfExport)
+        {
+            if (ImGui.CollapsingHeader("glTF Export"))
+            {
+                GltfExportTool.OnToolWindow();
+            }
+        }
+
         //if (CFG.Current.Interface_MapEditor_Tool_AssetBrowser)
         //{
         //    if (ImGui.CollapsingHeader("Asset Browser"))
@@ -323,6 +333,12 @@ public class MapToolWindow
                 CFG.Current.Interface_MapEditor_ResourceList = !CFG.Current.Interface_MapEditor_ResourceList;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
+
+            if (ImGui.MenuItem("glTF Export"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_GltfExport = !CFG.Current.Interface_MapEditor_Tool_GltfExport;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_GltfExport);
 
             ImGui.EndMenu();
         }
