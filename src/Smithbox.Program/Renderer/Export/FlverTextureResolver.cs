@@ -27,17 +27,16 @@ public static class FlverTextureResolver
         public string SpecularVirtualPath;
 
         /// <summary>
-        /// One of "OPAQUE", "MASK" or "BLEND" - guessed from keywords in the material's shader/MTD name
-        /// (From has no simple, universally-readable "this material is translucent" flag to read instead).
+        /// Always "MASK" - see <see cref="DetermineAlphaMode"/> for why.
         /// </summary>
-        public string AlphaMode = "OPAQUE";
+        public string AlphaMode = "MASK";
     }
 
     public static ResolvedTextures Resolve(ProjectEntry project, FLVER2.Material material, string flverVirtPath)
     {
         var result = new ResolvedTextures
         {
-            AlphaMode = DetermineAlphaMode(material.MTD)
+            AlphaMode = DetermineAlphaMode()
         };
 
         foreach (var tex in material.Textures)
@@ -79,21 +78,17 @@ public static class FlverTextureResolver
     }
 
     /// <summary>
-    /// Best-effort guess at a glTF alphaMode from keywords in the material's shader/MTD path. From's engine
-    /// has no single, generically-readable "this material is translucent/cutout" flag to read here instead.
+    /// Smithbox's own viewport (FlverShader.frag) doesn't actually branch on material type/g_BlendMode for
+    /// transparency at all - every FLVER material, unconditionally, does a hard alpha-test discard against
+    /// the diffuse texture's own alpha channel at a fixed 0.5 threshold:
+    /// <code>if (diffuseColor.w &lt; 0.5) discard;</code>
+    /// That's the entire "transparency system" the live viewport uses, so this reproduces it exactly with
+    /// glTF's MASK alphaMode (alphaCutoff 0.5) rather than trying to infer OPAQUE/BLEND from the material's
+    /// shader name or g_BlendMode param, which don't actually drive this in Smithbox's renderer.
     /// </summary>
-    private static string DetermineAlphaMode(string mtdPath)
+    private static string DetermineAlphaMode()
     {
-        var lower = (mtdPath ?? string.Empty).ToLowerInvariant();
-
-        if (lower.Contains("edge") || lower.Contains("alphatest") || lower.Contains("mask"))
-            return "MASK";
-
-        if (lower.Contains("blend") || lower.Contains("translucent") || lower.Contains("water") ||
-            lower.Contains("glass") || lower.Contains("transparent"))
-            return "BLEND";
-
-        return "OPAQUE";
+        return "MASK";
     }
 
     /// <summary>
