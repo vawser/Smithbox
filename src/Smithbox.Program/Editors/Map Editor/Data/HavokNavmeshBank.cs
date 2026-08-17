@@ -85,7 +85,6 @@ public class HavokNavmeshBank
             var binder = new BND4Reader(binderData.Value);
 
             HavokBinarySerializer serializer = new HavokBinarySerializer();
-            HavokXmlSerializer xmlSerializer = null;
 
             foreach (var file in binder.Files)
             {

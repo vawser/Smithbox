@@ -269,12 +269,12 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize the Map Object Selections: {projectFile}", e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Failed_Deserialize_Map_Object_Selections", projectFile), e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Map Editor] Failed to read the Map Object Selections: {projectFile}", e);
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Failed_Read_Map_Object_Selections", projectFile), e);
             }
         }
         else
@@ -295,7 +295,7 @@ public class MapData : IDisposable
             }
             catch (Exception ex)
             {
-                Smithbox.Log(this, $"Failed to write Map Entity Selection Groups: {projectFile}\n{ex}");
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Failed_Write_Map_Object_Selections", projectFile), ex);
             }
         }
 
@@ -336,7 +336,7 @@ public class MapData : IDisposable
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, $"Failed to save map object selections: {projectFile}", ex);
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Failed_Write_Map_Object_Selections", projectFile), ex);
         }
     }
 

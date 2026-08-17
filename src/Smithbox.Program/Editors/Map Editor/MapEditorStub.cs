@@ -49,9 +49,9 @@ public class MapEditorStub : IEditorStub
         if (ImGui.Begin($"{LOC.Get("MAP_Editor_Stub")}###mapEditor", ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);
-            ImGui.PopStyleVar(1);
+            ImGui.PopStyleVar(2);
 
-            if(Project.Handler.MapEditor != null)
+            if (Project.Handler.MapEditor != null)
             {
                 Project.Handler.MapEditor.OnGUI(commands);
             }
@@ -72,7 +72,7 @@ public class MapEditorStub : IEditorStub
         else
         {
             ImGui.PopStyleColor(1);
-            ImGui.PopStyleVar(1);
+            ImGui.PopStyleVar(2);
             ImGui.End();
         }
     }

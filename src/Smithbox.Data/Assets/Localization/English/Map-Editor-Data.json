@@ -186,180 +186,19 @@
     },
     {
       "Key": "MAP_Data_Setup_Map_Object_Name_Lists_FAIL",
-      "Text": "Failed to to load Map Object Name lists: {0}"
+      "Text": "Failed to to load Map Object Name list file: {0}"
     },
     {
-      "Key": "MAP_",
-      "Text": ""
+      "Key": "MAP_Data_Setup_Failed_Deserialize_Map_Object_Selections",
+      "Text": "Failed to deserialize Map Object Selection list file: {0}"
     },
     {
-      "Key": "MAP_",
-      "Text": ""
+      "Key": "MAP_Data_Setup_Failed_Read_Map_Object_Selections",
+      "Text": "Failed to read Map Object Selection list file: {0}"
     },
     {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    {
-      "Key": "MAP_",
-      "Text": ""
-    },
-    
+      "Key": "MAP_Data_Setup_Failed_Write_Map_Object_Selections",
+      "Text": "Failed to write Map Object Selection list file: {0}"
+    }
   ]
 }
