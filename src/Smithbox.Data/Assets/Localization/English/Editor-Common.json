@@ -81,6 +81,14 @@
       "Text": "Close View"
     },
     {
+      "Key": "EDITOR_Add_Viewport",
+      "Text": "Add Viewport"
+    },
+    {
+      "Key": "EDITOR_Close_Viewport",
+      "Text": "Close Current Viewport"
+    },
+    {
       "Key": "EDITOR_Menubar_Header_File",
       "Text": "File"
     },

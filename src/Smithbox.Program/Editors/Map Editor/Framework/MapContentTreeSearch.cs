@@ -9,11 +9,11 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MapContentFilters
+public class MapContentTreeSearch
 {
     private MapEditorView View;
 
-    public MapContentFilters(MapEditorView view)
+    public MapContentTreeSearch(MapEditorView view)
     {
         View = view;
     }

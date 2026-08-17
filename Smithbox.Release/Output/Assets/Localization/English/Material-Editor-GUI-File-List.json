@@ -1,0 +1,24 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_FileList_Header_File_List",
+      "Text": "File List"
+    },
+    {
+      "Key": "MAT_FileList_Header_File_List_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MAT_FileList_DisplayFullPath_Toggle_Hide",
+      "Text": "Hide Full Path"
+    },
+    {
+      "Key": "MAT_FileList_DisplayFullPath_Toggle_Show",
+      "Text": "Display Full Path"
+    },
+    {
+      "Key": "MAT_FileList_DisplayFullPath_Toggle_Hint",
+      "Text": "Toggle the display of the full path.\nCurrent Mode: {0}"
+    }
+  ]
+}

@@ -365,7 +365,8 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize spawn state entry: {file}", LogPriority.High, e);
+                    Smithbox.LogError(this, 
+                        LOC.Get("MAP_Data_Setup_Failed_Deserialize_Spawn_States", file), e);
                 }
             }
         }
@@ -388,7 +389,8 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize spawn state entry: {file}", LogPriority.High, e);
+                    Smithbox.LogError(this,
+                        LOC.Get("MAP_Data_Setup_Failed_Deserialize_Spawn_States", file), e);
                 }
             }
         }
@@ -421,7 +423,8 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize asset mask entry: {file}", LogPriority.High, e);
+                    Smithbox.LogError(this,
+                        LOC.Get("MAP_Data_Setup_Failed_Deserialize_Asset_Entry", file), e);
                 }
             }
         }
@@ -444,7 +447,8 @@ public class MapData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Map Editor] Failed to deserialize asset mask entry: {file}", LogPriority.High, e);
+                    Smithbox.LogError(this,
+                        LOC.Get("MAP_Data_Setup_Failed_Deserialize_Asset_Entry", file), e);
                 }
             }
         }
@@ -571,7 +575,8 @@ public class MapData : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Map Editor] Failed to deserialize speed tree list: {file}", LogPriority.High, e);
+                Smithbox.LogError(this,
+                    LOC.Get("MAP_Data_Setup_Failed_Deserialize_Speed_Tree_List", file), e);
             }
         }
 
@@ -597,7 +602,8 @@ public class MapData : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Map Editor] Failed to deserialize grass list: {file}", LogPriority.High, e);
+                Smithbox.LogError(this,
+                    LOC.Get("MAP_Data_Setup_Failed_Deserialize_Grass_Tree_List", file), e);
             }
         }
 

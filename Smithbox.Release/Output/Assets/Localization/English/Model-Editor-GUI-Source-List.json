@@ -1,0 +1,88 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_SourceList_Header",
+      "Text": "Containers"
+    },
+    {
+      "Key": "MODEL_SourceList_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_SourceList_Tab_Characters",
+      "Text": "Characters"
+    },
+    {
+      "Key": "MODEL_SourceList_Tab_Objects",
+      "Text": "Objects"
+    },
+    {
+      "Key": "MODEL_SourceList_Tab_Assets",
+      "Text": "Assets"
+    },
+    {
+      "Key": "MODEL_SourceList_Tab_Parts",
+      "Text": "Parts"
+    },
+    {
+      "Key": "MODEL_SourceList_MapPieces",
+      "Text": "Map Pieces"
+    },
+    {
+      "Key": "MODEL_SourceList_Filter_TT",
+      "Text": "Filter the model list entries."
+    },
+    {
+      "Key": "MODEL_SourceList_Toggle_Load_Mode_Select",
+      "Text": "Load on Select"
+    },
+    {
+      "Key": "MODEL_SourceList_Toggle_Load_Mode_Double_Click",
+      "Text": "Load on Double-Click"
+    },
+    {
+      "Key": "MODEL_SourceList_Toggle_Load_Mode_TT",
+      "Text": "Determines the loading behavior in the model source lists.\nLoad Type: {0}"
+    },
+    {
+      "Key": "MODEL_SourceList_Context_Action_Load",
+      "Text": "Load"
+    },
+    {
+      "Key": "MODEL_SourceList_Context_Action_Copy_Name",
+      "Text": "Copy Name"
+    },
+    {
+      "Key": "MODEL_SourceList_Context_Action_Copy_Name_TT",
+      "Text": "Copy the name of this container to the clipboard."
+    },
+    {
+      "Key": "MODEL_SourceList_Context_Action_Update_Alias_Header",
+      "Text": "Update Alias"
+    },
+    {
+      "Key": "MODEL_SourceList_Context_Action_Update_Alias_TT",
+      "Text": "Update the alias associated with this container name."
+    },
+    {
+      "Key": "MODEL_SourceList_Alias_Name",
+      "Text": "Alias Name"
+    },
+    {
+      "Key": "MODEL_SourceList_Alias_Name_TT",
+      "Text": "The name for the alias associated with this model name."
+    },
+    {
+      "Key": "MODEL_SourceList_Commit_Alias",
+      "Text": "Commit"
+    },
+    {
+      "Key": "MODEL_SourceList_Commit_Alias_TT",
+      "Text": "Update the alias entry for this model name."
+    },
+    {
+      "Key": "MODEL_SourceList_Log_Update_Alias",
+      "Text": "Updated aliases."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_Data_Setup_Material_Display_Config_PASS",
+      "Text": "Setup Material Display Configuration."
+    },
+    {
+      "Key": "MAT_Data_Setup_Material_Display_Config_FAIL",
+      "Text": "Failed to setup Material Display Configuration."
+    },
+    {
+      "Key": "MAT_Data_Setup_Primary_Bank_PASS",
+      "Text": "Setup Primary Bank."
+    },
+    {
+      "Key": "MAT_Data_Setup_Primary_Bank_FAIL",
+      "Text": "Failed to setup Primary Bank."
+    },
+    {
+      "Key": "MAT_Data_Log_Failed_to_Deserialize_Material_Display_Config",
+      "Text": "Failed to deserialize Material Display Configuration file: {0}"
+    },
+    {
+      "Key": "MAT_Data_Log_Failed_to_Read_Material_Display_Config",
+      "Text": "Failed to read Material Display Configuration file: {0}"
+    },
+    {
+      "Key": "MAT_Data_Log_Failed_to_Read_MTD",
+      "Text": "Failed to read MTD file: {0}"
+    },
+    {
+      "Key": "MAT_Data_Log_Failed_to_Read_File",
+      "Text": "Failed to read file: {0}"
+    },
+    {
+      "Key": "MAT_Data_Log_Failed_to_Write_MTD",
+      "Text": "Failed to write MTD file: {0}"
+    },
+    {
+      "Key": "MAT_Data_Log_Failed_to_Write_File",
+      "Text": "Failed to write file: {0}"
+    },
+    {
+      "Key": "MAT_Data_Log_Failed_to_Read_MATBIN",
+      "Text": "Failed to read MATBIN file: {0}"
+    },
+    {
+      "Key": "MAT_Data_Log_Failed_to_Write_MATBIN",
+      "Text": "Failed to write MATBIN file: {0}"
+    }
+  ]
+}

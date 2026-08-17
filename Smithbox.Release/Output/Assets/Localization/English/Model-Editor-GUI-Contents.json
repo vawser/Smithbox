@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_Contents_Header",
+      "Text": "Contents"
+    },
+    {
+      "Key": "MODEL_Contents_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_Contents_No_Flver_Hint",
+      "Text": "No FLVER has been loaded yet."
+    },
+    {
+      "Key": "MODEL_Contents_Toggle_Show_All_TT",
+      "Text": "Force all model objects to be shown."
+    },
+    {
+      "Key": "MODEL_Contents_Toggle_Hide_All_TT",
+      "Text": "Force all model objects to be hidden."
+    },
+    {
+      "Key": "MODEL_Contents_Context_Info_Header",
+      "Text": "Information"
+    },
+    {
+      "Key": "MODEL_Contents_Action_Copy_Model_Name",
+      "Text": "Copy Model Name"
+    },
+    {
+      "Key": "MODEL_Contents_Action_Copy_Model_Name_TT",
+      "Text": "Copy the name of the model to the clipboard."
+    },
+    {
+      "Key": "MODEL_Contents_Entry_Title",
+      "Text": "Entry"
+    },
+    {
+      "Key": "MODEL_Contents_Mesh_Title",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_Contents_Visibility_Button_TT",
+      "Text": "Toggle visibility state of this model object."
+    }
+  ]
+}

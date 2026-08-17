@@ -1,0 +1,768 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_Filters_Map_Pieces_Title",
+      "Text": "Map Pieces"
+    },
+    {
+      "Key": "MAP_Filters_Map_Pieces_TT",
+      "Text": "Toggle the display of map objects classified as 'Map pieces'."
+    },
+    {
+      "Key": "MAP_Filters_Objects_Title",
+      "Text": "Objects"
+    },
+    {
+      "Key": "MAP_Filters_Objects_TT",
+      "Text": "Toggle the display of map objects classified as 'Objects'."
+    },
+    {
+      "Key": "MAP_Filters_Assets_Title",
+      "Text": "Assets"
+    },
+    {
+      "Key": "MAP_Filters_Assets_TT",
+      "Text": "Toggle the display of map objects classified as 'Assets'."
+    },
+    {
+      "Key": "MAP_Filters_Characters_Title",
+      "Text": "Characters"
+    },
+    {
+      "Key": "MAP_Filters_Characters_TT",
+      "Text": "Toggle the display of map objects classified as 'Characters'."
+    },
+    {
+      "Key": "MAP_Filters_Regions_Title",
+      "Text": "Regions"
+    },
+    {
+      "Key": "MAP_Filters_Regions_TT",
+      "Text": "Toggle the display of map objects classified as 'Regions'."
+    },
+    {
+      "Key": "MAP_Filters_Lights_Title",
+      "Text": "Lights"
+    },
+    {
+      "Key": "MAP_Filters_Lights_TT",
+      "Text": "Toggle the display of map objects classified as 'Lights'."
+    },
+    {
+      "Key": "MAP_Filters_Collisions_Title",
+      "Text": "Collisions"
+    },
+    {
+      "Key": "MAP_Filters_Collisions_TT",
+      "Text": "Toggle the display of map objects classified as 'Collisions'."
+    },
+    {
+      "Key": "MAP_Filters_Connect_Collisions_Title",
+      "Text": "Connect Collisions"
+    },
+    {
+      "Key": "MAP_Filters_Connect_Collisions_TT",
+      "Text": "Toggle the display of map objects classified as 'Connect Collisions'."
+    },
+    {
+      "Key": "MAP_Filters_Navmeshes_Title",
+      "Text": "Navmeshes"
+    },
+    {
+      "Key": "MAP_Filters_Navmeshes_TT",
+      "Text": "Toggle the display of map objects classified as 'Navmeshes'."
+    },
+    {
+      "Key": "MAP_Filters_Speed_Trees_Title",
+      "Text": "Speed Trees"
+    },
+    {
+      "Key": "MAP_Filters_Speed_Trees_TT",
+      "Text": "Toggle the display of map objects classified as 'Speed Trees'."
+    },
+    {
+      "Key": "MAP_Filters_Invasion_Points_Title",
+      "Text": "Invasion Points"
+    },
+    {
+      "Key": "MAP_Filters_Invasion_Points_TT",
+      "Text": "Toggle the display of map objects classified as 'Invasion Points'."
+    },
+    {
+      "Key": "MAP_Filters_Light_Probes_Title",
+      "Text": "Light Probes"
+    },
+    {
+      "Key": "MAP_Filters_Light_Probes_TT",
+      "Text": "Toggle the display of map objects classified as 'Light Probes'."
+    },
+    {
+      "Key": "MAP_Filters_DS2_Region0",
+      "Text": "Region0"
+    },
+    {
+      "Key": "MAP_Filters_DS2_Light",
+      "Text": "Light"
+    },
+    {
+      "Key": "MAP_Filters_DS2_Start_Point",
+      "Text": "Start Point"
+    },
+    {
+      "Key": "MAP_Filters_DS2_Sound",
+      "Text": "Sound"
+    },
+    {
+      "Key": "MAP_Filters_DS2_SFX",
+      "Text": "SFX"
+    },
+    {
+      "Key": "MAP_Filters_DS2_Wind",
+      "Text": "Wind"
+    },
+    {
+      "Key": "MAP_Filters_DS2_Env_Light",
+      "Text": "Env Light"
+    },
+    {
+      "Key": "MAP_Filters_DS2_Fog",
+      "Text": "Fog"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Invasion_Point",
+      "Text": "Invasion Point"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Environment_Map_Point",
+      "Text": "Environment Map Point"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Sound",
+      "Text": "Sound"
+    },
+    {
+      "Key": "MAP_Filters_DS3_SFX",
+      "Text": "SFX"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Wind_SFX",
+      "Text": "Wind SFX"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Spawn_Point",
+      "Text": "Spawn Point"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Message",
+      "Text": "Message"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Patrol_Route",
+      "Text": "Patrol Route"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Movement_Point",
+      "Text": "Movement Point"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Warp_Point",
+      "Text": "Warp Point"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Activation_Area",
+      "Text": "Activation Area"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Event",
+      "Text": "Event"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Logic",
+      "Text": "Logic"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Environment_Map_Effect_Box",
+      "Text": "Environment Map Effect Box"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Wind_Area",
+      "Text": "Wind Area"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Muffling_Box",
+      "Text": "Muffling Box"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Muffling_Portal",
+      "Text": "Muffling Portal"
+    },
+    {
+      "Key": "MAP_Filters_DS3_Other",
+      "Text": "Other"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Invasion_Point",
+      "Text": "Invasion Point"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Environment_Map_Point",
+      "Text": "Environment Map Point"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Sound",
+      "Text": "Sound"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Wind_SFX",
+      "Text": "Wind SFX"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Spawn_Point",
+      "Text": "Spawn Point"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Patrol_Route",
+      "Text": "Patrol Route"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Warp_Point",
+      "Text": "Warp Point"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Activation_Area",
+      "Text": "Activation Area"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Event",
+      "Text": "Event"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Logic",
+      "Text": "Logic"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Environment_Map_Effect",
+      "Text": "Environment Map Effect"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Wind_Area",
+      "Text": "Wind Area"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Muffling_Box",
+      "Text": "Muffling Box"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Muffling_Portal",
+      "Text": "Muffling Portal"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Sound_Space_Override",
+      "Text": "Sound Space Override"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Muffling_Plane",
+      "Text": "Muffling Plane"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Parts_Group_Area",
+      "Text": "Parts Group Area"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Auto_Draw_Group_Point",
+      "Text": "Auto Draw Group Point"
+    },
+    {
+      "Key": "MAP_Filters_SDT_Other",
+      "Text": "Other"
+    },
+    {
+      "Key": "MAP_Filters_ER_Invasion_Point",
+      "Text": "Invasion Point"
+    },
+    {
+      "Key": "MAP_Filters_ER_Environment_Map_Point",
+      "Text": "Environment Map Point"
+    },
+    {
+      "Key": "MAP_Filters_ER_Sound",
+      "Text": "Sound"
+    },
+    {
+      "Key": "MAP_Filters_ER_SFX",
+      "Text": "SFX"
+    },
+    {
+      "Key": "MAP_Filters_ER_Wind_SFX",
+      "Text": "Wind SFX"
+    },
+    {
+      "Key": "MAP_Filters_ER_Spawn_Point",
+      "Text": "Spawn Point"
+    },
+    {
+      "Key": "MAP_Filters_ER_Message",
+      "Text": "Message"
+    },
+    {
+      "Key": "MAP_Filters_ER_Environment_Map_Effect_Box",
+      "Text": "Environment Map Effect Box"
+    },
+    {
+      "Key": "MAP_Filters_ER_Wind_Area",
+      "Text": "Wind Area"
+    },
+    {
+      "Key": "MAP_Filters_ER_Connection",
+      "Text": "Connection"
+    },
+    {
+      "Key": "MAP_Filters_ER_Patrol_Route_22",
+      "Text": "Patrol Route 22"
+    },
+    {
+      "Key": "MAP_Filters_ER_Buddy_Summon_Point",
+      "Text": "Buddy Summon Point"
+    },
+    {
+      "Key": "MAP_Filters_ER_Disable_Tumbleweed",
+      "Text": "Disable Tumbleweed"
+    },
+    {
+      "Key": "MAP_Filters_ER_Muffling_Box",
+      "Text": "Muffling Box"
+    },
+    {
+      "Key": "MAP_Filters_ER_Muffling_Portal",
+      "Text": "Muffling Portal"
+    },
+    {
+      "Key": "MAP_Filters_ER_Sound_Region",
+      "Text": "Sound Region"
+    },
+    {
+      "Key": "MAP_Filters_ER_Muffling_Plane",
+      "Text": "Muffling Plane"
+    },
+    {
+      "Key": "MAP_Filters_ER_Patrol_Route",
+      "Text": "Patrol Route"
+    },
+    {
+      "Key": "MAP_Filters_ER_Map_Point",
+      "Text": "Map Point"
+    },
+    {
+      "Key": "MAP_Filters_ER_Weather_Override",
+      "Text": "Weather Override"
+    },
+    {
+      "Key": "MAP_Filters_ER_Auto_Draw_Group_Point",
+      "Text": "Auto Draw Group Point"
+    },
+    {
+      "Key": "MAP_Filters_ER_Group_Defeat_Reward",
+      "Text": "Group Defeat Reward"
+    },
+    {
+      "Key": "MAP_Filters_ER_Map_Point_Discovery_Override",
+      "Text": "Map Point Discovery Override"
+    },
+    {
+      "Key": "MAP_Filters_ER_Map_Point_Participation_Override",
+      "Text": "Map Point Participation Override"
+    },
+    {
+      "Key": "MAP_Filters_ER_Hitset",
+      "Text": "Hitset"
+    },
+    {
+      "Key": "MAP_Filters_ER_Fast_Travel_Restriction",
+      "Text": "Fast Travel Restriction"
+    },
+    {
+      "Key": "MAP_Filters_ER_Weather_Create_Asset_Point",
+      "Text": "Weather Create Asset Point"
+    },
+    {
+      "Key": "MAP_Filters_ER_Play_Area",
+      "Text": "Play Area"
+    },
+    {
+      "Key": "MAP_Filters_ER_Environment_Map_Output",
+      "Text": "Environment Map Output"
+    },
+    {
+      "Key": "MAP_Filters_ER_Mount_Jump",
+      "Text": "Mount Jump"
+    },
+    {
+      "Key": "MAP_Filters_ER_Dummy",
+      "Text": "Dummy"
+    },
+    {
+      "Key": "MAP_Filters_ER_Fall_Prevention_Removal",
+      "Text": "Fall Prevention Removal"
+    },
+    {
+      "Key": "MAP_Filters_ER_Navmesh_Cutting",
+      "Text": "Navmesh Cutting"
+    },
+    {
+      "Key": "MAP_Filters_ER_Map_Name_Override",
+      "Text": "Mount Jump"
+    },
+    {
+      "Key": "MAP_Filters_ER_Mount_Jump_Fall",
+      "Text": "Mount Jump Fall"
+    },
+    {
+      "Key": "MAP_Filters_ER_Locked_Mount_Jump",
+      "Text": "Locked Mount Jump"
+    },
+    {
+      "Key": "MAP_Filters_ER_Locked_Mount_Jump_Fall",
+      "Text": "Locked Mount Jump Fall"
+    },
+    {
+      "Key": "MAP_Filters_ER_Other",
+      "Text": "Other"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Entry_Point",
+      "Text": "Entry Point"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Environment_Map_Point",
+      "Text": "Environment Map Point"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Sound",
+      "Text": "Sound"
+    },
+    {
+      "Key": "MAP_Filters_AC6_SFX",
+      "Text": "SFX"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Wind_SFX",
+      "Text": "Wind SFX"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Environment_Map_Effect_Box",
+      "Text": "Environment Map Effect Box"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Wind_Placement",
+      "Text": "Wind Placement"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Muffling_Box",
+      "Text": "Muffling Box"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Muffling_Portal",
+      "Text": "Muffling Portal"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Sound_Override",
+      "Text": "Sound Override"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Patrol",
+      "Text": "Patrol"
+    },
+    {
+      "Key": "MAP_Filters_AC6_FE_Map_Display",
+      "Text": "FE Map Display"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Operational_Area",
+      "Text": "Operational Area"
+    },
+    {
+      "Key": "MAP_Filters_AC6_AI_Information_Sharing",
+      "Text": "AI Information Sharing"
+    },
+    {
+      "Key": "MAP_Filters_AC6_AI_Target",
+      "Text": "AI Target"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Wwise_Environment_Sound",
+      "Text": "Wwise Environment Sound"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Navi_Generation",
+      "Text": "Navi Generation"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Topdown_View",
+      "Text": "Topdown View"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Character_Following",
+      "Text": "Character Following"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Navmesh_Cost_Control",
+      "Text": "Navmesh Cost Control"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Arena_Appearance",
+      "Text": "Arena Appearance"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Garage_Camera",
+      "Text": "Garage Camera"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Jump_Edge_Restriction",
+      "Text": "Jump Edge Restriction"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Cutscene_Playback",
+      "Text": "Cutscene Playback"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Fall_Prevention_Wall_Removal",
+      "Text": "Fall Prevention Wall Removal"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Big_Jump",
+      "Text": "Big Jump"
+    },
+    {
+      "Key": "MAP_Filters_AC6_Other",
+      "Text": "Other"
+    },
+    {
+      "Key": "MAP_Filters_NR_Entry_Point",
+      "Text": "Entry Point"
+    },
+    {
+      "Key": "MAP_Filters_NR_Env_Map_Point",
+      "Text": "Environment Map Point"
+    },
+    {
+      "Key": "MAP_Filters_NR_Respawn_Point",
+      "Text": "Respawn Point"
+    },
+    {
+      "Key": "MAP_Filters_NR_Sound",
+      "Text": "Sound"
+    },
+    {
+      "Key": "MAP_Filters_NR_SFX",
+      "Text": "SFX"
+    },
+    {
+      "Key": "MAP_Filters_NR_Wind_SFX",
+      "Text": "Wind SFX"
+    },
+    {
+      "Key": "MAP_Filters_NR_Return_Point",
+      "Text": "Return Point"
+    },
+    {
+      "Key": "MAP_Filters_NR_Message",
+      "Text": "Message"
+    },
+    {
+      "Key": "MAP_Filters_NR_Env_Map_Effect_Box",
+      "Text": "Environment Map Effect Box"
+    },
+    {
+      "Key": "MAP_Filters_NR_Wind_Placement",
+      "Text": "Wind Placement"
+    },
+    {
+      "Key": "MAP_Filters_NR_Map_Connection",
+      "Text": "Map Connection"
+    },
+    {
+      "Key": "MAP_Filters_NR_Source_Waypoint",
+      "Text": "Source Waypoint"
+    },
+    {
+      "Key": "MAP_Filters_NR_Static_Waypoint",
+      "Text": "Static Waypoint"
+    },
+    {
+      "Key": "MAP_Filters_NR_Map_Grid_Layer_Connection",
+      "Text": "Map Grid Layer Connection"
+    },
+    {
+      "Key": "MAP_Filters_NR_Enemy_Spawn_Point",
+      "Text": "Enemy Spawn Point"
+    },
+    {
+      "Key": "MAP_Filters_NR_Buddy_Summon_Point",
+      "Text": "Buddy Summon Point"
+    },
+    {
+      "Key": "MAP_Filters_NR_Rolling_Object_Override",
+      "Text": "Rolling Object Override"
+    },
+    {
+      "Key": "MAP_Filters_NR_Muffling_Box",
+      "Text": "Muffling Box"
+    },
+    {
+      "Key": "MAP_Filters_NR_Muffling_Portal",
+      "Text": "Muffling Portal"
+    },
+    {
+      "Key": "MAP_Filters_NR_Sound_Override",
+      "Text": "Sound Override"
+    },
+    {
+      "Key": "MAP_Filters_NR_Muffling_Plane",
+      "Text": "Muffling Plane"
+    },
+    {
+      "Key": "MAP_Filters_NR_Patrol_Point",
+      "Text": "Patrol Point"
+    },
+    {
+      "Key": "MAP_Filters_NR_Map_Point",
+      "Text": "Map Point"
+    },
+    {
+      "Key": "MAP_Filters_NR_Sound_State",
+      "Text": "Sound State"
+    },
+    {
+      "Key": "MAP_Filters_NR_Map_Info_Override",
+      "Text": "Map Info Override"
+    },
+    {
+      "Key": "MAP_Filters_NR_Auto_Draw_Group_Sample",
+      "Text": "Auto Draw Group Sample"
+    },
+    {
+      "Key": "MAP_Filters_NR_Mass_Placement",
+      "Text": "Mass Placement"
+    },
+    {
+      "Key": "MAP_Filters_NR_Map_Point_Discovery_Override",
+      "Text": "Map Point Discovery Override"
+    },
+    {
+      "Key": "MAP_Filters_NR_Map_Point_Participation_Override",
+      "Text": "Map Point Participation Override"
+    },
+    {
+      "Key": "MAP_Filters_NR_Hit_Setting",
+      "Text": "Hit Setting"
+    },
+    {
+      "Key": "MAP_Filters_NR_Fast_Travel_Override",
+      "Text": "Fast Travel Override"
+    },
+    {
+      "Key": "MAP_Filters_NR_Weather_Asset_Generation",
+      "Text": "Weather Asset Generation"
+    },
+    {
+      "Key": "MAP_Filters_NR_Play_Area",
+      "Text": "Play Area"
+    },
+    {
+      "Key": "MAP_Filters_NR_Mid_Range_Env_Map_Output",
+      "Text": "Mid-Range Environment Map Output"
+    },
+    {
+      "Key": "MAP_Filters_NR_Map_Visibility_Override",
+      "Text": "Map Visibility Override"
+    },
+    {
+      "Key": "MAP_Filters_NR_Big_Jump",
+      "Text": "Big Jump"
+    },
+    {
+      "Key": "MAP_Filters_NR_Open_Character_Activate_Limit",
+      "Text": "Open Character Activate Limitt"
+    },
+    {
+      "Key": "MAP_Filters_NR_Sound_Dummy",
+      "Text": "Sound Dummy"
+    },
+    {
+      "Key": "MAP_Filters_NR_Fall_Prevention_Override",
+      "Text": "Fall Prevention Override"
+    },
+    {
+      "Key": "MAP_Filters_NR_Navmesh_Cutting",
+      "Text": "Navmesh Cutting"
+    },
+    {
+      "Key": "MAP_Filters_NR_Map_Name_Override",
+      "Text": "Map Name Override"
+    },
+    {
+      "Key": "MAP_Filters_NR_Big_Jump_Exit",
+      "Text": "Big Jump Exit"
+    },
+    {
+      "Key": "MAP_Filters_NR_Mount_Override",
+      "Text": "Mount Override"
+    },
+    {
+      "Key": "MAP_Filters_NR_Small_Base_Attach",
+      "Text": "Small Base Attach"
+    },
+    {
+      "Key": "MAP_Filters_NR_Bird_Route",
+      "Text": "Bird Route"
+    },
+    {
+      "Key": "MAP_Filters_NR_Clear_Info",
+      "Text": "Clear Info"
+    },
+    {
+      "Key": "MAP_Filters_NR_Respawn_Override",
+      "Text": "Respawn Override"
+    },
+    {
+      "Key": "MAP_Filters_NR_User_Edge_Removal_Inner",
+      "Text": "User Edge Removal Inner"
+    },
+    {
+      "Key": "MAP_Filters_NR_User_Edge_Removal_Outer",
+      "Text": "User Edge Removal Outer"
+    },
+    {
+      "Key": "MAP_Filters_NR_Big_Jump_Sealable",
+      "Text": "Big Jump Sealable"
+    },
+    {
+      "Key": "MAP_Filters_NR_Other",
+      "Text": "Other"
+    },
+    {
+      "Key": "MAP_Filters_Common_Toggle_Region_Visibility_OFF",
+      "Text": "Make All Regions Invisible"
+    },
+    {
+      "Key": "MAP_Filters_Common_Toggle_Region_Visibility_OFF_TT",
+      "Text": "Toggle the visibility of regions of all types to invisible."
+    },
+    {
+      "Key": "MAP_Filters_Common_Toggle_Region_Visibility_ON",
+      "Text": "Make All Regions Visible"
+    },
+    {
+      "Key": "MAP_Filters_Common_Toggle_Region_Visibility_ON_TT",
+      "Text": "Toggle the visibility of regions of all types to visible."
+    },
+    {
+      "Key": "MAP_Filters_Specific_Toggle_TT",
+      "Text": "Toggle the visibility of regions of the {0} type."
+    },
+    {
+      "Key": "MAP_Filters_Toggle_Action",
+      "Text": "Toggle: {0}"
+    }
+  ]
+}

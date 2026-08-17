@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_Window_Container_List",
+      "Text": "Container List"
+    },
+    {
+      "Key": "MAT_Window_File_List",
+      "Text": "File List"
+    },
+    {
+      "Key": "MAT_Window_Properties",
+      "Text": "Properties"
+    },
+    {
+      "Key": "MAT_Window_Tools",
+      "Text": "Tools"
+    }
+  ]
+}

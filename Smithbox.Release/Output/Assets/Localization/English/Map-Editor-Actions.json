@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_Actions_Duplicate_Failed",
+      "Text": "Failed to dupe {0}, as it had no defined MapID"
+    },
+    {
+      "Key": "MAP_Actions_Reorder_Selection_Exceeded",
+      "Text": "You can only order one map object at a time."
+    },
+    {
+      "Key": "MAP_Actions_MsbMassEdit_Effect",
+      "Text": "Applied MSB mass edit affecting {0} map objects for {1}"
+    },
+    {
+      "Key": "MAP_Actions_MsbMassEdit_Revert",
+      "Text": "Reverted MSB mass edit affecting {0} map objects for {1}"
+    }
+  ]
+}

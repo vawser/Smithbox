@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_ToolWindow_Tools_Header",
+      "Text": "Tools"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Header",
+      "Text": "View"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Grid_Configuration",
+      "Text": "Model Grid Configuration"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Instance_Finder",
+      "Text": "Model Instance Finder"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Mask_Toggler",
+      "Text": "Model Mask Toggler"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Resource_Monitor",
+      "Text": "Resource Monitor"
+    }
+  ]
+}

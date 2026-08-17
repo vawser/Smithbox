@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_Tools_Header_View",
+      "Text": "View"
+    },
+    {
+      "Key": "MAT_Tools_Data_Transfer",
+      "Text": "Data Transfer"
+    },
+    {
+      "Key": "MAT_Tools_Header_Tools",
+      "Text": "Tools"
+    }
+  ]
+}

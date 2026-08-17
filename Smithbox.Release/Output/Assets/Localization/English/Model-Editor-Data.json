@@ -17,48 +17,36 @@
       "Text": "Failed to write FLVER: {0}"
     },
     {
-      "Key": "MODEL_Data_Log_",
-      "Text": ""
+      "Key": "MODEL_Data_Setup_FlverAnnotations_PASS",
+      "Text": "Setup the FLVER annotations."
     },
     {
-      "Key": "MODEL_Data_Log_",
-      "Text": ""
+      "Key": "MODEL_Data_Setup_FlverAnnotations_FAIL",
+      "Text": "Failed to setup the FLVER annotations."
     },
     {
-      "Key": "MODEL_Data_Log_",
-      "Text": ""
+      "Key": "MODEL_Data_Setup_Primary_Bank_PASS",
+      "Text": "Setup the Primary Bank."
     },
     {
-      "Key": "MODEL_Data_Log_",
-      "Text": ""
+      "Key": "MODEL_Data_Setup_Primary_Bank_FAIL",
+      "Text": "Failed to setup the Primary Bank."
     },
     {
-      "Key": "MODEL_Data_Log_",
-      "Text": ""
+      "Key": "MODEL_Data_Log_Failed_Deserialize_Flver_Annotations",
+      "Text": "Failed to deserialize the FLVER annotations: {0}"
     },
     {
-      "Key": "MODEL_Data_Log_",
-      "Text": ""
+      "Key": "MODEL_Data_Log_Failed_Read_Flver_Annotations",
+      "Text": "Failed to read the FLVER annotations: {0}"
     },
     {
-      "Key": "MODEL_Data_Log_",
-      "Text": ""
+      "Key": "MODEL_Data_Log_Failed_Deserialize_Flver_Enums",
+      "Text": "Failed to deserialize the FLVER enums: {0}"
     },
     {
-      "Key": "MODEL_Data_Log_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Data_Log_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Data_Log_",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_Data_Log_",
-      "Text": ""
+      "Key": "MODEL_Data_Log_Failed_Read_Flver_Enums",
+      "Text": "Failed to read the FLVER enums: {0}"
     }
   ]
 }

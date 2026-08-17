@@ -226,7 +226,8 @@ public class MapResourceHandler
         // Map
         if (CFG.Current.MapEditor_TextureLoad_MapPieces)
         {
-            var texJob = ResourceManager.CreateNewJob($@"{AdjustedMapID} Textures");
+            var name = LOC.Get("MAP_ResourceManager_Map_Textures", AdjustedMapID);
+            var texJob = ResourceManager.CreateNewJob(name);
 
             foreach (ResourceDescriptor asset in LoadList_Map_Texture)
             {
@@ -248,7 +249,7 @@ public class MapResourceHandler
         // Character
         if (CFG.Current.MapEditor_TextureLoad_Characters)
         {
-            var texJob = ResourceManager.CreateNewJob($@"Character Textures");
+            var texJob = ResourceManager.CreateNewJob(LOC.Get("MAP_ResourceManager_Character_Textures"));
 
             foreach (ResourceDescriptor asset in LoadList_Character_Texture)
             {
@@ -270,7 +271,13 @@ public class MapResourceHandler
         // Asset
         if (CFG.Current.MapEditor_TextureLoad_Objects)
         {
-            var texJob = ResourceManager.CreateNewJob($@"Asset Textures");
+            var name = LOC.Get("MAP_ResourceManager_Object_Textures");
+            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            {
+                name = LOC.Get("MAP_ResourceManager_Asset_Textures");
+            }
+
+            var texJob = ResourceManager.CreateNewJob(name);
 
             foreach (ResourceDescriptor asset in LoadList_Asset_Texture)
             {
@@ -292,7 +299,7 @@ public class MapResourceHandler
         // Other Textures
         if (CFG.Current.MapEditor_TextureLoad_Misc)
         {
-            var texJob = ResourceManager.CreateNewJob($@"Other Textures");
+            var texJob = ResourceManager.CreateNewJob(LOC.Get("MAP_ResourceManager_Miscellaneous_Textures"));
 
             foreach (ResourceDescriptor asset in LoadList_Other_Texture)
             {
@@ -319,7 +326,7 @@ public class MapResourceHandler
         // MapPieces
         if (CFG.Current.MapEditor_ModelLoad_MapPieces)
         {
-            var job = ResourceManager.CreateNewJob($@"MapPieces");
+            var job = ResourceManager.CreateNewJob(LOC.Get("MAP_ResourceManager_Map_Piece_Models"));
 
             foreach (ResourceDescriptor asset in LoadList_MapPiece_Model)
             {
@@ -341,7 +348,7 @@ public class MapResourceHandler
         // Characters
         if (CFG.Current.MapEditor_ModelLoad_Characters)
         {
-            var job = ResourceManager.CreateNewJob($@"Characters");
+            var job = ResourceManager.CreateNewJob(LOC.Get("MAP_ResourceManager_Character_Models"));
 
             foreach (ResourceDescriptor asset in LoadList_Character_Model)
             {
@@ -363,7 +370,13 @@ public class MapResourceHandler
         // Objects
         if (CFG.Current.MapEditor_ModelLoad_Objects)
         {
-            var job = ResourceManager.CreateNewJob($@"Assets");
+            var name = LOC.Get("MAP_ResourceManager_Object_Models");
+            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            {
+                name = LOC.Get("MAP_ResourceManager_Asset_Models_ER");
+            }
+
+            var job = ResourceManager.CreateNewJob(name);
 
             foreach (ResourceDescriptor asset in LoadList_Asset_Model)
             {
@@ -385,7 +398,7 @@ public class MapResourceHandler
         // Collisions
         if (CFG.Current.MapEditor_ModelLoad_Collisions)
         {
-            var job = ResourceManager.CreateNewJob($@"Collisions");
+            var job = ResourceManager.CreateNewJob(LOC.Get("MAP_ResourceManager_Collision_Models"));
 
             string archive = null;
             HashSet<string> collisionAssets = new();
@@ -415,7 +428,7 @@ public class MapResourceHandler
         // Connect Collisions
         if (CFG.Current.MapEditor_ModelLoad_Collisions)
         {
-            var job = ResourceManager.CreateNewJob($@"Connect Collisions");
+            var job = ResourceManager.CreateNewJob(LOC.Get("MAP_ResourceManager_Connect_Collision_Models"));
 
             string archive = null;
             HashSet<string> collisionAssets = new();
@@ -445,7 +458,7 @@ public class MapResourceHandler
         // Navmesh
         if (CFG.Current.MapEditor_ModelLoad_Navmeshes)
         {
-            var job = ResourceManager.CreateNewJob($@"Navmesh");
+            var job = ResourceManager.CreateNewJob(LOC.Get("MAP_ResourceManager_Navmesh_Models"));
 
             foreach (ResourceDescriptor asset in LoadList_Navmesh)
             {

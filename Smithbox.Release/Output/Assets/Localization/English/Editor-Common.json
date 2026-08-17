@@ -179,6 +179,70 @@
     {
       "Key": "EDITOR_SaveOutput_FLVER_TT",
       "Text": "If enabled, the flver files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_MTD",
+      "Text": "MTD"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_MTD_TT",
+      "Text": "If enabled, the material files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_MATBIN",
+      "Text": "MATBIN"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_MATBIN_TT",
+      "Text": "If enabled, the material bin files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_MSB",
+      "Text": "MSB"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_MSB_TT",
+      "Text": "If enabled, the MSB files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_BTL",
+      "Text": "BTL"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_BTL_TT",
+      "Text": "If enabled, the BTL files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_AIP",
+      "Text": "AIP"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_AIP_TT",
+      "Text": "If enabled, the AIP files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_NVA",
+      "Text": "NVA"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_NVA_TT",
+      "Text": "If enabled, the NVA files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_BTAB",
+      "Text": "BTAB"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_BTAB_TT",
+      "Text": "If enabled, the BTAB files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_BTPB",
+      "Text": "BTPB"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_BTPB_TT",
+      "Text": "If enabled, the BTPB files are outputted on save."
     }
   ]
 }

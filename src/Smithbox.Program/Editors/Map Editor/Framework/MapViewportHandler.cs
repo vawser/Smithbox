@@ -36,12 +36,13 @@ public class MapViewportHandler
 
     public void DisplayMenu()
     {
-        if (ImGui.MenuItem("New Viewport"))
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Add_Viewport")}##addNewViewport", false))
         {
             AddView();
         }
 
-        if (ImGui.MenuItem("Close Current Viewport"))
+        var canClose = CountViews() > 1;
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Close_Viewport")}##closeCurrentViewport", false, canClose))
         {
             if (CountViews() > 1)
             {

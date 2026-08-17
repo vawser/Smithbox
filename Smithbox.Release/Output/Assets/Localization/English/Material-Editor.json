@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_Editor_Stub",
+      "Text": "Material Editor"
+    },
+    {
+      "Key": "MAT_View_Toggle_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "MAT_Save_Entry",
+      "Text": "Saved {0} in {1}."
+    },
+    {
+      "Key": "MAT_Failed_Save_Entry",
+      "Text": "Failed to save {0} in {1}."
+    }
+  ]
+}

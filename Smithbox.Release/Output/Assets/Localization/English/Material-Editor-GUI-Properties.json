@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_Properties_Header_Properties",
+      "Text": "Properties"
+    },
+    {
+      "Key": "MAT_Properties_Header_Properties_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MAT_Properties_DisplayCommunityNames_Internal",
+      "Text": "Internal"
+    },
+    {
+      "Key": "MAT_Properties_DisplayCommunityNames_Community",
+      "Text": "Community"
+    },
+    {
+      "Key": "MAT_Properties_DisplayCommunityNames_Hint",
+      "Text": "Toggle field name display type between Internal and Community.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "MAT_Properties_Object_Type",
+      "Text": "Object Type"
+    },
+    {
+      "Key": "MAT_Properties_Action_Duplicate_TT",
+      "Text": "Duplicate this entry."
+    },
+    {
+      "Key": "MAT_Properties_Action_Delete_TT",
+      "Text": "Delete this entry."
+    },
+    {
+      "Key": "MAT_Properties_FieldHint_Array_Type",
+      "Text": "Array Type: {0}"
+    },
+    {
+      "Key": "MAT_Properties_FieldHint_Array_Length",
+      "Text": " (Length: {0})"
+    },
+    {
+      "Key": "MAT_Properties_FieldHint_Value_Type",
+      "Text": "Value Type: {0}"
+    },
+    {
+      "Key": "MAT_Properties_FieldHint_Value_Min_Max",
+      "Text": " (Min {0}, Max {1})"
+    },
+    {
+      "Key": "MAT_Properties_FieldHint_String_Type",
+      "Text": "String Type: {0}"
+    },
+    {
+      "Key": "MAT_Properties_FieldHint_String_Length",
+      "Text": " (Length: {0})"
+    },
+    {
+      "Key": "MAT_Properties_Action_Copy_Property_Name",
+      "Text": "Copy Property Name"
+    },
+    {
+      "Key": "MAT_Properties_Action_Copy_Property_Name_TT",
+      "Text": "Copy the name of the property to the clipboard."
+    },
+    {
+      "Key": "MAT_Properties_Action_Copy_Property_Type",
+      "Text": "Copy Property Type"
+    },
+    {
+      "Key": "MAT_Properties_Action_Copy_Property_Type_TT",
+      "Text": "Copy the type of the property to the clipboard."
+    }
+  ]
+}

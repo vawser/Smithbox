@@ -1,0 +1,52 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_ResourceManager_Map_Textures",
+      "Text": "{0} Textures"
+    },
+    {
+      "Key": "MAP_ResourceManager_Character_Textures",
+      "Text": "Character Textures"
+    },
+    {
+      "Key": "MAP_ResourceManager_Asset_Textures",
+      "Text": "Asset Textures"
+    },
+    {
+      "Key": "MAP_ResourceManager_Object_Textures",
+      "Text": "Object Textures"
+    },
+    {
+      "Key": "MAP_ResourceManager_Miscellaneous_Textures",
+      "Text": "Miscellaneous Textures"
+    },
+    {
+      "Key": "MAP_ResourceManager_Map_Piece_Models",
+      "Text": "Map Pieces"
+    },
+    {
+      "Key": "MAP_ResourceManager_Character_Models",
+      "Text": "Characters"
+    },
+    {
+      "Key": "MAP_ResourceManager_Asset_Models",
+      "Text": "Assets"
+    },
+    {
+      "Key": "MAP_ResourceManager_Object_Models",
+      "Text": "Objects"
+    },
+    {
+      "Key": "MAP_ResourceManager_Collision_Models",
+      "Text": "Collision"
+    },
+    {
+      "Key": "MAP_ResourceManager_Connect_Collision_Models",
+      "Text": "Connect Collisions"
+    },
+    {
+      "Key": "MAP_ResourceManager_Navmesh_Models",
+      "Text": "Navmeshes"
+    }
+  ]
+}

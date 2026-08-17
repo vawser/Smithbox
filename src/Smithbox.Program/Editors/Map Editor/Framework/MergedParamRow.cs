@@ -90,7 +90,7 @@ public class MergedParamRow
     {
         if (Rows.Count > 0 && row.ID != Rows[0].ID)
         {
-            throw new ArgumentException("All IDs must match for param rows to be merged");
+            throw new ArgumentException(LOC.Get("MAP_MergedParamRow_AddRow_Exception"));
         }
 
         RowMap.Add(key, row);

@@ -50,7 +50,7 @@ public class MapEditorView
 
     public BasicFilters BasicFilters;
     public RegionFilters RegionFilters;
-    public MapContentFilters MapContentFilter;
+    public MapContentTreeSearch MapContentFilter;
 
     // Actions
     public CreateAction CreateAction;
@@ -137,7 +137,7 @@ public class MapEditorView
         // Optional Views
         BasicFilters = new BasicFilters(this);
         RegionFilters = new RegionFilters(this);
-        MapContentFilter = new MapContentFilters(this);
+        MapContentFilter = new MapContentTreeSearch(this);
 
         // Framework
         ActionHandler = new MapActionHandler(this, project);
