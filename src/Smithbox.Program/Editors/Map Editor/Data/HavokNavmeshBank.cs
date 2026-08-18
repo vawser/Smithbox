@@ -79,6 +79,11 @@ public class HavokNavmeshBank
         {
             var binderData = Project.VFS.FS.ReadFile(binderEntry.Path);
 
+            if (Project.VFS.ProjectFS.FileExists(binderEntry.Path))
+            {
+                binderData = Project.VFS.ProjectFS.ReadFile(binderEntry.Path);
+            }
+
             if (binderData == null)
                 return;
 

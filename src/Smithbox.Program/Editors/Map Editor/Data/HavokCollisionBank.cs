@@ -80,6 +80,15 @@ public class HavokCollisionBank
             var bdtData = Project.VFS.FS.ReadFile(bdtPath);
             var bhdData = Project.VFS.FS.ReadFile(bhdPath);
 
+            if(Project.VFS.ProjectFS.FileExists(bdtPath))
+            {
+                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
+            }
+            if (Project.VFS.ProjectFS.FileExists(bhdPath))
+            {
+                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
+            }
+
             if (bdtData == null || bhdData == null)
                 return;
 

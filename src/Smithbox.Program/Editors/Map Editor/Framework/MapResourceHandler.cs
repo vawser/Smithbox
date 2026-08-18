@@ -373,7 +373,7 @@ public class MapResourceHandler
             var name = LOC.Get("MAP_ResourceManager_Object_Models");
             if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
-                name = LOC.Get("MAP_ResourceManager_Asset_Models_ER");
+                name = LOC.Get("MAP_ResourceManager_Asset_Models");
             }
 
             var job = ResourceManager.CreateNewJob(name);
