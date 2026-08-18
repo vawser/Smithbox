@@ -238,7 +238,7 @@ public class MapEditorView
         // Map Groups
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Map Groups##mapEditor_MapGroups_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"Map Content Groups##mapEditor_MapGroups_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
