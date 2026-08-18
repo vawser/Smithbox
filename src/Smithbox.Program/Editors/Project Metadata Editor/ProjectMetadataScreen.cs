@@ -1,4 +1,6 @@
-﻿using Hexa.NET.ImGui;
+﻿using CsvHelper;
+using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System.Numerics;
@@ -22,8 +24,6 @@ public class ProjectMetadataScreen
 
     public MetadataSelection Selection;
 
-    public ModeSelectionMenu ModeMenu;
-
     // Project
     public ProjectEnumMenu EnumMenu;
     public ProjectAliasMenu AliasMenu;
@@ -36,7 +36,6 @@ public class ProjectMetadataScreen
     {
         Selection = new(this);
 
-        ModeMenu = new(this);
         EnumMenu = new();
         AliasMenu = new();
 
@@ -65,12 +64,19 @@ public class ProjectMetadataScreen
 
         ImGui.SetNextWindowDockID(mainDockspaceID, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Metadata_Editor")}###ProjectMetadataEditor", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Metadata_Editor")}###ProjectMetadataEditor", GUI.GetMainWindowFlags()))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
 
             Shortcuts();
+
+            if (ImGui.BeginMenuBar())
+            {
+                ModeMenu();
+
+                ImGui.EndMenuBar();
+            }
 
             var dsid = ImGui.GetID("DockSpace_ProjectMetadataEditor");
             ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_ProjectMetadataEditor);
@@ -100,24 +106,6 @@ public class ProjectMetadataScreen
 
     public void Display(uint editorDockspaceId)
     {
-        // Mode Selection
-        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectMetadataEditorView);
-        if (ImGui.Begin($@"{LOC.Get("META_Window_Mode_Selection")}###projectMetadataEditor_ModeSelection", GUI.GetInnerWindowFlags()))
-        {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-            {
-                FocusManager.SetFocus(EditorFocusContext.Metadata_ModeSelection);
-            }
-
-            ModeMenu.Display();
-        }
-
-        ImGui.End();
-
         // Project
         if (Selection.EditorMode is MetadataEditorMode.Project)
         {
@@ -197,6 +185,35 @@ public class ProjectMetadataScreen
             }
 
             ImGui.End();
+        }
+    }
+
+    public void ModeMenu()
+    {
+        var curMode = Selection.EditorMode;
+
+        if (ImGui.BeginMenu($"{LOC.Get("META_Mode_Menu_Header")}##modeMenuHeader"))
+        {
+            var previewName = LOC.Get(curMode.GetDisplayName());
+
+            if (ImGui.BeginCombo("##subEditorMode", previewName))
+            {
+                foreach (var entry in Enum.GetValues(typeof(MetadataEditorMode)))
+                {
+                    var curType = (MetadataEditorMode)entry;
+
+                    var displayName = LOC.Get(curType.GetDisplayName());
+
+                    if (ImGui.Selectable(displayName, curType == curMode))
+                    {
+                        Selection.EditorMode = curType;
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+
+            ImGui.EndMenu();
         }
     }
 
