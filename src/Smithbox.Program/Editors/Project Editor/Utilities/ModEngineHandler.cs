@@ -94,13 +94,15 @@ public static class ModEngineHandler
             var startInfo = new ProcessStartInfo
             {
                 FileName = "cmd.exe",
-                Arguments = $"/c {projectName}.me3",
                 WorkingDirectory = CFG.Current.Project_ME3_Profile_Directory,
-                UseShellExecute = false, 
-                RedirectStandardOutput = true, 
-                RedirectStandardError = true,  
-                CreateNoWindow = true          
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true
             };
+
+            startInfo.ArgumentList.Add("/c");
+            startInfo.ArgumentList.Add($"{projectName}.me3");
 
             Process.Start(startInfo);
         }
