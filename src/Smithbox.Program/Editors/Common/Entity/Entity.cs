@@ -198,12 +198,17 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// The drawgroups of this entity.
     /// </summary>
-    [XmlIgnore] public uint[] Drawgroups { get; set; }
+    [XmlIgnore] public uint[] DrawGroups { get; set; }
 
     /// <summary>
     /// The display groups of this entity.
     /// </summary>
-    [XmlIgnore] public uint[] Dispgroups { get; set; }
+    [XmlIgnore] public uint[] CollisionMasks { get; set; }
+
+    /// <summary>
+    /// The display groups of this entity.
+    /// </summary>
+    [XmlIgnore] public uint[] DisplayGroups { get; set; }
 
     /// <summary>
     /// The visibility of this entity.
@@ -1251,14 +1256,18 @@ public class Entity : ISelectable, IDisposable
     {
         RenderGroupRefName = "";
 
-        PropertyInfo myDrawProp = PropFinderUtil.FindProperty("DrawGroups", WrappedObject);
+        var myDrawProp = PropFinderUtil.FindProperty("DrawGroups", WrappedObject);
         if (myDrawProp == null)
         {
             HasRenderGroups = false;
             return;
         }
-        PropertyInfo myDispProp = PropFinderUtil.FindProperty("DispGroups", WrappedObject);
+
+        var myDispProp = PropFinderUtil.FindProperty("DispGroups", WrappedObject);
         myDispProp ??= PropFinderUtil.FindProperty("DisplayGroups", WrappedObject);
+
+        var myColMaskProp = PropFinderUtil.FindProperty("CollisionMask", WrappedObject);
+
         PropertyInfo myCollisionNameProp = PropFinderUtil.FindProperty("CollisionName", WrappedObject);
         myCollisionNameProp ??= PropFinderUtil.FindProperty("CollisionPartName", WrappedObject);
 
@@ -1280,13 +1289,21 @@ public class Entity : ISelectable, IDisposable
                     {
                         // Get DrawGroups from CollisionName reference
                         var colNamePropDraw = PropFinderUtil.FindProperty("DrawGroups", colNameEnt.WrappedObject);
-                        ;
+                        
                         var colNamePropDisp = PropFinderUtil.FindProperty("DisplayGroups", colNameEnt.WrappedObject);
-                        ;
                         colNamePropDisp ??= PropFinderUtil.FindProperty("DispGroups", colNameEnt.WrappedObject);
 
-                        Drawgroups = (uint[])PropFinderUtil.FindPropertyValue(colNamePropDraw, colNameEnt.WrappedObject);
-                        Dispgroups = (uint[])PropFinderUtil.FindPropertyValue(colNamePropDisp, colNameEnt.WrappedObject);
+                        var colNamePropColMask = PropFinderUtil.FindProperty("CollisionMask", colNameEnt.WrappedObject);
+
+                        DrawGroups = (uint[])PropFinderUtil.FindPropertyValue(colNamePropDraw, colNameEnt.WrappedObject);
+
+                        DisplayGroups = (uint[])PropFinderUtil.FindPropertyValue(colNamePropDisp, colNameEnt.WrappedObject);
+
+                        if (colNamePropColMask != null)
+                        {
+                            CollisionMasks = (uint[])PropFinderUtil.FindPropertyValue(colNamePropColMask, colNameEnt.WrappedObject);
+                        }
+
                         return;
                     }
 
@@ -1312,8 +1329,14 @@ public class Entity : ISelectable, IDisposable
         if (myDrawProp != null)
         {
             // Found Drawgroups, but no CollisionName reference
-            Drawgroups = (uint[])PropFinderUtil.FindPropertyValue(myDrawProp, WrappedObject);
-            Dispgroups = (uint[])PropFinderUtil.FindPropertyValue(myDispProp, WrappedObject);
+            DrawGroups = (uint[])PropFinderUtil.FindPropertyValue(myDrawProp, WrappedObject);
+            DisplayGroups = (uint[])PropFinderUtil.FindPropertyValue(myDispProp, WrappedObject);
+
+            if (myColMaskProp != null)
+            {
+                CollisionMasks = (uint[])PropFinderUtil.FindPropertyValue(myColMaskProp, WrappedObject);
+            }
+
             return;
         }
         HasRenderGroups = false;
@@ -1384,7 +1407,7 @@ public class Entity : ISelectable, IDisposable
         {
             UpdateDispDrawGroups();
             _renderSceneMesh.DrawGroups.AlwaysVisible = false;
-            _renderSceneMesh.DrawGroups.RenderGroups = Drawgroups;
+            _renderSceneMesh.DrawGroups.RenderGroups = DrawGroups;
         }
     }
 

@@ -12,6 +12,7 @@ public class MapToolWindow
     private ProjectEntry Project;
 
     public CommonActionTool CommonActionTool;
+    public PropertiesActionTool PropertiesActionTool;
     public SelectActionTool SelectActionTool;
     public VisibilityActionTool VisibilityActionTool;
     public MapDataTransferTool DataTransferTool;
@@ -22,6 +23,7 @@ public class MapToolWindow
         Project = project;
 
         CommonActionTool = new(view, project);
+        PropertiesActionTool = new(view, project);
         SelectActionTool = new(view, project);
         VisibilityActionTool = new(view, project);
         DataTransferTool = new(view, project);
@@ -108,6 +110,13 @@ public class MapToolWindow
             if (ImGui.CollapsingHeader("Common Actions"))
             {
                 CommonActionTool.Display();
+            }
+        }
+        if (CFG.Current.Interface_MapEditor_Tool_Properties_Action)
+        {
+            if (ImGui.CollapsingHeader("Property Actions"))
+            {
+                PropertiesActionTool.Display();
             }
         }
 
@@ -257,6 +266,12 @@ public class MapToolWindow
                 CFG.Current.Interface_MapEditor_Tool_Common_Action = !CFG.Current.Interface_MapEditor_Tool_Common_Action;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Common_Action);
+
+            if (ImGui.MenuItem("Property Actions"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_Properties_Action = !CFG.Current.Interface_MapEditor_Tool_Properties_Action;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Properties_Action);
 
             if (ImGui.MenuItem("Viewport"))
             {

@@ -77,8 +77,8 @@ public class DisplayGroupTool
         var sels = View.ViewportSelection.GetFilteredSelection<Entity>(e => e.HasRenderGroups);
         if (sels.Any())
         {
-            sdrawgroups = sels.First().Drawgroups;
-            sdispgroups = sels.First().Dispgroups;
+            sdrawgroups = sels.First().DrawGroups;
+            sdispgroups = sels.First().DisplayGroups;
         }
 
         if (View.ViewportHandler.ActiveViewport.RenderScene != null)
@@ -194,7 +194,7 @@ public class DisplayGroupTool
 
         if (InputManager.IsPressed(KeybindID.MapEditor_Apply_Display_Group) && sdispgroups != null)
         {
-            IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
+            IEnumerable<uint[]> selDispGroups = sels.Select(s => s.DisplayGroups);
             PropArrayCopyAction action = new(dg.RenderGroups, selDispGroups);
 
             View.ViewportActionManager.ExecuteAction(action);
@@ -202,7 +202,7 @@ public class DisplayGroupTool
 
         if (InputManager.IsPressed(KeybindID.MapEditor_Apply_Draw_Group) && sdispgroups != null)
         {
-            IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
+            IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.DrawGroups);
             PropArrayCopyAction action = new(dg.RenderGroups, selDrawGroups);
 
             View.ViewportActionManager.ExecuteAction(action);
@@ -262,8 +262,8 @@ public class DisplayGroupTool
             return;
         }
 
-        var sdrawgroups = sels.First().Drawgroups;
-        var sdispgroups = sels.First().Dispgroups;
+        var sdrawgroups = sels.First().DrawGroups;
+        var sdispgroups = sels.First().DisplayGroups;
 
         for (var i = 0; i < _dispGroupCount; i++)
         {
@@ -283,8 +283,8 @@ public class DisplayGroupTool
             return;
         }
 
-        var sdrawgroups = sels.First().Drawgroups;
-        var sdispgroups = sels.First().Dispgroups;
+        var sdrawgroups = sels.First().DrawGroups;
+        var sdispgroups = sels.First().DisplayGroups;
 
         for (var i = 0; i < _dispGroupCount; i++)
         {
@@ -304,7 +304,7 @@ public class DisplayGroupTool
             return;
         }
 
-        IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
+        IEnumerable<uint[]> selDispGroups = sels.Select(s => s.DisplayGroups);
         PropArrayCopyAction action = new(dg.RenderGroups, selDispGroups);
 
         View.ViewportActionManager.ExecuteAction(action);
@@ -322,7 +322,7 @@ public class DisplayGroupTool
             return;
         }
 
-        IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
+        IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.DrawGroups);
         PropArrayCopyAction action = new(dg.RenderGroups, selDrawGroups);
 
         View.ViewportActionManager.ExecuteAction(action);
