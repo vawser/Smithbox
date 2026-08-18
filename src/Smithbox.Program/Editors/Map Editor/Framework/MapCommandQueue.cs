@@ -99,8 +99,8 @@ public class MapCommandQueue
             return;
 
         curView.LocalSearchView.propSearchCmd = commands.Skip(1).ToArray();
-        curView.LocalSearchView.Property = curView.MapPropertyView.RequestedSearchProperty;
-        curView.MapPropertyView.RequestedSearchProperty = null;
+        curView.LocalSearchView.Property = curView.MapPropertyView.MsbPropertyView.RequestedSearchProperty;
+        curView.MapPropertyView.MsbPropertyView.RequestedSearchProperty = null;
         curView.LocalSearchView.UpdatePropSearch = true;
     }
 

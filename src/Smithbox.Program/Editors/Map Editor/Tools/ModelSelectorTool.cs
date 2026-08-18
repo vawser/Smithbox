@@ -77,6 +77,13 @@ public class ModelSelectorTool
             {
                 DisplayMapPieceList();
             }
+            else if (EntityHelper.IsPartCollision(firstSelection))
+            {
+                if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                {
+                    DisplayCollisionList();
+                }
+            }
             else
             {
                 ImGui.Text("Your current selection does not use a model.");
@@ -241,6 +248,57 @@ public class ModelSelectorTool
             ImGui.EndChild();
         }
     }
+    private void DisplayCollisionList()
+    {
+        var mapID = View.Selection.SelectedMapID;
+        var collisionList = View.HavokCollisionBank.MapCollisions.GetValueOrDefault(mapID);
+
+        if (collisionList == null)
+            return;
+
+        GUI.SimpleHeader($"{mapID}_header", $"{mapID}", "", UI.Current.ImGui_Default_Text_Color);
+
+        ImGui.BeginChild("##collisionSelectorList", new Vector2(0, 0), ImGuiChildFlags.Borders);
+
+        foreach (var col in collisionList)
+        {
+            var shortName = col.Replace(".hkx.dcx", "");
+            shortName = shortName.Replace($"h{mapID.Replace("m", "")}_", "h");
+
+            if (!col.StartsWith("h"))
+                continue;
+
+            var displayedName = $"{shortName}";
+
+            if (ImGui.Selectable(displayedName, col == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
+            {
+                _selectedEntry = col;
+
+                if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                {
+                    ApplyMapAssetSelection(shortName, FileSelectionType.Collision);
+                }
+            }
+
+            // Arrow Selection
+            if (ImGui.IsItemHovered() && SelectNextEntry)
+            {
+                SelectNextEntry = false;
+                _selectedEntry = col;
+                ApplyMapAssetSelection(shortName, FileSelectionType.Collision);
+            }
+
+            if (ImGui.IsItemFocused())
+            {
+                if (InputManager.HasArrowSelection())
+                {
+                    SelectNextEntry = true;
+                }
+            }
+        }
+
+        ImGui.EndChild();
+    }
     private bool FilterSelectionList(AliasEntry entry)
     {
         var lowerName = entry.ID.ToLower();
@@ -402,6 +460,54 @@ public class ModelSelectorTool
                         throw new ArgumentException("Selected entity type must be Object/Asset");
                 }
             }
+
+            if (assetType == FileSelectionType.Collision)
+            {
+                switch (View.Project.Descriptor.ProjectType)
+                {
+                    case ProjectType.DES:
+                        if (s.WrappedObject is MSBD.Part.Collision)
+                            isValidObjectType = true;
+                        break;
+                    case ProjectType.DS1:
+                    case ProjectType.DS1R:
+                        if (s.WrappedObject is MSB1.Part.Collision)
+                            isValidObjectType = true;
+                        break;
+                    case ProjectType.DS2:
+                    case ProjectType.DS2S:
+                        if (s.WrappedObject is MSB2.Part.Collision)
+                            isValidObjectType = true;
+                        break;
+                    case ProjectType.DS3:
+                        if (s.WrappedObject is MSB3.Part.Collision)
+                            isValidObjectType = true;
+                        break;
+                    case ProjectType.BB:
+                        if (s.WrappedObject is MSBB.Part.Collision)
+                            isValidObjectType = true;
+                        break;
+                    case ProjectType.SDT:
+                        if (s.WrappedObject is MSBS.Part.Collision)
+                            isValidObjectType = true;
+                        break;
+                    case ProjectType.ER:
+                        if (s.WrappedObject is MSBE.Part.Collision)
+                            isValidObjectType = true;
+                        break;
+                    case ProjectType.AC6:
+                        if (s.WrappedObject is MSB_AC6.Part.Collision)
+                            isValidObjectType = true;
+                        break;
+                    case ProjectType.NR:
+                        if (s.WrappedObject is MSB_NR.Part.Collision)
+                            isValidObjectType = true;
+                        break;
+                    default:
+                        throw new ArgumentException("Selected entity type must be Object/Asset");
+                }
+            }
+
             if (assetType == FileSelectionType.MapPiece)
             {
                 switch (View.Project.Descriptor.ProjectType)

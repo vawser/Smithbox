@@ -25,6 +25,8 @@ public class HavokCollisionBank
 
     public Dictionary<string, hkRootLevelContainer> HavokContainers = new Dictionary<string, hkRootLevelContainer>();
 
+    public Dictionary<string, List<string>> MapCollisions = new();
+
     public HavokCollisionType VisibleCollisionType = HavokCollisionType.Low;
 
     public HavokCollisionBank(MapEditorView view, ProjectEntry project)
@@ -43,6 +45,9 @@ public class HavokCollisionBank
 
         if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
+            if (!MapCollisions.ContainsKey(mapId))
+                MapCollisions.Add(mapId, new List<string>());
+
             LoadMapCollision(mapId, "h");
             LoadMapCollision(mapId, "l");
             LoadMapCollision(mapId, "f");
@@ -137,6 +142,8 @@ public class HavokCollisionBank
                             if (!HavokContainers.ContainsKey(name))
                             {
                                 HavokContainers.Add(name, fileHkx);
+
+                                MapCollisions[mapId].Add(name);
                             }
                         }
                         catch (InvalidDataException ex)

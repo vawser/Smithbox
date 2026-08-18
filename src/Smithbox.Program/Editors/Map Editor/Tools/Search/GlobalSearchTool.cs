@@ -13,6 +13,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static StudioCore.Editors.MapEditor.MapMsbPropertyView;
 using static StudioCore.Editors.MapEditor.MapPropertyView;
 
 namespace StudioCore.Editors.MapEditor;

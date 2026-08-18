@@ -1,9 +1,12 @@
 {
   "Entries": [
     {
-      "Key": "MAP_",
-      "Text": ""
+      "Key": "MAP_MapPropertyViewMode_MSB",
+      "Text": "Map Object"
     },
-    
+    {
+      "Key": "MAP_MapPropertyViewMode_CollisionHKX",
+      "Text": "Collision"
+    }
   ]
 }

@@ -10,5 +10,6 @@ public enum FileSelectionType
     [Display(Name = "Asset")] Asset,
     [Display(Name = "Part")] Part,
     [Display(Name = "Map Piece")] MapPiece,
+    [Display(Name = "Collision")] Collision,
     [Display(Name = "Loose")] Loose
 }
