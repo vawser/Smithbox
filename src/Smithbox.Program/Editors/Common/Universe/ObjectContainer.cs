@@ -45,11 +45,12 @@ public class ObjectContainer
     /// </summary>
     public Entity GetObjectByName(string name)
     {
-        foreach (Entity m in Objects)
+        for(int i = 0; i < Objects.Count; i++)
         {
-            if (m.Name == name)
+            var curEntry = Objects[i];
+            if (curEntry.Name == name)
             {
-                return m;
+                return curEntry;
             }
         }
 
@@ -58,11 +59,12 @@ public class ObjectContainer
 
     public IEnumerable<Entity> GetObjectsByName(string name)
     {
-        foreach (Entity m in Objects)
+        for (int i = 0; i < Objects.Count; i++)
         {
-            if (m.Name == name)
+            var curEntry = Objects[i];
+            if (curEntry.Name == name)
             {
-                yield return m;
+                yield return curEntry;
             }
         }
     }
@@ -70,11 +72,12 @@ public class ObjectContainer
     public byte GetNextUnique(string prop, byte value)
     {
         HashSet<byte> usedvals = new();
-        foreach (Entity obj in Objects)
+        for (int i = 0; i < Objects.Count; i++)
         {
-            if (obj.GetPropertyValue(prop) != null)
+            var curEntry = Objects[i];
+            if (curEntry.GetPropertyValue(prop) != null)
             {
-                var val = obj.GetPropertyValue<byte>(prop);
+                var val = curEntry.GetPropertyValue<byte>(prop);
                 usedvals.Add(val);
             }
         }
@@ -93,8 +96,9 @@ public class ObjectContainer
     // Used by the idselect EditorCommandQueue command
     public Entity GetEnemyByID(string entityID, bool includeGroups = false)
     {
-        foreach (Entity m in Objects)
+        for (int i = 0; i < Objects.Count; i++)
         {
+            var m = Objects[i];
             if (m.WrappedObject is MSB1.Part.Enemy enemy_ds1)
             {
                 if (enemy_ds1.EntityID.ToString() == entityID)
@@ -188,8 +192,9 @@ public class ObjectContainer
 
     public Entity GetAssetByID(string entityID)
     {
-        foreach (Entity m in Objects)
+        for (int i = 0; i < Objects.Count; i++)
         {
+            var m = Objects[i];
             if (m.WrappedObject is MSB1.Part.Object object_ds1)
             {
                 if (object_ds1.EntityID.ToString() == entityID)
@@ -238,8 +243,9 @@ public class ObjectContainer
     }
     public Entity GetRegionByID(string entityID)
     {
-        foreach (Entity m in Objects)
+        for (int i = 0; i < Objects.Count; i++)
         {
+            var m = Objects[i];
             if (m.WrappedObject is MSB1.Region object_ds1)
             {
                 if (object_ds1.EntityID.ToString() == entityID)
@@ -292,8 +298,9 @@ public class ObjectContainer
     }
     public Entity GetCollisionByID(string entityID)
     {
-        foreach (Entity m in Objects)
+        for (int i = 0; i < Objects.Count; i++)
         {
+            var m = Objects[i];
             if (m.WrappedObject is MSB1.Part.Collision object_ds1)
             {
                 if (object_ds1.EntityID.ToString() == entityID)

@@ -378,15 +378,15 @@
     },
     {
       "Key": "KEY_MapEditor_Rotate_Fixed_Angle",
-      "Text": "Rotate Selection (fixed angle)"
+      "Text": "Rotate Selection (set angle)"
     },
     {
       "Key": "KEY_MapEditor_Rotate_Fixed_Angle_TT",
-      "Text": "Rotates the selection by the configured fixed angle."
+      "Text": "Rotates the selection by the configured set angle."
     },
     {
       "Key": "KEY_MapEditor_Reset_Rotation",
-      "Text": "eset Selection Rotation"
+      "Text": "Reset Selection Rotation"
     },
     {
       "Key": "KEY_MapEditor_Reset_Rotation_TT",

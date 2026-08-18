@@ -392,7 +392,10 @@ public static class InputManager
         {
             foreach (var kv in data.Entries)
             {
-                _bindings.Entries[kv.Key] = kv.Value;
+                if (_bindings.Entries.ContainsKey(kv.Key))
+                {
+                    _bindings.Entries[kv.Key] = kv.Value;
+                }
             }
         }
     }
@@ -409,7 +412,10 @@ public static class InputManager
         {
             foreach (var kv in data.Entries)
             {
-                _mouseBindings.Entries[kv.Key] = kv.Value;
+                if (_mouseBindings.Entries.ContainsKey(kv.Key))
+                {
+                    _mouseBindings.Entries[kv.Key] = kv.Value;
+                }
             }
         }
     }
