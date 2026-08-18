@@ -138,9 +138,18 @@ public class MapGroupsView
             CurrentMapGroupEntry = curEntry;
             CurrentMapGroupEntryGUID = curEntry.GUID;
 
-            if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+            // If shift is held, add the contents to the current selection
+            // Useful for selecting multiple groups
+            if (InputManager.HasShiftDown())
             {
-                FrameMapGroupEntry(curEntry);
+                AddToSelectionMapGroupEntry(curEntry);
+            }
+            else
+            {
+                if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                {
+                    FrameMapGroupEntry(curEntry);
+                }
             }
         }
 
@@ -164,6 +173,21 @@ public class MapGroupsView
             }
         }
     }
+
+    public void AddToSelectionMapGroupEntry(MapGroupEntry curEntry)
+    {
+        var map = View.Selection.SelectedMapContainer;
+
+        foreach (MsbEntity c in map.Objects)
+        {
+            if (curEntry.Objects.Any(e => e == c.Name))
+            {
+                View.ViewportSelection.AddSelection(c);
+            }
+        }
+    }
+
+
     public void DuplicateMapGroupEntry(MapGroupEntry curEntry)
     {
         SelectMapGroupEntry(curEntry);
