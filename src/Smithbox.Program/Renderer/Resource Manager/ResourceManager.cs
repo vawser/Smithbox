@@ -32,6 +32,7 @@ public static class ResourceManager
 
     public static bool _schedulePostTextureLoad;
     public static bool _scheduleWorldMapLoad;
+    public static bool _scheduleCompassLoad;
 
     public static Dictionary<string, IResourceHandle> GetResourceDatabase()
     {
@@ -140,6 +141,10 @@ public static class ResourceManager
     {
         _scheduleWorldMapLoad = true;
     }
+    public static void ScheduleCompassRefresh()
+    {
+        _scheduleCompassLoad = true;
+    }
 
     public static void UpdateTasks()
     {
@@ -232,6 +237,16 @@ public static class ResourceManager
                 job.AddWorldMapLoadTask();
                 job.Complete();
                 _scheduleWorldMapLoad = false;
+            }
+
+            if (_scheduleCompassLoad)
+            {
+                ResourceJobBuilder job = CreateNewJob(
+                    LOC.Get("REND_Job_Compass_Textures"));
+
+                job.AddCompassLoadTask();
+                job.Complete();
+                _scheduleCompassLoad = false;
             }
         }
 

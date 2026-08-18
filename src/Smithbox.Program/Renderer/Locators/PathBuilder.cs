@@ -655,9 +655,19 @@ public class PathBuilder
 
             var containerName = p[i];
 
-            absPath = Path.Combine(
-                AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(project.Descriptor.ProjectType),
-                "Maps", $"{containerName}.tpf.dcx");
+            if (p[i] == "world_map")
+            {
+                absPath = Path.Combine(
+                    AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(project.Descriptor.ProjectType),
+                    "Maps", $"{containerName}.tpf.dcx");
+            }
+
+            if (p[i] == "compass")
+            {
+                absPath = Path.Combine(
+                    AppContext.BaseDirectory, "Assets", "MSB",  $"{containerName}.tpf.dcx");
+            }
+
         }
 
         return absPath;

@@ -265,6 +265,8 @@ public class VulkanViewport : IViewport
             HandleModelEditorFocus();
             HandleAnimEditorFocus();
 
+            HandleCompass();
+
             ViewportMenu.Draw();
             ViewportOverlay.Draw();
 
@@ -338,6 +340,14 @@ public class VulkanViewport : IViewport
 
         //Gizmos.DebugGui();
         return kbbusy;
+    }
+
+    public void HandleCompass()
+    {
+        if (Owner is MapUniverse mapUniverse)
+        {
+            mapUniverse.View.CompassTool.DisplayCompass();
+        }
     }
 
     public void HandleMapEditorFocus()

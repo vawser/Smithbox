@@ -273,6 +273,11 @@ public class CFG
     public bool DisplayPlacementOrb = false;
     public float PlacementOrb_Distance = 5.0f;
 
+    public bool DisplayCompass = true;
+    public int CompassSize = 120;
+    public int CompassOffset = 64;
+    public float CompassNorthOffset = -90f;
+
     public bool MapEditor_MapContentList_DisplayVisibilityIcon = true;
 
     public bool MapEditor_ModelLoad_MapPieces = true;

@@ -241,6 +241,7 @@ public class MapUniverse : IUniverse
                 }
 
                 ScheduleTextureRefresh();
+                ResourceManager.ScheduleCompassRefresh();
             }
         }
         catch (Exception e)

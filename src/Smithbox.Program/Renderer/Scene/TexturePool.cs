@@ -486,6 +486,11 @@ public class TexturePool
                     checkPow = false;
                 }
 
+                if (tex.Name.Contains("compass"))
+                {
+                    checkPow = false;
+                }
+
                 // Ignore for Icon Preview
                 if (curProject.Handler.FocusedEditor is ParamEditorScreen)
                 {
@@ -528,10 +533,15 @@ public class TexturePool
             desc.Tiling = VkImageTiling.Linear;
             desc.Format = format;
 
-            // TODO: this is a hack to stop DXT5 saved icon files from crashing the program
-            // Really we need to fix the Veldrid workflow to properly handle them
-            // We need to use a staging buffer instead a linear image to do so.
-            var isDS2 = curProject.Descriptor.ProjectType is Application.ProjectType.DS2 or Application.ProjectType.DS2S;
+            var isDS2 = false;
+
+            if (curProject != null)
+            {
+                // TODO: this is a hack to stop DXT5 saved icon files from crashing the program
+                // Really we need to fix the Veldrid workflow to properly handle them
+                // We need to use a staging buffer instead a linear image to do so.
+                isDS2 = curProject.Descriptor.ProjectType is Application.ProjectType.DS2 or Application.ProjectType.DS2S;
+            }
 
             // Block BC3 unless we are working with DS2, where it works correctly.
             if (format is VkFormat.Bc3SrgbBlock && !isDS2)

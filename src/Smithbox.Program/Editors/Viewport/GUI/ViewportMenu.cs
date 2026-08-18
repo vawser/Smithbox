@@ -101,13 +101,13 @@ public class ViewportMenu
                 GUI.ShowActiveStatus(CFG.Current.QuickView_DisplayTooltip);
                 GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Viewport_Tooltip_TT"));
 
-                if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Placement_Orb")}##placementOrbToggle"))
+                if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Compass")}##compassToggle"))
                 {
-                    CFG.Current.DisplayPlacementOrb = !CFG.Current.DisplayPlacementOrb;
+                    CFG.Current.DisplayCompass = !CFG.Current.DisplayCompass;
                     Parent.DelayPicking();
                 }
-                GUI.ShowActiveStatus(CFG.Current.DisplayPlacementOrb);
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Placement_Orb_TT"));
+                GUI.ShowActiveStatus(CFG.Current.DisplayCompass);
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Compass_TT"));
             }
 
             ImGui.EndMenu();
@@ -540,6 +540,23 @@ public class ViewportMenu
                         ref CFG.Current.PlacementOrb_Distance, 0.1f, 1f, 100f);
 
                     GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Orb_Distance_TT"));
+
+                    ImGui.EndMenu();
+                }
+
+                if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Compass")}##compassMenuHeader"))
+                {
+                    ImGui.DragInt(
+                        $"{LOC.Get("VIEWPORT_Menubar_Setting_Compass_Size")}##compassSize",
+                        ref CFG.Current.CompassSize, 1, 16, 512);
+
+                    GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Compass_Size_TT"));
+
+                    ImGui.DragFloat(
+                        $"{LOC.Get("VIEWPORT_Menubar_Setting_Compass_North_Offset")}##compassNorthOffset",
+                        ref CFG.Current.CompassNorthOffset, 0.1f, -360.0f, 360f);
+
+                    GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Compass_North_Offset_TT"));
 
                     ImGui.EndMenu();
                 }

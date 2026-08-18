@@ -289,6 +289,21 @@ public class ResourceJobBuilder
             }
         }
     }
+    public void AddCompassLoadTask()
+    {
+        foreach (KeyValuePair<string, IResourceHandle> r in ResourceManager.ResourceDatabase)
+        {
+            if (!r.Value.IsLoaded())
+            {
+                var virtPath = r.Key;
+
+                if (virtPath.Contains("smithbox"))
+                {
+                    AddExternalFileTask($"smithbox/compass", AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+        }
+    }
 
 
     public Task Complete()

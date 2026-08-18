@@ -99,6 +99,7 @@ public class MapEditorView
     public AutomaticPreviewTool AutomaticPreviewTool;
     public PatrolDrawManager PatrolDrawManager;
     public AssetBrowserTool AssetBrowser;
+    public CompassTool CompassTool;
 
     public ResourceListTool ResourceListTool;
 
@@ -189,6 +190,7 @@ public class MapEditorView
         ModelInsightTool = new MapModelInsightHelper(this, project);
         PatrolDrawManager = new PatrolDrawManager(this);
         AssetBrowser = new AssetBrowserTool(this, project);
+        CompassTool = new CompassTool(this, project);
 
         ResourceListTool = new ResourceListTool();
 
