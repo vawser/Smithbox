@@ -324,6 +324,9 @@ public enum KeybindID
     [Display(Name = "KEY_MapEditor_Deselect_All", Description = "KEY_MapEditor_Deselect_All_TT")]
     MapEditor_Deselect_All,
 
+    [Display(Name = "KEY_MapEditor_Create_Map_Group_Entry", Description = "KEY_MapEditor_Create_Map_Group_Entry_TT")]
+    MapEditor_Create_Map_Group_Entry,
+
     // Model Editor
     [Display(Name = "KEY_ModelEditor_Select_Primitives_Only", Description = "KEY_ModelEditor_Select_Primitives_Only_TT")]
     ModelEditor_Select_Primitives_Only,
@@ -548,8 +551,10 @@ public static class DefaultKeyBindings
 
         InputManager.Bind(KeybindID.MapEditor_Deselect_All, new() { Key = Key.Escape });
 
+        InputManager.Bind(KeybindID.MapEditor_Create_Map_Group_Entry, new() { Key = Key.Plus });
+
         // Model Editor
-        InputManager.Bind(KeybindID.ModelEditor_Select_Primitives_Only, new() { Key = Key.Z });
+        InputManager.Bind(KeybindID.ModelEditor_Select_Primitives_Only, new() { Key = Key.Z, Ctrl = true });
 
         // Param Editor
         InputManager.Bind(KeybindID.ParamEditor_Focus_Searchbar, new() { Key = Key.F, Ctrl = true });
@@ -709,6 +714,7 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_Select_Collision_References, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Referenced_Collision, InputCategory.MapEditor },
         { KeybindID.MapEditor_Deselect_All, InputCategory.MapEditor },
+        { KeybindID.MapEditor_Create_Map_Group_Entry, InputCategory.MapEditor },
 
         // Model Editor
         { KeybindID.ModelEditor_Select_Primitives_Only, InputCategory.ModelEditor },

@@ -79,7 +79,7 @@ public class MapShortcuts
         }
 
         // Actions
-        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport) || FocusManager.IsFocus(EditorFocusContext.MapEditor_FileList))
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport) || FocusManager.IsFocus(EditorFocusContext.MapEditor_ContentTree))
         {
             if (InputManager.IsPressed(KeybindID.Copy))
             {
@@ -123,7 +123,6 @@ public class MapShortcuts
         activeView.MassEditTool.OnShortcut();
         activeView.DisplayGroupTool.OnShortcut();
         activeView.PrefabTool.OnShortcut();
-        activeView.SelectionGroupTool.OnShortcut();
         activeView.PatrolDrawManager.OnShortcut();
 
         GizmoState.OnShortcut();

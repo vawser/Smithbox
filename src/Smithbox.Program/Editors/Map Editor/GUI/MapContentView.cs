@@ -380,6 +380,10 @@ public class MapContentView
 
             View.EntityInfoAction.OnContext(ent);
 
+            ImGui.Separator();
+
+            View.MapGroupsView.ContentsContextMenu(ent);
+
             ImGui.EndPopup();
         }
     }

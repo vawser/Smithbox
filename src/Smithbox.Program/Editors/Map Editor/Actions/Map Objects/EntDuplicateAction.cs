@@ -1,4 +1,5 @@
 ﻿using HKX2;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using SoulsFormats.KF4;
@@ -27,8 +28,10 @@ public class EntDuplicateAction : ViewportAction
     private readonly MapContainer TargetMap;
 
     private readonly bool DuplicateToMap;
+    private readonly bool CreateMapGroupEntry;
+    private string CreatedMapGroupGUID = "";
 
-    public EntDuplicateAction(MapEditorView view, List<MsbEntity> objects, MapContainer targetMap = null, Entity targetBTL = null, bool duplicateToMap = false)
+    public EntDuplicateAction(MapEditorView view, List<MsbEntity> objects, MapContainer targetMap = null, Entity targetBTL = null, bool duplicateToMap = false, bool createMapGroupEntry = false)
     {
         View = view;
 
@@ -38,6 +41,7 @@ public class EntDuplicateAction : ViewportAction
         TargetBTL = targetBTL;
 
         DuplicateToMap = duplicateToMap;
+        CreateMapGroupEntry = createMapGroupEntry;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
@@ -172,6 +176,12 @@ public class EntDuplicateAction : ViewportAction
             View.ViewportSelection.AddSelection(c);
         }
 
+        if(CreateMapGroupEntry)
+        {
+            var curSelection = View.ViewportSelection.GetEntitySelection();
+            CreatedMapGroupGUID = View.MapGroupsView.CreateMapGroupEntry(curSelection);
+        }
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -199,6 +209,11 @@ public class EntDuplicateAction : ViewportAction
         foreach (MsbEntity c in Clones)
         {
             View.ViewportSelection.AddSelection(c);
+        }
+
+        if (CreateMapGroupEntry)
+        {
+            View.MapGroupsView.DeleteMapGroupEntry(CreatedMapGroupGUID);
         }
 
         return ActionEvent.ObjectAddedRemoved;

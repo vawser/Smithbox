@@ -137,6 +137,21 @@ public class ViewportSelection
         return _selected;
     }
 
+    public List<MsbEntity> GetEntitySelection()
+    {
+        var entities = new List<MsbEntity>();
+
+        foreach(var entry in _selected)
+        {
+            if(entry is MsbEntity msbEnt)
+            {
+                entities.Add(msbEnt);
+            }
+        }
+
+        return entities;
+    }
+
     /// <summary>
     /// Return the current Selection where the selected entities are of the passed Type.
     /// </summary>

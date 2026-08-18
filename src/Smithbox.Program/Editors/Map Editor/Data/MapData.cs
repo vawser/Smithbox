@@ -22,7 +22,7 @@ public class MapData : IDisposable
     public MsbMeta Meta;
 
     // User meta data
-    public EntitySelectionGroupList MapObjectSelections;
+    public MapGroupsList MapGroupsList;
     public Dictionary<string, MapObjectNameMapEntry> MapObjectNameLists = new();
 
     // ER-specific
@@ -33,6 +33,7 @@ public class MapData : IDisposable
 
     public SpeedTreeList SpeedTreeList;
     public GrassList GrassList;
+
 
     public MapData(ProjectEntry project)
     {
@@ -100,19 +101,6 @@ public class MapData : IDisposable
             Smithbox.Log(this, LOC.Get("MAP_Data_Setup_MSB_Map_Object_Names_PASS"));
         }
 
-        // Map Object Selections
-        Task<bool> mapObjSelectionTask = SetupMapObjectSelections();
-        bool mapObjSelectionTaskResult = await mapObjSelectionTask;
-
-        if (!mapObjSelectionTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_MSB_Map_Object_Selections_FAIL"));
-        }
-        else
-        {
-            Smithbox.Log(this, LOC.Get("MAP_Data_Setup_MSB_Map_Object_Selections_PASS"));
-        }
-
         // Asset Masks
         Task<bool> assetMaskTask = SetupAssetMasks();
         bool assetMaskTaskResult = await assetMaskTask;
@@ -163,6 +151,19 @@ public class MapData : IDisposable
         else
         {
             Smithbox.Log(this, LOC.Get("MAP_Data_Setup_MSB_Grass_List_PASS"));
+        }
+
+        // Map Object Selections
+        Task<bool> mapGroupsTask = SetupMapGroupsList();
+        bool mapGroupsTaskResult = await mapGroupsTask;
+
+        if (!mapGroupsTaskResult)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_MSB_Map_Groups_FAIL"));
+        }
+        else
+        {
+            Smithbox.Log(this, LOC.Get("MAP_Data_Setup_MSB_Map_Groups_PASS"));
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
@@ -238,106 +239,6 @@ public class MapData : IDisposable
         }
 
         return true;
-    }
-
-    public async Task<bool> SetupMapObjectSelections()
-    {
-        await Task.Yield();
-
-        MapObjectSelections = new();
-
-        // Information
-        var projectFolder = Path.Combine(
-            Project.Descriptor.ProjectPath,
-            ".smithbox",
-            "MSB",
-            "Entity Selections");
-
-        var projectFile = Path.Combine(
-            projectFolder,
-            "Selection Groups.json");
-
-        if (File.Exists(projectFile))
-        {
-            try
-            {
-                var filestring = await File.ReadAllTextAsync(projectFile);
-
-                try
-                {
-                    MapObjectSelections = JsonSerializer.Deserialize(filestring, MapEditorJsonSerializerContext.Default.EntitySelectionGroupList);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Failed_Deserialize_Map_Object_Selections", projectFile), e);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Failed_Read_Map_Object_Selections", projectFile), e);
-            }
-        }
-        else
-        {
-            if (!Directory.Exists(projectFolder))
-            {
-                Directory.CreateDirectory(projectFolder);
-            }
-
-            string template = "{ \"Resources\": [ ] }";
-            try
-            {
-                var fs = new FileStream(projectFile, FileMode.Create);
-                var data = Encoding.ASCII.GetBytes(template);
-                fs.Write(data, 0, data.Length);
-                fs.Flush();
-                fs.Dispose();
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Failed_Write_Map_Object_Selections", projectFile), ex);
-            }
-        }
-
-        if (MapObjectSelections.Resources == null)
-        {
-            MapObjectSelections.Resources = new();
-        }
-
-        return true;
-    }
-
-    public void SaveMapObjectSelections()
-    {
-        var projectFolder = Path.Combine(
-            Project.Descriptor.ProjectPath,
-            ".smithbox",
-            "MSB",
-            "Entity Selections");
-
-        if (!Directory.Exists(projectFolder))
-        {
-            Directory.CreateDirectory(projectFolder);
-        }
-
-        var projectFile = Path.Combine(
-            projectFolder,
-            "Selection Groups.json");
-
-        string jsonString = JsonSerializer.Serialize(MapObjectSelections, MapEditorJsonSerializerContext.Default.EntitySelectionGroupList);
-
-        try
-        {
-            var fs = new FileStream(projectFile, FileMode.Create);
-            var data = Encoding.ASCII.GetBytes(jsonString);
-            fs.Write(data, 0, data.Length);
-            fs.Flush();
-            fs.Dispose();
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Failed_Write_Map_Object_Selections", projectFile), ex);
-        }
     }
 
     public async Task<bool> SetupSpawnStates()
@@ -610,6 +511,69 @@ public class MapData : IDisposable
         return true;
     }
 
+    public async Task<bool> SetupMapGroupsList()
+    {
+        await Task.Yield();
+
+        MapGroupsList = new();
+
+        // Information
+        var projectFolder = Path.Combine(
+            Project.Descriptor.ProjectPath,
+            ".smithbox",
+            "MSB");
+
+        var projectFile = Path.Combine(
+            projectFolder,
+            "Map Groups.json");
+
+        if (File.Exists(projectFile))
+        {
+            try
+            {
+                var filestring = await File.ReadAllTextAsync(projectFile);
+
+                try
+                {
+                    MapGroupsList = JsonSerializer.Deserialize(filestring, MapEditorJsonSerializerContext.Default.MapGroupsList);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Failed_Deserialize_Map_Groups", projectFile), e);
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Failed_Read_Map_Groups", projectFile), e);
+            }
+        }
+        else
+        {
+            if (!Directory.Exists(projectFolder))
+            {
+                Directory.CreateDirectory(projectFolder);
+            }
+
+            var MapGroupsList = new MapGroupsList();
+            string template = JsonSerializer.Serialize(MapGroupsList, MapEditorJsonSerializerContext.Default.MapGroupsList);
+
+            try
+            {
+                var fs = new FileStream(projectFile, FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(template);
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                fs.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Setup_Failed_Write_Map_Groups", projectFile), ex);
+            }
+        }
+
+        return true;
+    }
+
     #region Dispose
     public void Dispose()
     {
@@ -629,7 +593,7 @@ public class MapData : IDisposable
 
         Meta = null;
 
-        MapObjectSelections = null;
+        MapGroupsList = null;
         MapObjectNameLists = null;
 
         AssetMasks = null;

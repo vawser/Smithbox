@@ -39,6 +39,8 @@ public static class FocusManager
     {
         if (Focus is EditorFocusContext.MapEditor_None
             or EditorFocusContext.MapEditor_FileList
+            or EditorFocusContext.MapEditor_ContentTree
+            or EditorFocusContext.MapEditor_MapGroups
             or EditorFocusContext.MapEditor_Properties
             or EditorFocusContext.MapEditor_Tools
             or EditorFocusContext.MapEditor_Viewport)
@@ -185,6 +187,8 @@ public enum EditorFocusContext
 
     MapEditor_None,
     MapEditor_FileList,
+    MapEditor_ContentTree,
+    MapEditor_MapGroups,
     MapEditor_Properties,
     MapEditor_Tools,
     MapEditor_Viewport,

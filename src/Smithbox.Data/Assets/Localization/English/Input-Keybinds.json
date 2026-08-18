@@ -841,6 +841,14 @@
       "Text": "Clear selection."
     },
     {
+      "Key": "KEY_MapEditor_Create_Map_Group_Entry",
+      "Text": "Create Map Group Entry"
+    },
+    {
+      "Key": "KEY_MapEditor_Create_Map_Group_Entry_TT",
+      "Text": "Create a new map group entry from the current selection."
+    },
+    {
       "Key": "KEY_ModelEditor_Select_Primitives_Only",
       "Text": "Enter Primitive Selection Mode"
     },

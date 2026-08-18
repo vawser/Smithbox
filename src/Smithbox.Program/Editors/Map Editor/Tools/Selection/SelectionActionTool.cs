@@ -25,7 +25,6 @@ public class SelectActionTool
 
         ImGui.BeginTabBar("selectActionTabs");
 
-        SelectionGroupTab();
         SelectAllTab();
         SelectCollisionReferenceTab();
         BoxSelectionTab();
@@ -33,16 +32,6 @@ public class SelectActionTool
         ImGui.EndTabBar();
 
         ImGui.EndChild();
-    }
-
-    public void SelectionGroupTab()
-    {
-        if (ImGui.BeginTabItem("Selection Groups##selectionGroupTab"))
-        {
-            View.SelectionGroupTool.OnToolWindow();
-
-            ImGui.EndTabItem();
-        }
     }
 
     public void SelectAllTab()
