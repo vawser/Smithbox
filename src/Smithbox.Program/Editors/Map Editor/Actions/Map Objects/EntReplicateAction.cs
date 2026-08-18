@@ -43,6 +43,9 @@ public class EntReplicateAction : ViewportAction
         TargetMap = targetMap;
         TargetBTL = targetBTL;
 
+        if (CFG.Current.Replicator_Mode_Group)
+            iterationCount = CFG.Current.Replicator_Group_Clone_Amount;
+
         if (CFG.Current.Replicator_Mode_Line)
             iterationCount = CFG.Current.Replicator_Line_Clone_Amount;
 
@@ -63,7 +66,6 @@ public class EntReplicateAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-
         var clonesCached = Clones.Count() > 0;
 
         var objectnames = new Dictionary<string, HashSet<string>>();
@@ -108,7 +110,6 @@ public class EntReplicateAction : ViewportAction
                     MsbEntity newobj = clonesCached ? Clones[i] : (MsbEntity)Clonables[i].Clone();
 
                     GenerateUniqueName(Clonables[i], newobj, objectnames);
-
 
                     if (TargetMap == null)
                     {
@@ -197,6 +198,12 @@ public class EntReplicateAction : ViewportAction
 
                 }
             }
+        }
+
+        View.ViewportSelection.ClearSelection();
+        foreach (MsbEntity c in Clones)
+        {
+            View.ViewportSelection.AddSelection(c);
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -362,7 +369,7 @@ public class EntReplicateAction : ViewportAction
 
     public void ApplyScrambleTransform(MsbEntity newobj)
     {
-        if (CFG.Current.Replicator_Apply_Scramble_Configuration)
+        if (CFG.Current.Replicator_Apply_Scramble_Configuration | CFG.Current.Replicator_Mode_Group)
         {
             Transform scrambledTransform = View.ScrambleAction.GetScrambledTransform(newobj);
 
@@ -420,18 +427,25 @@ public class EntReplicateAction : ViewportAction
         for (var i = 0; i < Clones.Count(); i++)
         {
             CloneMaps[i].Objects.Remove(Clones[i]);
-            if (Clones[i].Parent != null)
+            if (Clones[i] != null)
             {
-                Clones[i].Parent.RemoveChild(Clones[i]);
+                if (Clones[i].Parent != null)
+                {
+                    Clones[i].Parent.RemoveChild(Clones[i]);
+                }
             }
 
             if (Clones[i].RenderSceneMesh != null)
             {
-                Clones[i].RenderSceneMesh?.Dispose();
-                Clones[i].RenderSceneMesh = null;
-
-                Clones[i].SetupRenderMesh = false;
+                Clones[i].RenderSceneMesh.AutoRegister = false;
+                Clones[i].RenderSceneMesh.UnregisterWithScene();
             }
+        }
+
+        View.ViewportSelection.ClearSelection();
+        foreach (MsbEntity c in Clones)
+        {
+            View.ViewportSelection.AddSelection(c);
         }
 
         return ActionEvent.ObjectAddedRemoved;

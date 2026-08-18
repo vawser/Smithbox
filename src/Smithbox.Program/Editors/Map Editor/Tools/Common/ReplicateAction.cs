@@ -15,7 +15,7 @@ public class ReplicateAction
     public MapEditorView View;
     public ProjectEntry Project;
 
-    public ReplicateType ReplicateType = ReplicateType.Line;
+    public ReplicateType ReplicateType = ReplicateType.Group;
     public ReplicateLineAxis AxisType = ReplicateLineAxis.X;
     public ReplicateAction(MapEditorView view, ProjectEntry project)
     {
@@ -93,6 +93,7 @@ public class ReplicateAction
                             CFG.Current.Replicator_Mode_Square = false;
                             CFG.Current.Replicator_Mode_Sphere = false;
                             CFG.Current.Replicator_Mode_Box = false;
+                            CFG.Current.Replicator_Mode_Group = false;
                             break;
                         case ReplicateType.Circle:
                             CFG.Current.Replicator_Mode_Line = false;
@@ -100,6 +101,7 @@ public class ReplicateAction
                             CFG.Current.Replicator_Mode_Square = false;
                             CFG.Current.Replicator_Mode_Sphere = false;
                             CFG.Current.Replicator_Mode_Box = false;
+                            CFG.Current.Replicator_Mode_Group = false;
                             break;
                         case ReplicateType.Square:
                             CFG.Current.Replicator_Mode_Line = false;
@@ -107,6 +109,15 @@ public class ReplicateAction
                             CFG.Current.Replicator_Mode_Square = true;
                             CFG.Current.Replicator_Mode_Sphere = false;
                             CFG.Current.Replicator_Mode_Box = false;
+                            CFG.Current.Replicator_Mode_Group = false;
+                            break;
+                        case ReplicateType.Group:
+                            CFG.Current.Replicator_Mode_Line = false;
+                            CFG.Current.Replicator_Mode_Circle = false;
+                            CFG.Current.Replicator_Mode_Square = false;
+                            CFG.Current.Replicator_Mode_Sphere = false;
+                            CFG.Current.Replicator_Mode_Box = false;
+                            CFG.Current.Replicator_Mode_Group = true;
                             break;
                     }
                 }
@@ -115,18 +126,33 @@ public class ReplicateAction
             ImGui.EndCombo();
         }
 
+        // Group
+        if (CFG.Current.Replicator_Mode_Group)
+        {
+            GUI.WrappedText("Use to create a scattered group of map objects (automatically applies scramble configuration).");
+
+            GUI.Spacer();
+            GUI.SimpleHeader("Amount to Create", "Amount to Create", "The amount of new map objects to create.", UI.Current.ImGui_Default_Text_Color);
+
+            GUI.SetInputWidth();
+            ImGui.InputInt("##Amount", ref CFG.Current.Replicator_Group_Clone_Amount);
+            GUI.Tooltip("The amount of new entities to create (from the first selection).");
+        }
+
         // Line
         if (CFG.Current.Replicator_Mode_Line)
         {
+            GUI.WrappedText("Use to create a line of map objects.");
+
             GUI.Spacer();
-            GUI.SimpleHeader("Line - Amount to Replicate", "Amount to Replicate", "The amount of replication instances to apply.", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("Line - Amount to Create", "Amount to Create", "The amount of replication instances to apply.", UI.Current.ImGui_Default_Text_Color);
 
             GUI.SetInputWidth();
             ImGui.InputInt("##Amount", ref CFG.Current.Replicator_Line_Clone_Amount);
             GUI.Tooltip("The amount of new entities to create (from the first selection).");
 
             GUI.Spacer();
-            GUI.SimpleHeader("Line - Replicate Offset", "Offset per Replicate", "The offset to apply per each replication instance.", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("Line - Create Offset", "Offset per Create", "The offset to apply per each replication instance.", UI.Current.ImGui_Default_Text_Color);
 
             GUI.SetInputWidth();
             ImGui.InputInt("##Offset", ref CFG.Current.Replicator_Line_Position_Offset);
@@ -174,6 +200,8 @@ public class ReplicateAction
         // Circle
         if (CFG.Current.Replicator_Mode_Circle)
         {
+            GUI.WrappedText("Use to create a circle of map objects.");
+
             GUI.Spacer();
             GUI.SimpleHeader("Circle - Size", "Size", "The amount of replication instances to apply to form the circle.", UI.Current.ImGui_Default_Text_Color);
 
@@ -196,6 +224,8 @@ public class ReplicateAction
         // Square
         if (CFG.Current.Replicator_Mode_Square)
         {
+            GUI.WrappedText("Use to create a square of map objects.");
+
             GUI.Spacer();
             GUI.SimpleHeader("Square - Size", "Size", "The amount of replication instances to apply to form the square.", UI.Current.ImGui_Default_Text_Color);
 
@@ -236,8 +266,11 @@ public class ReplicateAction
             GUI.Tooltip("When enabled, the position offset will be applied in the opposite direction.");
         }
 
-        ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
-        GUI.Tooltip("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
+        if (!CFG.Current.Replicator_Mode_Group)
+        {
+            ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
+            GUI.Tooltip("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
+        }
 
         if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2 && View.Project.Descriptor.ProjectType != ProjectType.AC6)
         {
@@ -307,6 +340,8 @@ public class ReplicateAction
 
 public enum ReplicateType
 {
+    [Display(Name = "Group")]
+    Group,
     [Display(Name = "Line")]
     Line,
     [Display(Name = "Circle")]

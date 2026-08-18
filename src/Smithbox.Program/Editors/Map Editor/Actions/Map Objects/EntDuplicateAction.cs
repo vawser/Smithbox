@@ -182,7 +182,10 @@ public class EntDuplicateAction : ViewportAction
             CloneMaps[i].Objects.Remove(Clones[i]);
             if (Clones[i] != null)
             {
-                Clones[i].Parent.RemoveChild(Clones[i]);
+                if (Clones[i].Parent != null)
+                {
+                    Clones[i].Parent.RemoveChild(Clones[i]);
+                }
             }
 
             if (Clones[i].RenderSceneMesh != null)

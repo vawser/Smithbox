@@ -393,11 +393,15 @@ public class CFG
     public bool Replicator_Clear_Entity_ID = false;
     public bool Replicator_Clear_Entity_Group_IDs = false;
 
-    public bool Replicator_Mode_Line = true;
+    public bool Replicator_Mode_Line = false;
     public bool Replicator_Mode_Circle = false;
     public bool Replicator_Mode_Square = false;
     public bool Replicator_Mode_Sphere = false;
     public bool Replicator_Mode_Box = false;
+    public bool Replicator_Mode_Group = true;
+
+    public int Replicator_Group_Clone_Amount = 1;
+    public int Replicator_Group_Position_Offset = 25;
 
     public int Replicator_Line_Clone_Amount = 1;
     public int Replicator_Line_Position_Offset = 25;
