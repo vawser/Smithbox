@@ -112,7 +112,11 @@ public class MapGroupsView
                 DisplayMapGroupEntry(curGroupEntry, i);
             }
         }
-        else
+        else if(mapID == null)
+        {
+            GUI.WrappedText("No map has been loaded yet.");
+        }
+        else 
         {
             GUI.WrappedText("No groups exist yet.");
         }
@@ -188,6 +192,8 @@ public class MapGroupsView
             // Name
             var curName = curEntry.Name;
             ImGui.InputText("##mapGroupEntryName", ref curName, 255);
+            GUI.Tooltip("Edit the name of this group.");
+
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 curEntry.Name = curName;
@@ -199,18 +205,21 @@ public class MapGroupsView
             {
                 FrameMapGroupEntry(curEntry);
             }
+            GUI.Tooltip("Select and frame the map object contents of this group.");
 
             // Pull
             if (ImGui.Selectable("Pull to Camera"))
             {
                 PullMapGroupEntry(curEntry);
             }
+            GUI.Tooltip("Pull the map object contents of this group to the camera.");
 
             // Duplicate
             if (ImGui.Selectable("Duplicate"))
             {
                 DuplicateMapGroupEntry(curEntry);
             }
+            GUI.Tooltip("Duplicate this group and its map object contents.");
 
             // Delete
             if (ImGui.BeginMenu("Delete"))
@@ -219,15 +228,20 @@ public class MapGroupsView
                 {
                     DeleteMapGroupEntry(curEntry.GUID);
                 }
+                GUI.Tooltip("Delete the group (leaves the map objects as is).");
+
                 if (ImGui.Selectable("Delete Group and Objects"))
                 {
                     DeleteMapGroupEntryObjects(curEntry);
                     DeleteMapGroupEntry(curEntry.GUID);
                 }
+                GUI.Tooltip("Delete the map objects that belong to this group, and the group.");
+
                 if (ImGui.Selectable("Delete Objects"))
                 {
                     DeleteMapGroupEntryObjects(curEntry);
                 }
+                GUI.Tooltip("Delete the map objects that belong to this group.");
 
                 ImGui.EndMenu();
             }
@@ -239,13 +253,68 @@ public class MapGroupsView
                 {
                     ToggleMapGroupEntryVisibility(curEntry, true);
                 }
+                GUI.Tooltip("Show (in the viewport) all map objects that belong to this group.");
+
                 if (ImGui.Selectable("Hide"))
                 {
                     ToggleMapGroupEntryVisibility(curEntry, false);
                 }
+                GUI.Tooltip("Hide (in the viewport) all map objects that belong to this group.");
 
                 ImGui.EndMenu();
             }
+
+
+            // Contents
+            if (ImGui.BeginMenu("Group Contents"))
+            {
+                // Add To
+                if (ImGui.Selectable("Add Selection"))
+                {
+                    AddToMapGroupEntry(curEntry);
+                }
+                GUI.Tooltip("Add the currently selected map objects to this group (if they are not already present).");
+
+                // Remove From
+                if (ImGui.Selectable("Remove Selection"))
+                {
+                    RemoveFromMapGroupEntry(curEntry);
+                }
+                GUI.Tooltip("Remove the currently selected map objects from this group (if they are present).");
+
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.BeginMenu("List of Contents"))
+            {
+                List<string> nameList = new();
+                
+                var line = "";
+                for(int i = 0; i < curEntry.Objects.Count; i++)
+                {
+                    var name = curEntry.Objects[i];
+
+                    if (i % 6 == 0)
+                    {
+                        line = $"{line} |";
+                        nameList.Add(line);
+                        line = "";
+                    }
+                    else
+                    {
+                        line = $"{line} | {name}";
+                    }
+                }
+
+                foreach (var entry in nameList)
+                {
+                    ImGui.Text(entry);
+                }
+
+                ImGui.EndMenu();
+            }
+            GUI.Tooltip("Display the contents of this group.");
+
 
             ImGui.EndPopup();
         }
@@ -253,12 +322,13 @@ public class MapGroupsView
 
     public void ContentsContextMenu(Entity ent)
     {
-        if (ImGui.Selectable("Create Map Group Entry"))
+        if (ImGui.Selectable("Create New Map Contents Group"))
         {
             var curSelection = View.ViewportSelection.GetEntitySelection();
 
             CreateMapGroupEntry(curSelection);
         }
+        GUI.Tooltip("Create a new map contents group from the current selection.");
     }
 
     public string CreateMapGroupEntry(List<MsbEntity> selection)
@@ -352,6 +422,35 @@ public class MapGroupsView
         SelectMapGroupEntry(curEntry);
 
         View.PullToCameraAction.ApplyMoveToCamera();
+    }
+
+    public void AddToMapGroupEntry(MapGroupEntry curEntry)
+    {
+        var newEntities = View.ViewportSelection.GetEntitySelection();
+
+        foreach (var entry in newEntities)
+        {
+            if (!curEntry.Objects.Any(e => e == entry.Name))
+            {
+                curEntry.Objects.Add(entry.Name);
+            }
+        }
+
+        SaveMapGroups();
+    }
+    public void RemoveFromMapGroupEntry(MapGroupEntry curEntry)
+    {
+        var newEntities = View.ViewportSelection.GetEntitySelection();
+
+        foreach (var entry in newEntities)
+        {
+            if (curEntry.Objects.Any(e => e == entry.Name))
+            {
+                curEntry.Objects.Remove(entry.Name);
+            }
+        }
+
+        SaveMapGroups();
     }
 
     public void SaveMapGroups()

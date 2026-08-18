@@ -842,11 +842,11 @@
     },
     {
       "Key": "KEY_MapEditor_Create_Map_Group_Entry",
-      "Text": "Create Map Group Entry"
+      "Text": "Create New Map Contents Group"
     },
     {
       "Key": "KEY_MapEditor_Create_Map_Group_Entry_TT",
-      "Text": "Create a new map group entry from the current selection."
+      "Text": "Create a new map contents group from the current selection."
     },
     {
       "Key": "KEY_ModelEditor_Select_Primitives_Only",
