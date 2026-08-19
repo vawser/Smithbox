@@ -1,19 +1,8 @@
 ﻿using HKLib.hk2018;
-using HKLib.hk2018.hkcdStaticMeshTree;
 using HKLib.Serialization.hk2018.Binary;
-using HKLib.Serialization.hk2018.Xml;
-using Microsoft.Extensions.Logging;
-using Octokit;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Logger;
 using StudioCore.Renderer;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Numerics;
 using Tracy;
 
 namespace StudioCore.Editors.MapEditor;

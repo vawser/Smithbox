@@ -1,19 +1,8 @@
 ﻿using HKLib.hk2018;
 using HKLib.Serialization.hk2018.Binary;
-using HKLib.Serialization.hk2018.Xml;
-using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Application;
-using StudioCore.Logger;
 using StudioCore.Renderer;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Tracy;
-using static SoulsFormats.NVA;
-using static SoulsFormats.NVA_ER;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -48,7 +37,7 @@ public class HavokNavmeshBank
         using var __scope = Profiler.TracyZoneAuto();
         if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
-            LoadNavmeshModels(mapId);
+            LoadHavokNavmeshModels(mapId);
         }
     }
 
@@ -66,7 +55,7 @@ public class HavokNavmeshBank
         }
     }
 
-    private void LoadNavmeshModels(string mapId)
+    private void LoadHavokNavmeshModels(string mapId)
     {
         var binderEntry = Project.Locator.FileDictionary.Entries.FirstOrDefault(
             e => e.Filename == mapId &&
@@ -130,7 +119,74 @@ public class HavokNavmeshBank
         }
     }
 
-    public void LoadHavokNVA(MapContainer map, MapResourceHandler handler)
+    public void SaveHavokNavmeshModels(string mapId)
+    {
+        var binderEntry = Project.Locator.FileDictionary.Entries.FirstOrDefault(
+            e => e.Filename == mapId &&
+            e.Extension == "nvmhktbnd");
+
+        if (binderEntry == null)
+            return;
+
+        try
+        {
+            var binderData = Project.VFS.FS.ReadFile(binderEntry.Path);
+
+            if (Project.VFS.ProjectFS.FileExists(binderEntry.Path))
+            {
+                binderData = Project.VFS.ProjectFS.ReadFile(binderEntry.Path);
+            }
+
+            if (binderData == null)
+                return;
+
+            var binder = BND4.Read(binderData.Value);
+
+            HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+            bool anyWritten = false;
+
+            foreach (var file in binder.Files)
+            {
+                var name = Path.GetFileNameWithoutExtension(file.Name);
+
+                if (!file.Name.Contains(".hkx"))
+                    continue;
+
+                // Only re-serialize entries we actually have loaded (and presumably edited)
+                if (!HKX3_Containers.ContainsKey(name))
+                    continue;
+
+                try
+                {
+                    using (MemoryStream memoryStream = new MemoryStream(file.Bytes.ToArray()))
+                    {
+                        serializer.Write(HKX3_Containers[name], memoryStream);
+
+                        file.Bytes = memoryStream.ToArray();
+                        anyWritten = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_NVA_HKX", name), ex);
+                }
+            }
+
+            if (!anyWritten)
+                return;
+
+            var writtenBinder = binder.Write();
+
+            Project.VFS.ProjectFS.WriteFile(binderEntry.Path, writtenBinder);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_NVA_HKXBND", binderEntry.Path), e);
+        }
+    }
+
+    public void LoadNVA(MapContainer map, MapResourceHandler handler)
     {
         if (!CanUse())
             return;
@@ -141,7 +197,7 @@ public class HavokNavmeshBank
 
             if (nva != null)
             {
-                map.LoadHavokNVA(map.Name, nva);
+                map.LoadNVA(map.Name, nva);
             }
         }
         else if (Project.Descriptor.ProjectType is ProjectType.ER && ER_Files.ContainsKey(map.Name))
@@ -150,7 +206,7 @@ public class HavokNavmeshBank
 
             if (nva != null)
             {
-                map.LoadHavokNVA(map.Name, nva);
+                map.LoadNVA(map.Name, nva);
             }
         }
         else
@@ -170,7 +226,7 @@ public class HavokNavmeshBank
 
                             ER_Files.Add(Path.GetFileNameWithoutExtension(entry.Filename), nva);
 
-                            map.LoadHavokNVA(map.Name, nva);
+                            map.LoadNVA(map.Name, nva);
 
                         }
                         catch (Exception e)
@@ -186,7 +242,7 @@ public class HavokNavmeshBank
 
                             Files.Add(Path.GetFileNameWithoutExtension(entry.Filename), nva);
 
-                            map.LoadHavokNVA(map.Name, nva);
+                            map.LoadNVA(map.Name, nva);
 
                         }
                         catch (Exception e)
@@ -203,7 +259,7 @@ public class HavokNavmeshBank
         }
     }
 
-    public void SaveHavokNVA(MapContainer map)
+    public void SaveNVA(MapContainer map)
     {
         if (!CanUse())
             return;

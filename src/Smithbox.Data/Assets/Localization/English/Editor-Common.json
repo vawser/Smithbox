@@ -229,6 +229,14 @@
       "Text": "If enabled, the collision binder files are outputted on save."
     },
     {
+      "Key": "EDITOR_SaveOutput_NavmeshHKX",
+      "Text": "Navmesh"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_NavmeshHKX_TT",
+      "Text": "If enabled, the navmesh binder files are outputted on save."
+    },
+    {
       "Key": "EDITOR_SaveOutput_AIP",
       "Text": "Invasion Points"
     },

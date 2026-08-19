@@ -291,7 +291,7 @@ public class MapContainer : ObjectContainer
         LightProbeParents.Add(lightProbeParent);
     }
 
-    public void LoadHavokNVA(string mapName, NVA nva)
+    public void LoadNVA(string mapName, NVA nva)
     {
         var nvaParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
 
@@ -418,7 +418,7 @@ public class MapContainer : ObjectContainer
     }
 
     // ER specific
-    public void LoadHavokNVA(string mapName, NVA_ER nva)
+    public void LoadNVA(string mapName, NVA_ER nva)
     {
         var nvaParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
 

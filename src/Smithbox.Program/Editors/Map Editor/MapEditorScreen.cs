@@ -123,13 +123,24 @@ public class MapEditorScreen : EditorScreen
                 GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTL_TT"));
                 GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTL);
 
-                // Collision HKX
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_CollisionHKX")}##manualToggle_colHKX"))
+                if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                 {
-                    CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX = !CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX;
+                    // Collision HKX
+                    if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_CollisionHKX")}##manualToggle_collisionHKX"))
+                    {
+                        CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX = !CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX;
+                    }
+                    GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_CollisionHKX_TT"));
+                    GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX);
+
+                    // Navmesh HKX
+                    if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_NavmeshHKX")}##manualToggle_navmeshHKX"))
+                    {
+                        CFG.Current.MapEditor_ManualSave_IncludeNavmeshHKX = !CFG.Current.MapEditor_ManualSave_IncludeNavmeshHKX;
+                    }
+                    GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_NavmeshHKX_TT"));
+                    GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeNavmeshHKX);
                 }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_CollisionHKX_TT"));
-                GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX);
 
                 if (activeView != null)
                 {
@@ -201,13 +212,24 @@ public class MapEditorScreen : EditorScreen
                 GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTL_TT"));
                 GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTL);
 
-                // Collision HKX
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_CollisionHKX")}##autoToggle_colHKX"))
+                if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                 {
-                    CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX = !CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX;
+                    // Collision HKX
+                    if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_CollisionHKX")}##autoToggle_collisionHKX"))
+                    {
+                        CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX = !CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX;
+                    }
+                    GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_CollisionHKX_TT"));
+                    GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX);
+
+                    // Navmesh HKX
+                    if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_NavmeshHKX")}##autoToggle_navmeshHKX"))
+                    {
+                        CFG.Current.MapEditor_AutomaticSave_IncludeNavmeshHKX = !CFG.Current.MapEditor_AutomaticSave_IncludeNavmeshHKX;
+                    }
+                    GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_NavmeshHKX_TT"));
+                    GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeNavmeshHKX);
                 }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_CollisionHKX_TT"));
-                GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX);
 
                 if (activeView != null)
                 {
@@ -801,6 +823,15 @@ public class MapEditorScreen : EditorScreen
                 if (entry.Value.MapContainer != null)
                 {
                     activeView.HavokCollisionBank.SaveMapCollisionFiles(entry.Value.Name);
+                }
+            }
+
+            // Save the navmesh binders
+            foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
+            {
+                if (entry.Value.MapContainer != null)
+                {
+                    activeView.HavokNavmeshBank.SaveHavokNavmeshModels(entry.Value.Name);
                 }
             }
         }

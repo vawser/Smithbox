@@ -9,6 +9,14 @@
       "Text": "Collision"
     },
     {
+      "Key": "MAP_MapPropertyViewMode_NVA",
+      "Text": "Navmesh"
+    },
+    {
+      "Key": "MAP_MapPropertyViewMode_NavmeshHKX",
+      "Text": "Navmesh Collision"
+    },
+    {
       "Key": "MAP_MapCollisionEditType_High",
       "Text": "High"
     },
@@ -19,6 +27,14 @@
     {
       "Key": "MAP_MapCollisionEditType_FallProtection",
       "Text": "Fall Protection"
+    },
+    {
+      "Key": "MAP_MapCollisionEditType_N",
+      "Text": "N"
+    },
+    {
+      "Key": "MAP_MapCollisionEditType_O",
+      "Text": "O"
     }
   ]
 }

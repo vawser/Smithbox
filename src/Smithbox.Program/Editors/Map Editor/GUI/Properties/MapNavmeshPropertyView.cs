@@ -10,7 +10,7 @@ using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MapCollisionPropertyView
+public class MapNavmeshPropertyView
 {
     private MapEditorView View;
     private ProjectEntry Project;
@@ -18,9 +18,9 @@ public class MapCollisionPropertyView
     private object _changingProperty;
     private ViewportAction _lastUncommittedAction;
 
-    private MapCollisionEditType EditType = MapCollisionEditType.High;
+    private MapNavmeshEditType EditType = MapNavmeshEditType.N;
 
-    public MapCollisionPropertyView(MapEditorView view, ProjectEntry project)
+    public MapNavmeshPropertyView(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
@@ -31,7 +31,7 @@ public class MapCollisionPropertyView
         HashSet<Entity> entSelection = View.ViewportSelection.GetFilteredSelection<Entity>();
 
         // Properties
-        ImGui.BeginChild("collisionEdit", ImGuiChildFlags.Borders);
+        ImGui.BeginChild("navmeshEdit", ImGuiChildFlags.Borders);
 
         if (View.Universe.HasProcessedMapLoad && entSelection.Any())
         {
@@ -45,7 +45,7 @@ public class MapCollisionPropertyView
                 return;
             }
 
-            CollisionPropEditor(firstEnt);
+            NavmeshPropEditor(firstEnt);
         }
         else if (!View.Universe.HasProcessedMapLoad)
         {
@@ -68,9 +68,9 @@ public class MapCollisionPropertyView
 
         if (ImGui.BeginCombo("##editTypeSelect", previewName))
         {
-            foreach (var entry in Enum.GetValues(typeof(MapCollisionEditType)))
+            foreach (var entry in Enum.GetValues(typeof(MapNavmeshEditType)))
             {
-                var curType = (MapCollisionEditType)entry;
+                var curType = (MapNavmeshEditType)entry;
 
                 var displayName = LOC.Get(curType.GetDisplayName());
 
@@ -82,44 +82,60 @@ public class MapCollisionPropertyView
 
             ImGui.EndCombo();
         }
-        GUI.Tooltip("The type of collision file to edit.");
+        GUI.Tooltip("The type of navmesh file to edit.");
 
         ImGui.EndChild();
     }
 
-    public void CollisionPropEditor(Entity ent)
+    public void NavmeshPropEditor(Entity ent)
     {
         var mapID = View.Selection.SelectedMapID;
 
-        PropertyInfo prop = ent.WrappedObject.GetType().GetProperty("ModelName");
+        PropertyInfo prop = ent.WrappedObject.GetType().GetProperty("ModelID");
         var value = prop.GetValue(ent.WrappedObject);
 
         if (value == null)
             return;
 
-        var modelName = (string)value;
+        var modelID = value.ToString();
 
-        var fullName = $"h{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
-
-        if(EditType is MapCollisionEditType.Low)
+        if(modelID.Length == 1)
         {
-            fullName = $"l{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
+            modelID = $"00000{modelID}";
+        }
+        else if (modelID.Length == 2)
+        {
+            modelID = $"0000{modelID}";
+        }
+        else if (modelID.Length == 3)
+        {
+            modelID = $"000{modelID}";
+        }
+        else if (modelID.Length == 4)
+        {
+            modelID = $"00{modelID}";
+        }
+        else if (modelID.Length == 5)
+        {
+            modelID = $"0{modelID}";
         }
 
-        if (EditType is MapCollisionEditType.FallProtection)
+        var fullName = $"n{mapID.Replace("m", "")}_{modelID}";
+
+        if (EditType is MapNavmeshEditType.O)
         {
-            fullName = $"f{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
+            fullName = $"o{mapID.Replace("m", "")}_{modelID}";
         }
 
-        if (View.HavokCollisionBank.HavokContainers.ContainsKey(fullName))
+        if (View.HavokNavmeshBank.HKX3_Containers.ContainsKey(fullName))
         {
-            var curCollision = View.HavokCollisionBank.HavokContainers[fullName];
+            var curNavmesh = View.HavokNavmeshBank.HKX3_Containers[fullName];
 
-            HavokPropEdit(curCollision);
+            HavokPropEdit(curNavmesh);
         }
         else
         {
-            GUI.WrappedText("No collision file for this model name of this type.");
+            GUI.WrappedText("No navmesh file for this model name of this type.");
         }
     }
 
@@ -407,7 +423,7 @@ public class MapCollisionPropertyView
         }
     }
 
-    private void ChangeProperty(object prop, object obj, object oldval, object newval, 
+    private void ChangeProperty(object prop, object obj, object oldval, object newval,
         ref bool committed,
         int arrayindex = -1, int classIndex = -1)
     {

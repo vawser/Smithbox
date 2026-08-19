@@ -473,6 +473,7 @@ public class CFG
     public bool MapEditor_AutomaticSave_IncludeBTAB = false;
     public bool MapEditor_AutomaticSave_IncludeBTPB = false;
     public bool MapEditor_AutomaticSave_IncludeCollisionHKX = false;
+    public bool MapEditor_AutomaticSave_IncludeNavmeshHKX = false;
 
     public bool MapEditor_ManualSave_IncludeMSB = true;
     public bool MapEditor_ManualSave_IncludeBTL = true;
@@ -481,6 +482,7 @@ public class CFG
     public bool MapEditor_ManualSave_IncludeBTAB = true;
     public bool MapEditor_ManualSave_IncludeBTPB = true;
     public bool MapEditor_ManualSave_IncludeCollisionHKX = true;
+    public bool MapEditor_ManualSave_IncludeNavmeshHKX = true;
 
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;

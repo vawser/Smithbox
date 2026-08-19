@@ -190,6 +190,11 @@ public static class EntityHelper
             ent.WrappedObject is MSBB.Part.Navmesh ||
             ent.WrappedObject is MSBD.Part.Navmesh  ? true : false;
     }
+    public static bool IsNavmesh(Entity ent)
+    {
+        return ent.WrappedObject is NVA.NavmeshInfo ||
+            ent.WrappedObject is NVA_ER.Navmesh ? true : false;
+    }
 
     /// <summary>
     /// Returns true if this entity is an Player

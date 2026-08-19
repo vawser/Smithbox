@@ -147,7 +147,7 @@ public class MapUniverse : IUniverse
                 __lightScope.Dispose();
 
                 using var __navScope = Profiler.TracyZoneAuto();
-                View.HavokNavmeshBank.LoadHavokNVA(newMap, resourceHandler);
+                View.HavokNavmeshBank.LoadNVA(newMap, resourceHandler);
                 __navScope.Dispose();
 
                 if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
@@ -421,7 +421,7 @@ public class MapUniverse : IUniverse
         if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeNVA ||
             autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeNVA)
         {
-            View.HavokNavmeshBank.SaveHavokNVA(map);
+            View.HavokNavmeshBank.SaveNVA(map);
         }
 
         if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeMSB ||

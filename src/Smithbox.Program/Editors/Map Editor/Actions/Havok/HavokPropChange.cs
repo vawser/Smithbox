@@ -8,13 +8,13 @@ using System.Text;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class CollisionPropChange : ViewportAction
+public class HavokPropChange : ViewportAction
 {
     private MapEditorView View;
 
     private readonly List<PropertyChange> Changes = new();
 
-    public CollisionPropChange(MapEditorView view, FieldInfo prop, object obj, object newval,
+    public HavokPropChange(MapEditorView view, FieldInfo prop, object obj, object newval,
         int index = -1, int classIndex = -1)
     {
         View = view;

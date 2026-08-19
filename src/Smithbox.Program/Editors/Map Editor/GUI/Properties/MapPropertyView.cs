@@ -24,11 +24,13 @@ public class MapPropertyView
 
     public MapMsbPropertyView MsbPropertyView;
     public MapCollisionPropertyView MapCollisionPropertyView;
+    public MapNavmeshPropertyView MapNavmeshPropertyView;
 
     public string MapPropFilter = "";
     public bool ExactMapPropFilter = false;
 
-    private MapPropertyViewMode ViewMode = MapPropertyViewMode.MSB;
+    private MapCollisionViewMode CollisionViewMode = MapCollisionViewMode.MSB;
+    private MapNavmeshViewMode NavmeshViewMode = MapNavmeshViewMode.NVA;
 
     public MapPropertyView(MapEditorView view, ProjectEntry project)
     {
@@ -37,27 +39,43 @@ public class MapPropertyView
 
         MsbPropertyView = new(view, project);
         MapCollisionPropertyView = new(view, project);
+        MapNavmeshPropertyView = new(view, project);
     }
 
     public void Display()
     {
         DisplayCommonHeader();
 
-        var supportsMultEditModes = SupportsMultipleEditModes();
+        var supportsMultEditModes = IsCollisionType();
 
-        if (supportsMultEditModes)
+        if (IsCollisionType())
         {
-            DisplayViewModeHeader();
+            DisplayCollisionViewModeSelect();
 
-            if(ViewMode is MapPropertyViewMode.MSB)
+            if(CollisionViewMode is MapCollisionViewMode.MSB)
             {
                 MsbPropertyView.Display();
             }
 
-            if (ViewMode is MapPropertyViewMode.CollisionHKX)
+            if (CollisionViewMode is MapCollisionViewMode.CollisionHKX)
             {
                 MapCollisionPropertyView.DisplayTypeHeader();
                 MapCollisionPropertyView.Display();
+            }
+        }
+        else if (IsNavmeshType())
+        {
+            DisplayNavmeshViewModeSelect();
+
+            if (NavmeshViewMode is MapNavmeshViewMode.NVA)
+            {
+                MsbPropertyView.Display();
+            }
+
+            if (NavmeshViewMode is MapNavmeshViewMode.NavmeshHKX)
+            {
+                MapNavmeshPropertyView.DisplayTypeHeader();
+                MapNavmeshPropertyView.Display();
             }
         }
         else
@@ -119,24 +137,24 @@ public class MapPropertyView
         ImGui.EndChild();
     }
 
-    public void DisplayViewModeHeader()
+    public void DisplayCollisionViewModeSelect()
     {
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("viewModeSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("collisionViewModeSection", searchHeight, ImGuiChildFlags.Borders);
 
-        var previewName = LOC.Get(ViewMode.GetDisplayName());
+        var previewName = LOC.Get(CollisionViewMode.GetDisplayName());
 
-        if (ImGui.BeginCombo("##propertyEditMode", previewName))
+        if (ImGui.BeginCombo("##collisionViewModeSelect", previewName))
         {
-            foreach (var entry in Enum.GetValues(typeof(MapPropertyViewMode)))
+            foreach (var entry in Enum.GetValues(typeof(MapCollisionViewMode)))
             {
-                var curType = (MapPropertyViewMode)entry;
+                var curType = (MapCollisionViewMode)entry;
 
                 var displayName = LOC.Get(curType.GetDisplayName());
 
-                if (ImGui.Selectable(displayName, curType == ViewMode))
+                if (ImGui.Selectable(displayName, curType == CollisionViewMode))
                 {
-                    ViewMode = curType;
+                    CollisionViewMode = curType;
                 }
             }
 
@@ -147,7 +165,35 @@ public class MapPropertyView
         ImGui.EndChild();
     }
 
-    public bool SupportsMultipleEditModes()
+    public void DisplayNavmeshViewModeSelect()
+    {
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("navmeshViewModeSection", searchHeight, ImGuiChildFlags.Borders);
+
+        var previewName = LOC.Get(NavmeshViewMode.GetDisplayName());
+
+        if (ImGui.BeginCombo("##navmeshViewModeSelect", previewName))
+        {
+            foreach (var entry in Enum.GetValues(typeof(MapNavmeshViewMode)))
+            {
+                var curType = (MapNavmeshViewMode)entry;
+
+                var displayName = LOC.Get(curType.GetDisplayName());
+
+                if (ImGui.Selectable(displayName, curType == NavmeshViewMode))
+                {
+                    NavmeshViewMode = curType;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip("Determines which property editor to display.");
+
+        ImGui.EndChild();
+    }
+
+    public bool IsCollisionType()
     {
         HashSet<Entity> entSelection = View.ViewportSelection.GetFilteredSelection<Entity>();
 
@@ -156,9 +202,29 @@ public class MapPropertyView
             Entity firstEnt = entSelection.First();
 
             // Is Collision Map Object
-            if (Project.Descriptor.ProjectType is ProjectType.ER)
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 if (EntityHelper.IsPartCollision(firstEnt))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+    public bool IsNavmeshType()
+    {
+        HashSet<Entity> entSelection = View.ViewportSelection.GetFilteredSelection<Entity>();
+
+        if (View.Universe.HasProcessedMapLoad && entSelection.Count > 0)
+        {
+            Entity firstEnt = entSelection.First();
+
+            // Is Navmesh Map Object
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            {
+                if (EntityHelper.IsNavmesh(firstEnt))
                 {
                     return true;
                 }

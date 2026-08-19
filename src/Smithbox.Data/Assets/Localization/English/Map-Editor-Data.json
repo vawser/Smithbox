@@ -61,6 +61,10 @@
       "Text": "Failed to load navmesh HKXBND: {0}"
     },
     {
+      "Key": "MAP_Data_Failed_Write_NVA_HKXBND",
+      "Text": "Failed to write navmesh HKXBND: {0}"
+    },
+    {
       "Key": "MAP_Data_Failed_Read_NVA",
       "Text": "Failed to read NVA file: {0}"
     },
