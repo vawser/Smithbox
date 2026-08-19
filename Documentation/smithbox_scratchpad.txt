@@ -3,17 +3,12 @@
 #---------------------
 
 # Map Editor
-- ER offset for load related maps is a bit off sometimes 
- - (_02 is not aligned with _01 or _00) - Weeping Penisula example
+- Add meta for Collision/Navmesh prop edit
 
-- Add Mouse-middle click to World Map drag
-- Make the Map List/Contents option actions more visible
+ m_materialNameData -> HitMtrlParam row ID
 
 # Gparam Editor:
  - DS2 fog color values are inverted (BGR, not RGB)
-
-# Param Editor
- - Add Alt+Up/Down shortcut in Field List for changing Row List selection
 
 # Heavy Allocations:
  - Viewport Grid is memory inefficient: perhaps possible with shader alone?

@@ -180,10 +180,6 @@ public class MapCollisionPropertyView
             // Field Description
             var fieldDescription = "";
 
-            // Handle property display (and search filtering)
-            if (!DisplayProperty(obj, prop, type))
-                continue;
-
             ImGui.PushID(id);
             ImGui.AlignTextToFramePadding();
             Type typ = prop.FieldType;
@@ -219,7 +215,11 @@ public class MapCollisionPropertyView
                             ImGui.AlignTextToFramePadding();
                             var array = obj as object[];
 
-                            PropGenericFieldRow(prop, typ.GetElementType(), a.GetValue(i), obj, $@"{fieldName}[{i}]", i, classIndex);
+                            // Handle property display (and search filtering)
+                            if (DisplayProperty(obj, prop, type))
+                            {
+                                PropGenericFieldRow(prop, typ.GetElementType(), a.GetValue(i), obj, $@"{fieldName}[{i}]", i, classIndex);
+                            }
                         }
                         ImGui.PopID();
                     }
@@ -252,14 +252,16 @@ public class MapCollisionPropertyView
                                 HavokPropEditGeneric(o);
                                 ImGui.TreePop();
                             }
-
-                            ImGui.PopID();
                         }
                         else
                         {
-                            PropGenericFieldRow(prop, arrtyp, itemprop.GetValue(l, new object[] { i }), obj, $@"{fieldName}[{i}]", i, classIndex);
-                            ImGui.PopID();
+                            // Handle property display (and search filtering)
+                            if (DisplayProperty(obj, prop, type))
+                            {
+                                PropGenericFieldRow(prop, arrtyp, itemprop.GetValue(l, new object[] { i }), obj, $@"{fieldName}[{i}]", i, classIndex);
+                            }
                         }
+                        ImGui.PopID();
                     }
                 }
 
@@ -286,7 +288,12 @@ public class MapCollisionPropertyView
             }
             else
             {
-                PropGenericFieldRow(prop, typ, prop.GetValue(obj), obj, $"{fieldName}", classIndex);
+                // Handle property display (and search filtering)
+                if (DisplayProperty(obj, prop, type))
+                {
+                    PropGenericFieldRow(prop, typ, prop.GetValue(obj), obj, $"{fieldName}", classIndex);
+                }
+
                 ImGui.PopID();
             }
 
@@ -298,13 +305,6 @@ public class MapCollisionPropertyView
     public bool DisplayProperty(object propObj, FieldInfo prop, Type type)
     {
         var propName = prop.Name;
-
-        // Automatic conditions that hide the property
-
-        if (!prop.IsPublic && !prop.FieldType.IsArray)
-        {
-            return false;
-        }
 
         // Normal filter
         var isMatch = EditorFilters.IsMatch(View.MapPropertyView.MapPropFilter, propName, View.MapPropertyView.ExactMapPropFilter);
