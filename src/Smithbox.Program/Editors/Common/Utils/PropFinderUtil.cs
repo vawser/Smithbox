@@ -12,6 +12,8 @@ public static class PropFinderUtil
     /// <param name="Obj">Object that contains property.</param>
     private record PropData(PropertyInfo PropInfo, object Obj);
 
+    private record FieldData(FieldInfo PropInfo, object Obj);
+
     /// <summary>
     ///     Search an object's properties and return a PropData containing the targeted property's information.
     /// </summary>
@@ -52,6 +54,69 @@ public static class PropFinderUtil
             else if (p.PropertyType.IsArray)
             {
                 Type pType = p.PropertyType.GetElementType();
+                if (pType.IsNested)
+                {
+                    var array = (Array)p.GetValue(obj);
+                    if (array == null) continue;
+
+                    if (arrayIndex != -1)
+                    {
+                        var retObj = GetPropData(prop, array.GetValue(arrayIndex), arrayIndex, classIndex);
+                        if (retObj != null)
+                            return retObj;
+
+                    }
+                    else if (classIndex != -1)
+                    {
+                        var retObj = GetPropData(prop, array.GetValue(classIndex), arrayIndex, classIndex);
+                        if (retObj != null)
+                            return retObj;
+                    }
+                    else
+                    {
+                        foreach (var arrayObj in array)
+                        {
+                            var retObj = GetPropData(prop, arrayObj, arrayIndex, classIndex);
+                            if (retObj != null)
+                                return retObj;
+                        }
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private static FieldData GetPropData(FieldInfo prop, object obj, int arrayIndex = -1, int classIndex = -1, bool onlyCheckPropName = false)
+    {
+        if (obj == null) return null;
+
+        foreach (FieldInfo p in obj.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public))
+        {
+            if (onlyCheckPropName)
+            {
+                if (string.Equals(p.Name, prop.Name, StringComparison.OrdinalIgnoreCase))
+                    return new FieldData(p, obj);
+            }
+            else
+            {
+                if (p.MetadataToken == prop.MetadataToken)
+                    return new FieldData(p, obj);
+            }
+
+            if (p.FieldType.IsNested)
+            {
+                var check = p.GetValue(obj);
+                if (check == null) continue;
+
+                var retObj = GetPropData(prop, p.GetValue(obj), arrayIndex, classIndex);
+                if (retObj != null)
+                    return retObj;
+            }
+            else if (p.FieldType.IsArray)
+            {
+                Type pType = p.FieldType.GetElementType();
                 if (pType.IsNested)
                 {
                     var array = (Array)p.GetValue(obj);
@@ -143,6 +208,16 @@ public static class PropFinderUtil
     /// </summary>
     /// <returns>Object containing property if found, otherwise null.</returns>
     public static object FindPropertyObject(PropertyInfo prop, object obj, int arrayIndex = -1, int classIndex = -1, bool onlyCheckPropName = false)
+    {
+        var result = GetPropData(prop, obj, arrayIndex, classIndex, onlyCheckPropName);
+
+        if (result == null)
+            return null;
+
+        return result.Obj;
+    }
+
+    public static object FindFieldObject(FieldInfo prop, object obj, int arrayIndex = -1, int classIndex = -1, bool onlyCheckPropName = false)
     {
         var result = GetPropData(prop, obj, arrayIndex, classIndex, onlyCheckPropName);
 

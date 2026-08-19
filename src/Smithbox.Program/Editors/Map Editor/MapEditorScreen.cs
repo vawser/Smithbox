@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editors.Common;
@@ -122,6 +123,14 @@ public class MapEditorScreen : EditorScreen
                 GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTL_TT"));
                 GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTL);
 
+                // Collision HKX
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_CollisionHKX")}##manualToggle_colHKX"))
+                {
+                    CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX = !CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX;
+                }
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_CollisionHKX_TT"));
+                GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX);
+
                 if (activeView != null)
                 {
                     if (activeView.AutoInvadeBank.CanUse())
@@ -191,6 +200,14 @@ public class MapEditorScreen : EditorScreen
                 }
                 GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTL_TT"));
                 GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTL);
+
+                // Collision HKX
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_CollisionHKX")}##autoToggle_colHKX"))
+                {
+                    CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX = !CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX;
+                }
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_CollisionHKX_TT"));
+                GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX);
 
                 if (activeView != null)
                 {
@@ -777,6 +794,15 @@ public class MapEditorScreen : EditorScreen
         {
             // NOTE: perhaps this should only save the loaded map for the active view (currently does all loaded maps)
             activeView.Universe.SaveAllMaps(autoSave);
+
+            // Save the collision binders
+            foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
+            {
+                if (entry.Value.MapContainer != null)
+                {
+                    activeView.HavokCollisionBank.SaveMapCollisionFiles(entry.Value.Name);
+                }
+            }
         }
         catch (SavingFailedException e)
         {

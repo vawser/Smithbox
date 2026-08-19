@@ -28,4 +28,18 @@ public class MapPropertyCache
 
         return props;
     }
+
+    public readonly Dictionary<string, FieldInfo[]> FieldCache = new();
+
+    public FieldInfo[] GetCachedHavokFields(Type type)
+    {
+        if (!FieldCache.TryGetValue(type.FullName, out FieldInfo[] fields))
+        {
+            fields = type.GetFields(BindingFlags.Instance | BindingFlags.Public);
+            fields = fields.OrderBy(f => f.MetadataToken).ToArray();
+            FieldCache.Add(type.FullName, fields);
+        }
+
+        return fields;
+    }
 }

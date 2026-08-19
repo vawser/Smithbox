@@ -184,4 +184,96 @@ public class HavokCollisionBank
             }
         }
     }
+
+    public void SaveMapCollisionFiles(string mapId)
+    {
+        SaveMapCollision(mapId, "h");
+        SaveMapCollision(mapId, "l");
+        SaveMapCollision(mapId, "f");
+    }
+
+    public void SaveMapCollision(string mapId, string type)
+    {
+        var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
+        var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
+
+        try
+        {
+            // Read the existing binder (project override first, then base game) so we
+            // preserve any entries that this bank doesn't hold in-memory.
+            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
+            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
+
+            if (Project.VFS.ProjectFS.FileExists(bdtPath))
+            {
+                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
+            }
+            if (Project.VFS.ProjectFS.FileExists(bhdPath))
+            {
+                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
+            }
+
+            if (bdtData == null || bhdData == null)
+                return;
+
+            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+            HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+            bool anyWritten = false;
+
+            foreach (var file in packedBinder.Files)
+            {
+                var parts = file.Name.Split('\\');
+
+                if (parts.Length != 2)
+                    continue;
+
+                var name = parts[1];
+
+                if (!file.Name.Contains(".hkx.dcx"))
+                    continue;
+
+                // Only re-serialize entries we actually have loaded (and presumably edited)
+                if (!HavokContainers.ContainsKey(name))
+                    continue;
+
+                try
+                {
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        serializer.Write(HavokContainers[name], memoryStream);
+
+                        // NOTE: assumes DCX_KRAK to match ER/NR collision packaging.
+                        // Swap this for whatever DCX.Type the project actually uses if different.
+                        var compressedBytes = DCX.Compress(memoryStream.ToArray(), DCX.Type.DCX_KRAK);
+
+                        file.Bytes = compressedBytes;
+                        anyWritten = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
+                }
+            }
+
+            if (!anyWritten)
+                return;
+
+            // BXF4.Write returns the BHD bytes and outputs the BDT bytes via out param.
+            packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
+
+            // NOTE: writing back to the project overlay (not the base game files).
+            // Replace WriteFile with whatever the actual VFS write method is named
+            // if it differs from this.
+            Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
+            Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_HKXBND", bdtPath), e);
+        }
+    }
+
 }

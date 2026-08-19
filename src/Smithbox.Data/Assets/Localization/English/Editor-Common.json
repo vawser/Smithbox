@@ -206,51 +206,59 @@
     },
     {
       "Key": "EDITOR_SaveOutput_MSB",
-      "Text": "MSB"
+      "Text": "Map"
     },
     {
       "Key": "EDITOR_SaveOutput_MSB_TT",
-      "Text": "If enabled, the MSB files are outputted on save."
+      "Text": "If enabled, the map files are outputted on save."
     },
     {
       "Key": "EDITOR_SaveOutput_BTL",
-      "Text": "BTL"
+      "Text": "Light"
     },
     {
       "Key": "EDITOR_SaveOutput_BTL_TT",
-      "Text": "If enabled, the BTL files are outputted on save."
+      "Text": "If enabled, the Light binder files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_CollisionHKX",
+      "Text": "Collision"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_CollisionHKX_TT",
+      "Text": "If enabled, the collision binder files are outputted on save."
     },
     {
       "Key": "EDITOR_SaveOutput_AIP",
-      "Text": "AIP"
+      "Text": "Invasion Points"
     },
     {
       "Key": "EDITOR_SaveOutput_AIP_TT",
-      "Text": "If enabled, the AIP files are outputted on save."
+      "Text": "If enabled, the Invasion Point files are outputted on save."
     },
     {
       "Key": "EDITOR_SaveOutput_NVA",
-      "Text": "NVA"
+      "Text": "Navmesh"
     },
     {
       "Key": "EDITOR_SaveOutput_NVA_TT",
-      "Text": "If enabled, the NVA files are outputted on save."
+      "Text": "If enabled, the Navmesh binder files are outputted on save."
     },
     {
       "Key": "EDITOR_SaveOutput_BTAB",
-      "Text": "BTAB"
+      "Text": "Light Atlases"
     },
     {
       "Key": "EDITOR_SaveOutput_BTAB_TT",
-      "Text": "If enabled, the BTAB files are outputted on save."
+      "Text": "If enabled, the Light Atlases binder files are outputted on save."
     },
     {
       "Key": "EDITOR_SaveOutput_BTPB",
-      "Text": "BTPB"
+      "Text": "Light Probes"
     },
     {
       "Key": "EDITOR_SaveOutput_BTPB_TT",
-      "Text": "If enabled, the BTPB files are outputted on save."
+      "Text": "If enabled, the Light Probes binder files are outputted on save."
     }
   ]
 }

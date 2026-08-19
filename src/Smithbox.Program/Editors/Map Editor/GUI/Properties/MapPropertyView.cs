@@ -56,6 +56,7 @@ public class MapPropertyView
 
             if (ViewMode is MapPropertyViewMode.CollisionHKX)
             {
+                MapCollisionPropertyView.DisplayTypeHeader();
                 MapCollisionPropertyView.Display();
             }
         }
@@ -141,6 +142,7 @@ public class MapPropertyView
 
             ImGui.EndCombo();
         }
+        GUI.Tooltip("Determines which property editor to display.");
 
         ImGui.EndChild();
     }

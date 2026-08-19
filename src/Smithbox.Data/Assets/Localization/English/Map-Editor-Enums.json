@@ -7,6 +7,18 @@
     {
       "Key": "MAP_MapPropertyViewMode_CollisionHKX",
       "Text": "Collision"
+    },
+    {
+      "Key": "MAP_MapCollisionEditType_High",
+      "Text": "High"
+    },
+    {
+      "Key": "MAP_MapCollisionEditType_Low",
+      "Text": "Low"
+    },
+    {
+      "Key": "MAP_MapCollisionEditType_FallProtection",
+      "Text": "Fall Protection"
     }
   ]
 }

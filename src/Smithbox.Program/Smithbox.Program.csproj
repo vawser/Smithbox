@@ -65,6 +65,7 @@
     <Compile Include="Editors\Map Editor\Enums\FileSelectionType.cs" />
     <Compile Include="Editors\Map Editor\Enums\GameVisibilityState.cs" />
     <Compile Include="Editors\Map Editor\Enums\GameVisibilityType.cs" />
+    <Compile Include="Editors\Map Editor\Enums\MapCollisionEditType.cs" />
     <Compile Include="Editors\Map Editor\Enums\MapConnectionRelationType.cs" />
     <Compile Include="Editors\Map Editor\Enums\MapContentLoadState.cs" />
     <Compile Include="Editors\Map Editor\Enums\MapContentViewType.cs" />
