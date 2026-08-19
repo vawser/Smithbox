@@ -593,7 +593,8 @@ public class SelectAllAction
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("<comparator>: the comparator to use." +
-                "\nAccepted symbols: =, <, >");
+                "\nAccepted symbols: =, <, >" +
+                "\nAccepted symbols for strings: = (exact), ~ (fuzzy)");
 
             // Parameter 3
             ImGui.TableNextRow();

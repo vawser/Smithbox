@@ -869,9 +869,19 @@ public class MassEditTool
                 // Otherwise do string comparison
                 else
                 {
-                    if (targetValue.Equals($"{targetProp_Value}", StringComparison.OrdinalIgnoreCase))
+                    if (compare == "=")
                     {
-                        isValid = true;
+                        if (targetValue.Equals($"{targetProp_Value}", StringComparison.OrdinalIgnoreCase))
+                        {
+                            isValid = true;
+                        }
+                    }
+                    else if (compare == "~")
+                    {
+                        if ($"{targetProp_Value}".Contains(targetValue, StringComparison.OrdinalIgnoreCase))
+                        {
+                            isValid = true;
+                        }
                     }
                 }
             }
