@@ -1,0 +1,34 @@
+{
+  "Type": "HKLib.hk2018.fsnpCustomMeshParameter+PrimitiveData",
+  "Fields": [
+      {
+          "Field": "m_vertexData",
+          "Name": "Vertex Data",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_triangleData",
+          "Name": "Triangle Data",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_primitiveData",
+          "Name": "Primitive Data",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_triangleDataIndex",
+          "Name": "Triangle Data Index",
+          "Description": ""
+      },
+      {
+          "Field": "m_materialNameData",
+          "Name": "Hit Material ID",
+          "Description": "",
+          "ParamRef": "HitMtrlParam"
+      }
+  ]
+}

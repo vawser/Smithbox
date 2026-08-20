@@ -1,0 +1,120 @@
+{
+  "Type": "HKLib.hk2018.hknpPhysicsSystemData+bodyCinfoWithAttachment",
+  "Fields": [
+      {
+          "Field": "m_shape",
+          "Name": "Shape",
+          "Description": ""
+      },
+      {
+          "Field": "m_flags",
+          "Name": "Flags",
+          "Description": ""
+      },
+      {
+          "Field": "m_collisionCntrl",
+          "Name": "Collision Control",
+          "Description": ""
+      },
+      {
+          "Field": "m_collisionFilterInfo",
+          "Name": "Collision Filter Info",
+          "Description": ""
+      },
+      {
+          "Field": "m_materialId",
+          "Name": "Material ID",
+          "Description": ""
+      },
+      {
+          "Field": "m_qualityId",
+          "Name": "Quality ID",
+          "Description": ""
+      },
+      {
+          "Field": "m_name",
+          "Name": "Name",
+          "Description": ""
+      },
+      {
+          "Field": "m_userData",
+          "Name": "User Data",
+          "Description": ""
+      },
+      {
+          "Field": "m_motionType",
+          "Name": "Motion Type",
+          "Description": ""
+      },
+      {
+          "Field": "m_position",
+          "Name": "Position",
+          "Description": ""
+      },
+      {
+          "Field": "m_orientation",
+          "Name": "Orientation",
+          "Description": ""
+      },
+      {
+          "Field": "m_linearVelocity",
+          "Name": "Linear Velocity",
+          "Description": ""
+      },
+      {
+          "Field": "m_angularVelocity",
+          "Name": "Angular Velocity",
+          "Description": ""
+      },
+      {
+          "Field": "m_mass",
+          "Name": "Mass",
+          "Description": ""
+      },
+      {
+          "Field": "m_massDistribution",
+          "Name": "Mass Distribution",
+          "Description": ""
+      },
+      {
+          "Field": "m_dragProperties",
+          "Name": "Drag Properties",
+          "Description": ""
+      },
+      {
+          "Field": "m_motionPropertiesId",
+          "Name": "Motion Properties ID",
+          "Description": ""
+      },
+      {
+          "Field": "m_desiredBodyId",
+          "Name": "Desired Body ID",
+          "Description": ""
+      },
+      {
+          "Field": "m_motionId",
+          "Name": "Motion ID",
+          "Description": ""
+      },
+      {
+          "Field": "m_collisionLookAheadDistance",
+          "Name": "Collision Look Ahead Distance",
+          "Description": ""
+      },
+      {
+          "Field": "m_localFrame",
+          "Name": "Local Frame",
+          "Description": ""
+      },
+      {
+          "Field": "m_activationPriority",
+          "Name": "Activation Priority",
+          "Description": ""
+      },
+      {
+          "Field": "m_attachedBody",
+          "Name": "Attached Body",
+          "Description": ""
+      }
+  ]
+}

@@ -214,6 +214,10 @@ public class CFG
     public bool MapEditor_Selection_Group_Show_Keybind = true;
     public bool MapEditor_Selection_Group_Show_Tags = false;
 
+
+    public bool MapEditor_CollisionEdit_Display_Type_Column = false;
+    public bool MapEditor_CollisionEdit_Display_Raw_Data_Fields = true;
+
     // Options
     public bool MapEditor_Model_Selector_Update_Name = true;
     public bool MapEditor_Model_Selector_Update_Instance_ID = true;

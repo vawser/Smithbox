@@ -3,7 +3,23 @@
 #---------------------
 
 # Map Editor
+- 'Focus' toggle button when multiple maps are loaded:
+ - Applies gray dither shader to all viewport elements that aren't part of the currently selected map
+ - Would be useful for having the ability to see the greater area whilst quickly being able to discern which objects belong to the currently selected map
+ 
+- Check speed tree rendering
+
+- Add Copy As action for basic collision dupes
 - Add meta for Collision/Navmesh prop edit
+ - Top-level key by havok version (i.e. hk2018)
+ - Key by type (i.e. hkbFootIkControlData
+ 
+ - Support:
+  - Display Name
+  - Description
+  - Param Ref
+  - IsRawData (denotes raw mesh data, so we can easily allow the user to hide it, since it is unlikely to be edited manually)
+  
 
  m_materialNameData -> HitMtrlParam row ID
 
@@ -27,7 +43,7 @@
   Gparam Editor
   Map Data Editor
   Map Editor
-  Material Editor
+  ### Material Editor
   ### Model Editor
   ### Param Editor
   ### Project Metadata Editor
@@ -43,3 +59,4 @@
  ### Renderer
  ### Utilities
  
+ `

@@ -1,0 +1,10 @@
+{
+  "Type": "HKLib.hk2018.hkUFloat8",
+  "Fields": [
+      {
+          "Field": "m_value",
+          "Name": "Value",
+          "Description": ""
+      }
+  ]
+}

@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using StudioCore.Editors.AnimEditor;
+﻿using StudioCore.Editors.AnimEditor;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.FileBrowser;
 using StudioCore.Editors.GparamEditor;
@@ -10,12 +9,6 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Application;
 
@@ -24,6 +17,9 @@ public class ProjectEditorHandler : IDisposable
     public ProjectEntry Project;
 
     public EditorScreen FocusedEditor;
+
+    // Common Data
+    public CommonData CommonData;
 
     // Project Data
     public ProjectData ProjectData;
@@ -79,6 +75,7 @@ public class ProjectEditorHandler : IDisposable
 
 
     // Data tasks
+    private Task<bool> _commonDataTask;
     private Task<bool> _projectDataTask;
     private Task<bool> _mapDataTask;
     private Task<bool> _modelDataTask;
@@ -112,6 +109,11 @@ public class ProjectEditorHandler : IDisposable
     public async Task<bool> InitializeData(ProjectInitType initType, bool silent)
     {
         var tasks = new List<Task<bool>>();
+
+        // Project data
+        CommonData = new(Project);
+        _commonDataTask = CommonData.Setup();
+        tasks.Add(_commonDataTask);
 
         // Project data
         ProjectData = new(Project);

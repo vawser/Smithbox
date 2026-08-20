@@ -105,34 +105,52 @@ public class MapPropertyView
 
         GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
 
-        // Toggle Unknown Properties
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
+        if (IsCollisionType() || IsNavmeshType())
         {
-            CFG.Current.MapEditor_Properties_Display_Unknown_Properties = !CFG.Current.MapEditor_Properties_Display_Unknown_Properties;
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Calculator}##toggleTypeCol"))
+            {
+                CFG.Current.MapEditor_CollisionEdit_Display_Type_Column = !CFG.Current.MapEditor_CollisionEdit_Display_Type_Column;
+            }
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Database}##toggleRawDataFields"))
+            {
+                CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields = !CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields;
+            }
         }
-
-        var unkFieldDisplayMode = "Hidden";
-
-        if (CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
-            unkFieldDisplayMode = "Visible";
-
-        GUI.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
-
-        // Toggle Field Padding
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Hubzilla}"))
+        else
         {
-            CFG.Current.MapEditor_Field_List_Display_Padding = !CFG.Current.MapEditor_Field_List_Display_Padding;
+            // Toggle Unknown Properties
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
+            {
+                CFG.Current.MapEditor_Properties_Display_Unknown_Properties = !CFG.Current.MapEditor_Properties_Display_Unknown_Properties;
+            }
+
+            var unkFieldDisplayMode = "Hidden";
+
+            if (CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
+                unkFieldDisplayMode = "Visible";
+
+            GUI.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
+
+            // Toggle Field Padding
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Hubzilla}"))
+            {
+                CFG.Current.MapEditor_Field_List_Display_Padding = !CFG.Current.MapEditor_Field_List_Display_Padding;
+            }
+
+            var fieldPaddingMode = "Hidden";
+            if (!CFG.Current.MapEditor_Field_List_Display_Padding)
+                fieldPaddingMode = "Visible";
+
+            GUI.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
         }
-
-        var fieldPaddingMode = "Hidden";
-        if (!CFG.Current.MapEditor_Field_List_Display_Padding)
-            fieldPaddingMode = "Visible";
-
-        GUI.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
 
         ImGui.EndChild();
     }

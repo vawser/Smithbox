@@ -1,0 +1,70 @@
+{
+  "Type": "HKLib.hk2018.fsnpCustomParamCompressedMeshShape",
+  "Fields": [
+      {
+          "Field": "m_pParam",
+          "Name": "Mesh Parameters",
+          "Description": ""
+      },
+      {
+          "Field": "m_triangleIndexToShapeKey",
+          "Name": "Triange Index to Shape Key",
+          "Description": ""
+      },
+      {
+          "Field": "m_shapeTagCodecInfo",
+          "Name": "Shape Tag Codec Info",
+          "Description": ""
+      },
+      {
+          "Field": "m_data",
+          "Name": "Data",
+          "Description": ""
+      },
+      {
+          "Field": "m_triangleIsInterior",
+          "Name": "Triangle is Interior",
+          "Description": ""
+      },
+      {
+          "Field": "m_flags",
+          "Name": "Flags",
+          "Description": ""
+      },
+      {
+          "Field": "m_type",
+          "Name": "Type",
+          "Description": ""
+      },
+      {
+          "Field": "m_numShapeKeyBits",
+          "Name": "Number of Shape Key Bits",
+          "Description": ""
+      },
+      {
+          "Field": "m_dispatchType",
+          "Name": "Dispatch Type",
+          "Description": ""
+      },
+      {
+          "Field": "m_convexRadius",
+          "Name": "Convex Radius",
+          "Description": ""
+      },
+      {
+          "Field": "m_userData",
+          "Name": "User Data",
+          "Description": ""
+      },
+      {
+          "Field": "m_properties",
+          "Name": "Properties",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

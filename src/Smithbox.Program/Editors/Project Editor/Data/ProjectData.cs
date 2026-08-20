@@ -1,15 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
-using StudioCore.Application;
-using StudioCore.Editors.MetadataEditor;
-using StudioCore.Logger;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using StudioCore.Editors.MetadataEditor;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.Common;
 

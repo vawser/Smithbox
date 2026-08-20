@@ -51,7 +51,6 @@ namespace StudioCore.Application;
 [JsonSerializable(typeof(FormatMaskEntry))]
 [JsonSerializable(typeof(MaskSection))]
 
-
 internal partial class ProjectJsonSerializerContext : JsonSerializerContext
 {
 }

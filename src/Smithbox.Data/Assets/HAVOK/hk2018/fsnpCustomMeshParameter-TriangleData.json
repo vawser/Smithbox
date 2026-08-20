@@ -1,0 +1,30 @@
+{
+  "Type": "HKLib.hk2018.fsnpCustomMeshParameter+TriangleData",
+  "Fields": [
+      {
+          "Field": "m_primitiveDataIndex",
+          "Name": "Primitive Data Index",
+          "Description": ""
+      },
+      {
+          "Field": "m_triangleDataIndex",
+          "Name": "Triangle Data Index",
+          "Description": ""
+      },
+      {
+          "Field": "m_vertexIndexA",
+          "Name": "Vertex Index: A",
+          "Description": ""
+      },
+      {
+          "Field": "m_vertexIndexB",
+          "Name": "Vertex Index: B",
+          "Description": ""
+      },
+      {
+          "Field": "m_vertexIndexC",
+          "Name": "Vertex Index: C",
+          "Description": ""
+      }
+  ]
+}

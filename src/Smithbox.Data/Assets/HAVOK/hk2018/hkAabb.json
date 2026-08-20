@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hkAabb",
+  "Fields": [
+      {
+          "Field": "m_min",
+          "Name": "Minimum",
+          "Description": ""
+      },
+      {
+          "Field": "m_max",
+          "Name": "Maximum",
+          "Description": ""
+      }
+  ]
+}

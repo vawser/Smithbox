@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hkcdSimdTree",
+  "Fields": [
+      {
+          "Field": "m_nodes",
+          "Name": "Nodes",
+          "Description": ""
+      },
+      {
+          "Field": "m_isCompact",
+          "Name": "Is Compact",
+          "Description": ""
+      }
+  ]
+}
