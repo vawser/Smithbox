@@ -273,7 +273,16 @@ public class PathBuilder
                 }
                 else if (project.Descriptor.ProjectType is ProjectType.BB)
                 {
-                    relPath = Path.Combine("chr", $"{chrid}.chrbnd.dcx");
+                    // Most BB characters have their textures embedded in the chrbnd, but some (e.g. large
+                    // environment/set-piece characters like carriages) ship a standalone tpf instead - same
+                    // split DS1 has, just dcx-compressed. Mirror DS1's "check the standalone tpf first, fall
+                    // back to chrbnd" logic rather than assuming chrbnd always has it.
+                    relPath = Path.Combine("chr", chrid, $"{chrid}.tpf.dcx");
+
+                    if (!project.VFS.FS.FileExists(SanitiseRelativePath(relPath)))
+                    {
+                        relPath = Path.Combine("chr", $"{chrid}.chrbnd.dcx");
+                    }
                 }
                 else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT)
                 {

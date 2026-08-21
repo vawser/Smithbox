@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
 using System.Text.Json;
 
@@ -18,6 +19,7 @@ public class GltfDocumentWriter
     private const int GL_ARRAY_BUFFER = 34962;
     private const int GL_ELEMENT_ARRAY_BUFFER = 34963;
 
+    private const int GL_UNSIGNED_SHORT = 5123;
     private const int GL_UNSIGNED_INT = 5125;
     private const int GL_FLOAT = 5126;
 
@@ -28,6 +30,7 @@ public class GltfDocumentWriter
     private readonly List<(int bufferView, int byteOffset, int componentType, int count, string type, float[] min, float[] max)> _accessors = new();
 
     private readonly List<GltfMesh> _meshes = new();
+    private readonly List<GltfSkin> _skins = new();
     private readonly List<GltfMaterial> _materials = new();
     private readonly Dictionary<string, int> _materialLookup = new();
 
@@ -43,7 +46,16 @@ public class GltfDocumentWriter
     private class GltfMesh
     {
         public string Name;
-        public readonly List<(int posAccessor, int? normAccessor, int uvAccessor, int idxAccessor, int material)> Primitives = new();
+        public readonly List<(int posAccessor, int? normAccessor, int uvAccessor, int idxAccessor, int material,
+            int? jointsAccessor, int? weightsAccessor)> Primitives = new();
+    }
+
+    private class GltfSkin
+    {
+        public string Name;
+        public List<int> Joints;
+        public int InverseBindMatricesAccessor;
+        public int? Skeleton;
     }
 
     private class GltfMaterial
@@ -60,6 +72,7 @@ public class GltfDocumentWriter
         public string Name;
         public Matrix4x4? Matrix;
         public int? Mesh;
+        public int? Skin;
         public readonly List<int> Children = new();
     }
 
@@ -134,8 +147,15 @@ public class GltfDocumentWriter
     /// then compute their own normals from the geometry - e.g. Blender falls back to its own face/vertex
     /// normals instead of using (potentially wrong) baked-in custom split normals.
     /// </param>
+    /// <param name="joints">
+    /// Per-vertex glTF joint indices (into whichever skin's <c>joints</c> array is bound to this primitive's
+    /// node - see <see cref="AddSkin"/>). Must be the same length as <paramref name="positions"/> when provided;
+    /// omit (together with <paramref name="weights"/>) for an unskinned/static primitive.
+    /// </param>
+    /// <param name="weights">Per-vertex joint weights, matching <paramref name="joints"/> one-for-one.</param>
     public void AddPrimitive(int meshIndex, IReadOnlyList<Vector3> positions, IReadOnlyList<Vector3> normals,
-        IReadOnlyList<Vector2> uvs, IReadOnlyList<int> indices, int materialIndex, bool includeNormals = true)
+        IReadOnlyList<Vector2> uvs, IReadOnlyList<int> indices, int materialIndex, bool includeNormals = true,
+        IReadOnlyList<(ushort A, ushort B, ushort C, ushort D)> joints = null, IReadOnlyList<Vector4> weights = null)
     {
         if (positions.Count == 0 || indices.Count == 0)
             return;
@@ -145,16 +165,21 @@ public class GltfDocumentWriter
         var uvAccessor = WriteVec2Accessor(uvs);
         var idxAccessor = WriteIndexAccessor(indices);
 
-        _meshes[meshIndex].Primitives.Add((posAccessor, normAccessor, uvAccessor, idxAccessor, materialIndex));
+        int? jointsAccessor = joints != null ? WriteJointsAccessor(joints) : null;
+        int? weightsAccessor = weights != null ? WriteWeightsAccessor(weights) : null;
+
+        _meshes[meshIndex].Primitives.Add((posAccessor, normAccessor, uvAccessor, idxAccessor, materialIndex,
+            jointsAccessor, weightsAccessor));
     }
 
-    public int AddNode(string name, Matrix4x4? matrix, int? meshIndex, IEnumerable<int> children = null)
+    public int AddNode(string name, Matrix4x4? matrix, int? meshIndex, IEnumerable<int> children = null, int? skin = null)
     {
         var node = new GltfNode
         {
             Name = name,
             Matrix = matrix,
-            Mesh = meshIndex
+            Mesh = meshIndex,
+            Skin = skin
         };
 
         if (children != null)
@@ -170,9 +195,40 @@ public class GltfDocumentWriter
         _nodes[parentNode].Children.Add(childNode);
     }
 
+    /// <summary>
+    /// Sets (or replaces) which skin a previously-added node is bound to - useful when the mesh node has to be
+    /// created before the skin's joint node tree exists yet.
+    /// </summary>
+    public void SetNodeSkin(int nodeIndex, int skinIndex)
+    {
+        _nodes[nodeIndex].Skin = skinIndex;
+    }
+
     public void AddSceneRoot(int nodeIndex)
     {
         _sceneRootNodes.Add(nodeIndex);
+    }
+
+    /// <summary>
+    /// Registers a skin: <paramref name="jointNodeIndices"/> are the glTF node indices (already added via
+    /// <see cref="AddNode"/>) making up the joint hierarchy, in the same order as <paramref name="inverseBindMatrices"/>.
+    /// Bind the returned skin index to a mesh's node via <see cref="AddNode"/>'s <c>skin</c> parameter or
+    /// <see cref="SetNodeSkin"/>.
+    /// </summary>
+    public int AddSkin(string name, IReadOnlyList<int> jointNodeIndices, IReadOnlyList<Matrix4x4> inverseBindMatrices,
+        int? skeletonRootNode = null)
+    {
+        var ibmAccessor = WriteMat4Accessor(inverseBindMatrices);
+
+        var index = _skins.Count;
+        _skins.Add(new GltfSkin
+        {
+            Name = name,
+            Joints = jointNodeIndices.ToList(),
+            InverseBindMatricesAccessor = ibmAccessor,
+            Skeleton = skeletonRootNode
+        });
+        return index;
     }
 
     private int AppendBufferView(byte[] data, int? target)
@@ -248,6 +304,72 @@ public class GltfDocumentWriter
     }
 
     /// <summary>
+    /// Writes a JOINTS_0 accessor: 4 unsigned-short joint indices per vertex, indexing into whichever skin's
+    /// <c>joints</c> array the primitive's node is bound to. Per spec these must NOT be normalized.
+    /// </summary>
+    private int WriteJointsAccessor(IReadOnlyList<(ushort A, ushort B, ushort C, ushort D)> values)
+    {
+        var bytes = new byte[values.Count * 8];
+        for (var i = 0; i < values.Count; i++)
+        {
+            var v = values[i];
+            BitConverter.GetBytes(v.A).CopyTo(bytes, i * 8);
+            BitConverter.GetBytes(v.B).CopyTo(bytes, i * 8 + 2);
+            BitConverter.GetBytes(v.C).CopyTo(bytes, i * 8 + 4);
+            BitConverter.GetBytes(v.D).CopyTo(bytes, i * 8 + 6);
+        }
+
+        var bufferView = AppendBufferView(bytes, GL_ARRAY_BUFFER);
+        var accessorIndex = _accessors.Count;
+        _accessors.Add((bufferView, 0, GL_UNSIGNED_SHORT, values.Count, "VEC4", null, null));
+        return accessorIndex;
+    }
+
+    /// <summary>
+    /// Writes a WEIGHTS_0 accessor: 4 float joint weights per vertex, matching a JOINTS_0 accessor one-for-one.
+    /// </summary>
+    private int WriteWeightsAccessor(IReadOnlyList<Vector4> values)
+    {
+        var bytes = new byte[values.Count * 16];
+        for (var i = 0; i < values.Count; i++)
+        {
+            var v = values[i];
+            BitConverter.GetBytes(v.X).CopyTo(bytes, i * 16);
+            BitConverter.GetBytes(v.Y).CopyTo(bytes, i * 16 + 4);
+            BitConverter.GetBytes(v.Z).CopyTo(bytes, i * 16 + 8);
+            BitConverter.GetBytes(v.W).CopyTo(bytes, i * 16 + 12);
+        }
+
+        var bufferView = AppendBufferView(bytes, GL_ARRAY_BUFFER);
+        var accessorIndex = _accessors.Count;
+        _accessors.Add((bufferView, 0, GL_FLOAT, values.Count, "VEC4", null, null));
+        return accessorIndex;
+    }
+
+    /// <summary>
+    /// Writes a MAT4 accessor (16 floats per matrix, column-major per spec) - used for a skin's
+    /// <c>inverseBindMatrices</c>. No buffer view target: this data isn't a vertex attribute or index list.
+    /// </summary>
+    private int WriteMat4Accessor(IReadOnlyList<Matrix4x4> matrices)
+    {
+        var bytes = new byte[matrices.Count * 64];
+        for (var i = 0; i < matrices.Count; i++)
+        {
+            var m = matrices[i];
+            var offset = i * 64;
+            float[] column = { m.M11, m.M12, m.M13, m.M14, m.M21, m.M22, m.M23, m.M24,
+                m.M31, m.M32, m.M33, m.M34, m.M41, m.M42, m.M43, m.M44 };
+            for (var c = 0; c < 16; c++)
+                BitConverter.GetBytes(column[c]).CopyTo(bytes, offset + c * 4);
+        }
+
+        var bufferView = AppendBufferView(bytes, null);
+        var accessorIndex = _accessors.Count;
+        _accessors.Add((bufferView, 0, GL_FLOAT, matrices.Count, "MAT4", null, null));
+        return accessorIndex;
+    }
+
+    /// <summary>
     /// Writes the accumulated scene to disk as "&lt;name&gt;.gltf" + "&lt;name&gt;.bin" next to each other.
     /// PNG textures referenced via <see cref="AddOrGetImage"/> are expected to already exist on disk
     /// (relative to the .gltf file).
@@ -309,6 +431,9 @@ public class GltfDocumentWriter
             if (node.Mesh.HasValue)
                 writer.WriteNumber("mesh", node.Mesh.Value);
 
+            if (node.Skin.HasValue)
+                writer.WriteNumber("skin", node.Skin.Value);
+
             if (node.Children.Count > 0)
             {
                 writer.WriteStartArray("children");
@@ -338,6 +463,10 @@ public class GltfDocumentWriter
                 if (prim.normAccessor.HasValue)
                     writer.WriteNumber("NORMAL", prim.normAccessor.Value);
                 writer.WriteNumber("TEXCOORD_0", prim.uvAccessor);
+                if (prim.jointsAccessor.HasValue)
+                    writer.WriteNumber("JOINTS_0", prim.jointsAccessor.Value);
+                if (prim.weightsAccessor.HasValue)
+                    writer.WriteNumber("WEIGHTS_0", prim.weightsAccessor.Value);
                 writer.WriteEndObject();
                 writer.WriteNumber("indices", prim.idxAccessor);
                 writer.WriteNumber("material", prim.material);
@@ -348,6 +477,31 @@ public class GltfDocumentWriter
             writer.WriteEndObject();
         }
         writer.WriteEndArray();
+
+        // skins
+        if (_skins.Count > 0)
+        {
+            writer.WriteStartArray("skins");
+            foreach (var skin in _skins)
+            {
+                writer.WriteStartObject();
+                if (!string.IsNullOrEmpty(skin.Name))
+                    writer.WriteString("name", skin.Name);
+
+                writer.WriteStartArray("joints");
+                foreach (var j in skin.Joints)
+                    writer.WriteNumberValue(j);
+                writer.WriteEndArray();
+
+                writer.WriteNumber("inverseBindMatrices", skin.InverseBindMatricesAccessor);
+
+                if (skin.Skeleton.HasValue)
+                    writer.WriteNumber("skeleton", skin.Skeleton.Value);
+
+                writer.WriteEndObject();
+            }
+            writer.WriteEndArray();
+        }
 
         // materials
         writer.WriteStartArray("materials");

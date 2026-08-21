@@ -47,6 +47,12 @@ public class GltfExportTool
             "Use this as a fallback if some meshes still render oddly-shaded.");
 
         GUI.Spacer();
+        ImGui.Checkbox("Include skeleton##modelGltfExportIncludeSkeleton", ref CFG.Current.ModelEditor_GltfExport_IncludeSkeleton);
+        GUI.Tooltip("Exports a real glTF skin (armature/joints + bind weights) in bind pose, instead of a static mesh. " +
+            "Works for Characters and Parts (armor/weapons) alike. No animation is exported - pose or animate the " +
+            "result yourself in Blender. Automatically falls back to a static mesh for models with no bones.");
+
+        GUI.Spacer();
         GUI.MultiButtonInput("modelGltfExportActions",
             "selectModelGltfExportDest", "Select Output Folder", "Choose the folder to export the glTF scene into.", SelectExportDestination,
             "openModelGltfExportDest", "Open Output Folder", "Open the export folder in Explorer.", OpenExportFolder,
@@ -108,7 +114,8 @@ public class GltfExportTool
         try
         {
             var includeNormals = CFG.Current.ModelEditor_GltfExport_IncludeNormals;
-            var result = await Task.Run(() => GltfSceneExportService.ExportModelViewport(Project, modelWrapper, outputFolder, includeNormals));
+            var includeSkeleton = CFG.Current.ModelEditor_GltfExport_IncludeSkeleton;
+            var result = await Task.Run(() => GltfSceneExportService.ExportModelViewport(Project, modelWrapper, outputFolder, includeNormals, includeSkeleton));
 
             _lastSuccess = result.Success;
 

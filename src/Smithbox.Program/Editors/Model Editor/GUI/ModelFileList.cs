@@ -98,7 +98,7 @@ public class ModelFileList
         {
             ApplyAutoLoadFirst = false;
 
-            if (CFG.Current.ModelEditor_Files_AutoLoadFirstEntry)
+            if (CFG.Current.ModelEditor_Files_AutoLoadFirstEntry && container.Models.Count > 0)
             {
                 var first = container.Models.First();
 

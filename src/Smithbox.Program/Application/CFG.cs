@@ -547,6 +547,7 @@ public class CFG
 
     public string ModelEditor_GltfExport_OutputFolder = "";
     public bool ModelEditor_GltfExport_IncludeNormals = true;
+    public bool ModelEditor_GltfExport_IncludeSkeleton = true;
 
     // Saving
     public bool ModelEditor_AutomaticSave_IncludeFLVER = true;

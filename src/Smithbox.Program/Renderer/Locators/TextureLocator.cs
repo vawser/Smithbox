@@ -187,8 +187,16 @@ public static class TextureLocator
     /// Used in FlverResource
     /// </summary>
     /// <param name="texpath"></param>
+    /// <param name="materialName">
+    /// The FLVER material's own name (not its MTD), when available. Some "chr"-classified models are really
+    /// environment set-pieces (e.g. carriages) whose textures are packed into their owning map's texture
+    /// archives rather than the character's own - despite the material's texture entries still pointing at a
+    /// dev-time "chr/{id}/tex/..." path. From names these materials after the map they belong to
+    /// (e.g. "m22_00_Carriage_900"), so that prefix is used as a more reliable signal than the texture path
+    /// itself when present.
+    /// </param>
     /// <returns></returns>
-    public static string GetFlverTextureVirtualPath(string virtPath, string texpath)
+    public static string GetFlverTextureVirtualPath(string virtPath, string texpath, string materialName = null)
     {
         var type = "";
 
@@ -200,6 +208,17 @@ public static class TextureLocator
         // Usage of the global BaseEditor here:
         var curProject = Smithbox.Orchestrator.SelectedProject;
         texpath = texpath.Replace('\\', sl);
+
+        // Map-owned material on a non-map (usually "chr") model - see the materialName param doc above.
+        if (!string.IsNullOrEmpty(materialName))
+        {
+            var mapMaterialMatch = System.Text.RegularExpressions.Regex.Match(materialName, @"^(m\d{2})_\d{2}_");
+            if (mapMaterialMatch.Success)
+            {
+                var mid = mapMaterialMatch.Groups[1].Value;
+                return $@"map/tex/{mid}/{Path.GetFileNameWithoutExtension(texpath)}";
+            }
+        }
 
         // MAP Texture
         if (texpath.Contains($"{sl}map{sl}"))

@@ -64,7 +64,7 @@ public static class FlverTextureResolver
             if (string.IsNullOrEmpty(resolvedPath))
                 continue;
 
-            var virtualPath = TextureLocator.GetFlverTextureVirtualPath(flverVirtPath, resolvedPath.ToLowerInvariant());
+            var virtualPath = TextureLocator.GetFlverTextureVirtualPath(flverVirtPath, resolvedPath.ToLowerInvariant(), material.Name);
 
             if (isAlbedo && result.AlbedoVirtualPath == null)
                 result.AlbedoVirtualPath = virtualPath;

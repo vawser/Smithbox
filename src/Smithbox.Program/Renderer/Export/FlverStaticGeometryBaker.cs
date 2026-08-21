@@ -118,6 +118,21 @@ public static class FlverStaticGeometryBaker
                 rigidMeshNormalTransform = GetNormalTransform(mesh.NodeIndex);
             }
 
+            // FLVER.Vertex.NormalW (used here as a rigid single-bone bind) is an index into this mesh's own
+            // local bone table (FLVER2.Mesh.BoneIndices), not a global flver.Nodes index - it must be remapped
+            // through it, exactly like the live renderer's "HACK: Move normalW index from local to global bone
+            // index" (FlverResource.cs). Skipping this previously baked these vertices against an unrelated node.
+            int RemapLocalBoneIndex(int localIndex)
+            {
+                if (mesh.BoneIndices == null || mesh.BoneIndices.Count == 0)
+                    return localIndex;
+
+                if (localIndex < 0 || localIndex >= mesh.BoneIndices.Count)
+                    return 0;
+
+                return mesh.BoneIndices[localIndex];
+            }
+
             var positions = new List<Vector3>(mesh.Vertices.Count);
             var normals = new List<Vector3>(mesh.Vertices.Count);
             var uvs = new List<Vector2>(mesh.Vertices.Count);
@@ -127,11 +142,15 @@ public static class FlverStaticGeometryBaker
                 var pos = vertex.Position;
                 var normal = vertex.Normal;
 
-                if (useNormalWTransform && nodes is { Count: > 0 } && vertex.NormalW >= 0 && vertex.NormalW < nodes.Count)
+                if (useNormalWTransform && nodes is { Count: > 0 })
                 {
-                    var t = Utils.GetBoneWorldMatrix(nodes[vertex.NormalW], nodes);
+                    var globalNode = RemapLocalBoneIndex(vertex.NormalW);
+                    if (globalNode < 0 || globalNode >= nodes.Count)
+                        globalNode = 0;
+
+                    var t = Utils.GetBoneWorldMatrix(nodes[globalNode], nodes);
                     pos = Vector3.Transform(pos, t);
-                    normal = Vector3.TransformNormal(normal, GetNormalTransform(vertex.NormalW));
+                    normal = Vector3.TransformNormal(normal, GetNormalTransform(globalNode));
                 }
                 else if (rigidMeshTransform.HasValue)
                 {
@@ -149,7 +168,7 @@ public static class FlverStaticGeometryBaker
                 // Rigid nodes can vary per vertex here, so decide per triangle (using its first vertex's node).
                 for (var i = 0; i + 2 < indices.Count; i += 3)
                 {
-                    var nodeIndex = mesh.Vertices[indices[i]].NormalW;
+                    var nodeIndex = RemapLocalBoneIndex(mesh.Vertices[indices[i]].NormalW);
                     if (nodeIndex >= 0 && nodeIndex < nodes.Count && IsNodeMirrored(nodeIndex))
                     {
                         (indices[i + 1], indices[i + 2]) = (indices[i + 2], indices[i + 1]);
