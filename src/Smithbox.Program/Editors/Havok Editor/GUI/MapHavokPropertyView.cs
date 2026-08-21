@@ -3,8 +3,6 @@ using HKLib.hk2018;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Editors.Viewport;
 using StudioCore.Utilities;
 using System.Drawing;
 using System.Numerics;
@@ -12,6 +10,10 @@ using System.Reflection;
 
 namespace StudioCore.Editors.HavokEditor;
 
+/// <summary>
+/// Handles the property editing for collision / navmesh HKX files
+/// Used in the Map Editor
+/// </summary>
 public class MapHavokPropertyView
 {
     private MapEditorView View;
