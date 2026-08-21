@@ -1,29 +1,7 @@
 #---------------------
 # TODO 
 #---------------------
-
-# Map Editor
-- 'Focus' toggle button when multiple maps are loaded:
- - Applies gray dither shader to all viewport elements that aren't part of the currently selected map
- - Would be useful for having the ability to see the greater area whilst quickly being able to discern which objects belong to the currently selected map
- 
-- Check speed tree rendering
-
-- Add Copy As action for basic collision dupes
- 
-# Gparam Editor:
- - DS2 fog color values are inverted (BGR, not RGB)
-
-# Heavy Allocations:
- - Viewport Grid is memory inefficient: perhaps possible with shader alone?
- - DbgPrims
- - GetMapNameAlias
- - InvalidateUidEntries is string concat
- - HkLib Read 
- - Text Container Read 
- 
 # LOC TO DO:
- ### Developer
  Editors
   Animation Editor
   Common
@@ -31,20 +9,16 @@
   Gparam Editor
   Map Data Editor
   Map Editor
-  ### Material Editor
-  ### Model Editor
-  ### Param Editor
-  ### Project Metadata Editor
-  ### Text Editor
-  ### Texture Viewer
-  ### Viewport
- ### Interface
- ### Keybinds
- ### Logger
- ### Memory
- ### Preferences
- ### Project
- ### Renderer
- ### Utilities
+
+# Map Editor
+- Check speed tree rendering
+
+- Havok Edit:
+ - Add auto-update to name in group list if Name property is changed
  
- `
+# Havok Editor
+- Implement editor framework
+- Implement binder actions: 
+ - Duplicate (and Rename) HKX
+ - Delete HKX
+ - Insert HKX

@@ -1,23 +1,30 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
-using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
-namespace StudioCore.Editors.MapEditor;
+namespace StudioCore.Editors.HavokEditor;
 
-public static class HavokEditDecorators
+public static class HavokPropertyDecorators
 {
-    public static bool ParamRefRow(MapEditorView view, HavokClass havokMeta, FieldInfo prop, object val, ref object newObj)
+    public static bool ParamRefRow(IEditorView view, HavokClass havokMeta, FieldInfo prop, object val, ref object newObj)
     {
-        if (view.Project.Handler.ParamEditor == null)
+        ParamEditorView activeView = null;
+
+        if(view is MapEditorView mapEditorView)
+        {
+            if (mapEditorView.Project.Handler.ParamEditor == null)
+                return false;
+
+            activeView = mapEditorView.Project.Handler.ParamEditor.ViewHandler.ActiveView;
+        }
+
+        if (activeView == null)
             return false;
 
         if (havokMeta == null)
             return false;
-
-        var activeView = view.Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
         var fieldMeta = havokMeta.Fields.FirstOrDefault(f => f.Field == prop.Name);
         if (fieldMeta == null)
@@ -39,7 +46,7 @@ public static class HavokEditDecorators
 
         ImGui.NextColumn();
 
-        if (view.Project.Handler.ParamEditor != null)
+        if (activeView.Project.Handler.ParamEditor != null)
         {
             ParamReferenceHelper.Hint(activeView, refs, null, val);
             ParamReferenceHelper.Click(activeView, val, null, refs);

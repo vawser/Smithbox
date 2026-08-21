@@ -1,123 +1,153 @@
 #---------------------
-# FEATURES
+# Long-Term TODO Notes
 #---------------------
+#-------------
+# Map Editor
+#-------------
+- Implement viewport grid via shader
 
-- Model Editor:
- - Add HKXPWV edit mode (add sub-editor stuff from Map Data Editor: FLVER, HKXPWV
+- add Object Mass Edit that allows for addition/deletion of map objects programmatically
 
-- Map Data Editor
- - Property Edit
+- implement Edge support for SDT
+
+- Get gizmos to work in Orthographic/Oblique view mode
+
+- Implement the auto-BTAB handling actions
+
+- Add map piece link in BTAB properties 
+
+- Add progress modal to the prefab import/export
+
+- Make the prefab import much quicker (so we can support whole map imports)
+
+- Add visualisation (via primitive meshes) of enemy AI radiuses (sight, listen, smell)
+
+- "Follow" toggle / shortcut for camera that allows a selection to be 'followed' by the camera (i.e. keep look-at spot focused on selection centre and adjust camera position if translation occurs)
+
+- "Bounding Box" visualisation toggle / shortcut: display the bounding box for the selection using wire box primitives 
+ 
+- Implement Asset Browser with thumbnail previews
+ 
+- 'Focus' toggle button when multiple maps are loaded:
+    - Applies gray dither shader to all viewport elements that aren't part of the currently selected map
+    - Would be useful for having the ability to see the greater area whilst quickly being able to discern which objects belong to the currently selected map
+ 
+- Add 'Mass Replace' tool
+    - Internally similar to Global Mass Edit, but simplified so user only inputs target and replacement ChrID, NpcParam, NpcThinkParam values
+
+# Bugs
+- fix ER NVA so saves are BP correct (currently the Write side is quite off)
+- DS3 navmeshes position seems off in some maps (Undead Settlement) 
+
+#-------------
+# Model Editor
+#-------------
+- Add simple JSON export/import for elements of FLVER
+
+- Rendering experiment (TinyFFR)
+
+- Add HKXPWV edit mode (add sub-editor stuff from Map Data Editor: FLVER, HKXPWV
+
+# Bugs
+- Submeshes aren't working correctly
+- Fix property editing for the sub-classes (FaceSet, Texture, etc)
+- dummy duplicate doesn't stick
+- bone position cannot be changed (resets itself on gizmo move)
+- DS2 chrs loading badly, parts + map pieces failed to find
+
+#-------------
+# Map Data Editor
+#-------------
+- Property Edit
     - For multi-select, apply change to all
     - Add 'sticky' selection memory (try and re-select based on previous when switching maps)
-        - Perhaps make it per-map (meaning the selection is remembered for each map)
+    - Perhaps make it per-map (meaning the selection is remembered for each map)
+
     - Implement the other MSB meta elements
-     - Handle map object references
+    - Handle map object references
     - Add automatic add to Models list if ModelName changes for a Part
     - Display array entries even if they are null (i.e. string arrays for things such as WalkPointNames)
-  
- - Tools
+
+- Tools
     - Port over Global Search
- 
-    - Add Mass Edit:
-        - Three modes: Edit, Add, Delete
-        - Edit: functions like existing impl (map, base type, sub type, prop, value) - secondary stage defines the edit command: =, +, -, *, / applied to value
-        - Add: define which maps to add a set of map objects to (will require menu for user to define this set of map objects)
-        - Delete: define the map objects to delete (map, base type, sub type, prop, value)
-  
-  - ENFL Editor
+
+- Add Mass Edit:
+    - Three modes: Edit, Add, Delete
+    - Edit: functions like existing impl (map, base type, sub type, prop, value) - secondary stage defines the edit command: =, +, -, *, / applied to value
+    - Add: define which maps to add a set of map objects to (will require menu for user to define this set of map objects)
+    - Delete: define the map objects to delete (map, base type, sub type, prop, value)
+
+- ENFL Editor
     - Implement ENFL sub-editor
  
- 
-- Collision Editor
- - Basic editing of the HKX collision properties for:
-  - Map Collision
-  - Asset Collision
-  - Character Collision
-  
-  - Map Collision helper that generates a set of basic collision shapes (squares, rectangles, circles, boxes, spheres), producing havok files and placing them in the map collision binder(s).
+#-------------
+# Param Editor
+#-------------
+- Table Group column should have difference highlighting if any of the internal rows are highlighted as different
 
-- Bullet Simulator
- - Add primitive simulation of bullet behavior, making use of the primitive draw elements to display the path and projectiles.
- 
-- Map Editor:
-    - add Object Mass Edit that allows for addition/deletion of map objects programmatically
-    - implement Edge support for SDT
-    - Get gizmos to work in Orthographic/Oblique view mode
-    - Implement the auto-BTAB handling actions
-    - Add map piece link in BTAB properties 
-    - Add progress modal to the prefab import/export
-    - Make the prefab import much quicker (so we can support whole map imports)
- - Add visualisation (via primitive meshes) of enemy AI radiuses (sight, listen, smell)
- - "Follow" toggle / shortcut for camera that allows a selection to be 'followed' by the camera (i.e. keep look-at spot focused on selection centre and adjust camera position if translation occurs)
- - "Bounding Box" visualisation toggle / shortcut: display the bounding box for the selection using wire box primitives 
- - Implement Asset Browser with thumbnail previews
- 
-- Model Editor 
-    - Add simple JSON export/import for elements of FLVER
-    - Rendering experiment (TinyFFR)
-    - Mesh visbility/delete not working properly
-        - Race condition in the model mesh -> provider flow? Sometimes the submeshes are associated, sometimes not.
-        
-- Param Editor: 
-    - Table Group column should have difference highlighting if any of the internal rows are highlighted as different
-    - Look into making row merges for tabulated params functional and simple
-    - Finish converting the SDT AlternativeOrders into Field Layouts
-    - Finish AC6 meta
- 
+- Look into making row merges for tabulated params functional and simple
 
-- Texture Editor 
-    - add individual icon export based on subtexture
-    - adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
- (i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
+- Finish converting the SDT AlternativeOrders into Field Layouts
+
+- Finish AC6 meta
  
- - Add tool to quickly add new shoebox layout entry for supported textures
+# Bugs
+- adjust the difference checker to account for row index
+    
+#-------------
+# Gparam Editor
+#-------------
+
+# Bugs
+- DS2 fog color values are inverted (BGR, not RGB)
+    
+#-------------
+# Texture Editor
+#-------------
+- add individual icon export based on subtexture
+
+- adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
+(i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
+
+- Add tool to quickly add new shoebox layout entry for supported textures
   - Use the overlay tech from World Map to visualize the placement
   
-- Material Editor: 
-    - add power search to file list 
-        (i.e. param: g_BlendMode = 6 should filter the list down to all files that contain a parameter called g_BlendMode set to 6)
-        (i.e. texture: Path ~ fire should filter the list down to all files that contain a texture with the Path string that contains the string 'fire')
-    - add list add/remove actions for the Param/Texture lists in a MTD
+#-------------
+# Material Editor
+#-------------
+- add power search to file list 
+    (i.e. param: g_BlendMode = 6 should filter the list down to all files that contain a parameter called g_BlendMode set to 6)
+    (i.e. texture: Path ~ fire should filter the list down to all files that contain a texture with the Path string that contains the string 'fire')
+
+- add list add/remove actions for the Param/Texture lists in a MTD
     
-- File Browser:
-    - Add File Mover utility to the File Browser: lets you move files from binders into other binders, i.e. from map-specific AI into common AI binder.
+#-------------
+# File Browser
+#-------------
+- Add File Mover utility to the File Browser: lets you move files from binders into other binders, i.e. from map-specific AI into common AI binder.
     
-- ER: World Map Editor
- - Specific editor for the world map tile textures, should present them similarly to the Map Editor world map feature, but constructs the map from the actual tiles + includes the layering stuff
- - Would then enable an editor for MapTexInfo, which controls weather
+#-------------
+# Bullet Simulator
+#-------------
+- Add primitive simulation of bullet behavior, making use of the primitive draw elements to display the path and projectiles.
  
-- Animation Editor:
- - Add basic HKX editor for DS3
+#-------------
+# World Map Editor
+#-------------
+- Specific editor for the world map tile textures, should present them similarly to the Map Editor world map feature, but constructs the map from the actual tiles + includes the layering stuff
+    - Would then enable an editor for MapTexInfo, which controls weather
  
-- Script Editor:
- - Code blocks style editor for EMEVD:
-  - Split the file into Functions (group of Statements) and Statements (the individual commands/conditions)
-  - Functions would use the Alias Editor style presentation (drag button + ID + EDD name) 
-  - Statements would use the Alias Editor style presentation (drag button + command title -> right-click enum style selection to switch command), selection would populate property view.
+#-------------
+# Script Editor
+#-------------
+- Code blocks style editor for EMEVD:
+    - Split the file into Functions (group of Statements) and Statements (the individual commands/conditions)
+    - Functions would use the Alias Editor style presentation (drag button + ID + EDD name) 
+    - Statements would use the Alias Editor style presentation (drag button + command title -> right-click enum style selection to switch command), selection would populate property view.
   
- 
-#---------------------
-# BUGS
-#---------------------
-- Map Editor: 
-    - fix ER NVA so saves are BP correct (currently the Write side is quite off)
-    - DS3 navmeshes position seems off in some maps (Undead Settlement)
-
-- Model Editor: 
-    - Make the mesh entries use the sub-meshes properly
-    - Fix property editing for the sub-classes (FaceSet, Texture, etc)
-    - dummy duplicate doesn't stick
-    - bone position cannot be changed (resets itself on gizmo move)
-    - DS2 chrs loading badly, parts + map pieces failed to find
-
-- Param Editor: 
-    - adjust the difference checker to account for row index
-
-
 #---------------------
 # DOCUMENTATION
 #---------------------
-
 # NR stuff to add to MSB and Param Def
 How to add a field boss being able to be red / mutated:
 Find its SmallBaseMapVariationParam ID. For example magma wyrm has 4668.

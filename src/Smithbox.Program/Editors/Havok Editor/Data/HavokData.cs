@@ -35,6 +35,11 @@ public class HavokData : IDisposable
         PartBank = new(Project);
         RumbleBank = new(Project);
 
+        return true;
+    }
+
+    public async Task<bool> SetupAnimationBank()
+    {
         // Animation Bank
         Task<bool> animationBankTask = AnimationBank.Setup();
         bool animationBankTaskResult = await animationBankTask;
@@ -48,6 +53,11 @@ public class HavokData : IDisposable
             Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Animation_Bank_PASS"));
         }
 
+        return true;
+    }
+
+    public async Task<bool> SetupBehaviorBank()
+    {
         // Behavior Bank
         Task<bool> behaviorBankTask = BehaviorBank.Setup();
         bool behaviorBankTaskResult = await behaviorBankTask;
@@ -61,6 +71,11 @@ public class HavokData : IDisposable
             Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Behavior_Bank_PASS"));
         }
 
+        return true;
+    }
+
+    public async Task<bool> SetupCharacterBank()
+    {
         // Character Bank
         Task<bool> characterBankTask = CharacterBank.Setup();
         bool characterBankTaskResult = await characterBankTask;
@@ -74,6 +89,11 @@ public class HavokData : IDisposable
             Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Character_Bank_PASS"));
         }
 
+        return true;
+    }
+
+    public async Task<bool> SetupCollisionBank()
+    {
         // Collision Bank
         Task<bool> collisionBankTask = CollisionBank.Setup();
         bool collisionBankTaskResult = await collisionBankTask;
@@ -87,6 +107,11 @@ public class HavokData : IDisposable
             Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Collision_Bank_PASS"));
         }
 
+        return true;
+    }
+
+    public async Task<bool> SetupCutsceneBank()
+    {
         // Cutscene Bank
         Task<bool> cutsceneBankTask = CutsceneBank.Setup();
         bool cutsceneBankTaskResult = await cutsceneBankTask;
@@ -100,6 +125,11 @@ public class HavokData : IDisposable
             Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Cutscene_Bank_PASS"));
         }
 
+        return true;
+    }
+
+    public async Task<bool> SetupNavmeshBank()
+    {
         // Navmesh Bank
         Task<bool> navmeshBankTask = NavmeshBank.Setup();
         bool navmeshBankTaskResult = await navmeshBankTask;
@@ -113,6 +143,11 @@ public class HavokData : IDisposable
             Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Navmesh_Bank_PASS"));
         }
 
+        return true;
+    }
+
+    public async Task<bool> SetupPartBank()
+    {
         // Part Bank
         Task<bool> partBankTask = PartBank.Setup();
         bool partBankTaskResult = await partBankTask;
@@ -126,11 +161,16 @@ public class HavokData : IDisposable
             Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Part_Bank_PASS"));
         }
 
+        return true;
+    }
+
+    public async Task<bool> SetupRumbleBank()
+    {
         // Rumble Bank
         Task<bool> rumbleBankTask = RumbleBank.Setup();
         bool rumbleBankTaskResult = await rumbleBankTask;
 
-        if (!animationBankTaskResult)
+        if (!rumbleBankTaskResult)
         {
             Smithbox.LogError(this, LOC.Get("HAVOK_Data_Setup_Rumble_Bank_FAIL"));
         }

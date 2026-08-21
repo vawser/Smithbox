@@ -11,6 +11,7 @@ public class HavokAnimationBank : IDisposable
     public ProjectEntry Project;
 
     public Dictionary<HavokFileLocation, hkRootLevelContainer> Files = new();
+    public bool SetupBank = false;
 
     public HavokAnimationBank(ProjectEntry project)
     {
@@ -23,6 +24,8 @@ public class HavokAnimationBank : IDisposable
         {
             PopulateFiles(entry);
         }
+
+        SetupBank = true;
 
         return true;
     }

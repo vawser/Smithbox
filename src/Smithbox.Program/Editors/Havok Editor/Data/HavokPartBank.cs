@@ -13,6 +13,7 @@ public class HavokPartBank : IDisposable
     public ProjectEntry Project;
 
     public Dictionary<HavokFileLocation, hkRootLevelContainer> Files = new();
+    public bool SetupBank = false;
 
     public HavokPartBank(ProjectEntry project)
     {
@@ -24,6 +25,8 @@ public class HavokPartBank : IDisposable
         {
             PopulateFiles(entry);
         }
+
+        SetupBank = true;
 
         return true;
     }

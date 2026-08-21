@@ -12,6 +12,7 @@ public class HavokCutsceneBank : IDisposable
     public ProjectEntry Project;
 
     public Dictionary<HavokFileLocation, hkRootLevelContainer> Files = new();
+    public bool SetupBank = false;
 
     public HavokCutsceneBank(ProjectEntry project)
     {
@@ -24,6 +25,8 @@ public class HavokCutsceneBank : IDisposable
         {
             PopulateFiles(entry);
         }
+
+        SetupBank = true;
 
         return true;
     }

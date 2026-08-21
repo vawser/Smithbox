@@ -508,7 +508,7 @@ public class MapHavokPropertyView
             ImGui.SetItemDefaultFocus();
         }
 
-        if (HavokEditDecorators.ParamRefRow(View, havokMeta, prop, oldval, ref newval))
+        if (HavokPropertyDecorators.ParamRefRow(View, havokMeta, prop, oldval, ref newval))
         {
             changed = true;
             committed = true;

@@ -16,6 +16,7 @@ public class HavokCollisionBank : IDisposable
     public ProjectEntry Project;
     public Dictionary<HavokFileLocation, hkRootLevelContainer> MapCollisionFiles = new();
     public Dictionary<HavokFileLocation, hkRootLevelContainer> AssetCollisionFiles = new();
+    public bool SetupBank = false;
 
     public HavokCollisionBank(ProjectEntry project)
     {
@@ -33,6 +34,8 @@ public class HavokCollisionBank : IDisposable
         {
             PopulateAssetFiles(entry);
         }
+
+        SetupBank = true;
 
         return true;
     }

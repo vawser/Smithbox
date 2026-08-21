@@ -13,6 +13,7 @@ public class HavokRumbleBank : IDisposable
     public ProjectEntry Project;
 
     public Dictionary<HavokFileLocation, hkRootLevelContainer> Files = new();
+    public bool SetupBank = false;
 
     public HavokRumbleBank(ProjectEntry project)
     {
@@ -25,6 +26,8 @@ public class HavokRumbleBank : IDisposable
         {
             PopulateFiles(entry);
         }
+
+        SetupBank = true;
 
         return true;
     }
