@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hkaiNavMeshClearanceCache+McpDataInteger",
+  "Fields": [
+      {
+          "Field": "m_interpolant",
+          "Name": "Interpolant",
+          "Description": ""
+      },
+      {
+          "Field": "m_clearance",
+          "Name": "Clearance",
+          "Description": ""
+      }
+  ]
+}

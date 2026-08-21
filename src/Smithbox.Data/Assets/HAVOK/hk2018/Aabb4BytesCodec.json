@@ -4,17 +4,20 @@
       {
           "Field": "m_nodes",
           "Name": "Nodes",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_data",
           "Name": "Data",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_xyz",
           "Name": "XYZ",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       }
   ]
 }

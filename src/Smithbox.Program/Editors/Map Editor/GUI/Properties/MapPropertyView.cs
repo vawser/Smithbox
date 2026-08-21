@@ -4,6 +4,7 @@ using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.Viewport;
@@ -23,8 +24,7 @@ public class MapPropertyView
     private ProjectEntry Project;
 
     public MapMsbPropertyView MsbPropertyView;
-    public MapCollisionPropertyView MapCollisionPropertyView;
-    public MapNavmeshPropertyView MapNavmeshPropertyView;
+    public MapHavokPropertyView HavokPropertyView;
 
     public string MapPropFilter = "";
     public bool ExactMapPropFilter = false;
@@ -38,8 +38,7 @@ public class MapPropertyView
         Project = project;
 
         MsbPropertyView = new(view, project);
-        MapCollisionPropertyView = new(view, project);
-        MapNavmeshPropertyView = new(view, project);
+        HavokPropertyView = new(view, project);
     }
 
     public void Display()
@@ -59,8 +58,10 @@ public class MapPropertyView
 
             if (CollisionViewMode is MapCollisionViewMode.CollisionHKX)
             {
-                MapCollisionPropertyView.DisplayTypeHeader();
-                MapCollisionPropertyView.Display();
+                DisplayCollisionTypeHeader();
+
+                HavokPropertyView.SetPropertyMode(HavokPropertyMode.Collision);
+                HavokPropertyView.Display();
             }
         }
         else if (IsNavmeshType())
@@ -74,8 +75,10 @@ public class MapPropertyView
 
             if (NavmeshViewMode is MapNavmeshViewMode.NavmeshHKX)
             {
-                MapNavmeshPropertyView.DisplayTypeHeader();
-                MapNavmeshPropertyView.Display();
+                DisplayNavmeshTypeHeader();
+
+                HavokPropertyView.SetPropertyMode(HavokPropertyMode.Navmesh);
+                HavokPropertyView.Display();
             }
         }
         else
@@ -111,14 +114,27 @@ public class MapPropertyView
 
             if (ImGui.Button($"{Icons.Calculator}##toggleTypeCol"))
             {
-                CFG.Current.MapEditor_CollisionEdit_Display_Type_Column = !CFG.Current.MapEditor_CollisionEdit_Display_Type_Column;
+                CFG.Current.MapEditor_HavokEdit_Display_Type_Column = !CFG.Current.MapEditor_HavokEdit_Display_Type_Column;
             }
+
+            var typeColumnVis = "Internal";
+            if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+                typeColumnVis = "Community";
+
+            GUI.Tooltip($"Toggle the visibilty of the field type column.\nCurrent Mode: {typeColumnVis}");
+
             ImGui.SameLine();
 
             if (ImGui.Button($"{Icons.Database}##toggleRawDataFields"))
             {
                 CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields = !CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields;
             }
+
+            var rawDataVis = "Hide Mesh Data";
+            if (CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields)
+                rawDataVis = "Show Mesh Data";
+
+            GUI.Tooltip($"Toggle the visibilty of fields tagged as 'mesh data'.\nCurrent Mode: {rawDataVis}");
         }
         else
         {
@@ -151,6 +167,62 @@ public class MapPropertyView
 
             GUI.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
         }
+
+        ImGui.EndChild();
+    }
+
+    public void DisplayCollisionTypeHeader()
+    {
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("editTypeCollisionSection", searchHeight, ImGuiChildFlags.Borders);
+
+        var previewName = LOC.Get(HavokPropertyView.CollisionEditType.GetDisplayName());
+
+        if (ImGui.BeginCombo("##editTypeCollisionSelect", previewName))
+        {
+            foreach (var entry in Enum.GetValues(typeof(MapCollisionEditType)))
+            {
+                var curType = (MapCollisionEditType)entry;
+
+                var displayName = LOC.Get(curType.GetDisplayName());
+
+                if (ImGui.Selectable(displayName, curType == HavokPropertyView.CollisionEditType))
+                {
+                    HavokPropertyView.CollisionEditType = curType;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip("The type of collision file to edit.");
+
+        ImGui.EndChild();
+    }
+
+    public void DisplayNavmeshTypeHeader()
+    {
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("editTypeNavmeshSection", searchHeight, ImGuiChildFlags.Borders);
+
+        var previewName = LOC.Get(HavokPropertyView.NavmeshEditType.GetDisplayName());
+
+        if (ImGui.BeginCombo("##editTypeNavmeshSelect", previewName))
+        {
+            foreach (var entry in Enum.GetValues(typeof(MapNavmeshEditType)))
+            {
+                var curType = (MapNavmeshEditType)entry;
+
+                var displayName = LOC.Get(curType.GetDisplayName());
+
+                if (ImGui.Selectable(displayName, curType == HavokPropertyView.NavmeshEditType))
+                {
+                    HavokPropertyView.NavmeshEditType = curType;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip("The type of navmesh file to edit.");
 
         ImGui.EndChild();
     }

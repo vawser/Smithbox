@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hknpExternMeshShapeData",
+  "Fields": [
+      {
+          "Field": "m_simdTree",
+          "Name": "SIMD Tree",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

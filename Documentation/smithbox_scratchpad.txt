@@ -10,19 +10,7 @@
 - Check speed tree rendering
 
 - Add Copy As action for basic collision dupes
-- Add meta for Collision/Navmesh prop edit
- - Top-level key by havok version (i.e. hk2018)
- - Key by type (i.e. hkbFootIkControlData
  
- - Support:
-  - Display Name
-  - Description
-  - Param Ref
-  - IsRawData (denotes raw mesh data, so we can easily allow the user to hide it, since it is unlikely to be edited manually)
-  
-
- m_materialNameData -> HitMtrlParam row ID
-
 # Gparam Editor:
  - DS2 fog color values are inverted (BGR, not RGB)
 

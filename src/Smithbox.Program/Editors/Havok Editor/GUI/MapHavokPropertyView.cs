@@ -2,15 +2,17 @@
 using HKLib.hk2018;
 using SoulsFormats;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.Viewport;
 using StudioCore.Utilities;
 using System.Drawing;
 using System.Numerics;
 using System.Reflection;
 
-namespace StudioCore.Editors.MapEditor;
+namespace StudioCore.Editors.HavokEditor;
 
-public class MapNavmeshPropertyView
+public class MapHavokPropertyView
 {
     private MapEditorView View;
     private ProjectEntry Project;
@@ -18,12 +20,20 @@ public class MapNavmeshPropertyView
     private object _changingProperty;
     private ViewportAction _lastUncommittedAction;
 
-    private MapNavmeshEditType EditType = MapNavmeshEditType.N;
+    public HavokPropertyMode PropertyMode = HavokPropertyMode.Collision;
 
-    public MapNavmeshPropertyView(MapEditorView view, ProjectEntry project)
+    public MapCollisionEditType CollisionEditType = MapCollisionEditType.High;
+    public MapNavmeshEditType NavmeshEditType = MapNavmeshEditType.N;
+
+    public MapHavokPropertyView(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+    }
+
+    public void SetPropertyMode(HavokPropertyMode newMode)
+    {
+        PropertyMode = newMode;
     }
 
     public void Display()
@@ -31,7 +41,7 @@ public class MapNavmeshPropertyView
         HashSet<Entity> entSelection = View.ViewportSelection.GetFilteredSelection<Entity>();
 
         // Properties
-        ImGui.BeginChild("navmeshEdit", ImGuiChildFlags.Borders);
+        ImGui.BeginChild("mapHavokEdit", ImGuiChildFlags.Borders);
 
         if (View.Universe.HasProcessedMapLoad && entSelection.Any())
         {
@@ -45,7 +55,14 @@ public class MapNavmeshPropertyView
                 return;
             }
 
-            NavmeshPropEditor(firstEnt);
+            if (PropertyMode is HavokPropertyMode.Collision)
+            {
+                CollisionPropEditor(firstEnt);
+            }
+            else if (PropertyMode is HavokPropertyMode.Navmesh)
+            {
+                NavmeshPropEditor(firstEnt);
+            }
         }
         else if (!View.Universe.HasProcessedMapLoad)
         {
@@ -59,32 +76,43 @@ public class MapNavmeshPropertyView
         ImGui.EndChild();
     }
 
-    public void DisplayTypeHeader()
+
+    public void CollisionPropEditor(Entity ent)
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("editTypeSection", searchHeight, ImGuiChildFlags.Borders);
+        var mapID = View.Selection.SelectedMapID;
 
-        var previewName = LOC.Get(EditType.GetDisplayName());
+        PropertyInfo prop = ent.WrappedObject.GetType().GetProperty("ModelName");
+        var value = prop.GetValue(ent.WrappedObject);
 
-        if (ImGui.BeginCombo("##editTypeSelect", previewName))
+        if (value == null)
+            return;
+
+        var modelName = (string)value;
+
+        var fullName = $"h{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
+
+        if (CollisionEditType is MapCollisionEditType.Low)
         {
-            foreach (var entry in Enum.GetValues(typeof(MapNavmeshEditType)))
-            {
-                var curType = (MapNavmeshEditType)entry;
-
-                var displayName = LOC.Get(curType.GetDisplayName());
-
-                if (ImGui.Selectable(displayName, curType == EditType))
-                {
-                    EditType = curType;
-                }
-            }
-
-            ImGui.EndCombo();
+            fullName = $"l{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
         }
-        GUI.Tooltip("The type of navmesh file to edit.");
 
-        ImGui.EndChild();
+        if (CollisionEditType is MapCollisionEditType.FallProtection)
+        {
+            fullName = $"f{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
+        }
+
+        if (View.HavokCollisionBank.HavokContainers.ContainsKey(fullName))
+        {
+            GUI.SimpleHeader($"{fullName}", "");
+
+            var curCollision = View.HavokCollisionBank.HavokContainers[fullName];
+
+            HavokPropEdit(curCollision);
+        }
+        else
+        {
+            GUI.WrappedText("No collision file for this model name of this type.");
+        }
     }
 
     public void NavmeshPropEditor(Entity ent)
@@ -99,7 +127,7 @@ public class MapNavmeshPropertyView
 
         var modelID = value.ToString();
 
-        if(modelID.Length == 1)
+        if (modelID.Length == 1)
         {
             modelID = $"00000{modelID}";
         }
@@ -122,13 +150,15 @@ public class MapNavmeshPropertyView
 
         var fullName = $"n{mapID.Replace("m", "")}_{modelID}";
 
-        if (EditType is MapNavmeshEditType.O)
+        if (NavmeshEditType is MapNavmeshEditType.O)
         {
             fullName = $"o{mapID.Replace("m", "")}_{modelID}";
         }
 
         if (View.HavokNavmeshBank.HKX3_Containers.ContainsKey(fullName))
         {
+            GUI.SimpleHeader($"{fullName}", "");
+
             var curNavmesh = View.HavokNavmeshBank.HKX3_Containers[fullName];
 
             HavokPropEdit(curNavmesh);
@@ -139,13 +169,18 @@ public class MapNavmeshPropertyView
         }
     }
 
-    // TODO: add meta support
     public void HavokPropEdit(hkRootLevelContainer root)
     {
         var mapID = View.Selection.SelectedMapID;
         var type = root.GetType();
 
-        ImGui.Columns(2);
+        var columnCount = 2;
+        if(CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+        {
+            columnCount = 3;
+        }
+
+        ImGui.Columns(columnCount);
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Object Type");
@@ -171,13 +206,19 @@ public class MapNavmeshPropertyView
 
         ImGui.NextColumn();
 
-        HavokPropEditGeneric(root);
+        if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+        {
+            ImGui.NextColumn();
+        }
+
+        var havokMeta = HavokMetaHelper.GetMeta(Project, type);
+
+        HavokPropEditGeneric(root, havokMeta);
 
         ImGui.Columns(1);
     }
 
-    // TODO: add meta support
-    private void HavokPropEditGeneric(object obj, int classIndex = -1)
+    private void HavokPropEditGeneric(object obj, HavokClass havokMeta, int classIndex = -1)
     {
         var scale = DPI.UIScale();
         Type type = obj.GetType();
@@ -188,14 +229,23 @@ public class MapNavmeshPropertyView
         var id = 0;
         foreach (FieldInfo prop in properties)
         {
+            havokMeta = HavokMetaHelper.GetMeta(Project, type);
+
             var treeFlags = ImGuiTreeNodeFlags.DefaultOpen;
 
             // Field Name
             var fieldName = prop.Name;
-
-            // Field Description
             var fieldDescription = "";
 
+            if (havokMeta != null)
+            {
+                if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names)
+                {
+                    fieldName = HavokMetaHelper.GetFieldName(havokMeta, prop.Name);
+                }
+
+                fieldDescription = $"{HavokMetaHelper.GetFieldDescription(havokMeta, prop.Name)}";
+            }
 
             ImGui.PushID(id);
             ImGui.AlignTextToFramePadding();
@@ -204,9 +254,21 @@ public class MapNavmeshPropertyView
             if (typ.IsArray)
             {
                 var a = (Array)prop.GetValue(obj);
-                var open = ImGui.TreeNodeEx($@"{fieldName}s", treeFlags);
+                var open = ImGui.TreeNodeEx($@"{fieldName}", treeFlags);
+                GUI.Tooltip(fieldDescription);
                 ImGui.NextColumn();
                 ImGui.NextColumn();
+                if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+                {
+                    PropContextRowOpener("arrayTypeCol");
+
+                    ImGui.Text(type.FullName);
+
+                    DisplayContextMenu(fieldName, fieldDescription, prop);
+
+                    ImGui.NextColumn();
+                }
+
                 if (open)
                 {
                     for (var i = 0; i < a.Length; i++)
@@ -216,14 +278,26 @@ public class MapNavmeshPropertyView
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
                             var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
+                            GUI.Tooltip(fieldDescription);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
                             var o = a.GetValue(i);
-                            ImGui.Text(o.GetType().Name);
+                            ImGui.Text("");
                             ImGui.NextColumn();
+                            if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+                            {
+                                PropContextRowOpener("arrayTypeEntryCol");
+
+                                ImGui.Text(type.FullName);
+
+                                DisplayContextMenu(fieldName, fieldDescription, prop);
+
+                                ImGui.NextColumn();
+                            }
+
                             if (classOpen)
                             {
-                                HavokPropEditGeneric(o, i);
+                                HavokPropEditGeneric(o, havokMeta, i);
                                 ImGui.TreePop();
                             }
                         }
@@ -233,9 +307,9 @@ public class MapNavmeshPropertyView
                             var array = obj as object[];
 
                             // Handle property display (and search filtering)
-                            if (DisplayProperty(obj, prop, type))
+                            if (DisplayProperty(havokMeta, obj, prop, type))
                             {
-                                PropGenericFieldRow(prop, typ.GetElementType(), a.GetValue(i), obj, $@"{fieldName}[{i}]", i, classIndex);
+                                PropGenericFieldRow(prop, typ.GetElementType(), havokMeta, a.GetValue(i), obj, $@"{fieldName}[{i}]", fieldDescription, i, classIndex);
                             }
                         }
                         ImGui.PopID();
@@ -259,29 +333,38 @@ public class MapNavmeshPropertyView
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
                             var open = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
+                            GUI.Tooltip(fieldDescription);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
                             var o = itemprop.GetValue(l, new object[] { i });
-                            ImGui.Text(o.GetType().Name);
+                            ImGui.Text("");
                             ImGui.NextColumn();
-                            if (open)
+                            if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
                             {
-                                HavokPropEditGeneric(o);
-                                ImGui.TreePop();
+                                PropContextRowOpener("listTypeCol");
+
+                                ImGui.Text(type.FullName);
+
+                                DisplayContextMenu(fieldName, fieldDescription, prop);
+
+                                ImGui.NextColumn();
                             }
 
-                            ImGui.PopID();
+                            if (open)
+                            {
+                                HavokPropEditGeneric(o, havokMeta);
+                                ImGui.TreePop();
+                            }
                         }
                         else
                         {
                             // Handle property display (and search filtering)
-                            if (DisplayProperty(obj, prop, type))
+                            if (DisplayProperty(havokMeta, obj, prop, type))
                             {
-                                PropGenericFieldRow(prop, arrtyp, itemprop.GetValue(l, new object[] { i }), obj, $@"{fieldName}[{i}]", i, classIndex);
+                                PropGenericFieldRow(prop, arrtyp, havokMeta, itemprop.GetValue(l, new object[] { i }), obj, $@"{fieldName}[{i}]", fieldDescription, i, classIndex);
                             }
-
-                            ImGui.PopID();
                         }
+                        ImGui.PopID();
                     }
                 }
 
@@ -293,13 +376,25 @@ public class MapNavmeshPropertyView
                 if (o != null)
                 {
                     var open = ImGui.TreeNodeEx($"{fieldName}", treeFlags);
+                    GUI.Tooltip(fieldDescription);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
-                    ImGui.Text(o.GetType().Name);
+                    ImGui.Text("");
                     ImGui.NextColumn();
+                    if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+                    {
+                        PropContextRowOpener("classTypeCol");
+
+                        ImGui.Text(type.FullName);
+
+                        DisplayContextMenu(fieldName, fieldDescription, prop);
+
+                        ImGui.NextColumn();
+                    }
+
                     if (open)
                     {
-                        HavokPropEditGeneric(o);
+                        HavokPropEditGeneric(o, havokMeta);
                         ImGui.TreePop();
                     }
                 }
@@ -309,9 +404,9 @@ public class MapNavmeshPropertyView
             else
             {
                 // Handle property display (and search filtering)
-                if (DisplayProperty(obj, prop, type))
+                if (DisplayProperty(havokMeta, obj, prop, type))
                 {
-                    PropGenericFieldRow(prop, typ, prop.GetValue(obj), obj, $"{fieldName}", classIndex);
+                    PropGenericFieldRow(prop, typ, havokMeta, prop.GetValue(obj), obj, fieldName, fieldDescription, classIndex);
                 }
 
                 ImGui.PopID();
@@ -321,10 +416,22 @@ public class MapNavmeshPropertyView
         }
     }
 
-    // TODO: add meta support
-    public bool DisplayProperty(object propObj, FieldInfo prop, Type type)
+    public bool DisplayProperty(HavokClass havokMeta, object propObj, FieldInfo prop, Type type)
     {
         var propName = prop.Name;
+
+        if (havokMeta != null)
+        {
+            var isRawData = HavokMetaHelper.IsRawData(havokMeta, prop.Name);
+
+            if (!CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields)
+            {
+                if (isRawData)
+                {
+                    return false;
+                }
+            }
+        }
 
         // Normal filter
         var isMatch = EditorFilters.IsMatch(View.MapPropertyView.MapPropFilter, propName, View.MapPropertyView.ExactMapPropFilter);
@@ -364,24 +471,22 @@ public class MapNavmeshPropertyView
         return true;
     }
 
-    // TODO: add meta support
     private void PropGenericFieldRow(
         FieldInfo prop,
         Type type,
+        HavokClass havokMeta,
         object value,
         object containerObj,
         string name,
+        string description,
         int arrayIndex = -1,
         int classIndex = -1
     )
     {
-        // Field Name
-        var fieldName = prop.Name;
+        PropContextRowOpener("nameCol");
 
-        // Field Description
-        var fieldDescription = "";
-
-        ImGui.Text(fieldName);
+        ImGui.Text(name);
+        GUI.Tooltip(description);
 
         ImGui.NextColumn();
         ImGui.SetNextItemWidth(-1);
@@ -394,15 +499,79 @@ public class MapNavmeshPropertyView
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
 
+        DisplayContextMenu(name, description, prop);
+
         if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
         {
             ImGui.SetItemDefaultFocus();
         }
 
+        if (HavokEditDecorators.ParamRefRow(View, havokMeta, prop, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
         UpdateProperty(prop, containerObj, oldval, newval, changed, committed, arrayIndex, classIndex);
+
+        if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+        {
+            ImGui.NextColumn();
+
+            var reflectedType = prop.ReflectedType;
+            if (reflectedType != null)
+            {
+                PropContextRowOpener("typecol");
+
+                ImGui.Text(reflectedType.FullName);
+            }
+        }
 
         ImGui.NextColumn();
     }
+
+    private static void PropContextRowOpener(string id)
+    {
+        ImGui.Selectable($"###{id}", false, ImGuiSelectableFlags.AllowOverlap);
+        ImGui.SameLine();
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+        {
+            ImGui.OpenPopup("CollisionPropContextMenu");
+        }
+    }
+
+    private void DisplayContextMenu(string name, string description, FieldInfo prop)
+    {
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+        {
+            ImGui.OpenPopup("CollisionPropContextMenu");
+        }
+
+        if (ImGui.BeginPopup("CollisionPropContextMenu"))
+        {
+            if (ImGui.Selectable(@"Copy Property Name##CopyPropName"))
+            {
+                PlatformUtils.Instance.SetClipboardText(name);
+            }
+
+            if (ImGui.Selectable(@"Copy Property Description##CopyPropDesc"))
+            {
+                PlatformUtils.Instance.SetClipboardText(description);
+            }
+
+            if (ImGui.Selectable(@"Copy Property Type##CopyPropType"))
+            {
+                var reflectedType = prop.ReflectedType;
+                if (reflectedType != null)
+                {
+                    PlatformUtils.Instance.SetClipboardText(reflectedType.FullName);
+                }
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
     private void UpdateProperty(object prop, object obj, object oldval, object newval,
         bool changed, bool committed, int arrayindex = -1, int classIndex = -1)
     {
@@ -427,7 +596,7 @@ public class MapNavmeshPropertyView
         }
     }
 
-    private void ChangeProperty(object prop, object obj, object oldval, object newval,
+    private void ChangeProperty(object prop, object obj, object oldval, object newval, 
         ref bool committed,
         int arrayindex = -1, int classIndex = -1)
     {

@@ -10,7 +10,7 @@ using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelEditorView
+public class ModelEditorView : IEditorView
 {
     public ModelEditorScreen Editor;
     public ProjectEntry Project;

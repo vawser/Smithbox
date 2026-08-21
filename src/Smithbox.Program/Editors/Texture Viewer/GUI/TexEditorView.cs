@@ -6,7 +6,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexEditorView
+public class TexEditorView : IEditorView
 {
     public TextureViewerScreen Editor;
     public ProjectEntry Project;

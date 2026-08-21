@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapDataEditor;
 
-public class MapDataEditorView
+public class MapDataEditorView : IEditorView
 {
     public MapDataEditorScreen Editor;
     public ProjectEntry Project;

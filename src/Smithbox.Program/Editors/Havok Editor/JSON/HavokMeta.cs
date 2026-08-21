@@ -62,12 +62,23 @@ public static class HavokMetaHelper
     {
         var description = "";
 
-        var entry = havokMeta.Fields.FirstOrDefault(f => f.Name == internalName);
+        var entry = havokMeta.Fields.FirstOrDefault(f => f.Field == internalName);
         if (entry != null)
         {
             description = entry.Description;
         }
 
         return description;
+    }
+
+    public static bool IsRawData(HavokClass havokMeta, string internalName)
+    {
+        var entry = havokMeta.Fields.FirstOrDefault(f => f.Field == internalName);
+        if (entry != null)
+        {
+            return entry.IsRawData;
+        }
+
+        return false;
     }
 }

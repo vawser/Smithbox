@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.FileBrowser;
 
-public class FileEditorView
+public class FileEditorView : IEditorView
 {
     public FileBrowserScreen Editor;
     public ProjectEntry Project;

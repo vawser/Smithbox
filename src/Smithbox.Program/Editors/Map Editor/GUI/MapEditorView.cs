@@ -12,7 +12,7 @@ using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MapEditorView
+public class MapEditorView : IEditorView
 {
     public MapEditorScreen Editor;
     public ProjectEntry Project;

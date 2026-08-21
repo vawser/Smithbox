@@ -6,7 +6,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.ParamEditor;
 
 
-public class ParamEditorView
+public class ParamEditorView : IEditorView
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;

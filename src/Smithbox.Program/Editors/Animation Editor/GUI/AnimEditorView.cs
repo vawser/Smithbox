@@ -7,7 +7,7 @@ using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.AnimEditor;
 
-public class AnimEditorView
+public class AnimEditorView : IEditorView
 {
     public AnimEditorScreen Editor;
     public ProjectEntry Project;

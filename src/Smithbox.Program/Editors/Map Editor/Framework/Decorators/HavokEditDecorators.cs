@@ -52,7 +52,7 @@ public static class HavokEditDecorators
             }
         }
 
-        if (CFG.Current.MapEditor_CollisionEdit_Display_Type_Column)
+        if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
         {
             ImGui.NextColumn();
         }

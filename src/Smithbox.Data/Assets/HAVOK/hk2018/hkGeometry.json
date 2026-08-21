@@ -1,0 +1,22 @@
+{
+  "Type": "HKLib.hk2018.hkGeometry",
+  "Fields": [
+      {
+          "Field": "m_vertices",
+          "Name": "Vertices",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_triangles",
+          "Name": "Triangles",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

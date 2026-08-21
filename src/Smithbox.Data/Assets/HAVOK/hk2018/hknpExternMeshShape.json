@@ -1,30 +1,24 @@
 {
-  "Type": "HKLib.hk2018.fsnpCustomParamCompressedMeshShape",
+  "Type": "HKLib.hk2018.hknpExternMeshShape",
   "Fields": [
-      {
-          "Field": "m_pParam",
-          "Name": "Mesh Parameters",
-          "Description": ""
-      },
-      {
-          "Field": "m_triangleIndexToShapeKey",
-          "Name": "Triange Index to Shape Key",
-          "Description": "",
-          "IsRawData": true
-      },
       {
           "Field": "m_shapeTagCodecInfo",
           "Name": "Shape Tag Codec Info",
           "Description": ""
       },
       {
-          "Field": "m_data",
-          "Name": "Data",
+          "Field": "m_geometry",
+          "Name": "Geometry",
           "Description": ""
       },
       {
-          "Field": "m_triangleIsInterior",
-          "Name": "Triangle is Interior",
+          "Field": "m_triangles",
+          "Name": "Triangles",
+          "Description": ""
+      },
+      {
+          "Field": "m_boundingVolumeData",
+          "Name": "Bounding Volume Data",
           "Description": ""
       },
       {

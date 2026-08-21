@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hkcdStaticAabbTree+Impl",
+  "Fields": [
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      },
+      {
+          "Field": "m_tree",
+          "Name": "Tree",
+          "Description": ""
+      }
+  ]
+}

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MaterialEditor;
 
-public class MaterialEditorView
+public class MaterialEditorView : IEditorView
 {
     public MaterialEditorScreen Editor;
     public ProjectEntry Project;

@@ -5,7 +5,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.GparamEditor;
 
-public class GparamEditorView
+public class GparamEditorView : IEditorView
 {
     public GparamEditorScreen Editor;
     public ProjectEntry Project;

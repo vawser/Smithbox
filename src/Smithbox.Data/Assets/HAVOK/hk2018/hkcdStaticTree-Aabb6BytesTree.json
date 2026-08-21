@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hkcdStaticTree.Aabb6BytesTree",
+  "Fields": [
+      {
+          "Field": "m_nodes",
+          "Name": "Nodes",
+          "Description": ""
+      },
+      {
+          "Field": "m_domain",
+          "Name": "Domain",
+          "Description": ""
+      }
+  ]
+}

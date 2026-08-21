@@ -4,27 +4,32 @@
       {
           "Field": "m_primitiveDataIndex",
           "Name": "Primitive Data Index",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_triangleDataIndex",
           "Name": "Triangle Data Index",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_vertexIndexA",
           "Name": "Vertex Index: A",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_vertexIndexB",
           "Name": "Vertex Index: B",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_vertexIndexC",
           "Name": "Vertex Index: C",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       }
   ]
 }

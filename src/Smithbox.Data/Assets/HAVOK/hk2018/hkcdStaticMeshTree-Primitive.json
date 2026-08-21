@@ -4,7 +4,8 @@
       {
           "Field": "m_indices",
           "Name": "Indices",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       }
   ]
 }

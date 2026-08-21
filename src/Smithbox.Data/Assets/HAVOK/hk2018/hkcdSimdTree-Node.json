@@ -10,37 +10,44 @@
       {
           "Field": "m_isLeaf",
           "Name": "Is Leaf",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_lx",
           "Name": "LX",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_hx",
           "Name": "HX",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_ly",
           "Name": "LY",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_hy",
           "Name": "HY",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_lz",
           "Name": "LZ",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       },
       {
           "Field": "m_hz",
           "Name": "HZ",
-          "Description": ""
+          "Description": "",
+          "IsRawData": true
       }
   ]
 }

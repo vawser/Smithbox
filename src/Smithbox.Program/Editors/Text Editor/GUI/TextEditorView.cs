@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 
-public class TextEditorView
+public class TextEditorView : IEditorView
 {
     public TextEditorScreen Editor;
     public ProjectEntry Project;
