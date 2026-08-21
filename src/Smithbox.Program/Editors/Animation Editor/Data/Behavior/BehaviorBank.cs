@@ -28,7 +28,7 @@ public class BehaviorBank : IDisposable
     {
         await Task.Yield();
 
-        foreach (var entry in Project.Locator.BehaviorFiles.Entries)
+        foreach (var entry in Project.Locator.HavokBehaviorFiles.Entries)
         {
             var newEntry = new BehaviorContainerWrapper(Project, entry, TargetFS);
 

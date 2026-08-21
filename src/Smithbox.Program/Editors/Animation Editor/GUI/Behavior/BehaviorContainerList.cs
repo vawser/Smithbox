@@ -42,7 +42,7 @@ public class BehaviorContainerList
 
         ImGui.BeginChild($"sourceList");
 
-        DisplaySourceList(Project.Locator.BehaviorFiles);
+        DisplaySourceList(Project.Locator.HavokBehaviorFiles);
 
         ImGui.EndChild();
         

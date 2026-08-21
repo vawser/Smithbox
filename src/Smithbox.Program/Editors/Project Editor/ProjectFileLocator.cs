@@ -41,7 +41,16 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary ShoeboxFiles = new();
 
     public FileDictionary TimeActFiles = new();
-    public FileDictionary BehaviorFiles = new();
+
+    public FileDictionary HavokAnimationFiles = new();
+    public FileDictionary HavokBehaviorFiles = new();
+    public FileDictionary HavokCharacterFiles = new();
+    public FileDictionary HavokCollisionFiles = new();
+    public FileDictionary HavokCutsceneFiles = new();
+    public FileDictionary HavokNavmeshFiles = new();
+    public FileDictionary HavokRumbleFiles = new();
+    public FileDictionary HavokPartFiles = new();
+    public FileDictionary HavokAssetFiles = new();
 
     public ProjectFileLocator(ProjectEntry project)
     {
@@ -319,8 +328,17 @@ public class ProjectFileLocator : IDisposable
         var texturePackedFiles = new HashSet<FileDictionaryEntry>();
         var shoeboxFiles = new HashSet<FileDictionaryEntry>();
         var timeActFiles = new HashSet<FileDictionaryEntry>();
-        var behaviorFiles = new HashSet<FileDictionaryEntry>();
         var entryFileListFiles = new HashSet<FileDictionaryEntry>();
+
+        var havokAnimationFiles = new HashSet<FileDictionaryEntry>();
+        var havokBehaviorFiles = new HashSet<FileDictionaryEntry>();
+        var havokCharacterFiles = new HashSet<FileDictionaryEntry>();
+        var havokCollisionFiles = new HashSet<FileDictionaryEntry>();
+        var havokCutsceneFiles = new HashSet<FileDictionaryEntry>();
+        var havokNavmeshFiles = new HashSet<FileDictionaryEntry>();
+        var havokPartFiles = new HashSet<FileDictionaryEntry>();
+        var havokRumbleFiles = new HashSet<FileDictionaryEntry>();
+        var havokAssetFiles = new HashSet<FileDictionaryEntry>();
 
         // Single pass - check each entry once
         foreach (var entry in allEntries)
@@ -342,15 +360,37 @@ public class ProjectFileLocator : IDisposable
 
             // Asset files
             if (ShouldAddToAssetFiles(entry, projectType, isSd))
+            {
                 assetFiles.Add(entry);
+            }
+
+            if (ShouldAddToHavokAssetFiles(entry, projectType, isSd))
+            {
+                havokAssetFiles.Add(entry);
+            }
 
             // Part files
             if (ShouldAddToPartFiles(entry, projectType, isSd))
+            {
                 partFiles.Add(entry);
+                if(entry.Path.StartsWith("wp_"))
+                {
+                    havokPartFiles.Add(entry);
+                }
+            }
 
             // Collision files
             if (ShouldAddToCollisionFiles(entry, projectType, isMap, isSd))
+            {
                 collisionFiles.Add(entry);
+                havokCollisionFiles.Add(entry);
+            }
+
+            // Navmesh files
+            if (ShouldAddToNavmeshFiles(entry, projectType, isMap, isSd))
+            {
+                havokNavmeshFiles.Add(entry);
+            }
 
             // Map piece files
             if (ShouldAddToMapPieceFiles(entry, projectType, isMap, isSd))
@@ -432,9 +472,40 @@ public class ProjectFileLocator : IDisposable
 
             // Animation
             if (ext == "anibnd" && !isSd)
+            {
                 timeActFiles.Add(entry);
+                havokAnimationFiles.Add(entry);
+            }
+
+            // Havok Behavior
             if (ext == "behbnd" && !isSd)
-                behaviorFiles.Add(entry);
+            {
+                havokBehaviorFiles.Add(entry);
+            }
+
+            // Character
+            if (ext == "chrbnd" && !isSd)
+            {
+                havokCharacterFiles.Add(entry);
+            }
+
+            // Cutscene
+            if (ext == "cutscenebnd" && !isSd)
+            {
+                havokCutsceneFiles.Add(entry);
+            }
+
+            // Cutscene
+            if (ext == "cutscenebnd" && !isSd)
+            {
+                havokCutsceneFiles.Add(entry);
+            }
+
+            // Rumble
+            if (ext == "rumblebnd" && !isSd)
+            {
+                havokRumbleFiles.Add(entry);
+            }
         }
 
         // Assign to public properties
@@ -457,8 +528,17 @@ public class ProjectFileLocator : IDisposable
         TexturePackedFiles.Entries = texturePackedFiles;
         ShoeboxFiles.Entries = shoeboxFiles;
         TimeActFiles.Entries = timeActFiles;
-        BehaviorFiles.Entries = behaviorFiles;
         EntryFileListFiles.Entries = entryFileListFiles;
+
+        HavokAnimationFiles.Entries = havokAnimationFiles;
+        HavokBehaviorFiles.Entries = havokBehaviorFiles;
+        HavokCharacterFiles.Entries = havokCharacterFiles;
+        HavokCollisionFiles.Entries = havokCollisionFiles;
+        HavokCutsceneFiles.Entries = havokCutsceneFiles;
+        HavokNavmeshFiles.Entries = havokNavmeshFiles;
+        HavokPartFiles.Entries = havokPartFiles;
+        HavokRumbleFiles.Entries = havokRumbleFiles;
+        HavokAssetFiles.Entries = havokAssetFiles;
 
         // Special handling for text files
         if (projectType == ProjectType.ER && textFiles.Count > 0)
@@ -507,6 +587,16 @@ public class ProjectFileLocator : IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToHavokAssetFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
+    {
+        return projectType switch
+        {
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => entry.Extension == "geomhkxbnd" && entry.Folder.StartsWith("/asset") && !isSd,
+            _ => false
+        };
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static bool ShouldAddToPartFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
     {
         return projectType switch
@@ -528,6 +618,16 @@ public class ProjectFileLocator : IDisposable
             ProjectType.DS1 or ProjectType.DES => isMap && entry.Extension == "hkx",
             ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => isMap && entry.Extension == "hkxbhd",
             ProjectType.ER or ProjectType.AC6 or ProjectType.NR => isMap && entry.Extension == "hkxbhd" && !isSd,
+            _ => false
+        };
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToNavmeshFiles(FileDictionaryEntry entry, ProjectType projectType, bool isMap, bool isSd)
+    {
+        return projectType switch
+        {
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => isMap && entry.Extension == "nvmhktbnd" && !isSd,
             _ => false
         };
     }
