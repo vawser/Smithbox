@@ -318,7 +318,6 @@ public class ProjectUtils
     {
         return true;
     }
-
     public static bool SupportsGraphicsParamEditor(ProjectType curType)
     {
         if (curType
@@ -362,6 +361,19 @@ public class ProjectUtils
 
         return true;
     }
+    public static bool SupportsHavokEditor(ProjectType curType)
+    {
+        if (curType
+            is ProjectType.ER
+            or ProjectType.AC6
+            or ProjectType.NR)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
 
     public static List<string> GetBackupFiles(string rootDirectory)
     {

@@ -991,7 +991,6 @@ public class CFG
 
     #endregion
 
-
     #region Map Data Editor
     ///------------------------------------------------------------
     /// Map Data Editor
@@ -1010,6 +1009,13 @@ public class CFG
 
     // Saving
     public bool Project_Automatic_Save_Include_Map_Data_Editor = false;
+    #endregion
+
+    #region Havok Editor
+    public bool HavokEditor_AutomaticSave_IncludeHKX = true;
+    public bool HavokEditor_ManualSave_IncludeHKX = true;
+
+    public bool Interface_HavokEditor_ToolWindow = true;
     #endregion
 
     #region Viewport

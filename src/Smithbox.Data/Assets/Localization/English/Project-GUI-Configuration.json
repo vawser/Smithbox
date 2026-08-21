@@ -205,6 +205,14 @@
       "Text": "If enabled, the Animation Editor and associated data will be initialized for this project."
     },
     {
+      "Key": "PROJECT_Configuration_Checkbox_Havok_Editor",
+      "Text": "Havok Editor"
+    },
+    {
+      "Key": "PROJECT_Configuration_Checkbox_Havok_Editor_TT",
+      "Text": "If enabled, the Havok Editor and associated data will be initialized for this project."
+    },
+    {
       "Key": "PROJECT_Configuration_Checkbox_Gparam_Editor",
       "Text": "Graphics Param Editor"
     },

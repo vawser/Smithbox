@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
+using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
@@ -88,6 +89,9 @@ public class ProjectEntry
 
             if (Handler.MapDataEditorStub != null)
                 Handler.MapDataEditorStub.Display(dt, commands);
+
+            if (Handler.HavokEditorStub != null)
+                Handler.HavokEditorStub.Display(dt, commands);
         }
 
         // Auto-Save
@@ -315,6 +319,7 @@ public class ProjectEntry
                             Handler.ParamEditor.Save(true);
                         }
                     }
+
                     if (CFG.Current.Project_Automatic_Save_Include_Text_Editor && Handler.FocusedEditor is TextEditorScreen)
                     {
                         if (Handler.TextEditor != null)
@@ -322,6 +327,7 @@ public class ProjectEntry
                             Handler.TextEditor.Save(true);
                         }
                     }
+
                     if (CFG.Current.Project_Automatic_Save_Include_Gparam_Editor && Handler.FocusedEditor is GparamEditorScreen)
                     {
                         if (Handler.GparamEditor != null)
@@ -329,7 +335,16 @@ public class ProjectEntry
                             Handler.GparamEditor.Save(true);
                         }
                     }
+
                     if (CFG.Current.Project_Automatic_Save_Include_Material_Editor && Handler.FocusedEditor is MaterialEditorScreen)
+                    {
+                        if (Handler.MaterialEditor != null)
+                        {
+                            Handler.MaterialEditor.Save(true);
+                        }
+                    }
+
+                    if (CFG.Current.HavokEditor_AutomaticSave_IncludeHKX && Handler.FocusedEditor is HavokEditorScreen)
                     {
                         if (Handler.MaterialEditor != null)
                         {

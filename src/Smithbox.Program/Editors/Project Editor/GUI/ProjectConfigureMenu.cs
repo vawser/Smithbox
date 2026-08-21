@@ -332,6 +332,17 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Anim_Editor_TT"));
         }
 
+        // Havok Editor
+        if (ProjectUtils.SupportsHavokEditor(Descriptor.ProjectType))
+        {
+            ImGui.Checkbox(
+                LOC.Get("PROJECT_Configuration_Checkbox_Havok_Editor"),
+                ref Descriptor.EnableHavokEditor);
+
+            GUI.Tooltip(
+                LOC.Get("PROJECT_Configuration_Checkbox_Havok_Editor_TT"));
+        }
+
         // Graphics Param Editor
         if (ProjectUtils.SupportsGraphicsParamEditor(Descriptor.ProjectType))
         {

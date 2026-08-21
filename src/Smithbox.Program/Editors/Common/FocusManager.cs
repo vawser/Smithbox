@@ -165,6 +165,13 @@ public static class FocusManager
 
         return false;
     }
+    public static bool IsInHavokEditor()
+    {
+        if (Focus is EditorFocusContext.HavokEditor_None)
+            return true;
+
+        return false;
+    }
 }
 
 public enum EditorFocusContext
@@ -244,4 +251,6 @@ public enum EditorFocusContext
     MapDataEditor_MsbEditor,
     MapDataEditor_EnflEditor,
     MapDataEditor_Tools,
+
+    HavokEditor_None
 }

@@ -24,6 +24,7 @@ public static class GUI
     public static uint TEXT_EDITOR_DOCK_GROUP = 1010;
     public static uint TEXTURE_VIEWER_DOCK_GROUP = 1011;
     public static uint PROJECT_METADATA_EDITOR_DOCK_GROUP = 1012;
+    public static uint HAVOK_EDITOR_DOCK_GROUP = 1013;
 
     public static uint MAP_EDITOR_VIEW_DOCK_GROUP = 1100;
     public static uint MODEL_EDITOR_VIEW_DOCK_GROUP = 1101;
@@ -37,6 +38,7 @@ public static class GUI
     public static uint TEXTURE_VIEWER_VIEW_DOCK_GROUP = 1109;
     public static uint PROJECT_EDITOR_VIEW_DOCK_GROUP = 1110;
     public static uint PROJECT_METADATA_EDITOR_VIEW_DOCK_GROUP = 1111;
+    public static uint HAVOK_EDITOR_VIEW_DOCK_GROUP = 1112;
 
     public static ImGuiWindowClass DockGroup_EditorView = new(
         classId: EDITOR_DOCK_GROUP, 
@@ -90,6 +92,10 @@ public static class GUI
         classId: TEXTURE_VIEWER_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
+    public static ImGuiWindowClass DockGroup_HavokEditor = new(
+        classId: HAVOK_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
     public static ImGuiWindowClass DockGroup_MapEditorView = new(
         classId: MAP_EDITOR_VIEW_DOCK_GROUP,
         dockingAllowUnclassed: false);
@@ -136,6 +142,10 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_ProjectMetadataEditorView = new(
         classId: PROJECT_METADATA_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_HavokEditorView = new(
+        classId: HAVOK_EDITOR_VIEW_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static void ApplyBaseStyle()

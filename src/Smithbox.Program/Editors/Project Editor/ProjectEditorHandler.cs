@@ -2,6 +2,7 @@
 using StudioCore.Editors.Common;
 using StudioCore.Editors.FileBrowser;
 using StudioCore.Editors.GparamEditor;
+using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapDataEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
@@ -73,6 +74,11 @@ public class ProjectEditorHandler : IDisposable
     public MapDataEditorScreen MapDataEditor;
     public MapDataEditorStub MapDataEditorStub;
 
+    // Havok Editor
+    public HavokData HavokData;
+    public HavokEditorScreen HavokEditor;
+    public HavokEditorStub HavokEditorStub;
+
 
     // Data tasks
     private Task<bool> _commonDataTask;
@@ -86,6 +92,7 @@ public class ProjectEditorHandler : IDisposable
     private Task<bool> _textureDataTask;
     private Task<bool> _animDataTask;
     private Task<bool> _mapDataDataTask;
+    private Task<bool> _havokDataTask;
 
     public ProjectEditorHandler(ProjectEntry project)
     {
@@ -104,6 +111,7 @@ public class ProjectEditorHandler : IDisposable
         FileBrowserStub = new(Project);
         AnimEditorStub = new(Project);
         MapDataEditorStub = new(Project);
+        HavokEditorStub = new(Project);
     }
 
     public async Task<bool> InitializeData(ProjectInitType initType, bool silent)
@@ -197,6 +205,15 @@ public class ProjectEditorHandler : IDisposable
             tasks.Add(_mapDataDataTask);
         }
 
+        // Havok Data
+        if (Project.Descriptor.EnableHavokEditor &&
+            initType is ProjectInitType.ProjectDefined)
+        {
+            HavokData = new(Project);
+            _havokDataTask = HavokData.Setup();
+            tasks.Add(_havokDataTask);
+        }
+
         bool[] results = await Task.WhenAll(tasks);
 
         if (!silent)
@@ -256,6 +273,11 @@ public class ProjectEditorHandler : IDisposable
             Smithbox.Log(this, _mapDataDataTask.Result
                 ? LOC.Get("PROJECT_Data_Setup_Map_Data_PASS")
                 : LOC.Get("PROJECT_Data_Setup_Map_Data_FAIL"));
+
+        if (_havokDataTask != null)
+            Smithbox.Log(this, _havokDataTask.Result
+                ? LOC.Get("PROJECT_Data_Setup_Havok_Data_PASS")
+                : LOC.Get("PROJECT_Data_Setup_Havok_Data_FAIL"));
     }
 
     public void InitializeEditors(ProjectInitType initType)
@@ -324,6 +346,12 @@ public class ProjectEditorHandler : IDisposable
             firstEditor ??= MapDataEditor;
         }
 
+        if (HavokData != null)
+        {
+            HavokEditor = new HavokEditorScreen(Project);
+            firstEditor ??= HavokEditor;
+        }
+
         FocusedEditor = firstEditor;
     }
 
@@ -341,6 +369,7 @@ public class ProjectEditorHandler : IDisposable
         MaterialData?.Dispose();
         TextureData?.Dispose();
         MapDataHandler?.Dispose();
+        HavokData?.Dispose();
     }
     #endregion
 }
