@@ -109,6 +109,7 @@ public class HavokPropertyView
 
         GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
 
+        // Type Column
         ImGui.SameLine();
 
         if (ImGui.Button($"{Icons.Calculator}##toggleTypeCol"))
@@ -122,6 +123,7 @@ public class HavokPropertyView
 
         GUI.Tooltip($"Toggle the visibilty of the field type column.\nCurrent Mode: {typeColumnVis}");
 
+        // Raw Data Fields
         ImGui.SameLine();
 
         if (ImGui.Button($"{Icons.Database}##toggleRawDataFields"))
@@ -134,6 +136,20 @@ public class HavokPropertyView
             rawDataVis = "Show Mesh Data";
 
         GUI.Tooltip($"Toggle the visibilty of fields tagged as 'mesh data'.\nCurrent Mode: {rawDataVis}");
+
+        // Auto-Open Tree
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Tree}##toggleAutoOpen"))
+        {
+            CFG.Current.HavokEditor_Properties_Auto_Open_Tree = !CFG.Current.HavokEditor_Properties_Auto_Open_Tree;
+        }
+
+        var autoTreeMode = "Tree Nodes are opened automatically.";
+        if (CFG.Current.HavokEditor_Properties_Auto_Open_Tree)
+            autoTreeMode = "Tree Nodes require the user to open them.";
+
+        GUI.Tooltip($"Toggle the opening behavior of tree nodes.\nCurrent Mode: {autoTreeMode}");
 
         // Special Property View Mode for Behavior
         if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
@@ -218,6 +234,8 @@ public class HavokPropertyView
 
             if (sourceObject != null)
             {
+                View.Selection.ApplyFileSpecificTreeSearches(sourceObject);
+
                 HavokPropEdit(sourceObject);
             }
             else
@@ -231,7 +249,16 @@ public class HavokPropertyView
 
             if (sourceObject != null)
             {
-                BehaviorView.Draw(sourceObject);
+                View.Selection.ApplyFileSpecificTreeSearches(sourceObject);
+
+                if (View.Selection.IsBehaviorGraph)
+                {
+                    BehaviorView.Draw(sourceObject);
+                }
+                else
+                {
+                    HavokPropEdit(sourceObject);
+                }
             }
             else
             {
@@ -292,7 +319,12 @@ public class HavokPropertyView
         {
             havokMeta = HavokMetaHelper.GetMeta(Project, type);
 
-            var treeFlags = ImGuiTreeNodeFlags.DefaultOpen;
+            var treeFlags = ImGuiTreeNodeFlags.None;
+
+            if(CFG.Current.HavokEditor_Properties_Auto_Open_Tree)
+            {
+                treeFlags = ImGuiTreeNodeFlags.DefaultOpen;
+            }
 
             // Field Name
             var fieldName = prop.Name;

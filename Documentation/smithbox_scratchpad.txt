@@ -20,7 +20,7 @@
 - Implement saving
 
 - Implement structured property view:
- - Tree of class nodes: selecting one will display properties in second panel
+ - For Behavior editing
 
 - Implement binder actions: 
  - Duplicate (and Rename) HKX

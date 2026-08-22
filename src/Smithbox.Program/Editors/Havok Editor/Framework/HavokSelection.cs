@@ -24,6 +24,10 @@ public class HavokSelection
     // Properties
     public HavokPropertyViewType PropertyViewType = HavokPropertyViewType.Flat;
 
+    // File-specific State
+    public bool AppliedHavokTreeSearchesForFile = false;
+    public bool IsBehaviorGraph = false;
+
     public HavokSelection(HavokEditorView view, ProjectEntry project)
     {
         View = view;
@@ -34,10 +38,30 @@ public class HavokSelection
     {
         View.Selection.BinderFileEntry = null;
         View.Selection.FilePath = null;
+
+        AppliedHavokTreeSearchesForFile = false;
+        IsBehaviorGraph = false;
     }
 
     public void ClearFileSelection()
     {
         View.Selection.FilePath = null;
+
+        AppliedHavokTreeSearchesForFile = false;
+        IsBehaviorGraph = false;
+    }
+
+    public void ApplyFileSpecificTreeSearches(object sourceObject)
+    {
+        if (AppliedHavokTreeSearchesForFile)
+            return;
+
+        // Tag as Behavior Graph is present in HKX
+        var behaviorGraphs = HavokTreeSearch.FindAll<hkbBehaviorGraph>(sourceObject, View.PropertyCache.GetCachedHavokFields);
+
+        if (behaviorGraphs.Count > 0)
+            IsBehaviorGraph = true;
+
+        AppliedHavokTreeSearchesForFile = true;
     }
 }

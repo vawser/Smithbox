@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HKLib.hk2018;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,6 +18,9 @@ public class HavokBehaviorView
 
     public void Draw(object sourceObject)
     {
-
+        // TODO: structured editing of behavior elements:
+        // ClipGenerators
+        // etc
+        GUI.WrappedText("TEST");
     }
 }

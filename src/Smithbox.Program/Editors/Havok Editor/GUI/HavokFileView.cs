@@ -127,6 +127,8 @@ public class HavokFileView
             {
                 if (ImGui.Selectable($"{displayName}##fileEntry_{filepath}", selected))
                 {
+                    View.Selection.ClearFileSelection();
+
                     View.Selection.FilePath = filepath;
                     LoadHavokFile();
                 }
