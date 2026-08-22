@@ -226,10 +226,10 @@ public class HavokPropertyView
             return;
         }
 
-        ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
-
         if (View.Selection.PropertyViewType is HavokPropertyViewType.Flat)
         {
+            ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
+
             var sourceObject = bankDict[View.Selection.BinderFileEntry][View.Selection.FilePath];
 
             if (sourceObject != null)
@@ -242,6 +242,8 @@ public class HavokPropertyView
             {
                 GUI.WrappedText($"File has not been loaded yet.");
             }
+
+            ImGui.EndChild();
         }
         else
         {
@@ -251,22 +253,28 @@ public class HavokPropertyView
             {
                 View.Selection.ApplyFileSpecificTreeSearches(sourceObject);
 
-                if (View.Selection.IsBehaviorGraph)
+                if (View.PropertyView.BehaviorView.Selection.IsBehaviorGraph)
                 {
                     BehaviorView.Draw(sourceObject);
                 }
                 else
                 {
+                    ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
+
                     HavokPropEdit(sourceObject);
+
+                    ImGui.EndChild();
                 }
             }
             else
             {
+                ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
+
                 GUI.WrappedText($"File has not been loaded yet.");
+
+                ImGui.EndChild();
             }
         }
-
-        ImGui.EndChild();
     }
 
     public void HavokPropEdit(hkRootLevelContainer root)
@@ -303,7 +311,7 @@ public class HavokPropertyView
         ImGui.Columns(1);
     }
 
-    private void HavokPropEditGeneric(object obj, HavokClass havokMeta, int classIndex = -1)
+    public void HavokPropEditGeneric(object obj, HavokClass havokMeta, int classIndex = -1)
     {
         if (obj == null)
             return;

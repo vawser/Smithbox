@@ -20,7 +20,13 @@
 - Implement saving
 
 - Implement structured property view:
- - For Behavior editing
+ - Tab bar with each of the supported top-level types
+ - Left Panel: entry list
+ - Right Panel: properties
+ - In entry list:
+  - Duplicate Entry (auto-resolve instances of usage)
+  - Delete Entry (auto-resolve instances of usage)
+  - Insert Entry
 
 - Implement binder actions: 
  - Duplicate (and Rename) HKX
