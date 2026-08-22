@@ -95,9 +95,6 @@ public class MapToolWindow
         View.SelectAllAction.OnGui();
         View.AdjustToGridAction.OnGui();
 
-        if (!CFG.Current.Interface_MapEditor_ToolWindow)
-            return;
-
         if (ImGui.BeginMenuBar())
         {
             ViewMenu();

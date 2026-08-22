@@ -167,7 +167,12 @@ public static class FocusManager
     }
     public static bool IsInHavokEditor()
     {
-        if (Focus is EditorFocusContext.HavokEditor_None)
+        if (Focus is EditorFocusContext.HavokEditor_None
+            or EditorFocusContext.HavokEditor_CategoryList
+            or EditorFocusContext.HavokEditor_BinderList
+            or EditorFocusContext.HavokEditor_FileList
+            or EditorFocusContext.HavokEditor_Properties
+            or EditorFocusContext.HavokEditor_Tools)
             return true;
 
         return false;
@@ -252,5 +257,10 @@ public enum EditorFocusContext
     MapDataEditor_EnflEditor,
     MapDataEditor_Tools,
 
-    HavokEditor_None
+    HavokEditor_None,
+    HavokEditor_CategoryList,
+    HavokEditor_BinderList,
+    HavokEditor_FileList,
+    HavokEditor_Properties,
+    HavokEditor_Tools
 }

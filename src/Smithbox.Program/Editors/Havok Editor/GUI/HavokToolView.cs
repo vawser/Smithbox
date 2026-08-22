@@ -6,12 +6,12 @@ using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class HavokToolWindow
+public class HavokToolView
 {
     public HavokEditorView View;
     public ProjectEntry Project;
 
-    public HavokToolWindow(HavokEditorView view, ProjectEntry project)
+    public HavokToolView(HavokEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;

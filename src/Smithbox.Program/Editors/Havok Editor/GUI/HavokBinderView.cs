@@ -1,0 +1,178 @@
+﻿using Hexa.NET.ImGui;
+using HKLib.hk2018;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using StudioCore.Editors.Common;
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+using System.Text;
+using Tracy;
+
+namespace StudioCore.Editors.HavokEditor;
+
+public class HavokBinderView
+{
+    public HavokEditorView View;
+    public ProjectEntry Project;
+
+    public string BinderFilter = "";
+    public bool ExactBinderFilter = false;
+
+    public HavokBinderView(HavokEditorView view, ProjectEntry project)
+    {
+        View = view;
+        Project = project;
+    }
+
+    public void Draw()
+    {
+        GUI.SimpleHeader(
+            LOC.Get("HAVOK_BinderView_Header"),
+            LOC.Get("HAVOK_BinderView_Header_TT"));
+
+        var data = Project.Handler.HavokData;
+
+        if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
+        {
+            DisplayBinderList(Project.Locator.HavokAnimationFiles.Entries);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
+        {
+            DisplayBinderList(Project.Locator.HavokBehaviorFiles.Entries);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Character)
+        {
+            DisplayBinderList(Project.Locator.HavokCharacterFiles.Entries);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            DisplayBinderList(Project.Locator.HavokCollisionFiles.Entries);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Asset_Collision)
+        {
+            DisplayBinderList(Project.Locator.HavokAssetFiles.Entries);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Navmesh)
+        {
+            DisplayBinderList(Project.Locator.HavokNavmeshFiles.Entries);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Cutscene)
+        {
+            DisplayBinderList(Project.Locator.HavokCutsceneFiles.Entries);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Part_Collidable)
+        {
+            DisplayBinderList(Project.Locator.HavokPartFiles.Entries);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Rumble)
+        {
+            DisplayBinderList(Project.Locator.HavokRumbleFiles.Entries);
+        }
+        else
+        {
+            ImGui.BeginChild("havokBinderSection", ImGuiChildFlags.Borders);
+
+            GUI.WrappedText("No source file has been selected yet.");
+
+            ImGui.EndChild();
+        }
+    }
+
+    public void DisplayBinderList(HashSet<FileDictionaryEntry> entries)
+    {
+        DisplayHeader();
+
+        ImGui.BeginChild("havokBinderSection", ImGuiChildFlags.Borders);
+
+        foreach (var entry in entries)
+        {
+            var selected = View.Selection.BinderFileEntry == entry;
+            var displayName = entry.Filename;
+
+            if(CFG.Current.HavokEditor_BinderList_Display_Full_Path)
+            {
+                displayName = entry.Path;
+            }
+
+            // Normal filter
+            var isMatch = EditorFilters.IsMatch(BinderFilter, displayName, ExactBinderFilter);
+
+            if (!isMatch)
+                continue;
+
+            if (ImGui.Selectable($"{displayName}##binderEntry_{entry.Filename}", selected))
+            {
+                View.Selection.ClearFileSelection();
+                View.Selection.BinderFileEntry = entry;
+
+                PopulateFileList();
+            }
+        }
+
+        ImGui.EndChild();
+    }
+
+    public void DisplayHeader()
+    {
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedList_HavokBinderList", searchHeight, ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplayListFilter("havokBinderSearch", ref BinderFilter, ref ExactBinderFilter);
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}##toggleFullPathName"))
+        {
+            CFG.Current.HavokEditor_BinderList_Display_Full_Path = !CFG.Current.HavokEditor_BinderList_Display_Full_Path;
+        }
+
+        var fullPathVis = "Show Short Name";
+        if (CFG.Current.HavokEditor_BinderList_Display_Full_Path)
+            fullPathVis = "Show Full Name";
+
+        GUI.Tooltip($"Toggle the display name used in the binder list.\nCurrent Mode: {fullPathVis}");
+
+
+        ImGui.EndChild();
+    }
+
+    public void PopulateFileList()
+    {
+        if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
+        {
+            Project.Handler.HavokData.PopulateAnimationBank(View.Selection.BinderFileEntry);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
+        {
+            Project.Handler.HavokData.PopulateBehaviorBank(View.Selection.BinderFileEntry);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Character)
+        {
+            Project.Handler.HavokData.PopulateCharacterBank(View.Selection.BinderFileEntry);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            Project.Handler.HavokData.PopulateMapCollisionBank(View.Selection.BinderFileEntry);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Asset_Collision)
+        {
+            Project.Handler.HavokData.PopulateAssetCollisionBank(View.Selection.BinderFileEntry);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Navmesh)
+        {
+            Project.Handler.HavokData.PopulateNavmeshBank(View.Selection.BinderFileEntry);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Cutscene)
+        {
+            Project.Handler.HavokData.PopulateCutsceneBank(View.Selection.BinderFileEntry);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Part_Collidable)
+        {
+            Project.Handler.HavokData.PopulatePartBank(View.Selection.BinderFileEntry);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Rumble)
+        {
+            Project.Handler.HavokData.PopulateRumbleBank(View.Selection.BinderFileEntry);
+        }
+    }
+}

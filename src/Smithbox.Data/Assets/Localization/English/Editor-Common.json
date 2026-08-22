@@ -267,6 +267,14 @@
     {
       "Key": "EDITOR_SaveOutput_BTPB_TT",
       "Text": "If enabled, the Light Probes binder files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_HKX",
+      "Text": "HKX"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_HKX_TT",
+      "Text": "If enabled, the havok files are outputted on save."
     }
   ]
 }

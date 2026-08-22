@@ -3,6 +3,30 @@
     {
       "Key": "HAVOK_Window_Havok_Editor",
       "Text": "Havok Editor"
+    },
+    {
+      "Key": "HAVOK_Window_Category_List",
+      "Text": "Havok Categories"
+    },
+    {
+      "Key": "HAVOK_Window_Binder_List",
+      "Text": "Source List"
+    },
+    {
+      "Key": "HAVOK_Window_File_List",
+      "Text": "File List"
+    },
+    {
+      "Key": "HAVOK_Window_Properties",
+      "Text": "Properties"
+    },
+    {
+      "Key": "HAVOK_Window_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "HAVOK_Window_View_Toggle_Tools",
+      "Text": "Tools"
     }
   ]
 }

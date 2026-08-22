@@ -1,0 +1,56 @@
+{
+  "Entries": [
+    {
+      "Key": "HAVOK_ENUM_HavokCategoryMode_None",
+      "Text": "None"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokCategoryMode_Animation",
+      "Text": "Animation"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokCategoryMode_Behavior",
+      "Text": "Behavior"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokCategoryMode_Character",
+      "Text": "Character"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokCategoryMode_Map_Collision",
+      "Text": "Map Collision"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokCategoryMode_Asset_Collision",
+      "Text": "Asset Collision"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokCategoryMode_Character_Collision",
+      "Text": "Character Collision"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokCategoryMode_Navmesh",
+      "Text": "Navmesh"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokCategoryMode_Cutscene",
+      "Text": "Cutscene"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokCategoryMode_Part_Collidable",
+      "Text": "Part Collidable"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokCategoryMode_Rumble",
+      "Text": "Rumble"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokPropertyViewType_Flat",
+      "Text": "Flat"
+    },
+    {
+      "Key": "HAVOK_ENUM_HavokPropertyViewType_Structured",
+      "Text": "Structured"
+    }
+  ]
+}

@@ -1,8 +1,9 @@
-﻿using Hexa.NET.ImGui;
+﻿using CsvHelper;
+using Hexa.NET.ImGui;
 using HKLib.hk2018;
 using SoulsFormats;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Utilities;
 using System.Drawing;
 using System.Numerics;
@@ -10,174 +11,243 @@ using System.Reflection;
 
 namespace StudioCore.Editors.HavokEditor;
 
-/// <summary>
-/// Handles the property editing for collision / navmesh HKX files
-/// Used in the Map Editor
-/// </summary>
-public class MapHavokPropertyView
+public class HavokPropertyView
 {
-    private MapEditorView View;
+    private HavokEditorView View;
     private ProjectEntry Project;
 
     private object _changingProperty;
-    private ViewportAction _lastUncommittedAction;
+    private EditorAction _lastUncommittedAction;
 
-    public HavokPropertyMode PropertyMode = HavokPropertyMode.Collision;
+    public string PropFilter = "";
+    public bool ExactPropFilter = false;
 
-    public MapCollisionEditType CollisionEditType = MapCollisionEditType.High;
-    public MapNavmeshEditType NavmeshEditType = MapNavmeshEditType.N;
+    public HavokBehaviorView BehaviorView;
 
-    public MapHavokPropertyView(MapEditorView view, ProjectEntry project)
+    public HavokPropertyView(HavokEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+
+        BehaviorView = new(view, project);
     }
 
-    public void SetPropertyMode(HavokPropertyMode newMode)
+    public void Draw()
     {
-        PropertyMode = newMode;
-    }
+        GUI.SimpleHeader(
+            LOC.Get("HAVOK_PropertyView_Header"),
+            LOC.Get("HAVOK_PropertyView_Header_TT"));
 
-    public void Display()
-    {
-        HashSet<Entity> entSelection = View.ViewportSelection.GetFilteredSelection<Entity>();
+        DisplayHeader();
 
-        // Properties
-        ImGui.BeginChild("mapHavokEdit", ImGuiChildFlags.Borders);
+        var data = Project.Handler.HavokData;
 
-        if (View.Universe.HasProcessedMapLoad && entSelection.Any())
+        if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
         {
-            Entity firstEnt = entSelection.First();
-            if (firstEnt.WrappedObject == null)
-            {
-                ImGui.Text("Select a map object to edit its properties.");
-                ImGui.EndChild();
-                ImGui.End();
-                ImGui.PopStyleColor(2);
-                return;
-            }
-
-            if (PropertyMode is HavokPropertyMode.Collision)
-            {
-                CollisionPropEditor(firstEnt);
-            }
-            else if (PropertyMode is HavokPropertyMode.Navmesh)
-            {
-                NavmeshPropEditor(firstEnt);
-            }
+            DisplayPropertyEditor(data.AnimationBank);
         }
-        else if (!View.Universe.HasProcessedMapLoad)
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
         {
-            ImGui.Text("");
+            DisplayPropertyEditor(data.BehaviorBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Character)
+        {
+            DisplayPropertyEditor(data.CharacterBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            DisplayPropertyEditor(data.MapCollisionBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Asset_Collision)
+        {
+            DisplayPropertyEditor(data.AssetCollisionBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Navmesh)
+        {
+            DisplayPropertyEditor(data.NavmeshBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Cutscene)
+        {
+            DisplayPropertyEditor(data.CutsceneBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Part_Collidable)
+        {
+            DisplayPropertyEditor(data.PartBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Rumble)
+        {
+            DisplayPropertyEditor(data.RumbleBank);
         }
         else
         {
-            ImGui.Text("Select a map object to edit its properties.");
+            ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
+
+            GUI.WrappedText($"No internal file has been selected.");
+
+            ImGui.EndChild();
+        }
+    }
+
+    public void DisplayHeader()
+    {
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedList_HavokProperties", searchHeight, ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplayListFilter("havokPropSearch", ref PropFilter, ref ExactPropFilter);
+
+        // Toggle Community Field Names
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
+        {
+            CFG.Current.HavokEditor_Properties_Display_Community_Names = !CFG.Current.HavokEditor_Properties_Display_Community_Names;
+        }
+
+        var communityFieldNameMode = "Internal";
+        if (CFG.Current.HavokEditor_Properties_Display_Community_Names)
+            communityFieldNameMode = "Community";
+
+        GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Calculator}##toggleTypeCol"))
+        {
+            CFG.Current.HavokEditor_Properties_Display_Type_Column = !CFG.Current.HavokEditor_Properties_Display_Type_Column;
+        }
+
+        var typeColumnVis = "Internal";
+        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+            typeColumnVis = "Community";
+
+        GUI.Tooltip($"Toggle the visibilty of the field type column.\nCurrent Mode: {typeColumnVis}");
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Database}##toggleRawDataFields"))
+        {
+            CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields = !CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields;
+        }
+
+        var rawDataVis = "Hide Mesh Data";
+        if (CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields)
+            rawDataVis = "Show Mesh Data";
+
+        GUI.Tooltip($"Toggle the visibilty of fields tagged as 'mesh data'.\nCurrent Mode: {rawDataVis}");
+
+        // Special Property View Mode for Behavior
+        if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
+        {
+            ImGui.SameLine();
+
+            var previewName = LOC.Get(View.Selection.PropertyViewType.GetDisplayName());
+
+            ImGui.SetNextItemWidth(100f * DPI.UIScale());
+            if (ImGui.BeginCombo("##subEditorMode", previewName))
+            {
+                foreach (var entry in Enum.GetValues(typeof(HavokPropertyViewType)))
+                {
+                    var curType = (HavokPropertyViewType)entry;
+
+                    var displayName = LOC.Get(curType.GetDisplayName());
+
+                    if (ImGui.Selectable(displayName, curType == View.Selection.PropertyViewType))
+                    {
+                        View.Selection.PropertyViewType = curType;
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
         }
 
         ImGui.EndChild();
     }
 
-
-    public void CollisionPropEditor(Entity ent)
+    public void DisplayPropertyEditor(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict)
     {
-        var mapID = View.Selection.SelectedMapID;
+        if (View.Selection.BinderFileEntry == null)
+        {
+            ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
-        PropertyInfo prop = ent.WrappedObject.GetType().GetProperty("ModelName");
-        var value = prop.GetValue(ent.WrappedObject);
+            GUI.WrappedText($"No source file has been selected.");
 
-        if (value == null)
+            ImGui.EndChild();
+
             return;
-
-        var modelName = (string)value;
-
-        var fullName = $"h{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
-
-        if (CollisionEditType is MapCollisionEditType.Low)
-        {
-            fullName = $"l{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
         }
 
-        if (CollisionEditType is MapCollisionEditType.FallProtection)
+        if (!bankDict.ContainsKey(View.Selection.BinderFileEntry))
         {
-            fullName = $"f{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
+            ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
+
+            GUI.WrappedText($"Bank does not contain a file entry with this path:\n{View.Selection.BinderFileEntry.Path}");
+
+            ImGui.EndChild();
+
+            return;
         }
 
-        if (View.HavokCollisionBank.HavokContainers.ContainsKey(fullName))
+        if (View.Selection.FilePath == null)
         {
-            GUI.SimpleHeader($"{fullName}", "");
+            ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
-            var curCollision = View.HavokCollisionBank.HavokContainers[fullName];
+            GUI.WrappedText($"No internal file has been selected.");
 
-            HavokPropEdit(curCollision);
+            ImGui.EndChild();
+
+            return;
+        }
+
+        if (!bankDict[View.Selection.BinderFileEntry].ContainsKey(View.Selection.FilePath))
+        {
+            ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
+
+            GUI.WrappedText($"Binder does not contain a file with this path:\n{View.Selection.FilePath}");
+
+            ImGui.EndChild();
+
+            return;
+        }
+
+        ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
+
+        if (View.Selection.PropertyViewType is HavokPropertyViewType.Flat)
+        {
+            var sourceObject = bankDict[View.Selection.BinderFileEntry][View.Selection.FilePath];
+
+            if (sourceObject != null)
+            {
+                HavokPropEdit(sourceObject);
+            }
+            else
+            {
+                GUI.WrappedText($"File has not been loaded yet.");
+            }
         }
         else
         {
-            GUI.WrappedText("No collision file for this model name of this type.");
-        }
-    }
+            var sourceObject = bankDict[View.Selection.BinderFileEntry][View.Selection.FilePath];
 
-    public void NavmeshPropEditor(Entity ent)
-    {
-        var mapID = View.Selection.SelectedMapID;
-
-        PropertyInfo prop = ent.WrappedObject.GetType().GetProperty("ModelID");
-        var value = prop.GetValue(ent.WrappedObject);
-
-        if (value == null)
-            return;
-
-        var modelID = value.ToString();
-
-        if (modelID.Length == 1)
-        {
-            modelID = $"00000{modelID}";
-        }
-        else if (modelID.Length == 2)
-        {
-            modelID = $"0000{modelID}";
-        }
-        else if (modelID.Length == 3)
-        {
-            modelID = $"000{modelID}";
-        }
-        else if (modelID.Length == 4)
-        {
-            modelID = $"00{modelID}";
-        }
-        else if (modelID.Length == 5)
-        {
-            modelID = $"0{modelID}";
+            if (sourceObject != null)
+            {
+                BehaviorView.Draw(sourceObject);
+            }
+            else
+            {
+                GUI.WrappedText($"File has not been loaded yet.");
+            }
         }
 
-        var fullName = $"n{mapID.Replace("m", "")}_{modelID}";
-
-        if (NavmeshEditType is MapNavmeshEditType.O)
-        {
-            fullName = $"o{mapID.Replace("m", "")}_{modelID}";
-        }
-
-        if (View.HavokNavmeshBank.HKX3_Containers.ContainsKey(fullName))
-        {
-            GUI.SimpleHeader($"{fullName}", "");
-
-            var curNavmesh = View.HavokNavmeshBank.HKX3_Containers[fullName];
-
-            HavokPropEdit(curNavmesh);
-        }
-        else
-        {
-            GUI.WrappedText("No navmesh file for this model name of this type.");
-        }
+        ImGui.EndChild();
     }
 
     public void HavokPropEdit(hkRootLevelContainer root)
     {
-        var mapID = View.Selection.SelectedMapID;
         var type = root.GetType();
 
         var columnCount = 2;
-        if(CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
         {
             columnCount = 3;
         }
@@ -187,28 +257,14 @@ public class MapHavokPropertyView
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Object Type");
 
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Map ID");
-        GUI.Tooltip("The map ID of the map that the first entry of the current selection is found in.");
-
         ImGui.NextColumn();
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text(type.Name);
 
-        ImGui.AlignTextToFramePadding();
-
-        ImGui.Text(mapID);
-
-        if (mapID != "")
-        {
-            var mapAlias = AliasHelper.GetMapNameAlias(View.Project, mapID);
-            GUI.DisplayAlias(mapAlias);
-        }
-
         ImGui.NextColumn();
 
-        if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -222,10 +278,13 @@ public class MapHavokPropertyView
 
     private void HavokPropEditGeneric(object obj, HavokClass havokMeta, int classIndex = -1)
     {
+        if (obj == null)
+            return;
+
         var scale = DPI.UIScale();
         Type type = obj.GetType();
 
-        FieldInfo[] properties = View.MapPropertyCache.GetCachedHavokFields(type);
+        FieldInfo[] properties = View.PropertyCache.GetCachedHavokFields(type);
 
         // Properties
         var id = 0;
@@ -241,7 +300,7 @@ public class MapHavokPropertyView
 
             if (havokMeta != null)
             {
-                if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names)
+                if (CFG.Current.HavokEditor_Properties_Display_Community_Names)
                 {
                     fieldName = HavokMetaHelper.GetFieldName(havokMeta, prop.Name);
                 }
@@ -260,7 +319,7 @@ public class MapHavokPropertyView
                 GUI.Tooltip(fieldDescription);
                 ImGui.NextColumn();
                 ImGui.NextColumn();
-                if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+                if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
                 {
                     PropContextRowOpener("arrayTypeCol");
 
@@ -286,7 +345,7 @@ public class MapHavokPropertyView
                             var o = a.GetValue(i);
                             ImGui.Text("");
                             ImGui.NextColumn();
-                            if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+                            if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
                             {
                                 PropContextRowOpener("arrayTypeEntryCol");
 
@@ -341,7 +400,7 @@ public class MapHavokPropertyView
                             var o = itemprop.GetValue(l, new object[] { i });
                             ImGui.Text("");
                             ImGui.NextColumn();
-                            if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+                            if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
                             {
                                 PropContextRowOpener("listTypeCol");
 
@@ -383,7 +442,7 @@ public class MapHavokPropertyView
                     ImGui.SetNextItemWidth(-1);
                     ImGui.Text("");
                     ImGui.NextColumn();
-                    if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+                    if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
                     {
                         PropContextRowOpener("classTypeCol");
 
@@ -426,7 +485,7 @@ public class MapHavokPropertyView
         {
             var isRawData = HavokMetaHelper.IsRawData(havokMeta, prop.Name);
 
-            if (!CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields)
+            if (!CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields)
             {
                 if (isRawData)
                 {
@@ -436,10 +495,10 @@ public class MapHavokPropertyView
         }
 
         // Normal filter
-        var isMatch = EditorFilters.IsMatch(View.MapPropertyView.MapPropFilter, propName, View.MapPropertyView.ExactMapPropFilter);
+        var isMatch = EditorFilters.IsMatch(PropFilter, propName, ExactPropFilter);
         var isValueMatch = false;
 
-        if (View.MapPropertyView.MapPropFilter.StartsWith("val:"))
+        if (PropFilter.StartsWith("val:"))
             isValueMatch = true;
 
         if (!isMatch && !isValueMatch)
@@ -449,7 +508,7 @@ public class MapHavokPropertyView
         else if (isValueMatch)
         {
             // TODO: currently doesn't match correctly with array list values
-            var valStr = View.MapPropertyView.MapPropFilter.Replace("val:", "");
+            var valStr = PropFilter.Replace("val:", "");
 
             var propVal = prop.GetValue(propObj);
 
@@ -457,7 +516,7 @@ public class MapHavokPropertyView
             {
                 var value = $"{propVal}";
 
-                if (View.MapPropertyView.ExactMapPropFilter)
+                if (ExactPropFilter)
                 {
                     if (valStr != value)
                         return false;
@@ -516,7 +575,7 @@ public class MapHavokPropertyView
 
         UpdateProperty(prop, containerObj, oldval, newval, changed, committed, arrayIndex, classIndex);
 
-        if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
 
@@ -538,7 +597,7 @@ public class MapHavokPropertyView
         ImGui.SameLine();
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
-            ImGui.OpenPopup("CollisionPropContextMenu");
+            ImGui.OpenPopup("HavokPropertiesContextMenu");
         }
     }
 
@@ -546,10 +605,10 @@ public class MapHavokPropertyView
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
-            ImGui.OpenPopup("CollisionPropContextMenu");
+            ImGui.OpenPopup("HavokPropertiesContextMenu");
         }
 
-        if (ImGui.BeginPopup("CollisionPropContextMenu"))
+        if (ImGui.BeginPopup("HavokPropertiesContextMenu"))
         {
             if (ImGui.Selectable(@"Copy Property Name##CopyPropName"))
             {
@@ -584,36 +643,30 @@ public class MapHavokPropertyView
 
         if (committed)
         {
-            if (_lastUncommittedAction != null && View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
+            if (_lastUncommittedAction != null && View.ActionManager.PeekUndoAction() == _lastUncommittedAction)
             {
-                if (_lastUncommittedAction is PropMultChangeAction a)
-                {
-                    View.ViewportActionManager.UndoAction();
-                    View.ViewportActionManager.ExecuteAction(a);
-                }
-
                 _lastUncommittedAction = null;
                 _changingProperty = null;
             }
         }
     }
 
-    private void ChangeProperty(object prop, object obj, object oldval, object newval, 
+    private void ChangeProperty(object prop, object obj, object oldval, object newval,
         ref bool committed,
         int arrayindex = -1, int classIndex = -1)
     {
         if (prop == _changingProperty && _lastUncommittedAction != null &&
-            View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
+            View.ActionManager.PeekUndoAction() == _lastUncommittedAction)
         {
-            View.ViewportActionManager.UndoAction();
+            View.ActionManager.UndoAction();
         }
         else
         {
             _lastUncommittedAction = null;
         }
 
-        var action = new MapHavokPropChange(View, (FieldInfo)prop, obj, newval, arrayindex, classIndex);
-        View.ViewportActionManager.ExecuteAction(action);
+        var action = new HavokPropChange(View, (FieldInfo)prop, obj, newval, arrayindex, classIndex);
+        View.ActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;
         _changingProperty = prop;
@@ -930,5 +983,4 @@ public class MapHavokPropertyView
 
         return (isChanged, isDeactivatedAfterEdit);
     }
-
 }

@@ -278,24 +278,27 @@ public class MapEditorView : IEditorView
 
         ImGui.End();
 
-        // Tools
-        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Tools##mapEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+        if (CFG.Current.Interface_MapEditor_ToolWindow)
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            // Tools
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
+            if (ImGui.Begin($@"Tools##mapEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
             {
-                FocusManager.SetFocus(EditorFocusContext.MapEditor_Tools);
-                Editor.ViewHandler.ActiveView = this;
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.MapEditor_Tools);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                ToolView.Display();
             }
 
-            ToolView.Display();
+            ImGui.End();
         }
-
-        ImGui.End();
 
         MapListFilterTool.Update();
         LocalSearchView.Update();

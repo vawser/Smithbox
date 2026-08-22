@@ -49,7 +49,7 @@ public class HavokEditorScreen : EditorScreen
             var activeView = ViewHandler.ActiveView;
             if (activeView != null)
             {
-                activeView.ToolWindow.DisplayMenu();
+                activeView.Tools.DisplayMenu();
             }
 
             ImGui.EndMenuBar();
@@ -63,41 +63,47 @@ public class HavokEditorScreen : EditorScreen
 
     public void FileMenu()
     {
-        if (ImGui.BeginMenu("File"))
+        // File
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fileMenuHeader"))
         {
-            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
+            // Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 Save();
             }
 
             ImGui.Separator();
 
-            if (ImGui.BeginMenu("Output on Manual Save"))
+            // Manual Save Output
+            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Manual_Save_Output")}##manualSaveMenuHeader"))
             {
-                if (ImGui.MenuItem($"HKX"))
+                // HKX
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_HKX")}##manualToggle_hkx"))
                 {
                     CFG.Current.HavokEditor_ManualSave_IncludeHKX = !CFG.Current.HavokEditor_ManualSave_IncludeHKX;
                 }
-                GUI.Tooltip("If enabled, the havok files are outputted on save.");
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_HKX_TT"));
                 GUI.ShowActiveStatus(CFG.Current.HavokEditor_ManualSave_IncludeHKX);
 
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Determines which files are outputted during the manual saving process.");
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
 
-            if (ImGui.BeginMenu("Output on Automatic Save"))
+            // Automatic Save Output
+            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
             {
-                if (ImGui.MenuItem($"HKX"))
+                // MTD
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_HKX")}##autoToggle_hkx"))
                 {
                     CFG.Current.HavokEditor_AutomaticSave_IncludeHKX = !CFG.Current.HavokEditor_AutomaticSave_IncludeHKX;
                 }
-                GUI.Tooltip("If enabled, the havok files are outputted on save.");
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_HKX_TT"));
                 GUI.ShowActiveStatus(CFG.Current.HavokEditor_AutomaticSave_IncludeHKX);
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Determines which files are outputted during the automatic saving process.");
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
 
 
             ImGui.EndMenu();
@@ -107,12 +113,13 @@ public class HavokEditorScreen : EditorScreen
     {
         var activeView = ViewHandler.ActiveView;
 
-        if (ImGui.BeginMenu("Edit"))
+        // Edit
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Edit")}##editMenuHeader"))
         {
             if (activeView != null)
             {
                 // Undo
-                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
                     if (activeView.ActionManager.CanUndo())
                     {
@@ -121,7 +128,7 @@ public class HavokEditorScreen : EditorScreen
                 }
 
                 // Undo All
-                if (ImGui.MenuItem($"Undo All"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##undoAllAction"))
                 {
                     if (activeView.ActionManager.CanUndo())
                     {
@@ -130,7 +137,7 @@ public class HavokEditorScreen : EditorScreen
                 }
 
                 // Redo
-                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
                     if (activeView.ActionManager.CanRedo())
                     {
@@ -145,9 +152,11 @@ public class HavokEditorScreen : EditorScreen
 
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        // View
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem("Tools"))
+            // Tools
+            if (ImGui.MenuItem($"{LOC.Get("HAVOK_Window_View_Toggle_Tools")}##toolsToggle"))
             {
                 CFG.Current.Interface_HavokEditor_ToolWindow = !CFG.Current.Interface_HavokEditor_ToolWindow;
             }

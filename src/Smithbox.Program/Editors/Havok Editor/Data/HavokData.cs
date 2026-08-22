@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HKLib.hk2018;
+using HKLib.Serialization.hk2018.Binary;
+using SoulsFormats;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,14 +11,16 @@ public class HavokData : IDisposable
 {
     public ProjectEntry Project;
 
-    public HavokAnimationBank AnimationBank;
-    public HavokBehaviorBank BehaviorBank;
-    public HavokCharacterBank CharacterBank;
-    public HavokCollisionBank CollisionBank;
-    public HavokCutsceneBank CutsceneBank;
-    public HavokNavmeshBank NavmeshBank;
-    public HavokPartBank PartBank;
-    public HavokRumbleBank RumbleBank;
+    public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> AnimationBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> BehaviorBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> CharacterBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> CutsceneBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> NavmeshBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> PartBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> RumbleBank = new();
+
+    public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> MapCollisionBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> AssetCollisionBank = new();
 
     public HavokData(ProjectEntry project)
     {
@@ -26,182 +31,616 @@ public class HavokData : IDisposable
     {
         await Task.Yield();
 
-        AnimationBank = new(Project);
-        BehaviorBank = new(Project);
-        CharacterBank = new(Project);
-        CollisionBank = new(Project);
-        CutsceneBank = new(Project);
-        NavmeshBank = new(Project);
-        PartBank = new(Project);
-        RumbleBank = new(Project);
-
         return true;
     }
 
-    public async Task<bool> SetupAnimationBank()
+    #region Populate
+    public void PopulateAnimationBank(FileDictionaryEntry entry)
     {
-        // Animation Bank
-        Task<bool> animationBankTask = AnimationBank.Setup();
-        bool animationBankTaskResult = await animationBankTask;
-
-        if (!animationBankTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Setup_Animation_Bank_FAIL"));
-        }
-        else
-        {
-            Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Animation_Bank_PASS"));
-        }
-
-        return true;
+        PopulateFiles(AnimationBank, entry);
     }
 
-    public async Task<bool> SetupBehaviorBank()
+    public void PopulateBehaviorBank(FileDictionaryEntry entry)
     {
-        // Behavior Bank
-        Task<bool> behaviorBankTask = BehaviorBank.Setup();
-        bool behaviorBankTaskResult = await behaviorBankTask;
-
-        if (!behaviorBankTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Setup_Behavior_Bank_FAIL"));
-        }
-        else
-        {
-            Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Behavior_Bank_PASS"));
-        }
-
-        return true;
+        PopulateFiles(BehaviorBank, entry);
     }
 
-    public async Task<bool> SetupCharacterBank()
+    public void PopulateCharacterBank(FileDictionaryEntry entry)
     {
-        // Character Bank
-        Task<bool> characterBankTask = CharacterBank.Setup();
-        bool characterBankTaskResult = await characterBankTask;
-
-        if (!characterBankTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Setup_Character_Bank_FAIL"));
-        }
-        else
-        {
-            Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Character_Bank_PASS"));
-        }
-
-        return true;
+        PopulateFiles(CharacterBank, entry);
     }
 
-    public async Task<bool> SetupCollisionBank()
+    public void PopulateNavmeshBank(FileDictionaryEntry entry)
     {
-        // Collision Bank
-        Task<bool> collisionBankTask = CollisionBank.Setup();
-        bool collisionBankTaskResult = await collisionBankTask;
-
-        if (!collisionBankTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Setup_Collision_Bank_FAIL"));
-        }
-        else
-        {
-            Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Collision_Bank_PASS"));
-        }
-
-        return true;
+        PopulateFiles(NavmeshBank, entry);
     }
 
-    public async Task<bool> SetupCutsceneBank()
+    public void PopulateCutsceneBank(FileDictionaryEntry entry)
     {
-        // Cutscene Bank
-        Task<bool> cutsceneBankTask = CutsceneBank.Setup();
-        bool cutsceneBankTaskResult = await cutsceneBankTask;
-
-        if (!cutsceneBankTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Setup_Cutscene_Bank_FAIL"));
-        }
-        else
-        {
-            Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Cutscene_Bank_PASS"));
-        }
-
-        return true;
+        PopulateFiles(CutsceneBank, entry);
     }
 
-    public async Task<bool> SetupNavmeshBank()
+    public void PopulatePartBank(FileDictionaryEntry entry)
     {
-        // Navmesh Bank
-        Task<bool> navmeshBankTask = NavmeshBank.Setup();
-        bool navmeshBankTaskResult = await navmeshBankTask;
-
-        if (!navmeshBankTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Setup_Navmesh_Bank_FAIL"));
-        }
-        else
-        {
-            Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Navmesh_Bank_PASS"));
-        }
-
-        return true;
+        PopulateFiles(PartBank, entry);
     }
 
-    public async Task<bool> SetupPartBank()
+    public void PopulateRumbleBank(FileDictionaryEntry entry)
     {
-        // Part Bank
-        Task<bool> partBankTask = PartBank.Setup();
-        bool partBankTaskResult = await partBankTask;
-
-        if (!partBankTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Setup_Part_Bank_FAIL"));
-        }
-        else
-        {
-            Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Part_Bank_PASS"));
-        }
-
-        return true;
+        PopulateFiles(RumbleBank, entry);
     }
 
-    public async Task<bool> SetupRumbleBank()
+    public void PopulateMapCollisionBank(FileDictionaryEntry entry)
     {
-        // Rumble Bank
-        Task<bool> rumbleBankTask = RumbleBank.Setup();
-        bool rumbleBankTaskResult = await rumbleBankTask;
-
-        if (!rumbleBankTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Setup_Rumble_Bank_FAIL"));
-        }
-        else
-        {
-            Smithbox.Log(this, LOC.Get("HAVOK_Data_Setup_Rumble_Bank_PASS"));
-        }
-
-        return true;
+        PopulateCombinedFiles(MapCollisionBank, entry,
+                "HAVOK_Data_Failed_to_Read_Collision_Binder_File");
     }
+
+    public void PopulateAssetCollisionBank(FileDictionaryEntry entry)
+    {
+        PopulateFiles(AssetCollisionBank, entry);
+    }
+
+    #endregion
+
+    #region Load
+    public void LoadAnimationFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        LoadHavokFile(AnimationBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Read_Animation_HKX",
+            "HAVOK_Data_Failed_to_Read_Animation_Binder_File", true);
+    }
+
+    public void LoadBehaviorFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        LoadHavokFile(BehaviorBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Read_Behavior_HKX",
+            "HAVOK_Data_Failed_to_Read_Behavior_Binder_File");
+    }
+
+    public void LoadCharacterFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        LoadHavokFile(CharacterBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Read_Character_HKX",
+            "HAVOK_Data_Failed_to_Read_Character_Binder_File");
+    }
+
+    public void LoadCutsceneFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        LoadHavokFile(CutsceneBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Read_Cutscene_HKX",
+            "HAVOK_Data_Failed_to_Read_Cutscene_Binder_File");
+    }
+
+    public void LoadNavmeshFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        LoadHavokFile(NavmeshBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Read_Navmesh_HKX",
+            "HAVOK_Data_Failed_to_Read_Navmesh_Binder_File");
+    }
+
+    public void LoadPartFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        LoadHavokFile(PartBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Read_Part_HKX",
+            "HAVOK_Data_Failed_to_Read_Part_Binder_File");
+    }
+
+    public void LoadRumbleFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        LoadHavokFile(RumbleBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Read_Rumble_HKX",
+            "HAVOK_Data_Failed_to_Read_Rumble_Binder_File");
+    }
+
+    public void LoadMapCollisionFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        LoadCombinedHavokFile(MapCollisionBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Read_Collision_HKX",
+            "HAVOK_Data_Failed_to_Read_Collision_Binder_File");
+    }
+
+    public void LoadAssetCollisionFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        LoadHavokFile(AssetCollisionBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Read_Collision_HKX",
+            "HAVOK_Data_Failed_to_Read_Collision_Binder_File");
+    }
+    #endregion
+
+    #region Save
+    public void SaveAnimationFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        SaveHavokFile(AnimationBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Write_Animation_HKX",
+            "HAVOK_Data_Failed_to_Write_Animation_Binder_File");
+    }
+
+    public void SaveBehaviorFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        SaveHavokFile(BehaviorBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Write_Behavior_HKX",
+            "HAVOK_Data_Failed_to_Write_Behavior_Binder_File");
+    }
+
+    public void SaveCharacterFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        SaveHavokFile(CharacterBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Write_Character_HKX",
+            "HAVOK_Data_Failed_to_Write_Character_Binder_File");
+    }
+
+    public void SaveCutsceneFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        SaveHavokFile(CutsceneBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Write_Cutscene_HKX",
+            "HAVOK_Data_Failed_to_Write_Cutscene_Binder_File");
+    }
+
+    public void SaveNavmeshFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        SaveHavokFile(NavmeshBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Write_Navmesh_HKX",
+            "HAVOK_Data_Failed_to_Write_Navmesh_Binder_File");
+    }
+
+    public void SavePartFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        SaveHavokFile(PartBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Write_Part_HKX",
+            "HAVOK_Data_Failed_to_Write_Part_Binder_File");
+    }
+
+    public void SaveRumbleFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        SaveHavokFile(RumbleBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Write_Rumble_HKX",
+            "HAVOK_Data_Failed_to_Write_Rumble_Binder_File");
+    }
+    public void SaveMapCollisionFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        SaveCombinedHavokFile(MapCollisionBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Write_Collision_HKX",
+            "HAVOK_Data_Failed_to_Write_Collision_Binder_File");
+    }
+
+    public void SaveAssetCollisionFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        SaveHavokFile(AssetCollisionBank, fileEntry, internalFilePath,
+            "HAVOK_Data_Failed_to_Write_Collision_HKX",
+            "HAVOK_Data_Failed_to_Write_Collision_Binder_File");
+    }
+
+    #endregion
+
+    #region Populate Internals
+    public void PopulateFiles(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict, FileDictionaryEntry fileEntry)
+    {
+        if (!bankDict.ContainsKey(fileEntry))
+            bankDict.Add(fileEntry, new Dictionary<string, hkRootLevelContainer>());
+
+        var binderData = Project.VFS.FS.ReadFile(fileEntry.Path);
+
+        if (Project.VFS.ProjectFS.FileExists(fileEntry.Path))
+        {
+            binderData = Project.VFS.ProjectFS.ReadFile(fileEntry.Path);
+        }
+
+        if (binderData == null)
+            return;
+
+        var binder = new BND4Reader(binderData.Value);
+        foreach (var file in binder.Files)
+        {
+            if (bankDict.ContainsKey(fileEntry))
+            {
+                var curTopDict = bankDict[fileEntry];
+
+                if (!curTopDict.ContainsKey(file.Name))
+                {
+                    bankDict[fileEntry].Add(file.Name, null);
+                }
+            }
+        }
+    }
+
+    // BDT is the main file used
+    public void PopulateCombinedFiles(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict, FileDictionaryEntry fileEntry, string failedBinderReadLocKey)
+    {
+        var bhdPath = fileEntry.Path;
+        var bdtPath = fileEntry.Path.Replace("bhd", "bdt");
+
+        var name = Path.GetFileNameWithoutExtension(fileEntry.Path);
+
+        if (!bankDict.ContainsKey(fileEntry))
+            bankDict.Add(fileEntry, new Dictionary<string, hkRootLevelContainer>());
+
+        try
+        {
+            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
+            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
+
+            if (Project.VFS.ProjectFS.FileExists(bdtPath))
+            {
+                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
+            }
+            if (Project.VFS.ProjectFS.FileExists(bhdPath))
+            {
+                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
+            }
+
+            if (bdtData == null || bhdData == null)
+                return;
+
+            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+            foreach (var file in packedBinder.Files)
+            {
+                if (bankDict.ContainsKey(fileEntry))
+                {
+                    var curTopDict = bankDict[fileEntry];
+
+                    if (!curTopDict.ContainsKey(file.Name))
+                    {
+                        bankDict[fileEntry].Add(file.Name, null);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this,
+                LOC.Get(failedBinderReadLocKey, name), ex);
+        }
+    }
+    #endregion
+
+    #region Load Internals
+    public void LoadHavokFile(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string fileReadFailLocKey, string binderReadFailLocKey, bool loadCompendium = false)
+    {
+        if (!bankDict.ContainsKey(fileEntry))
+            return;
+
+        var curTopDict = bankDict[fileEntry];
+
+        if (!curTopDict.ContainsKey(internalFilePath))
+            return;
+
+        var binderData = Project.VFS.FS.ReadFile(fileEntry.Path);
+
+        if (Project.VFS.ProjectFS.FileExists(fileEntry.Path))
+        {
+            binderData = Project.VFS.ProjectFS.ReadFile(fileEntry.Path);
+        }
+
+        if (binderData == null)
+            return;
+
+        HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+        var binder = new BND4Reader(binderData.Value);
+
+        if (loadCompendium)
+        {
+            // Get compendium
+            byte[] compendiumFileBytes = null;
+
+            foreach (var file in binder.Files)
+            {
+                if (file.Name.Contains(".compendium.dcx"))
+                {
+                    var fileBytes = binder.ReadFile(file).ToArray();
+
+                    compendiumFileBytes = DCX.Decompress(fileBytes).ToArray();
+                }
+                else if (file.Name.Contains(".compendium"))
+                {
+                    compendiumFileBytes = binder.ReadFile(file).ToArray();
+                }
+            }
+
+            if (compendiumFileBytes != null)
+            {
+                using MemoryStream memoryStream = new MemoryStream(compendiumFileBytes);
+                serializer.LoadCompendium(memoryStream);
+            }
+        }
+
+        foreach (var file in binder.Files)
+        {
+            var name = Path.GetFileNameWithoutExtension(file.Name);
+
+            if (file.Name != internalFilePath)
+                continue;
+
+            try
+            {
+                var fileBytes = binder.ReadFile(file).ToArray();
+
+                using (MemoryStream memoryStream = new MemoryStream(fileBytes))
+                {
+                    hkRootLevelContainer fileHkx;
+
+                    try
+                    {
+                        fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+
+                        bankDict[fileEntry][internalFilePath] = fileHkx;
+                    }
+                    catch (InvalidDataException ex)
+                    {
+                        Smithbox.LogError(this,
+                            LOC.Get(fileReadFailLocKey, name), ex);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get(binderReadFailLocKey, name), ex);
+            }
+        }
+    }
+
+    // BHD is the main file used
+    public void LoadCombinedHavokFile(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string fileReadFailLocKey, string binderReadFailLocKey)
+    {
+        if (!bankDict.ContainsKey(fileEntry))
+            return;
+
+        var curTopDict = bankDict[fileEntry];
+
+        if (!curTopDict.ContainsKey(internalFilePath))
+            return;
+
+        var bhdPath = fileEntry.Path;
+        var bdtPath = fileEntry.Path.Replace("bhd", "bdt");
+
+        var name = Path.GetFileNameWithoutExtension(internalFilePath);
+
+        try
+        {
+            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
+            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
+
+            if (Project.VFS.ProjectFS.FileExists(bdtPath))
+            {
+                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
+            }
+            if (Project.VFS.ProjectFS.FileExists(bhdPath))
+            {
+                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
+            }
+
+            if (bdtData == null || bhdData == null)
+                return;
+
+            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+            HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+            // Get compendium
+            byte[] compendiumFileBytes = null;
+
+            foreach (var file in packedBinder.Files)
+            {
+                if (file.Name.Contains(".compendium.dcx") )
+                {
+                    compendiumFileBytes = DCX.Decompress(file.Bytes).ToArray();
+                }
+                else if(file.Name.Contains(".compendium"))
+                {
+                    compendiumFileBytes = file.Bytes.ToArray();
+                }
+            }
+
+            if (compendiumFileBytes != null)
+            {
+                using MemoryStream memoryStream = new MemoryStream(compendiumFileBytes);
+                serializer.LoadCompendium(memoryStream);
+            }
+
+            foreach (var file in packedBinder.Files)
+            {
+                if (file.Name != internalFilePath)
+                    continue;
+
+                byte[] fileBytes = null;
+
+                if (file.Name.Contains(".dcx"))
+                {
+                    fileBytes = DCX.Decompress(file.Bytes).ToArray();
+                }
+                else
+                {
+                    fileBytes = file.Bytes.ToArray();
+                }
+
+                using (MemoryStream memoryStream = new MemoryStream(fileBytes))
+                {
+                    hkRootLevelContainer fileHkx;
+
+                    try
+                    {
+                        fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+
+                        bankDict[fileEntry][internalFilePath] = fileHkx;
+                    }
+                    catch (InvalidDataException ex)
+                    {
+                        Smithbox.LogError(this,
+                            LOC.Get(fileReadFailLocKey, name), ex);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this,
+                LOC.Get(binderReadFailLocKey, name), ex);
+        }
+    }
+
+    #endregion
+
+    #region Save Internals
+    public void SaveHavokFile(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string writeFileFailLocKey, string writeBinderFailLocKey)
+    {
+        if (!bankDict.ContainsKey(fileEntry))
+            return;
+
+        var curTopDict = bankDict[fileEntry];
+
+        if (!curTopDict.ContainsKey(internalFilePath))
+            return;
+
+        var binderData = Project.VFS.FS.ReadFile(fileEntry.Path);
+
+        if (Project.VFS.ProjectFS.FileExists(fileEntry.Path))
+        {
+            binderData = Project.VFS.ProjectFS.ReadFile(fileEntry.Path);
+        }
+
+        if (binderData == null)
+            return;
+
+        bool anyWritten = false;
+
+        HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+        var binder = BND4.Read(binderData.Value);
+
+        foreach (var file in binder.Files)
+        {
+            var name = Path.GetFileNameWithoutExtension(file.Name);
+
+            if (file.Name != internalFilePath)
+                continue;
+
+            if (!bankDict[fileEntry].ContainsKey(internalFilePath))
+                continue;
+
+            try
+            {
+                using (MemoryStream memoryStream = new MemoryStream(file.Bytes.ToArray()))
+                {
+                    serializer.Write(bankDict[fileEntry][internalFilePath], memoryStream);
+
+                    file.Bytes = memoryStream.ToArray();
+                    anyWritten = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this, LOC.Get(writeFileFailLocKey, name), ex);
+            }
+        }
+
+        if (!anyWritten)
+            return;
+
+        try
+        {
+            var writtenBinder = binder.Write();
+
+            Project.VFS.ProjectFS.WriteFile(fileEntry.Path, writtenBinder);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get(writeBinderFailLocKey, fileEntry.Path), ex);
+        }
+    }
+
+    public void SaveCombinedHavokFile(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string writeFileFailLocKey, string writeBinderFailLocKey)
+    {
+        if (!bankDict.ContainsKey(fileEntry))
+            return;
+
+        var curTopDict = bankDict[fileEntry];
+
+        if (!curTopDict.ContainsKey(internalFilePath))
+            return;
+
+        var bhdPath = fileEntry.Path;
+        var bdtPath = fileEntry.Path.Replace("bhd", "bdt");
+
+        try
+        {
+            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
+            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
+
+            if (Project.VFS.ProjectFS.FileExists(bdtPath))
+            {
+                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
+            }
+            if (Project.VFS.ProjectFS.FileExists(bhdPath))
+            {
+                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
+            }
+
+            if (bdtData == null || bhdData == null)
+                return;
+
+            bool anyWritten = false;
+
+            HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+            foreach (var file in packedBinder.Files)
+            {
+                var name = Path.GetFileNameWithoutExtension(file.Name);
+
+                if (file.Name != internalFilePath)
+                    continue;
+
+                if (!bankDict[fileEntry].ContainsKey(internalFilePath))
+                    continue;
+
+                try
+                {
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        serializer.Write(bankDict[fileEntry][internalFilePath], memoryStream);
+
+                        if (file.Name.Contains(".dcx"))
+                        {
+                            var compressedBytes = DCX.Compress(memoryStream.ToArray(), DCX.Type.DCX_KRAK);
+                            file.Bytes = compressedBytes;
+                        }
+                        else
+                        {
+                            file.Bytes = file.Bytes.ToArray();
+                        }
+
+                        anyWritten = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, LOC.Get(writeFileFailLocKey, name), ex);
+                }
+            }
+
+            if (!anyWritten)
+                return;
+
+            packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
+
+            Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
+            Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get(writeBinderFailLocKey, fileEntry.Path), ex);
+        }
+    }
+
+    #endregion
 
     #region Dispose
     public void Dispose()
     {
-        AnimationBank?.Dispose();
-        BehaviorBank?.Dispose();
-        CharacterBank?.Dispose();
-        CollisionBank?.Dispose();
-        CutsceneBank?.Dispose();
-        NavmeshBank?.Dispose();
-        PartBank?.Dispose();
-        RumbleBank?.Dispose();
-
-        AnimationBank = null;
-        BehaviorBank = null;
-        CharacterBank = null;
-        CollisionBank = null;
-        CutsceneBank = null;
-        NavmeshBank = null;
-        PartBank = null;
-        RumbleBank = null;
     }
     #endregion
 

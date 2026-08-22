@@ -1016,6 +1016,14 @@ public class CFG
     public bool HavokEditor_ManualSave_IncludeHKX = true;
 
     public bool Interface_HavokEditor_ToolWindow = true;
+
+    public bool HavokEditor_BinderList_Display_Full_Path = false;
+
+    public bool HavokEditor_FileList_Display_Full_Path = false;
+
+    public bool HavokEditor_Properties_Display_Community_Names = false;
+    public bool HavokEditor_Properties_Display_Type_Column = false;
+    public bool HavokEditor_Properties_Display_Raw_Data_Fields = true;
     #endregion
 
     #region Viewport

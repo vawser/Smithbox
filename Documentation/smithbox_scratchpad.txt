@@ -17,7 +17,11 @@
  - Add auto-update to name in group list if Name property is changed
  
 # Havok Editor
-- Implement editor framework
+- Implement saving
+
+- Implement structured property view:
+ - Tree of class nodes: selecting one will display properties in second panel
+
 - Implement binder actions: 
  - Duplicate (and Rename) HKX
  - Delete HKX

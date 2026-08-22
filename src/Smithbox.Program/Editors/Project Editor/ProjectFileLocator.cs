@@ -373,10 +373,7 @@ public class ProjectFileLocator : IDisposable
             if (ShouldAddToPartFiles(entry, projectType, isSd))
             {
                 partFiles.Add(entry);
-                if(entry.Path.StartsWith("wp_"))
-                {
-                    havokPartFiles.Add(entry);
-                }
+                havokPartFiles.Add(entry);
             }
 
             // Collision files
