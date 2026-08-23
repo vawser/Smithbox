@@ -127,6 +127,30 @@
     {
       "Key": "HAVOK_Data_Failed_to_Write_Collision_Binder_File",
       "Text": "Failed to write collision binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Save_File_PASS",
+      "Text": "Saved havok file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Save_File_IN_PROGRESS",
+      "Text": "Save aborted, a havok file is already being saved."
+    },
+    {
+      "Key": "HAVOK_Data_Save_File_FAIL",
+      "Text": "Failed to save havok file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Save_File_NO_FILE_SELECT",
+      "Text": "Save aborted, no havok file has been selected yet."
+    },
+    {
+      "Key": "HAVOK_Data_Save_File_NO_BINDER_SELECT",
+      "Text": "Save aborted, no havok binder has been selected yet."
+    },
+    {
+      "Key": "HAVOK_Data_Invalid_Root_Container",
+      "Text": "Save aborted, hkRootContainer is null."
     }
   ]
 }

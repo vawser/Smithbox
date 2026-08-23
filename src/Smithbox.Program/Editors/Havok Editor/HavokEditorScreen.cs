@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Keybinds;
@@ -169,6 +170,7 @@ public class HavokEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
     }
+
     public async void Save(bool autoSave = false)
     {
         var activeView = ViewHandler.ActiveView;
@@ -176,13 +178,108 @@ public class HavokEditorScreen : EditorScreen
         if (activeView == null)
             return;
 
+        var data = Project.Handler.HavokData;
+        var category = activeView.Selection.CategoryMode;
+        var fileEntry = activeView.Selection.BinderFileEntry;
+        var filePath = activeView.Selection.FilePath;
+
+        if (fileEntry == null)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_NO_BINDER_SELECT"));
+            return;
+        }
+
+        if (filePath == null)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_NO_FILE_SELECT"));
+            return;
+        }
+
         if (!autoSave && CFG.Current.HavokEditor_ManualSave_IncludeHKX ||
             autoSave && CFG.Current.HavokEditor_ManualSave_IncludeHKX)
         {
-            // TODO
+            if (IsSavingHavokFile)
+            {
+                Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_IN_PROGRESS"));
+            }
+            else
+            {
+                IsSavingHavokFile = true;
+
+                bool taskResult;
+                try
+                {
+                    taskResult = await Task.Run(() => SaveHavokFile(data, category, fileEntry, filePath));
+                }
+                finally
+                {
+                    IsSavingHavokFile = false;
+                }
+
+                if (!taskResult)
+                {
+                    Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_FAIL", fileEntry.Path));
+                }
+                else
+                {
+                    Smithbox.Log(this, LOC.Get("HAVOK_Data_Save_File_PASS", fileEntry.Path));
+                }
+            }
         }
 
         // Save the configuration JSONs
         Smithbox.Instance.SaveConfiguration();
+    }
+
+    private bool IsSavingHavokFile = false;
+
+    private bool SaveHavokFile(HavokData data, HavokCategoryMode category, FileDictionaryEntry fileEntry, string filePath)
+    {
+        try
+        {
+            if (category is HavokCategoryMode.Animation)
+            {
+                data.SaveAnimationFile(fileEntry, filePath);
+            }
+            else if (category is HavokCategoryMode.Behavior)
+            {
+                data.SaveBehaviorFile(fileEntry, filePath);
+            }
+            else if (category is HavokCategoryMode.Character)
+            {
+                data.SaveCharacterFile(fileEntry, filePath);
+            }
+            else if (category is HavokCategoryMode.Map_Collision)
+            {
+                data.SaveMapCollisionFile(fileEntry, filePath);
+            }
+            else if (category is HavokCategoryMode.Asset_Collision)
+            {
+                data.SaveAssetCollisionFile(fileEntry, filePath);
+            }
+            else if (category is HavokCategoryMode.Navmesh)
+            {
+                data.SaveNavmeshFile(fileEntry, filePath);
+            }
+            else if (category is HavokCategoryMode.Cutscene)
+            {
+                data.SaveCutsceneFile(fileEntry, filePath);
+            }
+            else if (category is HavokCategoryMode.Part_Collidable)
+            {
+                data.SavePartFile(fileEntry, filePath);
+            }
+            else if (category is HavokCategoryMode.Rumble)
+            {
+                data.SaveRumbleFile(fileEntry, filePath);
+            }
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_FAIL", fileEntry.Path), ex);
+            return false;
+        }
     }
 }

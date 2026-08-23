@@ -164,42 +164,44 @@ public class HavokFileView
     public void LoadHavokFile()
     {
         var data = Project.Handler.HavokData;
+        var fileEntry = View.Selection.BinderFileEntry;
+        var filePath = View.Selection.FilePath;
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
         {
-            data.LoadAnimationFile(View.Selection.BinderFileEntry, View.Selection.FilePath);
+            data.LoadAnimationFile(fileEntry, filePath);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
         {
-            data.LoadBehaviorFile(View.Selection.BinderFileEntry, View.Selection.FilePath);
+            data.LoadBehaviorFile(fileEntry, filePath);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Character)
         {
-            data.LoadCharacterFile(View.Selection.BinderFileEntry, View.Selection.FilePath);
+            data.LoadCharacterFile(fileEntry, filePath);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
         {
-            data.LoadMapCollisionFile(View.Selection.BinderFileEntry, View.Selection.FilePath);
+            data.LoadMapCollisionFile(fileEntry, filePath);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Asset_Collision)
         {
-            data.LoadAssetCollisionFile(View.Selection.BinderFileEntry, View.Selection.FilePath);
+            data.LoadAssetCollisionFile(fileEntry, filePath);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Navmesh)
         {
-            data.LoadNavmeshFile(View.Selection.BinderFileEntry, View.Selection.FilePath);
+            data.LoadNavmeshFile(fileEntry, filePath);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Cutscene)
         {
-            data.LoadCutsceneFile(View.Selection.BinderFileEntry, View.Selection.FilePath);
+            data.LoadCutsceneFile(fileEntry, filePath);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Part_Collidable)
         {
-            data.LoadPartFile(View.Selection.BinderFileEntry, View.Selection.FilePath);
+            data.LoadPartFile(fileEntry, filePath);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Rumble)
         {
-            data.LoadRumbleFile(View.Selection.BinderFileEntry, View.Selection.FilePath);
+            data.LoadRumbleFile(fileEntry, filePath);
         }
     }
 }

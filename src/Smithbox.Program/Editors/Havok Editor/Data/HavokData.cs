@@ -524,10 +524,19 @@ public class HavokData : IDisposable
             {
                 using (MemoryStream memoryStream = new MemoryStream(file.Bytes.ToArray()))
                 {
-                    serializer.Write(bankDict[fileEntry][internalFilePath], memoryStream);
+                    var objEntry = bankDict[fileEntry][internalFilePath];
 
-                    file.Bytes = memoryStream.ToArray();
-                    anyWritten = true;
+                    if (objEntry != null)
+                    {
+                        serializer.Write(objEntry, memoryStream);
+
+                        file.Bytes = memoryStream.ToArray();
+                        anyWritten = true;
+                    }
+                    else
+                    {
+                        Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
+                    }
                 }
             }
             catch (Exception ex)
@@ -601,19 +610,27 @@ public class HavokData : IDisposable
                 {
                     using (MemoryStream memoryStream = new MemoryStream())
                     {
-                        serializer.Write(bankDict[fileEntry][internalFilePath], memoryStream);
-
-                        if (file.Name.Contains(".dcx"))
+                        var objEntry = bankDict[fileEntry][internalFilePath];
+                        if (objEntry != null)
                         {
-                            var compressedBytes = DCX.Compress(memoryStream.ToArray(), DCX.Type.DCX_KRAK);
-                            file.Bytes = compressedBytes;
+                            serializer.Write(objEntry, memoryStream);
+
+                            if (file.Name.Contains(".dcx"))
+                            {
+                                var compressedBytes = DCX.Compress(memoryStream.ToArray(), DCX.Type.DCX_KRAK);
+                                file.Bytes = compressedBytes;
+                            }
+                            else
+                            {
+                                file.Bytes = file.Bytes.ToArray();
+                            }
+
+                            anyWritten = true;
                         }
                         else
                         {
-                            file.Bytes = file.Bytes.ToArray();
+                            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
                         }
-
-                        anyWritten = true;
                     }
                 }
                 catch (Exception ex)
