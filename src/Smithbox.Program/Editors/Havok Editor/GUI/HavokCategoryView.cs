@@ -65,4 +65,9 @@ public class HavokCategoryView
 
         ImGui.EndChild();
     }
+
+    public void Shortcuts()
+    {
+
+    }
 }

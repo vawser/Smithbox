@@ -151,6 +151,10 @@
     {
       "Key": "HAVOK_Data_Invalid_Root_Container",
       "Text": "Save aborted, hkRootContainer is null."
+    },
+    {
+      "Key": "HAVOK_Data_AddFile_Binder_Write_FAIL",
+      "Text": "File paste aborted, binder failed to be written."
     }
   ]
 }

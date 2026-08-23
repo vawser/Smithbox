@@ -39,4 +39,9 @@ public class HavokToolView
             ImGui.EndMenuBar();
         }
     }
+
+    public void Shortcuts()
+    {
+
+    }
 }

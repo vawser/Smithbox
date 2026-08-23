@@ -17,8 +17,6 @@
  - Add auto-update to name in group list if Name property is changed
  
 # Havok Editor
-- Implement saving
-
 - Implement structured property view:
  - Tab bar with each of the supported top-level types
  - Left Panel: entry list
@@ -27,8 +25,3 @@
   - Duplicate Entry (auto-resolve instances of usage)
   - Delete Entry (auto-resolve instances of usage)
   - Insert Entry
-
-- Implement binder actions: 
- - Duplicate (and Rename) HKX
- - Delete HKX
- - Insert HKX

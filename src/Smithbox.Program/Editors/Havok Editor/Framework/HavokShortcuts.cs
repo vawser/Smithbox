@@ -48,6 +48,31 @@ public class HavokShortcuts
                     activeView.ActionManager.RedoAction();
                 }
             }
+
+            if (FocusManager.IsFocus(EditorFocusContext.HavokEditor_CategoryList))
+            {
+                activeView.CategoryView.Shortcuts();
+            }
+
+            if (FocusManager.IsFocus(EditorFocusContext.HavokEditor_BinderList))
+            {
+                activeView.BinderView.Shortcuts();
+            }
+
+            if (FocusManager.IsFocus(EditorFocusContext.HavokEditor_FileList))
+            {
+                activeView.FileView.Shortcuts();
+            }
+
+            if (FocusManager.IsFocus(EditorFocusContext.HavokEditor_Properties))
+            {
+                activeView.PropertyView.Shortcuts();
+            }
+
+            if (FocusManager.IsFocus(EditorFocusContext.HavokEditor_Tools))
+            {
+                activeView.Tools.Shortcuts();
+            }
         }
     }
 }

@@ -180,6 +180,11 @@ public class HavokPropertyView
         ImGui.EndChild();
     }
 
+    public void Shortcuts()
+    {
+
+    }
+
     public void DisplayPropertyEditor(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict)
     {
         if (View.Selection.BinderFileEntry == null)

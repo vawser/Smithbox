@@ -1,10 +1,13 @@
 ﻿using Hexa.NET.ImGui;
 using HKLib.hk2018;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
+using static StudioCore.Editors.HavokEditor.HavokFileView.FileAction;
 
 namespace StudioCore.Editors.HavokEditor;
 
@@ -15,6 +18,14 @@ public class HavokFileView
 
     public string FileFilter = "";
     public bool ExactFileFilter = false;
+
+    private bool IsFileActionQueued = false;
+    private FileAction QueuedFileAction = null;
+    private string RenameFileInput = "";
+    public string CopyClipboard = null;
+
+    public bool AllowPaste = false;
+    public List<string> SoftSelectEntries = new();
 
     public HavokFileView(HavokEditorView view, ProjectEntry project)
     {
@@ -105,34 +116,69 @@ public class HavokFileView
 
         ImGui.BeginChild("havokFileSection", ImGuiChildFlags.Borders);
 
-        foreach (var entry in curBinder)
+        if (!IsFileActionQueued)
         {
-            var filepath = entry.Key;
-            var selected = View.Selection.FilePath == filepath;
-            var displayName = Path.GetFileNameWithoutExtension(entry.Key);
-
-            if(CFG.Current.HavokEditor_FileList_Display_Full_Path)
+            foreach (var entry in curBinder)
             {
-                displayName = entry.Key;
-            }
+                var filepath = entry.Key;
+                var selected = SoftSelectEntries.Contains(filepath);
+                var displayName = Path.GetFileNameWithoutExtension(entry.Key);
 
-            // Normal filter
-            var isMatch = EditorFilters.IsMatch(FileFilter, displayName, ExactFileFilter);
-
-            if (!isMatch)
-                continue;
-
-            // Only display .hkx files
-            if (filepath.EndsWith(".hkx") || filepath.EndsWith(".hkx.dcx"))
-            {
-                if (ImGui.Selectable($"{displayName}##fileEntry_{filepath}", selected))
+                if(entry.Key.Contains(".dcx"))
                 {
-                    View.Selection.ClearFileSelection();
+                    displayName = Path.GetFileNameWithoutExtension(displayName);
+                }
 
-                    View.Selection.FilePath = filepath;
-                    LoadHavokFile();
+                if (CFG.Current.HavokEditor_FileList_Display_Full_Path)
+                {
+                    displayName = entry.Key;
+                }
+
+                // Normal filter
+                var isMatch = EditorFilters.IsMatch(FileFilter, displayName, ExactFileFilter);
+
+                if (!isMatch)
+                    continue;
+
+                // Only display .hkx files
+                if (filepath.EndsWith(".hkx") || filepath.EndsWith(".hkx.dcx"))
+                {
+                    if (ImGui.Selectable($"{displayName}##fileEntry_{filepath}", selected))
+                    {
+                        // 'Soft' select used for multi-selecting for the binder actions
+                        if(InputManager.HasCtrlDown())
+                        {
+                            SoftSelectEntries.Add(filepath);
+                        }
+                        else
+                        {
+                            View.Selection.ClearFileSelection();
+
+                            View.Selection.FilePath = filepath;
+                            LoadHavokFile();
+
+                            SetRenameInput(filepath);
+
+                            SoftSelectEntries = new()
+                            {
+                               filepath
+                            };
+                        }
+
+                    }
+
+                    if (selected)
+                    {
+                        DisplayContextMenu(bankDict, View.Selection.BinderFileEntry, filepath);
+                    }
                 }
             }
+        }
+        else
+        {
+            ProcessFileAction();
+
+            IsFileActionQueued = false;
         }
 
         ImGui.EndChild();
@@ -161,6 +207,218 @@ public class HavokFileView
         ImGui.EndChild();
     }
 
+    public void Shortcuts()
+    {
+        if (View.Selection.BinderFileEntry == null)
+            return;
+
+        if (View.Selection.FilePath == null)
+            return;
+
+        var data = Project.Handler.HavokData;
+
+        if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
+        {
+            HandleShortcuts(data.AnimationBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
+        {
+            HandleShortcuts(data.BehaviorBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Character)
+        {
+            HandleShortcuts(data.CharacterBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            HandleShortcuts(data.MapCollisionBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Asset_Collision)
+        {
+            HandleShortcuts(data.AssetCollisionBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Navmesh)
+        {
+            HandleShortcuts(data.NavmeshBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Cutscene)
+        {
+            HandleShortcuts(data.CutsceneBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Part_Collidable)
+        {
+            HandleShortcuts(data.PartBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Rumble)
+        {
+            HandleShortcuts(data.RumbleBank);
+        }
+    }
+
+    public void HandleShortcuts(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict)
+    {
+        var curBinderEntry = View.Selection.BinderFileEntry;
+        var filepath = View.Selection.FilePath;
+
+        // Copy
+        if (InputManager.IsPressed(KeybindID.Copy))
+        {
+            CopyFile();
+        }
+
+        // Paste
+        if (InputManager.IsPressed(KeybindID.Paste))
+        {
+            QueuedFileAction = new FileAction
+            {
+                BankDict = bankDict,
+                BinderEntry = curBinderEntry,
+                FilePath = filepath,
+                MultipleFilePaths = SoftSelectEntries,
+                ActionType = FileAction.FileActionType.Paste
+            };
+
+            IsFileActionQueued = true;
+        }
+
+        // Delete
+        if (InputManager.IsPressed(KeybindID.Delete))
+        {
+            QueuedFileAction = new FileAction
+            {
+                BankDict = bankDict,
+                BinderEntry = curBinderEntry,
+                FilePath = filepath,
+                MultipleFilePaths = SoftSelectEntries,
+                ActionType = FileAction.FileActionType.Delete
+            };
+
+            IsFileActionQueued = true;
+        }
+    }
+
+    public void DisplayContextMenu(
+        Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict, 
+        FileDictionaryEntry curBinderEntry, 
+        string filepath)
+    {
+        if (ImGui.BeginPopupContextItem($"Actions##HavokFileViewContextMenu_{filepath}"))
+        {
+            // Copy
+            if(ImGui.Selectable($"Copy##copyAction"))
+            {
+                CopyFile();
+            }
+            GUI.Tooltip("Copy the current file selection to clipboard.");
+
+            // Paste
+            if (ImGui.Selectable($"Paste##pasteAction"))
+            {
+                QueuedFileAction = new FileAction
+                {
+                    BankDict = bankDict,
+                    BinderEntry = curBinderEntry,
+                    FilePath = filepath,
+                    MultipleFilePaths = SoftSelectEntries,
+                    ActionType = FileAction.FileActionType.Paste
+                };
+
+                IsFileActionQueued = true;
+            }
+            GUI.Tooltip("Paste the current clipboard contents as new files into the current binder.\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox.");
+
+            // Delete
+            if (ImGui.Selectable($"Delete##deleteAction"))
+            {
+                QueuedFileAction = new FileAction
+                {
+                    BankDict = bankDict,
+                    BinderEntry = curBinderEntry,
+                    FilePath = filepath,
+                    MultipleFilePaths = SoftSelectEntries,
+                    ActionType = FileAction.FileActionType.Delete
+                };
+
+                IsFileActionQueued = true;
+            }
+            GUI.Tooltip("Delete the current file selection from the current binder.\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox.");
+
+            // Rename
+            if (ImGui.BeginMenu($"Rename##renameMenuHeader"))
+            {
+                ImGui.InputText("##renameInput", ref RenameFileInput, 255);
+
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    QueuedFileAction = new FileAction
+                    {
+                        BankDict = bankDict,
+                        BinderEntry = curBinderEntry,
+                        FilePath = filepath,
+                        NewFilename = RenameFileInput,
+                        ActionType = FileAction.FileActionType.Rename
+                    };
+
+                    IsFileActionQueued = true;
+                }
+
+                ImGui.EndMenu();
+            }
+            GUI.Tooltip("Rename the current file selection within the current binder.\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox.");
+
+            // Insert
+            if (ImGui.Selectable($"Insert##insertAction"))
+            {
+                if (PlatformUtils.Instance.OpenMultiFileDialog
+                    ("Select HKX Files", new[] { "hkx", "dcx" }, out var paths))
+                {
+                    var inserts = new List<NewFileInsert>();
+
+                    foreach(var curFilePath in paths)
+                    {
+                        var data = File.ReadAllBytes(curFilePath);
+                        var newInsert = new NewFileInsert
+                        {
+                            FilePath = curFilePath,
+                            FileData = data
+                        };
+
+                        inserts.Add(newInsert);
+                    }
+
+                    QueuedFileAction = new FileAction
+                    {
+                        BankDict = bankDict,
+                        BinderEntry = curBinderEntry,
+                        FilePath = filepath,
+                        Inserts = inserts,
+                        ActionType = FileAction.FileActionType.Insert
+                    };
+
+                    IsFileActionQueued = true;
+                }
+            }
+            GUI.Tooltip("Insert the selected external HKX files into the current binder.\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox.");
+
+            // Export
+            if (ImGui.Selectable($"Export##exportAction"))
+            {
+                QueuedFileAction = new FileAction
+                {
+                    BankDict = bankDict,
+                    BinderEntry = curBinderEntry,
+                    FilePath = filepath,
+                    MultipleFilePaths = SoftSelectEntries,
+                    ActionType = FileAction.FileActionType.Export
+                };
+
+                IsFileActionQueued = true;
+            }
+            GUI.Tooltip("Export the selected files into the project folder.");
+
+            ImGui.EndPopup();
+        }
+    }
     public void LoadHavokFile()
     {
         var data = Project.Handler.HavokData;
@@ -202,6 +460,170 @@ public class HavokFileView
         else if (View.Selection.CategoryMode is HavokCategoryMode.Rumble)
         {
             data.LoadRumbleFile(fileEntry, filePath);
+        }
+    }
+
+
+    public void ProcessFileAction()
+    {
+        if (QueuedFileAction == null)
+            return;
+
+        if(QueuedFileAction.ActionType is FileAction.FileActionType.Paste)
+        {
+            PasteFile(QueuedFileAction);
+        }
+        else if (QueuedFileAction.ActionType is FileAction.FileActionType.Delete)
+        {
+            DeleteFile(QueuedFileAction);
+        }
+        else if (QueuedFileAction.ActionType is FileAction.FileActionType.Rename)
+        {
+            RenameFile(QueuedFileAction);
+        }
+        else if (QueuedFileAction.ActionType is FileAction.FileActionType.Insert)
+        {
+            InsertFile(QueuedFileAction);
+        }
+        else if (QueuedFileAction.ActionType is FileAction.FileActionType.Export)
+        {
+            ExportFile(QueuedFileAction);
+        }
+
+        QueuedFileAction = null;
+    }
+
+    public void CopyFile()
+    {
+        AllowPaste = true;
+    }
+
+    public void PasteFile(FileAction fileAction)
+    {
+        var data = Project.Handler.HavokData;
+
+        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            data.AddCombinedHavokFile(fileAction);
+        }
+        else
+        {
+            data.AddHavokFile(fileAction);
+        }
+
+        // Update file list
+        View.BinderView.PopulateFileList();
+
+        AllowPaste = false;
+    }
+
+    public void DeleteFile(FileAction fileAction)
+    {
+        var data = Project.Handler.HavokData;
+
+        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            data.DeleteCombinedHavokFile(fileAction);
+        }
+        else
+        {
+            data.DeleteHavokFile(fileAction);
+        }
+
+        // Update file list
+        View.BinderView.PopulateFileList(true);
+    }
+
+    public void RenameFile(FileAction fileAction)
+    {
+        var data = Project.Handler.HavokData;
+
+        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            data.RenameCombinedHavokFile(fileAction);
+        }
+        else
+        {
+            data.RenameHavokFile(fileAction);
+        }
+
+        // Update file list
+        View.BinderView.PopulateFileList(true);
+    }
+
+    public void SetRenameInput(string filepath)
+    {
+        if (filepath.Contains(".dcx"))
+        {
+            RenameFileInput = Path.GetFileNameWithoutExtension(
+                Path.GetFileNameWithoutExtension(filepath));
+        }
+        else
+        {
+            RenameFileInput = Path.GetFileNameWithoutExtension(filepath);
+        }
+    }
+
+    public void InsertFile(FileAction fileAction)
+    {
+        var data = Project.Handler.HavokData;
+
+        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            data.InsertCombinedHavokFile(fileAction);
+        }
+        else
+        {
+            data.InsertHavokFile(fileAction);
+        }
+
+        // Update file list
+        View.BinderView.PopulateFileList(true);
+    }
+    public void ExportFile(FileAction fileAction)
+    {
+        var data = Project.Handler.HavokData;
+
+        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            data.ExportCombinedHavokFile(fileAction);
+        }
+        else
+        {
+            data.ExportHavokFile(fileAction);
+        }
+
+        // Update file list
+        View.BinderView.PopulateFileList(true);
+    }
+
+    public class FileAction
+    {
+        public FileActionType ActionType;
+
+        public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> BankDict = new();
+
+        public FileDictionaryEntry BinderEntry;
+
+        public string FilePath;
+        public List<string> MultipleFilePaths = new();
+        public string NewFilename;
+
+        public List<NewFileInsert> Inserts = new();
+
+        public enum FileActionType
+        {
+            Paste,
+            Delete,
+            Rename,
+            Insert,
+            Export
+        }
+
+        public class NewFileInsert
+        {
+            public string FilePath;
+            public byte[] FileData;
         }
     }
 }
