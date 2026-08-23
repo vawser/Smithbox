@@ -45,7 +45,11 @@ public class ObjectContainer
     /// </summary>
     public Entity GetObjectByName(string name)
     {
-        foreach (Entity m in Objects)
+        // Snapshot before iterating: this can be called from an async resource-load callback (e.g. a
+        // character mesh finishing load and updating its draw groups) while the map is still being
+        // populated on another call path, and enumerating the live list in that window throws
+        // "Collection was modified; enumeration operation may not execute."
+        foreach (Entity m in Objects.ToArray())
         {
             if (m.Name == name)
             {
@@ -58,7 +62,7 @@ public class ObjectContainer
 
     public IEnumerable<Entity> GetObjectsByName(string name)
     {
-        foreach (Entity m in Objects)
+        foreach (Entity m in Objects.ToArray())
         {
             if (m.Name == name)
             {
@@ -70,7 +74,7 @@ public class ObjectContainer
     public byte GetNextUnique(string prop, byte value)
     {
         HashSet<byte> usedvals = new();
-        foreach (Entity obj in Objects)
+        foreach (Entity obj in Objects.ToArray())
         {
             if (obj.GetPropertyValue(prop) != null)
             {
@@ -93,7 +97,7 @@ public class ObjectContainer
     // Used by the idselect EditorCommandQueue command
     public Entity GetEnemyByID(string entityID, bool includeGroups = false)
     {
-        foreach (Entity m in Objects)
+        foreach (Entity m in Objects.ToArray())
         {
             if (m.WrappedObject is MSB1.Part.Enemy enemy_ds1)
             {
@@ -188,7 +192,7 @@ public class ObjectContainer
 
     public Entity GetAssetByID(string entityID)
     {
-        foreach (Entity m in Objects)
+        foreach (Entity m in Objects.ToArray())
         {
             if (m.WrappedObject is MSB1.Part.Object object_ds1)
             {
@@ -238,7 +242,7 @@ public class ObjectContainer
     }
     public Entity GetRegionByID(string entityID)
     {
-        foreach (Entity m in Objects)
+        foreach (Entity m in Objects.ToArray())
         {
             if (m.WrappedObject is MSB1.Region object_ds1)
             {
@@ -292,7 +296,7 @@ public class ObjectContainer
     }
     public Entity GetCollisionByID(string entityID)
     {
-        foreach (Entity m in Objects)
+        foreach (Entity m in Objects.ToArray())
         {
             if (m.WrappedObject is MSB1.Part.Collision object_ds1)
             {
