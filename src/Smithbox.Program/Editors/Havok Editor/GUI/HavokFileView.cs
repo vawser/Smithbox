@@ -3,10 +3,7 @@ using HKLib.hk2018;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Numerics;
-using System.Text;
 using static StudioCore.Editors.HavokEditor.HavokFileView.FileAction;
 
 namespace StudioCore.Editors.HavokEditor;

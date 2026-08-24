@@ -44,6 +44,9 @@ public class MapContainer : ObjectContainer
     public List<Entity> LightProbeParents;
 
     [XmlIgnore]
+    public Entity AssetConfigurationParent = null;
+
+    [XmlIgnore]
     public Entity NavmeshParent = null;
 
     public Entity MapOffsetNode { get; set; }
@@ -289,6 +292,26 @@ public class MapContainer : ObjectContainer
         }
 
         LightProbeParents.Add(lightProbeParent);
+    }
+
+    public void LoadACB(string mapName, ACB acb)
+    {
+        using var __scope = Profiler.TracyZoneAuto();
+        var acbParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
+
+        MapOffsetNode.AddChild(acbParent);
+
+        foreach (var asset in acb.Assets)
+        {
+            var newEntity = new MsbEntity(View.Universe, this, asset, MsbEntityType.AssetConfiguration);
+
+            newEntity.SupportsName = false;
+
+            Objects.Add(newEntity);
+            acbParent.AddChild(newEntity);
+        }
+
+        AssetConfigurationParent = acbParent;
     }
 
     public void LoadNVA(string mapName, NVA nva)

@@ -116,10 +116,6 @@
         - Paste
         - Delete
         - Insert
-
-- Add 'Generate' tool for collisions:
- - Generates basic shapes such as planes (square, circle) and boxes
-  - Toggle face orientation
   
 #-------------
 # Texture Editor

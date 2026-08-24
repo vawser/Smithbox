@@ -187,6 +187,17 @@ public class MapEditorScreen : EditorScreen
                         GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTPB_TT"));
                         GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTPB);
                     }
+
+                    if (activeView.AssetConfigurationBank.CanUse())
+                    {
+                        // ACB
+                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_ACB")}##manualToggle_acb"))
+                        {
+                            CFG.Current.MapEditor_ManualSave_IncludeACB = !CFG.Current.MapEditor_ManualSave_IncludeACB;
+                        }
+                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_ACB_TT"));
+                        GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeACB);
+                    }
                 }
 
                 ImGui.EndMenu();
@@ -275,6 +286,17 @@ public class MapEditorScreen : EditorScreen
                         }
                         GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTPB_TT"));
                         GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTPB);
+                    }
+
+                    if (activeView.AssetConfigurationBank.CanUse())
+                    {
+                        // ACB
+                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_ACB")}##autoToggle_acb"))
+                        {
+                            CFG.Current.MapEditor_AutomaticSave_IncludeACB = !CFG.Current.MapEditor_AutomaticSave_IncludeACB;
+                        }
+                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_ACB_TT"));
+                        GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeACB);
                     }
                 }
 
@@ -777,21 +799,25 @@ public class MapEditorScreen : EditorScreen
             // NOTE: perhaps this should only save the loaded map for the active view (currently does all loaded maps)
             activeView.Universe.SaveAllMaps(autoSave);
 
-            // Save the collision binders
-            foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
+            // Only these projects are supported for collision editing within the Map Editor
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
-                if (entry.Value.MapContainer != null)
+                // Save the collision binders
+                foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
                 {
-                    activeView.HavokCollisionBank.SaveMapCollisionFiles(entry.Value.Name);
+                    if (entry.Value.MapContainer != null)
+                    {
+                        activeView.HavokCollisionBank.SaveMapCollisionFiles(entry.Value.Name);
+                    }
                 }
-            }
 
-            // Save the navmesh binders
-            foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
-            {
-                if (entry.Value.MapContainer != null)
+                // Save the navmesh binders
+                foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
                 {
-                    activeView.HavokNavmeshBank.SaveHavokNavmeshModels(entry.Value.Name);
+                    if (entry.Value.MapContainer != null)
+                    {
+                        activeView.HavokNavmeshBank.SaveHavokNavmeshModels(entry.Value.Name);
+                    }
                 }
             }
         }

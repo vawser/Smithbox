@@ -117,6 +117,12 @@ public class MapEntityTypeCache
             mapcache.Add(MsbEntityType.LightProbeVolume, new Dictionary<Type, List<MsbEntity>>());
         }
 
+        // External: ACB
+        if (View.AssetConfigurationBank.CanUse())
+        {
+            mapcache.Add(MsbEntityType.AssetConfiguration, new Dictionary<Type, List<MsbEntity>>());
+        }
+
         // External: NVA
         if (View.HavokNavmeshBank.CanUse())
         {

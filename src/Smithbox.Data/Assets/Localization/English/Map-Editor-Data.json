@@ -49,6 +49,10 @@
       "Text": "Failed to serialize collision HKX file: {0}"
     },
     {
+      "Key": "MAP_Data_Failed_Find_HKXBND",
+      "Text": "Failed to find collision HKXBND: {0}"
+    },
+    {
       "Key": "MAP_Data_Failed_Read_HKXBND",
       "Text": "Failed to load collision HKXBND: {0}"
     },
@@ -59,6 +63,10 @@
     {
       "Key": "MAP_Data_Failed_Serialize_NVA_HKX",
       "Text": "Failed to serialize navmesh HKX file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Find_NVA_HKXBND",
+      "Text": "Failed to find navmesh HKXBND: {0}"
     },
     {
       "Key": "MAP_Data_Failed_Read_NVA_HKXBND",
@@ -97,6 +105,10 @@
       "Text": "Failed to read BTL file: {0}"
     },
     {
+      "Key": "MAP_Data_Failed_Find_BTAB",
+      "Text": "Failed to find BTAB file: {0}"
+    },
+    {
       "Key": "MAP_Data_Failed_Read_BTAB",
       "Text": "Failed to read BTAB file: {0}"
     },
@@ -107,6 +119,10 @@
     {
       "Key": "MAP_Data_Failed_Write_BTAB",
       "Text": "Failed to write BTAB file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Find_BTPB",
+      "Text": "Failed to find BTPB file: {0}"
     },
     {
       "Key": "MAP_Data_Failed_Read_BTPB",
@@ -123,6 +139,14 @@
     {
       "Key": "MAP_Data_BTL_Seralize_FAIL",
       "Text": "WrappedObject {0} is not a BTL Light."
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_ACB",
+      "Text": "Failed to read ACB file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Write_ACB",
+      "Text": "Failed to write ACB file: {0}"
     },
     {
       "Key": "MAP_Data_DS2_Generator_ID_Collision",

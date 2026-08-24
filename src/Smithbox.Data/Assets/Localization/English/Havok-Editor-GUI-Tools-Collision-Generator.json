@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "HAVOK_Tools_Collision_Generator_Tool",
+      "Text": "Collision Generator"
+    },
+    {
+      "Key": "HAVOK_ColGen_No_Binder_Entry",
+      "Text": "No source file has been selected yet."
+    },
+    {
+      "Key": "HAVOK_ColGen_No_File_Entry",
+      "Text": "No internal file has been selected yet."
+    },
+    {
+      "Key": "HAVOK_ColGen_Invalid_Category",
+      "Text": "This tool is only for Map or Asset Collision category files."
+    }
+  ]
+}

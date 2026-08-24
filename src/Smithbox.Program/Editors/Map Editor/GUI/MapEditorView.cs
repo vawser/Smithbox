@@ -34,6 +34,8 @@ public class MapEditorView : IEditorView
     public HavokNavmeshBank HavokNavmeshBank;
     public LightAtlasBank LightAtlasBank;
     public LightProbeBank LightProbeBank;
+    public AssetConfigurationBank AssetConfigurationBank;
+
 
     public MapSelection Selection;
     public ViewportSelection ViewportSelection = new();
@@ -124,6 +126,7 @@ public class MapEditorView : IEditorView
         AutoInvadeBank = new AutoInvadeBank(this, project);
         LightAtlasBank = new LightAtlasBank(this, project);
         LightProbeBank = new LightProbeBank(this, project);
+        AssetConfigurationBank = new AssetConfigurationBank(this, project);
 
         Selection = new(this, project);
 

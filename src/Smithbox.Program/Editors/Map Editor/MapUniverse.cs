@@ -143,6 +143,7 @@ public class MapUniverse : IUniverse
                 View.AutoInvadeBank.LoadAIP(newMap);
                 View.LightAtlasBank.LoadBTAB(newMap);
                 View.LightProbeBank.LoadBTPB(newMap);
+                View.AssetConfigurationBank.LoadACB(newMap);
 
                 __lightScope.Dispose();
 
@@ -462,6 +463,11 @@ public class MapUniverse : IUniverse
             autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeBTPB)
         {
             View.LightProbeBank.SaveBTPB(map);
+        }
+        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeACB ||
+            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeACB)
+        {
+            View.AssetConfigurationBank.SaveACB(map);
         }
 
         if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeNVA ||

@@ -21,8 +21,10 @@ public class MapPropertyCache
     {
         if (!PropCache.TryGetValue(type.FullName, out PropertyInfo[] props))
         {
-            props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
-            props = props.OrderBy(p => p.MetadataToken).ToArray();
+            props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                .Where(p => p.GetIndexParameters().Length == 0)
+                .OrderBy(p => p.MetadataToken)
+                .ToArray();
             PropCache.Add(type.FullName, props);
         }
 

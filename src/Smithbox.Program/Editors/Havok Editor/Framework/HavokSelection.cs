@@ -37,6 +37,7 @@ public class HavokSelection
     {
         View.Selection.BinderFileEntry = null;
         View.Selection.FilePath = null;
+        View.FileView.SoftSelectEntries.Clear();
 
         AppliedHavokTreeSearch = false;
 
@@ -46,6 +47,7 @@ public class HavokSelection
     public void ClearFileSelection()
     {
         View.Selection.FilePath = null;
+        View.FileView.SoftSelectEntries.Clear();
 
         AppliedHavokTreeSearch = false;
 

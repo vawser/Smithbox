@@ -1071,6 +1071,46 @@ public class MapMsbPropertyView
 
                 ImGui.PopID();
             }
+            else if (typ.BaseType != null && typ.BaseType.IsGenericType 
+                && typ.BaseType.GetGenericTypeDefinition() == typeof(List<>))
+            {
+                var l = prop.GetValue(obj);
+                if (l != null)
+                {
+                    PropertyInfo itemprop = l.GetType().GetProperty("Item");
+                    var count = (int)l.GetType().GetProperty("Count").GetValue(l);
+                    for (var i = 0; i < count; i++)
+                    {
+                        ImGui.PushID(i);
+
+                        Type arrtyp = typ.BaseType.GetGenericArguments()[0];
+                        if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
+                        {
+                            var open = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
+                            ShowFieldHint(obj, prop, fieldDescription);
+                            ImGui.NextColumn();
+                            ImGui.SetNextItemWidth(-1);
+                            var o = itemprop.GetValue(l, new object[] { i });
+                            ImGui.Text(o.GetType().Name);
+                            ImGui.NextColumn();
+                            if (open)
+                            {
+                                PropEditorGeneric(selection, entSelection, o);
+                                ImGui.TreePop();
+                            }
+
+                            ImGui.PopID();
+                        }
+                        else
+                        {
+                            PropGenericFieldRow(selection, entSelection, prop, arrtyp, itemprop.GetValue(l, new object[] { i }), $@"{fieldName}[{i}]", i, classIndex);
+                            ImGui.PopID();
+                        }
+                    }
+                }
+
+                ImGui.PopID();
+            }
             else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
             {
                 var o = prop.GetValue(obj);
@@ -1099,8 +1139,6 @@ public class MapMsbPropertyView
 
             id++;
         }
-
-
     }
 
     private void DisplayPropertyViewDecorations(ViewportSelection selection, int refID)

@@ -69,87 +69,94 @@ public class HavokCollisionBank
         var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
         var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
 
-        try
+        if (Project.VFS.FS.FileExists(bdtPath) && Project.VFS.FS.FileExists(bhdPath))
         {
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
-
-            if(Project.VFS.ProjectFS.FileExists(bdtPath))
+            try
             {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
+                var bdtData = Project.VFS.FS.ReadFile(bdtPath);
+                var bhdData = Project.VFS.FS.ReadFile(bhdPath);
 
-            if (bdtData == null || bhdData == null)
-                return;
-
-            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-            HavokBinarySerializer serializer = new HavokBinarySerializer();
-
-            // Get compendium
-            foreach (var file in packedBinder.Files)
-            {
-                if (file.Name.Contains(".compendium.dcx"))
+                if (Project.VFS.ProjectFS.FileExists(bdtPath))
                 {
-                    CompendiumBytes = DCX.Decompress(file.Bytes).ToArray();
+                    bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
                 }
-            }
-
-            if (CompendiumBytes != null)
-            {
-                using MemoryStream memoryStream = new MemoryStream(CompendiumBytes);
-                serializer.LoadCompendium(memoryStream);
-            }
-
-            foreach (var file in packedBinder.Files)
-            {
-                var parts = file.Name.Split('\\');
-
-                if (parts.Length != 2)
-                    continue;
-
-                var name = parts[1];
-
-                if (!file.Name.Contains(".hkx.dcx"))
-                    continue;
-
-                var FileBytes = DCX.Decompress(file.Bytes).ToArray();
-
-                try
+                if (Project.VFS.ProjectFS.FileExists(bhdPath))
                 {
-                    using (MemoryStream memoryStream = new MemoryStream(FileBytes))
+                    bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
+                }
+
+                if (bdtData == null || bhdData == null)
+                    return;
+
+                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+                HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+                // Get compendium
+                foreach (var file in packedBinder.Files)
+                {
+                    if (file.Name.Contains(".compendium.dcx"))
                     {
-                        hkRootLevelContainer fileHkx;
-                        try
-                        {
-                            fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
-
-                            if (!HavokContainers.ContainsKey(name))
-                            {
-                                HavokContainers.Add(name, fileHkx);
-
-                                MapCollisions[mapId].Add(name);
-                            }
-                        }
-                        catch (InvalidDataException ex)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", name), ex);
-                        }
+                        CompendiumBytes = DCX.Decompress(file.Bytes).ToArray();
                     }
                 }
-                catch (Exception ex)
+
+                if (CompendiumBytes != null)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
+                    using MemoryStream memoryStream = new MemoryStream(CompendiumBytes);
+                    serializer.LoadCompendium(memoryStream);
+                }
+
+                foreach (var file in packedBinder.Files)
+                {
+                    var parts = file.Name.Split('\\');
+
+                    if (parts.Length != 2)
+                        continue;
+
+                    var name = parts[1];
+
+                    if (!file.Name.Contains(".hkx.dcx"))
+                        continue;
+
+                    var FileBytes = DCX.Decompress(file.Bytes).ToArray();
+
+                    try
+                    {
+                        using (MemoryStream memoryStream = new MemoryStream(FileBytes))
+                        {
+                            hkRootLevelContainer fileHkx;
+                            try
+                            {
+                                fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+
+                                if (!HavokContainers.ContainsKey(name))
+                                {
+                                    HavokContainers.Add(name, fileHkx);
+
+                                    MapCollisions[mapId].Add(name);
+                                }
+                            }
+                            catch (InvalidDataException ex)
+                            {
+                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", name), ex);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", bdtPath), e);
+            }
         }
-        catch (Exception e)
+        else
         {
-            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", bdtPath), e);
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_HKXBND", bdtPath));
         }
     }
 
@@ -186,82 +193,89 @@ public class HavokCollisionBank
         var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
         var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
 
-        try
+        if (Project.VFS.FS.FileExists(bdtPath) && Project.VFS.FS.FileExists(bhdPath))
         {
-            // Read the existing binder (project override first, then base game) so we
-            // preserve any entries that this bank doesn't hold in-memory.
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
-
-            if (Project.VFS.ProjectFS.FileExists(bdtPath))
+            try
             {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
+                // Read the existing binder (project override first, then base game) so we
+                // preserve any entries that this bank doesn't hold in-memory.
+                var bdtData = Project.VFS.FS.ReadFile(bdtPath);
+                var bhdData = Project.VFS.FS.ReadFile(bhdPath);
 
-            if (bdtData == null || bhdData == null)
-                return;
-
-            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-            HavokBinarySerializer serializer = new HavokBinarySerializer();
-
-            bool anyWritten = false;
-
-            foreach (var file in packedBinder.Files)
-            {
-                var parts = file.Name.Split('\\');
-
-                if (parts.Length != 2)
-                    continue;
-
-                var name = parts[1];
-
-                if (!file.Name.Contains(".hkx.dcx"))
-                    continue;
-
-                // Only re-serialize entries we actually have loaded (and presumably edited)
-                if (!HavokContainers.ContainsKey(name))
-                    continue;
-
-                try
+                if (Project.VFS.ProjectFS.FileExists(bdtPath))
                 {
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
+                }
+                if (Project.VFS.ProjectFS.FileExists(bhdPath))
+                {
+                    bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
+                }
+
+                if (bdtData == null || bhdData == null)
+                    return;
+
+                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+                HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+                bool anyWritten = false;
+
+                foreach (var file in packedBinder.Files)
+                {
+                    var parts = file.Name.Split('\\');
+
+                    if (parts.Length != 2)
+                        continue;
+
+                    var name = parts[1];
+
+                    if (!file.Name.Contains(".hkx.dcx"))
+                        continue;
+
+                    // Only re-serialize entries we actually have loaded (and presumably edited)
+                    if (!HavokContainers.ContainsKey(name))
+                        continue;
+
+                    try
                     {
-                        serializer.Write(HavokContainers[name], memoryStream);
+                        using (MemoryStream memoryStream = new MemoryStream())
+                        {
+                            serializer.Write(HavokContainers[name], memoryStream);
 
-                        // NOTE: assumes DCX_KRAK to match ER/NR collision packaging.
-                        // Swap this for whatever DCX.Type the project actually uses if different.
-                        var compressedBytes = DCX.Compress(memoryStream.ToArray(), DCX.Type.DCX_KRAK);
+                            // NOTE: assumes DCX_KRAK to match ER/NR collision packaging.
+                            // Swap this for whatever DCX.Type the project actually uses if different.
+                            var compressedBytes = DCX.Compress(memoryStream.ToArray(), DCX.Type.DCX_KRAK);
 
-                        file.Bytes = compressedBytes;
-                        anyWritten = true;
+                            file.Bytes = compressedBytes;
+                            anyWritten = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
                     }
                 }
-                catch (Exception ex)
-                {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
-                }
+
+                if (!anyWritten)
+                    return;
+
+                // BXF4.Write returns the BHD bytes and outputs the BDT bytes via out param.
+                packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
+
+                // NOTE: writing back to the project overlay (not the base game files).
+                // Replace WriteFile with whatever the actual VFS write method is named
+                // if it differs from this.
+                Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
+                Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
             }
-
-            if (!anyWritten)
-                return;
-
-            // BXF4.Write returns the BHD bytes and outputs the BDT bytes via out param.
-            packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-            // NOTE: writing back to the project overlay (not the base game files).
-            // Replace WriteFile with whatever the actual VFS write method is named
-            // if it differs from this.
-            Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-            Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_HKXBND", bdtPath), e);
+            }
         }
-        catch (Exception e)
+        else
         {
-            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_HKXBND", bdtPath), e);
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_HKXBND", bdtPath));
         }
     }
 

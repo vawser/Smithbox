@@ -479,6 +479,7 @@ public class CFG
     public bool MapEditor_AutomaticSave_IncludeBTPB = false;
     public bool MapEditor_AutomaticSave_IncludeCollisionHKX = false;
     public bool MapEditor_AutomaticSave_IncludeNavmeshHKX = false;
+    public bool MapEditor_AutomaticSave_IncludeACB = false;
 
     public bool MapEditor_ManualSave_IncludeMSB = true;
     public bool MapEditor_ManualSave_IncludeBTL = true;
@@ -488,6 +489,7 @@ public class CFG
     public bool MapEditor_ManualSave_IncludeBTPB = true;
     public bool MapEditor_ManualSave_IncludeCollisionHKX = true;
     public bool MapEditor_ManualSave_IncludeNavmeshHKX = true;
+    public bool MapEditor_ManualSave_IncludeACB = true;
 
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
@@ -1027,6 +1029,8 @@ public class CFG
     public bool HavokEditor_Properties_Display_Raw_Data_Fields = true;
     public bool HavokEditor_Properties_Auto_Open_Tree = false;
     public bool HavokEditor_Properties_Display_Property_Bags = false;
+    public bool HavokEditor_ToolVisibility_CollisionGenerator = true;
+
     #endregion
 
     #region Viewport

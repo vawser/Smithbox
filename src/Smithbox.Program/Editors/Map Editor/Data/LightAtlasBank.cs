@@ -31,6 +31,8 @@ public class LightAtlasBank
         if (!CanUse())
             return;
 
+        var fs = View.Project.Handler.MapData.PrimaryBank.TargetFS;
+
         if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
@@ -38,24 +40,31 @@ public class LightAtlasBank
                 var bhdPath = entry.Path;
                 var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
 
-                try
+                if (fs.FileExists(bdtPath) && fs.FileExists(bdtPath))
                 {
-                    var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
-                    var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
-
-                    using var bdt = BXF4.Read(bhdFile, bdtFile);
-                    BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("atlasinfo.btab.dcx"));
-
-                    if (file != null)
+                    try
                     {
-                        var btabData = BTAB.Read(file.Bytes);
+                        var bdtFile = (Memory<byte>)fs.ReadFile(bdtPath);
+                        var bhdFile = (Memory<byte>)fs.ReadFile(bhdPath);
 
-                        Files.Add(entry.Filename, btabData);
+                        using var bdt = BXF4.Read(bhdFile, bdtFile);
+                        BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("atlasinfo.btab.dcx"));
+
+                        if (file != null)
+                        {
+                            var btabData = BTAB.Read(file.Bytes);
+
+                            Files.Add(entry.Filename, btabData);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_GI", bhdPath), e);
                     }
                 }
-                catch (Exception e)
+                else
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_GI", bhdPath), e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_GI_File", bhdPath));
                 }
             }
         }
@@ -63,20 +72,27 @@ public class LightAtlasBank
         {
             foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
             {
-                var fileData = Project.VFS.FS.ReadFile(entry.Path);
-
-                if (fileData != null)
+                if (fs.FileExists(entry.Path))
                 {
-                    try
-                    {
-                        var btabData = BTAB.Read(fileData.Value);
+                    var fileData = fs.ReadFile(entry.Path);
 
-                        Files.Add(entry.Filename, btabData);
-                    }
-                    catch (Exception e)
+                    if (fileData != null)
                     {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_BTAB", entry.Path), e);
+                        try
+                        {
+                            var btabData = BTAB.Read(fileData.Value);
+
+                            Files.Add(entry.Filename, btabData);
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_BTAB", entry.Path), e);
+                        }
                     }
+                }
+                else
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_BTAB", entry.Path));
                 }
             }
         }
@@ -124,6 +140,8 @@ public class LightAtlasBank
         if (!CanUse())
             return;
 
+        var fs = View.Project.Handler.MapData.PrimaryBank.TargetFS;
+
         if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
@@ -136,57 +154,64 @@ public class LightAtlasBank
                 var bhdPath = entry.Path;
                 var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
 
-                try
+                if (fs.FileExists(bdtPath) && fs.FileExists(bhdPath))
                 {
-                    var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
-                    var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
-
-                    using var bdt = BXF4.Read(bhdFile, bdtFile);
-                    BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("atlasinfo.btab.dcx"));
-
-                    if (file != null)
+                    try
                     {
-                        var applyEdit = false;
+                        var bdtFile = (Memory<byte>)fs.ReadFile(bdtPath);
+                        var bhdFile = (Memory<byte>)fs.ReadFile(bhdPath);
 
-                        foreach (var parent in map.LightAtlasParents)
+                        using var bdt = BXF4.Read(bhdFile, bdtFile);
+                        BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("atlasinfo.btab.dcx"));
+
+                        if (file != null)
                         {
-                            if (parent.WrappedObject.ToString() == entry.Filename)
+                            var applyEdit = false;
+
+                            foreach (var parent in map.LightAtlasParents)
                             {
-                                var btabData = BTAB.Read(file.Bytes);
-
-                                btabData.Entries.Clear();
-
-                                foreach (var btabEntry in parent.Children)
+                                if (parent.WrappedObject.ToString() == entry.Filename)
                                 {
-                                    var curEntry = (BTAB.Entry)btabEntry.WrappedObject;
+                                    var btabData = BTAB.Read(file.Bytes);
 
-                                    btabData.Entries.Add(curEntry);
-                                }
+                                    btabData.Entries.Clear();
 
-                                var fileOutput = btabData.Write();
+                                    foreach (var btabEntry in parent.Children)
+                                    {
+                                        var curEntry = (BTAB.Entry)btabEntry.WrappedObject;
 
-                                if (!BytePerfectHelper.Md5Equal(file.Bytes.Span, fileOutput))
-                                {
-                                    applyEdit = true;
-                                }
+                                        btabData.Entries.Add(curEntry);
+                                    }
 
-                                if (applyEdit)
-                                {
-                                    file.Bytes = fileOutput;
+                                    var fileOutput = btabData.Write();
+
+                                    if (!BytePerfectHelper.Md5Equal(file.Bytes.Span, fileOutput))
+                                    {
+                                        applyEdit = true;
+                                    }
+
+                                    if (applyEdit)
+                                    {
+                                        file.Bytes = fileOutput;
+                                    }
                                 }
                             }
-                        }
 
-                        if (applyEdit)
-                        {
-                            Project.VFS.ProjectFS.WriteFile(bhdPath, bhdFile.ToArray());
-                            Project.VFS.ProjectFS.WriteFile(bdtPath, bdtFile.ToArray());
+                            if (applyEdit)
+                            {
+                                Project.VFS.ProjectFS.WriteFile(bhdPath, bhdFile.ToArray());
+                                Project.VFS.ProjectFS.WriteFile(bdtPath, bdtFile.ToArray());
+                            }
                         }
                     }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_GI", bhdPath), e);
+                    }
                 }
-                catch (Exception e)
+                else
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_GI", bhdPath), e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_GI_File", bhdPath));
                 }
             }
         }
@@ -198,47 +223,54 @@ public class LightAtlasBank
                 if (!entry.Filename.Contains(map.Name))
                     continue;
 
-                var fileData = Project.VFS.FS.ReadFile(entry.Path);
-
-                if (fileData != null)
+                if (fs.FileExists(entry.Path))
                 {
-                    var applyEdit = false;
+                    var fileData = fs.ReadFile(entry.Path);
 
-                    try
+                    if (fileData != null)
                     {
-                        foreach (var parent in map.LightAtlasParents)
+                        var applyEdit = false;
+
+                        try
                         {
-                            if (parent.WrappedObject.ToString() == entry.Filename)
+                            foreach (var parent in map.LightAtlasParents)
                             {
-                                var btabData = BTAB.Read(fileData.Value);
-
-                                btabData.Entries.Clear();
-
-                                foreach (var btabEntry in parent.Children)
+                                if (parent.WrappedObject.ToString() == entry.Filename)
                                 {
-                                    var curEntry = (BTAB.Entry)btabEntry.WrappedObject;
+                                    var btabData = BTAB.Read(fileData.Value);
 
-                                    btabData.Entries.Add(curEntry);
-                                }
+                                    btabData.Entries.Clear();
 
-                                var fileOutput = btabData.Write();
+                                    foreach (var btabEntry in parent.Children)
+                                    {
+                                        var curEntry = (BTAB.Entry)btabEntry.WrappedObject;
 
-                                if (!BytePerfectHelper.Md5Equal(fileData.Value.Span, fileOutput))
-                                {
-                                    applyEdit = true;
-                                }
+                                        btabData.Entries.Add(curEntry);
+                                    }
 
-                                if (applyEdit)
-                                {
-                                    Project.VFS.ProjectFS.WriteFile(entry.Path, fileOutput);
+                                    var fileOutput = btabData.Write();
+
+                                    if (!BytePerfectHelper.Md5Equal(fileData.Value.Span, fileOutput))
+                                    {
+                                        applyEdit = true;
+                                    }
+
+                                    if (applyEdit)
+                                    {
+                                        Project.VFS.ProjectFS.WriteFile(entry.Path, fileOutput);
+                                    }
                                 }
                             }
                         }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_BTAB", entry.Path), e);
+                        }
                     }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_BTAB", entry.Path), e);
-                    }
+                }
+                else
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_BTAB", entry.Path));
                 }
             }
         }

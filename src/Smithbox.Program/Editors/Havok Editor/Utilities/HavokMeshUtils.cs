@@ -7,31 +7,8 @@ using System.Numerics;
 
 namespace StudioCore.Editors.HavokEditor;
 
-/// <summary>
-/// Builds Havok Physics (hknp) collision shapes from arbitrary point/triangle data.
-/// This is the inverse of HKLib_Helper: instead of decompressing a shape into a
-/// renderable mesh, it takes a renderable mesh (points representing a plane, box,
-/// or any other geometry) and produces a Havok shape object.
-///
-/// Two shape types are supported, mirroring the two branches HKLib_Helper reads from:
-///
-///   1) hknpExternMeshShape       - uncompressed, explicit vertex/triangle list.
-///                                  Simple, robust, no acceleration structure required.
-///                                  RECOMMENDED for authored/simple shapes (planes, boxes,
-///                                  ramps, small trigger volumes, etc).
-///
-///   2) fsnpCustomParamCompressedMeshShape - the quantized "section/primitive" format
-///                                  FromSoftware uses for most map collision. See the
-///                                  big warning on BuildCompressedMeshShape below before
-///                                  using this one.
-/// </summary>
 public static class HKLib_MeshBuilder
 {
-    // ============================================================================
-    // 1) hknpExternMeshShape - reliable, use this unless you specifically need the
-    //    compressed format.
-    // ============================================================================
-
     /// <summary>
     /// Builds an hknpExternMeshShape from a flat vertex list and a triangle index list
     /// (3 indices per triangle, matching the layout produced by HKLib_Helper.RenderMesh).
@@ -84,254 +61,6 @@ public static class HKLib_MeshBuilder
         return shape;
     }
 
-    // ============================================================================
-    // 2) fsnpCustomParamCompressedMeshShape
-    // ============================================================================
-    //
-    // IMPORTANT - read before using this path:
-    //
-    // The compressed mesh format stores triangle geometry as quantized
-    // "shared"/"packed" vertices inside per-section Primitive records
-    // (this is exactly what HKLib_Helper.ProcessColData decodes). That part
-    // of the format is well understood and BuildCompressedMeshShapeTree below
-    // reproduces it faithfully - it is the exact mathematical inverse of
-    // DecompressSharedVertex/DecompressPackedVertex in HKLib_Helper.
-    //
-    // However, hknpCompressedMeshShapeData ALSO carries acceleration structures
-    // used by Havok's broadphase to avoid scanning every triangle:
-    //   - each Section (hkcdStaticTree.Section) is itself a compressed AABB tree
-    //     (Aabb4BytesCodec nodes) over its own primitives
-    //   - the mesh tree itself is a compressed AABB tree (Aabb5BytesCodec nodes)
-    //     over its sections
-    //   - hknpCompressedMeshShapeData.m_simdTree is a second, SIMD-friendly
-    //     acceleration structure over the same data
-    //
-    // HKLib is a tagfile reader/writer only - it does not implement Havok's
-    // internal bit-packing for the compressed AABB codecs, and that packing
-    // isn't public. HKLib_Helper never has to touch it either, because reading
-    // triangle geometry only requires walking m_sections/m_primitives/vertex
-    // tables linearly, which is what the loader above already does.
-    //
-    // BuildCompressedMeshShape below produces fully correct section/primitive/
-    // vertex data, but leaves the AABB tree nodes and the simd tree EMPTY. This
-    // means the resulting file may load and even render correctly in a viewer
-    // that walks primitives linearly (like this repo's own loader), but is not
-    // guaranteed to behave correctly for actual in-game physics queries, since
-    // the runtime broadphase may expect valid tree nodes. Treat this as a
-    // starting point you must verify in-game, not a drop-in replacement.
-    //
-    // If you don't specifically need the compressed format (e.g. you're not
-    // trying to match an existing map's collision authoring convention),
-    // prefer BuildExternMeshShape above - it has no acceleration structure to
-    // get wrong.
-    // ============================================================================
-
-    private const int MaxLocalVerticesPerSection = 256; // primitive indices are bytes
-    // Note: HKLib_Helper.ProcessColData skips any primitive whose 4 indices are
-    // 0xDE 0xAD 0xDE 0xAD (a "dead" sentinel). We never emit that byte pattern here.
-
-    public static fsnpCustomParamCompressedMeshShape BuildCompressedMeshShape(
-        IReadOnlyList<Vector3> vertices,
-        IReadOnlyList<int> triangleIndices)
-    {
-        var meshTree = BuildCompressedMeshShapeTree(vertices, triangleIndices);
-
-        var data = new hknpCompressedMeshShapeData
-        {
-            m_meshTree = meshTree,
-            m_simdTree = new hkcdSimdTree(), // left empty, see warning above
-            m_connectivity = new HKLib.hk2018.hkcdStaticMeshTree.Connectivity(),
-            m_hasSimdTree = false
-        };
-
-        int triangleCount = triangleIndices.Count / 3;
-
-        var shape = new fsnpCustomParamCompressedMeshShape
-        {
-            m_data = data,
-            m_triangleIsInterior = new hkBitField(),
-            m_externShapes = new List<hknpShapeInstance>(),
-            m_pParam = null,
-            m_triangleIndexToShapeKey = new List<uint>(),
-            m_flags = hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE,
-            m_type = hknpShapeType.Enum.COMPRESSED_MESH,
-            m_dispatchType = hknpCollisionDispatchType.Enum.COMPOSITE,
-            m_numShapeKeyBits = ShapeKeyBits(triangleCount),
-            m_convexRadius = 0f,
-            m_userData = 0,
-            m_shapeTagCodecInfo = 0
-        };
-
-        return shape;
-    }
-
-    /// <summary>
-    /// Builds just the mesh tree (section/primitive/vertex table) portion of the
-    /// compressed format. Exposed separately in case you want to slot this into
-    /// an existing hknpCompressedMeshShapeData (e.g. one copied from a template
-    /// file so its m_simdTree / acceleration nodes stay intact) rather than a
-    /// freshly built shape.
-    /// </summary>
-    public static hknpCompressedMeshShapeTree BuildCompressedMeshShapeTree(
-        IReadOnlyList<Vector3> vertices,
-        IReadOnlyList<int> triangleIndices)
-    {
-        if (triangleIndices.Count % 3 != 0)
-        {
-            throw new ArgumentException("triangleIndices must be a multiple of 3.", nameof(triangleIndices));
-        }
-
-        // Global domain used to quantize every "shared" vertex (matches
-        // coldata.m_meshTree.m_domain in HKLib_Helper.ProcessColData).
-        Vector3 min = vertices[0];
-        Vector3 max = vertices[0];
-        foreach (var v in vertices)
-        {
-            min = Vector3.Min(min, v);
-            max = Vector3.Max(max, v);
-        }
-
-        // Guard against a degenerate (flat) domain on any axis - a zero range
-        // would divide by zero during quantization.
-        const float epsilon = 0.01f;
-        if (max.X - min.X < epsilon) max.X = min.X + epsilon;
-        if (max.Y - min.Y < epsilon) max.Y = min.Y + epsilon;
-        if (max.Z - min.Z < epsilon) max.Z = min.Z + epsilon;
-
-        var tree = new hknpCompressedMeshShapeTree
-        {
-            m_domain = new hkAabb
-            {
-                m_min = new Vector4(min, 0f),
-                m_max = new Vector4(max, 0f)
-            },
-            m_numPrimitiveKeys = triangleIndices.Count / 3,
-            m_bitsPerKey = ShapeKeyBits(triangleIndices.Count / 3),
-            m_maxKeyValue = (uint)Math.Max(0, triangleIndices.Count / 3 - 1),
-            m_primitiveStoresIsFlatConvex = 0
-        };
-
-        // Chunk triangles into sections of at most MaxLocalVerticesPerSection
-        // distinct vertices each, since a Primitive's indices are single bytes.
-        int triCount = triangleIndices.Count / 3;
-        int triIndex = 0;
-
-        while (triIndex < triCount)
-        {
-            var localVertexOf = new Dictionary<int, byte>(); // source vertex index -> local (0-255) index
-            var sectionSharedVertices = new List<ulong>();   // compressed shared vertices for this section
-            var sectionPrimitives = new List<Primitive>();
-
-            while (triIndex < triCount)
-            {
-                int a = triangleIndices[triIndex * 3 + 0];
-                int b = triangleIndices[triIndex * 3 + 1];
-                int c = triangleIndices[triIndex * 3 + 2];
-
-                int newVertsNeeded =
-                    (localVertexOf.ContainsKey(a) ? 0 : 1) +
-                    (localVertexOf.ContainsKey(b) ? 0 : 1) +
-                    (localVertexOf.ContainsKey(c) ? 0 : 1);
-
-                if (localVertexOf.Count + newVertsNeeded > MaxLocalVerticesPerSection)
-                {
-                    break; // start a new section
-                }
-
-                byte la = GetOrAddLocalVertex(a, vertices, min, max, localVertexOf, sectionSharedVertices);
-                byte lb = GetOrAddLocalVertex(b, vertices, min, max, localVertexOf, sectionSharedVertices);
-                byte lc = GetOrAddLocalVertex(c, vertices, min, max, localVertexOf, sectionSharedVertices);
-
-                sectionPrimitives.Add(new Primitive
-                {
-                    // indices[2] == indices[3] marks this as a triangle, not a quad
-                    // (see HKLib_Helper.ProcessColData).
-                    m_indices = { [0] = la, [1] = lb, [2] = lc, [3] = lc }
-                });
-
-                triIndex++;
-            }
-
-            var section = new Section
-            {
-                m_firstPackedVertexIndex = 0,
-                m_firstSharedVertexIndex = (uint)tree.m_sharedVertices.Count,
-                m_firstPrimitiveIndex = (uint)tree.m_primitives.Count,
-                m_firstDataRunIndex = 0,
-                m_numPackedVertices = 0, // we only use shared vertices - see class remarks
-                m_numPrimitives = (byte)sectionPrimitives.Count,
-                m_numDataRuns = 0,
-                m_page = 0,
-                m_leafIndex = 0,
-                m_layerData = 0,
-                m_flags = 0
-                // m_codecParms left at default: unused since m_numPackedVertices == 0
-            };
-
-            // Local index -> global m_sharedVertices slot, referenced indirectly through
-            // m_sharedVerticesIndex (this indirection table is what ProcessColData walks
-            // via coldata.m_meshTree.m_sharedVerticesIndex[localIndex + firstSharedVertexIndex]).
-            foreach (ulong sv in sectionSharedVertices)
-            {
-                tree.m_sharedVerticesIndex.Add((ushort)tree.m_sharedVertices.Count);
-                tree.m_sharedVertices.Add(sv);
-            }
-
-            tree.m_primitives.AddRange(sectionPrimitives);
-            tree.m_sections.Add(section);
-        }
-
-        return tree;
-    }
-
-    private static byte GetOrAddLocalVertex(
-        int sourceIndex,
-        IReadOnlyList<Vector3> vertices,
-        Vector3 domainMin,
-        Vector3 domainMax,
-        Dictionary<int, byte> localVertexOf,
-        List<ulong> sectionSharedVertices)
-    {
-        if (localVertexOf.TryGetValue(sourceIndex, out byte existing))
-        {
-            return existing;
-        }
-
-        ulong compressed = CompressSharedVertex(vertices[sourceIndex], domainMin, domainMax);
-        byte local = (byte)sectionSharedVertices.Count;
-        sectionSharedVertices.Add(compressed);
-        localVertexOf[sourceIndex] = local;
-        return local;
-    }
-
-    /// <summary>
-    /// Exact inverse of HKLib_Helper.DecompressSharedVertex: packs a position into a
-    /// 21/21/22-bit (X/Y/Z) fixed-point value within [domainMin, domainMax].
-    /// </summary>
-    private static ulong CompressSharedVertex(Vector3 vert, Vector3 bbMin, Vector3 bbMax)
-    {
-        const ulong xyMask = 0x1FFFFF;   // 21 bits, matches 2097151
-        const ulong zMask = 0x3FFFFF;    // 22 bits, matches 4194303
-
-        double scaleX = (bbMax.X - bbMin.X) / 2097151.0;
-        double scaleY = (bbMax.Y - bbMin.Y) / 2097151.0;
-        double scaleZ = (bbMax.Z - bbMin.Z) / 4194303.0;
-
-        ulong rawX = QuantizeAxis((vert.X - bbMin.X) / scaleX, xyMask);
-        ulong rawY = QuantizeAxis((vert.Y - bbMin.Y) / scaleY, xyMask);
-        ulong rawZ = QuantizeAxis((vert.Z - bbMin.Z) / scaleZ, zMask);
-
-        return rawX | (rawY << 21) | (rawZ << 42);
-    }
-
-    private static ulong QuantizeAxis(double value, ulong mask)
-    {
-        long rounded = (long)Math.Round(value, MidpointRounding.AwayFromZero);
-        if (rounded < 0) rounded = 0;
-        if ((ulong)rounded > mask) rounded = (long)mask;
-        return (ulong)rounded;
-    }
-
     private static byte ShapeKeyBits(int primitiveCount)
     {
         if (primitiveCount <= 1)
@@ -340,5 +69,248 @@ public static class HKLib_MeshBuilder
         }
 
         return (byte)Math.Ceiling(Math.Log2(primitiveCount));
+    }
+
+    // ============================================================================
+    // 3) Replacing the shape on an existing collision's hkRootLevelContainer
+    // ============================================================================
+    //
+    // Mirrors the navigation HKLib_Helper.LoadCollisionMesh does to reach
+    // bodyInfo.m_shape (m_namedVariants[0].m_variant -> hknpPhysicsSceneData ->
+    // m_systemDatas[0].m_bodyCinfos), then swaps whatever mesh shape is sitting
+    // there (fsnpCustomParamCompressedMeshShape, hknpCompressedMeshShape, or an
+    // existing hknpExternMeshShape) out for a freshly generated hknpExternMeshShape.
+
+    /// <summary>
+    /// Replaces the shape on a single body (by index, default the first/only body)
+    /// of an existing collision's root container with <paramref name="newShape"/>.
+    /// Only replaces the shape if it is currently a recognized mesh shape type
+    /// (fsnpCustomParamCompressedMeshShape, hknpCompressedMeshShape, or
+    /// hknpExternMeshShape) so this won't accidentally clobber some other shape
+    /// type (e.g. a convex hull) sitting in the same slot. Pass <paramref name="force"/>
+    /// = true to replace regardless of the current shape type.
+    /// </summary>
+    /// <returns>true if a shape was replaced.</returns>
+    public static bool ReplaceExternMeshShape(
+        hkRootLevelContainer container,
+        hknpExternMeshShape newShape,
+        int bodyIndex = 0,
+        bool force = false)
+    {
+        var bodyCinfos = GetBodyCinfos(container);
+        if (bodyCinfos == null || bodyIndex < 0 || bodyIndex >= bodyCinfos.Count)
+        {
+            return false;
+        }
+
+        var body = bodyCinfos[bodyIndex];
+        if (!force && !IsReplaceableMeshShape(body.m_shape))
+        {
+            return false;
+        }
+
+        body.m_shape = newShape;
+        return true;
+    }
+
+    /// <summary>
+    /// Same as <see cref="ReplaceExternMeshShape(hkRootLevelContainer, hknpExternMeshShape, int, bool)"/>
+    /// but replaces every body whose shape is currently a recognized mesh shape
+    /// type. <paramref name="shapeFactory"/> is called once per replaced body
+    /// (its body index) so you can give each submesh its own generated shape, or
+    /// just ignore the index and return the same shape instance/copy each time.
+    /// </summary>
+    /// <returns>the number of bodies whose shape was replaced.</returns>
+    public static int ReplaceAllExternMeshShapes(
+        hkRootLevelContainer container,
+        Func<int, hknpExternMeshShape> shapeFactory,
+        bool force = false)
+    {
+        var bodyCinfos = GetBodyCinfos(container);
+        if (bodyCinfos == null)
+        {
+            return 0;
+        }
+
+        int replaced = 0;
+        for (int i = 0; i < bodyCinfos.Count; i++)
+        {
+            var body = bodyCinfos[i];
+            if (!force && !IsReplaceableMeshShape(body.m_shape))
+            {
+                continue;
+            }
+
+            body.m_shape = shapeFactory(i);
+            replaced++;
+        }
+
+        return replaced;
+    }
+
+    private static List<hknpPhysicsSystemData.bodyCinfoWithAttachment>? GetBodyCinfos(hkRootLevelContainer container)
+    {
+        if (container.m_namedVariants.Count == 0)
+        {
+            return null;
+        }
+
+        if (container.m_namedVariants[0].m_variant is not hknpPhysicsSceneData scene)
+        {
+            return null;
+        }
+
+        if (scene.m_systemDatas.Count == 0 || scene.m_systemDatas[0] is not hknpPhysicsSystemData systemData)
+        {
+            return null;
+        }
+
+        return systemData.m_bodyCinfos;
+    }
+
+    private static bool IsReplaceableMeshShape(hknpShape? shape)
+    {
+        return shape is fsnpCustomParamCompressedMeshShape
+            or hknpCompressedMeshShape
+            or hknpExternMeshShape;
+    }
+
+    // ============================================================================
+    // 4) Primitive shape generators (Square / Triangle / Circle)
+    // ============================================================================
+    //
+    // All shapes are generated flat on the XZ plane (Y = 0), centered on the
+    // origin, single-sided with an upward (+Y) face normal - i.e. suitable as a
+    // walkable floor/trigger plane. Winding order matches the normal computed by
+    // HKLib_Helper.RenderMesh (n = cross(v3 - v1, v2 - v1)); vertices are wound
+    // with increasing angle around the center to get that +Y normal. Feed the
+    // returned (vertices, indices) straight into BuildExternMeshShape.
+    //
+    // If you need the shape on a different plane or facing a different
+    // direction, transform the returned vertices afterwards (or flip triangle
+    // winding to flip the normal) rather than modifying these generators.
+
+    /// <summary>
+    /// Generates a flat rectangular plane, width along X and length along Z,
+    /// centered at the origin.
+    /// </summary>
+    public static (List<Vector3> Vertices, List<int> Indices) GenerateSquare(float width, float length)
+    {
+        if (width <= 0f) throw new ArgumentOutOfRangeException(nameof(width));
+        if (length <= 0f) throw new ArgumentOutOfRangeException(nameof(length));
+
+        float hw = width * 0.5f;
+        float hl = length * 0.5f;
+
+        var vertices = new List<Vector3>
+        {
+            new Vector3(-hw, 0f, -hl), // 0
+            new Vector3( hw, 0f, -hl), // 1
+            new Vector3( hw, 0f,  hl), // 2
+            new Vector3(-hw, 0f,  hl), // 3
+        };
+
+        var indices = new List<int>
+        {
+            0, 1, 2,
+            0, 2, 3
+        };
+
+        return (vertices, indices);
+    }
+
+    /// <summary>
+    /// Generates a flat equilateral triangle centered at the origin.
+    /// </summary>
+    /// <param name="size">Distance from the center to each corner (circumradius).</param>
+    public static (List<Vector3> Vertices, List<int> Indices) GenerateTriangle(float size)
+    {
+        if (size <= 0f) throw new ArgumentOutOfRangeException(nameof(size));
+
+        var vertices = new List<Vector3>(3);
+        for (int i = 0; i < 3; i++)
+        {
+            // Start pointing toward +Z, then sweep counter-clockwise (increasing angle).
+            float angle = MathF.PI / 2f + i * (2f * MathF.PI / 3f);
+            vertices.Add(new Vector3(size * MathF.Cos(angle), 0f, size * MathF.Sin(angle)));
+        }
+
+        var indices = new List<int> { 0, 1, 2 };
+
+        return (vertices, indices);
+    }
+
+    /// <summary>
+    /// Generates a flat circle (approximated as a regular polygon fan) centered
+    /// at the origin.
+    /// </summary>
+    /// <param name="radius">Circle radius.</param>
+    /// <param name="segments">Number of edge segments approximating the circle. Higher = rounder.</param>
+    public static (List<Vector3> Vertices, List<int> Indices) GenerateCircle(float radius, int segments = 24)
+    {
+        if (radius <= 0f) throw new ArgumentOutOfRangeException(nameof(radius));
+        if (segments < 3) throw new ArgumentOutOfRangeException(nameof(segments), "Need at least 3 segments.");
+
+        var vertices = new List<Vector3>(segments + 1)
+        {
+            Vector3.Zero // center, index 0
+        };
+
+        for (int i = 0; i < segments; i++)
+        {
+            float angle = i * (2f * MathF.PI / segments);
+            vertices.Add(new Vector3(radius * MathF.Cos(angle), 0f, radius * MathF.Sin(angle)));
+        }
+
+        var indices = new List<int>(segments * 3);
+        for (int i = 0; i < segments; i++)
+        {
+            int current = 1 + i;
+            int next = 1 + (i + 1) % segments;
+            indices.Add(0);
+            indices.Add(current);
+            indices.Add(next);
+        }
+
+        return (vertices, indices);
+    }
+
+    /// <summary>
+    /// Generates a flat half-disc (semicircle), centered at the origin, with its
+    /// straight diameter edge along the X axis and the arc bulging toward +Z.
+    /// </summary>
+    /// <param name="radius">Circle radius.</param>
+    /// <param name="segments">Number of edge segments approximating the arc. Higher = rounder.</param>
+    public static (List<Vector3> Vertices, List<int> Indices) GenerateSemiCircle(float radius, int segments = 12)
+    {
+        if (radius <= 0f) throw new ArgumentOutOfRangeException(nameof(radius));
+        if (segments < 1) throw new ArgumentOutOfRangeException(nameof(segments), "Need at least 1 segment.");
+
+        // Center + (segments + 1) arc points running from (radius, 0, 0) around
+        // to (-radius, 0, 0). The two radius edges from the center to the first
+        // and last arc points are collinear (both along X), so together they
+        // form the straight diameter edge closing the shape.
+        var vertices = new List<Vector3>(segments + 2)
+        {
+            Vector3.Zero // center, index 0
+        };
+
+        for (int i = 0; i <= segments; i++)
+        {
+            float angle = i * (MathF.PI / segments); // 0 .. PI inclusive
+            vertices.Add(new Vector3(radius * MathF.Cos(angle), 0f, radius * MathF.Sin(angle)));
+        }
+
+        var indices = new List<int>(segments * 3);
+        for (int i = 0; i < segments; i++)
+        {
+            int current = 1 + i;
+            int next = 1 + i + 1;
+            indices.Add(0);
+            indices.Add(current);
+            indices.Add(next);
+        }
+
+        return (vertices, indices);
     }
 }

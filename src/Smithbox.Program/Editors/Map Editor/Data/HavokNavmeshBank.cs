@@ -64,58 +64,65 @@ public class HavokNavmeshBank
         if (binderEntry == null)
             return;
 
-        try
+        if (Project.VFS.FS.FileExists(binderEntry.Path))
         {
-            var binderData = Project.VFS.FS.ReadFile(binderEntry.Path);
-
-            if (Project.VFS.ProjectFS.FileExists(binderEntry.Path))
+            try
             {
-                binderData = Project.VFS.ProjectFS.ReadFile(binderEntry.Path);
-            }
+                var binderData = Project.VFS.FS.ReadFile(binderEntry.Path);
 
-            if (binderData == null)
-                return;
-
-            var binder = new BND4Reader(binderData.Value);
-
-            HavokBinarySerializer serializer = new HavokBinarySerializer();
-
-            foreach (var file in binder.Files)
-            {
-                var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                var FileBytes = binder.ReadFile(file).ToArray();
-
-                try
+                if (Project.VFS.ProjectFS.FileExists(binderEntry.Path))
                 {
-                    using (MemoryStream memoryStream = new MemoryStream(FileBytes))
+                    binderData = Project.VFS.ProjectFS.ReadFile(binderEntry.Path);
+                }
+
+                if (binderData == null)
+                    return;
+
+                var binder = new BND4Reader(binderData.Value);
+
+                HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+                foreach (var file in binder.Files)
+                {
+                    var name = Path.GetFileNameWithoutExtension(file.Name);
+
+                    var FileBytes = binder.ReadFile(file).ToArray();
+
+                    try
                     {
-                        hkRootLevelContainer fileHkx;
-
-                        try
+                        using (MemoryStream memoryStream = new MemoryStream(FileBytes))
                         {
-                            fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+                            hkRootLevelContainer fileHkx;
 
-                            if (!HKX3_Containers.ContainsKey(name))
+                            try
                             {
-                                HKX3_Containers.Add(name, fileHkx);
+                                fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+
+                                if (!HKX3_Containers.ContainsKey(name))
+                                {
+                                    HKX3_Containers.Add(name, fileHkx);
+                                }
+                            }
+                            catch (InvalidDataException ex)
+                            {
+                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA_HKX", name), ex);
                             }
                         }
-                        catch (InvalidDataException ex)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA_HKX", name), ex);
-                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_NVA_HKX", name), ex);
                     }
                 }
-                catch (Exception ex)
-                {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_NVA_HKX", name), ex);
-                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA_HKXBND", binderEntry.Path), e);
             }
         }
-        catch (Exception e)
+        else
         {
-            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA_HKXBND", binderEntry.Path), e);
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_NVA_HKXBND", binderEntry.Path));
         }
     }
 
@@ -128,61 +135,68 @@ public class HavokNavmeshBank
         if (binderEntry == null)
             return;
 
-        try
+        if (Project.VFS.FS.FileExists(binderEntry.Path))
         {
-            var binderData = Project.VFS.FS.ReadFile(binderEntry.Path);
-
-            if (Project.VFS.ProjectFS.FileExists(binderEntry.Path))
+            try
             {
-                binderData = Project.VFS.ProjectFS.ReadFile(binderEntry.Path);
-            }
+                var binderData = Project.VFS.FS.ReadFile(binderEntry.Path);
 
-            if (binderData == null)
-                return;
-
-            var binder = BND4.Read(binderData.Value);
-
-            HavokBinarySerializer serializer = new HavokBinarySerializer();
-
-            bool anyWritten = false;
-
-            foreach (var file in binder.Files)
-            {
-                var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                if (!file.Name.Contains(".hkx"))
-                    continue;
-
-                // Only re-serialize entries we actually have loaded (and presumably edited)
-                if (!HKX3_Containers.ContainsKey(name))
-                    continue;
-
-                try
+                if (Project.VFS.ProjectFS.FileExists(binderEntry.Path))
                 {
-                    using (MemoryStream memoryStream = new MemoryStream(file.Bytes.ToArray()))
-                    {
-                        serializer.Write(HKX3_Containers[name], memoryStream);
+                    binderData = Project.VFS.ProjectFS.ReadFile(binderEntry.Path);
+                }
 
-                        file.Bytes = memoryStream.ToArray();
-                        anyWritten = true;
+                if (binderData == null)
+                    return;
+
+                var binder = BND4.Read(binderData.Value);
+
+                HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+                bool anyWritten = false;
+
+                foreach (var file in binder.Files)
+                {
+                    var name = Path.GetFileNameWithoutExtension(file.Name);
+
+                    if (!file.Name.Contains(".hkx"))
+                        continue;
+
+                    // Only re-serialize entries we actually have loaded (and presumably edited)
+                    if (!HKX3_Containers.ContainsKey(name))
+                        continue;
+
+                    try
+                    {
+                        using (MemoryStream memoryStream = new MemoryStream(file.Bytes.ToArray()))
+                        {
+                            serializer.Write(HKX3_Containers[name], memoryStream);
+
+                            file.Bytes = memoryStream.ToArray();
+                            anyWritten = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_NVA_HKX", name), ex);
                     }
                 }
-                catch (Exception ex)
-                {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_NVA_HKX", name), ex);
-                }
+
+                if (!anyWritten)
+                    return;
+
+                var writtenBinder = binder.Write();
+
+                Project.VFS.ProjectFS.WriteFile(binderEntry.Path, writtenBinder);
             }
-
-            if (!anyWritten)
-                return;
-
-            var writtenBinder = binder.Write();
-
-            Project.VFS.ProjectFS.WriteFile(binderEntry.Path, writtenBinder);
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_NVA_HKXBND", binderEntry.Path), e);
+            }
         }
-        catch (Exception e)
+        else
         {
-            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_NVA_HKXBND", binderEntry.Path), e);
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_NVA_HKXBND", binderEntry.Path));
         }
     }
 

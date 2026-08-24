@@ -22,5 +22,6 @@ public enum MsbEntityType
     AutoInvadePoint,
     LightAtlas,
     LightProbeVolume,
-    Navmesh
+    Navmesh,
+    AssetConfiguration
 }
