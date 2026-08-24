@@ -1,0 +1,39 @@
+{
+  "Type": "HKLib.hk2018.hkaiNavMesh+Edge",
+  "Fields": [
+      {
+          "Field": "m_a",
+          "Name": "A",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_b",
+          "Name": "B",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_oppositeEdge",
+          "Name": "Opposite Edge",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_oppositeFace",
+          "Name": "Opposite Face",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_flags",
+          "Name": "Flags",
+          "Description": ""
+      },
+      {
+          "Field": "m_userEdgeCost",
+          "Name": "User Edge Cost",
+          "Description": ""
+      }
+  ]
+}

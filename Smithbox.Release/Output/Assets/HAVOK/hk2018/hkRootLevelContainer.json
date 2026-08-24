@@ -1,0 +1,10 @@
+{
+  "Type": "HKLib.hk2018.hkRootLevelContainer",
+  "Fields": [
+      {
+          "Field": "m_namedVariants",
+          "Name": "Named Variants",
+          "Description": ""
+      }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "Type": "HKLib.hk2018.hknpMotionProperties",
+  "Fields": [
+      {
+          "Field": "m_isExclusive",
+          "Name": "Is Exclusive",
+          "Description": ""
+      },
+      {
+          "Field": "m_flags",
+          "Name": "Flags",
+          "Description": ""
+      },
+      {
+          "Field": "m_gravityFactor",
+          "Name": "Gravity Factor",
+          "Description": ""
+      },
+      {
+          "Field": "m_timeFactor",
+          "Name": "Time Factor",
+          "Description": ""
+      },
+      {
+          "Field": "m_maxLinearSpeed",
+          "Name": "Max Linear Speed",
+          "Description": ""
+      },
+      {
+          "Field": "m_maxAngularSpeed",
+          "Name": "Max Angular Speed",
+          "Description": ""
+      },
+      {
+          "Field": "m_linearDamping",
+          "Name": "Linear Damping",
+          "Description": ""
+      },
+      {
+          "Field": "m_angularDamping",
+          "Name": "Angular Damping",
+          "Description": ""
+      },
+      {
+          "Field": "m_solverStabilizationSpeedThreshold",
+          "Name": "Solver Stabilization Speed Threshold",
+          "Description": ""
+      },
+      {
+          "Field": "m_solverStabilizationSpeedReduction",
+          "Name": "Solver Stabilization Speed Reduction",
+          "Description": ""
+      },
+      {
+          "Field": "m_deactivationSettings",
+          "Name": "Deactivation Settings",
+          "Description": ""
+      },
+      {
+          "Field": "m_fullCastSettings",
+          "Name": "Full Cast Settings",
+          "Description": ""
+      }
+  ]
+}

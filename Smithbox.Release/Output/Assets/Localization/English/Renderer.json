@@ -137,6 +137,10 @@
       "Text": "Loading world map textures"
     },
     {
+      "Key": "REND_Job_Compass_Textures",
+      "Text": "Loading compass textures"
+    },
+    {
       "Key": "REND_FlverResource_Load_Failed",
       "Text": "FlverResource: Failed to load {0}"
     },

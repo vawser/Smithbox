@@ -388,7 +388,7 @@ public class MapMsbPropertyView
             committed = true;
         }
 
-        UpdateProperty(proprow, nullableSelection, fieldMeta, paramRowOrCell, oldval, newval, changed, committed);
+        UpdateProperty(visualName, proprow, nullableSelection, fieldMeta, paramRowOrCell, oldval, newval, changed, committed);
         ImGui.NextColumn();
         ImGui.PopID();
         id++;
@@ -508,7 +508,7 @@ public class MapMsbPropertyView
             }
         }
 
-        UpdateProperty(prop, entSelection, fieldMeta, oldval, newval, changed, committed, arrayIndex, classIndex);
+        UpdateProperty("", prop, entSelection, fieldMeta, oldval, newval, changed, committed, arrayIndex, classIndex);
         ImGui.NextColumn();
     }
 
@@ -533,6 +533,7 @@ public class MapMsbPropertyView
             if (entities.Count() == 1)
             {
                 View.ViewportActionManager.ExecuteAction(new EntRenameAction(
+                    View,
                     entities.ToList(),
                     new List<string> { newValue },
                     false
@@ -541,6 +542,7 @@ public class MapMsbPropertyView
             else
             {
                 View.ViewportActionManager.ExecuteAction(new EntRenameAction(
+                    View,
                     entities.ToList(),
                     entities.Select((ent, i) => $"{newValue}_{i}").ToList(),
                     false
@@ -601,6 +603,7 @@ public class MapMsbPropertyView
             if (single)
             {
                 View.ViewportActionManager.ExecuteAction(new EntRenameAction(
+                    View,
                     new List<MsbEntity> { first },
                     new List<string> { editName.name },
                     true
@@ -615,6 +618,7 @@ public class MapMsbPropertyView
                     ));
 
                 View.ViewportActionManager.ExecuteAction(new EntRenameAction(
+                    View,
                     entities.ToList(),
                     nameList.ToList(),
                     true
@@ -1607,7 +1611,7 @@ public class MapMsbPropertyView
         return (isChanged, isDeactivatedAfterEdit);
     }
 
-    private void UpdateProperty(object prop, Entity selection, MapEntityPropertyFieldMeta meta, object obj, object oldval, object newval,
+    private void UpdateProperty(string visualName, object prop, Entity selection, MapEntityPropertyFieldMeta meta, object obj, object oldval, object newval,
         bool changed, bool committed, int arrayindex = -1)
     {
         if (changed)
@@ -1711,7 +1715,7 @@ public class MapMsbPropertyView
     /// </summary>
     /// <param name="arrayindex">Index of the targeted value in an array of values.</param>
     /// <param name="classIndex">Index of the targeted class in an array of classes.</param>
-    private void UpdateProperty(object prop,
+    private void UpdateProperty(string visualName, object prop,
      IEnumerable<Entity> selection,
      MapEntityPropertyFieldMeta meta,
      object oldval,

@@ -1,0 +1,75 @@
+{
+  "Type": "HKLib.hk2018.hkaiNavMesh",
+  "Fields": [
+      {
+          "Field": "m_faces",
+          "Name": "Faces",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_edges",
+          "Name": "Edges",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_vertices",
+          "Name": "Vertices",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_faceData",
+          "Name": "Face Data",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_edgeData",
+          "Name": "Edge Data",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_faceDataStriding",
+          "Name": "Face Data Striding",
+          "Description": ""
+      },
+      {
+          "Field": "m_edgeDataStriding",
+          "Name": "Edge Data Striding",
+          "Description": ""
+      },
+      {
+          "Field": "m_flags",
+          "Name": "Flags",
+          "Description": ""
+      },
+      {
+          "Field": "m_aabb",
+          "Name": "AABB",
+          "Description": ""
+      },
+      {
+          "Field": "m_erosionRadius",
+          "Name": "Erosion Radius",
+          "Description": ""
+      },
+      {
+          "Field": "m_userData",
+          "Name": "User Data",
+          "Description": ""
+      },
+      {
+          "Field": "m_clearanceCacheSeedingDataSet",
+          "Name": "Clearance Cache Seeding Data Set",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

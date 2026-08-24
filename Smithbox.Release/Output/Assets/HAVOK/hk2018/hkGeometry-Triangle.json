@@ -1,0 +1,28 @@
+{
+  "Type": "HKLib.hk2018.hkGeometry+Triangle",
+  "Fields": [
+      {
+          "Field": "m_a",
+          "Name": "A",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_b",
+          "Name": "B",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_c",
+          "Name": "C",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_material",
+          "Name": "Material",
+          "Description": ""
+      }
+  ]
+}

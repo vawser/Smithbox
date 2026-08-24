@@ -1,0 +1,23 @@
+{
+  "Type": "HKLib.hk2018.hkcdCompressedAabbCodecs.Aabb4BytesCodec",
+  "Fields": [
+      {
+          "Field": "m_nodes",
+          "Name": "Nodes",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_data",
+          "Name": "Data",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_xyz",
+          "Name": "XYZ",
+          "Description": "",
+          "IsRawData": true
+      }
+  ]
+}

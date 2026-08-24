@@ -57,6 +57,10 @@
       "Text": "Enter the search term to filter this list by.\n\nSeparate terms that behave as an AND are split with the {0} character.\n\nSeparate terms that behave as an OR are split with the {1} character."
     },
     {
+      "Key": "EDITOR_Search_Size_Toggle_TT",
+      "Text": "Toggle the minimized state for the search bar."
+    },
+    {
       "Key": "EDITOR_Add_New_View",
       "Text": "Add New View"
     },

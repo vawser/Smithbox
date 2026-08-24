@@ -61,6 +61,10 @@
       "Text": "Failed to load navmesh HKXBND: {0}"
     },
     {
+      "Key": "MAP_Data_Failed_Write_NVA_HKXBND",
+      "Text": "Failed to write navmesh HKXBND: {0}"
+    },
+    {
       "Key": "MAP_Data_Failed_Read_NVA",
       "Text": "Failed to read NVA file: {0}"
     },
@@ -215,6 +219,30 @@
     {
       "Key": "MAP_Data_Setup_Failed_Deserialize_Grass_Tree_List",
       "Text": "Failed to deserialize grass list: {0}"
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Map_Groups_PASS",
+      "Text": "Setup Map Groups lists."
+    },
+    {
+      "Key": "MAP_Data_Setup_MSB_Map_Groups_FAIL",
+      "Text": "Failed to setup Map Groups lists."
+    },
+    {
+      "Key": "MAP_Data_Setup_Failed_Deserialize_Map_Groups",
+      "Text": "Failed to deserialize Map Groups list file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Setup_Failed_Read_Map_Groups",
+      "Text": "Failed to read Map Groups list file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Setup_Failed_Write_Map_Groups",
+      "Text": "Failed to write Map Groups list file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Setup_Failed_Write_Map_Groups",
+      "Text": "Failed to write Map Groups list file: {0}"
     }
   ]
 }

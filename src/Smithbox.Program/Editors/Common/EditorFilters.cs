@@ -26,6 +26,8 @@ public static class EditorFilters
         ImGui.EndChild();
     }
 
+    public static bool SearchMinimized = false;
+
     public static void DisplayListFilter(string id, ref string input, ref bool exactBool)
     {
         ImGui.Checkbox($"##{id}_listFilter_exactMatch", ref exactBool);
@@ -33,10 +35,31 @@ public static class EditorFilters
             LOC.Get("EDITOR_List_Filter_Exact_Match_TT"));
 
         ImGui.SameLine();
+        if (SearchMinimized)
+        {
+            if (ImGui.ArrowButton("##searchMaximize", ImGuiDir.Right))
+            {
+                SearchMinimized = false;
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
+        }
+        else
+        {
+            if (ImGui.ArrowButton("##searchMinimize", ImGuiDir.Left))
+            {
+                SearchMinimized = true;
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
+        }
+        ImGui.SameLine();
+
+        if(SearchMinimized)
+            ImGui.SetNextItemWidth(80f * DPI.UIScale());
 
         ImGui.InputTextWithHint($"##{id}_listFilter", "Search...", ref input, 255);
+
         GUI.Tooltip(
-            LOC.Get("EDITOR_List_Filter_Input_TT", SplitChr, OR_Chr));
+        LOC.Get("EDITOR_List_Filter_Input_TT", SplitChr, OR_Chr));
     }
 
     public static bool IsMatch(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "")

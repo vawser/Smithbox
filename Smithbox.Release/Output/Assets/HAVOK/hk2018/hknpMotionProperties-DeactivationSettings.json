@@ -1,0 +1,55 @@
+{
+  "Type": "HKLib.hk2018.hknpMotionProperties+DeactivationSettings",
+  "Fields": [
+      {
+          "Field": "m_maxDistSqrd",
+          "Name": "Maximum Distance Squared",
+          "Description": ""
+      },
+      {
+          "Field": "m_maxRotSqrd",
+          "Name": "Maximum Rotation Squared",
+          "Description": ""
+      },
+      {
+          "Field": "m_invBlockSize",
+          "Name": "Inv Block Size",
+          "Description": ""
+      },
+      {
+          "Field": "m_pathingUpperThreshold",
+          "Name": "Pathing Upper Threshold",
+          "Description": ""
+      },
+      {
+          "Field": "m_pathingLowerThreshold",
+          "Name": "Pathing Lower Threshold",
+          "Description": ""
+      },
+      {
+          "Field": "m_numDeactivationFrequencyPasses",
+          "Name": "Number of Deactivation Frequency Passes",
+          "Description": ""
+      },
+      {
+          "Field": "m_deactivationVelocityScaleSquare",
+          "Name": "Deactivation Velocity Scale Square",
+          "Description": ""
+      },
+      {
+          "Field": "m_minimumPathingVelocityScaleSquare",
+          "Name": "Minimum Pathing Velocity Scale Square",
+          "Description": ""
+      },
+      {
+          "Field": "m_spikingVelocityScaleThresholdSquared",
+          "Name": "Spiking Velocity Scale Threshold Squared",
+          "Description": ""
+      },
+      {
+          "Field": "m_minimumSpikingVelocityScaleSquared",
+          "Name": "Minimum Spiking Velocity Scale Squared",
+          "Description": ""
+      }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "Type": "HKLib.hk2018.hkaiNavMeshClearanceCacheSeeding.CacheData",
+  "Fields": [
+      {
+          "Field": "m_id",
+          "Name": "ID",
+          "Description": ""
+      },
+      {
+          "Field": "m_info",
+          "Name": "Info",
+          "Description": ""
+      },
+      {
+          "Field": "m_infoMask",
+          "Name": "Info Mask",
+          "Description": ""
+      },
+      {
+          "Field": "m_initialCache",
+          "Name": "Initial Cache",
+          "Description": ""
+      }
+  ]
+}

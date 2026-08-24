@@ -1,0 +1,59 @@
+{
+  "Type": "HKLib.hk2018.hkaiNavMeshClearanceCache",
+  "Fields": [
+      {
+          "Field": "m_clearanceCeiling",
+          "Name": "Clearance Ceiling",
+          "Description": ""
+      },
+      {
+          "Field": "m_clearanceIntToRealMultiplier",
+          "Name": "Clearance Integer to Float Multiplier",
+          "Description": ""
+      },
+      {
+          "Field": "m_clearanceRealToIntMultiplier",
+          "Name": "Clearance Float to Integer Multiplier",
+          "Description": ""
+      },
+      {
+          "Field": "m_faceOffsets",
+          "Name": "Face Offsets",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_edgePairClearances",
+          "Name": "Edge Pair Clearances",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_unusedEdgePairElements",
+          "Name": "Unused Edge Pair Elements",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_mcpData",
+          "Name": "MCP Data",
+          "Description": ""
+      },
+      {
+          "Field": "m_vertexClearances",
+          "Name": "Vertex Clearances",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_uncalculatedFacesLowerBound",
+          "Name": "Uncalculated Faces Lower Bound",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

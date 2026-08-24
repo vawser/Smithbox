@@ -1,0 +1,40 @@
+{
+  "Type": "HKLib.hk2018.hknpPhysicsSystemData",
+  "Fields": [
+      {
+          "Field": "m_materials",
+          "Name": "Materials",
+          "Description": ""
+      },
+      {
+          "Field": "m_motionProperties",
+          "Name": "Motion Properties",
+          "Description": ""
+      },
+      {
+          "Field": "m_bodyCinfos",
+          "Name": "Body Cinfos",
+          "Description": ""
+      },
+      {
+          "Field": "m_constraintCinfos",
+          "Name": "Constraint Cinfos",
+          "Description": ""
+      },
+      {
+          "Field": "m_name",
+          "Name": "Name",
+          "Description": ""
+      },
+      {
+          "Field": "m_microStepMultiplier",
+          "Name": "Micro Step Multiplier",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

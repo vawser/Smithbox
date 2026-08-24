@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "COMMON_Data_Setup_Havok_Meta_PASS",
+      "Text": "Setup Havok meta for '{0}'"
+    },
+    {
+      "Key": "COMMON_Data_Setup_Havok_Meta_FAIL",
+      "Text": "Failed to setup Havok meta for '{0}'"
+    },
+    {
+      "Key": "COMMON_Data_Deserialize_Havok_Meta_FAIL",
+      "Text": "Failed to deserialize Havok meta file: {0}"
+    }
+  ]
+}

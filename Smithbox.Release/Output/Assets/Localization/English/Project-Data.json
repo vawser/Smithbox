@@ -95,6 +95,14 @@
     {
       "Key": "PROJECT_Data_Setup_Anim_Data_FAIL",
       "Text": "[Animation Editor] Failed to setup Animation Bank."
+    },
+    {
+      "Key": "PROJECT_Data_Setup_Havok_Data_PASS",
+      "Text": "[Havok Editor] Setup Havok Bank."
+    },
+    {
+      "Key": "PROJECT_Data_Setup_Havok_Data_FAIL",
+      "Text": "[Havok Editor] Failed to setup Havok Bank."
     }
   ]
 }

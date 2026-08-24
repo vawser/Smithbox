@@ -1,0 +1,71 @@
+{
+  "Type": "HKLib.hk2018.hknpCompressedMeshShapeTree",
+  "Fields": [
+      {
+          "Field": "m_packedVertices",
+          "Name": "Packed Vertices",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_sharedVertices",
+          "Name": "Shared Vertices",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_primitiveDataRuns",
+          "Name": "Primitive Data Runs",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_nodes",
+          "Name": "Nodes",
+          "Description": ""
+      },
+      {
+          "Field": "m_domain",
+          "Name": "Domain",
+          "Description": ""
+      },
+      {
+          "Field": "m_numPrimitiveKeys",
+          "Name": "Number of Primitive Keys",
+          "Description": ""
+      },
+      {
+          "Field": "m_bitsPerKey",
+          "Name": "Bits per Key",
+          "Description": ""
+      },
+      {
+          "Field": "m_maxKeyValue",
+          "Name": "Max Key Value",
+          "Description": ""
+      },
+      {
+          "Field": "m_primitiveStoresIsFlatConvex",
+          "Name": "Primitive Stores is Flat Convex",
+          "Description": ""
+      },
+      {
+          "Field": "m_sections",
+          "Name": "Sections",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_primitives",
+          "Name": "Primitives",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_sharedVerticesIndex",
+          "Name": "Shared Vertices Index",
+          "Description": "",
+          "IsRawData": true
+      }
+  ]
+}

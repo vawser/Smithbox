@@ -7,18 +7,17 @@ namespace StudioCore.Editors.MapEditor;
 
 public class EntRenameAction : ViewportAction
 {
+    private readonly MapEditorView View;
     private readonly List<MsbEntity> Entities;
     private readonly List<string> NewNames;
     private readonly List<string> OldNames;
 
-    private readonly bool ApplyDuplicateHandling;
-
-    public EntRenameAction(List<MsbEntity> entities, List<string> newNames, bool reference)
+    public EntRenameAction(MapEditorView view, List<MsbEntity> entities, List<string> newNames, bool reference)
     {
+        View = view;
         Entities = entities;
         OldNames = entities.Select(e => e.Name).ToList();
         NewNames = newNames;
-        ApplyDuplicateHandling = reference;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
@@ -32,7 +31,7 @@ public class EntRenameAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        foreach (var (entity, name) in Entities.Zip(NewNames))
+        foreach (var (entity, name) in Entities.Zip(OldNames))
         {
             Rename(entity, name);
         }
@@ -41,22 +40,9 @@ public class EntRenameAction : ViewportAction
 
     private void Rename(MsbEntity entity, string name)
     {
+        var oldName = entity.Name;
         entity.Name = name;
 
-        //if (reference)
-        //{
-        //    MapEditorActionHelper.SetNameHandleDuplicate(
-        //        entity.ContainingMap,
-        //        entity.ContainingMap.Objects
-        //            .Where(e => e.WrappedObject is IMsbEntry)
-        //            .Select(e => e as MsbEntity),
-        //        entity,
-        //        name
-        //    );
-        //}
-        //else
-        //{
-        //    entity.Name = name;
-        //}
+        View.MapGroupsView.UpdateMapGroupEntry(oldName, name);
     }
 }

@@ -1,0 +1,55 @@
+{
+  "Type": "HKLib.hk2018.hknpMotionProperties+FullCastSettings",
+  "Fields": [
+      {
+          "Field": "m_minSeparation",
+          "Name": "Minimum Separation",
+          "Description": ""
+      },
+      {
+          "Field": "m_minExtraSeparation",
+          "Name": "Minimum Extra Separation",
+          "Description": ""
+      },
+      {
+          "Field": "m_toiSeparation",
+          "Name": "Totient Separation",
+          "Description": ""
+      },
+      {
+          "Field": "m_toiExtraSeparation",
+          "Name": "Totient Extra Separation",
+          "Description": ""
+      },
+      {
+          "Field": "m_toiAccuracy",
+          "Name": "Totient Accuracy",
+          "Description": ""
+      },
+      {
+          "Field": "m_relativeSafeDeltaTime",
+          "Name": "Relative Safe Delta Time",
+          "Description": ""
+      },
+      {
+          "Field": "m_absoluteSafeDeltaTime",
+          "Name": "Absolute Safe Delta Time",
+          "Description": ""
+      },
+      {
+          "Field": "m_keepTime",
+          "Name": "Keep Time",
+          "Description": ""
+      },
+      {
+          "Field": "m_keepDistance",
+          "Name": "Deep Distance",
+          "Description": ""
+      },
+      {
+          "Field": "m_maxIterations",
+          "Name": "Maximum Iterations",
+          "Description": ""
+      }
+  ]
+}

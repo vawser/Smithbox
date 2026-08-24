@@ -1,0 +1,41 @@
+{
+  "Type": "HKLib.hk2018.hkaiNavMesh+Face",
+  "Fields": [
+      {
+          "Field": "m_startEdgeIndex",
+          "Name": "Start Edge Index",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_startUserEdgeIndex",
+          "Name": "Start User Edge Index",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_numEdges",
+          "Name": "Number of Edges",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_numUserEdges",
+          "Name": "Number of User Edges",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_clusterIndex",
+          "Name": "Cluster Index",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_padding",
+          "Name": "Padding",
+          "Description": "",
+          "IsRawData": true
+      }
+  ]
+}

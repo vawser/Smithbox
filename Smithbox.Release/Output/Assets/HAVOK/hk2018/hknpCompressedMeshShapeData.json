@@ -1,0 +1,30 @@
+{
+  "Type": "HKLib.hk2018.hknpCompressedMeshShapeData",
+  "Fields": [
+      {
+          "Field": "m_meshTree",
+          "Name": "Mesh Tree",
+          "Description": ""
+      },
+      {
+          "Field": "m_simdTree",
+          "Name": "SIMD Tree",
+          "Description": ""
+      },
+      {
+          "Field": "m_connectivity",
+          "Name": "Connectivity",
+          "Description": ""
+      },
+      {
+          "Field": "m_hasSimdTree",
+          "Name": "Has SIMD Tree",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

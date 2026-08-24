@@ -57,6 +57,10 @@
       "Text": "Enter the search term to filter this list by.\n\nSeparate terms that behave as an AND are split with the {0} character.\n\nSeparate terms that behave as an OR are split with the {1} character."
     },
     {
+      "Key": "EDITOR_Search_Size_Toggle_TT",
+      "Text": "Toggle the minimized state for the search bar."
+    },
+    {
       "Key": "EDITOR_Add_New_View",
       "Text": "Add New View"
     },
@@ -79,6 +83,14 @@
     {
       "Key": "EDITOR_Close_View",
       "Text": "Close View"
+    },
+    {
+      "Key": "EDITOR_Add_Viewport",
+      "Text": "Add Viewport"
+    },
+    {
+      "Key": "EDITOR_Close_Viewport",
+      "Text": "Close Current Viewport"
     },
     {
       "Key": "EDITOR_Menubar_Header_File",
@@ -198,51 +210,75 @@
     },
     {
       "Key": "EDITOR_SaveOutput_MSB",
-      "Text": "MSB"
+      "Text": "Map"
     },
     {
       "Key": "EDITOR_SaveOutput_MSB_TT",
-      "Text": "If enabled, the MSB files are outputted on save."
+      "Text": "If enabled, the map files are outputted on save."
     },
     {
       "Key": "EDITOR_SaveOutput_BTL",
-      "Text": "BTL"
+      "Text": "Light"
     },
     {
       "Key": "EDITOR_SaveOutput_BTL_TT",
-      "Text": "If enabled, the BTL files are outputted on save."
+      "Text": "If enabled, the Light binder files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_CollisionHKX",
+      "Text": "Collision"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_CollisionHKX_TT",
+      "Text": "If enabled, the collision binder files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_NavmeshHKX",
+      "Text": "Navmesh"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_NavmeshHKX_TT",
+      "Text": "If enabled, the navmesh binder files are outputted on save."
     },
     {
       "Key": "EDITOR_SaveOutput_AIP",
-      "Text": "AIP"
+      "Text": "Invasion Points"
     },
     {
       "Key": "EDITOR_SaveOutput_AIP_TT",
-      "Text": "If enabled, the AIP files are outputted on save."
+      "Text": "If enabled, the Invasion Point files are outputted on save."
     },
     {
       "Key": "EDITOR_SaveOutput_NVA",
-      "Text": "NVA"
+      "Text": "Navmesh"
     },
     {
       "Key": "EDITOR_SaveOutput_NVA_TT",
-      "Text": "If enabled, the NVA files are outputted on save."
+      "Text": "If enabled, the Navmesh binder files are outputted on save."
     },
     {
       "Key": "EDITOR_SaveOutput_BTAB",
-      "Text": "BTAB"
+      "Text": "Light Atlases"
     },
     {
       "Key": "EDITOR_SaveOutput_BTAB_TT",
-      "Text": "If enabled, the BTAB files are outputted on save."
+      "Text": "If enabled, the Light Atlases binder files are outputted on save."
     },
     {
       "Key": "EDITOR_SaveOutput_BTPB",
-      "Text": "BTPB"
+      "Text": "Light Probes"
     },
     {
       "Key": "EDITOR_SaveOutput_BTPB_TT",
-      "Text": "If enabled, the BTPB files are outputted on save."
+      "Text": "If enabled, the Light Probes binder files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_HKX",
+      "Text": "HKX"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_HKX_TT",
+      "Text": "If enabled, the havok files are outputted on save."
     }
   ]
 }

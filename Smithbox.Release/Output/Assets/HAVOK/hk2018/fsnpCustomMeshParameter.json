@@ -1,0 +1,35 @@
+{
+  "Type": "HKLib.hk2018.fsnpCustomMeshParameter",
+  "Fields": [
+      {
+          "Field": "m_triangleDataArray",
+          "Name": "Triangle Data Array",
+          "Description": ""
+      },
+      {
+          "Field": "m_primitiveDataArray",
+          "Name": "Primitive Data Array",
+          "Description": ""
+      },
+      {
+          "Field": "m_vertexDataStride",
+          "Name": "Vertex Data Stride",
+          "Description": ""
+      },
+      {
+          "Field": "m_triangleDataStride",
+          "Name": "Triangle Data Stride",
+          "Description": ""
+      },
+      {
+          "Field": "m_version",
+          "Name": "Version",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

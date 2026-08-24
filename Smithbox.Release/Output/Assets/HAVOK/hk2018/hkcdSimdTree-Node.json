@@ -1,0 +1,53 @@
+{
+  "Type": "HKLib.hk2018.hkcdSimdTree+Node",
+  "Fields": [
+      {
+          "Field": "m_data",
+          "Name": "Data",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_isLeaf",
+          "Name": "Is Leaf",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_lx",
+          "Name": "LX",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_hx",
+          "Name": "HX",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_ly",
+          "Name": "LY",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_hy",
+          "Name": "HY",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_lz",
+          "Name": "LZ",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_hz",
+          "Name": "HZ",
+          "Description": "",
+          "IsRawData": true
+      }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "Type": "HKLib.hk2018.hkcdStaticMeshTree.Section",
+  "Fields": [
+      {
+          "Field": "m_nodes",
+          "Name": "Nodes",
+          "Description": ""
+      },
+      {
+          "Field": "m_domain",
+          "Name": "Domain",
+          "Description": ""
+      },
+      {
+          "Field": "m_codecParms",
+          "Name": "Codec Parameters",
+          "Description": ""
+      },
+      {
+          "Field": "m_firstPackedVertexIndex",
+          "Name": "First Packed Vertex Index",
+          "Description": ""
+      },
+      {
+          "Field": "m_firstSharedVertexIndex",
+          "Name": "First Shared Vertex Index",
+          "Description": ""
+      },
+      {
+          "Field": "m_firstPrimitiveIndex",
+          "Name": "First Primitive Index",
+          "Description": ""
+      },
+      {
+          "Field": "m_firstDataRunIndex",
+          "Name": "First Data Run Index",
+          "Description": ""
+      },
+      {
+          "Field": "m_numPackedVertices",
+          "Name": "Number of Packed Vertices",
+          "Description": ""
+      },
+      {
+          "Field": "m_numPrimitives",
+          "Name": "Number of Primitives",
+          "Description": ""
+      },
+      {
+          "Field": "m_numDataRuns",
+          "Name": "Number of Data Runs",
+          "Description": ""
+      },
+      {
+          "Field": "m_page",
+          "Name": "Page",
+          "Description": ""
+      },
+      {
+          "Field": "m_leafIndex",
+          "Name": "Leaf Index",
+          "Description": ""
+      },
+      {
+          "Field": "m_layerData",
+          "Name": "Layer Data",
+          "Description": ""
+      },
+      {
+          "Field": "m_flags",
+          "Name": "Flags",
+          "Description": ""
+      }
+  ]
+}

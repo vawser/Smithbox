@@ -1,0 +1,65 @@
+{
+  "Type": "HKLib.hk2018.hknpExternMeshShape",
+  "Fields": [
+      {
+          "Field": "m_shapeTagCodecInfo",
+          "Name": "Shape Tag Codec Info",
+          "Description": ""
+      },
+      {
+          "Field": "m_geometry",
+          "Name": "Geometry",
+          "Description": ""
+      },
+      {
+          "Field": "m_triangles",
+          "Name": "Triangles",
+          "Description": ""
+      },
+      {
+          "Field": "m_boundingVolumeData",
+          "Name": "Bounding Volume Data",
+          "Description": ""
+      },
+      {
+          "Field": "m_flags",
+          "Name": "Flags",
+          "Description": ""
+      },
+      {
+          "Field": "m_type",
+          "Name": "Type",
+          "Description": ""
+      },
+      {
+          "Field": "m_numShapeKeyBits",
+          "Name": "Number of Shape Key Bits",
+          "Description": ""
+      },
+      {
+          "Field": "m_dispatchType",
+          "Name": "Dispatch Type",
+          "Description": ""
+      },
+      {
+          "Field": "m_convexRadius",
+          "Name": "Convex Radius",
+          "Description": ""
+      },
+      {
+          "Field": "m_userData",
+          "Name": "User Data",
+          "Description": ""
+      },
+      {
+          "Field": "m_properties",
+          "Name": "Properties",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hkBitFieldStorage",
+  "Fields": [
+      {
+          "Field": "m_words",
+          "Name": "Words",
+          "Description": ""
+      },
+      {
+          "Field": "m_numBits",
+          "Name": "Number of Bits",
+          "Description": ""
+      }
+  ]
+}

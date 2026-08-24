@@ -598,47 +598,7 @@ public class MapEditorScreen : EditorScreen
                 // List Filters
                 if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_Header_List_Filters")}##listFiltersHeader"))
                 {
-                    // Select
-                    if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_ListFilter_Action_Select")}##selectAction"))
-                    {
-                        activeView.MapListFilterTool.SelectionMenu();
-                        ImGui.EndMenu();
-                    }
-                    GUI.Tooltip(LOC.Get("MAP_Options_ListFilter_Action_Select_TT"));
-
-                    // Clear
-                    if (ImGui.MenuItem($"{LOC.Get("MAP_Options_ListFilter_Action_Clear")}##clearAction"))
-                    {
-                        activeView.MapListFilterTool.Clear();
-                    }
-                    GUI.Tooltip(LOC.Get("MAP_Options_ListFilter_Action_Clear_TT"));
-
-                    ImGui.Separator();
-
-                    // Create
-                    if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_ListFilter_Action_Create")}##createAction"))
-                    {
-                        activeView.MapListFilterTool.CreationMenu();
-                        ImGui.EndMenu();
-                    }
-                    GUI.Tooltip(LOC.Get("MAP_Options_ListFilter_Action_Create_TT"));
-
-                    // Edit
-                    if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_ListFilter_Action_Edit")}##editAction"))
-                    {
-                        activeView.MapListFilterTool.EditMenu();
-                        ImGui.EndMenu();
-                    }
-                    GUI.Tooltip(LOC.Get("MAP_Options_ListFilter_Action_Edit_TT"));
-
-                    // Delete
-                    if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_ListFilter_Action_Delete")}##deleteAction"))
-                    {
-                        activeView.MapListFilterTool.DeleteMenu();
-                        ImGui.EndMenu();
-                    }
-                    GUI.Tooltip(LOC.Get("MAP_Options_ListFilter_Action_Delete_TT"));
-
+                    activeView.MapListFilterTool.DisplayMenu();
                     ImGui.EndMenu();
                 }
                 GUI.Tooltip(LOC.Get("MAP_Options_Header_List_Filters_TT"));

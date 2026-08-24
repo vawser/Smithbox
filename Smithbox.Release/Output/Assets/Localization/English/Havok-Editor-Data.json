@@ -1,0 +1,160 @@
+{
+  "Entries": [
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Animation_HKX",
+      "Text": "Failed to read animation HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Animation_Binder_File",
+      "Text": "Failed to read animation binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Animation_HKX",
+      "Text": "Failed to write animation HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Animation_Binder_File",
+      "Text": "Failed to write animation binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Behavior_HKX",
+      "Text": "Failed to read behavior HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Behavior_Binder_File",
+      "Text": "Failed to read behavior binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Behavior_HKX",
+      "Text": "Failed to write behavior HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Behavior_Binder_File",
+      "Text": "Failed to write behavior binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Character_HKX",
+      "Text": "Failed to read character HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Character_Binder_File",
+      "Text": "Failed to read character binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Character_HKX",
+      "Text": "Failed to write character HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Character_Binder_File",
+      "Text": "Failed to write character binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Cutscene_HKX",
+      "Text": "Failed to read cutscene HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Cutscene_Binder_File",
+      "Text": "Failed to read cutscene binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Cutscene_HKX",
+      "Text": "Failed to write cutscene HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Cutscene_Binder_File",
+      "Text": "Failed to write cutscene binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Navmesh_HKX",
+      "Text": "Failed to read navmesh HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Navmesh_Binder_File",
+      "Text": "Failed to read navmesh binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Navmesh_HKX",
+      "Text": "Failed to write navmesh HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Navmesh_Binder_File",
+      "Text": "Failed to write navmesh binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Part_HKX",
+      "Text": "Failed to read part HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Part_Binder_File",
+      "Text": "Failed to read part binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Part_HKX",
+      "Text": "Failed to write part HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Part_Binder_File",
+      "Text": "Failed to write part binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Rumble_HKX",
+      "Text": "Failed to read rumble HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Rumble_Binder_File",
+      "Text": "Failed to read rumble binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Rumble_HKX",
+      "Text": "Failed to write rumble HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Rumble_Binder_File",
+      "Text": "Failed to write rumble binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Collision_HKX",
+      "Text": "Failed to read collision HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Read_Collision_Binder_File",
+      "Text": "Failed to read collision binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Collision_HKX",
+      "Text": "Failed to write collision HKX: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Failed_to_Write_Collision_Binder_File",
+      "Text": "Failed to write collision binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Save_File_PASS",
+      "Text": "Saved havok file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Save_File_IN_PROGRESS",
+      "Text": "Save aborted, a havok file is already being saved."
+    },
+    {
+      "Key": "HAVOK_Data_Save_File_FAIL",
+      "Text": "Failed to save havok file: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Save_File_NO_FILE_SELECT",
+      "Text": "Save aborted, no havok file has been selected yet."
+    },
+    {
+      "Key": "HAVOK_Data_Save_File_NO_BINDER_SELECT",
+      "Text": "Save aborted, no havok binder has been selected yet."
+    },
+    {
+      "Key": "HAVOK_Data_Invalid_Root_Container",
+      "Text": "Save aborted, hkRootContainer is null."
+    },
+    {
+      "Key": "HAVOK_Data_AddFile_Binder_Write_FAIL",
+      "Text": "File paste aborted, binder failed to be written."
+    }
+  ]
+}

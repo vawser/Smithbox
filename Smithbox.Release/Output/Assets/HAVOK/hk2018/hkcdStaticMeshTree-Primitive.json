@@ -1,0 +1,11 @@
+{
+  "Type": "HKLib.hk2018.hkcdStaticMeshTree.Primitive",
+  "Fields": [
+      {
+          "Field": "m_indices",
+          "Name": "Indices",
+          "Description": "",
+          "IsRawData": true
+      }
+  ]
+}

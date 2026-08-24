@@ -1,0 +1,115 @@
+{
+  "Type": "HKLib.hk2018.hknpMaterial",
+  "Fields": [
+      {
+          "Field": "m_name",
+          "Name": "Name",
+          "Description": ""
+      },
+      {
+          "Field": "m_isExclusive",
+          "Name": "Is Exclusive",
+          "Description": ""
+      },
+      {
+          "Field": "m_flags",
+          "Name": "Flags",
+          "Description": ""
+      },
+      {
+          "Field": "m_triggerType",
+          "Name": "Trigger Type",
+          "Description": ""
+      },
+      {
+          "Field": "m_triggerManifoldTolerance",
+          "Name": "Trigger Manifold Tolerance",
+          "Description": ""
+      },
+      {
+          "Field": "m_dynamicFriction",
+          "Name": "Dynamic Friction",
+          "Description": ""
+      },
+      {
+          "Field": "m_staticFriction",
+          "Name": "Static Friction",
+          "Description": ""
+      },
+      {
+          "Field": "m_restitution",
+          "Name": "Restitution",
+          "Description": ""
+      },
+      {
+          "Field": "m_frictionCombinePolicy",
+          "Name": "Fiction Combine Policy",
+          "Description": ""
+      },
+      {
+          "Field": "m_restitutionCombinePolicy",
+          "Name": "Restitution Combine Policy",
+          "Description": ""
+      },
+      {
+          "Field": "m_weldingTolerance",
+          "Name": "Welding Tolerance",
+          "Description": ""
+      },
+      {
+          "Field": "m_maxContactImpulse",
+          "Name": "Max Contact Impulse",
+          "Description": ""
+      },
+      {
+          "Field": "m_fractionOfClippedImpulseToApply",
+          "Name": "Fraction of Clipped Impulse to Apply",
+          "Description": ""
+      },
+      {
+          "Field": "m_massChangerCategory",
+          "Name": "Mass Changer Category",
+          "Description": ""
+      },
+      {
+          "Field": "m_massChangerHeavyObjectFactor",
+          "Name": "Mass Changer Heavy Object Factor",
+          "Description": ""
+      },
+      {
+          "Field": "m_softContactForceFactor",
+          "Name": "Soft Contact Force Factor",
+          "Description": ""
+      },
+      {
+          "Field": "m_softContactDampFactor",
+          "Name": "Soft Contact Damp Factor",
+          "Description": ""
+      },
+      {
+          "Field": "m_softContactSeparationVelocity",
+          "Name": "Soft Contact Separation Velocity",
+          "Description": ""
+      },
+      {
+          "Field": "m_surfaceVelocity",
+          "Name": "Surface Velocity",
+          "Description": ""
+      },
+      {
+          "Field": "m_disablingCollisionsBetweenCvxCvxDynamicObjectsDistance",
+          "Name": "Disabling Collisions between CVX CVX Dynamic Objects Distance",
+          "Description": ""
+      },
+      {
+          "Field": "m_userData",
+          "Name": "User Data",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

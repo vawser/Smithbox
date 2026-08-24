@@ -2,6 +2,7 @@
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System.Numerics;
+using System.Reflection;
 using System.Text;
 using System.Text.Json;
 
@@ -473,6 +474,25 @@ public class MapGroupsView
                 curEntry.Objects.Remove(entry.Name);
             }
         }
+
+        SaveMapGroups();
+    }
+
+    public void UpdateMapGroupEntry(string oldName, string newName)
+    {
+        var mapID = View.Selection.SelectedMapID;
+
+        var existingEntry = Project.Handler.MapData.MapGroupsList.List
+            .FirstOrDefault(e => e.Value.Groups
+            .Any(e => e.Objects
+            .Any(e => e == oldName)));
+
+        var existingGroup = existingEntry.Value.Groups
+            .FirstOrDefault(e => e.Objects
+            .Any(e => e == oldName));
+
+        existingGroup.Objects.Remove(oldName);
+        existingGroup.Objects.Add(newName);
 
         SaveMapGroups();
     }

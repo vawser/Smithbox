@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "HAVOK_FileView_Header",
+      "Text": "File List"
+    },
+    {
+      "Key": "HAVOK_FileView_Header_TT",
+      "Text": "Ctrl + Right-Click will multi-select files within the file list."
+    }
+  ]
+}

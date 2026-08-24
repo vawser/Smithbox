@@ -1,0 +1,10 @@
+{
+  "Type": "HKLib.hk2018.hkBitField",
+  "Fields": [
+      {
+          "Field": "m_storage",
+          "Name": "Storage",
+          "Description": ""
+      }
+  ]
+}

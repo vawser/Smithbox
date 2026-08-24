@@ -147,6 +147,7 @@ public class EntityRenameAction
                     }
 
                     actionList.Add(new EntRenameAction(
+                        View,
                         new List<MsbEntity> { ent as MsbEntity },
                         new List<string> { $"{ent.Name} -- {newName}" },
                         true
@@ -173,6 +174,7 @@ public class EntityRenameAction
                     }
 
                     actionList.Add(new EntRenameAction(
+                        View,
                         new List<MsbEntity> { ent as MsbEntity },
                         new List<string> { $"{ent.Name} -- {newName}" },
                         true
@@ -199,6 +201,7 @@ public class EntityRenameAction
                     }
 
                     actionList.Add(new EntRenameAction(
+                        View,
                         new List<MsbEntity> { ent as MsbEntity },
                         new List<string> { $"{ent.Name} -- {newName}" },
                         true

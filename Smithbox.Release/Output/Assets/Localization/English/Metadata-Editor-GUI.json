@@ -19,6 +19,10 @@
     {
       "Key": "META_Window_Param_Meta_Editor",
       "Text": "PARAM Meta Editor"
+    },
+    {
+      "Key": "META_Mode_Menu_Header",
+      "Text": "Mode"
     }
   ]
 }

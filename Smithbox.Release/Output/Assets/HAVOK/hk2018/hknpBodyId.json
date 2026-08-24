@@ -1,0 +1,10 @@
+{
+  "Type": "HKLib.hk2018.hknpBodyId",
+  "Fields": [
+      {
+          "Field": "m_serialAndIndex",
+          "Name": "Serial and Index",
+          "Description": ""
+      }
+  ]
+}

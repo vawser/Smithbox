@@ -1,0 +1,20 @@
+Smithbox - Version 2.2.5
+
+Collection was modified; enumeration operation may not execute.
+
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at StudioCore.Editors.Common.ObjectContainer.GetObjectByName(String name) in ./src/Smithbox.Program/Editors/Common/Universe/ObjectContainer.cs:line 48
+   at StudioCore.Editors.Common.Entity.UpdateDispDrawGroups() in ./src/Smithbox.Program/Editors/Common/Entity/Entity.cs:line 1278
+   at StudioCore.Editors.Common.Entity.ApplyMeshState() in ./src/Smithbox.Program/Editors/Common/Entity/Entity.cs:line 1385
+   at StudioCore.Editors.Common.Entity.set_RenderSceneMesh(RenderableProxy value) in ./src/Smithbox.Program/Editors/Common/Entity/Entity.cs:line 127
+   at StudioCore.Editors.Common.MsbEntity.SetRenderSceneMesh(RenderableProxy newMesh) in ./src/Smithbox.Program/Editors/Common/Entity/MsbEntity.cs:line 118
+   at StudioCore.Editors.Common.MsbEntity.<AssignCharacterOrPlaceholder>b__54_0(MeshRenderableProxy proxy) in ./src/Smithbox.Program/Editors/Common/Entity/MsbEntity.cs:line 1062
+   at StudioCore.Renderer.MeshRenderableProxy.OnProviderAvailable() in ./src/Smithbox.Program/Renderer/Renderable Proxies/MeshRenderableProxy.cs:line 231
+   at StudioCore.Renderer.MeshProvider.NotifyAvailable() in ./src/Smithbox.Program/Renderer/Providers/MeshProvider.cs:line 111
+   at StudioCore.Renderer.FlverMeshProvider.OnResourceLoaded(IResourceHandle handle, Int32 tag) in ./src/Smithbox.Program/Renderer/Providers/FlverMeshProvider.cs:line 96
+   at StudioCore.Renderer.ResourceHandle`1._ResourceLoaded(IResource resource, AccessLevel accessLevel) in ./src/Smithbox.Program/Renderer/Resource Manager/ResourceHandle.cs:line 138
+   at StudioCore.Renderer.ResourceJob.ProcessLoadedResources() in ./src/Smithbox.Program/Renderer/Resource Manager/ResourceJob.cs:line 258
+   at StudioCore.Renderer.ResourceManager.UpdateTasks() in ./src/Smithbox.Program/Renderer/Resource Manager/ResourceManager.cs:line 195
+   at StudioCore.Smithbox.Update(Single deltaseconds) in ./src/Smithbox.Program/Smithbox.cs:line 680
+   at StudioCore.Smithbox.Run() in ./src/Smithbox.Program/Smithbox.cs:line 424
+   at SmithboxApp.Program.Main(String[] args) in ./src/Smithbox.Vulkan/Program.cs:line 56

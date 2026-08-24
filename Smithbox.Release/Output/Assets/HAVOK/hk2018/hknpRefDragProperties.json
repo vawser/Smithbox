@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hknpRefDragProperties",
+  "Fields": [
+      {
+          "Field": "m_dragProperties",
+          "Name": "Drag Properties",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

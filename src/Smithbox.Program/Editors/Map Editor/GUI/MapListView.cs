@@ -73,6 +73,9 @@ public class MapListView : IActionEventHandler
         }
         GUI.Tooltip("Filter the map list entries.");
 
+        ImGui.SameLine();
+        View.MapListFilterTool.DisplayHeaderButton();
+
         if (View.Project.Descriptor.ProjectType is ProjectType.BB)
         {
             ImGui.SameLine();

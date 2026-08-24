@@ -1,0 +1,35 @@
+{
+  "Type": "HKLib.hk2018.fsnpCustomMeshParameter+TriangleData",
+  "Fields": [
+      {
+          "Field": "m_primitiveDataIndex",
+          "Name": "Primitive Data Index",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_triangleDataIndex",
+          "Name": "Triangle Data Index",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_vertexIndexA",
+          "Name": "Vertex Index: A",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_vertexIndexB",
+          "Name": "Vertex Index: B",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_vertexIndexC",
+          "Name": "Vertex Index: C",
+          "Description": "",
+          "IsRawData": true
+      }
+  ]
+}

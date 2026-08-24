@@ -73,6 +73,14 @@
       "Text": "Toggle the display of the placement orb within the viewport."
     },
     {
+      "Key": "VIEWPORT_Menubar_Toggle_Compass",
+      "Text": "Compass"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Compass_TT",
+      "Text": "Toggle the display of the compass within the viewport."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Header_Camera",
       "Text": "Camera"
     },
@@ -237,6 +245,10 @@
       "Text": "Placement Orb"
     },
     {
+      "Key": "VIEWPORT_Menubar_Header_Compass",
+      "Text": "Compass"
+    },
+    {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Display",
       "Text": "Display"
     },
@@ -355,6 +367,22 @@
     {
       "Key": "VIEWPORT_Menubar_Setting_Orb_Distance_TT",
       "Text": "Determines the distance in front of the camera the placement orb is."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Compass_Size",
+      "Text": "Compass Size"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Compass_Size_TT",
+      "Text": "Determines the size of the compass."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Compass_North_Offset",
+      "Text": "Compass North Offset"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Compass_North_Offset_TT",
+      "Text": "Determines the angle offset when determining which direction is north."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Dummy_Size",

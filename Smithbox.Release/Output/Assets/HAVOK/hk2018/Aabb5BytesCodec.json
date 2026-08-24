@@ -1,0 +1,23 @@
+{
+  "Type": "HKLib.hk2018.hkcdCompressedAabbCodecs.Aabb5BytesCodec",
+  "Fields": [
+      {
+          "Field": "m_hiData",
+          "Name": "HI Data",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_loData",
+          "Name": "LO Data",
+          "Description": "",
+          "IsRawData": true
+      },
+      {
+          "Field": "m_xyz",
+          "Name": "XYZ",
+          "Description": "",
+          "IsRawData": true
+      }
+  ]
+}

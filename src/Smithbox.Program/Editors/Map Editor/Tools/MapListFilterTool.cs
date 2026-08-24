@@ -34,6 +34,66 @@ public class MapListFilterTool
         ReadFilterListCollection();
     }
 
+    public void DisplayHeaderButton()
+    {
+        if (ImGui.Button($"{Icons.FileText}", DPI.IconButtonSize))
+        {
+            ImGui.OpenPopup("mapListFiltersContextMenu");
+        }
+        GUI.Tooltip("Display List Filters menu.");
+
+        if (ImGui.BeginPopupContextItem($@"mapListFiltersContextMenu"))
+        {
+            DisplayMenu();
+
+            ImGui.EndPopup();
+        }
+    }
+
+    public void DisplayMenu()
+    {
+        // Select
+        if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_ListFilter_Action_Select")}##selectAction"))
+        {
+            View.MapListFilterTool.SelectionMenu();
+            ImGui.EndMenu();
+        }
+        GUI.Tooltip(LOC.Get("MAP_Options_ListFilter_Action_Select_TT"));
+
+        // Clear
+        if (ImGui.MenuItem($"{LOC.Get("MAP_Options_ListFilter_Action_Clear")}##clearAction"))
+        {
+            View.MapListFilterTool.Clear();
+        }
+        GUI.Tooltip(LOC.Get("MAP_Options_ListFilter_Action_Clear_TT"));
+
+        ImGui.Separator();
+
+        // Create
+        if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_ListFilter_Action_Create")}##createAction"))
+        {
+            View.MapListFilterTool.CreationMenu();
+            ImGui.EndMenu();
+        }
+        GUI.Tooltip(LOC.Get("MAP_Options_ListFilter_Action_Create_TT"));
+
+        // Edit
+        if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_ListFilter_Action_Edit")}##editAction"))
+        {
+            View.MapListFilterTool.EditMenu();
+            ImGui.EndMenu();
+        }
+        GUI.Tooltip(LOC.Get("MAP_Options_ListFilter_Action_Edit_TT"));
+
+        // Delete
+        if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_ListFilter_Action_Delete")}##deleteAction"))
+        {
+            View.MapListFilterTool.DeleteMenu();
+            ImGui.EndMenu();
+        }
+        GUI.Tooltip(LOC.Get("MAP_Options_ListFilter_Action_Delete_TT"));
+    }
+
     public void Update()
     {
         if(FilterToDelete != null)
@@ -53,6 +113,12 @@ public class MapListFilterTool
     public void SelectionMenu()
     {
         int index = 0;
+
+        if(QuickFilterCollection.Entries.Count == 0)
+        {
+            ImGui.Text("No entries present.");
+        }
+
         foreach (var entry in QuickFilterCollection.Entries)
         {
             var curKey = $"{entry.ID}{index}";
@@ -80,6 +146,12 @@ public class MapListFilterTool
     public void DeleteMenu()
     {
         int index = 0;
+
+        if (QuickFilterCollection.Entries.Count == 0)
+        {
+            ImGui.Text("No entries present.");
+        }
+
         foreach (var entry in QuickFilterCollection.Entries)
         {
             var curKey = $"{entry.ID}{index}";
@@ -106,6 +178,12 @@ public class MapListFilterTool
     public void EditMenu()
     {
         int index = 0;
+
+        if (QuickFilterCollection.Entries.Count == 0)
+        {
+            ImGui.Text("No entries present.");
+        }
+
         foreach (var entry in QuickFilterCollection.Entries)
         {
             var curKey = $"{entry.ID}{index}";
