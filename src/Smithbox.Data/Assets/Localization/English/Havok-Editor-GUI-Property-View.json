@@ -45,11 +45,11 @@
       "Text": "Hide Column"
     },
     {
-      "Key": "HAVOK_PropertyView_Field_Name_Toggle_Show",
+      "Key": "HAVOK_PropertyView_Type_Column_Toggle_Show",
       "Text": "Show Column"
     },
     {
-      "Key": "HAVOK_PropertyView_Field_Name_Toggle_TT",
+      "Key": "HAVOK_PropertyView_Type_Column_Toggle_TT",
       "Text": "Toggle the visibilty of the field type column.\nCurrent Mode: {0}"
     },
     {
@@ -75,6 +75,18 @@
     {
       "Key": "HAVOK_PropertyView_TreeState_TT",
       "Text": "Toggle the opening behavior of tree nodes.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "HAVOK_PropertyView_PropBag_Show",
+      "Text": "Property bags are displayed."
+    },
+    {
+      "Key": "HAVOK_PropertyView_PropBag_Hide",
+      "Text": "Property bags are hidden."
+    },
+    {
+      "Key": "HAVOK_PropertyView_PropBag_TT",
+      "Text": "Toggle the display of property bags.\nCurrent Mode: {0}"
     },
     {
       "Key": "HAVOK_PropertyView_Field",

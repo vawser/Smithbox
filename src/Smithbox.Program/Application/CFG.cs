@@ -1026,6 +1026,7 @@ public class CFG
     public bool HavokEditor_Properties_Display_Type_Column = false;
     public bool HavokEditor_Properties_Display_Raw_Data_Fields = true;
     public bool HavokEditor_Properties_Auto_Open_Tree = false;
+    public bool HavokEditor_Properties_Display_Property_Bags = false;
     #endregion
 
     #region Viewport

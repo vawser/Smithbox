@@ -19,3 +19,15 @@
   - Duplicate Entry (auto-resolve instances of usage)
   - Delete Entry (auto-resolve instances of usage)
   - Insert Entry
+
+HKLib.hk2018.hkbStateMachine
+HKLib.hk2018.hkbScriptGenerator
+HKLib.hk2018.hkbModifierGenerator
+HKLib.hk2018.hkbBlenderGenerator
+HKLib.hk2018.hkbLayerGenerator
+HKLib.hk2018.hkbLayer
+HKLib.hk2018.CustomManualSelectorGenerator
+
+- Add 'Generate' tool for collisions:
+ - Generates basic shapes such as planes (square, circle) and boxes
+  - Toggle face orientation

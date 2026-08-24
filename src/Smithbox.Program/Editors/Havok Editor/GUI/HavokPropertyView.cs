@@ -38,48 +38,66 @@ public class HavokPropertyView
             LOC.Get("HAVOK_PropertyView_Header"),
             LOC.Get("HAVOK_PropertyView_Header_TT"));
 
-        DisplayHeader();
-
         var data = Project.Handler.HavokData;
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
         {
+            DisplayHeader();
             DisplayPropertyEditor(data.AnimationBank);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
         {
+            if (View.PropertyView.BehaviorView.Selection.IsBehaviorGraph &&
+                View.Selection.PropertyViewType is HavokPropertyViewType.Structured)
+            {
+                BehaviorView.DisplayBehaviorHeader();
+            }
+            else
+            {
+                DisplayHeader();
+            }
+
             DisplayPropertyEditor(data.BehaviorBank);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Character)
         {
+            DisplayHeader();
             DisplayPropertyEditor(data.CharacterBank);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
         {
+            DisplayHeader();
             DisplayPropertyEditor(data.MapCollisionBank);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Asset_Collision)
         {
+            DisplayHeader();
             DisplayPropertyEditor(data.AssetCollisionBank);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Navmesh)
         {
+            DisplayHeader();
             DisplayPropertyEditor(data.NavmeshBank);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Cutscene)
         {
+            DisplayHeader();
             DisplayPropertyEditor(data.CutsceneBank);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Part_Collidable)
         {
+            DisplayHeader();
             DisplayPropertyEditor(data.PartBank);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Rumble)
         {
+            DisplayHeader();
             DisplayPropertyEditor(data.RumbleBank);
         }
         else
         {
+            DisplayHeader();
+
             ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
             GUI.WrappedText(LOC.Get("HAVOK_PropertyView_No_Internal_File_Selected"));
@@ -119,9 +137,9 @@ public class HavokPropertyView
 
         var typeColumnVis = LOC.Get("HAVOK_PropertyView_Type_Column_Toggle_Hide");
         if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
-            typeColumnVis = LOC.Get("HAVOK_PropertyView_Field_Name_Toggle_Show");
+            typeColumnVis = LOC.Get("HAVOK_PropertyView_Type_Column_Toggle_Show");
 
-        GUI.Tooltip(LOC.Get("HAVOK_PropertyView_Field_Name_Toggle_TT", typeColumnVis));
+        GUI.Tooltip(LOC.Get("HAVOK_PropertyView_Type_Column_Toggle_TT", typeColumnVis));
 
         // Raw Data Fields
         ImGui.SameLine();
@@ -151,10 +169,28 @@ public class HavokPropertyView
 
         GUI.Tooltip(LOC.Get("HAVOK_PropertyView_TreeState_TT", autoTreeMode));
 
-        // Special Property View Mode for Behavior
+        // Display Property Bags
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.ShoppingBag}##togglePropertyBags"))
+        {
+            CFG.Current.HavokEditor_Properties_Display_Property_Bags = !CFG.Current.HavokEditor_Properties_Display_Property_Bags;
+        }
+
+        var propBagMode = LOC.Get("HAVOK_PropertyView_PropBag_Hide");
+        if (CFG.Current.HavokEditor_Properties_Display_Property_Bags)
+            propBagMode = LOC.Get("HAVOK_PropertyView_PropBag_Show");
+
+        GUI.Tooltip(LOC.Get("HAVOK_PropertyView_PropBag_TT", propBagMode));
+
+        // Property View Type
         if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
         {
-            View.PropertyView.BehaviorView.DisplayBehaviorHeader();
+            if(View.Selection.PropertyViewType is HavokPropertyViewType.Flat)
+            {
+                ImGui.SameLine();
+                BehaviorView.DisplayBehaviorHeader(true);
+            }
         }
 
         ImGui.EndChild();
@@ -333,9 +369,16 @@ public class HavokPropertyView
                 fieldDescription = $"{HavokMetaHelper.GetFieldDescription(havokMeta, prop.Name)}";
             }
 
+            Type typ = prop.FieldType;
+
+            if (!CFG.Current.HavokEditor_Properties_Display_Property_Bags)
+            {
+                if (typ == typeof(hkPropertyBag))
+                    continue;
+            }
+
             ImGui.PushID(id);
             ImGui.AlignTextToFramePadding();
-            Type typ = prop.FieldType;
 
             if (typ.IsArray)
             {
