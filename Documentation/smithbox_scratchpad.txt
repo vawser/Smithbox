@@ -10,9 +10,6 @@
   Map Data Editor
   Map Editor
 
-# Map Editor
-- Check speed tree rendering
-
 # Havok Editor
 - Implement structured property view:
  - Tab bar with each of the supported top-level types

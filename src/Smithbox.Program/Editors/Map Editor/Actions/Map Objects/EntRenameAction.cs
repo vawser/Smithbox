@@ -43,6 +43,9 @@ public class EntRenameAction : ViewportAction
         var oldName = entity.Name;
         entity.Name = name;
 
-        View.MapGroupsView.UpdateMapGroupEntry(oldName, name);
+        if (CFG.Current.MapEditor_MapContentGroup_AutoAdjustName)
+        {
+            View.MapGroupsView.UpdateMapGroupEntry(oldName, name);
+        }
     }
 }

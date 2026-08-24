@@ -488,7 +488,7 @@ public class MapData : IDisposable
     {
         await Task.Yield();
 
-        SpeedTreeList = new();
+        GrassList = new();
 
         var sourcePath = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "GrassAssets.json");
 

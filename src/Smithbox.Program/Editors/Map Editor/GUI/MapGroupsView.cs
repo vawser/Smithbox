@@ -31,15 +31,43 @@ public class MapGroupsView
     {
         Shortcuts();
 
-        GUI.SimpleHeader("Groups", "");
+        GUI.SimpleHeader("Groups", "Store groups of map objects as selections here. You can then easily re-select or manipulate them.\nGroups are specific to each project and to each map.");
 
-        DisplaySearchbar();
+        DisplayHeader();
 
         ImGui.BeginChild("MapGroups", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         DisplayMapGroupsList();
 
         ImGui.EndChild();
+    }
+
+    public void DisplayHeader()
+    {
+        var map = View.Selection.SelectedMapContainer;
+
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedListFilter_mapGroupsList", searchHeight, ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplayListFilter("mapEditor_MapGroupsFilter",
+            ref MapGroupsFilter, ref ExactMapGroupsFilter);
+
+        // Name Auto Adjust
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.LightbulbO}##toggleNameAutoAdjust"))
+        {
+            CFG.Current.MapEditor_MapContentGroup_AutoAdjustName = !CFG.Current.MapEditor_MapContentGroup_AutoAdjustName;
+        }
+
+        var nameAutoAdjustMode = "Map object names are not automatically updated when changed.";
+        if (CFG.Current.MapEditor_MapContentGroup_AutoAdjustName)
+            nameAutoAdjustMode = "Map object names are automatically updated when changed.";
+
+        GUI.Tooltip($"Determines if the map object names stored within a group are automatically updated to the new name if the map object's name is edited.\nCurrent Mode: {nameAutoAdjustMode}");
+
+        ImGui.EndChild();
+
     }
 
     public void Shortcuts()
@@ -79,19 +107,6 @@ public class MapGroupsView
                 }
             }
         }
-    }
-
-    public void DisplaySearchbar()
-    {
-        var map = View.Selection.SelectedMapContainer;
-
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedListFilter_mapGroupsList", searchHeight, ImGuiChildFlags.Borders);
-
-        EditorFilters.DisplayListFilter("mapEditor_MapGroupsFilter",
-            ref MapGroupsFilter, ref ExactMapGroupsFilter);
-
-        ImGui.EndChild();
     }
 
     public void DisplayMapGroupsList()

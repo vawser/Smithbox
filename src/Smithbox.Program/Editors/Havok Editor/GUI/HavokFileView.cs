@@ -305,7 +305,7 @@ public class HavokFileView
         if (ImGui.BeginPopupContextItem($"Actions##HavokFileViewContextMenu_{filepath}"))
         {
             // Copy
-            if(ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Copy")}#copyAction"))
+            if(ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Copy")}##copyAction"))
             {
                 CopyFile();
             }

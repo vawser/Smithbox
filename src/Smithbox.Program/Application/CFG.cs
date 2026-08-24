@@ -214,6 +214,7 @@ public class CFG
     public bool MapEditor_Selection_Group_Show_Keybind = true;
     public bool MapEditor_Selection_Group_Show_Tags = false;
 
+    public bool MapEditor_MapContentGroup_AutoAdjustName = true;
 
     public bool MapEditor_HavokEdit_Display_Type_Column = false;
     public bool MapEditor_CollisionEdit_Display_Raw_Data_Fields = true;
