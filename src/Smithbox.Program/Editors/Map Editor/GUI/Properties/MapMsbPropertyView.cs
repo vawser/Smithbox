@@ -1741,7 +1741,7 @@ public class MapMsbPropertyView
 
         if (changed)
         {
-            ChangePropertyMultiple(prop, selection, meta, oldval, newval, ref committed, arrayindex, classIndex);
+           ChangePropertyMultiple(prop, selection, meta, oldval, newval, ref committed, arrayindex, classIndex);
             foreach (var ent in selection)
             {
                 ent.BuildReferenceMap();

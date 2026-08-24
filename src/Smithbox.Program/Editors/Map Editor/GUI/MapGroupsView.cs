@@ -502,9 +502,15 @@ public class MapGroupsView
             .Any(e => e.Objects
             .Any(e => e == oldName)));
 
+        if (existingEntry.Key == null)
+            return;
+
         var existingGroup = existingEntry.Value.Groups
             .FirstOrDefault(e => e.Objects
             .Any(e => e == oldName));
+
+        if (existingGroup == null)
+            return;
 
         existingGroup.Objects.Remove(oldName);
         existingGroup.Objects.Add(newName);
