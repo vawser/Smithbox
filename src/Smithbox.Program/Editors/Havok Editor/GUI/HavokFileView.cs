@@ -133,6 +133,25 @@ public class HavokFileView
                 {
                     displayName = entry.Key;
                 }
+                else
+                {
+                    // Add some prefixes to make it clearer which files are which in short name mode for Behaviors
+                    if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
+                    {
+                        if(filepath.Contains("Character"))
+                        {
+                            displayName = $"Character Data: {displayName}";
+                        }
+                        else if (filepath.Contains("Behavior"))
+                        {
+                            displayName = $"Behavior Data: {displayName}";
+                        }
+                        else
+                        {
+                            displayName = $"Project Data: {displayName}";
+                        }
+                    }
+                }
 
                 // Normal filter
                 var isMatch = EditorFilters.IsMatch(FileFilter, displayName, ExactFileFilter);

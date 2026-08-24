@@ -47,7 +47,7 @@ public class HavokPropertyView
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
         {
-            if (View.PropertyView.BehaviorView.Selection.IsBehaviorGraph &&
+            if (View.PropertyView.BehaviorView.IsBehaviorGraph &&
                 View.Selection.PropertyViewType is HavokPropertyViewType.Structured)
             {
                 BehaviorView.DisplayBehaviorHeader();
@@ -274,7 +274,7 @@ public class HavokPropertyView
             {
                 View.Selection.ApplyFileSpecificTreeSearches(sourceObject);
 
-                if (View.PropertyView.BehaviorView.Selection.IsBehaviorGraph)
+                if (View.PropertyView.BehaviorView.IsBehaviorGraph)
                 {
                     BehaviorView.Draw(sourceObject);
                 }

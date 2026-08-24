@@ -40,7 +40,7 @@ public class HavokSelection
 
         AppliedHavokTreeSearch = false;
 
-        View.PropertyView.BehaviorView.Selection.Reset();
+        View.PropertyView.BehaviorView.ResetSelection();
     }
 
     public void ClearFileSelection()
@@ -49,7 +49,7 @@ public class HavokSelection
 
         AppliedHavokTreeSearch = false;
 
-        View.PropertyView.BehaviorView.Selection.Reset();
+        View.PropertyView.BehaviorView.ResetSelection();
     }
 
     public void ApplyFileSpecificTreeSearches(object sourceObject)

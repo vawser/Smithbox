@@ -12,19 +12,32 @@ public class HavokBehaviorView
     public string PropFilter = "";
     public bool ExactPropFilter = false;
 
-    public BehaviorViewSelection Selection = new();
+    public bool IsBehaviorGraph = false;
 
-    public HavokBehaviorGraphView BehaviorGraphView;
-    public HavokClipGeneratorView ClipGeneratorView;
-
+    public HavokAnimationClipView AnimationClipView;
+    public HavokAnimationSelectorView AnimationSelectorView;
+    public HavokStateMachineView StateMachineView;
+    public HavokVariableView VariableView;
 
     public HavokBehaviorView(HavokEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+        
+        AnimationClipView = new(view, this, project);
+        AnimationSelectorView = new(view, this, project);
+        StateMachineView = new(view, this, project);
+        VariableView = new(view, this, project);
+    }
 
-        BehaviorGraphView = new(view, this, project);
-        ClipGeneratorView = new(view, this, project);
+    public void ResetSelection()
+    {
+        IsBehaviorGraph = false;
+
+        AnimationClipView.ResetSelection();
+        AnimationSelectorView.ResetSelection();
+        StateMachineView.ResetSelection();
+        VariableView.ResetSelection();
     }
 
     public void SetupBehaviorView(object sourceObject)
@@ -33,10 +46,12 @@ public class HavokBehaviorView
         var behaviorGraphs = HavokTreeSearch.FindAll<hkbBehaviorGraph>(sourceObject, View.PropertyCache.GetCachedHavokFields);
 
         if (behaviorGraphs.Count > 0)
-            View.PropertyView.BehaviorView.Selection.IsBehaviorGraph = true;
+            IsBehaviorGraph = true;
 
-        BehaviorGraphView.Setup(sourceObject);
-        ClipGeneratorView.Setup(sourceObject);
+        AnimationClipView.Setup(sourceObject);
+        AnimationSelectorView.Setup(sourceObject);
+        StateMachineView.Setup(sourceObject);
+        VariableView.Setup(sourceObject);
     }
 
     public void Draw(object sourceObject)
@@ -92,8 +107,10 @@ public class HavokBehaviorView
     {
         ImGui.BeginTabBar("behaviorTabs", ImGuiTabBarFlags.FittingPolicyResizeDown);
 
-        BehaviorGraphView.DisplayTab();
-        ClipGeneratorView.DisplayTab();
+        StateMachineView.DisplayTab();
+        AnimationSelectorView.DisplayTab();
+        AnimationClipView.DisplayTab();
+        VariableView.DisplayTab();
 
         ImGui.EndTabBar();
     }
@@ -105,13 +122,21 @@ public class HavokBehaviorView
 
     public void DisplayProperties()
     {
-        if (BehaviorGraphView.CanDisplayProperties())
+        if (StateMachineView.CanDisplayProperties())
         {
-            BehaviorGraphView.DisplayProperties();
+            StateMachineView.DisplayProperties();
         }
-        else if (ClipGeneratorView.CanDisplayProperties())
+        else if (AnimationSelectorView.CanDisplayProperties())
         {
-            ClipGeneratorView.DisplayProperties();
+            AnimationSelectorView.DisplayProperties();
+        }
+        else if (AnimationClipView.CanDisplayProperties())
+        {
+            AnimationClipView.DisplayProperties();
+        }
+        else if (VariableView.CanDisplayProperties())
+        {
+            VariableView.DisplayProperties();
         }
         else
         {

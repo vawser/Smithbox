@@ -1,43 +1,47 @@
 ﻿using Hexa.NET.ImGui;
 using HKLib.hk2018;
 using StudioCore.Editors.Common;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
+using StudioCore.Keybinds;
 using System.Numerics;
-using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class HavokBehaviorGraphView
+public class HavokAnimationSelectorView
 {
     private HavokEditorView View;
     private ProjectEntry Project;
     private HavokBehaviorView Owner;
 
-    private List<hkbBehaviorGraph> BehaviorGraphs = new();
+    public bool IsCurrentTab = false;
 
-    public HavokBehaviorGraphView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
+    public List<CustomManualSelectorGenerator> SelectedAnimSelectors = new();
+    private List<CustomManualSelectorGenerator> AnimSelectors = new();
+
+    public HavokAnimationSelectorView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
     {
         View = view;
         Project = project;
         Owner = ownerView;
     }
 
+    public void ResetSelection()
+    {
+        SelectedAnimSelectors.Clear();
+    }
+
     public void Setup(object sourceObject)
     {
-        BehaviorGraphs = HavokTreeSearch.FindAll<hkbBehaviorGraph>(sourceObject, View.PropertyCache.GetCachedHavokFields);
+        AnimSelectors = HavokTreeSearch.FindAll<CustomManualSelectorGenerator>(sourceObject, View.PropertyCache.GetCachedHavokFields);
     }
 
     public void SetTabState(bool state)
     {
-        Owner.Selection.InBehaviorGraphTab = state;
+        IsCurrentTab = state;
     }
 
     public void DisplayTab()
     {
-        // Behavior Graphs
-        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Behavior_Graphs")}##tabBehaviorGraphs"))
+        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Anim_Selectors")}##tabAnimSelectors"))
         {
             SetTabState(true);
 
@@ -57,19 +61,27 @@ public class HavokBehaviorGraphView
     {
         ImGui.BeginChild("havokBehaviorElementListSection");
 
-        foreach (var entry in BehaviorGraphs)
+        foreach (var entry in AnimSelectors)
         {
             var clipName = entry.m_name;
-            var selected = entry == Owner.Selection.SelectedBehaviorGraph;
+            var selected = SelectedAnimSelectors.Contains(entry);
 
             var isMatch = EditorFilters.IsMatch(Owner.PropFilter, clipName, Owner.ExactPropFilter);
 
             if (!isMatch)
                 continue;
 
-            if (ImGui.Selectable($"{clipName}##behaviorGraph_{clipName}", selected))
+            if (ImGui.Selectable($"{clipName}##animSelector_{clipName}", selected))
             {
-                Owner.Selection.SelectedBehaviorGraph = entry;
+                if (InputManager.HasCtrlDown())
+                {
+                    SelectedAnimSelectors.Add(entry);
+                }
+                else
+                {
+                    SelectedAnimSelectors.Clear();
+                    SelectedAnimSelectors.Add(entry);
+                }
             }
         }
 
@@ -88,12 +100,26 @@ public class HavokBehaviorGraphView
 
     public bool CanDisplayProperties()
     {
-        return Owner.Selection.InBehaviorGraphTab && Owner.Selection.SelectedBehaviorGraph != null;
+        var firstSelection = SelectedAnimSelectors.FirstOrDefault();
+
+        if (!IsCurrentTab)
+            return false;
+
+        if (firstSelection == null)
+            return false;
+
+        return true;
     }
 
     public void DisplayProperties()
     {
-        var havokMeta = HavokMetaHelper.GetMeta(Project, Owner.Selection.SelectedBehaviorGraph.GetType());
+        // Only edit the first selection (multi-select is only for the entry manipulation actions)
+        var firstSelection = SelectedAnimSelectors.FirstOrDefault();
+
+        if (firstSelection == null)
+            return;
+
+        var havokMeta = HavokMetaHelper.GetMeta(Project, firstSelection.GetType());
 
         ImGui.BeginChild("havokBehaviorPropEditSection");
 
@@ -105,7 +131,7 @@ public class HavokBehaviorGraphView
 
         ImGui.Columns(columnCount);
 
-        View.PropertyView.HavokPropEditGeneric(Owner.Selection.SelectedBehaviorGraph, havokMeta);
+        View.PropertyView.HavokPropEditGeneric(firstSelection, havokMeta);
 
         ImGui.Columns(1);
 

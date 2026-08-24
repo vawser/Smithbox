@@ -1,43 +1,47 @@
 ﻿using Hexa.NET.ImGui;
 using HKLib.hk2018;
 using StudioCore.Editors.Common;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
+using StudioCore.Keybinds;
 using System.Numerics;
-using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
-public class HavokClipGeneratorView
+
+public class HavokStateMachineView
 {
     private HavokEditorView View;
     private ProjectEntry Project;
     private HavokBehaviorView Owner;
 
-    private List<hkbClipGenerator> ClipGenerators = new();
+    public bool IsCurrentTab = false;
 
-    public HavokClipGeneratorView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
+    public List<hkbStateMachine> SelectedStateMachines = new();
+    private List<hkbStateMachine> StateMachines = new();
+
+    public HavokStateMachineView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
     {
         View = view;
         Project = project;
         Owner = ownerView;
     }
 
+    public void ResetSelection()
+    {
+        SelectedStateMachines.Clear();
+    }
+
     public void Setup(object sourceObject)
     {
-        // Clip Generators
-        ClipGenerators = HavokTreeSearch.FindAll<hkbClipGenerator>(sourceObject, View.PropertyCache.GetCachedHavokFields);
+        StateMachines = HavokTreeSearch.FindAll<hkbStateMachine>(sourceObject, View.PropertyCache.GetCachedHavokFields);
     }
 
     public void SetTabState(bool state)
     {
-        Owner.Selection.InClipGeneratorTab = state;
+        IsCurrentTab = state;
     }
 
     public void DisplayTab()
     {
-        // Clip Generators
-        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Clip_Generators")}##tabClipGenerators"))
+        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_State_Machines")}##tabStateMachines"))
         {
             SetTabState(true);
 
@@ -57,19 +61,27 @@ public class HavokClipGeneratorView
     {
         ImGui.BeginChild("havokBehaviorElementListSection");
 
-        foreach (var entry in ClipGenerators)
+        foreach (var entry in StateMachines)
         {
             var clipName = entry.m_name;
-            var selected = entry == Owner.Selection.SelectedClipGenerator;
+            var selected = SelectedStateMachines.Contains(entry);
 
             var isMatch = EditorFilters.IsMatch(Owner.PropFilter, clipName, Owner.ExactPropFilter);
 
             if (!isMatch)
                 continue;
 
-            if (ImGui.Selectable($"{clipName}##clipGenerator_{clipName}", selected))
+            if (ImGui.Selectable($"{clipName}##stateMachine_{clipName}", selected))
             {
-                Owner.Selection.SelectedClipGenerator = entry;
+                if (InputManager.HasCtrlDown())
+                {
+                    SelectedStateMachines.Add(entry);
+                }
+                else
+                {
+                    SelectedStateMachines.Clear();
+                    SelectedStateMachines.Add(entry);
+                }
             }
         }
 
@@ -88,12 +100,26 @@ public class HavokClipGeneratorView
 
     public bool CanDisplayProperties()
     {
-        return Owner.Selection.InClipGeneratorTab && Owner.Selection.SelectedClipGenerator != null;
+        var firstSelection = SelectedStateMachines.FirstOrDefault();
+
+        if (!IsCurrentTab)
+            return false;
+
+        if (firstSelection == null)
+            return false;
+
+        return true;
     }
 
     public void DisplayProperties()
     {
-        var havokMeta = HavokMetaHelper.GetMeta(Project, Owner.Selection.SelectedClipGenerator.GetType());
+        // Only edit the first selection (multi-select is only for the entry manipulation actions)
+        var firstSelection = SelectedStateMachines.FirstOrDefault();
+
+        if (firstSelection == null)
+            return;
+
+        var havokMeta = HavokMetaHelper.GetMeta(Project, firstSelection.GetType());
 
         ImGui.BeginChild("havokBehaviorPropEditSection");
 
@@ -105,7 +131,7 @@ public class HavokClipGeneratorView
 
         ImGui.Columns(columnCount);
 
-        View.PropertyView.HavokPropEditGeneric(Owner.Selection.SelectedClipGenerator, havokMeta);
+        View.PropertyView.HavokPropEditGeneric(firstSelection, havokMeta);
 
         ImGui.Columns(1);
 

@@ -11,14 +11,20 @@
   Map Editor
 
 # Havok Editor
-- Implement structured property view:
- - Tab bar with each of the supported top-level types
- - Left Panel: entry list
- - Right Panel: properties
- - In entry list:
-  - Duplicate Entry (auto-resolve instances of usage)
-  - Delete Entry (auto-resolve instances of usage)
-  - Insert Entry
+- Add cross-binder support to the file list Copy action
+
+- Implement tabbed property view:
+    - Support:
+        - State Machines: hkbStateMachine
+        - Animation Clips: hkbClipGenerator
+        - Animation Selectors: CustomManualSelectorGenerator
+        - Variables: (wrapper for the various variable types)
+        
+    - In list, allow entry manipulation:
+        - Copy
+        - Paste
+        - Delete
+        - Insert
 
 HKLib.hk2018.hkbStateMachine
 HKLib.hk2018.hkbScriptGenerator
