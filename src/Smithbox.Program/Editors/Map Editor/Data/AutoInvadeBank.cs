@@ -39,33 +39,42 @@ public class AutoInvadeBank
         if (!CanUse())
             return;
 
+        var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
+
         foreach (var entry in Project.Locator.AutoInvadeFiles.Entries)
         {
             try
             {
-                var binderData = Project.Handler.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
-
-                try
+                if (fs.FileExists(entry.Path))
                 {
-                    var binder = BND4.Read(binderData);
+                    var binderData = Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(entry.Path);
 
-                    foreach(var file in binder.Files)
+                    try
                     {
-                        try
-                        {
-                            var aipData = AIP.Read(file.Bytes);
+                        var binder = BND4.Read(binderData.Value);
 
-                            Files.Add(Path.GetFileNameWithoutExtension(file.Name), aipData);
-                        }
-                        catch (Exception e)
+                        foreach (var file in binder.Files)
                         {
-                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_AIP", file.Name), e);
+                            try
+                            {
+                                var aipData = AIP.Read(file.Bytes);
+
+                                Files.Add(Path.GetFileNameWithoutExtension(file.Name), aipData);
+                            }
+                            catch (Exception e)
+                            {
+                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_AIP", file.Name), e);
+                            }
                         }
                     }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_AIPBND", entry.Path), e);
+                    }
                 }
-                catch (Exception e)
+                else
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_AIPBND", entry.Path), e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_VPS", entry.Path));
                 }
             }
             catch (Exception e)
@@ -98,62 +107,67 @@ public class AutoInvadeBank
         if (!CanUse())
             return;
 
+        var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
+
         foreach (var entry in Project.Locator.AutoInvadeFiles.Entries)
         {
-            // File
-            try
+            if (fs.FileExists(entry.Path))
             {
-                var binderData = Project.Handler.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
-
+                // File
                 try
                 {
-                    var applyEdit = false;
-                    var binder = BND4.Read(binderData);
+                    var binderData = Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(entry.Path);
 
-                    foreach (var file in binder.Files)
+                    try
                     {
-                        var mapID = Path.GetFileNameWithoutExtension(file.Name);
+                        var applyEdit = false;
+                        var binder = BND4.Read(binderData.Value);
 
-                        if (map.Name == mapID)
+                        foreach (var file in binder.Files)
                         {
-                            var existingAIP = AIP.Read(file.Bytes);
+                            var mapID = Path.GetFileNameWithoutExtension(file.Name);
 
-                            existingAIP.Points = new();
-
-                            foreach (var point in map.AutoInvadeParent.Children)
+                            if (map.Name == mapID)
                             {
-                                var existingPointInstance = (AutoInvadePointInstance)point.WrappedObject;
+                                var existingAIP = AIP.Read(file.Bytes);
 
-                                existingAIP.Points.Add(existingPointInstance);
-                            }
+                                existingAIP.Points = new();
 
-                            var newBytes = existingAIP.Write();
+                                foreach (var point in map.AutoInvadeParent.Children)
+                                {
+                                    var existingPointInstance = (AutoInvadePointInstance)point.WrappedObject;
 
-                            // Only apply edit if the AIP data has changed
-                            // So we don't add the autoinvadepoint.aipbnd.dcx file
-                            // pointlessly to a user's mod if they haven't edited anything
-                            if (!BytePerfectHelper.Md5Equal(file.Bytes.Span, newBytes))
-                            {
-                                applyEdit = true;
-                                file.Bytes = newBytes;
+                                    existingAIP.Points.Add(existingPointInstance);
+                                }
+
+                                var newBytes = existingAIP.Write();
+
+                                // Only apply edit if the AIP data has changed
+                                // So we don't add the autoinvadepoint.aipbnd.dcx file
+                                // pointlessly to a user's mod if they haven't edited anything
+                                if (!BytePerfectHelper.Md5Equal(file.Bytes.Span, newBytes))
+                                {
+                                    applyEdit = true;
+                                    file.Bytes = newBytes;
+                                }
                             }
                         }
-                    }
 
-                    if (applyEdit)
+                        if (applyEdit)
+                        {
+                            var binderOutput = binder.Write();
+                            Project.VFS.ProjectFS.WriteFile(entry.Path, binderOutput);
+                        }
+                    }
+                    catch (Exception e)
                     {
-                        var binderOutput = binder.Write();
-                        Project.VFS.ProjectFS.WriteFile(entry.Path, binderOutput);
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_AIPBND", entry.Path), e);
                     }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_AIPBND", entry.Path), e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_VFS", entry.Path), e);
                 }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_VFS", entry.Path), e);
             }
         }
     }

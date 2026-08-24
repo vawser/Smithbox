@@ -135,109 +135,122 @@ public class TextureBank : IDisposable
                 {
                     var key = binderEntry.Key;
 
-                    try
+                    if (TargetFS.FileExists(key.Path))
                     {
-                        var taeBinderData = TargetFS.ReadFileOrThrow(key.Path);
-
-                        if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                        try
                         {
-                            try
+                            var taeBinderData = TargetFS.ReadFile(key.Path);
+
+                            if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                             {
-                                var taeBinder = BND3.Read(taeBinderData);
-
-                                var files = new Dictionary<BinderFile, TPF>();
-
-                                foreach (var file in taeBinder.Files)
+                                try
                                 {
-                                    if (!file.Name.Contains(".tpf"))
-                                        continue;
+                                    var taeBinder = BND3.Read(taeBinderData.Value);
 
-                                    var data = file.Bytes;
+                                    var files = new Dictionary<BinderFile, TPF>();
 
-                                    // Some files are empty, ignore them
-                                    if (data.Length == 0)
-                                        continue;
-
-                                    try
+                                    foreach (var file in taeBinder.Files)
                                     {
-                                        var tpfData = TPF.Read(data);
+                                        if (!file.Name.Contains(".tpf"))
+                                            continue;
 
-                                        files.Add(file, tpfData);
+                                        var data = file.Bytes;
+
+                                        // Some files are empty, ignore them
+                                        if (data.Length == 0)
+                                            continue;
+
+                                        try
+                                        {
+                                            var tpfData = TPF.Read(data);
+
+                                            files.Add(file, tpfData);
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            Smithbox.LogError(this,
+                                                LOC.Get("TEXVIEW_DataSetup_Log_Failed_TPF_Read", file.Name, Name), e);
+                                            return false;
+                                        }
                                     }
-                                    catch (Exception e)
+
+                                    var newBinderContents = new BinderContents
                                     {
-                                        Smithbox.LogError(this, 
-                                            LOC.Get("TEXVIEW_DataSetup_Log_Failed_TPF_Read", file.Name, Name), e);
-                                        return false;
-                                    }
+                                        Name = fileEntry.Filename,
+                                        Binder = taeBinder,
+                                        Files = files
+                                    };
+
+                                    Entries[key] = newBinderContents;
                                 }
-
-                                var newBinderContents = new BinderContents();
-                                newBinderContents.Name = fileEntry.Filename;
-                                newBinderContents.Binder = taeBinder;
-                                newBinderContents.Files = files;
-
-                                Entries[key] = newBinderContents;
+                                catch (Exception e)
+                                {
+                                    Smithbox.LogError(this,
+                                        LOC.Get("TEXVIEW_DataSetup_Log_Failed_BND4_Read", key.Filename, Name), e);
+                                    return false;
+                                }
                             }
-                            catch (Exception e)
+                            else
                             {
-                                Smithbox.LogError(this,
-                                    LOC.Get("TEXVIEW_DataSetup_Log_Failed_BND4_Read", key.Filename, Name), e);
-                                return false;
+                                try
+                                {
+                                    var taeBinder = BND4.Read(taeBinderData.Value);
+
+                                    var files = new Dictionary<BinderFile, TPF>();
+
+                                    foreach (var file in taeBinder.Files)
+                                    {
+                                        if (!file.Name.Contains(".tpf"))
+                                            continue;
+
+                                        var data = file.Bytes;
+
+                                        // Some files are empty, ignore them
+                                        if (data.Length == 0)
+                                            continue;
+
+                                        try
+                                        {
+                                            var tpfData = TPF.Read(data);
+
+                                            files.Add(file, tpfData);
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            Smithbox.LogError(this,
+                                                LOC.Get("TEXVIEW_DataSetup_Log_Failed_TPF_Read", file.Name, Name), e);
+                                            return false;
+                                        }
+                                    }
+
+                                    var newBinderContents = new BinderContents
+                                    {
+                                        Name = fileEntry.Filename,
+                                        Binder = taeBinder,
+                                        Files = files
+                                    };
+
+                                    Entries[key] = newBinderContents;
+                                }
+                                catch (Exception e)
+                                {
+                                    Smithbox.LogError(this,
+                                        LOC.Get("TEXVIEW_DataSetup_Log_Failed_BND4_Read", key.Filename, Name), e);
+                                    return false;
+                                }
                             }
                         }
-                        else
+                        catch (Exception e)
                         {
-                            try
-                            {
-                                var taeBinder = BND4.Read(taeBinderData);
-
-                                var files = new Dictionary<BinderFile, TPF>();
-
-                                foreach (var file in taeBinder.Files)
-                                {
-                                    if (!file.Name.Contains(".tpf"))
-                                        continue;
-
-                                    var data = file.Bytes;
-
-                                    // Some files are empty, ignore them
-                                    if (data.Length == 0)
-                                        continue;
-
-                                    try
-                                    {
-                                        var tpfData = TPF.Read(data);
-
-                                        files.Add(file, tpfData);
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        Smithbox.LogError(this,
-                                            LOC.Get("TEXVIEW_DataSetup_Log_Failed_TPF_Read", file.Name, Name), e);
-                                        return false;
-                                    }
-                                }
-
-                                var newBinderContents = new BinderContents();
-                                newBinderContents.Name = fileEntry.Filename;
-                                newBinderContents.Binder = taeBinder;
-                                newBinderContents.Files = files;
-
-                                Entries[key] = newBinderContents;
-                            }
-                            catch (Exception e)
-                            {
-                                Smithbox.LogError(this,
-                                    LOC.Get("TEXVIEW_DataSetup_Log_Failed_BND4_Read", key.Filename, Name), e);
-                                return false;
-                            }
+                            Smithbox.LogError(this,
+                                LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Read", key.Filename, Name), e);
+                            return false;
                         }
                     }
-                    catch (Exception e)
+                    else
                     {
                         Smithbox.LogError(this,
-                            LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Read", key.Filename, Name), e);
+                            LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Find", key.Path, Name));
                         return false;
                     }
                 }
@@ -269,51 +282,64 @@ public class TextureBank : IDisposable
                     {
                         var fakeBinder = new BND3();
 
-                        try
+                        if (TargetFS.FileExists(key.Path))
                         {
-                            var tpfFileData = TargetFS.ReadFileOrThrow(key.Path);
-
-                            // Create binder file
-                            var binderFile = new BinderFile();
-                            binderFile.ID = 0;
-                            binderFile.Name = fileEntry.Filename;
-                            binderFile.Bytes = tpfFileData;
-                            fakeBinder.Files.Add(binderFile);
-
-                            // Load actual file
-                            var files = new Dictionary<BinderFile, TPF>();
-                            var data = binderFile.Bytes;
-
-                            // Some files are empty, ignore them
-                            if (data.Length != 0)
+                            try
                             {
-                                try
+                                var tpfFileData = TargetFS.ReadFile(key.Path);
+
+                                // Create binder file
+                                var binderFile = new BinderFile
                                 {
-                                    var tpfData = TPF.Read(data);
-                                    files.Add(binderFile, tpfData);
+                                    ID = 0,
+                                    Name = fileEntry.Filename,
+                                    Bytes = tpfFileData.Value
+                                };
+                                fakeBinder.Files.Add(binderFile);
 
-                                    var newBinderContents = new BinderContents();
-                                    newBinderContents.Name = fileEntry.Filename;
-                                    newBinderContents.Binder = fakeBinder;
-                                    newBinderContents.Files = files;
-                                    newBinderContents.Loose = true;
+                                // Load actual file
+                                var files = new Dictionary<BinderFile, TPF>();
+                                var data = binderFile.Bytes;
 
-                                    Entries[key] = newBinderContents;
-                                }
-                                catch (Exception e)
+                                // Some files are empty, ignore them
+                                if (data.Length != 0)
                                 {
-                                    Smithbox.LogError(this,
-                                        LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Read", fileEntry.Filename, Name), e);
+                                    try
+                                    {
+                                        var tpfData = TPF.Read(data);
+                                        files.Add(binderFile, tpfData);
 
-                                    return false;
+                                        var newBinderContents = new BinderContents
+                                        {
+                                            Name = fileEntry.Filename,
+                                            Binder = fakeBinder,
+                                            Files = files,
+                                            Loose = true
+                                        };
+
+                                        Entries[key] = newBinderContents;
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        Smithbox.LogError(this,
+                                            LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Read", fileEntry.Filename, Name), e);
+
+                                        return false;
+                                    }
                                 }
                             }
+                            catch (Exception e)
+                            {
+                                Smithbox.LogError(this,
+                                    LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Read", fileEntry.Filename, Name), e);
+
+                                return false;
+                            }
                         }
-                        catch (Exception e)
+                        else
                         {
                             Smithbox.LogError(this,
-                                LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Read", fileEntry.Filename, Name), e);
-
+                                LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Find", fileEntry.Path, Name));
                             return false;
                         }
                     }
@@ -321,51 +347,64 @@ public class TextureBank : IDisposable
                     {
                         var fakeBinder = new BND4();
 
-                        try
+                        if (TargetFS.FileExists(key.Path))
                         {
-                            var tpfFileData = TargetFS.ReadFileOrThrow(key.Path);
-
-                            // Create binder file
-                            var binderFile = new BinderFile();
-                            binderFile.ID = 0;
-                            binderFile.Name = fileEntry.Filename;
-                            binderFile.Bytes = tpfFileData;
-                            fakeBinder.Files.Add(binderFile);
-
-                            // Load actual file
-                            var files = new Dictionary<BinderFile, TPF>();
-                            var data = binderFile.Bytes;
-
-                            // Some files are empty, ignore them
-                            if (data.Length != 0)
+                            try
                             {
-                                try
+                                var tpfFileData = TargetFS.ReadFile(key.Path);
+
+                                // Create binder file
+                                var binderFile = new BinderFile
                                 {
-                                    var tpfData = TPF.Read(data);
-                                    files.Add(binderFile, tpfData);
+                                    ID = 0,
+                                    Name = fileEntry.Filename,
+                                    Bytes = tpfFileData.Value
+                                };
+                                fakeBinder.Files.Add(binderFile);
 
-                                    var newBinderContents = new BinderContents();
-                                    newBinderContents.Name = fileEntry.Filename;
-                                    newBinderContents.Binder = fakeBinder;
-                                    newBinderContents.Files = files;
-                                    newBinderContents.Loose = true;
+                                // Load actual file
+                                var files = new Dictionary<BinderFile, TPF>();
+                                var data = binderFile.Bytes;
 
-                                    Entries[key] = newBinderContents;
-                                }
-                                catch (Exception e)
+                                // Some files are empty, ignore them
+                                if (data.Length != 0)
                                 {
-                                    Smithbox.LogError(this,
-                                        LOC.Get("TEXVIEW_DataSetup_Log_Failed_TPF_Read", fileEntry.Filename, Name), e);
+                                    try
+                                    {
+                                        var tpfData = TPF.Read(data);
+                                        files.Add(binderFile, tpfData);
 
-                                    return false;
+                                        var newBinderContents = new BinderContents
+                                        {
+                                            Name = fileEntry.Filename,
+                                            Binder = fakeBinder,
+                                            Files = files,
+                                            Loose = true
+                                        };
+
+                                        Entries[key] = newBinderContents;
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        Smithbox.LogError(this,
+                                            LOC.Get("TEXVIEW_DataSetup_Log_Failed_TPF_Read", fileEntry.Filename, Name), e);
+
+                                        return false;
+                                    }
                                 }
                             }
+                            catch (Exception e)
+                            {
+                                Smithbox.LogError(this,
+                                    LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Read", key.Filename, Name), e);
+
+                                return false;
+                            }
                         }
-                        catch (Exception e)
+                        else
                         {
                             Smithbox.LogError(this,
-                                LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Read", key.Filename, Name), e);
-
+                                LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Find", fileEntry.Path, Name));
                             return false;
                         }
                     }
@@ -399,118 +438,131 @@ public class TextureBank : IDisposable
             {
                 var key = binderEntry.Key;
 
-                try
+                var bhdPath = key.Path;
+                var bdtPath = key.Path.Replace(".tpfbhd", ".tpfbdt");
+
+                if (TargetFS.FileExists(bhdPath) && TargetFS.FileExists(bdtPath))
                 {
-                    var bdtPath = key.Path.Replace(".tpfbhd", ".tpfbdt");
-
-                    var bhdData = TargetFS.ReadFileOrThrow(key.Path);
-                    var bdtData = TargetFS.ReadFileOrThrow(bdtPath);
-
-                    if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                    try
                     {
-                        try
+                        var bhdData = TargetFS.ReadFile(key.Path);
+                        var bdtData = TargetFS.ReadFile(bdtPath);
+
+                        if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                         {
-                            var packedBinder = BXF3.Read(bhdData, bdtData);
-
-                            var files = new Dictionary<BinderFile, TPF>();
-
-                            foreach (var file in packedBinder.Files)
+                            try
                             {
-                                if (!file.Name.Contains(".tpf"))
-                                    continue;
+                                var packedBinder = BXF3.Read(bhdData.Value, bdtData.Value);
 
-                                var data = file.Bytes;
+                                var files = new Dictionary<BinderFile, TPF>();
 
-                                // Some files are empty, ignore them
-                                if (data.Length == 0)
-                                    continue;
-
-                                try
+                                foreach (var file in packedBinder.Files)
                                 {
-                                    var tpfData = TPF.Read(data);
+                                    if (!file.Name.Contains(".tpf"))
+                                        continue;
 
-                                    files.Add(file, tpfData);
+                                    var data = file.Bytes;
+
+                                    // Some files are empty, ignore them
+                                    if (data.Length == 0)
+                                        continue;
+
+                                    try
+                                    {
+                                        var tpfData = TPF.Read(data);
+
+                                        files.Add(file, tpfData);
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        Smithbox.LogError(this,
+                                            LOC.Get("TEXVIEW_DataSetup_Log_Failed_TPF_Read", file.Name, Name), e);
+
+                                        return false;
+                                    }
                                 }
-                                catch (Exception e)
+
+                                var newBinderContents = new BinderContents
                                 {
-                                    Smithbox.LogError(this,
-                                        LOC.Get("TEXVIEW_DataSetup_Log_Failed_TPF_Read", file.Name, Name), e);
+                                    Name = fileEntry.Filename,
+                                    Binder = packedBinder,
+                                    Files = files
+                                };
 
-                                    return false;
-                                }
+                                PackedEntries[key] = newBinderContents;
                             }
+                            catch (Exception e)
+                            {
+                                Smithbox.LogError(this,
+                                    LOC.Get("TEXVIEW_DataSetup_Log_Failed_BND4_Read", Name, Name), e);
 
-                            var newBinderContents = new BinderContents();
-                            newBinderContents.Name = fileEntry.Filename;
-                            newBinderContents.Binder = packedBinder;
-                            newBinderContents.Files = files;
-
-                            PackedEntries[key] = newBinderContents;
+                                return false;
+                            }
                         }
-                        catch (Exception e)
+                        else
                         {
-                            Smithbox.LogError(this,
-                                LOC.Get("TEXVIEW_DataSetup_Log_Failed_BND4_Read", Name, Name), e);
+                            try
+                            {
+                                var packedBinder = BXF4.Read(bhdData.Value, bdtData.Value);
 
-                            return false;
+                                var files = new Dictionary<BinderFile, TPF>();
+
+                                foreach (var file in packedBinder.Files)
+                                {
+                                    if (!file.Name.Contains(".tpf"))
+                                        continue;
+
+                                    var data = file.Bytes;
+
+                                    // Some files are empty, ignore them
+                                    if (data.Length == 0)
+                                        continue;
+
+                                    try
+                                    {
+                                        var tpfData = TPF.Read(data);
+
+                                        files.Add(file, tpfData);
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        Smithbox.LogError(this,
+                                            LOC.Get("TEXVIEW_DataSetup_Log_Failed_TPF_Read", file.Name, Name), e);
+
+                                        return false;
+                                    }
+                                }
+
+                                var newBinderContents = new BinderContents
+                                {
+                                    Name = fileEntry.Filename,
+                                    Binder = packedBinder,
+                                    Files = files
+                                };
+
+                                PackedEntries[key] = newBinderContents;
+                            }
+                            catch (Exception e)
+                            {
+                                Smithbox.LogError(this,
+                                    LOC.Get("TEXVIEW_DataSetup_Log_Failed_BND4_Read", key.Filename, Name), e);
+
+                                return false;
+                            }
                         }
                     }
-                    else
+                    catch (Exception e)
                     {
-                        try
-                        {
-                            var packedBinder = BXF4.Read(bhdData, bdtData);
+                        Smithbox.LogError(this,
+                            LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Read", key.Filename, Name), e);
 
-                            var files = new Dictionary<BinderFile, TPF>();
-
-                            foreach (var file in packedBinder.Files)
-                            {
-                                if (!file.Name.Contains(".tpf"))
-                                    continue;
-
-                                var data = file.Bytes;
-
-                                // Some files are empty, ignore them
-                                if (data.Length == 0)
-                                    continue;
-
-                                try
-                                {
-                                    var tpfData = TPF.Read(data);
-
-                                    files.Add(file, tpfData);
-                                }
-                                catch (Exception e)
-                                {
-                                    Smithbox.LogError(this,
-                                        LOC.Get("TEXVIEW_DataSetup_Log_Failed_TPF_Read", file.Name, Name), e);
-
-                                    return false;
-                                }
-                            }
-
-                            var newBinderContents = new BinderContents();
-                            newBinderContents.Name = fileEntry.Filename;
-                            newBinderContents.Binder = packedBinder;
-                            newBinderContents.Files = files;
-
-                            PackedEntries[key] = newBinderContents;
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this,
-                                LOC.Get("TEXVIEW_DataSetup_Log_Failed_BND4_Read", key.Filename, Name), e);
-
-                            return false;
-                        }
+                        return false;
                     }
                 }
-                catch (Exception e)
+                else
                 {
                     Smithbox.LogError(this,
-                        LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Read", key.Filename, Name), e);
-
-                    return false;
+                        LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Find", key.Filename, Name));
                 }
             }
         }

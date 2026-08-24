@@ -61,8 +61,16 @@
       "Text": "Failed to load FMG container: {0} at {1} for {2}"
     },
     {
+      "Key": "TEXT_Data_Find_FMG_Container_FAIL",
+      "Text": "Failed to find FMG container: {0} for {1}"
+    },
+    {
       "Key": "TEXT_Data_Load_FMG_Wrapper_FAIL",
       "Text": "FMG Wrapper load failed."
+    },
+    {
+      "Key": "TEXT_Data_Find_FMG_Wrapper_FAIL",
+      "Text": "Failed to find FMG Wrapper file: {0}"
     },
     {
       "Key": "TEXT_Data_Load_FMG_FAIL",
@@ -71,6 +79,10 @@
     {
       "Key": "TEXT_Data_Read_File_VFS_FAIL",
       "Text": "Failed to read {0} from VFS for {1}."
+    },
+    {
+      "Key": "TEXT_Data_Find_File_VFS_FAIL",
+      "Text": "Failed to find {0} from VFS for {1}."
     },
     {
       "Key": "TEXT_Data_Write_File_FAIL",

@@ -60,158 +60,165 @@ public class MsbBank : IDisposable
 
         try
         {
-            var mapData = TargetFS.ReadFileOrThrow(fileEntry.Path);
-
-            switch (Project.Descriptor.ProjectType)
+            if (TargetFS.FileExists(fileEntry.Path))
             {
-                case ProjectType.DES:
-                    try
-                    {
-                        msb = MSBD.Read(mapData);
+                var mapData = TargetFS.ReadFile(fileEntry.Path);
 
-                        if (Maps.ContainsKey(fileEntry))
+                switch (Project.Descriptor.ProjectType)
+                {
+                    case ProjectType.DES:
+                        try
                         {
-                            Maps[fileEntry] = msb;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.DS1:
-                case ProjectType.DS1R:
-                    try
-                    {
-                        msb = MSB1.Read(mapData);
+                            msb = MSBD.Read(mapData.Value);
 
-                        if (Maps.ContainsKey(fileEntry))
+                            if (Maps.ContainsKey(fileEntry))
+                            {
+                                Maps[fileEntry] = msb;
+                            }
+                        }
+                        catch (Exception e)
                         {
-                            Maps[fileEntry] = msb;
+                            Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
+                            return false;
                         }
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.DS2:
-                case ProjectType.DS2S:
-                    try
-                    {
-                        msb = MSB2.Read(mapData);
-
-                        if (Maps.ContainsKey(fileEntry))
+                        break;
+                    case ProjectType.DS1:
+                    case ProjectType.DS1R:
+                        try
                         {
-                            Maps[fileEntry] = msb;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.DS3:
-                    try
-                    {
-                        msb = MSB3.Read(mapData);
+                            msb = MSB1.Read(mapData.Value);
 
-                        if (Maps.ContainsKey(fileEntry))
+                            if (Maps.ContainsKey(fileEntry))
+                            {
+                                Maps[fileEntry] = msb;
+                            }
+                        }
+                        catch (Exception e)
                         {
-                            Maps[fileEntry] = msb;
+                            Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
+                            return false;
                         }
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.BB:
-                    try
-                    {
-                        msb = MSBB.Read(mapData);
-
-                        if (Maps.ContainsKey(fileEntry))
+                        break;
+                    case ProjectType.DS2:
+                    case ProjectType.DS2S:
+                        try
                         {
-                            Maps[fileEntry] = msb;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.SDT:
-                    try
-                    {
-                        msb = MSBS.Read(mapData);
+                            msb = MSB2.Read(mapData.Value);
 
-                        if (Maps.ContainsKey(fileEntry))
+                            if (Maps.ContainsKey(fileEntry))
+                            {
+                                Maps[fileEntry] = msb;
+                            }
+                        }
+                        catch (Exception e)
                         {
-                            Maps[fileEntry] = msb;
+                            Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
+                            return false;
                         }
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.ER:
-                    try
-                    {
-                        msb = MSBE.Read(mapData);
-
-                        if (Maps.ContainsKey(fileEntry))
+                        break;
+                    case ProjectType.DS3:
+                        try
                         {
-                            Maps[fileEntry] = msb;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.AC6:
-                    try
-                    {
-                        msb = MSB_AC6.Read(mapData);
+                            msb = MSB3.Read(mapData.Value);
 
-                        if (Maps.ContainsKey(fileEntry))
+                            if (Maps.ContainsKey(fileEntry))
+                            {
+                                Maps[fileEntry] = msb;
+                            }
+                        }
+                        catch (Exception e)
                         {
-                            Maps[fileEntry] = msb;
+                            Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
+                            return false;
                         }
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.NR:
-                    try
-                    {
-                        msb = MSB_NR.Read(mapData);
-
-                        if (Maps.ContainsKey(fileEntry))
+                        break;
+                    case ProjectType.BB:
+                        try
                         {
-                            Maps[fileEntry] = msb;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
+                            msb = MSBB.Read(mapData.Value);
 
-                        return false;
-                    }
-                    break;
-                default: break;
+                            if (Maps.ContainsKey(fileEntry))
+                            {
+                                Maps[fileEntry] = msb;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.SDT:
+                        try
+                        {
+                            msb = MSBS.Read(mapData.Value);
+
+                            if (Maps.ContainsKey(fileEntry))
+                            {
+                                Maps[fileEntry] = msb;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.ER:
+                        try
+                        {
+                            msb = MSBE.Read(mapData.Value);
+
+                            if (Maps.ContainsKey(fileEntry))
+                            {
+                                Maps[fileEntry] = msb;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.AC6:
+                        try
+                        {
+                            msb = MSB_AC6.Read(mapData.Value);
+
+                            if (Maps.ContainsKey(fileEntry))
+                            {
+                                Maps[fileEntry] = msb;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.NR:
+                        try
+                        {
+                            msb = MSB_NR.Read(mapData.Value);
+
+                            if (Maps.ContainsKey(fileEntry))
+                            {
+                                Maps[fileEntry] = msb;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
+
+                            return false;
+                        }
+                        break;
+                    default: break;
+                }
+            }
+            else
+            {
+                Smithbox.LogError(this, $"[Map Data Editor] Failed to find {fileEntry.Path} from VFS");
             }
         }
         catch (Exception e)
@@ -219,6 +226,7 @@ public class MsbBank : IDisposable
             Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} from VFS", e);
             return false;
         }
+
 
         return true;
     }

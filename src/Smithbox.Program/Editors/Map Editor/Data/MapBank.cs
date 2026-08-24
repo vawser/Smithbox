@@ -109,122 +109,130 @@ public class MapWrapper : IDisposable
 
         try
         {
-            var mapData = TargetFS.ReadFileOrThrow(Path);
-
-            switch (Project.Descriptor.ProjectType)
+            if (TargetFS.FileExists(Path))
             {
-                case ProjectType.DES:
-                    try
-                    {
-                        MSB = MSBD.Read(mapData);
-                        successfulLoad = true;
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.DS1:
-                case ProjectType.DS1R:
-                    try
-                    {
-                        MSB = MSB1.Read(mapData);
-                        successfulLoad = true;
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.DS2:
-                case ProjectType.DS2S:
-                    try
-                    {
-                        MSB = MSB2.Read(mapData);
-                        successfulLoad = true;
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.DS3:
-                    try
-                    {
-                        MSB = MSB3.Read(mapData);
-                        successfulLoad = true;
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.BB:
-                    try
-                    {
-                        MSB = MSBB.Read(mapData);
-                        successfulLoad = true;
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.SDT:
-                    try
-                    {
-                        MSB = MSBS.Read(mapData);
-                        successfulLoad = true;
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.ER:
-                    try
-                    {
-                        MSB = MSBE.Read(mapData);
-                        successfulLoad = true;
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.AC6:
-                    try
-                    {
-                        MSB = MSB_AC6.Read(mapData);
-                        successfulLoad = true;
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
-                        return false;
-                    }
-                    break;
-                case ProjectType.NR:
-                    try
-                    {
-                        MSB = MSB_NR.Read(mapData);
-                        successfulLoad = true;
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
+                var mapData = TargetFS.ReadFile(Path);
 
-                        return false;
-                    }
-                    break;
-                default: break;
+                switch (Project.Descriptor.ProjectType)
+                {
+                    case ProjectType.DES:
+                        try
+                        {
+                            MSB = MSBD.Read(mapData.Value);
+                            successfulLoad = true;
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.DS1:
+                    case ProjectType.DS1R:
+                        try
+                        {
+                            MSB = MSB1.Read(mapData.Value);
+                            successfulLoad = true;
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.DS2:
+                    case ProjectType.DS2S:
+                        try
+                        {
+                            MSB = MSB2.Read(mapData.Value);
+                            successfulLoad = true;
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.DS3:
+                        try
+                        {
+                            MSB = MSB3.Read(mapData.Value);
+                            successfulLoad = true;
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.BB:
+                        try
+                        {
+                            MSB = MSBB.Read(mapData.Value);
+                            successfulLoad = true;
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.SDT:
+                        try
+                        {
+                            MSB = MSBS.Read(mapData.Value);
+                            successfulLoad = true;
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.ER:
+                        try
+                        {
+                            MSB = MSBE.Read(mapData.Value);
+                            successfulLoad = true;
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.AC6:
+                        try
+                        {
+                            MSB = MSB_AC6.Read(mapData.Value);
+                            successfulLoad = true;
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
+                            return false;
+                        }
+                        break;
+                    case ProjectType.NR:
+                        try
+                        {
+                            MSB = MSB_NR.Read(mapData.Value);
+                            successfulLoad = true;
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
+
+                            return false;
+                        }
+                        break;
+                    default: break;
+                }
+            }
+            else
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_VPS", Path));
+                return false;
             }
         }
         catch (Exception e)

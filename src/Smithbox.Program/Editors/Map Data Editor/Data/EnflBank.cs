@@ -45,28 +45,36 @@ public class EnflBank : IDisposable
     {
         ENFL entryFileList;
 
-        try
+        if (TargetFS.FileExists(fileEntry.Path))
         {
-            var fileData = TargetFS.ReadFileOrThrow(fileEntry.Path);
-
             try
             {
-                entryFileList = ENFL.Read(fileData);
+                var fileData = TargetFS.ReadFile(fileEntry.Path);
 
-                if (EntryFileLists.ContainsKey(fileEntry))
+                try
                 {
-                    EntryFileLists[fileEntry] = entryFileList;
+                    entryFileList = ENFL.Read(fileData.Value);
+
+                    if (EntryFileLists.ContainsKey(fileEntry))
+                    {
+                        EntryFileLists[fileEntry] = entryFileList;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as ENFL", e);
+                    return false;
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as ENFL", e);
+                Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} from VFS", e);
                 return false;
             }
         }
-        catch (Exception e)
+        else
         {
-            Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} from VFS", e);
+            Smithbox.LogError(this, $"[Map Data Editor] Failed to find {fileEntry.Path} from VFS");
             return false;
         }
 

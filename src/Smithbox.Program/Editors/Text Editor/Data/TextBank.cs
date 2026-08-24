@@ -65,39 +65,49 @@ public class TextBank : IDisposable
             return;
         }
 
-        try
+        if (TargetFS.FileExists(entry.Path))
         {
-            var containerBytes = TargetFS.ReadFileOrThrow(entry.Path);
-
-            DCX.Type compressionType;
-            var reader = new BinaryReaderEx(false, containerBytes);
-            SFUtil.GetDecompressedBR(reader, out compressionType);
-
-            // Create the Text Container wrapper and and add it to the bank
-            TextContainerWrapper containerWrapper = new(Project);
-            containerWrapper.FileEntry = entry;
-
-            containerWrapper.CompressionType = compressionType;
-            containerWrapper.ContainerType = containerType;
-            containerWrapper.ContainerDisplayCategory = containerCategory;
-            containerWrapper.FmgWrappers = new();
-
-            if (containerCategory == CFG.Current.TextEditor_Primary_Category)
+            try
             {
-                LoadFmgWrappers(containerWrapper);
+                var containerBytes = TargetFS.ReadFile(entry.Path);
+
+                DCX.Type compressionType;
+                var reader = new BinaryReaderEx(false, containerBytes.Value);
+                SFUtil.GetDecompressedBR(reader, out compressionType);
+
+                // Create the Text Container wrapper and and add it to the bank
+                TextContainerWrapper containerWrapper = new(Project)
+                {
+                    FileEntry = entry,
+
+                    CompressionType = compressionType,
+                    ContainerType = containerType,
+                    ContainerDisplayCategory = containerCategory,
+                    FmgWrappers = new()
+                };
+
+                if (containerCategory == CFG.Current.TextEditor_Primary_Category)
+                {
+                    LoadFmgWrappers(containerWrapper);
+                }
+
+                if (containerWrapper != null)
+                {
+                    Containers.TryAdd(entry, containerWrapper);
+                }
             }
-
-            if (containerWrapper != null)
+            catch (Exception e)
             {
-                Containers.TryAdd(entry, containerWrapper);
+                var filename = Path.GetFileNameWithoutExtension(entry.Path);
+
+                Smithbox.LogError(this,
+                    LOC.Get("TEXT_Data_Load_FMG_Container_FAIL", filename, entry.Path, Name), e);
             }
         }
-        catch (Exception e)
+        else
         {
-            var filename = Path.GetFileNameWithoutExtension(entry.Path);
-
             Smithbox.LogError(this,
-                LOC.Get("TEXT_Data_Load_FMG_Container_FAIL", filename, entry.Path, Name), e);
+                LOC.Get("TEXT_Data_Find_FMG_Container_FAIL", entry.Path, Name));
         }
     }
 
@@ -131,61 +141,68 @@ public class TextBank : IDisposable
 
     public void LoadFmgWrappers(TextContainerWrapper container)
     {
-        var containerBytes = TargetFS.ReadFileOrThrow(container.FileEntry.Path);
-
-        // Populate the Text Fmg wrappers with their contents
-        List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
-
-        if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+        if (TargetFS.FileExists(container.FileEntry.Path))
         {
-            using (IBinder binder = BND3.Read(containerBytes))
+            var containerBytes = TargetFS.ReadFile(container.FileEntry.Path);
+
+            // Populate the Text Fmg wrappers with their contents
+            List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
+
+            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
-                foreach (var file in binder.Files)
+                using (IBinder binder = BND3.Read(containerBytes.Value))
                 {
-                    if (file.Name.Contains(".fmg"))
+                    foreach (var file in binder.Files)
                     {
-                        var fmgName = Path.GetFileName(file.Name);
-                        var id = file.ID;
-                        var fmg = FMG.Read(file.Bytes);
-                        fmg.Name = fmgName;
+                        if (file.Name.Contains(".fmg"))
+                        {
+                            var fmgName = Path.GetFileName(file.Name);
+                            var id = file.ID;
+                            var fmg = FMG.Read(file.Bytes);
+                            fmg.Name = fmgName;
 
-                        TextFmgWrapper fmgInfo = new();
-                        fmgInfo.ID = id;
-                        fmgInfo.Name = fmgName;
-                        fmgInfo.File = fmg;
-                        fmgInfo.Parent = container;
+                            TextFmgWrapper fmgInfo = new();
+                            fmgInfo.ID = id;
+                            fmgInfo.Name = fmgName;
+                            fmgInfo.File = fmg;
+                            fmgInfo.Parent = container;
 
-                        fmgWrappers.Add(fmgInfo);
+                            fmgWrappers.Add(fmgInfo);
+                        }
                     }
                 }
             }
+            else
+            {
+                using (IBinder binder = BND4.Read(containerBytes.Value))
+                {
+                    foreach (var file in binder.Files)
+                    {
+                        if (file.Name.Contains(".fmg"))
+                        {
+                            var fmgName = Path.GetFileName(file.Name);
+                            var id = file.ID;
+                            var fmg = FMG.Read(file.Bytes);
+                            fmg.Name = fmgName;
+
+                            TextFmgWrapper fmgInfo = new();
+                            fmgInfo.ID = id;
+                            fmgInfo.Name = fmgName;
+                            fmgInfo.File = fmg;
+                            fmgInfo.Parent = container;
+
+                            fmgWrappers.Add(fmgInfo);
+                        }
+                    }
+                }
+            }
+
+            container.FmgWrappers = fmgWrappers;
         }
         else
         {
-            using (IBinder binder = BND4.Read(containerBytes))
-            {
-                foreach (var file in binder.Files)
-                {
-                    if (file.Name.Contains(".fmg"))
-                    {
-                        var fmgName = Path.GetFileName(file.Name);
-                        var id = file.ID;
-                        var fmg = FMG.Read(file.Bytes);
-                        fmg.Name = fmgName;
-
-                        TextFmgWrapper fmgInfo = new();
-                        fmgInfo.ID = id;
-                        fmgInfo.Name = fmgName;
-                        fmgInfo.File = fmg;
-                        fmgInfo.Parent = container;
-
-                        fmgWrappers.Add(fmgInfo);
-                    }
-                }
-            }
+            Smithbox.LogError(this, LOC.Get("TEXT_Data_Find_FMG_Wrapper_FAIL", container.FileEntry.Path));
         }
-
-        container.FmgWrappers = fmgWrappers;
     }
 
     /// <summary>
@@ -196,51 +213,63 @@ public class TextBank : IDisposable
         var containerType = TextContainerType.Loose;
         var containerCategory = TextUtils.GetLanguageCategory(Project, entry.Path);
 
-        try
+        if (TargetFS.FileExists(entry.Path))
         {
-            // Get compression type
-            var fmgFileBytes = TargetFS.ReadFileOrThrow(entry.Path);
-
-            DCX.Type compressionType;
-            var reader = new BinaryReaderEx(false, fmgFileBytes);
-            SFUtil.GetDecompressedBR(reader, out compressionType);
-
-            List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
-
-            var id = -1;
-            var fmg = FMG.Read(fmgFileBytes);
-            fmg.Name = entry.Filename; // Assign this to make it easier to grab FMGs
-
-            TextContainerWrapper containerWrapper = new(Project);
-            containerWrapper.FileEntry = entry;
-
-            containerWrapper.CompressionType = compressionType;
-            containerWrapper.ContainerType = containerType;
-            containerWrapper.ContainerDisplayCategory = containerCategory;
-
-            TextFmgWrapper fmgInfo = new();
-            fmgInfo.ID = id;
-            fmgInfo.Name = entry.Filename;
-            fmgInfo.File = fmg;
-            fmgInfo.Parent = containerWrapper;
-
-            fmgWrappers.Add(fmgInfo);
-
-            containerWrapper.FmgWrappers = fmgWrappers;
-
-            if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            try
             {
-                containerWrapper.ContainerDisplaySubCategory = TextUtils.GetSubCategory(entry.Path);
+                // Get compression type
+                var fmgFileBytes = TargetFS.ReadFile(entry.Path);
+
+                DCX.Type compressionType;
+                var reader = new BinaryReaderEx(false, fmgFileBytes.Value);
+                SFUtil.GetDecompressedBR(reader, out compressionType);
+
+                List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
+
+                var id = -1;
+                var fmg = FMG.Read(fmgFileBytes.Value);
+                fmg.Name = entry.Filename; // Assign this to make it easier to grab FMGs
+
+                TextContainerWrapper containerWrapper = new(Project)
+                {
+                    FileEntry = entry,
+
+                    CompressionType = compressionType,
+                    ContainerType = containerType,
+                    ContainerDisplayCategory = containerCategory
+                };
+
+                TextFmgWrapper fmgInfo = new()
+                {
+                    ID = id,
+                    Name = entry.Filename,
+                    File = fmg,
+                    Parent = containerWrapper
+                };
+
+                fmgWrappers.Add(fmgInfo);
+
+                containerWrapper.FmgWrappers = fmgWrappers;
+
+                if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                {
+                    containerWrapper.ContainerDisplaySubCategory = TextUtils.GetSubCategory(entry.Path);
+                }
+
+                Containers.TryAdd(entry, containerWrapper);
             }
+            catch (Exception e)
+            {
+                var filename = Path.GetFileNameWithoutExtension(entry.Path);
 
-            Containers.TryAdd(entry, containerWrapper);
+                Smithbox.LogError(this,
+                    LOC.Get("TEXT_Data_Load_FMG_FAIL", filename, entry.Path, Name), e);
+            }
         }
-        catch (Exception e)
+        else
         {
-            var filename = Path.GetFileNameWithoutExtension(entry.Path);
-
             Smithbox.LogError(this,
-                LOC.Get("TEXT_Data_Load_FMG_FAIL", filename, entry.Path, Name), e);
+                LOC.Get("TEXT_Data_Find_File_VFS_FAIL", entry.Path, Name));
         }
     }
 
@@ -290,58 +319,67 @@ public class TextBank : IDisposable
 
         byte[] fileBytes = null;
 
-        try
+        if (TargetFS.FileExists(entry.Path))
         {
-            var containerBytes = TargetFS.ReadFileOrThrow(entry.Path);
-
-            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
-            {
-                using (IBinder binder = BND3.Read(containerBytes))
-                {
-                    foreach (var file in binder.Files)
-                    {
-                        WriteFmgContents(file, containerWrapper.FmgWrappers);
-                    }
-
-                    using (BND3 writeBinder = binder as BND3)
-                    {
-                        fileBytes = writeBinder.Write(containerWrapper.CompressionType);
-                    }
-                }
-            }
-            else
-            {
-                using (IBinder binder = BND4.Read(containerBytes))
-                {
-                    foreach (var file in binder.Files)
-                    {
-                        WriteFmgContents(file, containerWrapper.FmgWrappers);
-                    }
-
-                    using (BND4 writeBinder = binder as BND4)
-                    {
-                        fileBytes = writeBinder.Write(containerWrapper.CompressionType);
-                    }
-                }
-            }
-
             try
             {
-                Project.VFS.ProjectFS.WriteFile(entry.Path, fileBytes);
+                var containerBytes = TargetFS.ReadFile(entry.Path);
+
+                if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+                {
+                    using (IBinder binder = BND3.Read(containerBytes.Value))
+                    {
+                        foreach (var file in binder.Files)
+                        {
+                            WriteFmgContents(file, containerWrapper.FmgWrappers);
+                        }
+
+                        using (BND3 writeBinder = binder as BND3)
+                        {
+                            fileBytes = writeBinder.Write(containerWrapper.CompressionType);
+                        }
+                    }
+                }
+                else
+                {
+                    using (IBinder binder = BND4.Read(containerBytes.Value))
+                    {
+                        foreach (var file in binder.Files)
+                        {
+                            WriteFmgContents(file, containerWrapper.FmgWrappers);
+                        }
+
+                        using (BND4 writeBinder = binder as BND4)
+                        {
+                            fileBytes = writeBinder.Write(containerWrapper.CompressionType);
+                        }
+                    }
+                }
+
+                try
+                {
+                    Project.VFS.ProjectFS.WriteFile(entry.Path, fileBytes);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this,
+                        LOC.Get("TEXT_Data_Write_File_FAIL", entry.Filename, Name), e);
+
+                    return false;
+                }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, 
-                    LOC.Get("TEXT_Data_Write_File_FAIL", entry.Filename, Name), e);
+                Smithbox.LogError(this,
+                    LOC.Get("TEXT_Data_Read_File_VFS_FAIL", entry.Filename, Name), e);
 
                 return false;
             }
         }
-        catch (Exception e)
+        else
         {
             Smithbox.LogError(this,
-                LOC.Get("TEXT_Data_Read_File_VFS_FAIL", entry.Filename, Name), e);
-
+                LOC.Get("TEXT_Data_Find_File_VFS_FAIL", entry.Filename, Name));
             return false;
         }
 

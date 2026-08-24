@@ -113,32 +113,42 @@ public class IconManager
         var iconConfigEntry = new IconConfigurationEntry();
         iconConfigEntry.SubTexturePrefix = "ICON_";
 
-        try
+        var fs = curProject.VFS.FS;
+
+        if (fs.FileExists(relativePath))
         {
-            var tpfData = curProject.VFS.FS.ReadFileOrThrow(relativePath);
-
-            TPF curTPF = TPF.Read(tpfData);
-
-            // DS2 TPFs only contain 1 texture, so we can skip proper matching
-            var curTex = curTPF.Textures.FirstOrDefault();
-
-            var subTexture = atlas.SubTextures.FirstOrDefault();
-
-            if (subTexture != null)
+            try
             {
-                var newCachedTexture = new CachedTexture(subTexture);
-                newCachedTexture.Load(curTPF, 0);
+                var tpfData = curProject.VFS.FS.ReadFile(relativePath);
 
-                if (!Cache.ContainsKey(key))
+                TPF curTPF = TPF.Read(tpfData.Value);
+
+                // DS2 TPFs only contain 1 texture, so we can skip proper matching
+                var curTex = curTPF.Textures.FirstOrDefault();
+
+                var subTexture = atlas.SubTextures.FirstOrDefault();
+
+                if (subTexture != null)
                 {
-                    Cache.Add(key, newCachedTexture);
+                    var newCachedTexture = new CachedTexture(subTexture);
+                    newCachedTexture.Load(curTPF, 0);
+
+                    if (!Cache.ContainsKey(key))
+                    {
+                        Cache.Add(key, newCachedTexture);
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("REND_IconManager_TPF_Read_Failed", relativePath), e);
+            }
         }
-        catch(Exception e)
+        else
         {
-            Smithbox.LogError(this, 
-                LOC.Get("REND_IconManager_TPF_Read_Failed", relativePath), e);
+            Smithbox.LogError(this,
+                LOC.Get("REND_IconManager_TPF_Find_Failed", relativePath));
         }
 
         return texture;

@@ -26,28 +26,38 @@ public static class GparamExtraction
     {
         Dictionary<FileDictionaryEntry, GPARAM> gparamEntries = new();
 
+        var fs = curProject.VFS.FS;
+
         foreach (var entry in curProject.Locator.GparamFiles.Entries)
         {
-            try
+            if (fs.FileExists(entry.Path))
             {
-                var gparamData = curProject.VFS.FS.ReadFileOrThrow(entry.Path);
-
                 try
                 {
-                    var gparam = GPARAM.Read(gparamData);
+                    var gparamData = curProject.VFS.FS.ReadFile(entry.Path);
 
-                    gparamEntries.Add(entry, gparam);
+                    try
+                    {
+                        var gparam = GPARAM.Read(gparamData.Value);
+
+                        gparamEntries.Add(entry, gparam);
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError<DeveloperPanel>(
+                            LOC.Get("DEV_Tool_Gparam_Extract_Failed_Format_Read", entry.Path, entry.Filename), e);
+                    }
                 }
                 catch (Exception e)
                 {
                     Smithbox.LogError<DeveloperPanel>(
-                        LOC.Get("DEV_Tool_Gparam_Extract_Failed_Format_Read", entry.Path, entry.Filename), e);
+                        LOC.Get("DEV_Tool_GparaDEV_Tool_Gparam_Extract_Failed_VFS_Readm_Extract_Failed_Format_Read", entry.Path, entry.Filename), e);
                 }
             }
-            catch (Exception e)
+            else
             {
                 Smithbox.LogError<DeveloperPanel>(
-                    LOC.Get("DEV_Tool_GparaDEV_Tool_Gparam_Extract_Failed_VFS_Readm_Extract_Failed_Format_Read", entry.Path, entry.Filename), e);
+                    LOC.Get("DEV_Tool_Gparam_Extract_Failed_Format_Find", entry.Path));
             }
         }
 

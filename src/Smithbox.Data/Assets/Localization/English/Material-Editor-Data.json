@@ -33,6 +33,10 @@
       "Text": "Failed to read file: {0}"
     },
     {
+      "Key": "MAT_Data_Log_Failed_to_Find_File",
+      "Text": "Failed to find file: {0}"
+    },
+    {
       "Key": "MAT_Data_Log_Failed_to_Write_MTD",
       "Text": "Failed to write MTD file: {0}"
     },

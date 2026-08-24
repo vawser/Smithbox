@@ -284,9 +284,9 @@ public class DeveloperKit
             {
                 try
                 {
-                    var data = targetProject.VFS.FS.ReadFileOrThrow(entry.Path);
+                    var data = targetProject.VFS.FS.ReadFile(entry.Path);
 
-                    var binder = BND4.Read(data);
+                    var binder = BND4.Read(data.Value);
                     var flverFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".flver"));
 
                     if (flverFile != null)
@@ -317,9 +317,9 @@ public class DeveloperKit
             {
                 try
                 {
-                    var data = targetProject.VFS.FS.ReadFileOrThrow(entry.Path);
+                    var data = targetProject.VFS.FS.ReadFile(entry.Path);
 
-                    var binder = BND4.Read(data);
+                    var binder = BND4.Read(data.Value);
                     var flverFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".flver"));
 
                     if (flverFile != null)
@@ -382,9 +382,9 @@ public class DeveloperKit
             {
                 try
                 {
-                    var data = targetProject.VFS.FS.ReadFileOrThrow(entry.Path);
+                    var data = targetProject.VFS.FS.ReadFile(entry.Path);
 
-                    var binder = BND4.Read(data);
+                    var binder = BND4.Read(data.Value);
                     var grassFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".grass"));
 
                     if (grassFile != null)
@@ -409,9 +409,9 @@ public class DeveloperKit
             {
                 try
                 {
-                    var data = targetProject.VFS.FS.ReadFileOrThrow(entry.Path);
+                    var data = targetProject.VFS.FS.ReadFile(entry.Path);
 
-                    var binder = BND4.Read(data);
+                    var binder = BND4.Read(data.Value);
                     var grassFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".grass"));
 
                     if (grassFile != null)

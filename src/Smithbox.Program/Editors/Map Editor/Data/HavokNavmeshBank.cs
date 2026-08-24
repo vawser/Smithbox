@@ -211,49 +211,58 @@ public class HavokNavmeshBank
         }
         else
         {
+            var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
+
             var entry = Project.Locator.NavmeshFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);
             if (entry != null)
             {
-                try
+                if (fs.FileExists(entry.Path))
                 {
-                    var nvaData = Project.Handler.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
-
-                    if (Project.Descriptor.ProjectType is ProjectType.ER)
+                    try
                     {
-                        try
+                        var nvaData = fs.ReadFile(entry.Path);
+
+                        if (Project.Descriptor.ProjectType is ProjectType.ER)
                         {
-                            var nva = NVA_ER.Read(nvaData);
+                            try
+                            {
+                                var nva = NVA_ER.Read(nvaData.Value);
 
-                            ER_Files.Add(Path.GetFileNameWithoutExtension(entry.Filename), nva);
+                                ER_Files.Add(Path.GetFileNameWithoutExtension(entry.Filename), nva);
 
-                            map.LoadNVA(map.Name, nva);
+                                map.LoadNVA(map.Name, nva);
 
+                            }
+                            catch (Exception e)
+                            {
+                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA", entry.Path), e);
+                            }
                         }
-                        catch (Exception e)
+                        else
                         {
-                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA", entry.Path), e);
+                            try
+                            {
+                                var nva = NVA.Read(nvaData.Value);
+
+                                Files.Add(Path.GetFileNameWithoutExtension(entry.Filename), nva);
+
+                                map.LoadNVA(map.Name, nva);
+
+                            }
+                            catch (Exception e)
+                            {
+                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA", entry.Path), e);
+                            }
                         }
                     }
-                    else
+                    catch (Exception e)
                     {
-                        try
-                        {
-                            var nva = NVA.Read(nvaData);
-
-                            Files.Add(Path.GetFileNameWithoutExtension(entry.Filename), nva);
-
-                            map.LoadNVA(map.Name, nva);
-
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA", entry.Path), e);
-                        }
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_VPS", entry.Path), e);
                     }
                 }
-                catch (Exception e)
+                else
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_VPS", entry.Path), e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_VPS", entry.Path));
                 }
             }
         }
@@ -271,31 +280,36 @@ public class HavokNavmeshBank
 
             if (Project.Descriptor.ProjectType is ProjectType.ER)
             {
+                var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
+
                 try
                 {
                     var mapID = Path.GetFileNameWithoutExtension(map.Name);
 
                     if (map.Name == mapID)
                     {
-                        var fileData = Project.Handler.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
-                        var nva = NVA_ER.Read(fileData);
-
-                        WriteNavmeshInfo(map, nva);
-                        WriteFaceData(map, nva);
-                        WriteNodeBank(map, nva);
-                        WriteSection3(map, nva);
-                        WriteConnectors(map, nva);
-                        WriteLevelConnectors(map, nva);
-                        WriteSection9(map, nva);
-                        WriteSection10(map, nva);
-                        WriteSection11(map, nva);
-                        WriteSection13(map, nva);
-
-                        var newFileData = nva.Write();
-
-                        if (!BytePerfectHelper.Md5Equal(fileData.ToArray(), newFileData))
+                        if (fs.FileExists(entry.Path))
                         {
-                            Project.VFS.ProjectFS.WriteFile(entry.Path, newFileData);
+                            var fileData = fs.ReadFile(entry.Path);
+                            var nva = NVA_ER.Read(fileData.Value);
+
+                            WriteNavmeshInfo(map, nva);
+                            WriteFaceData(map, nva);
+                            WriteNodeBank(map, nva);
+                            WriteSection3(map, nva);
+                            WriteConnectors(map, nva);
+                            WriteLevelConnectors(map, nva);
+                            WriteSection9(map, nva);
+                            WriteSection10(map, nva);
+                            WriteSection11(map, nva);
+                            WriteSection13(map, nva);
+
+                            var newFileData = nva.Write();
+
+                            if (!BytePerfectHelper.Md5Equal(fileData.Value.ToArray(), newFileData))
+                            {
+                                Project.VFS.ProjectFS.WriteFile(entry.Path, newFileData);
+                            }
                         }
                     }
                 }
@@ -306,27 +320,32 @@ public class HavokNavmeshBank
             }
             else
             {
+                var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
+
                 try
                 {
                     var mapID = Path.GetFileNameWithoutExtension(map.Name);
 
                     if (map.Name == mapID)
                     {
-                        var fileData = Project.Handler.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
-                        var nva = NVA.Read(fileData);
-
-                        WriteNavmeshInfo(map, nva);
-                        WriteFaceData(map, nva);
-                        WriteNodeBank(map, nva);
-                        WriteSection3(map, nva);
-                        WriteConnectors(map, nva);
-                        WriteLevelConnectors(map, nva);
-
-                        var newFileData = nva.Write();
-
-                        if (!BytePerfectHelper.Md5Equal(fileData.ToArray(), newFileData))
+                        if (fs.FileExists(entry.Path))
                         {
-                            Project.VFS.ProjectFS.WriteFile(entry.Path, newFileData);
+                            var fileData = fs.ReadFile(entry.Path);
+                            var nva = NVA.Read(fileData.Value);
+
+                            WriteNavmeshInfo(map, nva);
+                            WriteFaceData(map, nva);
+                            WriteNodeBank(map, nva);
+                            WriteSection3(map, nva);
+                            WriteConnectors(map, nva);
+                            WriteLevelConnectors(map, nva);
+
+                            var newFileData = nva.Write();
+
+                            if (!BytePerfectHelper.Md5Equal(fileData.Value.ToArray(), newFileData))
+                            {
+                                Project.VFS.ProjectFS.WriteFile(entry.Path, newFileData);
+                            }
                         }
                     }
                 }

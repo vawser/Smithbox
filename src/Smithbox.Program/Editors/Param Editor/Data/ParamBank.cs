@@ -1244,40 +1244,48 @@ public class ParamBank : IDisposable
         StayParams = new();
         var stayParamPath = "param/stayparam/stayparam.parambnd.dcx";
 
-        try
+        if (TargetFS.FileExists(stayParamPath))
         {
-            var binderData = TargetFS.ReadFileOrThrow(stayParamPath);
-            using var bnd = BND4.Read(binderData);
-
-            // Load every param in the regulation
-            foreach (BinderFile f in bnd.Files)
+            try
             {
-                var paramName = Path.GetFileNameWithoutExtension(f.Name.Replace('\\', Path.DirectorySeparatorChar));
+                var binderData = TargetFS.ReadFile(stayParamPath);
+                using var bnd = BND4.Read(binderData.Value);
 
-                if (StayParams.ContainsKey(paramName))
+                // Load every param in the regulation
+                foreach (BinderFile f in bnd.Files)
                 {
-                    continue;
-                }
+                    var paramName = Path.GetFileNameWithoutExtension(f.Name.Replace('\\', Path.DirectorySeparatorChar));
 
-                var paramType = Project.Handler.ParamData.ParamTypeInfo.Mapping.FirstOrDefault(e => e.Key == paramName);
+                    if (StayParams.ContainsKey(paramName))
+                    {
+                        continue;
+                    }
 
-                PARAMDEF def = Project.Handler.ParamData.ParamDefs[paramType.Value];
+                    var paramType = Project.Handler.ParamData.ParamTypeInfo.Mapping.FirstOrDefault(e => e.Key == paramName);
 
-                try
-                {
-                    var structParam = StructParam.Read(f.Bytes, def);
+                    PARAMDEF def = Project.Handler.ParamData.ParamDefs[paramType.Value];
 
-                    StayParams.Add(paramName, structParam);
-                }
-                catch
-                {
+                    try
+                    {
+                        var structParam = StructParam.Read(f.Bytes, def);
 
-                    Smithbox.LogError(this,
-                        LOC.Get("PARAM_Data_Failed_to_Load_StayParam", paramName));
+                        StayParams.Add(paramName, structParam);
+                    }
+                    catch
+                    {
+
+                        Smithbox.LogError(this,
+                            LOC.Get("PARAM_Data_Failed_to_Load_StayParam", paramName));
+                    }
                 }
             }
+            catch
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("PARAM_Data_Failed_to_Find_StayParamContainer", stayParamPath, Name));
+            }
         }
-        catch
+        else
         {
             Smithbox.LogError(this,
                 LOC.Get("PARAM_Data_Failed_to_Find_StayParamContainer", stayParamPath, Name));
@@ -1353,31 +1361,34 @@ public class ParamBank : IDisposable
         var stayParamPath = "param/stayparam/stayparam.parambnd.dcx";
         if(StayParams.Count > 0)
         {
-            try
+            if (fs.FileExists(stayParamPath))
             {
-                var binderData = fs.ReadFileOrThrow(stayParamPath);
-                using var bnd = BND4.Read(binderData);
-
-                // Load every param in the regulation
-                foreach (BinderFile f in bnd.Files)
+                try
                 {
-                    var paramName = Path.GetFileNameWithoutExtension(f.Name.Replace('\\', Path.DirectorySeparatorChar));
+                    var binderData = fs.ReadFile(stayParamPath);
+                    using var bnd = BND4.Read(binderData.Value);
 
-                    if (StayParams.ContainsKey(paramName))
+                    // Load every param in the regulation
+                    foreach (BinderFile f in bnd.Files)
                     {
-                        var newData = StayParams[paramName].Write();
-                        f.Bytes = newData;
+                        var paramName = Path.GetFileNameWithoutExtension(f.Name.Replace('\\', Path.DirectorySeparatorChar));
+
+                        if (StayParams.ContainsKey(paramName))
+                        {
+                            var newData = StayParams[paramName].Write();
+                            f.Bytes = newData;
+                        }
                     }
+
+                    var newBinderData = bnd.Write();
+
+                    toFs.WriteFile(stayParamPath, newBinderData);
                 }
-
-                var newBinderData = bnd.Write();
-
-                toFs.WriteFile(stayParamPath, newBinderData);
-            }
-            catch
-            {
-                Smithbox.LogError(this,
-                    LOC.Get("PARAM_Data_Failed_to_Write_StayParam", stayParamPath));
+                catch
+                {
+                    Smithbox.LogError(this,
+                        LOC.Get("PARAM_Data_Failed_to_Write_StayParam", stayParamPath));
+                }
             }
         }
 

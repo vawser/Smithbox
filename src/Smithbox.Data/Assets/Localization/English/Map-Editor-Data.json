@@ -29,6 +29,10 @@
       "Text": "Failed to read {0} from VFS"
     },
     {
+      "Key": "MAP_Data_Failed_Find_VPS",
+      "Text": "Failed to find {0} from VFS"
+    },
+    {
       "Key": "MAP_Data_Failed_Write_AIPBND",
       "Text": "Failed to write {0} as AIPBND"
     },
@@ -73,8 +77,24 @@
       "Text": "Failed to write NVA file: {0}"
     },
     {
+      "Key": "MAP_Data_Failed_Find_GI_File",
+      "Text": "Failed to find GI file: {0}"
+    },
+    {
       "Key": "MAP_Data_Failed_Read_GI",
       "Text": "Failed to read GI file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_GI_Binder",
+      "Text": "Failed to read GI binder file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Find_GI_Light_BTL_File",
+      "Text": "Failed to find light.btl.dcx file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_BTL",
+      "Text": "Failed to read BTL file: {0}"
     },
     {
       "Key": "MAP_Data_Failed_Read_BTAB",

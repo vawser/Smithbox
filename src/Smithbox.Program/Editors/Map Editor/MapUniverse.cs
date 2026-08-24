@@ -356,6 +356,8 @@ public class MapUniverse : IUniverse
     {
         BTL btl = null;
 
+        var fs = View.Project.Handler.MapData.PrimaryBank.TargetFS;
+
         if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             var bhdPath = curEntry.Path;
@@ -363,18 +365,42 @@ public class MapUniverse : IUniverse
 
             try
             {
-                var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
-                var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
-
-                using var bdt = BXF4.Read(bhdFile, bdtFile);
-                BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
-
-                if (file == null)
+                if (fs.FileExists(bdtPath) && fs.FileExists(bhdPath))
                 {
-                    return null;
-                }
+                    var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
+                    var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
 
-                btl = BTL.Read(file.Bytes);
+                    using var bdt = BXF4.Read(bhdFile, bdtFile);
+
+                    if (bdt != null)
+                    {
+                        BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
+
+                        if (file != null)
+                        {
+                            try
+                            {
+                                btl = BTL.Read(file.Bytes);
+                            }
+                            catch (Exception e)
+                            {
+                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_BTL", file.Name), e);
+                            }
+                        }
+                        else
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_GI_Light_BTL_File", bhdPath));
+                        }
+                    }
+                    else
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_GI_Binder", bhdPath));
+                    }
+                }
+                else
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_GI_File", bhdPath));
+                }
             }
             catch (Exception e)
             {
@@ -383,10 +409,30 @@ public class MapUniverse : IUniverse
         }
         else
         {
-            Memory<byte>? btlFile = (Memory<byte>)View.Project.Handler.MapData?.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
+            if (fs.FileExists(curEntry.Path))
+            {
+                Memory<byte>? btlFile = (Memory<byte>)fs.ReadFile(curEntry.Path);
 
-            if (btlFile.HasValue)
-                btl = BTL.Read(btlFile.Value);
+                if (btlFile.HasValue)
+                {
+                    try
+                    {
+                        btl = BTL.Read(btlFile.Value);
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_BTL", curEntry.Path), e);
+                    }
+                }
+                else
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_GI", curEntry.Path));
+                }
+            }
+            else
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_GI_File", curEntry.Path));
+            }
         }
 
         return btl;

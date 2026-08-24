@@ -73,58 +73,74 @@ public class GparamBank : IDisposable
 
                 if (scriptEntry.Key.Extension == "gparambnd")
                 {
-                    var bnd = TargetFS.ReadFileOrThrow(key.Path);
+                    if (TargetFS.FileExists(key.Path))
+                    {
+                        var bnd = TargetFS.ReadFile(key.Path);
 
-                    var binder = new BND4Reader(bnd);
+                        var binder = new BND4Reader(bnd.Value);
 
-                    var file = binder.Files.FirstOrDefault(e => Path.GetFileNameWithoutExtension(e.Name) == scriptEntry.Key.Filename);
+                        var file = binder.Files.FirstOrDefault(e => Path.GetFileNameWithoutExtension(e.Name) == scriptEntry.Key.Filename);
 
-                    if (file != null)
+                        if (file != null)
+                        {
+                            try
+                            {
+                                var gparamData = binder.ReadFile(file);
+
+                                try
+                                {
+                                    var gparam = GPARAM.Read(gparamData);
+
+                                    Entries[key] = gparam;
+                                }
+                                catch (Exception e)
+                                {
+                                    Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} as GPARAM for {Name} within GPARAMBND", e);
+                                    return false;
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} from VFS for {Name} within GPARAMBND", e);
+                                return false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Smithbox.LogError(this, $"[Graphics Param Editor] Failed to find {key.Path} from VFS");
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (TargetFS.FileExists(key.Path))
                     {
                         try
                         {
-                            var gparamData = binder.ReadFile(file);
+                            var gparamData = TargetFS.ReadFile(key.Path);
 
                             try
                             {
-                                var gparam = GPARAM.Read(gparamData);
+                                var gparam = GPARAM.Read(gparamData.Value);
 
                                 Entries[key] = gparam;
                             }
                             catch (Exception e)
                             {
-                                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} as GPARAM for {Name} within GPARAMBND", e);
+                                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} as GPARAM for {Name}.", e);
                                 return false;
                             }
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} from VFS for {Name} within GPARAMBND", e);
+                            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} from VFS for {Name}.", e);
                             return false;
                         }
                     }
-                }
-                else
-                {
-                    try
+                    else
                     {
-                        var gparamData = TargetFS.ReadFileOrThrow(key.Path);
-
-                        try
-                        {
-                            var gparam = GPARAM.Read(gparamData);
-
-                            Entries[key] = gparam;
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} as GPARAM for {Name}.", e);
-                            return false;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} from VFS for {Name}.", e);
+                        Smithbox.LogError(this, $"[Graphics Param Editor] Failed to find {key.Path} from VFS");
                         return false;
                     }
                 }
@@ -156,22 +172,29 @@ public class GparamBank : IDisposable
 
         if (fileEntry.Extension == "gparambnd")
         {
-            var bnd = TargetFS.ReadFileOrThrow(fileEntry.Path);
-
-            var binder = BND4.Read(bnd);
-
-            foreach (var entry in binder.Files)
+            if (TargetFS.FileExists(fileEntry.Path))
             {
-                var filename = Path.GetFileNameWithoutExtension(entry.Name);
+                var bnd = TargetFS.ReadFile(fileEntry.Path);
 
-                if (filename != fileEntry.Filename)
-                    continue;
+                var binder = BND4.Read(bnd.Value);
 
-                entry.Bytes = gparamEntry.Write();
+                foreach (var entry in binder.Files)
+                {
+                    var filename = Path.GetFileNameWithoutExtension(entry.Name);
 
-                var writeFile = binder.Write();
+                    if (filename != fileEntry.Filename)
+                        continue;
 
-                Project.VFS.ProjectFS.WriteFile(fileEntry.Path, writeFile);
+                    entry.Bytes = gparamEntry.Write();
+
+                    var writeFile = binder.Write();
+
+                    Project.VFS.ProjectFS.WriteFile(fileEntry.Path, writeFile);
+                }
+            }
+            else
+            {
+                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to find {fileEntry.Path} from VFS");
             }
         }
         else
