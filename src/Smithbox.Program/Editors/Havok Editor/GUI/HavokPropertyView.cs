@@ -82,7 +82,7 @@ public class HavokPropertyView
         {
             ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText($"No internal file has been selected.");
+            GUI.WrappedText(LOC.Get("HAVOK_PropertyView_No_Internal_File_Selected"));
 
             ImGui.EndChild();
         }
@@ -103,11 +103,11 @@ public class HavokPropertyView
             CFG.Current.HavokEditor_Properties_Display_Community_Names = !CFG.Current.HavokEditor_Properties_Display_Community_Names;
         }
 
-        var communityFieldNameMode = "Internal";
+        var communityFieldNameMode = LOC.Get("HAVOK_PropertyView_Field_Name_Toggle_Internal");
         if (CFG.Current.HavokEditor_Properties_Display_Community_Names)
-            communityFieldNameMode = "Community";
+            communityFieldNameMode = LOC.Get("HAVOK_PropertyView_Field_Name_Toggle_Community");
 
-        GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
+        GUI.Tooltip(LOC.Get("HAVOK_PropertyView_Field_Name_Toggle_TT", communityFieldNameMode));
 
         // Type Column
         ImGui.SameLine();
@@ -117,11 +117,11 @@ public class HavokPropertyView
             CFG.Current.HavokEditor_Properties_Display_Type_Column = !CFG.Current.HavokEditor_Properties_Display_Type_Column;
         }
 
-        var typeColumnVis = "Internal";
+        var typeColumnVis = LOC.Get("HAVOK_PropertyView_Type_Column_Toggle_Hide");
         if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
-            typeColumnVis = "Community";
+            typeColumnVis = LOC.Get("HAVOK_PropertyView_Field_Name_Toggle_Show");
 
-        GUI.Tooltip($"Toggle the visibilty of the field type column.\nCurrent Mode: {typeColumnVis}");
+        GUI.Tooltip(LOC.Get("HAVOK_PropertyView_Field_Name_Toggle_TT", typeColumnVis));
 
         // Raw Data Fields
         ImGui.SameLine();
@@ -131,11 +131,11 @@ public class HavokPropertyView
             CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields = !CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields;
         }
 
-        var rawDataVis = "Hide Mesh Data";
+        var rawDataVis = LOC.Get("HAVOK_PropertyView_Mesh_Data_Toggle_Hide");
         if (CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields)
-            rawDataVis = "Show Mesh Data";
+            rawDataVis = LOC.Get("HAVOK_PropertyView_Mesh_Data_Toggle_Show");
 
-        GUI.Tooltip($"Toggle the visibilty of fields tagged as 'mesh data'.\nCurrent Mode: {rawDataVis}");
+        GUI.Tooltip(LOC.Get("HAVOK_PropertyView_Mesh_Data_Toggle_TT", rawDataVis));
 
         // Auto-Open Tree
         ImGui.SameLine();
@@ -145,36 +145,16 @@ public class HavokPropertyView
             CFG.Current.HavokEditor_Properties_Auto_Open_Tree = !CFG.Current.HavokEditor_Properties_Auto_Open_Tree;
         }
 
-        var autoTreeMode = "Tree Nodes are opened automatically.";
+        var autoTreeMode = LOC.Get("HAVOK_PropertyView_TreeState_Open");
         if (CFG.Current.HavokEditor_Properties_Auto_Open_Tree)
-            autoTreeMode = "Tree Nodes require the user to open them.";
+            autoTreeMode = LOC.Get("HAVOK_PropertyView_TreeState_Closed");
 
-        GUI.Tooltip($"Toggle the opening behavior of tree nodes.\nCurrent Mode: {autoTreeMode}");
+        GUI.Tooltip(LOC.Get("HAVOK_PropertyView_TreeState_TT", autoTreeMode));
 
         // Special Property View Mode for Behavior
         if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
         {
-            ImGui.SameLine();
-
-            var previewName = LOC.Get(View.Selection.PropertyViewType.GetDisplayName());
-
-            ImGui.SetNextItemWidth(100f * DPI.UIScale());
-            if (ImGui.BeginCombo("##subEditorMode", previewName))
-            {
-                foreach (var entry in Enum.GetValues(typeof(HavokPropertyViewType)))
-                {
-                    var curType = (HavokPropertyViewType)entry;
-
-                    var displayName = LOC.Get(curType.GetDisplayName());
-
-                    if (ImGui.Selectable(displayName, curType == View.Selection.PropertyViewType))
-                    {
-                        View.Selection.PropertyViewType = curType;
-                    }
-                }
-
-                ImGui.EndCombo();
-            }
+            View.PropertyView.BehaviorView.DisplayBehaviorHeader();
         }
 
         ImGui.EndChild();
@@ -191,7 +171,7 @@ public class HavokPropertyView
         {
             ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText($"No source file has been selected.");
+            GUI.WrappedText(LOC.Get("HAVOK_PropertyView_No_Source_File_Selected"));
 
             ImGui.EndChild();
 
@@ -202,7 +182,7 @@ public class HavokPropertyView
         {
             ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText($"Bank does not contain a file entry with this path:\n{View.Selection.BinderFileEntry.Path}");
+            GUI.WrappedText(LOC.Get("HAVOK_PropertyView_Bank_Missing_File", View.Selection.BinderFileEntry.Path));
 
             ImGui.EndChild();
 
@@ -213,7 +193,7 @@ public class HavokPropertyView
         {
             ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText($"No internal file has been selected.");
+            GUI.WrappedText(LOC.Get("HAVOK_PropertyView_No_Internal_File_Selected"));
 
             ImGui.EndChild();
 
@@ -224,7 +204,7 @@ public class HavokPropertyView
         {
             ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText($"Binder does not contain a file with this path:\n{View.Selection.FilePath}");
+            GUI.WrappedText(LOC.Get("HAVOK_PropertyView_Binder_Missing_File", View.Selection.FilePath));
 
             ImGui.EndChild();
 
@@ -245,7 +225,7 @@ public class HavokPropertyView
             }
             else
             {
-                GUI.WrappedText($"File has not been loaded yet.");
+                GUI.WrappedText(LOC.Get("HAVOK_PropertyView_File_Not_Loaded"));
             }
 
             ImGui.EndChild();
@@ -275,7 +255,7 @@ public class HavokPropertyView
             {
                 ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
-                GUI.WrappedText($"File has not been loaded yet.");
+                GUI.WrappedText(LOC.Get("HAVOK_PropertyView_File_Not_Loaded"));
 
                 ImGui.EndChild();
             }
@@ -295,7 +275,7 @@ public class HavokPropertyView
         ImGui.Columns(columnCount);
 
         ImGui.AlignTextToFramePadding();
-        ImGui.Text("Object Type");
+        ImGui.Text(LOC.Get("HAVOK_PropertyView_Field"));
 
         ImGui.NextColumn();
 
@@ -655,17 +635,22 @@ public class HavokPropertyView
 
         if (ImGui.BeginPopup("HavokPropertiesContextMenu"))
         {
-            if (ImGui.Selectable(@"Copy Property Name##CopyPropName"))
+            // Copy Field Name
+            if (ImGui.Selectable($"{LOC.Get("HAVOK_PropertyView_Context_Action_Copy_Name")}##CopyPropName"))
             {
                 PlatformUtils.Instance.SetClipboardText(name);
             }
+            GUI.Tooltip(LOC.Get("HAVOK_PropertyView_Context_Action_Copy_Name_TT"));
 
-            if (ImGui.Selectable(@"Copy Property Description##CopyPropDesc"))
+            // Copy Field Description
+            if (ImGui.Selectable($"{LOC.Get("HAVOK_PropertyView_Context_Action_Copy_Description")}##CopyPropDesc"))
             {
                 PlatformUtils.Instance.SetClipboardText(description);
             }
+            GUI.Tooltip(LOC.Get("HAVOK_PropertyView_Context_Action_Copy_Description_TT"));
 
-            if (ImGui.Selectable(@"Copy Property Type##CopyPropType"))
+            // Copy Field Type
+            if (ImGui.Selectable($"{LOC.Get("HAVOK_PropertyView_Context_Action_Copy_Type")}##CopyPropType"))
             {
                 var reflectedType = prop.ReflectedType;
                 if (reflectedType != null)
@@ -673,6 +658,7 @@ public class HavokPropertyView
                     PlatformUtils.Instance.SetClipboardText(reflectedType.FullName);
                 }
             }
+            GUI.Tooltip(LOC.Get("HAVOK_PropertyView_Context_Action_Copy_Type_TT"));
 
             ImGui.EndPopup();
         }

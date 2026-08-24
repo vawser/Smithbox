@@ -64,11 +64,39 @@ public class HavokBehaviorView
         }
     }
 
+    public void DisplayBehaviorHeader()
+    {
+        // Display Type
+        ImGui.SameLine();
+
+        var previewName = LOC.Get(View.Selection.PropertyViewType.GetDisplayName());
+
+        ImGui.SetNextItemWidth(100f * DPI.UIScale());
+        if (ImGui.BeginCombo("##subEditorMode", previewName))
+        {
+            foreach (var entry in Enum.GetValues(typeof(HavokPropertyViewType)))
+            {
+                var curType = (HavokPropertyViewType)entry;
+
+                var displayName = LOC.Get(curType.GetDisplayName());
+
+                if (ImGui.Selectable(displayName, curType == View.Selection.PropertyViewType))
+                {
+                    View.Selection.PropertyViewType = curType;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("HAVOK_PropertyView_DisplayType_TT"));
+    }
+
     public void DisplayBehaviorTabs()
     {
         ImGui.BeginTabBar("behaviorTabs", ImGuiTabBarFlags.FittingPolicyResizeDown);
 
-        if (ImGui.BeginTabItem("Clip Generators"))
+        // Clip Generators
+        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Clip_Generators")}##tabClipGenerators"))
         {
             Selection.InClipGeneratorTab = true;
 
@@ -148,7 +176,7 @@ public class HavokBehaviorView
         }
         else
         {
-            GUI.WrappedText($"No entry selected yet.");
+            GUI.WrappedText(LOC.Get("HAVOK_BehaviorView_No_Entry_Selected"));
         }
     }
 

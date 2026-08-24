@@ -7,6 +7,22 @@
     {
       "Key": "HAVOK_BinderView_Header_TT",
       "Text": ""
+    },
+    {
+      "Key": "HAVOK_BinderView_No_Source_File_Selected",
+      "Text": "No source file has been selected yet."
+    },
+    {
+      "Key": "HAVOK_BinderView_BinderPath_Display_Short",
+      "Text": "Show Short Name"
+    },
+    {
+      "Key": "HAVOK_BinderView_BinderPath_Display_Full",
+      "Text": "Show Full Name"
+    },
+    {
+      "Key": "HAVOK_BinderView_BinderPath_Display_TT",
+      "Text": "Toggle the display name used in the binder list.\nCurrent Mode: {0}"
     }
   ]
 }

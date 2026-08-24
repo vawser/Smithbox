@@ -13,9 +13,6 @@
 # Map Editor
 - Check speed tree rendering
 
-- Havok Edit:
- - Add auto-update to name in group list if Name property is changed
- 
 # Havok Editor
 - Implement structured property view:
  - Tab bar with each of the supported top-level types

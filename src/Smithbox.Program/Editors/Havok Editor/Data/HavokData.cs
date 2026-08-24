@@ -4,6 +4,7 @@ using Octokit;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Reflection;
 using System.Text;
 
@@ -718,6 +719,10 @@ public class HavokData : IDisposable
             var generatedPasteFile = HavokBinderUtils.GetPasteFile(fileAction, sourceFile, lastFile, "hkx");
 
             binder.Files.Add(generatedPasteFile);
+
+            var logName = Path.GetFileNameWithoutExtension(generatedPasteFile.Name);
+
+            Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Paste_Log", logName, fileAction.BinderEntry.Filename));
         }
 
         if (!anyWritten)
@@ -794,6 +799,10 @@ public class HavokData : IDisposable
                 var generatedPasteFile = HavokBinderUtils.GetPasteFile(fileAction, sourceFile, lastFile, "hkx");
 
                 packedBinder.Files.Add(generatedPasteFile);
+
+                var logName = Path.GetFileNameWithoutExtension(generatedPasteFile.Name);
+
+                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Paste_Log", logName, fileAction.BinderEntry.Filename));
             }
 
             if (!anyWritten)
@@ -856,6 +865,10 @@ public class HavokData : IDisposable
             }
 
             binder.Files.Remove(sourceFile);
+
+            var logName = Path.GetFileNameWithoutExtension(sourceFile.Name);
+
+            Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Delete_Log", logName, fileAction.BinderEntry.Filename));
         }
 
         if (!anyWritten)
@@ -929,6 +942,10 @@ public class HavokData : IDisposable
                 }
 
                 packedBinder.Files.Remove(sourceFile);
+
+                var logName = Path.GetFileNameWithoutExtension(sourceFile.Name);
+
+                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Delete_Log", logName, fileAction.BinderEntry.Filename));
             }
 
             if (!anyWritten)
@@ -977,6 +994,10 @@ public class HavokData : IDisposable
                 continue;
 
             file.Name = HavokBinderUtils.ReplaceFileName(file.Name, fileAction.NewFilename);
+
+            var logName = Path.GetFileNameWithoutExtension(file.Name);
+
+            Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Rename_Log", name, logName));
 
             anyWritten = true;
         }
@@ -1039,6 +1060,10 @@ public class HavokData : IDisposable
 
                 file.Name = HavokBinderUtils.ReplaceFileName(file.Name, fileAction.NewFilename);
 
+                var logName = Path.GetFileNameWithoutExtension(file.Name);
+
+                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Rename_Log", name, logName));
+
                 anyWritten = true;
             }
 
@@ -1087,6 +1112,9 @@ public class HavokData : IDisposable
             var insertFile = HavokBinderUtils.GetInsertFile(fileAction, lastFile, filename, entry.FileData);
 
             binder.Files.Add(insertFile);
+
+            var logName = Path.GetFileNameWithoutExtension(insertFile.Name);
+            Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Insert_Log", logName, fileAction.BinderEntry.Path));
             anyWritten = true;
         }
 
@@ -1146,6 +1174,10 @@ public class HavokData : IDisposable
                 var insertFile = HavokBinderUtils.GetInsertFile(fileAction, lastFile, filename, entry.FileData);
 
                 packedBinder.Files.Add(insertFile);
+
+                var logName = Path.GetFileNameWithoutExtension(insertFile.Name);
+                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Insert_Log", logName, fileAction.BinderEntry.Path));
+
                 anyWritten = true;
             }
 
@@ -1216,6 +1248,8 @@ public class HavokData : IDisposable
                 var exportPath = Path.Join(Project.Descriptor.ProjectPath, $"{name}{extension}");
 
                 File.WriteAllBytes(exportPath, file.Bytes.ToArray());
+
+                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Export_Log", exportPath));
             }
         }
     }
@@ -1283,6 +1317,8 @@ public class HavokData : IDisposable
                     var exportPath = Path.Join(Project.Descriptor.ProjectPath, $"{name}{extension}");
 
                     File.WriteAllBytes(exportPath, file.Bytes.ToArray());
+
+                    Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Export_Log", exportPath));
                 }
             }
         }

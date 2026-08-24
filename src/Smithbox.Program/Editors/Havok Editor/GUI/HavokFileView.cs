@@ -81,7 +81,7 @@ public class HavokFileView
         {
             ImGui.BeginChild("havokFileSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText("No source file has been selected yet.");
+            GUI.WrappedText(LOC.Get("HAVOK_FileView_No_Source_File_Selected"));
 
             ImGui.EndChild();
         }
@@ -93,7 +93,7 @@ public class HavokFileView
         {
             ImGui.BeginChild("havokFileSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText("No source file has been selected yet.");
+            GUI.WrappedText(LOC.Get("HAVOK_FileView_No_Source_File_Selected"));
 
             ImGui.EndChild();
             return;
@@ -103,7 +103,7 @@ public class HavokFileView
         {
             ImGui.BeginChild("havokFileSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText($"Bank does not contain a source file with this path:\n{View.Selection.BinderFileEntry.Path}");
+            GUI.WrappedText(LOC.Get("HAVOK_FileView_Bank_Missing_Source_File", View.Selection.BinderFileEntry.Path));
 
             ImGui.EndChild();
 
@@ -198,11 +198,11 @@ public class HavokFileView
             CFG.Current.HavokEditor_FileList_Display_Full_Path = !CFG.Current.HavokEditor_FileList_Display_Full_Path;
         }
 
-        var fullPathVis = "Show Short Name";
+        var fullPathVis = LOC.Get("HAVOK_FileView_FilePath_Display_Short");
         if (CFG.Current.HavokEditor_FileList_Display_Full_Path)
-            fullPathVis = "Show Full Name";
+            fullPathVis = LOC.Get("HAVOK_FileView_FilePath_Display_Full");
 
-        GUI.Tooltip($"Toggle the display name used in the file list.\nCurrent Mode: {fullPathVis}");
+        GUI.Tooltip(LOC.Get("HAVOK_FileView_FilePath_Display_TT", fullPathVis));
 
         ImGui.EndChild();
     }
@@ -305,14 +305,14 @@ public class HavokFileView
         if (ImGui.BeginPopupContextItem($"Actions##HavokFileViewContextMenu_{filepath}"))
         {
             // Copy
-            if(ImGui.Selectable($"Copy##copyAction"))
+            if(ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Copy")}#copyAction"))
             {
                 CopyFile();
             }
-            GUI.Tooltip("Copy the current file selection to clipboard.");
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_Copy_TT", InputManager.GetHint(KeybindID.Copy)));
 
             // Paste
-            if (ImGui.Selectable($"Paste##pasteAction"))
+            if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Paste")}##pasteAction"))
             {
                 QueuedFileAction = new FileAction
                 {
@@ -325,10 +325,10 @@ public class HavokFileView
 
                 IsFileActionQueued = true;
             }
-            GUI.Tooltip("Paste the current clipboard contents as new files into the current binder.\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox.");
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_Paste_TT", InputManager.GetHint(KeybindID.Paste)));
 
             // Delete
-            if (ImGui.Selectable($"Delete##deleteAction"))
+            if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Delete")}##deleteAction"))
             {
                 QueuedFileAction = new FileAction
                 {
@@ -341,10 +341,10 @@ public class HavokFileView
 
                 IsFileActionQueued = true;
             }
-            GUI.Tooltip("Delete the current file selection from the current binder.\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox.");
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_Delete_TT", InputManager.GetHint(KeybindID.Delete)));
 
             // Rename
-            if (ImGui.BeginMenu($"Rename##renameMenuHeader"))
+            if (ImGui.BeginMenu($"{LOC.Get("HAVOK_FileView_ContextAction_Rename")}##renameMenuHeader"))
             {
                 ImGui.InputText("##renameInput", ref RenameFileInput, 255);
 
@@ -364,13 +364,14 @@ public class HavokFileView
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Rename the current file selection within the current binder.\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox.");
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_Rename_TT"));
 
             // Insert
-            if (ImGui.Selectable($"Insert##insertAction"))
+            if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Insert")}##insertAction"))
             {
                 if (PlatformUtils.Instance.OpenMultiFileDialog
-                    ("Select HKX Files", new[] { "hkx", "dcx" }, out var paths))
+                    (LOC.Get("HAVOK_FileView_ContextAction_Insert_Select_HKX_Files"), 
+                    new[] { "hkx", "dcx" }, out var paths))
                 {
                     var inserts = new List<NewFileInsert>();
 
@@ -398,10 +399,10 @@ public class HavokFileView
                     IsFileActionQueued = true;
                 }
             }
-            GUI.Tooltip("Insert the selected external HKX files into the current binder.\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox.");
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_Insert_TT"));
 
             // Export
-            if (ImGui.Selectable($"Export##exportAction"))
+            if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Export")}##exportAction"))
             {
                 QueuedFileAction = new FileAction
                 {
@@ -414,7 +415,7 @@ public class HavokFileView
 
                 IsFileActionQueued = true;
             }
-            GUI.Tooltip("Export the selected files into the project folder.");
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_Export_TT"));
 
             ImGui.EndPopup();
         }

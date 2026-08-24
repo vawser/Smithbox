@@ -72,7 +72,7 @@ public class HavokBinderView
         {
             ImGui.BeginChild("havokBinderSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText("No source file has been selected yet.");
+            GUI.WrappedText(LOC.Get("HAVOK_BinderView_No_Source_File_Selected"));
 
             ImGui.EndChild();
         }
@@ -126,11 +126,11 @@ public class HavokBinderView
             CFG.Current.HavokEditor_BinderList_Display_Full_Path = !CFG.Current.HavokEditor_BinderList_Display_Full_Path;
         }
 
-        var fullPathVis = "Show Short Name";
+        var fullPathVis = LOC.Get("HAVOK_BinderView_BinderPath_Display_Short");
         if (CFG.Current.HavokEditor_BinderList_Display_Full_Path)
-            fullPathVis = "Show Full Name";
+            fullPathVis = LOC.Get("HAVOK_BinderView_BinderPath_Display_Full");
 
-        GUI.Tooltip($"Toggle the display name used in the binder list.\nCurrent Mode: {fullPathVis}");
+        GUI.Tooltip(LOC.Get("HAVOK_BinderView_BinderPath_Display_TT", fullPathVis));
 
 
         ImGui.EndChild();
