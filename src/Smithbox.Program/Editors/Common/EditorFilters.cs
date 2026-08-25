@@ -22,13 +22,13 @@ public static class EditorFilters
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_{id}", searchHeight, ImGuiChildFlags.Borders);
 
-        DisplayListFilter(id, ref input, ref exactBool);
+        DisplaySearchbar(id, ref input, ref exactBool);
         ImGui.EndChild();
     }
 
     public static bool SearchMinimized = false;
 
-    public static void DisplayListFilter(string id, ref string input, ref bool exactBool)
+    public static void DisplaySearchbar(string id, ref string input, ref bool exactBool)
     {
         ImGui.Checkbox($"##{id}_listFilter_exactMatch", ref exactBool);
         GUI.Tooltip(

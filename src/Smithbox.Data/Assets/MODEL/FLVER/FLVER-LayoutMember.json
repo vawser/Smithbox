@@ -1,0 +1,35 @@
+{
+  "Type": "SoulsFormats.FLVER+LayoutMember",
+  "Fields": [
+      {
+          "Field": "Stream",
+          "Name": "Stream",
+          "Description": "The index of this member into the current layout.\n\nUsed to combine members into a single layout.\n\nPrimarily used in edge-compressed PS3 models due to positions needing to be separate."
+      },
+      {
+          "Field": "SpecialModifier",
+          "Name": "Special Modifier",
+          "Description": "Value of -32768 denotes this member isn't stored with the vertex buffer due to Speedtree."
+      },
+      {
+          "Field": "Type",
+          "Name": "Layout Type",
+          "Description": "Format used to store this member."
+      },
+      {
+          "Field": "Semantic",
+          "Name": "Layout Semantic",
+          "Description": "Vertex property being stored."
+      },
+      {
+          "Field": "Index",
+          "Name": "Index",
+          "Description": "For semantics that may appear more than once such as UVs, which one this member is."
+      },
+      {
+          "Field": "Size",
+          "Name": "Size",
+          "Description": "The size of this member's ValueType, in bytes."
+      }
+  ]
+}

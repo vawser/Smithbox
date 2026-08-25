@@ -36,7 +36,7 @@ public class MapContentTreeSearch
             mapName = AliasHelper.GetMapNameAlias(View.Project, map.Name);
         }
 
-        EditorFilters.DisplayListFilter("MapContentSearch", ref SearchInput, ref ExactMatch);
+        EditorFilters.DisplaySearchbar("MapContentSearch", ref SearchInput, ref ExactMatch);
         GUI.Tooltip($"Filter the content tree for {mapId}: {mapName}");
 
         ImGui.SameLine();

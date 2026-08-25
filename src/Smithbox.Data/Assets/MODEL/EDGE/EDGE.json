@@ -2,9 +2,14 @@
   "Type": "SoulsFormats.EDGE",
   "Fields": [
       {
-          "Field": "",
-          "Name": "",
+          "Field": "ID",
+          "Name": "ID",
           "Description": ""
+      },
+      {
+          "Field": "Edges",
+          "Name": "Edges",
+          "Description": "Edges defined in this file."
       }
   ]
 }

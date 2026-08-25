@@ -16,8 +16,13 @@ public class ModelField
 
     // Attributes
     public string ParamRef { get; set; } = "";
-    public string NodeRef { get; set; } = "";
-    public string MeshRef { get; set; } = "";
+
+    public bool DummyRef { get; set; } = false;
+    public bool NodeRef { get; set; } = false;
+    public bool MeshRef { get; set; } = false;
+    public bool MaterialRef { get; set; } = false;
+
+    public bool IsMeshData { get; set; } = false;
 }
 
 public static class ModelMetaHelper
@@ -66,5 +71,19 @@ public static class ModelMetaHelper
         }
 
         return description;
+    }
+
+    public static ModelField GetFieldMeta(ModelClass classMeta, string internalName)
+    {
+        if(classMeta == null)
+            return null;
+
+        var entry = classMeta.Fields.FirstOrDefault(f => f.Field == internalName);
+        if (entry != null)
+        {
+            return entry;
+        }
+
+        return null;
     }
 }

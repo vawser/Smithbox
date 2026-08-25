@@ -73,7 +73,7 @@ public class ModelContentsView : IActionEventHandler
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_modelEditor_ContentTree", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("modelEditor_ContentTree",
+        EditorFilters.DisplaySearchbar("modelEditor_ContentTree",
             ref ContentTreeFilter, ref ExactContentTreeFilter);
 
         var wrapper = View.Selection.SelectedModelWrapper;

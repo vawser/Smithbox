@@ -47,7 +47,7 @@ public class GparamFieldList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild("GparamFieldSearchSection", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("gparamEditor_FieldList",
+        EditorFilters.DisplaySearchbar("gparamEditor_FieldList",
             ref FieldListFilter, ref ExactFieldListFilter);
 
         ImGui.EndChild();

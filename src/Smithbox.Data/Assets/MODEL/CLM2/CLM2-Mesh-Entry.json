@@ -1,0 +1,15 @@
+{
+  "Type": "SoulsFormats.CLM2+Mesh+Entry",
+  "Fields": [
+      {
+          "Field": "Unk00",
+          "Name": "Unknown",
+          "Description": ""
+      },
+      {
+          "Field": "Unk02",
+          "Name": "Unknown",
+          "Description": ""
+      }
+  ]
+}

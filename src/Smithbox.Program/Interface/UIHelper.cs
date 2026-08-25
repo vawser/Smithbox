@@ -1,12 +1,7 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using Hexa.NET.DirectXTex;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Utilities;
-using System;
-using System.IO;
 using System.Numerics;
 using System.Text;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Application;
 public static class GUI
@@ -1165,6 +1160,32 @@ public static class GUI
         }
     }
 
+    public static void DisplayToggleButton(string key, string icon, ref bool cfgVar, string offLoc, string onLoc, string tooltipLoc)
+    {
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{icon}##{key}", DPI.IconButtonSize))
+        {
+            cfgVar = !cfgVar;
+        }
+
+        var toggleMode = LOC.Get(offLoc);
+        if (cfgVar)
+            toggleMode = LOC.Get(onLoc);
+
+        GUI.Tooltip(LOC.Get(tooltipLoc, toggleMode));
+    }
+
+    public static void DisplayHeader(string imguiKey)
+    {
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"{imguiKey}", searchHeight, ImGuiChildFlags.Borders);
+    }
+
+    public static void EndHeader()
+    {
+        ImGui.EndChild();
+    }
 }
 
 public class InputTextHandler

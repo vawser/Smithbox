@@ -2,8 +2,13 @@
   "Type": "SoulsFormats.CLM2",
   "Fields": [
       {
-          "Field": "",
-          "Name": "",
+          "Field": "Meshes",
+          "Name": "Meshes",
+          "Description": "Each of these corresponds to a mesh in the FLVER."
+      },
+      {
+          "Field": "Compression",
+          "Name": "Compression",
           "Description": ""
       }
   ]

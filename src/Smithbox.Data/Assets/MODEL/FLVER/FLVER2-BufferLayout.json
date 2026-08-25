@@ -1,0 +1,10 @@
+{
+  "Type": "SoulsFormats.FLVER2+BufferLayout",
+  "Fields": [
+      {
+          "Field": "Size",
+          "Name": "Size",
+          "Description": "The total size of all ValueTypes in this layout. Accounts for Speedtree members which do NOT add to this size."
+      }
+  ]
+}

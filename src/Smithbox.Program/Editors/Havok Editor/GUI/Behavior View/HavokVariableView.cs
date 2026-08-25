@@ -93,7 +93,7 @@ public class HavokVariableView
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedList_TabListHeader", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("havokBehaviorTabListSearch", ref Owner.PropFilter, ref Owner.ExactPropFilter);
+        EditorFilters.DisplaySearchbar("havokBehaviorTabListSearch", ref Owner.PropFilter, ref Owner.ExactPropFilter);
 
         ImGui.EndChild();
     }

@@ -1,0 +1,46 @@
+{
+  "Type": "SoulsFormats.EDGE+Edge",
+  "Fields": [
+      {
+          "Field": "V1",
+          "Name": "Start Point",
+          "Description": "The starting point of the edge."
+      },
+      {
+          "Field": "V2",
+          "Name": "End Point",
+          "Description": "The ending point of the edge."
+      },
+      {
+          "Field": "V3",
+          "Name": "Pull Point",
+          "Description": "Only for wires, the point you're actually pulled towards."
+      },
+      {
+          "Field": "Unk2C",
+          "Name": "Unknown",
+          "Description": "Only for wires, unknown, always 1."
+      },
+      {
+          "Field": "Unk30",
+          "Name": "Unknown",
+          "Description": ""
+      },
+      {
+          "Field": "Type",
+          "Name": "Type",
+          "Description": "What type of edge this is."
+      },
+      {
+          "Field": "VariationID",
+          "Name": "Variation ID",
+          "Description": "For wires, a relative ID in WireVariationParam; for walls, unknown.",
+          "ParamRef": "WireVariationParam"
+      },
+      {
+          "Field": "Unk36",
+          "Name": "Unknown",
+          "Description": ""
+      }
+  ]
+}

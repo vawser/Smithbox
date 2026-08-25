@@ -1,0 +1,15 @@
+{
+  "Type": "SoulsFormats.FLVER2+GXList",
+  "Fields": [
+      {
+          "Field": "TerminatorID",
+          "Name": "Terminator ID",
+          "Description": "Value indicating the terminating item; typically int.MaxValue, sometimes -1."
+      },
+      {
+          "Field": "TerminatorLength",
+          "Name": "Terminator Length",
+          "Description": "The length in bytes of the terminator data block; most likely not important, but varies in original files."
+      }
+  ]
+}

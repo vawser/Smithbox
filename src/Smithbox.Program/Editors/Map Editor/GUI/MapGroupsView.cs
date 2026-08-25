@@ -49,7 +49,7 @@ public class MapGroupsView
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_mapGroupsList", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("mapEditor_MapGroupsFilter",
+        EditorFilters.DisplaySearchbar("mapEditor_MapGroupsFilter",
             ref MapGroupsFilter, ref ExactMapGroupsFilter);
 
         // Name Auto Adjust

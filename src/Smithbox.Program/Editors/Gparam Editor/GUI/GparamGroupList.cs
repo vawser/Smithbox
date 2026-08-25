@@ -45,7 +45,7 @@ public class GparamGroupList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild("GparamGroupSearchSection", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("gparamEditor_GroupList",
+        EditorFilters.DisplaySearchbar("gparamEditor_GroupList",
             ref GroupListFilter, ref ExactGroupListFilter);
 
         ImGui.SameLine();

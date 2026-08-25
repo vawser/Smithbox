@@ -45,7 +45,7 @@ public class GparamFileList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild("GparamFileSearchSection", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("gparamEditor_FileList",
+        EditorFilters.DisplaySearchbar("gparamEditor_FileList",
             ref FileListFilter, ref ExactFileListFilter);
 
         ImGui.SameLine();

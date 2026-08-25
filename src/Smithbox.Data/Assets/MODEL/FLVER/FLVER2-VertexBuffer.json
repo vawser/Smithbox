@@ -1,0 +1,20 @@
+{
+  "Type": "SoulsFormats.FLVER2+VertexBuffer",
+  "Fields": [
+      {
+          "Field": "EdgeCompressed",
+          "Name": "Is Edge Compressed",
+          "Description": "Whether or not the buffer is edge compressed."
+      },
+      {
+          "Field": "BufferIndex",
+          "Name": "Buffer Index",
+          "Description": " The index of this buffer into the current vertex stream.\n\nUsed to combine buffers into a single vertex stream."
+      },
+      {
+          "Field": "LayoutIndex",
+          "Name": "Layout Index",
+          "Description": "Index to a layout in the FLVER's layout collection."
+      }
+  ]
+}

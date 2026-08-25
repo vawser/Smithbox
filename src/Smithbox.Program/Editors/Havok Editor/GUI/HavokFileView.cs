@@ -205,7 +205,7 @@ public class HavokFileView
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedList_HavokFileList", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("havokFileSearch", ref FileFilter, ref ExactFileFilter);
+        EditorFilters.DisplaySearchbar("havokFileSearch", ref FileFilter, ref ExactFileFilter);
 
         ImGui.SameLine();
 

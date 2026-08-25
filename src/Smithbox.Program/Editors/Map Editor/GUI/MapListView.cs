@@ -66,7 +66,7 @@ public class MapListView : IActionEventHandler
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_mapEditor_ListView", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("mapEditor_ListView", ref FileListFilter, ref ExactFileListFilter);
+        EditorFilters.DisplaySearchbar("mapEditor_ListView", ref FileListFilter, ref ExactFileListFilter);
         if(ImGui.IsItemDeactivatedAfterEdit())
         {
             _updateMapList = true;

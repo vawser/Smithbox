@@ -1,0 +1,35 @@
+{
+  "Type": "SoulsFormats.FLVER2+SkeletonSet+Bone",
+  "Fields": [
+      {
+          "Field": "ParentIndex",
+          "Name": "Parent Bone Index",
+          "Description": "Index of the parent bone, or -1 for none.",
+          "NodeRef": true
+      },
+      {
+          "Field": "FirstChildIndex",
+          "Name": "First Child Bone Index",
+          "Description": "Index of the bone's first child, or -1 for none.",
+          "NodeRef": true
+      },
+      {
+          "Field": "NextSiblingIndex",
+          "Name": "Next Sibling Bone Index",
+          "Description": "Index of the bone's sibling, or -1 for none.",
+          "NodeRef": true
+      },
+      {
+          "Field": "PreviousSiblingIndex",
+          "Name": "Previous Sibling Bone Index",
+          "Description": "Index of the bone's sibling, or -1 for none.",
+          "NodeRef": true
+      },
+      {
+          "Field": "NodeIndex",
+          "Name": "Bone Index",
+          "Description": "Index of the node in the FLVER2.Nodes list",
+          "NodeRef": true
+      }
+  ]
+}

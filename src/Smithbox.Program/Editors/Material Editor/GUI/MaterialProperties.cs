@@ -65,7 +65,7 @@ public class MaterialProperties
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild("MaterialPropertySectionHeader", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("materialEditor_PropertyList",
+        EditorFilters.DisplaySearchbar("materialEditor_PropertyList",
             ref PropertyListFilter, ref ExactPropertyListFilter);
 
         // Toggle Community Field Names

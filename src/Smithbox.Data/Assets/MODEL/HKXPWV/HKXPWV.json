@@ -2,9 +2,19 @@
   "Type": "SoulsFormats.HKXPWV",
   "Fields": [
       {
-          "Field": "",
-          "Name": "",
-          "Description": ""
+          "Field": "BoneMapEntries",
+          "Name": "Bone Map Entries",
+          "Description": "List of items which affect bone map entries in the HKX."
+      },
+      {
+          "Field": "AnimBoneEntries",
+          "Name": "Anim Bone Entries",
+          "Description": "List of items which affect bones in the animation skeleton."
+      },
+      {
+          "Field": "RagdollBoneEntries",
+          "Name": "Ragdoll Bone Entries",
+          "Description": "List of items which affect ragdoll bones."
       }
   ]
 }

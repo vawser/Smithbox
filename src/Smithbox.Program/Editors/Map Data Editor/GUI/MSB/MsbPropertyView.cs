@@ -48,7 +48,7 @@ public class MsbPropertyView
 
         ImGui.BeginChild($"framedList_MsbEntryProperties", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("MsbEntryPropSearch", ref PropertyListFilter, ref ExactPropertyListFilter);
+        EditorFilters.DisplaySearchbar("MsbEntryPropSearch", ref PropertyListFilter, ref ExactPropertyListFilter);
 
         DisplayHeaderToggles();
 

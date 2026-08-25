@@ -47,7 +47,7 @@ public class EntityIdentifierTool
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_EntityIdTool", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("EntityIdTool", ref EntityIdSearch, ref ExactEntityIdSearch);
+        EditorFilters.DisplaySearchbar("EntityIdTool", ref EntityIdSearch, ref ExactEntityIdSearch);
 
         ImGui.SameLine();
 

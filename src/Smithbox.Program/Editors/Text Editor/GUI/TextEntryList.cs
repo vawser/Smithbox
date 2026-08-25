@@ -65,7 +65,7 @@ public class TextEntryList
             ImGui.SetKeyboardFocusHere();
         }
 
-        EditorFilters.DisplayListFilter("textEditor_EntryList",
+        EditorFilters.DisplaySearchbar("textEditor_EntryList",
             ref EntryListFilter, ref ExactEntryListFilter);
 
         // Focus after clearing

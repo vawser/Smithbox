@@ -1,0 +1,20 @@
+{
+  "Type": "SoulsFormats.FLVER2+Mesh+BoundingBoxes",
+  "Fields": [
+      {
+          "Field": "Min",
+          "Name": "Minimum Extent",
+          "Description": "Minimum extent of the mesh."
+      },
+      {
+          "Field": "Max",
+          "Name": "Maximum Extent",
+          "Description": "Maximum extent of the mesh."
+      },
+      {
+          "Field": "Unk",
+          "Name": "Unknown",
+          "Description": "Unknown; only present in Sekiro."
+      }
+  ]
+}

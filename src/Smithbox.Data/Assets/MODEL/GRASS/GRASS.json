@@ -2,9 +2,22 @@
   "Type": "SoulsFormats.GRASS",
   "Fields": [
       {
-          "Field": "",
-          "Name": "",
-          "Description": ""
+          "Field": "BoundingVolumeHierarchy",
+          "Name": "Bounding Volume Hierarchy",
+          "Description": "A recursive subdivision of space for efficient culling or collision testing.",
+          "IsMeshData": true
+      },
+      {
+          "Field": "Vertices",
+          "Name": "Vertices",
+          "Description": "Points making up the grass mesh.",
+          "IsMeshData": true
+      },
+      {
+          "Field": "Faces",
+          "Name": "Faces",
+          "Description": "Triangular patches of grass.",
+          "IsMeshData": true
       }
   ]
 }

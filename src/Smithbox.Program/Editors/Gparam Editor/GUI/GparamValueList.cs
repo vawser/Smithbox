@@ -43,7 +43,7 @@ public class GparamValueList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild("GparamFieldSearchSection", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("gparamEditor_ValueList",
+        EditorFilters.DisplaySearchbar("gparamEditor_ValueList",
             ref ValueListFilter, ref ExactValueListFilter);
 
         // Time of Day Toggle

@@ -13,6 +13,42 @@
       "Text": "Toggle field name display type between Internal and Community.\nCurrent Mode: {0}"
     },
     {
+      "Key": "MODEL_Properties_Toggle_Type_Col_Hide",
+      "Text": "Hide Type Column"
+    },
+    {
+      "Key": "MODEL_Properties_Toggle_Type_Col_Show",
+      "Text": "Show Type Column"
+    },
+    {
+      "Key": "MODEL_PropertyView_TreeState_Open",
+      "Text": "Tree Nodes are opened automatically."
+    },
+    {
+      "Key": "MODEL_PropertyView_TreeState_Closed",
+      "Text": "Tree Nodes require the user to open them."
+    },
+    {
+      "Key": "MODEL_PropertyView_TreeState_TT",
+      "Text": "Toggle the opening behavior of tree nodes.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "MODEL_Properties_Toggle_Type_Col_TT",
+      "Text": "Toggle the display of the Type column.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "MODEL_PropertyView_Mesh_Data_Toggle_Hide",
+      "Text": "Hide Mesh Fields"
+    },
+    {
+      "Key": "MODEL_PropertyView_Mesh_Data_Toggle_Show",
+      "Text": "Show Mesh Fields"
+    },
+    {
+      "Key": "MODEL_PropertyView_Mesh_Data_Toggle_TT",
+      "Text": "Toggle the visibilty of fields tagged as 'mesh data'.\nCurrent Mode: {0}"
+    },
+    {
       "Key": "MODEL_Properties_Multi_Edit",
       "Text": "Editing Multiple Objects.\nChanges will be applied to all selected objects."
     },
@@ -57,20 +93,28 @@
       "Text": "Dummy {0}: {1}"
     },
     {
-      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Name",
-      "Text": "Copy Property Name"
+      "Key": "MODEL_PropertyView_Context_Action_Copy_Name",
+      "Text": "Copy Field Name"
     },
     {
-      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Name_TT",
-      "Text": "Copy the name of this property to the clipboard."
+      "Key": "MODEL_PropertyView_Context_Action_Copy_Name_TT",
+      "Text": "Copy the name of this field to the clipboard."
     },
     {
-      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Type",
-      "Text": "Copy Property Type"
+      "Key": "MODEL_PropertyView_Context_Action_Copy_Description",
+      "Text": "Copy Field Description"
     },
     {
-      "Key": "MODEL_Properties_Context_Action_Copy_Prop_Type_TT",
-      "Text": "Copy the type name of this property to the clipboard."
+      "Key": "MODEL_PropertyView_Context_Action_Copy_Description_TT",
+      "Text": "Copy the description of this field to the clipboard."
+    },
+    {
+      "Key": "MODEL_PropertyView_Context_Action_Copy_Type",
+      "Text": "Copy Field Type"
+    },
+    {
+      "Key": "MODEL_PropertyView_Context_Action_Copy_Type_TT",
+      "Text": "Copy the type of this field to the clipboard."
     }
   ]
 }

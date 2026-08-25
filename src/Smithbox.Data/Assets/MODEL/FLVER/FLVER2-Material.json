@@ -1,0 +1,30 @@
+{
+  "Type": "SoulsFormats.FLVER2+Material",
+  "Fields": [
+      {
+          "Field": "Name",
+          "Name": "Name",
+          "Description": "Identifies the mesh that uses this material, may include keywords that determine hideable parts."
+      },
+      {
+          "Field": "MTD",
+          "Name": "Material",
+          "Description": "Virtual path to an MTD file or a Matxml file in games since ER."
+      },
+      {
+          "Field": "Textures",
+          "Name": "Textures",
+          "Description": "Textures used by this material."
+      },
+      {
+          "Field": "GXIndex",
+          "Name": "GX Index",
+          "Description": "Index to the flver's list of GX lists."
+      },
+      {
+          "Field": "Index",
+          "Name": "Index",
+          "Description": "Index of the material in the material list. Used since Sekiro during cutscenes."
+      }
+  ]
+}

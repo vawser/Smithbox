@@ -77,7 +77,7 @@ public class HavokBehaviorView
         }
     }
 
-    public void DisplayBehaviorHeader(bool minimized = false)
+    public void DisplayHeader(bool minimized = false)
     {
         var previewName = LOC.Get(View.Selection.PropertyViewType.GetDisplayName());
 

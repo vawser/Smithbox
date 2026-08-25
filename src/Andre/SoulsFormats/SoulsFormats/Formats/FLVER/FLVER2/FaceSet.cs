@@ -73,14 +73,11 @@ namespace SoulsFormats
             /// Indices to vertices in a mesh.
             /// </summary>
 
-            [IgnoreInModelEditor]
             public List<int> Indices { get; set; }
 
             /// <summary>
             /// Edge compression information useful for edge compressed vertex buffers.
             /// </summary>
-            
-            [IgnoreInModelEditor]
             internal List<EdgeIndexGroup> EdgeIndexGroups { get; set; }
 
             /// <summary>

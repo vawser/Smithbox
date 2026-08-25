@@ -35,7 +35,7 @@ public class MsbEditor
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_msbEditor_FileList", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("msbEditor_FileList",
+        EditorFilters.DisplaySearchbar("msbEditor_FileList",
             ref FileListFilter, ref ExactFileListFilter);
 
         ImGui.SameLine();

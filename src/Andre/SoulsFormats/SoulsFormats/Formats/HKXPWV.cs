@@ -34,17 +34,17 @@ namespace SoulsFormats
         /// <summary>
         /// Whether the file is big endian.
         /// </summary>
-        public bool BigEndian { get; set; }
+        private bool BigEndian { get; set; }
 
         /// <summary>
         /// Which game this file is for.
         /// </summary>
-        public GameType Game { get; set; }
+        private GameType Game { get; set; }
 
         /// <summary>
         /// Unknown in header. Can be 0, 1, 2, or 5. Is 0 typically.
         /// </summary>
-        public uint UnkC { get; set; }
+        private uint UnkC { get; set; }
 
         /// <summary>
         /// List of items which affect bone map entries in the HKX.

@@ -117,7 +117,7 @@ public class HavokBinderView
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedList_HavokBinderList", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("havokBinderSearch", ref BinderFilter, ref ExactBinderFilter);
+        EditorFilters.DisplaySearchbar("havokBinderSearch", ref BinderFilter, ref ExactBinderFilter);
 
         ImGui.SameLine();
 

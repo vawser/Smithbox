@@ -38,7 +38,7 @@ public class TextContainerList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"textEditor_ContainerList_Header", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("textEditor_ContainerList",
+        EditorFilters.DisplaySearchbar("textEditor_ContainerList",
             ref ContainerListFilter, ref ExactContainerListFilter);
 
         // Toggle Primary Display Only

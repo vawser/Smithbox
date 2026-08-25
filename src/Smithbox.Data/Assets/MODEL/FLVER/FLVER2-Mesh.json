@@ -1,0 +1,51 @@
+{
+  "Type": "SoulsFormats.FLVER2+Mesh",
+  "Fields": [
+      {
+          "Field": "UseBoneWeights",
+          "Name": "Enable Bone Weights",
+          "Description": "Determines how the mesh is skinned. If it is true the mesh is assumed to be in bind pose and is skinned using the FLVER.Vertex.BoneIndices and FLVER.Vertex.BoneWeights of the vertices.\n\nIf it is false each FLVER.Vertex specifies a single node to bind to using its FLVER.Vertex.NormalW.\n\nThe mesh is assumed to not be in bind pose and the transform of the bound node is applied to each vertex."
+      },
+      {
+          "Field": "Dynamic",
+          "Name": "Dynamic",
+          "Description": "Indicates whether the mesh is already in bind pose or not, among other things (probably)."
+      },
+      {
+          "Field": "MaterialIndex",
+          "Name": "Material Index",
+          "Description": "Index in the flver's material list to apply to this mesh.",
+          "MaterialRef": true
+      },
+      {
+          "Field": "NodeIndex",
+          "Name": "Node Index",
+          "Description": "Index of the node representing this mesh in the nodes list.",
+          "NodeRef": true
+      },
+      {
+          "Field": "BoneIndices",
+          "Name": "Bone Indices",
+          "Description": "Indexes of bones in the bone collection which may be used by vertices in this mesh.",
+          "IsMeshData": true
+      },
+      {
+          "Field": "FaceSets",
+          "Name": "Face Sets",
+          "Description": "Triangles in this mesh.",
+          "IsMeshData": true
+      },
+      {
+          "Field": "VertexBuffers",
+          "Name": "Vertex Buffers",
+          "Description": "Vertex buffers in this mesh.",
+          "IsMeshData": true
+      },
+      {
+          "Field": "Vertices",
+          "Name": "Vertices",
+          "Description": "Points making up the mesh's shape.",
+          "IsMeshData": true
+      }
+  ]
+}

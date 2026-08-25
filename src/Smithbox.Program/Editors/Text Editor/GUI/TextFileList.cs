@@ -36,7 +36,7 @@ public class TextFileList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"textEditor_FileList_Header", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("textEditor_FmgList",
+        EditorFilters.DisplaySearchbar("textEditor_FmgList",
             ref FmgListFilter, ref ExactFmgListFilter);
 
         // Toggle Display Mode

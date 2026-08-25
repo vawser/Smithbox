@@ -1,0 +1,25 @@
+{
+  "Type": "SoulsFormats.GRASS+Face",
+  "Fields": [
+      {
+          "Field": "VertexIndexA",
+          "Name": "Vertex Index: A",
+          "Description": "Index of the first vertex in the triangle."
+      },
+      {
+          "Field": "VertexIndexB",
+          "Name": "Vertex Index: B",
+          "Description": "Index of the second vertex in the triangle."
+      },
+      {
+          "Field": "VertexIndexC",
+          "Name": "Vertex Index: C",
+          "Description": "Index of the third vertex in the triangle."
+      },
+      {
+          "Field": "Normal",
+          "Name": "Normal",
+          "Description": "Normal of the triangle."
+      }
+  ]
+}

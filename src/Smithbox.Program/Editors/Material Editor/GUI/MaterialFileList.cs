@@ -47,7 +47,7 @@ public class MaterialFileList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild("MaterialFileListHeaderSection", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("materialEditor_FileList",
+        EditorFilters.DisplaySearchbar("materialEditor_FileList",
             ref FileListFilter, ref ExactFileListFilter);
 
         // Display Path

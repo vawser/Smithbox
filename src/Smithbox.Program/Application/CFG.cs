@@ -525,7 +525,12 @@ public class CFG
     public bool ModelEditor_ExactSearch = false;
 
     public bool ModelEditor_Properties_Enable_Commmunity_Names = true;
-    public bool ModelEditor_Properties_Enable_Commmunity_Descriptions = true;
+    public bool ModelEditor_Properties_Enable_Type_Column = false;
+    public bool ModelEditor_Properties_Auto_Open_Tree = true;
+    public bool ModelEditor_Properties_Enable_Mesh_Fields = true;
+
+
+
     public bool ModelEditor_DisplayDmyPolyReferenceID = true;
     public bool ModelEditor_DisplayMatNameOnMesh = true;
 

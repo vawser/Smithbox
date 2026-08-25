@@ -52,7 +52,7 @@ public class MsbCategoryView
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_BaseCategoryFilter", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("BaseCategoryFilter", ref BaseCategoryListFilter, ref ExactBaseCategoryListFilter);
+        EditorFilters.DisplaySearchbar("BaseCategoryFilter", ref BaseCategoryListFilter, ref ExactBaseCategoryListFilter);
 
         // Toggle Empty Display
         ImGui.SameLine();
@@ -157,7 +157,7 @@ public class MsbCategoryView
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_SubCategoryFilter", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("SubCategoryFilter", ref SubCategoryListFilter, ref ExactSubCategoryListFilter);
+        EditorFilters.DisplaySearchbar("SubCategoryFilter", ref SubCategoryListFilter, ref ExactSubCategoryListFilter);
 
         // Toggle Empty Display
         ImGui.SameLine();

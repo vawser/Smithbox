@@ -1,0 +1,10 @@
+{
+  "Type": "SoulsFormats.CLM2+Mesh",
+  "Fields": [
+      {
+          "Field": "Entries",
+          "Name": "Entries",
+          "Description": ""
+      }
+  ]
+}

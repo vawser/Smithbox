@@ -125,7 +125,7 @@ public class ModelContainerList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_modelEditor_SourceList", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("modelEditor_SourceList", ref ContainerListFilter, ref ExactContainerListFilter);
+        EditorFilters.DisplaySearchbar("modelEditor_SourceList", ref ContainerListFilter, ref ExactContainerListFilter);
 
         bool filterChanged = ImGui.IsItemDeactivatedAfterEdit();
         bool tabChanged = _previousTab != CurrentTab;

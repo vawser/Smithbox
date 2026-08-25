@@ -1,0 +1,15 @@
+{
+  "Type": "SoulsFormats.GRASS+BoundingBox",
+  "Fields": [
+      {
+          "Field": "Min",
+          "Name": "Minimum Extent",
+          "Description": "Minimum extent of the mesh."
+      },
+      {
+          "Field": "Max",
+          "Name": "Maximum Extent",
+          "Description": "Maximum extent of the mesh."
+      }
+  ]
+}

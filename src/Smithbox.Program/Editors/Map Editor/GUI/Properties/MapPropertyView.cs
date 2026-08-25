@@ -92,7 +92,7 @@ public class MapPropertyView
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedList_MapProperties", searchHeight, ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplayListFilter("MapPropSearch", ref MapPropFilter, ref ExactMapPropFilter);
+        EditorFilters.DisplaySearchbar("MapPropSearch", ref MapPropFilter, ref ExactMapPropFilter);
 
         // Toggle Community Field Names
         ImGui.SameLine();

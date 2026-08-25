@@ -1,0 +1,35 @@
+{
+  "Type": "SoulsFormats.GRASS+Volume",
+  "Fields": [
+      {
+          "Field": "StartChildIndex",
+          "Name": "Start Child Index",
+          "Description": "Index of first child volume."
+      },
+      {
+          "Field": "EndChildIndex",
+          "Name": "End Child Index",
+          "Description": "Index of last child volume, exclusive."
+      },
+      {
+          "Field": "StartFaceIndex",
+          "Name": "Start Face Index",
+          "Description": "Index of first contained face."
+      },
+      {
+          "Field": "EndFaceIndex",
+          "Name": "End Face Index",
+          "Description": "Index of last contained face, exclusive."
+      },
+      {
+          "Field": "Unk10",
+          "Name": "Unknown",
+          "Description": ""
+      },
+      {
+          "Field": "BoundingBox",
+          "Name": "Bounding Box",
+          "Description": "Space contained within the volume."
+      }
+  ]
+}
