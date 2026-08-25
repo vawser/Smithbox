@@ -89,6 +89,18 @@
       "Text": "Failed to find GI file: {0}"
     },
     {
+      "Key": "MAP_Data_Failed_Find_MAPBND",
+      "Text": "Failed to find MAPBND file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_MAPBND",
+      "Text": "Failed to read MAPBND file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Failed_Write_MAPBND",
+      "Text": "Failed to write MAPBND file: {0}"
+    },
+    {
       "Key": "MAP_Data_Failed_Read_GI",
       "Text": "Failed to read GI file: {0}"
     },

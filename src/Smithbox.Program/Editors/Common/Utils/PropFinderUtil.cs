@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace StudioCore.Editors.Common;
@@ -13,6 +15,20 @@ public static class PropFinderUtil
     private record PropData(PropertyInfo PropInfo, object Obj);
 
     private record FieldData(FieldInfo PropInfo, object Obj);
+
+    /// <summary>
+    ///     If the given type is List&lt;T&gt; (or a type derived from it), returns T. Otherwise returns null.
+    /// </summary>
+    private static Type GetListElementType(Type type)
+    {
+        if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>))
+            return type.GetGenericArguments()[0];
+
+        if (type.BaseType != null && type.BaseType.IsGenericType && type.BaseType.GetGenericTypeDefinition() == typeof(List<>))
+            return type.BaseType.GetGenericArguments()[0];
+
+        return null;
+    }
 
     /// <summary>
     ///     Search an object's properties and return a PropData containing the targeted property's information.
@@ -42,7 +58,48 @@ public static class PropFinderUtil
                     return new PropData(p, obj);
             }
 
-            if (p.PropertyType.IsNested)
+            Type listElemType = GetListElementType(p.PropertyType);
+            if (listElemType != null)
+            {
+                var list = p.GetValue(obj) as IList;
+                if (list == null) continue;
+
+                var containerResult = GetPropData(prop, list, arrayIndex, classIndex, onlyCheckPropName);
+                if (containerResult != null)
+                    return containerResult;
+
+                if (listElemType.IsNested)
+                {
+                    if (arrayIndex != -1)
+                    {
+                        if (arrayIndex < list.Count)
+                        {
+                            var retObj = GetPropData(prop, list[arrayIndex], arrayIndex, classIndex);
+                            if (retObj != null)
+                                return retObj;
+                        }
+                    }
+                    else if (classIndex != -1)
+                    {
+                        if (classIndex < list.Count)
+                        {
+                            var retObj = GetPropData(prop, list[classIndex], arrayIndex, classIndex);
+                            if (retObj != null)
+                                return retObj;
+                        }
+                    }
+                    else
+                    {
+                        foreach (var listObj in list)
+                        {
+                            var retObj = GetPropData(prop, listObj, arrayIndex, classIndex);
+                            if (retObj != null)
+                                return retObj;
+                        }
+                    }
+                }
+            }
+            else if (p.PropertyType.IsNested)
             {
                 var check = p.GetValue(obj);
                 if (check == null) continue;
@@ -105,7 +162,48 @@ public static class PropFinderUtil
                     return new FieldData(p, obj);
             }
 
-            if (p.FieldType.IsNested)
+            Type listElemType = GetListElementType(p.FieldType);
+            if (listElemType != null)
+            {
+                var list = p.GetValue(obj) as IList;
+                if (list == null) continue;
+
+                var containerResult = GetPropData(prop, list, arrayIndex, classIndex, onlyCheckPropName);
+                if (containerResult != null)
+                    return containerResult;
+
+                if (listElemType.IsNested)
+                {
+                    if (arrayIndex != -1)
+                    {
+                        if (arrayIndex < list.Count)
+                        {
+                            var retObj = GetPropData(prop, list[arrayIndex], arrayIndex, classIndex);
+                            if (retObj != null)
+                                return retObj;
+                        }
+                    }
+                    else if (classIndex != -1)
+                    {
+                        if (classIndex < list.Count)
+                        {
+                            var retObj = GetPropData(prop, list[classIndex], arrayIndex, classIndex);
+                            if (retObj != null)
+                                return retObj;
+                        }
+                    }
+                    else
+                    {
+                        foreach (var listObj in list)
+                        {
+                            var retObj = GetPropData(prop, listObj, arrayIndex, classIndex);
+                            if (retObj != null)
+                                return retObj;
+                        }
+                    }
+                }
+            }
+            else if (p.FieldType.IsNested)
             {
                 var check = p.GetValue(obj);
                 if (check == null) continue;
@@ -169,7 +267,40 @@ public static class PropFinderUtil
             if (p.GetIndexParameters().Length > 0)
                 continue;
 
-            if (p.PropertyType.IsNested)
+            var listElemType = GetListElementType(p.PropertyType);
+            if (listElemType != null)
+            {
+                var list = p.GetValue(obj) as IList;
+                if (list == null) continue;
+
+                // Properties declared directly on the list container itself (e.g. MemberList.Unk00).
+                var containerPp = FindProperty(prop, list, classIndex);
+                if (containerPp != null)
+                    return containerPp;
+
+                if (listElemType.IsNested)
+                {
+                    if (classIndex != -1)
+                    {
+                        if (classIndex < list.Count)
+                        {
+                            var pp = FindProperty(prop, list[classIndex], classIndex);
+                            if (pp != null)
+                                return pp;
+                        }
+                    }
+                    else
+                    {
+                        foreach (var listObj in list)
+                        {
+                            var pp = FindProperty(prop, listObj, classIndex);
+                            if (pp != null)
+                                return pp;
+                        }
+                    }
+                }
+            }
+            else if (p.PropertyType.IsNested)
             {
                 var pp = FindProperty(prop, p.GetValue(obj), classIndex);
                 if (pp != null)

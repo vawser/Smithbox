@@ -33,10 +33,11 @@ public class AssetConfigurationBank
 
         var fs = View.Project.Handler.MapData.PrimaryBank.TargetFS;
 
-        foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
+        // ACB in mapbhd (the gibhd one isn't used by the game)
+        foreach (var entry in Project.Locator.MapPieceFiles.Entries)
         {
             var bhdPath = entry.Path;
-            var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
+            var bdtPath = $"{bhdPath}".Replace(".mapbhd", ".mapbdt");
 
             if (fs.FileExists(bhdPath) && fs.FileExists(bhdPath))
             {
@@ -64,12 +65,12 @@ public class AssetConfigurationBank
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_GI", bhdPath), e);
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MAPBND", bhdPath), e);
                 }
             }
             else
             {
-                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_GI_File", bhdPath));
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MAPBND", bhdPath));
             }
         }
     }
@@ -107,7 +108,7 @@ public class AssetConfigurationBank
 
         if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
+            foreach (var entry in Project.Locator.MapPieceFiles.Entries)
             {
                 var worldBlock = map.Name.Substring(1);
 
@@ -115,7 +116,7 @@ public class AssetConfigurationBank
                     continue;
 
                 var bhdPath = entry.Path;
-                var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
+                var bdtPath = $"{bhdPath}".Replace(".mapbhd", ".mapbdt");
 
                 if (fs.FileExists(bdtPath) && fs.FileExists(bhdPath))
                 {
@@ -173,12 +174,12 @@ public class AssetConfigurationBank
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_GI", bhdPath), e);
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_MAPBND", bhdPath), e);
                     }
                 }
                 else
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_GI_File", bhdPath));
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_MAPBND", bhdPath));
                 }
             }
         }
