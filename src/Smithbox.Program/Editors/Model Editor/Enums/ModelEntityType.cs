@@ -13,5 +13,10 @@ public enum ModelEntityType
     BufferLayout,
     Skeleton,
 
-    Collision
+    Collision,
+
+    CLM2,
+    HKXPWV,
+    EDGE,
+    GRASS
 }

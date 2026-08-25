@@ -289,6 +289,9 @@ public class ModelContainerList
 
     private void LoadModel(ModelContainerWrapper entry)
     {
+        if (entry == null)
+            return;
+
         // Populates the Files list so we can display the list in select view
         entry.PopulateModelList();
 

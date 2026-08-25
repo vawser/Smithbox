@@ -103,19 +103,6 @@
 #-------------
 # Havok Editor
 #-------------
-- Implement tabbed property view:
-    - Support:
-        - State Machines: hkbStateMachine
-        - Animation Clips: hkbClipGenerator
-        - Animation Selectors: CustomManualSelectorGenerator
-        - Variables: (wrapper for the various variable types)
-        
-    - In list, allow entry manipulation:
-        - Copy
-        - Paste
-        - Delete
-        - Insert
-  
 - Add cross-binder support to the file list Copy action
 
 #-------------

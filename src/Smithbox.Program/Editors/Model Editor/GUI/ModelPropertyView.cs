@@ -149,11 +149,14 @@ public class ModelPropertyView
         int classIndex = -1
     )
     {
+
         var scale = DPI.UIScale();
         Entity firstEnt = entSelection.First();
         Type type = obj.GetType();
 
-        PropertyInfo[] properties = View.ModelPropertyCache.GetCachedProperties(type);
+        PropertyInfo[] properties = View.ModelPropertyCache.GetCachedProperties(type)
+            .Where(p => p.GetIndexParameters().Length == 0)
+            .ToArray();
 
         // Properties
         var id = 0;

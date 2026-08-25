@@ -10,12 +10,15 @@
   Map Data Editor
   Map Editor
 
+# Model Editor
+- Add additional file support (like Map Editor)
+ - CLM2
+ - EDGE
+ - GRASS
+ - HKXPWV
+
 # Havok Editor
 - Add 'Generate' tool for collisions:
  - Generates basic shapes such as planes (square, circle) and boxes
   - Toggle face orientation
   
-- Update property editor with new functionality:
- - Material Editor
- - Map Data Editor
- 

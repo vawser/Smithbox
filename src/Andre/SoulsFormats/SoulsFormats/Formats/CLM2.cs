@@ -81,8 +81,10 @@ namespace SoulsFormats
         /// <summary>
         /// A list of entries that control something or other in a corresponding FLVER mesh.
         /// </summary>
-        public class Mesh : List<Mesh.Entry>
+        public class Mesh
         {
+            public List<Entry> Entries = new();
+
             internal Mesh(BinaryReaderEx br) : base()
             {
                 br.AssertInt32(0);
@@ -93,7 +95,7 @@ namespace SoulsFormats
                 br.StepIn(entriesOffset);
                 {
                     for (int i = 0; i < entryCount; i++)
-                        Add(new Entry(br));
+                        Entries.Add(new Entry(br));
                 }
                 br.StepOut();
             }
@@ -101,21 +103,21 @@ namespace SoulsFormats
             internal void WriteHeader(BinaryWriterEx bw, int index)
             {
                 bw.WriteInt32(0);
-                bw.WriteInt32(Count);
+                bw.WriteInt32(Entries.Count);
                 bw.ReserveUInt32($"EntriesOffset{index}");
                 bw.WriteInt32(0);
             }
 
             internal void WriteEntries(BinaryWriterEx bw, int index)
             {
-                if (Count == 0)
+                if (Entries.Count == 0)
                 {
                     bw.FillUInt32($"EntriesOffset{index}", 0);
                 }
                 else
                 {
                     bw.FillUInt32($"EntriesOffset{index}", (uint)bw.Position);
-                    foreach (Entry entry in this)
+                    foreach (Entry entry in Entries)
                         entry.Write(bw);
                     bw.Pad(8);
                 }
@@ -135,6 +137,8 @@ namespace SoulsFormats
                 /// Unknown.
                 /// </summary>
                 public short Unk02 { get; set; }
+
+                public Entry() { }
 
                 /// <summary>
                 /// Creates a new Entry with the given values.

@@ -21,6 +21,9 @@ public class CollisionGeneratorTool
 
     public void Display()
     {
+        // Remove once implemented
+        return;
+
         if (!CFG.Current.HavokEditor_ToolVisibility_CollisionGenerator)
             return;
 

@@ -1,12 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using StudioCore.Application;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -16,8 +8,7 @@ public class ModelData : IDisposable
 
     public ModelBank PrimaryBank;
 
-    public FormatResource FlverInformation;
-    public FormatEnum FlverEnums;
+    public ModelMeta ModelMeta;
 
     public ModelData(ProjectEntry project)
     {
@@ -30,17 +21,19 @@ public class ModelData : IDisposable
 
         PrimaryBank = new("Primary", Project, Project.VFS.FS);
 
-        // FLVER Information
-        Task<bool> flverInfoTask = SetupFlverInfo();
-        bool flverInfoResult = await flverInfoTask;
+        // Model Meta
+        Task<bool> modelMetaTask = SetupModelMeta();
+        bool modelMetaTaskResult = await modelMetaTask;
 
-        if (!flverInfoResult)
+        if (modelMetaTaskResult)
         {
-            Smithbox.LogError(this, LOC.Get("MODEL_Data_Setup_FlverAnnotations_FAIL"));
+            Smithbox.Log(this,
+                LOC.Get("MODEL_Data_Setup_Model_Meta_PASS", Project.Descriptor.ProjectName));
         }
         else
         {
-            Smithbox.Log(this, LOC.Get("MODEL_Data_Setup_FlverAnnotations_PASS"));
+            Smithbox.LogError(this,
+                LOC.Get("MODEL_Data_Setup_Model_Meta_FAIL", Project.Descriptor.ProjectName));
         }
 
         // Primary Bank
@@ -59,83 +52,46 @@ public class ModelData : IDisposable
         return primaryBankTaskResult;
     }
 
-
-    /// <summary>
-    /// Setup the FLVER information for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupFlverInfo()
+    public async Task<bool> SetupModelMeta()
     {
         await Task.Yield();
 
-        FlverInformation = new();
-        FlverEnums = new();
+        ModelMeta = new();
 
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "FLVER");
-        var sourceFile = Path.Combine(sourceFolder, "Core.json");
+        var baseDir = Path.Join(AppContext.BaseDirectory, "Assets", "MODEL");
 
-        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "FLVER");
-        var projectFile = Path.Combine(projectFolder, "Core.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
+        if (Directory.Exists(baseDir))
         {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
+            foreach (var folder in Directory.EnumerateDirectories(baseDir))
             {
-                var filestring = await File.ReadAllTextAsync(targetFile);
+                // i.e. FLVER, CLM2, EDGE, etc
+                var folderName = Path.GetFileName(folder);
 
-                try
+                var classes = new Dictionary<string, ModelClass>();
+
+                foreach (var file in Directory.EnumerateFiles(folder))
                 {
-                    FlverInformation = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatResource);
+                    string text = await File.ReadAllTextAsync(file);
+
+                    try
+                    {
+                        var classMeta = JsonSerializer.Deserialize(text, ModelEditorJsonSerializerContext.Default.ModelClass);
+
+                        var key = classMeta.Type;
+
+                        classes.TryAdd(key, classMeta);
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this,
+                            LOC.Get("MODEL_Data_Log_Failed_Model_Meta", file), e);
+                    }
                 }
-                catch (Exception e)
+
+                if (classes.Count > 0)
                 {
-                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Failed_Deserialize_Flver_Annotations", targetFile), e);
+                    ModelMeta.TryAdd(folderName, classes);
                 }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Failed_Read_Flver_Annotations", targetFile), e);
-            }
-        }
-
-        // Enums
-        sourceFile = Path.Combine(sourceFolder, "Enums.json");
-
-        projectFile = Path.Combine(projectFolder, "Enums.json");
-
-        targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
-                try
-                {
-                    FlverEnums = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatEnum);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Failed_Deserialize_Flver_Enums", targetFile), e);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Failed_Read_Flver_Enums", targetFile), e);
             }
         }
 
@@ -149,8 +105,7 @@ public class ModelData : IDisposable
 
         PrimaryBank = null;
 
-        FlverInformation = null;
-        FlverEnums = null;
+        ModelMeta = null;
     }
     #endregion
 }

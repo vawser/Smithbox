@@ -148,7 +148,7 @@ public static class HKLib_MeshBuilder
         return replaced;
     }
 
-    private static List<hknpPhysicsSystemData.bodyCinfoWithAttachment>? GetBodyCinfos(hkRootLevelContainer container)
+    private static List<hknpPhysicsSystemData.bodyCinfoWithAttachment> GetBodyCinfos(hkRootLevelContainer container)
     {
         if (container.m_namedVariants.Count == 0)
         {
@@ -168,7 +168,7 @@ public static class HKLib_MeshBuilder
         return systemData.m_bodyCinfos;
     }
 
-    private static bool IsReplaceableMeshShape(hknpShape? shape)
+    private static bool IsReplaceableMeshShape(hknpShape shape)
     {
         return shape is fsnpCustomParamCompressedMeshShape
             or hknpCompressedMeshShape

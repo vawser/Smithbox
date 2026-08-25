@@ -1,7 +1,4 @@
-﻿
-using DotNext.Collections.Generic;
-
-namespace StudioCore.Application;
+﻿namespace StudioCore.Application;
 
 public class HavokMeta : Dictionary<string, Dictionary<string, HavokClass>>;
 

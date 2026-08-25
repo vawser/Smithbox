@@ -1,5 +1,6 @@
 ﻿using Andre.IO.VFS;
 using Microsoft.Extensions.Logging;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -8,7 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -183,101 +186,45 @@ public class ModelContainerWrapper
 
         if (binderType is ResourceContainerType.None)
         {
-            var modelWrapper = new ModelWrapper(this, Name);
-            Models.Add(modelWrapper);
+            PopulateDirect();
         }
-
-        if (binderType is ResourceContainerType.BND)
+        else if (binderType is ResourceContainerType.BND)
         {
             if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
-                try
-                {
-                    var fileData = TargetFS.ReadFile(Path);
-                    if (fileData != null)
-                    {
-                        var binder = new BND3Reader(fileData.Value);
-                        foreach (var file in binder.Files)
-                        {
-                            var filename = FilePathUtils.GetPureFilename(file.Name);
-                            var filepath = file.Name.ToLower();
-
-                            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
-                            {
-                                var modelWrapper = new ModelWrapper(this, filename);
-                                Models.Add(modelWrapper);
-                            }
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Invalid_Model_Read", Path), e);
-                }
+                PopulateBND3();
             }
             else
             {
-                try
-                {
-                    var fileData = TargetFS.ReadFile(Path);
-                    if (fileData != null)
-                    {
-                        var binder = new BND4Reader(fileData.Value);
-                        foreach (var file in binder.Files)
-                        {
-                            var filename = FilePathUtils.GetPureFilename(file.Name);
-                            var filepath = file.Name.ToLower();
-
-                            if (filepath.Contains(".flver") || (filepath.Contains(".flv") && !filepath.Contains(".flvpwv")))
-                            {
-                                var modelWrapper = new ModelWrapper(this, filename);
-                                Models.Add(modelWrapper);
-                            }
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Invalid_Model_Read", Path), e);
-                }
+                PopulateBND4();
             }
         }
-
-        if (binderType is ResourceContainerType.BXF)
+        else if (binderType is ResourceContainerType.BXF)
         {
-            Memory<byte> bhd = new Memory<byte>();
-            Memory<byte> bdt = new Memory<byte>();
+            PopulateBXF();
+        }
+    }
 
-            var targetBhdPath = Path;
-            var targetBdtPath = Path.Replace("bhd", "bdt");
+    public void PopulateDirect()
+    {
+        var modelWrapper = new ModelWrapper(this, Name);
+        Models.Add(modelWrapper);
+    }
 
+    public void PopulateBND3()
+    {
+        var fs = TargetFS;
+
+        if (fs.FileExists(Path))
+        {
             try
             {
-                bhd = (Memory<byte>)TargetFS.ReadFile(targetBhdPath);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, 
-                    LOC.Get("MODEL_Data_Log_Invalid_Model_Binder_Read", targetBhdPath), e);
-            }
+                var fileData = fs.ReadFile(Path);
 
-            try
-            {
-                bdt = (Memory<byte>)TargetFS.ReadFile(targetBdtPath);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this,
-                    LOC.Get("MODEL_Data_Log_Invalid_Model_Binder_Read", targetBhdPath), e);
-            }
-
-            if (bhd.Length != 0 && bdt.Length != 0)
-            {
-                if (Project.Descriptor.ProjectType is ProjectType.DES
-                    or ProjectType.DS1
-                    or ProjectType.DS1R)
+                if (fileData != null)
                 {
-                    var binder = new BXF3Reader(bhd, bdt);
+                    var binder = new BND3Reader(fileData.Value);
+
                     foreach (var file in binder.Files)
                     {
                         var filename = FilePathUtils.GetPureFilename(file.Name);
@@ -290,9 +237,32 @@ public class ModelContainerWrapper
                         }
                     }
                 }
-                else
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Binder_File", Path), e);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", Path));
+        }
+    }
+
+    public void PopulateBND4()
+    {
+        var fs = TargetFS;
+
+        if (fs.FileExists(Path))
+        {
+            try
+            {
+                var fileData = fs.ReadFile(Path);
+
+                if (fileData != null)
                 {
-                    var binder = new BXF4Reader(bhd, bdt);
+                    var binder = new BND4Reader(fileData.Value);
+
                     foreach (var file in binder.Files)
                     {
                         var filename = FilePathUtils.GetPureFilename(file.Name);
@@ -305,6 +275,83 @@ public class ModelContainerWrapper
                         }
                     }
                 }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Binder_File", Path), e);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", Path));
+        }
+    }
+
+    public void PopulateBXF()
+    {
+        var fs = TargetFS;
+
+        Memory<byte> bhd = new Memory<byte>();
+        Memory<byte> bdt = new Memory<byte>();
+
+        var targetBhdPath = Path;
+        var targetBdtPath = Path.Replace("bhd", "bdt");
+
+        if (fs.FileExists(targetBhdPath) && fs.FileExists(targetBhdPath))
+        {
+            bhd = (Memory<byte>)fs.ReadFile(targetBhdPath);
+            bdt = (Memory<byte>)fs.ReadFile(targetBdtPath);
+
+            if (bhd.Length == 0 || bdt.Length == 0)
+                return;
+
+            if (Project.Descriptor.ProjectType is ProjectType.DES
+                or ProjectType.DS1
+                or ProjectType.DS1R)
+            {
+                PopulateBXF3(bhd, bdt);
+            }
+            else
+            {
+                PopulateBXF4(bhd, bdt);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", targetBhdPath));
+        }
+    }
+
+    public void PopulateBXF3(Memory<byte> bhdData, Memory<byte> bdtData)
+    {
+        var binder = new BXF3Reader(bhdData, bdtData);
+
+        foreach (var file in binder.Files)
+        {
+            var filename = FilePathUtils.GetPureFilename(file.Name);
+            var filepath = file.Name.ToLower();
+
+            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
+            {
+                var modelWrapper = new ModelWrapper(this, filename);
+                Models.Add(modelWrapper);
+            }
+        }
+    }
+
+    public void PopulateBXF4(Memory<byte> bhdData, Memory<byte> bdtData)
+    {
+        var binder = new BXF4Reader(bhdData, bdtData);
+
+        foreach (var file in binder.Files)
+        {
+            var filename = FilePathUtils.GetPureFilename(file.Name);
+            var filepath = file.Name.ToLower();
+
+            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
+            {
+                var modelWrapper = new ModelWrapper(this, filename);
+                Models.Add(modelWrapper);
             }
         }
     }
@@ -316,8 +363,6 @@ public class ModelWrapper
 
     public string Name { get; set; }
 
-    public FLVER2 FLVER { get; set; }
-
     public ModelContainer Container { get; set; }
 
     public ModelWrapper(ModelContainerWrapper parent, string name)
@@ -326,154 +371,47 @@ public class ModelWrapper
         Name = name;
     }
 
+    // FLVER
+    public FLVER2 FLVER { get; set; }
+
+    // HKXPWV
+    public HKXPWV HKXPWV { get; set; }
+
+    // CLM2
+    public CLM2 CLM2 { get; set; }
+
+    // EDGE
+    public EDGE EDGE { get; set; }
+
+    // GRASS
+    public GRASS GRASS { get; set; }
+
+
     public void Load()
     {
         var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Parent.Project, Parent.Path);
 
         if (binderType is ResourceContainerType.None)
         {
-            var fileData = Parent.TargetFS.ReadFile(Parent.Path);
-            if (fileData != null)
-            {
-                FLVER = FLVER2.Read(fileData.Value);
-            }
+            LoadDirect();
         }
-
-        if (binderType is ResourceContainerType.BND)
+        else if (binderType is ResourceContainerType.BND)
         {
             if (Parent.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
-                try
-                {
-                    var fileData = Parent.TargetFS.ReadFile(Parent.Path);
-                    if (fileData != null)
-                    {
-                        var binder = new BND3Reader(fileData.Value);
-                        foreach (var file in binder.Files)
-                        {
-                            var filename = FilePathUtils.GetPureFilename(file.Name);
-                            var filepath = file.Name.ToLower();
-
-                            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
-                            {
-                                if (filename == Name)
-                                {
-                                    var flverData = binder.ReadFile(file);
-                                    FLVER = FLVER2.Read(flverData);
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, 
-                        LOC.Get("MODEL_Data_Log_Invalid_Model_Read", Parent.Path), e);
-                }
+                LoadBND3();
             }
             else
             {
-                try
-                {
-                    var fileData = Parent.TargetFS.ReadFile(Parent.Path);
-                    if (fileData != null)
-                    {
-                        var binder = new BND4Reader(fileData.Value);
-                        foreach (var file in binder.Files)
-                        {
-                            var filename = FilePathUtils.GetPureFilename(file.Name);
-                            var filepath = file.Name.ToLower();
-
-                            if (filepath.Contains(".flver") || (filepath.Contains(".flv") && !filepath.Contains(".flvpwv")))
-                            {
-                                if (filename == Name)
-                                {
-                                    var flverData = binder.ReadFile(file);
-                                    FLVER = FLVER2.Read(flverData);
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this,
-                        LOC.Get("MODEL_Data_Log_Invalid_Model_Read", Parent.Path), e);
-                }
+                LoadBND4();
             }
         }
-
-        if (binderType is ResourceContainerType.BXF)
+        else if (binderType is ResourceContainerType.BXF)
         {
-            Memory<byte> bhd = new Memory<byte>();
-            Memory<byte> bdt = new Memory<byte>();
-
-            var targetBhdPath = Parent.Path;
-            var targetBdtPath = Parent.Path.Replace("bhd", "bdt");
-
-            try
-            {
-                bhd = (Memory<byte>)Parent.TargetFS.ReadFile(targetBhdPath);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this,
-                    LOC.Get("MODEL_Data_Log_Invalid_Model_Binder_Read", targetBhdPath), e);
-            }
-
-            try
-            {
-                bdt = (Memory<byte>)Parent.TargetFS.ReadFile(targetBdtPath);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this,
-                    LOC.Get("MODEL_Data_Log_Invalid_Model_Binder_Read", targetBhdPath), e);
-            }
-
-            if (bhd.Length != 0 && bdt.Length != 0)
-            {
-                if (Parent.Project.Descriptor.ProjectType is ProjectType.DES
-                    or ProjectType.DS1
-                    or ProjectType.DS1R)
-                {
-                    var binder = new BXF3Reader(bhd, bdt);
-                    foreach (var file in binder.Files)
-                    {
-                        var filename = FilePathUtils.GetPureFilename(file.Name);
-                        var filepath = file.Name.ToLower();
-
-                        if (filepath.Contains(".flver") || filepath.Contains(".flv"))
-                        {
-                            if (filename == Name)
-                            {
-                                var flverData = binder.ReadFile(file);
-                                FLVER = FLVER2.Read(flverData);
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    var binder = new BXF4Reader(bhd, bdt);
-                    foreach (var file in binder.Files)
-                    {
-                        var filename = FilePathUtils.GetPureFilename(file.Name);
-                        var filepath = file.Name.ToLower();
-
-                        if (filepath.Contains(".flver") || filepath.Contains(".flv"))
-                        {
-                            if (filename == Name)
-                            {
-                                var flverData = binder.ReadFile(file);
-                                FLVER = FLVER2.Read(flverData);
-                            }
-                        }
-                    }
-                }
-            }
+            LoadBXF();
         }
 
+        // FLVER
         if (FLVER != null)
         {
             var modelEditor = Parent.Project.Handler.ModelEditor;
@@ -487,6 +425,586 @@ public class ModelWrapper
         }
     }
 
+    public void LoadDirect()
+    {
+        var fileData = Parent.TargetFS.ReadFile(Parent.Path);
+        if (fileData != null)
+        {
+            FLVER = FLVER2.Read(fileData.Value);
+        }
+    }
+
+    public void LoadBND3()
+    {
+        var fs = Parent.TargetFS;
+
+        if (fs.FileExists(Parent.Path))
+        {
+            try
+            {
+                var fileData = fs.ReadFile(Parent.Path);
+
+                if (fileData != null)
+                {
+                    var binder = new BND3Reader(fileData.Value);
+
+                    foreach (var file in binder.Files)
+                    {
+                        var filename = FilePathUtils.GetPureFilename(file.Name);
+                        var filepath = file.Name.ToLower();
+
+                        var data = binder.ReadFile(file);
+
+                        ReadFile(filepath, filename, data);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Binder_File", Parent.Path), e);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", Parent.Path));
+        }
+    }
+
+    public void LoadBND4()
+    {
+        var fs = Parent.TargetFS;
+
+        if (fs.FileExists(Parent.Path))
+        {
+            try
+            {
+                var fileData = fs.ReadFile(Parent.Path);
+
+                if (fileData != null)
+                {
+                    var binder = new BND4Reader(fileData.Value);
+
+                    foreach (var file in binder.Files)
+                    {
+                        var filename = FilePathUtils.GetPureFilename(file.Name);
+                        var filepath = file.Name.ToLower();
+
+                        var data = binder.ReadFile(file);
+
+                        ReadFile(filepath, filename, data);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Binder_File", Parent.Path), e);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", Parent.Path));
+        }
+    }
+
+    public void LoadBXF()
+    {
+        var fs = Parent.TargetFS;
+
+        Memory<byte> bhd = new Memory<byte>();
+        Memory<byte> bdt = new Memory<byte>();
+
+        var targetBhdPath = Parent.Path;
+        var targetBdtPath = Parent.Path.Replace("bhd", "bdt");
+
+        if (fs.FileExists(targetBhdPath) && fs.FileExists(targetBhdPath))
+        {
+            bhd = (Memory<byte>)fs.ReadFile(targetBhdPath);
+            bdt = (Memory<byte>)fs.ReadFile(targetBdtPath);
+
+            if (bhd.Length == 0 || bdt.Length == 0)
+                return;
+
+            if (Parent.Project.Descriptor.ProjectType is ProjectType.DES
+                or ProjectType.DS1
+                or ProjectType.DS1R)
+            {
+                LoadBXF3(bhd, bdt);
+            }
+            else
+            {
+                LoadBXF4(bhd, bdt);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", targetBhdPath));
+        }
+    }
+
+    public void LoadBXF3(Memory<byte> bhdData, Memory<byte> bdtData)
+    {
+        var binder = new BXF3Reader(bhdData, bdtData);
+
+        foreach (var file in binder.Files)
+        {
+            var filename = FilePathUtils.GetPureFilename(file.Name);
+            var filepath = file.Name.ToLower();
+
+            var data = binder.ReadFile(file);
+
+            ReadFile(filepath, filename, data);
+        }
+    }
+
+    public void LoadBXF4(Memory<byte> bhdData, Memory<byte> bdtData)
+    {
+        var binder = new BXF4Reader(bhdData, bdtData);
+
+        foreach (var file in binder.Files)
+        {
+            var filename = FilePathUtils.GetPureFilename(file.Name);
+            var filepath = file.Name.ToLower();
+
+            var data = binder.ReadFile(file);
+
+            ReadFile(filepath, filename, data);
+        }
+    }
+
+    public void ReadFile(string filepath, string filename, Memory<byte> data)
+    {
+        // FLVER
+        if (filepath.Contains(".flver") || filepath.Contains(".flv"))
+        {
+            if (filename == Name)
+            {
+
+                try
+                {
+                    FLVER = FLVER2.Read(data);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_FLVER", filepath), e);
+                }
+            }
+        }
+
+        // CLM2
+        if (filepath.Contains(".clm2"))
+        {
+            if (filename.Contains(Name))
+            {
+                try
+                {
+                    CLM2 = CLM2.Read(data);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_CLM2", filepath), e);
+                }
+            }
+        }
+
+        // HKXPWV
+        if (filepath.Contains(".hkxpwv"))
+        {
+            if (filename == Name)
+            {
+                try
+                {
+                    HKXPWV = HKXPWV.Read(data);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_HKXPWV", filepath), e);
+                }
+            }
+        }
+
+        // GRASS
+        if (Parent.Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            if (filepath.Contains(".grass"))
+            {
+                if (filename == Name)
+                {
+                    try
+                    {
+                        GRASS = GRASS.Read(data);
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_GRASS", filepath), e);
+                    }
+                }
+            }
+        }
+
+        // EDGE
+        if (Parent.Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            if (filepath.Contains(".edge"))
+            {
+                if (filename == Name)
+                {
+                    try
+                    {
+                        EDGE = EDGE.Read(data);
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_EDGE", filepath), e);
+                    }
+                }
+            }
+        }
+    }
+
+    public void Save()
+    {
+        var containerPath = Parent.Path;
+        var project = Parent.Project;
+        var fs = Parent.TargetFS;
+
+        var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(project, containerPath);
+
+        // Updates the FLVER object with changes from the ModelContainer
+        UpdateFLVER();
+
+        if (binderType is ResourceContainerType.None)
+        {
+            SaveDirect();
+        }
+        else if (binderType is ResourceContainerType.BND)
+        {
+            if (Parent.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            {
+                SaveBND3();
+            }
+            else
+            {
+                SaveBND4();
+            }
+        }
+        else if (binderType is ResourceContainerType.BXF)
+        {
+            if (Parent.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            {
+                SaveBXF3();
+            }
+            else
+            {
+                SaveBXF4();
+            }
+        }
+    }
+
+    public void SaveDirect()
+    {
+        var containerPath = Parent.Path;
+
+        try
+        {
+            var data = FLVER.Write();
+            Parent.Project.VFS.ProjectFS.WriteFile(containerPath, data);
+
+            Smithbox.Log(this, LOC.Get("MODEL_Data_Write_FLVER_Log", containerPath));
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_FLVER", containerPath), e);
+        }
+    }
+
+    public void SaveBND3()
+    {
+        var fs = Parent.TargetFS;
+
+        if (fs.FileExists(Parent.Path))
+        {
+            try
+            {
+                var fileData = fs.ReadFile(Parent.Path);
+
+                var anyWritten = false;
+
+                if (fileData != null)
+                {
+                    var binder = BND3.Read(fileData.Value);
+
+                    foreach (var file in binder.Files)
+                    {
+                        var filename = FilePathUtils.GetPureFilename(file.Name);
+                        var filepath = file.Name.ToLower();
+
+                        WriteFile(filepath, filename, file);
+                        anyWritten = true;
+                    }
+
+                    if (anyWritten)
+                    {
+                        var outBinderData = binder.Write();
+                        Parent.Project.VFS.ProjectFS.WriteFile(Parent.Path, outBinderData);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Binder_File", Parent.Path), e);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", Parent.Path));
+        }
+    }
+
+    public void SaveBND4()
+    {
+        var fs = Parent.TargetFS;
+
+        if (fs.FileExists(Parent.Path))
+        {
+            try
+            {
+                var fileData = fs.ReadFile(Parent.Path);
+
+                var anyWritten = false;
+
+                if (fileData != null)
+                {
+                    var binder = BND4.Read(fileData.Value);
+
+                    foreach (var file in binder.Files)
+                    {
+                        var filename = FilePathUtils.GetPureFilename(file.Name);
+                        var filepath = file.Name.ToLower();
+
+                        WriteFile(filepath, filename, file);
+                        anyWritten = true;
+                    }
+
+                    if (anyWritten)
+                    {
+                        var outBinderData = binder.Write();
+                        Parent.Project.VFS.ProjectFS.WriteFile(Parent.Path, outBinderData);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Binder_File", Parent.Path), e);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", Parent.Path));
+        }
+    }
+
+    public void SaveBXF3()
+    {
+        var fs = Parent.TargetFS;
+
+        var bhdData = new Memory<byte>?();
+        var bdtData = new Memory<byte>?();
+
+        var targetBhdPath = Parent.Path;
+        var targetBdtPath = Parent.Path.Replace("bhd", "bdt");
+
+        var writePathBhd = Path.Combine(Parent.Project.Descriptor.ProjectPath, targetBhdPath);
+        var writePathBdt = Path.Combine(Parent.Project.Descriptor.ProjectPath, targetBdtPath);
+
+        if (fs.FileExists(targetBhdPath) && fs.FileExists(writePathBdt))
+        {
+            try
+            {
+                bhdData = fs.ReadFile(targetBhdPath);
+                bdtData = fs.ReadFile(targetBdtPath);
+
+                var anyWritten = false;
+
+                if (bhdData != null && bdtData != null)
+                {
+                    var binder = BXF3.Read(bhdData.Value, bdtData.Value);
+
+                    foreach (var file in binder.Files)
+                    {
+                        var filename = FilePathUtils.GetPureFilename(file.Name);
+                        var filepath = file.Name.ToLower();
+
+                        WriteFile(filepath, filename, file);
+                        anyWritten = true;
+                    }
+
+                    if (anyWritten)
+                    {
+                        binder.Write(out byte[] newBhdData, out byte[] newBdtData);
+
+                        Parent.Project.VFS.ProjectFS.WriteFile(writePathBhd, newBhdData);
+                        Parent.Project.VFS.ProjectFS.WriteFile(writePathBdt, newBdtData);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Binder_File", Parent.Path), e);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", Parent.Path));
+        }
+    }
+
+    public void SaveBXF4()
+    {
+        var fs = Parent.TargetFS;
+
+        var bhdData = new Memory<byte>?();
+        var bdtData = new Memory<byte>?();
+
+        var targetBhdPath = Parent.Path;
+        var targetBdtPath = Parent.Path.Replace("bhd", "bdt");
+
+        var writePathBhd = Path.Combine(Parent.Project.Descriptor.ProjectPath, targetBhdPath);
+        var writePathBdt = Path.Combine(Parent.Project.Descriptor.ProjectPath, targetBdtPath);
+
+        if (fs.FileExists(targetBhdPath) && fs.FileExists(writePathBdt))
+        {
+            try
+            {
+                bhdData = fs.ReadFile(targetBhdPath);
+                bdtData = fs.ReadFile(targetBdtPath);
+
+                var anyWritten = false;
+
+                if (bhdData != null && bdtData != null)
+                {
+                    var binder = BXF4.Read(bhdData.Value, bdtData.Value);
+
+                    foreach (var file in binder.Files)
+                    {
+                        var filename = FilePathUtils.GetPureFilename(file.Name);
+                        var filepath = file.Name.ToLower();
+
+                        WriteFile(filepath, filename, file);
+                        anyWritten = true;
+                    }
+
+                    if (anyWritten)
+                    {
+                        binder.Write(out byte[] newBhdData, out byte[] newBdtData);
+
+                        Parent.Project.VFS.ProjectFS.WriteFile(writePathBhd, newBhdData);
+                        Parent.Project.VFS.ProjectFS.WriteFile(writePathBdt, newBdtData);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Binder_File", Parent.Path), e);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", Parent.Path));
+        }
+    }
+
+    public void WriteFile(string filepath, string filename, BinderFile file)
+    {
+        // FLVER
+        if (filepath.Contains(".flver") || filepath.Contains(".flv"))
+        {
+            if (filename == Name)
+            {
+                try
+                {
+                    file.Bytes = FLVER.Write();
+
+                    Smithbox.Log(this, LOC.Get("MODEL_Data_Write_FLVER_Log", filepath));
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_FLVER", filepath), e);
+                }
+            }
+        }
+
+        // CLM2
+        if (filepath.Contains(".clm2"))
+        {
+            if (filename.Contains(Name))
+            {
+                try
+                {
+                    file.Bytes = CLM2.Write();
+
+                    Smithbox.Log(this, LOC.Get("MODEL_Data_Write_CLM2_Log", filepath));
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_CLM2", filepath), e);
+                }
+            }
+        }
+
+        // HKXPWV
+        if (filepath.Contains(".hkxpwv"))
+        {
+            if (filename == Name)
+            {
+                try
+                {
+                    file.Bytes = HKXPWV.Write();
+
+                    Smithbox.Log(this, LOC.Get("MODEL_Data_Write_HKXPWV_Log", filepath));
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_HKXPWV", filepath), e);
+                }
+            }
+        }
+
+        // GRASS
+        if (Parent.Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            if (filepath.Contains(".grass"))
+            {
+                try
+                {
+                    file.Bytes = GRASS.Write();
+
+                    Smithbox.Log(this, LOC.Get("MODEL_Data_Write_GRASS_Log", filepath));
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_GRASS", filepath), e);
+                }
+            }
+        }
+
+        // EDGE
+        if (Parent.Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            if (filepath.Contains(".edge"))
+            {
+                try
+                {
+                    file.Bytes = EDGE.Write();
+
+                    Smithbox.Log(this, LOC.Get("MODEL_Data_Write_EDGE_Log", filepath));
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_EDGE", filepath), e);
+                }
+            }
+        }
+    }
 
     public void Unload()
     {
@@ -558,190 +1076,4 @@ public class ModelWrapper
         }
     }
 
-    public void Save()
-    {
-        var containerPath = Parent.Path;
-        var project = Parent.Project;
-        var fs = Parent.TargetFS;
-
-        var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(project, containerPath);
-
-        UpdateFLVER();
-
-        var flverData = FLVER.Write();
-
-        if (binderType is ResourceContainerType.None)
-        {
-            try
-            {
-                project.VFS.ProjectFS.WriteFile(containerPath, flverData);
-
-                Smithbox.Log(this, LOC.Get("MODEL_Data_Log_Save_FLVER", containerPath));
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Save_FLVER_Failed", containerPath), e);
-            }
-        }
-
-        if (binderType is ResourceContainerType.BND)
-        {
-            if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
-            {
-                try
-                {
-                    var binderData = fs.ReadFile(containerPath);
-                    if (binderData != null)
-                    {
-                        var binder = BND3.Read(binderData.Value);
-                        foreach (var file in binder.Files)
-                        {
-                            var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
-                            var filepath = file.Name.ToLower();
-
-                            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
-                            {
-                                if (filename == Name)
-                                {
-                                    file.Bytes = flverData;
-                                }
-                            }
-                        }
-
-                        var outBinderData = binder.Write();
-                        project.VFS.ProjectFS.WriteFile(containerPath, outBinderData);
-
-                        Smithbox.Log(this, LOC.Get("MODEL_Data_Log_Save_FLVER", containerPath));
-                    }
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Save_FLVER_Failed", containerPath), e);
-                }
-            }
-            else
-            {
-                try
-                {
-                    var binderData = fs.ReadFile(containerPath);
-                    if (binderData != null)
-                    {
-                        var binder = BND4.Read(binderData.Value);
-                        foreach (var file in binder.Files)
-                        {
-                            var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
-                            var filepath = file.Name.ToLower();
-
-                            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
-                            {
-                                if (filename == Name)
-                                {
-                                    file.Bytes = flverData;
-                                }
-                            }
-                        }
-
-                        var outBinderData = binder.Write();
-                        project.VFS.ProjectFS.WriteFile(containerPath, outBinderData);
-
-                        Smithbox.Log(this, LOC.Get("MODEL_Data_Log_Save_FLVER", containerPath));
-                    }
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Save_FLVER_Failed", containerPath), e);
-                }
-            }
-        }
-
-        if (binderType is ResourceContainerType.BXF)
-        {
-            Memory<byte> bhd = new Memory<byte>();
-            Memory<byte> bdt = new Memory<byte>();
-
-            var targetBhdPath = containerPath;
-            var targetBdtPath = containerPath.Replace("bhd", "bdt");
-
-            var writePathBhd = Path.Combine(project.Descriptor.ProjectPath, targetBhdPath);
-            var writePathBdt = Path.Combine(project.Descriptor.ProjectPath, targetBdtPath);
-
-            try
-            {
-                bhd = (Memory<byte>)fs.ReadFile(targetBhdPath);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Save_FLVER_Failed", targetBhdPath), e);
-            }
-
-            try
-            {
-                bdt = (Memory<byte>)fs.ReadFile(targetBdtPath);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MODEL_Data_Log_Save_FLVER_Failed", targetBdtPath), e);
-            }
-
-            if (bhd.Length != 0 && bdt.Length != 0)
-            {
-                if (project.Descriptor.ProjectType is ProjectType.DES
-                    or ProjectType.DS1
-                    or ProjectType.DS1R)
-                {
-                    var binder = BXF3.Read(bhd, bdt);
-                    foreach (var file in binder.Files)
-                    {
-                        var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
-                        var filepath = file.Name.ToLower();
-
-                        if (filepath.Contains(".flver") || filepath.Contains(".flv"))
-                        {
-                            if (filename == Name)
-                            {
-                                file.Bytes = flverData;
-                            }
-                        }
-                    }
-
-                    byte[] bhdData;
-                    byte[] bdtData;
-
-                    binder.Write(out bhdData, out bdtData);
-
-                    project.VFS.ProjectFS.WriteFile(writePathBhd, bhdData);
-                    project.VFS.ProjectFS.WriteFile(writePathBdt, bdtData);
-
-                    Smithbox.Log(this, LOC.Get("MODEL_Data_Log_Save_FLVER", containerPath));
-                }
-                else
-                {
-                    var binder = BXF4.Read(bhd, bdt);
-                    foreach (var file in binder.Files)
-                    {
-                        var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
-                        var filepath = file.Name.ToLower();
-
-                        if (filepath.Contains(".flver") || filepath.Contains(".flv"))
-                        {
-                            if (filename == Name)
-                            {
-                                file.Bytes = flverData;
-                            }
-                        }
-                    }
-
-                    byte[] bhdData;
-                    byte[] bdtData;
-
-                    binder.Write(out bhdData, out bdtData);
-
-                    project.VFS.ProjectFS.WriteFile(writePathBhd, bhdData);
-                    project.VFS.ProjectFS.WriteFile(writePathBdt, bdtData);
-
-                    Smithbox.Log(this, LOC.Get("MODEL_Data_Log_Save_FLVER", containerPath));
-                }
-            }
-        }
-    }
 }

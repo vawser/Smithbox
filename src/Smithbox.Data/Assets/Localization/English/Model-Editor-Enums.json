@@ -23,6 +23,26 @@
     {
       "Key": "MODEL_ENUM_ModelListType_Navmesh",
       "Text": "Navmesh"
+    },
+    {
+      "Key": "MODEL_ENUM_ModeSelect_FLVER",
+      "Text": "FLVER"
+    },
+    {
+      "Key": "MODEL_ENUM_ModeSelect_CLM2",
+      "Text": "CLM2"
+    },
+    {
+      "Key": "MODEL_ENUM_ModeSelect_HKXPWV",
+      "Text": "HKXPWV"
+    },
+    {
+      "Key": "MODEL_ENUM_ModeSelect_EDGE",
+      "Text": "EDGE"
+    },
+    {
+      "Key": "MODEL_ENUM_ModeSelect_GRASS",
+      "Text": "GRASS"
     }
   ]
 }

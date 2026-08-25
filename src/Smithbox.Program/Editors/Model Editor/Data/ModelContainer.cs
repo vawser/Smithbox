@@ -27,6 +27,11 @@ public class ModelContainer : ObjectContainer
 
     //public List<Entity> Collisions { get; set; }
 
+    public Entity CLM2_Parent = null;
+    public Entity HKXPWV_Parent = null;
+    public Entity EDGE_Parent = null;
+    public Entity FLVER_Parent = null;
+
 
     public ModelContainer(ModelEditorView view, ProjectEntry project, string modelName)
     {
@@ -69,6 +74,54 @@ public class ModelContainer : ObjectContainer
 
     public void Load(FLVER2 flver, ModelWrapper wrapper)
     {
+        // CLM2
+        if (wrapper.CLM2 != null)
+        {
+            var newObject = new ModelEntity(View.Universe, this, wrapper.CLM2, ModelEntityType.CLM2);
+
+            CLM2_Parent = newObject;
+
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
+        }
+
+        // HKXPWV
+        if (wrapper.HKXPWV != null)
+        {
+            var newObject = new ModelEntity(View.Universe, this, wrapper.HKXPWV, ModelEntityType.HKXPWV);
+
+            HKXPWV_Parent = newObject;
+
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
+        }
+
+        // EDGE
+        if (wrapper.EDGE != null)
+        {
+            var newObject = new ModelEntity(View.Universe, this, wrapper.EDGE, ModelEntityType.EDGE);
+
+            EDGE_Parent = newObject;
+
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
+        }
+
+        // GRASS
+        if (wrapper.GRASS != null)
+        {
+            var newObject = new ModelEntity(View.Universe, this, wrapper.GRASS, ModelEntityType.GRASS);
+
+            EDGE_Parent = newObject;
+
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
+        }
+
+        //*****************
+        // FLVER
+        //*****************
+
         // Materials
         foreach (var entry in flver.Materials)
         {

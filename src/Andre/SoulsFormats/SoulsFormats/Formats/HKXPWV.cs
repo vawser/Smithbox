@@ -11,6 +11,8 @@ namespace SoulsFormats
     /// </summary>
     public class HKXPWV : SoulsFile<HKXPWV>
     {
+        private int Version;
+        
         /// <summary>
         /// The game this HKXPWV is for.
         /// </summary>
@@ -77,8 +79,8 @@ namespace SoulsFormats
         protected override void Read(BinaryReaderEx br)
         {
             // Value should be 1 in either endianness
-            int versionCheck = br.AssertInt32([1, 0x1000000]);
-            if (versionCheck == 0x1000000)
+            Version = br.ReadInt32();
+            if (Version == 0x1000000)
             {
                 BigEndian = true;
                 br.BigEndian = true;
@@ -126,8 +128,7 @@ namespace SoulsFormats
         {
             bw.BigEndian = BigEndian;
 
-            //Version
-            bw.WriteInt32(1);
+            bw.WriteInt32(Version);
 
             bw.WriteInt16(0);
 
@@ -285,6 +286,9 @@ namespace SoulsFormats
             /// </summary>
             public sbyte UnknownBB { get; set; } = -1;
 
+            public int Unk0C { get; set; } = 0;
+            public int Unk10 { get; set; } = 0;
+
             /// <summary>
             /// Creates a default RagdollBoneEntry
             /// </summary>
@@ -318,7 +322,8 @@ namespace SoulsFormats
 
                     if (game == GameType.DS3)
                     {
-                        br.AssertInt64(0);
+                        Unk0C = br.ReadInt32();
+                        Unk10 = br.ReadInt32();
                     }
                 }
                 
@@ -348,7 +353,10 @@ namespace SoulsFormats
                     bw.WriteByte(0);
 
                     if (game == GameType.DS3)
-                        bw.WriteInt64(0);
+                    {
+                        bw.WriteInt32(Unk0C);
+                        bw.WriteInt32(Unk10);
+                    }
                 }
             }
         }

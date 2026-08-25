@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using static SoulsFormats.NVA;
-using static SoulsFormats.NVA.NodeBank;
 
 namespace SoulsFormats
 {

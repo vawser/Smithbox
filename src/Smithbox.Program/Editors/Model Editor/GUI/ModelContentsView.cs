@@ -44,13 +44,7 @@ public class ModelContentsView : IActionEventHandler
             LOC.Get("MODEL_Contents_Header"),
             LOC.Get("MODEL_Contents_Header_TT"));
 
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedListFilter_modelEditor_ContentTree", searchHeight, ImGuiChildFlags.Borders);
-
-        DisplaySearchbar();
-        DisplayButtons();
-
-        ImGui.EndChild();
+        DisplayHeader();
 
         ImGui.BeginChild("ModelContents", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
@@ -74,19 +68,14 @@ public class ModelContentsView : IActionEventHandler
         ImGui.EndChild();
     }
 
-    public void DisplaySearchbar()
+    public void DisplayHeader()
     {
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedListFilter_modelEditor_ContentTree", searchHeight, ImGuiChildFlags.Borders);
+
         EditorFilters.DisplayListFilter("modelEditor_ContentTree",
             ref ContentTreeFilter, ref ExactContentTreeFilter);
-    }
 
-    public bool CanDisplayModelObject(ModelContainer container, ModelEntity entity)
-    {
-        return true;
-    }
-
-    public void DisplayButtons()
-    {
         var wrapper = View.Selection.SelectedModelWrapper;
 
         ImGui.SameLine();
@@ -132,6 +121,13 @@ public class ModelContentsView : IActionEventHandler
             autoTreeMode = LOC.Get("MODEL_Contents_TreeState_Closed");
 
         GUI.Tooltip(LOC.Get("MODEL_Contents_TreeState_TT", autoTreeMode));
+
+        ImGui.EndChild();
+    }
+
+    public bool CanDisplayModelObject(ModelContainer container, ModelEntity entity)
+    {
+        return true;
     }
 
     public void DisplayContentTree(ModelContainer container)
@@ -198,6 +194,56 @@ public class ModelContentsView : IActionEventHandler
         }
 
         ImGui.EndChild();
+    }
+
+    private void TypeView(ModelContainer container)
+    {
+        View.EntityTypeCache.AddModelToCache(container);
+
+        foreach (KeyValuePair<ModelEntityType, Dictionary<Type, List<ModelEntity>>> cats in
+                 View.EntityTypeCache._cachedTypeView[container.Name].OrderBy(q => q.Key.ToString()))
+        {
+            if (cats.Value.Count > 0)
+            {
+                ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow;
+
+                if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree)
+                {
+                    treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
+                }
+
+                if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
+                {
+                    foreach (KeyValuePair<Type, List<ModelEntity>> typ in cats.Value.OrderBy(q => q.Key.Name))
+                    {
+                        if (typ.Value.Count > 0)
+                        {
+                            int index = 0;
+
+                            foreach (var obj in typ.Value)
+                            {
+                                if (CanDisplayModelObject(container, obj))
+                                {
+                                    ModelObjectSelectable(container, obj, index);
+                                }
+
+                                index++;
+                            }
+                        }
+                        else
+                        {
+                            ImGui.Text($@"   {typ.Key}");
+                        }
+                    }
+
+                    ImGui.TreePop();
+                }
+            }
+            else
+            {
+                ImGui.Text($@"   {cats.Key.ToString()}");
+            }
+        }
     }
 
     private void DisplayTopContextMenu(ModelContainer map, bool selected)
@@ -276,61 +322,6 @@ public class ModelContentsView : IActionEventHandler
             }
 
             _pendingClick = null;
-        }
-    }
-
-    private void TypeView(ModelContainer container)
-    {
-        View.EntityTypeCache.AddModelToCache(container);
-
-        foreach (KeyValuePair<ModelEntityType, Dictionary<Type, List<ModelEntity>>> cats in
-                 View.EntityTypeCache._cachedTypeView[container.Name].OrderBy(q => q.Key.ToString()))
-        {
-            if (cats.Value.Count > 0)
-            {
-                ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow;
-
-                if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree)
-                {
-                    treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
-                }
-
-                if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
-                {
-                    foreach (KeyValuePair<Type, List<ModelEntity>> typ in cats.Value.OrderBy(q => q.Key.Name))
-                    {
-                        if (typ.Value.Count > 0)
-                        {
-                            if (ImGui.TreeNodeEx(typ.Key.Name, treeflags))
-                            {
-                                int index = 0;
-
-                                foreach (var obj in typ.Value)
-                                {
-                                    if (CanDisplayModelObject(container, obj))
-                                    {
-                                        ModelObjectSelectable(container, obj, index);
-                                    }
-
-                                    index++;
-                                }
-
-                                ImGui.TreePop();
-                            }
-                        }
-                        else
-                        {
-                            ImGui.Text($@"   {typ.Key}");
-                        }
-                    }
-
-                    ImGui.TreePop();
-                }
-            }
-            else
-            {
-                ImGui.Text($@"   {cats.Key.ToString()}");
-            }
         }
     }
 

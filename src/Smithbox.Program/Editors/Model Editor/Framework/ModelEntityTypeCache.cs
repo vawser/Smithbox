@@ -50,26 +50,32 @@ public class ModelEntityTypeCache
                 new Dictionary<string, Dictionary<ModelEntityType, Dictionary<Type, List<ModelEntity>>>>();
         }
 
-        Dictionary<ModelEntityType, Dictionary<Type, List<ModelEntity>>> modelcache = new();
+        Dictionary<ModelEntityType, Dictionary<Type, List<ModelEntity>>> modelcache = new()
+        {
+            // Internal Types
+            { ModelEntityType.Dummy, new Dictionary<Type, List<ModelEntity>>() },
+            { ModelEntityType.Material, new Dictionary<Type, List<ModelEntity>>() },
 
-        // Internal Types
-        modelcache.Add(ModelEntityType.Dummy, new Dictionary<Type, List<ModelEntity>>());
+            //modelcache.Add(ModelEntityType.GxList, new Dictionary<Type, List<ModelEntity>>());
 
-        modelcache.Add(ModelEntityType.Material, new Dictionary<Type, List<ModelEntity>>());
+            { ModelEntityType.Node, new Dictionary<Type, List<ModelEntity>>() },
+            { ModelEntityType.Mesh, new Dictionary<Type, List<ModelEntity>>() },
 
-        //modelcache.Add(ModelEntityType.GxList, new Dictionary<Type, List<ModelEntity>>());
+            //modelcache.Add(ModelEntityType.BufferLayout, new Dictionary<Type, List<ModelEntity>>());
 
-        modelcache.Add(ModelEntityType.Node, new Dictionary<Type, List<ModelEntity>>());
+            { ModelEntityType.Skeleton, new Dictionary<Type, List<ModelEntity>>() },
 
-        modelcache.Add(ModelEntityType.Mesh, new Dictionary<Type, List<ModelEntity>>());
+            // modelcache.Add(ModelEntityType.Collision, new Dictionary<Type, List<ModelEntity>>());
 
-        //modelcache.Add(ModelEntityType.BufferLayout, new Dictionary<Type, List<ModelEntity>>());
-
-        modelcache.Add(ModelEntityType.Skeleton, new Dictionary<Type, List<ModelEntity>>());
-
-        // modelcache.Add(ModelEntityType.Collision, new Dictionary<Type, List<ModelEntity>>());
-
-        // External: 
+            // CLM2
+            { ModelEntityType.CLM2, new Dictionary<Type, List<ModelEntity>>() },
+            // HKXPWV
+            { ModelEntityType.HKXPWV, new Dictionary<Type, List<ModelEntity>>() },
+            // EDGE
+            { ModelEntityType.EDGE, new Dictionary<Type, List<ModelEntity>>() },
+            // GRASS
+            { ModelEntityType.GRASS, new Dictionary<Type, List<ModelEntity>>() }
+        };
 
 
         // Fill the cache
