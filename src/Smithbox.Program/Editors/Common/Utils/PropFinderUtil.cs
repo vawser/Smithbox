@@ -380,4 +380,20 @@ public static class PropFinderUtil
         var val = FindPropertyValue(prop, obj, onlyCheckPropName);
         return val;
     }
+
+    public static object CreateDefaultListElement(Type elementType)
+    {
+        if (elementType == typeof(string))
+            return string.Empty;
+
+        if (elementType.IsValueType)
+            return Activator.CreateInstance(elementType);
+
+        if (elementType.IsAbstract || elementType.IsInterface)
+            return null;
+
+        return elementType.GetConstructor(Type.EmptyTypes) != null
+            ? Activator.CreateInstance(elementType)
+            : null;
+    }
 }

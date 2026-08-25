@@ -1809,7 +1809,7 @@ public class MapMsbPropertyView
         {
             if (ImGui.Button("+##addListEntry"))
             {
-                var newEntry = CreateDefaultListElement(elementType);
+                var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
                 var action = new AddListEntryAction(firstEnt, prop, obj, newEntry, list.Count);
                 View.ViewportActionManager.ExecuteAction(action);
             }
@@ -1873,22 +1873,6 @@ public class MapMsbPropertyView
         }
 
         ImGui.PopID();
-    }
-
-    private static object CreateDefaultListElement(Type elementType)
-    {
-        if (elementType == typeof(string))
-            return string.Empty;
-
-        if (elementType.IsValueType)
-            return Activator.CreateInstance(elementType);
-
-        if (elementType.IsAbstract || elementType.IsInterface)
-            return null;
-
-        return elementType.GetConstructor(Type.EmptyTypes) != null
-            ? Activator.CreateInstance(elementType)
-            : null;
     }
 
     internal enum RegionShape

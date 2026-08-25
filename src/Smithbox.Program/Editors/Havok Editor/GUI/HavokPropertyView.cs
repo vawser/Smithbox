@@ -1,10 +1,14 @@
 ﻿using CsvHelper;
 using Hexa.NET.ImGui;
 using HKLib.hk2018;
+using HKLib.hk2018.TypeRegistryTest;
 using SoulsFormats;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MetadataEditor;
+using StudioCore.Editors.Viewport;
 using StudioCore.Utilities;
+using System.Collections;
 using System.Drawing;
 using System.Numerics;
 using System.Reflection;
@@ -449,55 +453,14 @@ public class HavokPropertyView
             }
             else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
             {
-                var l = prop.GetValue(obj);
-                if (l != null)
-                {
-                    PropertyInfo itemprop = l.GetType().GetProperty("Item");
-                    var count = (int)l.GetType().GetProperty("Count").GetValue(l);
-                    for (var i = 0; i < count; i++)
-                    {
-                        ImGui.PushID(i);
-
-                        Type arrtyp = typ.GetGenericArguments()[0];
-                        if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
-                        {
-                            var open = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
-                            GUI.Tooltip(fieldDescription);
-                            ImGui.NextColumn();
-                            ImGui.SetNextItemWidth(-1);
-                            var o = itemprop.GetValue(l, new object[] { i });
-                            ImGui.Text("");
-                            ImGui.NextColumn();
-                            if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
-                            {
-                                PropContextRowOpener("listTypeCol");
-
-                                ImGui.Text(type.FullName);
-
-                                DisplayContextMenu(fieldName, fieldDescription, prop);
-
-                                ImGui.NextColumn();
-                            }
-
-                            if (open)
-                            {
-                                HavokPropEditGeneric(o, havokMeta);
-                                ImGui.TreePop();
-                            }
-                        }
-                        else
-                        {
-                            // Handle property display (and search filtering)
-                            if (DisplayProperty(havokMeta, obj, prop, type))
-                            {
-                                PropGenericFieldRow(prop, arrtyp, havokMeta, itemprop.GetValue(l, new object[] { i }), obj, $@"{fieldName}[{i}]", fieldDescription, i, classIndex);
-                            }
-                        }
-                        ImGui.PopID();
-                    }
-                }
-
-                ImGui.PopID();
+                Type arrtyp = typ.GetGenericArguments()[0];
+                PropEditorGenericList(havokMeta, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
+            }
+            else if (typ.BaseType != null && typ.BaseType.IsGenericType
+                && typ.BaseType.GetGenericTypeDefinition() == typeof(List<>))
+            {
+                Type arrtyp = typ.BaseType.GetGenericArguments()[0];
+                PropEditorGenericList(havokMeta, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
             }
             else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
             {
@@ -609,12 +572,26 @@ public class HavokPropertyView
         string name,
         string description,
         int arrayIndex = -1,
-        int classIndex = -1
+        int classIndex = -1,
+        Action onRemove = null
+
     )
     {
         PropContextRowOpener("nameCol");
 
         ImGui.Text(name);
+
+        // Remove-from-list button (only passed in by list entries)
+        if (onRemove != null)
+        {
+            ImGui.SameLine();
+            if (ImGui.Button("-##removeListEntry"))
+            {
+                onRemove();
+            }
+            GUI.Tooltip("Remove this entry from the list.");
+        }
+
         GUI.Tooltip(description);
 
         ImGui.NextColumn();
@@ -1056,5 +1033,108 @@ public class HavokPropertyView
         var isDeactivatedAfterEdit = ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive();
 
         return (isChanged, isDeactivatedAfterEdit);
+    }
+
+    private void PropEditorGenericList(
+        HavokClass havokMeta,
+        object obj,
+        FieldInfo prop,
+        Type elementType,
+        string fieldName,
+        string fieldDescription,
+        ImGuiTreeNodeFlags treeFlags,
+        int classIndex
+    )
+    {
+        var list = (IList)prop.GetValue(obj);
+
+        var open = ImGui.TreeNodeEx($@"{fieldName}", treeFlags);
+        GUI.Tooltip(fieldDescription);
+        ImGui.NextColumn();
+
+        if (list != null)
+        {
+            if (ImGui.Button("+##addListEntry"))
+            {
+                var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
+                var action = new HavokAddListEntryAction(prop, obj, newEntry, list.Count);
+                View.ActionManager.ExecuteAction(action);
+            }
+            GUI.Tooltip("Add a new entry to the end of this list.");
+        }
+        ImGui.NextColumn();
+
+        if (open)
+        {
+            if (list != null)
+            {
+                var removeIndex = -1;
+
+                for (var i = 0; i < list.Count; i++)
+                {
+                    ImGui.PushID(i);
+                    var idx = i;
+                    var elem = list[i];
+                    void OnRemove() => removeIndex = idx;
+
+                    if (elementType.IsClass && elementType != typeof(string) && !elementType.IsArray)
+                    {
+                        var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
+                        GUI.Tooltip(fieldDescription);
+                        ImGui.NextColumn();
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.Text(elem?.GetType().Name ?? "null");
+
+                        ImGui.SameLine();
+                        if (ImGui.Button("-##removeListEntry"))
+                        {
+                            OnRemove();
+                        }
+                        GUI.Tooltip("Remove this entry from the list.");
+
+                        ImGui.NextColumn();
+
+                        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+                        {
+                            PropContextRowOpener("listTypeCol");
+
+                            ImGui.Text(elem?.GetType().FullName);
+
+                            DisplayContextMenu(fieldName, fieldDescription, prop);
+
+                            ImGui.NextColumn();
+                        }
+
+                        if (classOpen)
+                        {
+                            if (elem != null)
+                                HavokPropEditGeneric(elem, havokMeta, idx);
+
+                            ImGui.TreePop();
+                        }
+                    }
+                    else
+                    {
+                        // Handle property display (and search filtering)
+                        if (DisplayProperty(havokMeta, obj, prop, elementType))
+                        {
+                            PropGenericFieldRow(prop, elementType, havokMeta, elem, obj, $@"{fieldName}[{i}]", fieldDescription, i, classIndex, OnRemove);
+                        }
+                    }
+
+                    ImGui.PopID();
+                }
+
+                if (removeIndex != -1)
+                {
+                    var action = new HavokRemoveListEntryAction(prop, obj, removeIndex);
+                    View.ActionManager.ExecuteAction(action);
+                }
+            }
+
+            ImGui.TreePop();
+        }
+
+        ImGui.PopID();
     }
 }
