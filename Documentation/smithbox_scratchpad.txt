@@ -11,8 +11,11 @@
   Map Editor
 
 # Havok Editor
-- Add cross-binder support to the file list Copy action
-
 - Add 'Generate' tool for collisions:
  - Generates basic shapes such as planes (square, circle) and boxes
   - Toggle face orientation
+  
+- Update property editor with new functionality:
+ - Material Editor
+ - Map Data Editor
+ 

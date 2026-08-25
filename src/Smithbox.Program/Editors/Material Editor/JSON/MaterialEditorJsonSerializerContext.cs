@@ -12,10 +12,9 @@ namespace StudioCore.Editors.MaterialEditor;
     GenerationMode = JsonSourceGenerationMode.Metadata,
     IncludeFields = true)]
 
-// Material Display Configuration
-[JsonSerializable(typeof(MaterialDisplayConfiguration))]
-[JsonSerializable(typeof(MaterialFileListConfiguration))]
-
+[JsonSerializable(typeof(MaterialMeta))]
+[JsonSerializable(typeof(MaterialClass))]
+[JsonSerializable(typeof(MaterialField))]
 
 internal partial class MaterialEditorJsonSerializerContext : JsonSerializerContext
 {

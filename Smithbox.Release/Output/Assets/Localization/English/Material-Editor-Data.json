@@ -17,20 +17,16 @@
       "Text": "Failed to setup Primary Bank."
     },
     {
-      "Key": "MAT_Data_Log_Failed_to_Deserialize_Material_Display_Config",
-      "Text": "Failed to deserialize Material Display Configuration file: {0}"
-    },
-    {
-      "Key": "MAT_Data_Log_Failed_to_Read_Material_Display_Config",
-      "Text": "Failed to read Material Display Configuration file: {0}"
-    },
-    {
       "Key": "MAT_Data_Log_Failed_to_Read_MTD",
       "Text": "Failed to read MTD file: {0}"
     },
     {
       "Key": "MAT_Data_Log_Failed_to_Read_File",
       "Text": "Failed to read file: {0}"
+    },
+    {
+      "Key": "MAT_Data_Log_Failed_to_Find_File",
+      "Text": "Failed to find file: {0}"
     },
     {
       "Key": "MAT_Data_Log_Failed_to_Write_MTD",
@@ -47,6 +43,18 @@
     {
       "Key": "MAT_Data_Log_Failed_to_Write_MATBIN",
       "Text": "Failed to write MATBIN file: {0}"
+    },
+    {
+      "Key": "MAT_Data_Setup_Material_Meta_PASS",
+      "Text": "Setup Material meta for '{0}'"
+    },
+    {
+      "Key": "MAT_Data_Setup_Material_Meta_FAIL",
+      "Text": "Failed to setup Material meta for '{0}'"
+    },
+    {
+      "Key": "MAT_Data_Deserialize_Material_Meta_FAIL",
+      "Text": "Failed to deserialize Material meta file: {0}"
     }
   ]
 }

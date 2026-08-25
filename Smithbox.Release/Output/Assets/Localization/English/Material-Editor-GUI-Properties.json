@@ -71,6 +71,43 @@
     {
       "Key": "MAT_Properties_Action_Copy_Property_Type_TT",
       "Text": "Copy the type of the property to the clipboard."
+    },
+    {
+      "Key": "MAT_PropertyView_Context_Action_Copy_Name",
+      "Text": "Copy Field Name"
+    },
+    {
+      "Key": "MAT_PropertyView_Context_Action_Copy_Name_TT",
+      "Text": "Copy the name of this field to the clipboard."
+    },
+    {
+      "Key": "MAT_PropertyView_Context_Action_Copy_Description",
+      "Text": "Copy Field Description"
+    },
+    {
+      "Key": "MAT_PropertyView_Context_Action_Copy_Description_TT",
+      "Text": "Copy the description of this field to the clipboard."
+    },
+    {
+      "Key": "MAT_PropertyView_Context_Action_Copy_Type",
+      "Text": "Copy Field Type"
+    },
+    {
+      "Key": "MAT_PropertyView_Context_Action_Copy_Type_TT",
+      "Text": "Copy the type of this field to the clipboard."
+    },
+    
+    {
+      "Key": "MAT_PropertyView_Type_Column_Toggle_Hide",
+      "Text": "Hide Column"
+    },
+    {
+      "Key": "MAT_PropertyView_Type_Column_Toggle_Show",
+      "Text": "Show Column"
+    },
+    {
+      "Key": "MAT_PropertyView_Type_Column_Toggle_TT",
+      "Text": "Toggle the visibilty of the field type column.\nCurrent Mode: {0}"
     }
   ]
 }

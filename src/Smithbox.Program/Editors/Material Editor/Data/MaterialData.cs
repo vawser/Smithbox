@@ -1,12 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using StudioCore.Application;
-using StudioCore.Logger;
-using StudioCore.Utilities;
-using System;
-using System.IO;
-using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 
 namespace StudioCore.Editors.MaterialEditor;
 
@@ -20,11 +12,7 @@ public class MaterialData : IDisposable
 
     public MaterialBank PrimaryBank;
 
-    // Disable for now to reduce loading time
-    // TODO: Add toggle if the Material Editor reaches a point where it can make use of the Vanilla Bank
-    //public MaterialBank VanillaBank;
-
-    public MaterialDisplayConfiguration MaterialDisplayConfiguration;
+    public MaterialMeta MaterialMeta = new();
 
     public MaterialData(ProjectEntry project)
     {
@@ -35,21 +23,23 @@ public class MaterialData : IDisposable
     {
         await Task.Yield();
 
-        PrimaryBank = new("Primary", Project, Project.VFS.FS);
-        //VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
+        // Material Meta
+        Task<bool> materialMetaTask = SetupMaterialMeta();
+        bool materialMetaTaskResult = await materialMetaTask;
 
-        // Material Display Configuration
-        Task<bool> matDispTask = SetupMaterialDisplayConfiguration();
-        bool matDispTaskResult = await matDispTask;
-
-        if (!matDispTaskResult)
+        if (materialMetaTaskResult)
         {
-            Smithbox.LogError(this, LOC.Get("MAT_Data_Setup_Material_Display_Config_FAIL"));
+            Smithbox.Log(this,
+                LOC.Get("MAT_Data_Setup_Material_Meta_PASS", Project.Descriptor.ProjectName));
         }
         else
         {
-            Smithbox.Log(this, LOC.Get("MAT_Data_Setup_Material_Display_Config_PASS"));
+            Smithbox.LogError(this,
+                LOC.Get("MAT_Data_Setup_Material_Meta_FAIL", Project.Descriptor.ProjectName));
         }
+
+        PrimaryBank = new("Primary", Project, Project.VFS.FS);
+        //VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
 
         // Primary Bank
         Task<bool> primaryBankTask = PrimaryBank.Setup();
@@ -67,48 +57,43 @@ public class MaterialData : IDisposable
         return true;
     }
 
-    /// <summary>
-    /// Setup the material display configuration for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupMaterialDisplayConfiguration()
+    public async Task<bool> SetupMaterialMeta()
     {
         await Task.Yield();
 
-        MaterialDisplayConfiguration = new();
+        MaterialMeta = new();
 
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "MATERIAL", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Display Configuration.json");
+        var baseDir = Path.Join(AppContext.BaseDirectory, "Assets", "MATERIAL");
 
-        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "MATERIAL", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Display Configuration.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
+        foreach (var folder in Directory.EnumerateDirectories(baseDir))
         {
-            targetFile = projectFile;
-        }
+            // i.e. MTD / MATBIN
+            var folderName = Path.GetFileName(folder);
 
-        if (File.Exists(targetFile))
-        {
-            try
+            var classes = new Dictionary<string, MaterialClass>();
+
+            foreach (var file in Directory.EnumerateFiles(folder))
             {
-                var filestring = await File.ReadAllTextAsync(targetFile);
+                string text = await File.ReadAllTextAsync(file);
 
                 try
                 {
-                    MaterialDisplayConfiguration = JsonSerializer.Deserialize(filestring, MaterialEditorJsonSerializerContext.Default.MaterialDisplayConfiguration);
+                    var materialClass = JsonSerializer.Deserialize(text, MaterialEditorJsonSerializerContext.Default.MaterialClass);
+
+                    var key = materialClass.Type;
+
+                    classes.TryAdd(key, materialClass);
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Deserialize_Material_Display_Config", targetFile), e);
+                    Smithbox.LogError(this,
+                        LOC.Get("MAT_Data_Deserialize_Material_Meta_FAIL", file), e);
                 }
             }
-            catch (Exception e)
+
+            if (classes.Count > 0)
             {
-                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_Material_Display_Config", targetFile), e);
+                MaterialMeta.TryAdd(folderName, classes);
             }
         }
 
@@ -124,7 +109,7 @@ public class MaterialData : IDisposable
         PrimaryBank = null;
         //VanillaBank = null;
 
-        MaterialDisplayConfiguration = null;
+        MaterialMeta = null;
     }
     #endregion
 }

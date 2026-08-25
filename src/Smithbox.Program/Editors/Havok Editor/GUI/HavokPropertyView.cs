@@ -1,12 +1,7 @@
-﻿using CsvHelper;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using HKLib.hk2018;
-using HKLib.hk2018.TypeRegistryTest;
 using SoulsFormats;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.MetadataEditor;
-using StudioCore.Editors.Viewport;
 using StudioCore.Utilities;
 using System.Collections;
 using System.Drawing;
@@ -636,7 +631,7 @@ public class HavokPropertyView
         ImGui.NextColumn();
     }
 
-    private static void PropContextRowOpener(string id)
+    private void PropContextRowOpener(string id)
     {
         ImGui.Selectable($"###{id}", false, ImGuiSelectableFlags.AllowOverlap);
         ImGui.SameLine();

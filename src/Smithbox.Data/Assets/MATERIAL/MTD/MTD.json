@@ -1,0 +1,30 @@
+{
+  "Type": "SoulsFormats.MTD",
+  "Fields": [
+      {
+          "Field": "ShaderPath",
+          "Name": "Shader Path",
+          "Description": ""
+      },
+      {
+          "Field": "Description",
+          "Name": "Description",
+          "Description": ""
+      },
+      {
+          "Field": "Key",
+          "Name": "Key",
+          "Description": ""
+      },
+      {
+          "Field": "Params",
+          "Name": "Params",
+          "Description": ""
+      },
+      {
+          "Field": "Textures",
+          "Name": "Textures",
+          "Description": ""
+      }
+  ]
+}

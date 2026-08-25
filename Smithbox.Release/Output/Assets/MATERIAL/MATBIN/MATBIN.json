@@ -1,0 +1,35 @@
+{
+  "Type": "SoulsFormats.MATBIN",
+  "Fields": [
+      {
+          "Field": "ShaderPath",
+          "Name": "Shader Path",
+          "Description": ""
+      },
+      {
+          "Field": "SourcePath",
+          "Name": "Source Path",
+          "Description": ""
+      },
+      {
+          "Field": "Key",
+          "Name": "Key",
+          "Description": ""
+      },
+      {
+          "Field": "Params",
+          "Name": "Params",
+          "Description": ""
+      },
+      {
+          "Field": "Samplers",
+          "Name": "Samplers",
+          "Description": ""
+      },
+      {
+          "Field": "Compression",
+          "Name": "Compression",
+          "Description": ""
+      }
+  ]
+}

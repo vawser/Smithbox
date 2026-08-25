@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "HAVOK_BehaviorView_Tab_Clip_Generators",
+      "Text": "Animation Clips"
+    },
+    {
+      "Key": "HAVOK_BehaviorView_Tab_Anim_Selectors",
+      "Text": "Animation Selectors"
+    },
+    {
+      "Key": "HAVOK_BehaviorView_Tab_State_Machines",
+      "Text": "State Machines"
+    },
+    {
+      "Key": "HAVOK_BehaviorView_Tab_Variables",
+      "Text": "Variables"
+    },
+    {
+      "Key": "HAVOK_BehaviorView_No_Entry_Selected",
+      "Text": "No entry selected yet."
+    },
+    {
+      "Key": "HAVOK_PropertyView_DisplayType_TT",
+      "Text": "Determines the property presentation mode."
+    }
+  ]
+}

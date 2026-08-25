@@ -1,0 +1,25 @@
+{
+  "Type": "SoulsFormats.MATBIN+Sampler",
+  "Fields": [
+      {
+          "Field": "Type",
+          "Name": "Type",
+          "Description": ""
+      },
+      {
+          "Field": "Path",
+          "Name": "Path",
+          "Description": ""
+      },
+      {
+          "Field": "Key",
+          "Name": "Key",
+          "Description": ""
+      },
+      {
+          "Field": "Unk14",
+          "Name": "Unknown",
+          "Description": ""
+      }
+  ]
+}

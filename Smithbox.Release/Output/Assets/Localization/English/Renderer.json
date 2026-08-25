@@ -261,6 +261,10 @@
       "Text": "Failed to read TPF: {0}"
     },
     {
+      "Key": "REND_IconManager_TPF_Find_Failed",
+      "Text": "Failed to fomd TPF: {0}"
+    },
+    {
       "Key": "REND_OpenGL_Texture_Upload_Error",
       "Text": "OpenGL texture upload error: {0}"
     },

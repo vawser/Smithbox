@@ -1,0 +1,20 @@
+{
+  "Type": "SoulsFormats.MTD+Param",
+  "Fields": [
+      {
+          "Field": "Name",
+          "Name": "Name",
+          "Description": ""
+      },
+      {
+          "Field": "Value",
+          "Name": "Value",
+          "Description": ""
+      },
+      {
+          "Field": "Type",
+          "Name": "Type",
+          "Description": ""
+      }
+  ]
+}

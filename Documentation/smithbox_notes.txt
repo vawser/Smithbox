@@ -50,7 +50,6 @@
 
 # Bugs
 - Submeshes aren't working correctly
-- Fix property editing for the sub-classes (FaceSet, Texture, etc)
 - dummy duplicate doesn't stick
 - bone position cannot be changed (resets itself on gizmo move)
 - DS2 chrs loading badly, parts + map pieces failed to find
@@ -117,6 +116,8 @@
         - Delete
         - Insert
   
+- Add cross-binder support to the file list Copy action
+
 #-------------
 # Texture Editor
 #-------------
@@ -134,8 +135,6 @@
 - add power search to file list 
     (i.e. param: g_BlendMode = 6 should filter the list down to all files that contain a parameter called g_BlendMode set to 6)
     (i.e. texture: Path ~ fire should filter the list down to all files that contain a texture with the Path string that contains the string 'fire')
-
-- add list add/remove actions for the Param/Texture lists in a MTD
     
 #-------------
 # File Browser

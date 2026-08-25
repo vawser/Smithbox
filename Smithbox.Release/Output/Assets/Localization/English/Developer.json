@@ -49,6 +49,10 @@
       "Text": "Failed to read {0} as GPARAM for {1}."
     },
     {
+      "Key": "DEV_Tool_Gparam_Extract_Failed_Format_Find",
+      "Text": "Failed to find {0}"
+    },
+    {
       "Key": "DEV_Tool_Gparam_Extract_Failed_VFS_Read",
       "Text": "Failed to read {0} from VFS for {1}."
     },

@@ -962,6 +962,7 @@ public class CFG
     public bool MaterialEditor_FileList_DisplayFullPath = false;
 
     public bool MaterialEditor_Properties_Display_Community_Names = false;
+    public bool MaterialEditor_Properties_Display_Type_Column = false;
 
     // Windows
     public bool Interface_MaterialEditor_ToolWindow = true;

@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_Contents_TreeState_Open",
+      "Text": "Tree Nodes are opened automatically."
+    },
+    {
+      "Key": "MAP_Contents_TreeState_Closed",
+      "Text": "Tree Nodes require the user to open them."
+    },
+    {
+      "Key": "MAP_Contents_TreeState_TT",
+      "Text": "Toggle the opening behavior of tree nodes.\nCurrent Mode: {0}"
+    }
+  ]
+}

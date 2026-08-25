@@ -193,19 +193,6 @@ public class MaterialFileList
     {
         var newName = path;
 
-        if (Project.Handler.MaterialData.MaterialDisplayConfiguration != null && Project.Handler.MaterialData.MaterialDisplayConfiguration.FileListConfigurations != null)
-        {
-            var curConfig = Project.Handler.MaterialData.MaterialDisplayConfiguration.FileListConfigurations
-                .Where(e => e.SourceType == $"{Parent.Selection.SourceType}")
-                .Where(e => e.Binder == Parent.Selection.SelectedBinderEntry.Filename)
-                .FirstOrDefault();
-
-            if (curConfig != null)
-            {
-                newName = path.Replace(curConfig.CommonPath, "");
-            }
-        }
-
         if(!CFG.Current.MaterialEditor_FileList_DisplayFullPath)
         {
             newName = Path.GetFileNameWithoutExtension(newName);

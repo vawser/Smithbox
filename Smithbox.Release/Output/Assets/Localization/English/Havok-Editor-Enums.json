@@ -46,11 +46,11 @@
     },
     {
       "Key": "HAVOK_ENUM_HavokPropertyViewType_Flat",
-      "Text": "Flat"
+      "Text": "Tree"
     },
     {
       "Key": "HAVOK_ENUM_HavokPropertyViewType_Structured",
-      "Text": "Structured"
+      "Text": "Tabs"
     }
   ]
 }

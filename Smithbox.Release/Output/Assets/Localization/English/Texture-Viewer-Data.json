@@ -27,6 +27,10 @@
     {
       "Key": "TEXVIEW_DataSetup_Log_Failed_VFS_Read",
       "Text": "Failed to read {0} from VFS in {1}"
+    },
+    {
+      "Key": "TEXVIEW_DataSetup_Log_Failed_VFS_Find",
+      "Text": "Failed to find {0} from VFS in {1}"
     }
   ]
 }

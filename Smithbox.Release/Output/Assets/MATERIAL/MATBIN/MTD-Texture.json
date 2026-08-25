@@ -1,0 +1,35 @@
+{
+  "Type": "SoulsFormats.MTD+Texture",
+  "Fields": [
+      {
+          "Field": "Type",
+          "Name": "Type",
+          "Description": ""
+      },
+      {
+          "Field": "Extended",
+          "Name": "Extended",
+          "Description": ""
+      },
+      {
+          "Field": "UVNumber",
+          "Name": "UV Number",
+          "Description": ""
+      },
+      {
+          "Field": "ShaderDataIndex",
+          "Name": "Shader Data Index",
+          "Description": ""
+      },
+      {
+          "Field": "Path",
+          "Name": "Path",
+          "Description": ""
+      },
+      {
+          "Field": "UnkFloats",
+          "Name": "Unknown Floats",
+          "Description": ""
+      }
+  ]
+}
