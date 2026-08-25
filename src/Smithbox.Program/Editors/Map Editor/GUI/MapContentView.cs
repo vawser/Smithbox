@@ -171,6 +171,21 @@ public class MapContentView
 
         GUI.Tooltip($"{tooltipTop}{tooltip}");
 
+        ImGui.SameLine();
+
+        // Auto-Open Tree
+        ImGui.SameLine();
+        if (ImGui.Button($"{Icons.Tree}##toggleAutoOpen"))
+        {
+            CFG.Current.MapEditor_MapContentList_Auto_Open_Tree = !CFG.Current.MapEditor_MapContentList_Auto_Open_Tree;
+        }
+
+        var autoTreeMode = LOC.Get("MAP_Contents_TreeState_Open");
+        if (CFG.Current.MapEditor_MapContentList_Auto_Open_Tree)
+            autoTreeMode = LOC.Get("MAP_Contents_TreeState_Closed");
+
+        GUI.Tooltip(LOC.Get("MAP_Contents_TreeState_TT", autoTreeMode));
+
         // Refresh Textures
         //ImGui.SameLine();
         //if (ImGui.Button($"{Icons.Refresh}", DPI.IconButtonSize))
@@ -195,7 +210,13 @@ public class MapContentView
 
         ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
 
+        if(CFG.Current.MapEditor_MapContentList_Auto_Open_Tree)
+        {
+            treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
+        }
+
         var selected = View.ViewportSelection.GetSelection().Contains(mapRoot) || View.ViewportSelection.GetSelection().Contains(mapRef);
+
         if (selected)
         {
             treeflags |= ImGuiTreeNodeFlags.Selected;
@@ -401,6 +422,11 @@ public class MapContentView
             if (cats.Value.Count > 0)
             {
                 ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow;
+
+                if(CFG.Current.MapEditor_MapContentList_Auto_Open_Tree)
+                {
+                    treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
+                }
 
                 if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
                 {
@@ -616,6 +642,12 @@ public class MapContentView
         if (hierarchial && e.Children.Count > 0)
         {
             ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
+
+            if(CFG.Current.MapEditor_MapContentList_Auto_Open_Tree)
+            {
+                treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
+            }
+
             if (View.ViewportSelection.GetSelection().Contains(e))
             {
                 treeflags |= ImGuiTreeNodeFlags.Selected;

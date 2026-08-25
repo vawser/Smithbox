@@ -1,5 +1,6 @@
 ﻿using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using System;
 using System.Collections.Generic;
 
@@ -7,8 +8,16 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelEntityTypeCache
 {
+    public ModelEditorView View;
+    public ProjectEntry Project;
+
     public Dictionary<string, Dictionary<ModelEntityType, Dictionary<Type, List<ModelEntity>>>> _cachedTypeView;
 
+    public ModelEntityTypeCache(ModelEditorView view, ProjectEntry project)
+    {
+        View = view;
+        Project = project;
+    }
 
     public void InvalidateCache()
     {
@@ -59,7 +68,10 @@ public class ModelEntityTypeCache
         modelcache.Add(ModelEntityType.Skeleton, new Dictionary<Type, List<ModelEntity>>());
 
         // modelcache.Add(ModelEntityType.Collision, new Dictionary<Type, List<ModelEntity>>());
-        
+
+        // External: 
+
+
         // Fill the cache
         foreach (Entity obj in container.Objects)
         {

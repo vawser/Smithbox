@@ -1,7 +1,9 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
@@ -12,7 +14,7 @@ using Veldrid;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelContents : IActionEventHandler
+public class ModelContentsView : IActionEventHandler
 {
     public ModelEditorView View;
     public ProjectEntry Project;
@@ -27,7 +29,7 @@ public class ModelContents : IActionEventHandler
     private string ContentTreeFilter = "";
     private bool ExactContentTreeFilter = false;
 
-    public ModelContents(ModelEditorView view, ProjectEntry project)
+    public ModelContentsView(ModelEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
@@ -116,16 +118,37 @@ public class ModelContents : IActionEventHandler
             }
         }
         GUI.Tooltip(LOC.Get("MODEL_Contents_Toggle_Hide_All_TT"));
+
+
+        // Auto-Open Tree
+        ImGui.SameLine();
+        if (ImGui.Button($"{Icons.Tree}##toggleAutoOpen"))
+        {
+            CFG.Current.ModelEditor_Contents_Auto_Open_Tree = !CFG.Current.ModelEditor_Contents_Auto_Open_Tree;
+        }
+
+        var autoTreeMode = LOC.Get("MODEL_Contents_TreeState_Open");
+        if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree)
+            autoTreeMode = LOC.Get("MODEL_Contents_TreeState_Closed");
+
+        GUI.Tooltip(LOC.Get("MODEL_Contents_TreeState_TT", autoTreeMode));
     }
 
     public void DisplayContentTree(ModelContainer container)
     {
+        ImGui.BeginChild($"modelContentsTree_{ImguiID}");
+
         Entity modelRoot = container?.RootObject;
         ObjectContainerReference modelRef = new(container.Name);
 
         ISelectable selectTarget = (ISelectable)modelRoot ?? modelRef;
 
-        ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
+        ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
+
+        if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree)
+        {
+            treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
+        }
 
         var selected = View.ViewportSelection.GetSelection().Contains(modelRoot) || 
             View.ViewportSelection.GetSelection().Contains(modelRef);
@@ -173,6 +196,8 @@ public class ModelContents : IActionEventHandler
             ImGui.PopStyleVar();
             ImGui.TreePop();
         }
+
+        ImGui.EndChild();
     }
 
     private void DisplayTopContextMenu(ModelContainer map, bool selected)
@@ -258,17 +283,21 @@ public class ModelContents : IActionEventHandler
     {
         View.EntityTypeCache.AddModelToCache(container);
 
-        var dict = View.EntityTypeCache._cachedTypeView[container.Name].OrderBy(q => q.Key.ToString());
-
-        foreach (var cats in dict)
+        foreach (KeyValuePair<ModelEntityType, Dictionary<Type, List<ModelEntity>>> cats in
+                 View.EntityTypeCache._cachedTypeView[container.Name].OrderBy(q => q.Key.ToString()))
         {
             if (cats.Value.Count > 0)
             {
-                ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.DefaultOpen;
+                ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow;
+
+                if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree)
+                {
+                    treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
+                }
 
                 if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
                 {
-                    foreach (var typ in cats.Value.OrderBy(q => q.Key.Name))
+                    foreach (KeyValuePair<Type, List<ModelEntity>> typ in cats.Value.OrderBy(q => q.Key.Name))
                     {
                         if (typ.Value.Count > 0)
                         {
@@ -436,7 +465,13 @@ public class ModelContents : IActionEventHandler
         {
             DisplayVisibilityButton(e, container, key, index);
 
-            ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
+            ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
+
+            if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree)
+            {
+                treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
+            }
+
             if (View.ViewportSelection.GetSelection().Contains(e))
             {
                 treeflags |= ImGuiTreeNodeFlags.Selected;
@@ -445,7 +480,10 @@ public class ModelContents : IActionEventHandler
             nodeopen = ImGui.TreeNodeEx(e.PrettyName, treeflags);
             if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(0))
             {
-                View.FrameAction.FrameCurrentEntity(e);
+                if (e.RenderSceneMesh != null)
+                {
+                    View.FrameAction.FrameCurrentEntity(e);
+                }
             }
 
             if (ImGui.IsItemFocused())

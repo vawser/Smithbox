@@ -1,28 +1,22 @@
 ﻿using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using System;
-using System.Collections.Generic;
+using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.Viewport;
+using StudioCore.Utilities;
+using System.Collections;
 using System.Drawing;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using StudioCore.Application;
-using StudioCore.Editors.Common;
-using StudioCore.Renderer;
-using StudioCore.Utilities;
-using StudioCore.Editors.Viewport;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Logger;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelProperties
+public class ModelPropertyView
 {
     public ModelEditorView View;
     public ProjectEntry Project;
 
-    public ModelProperties(ModelEditorView view, ProjectEntry project)
+    public ModelPropertyView(ModelEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
@@ -79,7 +73,7 @@ public class ModelProperties
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_MultipleInput_Background);
                 ImGui.BeginChild("Model_EditingMultipleObjsChild");
 
-                ModelPropertyOrchestrator(View.ViewportSelection);
+                PropEditorSelectedEntities(View.ViewportSelection);
 
                 ImGui.PopStyleColor();
                 ImGui.EndChild();
@@ -97,7 +91,7 @@ public class ModelProperties
                     return;
                 }
 
-                ModelPropertyOrchestrator(View.ViewportSelection);
+                PropEditorSelectedEntities(View.ViewportSelection);
             }
             else
             {
@@ -108,14 +102,11 @@ public class ModelProperties
         ImGui.EndChild();
     }
 
-    private void ModelPropertyOrchestrator(ViewportSelection selection, int classIndex = -1)
+    private void PropEditorSelectedEntities(ViewportSelection selection, int classIndex = -1)
     {
         var entities = selection.GetFilteredSelection<ModelEntity>();
-
         var types = entities.Select(t => t.WrappedObject.GetType()).Distinct();
-
         var first = entities.First();
-
         var type = types.First();
 
         var objType = first.WrappedObject.GetType();
@@ -133,6 +124,10 @@ public class ModelProperties
         //}
 
         ImGui.NextColumn();
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text(type.Name);
+
         ImGui.NextColumn();
 
         if (types.Count() > 1)
@@ -142,12 +137,12 @@ public class ModelProperties
 
         ImGui.Separator();
 
-        ModelPropertyHandler(selection, entities, entities.First().WrappedObject, classIndex: classIndex);
+        PropEditorGeneric(selection, entities, entities.First().WrappedObject, classIndex: classIndex);
 
         ImGui.Columns(1);
     }
 
-    private void ModelPropertyHandler(
+    private void PropEditorGeneric(
         ViewportSelection selection,
         IEnumerable<Entity> entSelection,
         object obj,
@@ -164,6 +159,8 @@ public class ModelProperties
         var id = 0;
         foreach (PropertyInfo prop in properties)
         {
+            var treeFlags = ImGuiTreeNodeFlags.DefaultOpen;
+
             // var meta = Editor.Project.ModelData.Meta.GetFieldMeta(prop.Name, type);
 
             // Field Name
@@ -182,29 +179,12 @@ public class ModelProperties
             //    fieldDescription = meta.Wiki;
             //}
 
-            // Filter by Search
-            var isMatch = EditorFilters.IsMatch(PropertyListFilter, prop.Name, ExactPropertyListFilter);
-
-            if(!isMatch)
-            {
+            // Handle property display (and search filtering)
+            if (!DisplayProperty(obj, prop, type))
                 continue;
-            }
 
             var ignoreProp = prop.GetCustomAttribute<IgnoreInModelEditor>();
             if(ignoreProp != null)
-            {
-                continue;
-            }
-
-            //if (!meta.IsEmpty && PropertySearch != "")
-            //{
-            //    if (!meta.AltName.ToLower().Contains(filterTerm))
-            //    {
-            //        continue;
-            //    }
-            //}
-
-            if (!prop.CanWrite && !prop.PropertyType.IsArray)
             {
                 continue;
             }
@@ -216,10 +196,8 @@ public class ModelProperties
             if (typ.IsArray)
             {
                 var a = (Array)prop.GetValue(obj);
-                var open = ImGui.TreeNodeEx($@"{fieldName}s", ImGuiTreeNodeFlags.DefaultOpen);
-
+                var open = ImGui.TreeNodeEx($@"{fieldName}s", treeFlags);
                 ShowFieldHint(obj, prop, fieldDescription);
-
                 ImGui.NextColumn();
                 ImGui.NextColumn();
                 if (open)
@@ -231,21 +209,16 @@ public class ModelProperties
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
                             var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", ImGuiTreeNodeFlags.DefaultOpen);
-
                             ShowFieldHint(obj, prop, fieldDescription);
-
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
-
                             var o = a.GetValue(i);
-
                             ImGui.Text(o.GetType().Name);
                             ImGui.NextColumn();
 
                             if (classOpen)
                             {
-                                ModelPropertyHandler(selection, entSelection, o, i);
-
+                                PropEditorGeneric(selection, entSelection, o, i);
                                 ImGui.TreePop();
                             }
                         }
@@ -254,7 +227,7 @@ public class ModelProperties
                             ImGui.AlignTextToFramePadding();
                             var array = obj as object[];
 
-                            DisplayModelPropertyLine(selection, entSelection, prop, typ.GetElementType(), a.GetValue(i), $@"{fieldName}[{i}]", i, classIndex);
+                            PropGenericFieldRow(selection, entSelection, prop, typ.GetElementType(), a.GetValue(i), $@"{fieldName}[{i}]", i, classIndex);
                         }
 
                         ImGui.PopID();
@@ -267,72 +240,30 @@ public class ModelProperties
             }
             else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
             {
-                var l = prop.GetValue(obj);
-                if (l != null)
-                {
-                    PropertyInfo itemprop = l.GetType().GetProperty("Item");
-                    var count = (int)l.GetType().GetProperty("Count").GetValue(l);
-
-                    for (var i = 0; i < count; i++)
-                    {
-                        ImGui.PushID(i);
-
-                        Type arrtyp = typ.GetGenericArguments()[0];
-
-                        if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
-                        {
-                            var open = ImGui.TreeNodeEx($@"{fieldName}: {i}", ImGuiTreeNodeFlags.DefaultOpen);
-
-                            ShowFieldHint(obj, prop, fieldDescription);
-
-                            ImGui.NextColumn();
-                            ImGui.SetNextItemWidth(-1);
-
-                            var o = itemprop.GetValue(l, new object[] { i });
-
-                            ImGui.Text(o.GetType().Name);
-
-                            ImGui.NextColumn();
-
-                            if (open)
-                            {
-                                ModelPropertyHandler(selection, entSelection, o);
-
-                                ImGui.TreePop();
-                            }
-
-                            ImGui.PopID();
-                        }
-                        else
-                        {
-                            DisplayModelPropertyLine(selection, entSelection, prop, arrtyp, itemprop.GetValue(l, [i]), $@"{fieldName}[{i}]", i, classIndex);
-
-                            ImGui.PopID();
-                        }
-                    }
-                }
-
-                ImGui.PopID();
+                Type arrtyp = typ.GetGenericArguments()[0];
+                PropEditorGenericList(selection, entSelection, firstEnt, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
+            }
+            else if (typ.BaseType != null && typ.BaseType.IsGenericType
+                && typ.BaseType.GetGenericTypeDefinition() == typeof(List<>))
+            {
+                Type arrtyp = typ.BaseType.GetGenericArguments()[0];
+                PropEditorGenericList(selection, entSelection, firstEnt, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
             }
             else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
             {
                 var o = prop.GetValue(obj);
                 if (o != null)
                 {
-                    var open = ImGui.TreeNodeEx($"{fieldName}", ImGuiTreeNodeFlags.DefaultOpen);
-
+                    var open = ImGui.TreeNodeEx($"{fieldName}", treeFlags);
                     ShowFieldHint(obj, prop, fieldDescription);
-
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
-
                     ImGui.Text(o.GetType().Name);
-
                     ImGui.NextColumn();
 
                     if (open)
                     {
-                        ModelPropertyHandler(selection, entSelection, o);
+                        PropEditorGeneric(selection, entSelection, o);
                         ImGui.TreePop();
                     }
                 }
@@ -341,7 +272,7 @@ public class ModelProperties
             }
             else
             {
-                DisplayModelPropertyLine(selection, entSelection, prop, typ, prop.GetValue(obj), $"{fieldName}", classIndex);
+                PropGenericFieldRow(selection, entSelection, prop, typ, prop.GetValue(obj), $"{fieldName}", classIndex);
 
                 ImGui.PopID();
             }
@@ -399,7 +330,7 @@ public class ModelProperties
         GUI.Tooltip(text);
     }
 
-    private void DisplayModelPropertyLine(
+    private void PropGenericFieldRow(
         ViewportSelection selection,
         IEnumerable<Entity> entSelection,
         PropertyInfo prop,
@@ -407,7 +338,8 @@ public class ModelProperties
         object obj,
         string name,
         int arrayIndex = -1,
-        int classIndex = -1
+        int classIndex = -1,
+        Action onRemove = null
     )
     {
         OpenModelPropertyContextMenu();
@@ -437,6 +369,17 @@ public class ModelProperties
 
         ImGui.Text(fieldName);
 
+        // Remove-from-list button (only passed in by list entries)
+        if (onRemove != null)
+        {
+            ImGui.SameLine();
+            if (ImGui.Button("-##removeListEntry"))
+            {
+                onRemove();
+            }
+            GUI.Tooltip("Remove this entry from the list.");
+        }
+
         ShowFieldHint(obj, prop, fieldDescription);
 
         ImGui.NextColumn();
@@ -446,7 +389,7 @@ public class ModelProperties
         object newval;
 
         // Property Editor UI
-        (bool, bool) propEditResults = HandlePropertyInput(type, oldval, out newval, prop, entSelection);
+        (bool, bool) propEditResults = PropertyRow(type, oldval, out newval, prop, entSelection);
 
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
@@ -609,7 +552,7 @@ public class ModelProperties
     }
 
     #region Property Input
-    private (bool, bool) HandlePropertyInput(Type typ, object oldval, out object newval, PropertyInfo prop, 
+    private (bool, bool) PropertyRow(Type typ, object oldval, out object newval, PropertyInfo prop, 
         IEnumerable<Entity> entSelection)
     {
         ImGui.SetNextItemWidth(-1);
@@ -1103,4 +1046,143 @@ public class ModelProperties
         _changingObject = null;
     }
     #endregion
+
+
+    public bool DisplayProperty(object propObj, PropertyInfo prop, Type type)
+    {
+        var propName = prop.Name;
+
+        // Automatic conditions that hide the property
+
+        if (!prop.CanWrite && !prop.PropertyType.IsArray)
+        {
+            return false;
+        }
+
+        // Normal filter
+        var isMatch = EditorFilters.IsMatch(PropertyListFilter, propName, ExactPropertyListFilter);
+        var isValueMatch = false;
+
+        if (PropertyListFilter.StartsWith("val:"))
+            isValueMatch = true;
+
+        if (!isMatch && !isValueMatch)
+        {
+            return false;
+        }
+        else if (isValueMatch)
+        {
+            // TODO: currently doesn't match correctly with array list values
+            var valStr = PropertyListFilter.Replace("val:", "");
+
+            var propVal = prop.GetValue(propObj);
+
+            if (propVal != null)
+            {
+                var value = $"{propVal}";
+
+                if (ExactPropertyListFilter)
+                {
+                    if (valStr != value)
+                        return false;
+                }
+                else
+                {
+                    if (!value.Contains(valStr))
+                        return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private void PropEditorGenericList(
+        ViewportSelection selection,
+        IEnumerable<Entity> entSelection,
+        Entity firstEnt,
+        object obj,
+        PropertyInfo prop,
+        Type elementType,
+        string fieldName,
+        string fieldDescription,
+        ImGuiTreeNodeFlags treeFlags,
+        int classIndex
+    )
+    {
+        var list = (IList)prop.GetValue(obj);
+
+        var open = ImGui.TreeNodeEx($@"{fieldName}", treeFlags);
+        ShowFieldHint(obj, prop, fieldDescription);
+        ImGui.NextColumn();
+
+        if (list != null)
+        {
+            if (ImGui.Button("+##addListEntry"))
+            {
+                var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
+                var action = new AddListEntryAction(firstEnt, prop, obj, newEntry, list.Count);
+                View.ViewportActionManager.ExecuteAction(action);
+            }
+            GUI.Tooltip("Add a new entry to the end of this list.");
+        }
+        ImGui.NextColumn();
+
+        if (open)
+        {
+            if (list != null)
+            {
+                var removeIndex = -1;
+
+                for (var i = 0; i < list.Count; i++)
+                {
+                    ImGui.PushID(i);
+                    var idx = i;
+                    var elem = list[i];
+                    void OnRemove() => removeIndex = idx;
+
+                    if (elementType.IsClass && elementType != typeof(string) && !elementType.IsArray)
+                    {
+                        var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
+                        ShowFieldHint(obj, prop, fieldDescription);
+                        ImGui.NextColumn();
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.Text(elem?.GetType().Name ?? "null");
+
+                        ImGui.SameLine();
+                        if (ImGui.Button("-##removeListEntry"))
+                        {
+                            OnRemove();
+                        }
+                        GUI.Tooltip("Remove this entry from the list.");
+
+                        ImGui.NextColumn();
+                        if (classOpen)
+                        {
+                            if (elem != null)
+                                PropEditorGeneric(selection, entSelection, elem, idx);
+
+                            ImGui.TreePop();
+                        }
+                    }
+                    else
+                    {
+                        PropGenericFieldRow(selection, entSelection, prop, elementType, elem, $@"{fieldName}[{i}]", i, classIndex, OnRemove);
+                    }
+
+                    ImGui.PopID();
+                }
+
+                if (removeIndex != -1)
+                {
+                    var action = new RemoveListEntryAction(firstEnt, prop, obj, removeIndex);
+                    View.ViewportActionManager.ExecuteAction(action);
+                }
+            }
+
+            ImGui.TreePop();
+        }
+
+        ImGui.PopID();
+    }
 }

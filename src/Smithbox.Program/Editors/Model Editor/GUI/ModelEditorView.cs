@@ -27,7 +27,7 @@ public class ModelEditorView : IEditorView
     public ModelSelection Selection = new();
     public ViewportSelection ViewportSelection = new();
     public ModelPropertyCache ModelPropertyCache = new();
-    public ModelEntityTypeCache EntityTypeCache = new();
+    public ModelEntityTypeCache EntityTypeCache;
 
     public ModelViewportFilters ViewportFilters;
     public ModelUniverse Universe;
@@ -35,8 +35,8 @@ public class ModelEditorView : IEditorView
     public ModelViewportWindow ViewportWindow;
     public ModelContainerList SourceList;
     public ModelFileList FileList;
-    public ModelContents Contents;
-    public ModelProperties Properties;
+    public ModelContentsView Contents;
+    public ModelPropertyView Properties;
     public ModelToolWindow ToolView;
 
     // Tools
@@ -64,6 +64,8 @@ public class ModelEditorView : IEditorView
         RenderScene = new();
 
         ViewIndex = imguiId;
+
+        EntityTypeCache = new(this, project);
 
         Universe = new ModelUniverse(this, project);
 

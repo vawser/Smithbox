@@ -283,6 +283,7 @@ public class CFG
     public int CompassOffset = 64;
     public float CompassNorthOffset = -90f;
 
+    public bool MapEditor_MapContentList_Auto_Open_Tree = false;
     public bool MapEditor_MapContentList_DisplayVisibilityIcon = true;
 
     public bool MapEditor_ModelLoad_MapPieces = true;
@@ -511,6 +512,7 @@ public class CFG
 
     public bool ModelEditor_Files_AutoLoadFirstEntry = true;
 
+    public bool ModelEditor_Contents_Auto_Open_Tree = false;
     public bool ModelEditor_Contents_NodeNameInMeshEntry = true;
 
     public bool ModelEditor_ViewMeshes = true;
