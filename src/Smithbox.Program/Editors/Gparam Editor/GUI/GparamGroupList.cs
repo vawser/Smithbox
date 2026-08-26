@@ -39,7 +39,7 @@ public class GparamGroupList
 
     public void DisplayHeader()
     {
-        GUI.SimpleHeader("Groups", "");
+        GUI.TitleHeader("Groups", "");
 
         // Search
         ImGui.BeginChild("GparamGroupSearchSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);

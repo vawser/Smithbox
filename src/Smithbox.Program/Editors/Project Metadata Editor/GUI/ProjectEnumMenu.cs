@@ -225,7 +225,7 @@ public class ProjectEnumMenu
     public void DisplayEditor()
     {
         // Enums
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("META_EnumMenu_Header_Enums"),
             LOC.Get("META_EnumMenu_Header_Enums_TT"));
 

@@ -86,7 +86,7 @@ public class ParamListWindow
             }
         }
 
-        GUI.SimpleHeader($"{paramListTitle}", "");
+        GUI.TitleHeader($"{paramListTitle}", "");
     }
 
     private void DisplayHeader(bool isActiveView)

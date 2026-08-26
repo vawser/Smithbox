@@ -172,6 +172,10 @@ public class CFG
 
     public string Interface_Selected_Theme = "";
 
+    // Editor Presentation
+    public bool Interface_Display_Title_Headers = false;
+    public bool Interface_Display_Searchbar_Minimize = true;
+
     #endregion
 
     #region Map Editor

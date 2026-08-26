@@ -46,8 +46,6 @@
 
 - Rendering experiment (TinyFFR)
 
-- Add HKXPWV edit mode (add sub-editor stuff from Map Data Editor: FLVER, HKXPWV
-
 # Bugs
 - Submeshes aren't working correctly
 - dummy duplicate doesn't stick

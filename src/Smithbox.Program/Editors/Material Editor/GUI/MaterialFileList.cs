@@ -37,7 +37,7 @@ public class MaterialFileList
     public void DisplayTitle()
     {
         // File List
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("MAT_FileList_Header_File_List"),
             LOC.Get("MAT_FileList_Header_File_List_TT"));
     }

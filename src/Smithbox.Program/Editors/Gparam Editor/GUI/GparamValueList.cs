@@ -37,7 +37,7 @@ public class GparamValueList
     }
     public void DisplayHeader()
     {
-        GUI.SimpleHeader("Values", "");
+        GUI.TitleHeader("Values", "");
 
         // Search
         ImGui.BeginChild("GparamFieldSearchSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);

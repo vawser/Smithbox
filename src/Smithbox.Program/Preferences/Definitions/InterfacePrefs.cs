@@ -204,6 +204,46 @@ public class InterfacePrefs
 
     #endregion
 
+    #region Editor Presentation
+    public static PreferenceItem Interface_Display_Title_Headers()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.Interface,
+            Spacer = true,
+
+            Section = SectionCategory.EditorPresentation,
+
+            Title = "PREF_Interface_Display_Title_Headers",
+            Description = "PREF_Interface_Display_Title_Headers_TT",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Display_Title_Headers);
+            }
+        };
+    }
+    public static PreferenceItem Interface_Display_Searchbar_Minimize()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.Interface,
+            Spacer = true,
+
+            Section = SectionCategory.EditorPresentation,
+
+            Title = "PREF_Interface_Display_Searchbar_Minimize",
+            Description = "PREF_Interface_Display_Searchbar_Minimize_TT",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Display_Searchbar_Minimize);
+            }
+        };
+    }
+
+    #endregion
+
     #region Fonts
     public static PreferenceItem Interface_English_Font()
     {

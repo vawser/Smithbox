@@ -38,23 +38,27 @@ public static class EditorFilters
         GUI.Tooltip(
             LOC.Get("EDITOR_List_Filter_Exact_Match_TT"));
 
-        ImGui.SameLine();
-        if (SearchMinimized)
+        if (CFG.Current.Interface_Display_Searchbar_Minimize)
         {
-            if (ImGui.ArrowButton("##searchMaximize", ImGuiDir.Right))
+            ImGui.SameLine();
+            if (SearchMinimized)
             {
-                SearchMinimized = false;
+                if (ImGui.ArrowButton("##searchMaximize", ImGuiDir.Right))
+                {
+                    SearchMinimized = false;
+                }
+                GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
-        }
-        else
-        {
-            if (ImGui.ArrowButton("##searchMinimize", ImGuiDir.Left))
+            else
             {
-                SearchMinimized = true;
+                if (ImGui.ArrowButton("##searchMinimize", ImGuiDir.Left))
+                {
+                    SearchMinimized = true;
+                }
+                GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
         }
+
         ImGui.SameLine();
 
         if(SearchMinimized)

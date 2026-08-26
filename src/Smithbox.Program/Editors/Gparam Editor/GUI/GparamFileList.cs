@@ -39,7 +39,7 @@ public class GparamFileList
     }
     public void DisplayHeader()
     {
-        GUI.SimpleHeader("Files", "");
+        GUI.TitleHeader("Files", "");
 
         // Search
         ImGui.BeginChild("GparamFileSearchSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);

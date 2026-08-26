@@ -26,7 +26,7 @@ public class TexProperties
     {
         ImGui.BeginChild("TextureProperties", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("TEXVIEW_Properties_Header_Properties", Parent.Selection.SelectedTextureKey),
             LOC.Get("TEXVIEW_Properties_Header_Properties_TT"));
 

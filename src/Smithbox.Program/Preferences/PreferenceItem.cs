@@ -70,8 +70,11 @@ public enum SectionCategory
     DataOverride = 202,
 
     // Interface
+    [Display(Name = "PREF_Category_UI_Editor_Presentation")]
+    EditorPresentation = 300,
+
     [Display(Name = "PREF_Category_UI_Fonts")]
-    Fonts = 300,
+    Fonts = 301,
 
     [Display(Name = "PREF_Category_UI_Theme")]
     Theme = 302,

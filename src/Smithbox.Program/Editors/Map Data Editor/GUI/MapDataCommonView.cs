@@ -21,7 +21,7 @@ public class MapDataCommonView
 
     public void Draw(float width, float height)
     {
-        GUI.SimpleHeader("Editor Mode", "");
+        GUI.TitleHeader("Editor Mode", "");
 
         ImGui.BeginChild("EditorModeSection", new Vector2(0, 40), ImGuiChildFlags.Borders);
         GUI.SetInputWidth();

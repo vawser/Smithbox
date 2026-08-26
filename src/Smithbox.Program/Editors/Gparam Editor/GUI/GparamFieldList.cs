@@ -41,7 +41,7 @@ public class GparamFieldList
 
     public void DisplayHeader()
     {
-        GUI.SimpleHeader("Fields", "");
+        GUI.TitleHeader("Fields", "");
 
         // Search
         ImGui.BeginChild("GparamFieldSearchSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);

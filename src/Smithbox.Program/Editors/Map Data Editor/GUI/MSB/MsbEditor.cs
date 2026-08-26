@@ -30,7 +30,7 @@ public class MsbEditor
 
     public void DisplayHeader()
     {
-        GUI.SimpleHeader("Maps", "");
+        GUI.TitleHeader("Maps", "");
 
         ImGui.BeginChild($"framedListFilter_msbEditor_FileList", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
@@ -110,7 +110,7 @@ public class MsbEditor
 
     public void Draw()
     {
-        GUI.SimpleHeader("Current Map", "");
+        GUI.TitleHeader("Current Map", "");
 
         var columnCount = 3;
 

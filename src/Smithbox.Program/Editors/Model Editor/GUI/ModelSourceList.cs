@@ -47,7 +47,7 @@ public class ModelContainerList
 
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("MODEL_SourceList_Header"),
             LOC.Get("MODEL_SourceList_Header_TT"));
 

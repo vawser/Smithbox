@@ -20,7 +20,7 @@ public class ParamDefMenu
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("META_Header_Param_Def"),
             LOC.Get("META_Header_Param_Def_TT"));
 

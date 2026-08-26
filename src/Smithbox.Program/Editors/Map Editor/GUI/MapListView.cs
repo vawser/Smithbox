@@ -26,7 +26,7 @@ public class MapListView : IActionEventHandler
 
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader("Map List", "");
+        GUI.TitleHeader("Map List", "");
 
         DisplaySearchbar();
 

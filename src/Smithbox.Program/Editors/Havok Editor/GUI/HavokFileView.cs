@@ -32,7 +32,7 @@ public class HavokFileView
 
     public void Draw()
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("HAVOK_FileView_Header"),
             LOC.Get("HAVOK_FileView_Header_TT"));
 

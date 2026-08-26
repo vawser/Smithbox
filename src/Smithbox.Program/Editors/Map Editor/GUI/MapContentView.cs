@@ -42,7 +42,7 @@ public class MapContentView
     /// </summary>
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader("Contents", "");
+        GUI.TitleHeader("Contents", "");
 
         DisplaySearchbar();
 

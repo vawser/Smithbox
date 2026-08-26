@@ -33,7 +33,7 @@ public class FileItemView
 
     public void Display()
     {
-        GUI.SimpleHeader("Item", "");
+        GUI.TitleHeader("Item", "");
 
         DisplayItemViewer();
     }

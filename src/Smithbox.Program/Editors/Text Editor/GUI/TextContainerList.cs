@@ -31,7 +31,7 @@ public class TextContainerList
     /// </summary>
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("TEXT_ContainerList_Header_Containers"),
             LOC.Get("TEXT_ContainerList_Header_Containers_TT"));
 

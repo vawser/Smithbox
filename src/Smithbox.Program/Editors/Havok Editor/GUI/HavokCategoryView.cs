@@ -25,7 +25,7 @@ public class HavokCategoryView
 
     public void Draw()
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("HAVOK_CategoryView_Header"),
             LOC.Get("HAVOK_CategoryView_Header_TT"));
 

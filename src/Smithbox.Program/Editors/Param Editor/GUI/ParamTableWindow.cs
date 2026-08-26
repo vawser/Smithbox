@@ -52,7 +52,7 @@ public class ParamTableWindow
     }
     public void DisplayTitle()
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("PARAM_TableWindow_Table_List"), 
             LOC.Get("PARAM_TableWindow_Table_List_TT"));
     }

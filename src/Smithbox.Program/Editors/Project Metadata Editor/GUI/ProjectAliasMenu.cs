@@ -321,7 +321,7 @@ public class ProjectAliasMenu
     public void DisplayEditor()
     {
         // Aliases
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("META_AliasMenu_Header_Aliases"),
             LOC.Get("META_AliasMenu_Header_Aliases_TT"));
 

@@ -55,7 +55,7 @@ public class MaterialProperties
 
     public void DisplayTitle()
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("MAT_Properties_Header_Properties"),
             LOC.Get("MAT_Properties_Header_Properties_TT"));
     }

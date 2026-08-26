@@ -153,7 +153,7 @@ public class ProjectScreen
 
     public void DisplayActiveProjectList()
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("PROJECT_Configuration_Header_Active_Projects"), 
             LOC.Get("PROJECT_Configuration_Header_Active_Projects_TT"));
 
@@ -168,22 +168,7 @@ public class ProjectScreen
 
     public void DisplayAvailableProjectList()
     {
-        GUI.SimpleHeader(
-            LOC.Get("PROJECT_Configuration_Header_Global_Actions"),
-            LOC.Get("PROJECT_Configuration_Header_Global_Actions_TT"));
-
-        GUI.MultiButtonInput("globalProjectActions",
-            "createNewProject",
-            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project"), 
-            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_TT"),
-            CreateProjectAction,
-
-            "createProjectFromJson",
-            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_From_JSON"),
-            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_From_JSON_TT"),
-            CreateProjectFromJsonAction);
-
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("PROJECT_Configuration_Header_Available_Projects"),
             LOC.Get("PROJECT_Configuration_Header_Available_Projects_TT"));
 
@@ -542,24 +527,6 @@ public class ProjectScreen
 
         SelectedLoadedEntry = project;
         ConfigureMenu.EditorMode = ProjectEditorMode.Edit;
-    }
-
-    public void CreateProjectAction()
-    {
-        ConfigureMenu.SetupForCreation();
-    }
-
-    public void CreateProjectFromJsonAction()
-    {
-        var orchestrator = Smithbox.Orchestrator;
-
-        var projectJsonPath = "";
-        var result = PlatformUtils.Instance.OpenFileDialog(LOC.Get("PROJECT_Configuration_Action_Select_Project_JSON"), out projectJsonPath);
-
-        if (result)
-        {
-            orchestrator.CreateProjectFromLegacyJson(projectJsonPath);
-        }
     }
 
     public void DisplayProjectCreator()

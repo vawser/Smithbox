@@ -36,7 +36,7 @@ public class MsbPropertyView
 
     public void Display()
     {
-        GUI.SimpleHeader("Properties", "");
+        GUI.TitleHeader("Properties", "");
 
         DisplayHeader();
         DisplayProperties();

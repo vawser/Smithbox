@@ -28,7 +28,7 @@ public class TexInternalFileList
     /// </summary>
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("TEXVIEW_InternalFileList_Header_Files"),
             LOC.Get("TEXVIEW_InternalFileList_Header_Files_TT"));
 

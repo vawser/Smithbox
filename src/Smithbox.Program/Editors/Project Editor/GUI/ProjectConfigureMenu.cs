@@ -398,7 +398,19 @@ public class ProjectConfigureMenu
 
     public void DisplayProjectSettings()
     {
+        GUI.MultiButtonInput("globalProjectActions",
+            "createNewProject",
+            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project"),
+            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_TT"),
+            SetupForCreation,
+
+            "createProjectFromJson",
+            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_From_JSON"),
+            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_From_JSON_TT"),
+            CreateProjectFromJsonAction);
+
         // Project Name
+        GUI.Spacer();
         GUI.SimpleHeader(
             LOC.Get("PROJECT_Configuration_Header_Project_Name"),
             LOC.Get("PROJECT_Configuration_Header_Project_Name_TT"));
@@ -661,6 +673,19 @@ public class ProjectConfigureMenu
         }
 
         return tooltip;
+    }
+
+    public void CreateProjectFromJsonAction()
+    {
+        var orchestrator = Smithbox.Orchestrator;
+
+        var projectJsonPath = "";
+        var result = PlatformUtils.Instance.OpenFileDialog(LOC.Get("PROJECT_Configuration_Action_Select_Project_JSON"), out projectJsonPath);
+
+        if (result)
+        {
+            orchestrator.CreateProjectFromLegacyJson(projectJsonPath);
+        }
     }
 }
 

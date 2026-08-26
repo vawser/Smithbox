@@ -26,7 +26,7 @@ public class MaterialContainerList
 
     public void Draw(float width, float height)
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("MAT_ContainerList_Header_Containers"),
             LOC.Get("MAT_ContainerList_Header_Containers_TT"));
 

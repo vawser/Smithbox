@@ -29,7 +29,7 @@ public class TextFileList
     /// </summary>
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("TEXT_FileList_Header_Files"),
             LOC.Get("TEXT_FileList_Header_Files_TT"));
 

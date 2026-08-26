@@ -40,7 +40,7 @@ public class ModelContentsView : IActionEventHandler
 
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("MODEL_Contents_Header"),
             LOC.Get("MODEL_Contents_Header_TT"));
 

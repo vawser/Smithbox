@@ -30,7 +30,7 @@ public class ModelFileList
 
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("MODEL_FileList_Header"),
             LOC.Get("MODEL_FileList_Header_TT"));
 

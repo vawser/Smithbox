@@ -36,13 +36,13 @@ public class MsbCategoryView
     {
         var baseCategories = MsbCategories.GetBaseCategories(Project);
 
-        GUI.SimpleHeader("Base Categories", "");
+        GUI.TitleHeader("Base Categories", "");
 
         var subCategories = GetSubCategoriesForCurrentBase(baseCategories);
 
         DisplayBaseCategoryList(baseCategories);
 
-        GUI.SimpleHeader("Sub Categories", "");
+        GUI.TitleHeader("Sub Categories", "");
 
         DisplaySubCategoryList(subCategories);
     }

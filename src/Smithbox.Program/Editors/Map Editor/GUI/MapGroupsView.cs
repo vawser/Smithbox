@@ -31,7 +31,7 @@ public class MapGroupsView
     {
         Shortcuts();
 
-        GUI.SimpleHeader("Groups", "Store groups of map objects as selections here. You can then easily re-select or manipulate them.\nGroups are specific to each project and to each map.");
+        GUI.TitleHeader("Groups", "Store groups of map objects as selections here. You can then easily re-select or manipulate them.\nGroups are specific to each project and to each map.");
 
         DisplayHeader();
 

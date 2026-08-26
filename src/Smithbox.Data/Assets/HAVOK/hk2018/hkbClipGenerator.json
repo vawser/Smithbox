@@ -1,0 +1,72 @@
+{
+  "Type": "HKLib.hk2018.hkbClipGenerator",
+  "Fields": [
+      {
+          "Field": "m_animationName",
+          "Name": "Animation Name",
+          "Description": ""
+      },
+      {
+          "Field": "m_userPartitionMask",
+          "Name": "User Partition Mask",
+          "Description": ""
+      },
+      {
+          "Field": "m_cropStartAmountLocalTime",
+          "Name": "Crop Start Amount (Local Time)",
+          "Description": ""
+      },
+      {
+          "Field": "m_cropEndAmountLocalTime",
+          "Name": "Crop End Amount (Local Time)",
+          "Description": ""
+      },
+      {
+          "Field": "m_startTime",
+          "Name": "Start Time",
+          "Description": ""
+      },
+      {
+          "Field": "m_playbackSpeed",
+          "Name": "Playback Speed",
+          "Description": ""
+      },
+      {
+          "Field": "m_enforcedDuration",
+          "Name": "Enforced Duration",
+          "Description": ""
+      },
+      {
+          "Field": "m_userControlledTimeFraction",
+          "Name": "User Controlled Time Fraction",
+          "Description": ""
+      },
+      {
+          "Field": "m_mode",
+          "Name": "Playback Mode",
+          "Description": ""
+      },
+      {
+          "Field": "m_flags",
+          "Name": "Playback Flags",
+          "Description": "",
+          "ClipGeneratorFlags": true
+      },
+      {
+          "Field": "m_animationInternalId",
+          "Name": "Animation Internal ID",
+          "Description": "",
+          "AnimationInternalID": true
+      },
+      {
+          "Field": "m_userData",
+          "Name": "User Data",
+          "Description": ""
+      },
+      {
+          "Field": "m_name",
+          "Name": "Name",
+          "Description": ""
+      }
+  ]
+}

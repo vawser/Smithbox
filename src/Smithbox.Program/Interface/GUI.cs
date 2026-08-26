@@ -391,6 +391,14 @@ public static class GUI
         PlatformUtils.Instance.SetClipboardText(text);
     }
 
+    public static void TitleHeader(string title, string tooltip)
+    {
+        if(CFG.Current.Interface_Display_Title_Headers)
+        {
+            SimpleHeader(title, tooltip);
+        }
+    }
+
     public static void SimpleHeader(string title, string tooltip)
     {
         var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;

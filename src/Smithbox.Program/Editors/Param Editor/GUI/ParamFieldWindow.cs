@@ -85,7 +85,7 @@ public class ParamFieldWindow
     }
     public void DisplayTitle()
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("PARAM_FieldWindow_Title"),
             LOC.Get("PARAM_FieldWindow_Title_TT"));
     }

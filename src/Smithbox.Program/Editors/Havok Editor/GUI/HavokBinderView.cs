@@ -26,7 +26,7 @@ public class HavokBinderView
 
     public void Draw()
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("HAVOK_BinderView_Header"),
             LOC.Get("HAVOK_BinderView_Header_TT"));
 

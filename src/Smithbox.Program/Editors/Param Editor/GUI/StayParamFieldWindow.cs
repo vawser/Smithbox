@@ -53,7 +53,7 @@ public class StayParamFieldWindow
 
     public void DisplayTitle()
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("PARAM_SP_FieldWindow_Title"),
             LOC.Get("PARAM_SP_FieldWindow_Title_TT"));
     }

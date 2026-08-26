@@ -109,7 +109,7 @@ public class ParamRowWindow
     {
         var rowListTitle = LOC.Get("PARAM_RowWindow_Title");
 
-        GUI.SimpleHeader($"{rowListTitle}", "");
+        GUI.TitleHeader($"{rowListTitle}", "");
     }
 
     private void DisplayHeader()

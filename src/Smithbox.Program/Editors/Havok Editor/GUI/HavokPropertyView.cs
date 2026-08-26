@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using HKLib.hk2018;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
@@ -33,7 +34,7 @@ public class HavokPropertyView
 
     public void Draw()
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("HAVOK_PropertyView_Header"),
             LOC.Get("HAVOK_PropertyView_Header_TT"));
 
@@ -49,7 +50,7 @@ public class HavokPropertyView
             if (View.PropertyView.BehaviorView.IsBehaviorGraph &&
                 View.Selection.PropertyViewType is HavokPropertyViewType.Structured)
             {
-                BehaviorView.DisplayHeader();
+                // No standard header
             }
             else
             {
@@ -149,11 +150,8 @@ public class HavokPropertyView
         // Property View Type
         if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
         {
-            if(View.Selection.PropertyViewType is HavokPropertyViewType.Flat)
-            {
-                ImGui.SameLine();
-                BehaviorView.DisplayHeader(true);
-            }
+            ImGui.SameLine();
+            BehaviorView.DisplayHeader(true);
         }
 
         GUI.EndHeader();
@@ -573,6 +571,18 @@ public class HavokPropertyView
         }
 
         if (HavokPropertyDecorators.ParamRefRow(View, havokMeta, prop, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        if (HavokPropertyDecorators.ClipGenFlags(View, havokMeta, prop, oldval, ref newval, GetSourceObject(), ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        if (HavokPropertyDecorators.ClipGenInternalID(View, havokMeta, prop, oldval, ref newval, GetSourceObject(), ref newval))
         {
             changed = true;
             committed = true;
@@ -1017,9 +1027,21 @@ public class HavokPropertyView
             ImGui.AlignTextToFramePadding();
             if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Add_List_Entry")}##addListEntry"))
             {
-                var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
-                var action = new HavokAddListEntryAction(prop, obj, newEntry, list.Count);
-                View.ActionManager.ExecuteAction(action);
+                // Intercept these types and peek at the first list entry to get the appropriate type
+                if (elementType == typeof(hkbGenerator) && list.Count > 0)
+                {
+                    var firstElem = list[0];
+
+                    var newEntry = PropFinderUtil.CreateDefaultListElement(firstElem.GetType());
+                    var action = new HavokAddListEntryAction(prop, obj, newEntry, list.Count);
+                    View.ActionManager.ExecuteAction(action);
+                }
+                else
+                {
+                    var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
+                    var action = new HavokAddListEntryAction(prop, obj, newEntry, list.Count);
+                    View.ActionManager.ExecuteAction(action);
+                }
             }
             GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
         }
@@ -1104,5 +1126,55 @@ public class HavokPropertyView
         }
 
         ImGui.PopID();
+    }
+
+    public object GetSourceObject()
+    {
+        var data = Project.Handler.HavokData;
+        var binderEntry = View.Selection.BinderFileEntry;
+        var filePath = View.Selection.FilePath;
+
+        object sorceObject = null;
+
+        switch(View.Selection.CategoryMode)
+        {
+            case HavokCategoryMode.Animation:
+                sorceObject = data.AnimationBank[binderEntry][filePath];
+                break;
+
+            case HavokCategoryMode.Behavior:
+                sorceObject = data.BehaviorBank[binderEntry][filePath];
+                break;
+
+            case HavokCategoryMode.Character:
+                sorceObject = data.CharacterBank[binderEntry][filePath];
+                break;
+
+            case HavokCategoryMode.Map_Collision:
+                sorceObject = data.MapCollisionBank[binderEntry][filePath];
+                break;
+
+            case HavokCategoryMode.Asset_Collision:
+                sorceObject = data.AssetCollisionBank[binderEntry][filePath];
+                break;
+
+            case HavokCategoryMode.Navmesh:
+                sorceObject = data.NavmeshBank[binderEntry][filePath];
+                break;
+
+            case HavokCategoryMode.Cutscene:
+                sorceObject = data.CutsceneBank[binderEntry][filePath];
+                break;
+
+            case HavokCategoryMode.Part_Collidable:
+                sorceObject = data.PartBank[binderEntry][filePath];
+                break;
+
+            case HavokCategoryMode.Rumble:
+                sorceObject = data.RumbleBank[binderEntry][filePath];
+                break;
+        }
+
+        return sorceObject;
     }
 }

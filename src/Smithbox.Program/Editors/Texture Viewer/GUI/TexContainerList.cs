@@ -30,7 +30,7 @@ public class TexContainerList
     /// </summary>
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("TEXVIEW_ContainerList_Header_Containers"),
             LOC.Get("TEXVIEW_ContainerList_Header_Containers_TT"));
 

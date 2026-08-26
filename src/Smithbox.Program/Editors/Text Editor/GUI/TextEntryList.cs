@@ -50,7 +50,7 @@ public class TextEntryList
 
     public void DisplayTitle()
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("TEXT_EntryList_Header_Entries"),
             LOC.Get("TEXT_EntryList_Header_Entries_TT"));
     }

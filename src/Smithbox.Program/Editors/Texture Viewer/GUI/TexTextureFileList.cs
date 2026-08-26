@@ -26,7 +26,7 @@ public class TexTextureFileList
 
     public void Display(float width, float height)
     {
-        GUI.SimpleHeader(
+        GUI.TitleHeader(
             LOC.Get("TEXVIEW_TextureList_Header_Textures"),
             LOC.Get("TEXVIEW_TextureList_Header_Textures_TT"));
 

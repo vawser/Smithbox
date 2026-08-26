@@ -14,9 +14,13 @@ public class HavokField
     public string Name { get; set; } = "";
     public string Description { get; set; } = "";
 
-    // Attributes
+    // Tags: General
     public bool IsRawData { get; set; } = false;
     public string ParamRef { get; set; } = "";
+
+    // Tags: Clip Generator
+    public bool ClipGeneratorFlags { get; set; } = false;
+    public bool AnimationInternalID { get; set; } = false;
 }
 
 public static class HavokMetaHelper
