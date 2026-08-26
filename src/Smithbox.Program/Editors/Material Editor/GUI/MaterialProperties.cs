@@ -405,11 +405,12 @@ public class MaterialProperties
         if (onRemove != null)
         {
             ImGui.SameLine();
-            if (ImGui.Button("-##removeListEntry"))
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
             {
                 onRemove();
             }
-            GUI.Tooltip("Remove this entry from the list.");
+            GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
         }
 
         GUI.Tooltip(description);
@@ -584,7 +585,8 @@ public class MaterialProperties
 
         if (list != null)
         {
-            if (ImGui.Button("+##addListEntry"))
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Add_List_Entry")}##addListEntry"))
             {
                 var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
 
@@ -600,7 +602,7 @@ public class MaterialProperties
                 var action = new MatAddListEntry(prop, obj, newEntry, list.Count);
                 View.ActionManager.ExecuteAction(action);
             }
-            GUI.Tooltip("Add a new entry to the end of this list.");
+            GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
         }
 
         ImGui.NextColumn();
@@ -638,11 +640,12 @@ public class MaterialProperties
                         ImGui.Text(elem?.GetType().Name ?? "null");
 
                         ImGui.SameLine();
-                        if (ImGui.Button("-##removeListEntry"))
+                        ImGui.AlignTextToFramePadding();
+                        if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
                         {
                             OnRemove();
                         }
-                        GUI.Tooltip("Remove this entry from the list.");
+                        GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
 
                         ImGui.NextColumn();
 

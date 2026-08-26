@@ -389,6 +389,9 @@ public class ModelWrapper
 
     public void Load()
     {
+        // Disable the visualisation of these when the file changes
+        CFG.Current.DisplayEdgePoints = false;
+
         var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Parent.Project, Parent.Path);
 
         if (binderType is ResourceContainerType.None)

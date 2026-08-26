@@ -441,11 +441,12 @@ public class MapMsbPropertyView
         if (onRemove != null)
         {
             ImGui.SameLine();
-            if (ImGui.Button("-##removeListEntry"))
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
             {
                 onRemove();
             }
-            GUI.Tooltip("Remove this entry from the list.");
+            GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
         }
 
         ShowFieldHint(obj, prop, fieldDescription);
@@ -1807,13 +1808,14 @@ public class MapMsbPropertyView
 
         if (list != null)
         {
-            if (ImGui.Button("+##addListEntry"))
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Add_List_Entry")}##addListEntry"))
             {
                 var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
                 var action = new AddListEntryAction(firstEnt, prop, obj, newEntry, list.Count);
                 View.ViewportActionManager.ExecuteAction(action);
             }
-            GUI.Tooltip("Add a new entry to the end of this list.");
+            GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
         }
         ImGui.NextColumn();
 
@@ -1839,11 +1841,12 @@ public class MapMsbPropertyView
                         ImGui.Text(elem?.GetType().Name ?? "null");
 
                         ImGui.SameLine();
-                        if (ImGui.Button("-##removeListEntry"))
+                        ImGui.AlignTextToFramePadding();
+                        if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
                         {
                             OnRemove();
                         }
-                        GUI.Tooltip("Remove this entry from the list.");
+                        GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
 
                         ImGui.NextColumn();
                         if (classOpen)

@@ -12,10 +12,11 @@
 
 # Model Editor
 - Add additional file support (like Map Editor)
- - CLM2
  - EDGE
+  - Read map mapbnd for edges and then associate with FLVER on load for map pieces
+  
  - GRASS
- - HKXPWV
+  - Add preview mesh (generate like the collision mesh from the GRASS face/vertices data)
 
 # Havok Editor
 - Add 'Generate' tool for collisions:

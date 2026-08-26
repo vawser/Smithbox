@@ -408,11 +408,12 @@ public class ModelPropertyView
         if (onRemove != null)
         {
             ImGui.SameLine();
-            if (ImGui.Button("-##removeListEntry"))
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
             {
                 onRemove();
             }
-            GUI.Tooltip("Remove this entry from the list.");
+            GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
         }
 
         GUI.Tooltip(description);
@@ -460,6 +461,51 @@ public class ModelPropertyView
         ModelPropertyDecorators.MaterialRefRow(View, classMeta, prop, oldval, ref newval);
 
         UpdateProperty(prop, entSelection, oldval, newval, changed, committed, arrayIndex, classIndex);
+
+        ImGui.NextColumn();
+    }
+    private void PropGenericFieldRowDirect(
+        IList list,
+        Type type,
+        int index,
+        string name,
+        string description,
+        Entity firstEnt,
+        Action onRemove
+    )
+    {
+        ImGui.Text(name);
+
+        if (onRemove != null)
+        {
+            ImGui.SameLine();
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
+            {
+                onRemove();
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
+        }
+
+        GUI.Tooltip(description);
+
+        ImGui.NextColumn();
+        ImGui.SetNextItemWidth(-1);
+
+        var oldval = list[index];
+        object newval;
+
+        (bool, bool) propEditResults = PropertyRow(type, oldval, out newval, null, new[] { firstEnt });
+
+        var changed = propEditResults.Item1;
+        var committed = propEditResults.Item2;
+
+        if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
+        {
+            ImGui.SetItemDefaultFocus();
+        }
+
+        UpdatePropertyDirect(firstEnt, list, index, oldval, newval, changed, committed);
 
         ImGui.NextColumn();
     }
@@ -542,13 +588,13 @@ public class ModelPropertyView
         if (list != null)
         {
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Button("+##addListEntry"))
+            if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Add_List_Entry")}##addListEntry"))
             {
                 var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
                 var action = new ModelAddListEntryAction(firstEnt, prop, obj, newEntry, list.Count);
                 View.ViewportActionManager.ExecuteAction(action);
             }
-            GUI.Tooltip("Add a new entry to the end of this list.");
+            GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
         }
 
         ImGui.NextColumn();
@@ -571,6 +617,48 @@ public class ModelPropertyView
                     var elem = list[i];
                     void OnRemove() => removeIndex = idx;
 
+                    if (elementType.IsGenericType && elementType.GetGenericTypeDefinition() == typeof(List<>))
+                    {
+                        var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
+                        GUI.Tooltip(fieldDescription);
+                        ImGui.NextColumn();
+                        ImGui.SetNextItemWidth(-1);
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text(elem?.GetType().Name ?? "null");
+
+                        ImGui.SameLine();
+                        ImGui.AlignTextToFramePadding();
+                        if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
+                        {
+                            OnRemove();
+                        }
+                        GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
+
+                        ImGui.NextColumn();
+
+                        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+                        {
+                            PropContextRowOpener("listTypeCol");
+
+                            ImGui.Text(elem?.GetType().FullName);
+
+                            DisplayContextMenu(fieldName, fieldDescription, prop);
+
+                            ImGui.NextColumn();
+                        }
+
+                        if (classOpen)
+                        {
+                            if (elem != null)
+                            {
+                                Type innerElementType = elementType.GetGenericArguments()[0];
+                                PropEditorGenericNestedList(classMeta, metaType, selection, entSelection, firstEnt, prop, (IList)elem, innerElementType, $@"{fieldName}: {i}", fieldDescription, treeFlags, classIndex);
+                            }
+
+                            ImGui.TreePop();
+                        }
+                    }
                     if (elementType.IsClass && elementType != typeof(string) && !elementType.IsArray)
                     {
                         var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
@@ -582,13 +670,12 @@ public class ModelPropertyView
                         ImGui.Text(elem?.GetType().Name ?? "null");
 
                         ImGui.SameLine();
-
                         ImGui.AlignTextToFramePadding();
-                        if (ImGui.Button("-##removeListEntry"))
+                        if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
                         {
                             OnRemove();
                         }
-                        GUI.Tooltip("Remove this entry from the list.");
+                        GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
 
                         if (elementType == typeof(EDGE.Edge))
                         {
@@ -669,6 +756,144 @@ public class ModelPropertyView
         }
 
         ImGui.PopID();
+    }
+
+    private void PropEditorGenericNestedList(
+        ModelClass classMeta,
+        string metaType,
+        ViewportSelection selection,
+        IEnumerable<Entity> entSelection,
+        Entity firstEnt,
+        PropertyInfo prop,
+        IList list,
+        Type elementType,
+        string fieldName,
+        string fieldDescription,
+        ImGuiTreeNodeFlags treeFlags,
+        int classIndex
+    )
+    {
+        if (list == null)
+        {
+            return;
+        }
+
+        ImGui.AlignTextToFramePadding();
+        if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Add_List_Entry")}##addNestedListEntry"))
+        {
+            var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
+            var action = new ModelAddListEntryAction(firstEnt, list, newEntry, list.Count);
+            View.ViewportActionManager.ExecuteAction(action);
+        }
+        GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
+
+        var removeIndex = -1;
+
+        for (var i = 0; i < list.Count; i++)
+        {
+            ImGui.PushID(i);
+            var idx = i;
+            var elem = list[i];
+            void OnRemove() => removeIndex = idx;
+
+            if (elementType.IsGenericType && elementType.GetGenericTypeDefinition() == typeof(List<>))
+            {
+                // Support arbitrarily deep List of Lists of Lists...
+                var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
+                GUI.Tooltip(fieldDescription);
+                ImGui.NextColumn();
+                ImGui.SetNextItemWidth(-1);
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text(elem?.GetType().Name ?? "null");
+
+                ImGui.SameLine();
+                ImGui.AlignTextToFramePadding();
+                if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
+                {
+                    OnRemove();
+                }
+                GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
+
+                ImGui.NextColumn();
+
+                if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+                {
+                    PropContextRowOpener("nestedListTypeCol");
+
+                    ImGui.Text(elem?.GetType().FullName);
+
+                    DisplayContextMenu(fieldName, fieldDescription, prop);
+
+                    ImGui.NextColumn();
+                }
+
+                if (classOpen)
+                {
+                    if (elem != null)
+                    {
+                        Type innerElementType = elementType.GetGenericArguments()[0];
+                        PropEditorGenericNestedList(classMeta, metaType, selection, entSelection, firstEnt, prop, (IList)elem, innerElementType, $@"{fieldName}: {i}", fieldDescription, treeFlags, classIndex);
+                    }
+
+                    ImGui.TreePop();
+                }
+            }
+            else if (elementType.IsClass && elementType != typeof(string) && !elementType.IsArray)
+            {
+                var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
+                GUI.Tooltip(fieldDescription);
+                ImGui.NextColumn();
+                ImGui.SetNextItemWidth(-1);
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text(elem?.GetType().Name ?? "null");
+
+                ImGui.SameLine();
+                ImGui.AlignTextToFramePadding();
+                if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
+                {
+                    OnRemove();
+                }
+                GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
+
+                ImGui.NextColumn();
+
+                if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+                {
+                    PropContextRowOpener("nestedListClassTypeCol");
+
+                    ImGui.Text(elem?.GetType().FullName);
+
+                    DisplayContextMenu(fieldName, fieldDescription, prop);
+
+                    ImGui.NextColumn();
+                }
+
+                if (classOpen)
+                {
+                    if (elem != null)
+                        PropEditorGeneric(classMeta, metaType, selection, entSelection, elem, idx);
+
+                    ImGui.TreePop();
+                }
+            }
+            else
+            {
+                // Primitive/string elements nested two-plus levels deep have no PropertyInfo of
+                // their own, so route them through the lean direct-list row instead of
+                // PropGenericFieldRow.
+                PropGenericFieldRowDirect(list, elementType, i, $@"{fieldName}[{i}]", fieldDescription, firstEnt, OnRemove);
+            }
+
+            ImGui.PopID();
+        }
+
+        if (removeIndex != -1)
+        {
+            var action = new ModelRemoveListEntryAction(firstEnt, list, removeIndex);
+            View.ViewportActionManager.ExecuteAction(action);
+        }
     }
 
     private void PropContextRowOpener(string id)
@@ -1126,6 +1351,56 @@ public class ModelPropertyView
         _lastUncommittedAction = action;
         _changingPropery = prop;
         _changingObject = set;
+    }
+
+    private void ChangePropertyDirect(Entity ent, IList list, int index, object oldval, object newval, ref bool committed)
+    {
+        var propToken = (list, index);
+
+        if (Equals(_changingPropery, propToken) && _lastUncommittedAction != null &&
+            View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
+        {
+            View.ViewportActionManager.UndoAction();
+        }
+        else
+        {
+            _lastUncommittedAction = null;
+        }
+
+        var action = new ModelPropertyChangeAction(ent, list, index, oldval, newval);
+        View.ViewportActionManager.ExecuteAction(action);
+
+        _lastUncommittedAction = action;
+        _changingPropery = propToken;
+        _changingObject = list;
+    }
+
+    private void UpdatePropertyDirect(Entity ent, IList list, int index, object oldval, object newval,
+        bool changed, bool committed)
+    {
+        if (changed)
+        {
+            if (ent != null)
+            {
+                ent.CachedAliasName = null;
+            }
+
+            ChangePropertyDirect(ent, list, index, oldval, newval, ref committed);
+
+            ent?.BuildReferenceMap();
+        }
+
+        if (committed)
+        {
+            if (_lastUncommittedAction != null && View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
+            {
+                _lastUncommittedAction = null;
+                _changingPropery = null;
+                _changingObject = null;
+            }
+
+            ent?.BuildReferenceMap();
+        }
     }
 
     private void ChangeProperty(object prop, Entity selection, object obj, object oldval, object newval,

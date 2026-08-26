@@ -225,7 +225,12 @@ public class DeveloperKit
             "generateGrassList",
             "Generate Grass List",
             "",
-            GenerateGrassList);
+            GenerateGrassList,
+
+            "generateEdgeList",
+            "Generate Edge List",
+            "",
+            GenerateEdgeList);
     }
 
     #region Validate File Dictionary
@@ -432,6 +437,93 @@ public class DeveloperKit
         foreach (var entry in GrassAssets)
         {
             var writePath = Path.Join(CFG.Current.DEVKIT_DataPath_OutputFolder, $"{entry.Key}_GrassAssets.json");
+
+            var grassList = new GrassList();
+
+            foreach (var val in entry.Value)
+            {
+                grassList.Entries.Add(val);
+            }
+
+            var jsonString = JsonSerializer.Serialize(grassList, MapEditorJsonSerializerContext.Default.GrassList);
+            File.WriteAllText(writePath, jsonString);
+        }
+    }
+
+    #endregion
+
+    #region Generate Edge List
+
+    public Dictionary<ProjectType, List<string>> EdgeAssets = new();
+
+    public void GenerateEdgeList()
+    {
+        var success = Projects.TryGetValue(TargetProject, out var targetProject);
+        if (!success)
+            return;
+
+        if (!EdgeAssets.ContainsKey(targetProject.Descriptor.ProjectType))
+        {
+            EdgeAssets.Add(targetProject.Descriptor.ProjectType, new List<string>());
+        }
+
+        var mapPieceAssets = targetProject.Locator.MapPieceFiles;
+        foreach (var entry in mapPieceAssets.Entries)
+        {
+            if (targetProject.VFS.FS.FileExists(entry.Path))
+            {
+                try
+                {
+                    var data = targetProject.VFS.FS.ReadFile(entry.Path);
+
+                    var binder = BND4.Read(data.Value);
+                    var grassFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".edge"));
+
+                    if (grassFile != null)
+                    {
+                        EdgeAssets[targetProject.Descriptor.ProjectType].Add(entry.Filename);
+                        Smithbox.Log(this, $"EDGE added: {entry.Filename}");
+                    }
+
+                    binder = null;
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, ex.ToString());
+                }
+            }
+        }
+
+        var assets = targetProject.Locator.AssetFiles;
+        foreach (var entry in assets.Entries)
+        {
+            if (targetProject.VFS.FS.FileExists(entry.Path))
+            {
+                try
+                {
+                    var data = targetProject.VFS.FS.ReadFile(entry.Path);
+
+                    var binder = BND4.Read(data.Value);
+                    var grassFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".edge"));
+
+                    if (grassFile != null)
+                    {
+                        EdgeAssets[targetProject.Descriptor.ProjectType].Add(entry.Filename);
+                        Smithbox.Log(this, $"EDGE added: {entry.Filename}");
+                    }
+
+                    binder = null;
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, ex.ToString());
+                }
+            }
+        }
+
+        foreach (var entry in EdgeAssets)
+        {
+            var writePath = Path.Join(CFG.Current.DEVKIT_DataPath_OutputFolder, $"{entry.Key}_EdgeAssets.json");
 
             var grassList = new GrassList();
 

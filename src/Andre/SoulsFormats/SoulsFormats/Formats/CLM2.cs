@@ -83,7 +83,9 @@ namespace SoulsFormats
         /// </summary>
         public class Mesh
         {
-            public List<Entry> Entries = new();
+            public List<Entry> Entries { get; set; } = new();
+
+            public Mesh() { }
 
             internal Mesh(BinaryReaderEx br) : base()
             {

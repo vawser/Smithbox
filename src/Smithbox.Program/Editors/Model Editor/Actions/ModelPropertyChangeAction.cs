@@ -66,6 +66,24 @@ public class ModelPropertyChangeAction : ViewportAction
             }
         }
     }
+    public ModelPropertyChangeAction(Entity ent, IList list, int index, object oldval, object newval, bool clearName = true)
+    {
+        ClearName = clearName;
+        if (ent != null)
+        {
+            ChangedEnts = new HashSet<Entity> { ent };
+        }
+
+        var change = new PropertyChange
+        {
+            DirectList = list,
+            ArrayIndex = index,
+            OldValue = oldval,
+            NewValue = newval
+        };
+
+        Changes.Add(change);
+    }
 
     public override ActionEvent Execute(bool isRedo = false)
     {
@@ -162,5 +180,6 @@ public class ModelPropertyChangeAction : ViewportAction
         public object NewValue;
         public object OldValue;
         public PropertyInfo Property;
+        public IList DirectList;
     }
 }
