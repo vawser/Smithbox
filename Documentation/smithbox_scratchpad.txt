@@ -16,7 +16,4 @@
   - Read map mapbnd for edges and then associate with FLVER on load for map pieces
   
 # Havok Editor
-- Add 'Generate' tool for collisions:
- - Generates basic shapes such as planes (square, circle) and boxes
-  - Toggle face orientation
-  
+- Add aliases to Source List section

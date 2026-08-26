@@ -17,6 +17,7 @@ public static class HKLib_MeshBuilder
     public static hknpExternMeshShape BuildExternMeshShape(
         IReadOnlyList<Vector3> vertices,
         IReadOnlyList<int> triangleIndices,
+        bool IncludeMaterialTable,
         bool useTriangleMaterialAsShapeTag = false)
     {
         if (triangleIndices.Count % 3 != 0)
@@ -48,21 +49,45 @@ public static class HKLib_MeshBuilder
 
         int triangleCount = geometry.m_triangles.Count;
 
-        var shape = new hknpExternMeshShape
+        if (IncludeMaterialTable)
         {
-            m_geometry = geometryWrapper,
-            m_boundingVolumeData = boundingVolumeData,
-            m_flags = hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE,
-            m_type = hknpShapeType.Enum.EXTERN_MESH,
-            m_dispatchType = hknpCollisionDispatchType.Enum.COMPOSITE,
-            m_numShapeKeyBits = ShapeKeyBits(triangleCount),
-            m_convexRadius = 0f,
-            m_userData = 0,
-            m_shapeTagCodecInfo = 0
-        };
+            var materialPalette = new hknpMaterialPalette();
 
-        return shape;
+            var shape = new hknpExternMeshShape
+            {
+                m_geometry = geometryWrapper,
+                m_boundingVolumeData = boundingVolumeData,
+                m_flags = hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE,
+                m_type = hknpShapeType.Enum.EXTERN_MESH,
+                m_dispatchType = hknpCollisionDispatchType.Enum.COMPOSITE,
+                m_numShapeKeyBits = ShapeKeyBits(triangleCount),
+                m_convexRadius = 0f,
+                m_userData = 0,
+                m_shapeTagCodecInfo = 0,
+                m_materialTable = materialPalette
+            };
+
+            return shape;
+        }
+        else
+        {
+            var shape = new hknpExternMeshShape
+            {
+                m_geometry = geometryWrapper,
+                m_boundingVolumeData = boundingVolumeData,
+                m_flags = hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE,
+                m_type = hknpShapeType.Enum.EXTERN_MESH,
+                m_dispatchType = hknpCollisionDispatchType.Enum.COMPOSITE,
+                m_numShapeKeyBits = ShapeKeyBits(triangleCount),
+                m_convexRadius = 0f,
+                m_userData = 0,
+                m_shapeTagCodecInfo = 0
+            };
+
+            return shape;
+        }
     }
+
     private static hknpExternMeshShapeData BuildBoundingVolumeData(
     hkGeometry geometry)
     {
@@ -74,18 +99,190 @@ public static class HKLib_MeshBuilder
             m_isCompact = false
         };
 
-        tree.m_nodes.Add(new hkcdSimdTree.Node());
+        int triangleCount = geometry.m_triangles.Count;
 
-        // Build/populate tree here.
-        foreach (var node in tree.m_nodes)
+        if (triangleCount == 0)
         {
-            InitializeEmptyNode(node);
+            // Degenerate case: still needs a well-formed (but empty) root node,
+            // never a node with valid-looking-but-meaningless lanes.
+            var emptyRoot = new hkcdSimdTree.Node { m_isLeaf = true };
+            InitializeEmptyNode(emptyRoot);
+            tree.m_nodes.Add(emptyRoot);
+            data.m_simdTree = tree;
+            return data;
         }
 
+        // Per-triangle AABB + centroid, used to build and to split the BVH.
+        var triAabbs = new (Vector3 Min, Vector3 Max)[triangleCount];
+        var centroids = new Vector3[triangleCount];
+        for (int i = 0; i < triangleCount; i++)
+        {
+            var tri = geometry.m_triangles[i];
+            Vector3 a = ToVector3(geometry.m_vertices[tri.m_a]);
+            Vector3 b = ToVector3(geometry.m_vertices[tri.m_b]);
+            Vector3 c = ToVector3(geometry.m_vertices[tri.m_c]);
+
+            Vector3 min = Vector3.Min(Vector3.Min(a, b), c);
+            Vector3 max = Vector3.Max(Vector3.Max(a, b), c);
+            triAabbs[i] = (min, max);
+            centroids[i] = (min + max) * 0.5f;
+        }
+
+        var allIndices = Enumerable.Range(0, triangleCount).ToList();
+        var root = BuildNode(allIndices, triAabbs, centroids);
+
+        var nodeList = new List<hkcdSimdTree.Node>();
+
+        // The sentinel node is critical for a new collision to work
+        var sentinel = new hkcdSimdTree.Node { m_isLeaf = true };
+        InitializeEmptyNode(sentinel);
+        nodeList.Add(sentinel); // index 0
+
+        var queue = new Queue<BvhBuildNode>();
+        var slotOf = new Dictionary<BvhBuildNode, int>();
+
+        nodeList.Add(null!); // reserve slot 1 for the root
+        slotOf[root] = 1;
+        queue.Enqueue(root);
+
+        while (queue.Count > 0)
+        {
+            var buildNode = queue.Dequeue();
+            int slot = slotOf[buildNode];
+
+            var node = new hkcdSimdTree.Node { m_isLeaf = buildNode.IsLeaf };
+            InitializeEmptyNode(node);
+
+            if (buildNode.IsLeaf)
+            {
+                for (int lane = 0; lane < buildNode.TriangleIndices!.Count; lane++)
+                {
+                    int triIndex = buildNode.TriangleIndices[lane];
+                    SetLaneBounds(node, lane, triAabbs[triIndex].Min, triAabbs[triIndex].Max);
+                    node.m_data[lane] = (uint)triIndex; // leaf data = shape key = triangle index
+                }
+            }
+            else
+            {
+                for (int lane = 0; lane < buildNode.Children!.Count; lane++)
+                {
+                    var child = buildNode.Children[lane];
+                    int childSlot = nodeList.Count;
+                    nodeList.Add(null!); // reserve
+                    slotOf[child] = childSlot;
+
+                    SetLaneBounds(node, lane, child.Bounds.Min, child.Bounds.Max);
+                    node.m_data[lane] = (uint)childSlot;
+
+                    queue.Enqueue(child);
+                }
+            }
+
+            nodeList[slot] = node;
+        }
+
+        tree.m_nodes = nodeList;
         data.m_simdTree = tree;
 
         return data;
     }
+
+    private static Vector3 ToVector3(Vector4 v) => new(v.X, v.Y, v.Z);
+
+    private sealed class BvhBuildNode
+    {
+        public bool IsLeaf;
+        public List<int> TriangleIndices;
+        public List<BvhBuildNode> Children;
+        public (Vector3 Min, Vector3 Max) Bounds;
+    }
+
+    private const int SimdTreeArity = 4;
+    private const int SimdTreeLeafMaxTriangles = 4;
+
+    private static BvhBuildNode BuildNode(
+        List<int> triIndices,
+        (Vector3 Min, Vector3 Max)[] triAabbs,
+        Vector3[] centroids)
+    {
+        var bounds = ComputeBounds(triIndices, triAabbs);
+
+        if (triIndices.Count <= SimdTreeLeafMaxTriangles)
+        {
+            return new BvhBuildNode
+            {
+                IsLeaf = true,
+                TriangleIndices = triIndices,
+                Bounds = bounds
+            };
+        }
+
+        // Split along the longest axis of the centroid extent, then chop the
+        // sorted list into up to 4 roughly equal contiguous chunks.
+        Vector3 centroidMin = triIndices.Select(i => centroids[i]).Aggregate(Vector3.Min);
+        Vector3 centroidMax = triIndices.Select(i => centroids[i]).Aggregate(Vector3.Max);
+        Vector3 extent = centroidMax - centroidMin;
+
+        int axis = 0;
+        if (extent.Y > extent.X && extent.Y >= extent.Z) axis = 1;
+        else if (extent.Z > extent.X && extent.Z >= extent.Y) axis = 2;
+
+        var sorted = triIndices
+            .OrderBy(i => axis == 0 ? centroids[i].X : axis == 1 ? centroids[i].Y : centroids[i].Z)
+            .ToList();
+
+        var children = new List<BvhBuildNode>(SimdTreeArity);
+        int chunkSize = (int)Math.Ceiling(sorted.Count / (double)SimdTreeArity);
+        for (int start = 0; start < sorted.Count; start += chunkSize)
+        {
+            int count = Math.Min(chunkSize, sorted.Count - start);
+            var chunk = sorted.GetRange(start, count);
+            children.Add(BuildNode(chunk, triAabbs, centroids));
+        }
+
+        return new BvhBuildNode
+        {
+            IsLeaf = false,
+            Children = children,
+            Bounds = bounds
+        };
+    }
+
+    private static (Vector3 Min, Vector3 Max) ComputeBounds(
+        List<int> triIndices,
+        (Vector3 Min, Vector3 Max)[] triAabbs)
+    {
+        Vector3 min = new(float.MaxValue);
+        Vector3 max = new(-float.MaxValue);
+        foreach (int i in triIndices)
+        {
+            min = Vector3.Min(min, triAabbs[i].Min);
+            max = Vector3.Max(max, triAabbs[i].Max);
+        }
+        return (min, max);
+    }
+
+    private static void SetLaneBounds(hkcdSimdTree.Node node, int lane, Vector3 min, Vector3 max)
+    {
+        SetComponent(ref node.m_lx, lane, min.X);
+        SetComponent(ref node.m_hx, lane, max.X);
+        SetComponent(ref node.m_ly, lane, min.Y);
+        SetComponent(ref node.m_hy, lane, max.Y);
+        SetComponent(ref node.m_lz, lane, min.Z);
+        SetComponent(ref node.m_hz, lane, max.Z);
+    }
+
+    private static void SetComponent(ref Vector4 v, int lane, float value)
+    {
+        switch (lane)
+        {
+            case 0: v.X = value; break;
+            case 1: v.Y = value; break;
+            case 2: v.Z = value; break;
+            default: v.W = value; break;
+        }
+    }
+
     private static void InitializeEmptyNode(hkcdSimdTree.Node node)
     {
         node.m_lx = new Vector4(
@@ -124,7 +321,7 @@ public static class HKLib_MeshBuilder
             -float.MaxValue,
             -float.MaxValue);
 
-        Array.Fill(node.m_data, uint.MaxValue);
+        Array.Fill(node.m_data, 0u);
     }
 
     private static byte ShapeKeyBits(int primitiveCount)

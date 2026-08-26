@@ -27,6 +27,8 @@ public class CollisionGeneratorTool
     public CircleParameters CircleInputs = new();
     public SemiCircleParameters SemiCircleInputs = new();
 
+    public bool IncludeMaterialTable = true;
+
     public CollisionGeneratorTool(HavokEditorView view, ProjectEntry project)
     {
         View = view;
@@ -204,6 +206,8 @@ public class CollisionGeneratorTool
             }
         }
 
+        ImGui.Checkbox("Include Material Table", ref IncludeMaterialTable);
+
         // Actions
         GUI.Spacer();
         GUI.SimpleHeader(
@@ -265,7 +269,7 @@ public class CollisionGeneratorTool
         var collisionName = Path.GetFileName(View.Selection.FilePath);
         var sourceObject = View.PropertyView.GetSourceObject();
 
-        var shape = HKLib_MeshBuilder.BuildExternMeshShape(verts, indices);
+        var shape = HKLib_MeshBuilder.BuildExternMeshShape(verts, indices, IncludeMaterialTable);
         if (HKLib_MeshBuilder.ReplaceExternMeshShape((hkRootLevelContainer)sourceObject, shape))
         {
             Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
