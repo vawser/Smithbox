@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using HKLib.hk2018.hkHashMapDetail;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.HavokEditor;
@@ -540,6 +541,7 @@ public class ModelPropertyView
 
         if (list != null)
         {
+            ImGui.AlignTextToFramePadding();
             if (ImGui.Button("+##addListEntry"))
             {
                 var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
@@ -548,6 +550,7 @@ public class ModelPropertyView
             }
             GUI.Tooltip("Add a new entry to the end of this list.");
         }
+
         ImGui.NextColumn();
 
         if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
@@ -574,14 +577,57 @@ public class ModelPropertyView
                         GUI.Tooltip(fieldDescription);
                         ImGui.NextColumn();
                         ImGui.SetNextItemWidth(-1);
+
+                        ImGui.AlignTextToFramePadding();
                         ImGui.Text(elem?.GetType().Name ?? "null");
 
                         ImGui.SameLine();
+
+                        ImGui.AlignTextToFramePadding();
                         if (ImGui.Button("-##removeListEntry"))
                         {
                             OnRemove();
                         }
                         GUI.Tooltip("Remove this entry from the list.");
+
+                        if (elementType == typeof(EDGE.Edge))
+                        {
+                            // EDGE Points: Show
+                            ImGui.SameLine();
+                            ImGui.AlignTextToFramePadding();
+                            if (ImGui.Button($"{Icons.Eye}##edgePointsShow"))
+                            {
+                                var startEdgePoint = PropFinderUtil.FindPropertyValue("V1", elem);
+                                if(startEdgePoint != null)
+                                {
+                                    CFG.Current.StartEdgePoint = (Vector3)startEdgePoint;
+                                }
+
+                                var endEdgePoint = PropFinderUtil.FindPropertyValue("V2", elem);
+                                if (endEdgePoint != null)
+                                {
+                                    CFG.Current.EndEdgePoint = (Vector3)endEdgePoint;
+                                }
+
+                                var pullEdgePoint = PropFinderUtil.FindPropertyValue("V3", elem);
+                                if (pullEdgePoint != null)
+                                {
+                                    CFG.Current.PullEdgePoint = (Vector3)pullEdgePoint;
+                                }
+
+                                CFG.Current.DisplayEdgePoints = true;
+                            }
+                            GUI.Tooltip("Show the edge points for this entry in the viewport.");
+
+                            // EDGE Points: Hide
+                            ImGui.SameLine();
+                            ImGui.AlignTextToFramePadding();
+                            if (ImGui.Button($"{Icons.EyeSlash}##edgePointsHide"))
+                            {
+                                CFG.Current.DisplayEdgePoints = false;
+                            }
+                            GUI.Tooltip("Hide any edge points in the viewport.");
+                        }
 
                         ImGui.NextColumn();
 

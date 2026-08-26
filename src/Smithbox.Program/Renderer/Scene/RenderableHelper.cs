@@ -52,6 +52,10 @@ public static class RenderableHelper
 
     public static DbgPrimSolidSphere _placementOrb;
 
+    public static DbgPrimSolidSphere _edgePoint_Start;
+    public static DbgPrimSolidSphere _edgePoint_End;
+    public static DbgPrimSolidSphere _edgePoint_Pull;
+
     /// <summary>
     /// These are initialized explicitly to ensure these meshes are created at startup time so that they don't share
     /// vertex buffer memory with dynamically allocated resources and cause the megabuffers to not be freed.
@@ -247,6 +251,22 @@ public static class RenderableHelper
             Color.Yellow,
             2,
             2);
+
+        // Edge Points
+        _edgePoint_Start = new DbgPrimSolidSphere(
+            Transform.Default,
+            0.1f,
+            Color.Blue);
+
+        _edgePoint_End = new DbgPrimSolidSphere(
+            Transform.Default,
+            0.1f,
+            Color.Red);
+
+        _edgePoint_Pull = new DbgPrimSolidSphere(
+            Transform.Default,
+            0.1f,
+            Color.Yellow);
     }
 
     public static void UpdateProxySizes()
@@ -710,6 +730,51 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSphere);
 
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+    public static DebugPrimitiveRenderableProxy GetEdgePoint_Start(RenderScene scene)
+    {
+        var baseColor = Utils.GetDecimalColor(Color.Blue);
+        var highlightColor = Utils.GetDecimalColor(Color.Blue);
+        var transparency = 25.0f;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _edgePoint_Start);
+
+        r.RenderOverlay = true;
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+    public static DebugPrimitiveRenderableProxy GetEdgePoint_End(RenderScene scene)
+    {
+        var baseColor = Utils.GetDecimalColor(Color.Red);
+        var highlightColor = Utils.GetDecimalColor(Color.Red);
+        var transparency = 25.0f;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _edgePoint_End);
+
+        r.RenderOverlay = true;
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+    public static DebugPrimitiveRenderableProxy GetEdgePoint_Pull(RenderScene scene)
+    {
+        var baseColor = Utils.GetDecimalColor(Color.Yellow);
+        var highlightColor = Utils.GetDecimalColor(Color.Yellow);
+        var transparency = 25.0f;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _edgePoint_Pull);
+
+        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);

@@ -644,18 +644,18 @@ public class ModelWrapper
         // EDGE
         if (Parent.Project.Descriptor.ProjectType is ProjectType.SDT)
         {
+            // TODO: map pieces have .edge.dcx files in the mapbnds
+
             if (filepath.Contains(".edge"))
             {
-                if (filename == Name)
+                // Assumption of only one per 
+                try
                 {
-                    try
-                    {
-                        EDGE = EDGE.Read(data);
-                    }
-                    catch (Exception e)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_EDGE", filepath), e);
-                    }
+                    EDGE = EDGE.Read(data);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_EDGE", filepath), e);
                 }
             }
         }

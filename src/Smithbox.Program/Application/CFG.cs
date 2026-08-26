@@ -534,7 +534,6 @@ public class CFG
     public bool ModelEditor_DisplayDmyPolyReferenceID = true;
     public bool ModelEditor_DisplayMatNameOnMesh = true;
 
-
     public bool ModelEditor_ModelLoad_MapPieces = true;
     public bool ModelEditor_ModelLoad_Objects = true;
     public bool ModelEditor_ModelLoad_Parts = true;
@@ -550,6 +549,10 @@ public class CFG
 
     public float DummyMeshSize = 0.05f;
     public float NodeMeshSize = 0.05f;
+    public bool DisplayEdgePoints = false;
+    public Vector3 StartEdgePoint = new Vector3();
+    public Vector3 EndEdgePoint = new Vector3();
+    public Vector3 PullEdgePoint = new Vector3();
 
     public bool ModelEditor_ModelSourceList_RequireDoubleClick = false;
 

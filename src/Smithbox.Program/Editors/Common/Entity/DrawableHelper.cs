@@ -39,4 +39,25 @@ public static class DrawableHelper
         return mesh;
     }
 
+    public static RenderableProxy GetEdgePoint_Start(RenderScene scene, Entity obj)
+    {
+        var mesh = RenderableHelper.GetEdgePoint_Start(scene);
+        mesh.World = obj.GetWorldMatrix();
+
+        return mesh;
+    }
+    public static RenderableProxy GetEdgePoint_End(RenderScene scene, Entity obj)
+    {
+        var mesh = RenderableHelper.GetEdgePoint_End(scene);
+        mesh.World = obj.GetWorldMatrix();
+
+        return mesh;
+    }
+    public static RenderableProxy GetEdgePoint_Pull(RenderScene scene, Entity obj)
+    {
+        var mesh = RenderableHelper.GetEdgePoint_Pull(scene);
+        mesh.World = obj.GetWorldMatrix();
+
+        return mesh;
+    }
 }

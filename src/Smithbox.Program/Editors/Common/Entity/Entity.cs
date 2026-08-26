@@ -1362,13 +1362,19 @@ public class Entity : ISelectable, IDisposable
             disposedValue = true;
         }
     }
+
+    public bool IsFreeformEntity = false;
+
     public virtual void UpdateRenderModel()
     {
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
             return;
 
-        if (!CFG.Current.Viewport_Enable_Rendering || !HasTransform)
-            return;
+        if (!IsFreeformEntity)
+        {
+            if (!CFG.Current.Viewport_Enable_Rendering || !HasTransform)
+                return;
+        }
 
         ApplyMeshState();
 
@@ -1386,8 +1392,11 @@ public class Entity : ISelectable, IDisposable
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
             return;
 
-        if (!CFG.Current.Viewport_Enable_Rendering || !HasTransform)
-            return;
+        if (!IsFreeformEntity)
+        {
+            if (!CFG.Current.Viewport_Enable_Rendering || !HasTransform)
+                return;
+        }
 
         if (_renderSceneMesh == null)
             return;

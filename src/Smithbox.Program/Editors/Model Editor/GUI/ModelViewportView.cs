@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
 using Veldrid;
@@ -19,6 +20,10 @@ public class ModelViewportWindow
     public bool CtrlHeld;
     public bool ShiftHeld;
     public bool ViewportUsingKeyboard;
+
+    public EdgePointEntity StartEdgePoint;
+    public EdgePointEntity EndEdgePoint;
+    public EdgePointEntity PullEdgePoint;
 
     public ModelViewportWindow(ModelEditorView view, ProjectEntry project)
     {
@@ -49,6 +54,36 @@ public class ModelViewportWindow
         if (Viewport is VulkanViewport vulkanViewport)
         {
             vulkanViewport.Display();
+
+            // Start Edge Point
+            if (View.Universe != null && StartEdgePoint == null)
+            {
+                StartEdgePoint = new EdgePointEntity(View.Universe, EdgePointEntity.EdgePointType.Start);
+            }
+            else if (StartEdgePoint != null)
+            {
+                StartEdgePoint.UpdateRenderModel();
+            }
+
+            // End Edge Point
+            if (View.Universe != null && EndEdgePoint == null)
+            {
+                EndEdgePoint = new EdgePointEntity(View.Universe, EdgePointEntity.EdgePointType.End);
+            }
+            else if (EndEdgePoint != null)
+            {
+                EndEdgePoint.UpdateRenderModel();
+            }
+
+            // Pull Edge Point
+            if (View.Universe != null && PullEdgePoint == null)
+            {
+                PullEdgePoint = new EdgePointEntity(View.Universe, EdgePointEntity.EdgePointType.Pull);
+            }
+            else if (PullEdgePoint != null)
+            {
+                PullEdgePoint.UpdateRenderModel();
+            }
         }
 
         if (Viewport is NullViewport nullViewport)
