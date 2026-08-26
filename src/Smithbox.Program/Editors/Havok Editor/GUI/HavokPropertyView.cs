@@ -570,6 +570,19 @@ public class HavokPropertyView
             ImGui.SetItemDefaultFocus();
         }
 
+        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        {
+            ImGui.NextColumn();
+
+            var reflectedType = prop.ReflectedType;
+            if (reflectedType != null)
+            {
+                PropContextRowOpener("typecol");
+
+                ImGui.Text(reflectedType.FullName);
+            }
+        }
+
         if (HavokPropertyDecorators.ParamRefRow(View, havokMeta, prop, oldval, ref newval))
         {
             changed = true;
@@ -589,19 +602,6 @@ public class HavokPropertyView
         }
 
         UpdateProperty(prop, containerObj, oldval, newval, changed, committed, arrayIndex, classIndex);
-
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
-        {
-            ImGui.NextColumn();
-
-            var reflectedType = prop.ReflectedType;
-            if (reflectedType != null)
-            {
-                PropContextRowOpener("typecol");
-
-                ImGui.Text(reflectedType.FullName);
-            }
-        }
 
         ImGui.NextColumn();
     }

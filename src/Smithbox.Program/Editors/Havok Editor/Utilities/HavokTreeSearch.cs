@@ -153,4 +153,84 @@ public static class HavokTreeSearch
         }
         return fields;
     }
+
+    public static List<object> FindValueList<T>(
+        object root,
+        Func<Type, FieldInfo[]> fieldProvider,
+        string fieldName,
+        Type expectedFieldType = null,
+        bool includeDerivedTypes = true) where T : class
+    {
+        fieldProvider ??= GetDefaultFields;
+
+        var instances = FindAll<T>(root, fieldProvider, includeDerivedTypes);
+        var results = new List<object>(instances.Count);
+
+        foreach (var instance in instances)
+        {
+            var field = ResolveField(instance.GetType(), fieldProvider, fieldName, expectedFieldType);
+            results.Add(field.GetValue(instance));
+        }
+
+        return results;
+    }
+    public static List<TValue> FindValueList<T, TValue>(
+    object root,
+    Func<Type, FieldInfo[]> fieldProvider,
+    string fieldName,
+    bool includeDerivedTypes = true) where T : class
+    {
+        fieldProvider ??= GetDefaultFields;
+
+        var instances = FindAll<T>(root, fieldProvider, includeDerivedTypes);
+        var results = new List<TValue>(instances.Count);
+
+        foreach (var instance in instances)
+        {
+            var field = ResolveField(instance.GetType(), fieldProvider, fieldName, expectedFieldType: null);
+
+            if (!typeof(TValue).IsAssignableFrom(field.FieldType))
+            {
+                throw new InvalidOperationException(
+                    $"Field '{fieldName}' on type '{instance.GetType().FullName}' has type " +
+                    $"'{field.FieldType}', which is not assignable to requested value type '{typeof(TValue)}'.");
+            }
+
+            results.Add((TValue)field.GetValue(instance));
+        }
+
+        return results;
+    }
+
+    private static FieldInfo ResolveField(
+        Type instanceType,
+        Func<Type, FieldInfo[]> fieldProvider,
+        string fieldName,
+        Type expectedFieldType)
+    {
+        FieldInfo field = null;
+        foreach (var candidate in fieldProvider(instanceType))
+        {
+            if (candidate.Name == fieldName)
+            {
+                field = candidate;
+                break;
+            }
+        }
+
+        if (field == null)
+        {
+            throw new MissingFieldException(instanceType.FullName, fieldName);
+        }
+
+        if (expectedFieldType != null && field.FieldType != expectedFieldType)
+        {
+            throw new InvalidOperationException(
+                $"Field '{fieldName}' on type '{instanceType.FullName}' has type '{field.FieldType}', " +
+                $"but expected '{expectedFieldType}'.");
+        }
+
+        return field;
+    }
+
 }

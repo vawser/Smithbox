@@ -1,5 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using HKLib.hk2018;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Org.BouncyCastle.Utilities;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
@@ -148,19 +150,6 @@ public static class HavokPropertyDecorators
 
     public static bool ClipGenInternalID(IEditorView view, HavokClass havokMeta, FieldInfo prop, object val, ref object newObj, object sourceObj, ref object newval)
     {
-        ParamEditorView activeView = null;
-
-        if (view is MapEditorView mapEditorView)
-        {
-            if (mapEditorView.Project.Handler.ParamEditor == null)
-                return false;
-
-            activeView = mapEditorView.Project.Handler.ParamEditor.ViewHandler.ActiveView;
-        }
-
-        if (activeView == null)
-            return false;
-
         if (havokMeta == null)
             return false;
 
@@ -170,36 +159,48 @@ public static class HavokPropertyDecorators
             return false;
         }
 
-        if (fieldMeta.ParamRef == "")
+        if (!fieldMeta.AnimationInternalID)
             return false;
 
-        List<ParamRef> refs = new()
-        {
-            new ParamRef(null, fieldMeta.ParamRef)
-        };
-
-        ImGui.NextColumn();
-
-        ParamReferenceHelper.Label(activeView, refs, null);
-
-        ImGui.NextColumn();
-
-        if (activeView.Project.Handler.ParamEditor != null)
-        {
-            ParamReferenceHelper.Hint(activeView, refs, null, val);
-            ParamReferenceHelper.Click(activeView, val, null, refs);
-
-            if (ImGui.BeginPopupContextItem($"{prop.Name}EnumContextMenu"))
-            {
-                var opened = ParamReferenceHelper.ContextMenu(activeView, refs, null, val, ref newObj, null);
-                ImGui.EndPopup();
-                return opened;
-            }
-        }
-
-        if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+        if (view is HavokEditorView havokEditorView)
         {
             ImGui.NextColumn();
+            ImGui.NextColumn();
+
+            if (ImGui.Button("Set to Free ID"))
+            {
+                var objects = HavokTreeSearch.FindValueList<hkbClipGenerator>(sourceObj, havokEditorView.PropertyCache.GetCachedHavokFields, "m_animationInternalId", typeof(short));
+
+                var shorts = objects.Cast<short>().ToList();
+
+                short freeNum = -1;
+
+                for(short i = 0; i < short.MaxValue; i++)
+                {
+                    if (!shorts.Contains(i))
+                    {
+                        freeNum = i;
+                        break;
+                    }
+                }
+
+                if(freeNum == -1)
+                {
+                    Smithbox.LogError(typeof(HavokPropertyDecorators), "No free ID to assign.");
+                    return false;
+                }
+                else
+                {
+                    newval = (short)(freeNum);
+                    return true;
+                }
+            }
+            GUI.Tooltip("Set the value to the next available unused ID.");
+
+            if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+            {
+                ImGui.NextColumn();
+            }
         }
 
         return false;
