@@ -3,7 +3,6 @@
 #---------------------
 # LOC TO DO:
  Editors
-  Animation Editor
   Common
   File Browser
   Gparam Editor
@@ -15,5 +14,3 @@
  - EDGE
   - Read map mapbnd for edges and then associate with FLVER on load for map pieces
   
-# Havok Editor
-- Add aliases to Source List section

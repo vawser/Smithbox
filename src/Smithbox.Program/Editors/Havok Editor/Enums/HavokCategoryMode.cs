@@ -25,9 +25,6 @@ public enum HavokCategoryMode
     [Display(Name = "HAVOK_ENUM_HavokCategoryMode_Asset_Collision")]
     Asset_Collision,
 
-    //[Display(Name = "HAVOK_ENUM_HavokCategoryMode_Character_Collision")]
-    //Character_Collision,
-
     [Display(Name = "HAVOK_ENUM_HavokCategoryMode_Navmesh")]
     Navmesh,
 

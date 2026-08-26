@@ -91,6 +91,22 @@
     {
       "Key": "HAVOK_CollisionGeneratorFacing_Down",
       "Text": "Facing Downwards"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Materials_Header",
+      "Text": "Materials"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Materials_Header_TT",
+      "Text": "Determines the materials associated with each triange."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Include_Materials_Toggle",
+      "Text": "Include Materials"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Include_Materials_Toggle_TT",
+      "Text": "If enabled, a material palette is built for the collision."
     }
   ]
 }

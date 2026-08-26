@@ -26,7 +26,19 @@
     },
     {
       "Key": "HAVOK_FileView_FilePath_Display_TT",
-      "Text": "Toggle the display name used in the binder list.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle the display name used in the file list.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "HAVOK_FileView_BinderPath_Display_Alias_Show",
+      "Text": "Show Aliases"
+    },
+    {
+      "Key": "HAVOK_FileView_BinderPath_Display_Alias_Hide",
+      "Text": "Hide Aliases"
+    },
+    {
+      "Key": "HAVOK_FileView_BinderPath_Display_Alias_TT",
+      "Text": "Toggle the display of aliases in the file list.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Copy",
@@ -99,6 +111,14 @@
     {
       "Key": "HAVOK_FileView_ContextAction_Export_Log",
       "Text": "Exported {0} to project directory"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_CopyName",
+      "Text": "Copy Name"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_CopyName_TT",
+      "Text": "Copy the name of this file to clipboard.\nShortcut: {0}"
     }
   ]
 }

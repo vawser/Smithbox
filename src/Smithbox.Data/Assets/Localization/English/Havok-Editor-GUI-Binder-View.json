@@ -23,6 +23,18 @@
     {
       "Key": "HAVOK_BinderView_BinderPath_Display_TT",
       "Text": "Toggle the display name used in the binder list.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "HAVOK_BinderView_BinderPath_Display_Alias_Show",
+      "Text": "Show Aliases"
+    },
+    {
+      "Key": "HAVOK_BinderView_BinderPath_Display_Alias_Hide",
+      "Text": "Hide Aliases"
+    },
+    {
+      "Key": "HAVOK_BinderView_BinderPath_Display_Alias_TT",
+      "Text": "Toggle the display of aliases in the binder list.\n\nCurrent Mode:\n{0}"
     }
   ]
 }

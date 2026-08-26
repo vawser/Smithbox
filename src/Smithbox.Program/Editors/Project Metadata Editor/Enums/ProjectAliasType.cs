@@ -36,5 +36,7 @@ public enum ProjectAliasType
     [Display(Name = "PROJECT_Enum_ProjectAliasType_Talk_Scripts")]
     TalkScripts,
     [Display(Name = "PROJECT_Enum_ProjectAliasType_Time_Acts")]
-    TimeActs
+    TimeActs,
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Animations")]
+    Animations
 }

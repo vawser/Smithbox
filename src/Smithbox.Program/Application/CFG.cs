@@ -1036,8 +1036,10 @@ public class CFG
     public bool Interface_HavokEditor_ToolWindow = true;
 
     public bool HavokEditor_BinderList_Display_Full_Path = false;
+    public bool HavokEditor_BinderList_Display_Aliases = true;
 
     public bool HavokEditor_FileList_Display_Full_Path = false;
+    public bool HavokEditor_FileList_Display_Aliases = true;
 
     public bool HavokEditor_Properties_Display_Community_Names = false;
     public bool HavokEditor_Properties_Display_Type_Column = false;

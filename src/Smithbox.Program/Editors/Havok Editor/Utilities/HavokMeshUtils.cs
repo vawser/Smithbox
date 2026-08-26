@@ -17,75 +17,75 @@ public static class HKLib_MeshBuilder
     public static hknpExternMeshShape BuildExternMeshShape(
         IReadOnlyList<Vector3> vertices,
         IReadOnlyList<int> triangleIndices,
-        bool IncludeMaterialTable,
-        bool useTriangleMaterialAsShapeTag = false)
+        IReadOnlyList<hknpMaterialDescriptor> materialPalette = null)
     {
         if (triangleIndices.Count % 3 != 0)
         {
             throw new ArgumentException("triangleIndices must be a multiple of 3.", nameof(triangleIndices));
         }
+        int triangleCount = triangleIndices.Count / 3;
+
+        bool useMaterials = materialPalette is { Count: > 0 };
 
         var geometry = new hkGeometry();
         geometry.m_vertices.AddRange(vertices.Select(v => new Vector4(v.X, v.Y, v.Z, 0f)));
 
         for (int i = 0; i < triangleIndices.Count; i += 3)
         {
+            int materialSlot = useMaterials
+                ? 0
+                : -1;
+
             geometry.m_triangles.Add(new hkGeometry.Triangle
             {
                 m_a = triangleIndices[i],
                 m_b = triangleIndices[i + 1],
                 m_c = triangleIndices[i + 2],
-                m_material = -1
+                m_material = materialSlot
             });
         }
 
         var geometryWrapper = new hknpDefaultExternMeshShapeGeometry
         {
             m_geometry = geometry,
-            m_useTriangleMaterialAsShapeTag = useTriangleMaterialAsShapeTag
+            m_useTriangleMaterialAsShapeTag = false
         };
 
         var boundingVolumeData = BuildBoundingVolumeData(geometry);
 
-        int triangleCount = geometry.m_triangles.Count;
-
-        if (IncludeMaterialTable)
+        var shape = new hknpExternMeshShape
         {
-            var materialPalette = new hknpMaterialPalette();
+            m_geometry = geometryWrapper,
+            m_boundingVolumeData = boundingVolumeData,
+            m_flags = hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE,
+            m_type = hknpShapeType.Enum.EXTERN_MESH,
+            m_dispatchType = hknpCollisionDispatchType.Enum.COMPOSITE,
+            m_numShapeKeyBits = ShapeKeyBits(triangleCount),
+            m_convexRadius = 0f,
+            m_userData = 0,
+            m_shapeTagCodecInfo = 0
+        };
 
-            var shape = new hknpExternMeshShape
-            {
-                m_geometry = geometryWrapper,
-                m_boundingVolumeData = boundingVolumeData,
-                m_flags = hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE,
-                m_type = hknpShapeType.Enum.EXTERN_MESH,
-                m_dispatchType = hknpCollisionDispatchType.Enum.COMPOSITE,
-                m_numShapeKeyBits = ShapeKeyBits(triangleCount),
-                m_convexRadius = 0f,
-                m_userData = 0,
-                m_shapeTagCodecInfo = 0,
-                m_materialTable = materialPalette
-            };
-
-            return shape;
-        }
-        else
+        if (useMaterials)
         {
-            var shape = new hknpExternMeshShape
-            {
-                m_geometry = geometryWrapper,
-                m_boundingVolumeData = boundingVolumeData,
-                m_flags = hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE,
-                m_type = hknpShapeType.Enum.EXTERN_MESH,
-                m_dispatchType = hknpCollisionDispatchType.Enum.COMPOSITE,
-                m_numShapeKeyBits = ShapeKeyBits(triangleCount),
-                m_convexRadius = 0f,
-                m_userData = 0,
-                m_shapeTagCodecInfo = 0
-            };
-
-            return shape;
+            var palette = new hknpMaterialPalette();
+            palette.m_entries.AddRange(materialPalette!);
+            shape.m_materialTable = palette;
         }
+
+        return shape;
+    }
+    public static hknpMaterialDescriptor MakeMaterialDescriptor(
+        int slot,
+        hknpMaterial material,
+        string name = null)
+    {
+        return new hknpMaterialDescriptor
+        {
+            m_materialId = (ushort)slot,
+            m_name = name,
+            m_material = new hknpRefMaterial { m_material = material }
+        };
     }
 
     private static hknpExternMeshShapeData BuildBoundingVolumeData(

@@ -50,6 +50,7 @@ public class HavokCategoryView
             {
                 View.Selection.ClearSelection();
                 View.Selection.CategoryMode = curCategory;
+                View.Selection.RebuildBinderAliasCache();
             }
         }
 

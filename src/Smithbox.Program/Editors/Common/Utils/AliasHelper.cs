@@ -67,40 +67,46 @@ public static class AliasHelper
     public static string GetMapNameAlias(ProjectEntry project, string name)
     {
         project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapNames, out var aliases);
-        return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
+        return aliases?.FirstOrDefault(e => e.ID.ToLower() == name.ToLower())?.Name ?? string.Empty;
     }
 
     public static List<string> GetMapTags(ProjectEntry project, string name)
     {
         project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapNames, out var aliases);
 
-        var alias = aliases?.FirstOrDefault(e => e.ID == name);
+        var alias = aliases?.FirstOrDefault(e => e.ID.ToLower() == name.ToLower());
         if (alias != null)
             return alias.Tags;
 
         return new List<string>();
     }
 
+    public static string GetAnimationAlias(ProjectEntry project, string name)
+    {
+        project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Animations, out var aliases);
+        return aliases?.FirstOrDefault(e => e.ID.ToLower() == name.ToLower())?.Name ?? string.Empty;
+    }
+
     public static string GetCharacterAlias(ProjectEntry project, string name)
     {
         project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out var aliases);
-        return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
+        return aliases?.FirstOrDefault(e => e.ID.ToLower() == name.ToLower())?.Name ?? string.Empty;
     }
     public static string GetAssetAlias(ProjectEntry project, string name)
     {
         project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Assets, out var aliases);
-        return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
+        return aliases?.FirstOrDefault(e => e.ID.ToLower() == name.ToLower())?.Name ?? string.Empty;
     }
 
     public static string GetPartAlias(ProjectEntry project, string name)
     {
         project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Parts, out var aliases);
-        return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
+        return aliases?.FirstOrDefault(e => e.ID.ToLower() == name.ToLower())?.Name ?? string.Empty;
     }
     public static string GetMapPieceAlias(ProjectEntry project, string name)
     {
         project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out var aliases);
-        return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
+        return aliases?.FirstOrDefault(e => e.ID.ToLower() == name.ToLower())?.Name ?? string.Empty;
     }
 
     public static string GetTagListString(List<string> refTagList)

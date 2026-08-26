@@ -248,6 +248,8 @@ public class HavokBank : IDisposable
                 if (!curTopDict.ContainsKey(file.Name))
                 {
                     bankDict[fileEntry].Add(file.Name, null);
+
+                    Project.Handler.HavokEditor.ViewHandler.ActiveView.Selection.AddToFileAliasCache(file.Name);
                 }
             }
         }

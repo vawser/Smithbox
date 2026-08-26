@@ -98,7 +98,17 @@ public class HavokBinderView
                 View.Selection.ClearFileSelection();
                 View.Selection.BinderFileEntry = entry;
 
+                View.Selection.ClearFileAliasCache();
                 PopulateFileList(true);
+
+            }
+
+            if (CFG.Current.HavokEditor_BinderList_Display_Aliases)
+            {
+                if (View.Selection.BinderAliasCache.ContainsKey(entry.Filename))
+                {
+                    GUI.DisplayAlias(View.Selection.BinderAliasCache[entry.Filename]);
+                }
             }
         }
 
@@ -117,6 +127,13 @@ public class HavokBinderView
             "HAVOK_BinderView_BinderPath_Display_Short",
             "HAVOK_BinderView_BinderPath_Display_Full",
             "HAVOK_BinderView_BinderPath_Display_TT");
+
+        // Toggle: Aliases
+        GUI.DisplayToggleButton("aliasToggle", Icons.Book,
+            ref CFG.Current.HavokEditor_BinderList_Display_Aliases,
+            "HAVOK_BinderView_BinderPath_Display_Alias_Hide",
+            "HAVOK_BinderView_BinderPath_Display_Alias_Show",
+            "HAVOK_BinderView_BinderPath_Display_Alias_TT");
 
         ImGui.EndChild();
     }

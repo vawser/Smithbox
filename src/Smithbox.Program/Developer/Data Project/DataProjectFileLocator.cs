@@ -41,6 +41,8 @@ public class DataProjectFileLocator
     public FileDictionary TimeActFiles = new();
     public FileDictionary BehaviorFiles = new();
 
+    public FileDictionary HavokCollisionFiles = new();
+
     public DataProjectFileLocator(DataProjectEntry project)
     {
         Project = project;
@@ -149,6 +151,7 @@ public class DataProjectFileLocator
         var timeActFiles = new HashSet<FileDictionaryEntry>();
         var behaviorFiles = new HashSet<FileDictionaryEntry>();
         var entryFileListFiles = new HashSet<FileDictionaryEntry>();
+        var havokCollisionFiles = new HashSet<FileDictionaryEntry>();
 
         // Single pass - check each entry once
         foreach (var entry in allEntries)
@@ -178,7 +181,10 @@ public class DataProjectFileLocator
 
             // Collision files
             if (ShouldAddToCollisionFiles(entry, projectType, isMap, isSd))
+            {
                 collisionFiles.Add(entry);
+                havokCollisionFiles.Add(entry);
+            }
 
             // Map piece files
             if (ShouldAddToMapPieceFiles(entry, projectType, isMap, isSd))
@@ -287,6 +293,7 @@ public class DataProjectFileLocator
         TimeActFiles.Entries = timeActFiles;
         BehaviorFiles.Entries = behaviorFiles;
         EntryFileListFiles.Entries = entryFileListFiles;
+        HavokCollisionFiles.Entries = havokCollisionFiles;
 
         // Special handling for text files
         if (projectType == ProjectType.ER && textFiles.Count > 0)

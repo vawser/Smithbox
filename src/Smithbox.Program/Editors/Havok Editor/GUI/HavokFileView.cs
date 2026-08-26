@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using HKLib.hk2018;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
@@ -185,7 +186,15 @@ public class HavokFileView
 
                     if (selected)
                     {
-                        DisplayContextMenu(bankDict, View.Selection.BinderFileEntry, filepath);
+                        DisplayContextMenu(bankDict, View.Selection.BinderFileEntry, filepath, displayName);
+                    }
+
+                    if (CFG.Current.HavokEditor_FileList_Display_Aliases)
+                    {
+                        if (View.Selection.FileAliasCache.ContainsKey(displayName))
+                        {
+                            GUI.DisplayAlias(View.Selection.FileAliasCache[displayName]);
+                        }
                     }
                 }
             }
@@ -212,6 +221,13 @@ public class HavokFileView
             "HAVOK_FileView_FilePath_Display_Short",
             "HAVOK_FileView_FilePath_Display_Full",
             "HAVOK_FileView_FilePath_Display_TT");
+
+        // Toggle: Aliases
+        GUI.DisplayToggleButton("aliasToggle", Icons.Book,
+            ref CFG.Current.HavokEditor_FileList_Display_Aliases,
+            "HAVOK_FileView_FilePath_Display_Alias_Hide",
+            "HAVOK_FileView_FilePath_Display_Alias_Show",
+            "HAVOK_FileView_FilePath_Display_Alias_TT");
 
         ImGui.EndChild();
     }
@@ -309,10 +325,20 @@ public class HavokFileView
     public void DisplayContextMenu(
         Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict, 
         FileDictionaryEntry curBinderEntry, 
-        string filepath)
+        string filepath,
+        string displayName)
     {
         if (ImGui.BeginPopupContextItem($"Actions##HavokFileViewContextMenu_{filepath}"))
         {
+            // Copy Name
+            if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_CopyName")}##copyNameAction"))
+            {
+                PlatformUtils.Instance.SetClipboardText(displayName);
+            }
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_CopyName_TT", InputManager.GetHint(KeybindID.Copy)));
+
+            ImGui.Separator();
+
             // Copy
             if(ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Copy")}##copyAction"))
             {

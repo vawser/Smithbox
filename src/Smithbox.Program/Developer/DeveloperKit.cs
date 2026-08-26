@@ -1,9 +1,15 @@
 ﻿using DotNext;
 using Hexa.NET.ImGui;
+using HKLib.hk2018;
+using HKLib.Serialization.hk2018.Binary;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Octokit;
 using SoulsFormats;
+using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Utilities;
 using System.Numerics;
+using System.Text;
 using System.Text.Json;
 
 namespace StudioCore.Developer;
@@ -230,8 +236,17 @@ public class DeveloperKit
             "generateEdgeList",
             "Generate Edge List",
             "",
-            GenerateEdgeList);
+            GenerateEdgeList,
+
+            "findHavokInstances",
+            "Find Havok Instances",
+            "",
+            FindHavokInstances);
+
+        ImGui.InputText("MapID", ref MapID, 255);
     }
+
+    public string MapID = "";
 
     #region Validate File Dictionary
     public void ValidateFileDictionary()
@@ -538,4 +553,219 @@ public class DeveloperKit
     }
 
     #endregion
+    public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> MapCollisionBank = new();
+
+    public void FindHavokInstances()
+    {
+        var success = Projects.TryGetValue(TargetProject, out var targetProject);
+        if (!success)
+            return;
+
+        MapCollisionBank.Clear();
+
+        // Load all map collision files
+        foreach (var entry in targetProject.Locator.HavokCollisionFiles.Entries)
+        {
+            if (!MapCollisionBank.ContainsKey(entry))
+                MapCollisionBank.Add(entry, new Dictionary<string, hkRootLevelContainer>());
+
+            if (entry.Path.Contains("60_"))
+                continue;
+
+            if (entry.Path.Contains("61_"))
+                continue;
+
+            var bhdPath = entry.Path;
+            var bdtPath = entry.Path.Replace("bhd", "bdt");
+
+            var bdtData = targetProject.VFS.FS.ReadFile(bdtPath);
+            var bhdData = targetProject.VFS.FS.ReadFile(bhdPath);
+
+            if (bdtData == null || bhdData == null)
+                return;
+
+            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+            HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+            // Get compendium
+            byte[] compendiumFileBytes = null;
+
+            foreach (var file in packedBinder.Files)
+            {
+                if (file.Name.Contains(".compendium.dcx"))
+                {
+                    compendiumFileBytes = DCX.Decompress(file.Bytes).ToArray();
+                }
+                else if (file.Name.Contains(".compendium"))
+                {
+                    compendiumFileBytes = file.Bytes.ToArray();
+                }
+            }
+
+            if (compendiumFileBytes != null)
+            {
+                using MemoryStream memoryStream = new MemoryStream(compendiumFileBytes);
+                serializer.LoadCompendium(memoryStream);
+            }
+
+            foreach (var file in packedBinder.Files)
+            {
+                MapCollisionBank[entry].Add(file.Name, null);
+
+                byte[] fileBytes = null;
+
+                if (file.Name.Contains(".dcx"))
+                {
+                    fileBytes = DCX.Decompress(file.Bytes).ToArray();
+                }
+                else
+                {
+                    fileBytes = file.Bytes.ToArray();
+                }
+
+                using (MemoryStream memoryStream = new MemoryStream(fileBytes))
+                {
+                    hkRootLevelContainer fileHkx;
+
+                    try
+                    {
+                        fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+
+                        MapCollisionBank[entry][file.Name] = fileHkx;
+                    }
+                    catch (InvalidDataException ex)
+                    {
+                        Smithbox.LogError(this, "", ex);
+                    }
+                }
+            }
+        }
+
+        foreach(var entry in MapCollisionBank.Values)
+        {
+            foreach (var (key, file) in entry)
+            {
+                CheckHavokFile(key, file);
+            }
+        }
+
+        var sb = new StringBuilder();
+        foreach(var (filename, listEntry) in Results)
+        {
+            sb.AppendLine(filename);
+            foreach(var mat in listEntry)
+            {
+                sb.AppendLine($"--------");
+                sb.AppendLine($"{mat.m_name}");
+                sb.AppendLine($"--------");
+                sb.AppendLine($"{mat.m_materialId}");
+                sb.AppendLine($"->");
+                sb.AppendLine($"{mat.m_material.m_material.m_name}");
+            }
+        }
+
+        PlatformUtils.Instance.SetClipboardText( sb.ToString() );
+    }
+
+    public HavokPropertyCache HavokPropertyCache = new();
+
+    public Dictionary<string, List<hknpMaterialDescriptor>> Results = new();
+
+    public void CheckHavokFile(string filename, hkRootLevelContainer root)
+    {
+        var materials = HavokTreeSearch.FindAll<hknpMaterialDescriptor>(root, HavokPropertyCache.GetCachedHavokFields);
+
+        if(materials.Count > 0)
+        {
+            Results.Add(filename, materials);
+        }
+    }
+
+    public void LoadCombinedHavokFile(DataProjectEntry project, FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        if (!MapCollisionBank.ContainsKey(fileEntry))
+            return;
+
+        var curTopDict = MapCollisionBank[fileEntry];
+
+        if (!curTopDict.ContainsKey(internalFilePath))
+            return;
+
+        var bhdPath = fileEntry.Path;
+        var bdtPath = fileEntry.Path.Replace("bhd", "bdt");
+
+        var name = Path.GetFileNameWithoutExtension(internalFilePath);
+
+        try
+        {
+            var bdtData = project.VFS.FS.ReadFile(bdtPath);
+            var bhdData = project.VFS.FS.ReadFile(bhdPath);
+
+            if (bdtData == null || bhdData == null)
+                return;
+
+            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+            HavokBinarySerializer serializer = new HavokBinarySerializer();
+
+            // Get compendium
+            byte[] compendiumFileBytes = null;
+
+            foreach (var file in packedBinder.Files)
+            {
+                if (file.Name.Contains(".compendium.dcx"))
+                {
+                    compendiumFileBytes = DCX.Decompress(file.Bytes).ToArray();
+                }
+                else if (file.Name.Contains(".compendium"))
+                {
+                    compendiumFileBytes = file.Bytes.ToArray();
+                }
+            }
+
+            if (compendiumFileBytes != null)
+            {
+                using MemoryStream memoryStream = new MemoryStream(compendiumFileBytes);
+                serializer.LoadCompendium(memoryStream);
+            }
+
+            foreach (var file in packedBinder.Files)
+            {
+                if (file.Name != internalFilePath)
+                    continue;
+
+                byte[] fileBytes = null;
+
+                if (file.Name.Contains(".dcx"))
+                {
+                    fileBytes = DCX.Decompress(file.Bytes).ToArray();
+                }
+                else
+                {
+                    fileBytes = file.Bytes.ToArray();
+                }
+
+                using (MemoryStream memoryStream = new MemoryStream(fileBytes))
+                {
+                    hkRootLevelContainer fileHkx;
+
+                    try
+                    {
+                        fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+
+                        MapCollisionBank[fileEntry][internalFilePath] = fileHkx;
+                    }
+                    catch (InvalidDataException ex)
+                    {
+                        Smithbox.LogError(this, "", ex);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, "", ex);
+        }
+    }
 }

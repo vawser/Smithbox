@@ -104,6 +104,10 @@
     {
       "Key": "PROJECT_Enum_ProjectAliasType_Time_Acts",
       "Text": "Time Acts"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Animations",
+      "Text": "Animations"
     }
   ]
 }

@@ -102,6 +102,8 @@
 # Havok Editor
 #-------------
 - Add cross-binder support to the file list Copy action
+- Collision Generator:
+ - Work out how to support hit materials with hknpExternMesh
 
 #-------------
 # Texture Editor
