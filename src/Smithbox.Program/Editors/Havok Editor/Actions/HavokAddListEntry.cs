@@ -1,13 +1,10 @@
 ﻿using StudioCore.Editors.Common;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class HavokAddListEntryAction : EditorAction
+public class HavokAddListEntry : EditorAction
 {
     private readonly object ChangedObject;
     private readonly int Index;
@@ -15,7 +12,7 @@ public class HavokAddListEntryAction : EditorAction
     private readonly FieldInfo Property;
     private Action<bool> PostExecutionAction;
 
-    public HavokAddListEntryAction(FieldInfo prop, object changed, object newValue, int index)
+    public HavokAddListEntry(FieldInfo prop, object changed, object newValue, int index)
     {
         ChangedObject = changed;
         Property = prop;

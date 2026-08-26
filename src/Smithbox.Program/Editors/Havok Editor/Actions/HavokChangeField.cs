@@ -9,29 +9,25 @@ using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class MapHavokPropChange : ViewportAction
+public class ViewportHavokChangeField : ViewportAction
 {
-    private IEditorView View;
+    private readonly List<FieldChange> Changes = new();
 
-    private readonly List<PropertyChange> Changes = new();
-
-    public MapHavokPropChange(IEditorView view, FieldInfo prop, object obj, object newval,
+    public ViewportHavokChangeField(FieldInfo prop, object obj, object newval,
         int index = -1, int classIndex = -1)
     {
-        View = view;
-
         var propObj = PropFinderUtil.FindFieldObject(prop, obj, index, classIndex, false);
         if (propObj != null)
         {
-            var change = new PropertyChange
+            var change = new FieldChange
             {
                 ChangedObj = propObj,
-                Property = prop,
+                Field = prop,
                 NewValue = newval,
                 ArrayIndex = index
             };
 
-            var value = change.Property.GetValue(propObj);
+            var value = change.Field.GetValue(propObj);
 
             Type valType = null;
 
@@ -60,9 +56,9 @@ public class MapHavokPropChange : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        foreach (PropertyChange change in Changes)
+        foreach (FieldChange change in Changes)
         {
-            var value = change.Property.GetValue(change.ChangedObj);
+            var value = change.Field.GetValue(change.ChangedObj);
 
             Type valType = null;
 
@@ -71,7 +67,7 @@ public class MapHavokPropChange : ViewportAction
                 valType = value.GetType();
             }
 
-            if (change.Property.FieldType.IsArray && change.ArrayIndex != -1)
+            if (change.Field.FieldType.IsArray && change.ArrayIndex != -1)
             {
                 var a = (Array)value;
                 a.SetValue(change.NewValue, change.ArrayIndex);
@@ -82,7 +78,7 @@ public class MapHavokPropChange : ViewportAction
             }
             else
             {
-                change.Property.SetValue(change.ChangedObj, change.NewValue);
+                change.Field.SetValue(change.ChangedObj, change.NewValue);
             }
         }
 
@@ -91,9 +87,9 @@ public class MapHavokPropChange : ViewportAction
 
     public override ActionEvent Undo()
     {
-        foreach (PropertyChange change in Changes)
+        foreach (FieldChange change in Changes)
         {
-            var value = change.Property.GetValue(change.ChangedObj);
+            var value = change.Field.GetValue(change.ChangedObj);
 
             Type valType = null;
 
@@ -102,7 +98,7 @@ public class MapHavokPropChange : ViewportAction
                 valType = value.GetType();
             }
 
-            if (change.Property.FieldType.IsArray && change.ArrayIndex != -1)
+            if (change.Field.FieldType.IsArray && change.ArrayIndex != -1)
             {
                 var a = (Array)value;
                 a.SetValue(change.OldValue, change.ArrayIndex);
@@ -113,46 +109,42 @@ public class MapHavokPropChange : ViewportAction
             }
             else
             {
-                change.Property.SetValue(change.ChangedObj, change.OldValue);
+                change.Field.SetValue(change.ChangedObj, change.OldValue);
             }
         }
 
         return ActionEvent.NoEvent;
     }
 
-    private class PropertyChange
+    private class FieldChange
     {
         public int ArrayIndex;
         public object ChangedObj;
         public object NewValue;
         public object OldValue;
-        public FieldInfo Property;
+        public FieldInfo Field;
     }
 }
 
-public class HavokPropChange : EditorAction
+public class HavokChangeField : EditorAction
 {
-    private IEditorView View;
+    private readonly List<FieldChange> Changes = new();
 
-    private readonly List<PropertyChange> Changes = new();
-
-    public HavokPropChange(IEditorView view, FieldInfo prop, object obj, object newval,
+    public HavokChangeField(FieldInfo prop, object obj, object newval,
         int index = -1, int classIndex = -1)
     {
-        View = view;
-
         var propObj = PropFinderUtil.FindFieldObject(prop, obj, index, classIndex, false);
         if (propObj != null)
         {
-            var change = new PropertyChange
+            var change = new FieldChange
             {
                 ChangedObj = propObj,
-                Property = prop,
+                Field = prop,
                 NewValue = newval,
                 ArrayIndex = index
             };
 
-            var value = change.Property.GetValue(propObj);
+            var value = change.Field.GetValue(propObj);
 
             Type valType = null;
 
@@ -181,9 +173,9 @@ public class HavokPropChange : EditorAction
 
     public override ActionEvent Execute()
     {
-        foreach (PropertyChange change in Changes)
+        foreach (FieldChange change in Changes)
         {
-            var value = change.Property.GetValue(change.ChangedObj);
+            var value = change.Field.GetValue(change.ChangedObj);
 
             Type valType = null;
 
@@ -192,7 +184,7 @@ public class HavokPropChange : EditorAction
                 valType = value.GetType();
             }
 
-            if (change.Property.FieldType.IsArray && change.ArrayIndex != -1)
+            if (change.Field.FieldType.IsArray && change.ArrayIndex != -1)
             {
                 var a = (Array)value;
                 a.SetValue(change.NewValue, change.ArrayIndex);
@@ -203,7 +195,7 @@ public class HavokPropChange : EditorAction
             }
             else
             {
-                change.Property.SetValue(change.ChangedObj, change.NewValue);
+                change.Field.SetValue(change.ChangedObj, change.NewValue);
             }
         }
 
@@ -212,9 +204,9 @@ public class HavokPropChange : EditorAction
 
     public override ActionEvent Undo()
     {
-        foreach (PropertyChange change in Changes)
+        foreach (FieldChange change in Changes)
         {
-            var value = change.Property.GetValue(change.ChangedObj);
+            var value = change.Field.GetValue(change.ChangedObj);
 
             Type valType = null;
 
@@ -223,7 +215,7 @@ public class HavokPropChange : EditorAction
                 valType = value.GetType();
             }
 
-            if (change.Property.FieldType.IsArray && change.ArrayIndex != -1)
+            if (change.Field.FieldType.IsArray && change.ArrayIndex != -1)
             {
                 var a = (Array)value;
                 a.SetValue(change.OldValue, change.ArrayIndex);
@@ -234,19 +226,19 @@ public class HavokPropChange : EditorAction
             }
             else
             {
-                change.Property.SetValue(change.ChangedObj, change.OldValue);
+                change.Field.SetValue(change.ChangedObj, change.OldValue);
             }
         }
 
         return ActionEvent.NoEvent;
     }
 
-    private class PropertyChange
+    private class FieldChange
     {
         public int ArrayIndex;
         public object ChangedObj;
         public object NewValue;
         public object OldValue;
-        public FieldInfo Property;
+        public FieldInfo Field;
     }
 }

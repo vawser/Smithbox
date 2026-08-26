@@ -1,7 +1,5 @@
 ﻿using Hexa.NET.ImGui;
 using HKLib.hk2018;
-using Microsoft.AspNetCore.Mvc.ViewEngines;
-using Org.BouncyCastle.Utilities;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
@@ -11,6 +9,35 @@ namespace StudioCore.Editors.HavokEditor;
 
 public static class HavokPropertyDecorators
 {
+    public static bool AddVariableBindingSet(IEditorView view, FieldInfo[] fields, Type type, HavokClass classMeta, object sourceObj)
+    {
+        if (type != typeof(hkbClipGenerator))
+            return false;
+
+        if (!classMeta.SupportVariableBindings)
+            return false;
+
+        if (fields.Any(e => e.FieldType == typeof(hkbVariableBindingSet)))
+            return false;
+
+        if (view is HavokEditorView havokEditorView)
+        {
+            ImGui.NextColumn();
+            ImGui.NextColumn();
+
+            if (ImGui.Button("Add Variable Binding"))
+            {
+            }
+
+            if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+            {
+                ImGui.NextColumn();
+            }
+        }
+
+        return false;
+    }
+
     public static bool ParamRefRow(IEditorView view, HavokClass havokMeta, FieldInfo prop, object val, ref object newObj)
     {
         ParamEditorView activeView = null;

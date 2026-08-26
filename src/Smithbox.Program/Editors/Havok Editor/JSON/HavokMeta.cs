@@ -6,6 +6,10 @@ public class HavokClass
 {
     public string Type { get; set; } = "";
     public List<HavokField> Fields { get; set; } = new();
+
+    // Tags:
+    public bool SupportVariableBindings { get; set; } = false;
+
 }
 
 public class HavokField

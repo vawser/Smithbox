@@ -293,7 +293,7 @@ public class HavokPropertyView
         ImGui.Columns(1);
     }
 
-    public void HavokPropEditGeneric(object obj, HavokClass havokMeta, int classIndex = -1)
+    public void HavokPropEditGeneric(object obj, HavokClass classMeta, int classIndex = -1)
     {
         if (obj == null)
             return;
@@ -301,13 +301,16 @@ public class HavokPropertyView
         var scale = DPI.UIScale();
         Type type = obj.GetType();
 
-        FieldInfo[] properties = View.PropertyCache.GetCachedHavokFields(type);
+        FieldInfo[] fields = View.PropertyCache.GetCachedHavokFields(type);
+
+        // Class Decorators
+        HavokPropertyDecorators.AddVariableBindingSet(View, fields, type, classMeta, obj);
 
         // Properties
         var id = 0;
-        foreach (FieldInfo prop in properties)
+        foreach (FieldInfo prop in fields)
         {
-            havokMeta = HavokMetaHelper.GetMeta(Project, type);
+            classMeta = HavokMetaHelper.GetMeta(Project, type);
 
             var treeFlags = ImGuiTreeNodeFlags.None;
 
@@ -320,14 +323,14 @@ public class HavokPropertyView
             var fieldName = prop.Name;
             var fieldDescription = "";
 
-            if (havokMeta != null)
+            if (classMeta != null)
             {
                 if (CFG.Current.HavokEditor_Properties_Display_Community_Names)
                 {
-                    fieldName = HavokMetaHelper.GetFieldName(havokMeta, prop.Name);
+                    fieldName = HavokMetaHelper.GetFieldName(classMeta, prop.Name);
                 }
 
-                fieldDescription = $"{HavokMetaHelper.GetFieldDescription(havokMeta, prop.Name)}";
+                fieldDescription = $"{HavokMetaHelper.GetFieldDescription(classMeta, prop.Name)}";
             }
 
             Type typ = prop.FieldType;
@@ -387,7 +390,7 @@ public class HavokPropertyView
 
                             if (classOpen)
                             {
-                                HavokPropEditGeneric(o, havokMeta, i);
+                                HavokPropEditGeneric(o, classMeta, i);
                                 ImGui.TreePop();
                             }
                         }
@@ -397,9 +400,9 @@ public class HavokPropertyView
                             var array = obj as object[];
 
                             // Handle property display (and search filtering)
-                            if (DisplayProperty(havokMeta, obj, prop, type))
+                            if (DisplayProperty(classMeta, obj, prop, type))
                             {
-                                PropGenericFieldRow(prop, typ.GetElementType(), havokMeta, a.GetValue(i), obj, $@"{fieldName}[{i}]", fieldDescription, i, classIndex);
+                                PropGenericFieldRow(prop, typ.GetElementType(), classMeta, a.GetValue(i), obj, $@"{fieldName}[{i}]", fieldDescription, i, classIndex);
                             }
                         }
                         ImGui.PopID();
@@ -411,13 +414,13 @@ public class HavokPropertyView
             else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
             {
                 Type arrtyp = typ.GetGenericArguments()[0];
-                PropEditorGenericList(havokMeta, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
+                PropEditorGenericList(classMeta, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
             }
             else if (typ.BaseType != null && typ.BaseType.IsGenericType
                 && typ.BaseType.GetGenericTypeDefinition() == typeof(List<>))
             {
                 Type arrtyp = typ.BaseType.GetGenericArguments()[0];
-                PropEditorGenericList(havokMeta, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
+                PropEditorGenericList(classMeta, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
             }
             else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
             {
@@ -443,7 +446,7 @@ public class HavokPropertyView
 
                     if (open)
                     {
-                        HavokPropEditGeneric(o, havokMeta);
+                        HavokPropEditGeneric(o, classMeta);
                         ImGui.TreePop();
                     }
                 }
@@ -453,9 +456,9 @@ public class HavokPropertyView
             else
             {
                 // Handle property display (and search filtering)
-                if (DisplayProperty(havokMeta, obj, prop, type))
+                if (DisplayProperty(classMeta, obj, prop, type))
                 {
-                    PropGenericFieldRow(prop, typ, havokMeta, prop.GetValue(obj), obj, fieldName, fieldDescription, classIndex);
+                    PropGenericFieldRow(prop, typ, classMeta, prop.GetValue(obj), obj, fieldName, fieldDescription, classIndex);
                 }
 
                 ImGui.PopID();
@@ -686,7 +689,7 @@ public class HavokPropertyView
             _lastUncommittedAction = null;
         }
 
-        var action = new HavokPropChange(View, (FieldInfo)prop, obj, newval, arrayindex, classIndex);
+        var action = new HavokChangeField((FieldInfo)prop, obj, newval, arrayindex, classIndex);
         View.ActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;
@@ -1033,13 +1036,13 @@ public class HavokPropertyView
                     var firstElem = list[0];
 
                     var newEntry = PropFinderUtil.CreateDefaultListElement(firstElem.GetType());
-                    var action = new HavokAddListEntryAction(prop, obj, newEntry, list.Count);
+                    var action = new HavokAddListEntry(prop, obj, newEntry, list.Count);
                     View.ActionManager.ExecuteAction(action);
                 }
                 else
                 {
                     var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
-                    var action = new HavokAddListEntryAction(prop, obj, newEntry, list.Count);
+                    var action = new HavokAddListEntry(prop, obj, newEntry, list.Count);
                     View.ActionManager.ExecuteAction(action);
                 }
             }
@@ -1117,7 +1120,7 @@ public class HavokPropertyView
 
                 if (removeIndex != -1)
                 {
-                    var action = new HavokRemoveListEntryAction(prop, obj, removeIndex);
+                    var action = new HavokRemoveListEntry(prop, obj, removeIndex);
                     View.ActionManager.ExecuteAction(action);
                 }
             }

@@ -586,7 +586,7 @@ public class MapHavokPropertyView
             _lastUncommittedAction = null;
         }
 
-        var action = new MapHavokPropChange(View, (FieldInfo)prop, obj, newval, arrayindex, classIndex);
+        var action = new ViewportHavokChangeField((FieldInfo)prop, obj, newval, arrayindex, classIndex);
         View.ViewportActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;

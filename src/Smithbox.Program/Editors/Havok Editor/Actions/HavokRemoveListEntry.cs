@@ -7,7 +7,7 @@ using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class HavokRemoveListEntryAction : EditorAction
+public class HavokRemoveListEntry : EditorAction
 {
     private readonly object ChangedObject;
     private readonly int Index;
@@ -15,7 +15,7 @@ public class HavokRemoveListEntryAction : EditorAction
     private readonly FieldInfo Property;
     private Action<bool> PostExecutionAction;
 
-    public HavokRemoveListEntryAction(FieldInfo prop, object changed, int index)
+    public HavokRemoveListEntry(FieldInfo prop, object changed, int index)
     {
         ChangedObject = changed;
         Property = prop;
