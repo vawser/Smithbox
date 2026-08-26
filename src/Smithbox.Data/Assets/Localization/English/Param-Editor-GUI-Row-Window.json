@@ -30,7 +30,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Toggle_Modified_Background_Hint",
-      "Text": "Toggle the display of the modified background on modified rows.\nCurrent Mode: {0}"
+      "Text": "Toggle the display of the modified background on modified rows.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_RowWindow_Toggle_Text_Decorator_Visible",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Toggle_Text_Decorator_Hint",
-      "Text": "Toggle the display of the FMG text on rows.\nCurrent Mode: {0}"
+      "Text": "Toggle the display of the FMG text on rows.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_RowWindow_Col_ID",

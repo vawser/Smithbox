@@ -206,18 +206,12 @@ public class HavokFileView
 
         EditorFilters.DisplaySearchbar("havokFileSearch", ref FileFilter, ref ExactFileFilter);
 
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Bars}##toggleFullPathName"))
-        {
-            CFG.Current.HavokEditor_FileList_Display_Full_Path = !CFG.Current.HavokEditor_FileList_Display_Full_Path;
-        }
-
-        var fullPathVis = LOC.Get("HAVOK_FileView_FilePath_Display_Short");
-        if (CFG.Current.HavokEditor_FileList_Display_Full_Path)
-            fullPathVis = LOC.Get("HAVOK_FileView_FilePath_Display_Full");
-
-        GUI.Tooltip(LOC.Get("HAVOK_FileView_FilePath_Display_TT", fullPathVis));
+        // Toggle: Full Paths
+        GUI.DisplayToggleButton("fullPathToggle", Icons.FileText,
+            ref CFG.Current.HavokEditor_FileList_Display_Full_Path,
+            "HAVOK_FileView_FilePath_Display_Short",
+            "HAVOK_FileView_FilePath_Display_Full",
+            "HAVOK_FileView_FilePath_Display_TT");
 
         ImGui.EndChild();
     }

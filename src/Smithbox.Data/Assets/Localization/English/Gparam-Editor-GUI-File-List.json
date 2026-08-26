@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_FileList_Alias_Toggle_Show",
+      "Text": "Show file aliases"
+    },
+    {
+      "Key": "GPARAM_FileList_Alias_Toggle_Hide",
+      "Text": "Hide file aliases"
+    },
+    {
+      "Key": "GPARAM_FileList_Alias_Toggle_TT",
+      "Text": "Toggle the display of file aliases.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "GPARAM_FileList_TargetBnd_Toggle_GPARAMBND",
+      "Text": "Display GPARAMBND files"
+    },
+    {
+      "Key": "GPARAM_FileList_TargetBnds_Toggle_GPARAM",
+      "Text": "Display GPARAM files"
+    },
+    {
+      "Key": "GPARAM_FileList_TargetBnd_Toggle_TT",
+      "Text": "Toggle the display of GPARAM files.\n\nCurrent Mode:\n{0}"
+    }
+  ]
+}

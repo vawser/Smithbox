@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "MAPDAT_CategoryView_Toggle_Empty_Hide",
+      "Text": "Hide empty base categories"
+    },
+    {
+      "Key": "MAPDAT_CategoryView_Toggle_Empty_Show",
+      "Text": "Show empty base categories"
+    },
+    {
+      "Key": "MAPDAT_CategoryView_Toggle_Empty_TT",
+      "Text": "Toggle the display of empty base categories.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "MAPDAT_CategoryView_Toggle_Empty_Sub_Hide",
+      "Text": "Hide empty sub categories"
+    },
+    {
+      "Key": "MAPDAT_CategoryView_Toggle_Empty_Sub_Show",
+      "Text": "Show empty sub categories"
+    },
+    {
+      "Key": "MAPDAT_CategoryView_Toggle_Empty_Sub_TT",
+      "Text": "Toggle the display of empty sub categories.\n\nCurrent Mode:\n{0}"
+    }
+  ]
+}

@@ -93,78 +93,44 @@ public class MapPropertyView
 
         EditorFilters.DisplaySearchbar("MapPropSearch", ref MapPropFilter, ref ExactMapPropFilter);
 
-        // Toggle Community Field Names
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
-        {
-            CFG.Current.MapEditor_Properties_Enable_Commmunity_Names = !CFG.Current.MapEditor_Properties_Enable_Commmunity_Names;
-        }
-
-        var communityFieldNameMode = "Internal";
-        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names)
-            communityFieldNameMode = "Community";
-
-        GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
+        // Toggle: Community Names
+        GUI.DisplayToggleButton("communityNameToggle", Icons.Book,
+            ref CFG.Current.MapEditor_Properties_Enable_Commmunity_Names,
+            "MAP_Properties_Toggle_Community_Names_Internal",
+            "MAP_Properties_Toggle_Community_Names_Community",
+            "MAP_Properties_Toggle_Community_Names_TT");
 
         if (IsCollisionType() || IsNavmeshType())
         {
-            ImGui.SameLine();
+            // Toggle: Type Column
+            GUI.DisplayToggleButton("typeColumnToggle", Icons.Calculator,
+                ref CFG.Current.MapEditor_HavokEdit_Display_Type_Column,
+                "HAVOK_PropertyView_Type_Column_Toggle_Hide",
+                "HAVOK_PropertyView_Type_Column_Toggle_Show",
+                "HAVOK_PropertyView_Type_Column_Toggle_TT");
 
-            if (ImGui.Button($"{Icons.Calculator}##toggleTypeCol"))
-            {
-                CFG.Current.MapEditor_HavokEdit_Display_Type_Column = !CFG.Current.MapEditor_HavokEdit_Display_Type_Column;
-            }
-
-            var typeColumnVis = "Internal";
-            if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
-                typeColumnVis = "Community";
-
-            GUI.Tooltip($"Toggle the visibilty of the field type column.\nCurrent Mode: {typeColumnVis}");
-
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{Icons.Database}##toggleRawDataFields"))
-            {
-                CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields = !CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields;
-            }
-
-            var rawDataVis = "Hide Mesh Data";
-            if (CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields)
-                rawDataVis = "Show Mesh Data";
-
-            GUI.Tooltip($"Toggle the visibilty of fields tagged as 'mesh data'.\nCurrent Mode: {rawDataVis}");
+            // Toggle: Mesh Data
+            GUI.DisplayToggleButton("meshDataToggle", Icons.Database,
+                ref CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields,
+                "HAVOK_PropertyView_Mesh_Data_Toggle_Hide",
+                "HAVOK_PropertyView_Mesh_Data_Toggle_Show",
+                "HAVOK_PropertyView_Mesh_Data_Toggle_TT");
         }
         else
         {
-            // Toggle Unknown Properties
-            ImGui.SameLine();
+            // Toggle: Display Unknown
+            GUI.DisplayToggleButton("displayUnkToggle", Icons.Eye,
+                ref CFG.Current.MapEditor_Properties_Display_Unknown_Properties,
+                "MAP_Properties_Toggle_Unknown_Field_Hide",
+                "MAP_Properties_Toggle_Unknown_Field_Show",
+                "MAP_Properties_Toggle_Unknown_Field_TT");
 
-            if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
-            {
-                CFG.Current.MapEditor_Properties_Display_Unknown_Properties = !CFG.Current.MapEditor_Properties_Display_Unknown_Properties;
-            }
-
-            var unkFieldDisplayMode = "Hidden";
-
-            if (CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
-                unkFieldDisplayMode = "Visible";
-
-            GUI.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
-
-            // Toggle Field Padding
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{Icons.Hubzilla}"))
-            {
-                CFG.Current.MapEditor_Field_List_Display_Padding = !CFG.Current.MapEditor_Field_List_Display_Padding;
-            }
-
-            var fieldPaddingMode = "Hidden";
-            if (!CFG.Current.MapEditor_Field_List_Display_Padding)
-                fieldPaddingMode = "Visible";
-
-            GUI.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
+            // Toggle: Display Padding
+            GUI.DisplayToggleButton("displayPaddingToggle", Icons.Hubzilla,
+                ref CFG.Current.MapEditor_Field_List_Display_Padding,
+                "MAP_Properties_Toggle_Padding_Hide",
+                "MAP_Properties_Toggle_Padding_Show",
+                "MAP_Properties_Toggle_Padding_TT");
         }
 
         ImGui.EndChild();

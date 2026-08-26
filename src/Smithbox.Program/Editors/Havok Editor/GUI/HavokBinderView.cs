@@ -118,19 +118,12 @@ public class HavokBinderView
 
         EditorFilters.DisplaySearchbar("havokBinderSearch", ref BinderFilter, ref ExactBinderFilter);
 
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Bars}##toggleFullPathName"))
-        {
-            CFG.Current.HavokEditor_BinderList_Display_Full_Path = !CFG.Current.HavokEditor_BinderList_Display_Full_Path;
-        }
-
-        var fullPathVis = LOC.Get("HAVOK_BinderView_BinderPath_Display_Short");
-        if (CFG.Current.HavokEditor_BinderList_Display_Full_Path)
-            fullPathVis = LOC.Get("HAVOK_BinderView_BinderPath_Display_Full");
-
-        GUI.Tooltip(LOC.Get("HAVOK_BinderView_BinderPath_Display_TT", fullPathVis));
-
+        // Toggle: Full Paths
+        GUI.DisplayToggleButton("fullPathToggle", Icons.FileText,
+            ref CFG.Current.HavokEditor_BinderList_Display_Full_Path,
+            "HAVOK_BinderView_BinderPath_Display_Short",
+            "HAVOK_BinderView_BinderPath_Display_Full",
+            "HAVOK_BinderView_BinderPath_Display_TT");
 
         ImGui.EndChild();
     }

@@ -26,7 +26,7 @@
     },
     {
       "Key": "HAVOK_FileView_FilePath_Display_TT",
-      "Text": "Toggle the display name used in the binder list.\nCurrent Mode: {0}"
+      "Text": "Toggle the display name used in the binder list.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Copy",

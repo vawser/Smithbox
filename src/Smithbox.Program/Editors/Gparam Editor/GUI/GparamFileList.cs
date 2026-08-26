@@ -47,36 +47,22 @@ public class GparamFileList
         EditorFilters.DisplaySearchbar("gparamEditor_FileList",
             ref FileListFilter, ref ExactFileListFilter);
 
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Bars}##aliasToggle"))
-        {
-            CFG.Current.GparamEditor_File_List_Display_Aliases = !CFG.Current.GparamEditor_File_List_Display_Aliases;
-        }
-
-        var aliasMode = "Displaying file aliases.";
-        if (!CFG.Current.GparamEditor_File_List_Display_Aliases)
-        {
-            aliasMode = "Hiding file aliases.";
-        }
-        GUI.Tooltip($"Toggle the display of file aliases.\nCurrent Mode: {aliasMode}");
+        // Toggle: Aliases
+        GUI.DisplayToggleButton("aliasToggle", Icons.StickyNote,
+            ref CFG.Current.GparamEditor_File_List_Display_Aliases,
+            "GPARAM_FileList_Alias_Toggle_Show",
+            "GPARAM_FileList_Alias_Toggle_Hide",
+            "GPARAM_FileList_Alias_Toggle_TT");
 
         // BND File Toggle
         if (Project.Descriptor.ProjectType is ProjectType.BB)
         {
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{Icons.Book}##bbFileContainerToggle"))
-            {
-                CFG.Current.GparamEditor_File_List_Display_BB_BND_Files = !CFG.Current.GparamEditor_File_List_Display_BB_BND_Files;
-            }
-
-            var bndMode = "Displaying GPARAMBND files.";
-            if (!CFG.Current.GparamEditor_File_List_Display_BB_BND_Files)
-            {
-                bndMode = "Displaying GPARAM files.";
-            }
-            GUI.Tooltip($"Toggle the display of GPARAMBND files.\nCurrent Mode: {bndMode}");
+            // Toggle: GPARAMBND
+            GUI.DisplayToggleButton("gparambndToggle", Icons.Database,
+                ref CFG.Current.GparamEditor_File_List_Display_BB_BND_Files,
+                "GPARAM_FileList_TargetBnd_Toggle_GPARAMBND",
+                "GPARAM_FileList_TargetBnds_Toggle_GPARAM",
+                "GPARAM_FileList_TargetBnd_Toggle_TT");
         }
 
         ImGui.EndChild();

@@ -30,7 +30,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_FieldNameMode_Hint",
-      "Text": "Toggle field name display type between Internal and Community.\nCurrent Mode: {0}"
+      "Text": "Toggle field name display type between Internal and Community.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_VanillaCol_Hidden",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_VanillaCol_Hint",
-      "Text": "Toggle the display of the vanilla columns.\nCurrent Mode: {0}"
+      "Text": "Toggle the display of the vanilla columns.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_AuxCol_Hidden",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_AuxCol_Hint",
-      "Text": "Toggle the display of the auxiliary columns.\nCurrent Mode: {0}"
+      "Text": "Toggle the display of the auxiliary columns.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_FieldLayout_Hidden",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_FieldLayout_Hint",
-      "Text": "Toggle the display of field layouts.\nCurrent Mode: {0}"
+      "Text": "Toggle the display of field layouts.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_FieldOffset_Hidden",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_FieldOffset_Hint",
-      "Text": "Toggle the display of the field offset column.\nCurrent Mode: {0}"
+      "Text": "Toggle the display of the field offset column.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_FieldPadding_Hidden",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_FieldPadding_Hint",
-      "Text": "Toggle the display of padding field.\nCurrent Mode: {0}"
+      "Text": "Toggle the display of padding field.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_ModifiedBg_Visible",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_ModifiedBg_Hint",
-      "Text": "Toggle the display of the background color on modified fields.\nCurrent Mode: {0}"
+      "Text": "Toggle the display of the background color on modified fields.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_Name_Prop",

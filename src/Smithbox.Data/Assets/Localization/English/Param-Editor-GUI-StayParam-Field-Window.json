@@ -18,7 +18,7 @@
     },
     {
       "Key": "PARAM_SP_FieldWindow_FieldNameMode_Hint",
-      "Text": "Toggle field name display type between Internal and Community.\nCurrent Mode: {0}"
+      "Text": "Toggle field name display type between Internal and Community.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_SP_FieldWindow_FieldPadding_Hidden",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PARAM_SP_FieldWindow_FieldPadding_Hint",
-      "Text": "Toggle the display of padding field.\nCurrent Mode: {0}"
+      "Text": "Toggle the display of padding field.\n\nCurrent Mode:\n{0}"
     }
   ]
 }

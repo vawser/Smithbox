@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_GroupsView_NameAutoAdjust_Disabled",
+      "Text": "Map object names are automatically updated when changed."
+    },
+    {
+      "Key": "MAP_GroupsView_NameAutoAdjust_Enabled",
+      "Text": "Map object names are not automatically updated when changed."
+    },
+    {
+      "Key": "MAP_GroupsView_NameAutoAdjust_TT",
+      "Text": "Determines if the map object names stored within a group are automatically updated to the new name if the map object's name is edited.\n\nCurrent Mode:\n{0}"
+    }
+  ]
+}

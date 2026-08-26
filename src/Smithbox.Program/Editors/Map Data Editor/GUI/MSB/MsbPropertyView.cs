@@ -48,55 +48,28 @@ public class MsbPropertyView
 
         EditorFilters.DisplaySearchbar("MsbEntryPropSearch", ref PropertyListFilter, ref ExactPropertyListFilter);
 
-        DisplayHeaderToggles();
+        // Toggle: Community Names
+        GUI.DisplayToggleButton("communityNameToggle", Icons.Book,
+            ref CFG.Current.MapEditor_Properties_Enable_Commmunity_Names,
+            "MAPDAT_Properties_Toggle_Community_Names_Internal",
+            "MAPDAT_Properties_Toggle_Community_Names_Community",
+            "MAPDAT_Properties_Toggle_Community_Names_TT");
+
+        // Toggle: Display Unknown
+        GUI.DisplayToggleButton("displayUnkToggle", Icons.Eye,
+            ref CFG.Current.MapEditor_Properties_Display_Unknown_Properties,
+            "MAPDAT_Properties_Toggle_Unknown_Field_Hide",
+            "MAPDAT_Properties_Toggle_Unknown_Field_Show",
+            "MAPDAT_Properties_Toggle_Unknown_Field_TT");
+
+        // Toggle: Display Padding
+        GUI.DisplayToggleButton("displayPaddingToggle", Icons.Hubzilla,
+            ref CFG.Current.MapEditor_Field_List_Display_Padding,
+            "MAPDAT_Properties_Toggle_Padding_Hide",
+            "MAPDAT_Properties_Toggle_Padding_Show",
+            "MAPDAT_Properties_Toggle_Padding_TT");
 
         ImGui.EndChild();
-    }
-
-    public void DisplayHeaderToggles()
-    {
-        // Toggle Community Field Names
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
-        {
-            CFG.Current.MapEditor_Properties_Enable_Commmunity_Names = !CFG.Current.MapEditor_Properties_Enable_Commmunity_Names;
-        }
-
-        var communityFieldNameMode = "Internal";
-        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names)
-            communityFieldNameMode = "Community";
-
-        GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
-
-        // Toggle Unknown Properties
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
-        {
-            CFG.Current.MapEditor_Properties_Display_Unknown_Properties = !CFG.Current.MapEditor_Properties_Display_Unknown_Properties;
-        }
-
-        var unkFieldDisplayMode = "Hidden";
-
-        if (CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
-            unkFieldDisplayMode = "Visible";
-
-        GUI.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
-
-        // Toggle Field Padding
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Hubzilla}"))
-        {
-            CFG.Current.MapEditor_Field_List_Display_Padding = !CFG.Current.MapEditor_Field_List_Display_Padding;
-        }
-
-        var fieldPaddingMode = "Hidden";
-        if (!CFG.Current.MapEditor_Field_List_Display_Padding)
-            fieldPaddingMode = "Visible";
-
-        GUI.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
     }
 
     public void DisplayProperties()

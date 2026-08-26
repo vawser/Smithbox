@@ -78,9 +78,7 @@ public class MapContentView
     /// </summary>
     private void DisplayQuickActionButtons(MapContainer map)
     {
-        ImGui.SameLine();
-
-        // Show All
+        // Action: Show All
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
         {
@@ -92,9 +90,9 @@ public class MapContentView
                 }
             }
         }
-        GUI.Tooltip("Force all map objects within this map to be shown.");
+        GUI.Tooltip(LOC.Get("MAP_Contents_Show_All_Action_TT"));
 
-        // Hide All
+        // Action: Hide All
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.EyeSlash}", DPI.IconButtonSize))
         {
@@ -106,9 +104,9 @@ public class MapContentView
                 }
             }
         }
-        GUI.Tooltip("Force all map objects within this map to be hidden.");
+        GUI.Tooltip(LOC.Get("MAP_Contents_Hide_All_Action_TT"));
 
-        // Toggle Name Display Type
+        // Toggle: Name Display Type
         var curNameDisplayType = CFG.Current.MapEditor_MapObjectName_DisplayType;
 
         ImGui.SameLine();
@@ -140,58 +138,41 @@ public class MapContentView
             }
         }
 
-        var tooltipTop = "Determines how the map object name(s) are displayed:\n";
-        var tooltip = "";
+        var typeTooltip = "";
 
         if (curNameDisplayType is MapObjectNameDisplayType.Internal)
         {
-            tooltip = "Raw";
+            typeTooltip = LOC.Get("MAP_Contents_Name_Display_Type_Raw");
         }
         else if (curNameDisplayType is MapObjectNameDisplayType.Community)
         {
-            tooltip = "Community";
+            typeTooltip = LOC.Get("MAP_Contents_Name_Display_Type_Community");
         }
         else if (curNameDisplayType is MapObjectNameDisplayType.Internal_Community)
         {
-            tooltip = "Raw (Community)";
+            typeTooltip = LOC.Get("MAP_Contents_Name_Display_Type_Raw_Community");
         }
         else if (curNameDisplayType is MapObjectNameDisplayType.Internal_FMG)
         {
-            tooltip = "Raw (FMG)";
+            typeTooltip = LOC.Get("MAP_Contents_Name_Display_Type_Raw_FMG");
         }
         else if (curNameDisplayType is MapObjectNameDisplayType.Community_FMG)
         {
-            tooltip = "Community (FMG)";
+            typeTooltip = LOC.Get("MAP_Contents_Name_Display_Type_Community_FMG");
         }
         else if (curNameDisplayType is MapObjectNameDisplayType.Internal_Community_FMG)
         {
-            tooltip = "Raw (Community) [FMG]";
+            typeTooltip = LOC.Get("MAP_Contents_Name_Display_Type_Internal_Community_FMG");
         }
 
-        GUI.Tooltip($"{tooltipTop}{tooltip}");
+        GUI.Tooltip(LOC.Get("MAP_Contents_Name_Display_Type_TT", typeTooltip));
 
-        ImGui.SameLine();
-
-        // Auto-Open Tree
-        ImGui.SameLine();
-        if (ImGui.Button($"{Icons.Tree}##toggleAutoOpen"))
-        {
-            CFG.Current.MapEditor_MapContentList_Auto_Open_Tree = !CFG.Current.MapEditor_MapContentList_Auto_Open_Tree;
-        }
-
-        var autoTreeMode = LOC.Get("MAP_Contents_TreeState_Open");
-        if (CFG.Current.MapEditor_MapContentList_Auto_Open_Tree)
-            autoTreeMode = LOC.Get("MAP_Contents_TreeState_Closed");
-
-        GUI.Tooltip(LOC.Get("MAP_Contents_TreeState_TT", autoTreeMode));
-
-        // Refresh Textures
-        //ImGui.SameLine();
-        //if (ImGui.Button($"{Icons.Refresh}", DPI.IconButtonSize))
-        //{
-        //    MapEditorUtils.UpdateAllEntityModels(Smithbox.Orchestrator.SelectedProject);
-        //}
-        //UIHelper.Tooltip("Update all map object meshes and textures.");
+        // Toggle: Tree Auto-Open
+        GUI.DisplayToggleButton("autoTreeOpenToggle", Icons.Tree,
+            ref CFG.Current.MapEditor_MapContentList_Auto_Open_Tree,
+            "MAP_Contents_TreeState_Open",
+            "MAP_Contents_TreeState_Closed",
+            "MAP_Contents_TreeState_TT");
     }
 
     /// <summary>

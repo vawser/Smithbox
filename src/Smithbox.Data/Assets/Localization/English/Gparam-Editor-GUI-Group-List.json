@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_GroupList_Empty_Groups_Toggle_Show",
+      "Text": "Show empty groups"
+    },
+    {
+      "Key": "GPARAM_GroupList_Empty_Groups_Toggle_Hide",
+      "Text": "Hide empty groups"
+    },
+    {
+      "Key": "GPARAM_GroupList_Empty_Groups_Toggle_TT",
+      "Text": "Toggle the display of empty groups.\n\nCurrent Mode:\n{0}"
+    }
+  ]
+}

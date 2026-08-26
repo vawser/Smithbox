@@ -39,6 +39,7 @@ public class MapContentTreeSearch
         EditorFilters.DisplaySearchbar("MapContentSearch", ref SearchInput, ref ExactMatch);
         GUI.Tooltip($"Filter the content tree for {mapId}: {mapName}");
 
+        // View: Search Input
         ImGui.SameLine();
 
         if (ImGui.Button($"{Icons.QuestionCircle}", DPI.IconButtonSize))

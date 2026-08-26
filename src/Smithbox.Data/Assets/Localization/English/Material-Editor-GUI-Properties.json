@@ -18,7 +18,7 @@
     },
     {
       "Key": "MAT_Properties_DisplayCommunityNames_Hint",
-      "Text": "Toggle field name display type between Internal and Community.\nCurrent Mode: {0}"
+      "Text": "Toggle field name display type between Internal and Community.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MAT_Properties_Object_Type",
@@ -107,7 +107,7 @@
     },
     {
       "Key": "MAT_PropertyView_Type_Column_Toggle_TT",
-      "Text": "Toggle the visibilty of the field type column.\nCurrent Mode: {0}"
+      "Text": "Toggle the visibilty of the field type column.\n\nCurrent Mode:\n{0}"
     }
   ]
 }

@@ -47,19 +47,12 @@ public class GparamGroupList
         EditorFilters.DisplaySearchbar("gparamEditor_GroupList",
             ref GroupListFilter, ref ExactGroupListFilter);
 
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Bars}##emptyGroupToggle"))
-        {
-            CFG.Current.GparamEditor_Group_List_Display_Empty_Group = !CFG.Current.GparamEditor_Group_List_Display_Empty_Group;
-        }
-
-        var emptyGroupMode = "Displaying empty groups.";
-        if (!CFG.Current.GparamEditor_Group_List_Display_Empty_Group)
-        {
-            emptyGroupMode = "Hiding empty groups.";
-        }
-        GUI.Tooltip($"Toggle the display of empty groups.\nCurrent Mode: {emptyGroupMode}");
+        // Toggle: Display Empty Groups
+        GUI.DisplayToggleButton("emptyGroupToggle", Icons.Book,
+            ref CFG.Current.GparamEditor_Group_List_Display_Empty_Group,
+            "GPARAM_GroupList_Empty_Groups_Toggle_Show",
+            "GPARAM_GroupList_Empty_Groups_Toggle_Hide",
+            "GPARAM_GroupList_Empty_Groups_Toggle_TT");
 
         ImGui.EndChild();
     }

@@ -53,19 +53,12 @@ public class MsbCategoryView
 
         EditorFilters.DisplaySearchbar("BaseCategoryFilter", ref BaseCategoryListFilter, ref ExactBaseCategoryListFilter);
 
-        // Toggle Empty Display
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Bars}"))
-        {
-            CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories = !CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories;
-        }
-
-        var emptyBaseDisplay = "Hide Empty Base Categories";
-        if (CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories)
-            emptyBaseDisplay = "Display Empty Base Categories";
-
-        GUI.Tooltip($"Toggle the display of base categories with no entries.\nCurrent Mode: {emptyBaseDisplay}");
+        // Toggle: Empty Display
+        GUI.DisplayToggleButton("emptyDisplayToggle", Icons.Book,
+            ref CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories,
+            "MAPDAT_CategoryView_Toggle_Empty_Hide",
+            "MAPDAT_CategoryView_Toggle_Empty_Show",
+            "MAPDAT_CategoryView_Toggle_Empty_TT");
 
         ImGui.EndChild();
 
@@ -157,19 +150,12 @@ public class MsbCategoryView
 
         EditorFilters.DisplaySearchbar("SubCategoryFilter", ref SubCategoryListFilter, ref ExactSubCategoryListFilter);
 
-        // Toggle Empty Display
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Bars}"))
-        {
-            CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories = !CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories;
-        }
-
-        var emptyBaseDisplay = "Hide Empty Sub Categories";
-        if (CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories)
-            emptyBaseDisplay = "Display Empty Sub Categories";
-
-        GUI.Tooltip($"Toggle the display of base categories with no entries.\nCurrent Mode: {emptyBaseDisplay}");
+        // Toggle: Empty Display
+        GUI.DisplayToggleButton("emptyDisplayToggle", Icons.Book,
+            ref CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories,
+            "MAPDAT_CategoryView_Toggle_Empty_Sub_Hide",
+            "MAPDAT_CategoryView_Toggle_Empty_Sub_Show",
+            "MAPDAT_CategoryView_Toggle_Empty_Sub_TT");
 
         ImGui.EndChild();
 

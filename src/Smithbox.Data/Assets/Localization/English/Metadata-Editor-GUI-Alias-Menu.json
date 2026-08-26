@@ -162,7 +162,7 @@
     },
     {
       "Key": "META_AliasMenu_Button_Read_Only_Toggle_TT",
-      "Text": "Toggle whether the aliases are editable or not.\nCurrent Mode: {0}"
+      "Text": "Toggle whether the aliases are editable or not.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "META_AliasMenu_Alias_Read_Only_Active",

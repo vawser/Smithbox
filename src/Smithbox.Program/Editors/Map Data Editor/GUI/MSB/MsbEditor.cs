@@ -37,18 +37,12 @@ public class MsbEditor
         EditorFilters.DisplaySearchbar("msbEditor_FileList",
             ref FileListFilter, ref ExactFileListFilter);
 
-        ImGui.SameLine();
-
-        if(ImGui.Button($"{Icons.Database}"))
-        {
-            CFG.Current.MapDataEditor_CacheLoadedMaps = !CFG.Current.MapDataEditor_CacheLoadedMaps;
-        }
-
-        var curCacheMode = "Loaded maps are loaded once and then retrieved from a cache.";
-        if (!CFG.Current.MapDataEditor_CacheLoadedMaps)
-            curCacheMode = "Loaded maps are re-loaded each time.";
-
-        GUI.Tooltip($"Determines whether to re-load a map when a entry is selected, or to cache a load and use that on subsequent selections.\n\nCache Mode:\n{curCacheMode}");
+        // Toggle: Map Cache
+        GUI.DisplayToggleButton("mapCacheToggle", Icons.Database,
+            ref CFG.Current.MapDataEditor_CacheLoadedMaps,
+            "MAPDAT_FileList_Toggle_Map_Cache_ON",
+            "MAPDAT_FileList_Toggle_Map_Cache_OFF",
+            "MAPDAT_FileList_Toggle_Map_Cache_TT");
 
         ImGui.EndChild();
     }

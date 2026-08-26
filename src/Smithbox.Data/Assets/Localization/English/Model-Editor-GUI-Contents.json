@@ -54,7 +54,7 @@
     },
     {
       "Key": "MODEL_Contents_TreeState_TT",
-      "Text": "Toggle the opening behavior of tree nodes.\nCurrent Mode: {0}"
+      "Text": "Toggle the opening behavior of tree nodes.\n\nCurrent Mode:\n{0}"
     }
   ]
 }

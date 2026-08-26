@@ -15,9 +15,6 @@
  - EDGE
   - Read map mapbnd for edges and then associate with FLVER on load for map pieces
   
- - GRASS
-  - Add preview mesh (generate like the collision mesh from the GRASS face/vertices data)
-
 # Havok Editor
 - Add 'Generate' tool for collisions:
  - Generates basic shapes such as planes (square, circle) and boxes

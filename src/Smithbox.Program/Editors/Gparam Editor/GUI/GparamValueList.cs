@@ -45,35 +45,19 @@ public class GparamValueList
         EditorFilters.DisplaySearchbar("gparamEditor_ValueList",
             ref ValueListFilter, ref ExactValueListFilter);
 
-        // Time of Day Toggle
-        ImGui.SameLine();
+        // Toggle: Time of Day Column
+        GUI.DisplayToggleButton("timeOfDayColumnToggle", Icons.CalendarTimesO,
+            ref CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column,
+            "GPARAM_ValueList_TimeOfDay_Column_Toggle_Show",
+            "GPARAM_GroupList_TimeOfDay_Column_Toggle_Hide",
+            "GPARAM_GroupList_TimeOfDay_Column_Toggle_TT");
 
-        if (ImGui.Button($"{Icons.ClockO}##todColumnToggle"))
-        {
-            CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column = !CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column;
-        }
-
-        var todColumnMode = "Displaying Time of Day column.";
-        if (!CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
-        {
-            todColumnMode = "Hiding Time of Day column.";
-        }
-        GUI.Tooltip($"Toggle the display of the Time of Day column.\nCurrent Mode: {todColumnMode}");
-
-        // Information Toggle
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Info}##infoColumnToggle"))
-        {
-            CFG.Current.GparamEditor_Value_List_Display_Information_Column = !CFG.Current.GparamEditor_Value_List_Display_Information_Column;
-        }
-
-        var infoColumnMode = "Displaying Information column.";
-        if (!CFG.Current.GparamEditor_Value_List_Display_Information_Column)
-        {
-            infoColumnMode = "Hiding Information column.";
-        }
-        GUI.Tooltip($"Toggle the display of the Information column.\nCurrent Mode: {infoColumnMode}");
+        // Toggle: Information Column
+        GUI.DisplayToggleButton("infoColumnToggle", Icons.Info,
+            ref CFG.Current.GparamEditor_Value_List_Display_Information_Column,
+            "GPARAM_ValueList_Info_Column_Toggle_Show",
+            "GPARAM_GroupList_Info_Column_Toggle_Hide",
+            "GPARAM_GroupList_Info_Column_Toggle_TT");
 
         ImGui.EndChild();
 

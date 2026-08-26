@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "MAPDAT_FileList_Toggle_Map_Cache_ON",
+      "Text": "Load from Cache"
+    },
+    {
+      "Key": "MAPDAT_FileList_Toggle_Map_Cache_OFF",
+      "Text": "Load from File"
+    },
+    {
+      "Key": "MAPDAT_FileList_Toggle_Map_Cache_TT",
+      "Text": "Determines whether to re-load a map when a entry is selected, or to cache a load and use that on subsequent selections.\n\nCurrent Mode:\n{0}"
+    }
+  ]
+}

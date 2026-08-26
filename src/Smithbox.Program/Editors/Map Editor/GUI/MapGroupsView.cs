@@ -51,19 +51,12 @@ public class MapGroupsView
         EditorFilters.DisplaySearchbar("mapEditor_MapGroupsFilter",
             ref MapGroupsFilter, ref ExactMapGroupsFilter);
 
-        // Name Auto Adjust
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.LightbulbO}##toggleNameAutoAdjust"))
-        {
-            CFG.Current.MapEditor_MapContentGroup_AutoAdjustName = !CFG.Current.MapEditor_MapContentGroup_AutoAdjustName;
-        }
-
-        var nameAutoAdjustMode = "Map object names are not automatically updated when changed.";
-        if (CFG.Current.MapEditor_MapContentGroup_AutoAdjustName)
-            nameAutoAdjustMode = "Map object names are automatically updated when changed.";
-
-        GUI.Tooltip($"Determines if the map object names stored within a group are automatically updated to the new name if the map object's name is edited.\nCurrent Mode: {nameAutoAdjustMode}");
+        // Toggle: Name Auto-Adjust
+        GUI.DisplayToggleButton("nameAutoAdjustToggle", Icons.FileText,
+            ref CFG.Current.MapEditor_MapContentGroup_AutoAdjustName,
+            "MAP_GroupsView_NameAutoAdjust_Disabled",
+            "MAP_GroupsView_NameAutoAdjust_Enabled",
+            "MAP_GroupsView_NameAutoAdjust_TT");
 
         ImGui.EndChild();
 

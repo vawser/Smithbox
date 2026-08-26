@@ -94,7 +94,7 @@
     },
     {
       "Key": "META_EnumMenu_Button_Read_Only_Toggle_TT",
-      "Text": "Toggle whether the enum options are editable or not.\nCurrent Mode: {0}"
+      "Text": "Toggle whether the enum options are editable or not.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "META_EnumMenu_Enum_Read_Only_Active",
