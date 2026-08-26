@@ -112,23 +112,26 @@ public class MaterialEditorView : IEditorView
 
         ImGui.End();
 
-        // Tools
-        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
-        if (ImGui.Begin($@"{LOC.Get("MAT_Window_Tools")}###materialEditor_ToolWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (CFG.Current.Interface_MaterialEditor_ToolWindow)
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            // Tools
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
+            if (ImGui.Begin($@"{LOC.Get("MAT_Window_Tools")}###materialEditor_ToolWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
-                FocusManager.SetFocus(EditorFocusContext.MaterialEditor_Tools);
-                Editor.ViewHandler.ActiveView = this;
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.MaterialEditor_Tools);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                ToolView.Draw();
             }
 
-            ToolView.Draw();
+            ImGui.End();
         }
-
-        ImGui.End();
     }
 }

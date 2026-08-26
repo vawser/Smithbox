@@ -59,8 +59,7 @@ public class ParamTableWindow
 
     private void DisplayHeader(bool isActiveView)
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("ParamTableListHeaderSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("ParamTableListHeaderSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputTextWithHint($"##rowGroupSearch", 

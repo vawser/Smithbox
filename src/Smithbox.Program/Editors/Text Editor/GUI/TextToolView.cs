@@ -34,9 +34,6 @@ public class TextToolView
     {
         LanguageSyncTool.OnGui();
 
-        if (!CFG.Current.Interface_TextEditor_ToolWindow)
-            return;
-
         if (ImGui.BeginMenuBar())
         {
             ViewMenu();

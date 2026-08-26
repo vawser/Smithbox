@@ -125,42 +125,48 @@ public class TexEditorView : IEditorView
         ImGui.End();
 
         // Properties
-        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Properties")}###textureEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (CFG.Current.Interface_TextureViewer_Properties)
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
+            if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Properties")}###textureEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
-                FocusManager.SetFocus(EditorFocusContext.TextureViewer_Properties);
-                Editor.ViewHandler.ActiveView = this;
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.TextureViewer_Properties);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                Properties.Display();
             }
 
-            Properties.Display();
+            ImGui.End();
         }
 
-        ImGui.End();
-
-        /// Tools
-        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Tools")}###textureEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+        if (CFG.Current.Interface_TextureViewer_ToolWindow)
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            /// Tools
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
+            if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Tools")}###textureEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
             {
-                FocusManager.SetFocus(EditorFocusContext.TextureViewer_Tools);
-                Editor.ViewHandler.ActiveView = this;
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.TextureViewer_Tools);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                ToolView.Display();
             }
 
-            ToolView.Display();
+            ImGui.End();
         }
-
-        ImGui.End();
 
         ContainerList.Update();
         TextureList.Update();

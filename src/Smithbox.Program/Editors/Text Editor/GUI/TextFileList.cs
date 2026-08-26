@@ -33,8 +33,7 @@ public class TextFileList
             LOC.Get("TEXT_FileList_Header_Files"),
             LOC.Get("TEXT_FileList_Header_Files_TT"));
 
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"textEditor_FileList_Header", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"textEditor_FileList_Header", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("textEditor_FmgList",
             ref FmgListFilter, ref ExactFmgListFilter);

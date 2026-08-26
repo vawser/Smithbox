@@ -62,8 +62,7 @@ public class MaterialProperties
 
     public void DisplayHeader()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("MaterialPropertySectionHeader", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("MaterialPropertySectionHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("materialEditor_PropertyList",
             ref PropertyListFilter, ref ExactPropertyListFilter);

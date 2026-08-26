@@ -299,12 +299,6 @@ public class ParamEditorScreen : EditorScreen
         // View
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem($"{LOC.Get("PARAM_Menubar_View_Editor")}##editorViewToggle"))
-            {
-                CFG.Current.Interface_ParamEditor_Table = !CFG.Current.Interface_ParamEditor_Table;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Table);
-
             if (ImGui.MenuItem($"{LOC.Get("PARAM_Menubar_Tool_Window")}##toolsViewToggle"))
             {
                 CFG.Current.Interface_ParamEditor_ToolWindow = !CFG.Current.Interface_ParamEditor_ToolWindow;

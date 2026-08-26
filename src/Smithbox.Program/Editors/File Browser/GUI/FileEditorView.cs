@@ -80,23 +80,27 @@ public class FileEditorView : IEditorView
 
         ImGui.End();
 
-        // Tools
-        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_FileBrowserView);
-        if (ImGui.Begin($@"Tools##fileBrowser_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
-        {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
 
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+        if (CFG.Current.Interface_FileBrowser_ToolView)
+        {
+            // Tools
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_FileBrowserView);
+            if (ImGui.Begin($@"Tools##fileBrowser_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
             {
-                FocusManager.SetFocus(EditorFocusContext.FileBrowser_Tools);
-                Editor.ViewHandler.ActiveView = this;
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.FileBrowser_Tools);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                ToolView.Display();
             }
 
-            ToolView.Display();
+            ImGui.End();
         }
-
-        ImGui.End();
     }
 }

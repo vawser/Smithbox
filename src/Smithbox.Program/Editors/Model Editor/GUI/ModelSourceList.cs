@@ -122,8 +122,7 @@ public class ModelContainerList
 
     public void DisplayHeader()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedListFilter_modelEditor_SourceList", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedListFilter_modelEditor_SourceList", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("modelEditor_SourceList", ref ContainerListFilter, ref ExactContainerListFilter);
 

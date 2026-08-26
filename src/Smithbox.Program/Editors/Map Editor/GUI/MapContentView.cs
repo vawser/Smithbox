@@ -65,8 +65,7 @@ public class MapContentView
     {
         var map = View.Selection.SelectedMapContainer;
 
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedListFilter_mapContentTree", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedListFilter_mapContentTree", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         View.MapContentFilter.DisplaySearch(map);
         DisplayQuickActionButtons(map);

@@ -46,8 +46,7 @@ public class MapGroupsView
     {
         var map = View.Selection.SelectedMapContainer;
 
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedListFilter_mapGroupsList", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedListFilter_mapGroupsList", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("mapEditor_MapGroupsFilter",
             ref MapGroupsFilter, ref ExactMapGroupsFilter);

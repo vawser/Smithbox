@@ -17,10 +17,14 @@ public static class EditorFilters
 
     public static string OR_Chr = "|";
 
+    public static Vector2 GetHeaderSize()
+    {
+        return new Vector2(0, 40) * DPI.UIScale();
+    }
+
     public static void DisplayFramedListFilter(string id, ref string input, ref bool exactBool)
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedListFilter_{id}", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedListFilter_{id}", GetHeaderSize(), ImGuiChildFlags.Borders);
 
         DisplaySearchbar(id, ref input, ref exactBool);
         ImGui.EndChild();

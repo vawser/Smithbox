@@ -35,8 +35,7 @@ public class AssetBrowserTool
 
     private void DisplayHeader()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedListFilter_assetBrowser", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedListFilter_assetBrowser", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("assetBrowser_Search", ref AssetFiler, ref ExactAssetFiler);
 

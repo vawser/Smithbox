@@ -35,8 +35,7 @@ public class TextContainerList
             LOC.Get("TEXT_ContainerList_Header_Containers"),
             LOC.Get("TEXT_ContainerList_Header_Containers_TT"));
 
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"textEditor_ContainerList_Header", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"textEditor_ContainerList_Header", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("textEditor_ContainerList",
             ref ContainerListFilter, ref ExactContainerListFilter);

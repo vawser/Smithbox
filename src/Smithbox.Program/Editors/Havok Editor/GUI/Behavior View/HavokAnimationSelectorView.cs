@@ -90,8 +90,7 @@ public class HavokAnimationSelectorView
 
     public void DisplayTabHeader()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedList_TabListHeader", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedList_TabListHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("havokBehaviorTabListSearch", ref Owner.PropFilter, ref Owner.ExactPropFilter);
 

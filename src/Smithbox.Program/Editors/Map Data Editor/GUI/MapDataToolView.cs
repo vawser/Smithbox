@@ -18,9 +18,6 @@ public class MapDataToolView
 
     public void Draw()
     {
-        if (!CFG.Current.Interface_MapDataEditor_ToolWindow)
-            return;
-
         if (ImGui.BeginMenuBar())
         {
             ViewMenu();

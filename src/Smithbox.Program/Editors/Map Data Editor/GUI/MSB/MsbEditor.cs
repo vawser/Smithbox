@@ -32,8 +32,7 @@ public class MsbEditor
     {
         GUI.SimpleHeader("Maps", "");
 
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedListFilter_msbEditor_FileList", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedListFilter_msbEditor_FileList", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("msbEditor_FileList",
             ref FileListFilter, ref ExactFileListFilter);

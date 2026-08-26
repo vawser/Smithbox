@@ -91,8 +91,7 @@ public class ParamListWindow
 
     private void DisplayHeader(bool isActiveView)
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("ParamFileHeaderSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("ParamFileHeaderSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         // Autofill
         if (ParentView.MassEdit.AutoFill != null)

@@ -22,9 +22,6 @@ public class TexToolView
 
     public void Display()
     {
-        if (!CFG.Current.Interface_TextureViewer_ToolWindow)
-            return;
-
         if (ImGui.BeginMenuBar())
         {
             ViewMenu();

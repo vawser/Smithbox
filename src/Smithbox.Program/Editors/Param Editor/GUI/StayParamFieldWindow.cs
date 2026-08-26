@@ -60,8 +60,7 @@ public class StayParamFieldWindow
 
     private void DisplayHeader(bool isActiveView)
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("StayParamFieldListHeaderSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("StayParamFieldListHeaderSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         if (_searchFilterTerm != null)
         {

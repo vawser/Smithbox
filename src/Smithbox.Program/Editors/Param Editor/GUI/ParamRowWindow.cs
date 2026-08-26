@@ -114,8 +114,7 @@ public class ParamRowWindow
 
     private void DisplayHeader()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("ParamRowListHeaderSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("ParamRowListHeaderSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         Context.ScrollTo = 0;
 

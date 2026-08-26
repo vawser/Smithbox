@@ -58,8 +58,7 @@ public class HavokCategoryView
 
     public void DisplayHeader()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedList_HavokCategoryList", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedList_HavokCategoryList", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("havokCategorySearch", ref CategoryFilter, ref ExactCategoryFilter);
 

@@ -57,8 +57,7 @@ public class TextEntryList
 
     public void DisplayHeader()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"textEditor_EntryList_Section_Header", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"textEditor_EntryList_Section_Header", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         if (InputManager.IsPressed(KeybindID.TextEditor_Focus_Searchbar))
         {

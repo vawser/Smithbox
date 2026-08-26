@@ -24,9 +24,6 @@ public class GparamToolView
 
     public void Display()
     {
-        if (!CFG.Current.Interface_GparamEditor_ToolWindow)
-            return;
-
         if (ImGui.BeginMenuBar())
         {
             ViewMenu();

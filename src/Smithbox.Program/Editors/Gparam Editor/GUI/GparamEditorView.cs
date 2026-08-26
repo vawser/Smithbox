@@ -123,23 +123,26 @@ public class GparamEditorView : IEditorView
 
         ImGui.End();
 
-        // Tools
-        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_GparamEditorView);
-        if (ImGui.Begin($@"Tools##gparamEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+        if (CFG.Current.Interface_GparamEditor_ToolWindow)
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            // Tools
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_GparamEditorView);
+            if (ImGui.Begin($@"Tools##gparamEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
             {
-                FocusManager.SetFocus(EditorFocusContext.GparamEditor_Tools);
-                Editor.ViewHandler.ActiveView = this;
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.GparamEditor_Tools);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                ToolView.Display();
             }
 
-            ToolView.Display();
+            ImGui.End();
         }
-
-        ImGui.End();
     }
 }

@@ -42,8 +42,7 @@ public class GparamFileList
         GUI.SimpleHeader("Files", "");
 
         // Search
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("GparamFileSearchSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("GparamFileSearchSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("gparamEditor_FileList",
             ref FileListFilter, ref ExactFileListFilter);

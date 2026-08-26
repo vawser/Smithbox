@@ -28,9 +28,6 @@ public class MaterialToolWindow
 
     public void Draw()
     {
-        if (!CFG.Current.Interface_MaterialEditor_ToolWindow)
-            return;
-
         if (ImGui.BeginMenuBar())
         {
             ViewMenu();

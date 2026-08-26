@@ -44,8 +44,7 @@ public class GparamFieldList
         GUI.SimpleHeader("Fields", "");
 
         // Search
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("GparamFieldSearchSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("GparamFieldSearchSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("gparamEditor_FieldList",
             ref FieldListFilter, ref ExactFieldListFilter);

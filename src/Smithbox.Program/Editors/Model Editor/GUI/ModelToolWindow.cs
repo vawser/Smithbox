@@ -33,12 +33,6 @@ public class ModelToolWindow
 
     public void Display()
     {
-        if (CFG.Current.Interface_ModelEditor_ScreenshotMode)
-            return;
-
-        if (!CFG.Current.Interface_ModelEditor_ToolWindow)
-            return;
-
         if (ImGui.BeginMenuBar())
         {
             ViewMenu();

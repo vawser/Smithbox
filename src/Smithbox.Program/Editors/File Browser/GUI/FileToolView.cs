@@ -34,9 +34,6 @@ public class FileToolView
 
     public void Display()
     {
-        if (!CFG.Current.Interface_FileBrowser_ToolView)
-            return;
-
         if (ImGui.BeginMenuBar())
         {
             ViewMenu();

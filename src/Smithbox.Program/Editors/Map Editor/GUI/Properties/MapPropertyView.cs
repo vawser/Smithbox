@@ -89,8 +89,7 @@ public class MapPropertyView
 
     public void DisplayCommonHeader()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedList_MapProperties", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedList_MapProperties", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("MapPropSearch", ref MapPropFilter, ref ExactMapPropFilter);
 
@@ -173,8 +172,7 @@ public class MapPropertyView
 
     public void DisplayCollisionTypeHeader()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("editTypeCollisionSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("editTypeCollisionSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         var previewName = LOC.Get(HavokPropertyView.CollisionEditType.GetDisplayName());
 
@@ -201,8 +199,7 @@ public class MapPropertyView
 
     public void DisplayNavmeshTypeHeader()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("editTypeNavmeshSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("editTypeNavmeshSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         var previewName = LOC.Get(HavokPropertyView.NavmeshEditType.GetDisplayName());
 
@@ -229,8 +226,7 @@ public class MapPropertyView
 
     public void DisplayCollisionViewModeSelect()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("collisionViewModeSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("collisionViewModeSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         var previewName = LOC.Get(CollisionViewMode.GetDisplayName());
 
@@ -257,8 +253,7 @@ public class MapPropertyView
 
     public void DisplayNavmeshViewModeSelect()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("navmeshViewModeSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("navmeshViewModeSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         var previewName = LOC.Get(NavmeshViewMode.GetDisplayName());
 

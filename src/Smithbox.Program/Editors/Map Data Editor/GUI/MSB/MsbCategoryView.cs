@@ -49,8 +49,7 @@ public class MsbCategoryView
 
     private void DisplayBaseCategoryList(Dictionary<string, Type> baseCategories)
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedListFilter_BaseCategoryFilter", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedListFilter_BaseCategoryFilter", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("BaseCategoryFilter", ref BaseCategoryListFilter, ref ExactBaseCategoryListFilter);
 
@@ -154,8 +153,7 @@ public class MsbCategoryView
 
     private void DisplaySubCategoryList(Dictionary<string, Type> subCategories)
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedListFilter_SubCategoryFilter", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedListFilter_SubCategoryFilter", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("SubCategoryFilter", ref SubCategoryListFilter, ref ExactSubCategoryListFilter);
 

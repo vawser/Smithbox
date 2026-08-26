@@ -63,8 +63,7 @@ public class MapListView : IActionEventHandler
     /// </summary>
     public void DisplaySearchbar()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"framedListFilter_mapEditor_ListView", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedListFilter_mapEditor_ListView", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("mapEditor_ListView", ref FileListFilter, ref ExactFileListFilter);
         if(ImGui.IsItemDeactivatedAfterEdit())

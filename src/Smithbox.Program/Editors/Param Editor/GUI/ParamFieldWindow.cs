@@ -340,8 +340,7 @@ public class ParamFieldWindow
 
     private void DisplayHeader(bool isActiveView, ref string propSearchString)
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("ParamFieldListHeaderSection", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild("ParamFieldListHeaderSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         if (propSearchString != null)
         {

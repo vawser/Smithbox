@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System.Numerics;
 using System.Text;
@@ -1178,8 +1179,7 @@ public static class GUI
 
     public static void DisplayHeader(string imguiKey)
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild($"{imguiKey}", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"{imguiKey}", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
     }
 
     public static void EndHeader()

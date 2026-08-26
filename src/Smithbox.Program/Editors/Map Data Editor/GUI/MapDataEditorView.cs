@@ -109,23 +109,26 @@ public class MapDataEditorView : IEditorView
             ImGui.End();
         }
 
-        // Tools
-        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapDataEditorView);
-        if (ImGui.Begin($@"Tools##mapDataEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+        if (CFG.Current.Interface_MapDataEditor_ToolWindow)
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            // Tools
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_MapDataEditorView);
+            if (ImGui.Begin($@"Tools##mapDataEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
             {
-                FocusManager.SetFocus(EditorFocusContext.MapDataEditor_Tools);
-                Editor.ViewHandler.ActiveView = this;
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.MapDataEditor_Tools);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                ToolView.Draw();
             }
 
-            ToolView.Draw();
+            ImGui.End();
         }
-
-        ImGui.End();
     }
 }

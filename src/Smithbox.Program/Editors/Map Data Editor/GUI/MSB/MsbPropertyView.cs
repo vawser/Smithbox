@@ -44,9 +44,7 @@ public class MsbPropertyView
 
     public void DisplayHeader()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-
-        ImGui.BeginChild($"framedList_MsbEntryProperties", searchHeight, ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"framedList_MsbEntryProperties", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("MsbEntryPropSearch", ref PropertyListFilter, ref ExactPropertyListFilter);
 
