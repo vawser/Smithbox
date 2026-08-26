@@ -802,21 +802,27 @@ public class MapEditorScreen : EditorScreen
             // Only these projects are supported for collision editing within the Map Editor
             if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
-                // Save the collision binders
-                foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
+                // Only save if a collision/navmesh was touched
+                if (activeView.MapPropertyView.HavokPropertyView.DirtyFile)
                 {
-                    if (entry.Value.MapContainer != null)
-                    {
-                        activeView.HavokCollisionBank.SaveMapCollisionFiles(entry.Value.Name);
-                    }
-                }
+                    activeView.MapPropertyView.HavokPropertyView.DirtyFile = false;
 
-                // Save the navmesh binders
-                foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
-                {
-                    if (entry.Value.MapContainer != null)
+                    // Save the collision binders
+                    foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
                     {
-                        activeView.HavokNavmeshBank.SaveHavokNavmeshModels(entry.Value.Name);
+                        if (entry.Value.MapContainer != null)
+                        {
+                            activeView.HavokCollisionBank.SaveMapCollisionFiles(entry.Value.Name);
+                        }
+                    }
+
+                    // Save the navmesh binders
+                    foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
+                    {
+                        if (entry.Value.MapContainer != null)
+                        {
+                            activeView.HavokNavmeshBank.SaveHavokNavmeshModels(entry.Value.Name);
+                        }
                     }
                 }
             }

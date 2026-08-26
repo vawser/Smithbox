@@ -14,24 +14,63 @@ public static class HavokPropertyDecorators
         if (type != typeof(hkbClipGenerator))
             return false;
 
+        if (classMeta == null)
+            return false;
+
         if (!classMeta.SupportVariableBindings)
             return false;
 
-        if (fields.Any(e => e.FieldType == typeof(hkbVariableBindingSet)))
+        var bindingField = fields.FirstOrDefault(e => e.FieldType == typeof(hkbVariableBindingSet));
+        if (bindingField == null)
             return false;
 
         if (view is HavokEditorView havokEditorView)
         {
-            ImGui.NextColumn();
-            ImGui.NextColumn();
-
-            if (ImGui.Button("Add Variable Binding"))
+            // Not present
+            if (bindingField.GetValue(sourceObj) == null)
             {
-            }
+                ImGui.Text("Variable Binding Set");
 
-            if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
-            {
                 ImGui.NextColumn();
+
+                if (ImGui.Button("Add##addVariableBindingSet"))
+                {
+                    var newBindingSet = Activator.CreateInstance<hkbVariableBindingSet>();
+
+                    var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
+                    havokEditorView.ActionManager.ExecuteAction(action);
+                }
+                GUI.Tooltip("Adds an empty Variable Binding Set to this generator.");
+
+                ImGui.NextColumn();
+
+                if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+                {
+                    ImGui.NextColumn();
+                }
+            }
+            // Present
+            else
+            {
+                ImGui.Text("Variable Binding Set");
+
+                ImGui.NextColumn();
+
+                if (ImGui.Button("Remove##removeVariableBindingSet"))
+                {
+                    var newBindingSet = Activator.CreateInstance<hkbVariableBindingSet>();
+
+                    var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
+                    havokEditorView.ActionManager.ExecuteAction(action);
+                }
+                GUI.Tooltip("Adds an empty Variable Binding Set to this generator.");
+
+                ImGui.NextColumn();
+
+                if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+                {
+                    ImGui.NextColumn();
+                }
             }
         }
 

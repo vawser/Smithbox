@@ -178,7 +178,7 @@ public class HavokEditorScreen : EditorScreen
         if (activeView == null)
             return;
 
-        var data = Project.Handler.HavokData;
+        var data = activeView.HavokBank;
         var category = activeView.Selection.CategoryMode;
         var fileEntry = activeView.Selection.BinderFileEntry;
         var filePath = activeView.Selection.FilePath;
@@ -227,13 +227,20 @@ public class HavokEditorScreen : EditorScreen
             }
         }
 
+        // Clear collision cache bank when Havok Editor saves so collision edits
+        // appear immediately in Map Editor (on map reload)
+        if(Project.Handler.MapEditor != null)
+        {
+            Project.Handler.MapEditor.ViewHandler.ActiveView.HavokCollisionBank.Clear();
+        }
+
         // Save the configuration JSONs
         Smithbox.Instance.SaveConfiguration();
     }
 
     private bool IsSavingHavokFile = false;
 
-    private bool SaveHavokFile(HavokData data, HavokCategoryMode category, FileDictionaryEntry fileEntry, string filePath)
+    private bool SaveHavokFile(HavokBank data, HavokCategoryMode category, FileDictionaryEntry fileEntry, string filePath)
     {
         try
         {

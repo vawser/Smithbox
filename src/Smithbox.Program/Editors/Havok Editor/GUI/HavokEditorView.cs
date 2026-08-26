@@ -8,6 +8,8 @@ public class HavokEditorView : IEditorView
     public HavokEditorScreen Editor;
     public ProjectEntry Project;
 
+    public HavokBank HavokBank;
+
     public ActionManager ActionManager;
 
     public HavokSelection Selection;
@@ -27,6 +29,8 @@ public class HavokEditorView : IEditorView
     {
         Editor = editor;
         Project = project;
+
+        HavokBank = new(project);
 
         ViewIndex = imguiId;
         _imguiId = imguiId;

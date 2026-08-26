@@ -36,7 +36,7 @@ public class HavokFileView
             LOC.Get("HAVOK_FileView_Header"),
             LOC.Get("HAVOK_FileView_Header_TT"));
 
-        var data = Project.Handler.HavokData;
+        var data = View.HavokBank;
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
         {
@@ -224,7 +224,7 @@ public class HavokFileView
         if (View.Selection.FilePath == null)
             return;
 
-        var data = Project.Handler.HavokData;
+        var data = View.HavokBank;
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
         {
@@ -431,7 +431,7 @@ public class HavokFileView
     }
     public void LoadHavokFile()
     {
-        var data = Project.Handler.HavokData;
+        var data = View.HavokBank;
         var fileEntry = View.Selection.BinderFileEntry;
         var filePath = View.Selection.FilePath;
 
@@ -510,7 +510,7 @@ public class HavokFileView
 
     public void PasteFile(FileAction fileAction)
     {
-        var data = Project.Handler.HavokData;
+        var data = View.HavokBank;
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
         {
@@ -529,7 +529,7 @@ public class HavokFileView
 
     public void DeleteFile(FileAction fileAction)
     {
-        var data = Project.Handler.HavokData;
+        var data = View.HavokBank;
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
         {
@@ -546,7 +546,7 @@ public class HavokFileView
 
     public void RenameFile(FileAction fileAction)
     {
-        var data = Project.Handler.HavokData;
+        var data = View.HavokBank;
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
         {
@@ -576,7 +576,7 @@ public class HavokFileView
 
     public void InsertFile(FileAction fileAction)
     {
-        var data = Project.Handler.HavokData;
+        var data = View.HavokBank;
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
         {
@@ -592,7 +592,7 @@ public class HavokFileView
     }
     public void ExportFile(FileAction fileAction)
     {
-        var data = Project.Handler.HavokData;
+        var data = View.HavokBank;
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
         {

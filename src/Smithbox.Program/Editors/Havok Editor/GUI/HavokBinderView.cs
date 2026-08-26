@@ -1,12 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
-using Microsoft.AspNetCore.Mvc.ViewEngines;
 using StudioCore.Editors.Common;
-using System;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Text;
-using Tracy;
 
 namespace StudioCore.Editors.HavokEditor;
 
@@ -137,39 +130,39 @@ public class HavokBinderView
     {
         if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
         {
-            Project.Handler.HavokData.PopulateAnimationBank(View.Selection.BinderFileEntry, clearCache);
+            View.HavokBank.PopulateAnimationBank(View.Selection.BinderFileEntry, clearCache);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
         {
-            Project.Handler.HavokData.PopulateBehaviorBank(View.Selection.BinderFileEntry, clearCache);
+            View.HavokBank.PopulateBehaviorBank(View.Selection.BinderFileEntry, clearCache);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Character)
         {
-            Project.Handler.HavokData.PopulateCharacterBank(View.Selection.BinderFileEntry, clearCache);
+            View.HavokBank.PopulateCharacterBank(View.Selection.BinderFileEntry, clearCache);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
         {
-            Project.Handler.HavokData.PopulateMapCollisionBank(View.Selection.BinderFileEntry, clearCache);
+            View.HavokBank.PopulateMapCollisionBank(View.Selection.BinderFileEntry, clearCache);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Asset_Collision)
         {
-            Project.Handler.HavokData.PopulateAssetCollisionBank(View.Selection.BinderFileEntry, clearCache);
+            View.HavokBank.PopulateAssetCollisionBank(View.Selection.BinderFileEntry, clearCache);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Navmesh)
         {
-            Project.Handler.HavokData.PopulateNavmeshBank(View.Selection.BinderFileEntry, clearCache);
+            View.HavokBank.PopulateNavmeshBank(View.Selection.BinderFileEntry, clearCache);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Cutscene)
         {
-            Project.Handler.HavokData.PopulateCutsceneBank(View.Selection.BinderFileEntry, clearCache);
+            View.HavokBank.PopulateCutsceneBank(View.Selection.BinderFileEntry, clearCache);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Part_Collidable)
         {
-            Project.Handler.HavokData.PopulatePartBank(View.Selection.BinderFileEntry, clearCache);
+            View.HavokBank.PopulatePartBank(View.Selection.BinderFileEntry, clearCache);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Rumble)
         {
-            Project.Handler.HavokData.PopulateRumbleBank(View.Selection.BinderFileEntry, clearCache);
+            View.HavokBank.PopulateRumbleBank(View.Selection.BinderFileEntry, clearCache);
         }
     }
 }

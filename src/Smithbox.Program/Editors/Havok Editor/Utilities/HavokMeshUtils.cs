@@ -1,4 +1,5 @@
-﻿using HKLib.hk2018;
+﻿using Hexa.NET.ImNodes;
+using HKLib.hk2018;
 using HKLib.hk2018.hkcdStaticMeshTree;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ public static class HKLib_MeshBuilder
                 m_a = triangleIndices[i],
                 m_b = triangleIndices[i + 1],
                 m_c = triangleIndices[i + 2],
-                m_material = 0
+                m_material = -1
             });
         }
 
@@ -43,12 +44,14 @@ public static class HKLib_MeshBuilder
             m_useTriangleMaterialAsShapeTag = useTriangleMaterialAsShapeTag
         };
 
+        var boundingVolumeData = BuildBoundingVolumeData(geometry);
+
         int triangleCount = geometry.m_triangles.Count;
 
         var shape = new hknpExternMeshShape
         {
             m_geometry = geometryWrapper,
-            m_boundingVolumeData = null, // left null; the runtime will rebuild it on load if required
+            m_boundingVolumeData = boundingVolumeData,
             m_flags = hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE,
             m_type = hknpShapeType.Enum.EXTERN_MESH,
             m_dispatchType = hknpCollisionDispatchType.Enum.COMPOSITE,
@@ -59,6 +62,69 @@ public static class HKLib_MeshBuilder
         };
 
         return shape;
+    }
+    private static hknpExternMeshShapeData BuildBoundingVolumeData(
+    hkGeometry geometry)
+    {
+        var data = new hknpExternMeshShapeData();
+
+        var tree = new hkcdSimdTree
+        {
+            m_nodes = new List<hkcdSimdTree.Node>(),
+            m_isCompact = false
+        };
+
+        tree.m_nodes.Add(new hkcdSimdTree.Node());
+
+        // Build/populate tree here.
+        foreach (var node in tree.m_nodes)
+        {
+            InitializeEmptyNode(node);
+        }
+
+        data.m_simdTree = tree;
+
+        return data;
+    }
+    private static void InitializeEmptyNode(hkcdSimdTree.Node node)
+    {
+        node.m_lx = new Vector4(
+            float.MaxValue,
+            float.MaxValue,
+            float.MaxValue,
+            float.MaxValue);
+
+        node.m_hx = new Vector4(
+            -float.MaxValue,
+            -float.MaxValue,
+            -float.MaxValue,
+            -float.MaxValue);
+
+        node.m_ly = new Vector4(
+            float.MaxValue,
+            float.MaxValue,
+            float.MaxValue,
+            float.MaxValue);
+
+        node.m_hy = new Vector4(
+            -float.MaxValue,
+            -float.MaxValue,
+            -float.MaxValue,
+            -float.MaxValue);
+
+        node.m_lz = new Vector4(
+            float.MaxValue,
+            float.MaxValue,
+            float.MaxValue,
+            float.MaxValue);
+
+        node.m_hz = new Vector4(
+            -float.MaxValue,
+            -float.MaxValue,
+            -float.MaxValue,
+            -float.MaxValue);
+
+        Array.Fill(node.m_data, uint.MaxValue);
     }
 
     private static byte ShapeKeyBits(int primitiveCount)
@@ -71,26 +137,6 @@ public static class HKLib_MeshBuilder
         return (byte)Math.Ceiling(Math.Log2(primitiveCount));
     }
 
-    // ============================================================================
-    // 3) Replacing the shape on an existing collision's hkRootLevelContainer
-    // ============================================================================
-    //
-    // Mirrors the navigation HKLib_Helper.LoadCollisionMesh does to reach
-    // bodyInfo.m_shape (m_namedVariants[0].m_variant -> hknpPhysicsSceneData ->
-    // m_systemDatas[0].m_bodyCinfos), then swaps whatever mesh shape is sitting
-    // there (fsnpCustomParamCompressedMeshShape, hknpCompressedMeshShape, or an
-    // existing hknpExternMeshShape) out for a freshly generated hknpExternMeshShape.
-
-    /// <summary>
-    /// Replaces the shape on a single body (by index, default the first/only body)
-    /// of an existing collision's root container with <paramref name="newShape"/>.
-    /// Only replaces the shape if it is currently a recognized mesh shape type
-    /// (fsnpCustomParamCompressedMeshShape, hknpCompressedMeshShape, or
-    /// hknpExternMeshShape) so this won't accidentally clobber some other shape
-    /// type (e.g. a convex hull) sitting in the same slot. Pass <paramref name="force"/>
-    /// = true to replace regardless of the current shape type.
-    /// </summary>
-    /// <returns>true if a shape was replaced.</returns>
     public static bool ReplaceExternMeshShape(
         hkRootLevelContainer container,
         hknpExternMeshShape newShape,
@@ -113,14 +159,6 @@ public static class HKLib_MeshBuilder
         return true;
     }
 
-    /// <summary>
-    /// Same as <see cref="ReplaceExternMeshShape(hkRootLevelContainer, hknpExternMeshShape, int, bool)"/>
-    /// but replaces every body whose shape is currently a recognized mesh shape
-    /// type. <paramref name="shapeFactory"/> is called once per replaced body
-    /// (its body index) so you can give each submesh its own generated shape, or
-    /// just ignore the index and return the same shape instance/copy each time.
-    /// </summary>
-    /// <returns>the number of bodies whose shape was replaced.</returns>
     public static int ReplaceAllExternMeshShapes(
         hkRootLevelContainer container,
         Func<int, hknpExternMeshShape> shapeFactory,

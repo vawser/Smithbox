@@ -28,6 +28,8 @@ public class MapHavokPropertyView
     public MapCollisionEditType CollisionEditType = MapCollisionEditType.High;
     public MapNavmeshEditType NavmeshEditType = MapNavmeshEditType.N;
 
+    public bool DirtyFile = false;
+
     public MapHavokPropertyView(MapEditorView view, ProjectEntry project)
     {
         View = view;
@@ -553,6 +555,7 @@ public class MapHavokPropertyView
     {
         if (changed)
         {
+            DirtyFile = true;
             ChangeProperty(prop, obj, oldval, newval, ref committed, arrayindex, classIndex);
         }
 
@@ -930,6 +933,8 @@ public class MapHavokPropertyView
                 var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
                 var action = new MapHavokAddListEntryAction(prop, obj, newEntry, list.Count);
                 View.ViewportActionManager.ExecuteAction(action);
+
+                DirtyFile = true;
             }
             GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
         }
@@ -961,6 +966,7 @@ public class MapHavokPropertyView
                         if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
                         {
                             OnRemove();
+                            DirtyFile = true;
                         }
                         GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
 

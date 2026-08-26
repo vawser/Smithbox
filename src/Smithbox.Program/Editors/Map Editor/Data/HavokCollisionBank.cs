@@ -26,6 +26,11 @@ public class HavokCollisionBank
         VisibleCollisionType = CFG.Current.CurrentHavokCollisionType;
     }
 
+    public void Clear()
+    {
+        HavokContainers.Clear();
+    }
+
     public void OnLoadMap(string mapId)
     {
         using var __scope = Profiler.TracyZoneAuto();

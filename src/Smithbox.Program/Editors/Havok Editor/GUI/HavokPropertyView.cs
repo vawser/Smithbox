@@ -38,7 +38,7 @@ public class HavokPropertyView
             LOC.Get("HAVOK_PropertyView_Header"),
             LOC.Get("HAVOK_PropertyView_Header_TT"));
 
-        var data = Project.Handler.HavokData;
+        var data = View.HavokBank;
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
         {
@@ -304,7 +304,8 @@ public class HavokPropertyView
         FieldInfo[] fields = View.PropertyCache.GetCachedHavokFields(type);
 
         // Class Decorators
-        HavokPropertyDecorators.AddVariableBindingSet(View, fields, type, classMeta, obj);
+        // TODO: add remove and decide how to present this
+        //HavokPropertyDecorators.AddVariableBindingSet(View, fields, type, classMeta, obj);
 
         // Properties
         var id = 0;
@@ -1133,7 +1134,7 @@ public class HavokPropertyView
 
     public object GetSourceObject()
     {
-        var data = Project.Handler.HavokData;
+        var data = View.HavokBank;
         var binderEntry = View.Selection.BinderFileEntry;
         var filePath = View.Selection.FilePath;
 
@@ -1142,39 +1143,66 @@ public class HavokPropertyView
         switch(View.Selection.CategoryMode)
         {
             case HavokCategoryMode.Animation:
-                sorceObject = data.AnimationBank[binderEntry][filePath];
+                if (data.AnimationBank[binderEntry].ContainsKey(filePath))
+                {
+                    sorceObject = data.AnimationBank[binderEntry][filePath];
+                }
                 break;
 
             case HavokCategoryMode.Behavior:
-                sorceObject = data.BehaviorBank[binderEntry][filePath];
+                if (data.BehaviorBank[binderEntry].ContainsKey(filePath))
+                {
+                    sorceObject = data.BehaviorBank[binderEntry][filePath];
+                }
                 break;
 
             case HavokCategoryMode.Character:
-                sorceObject = data.CharacterBank[binderEntry][filePath];
+                if (data.CharacterBank[binderEntry].ContainsKey(filePath))
+                {
+                    sorceObject = data.CharacterBank[binderEntry][filePath];
+                }
                 break;
 
             case HavokCategoryMode.Map_Collision:
-                sorceObject = data.MapCollisionBank[binderEntry][filePath];
+                if (data.MapCollisionBank[binderEntry].ContainsKey(filePath))
+                {
+                    sorceObject = data.MapCollisionBank[binderEntry][filePath];
+                }
                 break;
 
             case HavokCategoryMode.Asset_Collision:
-                sorceObject = data.AssetCollisionBank[binderEntry][filePath];
+                if (data.AssetCollisionBank[binderEntry].ContainsKey(filePath))
+                {
+                    sorceObject = data.AssetCollisionBank[binderEntry][filePath];
+                }
                 break;
 
             case HavokCategoryMode.Navmesh:
-                sorceObject = data.NavmeshBank[binderEntry][filePath];
+                if (data.NavmeshBank[binderEntry].ContainsKey(filePath))
+                {
+                    sorceObject = data.NavmeshBank[binderEntry][filePath];
+                }
                 break;
 
             case HavokCategoryMode.Cutscene:
-                sorceObject = data.CutsceneBank[binderEntry][filePath];
+                if (data.CutsceneBank[binderEntry].ContainsKey(filePath))
+                {
+                    sorceObject = data.CutsceneBank[binderEntry][filePath];
+                }
                 break;
 
             case HavokCategoryMode.Part_Collidable:
-                sorceObject = data.PartBank[binderEntry][filePath];
+                if (data.PartBank[binderEntry].ContainsKey(filePath))
+                {
+                    sorceObject = data.PartBank[binderEntry][filePath];
+                }
                 break;
 
             case HavokCategoryMode.Rumble:
-                sorceObject = data.RumbleBank[binderEntry][filePath];
+                if (data.RumbleBank[binderEntry].ContainsKey(filePath))
+                {
+                    sorceObject = data.RumbleBank[binderEntry][filePath];
+                }
                 break;
         }
 
