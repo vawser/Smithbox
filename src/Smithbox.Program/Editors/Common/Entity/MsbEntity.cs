@@ -203,7 +203,7 @@ public class MsbEntity : Entity
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.MapPiece;
 
-        LoadAsset(asset, "Loading map piece...");
+        LoadAsset(asset, LOC.Get("REND_Loading_Map_Piece"));
 
         return mesh;
     }
@@ -221,7 +221,7 @@ public class MsbEntity : Entity
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.Character;
 
-        LoadAsset(asset, "Loading character...");
+        LoadAsset(asset, LOC.Get("REND_Loading_Character"));
 
         return mesh;
     }
@@ -239,7 +239,7 @@ public class MsbEntity : Entity
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.Object;
 
-        LoadAsset(asset, "Loading object...");
+        LoadAsset(asset, LOC.Get("REND_Loading_Object"));
 
         return mesh;
     }
@@ -261,7 +261,7 @@ public class MsbEntity : Entity
             mesh.DrawFilter = RenderFilter.ConnectCollision;
         }
 
-        LoadAsset(asset, "Loading collision...");
+        LoadAsset(asset, LOC.Get("REND_Loading_Collision"));
 
         return mesh;
     }
@@ -282,7 +282,7 @@ public class MsbEntity : Entity
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.Navmesh;
 
-        LoadAsset(asset, "Loading navmesh...");
+        LoadAsset(asset, LOC.Get("REND_Loading_Navmesh"));
 
         return mesh;
     }
@@ -473,7 +473,10 @@ public class MsbEntity : Entity
         }
 
         if (mesh == null)
-            throw new NotSupportedException($"No region model proxy was specified for {WrappedObject.GetType()}");
+        {
+            throw new NotSupportedException(
+                LOC.Get("REND_No_Region_Model_Proxy_For_Type", WrappedObject.GetType()));
+        }
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
@@ -530,7 +533,10 @@ public class MsbEntity : Entity
         }
 
         if (mesh == null)
-            throw new Exception($"Unexpected BTL LightType: {light.Type}");
+        {
+            throw new Exception(
+                LOC.Get("REND_Invalid_BTL_LightType", light.Type));
+        }
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
@@ -581,7 +587,10 @@ public class MsbEntity : Entity
         mesh = RenderableHelper.GetAutoInvadeSphereProxy(scene);
 
         if (mesh == null)
-            throw new Exception($"Unexpected AIP type");
+        {
+            throw new Exception(
+                LOC.Get("REND_Invalid_Mesh"));
+        }
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
@@ -610,7 +619,10 @@ public class MsbEntity : Entity
         mesh = RenderableHelper.GetLightProbeSphereProxy(scene);
 
         if (mesh == null)
-            throw new Exception($"Unexpected BTPB type");
+        {
+            throw new Exception(
+                LOC.Get("REND_Invalid_Mesh"));
+        }
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);

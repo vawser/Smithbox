@@ -28,7 +28,9 @@ public class FileListView
     {
         BuildFolderNodes();
 
-        GUI.TitleHeader("File List", "");
+        GUI.TitleHeader(
+            LOC.Get("FILE_FileList_Header"),
+            LOC.Get("FILE_FileList_Header_TT"));
 
         DisplayVFS();
     }

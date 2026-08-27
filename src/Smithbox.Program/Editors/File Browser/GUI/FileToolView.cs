@@ -20,8 +20,8 @@ public class FileToolView
     public FileEditorView View;
     public ProjectEntry Project;
 
-    public FileUnpackTool UnpackTool;
-    public FileExtractTool ExtractTool;
+    public FileUnpackerTool UnpackTool;
+    public FileExporterTool ExtractTool;
 
     public FileToolView(FileEditorView view, ProjectEntry project)
     {
@@ -43,7 +43,7 @@ public class FileToolView
 
         if (CFG.Current.Interface_FileBrowser_Tool_GameUnpacker)
         {
-            if (ImGui.CollapsingHeader("File Unpacker"))
+            if (ImGui.CollapsingHeader($"{LOC.Get("FILE_Tools_File_Unpacker_Header")}##fileUnpacker"))
             {
                 UnpackTool.Display();
             }
@@ -51,7 +51,7 @@ public class FileToolView
 
         if (CFG.Current.Interface_FileBrowser_Tool_FileExtract)
         {
-            if (ImGui.CollapsingHeader("File Export"))
+            if (ImGui.CollapsingHeader($"{LOC.Get("FILE_Tools_File_Exporter_Header")}##fileExporter"))
             {
                 ExtractTool.Display();
             }
@@ -60,15 +60,16 @@ public class FileToolView
 
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        // View
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem("Unpacker"))
+            if (ImGui.MenuItem($"{LOC.Get("FILE_Tools_ViewToggle_File_Unpacker")}##toggleFileUnpacker"))
             {
                 CFG.Current.Interface_FileBrowser_Tool_GameUnpacker = !CFG.Current.Interface_FileBrowser_Tool_GameUnpacker;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_GameUnpacker);
 
-            if (ImGui.MenuItem("File Extract"))
+            if (ImGui.MenuItem($"{LOC.Get("FILE_Tools_ViewToggle_File_Exporter")}##toggleFileExporter"))
             {
                 CFG.Current.Interface_FileBrowser_Tool_FileExtract = !CFG.Current.Interface_FileBrowser_Tool_FileExtract;
             }

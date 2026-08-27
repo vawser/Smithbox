@@ -14,7 +14,7 @@ public class FileBrowserStub : IEditorStub
         Project = project;
     }
 
-    public string EditorName = "File Browser##fileBrowserEditor";
+    public string EditorName = "";
 
     public string CommandEndpoint = "file";
 
@@ -44,7 +44,7 @@ public class FileBrowserStub : IEditorStub
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
         ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin(EditorName, ImGuiWindowFlags.MenuBar))
+        if (ImGui.Begin($"{LOC.Get("FILE_FileBrowser_Stub")}###fileBrowserStub", ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
@@ -56,7 +56,7 @@ public class FileBrowserStub : IEditorStub
             else
             {
                 ImGui.Text("");
-                ImGui.Text("   Editor is loading...");
+                ImGui.Text(LOC.Get("SYS_Editor_Loading"));
             }
 
             ImGui.End();

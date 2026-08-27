@@ -19,7 +19,7 @@ public class FileBrowserScreen : EditorScreen
     public FileCommandQueue CommandQueue;
     public FileShortcuts Shortcuts;
 
-    public string EditorName => "File Browser##fileBrowserEditor";
+    public string EditorName => "";
     public string CommandEndpoint => "file";
     public string SaveType => "File";
     public string WindowName => "";
@@ -61,17 +61,22 @@ public class FileBrowserScreen : EditorScreen
 
     public void FileMenu()
     {
-        if (ImGui.BeginMenu("File"))
+        // File
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fileMenuHeader"))
         {
-            if (ImGui.MenuItem($"View Game Directory"))
+            // View Game Directory
+            if (ImGui.MenuItem($"{LOC.Get("FILE_FileBrowser_View_Game_Directory")}##viewGameDir"))
             {
                 Process.Start("explorer.exe", Project.Descriptor.DataPath);
             }
+            GUI.Tooltip(LOC.Get("FILE_FileBrowser_View_Game_Directory_TT"));
 
-            if (ImGui.MenuItem($"View Project Directory"))
+            // View Project Directory
+            if (ImGui.MenuItem($"{LOC.Get("FILE_FileBrowser_View_Project_Directory")}##viewProjectDir"))
             {
                 Process.Start("explorer.exe", Project.Descriptor.ProjectPath);
             }
+            GUI.Tooltip(LOC.Get("FILE_FileBrowser_View_Project_Directory_TT"));
 
             ImGui.EndMenu();
         }
@@ -81,12 +86,13 @@ public class FileBrowserScreen : EditorScreen
     {
         var activeView = ViewHandler.ActiveView;
 
-        if (ImGui.BeginMenu("Edit"))
+        // Edit
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Edit")}##editMenuHeader"))
         {
             if (activeView != null)
             {
                 // Undo
-                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
                     if (activeView.ActionManager.CanUndo())
                     {
@@ -95,7 +101,7 @@ public class FileBrowserScreen : EditorScreen
                 }
 
                 // Undo All
-                if (ImGui.MenuItem($"Undo All"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##undoAllAction"))
                 {
                     if (activeView.ActionManager.CanUndo())
                     {
@@ -104,7 +110,7 @@ public class FileBrowserScreen : EditorScreen
                 }
 
                 // Redo
-                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
                     if (activeView.ActionManager.CanRedo())
                     {
@@ -119,9 +125,10 @@ public class FileBrowserScreen : EditorScreen
 
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        // View
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem("Tools"))
+            if (ImGui.MenuItem($"{LOC.Get("FILE_FileBrowser_ViewToggle_Tools")}##toolsToggle"))
             {
                 CFG.Current.Interface_FileBrowser_ToolView = !CFG.Current.Interface_FileBrowser_ToolView;
             }

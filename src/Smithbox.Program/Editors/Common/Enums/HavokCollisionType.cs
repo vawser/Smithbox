@@ -10,10 +10,7 @@ namespace StudioCore.Editors.Common;
 
 public enum HavokCollisionType
 {
-    [Display(Name="Low")]
     Low,
-    [Display(Name = "High")]
     High,
-    [Display(Name = "Fall Protection")]
     FallProtection
 }

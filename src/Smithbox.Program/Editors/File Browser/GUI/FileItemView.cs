@@ -33,7 +33,9 @@ public class FileItemView
 
     public void Display()
     {
-        GUI.TitleHeader("Item", "");
+        GUI.TitleHeader(
+            LOC.Get("FILE_ItemViewer_Header"),
+            LOC.Get("FILE_ItemViewer_Header_TT"));
 
         DisplayItemViewer();
     }
@@ -54,20 +56,25 @@ public class FileItemView
         var entry = Parent.Selection.SelectedVfsFile;
 
         // Main Container
-        GUI.SimpleHeader("containerFile", "Main File", "", UI.Current.ImGui_Default_Text_Color);
+        GUI.SimpleHeader(
+            LOC.Get("FILE_ItemViewer_Main_File_Header"),
+            LOC.Get("FILE_ItemViewer_Main_File_Header_TT"));
 
         ImGui.BeginChild("MainFileSection", new Vector2(0, 70) * DPI.UIScale(), ImGuiChildFlags.Borders);
 
-        ImGui.Text($"Name: {entry.Filename}");
-        ImGui.Text($"Path: {entry.Path}");
-        ImGui.Text($"");
+        ImGui.Text($"{LOC.Get("FILE_ItemViewer_MainFile_Name", entry.Filename)}");
+        ImGui.Text($"{LOC.Get("FILE_ItemViewer_MainFile_Path", entry.Path)}");
+        GUI.Spacer();
 
         ImGui.EndChild();
 
         // Binder Entries
         if (Parent.Selection.InternalFileList.Count > 0)
+            // Binder Files
+            GUI.SimpleHeader(
+                LOC.Get("FILE_ItemViewer_Binder_File_Header"),
+                LOC.Get("FILE_ItemViewer_Binder_File_Header_TT"));
         {
-            GUI.SimpleHeader("internalFiles", "Internal Files", "", UI.Current.ImGui_Default_Text_Color);
 
             EditorFilters.DisplayFramedListFilter("fileBrowser_InternalFileList",
                 ref InternalFileListFilter, ref ExactInternalFileListFilter);
@@ -102,7 +109,9 @@ public class FileItemView
         // TPF Entries
         if (Parent.Selection.InternalTextureList.Count > 0)
         {
-            GUI.SimpleHeader("internalTexFiles", "Texture Files", "", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader(
+                LOC.Get("FILE_ItemViewer_Texture_File_Header"),
+                LOC.Get("FILE_ItemViewer_Texture_File_Header_TT"));
 
             EditorFilters.DisplayFramedListFilter("fileBrowser_TextureFileList",
                 ref TextureFileListFilter, ref ExactTextureFileListFilter);

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.FileBrowser;
 
-public class FileUnpackTool
+public class FileUnpackerTool
 {
     public FileEditorView Parent;
     public ProjectEntry Project;
@@ -38,7 +38,7 @@ public class FileUnpackTool
     public int TotalToDelete = 0;
     public int CurrentDeleted = 0;
 
-    public FileUnpackTool(FileEditorView view, ProjectEntry project)
+    public FileUnpackerTool(FileEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;
@@ -165,13 +165,13 @@ public class FileUnpackTool
     {
         if(UnpackDirectory == "")
         {
-            Smithbox.Log<FileUnpackTool>("Unpack directory has not been set.");
+            Smithbox.Log<FileUnpackerTool>("Unpack directory has not been set.");
             return;
         }
 
         if (IsUnpacking)
         {
-            Smithbox.Log<FileUnpackTool>("Game files are already being unpacked.");
+            Smithbox.Log<FileUnpackerTool>("Game files are already being unpacked.");
             return;
         }
 
@@ -206,7 +206,7 @@ public class FileUnpackTool
     {
         if (IsDeleting)
         {
-            Smithbox.Log<FileUnpackTool>("Game files are already being deleted.");
+            Smithbox.Log<FileUnpackerTool>("Game files are already being deleted.");
             return;
         }
 

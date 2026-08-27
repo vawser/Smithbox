@@ -102,7 +102,8 @@ public class FileSelection
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                    Smithbox.LogError(this, 
+                        LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
                 }
             }
             else
@@ -141,7 +142,8 @@ public class FileSelection
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                    Smithbox.LogError(this,
+                        LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
                 }
             }
         }
@@ -160,7 +162,8 @@ public class FileSelection
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                Smithbox.LogError(this,
+                    LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
             }
 
             try
@@ -169,7 +172,8 @@ public class FileSelection
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                Smithbox.LogError(this,
+                    LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)

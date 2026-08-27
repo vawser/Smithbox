@@ -45,7 +45,7 @@ public class FileEditorView : IEditorView
         // File List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_FileBrowserView);
-        if (ImGui.Begin($@"File List##fileBrowser_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("FILE_FileBrowser_File_List")}###fileBrowser_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -64,7 +64,7 @@ public class FileEditorView : IEditorView
         // Item Viewer
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_FileBrowserView);
-        if (ImGui.Begin($@"Item Viewer##fileBrowser_ItemViwwer_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("FILE_FileBrowser_Item_Viewer")}###fileBrowser_ItemViwwer_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -86,7 +86,7 @@ public class FileEditorView : IEditorView
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_FileBrowserView);
-            if (ImGui.Begin($@"Tools##fileBrowser_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("FILE_FileBrowser_Tools")}###fileBrowser_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;

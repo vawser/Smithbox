@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "FILE_Tools_File_Unpacker_Header",
+      "Text": "File Unpacker"
+    },
+    {
+      "Key": "FILE_Tools_File_Exporter_Header",
+      "Text": "File Exporter"
+    },
+    {
+      "Key": "FILE_Tools_ViewToggle_File_Unpacker",
+      "Text": "File Unpacker"
+    },
+    {
+      "Key": "FILE_Tools_ViewToggle_File_Exporter",
+      "Text": "File Exporter"
+    }
+  ]
+}

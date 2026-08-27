@@ -287,6 +287,38 @@
     {
       "Key": "REND_Unsupported_Pixel_Format",
       "Text": "Unsupported pixel format ({0})"
+    },
+    {
+      "Key": "REND_Loading_Map_Piece",
+      "Text": "Loading map piece..."
+    },
+    {
+      "Key": "REND_Loading_Character",
+      "Text": "Loading character..."
+    },
+    {
+      "Key": "REND_Loading_Object",
+      "Text": "Loading object..."
+    },
+    {
+      "Key": "REND_Loading_Collision",
+      "Text": "Loading collision..."
+    },
+    {
+      "Key": "REND_Loading_Navmesh",
+      "Text": "Loading navmesh..."
+    },
+    {
+      "Key": "REND_No_Region_Model_Proxy_For_Type",
+      "Text": "No region model proxy was specified for {0}"
+    },
+    {
+      "Key": "REND_Invalid_BTL_LightType",
+      "Text": "Unexpected BTL LightType: {0}"
+    },
+    {
+      "Key": "REND_Invalid_Mesh",
+      "Text": "Invalid mesh for: {0}"
     }
   ]
 }

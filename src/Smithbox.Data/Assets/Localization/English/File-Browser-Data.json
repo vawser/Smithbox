@@ -1,0 +1,8 @@
+{
+  "Entries": [
+    {
+      "Key": "FILE_Data_Failed_Read_File",
+      "Text": "Failed to read file: {0}"
+    }
+  ]
+}

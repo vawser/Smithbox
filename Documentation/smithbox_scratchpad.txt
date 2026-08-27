@@ -3,7 +3,6 @@
 #---------------------
 # LOC TO DO:
  Editors
-  Common
   File Browser
   Gparam Editor
   Map Data Editor
@@ -14,3 +13,12 @@
  - EDGE
   - Read map mapbnd for edges and then associate with FLVER on load for map pieces
   
+# Havok Editor
+- Add cross-binder support to the file list Copy action
+
+// Toggle: Full Paths
+GUI.DisplayToggleButton("fullPathToggle", Icons.FileText,
+    ref CFG.Current.HavokEditor_BinderList_Display_Full_Path,
+    "HAVOK_BinderView_BinderPath_Display_Short",
+    "HAVOK_BinderView_BinderPath_Display_Full",
+    "HAVOK_BinderView_BinderPath_Display_TT");

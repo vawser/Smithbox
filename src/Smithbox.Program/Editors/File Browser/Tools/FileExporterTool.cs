@@ -1,28 +1,21 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.FileBrowser;
 
-public class FileExtractTool
+public class FileExporterTool
 {
     public FileEditorView Parent;
     public ProjectEntry Project;
 
     private string ExtractionPath = "";
 
-    public FileExtractTool(FileEditorView view, ProjectEntry project)
+    public FileExporterTool(FileEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;
@@ -36,16 +29,37 @@ public class FileExtractTool
     {
         ImGui.BeginChild("FileExtractSection", ImGuiChildFlags.Borders);
 
-        GUI.SimpleHeader("Output Directory", "");
+        GUI.SimpleHeader(
+            LOC.Get("FILE_FileExporter_Export_Directory_Header"),
+            LOC.Get("FILE_FileExporter_Export_Directory_Header_TT"));
 
-        GUI.HintTextInput("##outputDir", ref ExtractionPath, "Set the output directory...");
+        GUI.HintTextInput("##outputDir", ref ExtractionPath, LOC.Get("FILE_FileExporter_Export_Dir_Hint"));
 
         GUI.MultiButtonInput("extractActions",
-            "setExtractDir", "Set Output Directory", "Set the directory the files are extracted into.", SetExtractionDirectory,
-            "openExtractDir", "Open Output Directory", "Open the current output directory in a file explorer.", OpenExtractionDirectory,
-            "extractMainFile", "Extract Main File", "Extract the currently selected main file.", ExtractMainFile,
-            "extractInternalFile", "Extract Internal File", "Extract the currently selected internal file.", ExtractInternalFile,
-            "extractTextureFile", "Extract Texture File", "Extract the currently selected texture file.", ExtractTextureFile);
+            "setExtractDir", 
+            LOC.Get("FILE_FileExporter_Set_Export_Dir_Action"),
+            LOC.Get("FILE_FileExporter_Set_Export_Dir_Action_TT"),
+            SetExtractionDirectory,
+
+            "openExtractDir",
+            LOC.Get("FILE_FileExporter_Open_Export_Dir_Action"),
+            LOC.Get("FILE_FileExporter_Open_Export_Dir_Action_TT"), 
+            OpenExtractionDirectory,
+
+            "extractMainFile",
+            LOC.Get("FILE_FileExporter_Export_Container_File"),
+            LOC.Get("FILE_FileExporter_Export_Container_File_TT"), 
+            ExportContainerFile,
+
+            "extractInternalFile",
+            LOC.Get("FILE_FileExporter_Export_Internal_File"),
+            LOC.Get("FILE_FileExporter_Export_Internal_File_TT"), 
+            ExportInternalFile,
+
+            "extractTextureFile",
+            LOC.Get("FILE_FileExporter_Export_Texture_File"),
+            LOC.Get("FILE_FileExporter_Export_Texture_File_TT"), 
+            ExportTextureFile);
 
         ImGui.EndChild();
     }
@@ -58,7 +72,8 @@ public class FileExtractTool
     public void SetExtractionDirectory()
     {
         var newOutputDir = "";
-        var result = PlatformUtils.Instance.OpenFolderDialog("Select Output Directory", out newOutputDir, ExtractionPath);
+        var result = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("FILE_FileExporter_Select_Output_Dir"), out newOutputDir, ExtractionPath);
 
         if (result)
         {
@@ -67,11 +82,11 @@ public class FileExtractTool
         }
     }
 
-    public void ExtractMainFile()
+    public void ExportContainerFile()
     {
         if (ExtractionPath == "")
         {
-            Smithbox.LogError<FileExtractTool>("Output directory has not been set.");
+            Smithbox.LogError<FileExporterTool>("Output directory has not been set.");
             return;
         }
 
@@ -79,7 +94,7 @@ public class FileExtractTool
 
         if (fileEntry == null)
         {
-            Smithbox.LogError<FileExtractTool>("No main file has been selected.");
+            Smithbox.LogError<FileExporterTool>("No main file has been selected.");
             return;
         }
 
@@ -114,23 +129,23 @@ public class FileExtractTool
         }
     }
 
-    public void ExtractInternalFile()
+    public void ExportInternalFile()
     {
         if (ExtractionPath == "")
         {
-            Smithbox.LogError<FileExtractTool>("Output directory has not been set.");
+            Smithbox.LogError<FileExporterTool>(LOC.Get("FILE_FileExporter_No_Output_Dir"));
             return;
         }
 
         if (Parent.Selection.SelectedVfsFile == null)
         {
-            Smithbox.LogError<FileExtractTool>("No main file has been selected.");
+            Smithbox.LogError<FileExporterTool>(LOC.Get("FILE_FileExporter_No_Container_File_Selected"));
             return;
         }
 
         if (Parent.Selection.SelectedInternalFile == "")
         {
-            Smithbox.LogError<FileExtractTool>("No internal file has been selected.");
+            Smithbox.LogError<FileExporterTool>(LOC.Get("FILE_FileExporter_No_Internal_File_Selected"));
             return;
         }
 
@@ -181,7 +196,7 @@ public class FileExtractTool
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                    Smithbox.LogError(this,  LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
                 }
             }
             else
@@ -203,7 +218,7 @@ public class FileExtractTool
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
                 }
             }
         }
@@ -222,7 +237,7 @@ public class FileExtractTool
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                Smithbox.LogError(this, LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
             }
 
             try
@@ -231,7 +246,7 @@ public class FileExtractTool
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                Smithbox.LogError(this, LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
@@ -277,22 +292,21 @@ public class FileExtractTool
 
             File.WriteAllBytes(writePath, extractData);
 
-            Smithbox.Log(this, $"[Smithbox:File Browser] Extracted {filename}");
+            Smithbox.Log(this, LOC.Get("FILE_FileExporter_Exported_File", filename));
         }
     }
 
-
-    public void ExtractTextureFile()
+    public void ExportTextureFile()
     {
         if (ExtractionPath == "")
         {
-            Smithbox.LogError<FileExtractTool>("Output directory has not been set.");
+            Smithbox.LogError<FileExporterTool>(LOC.Get("FILE_FileExporter_No_Output_Dir"));
             return;
         }
 
         if (Parent.Selection.SelectedVfsFile == null)
         {
-            Smithbox.LogError<FileExtractTool>("No main file has been selected.");
+            Smithbox.LogError<FileExporterTool>(LOC.Get("FILE_FileExporter_No_Container_File_Selected"));
             return;
         }
 
@@ -300,7 +314,7 @@ public class FileExtractTool
         {
             if (Parent.Selection.SelectedInternalFile == "" || Parent.Selection.SelectedInternalTexFile == "")
             {
-                Smithbox.LogError<FileExtractTool>("No internal file has been selected.");
+                Smithbox.LogError<FileExporterTool>(LOC.Get("FILE_FileExporter_No_Internal_File_Selected"));
                 return;
             }
         }
@@ -366,7 +380,7 @@ public class FileExtractTool
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
                 }
             }
             else
@@ -401,7 +415,7 @@ public class FileExtractTool
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
                 }
             }
         }
@@ -420,7 +434,7 @@ public class FileExtractTool
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                Smithbox.LogError(this, LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
             }
 
             try
@@ -429,7 +443,7 @@ public class FileExtractTool
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                Smithbox.LogError(this, LOC.Get("FILE_Data_Failed_Read_File", targetFile.Path), e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)
@@ -510,7 +524,7 @@ public class FileExtractTool
 
             File.WriteAllBytes(writePath, extractData);
 
-            Smithbox.Log(this, $"[Smithbox:File Browser] Extracted {filename}");
+            Smithbox.Log(this, LOC.Get("FILE_FileExporter_Exported_File", filename));
         }
     }
 }

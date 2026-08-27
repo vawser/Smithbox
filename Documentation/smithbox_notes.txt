@@ -94,14 +94,18 @@
 #-------------
 # Gparam Editor
 #-------------
-
 # Bugs
 - DS2 fog color values are inverted (BGR, not RGB)
     
 #-------------
 # Havok Editor
 #-------------
-- Add cross-binder support to the file list Copy action
+- Compat:
+ - Minor changes to behavior classes for NR (most other hkx work correctly)
+ - hk2019 for AC6 (may just need HKLib update
+ - hk2016 for SDT
+ - HKX2 for DES, DS1, DS2, DS3, BB
+
 - Collision Generator:
  - Work out how to support hit materials with hknpExternMesh
 

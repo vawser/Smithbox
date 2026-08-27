@@ -365,7 +365,6 @@ public class ProjectUtils
     {
         if (curType
             is ProjectType.ER
-            or ProjectType.AC6
             or ProjectType.NR)
         {
             return true;

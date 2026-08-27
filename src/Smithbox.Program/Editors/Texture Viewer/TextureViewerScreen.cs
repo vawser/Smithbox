@@ -65,8 +65,10 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void FileMenu()
     {
+        // File
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fileMenuHeader"))
         {
+            // Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 Save();
@@ -80,6 +82,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     {
         var activeView = ViewHandler.ActiveView;
 
+        // Edit
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Edit")}##editMenuHeader"))
         {
             if (activeView != null)
