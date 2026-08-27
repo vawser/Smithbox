@@ -128,6 +128,17 @@ public class ParamRowNameManipulationTool
                     }
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_Alias_TT"));
 
+                    // Inherit Name from RowFMG Refernece
+                    if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_Row_FMG")}##inheritNameRowFmgRefAction", false,
+                            View.Selection.RowSelectionExists()
+                                ? ImGuiSelectableFlags.None
+                                : ImGuiSelectableFlags.Disabled))
+                    {
+                        ParamRowOperations.InheritRowNameFromRowFMG(View);
+                    }
+                    GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_Row_FMG_TT"));
+
+
                     // Target Field
                     ImGui.InputText($"{LOC.Get("PARAM_RowWindow_Context_Target_Field")}##targetField", ref Context_RowNameInherit_TargetField, 255);
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Target_Field_TT"));
@@ -303,7 +314,13 @@ public class ParamRowNameManipulationTool
                 LOC.Get("PARAM_RowNameManip_Action_Inherit_Name_From_Alias"),
                 LOC.Get("PARAM_RowNameManip_Action_Inherit_Name_From_Alias_TT"),
                 InheritNameFromAliasRef,
-                CanUseInheritNameFromAliasRefAction()
+                CanUseInheritNameFromAliasRefAction(),
+
+                "inheritNameFromRowFmgRef",
+                LOC.Get("PARAM_RowNameManip_Action_Inherit_Name_From_Row_FMG"),
+                LOC.Get("PARAM_RowNameManip_Action_Inherit_Name_From_Row_FMG_TT"),
+                InheritNameFromRowFmgRef,
+                CanUseInheritNameFromRowFmgRefAction()
                 );
 
             ImGui.EndTabItem();
@@ -399,6 +416,22 @@ public class ParamRowNameManipulationTool
         return false;
     }
 
+    public bool CanUseInheritNameFromRowFmgRefAction()
+    {
+        if (!View.Selection.RowSelectionExists())
+            return false;
+
+        var curParamString = View.Selection.GetActiveParam();
+        var curSelection = View.Selection.GetActiveRow();
+
+        if (!Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(curParamString))
+            return false;
+
+        var curParam = Project.Handler.ParamData.PrimaryBank.Params[curParamString];
+
+        return true;
+    }
+
     public bool CanUseInheritNameFromAliasRefAction()
     {
         var (isValid, fieldMeta) = CanUseInheritAction();
@@ -443,6 +476,10 @@ public class ParamRowNameManipulationTool
     public void InheritNameFromFmgRef()
     {
         ParamRowOperations.InheritRowNameFromFMG(View, Context_RowNameInherit_TargetField);
+    }
+    public void InheritNameFromRowFmgRef()
+    {
+        ParamRowOperations.InheritRowNameFromRowFMG(View);
     }
 
     public void InheritNameFromAliasRef()

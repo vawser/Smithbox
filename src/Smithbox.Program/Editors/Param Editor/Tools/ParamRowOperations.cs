@@ -287,6 +287,34 @@ public static class ParamRowOperations
     }
     #endregion
 
+    #region Inherit Row Name from Row FMG
+    public static void InheritRowNameFromRowFMG(ParamEditorView curView)
+    {
+        var curParamKey = curView.Selection.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
+
+        Param baseParam = curView.GetPrimaryBank().Params[curParamKey];
+
+        if (baseParam == null)
+            return;
+
+        List<Param.Row> rows = curView.Selection.GetSelectedRows();
+
+        var decorator = curView.RowDecorators.GetFmgRowDecorator(curParamKey);
+
+        foreach (Param.Row row in rows)
+        {
+            var fmgEntry = decorator.GetRowFmgEntry(row);
+            if (fmgEntry != null)
+            {
+                row.Name = fmgEntry.Text;
+            }
+        }
+    }
+    #endregion
+
     #region Inherit Row Name from Alias
     public static void InheritRowNameFromAlias(ParamEditorView curView, string targetField)
     {

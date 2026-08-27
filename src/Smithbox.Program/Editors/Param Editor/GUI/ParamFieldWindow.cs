@@ -363,7 +363,7 @@ public class ParamFieldWindow
 
             ImGui.SameLine();
 
-            // Field search
+            // Search
             ImGui.AlignTextToFramePadding();
             ImGui.InputTextWithHint("##fieldSearch", LOC.Get("PARAM_FieldWindow_Search_Hint"), ref propSearchString,
                 255);
@@ -401,89 +401,47 @@ public class ParamFieldWindow
             GUI.Tooltip(
                 LOC.Get("PARAM_FieldWindow_FieldNameMode_Hint", LOC.Get(CFG.Current.ParamEditor_FieldNameMode.GetDisplayName())));
 
-            // Toggle Vanilla Columns
-            ImGui.SameLine();
+            // Toggle: Display Vanilla Columns
+            GUI.DisplayToggleButton("vanillaColToggle", Icons.AddressBook,
+                ref CFG.Current.Param_ShowVanillaColumn,
+                "PARAM_FieldWindow_VanillaCol_Hidden",
+                "PARAM_FieldWindow_VanillaCol_Visible",
+                "PARAM_FieldWindow_VanillaCol_Hint");
 
-            if (ImGui.Button($"{Icons.AddressBook}"))
-            {
-                CFG.Current.Param_ShowVanillaColumn = !CFG.Current.Param_ShowVanillaColumn;
-            }
+            // Toggle: Display Auxiliary Columns
+            GUI.DisplayToggleButton("auxColToggle", Icons.AddressBookO,
+                ref CFG.Current.Param_ShowAuxColumn,
+                "PARAM_FieldWindow_AuxCol_Hidden",
+                "PARAM_FieldWindow_AuxCol_Visible",
+                "PARAM_FieldWindow_AuxCol_Hint");
 
-            var vanillaColumnMode = LOC.Get("PARAM_FieldWindow_VanillaCol_Hidden");
-            if (CFG.Current.Param_ShowVanillaColumn)
-                vanillaColumnMode = LOC.Get("PARAM_FieldWindow_VanillaCol_Visible");
+            // Toggle: Display Field Layouts
+            GUI.DisplayToggleButton("fieldLayoutToggle", Icons.Cubes,
+                ref CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts,
+                "PARAM_FieldWindow_FieldLayout_Hidden",
+                "PARAM_FieldWindow_FieldLayout_Visible",
+                "PARAM_FieldWindow_FieldLayout_Hint");
 
-            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_VanillaCol_Hint", vanillaColumnMode));
+            // Toggle: Display Offset Column
+            GUI.DisplayToggleButton("offsetColToggle", Icons.MapSigns,
+                ref CFG.Current.ParamEditor_Field_List_Display_Offsets,
+                "PARAM_FieldWindow_FieldOffset_Hidden",
+                "PARAM_FieldWindow_FieldOffset_Visible",
+                "PARAM_FieldWindow_FieldOffset_Hint");
 
-            // Toggle Auxiliary Columns
-            ImGui.SameLine();
+            // Toggle: Display Padding
+            GUI.DisplayToggleButton("paddingToggle", Icons.Hubzilla,
+                ref CFG.Current.ParamEditor_Field_List_Display_Padding,
+                "PARAM_FieldWindow_FieldPadding_Visible",
+                "PARAM_FieldWindow_FieldPadding_Hidden",
+                "PARAM_FieldWindow_FieldPadding_Hint");
 
-            if (ImGui.Button($"{Icons.AddressBookO}"))
-            {
-                CFG.Current.Param_ShowAuxColumn = !CFG.Current.Param_ShowAuxColumn;
-            }
-
-            var auxColumnMode = LOC.Get("PARAM_FieldWindow_AuxCol_Hidden");
-            if (CFG.Current.Param_ShowAuxColumn)
-                auxColumnMode = LOC.Get("PARAM_FieldWindow_AuxCol_Visible");
-
-            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_AuxCol_Hint", auxColumnMode));
-
-            // Toggle Field Layouts
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{Icons.Cubes}"))
-            {
-                CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts = !CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts;
-            }
-
-            var fieldLayoutsState = LOC.Get("PARAM_FieldWindow_FieldLayout_Hidden");
-            if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts)
-                fieldLayoutsState = LOC.Get("PARAM_FieldWindow_FieldLayout_Visible");
-
-            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_FieldLayout_Hint", fieldLayoutsState));
-
-            // Toggle Field Offset Column
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{Icons.MapSigns}"))
-            {
-                CFG.Current.ParamEditor_Field_List_Display_Offsets = !CFG.Current.ParamEditor_Field_List_Display_Offsets;
-            }
-
-            var fieldOffsetColumnMode = LOC.Get("PARAM_FieldWindow_FieldOffset_Hidden");
-            if (CFG.Current.ParamEditor_Field_List_Display_Offsets)
-                fieldOffsetColumnMode = LOC.Get("PARAM_FieldWindow_FieldOffset_Visible");
-
-            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_FieldOffset_Hint", fieldOffsetColumnMode));
-
-            // Toggle Field Padding
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{Icons.Hubzilla}"))
-            {
-                CFG.Current.ParamEditor_Field_List_Display_Padding = !CFG.Current.ParamEditor_Field_List_Display_Padding;
-            }
-
-            var fieldPaddingMode = LOC.Get("PARAM_FieldWindow_FieldPadding_Visible");
-            if (!CFG.Current.ParamEditor_Field_List_Display_Padding)
-                fieldPaddingMode = LOC.Get("PARAM_FieldWindow_FieldPadding_Hidden");
-
-            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_FieldPadding_Hint", fieldPaddingMode));
-
-            // Toggle Modified Background
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{Icons.Bars}"))
-            {
-                CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg = !CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg;
-            }
-
-            var rowModifiedBgMode = LOC.Get("PARAM_FieldWindow_ModifiedBg_Hidden");
-            if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg)
-                rowModifiedBgMode = LOC.Get("PARAM_FieldWindow_ModifiedBg_Visible");
-
-            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_ModifiedBg_Hint", rowModifiedBgMode));
+            // Toggle: Display Modified Background
+            GUI.DisplayToggleButton("modifiedBackgroundToggle", Icons.Bars,
+                ref CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg,
+                "PARAM_FieldWindow_ModifiedBg_Hidden",
+                "PARAM_FieldWindow_ModifiedBg_Visible",
+                "PARAM_FieldWindow_ModifiedBg_Hint");
         }
 
         ImGui.EndChild();

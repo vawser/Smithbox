@@ -2,6 +2,11 @@
 # Long-Term TODO Notes
 #---------------------
 #-------------
+# Project
+#-------------
+- VFS look up seems to prioritize unpacked files over the packed files when looking up the base file, which is not ideal
+
+#-------------
 # Map Editor
 #-------------
 - Implement viewport grid via shader

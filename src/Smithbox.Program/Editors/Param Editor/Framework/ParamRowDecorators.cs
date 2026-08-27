@@ -134,6 +134,12 @@ public class FmgRowDecorator
             ImGui.PopStyleColor();
         }
     }
+
+    public FMG.Entry GetRowFmgEntry(Param.Row row)
+    {
+        return _entryCache.Values.FirstOrDefault(e => e.ID == row.ID);
+    }
+
     public void DecorateContextMenuItems(Param.Row row)
     {
         if (!CFG.Current.ParamEditor_Row_List_Display_Decorators)

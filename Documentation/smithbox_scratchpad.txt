@@ -7,6 +7,9 @@
   Gparam Editor
   Map Data Editor
   Map Editor
+  
+# Param Editor
+- "prop iconID 102" crashes: seems linked to field view, adding in 102 as a value stops the crash
 
 # Model Editor
 - Add additional file support (like Map Editor)
@@ -22,3 +25,5 @@ GUI.DisplayToggleButton("fullPathToggle", Icons.FileText,
     "HAVOK_BinderView_BinderPath_Display_Short",
     "HAVOK_BinderView_BinderPath_Display_Full",
     "HAVOK_BinderView_BinderPath_Display_TT");
+    
+    

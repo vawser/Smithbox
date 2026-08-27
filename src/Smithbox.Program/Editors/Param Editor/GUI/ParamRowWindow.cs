@@ -67,11 +67,13 @@ public class ParamRowWindow
 
     public void Display(bool doFocus, bool isActiveView, float scrollTo, string activeParam)
     {
-        Context = new RowListContext();
-        Context.DoFocus = doFocus;
-        Context.IsActiveView = isActiveView;
-        Context.ScrollTo = scrollTo;
-        Context.ActiveParam = activeParam;
+        Context = new RowListContext
+        {
+            DoFocus = doFocus,
+            IsActiveView = isActiveView,
+            ScrollTo = scrollTo,
+            ActiveParam = activeParam
+        };
 
         DisplayTitle();
 
@@ -132,14 +134,15 @@ public class ParamRowWindow
 
         ImGui.SameLine();
 
-        // Row Search
         if (Context.IsActiveView && InputManager.IsPressed(KeybindID.ParamEditor_Focus_Searchbar))
         {
             ImGui.SetKeyboardFocusHere();
         }
 
+        // Search
         ImGui.AlignTextToFramePadding();
-        ImGui.InputTextWithHint($"##rowSearch", LOC.Get("PARAM_RowWindow_Search_Hint"), 
+        ImGui.InputTextWithHint($"##rowSearch", 
+            LOC.Get("PARAM_RowWindow_Search_Hint"), 
             ref ParentView.Selection.GetCurrentRowSearchString(), 256);
 
         GUI.Tooltip(LOC.Get("PARAM_RowWindow_Search_TT", InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)));
@@ -164,7 +167,7 @@ public class ParamRowWindow
 
         ImGui.SameLine();
 
-        // Go to selected
+        // Action: Go to Selected
         ImGui.AlignTextToFramePadding();
         if (ImGui.Button($"{Icons.LocationArrow}") ||
             Context.IsActiveView && InputManager.IsPressed(KeybindID.Jump))
@@ -177,7 +180,7 @@ public class ParamRowWindow
 
         ImGui.SameLine();
 
-        // Mass Edit Hint
+        // Action: Mass Edit Hint
         ImGui.AlignTextToFramePadding();
 
         if (ImGui.Button($"{Icons.QuestionCircle}"))
@@ -195,40 +198,25 @@ public class ParamRowWindow
 
         ImGui.SameLine();
 
-        // Toggle Modified Background
-        ImGui.SameLine();
+        // Toggle: Display Modified Background
+        GUI.DisplayToggleButton("modifiedBackgroundToggle", Icons.Bars,
+            ref CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg,
+            "PARAM_RowWindow_Toggle_Modified_Background_Hidden",
+            "PARAM_RowWindow_Toggle_Modified_Background_Visible",
+            "PARAM_RowWindow_Toggle_Modified_Background_Hint");
 
-        if (ImGui.Button($"{Icons.Bars}"))
-        {
-            CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg = !CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg;
-        }
-
-        var rowModifiedBgMode = LOC.Get("PARAM_RowWindow_Toggle_Modified_Background_Hidden");
-        if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg)
-            rowModifiedBgMode = LOC.Get("PARAM_RowWindow_Toggle_Modified_Background_Visible");
-
-        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Toggle_Modified_Background_Hint", rowModifiedBgMode));
-
-        // Display Decorators
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.FileText}"))
-        {
-            CFG.Current.ParamEditor_Row_List_Display_Decorators = !CFG.Current.ParamEditor_Row_List_Display_Decorators;
-        }
-
-        var displayDecoratorMode = LOC.Get("PARAM_RowWindow_Toggle_Text_Decorator_Hidden");
-        if (CFG.Current.ParamEditor_Row_List_Display_Decorators)
-            displayDecoratorMode = LOC.Get("PARAM_RowWindow_Toggle_Text_Decorator_Visible");
-
-        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Toggle_Text_Decorator_Hint", displayDecoratorMode));        
+        // Toggle: Display Decorators
+        GUI.DisplayToggleButton("modifiedBackgroundToggle", Icons.PaintBrush,
+            ref CFG.Current.ParamEditor_Row_List_Display_Decorators,
+            "PARAM_RowWindow_Toggle_Text_Decorator_Hidden",
+            "PARAM_RowWindow_Toggle_Text_Decorator_Visible",
+            "PARAM_RowWindow_Toggle_Text_Decorator_Hint");
 
         // Quick Export
         if (CFG.Current.Developer_Enable_Tools)
         {
             ParamDebugTools.DisplayQuickRowNameExport(Editor, Project);
         }
-
 
         ImGui.EndChild();
     }
@@ -286,7 +274,7 @@ public class ParamRowWindow
                 var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
                 if (fieldAnnotation != null)
                 {
-                    name = $"{key} ({fieldAnnotation.Name}";
+                    name = $"{key} ({fieldAnnotation.Name})";
                 }
             }
 
@@ -407,7 +395,6 @@ public class ParamRowWindow
                    curSearchTerm, true, true)
                 );
 
-
             var enableGrouping = false;
 
             if (Context.CurMeta != null)
@@ -514,7 +501,7 @@ public class ParamRowWindow
         label = Utils.ImGui_WordWrapString(label, ImGui.GetColumnWidth(),
             !CFG.Current.ParamEditor_Row_List_Enable_Line_Wrapping ? 1 : 3);
 
-        if (ID_EditRow == null | ID_EditRow != r)
+        if (ID_EditRow == null || ID_EditRow != r)
         {
             if (ImGui.Selectable($@"{label}##{selectionCacheIndex}_id", selected))
             {
@@ -745,7 +732,7 @@ public class ParamRowWindow
             }
         }
 
-        if (Name_EditRow == null | Name_EditRow != r)
+        if (Name_EditRow == null || Name_EditRow != r)
         {
             if (ImGui.Selectable($@"{label}##{selectionCacheIndex}_name", selected))
             {

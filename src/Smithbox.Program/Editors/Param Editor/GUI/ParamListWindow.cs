@@ -108,15 +108,17 @@ public class ParamListWindow
 
         ImGui.SameLine();
 
-        // Search param
         if (isActiveView && InputManager.IsPressed(KeybindID.ParamEditor_Focus_Searchbar))
         {
             ImGui.SetKeyboardFocusHere();
         }
 
+        // Search
         ImGui.AlignTextToFramePadding();
         ImGui.InputTextWithHint($"##paramSearch", LOC.Get("PARAM_ParamWindow_Search_Hint"), ref currentParamSearchString, 256);
-        GUI.Tooltip(LOC.Get("PARAM_ParamWindow_Search_Hint_TT", InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)));
+
+        GUI.Tooltip(LOC.Get("PARAM_ParamWindow_Search_Hint_TT", 
+            InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)));
 
         if (!currentParamSearchString.Equals(lastParamSearch))
         {
@@ -124,66 +126,38 @@ public class ParamListWindow
             lastParamSearch = currentParamSearchString;
         }
 
-        // Toggle Table Group Column
         if (AllowTableGroupToggle())
         {
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{Icons.Table}##tableGroupVisToggle"))
-            {
-                CFG.Current.ParamEditor_Display_Table_List = !CFG.Current.ParamEditor_Display_Table_List;
-            }
-
-            var tableGroupWindowVis = LOC.Get("PARAM_ParamWindow_ToggleTableGroup_Hidden");
-            if (!CFG.Current.ParamEditor_Display_Table_List)
-                tableGroupWindowVis = LOC.Get("PARAM_ParamWindow_ToggleTableGroup_Visible");
-
-            GUI.Tooltip(LOC.Get("PARAM_ParamWindow_ToggleTableGroup_Hint", tableGroupWindowVis));
+            // Toggle: Table List
+            GUI.DisplayToggleButton("tableListView", Icons.Table,
+                ref CFG.Current.ParamEditor_Display_Table_List,
+                "PARAM_ParamWindow_ToggleTableGroup_Hidden",
+                "PARAM_ParamWindow_ToggleTableGroup_Visible",
+                "PARAM_ParamWindow_ToggleTableGroup_Hint");
         }
 
-        // Toggle Param Community Names
-        ImGui.SameLine();
+        // Toggle: Community Names
+        GUI.DisplayToggleButton("communityNamesToggle", Icons.Book,
+            ref CFG.Current.ParamEditor_Param_List_Display_Community_Names,
+            "PARAM_ParamWindow_ToggleCommunityNames_Source",
+            "PARAM_ParamWindow_ToggleCommunityNames_Community",
+            "PARAM_ParamWindow_ToggleCommunityNames_Hint");
 
-        if (ImGui.Button($"{Icons.Book}##paramCommunityNamesToggle"))
-        {
-            CFG.Current.ParamEditor_Param_List_Display_Community_Names = !CFG.Current.ParamEditor_Param_List_Display_Community_Names;
-        }
+        // Toggle: Param Categories
+        GUI.DisplayToggleButton("paramCategoriesToggle", Icons.Cubes,
+            ref CFG.Current.ParamEditor_Param_List_Display_Categories,
+            "PARAM_ParamWindow_ToggleCategories_Hidden",
+            "PARAM_ParamWindow_ToggleCategories_Visible",
+            "PARAM_ParamWindow_ToggleCategories_Hint");
 
-        var paramCommunityNamesVis = LOC.Get("PARAM_ParamWindow_ToggleCommunityNames_Source");
-        if (CFG.Current.ParamEditor_Param_List_Display_Community_Names)
-            paramCommunityNamesVis = LOC.Get("PARAM_ParamWindow_ToggleCommunityNames_Community");
-
-        GUI.Tooltip(LOC.Get("PARAM_ParamWindow_ToggleCommunityNames_Hint", paramCommunityNamesVis));
-
-        // Toggle Param Categories
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Cubes}##paramCategoriesToggle"))
-        {
-            CFG.Current.ParamEditor_Param_List_Display_Categories = !CFG.Current.ParamEditor_Param_List_Display_Categories;
-        }
-
-        var paramCategoriesVis = LOC.Get("PARAM_ParamWindow_ToggleCategories_Hidden");
-        if (CFG.Current.ParamEditor_Param_List_Display_Categories)
-            paramCategoriesVis = LOC.Get("PARAM_ParamWindow_ToggleCategories_Visible");
-
-        GUI.Tooltip(LOC.Get("PARAM_ParamWindow_ToggleCategories_Hint", paramCategoriesVis));
-
-        // Toggle Stay Params
         if (Project.Descriptor.ProjectType is ProjectType.DS3)
         {
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{Icons.AddressBook}##stayParamToggle"))
-            {
-                CFG.Current.ParamEditor_Param_List_Display_StayParams = !CFG.Current.ParamEditor_Param_List_Display_StayParams;
-            }
-
-            var stayParamVis = LOC.Get("PARAM_ParamWindow_ToggleStayParams_Hidden");
-            if (CFG.Current.ParamEditor_Param_List_Display_StayParams)
-                stayParamVis = LOC.Get("PARAM_ParamWindow_ToggleStayParams_Visible");
-
-            GUI.Tooltip(LOC.Get("PARAM_ParamWindow_ToggleStayParams_Hint", stayParamVis));
+            // Toggle: Stay Params
+            GUI.DisplayToggleButton("stayParamToggle", Icons.Database,
+                ref CFG.Current.ParamEditor_Param_List_Display_StayParams,
+                "PARAM_ParamWindow_ToggleStayParams_Hidden",
+                "PARAM_ParamWindow_ToggleStayParams_Visible",
+                "PARAM_ParamWindow_ToggleStayParams_Hint");
         }
 
         ImGui.EndChild();
