@@ -41,6 +41,8 @@ public class TextEditorView : IEditorView
     public FmgImporter FmgImporter;
     public FmgDumper FmgDumper;
 
+    public TextFindMenu TextFindMenu;
+
     public TextEditorView(TextEditorScreen editor, ProjectEntry project, int imguiId)
     {
         Editor = editor;
@@ -67,6 +69,8 @@ public class TextEditorView : IEditorView
         FmgImporter = new FmgImporter(this, Project);
 
         FmgDumper = new FmgDumper(this, Project);
+
+        TextFindMenu = new TextFindMenu(this, Project);
     }
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
@@ -173,5 +177,8 @@ public class TextEditorView : IEditorView
         TextDuplicatePopup.Display();
         FmgImporter.OnGui();
         FmgExporter.OnGui();
+
+        TextFindMenu.Shortcut();
+        TextFindMenu.Display();
     }
 }

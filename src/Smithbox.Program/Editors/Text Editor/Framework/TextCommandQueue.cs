@@ -75,7 +75,7 @@ public class TextCommandQueue
                         activeView.Selection.FocusFmgSelection = true;
 
                         activeView.Selection.SelectFmgEntry(index, entry);
-                        activeView.Selection.FocusFmgEntrySelection = true;
+                        activeView.TextEntryList.FocusSelection = true;
 
                         break;
                     }

@@ -95,7 +95,7 @@ public class TextShortcuts
                 // Focus Selected Entry
                 if (InputManager.IsPressed(KeybindID.Jump))
                 {
-                    activeView.Selection.FocusFmgEntrySelection = true;
+                    activeView.TextEntryList.FocusSelection = true;
                 }
             }
         }
@@ -106,6 +106,9 @@ public class TextShortcuts
     /// </summary>
     public void HandleSelectAll()
     {
+        if (!CFG.Current.TextEditor_Text_Entry_List_Allow_Select_All)
+            return;
+
         var activeView = Editor.ViewHandler.ActiveView;
 
         if (activeView != null)

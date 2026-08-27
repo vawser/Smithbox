@@ -29,7 +29,6 @@ public class TextViewSelection
 
     public bool FocusFileSelection;
     public bool FocusFmgSelection;
-    public bool FocusFmgEntrySelection;
 
     public TextViewSelection(TextEditorView view, ProjectEntry project)
     {

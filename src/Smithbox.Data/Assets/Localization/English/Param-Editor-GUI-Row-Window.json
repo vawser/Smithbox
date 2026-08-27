@@ -18,7 +18,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Action_Go_To_TT",
-      "Text": "Go to selected <{0}>"
+      "Text": "Focus the currently selected row.\nAction Shortcut: {0}\nPopup Shortcut: {1}"
     },
     {
       "Key": "PARAM_RowWindow_Toggle_Modified_Background_Visible",

@@ -23,6 +23,8 @@ public class TextEntryList
     public string EntryListFilter = "";
     public bool ExactEntryListFilter = false;
 
+    public bool FocusSelection = false;
+
     public TextEntryList(TextEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -72,37 +74,39 @@ public class TextEntryList
         {
             if (EntryListFilter == "")
             {
-                Parent.Selection.FocusFmgEntrySelection = true;
+                FocusSelection = true;
             }
         }
         // Focus after clicking off
         if (ImGui.IsItemDeactivated())
         {
-            Parent.Selection.FocusFmgEntrySelection = true;
+            FocusSelection = true;
         }
 
         ImGui.SameLine();
 
-        if (ImGui.Button($"{Icons.Eye}##fmgFocusSelection", DPI.IconButtonSize))
+        if (ImGui.Button($"{Icons.LocationArrow}##fmgFocusSelection", DPI.IconButtonSize))
         {
-            Parent.Selection.FocusFmgEntrySelection = true;
+            FocusSelection = true;
         }
         GUI.Tooltip(
-            LOC.Get("TEXT_EntryList_Focus_Selection_TT", InputManager.GetHint(KeybindID.Jump)));
+            LOC.Get("TEXT_EntryList_Focus_Selection_TT", 
+            InputManager.GetHint(KeybindID.Jump),
+            InputManager.GetHint(KeybindID.Find)));
 
-        // Toggle Null Entries
-        ImGui.SameLine();
+        // Toggle: Null Entries
+        GUI.DisplayToggleButton("nullEntryToggle", Icons.Tag,
+            ref CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries,
+            "TEXT_EntryList_NullEntries_Hidden",
+            "TEXT_EntryList_NullEntries_Visible",
+            "TEXT_EntryList_NullEntries_Hint");
 
-        if (ImGui.Button($"{Icons.Bars}"))
-        {
-            CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries = !CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries;
-        }
-
-        var nullEntriesMode = LOC.Get("TEXT_EntryList_NullEntries_Hidden");
-        if (CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries)
-            nullEntriesMode = LOC.Get("TEXT_EntryList_NullEntries_Visible");
-
-        GUI.Tooltip(LOC.Get("TEXT_EntryList_NullEntries_Hint", nullEntriesMode));
+        // Toggle: Select All Lock
+        GUI.DisplayToggleButton("selectAllToggle", Icons.Lock,
+            ref CFG.Current.TextEditor_Text_Entry_List_Allow_Select_All,
+            "TEXT_EntryList_Select_All_Lock",
+            "TEXT_EntryList_Select_All_Unlock",
+            "TEXT_EntryList_Select_All_TT");
 
         ImGui.EndChild();
     }
@@ -182,7 +186,6 @@ public class TextEntryList
 
     public void DisplayEntryRow(FMG.Entry entry, int id, string contents, int index)
     {
-
         // ID
         ImGui.TableNextRow();
         ImGui.TableSetColumnIndex(0);
@@ -194,12 +197,18 @@ public class TextEntryList
 
     }
 
-
     private FMG.Entry DragSourceEntry;
 
     public void DisplayEntryRowID(FMG.Entry entry, int id, string contents, int index)
     {
         var isSelected = Parent.Selection.IsFmgEntrySelected(index);
+
+        if(FocusSelection && isSelected)
+        {
+            ImGui.SetScrollHereY();
+
+            FocusSelection = false;
+        }
 
         // Selectable
         if (ImGui.Selectable($"{id}##fmgEntryID_{id}{index}", isSelected))
@@ -283,13 +292,6 @@ public class TextEntryList
             Parent.Editor.Shortcuts.HandleSelectAll();
             Parent.Editor.Shortcuts.HandleCopyEntryText();
         }
-
-        // Focus Selection
-        if (Parent.Selection.FocusFmgEntrySelection && isSelected)
-        {
-            Parent.Selection.FocusFmgEntrySelection = false;
-            ImGui.SetScrollHereY();
-        }
     }
 
     public void DisplayEntryRowName(FMG.Entry entry, int id, string contents, int index)
@@ -343,13 +345,6 @@ public class TextEntryList
 
             Parent.Editor.Shortcuts.HandleSelectAll();
             Parent.Editor.Shortcuts.HandleCopyEntryText();
-        }
-
-        // Focus Selection
-        if (Parent.Selection.FocusFmgEntrySelection && isSelected)
-        {
-            Parent.Selection.FocusFmgEntrySelection = false;
-            ImGui.SetScrollHereY();
         }
     }
 

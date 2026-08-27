@@ -171,7 +171,9 @@ public class ParamRowWindow
         {
             ParentView.JumpToSelectedRow = true;
         }
-        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Action_Go_To_TT", InputManager.GetHint(KeybindID.Jump)));
+        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Action_Go_To_TT",
+            InputManager.GetHint(KeybindID.Jump),
+            InputManager.GetHint(KeybindID.Find)));
 
         ImGui.SameLine();
 
