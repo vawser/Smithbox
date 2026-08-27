@@ -3,7 +3,6 @@
 #---------------------
 # LOC TO DO:
  Editors
-  File Browser
   Gparam Editor
   Map Data Editor
   Map Editor
@@ -26,15 +25,4 @@ GUI.DisplayToggleButton("fullPathToggle", Icons.FileText,
     "HAVOK_BinderView_BinderPath_Display_Full",
     "HAVOK_BinderView_BinderPath_Display_TT");
     
-    Vagabond
-    Warrior
-    Hero
-    Bandit
-    Astrologer
-    Prophet
-    Confessor
-    Samurai
-    Prisoner
-    Wretch
-    Idus Knight
-    Heavy Knight
+

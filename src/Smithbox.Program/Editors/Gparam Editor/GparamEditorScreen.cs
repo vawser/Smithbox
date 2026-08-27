@@ -32,15 +32,12 @@ public class GparamEditorScreen : EditorScreen
         CommandQueue = new GparamCommandQueue(this, Project);
     }
 
-    public string EditorName => "Gparam Editor##GparamEditor";
+    public string EditorName => "";
     public string CommandEndpoint => "gparam";
     public string SaveType => "Gparam";
     public string WindowName => "";
     public bool HasDocked { get; set; }
 
-    /// <summary>
-    /// The editor main loop
-    /// </summary>
     public void OnGUI(string[] commands)
     {
         var scale = DPI.UIScale();
@@ -72,47 +69,53 @@ public class GparamEditorScreen : EditorScreen
 
     public void FileMenu()
     {
-        if (ImGui.BeginMenu("File"))
+        // File
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fileMenuHeader"))
         {
-            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
+            // Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 Save();
             }
 
-            if (ImGui.MenuItem($"Save All"))
+            // Save All
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##saveAllAction"))
             {
                 SaveAll();
             }
 
             ImGui.Separator();
 
-            if (ImGui.BeginMenu("Output on Manual Save"))
+            // Manual Save Output
+            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Manual_Save_Output")}##manualSaveMenuHeader"))
             {
-                if (ImGui.MenuItem($"GPARAM"))
+                // GPARAM
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_GPARAM")}##manualToggle_gparam"))
                 {
                     CFG.Current.GparamEditor_ManualSave_IncludeGPARAM = !CFG.Current.GparamEditor_ManualSave_IncludeGPARAM;
                 }
-                GUI.Tooltip("If enabled, the graphical param files are outputted on save.");
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_GPARAM_TT"));
                 GUI.ShowActiveStatus(CFG.Current.GparamEditor_ManualSave_IncludeGPARAM);
 
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Determines which files are outputted during the manual saving process.");
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
 
-            if (ImGui.BeginMenu("Output on Automatic Save"))
+            // Automatic Save Output
+            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
             {
-                if (ImGui.MenuItem($"GPARAM"))
+                // GPARAM
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_GPARAM")}##manualToggle_gparam"))
                 {
                     CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM = !CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM;
                 }
-                GUI.Tooltip("If enabled, the graphical param files are outputted on save.");
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_GPARAM_TT"));
                 GUI.ShowActiveStatus(CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM);
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Determines which files are outputted during the automatic saving process.");
-
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
 
             ImGui.EndMenu();
         }
@@ -122,12 +125,13 @@ public class GparamEditorScreen : EditorScreen
     {
         var activeView = ViewHandler.ActiveView;
 
-        if (ImGui.BeginMenu("Edit"))
+        // Edit
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Edit")}##editMenuHeader"))
         {
             if (activeView != null)
             {
                 // Undo
-                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
                     if (activeView.ActionManager.CanUndo())
                     {
@@ -136,7 +140,7 @@ public class GparamEditorScreen : EditorScreen
                 }
 
                 // Undo All
-                if (ImGui.MenuItem($"Undo All"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##undoAllAction"))
                 {
                     if (activeView.ActionManager.CanUndo())
                     {
@@ -145,7 +149,7 @@ public class GparamEditorScreen : EditorScreen
                 }
 
                 // Redo
-                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
                     if (activeView.ActionManager.CanRedo())
                     {
@@ -156,51 +160,59 @@ public class GparamEditorScreen : EditorScreen
                 ImGui.Separator();
 
                 // Groups
-                if (ImGui.BeginMenu("Groups"))
+                if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Groups_Header")}##groupsHeader"))
                 {
-                    if (ImGui.MenuItem("Add All Missing", InputManager.GetHint(KeybindID.Add)))
+                    // Add All Missing Groups
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Groups_Add_All_Missing")}##addAllMissingAction", InputManager.GetHint(KeybindID.Add)))
                     {
                         activeView.GroupListView.AddGroupsShortcut();
                     }
-                    GUI.Tooltip("Adds all missing groups.");
+                    GUI.Tooltip(LOC.Get("GPARAM_Groups_Add_All_Missing_TT"));
 
-                    if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
+                    // Delete Selected Group
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Groups_Delete")}##deleteGroupAction", InputManager.GetHint(KeybindID.Delete)))
                     {
                         activeView.GroupListView.DeleteGroupsShortcut();
                     }
-                    GUI.Tooltip("Delete the currently selected group.");
+                    GUI.Tooltip(LOC.Get("GPARAM_Groups_Delete_TT"));
 
                     ImGui.EndMenu();
                 }
 
                 // Fields
-                if (ImGui.BeginMenu("Fields"))
+                if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Fields_Header")}##fieldsHeader"))
                 {
-                    if (ImGui.MenuItem("Duplicate", InputManager.GetHint(KeybindID.Duplicate)))
+                    // Duplicate
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Fields_Duplicate")}##duplicateAction", InputManager.GetHint(KeybindID.Duplicate)))
                     {
                         activeView.FieldListView.AddFieldsShortcut();
                     }
+                    GUI.Tooltip(LOC.Get("GPARAM_Fields_Duplicate_TT"));
 
-                    if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
+                    // Delete
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Fields_Delete")}##deleteAction", InputManager.GetHint(KeybindID.Delete)))
                     {
                         activeView.FieldListView.DeleteFieldsShortcut();
                     }
+                    GUI.Tooltip(LOC.Get("GPARAM_Fields_Delete_TT"));
 
                     ImGui.EndMenu();
                 }
 
                 // Values
-                if (ImGui.BeginMenu("Values"))
+                if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Values_Header")}##valuesHeader"))
                 {
-                    if (ImGui.MenuItem("Duplicate", InputManager.GetHint(KeybindID.Duplicate)))
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Values_Duplicate")}##duplicateAction", InputManager.GetHint(KeybindID.Duplicate)))
                     {
                         activeView.FieldValueListView.AddValuesShortcut();
                     }
+                    GUI.Tooltip(LOC.Get("GPARAM_Values_Duplicate_TT"));
 
-                    if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Values_Delete")}##deleteAction", InputManager.GetHint(KeybindID.Delete)))
                     {
                         activeView.FieldValueListView.DeleteValuesShortcut();
                     }
+                    GUI.Tooltip(LOC.Get("GPARAM_Values_Delete_TT"));
 
                     ImGui.EndMenu();
                 }
@@ -212,9 +224,11 @@ public class GparamEditorScreen : EditorScreen
 
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        // View
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem("Tools"))
+            // Tools
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_View_Toggle_Tools")}##toggleTools"))
             {
                 CFG.Current.Interface_GparamEditor_ToolWindow = !CFG.Current.Interface_GparamEditor_ToolWindow;
             }
@@ -244,7 +258,8 @@ public class GparamEditorScreen : EditorScreen
             {
                 await Project.Handler.GparamData.PrimaryBank.SaveGraphicsParam(targetScript.Key, targetScript.Value);
 
-                Smithbox.Log(this, $"[Graphics Param Editor] Saved {targetScript.Key.Filename}.{targetScript.Key.Extension}");
+                Smithbox.Log(this,
+                    LOC.Get("GPARAM_Data_Save_File", targetScript.Key.Filename));
             }
         }
 

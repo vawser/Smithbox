@@ -1,14 +1,5 @@
 ﻿using Andre.IO.VFS;
-using Microsoft.Extensions.Logging;
-using Org.BouncyCastle.Utilities;
 using SoulsFormats;
-using StudioCore.Application;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -95,20 +86,25 @@ public class GparamBank : IDisposable
                                 }
                                 catch (Exception e)
                                 {
-                                    Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} as GPARAM for {Name} within GPARAMBND", e);
+                                    Smithbox.LogError(this, 
+                                        LOC.Get("GPARAM_Data_Failed_Read_GPARAM", file.Name), e);
+
                                     return false;
                                 }
                             }
                             catch (Exception e)
                             {
-                                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} from VFS for {Name} within GPARAMBND", e);
+                                Smithbox.LogError(this,
+                                    LOC.Get("GPARAM_Data_Failed_Read_VFS", file.Name), e);
                                 return false;
                             }
                         }
                     }
                     else
                     {
-                        Smithbox.LogError(this, $"[Graphics Param Editor] Failed to find {key.Path} from VFS");
+                        Smithbox.LogError(this, 
+                            LOC.Get("GPARAM_Data_Failed_Find_VFS", key.Path));
+
                         return false;
                     }
                 }
@@ -128,19 +124,25 @@ public class GparamBank : IDisposable
                             }
                             catch (Exception e)
                             {
-                                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} as GPARAM for {Name}.", e);
+                                Smithbox.LogError(this,
+                                    LOC.Get("GPARAM_Data_Failed_Read_GPARAM", key.Path), e);
+
                                 return false;
                             }
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read {key.Path} from VFS for {Name}.", e);
+                            Smithbox.LogError(this,
+                                LOC.Get("GPARAM_Data_Failed_Read_VFS", key.Path), e);
+
                             return false;
                         }
                     }
                     else
                     {
-                        Smithbox.LogError(this, $"[Graphics Param Editor] Failed to find {key.Path} from VFS");
+                        Smithbox.LogError(this,
+                            LOC.Get("GPARAM_Data_Failed_Find_VFS", key.Path));
+
                         return false;
                     }
                 }
@@ -185,16 +187,33 @@ public class GparamBank : IDisposable
                     if (filename != fileEntry.Filename)
                         continue;
 
-                    entry.Bytes = gparamEntry.Write();
+                    try
+                    {
+                        try
+                        {
+                            entry.Bytes = gparamEntry.Write();
+                        }
+                        catch (Exception ex)
+                        {
+                            Smithbox.LogError(this,
+                                LOC.Get("GPARAM_Data_Failed_Write_GPARAM", entry.Name), ex);
+                        }
 
-                    var writeFile = binder.Write();
+                        var writeFile = binder.Write();
 
-                    Project.VFS.ProjectFS.WriteFile(fileEntry.Path, writeFile);
+                        Project.VFS.ProjectFS.WriteFile(fileEntry.Path, writeFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        Smithbox.LogError(this,
+                            LOC.Get("GPARAM_Data_Failed_Write_Binder", fileEntry.Path), ex);
+                    }
                 }
             }
             else
             {
-                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to find {fileEntry.Path} from VFS");
+                Smithbox.LogError(this,
+                    LOC.Get("GPARAM_Data_Failed_Find_VFS", fileEntry.Path));
             }
         }
         else
@@ -203,19 +222,13 @@ public class GparamBank : IDisposable
             {
                 var bytes = gparamEntry.Write();
 
-                try
-                {
-                    Project.VFS.ProjectFS.WriteFile(fileEntry.Path, bytes);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"[Graphics Param Editor] Failed to write {fileEntry.Filename} as file for {Name}.", e);
-                    return false;
-                }
+                Project.VFS.ProjectFS.WriteFile(fileEntry.Path, bytes);
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to write {fileEntry.Filename} as GPARAM for {Name}.", e);
+                Smithbox.LogError(this,
+                    LOC.Get("GPARAM_Data_Failed_Write_GPARAM", fileEntry.Path), e);
+
                 return false;
             }
         }

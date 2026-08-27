@@ -120,7 +120,6 @@ public class MaterialEditorScreen : EditorScreen
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
 
-
             ImGui.EndMenu();
         }
     }

@@ -14,7 +14,7 @@ public class GparamEditorStub : IEditorStub
         Project = project;
     }
 
-    public string EditorName = "Gparam Editor##GparamEditor";
+    public string EditorName = "";
 
     public string CommandEndpoint = "gparam";
 
@@ -44,7 +44,7 @@ public class GparamEditorStub : IEditorStub
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
         ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin(EditorName, ImGuiWindowFlags.MenuBar))
+        if (ImGui.Begin($"{LOC.Get("GPARAM_Editor_Stub")}##gparamEditorStub", ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
@@ -56,7 +56,7 @@ public class GparamEditorStub : IEditorStub
             else
             {
                 ImGui.Text("");
-                ImGui.Text("   Editor is loading...");
+                ImGui.Text(LOC.Get("SYS_Editor_Loading"));
             }
 
             ImGui.End();

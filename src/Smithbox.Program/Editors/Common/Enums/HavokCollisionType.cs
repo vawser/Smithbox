@@ -10,7 +10,10 @@ namespace StudioCore.Editors.Common;
 
 public enum HavokCollisionType
 {
+    [Display(Name = "MAP_MapCollisionEditType_Low")]
     Low,
+    [Display(Name = "MAP_MapCollisionEditType_High")]
     High,
+    [Display(Name = "MAP_MapCollisionEditType_FallProtection")]
     FallProtection
 }
