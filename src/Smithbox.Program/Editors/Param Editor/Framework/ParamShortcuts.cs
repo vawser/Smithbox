@@ -120,10 +120,10 @@ public class ParamShortcuts
                 }
             }
 
-            // Go To
-            if (InputManager.IsPressed(KeybindID.ParamEditor_RowList_Jump_to_Row_ID))
+            // Find
+            if (InputManager.IsPressed(KeybindID.Find))
             {
-                Editor.GoToMenu.Open();
+                Editor.FindMenu.Open();
             }
         }
 

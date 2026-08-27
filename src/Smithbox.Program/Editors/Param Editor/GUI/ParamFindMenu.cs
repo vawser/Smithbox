@@ -1,24 +1,20 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Keybinds;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
 
-public class ParamGoToMenu
+public class ParamFindMenu
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
 
-    public bool DisplayGoToMenu = false;
-    public ParamGoToMenu(ParamEditorScreen editor, ProjectEntry project)
+
+    private int FindRowID = -1;
+    public bool DisplayMenu = false;
+
+    public ParamFindMenu(ParamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
@@ -26,18 +22,16 @@ public class ParamGoToMenu
 
     public void Open()
     {
-        ImGui.OpenPopup("goToPopup");
+        ImGui.OpenPopup("findPopup");
     }
-
-    private int GoToRowID = -1; 
 
     public void Display()
     {
         var activeView = Editor.ViewHandler.ActiveView;
 
-        if (ImGui.BeginPopup("goToPopup"))
+        if (ImGui.BeginPopup("findPopup"))
         {
-            DisplayGoToMenu = true;
+            DisplayMenu = true;
 
             if (ImGui.Button($"{Icons.LocationArrow}###jumpToAction"))
             {
@@ -56,7 +50,7 @@ public class ParamGoToMenu
 
                     foreach (var row in rows)
                     {
-                        if (row.ID == GoToRowID)
+                        if (row.ID == FindRowID)
                         {
                             activeView.Selection.SetActiveRow(row, true);
                         }
@@ -68,13 +62,13 @@ public class ParamGoToMenu
 
             ImGui.SameLine();
 
-            ImGui.InputInt("##goToId", ref GoToRowID);
+            ImGui.InputInt("##findId", ref FindRowID);
 
             ImGui.EndPopup();
         }
         else
         {
-            DisplayGoToMenu = false;
+            DisplayMenu = false;
         }
     }
 }

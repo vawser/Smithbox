@@ -101,6 +101,9 @@ public enum KeybindID
     [Display(Name = "KEY_Jump", Description = "KEY_Jump_TT")]
     Jump,
 
+    [Display(Name = "KEY_Find", Description = "KEY_Find_TT")]
+    Find,
+
     [Display(Name = "KEY_Reorder_Up", Description = "KEY_Reorder_Up_TT")]
     Reorder_Up,
 
@@ -460,6 +463,7 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.Duplicate, new() { Key = Key.D, Ctrl = true });
         InputManager.Bind(KeybindID.Delete, new() { Key = Key.Delete });
         InputManager.Bind(KeybindID.Jump, new() { Key = Key.Q, Ctrl = true });
+        InputManager.Bind(KeybindID.Find, new() { Key = Key.G, Ctrl = true });
 
         InputManager.Bind(KeybindID.Reorder_Up, new() { Key = Key.Up, Alt = true });
         InputManager.Bind(KeybindID.Reorder_Down, new() { Key = Key.Down, Alt = true });
@@ -639,6 +643,7 @@ public static class KeybindMetadata
         { KeybindID.Duplicate, InputCategory.Contextual },
         { KeybindID.Delete, InputCategory.Contextual },
         { KeybindID.Jump, InputCategory.Contextual },
+        { KeybindID.Find, InputCategory.Contextual },
         { KeybindID.Reorder_Up, InputCategory.Contextual },
         { KeybindID.Reorder_Down, InputCategory.Contextual },
         { KeybindID.Reorder_Top, InputCategory.Contextual },
@@ -754,5 +759,14 @@ public static class KeybindMetadata
 
         // Developer
         { KeybindID.CaptureThumbnailImage, InputCategory.Developer },
+    };
+}
+
+public static class ObsoleteKeybinds
+{
+    // List unused keybinds here so we can hide them in the shortcuts menu
+    public static readonly List<KeybindID> Keybinds = new()
+    {
+        KeybindID.ParamEditor_RowList_Jump_to_Row_ID
     };
 }

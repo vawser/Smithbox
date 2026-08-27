@@ -206,6 +206,10 @@ public class KeybindsMenu
 
                     foreach (var (action, bindings) in filteredActions)
                     {
+                        // Hide obsolete keybinds
+                        if (ObsoleteKeybinds.Keybinds.Contains(action))
+                            continue;
+
                         var name = "Unassigned";
                         var desc = "";
 
