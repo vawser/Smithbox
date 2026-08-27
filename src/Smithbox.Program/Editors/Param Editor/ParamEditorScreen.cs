@@ -31,6 +31,7 @@ public class ParamEditorScreen : EditorScreen
     public ParamShortcuts Shortcuts;
 
     public ParamPasteMenu PasteMenu;
+    public ParamGoToMenu GoToMenu;
 
     private bool ImportRowNamesPrompted = false;
 
@@ -45,6 +46,7 @@ public class ParamEditorScreen : EditorScreen
         Shortcuts = new(this, project);
 
         PasteMenu = new(this, project);
+        GoToMenu = new(this, project);
 
         Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
     }
@@ -86,6 +88,7 @@ public class ParamEditorScreen : EditorScreen
         }
 
         PasteMenu.Display();
+        GoToMenu.Display();
         StatisticsMenu.Display();
 
         if (activeView != null)

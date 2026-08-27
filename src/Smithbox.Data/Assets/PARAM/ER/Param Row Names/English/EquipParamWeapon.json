@@ -3218,6 +3218,12 @@
       ]
     },
     {
+      "ID": 3560000,
+      "Entries": [
+        "Leontiel's Greatsword"
+      ]
+    },
+    {
       "ID": 3690000,
       "Entries": [
         "[NPC] Greatsword of Solitude"
@@ -3227,6 +3233,12 @@
       "ID": 3900000,
       "Entries": [
         ""
+      ]
+    },
+    {
+      "ID": 3910000,
+      "Entries": [
+        "[NPC] Leontiel's Greatsword"
       ]
     },
     {
@@ -5789,6 +5801,84 @@
       "ID": 8520000,
       "Entries": [
         "Horned Warrior's Greatsword"
+      ]
+    },
+    {
+      "ID": 8530000,
+      "Entries": [
+        "Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8530100,
+      "Entries": [
+        "Heavy Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8530200,
+      "Entries": [
+        "Keen Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8530300,
+      "Entries": [
+        "Quality Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8530400,
+      "Entries": [
+        "Fire Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8530500,
+      "Entries": [
+        "Flame Art Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8530600,
+      "Entries": [
+        "Lightning Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8530700,
+      "Entries": [
+        "Sacred Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8530800,
+      "Entries": [
+        "Magic Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8530900,
+      "Entries": [
+        "Cold Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8531000,
+      "Entries": [
+        "Poison Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8531100,
+      "Entries": [
+        "Blood Hefty Scimitar"
+      ]
+    },
+    {
+      "ID": 8531200,
+      "Entries": [
+        "Occult Hefty Scimitar"
       ]
     },
     {
@@ -8585,6 +8675,18 @@
       "ID": 13500000,
       "Entries": [
         "Serpent Flail"
+      ]
+    },
+    {
+      "ID": 13510000,
+      "Entries": [
+        "Golden Order Flail"
+      ]
+    },
+    {
+      "ID": 13900000,
+      "Entries": [
+        "[NPC] Golden Order Flail"
       ]
     },
     {
@@ -17840,6 +17942,84 @@
       ]
     },
     {
+      "ID": 31540000,
+      "Entries": [
+        "Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31540100,
+      "Entries": [
+        "Heavy Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31540200,
+      "Entries": [
+        "Keen Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31540300,
+      "Entries": [
+        "Quality Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31540400,
+      "Entries": [
+        "Fire Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31540500,
+      "Entries": [
+        "Flame Art Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31540600,
+      "Entries": [
+        "Lightning Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31540700,
+      "Entries": [
+        "Sacred Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31540800,
+      "Entries": [
+        "Magic Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31540900,
+      "Entries": [
+        "Cold Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31541000,
+      "Entries": [
+        "Poison Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31541100,
+      "Entries": [
+        "Blood Silver Grooved Shield"
+      ]
+    },
+    {
+      "ID": 31541200,
+      "Entries": [
+        "Occult Silver Grooved Shield"
+      ]
+    },
+    {
       "ID": 31690000,
       "Entries": [
         "[NPC] Golden Lion Shield"
@@ -20702,6 +20882,84 @@
       ]
     },
     {
+      "ID": 62520000,
+      "Entries": [
+        "Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62520100,
+      "Entries": [
+        "Heavy Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62520200,
+      "Entries": [
+        "Keen Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62520300,
+      "Entries": [
+        "Quality Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62520400,
+      "Entries": [
+        "Fire Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62520500,
+      "Entries": [
+        "Flame Art Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62520600,
+      "Entries": [
+        "Lightning Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62520700,
+      "Entries": [
+        "Sacred Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62520800,
+      "Entries": [
+        "Magic Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62520900,
+      "Entries": [
+        "Cold Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62521000,
+      "Entries": [
+        "Poison Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62521100,
+      "Entries": [
+        "Blood Ritual Thrusting Shield"
+      ]
+    },
+    {
+      "ID": 62521200,
+      "Entries": [
+        "Occult Ritual Thrusting Shield"
+      ]
+    },
+    {
       "ID": 63500000,
       "Entries": [
         "Smithscript Dagger"
@@ -20942,6 +21200,84 @@
       ]
     },
     {
+      "ID": 64530000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64530100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64530200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64530300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64530400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64530500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64530600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64530700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64530800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64530900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64531000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64531100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64531200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 66500000,
       "Entries": [
         "Great Katana"
@@ -21029,6 +21365,84 @@
       "ID": 66520000,
       "Entries": [
         "Rakshasa's Great Katana"
+      ]
+    },
+    {
+      "ID": 66530000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66530100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66530200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66530300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66530400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66530500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66530600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66530700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66530800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66530900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66531000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66531100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66531200,
+      "Entries": [
+        ""
       ]
     },
     {
@@ -21131,6 +21545,84 @@
       "ID": 67520000,
       "Entries": [
         "Rellana's Twin Blades"
+      ]
+    },
+    {
+      "ID": 67530000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67530100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67530200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67530300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67530400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67530500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67530600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67530700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67530800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67530900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67531000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67531100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67531200,
+      "Entries": [
+        ""
       ]
     },
     {

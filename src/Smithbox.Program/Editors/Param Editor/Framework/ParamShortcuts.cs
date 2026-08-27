@@ -119,6 +119,12 @@ public class ParamShortcuts
                     activeView.JumpToSelectedRow = true;
                 }
             }
+
+            // Go To
+            if (InputManager.IsPressed(KeybindID.ParamEditor_RowList_Jump_to_Row_ID))
+            {
+                Editor.GoToMenu.Open();
+            }
         }
 
         // Sort Rows
