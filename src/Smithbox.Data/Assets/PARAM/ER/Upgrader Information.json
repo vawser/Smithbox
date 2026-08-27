@@ -1,5 +1,5 @@
 {
-  "MaxVersion": "1_16_1_1000L",
+  "MaxVersion": "1_17_0_1000L",
   "RegulationEntries": [
     {
       "Version": "1.00.0.0092",
@@ -100,6 +100,10 @@
     {
       "Version": "1.16.1.1000",
       "Folder": "1.16.1 (11611000)"
+    },
+    {
+      "Version": "1.17.0.1000",
+      "Folder": "1.17.0 (11701000)"
     }
   ],
   "UpgradeCommands": [

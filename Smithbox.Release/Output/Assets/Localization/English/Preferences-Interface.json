@@ -523,6 +523,22 @@
     {
       "Key": "PREF_CE_DisplayGroupEditor_CombinedActive_Checkbox",
       "Text": "Combined Group: Active Checkbox"
+    },
+    {
+      "Key": "PREF_Interface_Display_Title_Headers",
+      "Text": "Display Title Headers"
+    },
+    {
+      "Key": "PREF_Interface_Display_Title_Headers_TT",
+      "Text": "If enabled, title headers are displayed."
+    },
+    {
+      "Key": "PREF_Interface_Display_Searchbar_Minimize",
+      "Text": "Display Searchbar Minimize Buttons"
+    },
+    {
+      "Key": "PREF_Interface_Display_Searchbar_Minimize_TT",
+      "Text": "If enabled, the searchbar minimize toggle buttons are displayed."
     }
   ]
 }

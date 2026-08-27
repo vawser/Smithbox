@@ -1,28 +1,72 @@
 {
   "Entries": [
     {
-      "Key": "MODEL_Data_Log_Invalid_Model_Read",
-      "Text": "Failed to read {0} for FLVER."
+      "Key": "MODEL_Data_Failed_To_Find_Binder",
+      "Text": "Failed to find binder file: {0}"
     },
     {
-      "Key": "MODEL_Data_Log_Invalid_Model_Binder_Read",
-      "Text": "Failed to read {0} for BND."
+      "Key": "MODEL_Data_Failed_To_Read_Binder_File",
+      "Text": "Failed to read binder file: {0}"
     },
     {
-      "Key": "MODEL_Data_Log_Save_FLVER",
-      "Text": "Saved FLVER: {0}"
+      "Key": "MODEL_Data_Failed_To_Read_FLVER",
+      "Text": "Failed to read FLVER file: {0}"
     },
     {
-      "Key": "MODEL_Data_Log_Save_FLVER_Failed",
-      "Text": "Failed to write FLVER: {0}"
+      "Key": "MODEL_Data_Failed_To_Read_CLM2",
+      "Text": "Failed to read CLM2 file: {0}"
     },
     {
-      "Key": "MODEL_Data_Setup_FlverAnnotations_PASS",
-      "Text": "Setup the FLVER annotations."
+      "Key": "MODEL_Data_Failed_To_Read_HKXPWV",
+      "Text": "Failed to read HKXPWV file: {0}"
     },
     {
-      "Key": "MODEL_Data_Setup_FlverAnnotations_FAIL",
-      "Text": "Failed to setup the FLVER annotations."
+      "Key": "MODEL_Data_Failed_To_Read_GRASS",
+      "Text": "Failed to read GRASS file: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Failed_To_Read_EDGE",
+      "Text": "Failed to read EDGE file: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Failed_To_Write_FLVER",
+      "Text": "Failed to write FLVER file: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Failed_To_Write_CLM2",
+      "Text": "Failed to write CLM2 file: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Failed_To_Write_HKXPWV",
+      "Text": "Failed to write HKXPWV file: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Failed_To_Write_GRASS",
+      "Text": "Failed to write GRASS file: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Failed_To_Write_EDGE",
+      "Text": "Failed to write EDGE file: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Write_FLVER_Log",
+      "Text": "Written FLVER file: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Write_CLM2_Log",
+      "Text": "Written CLM2 file: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Write_HKXPWV_Log",
+      "Text": "Written HKXPWV file: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Write_GRASS_Log",
+      "Text": "Written GRASS file: {0}"
+    },
+    {
+      "Key": "MODEL_Data_Write_EDGE_Log",
+      "Text": "Written EDGE file: {0}"
     },
     {
       "Key": "MODEL_Data_Setup_Primary_Bank_PASS",
@@ -33,20 +77,16 @@
       "Text": "Failed to setup the Primary Bank."
     },
     {
-      "Key": "MODEL_Data_Log_Failed_Deserialize_Flver_Annotations",
-      "Text": "Failed to deserialize the FLVER annotations: {0}"
+      "Key": "MODEL_Data_Setup_Model_Meta_PASS",
+      "Text": "Setup the Model Meta."
     },
     {
-      "Key": "MODEL_Data_Log_Failed_Read_Flver_Annotations",
-      "Text": "Failed to read the FLVER annotations: {0}"
+      "Key": "MODEL_Data_Setup_Model_Meta_FAIL",
+      "Text": "Failed to setup the Model Meta."
     },
     {
-      "Key": "MODEL_Data_Log_Failed_Deserialize_Flver_Enums",
-      "Text": "Failed to deserialize the FLVER enums: {0}"
-    },
-    {
-      "Key": "MODEL_Data_Log_Failed_Read_Flver_Enums",
-      "Text": "Failed to read the FLVER enums: {0}"
+      "Key": "MODEL_Data_Log_Failed_Model_Meta",
+      "Text": "Failed to deserialize Model Meta file: {0}"
     }
   ]
 }

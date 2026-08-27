@@ -1,0 +1,16 @@
+{
+  "Type": "SoulsFormats.HKXPWV+AnimBoneEntry",
+  "Fields": [
+      {
+          "Field": "SkeletonParamID",
+          "Name": "Skeleton Param ID",
+          "Description": "ID of the SkeletonParam entry referenced by this animation bone.",
+          "ParamRef": "SkeletonParam"
+      },
+      {
+          "Field": "Unk2",
+          "Name": "Unknown",
+          "Description": ""
+      }
+  ]
+}

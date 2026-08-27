@@ -29,6 +29,10 @@
       "Text": "Fonts"
     },
     {
+      "Key": "PREF_Category_UI_Editor_Presentation",
+      "Text": "Editor Presentation"
+    },
+    {
       "Key": "PREF_Category_UI_Theme",
       "Text": "Theme"
     },

@@ -1,0 +1,44 @@
+{
+  "Entries": [
+    {
+      "Key": "FILE_ItemViewer_Header",
+      "Text": "Item"
+    },
+    {
+      "Key": "FILE_ItemViewer_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "FILE_ItemViewer_Main_File_Header",
+      "Text": "Container File"
+    },
+    {
+      "Key": "FILE_ItemViewer_Main_File_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "FILE_ItemViewer_MainFile_Name",
+      "Text": "Name: {0}"
+    },
+    {
+      "Key": "FILE_ItemViewer_MainFile_Path",
+      "Text": "Path: {0}"
+    },
+    {
+      "Key": "FILE_ItemViewer_Binder_File_Header",
+      "Text": "Internal Files"
+    },
+    {
+      "Key": "FILE_ItemViewer_Binder_File_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "FILE_ItemViewer_Texture_File_Header",
+      "Text": "Texture Files"
+    },
+    {
+      "Key": "FILE_ItemViewer_Texture_File_Header_TT",
+      "Text": ""
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_ValueList_TimeOfDay_Column_Toggle_Show",
+      "Text": "Show Time of Day column"
+    },
+    {
+      "Key": "GPARAM_GroupList_TimeOfDay_Column_Toggle_Hide",
+      "Text": "Hide Time of Day column"
+    },
+    {
+      "Key": "GPARAM_GroupList_TimeOfDay_Column_Toggle_TT",
+      "Text": "Toggle the display of the Time of Day column.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "GPARAM_ValueList_Info_Column_Toggle_Show",
+      "Text": "Show Information column"
+    },
+    {
+      "Key": "GPARAM_GroupList_Info_Column_Toggle_Hide",
+      "Text": "Hide TInformation column"
+    },
+    {
+      "Key": "GPARAM_GroupList_Info_Column_Toggle_TT",
+      "Text": "Toggle the display of the Information column.\n\nCurrent Mode:\n{0}"
+    }
+  ]
+}

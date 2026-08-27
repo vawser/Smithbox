@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "EDITOR_PropEdit_Remove_List_Entry",
+      "Text": "-"
+    },
+    {
+      "Key": "EDITOR_PropEdit_Remove_List_Entry_TT",
+      "Text": "Remove this entry from the list."
+    },
+    {
+      "Key": "EDITOR_PropEdit_Add_List_Entry",
+      "Text": "+"
+    },
+    {
+      "Key": "EDITOR_PropEdit_Add_List_Entry_TT",
+      "Text": "Add a new entry to the end of this list."
+    }
+  ]
+}

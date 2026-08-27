@@ -1,0 +1,37 @@
+{
+  "Type": "SoulsFormats.FLVER2+FaceSet",
+  "Fields": [
+      {
+          "Field": "Flags",
+          "Name": "Flags",
+          "Description": "FaceSet Flags on this FaceSet."
+      },
+      {
+          "Field": "TriangleStrip",
+          "Name": "Is Triangle Strip",
+          "Description": "Whether vertices are defined as a triangle strip or individual triangles."
+      },
+      {
+          "Field": "CullBackfaces",
+          "Name": "Cull Backfaces",
+          "Description": "Whether triangles can be seen through from behind."
+      },
+      {
+          "Field": "Unk06",
+          "Name": "Unknown",
+          "Description": ""
+      },
+      {
+          "Field": "Indices",
+          "Name": "Indices",
+          "Description": "Indices to vertices in a mesh.",
+          "IsMeshData": true
+      },
+      {
+          "Field": "EdgeIndexGroups",
+          "Name": "Edge Index Groups",
+          "Description": "Edge compression information useful for edge compressed vertex buffers.",
+          "IsMeshData": true
+      }
+  ]
+}

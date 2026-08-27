@@ -1,0 +1,50 @@
+{
+  "Type": "SoulsFormats.FLVER+Vertex",
+  "Fields": [
+      {
+          "Field": "Position",
+          "Name": "Position",
+          "Description": "Where the vertex is."
+      },
+      {
+          "Field": "BoneWeights",
+          "Name": "Bone Weights",
+          "Description": "Weight of the vertex's attachment to bones; must be 4 length."
+      },
+      {
+          "Field": "BoneIndices",
+          "Name": "Bone Indices",
+          "Description": "Bones the vertex is weighted to, indexing the parent mesh's bone indices; must be 4 length."
+      },
+      {
+          "Field": "Normal",
+          "Name": "Normal",
+          "Description": "Vector pointing away from the surface."
+      },
+      {
+          "Field": "NormalW",
+          "Name": "NormalW",
+          "Description": "Fourth component of the normal, read without transforming into a float; used as a bone index for binding to a single bone."
+      },
+      {
+          "Field": "UVs",
+          "Name": "UVs",
+          "Description": "Texture coordinates of the vertex."
+      },
+      {
+          "Field": "Tangents",
+          "Name": "Tangents",
+          "Description": "Vector pointing perpendicular to the normal."
+      },
+      {
+          "Field": "Bitangent",
+          "Name": "Bitangent",
+          "Description": "Vector pointing perpendicular to the normal and tangent."
+      },
+      {
+          "Field": "Colors",
+          "Name": "Colors",
+          "Description": "Data used for alpha, blending, etc."
+      }
+  ]
+}

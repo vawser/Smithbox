@@ -18,7 +18,7 @@
     },
     {
       "Key": "TEXT_ContainerList_Category_Mode_TT",
-      "Text": "Toggle which categories appear in the list.\nCurrent Mode: {0}"
+      "Text": "Toggle which categories appear in the list.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "TEXT_ContainerList_DS2_Common",

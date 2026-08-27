@@ -18,7 +18,7 @@
     },
     {
       "Key": "TEXT_FileList_Toggle_Display_Type_TT",
-      "Text": "Toggle if all the individual files are displayed, or they are grouped under a common file.\nCurrent Mode: {0}"
+      "Text": "Toggle if all the individual files are displayed, or they are grouped under a common file.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "TEXT_FileList_ListHeader_General",

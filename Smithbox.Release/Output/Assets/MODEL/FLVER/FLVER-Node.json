@@ -1,0 +1,64 @@
+{
+  "Type": "SoulsFormats.FLVER+Node",
+  "Fields": [
+      {
+          "Field": "Name",
+          "Name": "Name",
+          "Description": "The name of this node."
+      },
+      {
+          "Field": "ParentIndex",
+          "Name": "Parent Index",
+          "Description": "Index of this node's parent, or -1 for none.",
+          "NodeRef": true
+      },
+      {
+          "Field": "FirstChildIndex",
+          "Name": "First Child Index",
+          "Description": "Index of this node's first child, or -1 for none.",
+          "NodeRef": true
+      },
+      {
+          "Field": "NextSiblingIndex",
+          "Name": "Next Sibling Index",
+          "Description": "Index of the next child of this node's parent, or -1 for none.",
+          "NodeRef": true
+      },
+      {
+          "Field": "PreviousSiblingIndex",
+          "Name": "Previous Sibling Index",
+          "Description": "Index of the previous child of this node's parent, or -1 for none.",
+          "NodeRef": true
+      },
+      {
+          "Field": "Translation",
+          "Name": "Translation",
+          "Description": "Translation of this bone."
+      },
+      {
+          "Field": "Rotation",
+          "Name": "Rotation",
+          "Description": "Rotation of this bone; euler radians in XZY order."
+      },
+      {
+          "Field": "Scale",
+          "Name": "Scale",
+          "Description": "Scale of this bone."
+      },
+      {
+          "Field": "BoundingBoxMin",
+          "Name": "Bounding Box: Minimum Extent",
+          "Description": "Minimum extent of the vertices weighted to this bone."
+      },
+      {
+          "Field": "BoundingBoxMax",
+          "Name": "Bounding Box: Maximum Extent",
+          "Description": "Maximum extent of the vertices weighted to this bone."
+      },
+      {
+          "Field": "Flags",
+          "Name": "Flags",
+          "Description": "A set of flags denoting the properties of a node."
+      }
+  ]
+}

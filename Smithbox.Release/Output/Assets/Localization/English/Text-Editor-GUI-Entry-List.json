@@ -50,7 +50,7 @@
     },
     {
       "Key": "TEXT_EntryList_NullEntries_Hint",
-      "Text": "Toggle the display of the null text entries.\nCurrent Mode: {0}"
+      "Text": "Toggle the display of the null text entries.\n\nCurrent Mode:\n{0}"
     }
   ]
 }

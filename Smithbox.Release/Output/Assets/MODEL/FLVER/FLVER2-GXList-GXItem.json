@@ -1,0 +1,20 @@
+{
+  "Type": "SoulsFormats.FLVER2+GXList+GXItem",
+  "Fields": [
+      {
+          "Field": "ID",
+          "Name": "ID",
+          "Description": "In DS2, ID is just a number; in other games, it's 4 ASCII characters."
+      },
+      {
+          "Field": "Unk04",
+          "Name": "Unknown",
+          "Description": "Unknown; typically 100."
+      },
+      {
+          "Field": "Data",
+          "Name": "Data",
+          "Description": "Raw parameter data, usually just a bunch of floats."
+      }
+  ]
+}

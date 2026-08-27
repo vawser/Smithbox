@@ -1,0 +1,40 @@
+{
+  "Entries": [
+    {
+      "Key": "FILE_FileBrowser_Stub",
+      "Text": "File Browser"
+    },
+    {
+      "Key": "FILE_FileBrowser_View_Game_Directory",
+      "Text": "Open Game Directory"
+    },
+    {
+      "Key": "FILE_FileBrowser_View_Game_Directory_TT",
+      "Text": "Open the current project's specified game directory in a file explorer."
+    },
+    {
+      "Key": "FILE_FileBrowser_View_Project_Directory",
+      "Text": "Open Game Directory"
+    },
+    {
+      "Key": "FILE_FileBrowser_View_Project_Directory_TT",
+      "Text": "Open the current project's specified project directory in a file explorer."
+    },
+    {
+      "Key": "FILE_FileBrowser_ViewToggle_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "FILE_FileBrowser_File_List",
+      "Text": "File List"
+    },
+    {
+      "Key": "FILE_FileBrowser_Item_Viewer",
+      "Text": "Item Viewer"
+    },
+    {
+      "Key": "FILE_FileBrowser_Tools",
+      "Text": "Tools"
+    }
+  ]
+}

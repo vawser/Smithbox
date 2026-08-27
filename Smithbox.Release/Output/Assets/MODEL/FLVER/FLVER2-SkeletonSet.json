@@ -1,0 +1,15 @@
+{
+  "Type": "SoulsFormats.FLVER2+SkeletonSet",
+  "Fields": [
+      {
+          "Field": "BaseSkeleton",
+          "Name": "Base Skeleton",
+          "Description": "Contains the standard skeleton hierarchy, which corresponds to the node hierarchy."
+      },
+      {
+          "Field": "AllSkeletons",
+          "Name": "All Skeletons",
+          "Description": "Contains all skeleton hierarchies including that of the control rig and the ragdoll bones."
+      }
+  ]
+}

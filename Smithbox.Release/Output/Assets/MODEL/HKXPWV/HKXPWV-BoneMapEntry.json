@@ -1,0 +1,15 @@
+{
+  "Type": "SoulsFormats.HKXPWV+BoneMapEntry",
+  "Fields": [
+      {
+          "Field": "UnknownValueA",
+          "Name": "Unknown",
+          "Description": ""
+      },
+      {
+          "Field": "UnknownValueB",
+          "Name": "Unknown",
+          "Description": ""
+      }
+  ]
+}

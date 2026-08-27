@@ -1,0 +1,15 @@
+{
+  "Type": "SoulsFormats.GRASS+Vertex",
+  "Fields": [
+      {
+          "Field": "Position",
+          "Name": "Position",
+          "Description": "Position of the vertex, relative to the parent model."
+      },
+      {
+          "Field": "GrassDensities",
+          "Name": "Grass Densities",
+          "Description": "Densities of the six possible grass types; usual range is 0 to 1 but higher is supported."
+      }
+  ]
+}

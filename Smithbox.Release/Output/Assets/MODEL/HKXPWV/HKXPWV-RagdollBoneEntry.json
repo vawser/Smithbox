@@ -1,0 +1,41 @@
+{
+  "Type": "SoulsFormats.HKXPWV+RagdollBoneEntry",
+  "Fields": [
+      {
+          "Field": "RagdollParamID",
+          "Name": "Ragdoll Param ID",
+          "Description": "ID of the RagdollParam entry referenced by this ragdoll bone. -1 to not reference an entry.",
+          "ParamRef": "RagdollParam"
+      },
+      {
+          "Field": "DamageAnimID",
+          "Name": "Damage Anim ID",
+          "Description": "The animation ID to play when this ragdoll bone is damaged.\nPlays animation a99_XXXX in the TAE."
+      },
+      {
+          "Field": "NPCPartGroupIndex",
+          "Name": "NPC Part Group Index",
+          "Description": "Defines which NPC part group (if any) this ragdoll bone's collider is assigned.\nUsed for NPC part events in EMEVD or enemy weak points."
+      },
+      {
+          "Field": "Unknown",
+          "Name": "Unknown",
+          "Description": ""
+      },
+      {
+          "Field": "UnknownBB",
+          "Name": "Unknown",
+          "Description": ""
+      },
+      {
+          "Field": "Unk0C",
+          "Name": "Unknown",
+          "Description": ""
+      },
+      {
+          "Field": "Unk10",
+          "Name": "Unknown",
+          "Description": ""
+      }
+  ]
+}

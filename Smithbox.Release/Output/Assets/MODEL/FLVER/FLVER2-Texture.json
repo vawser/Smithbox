@@ -1,0 +1,45 @@
+{
+  "Type": "SoulsFormats.FLVER2+Texture",
+  "Fields": [
+      {
+          "Field": "ParamName",
+          "Name": "Param Name",
+          "Description": "Indicates the param name of this texture map which much match to one inside the material file."
+      },
+      {
+          "Field": "Path",
+          "Name": "Path",
+          "Description": "Network path to the texture file to use."
+      },
+      {
+          "Field": "TilingScale",
+          "Name": "Tiling Scale",
+          "Description": "Scale of the texture when a tiling type is used."
+      },
+      {
+          "Field": "TilingTypeU",
+          "Name": "Tiling Type: U",
+          "Description": "The tiling type for the U component of the texture coordinates."
+      },
+      {
+          "Field": "TilingTypeV",
+          "Name": "Tiling Type: V",
+          "Description": "The tiling type for the V component of the texture coordinates."
+      },
+      {
+          "Field": "Unk14",
+          "Name": "Unknown",
+          "Description": ""
+      },
+      {
+          "Field": "Unk18",
+          "Name": "Unknown",
+          "Description": ""
+      },
+      {
+          "Field": "Unk1C",
+          "Name": "Unknown",
+          "Description": ""
+      }
+  ]
+}

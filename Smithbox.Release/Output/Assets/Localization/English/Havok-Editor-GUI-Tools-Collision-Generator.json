@@ -5,16 +5,108 @@
       "Text": "Collision Generator"
     },
     {
-      "Key": "HAVOK_ColGen_No_Binder_Entry",
+      "Key": "HAVOK_CollisionGen_No_Binder_Entry",
       "Text": "No source file has been selected yet."
     },
     {
-      "Key": "HAVOK_ColGen_No_File_Entry",
+      "Key": "HAVOK_CollisionGen_No_File_Entry",
       "Text": "No internal file has been selected yet."
     },
     {
-      "Key": "HAVOK_ColGen_Invalid_Category",
+      "Key": "HAVOK_CollisionGen_Invalid_Category",
       "Text": "This tool is only for Map or Asset Collision category files."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_No_Collision_Selected",
+      "Text": "No collision has been selected yet."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Hint_TT",
+      "Text": "Use this tool to replace the existing collision shape for {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Shape_Header",
+      "Text": "Shape"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Shape_Header_TT",
+      "Text": "Determines the shape to generate the new collision shape as."
+    },
+    {
+      "Key": "HAVOK_CollisionGeneratorShape_Square",
+      "Text": "Square"
+    },
+    {
+      "Key": "HAVOK_CollisionGeneratorShape_Circle",
+      "Text": "Circle"
+    },
+    {
+      "Key": "HAVOK_CollisionGeneratorShape_Triangle",
+      "Text": "Triangle"
+    },
+    {
+      "Key": "HAVOK_CollisionGeneratorShape_SemiCircle",
+      "Text": "Semi-Circle"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Parameters_Header",
+      "Text": "Parameters"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Parameters_Header_TT",
+      "Text": "Determines the generation parameters to use for the target shape."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Action_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Action_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Generate_Action",
+      "Text": "Generate"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Generate_Action_TT",
+      "Text": "Generate the new collision shape and replace the shape of the currently selected collision."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Generate_Log",
+      "Text": "Generated a new collision shape for {0}."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Facing_Header",
+      "Text": "Facing"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Facing_Header_TT",
+      "Text": "Determines the direction of the collision faces."
+    },
+    {
+      "Key": "HAVOK_CollisionGeneratorFacing_Up",
+      "Text": "Facing Upwards"
+    },
+    {
+      "Key": "HAVOK_CollisionGeneratorFacing_Down",
+      "Text": "Facing Downwards"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Materials_Header",
+      "Text": "Materials"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Materials_Header_TT",
+      "Text": "Determines the materials associated with each triange."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Include_Materials_Toggle",
+      "Text": "Include Materials"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Include_Materials_Toggle_TT",
+      "Text": "If enabled, a material palette is built for the collision."
     }
   ]
 }

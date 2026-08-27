@@ -1,0 +1,62 @@
+{
+  "Type": "SoulsFormats.FLVER+Dummy",
+  "Fields": [
+      {
+          "Field": "Position",
+          "Name": "Position",
+          "Description": "Location of the dummy point."
+      },
+      {
+          "Field": "Forward",
+          "Name": "Forward",
+          "Description": "Vector indicating the dummy point's forward direction."
+      },
+      {
+          "Field": "Upward",
+          "Name": "Upward",
+          "Description": "Vector indicating the dummy point's upward direction."
+      },
+      {
+          "Field": "ReferenceID",
+          "Name": "Reference ID",
+          "Description": "Indicates the type of dummy point this is (hitbox, sfx, etc)."
+      },
+      {
+          "Field": "ParentBoneIndex",
+          "Name": "Parent Bone Index",
+          "Description": "Index of a bone that the dummy point is initially transformed to before binding to the attach bone.",
+          "NodeRef": true
+      },
+      {
+          "Field": "AttachBoneIndex",
+          "Name": "Attach Bone Index",
+          "Description": "Index of the bone that the dummy point follows physically.",
+          "NodeRef": true
+      },
+      {
+          "Field": "Color",
+          "Name": "Color",
+          "Description": ""
+      },
+      {
+          "Field": "FollowAttachBone",
+          "Name": "Follow Attach Bone",
+          "Description": "Whether the dummy follows the attach bone."
+      },
+      {
+          "Field": "UseUpwardVector",
+          "Name": "Use Upward Vector",
+          "Description": "If false, the upward vector is not read."
+      },
+      {
+          "Field": "Unk30",
+          "Name": "Unknown",
+          "Description": ""
+      },
+      {
+          "Field": "Unk34",
+          "Name": "Unknown",
+          "Description": ""
+      }
+  ]
+}

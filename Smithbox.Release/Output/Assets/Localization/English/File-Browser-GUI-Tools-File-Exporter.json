@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "FILE_FileExporter_Export_Directory_Header",
+      "Text": "Export Directory"
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Directory_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Dir_Hint",
+      "Text": "Set the export directory..."
+    },
+    {
+      "Key": "FILE_FileExporter_Set_Export_Dir_Action",
+      "Text": "Set Output Directory"
+    },
+    {
+      "Key": "FILE_FileExporter_Set_Export_Dir_Action_TT",
+      "Text": "Set the directory the files are extracted into."
+    },
+    {
+      "Key": "FILE_FileExporter_Open_Export_Dir_Action",
+      "Text": "Open Output Directory"
+    },
+    {
+      "Key": "FILE_FileExporter_Open_Export_Dir_Action_TT",
+      "Text": "Open the current output directory in a file explorer."
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Container_File",
+      "Text": "Export Container File"
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Container_File_TT",
+      "Text": "Export the currently selected container file."
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Internal_File",
+      "Text": "Export Internal File"
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Internal_File_TT",
+      "Text": "Export the currently selected internal file."
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Texture_File",
+      "Text": "Export Texture File"
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Texture_File_TT",
+      "Text": "Export the currently selected texture file."
+    },
+    {
+      "Key": "FILE_FileExporter_Select_Output_Dir",
+      "Text": "Select Output Directory"
+    },
+    {
+      "Key": "FILE_FileExporter_No_Output_Dir",
+      "Text": "Output directory has not been set."
+    },
+    {
+      "Key": "FILE_FileExporter_No_Container_File_Selected",
+      "Text": "No main file has been selected."
+    },
+    {
+      "Key": "FILE_FileExporter_No_Internal_File_Selected",
+      "Text": "No internal file has been selected."
+    },
+    {
+      "Key": "FILE_FileExporter_Exported_File",
+      "Text": "Exported file: {0}"
+    }
+  ]
+}
