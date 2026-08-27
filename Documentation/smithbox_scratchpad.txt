@@ -26,4 +26,15 @@ GUI.DisplayToggleButton("fullPathToggle", Icons.FileText,
     "HAVOK_BinderView_BinderPath_Display_Full",
     "HAVOK_BinderView_BinderPath_Display_TT");
     
-    
+    Vagabond
+    Warrior
+    Hero
+    Bandit
+    Astrologer
+    Prophet
+    Confessor
+    Samurai
+    Prisoner
+    Wretch
+    Idus Knight
+    Heavy Knight
