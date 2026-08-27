@@ -100,19 +100,22 @@ public class ModelFileList
 
             if (CFG.Current.ModelEditor_Files_AutoLoadFirstEntry)
             {
-                var first = container.Models.First();
-
-                if (View.Selection.SelectedModelWrapper != null)
+                if (container.Models.Count > 0)
                 {
-                    View.Selection.SelectedModelWrapper.Unload();
+                    var first = container.Models.First();
+
+                    if (View.Selection.SelectedModelWrapper != null)
+                    {
+                        View.Selection.SelectedModelWrapper.Unload();
+                    }
+
+                    View.Selection.SelectedModelWrapper = first;
+
+                    View.ViewportActionManager.Clear();
+                    View.ActionManager.Clear();
+
+                    first.Load();
                 }
-
-                View.Selection.SelectedModelWrapper = first;
-
-                View.ViewportActionManager.Clear();
-                View.ActionManager.Clear();
-
-                first.Load();
             }
         }
 
