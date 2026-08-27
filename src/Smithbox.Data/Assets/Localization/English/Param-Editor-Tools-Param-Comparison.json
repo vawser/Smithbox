@@ -170,19 +170,19 @@
     },
     {
       "Key": "PARAM_Comparison_Report_Hint",
-      "Text": "# Field values follow this format: [Comparison Value] -> [Primary Value]"
+      "Text": "# [{0}] compared against [{1}]\n# Field values follow this format: [Value from {0}] -> [Value from {1}]"
     },
     {
       "Key": "PARAM_Comparison_Report_Missing_Param_Key",
-      "Text": "{0} does not exist in comparison."
+      "Text": "{0} does not exist in [{1}]."
     },
     {
       "Key": "PARAM_Comparison_Report_Missing_Row_ID",
-      "Text": "{0} does not exist in comparison."
+      "Text": "{0} does not exist in [{1}]."
     },
     {
       "Key": "PARAM_Comparison_Report_Missing_Row_ID_With_Name",
-      "Text": "  {0} ({1}) does not exist in comparison."
+      "Text": "  {0} ({1}) does not exist in [{2}]."
     },
     {
       "Key": "PARAM_ComparisonReport_Header",

@@ -471,7 +471,7 @@ public class ParamComparisonTool
             }
         }
 
-        AddLog(LOC.Get("PARAM_Comparison_Report_Hint"));
+        AddLog(LOC.Get("PARAM_Comparison_Report_Hint", TargetProject.Descriptor.ProjectName, Project.Descriptor.ProjectName));
 
         var targetedSet = TargetedParams.Count > 0 ? new HashSet<string>(TargetedParams) : null;
 
@@ -492,7 +492,7 @@ public class ParamComparisonTool
             }
             else
             {
-                AddLog(LOC.Get("PARAM_Comparison_Report_Missing_Param_Key"));
+                AddLog(LOC.Get("PARAM_Comparison_Report_Missing_Param_Key", param.Key, TargetProject.Descriptor.ProjectName));
             }
         }
         ReportText = _reportBuilder.ToString();
@@ -528,11 +528,11 @@ public class ParamComparisonTool
 
                 if (!string.IsNullOrEmpty(primaryRow.Name))
                 {
-                    AddLog(LOC.Get("PARAM_Comparison_Report_Missing_Row_ID_With_Name", primaryRow.ID, primaryRow.Name));
+                    AddLog(LOC.Get("PARAM_Comparison_Report_Missing_Row_ID_With_Name", primaryRow.ID, primaryRow.Name, TargetProject.Descriptor.ProjectName));
                 }
                 else
                 {
-                    AddLog(LOC.Get("PARAM_Comparison_Report_Missing_Row_ID", primaryRow.ID));
+                    AddLog(LOC.Get("PARAM_Comparison_Report_Missing_Row_ID", primaryRow.ID, TargetProject.Descriptor.ProjectName));
                 }
 
                 continue;
