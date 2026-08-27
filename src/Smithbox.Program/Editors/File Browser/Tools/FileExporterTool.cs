@@ -29,11 +29,19 @@ public class FileExporterTool
     {
         ImGui.BeginChild("FileExtractSection", ImGuiChildFlags.Borders);
 
+        GUI.WrappedText(LOC.Get("FILE_Exporter_Hint"));
+
+        GUI.Spacer();
         GUI.SimpleHeader(
             LOC.Get("FILE_FileExporter_Export_Directory_Header"),
             LOC.Get("FILE_FileExporter_Export_Directory_Header_TT"));
 
         GUI.HintTextInput("##outputDir", ref ExtractionPath, LOC.Get("FILE_FileExporter_Export_Dir_Hint"));
+
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("FILE_FileExporter_Actions_Header"),
+            LOC.Get("FILE_FileExporter_Actions_Header_TT"));
 
         GUI.MultiButtonInput("extractActions",
             "setExtractDir", 

@@ -26,7 +26,6 @@ public class FileUnpackerTool
     public int CurrentUnpacked = 0;
 
     private List<(string Path, string Error)> FailedUnpackEntries = new();
-    private CancellationTokenSource unpackCts = null;
 
     private const int MaxConcurrentUnpacks = 6;
 
@@ -37,6 +36,8 @@ public class FileUnpackerTool
     public bool IsDeleting = false;
     public int TotalToDelete = 0;
     public int CurrentDeleted = 0;
+
+    public CancellationTokenSource CancelToken;
 
     public FileUnpackerTool(FileEditorView view, ProjectEntry project)
     {
@@ -56,29 +57,50 @@ public class FileUnpackerTool
 
         var windowWidth = ImGui.GetWindowWidth() * 0.95f;
 
-        GUI.WrappedText("This is a tool to unpack the base game data for the game this project targets, if it has not already been unpacked.");
-        GUI.WrappedText("");
+        GUI.WrappedText(LOC.Get("FILE_FileUnpacker_Hint"));
 
-        GUI.SimpleHeader("Unpack Directory", "");
-        GUI.HintTextInput("##unpackDirectory", ref UnpackDirectory, "Set the unpack directory...");
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("FILE_FileUnpacker_Unpack_Dir_Header"),
+            LOC.Get("FILE_FileUnpacker_Unpack_Dir_Header_TT"));
+
+        GUI.HintTextInput("##unpackDirectory", ref UnpackDirectory, LOC.Get("FILE_FileUnpacker_Unpack_Hint"));
         if(ImGui.IsItemDeactivatedAfterEdit())
         {
             CFG.Current.UnpackDirectory = UnpackDirectory;
         }
 
-        GUI.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("FILE_FileUnpacker_Actions_Header"),
+            LOC.Get("FILE_FileUnpacker_Actions_Header_TT"));
 
         GUI.MultiButtonInput("unpackActions",
-            "setUnpackDirectory", "Set Unpack Directory", "Set the directory that the game files are unpacking into.", ConfigureUnpackDirectory,
-            "rebuildFileDir", "Refresh File Directory", "Refresh the file dictionary used for unpacking.", UpdateBaseFileDictionary,
-            "unpackGame", "Unpack Game Files", "Start the unpacking process.", UnpackGameAction,
-            "deleteUnpackedFiles", "Delete Unpacked Game Files", "Delete unpacked files in the current unpack directory.", DeleteUnpackedFilesAction);
+            "setUnpackDirectory", 
+            LOC.Get("FILE_FileUnpacker_Set_Unpack_Dir"),
+            LOC.Get("FILE_FileUnpacker_Set_Unpack_Dir_TT"),
+            ConfigureUnpackDirectory,
 
-        GUI.WrappedText("");
-        GUI.SimpleHeader("Selective Unpack", "");
+            "unpackGame",
+            LOC.Get("FILE_FileUnpacker_Unpack"),
+            LOC.Get("FILE_FileUnpacker_Unpack_TT"), 
+            UnpackGameAction,
+
+            "deleteUnpackedFiles",
+            LOC.Get("FILE_FileUnpacker_Delete"),
+            LOC.Get("FILE_FileUnpacker_Delete_TT"), 
+            DeleteUnpackedFilesAction);
+
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("FILE_FileUnpacker_Selective_Unpack_Header"),
+            LOC.Get("FILE_FileUnpacker_Selective_Unpack_Header_TT"));
 
         GUI.MultiButtonInput("selectiveUnpackActions",
-            "toggleOptions", "Toggle All", "", ToggleSelectiveUnpackOptions);
+            "toggleOptions",
+            LOC.Get("FILE_FileUnpacker_Selective_Toggle_All"),
+            LOC.Get("FILE_FileUnpacker_Selective_Toggle_All_TT"),
+            ToggleSelectiveUnpackOptions);
 
         // Toggles
         ImGui.BeginChild("ToggleSection", new Vector2(0, 400), ImGuiChildFlags.Borders);
@@ -97,35 +119,37 @@ public class FileUnpackerTool
         if (IsUnpacking)
         {
             float progress = TotalToUnpack > 0 ? (float)CurrentUnpacked / TotalToUnpack : 0f;
-            string label = $"Unpacking... {CurrentUnpacked} / {TotalToUnpack} files";
+            string label = LOC.Get("FILE_FileUnpacker_Unpacking_Status", CurrentUnpacked, TotalToUnpack);
             ImGui.ProgressBar(progress, DPI.WholeWidthButton(windowWidth, 24), label);
 
-            if (ImGui.Button("Cancel", DPI.WholeWidthButton(windowWidth, 24)))
-            {
-                unpackCts?.Cancel();
-            }
-            GUI.Tooltip("This will cancel the game data unpack.");
+            GUI.MultiButtonInput("cancelUnpackActions",
+                "cancelUnpack",
+                LOC.Get("FILE_FileUnpacker_Cancel_Unpack"),
+                LOC.Get("FILE_FileUnpacker_Cancel_Unpack_TT"),
+                CancelUnpack);
         }
 
         if (IsDeleting)
         {
             float progress = TotalToDelete > 0 ? (float)CurrentDeleted / TotalToDelete : 0f;
-            string label = $"Deleting... {CurrentDeleted} / {TotalToDelete} files";
+            string label = LOC.Get("FILE_FileUnpacker_Deleting_Status", CurrentDeleted, TotalToDelete);
             ImGui.ProgressBar(progress, DPI.WholeWidthButton(windowWidth, 24), label);
 
-            if (ImGui.Button("Cancel", DPI.WholeWidthButton(windowWidth, 24)))
-            {
-                unpackCts?.Cancel();
-            }
-            GUI.Tooltip("This will cancel the delete.");
+            GUI.MultiButtonInput("cancelDeleteActions",
+                "cancelDelete",
+                LOC.Get("FILE_FileUnpacker_Cancel_Delete"),
+                LOC.Get("FILE_FileUnpacker_Cancel_Delete_TT"),
+                CancelDelete);
         }
 
         if (!IsUnpacking && FailedUnpackEntries.Count > 0)
         {
             ImGui.BeginChild("FailedFilesChild", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
-            GUI.WrappedText("");
-            GUI.SimpleHeader("Failed to Unpack", "");
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("FILE_FileUnpacker_Failed_Unpack_Header"),
+                LOC.Get("FILE_FileUnpacker_Failed_Unpack_Header_TT"));
 
             foreach (var (path, error) in FailedUnpackEntries)
             {
@@ -141,10 +165,21 @@ public class FileUnpackerTool
         ImGui.EndChild();
     }
 
+    public void CancelUnpack()
+    {
+        CancelToken?.Cancel();
+    }
+
+    public void CancelDelete()
+    {
+        CancelToken?.Cancel();
+    }
+
     public void ConfigureUnpackDirectory()
     {
         var unpackDirectory = "";
-        var result = PlatformUtils.Instance.OpenFolderDialog("Select Unpack Directory", out unpackDirectory);
+        var result = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("FILE_FileUnpacker_Select_Unpack_Dir"), out unpackDirectory);
 
         if (result)
         {
@@ -165,13 +200,15 @@ public class FileUnpackerTool
     {
         if(UnpackDirectory == "")
         {
-            Smithbox.Log<FileUnpackerTool>("Unpack directory has not been set.");
+            Smithbox.Log<FileUnpackerTool>(
+                LOC.Get("FILE_FileUnpacker_Unpack_Dir_Not_Set"));
             return;
         }
 
         if (IsUnpacking)
         {
-            Smithbox.Log<FileUnpackerTool>("Game files are already being unpacked.");
+            Smithbox.Log<FileUnpackerTool>(
+                LOC.Get("FILE_FileUnpacker_Game_Data_Already_Unpacked"));
             return;
         }
 
@@ -206,7 +243,8 @@ public class FileUnpackerTool
     {
         if (IsDeleting)
         {
-            Smithbox.Log<FileUnpackerTool>("Game files are already being deleted.");
+            Smithbox.Log<FileUnpackerTool>(
+                LOC.Get("FILE_FileUnpacker_Game_Files_Being_Deleted"));
             return;
         }
 
@@ -227,7 +265,8 @@ public class FileUnpackerTool
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[File Browser] Failed to delete folder: {absFolder}", LogPriority.High, e);
+                    Smithbox.LogError(this, 
+                        LOC.Get("FILE_FileUnpacker_Failed_Folder_Delete", absFolder), e);
                 }
             }
         }
@@ -258,8 +297,8 @@ public class FileUnpackerTool
     public async Task UnpackGameAsync(FileDictionary targetFileDictionary)
     {
         IsUnpacking = true;
-        unpackCts = new CancellationTokenSource();
-        var token = unpackCts.Token;
+        CancelToken = new CancellationTokenSource();
+        var token = CancelToken.Token;
 
         FailedUnpackEntries.Clear();
 
@@ -302,10 +341,11 @@ public class FileUnpackerTool
                     }
                     else
                     {
-                        Smithbox.LogError(this, $"[File Browser] Failed to write file: {entry.Path}", LogPriority.High);
+                        Smithbox.LogError(this,
+                            LOC.Get("FILE_FileUnpacker_Failed_File_Write", entry.Path));
 
                         lock (FailedUnpackEntries)
-                            FailedUnpackEntries.Add((entry.Path, "Failed to add."));
+                            FailedUnpackEntries.Add((entry.Path, LOC.Get("FILE_FileUnpacker_Failed_Unpack_Entry")));
 
                         Interlocked.Increment(ref CurrentUnpacked);
                     }
@@ -323,22 +363,24 @@ public class FileUnpackerTool
         }
         catch (OperationCanceledException)
         {
-            Smithbox.Log(this, "[File Browser] Unpacking was cancelled.", LogLevel.Warning);
+            Smithbox.Log(this, 
+                LOC.Get("FILE_FileUnpacker_Unpack_Cancelled"), LogLevel.Warning);
         }
         catch (AggregateException ae) when (ae.InnerExceptions.All(e => e is OperationCanceledException))
         {
-            Smithbox.Log(this, "[File Browser] Unpacking was cancelled.", LogLevel.Warning);
+            Smithbox.Log(this,
+                LOC.Get("FILE_FileUnpacker_Unpack_Cancelled"), LogLevel.Warning);
         }
 
         IsUnpacking = false;
-        unpackCts = null;
+        CancelToken = null;
     }
 
     public async Task DeleteUnpackedDataAsync()
     {
         IsDeleting = true;
-        unpackCts = new CancellationTokenSource();
-        var token = unpackCts.Token;
+        CancelToken = new CancellationTokenSource();
+        var token = CancelToken.Token;
 
         TotalToDelete = BaseFileDictionary.Entries.Count;
         CurrentDeleted = 0;
@@ -377,15 +419,17 @@ public class FileUnpackerTool
         }
         catch (OperationCanceledException)
         {
-            Smithbox.Log(this, "[File Browser] Deleting was cancelled.", LogLevel.Warning);
+            Smithbox.Log(this,
+                LOC.Get("FILE_FileUnpacker_Delete_Cancelled"), LogLevel.Warning);
         }
         catch (AggregateException ae) when (ae.InnerExceptions.All(e => e is OperationCanceledException))
         {
-            Smithbox.Log(this, "[File Browser] Deleting was cancelled.", LogLevel.Warning);
+            Smithbox.Log(this,
+                LOC.Get("FILE_FileUnpacker_Delete_Cancelled"), LogLevel.Warning);
         }
 
         IsDeleting = false;
-        unpackCts = null;
+        CancelToken = null;
     }
 
     public void UpdateBaseFileDictionary()
@@ -423,8 +467,10 @@ public class FileUnpackerTool
 
         var filepath = Path.Join(folder, file);
 
-        var baseFileDictionary = new FileDictionary();
-        baseFileDictionary.Entries = new();
+        var baseFileDictionary = new FileDictionary
+        {
+            Entries = new()
+        };
 
         if (File.Exists(filepath))
         {
@@ -438,12 +484,14 @@ public class FileUnpackerTool
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[File Browser] Failed to deserialize the file dictionary: {filepath}", LogPriority.High, e);
+                    Smithbox.LogError(this, 
+                        LOC.Get("FILE_FileUnpacker_Failed_Deserialize_File_Dict", filepath), e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[File Browser] Failed to read the file dictionary: {filepath}", LogPriority.High, e);
+                Smithbox.LogError(this,
+                    LOC.Get("FILE_FileUnpacker_Failed_Read_File_Dict", filepath), e);
             }
         }
 

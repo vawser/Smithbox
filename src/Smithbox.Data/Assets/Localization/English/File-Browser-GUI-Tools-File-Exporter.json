@@ -1,11 +1,23 @@
 {
   "Entries": [
     {
+      "Key": "FILE_Exporter_Hint",
+      "Text": "Use this tool to export files from the packed archives into an export directory."
+    },
+    {
       "Key": "FILE_FileExporter_Export_Directory_Header",
       "Text": "Export Directory"
     },
     {
       "Key": "FILE_FileExporter_Export_Directory_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "FILE_FileExporter_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "FILE_FileExporter_Actions_Header_TT",
       "Text": ""
     },
     {
