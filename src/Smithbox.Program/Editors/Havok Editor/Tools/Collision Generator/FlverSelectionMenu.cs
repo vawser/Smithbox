@@ -12,7 +12,7 @@ using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class FlverSelection
+public class FlverSelectionMenu
 {
     public HavokEditorView View;
     public ProjectEntry Project;
@@ -21,6 +21,7 @@ public class FlverSelection
     public FLVER2 SourceFlver = null;
     public bool[] FlverMeshSelection = Array.Empty<bool>();
 
+    public bool TriggerFlverSelectionMenu = false;
     private bool UpdateFlverSelectionList = true;
     private ModelListType CurrentTab = ModelListType.Asset;
     private ModelListType _previousTab = ModelListType.Asset;
@@ -29,7 +30,7 @@ public class FlverSelection
     private bool ExactFlverListFilter = false;
     private bool _arrowKeyPressed = false;
 
-    public FlverSelection(HavokEditorView view, ProjectEntry project)
+    public FlverSelectionMenu(HavokEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
@@ -39,7 +40,7 @@ public class FlverSelection
     {
         DisplayFlverSelectionHeader();
 
-        ImGui.BeginChild("ContainerList", new Vector2(0, 400) * DPI.UIScale(), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("ContainerList", new Vector2(400, 600) * DPI.UIScale(), ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("sourceTabs");
 
@@ -76,6 +77,8 @@ public class FlverSelection
         }
 
         ImGui.EndTabBar();
+
+        ImGui.EndChild();
     }
 
     private static readonly Dictionary<ModelListType, ProjectAliasType> AliasTypeMap = new()
@@ -184,13 +187,13 @@ public class FlverSelection
                     flags))
                 {
                     FlverPath = fileEntry.Path;
-                    LoadInternalFlver(FlverPath);
+                    LoadInternalFlver(fileEntry);
                 }
 
                 if (_arrowKeyPressed && ImGui.IsItemFocused() && !selected)
                 {
                     FlverPath = fileEntry.Path;
-                    LoadInternalFlver(FlverPath);
+                    LoadInternalFlver(fileEntry);
 
                     _arrowKeyPressed = false;
                 }
@@ -205,48 +208,134 @@ public class FlverSelection
         clipper.End();
     }
 
-    public void LoadInternalFlver(string path)
+    public void LoadInternalFlver(FileDictionaryEntry fileEntry)
     {
-        var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Project, path);
+        var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Project, fileEntry.Path);
 
         if (binderType is ResourceContainerType.None)
         {
-            ReadDirect();
+            ReadDirect(fileEntry);
         }
         else if (binderType is ResourceContainerType.BND)
         {
-            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
-            {
-                ReadBND3();
-            }
-            else
-            {
-                ReadBND4();
-            }
+            ReadBND4(fileEntry);
         }
         else if (binderType is ResourceContainerType.BXF)
         {
-            ReadBXF();
+            ReadBXF(fileEntry);
         }
     }
 
-    public void ReadDirect()
+    public void ReadDirect(FileDictionaryEntry fileEntry)
     {
-
+        if (Project.VFS.FS.FileExists(fileEntry.Path))
+        {
+            try
+            {
+                var fileData = Project.VFS.FS.ReadFile(fileEntry.Path);
+                LoadFlverFile(fileEntry, fileData);
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this, LOC.Get("HAVOK_CollisionGen_Failed_FLVER_Read", fileEntry.Path), ex);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_CollisionGen_Failed_FLVER_Find", fileEntry.Path));
+        }
     }
 
-    public void ReadBND3()
+    public void ReadBND4(FileDictionaryEntry fileEntry)
     {
+        if (Project.VFS.FS.FileExists(fileEntry.Path))
+        {
+            try
+            {
+                var fileData = Project.VFS.FS.ReadFile(fileEntry.Path);
 
+                if (fileData != null)
+                {
+                    var binder = new BND4Reader(fileData.Value);
+
+                    foreach (var file in binder.Files)
+                    {
+                        var filename = FilePathUtils.GetPureFilename(file.Name);
+                        var filepath = file.Name.ToLower();
+
+                        if(filename.ToLower() == fileEntry.Filename.ToLower())
+                        {
+                            LoadFlverFile(fileEntry, binder.ReadFile(file));
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("HAVOK_CollisionGen_Failed_Binder_Read", fileEntry.Path), e);
+            }
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_CollisionGen_Failed_Binder_Find", fileEntry.Path));
+        }
     }
 
-    public void ReadBND4()
+    public void ReadBXF(FileDictionaryEntry fileEntry)
     {
+        Memory<byte> bhd = new Memory<byte>();
+        Memory<byte> bdt = new Memory<byte>();
 
+        var targetBhdPath = fileEntry.Path;
+        var targetBdtPath = fileEntry.Path.Replace("bhd", "bdt");
+
+        if (Project.VFS.FS.FileExists(targetBhdPath) && Project.VFS.FS.FileExists(targetBhdPath))
+        {
+            bhd = (Memory<byte>)Project.VFS.FS.ReadFile(targetBhdPath);
+            bdt = (Memory<byte>)Project.VFS.FS.ReadFile(targetBdtPath);
+
+            if (bhd.Length == 0 || bdt.Length == 0)
+                return;
+
+            PopulateBXF4(fileEntry, bhd, bdt);
+        }
+        else
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_CollisionGen_Failed_Binder_Find", targetBhdPath));
+        }
     }
 
-    public void ReadBXF()
+    public void PopulateBXF4(FileDictionaryEntry fileEntry, Memory<byte> bhdData, Memory<byte> bdtData)
     {
+        var binder = new BXF4Reader(bhdData, bdtData);
 
+        foreach (var file in binder.Files)
+        {
+            var filename = FilePathUtils.GetPureFilename(file.Name);
+            var filepath = file.Name.ToLower();
+
+            if (filename.ToLower() == fileEntry.Filename.ToLower())
+            {
+                LoadFlverFile(fileEntry, binder.ReadFile(file));
+            }
+        }
+    }
+
+    public void LoadFlverFile(FileDictionaryEntry fileEntry, Memory<byte>? fileData)
+    {
+        try
+        {
+            SourceFlver = FLVER2.Read(fileData.Value);
+
+            FlverPath = fileEntry.Path;
+            FlverMeshSelection = new bool[SourceFlver.Meshes.Count];
+            Array.Fill(FlverMeshSelection, true);
+
+            ImGui.CloseCurrentPopup();
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_CollisionGen_Failed_FLVER_Read", fileEntry.Filename), e);
+        }
     }
 }

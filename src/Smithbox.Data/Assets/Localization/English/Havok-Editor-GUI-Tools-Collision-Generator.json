@@ -137,6 +137,14 @@
       "Text": "Failed to find FLVER file: {0}"
     },
     {
+      "Key": "HAVOK_CollisionGen_Failed_Binder_Read",
+      "Text": "Failed to read binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Failed_Binder_Find",
+      "Text": "Failed to find binder file: {0}"
+    },
+    {
       "Key": "HAVOK_CollisionGen_Flver_Meshes_Header",
       "Text": "FLVER Meshes"
     },

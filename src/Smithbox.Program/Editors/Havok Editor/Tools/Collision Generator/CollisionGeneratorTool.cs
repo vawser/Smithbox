@@ -21,13 +21,13 @@ public class CollisionGeneratorTool
     public SemiCircleParameters SemiCircleInputs = new();
     public bool BuildMaterialPalette = false;
 
-    public FlverSelection Selection;
+    public FlverSelectionMenu SelectionMenu;
 
     public CollisionGeneratorTool(HavokEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
-        Selection = new(view, project);
+        SelectionMenu = new(view, project);
     }
 
     public void Display()
@@ -215,16 +215,16 @@ public class CollisionGeneratorTool
                 SelectExternalFlverSource);
 
             GUI.Spacer();
-            if (Selection.FlverPath != "")
+            if (SelectionMenu.FlverPath != "")
             {
-                GUI.WrappedText(LOC.Get("HAVOK_CollisionGen_Flver_Current_Source_FLVER", Path.GetFileName(Selection.FlverPath)));
+                GUI.WrappedText(LOC.Get("HAVOK_CollisionGen_Flver_Current_Source_FLVER", Path.GetFileName(SelectionMenu.FlverPath)));
             }
             else
             {
                 GUI.WrappedText(LOC.Get("HAVOK_CollisionGen_Flver_Current_Source_FLVER_None"));
             }
 
-            if (Selection.SourceFlver != null)
+            if (SelectionMenu.SourceFlver != null)
             {
                 GUI.Spacer();
                 GUI.SimpleHeader(
@@ -233,26 +233,26 @@ public class CollisionGeneratorTool
 
                 if (ImGui.Button($"{LOC.Get("HAVOK_CollisionGen_Select_All_Meshes")}##flverMeshSelectAll"))
                 {
-                    Array.Fill(Selection.FlverMeshSelection, true);
+                    Array.Fill(SelectionMenu.FlverMeshSelection, true);
                 }
                 ImGui.SameLine();
                 if (ImGui.Button($"{LOC.Get("HAVOK_CollisionGen_Select_No_Meshes")}##flverMeshSelectNone"))
                 {
-                    Array.Fill(Selection.FlverMeshSelection, false);
+                    Array.Fill(SelectionMenu.FlverMeshSelection, false);
                 }
 
                 ImGui.BeginChild("flverMeshSelectionList", new Vector2(0, 150), ImGuiChildFlags.Borders);
 
-                for (int i = 0; i < Selection.SourceFlver.Meshes.Count; i++)
+                for (int i = 0; i < SelectionMenu.SourceFlver.Meshes.Count; i++)
                 {
-                    var mesh = Selection.SourceFlver.Meshes[i];
-                    var material = Selection.SourceFlver.Materials[mesh.MaterialIndex];
+                    var mesh = SelectionMenu.SourceFlver.Meshes[i];
+                    var material = SelectionMenu.SourceFlver.Materials[mesh.MaterialIndex];
                     var label = LOC.Get("HAVOK_CollisionGen_Flver_Mesh_Entry", i, material.Name, mesh.Vertices.Count);
 
-                    var selected = Selection.FlverMeshSelection[i];
+                    var selected = SelectionMenu.FlverMeshSelection[i];
                     if (ImGui.Checkbox($"{label}##flverMesh{i}", ref selected))
                     {
-                        Selection.FlverMeshSelection[i] = selected;
+                        SelectionMenu.FlverMeshSelection[i] = selected;
                     }
                 }
 
@@ -285,16 +285,26 @@ public class CollisionGeneratorTool
         ImGui.EndChild();
     }
 
+    public void DetectFlverSelectionMenu()
+    {
+        if(SelectionMenu.TriggerFlverSelectionMenu)
+        {
+            SelectionMenu.TriggerFlverSelectionMenu = false;
+
+            ImGui.OpenPopup("flverSelectionMenuPopup");
+        }
+    }
+
     public void SelectFlverSource()
     {
-        ImGui.OpenPopup("flverSelectionMenuPopup");
+        SelectionMenu.TriggerFlverSelectionMenu = true;
     }
 
     public void DisplayFlverSelectionMenu()
     {
         if (ImGui.BeginPopup("flverSelectionMenuPopup"))
         {
-            Selection.DisplayFlverSelectionTabs();
+            SelectionMenu.DisplayFlverSelectionTabs();
 
             ImGui.EndPopup();
         }
@@ -308,11 +318,11 @@ public class CollisionGeneratorTool
             try
             {
                 var fileData = File.ReadAllBytes(path);
-                Selection.SourceFlver = FLVER2.Read(fileData);
+                SelectionMenu.SourceFlver = FLVER2.Read(fileData);
 
-                Selection.FlverPath = path;
-                Selection.FlverMeshSelection = new bool[Selection.SourceFlver.Meshes.Count];
-                Array.Fill(Selection.FlverMeshSelection, true);
+                SelectionMenu.FlverPath = path;
+                SelectionMenu.FlverMeshSelection = new bool[SelectionMenu.SourceFlver.Meshes.Count];
+                Array.Fill(SelectionMenu.FlverMeshSelection, true);
             }
             catch (Exception ex)
             {
@@ -361,20 +371,20 @@ public class CollisionGeneratorTool
         }
         else if (TargetShape is CollisionGeneratorShape.FLVER)
         {
-            if (Selection.SourceFlver == null || Selection.FlverMeshSelection.Length == 0)
+            if (SelectionMenu.SourceFlver == null || SelectionMenu.FlverMeshSelection.Length == 0)
                 return;
 
             var selectedMeshIndices = new List<int>();
-            for (int i = 0; i < Selection.FlverMeshSelection.Length; i++)
+            for (int i = 0; i < SelectionMenu.FlverMeshSelection.Length; i++)
             {
-                if (Selection.FlverMeshSelection[i])
+                if (SelectionMenu.FlverMeshSelection[i])
                     selectedMeshIndices.Add(i);
             }
 
             if (selectedMeshIndices.Count == 0)
                 return;
 
-            var (verts, indices) = HKLib_MeshBuilder.GenerateFlverCollision(Selection.SourceFlver, selectedMeshIndices);
+            var (verts, indices) = HKLib_MeshBuilder.GenerateFlverCollision(SelectionMenu.SourceFlver, selectedMeshIndices);
 
             if (verts.Count == 0 || indices.Count == 0)
                 return;
