@@ -100,40 +100,59 @@ public class MapPropertyView
             "MAP_Properties_Toggle_Community_Names_Community",
             "MAP_Properties_Toggle_Community_Names_TT");
 
-        if (IsCollisionType() || IsNavmeshType())
+        if (CollisionViewMode is MapCollisionViewMode.CollisionHKX)
         {
-            // Toggle: Type Column
-            GUI.DisplayToggleButton("typeColumnToggle", Icons.Calculator,
-                ref CFG.Current.MapEditor_HavokEdit_Display_Type_Column,
-                "HAVOK_PropertyView_Type_Column_Toggle_Hide",
-                "HAVOK_PropertyView_Type_Column_Toggle_Show",
-                "HAVOK_PropertyView_Type_Column_Toggle_TT");
+            if (IsCollisionType() || IsNavmeshType())
+            {
+                // Toggle: Type Column
+                GUI.DisplayToggleButton("typeColumnToggle", Icons.Calculator,
+                    ref CFG.Current.MapEditor_HavokEdit_Display_Type_Column,
+                    "HAVOK_PropertyView_Type_Column_Toggle_Hide",
+                    "HAVOK_PropertyView_Type_Column_Toggle_Show",
+                    "HAVOK_PropertyView_Type_Column_Toggle_TT");
 
-            // Toggle: Mesh Data
-            GUI.DisplayToggleButton("meshDataToggle", Icons.Database,
-                ref CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields,
-                "HAVOK_PropertyView_Mesh_Data_Toggle_Hide",
-                "HAVOK_PropertyView_Mesh_Data_Toggle_Show",
-                "HAVOK_PropertyView_Mesh_Data_Toggle_TT");
+                // Toggle: Mesh Data
+                GUI.DisplayToggleButton("meshDataToggle", Icons.Database,
+                    ref CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields,
+                    "HAVOK_PropertyView_Mesh_Data_Toggle_Hide",
+                    "HAVOK_PropertyView_Mesh_Data_Toggle_Show",
+                    "HAVOK_PropertyView_Mesh_Data_Toggle_TT");
+            }
+            else
+            {
+                DisplayMsbHeaderToggles();
+            }
         }
         else
         {
-            // Toggle: Display Unknown
-            GUI.DisplayToggleButton("displayUnkToggle", Icons.Eye,
-                ref CFG.Current.MapEditor_Properties_Display_Unknown_Properties,
-                "MAP_Properties_Toggle_Unknown_Field_Hide",
-                "MAP_Properties_Toggle_Unknown_Field_Show",
-                "MAP_Properties_Toggle_Unknown_Field_TT");
-
-            // Toggle: Display Padding
-            GUI.DisplayToggleButton("displayPaddingToggle", Icons.Hubzilla,
-                ref CFG.Current.MapEditor_Field_List_Display_Padding,
-                "MAP_Properties_Toggle_Padding_Hide",
-                "MAP_Properties_Toggle_Padding_Show",
-                "MAP_Properties_Toggle_Padding_TT");
+            DisplayMsbHeaderToggles();
         }
 
         ImGui.EndChild();
+    }
+
+    public void DisplayMsbHeaderToggles()
+    {
+        // Toggle: Display Unknown
+        GUI.DisplayToggleButton("displayUnkToggle", Icons.Eye,
+            ref CFG.Current.MapEditor_Properties_Display_Unknown_Properties,
+            "MAP_Properties_Toggle_Unknown_Field_Hide",
+            "MAP_Properties_Toggle_Unknown_Field_Show",
+            "MAP_Properties_Toggle_Unknown_Field_TT");
+
+        // Toggle: Display Padding
+        GUI.DisplayToggleButton("displayPaddingToggle", Icons.Hubzilla,
+            ref CFG.Current.MapEditor_Field_List_Display_Padding,
+            "MAP_Properties_Toggle_Padding_Hide",
+            "MAP_Properties_Toggle_Padding_Show",
+            "MAP_Properties_Toggle_Padding_TT");
+
+        // Toggle: Display References
+        GUI.DisplayToggleButton("displayReferencesToggle", Icons.Search,
+            ref CFG.Current.MapEditor_Field_List_Display_References,
+            "MAP_Properties_Toggle_References_Hide",
+            "MAP_Properties_Toggle_References_Show",
+            "MAP_Properties_Toggle_References_TT");
     }
 
     public void DisplayCollisionTypeHeader()

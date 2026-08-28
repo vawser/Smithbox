@@ -100,6 +100,7 @@ public class MapUniverse : IUniverse
         {
             Smithbox.LogError(this, LOC.Get("MAP_Universe_Log_Map_Already_Loaded", mapid));
 
+            IsLoading = false;
             return false;
         }
 

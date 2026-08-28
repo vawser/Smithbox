@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImNodes;
 using HKLib.hk2018;
 using HKLib.hk2018.hkcdStaticMeshTree;
+using SoulsFormats;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -547,5 +548,71 @@ public static class HKLib_MeshBuilder
         }
 
         return (vertices, indices);
+    }
+
+    public static (List<Vector3> Vertices, List<int> Indices) GenerateFlverCollision(
+        FLVER2 model,
+        IReadOnlyList<int> meshIndices = null)
+    {
+        var vertices = new List<Vector3>();
+        var indices = new List<int>();
+
+        if (model == null || model.Meshes == null || model.Meshes.Count == 0)
+        {
+            return (vertices, indices);
+        }
+
+        IEnumerable<int> targetIndices = meshIndices ?? Enumerable.Range(0, model.Meshes.Count);
+
+        var weldMap = new Dictionary<Vector3, int>();
+
+        foreach (int meshIndex in targetIndices)
+        {
+            if (meshIndex < 0 || meshIndex >= model.Meshes.Count)
+                continue;
+
+            var mesh = model.Meshes[meshIndex];
+            var faces = mesh.GetFaces();
+
+            foreach (var tri in faces)
+            {
+                Span<int> triIndices = stackalloc int[3];
+
+                for (int i = 0; i < 3; i++)
+                {
+                    Vector3 pos = tri[i].Position;
+
+                    if (!weldMap.TryGetValue(pos, out int vertIndex))
+                    {
+                        vertIndex = vertices.Count;
+                        vertices.Add(pos);
+                        weldMap[pos] = vertIndex;
+                    }
+
+                    triIndices[i] = vertIndex;
+                }
+
+                if (triIndices[0] == triIndices[1]
+                    || triIndices[1] == triIndices[2]
+                    || triIndices[2] == triIndices[0])
+                {
+                    continue;
+                }
+
+                indices.Add(triIndices[0]);
+                indices.Add(triIndices[1]);
+                indices.Add(triIndices[2]);
+            }
+        }
+
+        return (vertices, indices);
+    }
+
+    public static void FlipTriangleWinding(List<int> indices)
+    {
+        for (int i = 0; i + 2 < indices.Count; i += 3)
+        {
+            (indices[i + 1], indices[i + 2]) = (indices[i + 2], indices[i + 1]);
+        }
     }
 }

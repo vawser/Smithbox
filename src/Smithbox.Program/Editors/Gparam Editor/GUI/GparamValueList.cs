@@ -21,9 +21,6 @@ public class GparamValueList
         Project = project;
     }
 
-    /// <summary>
-    /// The main UI for the event parameter view
-    /// </summary>
     public void Display()
     {
         DisplayHeader();
@@ -37,7 +34,9 @@ public class GparamValueList
     }
     public void DisplayHeader()
     {
-        GUI.TitleHeader("Values", "");
+        GUI.TitleHeader(
+            LOC.Get("GPARAM_ValueList_Header"),
+            LOC.Get("GPARAM_ValueList_Header_TT"));
 
         // Search
         ImGui.BeginChild("GparamFieldSearchSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
@@ -106,7 +105,10 @@ public class GparamValueList
     private void DisplayColumn_Row(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group, IField field)
     {
         ImGui.BeginChild("GparamPropList_Row");
-        GUI.SimpleHeader("Row", "");
+
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_ValueList_Row_Header"),
+            LOC.Get("GPARAM_ValueList_Row_Header_TT"));
 
         for (int i = 0; i < field.Values.Count; i++)
         {
@@ -136,7 +138,7 @@ public class GparamValueList
         var isSelected = View.Selection.IsValueSelected(index);
 
         ImGui.AlignTextToFramePadding();
-        if (ImGui.Selectable($"Row {index}##{index}", isSelected))
+        if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Row_Selectable", index)}##{index}", isSelected))
         {
             View.Selection.SetGparamFieldValue(index, value);
         }
@@ -150,7 +152,10 @@ public class GparamValueList
         ImGui.NextColumn();
 
         ImGui.BeginChild("GparamPropList_ID");
-        GUI.SimpleHeader("ID", "");
+
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_ValueList_Row_ID_Header"),
+            LOC.Get("GPARAM_ValueList_Row_ID_Header_TT"));
 
         for (int i = 0; i < field.Values.Count; i++)
         {
@@ -185,7 +190,10 @@ public class GparamValueList
         ImGui.NextColumn();
 
         ImGui.BeginChild("GparamPropList_TimeOfDay");
-        GUI.SimpleHeader("Time of Day", "");
+
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_ValueList_Row_Time_of_Day_Header"),
+            LOC.Get("GPARAM_ValueList_Row_Time_of_Day_Header_TT"));
 
         for (int i = 0; i < field.Values.Count; i++)
         {
@@ -215,7 +223,10 @@ public class GparamValueList
         ImGui.NextColumn();
 
         ImGui.BeginChild("GparamPropList_Value");
-        GUI.SimpleHeader("Value", "");
+
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_ValueList_Row_Value_Header"),
+            LOC.Get("GPARAM_ValueList_Row_Value_Header_TT"));
 
         for (int i = 0; i < field.Values.Count; i++)
         {
@@ -248,7 +259,10 @@ public class GparamValueList
         ImGui.NextColumn();
 
         ImGui.BeginChild("GparamPropList_Info");
-        GUI.SimpleHeader("Information", "");
+
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_ValueList_Row_Information_Header"),
+            LOC.Get("GPARAM_ValueList_Row_Information_Header_TT"));
 
         GparamProperty_Info(field);
 
@@ -263,8 +277,8 @@ public class GparamValueList
         var fieldId = field.Key;
         var fieldDescription = GparamMetaUtils.GetFieldDescription(Project, groupId, fieldId);
 
-        GUI.WrappedText($"Type: {GparamUtils.GetReadableObjectTypeName(field)}");
-        GUI.WrappedText($"");
+        GUI.WrappedText($"{LOC.Get("GPARAM_ValueList_InfoCol_Type", GparamUtils.GetReadableObjectTypeName(field))}");
+        GUI.Spacer();
 
         // Skip if empty
         if (fieldDescription != "")
@@ -303,11 +317,11 @@ public class GparamValueList
     {
         ImGui.BeginGroup();
 
-        if (ImGui.Selectable($@" Empty##addValueDummy"))
+        if (ImGui.Selectable($@"{LOC.Get("GPARAM_ValueList_Empty_Selectable")}##addValueDummy"))
         {
             AddNewValue(fileEntry, data, group, field);
         }
-        GUI.Tooltip("Click to add new value.");
+        GUI.Tooltip(LOC.Get("GPARAM_ValueList_Empty_Selectable_TT"));
 
         ImGui.EndGroup();
     }
@@ -353,27 +367,27 @@ public class GparamValueList
 
         if (index == View.Selection._selectedFieldValueIndex)
         {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_PropId_Context"))
+            if (ImGui.BeginPopupContextItem($"##Gparam_PropId_Context"))
             {
                 // Duplicate
-                if (ImGui.BeginMenu("Duplicate"))
+                if (ImGui.BeginMenu($"{LOC.Get("GPARAM_ValueList_Context_Duplicate_Header")}##duplicateHeader"))
                 {
                     // Input
-                    ImGui.InputInt("ID##duplicateInput_ID", ref View.Selection.DuplicateValueID);
+                    ImGui.InputInt($"{LOC.Get("GPARAM_ValueList_Context_DupeID")}##duplicateInput_ID", ref View.Selection.DuplicateValueID);
 
                     if (View.Selection.DuplicateValueID < 0)
                     {
                         View.Selection.DuplicateValueID = 0;
                     }
 
-                    ImGui.InputInt("ID##duplicateInput_Offset", ref View.Selection.DuplicateValueOffset);
+                    ImGui.InputInt($"{LOC.Get("GPARAM_ValueList_Context_DupeOffset")}##duplicateInput_Offset", ref View.Selection.DuplicateValueOffset);
 
                     // Submit
-                    if (ImGui.Selectable("Submit"))
+                    if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Dupe_Submit_Action")}##submitAction"))
                     {
                         AddValues(data, group, field, new List<GPARAM.IFieldValue>() { value }, false);
                     }
-                    GUI.Tooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
+                    GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Dupe_Submit_Action_TT"));
 
                     ImGui.EndMenu();
                 }

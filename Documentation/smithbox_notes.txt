@@ -51,6 +51,10 @@
 
 - Rendering experiment (TinyFFR)
 
+- Add additional file support (like Map Editor)
+ - EDGE
+  - Read map mapbnd for edges and then associate with FLVER on load for map pieces
+  
 # Bugs
 - Submeshes aren't working correctly
 - dummy duplicate doesn't stick

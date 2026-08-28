@@ -1,10 +1,5 @@
-﻿using Andre.Formats;
-using Hexa.NET.ImGui;
-using HKLib.hk2018.hkHashMapDetail;
-using Microsoft.AspNetCore.Components.Forms;
-using StudioCore.Editors.Common;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Keybinds;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -14,7 +9,6 @@ public class TextFindMenu
     public ProjectEntry Project;
 
     private int FindEntryID = -1;
-    public bool DisplayMenu = false;
 
     public TextFindMenu(TextEditorView view, ProjectEntry project)
     {
@@ -40,8 +34,6 @@ public class TextFindMenu
     {
         if (ImGui.BeginPopup("findPopup"))
         {
-            DisplayMenu = true;
-
             if (ImGui.Button($"{Icons.LocationArrow}###jumpToAction"))
             {
                 if (View.Selection.SelectedFmgWrapper != null && View.Selection.SelectedFmgWrapper.File != null)
@@ -67,10 +59,6 @@ public class TextFindMenu
             ImGui.InputInt("##findId", ref FindEntryID);
 
             ImGui.EndPopup();
-        }
-        else
-        {
-            DisplayMenu = false;
         }
     }
 }

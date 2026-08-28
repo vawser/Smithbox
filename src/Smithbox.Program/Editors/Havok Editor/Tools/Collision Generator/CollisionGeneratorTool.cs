@@ -1,16 +1,9 @@
 ﻿using Hexa.NET.ImGui;
 using HKLib.hk2018;
-using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
-using StudioCore.Editors.MetadataEditor;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Numerics;
-using System.Text;
-using static SoulsFormats.MQB;
 
 namespace StudioCore.Editors.HavokEditor;
 
@@ -26,13 +19,15 @@ public class CollisionGeneratorTool
     public TriangeParameters TriangleInputs = new();
     public CircleParameters CircleInputs = new();
     public SemiCircleParameters SemiCircleInputs = new();
-
     public bool BuildMaterialPalette = false;
+
+    public FlverSelection Selection;
 
     public CollisionGeneratorTool(HavokEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+        Selection = new(view, project);
     }
 
     public void Display()
@@ -206,6 +201,65 @@ public class CollisionGeneratorTool
             }
         }
 
+        if (TargetShape is CollisionGeneratorShape.FLVER)
+        {
+            GUI.MultiButtonInput("flverActions",
+                "selectFlver",
+                LOC.Get("HAVOK_CollisionGen_Select_Flver_Action"),
+                LOC.Get("HAVOK_CollisionGen_Select_Flver_Action_TT"),
+                SelectFlverSource,
+
+                "selectExternalFlver",
+                LOC.Get("HAVOK_CollisionGen_Select_External_Flver_Action"),
+                LOC.Get("HAVOK_CollisionGen_Select_External_Flver_Action_TT"),
+                SelectExternalFlverSource);
+
+            GUI.Spacer();
+            if (Selection.FlverPath != "")
+            {
+                GUI.WrappedText(LOC.Get("HAVOK_CollisionGen_Flver_Current_Source_FLVER", Path.GetFileName(Selection.FlverPath)));
+            }
+            else
+            {
+                GUI.WrappedText(LOC.Get("HAVOK_CollisionGen_Flver_Current_Source_FLVER_None"));
+            }
+
+            if (Selection.SourceFlver != null)
+            {
+                GUI.Spacer();
+                GUI.SimpleHeader(
+                    LOC.Get("HAVOK_CollisionGen_Flver_Meshes_Header"),
+                    LOC.Get("HAVOK_CollisionGen_Flver_Meshes_Header_TT"));
+
+                if (ImGui.Button($"{LOC.Get("HAVOK_CollisionGen_Select_All_Meshes")}##flverMeshSelectAll"))
+                {
+                    Array.Fill(Selection.FlverMeshSelection, true);
+                }
+                ImGui.SameLine();
+                if (ImGui.Button($"{LOC.Get("HAVOK_CollisionGen_Select_No_Meshes")}##flverMeshSelectNone"))
+                {
+                    Array.Fill(Selection.FlverMeshSelection, false);
+                }
+
+                ImGui.BeginChild("flverMeshSelectionList", new Vector2(0, 150), ImGuiChildFlags.Borders);
+
+                for (int i = 0; i < Selection.SourceFlver.Meshes.Count; i++)
+                {
+                    var mesh = Selection.SourceFlver.Meshes[i];
+                    var material = Selection.SourceFlver.Materials[mesh.MaterialIndex];
+                    var label = LOC.Get("HAVOK_CollisionGen_Flver_Mesh_Entry", i, material.Name, mesh.Vertices.Count);
+
+                    var selected = Selection.FlverMeshSelection[i];
+                    if (ImGui.Checkbox($"{label}##flverMesh{i}", ref selected))
+                    {
+                        Selection.FlverMeshSelection[i] = selected;
+                    }
+                }
+
+                ImGui.EndChild();
+            }
+        }
+
         // TODO: need to discover method materials are applied for the extern meshes
         // Materials
         //GUI.Spacer();
@@ -231,15 +285,50 @@ public class CollisionGeneratorTool
         ImGui.EndChild();
     }
 
+    public void SelectFlverSource()
+    {
+        ImGui.OpenPopup("flverSelectionMenuPopup");
+    }
+
+    public void DisplayFlverSelectionMenu()
+    {
+        if (ImGui.BeginPopup("flverSelectionMenuPopup"))
+        {
+            Selection.DisplayFlverSelectionTabs();
+
+            ImGui.EndPopup();
+        }
+    }
+
+    public void SelectExternalFlverSource()
+    {
+        var dialog = PlatformUtils.Instance.OpenFileDialog("flverSelect", out var path);
+        if (dialog)
+        {
+            try
+            {
+                var fileData = File.ReadAllBytes(path);
+                Selection.SourceFlver = FLVER2.Read(fileData);
+
+                Selection.FlverPath = path;
+                Selection.FlverMeshSelection = new bool[Selection.SourceFlver.Meshes.Count];
+                Array.Fill(Selection.FlverMeshSelection, true);
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this, LOC.Get("HAVOK_CollisionGen_Failed_FLVER_Read", path), ex);
+            }
+        }
+    }
+
     public void GenerateShape()
     {
-
         if (TargetShape is CollisionGeneratorShape.Square)
         {
             var (verts, indices) = HKLib_MeshBuilder.GenerateSquare(width: SquareInputs.Width, length: SquareInputs.Length);
 
-            if(TargetFacing is CollisionGeneratorFacing.Up)
-                verts.Reverse();
+            if (TargetFacing is CollisionGeneratorFacing.Up)
+                HKLib_MeshBuilder.FlipTriangleWinding(indices);
 
             BuildAndReplaceShape(verts, indices);
         }
@@ -248,7 +337,7 @@ public class CollisionGeneratorTool
             var (verts, indices) = HKLib_MeshBuilder.GenerateTriangle(size: TriangleInputs.Size);
 
             if (TargetFacing is CollisionGeneratorFacing.Up)
-                verts.Reverse();
+                HKLib_MeshBuilder.FlipTriangleWinding(indices);
 
             BuildAndReplaceShape(verts, indices);
         }
@@ -257,7 +346,7 @@ public class CollisionGeneratorTool
             var (verts, indices) = HKLib_MeshBuilder.GenerateCircle(radius: CircleInputs.Radius, segments: CircleInputs.Segments);
 
             if (TargetFacing is CollisionGeneratorFacing.Up)
-                verts.Reverse();
+                HKLib_MeshBuilder.FlipTriangleWinding(indices);
 
             BuildAndReplaceShape(verts, indices);
         }
@@ -266,7 +355,32 @@ public class CollisionGeneratorTool
             var (verts, indices) = HKLib_MeshBuilder.GenerateSemiCircle(radius: SemiCircleInputs.Radius, segments: SemiCircleInputs.Segments);
 
             if (TargetFacing is CollisionGeneratorFacing.Up)
-                verts.Reverse();
+                HKLib_MeshBuilder.FlipTriangleWinding(indices);
+
+            BuildAndReplaceShape(verts, indices);
+        }
+        else if (TargetShape is CollisionGeneratorShape.FLVER)
+        {
+            if (Selection.SourceFlver == null || Selection.FlverMeshSelection.Length == 0)
+                return;
+
+            var selectedMeshIndices = new List<int>();
+            for (int i = 0; i < Selection.FlverMeshSelection.Length; i++)
+            {
+                if (Selection.FlverMeshSelection[i])
+                    selectedMeshIndices.Add(i);
+            }
+
+            if (selectedMeshIndices.Count == 0)
+                return;
+
+            var (verts, indices) = HKLib_MeshBuilder.GenerateFlverCollision(Selection.SourceFlver, selectedMeshIndices);
+
+            if (verts.Count == 0 || indices.Count == 0)
+                return;
+
+            if (TargetFacing is CollisionGeneratorFacing.Up)
+                HKLib_MeshBuilder.FlipTriangleWinding(indices);
 
             BuildAndReplaceShape(verts, indices);
         }
@@ -316,7 +430,9 @@ public class CollisionGeneratorTool
         [Display(Name = "HAVOK_CollisionGeneratorShape_Triangle")]
         Triangle,
         [Display(Name = "HAVOK_CollisionGeneratorShape_SemiCircle")]
-        SemiCircle
+        SemiCircle,
+        [Display(Name = "HAVOK_CollisionGeneratorShape_FLVER")]
+        FLVER
     }
 
     public enum CollisionGeneratorFacing

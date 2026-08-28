@@ -62,7 +62,7 @@ public class ModelDataTransferTool
     public void ImportMenu()
     {
         // Import
-        if (ImGui.BeginTabItem($"{LOC.Get("MODEL_DataTransfer_Tab_Import")}##importHeader"))
+        if (ImGui.BeginMenu($"{LOC.Get("MODEL_DataTransfer_Tab_Import")}##importHeader"))
         {
             // TODO
 
@@ -88,7 +88,7 @@ public class ModelDataTransferTool
     public void ExportMenu()
     {
         // Export
-        if (ImGui.BeginTabItem($"{LOC.Get("MODEL_DataTransfer_Tab_Export")}##exportHeader"))
+        if (ImGui.BeginMenu($"{LOC.Get("MODEL_DataTransfer_Tab_Export")}##exportHeader"))
         {
             // TODO
 

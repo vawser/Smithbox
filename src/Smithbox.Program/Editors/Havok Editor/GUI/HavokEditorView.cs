@@ -152,5 +152,7 @@ public class HavokEditorView : IEditorView
 
             ImGui.End();
         }
+
+        Tools.CollisionGeneratorTool.DisplayFlverSelectionMenu();
     }
 }

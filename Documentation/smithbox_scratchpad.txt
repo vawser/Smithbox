@@ -8,21 +8,12 @@
   Map Editor
   
 # Param Editor
+- Add mass export/import for CSV data
+
 - "prop iconID 102" crashes: seems linked to field view, adding in 102 as a value stops the crash
 
-# Model Editor
-- Add additional file support (like Map Editor)
- - EDGE
-  - Read map mapbnd for edges and then associate with FLVER on load for map pieces
-  
 # Havok Editor
 - Add cross-binder support to the file list Copy action
 
-// Toggle: Full Paths
-GUI.DisplayToggleButton("fullPathToggle", Icons.FileText,
-    ref CFG.Current.HavokEditor_BinderList_Display_Full_Path,
-    "HAVOK_BinderView_BinderPath_Display_Short",
-    "HAVOK_BinderView_BinderPath_Display_Full",
-    "HAVOK_BinderView_BinderPath_Display_TT");
-    
-
+# Map Editor
+- Fix facing for FLVER collision meshes so they they can be faced UP

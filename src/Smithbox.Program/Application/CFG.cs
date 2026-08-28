@@ -441,6 +441,7 @@ public class CFG
 
     // Param Properties
     public bool MapEditor_Field_List_Display_Padding = false;
+    public bool MapEditor_Field_List_Display_References = false;
 
     // Windows
     public bool Interface_MapEditor_Viewport_Grid = true;

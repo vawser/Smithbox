@@ -1,6 +1,14 @@
 {
   "Entries": [
     {
+      "Key": "GPARAM_ValueList_Header",
+      "Text": "Values"
+    },
+    {
+      "Key": "GPARAM_ValueList_Header_TT",
+      "Text": ""
+    },
+    {
       "Key": "GPARAM_ValueList_TimeOfDay_Column_Toggle_Show",
       "Text": "Show Time of Day column"
     },
@@ -23,6 +31,118 @@
     {
       "Key": "GPARAM_GroupList_Info_Column_Toggle_TT",
       "Text": "Toggle the display of the Information column.\n\nCurrent Mode:\n{0}"
-    }
+    },
+    {
+      "Key": "GPARAM_ValueList_Row_Header",
+      "Text": "Row"
+    },
+    {
+      "Key": "GPARAM_ValueList_Row_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Row_Selectable",
+      "Text": "Row {0}"
+    },
+    {
+      "Key": "GPARAM_ValueList_Row_ID_Header",
+      "Text": "ID"
+    },
+    {
+      "Key": "GPARAM_ValueList_Row_ID_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Row_Time_of_Day_Header",
+      "Text": "Time of Day"
+    },
+    {
+      "Key": "GPARAM_ValueList_Row_Time_of_Day_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Row_Value_Header",
+      "Text": "Value"
+    },
+    {
+      "Key": "GPARAM_ValueList_Row_Value_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Row_Information_Header",
+      "Text": "Information"
+    },
+    {
+      "Key": "GPARAM_ValueList_Row_Information_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_InfoCol_Type",
+      "Text": "Type: {0}"
+    },
+    {
+      "Key": "GPARAM_ValueList_Empty_Selectable",
+      "Text": " Empty"
+    },
+    {
+      "Key": "GPARAM_ValueList_Empty_Selectable_TT",
+      "Text": "Click to add new value."
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Duplicate_Header",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_DupeID",
+      "Text": "ID"
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_DupeOffset",
+      "Text": "Offset"
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Dupe_Submit_Action",
+      "Text": "Submit"
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Dupe_Submit_Action_TT",
+      "Text": "Duplicate the selected value row, assigning the specified ID below as the new id."
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_",
+      "Text": ""
+    },
   ]
 }

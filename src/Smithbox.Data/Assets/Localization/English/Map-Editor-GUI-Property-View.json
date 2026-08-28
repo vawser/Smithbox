@@ -35,6 +35,18 @@
     {
       "Key": "MAP_Properties_Toggle_Padding_TT",
       "Text": "Toggle the display of padding fields in the property editor.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "MAP_Properties_Toggle_References_Show",
+      "Text": "Show references section"
+    },
+    {
+      "Key": "MAP_Properties_Toggle_References_Hide",
+      "Text": "Hide references section"
+    },
+    {
+      "Key": "MAP_Properties_Toggle_References_TT",
+      "Text": "Toggle the display of Referenced By and References To section in the property editor.\n\nCurrent Mode:\n{0}"
     }
   ]
 }
