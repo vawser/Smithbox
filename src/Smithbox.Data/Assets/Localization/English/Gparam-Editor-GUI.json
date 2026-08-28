@@ -5,6 +5,26 @@
       "Text": "Graphics Param Editor"
     },
     {
+      "Key": "GPARAM_Editor_File_List",
+      "Text": "Files"
+    },
+    {
+      "Key": "GPARAM_Editor_Group_List",
+      "Text": "Groups"
+    },
+    {
+      "Key": "GPARAM_Editor_Field_List",
+      "Text": "Fields"
+    },
+    {
+      "Key": "GPARAM_Editor_Value_List",
+      "Text": "Values"
+    },
+    {
+      "Key": "GPARAM_Editor_Tools",
+      "Text": "Tools"
+    },
+    {
       "Key": "GPARAM_Groups_Header",
       "Text": "Groups"
     },

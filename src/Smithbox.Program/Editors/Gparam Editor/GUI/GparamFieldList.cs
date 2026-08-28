@@ -41,7 +41,9 @@ public class GparamFieldList
 
     public void DisplayHeader()
     {
-        GUI.TitleHeader("Fields", "");
+        GUI.TitleHeader(
+            LOC.Get("GPARAM_FieldList_Header"),
+            LOC.Get("GPARAM_FieldList_Header_TT"));
 
         // Search
         ImGui.BeginChild("GparamFieldSearchSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
@@ -139,11 +141,11 @@ public class GparamFieldList
     {
         ImGui.BeginGroup();
 
-        if (ImGui.Selectable($@" Empty##addFieldDummy"))
+        if (ImGui.Selectable($@" {LOC.Get("GPARAM_FieldList_Empty_Selectable")}##addFieldDummy"))
         {
 
         }
-        GUI.Tooltip("Right-click to add missing fields.");
+        GUI.Tooltip(LOC.Get("GPARAM_FieldList_Empty_Selectable_TT"));
 
         ImGui.EndGroup();
 
@@ -159,75 +161,85 @@ public class GparamFieldList
         if (index != fieldIndex)
             return;
 
-        if (ImGui.BeginPopupContextItem($"Options##Gparam_Field_Context"))
+        if (ImGui.BeginPopupContextItem($"##Gparam_Field_Context"))
         {
             // Add
-            if (ImGui.BeginMenu("Add"))
+            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FieldList_Context_Add_Header")}##addHeader"))
             {
                 AddFieldMenu(data, param);
 
                 ImGui.EndMenu();
             }
+            GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Add_Header_TT"));
 
             // Delete
-            if (ImGui.Selectable("Delete"))
+            if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Delete_Action")}##deleteAction"))
             {
                 DeleteFields(data, param, new List<GPARAM.IField>() { field });
             }
-            GUI.Tooltip("Delete the selected field.");
+            GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Delete_Action_TT"));
 
             ImGui.Separator();
 
             // Import
-            if (ImGui.Selectable("Import"))
+            if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Import_Action")}"))
             {
                 View.ToolView.DataTransferTool.ImportField(Project, View, fileEntry, data, param, field);
             }
-            GUI.Tooltip("Import a GPARAM Field json to overwrite this entry.");
+            GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Import_Action_TT"));
 
             // Export
-            if (ImGui.BeginMenu("Export"))
+            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FieldList_Context_Export_Header")}"))
             {
-                ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
-                GUI.Tooltip("Define the filename for the exported GPARAM Field file.");
+                ImGui.InputTextWithHint("##overrideFilename", 
+                    LOC.Get("GPARAM_FieldList_Context_Export_Filename_Hint"),
+                    ref OverrideFileName, 255);
+                GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Export_Filename_TT"));
 
-                if (ImGui.Selectable("Export File"))
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Export_File_Action")}##exportFile"))
                 {
                     View.ToolView.DataTransferTool.ExportFieldFile(fileEntry, data, param, field, OverrideFileName);
                 }
+                GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Export_File_Action_TT"));
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Export this currently selected GPARAM Field to JSON.");
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Copy Key"))
+            // Copy Key
+            if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Copy_Key_Action")}##copyKey"))
             {
                 ImGui.SetClipboardText(field.Key);
             }
+            GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Copy_Key_Action_TT"));
 
-            if (ImGui.MenuItem("Copy Name"))
+            // Copy Name
+            if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Copy_Name_Action")}##copyName"))
             {
                 var fieldName = GetFieldName(field);
                 ImGui.SetClipboardText(fieldName);
             }
+            GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Copy_Name_Action_TT"));
 
             ImGui.Separator();
-
-            if (ImGui.BeginMenu("Target"))
+            
+            // Quick Edit
+            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FieldList_Context_QuickEdit_Header")}##quickEditHeader"))
             {
-                if (ImGui.Selectable("Quick Edit"))
+                // Target in Quick Edit
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Target_In_Quick_Edit")}##targetQuickEdit"))
                 {
                     View.QuickEditHandler.UpdateFieldFilter(field.Key);
                 }
-                GUI.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
+                GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Target_In_Quick_Edit_TT"));
 
-                if (ImGui.Selectable("Data Finder"))
+                // Target in Data Finder
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Target_In_Data_Finder")}##targetDataFinder"))
                 {
                     View.ToolView.DataFinder.UpdateFieldFilter(field.Key);
                 }
-                GUI.Tooltip("Add this field to the Field Filter in the Data Finder window.");
+                GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Target_In_Data_Finder_TT"));
 
                 ImGui.EndMenu();
             }
@@ -238,7 +250,7 @@ public class GparamFieldList
 
     private void DummyContextMenu(FileDictionaryEntry fileEntry, GPARAM data, Param group)
     {
-        if (ImGui.BeginPopupContextItem($"Options##Gparam_Field_Context"))
+        if (ImGui.BeginPopupContextItem($"##Gparam_Field_Context"))
         {
             // Add
             AddFieldMenu(data, group);
@@ -331,7 +343,9 @@ public class GparamFieldList
 
         ImGui.BeginChild("##addFieldList", listSize);
 
-        GUI.SimpleHeader("Fields to Add", "");
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_FieldList_Fields_To_Add_Header"),
+            LOC.Get("GPARAM_FieldList_Fields_To_Add_Header_TT"));
 
         for (int i = 0; i < targetFields.Count; i++)
         {
@@ -366,7 +380,7 @@ public class GparamFieldList
 
         ImGui.EndChild();
 
-        if (ImGui.Selectable("Submit"))
+        if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Field_Submit")}##fieldSubmit"))
         {
             AddNewFields(data, param);
         }

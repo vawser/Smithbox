@@ -1,6 +1,14 @@
 {
   "Entries": [
     {
+      "Key": "GPARAM_FileList_Header",
+      "Text": "Files"
+    },
+    {
+      "Key": "GPARAM_FileList_Header_TT",
+      "Text": ""
+    },
+    {
       "Key": "GPARAM_FileList_Alias_Toggle_Show",
       "Text": "Show file aliases"
     },
@@ -17,12 +25,112 @@
       "Text": "Display GPARAMBND files"
     },
     {
-      "Key": "GPARAM_FileList_TargetBnds_Toggle_GPARAM",
+      "Key": "GPARAM_FileList_TargetBnd_Toggle_GPARAM",
       "Text": "Display GPARAM files"
     },
     {
       "Key": "GPARAM_FileList_TargetBnd_Toggle_TT",
       "Text": "Toggle the display of GPARAM files.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Copy_As_Header",
+      "Text": "Copy As"
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Copy_As_Action_TT",
+      "Text": "Copy this GPARAM and rename the copied file."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Delete_Action",
+      "Text": "Delete"
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Delete_Action_TT",
+      "Text": "Delete this GPARAM from your project."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Import_Action",
+      "Text": "Import"
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Import_Action_TT",
+      "Text": "Import a GPARAM json to overwrite this entry."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Export_Header",
+      "Text": "Export"
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Export_Filename_Hint",
+      "Text": "Enter the filename for the exported GPARAM..."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Export_Filename_TT",
+      "Text": "Define the filename for the exported file."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Export_Action",
+      "Text": "Export File"
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Export_Action_TT",
+      "Text": "Export this currently selected GPARAM to JSON."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Copy_Name_Action",
+      "Text": "Copy Name"
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Copy_Name_Action_TT",
+      "Text": "Copy the file name to clipboard."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Copy_Path_Action",
+      "Text": "Copy Path"
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Copy_Path_Action_TT",
+      "Text": "Copy the file path to clipboard."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_QuickEdit_Header",
+      "Text": "Quick Target"
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Target_In_Quick_Edit",
+      "Text": "Target in Quick Edit"
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Target_In_Quick_Edit_TT",
+      "Text": "Add this file to the File Filter in the Quick Edit window."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Target_In_Data_Finder",
+      "Text": "Target in Data Finder"
+    },
+    {
+      "Key": "GPARAM_FileList_Context_Target_In_Data_Finder_TT",
+      "Text": "Add this file to the File Filter in the Data Finder window."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_CopyAs_Filename_Hint",
+      "Text": "Enter the filename for the copied file..."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_CopyAs_Filename_TT",
+      "Text": "Enter the filename this file will be renamed to when copied."
+    },
+    {
+      "Key": "GPARAM_FileList_Context_CopyAs_Submit",
+      "Text": "Submit"
+    },
+    {
+      "Key": "GPARAM_FileList_CopyAs_Filename_Empty",
+      "Text": "Copy As filename cannot be empty."
+    },
+    {
+      "Key": "GPARAM_FileList_CopyAs_Missing_Source_Path",
+      "Text": "Failed to find the source file: {0}"
     }
   ]
 }

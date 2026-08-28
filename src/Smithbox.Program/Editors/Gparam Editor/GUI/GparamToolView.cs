@@ -33,7 +33,8 @@ public class GparamToolView
 
         if (CFG.Current.Interface_GparamEditor_Tool_DataTransfer)
         {
-            if (ImGui.CollapsingHeader("Data Transfer"))
+            // Data Transfer
+            if (ImGui.CollapsingHeader($"{LOC.Get("GPARAM_Tools_Data_Transfer")}##dataTransferHeader"))
             {
                 DataTransferTool.Display();
             }
@@ -41,7 +42,8 @@ public class GparamToolView
 
         if (CFG.Current.Interface_GparamEditor_Tool_Finder)
         {
-            if (ImGui.CollapsingHeader("Data Finder"))
+            // Data Finder
+            if (ImGui.CollapsingHeader($"{LOC.Get("GPARAM_Tools_Data_Finder")}##dataFinderHeader"))
             {
                 DataFinder.Display();
             }
@@ -49,12 +51,14 @@ public class GparamToolView
 
         if (CFG.Current.Interface_GparamEditor_Tool_QuickEdit)
         {
-            if (ImGui.CollapsingHeader("Quick Edit"))
+            // Quick Edit
+            if (ImGui.CollapsingHeader($"{LOC.Get("GPARAM_Tools_Quick_Edit")}##quickEditHeader"))
             {
                 View.QuickEditHandler.DisplayInputWindow();
             }
 
-            if (ImGui.CollapsingHeader("Quick Edit Commands"))
+            // Quick Edit
+            if (ImGui.CollapsingHeader($"{LOC.Get("GPARAM_Tools_Quick_Edit_Commands")}##quickEditCommandsHeader"))
             {
                 QuickEditCheatsheet.Display();
             }
@@ -63,7 +67,7 @@ public class GparamToolView
 
     public void DisplayDropdown()
     {
-        if (ImGui.BeginMenu("Tools"))
+        if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Tools_Menu")}##toolsHeader"))
         {
             DataTransferTool.DisplayDropdown();
 
@@ -73,15 +77,25 @@ public class GparamToolView
 
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        // View
+        if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Tools_View_Header")}##viewHeader"))
         {
-            if (ImGui.MenuItem("Quick Edit"))
+            // Data Transfer
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_Tools_View_Data_Transfer")}##dataTransferToggle"))
+            {
+                CFG.Current.Interface_GparamEditor_Tool_DataTransfer = !CFG.Current.Interface_GparamEditor_Tool_DataTransfer;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_DataTransfer);
+
+            // Quick Edit
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_Tools_View_Quick_Edit")}##quickEditToggle"))
             {
                 CFG.Current.Interface_GparamEditor_Tool_QuickEdit = !CFG.Current.Interface_GparamEditor_Tool_QuickEdit;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_QuickEdit);
 
-            if (ImGui.MenuItem("Finder"))
+            // Data Finder
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_Tools_View_Data_Finder")}##dataFinderToggle"))
             {
                 CFG.Current.Interface_GparamEditor_Tool_Finder = !CFG.Current.Interface_GparamEditor_Tool_Finder;
             }

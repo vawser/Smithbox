@@ -39,7 +39,9 @@ public class GparamGroupList
 
     public void DisplayHeader()
     {
-        GUI.TitleHeader("Groups", "");
+        GUI.TitleHeader(
+            LOC.Get("GPARAM_GroupList_Header"),
+            LOC.Get("GPARAM_GroupList_Header_TT"));
 
         // Search
         ImGui.BeginChild("GparamGroupSearchSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
@@ -50,8 +52,8 @@ public class GparamGroupList
         // Toggle: Display Empty Groups
         GUI.DisplayToggleButton("emptyGroupToggle", Icons.Book,
             ref CFG.Current.GparamEditor_Group_List_Display_Empty_Group,
-            "GPARAM_GroupList_Empty_Groups_Toggle_Show",
             "GPARAM_GroupList_Empty_Groups_Toggle_Hide",
+            "GPARAM_GroupList_Empty_Groups_Toggle_Show",
             "GPARAM_GroupList_Empty_Groups_Toggle_TT");
 
         ImGui.EndChild();
@@ -141,11 +143,11 @@ public class GparamGroupList
     {
         ImGui.BeginGroup();
 
-        if (ImGui.Selectable($@" Empty##addGroupDummy"))
+        if (ImGui.Selectable($@"{LOC.Get("GPARAM_GroupList_Empty_Selectable")}##addGroupDummy"))
         {
 
         }
-        GUI.Tooltip("Right-click to add missing groups.");
+        GUI.Tooltip(LOC.Get("GPARAM_GroupList_Empty_Selectable_TT"));
 
         ImGui.EndGroup();
 
@@ -162,73 +164,86 @@ public class GparamGroupList
         if (index != groupIndex)
             return;
 
-        if (ImGui.BeginPopupContextItem($"Options##Gparam_Group_Context"))
+        if (ImGui.BeginPopupContextItem($"##Gparam_Group_Context"))
         {
             // Add
-            if (ImGui.BeginMenu("Add"))
+            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_GroupList_Context_Add_Header")}##addHeader"))
             {
                 AddGroupMenu(data);
 
                 ImGui.EndMenu();
             }
+            GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Add_Header_TT"));
 
             // Delete
-            if (ImGui.Selectable("Delete"))
+            if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Delete_Action")}##deleteAction"))
             {
                 DeleteGroups(data, new List<GPARAM.Param>() { group });
             }
-            GUI.Tooltip("Delete the selected group.");
+            GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Delete_Action_TT"));
 
             ImGui.Separator();
 
-            if (ImGui.Selectable("Import"))
+            // Import
+            if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Import_Action")}##importAction"))
             {
                 View.ToolView.DataTransferTool.ImportGroup(Project, View, fileEntry, data, group);
             }
-            GUI.Tooltip("Import a GPARAM Group json to overwrite this entry.");
+            GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Import_Action_TT"));
 
-            if (ImGui.BeginMenu("Export"))
+            // Export
+            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_GroupList_Context_Export_Header")}##exportHeader"))
             {
-                ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
-                GUI.Tooltip("Define the filename for the exported GPARAM Group file.");
+                ImGui.InputTextWithHint("##overrideFilename", 
+                    LOC.Get("GPARAM_GroupList_Context_Export_Filename_Hint"),
+                    ref OverrideFileName, 255);
+                GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Export_Filename_TT"));
 
-                if (ImGui.Selectable("Export File"))
+                // Export File
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Export_File_Action")}##exportFile"))
                 {
                     View.ToolView.DataTransferTool.ExportGroupFile(fileEntry, data, group, OverrideFileName);
                 }
+                GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Export_File_Action_TT"));
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Export this currently selected GPARAM Group to JSON.");
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Copy Key"))
+            // Copy Key
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_GroupList_Context_Copy_Key_Action")}##copyKey"))
             {
                 ImGui.SetClipboardText(group.Key);
             }
+            GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Copy_Key_Action_TT"));
 
-            if (ImGui.MenuItem("Copy Name"))
+            // Copy Name
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_GroupList_Context_Copy_Name_Action")}##copyName"))
             {
                 var groupName = GetGroupName(group);
                 ImGui.SetClipboardText(groupName);
             }
+            GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Copy_Name_Action_TT"));
 
             ImGui.Separator();
 
-            if (ImGui.BeginMenu("Target"))
+            // Quick Target
+            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_GroupList_Context_QuickEdit_Header")}##quickEditHeader"))
             {
-                if (ImGui.Selectable("Quick Edit"))
+                // Target in Quick Edit
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Target_In_Quick_Edit")}##quickEditTarget"))
                 {
                     View.QuickEditHandler.UpdateGroupFilter(group.Key);
                 }
-                GUI.Tooltip("Add this group to the Group Filter in the Quick Edit window.");
+                GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Target_In_Quick_Edit_TT"));
 
-                if (ImGui.Selectable("Data Finder"))
+                // Target in Data Finder
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Target_In_Data_Finder")}##dataFinderTarget"))
                 {
                     View.ToolView.DataFinder.UpdateGroupFilter(group.Key);
                 }
-                GUI.Tooltip("Add this group to the Group Filter in the Data Finder window.");
+                GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Target_In_Data_Finder_TT"));
 
                 ImGui.EndMenu();
             }
@@ -239,7 +254,7 @@ public class GparamGroupList
 
     private void DummyContextMenu(FileDictionaryEntry fileEntry, GPARAM data)
     {
-        if (ImGui.BeginPopupContextItem($"Options##Gparam_Group_Context"))
+        if (ImGui.BeginPopupContextItem($"##Gparam_Group_Context"))
         {
             // Add
             AddGroupMenu(data);
@@ -337,9 +352,12 @@ public class GparamGroupList
 
         ImGui.BeginChild("##addGroupList", listSize);
 
-        GUI.SimpleHeader("Groups to Add", "");
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_GroupList_Groups_To_Add_Header"),
+            LOC.Get("GPARAM_GroupList_Groups_To_Add_Header_TT"));
 
-        if (ImGui.Selectable("Toggle All"))
+        // Toggle All
+        if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Groups_To_Add_Toggle_All")}##toggleAll"))
         {
             for (int i = 0; i < AddOptions.Count; i++)
             {
@@ -388,7 +406,8 @@ public class GparamGroupList
 
         ImGui.EndChild();
 
-        if(ImGui.Selectable("Submit"))
+        // Submit
+        if(ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Field_Submit")}##submitAction"))
         {
             AddNewGroups(data, AddOptions);
         }

@@ -42,11 +42,11 @@ public class GparamData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup the Primary Bank.");
+            Smithbox.LogError(this, LOC.Get("GPARAM_Data_Setup_Primary_Bank_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Graphics Param Editor] Setup the Primary Bank.");
+            Smithbox.Log(this, LOC.Get("GPARAM_Data_Setup_Primary_Bank_PASS"));
         }
 
         // Vanilla Bank
@@ -55,11 +55,11 @@ public class GparamData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup the Vanilla Bank.");
+            Smithbox.LogError(this, LOC.Get("GPARAM_Data_Setup_Vanilla_Bank_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Graphics Param Editor] Setup the Vanilla Bank.");
+            Smithbox.Log(this, LOC.Get("GPARAM_Data_Setup_Vanilla_Bank_PASS"));
         }
 
         // Gparam Annotations
@@ -68,11 +68,11 @@ public class GparamData : IDisposable
 
         if (!gparamAnnotationTaskResult)
         {
-            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup the GPARAM annotations.");
+            Smithbox.LogError(this, LOC.Get("GPARAM_Data_Setup_GPARAM_Annotations_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Graphics Param Editor] Setup the GPARAM annotations.");
+            Smithbox.Log(this, LOC.Get("GPARAM_Data_Setup_GPARAM_Annotations_PASS"));
         }
 
         // Gparam Enums
@@ -81,11 +81,11 @@ public class GparamData : IDisposable
 
         if (!gparamEnumsTaskResult)
         {
-            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup the GPARAM enums.");
+            Smithbox.LogError(this, LOC.Get("GPARAM_Data_Setup_GPARAM_Enums_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Graphics Param Editor] Setup the GPARAM enums.");
+            Smithbox.Log(this, LOC.Get("GPARAM_Data_Setup_GPARAM_Enums_PASS"));
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
@@ -109,7 +109,8 @@ public class GparamData : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to deserialize gparam annotation languages: {file}", LogPriority.High, e);
+                Smithbox.LogError(this, 
+                    LOC.Get("GPARAM_Data_Failed_Deserialize_GPARAM_Annotation_Langs", sourcefile), e);
             }
         }
         else
@@ -148,7 +149,8 @@ public class GparamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Graphics Param Editor] Failed to deserialize gparam annotation entry: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this,
+                            LOC.Get("GPARAM_Data_Failed_Deserialize_GPARAM_Annotation", entry), e);
                     }
                 }
             }
@@ -182,7 +184,8 @@ public class GparamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Graphics Param Editor] Failed to deserialize gparam enum entry: {file}", LogPriority.High, e);
+                    Smithbox.LogError(this,
+                        LOC.Get("GPARAM_Data_Failed_Deserialize_GPARAM_Enum", entry), e);
                 }
             }
         }

@@ -432,8 +432,8 @@ public class ParamFieldWindow
             // Toggle: Display Padding
             GUI.DisplayToggleButton("paddingToggle", Icons.Hubzilla,
                 ref CFG.Current.ParamEditor_Field_List_Display_Padding,
-                "PARAM_FieldWindow_FieldPadding_Visible",
                 "PARAM_FieldWindow_FieldPadding_Hidden",
+                "PARAM_FieldWindow_FieldPadding_Visible",
                 "PARAM_FieldWindow_FieldPadding_Hint");
 
             // Toggle: Display Modified Background

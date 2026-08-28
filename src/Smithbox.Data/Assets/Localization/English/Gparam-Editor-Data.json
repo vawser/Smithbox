@@ -22,107 +22,47 @@
     },
     {
       "Key": "GPARAM_Data_Setup_Primary_Bank_PASS",
-      "Text": ""
+      "Text": "Setup the Primary Bank."
     },
     {
       "Key": "GPARAM_Data_Setup_Primary_Bank_FAIL",
-      "Text": ""
+      "Text": "Failed to setup the Primary Bank."
     },
     {
       "Key": "GPARAM_Data_Setup_Vanilla_Bank_PASS",
-      "Text": ""
+      "Text": "Setup the Vanilla Bank."
     },
     {
       "Key": "GPARAM_Data_Setup_Vanilla_Bank_FAIL",
-      "Text": ""
+      "Text": "Failed to setup the Vanilla Bank."
     },
     {
       "Key": "GPARAM_Data_Setup_GPARAM_Annotations_PASS",
-      "Text": ""
+      "Text": "Setup the GPARAM annotations."
     },
     {
       "Key": "GPARAM_Data_Setup_GPARAM_Annotations_FAIL",
-      "Text": ""
+      "Text": "Failed to setup the GPARAM annotations."
     },
     {
       "Key": "GPARAM_Data_Setup_GPARAM_Enums_PASS",
-      "Text": ""
+      "Text": "Setup the GPARAM enums."
     },
     {
       "Key": "GPARAM_Data_Setup_GPARAM_Enums_FAIL",
-      "Text": ""
+      "Text": "Failed to setup the GPARAM enums."
     },
     {
-      "Key": "GPARAM_Data_",
-      "Text": ""
+      "Key": "GPARAM_Data_Failed_Deserialize_GPARAM_Annotation_Langs",
+      "Text": "Failed to deseralize GPARAM annotation language file: {0}"
     },
     {
-      "Key": "GPARAM_Data_",
-      "Text": ""
+      "Key": "GPARAM_Data_Failed_Deserialize_GPARAM_Annotation",
+      "Text": "Failed to deseralize GPARAM annotation file: {0}"
     },
     {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "GPARAM_Data_",
-      "Text": ""
-    },
+      "Key": "GPARAM_Data_Failed_Deserialize_GPARAM_Enum",
+      "Text": "Failed to deseralize GPARAM enum file: {0}"
+    }
   ]
 }

@@ -39,7 +39,9 @@ public class GparamFileList
     }
     public void DisplayHeader()
     {
-        GUI.TitleHeader("Files", "");
+        GUI.TitleHeader(
+            LOC.Get("GPARAM_FileList_Header"),
+            LOC.Get("GPARAM_FileList_Header_TT"));
 
         // Search
         ImGui.BeginChild("GparamFileSearchSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
@@ -50,8 +52,8 @@ public class GparamFileList
         // Toggle: Aliases
         GUI.DisplayToggleButton("aliasToggle", Icons.StickyNote,
             ref CFG.Current.GparamEditor_File_List_Display_Aliases,
-            "GPARAM_FileList_Alias_Toggle_Show",
             "GPARAM_FileList_Alias_Toggle_Hide",
+            "GPARAM_FileList_Alias_Toggle_Show",
             "GPARAM_FileList_Alias_Toggle_TT");
 
         // BND File Toggle
@@ -60,8 +62,8 @@ public class GparamFileList
             // Toggle: GPARAMBND
             GUI.DisplayToggleButton("gparambndToggle", Icons.Database,
                 ref CFG.Current.GparamEditor_File_List_Display_BB_BND_Files,
+                "GPARAM_FileList_TargetBnd_Toggle_GPARAM",
                 "GPARAM_FileList_TargetBnd_Toggle_GPARAMBND",
-                "GPARAM_FileList_TargetBnds_Toggle_GPARAM",
                 "GPARAM_FileList_TargetBnd_Toggle_TT");
         }
 
@@ -156,77 +158,87 @@ public class GparamFileList
         if (fileEntry.Filename != fileKey)
             return;
 
-        if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
+        if (ImGui.BeginPopupContextItem($"##Gparam_File_Context"))
         {
             // Copy as
-            if(ImGui.BeginMenu("Copy As"))
+            if(ImGui.BeginMenu($"{LOC.Get("GPARAM_FileList_Context_Copy_As_Header")}##copyAsHeader"))
             {
                 CopyAsMenu();
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Copy this GPARAM and rename the copied file.");
+            GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Copy_As_Action_TT"));
 
             // Delete
             if (IsDeletableGparamFile(fileEntry))
             {
-                if (ImGui.Selectable("Delete"))
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Delete_Action")}##deleteAction"))
                 {
                     DeleteGparamFile(fileEntry);
                 }
-                GUI.Tooltip("Will delete this GPARAM from the project.");
+                GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Delete_Action_TT"));
             }
-
 
             ImGui.Separator();
 
-            if (ImGui.Selectable("Import"))
+            // Import
+            if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Import_Action")}##importAction"))
             {
                 View.ToolView.DataTransferTool.ImportGPARAM(Project, View, fileEntry, curGparam);
             }
-            GUI.Tooltip("Import a GPARAM json to overwrite this entry.");
+            GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Import_Action_TT"));
 
-            if (ImGui.BeginMenu("Export"))
+            // Export
+            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FileList_Context_Export_Header")}##exportHeader"))
             {
-                ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
-                GUI.Tooltip("Define the filename for the exported file.");
+                ImGui.InputTextWithHint("##overrideFilename", 
+                    LOC.Get("GPARAM_FileList_Context_Export_Filename_Hint"), ref OverrideFileName, 255);
+                GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Export_Filename_TT"));
 
-                if (ImGui.Selectable("Export File"))
+                // Export File
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Export_Action")}##exportAction"))
                 {
                     View.ToolView.DataTransferTool.ExportGparamFile(fileEntry, curGparam, OverrideFileName);
                 }
+                GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Export_Action_TT"));
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Export this currently selected GPARAM to JSON.");
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Copy Name"))
+            // Copy Name
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_FileList_Context_Copy_Name_Action")}##copyName"))
             {
                 ImGui.SetClipboardText(fileEntry.Filename);
             }
+            GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Copy_Name_Action_TT"));
 
-            if (ImGui.MenuItem("Copy Path"))
+            // Copy Path
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_FileList_Context_Copy_Path_Action")}##copyPath"))
             {
                 ImGui.SetClipboardText(fileEntry.Path);
             }
+            GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Copy_Path_Action_TT"));
 
             ImGui.Separator();
 
-            if (ImGui.BeginMenu("Target"))
+            // Quick Target
+            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FileList_Context_QuickEdit_Header")}##quickEditHeader"))
             {
-                if (ImGui.Selectable("Quick Edit"))
+                // Target in Quick Edit
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Target_In_Quick_Edit")}##quickEditTarget"))
                 {
                     View.QuickEditHandler.UpdateFileFilter(fileEntry.Filename);
                 }
-                GUI.Tooltip("Add this file to the File Filter in the Quick Edit window.");
+                GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Target_In_Quick_Edit_TT"));
 
-                if (ImGui.Selectable("Data Finder"))
+                // Target in Data Finder
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Target_In_Data_Finder")}##dataFinderTarget"))
                 {
                     View.ToolView.DataFinder.UpdateFileFilter(fileEntry.Filename);
                 }
-                GUI.Tooltip("Add this file to the File Filter in the Data Finder window.");
+                GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Target_In_Data_Finder_TT"));
 
                 ImGui.EndMenu();
             }
@@ -239,14 +251,19 @@ public class GparamFileList
 
     public void CopyAsMenu()
     {
-        ImGui.InputText("##copyAsFileNameInput", ref CopyAsFileName, 255);
-        GUI.Tooltip("Enter the filename this file will be renamed to when copied.");
+        ImGui.InputTextWithHint("##copyAsFileNameInput", 
+            LOC.Get("GPARAM_FileList_Context_CopyAs_Filename_Hint"),
+            ref CopyAsFileName, 255);
 
-        if(ImGui.Selectable("Submit"))
+        GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_CopyAs_Filename_TT"));
+
+        // Submit
+        if(ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_CopyAs_Submit")}##copyAsSubmit"))
         {
             if(CopyAsFileName == "")
             {
-                Smithbox.LogError<GparamFileList>("Copy As filename cannot be empty.");
+                Smithbox.LogError<GparamFileList>(
+                    LOC.Get("GPARAM_FileList_CopyAs_Filename_Empty"));
             }
             else
             {
@@ -262,7 +279,8 @@ public class GparamFileList
 
                 if(!File.Exists(srcPath))
                 {
-                    Smithbox.LogError<GparamFileList>($"Failed to find the source file: {srcPath}.");
+                    Smithbox.LogError<GparamFileList>(
+                        LOC.Get("GPARAM_FileList_CopyAs_Missing_Source_Path", srcPath));
                 }
                 else
                 {
