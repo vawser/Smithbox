@@ -41,6 +41,26 @@
       "Text": "Toggle the display of aliases in the file list.\n\nCurrent Mode:\n{0}"
     },
     {
+      "Key": "HAVOK_FileView_FilePath_Collision_Type_Filter_Low",
+      "Text": "Low Collision"
+    },
+    {
+      "Key": "HAVOK_FileView_FilePath_Collision_Type_Filter_High",
+      "Text": "High Collision"
+    },
+    {
+      "Key": "HAVOK_FileView_FilePath_Collision_Type_Filter_Fall",
+      "Text": "Fall Protection Collision"
+    },
+    {
+      "Key": "HAVOK_FileView_FilePath_Collision_Type_Filter_All",
+      "Text": "All Collision"
+    },
+    {
+      "Key": "HAVOK_FileView_FilePath_Collision_Type_Filter_TT",
+      "Text": "Set an auto-filter for the Source List based on collision type.\n\nCurrent Mode:\n{0}"
+    },
+    {
       "Key": "HAVOK_FileView_ContextAction_Copy",
       "Text": "Copy"
     },

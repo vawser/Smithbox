@@ -93,6 +93,26 @@ public class HavokBinderView
             if (!isMatch)
                 continue;
 
+            if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+            {
+                if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 1)
+                {
+                    if (!entry.Filename.StartsWith("l"))
+                        continue;
+                }
+                else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 2)
+                {
+                    if (!entry.Filename.StartsWith("h"))
+                        continue;
+                }
+                else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 3)
+                {
+                    if (!entry.Filename.StartsWith("f"))
+                        continue;
+                }
+            }
+
+
             if (ImGui.Selectable($"{displayName}##binderEntry_{entry.Filename}", selected))
             {
                 View.Selection.ClearFileSelection();
@@ -134,6 +154,52 @@ public class HavokBinderView
             "HAVOK_BinderView_BinderPath_Display_Alias_Hide",
             "HAVOK_BinderView_BinderPath_Display_Alias_Show",
             "HAVOK_BinderView_BinderPath_Display_Alias_TT");
+
+        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            // Toggle: Collision Type
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Database}##collisionTypeToggle", DPI.IconButtonSize))
+            {
+                if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 0)
+                {
+                    CFG.Current.HavokEditor_FileList_Collision_Type_Filter = 1;
+                }
+                else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 1)
+                {
+                    CFG.Current.HavokEditor_FileList_Collision_Type_Filter = 2;
+                }
+                else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 2)
+                {
+                    CFG.Current.HavokEditor_FileList_Collision_Type_Filter = 3;
+                }
+                else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 3)
+                {
+                    CFG.Current.HavokEditor_FileList_Collision_Type_Filter = 0;
+                }
+            }
+
+            var toggleMode = "";
+            if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 0)
+            {
+                toggleMode = LOC.Get("HAVOK_FileView_FilePath_Collision_Type_Filter_All");
+            }
+            else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 1)
+            {
+                toggleMode = LOC.Get("HAVOK_FileView_FilePath_Collision_Type_Filter_Low");
+            }
+            else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 2)
+            {
+                toggleMode = LOC.Get("HAVOK_FileView_FilePath_Collision_Type_Filter_High");
+            }
+            else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 3)
+            {
+                toggleMode = LOC.Get("HAVOK_FileView_FilePath_Collision_Type_Filter_Fall");
+            }
+
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_FilePath_Collision_Type_Filter_TT", toggleMode));
+        }
 
         ImGui.EndChild();
     }

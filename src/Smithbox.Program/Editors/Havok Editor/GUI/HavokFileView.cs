@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using HKLib.hk2018;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
+using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
@@ -24,6 +25,9 @@ public class HavokFileView
 
     public bool AllowPaste = false;
     public List<string> SoftSelectEntries = new();
+
+    private FileDictionaryEntry ClipboardBinder;
+    private List<string> ClipboardFileList = new();
 
     public HavokFileView(HavokEditorView view, ProjectEntry project)
     {
@@ -300,6 +304,8 @@ public class HavokFileView
                 BinderEntry = curBinderEntry,
                 FilePath = filepath,
                 MultipleFilePaths = SoftSelectEntries,
+                ClipboardBinder = ClipboardBinder,
+                ClipboardFiles = ClipboardFileList,
                 ActionType = FileAction.FileActionType.Paste
             };
 
@@ -355,6 +361,8 @@ public class HavokFileView
                     BinderEntry = curBinderEntry,
                     FilePath = filepath,
                     MultipleFilePaths = SoftSelectEntries,
+                    ClipboardBinder = ClipboardBinder,
+                    ClipboardFiles = ClipboardFileList,
                     ActionType = FileAction.FileActionType.Paste
                 };
 
@@ -531,7 +539,60 @@ public class HavokFileView
 
     public void CopyFile()
     {
-        AllowPaste = true;
+        var data = View.HavokBank;
+
+        if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
+        {
+            CopyFileInternal(data.AnimationBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
+        {
+            CopyFileInternal(data.BehaviorBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Character)
+        {
+            CopyFileInternal(data.CharacterBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            CopyFileInternal(data.MapCollisionBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Asset_Collision)
+        {
+            CopyFileInternal(data.AssetCollisionBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Navmesh)
+        {
+            CopyFileInternal(data.NavmeshBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Cutscene)
+        {
+            CopyFileInternal(data.CutsceneBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Part_Collidable)
+        {
+            CopyFileInternal(data.PartBank);
+        }
+        else if (View.Selection.CategoryMode is HavokCategoryMode.Rumble)
+        {
+            CopyFileInternal(data.RumbleBank);
+        }
+    }
+
+    public void CopyFileInternal(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict)
+    {
+        var curBinder = bankDict[View.Selection.BinderFileEntry];
+
+        ClipboardBinder = View.Selection.BinderFileEntry.Clone();
+        ClipboardFileList.Clear();
+
+        foreach (var entry in curBinder)
+        {
+            if(SoftSelectEntries.Contains(entry.Key))
+            {
+                ClipboardFileList.Add(entry.Key);
+            }
+        }
     }
 
     public void PasteFile(FileAction fileAction)
@@ -540,17 +601,15 @@ public class HavokFileView
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
         {
-            data.AddCombinedHavokFile(fileAction);
+            data.PasteCombinedHavokFile(fileAction);
         }
         else
         {
-            data.AddHavokFile(fileAction);
+            data.PasteHavokFile(fileAction);
         }
 
         // Update file list
         View.BinderView.PopulateFileList();
-
-        AllowPaste = false;
     }
 
     public void DeleteFile(FileAction fileAction)
@@ -646,6 +705,10 @@ public class HavokFileView
         public string NewFilename;
 
         public List<NewFileInsert> Inserts = new();
+
+        public FileDictionaryEntry ClipboardBinder = new();
+
+        public List<string> ClipboardFiles = new();
 
         public enum FileActionType
         {

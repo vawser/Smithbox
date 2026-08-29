@@ -30,27 +30,7 @@ public static class HavokBinderUtils
         return newFile;
     }
 
-    public static BinderFile GetPasteFile(HavokFileView.FileAction fileAction, BinderFile sourceFile, BinderFile idFile, string primaryExtension)
-    {
-        var binderEntry = fileAction.BankDict[fileAction.BinderEntry];
-
-        var newFile = new BinderFile
-        {
-            // Remain the same
-            Flags = sourceFile.Flags,
-            Bytes = sourceFile.Bytes,
-            CompressionType = sourceFile.CompressionType,
-
-            // Increment ID to +1 from last ID
-            ID = idFile.ID + 1,
-
-            Name = GetUniqueFileName(sourceFile.Name, binderEntry.Keys, "hkx")
-        };
-
-        return newFile;
-    }
-
-    private static string GetUniqueFileName(string baseName, IEnumerable<string> existingNames, string primaryExtension)
+    public static string GetUniqueFileName(string baseName, IEnumerable<string> existingNames, string primaryExtension)
     {
         // Use a HashSet for O(1) lookups instead of scanning the collection each time
         var nameSet = new HashSet<string>(existingNames, StringComparer.OrdinalIgnoreCase);

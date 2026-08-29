@@ -1,6 +1,7 @@
 ﻿using HKLib.hk2018;
 using HKLib.Serialization.hk2018.Binary;
 using Octokit;
+using Silk.NET.OpenGL;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
@@ -672,67 +673,78 @@ public class HavokBank : IDisposable
     #endregion
 
     #region File Manipulation
-    public void AddHavokFile(HavokFileView.FileAction fileAction)
+    public void PasteHavokFile(HavokFileView.FileAction fileAction)
     {
-        if (fileAction.MultipleFilePaths.Count == 0)
+        if (fileAction.ClipboardBinder == null)
+            return;
+
+        if (fileAction.ClipboardFiles.Count == 0)
             return;
 
         if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
             return;
 
-        foreach (var entry in fileAction.MultipleFilePaths)
-        {
-            var curTopDict = fileAction.BankDict[fileAction.BinderEntry];
-
-            if (!curTopDict.ContainsKey(entry))
-                return;
-        }
-
-        var binderData = Project.VFS.FS.ReadFile(fileAction.BinderEntry.Path);
-
-        if (Project.VFS.ProjectFS.FileExists(fileAction.BinderEntry.Path))
-        {
-            binderData = Project.VFS.ProjectFS.ReadFile(fileAction.BinderEntry.Path);
-        }
-
-        if (binderData == null)
+        if (!fileAction.BankDict.ContainsKey(fileAction.ClipboardBinder))
             return;
 
-        bool anyWritten = false;
+        var sourceBinderData = Project.VFS.FS.ReadFile(fileAction.ClipboardBinder.Path);
+        var targetBinderData = Project.VFS.FS.ReadFile(fileAction.BinderEntry.Path);
 
-        var binder = BND4.Read(binderData.Value);
+        if (sourceBinderData == null)
+            return;
 
-        foreach (var entry in fileAction.MultipleFilePaths)
+        if (targetBinderData == null)
+            return;
+
+        var sourceBinder = BND4.Read(sourceBinderData.Value);
+        var targetBinder = BND4.Read(targetBinderData.Value);
+
+        var filesToCopy = new List<BinderFile>();
+
+        // Get BinderFile list from source binder (based on clipboard)
+        foreach (var file in sourceBinder.Files)
         {
-            var sourceFile = new BinderFile();
-            var lastFile = binder.Files.Last();
-
-            foreach (var file in binder.Files)
+            if(fileAction.ClipboardFiles.Contains(file.Name))
             {
-                var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                if (file.Name != entry)
-                    continue;
-
-                sourceFile = file;
-                anyWritten = true;
+                filesToCopy.Add(file);
             }
-
-            var generatedPasteFile = HavokBinderUtils.GetPasteFile(fileAction, sourceFile, lastFile, "hkx");
-
-            binder.Files.Add(generatedPasteFile);
-
-            var logName = Path.GetFileNameWithoutExtension(generatedPasteFile.Name);
-
-            Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Paste_Log", logName, fileAction.BinderEntry.Filename));
         }
 
-        if (!anyWritten)
-            return;
+        var currentNames = new List<string>();
+
+        foreach (var file in targetBinder.Files)
+        {
+            currentNames.Add(file.Name);
+        }
+
+        var lastFile = targetBinder.Files.Last();
+        var newIdBase = lastFile.ID + 1;
+
+        // Add in new BinderFiles to target (current binder selection)
+        foreach (var file in filesToCopy)
+        {
+            var newName = HavokBinderUtils.GetUniqueFileName(file.Name, currentNames, "hkx");
+
+            var newBinderFile = new BinderFile
+            {
+                Flags = file.Flags,
+                ID = newIdBase,
+                Name = newName,
+                Bytes = file.Bytes,
+                CompressionType = file.CompressionType
+            };
+
+            currentNames.Add(newName);
+            targetBinder.Files.Add(newBinderFile);
+
+            newIdBase = newIdBase + 1;
+
+            Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Paste_Log", newName, fileAction.BinderEntry.Filename));
+        }
 
         try
         {
-            var writtenBinder = binder.Write();
+            var writtenBinder = targetBinder.Write();
 
             Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
         }
@@ -742,78 +754,105 @@ public class HavokBank : IDisposable
         }
     }
 
-    public void AddCombinedHavokFile(HavokFileView.FileAction fileAction)
+    public void PasteCombinedHavokFile(HavokFileView.FileAction fileAction)
     {
-        if (fileAction.MultipleFilePaths.Count == 0)
+        if (fileAction.ClipboardBinder == null)
             return;
 
-        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
+        if (fileAction.ClipboardFiles.Count == 0)
             return;
 
-        foreach (var entry in fileAction.MultipleFilePaths)
+        var sourceBhdPath = fileAction.ClipboardBinder.Path;
+        var sourceBdtPath = fileAction.ClipboardBinder.Path.Replace("bhd", "bdt");
+
+        var targetBhdPath = fileAction.BinderEntry.Path;
+        var targetBdtPath = fileAction.BinderEntry.Path.Replace("bhd", "bdt");
+
+        // Target
+        var targetBdtData = Project.VFS.FS.ReadFile(targetBdtPath);
+        var targetBhdData = Project.VFS.FS.ReadFile(targetBhdPath);
+
+        if (Project.VFS.ProjectFS.FileExists(targetBdtPath))
         {
-            var curTopDict = fileAction.BankDict[fileAction.BinderEntry];
-
-            if (!curTopDict.ContainsKey(entry))
-                return;
+            targetBdtData = Project.VFS.ProjectFS.ReadFile(targetBdtPath);
+        }
+        if (Project.VFS.ProjectFS.FileExists(targetBhdPath))
+        {
+            targetBhdData = Project.VFS.ProjectFS.ReadFile(targetBhdPath);
         }
 
-        var bhdPath = fileAction.BinderEntry.Path;
-        var bdtPath = fileAction.BinderEntry.Path.Replace("bhd", "bdt");
+        // Source
+        var sourceBdtData = Project.VFS.FS.ReadFile(sourceBdtPath);
+        var sourceBhdData = Project.VFS.FS.ReadFile(sourceBhdPath);
+
+        if (Project.VFS.ProjectFS.FileExists(sourceBdtPath))
+        {
+            sourceBdtData = Project.VFS.ProjectFS.ReadFile(sourceBdtPath);
+        }
+        if (Project.VFS.ProjectFS.FileExists(sourceBhdPath))
+        {
+            sourceBhdData = Project.VFS.ProjectFS.ReadFile(sourceBhdPath);
+        }
+
+        if (targetBdtData == null || targetBhdData == null)
+            return;
+
+        if (sourceBdtData == null || sourceBhdData == null)
+            return;
+
+        var targetPackedBinder = BXF4.Read((Memory<byte>)targetBhdData, (Memory<byte>)targetBdtData);
+        var sourcePackedBinder = BXF4.Read((Memory<byte>)sourceBhdData, (Memory<byte>)sourceBdtData);
+
+        var filesToCopy = new List<BinderFile>();
+
+        // Get BinderFile list from source binder (based on clipboard)
+        foreach (var file in sourcePackedBinder.Files)
+        {
+            if (fileAction.ClipboardFiles.Contains(file.Name))
+            {
+                filesToCopy.Add(file);
+            }
+        }
+
+        // Get names for unique naming of pasted file
+        var currentNames = new List<string>();
+
+        foreach (var file in targetPackedBinder.Files)
+        {
+            currentNames.Add(file.Name);
+        }
+
+        var lastFile = targetPackedBinder.Files.Last();
+        var newIdBase = lastFile.ID + 1;
+
+        // Add in new BinderFiles to target (current binder selection)
+        foreach (var file in filesToCopy)
+        {
+            var newName = HavokBinderUtils.GetUniqueFileName(file.Name, currentNames, "hkx");
+
+            var newBinderFile = new BinderFile
+            {
+                Flags = file.Flags,
+                ID = newIdBase,
+                Name = newName,
+                Bytes = file.Bytes,
+                CompressionType = file.CompressionType
+            };
+
+            currentNames.Add(newName);
+            targetPackedBinder.Files.Add(newBinderFile);
+
+            newIdBase = newIdBase + 1;
+
+            Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Paste_Log", newName, fileAction.BinderEntry.Filename));
+        }
 
         try
         {
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
+            targetPackedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
 
-            if (Project.VFS.ProjectFS.FileExists(bdtPath))
-            {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
-
-            if (bdtData == null || bhdData == null)
-                return;
-
-            bool anyWritten = false;
-
-            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-            foreach (var entry in fileAction.MultipleFilePaths)
-            {
-                var sourceFile = new BinderFile();
-                var lastFile = packedBinder.Files.Last();
-
-                foreach (var file in packedBinder.Files)
-                {
-                    var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                    if (file.Name != entry)
-                        continue;
-
-                    sourceFile = file;
-                    anyWritten = true;
-                }
-
-                var generatedPasteFile = HavokBinderUtils.GetPasteFile(fileAction, sourceFile, lastFile, "hkx");
-
-                packedBinder.Files.Add(generatedPasteFile);
-
-                var logName = Path.GetFileNameWithoutExtension(generatedPasteFile.Name);
-
-                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Paste_Log", logName, fileAction.BinderEntry.Filename));
-            }
-
-            if (!anyWritten)
-                return;
-
-            packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-            Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-            Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
+            Project.VFS.ProjectFS.WriteFile(targetBhdPath, newBhdBytes);
+            Project.VFS.ProjectFS.WriteFile(targetBdtPath, newBdtBytes);
         }
         catch (Exception ex)
         {

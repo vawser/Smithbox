@@ -15,5 +15,3 @@
 
 - "prop iconID 102" crashes: seems linked to field view, adding in 102 as a value stops the crash
 
-# Havok Editor
-- Add cross-binder support to the file list Copy action
