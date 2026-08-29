@@ -19,7 +19,6 @@ public class CollisionGeneratorTool
     public TriangeParameters TriangleInputs = new();
     public CircleParameters CircleInputs = new();
     public SemiCircleParameters SemiCircleInputs = new();
-    public bool BuildMaterialPalette = false;
 
     public FlverSelectionMenu SelectionMenu;
 
@@ -260,16 +259,6 @@ public class CollisionGeneratorTool
             }
         }
 
-        // TODO: need to discover method materials are applied for the extern meshes
-        // Materials
-        //GUI.Spacer();
-        //GUI.SimpleHeader(
-        //    LOC.Get("HAVOK_CollisionGen_Materials_Header"),
-        //    LOC.Get("HAVOK_CollisionGen_Materials_Header_TT"));
-
-        //ImGui.Checkbox($"{LOC.Get("HAVOK_CollisionGen_Include_Materials_Toggle")}##includeMaterials", ref BuildMaterialPalette);
-        //GUI.Tooltip(LOC.Get("HAVOK_CollisionGen_Include_Materials_Toggle_TT"));
-
         // Actions
         GUI.Spacer();
         GUI.SimpleHeader(
@@ -401,33 +390,12 @@ public class CollisionGeneratorTool
         var collisionName = Path.GetFileName(View.Selection.FilePath);
         var sourceObject = View.PropertyView.GetSourceObject();
 
-        var materials = HavokTreeSearch.FindAll<hknpMaterial>(sourceObject, View.PropertyCache.GetCachedHavokFields);
+        var shape = HKLib_MeshBuilder.BuildExternMeshShape(
+            verts, indices);
 
-        if (materials.Count == 0)
-            return;
-
-        var defaultMat = materials.First();
-        var defaultMatDesc = HKLib_MeshBuilder.MakeMaterialDescriptor(0, defaultMat, "Default");
-
-        if (BuildMaterialPalette)
+        if (HKLib_MeshBuilder.ReplaceExternMeshShape((hkRootLevelContainer)sourceObject, shape))
         {
-            var shape = HKLib_MeshBuilder.BuildExternMeshShape(
-                verts, indices, new[] { defaultMatDesc });
-
-            if (HKLib_MeshBuilder.ReplaceExternMeshShape((hkRootLevelContainer)sourceObject, shape))
-            {
-                Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
-            }
-        }
-        else
-        {
-            var shape = HKLib_MeshBuilder.BuildExternMeshShape(
-                verts, indices);
-
-            if (HKLib_MeshBuilder.ReplaceExternMeshShape((hkRootLevelContainer)sourceObject, shape))
-            {
-                Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
-            }
+            Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
         }
     }
 

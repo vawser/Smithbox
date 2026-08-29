@@ -7,6 +7,9 @@
   Map Data Editor
   Map Editor
   
+# Model Editor
+- Add data transfer (JSON) support for Dummy/Nodes
+  
 # Param Editor
 - Add mass export/import for CSV data
 
@@ -14,6 +17,3 @@
 
 # Havok Editor
 - Add cross-binder support to the file list Copy action
-
-# Map Editor
-- Fix facing for FLVER collision meshes so they they can be faced UP
