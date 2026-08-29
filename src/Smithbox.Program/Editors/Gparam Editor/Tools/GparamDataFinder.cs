@@ -31,46 +31,77 @@ public class GparamDataFinder
     {
         ImGui.BeginChild("DataFinderSection", ImGuiChildFlags.Borders);
 
-        GUI.SimpleHeader("File Filter", "");
+        GUI.WrappedText(LOC.Get("GPARAM_DataFinder_Hint"));
 
-        GUI.SinglelineTextInput("targetParamString", ref _targetFileString);
-        GUI.Tooltip("Enter target file arguments here.");
-
-        GUI.SimpleHeader("Group Filter", "");
-
-        GUI.SinglelineTextInput("targetGroupString", ref _targetGroupString);
-        GUI.Tooltip("Enter target group arguments here.");
-
-        GUI.SimpleHeader("Field Filter", "");
-
-        GUI.SinglelineTextInput("targetFieldString", ref _targetFieldString);
-        GUI.Tooltip("Enter target field arguments here.");
-
-        GUI.SimpleHeader("Value Filter", "");
-
-        GUI.SinglelineTextInput("filterString", ref _valueFilterString);
-        GUI.Tooltip("Enter value filter arguments here.");
-
+        // File Filter
         GUI.Spacer();
-        GUI.SimpleHeader("Options", "");
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_DataFinder_File_Filter_Header"),
+            LOC.Get("GPARAM_DataFinder_File_Filter_Header_TT"));
 
-        ImGui.Checkbox("Unique Values Only", ref _uniqueValuesOnly);
-        GUI.Tooltip("Only show the first result for each distinct value.");
+        GUI.HintTextInput("targetParamString", ref _targetFileString, LOC.Get("GPARAM_DataFinder_File_Filter_Hint"));
 
+        // Group Filter
         GUI.Spacer();
-        GUI.SimpleHeader("Actions", "");
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_DataFinder_Group_Filter_Header"),
+            LOC.Get("GPARAM_DataFinder_Group_Filter_Header_TT"));
+
+        GUI.HintTextInput("targetGroupString", ref _targetGroupString, LOC.Get("GPARAM_DataFinder_Group_Filter_Hint"));
+
+        // Field Filter
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_DataFinder_Field_Filter_Header"),
+            LOC.Get("GPARAM_DataFinder_Field_Filter_Header_TT"));
+
+        GUI.HintTextInput("targetFieldString", ref _targetFieldString, LOC.Get("GPARAM_DataFinder_Field_Filter_Hint"));
+
+        // Value Filter
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_DataFinder_Value_Filter_Header"),
+            LOC.Get("GPARAM_DataFinder_Value_Filter_Header_TT"));
+
+        GUI.HintTextInput("filterString", ref _valueFilterString, LOC.Get("GPARAM_DataFinder_Value_Filter_Hint"));
+
+        // Options
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_DataFinder_Options_Header"),
+            LOC.Get("GPARAM_DataFinder_Options_Header_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("GPARAM_DataFinder_Toggle_Unique_Values")}##uniqueValToggle", ref _uniqueValuesOnly);
+        GUI.Tooltip(LOC.Get("GPARAM_DataFinder_Toggle_Unique_Values_TT"));
+
+        // Actions
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_DataFinder_Actions_Header"),
+            LOC.Get("GPARAM_DataFinder_Actions_Header_TT"));
 
         GUI.MultiButtonInput("quickEditActions",
-            "fillFromSelection", "Fill from Selection", "", FillInputs,
-            "clearInputs", "Clear", "", ClearInputs,
-            "generateResults", "Generate", "", CollateResults);
+            "fillFromSelection",
+            LOC.Get("GPARAM_DataFinder_Fill_From_Selection"),
+            LOC.Get("GPARAM_DataFinder_Fill_From_Selection_TT"),
+            FillInputs,
+
+            "clearInputs",
+            LOC.Get("GPARAM_DataFinder_Clear_Inputs"),
+            LOC.Get("GPARAM_DataFinder_Clear_Inputs_TT"), 
+            ClearInputs,
+
+            "generateResults",
+            LOC.Get("GPARAM_DataFinder_Generate_Results"),
+            LOC.Get("GPARAM_DataFinder_Generate_Results_TT"), 
+            CollateResults);
 
         GUI.Spacer();
-        GUI.SimpleHeader("Results", "");
+        GUI.SimpleHeader(
+            LOC.Get("GPARAM_DataFinder_Results_Header"),
+            LOC.Get("GPARAM_DataFinder_Results_Header_TT"));
 
         if (_results.Count == 0)
         {
-            ImGui.TextDisabled("No results.");
+            ImGui.TextDisabled(LOC.Get("GPARAM_DataFinder_No_Results"));
 
             ImGui.EndChild();
             return;
@@ -86,8 +117,13 @@ public class GparamDataFinder
         }
 
         var displayList = displayResults.ToList();
-        
-        ImGui.Text($"Number of matches: {displayList.Count}{(_uniqueValuesOnly ? $" (of {_results.Count})" : "")}");
+
+        var count = "";
+        if(_uniqueValuesOnly)
+        {
+            count = LOC.Get("GPARAM_DataFinder_Result_Count", _results.Count);
+        }
+        ImGui.Text(LOC.Get("GPARAM_DataFinder_Number_of_Matches", displayList.Count, count));
 
         ImGui.BeginChild("ResultsSection", ImGuiChildFlags.Borders);
         for (int i = 0; i < displayList.Count; i++)
@@ -100,7 +136,10 @@ public class GparamDataFinder
             {
                 SelectResult(View, result);
             }
-            GUI.Tooltip($"File: {result.FileEntry.Filename}\nGroup: {result.Group.Name} ({result.Group.Key})\nField: {result.Field.Name} ({result.Field.Key})\nValue ID: {result.Value.ID}");
+            GUI.Tooltip(LOC.Get("GPARAM_DataFinder_Result_TT",
+                result.FileEntry.Filename, result.Group.Name,
+                result.Group.Key, result.Field.Name, result.Field.Key,
+                result.Value.ID));
         }
         ImGui.EndChild();
 

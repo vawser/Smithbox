@@ -11,7 +11,7 @@
 - Add data transfer (JSON) support for Dummy/Nodes
   
 # Param Editor
-- Add mass export/import for CSV data
+- Add mass import for CSV data
 
 - "prop iconID 102" crashes: seems linked to field view, adding in 102 as a value stops the crash
 

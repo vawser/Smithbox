@@ -13,11 +13,11 @@
       "Text": "Show Time of Day column"
     },
     {
-      "Key": "GPARAM_GroupList_TimeOfDay_Column_Toggle_Hide",
+      "Key": "GPARAM_ValueList_TimeOfDay_Column_Toggle_Hide",
       "Text": "Hide Time of Day column"
     },
     {
-      "Key": "GPARAM_GroupList_TimeOfDay_Column_Toggle_TT",
+      "Key": "GPARAM_ValueList_TimeOfDay_Column_Toggle_TT",
       "Text": "Toggle the display of the Time of Day column.\n\nCurrent Mode:\n{0}"
     },
     {
@@ -25,11 +25,11 @@
       "Text": "Show Information column"
     },
     {
-      "Key": "GPARAM_GroupList_Info_Column_Toggle_Hide",
+      "Key": "GPARAM_ValueList_Info_Column_Toggle_Hide",
       "Text": "Hide TInformation column"
     },
     {
-      "Key": "GPARAM_GroupList_Info_Column_Toggle_TT",
+      "Key": "GPARAM_ValueList_Info_Column_Toggle_TT",
       "Text": "Toggle the display of the Information column.\n\nCurrent Mode:\n{0}"
     },
     {
@@ -109,40 +109,76 @@
       "Text": "Duplicate the selected value row, assigning the specified ID below as the new id."
     },
     {
-      "Key": "GPARAM_ValueList_Context_",
-      "Text": ""
+      "Key": "GPARAM_ValueList_Context_Delete_Action",
+      "Text": "Delete"
     },
     {
-      "Key": "GPARAM_ValueList_Context_",
-      "Text": ""
+      "Key": "GPARAM_ValueList_Context_Delete_Action_TT",
+      "Text": "Delete the value row."
     },
     {
-      "Key": "GPARAM_ValueList_Context_",
-      "Text": ""
+      "Key": "GPARAM_ValueList_Context_Import_Action",
+      "Text": "Import"
     },
     {
-      "Key": "GPARAM_ValueList_Context_",
-      "Text": ""
+      "Key": "GPARAM_ValueList_Context_Import_Action_TT",
+      "Text": "Import a GPARAM Value json to overwrite this entry."
     },
     {
-      "Key": "GPARAM_ValueList_Context_",
-      "Text": ""
+      "Key": "GPARAM_ValueList_Context_Export_Header",
+      "Text": "Export"
     },
     {
-      "Key": "GPARAM_ValueList_Context_",
-      "Text": ""
+      "Key": "GPARAM_ValueList_Context_Export_Filename_Hint",
+      "Text": "Enter the filename..."
     },
     {
-      "Key": "GPARAM_ValueList_Context_",
-      "Text": ""
+      "Key": "GPARAM_ValueList_Context_Export_Filename_TT",
+      "Text": "Define the filename for the exported GPARAM Value file."
     },
     {
-      "Key": "GPARAM_ValueList_Context_",
-      "Text": ""
+      "Key": "GPARAM_ValueList_Context_Export_File_Action",
+      "Text": "Export File"
     },
     {
-      "Key": "GPARAM_ValueList_Context_",
-      "Text": ""
+      "Key": "GPARAM_ValueList_Context_Export_File_Action_TT",
+      "Text": "Export this currently selected GPARAM Value to JSON."
     },
+    {
+      "Key": "GPARAM_ValueList_Context_Copy_ID_Action",
+      "Text": "Copy ID"
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Copy_ID_Action_TT",
+      "Text": "Copy the value ID to clipboard."
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Copy_Value_Action",
+      "Text": "Copy Value"
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Copy_Value_Action_TT",
+      "Text": "Copy the value to clipboard."
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_QuickEdit_Header",
+      "Text": "Quick Target"
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Target_In_Quick_Edit",
+      "Text": "Target in Quick Edit"
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Target_In_Quick_Edit_TT",
+      "Text": "Add this value to the Value Filter in the Quick Edit window."
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Target_In_Data_Finder",
+      "Text": "Target in Data Finder"
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Target_In_Data_Finder_TT",
+      "Text": "Add this value to the Value Filter in the Data Finder window."
+    }
   ]
 }

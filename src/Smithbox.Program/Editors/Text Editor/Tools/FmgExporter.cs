@@ -315,7 +315,7 @@ public class FmgExporter
             storedFmg.Entries.Add(storedFmgEntry);
         }
         // Modified Omly
-        if (CurrentExportModifier is ExportModifier.ModifiedOnly)
+        else if (CurrentExportModifier is ExportModifier.ModifiedOnly)
         {
             if (View.DifferenceManager.IsDifferentToVanilla(entry))
             {
@@ -324,7 +324,7 @@ public class FmgExporter
             }
         }
         // Unique Only
-        if (CurrentExportModifier is ExportModifier.UniqueOnly)
+        else if (CurrentExportModifier is ExportModifier.UniqueOnly)
         {
             if (View.DifferenceManager.IsUniqueToProject(entry))
             {

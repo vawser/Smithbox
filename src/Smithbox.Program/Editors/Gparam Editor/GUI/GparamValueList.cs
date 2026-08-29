@@ -393,55 +393,63 @@ public class GparamValueList
                 }
 
                 // Delete
-                if (ImGui.Selectable("Delete"))
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Delete_Action")}##deleteAction"))
                 {
                     DeleteValues(data, group, field, new List<GPARAM.IFieldValue>() { value });
 
                     ImGui.CloseCurrentPopup();
                 }
-                GUI.Tooltip("Delete the value row.");
+                GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Delete_Action_TT"));
 
                 ImGui.Separator();
 
                 // Import
-                if (ImGui.Selectable("Import"))
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Import_Action")}"))
                 {
                     View.ToolView.DataTransferTool.ImportValue(Project, View, fileEntry, data, group, field, value, overwrite);
                 }
-                GUI.Tooltip("Import a GPARAM Value json to overwrite this entry.");
+                GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Import_Action_TT"));
 
                 // Export
-                if (ImGui.BeginMenu("Export"))
+                if (ImGui.BeginMenu($"{LOC.Get("GPARAM_ValueList_Context_Export_Header")}##exportHeader"))
                 {
-                    ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
-                    GUI.Tooltip("Define the filename for the exported GPARAM Value file.");
+                    ImGui.InputTextWithHint("##overrideFilename", 
+                        LOC.Get("GPARAM_ValueList_Context_Export_Filename_Hint"), 
+                        ref OverrideFileName, 255);
+                    GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Export_Filename_TT"));
 
-                    if (ImGui.Selectable("Export File"))
+                    if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Export_File_Action")}##exportFileAction"))
                     {
                         View.ToolView.DataTransferTool.ExportValueFile(fileEntry, data, group, field, value, OverrideFileName);
                     }
+                    GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Export_File_Action_TT"));
 
                     ImGui.EndMenu();
                 }
-                GUI.Tooltip("Export this currently selected GPARAM Value to JSON.");
 
                 ImGui.Separator();
 
-                if (ImGui.MenuItem("Copy ID"))
+                // Copy ID
+                if (ImGui.MenuItem($"{LOC.Get("GPARAM_ValueList_Context_Copy_ID_Action")}##copyIdAction"))
                 {
                     ImGui.SetClipboardText($"{value.ID}");
                 }
+                GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Copy_ID_Action_TT"));
 
-                if (ImGui.MenuItem("Copy Value"))
+                // Copy Value
+                if (ImGui.MenuItem($"{LOC.Get("GPARAM_ValueList_Context_Copy_Value_Action")}##copyValueAction"))
                 {
                     ImGui.SetClipboardText($"{value.Value.ToString()}");
                 }
+                GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Copy_Value_Action_TT"));
 
                 ImGui.Separator();
 
-                if (ImGui.BeginMenu("Target"))
+                // Quick Edit
+                if (ImGui.BeginMenu($"{LOC.Get("GPARAM_ValueList_Context_QuickEdit_Header")}##quickEditHeader"))
                 {
-                    if (ImGui.Selectable("Quick Edit"))
+                    // Target in Quick Edit
+                    if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Target_In_Quick_Edit")}##targetQuickEdit"))
                     {
                         var fieldIndex = -1;
                         for (int i = 0; i < field.Values.Count; i++)
@@ -458,9 +466,10 @@ public class GparamValueList
                             View.QuickEditHandler.UpdateValueRowFilter(fieldIndex);
                         }
                     }
-                    GUI.Tooltip("Add this value to the Value Filter in the Quick Edit window.");
+                    GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Target_In_Quick_Edit_TT"));
 
-                    if (ImGui.Selectable("Data Finder"))
+                    // Target in Data Finder
+                    if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Target_In_Data_Finder")}##targetDataFinder"))
                     {
                         var fieldIndex = -1;
                         for (int i = 0; i < field.Values.Count; i++)
@@ -477,7 +486,7 @@ public class GparamValueList
                             View.ToolView.DataFinder.UpdateValueRowFilter(fieldIndex);
                         }
                     }
-                    GUI.Tooltip("Add this value to the Value Filter in the Data Finder window.");
+                    GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Target_In_Data_Finder_TT"));
 
                     ImGui.EndMenu();
                 }
