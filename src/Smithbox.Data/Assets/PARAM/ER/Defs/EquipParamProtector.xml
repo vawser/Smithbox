@@ -1555,7 +1555,18 @@
       <DisplayFormat>%u</DisplayFormat>
       <SortID>8950</SortID>
     </Field>
-    <Field Def="dummy8 pad404[14]">
+    
+    <Field Def="dummy8 pad404[14]" RemovedVersion="11701000">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>998808</SortID>
+    </Field>
+    
+    <Field Def="s32 unk404" FirstVersion="11701000" />
+    
+    <Field Def="dummy8 pad408[10]" FirstVersion="11701000">
       <DisplayName>パディング</DisplayName>
       <Description>パディング</Description>
       <DisplayFormat>%d</DisplayFormat>

@@ -2321,6 +2321,26 @@
       "Version": "11210015",
       "Message": "1.12.1 - (AssetGeometryParam) Set Reserve_0 to Vanilla v1.12.1 values",
       "Command": "param AssetGeometryParam: added: Reserve_0: = vanillafield Reserve_0"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404: = vanillafield unk404"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404: = vanillafield unk404"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: pad408: = vanillafield pad408"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: pad408: = vanillafield pad408"
     }
   ]
 }

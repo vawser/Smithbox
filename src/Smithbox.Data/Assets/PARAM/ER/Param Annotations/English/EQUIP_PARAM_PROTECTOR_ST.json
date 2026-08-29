@@ -1253,6 +1253,16 @@
       "Field": "pad404",
       "Name": "",
       "Description": ""
+    },
+    {
+      "Field": "unk404",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad408",
+      "Name": "",
+      "Description": ""
     }
   ]
 }
