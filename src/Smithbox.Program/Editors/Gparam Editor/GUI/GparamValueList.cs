@@ -47,16 +47,16 @@ public class GparamValueList
         // Toggle: Time of Day Column
         GUI.DisplayToggleButton("timeOfDayColumnToggle", Icons.CalendarTimesO,
             ref CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column,
-            "GPARAM_GroupList_TimeOfDay_Column_Toggle_Hide",
+            "GPARAM_ValueList_TimeOfDay_Column_Toggle_Hide",
             "GPARAM_ValueList_TimeOfDay_Column_Toggle_Show",
-            "GPARAM_GroupList_TimeOfDay_Column_Toggle_TT");
+            "GPARAM_ValueList_TimeOfDay_Column_Toggle_TT");
 
         // Toggle: Information Column
         GUI.DisplayToggleButton("infoColumnToggle", Icons.Info,
             ref CFG.Current.GparamEditor_Value_List_Display_Information_Column,
-            "GPARAM_GroupList_Info_Column_Toggle_Hide",
+            "GPARAM_ValueList_Info_Column_Toggle_Hide",
             "GPARAM_ValueList_Info_Column_Toggle_Show",
-            "GPARAM_GroupList_Info_Column_Toggle_TT");
+            "GPARAM_ValueList_Info_Column_Toggle_TT");
 
         ImGui.EndChild();
 

@@ -33,6 +33,14 @@
       "Text": "The CSV to import as param data."
     },
     {
+      "Key": "PARAM_DataTransfer_Header_Import_Mode",
+      "Text": "Import Mode"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Import_Mode_TT",
+      "Text": "Whether to import CSV for the current selection, or all params."
+    },
+    {
       "Key": "PARAM_DataTransfer_Header_Import_Type",
       "Text": "Import Type"
     },
@@ -59,6 +67,34 @@
     {
       "Key": "PARAM_DataTransfer_Header_Delimiter_TT",
       "Text": "The separator character used to split the data into columns."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Import_Directory",
+      "Text": "Import Directory"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Import_Directory_TT",
+      "Text": "The directory to import the CSV data from."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Import_Dir_Hint",
+      "Text": "Assign the directory..."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Set_Import_Directory",
+      "Text": "Set Import Directory"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Set_Import_Directory_TT",
+      "Text": "Set the import directory to source the CSV files from."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Open_Import_Directory",
+      "Text": "Open Import Directory"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Open_Import_Directory_TT",
+      "Text": "Open the import directory in a file explorer."
     },
     {
       "Key": "PARAM_DataTransfer_Header_Options",
@@ -99,6 +135,14 @@
     {
       "Key": "PARAM_DataTransfer_Action_Import_TT",
       "Text": "Import from the text input above."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Import_From_Source",
+      "Text": "Import from Source Folder"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Import_From_Source_TT",
+      "Text": "Import and apply CSVs from the defined source folder."
     },
     {
       "Key": "PARAM_DataTransfer_Action_File_Import",
@@ -231,6 +275,10 @@
     {
       "Key": "PARAM_DataTransfer_Action_Export_to_File_TT",
       "Text": "Export the CSV param data to file."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Dialog_Select_Import_Destination",
+      "Text": "Select Import Destination"
     },
     {
       "Key": "PARAM_DataTransfer_Dialog_Select_Export_Destination",
@@ -415,6 +463,10 @@
     {
       "Key": "PARAM_CSV_Row_Result_Effect",
       "Text": "{0} rows affected."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Invalid_Import_Directory",
+      "Text": "Defined import directory does not exist."
     }
   ]
 }

@@ -20,6 +20,7 @@ public class ParamDataTransferTool
     public ParamUpgradeRowGetType RowType = ParamUpgradeRowGetType.AllRows;
     public string SpecificFieldName = "";
 
+    public CsvImportMode ImportMode = CsvImportMode.SelectedParam;
     public CsvImportType ImportType = CsvImportType.AllFields;
 
     public CsvExportType CsvExportType = CsvExportType.SelectedParam;
@@ -27,6 +28,7 @@ public class ParamDataTransferTool
     public string ExportString = "";
     public string ExportDirectory = "";
     public string ExportFilename = "";
+    public string ImportDirectory = "";
 
     public ParamDataTransferTool(ParamEditorView view, ProjectEntry project)
     {
@@ -94,13 +96,64 @@ public class ParamDataTransferTool
         {
             GUI.WrappedText(LOC.Get("PARAM_DataTransfer_ImportTab_Hint"));
 
-            // CSV Input
+            // Import Mode
             GUI.Spacer();
             GUI.SimpleHeader(
-                LOC.Get("PARAM_DataTransfer_Header_CSV_Input"),
-                LOC.Get("PARAM_DataTransfer_Header_CSV_Input_TT"));
+                LOC.Get("PARAM_DataTransfer_Header_Import_Mode"),
+                LOC.Get("PARAM_DataTransfer_Header_Import_Mode_TT"));
 
-            GUI.MultilineTextInput("csvImportText", ref activeView.MassEdit.State.MassEditInput_CSV);
+            var curImportMode = LOC.Get(ImportMode.GetDisplayName());
+
+            GUI.SetInputWidth();
+            if (ImGui.BeginCombo("##csvImportMode", curImportMode))
+            {
+                foreach (var entry in Enum.GetValues(typeof(CsvImportMode)))
+                {
+                    var curExportType = (CsvImportMode)entry;
+
+                    var displayName = LOC.Get(curExportType.GetDisplayName());
+
+                    if (ImGui.Selectable(displayName, curExportType == ImportMode))
+                    {
+                        ImportMode = curExportType;
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+
+            if (ImportMode is CsvImportMode.SelectedParam)
+            {
+                // CSV Input
+                GUI.Spacer();
+                GUI.SimpleHeader(
+                    LOC.Get("PARAM_DataTransfer_Header_CSV_Input"),
+                    LOC.Get("PARAM_DataTransfer_Header_CSV_Input_TT"));
+
+                GUI.MultilineTextInput("csvImportText", ref activeView.MassEdit.State.MassEditInput_CSV);
+            }
+
+            if (ImportMode is CsvImportMode.AllParams)
+            {
+                GUI.Spacer();
+                GUI.SimpleHeader(
+                    LOC.Get("PARAM_DataTransfer_Header_Import_Directory"),
+                    LOC.Get("PARAM_DataTransfer_Header_Import_Directory_TT"));
+
+                GUI.SinglelineTextInputWithHint("csvImportDir", ref ImportDirectory,
+                    LOC.Get("PARAM_DataTransfer_Import_Dir_Hint"));
+
+                GUI.MultiButtonInput("csvImportDirActions",
+                    "setDirectory",
+                    LOC.Get("PARAM_DataTransfer_Action_Set_Import_Directory"),
+                    LOC.Get("PARAM_DataTransfer_Action_Set_Import_Directory_TT"),
+                    SetImportDirectory,
+
+                    "openDirectory",
+                    LOC.Get("PARAM_DataTransfer_Action_Open_Import_Directory"),
+                    LOC.Get("PARAM_DataTransfer_Action_Open_Import_Directory_TT"),
+                    OpenImportDirectory);
+            }
 
             // Import Type
             GUI.Spacer();
@@ -169,21 +222,23 @@ public class ParamDataTransferTool
                 GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing_TT"));
             }
 
-            // ACtions
+            // Actions
             GUI.Spacer();
             GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_Actions"),
                 LOC.Get("PARAM_DataTransfer_Header_Actions_TT"));
 
-            GUI.MultiButtonInput("csvImportActions",
-                "importCsv", 
+            if (ImportMode is CsvImportMode.SelectedParam)
+            {
+                GUI.MultiButtonInput("csvImportActions",
+                "importCsv",
                 LOC.Get("PARAM_DataTransfer_Action_Import"),
                 LOC.Get("PARAM_DataTransfer_Action_Import_TT"),
                 ImportCsv,
 
                 "importCsvFromFile",
                 LOC.Get("PARAM_DataTransfer_Action_File_Import"),
-                LOC.Get("PARAM_DataTransfer_Action_File_Import_TT"), 
+                LOC.Get("PARAM_DataTransfer_Action_File_Import_TT"),
                 ImportCsvFromFile,
 
                 "pasteFromClipboard",
@@ -191,13 +246,23 @@ public class ParamDataTransferTool
                 LOC.Get("PARAM_MassEdit_Action_Paste_Clipboard_TT"),
                 PasteFromClipboard);
 
-            // Result
-            GUI.Spacer();
-            GUI.SimpleHeader(
-                LOC.Get("PARAM_DataTransfer_Header_Result"),
-                LOC.Get("PARAM_DataTransfer_Header_Result_TT"));
+                // Result
+                GUI.Spacer();
+                GUI.SimpleHeader(
+                    LOC.Get("PARAM_DataTransfer_Header_Result"),
+                    LOC.Get("PARAM_DataTransfer_Header_Result_TT"));
 
-            ImGui.Text(activeView.MassEdit.State.MassEditResult_CSV);
+                ImGui.Text(activeView.MassEdit.State.MassEditResult_CSV);
+            }
+
+            if (ImportMode is CsvImportMode.AllParams)
+            {
+                GUI.MultiButtonInput("csvAllImportActions",
+                "importCsvFromSourceFolder",
+                LOC.Get("PARAM_DataTransfer_Action_Import_From_Source"),
+                LOC.Get("PARAM_DataTransfer_Action_Import_From_Source_TT"),
+                ImportCsvFromSourceFolder);
+            }
 
             ImGui.EndTabItem();
         }
@@ -256,6 +321,52 @@ public class ParamDataTransferTool
             }
         }
     }
+    public void ImportCsvFromSourceFolder()
+    {
+        if(Directory.Exists(ImportDirectory))
+        {
+            foreach(var filepath in Directory.EnumerateFiles(ImportDirectory))
+            {
+                if(filepath.EndsWith(".csv"))
+                {
+                    var filename = Path.GetFileNameWithoutExtension(filepath);
+
+                    if (ImportType == CsvImportType.AllFields)
+                    {
+                        ImportAllFields(ImportSourceType.File, filepath, filename);
+                    }
+                    else if (ImportType == CsvImportType.RowName)
+                    {
+                        ImportSpecificField(ImportSourceType.File, filepath, "Name", filename);
+                    }
+                    else if (ImportType == CsvImportType.SpecificField)
+                    {
+                        ImportSpecificField(ImportSourceType.File, filepath, SpecificFieldName, filename);
+                    }
+                }
+            }
+        }
+        else
+        {
+            Smithbox.Log<ParamDataTransferTool>(LOC.Get("PARAM_DataTransfer_Invalid_Import_Directory"));
+        }
+    }
+    public void SetImportDirectory()
+    {
+        string path;
+        var result = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("PARAM_DataTransfer_Dialog_Select_Import_Destination"), out path);
+
+        if (result)
+        {
+            ImportDirectory = path;
+        }
+    }
+
+    public void OpenImportDirectory()
+    {
+        Process.Start("explorer.exe", ImportDirectory);
+    }
 
     public void ImportMenu()
     {
@@ -268,7 +379,7 @@ public class ParamDataTransferTool
             EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
         }
 
-        // Row NAme
+        // Row Name
         if (ImGui.MenuItem($"{LOC.Get("PARAM_DataTransfer_Import_Row_Name")}##importRowNameAction"))
         {
             EditorCommandQueue.AddCommand(@"param/menu/massEditSingleCSVImport/Name");
@@ -345,12 +456,15 @@ public class ParamDataTransferTool
         }
     }
 
-    private void ImportAllFields(ImportSourceType importType, string csvPath)
+    private void ImportAllFields(ImportSourceType importType, string csvPath, string targetParam = "")
     {
         var primaryBank = View.Editor.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
-        var csvString = ""; 
+        var csvString = "";
+
+        if (targetParam == "")
+            targetParam = View.Selection.GetActiveParam();
 
         if (importType is ImportSourceType.File)
         {
@@ -365,7 +479,7 @@ public class ParamDataTransferTool
                 Project,
                 primaryBank,
                 csvString,
-                View.Selection.GetActiveParam(),
+                targetParam,
                 CFG.Current.Param_CSV_Append_Only,
                 CFG.Current.Param_CSV_Replace_Row,
                 delimiter[0]);
@@ -391,12 +505,15 @@ public class ParamDataTransferTool
         }
     }
 
-    private void ImportSpecificField(ImportSourceType importType, string csvPath, string internalName)
+    private void ImportSpecificField(ImportSourceType importType, string csvPath, string internalName, string targetParam = "")
     {
         var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
         var csvString = "";
+
+        if (targetParam == "")
+            targetParam = View.Selection.GetActiveParam();
 
         if (importType is ImportSourceType.File)
         {
@@ -411,7 +528,7 @@ public class ParamDataTransferTool
             Project,
             primaryBank,
             csvString,
-            View.Selection.GetActiveParam(),
+            targetParam,
             internalName,
             delimiter[0],
             false);
@@ -495,31 +612,34 @@ public class ParamDataTransferTool
                 LOC.Get("PARAM_DataTransfer_Action_Open_Export_Directory_TT"), 
                 OpenExportDirectory);
 
-            // Export Filename
-            GUI.Spacer();
-            GUI.SimpleHeader(
-                LOC.Get("PARAM_DataTransfer_Header_Export_Filename"),
-                LOC.Get("PARAM_DataTransfer_Header_Export_Filename_TT"));
+            if (CsvExportType != CsvExportType.AllParams)
+            {
+                // Export Filename
+                GUI.Spacer();
+                GUI.SimpleHeader(
+                    LOC.Get("PARAM_DataTransfer_Header_Export_Filename"),
+                    LOC.Get("PARAM_DataTransfer_Header_Export_Filename_TT"));
 
-            GUI.SinglelineTextInputWithHint("csvExportFilename", ref ExportFilename, LOC.Get("PARAM_DataTransfer_Export_Filename_Hint"));
+                GUI.SinglelineTextInputWithHint("csvExportFilename", ref ExportFilename, LOC.Get("PARAM_DataTransfer_Export_Filename_Hint"));
 
-            // Export Output
-            GUI.Spacer();
-            GUI.SimpleHeader(
-                LOC.Get("PARAM_DataTransfer_Header_Export_Output"),
-                LOC.Get("PARAM_DataTransfer_Header_Export_Output_TT"));
+                // Export Output
+                GUI.Spacer();
+                GUI.SimpleHeader(
+                    LOC.Get("PARAM_DataTransfer_Header_Export_Output"),
+                    LOC.Get("PARAM_DataTransfer_Header_Export_Output_TT"));
 
-            // Has to use TextUnformatted as the CSV output string can be massive,
-            // and it exceeds the internal buffers used by InputTextMultiline
-            ImGui.BeginChild("OutputTextSection", new Vector2(0, 250), ImGuiChildFlags.Borders);
-            ImGui.TextUnformatted(ExportString);
-            ImGui.EndChild();
+                // Has to use TextUnformatted as the CSV output string can be massive,
+                // and it exceeds the internal buffers used by InputTextMultiline
+                ImGui.BeginChild("OutputTextSection", new Vector2(0, 250), ImGuiChildFlags.Borders);
+                ImGui.TextUnformatted(ExportString);
+                ImGui.EndChild();
 
-            GUI.MultiButtonInput("csvOutputActions",
-                "copyToClipboard", 
-                LOC.Get("PARAM_DataTransfer_Action_Copy_to_Clipboard"),
-                LOC.Get("PARAM_DataTransfer_Action_Copy_to_Clipboard_TT"),
-                CopyOutputToClipboard);
+                GUI.MultiButtonInput("csvOutputActions",
+                    "copyToClipboard",
+                    LOC.Get("PARAM_DataTransfer_Action_Copy_to_Clipboard"),
+                    LOC.Get("PARAM_DataTransfer_Action_Copy_to_Clipboard_TT"),
+                    CopyOutputToClipboard);
+            }
 
             // Actions
             GUI.Spacer();
@@ -1204,7 +1324,14 @@ public class ParamDataTransferTool
     }
     #endregion
 }
+public enum CsvImportMode
+{
+    [Display(Name = "PARAM_ENUM_CsvExportType_All_Params")]
+    AllParams,
 
+    [Display(Name = "PARAM_ENUM_CsvExportType_Selected_Param")]
+    SelectedParam
+}
 public enum CsvExportType
 {
     [Display(Name = "PARAM_ENUM_CsvExportType_All_Params")]
