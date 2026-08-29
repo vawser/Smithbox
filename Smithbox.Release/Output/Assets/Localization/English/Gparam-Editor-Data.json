@@ -1,0 +1,68 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_Data_Save_File",
+      "Text": "Saved graphics param file: {0}"
+    },
+    {
+      "Key": "GPARAM_Data_Failed_Read_GPARAM",
+      "Text": "Failed to read GPARAM file: {0}"
+    },
+    {
+      "Key": "GPARAM_Data_Failed_Read_VFS",
+      "Text": "Failed to read file from VFS: {0}"
+    },
+    {
+      "Key": "GPARAM_Data_Failed_Find_VFS",
+      "Text": "Failed to find file from VFS: {0}"
+    },
+    {
+      "Key": "GPARAM_Data_Failed_Write_Binder",
+      "Text": "Failed to write binder file: {0}"
+    },
+    {
+      "Key": "GPARAM_Data_Setup_Primary_Bank_PASS",
+      "Text": "Setup the Primary Bank."
+    },
+    {
+      "Key": "GPARAM_Data_Setup_Primary_Bank_FAIL",
+      "Text": "Failed to setup the Primary Bank."
+    },
+    {
+      "Key": "GPARAM_Data_Setup_Vanilla_Bank_PASS",
+      "Text": "Setup the Vanilla Bank."
+    },
+    {
+      "Key": "GPARAM_Data_Setup_Vanilla_Bank_FAIL",
+      "Text": "Failed to setup the Vanilla Bank."
+    },
+    {
+      "Key": "GPARAM_Data_Setup_GPARAM_Annotations_PASS",
+      "Text": "Setup the GPARAM annotations."
+    },
+    {
+      "Key": "GPARAM_Data_Setup_GPARAM_Annotations_FAIL",
+      "Text": "Failed to setup the GPARAM annotations."
+    },
+    {
+      "Key": "GPARAM_Data_Setup_GPARAM_Enums_PASS",
+      "Text": "Setup the GPARAM enums."
+    },
+    {
+      "Key": "GPARAM_Data_Setup_GPARAM_Enums_FAIL",
+      "Text": "Failed to setup the GPARAM enums."
+    },
+    {
+      "Key": "GPARAM_Data_Failed_Deserialize_GPARAM_Annotation_Langs",
+      "Text": "Failed to deseralize GPARAM annotation language file: {0}"
+    },
+    {
+      "Key": "GPARAM_Data_Failed_Deserialize_GPARAM_Annotation",
+      "Text": "Failed to deseralize GPARAM annotation file: {0}"
+    },
+    {
+      "Key": "GPARAM_Data_Failed_Deserialize_GPARAM_Enum",
+      "Text": "Failed to deseralize GPARAM enum file: {0}"
+    }
+  ]
+}

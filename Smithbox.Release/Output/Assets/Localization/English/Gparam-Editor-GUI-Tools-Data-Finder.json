@@ -1,0 +1,128 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_DataFinder_Hint",
+      "Text": "Use this tool to find specific instances of groups, fields or values within the graphics param files."
+    },
+    {
+      "Key": "GPARAM_DataFinder_File_Filter_Header",
+      "Text": "File Filter"
+    },
+    {
+      "Key": "GPARAM_DataFinder_File_Filter_Header_TT",
+      "Text": "Define which files to target."
+    },
+    {
+      "Key": "GPARAM_DataFinder_File_Filter_Hint",
+      "Text": "Define the target files..."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Group_Filter_Header",
+      "Text": "Group Filter"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Group_Filter_Header_TT",
+      "Text": "Define which groups to target."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Group_Filter_Hint",
+      "Text": "Define the target groups..."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Field_Filter_Header",
+      "Text": "Field Filter"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Field_Filter_Header_TT",
+      "Text": "Define which fields to target."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Field_Filter_Hint",
+      "Text": "Define the target fields..."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Value_Filter_Header",
+      "Text": "Value Filter"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Value_Filter_Header_TT",
+      "Text": "Define which values to target."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Value_Filter_Hint",
+      "Text": "Define the target values..."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Options_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_DataFinder_Toggle_Unique_Values",
+      "Text": "Unique Values Only"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Toggle_Unique_Values_TT",
+      "Text": "Only show the first result for each distinct value."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Actions_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_DataFinder_Fill_From_Selection",
+      "Text": "Fill Filters from Selection"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Fill_From_Selection_TT",
+      "Text": "Define the filter inputs based on current selection."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Clear_Inputs",
+      "Text": "Clear Filters"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Clear_Inputs_TT",
+      "Text": "Clears the current filter inputs."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Generate_Results",
+      "Text": "Generate Result List"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Generate_Results_TT",
+      "Text": "Generate result list from current filter inputs."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Results_Header",
+      "Text": "Results"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Results_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_DataFinder_No_Results",
+      "Text": "No results."
+    },
+    {
+      "Key": "GPARAM_DataFinder_Number_of_Matches",
+      "Text": "Number of matches: {0}{1}"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Result_Count",
+      "Text": " (of {0})"
+    },
+    {
+      "Key": "GPARAM_DataFinder_Result_TT",
+      "Text": "File: {0}\nGroup: {1} ({2})\nField: {3} ({4})\nValue ID: {5}"
+    }
+  ]
+}

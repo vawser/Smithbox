@@ -109,6 +109,14 @@
       "Text": "Inherit the name of the referenced FMG connected to via the target field."
     },
     {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_Row_FMG",
+      "Text": "Inherit Name from FMG Reference"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_Row_FMG_TT",
+      "Text": "Inherit the name of the connected row FMG entry."
+    },
+    {
       "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_Alias",
       "Text": "Inherit Name from Alias"
     },

@@ -14,7 +14,7 @@
     },
     {
       "Key": "TEXT_EntryList_Focus_Selection_TT",
-      "Text": "Focus the currently selected entry.\nShortcut: {0}"
+      "Text": "Focus the currently selected entry.\nAction Shortcut: {0}\nPopup Shortcut: {1}"
     },
     {
       "Key": "TEXT_EntryList_Column_Header_ID",
@@ -51,6 +51,18 @@
     {
       "Key": "TEXT_EntryList_NullEntries_Hint",
       "Text": "Toggle the display of the null text entries.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "TEXT_EntryList_Select_All_Lock",
+      "Text": "Block Select All"
+    },
+    {
+      "Key": "TEXT_EntryList_Select_All_Unlock",
+      "Text": "Allow Select All"
+    },
+    {
+      "Key": "TEXT_EntryList_Select_All_TT",
+      "Text": "Toggle the whether the Select All shortcut is allowed.\n\nCurrent Mode:\n{0}"
     }
   ]
 }

@@ -1,0 +1,92 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_Editor_Stub",
+      "Text": "Graphics Param Editor"
+    },
+    {
+      "Key": "GPARAM_Editor_File_List",
+      "Text": "Files"
+    },
+    {
+      "Key": "GPARAM_Editor_Group_List",
+      "Text": "Groups"
+    },
+    {
+      "Key": "GPARAM_Editor_Field_List",
+      "Text": "Fields"
+    },
+    {
+      "Key": "GPARAM_Editor_Value_List",
+      "Text": "Values"
+    },
+    {
+      "Key": "GPARAM_Editor_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "GPARAM_Groups_Header",
+      "Text": "Groups"
+    },
+    {
+      "Key": "GPARAM_Groups_Add_All_Missing",
+      "Text": "Add All Missing Groups"
+    },
+    {
+      "Key": "GPARAM_Groups_Add_All_Missing_TT",
+      "Text": "Add any and all missing groups of the current graphical param."
+    },
+    {
+      "Key": "GPARAM_Groups_Delete",
+      "Text": "Delete Selected Group"
+    },
+    {
+      "Key": "GPARAM_Groups_Delete_TT",
+      "Text": "Delete the currently selected group."
+    },
+    {
+      "Key": "GPARAM_Fields_Header",
+      "Text": "Fields"
+    },
+    {
+      "Key": "GPARAM_Fields_Duplicate",
+      "Text": "Duplicate Selected Field"
+    },
+    {
+      "Key": "GPARAM_Fields_Duplicate_TT",
+      "Text": "Duplicates the selected field."
+    },
+    {
+      "Key": "GPARAM_Fields_Delete",
+      "Text": "Delete Selected Field"
+    },
+    {
+      "Key": "GPARAM_Fields_Delete_TT",
+      "Text": "Deletes the selected field."
+    },
+    {
+      "Key": "GPARAM_Values_Header",
+      "Text": "Values"
+    },
+    {
+      "Key": "GPARAM_Values_Duplicate",
+      "Text": "Duplicate Selected Value"
+    },
+    {
+      "Key": "GPARAM_Values_Duplicate_TT",
+      "Text": "Duplicates the selected value."
+    },
+    {
+      "Key": "GPARAM_Values_Delete",
+      "Text": "Delete Selected Value"
+    },
+    {
+      "Key": "GPARAM_Values_Delete_TT",
+      "Text": "Deletes the selected value."
+    },
+    {
+      "Key": "GPARAM_View_Toggle_Tools",
+      "Text": "Tools"
+    }
+  ]
+}

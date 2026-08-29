@@ -1,6 +1,14 @@
 {
   "Entries": [
     {
+      "Key": "GPARAM_GroupList_Header",
+      "Text": "Groups"
+    },
+    {
+      "Key": "GPARAM_GroupList_Header_TT",
+      "Text": ""
+    },
+    {
       "Key": "GPARAM_GroupList_Empty_Groups_Toggle_Show",
       "Text": "Show empty groups"
     },
@@ -11,6 +19,110 @@
     {
       "Key": "GPARAM_GroupList_Empty_Groups_Toggle_TT",
       "Text": "Toggle the display of empty groups.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "GPARAM_GroupList_Empty_Selectable",
+      "Text": " Empty"
+    },
+    {
+      "Key": "GPARAM_GroupList_Empty_Selectable_TT",
+      "Text": "Right-click to add missing groups."
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Add_Header",
+      "Text": "Add"
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Add_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Delete_Action",
+      "Text": "Delete"
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Delete_Action_TT",
+      "Text": "Delete the selected group."
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Import_Action",
+      "Text": "Import"
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Import_Action_TT",
+      "Text": "Import a GPARAM group json to overwrite this entry."
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Export_Header",
+      "Text": "Export"
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Export_Filename_Hint",
+      "Text": "Enter the filename for exported file..."
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Export_Filename_TT",
+      "Text": "Define the filename for the exported GPARAM group file."
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Export_File_Action",
+      "Text": "Export File"
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Export_File_Action_TT",
+      "Text": "Export this currently selected GPARAM group to JSON."
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Copy_Key_Action",
+      "Text": "Copy Key"
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Copy_Key_Action_TT",
+      "Text": "Copy the group key to clipboard."
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Copy_Name_Action",
+      "Text": "Copy Name"
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Copy_Name_Action_TT",
+      "Text": "Copy the group name to clipboard."
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_QuickEdit_Header",
+      "Text": "Quick Target"
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Target_In_Quick_Edit",
+      "Text": "Target in Quick Edit"
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Target_In_Quick_Edit_TT",
+      "Text": "Add this group to the Group Filter in the Quick Edit window."
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Target_In_Data_Finder",
+      "Text": "Target in Data Finder"
+    },
+    {
+      "Key": "GPARAM_GroupList_Context_Target_In_Data_Finder_TT",
+      "Text": "Add this group to the Group Filter in the Data Finder window."
+    },
+    {
+      "Key": "GPARAM_GroupList_Groups_To_Add_Header",
+      "Text": "Groups to Add"
+    },
+    {
+      "Key": "GPARAM_GroupList_Groups_To_Add_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_GroupList_Groups_To_Add_Toggle_All",
+      "Text": "Toggle All"
+    },
+    {
+      "Key": "GPARAM_GroupList_Field_Submit",
+      "Text": "Submit"
     }
   ]
 }

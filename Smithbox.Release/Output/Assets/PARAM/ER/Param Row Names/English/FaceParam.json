@@ -280,121 +280,145 @@
     {
       "ID": 3100,
       "Entries": [
-        "46: Warrior Male\r"
+        "46: Vagabond (Male)"
       ]
     },
     {
       "ID": 3101,
       "Entries": [
-        "47: Warrior Female\r"
+        "47: Vagabond (Female)"
       ]
     },
     {
       "ID": 3102,
       "Entries": [
-        "48: Warrior Male\r"
+        "48: Warrior (Male)"
       ]
     },
     {
       "ID": 3103,
       "Entries": [
-        "49: Warrior Female\r"
+        "49: Warrior (Female)"
       ]
     },
     {
       "ID": 3104,
       "Entries": [
-        "50: Warrior Male\r"
+        "50: Hero (Male)"
       ]
     },
     {
       "ID": 3105,
       "Entries": [
-        "51: Warrior Female\r"
+        "51: Hero (Female)"
       ]
     },
     {
       "ID": 3106,
       "Entries": [
-        "52: Warrior Male\r"
+        "52: Bandit (Male)"
       ]
     },
     {
       "ID": 3107,
       "Entries": [
-        "53: Warrior Female\r"
+        "53: Bandit (Female)"
       ]
     },
     {
       "ID": 3108,
       "Entries": [
-        "54: Warrior Male\r"
+        "54: Astrologer (Male)"
       ]
     },
     {
       "ID": 3109,
       "Entries": [
-        "55: Warrior Female\r"
+        "55: Astrologer (Female)"
       ]
     },
     {
       "ID": 3110,
       "Entries": [
-        "56: Warrior Male\r"
+        "56: Prophet (Male)"
       ]
     },
     {
       "ID": 3111,
       "Entries": [
-        "57: Warrior Female\r"
+        "57: Prophet (FemalE)"
       ]
     },
     {
       "ID": 3112,
       "Entries": [
-        "58: Warrior Male\r"
+        "58: Confessor (Male)"
       ]
     },
     {
       "ID": 3113,
       "Entries": [
-        "59: Warrior Female\r"
+        "59: Confessor (Female)"
       ]
     },
     {
       "ID": 3114,
       "Entries": [
-        "60: Warrior Male\r"
+        "60: Samurai (Male)"
       ]
     },
     {
       "ID": 3115,
       "Entries": [
-        "61: Warrior Female\r"
+        "61: Samurai (Female)"
       ]
     },
     {
       "ID": 3116,
       "Entries": [
-        "62: Warrior Male\r"
+        "62: Prisoner (Male)"
       ]
     },
     {
       "ID": 3117,
       "Entries": [
-        "63: Warrior Female\r"
+        "63: Prisoner (Female)"
       ]
     },
     {
       "ID": 3118,
       "Entries": [
-        "64: Warrior Male\r"
+        "64: Wretch (Male)"
       ]
     },
     {
       "ID": 3119,
       "Entries": [
-        "65: Warrior Female\r"
+        "65: Wretch (Female)"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "66: Idus Knight (Male)"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "67: Idus Knight (Female)"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "68: Heavy Knight (Male)"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "69: Heavy Knight (Female)"
       ]
     },
     {
@@ -2330,6 +2354,18 @@
       ]
     },
     {
+      "ID": 24700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 27000,
       "Entries": [
         "388: Carian\r"
@@ -3389,6 +3425,18 @@
       "ID": 2024320,
       "Entries": [
         "564: Moonrithyll"
+      ]
+    },
+    {
+      "ID": 2024500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2024510,
+      "Entries": [
+        ""
       ]
     }
   ]

@@ -1,0 +1,40 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_Tools_Data_Transfer",
+      "Text": "Data Transfer"
+    },
+    {
+      "Key": "GPARAM_Tools_Data_Finder",
+      "Text": "Data Finder"
+    },
+    {
+      "Key": "GPARAM_Tools_Quick_Edit",
+      "Text": "Quick Edit"
+    },
+    {
+      "Key": "GPARAM_Tools_Quick_Edit_Commands",
+      "Text": "Quick Edit Commands"
+    },
+    {
+      "Key": "GPARAM_Tools_Menu",
+      "Text": "Tools"
+    },
+    {
+      "Key": "GPARAM_Tools_View_Header",
+      "Text": "View"
+    },
+    {
+      "Key": "GPARAM_Tools_View_Quick_Edit",
+      "Text": "Quick Edit"
+    },
+    {
+      "Key": "GPARAM_Tools_View_Data_Finder",
+      "Text": "Data Finder"
+    },
+    {
+      "Key": "GPARAM_Tools_View_Data_Transfer",
+      "Text": "Data Transfer"
+    }
+  ]
+}

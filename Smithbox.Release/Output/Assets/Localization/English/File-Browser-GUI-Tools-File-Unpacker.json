@@ -1,100 +1,144 @@
 {
   "Entries": [
     {
-      "Key": "FILE_FileUnpacker_",
+      "Key": "FILE_FileUnpacker_Hint",
+      "Text": "Use this tool to unpack all game files from the data archives."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Unpack_Dir_Header",
+      "Text": "Unpack Directory"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Unpack_Dir_Header_TT",
+      "Text": "The directory to unpack the game files to."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Unpack_Hint",
+      "Text": "Set the unpack directory..."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Actions_Header_TT",
       "Text": ""
     },
     {
-      "Key": "FILE_FileUnpacker_",
+      "Key": "FILE_FileUnpacker_Set_Unpack_Dir",
+      "Text": "Set Unpack Directory"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Set_Unpack_Dir_TT",
+      "Text": "Set the directory that the game files are unpacking into."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Unpack",
+      "Text": "Unpack Game Files"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Unpack_TT",
+      "Text": "Start the unpacking process."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Delete",
+      "Text": "Delete Unpacked Game Files"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Delete_TT",
+      "Text": "Delete unpacked files in the current unpack directory."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Selective_Unpack_Header",
+      "Text": "Selective Unpack"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Selective_Unpack_Header_TT",
       "Text": ""
     },
     {
-      "Key": "FILE_FileUnpacker_",
+      "Key": "FILE_FileUnpacker_Selective_Toggle_All",
+      "Text": "Toggle All"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Selective_Toggle_All_TT",
+      "Text": "Toggle the state of all checkboxes for Selective Unpack."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Unpacking_Status",
+      "Text": "Unpacking... {0} / {1} files"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Cancel_Unpack",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Cancel_Unpack_TT",
+      "Text": "This will cancel the game data unpack."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Deleting_Status",
+      "Text": "Deleting... {0} / {1} files"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Cancel_Delete",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Cancel_Delete_TT",
+      "Text": "This will cancel the delete."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Failed_Unpack_Header",
+      "Text": "Failed to Unpack"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Failed_Unpack_Header_TT",
       "Text": ""
     },
     {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
+      "Key": "FILE_FileUnpacker_Select_Unpack_Dir",
+      "Text": "Select Unpack Directory"
     },
     {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
+      "Key": "FILE_FileUnpacker_Unpack_Dir_Not_Set",
+      "Text": "Unpack directory has not been set."
     },
     {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
+      "Key": "FILE_FileUnpacker_Game_Data_Already_Unpacked",
+      "Text": "Game files are already being unpacked."
     },
     {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
+      "Key": "FILE_FileUnpacker_Game_Files_Being_Deleted",
+      "Text": "Game files are already being deleted."
     },
     {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
+      "Key": "FILE_FileUnpacker_Failed_Folder_Delete",
+      "Text": "Failed to delete folder: {0}"
     },
     {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
+      "Key": "FILE_FileUnpacker_Failed_File_Write",
+      "Text": "Failed to write file: {0}"
     },
     {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
+      "Key": "FILE_FileUnpacker_Failed_Unpack_Entry",
+      "Text": "Failed to add."
     },
     {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
+      "Key": "FILE_FileUnpacker_Unpack_Cancelled",
+      "Text": "Unpacking was cancelled."
     },
     {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
+      "Key": "FILE_FileUnpacker_Delete_Cancelled",
+      "Text": "Deleting was cancelled."
     },
     {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
+      "Key": "FILE_FileUnpacker_Failed_Deserialize_File_Dict",
+      "Text": "Failed to deserialize file dictionary: {0}"
     },
     {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
-    },
-    {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
-    },
-    {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
-    },
-    {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
-    },
-    {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
-    },
-    {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
-    },
-    {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
-    },
-    {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
-    },
-    {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
-    },
-    {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
-    },
-    {
-      "Key": "FILE_FileUnpacker_",
-      "Text": ""
-    },
+      "Key": "FILE_FileUnpacker_Failed_Read_File_Dict",
+      "Text": "Failed to read file dictionary: {0}"
+    }
   ]
 }

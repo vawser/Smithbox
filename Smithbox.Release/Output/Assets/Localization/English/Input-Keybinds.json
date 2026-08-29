@@ -249,6 +249,14 @@
       "Text": "When an entry is selected, this will focus the entry to the centre of the user's screen."
     },
     {
+      "Key": "KEY_Find",
+      "Text": "Find"
+    },
+    {
+      "Key": "KEY_Find_TT",
+      "Text": "Open the Find popup menu."
+    },
+    {
       "Key": "KEY_Reorder_Up",
       "Text": "Move Up"
     },

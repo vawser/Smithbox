@@ -287,6 +287,14 @@
     {
       "Key": "EDITOR_SaveOutput_ACB_TT",
       "Text": "If enabled, the Asset Configurations files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_GPARAM",
+      "Text": "GPARAM"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_GPARAM_TT",
+      "Text": "If enabled, the graphics param files are outputted on save."
     }
   ]
 }

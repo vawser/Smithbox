@@ -1,0 +1,112 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_FieldList_Header",
+      "Text": "Fields"
+    },
+    {
+      "Key": "GPARAM_FieldList_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_FieldList_Empty_Selectable",
+      "Text": " Empty"
+    },
+    {
+      "Key": "GPARAM_FieldList_Empty_Selectable_TT",
+      "Text": "Right-click to add missing fields."
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Add_Header",
+      "Text": "Add"
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Add_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Delete_Action",
+      "Text": "Delete"
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Delete_Action_TT",
+      "Text": "Delete the selected field."
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Import_Action",
+      "Text": "Import"
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Import_Action_TT",
+      "Text": "Import a GPARAM Field json to overwrite this entry."
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Export_Header",
+      "Text": "Export"
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Export_Filename_Hint",
+      "Text": "Enter the filename for exported file..."
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Export_Filename_TT",
+      "Text": "Define the filename for the exported GPARAM Field file."
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Export_File_Action",
+      "Text": "Export File"
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Export_File_Action_TT",
+      "Text": "Export this currently selected GPARAM Field to JSON."
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Copy_Key_Action",
+      "Text": "Copy Key"
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Copy_Key_Action_TT",
+      "Text": "Copy the field key to clipboard."
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Copy_Name_Action",
+      "Text": "Copy Name"
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Copy_Name_Action_TT",
+      "Text": "Copy the field name to clipboard."
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_QuickEdit_Header",
+      "Text": "Quick Target"
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Target_In_Quick_Edit",
+      "Text": "Target in Quick Edit"
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Target_In_Quick_Edit_TT",
+      "Text": "Add this field to the Field Filter in the Quick Edit window."
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Target_In_Data_Finder",
+      "Text": "Target in Data Finder"
+    },
+    {
+      "Key": "GPARAM_FieldList_Context_Target_In_Data_Finder_TT",
+      "Text": "Add this field to the Field Filter in the Data Finder window."
+    },
+    {
+      "Key": "GPARAM_FieldList_Fields_To_Add_Header",
+      "Text": "Fields to Add"
+    },
+    {
+      "Key": "GPARAM_FieldList_Fields_To_Add_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "GPARAM_FieldList_Field_Submit",
+      "Text": "Submit"
+    }
+  ]
+}

@@ -49,6 +49,10 @@
       "Text": "Semi-Circle"
     },
     {
+      "Key": "HAVOK_CollisionGeneratorShape_FLVER",
+      "Text": "FLVER"
+    },
+    {
       "Key": "HAVOK_CollisionGen_Parameters_Header",
       "Text": "Parameters"
     },
@@ -107,6 +111,82 @@
     {
       "Key": "HAVOK_CollisionGen_Include_Materials_Toggle_TT",
       "Text": "If enabled, a material palette is built for the collision."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Select_Flver_Action",
+      "Text": "Select FLVER"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Select_Flver_Action_TT",
+      "Text": "Open the FLVER selection list."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Select_External_Flver_Action",
+      "Text": "Select External FLVER"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Select_External_Flver_Action_TT",
+      "Text": "Select the .flver file to use to generate the collision mesh."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Failed_FLVER_Read",
+      "Text": "Failed to read FLVER file: {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Failed_FLVER_Find",
+      "Text": "Failed to find FLVER file: {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Failed_Binder_Read",
+      "Text": "Failed to read binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Failed_Binder_Find",
+      "Text": "Failed to find binder file: {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Flver_Meshes_Header",
+      "Text": "FLVER Meshes"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Flver_Meshes_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Select_All_Meshes",
+      "Text": "Select All"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Select_No_Meshes",
+      "Text": "Select None"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Flver_Mesh_Entry",
+      "Text": "Mesh: {0}: {1} [{2}]"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Flver_Current_Source_FLVER",
+      "Text": "Source FLVER: {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Flver_Current_Source_FLVER_None",
+      "Text": "No source FLVER defined yet."
+    },
+    {
+      "Key": "HAVOK_FlverSelection_Tab_Objects",
+      "Text": "Objects"
+    },
+    {
+      "Key": "HAVOK_FlverSelection_Tab_Assets",
+      "Text": "Assets"
+    },
+    {
+      "Key": "HAVOK_FlverSelection_MapPieces",
+      "Text": "Map Pieces"
+    },
+    {
+      "Key": "HAVOK_FlverSelection_Filter_TT",
+      "Text": "Filter the model list entries."
     }
   ]
 }

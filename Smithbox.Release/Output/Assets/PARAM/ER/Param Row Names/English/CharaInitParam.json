@@ -170,123 +170,159 @@
       ]
     },
     {
+      "ID": 3010,
+      "Entries": [
+        "Class - Idus Knight"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Class - Heavy Knight"
+      ]
+    },
+    {
       "ID": 3100,
       "Entries": [
-        ""
+        "Face - Vagabond (Male)"
       ]
     },
     {
       "ID": 3101,
       "Entries": [
-        ""
+        "Face - Vagabond (Female)"
       ]
     },
     {
       "ID": 3102,
       "Entries": [
-        ""
+        "Face - Warrior (Male)"
       ]
     },
     {
       "ID": 3103,
       "Entries": [
-        ""
+        "Face - Warrior (Female)"
       ]
     },
     {
       "ID": 3104,
       "Entries": [
-        ""
+        "Face - Hero (Male)"
       ]
     },
     {
       "ID": 3105,
       "Entries": [
-        ""
+        "Face - Hero (Female)"
       ]
     },
     {
       "ID": 3106,
       "Entries": [
-        ""
+        "Face - Bandit (Male)"
       ]
     },
     {
       "ID": 3107,
       "Entries": [
-        ""
+        "Face - Bandit (Female)"
       ]
     },
     {
       "ID": 3108,
       "Entries": [
-        ""
+        "Face - Astrologer (Male)"
       ]
     },
     {
       "ID": 3109,
       "Entries": [
-        ""
+        "Face - Astrologer (Female)"
       ]
     },
     {
       "ID": 3110,
       "Entries": [
-        ""
+        "Face - Prophet (Male)"
       ]
     },
     {
       "ID": 3111,
       "Entries": [
-        ""
+        "Face - Prophet (Female)"
       ]
     },
     {
       "ID": 3112,
       "Entries": [
-        ""
+        "Face - Confessor (Male)"
       ]
     },
     {
       "ID": 3113,
       "Entries": [
-        ""
+        "Face - Confessor (Female)"
       ]
     },
     {
       "ID": 3114,
       "Entries": [
-        ""
+        "Face - Samurai (Male)"
       ]
     },
     {
       "ID": 3115,
       "Entries": [
-        ""
+        "Face - Samurai (Female)"
       ]
     },
     {
       "ID": 3116,
       "Entries": [
-        ""
+        "Face - Prisoner (Male)"
       ]
     },
     {
       "ID": 3117,
       "Entries": [
-        ""
+        "Face - Prisoner (Female)"
       ]
     },
     {
       "ID": 3118,
       "Entries": [
-        ""
+        "Face - Wretch (Male)"
       ]
     },
     {
       "ID": 3119,
       "Entries": [
-        ""
+        "Face - Wretch (Female)"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Face - Idus Knight (Male)"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "Face - Idus Knight (Female)"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "Face - Heavy Knight (Male)"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "Face - Heavy Knight (Female)"
       ]
     },
     {
@@ -13916,6 +13952,30 @@
       ]
     },
     {
+      "ID": 24700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24702,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 26050,
       "Entries": [
         "Mimic Tear"
@@ -14588,6 +14648,12 @@
       ]
     },
     {
+      "ID": 2004024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 2004030,
       "Entries": [
         ""
@@ -14672,6 +14738,12 @@
       ]
     },
     {
+      "ID": 2004073,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 2004080,
       "Entries": [
         ""
@@ -14721,6 +14793,12 @@
     },
     {
       "ID": 2004120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2004121,
       "Entries": [
         ""
       ]
@@ -14931,6 +15009,12 @@
     },
     {
       "ID": 2004253,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2004254,
       "Entries": [
         ""
       ]
@@ -15147,6 +15231,30 @@
     },
     {
       "ID": 2004412,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2005000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2005010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2005020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2005030,
       "Entries": [
         ""
       ]
@@ -15506,6 +15614,42 @@
       ]
     },
     {
+      "ID": 2006175,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006180,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006181,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006185,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006186,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006190,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 2006500,
       "Entries": [
         ""
@@ -15843,6 +15987,42 @@
     },
     {
       "ID": 2006670,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006675,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006680,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006681,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006685,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006686,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2006690,
       "Entries": [
         ""
       ]
@@ -16520,6 +16700,18 @@
       ]
     },
     {
+      "ID": 2007991,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2007992,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 2008000,
       "Entries": [
         ""
@@ -16899,6 +17091,12 @@
     },
     {
       "ID": 2008538,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2008540,
       "Entries": [
         ""
       ]

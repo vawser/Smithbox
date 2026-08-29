@@ -1,5 +1,5 @@
 {
-  "MaxVersion": "1_16_1_1000L",
+  "MaxVersion": "1_17_0_1000L",
   "RegulationEntries": [
     {
       "Version": "1.00.0.0092",
@@ -100,6 +100,10 @@
     {
       "Version": "1.16.1.1000",
       "Folder": "1.16.1 (11611000)"
+    },
+    {
+      "Version": "1.17.0.1000",
+      "Folder": "1.17.0 (11701000)"
     }
   ],
   "UpgradeCommands": [
@@ -2317,6 +2321,336 @@
       "Version": "11210015",
       "Message": "1.12.1 - (AssetGeometryParam) Set Reserve_0 to Vanilla v1.12.1 values",
       "Command": "param AssetGeometryParam: added: Reserve_0: = vanillafield Reserve_0"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_a_1: = vanillafield unk404_a_1"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_a_1: = vanillafield unk404_a_1"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_a_2: = vanillafield unk404_a_2"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_a_2: = vanillafield unk404_a_2"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_a_3: = vanillafield unk404_a_3"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_a_3: = vanillafield unk404_a_3"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_a_4: = vanillafield unk404_a_4"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_a_4: = vanillafield unk404_a_4"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_a_5: = vanillafield unk404_a_5"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_a_5: = vanillafield unk404_a_5"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_a_6: = vanillafield unk404_a_6"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_a_6: = vanillafield unk404_a_6"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_a_7: = vanillafield unk404_a_7"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_a_7: = vanillafield unk404_a_7"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_a_8: = vanillafield unk404_a_8"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_a_8: = vanillafield unk404_a_8"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_b_1: = vanillafield unk404_b_1"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_b_1: = vanillafield unk404_b_1"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_b_2: = vanillafield unk404_b_2"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_b_2: = vanillafield unk404_b_2"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_b_3: = vanillafield unk404_b_3"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_b_3: = vanillafield unk404_b_3"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_b_4: = vanillafield unk404_b_4"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_b_4: = vanillafield unk404_b_4"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_b_5: = vanillafield unk404_b_5"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_b_5: = vanillafield unk404_b_5"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_b_6: = vanillafield unk404_b_6"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_b_6: = vanillafield unk404_b_6"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_b_7: = vanillafield unk404_b_7"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_b_7: = vanillafield unk404_b_7"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_b_8: = vanillafield unk404_b_8"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_b_8: = vanillafield unk404_b_8"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_c_1: = vanillafield unk404_c_1"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_c_1: = vanillafield unk404_c_1"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_c_2: = vanillafield unk404_c_2"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_c_2: = vanillafield unk404_c_2"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_c_3: = vanillafield unk404_c_3"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_c_3: = vanillafield unk404_c_3"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_c_4: = vanillafield unk404_c_4"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_c_4: = vanillafield unk404_c_4"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_c_5: = vanillafield unk404_c_5"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_c_5: = vanillafield unk404_c_5"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_c_6: = vanillafield unk404_c_6"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_c_6: = vanillafield unk404_c_6"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_c_7: = vanillafield unk404_c_7"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_c_7: = vanillafield unk404_c_7"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_c_8: = vanillafield unk404_c_8"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_c_8: = vanillafield unk404_c_8"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_d_1: = vanillafield unk404_d_1"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_d_1: = vanillafield unk404_d_1"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_d_2: = vanillafield unk404_d_2"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_d_2: = vanillafield unk404_d_2"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_d_3: = vanillafield unk404_d_3"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_d_3: = vanillafield unk404_d_3"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_d_4: = vanillafield unk404_d_4"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_d_4: = vanillafield unk404_d_4"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_d_5: = vanillafield unk404_d_5"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_d_5: = vanillafield unk404_d_5"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_d_6: = vanillafield unk404_d_6"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_d_6: = vanillafield unk404_d_6"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_d_7: = vanillafield unk404_d_7"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_d_7: = vanillafield unk404_d_7"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: unk404_d_8: = vanillafield unk404_d_8"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: unk404_d_8: = vanillafield unk404_d_8"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: added: pad408: = vanillafield pad408"
+    },
+    {
+      "Version": "11701000",
+      "Message": "1.17.0 - (EquipParamProtector)",
+      "Command": "param EquipParamProtector: modified && !added: pad408: = vanillafield pad408"
     }
   ]
 }
