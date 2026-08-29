@@ -1564,7 +1564,41 @@
       <SortID>998808</SortID>
     </Field>
     
-    <Field Def="s32 unk404" FirstVersion="11701000" />
+    <Field Def="u8 unk404_a_1:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_a_2:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_a_3:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_a_4:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_a_5:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_a_6:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_a_7:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_a_8:1" FirstVersion="11701000" />
+    
+    <Field Def="u8 unk404_b_1:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_b_2:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_b_3:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_b_4:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_b_5:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_b_6:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_b_7:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_b_8:1" FirstVersion="11701000" />
+    
+    <Field Def="u8 unk404_c_1:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_c_2:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_c_3:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_c_4:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_c_5:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_c_6:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_c_7:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_c_8:1" FirstVersion="11701000" />
+    
+    <Field Def="u8 unk404_d_1:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_d_2:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_d_3:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_d_4:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_d_5:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_d_6:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_d_7:1" FirstVersion="11701000" />
+    <Field Def="u8 unk404_d_8:1" FirstVersion="11701000" />
     
     <Field Def="dummy8 pad408[10]" FirstVersion="11701000">
       <DisplayName>パディング</DisplayName>

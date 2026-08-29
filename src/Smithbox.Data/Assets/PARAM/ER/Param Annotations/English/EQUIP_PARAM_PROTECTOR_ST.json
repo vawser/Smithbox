@@ -1250,12 +1250,167 @@
       "Description": ""
     },
     {
-      "Field": "pad404",
-      "Name": "",
+      "Field": "unk404_a_1",
+      "Name": "Mask - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404",
+      "Field": "unk404_a_2",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_a_3",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_a_4",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_a_5",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_a_6",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_a_7",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_a_8",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_b_1",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_b_2",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_b_3",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_b_4",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_b_5",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_b_6",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_b_7",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_b_8",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_c_1",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_c_2",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_c_3",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_c_4",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_c_5",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_c_6",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_c_7",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_c_8",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_d_1",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_d_2",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_d_3",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_d_4",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_d_5",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_d_6",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_d_7",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unk404_d_8",
+      "Name": "Mask - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "pad404",
       "Name": "",
       "Description": ""
     },
