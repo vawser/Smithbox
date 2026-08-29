@@ -77,6 +77,9 @@ public class PullToCameraAction
     /// </summary>
     public void ApplyMoveToCamera()
     {
+        if (View.ViewportWindow.Viewport == null)
+            return;
+
         if (View.ViewportSelection.IsSelection())
         {
             List<ViewportAction> actlist = new();

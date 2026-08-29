@@ -275,7 +275,7 @@ public class ModelContentsView : IActionEventHandler
 
         if (ImGui.IsMouseDoubleClicked(0) && _pendingClick != null && modelRoot == _pendingClick)
         {
-            View.ViewportWindow.Viewport.FramePosition(modelRoot.GetLocalTransform().Position, 10f);
+            View.ViewportWindow.Viewport?.FramePosition(modelRoot.GetLocalTransform().Position, 10f);
         }
 
         if ((_pendingClick == modelRoot || modelRef.Equals(_pendingClick)) && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
