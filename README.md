@@ -14,8 +14,15 @@ Smithbox is a modding tool for Elden Ring, Elden Ring: Nightreign, Armored Core 
 - **Material Editor**: an editor for editing MTD and MATBIN materials.
 - **Texture Viewer**: a simple to use viewer for looking and extracting textures.
 - **File Browser**: a browser of the files contained within the data directory, plus the project directory. Allows easy extraction.
+- **Havok Editor**: an editor for editing HKX files. Supports ER and NR projects only.
 
 You no longer need to unpack a game for any of the editors.
+
+# Usage
+Once installed, click the **Smithbox.Vulkan.exe** to launch the fully featured version of Smithbox.
+
+If your computer cannot use Vulkan (old graphics card), you should use **Smithbox.OpenGL.exe**. 
+This provides most of the features of Smithbox, except for anything to do with the viewport, which mostly affects the Map and Model Editor.
 
 ## Links
 Smithbox is a fork of the [DSMapStudio repository](https://github.com/soulsmods/DSMapStudio).
