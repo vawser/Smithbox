@@ -299,6 +299,10 @@
     {
       "Key": "MAP_Data_Setup_Failed_Write_Map_Groups",
       "Text": "Failed to write Map Groups list file: {0}"
+    },
+    {
+      "Key": "MAP_Data_Write_ACB_Log",
+      "Text": "Wrote ACB file in binder: {0}"
     }
   ]
 }

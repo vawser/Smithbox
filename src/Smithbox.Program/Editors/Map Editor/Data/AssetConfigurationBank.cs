@@ -39,38 +39,40 @@ public class AssetConfigurationBank
             var bhdPath = entry.Path;
             var bdtPath = $"{bhdPath}".Replace(".mapbhd", ".mapbdt");
 
-            if (fs.FileExists(bhdPath) && fs.FileExists(bhdPath))
+            if (!fs.FileExists(bhdPath) || !fs.FileExists(bdtPath))
+                continue;
+
+            var bdtFile = (Memory<byte>)fs.ReadFile(bdtPath);
+            var bhdFile = (Memory<byte>)fs.ReadFile(bhdPath);
+
+            if(View.Project.VFS.ProjectFS.FileExists(bhdPath) && View.Project.VFS.ProjectFS.FileExists(bdtPath))
             {
-                try
+                bdtFile = (Memory<byte>)View.Project.VFS.ProjectFS.ReadFile(bdtPath);
+                bhdFile = (Memory<byte>)View.Project.VFS.ProjectFS.ReadFile(bhdPath);
+            }
+
+            try
+            {
+                using var bdt = BXF4.Read(bhdFile, bdtFile);
+                BinderFile file = bdt.Files.Find(f => f.Name.EndsWith(".acb"));
+
+                if (file != null)
                 {
-                    var bdtFile = (Memory<byte>)fs.ReadFile(bdtPath);
-                    var bhdFile = (Memory<byte>)fs.ReadFile(bhdPath);
-
-                    using var bdt = BXF4.Read(bhdFile, bdtFile);
-                    BinderFile file = bdt.Files.Find(f => f.Name.EndsWith(".acb"));
-
-                    if (file != null)
+                    try
                     {
-                        try
-                        {
-                            var acbData = ACB.Read(file.Bytes);
+                        var acbData = ACB.Read(file.Bytes);
 
-                            Files.Add(entry.Filename, acbData);
-                        }
-                        catch (Exception ex)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_ACB", bhdPath), ex);
-                        }
+                        Files.Add(entry.Filename, acbData);
+                    }
+                    catch (Exception ex)
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_ACB", bhdPath), ex);
                     }
                 }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MAPBND", bhdPath), e);
-                }
             }
-            else
+            catch (Exception e)
             {
-                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MAPBND", bhdPath));
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MAPBND", bhdPath), e);
             }
         }
     }
@@ -118,68 +120,75 @@ public class AssetConfigurationBank
                 var bhdPath = entry.Path;
                 var bdtPath = $"{bhdPath}".Replace(".mapbhd", ".mapbdt");
 
-                if (fs.FileExists(bdtPath) && fs.FileExists(bhdPath))
+                if (!fs.FileExists(bhdPath) || !fs.FileExists(bdtPath))
+                    continue;
+
+                var bdtFile = (Memory<byte>)fs.ReadFile(bdtPath);
+                var bhdFile = (Memory<byte>)fs.ReadFile(bhdPath);
+
+                if (View.Project.VFS.ProjectFS.FileExists(bhdPath) && View.Project.VFS.ProjectFS.FileExists(bdtPath))
                 {
-                    try
+                    bdtFile = (Memory<byte>)View.Project.VFS.ProjectFS.ReadFile(bdtPath);
+                    bhdFile = (Memory<byte>)View.Project.VFS.ProjectFS.ReadFile(bhdPath);
+                }
+
+                var applyEdit = false;
+
+                try
+                {
+                    using var packedBinder = BXF4.Read(bhdFile, bdtFile);
+                    foreach(var binderFile in packedBinder.Files)
                     {
-                        var bdtFile = (Memory<byte>)fs.ReadFile(bdtPath);
-                        var bhdFile = (Memory<byte>)fs.ReadFile(bhdPath);
+                        if (!binderFile.Name.EndsWith(".acb"))
+                            continue;
 
-                        using var bdt = BXF4.Read(bhdFile, bdtFile);
-                        BinderFile file = bdt.Files.Find(f => f.Name.EndsWith(".acb"));
-
-                        if (file != null)
+                        if (map.AssetConfigurationParent.WrappedObject.ToString() == entry.Filename)
                         {
-                            var applyEdit = false;
-
-                            if (map.AssetConfigurationParent.WrappedObject.ToString() == entry.Filename)
+                            try
                             {
-                                try
+                                var acbData = ACB.Read(binderFile.Bytes);
+
+                                acbData.Assets.Clear();
+
+                                foreach (var assetEntry in map.AssetConfigurationParent.Children)
                                 {
-                                    var acbData = ACB.Read(file.Bytes);
+                                    var curEntry = (ACB.Asset)assetEntry.WrappedObject;
 
-                                    acbData.Assets.Clear();
-
-                                    foreach (var assetEntry in map.AssetConfigurationParent.Children)
-                                    {
-                                        var curEntry = (ACB.Asset)assetEntry.WrappedObject;
-
-                                        acbData.Assets.Add(curEntry);
-                                    }
-
-                                    var fileOutput = acbData.Write();
-
-                                    if (!BytePerfectHelper.Md5Equal(file.Bytes.Span, fileOutput))
-                                    {
-                                        applyEdit = true;
-                                    }
-
-                                    if (applyEdit)
-                                    {
-                                        file.Bytes = fileOutput;
-                                    }
+                                    acbData.Assets.Add(curEntry);
                                 }
-                                catch (Exception e)
+
+                                var fileOutput = acbData.Write();
+
+                                if (!BytePerfectHelper.Md5Equal(binderFile.Bytes.Span, fileOutput))
                                 {
-                                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_ACB", file.Name), e);
+                                    applyEdit = true;
+                                }
+
+                                if (applyEdit)
+                                {
+                                    binderFile.Bytes = fileOutput;
                                 }
                             }
-
-                            if (applyEdit)
+                            catch (Exception e)
                             {
-                                Project.VFS.ProjectFS.WriteFile(bhdPath, bhdFile.ToArray());
-                                Project.VFS.ProjectFS.WriteFile(bdtPath, bdtFile.ToArray());
+                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_ACB", binderFile.Name), e);
                             }
                         }
                     }
-                    catch (Exception e)
+
+                    if (applyEdit)
                     {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_MAPBND", bhdPath), e);
+                        packedBinder.Write(out var writtenBhdBytes, out var writtenbdtBytes);
+
+                        Project.VFS.ProjectFS.WriteFile(bhdPath, writtenBhdBytes);
+                        Project.VFS.ProjectFS.WriteFile(bdtPath, writtenbdtBytes);
+
+                        Smithbox.Log(this, LOC.Get("MAP_Data_Write_ACB_Log", bhdPath));
                     }
                 }
-                else
+                catch (Exception e)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_MAPBND", bhdPath));
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_MAPBND", bhdPath), e);
                 }
             }
         }
