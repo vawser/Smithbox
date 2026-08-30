@@ -86,4 +86,17 @@ public static class ModelMetaHelper
 
         return null;
     }
+
+    public static bool GetMeshDataBool(ModelClass classMeta, string internalName)
+    {
+        var isMeshData = false;
+
+        var entry = classMeta.Fields.FirstOrDefault(f => f.Field == internalName);
+        if (entry != null)
+        {
+            return entry.IsMeshData;
+        }
+
+        return isMeshData;
+    }
 }

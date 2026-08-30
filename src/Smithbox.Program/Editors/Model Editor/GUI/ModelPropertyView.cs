@@ -10,6 +10,7 @@ using System.Collections;
 using System.Drawing;
 using System.Numerics;
 using System.Reflection;
+using Veldrid.Utilities;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -242,6 +243,7 @@ public class ModelPropertyView
             // Field Name
             var fieldName = prop.Name;
             var fieldDescription = "";
+            var isMeshData = false;
 
             if (classMeta != null)
             {
@@ -251,6 +253,8 @@ public class ModelPropertyView
                 }
 
                 fieldDescription = $"{ModelMetaHelper.GetFieldDescription(classMeta, prop.Name)}";
+
+                isMeshData = ModelMetaHelper.GetMeshDataBool(classMeta, prop.Name);
             }
 
             ImGui.PushID(id);
@@ -315,7 +319,7 @@ public class ModelPropertyView
                             var array = obj as object[];
 
                             // Handle property display (and search filtering)
-                            if (DisplayProperty(classMeta, obj, prop, type))
+                            if (DisplayProperty(classMeta, obj, prop, type, isMeshData))
                             {
                                 PropGenericFieldRow(classMeta, selection, entSelection, prop, typ.GetElementType(), a.GetValue(i), $@"{fieldName}[{i}]", fieldDescription, i, classIndex);
                             }
@@ -332,13 +336,13 @@ public class ModelPropertyView
             else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
             {
                 Type arrtyp = typ.GetGenericArguments()[0];
-                PropEditorGenericList(classMeta, metaType, selection, entSelection, firstEnt, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
+                PropEditorGenericList(classMeta, metaType, selection, entSelection, firstEnt, obj, prop, arrtyp, fieldName, fieldDescription, isMeshData, treeFlags, classIndex);
             }
             else if (typ.BaseType != null && typ.BaseType.IsGenericType
                 && typ.BaseType.GetGenericTypeDefinition() == typeof(List<>))
             {
                 Type arrtyp = typ.BaseType.GetGenericArguments()[0];
-                PropEditorGenericList(classMeta, metaType, selection, entSelection, firstEnt, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
+                PropEditorGenericList(classMeta, metaType, selection, entSelection, firstEnt, obj, prop, arrtyp, fieldName, fieldDescription, isMeshData, treeFlags, classIndex);
             }
             else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
             {
@@ -374,7 +378,7 @@ public class ModelPropertyView
             else
             {
                 // Handle property display (and search filtering)
-                if (DisplayProperty(classMeta, obj, prop, type))
+                if (DisplayProperty(classMeta, obj, prop, type, isMeshData))
                 {
                     PropGenericFieldRow(classMeta, selection, entSelection, prop, typ, prop.GetValue(obj), $"{fieldName}", fieldDescription, classIndex);
                 }
@@ -510,20 +514,14 @@ public class ModelPropertyView
         ImGui.NextColumn();
     }
 
-    public bool DisplayProperty(ModelClass classMeta, object propObj, PropertyInfo prop, Type type)
+    public bool DisplayProperty(ModelClass classMeta, object propObj, PropertyInfo prop, Type type, bool isMeshData)
     {
-        var fieldMeta = ModelMetaHelper.GetFieldMeta(classMeta, prop.Name);
-
         var propName = prop.Name;
 
-        // Automatic conditions that hide the property
-        if(fieldMeta != null)
+        if(!CFG.Current.ModelEditor_Properties_Enable_Mesh_Fields)
         {
-            if(!CFG.Current.ModelEditor_Properties_Enable_Mesh_Fields)
-            {
-                if (fieldMeta.IsMeshData)
-                    return false;
-            }
+            if (isMeshData)
+                return false;
         }
 
         // Normal filter
@@ -575,6 +573,7 @@ public class ModelPropertyView
         Type elementType,
         string fieldName,
         string fieldDescription,
+        bool isMeshData,
         ImGuiTreeNodeFlags treeFlags,
         int classIndex
     )
@@ -739,7 +738,11 @@ public class ModelPropertyView
                     }
                     else
                     {
-                        PropGenericFieldRow(classMeta, selection, entSelection, prop, elementType, elem, $@"{fieldName}[{i}]", fieldDescription, i, classIndex, OnRemove);
+                        // Handle property display (and search filtering)
+                        if (DisplayProperty(classMeta, obj, prop, elementType, isMeshData))
+                        {
+                            PropGenericFieldRow(classMeta, selection, entSelection, prop, elementType, elem, $@"{fieldName}[{i}]", fieldDescription, i, classIndex, OnRemove);
+                        }
                     }
 
                     ImGui.PopID();
