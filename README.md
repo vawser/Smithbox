@@ -18,7 +18,7 @@ Smithbox is a modding tool for Elden Ring, Elden Ring: Nightreign, Armored Core 
 
 You no longer need to unpack a game for any of the editors.
 
-# Usage
+## Usage
 Once installed, click the **Smithbox.Vulkan.exe** to launch the fully featured version of Smithbox.
 
 If your computer cannot use Vulkan (old graphics card), you should use **Smithbox.OpenGL.exe**. 
