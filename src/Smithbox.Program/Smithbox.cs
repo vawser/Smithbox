@@ -184,14 +184,19 @@ public class Smithbox
 
         if (CurrentBackend is RenderingBackend.OpenGL)
         {
-            if (!CFG.Current.OpenGL_Warning_Displayed)
+            if (!CFG.Current.Block_OpenGL_Warning)
             {
-                PlatformUtils.Instance.MessageBox(
+                var dialog = PlatformUtils.Instance.MessageBox(
                     LOC.Get("SYS_OpenGL_Warning_Text"),
-                    LOC.Get("SYS_OpenGL_Warning_Caption"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    LOC.Get("SYS_OpenGL_Warning_Caption"), 
+                    MessageBoxButtons.OKCancel, 
+                    MessageBoxIcon.Warning);
 
-                CFG.Current.OpenGL_Warning_Displayed = true;
-                CFG.Save();
+                if(dialog is DialogResult.OK)
+                {
+                    CFG.Current.Block_OpenGL_Warning = true;
+                    CFG.Save();
+                }
             }
         }
     }
