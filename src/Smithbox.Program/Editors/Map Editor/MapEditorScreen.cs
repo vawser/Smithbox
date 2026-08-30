@@ -70,6 +70,13 @@ public class MapEditorScreen : EditorScreen
 
             OptionsMenu();
 
+            if(Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
+            {
+                ImGui.Separator();
+
+                ImGui.Text(LOC.Get("SYS_OpenGL_Viewport_Blocked"));
+            }
+
             ImGui.EndMenuBar();
         }
 

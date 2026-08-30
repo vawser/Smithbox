@@ -54,6 +54,13 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
             //OptionsMenu();
 
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
+            {
+                ImGui.Separator();
+
+                ImGui.Text(LOC.Get("SYS_OpenGL_Texture_Viewer_Blocked"));
+            }
+
             ImGui.EndMenuBar();
         }
 
