@@ -181,6 +181,19 @@ public class Smithbox
 
             TextureManager = new();
         }
+
+        if (CurrentBackend is RenderingBackend.OpenGL)
+        {
+            if (!CFG.Current.OpenGL_Warning_Displayed)
+            {
+                PlatformUtils.Instance.MessageBox(
+                    LOC.Get("SYS_OpenGL_Warning_Text"),
+                    LOC.Get("SYS_OpenGL_Warning_Caption"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                CFG.Current.OpenGL_Warning_Displayed = true;
+                CFG.Save();
+            }
+        }
     }
 
     private void Setup()

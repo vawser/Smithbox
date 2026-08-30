@@ -77,6 +77,8 @@ public class CFG
     public bool Developer_Enable_Tools = false;
     public string Developer_Smithbox_Build_Folder = "";
 
+    public bool OpenGL_Warning_Displayed = false;
+
     #endregion
 
     #region Project

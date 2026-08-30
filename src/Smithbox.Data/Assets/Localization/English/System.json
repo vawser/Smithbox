@@ -123,6 +123,14 @@
     {
       "Key": "SYS_Editor_Loading",
       "Text": "Editor is loading..."
+    },
+    {
+      "Key": "SYS_OpenGL_Warning_Caption",
+      "Text": "OpenGL Warning"
+    },
+    {
+      "Key": "SYS_OpenGL_Warning_Text",
+      "Text": "This version of Smithbox disables the viewports of the Map and Model Editor.\nYou should only use this version if you cannot run the Smithbox.Vulkan executable."
     }
   ]
 }
