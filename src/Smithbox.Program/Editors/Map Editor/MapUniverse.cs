@@ -1089,8 +1089,8 @@ public class MapUniverse : IUniverse
                     var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
                     var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
 
-                    using var bxf = BXF4.Read(bhdFile, bdtFile);
-                    BinderFile file = bxf.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
+                    using var packedBinder = BXF4.Read(bhdFile, bdtFile);
+                    BinderFile file = packedBinder.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
 
                     if (file != null)
                     {
@@ -1111,7 +1111,7 @@ public class MapUniverse : IUniverse
                             var bhdData = new byte[0];
                             var bdtData = new byte[0];
 
-                            bxf.Write(out bhdData, out bdtData);
+                            packedBinder.Write(out bhdData, out bdtData);
 
                             Project.VFS.ProjectFS.WriteFile(bhdPath, bhdData);
                             Project.VFS.ProjectFS.WriteFile(bdtPath, bdtData);

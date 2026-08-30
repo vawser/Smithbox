@@ -178,10 +178,10 @@ public class AssetConfigurationBank
 
                     if (applyEdit)
                     {
-                        packedBinder.Write(out var writtenBhdBytes, out var writtenbdtBytes);
+                        packedBinder.Write(out var writtenBhdBytes, out var writtenBdtBytes);
 
                         Project.VFS.ProjectFS.WriteFile(bhdPath, writtenBhdBytes);
-                        Project.VFS.ProjectFS.WriteFile(bdtPath, writtenbdtBytes);
+                        Project.VFS.ProjectFS.WriteFile(bdtPath, writtenBdtBytes);
 
                         Smithbox.Log(this, LOC.Get("MAP_Data_Write_ACB_Log", bhdPath));
                     }

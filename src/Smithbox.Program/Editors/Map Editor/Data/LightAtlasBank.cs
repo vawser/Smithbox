@@ -161,8 +161,8 @@ public class LightAtlasBank
                         var bdtFile = (Memory<byte>)fs.ReadFile(bdtPath);
                         var bhdFile = (Memory<byte>)fs.ReadFile(bhdPath);
 
-                        using var bdt = BXF4.Read(bhdFile, bdtFile);
-                        BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("atlasinfo.btab.dcx"));
+                        using var packedBinder = BXF4.Read(bhdFile, bdtFile);
+                        BinderFile file = packedBinder.Files.Find(f => f.Name.EndsWith("atlasinfo.btab.dcx"));
 
                         if (file != null)
                         {
@@ -199,8 +199,10 @@ public class LightAtlasBank
 
                             if (applyEdit)
                             {
-                                Project.VFS.ProjectFS.WriteFile(bhdPath, bhdFile.ToArray());
-                                Project.VFS.ProjectFS.WriteFile(bdtPath, bdtFile.ToArray());
+                                packedBinder.Write(out var writtenBhdBytes, out var writtenBdtBytes);
+
+                                Project.VFS.ProjectFS.WriteFile(bhdPath, writtenBhdBytes);
+                                Project.VFS.ProjectFS.WriteFile(bdtPath, writtenBdtBytes);
                             }
                         }
                     }
