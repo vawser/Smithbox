@@ -53,7 +53,6 @@ public class ProjectVFS : IDisposable
         if (Directory.Exists(Project.Descriptor.DataPath))
         {
             VanillaRealFS = new RealVirtualFileSystem(Project.Descriptor.DataPath, false);
-            fileSystems.Add(VanillaRealFS);
 
             var andreGame = Project.Descriptor.ProjectType.AsAndreGame();
 
@@ -65,13 +64,17 @@ public class ProjectVFS : IDisposable
                     fileSystems.Add(VanillaBinderFS);
                 }
 
-                VanillaFS = new CompundVirtualFileSystem([VanillaRealFS, VanillaBinderFS]);
+                VanillaFS = new CompundVirtualFileSystem([VanillaBinderFS, VanillaRealFS]);
             }
             else
             {
                 VanillaRealFS = EmptyVirtualFileSystem.Instance;
                 VanillaFS = EmptyVirtualFileSystem.Instance;
             }
+
+            // Placed here so vanilla reads prefer the archives over loose unpacked files
+            // (which can be out of date)
+            fileSystems.Add(VanillaRealFS);
         }
         else
         {

@@ -8,7 +8,13 @@
   Map Editor
 
 # Havok Editor
-- Rejig to allow for the other havok implementations (big job)
+- Add variable binding support (edit/add/remove)
+
+- Add Update from ANIBND tool (ERClipGen functionality):
+ - User points to anibnd that contains TAE files.
+ - Read TAE files to determine which clip generators are missing (each TAE entry == one clip gen)
+ - Create any missing clip gens, and append them to the associated CMSG for their anim ID
+
 
 # Map Editor
 - Apply overhaul done to Selection Groups to Prefabs, allowing for quick and simple creation and usage.
