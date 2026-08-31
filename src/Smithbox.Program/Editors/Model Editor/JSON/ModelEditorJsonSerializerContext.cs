@@ -12,6 +12,12 @@ namespace StudioCore.Application;
 [JsonSerializable(typeof(ModelClass))]
 [JsonSerializable(typeof(ModelField))]
 
+[JsonSerializable(typeof(FlverDummyList))]
+[JsonSerializable(typeof(FlverDummyRepresentation))]
+
+[JsonSerializable(typeof(FlverNodeList))]
+[JsonSerializable(typeof(FlverNodeRepresentation))]
+
 internal partial class ModelEditorJsonSerializerContext : JsonSerializerContext
 {
 }

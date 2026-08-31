@@ -10,14 +10,15 @@
 # Havok Editor
 - Rejig to allow for the other havok implementations (big job)
 
+# Map Editor
+- Apply overhaul done to Selection Groups to Prefabs, allowing for quick and simple creation and usage.
+
 # Param Editor
 - "prop iconID 102" crashes: seems linked to field view, adding in 102 as a value stops the crash
 
 # Model Editor
-- Add data transfer (JSON) support for Dummy/Nodes
-- Check IsMeshData, doesn't seem to be working for the sub-classes
-
 - EDGE
  - Read map mapbnd for edges and then associate with FLVER on load for map pieces
   
+- Add data transfer (JSON) support for Dummy/Nodes
 

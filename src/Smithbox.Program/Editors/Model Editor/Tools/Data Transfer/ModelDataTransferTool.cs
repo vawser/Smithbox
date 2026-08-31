@@ -6,12 +6,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace StudioCore.Editors.ModelEditor;
+
 public class ModelDataTransferTool
 {
     public ModelEditorView View;
     public ProjectEntry Project;
+
+    public string ImportPath = null;
+
+    public string ExportPath = null;
+    public string ExportString = "";
+    public string ExportDirectory = "";
+    public string ExportFilename = "";
 
     public ModelDataTransferTool(ModelEditorView view, ProjectEntry project)
     {
