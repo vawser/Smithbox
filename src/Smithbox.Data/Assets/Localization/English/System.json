@@ -134,11 +134,15 @@
     },
     {
       "Key": "SYS_OpenGL_Viewport_Blocked",
-      "Text": "The viewport for this editor is disabled due to Smithbox running with the OpenGL backend."
+      "Text": "The viewport for this editor is disabled as the Smithbox.OpenGL executable was used."
     },
     {
       "Key": "SYS_OpenGL_Texture_Viewer_Blocked",
-      "Text": "The texture viewer for this editor is disabled due to Smithbox running with the OpenGL backend."
+      "Text": "The texture viewer for this editor is disabled as the Smithbox.OpenGL executable was used."
+    },
+    {
+      "Key": "SYS_OpenGL_Icon_Preview_Blocked",
+      "Text": "Icon preview is disabled\nas the Smithbox.OpenGL executable was used."
     }
   ]
 }

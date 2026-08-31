@@ -1737,23 +1737,30 @@ public static class TextureReferenceHelper
         if (!CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRef_Text);
-
-        if (CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
         {
-            CachedTexture cachedTexture = Smithbox.TextureManager.IconManager.HandleIcon(context, fieldIcon, oldval, fieldName, columnIndex);
-
-            if (cachedTexture != null)
-            {
-                DummySize = Smithbox.TextureManager.IconManager.DisplayIcon(cachedTexture);
-            }
-            else
-            {
-                ImGui.Dummy(DummySize);
-            }
+            ImGui.Text(LOC.Get("SYS_OpenGL_Icon_Preview_Blocked"));
         }
+        else
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRef_Text);
 
-        ImGui.PopStyleColor();
+            if (CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
+            {
+                CachedTexture cachedTexture = Smithbox.TextureManager.IconManager.HandleIcon(context, fieldIcon, oldval, fieldName, columnIndex);
+
+                if (cachedTexture != null)
+                {
+                    DummySize = Smithbox.TextureManager.IconManager.DisplayIcon(cachedTexture);
+                }
+                else
+                {
+                    ImGui.Dummy(DummySize);
+                }
+            }
+
+            ImGui.PopStyleColor();
+        }
     }
 
     public static bool ContextMenu(ParamEditorView curView)
