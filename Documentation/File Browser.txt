@@ -1,0 +1,8 @@
+#----------------------------------------------------
+# File Browser Features
+#----------------------------------------------------
+- Add File Mover utility to the File Browser: lets you move files from binders into other binders, i.e. from map-specific AI into common AI binder.
+ 
+#----------------------------------------------------
+# File Browser Bugs
+#----------------------------------------------------

@@ -1,0 +1,19 @@
+#-------------
+# Bullet Simulator
+#-------------
+- Add primitive simulation of bullet behavior, making use of the primitive draw elements to display the path and projectiles.
+ 
+#-------------
+# World Map Editor
+#-------------
+- Specific editor for the world map tile textures, should present them similarly to the Map Editor world map feature, but constructs the map from the actual tiles + includes the layering stuff
+    - Would then enable an editor for MapTexInfo, which controls weather
+ 
+#-------------
+# Script Editor
+#-------------
+- Code blocks style editor for EMEVD:
+    - Split the file into Functions (group of Statements) and Statements (the individual commands/conditions)
+    - Functions would use the Alias Editor style presentation (drag button + ID + EDD name) 
+    - Statements would use the Alias Editor style presentation (drag button + command title -> right-click enum style selection to switch command), selection would populate property view.
+  

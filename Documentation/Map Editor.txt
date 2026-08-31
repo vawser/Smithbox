@@ -1,0 +1,41 @@
+#----------------------------------------------------
+# Map Editor Features
+#----------------------------------------------------
+- Implement viewport grid via shader
+
+- add Object Mass Edit that allows for addition/deletion of map objects programmatically
+
+- implement Edge support for SDT
+
+- Get gizmos to work in Orthographic/Oblique view mode
+
+- Implement the auto-BTAB handling actions
+
+- Add map piece link in BTAB properties 
+
+- Add progress modal to the prefab import/export
+
+- Make the prefab import much quicker (so we can support whole map imports)
+
+- Add visualisation (via primitive meshes) of enemy AI radiuses (sight, listen, smell)
+
+- "Follow" toggle / shortcut for camera that allows a selection to be 'followed' by the camera (i.e. keep look-at spot focused on selection centre and adjust camera position if translation occurs)
+
+- "Bounding Box" visualisation toggle / shortcut: display the bounding box for the selection using wire box primitives 
+ 
+- Implement Asset Browser with thumbnail previews
+ 
+- 'Focus' toggle button when multiple maps are loaded:
+    - Applies gray dither shader to all viewport elements that aren't part of the currently selected map
+    - Would be useful for having the ability to see the greater area whilst quickly being able to discern which objects belong to the currently selected map
+ 
+- Add 'Mass Replace' tool
+    - Internally similar to Global Mass Edit, but simplified so user only inputs target and replacement ChrID, NpcParam, NpcThinkParam values
+
+- Apply overhaul done to Selection Groups to Prefabs, allowing for quick and simple creation and usage.
+
+#----------------------------------------------------
+# Map Editor Bugs
+#----------------------------------------------------
+- fix ER NVA so saves are BP correct (currently the Write side is quite off)
+- DS3 navmeshes position seems off in some maps (Undead Settlement) 

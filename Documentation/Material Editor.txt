@@ -1,0 +1,10 @@
+#----------------------------------------------------
+# Material Editor Features
+#----------------------------------------------------
+- add power search to file list 
+    (i.e. param: g_BlendMode = 6 should filter the list down to all files that contain a parameter called g_BlendMode set to 6)
+    (i.e. texture: Path ~ fire should filter the list down to all files that contain a texture with the Path string that contains the string 'fire')
+ 
+#----------------------------------------------------
+# Material Editor Bugs
+#----------------------------------------------------

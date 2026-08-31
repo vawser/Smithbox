@@ -1,0 +1,51 @@
+#----------------------------------------------------
+# Param Editor Features
+#----------------------------------------------------
+- Table Group column should have difference highlighting if any of the internal rows are highlighted as different
+
+- Look into making row merges for tabulated params functional and simple
+
+- Finish converting the SDT AlternativeOrders into Field Layouts
+
+- Finish AC6 meta
+    MOVEMENT_AC_TYPE_PARAM_ST
+    MOVEMENT_ENEMY_TYPE_PARAM_ST
+    MOVEMENT_FLY_ENEMY_PARAM_ST
+    MOVEMENT_RIDE_OBJ_PARAM_ST
+
+    MULTI_PLAY_CORRECTION_PARAM_ST
+    NAMEPLATE_PARAM
+    NETWORK_MSG_PARAM_ST
+    NETWORK_PARAM_ST
+
+    NPC_PARTS_PARAM_ST
+    NPC_THINK_PARAM_ST
+    PLAY_REGION_PARAM_ST
+    PLAYER_COLORING_PRESET
+
+    RAGDOLL_PARAM_ST
+    REINFORCE_PARAM_WEAPON_ST
+    RIGID_BODY_PARAM_ST
+
+    RUNTIME_SOUND_EXPRESSION_PARAM_ST
+    RUNTIME_SOUND_PARAM_ST
+    RUNTIME_SOUND_GLOBAL_PARAM_ST
+    RUNTIME_SOUND_PARAM_ST
+
+    SFX_MODEL_PARAM_ST
+    SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST
+    SOUND_AUTO_REVERB_SELECT_PARAM_ST
+    SOUND_CUTSCENE_PARAM_ST
+    SOUND_PARAM_ST
+    SOUNDID_SPATIAL_SETTING
+
+    SP_EFFECT_VFX_PARAM_ST
+    TENTATIVE_PLAYER_PARAM_ST
+    WEP_ABSORP_POS_PARAM_ST
+    
+#----------------------------------------------------
+# Param Editor Bugs
+#----------------------------------------------------
+- adjust the difference checker to account for row index
+
+- "prop iconID 102" crashes: seems linked to field view, adding in 102 as a value stops the crash

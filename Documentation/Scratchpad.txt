@@ -1,0 +1,12 @@
+#---------------------
+# TODO 
+#---------------------
+# LOC TO DO:
+ Editors
+  Gparam Editor
+  Map Data Editor
+  Map Editor
+
+# Model Editor
+- Add data transfer (JSON) support for Dummy/Nodes
+

@@ -1,0 +1,20 @@
+#----------------------------------------------------
+# Havok Editor Features
+#----------------------------------------------------
+- Add compatability for the other Havok versions
+ - Minor changes to behavior classes for NR (most other hkx work correctly)
+ - hk2019 for AC6 (may just need HKLib update
+ - hk2016 for SDT
+ - HKX2 for DES, DS1, DS2, DS3, BB
+
+- Add variable binding support (edit/add/remove)
+
+- Add Update from ANIBND tool (ERClipGen functionality):
+ - User points to anibnd that contains TAE files.
+ - Read TAE files to determine which clip generators are missing (each TAE entry == one clip gen)
+ - Create any missing clip gens, and append them to the associated CMSG for their anim ID
+ 
+#----------------------------------------------------
+# Havok Editor Bugs
+#----------------------------------------------------
+- DS2 fog color values are inverted (BGR, not RGB)
