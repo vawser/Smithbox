@@ -466,6 +466,12 @@ public class ParamDataTransferTool
         if (targetParam == "")
             targetParam = View.Selection.GetActiveParam();
 
+        if(targetParam == null)
+        {
+            Smithbox.LogError<ParamDataTransferTool>(LOC.Get("PARAM_DataTransfer_Log_Invalid_Param_Target"));
+            return;
+        }
+
         if (importType is ImportSourceType.File)
         {
             csvString = TryReadFile(csvPath);
