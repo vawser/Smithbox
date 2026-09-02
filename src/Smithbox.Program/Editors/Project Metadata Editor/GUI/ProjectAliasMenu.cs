@@ -148,7 +148,7 @@ public class ProjectAliasMenu
                 {
                     // Save Shortcut 
                     ImGui.Checkbox(
-                        $"{LOC.Get("META_AliasMenu_Menu_Save_Shortcut_Saves_To_Base_Source")}#saveShortcutToggleAction", 
+                        $"{LOC.Get("META_AliasMenu_Menu_Save_Shortcut_Saves_To_Base_Source")}##saveShortcutToggleAction", 
                         ref CFG.Current.Project_Alias_Editor_Save_Applies_To_Base);
 
                     GUI.Tooltip(
