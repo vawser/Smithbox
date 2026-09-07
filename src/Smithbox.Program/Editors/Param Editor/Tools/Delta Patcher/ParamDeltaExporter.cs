@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Application;
 using StudioCore.Utilities;
 using System;
@@ -137,7 +138,7 @@ public class ParamDeltaExporter
 
             if (Patcher.Selection.CurrentRowMode is DeltaSelectionMode.Modified)
             {
-                rowDeltas = HandleRows(primaryParam.Value, vanillaParam);
+                rowDeltas = HandleRows(primaryParam.Key, primaryParam.Value, vanillaParam);
             }
 
             if (Patcher.Selection.CurrentRowMode is DeltaSelectionMode.Selected)
@@ -165,7 +166,7 @@ public class ParamDeltaExporter
     }
 
     #region Modified Export
-    public List<RowDelta> HandleRows(Param primaryParam, Param vanillaParam)
+    public List<RowDelta> HandleRows(string primaryKey, Param primaryParam, Param vanillaParam)
     {
         var rowDeltas = new List<RowDelta>();
 
@@ -176,7 +177,7 @@ public class ParamDeltaExporter
         {
             Param.Row row = primaryParam.Rows[i];
 
-            var (add, rowDelta) = HandleRowComparison(primaryParam, vanillaParam, row, ref curRowID, ref internalIndex);
+            var (add, rowDelta) = HandleRowComparison(primaryKey, primaryParam, vanillaParam, row, ref curRowID, ref internalIndex);
             if (add)
             {
                 rowDeltas.Add(rowDelta);
@@ -212,35 +213,31 @@ public class ParamDeltaExporter
         return rowDeltas;
     }
 
-    public (bool, RowDelta) HandleRowComparison(Param primaryParam, Param vanillaParam, Param.Row row, ref int curRowID, ref int internalIndex)
+    public (bool, RowDelta) HandleRowComparison(string primaryKey, Param primaryParam, Param vanillaParam, Param.Row row, ref int curRowID, ref int internalIndex)
     {
         var rowDelta = new RowDelta();
         rowDelta.ID = row.ID;
         rowDelta.Name = row.Name;
         rowDelta.State = RowDeltaState.Modified;
 
+        var vanillaDiffCache = Patcher.Project.Handler.ParamData.PrimaryBank
+            .GetVanillaDiffRows(primaryKey);
+
         // Indexed Row
         if (row.ID == curRowID)
         {
-            var vInternalIndex = 0;
-
             foreach (var vRow in vanillaParam.Rows)
             {
                 if (vRow.ID == row.ID)
                 {
-                    if (!vRow.DataEquals(row))
+                    if (vanillaDiffCache.Any(e => e == row))
                     {
-                        if (internalIndex == vInternalIndex)
+                        var fieldDeltas = HandleFields(row, vRow);
+                        foreach (var entry in fieldDeltas)
                         {
-                            var fieldDeltas = HandleFields(row, vRow);
-                            foreach (var entry in fieldDeltas)
-                            {
-                                rowDelta.Fields.Add(entry);
-                            }
+                            rowDelta.Fields.Add(entry);
                         }
                     }
-
-                    vInternalIndex++;
                 }
             }
 
