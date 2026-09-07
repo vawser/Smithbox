@@ -7,9 +7,6 @@
   Map Data Editor
   Map Editor
 
-# Param Editor
-- Add row diff check update to Param Delta Exporter
-
 # Model Editor
 - Add data transfer (JSON) support for Dummy/Nodes
 

@@ -1,5 +1,7 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using Microsoft.Extensions.FileSystemGlobbing;
+using SoapstoneLib.Proto.Internal;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System.Numerics;
@@ -132,6 +134,23 @@ public class ParamTableWindow
                 if (!IsValidMatch(curTableID, filterText))
                     continue;
 
+                bool applyDiffColoring = false;
+
+                var activeParam = ParentView.Selection.GetActiveParam();
+                if (activeParam != null)
+                {
+                    var vanillaDiffCache = Project.Handler.ParamData.PrimaryBank
+                        .GetVanillaDiffRows(activeParam);
+
+                    if (vanillaDiffCache.Any(e => e.ID == curTableID))
+                        applyDiffColoring = true;
+                }
+
+                if(applyDiffColoring)
+                {
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
+                }
+
                 // ID
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
@@ -140,6 +159,11 @@ public class ParamTableWindow
                 // Name
                 ImGui.TableSetColumnIndex(1);
                 DisplayTableSelectable_Name(curTableID);
+
+                if(applyDiffColoring)
+                {
+                    ImGui.PopStyleColor(1);
+                }
             }
 
             ImGui.EndTable();
