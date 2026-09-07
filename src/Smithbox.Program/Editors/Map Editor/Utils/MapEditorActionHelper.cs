@@ -1,10 +1,14 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Renderer;
+using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using static StudioCore.Editors.MapEditor.DuplicateAction;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -13,6 +17,48 @@ namespace StudioCore.Editors.MapEditor;
 /// </summary>
 public static class MapEditorActionHelper
 {
+    public static void RandomiseRotation(MapEditorView view, MsbEntity sel, MapContainer map, RandomiseRotationDirection dir, float range)
+    {
+        var rand = new Random();
+        var rotAdd = (float)rand.NextDouble() * range;
+
+        Transform objT = sel.GetLocalTransform();
+
+        var rot_x = objT.EulerRotation.X;
+        var rot_y = objT.EulerRotation.Y;
+        var rot_z = objT.EulerRotation.Z;
+
+        var newRot = Transform.Default;
+
+        if (dir is RandomiseRotationDirection.X)
+        {
+            rot_x = objT.EulerRotation.X + rotAdd;
+        }
+
+        if (dir is RandomiseRotationDirection.Y)
+        {
+            rot_y = objT.EulerRotation.Y + rotAdd;
+        }
+
+        if (dir is RandomiseRotationDirection.Z)
+        {
+            rot_z = objT.EulerRotation.Z + rotAdd;
+        }
+
+        var newRotation = new Vector3(rot_x, rot_y, rot_z);
+
+        if (view.Project.Descriptor.ProjectType == ProjectType.DS2S || view.Project.Descriptor.ProjectType == ProjectType.DS2)
+        {
+            sel.SetPropertyValue("RotationX", newRotation.X * Utils.Rad2Deg);
+            sel.SetPropertyValue("RotationY", newRotation.Y * Utils.Rad2Deg - 180.0f);
+            sel.SetPropertyValue("RotationZ", newRotation.Z * Utils.Rad2Deg);
+        }
+        else
+        {
+            sel.SetPropertyValue("Rotation", newRotation);
+        }
+    }
+
     public static void SetUniqueEntityID(MapEditorView view, MsbEntity sel, MapContainer map)
     {
         if (sel.WrappedObject is BTL.Light)

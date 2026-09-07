@@ -177,9 +177,23 @@ public class DuplicateToMapAction
     /// <summary>
     /// Effect
     /// </summary>
-    public void DuplicateToMap(List<MsbEntity> selection, MapContainer targetMap, Entity targetBtl)
+    public void DuplicateToMap(List<MsbEntity> mapObjects, MapContainer mapContainer, Entity btlParent)
     {
-        var action = new EntDuplicateAction(View, selection, targetMap, targetBtl, true);
+        var action = new EntDuplicateAction(
+                view: View,
+                objects: mapObjects,
+                targetMap: mapContainer,
+                targetBTL: btlParent,
+                duplicateToMap: true,
+                createMapGroupEntry: false,
+                incrementEntityID: CFG.Current.Toolbar_Duplicate_Increment_Entity_ID,
+                incrementInstanceID: CFG.Current.Toolbar_Duplicate_Increment_InstanceID,
+                incrementPartNames: CFG.Current.Toolbar_Duplicate_Increment_PartNames,
+                clearEntityID: CFG.Current.Toolbar_Duplicate_Clear_Entity_ID,
+                clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs,
+                randomiseRotation: CFG.Current.Toolbar_Duplicate_Randomise_Rotation,
+                randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
+                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range);
 
         View.ViewportActionManager.ExecuteAction(action);
 
@@ -209,7 +223,22 @@ public class DuplicateToMapAction
 
         var btlParent = mapContainer.BTLParents.FirstOrDefault();
 
-        var action = new EntDuplicateAction(View, StoredSelection, mapContainer, btlParent, true);
+        var action = new EntDuplicateAction(
+                view: View,
+                objects: StoredSelection,
+                targetMap: mapContainer,
+                targetBTL: btlParent,
+                duplicateToMap: true,
+                createMapGroupEntry: false,
+                incrementEntityID: CFG.Current.Toolbar_Duplicate_Increment_Entity_ID,
+                incrementInstanceID: CFG.Current.Toolbar_Duplicate_Increment_InstanceID,
+                incrementPartNames: CFG.Current.Toolbar_Duplicate_Increment_PartNames,
+                clearEntityID: CFG.Current.Toolbar_Duplicate_Clear_Entity_ID,
+                clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs,
+                randomiseRotation: CFG.Current.Toolbar_Duplicate_Randomise_Rotation,
+                randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
+                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range); 
+
         View.ViewportActionManager.ExecuteAction(action);
     }
 }

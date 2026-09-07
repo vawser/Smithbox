@@ -206,7 +206,22 @@ public class MapGroupsView
             var mapContainer = View.Selection.SelectedMapContainer;
             var btlParent = mapContainer.BTLParents.FirstOrDefault();
 
-            EntDuplicateAction action = new(View, mapObjects, mapContainer, btlParent, false, true);
+            EntDuplicateAction action = new(
+                view: View,
+                objects: mapObjects,
+                targetMap: mapContainer,
+                targetBTL: btlParent,
+                duplicateToMap: false,
+                createMapGroupEntry: true,
+                incrementEntityID: CFG.Current.Toolbar_Duplicate_Increment_Entity_ID,
+                incrementInstanceID: CFG.Current.Toolbar_Duplicate_Increment_InstanceID,
+                incrementPartNames: CFG.Current.Toolbar_Duplicate_Increment_PartNames,
+                clearEntityID: CFG.Current.Toolbar_Duplicate_Clear_Entity_ID,
+                clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs,
+                randomiseRotation: CFG.Current.Toolbar_Duplicate_Randomise_Rotation,
+                randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
+                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range);
+
             View.ViewportActionManager.ExecuteAction(action);
         }
         else

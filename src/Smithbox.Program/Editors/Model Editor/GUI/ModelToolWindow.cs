@@ -23,12 +23,12 @@ public class ModelToolWindow
     public void DisplayDropdown()
     {
         // Tools
-        if (ImGui.BeginMenu($"{LOC.Get("MODEL_ToolWindow_Tools_Header")}##toolsMenuHeader"))
-        {
-            DataTransferTool.DisplayDropdown();
+        //if (ImGui.BeginMenu($"{LOC.Get("MODEL_ToolWindow_Tools_Header")}##toolsMenuHeader"))
+        //{
+        //    DataTransferTool.DisplayDropdown();
 
-            ImGui.EndMenu();
-        }
+        //    ImGui.EndMenu();
+        //}
     }
 
     public void Display()

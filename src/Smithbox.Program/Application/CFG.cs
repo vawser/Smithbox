@@ -16,6 +16,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using static StudioCore.Editors.MapEditor.DuplicateAction;
 
 namespace StudioCore.Application;
 
@@ -321,6 +322,10 @@ public class CFG
 
     public bool Toolbar_Duplicate_Clear_Entity_ID = false;
     public bool Toolbar_Duplicate_Clear_Entity_Group_IDs = false;
+
+    public bool Toolbar_Duplicate_Randomise_Rotation = false;
+    public RandomiseRotationDirection Toolbar_Duplicate_Randomise_Rotation_Dir = RandomiseRotationDirection.Y;
+    public float Toolbar_Duplicate_Randomise_Rotation_Range = 360;
 
     public bool Toolbar_Presence_Dummy_Type_ER = false;
     public bool Toolbar_Presence_Dummify = true;

@@ -1,9 +1,11 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Linq;
+using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -118,6 +120,42 @@ public class DuplicateAction
         ImGui.Checkbox("Place at List End", ref CFG.Current.Toolbar_Duplicate_Place_at_List_End);
         GUI.Tooltip("When enabled, a duplicated map object is placed at the end of its category list, rather than after its source map object.");
 
+        ImGui.Checkbox("Randomise Rotation", ref CFG.Current.Toolbar_Duplicate_Randomise_Rotation);
+        GUI.Tooltip("When enabled, a duplicated map object's rotation is randomised.");
+
+        if(CFG.Current.Toolbar_Duplicate_Randomise_Rotation)
+        {
+            var preview = $"{CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir.ToString()}";
+
+            GUI.Spacer();
+            GUI.SimpleHeader("Rotation Parameters", "");
+
+            GUI.SetInputWidth();
+            if (ImGui.BeginCombo("Axis##randomiseDirAxis", preview))
+            {
+                foreach(var val in Enum.GetValues(typeof(RandomiseRotationDirection)))
+                {
+                    var curType = (RandomiseRotationDirection)val;
+                    var selected = CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir == curType;
+
+                    if (ImGui.Selectable($"{curType.ToString()}", selected))
+                    {
+                        CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir = curType;
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+
+            GUI.SetInputWidth();
+            ImGui.DragFloat("Rotation Range##dupeRandomizeRange", ref CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range);
+            if(CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range < 0)
+            {
+                CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range = 0;
+            }
+        }
+
+
         GUI.Spacer();
         GUI.SimpleHeader("Actions", "");
 
@@ -136,7 +174,22 @@ public class DuplicateAction
             var mapContainer = View.Selection.SelectedMapContainer;
             var btlParent = mapContainer.BTLParents.FirstOrDefault();
 
-            EntDuplicateAction action = new(View, mapObjects, mapContainer, btlParent);
+            EntDuplicateAction action = new(
+                view: View, 
+                objects: mapObjects, 
+                targetMap: mapContainer, 
+                targetBTL: btlParent,
+                duplicateToMap: false,
+                createMapGroupEntry: false,
+                incrementEntityID: CFG.Current.Toolbar_Duplicate_Increment_Entity_ID,
+                incrementInstanceID: CFG.Current.Toolbar_Duplicate_Increment_InstanceID,
+                incrementPartNames: CFG.Current.Toolbar_Duplicate_Increment_PartNames,
+                clearEntityID: CFG.Current.Toolbar_Duplicate_Clear_Entity_ID,
+                clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs,
+                randomiseRotation: CFG.Current.Toolbar_Duplicate_Randomise_Rotation,
+                randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
+                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range);
+
             View.ViewportActionManager.ExecuteAction(action);
         }
         else
@@ -145,5 +198,12 @@ public class DuplicateAction
         }
 
         View.DelayPicking();
+    }
+
+    public enum RandomiseRotationDirection
+    {
+        X,
+        Y,
+        Z
     }
 }

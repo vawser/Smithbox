@@ -11,12 +11,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using static StudioCore.Editors.MapEditor.DuplicateAction;
 
 namespace StudioCore.Editors.MapEditor;
 
 public class EntDuplicateAction : ViewportAction
 {
     private MapEditorView View;
+    private Action<bool> PostExecutionAction;
 
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
 
@@ -27,11 +29,33 @@ public class EntDuplicateAction : ViewportAction
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
 
-    private readonly bool DuplicateToMap;
-    private readonly bool CreateMapGroupEntry;
     private string CreatedMapGroupGUID = "";
 
-    public EntDuplicateAction(MapEditorView view, List<MsbEntity> objects, MapContainer targetMap = null, Entity targetBTL = null, bool duplicateToMap = false, bool createMapGroupEntry = false)
+    private readonly bool DuplicateToMap;
+    private readonly bool CreateMapGroupEntry;
+    private readonly bool IncrementEntityID;
+    private readonly bool IncrementInstanceID;
+    private readonly bool IncrementPartNames;
+    private readonly bool ClearEntityID;
+    private readonly bool ClearEntityGroupID;
+    private readonly bool RandomiseRotation;
+    private readonly RandomiseRotationDirection RandomRotationDir;
+    private readonly float RandomRotationRange;
+
+    public EntDuplicateAction(MapEditorView view, 
+        List<MsbEntity> objects, 
+        MapContainer targetMap = null, 
+        Entity targetBTL = null, 
+        bool duplicateToMap = false, 
+        bool createMapGroupEntry = false,
+        bool incrementEntityID = false,
+        bool incrementInstanceID = false,
+        bool incrementPartNames = false,
+        bool clearEntityID = false,
+        bool clearEntityGroupID = false,
+        bool randomiseRotation = false,
+        RandomiseRotationDirection randomRotationDir = RandomiseRotationDirection.X,
+        float randomRotationRange = 360)
     {
         View = view;
 
@@ -42,6 +66,15 @@ public class EntDuplicateAction : ViewportAction
 
         DuplicateToMap = duplicateToMap;
         CreateMapGroupEntry = createMapGroupEntry;
+
+        IncrementEntityID = incrementEntityID;
+        IncrementInstanceID = incrementInstanceID;
+        IncrementPartNames = incrementPartNames;
+        ClearEntityID = clearEntityID;
+        ClearEntityGroupID = clearEntityGroupID;
+        RandomiseRotation = randomiseRotation;
+        RandomRotationDir = randomRotationDir;
+        RandomRotationRange = randomRotationRange;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
@@ -147,25 +180,34 @@ public class EntDuplicateAction : ViewportAction
                     }
                 }
 
-                if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
+                if (IncrementEntityID)
                 {
                     MapEditorActionHelper.SetUniqueEntityID(View, newobj, map);
                 }
-                if (CFG.Current.Toolbar_Duplicate_Increment_InstanceID)
+
+                if (IncrementInstanceID)
                 {
                     MapEditorActionHelper.SetUniqueInstanceID(View, newobj, map);
                 }
-                if (CFG.Current.Toolbar_Duplicate_Increment_PartNames)
+
+                if (IncrementPartNames)
                 {
                     MapEditorActionHelper.SetSelfPartNames(View, newobj, map);
                 }
-                if (CFG.Current.Toolbar_Duplicate_Clear_Entity_ID)
+
+                if (ClearEntityID)
                 {
                     MapEditorActionHelper.ClearEntityID(View, newobj, map);
                 }
-                if (CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs)
+
+                if (ClearEntityGroupID)
                 {
                     MapEditorActionHelper.ClearEntityGroupID(View, newobj, map);
+                }
+
+                if(RandomiseRotation)
+                {
+                    MapEditorActionHelper.RandomiseRotation(View, newobj, map, RandomRotationDir, RandomRotationRange);
                 }
             }
         }
@@ -182,7 +224,17 @@ public class EntDuplicateAction : ViewportAction
             CreatedMapGroupGUID = View.MapGroupsView.CreateMapGroupEntry(curSelection);
         }
 
+        if (PostExecutionAction != null)
+        {
+            PostExecutionAction.Invoke(false);
+        }
+
         return ActionEvent.ObjectAddedRemoved;
+    }
+
+    public void SetPostExecutionAction(Action<bool> action)
+    {
+        PostExecutionAction = action;
     }
 
     public override ActionEvent Undo()
@@ -214,6 +266,11 @@ public class EntDuplicateAction : ViewportAction
         if (CreateMapGroupEntry)
         {
             View.MapGroupsView.DeleteMapGroupEntry(CreatedMapGroupGUID);
+        }
+
+        if (PostExecutionAction != null)
+        {
+            PostExecutionAction.Invoke(false);
         }
 
         return ActionEvent.ObjectAddedRemoved;

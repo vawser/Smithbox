@@ -1,8 +1,6 @@
 #----------------------------------------------------
 # Param Editor Features
 #----------------------------------------------------
-- Table Group column should have difference highlighting if any of the internal rows are highlighted as different
-
 - Look into making row merges for tabulated params functional and simple
 
 - Finish converting the SDT AlternativeOrders into Field Layouts
