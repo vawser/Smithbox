@@ -208,7 +208,7 @@ public class ParamDataTransferTool
                 LOC.Get("PARAM_DataTransfer_Header_Options_TT"));
 
             // Append New Rows
-            ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode")}##toggleAppendMode", 
+            ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode")}##toggleAppendMode",
                 ref CFG.Current.Param_CSV_Append_Only);
 
             GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode_TT"));
@@ -216,7 +216,7 @@ public class ParamDataTransferTool
             if (CFG.Current.Param_CSV_Append_Only)
             {
                 // Replace Existing Rows
-                ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing")}##toggleReplaceExisting", 
+                ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing")}##toggleReplaceExisting",
                     ref CFG.Current.Param_CSV_Replace_Row);
 
                 GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing_TT"));
@@ -323,11 +323,11 @@ public class ParamDataTransferTool
     }
     public void ImportCsvFromSourceFolder()
     {
-        if(Directory.Exists(ImportDirectory))
+        if (Directory.Exists(ImportDirectory))
         {
-            foreach(var filepath in Directory.EnumerateFiles(ImportDirectory))
+            foreach (var filepath in Directory.EnumerateFiles(ImportDirectory))
             {
-                if(filepath.EndsWith(".csv"))
+                if (filepath.EndsWith(".csv"))
                 {
                     var filename = Path.GetFileNameWithoutExtension(filepath);
 
@@ -466,7 +466,7 @@ public class ParamDataTransferTool
         if (targetParam == "")
             targetParam = View.Selection.GetActiveParam();
 
-        if(targetParam == null)
+        if (targetParam == null)
         {
             Smithbox.LogError<ParamDataTransferTool>(LOC.Get("PARAM_DataTransfer_Log_Invalid_Param_Target"));
             return;
@@ -604,18 +604,18 @@ public class ParamDataTransferTool
                 LOC.Get("PARAM_DataTransfer_Header_Export_Directory"),
                 LOC.Get("PARAM_DataTransfer_Header_Export_Directory_TT"));
 
-            GUI.SinglelineTextInputWithHint("csvExportDir", ref ExportDirectory, 
+            GUI.SinglelineTextInputWithHint("csvExportDir", ref ExportDirectory,
                 LOC.Get("PARAM_DataTransfer_Export_Dir_Hint"));
 
             GUI.MultiButtonInput("csvExportDir",
-                "setDirectory", 
+                "setDirectory",
                 LOC.Get("PARAM_DataTransfer_Action_Set_Export_Directory"),
                 LOC.Get("PARAM_DataTransfer_Action_Set_Export_Directory_TT"),
                 SetExportDirectory,
 
                 "openDirectory",
                 LOC.Get("PARAM_DataTransfer_Action_Open_Export_Directory"),
-                LOC.Get("PARAM_DataTransfer_Action_Open_Export_Directory_TT"), 
+                LOC.Get("PARAM_DataTransfer_Action_Open_Export_Directory_TT"),
                 OpenExportDirectory);
 
             if (CsvExportType != CsvExportType.AllParams)
@@ -653,10 +653,10 @@ public class ParamDataTransferTool
                 LOC.Get("PARAM_DataTransfer_Header_Actions"),
                 LOC.Get("PARAM_DataTransfer_Header_Actions_TT"));
 
-            if(CsvExportType is CsvExportType.AllParams or CsvExportType.ModifiedParams)
+            if (CsvExportType is CsvExportType.AllParams or CsvExportType.ModifiedParams)
             {
                 GUI.MultiButtonInput("csvMultipleExportActions",
-                    "exportCsvFile", 
+                    "exportCsvFile",
                     LOC.Get("PARAM_DataTransfer_Action_Export_to_File"),
                     LOC.Get("PARAM_DataTransfer_Action_Export_to_File_TT"),
                     ExportMultipleToFile);
@@ -854,7 +854,7 @@ public class ParamDataTransferTool
             return;
         }
 
-        if(!Directory.Exists(ExportDirectory))
+        if (!Directory.Exists(ExportDirectory))
         {
             Smithbox.LogError<ParamDataTransferTool>(LOC.Get("PARAM_DataTransfer_Log_Invalid_Export_Directory"));
             return;
@@ -1241,10 +1241,13 @@ public class ParamDataTransferTool
         else if (rowType == ParamUpgradeRowGetType.ModifiedRows)
         {
             // Modified rows
-            HashSet<int> vanillaDiffCache = primaryBank.GetVanillaDiffRows(activeParam);
+            // p is a row belonging to primaryBank.Params[activeParam], i.e. the same bank
+            // the cache came from, so a reference lookup is valid and correctly separates
+            // rows that share an ID.
+            HashSet<Param.Row> vanillaDiffCache = primaryBank.GetVanillaDiffRows(activeParam);
 
             rows = primaryBank.Params[activeParam].Rows
-                .Where(p => vanillaDiffCache.Contains(p.ID))
+                .Where(p => vanillaDiffCache.Contains(p))
                 .ToList();
         }
         else if (rowType == ParamUpgradeRowGetType.SelectedRows)
@@ -1266,12 +1269,12 @@ public class ParamDataTransferTool
     public static void SettingMenu()
     {
         // Toggle: Append New Rows
-        ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode")}##toggleAppendMode", 
+        ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode")}##toggleAppendMode",
             ref CFG.Current.Param_CSV_Append_Only);
         GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode_TT"));
 
         // Toggle: Replace Existing Rows
-        ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing")}##toggleReplaceExisitng", 
+        ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing")}##toggleReplaceExisitng",
             ref CFG.Current.Param_CSV_Replace_Row);
         GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing_TT"));
 

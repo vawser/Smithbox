@@ -46,6 +46,4 @@
 #----------------------------------------------------
 # Param Editor Bugs
 #----------------------------------------------------
-- adjust the difference checker to account for row index
-
 - "prop iconID 102" crashes: seems linked to field view, adding in 102 as a value stops the crash

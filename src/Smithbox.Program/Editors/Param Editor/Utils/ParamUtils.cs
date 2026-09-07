@@ -85,7 +85,7 @@ public static class ParamUtils
                 {
                     if (key.Contains(entry))
                     {
-                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+                        HashSet<Param.Row> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
 
                         if (primary.Any())
                             return true;
@@ -98,7 +98,7 @@ public static class ParamUtils
                 {
                     if (key.Contains(entry))
                     {
-                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+                        HashSet<Param.Row> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
 
                         if (primary.Any())
                             return true;
@@ -111,7 +111,7 @@ public static class ParamUtils
                 {
                     if (key.Contains(entry))
                     {
-                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+                        HashSet<Param.Row> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
 
                         if (primary.Any())
                             return true;
@@ -135,7 +135,7 @@ public static class ParamUtils
                 {
                     if (key.Contains(entry))
                     {
-                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+                        HashSet<Param.Row> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
 
                         if (primary.Any())
                             return true;
@@ -159,7 +159,7 @@ public static class ParamUtils
                 {
                     if (key.Contains(entry))
                     {
-                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+                        HashSet<Param.Row> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
 
                         if (primary.Any())
                             return true;
@@ -172,7 +172,7 @@ public static class ParamUtils
                 {
                     if (key.Contains(entry))
                     {
-                        HashSet<int> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+                        HashSet<Param.Row> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
 
                         if (primary.Any())
                             return true;
@@ -483,7 +483,7 @@ public static class ParamUtils
         {
             var cell = field.Value;
 
-            if(cell.Value != null)
+            if (cell.Value != null)
             {
                 value = cell.Value.ToString();
             }
@@ -512,11 +512,11 @@ public static class ParamUtils
 
     public static bool HasDeveloperRowNames(ProjectEntry curProject)
     {
-        var dir = Path.Combine(AppContext.BaseDirectory, 
+        var dir = Path.Combine(AppContext.BaseDirectory,
             "Assets", "PARAM",
             ProjectUtils.GetGameDirectory(curProject), "Developer Row Names");
 
-        if(Directory.Exists(dir))
+        if (Directory.Exists(dir))
         {
             return true;
         }
@@ -526,7 +526,7 @@ public static class ParamUtils
 
     public static bool IsFxrString(string value)
     {
-        if(value.StartsWith("f"))
+        if (value.StartsWith("f"))
         {
             return true;
         }

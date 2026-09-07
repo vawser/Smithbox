@@ -32,18 +32,18 @@ public class ParamBank : IDisposable
 
     public string Name;
 
-    private readonly HashSet<int> EMPTYSET = new();
+    private readonly HashSet<Param.Row> EMPTYSET = new();
 
     public Dictionary<string, Param> _params;
 
     public ulong _paramVersion;
 
     public bool _pendingUpgrade;
-    private Dictionary<string, HashSet<int>> _primaryDiffCache; //If param != primaryparam
+    private Dictionary<string, HashSet<Param.Row>> _primaryDiffCache; //If param != primaryparam
 
     private Dictionary<string, string> _usedTentativeParamTypes;
 
-    private Dictionary<string, HashSet<int>> _vanillaDiffCache; //If param != vanillaparam
+    private Dictionary<string, HashSet<Param.Row>> _vanillaDiffCache; //If param != vanillaparam
 
     private Param EnemyParam;
 
@@ -62,7 +62,7 @@ public class ParamBank : IDisposable
 
     public ulong ParamVersion => _paramVersion;
 
-    public IReadOnlyDictionary<string, HashSet<int>> VanillaDiffCache
+    public IReadOnlyDictionary<string, HashSet<Param.Row>> VanillaDiffCache
     {
         get
         {
@@ -70,7 +70,7 @@ public class ParamBank : IDisposable
         }
     }
 
-    public IReadOnlyDictionary<string, HashSet<int>> PrimaryDiffCache
+    public IReadOnlyDictionary<string, HashSet<Param.Row>> PrimaryDiffCache
     {
         get
         {
@@ -251,7 +251,7 @@ public class ParamBank : IDisposable
 
             if (curParam.ParamType == null)
             {
-                Smithbox.LogError(this, 
+                Smithbox.LogError(this,
                     LOC.Get("PARAM_Data_Failed_Regulation_Load"));
             }
 
@@ -834,7 +834,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, 
+                Smithbox.LogError(this,
                     LOC.Get("PARAM_Data_Failed_to_Apply_ParamDef_Bank", EnemyParam.ParamType, Name), e);
 
                 successfulLoad = false;
@@ -875,7 +875,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, 
+                Smithbox.LogError(this,
                     LOC.Get("PARAM_Data_Failed_to_Apply_ParamDef_Bank", fname, Name), e);
 
                 successfulLoad = false;
@@ -1304,7 +1304,7 @@ public class ParamBank : IDisposable
 
         if (!fs.FileExists(param))
         {
-            Smithbox.LogError(this, 
+            Smithbox.LogError(this,
                 LOC.Get("PARAM_Data_Failed_to_Locate_Param_Path", Name));
 
             return false;
@@ -1359,7 +1359,7 @@ public class ParamBank : IDisposable
 
         // Stay Params
         var stayParamPath = "param/stayparam/stayparam.parambnd.dcx";
-        if(StayParams.Count > 0)
+        if (StayParams.Count > 0)
         {
             if (fs.FileExists(stayParamPath))
             {
@@ -1405,7 +1405,7 @@ public class ParamBank : IDisposable
 
         if (!TargetFS.FileExists(paramPath))
         {
-            Smithbox.LogError(this, 
+            Smithbox.LogError(this,
                 LOC.Get("PARAM_Data_Failed_to_Find_Param_Path", paramPath, Name));
 
             successfulLoad = false;
@@ -1596,7 +1596,7 @@ public class ParamBank : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, 
+                Smithbox.LogError(this,
                     LOC.Get("PARAM_Data_Failed_to_Load_GameParam", gameParamPath, Name), e);
 
                 successfulLoad = false;
@@ -1687,7 +1687,7 @@ public class ParamBank : IDisposable
 
         if (!sourceFs.FileExists(sysParam))
         {
-            Smithbox.LogError(this, 
+            Smithbox.LogError(this,
                 LOC.Get("PARAM_Data_Failed_to_Locate_System_Param_Path", Name));
 
             return false;
@@ -1895,7 +1895,7 @@ public class ParamBank : IDisposable
 
         if (!sourceFs.FileExists(sysParam))
         {
-            Smithbox.LogError(this, 
+            Smithbox.LogError(this,
                 LOC.Get("PARAM_Data_Failed_to_Locate_System_Param_Path", Name));
 
             return false;
@@ -2150,13 +2150,13 @@ public class ParamBank : IDisposable
     #region Param Difference Cache
     public void ClearParamDiffCaches()
     {
-        _vanillaDiffCache = new Dictionary<string, HashSet<int>>();
-        _primaryDiffCache = new Dictionary<string, HashSet<int>>();
+        _vanillaDiffCache = new Dictionary<string, HashSet<Param.Row>>();
+        _primaryDiffCache = new Dictionary<string, HashSet<Param.Row>>();
 
         foreach (var param in _params.Keys)
         {
-            _vanillaDiffCache.Add(param, new HashSet<int>());
-            _primaryDiffCache.Add(param, new HashSet<int>());
+            _vanillaDiffCache.Add(param, new HashSet<Param.Row>());
+            _primaryDiffCache.Add(param, new HashSet<Param.Row>());
         }
     }
 
@@ -2194,7 +2194,7 @@ public class ParamBank : IDisposable
         CacheBank.ClearCaches();
     }
 
-    private Dictionary<string, HashSet<int>> GetParamDiff(ParamBank otherBank)
+    private Dictionary<string, HashSet<Param.Row>> GetParamDiff(ParamBank otherBank)
     {
         if (otherBank == null)
         {
@@ -2206,10 +2206,10 @@ public class ParamBank : IDisposable
             return null;
         }
 
-        Dictionary<string, HashSet<int>> newCache = new();
+        Dictionary<string, HashSet<Param.Row>> newCache = new();
         foreach (var param in _params.Keys)
         {
-            HashSet<int> cache = new();
+            HashSet<Param.Row> cache = new();
             newCache.Add(param, cache);
             Param p = _params[param];
 
@@ -2265,15 +2265,19 @@ public class ParamBank : IDisposable
     }
 
     private void RefreshParamRowDiffCache(Param.Row row, ReadOnlySpan<Param.Row> otherBankRows,
-        HashSet<int> cache)
+        HashSet<Param.Row> cache)
     {
+        // Keyed by the row instance rather than row.ID: rows can legitimately share an ID
+        // (e.g. the newer row-index-based param usage pattern), and keying by ID alone
+        // caused later rows in a shared-ID group to overwrite/clear the diff status that
+        // an earlier row in the same group had just recorded.
         if (IsChanged(row, otherBankRows))
         {
-            cache.Add(row.ID);
+            cache.Add(row);
         }
         else
         {
-            cache.Remove(row.ID);
+            cache.Remove(row);
         }
     }
 
@@ -2297,8 +2301,17 @@ public class ParamBank : IDisposable
                 continue; // Don't try for now
             }
 
-            Param.Row[] otherBankRows = aux.Params[param].Rows.Where(cell => cell.ID == row.ID).ToArray();
-            RefreshParamRowDiffCache(row, otherBankRows, aux.PrimaryDiffCache[param]);
+            // aux.PrimaryDiffCache stores rows belonging to the aux bank itself (see
+            // GetParamDiff), so each matching aux row needs its own cache entry refreshed
+            // against the primary bank's row(s) for this ID - inserting the primary `row`
+            // here directly would put a foreign-bank row instance into the aux bank's cache.
+            Param.Row[] auxRows = aux.Params[param].Rows.Where(cell => cell.ID == row.ID).ToArray();
+            Param.Row[] primaryRows = Params[param].Rows.Where(cell => cell.ID == row.ID).ToArray();
+
+            foreach (Param.Row auxRow in auxRows)
+            {
+                RefreshParamRowDiffCache(auxRow, primaryRows, aux.PrimaryDiffCache[param]);
+            }
         }
     }
 
@@ -2383,9 +2396,9 @@ public class ParamBank : IDisposable
         return null;
     }
 
-    public HashSet<int> GetVanillaDiffRows(string param)
+    public HashSet<Param.Row> GetVanillaDiffRows(string param)
     {
-        IReadOnlyDictionary<string, HashSet<int>> allDiffs = VanillaDiffCache;
+        IReadOnlyDictionary<string, HashSet<Param.Row>> allDiffs = VanillaDiffCache;
 
         if (allDiffs == null || !allDiffs.ContainsKey(param))
         {
@@ -2395,9 +2408,9 @@ public class ParamBank : IDisposable
         return allDiffs[param];
     }
 
-    public HashSet<int> GetPrimaryDiffRows(string param)
+    public HashSet<Param.Row> GetPrimaryDiffRows(string param)
     {
-        IReadOnlyDictionary<string, HashSet<int>> allDiffs = PrimaryDiffCache;
+        IReadOnlyDictionary<string, HashSet<Param.Row>> allDiffs = PrimaryDiffCache;
 
         if (allDiffs == null || !allDiffs.ContainsKey(param))
         {

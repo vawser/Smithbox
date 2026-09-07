@@ -30,7 +30,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
         unpacker = param => new List<Param.Row>(param.Item2.Rows);
 
         filterList.Add("all", newCmd(new string[0],
-            LOC.Get("PARAM_RSE_All_TT"), 
+            LOC.Get("PARAM_RSE_All_TT"),
             noArgs(context =>
             {
                 return row => true;
@@ -38,12 +38,15 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             )));
 
         filterList.Add("modified", newCmd(new string[0],
-            LOC.Get("PARAM_RSE_Modified_TT"), 
+            LOC.Get("PARAM_RSE_Modified_TT"),
             noArgs(context =>
             {
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
-                HashSet<int> cache = context.Item1.GetVanillaDiffRows(paramName);
-                return row => cache.Contains(row.ID);
+                // context.Item1 is the same bank that row belongs to (row is unpacked from
+                // context.Item2.Rows), so the cache's row instances can be matched directly -
+                // this also correctly distinguishes rows that share an ID.
+                HashSet<Param.Row> cache = context.Item1.GetVanillaDiffRows(paramName);
+                return row => cache.Contains(row);
             }
             )));
 
@@ -51,8 +54,9 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             LOC.Get("PARAM_RSE_AuxModified_TT"), noArgs(context =>
             {
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
-                HashSet<int> cache = context.Item1.GetPrimaryDiffRows(paramName);
-                return row => cache.Contains(row.ID);
+                // Same-bank lookup, as above.
+                HashSet<Param.Row> cache = context.Item1.GetPrimaryDiffRows(paramName);
+                return row => cache.Contains(row);
             }
             )));
 
@@ -70,7 +74,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 return noContext(row => selectedRows.Contains(row));
             }));
 
-        filterList.Add("added", newCmd(new string[0], 
+        filterList.Add("added", newCmd(new string[0],
             LOC.Get("PARAM_RSE_Added_TT"),
             noArgs(context =>
             {
@@ -95,12 +99,16 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return row => true;
                 }
 
-                HashSet<int> pCache = pBank.GetVanillaDiffRows(paramName);
-                List<(HashSet<int>, HashSet<int>)> auxCaches = auxBanks.Select(x =>
+                // pCache/auxCaches hold row instances owned by pBank/each aux bank
+                // respectively, while row may come from any bank in the unpacked stream, so
+                // these have to stay ID-based cross-bank comparisons rather than reference
+                // lookups.
+                HashSet<Param.Row> pCache = pBank.GetVanillaDiffRows(paramName);
+                List<(HashSet<Param.Row>, HashSet<Param.Row>)> auxCaches = auxBanks.Select(x =>
                     (x.Value.GetPrimaryDiffRows(paramName), x.Value.GetVanillaDiffRows(paramName))).ToList();
                 return row =>
-                    !pCache.Contains(row.ID) &&
-                    auxCaches.Where(x => x.Item2.Contains(row.ID) && x.Item1.Contains(row.ID)).Count() == 1;
+                    !pCache.Any(r => r.ID == row.ID) &&
+                    auxCaches.Where(x => x.Item2.Any(r => r.ID == row.ID) && x.Item1.Any(r => r.ID == row.ID)).Count() == 1;
             }
             ), () => auxBanks.Count > 0));
 
@@ -109,17 +117,18 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             noArgs(context =>
             {
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
-                HashSet<int> pCache = pBank.GetVanillaDiffRows(paramName);
-                List<(HashSet<int>, HashSet<int>)> auxCaches = auxBanks.Select(x =>
+                // Cross-bank ID-based comparison - see the "mergeable" filter above.
+                HashSet<Param.Row> pCache = pBank.GetVanillaDiffRows(paramName);
+                List<(HashSet<Param.Row>, HashSet<Param.Row>)> auxCaches = auxBanks.Select(x =>
                     (x.Value.GetPrimaryDiffRows(paramName), x.Value.GetVanillaDiffRows(paramName))).ToList();
                 return row =>
-                    (pCache.Contains(row.ID) ? 1 : 0) + auxCaches
-                        .Where(x => x.Item2.Contains(row.ID) && x.Item1.Contains(row.ID)).Count() > 1;
+                    (pCache.Any(r => r.ID == row.ID) ? 1 : 0) + auxCaches
+                        .Where(x => x.Item2.Any(r => r.ID == row.ID) && x.Item1.Any(r => r.ID == row.ID)).Count() > 1;
             }
             ), () => auxBanks.Count > 0));
 
-        filterList.Add("id", newCmd(new[] { 
-            LOC.Get("PARAM_RSE_ID_Hint_1")}, 
+        filterList.Add("id", newCmd(new[] {
+            LOC.Get("PARAM_RSE_ID_Hint_1")},
             LOC.Get("PARAM_RSE_ID_Hint"),
             (args, lenient) =>
             {
@@ -127,10 +136,10 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 return noContext(row => rx.IsMatch(row.ID.ToString()));
             }));
 
-        filterList.Add("idrange", newCmd(new[] { 
+        filterList.Add("idrange", newCmd(new[] {
             LOC.Get("PARAM_RSE_IdRange_Hint_1"),
             LOC.Get("PARAM_RSE_IdRange_Hint_2")},
-            LOC.Get("PARAM_RSE_IdRange_TT"), 
+            LOC.Get("PARAM_RSE_IdRange_TT"),
             (args, lenient) =>
             {
                 var floor = double.Parse(args[0]);
@@ -138,19 +147,19 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 return noContext(row => row.ID >= floor && row.ID <= ceil);
             }));
 
-        filterList.Add("name", newCmd(new[] { 
+        filterList.Add("name", newCmd(new[] {
             LOC.Get("PARAM_RSE_Name_Hint_1")},
-            LOC.Get("PARAM_RSE_Name_TT"), 
+            LOC.Get("PARAM_RSE_Name_TT"),
             (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return noContext(row => rx.IsMatch(row.Name == null ? "" : row.Name));
             }));
 
-        filterList.Add("prop", newCmd(new[] { 
+        filterList.Add("prop", newCmd(new[] {
             LOC.Get("PARAM_RSE_Prop_Hint_1"),
             LOC.Get("PARAM_RSE_Prop_Hint_2")},
-            LOC.Get("PARAM_RSE_Prop_Hint_TT"), 
+            LOC.Get("PARAM_RSE_Prop_Hint_TT"),
             (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[1], RegexOptions.IgnoreCase) : new Regex($@"^{args[1]}$");
@@ -191,7 +200,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 });
             }));
 
-        filterList.Add("positive", newCmd(new[] { 
+        filterList.Add("positive", newCmd(new[] {
             LOC.Get("PARAM_RSE_Positive_Hint_1")},
             LOC.Get("PARAM_RSE_Positive_TT"),
             (args, lenient) =>
@@ -233,7 +242,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 });
             }));
 
-        filterList.Add("propref", newCmd(new[] { 
+        filterList.Add("propref", newCmd(new[] {
             LOC.Get("PARAM_RSE_PropRef_Hint_1"),
             LOC.Get("PARAM_RSE_PropRef_Hint_2")},
             LOC.Get("PARAM_RSE_PropRef_TT"),
@@ -294,7 +303,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             }));
 
-        filterList.Add("fmg", newCmd(new[] { 
+        filterList.Add("fmg", newCmd(new[] {
             LOC.Get("PARAM_RSE_Fmg_Hint_1")},
             LOC.Get("PARAM_RSE_Fmg_TT"),
             (args, lenient) =>
@@ -326,7 +335,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             }));
 
-        filterList.Add("vanillaprop", newCmd(new[] { 
+        filterList.Add("vanillaprop", newCmd(new[] {
             LOC.Get("PARAM_RSE_VanillaProp_Hint_1"),
             LOC.Get("PARAM_RSE_VanillaProp_Hint_2")},
             LOC.Get("PARAM_RSE_VanillaProp_TT"),
@@ -358,7 +367,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             }));
 
-        filterList.Add("vanillaproprange", newCmd(new[] { 
+        filterList.Add("vanillaproprange", newCmd(new[] {
             LOC.Get("PARAM_RSE_VanillaPropRange_Hint_1"),
             LOC.Get("PARAM_RSE_VanillaPropRange_Hint_2"),
             LOC.Get("PARAM_RSE_VanillaPropRange_Hint_3")},
@@ -390,7 +399,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             }));
 
-        filterList.Add("auxprop", newCmd(new[] { 
+        filterList.Add("auxprop", newCmd(new[] {
             LOC.Get("PARAM_RSE_AuxProp_Hint_1"),
             LOC.Get("PARAM_RSE_AuxProp_Hint_2"),
             LOC.Get("PARAM_RSE_AuxProp_Hint_3")},
@@ -513,29 +522,29 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     };
                 }));
 
-        filterList.Add("unique", newCmd(new string[] {  
-            LOC.Get("PARAM_RSE_Unique_Hint_1")}, 
-            LOC.Get("PARAM_RSE_Unique_TT"), 
+        filterList.Add("unique", newCmd(new string[] {
+            LOC.Get("PARAM_RSE_Unique_Hint_1")},
+            LOC.Get("PARAM_RSE_Unique_TT"),
             (args, lenient) =>
-        {
-            string field = args[0].Replace(@"\s", " ");
-            return (param) =>
             {
-                var col = param.Item2.GetCol(field);
-                if (!col.IsColumnValid())
+                string field = args[0].Replace(@"\s", " ");
+                return (param) =>
                 {
-                    throw new Exception(
-                        LOC.Get("PARAM_RSE_Unique_Error_Cannot_Find_Field", field));
-                }
+                    var col = param.Item2.GetCol(field);
+                    if (!col.IsColumnValid())
+                    {
+                        throw new Exception(
+                            LOC.Get("PARAM_RSE_Unique_Error_Cannot_Find_Field", field));
+                    }
 
-                var distribution = ParamUtils.GetParamValueDistribution(param.Item2.Rows, col);
-                var setOfDuped = distribution.Where((entry, linqi) => entry.Item2 > 1).Select((entry, linqi) => entry.Item1).ToHashSet();
-                return (row) =>
-                {
-                    return !setOfDuped.Contains(row.Get(col));
+                    var distribution = ParamUtils.GetParamValueDistribution(param.Item2.Rows, col);
+                    var setOfDuped = distribution.Where((entry, linqi) => entry.Item2 > 1).Select((entry, linqi) => entry.Item1).ToHashSet();
+                    return (row) =>
+                    {
+                        return !setOfDuped.Contains(row.Get(col));
+                    };
                 };
-            };
-        }));
+            }));
 
         defaultFilter = newCmd(new[] {
             LOC.Get("PARAM_RSE_Default_Hint_1")},

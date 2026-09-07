@@ -53,7 +53,7 @@ public class ParamListWindow
         }
 
         // Stay Params
-        if(Project.Descriptor.ProjectType is ProjectType.DS3)
+        if (Project.Descriptor.ProjectType is ProjectType.DS3)
         {
             if (CFG.Current.ParamEditor_Param_List_Display_StayParams)
             {
@@ -117,7 +117,7 @@ public class ParamListWindow
         ImGui.AlignTextToFramePadding();
         ImGui.InputTextWithHint($"##paramSearch", LOC.Get("PARAM_ParamWindow_Search_Hint"), ref currentParamSearchString, 256);
 
-        GUI.Tooltip(LOC.Get("PARAM_ParamWindow_Search_Hint_TT", 
+        GUI.Tooltip(LOC.Get("PARAM_ParamWindow_Search_Hint_TT",
             InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)));
 
         if (!currentParamSearchString.Equals(lastParamSearch))
@@ -194,7 +194,7 @@ public class ParamListWindow
 
             foreach (var paramKey in pinnedParamKeyList)
             {
-                HashSet<int> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
+                HashSet<Param.Row> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
 
                 if (Editor.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(paramKey))
                 {
@@ -292,7 +292,7 @@ public class ParamListWindow
             if (categories.Count > 0)
             {
                 // Categories - Forced Top
-                for(int i = 0; i < categories.Count; i++)
+                for (int i = 0; i < categories.Count; i++)
                 {
                     var category = categories[i];
 
@@ -363,7 +363,7 @@ public class ParamListWindow
     {
         foreach (var paramKey in paramKeyList)
         {
-            HashSet<int> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
+            HashSet<Param.Row> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
             Param p = Editor.Project.Handler.ParamData.PrimaryBank.Params[paramKey];
 
             if (!visibleParams.Contains(paramKey))
@@ -447,7 +447,7 @@ public class ParamListWindow
         if (ImGui.BeginPopupContextItem($"{paramKey}"))
         {
             // Information
-            if(ImGui.BeginMenu($"{LOC.Get("PARAM_ParamWindow_Context_Info_Header")}##infoMenuHeader"))
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_ParamWindow_Context_Info_Header")}##infoMenuHeader"))
             {
                 ImGui.Text(LOC.Get("PARAM_ParamWindow_Context_ParamType", param.ParamType));
 
@@ -568,7 +568,7 @@ public class ParamListWindow
     {
         var paramData = Editor.Project.Handler.ParamData.PrimaryBank.Params.GetValueOrDefault(paramKey);
 
-        if(paramData == null)
+        if (paramData == null)
         {
             Smithbox.LogError<ParamListWindow>(
                 LOC.Get("PARAM_ParamWindow_ExportParam_Error_Invalid_ParamData", paramKey));
@@ -579,7 +579,7 @@ public class ParamListWindow
         var exportDir = Path.Combine(Project.Descriptor.ProjectPath, "param");
         var savePath = ProjectUtils.NormalizePath($"{exportDir}\\{paramKey}.param");
 
-        if(!Directory.Exists(exportDir))
+        if (!Directory.Exists(exportDir))
         {
             Directory.CreateDirectory(exportDir);
         }
@@ -597,7 +597,7 @@ public class ParamListWindow
     {
         ImGui.BeginChild("StayParamFileParamSection", new Vector2(0, 110) * DPI.UIScale(), ImGuiChildFlags.Borders);
 
-        foreach(var param in Project.Handler.ParamData.PrimaryBank.StayParams)
+        foreach (var param in Project.Handler.ParamData.PrimaryBank.StayParams)
         {
             var paramKey = param.Key;
             var meta = Editor.Project.Handler.ParamData.GetParamMeta(param.Value.Def);

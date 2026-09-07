@@ -37,13 +37,13 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                     return false;
                 }
 
-                HashSet<int> cache = bank.GetVanillaDiffRows(bank.GetKeyForParam(param.Item2));
+                HashSet<Param.Row> cache = bank.GetVanillaDiffRows(bank.GetKeyForParam(param.Item2));
                 return cache.Count > 0;
             }))));
 
-        filterList.Add("param", newCmd(new[] { 
+        filterList.Add("param", newCmd(new[] {
             LOC.Get("PARAM_PSE_Param_Hint_1")},
-            LOC.Get("PARAM_PSE_Param_TT"), 
+            LOC.Get("PARAM_PSE_Param_TT"),
             (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
@@ -55,7 +55,7 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                             : bank.GetKeyForParam(param.Item2)));
             }));
 
-        filterList.Add("auxparam", newCmd(new[] { 
+        filterList.Add("auxparam", newCmd(new[] {
             LOC.Get("PARAM_PSE_AuxParam_Hint_1"),
             LOC.Get("PARAM_PSE_AuxParam_Hint_2")},
             LOC.Get("PARAM_PSE_AuxParam_TT"),
@@ -73,7 +73,7 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                             : auxBank.GetKeyForParam(param.Item2)));
             }, () => auxBanks.Count > 0));
 
-        filterList.Add("paramtype", newCmd(new[] { 
+        filterList.Add("paramtype", newCmd(new[] {
             LOC.Get("PARAM_PSE_ParamType_Hint_1")},
             LOC.Get("PARAM_PSE_ParamType_TT"), (args, lenient) =>
             {
@@ -86,7 +86,7 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                             : bank.GetTypeForParam(param.Item2)));
             }));
 
-        defaultFilter = newCmd(new[] { 
+        defaultFilter = newCmd(new[] {
             LOC.Get("PARAM_PSE_Default_Hint_1")},
             LOC.Get("PARAM_PSE_Default_TT"), (args, lenient) =>
             {

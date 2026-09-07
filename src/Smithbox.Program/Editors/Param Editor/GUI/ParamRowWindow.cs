@@ -32,8 +32,8 @@ public class RowListContext
     public Param.Column CompareColumn { get; set; }
     public PropertyInfo CompareColumnProperty { get; set; }
 
-    public HashSet<int> VanillaDiffCache { get; set; }
-    public List<(HashSet<int>, HashSet<int>)> AuxDiffCaches { get; set; }
+    public HashSet<Param.Row> VanillaDiffCache { get; set; }
+    public List<(HashSet<Param.Row>, HashSet<Param.Row>)> AuxDiffCaches { get; set; }
 
     public FmgRowDecorator FmgRowDecorator { get; set; }
 
@@ -96,7 +96,7 @@ public class ParamRowWindow
             Context.VanillaDiffCache = Editor.Project.Handler.ParamData.PrimaryBank
                 .GetVanillaDiffRows(activeParam);
             Context.AuxDiffCaches = Editor.Project.Handler.ParamData.AuxBanks
-                .Select((bank, i) => (bank.Value.GetVanillaDiffRows(activeParam), 
+                .Select((bank, i) => (bank.Value.GetVanillaDiffRows(activeParam),
                 bank.Value.GetPrimaryDiffRows(activeParam))).ToList();
 
             Context.CompareColumn = ParentView.Selection.GetCompareCol();
@@ -141,8 +141,8 @@ public class ParamRowWindow
 
         // Search
         ImGui.AlignTextToFramePadding();
-        ImGui.InputTextWithHint($"##rowSearch", 
-            LOC.Get("PARAM_RowWindow_Search_Hint"), 
+        ImGui.InputTextWithHint($"##rowSearch",
+            LOC.Get("PARAM_RowWindow_Search_Hint"),
             ref ParentView.Selection.GetCurrentRowSearchString(), 256);
 
         GUI.Tooltip(LOC.Get("PARAM_RowWindow_Search_TT", InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)));
@@ -297,7 +297,7 @@ public class ParamRowWindow
 
             ImGui.BeginChild("PinnedRowSection", new Vector2(0, height), ImGuiChildFlags.None, ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
 
-            var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY ;
+            var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY;
 
             if (CFG.Current.ParamEditor_Enable_Table_Borders)
             {
@@ -308,7 +308,7 @@ public class ParamRowWindow
                 tblFlags = tblFlags | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV;
             }
 
-                var columnCount = 2;
+            var columnCount = 2;
 
             if (Context.CompareColumn != null)
             {
@@ -630,7 +630,7 @@ public class ParamRowWindow
 
             DisplayContextMenu("id", r, selectionCacheIndex, isPinned);
         }
-        else if(r == ID_EditRow)
+        else if (r == ID_EditRow)
         {
             var tempID = r.ID;
 
@@ -649,8 +649,15 @@ public class ParamRowWindow
     private void DisplayRow(bool[] selectionCache, int selectionCacheIndex,
         List<Param.Row> p, Param.Row r, bool isPinned)
     {
-        var diffVanilla = Context.VanillaDiffCache.Contains(r.ID);
-        var auxDiffVanilla = Context.AuxDiffCaches.Where(cache => cache.Item1.Contains(r.ID)).Count() > 0;
+        // r belongs to the primary bank, and Context.VanillaDiffCache holds the primary
+        // bank's own row instances, so a direct reference lookup is valid here and (unlike
+        // a plain ID lookup) won't conflate two different rows that happen to share an ID.
+        var diffVanilla = Context.VanillaDiffCache.Contains(r);
+
+        // The aux caches hold row instances that belong to the aux ParamBank, not the
+        // primary bank, so r will never be reference-equal to any entry in them - these
+        // have to keep comparing by ID.
+        var auxDiffVanilla = Context.AuxDiffCaches.Where(cache => cache.Item1.Any(row => row.ID == r.ID)).Count() > 0;
 
         var popColor = true;
 
@@ -658,7 +665,7 @@ public class ParamRowWindow
         {
             // If the auxes are changed 
             var auxDiffPrimaryAndVanilla = (auxDiffVanilla ? 1 : 0) + Context.AuxDiffCaches
-                .Where(cache => cache.Item1.Contains(r.ID) && cache.Item2.Contains(r.ID)).Count() > 1;
+                .Where(cache => cache.Item1.Any(row => row.ID == r.ID) && cache.Item2.Any(row => row.ID == r.ID)).Count() > 1;
 
             if (auxDiffVanilla && auxDiffPrimaryAndVanilla)
             {
@@ -844,7 +851,7 @@ public class ParamRowWindow
                 Context.ScrollTo = ImGui.GetCursorPosY();
             }
         }
-        else if(Name_EditRow == r)
+        else if (Name_EditRow == r)
         {
             if (popColor)
             {
@@ -948,19 +955,19 @@ public class ParamRowWindow
             if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Duplicate_Header")}##duplicateMenuHeader"))
             {
                 // Offset
-                ImGui.InputInt($"{LOC.Get("PARAM_RowWindow_Context_DuplicateOffset")}##duplicateOffset", 
+                ImGui.InputInt($"{LOC.Get("PARAM_RowWindow_Context_DuplicateOffset")}##duplicateOffset",
                     ref CFG.Current.Param_Toolbar_Duplicate_Offset);
 
                 GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_DuplicateOffset_TT"));
 
                 // Amount
-                ImGui.InputInt($"{LOC.Get("PARAM_RowWindow_Context_DuplicateAmount")}##duplicateAmount", 
+                ImGui.InputInt($"{LOC.Get("PARAM_RowWindow_Context_DuplicateAmount")}##duplicateAmount",
                     ref CFG.Current.Param_Toolbar_Duplicate_Amount);
 
                 GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_DuplicateAmount_TT"));
 
                 // Apply
-                if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_DuplicateApply")}##duplicateApplyAction", 
+                if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_DuplicateApply")}##duplicateApplyAction",
                     false,
                     ParentView.Selection.RowSelectionExists()
                         ? ImGuiSelectableFlags.None
@@ -1138,11 +1145,11 @@ public class ParamRowWindow
             if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Info_Header")}##infoMenuHeader"))
             {
                 // Copy ID
-                if(ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Copy_ID")}##copyIdAction"))
+                if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Copy_ID")}##copyIdAction"))
                 {
                     var selection = ParentView.Selection.GetSelectedRows();
                     StringBuilder _builder = new();
-                    foreach(var entry in selection)
+                    foreach (var entry in selection)
                     {
                         _builder.AppendLine($"{entry.ID.ToString()}");
                     }

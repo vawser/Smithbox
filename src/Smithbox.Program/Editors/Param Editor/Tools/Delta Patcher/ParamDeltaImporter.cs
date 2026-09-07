@@ -108,8 +108,12 @@ public class ParamDeltaImporter
         var restrictRowAdd = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add;
         var restrictRowMod = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify;
 
-        HashSet<int> vanillaDiffCache = Patcher.Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(paramName);
-        var diffVanilla = vanillaDiffCache.Contains(rowDelta.ID);
+        // Rows can share an ID under this row-index-based usage pattern, so the diff cache
+        // (keyed by row instance) can only tell us whether a *specific* row differs from
+        // vanilla once we know which row that is. rowDelta.ID alone isn't enough to look
+        // that up - it has to be paired with rowDelta.Index against the matching row found
+        // below, the same way that row is located for modification/deletion.
+        HashSet<Param.Row> vanillaDiffCache = Patcher.Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(paramName);
 
         var rowStateIsAdded = rowDelta.State is RowDeltaState.Added;
 
@@ -184,7 +188,7 @@ public class ParamDeltaImporter
                         var proceed = true;
 
                         // If row modification is restricted, and this row is already modified, then ignore.
-                        if (restrictRowMod && diffVanilla)
+                        if (restrictRowMod && vanillaDiffCache.Contains(row))
                         {
                             proceed = false;
                         }
