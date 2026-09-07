@@ -1,4 +1,6 @@
-﻿using SoulsFormats;
+﻿using Andre.Formats;
+using Octokit;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Renderer;
@@ -49,9 +51,74 @@ public static class MapEditorActionHelper
 
         if (view.Project.Descriptor.ProjectType == ProjectType.DS2S || view.Project.Descriptor.ProjectType == ProjectType.DS2)
         {
-            sel.SetPropertyValue("RotationX", newRotation.X * Utils.Rad2Deg);
-            sel.SetPropertyValue("RotationY", newRotation.Y * Utils.Rad2Deg - 180.0f);
-            sel.SetPropertyValue("RotationZ", newRotation.Z * Utils.Rad2Deg);
+            // All other map object types
+            sel.SetPropertyValue("Rotation", newRotation);
+
+            // Enemies
+            if (sel.WrappedObject is Param.Row row)
+            {
+                Param.Cell? ppx = row["RotationX"];
+                if (ppx != null)
+                {
+                    PropertyInfo pprop = ppx.GetType().GetProperty("Value");
+
+                    var value = pprop.GetValue(ppx);
+
+                    pprop.SetValue(ppx, newRotation.X * Utils.Rad2Deg);
+                }
+
+                Param.Cell? ppy = row["RotationY"];
+                if (ppy != null)
+                {
+                    PropertyInfo pprop = ppy.GetType().GetProperty("Value");
+
+                    var value = pprop.GetValue(ppy);
+
+                    pprop.SetValue(ppy, newRotation.Y * Utils.Rad2Deg - 180.0f);
+                }
+
+                Param.Cell? ppz = row["RotationZ"];
+                if (ppz != null)
+                {
+                    PropertyInfo pprop = ppz.GetType().GetProperty("Value");
+
+                    var value = pprop.GetValue(ppz);
+
+                    pprop.SetValue(ppz, newRotation.Z * Utils.Rad2Deg);
+                }
+            }
+            else  if (sel.WrappedObject is MergedParamRow mergedRow)
+            {
+                Param.Cell? ppx = mergedRow["RotationX"];
+                if (ppx != null)
+                {
+                    PropertyInfo pprop = ppx.GetType().GetProperty("Value");
+
+                    var value = pprop.GetValue(ppx);
+
+                    pprop.SetValue(ppx, newRotation.X * Utils.Rad2Deg);
+                }
+
+                Param.Cell? ppy = mergedRow["RotationY"];
+                if (ppy != null)
+                {
+                    PropertyInfo pprop = ppy.GetType().GetProperty("Value");
+
+                    var value = pprop.GetValue(ppy);
+
+                    pprop.SetValue(ppy, newRotation.Y * Utils.Rad2Deg - 180.0f);
+                }
+
+                Param.Cell? ppz = mergedRow["RotationZ"];
+                if (ppz != null)
+                {
+                    PropertyInfo pprop = ppz.GetType().GetProperty("Value");
+
+                    var value = pprop.GetValue(ppz);
+
+                    pprop.SetValue(ppz, newRotation.Z * Utils.Rad2Deg);
+                }
+            }
         }
         else
         {
