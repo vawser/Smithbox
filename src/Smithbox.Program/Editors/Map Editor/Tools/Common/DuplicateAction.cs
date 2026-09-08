@@ -90,14 +90,11 @@ public class DuplicateAction
             GUI.Tooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
         }
 
-        if (View.Project.Descriptor.ProjectType == ProjectType.ER || View.Project.Descriptor.ProjectType == ProjectType.AC6)
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
             GUI.Tooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
-        }
 
-        if (View.Project.Descriptor.ProjectType == ProjectType.ER || View.Project.Descriptor.ProjectType == ProjectType.AC6)
-        {
             ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_PartNames);
             GUI.Tooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
         }
