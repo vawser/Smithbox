@@ -1,4 +1,5 @@
 ﻿using Andre.IO.VFS;
+using Octokit;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +11,7 @@ public class DataProjectVFS
     public DataProjectEntry Project;
 
     public VirtualFileSystem FS = EmptyVirtualFileSystem.Instance;
+    public VirtualFileSystem ProjectFS = EmptyVirtualFileSystem.Instance;
 
     public VirtualFileSystem VanillaBinderFS = EmptyVirtualFileSystem.Instance;
 
@@ -27,6 +29,17 @@ public class DataProjectVFS
         DisposeInternal();
 
         List<VirtualFileSystem> fileSystems = [];
+
+        // Project File System
+        if (Directory.Exists(CFG.Current.DEVKIT_DataPath_OutputFolder))
+        {
+            ProjectFS = new RealVirtualFileSystem(CFG.Current.DEVKIT_DataPath_OutputFolder, false);
+            fileSystems.Add(ProjectFS);
+        }
+        else
+        {
+            ProjectFS = EmptyVirtualFileSystem.Instance;
+        }
 
         // Vanilla File System
         if (Directory.Exists(Project.Descriptor.DataPath))

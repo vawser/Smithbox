@@ -241,7 +241,17 @@ public class DeveloperKit
             "findHavokInstances",
             "Find Havok Instances",
             "",
-            FindHavokInstances);
+            FindHavokInstances,
+
+            "stripTrees",
+            "Strip Tree AEGs",
+            "",
+            StripTrees,
+
+            "stipGrass",
+            "Strip Grass AEGs",
+            "",
+            StripGrass);
 
         ImGui.InputText("MapID", ref MapID, 255);
     }
@@ -281,7 +291,6 @@ public class DeveloperKit
     }
 
     #endregion
-
 
     #region Generate Speed Tree List
     public Dictionary<ProjectType, List<string>> SpeedTreeAssets = new();
@@ -553,6 +562,8 @@ public class DeveloperKit
     }
 
     #endregion
+
+    #region Find Havok Instances
     public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> MapCollisionBank = new();
 
     public void FindHavokInstances()
@@ -768,4 +779,128 @@ public class DeveloperKit
             Smithbox.LogError(this, "", ex);
         }
     }
+
+    #endregion
+
+    #region Strip Trees from Maps
+    public void StripTrees()
+    {
+        var success = Projects.TryGetValue(TargetProject, out var targetProject);
+        if (!success)
+            return;
+
+        var treeList = SetupSpeedTreeList(targetProject);
+
+        var maps = targetProject.Locator.MapFiles;
+
+        foreach(var mapEntry in maps.Entries)
+        {
+            var mapData = targetProject.VFS.FS.ReadFile(mapEntry.Path);
+            if (mapData != null)
+            {
+                var map = MSBE.Read(mapData.Value);
+
+                StripTreesFromMap(targetProject, map, treeList);
+
+                var outputMapData = map.Write();
+
+                targetProject.VFS.ProjectFS.WriteFile(mapEntry.Path, outputMapData);
+            }
+        }
+    }
+
+    public void StripTreesFromMap(DataProjectEntry project, MSBE map, SpeedTreeList treeList)
+    {
+        var removalList = new List<MSBE.Part.Asset>();
+
+        foreach(var entry in map.Parts.Assets)
+        {
+            if(treeList.Entries.Contains(entry.ModelName.ToLower()))
+            {
+                removalList.Add(entry);
+            }
+        }
+
+        foreach(var entry in removalList)
+        {
+            map.Parts.Assets.Remove(entry);
+        }
+    }
+
+    public SpeedTreeList SetupSpeedTreeList(DataProjectEntry project)
+    {
+        var sourcePath = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(project.Descriptor.ProjectType), "SpeedTreeAssets.json");
+
+        if (File.Exists(sourcePath))
+        {
+            var file = File.ReadAllText(sourcePath);
+            try
+            {
+                var speedTreeList = JsonSerializer.Deserialize(file, MapEditorJsonSerializerContext.Default.SpeedTreeList);
+
+                return speedTreeList;
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("MAP_Data_Setup_Failed_Deserialize_Speed_Tree_List", file), e);
+            }
+        }
+
+        return null;
+    }
+
+    #endregion
+
+    #region Strip Grass from Models
+    public void StripGrass()
+    {
+        var success = Projects.TryGetValue(TargetProject, out var targetProject);
+        if (!success)
+            return;
+
+        var grassList = SetupGrassList(targetProject);
+
+        // Assets
+        foreach (var aegEntry in targetProject.Locator.AssetFiles.Entries)
+        {
+            var mapData = targetProject.VFS.FS.ReadFile(mapEntry.Path);
+            if (mapData != null)
+            {
+                var map = MSBE.Read(mapData.Value);
+
+
+                var outputMapData = map.Write();
+
+                targetProject.VFS.ProjectFS.WriteFile(mapEntry.Path, outputMapData);
+            }
+        }
+
+        // Map Pieces
+    }
+
+    public GrassList SetupGrassList(DataProjectEntry project)
+    {
+        var sourcePath = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(project.Descriptor.ProjectType), "GrassAssets.json");
+
+        if (File.Exists(sourcePath))
+        {
+            var file = File.ReadAllText(sourcePath);
+            try
+            {
+                var grassList = JsonSerializer.Deserialize(file, MapEditorJsonSerializerContext.Default.GrassList);
+
+                return grassList;
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("MAP_Data_Setup_Failed_Deserialize_Grass_List", file), e);
+            }
+        }
+
+        return null;
+    }
+
+    #endregion
 }

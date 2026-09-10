@@ -1,8 +1,4 @@
-﻿using HKLib.hk2018;
-using StudioCore.Editors.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.HavokEditor;
 
