@@ -1,10 +1,11 @@
+using Havok.Shared;
 using SoulsFormats;
 using System.Collections.Generic;
 using System.Numerics;
 
 namespace HKX2
 {
-    public partial class hkRootLevelContainer : IHavokObject
+    public partial class hkRootLevelContainer : IHavokObject, IRootContainer
     {
         public virtual uint Signature { get => 661831966; }
         

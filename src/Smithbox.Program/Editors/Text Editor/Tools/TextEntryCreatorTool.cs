@@ -1,14 +1,6 @@
-﻿using DotNext.Resources;
-using Hexa.NET.ImGui;
-using HKLib.hk2018.hkAsyncThreadPool;
-using Octokit;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Utilities;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;

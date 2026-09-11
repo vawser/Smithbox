@@ -1,10 +1,11 @@
+using Havok.Shared;
 using SoulsFormats;
 using System.Collections.Generic;
 using System.Numerics;
 
 namespace HKX2
 {
-    public partial class hkbClipGenerator : hkbGenerator
+    public partial class hkbClipGenerator : hkbGenerator, IClipGenerator
     {
         public override uint Signature { get => 223136246; }
         

@@ -19,6 +19,14 @@
     {
       "Key": "MODEL_DataTransfer_Tab_Export_Hint",
       "Text": "Use this section to export JSON data from your current project."
+    },
+    {
+      "Key": "MODEL_DataTransfer_FlverDataMode_Dummy",
+      "Text": "Dummy"
+    },
+    {
+      "Key": "MODEL_DataTransfer_FlverDataMode_Node",
+      "Text": "Node"
     }
   ]
 }

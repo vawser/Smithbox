@@ -363,14 +363,7 @@ public class ProjectUtils
     }
     public static bool SupportsHavokEditor(ProjectType curType)
     {
-        if (curType
-            is ProjectType.ER
-            or ProjectType.NR)
-        {
-            return true;
-        }
-
-        return false;
+        return true;
     }
 
 

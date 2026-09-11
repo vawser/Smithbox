@@ -1,0 +1,21 @@
+Smithbox - Version 2.2.5
+
+Parameter count mismatch.
+
+   at System.Reflection.MethodBaseInvoker.ThrowTargetParameterCountException()
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at StudioCore.Editors.ModelEditor.ModelPropertyView.PropEditorGeneric(ViewportSelection selection, IEnumerable`1 entSelection, Object obj, Int32 classIndex) in ./src/Smithbox.Program/Editors/Model Editor/GUI/ModelPropertyView.cs:line 254
+   at StudioCore.Editors.ModelEditor.ModelPropertyView.PropEditorGenericList(ViewportSelection selection, IEnumerable`1 entSelection, Entity firstEnt, Object obj, PropertyInfo prop, Type elementType, String fieldName, String fieldDescription, ImGuiTreeNodeFlags treeFlags, Int32 classIndex) in ./src/Smithbox.Program/Editors/Model Editor/GUI/ModelPropertyView.cs:line 1163
+   at StudioCore.Editors.ModelEditor.ModelPropertyView.PropEditorGeneric(ViewportSelection selection, IEnumerable`1 entSelection, Object obj, Int32 classIndex) in ./src/Smithbox.Program/Editors/Model Editor/GUI/ModelPropertyView.cs:line 244
+   at StudioCore.Editors.ModelEditor.ModelPropertyView.PropEditorSelectedEntities(ViewportSelection selection, Int32 classIndex) in ./src/Smithbox.Program/Editors/Model Editor/GUI/ModelPropertyView.cs:line 140
+   at StudioCore.Editors.ModelEditor.ModelPropertyView.Display() in ./src/Smithbox.Program/Editors/Model Editor/GUI/ModelPropertyView.cs:line 94
+   at StudioCore.Editors.ModelEditor.ModelEditorView.Display(UInt32 dockspaceId, Int32 viewIndex, Boolean doFocus, Boolean isActiveView) in ./src/Smithbox.Program/Editors/Model Editor/GUI/ModelEditorView.cs:line 199
+   at StudioCore.Editors.ModelEditor.ModelViewHandler.HandleViews(UInt32 editorDockspaceId) in ./src/Smithbox.Program/Editors/Model Editor/Framework/ModelViewHandler.cs:line 162
+   at StudioCore.Editors.ModelEditor.ModelEditorScreen.OnGUI(String[] commands) in ./src/Smithbox.Program/Editors/Model Editor/ModelEditorScreen.cs:line 73
+   at StudioCore.Editors.ModelEditor.ModelEditorStub.Display(Single dt, String[] commands) in ./src/Smithbox.Program/Editors/Model Editor/ModelEditorStub.cs:line 56
+   at StudioCore.Application.ProjectEntry.Update(Single dt) in ./src/Smithbox.Program/Editors/Project Editor/ProjectEntry.cs:line 67
+   at StudioCore.Application.ProjectOrchestrator.Update(Single dt, UInt32 mainDockspaceID) in ./src/Smithbox.Program/Editors/Project Editor/ProjectOrchestrator.cs:line 63
+   at StudioCore.Smithbox.Update(Single deltaseconds) in ./src/Smithbox.Program/Smithbox.cs:line 649
+   at StudioCore.Smithbox.Run() in ./src/Smithbox.Program/Smithbox.cs:line 424
+   at SmithboxApp.Program.Main(String[] args) in ./src/Smithbox.Vulkan/Program.cs:line 56

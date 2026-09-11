@@ -1,11 +1,6 @@
 ﻿using SoulsFormats;
-using StudioCore.Application;
-using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.MapDataEditor;
 

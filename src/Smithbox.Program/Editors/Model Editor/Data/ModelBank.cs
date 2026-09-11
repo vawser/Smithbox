@@ -1,17 +1,6 @@
 ﻿using Andre.IO.VFS;
-using Microsoft.Extensions.Logging;
-using Octokit;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.ModelEditor;
 

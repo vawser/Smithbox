@@ -189,6 +189,10 @@
       "Text": "Failed to import CSV: {0}"
     },
     {
+      "Key": "PARAM_DataTransfer_Log_Invalid_Param_Target",
+      "Text": "Aborting CSV import, no param has been selected yet."
+    },
+    {
       "Key": "PARAM_DataTransfer_Tab_Export",
       "Text": "Export"
     },

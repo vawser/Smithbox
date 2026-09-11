@@ -1,8 +1,10 @@
 // Automatically Generated
 
+using Havok.Shared;
+
 namespace HKLib.hk2018;
 
-public class CustomManualSelectorGenerator : hkbGenerator, hkbVerifiable
+public class CustomManualSelectorGenerator : hkbGenerator, hkbVerifiable, ICustomManualSelectorGenerator
 {
     public List<hkbGenerator?> m_generators = new();
 

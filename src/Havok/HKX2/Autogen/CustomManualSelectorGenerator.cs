@@ -1,3 +1,4 @@
+using Havok.Shared;
 using SoulsFormats;
 using System.Collections.Generic;
 using System.Numerics;
@@ -17,7 +18,7 @@ namespace HKX2
         UPDATE = 2,
     }
     
-    public partial class CustomManualSelectorGenerator : hkbGenerator
+    public partial class CustomManualSelectorGenerator : hkbGenerator, ICustomManualSelectorGenerator
     {
         public override uint Signature { get => 4285204516; }
         

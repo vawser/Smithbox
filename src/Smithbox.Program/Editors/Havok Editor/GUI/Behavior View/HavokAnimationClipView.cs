@@ -1,8 +1,7 @@
-﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
+﻿using Havok.Shared;
+using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
-using System.Numerics;
 
 namespace StudioCore.Editors.HavokEditor;
 
@@ -14,8 +13,8 @@ public class HavokAnimationClipView
 
     public bool IsCurrentTab = false;
 
-    public List<hkbClipGenerator> SelectedAnimationClips = new();
-    private List<hkbClipGenerator> AnimationClips = new();
+    public List<IClipGenerator> SelectedAnimationClips = new();
+    private List<IClipGenerator> AnimationClips = new();
 
     public HavokAnimationClipView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
     {
@@ -31,7 +30,18 @@ public class HavokAnimationClipView
 
     public void Setup(object sourceObject)
     {
-        AnimationClips = HavokTreeSearch.FindAll<hkbClipGenerator>(sourceObject, View.PropertyCache.GetCachedHavokFields);
+        if (HavokTypeUtils.IsHKX3(Project))
+        {
+            AnimationClips = HavokTreeSearch.FindAll<HKLib.hk2018.hkbClipGenerator>(
+                sourceObject, View.PropertyCache.GetCachedHavokFields)
+                .ToList<IClipGenerator>();
+        }
+        else if (HavokTypeUtils.IsHKX2(Project))
+        {
+            AnimationClips = HavokTreeSearch.FindAll<HKX2.hkbClipGenerator>(
+                sourceObject, View.PropertyCache.GetCachedHavokFields)
+                .ToList<IClipGenerator>();
+        }
     }
 
     public void SetTabState(bool state)
@@ -62,19 +72,32 @@ public class HavokAnimationClipView
     {
         ImGui.BeginChild("havokBehaviorElementListSection");
 
-        foreach (var entry in AnimationClips)
+        for(int i = 0; i < AnimationClips.Count; i++)
         {
-            var clipName = entry.m_name;
+            var entry = AnimationClips[i];
+            var entryName = "unknown";
+
+            if (HavokTypeUtils.IsHKX3(Project))
+            {
+                var curClipGenerator = (HKLib.hk2018.hkbClipGenerator)entry;
+                entryName = curClipGenerator.m_name;
+            }
+            else if (HavokTypeUtils.IsHKX2(Project))
+            {
+                var curClipGenerator = (HKX2.hkbClipGenerator)entry;
+                entryName = curClipGenerator.m_name;
+            }
+
             var selected = SelectedAnimationClips.Contains(entry);
 
-            var isMatch = EditorFilters.IsMatch(Owner.PropFilter, clipName, Owner.ExactPropFilter);
+            var isMatch = EditorFilters.IsMatch(Owner.PropFilter, entryName, Owner.ExactPropFilter);
 
             if (!isMatch)
                 continue;
 
-            if (ImGui.Selectable($"{clipName}##clipGenerator_{clipName}", selected))
+            if (ImGui.Selectable($"{entryName}##clipGenerator_{entryName}{i}", selected))
             {
-                if(InputManager.HasCtrlDown())
+                if (InputManager.HasCtrlDown())
                 {
                     SelectedAnimationClips.Add(entry);
                 }

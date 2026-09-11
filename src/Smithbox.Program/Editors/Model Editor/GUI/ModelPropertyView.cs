@@ -1,5 +1,4 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018.hkHashMapDetail;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.HavokEditor;
@@ -10,7 +9,6 @@ using System.Collections;
 using System.Drawing;
 using System.Numerics;
 using System.Reflection;
-using Veldrid.Utilities;
 
 namespace StudioCore.Editors.ModelEditor;
 

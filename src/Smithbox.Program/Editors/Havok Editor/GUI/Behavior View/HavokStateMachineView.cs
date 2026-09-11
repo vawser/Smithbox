@@ -1,8 +1,7 @@
-﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
+﻿using Havok.Shared;
+using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
-using System.Numerics;
 
 namespace StudioCore.Editors.HavokEditor;
 
@@ -14,8 +13,8 @@ public class HavokStateMachineView
 
     public bool IsCurrentTab = false;
 
-    public List<hkbStateMachine> SelectedStateMachines = new();
-    private List<hkbStateMachine> StateMachines = new();
+    public List<IStateMachine> SelectedStateMachines = new();
+    private List<IStateMachine> StateMachines = new();
 
     public HavokStateMachineView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
     {
@@ -31,7 +30,18 @@ public class HavokStateMachineView
 
     public void Setup(object sourceObject)
     {
-        StateMachines = HavokTreeSearch.FindAll<hkbStateMachine>(sourceObject, View.PropertyCache.GetCachedHavokFields);
+        if (HavokTypeUtils.IsHKX3(Project))
+        {
+            StateMachines = HavokTreeSearch.FindAll<HKLib.hk2018.hkbStateMachine>(
+                sourceObject, View.PropertyCache.GetCachedHavokFields)
+                .ToList<IStateMachine>();
+        }
+        else if (HavokTypeUtils.IsHKX2(Project))
+        {
+            StateMachines = HavokTreeSearch.FindAll<HKX2.hkbStateMachine>(
+                sourceObject, View.PropertyCache.GetCachedHavokFields)
+                .ToList<IStateMachine>();
+        }
     }
 
     public void SetTabState(bool state)
@@ -61,17 +71,30 @@ public class HavokStateMachineView
     {
         ImGui.BeginChild("havokBehaviorElementListSection");
 
-        foreach (var entry in StateMachines)
+        for (int i = 0; i < StateMachines.Count; i++)
         {
-            var clipName = entry.m_name;
+            var entry = StateMachines[i];
+            var entryName = "unknown";
+
+            if (HavokTypeUtils.IsHKX3(Project))
+            {
+                var curSM = (HKLib.hk2018.hkbStateMachine)entry;
+                entryName = curSM.m_name;
+            }
+            else if (HavokTypeUtils.IsHKX2(Project))
+            {
+                var curSM = (HKX2.hkbStateMachine)entry;
+                entryName = curSM.m_name;
+            }
+
             var selected = SelectedStateMachines.Contains(entry);
 
-            var isMatch = EditorFilters.IsMatch(Owner.PropFilter, clipName, Owner.ExactPropFilter);
+            var isMatch = EditorFilters.IsMatch(Owner.PropFilter, entryName, Owner.ExactPropFilter);
 
             if (!isMatch)
                 continue;
 
-            if (ImGui.Selectable($"{clipName}##stateMachine_{clipName}", selected))
+            if (ImGui.Selectable($"{entryName}##stateMachine_{entryName}{i}", selected))
             {
                 if (InputManager.HasCtrlDown())
                 {

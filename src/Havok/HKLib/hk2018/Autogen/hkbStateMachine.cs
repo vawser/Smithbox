@@ -1,8 +1,10 @@
 // Automatically Generated
 
+using Havok.Shared;
+
 namespace HKLib.hk2018;
 
-public class hkbStateMachine : hkbGenerator, hkbVerifiable
+public class hkbStateMachine : hkbGenerator, hkbVerifiable, IStateMachine
 {
     public hkbEvent m_eventToSendWhenStateOrTransitionChanges = new();
 

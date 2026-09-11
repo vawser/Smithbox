@@ -1,5 +1,4 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
 using SoulsFormats;
 using StudioCore.Utilities;
 using System.ComponentModel.DataAnnotations;
@@ -324,37 +323,37 @@ public class CollisionGeneratorTool
     {
         if (TargetShape is CollisionGeneratorShape.Square)
         {
-            var (verts, indices) = HKLib_MeshBuilder.GenerateSquare(width: SquareInputs.Width, length: SquareInputs.Length);
+            var (verts, indices) = HavokShapeGenerator.GenerateSquare(width: SquareInputs.Width, length: SquareInputs.Length);
 
             if (TargetFacing is CollisionGeneratorFacing.Up)
-                HKLib_MeshBuilder.FlipTriangleWinding(indices);
+                HavokShapeGenerator.FlipTriangleWinding(indices);
 
             BuildAndReplaceShape(verts, indices);
         }
         else if (TargetShape is CollisionGeneratorShape.Triangle)
         {
-            var (verts, indices) = HKLib_MeshBuilder.GenerateTriangle(size: TriangleInputs.Size);
+            var (verts, indices) = HavokShapeGenerator.GenerateTriangle(size: TriangleInputs.Size);
 
             if (TargetFacing is CollisionGeneratorFacing.Up)
-                HKLib_MeshBuilder.FlipTriangleWinding(indices);
+                HavokShapeGenerator.FlipTriangleWinding(indices);
 
             BuildAndReplaceShape(verts, indices);
         }
         else if (TargetShape is CollisionGeneratorShape.Circle)
         {
-            var (verts, indices) = HKLib_MeshBuilder.GenerateCircle(radius: CircleInputs.Radius, segments: CircleInputs.Segments);
+            var (verts, indices) = HavokShapeGenerator.GenerateCircle(radius: CircleInputs.Radius, segments: CircleInputs.Segments);
 
             if (TargetFacing is CollisionGeneratorFacing.Up)
-                HKLib_MeshBuilder.FlipTriangleWinding(indices);
+                HavokShapeGenerator.FlipTriangleWinding(indices);
 
             BuildAndReplaceShape(verts, indices);
         }
         else if (TargetShape is CollisionGeneratorShape.SemiCircle)
         {
-            var (verts, indices) = HKLib_MeshBuilder.GenerateSemiCircle(radius: SemiCircleInputs.Radius, segments: SemiCircleInputs.Segments);
+            var (verts, indices) = HavokShapeGenerator.GenerateSemiCircle(radius: SemiCircleInputs.Radius, segments: SemiCircleInputs.Segments);
 
             if (TargetFacing is CollisionGeneratorFacing.Up)
-                HKLib_MeshBuilder.FlipTriangleWinding(indices);
+                HavokShapeGenerator.FlipTriangleWinding(indices);
 
             BuildAndReplaceShape(verts, indices);
         }
@@ -373,13 +372,13 @@ public class CollisionGeneratorTool
             if (selectedMeshIndices.Count == 0)
                 return;
 
-            var (verts, indices) = HKLib_MeshBuilder.GenerateFlverCollision(SelectionMenu.SourceFlver, selectedMeshIndices);
+            var (verts, indices) = HavokShapeGenerator.GenerateFlverCollision(SelectionMenu.SourceFlver, selectedMeshIndices);
 
             if (verts.Count == 0 || indices.Count == 0)
                 return;
 
             if (TargetFacing is CollisionGeneratorFacing.Up)
-                HKLib_MeshBuilder.FlipTriangleWinding(indices);
+                HavokShapeGenerator.FlipTriangleWinding(indices);
 
             BuildAndReplaceShape(verts, indices);
         }
@@ -390,12 +389,26 @@ public class CollisionGeneratorTool
         var collisionName = Path.GetFileName(View.Selection.FilePath);
         var sourceObject = View.PropertyView.GetSourceObject();
 
-        var shape = HKLib_MeshBuilder.BuildExternMeshShape(
-            verts, indices);
-
-        if (HKLib_MeshBuilder.ReplaceExternMeshShape((hkRootLevelContainer)sourceObject, shape))
+        if (HavokTypeUtils.IsHKX3(Project))
         {
-            Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
+            var shape = HavokShapeGenerator_HKX3.BuildExternMeshShape(
+                verts, indices);
+
+            if (HavokShapeGenerator_HKX3.ReplaceExternMeshShape((HKLib.hk2018.hkRootLevelContainer)sourceObject, shape))
+            {
+                Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
+            }
+        }
+        else
+        {
+            // TODO: need to check this actually works in-game, changes were made HavokShapeGenerator_HKX2 since the structure of some of the Havok Classes is slightly different to HKX3
+            var shape = HavokShapeGenerator_HKX2.BuildExternMeshShape(
+                verts, indices);
+
+            if (HavokShapeGenerator_HKX2.ReplaceExternMeshShape((HKX2.hkRootLevelContainer)sourceObject, shape))
+            {
+                Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
+            }
         }
     }
 

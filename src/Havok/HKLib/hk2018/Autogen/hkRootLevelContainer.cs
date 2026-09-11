@@ -1,8 +1,10 @@
 // Automatically Generated
 
+using Havok.Shared;
+
 namespace HKLib.hk2018;
 
-public class hkRootLevelContainer : IHavokObject
+public class hkRootLevelContainer : IHavokObject, IRootContainer
 {
     public List<hkRootLevelContainer.NamedVariant> m_namedVariants = new();
 

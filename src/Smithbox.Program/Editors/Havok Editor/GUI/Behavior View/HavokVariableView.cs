@@ -1,8 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
 using StudioCore.Editors.Common;
-using StudioCore.Keybinds;
-using System.Numerics;
 
 namespace StudioCore.Editors.HavokEditor;
 

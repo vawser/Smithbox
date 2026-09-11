@@ -1,15 +1,9 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using HKLib.hk2018.hkHashMapDetail;
-using Octokit;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;

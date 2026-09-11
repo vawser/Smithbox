@@ -1,13 +1,8 @@
 ﻿using HKLib.hk2018;
 using HKLib.hk2018.hkcdStaticMeshTree;
 using Microsoft.Extensions.Logging;
-using StudioCore.Application;
 using StudioCore.Logger;
 using StudioCore.Renderer;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using Veldrid.Utilities;
 

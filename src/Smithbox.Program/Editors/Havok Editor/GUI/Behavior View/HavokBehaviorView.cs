@@ -1,5 +1,4 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
 using StudioCore.Utilities;
 
 namespace StudioCore.Editors.HavokEditor;
@@ -43,10 +42,20 @@ public class HavokBehaviorView
     public void SetupBehaviorView(object sourceObject)
     {
         // Determine if selected file is a Behavior Graph
-        var behaviorGraphs = HavokTreeSearch.FindAll<hkbBehaviorGraph>(sourceObject, View.PropertyCache.GetCachedHavokFields);
+        if (HavokTypeUtils.IsHKX3(Project))
+        {
+            var behaviorGraphs = HavokTreeSearch.FindAll<HKLib.hk2018.hkbBehaviorGraph>(sourceObject, View.PropertyCache.GetCachedHavokFields);
 
-        if (behaviorGraphs.Count > 0)
-            IsBehaviorGraph = true;
+            if (behaviorGraphs.Count > 0)
+                IsBehaviorGraph = true;
+        }
+        else if (HavokTypeUtils.IsHKX2(Project))
+        {
+            var behaviorGraphs = HavokTreeSearch.FindAll<HKX2.hkbBehaviorGraph>(sourceObject, View.PropertyCache.GetCachedHavokFields);
+
+            if (behaviorGraphs.Count > 0)
+                IsBehaviorGraph = true;
+        }
 
         AnimationClipView.Setup(sourceObject);
         AnimationSelectorView.Setup(sourceObject);

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Andre\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />
+    <ProjectReference Include="..\Havok.Shared\Havok.Shared.csproj" />
   </ItemGroup>
 
 </Project>

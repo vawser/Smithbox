@@ -1,11 +1,8 @@
-﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
-using Microsoft.AspNetCore.Mvc.ViewEngines;
-using SoulsFormats;
+﻿using Havok.Shared;
+using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
-using System.Numerics;
 using static StudioCore.Editors.HavokEditor.HavokFileView.FileAction;
 
 namespace StudioCore.Editors.HavokEditor;
@@ -89,7 +86,7 @@ public class HavokFileView
         }
     }
 
-    public void DisplayFileList(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict)
+    public void DisplayFileList(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict)
     {
         if(View.Selection.BinderFileEntry == null)
         {
@@ -284,7 +281,7 @@ public class HavokFileView
         }
     }
 
-    public void HandleShortcuts(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict)
+    public void HandleShortcuts(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict)
     {
         var curBinderEntry = View.Selection.BinderFileEntry;
         var filepath = View.Selection.FilePath;
@@ -329,7 +326,7 @@ public class HavokFileView
     }
 
     public void DisplayContextMenu(
-        Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict, 
+        Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, 
         FileDictionaryEntry curBinderEntry, 
         string filepath,
         string displayName)
@@ -579,7 +576,7 @@ public class HavokFileView
         }
     }
 
-    public void CopyFileInternal(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict)
+    public void CopyFileInternal(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict)
     {
         var curBinder = bankDict[View.Selection.BinderFileEntry];
 
@@ -696,7 +693,7 @@ public class HavokFileView
     {
         public FileActionType ActionType;
 
-        public Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> BankDict = new();
+        public Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> BankDict = new();
 
         public FileDictionaryEntry BinderEntry;
 

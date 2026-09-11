@@ -1,0 +1,13 @@
+Smithbox - Version 2.2.5
+
+Value cannot be null. (Parameter 'factory')
+
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at Microsoft.Extensions.Logging.LoggerFactoryExtensions.CreateLogger[T](ILoggerFactory factory)
+   at StudioCore.Smithbox.Logger[T]() in ./src/Smithbox.Program/Smithbox.cs:line 706
+   at StudioCore.Smithbox.LogError[T](String message, Exception exception, Object[] args) in ./src/Smithbox.Program/Smithbox.cs:line 760
+   at StudioCore.Keybinds.InputManager.Init() in ./src/Smithbox.Program/Keybinds/InputManager.cs:line 97
+   at StudioCore.Smithbox.Setup() in ./src/Smithbox.Program/Smithbox.cs:line 190
+   at StudioCore.Smithbox..ctor(String version, RenderingBackend backendType, ProgramType programType) in ./src/Smithbox.Program/Smithbox.cs:line 102
+   at SmithboxApp.Program.Main(String[] args) in ./src/Smithbox.Vulkan/Program.cs:line 48

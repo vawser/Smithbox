@@ -23,6 +23,10 @@
       <Folder Include="hk2018\Manual\hk" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Havok.Shared\Havok.Shared.csproj" />
+    </ItemGroup>
+
     <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
       <DefineConstants>DEBUG</DefineConstants>
     </PropertyGroup>

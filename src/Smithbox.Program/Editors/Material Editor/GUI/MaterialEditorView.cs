@@ -1,16 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018.hkaiCollisionAvoidance;
-using Silk.NET.SDL;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.TextEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MaterialEditor;
 

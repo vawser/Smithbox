@@ -1,13 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018.hkSerialize.Note;
-using StudioCore.Application;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 

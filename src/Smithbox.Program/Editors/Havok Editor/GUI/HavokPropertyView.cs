@@ -1,6 +1,5 @@
-﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
-using Microsoft.AspNetCore.Mvc.ViewEngines;
+﻿using Havok.Shared;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
@@ -162,7 +161,7 @@ public class HavokPropertyView
 
     }
 
-    public void DisplayPropertyEditor(Dictionary<FileDictionaryEntry, Dictionary<string, hkRootLevelContainer>> bankDict)
+    public void DisplayPropertyEditor(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict)
     {
         if (View.Selection.BinderFileEntry == null)
         {
@@ -259,7 +258,7 @@ public class HavokPropertyView
         }
     }
 
-    public void HavokPropEdit(hkRootLevelContainer root)
+    public void HavokPropEdit(IRootContainer root)
     {
         var type = root.GetType();
 
@@ -338,7 +337,7 @@ public class HavokPropertyView
 
             if (!CFG.Current.HavokEditor_Properties_Display_Property_Bags)
             {
-                if (typ == typeof(hkPropertyBag))
+                if (typ == typeof(HKLib.hk2018.hkPropertyBag))
                     continue;
             }
 
@@ -593,13 +592,13 @@ public class HavokPropertyView
             committed = true;
         }
 
-        if (HavokPropertyDecorators.ClipGenFlags(View, havokMeta, prop, oldval, ref newval, GetSourceObject(), ref newval))
+        if (HavokPropertyDecorators.ClipGenFlags(Project, View, havokMeta, prop, oldval, ref newval, GetSourceObject(), ref newval))
         {
             changed = true;
             committed = true;
         }
 
-        if (HavokPropertyDecorators.ClipGenInternalID(View, havokMeta, prop, oldval, ref newval, GetSourceObject(), ref newval))
+        if (HavokPropertyDecorators.ClipGenInternalID(Project, View, havokMeta, prop, oldval, ref newval, GetSourceObject(), ref newval))
         {
             changed = true;
             committed = true;
@@ -1032,7 +1031,15 @@ public class HavokPropertyView
             if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Add_List_Entry")}##addListEntry"))
             {
                 // Intercept these types and peek at the first list entry to get the appropriate type
-                if (elementType == typeof(hkbGenerator) && list.Count > 0)
+                if (HavokTypeUtils.IsHKX3(Project) && elementType == typeof(HKLib.hk2018.hkbGenerator) && list.Count > 0)
+                {
+                    var firstElem = list[0];
+
+                    var newEntry = PropFinderUtil.CreateDefaultListElement(firstElem.GetType());
+                    var action = new HavokAddListEntry(prop, obj, newEntry, list.Count);
+                    View.ActionManager.ExecuteAction(action);
+                }
+                else if (HavokTypeUtils.IsHKX2(Project) && elementType == typeof(HKX2.hkbGenerator) && list.Count > 0)
                 {
                     var firstElem = list[0];
 

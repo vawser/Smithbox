@@ -1,8 +1,7 @@
-﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
+﻿using Havok.Shared;
+using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
-using System.Numerics;
 
 namespace StudioCore.Editors.HavokEditor;
 
@@ -14,8 +13,8 @@ public class HavokAnimationSelectorView
 
     public bool IsCurrentTab = false;
 
-    public List<CustomManualSelectorGenerator> SelectedAnimSelectors = new();
-    private List<CustomManualSelectorGenerator> AnimSelectors = new();
+    public List<ICustomManualSelectorGenerator> SelectedAnimSelectors = new();
+    private List<ICustomManualSelectorGenerator> AnimSelectors = new();
 
     public HavokAnimationSelectorView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
     {
@@ -31,7 +30,18 @@ public class HavokAnimationSelectorView
 
     public void Setup(object sourceObject)
     {
-        AnimSelectors = HavokTreeSearch.FindAll<CustomManualSelectorGenerator>(sourceObject, View.PropertyCache.GetCachedHavokFields);
+        if (HavokTypeUtils.IsHKX3(Project))
+        {
+            AnimSelectors = HavokTreeSearch.FindAll<HKLib.hk2018.CustomManualSelectorGenerator>(
+                sourceObject, View.PropertyCache.GetCachedHavokFields)
+                .ToList<ICustomManualSelectorGenerator>();
+        }
+        else if (HavokTypeUtils.IsHKX2(Project))
+        {
+            AnimSelectors = HavokTreeSearch.FindAll<HKX2.CustomManualSelectorGenerator>(
+                sourceObject, View.PropertyCache.GetCachedHavokFields)
+                .ToList<ICustomManualSelectorGenerator>();
+        }
     }
 
     public void SetTabState(bool state)
@@ -61,17 +71,30 @@ public class HavokAnimationSelectorView
     {
         ImGui.BeginChild("havokBehaviorElementListSection");
 
-        foreach (var entry in AnimSelectors)
+        for (int i = 0; i < AnimSelectors.Count; i++)
         {
-            var clipName = entry.m_name;
+            var entry = AnimSelectors[i];
+            var entryName = "unknown";
+
+            if (HavokTypeUtils.IsHKX3(Project))
+            {
+                var curCMSG = (HKLib.hk2018.CustomManualSelectorGenerator)entry;
+                entryName = curCMSG.m_name;
+            }
+            else if (HavokTypeUtils.IsHKX2(Project))
+            {
+                var curCMSG = (HKX2.CustomManualSelectorGenerator)entry;
+                entryName = curCMSG.m_name;
+            }
+
             var selected = SelectedAnimSelectors.Contains(entry);
 
-            var isMatch = EditorFilters.IsMatch(Owner.PropFilter, clipName, Owner.ExactPropFilter);
+            var isMatch = EditorFilters.IsMatch(Owner.PropFilter, entryName, Owner.ExactPropFilter);
 
             if (!isMatch)
                 continue;
 
-            if (ImGui.Selectable($"{clipName}##animSelector_{clipName}", selected))
+            if (ImGui.Selectable($"{entryName}##animSelector_{entryName}{i}", selected))
             {
                 if (InputManager.HasCtrlDown())
                 {

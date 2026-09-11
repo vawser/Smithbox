@@ -1,5 +1,5 @@
-﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
+﻿using Havok.Shared;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
@@ -174,7 +174,7 @@ public class MapHavokPropertyView
         }
     }
 
-    public void HavokPropEdit(hkRootLevelContainer root)
+    public void HavokPropEdit(IRootContainer root)
     {
         var mapID = View.Selection.SelectedMapID;
         var type = root.GetType();

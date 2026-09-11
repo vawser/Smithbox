@@ -1,0 +1,24 @@
+Smithbox - Version 2.2.5
+
+Unable to cast object of type 'StudioCore.Editors.MapEditor.EntitySelectionGroupList' to type 'StudioCore.Editors.MapEditor.MapGroupsList'.
+
+   at System.Text.Json.JsonSerializer.UnboxOnWrite[T](Object value)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsObject(Utf8JsonWriter writer, Object rootValue)
+   at System.Text.Json.JsonSerializer.WriteStringAsObject(Object value, JsonTypeInfo jsonTypeInfo)
+   at StudioCore.Editors.MapEditor.MapGroupsView.SaveMapGroups() in ./src/Smithbox.Program/Editors/Map Editor/GUI/MapGroupsView.cs:line 351
+   at StudioCore.Editors.MapEditor.MapGroupsView.CreateMapGroupEntry(List`1 selection) in ./src/Smithbox.Program/Editors/Map Editor/GUI/MapGroupsView.cs:line 275
+   at StudioCore.Editors.MapEditor.MapGroupsView.ContentsContextMenu(Entity ent) in ./src/Smithbox.Program/Editors/Map Editor/GUI/MapGroupsView.cs:line 238
+   at StudioCore.Editors.MapEditor.MapContentView.DisplayMapObjectContextMenu(MapContainer map, Entity ent, Int32 imguiID) in ./src/Smithbox.Program/Editors/Map Editor/GUI/MapContentView.cs:line 385
+   at StudioCore.Editors.MapEditor.MapContentView.MapObjectSelectable(MapContainer map, Entity e, Boolean visicon, Int32 index, Boolean hierarchial) in ./src/Smithbox.Program/Editors/Map Editor/GUI/MapContentView.cs:line 729
+   at StudioCore.Editors.MapEditor.MapContentView.TypeView(MapContainer map) in ./src/Smithbox.Program/Editors/Map Editor/GUI/MapContentView.cs:line 512
+   at StudioCore.Editors.MapEditor.MapContentView.DisplayContentTree(MapContainer map) in ./src/Smithbox.Program/Editors/Map Editor/GUI/MapContentView.cs:line 243
+   at StudioCore.Editors.MapEditor.MapContentView.Display(Single width, Single height) in ./src/Smithbox.Program/Editors/Map Editor/GUI/MapContentView.cs:line 58
+   at StudioCore.Editors.MapEditor.MapEditorView.Display(UInt32 dockspaceId, Int32 viewIndex, Boolean doFocus, Boolean isActiveView) in ./src/Smithbox.Program/Editors/Map Editor/GUI/MapEditorView.cs:line 235
+   at StudioCore.Editors.MapEditor.MapViewHandler.HandleViews(UInt32 editorDockspaceId) in ./src/Smithbox.Program/Editors/Map Editor/Framework/MapViewHandler.cs:line 162
+   at StudioCore.Editors.MapEditor.MapEditorScreen.OnGUI(String[] commands) in ./src/Smithbox.Program/Editors/Map Editor/MapEditorScreen.cs:line 78
+   at StudioCore.Editors.MapEditor.MapEditorStub.Display(Single dt, String[] commands) in ./src/Smithbox.Program/Editors/Map Editor/MapEditorStub.cs:line 56
+   at StudioCore.Application.ProjectEntry.Update(Single dt) in ./src/Smithbox.Program/Editors/Project Editor/ProjectEntry.cs:line 63
+   at StudioCore.Application.ProjectOrchestrator.Update(Single dt, UInt32 mainDockspaceID) in ./src/Smithbox.Program/Editors/Project Editor/ProjectOrchestrator.cs:line 63
+   at StudioCore.Smithbox.Update(Single deltaseconds) in ./src/Smithbox.Program/Smithbox.cs:line 649
+   at StudioCore.Smithbox.Run() in ./src/Smithbox.Program/Smithbox.cs:line 424
+   at SmithboxApp.Program.Main(String[] args) in ./src/Smithbox.Vulkan/Program.cs:line 56

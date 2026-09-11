@@ -862,19 +862,19 @@ public class DeveloperKit
         var grassList = SetupGrassList(targetProject);
 
         // Assets
-        foreach (var aegEntry in targetProject.Locator.AssetFiles.Entries)
-        {
-            var mapData = targetProject.VFS.FS.ReadFile(mapEntry.Path);
-            if (mapData != null)
-            {
-                var map = MSBE.Read(mapData.Value);
+        //foreach (var aegEntry in targetProject.Locator.AssetFiles.Entries)
+        //{
+        //    var mapData = targetProject.VFS.FS.ReadFile(mapEntry.Path);
+        //    if (mapData != null)
+        //    {
+        //        var map = MSBE.Read(mapData.Value);
 
 
-                var outputMapData = map.Write();
+        //        var outputMapData = map.Write();
 
-                targetProject.VFS.ProjectFS.WriteFile(mapEntry.Path, outputMapData);
-            }
-        }
+        //        targetProject.VFS.ProjectFS.WriteFile(mapEntry.Path, outputMapData);
+        //    }
+        //}
 
         // Map Pieces
     }

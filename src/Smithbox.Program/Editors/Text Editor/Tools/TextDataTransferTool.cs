@@ -1,14 +1,8 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Application;
-using StudioCore.Editors.GparamEditor;
 using StudioCore.Utilities;
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using System.IO;
 using System.Numerics;
-using Veldrid.MetalBindings;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.TextEditor;
 

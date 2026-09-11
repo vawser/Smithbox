@@ -1,8 +1,10 @@
 // Automatically Generated
 
+using Havok.Shared;
+
 namespace HKLib.hk2018;
 
-public class hkbClipGenerator : hkbGenerator, hkbVerifiable
+public class hkbClipGenerator : hkbGenerator, hkbVerifiable, IClipGenerator
 {
     public string? m_animationName;
 

@@ -1,5 +1,4 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
@@ -9,10 +8,19 @@ namespace StudioCore.Editors.HavokEditor;
 
 public static class HavokPropertyDecorators
 {
-    public static bool AddVariableBindingSet(IEditorView view, FieldInfo[] fields, Type type, HavokClass classMeta, object sourceObj)
+    public static bool AddVariableBindingSet(ProjectEntry project, IEditorView view, FieldInfo[] fields, Type type, HavokClass classMeta, object sourceObj)
     {
-        if (type != typeof(hkbClipGenerator))
-            return false;
+        if (HavokTypeUtils.IsHKX3(project))
+        {
+            if (type != typeof(HKLib.hk2018.hkbClipGenerator))
+                return false;
+        }
+
+        if (HavokTypeUtils.IsHKX2(project))
+        {
+            if (type != typeof(HKX2.hkbClipGenerator))
+                return false;
+        }
 
         if (classMeta == null)
             return false;
@@ -20,7 +28,17 @@ public static class HavokPropertyDecorators
         if (!classMeta.SupportVariableBindings)
             return false;
 
-        var bindingField = fields.FirstOrDefault(e => e.FieldType == typeof(hkbVariableBindingSet));
+        FieldInfo bindingField = null;
+
+        if (HavokTypeUtils.IsHKX3(project))
+        {
+            bindingField = fields.FirstOrDefault(e => e.FieldType == typeof(HKLib.hk2018.hkbVariableBindingSet));
+        }
+        else if (HavokTypeUtils.IsHKX2(project))
+        {
+            bindingField = fields.FirstOrDefault(e => e.FieldType == typeof(HKX2.hkbVariableBindingSet));
+        }
+
         if (bindingField == null)
             return false;
 
@@ -35,10 +53,20 @@ public static class HavokPropertyDecorators
 
                 if (ImGui.Button("Add##addVariableBindingSet"))
                 {
-                    var newBindingSet = Activator.CreateInstance<hkbVariableBindingSet>();
+                    if (HavokTypeUtils.IsHKX3(project))
+                    {
+                        var newBindingSet = Activator.CreateInstance<HKLib.hk2018.hkbVariableBindingSet>();
 
-                    var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
-                    havokEditorView.ActionManager.ExecuteAction(action);
+                        var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
+                        havokEditorView.ActionManager.ExecuteAction(action);
+                    }
+                    else if (HavokTypeUtils.IsHKX2(project))
+                    {
+                        var newBindingSet = Activator.CreateInstance<HKX2.hkbVariableBindingSet>();
+
+                        var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
+                        havokEditorView.ActionManager.ExecuteAction(action);
+                    }
                 }
                 GUI.Tooltip("Adds an empty Variable Binding Set to this generator.");
 
@@ -58,10 +86,20 @@ public static class HavokPropertyDecorators
 
                 if (ImGui.Button("Remove##removeVariableBindingSet"))
                 {
-                    var newBindingSet = Activator.CreateInstance<hkbVariableBindingSet>();
+                    if (HavokTypeUtils.IsHKX3(project))
+                    {
+                        var newBindingSet = Activator.CreateInstance<HKLib.hk2018.hkbVariableBindingSet>();
 
-                    var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
-                    havokEditorView.ActionManager.ExecuteAction(action);
+                        var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
+                        havokEditorView.ActionManager.ExecuteAction(action);
+                    }
+                    else if(HavokTypeUtils.IsHKX2(project))
+                    {
+                        var newBindingSet = Activator.CreateInstance<HKX2.hkbVariableBindingSet>();
+
+                        var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
+                        havokEditorView.ActionManager.ExecuteAction(action);
+                    }
                 }
                 GUI.Tooltip("Adds an empty Variable Binding Set to this generator.");
 
@@ -154,7 +192,7 @@ public static class HavokPropertyDecorators
         return false;
     }
 
-    public static bool ClipGenFlags(IEditorView view, HavokClass havokMeta, FieldInfo prop, object val, ref object newObj, object sourceObj, ref object newval)
+    public static bool ClipGenFlags(ProjectEntry project, IEditorView view, HavokClass havokMeta, FieldInfo prop, object val, ref object newObj, object sourceObj, ref object newval)
     {
         if (havokMeta == null)
             return false;
@@ -174,19 +212,40 @@ public static class HavokPropertyDecorators
         int flags = Convert.ToInt32(val);
         bool changed = false;
 
-        foreach (hkbClipGenerator.ClipFlags flag in Enum.GetValues(typeof(hkbClipGenerator.ClipFlags)))
+        if (HavokTypeUtils.IsHKX3(project))
         {
-            int flagVal = (int)flag;
-            bool isSet = (flags & flagVal) != 0;
-
-            if (ImGui.Checkbox(flag.ToString(), ref isSet))
+            foreach (HKLib.hk2018.hkbClipGenerator.ClipFlags flag in Enum.GetValues(typeof(HKLib.hk2018.hkbClipGenerator.ClipFlags)))
             {
-                if (isSet)
-                    flags |= flagVal;
-                else
-                    flags &= ~flagVal;
+                int flagVal = (int)flag;
+                bool isSet = (flags & flagVal) != 0;
 
-                changed = true;
+                if (ImGui.Checkbox(flag.ToString(), ref isSet))
+                {
+                    if (isSet)
+                        flags |= flagVal;
+                    else
+                        flags &= ~flagVal;
+
+                    changed = true;
+                }
+            }
+        }
+        else if (HavokTypeUtils.IsHKX2(project))
+        {
+            foreach (HKX2.hkbClipGenerator.ClipFlags flag in Enum.GetValues(typeof(HKX2.hkbClipGenerator.ClipFlags)))
+            {
+                int flagVal = (int)flag;
+                bool isSet = (flags & flagVal) != 0;
+
+                if (ImGui.Checkbox(flag.ToString(), ref isSet))
+                {
+                    if (isSet)
+                        flags |= flagVal;
+                    else
+                        flags &= ~flagVal;
+
+                    changed = true;
+                }
             }
         }
 
@@ -214,7 +273,7 @@ public static class HavokPropertyDecorators
         return false;
     }
 
-    public static bool ClipGenInternalID(IEditorView view, HavokClass havokMeta, FieldInfo prop, object val, ref object newObj, object sourceObj, ref object newval)
+    public static bool ClipGenInternalID(ProjectEntry project, IEditorView view, HavokClass havokMeta, FieldInfo prop, object val, ref object newObj, object sourceObj, ref object newval)
     {
         if (havokMeta == null)
             return false;
@@ -235,22 +294,42 @@ public static class HavokPropertyDecorators
 
             if (ImGui.Button("Set to Free ID"))
             {
-                var objects = HavokTreeSearch.FindValueList<hkbClipGenerator>(sourceObj, havokEditorView.PropertyCache.GetCachedHavokFields, "m_animationInternalId", typeof(short));
-
-                var shorts = objects.Cast<short>().ToList();
-
                 short freeNum = -1;
 
-                for(short i = 0; i < short.MaxValue; i++)
+                if (HavokTypeUtils.IsHKX3(project))
                 {
-                    if (!shorts.Contains(i))
+                    var objects = HavokTreeSearch.FindValueList<HKLib.hk2018.hkbClipGenerator>(sourceObj, havokEditorView.PropertyCache.GetCachedHavokFields, "m_animationInternalId", typeof(short));
+
+                    var shorts = objects.Cast<short>().ToList();
+
+
+                    for (short i = 0; i < short.MaxValue; i++)
                     {
-                        freeNum = i;
-                        break;
+                        if (!shorts.Contains(i))
+                        {
+                            freeNum = i;
+                            break;
+                        }
+                    }
+                }
+                else if (HavokTypeUtils.IsHKX2(project))
+                {
+                    var objects = HavokTreeSearch.FindValueList<HKX2.hkbClipGenerator>(sourceObj, havokEditorView.PropertyCache.GetCachedHavokFields, "m_animationInternalId", typeof(short));
+
+                    var shorts = objects.Cast<short>().ToList();
+
+
+                    for (short i = 0; i < short.MaxValue; i++)
+                    {
+                        if (!shorts.Contains(i))
+                        {
+                            freeNum = i;
+                            break;
+                        }
                     }
                 }
 
-                if(freeNum == -1)
+                if (freeNum == -1)
                 {
                     Smithbox.LogError(typeof(HavokPropertyDecorators), "No free ID to assign.");
                     return false;

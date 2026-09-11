@@ -1,15 +1,7 @@
 ﻿using HKX2;
-using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Logger;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
