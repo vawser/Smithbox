@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.ComponentModel.DataAnnotations;
@@ -19,6 +19,7 @@ public class ParamDeltaPatcher
 
     public ParamDeltaImporter Importer;
     public ParamDeltaExporter Exporter;
+    public ParamDeltaAutoMergeTool AutoMergeTool;
 
     public ParamDeltaProgressModal ImportProgressModal;
     public ParamDeltaProgressModal ExportProgressModal;
@@ -37,6 +38,7 @@ public class ParamDeltaPatcher
 
         Importer = new(this);
         Exporter = new(this);
+        AutoMergeTool = new(this);
 
         ImportProgressModal = new("PARAM_DeltaPatcher_Import_Modal_Name", this);
         ExportProgressModal = new("PARAM_DeltaPatcher_Export_Modal_Name", this);
@@ -75,6 +77,13 @@ public class ParamDeltaPatcher
                 {
                     DisplayExportTab();
 
+                    ImGui.EndTabItem();
+                }
+
+                // Auto Merge
+                if (ImGui.BeginTabItem("Auto Merge##autoMergeTab"))
+                {
+                    AutoMergeTool.Display();
                     ImGui.EndTabItem();
                 }
 
