@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "PROJECT_Tools_Header_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "PROJECT_Configuration_View_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "PROJECT_Tools_Project_Merge",
+      "Text": "Project Merge"
+    },
+    {
+      "Key": "PROJECT_Tools_No_Selected_Project",
+      "Text": "No project has been selected yet."
+    }
+  ]
+}

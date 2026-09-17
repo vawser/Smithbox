@@ -1,0 +1,464 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_AutoMerge_Conflict_Policy_Header",
+      "Text": "Conflict Strategy"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Conflict_Policy_Header_TT",
+      "Text": "Choose which conflict strategy should be applied when two mods change the same field differently."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Header",
+      "Text": "Delta Patch Merge"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Header_TT",
+      "Text": "Merge existing Smithbox delta JSON files using the same field-level conflict engine."
+    },
+    {
+      "Key": "PARAM_DeltaMerge_Hint",
+      "Text": "Merge existing Smithbox delta JSON files using the same field-level conflict engine."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Source_List_Header",
+      "Text": "Delta Sources"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Source_List_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Select_All_TT",
+      "Text": "Select all entries in the delta list."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Clear_Selection_TT",
+      "Text": "Clear current selection within the delta list."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Refresh_List_TT",
+      "Text": "Refresh the delta list."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Diff_Game",
+      "Text": " (different game)"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Diff_Param_Ver",
+      "Text": " (different param version)"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Output_Filename_Header",
+      "Text": "Output Filename"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Output_Filename_Hint",
+      "Text": "Enter filename..."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Delta_Merge_Output_Filename_Header_TT",
+      "Text": "The name used if the merged result is saved as a delta patch."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Actions_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_AutoMerge_Merge_Summary_Header",
+      "Text": "Merge Summary"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Merge_Summary_Header_TT",
+      "Text": "Review and resolve field-level conflicts before saving, importing, or building a regulation file."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Analyze_Delta_Merge_Action",
+      "Text": "Analyze Delta Merge"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Analyze_Delta_Merge_Action_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_AutoMerge_Save_Merged_Delta",
+      "Text": "Save Merged Delta"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Save_Merged_Delta_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_AutoMerge_Import_Merged_Delta",
+      "Text": "Import Merged Delta"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Import_Merged_Delta_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_AutoMerge_Summary_Sources",
+      "Text": "Sources: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Summary_Rows_Merged",
+      "Text": "Rows merged: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Summary_Safe_Field_Changes",
+      "Text": "Safe field changes: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Summary_Identical_Fields",
+      "Text": "Identical overlapping fields: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Summary_Conflicts_Resolved_Unresolved",
+      "Text": "Conflicts: {0} | Resolved: {1} | Unresolved: {2}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Merge_Errors_Header",
+      "Text": "Errors"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Merge_Errors_Header_TT",
+      "Text": "The merge cannot be applied until these issues are fixed."
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Header",
+      "Text": "Conflict resolution editor ({0})"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Filter",
+      "Text": "Filter"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Visible_Earlier",
+      "Text": "Visible -> Earlier"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Visible_Later",
+      "Text": "Visible -> Later"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Visible_Reset",
+      "Text": "Reset Visible"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Page",
+      "Text": "Page {0}/{1} ({2} shown by filter)"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Page_Next",
+      "Text": ">"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictTable_ParamRowField",
+      "Text": "Param / Row / Field"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictTable_Earlier",
+      "Text": "Earlier"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictTable_Later",
+      "Text": "Later"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictTable_Resolution",
+      "Text": "Resolution"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictTable_Manual_Value",
+      "Text": "Manual Value"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictTable_Type",
+      "Text": "Type"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Field",
+      "Text": "Field"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_RowState",
+      "Text": "Row state"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Cannot_Apply_Hint",
+      "Text": "Resolve every conflict in the table before building/importing. Field conflicts support Earlier, Later, or a manually edited value. Row-state conflicts support Earlier or Later."
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictResolution_UseEarlier",
+      "Text": "Use earlier"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictResolution_UseLater",
+      "Text": "Use later"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictResolution_Manual",
+      "Text": "Manual"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictResolution_Unresolved",
+      "Text": "Unresolved"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictStrategy_StopOnConflict",
+      "Text": "Stop on conflict (recommended)"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictStrategy_PreferEarlierSource",
+      "Text": "Prefer earlier source in list"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictStrategy_PreferLaterSource",
+      "Text": "Prefer later source in list"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Patch_Tag",
+      "Text": "Auto Merge ({0})"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Missing_Two_Delta_Patches",
+      "Text": "Select at least two delta patches to auto merge."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Invalid_Project_Type",
+      "Text": "{0}: project type {1} does not match loaded project {2}."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Invalid_Param_Version",
+      "Text": "{0}: param version {1} does not match loaded project {2}."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Supported_Project_Type",
+      "Text": "Direct regulation merge currently supports {0}."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Apply_ParamVer_AutoUpgrade",
+      "Text": "Upgrade Param Version for Older Regulations"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Add_Regulation_Source_TT",
+      "Text": "Add new regulation source."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Remove_Regulation_Source_TT",
+      "Text": "Remove last added regulation source."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Reset_Source_List",
+      "Text": "Reset"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Reset_Source_List_TT",
+      "Text": "Reset the regulation source list."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Select_Path",
+      "Text": "Select"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Select_Regulation",
+      "Text": "Select Regulation"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Source",
+      "Text": "Source {0}"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Options_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_DirectMerge_Sources_Header",
+      "Text": "Sources"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Sources_Header_TT",
+      "Text": "Select regulation files as sources for the merger."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Analyze_Regulation_Files",
+      "Text": "Analyze Regulation Files"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Analyze_Regulation_Files_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_DirectMerge_Loaded_Sources_Header",
+      "Text": "Loaded Sources"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Loaded_Sources_Header_TT",
+      "Text": "Each source has been converted to a vanilla-relative delta in memory."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Loaded_Autoupgraded",
+      "Text": "(auto-upgraded)"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Loaded_Params",
+      "Text": "params"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Loaded_Changed_Rows",
+      "Text": "changed rows"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Warnings_Header",
+      "Text": "Warnings"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Warnings_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_DirectMerge_Errors_Header",
+      "Text": "Regulation Errors"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Errors_Header_TT",
+      "Text": "The direct merge cannot continue until these issues are fixed."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Output_Header",
+      "Text": "Output"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Output_Header_TT",
+      "Text": "The output is created as a new file; input files are never overwritten."
+    },
+    {
+      "Key": "PARAM_DirectMerge_OutputPath",
+      "Text": "Output Path"
+    },
+    {
+      "Key": "PARAM_DirectMerge_OutputPath_Hint",
+      "Text": "Enter the output path here..."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Build_Regulation_Action",
+      "Text": "Build Regulation"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Build_Regulation_Action_TT",
+      "Text": "Build a new regulation from the merged changes."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Import_Merged_Changes",
+      "Text": "Import Merged Changes"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Import_Merged_Changes_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_DirectMerge_Save_Merged_Delta",
+      "Text": "Save Merged Delta"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Save_Merged_Delta_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_DirectMerge_Imported_Merged_Changes",
+      "Text": "Merged changes were sent to the loaded Param Editor project."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Saved_Merged_Changes",
+      "Text": "Saved merged delta as {0}."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Hint",
+      "Text": "Merge two or more complete mod folders. Unique files are copied automatically, identical files are deduplicated, regulation.bin uses the field-level merger, and supported binders are merged by internal entry.\n\nUnsupported binary collisions are never byte-merged. They remain conflicts and can either stop the build or be resolved using the earlier/later source policy above. Build into a new or empty output folder."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Options_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Merge_By_Internal_Entry",
+      "Text": "Merge Binder Containers by Internal Entry"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Merge_By_Internal_Entry_TT",
+      "Text": "When merging, consider the internal entries of BND3/BND4 binder containers."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_AutoUpgrade_Regulation",
+      "Text": "Auto-upgrade Regulation Versions"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_AutoUpgrade_Regulation_TT",
+      "Text": "When an input regulation is older than the loaded project, Smithbox compares it against the matching historical vanilla regulation and carries its mod changes forward to the loaded version.\n\nAutomatic downgrade from a newer regulation is not supported."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Merge_Metadata",
+      "Text": "Ignore Metadata Files"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Merge_Metadata_TT",
+      "Text": "If enabled, ignore .smithbox folder, project.json and regulation.bin.prev during merging."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Write_Merge_Report",
+      "Text": "Write Merge Report"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Write_Merge_Report_TT",
+      "Text": "Write a merge report to SMITHBOX_MERGE_REPORT.txt file."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Sources_Header",
+      "Text": "Sources"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Sources_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Add_Project_Source_TT",
+      "Text": "Add new project source."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Remove_Project_Source_TT",
+      "Text": "Remove last added project source."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Reset_Source_List",
+      "Text": "Reset"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Reset_Source_List_TT",
+      "Text": "Clear project source list."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Source",
+      "Text": "Mod folder {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Select_Path",
+      "Text": "Select Path"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Select_Project_Folder",
+      "Text": "Select Project Folder"
+    }
+  ]
+}

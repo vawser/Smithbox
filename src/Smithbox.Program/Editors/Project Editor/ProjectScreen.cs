@@ -10,6 +10,7 @@ public class ProjectScreen
     public ActionManager EditorActionManager = new();
 
     public ProjectConfigureMenu ConfigureMenu;
+    public ProjectToolWindow ToolWindow;
 
     public ProjectEntry SelectedLoadedEntry = null;
     public ProjectEntry SelectedAvaliableEntry = null;
@@ -25,6 +26,7 @@ public class ProjectScreen
     public ProjectScreen()
     {
         ConfigureMenu = new(this);
+        ToolWindow = new(this);
     }
 
     public unsafe void OnGUI(uint mainDockspaceID)
@@ -145,6 +147,27 @@ public class ProjectScreen
                 }
 
                 DisplayProjectCreator();
+            }
+
+            ImGui.End();
+        }
+
+        if(CFG.Current.Interface_ProjectEditor_Tools)
+        {
+            // Tools 
+            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectEditorView);
+            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Project_Tools")}###projectEditor_Tools", GUI.GetInnerWindowFlags()))
+            {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.Project_None);
+                }
+
+                ToolWindow.Draw();
             }
 
             ImGui.End();
@@ -553,6 +576,12 @@ public class ProjectScreen
                 CFG.Current.Interface_ProjectEditor_ProjectConfiguration = !CFG.Current.Interface_ProjectEditor_ProjectConfiguration;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectConfiguration);
+
+            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_View_Tools")}##projectToolsToggle"))
+            {
+                CFG.Current.Interface_ProjectEditor_Tools = !CFG.Current.Interface_ProjectEditor_Tools;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_Tools);
 
             ImGui.EndMenu();
         }

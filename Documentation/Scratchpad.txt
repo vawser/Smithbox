@@ -13,3 +13,6 @@
  - hk2019 for AC6 (may just need HKLib update
  - hk2016 for SDT
  - HKX2 for DES, DS1, DS2, DS3, BB
+ 
+# Map Editor
+- Finish AutoMerge commit
