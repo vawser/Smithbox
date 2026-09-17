@@ -95,6 +95,18 @@
     {
       "Key": "PARAM_Merger_Log_Merged_Project",
       "Text": "Merged target project rows: {0} into this project."
+    },
+    {
+      "Key": "PARAM_Merger_MassEdit_Merger_Header",
+      "Text": "Mass Edit"
+    },
+    {
+      "Key": "PARAM_Merger_Direct_Merger_Header",
+      "Text": "Direct"
+    },
+    {
+      "Key": "PARAM_Merger_Direct_Merger_Hint",
+      "Text": "Define two or more regulation file paths. Smithbox will extract each file's vanilla-relative changes, auto merge them, and optionally build a new encrypted regulation file."
     }
   ]
 }

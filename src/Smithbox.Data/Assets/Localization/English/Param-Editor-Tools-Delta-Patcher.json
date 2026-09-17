@@ -21,6 +21,10 @@
       "Text": "Export"
     },
     {
+      "Key": "PARAM_DeltaPatcher_Tab_Merge",
+      "Text": "Merge"
+    },
+    {
       "Key": "PARAM_DeltaPatcher_Import_Hint",
       "Text": "Import a param delta file here."
     },

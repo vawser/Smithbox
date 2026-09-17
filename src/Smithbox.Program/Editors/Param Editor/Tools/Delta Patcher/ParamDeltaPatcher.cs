@@ -81,9 +81,14 @@ public class ParamDeltaPatcher
                 }
 
                 // Auto Merge
-                if (ImGui.BeginTabItem("Auto Merge##autoMergeTab"))
+                if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DeltaPatcher_Tab_Merge")}##autoMergeTab"))
                 {
-                    AutoMergeTool.Display();
+                    GUI.WrappedText(LOC.Get("PARAM_DeltaMerge_Hint"));
+
+                    GUI.Spacer();
+                    AutoMergeTool.DisplayConflictPolicy();
+                    AutoMergeTool.DisplayDeltaPatchMerge();
+
                     ImGui.EndTabItem();
                 }
 
