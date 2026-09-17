@@ -190,14 +190,14 @@ public sealed class ParamFullModAutoMerge
 
         if (normalizedSources.Count < 2)
         {
-            analysis.Errors.Add("Select at least two mod folders.");
+            analysis.Errors.Add(LOC.Get("PARAM_AutoMerge_Error_Select_Two_Mod_Folders"));
             return analysis;
         }
 
         foreach (var source in normalizedSources)
         {
             if (!Directory.Exists(source))
-                analysis.Errors.Add($"Mod folder not found: {source}");
+                analysis.Errors.Add(LOC.Get("PARAM_AutoMerge_Error_Missing_Mod_Folder", source));
             else
                 analysis.SourceFolders.Add(source);
         }

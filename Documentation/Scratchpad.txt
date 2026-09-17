@@ -15,4 +15,4 @@
  - HKX2 for DES, DS1, DS2, DS3, BB
  
 # Map Editor
-- Finish AutoMerge commit
+- Finish AutoMerge loc

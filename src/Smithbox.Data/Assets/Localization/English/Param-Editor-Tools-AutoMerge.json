@@ -153,6 +153,10 @@
       "Text": "Page {0}/{1} ({2} shown by filter)"
     },
     {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Page_Back",
+      "Text": "<"
+    },
+    {
       "Key": "PARAM_AutoMerge_ConflictEditor_Page_Next",
       "Text": ">"
     },
@@ -167,6 +171,10 @@
     {
       "Key": "PARAM_AutoMerge_ConflictTable_Later",
       "Text": "Later"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictTable_Path",
+      "Text": "Path"
     },
     {
       "Key": "PARAM_AutoMerge_ConflictTable_Resolution",
@@ -187,6 +195,10 @@
     {
       "Key": "PARAM_AutoMerge_ConflictEditor_RowState",
       "Text": "Row state"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Reason",
+      "Text": "Reason"
     },
     {
       "Key": "PARAM_AutoMerge_ConflictEditor_Cannot_Apply_Hint",
@@ -459,6 +471,146 @@
     {
       "Key": "PARAM_ProjectMerge_Select_Project_Folder",
       "Text": "Select Project Folder"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Actions_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Output_Header",
+      "Text": "Output"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Output_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Analyze_Mod_Folders",
+      "Text": "Analyze Mod Folders"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Analyze_Mod_Folders_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Output_Folder",
+      "Text": "Output Folder"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Summary_Header",
+      "Text": "Merge Summary"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Summary_Header_TT",
+      "Text": "Review what will be copied, structurally merged, ignored, or treated as a conflict."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Source_Folders",
+      "Text": "Source Folders: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Files_Scanned",
+      "Text": "Files scanned: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Unique_Files_to_Copy",
+      "Text": "Unique files to copy: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Identical_Duplicate_Files",
+      "Text": "Identical duplicate files: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Binder_Files_to_Merge",
+      "Text": "Binder files to merge: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Regulation_Merges",
+      "Text": "Regulation merges: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Ignored_Metadata_Files",
+      "Text": "Ignored metadata files: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Conflicts",
+      "Text": "Conflicts: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Binder_Merge_Summary_Header",
+      "Text": "Binder Merge Summary"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Binder_Merge_Summary_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Warnings_Header",
+      "Text": "Warnings"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Warnings_Header_TT",
+      "Text": "Number of warnings: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Errors_Header",
+      "Text": "Errors"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Errors_Header_TT",
+      "Text": "Number of errors: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Binder_Merge_Log",
+      "Text": "• {0} | added entries: {1} | identical entries: {2} | nested binders: {3} | MATBIN semantic merges: {4} | conflicts: {5}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_RegulationConflicts_Header",
+      "Text": "Regulation Field Conflicts"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_RegulationConflicts_Header_TT",
+      "Text": "Resolve regulation conflicts at row/field level. Manual values are supported for field conflicts."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Invalid_Build",
+      "Text": "No output will be written while unresolved conflicts remain. Resolve them in the tables above.\n\nMATBIN values can be resolved per property/index with Earlier, Later, or Manual; unsupported binary files can choose Earlier or Later."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Build_Merge",
+      "Text": "Build Merged Mod"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Build_Merge_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ProjectMerge_FileConflictResolve_Header",
+      "Text": "Conflict Resolver ({0})"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_FileConflictResolve_Header_TT",
+      "Text": "Resolve each file/binder collision independently. Binary entries can choose Earlier or Later; direct byte editing is intentionally not offered."
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Resolved_Unresolved_Hint",
+      "Text": "Resolved: {0} | Unresolved: {1}"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Merged_Regulation",
+      "Text": "Merged regulation written to: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Merged_Mod",
+      "Text": "Merged mod written to: {0}"
+    },
+    {
+      "Key": "PARAM_ProjectMerge_Merged_Mod_Failed",
+      "Text": "Build failed: {0}"
     }
   ]
 }
