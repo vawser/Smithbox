@@ -31,19 +31,40 @@ public static class HavokMetaHelper
 {
     public static HavokClass GetMeta(ProjectEntry project, Type rootType)
     {
-        if(project.Handler.CommonData.HavokMeta.TryGetValue("hk2018", out var metaSet))
+        if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
-            var fullName = rootType.FullName;
-
-            // Handle hkBitFieldStorage fullname
-            if (fullName.Contains("`"))
+            if (project.Handler.CommonData.HavokMeta.TryGetValue("hk2018", out var metaSet))
             {
-                fullName = fullName.Split("`")[0];
+                var fullName = rootType.FullName;
+
+                // Handle hkBitFieldStorage fullname
+                if (fullName.Contains("`"))
+                {
+                    fullName = fullName.Split("`")[0];
+                }
+
+                if (metaSet.TryGetValue(fullName, out var fieldMeta))
+                {
+                    return fieldMeta;
+                }
             }
-
-            if (metaSet.TryGetValue(fullName, out var fieldMeta))
+        }
+        else if (project.Descriptor.ProjectType is ProjectType.DS3)
+        {
+            if (project.Handler.CommonData.HavokMeta.TryGetValue("hk2014", out var metaSet))
             {
-                return fieldMeta;
+                var fullName = rootType.FullName;
+
+                // Handle hkBitFieldStorage fullname
+                if (fullName.Contains("`"))
+                {
+                    fullName = fullName.Split("`")[0];
+                }
+
+                if (metaSet.TryGetValue(fullName, out var fieldMeta))
+                {
+                    return fieldMeta;
+                }
             }
         }
 

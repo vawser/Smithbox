@@ -1,0 +1,10 @@
+{
+  "Type": "HKX2.hkBitField",
+  "Fields": [
+      {
+          "Field": "m_storage",
+          "Name": "Storage",
+          "Description": ""
+      }
+  ]
+}

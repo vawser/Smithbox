@@ -1,0 +1,20 @@
+{
+  "Type": "HKX2.hknpDefaultExternMeshShapeGeometry",
+  "Fields": [
+      {
+          "Field": "m_geometry",
+          "Name": "Geometry",
+          "Description": ""
+      },
+      {
+          "Field": "m_useTriangleMaterialAsShapeTag",
+          "Name": "Use Triangle Material as Shape Tag",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

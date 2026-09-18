@@ -1,0 +1,20 @@
+{
+  "Type": "HKX2.hknpPhysicsSceneData",
+  "Fields": [
+      {
+          "Field": "m_systemDatas",
+          "Name": "System Datas",
+          "Description": ""
+      },
+      {
+          "Field": "m_worldCinfo",
+          "Name": "World Cinfo",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

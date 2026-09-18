@@ -302,10 +302,6 @@ public class HavokPropertyView
 
         FieldInfo[] fields = View.PropertyCache.GetCachedHavokFields(type);
 
-        // Class Decorators
-        // TODO: add remove and decide how to present this
-        //HavokPropertyDecorators.AddVariableBindingSet(View, fields, type, classMeta, obj);
-
         // Properties
         var id = 0;
         foreach (FieldInfo prop in fields)

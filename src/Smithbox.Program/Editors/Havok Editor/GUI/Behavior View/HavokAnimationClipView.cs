@@ -72,7 +72,7 @@ public class HavokAnimationClipView
     {
         ImGui.BeginChild("havokBehaviorElementListSection");
 
-        for(int i = 0; i < AnimationClips.Count; i++)
+        for (int i = 0; i < AnimationClips.Count; i++)
         {
             var entry = AnimationClips[i];
             var entryName = "unknown";
