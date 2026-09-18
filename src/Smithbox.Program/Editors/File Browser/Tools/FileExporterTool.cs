@@ -5,6 +5,7 @@ using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System.Diagnostics;
+using static Andre.IO.VFS.VirtualFileSystem;
 
 namespace StudioCore.Editors.FileBrowser;
 
@@ -53,6 +54,11 @@ public class FileExporterTool
             LOC.Get("FILE_FileExporter_Open_Export_Dir_Action"),
             LOC.Get("FILE_FileExporter_Open_Export_Dir_Action_TT"), 
             OpenExtractionDirectory,
+
+             "extractFolder",
+            LOC.Get("FILE_FileExporter_Export_Folder"),
+            LOC.Get("FILE_FileExporter_Export_Folder_TT"),
+            ExportSelectedFolder,
 
             "extractMainFile",
             LOC.Get("FILE_FileExporter_Export_Container_File"),
@@ -533,6 +539,128 @@ public class FileExporterTool
             File.WriteAllBytes(writePath, extractData);
 
             Smithbox.Log(this, LOC.Get("FILE_FileExporter_Exported_File", filename));
+        }
+    }
+
+    private bool IsFolderExporting = false;
+
+    private enum FileExportResult
+    {
+        Exported,
+        Skipped,
+        Failed
+    }
+
+    public void ExportSelectedFolder()
+    {
+        if (ExtractionPath == "")
+        {
+            Smithbox.LogError<FileExporterTool>(LOC.Get("FILE_FileExporter_No_Output_Dir"));
+            return;
+        }
+
+        var folder = Parent.Selection.SelectedVfsFolder;
+
+        if (folder == null)
+        {
+            Smithbox.LogError<FileExporterTool>(LOC.Get("FILE_FileExporter_No_Folder_Selected"));
+            return;
+        }
+
+        if (IsFolderExporting)
+        {
+            Smithbox.LogError<FileExporterTool>(LOC.Get("FILE_FileExporter_Folder_Export_In_Progress"));
+            return;
+        }
+
+        var files = new List<FileDictionaryEntry>();
+        CollectFolderFiles(folder, files);
+
+        if (files.Count == 0)
+        {
+            Smithbox.Log(this, LOC.Get("FILE_FileExporter_Folder_Export_No_Files", folder.Name));
+
+            return;
+        }
+
+        IsFolderExporting = true;
+
+        var unpackPath = ExtractionPath;
+        var folderName = folder.Name;
+
+        Task.Run(() =>
+        {
+            var exported = 0;
+            var skipped = 0;
+            var failed = 0;
+
+            try
+            {
+                foreach (var fileEntry in files)
+                {
+                    switch (ExtractVfsFile(fileEntry, unpackPath))
+                    {
+                        case FileExportResult.Exported: exported++; break;
+                        case FileExportResult.Skipped: skipped++; break;
+                        case FileExportResult.Failed: failed++; break;
+                    }
+                }
+            }
+            finally
+            {
+                IsFolderExporting = false;
+            }
+
+            Smithbox.Log(this,
+                LOC.Get("FILE_FileExporter_Folder_Export_Complete",
+                folderName, exported, skipped, failed));
+        });
+    }
+
+    private void CollectFolderFiles(FolderNode node, List<FileDictionaryEntry> results)
+    {
+        results.AddRange(node.Files);
+
+        foreach (var child in node.Children)
+        {
+            CollectFolderFiles(child, results);
+        }
+    }
+
+    private FileExportResult ExtractVfsFile(FileDictionaryEntry fileEntry, string unpackPath)
+    {
+        try
+        {
+            var data = Project.VFS.VanillaFS.ReadFile(fileEntry.Path);
+
+            if (data == null)
+            {
+                Smithbox.LogError<FileExporterTool>(
+                    LOC.Get("FILE_FileExporter_Folder_Export_VFS_File_Read_FAIL",
+                    fileEntry.Path));
+
+                return FileExportResult.Failed;
+            }
+
+            var absFolder = $@"{unpackPath}/{fileEntry.Folder}";
+            var absPath = $@"{unpackPath}/{fileEntry.Path}";
+
+            // Matches ExportContainerFile: never overwrite an existing file
+            if (File.Exists(absPath))
+                return FileExportResult.Skipped;
+
+            Directory.CreateDirectory(absFolder);
+            File.WriteAllBytes(absPath, data.Value.ToArray());
+
+            Smithbox.Log(this, LOC.Get("FILE_FileExporter_Folder_Export_VFS_File_Extracted", absPath));
+
+            return FileExportResult.Exported;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("FILE_FileExporter_Folder_Export_VFS_File_Write_FAIL", fileEntry.Path), LogPriority.High, e);
+
+            return FileExportResult.Failed;
         }
     }
 }
