@@ -19,6 +19,27 @@ namespace HKX2
 
         internal Dictionary<uint, IHavokObject> _deserializedObjects;
 
+        private List<T> ReadArrayBase<T>(BinaryReaderEx br, Func<T> perElement)
+        {
+            // Consume pointer
+            br.AssertUInt64(0);
+            uint size = br.ReadUInt32();
+            br.ReadUInt32(); // Capacity and flags
+            var res = new List<T>();
+            if (size > 0)
+            {
+                // Do a local fixup lookup
+                var f = _dataSection._localMap[(uint)br.Position - 16];
+                br.StepIn(f.Dst);
+                for (int i = 0; i < size; i++)
+                {
+                    res.Add(perElement());
+                }
+                br.StepOut();
+            }
+            return res;
+        }
+
         public List<T> ReadClassArray<T>(BinaryReaderEx br) where T : IHavokObject, new()
         {
             // Consume pointer
@@ -307,7 +328,8 @@ namespace HKX2
 
         public List<bool> ReadBooleanArray(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            // hkBool is a single byte; be lenient and treat any non-zero value as true
+            return ReadArrayBase(br, () => br.ReadByte() != 0);
         }
 
         public Vector4 ReadVector4(BinaryReaderEx br)
@@ -338,22 +360,34 @@ namespace HKX2
 
         public Matrix4x4 ReadMatrix3(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            // hkMatrix3 is three hkVector4 columns (48 bytes). Same convention as ReadTransform:
+            // each 16 byte vector becomes one row. The 4th row is filler; the w component of
+            // each vector is kept so the padding round trips.
+            return new Matrix4x4(
+                br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle(),
+                br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle(),
+                br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle(),
+                0, 0, 0, 1);
         }
 
         public List<Matrix4x4> ReadMatrix3Array(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            return ReadArrayBase(br, () => ReadMatrix3(br));
         }
 
         public Matrix4x4 ReadMatrix4(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            // hkMatrix4 is four hkVector4 columns (64 bytes), each read as one row
+            return new Matrix4x4(
+                br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle(),
+                br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle(),
+                br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle(),
+                br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
         }
 
         public List<Matrix4x4> ReadMatrix4Array(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            return ReadArrayBase(br, () => ReadMatrix4(br));
         }
 
         public Matrix4x4 ReadTransform(BinaryReaderEx br)
@@ -368,17 +402,25 @@ namespace HKX2
 
         public List<Matrix4x4> ReadTransformArray(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            return ReadArrayBase(br, () => ReadTransform(br));
         }
 
         public Matrix4x4 ReadQSTransform(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            // hkQsTransform is translation, rotation (quaternion), scale: three hkVector4s (48 bytes).
+            // This is NOT a real transform matrix. To keep the data lossless the vectors are stored
+            // as rows: row 1 = translation (M11-M14), row 2 = rotation xyzw (M21-M24),
+            // row 3 = scale (M31-M34). The 4th row is filler.
+            return new Matrix4x4(
+                br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle(),
+                br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle(),
+                br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle(),
+                0, 0, 0, 1);
         }
 
         public List<Matrix4x4> ReadQSTransformArray(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            return ReadArrayBase(br, () => ReadQSTransform(br));
         }
 
         public Quaternion ReadQuaternion(BinaryReaderEx br)
@@ -388,7 +430,7 @@ namespace HKX2
 
         public List<Quaternion> ReadQuaternionArray(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            return ReadArrayBase(br, () => ReadQuaternion(br));
         }
 
         public IHavokObject ConstructVirtualClass(BinaryReaderEx br, uint offset)

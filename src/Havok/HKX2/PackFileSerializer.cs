@@ -9,7 +9,7 @@ namespace HKX2
 {
     public class PackFileSerializer
     {
-        private void WriteArrayBase<T>(BinaryWriterEx bw, IList<T> l, Action<T> perElement, bool pad=false)
+        private void WriteArrayBase<T>(BinaryWriterEx bw, IList<T> l, Action<T> perElement, bool pad = false)
         {
             uint size = (l != null) ? (uint)l.Count : 0;
             bw.WriteUInt64(0);
@@ -111,7 +111,12 @@ namespace HKX2
 
         public void WriteStringPointerArray(BinaryWriterEx bw, List<string> d)
         {
-            throw new NotImplementedException();
+            // Each element is a string pointer; WriteStringPointer queues the string data (and
+            // its local fixup) on the nested write queue that WriteArrayBase pushes.
+            WriteArrayBase(bw, d, (e) =>
+            {
+                WriteStringPointer(bw, e);
+            });
         }
 
         public void WriteByteArray(BinaryWriterEx bw, List<byte> d)
@@ -180,12 +185,19 @@ namespace HKX2
 
         public void WriteSingleArray(BinaryWriterEx bw, List<float> d)
         {
-            throw new NotImplementedException();
+            WriteArrayBase(bw, d, (e) =>
+            {
+                bw.WriteSingle(e);
+            });
         }
 
         public void WriteBooleanArray(BinaryWriterEx bw, List<bool> d)
         {
-            throw new NotImplementedException();
+            // hkBool is a single byte
+            WriteArrayBase(bw, d, (e) =>
+            {
+                bw.WriteByte(e ? (byte)1 : (byte)0);
+            });
         }
 
         public void WriteVector4(BinaryWriterEx bw, Vector4 d)
@@ -201,44 +213,78 @@ namespace HKX2
             });
         }
 
+        private static void WriteMatrixRow(BinaryWriterEx bw, float x, float y, float z, float w)
+        {
+            bw.WriteSingle(x);
+            bw.WriteSingle(y);
+            bw.WriteSingle(z);
+            bw.WriteSingle(w);
+        }
+
         public void WriteMatrix3(BinaryWriterEx bw, Matrix4x4 d)
         {
-            throw new NotImplementedException();
+            // hkMatrix3: three hkVector4 columns (48 bytes), one per row of the Matrix4x4.
+            // The 4th row is not part of the Havok type and is dropped.
+            WriteMatrixRow(bw, d.M11, d.M12, d.M13, d.M14);
+            WriteMatrixRow(bw, d.M21, d.M22, d.M23, d.M24);
+            WriteMatrixRow(bw, d.M31, d.M32, d.M33, d.M34);
         }
 
         public void WriteMatrix3Array(BinaryWriterEx bw, List<Matrix4x4> d)
         {
-            throw new NotImplementedException();
+            WriteArrayBase(bw, d, (e) =>
+            {
+                WriteMatrix3(bw, e);
+            }, true);
         }
 
         public void WriteMatrix4(BinaryWriterEx bw, Matrix4x4 d)
         {
-            throw new NotImplementedException();
+            // hkMatrix4: four hkVector4 columns (64 bytes), one per row of the Matrix4x4
+            WriteMatrixRow(bw, d.M11, d.M12, d.M13, d.M14);
+            WriteMatrixRow(bw, d.M21, d.M22, d.M23, d.M24);
+            WriteMatrixRow(bw, d.M31, d.M32, d.M33, d.M34);
+            WriteMatrixRow(bw, d.M41, d.M42, d.M43, d.M44);
         }
 
         public void WriteMatrix4Array(BinaryWriterEx bw, List<Matrix4x4> d)
         {
-            throw new NotImplementedException();
+            WriteArrayBase(bw, d, (e) =>
+            {
+                WriteMatrix4(bw, e);
+            }, true);
         }
 
         public void WriteTransform(BinaryWriterEx bw, Matrix4x4 d)
         {
-            throw new NotImplementedException();
+            // hkTransform: rotation (3 hkVector4 columns) + translation hkVector4 (64 bytes).
+            // Mirrors ReadTransform: the Matrix4x4 is written out row by row.
+            WriteMatrix4(bw, d);
         }
 
         public void WriteTransformArray(BinaryWriterEx bw, List<Matrix4x4> d)
         {
-            throw new NotImplementedException();
+            WriteArrayBase(bw, d, (e) =>
+            {
+                WriteTransform(bw, e);
+            }, true);
         }
 
         public void WriteQSTransform(BinaryWriterEx bw, Matrix4x4 d)
         {
-            throw new NotImplementedException();
+            // Mirrors ReadQSTransform: row 1 = translation, row 2 = rotation (xyzw),
+            // row 3 = scale (48 bytes). The 4th row is not part of the Havok type and is dropped.
+            WriteMatrixRow(bw, d.M11, d.M12, d.M13, d.M14);
+            WriteMatrixRow(bw, d.M21, d.M22, d.M23, d.M24);
+            WriteMatrixRow(bw, d.M31, d.M32, d.M33, d.M34);
         }
 
         public void WriteQSTransformArray(BinaryWriterEx bw, List<Matrix4x4> d)
         {
-            throw new NotImplementedException();
+            WriteArrayBase(bw, d, (e) =>
+            {
+                WriteQSTransform(bw, e);
+            }, true);
         }
 
         public void WriteQuaternion(BinaryWriterEx bw, Quaternion d)
@@ -251,7 +297,10 @@ namespace HKX2
 
         public void WriteQuaternionArray(BinaryWriterEx bw, List<Quaternion> d)
         {
-            throw new NotImplementedException();
+            WriteArrayBase(bw, d, (e) =>
+            {
+                WriteQuaternion(bw, e);
+            }, true);
         }
 
         //private Queue<IHavokObject> _serializationQueue = new Queue<IHavokObject>();
