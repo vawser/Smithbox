@@ -23,7 +23,7 @@ public class GparamEditorStub : IEditorStub
         if (!Project.Descriptor.EnableGparamEditor)
             return;
 
-        if (!ProjectUtils.SupportsGraphicsParamEditor(Project.Descriptor.ProjectType))
+        if (!EditorConditions.SupportsGraphicsParamEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)

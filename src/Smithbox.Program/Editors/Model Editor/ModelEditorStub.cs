@@ -25,7 +25,7 @@ public class ModelEditorStub : IEditorStub
         if (!Project.Descriptor.EnableModelEditor)
             return;
 
-        if (!ProjectUtils.SupportsModelEditor(Project.Descriptor.ProjectType))
+        if (!EditorConditions.SupportsModelEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)

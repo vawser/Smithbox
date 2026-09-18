@@ -23,7 +23,7 @@ public class ParamEditorStub : IEditorStub
         if (!Project.Descriptor.EnableParamEditor)
             return;
 
-        if (!ProjectUtils.SupportsParamEditor(Project.Descriptor.ProjectType))
+        if (!EditorConditions.SupportsParamEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)

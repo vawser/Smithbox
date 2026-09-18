@@ -2,6 +2,7 @@
 using Octokit;
 using Silk.NET.SDL;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Utilities;
@@ -267,7 +268,7 @@ public class ProjectConfigureMenu
             LOC.Get("PROJECT_Configuration_Header_Available_Editors_TT"));
 
         // Map Editor
-        if (ProjectUtils.SupportsMapEditor(Descriptor.ProjectType))
+        if (EditorConditions.SupportsMapEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
                 LOC.Get("PROJECT_Configuration_Checkbox_Visual_Map_Editor"), 
@@ -278,7 +279,7 @@ public class ProjectConfigureMenu
         }
 
         // Map Param Editor
-        if (ProjectUtils.SupportsMapDataEditor(Descriptor.ProjectType))
+        if (EditorConditions.SupportsMapDataEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
                 LOC.Get("PROJECT_Configuration_Checkbox_Map_Data_Editor"), 
@@ -289,7 +290,7 @@ public class ProjectConfigureMenu
         }
 
         // Model Editor
-        if (ProjectUtils.SupportsModelEditor(Descriptor.ProjectType))
+        if (EditorConditions.SupportsModelEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
                 LOC.Get("PROJECT_Configuration_Checkbox_Model_Editor"), 
@@ -300,7 +301,7 @@ public class ProjectConfigureMenu
         }
 
         // Param Editor
-        if (ProjectUtils.SupportsParamEditor(Descriptor.ProjectType))
+        if (EditorConditions.SupportsParamEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
                 LOC.Get("PROJECT_Configuration_Checkbox_Param_Editor"), 
@@ -311,7 +312,7 @@ public class ProjectConfigureMenu
         }
 
         // Text Editor
-        if (ProjectUtils.SupportsTextEditor(Descriptor.ProjectType))
+        if (EditorConditions.SupportsTextEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
                 LOC.Get("PROJECT_Configuration_Checkbox_Text_Editor"), 
@@ -321,19 +322,8 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Text_Editor_TT"));
         }
 
-        // Animation Editor
-        if (ProjectUtils.SupportsAnimEditor(Descriptor.ProjectType))
-        {
-            ImGui.Checkbox(
-                LOC.Get("PROJECT_Configuration_Checkbox_Anim_Editor"), 
-                ref Descriptor.EnableAnimEditor);
-
-            GUI.Tooltip(
-                LOC.Get("PROJECT_Configuration_Checkbox_Anim_Editor_TT"));
-        }
-
         // Havok Editor
-        if (ProjectUtils.SupportsHavokEditor(Descriptor.ProjectType))
+        if (EditorConditions.SupportsHavokEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
                 LOC.Get("PROJECT_Configuration_Checkbox_Havok_Editor"),
@@ -344,7 +334,7 @@ public class ProjectConfigureMenu
         }
 
         // Graphics Param Editor
-        if (ProjectUtils.SupportsGraphicsParamEditor(Descriptor.ProjectType))
+        if (EditorConditions.SupportsGraphicsParamEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
                 LOC.Get("PROJECT_Configuration_Checkbox_Gparam_Editor"), 
@@ -355,7 +345,7 @@ public class ProjectConfigureMenu
         }
 
         // Material Editor
-        if (ProjectUtils.SupportsMaterialEditor(Descriptor.ProjectType))
+        if (EditorConditions.SupportsMaterialEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
                 LOC.Get("PROJECT_Configuration_Checkbox_Material_Editor"), 
@@ -366,7 +356,7 @@ public class ProjectConfigureMenu
         }
 
         // Texture Viewer
-        if (ProjectUtils.SupportsTextureViewer(Descriptor.ProjectType))
+        if (EditorConditions.SupportsTextureViewer(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
                 LOC.Get("PROJECT_Configuration_Checkbox_Texture_Viewer"), 
@@ -377,7 +367,7 @@ public class ProjectConfigureMenu
         }
 
         // File Browser
-        if (ProjectUtils.SupportsFileBrowser(Descriptor.ProjectType))
+        if (EditorConditions.SupportsFileBrowser(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
                 LOC.Get("PROJECT_Configuration_Checkbox_File_Browser"), 

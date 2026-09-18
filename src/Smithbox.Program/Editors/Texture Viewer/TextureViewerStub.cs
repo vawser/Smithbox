@@ -23,7 +23,7 @@ public class TextureViewerStub : IEditorStub
         if (!Project.Descriptor.EnableTextureViewer)
             return;
 
-        if (!ProjectUtils.SupportsTextureViewer(Project.Descriptor.ProjectType))
+        if (!EditorConditions.SupportsTextureViewer(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)

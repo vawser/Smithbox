@@ -28,7 +28,7 @@ public class MapDataEditorStub : IEditorStub
         if (!Project.Descriptor.EnableMapDataEditor)
             return;
 
-        if (!ProjectUtils.SupportsMapDataEditor(Project.Descriptor.ProjectType))
+        if (!EditorConditions.SupportsMapDataEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)

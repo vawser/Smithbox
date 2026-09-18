@@ -6,9 +6,4 @@
 /// </summary>
 public static class FeatureFlags
 {
-    // WIP Editors
-    public static bool EnableAnimEditor = false;
-    public static bool EnableMapDataEditor = true;
-
-
 }

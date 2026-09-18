@@ -23,7 +23,7 @@ public class TextEditorStub : IEditorStub
         if (!Project.Descriptor.EnableTextEditor)
             return;
 
-        if (!ProjectUtils.SupportsTextEditor(Project.Descriptor.ProjectType))
+        if (!EditorConditions.SupportsTextEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)

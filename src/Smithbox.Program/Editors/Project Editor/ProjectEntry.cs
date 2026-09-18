@@ -48,9 +48,6 @@ public class ProjectEntry
 
             if (Handler.ModelEditorStub != null)
                 Handler.ModelEditorStub.Draw(device, cl);
-
-            if (Handler.AnimEditorStub != null)
-                Handler.AnimEditorStub.Draw(device, cl);
         }
     }
 
@@ -84,9 +81,6 @@ public class ProjectEntry
             if (Handler.FileBrowserStub != null)
                 Handler.FileBrowserStub.Display(dt, commands);
 
-            if (Handler.AnimEditorStub != null)
-                Handler.AnimEditorStub.Display(dt, commands);
-
             if (Handler.MapDataEditorStub != null)
                 Handler.MapDataEditorStub.Display(dt, commands);
 
@@ -119,9 +113,6 @@ public class ProjectEntry
 
             if (Handler.ModelEditorStub != null)
                 Handler.ModelEditorStub.EditorResized(window, device);
-
-            if (Handler.AnimEditorStub != null)
-                Handler.AnimEditorStub.EditorResized(window, device);
         }
     }
 

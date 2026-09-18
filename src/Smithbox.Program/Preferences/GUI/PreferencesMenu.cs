@@ -331,28 +331,6 @@ public class PreferencesMenu
                     }
                 }
 
-                if (curProject != null && curProject.Handler != null &&
-                    curProject.Handler.AnimEditor != null)
-                {
-                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Anim_Editor")}##animEditorTab"))
-                    {
-                        ImGui.BeginChild("animEditorPrefSection");
-
-                        if (AnimEditorPrefList.Count > 0)
-                        {
-                            DisplaySettings(AnimEditorPrefList);
-                        }
-                        else
-                        {
-                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
-                        }
-
-                        ImGui.EndChild();
-
-                        ImGui.EndTabItem();
-                    }
-                }
-
                 ImGui.EndTabBar();
 
 

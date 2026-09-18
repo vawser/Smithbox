@@ -23,7 +23,7 @@ public class FileBrowserStub : IEditorStub
         if (!Project.Descriptor.EnableFileBrowser)
             return;
 
-        if (!ProjectUtils.SupportsFileBrowser(Project.Descriptor.ProjectType))
+        if (!EditorConditions.SupportsFileBrowser(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)

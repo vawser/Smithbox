@@ -1,5 +1,4 @@
-﻿using StudioCore.Editors.AnimEditor;
-using StudioCore.Editors.Common;
+﻿using StudioCore.Editors.Common;
 using StudioCore.Editors.FileBrowser;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.HavokEditor;
@@ -64,11 +63,6 @@ public class ProjectEditorHandler : IDisposable
     public TextureViewerScreen TextureViewer;
     public TextureViewerStub TextureViewerStub;
 
-    // Animation Editor
-    public AnimData AnimData;
-    public AnimEditorScreen AnimEditor;
-    public AnimEditorStub AnimEditorStub;
-
     // Map Param Editor
     public MapDataHandler MapDataHandler;
     public MapDataEditorScreen MapDataEditor;
@@ -90,7 +84,6 @@ public class ProjectEditorHandler : IDisposable
     private Task<bool> _gparamDataTask;
     private Task<bool> _materialDataTask;
     private Task<bool> _textureDataTask;
-    private Task<bool> _animDataTask;
     private Task<bool> _mapDataDataTask;
     private Task<bool> _havokDataTask;
 
@@ -109,7 +102,6 @@ public class ProjectEditorHandler : IDisposable
         MaterialEditorStub = new(Project);
         TextureViewerStub = new(Project);
         FileBrowserStub = new(Project);
-        AnimEditorStub = new(Project);
         MapDataEditorStub = new(Project);
         HavokEditorStub = new(Project);
     }
@@ -187,15 +179,6 @@ public class ProjectEditorHandler : IDisposable
             tasks.Add(_gparamDataTask);
         }
 
-        // Animation
-        if (Project.Descriptor.EnableAnimEditor &&
-            initType is ProjectInitType.ProjectDefined)
-        {
-            AnimData = new(Project);
-            _animDataTask = AnimData.Setup();
-            tasks.Add(_animDataTask);
-        }
-
         // Map Data
         if (Project.Descriptor.EnableMapDataEditor &&
             initType is ProjectInitType.ProjectDefined)
@@ -264,11 +247,6 @@ public class ProjectEditorHandler : IDisposable
                 ? LOC.Get("PROJECT_Data_Setup_Texture_Data_PASS")
                 : LOC.Get("PROJECT_Data_Setup_Texture_Data_FAIL"));
 
-        if (_animDataTask != null)
-            Smithbox.Log(this, _animDataTask.Result
-                ? LOC.Get("PROJECT_Data_Setup_Anim_Data_PASS")
-                : LOC.Get("PROJECT_Data_Setup_Anim_Data_FAIL"));
-
         if (_mapDataDataTask != null)
             Smithbox.Log(this, _mapDataDataTask.Result
                 ? LOC.Get("PROJECT_Data_Setup_Map_Data_PASS")
@@ -332,12 +310,6 @@ public class ProjectEditorHandler : IDisposable
         {
             TextureViewer = new TextureViewerScreen(Project);
             firstEditor ??= TextureViewer;
-        }
-
-        if (AnimData != null)
-        {
-            AnimEditor = new AnimEditorScreen(Project);
-            firstEditor ??= AnimEditor;
         }
 
         if (MapDataHandler != null)

@@ -23,7 +23,7 @@ public class MaterialEditorStub : IEditorStub
         if (!Project.Descriptor.EnableMaterialEditor)
             return;
 
-        if (!ProjectUtils.SupportsMaterialEditor(Project.Descriptor.ProjectType))
+        if (!EditorConditions.SupportsMaterialEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)

@@ -22,7 +22,7 @@ public class HavokEditorStub : IEditorStub
         if (!Project.Descriptor.EnableHavokEditor)
             return;
 
-        if (!ProjectUtils.SupportsHavokEditor(Project.Descriptor.ProjectType))
+        if (!EditorConditions.SupportsHavokEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)
