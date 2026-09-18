@@ -481,7 +481,9 @@ public sealed class ParamDeltaAutoMergeTool
     private int FullModConflictPage = 0;
     private int ParamConflictPage = 0;
 
+    private bool DisplayMergeReportSummary = true;
     private bool DisplayBinderMergeSummary = true;
+    private bool DisplayConflictResolver = true;
     private bool DisplayWarnings = true;
     private bool DisplayErrors = true;
 
@@ -979,7 +981,7 @@ public sealed class ParamDeltaAutoMergeTool
             // Select
             if (ImGui.Button($"{LOC.Get("PARAM_ProjectMerge_Select_Path")}##selectPath{i}", DPI.SelectorButtonSize))
             {
-                var dialog = PlatformUtils.Instance.OpenFileDialog(LOC.Get("PARAM_ProjectMerge_Select_Project_Folder"), out var path);
+                var dialog = PlatformUtils.Instance.OpenFolderDialog(LOC.Get("PARAM_ProjectMerge_Select_Project_Folder"), out var path);
 
                 if (dialog)
                 {
@@ -1014,7 +1016,7 @@ public sealed class ParamDeltaAutoMergeTool
         // Select
         if (ImGui.Button($"{LOC.Get("PARAM_ProjectMerge_Select_Path")}##selectPath_output", DPI.SelectorButtonSize))
         {
-            var dialog = PlatformUtils.Instance.OpenFileDialog(LOC.Get("PARAM_ProjectMerge_Select_Project_Folder"), out var path);
+            var dialog = PlatformUtils.Instance.OpenFolderDialog(LOC.Get("PARAM_ProjectMerge_Select_Project_Folder"), out var path);
 
             if (dialog)
             {
@@ -1029,20 +1031,43 @@ public sealed class ParamDeltaAutoMergeTool
         if (LastFullModAnalysis == null)
             return;
 
-        // Summary
+        // Actions
         GUI.Spacer();
         GUI.SimpleHeader(
-            LOC.Get("PARAM_ProjectMerge_Summary_Header"),
-            LOC.Get("PARAM_ProjectMerge_Summary_Header_TT"));
+            LOC.Get("PARAM_ProjectMerge_Actions_Header"),
+            LOC.Get("PARAM_ProjectMerge_Actions_Header_TT"));
 
-        ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Source_Folders", LastFullModAnalysis.SourceFolders.Count)}");
-        ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Files_Scanned", LastFullModAnalysis.ScannedFiles)}");
-        ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Unique_Files_to_Copy", LastFullModAnalysis.UniqueFiles)}");
-        ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Identical_Duplicate_Files", LastFullModAnalysis.IdenticalFiles)}");
-        ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Binder_Files_to_Merge", LastFullModAnalysis.BinderFiles)}");
-        ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Regulation_Merges", LastFullModAnalysis.RegulationFiles)}");
-        ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Ignored_Metadata_Files", LastFullModAnalysis.IgnoredFiles)}");
-        ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Conflicts", LastFullModAnalysis.Conflicts.Count)}");
+        GUI.ConditionalMultiButtonInput("buildActions",
+            "build",
+            LOC.Get("PARAM_ProjectMerge_Build_Merge"),
+            LOC.Get("PARAM_ProjectMerge_Build_Merge_TT"),
+            BuildFullModFolder,
+            LastFullModAnalysis.CanBuild);
+
+        if (!string.IsNullOrWhiteSpace(FullModBuildStatus))
+        {
+            GUI.Spacer();
+            GUI.WrappedText(FullModBuildStatus);
+        }
+
+        // Summary
+        GUI.Spacer();
+        GUI.ConditionalHeader(
+            LOC.Get("PARAM_ProjectMerge_Summary_Header"),
+            LOC.Get("PARAM_ProjectMerge_Summary_Header_TT"),
+            ref DisplayMergeReportSummary);
+
+        if (DisplayMergeReportSummary)
+        {
+            ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Source_Folders", LastFullModAnalysis.SourceFolders.Count)}");
+            ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Files_Scanned", LastFullModAnalysis.ScannedFiles)}");
+            ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Unique_Files_to_Copy", LastFullModAnalysis.UniqueFiles)}");
+            ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Identical_Duplicate_Files", LastFullModAnalysis.IdenticalFiles)}");
+            ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Binder_Files_to_Merge", LastFullModAnalysis.BinderFiles)}");
+            ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Regulation_Merges", LastFullModAnalysis.RegulationFiles)}");
+            ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Ignored_Metadata_Files", LastFullModAnalysis.IgnoredFiles)}");
+            ImGui.Text($"{LOC.Get("PARAM_ProjectMerge_Conflicts", LastFullModAnalysis.Conflicts.Count)}");
+        }
 
         if (LastFullModAnalysis.Files.Any(e => e.Action == FullModMergeAction.BinderMerge))
         {
@@ -1128,172 +1153,152 @@ public sealed class ParamDeltaAutoMergeTool
 
             DisplayMergeSummary(LastFullModAnalysis.RegulationAnalysis.MergeResult, "fullreg");
         }
-
-        if (!LastFullModAnalysis.CanBuild)
-        {
-            GUI.Spacer();
-            GUI.WrappedText(LOC.Get("PARAM_ProjectMerge_Invalid_Build"));
-            return;
-        }
-
-        // Actions
-        GUI.Spacer();
-        GUI.SimpleHeader(
-            LOC.Get("PARAM_ProjectMerge_Actions_Header"),
-            LOC.Get("PARAM_ProjectMerge_Actions_Header_TT"));
-
-        GUI.MultiButtonInput("buildActions",
-            "build",
-            LOC.Get("PARAM_ProjectMerge_Build_Merge"),
-            LOC.Get("PARAM_ProjectMerge_Build_Merge_TT"),
-            BuildFullModFolder);
-
-        if (!string.IsNullOrWhiteSpace(FullModBuildStatus))
-        {
-            GUI.Spacer();
-            GUI.WrappedText(FullModBuildStatus);
-        }
     }
 
     private void DisplayFullModConflictResolver(FullModMergeAnalysis analysis)
     {
         var editableConflicts = analysis.Conflicts.Where(e => e.Type != FullModMergeConflictType.Regulation).ToList();
         var unresolved = editableConflicts.Count(e => !e.IsResolved);
-        GUI.SimpleHeader(
+
+        GUI.ConditionalHeader(
             LOC.Get("PARAM_ProjectMerge_FileConflictResolve_Header", editableConflicts.Count),
-            LOC.Get("PARAM_ProjectMerge_FileConflictResolve_Header_TT"));
+            LOC.Get("PARAM_ProjectMerge_FileConflictResolve_Header_TT"),
+            ref DisplayConflictResolver);
 
-        ImGui.Text(LOC.Get("PARAM_ProjectMerge_Resolved_Unresolved_Hint", editableConflicts.Count - unresolved, unresolved));
-
-        ImGui.InputText(
-            $"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Filter")}##autoMergeFullConflictFilter",
-            ref FullModConflictFilter, 512);
-
-        // Visible -> Earlier
-        if (ImGui.Button($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Visible_Earlier")}##autoMergeFullResolveEarlier"))
+        if (DisplayConflictResolver)
         {
-            foreach (var conflict in FilterFullModConflicts(analysis))
+            ImGui.Text(LOC.Get("PARAM_ProjectMerge_Resolved_Unresolved_Hint", editableConflicts.Count - unresolved, unresolved));
+
+            ImGui.InputText(
+                $"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Filter")}##autoMergeFullConflictFilter",
+                ref FullModConflictFilter, 512);
+
+            // Visible -> Earlier
+            if (ImGui.Button($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Visible_Earlier")}##autoMergeFullResolveEarlier"))
             {
-                conflict.Resolution = FullModConflictResolution.UseEarlier;
-            }
-        }
-
-        ImGui.SameLine();
-
-        // Visible -> Later
-        if (ImGui.Button($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Visible_Later")}##autoMergeFullResolveLater"))
-        {
-            foreach (var conflict in FilterFullModConflicts(analysis))
-            {
-                conflict.Resolution = FullModConflictResolution.UseLater;
-            }
-        }
-
-        ImGui.SameLine();
-
-        // Reset Visible
-        if (ImGui.Button($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Visible_Reset")}##autoMergeFullResolveReset"))
-        {
-            foreach (var conflict in FilterFullModConflicts(analysis))
-            {
-                conflict.Resolution = FullModConflictResolution.Unresolved;
-            }
-        }
-
-        var filtered = FilterFullModConflicts(analysis).ToList();
-        var pageCount = Math.Max(1, (filtered.Count + ConflictRowsPerPage - 1) / ConflictRowsPerPage);
-        FullModConflictPage = Math.Clamp(FullModConflictPage, 0, pageCount - 1);
-
-        if (ImGui.Button($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Page_Back")}##autoMergeFullConflictPrev") && FullModConflictPage > 0)
-        {
-            FullModConflictPage--;
-        }
-
-        ImGui.SameLine();
-
-        ImGui.Text($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Page", FullModConflictPage + 1, pageCount, filtered.Count)}");
-
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Page_Next")}##autoMergeFullConflictNext") && FullModConflictPage + 1 < pageCount)
-        {
-            FullModConflictPage++;
-        }
-
-        var page = filtered.Skip(FullModConflictPage * ConflictRowsPerPage).Take(ConflictRowsPerPage);
-
-        if (ImGui.BeginTable(
-                "autoMergeFullConflictTable",
-                6,
-                ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV |
-                ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame))
-        {
-            ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictTable_Path"));
-            ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictTable_Earlier"));
-            ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictTable_Later"));
-            ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictTable_Resolution"));
-            ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictTable_Manual_Value"));
-            ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictEditor_Reason"));
-            ImGui.TableHeadersRow();
-
-            var index = FullModConflictPage * ConflictRowsPerPage;
-            foreach (var conflict in page)
-            {
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
-                GUI.WrappedText(string.IsNullOrWhiteSpace(conflict.InternalPath)
-                    ? conflict.RelativePath
-                    : $"{conflict.RelativePath} :: {conflict.InternalPath}");
-
-                ImGui.TableSetColumnIndex(1);
-                GUI.WrappedText(string.IsNullOrWhiteSpace(conflict.ExistingValue)
-                    ? conflict.ExistingSource
-                    : $"{conflict.ExistingValue}\n{conflict.ExistingSource}");
-
-                ImGui.TableSetColumnIndex(2);
-                GUI.WrappedText(string.IsNullOrWhiteSpace(conflict.IncomingValue)
-                    ? conflict.IncomingSource
-                    : $"{conflict.IncomingValue}\n{conflict.IncomingSource}");
-
-                ImGui.TableSetColumnIndex(3);
-                var label = GetFullModResolutionName(conflict.Resolution);
-                if (ImGui.BeginCombo($"##fullConflictResolution{index}", label))
+                foreach (var conflict in FilterFullModConflicts(analysis))
                 {
-                    foreach (FullModConflictResolution resolution in Enum.GetValues(typeof(FullModConflictResolution)))
-                    {
-                        if (resolution == FullModConflictResolution.Manual && !conflict.SupportsManual)
-                            continue;
+                    conflict.Resolution = FullModConflictResolution.UseEarlier;
+                }
+            }
 
-                        if (ImGui.Selectable(GetFullModResolutionName(resolution), conflict.Resolution == resolution))
+            ImGui.SameLine();
+
+            // Visible -> Later
+            if (ImGui.Button($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Visible_Later")}##autoMergeFullResolveLater"))
+            {
+                foreach (var conflict in FilterFullModConflicts(analysis))
+                {
+                    conflict.Resolution = FullModConflictResolution.UseLater;
+                }
+            }
+
+            ImGui.SameLine();
+
+            // Reset Visible
+            if (ImGui.Button($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Visible_Reset")}##autoMergeFullResolveReset"))
+            {
+                foreach (var conflict in FilterFullModConflicts(analysis))
+                {
+                    conflict.Resolution = FullModConflictResolution.Unresolved;
+                }
+            }
+
+            var filtered = FilterFullModConflicts(analysis).ToList();
+            var pageCount = Math.Max(1, (filtered.Count + ConflictRowsPerPage - 1) / ConflictRowsPerPage);
+            FullModConflictPage = Math.Clamp(FullModConflictPage, 0, pageCount - 1);
+
+            if (ImGui.Button($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Page_Back")}##autoMergeFullConflictPrev") && FullModConflictPage > 0)
+            {
+                FullModConflictPage--;
+            }
+
+            ImGui.SameLine();
+
+            ImGui.Text($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Page", FullModConflictPage + 1, pageCount, filtered.Count)}");
+
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{LOC.Get("PARAM_AutoMerge_ConflictEditor_Page_Next")}##autoMergeFullConflictNext") && FullModConflictPage + 1 < pageCount)
+            {
+                FullModConflictPage++;
+            }
+
+            var page = filtered.Skip(FullModConflictPage * ConflictRowsPerPage).Take(ConflictRowsPerPage);
+
+            if (ImGui.BeginTable(
+                    "autoMergeFullConflictTable",
+                    6,
+                    ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV |
+                    ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame))
+            {
+                ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictTable_Path"));
+                ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictTable_Earlier"));
+                ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictTable_Later"));
+                ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictTable_Resolution"));
+                ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictTable_Manual_Value"));
+                ImGui.TableSetupColumn(LOC.Get("PARAM_AutoMerge_ConflictEditor_Reason"));
+                ImGui.TableHeadersRow();
+
+                var index = FullModConflictPage * ConflictRowsPerPage;
+                foreach (var conflict in page)
+                {
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+                    GUI.WrappedText(string.IsNullOrWhiteSpace(conflict.InternalPath)
+                        ? conflict.RelativePath
+                        : $"{conflict.RelativePath} :: {conflict.InternalPath}");
+
+                    ImGui.TableSetColumnIndex(1);
+                    GUI.WrappedText(string.IsNullOrWhiteSpace(conflict.ExistingValue)
+                        ? conflict.ExistingSource
+                        : $"{conflict.ExistingValue}\n{conflict.ExistingSource}");
+
+                    ImGui.TableSetColumnIndex(2);
+                    GUI.WrappedText(string.IsNullOrWhiteSpace(conflict.IncomingValue)
+                        ? conflict.IncomingSource
+                        : $"{conflict.IncomingValue}\n{conflict.IncomingSource}");
+
+                    ImGui.TableSetColumnIndex(3);
+                    var label = GetFullModResolutionName(conflict.Resolution);
+                    if (ImGui.BeginCombo($"##fullConflictResolution{index}", label))
+                    {
+                        foreach (FullModConflictResolution resolution in Enum.GetValues(typeof(FullModConflictResolution)))
                         {
-                            conflict.Resolution = resolution;
-                            if (resolution == FullModConflictResolution.Manual && string.IsNullOrEmpty(conflict.ManualValue))
-                                conflict.ManualValue = conflict.ExistingValue;
+                            if (resolution == FullModConflictResolution.Manual && !conflict.SupportsManual)
+                                continue;
+
+                            if (ImGui.Selectable(GetFullModResolutionName(resolution), conflict.Resolution == resolution))
+                            {
+                                conflict.Resolution = resolution;
+                                if (resolution == FullModConflictResolution.Manual && string.IsNullOrEmpty(conflict.ManualValue))
+                                    conflict.ManualValue = conflict.ExistingValue;
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+
+                    ImGui.TableSetColumnIndex(4);
+                    if (conflict.SupportsManual && conflict.Resolution == FullModConflictResolution.Manual)
+                    {
+                        var manual = conflict.ManualValue ?? "";
+                        if (ImGui.InputText($"##fullConflictManual{index}", ref manual, 1024))
+                        {
+                            conflict.ManualValue = manual;
                         }
                     }
-                    ImGui.EndCombo();
-                }
-
-                ImGui.TableSetColumnIndex(4);
-                if (conflict.SupportsManual && conflict.Resolution == FullModConflictResolution.Manual)
-                {
-                    var manual = conflict.ManualValue ?? "";
-                    if (ImGui.InputText($"##fullConflictManual{index}", ref manual, 1024))
+                    else
                     {
-                        conflict.ManualValue = manual;
+                        ImGui.TextDisabled("-");
                     }
-                }
-                else
-                {
-                    ImGui.TextDisabled("-");
+
+                    ImGui.TableSetColumnIndex(5);
+                    GUI.WrappedText(conflict.Message);
+                    index++;
                 }
 
-                ImGui.TableSetColumnIndex(5);
-                GUI.WrappedText(conflict.Message);
-                index++;
+                ImGui.EndTable();
             }
-
-            ImGui.EndTable();
         }
     }
 

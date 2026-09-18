@@ -54,7 +54,7 @@ public sealed class ParamRegulationAutoMerge
     public bool IsSupportedProject => Patcher.Project.Descriptor.ProjectType is
         ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DS3;
 
-    public string SupportedProjectText => "Elden Ring, Armored Core VI, Nightreign and Dark Souls III";
+    public string SupportedProjectText => LOC.Get("PARAM_AutoMerge_RegulationMerge_Supported_Hint");
 
     public RegulationMergeAnalysis Analyze(
         IReadOnlyList<string> sourcePaths,
@@ -64,7 +64,7 @@ public sealed class ParamRegulationAutoMerge
 
         if (!IsSupportedProject)
         {
-            analysis.Errors.Add($"Direct regulation merge currently supports {SupportedProjectText}.");
+            analysis.Errors.Add(LOC.Get("PARAM_DirectMerge_Supported_Project_Type", SupportedProjectText));
             return analysis;
         }
 
@@ -76,7 +76,7 @@ public sealed class ParamRegulationAutoMerge
 
         if (normalizedPaths.Count < 2)
         {
-            analysis.Errors.Add("Select at least two regulation files.");
+            analysis.Errors.Add(LOC.Get("PARAM_AutoMerge_Error_Select_Two_Regulations"));
             return analysis;
         }
 
@@ -84,7 +84,7 @@ public sealed class ParamRegulationAutoMerge
         {
             if (!File.Exists(path))
             {
-                analysis.Errors.Add($"File not found: {path}");
+                analysis.Errors.Add(LOC.Get("PARAM_AutoMerge_Error_File_Not_Found", path));
                 continue;
             }
 
@@ -120,20 +120,20 @@ public sealed class ParamRegulationAutoMerge
         string outputPath)
     {
         if (analysis == null || !analysis.CanBuild)
-            throw new InvalidOperationException("Analyze the regulation files successfully before building an output file.");
+            throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Error_Invalid_Regulation_Merge"));
 
         if (analysis.Sources.Count == 0)
-            throw new InvalidOperationException("No regulation source is available.");
+            throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Error_Missing_Regulation_Source"));
 
         outputPath = NormalizeUserPath(outputPath);
         if (string.IsNullOrWhiteSpace(outputPath))
-            throw new InvalidOperationException("Choose an output path for the merged regulation file.");
+            throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Error_Missing_Regulation_Output_Path"));
 
         var outputFullPath = System.IO.Path.GetFullPath(outputPath);
         foreach (var source in analysis.Sources)
         {
             if (string.Equals(System.IO.Path.GetFullPath(source.Path), outputFullPath, StringComparison.OrdinalIgnoreCase))
-                throw new InvalidOperationException("The output path must not overwrite one of the input regulation files.");
+                throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Error_Regulation_Output_Collision"));
         }
 
         // Always build on the currently loaded game's vanilla regulation. This is important
@@ -141,14 +141,19 @@ public sealed class ParamRegulationAutoMerge
         using var binder = ReadCurrentVanillaRegulation();
 
         if (!ulong.TryParse(binder.Version, out var version))
-            throw new InvalidDataException("The current vanilla regulation does not contain a valid parameter version.");
+            throw new InvalidDataException(LOC.Get("PARAM_AutoMerge_Error_Invalid_Vanilla_Param_Version"));
 
         var loadedVersion = Patcher.Project.Handler.ParamData.PrimaryBank.ParamVersion;
+
+        var displayVersion = ParamUtils.ParseRegulationVersion(version);
+        var displayProjectVersion = ParamUtils.ParseRegulationVersion(loadedVersion);
+
         if (version != loadedVersion)
         {
             throw new InvalidDataException(
-                $"The vanilla regulation version {ParamUtils.ParseRegulationVersion(version)} does not match " +
-                $"the loaded project {ParamUtils.ParseRegulationVersion(loadedVersion)}.");
+                LOC.Get("PARAM_AutoMerge_Error_Mismatched_Vanilla_Param_Version",
+                displayVersion,
+                displayProjectVersion));
         }
 
         var originalParamTypes = new Dictionary<string, string>(StringComparer.Ordinal);
@@ -190,13 +195,16 @@ public sealed class ParamRegulationAutoMerge
         using var binder = ReadRegulation(path);
 
         if (!ulong.TryParse(binder.Version, out var version))
-            throw new InvalidDataException("The regulation does not contain a valid parameter version.");
+            throw new InvalidDataException(LOC.Get("PARAM_AutoMerge_Error_Invalid_Param_Version"));
 
         var loadedVersion = Patcher.Project.Handler.ParamData.PrimaryBank.ParamVersion;
         var sourceParams = ParseBinderParams(binder, version, warnings, strict: false);
 
         ParamDeltaPatch delta;
         var autoUpgraded = false;
+
+        var displayVersion = ParamUtils.ParseRegulationVersion(version);
+        var displayProjectVersion = ParamUtils.ParseRegulationVersion(loadedVersion);
 
         if (version == loadedVersion)
         {
@@ -209,22 +217,19 @@ public sealed class ParamRegulationAutoMerge
             if (!AutoUpgradeMismatchedVersions)
             {
                 throw new InvalidDataException(
-                    $"param version {ParamUtils.ParseRegulationVersion(version)} does not match the loaded project " +
-                    $"{ParamUtils.ParseRegulationVersion(loadedVersion)}.");
+                    LOC.Get("PARAM_AutoMerge_Error_Mismatched_Param_Version", displayVersion, displayProjectVersion));
             }
 
             if (Patcher.Project.Descriptor.ProjectType is not (ProjectType.ER or ProjectType.AC6 or ProjectType.NR))
             {
                 throw new InvalidDataException(
-                    $"Automatic regulation upgrade is only available for Elden Ring, Armored Core VI and Nightreign. " +
-                    $"Source is {ParamUtils.ParseRegulationVersion(version)}, loaded project is {ParamUtils.ParseRegulationVersion(loadedVersion)}.");
+                    LOC.Get("PARAM_AutoMerge_Error_Auto_Reg_Upgrade_Not_Available", displayVersion, displayProjectVersion));
             }
 
             if (version > loadedVersion)
             {
                 throw new InvalidDataException(
-                    $"Automatic downgrade is not supported. Source {ParamUtils.ParseRegulationVersion(version)} is newer than " +
-                    $"the loaded project {ParamUtils.ParseRegulationVersion(loadedVersion)}.");
+                    LOC.Get("PARAM_AutoMerge_Error_Auto_Reg_Upgrade_Not_Supported", displayVersion, displayProjectVersion));
             }
 
             var oldVanillaParams = LoadHistoricalVanillaParams(version, warnings);
@@ -233,9 +238,10 @@ public sealed class ParamRegulationAutoMerge
             autoUpgraded = true;
 
             warnings?.Add(
-                $"{System.IO.Path.GetFileName(path)}: automatically upgraded param changes " +
-                $"{ParamUtils.ParseRegulationVersion(version)} -> {ParamUtils.ParseRegulationVersion(loadedVersion)} " +
-                $"using Smithbox Param Upgrader historical vanilla data.");
+                LOC.Get("PARAM_AutoMerge_Warning_Auto_Upgrade_Complete",
+                Path.GetFileName(path),
+                displayVersion,
+                displayProjectVersion));
         }
 
         return new RegulationMergeSource
@@ -257,7 +263,7 @@ public sealed class ParamRegulationAutoMerge
             ProjectType.AC6 => SFUtil.DecryptAC6Regulation(path),
             ProjectType.NR => SFUtil.DecryptNightreignRegulation(path),
             ProjectType.DS3 => SFUtil.DecryptDS3Regulation(path),
-            _ => throw new NotSupportedException($"Direct regulation merge is not supported for {Patcher.Project.Descriptor.ProjectType}.")
+            _ => throw new NotSupportedException(LOC.Get("PARAM_AutoMerge_Error_Direct_Merge_Not_Supported", Patcher.Project.Descriptor.ProjectType))
         };
     }
 
@@ -269,7 +275,7 @@ public sealed class ParamRegulationAutoMerge
             ProjectType.AC6 => SFUtil.DecryptAC6Regulation(data),
             ProjectType.NR => SFUtil.DecryptNightreignRegulation(data),
             ProjectType.DS3 => SFUtil.DecryptDS3Regulation(data),
-            _ => throw new NotSupportedException($"Direct regulation merge is not supported for {Patcher.Project.Descriptor.ProjectType}.")
+            _ => throw new NotSupportedException(LOC.Get("PARAM_AutoMerge_Error_Direct_Merge_Not_Supported", Patcher.Project.Descriptor.ProjectType))
         };
     }
 
@@ -281,7 +287,8 @@ public sealed class ParamRegulationAutoMerge
 
         var fs = Patcher.Project.VFS.VanillaRealFS;
         if (!fs.FileExists(relativePath))
-            throw new FileNotFoundException($"Current vanilla regulation was not found: {relativePath}");
+            throw new FileNotFoundException(
+                LOC.Get("PARAM_AutoMerge_Error_Current_Vanilla_Reg_Not_Found", relativePath));
 
         return ReadRegulation(fs.GetFile(relativePath).GetData().ToArray());
     }
@@ -303,7 +310,7 @@ public sealed class ParamRegulationAutoMerge
                 SFUtil.EncryptDS3Regulation(path, binder);
                 break;
             default:
-                throw new NotSupportedException($"Direct regulation merge is not supported for {Patcher.Project.Descriptor.ProjectType}.");
+                throw new NotSupportedException(LOC.Get("PARAM_AutoMerge_Error_Direct_Merge_Not_Supported", Patcher.Project.Descriptor.ProjectType));
         }
     }
 
@@ -332,7 +339,7 @@ public sealed class ParamRegulationAutoMerge
                 var param = Param.ReadIgnoreCompression(file.Bytes);
                 if (!PrepareParamType(paramName, param, originalParamTypes))
                 {
-                    var message = $"{paramName}: no compatible ParamDef/ParamType mapping was found; skipped.";
+                    var message = LOC.Get("PARAM_AutoMerge_Error_ParamParse_No_Compatible_ParamDefType", paramName);
                     if (strict)
                         throw new InvalidDataException(message);
 
@@ -349,9 +356,10 @@ public sealed class ParamRegulationAutoMerge
             catch (Exception ex)
             {
                 if (strict)
-                    throw new InvalidDataException($"Failed to parse {paramName}: {ex.Message}", ex);
+                    throw new InvalidDataException(
+                        LOC.Get("PARAM_AutoMerge_Error_ParamParse_Failed", paramName, ex.Message), ex);
 
-                warnings?.Add($"{paramName}: failed to parse and was skipped ({ex.Message}).");
+                warnings?.Add(LOC.Get("PARAM_AutoMerge_Warning_ParamParse_Failed", paramName, ex.Message));
             }
         }
 
@@ -413,37 +421,48 @@ public sealed class ParamRegulationAutoMerge
         var infoPath = Path.Join(assetRoot, "Upgrader Information.json");
 
         if (!File.Exists(infoPath))
-            throw new FileNotFoundException($"Param Upgrader information was not found: {infoPath}");
+        {
+            throw new FileNotFoundException(
+                LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_Not_Found", infoPath));
+        }
 
         var infoJson = File.ReadAllText(infoPath);
         var info = JsonSerializer.Deserialize(
             infoJson, ParamEditorJsonSerializerContext.Default.ParamUpgraderInfo);
 
         if (info == null)
-            throw new InvalidDataException("Param Upgrader information could not be loaded.");
+        {
+            throw new InvalidDataException(LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_Not_Loaded"));
+        }
 
         var sourceVersionText = ParamUtils.ParseRegulationVersion(sourceVersion);
         var entry = info.RegulationEntries.FirstOrDefault(e => e.Version == sourceVersionText);
         if (entry == null)
         {
             throw new InvalidDataException(
-                $"Smithbox does not contain Param Upgrader baseline data for {sourceVersionText}. " +
-                "Upgrade this regulation manually first or use a Smithbox build that supports that version.");
+                LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_No_Data", sourceVersionText));
         }
 
         var regulationPath = Path.Join(assetRoot, "Regulations", entry.Folder, "regulation.bin");
         if (!File.Exists(regulationPath))
-            throw new FileNotFoundException($"Historical vanilla regulation was not found: {regulationPath}");
+        {
+            throw new FileNotFoundException(
+                LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_Vanilla_Reg_Not_Found", regulationPath));
+        }
 
         using var oldVanillaBinder = ReadRegulation(regulationPath);
         if (!ulong.TryParse(oldVanillaBinder.Version, out var oldVersion))
-            throw new InvalidDataException("Historical vanilla regulation does not contain a valid parameter version.");
+        {
+            throw new InvalidDataException(
+                LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_Invalid_Vanilla_Reg"));
+        }
 
         if (oldVersion != sourceVersion)
         {
+            var oldVer = ParamUtils.ParseRegulationVersion(oldVersion);
+
             throw new InvalidDataException(
-                $"Historical vanilla version {ParamUtils.ParseRegulationVersion(oldVersion)} does not match " +
-                $"the source version {sourceVersionText}.");
+                LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_Version_Mismatch", oldVer, sourceVersionText));
         }
 
         return ParseBinderParams(oldVanillaBinder, oldVersion, warnings, strict: false);
@@ -494,8 +513,7 @@ public sealed class ParamRegulationAutoMerge
         if (removedParams > 0 || removedFields > 0)
         {
             warnings?.Add(
-                $"Automatic upgrade skipped {removedParams} obsolete params and {removedFields} fields " +
-                "that do not exist in the loaded version.");
+                LOC.Get("PARAM_AutoMerge_Error_Auto_Upgrade_Skipped_Elements", removedParams, removedFields));
         }
     }
 
@@ -517,7 +535,9 @@ public sealed class ParamRegulationAutoMerge
         {
             if (!baselineParams.TryGetValue(pair.Key, out var vanillaParam))
             {
-                warnings?.Add($"{pair.Key}: not present in the comparison vanilla regulation; skipped.");
+                warnings?.Add(
+                    LOC.Get("PARAM_AutoMerge_Error_Build_Delta_Skipped_Param", pair.Key));
+
                 continue;
             }
 
@@ -661,10 +681,15 @@ public sealed class ParamRegulationAutoMerge
         foreach (var paramDelta in patch.Params)
         {
             if (!paramsByName.TryGetValue(paramDelta.Name, out var param))
-                throw new InvalidDataException($"Base regulation is missing parameter {paramDelta.Name}.");
+            {
+                throw new InvalidDataException(
+                    LOC.Get("PARAM_AutoMerge_Error_Base_Reg_Missing_Param", paramDelta.Name));
+            }
 
             foreach (var rowDelta in paramDelta.Rows)
+            {
                 ApplyRowDelta(paramDelta.Name, param, rowDelta);
+            }
         }
     }
 
@@ -687,7 +712,11 @@ public sealed class ParamRegulationAutoMerge
             {
                 template = FindVanillaRow(paramName, rowDelta.ID, rowDelta.Index);
                 if (template == null)
-                    throw new InvalidDataException($"Cannot reconstruct {paramName} row {rowDelta.ID}:{rowDelta.Index} from vanilla.");
+                {
+                    throw new InvalidDataException(
+                        LOC.Get("PARAM_AutoMerge_Error_Row_Delta_Failed_Reconstruction",
+                        paramName, rowDelta.ID, rowDelta.Index));
+                }
             }
             else
             {
@@ -695,7 +724,10 @@ public sealed class ParamRegulationAutoMerge
                     Patcher.Project.Handler.ParamData.VanillaBank.Params[paramName].Rows.FirstOrDefault();
 
                 if (template == null)
-                    throw new InvalidDataException($"Cannot add a row to empty parameter {paramName}; no template row exists.");
+                {
+                    throw new InvalidDataException(
+                        LOC.Get("PARAM_AutoMerge_Error_Row_Delta_Failed_Add", paramName));
+                }
             }
 
             existing = new Param.Row(template, param)

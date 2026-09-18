@@ -9,109 +9,304 @@
       "Text": "Mod folder not found: {0}"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Error_Invalid_Analysis",
+      "Text": "Analyze the mod folders successfully before building the merged mod."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Error_No_Output_Folder",
+      "Text": "Choose an output folder."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Error_Output_Folder_Not_Empty",
+      "Text": "The output folder is not empty. Choose a new/empty folder so Auto Merge never deletes unrelated files."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Error_Unresolved_Conflict",
+      "Text": "Unresolved conflict: {0}"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Conflict_Same_File_Path_Diff_Binary_Data",
+      "Text": "The same file path has different binary data and no safe structured merger is available."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Conflict_Unsupported_Regulation_Merge",
+      "Text": "Structured regulation merge is not supported for this project. Supported: {0}"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Conflict_Diff_Field_Values",
+      "Text": "Different field values: {0} vs {1}"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Conflict_Diff_Row_States",
+      "Text": "Different row states: {0} vs {1}"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Warning_Binder_Merge_Skipped",
+      "Text": "{0}: binder merge skipped ({1})"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Failed_Binder_Rebuild",
+      "Text": "Could not rebuild binder {0}: {1}"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Unsupported_Binder_Format",
+      "Text": "unsupported binder format"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Binder_Merge_Unresolved_Conflicts",
+      "Text": "Binder {0} still has unresolved conflicts."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Conflict_Binder_Merge_Diff_Data",
+      "Text": "Both binders contain this entry with different data. No safe semantic merger is available for this entry type."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff",
+      "Text": "MATBIN parameter types differ; choose which parameter definition to keep."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_Scalar",
+      "Text": "MATBIN parameter values differ and cannot be edited safely as a scalar."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_String",
+      "Text": "MATBIN string value differs."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_Bool",
+      "Text": "MATBIN boolean value differs."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Matbin_Merge_Invalid_Bool_Input",
+      "Text": "Invalid manual boolean value for {0}: {1}"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_Int",
+      "Text": "MATBIN integer value differs."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Matbin_Merge_Invalid_Int_Input",
+      "Text": "Invalid manual integer value for {0}: {1}"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_Uint",
+      "Text": "MATBIN unsigned integer value differs."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Matbin_Merge_Invalid_UInt_Input",
+      "Text": "Invalid manual unsigned integer value for {0}: {1}"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_Float",
+      "Text": "MATBIN floating-point value differs."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Matbin_Merge_Invalid_Float_Input",
+      "Text": "Invalid manual floating-point value for {0}: {1}"
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Error_Output_Folder_Must_Be_Unique",
+      "Text": "The output folder must be different from every source mod folder."
     },
     {
-      "Key": "PARAM_AutoMerge_",
-      "Text": ""
+      "Key": "PARAM_AutoMerge_Error_Output_Folder_Not_Source_Folder",
+      "Text": "The output folder must not be inside a source mod folder."
     },
-    
+    {
+      "Key": "PARAM_AutoMerge_Error_Source_Folder_Not_Output_Folder",
+      "Text": "A source mod folder must not be inside the output folder."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Merge_Source_Missing",
+      "Text": "Merge source file was not found."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Title",
+      "Text": "Project Merge Report"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Generation_Date",
+      "Text": "Generated: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Conflict_Strat",
+      "Text": "Conflict strategy: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Sources",
+      "Text": "Sources: "
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Scanned_Files",
+      "Text": "Scanned files: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Unique_Files_Copied",
+      "Text": "Unique files copied: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Identical_Duplicate_Files",
+      "Text": "Identical duplicate files: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Binder_Files_Merged",
+      "Text": "Binder files merged: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Regulation_Files_Merged",
+      "Text": "Regulation files merged: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Ignored_Metadata_Files",
+      "Text": "Ignored metadata files: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Conflicts",
+      "Text": "Conflicts: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Resolved_Conflicts",
+      "Text": "Resolved conflicts: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Unresolved_Conflicts",
+      "Text": "Unresolved conflicts: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Warnings_Title",
+      "Text": "Warnings: "
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Conflicts_Title",
+      "Text": "Conflicts: "
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Values",
+      "Text": "Values: "
+    },
+    {
+      "Key": "PARAM_AutoMerge_Report_Resolution",
+      "Text": "Resolution: "
+    },
+    {
+      "Key": "PARAM_AutoMerge_RegulationMerge_Supported_Hint",
+      "Text": "Elden Ring, Armored Core VI, Nightreign and Dark Souls III"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Select_Two_Regulations",
+      "Text": "Select at least two regulation files."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_File_Not_Found",
+      "Text": "File not found: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Invalid_Regulation_Merge",
+      "Text": "Analyze the regulation files successfully before building an output file."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Missing_Regulation_Source",
+      "Text": "No regulation source is available."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Missing_Regulation_Output_Path",
+      "Text": "Choose an output path for the merged regulation file."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Regulation_Output_Collision",
+      "Text": "The output path must not overwrite one of the input regulation files."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Invalid_Vanilla_Param_Version",
+      "Text": "The current vanilla regulation does not contain a valid parameter version."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Mismatched_Vanilla_Param_Version",
+      "Text": "The vanilla regulation version {0} does not match the loaded project version {1}."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Invalid_Param_Version",
+      "Text": "The regulation does not contain a valid parameter version."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Mismatched_Param_Version",
+      "Text": "The regulation version {0} does not match the loaded project {1}."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Auto_Reg_Upgrade_Not_Available",
+      "Text": "Automatic regulation upgrade is only available for Elden Ring, Armored Core VI and Nightreign.\nThe source version is {0}, loaded project version is {1}."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Auto_Reg_Upgrade_Not_Supported",
+      "Text": "Automatic downgrade is not supported. Source version {0} is newer than the loaded project version {1}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Warning_Auto_Upgrade_Complete",
+      "Text": "{0}: automatically upgraded param changes for {1} -> {2} - using Smithbox Param Upgrader historical vanilla data."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Direct_Merge_Not_Supported",
+      "Text": "Direct regulation merge is not supported for {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Current_Vanilla_Reg_Not_Found",
+      "Text": "Current vanilla regulation was not found: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_ParamParse_No_Compatible_ParamDefType",
+      "Text": "{0}: no compatible ParamDef/ParamType mapping was found; skipped."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_ParamParse_Failed",
+      "Text": "Failed to parse {0}: {1}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Warning_ParamParse_Failed",
+      "Text": "{0}: failed to parse and was skipped ({1})."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_ParamUpgrader_Not_Found",
+      "Text": "Param Upgrader information was not found: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_ParamUpgrader_Not_Loaded",
+      "Text": "Param Upgrader information could not be loaded."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_ParamUpgrader_No_Data",
+      "Text": "Smithbox does not contain Param Upgrader baseline data for {0}. Upgrade this regulation manually first or use a Smithbox build that supports that version."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_ParamUpgrader_Vanilla_Reg_Not_Found",
+      "Text": "Historical vanilla regulation was not found: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_ParamUpgrader_Invalid_Vanilla_Reg",
+      "Text": "Historical vanilla regulation does not contain a valid parameter version."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_ParamUpgrader_Version_Mismatch",
+      "Text": "Historical vanilla version {0} does not match the source version {1}."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Auto_Upgrade_Skipped_Elements",
+      "Text": "Automatic upgrade skipped {0} obsolete params and {1} fields that do not exist in the loaded version."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Build_Delta_Skipped_Param",
+      "Text": "{0}: not present in the comparison vanilla regulation; skipped."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Base_Reg_Missing_Param",
+      "Text": "Base regulation is missing parameter {0}."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Row_Delta_Failed_Reconstruction",
+      "Text": "Cannot reconstruct {0} row {1}:{2} from vanilla."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Row_Delta_Failed_Add",
+      "Text": "Cannot add a row to empty parameter {0}; no template row exists."
+    }
   ]
 }

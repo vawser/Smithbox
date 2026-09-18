@@ -249,19 +249,18 @@ public sealed class ParamFullModAutoMerge
         bool writeReport)
     {
         if (analysis == null || !analysis.CanBuild)
-            throw new InvalidOperationException("Analyze the mod folders successfully before building the merged mod.");
+            throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Error_Invalid_Analysis"));
 
         outputFolder = NormalizeUserPath(outputFolder);
         if (string.IsNullOrWhiteSpace(outputFolder))
-            throw new InvalidOperationException("Choose an output folder.");
+            throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Error_No_Output_Folder"));
 
         var outputFullPath = Path.GetFullPath(outputFolder);
         ValidateOutputFolder(analysis.SourceFolders, outputFullPath);
 
         if (Directory.Exists(outputFullPath) && Directory.EnumerateFileSystemEntries(outputFullPath).Any())
         {
-            throw new InvalidOperationException(
-                "The output folder is not empty. Choose a new/empty folder so Auto Merge never deletes unrelated files.");
+            throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Error_Output_Folder_Not_Empty"));
         }
 
         Directory.CreateDirectory(outputFullPath);
@@ -304,7 +303,7 @@ public sealed class ParamFullModAutoMerge
                         : EffectiveResolution(conflict.Resolution, analysis.Strategy);
 
                     if (resolution == FullModConflictResolution.Unresolved)
-                        throw new InvalidOperationException($"Unresolved conflict: {plan.RelativePath}");
+                        throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Error_Unresolved_Conflict", plan.RelativePath));
 
                     var source = resolution == FullModConflictResolution.UseLater
                         ? plan.SourcePaths[^1]
@@ -316,7 +315,9 @@ public sealed class ParamFullModAutoMerge
         }
 
         if (writeReport)
+        {
             WriteReport(analysis, Path.Combine(outputFullPath, "SMITHBOX_MERGE_REPORT.txt"));
+        }
     }
 
     private void AnalyzeFileGroup(
@@ -367,7 +368,7 @@ public sealed class ParamFullModAutoMerge
             RelativePath = relativePath,
             ExistingSource = SourceLabel(sourcePaths[0]),
             IncomingSource = SourceLabel(sourcePaths[^1]),
-            Message = "The same file path has different binary data and no safe structured merger is available.",
+            Message = LOC.Get("PARAM_AutoMerge_Conflict_Same_File_Path_Diff_Binary_Data"),
             Resolution = ResolutionFromStrategy(analysis.Strategy)
         });
         analysis.Files.Add(plan);
@@ -385,7 +386,7 @@ public sealed class ParamFullModAutoMerge
                 RelativePath = plan.RelativePath,
                 ExistingSource = SourceLabel(plan.SourcePaths[0]),
                 IncomingSource = SourceLabel(plan.SourcePaths[^1]),
-                Message = $"Structured regulation merge is not supported for this project. Supported: {RegulationMerge.SupportedProjectText}.",
+                Message = LOC.Get("PARAM_AutoMerge_Conflict_Unsupported_Regulation_Merge", RegulationMerge.SupportedProjectText),
                 Resolution = ResolutionFromStrategy(analysis.Strategy)
             });
             return;
@@ -395,10 +396,14 @@ public sealed class ParamFullModAutoMerge
         analysis.RegulationAnalysis = regulationAnalysis;
 
         foreach (var warning in regulationAnalysis.Warnings)
+        {
             analysis.Warnings.Add($"regulation.bin: {warning}");
+        }
 
         foreach (var error in regulationAnalysis.Errors)
+        {
             analysis.Errors.Add($"regulation.bin: {error}");
+        }
 
         if (regulationAnalysis.MergeResult != null)
         {
@@ -414,8 +419,8 @@ public sealed class ParamFullModAutoMerge
                     ExistingSource = conflict.ExistingSource,
                     IncomingSource = conflict.IncomingSource,
                     Message = conflict.Type == ParamDeltaMergeConflictType.FieldValue
-                        ? $"Different field values: {conflict.ExistingValue} vs {conflict.IncomingValue}"
-                        : $"Different row states: {conflict.ExistingState} vs {conflict.IncomingState}",
+                        ? LOC.Get("PARAM_AutoMerge_Conflict_Diff_Field_Values", conflict.ExistingValue, conflict.IncomingValue)
+                        : LOC.Get("PARAM_AutoMerge_Conflict_Diff_Row_States", conflict.ExistingState, conflict.IncomingState),
                     Resolution = conflict.Resolution switch
                     {
                         ParamDeltaConflictResolution.UseEarlier => FullModConflictResolution.UseEarlier,
@@ -444,7 +449,10 @@ public sealed class ParamFullModAutoMerge
                 out var error))
         {
             if (!string.IsNullOrWhiteSpace(error))
-                analysis.Warnings.Add($"{plan.RelativePath}: binder merge skipped ({error})");
+            {
+                analysis.Warnings.Add(LOC.Get("PARAM_AutoMerge_Warning_Binder_Merge_Skipped", plan.RelativePath, error));
+            }
+
             return false;
         }
 
@@ -477,12 +485,15 @@ public sealed class ParamFullModAutoMerge
                 out _,
                 out var error))
         {
+            var errorArg = error ?? LOC.Get("PARAM_AutoMerge_Unsupported_Binder_Format");
             throw new InvalidOperationException(
-                $"Could not rebuild binder {relativePath}: {error ?? "unsupported binder format"}");
+                LOC.Get("PARAM_AutoMerge_Failed_Binder_Rebuild", relativePath, errorArg));
         }
 
         if (conflicts.Any(e => EffectiveResolution(e.Resolution, analysis.Strategy) == FullModConflictResolution.Unresolved))
-            throw new InvalidOperationException($"Binder {relativePath} still has unresolved conflicts.");
+        {
+            throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Binder_Merge_Unresolved_Conflicts", relativePath));
+        }
     }
 
     private bool TryMergeBinderFiles(
@@ -640,7 +651,7 @@ public sealed class ParamFullModAutoMerge
                 InternalPath = internalPath,
                 ExistingSource = existingSource,
                 IncomingSource = incomingSource,
-                Message = "Both binders contain this entry with different data. No safe semantic merger is available for this entry type.",
+                Message = LOC.Get("PARAM_AutoMerge_Conflict_Binder_Merge_Diff_Data"),
                 Resolution = ResolutionFromStrategy(strategy)
             };
 
@@ -724,7 +735,7 @@ public sealed class ParamFullModAutoMerge
                         existingSource, incomingSource,
                         existingParam.Type.ToString(), incomingParam.Type.ToString(),
                         FullModConflictValueKind.None,
-                        "MATBIN parameter types differ; choose which parameter definition to keep.",
+                        LOC.Get("PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff"),
                         resolutionMap);
                     conflicts.Add(conflict);
                     if (EffectiveResolution(conflict.Resolution, strategy) == FullModConflictResolution.UseLater)
@@ -895,9 +906,11 @@ public sealed class ParamFullModAutoMerge
             existingSource, incomingSource,
             FormatMatbinValue(existingParam.Value), FormatMatbinValue(incomingParam.Value),
             FullModConflictValueKind.None,
-            "MATBIN parameter values differ and cannot be edited safely as a scalar.",
+            LOC.Get("PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_Scalar"),
             resolutionMap);
+
         conflicts.Add(conflict);
+
         if (EffectiveResolution(conflict.Resolution, strategy) == FullModConflictResolution.UseLater)
         {
             existingParam.Type = incomingParam.Type;
@@ -914,16 +927,23 @@ public sealed class ParamFullModAutoMerge
     {
         if (string.Equals(existingValue, incomingValue, StringComparison.Ordinal))
             return;
+
         var conflict = CreateMatbinConflict(
             strategy, relativePath, $"{internalPath} :: MATBIN/{property}", existingSource, incomingSource,
             existingValue ?? "", incomingValue ?? "", FullModConflictValueKind.String,
-            "MATBIN string value differs.", resolutionMap);
+            LOC.Get("PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_String"), resolutionMap);
+
         conflicts.Add(conflict);
         var resolution = EffectiveResolution(conflict.Resolution, strategy);
+
         if (resolution == FullModConflictResolution.UseLater)
+        {
             setter(incomingValue);
+        }
         else if (resolution == FullModConflictResolution.Manual)
+        {
             setter(conflict.ManualValue ?? "");
+        }
     }
 
     private void MergeMatbinBool(
@@ -934,18 +954,27 @@ public sealed class ParamFullModAutoMerge
     {
         if (existingValue == incomingValue)
             return;
+
         var conflict = CreateMatbinConflict(
             strategy, relativePath, $"{internalPath} :: MATBIN/{property}", existingSource, incomingSource,
             existingValue.ToString(), incomingValue.ToString(), FullModConflictValueKind.Bool,
-            "MATBIN boolean value differs.", resolutionMap);
+            LOC.Get("PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_Bool"), resolutionMap);
+
         conflicts.Add(conflict);
+
         var resolution = EffectiveResolution(conflict.Resolution, strategy);
+
         if (resolution == FullModConflictResolution.UseLater)
+        {
             setter(incomingValue);
+        }
         else if (resolution == FullModConflictResolution.Manual)
         {
             if (!bool.TryParse(conflict.ManualValue, out var value))
-                throw new FormatException($"Invalid manual boolean value for {conflict.InternalPath}: {conflict.ManualValue}");
+            {
+                throw new FormatException(LOC.Get("PARAM_AutoMerge_Matbin_Merge_Invalid_Bool_Input", conflict.InternalPath, conflict.ManualValue));
+            }
+
             setter(value);
         }
     }
@@ -958,18 +987,27 @@ public sealed class ParamFullModAutoMerge
     {
         if (existingValue == incomingValue)
             return;
+
         var conflict = CreateMatbinConflict(
             strategy, relativePath, $"{internalPath} :: MATBIN/{property}", existingSource, incomingSource,
             existingValue.ToString(CultureInfo.InvariantCulture), incomingValue.ToString(CultureInfo.InvariantCulture), FullModConflictValueKind.Int,
-            "MATBIN integer value differs.", resolutionMap);
+            LOC.Get("PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_Int"), resolutionMap);
+
         conflicts.Add(conflict);
+
         var resolution = EffectiveResolution(conflict.Resolution, strategy);
+
         if (resolution == FullModConflictResolution.UseLater)
+        {
             setter(incomingValue);
+        }
         else if (resolution == FullModConflictResolution.Manual)
         {
             if (!int.TryParse(conflict.ManualValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
-                throw new FormatException($"Invalid manual integer value for {conflict.InternalPath}: {conflict.ManualValue}");
+            {
+                throw new FormatException(LOC.Get("PARAM_AutoMerge_Matbin_Merge_Invalid_Int_Input", conflict.InternalPath, conflict.ManualValue));
+            }
+
             setter(value);
         }
     }
@@ -982,18 +1020,27 @@ public sealed class ParamFullModAutoMerge
     {
         if (existingValue == incomingValue)
             return;
+
         var conflict = CreateMatbinConflict(
             strategy, relativePath, $"{internalPath} :: MATBIN/{property}", existingSource, incomingSource,
             existingValue.ToString(CultureInfo.InvariantCulture), incomingValue.ToString(CultureInfo.InvariantCulture), FullModConflictValueKind.UInt,
-            "MATBIN unsigned integer value differs.", resolutionMap);
+            LOC.Get("PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_Uint"), resolutionMap);
+
         conflicts.Add(conflict);
+
         var resolution = EffectiveResolution(conflict.Resolution, strategy);
+
         if (resolution == FullModConflictResolution.UseLater)
+        {
             setter(incomingValue);
+        }
         else if (resolution == FullModConflictResolution.Manual)
         {
             if (!uint.TryParse(conflict.ManualValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
-                throw new FormatException($"Invalid manual unsigned integer value for {conflict.InternalPath}: {conflict.ManualValue}");
+            {
+                throw new FormatException(LOC.Get("PARAM_AutoMerge_Matbin_Merge_Invalid_UInt_Input", conflict.InternalPath, conflict.ManualValue));
+            }
+
             setter(value);
         }
     }
@@ -1006,18 +1053,27 @@ public sealed class ParamFullModAutoMerge
     {
         if (existingValue.Equals(incomingValue))
             return;
+
         var conflict = CreateMatbinConflict(
             strategy, relativePath, $"{internalPath} :: MATBIN/{property}", existingSource, incomingSource,
             existingValue.ToString("R", CultureInfo.InvariantCulture), incomingValue.ToString("R", CultureInfo.InvariantCulture), FullModConflictValueKind.Float,
-            "MATBIN floating-point value differs.", resolutionMap);
+            LOC.Get("PARAM_AutoMerge_Matbin_Merge_Param_Type_Diff_Float"), resolutionMap);
+
         conflicts.Add(conflict);
+
         var resolution = EffectiveResolution(conflict.Resolution, strategy);
+
         if (resolution == FullModConflictResolution.UseLater)
+        {
             setter(incomingValue);
+        }
         else if (resolution == FullModConflictResolution.Manual)
         {
             if (!float.TryParse(conflict.ManualValue, NumberStyles.Float, CultureInfo.InvariantCulture, out var value))
-                throw new FormatException($"Invalid manual floating-point value for {conflict.InternalPath}: {conflict.ManualValue}");
+            {
+                throw new FormatException(LOC.Get("PARAM_AutoMerge_Matbin_Merge_Invalid_Float_Input", conflict.InternalPath, conflict.ManualValue));
+            }
+
             setter(value);
         }
     }
@@ -1289,13 +1345,13 @@ public sealed class ParamFullModAutoMerge
                 .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
 
             if (string.Equals(sourceFullPath, output, StringComparison.OrdinalIgnoreCase))
-                throw new InvalidOperationException("The output folder must be different from every source mod folder.");
+                throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Error_Output_Folder_Must_Be_Unique"));
 
             if (IsSubPathOf(output, sourceFullPath))
-                throw new InvalidOperationException("The output folder must not be inside a source mod folder.");
+                throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Error_Output_Folder_Not_Source_Folder"));
 
             if (IsSubPathOf(sourceFullPath, output))
-                throw new InvalidOperationException("A source mod folder must not be inside the output folder.");
+                throw new InvalidOperationException(LOC.Get("PARAM_AutoMerge_Error_Source_Folder_Not_Output_Folder"));
         }
     }
 
@@ -1309,7 +1365,9 @@ public sealed class ParamFullModAutoMerge
     private static void CopyFile(string source, string destination)
     {
         if (string.IsNullOrWhiteSpace(source) || !File.Exists(source))
-            throw new FileNotFoundException("Merge source file was not found.", source);
+        {
+            throw new FileNotFoundException(LOC.Get("PARAM_AutoMerge_Error_Merge_Source_Missing"), source);
+        }
 
         File.Copy(source, destination, overwrite: true);
     }
@@ -1317,29 +1375,31 @@ public sealed class ParamFullModAutoMerge
     private static void WriteReport(FullModMergeAnalysis analysis, string path)
     {
         var builder = new StringBuilder();
-        builder.AppendLine("Smithbox Full Mod Auto Merge Report");
-        builder.AppendLine($"Generated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
-        builder.AppendLine($"Conflict strategy: {analysis.Strategy}");
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Title"));
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Generation_Date", $"{DateTime.Now:yyyy-MM-dd HH:mm:ss}"));
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Conflict_Strat", analysis.Strategy));
         builder.AppendLine();
-        builder.AppendLine("Sources:");
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Sources"));
         foreach (var source in analysis.SourceFolders)
+        {
             builder.AppendLine($"  - {source}");
+        }
 
         builder.AppendLine();
-        builder.AppendLine($"Scanned files: {analysis.ScannedFiles}");
-        builder.AppendLine($"Unique files copied: {analysis.UniqueFiles}");
-        builder.AppendLine($"Identical duplicate files: {analysis.IdenticalFiles}");
-        builder.AppendLine($"Binder files merged: {analysis.BinderFiles}");
-        builder.AppendLine($"Regulation files merged: {analysis.RegulationFiles}");
-        builder.AppendLine($"Ignored metadata files: {analysis.IgnoredFiles}");
-        builder.AppendLine($"Conflicts: {analysis.Conflicts.Count}");
-        builder.AppendLine($"Resolved conflicts: {analysis.Conflicts.Count(e => e.IsResolved)}");
-        builder.AppendLine($"Unresolved conflicts: {analysis.Conflicts.Count(e => !e.IsResolved)}");
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Scanned_Files", analysis.ScannedFiles));
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Unique_Files_Copied", analysis.UniqueFiles));
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Identical_Duplicate_Files", analysis.IdenticalFiles));
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Binder_Files_Merged", analysis.BinderFiles));
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Regulation_Files_Merged", analysis.RegulationFiles));
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Ignored_Metadata_Files", analysis.IgnoredFiles));
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Conflicts", analysis.Conflicts.Count));
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Resolved_Conflicts", analysis.Conflicts.Count(e => e.IsResolved)));
+        builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Unresolved_Conflicts", analysis.Conflicts.Count(e => !e.IsResolved)));
 
         if (analysis.Warnings.Count > 0)
         {
             builder.AppendLine();
-            builder.AppendLine("Warnings:");
+            builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Warnings_Title"));
             foreach (var warning in analysis.Warnings)
                 builder.AppendLine($"  - {warning}");
         }
@@ -1347,7 +1407,7 @@ public sealed class ParamFullModAutoMerge
         if (analysis.Conflicts.Count > 0)
         {
             builder.AppendLine();
-            builder.AppendLine("Conflicts:");
+            builder.AppendLine(LOC.Get("PARAM_AutoMerge_Report_Conflicts_Title"));
             foreach (var conflict in analysis.Conflicts)
             {
                 var internalPart = string.IsNullOrWhiteSpace(conflict.InternalPath)
@@ -1356,9 +1416,13 @@ public sealed class ParamFullModAutoMerge
                 builder.AppendLine($"  - [{conflict.Type}] {conflict.RelativePath}{internalPart}");
                 builder.AppendLine($"      {conflict.ExistingSource} <-> {conflict.IncomingSource}");
                 builder.AppendLine($"      {conflict.Message}");
+
                 if (!string.IsNullOrWhiteSpace(conflict.ExistingValue) || !string.IsNullOrWhiteSpace(conflict.IncomingValue))
-                    builder.AppendLine($"      Values: {conflict.ExistingValue} <-> {conflict.IncomingValue}");
-                builder.AppendLine($"      Resolution: {conflict.Resolution}" +
+                {
+                    builder.AppendLine($"      {LOC.Get("PARAM_AutoMerge_Report_Values")}{conflict.ExistingValue} <-> {conflict.IncomingValue}");
+                }
+
+                builder.AppendLine($"      {LOC.Get("PARAM_AutoMerge_Report_Resolution")}{conflict.Resolution}" +
                     (conflict.Resolution == FullModConflictResolution.Manual ? $" ({conflict.ManualValue})" : ""));
             }
         }
