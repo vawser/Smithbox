@@ -139,7 +139,23 @@ namespace HKX2
 
         public List<sbyte> ReadSByteArray(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            // Consume pointer
+            br.AssertUInt64(0);
+            uint size = br.ReadUInt32();
+            br.ReadUInt32(); // Capacity and flags
+            var res = new List<sbyte>();
+            if (size > 0)
+            {
+                // Do a local fixup lookup
+                var f = _dataSection._localMap[(uint)br.Position - 16];
+                br.StepIn(f.Dst);
+                for (int i = 0; i < size; i++)
+                {
+                    res.Add(br.ReadSByte());
+                }
+                br.StepOut();
+            }
+            return res;
         }
 
         public List<ushort> ReadUInt16Array(BinaryReaderEx br)
@@ -165,7 +181,23 @@ namespace HKX2
 
         public List<short> ReadInt16Array(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            // Consume pointer
+            br.AssertUInt64(0);
+            uint size = br.ReadUInt32();
+            br.ReadUInt32(); // Capacity and flags
+            var res = new List<short>();
+            if (size > 0)
+            {
+                // Do a local fixup lookup
+                var f = _dataSection._localMap[(uint)br.Position - 16];
+                br.StepIn(f.Dst);
+                for (int i = 0; i < size; i++)
+                {
+                    res.Add(br.ReadInt16());
+                }
+                br.StepOut();
+            }
+            return res;
         }
 
         public List<uint> ReadUInt32Array(BinaryReaderEx br)
@@ -233,7 +265,23 @@ namespace HKX2
 
         public List<long> ReadInt64Array(BinaryReaderEx br)
         {
-            throw new NotImplementedException();
+            // Consume pointer
+            br.AssertUInt64(0);
+            uint size = br.ReadUInt32();
+            br.ReadUInt32(); // Capacity and flags
+            var res = new List<long>();
+            if (size > 0)
+            {
+                // Do a local fixup lookup
+                var f = _dataSection._localMap[(uint)br.Position - 16];
+                br.StepIn(f.Dst);
+                for (int i = 0; i < size; i++)
+                {
+                    res.Add(br.ReadInt64());
+                }
+                br.StepOut();
+            }
+            return res;
         }
 
         public List<float> ReadSingleArray(BinaryReaderEx br)

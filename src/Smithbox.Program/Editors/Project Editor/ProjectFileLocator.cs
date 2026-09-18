@@ -487,13 +487,7 @@ public class ProjectFileLocator : IDisposable
             }
 
             // Cutscene
-            if (ext == "cutscenebnd" && !isSd)
-            {
-                havokCutsceneFiles.Add(entry);
-            }
-
-            // Cutscene
-            if (ext == "cutscenebnd" && !isSd)
+            if ((ext == "cutscenebnd" || ext == "remobnd") && !isSd)
             {
                 havokCutsceneFiles.Add(entry);
             }
@@ -588,6 +582,9 @@ public class ProjectFileLocator : IDisposable
     {
         return projectType switch
         {
+            ProjectType.DS1 => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
+            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/obj"),
+            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
             ProjectType.ER or ProjectType.AC6 or ProjectType.NR => entry.Extension == "geomhkxbnd" && entry.Folder.StartsWith("/asset") && !isSd,
             _ => false
         };
@@ -624,7 +621,7 @@ public class ProjectFileLocator : IDisposable
     {
         return projectType switch
         {
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => isMap && entry.Extension == "nvmhktbnd" && !isSd,
+            ProjectType.DS3 or ProjectType.SDT or ProjectType.BB or ProjectType.ER or ProjectType.AC6 or ProjectType.NR => isMap && entry.Extension == "nvmhktbnd" && !isSd,
             _ => false
         };
     }

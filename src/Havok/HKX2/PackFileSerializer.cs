@@ -124,7 +124,10 @@ namespace HKX2
 
         public void WriteSByteArray(BinaryWriterEx bw, List<sbyte> d)
         {
-            throw new NotImplementedException();
+            WriteArrayBase(bw, d, (e) =>
+            {
+                bw.WriteSByte(e);
+            });
         }
 
         public void WriteUInt16Array(BinaryWriterEx bw, List<ushort> d)
@@ -137,7 +140,10 @@ namespace HKX2
 
         public void WriteInt16Array(BinaryWriterEx bw, List<short> d)
         {
-            throw new NotImplementedException();
+            WriteArrayBase(bw, d, (e) =>
+            {
+                bw.WriteInt16(e);
+            });
         }
 
         public void WriteUInt32Array(BinaryWriterEx bw, List<uint> d)
@@ -166,7 +172,10 @@ namespace HKX2
 
         public void WriteInt64Array(BinaryWriterEx bw, List<long> d)
         {
-            throw new NotImplementedException();
+            WriteArrayBase(bw, d, (e) =>
+            {
+                bw.WriteInt64(e);
+            });
         }
 
         public void WriteSingleArray(BinaryWriterEx bw, List<float> d)

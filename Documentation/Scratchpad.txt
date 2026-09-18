@@ -14,5 +14,3 @@
  - hk2016 for SDT
  - HKX2 for DES, DS1, DS2, DS3, BB
  
- - Fixup HKX2 stuff (missing some read types)
- 
