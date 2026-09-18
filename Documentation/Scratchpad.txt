@@ -16,5 +16,3 @@
  
  - Fixup HKX2 stuff (missing some read types)
  
-# Map Editor
-- Finish AutoMerge loc

@@ -147,6 +147,14 @@
     {
       "Key": "PARAM_ENUM_ParamRowCopyBehavior_ID_and_Name",
       "Text": "ID and Name"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportMode_Window",
+      "Text": "Output Window"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportMode_File",
+      "Text": "File"
     }
   ]
 }

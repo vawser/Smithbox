@@ -15,12 +15,19 @@ public static class ParamIO
 {
     private static readonly StringBuilder _reportBuilder = new StringBuilder();
 
-    public static string GenerateCSV(ProjectEntry project, IReadOnlyList<Param.Row> rows, Param param, char separator)
+    public static string GenerateCSV(ProjectEntry project, IReadOnlyList<Param.Row> rows, Param param, char separator, bool includeName = true, Dictionary<string, bool> includedFields = null)
     {
         _reportBuilder.Clear();
 
         // Columns
-        _reportBuilder.Append($@"ID{separator}Name{separator}");
+        if(includeName)
+        {
+            _reportBuilder.Append($@"ID{separator}Name");
+        }
+        else
+        {
+            _reportBuilder.Append($@"ID");
+        }
 
         var paramdef = param.AppliedParamdef;
 
@@ -28,7 +35,22 @@ public static class ParamIO
         {
             foreach (PARAMDEF.Field f in paramdef.Fields.FindAll(f => f.IsValidForRegulationVersion(project.Handler.ParamData.PrimaryBank.ParamVersion)))
             {
-                _reportBuilder.Append($@"{f.InternalName}{separator}");
+                if (includedFields == null)
+                {
+                    _reportBuilder.Append($@"{separator}{f.InternalName}");
+                }
+                else
+                {
+                    if(includedFields.ContainsKey(f.InternalName))
+                    {
+                        var canInclude = includedFields[f.InternalName];
+
+                        if (canInclude)
+                        {
+                            _reportBuilder.Append($@"{separator}{f.InternalName}");
+                        }
+                    }
+                }
             }
         }
 
@@ -38,11 +60,34 @@ public static class ParamIO
         foreach (Param.Row row in rows)
         {
             var name = row.Name == null ? "null" : row.Name.Replace(separator, '-');
-            _reportBuilder.Append($@"{row.ID}{separator}{name}");
+
+            if(includeName)
+            {
+                _reportBuilder.Append($@"{row.ID}{separator}{name}");
+            }
+            else
+            {
+                _reportBuilder.Append($@"{row.ID}");
+            }
 
             foreach (Param.Column cell in row.Columns)
             {
-                _reportBuilder.Append($@"{separator}{row[cell].Value.ToParamEditorString()}");
+                if (includedFields == null)
+                {
+                    _reportBuilder.Append($@"{separator}{row[cell].Value.ToParamEditorString()}");
+                }
+                else
+                {
+                    if (includedFields.ContainsKey(cell.Def.InternalName))
+                    {
+                        var canInclude = includedFields[cell.Def.InternalName];
+
+                        if (canInclude)
+                        {
+                            _reportBuilder.Append($@"{separator}{row[cell].Value.ToParamEditorString()}");
+                        }
+                    }
+                }
             }
 
             _reportBuilder.Append("\n");
@@ -99,16 +144,29 @@ public static class ParamIO
 
         // Parse header row to build column index map
         var headerLine = csvLines[0].Trim();
-        if (!headerLine.StartsWith($"ID{separator}Name"))
+        if (!headerLine.StartsWith($"ID{separator}"))
         {
             return (LOC.Get("PARAM_CSV_Missing_Header"), null);
         }
 
         var headerCols = headerLine.Split(separator);
 
+        var includesName = false;
+        if (headerCols.Length > 1)
+        {
+            var nameCol = headerCols[1];
+            if(nameCol == "Name")
+                includesName = true;
+        }
+
         // Map from field InternalName -> index in CSV columns
         var colIndexMap = new Dictionary<string, int>();
-        for (var i = 2; i < headerCols.Length; i++)
+
+        var startIndex = 1;
+        if (includesName)
+            startIndex = 2;
+
+        for (var i = startIndex; i < headerCols.Length; i++)
         {
             var colName = headerCols[i].Trim();
             if (!string.IsNullOrEmpty(colName))
@@ -132,8 +190,23 @@ public static class ParamIO
                 continue;
 
             var id = int.Parse(csvs[0]);
-            var name = csvs[1];
+
+            var name = "";
+            if (includesName)
+                name = csvs[1];
+
             Param.Row row = p[id];
+
+            if (!includesName)
+                name = row.Name;
+
+            // If a user only wants to import new rows from the CSV
+            if(CFG.Current.Param_CSV_Ignore_Existing_Rows)
+            {
+                if (row != null)
+                    continue;
+            }
+
             if (row == null || mayReplaceRow)
             {
                 row = new Param.Row(id, name, p);

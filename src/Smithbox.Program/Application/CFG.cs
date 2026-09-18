@@ -812,6 +812,7 @@ public class CFG
 
     public string Param_Import_Delimiter = ",";
 
+    public bool Param_CSV_Ignore_Existing_Rows = false;
     public bool Param_CSV_Append_Only = false;
     public bool Param_CSV_Replace_Row = false;
 
