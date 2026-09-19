@@ -12,5 +12,3 @@
  - Include warning when size is over 1GB
   - Add option to cull intra-day ones, keep earliest version for each day
  
-# Havok Editor
-- Add HKS reloader support for ER

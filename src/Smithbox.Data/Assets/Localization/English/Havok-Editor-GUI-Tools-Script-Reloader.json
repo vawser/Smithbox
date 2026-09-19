@@ -91,6 +91,10 @@
     {
       "Key": "HAVOK_ScriptReloader_Log_Reloaded_Script",
       "Text": "Reloaded havok script for {0}"
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Log_Reload_for_Old_DS3",
+      "Text": "Havok Script reload only works for the DarkSoulsIII executable 1.15.0"
     }
   ]
 }

@@ -73,7 +73,7 @@ public static class Memory
         EldenRing_CrashFixPtr = crashPatchOffset;
     }
 
-    public static void AttachProc(string procName)
+    public static void AttachProc(ProjectEntry project, string procName)
     {
         if (AttachedProcess != null && AttachedProcess?.HasExited != true)
             return;
@@ -95,7 +95,10 @@ public static class Memory
                 AttachedProcess = Process;
                 AttachedProcess.Exited += AttachedProcess_Exited;
 
-                UpdateEldenRingAobs();
+                if (project.Descriptor.ProjectType is ProjectType.ER)
+                {
+                    UpdateEldenRingAobs();
+                }
             }
             catch
             {

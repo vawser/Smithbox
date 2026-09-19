@@ -49,6 +49,7 @@ public class HavokScriptReloader : IDisposable
             }
             else
             {
+                GUI.Spacer();
                 GUI.WrappedText(LOC.Get("HAVOK_ScriptReloader_Not_Supported"));
             }
 
@@ -68,7 +69,7 @@ public class HavokScriptReloader : IDisposable
 
     public bool SupportsReloader()
     {
-        if (Project.Descriptor.ProjectType is ProjectType.ER)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.DS3)
             return true;
 
         return false;
@@ -178,7 +179,7 @@ public class HavokScriptReloader : IDisposable
             {
                 anySelected = true;
                 var name = entry.Key.Filename;
-                var success = HavokReload.RequestReloadChr(name);
+                var success = HavokReload.RequestReloadChr(Project, name);
 
                 if (success)
                 {
@@ -196,7 +197,7 @@ public class HavokScriptReloader : IDisposable
     private void ReloadScript(FileDictionaryEntry entry)
     {
         var name = entry.Filename;
-        var success = HavokReload.RequestReloadChr(name);
+        var success = HavokReload.RequestReloadChr(Project, name);
 
         if (success)
         {
@@ -237,7 +238,6 @@ public class HavokScriptReloader : IDisposable
         if (!DetectFileChanges)
             return;
 
-        // Add watchers for newly included files
         foreach (var kvp in InclusionCache)
         {
             if (!kvp.Value || Watchers.ContainsKey(kvp.Key))
@@ -276,7 +276,6 @@ public class HavokScriptReloader : IDisposable
             watcher.Changed += OnChanged;
             watcher.Created += OnChanged;
 
-            // Some editors save via a temp file that is then renamed over the original
             watcher.Renamed += (sender, e) =>
             {
                 if (string.Equals(e.FullPath, fullPath, StringComparison.OrdinalIgnoreCase))
@@ -308,7 +307,6 @@ public class HavokScriptReloader : IDisposable
             if (now - pending.Value < ReloadDebounce)
                 continue;
 
-            // Only remove if the timestamp is unchanged, otherwise the file changed again and needs to wait longer
             if (!PendingReloads.TryRemove(pending))
                 continue;
 
