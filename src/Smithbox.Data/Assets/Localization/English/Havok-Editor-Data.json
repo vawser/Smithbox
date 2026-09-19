@@ -155,6 +155,18 @@
     {
       "Key": "HAVOK_Data_AddFile_Binder_Write_FAIL",
       "Text": "File paste aborted, binder failed to be written."
+    },
+    {
+      "Key": "HAVOK_Data_Havok_Object_Aliases_FAIL",
+      "Text": "Failed to setup Havok Object Aliases."
+    },
+    {
+      "Key": "HAVOK_Data_Havok_Object_Aliases_PASS",
+      "Text": "Setup Havok Object Aliases."
+    },
+    {
+      "Key": "HAVOK_Data_Havok_Object_Aliases_Fail_Read",
+      "Text": "Failed to read havok object alias file entry: {0}"
     }
   ]
 }

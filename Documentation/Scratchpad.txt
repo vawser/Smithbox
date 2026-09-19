@@ -7,3 +7,5 @@
   Map Data Editor
   Map Editor
   
+# Havok Editor
+- Add aliases for havok objects with names (i.e. clips)

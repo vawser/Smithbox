@@ -5,6 +5,8 @@ public class HavokMeta : Dictionary<string, Dictionary<string, HavokClass>>;
 public class HavokClass
 {
     public string Type { get; set; } = "";
+
+    public string NameField { get; set; } = "";
     public List<HavokField> Fields { get; set; } = new();
 
     // Tags:

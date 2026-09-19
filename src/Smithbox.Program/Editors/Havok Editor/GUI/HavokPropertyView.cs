@@ -292,6 +292,55 @@ public class HavokPropertyView
         ImGui.Columns(1);
     }
 
+    public void DisplayCommunityNameInput(Type type, object obj, FieldInfo[] fieldInfo, HavokClass classMeta)
+    {
+        if (classMeta == null)
+            return;
+
+        if (classMeta.NameField == "")
+            return;
+
+        var nameField = fieldInfo.FirstOrDefault(e => e.Name == classMeta.NameField);
+
+        if (nameField == null)
+            return;
+
+        var havokObjectKey = "";
+        var nameValue = nameField.GetValue(obj);
+        if(nameValue != null)
+        {
+            havokObjectKey = nameValue.ToString();
+        }
+
+        var filePath = View.Selection.FilePath;
+
+        var havokObjectName = Project.Handler.HavokData.GetHavokObjectName(filePath, havokObjectKey);
+
+        // Name
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("Community Name");
+        GUI.Tooltip("The community alias for this havok object.");
+
+        ImGui.NextColumn();
+
+        // Input
+        ImGui.AlignTextToFramePadding();
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputText("##communityNameInput", ref havokObjectName, 255);
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            Project.Handler.HavokData.UpdateHavokObjectName(View.Selection.CategoryMode, View.Selection.BinderFileEntry, View.Selection.FilePath, havokObjectKey, havokObjectName);
+        }
+
+        ImGui.NextColumn();
+
+        // Blank
+        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        {
+            ImGui.NextColumn();
+        }
+    }
+
     public void HavokPropEditGeneric(object obj, HavokClass classMeta, int classIndex = -1)
     {
         if (obj == null)
@@ -301,6 +350,8 @@ public class HavokPropertyView
         Type type = obj.GetType();
 
         FieldInfo[] fields = View.PropertyCache.GetCachedHavokFields(type);
+
+        DisplayCommunityNameInput(type, obj, fields, classMeta);
 
         // Properties
         var id = 0;
