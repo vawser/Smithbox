@@ -119,7 +119,7 @@ public class HavokBehaviorView
         StateMachineView.DisplayTab();
         AnimationSelectorView.DisplayTab();
         AnimationClipView.DisplayTab();
-        //VariableView.DisplayTab();
+        VariableView.DisplayTab();
 
         ImGui.EndTabBar();
     }

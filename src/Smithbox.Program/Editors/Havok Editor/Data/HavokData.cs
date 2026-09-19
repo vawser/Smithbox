@@ -43,32 +43,56 @@ public class HavokData : IDisposable
 
         var projDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "HAVOK", "Aliases");
 
-        if (Directory.Exists(projDir))
-        {
-            srcDir = projDir;
-        }
-
         HavokObjectAliases = new();
 
+        Dictionary<string, string> targetFilePaths = new();
+
+        // Get target alias files from source, and thne if they exist in project, overwrite the target path for said file key
         if (Directory.Exists(srcDir))
         {
-            foreach (var file in Directory.EnumerateFiles(srcDir))
+            foreach (var filepath in Directory.EnumerateFiles(srcDir))
             {
-                try
-                {
-                    var filestring = await File.ReadAllTextAsync(file);
+                var filename = Path.GetFileName(filepath);
+                targetFilePaths.Add(filename, filepath);
+            }
+        }
 
-                    var item = JsonSerializer.Deserialize(filestring, HavokJsonSerializerContext.Default.HavokAliasFileEntry);
+        if (Directory.Exists(projDir))
+        {
+            foreach (var filepath in Directory.EnumerateFiles(projDir))
+            {
+                var filename = Path.GetFileName(filepath);
 
-                    if (item != null)
-                    {
-                        HavokObjectAliases.Files.Add(item);
-                    }
-                }
-                catch (Exception e)
+                if(targetFilePaths.ContainsKey(filename))
                 {
-                    Smithbox.LogError(this, LOC.Get("HAVOK_Data_Havok_Object_Aliases_Fail_Read", file), e);
+                    targetFilePaths[filename] = filepath;
                 }
+                else
+                {
+                    targetFilePaths.Add(filename, filepath);
+                }
+            }
+        }
+
+        foreach (var entry in targetFilePaths)
+        {
+            var filename = entry.Key;
+            var filepath = entry.Value;
+
+            try
+            {
+                var filestring = await File.ReadAllTextAsync(filepath);
+
+                var item = JsonSerializer.Deserialize(filestring, HavokJsonSerializerContext.Default.HavokAliasFileEntry);
+
+                if (item != null)
+                {
+                    HavokObjectAliases.Files.Add(item);
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("HAVOK_Data_Havok_Object_Aliases_Fail_Read", filepath), e);
             }
         }
 

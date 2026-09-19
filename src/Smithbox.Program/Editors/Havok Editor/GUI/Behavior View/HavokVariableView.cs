@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using Havok.Shared;
+using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.HavokEditor;
@@ -28,7 +29,19 @@ public class HavokVariableView
 
     public void Setup(object sourceObject)
     {
-        //ClipGenerators = HavokTreeSearch.FindAll<hkbClipGenerator>(sourceObject, View.PropertyCache.GetCachedHavokFields);
+        var bindingSets = HavokTreeSearch.FindAll<HKX2.hkbVariableBindingSet>(
+            sourceObject, View.PropertyCache.GetCachedHavokFields);
+
+        var valueSets = HavokTreeSearch.FindAll<HKX2.hkbVariableValueSet>(
+            sourceObject, View.PropertyCache.GetCachedHavokFields);
+
+        var infos = HavokTreeSearch.FindAll<HKX2.hkbVariableInfo>(
+            sourceObject, View.PropertyCache.GetCachedHavokFields);
+
+        var bounds = HavokTreeSearch.FindAll<HKX2.hkbVariableBounds>(
+            sourceObject, View.PropertyCache.GetCachedHavokFields);
+
+        Smithbox.Log(this, "");
     }
 
     public void SetTabState(bool state)
