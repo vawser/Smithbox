@@ -6,7 +6,6 @@ using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-// Credit to Meowmaritus for ER reload elements
 public class AOBScanner
 {
     private const uint PAGE_EXECUTE_ANY = Kernel32.PAGE_EXECUTE | Kernel32.PAGE_EXECUTE_READ | Kernel32.PAGE_EXECUTE_READWRITE | Kernel32.PAGE_EXECUTE_WRITECOPY;

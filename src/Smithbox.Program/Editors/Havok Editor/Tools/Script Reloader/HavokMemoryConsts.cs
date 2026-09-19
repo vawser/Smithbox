@@ -4,7 +4,9 @@ using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-// Credit to Meowmaritus for ER reload elements
+// Known credits for original research used for HKS reloading:
+// - horkrux
+// - Meowmaritus
 public static class HavokMemoryConsts
 {
     public static string EldenRing_WorldChrManPtr_AOB = "48 8B 05 ?? ?? ?? ?? 48 85 C0 74 0F 48 39 88";

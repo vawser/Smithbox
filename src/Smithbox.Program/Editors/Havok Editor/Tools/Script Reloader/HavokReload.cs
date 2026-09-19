@@ -4,7 +4,6 @@ using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-// Credit to Meowmaritus for ER reload elements
 public static class HavokReload
 {
     public static bool RequestReloadChr(ProjectEntry project, string chrName)

@@ -6,7 +6,6 @@ using System.Text;
 namespace StudioCore.Editors.HavokEditor;
 
 
-// Credit to Meowmaritus for ER reload elements
 public static class Kernel32
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member

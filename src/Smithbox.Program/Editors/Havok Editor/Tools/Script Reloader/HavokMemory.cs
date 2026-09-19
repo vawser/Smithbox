@@ -5,7 +5,6 @@ using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-// Credit to Meowmaritus for ER reload elements
 public static class Memory
 {
     public enum Startbit : byte
