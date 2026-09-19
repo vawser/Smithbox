@@ -7,3 +7,7 @@
   Map Data Editor
   Map Editor
   
+# Havok Editor
+- Add variable binding support
+ - Display in-line with clip generator
+ - Add tool for quickly applying new variable to clip generators (make more generic after initial impl)

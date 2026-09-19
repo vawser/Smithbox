@@ -1,4 +1,5 @@
 ﻿using Havok.Shared;
+using Hexa.NET.DirectXTex;
 using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using StudioCore.Editors.Common;
@@ -76,74 +77,94 @@ public class HavokAnimationClipView
 
     public void DisplayTabContents()
     {
-        ImGui.BeginChild("havokBehaviorElementListSection");
+        var tblFlags  = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV;
 
-        for (int i = 0; i < AnimationClips.Count; i++)
+        if (ImGui.BeginTable($"havokBehaviorElementListSection", 2, tblFlags))
         {
-            var entry = AnimationClips[i];
-            var entryName = "unknown";
-
-            if (HavokTypeUtils.IsHKX3(Project))
+            for (int i = 0; i < AnimationClips.Count; i++)
             {
-                var curClipGenerator = (HKLib.hk2018.hkbClipGenerator)entry;
-                entryName = curClipGenerator.m_name;
+                var entry = AnimationClips[i];
+                var entryName = "unknown";
 
-                if (RebuildAliasCache)
+                if (HavokTypeUtils.IsHKX3(Project))
                 {
-                    var id = entryName;
-                    var curAlias = Project.Handler.HavokData.GetHavokObjectName(View.Selection.FilePath, id);
+                    var curClipGenerator = (HKLib.hk2018.hkbClipGenerator)entry;
+                    entryName = curClipGenerator.m_name;
 
-                    _aliasCache.Add(id, curAlias);
+                    if (RebuildAliasCache)
+                    {
+                        var id = entryName;
+                        var curAlias = Project.Handler.HavokData.GetHavokObjectName(View.Selection.FilePath, id);
+
+                        _aliasCache.Add(id, curAlias);
+                    }
                 }
+                else if (HavokTypeUtils.IsHKX2(Project))
+                {
+                    var curClipGenerator = (HKX2.hkbClipGenerator)entry;
+                    entryName = curClipGenerator.m_name;
+
+                    if (RebuildAliasCache)
+                    {
+                        var id = entryName;
+                        var curAlias = Project.Handler.HavokData.GetHavokObjectName(View.Selection.FilePath, id);
+
+                        _aliasCache.Add(id, curAlias);
+                    }
+                }
+
+                var selected = SelectedAnimationClips.Contains(entry);
+
+                var alias = _aliasCache.GetValueOrDefault(entryName);
+
+                var isMatch = EditorFilters.IsMatch(Owner.PropFilter, entryName, Owner.ExactPropFilter, alias);
+
+                if (!isMatch)
+                    continue;
+
+                // ID
+                ImGui.TableNextRow();
+                ImGui.TableSetColumnIndex(0);
+
+                if (ImGui.Selectable($"{entryName}##clipGenerator_{entryName}{i}", selected))
+                {
+                    if (InputManager.HasCtrlDown())
+                    {
+                        SelectedAnimationClips.Add(entry);
+                    }
+                    else
+                    {
+                        SelectedAnimationClips.Clear();
+                        SelectedAnimationClips.Add(entry);
+                    }
+                }
+
+                // Alias
+                ImGui.TableSetColumnIndex(1);
+
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+                if (ImGui.Selectable($"{alias}##clipGenerator_Alias_{entryName}{i}", selected))
+                {
+                    if (InputManager.HasCtrlDown())
+                    {
+                        SelectedAnimationClips.Add(entry);
+                    }
+                    else
+                    {
+                        SelectedAnimationClips.Clear();
+                        SelectedAnimationClips.Add(entry);
+                    }
+                }
+                ImGui.PopStyleColor(1);
             }
-            else if (HavokTypeUtils.IsHKX2(Project))
+
+            if (RebuildAliasCache)
             {
-                var curClipGenerator = (HKX2.hkbClipGenerator)entry;
-                entryName = curClipGenerator.m_name;
-
-                if (RebuildAliasCache)
-                {
-                    var id = entryName;
-                    var curAlias = Project.Handler.HavokData.GetHavokObjectName(View.Selection.FilePath, id);
-
-                    _aliasCache.Add(id, curAlias);
-                }
+                RebuildAliasCache = false;
             }
 
-            var selected = SelectedAnimationClips.Contains(entry);
-
-            var alias = _aliasCache.GetValueOrDefault(entryName);
-
-            var isMatch = EditorFilters.IsMatch(Owner.PropFilter, entryName, Owner.ExactPropFilter, alias);
-
-            if (!isMatch)
-                continue;
-
-            if (ImGui.Selectable($"{entryName}##clipGenerator_{entryName}{i}", selected))
-            {
-                if (InputManager.HasCtrlDown())
-                {
-                    SelectedAnimationClips.Add(entry);
-                }
-                else
-                {
-                    SelectedAnimationClips.Clear();
-                    SelectedAnimationClips.Add(entry);
-                }
-            }
-
-            if (CFG.Current.HavokEditor_EntryList_Display_Aliases)
-            {
-                GUI.DisplayAlias(alias);
-            }
+            ImGui.EndTable();
         }
-
-        if (RebuildAliasCache)
-        {
-            RebuildAliasCache = false;
-        }
-
-        ImGui.EndChild();
     }
 
     public void DisplayTabHeader()
@@ -151,13 +172,6 @@ public class HavokAnimationClipView
         ImGui.BeginChild($"framedList_TabListHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("havokBehaviorTabListSearch", ref Owner.PropFilter, ref Owner.ExactPropFilter);
-
-        // Toggle: Aliases
-        GUI.DisplayToggleButton("aliasToggle", Icons.Book,
-            ref CFG.Current.HavokEditor_EntryList_Display_Aliases,
-            "HAVOK_BehaviorView_Display_Alias_Hide",
-            "HAVOK_BehaviorView_Display_Alias_Show",
-            "HAVOK_BehaviorView_Display_Alias_TT");
 
         ImGui.EndChild();
     }
