@@ -7,19 +7,10 @@
   Map Data Editor
   Map Editor
   
+# Param Editor
+- All full backup system for regulation
+ - Include warning when size is over 1GB
+  - Add option to cull intra-day ones, keep earliest version for each day
+ 
 # Havok Editor
-- Add variable binding support
- - Display in-line with clip generator
- - Add tool for quickly applying new variable to clip generators (make more generic after initial impl)
- 
- hkbBehaviorGraphStringData
-  - m_variableNames
-  
- hkbVariableValueSet
-  - hkbVariableValue
-  
- // Aligned lists
- hkbVariableValue
- hkbVariableInfo
- hkbVariableBounds
- 
+- Add HKS reloader support for ER

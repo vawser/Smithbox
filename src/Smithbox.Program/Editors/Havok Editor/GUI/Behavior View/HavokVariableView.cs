@@ -29,19 +29,19 @@ public class HavokVariableView
 
     public void Setup(object sourceObject)
     {
-        var bindingSets = HavokTreeSearch.FindAll<HKX2.hkbVariableBindingSet>(
-            sourceObject, View.PropertyCache.GetCachedHavokFields);
+        //var bindingSets = HavokTreeSearch.FindAll<HKX2.hkbVariableBindingSet>(
+        //    sourceObject, View.PropertyCache.GetCachedHavokFields);
 
-        var valueSets = HavokTreeSearch.FindAll<HKX2.hkbVariableValueSet>(
-            sourceObject, View.PropertyCache.GetCachedHavokFields);
+        //var valueSets = HavokTreeSearch.FindAll<HKX2.hkbVariableValueSet>(
+        //    sourceObject, View.PropertyCache.GetCachedHavokFields);
 
-        var infos = HavokTreeSearch.FindAll<HKX2.hkbVariableInfo>(
-            sourceObject, View.PropertyCache.GetCachedHavokFields);
+        //var infos = HavokTreeSearch.FindAll<HKX2.hkbVariableInfo>(
+        //    sourceObject, View.PropertyCache.GetCachedHavokFields);
 
-        var bounds = HavokTreeSearch.FindAll<HKX2.hkbVariableBounds>(
-            sourceObject, View.PropertyCache.GetCachedHavokFields);
+        //var bounds = HavokTreeSearch.FindAll<HKX2.hkbVariableBounds>(
+        //    sourceObject, View.PropertyCache.GetCachedHavokFields);
 
-        Smithbox.Log(this, "");
+        //Smithbox.Log(this, "");
     }
 
     public void SetTabState(bool state)
@@ -51,6 +51,9 @@ public class HavokVariableView
 
     public void DisplayTab()
     {
+        // WIP: hide for now
+        return;
+
         if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Variables")}##tabVariables"))
         {
             SetTabState(true);

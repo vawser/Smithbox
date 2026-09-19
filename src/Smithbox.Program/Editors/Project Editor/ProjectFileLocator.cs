@@ -1,4 +1,6 @@
-﻿using DotNext.Collections.Generic;
+﻿using DotNext;
+using DotNext.Collections.Generic;
+using SoulsFormats;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -51,6 +53,8 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary HavokRumbleFiles = new();
     public FileDictionary HavokPartFiles = new();
     public FileDictionary HavokAssetFiles = new();
+
+    public FileDictionary HavokScriptFiles = new();
 
     public ProjectFileLocator(ProjectEntry project)
     {
@@ -339,6 +343,7 @@ public class ProjectFileLocator : IDisposable
         var havokPartFiles = new HashSet<FileDictionaryEntry>();
         var havokRumbleFiles = new HashSet<FileDictionaryEntry>();
         var havokAssetFiles = new HashSet<FileDictionaryEntry>();
+        var havokScriptFiles = new HashSet<FileDictionaryEntry>();
 
         // Single pass - check each entry once
         foreach (var entry in allEntries)
@@ -497,6 +502,12 @@ public class ProjectFileLocator : IDisposable
             {
                 havokRumbleFiles.Add(entry);
             }
+
+            // Script
+            if(ext == "hks" && !isSd)
+            {
+                havokScriptFiles.Add(entry);
+            }
         }
 
         // Assign to public properties
@@ -530,6 +541,7 @@ public class ProjectFileLocator : IDisposable
         HavokPartFiles.Entries = havokPartFiles;
         HavokRumbleFiles.Entries = havokRumbleFiles;
         HavokAssetFiles.Entries = havokAssetFiles;
+        HavokScriptFiles.Entries = havokScriptFiles;
 
         // Special handling for text files
         if (projectType == ProjectType.ER && textFiles.Count > 0)

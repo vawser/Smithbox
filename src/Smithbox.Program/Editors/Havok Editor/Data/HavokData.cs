@@ -212,6 +212,11 @@ public class HavokData : IDisposable
     #region Dispose
     public void Dispose()
     {
+        var curView = Project.Handler.HavokEditor.ViewHandler.ActiveView;
+        if (curView != null)
+        {
+            curView.Tools.HavokScriptReloader.Dispose();
+        }
     }
     #endregion
 
