@@ -28,7 +28,7 @@ public class HavokToolView
             // TEMP
             if(ImGui.Selectable("Generate"))
             {
-                HavokAliasGenerator.GenerateDS3(Project, View);
+                HavokAliasGenerator.GenerateER(Project, View);
             }
 
             ImGui.EndMenu();
