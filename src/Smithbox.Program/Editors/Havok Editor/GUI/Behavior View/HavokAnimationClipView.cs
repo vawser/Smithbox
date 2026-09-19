@@ -1,5 +1,6 @@
 ﻿using Havok.Shared;
 using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 
@@ -16,6 +17,9 @@ public class HavokAnimationClipView
     public List<IClipGenerator> SelectedAnimationClips = new();
     private List<IClipGenerator> AnimationClips = new();
 
+    private bool RebuildAliasCache = false;
+    private Dictionary<string, string> _aliasCache = new();
+
     public HavokAnimationClipView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
     {
         View = view;
@@ -26,6 +30,8 @@ public class HavokAnimationClipView
     public void ResetSelection()
     {
         SelectedAnimationClips.Clear();
+        _aliasCache.Clear();
+        RebuildAliasCache = true;
     }
 
     public void Setup(object sourceObject)
@@ -81,16 +87,34 @@ public class HavokAnimationClipView
             {
                 var curClipGenerator = (HKLib.hk2018.hkbClipGenerator)entry;
                 entryName = curClipGenerator.m_name;
+
+                if (RebuildAliasCache)
+                {
+                    var id = entryName;
+                    var curAlias = Project.Handler.HavokData.GetHavokObjectName(View.Selection.FilePath, id);
+
+                    _aliasCache.Add(id, curAlias);
+                }
             }
             else if (HavokTypeUtils.IsHKX2(Project))
             {
                 var curClipGenerator = (HKX2.hkbClipGenerator)entry;
                 entryName = curClipGenerator.m_name;
+
+                if (RebuildAliasCache)
+                {
+                    var id = entryName;
+                    var curAlias = Project.Handler.HavokData.GetHavokObjectName(View.Selection.FilePath, id);
+
+                    _aliasCache.Add(id, curAlias);
+                }
             }
 
             var selected = SelectedAnimationClips.Contains(entry);
 
-            var isMatch = EditorFilters.IsMatch(Owner.PropFilter, entryName, Owner.ExactPropFilter);
+            var alias = _aliasCache.GetValueOrDefault(entryName);
+
+            var isMatch = EditorFilters.IsMatch(Owner.PropFilter, entryName, Owner.ExactPropFilter, alias);
 
             if (!isMatch)
                 continue;
@@ -107,6 +131,16 @@ public class HavokAnimationClipView
                     SelectedAnimationClips.Add(entry);
                 }
             }
+
+            if (CFG.Current.HavokEditor_EntryList_Display_Aliases)
+            {
+                GUI.DisplayAlias(alias);
+            }
+        }
+
+        if (RebuildAliasCache)
+        {
+            RebuildAliasCache = false;
         }
 
         ImGui.EndChild();
@@ -117,6 +151,13 @@ public class HavokAnimationClipView
         ImGui.BeginChild($"framedList_TabListHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         EditorFilters.DisplaySearchbar("havokBehaviorTabListSearch", ref Owner.PropFilter, ref Owner.ExactPropFilter);
+
+        // Toggle: Aliases
+        GUI.DisplayToggleButton("aliasToggle", Icons.Book,
+            ref CFG.Current.HavokEditor_EntryList_Display_Aliases,
+            "HAVOK_BehaviorView_Display_Alias_Hide",
+            "HAVOK_BehaviorView_Display_Alias_Show",
+            "HAVOK_BehaviorView_Display_Alias_TT");
 
         ImGui.EndChild();
     }

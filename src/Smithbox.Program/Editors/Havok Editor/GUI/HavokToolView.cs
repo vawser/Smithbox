@@ -25,6 +25,12 @@ public class HavokToolView
     {
         if (ImGui.BeginMenu($"{LOC.Get("HAVOK_Tools_Header_Tools")}##toolsMenuHeader"))
         {
+            // TEMP
+            if(ImGui.Selectable("Generate"))
+            {
+                HavokAliasGenerator.GenerateDS3(Project, View);
+            }
+
             ImGui.EndMenu();
         }
     }
