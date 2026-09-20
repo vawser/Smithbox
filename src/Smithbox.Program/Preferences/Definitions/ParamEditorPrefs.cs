@@ -673,6 +673,25 @@ public class ParamEditorPrefs
             }
         };
     }
+    
+    public static PreferenceItem Project_Enable_Comprehensive_Backups()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Regulation,
+
+            Title = "PREF_Project_Enable_Timestamp_Backup_Saves",
+            Description = "PREF_Project_Enable_Timestamp_Backup_Saves_TT",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Comprehensive_Backups);
+            }
+        };
+    }
 
     #endregion
 

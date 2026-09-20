@@ -132,19 +132,6 @@ public class ProjectUtils
         throw new InvalidOperationException(LOC.Get("PROJECT_Util_Missing_Suitable_VFS"));
     }
 
-    public static void CreateBackupFolder(ProjectEntry curProject)
-    {
-        if(CFG.Current.Project_Backup_Type is ProjectBackupBehaviorType.Complete)
-        {
-            var folderPath = Path.Combine(curProject.Descriptor.ProjectPath, ".backup");
-
-            if(!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-        }
-    }
-
     public static void WriteWithBackup<T>(ProjectEntry curProject, string assetPath, T item,
         params object[] writeparms) where T : SoulsFile<T>, new()
     {
@@ -157,6 +144,25 @@ public class ProjectUtils
     {
         try
         {
+            if(CFG.Current.Project_Enable_Comprehensive_Backups)
+            {
+                if(toFs.FileExists(assetPath))
+                {
+                    var filename = Path.GetFileName(assetPath);
+                    var timestamp = $"{DateTime.Now.Year.ToString()}-{DateTime.Now.Month.ToString()}-{DateTime.Now.Day.ToString()}_{DateTime.Now.Hour.ToString()}-{DateTime.Now.Minute.ToString()}-{DateTime.Now.Second.ToString()}";
+
+                    var writeDir = Path.Join($"{curProject.Descriptor.ProjectPath}", ".backup", $"{timestamp}");
+                    var writePath = Path.Join($"{curProject.Descriptor.ProjectPath}", ".backup", $"{timestamp}", $"{filename}");
+
+                    if(!Directory.Exists(writeDir))
+                    {
+                        Directory.CreateDirectory(writeDir);
+                    }
+
+                    toFs.Copy(assetPath, writePath);
+                }
+            }
+
             // Make a backup of the original file if a mod path doesn't exist
             if (toFs != curProject.VFS.ProjectFS && !toFs.FileExists($"{assetPath}.bak") && toFs.FileExists(assetPath))
             {

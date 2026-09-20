@@ -60,7 +60,7 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 3,
+            OrderID = 4,
             Category = PreferenceCategory.Project,
             Spacer = true,
             InlineName = false,
@@ -95,7 +95,7 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 4,
+            OrderID = 5,
             Category = PreferenceCategory.Project,
             Spacer = true,
             InlineName = false,
@@ -147,7 +147,7 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 5,
+            OrderID = 6,
             Category = PreferenceCategory.Project,
             Spacer = true,
 
@@ -165,7 +165,7 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 6,
+            OrderID = 7,
             Category = PreferenceCategory.Project,
             Spacer = true,
 

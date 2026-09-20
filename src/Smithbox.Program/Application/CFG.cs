@@ -91,7 +91,7 @@ public class CFG
     public bool Project_Enable_Automatic_Auto_Load_Assignment = true;
 
     public bool Project_Enable_Backup_Saves = true;
-    public ProjectBackupBehaviorType Project_Backup_Type = ProjectBackupBehaviorType.Simple;
+    public bool Project_Enable_Comprehensive_Backups = false;
 
     public bool Project_Enable_Automatic_Save = true;
     public float Project_Automatic_Save_Interval = 300;

@@ -7,8 +7,3 @@
   Map Data Editor
   Map Editor
   
-# Param Editor
-- All full backup system for regulation
- - Include warning when size is over 1GB
-  - Add option to cull intra-day ones, keep earliest version for each day
- 
