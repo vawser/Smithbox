@@ -41,6 +41,14 @@
       "Text": "If enabled, backup files are created during save events (i.e. .bak and .prev files)."
     },
     {
+      "Key": "PREF_Project_Enable_Timestamp_Backup_Saves",
+      "Text": "Enable Timestamp Backups for Regulation"
+    },
+    {
+      "Key": "PREF_Project_Enable_Timestamp_Backup_Saves_TT",
+      "Text": "If enabled, timestamped backups will be created for regulation files upon save."
+    },
+    {
       "Key": "PREF_Project_Scan_Directory_For_Additions",
       "Text": "Enable Project Directory Addition Detection"
     },

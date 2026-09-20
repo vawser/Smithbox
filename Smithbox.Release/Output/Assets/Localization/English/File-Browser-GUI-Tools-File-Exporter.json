@@ -41,6 +41,14 @@
       "Text": "Open the current output directory in a file explorer."
     },
     {
+      "Key": "FILE_FileExporter_Export_Folder",
+      "Text": "Export Folder"
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Folder_TT",
+      "Text": "Export the files belonging to the currently folder (and any child folders)."
+    },
+    {
       "Key": "FILE_FileExporter_Export_Container_File",
       "Text": "Export Container File"
     },
@@ -73,6 +81,14 @@
       "Text": "Output directory has not been set."
     },
     {
+      "Key": "FILE_FileExporter_No_Folder_Selected",
+      "Text": "No folder has been selected."
+    },
+    {
+      "Key": "FILE_FileExporter_Folder_Export_In_Progress",
+      "Text": "A folder export is already in progress."
+    },
+    {
       "Key": "FILE_FileExporter_No_Container_File_Selected",
       "Text": "No main file has been selected."
     },
@@ -83,6 +99,26 @@
     {
       "Key": "FILE_FileExporter_Exported_File",
       "Text": "Exported file: {0}"
+    },
+    {
+      "Key": "FILE_FileExporter_Folder_Export_No_Files",
+      "Text": "Folder '{0}' contains no files."
+    },
+    {
+      "Key": "FILE_FileExporter_Folder_Export_Complete",
+      "Text": "Folder export '{0}' complete: {1} exported, {2} skipped (already exist), {3} failed."
+    },
+    {
+      "Key": "FILE_FileExporter_Folder_Export_VFS_File_Read_FAIL",
+      "Text": "Could not read file: {0}"
+    },
+    {
+      "Key": "FILE_FileExporter_Folder_Export_VFS_File_Write_FAIL",
+      "Text": "Failed to write file: {0}"
+    },
+    {
+      "Key": "FILE_FileExporter_Folder_Export_VFS_File_Extracted",
+      "Text": "Extracted: {0}"
     }
   ]
 }

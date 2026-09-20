@@ -1,0 +1,15 @@
+{
+  "Type": "HKX2.hkaiNavMeshClearanceCacheSeeding.CacheDataSet",
+  "Fields": [
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      },
+      {
+          "Field": "m_cacheDatas",
+          "Name": "Cache Datas",
+          "Description": ""
+      }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "Type": "HKX2.hkRootLevelContainer",
+  "Fields": [
+      {
+          "Field": "m_namedVariants",
+          "Name": "Named Variants",
+          "Description": ""
+      }
+  ]
+}

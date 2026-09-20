@@ -1,6 +1,7 @@
 {
   "Type": "HKLib.hk2018.hkbClipGenerator",
   "SupportVariableBindings": true,
+  "NameField": "m_name",
   "Fields": [
       {
           "Field": "m_animationName",

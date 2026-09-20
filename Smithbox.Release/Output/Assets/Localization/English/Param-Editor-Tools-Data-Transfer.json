@@ -113,6 +113,14 @@
       "Text": "Append new rows instead of ID based insertion (this will create out-of-order IDs)"
     },
     {
+      "Key": "PARAM_DataTransfer_Checkbox_Ignore_Existing_Rows",
+      "Text": "Ignore Existing Rows"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Checkbox_Ignore_Existing_Rows_TT",
+      "Text": "Existing rows will be ignored during import. This means only new rows from the CSV will be added, edits to existing rows will be skipped."
+    },
+    {
       "Key": "PARAM_DataTransfer_Checkbox_Replace_Existing",
       "Text": "Replace Existing Rows"
     },
@@ -207,6 +215,14 @@
     {
       "Key": "PARAM_DataTransfer_Header_Export_Type_TT",
       "Text": "Determines which elements of the param and row data are exported."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Mode",
+      "Text": "Export Mode"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Mode_TT",
+      "Text": "Determines whether to export the CSV to the output window or to file."
     },
     {
       "Key": "PARAM_DataTransfer_Header_Export_Directory",
@@ -430,7 +446,7 @@
     },
     {
       "Key": "PARAM_CSV_Missing_Header",
-      "Text": "CSV missing expected header row starting with ID and Name."
+      "Text": "CSV missing expected header row starting with ID."
     },
     {
       "Key": "PARAM_CSV_Failed_to_Assign_Value_To_Field",
@@ -471,6 +487,42 @@
     {
       "Key": "PARAM_DataTransfer_Invalid_Import_Directory",
       "Text": "Defined import directory does not exist."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Window",
+      "Text": "Export Window"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Window_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Field_Selector",
+      "Text": "Fields to Include"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Field_Selector_TT",
+      "Text": "Determine which fields to include in export CSV."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_CSV_to_Window",
+      "Text": "Export to Window"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_CSV_to_Window_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Window_Section_Invalid",
+      "Text": "You need to use the File export mode if exporting multiple params."
+    },
+    {
+      "Key": "PARAM_DataTransfer_FieldSelector_Toggle_All",
+      "Text": "Toggle All"
+    },
+    {
+      "Key": "PARAM_DataTransfer_FieldSelector_Clear_All",
+      "Text": "Clear All"
     }
   ]
 }

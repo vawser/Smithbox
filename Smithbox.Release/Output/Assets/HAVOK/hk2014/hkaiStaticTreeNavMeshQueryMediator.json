@@ -1,0 +1,20 @@
+{
+  "Type": "HKX2.hkaiStaticTreeNavMeshQueryMediator",
+  "Fields": [
+      {
+          "Field": "m_tree",
+          "Name": "Tree",
+          "Description": ""
+      },
+      {
+          "Field": "m_navMesh",
+          "Name": "Navmesh",
+          "Description": ""
+      },
+      {
+          "Field": "m_propertyBag",
+          "Name": "Property Bag",
+          "Description": ""
+      }
+  ]
+}

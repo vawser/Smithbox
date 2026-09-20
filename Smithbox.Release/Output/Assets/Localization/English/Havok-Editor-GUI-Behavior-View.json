@@ -23,6 +23,18 @@
     {
       "Key": "HAVOK_PropertyView_DisplayType_TT",
       "Text": "Determines the property presentation mode."
+    },
+    {
+      "Key": "HAVOK_BehaviorView_Display_Alias_Show",
+      "Text": "Show Aliases"
+    },
+    {
+      "Key": "HAVOK_BehaviorView_Display_Alias_Hide",
+      "Text": "Hide Aliases"
+    },
+    {
+      "Key": "HAVOK_BehaviorView_Display_Alias_TT",
+      "Text": "Toggle the display of aliases in certain entry lists.\n\nCurrent Mode:\n{0}"
     }
   ]
 }

@@ -1,0 +1,100 @@
+{
+  "Entries": [
+    {
+      "Key": "HAVOK_ScriptReloader_Title",
+      "Text": "Havok Script Reloader"
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Hint",
+      "Text": "Use this tool to reload Havok Script files (.HKS), typically used for behavior scripts."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Not_Supported",
+      "Text": "The Havok Script reloader is not supported for this project type."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Inclusion_Toggle_All_TT",
+      "Text": "Add all scripts to reload list."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Inclusion_Clear_All_TT",
+      "Text": "Clear all scripts from reload list."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Inclusion_List_Header",
+      "Text": "Scripts to Reload"
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Inclusion_List_Header_TT",
+      "Text": "If a script is included below, then it will be reloaded."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_File_Watcher_Header",
+      "Text": "File Watcher"
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_File_Watcher_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Actions_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Reload_Scripts",
+      "Text": "Reload Scripts"
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Reload_Scripts_TT",
+      "Text": "Reload all of the scripts included above."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Options_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Detect_File_Changes",
+      "Text": "Enable File Watcher"
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Detect_File_Changes_TT",
+      "Text": "If enabled, script reload is automatically applied when an included script is saved externally."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Error_Failed_Create_Watcher",
+      "Text": "Failed to create file watcher."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Error_Failed_Game_Attach",
+      "Text": "Failed to attach to game."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Error_Failed_Game_Process",
+      "Text": "Failed to find game process."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Error_Failed_Hot_Reload",
+      "Text": "Failed to hot reload file."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Error_No_Scripts_Enabled",
+      "Text": "No scripts have been included."
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Log_Reloaded_Script",
+      "Text": "Reloaded havok script for {0}"
+    },
+    {
+      "Key": "HAVOK_ScriptReloader_Log_Reload_for_Old_DS3",
+      "Text": "Havok Script reload only works for the DarkSoulsIII executable 1.15.0"
+    }
+  ]
+}

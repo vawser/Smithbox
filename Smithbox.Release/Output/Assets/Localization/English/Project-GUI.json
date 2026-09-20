@@ -27,6 +27,10 @@
     {
       "Key": "PROJECT_Window_Project_Configuration",
       "Text": "Project Configuration"
+    },
+    {
+      "Key": "PROJECT_Window_Project_Tools",
+      "Text": "Tools"
     }
   ]
 }
