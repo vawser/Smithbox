@@ -38,7 +38,8 @@ public class ProjectToolWindow
         }
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
-        if (curProject != null)
+
+        if (curProject != null && curProject.Initialized && curProject.Handler != null)
         {
             var paramEditor = curProject.Handler.ParamEditor;
 
