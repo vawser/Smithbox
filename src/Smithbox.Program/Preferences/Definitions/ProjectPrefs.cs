@@ -179,6 +179,24 @@ public class ProjectPrefs
             }
         };
     }
+    public static PreferenceItem Project_VFS_Prefer_Loose_Files()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 8,
+            Category = PreferenceCategory.Project,
+            Spacer = true,
+
+            Section = SectionCategory.General,
+
+            Title = "PREF_Project_VFS_Prefer_Loose_Files",
+            Description = "PREF_Project_VFS_Prefer_Loose_Files_TT",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_VFS_Prefer_Loose_Files);
+            }
+        };
+    }
 
     // TODO: enable once the Complete type has been implemented.
     //public static PreferenceItem Project_Backup_Type()

@@ -65,6 +65,14 @@
       "Text": "If enabled, the additional validation will be performed before adding a file to the project's file list."
     },
     {
+      "Key": "PREF_Project_VFS_Prefer_Loose_Files",
+      "Text": "Prefer Loose Files over Archives in VFS"
+    },
+    {
+      "Key": "PREF_Project_VFS_Prefer_Loose_Files_TT",
+      "Text": "If enabled, the VFS will prefer loose files over the internal files within archives."
+    },
+    {
       "Key": "PREF_Project_Enable_Automatic_Save",
       "Text": "Enable Automatic Save"
     },

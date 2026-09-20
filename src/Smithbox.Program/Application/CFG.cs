@@ -105,6 +105,7 @@ public class CFG
 
     public bool Project_Scan_Directory_For_Additions = true;
     public bool Project_Scan_Directory_Strict_Mode = false;
+    public bool Project_VFS_Prefer_Loose_Files = false;
 
     // Options
     public string Project_Alias_Export_Delimiter = ";";

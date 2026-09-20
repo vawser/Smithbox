@@ -56,6 +56,11 @@ public class ProjectVFS : IDisposable
 
             var andreGame = Project.Descriptor.ProjectType.AsAndreGame();
 
+            if(CFG.Current.Project_VFS_Prefer_Loose_Files)
+            {
+                fileSystems.Add(VanillaRealFS);
+            }
+
             if (andreGame != null)
             {
                 if (!Project.Descriptor.ProjectType.IsLooseGame())
@@ -72,9 +77,10 @@ public class ProjectVFS : IDisposable
                 VanillaFS = EmptyVirtualFileSystem.Instance;
             }
 
-            // Placed here so vanilla reads prefer the archives over loose unpacked files
-            // (which can be out of date)
-            fileSystems.Add(VanillaRealFS);
+            if (!CFG.Current.Project_VFS_Prefer_Loose_Files)
+            {
+                fileSystems.Add(VanillaRealFS);
+            }
         }
         else
         {
