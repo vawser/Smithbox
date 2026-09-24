@@ -7,3 +7,11 @@
   Map Data Editor
   Map Editor
   
+# Map Editor
+- Update non-parts rendering on property change
+- Some shortcuts should be restricted to viewport-only (i.e. render type toggle)
+  
+# Text Editor
+- Fix the entry selection being 'sticky'
+- For FMG Export, include option to export all members of grouped entry (not just title) - currently Data Transfer only exports Title, which goes against user expectation
+- Add text entry ID search tool

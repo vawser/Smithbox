@@ -38,37 +38,69 @@ public static class HKX2_Helper
 
             foreach (hknpBodyCinfo bodyInfo in physicsscene.m_systemDatas[0].m_bodyCinfos)
             {
-                if (bodyInfo.m_shape is not fsnpCustomParamCompressedMeshShape ncol)
+                if (bodyInfo.m_shape is fsnpCustomParamCompressedMeshShape ncol)
+                {
+                    try
+                    {
+                        var mesh = new CollisionSubmesh();
+
+                        var indices = new List<int>();
+                        var vertices = new List<Vector3>();
+
+                        (mesh, vertices, indices) = ProcessMesh(ncol, bodyInfo, mesh);
+
+                        RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+
+                        if (first)
+                        {
+                            resource.Bounds = mesh.Bounds;
+                            first = false;
+                        }
+                        else
+                        {
+                            resource.Bounds = BoundingBox.Combine(resource.Bounds, mesh.Bounds);
+                        }
+
+                        submeshes.Add(mesh);
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.Log(typeof(HKX2_Helper), $"Failed to load HKX2.", LogLevel.Error, LogPriority.High, e);
+                    }
+                }
+                else if (bodyInfo.m_shape is hknpExternMeshShape externMesh)
+                {
+                    try
+                    {
+                        var mesh = new CollisionSubmesh();
+
+                        var indices = new List<int>();
+                        var vertices = new List<Vector3>();
+
+                        (mesh, vertices, indices) = ProcessExternMesh(externMesh, bodyInfo, mesh);
+
+                        RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+
+                        if (first)
+                        {
+                            resource.Bounds = mesh.Bounds;
+                            first = false;
+                        }
+                        else
+                        {
+                            resource.Bounds = BoundingBox.Combine(resource.Bounds, mesh.Bounds);
+                        }
+
+                        submeshes.Add(mesh);
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.Log(typeof(HKX2_Helper), $"Failed to load HKX2 (ExternMeshShape).", LogLevel.Error, LogPriority.High, e);
+                    }
+                }
+                else
                 {
                     continue;
-                }
-
-                try
-                {
-                    var mesh = new CollisionSubmesh();
-
-                    var indices = new List<int>();
-                    var vertices = new List<Vector3>();
-
-                    (mesh, vertices, indices) = ProcessMesh(ncol, bodyInfo, mesh);
-
-                    RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
-
-                    if (first)
-                    {
-                        resource.Bounds = mesh.Bounds;
-                        first = false;
-                    }
-                    else
-                    {
-                        resource.Bounds = BoundingBox.Combine(resource.Bounds, mesh.Bounds);
-                    }
-
-                    submeshes.Add(mesh);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.Log(typeof(HKX2_Helper), $"Failed to load HKX2.", LogLevel.Error, LogPriority.High, e);
                 }
             }
 
@@ -210,6 +242,39 @@ public static class HKX2_Helper
                 }
             }
         }
+        return (dest, verts, indices);
+    }
+
+    /// <summary>
+    /// Processes an hknpExternMeshShape's raw geometry into data usable for the rendering system.
+    /// Unlike the compressed mesh path, this shape stores plain (uncompressed) vertices/triangles,
+    /// so no codec decompression is needed - just transform each vertex into world space.
+    /// </summary>
+    /// <param name="shape"></param>
+    /// <param name="bodyinfo"></param>
+    /// <param name="dest"></param>
+    /// <returns></returns>
+    public static (CollisionSubmesh, List<Vector3>, List<int>) ProcessExternMesh(
+        hknpExternMeshShape shape, hknpBodyCinfo bodyinfo, CollisionSubmesh dest)
+    {
+        var verts = new List<Vector3>();
+        var indices = new List<int>();
+
+        if (shape.m_geometry is hknpDefaultExternMeshShapeGeometry geometryWrapper
+            && geometryWrapper.m_geometry is hkGeometry geo)
+        {
+            verts = geo.m_vertices
+                .Select(v => TransformVert(new Vector3(v.X, v.Y, v.Z), bodyinfo))
+                .ToList();
+
+            foreach (var tri in geo.m_triangles)
+            {
+                indices.Add(tri.m_a);
+                indices.Add(tri.m_b);
+                indices.Add(tri.m_c);
+            }
+        }
+
         return (dest, verts, indices);
     }
 

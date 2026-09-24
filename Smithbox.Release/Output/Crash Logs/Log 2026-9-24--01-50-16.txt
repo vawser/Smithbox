@@ -1,0 +1,21 @@
+Smithbox - Version 2.2.7
+
+Object reference not set to an instance of an object.
+
+   at StudioCore.Editors.HavokEditor.HavokShapeGenerator_HKX2.BuildExternMeshShape(IReadOnlyList`1 vertices, IReadOnlyList`1 triangleIndices) in ./src/Smithbox.Program/Editors/Havok Editor/Utilities/HavokShapeGenerator_HKX2.cs:line 22
+   at StudioCore.Editors.HavokEditor.CollisionGeneratorTool.BuildAndReplaceShape(List`1 verts, List`1 indices) in ./src/Smithbox.Program/Editors/Havok Editor/Tools/Collision Generator/CollisionGeneratorTool.cs:line 405
+   at StudioCore.Editors.HavokEditor.CollisionGeneratorTool.GenerateShape() in ./src/Smithbox.Program/Editors/Havok Editor/Tools/Collision Generator/CollisionGeneratorTool.cs:line 383
+   at StudioCore.Application.GUI.ButtonInputEntry(String buttonId, String buttonTitle, String buttonTooltip, Action buttonFunc, Boolean allowButtonFunc) in ./src/Smithbox.Program/Interface/GUI.cs:line 795
+   at StudioCore.Application.GUI.MultiButtonInput(String id, String id1, String title1, String tooltip1, Action func1) in ./src/Smithbox.Program/Interface/GUI.cs:line 829
+   at StudioCore.Editors.HavokEditor.CollisionGeneratorTool.DisplayGeneratorPanel() in ./src/Smithbox.Program/Editors/Havok Editor/Tools/Collision Generator/CollisionGeneratorTool.cs:line 267
+   at StudioCore.Editors.HavokEditor.CollisionGeneratorTool.Display() in ./src/Smithbox.Program/Editors/Havok Editor/Tools/Collision Generator/CollisionGeneratorTool.cs:line 50
+   at StudioCore.Editors.HavokEditor.HavokToolView.Draw() in ./src/Smithbox.Program/Editors/Havok Editor/GUI/HavokToolView.cs:line 59
+   at StudioCore.Editors.HavokEditor.HavokEditorView.Display(UInt32 dockspaceId, Int32 viewIndex, Boolean doFocus, Boolean isActiveView) in ./src/Smithbox.Program/Editors/Havok Editor/GUI/HavokEditorView.cs:line 150
+   at StudioCore.Editors.HavokEditor.HavokViewHandler.HandleViews(UInt32 editorDockspaceId) in ./src/Smithbox.Program/Editors/Havok Editor/Framework/HavokViewHandler.cs:line 155
+   at StudioCore.Editors.HavokEditor.HavokEditorScreen.OnGUI(String[] commands) in ./src/Smithbox.Program/Editors/Havok Editor/HavokEditorScreen.cs:line 62
+   at StudioCore.Editors.HavokEditor.HavokEditorStub.Display(Single dt, String[] commands) in ./src/Smithbox.Program/Editors/Havok Editor/HavokEditorStub.cs:line 53
+   at StudioCore.Application.ProjectEntry.Update(Single dt) in ./src/Smithbox.Program/Editors/Project Editor/ProjectEntry.cs:line 88
+   at StudioCore.Application.ProjectOrchestrator.Update(Single dt, UInt32 mainDockspaceID) in ./src/Smithbox.Program/Editors/Project Editor/ProjectOrchestrator.cs:line 63
+   at StudioCore.Smithbox.Update(Single deltaseconds) in ./src/Smithbox.Program/Smithbox.cs:line 667
+   at StudioCore.Smithbox.Run() in ./src/Smithbox.Program/Smithbox.cs:line 442
+   at SmithboxApp.Program.Main(String[] args) in ./src/Smithbox.Vulkan/Program.cs:line 56
