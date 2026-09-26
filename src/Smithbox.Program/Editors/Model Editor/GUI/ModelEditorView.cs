@@ -45,6 +45,7 @@ public class ModelEditorView : IEditorView
     public ModelInstanceFinder ModelInstanceFinder;
     public ModelMaskToggler ModelMaskToggler;
     public ResourceListTool ResourceListTool;
+    public ModelExportTool ModelExportTool;
 
     // Actions
     public DuplicateAction DuplicateAction;
@@ -85,6 +86,7 @@ public class ModelEditorView : IEditorView
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
         ModelMaskToggler = new ModelMaskToggler(this, Project);
         ResourceListTool = new ResourceListTool();
+        ModelExportTool = new ModelExportTool(this, Project);
 
         // Actions
         DuplicateAction = new DuplicateAction(this, Project);
@@ -205,5 +207,8 @@ public class ModelEditorView : IEditorView
         }
 
         ViewportSelection.ClearGotoTarget();
+
+        ToolView.View.ModelExportTool.DetectFlverSelectionMenu();
+        ToolView.View.ModelExportTool.DisplayFlverSelectionMenu();
     }
 }

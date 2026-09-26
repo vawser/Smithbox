@@ -55,6 +55,11 @@ public class ModelToolWindow
             View.ModelMaskToggler.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelExport)
+        {
+            View.ModelExportTool.OnToolWindow();
+        }
+
         if (CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor)
         {
             View.ResourceListTool.Display("modelEditor", View.Universe);
@@ -86,6 +91,13 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler = !CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler);
+
+            // Mdoel Export
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Model_Export")}##modelExportToggle"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_ModelExport = !CFG.Current.Interface_ModelEditor_Tool_ModelExport;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelExport);
 
             // Resource Monitor
             if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Resource_Monitor")}##resourceMonitorToggle"))

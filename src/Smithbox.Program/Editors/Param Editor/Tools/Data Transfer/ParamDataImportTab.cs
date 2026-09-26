@@ -3,6 +3,7 @@ using StudioCore.Editors.TextEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace StudioCore.Editors.ParamEditor;

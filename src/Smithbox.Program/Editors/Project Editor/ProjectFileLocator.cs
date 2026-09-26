@@ -15,7 +15,7 @@ public class ProjectFileLocator : IDisposable
 {
     public ProjectEntry Project;
 
-    public FileDictionary FileDictionary;
+    public FileDictionary FileDictionary = new();
 
     public FileDictionary MapFiles = new();
     public FileDictionary MapPieceFiles = new();

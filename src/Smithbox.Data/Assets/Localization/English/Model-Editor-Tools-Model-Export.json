@@ -1,0 +1,128 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_ModelExport_Header",
+      "Text": "Model Export"
+    },
+    {
+      "Key": "MODEL_ModelExport_Hint",
+      "Text": "Use this to export FLVER models as OBJ, and then optionally process the OBJ into HKX."
+    },
+    {
+      "Key": "MODEL_FlverSelection_Tab_Objects",
+      "Text": "Objects"
+    },
+    {
+      "Key": "MODEL_FlverSelection_Tab_Assets",
+      "Text": "Assets"
+    },
+    {
+      "Key": "MODEL_FlverSelection_MapPieces",
+      "Text": "Map Pieces"
+    },
+    {
+      "Key": "MODEL_FlverSelection_Filter_TT",
+      "Text": "Filter the model list entries."
+    },
+    {
+      "Key": "MODEL_FlverSelection_Failed_FLVER_Read",
+      "Text": "Failed to read FLVER file: {0}"
+    },
+    {
+      "Key": "MODEL_FlverSelection_Failed_FLVER_Find",
+      "Text": "Failed to find FLVER file: {0}"
+    },
+    {
+      "Key": "MODEL_FlverSelection_Failed_Binder_Read",
+      "Text": "Failed to read binder file: {0}"
+    },
+    {
+      "Key": "MODEL_FlverSelection_Failed_Binder_Find",
+      "Text": "Failed to find binder file: {0}"
+    },
+    {
+      "Key": "MODEL_ModelExport_Flver_Meshes_Header",
+      "Text": "FLVER Meshes"
+    },
+    {
+      "Key": "MODEL_ModelExport_Flver_Meshes_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_ModelExport_Select_All_Meshes",
+      "Text": "Select All"
+    },
+    {
+      "Key": "MODEL_ModelExport_Select_No_Meshes",
+      "Text": "Select None"
+    },
+    {
+      "Key": "MODEL_ModelExport_Flver_Mesh_Entry",
+      "Text": "Mesh: {0}: {1} [{2}]"
+    },
+    {
+      "Key": "MODEL_ModelExport_Flver_Current_Source_FLVER",
+      "Text": "Source FLVER: {0}"
+    },
+    {
+      "Key": "MODEL_ModelExport_Flver_Current_Source_FLVER_None",
+      "Text": "No source FLVER defined yet."
+    },
+    {
+      "Key": "MODEL_ModelExport_Action_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "MODEL_ModelExport_Action_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_ModelExport_GenerateOBJ_Action",
+      "Text": "Generate OBJ"
+    },
+    {
+      "Key": "MODEL_ModelExport_GenerateOBJ_Action_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_ModelExport_GenerateHKX_Action",
+      "Text": "Generate HKX"
+    },
+    {
+      "Key": "MODEL_ModelExport_GenerateHKX_Action_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_ModelExport_ColTool_Header",
+      "Text": "Collision Tool Directory"
+    },
+    {
+      "Key": "MODEL_ModelExport_ColTool_Header_TT",
+      "Text": "The location of obj2fsnp.bat and the other OBJ2HKX files."
+    },
+    {
+      "Key": "MODEL_ColTool_Dir_Hint",
+      "Text": "Enter the directory of the OBJ2HKX tool..."
+    },
+    {
+      "Key": "MODEL_ModelExport_SetColToolDirectory",
+      "Text": "Set Tool Directory"
+    },
+    {
+      "Key": "MODEL_ModelExport_SetColToolDirectory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_ModelExport_OpenColToolDirectory",
+      "Text": "Open Tool Directory"
+    },
+    {
+      "Key": "MODEL_ModelExport_OpenColToolDirectory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_ModelExport_Select_Destination",
+      "Text": "Select OBJ2HKX Directory"
+    },
+  ]
+}

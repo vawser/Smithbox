@@ -1,6 +1,9 @@
-﻿using DotNext;
+﻿using Andre.IO.VFS;
+using DotNext;
+using Havok.Shared;
 using Hexa.NET.ImGui;
 using HKLib.hk2018;
+using HKLib.hk2018.hk;
 using HKLib.Serialization.hk2018.Binary;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Octokit;
@@ -901,6 +904,10 @@ public class DeveloperKit
 
         return null;
     }
+
+    #endregion
+
+    #region Inject Behavior Havok Variable
 
     #endregion
 }

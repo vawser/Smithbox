@@ -86,8 +86,20 @@ public static class HavokShapeGenerator_HKX2
             domainMax = Vector3.Max(domainMax, max);
         }
 
-        data.m_aabbTree = BuildAabbTree(triangleCount, triAabbs, centroids, domainMin, domainMax);
-        data.m_simdTree = BuildSimdTree(triangleCount, triAabbs, centroids);
+        data.m_aabbTree = new hkcdStaticTreeDefaultTreeStorage6()
+        {
+            m_domain = new(),
+            m_nodes = new()
+        };
+
+        //data.m_aabbTree = BuildAabbTree(triangleCount, triAabbs, centroids, domainMin, domainMax);
+
+        data.m_simdTree = new hkcdSimdTree()
+        {
+            m_nodes = new()
+        };
+
+        // data.m_simdTree = BuildSimdTree(triangleCount, triAabbs, centroids);
 
         return data;
     }

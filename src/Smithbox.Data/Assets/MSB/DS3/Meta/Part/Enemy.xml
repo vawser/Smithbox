@@ -9,7 +9,7 @@
     Wiki="The collision that controls loading of the enemy."
     MapRef="Part-Collision" />
     
-    <CollisionIndex
+    <CollisionPartIndex
     IndexProperty="" />
     
     <ThinkParamID

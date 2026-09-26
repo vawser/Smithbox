@@ -21,19 +21,6 @@ public static class HavokTreeSearch
 
     private static readonly Dictionary<Type, FieldInfo[]> DefaultFieldCache = new();
 
-    /// <summary>
-    /// Returns every instance of T found anywhere in the object graph rooted at <paramref name="root"/>.
-    /// </summary>
-    /// <param name="root">The object to start walking from (e.g. an hkRootLevelContainer).</param>
-    /// <param name="fieldProvider">
-    /// Optional field lookup, e.g. View.PropertyCache.GetCachedHavokFields, to keep this search
-    /// in sync with whatever fields the property tree actually displays. Falls back to a
-    /// locally-cached reflection lookup if omitted.
-    /// </param>
-    /// <param name="includeDerivedTypes">
-    /// If true (default), matches T and any subclass of T (e.g. searching for hkbGenerator
-    /// would also return hkbStateMachine instances). If false, only exact type matches.
-    /// </param>
     public static List<T> FindAll<T>(
         object root,
         Func<Type, FieldInfo[]> fieldProvider = null,
@@ -53,12 +40,6 @@ public static class HavokTreeSearch
         return results;
     }
 
-    /// <summary>
-    /// Walks the object graph once and buckets every reference-typed object encountered by
-    /// its exact runtime type. Prefer this over repeated FindAll&lt;T&gt; calls when you need
-    /// instances of several different types (e.g. powering multiple discrete sub-editors),
-    /// since it only walks the tree a single time.
-    /// </summary>
     public static Dictionary<Type, List<object>> BuildTypeIndex(
         object root,
         Func<Type, FieldInfo[]> fieldProvider = null)
@@ -95,10 +76,9 @@ public static class HavokTreeSearch
 
         if (!type.IsClass || type == typeof(string))
         {
-            return; // leaf: value type, enum, or string
+            return;
         }
 
-        // Reference dedup: also protects against cycles in the graph
         if (!visited.Add(obj))
         {
             return;
@@ -114,7 +94,7 @@ public static class HavokTreeSearch
                     Walk(item, fieldProvider, visited, onVisit);
                 }
             }
-            // primitive/value-element arrays (float[], byte[], etc.) - nothing further to walk
+
             return;
         }
 
@@ -131,7 +111,6 @@ public static class HavokTreeSearch
             return;
         }
 
-        // Plain Havok class instance
         onVisit(obj);
 
         foreach (var field in fieldProvider(type))

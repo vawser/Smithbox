@@ -23,6 +23,10 @@
     {
       "Key": "MODEL_ToolWindow_View_Resource_Monitor",
       "Text": "Resource Monitor"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Model_Export",
+      "Text": "Model Export"
     }
   ]
 }

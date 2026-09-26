@@ -60,6 +60,12 @@ public class DeveloperPanel
         {
             Visible = !Visible;
         }
+
+        if(CFG.Current.Developer_Enable_Tools)
+        {
+            HavokScratchpad.Display();
+            MapScratchpad.Display();
+        }
     }
 
     public void Display(uint mainDockspaceID)
