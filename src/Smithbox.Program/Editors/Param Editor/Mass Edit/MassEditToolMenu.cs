@@ -1,17 +1,8 @@
 ﻿using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Logger;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Text;
-using System.Threading.Tasks;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -171,12 +162,25 @@ public class MassEditToolMenu
         QuickCommandPageCount = pageCount;
     }
 
+    private string QuickCommandFilter = "";
+
     private void DisplayQuickCommands()
     {
         if (Parent.State.QuickCommands.Count == 0)
             return;
 
-        ImGui.PushItemWidth(100);
+        // Command Filter
+        ImGui.PushItemWidth(150 * DPI.UIScale());
+        ImGui.InputText("##commandFilter", ref QuickCommandFilter, 255);
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            UpdateQuickCommandPagination();
+        }
+
+        ImGui.SameLine();
+
+        // Page Count Input
+        ImGui.PushItemWidth(100 * DPI.UIScale());
         ImGui.InputInt("##pageCount", ref CFG.Current.ParamEditor_MassEdit_QuickCommands_PageCount);
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
@@ -184,9 +188,9 @@ public class MassEditToolMenu
         }
         GUI.Tooltip(LOC.Get("PARAM_MassEdit_Page_Count_TT"));
 
-
         ImGui.SameLine();
 
+        // Page Back
         if (CurrentQuickCommandPage > 0)
         {
             if (ImGui.Button($"{Icons.ChevronLeft}##pageBack", DPI.IconButtonSize))
@@ -205,6 +209,7 @@ public class MassEditToolMenu
 
         ImGui.SameLine();
 
+        // Page Forward
         if (QuickCommandPageCount > 0 && CurrentQuickCommandPage < QuickCommandPageCount - 1)
         {
             if (ImGui.Button($"{Icons.ChevronRight}##pageForward", DPI.IconButtonSize))
@@ -223,6 +228,7 @@ public class MassEditToolMenu
 
         ImGui.SameLine();
 
+        // Current Page Hint
         GUI.WrappedText(LOC.Get("PARAM_MassEdit_Current_Page", CurrentQuickCommandPage));
 
         var pageIndex = CurrentQuickCommandPage;
@@ -238,6 +244,9 @@ public class MassEditToolMenu
                 {
                     commandName = commandName.Split(";")[0];
                 }
+
+                if (!EditorFilters.IsMatch(QuickCommandFilter, commandName, false))
+                    continue;
 
                 if (ImGui.Button($"{Icons.Minus}##removeCommand{pageIndex}{index}", DPI.IconButtonSize))
                 {
