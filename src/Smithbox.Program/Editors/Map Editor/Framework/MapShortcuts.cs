@@ -99,21 +99,29 @@ public class MapShortcuts
             activeView.RotateAction.OnShortcut();
             activeView.ScrambleAction.OnShortcut();
             activeView.ReplicateAction.OnShortcut();
-            activeView.RenderTypeAction.OnShortcut();
-            activeView.ReorderAction.OnShortcut();
             activeView.GameVisibilityAction.OnShortcut();
-            activeView.PullToCameraAction.OnShortcut();
             activeView.EditorVisibilityAction.OnShortcut();
-            activeView.AdjustToGridAction.OnShortcut();
             activeView.SelectCollisionRefAction.OnShortcut();
             activeView.GotoAction.OnShortcut();
             activeView.FrameAction.OnShortcut();
             activeView.SelectAllAction.OnShortcut();
 
-            if(InputManager.IsPressed(KeybindID.MapEditor_Deselect_All))
+            if (InputManager.IsPressed(KeybindID.MapEditor_Deselect_All))
             {
                 activeView.ViewportSelection.ClearSelection();
             }
+        }
+
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_ContentTree))
+        {
+            activeView.ReorderAction.OnShortcut();
+        }
+
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
+        {
+            activeView.RenderTypeAction.OnShortcut();
+            activeView.PullToCameraAction.OnShortcut();
+            activeView.AdjustToGridAction.OnShortcut();
         }
 
         activeView.SelectionOutlineAction.OnShortcut();

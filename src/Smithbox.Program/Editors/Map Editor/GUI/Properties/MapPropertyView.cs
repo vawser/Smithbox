@@ -1,20 +1,7 @@
-﻿using Andre.Formats;
-using CsvHelper;
-using Hexa.NET.ImGui;
-using SoulsFormats;
-using StudioCore.Application;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.HavokEditor;
-using StudioCore.Editors.MetadataEditor;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Editors.Viewport;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Numerics;
-using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor;
 

@@ -9,7 +9,6 @@
   
 # Map Editor
 - Update non-parts rendering on property change
-- Some shortcuts should be restricted to viewport-only (i.e. render type toggle)
   
 # Model Editor
 - Add FLVER to OBJ export tool
