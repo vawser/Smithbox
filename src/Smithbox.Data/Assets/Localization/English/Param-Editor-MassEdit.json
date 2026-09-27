@@ -479,6 +479,22 @@
     {
       "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_Field",
       "Text": "Could not perform operation {0} {1} on field {2} ({3}) (line {4})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Quick_Commands",
+      "Text": "Quick Commands"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Quick_Commands_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Add_Quick_Command",
+      "Text": "Add Quick Command"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Add_Quick_Command_TT",
+      "Text": "Add the current mass input as a quick command to the list."
     }
   ]
 }

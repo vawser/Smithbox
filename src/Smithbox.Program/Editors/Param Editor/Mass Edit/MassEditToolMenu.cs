@@ -11,6 +11,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -81,7 +82,48 @@ public class MassEditToolMenu
             "massEditClear", 
             LOC.Get("PARAM_MassEdit_Action_Clear_Script"),
             LOC.Get("PARAM_MassEdit_Action_Clear_Script_TT"),
-            ClearMassEditInputAction);
+            ClearMassEditInputAction,
+
+            "addQuickCommand",
+            LOC.Get("PARAM_MassEdit_Action_Add_Quick_Command"),
+            LOC.Get("PARAM_MassEdit_Action_Add_Quick_Command_TT"),
+            AddQuickCommand);
+
+        // Quick Commands
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Quick_Commands"),
+            LOC.Get("PARAM_MassEdit_Header_Quick_Commands_TT"));
+
+        for(int i = 0; i < Parent.State.QuickCommands.Count; i++)
+        {
+            var commandName = Parent.State.QuickCommands[i];
+            if(commandName.Contains(";"))
+            {
+                commandName = commandName.Split(";")[0];
+            }
+
+            if(ImGui.Button($"{Icons.Minus}##removeCommand{i}", DPI.IconButtonSize))
+            {
+                Parent.State.CommandToRemove = Parent.State.QuickCommands[i];
+            }
+
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{commandName}##command{i}", new Vector2(0, 20) * DPI.UIScale()))
+            {
+                Parent.ExecuteMassEdit(
+                    Parent.State.QuickCommands[i],
+                    Parent.CurrentView.GetPrimaryBank(),
+                    Parent.CurrentView.Selection);
+            }
+        }
+
+        if(Parent.State.CommandToRemove != null)
+        {
+            Parent.State.QuickCommands.Remove(Parent.State.CommandToRemove);
+            Parent.State.CommandToRemove = null;
+        }
 
         // Templates
         GUI.Spacer();
@@ -117,6 +159,11 @@ public class MassEditToolMenu
     public void ClearMassEditInputAction()
     {
         Parent.State.CurrentMenuInput = "";
+    }
+
+    public void AddQuickCommand()
+    {
+        Parent.State.QuickCommands.Add(Parent.State.CurrentMenuInput);
     }
 
     private void DisplayTemplateMenu()

@@ -28,4 +28,8 @@ public class MassEditState
     public string MassEditResult_CSV = "";
 
     public bool DisplayMassEditPopup;
+
+    public List<string> QuickCommands = new();
+
+    public string CommandToRemove = null;
 }
