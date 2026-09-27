@@ -495,6 +495,14 @@
     {
       "Key": "PARAM_MassEdit_Action_Add_Quick_Command_TT",
       "Text": "Add the current mass input as a quick command to the list."
+    },
+    {
+      "Key": "PARAM_MassEdit_Page_Count_TT",
+      "Text": "The current number of items per page."
+    },
+    {
+      "Key": "PARAM_MassEdit_Current_Page",
+      "Text": "Page {0}"
     }
   ]
 }

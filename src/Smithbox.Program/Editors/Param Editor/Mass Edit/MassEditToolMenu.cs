@@ -28,9 +28,18 @@ public class MassEditToolMenu
     public string NewScriptContents = "";
     public bool IsScriptCommon = true;
 
+    public bool DisplayQuickCommandSection = true;
+    public bool DisplayTemplateSection = true;
+
+    public int CurrentQuickCommandPage = 0;
+    public int QuickCommandPageCount = 1;
+
     public MassEditToolMenu(MassEdit parent)
     {
         Parent = parent;
+
+        Parent.State.QuickCommands = CFG.Current.ParamEditor_MassEdit_QuickCommands;
+        UpdateQuickCommandPagination();
     }
 
     public void Display()
@@ -67,19 +76,19 @@ public class MassEditToolMenu
 
         // Input
         GUI.Spacer();
-        MassEditUtils.MassEditHeader(Parent, 
+        MassEditUtils.MassEditHeader(Parent,
             LOC.Get("PARAM_MassEdit_Header_Input"),
             LOC.Get("PARAM_MassEdit_Header_Input_TT"));
 
         GUI.MultilineTextInput("massEditInput", ref Parent.State.CurrentMenuInput);
 
-        GUI.MultiButtonInput("massEditActions", 
-            "massEditApply", 
+        GUI.MultiButtonInput("massEditActions",
+            "massEditApply",
             LOC.Get("PARAM_MassEdit_Action_Apply_Script"),
             LOC.Get("PARAM_MassEdit_Action_Apply_Script_TT"),
-            ApplyMassEditAction, 
+            ApplyMassEditAction,
 
-            "massEditClear", 
+            "massEditClear",
             LOC.Get("PARAM_MassEdit_Action_Clear_Script"),
             LOC.Get("PARAM_MassEdit_Action_Clear_Script_TT"),
             ClearMassEditInputAction,
@@ -91,53 +100,33 @@ public class MassEditToolMenu
 
         // Quick Commands
         GUI.Spacer();
-        GUI.SimpleHeader(
+        GUI.ConditionalHeader(
             LOC.Get("PARAM_MassEdit_Header_Quick_Commands"),
-            LOC.Get("PARAM_MassEdit_Header_Quick_Commands_TT"));
+            LOC.Get("PARAM_MassEdit_Header_Quick_Commands_TT"),
+            ref DisplayQuickCommandSection);
 
-        for(int i = 0; i < Parent.State.QuickCommands.Count; i++)
+        if (DisplayQuickCommandSection)
         {
-            var commandName = Parent.State.QuickCommands[i];
-            if(commandName.Contains(";"))
-            {
-                commandName = commandName.Split(";")[0];
-            }
-
-            if(ImGui.Button($"{Icons.Minus}##removeCommand{i}", DPI.IconButtonSize))
-            {
-                Parent.State.CommandToRemove = Parent.State.QuickCommands[i];
-            }
-
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{commandName}##command{i}", new Vector2(0, 20) * DPI.UIScale()))
-            {
-                Parent.ExecuteMassEdit(
-                    Parent.State.QuickCommands[i],
-                    Parent.CurrentView.GetPrimaryBank(),
-                    Parent.CurrentView.Selection);
-            }
-        }
-
-        if(Parent.State.CommandToRemove != null)
-        {
-            Parent.State.QuickCommands.Remove(Parent.State.CommandToRemove);
-            Parent.State.CommandToRemove = null;
+            DisplayQuickCommands();
         }
 
         // Templates
         GUI.Spacer();
-        GUI.SimpleHeader(
+        GUI.ConditionalHeader(
             LOC.Get("PARAM_MassEdit_Header_Templates"),
-            LOC.Get("PARAM_MassEdit_Header_Templates_TT"));
+            LOC.Get("PARAM_MassEdit_Header_Templates_TT"),
+            ref DisplayTemplateSection);
 
-        MassEditUtils.TemplateComboBox("massEditScripts", ref CurrentTemplate, ScriptList);
+        if (DisplayTemplateSection)
+        {
+            MassEditUtils.TemplateComboBox("massEditScripts", ref CurrentTemplate, ScriptList);
 
-        GUI.MultiButtonInput("massEditScriptActions",
-            "massEditScriptLoad", 
-            LOC.Get("PARAM_MassEdit_Action_Load_Script"),
-            LOC.Get("PARAM_MassEdit_Action_Load_Script_TT"),
-            LoadMassEditTemplate);
+            GUI.MultiButtonInput("massEditScriptActions",
+                "massEditScriptLoad",
+                LOC.Get("PARAM_MassEdit_Action_Load_Script"),
+                LOC.Get("PARAM_MassEdit_Action_Load_Script_TT"),
+                LoadMassEditTemplate);
+        }
 
         // Output
         GUI.Spacer();
@@ -164,6 +153,119 @@ public class MassEditToolMenu
     public void AddQuickCommand()
     {
         Parent.State.QuickCommands.Add(Parent.State.CurrentMenuInput);
+
+        CFG.Current.ParamEditor_MassEdit_QuickCommands = Parent.State.QuickCommands;
+        CFG.Save();
+
+        UpdateQuickCommandPagination();
+    }
+
+    public void UpdateQuickCommandPagination()
+    {
+        var commandCount = Parent.State.QuickCommands.Count;
+
+        var pageCount = (commandCount + CFG.Current.ParamEditor_MassEdit_QuickCommands_PageCount - 1) / CFG.Current.ParamEditor_MassEdit_QuickCommands_PageCount;
+        if (pageCount < 1)
+            pageCount = 1;
+
+        QuickCommandPageCount = pageCount;
+    }
+
+    private void DisplayQuickCommands()
+    {
+        if (Parent.State.QuickCommands.Count == 0)
+            return;
+
+        ImGui.PushItemWidth(100);
+        ImGui.InputInt("##pageCount", ref CFG.Current.ParamEditor_MassEdit_QuickCommands_PageCount);
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            UpdateQuickCommandPagination();
+        }
+        GUI.Tooltip(LOC.Get("PARAM_MassEdit_Page_Count_TT"));
+
+
+        ImGui.SameLine();
+
+        if (CurrentQuickCommandPage > 0)
+        {
+            if (ImGui.Button($"{Icons.ChevronLeft}##pageBack", DPI.IconButtonSize))
+            {
+                CurrentQuickCommandPage--;
+            }
+        }
+        else
+        {
+            ImGui.BeginDisabled();
+            if (ImGui.Button($"{Icons.ChevronLeft}##pageBack", DPI.IconButtonSize))
+            {
+            }
+            ImGui.EndDisabled();
+        }
+
+        ImGui.SameLine();
+
+        if (QuickCommandPageCount > 0 && CurrentQuickCommandPage < QuickCommandPageCount - 1)
+        {
+            if (ImGui.Button($"{Icons.ChevronRight}##pageForward", DPI.IconButtonSize))
+            {
+                CurrentQuickCommandPage++;
+            }
+        }
+        else
+        {
+            ImGui.BeginDisabled();
+            if (ImGui.Button($"{Icons.ChevronRight}##pageForward", DPI.IconButtonSize))
+            {
+            }
+            ImGui.EndDisabled();
+        }
+
+        ImGui.SameLine();
+
+        GUI.WrappedText(LOC.Get("PARAM_MassEdit_Current_Page", CurrentQuickCommandPage));
+
+        var pageIndex = CurrentQuickCommandPage;
+
+        for (int k = 0; k < CFG.Current.ParamEditor_MassEdit_QuickCommands_PageCount; k++)
+        {
+            var index = (CFG.Current.ParamEditor_MassEdit_QuickCommands_PageCount * pageIndex) + k;
+
+            if (Parent.State.QuickCommands.Count > index)
+            {
+                var commandName = Parent.State.QuickCommands.ElementAt(index);
+                if (commandName.Contains(";"))
+                {
+                    commandName = commandName.Split(";")[0];
+                }
+
+                if (ImGui.Button($"{Icons.Minus}##removeCommand{pageIndex}{index}", DPI.IconButtonSize))
+                {
+                    Parent.State.CommandToRemove = Parent.State.QuickCommands.ElementAt(index);
+                }
+
+                ImGui.SameLine();
+
+                if (ImGui.Button($"{commandName}##command{pageIndex}{index}", new Vector2(0, 20) * DPI.UIScale()))
+                {
+                    Parent.ExecuteMassEdit(
+                        Parent.State.QuickCommands.ElementAt(index),
+                        Parent.CurrentView.GetPrimaryBank(),
+                        Parent.CurrentView.Selection);
+                }
+            }
+        }
+
+        if (Parent.State.CommandToRemove != null)
+        {
+            Parent.State.QuickCommands.Remove(Parent.State.CommandToRemove);
+            Parent.State.CommandToRemove = null;
+
+            CFG.Current.ParamEditor_MassEdit_QuickCommands = Parent.State.QuickCommands;
+            CFG.Save();
+
+            UpdateQuickCommandPagination();
+        }
     }
 
     private void DisplayTemplateMenu()

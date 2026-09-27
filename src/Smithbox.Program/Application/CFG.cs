@@ -764,6 +764,9 @@ public class CFG
     public bool ParamEditor_DeltaPatcher_Export_Selected_Rows_Only = false;
     public bool ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows = true;
 
+    public List<string> ParamEditor_MassEdit_QuickCommands = new();
+    public int ParamEditor_MassEdit_QuickCommands_PageCount = 10;
+
     // 
     public bool Interface_ParamEditor_Table = true;
     public bool Interface_ParamEditor_ToolWindow = true;
