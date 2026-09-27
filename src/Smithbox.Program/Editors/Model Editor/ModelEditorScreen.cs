@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
@@ -199,20 +200,30 @@ public class ModelEditorScreen : EditorScreen
         // View
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
+            // Individual Windows
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Options_EditorDisplay_Action_Windows")}##windows"))
+            {
+                CFG.Current.Interface_ModelEditor_EditorDisplayType = EditorDisplayType.Windows;
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Options_EditorDisplay_Action_Windows_TT"));
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_EditorDisplayType == EditorDisplayType.Windows);
+
+            // Tabbed Panels
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Options_EditorDisplay_Action_TabbedPanels")}##tabbedPanels"))
+            {
+                CFG.Current.Interface_ModelEditor_EditorDisplayType = EditorDisplayType.TabbedPanels;
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Options_EditorDisplay_Action_TabbedPanels_TT"));
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_EditorDisplayType == EditorDisplayType.TabbedPanels);
+
+            ImGui.Separator();
+
             // Tools
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Editor_View_Tools")}##toolsToggle"))
             {
                 CFG.Current.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface_ModelEditor_ToolWindow;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ToolWindow);
-
-            // Hides the non-Viewport windows
-            if (ImGui.MenuItem($"{LOC.Get("MODEL_Editor_View_Screenshot_Mode")}##screenshotModeToggle"))
-            {
-                CFG.Current.Interface_ModelEditor_ScreenshotMode = !CFG.Current.Interface_ModelEditor_ScreenshotMode;
-            }
-            GUI.Tooltip("MODEL_Editor_View_Screenshot_Mode_TT");
-            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ScreenshotMode);
 
             ImGui.Separator();
 

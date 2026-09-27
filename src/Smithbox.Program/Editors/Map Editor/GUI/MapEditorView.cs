@@ -202,6 +202,26 @@ public class MapEditorView : IEditorView
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
+        if (CFG.Current.Interface_MapEditor_EditorDisplayType is EditorDisplayType.Windows)
+        {
+            DisplayWindows(dockspaceId, viewIndex, doFocus, isActiveView);
+        }
+
+        if (CFG.Current.Interface_MapEditor_EditorDisplayType is EditorDisplayType.TabbedPanels)
+        {
+            DisplayTabbedPanels(dockspaceId, viewIndex, doFocus, isActiveView);
+        }
+
+        MapListFilterTool.Update();
+        LocalSearchView.Update();
+
+        WorldMapTool.DisplayPopup();
+
+        ViewportSelection.ClearGotoTarget();
+    }
+
+    private void DisplayWindows(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
+    {
         // Map List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
@@ -302,13 +322,96 @@ public class MapEditorView : IEditorView
 
             ImGui.End();
         }
+    }
 
-        MapListFilterTool.Update();
-        LocalSearchView.Update();
 
-        WorldMapTool.DisplayPopup();
+    private void DisplayTabbedPanels(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
+    {
+        // Left Panel
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
+        if (ImGui.Begin($@"Left Panel##mapEditor_LeftPanel_{viewIndex}", GUI.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
-        ViewportSelection.ClearGotoTarget();
+            ImGui.BeginTabBar("leftPanelTabs");
+
+            if(ImGui.BeginTabItem("Map List"))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MapEditor_FileList);
+                Editor.ViewHandler.ActiveView = this;
+
+                MapListView.Display(width, height);
+
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem("Map Contents"))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MapEditor_ContentTree);
+                Editor.ViewHandler.ActiveView = this;
+
+                MapContentView.Display(width, height);
+
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem("Map Content Groups"))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MapEditor_MapGroups);
+                Editor.ViewHandler.ActiveView = this;
+
+                MapGroupsView.Display(width, height);
+
+                ImGui.EndTabItem();
+            }
+
+            ImGui.EndTabBar();
+        }
+
+        ImGui.End();
+
+        // Viewport
+        ViewportWindow.Display(dockspaceId);
+
+        // Right Panel
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
+        if (ImGui.Begin($@"Right Panel##mapEditor_RightPanel_{viewIndex}", GUI.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            ImGui.BeginTabBar("rightPanelTabs");
+
+            if (ImGui.BeginTabItem("Properties"))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MapEditor_Properties);
+                Editor.ViewHandler.ActiveView = this;
+
+                MapPropertyView.Display();
+
+                ImGui.EndTabItem();
+            }
+
+            if (CFG.Current.Interface_MapEditor_ToolWindow)
+            {
+                if (ImGui.BeginTabItem("Tools"))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.MapEditor_Tools);
+                    Editor.ViewHandler.ActiveView = this;
+
+                    ToolView.Display();
+
+                    ImGui.EndTabItem();
+                }
+            }
+
+            ImGui.EndTabBar();
+        }
+
+        ImGui.End();
     }
 
     public VulkanViewport GetCurrentViewport()

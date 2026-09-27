@@ -295,6 +295,38 @@
     {
       "Key": "EDITOR_SaveOutput_GPARAM_TT",
       "Text": "If enabled, the graphics param files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_Options_Header_Editor_Display",
+      "Text": "Editor Display Type"
+    },
+    {
+      "Key": "EDITOR_Options_EditorDisplay_Action_Windows",
+      "Text": "Windows"
+    },
+    {
+      "Key": "EDITOR_Options_EditorDisplay_Action_Windows_TT",
+      "Text": "Display the editor as a set of individual windows."
+    },
+    {
+      "Key": "EDITOR_Options_EditorDisplay_Action_TabbedPanels",
+      "Text": "Tabbed Panels"
+    },
+    {
+      "Key": "EDITOR_Options_EditorDisplay_Action_TabbedPanels_TT",
+      "Text": "Display the editor with three core panels, with tabbed inner sections."
+    },
+    {
+      "Key": "EDITOR_Window_RightPanel",
+      "Text": "Right Panel"
+    },
+    {
+      "Key": "EDITOR_Window_LeftPanel",
+      "Text": "Left Panel"
+    },
+    {
+      "Key": "EDITOR_Window_CenterPanel",
+      "Text": "Center Panel"
     }
   ]
 }

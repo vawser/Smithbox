@@ -183,6 +183,9 @@ public class CFG
     public bool Interface_Display_Title_Headers = false;
     public bool Interface_Display_Searchbar_Minimize = true;
 
+    public EditorDisplayType Interface_MapEditor_EditorDisplayType = EditorDisplayType.Windows;
+    public EditorDisplayType Interface_ModelEditor_EditorDisplayType = EditorDisplayType.Windows;
+
     #endregion
 
     #region Map Editor
@@ -315,6 +318,7 @@ public class CFG
     public bool MapEditor_LightAtlas_AutomaticAdd = true;
     public bool MapEditor_LightAtlas_AutomaticDelete = false;
     public bool MapEditor_LightAtlas_AutomaticAdjust = true;
+
 
     public HavokCollisionType CurrentHavokCollisionType = HavokCollisionType.Low;
 

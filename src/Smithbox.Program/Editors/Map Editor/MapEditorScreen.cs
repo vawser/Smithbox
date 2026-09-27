@@ -392,6 +392,24 @@ public class MapEditorScreen : EditorScreen
         // View
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
+            // Individual Windows
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Options_EditorDisplay_Action_Windows")}##windows"))
+            {
+                CFG.Current.Interface_MapEditor_EditorDisplayType = EditorDisplayType.Windows;
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Options_EditorDisplay_Action_Windows_TT"));
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_EditorDisplayType == EditorDisplayType.Windows);
+
+            // Tabbed Panels
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Options_EditorDisplay_Action_TabbedPanels")}##tabbedPanels"))
+            {
+                CFG.Current.Interface_MapEditor_EditorDisplayType = EditorDisplayType.TabbedPanels;
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Options_EditorDisplay_Action_TabbedPanels_TT"));
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_EditorDisplayType == EditorDisplayType.TabbedPanels);
+
+            ImGui.Separator();
+
             // Tools
             if (ImGui.MenuItem($"{LOC.Get("MAP_View_Toggle_Tools")}##toolsToggle"))
             {
@@ -635,54 +653,24 @@ public class MapEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            // Contents
-            if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_Header_Contents")}##contentsHeader"))
+            // Content Display
+            if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_Header_Content_Display")}##contentDisplayHeader"))
             {
-                // Content Display
-                if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_Header_Content_Display")}##contentDisplayHeader"))
+                // Tree
+                if (ImGui.MenuItem($"{LOC.Get("MAP_Options_ContentDisplay_Action_Tree")}##treeAction"))
                 {
-                    // Tree
-                    if (ImGui.MenuItem($"{LOC.Get("MAP_Options_ContentDisplay_Action_Tree")}##treeAction"))
-                    {
-                        activeView.MapContentView.ContentViewType = MapContentViewType.ObjectType;
-                    }
-                    GUI.Tooltip(LOC.Get("MAP_Options_ContentDisplay_Action_Tree_TT"));
-                    GUI.ShowActiveStatus(activeView.MapContentView.ContentViewType == MapContentViewType.ObjectType);
-
-                    // Flat
-                    if (ImGui.MenuItem($"{LOC.Get("MAP_Options_ContentDisplay_Action_Flat")}##flatAction"))
-                    {
-                        activeView.MapContentView.ContentViewType = MapContentViewType.Flat;
-                    }
-                    GUI.Tooltip(LOC.Get("MAP_Options_ContentDisplay_Action_Flat_TT"));
-                    GUI.ShowActiveStatus(activeView.MapContentView.ContentViewType == MapContentViewType.Flat);
-
-                    ImGui.EndMenu();
+                    activeView.MapContentView.ContentViewType = MapContentViewType.ObjectType;
                 }
+                GUI.Tooltip(LOC.Get("MAP_Options_ContentDisplay_Action_Tree_TT"));
+                GUI.ShowActiveStatus(activeView.MapContentView.ContentViewType == MapContentViewType.ObjectType);
 
-                // Name Display
-                if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_Header_NameDisplay")}##nameDisplayHeader"))
+                // Flat
+                if (ImGui.MenuItem($"{LOC.Get("MAP_Options_ContentDisplay_Action_Flat")}##flatAction"))
                 {
-                    var curType = CFG.Current.MapEditor_MapObjectName_DisplayType;
-
-                    // Internal
-                    if (ImGui.MenuItem($"{LOC.Get("MAP_Options_NameDisplay_Action_Internal")}##internalAction"))
-                    {
-                        CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal;
-                    }
-                    GUI.Tooltip(LOC.Get("MAP_Options_NameDisplay_Action_Internal_TT"));
-                    GUI.ShowActiveStatus(curType == MapObjectNameDisplayType.Internal);
-
-                    // Internal and Text
-                    if (ImGui.MenuItem($"{LOC.Get("MAP_Options_NameDisplay_Action_Internal_Text")}##internalTextAction"))
-                    {
-                        CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_FMG;
-                    }
-                    GUI.Tooltip(LOC.Get("MAP_Options_NameDisplay_Action_Internal_Text_TT"));
-                    GUI.ShowActiveStatus(curType == MapObjectNameDisplayType.Internal_FMG);
-
-                    ImGui.EndMenu();
+                    activeView.MapContentView.ContentViewType = MapContentViewType.Flat;
                 }
+                GUI.Tooltip(LOC.Get("MAP_Options_ContentDisplay_Action_Flat_TT"));
+                GUI.ShowActiveStatus(activeView.MapContentView.ContentViewType == MapContentViewType.Flat);
 
                 ImGui.EndMenu();
             }

@@ -57,6 +57,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Editors\Map Editor\Enums\EditorDisplayType.cs" />
     <Compile Include="Editors\Map Editor\Enums\EditorVisibilityState.cs" />
     <Compile Include="Editors\Map Editor\Enums\EditorVisibilityType.cs" />
     <Compile Include="Editors\Map Editor\Enums\EntityFilterType.cs" />

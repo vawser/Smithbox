@@ -153,16 +153,16 @@
       "Text": "Delete an existing list filter."
     },
     {
-      "Key": "MAP_Options_Header_Contents",
-      "Text": "Contents"
+      "Key": "MAP_Options_Header_Display_Modes",
+      "Text": "Display Modes"
     },
     {
       "Key": "MAP_Options_Header_Content_Display",
-      "Text": "Content Display"
+      "Text": "Map Content Display Type"
     },
     {
       "Key": "MAP_Options_ContentDisplay_Action_Tree",
-      "Text": "Tree"
+      "Text": "Tree List"
     },
     {
       "Key": "MAP_Options_ContentDisplay_Action_Tree_TT",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "MAP_Options_ContentDisplay_Action_Flat",
-      "Text": "Flat"
+      "Text": "Flat List"
     },
     {
       "Key": "MAP_Options_ContentDisplay_Action_Flat_TT",
