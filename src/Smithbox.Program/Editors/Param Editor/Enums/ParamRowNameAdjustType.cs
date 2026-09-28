@@ -11,5 +11,6 @@ public enum ParamRowNameAdjustType
     Prepend,
     Postpend,
     Remove,
-    Clear
+    Clear,
+    Insert
 }

@@ -104,7 +104,7 @@ public static class ParamRowOperations
     #endregion
 
     #region Proliferate Name
-    public static void ProliferateRowName(ParamEditorView curView, string targetField)
+    public static void ProliferateRowName(ParamEditorView curView, string targetField, bool appendName, string appendPrefix)
     {
         if (targetField == null)
             return;
@@ -153,7 +153,14 @@ public static class ParamRowOperations
                     continue;
                 }
 
-                rf.Item2.Name = row.Name;
+                if(appendName)
+                {
+                    rf.Item2.Name = $"{rf.Item2.Name}{appendPrefix}{row.Name}";
+                }
+                else
+                {
+                    rf.Item2.Name = row.Name;
+                }
             }
         }
 
@@ -166,7 +173,7 @@ public static class ParamRowOperations
     #endregion
 
     #region Inherit Row Name
-    public static void InheritRowName(ParamEditorView curView, string targetField)
+    public static void InheritRowName(ParamEditorView curView, string targetField, bool appendName, string appendPrefix)
     {
         if (targetField == null)
             return;
@@ -214,7 +221,14 @@ public static class ParamRowOperations
                     continue;
                 }
 
-                row.Name = rf.Item2.Name;
+                if(appendName)
+                {
+                    row.Name = $"{row.Name}{appendPrefix}{rf.Item2.Name}";
+                }
+                else
+                {
+                    row.Name = rf.Item2.Name;
+                }
             }
         }
 
@@ -227,7 +241,7 @@ public static class ParamRowOperations
     #endregion
 
     #region Inherit Row Name from FMG
-    public static void InheritRowNameFromFMG(ParamEditorView curView, string targetField)
+    public static void InheritRowNameFromFMG(ParamEditorView curView, string targetField, bool appendName, string appendPrefix)
     {
         if (targetField == null)
             return;
@@ -275,7 +289,14 @@ public static class ParamRowOperations
                     continue;
                 }
 
-                row.Name = result.Entry.Text;
+                if (appendName)
+                {
+                    row.Name = $"{row.Name}{appendPrefix}{result.Entry.Text}";
+                }
+                else
+                {
+                    row.Name = result.Entry.Text;
+                }
             }
         }
 
@@ -288,7 +309,7 @@ public static class ParamRowOperations
     #endregion
 
     #region Inherit Row Name from Row FMG
-    public static void InheritRowNameFromRowFMG(ParamEditorView curView)
+    public static void InheritRowNameFromRowFMG(ParamEditorView curView, bool appendName, string appendPrefix)
     {
         var curParamKey = curView.Selection.GetActiveParam();
 
@@ -309,14 +330,21 @@ public static class ParamRowOperations
             var fmgEntry = decorator.GetRowFmgEntry(row);
             if (fmgEntry != null)
             {
-                row.Name = fmgEntry.Text;
+                if (appendName)
+                {
+                    row.Name = $"{row.Name}{appendPrefix}{fmgEntry.Text}";
+                }
+                else
+                {
+                    row.Name = fmgEntry.Text;
+                }
             }
         }
     }
     #endregion
 
     #region Inherit Row Name from Alias
-    public static void InheritRowNameFromAlias(ParamEditorView curView, string targetField)
+    public static void InheritRowNameFromAlias(ParamEditorView curView, string targetField, bool appendName, string appendPrefix)
     {
         if (targetField == null)
             return;
@@ -362,7 +390,14 @@ public static class ParamRowOperations
                     var text = entry.ID.Substring(1);
                     if (text == $"{targetCell.Value}")
                     {
-                        row.Name = entry.Name;
+                        if (appendName)
+                        {
+                            row.Name = $"{row.Name}{appendPrefix}{entry.Name}";
+                        }
+                        else
+                        {
+                            row.Name = entry.Name;
+                        }
                         break;
                     }
                 }
@@ -374,7 +409,14 @@ public static class ParamRowOperations
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
-                        row.Name = entry.Name;
+                        if (appendName)
+                        {
+                            row.Name = $"{row.Name}{appendPrefix}{entry.Name}";
+                        }
+                        else
+                        {
+                            row.Name = entry.Name;
+                        }
                         break;
                     }
                 }
@@ -386,7 +428,14 @@ public static class ParamRowOperations
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
-                        row.Name = entry.Name;
+                        if (appendName)
+                        {
+                            row.Name = $"{row.Name}{appendPrefix}{entry.Name}";
+                        }
+                        else
+                        {
+                            row.Name = entry.Name;
+                        }
                         break;
                     }
                 }
@@ -398,7 +447,14 @@ public static class ParamRowOperations
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
-                        row.Name = entry.Name;
+                        if (appendName)
+                        {
+                            row.Name = $"{row.Name}{appendPrefix}{entry.Name}";
+                        }
+                        else
+                        {
+                            row.Name = entry.Name;
+                        }
                         break;
                     }
                 }
@@ -410,7 +466,14 @@ public static class ParamRowOperations
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
-                        row.Name = entry.Name;
+                        if (appendName)
+                        {
+                            row.Name = $"{row.Name}{appendPrefix}{entry.Name}";
+                        }
+                        else
+                        {
+                            row.Name = entry.Name;
+                        }
                         break;
                     }
                 }
@@ -422,7 +485,14 @@ public static class ParamRowOperations
                 {
                     if (entry.ID == $"{targetCell.Value}")
                     {
-                        row.Name = entry.Name;
+                        if (appendName)
+                        {
+                            row.Name = $"{row.Name}{appendPrefix}{entry.Name}";
+                        }
+                        else
+                        {
+                            row.Name = entry.Name;
+                        }
                         break;
                     }
                 }
@@ -438,7 +508,7 @@ public static class ParamRowOperations
     #endregion
 
     #region Adjust Row Name
-    public static void AdjustRowName(ParamEditorView curView, string adjustment, ParamRowNameAdjustType type)
+    public static void AdjustRowName(ParamEditorView curView, string adjustment, int insertIndex, ParamRowNameAdjustType type)
     {
         if (type != ParamRowNameAdjustType.Clear && string.IsNullOrEmpty(adjustment))
             return;
@@ -478,6 +548,11 @@ public static class ParamRowOperations
             if (type is ParamRowNameAdjustType.Clear)
             {
                 command = $"{command} ";
+            }
+            if (type is ParamRowNameAdjustType.Insert)
+            {
+                var newName = row.Name.Insert(insertIndex, adjustment);
+                command = $"{command}{newName}";
             }
 
             commands.Add(command);

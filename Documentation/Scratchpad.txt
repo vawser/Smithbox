@@ -12,6 +12,9 @@
   
 # Model Editor
 - Add FLVER to OBJ export tool
+
+# Param Editor 
+- Double-clicking param causes FMG decorators to empty
   
 # Text Editor
 - Fix the entry selection being 'sticky'

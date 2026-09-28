@@ -12,9 +12,12 @@ public class ParamRowNameManipulationTool
 
     // Adjust
     public string Context_RowNameAdjust_NameAdjustment = "";
+    public int Context_RowNameAdjust_SubstringIndex = 0;
 
     // Inherit
     public string Context_RowNameInherit_TargetField = "";
+    public bool Context_RowNameInherit_AppendName = true;
+    public string Context_RowNameInherit_AppendPrefix = " ";
 
     // Replace
     public string Context_RowNameReplace_TargetString = "";
@@ -43,7 +46,7 @@ public class ParamRowNameManipulationTool
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                     {
-                        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, ParamRowNameAdjustType.Clear);
+                        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, Context_RowNameAdjust_SubstringIndex, ParamRowNameAdjustType.Clear);
                     }
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Clear_Text_From_Name_TT"));
 
@@ -53,7 +56,7 @@ public class ParamRowNameManipulationTool
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                     {
-                        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, ParamRowNameAdjustType.Prepend);
+                        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, Context_RowNameAdjust_SubstringIndex, ParamRowNameAdjustType.Prepend);
                     }
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Prepend_Text_To_Name_TT"));
 
@@ -63,7 +66,7 @@ public class ParamRowNameManipulationTool
                                 ? ImGuiSelectableFlags.None
                                 : ImGuiSelectableFlags.Disabled))
                     {
-                        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, ParamRowNameAdjustType.Postpend);
+                        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, Context_RowNameAdjust_SubstringIndex, ParamRowNameAdjustType.Postpend);
                     }
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Postpend_Text_To_Name_TT"));
 
@@ -73,13 +76,27 @@ public class ParamRowNameManipulationTool
                                 ? ImGuiSelectableFlags.None
                                 : ImGuiSelectableFlags.Disabled))
                     {
-                        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, ParamRowNameAdjustType.Remove);
+                        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, Context_RowNameAdjust_SubstringIndex, ParamRowNameAdjustType.Remove);
                     }
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Remove_Text_To_Name_TT"));
+
+                    // Insert Text to Name
+                    if (ImGui.Selectable($"{LOC.Get("PARAM_RowNameManip_Action_Insert_Row_Name")}##insertTextAction", false,
+                            View.Selection.RowSelectionExists()
+                                ? ImGuiSelectableFlags.None
+                                : ImGuiSelectableFlags.Disabled))
+                    {
+                        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, Context_RowNameAdjust_SubstringIndex, ParamRowNameAdjustType.Insert);
+                    }
+                    GUI.Tooltip(LOC.Get("PARAM_RowNameManip_Action_Insert_Row_Name_TT"));
+
 
                     // Text to Apply
                     ImGui.InputText($"{LOC.Get("PARAM_RowWindow_Context_Text_To_Apply_Input")}##nameAdjustment", ref Context_RowNameAdjust_NameAdjustment, 255);
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Text_To_Apply_Input_TT"));
+
+                    ImGui.InputInt($"{LOC.Get("PARAM_RowNameManip_Insert_Index")}##insertIndex", ref Context_RowNameAdjust_SubstringIndex, 255);
+                    GUI.Tooltip(LOC.Get("PARAM_RowNameManip_Insert_Index_TT"));
 
                     ImGui.EndMenu();
 
@@ -94,7 +111,7 @@ public class ParamRowNameManipulationTool
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                     {
-                        ParamRowOperations.ProliferateRowName(View, Context_RowNameInherit_TargetField);
+                        ParamRowOperations.ProliferateRowName(View, Context_RowNameInherit_TargetField, Context_RowNameInherit_AppendName, Context_RowNameInherit_AppendPrefix);
                     }
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Proliferate_Name_TT"));
 
@@ -104,7 +121,7 @@ public class ParamRowNameManipulationTool
                                 ? ImGuiSelectableFlags.None
                                 : ImGuiSelectableFlags.Disabled))
                     {
-                        ParamRowOperations.InheritRowName(View, Context_RowNameInherit_TargetField);
+                        ParamRowOperations.InheritRowName(View, Context_RowNameInherit_TargetField, Context_RowNameInherit_AppendName, Context_RowNameInherit_AppendPrefix);
                     }
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_Ref_TT"));
 
@@ -114,7 +131,7 @@ public class ParamRowNameManipulationTool
                                 ? ImGuiSelectableFlags.None
                                 : ImGuiSelectableFlags.Disabled))
                     {
-                        ParamRowOperations.InheritRowNameFromFMG(View, Context_RowNameInherit_TargetField);
+                        ParamRowOperations.InheritRowNameFromFMG(View, Context_RowNameInherit_TargetField, Context_RowNameInherit_AppendName, Context_RowNameInherit_AppendPrefix);
                     }
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_FMG_TT"));
 
@@ -124,7 +141,7 @@ public class ParamRowNameManipulationTool
                                 ? ImGuiSelectableFlags.None
                                 : ImGuiSelectableFlags.Disabled))
                     {
-                        ParamRowOperations.InheritRowNameFromAlias(View, Context_RowNameInherit_TargetField);
+                        ParamRowOperations.InheritRowNameFromAlias(View, Context_RowNameInherit_TargetField, Context_RowNameInherit_AppendName, Context_RowNameInherit_AppendPrefix);
                     }
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_Alias_TT"));
 
@@ -134,14 +151,19 @@ public class ParamRowNameManipulationTool
                                 ? ImGuiSelectableFlags.None
                                 : ImGuiSelectableFlags.Disabled))
                     {
-                        ParamRowOperations.InheritRowNameFromRowFMG(View);
+                        ParamRowOperations.InheritRowNameFromRowFMG(View, Context_RowNameInherit_AppendName, Context_RowNameInherit_AppendPrefix);
                     }
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_Row_FMG_TT"));
 
-
                     // Target Field
-                    ImGui.InputText($"{LOC.Get("PARAM_RowWindow_Context_Target_Field")}##targetField", ref Context_RowNameInherit_TargetField, 255);
-                    GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Target_Field_TT"));
+                    ImGui.InputText($"{LOC.Get("PARAM_RowNameManip_TargetField")}##targetField", ref Context_RowNameInherit_TargetField, 255);
+                    GUI.Tooltip(LOC.Get("PARAM_RowNameManip_TargetField_TT"));
+
+                    ImGui.InputText($"{LOC.Get("PARAM_RowNameManip_AppendPrefix")}##appendPrefix", ref Context_RowNameInherit_AppendPrefix, 255);
+                    GUI.Tooltip(LOC.Get("PARAM_RowNameManip_AppendPrefix_TT"));
+
+                    ImGui.Checkbox($"{LOC.Get("PARAM_RowNameManip_AppendName")}##rowNameAppendToggle", ref Context_RowNameInherit_AppendName);
+                    GUI.Tooltip(LOC.Get("PARAM_RowNameManip_AppendName_TT"));
 
                     ImGui.EndMenu();
                 }
@@ -202,11 +224,15 @@ public class ParamRowNameManipulationTool
 
             // Text to Add
             GUI.SimpleHeader(
-                LOC.Get("PARAM_RowNameManip_Text_To_Add_Header"),
-                LOC.Get("PARAM_RowNameManip_Text_To_Add_Header_TT"));
+                LOC.Get("PARAM_RowNameManip_Parameters"),
+                LOC.Get("PARAM_RowNameManip_Parameters_TT"));
 
-            ImGui.InputText($"##nameAdjustment", 
+            ImGui.InputText($"{LOC.Get("PARAM_RowNameManip_Text_to_Add")}##nameAdjustment", 
                 ref Context_RowNameAdjust_NameAdjustment, 255);
+            GUI.Tooltip(LOC.Get("PARAM_RowNameManip_Text_to_Add_TT"));
+
+            ImGui.InputInt($"{LOC.Get("PARAM_RowNameManip_Insert_Index")}##insertIndex", ref Context_RowNameAdjust_SubstringIndex, 255);
+            GUI.Tooltip(LOC.Get("PARAM_RowNameManip_Insert_Index_TT"));
 
             // Actions
             GUI.Spacer();
@@ -237,6 +263,12 @@ public class ParamRowNameManipulationTool
                 LOC.Get("PARAM_RowNameManip_Action_Remove_Row_Name"),
                 LOC.Get("PARAM_RowNameManip_Action_Postpend_Row_Name_TT"),
                 RemoveTextFromName,
+                CanUseAdjustAction(),
+
+                "insertText",
+                LOC.Get("PARAM_RowNameManip_Action_Insert_Row_Name"),
+                LOC.Get("PARAM_RowNameManip_Action_Insert_Row_Name_TT"),
+                InsertTextToName,
                 CanUseAdjustAction()
                 );
 
@@ -251,22 +283,27 @@ public class ParamRowNameManipulationTool
 
     public void ClearTextFromName()
     {
-        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, ParamRowNameAdjustType.Clear);
+        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, Context_RowNameAdjust_SubstringIndex, ParamRowNameAdjustType.Clear);
     }
 
     public void PrependTextToName()
     {
-        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, ParamRowNameAdjustType.Prepend);
+        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, Context_RowNameAdjust_SubstringIndex, ParamRowNameAdjustType.Prepend);
     }
 
     public void PostpendTextToName()
     {
-        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, ParamRowNameAdjustType.Postpend);
+        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, Context_RowNameAdjust_SubstringIndex, ParamRowNameAdjustType.Postpend);
     }
 
     public void RemoveTextFromName()
     {
-        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, ParamRowNameAdjustType.Remove);
+        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, Context_RowNameAdjust_SubstringIndex, ParamRowNameAdjustType.Remove);
+    }
+
+    public void InsertTextToName()
+    {
+        ParamRowOperations.AdjustRowName(View, Context_RowNameAdjust_NameAdjustment, Context_RowNameAdjust_SubstringIndex, ParamRowNameAdjustType.Insert);
     }
 
     public void InheritRowNameTab()
@@ -277,13 +314,20 @@ public class ParamRowNameManipulationTool
             GUI.WrappedText(LOC.Get("PARAM_RowNameManip_Inherit_Tab_Hint"));
             GUI.Spacer();
 
-            // Target Field
+            // Parameters
             GUI.SimpleHeader(
-                LOC.Get("PARAM_RowNameManip_Target_Field_Header"),
-                LOC.Get("PARAM_RowNameManip_Target_Field_Header_TT"));
+                LOC.Get("PARAM_RowNameManip_Parameters"),
+                LOC.Get("PARAM_RowNameManip_Parameters_TT"));
 
-            ImGui.InputText($"##targetFieldForInherit",
+            ImGui.InputText($"{LOC.Get("PARAM_RowNameManip_TargetField")}##targetFieldForInherit",
                 ref Context_RowNameInherit_TargetField, 255);
+            GUI.Tooltip(LOC.Get("PARAM_RowNameManip_TargetField_TT"));
+
+            ImGui.InputText($"{LOC.Get("PARAM_RowNameManip_AppendPrefix")}##appendPrefix", ref Context_RowNameInherit_AppendPrefix, 255);
+            GUI.Tooltip(LOC.Get("PARAM_RowNameManip_AppendPrefix_TT"));
+
+            ImGui.Checkbox($"{LOC.Get("PARAM_RowNameManip_AppendName")}##rowNameAppendToggle", ref Context_RowNameInherit_AppendName);
+            GUI.Tooltip(LOC.Get("PARAM_RowNameManip_AppendName_TT"));
 
             // Actions
             GUI.Spacer();
@@ -465,26 +509,27 @@ public class ParamRowNameManipulationTool
 
     public void ProliferateRowName()
     {
-        ParamRowOperations.ProliferateRowName(View, Context_RowNameInherit_TargetField);
+        ParamRowOperations.ProliferateRowName(View, Context_RowNameInherit_TargetField, Context_RowNameInherit_AppendName, Context_RowNameInherit_AppendPrefix);
     }
 
     public void InheritNameFromParamRef()
     {
-        ParamRowOperations.InheritRowName(View, Context_RowNameInherit_TargetField);
+        ParamRowOperations.InheritRowName(View, Context_RowNameInherit_TargetField, Context_RowNameInherit_AppendName, Context_RowNameInherit_AppendPrefix);
     }
 
     public void InheritNameFromFmgRef()
     {
-        ParamRowOperations.InheritRowNameFromFMG(View, Context_RowNameInherit_TargetField);
+        ParamRowOperations.InheritRowNameFromFMG(View, Context_RowNameInherit_TargetField, Context_RowNameInherit_AppendName, Context_RowNameInherit_AppendPrefix);
     }
+
     public void InheritNameFromRowFmgRef()
     {
-        ParamRowOperations.InheritRowNameFromRowFMG(View);
+        ParamRowOperations.InheritRowNameFromRowFMG(View, Context_RowNameInherit_AppendName, Context_RowNameInherit_AppendPrefix);
     }
 
     public void InheritNameFromAliasRef()
     {
-        ParamRowOperations.InheritRowNameFromAlias(View, Context_RowNameInherit_TargetField);
+        ParamRowOperations.InheritRowNameFromAlias(View, Context_RowNameInherit_TargetField, Context_RowNameInherit_AppendName, Context_RowNameInherit_AppendPrefix);
     }
 
     private List<string> TargetStrings = new()
