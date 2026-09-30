@@ -171,6 +171,14 @@
     {
       "Key": "PARAM_FieldDecorator_TileRef_Label",
       "Text": "   <Tile>"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Label_Name",
+      "Text": "Name"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_Label_Description",
+      "Text": "Description"
     }
   ]
 }

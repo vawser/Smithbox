@@ -13,6 +13,7 @@ public class AliasEntry : IComparable<AliasEntry>
 {
     public string ID { get; set; }
     public string Name { get; set; }
+    public string Description { get; set; } = "";
     public List<string> Tags { get; set; }
 
     public int CompareTo(AliasEntry other)

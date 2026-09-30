@@ -1,9 +1,882 @@
 [
   {
-    "ID": "f000000001",
-    "Name": "Example",
-    "Tags": [
-      "fxr"
-    ]
+    "ID": "522000",
+    "Name": "Farron Dart: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "522001",
+    "Name": "Farron Dart: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "522100",
+    "Name": "Great Farron Dart: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "522101",
+    "Name": "Great Farron Dart: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523000",
+    "Name": "Soul Arrow: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523001",
+    "Name": "Soul Arrow: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523010",
+    "Name": "Great Soul Arrow: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523011",
+    "Name": "Great Soul Arrow: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523020",
+    "Name": "Heavy Soul Arrow: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523021",
+    "Name": "Heavy Soul Arrow: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523030",
+    "Name": "Great Heavy Soul Arrow: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523031",
+    "Name": "Great Heavy Soul Arrow: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523040",
+    "Name": "Homing Soulmass: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523041",
+    "Name": "Homing Soulmass: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523050",
+    "Name": "Homing Crystal Soulmass: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523051",
+    "Name": "Homing Crystal Soulmass: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523060",
+    "Name": "Soul Spear: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523061",
+    "Name": "Soul Spear: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523070",
+    "Name": "Crystal Soul Spear: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523071",
+    "Name": "Crystal Soul Spear: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523080",
+    "Name": "Deep Soul: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523081",
+    "Name": "Deep Soul: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523090",
+    "Name": "Great Deep Soul: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523091",
+    "Name": "Great Deep Soul: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523100",
+    "Name": "Magic Weapon: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523101",
+    "Name": "Magic Weapon: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523110",
+    "Name": "Great Magic Weapon: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523111",
+    "Name": "Great Magic Weapon: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523120",
+    "Name": "Crystal Magic Weapon: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523121",
+    "Name": "Crystal Magic Weapon: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528000",
+    "Name": "Frozen Weapon: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528001",
+    "Name": "Frozen Weapon: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523300",
+    "Name": "Magic Shield: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523301",
+    "Name": "Magic Shield: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523310",
+    "Name": "Great Magic Shield: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523311",
+    "Name": "Great Magic Shield: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523400",
+    "Name": "Hidden Weapon: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523401",
+    "Name": "Hidden Weapon: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523410",
+    "Name": "Hidden Body: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523411",
+    "Name": "Hidden Body: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523500",
+    "Name": "Cast Light: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523501",
+    "Name": "Cast Light: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523530",
+    "Name": "Repair: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523531",
+    "Name": "Repair: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523540",
+    "Name": "Spook: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523550",
+    "Name": "Chameleon: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523551",
+    "Name": "Chameleon: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523560",
+    "Name": "Aural Decoy: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523561",
+    "Name": "Aural Decoy: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523700",
+    "Name": "White Dragon Breath: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523701",
+    "Name": "White Dragon Breath: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523720",
+    "Name": "Farron Hail: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523721",
+    "Name": "Farron Hail: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523730",
+    "Name": "Crystal Hail: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523731",
+    "Name": "Crystal Hail: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523740",
+    "Name": "Soul Greatsword: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523741",
+    "Name": "Soul Greatsword: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523742",
+    "Name": "Soul Greatsword: Finish Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523750",
+    "Name": "Farron Flashsword: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523751",
+    "Name": "Farron Flashsword: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523752",
+    "Name": "Farron Flashsword: Finish Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528900",
+    "Name": "Old Moonlight: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528901",
+    "Name": "Old Moonlight: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528902",
+    "Name": "Old Moonlight: Finish Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526030",
+    "Name": "Affinity: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526031",
+    "Name": "Affinity: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528800",
+    "Name": "Great Soul Dregs: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528801",
+    "Name": "Great Soul Dregs: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526130",
+    "Name": "Dark Edge: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526131",
+    "Name": "Dark Edge: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526132",
+    "Name": "Dark Edge: Finish Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526250",
+    "Name": "Soul Stream: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526510",
+    "Name": "Twisted Wall of Light: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526511",
+    "Name": "Twisted Wall of Light: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527400",
+    "Name": "Pestilent Mist: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527401",
+    "Name": "Pestilent Mist: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528100",
+    "Name": "Snap Freeze: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528101",
+    "Name": "Snap Freeze: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524000",
+    "Name": "Fireball: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524020",
+    "Name": "Fire Orb: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524030",
+    "Name": "Firestorm: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524031",
+    "Name": "Firestorm: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524050",
+    "Name": "Fire Surge: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524070",
+    "Name": "Black Serpent: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524071",
+    "Name": "Black Serpent: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524100",
+    "Name": "Combustion: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524110",
+    "Name": "Great Combustion: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524300",
+    "Name": "Iron Flesh: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524301",
+    "Name": "Iron Flesh: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524310",
+    "Name": "Flash Sweat: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524311",
+    "Name": "Flash Sweat: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524350",
+    "Name": "Carthus Flame Arc: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524351",
+    "Name": "Carthus Flame Arc: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524360",
+    "Name": "Rapport: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524361",
+    "Name": "Rapport: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524400",
+    "Name": "Power Within: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524401",
+    "Name": "Power Within: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524500",
+    "Name": "Great Chaos Fire Orb: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524501",
+    "Name": "Great Chaos Fire Orb: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524510",
+    "Name": "Chaos Storm: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524511",
+    "Name": "Chaos Storm: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524530",
+    "Name": "Black Flame: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524550",
+    "Name": "Profaned Flame: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524551",
+    "Name": "Profaned Flame: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524560",
+    "Name": "Chaos Bed Vestiges: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "529000",
+    "Name": "Flame Fan: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "529001",
+    "Name": "Flame Fan: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "529002",
+    "Name": "Flame Fan: Finish Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524700",
+    "Name": "Warmth: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524701",
+    "Name": "Warmth: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525620",
+    "Name": "Profuse Sweat: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525621",
+    "Name": "Profuse Sweat: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526000",
+    "Name": "Dark Orb: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526100",
+    "Name": "Black Fire Orb: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526200",
+    "Name": "Bursting Fireball: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526201",
+    "Name": "Bursting Fireball: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "536400",
+    "Name": "Sacred Flame: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "536401",
+    "Name": "Sacred Flame: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526500",
+    "Name": "Carthus Beacon: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526501",
+    "Name": "Carthus Beacon: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "529100",
+    "Name": "Seething Chaos: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "529101",
+    "Name": "Seething Chaos: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "529102",
+    "Name": "Seething Chaos: Finish Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524900",
+    "Name": "Heal Aid: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524901",
+    "Name": "Heal Aid: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525000",
+    "Name": "Heal: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525001",
+    "Name": "Heal: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "441805",
+    "Name": "Sacred Chime of Filianore: Finish Cast - Variant 1",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525010",
+    "Name": "Med Heal: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525011",
+    "Name": "Med Heal: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525020",
+    "Name": "Great Heal: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525021",
+    "Name": "Great Heal: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525030",
+    "Name": "Soothing Sunlight: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525031",
+    "Name": "Soothing Sunlight: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "441806",
+    "Name": "Sacred Chime of Filianore: Finish Cast - Variant 2",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525040",
+    "Name": "Replenishment: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525041",
+    "Name": "Replenishment: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525050",
+    "Name": "Bountiful Sunlight: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525051",
+    "Name": "Bountiful Sunlight: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525070",
+    "Name": "Bountiful Light: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525071",
+    "Name": "Bountiful Light: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "xxx",
+    "Name": "xxx",
+    "Tags": [ "spell" ]
   }
 ]

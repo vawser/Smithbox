@@ -82,13 +82,21 @@ public class ParamFieldDecorators
             // Particle list
             if (metaContext.DisplayParticleEnum)
             {
-                AliasEnumHelper.Label(ParentView, LOC.Get("PARAM_FieldDecorator_Label_Particles"));
+                if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(
+                    ProjectAliasType.Particles, out List<AliasEntry> particles))
+                {
+                    AliasEnumHelper.Label(ParentView, particles, oldval.ToString(), LOC.Get("PARAM_FieldDecorator_Label_Name"), LOC.Get("PARAM_FieldDecorator_Label_Description"));
+                }
             }
 
             // Sound list
             if (metaContext.DisplaySoundEnum)
             {
-                AliasEnumHelper.Label(ParentView, LOC.Get("PARAM_FieldDecorator_Label_Sounds"));
+                if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(
+                    ProjectAliasType.Sounds, out List<AliasEntry> sounds))
+                {
+                    AliasEnumHelper.Label(ParentView, sounds, oldval.ToString(), LOC.Get("PARAM_FieldDecorator_Label_Name"), LOC.Get("PARAM_FieldDecorator_Label_Description"));
+                }
             }
 
             // Flag list
@@ -101,7 +109,11 @@ public class ParamFieldDecorators
             // Cutscene list
             if (metaContext.DisplayCutsceneEnum)
             {
-                AliasEnumHelper.Label(ParentView, LOC.Get("PARAM_FieldDecorator_Label_Cutscenes"));
+                if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(
+                    ProjectAliasType.Cutscenes, out List<AliasEntry> cutscenes))
+                {
+                    AliasEnumHelper.Label(ParentView, cutscenes, oldval.ToString(), LOC.Get("PARAM_FieldDecorator_Label_Name"), LOC.Get("PARAM_FieldDecorator_Label_Description"));
+                }
             }
 
             // Movie list
@@ -114,7 +126,11 @@ public class ParamFieldDecorators
             // Character list
             if (metaContext.DisplayCharacterEnum)
             {
-                AliasEnumHelper.Label(ParentView, LOC.Get("PARAM_FieldDecorator_Label_Characters"));
+                if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(
+                    ProjectAliasType.Characters, out List<AliasEntry> characters))
+                {
+                    AliasEnumHelper.Label(ParentView, characters, oldval.ToString(), LOC.Get("PARAM_FieldDecorator_Label_Name"), LOC.Get("PARAM_FieldDecorator_Label_Description"), true);
+                }
             }
 
             // Project Enum
@@ -862,7 +878,7 @@ public static class AliasEnumHelper
     private static string EnumListFilter = "";
     private static bool ExactEnumListFilter = false;
 
-    public static void Label(ParamEditorView curView, string name)
+    public static void Label(ParamEditorView curView, List<AliasEntry> entries, string value, string nameTitle, string descTitle, bool isCharacterAlias = false)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
@@ -872,7 +888,31 @@ public static class AliasEnumHelper
         if (!inactiveEnum)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
-            ImGui.TextUnformatted($@"   {name}");
+
+            var entry = entries.FirstOrDefault(e => e.ID == value);
+
+            if (isCharacterAlias)
+            {
+                entry = entries.FirstOrDefault(e => e.ID.Replace("c", "") == value);
+            }
+
+            if (entry != null)
+            {
+                if (entry.Description != "")
+                {
+                    ImGui.TextUnformatted($@"   {nameTitle}");
+                    ImGui.TextUnformatted($@"   {descTitle}");
+                }
+                else
+                {
+                    ImGui.TextUnformatted($@"   {nameTitle}");
+                }
+            }
+            else
+            {
+                ImGui.TextUnformatted($@"   {nameTitle}");
+            }
+
             ImGui.PopStyleColor(1);
         }
     }
@@ -898,7 +938,15 @@ public static class AliasEnumHelper
 
                 if (entry != null)
                 {
-                    ImGui.TextUnformatted(entry.Name);
+                    if(entry.Description != "")
+                    {
+                        ImGui.TextUnformatted(entry.Name);
+                        ImGui.TextUnformatted(entry.Description);
+                    }
+                    else
+                    {
+                        ImGui.TextUnformatted(entry.Name);
+                    }
                 }
                 else
                 {
@@ -916,7 +964,15 @@ public static class AliasEnumHelper
 
                 if (entry != null)
                 {
-                    ImGui.TextUnformatted(entry.Name);
+                    if (entry.Description != "")
+                    {
+                        ImGui.TextUnformatted(entry.Name);
+                        ImGui.TextUnformatted(entry.Description);
+                    }
+                    else
+                    {
+                        ImGui.TextUnformatted(entry.Name);
+                    }
                 }
                 else
                 {

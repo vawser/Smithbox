@@ -28,8 +28,8 @@
         "analogDexterityMax",
         "ezStateBehaviorType",
         "refType",
-        "hasSpEffectType",
-        "spEffectCategory"
+        "spEffectCategory",
+        "aiNotifyType"
       ]
     },
     {
@@ -106,7 +106,8 @@
       "Fields": [
         "CastSfx1",
         "CastSfx2",
-        "CastSfx3"
+        "CastSfx3",
+        "sfxVariationId"
       ]
     },
     {
@@ -130,6 +131,21 @@
       ]
     },
     {
+      "Key": "Behavior Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Behavior Options"
+        }
+      ],
+      "Fields": [
+        "spellchange1",
+        "spellchange2",
+        "isEnchant",
+        "isShieldEnchant"
+      ]
+    },
+    {
       "Key": "Usage Options",
       "Names": [
         {
@@ -142,7 +158,24 @@
         "enable_gray",
         "enable_white",
         "enable_black",
-        "disable_offline"
+        "disable_offline",
+        "enableMulti",
+        "enableMultOnly"
+      ]
+    },
+    {
+      "Key": "Limit Usage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Limit Usage"
+        }
+      ],
+      "Fields": [
+        "yesNoDialogMessageId",
+        "limitCancelSpEffectId",
+        "replaceMagicId",
+        "hasSpEffectType"
       ]
     },
     {
@@ -161,14 +194,14 @@
         "vowType5",
         "vowType6",
         "vowType7",
-        "vowType8",
-        "vowType9",
-        "vowType10",
-        "vowType11",
-        "vowType12",
-        "vowType13",
-        "vowType14",
-        "vowType15"
+        "VowType8",
+        "VowType9",
+        "VowType10",
+        "VowType11",
+        "VowType12",
+        "VowType13",
+        "VowType14",
+        "VowType15"
       ]
     }
   ]
