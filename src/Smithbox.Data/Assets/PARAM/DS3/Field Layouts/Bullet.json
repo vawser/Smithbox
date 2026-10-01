@@ -1,0 +1,193 @@
+{
+  "Name": "Bullet",
+  "Groups": [
+    {
+      "Key": "Common Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Common Parameters"
+        }
+      ],
+      "Fields": [
+        "atkBullet_Id",
+        "hitBulletId",
+        "createLimitGroupId",
+        "autoSearchNpcThinkId"
+      ]
+    },
+    {
+      "Key": "Bullet Emitter",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Bullet Emitter"
+        }
+      ],
+      "Fields": [
+        "intervalCreateBulletId",
+        "intervalCreateTimeMin",
+        "intervalCreateTimeMax",
+        "predictionShootObserveTime",
+        "intervalCreateWaitTime",
+        "randomCreateRadius"
+      ]
+    },
+    {
+      "Key": "Visuals",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Visuals"
+        }
+      ],
+      "Fields": [
+        "sfxIdBullet",
+        "sfxIdHit",
+        "sfxIdFlick",
+        "bulletSfxDeleteType_byHit",
+        "bulletSfxDeleteType_byLifeDead"
+      ]
+    },
+    {
+      "Key": "Attack Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Attack Parameters"
+        }
+      ],
+      "Fields": [
+        "atkAttribute",
+        "spAttribute",
+        "Material_AttackType",
+        "Material_AttackMaterial",
+        "Material_Size",
+        "CounterHitType"
+      ]
+    },
+    {
+      "Key": "SpEffects",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "SpEffects"
+        }
+      ],
+      "Fields": [
+        "spEffectIdForShooter",
+        "spEffectId0",
+        "spEffectId1",
+        "spEffectId2",
+        "spEffectId3",
+        "spEffectId4"
+      ]
+    },
+    {
+      "Key": "Projectile Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Projectile"
+        }
+      ],
+      "Fields": [
+        "life",
+        "dist",
+        "shootInterval",
+        "gravityInRange",
+        "gravityOutRange",
+        "homingStopRange",
+        "initVellocity",
+        "accelInRange",
+        "accelOutRange",
+        "maxVellocity",
+        "minVellocity",
+        "accelTime",
+        "homingBeginDist",
+        "hitRadius",
+        "hitRadiusMax",
+        "spreadTime",
+        "expDelay",
+        "homingOffsetRange",
+        "dmgHitRecordLifeTime",
+        "externalForce",
+        "numShoot",
+        "homingAngle",
+        "shootAngleInterval",
+        "shootAngleXInterval",
+        "shootAngle",
+        "shootAngleXZ",
+        "lockShootLimitAng",
+        "prevVellocityDirRate",
+        "launchConditionType",
+        "FollowType",
+        "EmittePosType",
+        "targetYOffsetRange",
+        "shootAngleYMaxRandom",
+        "shootAngleXMaxRandom",
+        "LaunchType",
+        "assetNo_Hit",
+        "lifeRandomRange",
+        "homingAngleX",
+        "lockShootCorrectionAng"
+      ]
+    },
+    {
+      "Key": "Projectile Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Projectile Options"
+        }
+      ],
+      "Fields": [
+        "isPenetrate",
+        "IsAttackSfx",
+        "IsEndlessHit",
+        "IsPenetrateMap",
+        "IsUseShardHitList",
+        "IsUseMultiDmyPolyIfPlace",
+        "attachEffectType0",
+        "attachEffectType1",
+        "IsHitForceMagic",
+        "IsIgnoreSfxIfHitWater",
+        "IsIgnoreMoveStateIfHitWater",
+        "IsHitDarkForceMagic",
+        "IsInheritEffectToChild",
+        "IsInheritSpeedToChild",
+        "isEnableAutoHoming",
+        "isSyncBulletCulcDumypolyPos",
+        "isOwnerOverrideInitAngle",
+        "isInheritSfxToChild",
+        "isInheritSpeedToChild",
+        "isDisableHitSfx_byChrAndObj",
+        "isCheckWall_byCenterRay",
+        "isHitFlare",
+        "isUseBulletWallFilter",
+        "IsSpCorrection2",
+        "isNonDependenceMagicForFunnleNum",
+        "isAiInterruptShootNoDamageBullet",
+        "IsHitBothTeam"
+      ]
+    },
+    {
+      "Key": "Damage Falloff",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Damage Falloff"
+        }
+      ],
+      "Fields": [
+        "damageDamp",
+        "magicDamageDamp",
+        "fireDamageDamp",
+        "thunderDamageDamp",
+        "staminaDamp",
+        "knockbackDamp",
+        "darkDamageDamp"
+      ]
+    }
+  ]
+}

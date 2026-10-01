@@ -705,178 +705,1341 @@
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525080",
+    "Name": "Caressing Tears: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525081",
+    "Name": "Caressing Tears: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "441807",
+    "Name": "Sacred Chime of Filianore: Finish Cast - Variant 3",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "528600",
+    "Name": "Lightning Arrow: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525130",
+    "Name": "Morbid Temptation: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525131",
+    "Name": "Morbid Temptation: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525200",
+    "Name": "Tears of Denial: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525201",
+    "Name": "Tears of Denial: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525210",
+    "Name": "Homeward: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525211",
+    "Name": "Homeward: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525300",
+    "Name": "Force: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525310",
+    "Name": "Wrath of the Gods: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525311",
+    "Name": "Wrath of the Gods: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525320",
+    "Name": "Emit Force: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525321",
+    "Name": "Emit Force: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525400",
+    "Name": "Seek Guidance: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525401",
+    "Name": "Seek Guidance: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525500",
+    "Name": "Lightning Spear: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525510",
+    "Name": "Great Lightning Spear: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525520",
+    "Name": "Sunlight Spear: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525530",
+    "Name": "Lightning Storm: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525531",
+    "Name": "Lightning Storm: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525540",
+    "Name": "Gnaw: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525541",
+    "Name": "Gnaw: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525550",
+    "Name": "Dorhys' Gnawing: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525551",
+    "Name": "Dorhys' Gnawing: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "528120",
+    "Name": "Way of White Corona: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "528121",
+    "Name": "Way of White Corona: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "528700",
+    "Name": "Projected Heal: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525600",
+    "Name": "Magic Barrier: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525601",
+    "Name": "Magic Barrier: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525610",
+    "Name": "Great Magic Barrier: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525611",
+    "Name": "Great Magic Barrier: Prepare Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525630",
+    "Name": "Sacred Oath: Cast",
     "Tags": [ "spell" ]
   },
   {
-    "ID": "xxx",
-    "Name": "xxx",
+    "ID": "525631",
+    "Name": "Sacred Oath: Prepare Cast",
     "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525632",
+    "Name": "Sacred Oath: Finish Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525810",
+    "Name": "Vow of Silence: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525811",
+    "Name": "Vow of Silence: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "441808",
+    "Name": "Sacred Chime of Filianore: Finish Cast - Variant 4",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525900",
+    "Name": "Lightning Blade: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525901",
+    "Name": "Lightning Blade: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525910",
+    "Name": "Darkmoon Blade: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525911",
+    "Name": "Darkmoon Blade: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526400",
+    "Name": "Dark Blade: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526401",
+    "Name": "Dark Blade: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527000",
+    "Name": "Dead Again: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527001",
+    "Name": "Dead Again: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527100",
+    "Name": "Lightning Stake: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527101",
+    "Name": "Lightning Stake: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527200",
+    "Name": "Divine Pillars of Light: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527201",
+    "Name": "Divine Pillars of Light: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527300",
+    "Name": "Lifehunt Scythe: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527301",
+    "Name": "Lifehunt Scythe: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527302",
+    "Name": "Lifehunt Scythe: Finish Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527500",
+    "Name": "Dorris Swarm: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527501",
+    "Name": "Dorris Swarm: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527600",
+    "Name": "Blessed Weapon: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527601",
+    "Name": "Blessed Weapon: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527700",
+    "Name": "Deep Protection: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527701",
+    "Name": "Deep Protection: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527800",
+    "Name": "Atonement: Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527801",
+    "Name": "Atonement: Prepare Cast",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "522002",
+    "Name": "Farron Dart: Projectile",
+    "Description": "Small, blue, flowing, magical capsule",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "522003",
+    "Name": "Farron Dart: Impact",
+    "Description": "Small, blue, magical burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "522102",
+    "Name": "Great Farron Dart: Projectile",
+    "Description": "Small, blue, flowing, magical capsule",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "522103",
+    "Name": "Great Farron Dart: Impact",
+    "Description": "Small, blue, magical birst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523002",
+    "Name": "Soul Arrow: Projectile",
+    "Description": "Medium, blue, flowing, magical capsule",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523003",
+    "Name": "Soul Arrow: Impact",
+    "Description": "Medium, blue, magical burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523012",
+    "Name": "Great Soul Arrow: Projectile",
+    "Description": "Medium, blue, flowing, magical capsule",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523013",
+    "Name": "Great Soul Arrow: Impact",
+    "Description": "Medium, blue, magical burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523022",
+    "Name": "Heavy Soul Arrow: Projectile",
+    "Description": "Large, blue, flowing, magical capsule",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523023",
+    "Name": "Heavy Soul Arrow: Impact",
+    "Description": "Large, blue, magical burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523032",
+    "Name": "Great Heavy Soul Arrow: Projectile",
+    "Description": "Large, blue, flowing, magical capsule",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523033",
+    "Name": "Great Heavy Soul Arrow: Impact",
+    "Description": "Large, blue, magical burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523042",
+    "Name": "Homing Soulmass: Projectile",
+    "Description": "Small, blue, flowing, magical orb",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523045",
+    "Name": "Homing Soulmass: Impact",
+    "Description": "Small, blue, magical burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523043",
+    "Name": "Homing Soulmass (Moving): Projectile",
+    "Description": "Small, blue, flowing, magical orb",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523044",
+    "Name": "Homing Soulmass (Moving): Impact",
+    "Description": "Small, blue, magical burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523052",
+    "Name": "Homing Crystal Soulmass: Projectile",
+    "Description": "Small, blue, crystalline, magical orb",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523055",
+    "Name": "Homing Crystal Soulmass: Impact",
+    "Description": "Small, blue, crystalline, magical burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523053",
+    "Name": "Homing Crystal Soulmass (Moving): Projectile",
+    "Description": "Small, blue, crystalline, flowing, magical orb",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523054",
+    "Name": "Homing Crystal Soulmass (Moving): Impact",
+    "Description": "Small, blue, crystalline, magical burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523062",
+    "Name": "Soul Spear: Projectile",
+    "Description": "Large, blue, magical capsule",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523063",
+    "Name": "Soul Spear: Impact",
+    "Description": "Large, blue, magical burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523072",
+    "Name": "Crystal Soul Spear: Projectile",
+    "Description": "Large, blue, crystalline, magical capsule",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523073",
+    "Name": "Crystal Soul Spear: Impact",
+    "Description": "Large, blue, crystalline, magical burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523083",
+    "Name": "Deep Soul: Projectile",
+    "Description": "Small, dark blue, dark capsule",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523084",
+    "Name": "Deep Soul: Impact",
+    "Description": "Small, dark blue, dark burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523093",
+    "Name": "Great Deep Soul: Projectile",
+    "Description": "Medium, dark blue, dark capsule",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523094",
+    "Name": "Great Deep Soul: Impact",
+    "Description": "Medium, dark blue, dark burst",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523562",
+    "Name": "Aural Decoy: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523563",
+    "Name": "Aural Decoy: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523564",
+    "Name": "Aural Decoy (Sustained): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523703",
+    "Name": "White Dragon Breath: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523722",
+    "Name": "Farron Hail: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523723",
+    "Name": "Farron Hail: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523732",
+    "Name": "Crystal Hail (Emitter): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523735",
+    "Name": "Crystal Hail (Emitter): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523733",
+    "Name": "Crystal Hail: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523734",
+    "Name": "Crystal Hail: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528904",
+    "Name": "Old Moonlight (Wave): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528903",
+    "Name": "Old Moonlight (Wave): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528908",
+    "Name": "Old Moonlight (Charged Wave): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528909",
+    "Name": "Old Moonlight (Charged Wave): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526032",
+    "Name": "Affinity: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526035",
+    "Name": "Affinity: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526033",
+    "Name": "Affinity (Moving): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526034",
+    "Name": "Affinity (Moving): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528802",
+    "Name": "Great Soul Dregs: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528803",
+    "Name": "Great Soul Dregs: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526251",
+    "Name": "Soul Stream (Emitter): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526252",
+    "Name": "Soul Stream (Stream): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526255",
+    "Name": "Soul Stream (Stream): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526512",
+    "Name": "Twisted Wall of Light: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527402",
+    "Name": "Pestilent Mist: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527403",
+    "Name": "Pestilent Mist: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528102",
+    "Name": "Snap Freeze: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528103",
+    "Name": "Snap Freeze: Cloud",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528104",
+    "Name": "Snap Freeze: Cloud",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524002",
+    "Name": "Fireball: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524003",
+    "Name": "Fireball: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524022",
+    "Name": "Fire Orb: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524023",
+    "Name": "Fire Orb: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524034",
+    "Name": "Firestorm: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524032",
+    "Name": "Firestorm: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524033",
+    "Name": "Firestorm: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524052",
+    "Name": "Fire Surge: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524053",
+    "Name": "Fire Surge: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524072",
+    "Name": "Black Serpent: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524112",
+    "Name": "Great Combustion: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524202",
+    "Name": "Poison Mist: Cloud",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524212",
+    "Name": "Toxic Mist: Cloud",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524222",
+    "Name": "Acid Surge: Cloud",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524223",
+    "Name": "Acid Surge: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524502",
+    "Name": "Great Chaos Fire Orb: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524503",
+    "Name": "Great Chaos Fire Orb: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524504",
+    "Name": "Great Chaos Fire Orb: Lava Pool",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524514",
+    "Name": "Chaos Storm: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524512",
+    "Name": "Chaos Storm: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524513",
+    "Name": "Chaos Storm: Pillar",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524515",
+    "Name": "Chaos Storm: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524522",
+    "Name": "Fire Whip: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524532",
+    "Name": "Black Flame: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524553",
+    "Name": "Profaned Flame: Projectile (Build-up)",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524552",
+    "Name": "Profaned Flame: Explosion",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524562",
+    "Name": "Chaos Bed Vestiges: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524563",
+    "Name": "Chaos Bed Vestiges: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528112",
+    "Name": "Floating Chaos (Emitter): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528113",
+    "Name": "Floating Chaos (Emitter): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528114",
+    "Name": "Floating Chaos (Fireball): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528115",
+    "Name": "Floating Chaos (Fireball): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "529003",
+    "Name": "Flame Fan: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524702",
+    "Name": "Warmth: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526002",
+    "Name": "Dark Orb: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526003",
+    "Name": "Dark Orb: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526102",
+    "Name": "Black Fire Orb: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526103",
+    "Name": "Black Fire Orb: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526202",
+    "Name": "Bursting Fireball: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526203",
+    "Name": "Bursting Fireball: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526204",
+    "Name": "Bursting Fireball: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526205",
+    "Name": "Bursting Fireball: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526302",
+    "Name": "Boulder Heave: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526303",
+    "Name": "Boulder Heave: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "529103",
+    "Name": "Seething Chaos: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "529104",
+    "Name": "Seething Chaos (Coalesce): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "529105",
+    "Name": "Seething Chaos (Implode): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "529106",
+    "Name": "Seething Chaos (Explosion): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524902",
+    "Name": "Heal Aid: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525002",
+    "Name": "Heal: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525012",
+    "Name": "Med Heal: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525022",
+    "Name": "Great Heal: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525032",
+    "Name": "Soothing Sunlight: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525053",
+    "Name": "Bountiful Sunlight: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525082",
+    "Name": "Caressing Tears: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528602",
+    "Name": "Lightning Arrow: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528603",
+    "Name": "Lightning Arrow: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525132",
+    "Name": "Morbid Temptation: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525133",
+    "Name": "Morbid Temptation: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525302",
+    "Name": "Force: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525303",
+    "Name": "Force: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525312",
+    "Name": "Wrath of the Gods: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525313",
+    "Name": "Wrath of the Gods: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525322",
+    "Name": "Emit Force: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525323",
+    "Name": "Emit Force: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525501",
+    "Name": "Lightning Spear (Proximity): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525504",
+    "Name": "Lightning Spear (Proximity): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525502",
+    "Name": "Lightning Spear (Spear): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525503",
+    "Name": "Lightning Spear (Spear): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525511",
+    "Name": "Great Lightning Spear (Proximity): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525514",
+    "Name": "Great Lightning Spear (Proximity): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525512",
+    "Name": "Great Lightning Spear (Spear): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525513",
+    "Name": "Great Lightning Spear (Spear): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525521",
+    "Name": "Sunlight Spear (Proximity): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525524",
+    "Name": "Sunlight Spear (Proximity): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525522",
+    "Name": "Sunlight Spear (Spear): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525523",
+    "Name": "Sunlight Spear (Spear): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525533",
+    "Name": "Lightning Storm: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525542",
+    "Name": "Gnaw: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525543",
+    "Name": "Gnaw: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525552",
+    "Name": "Dorhys' Gnawing: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525553",
+    "Name": "Dorhys' Gnawing: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528122",
+    "Name": "Way of White Corona: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528123",
+    "Name": "Way of White Corona: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528124",
+    "Name": "Way of White Corona (Spinning): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528702",
+    "Name": "Projected Heal: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528703",
+    "Name": "Projected Heal: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "547002",
+    "Name": "Dead Again (Source): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527003",
+    "Name": "Dead Again (Finder): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527004",
+    "Name": "Dead Again (Finder): Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527102",
+    "Name": "Lightning Stake: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527204",
+    "Name": "Divine Pillars of Light: Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527202",
+    "Name": "Divine Pillars of Light: Impact",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "303071",
+    "Name": "Magic Weapon: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "303101",
+    "Name": "Great Magic Weapon: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "303111",
+    "Name": "Crystal Magic Weapon: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "303151",
+    "Name": "Frozen Weapon: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523302",
+    "Name": "Magic Shield: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523312",
+    "Name": "Great Magic Shield: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523412",
+    "Name": "Hidden Body: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523502",
+    "Name": "Cast Light: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523512",
+    "Name": "Cast Light: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "20343",
+    "Name": "Repair: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "523542",
+    "Name": "Spook: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524312",
+    "Name": "Flash Sweat: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "303001",
+    "Name": "Carthus Flame Arc: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "4095",
+    "Name": "Rapport: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524402",
+    "Name": "Power Within: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524703",
+    "Name": "Warmth: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525622",
+    "Name": "Profuse Sweat: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "526502",
+    "Name": "Carthus Beacon: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "524903",
+    "Name": "Heal Aid: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525003",
+    "Name": "Heal: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525013",
+    "Name": "Med Heal: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525023",
+    "Name": "Great Heal: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525033",
+    "Name": "Soothing Sunlight: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525042",
+    "Name": "Replenishment: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525052",
+    "Name": "Bountiful Sunlight: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525072",
+    "Name": "Bountiful Light: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525083",
+    "Name": "Caressing Tears: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525205",
+    "Name": "Tears of Denial: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525602",
+    "Name": "Magic Barrier: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525612",
+    "Name": "Great Magic Barrier: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525633",
+    "Name": "Sacred Oath: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525634",
+    "Name": "Sacred Oath: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "4090",
+    "Name": "Vow of Silence: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "525813",
+    "Name": "Vow of Silence: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "303011",
+    "Name": "Lightning Blade: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "303141",
+    "Name": "Darkmoon Blade: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "303081",
+    "Name": "Dark Blade: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "527303",
+    "Name": "Lifehunt Scythe: HP Gain: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "528704",
+    "Name": "Projected Heal: Visual",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "612391",
+    "Name": "Ballista Arrow (Smouldering Lake): Projectile",
+    "Tags": [ "spell" ]
+  },
+  {
+    "ID": "612392",
+    "Name": "Ballista Arrow (Smouldering Lake): Impact",
+    "Tags": [ "" ]
+  },
+  {
+    "ID": "612394",
+    "Name": "Tower Giant's Arrow (Farron Keep): Projectile",
+    "Tags": [ "" ]
+  },
+  {
+    "ID": "835070",
+    "Name": "Poison-Spewing Statue (Cathedral of the Deep): Projectile",
+    "Tags": [ "" ]
+  },
+  {
+    "ID": "835071",
+    "Name": "Poison-Spewing Statue (Cathedral of the Deep): Impact",
+    "Tags": [ "" ]
+  },
+  {
+    "ID": "612393",
+    "Name": "Tower Giant's Arrow (Cathedral of the Deep): Projectile",
+    "Tags": [ "" ]
+  },
+  {
+    "ID": "600411",
+    "Name": "Bolt Trap (Catacombs of Carthus): Projectile",
+    "Tags": [ "" ]
+  },
+  {
+    "ID": "600412",
+    "Name": "Bolt Trap (Catacombs of Carthus): Impact",
+    "Tags": [ "" ]
+  },
+  {
+    "ID": "600413",
+    "Name": "Bolt Trap (Catacombs of Carthus): Flick",
+    "Tags": [ "" ]
+  },
+  {
+    "ID": "838121",
+    "Name": "Affinity Pot (Catacombs of Carthus): Projectile",
+    "Tags": [ "" ]
+  },
+  {
+    "ID": "838122",
+    "Name": "Affinity Pot (Catacombs of Carthus): Impact",
+    "Tags": [ "" ]
   }
 ]

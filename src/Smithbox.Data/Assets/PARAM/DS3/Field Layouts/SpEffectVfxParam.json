@@ -1,0 +1,165 @@
+{
+  "Name": "SpEffectVfxParam",
+  "Groups": [
+    {
+      "Key": "Visuals",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Visuals"
+        }
+      ],
+      "Fields": [
+        "midstSfxId",
+        "initSfxId",
+        "finishSfxId",
+        "midstDmyId",
+        "initDmyId",
+        "finishDmyId",
+        "isMidstFullbody",
+        "isInitFullbody",
+        "isFinishFullbody"
+      ]
+    },
+    {
+      "Key": "Sounds",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Sounds"
+        }
+      ],
+      "Fields": [
+        "midstSeId",
+        "initSeId",
+        "finishSeId"
+      ]
+    },
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "effectType",
+        "playCategory",
+        "playPriority",
+        "forceDeceasedType",
+        "phantomParamOverwriteId",
+        "phantomParamOverwriteType",
+        "wetAspectType",
+        "emissiveIntensityScale",
+        "emberEffectGlow",
+        "SfxIdOffsetType"
+      ]
+    },
+    {
+      "Key": "Camouflage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Camouflage"
+        }
+      ],
+      "Fields": [
+        "camouflageBeginDist",
+        "camouflageEndDist",
+        "effectInvisibleAtCamouflage",
+        "useCamouflage",
+        "invisibleAtFriendCamouflage",
+        "isHideFootEffect_forCamouflage",
+        "halfCamouflage",
+        "camouflageMinAlpha"
+      ]
+    },
+    {
+      "Key": "Transform",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Transform"
+        }
+      ],
+      "Fields": [
+        "transformProtectorId",
+        "isFullBodyTransformProtectorId",
+        "isInvisibleWeapon"
+      ]
+    },
+    {
+      "Key": "Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Options"
+        }
+      ],
+      "Fields": [
+        "existEffectForLarge",
+        "existEffectForSoul",
+        "isSilence",
+        "isVisibleDeadChr"
+      ]
+    },
+    {
+      "Key": "Weapon Enchant",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Weapon Enchant"
+        }
+      ],
+      "Fields": [
+        "soulParamIdForWepEnchant",
+        "isUseOffsetEnchantSfxSize",
+        "traceSfxIdOffsetType",
+        "enchantStartDmyId_0",
+        "enchantEndDmyId_0",
+        "enchantStartDmyId_1",
+        "enchantEndDmyId_1",
+        "enchantStartDmyId_2",
+        "enchantEndDmyId_2",
+        "enchantStartDmyId_3",
+        "enchantEndDmyId_3",
+        "enchantStartDmyId_4",
+        "enchantEndDmyId_4",
+        "enchantStartDmyId_5",
+        "enchantEndDmyId_5",
+        "enchantStartDmyId_6",
+        "enchantEndDmyId_6",
+        "enchantStartDmyId_7",
+        "enchantEndDmyId_7"
+      ]
+    },
+    {
+      "Key": "Decals",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Decals"
+        }
+      ],
+      "Fields": [
+        "decalId1",
+        "decalId2"
+      ]
+    },
+    {
+      "Key": "Foot Effect",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Foot Effect"
+        }
+      ],
+      "Fields": [
+        "footEffectPriority",
+        "footEffectOffset",
+        "footDecalMaterialOffsetOverwriteId"
+      ]
+    }
+  ]
+}

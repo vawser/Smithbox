@@ -6,7 +6,7 @@
   "Fields": [
     {
       "Field": "atkBullet_Id",
-      "Name": "AtkParam ID",
+      "Name": "Attack Param ID",
       "Description": "Attack parameters for bullet impact."
     },
     {
@@ -403,6 +403,11 @@
       "Field": "intervalCreateBulletId",
       "Name": "Bullet Emitter: Bullet ID",
       "Description": "Bullet ID used when making bullets at regular intervals"
+    },
+    {
+      "Field": "LaunchType",
+      "Name": "Launch Type",
+      "Description": ""
     },
     {
       "Field": "intervalCreateTimeMin",

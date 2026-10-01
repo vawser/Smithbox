@@ -6,8 +6,8 @@
   "Fields": [
     {
       "Field": "maxAmmount",
-      "Name": "",
-      "Description": ""
+      "Name": "Max Amount",
+      "Description": "The maximum number of instances of this bullet that can exist at one time."
     },
     {
       "Field": "pad1",
