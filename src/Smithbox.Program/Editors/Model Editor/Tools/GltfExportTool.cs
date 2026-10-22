@@ -47,6 +47,17 @@ public class GltfExportTool
             "Use this as a fallback if some meshes still render oddly-shaded.");
 
         GUI.Spacer();
+        ImGui.Checkbox("Bake PBR textures##modelGltfExportBakePbr", ref CFG.Current.GltfExport_BakePbr);
+        GUI.Tooltip("Elden Ring / AC6 / Nightreign only. Exports one ready-to-use PBR set per material: base color, a " +
+            "standard normal map (Z rebuilt) and an ORM texture (R = occlusion, G = roughness, B = metallic) at the " +
+            "texture's full resolution. If unchecked, the raw game textures are exported as before.");
+        if (CFG.Current.GltfExport_BakePbr)
+        {
+            ImGui.Checkbox("Flip normal Y (DirectX to OpenGL)##modelGltfExportFlipNormalY", ref CFG.Current.GltfExport_FlipNormalY);
+            GUI.Tooltip("Turn this on if the surface detail looks inverted (bumps look like dents) in your renderer.");
+        }
+
+        GUI.Spacer();
         ImGui.Checkbox("Include skeleton##modelGltfExportIncludeSkeleton", ref CFG.Current.ModelEditor_GltfExport_IncludeSkeleton);
         GUI.Tooltip("Exports a real glTF skin (armature/joints + bind weights) in bind pose, instead of a static mesh. " +
             "Works for Characters and Parts (armor/weapons) alike. No animation is exported - pose or animate the " +

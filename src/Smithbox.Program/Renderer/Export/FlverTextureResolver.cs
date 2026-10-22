@@ -1,6 +1,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace StudioCore.Renderer.Export;
@@ -27,6 +28,11 @@ public static class FlverTextureResolver
         public string SpecularVirtualPath;
 
         /// <summary>
+        /// The material's metallic mask (ER-era "MetallicMap" samplers), if it has one.
+        /// </summary>
+        public string MetallicVirtualPath;
+
+        /// <summary>
         /// Always "MASK" - see <see cref="DetermineAlphaMode"/> for why.
         /// </summary>
         public string AlphaMode = "MASK";
@@ -38,6 +44,16 @@ public static class FlverTextureResolver
         {
             AlphaMode = DetermineAlphaMode()
         };
+
+        // Several samplers can map onto one slot (detail blends, body + hair albedo, ...). For chr models in MATBIN
+        // games pick the way the live viewport does: the character's own texture named after the material first,
+        // then any of its own textures, then shared (AAT) ones. Everything else keeps the first one found.
+        var orderedSelection = flverVirtPath != null && flverVirtPath.StartsWith("chr/") &&
+                               project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR;
+
+        var albedoCandidates = new List<string>();
+        var normalCandidates = new List<string>();
+        var metallicCandidates = new List<string>();
 
         foreach (var tex in material.Textures)
         {
@@ -56,8 +72,9 @@ public static class FlverTextureResolver
             var isShininess = !isShininess2 && (paramName is "G_SHININESSTEXTURE" or "G_SHININESS" || paramName.Contains("SHININESS"));
 
             var isRoughnessLike = paramName.Contains("ROUGHNESS") || paramName.Contains("REFLECTANCE");
+            var isMetallic = paramName.Contains("METALLIC");
 
-            if (!isAlbedo && !isNormal && !isSpecular && !isShininess && !isRoughnessLike)
+            if (!isAlbedo && !isNormal && !isSpecular && !isShininess && !isRoughnessLike && !isMetallic)
                 continue;
 
             var resolvedPath = ResolveTexturePath(project, tex.ParamName, tex.Path, material.MTD);
@@ -66,15 +83,44 @@ public static class FlverTextureResolver
 
             var virtualPath = TextureLocator.GetFlverTextureVirtualPath(flverVirtPath, resolvedPath.ToLowerInvariant(), material.Name);
 
-            if (isAlbedo && result.AlbedoVirtualPath == null)
-                result.AlbedoVirtualPath = virtualPath;
-            else if (isNormal && result.NormalVirtualPath == null)
-                result.NormalVirtualPath = virtualPath;
+            if (isAlbedo)
+                albedoCandidates.Add(virtualPath);
+            else if (isNormal)
+                normalCandidates.Add(virtualPath);
+            else if (isMetallic)
+                metallicCandidates.Add(virtualPath);
             else if ((isSpecular || isShininess || isRoughnessLike) && result.SpecularVirtualPath == null)
                 result.SpecularVirtualPath = virtualPath;
         }
 
+        result.AlbedoVirtualPath = PickTexture(albedoCandidates, material.Name, orderedSelection);
+        result.NormalVirtualPath = PickTexture(normalCandidates, material.Name, orderedSelection);
+        result.MetallicVirtualPath = PickTexture(metallicCandidates, material.Name, orderedSelection);
+
         return result;
+    }
+
+    private static string PickTexture(List<string> candidates, string materialName, bool orderedSelection)
+    {
+        if (candidates.Count == 0)
+            return null;
+
+        if (!orderedSelection)
+            return candidates[0];
+
+        foreach (var c in candidates)
+        {
+            if (!c.StartsWith("aat/") && TextureLocator.TextureNameMatchesMaterial(c, materialName))
+                return c;
+        }
+
+        foreach (var c in candidates)
+        {
+            if (!c.StartsWith("aat/"))
+                return c;
+        }
+
+        return candidates[0];
     }
 
     /// <summary>

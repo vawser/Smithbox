@@ -455,6 +455,8 @@ public class CFG
     public bool Interface_MapEditor_Tool_GltfExport = true;
 
     public string MapEditor_GltfExport_OutputFolder = "";
+    public bool GltfExport_BakePbr = true;
+    public bool GltfExport_FlipNormalY = false;
     public bool MapEditor_GltfExport_IncludeNormals = true;
 
     // Saving

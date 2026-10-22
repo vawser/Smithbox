@@ -11,6 +11,24 @@ public static class TextureLocator
 {
     public static readonly char sl = Path.DirectorySeparatorChar;
 
+    /// <summary>
+    /// True if the part of the texture name between the "cXXXX_" prefix and the "_a"/"_n"/... suffix appears in the
+    /// material name, e.g. chr/c4270/tex/c4270_hair_a matches the materials "Hair" and "Hair_Cloth".
+    /// </summary>
+    public static bool TextureNameMatchesMaterial(string textureVirtPath, string materialName)
+    {
+        if (string.IsNullOrEmpty(materialName))
+            return false;
+
+        var name = textureVirtPath.Substring(textureVirtPath.LastIndexOf('/') + 1);
+        var parts = name.Split('_');
+        if (parts.Length < 3)
+            return false;
+
+        var token = string.Join("_", parts[1..^1]);
+        return token.Length > 0 && materialName.ToLower().Contains(token);
+    }
+
     // These are for getting the virtual pathes to feed into the resource manager.
     // Remember: AssetVirtualPath is for tpf.dcx, AssetArchiveVirtualPath is for texbnd.dcx
     public static List<ResourceDescriptor> GetMapTextureVirtualPaths(ProjectEntry project, string mapID)

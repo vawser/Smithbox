@@ -220,24 +220,6 @@ public class FlverResource : IResource, IDisposable
     /// </summary>
     private int _chrTexturePass = -1;
 
-    /// <summary>
-    /// True if the part of the texture name between the "cXXXX_" prefix and the "_a"/"_n"/... suffix appears in the
-    /// material name, e.g. chr/c4270/tex/c4270_hair_a matches the materials "Hair" and "Hair_Cloth".
-    /// </summary>
-    private static bool TextureNameMatchesMaterial(string textureVirtPath, string materialName)
-    {
-        if (string.IsNullOrEmpty(materialName))
-            return false;
-
-        var name = textureVirtPath.Substring(textureVirtPath.LastIndexOf('/') + 1);
-        var parts = name.Split('_');
-        if (parts.Length < 3)
-            return false;
-
-        var token = string.Join("_", parts[1..^1]);
-        return token.Length > 0 && materialName.ToLower().Contains(token);
-    }
-
     private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string? type, string mpath,
         string mtd, string materialName = null)
     {
@@ -369,7 +351,7 @@ public class FlverResource : IResource, IDisposable
         {
             var isShared = textureVirtPath.StartsWith("aat/");
 
-            if (_chrTexturePass == 0 && (isShared || !TextureNameMatchesMaterial(textureVirtPath, materialName)))
+            if (_chrTexturePass == 0 && (isShared || !TextureLocator.TextureNameMatchesMaterial(textureVirtPath, materialName)))
                 return;
 
             if (_chrTexturePass == 1 && isShared)

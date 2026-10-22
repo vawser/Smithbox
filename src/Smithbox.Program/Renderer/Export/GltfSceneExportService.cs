@@ -36,6 +36,12 @@ public static class GltfSceneExportService
 
     private class ExportCaches
     {
+        // "normalPath|metallicPath" -> baked normal / ORM gltf image indices (either may be null)
+        public readonly Dictionary<string, (int? Normal, int? Orm)> BakedPbr = new();
+
+        // File names already used for baked PBR textures, so two different materials never overwrite each other
+        public readonly HashSet<string> BakedPbrNames = new();
+
         // Model cache key -> gltf mesh index (or null if that model failed to export)
         public readonly Dictionary<string, int?> Meshes = new();
 
@@ -353,14 +359,12 @@ public static class GltfSceneExportService
         foreach (var prim in baked)
         {
             var albedoImage = GetOrCreateTextureImage(project, doc, prim.AlbedoVirtualPath, outputFolder, caches, warnings);
-            var normalImage = GetOrCreateTextureImage(project, doc, prim.NormalVirtualPath, outputFolder, caches, warnings);
-            var specularImage = GetOrCreateTextureImage(project, doc, prim.SpecularVirtualPath, outputFolder, caches, warnings);
-
             int? albedoTexIndex = albedoImage.HasValue ? doc.AddOrGetTexture(albedoImage.Value) : null;
-            int? normalTexIndex = normalImage.HasValue ? doc.AddOrGetTexture(normalImage.Value) : null;
-            int? specularTexIndex = specularImage.HasValue ? doc.AddOrGetTexture(specularImage.Value) : null;
 
-            var materialKey = $"{prim.AlbedoVirtualPath}|{prim.NormalVirtualPath}|{prim.SpecularVirtualPath}|{prim.AlphaMode}|{prim.MaterialName}";
+            ResolveNormalAndRoughnessTextures(project, doc, prim.NormalVirtualPath, prim.SpecularVirtualPath,
+                prim.MetallicVirtualPath, outputFolder, caches, warnings, out var normalTexIndex, out var specularTexIndex);
+
+            var materialKey = $"{prim.AlbedoVirtualPath}|{prim.NormalVirtualPath}|{prim.SpecularVirtualPath}|{prim.MetallicVirtualPath}|{prim.AlphaMode}|{prim.MaterialName}";
             var materialIndex = doc.AddOrGetMaterial(materialKey, prim.MaterialName, albedoTexIndex, normalTexIndex,
                 specularTexIndex, prim.AlphaMode);
 
@@ -432,14 +436,12 @@ public static class GltfSceneExportService
         foreach (var prim in baked.Primitives)
         {
             var albedoImage = GetOrCreateTextureImage(project, doc, prim.AlbedoVirtualPath, outputFolder, caches, warnings);
-            var normalImage = GetOrCreateTextureImage(project, doc, prim.NormalVirtualPath, outputFolder, caches, warnings);
-            var specularImage = GetOrCreateTextureImage(project, doc, prim.SpecularVirtualPath, outputFolder, caches, warnings);
-
             int? albedoTexIndex = albedoImage.HasValue ? doc.AddOrGetTexture(albedoImage.Value) : null;
-            int? normalTexIndex = normalImage.HasValue ? doc.AddOrGetTexture(normalImage.Value) : null;
-            int? specularTexIndex = specularImage.HasValue ? doc.AddOrGetTexture(specularImage.Value) : null;
 
-            var materialKey = $"{prim.AlbedoVirtualPath}|{prim.NormalVirtualPath}|{prim.SpecularVirtualPath}|{prim.AlphaMode}|{prim.MaterialName}";
+            ResolveNormalAndRoughnessTextures(project, doc, prim.NormalVirtualPath, prim.SpecularVirtualPath,
+                prim.MetallicVirtualPath, outputFolder, caches, warnings, out var normalTexIndex, out var specularTexIndex);
+
+            var materialKey = $"{prim.AlbedoVirtualPath}|{prim.NormalVirtualPath}|{prim.SpecularVirtualPath}|{prim.MetallicVirtualPath}|{prim.AlphaMode}|{prim.MaterialName}";
             var materialIndex = doc.AddOrGetMaterial(materialKey, prim.MaterialName, albedoTexIndex, normalTexIndex,
                 specularTexIndex, prim.AlphaMode);
 
@@ -486,6 +488,103 @@ public static class GltfSceneExportService
             caches.Images[virtualTexPath] = null;
             return null;
         }
+    }
+
+    /// <summary>
+    /// Fills in the glTF normal and metallic-roughness texture slots for one material. For MATBIN games (ER, AC6, NR)
+    /// the textures are converted into standard PBR maps (normal with Z rebuilt, plus an ORM texture holding
+    /// roughness and metallic) so a PBR renderer gets one ready-to-use set per material. Everything else, and any
+    /// failure, falls back to exporting the raw normal map and the specular-style map as before.
+    /// </summary>
+    private static void ResolveNormalAndRoughnessTextures(ProjectEntry project, GltfDocumentWriter doc,
+        string normalPath, string specularPath, string metallicPath, string outputFolder, ExportCaches caches,
+        List<string> warnings, out int? normalTexIndex, out int? specularTexIndex)
+    {
+        normalTexIndex = null;
+        specularTexIndex = null;
+
+        var bakeSupported = project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR;
+
+        if (CFG.Current.GltfExport_BakePbr && bakeSupported && (normalPath != null || metallicPath != null))
+        {
+            var baked = GetOrCreateBakedPbrImages(project, doc, normalPath, metallicPath, outputFolder, caches, warnings);
+
+            if (baked.Normal.HasValue || baked.Orm.HasValue)
+            {
+                normalTexIndex = baked.Normal.HasValue ? doc.AddOrGetTexture(baked.Normal.Value) : null;
+                specularTexIndex = baked.Orm.HasValue ? doc.AddOrGetTexture(baked.Orm.Value) : null;
+                return;
+            }
+        }
+
+        var normalImage = GetOrCreateTextureImage(project, doc, normalPath, outputFolder, caches, warnings);
+        var specularImage = GetOrCreateTextureImage(project, doc, specularPath, outputFolder, caches, warnings);
+
+        normalTexIndex = normalImage.HasValue ? doc.AddOrGetTexture(normalImage.Value) : null;
+        specularTexIndex = specularImage.HasValue ? doc.AddOrGetTexture(specularImage.Value) : null;
+    }
+
+    private static (int? Normal, int? Orm) GetOrCreateBakedPbrImages(ProjectEntry project, GltfDocumentWriter doc,
+        string normalPath, string metallicPath, string outputFolder, ExportCaches caches, List<string> warnings)
+    {
+        var key = $"{normalPath}|{metallicPath}";
+        if (caches.BakedPbr.TryGetValue(key, out var cached))
+            return cached;
+
+        (int? Normal, int? Orm) result = (null, null);
+
+        try
+        {
+            PbrTextureBaker.Bitmap normal = null;
+            PbrTextureBaker.Bitmap metallic = null;
+
+            if (normalPath != null)
+            {
+                var bytes = SoulsContainerIO.ReadTextureBytes(project, normalPath, out var error);
+                if (bytes == null || bytes.Length == 0)
+                    warnings.Add($"Texture not found: {normalPath}{(error != null ? $" ({error})" : "")}");
+                else
+                    normal = PbrTextureBaker.Decode(bytes);
+            }
+
+            if (metallicPath != null)
+            {
+                var bytes = SoulsContainerIO.ReadTextureBytes(project, metallicPath, out var error);
+                if (bytes == null || bytes.Length == 0)
+                    warnings.Add($"Texture not found: {metallicPath}{(error != null ? $" ({error})" : "")}");
+                else
+                    metallic = PbrTextureBaker.Decode(bytes);
+            }
+
+            if (normal != null || metallic != null)
+            {
+                var texturesDir = Path.Combine(outputFolder, "textures");
+                Directory.CreateDirectory(texturesDir);
+
+                var stem = SanitizeFileName(Path.GetFileNameWithoutExtension(normalPath ?? metallicPath));
+                var baseName = stem;
+                for (var i = 2; !caches.BakedPbrNames.Add(baseName); i++)
+                    baseName = $"{stem}_{i}";
+
+                if (normal != null)
+                {
+                    PbrTextureBaker.SavePng(PbrTextureBaker.BakeNormal(normal, CFG.Current.GltfExport_FlipNormalY),
+                        Path.Combine(texturesDir, $"{baseName}_normal"));
+                    result.Normal = doc.AddOrGetImage($"textures/{baseName}_normal.png");
+                }
+
+                PbrTextureBaker.SavePng(PbrTextureBaker.BakeOrm(normal, metallic), Path.Combine(texturesDir, $"{baseName}_orm"));
+                result.Orm = doc.AddOrGetImage($"textures/{baseName}_orm.png");
+            }
+        }
+        catch (Exception e)
+        {
+            warnings.Add($"Failed to bake PBR textures for '{normalPath ?? metallicPath}': {e.Message}");
+            result = (null, null);
+        }
+
+        caches.BakedPbr[key] = result;
+        return result;
     }
 
     private static string SanitizeFileName(string name)

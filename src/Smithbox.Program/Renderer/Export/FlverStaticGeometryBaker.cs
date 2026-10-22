@@ -25,6 +25,7 @@ public static class FlverStaticGeometryBaker
         public string AlbedoVirtualPath;
         public string NormalVirtualPath;
         public string SpecularVirtualPath;
+        public string MetallicVirtualPath;
         public string AlphaMode;
     }
 
@@ -195,6 +196,7 @@ public static class FlverStaticGeometryBaker
                 AlbedoVirtualPath = resolvedTextures.AlbedoVirtualPath,
                 NormalVirtualPath = resolvedTextures.NormalVirtualPath,
                 SpecularVirtualPath = resolvedTextures.SpecularVirtualPath,
+                MetallicVirtualPath = resolvedTextures.MetallicVirtualPath,
                 AlphaMode = resolvedTextures.AlphaMode
             });
         }
