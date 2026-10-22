@@ -210,7 +210,7 @@ public static class TextureLocator
         texpath = texpath.Replace('\\', sl);
 
         // Map-owned material on a non-map (usually "chr") model - see the materialName param doc above.
-        if (!string.IsNullOrEmpty(materialName))
+        if (type == "chr" && !string.IsNullOrEmpty(materialName))
         {
             var mapMaterialMatch = System.Text.RegularExpressions.Regex.Match(materialName, @"^(m\d{2})_\d{2}_");
             if (mapMaterialMatch.Success)
@@ -235,7 +235,9 @@ public static class TextureLocator
             var chrid = splits[splits.Length - 3];
             return $@"chr/{chrid}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
         }
-        else if (type == "chr")
+        // Shared AAT textures (e.g. parts/tex/AAT100_*.tif) referenced from chr materials live in the parts
+        // archive, not the character's own - let them fall through to the AAT handling below.
+        else if (type == "chr" && !(texpath.Contains($"{sl}aat") || texpath.StartsWith("aat")))
         {
             var splits = virtPath.Split("/");
             var chrid = splits[1];

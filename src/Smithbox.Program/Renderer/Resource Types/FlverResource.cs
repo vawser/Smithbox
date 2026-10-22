@@ -209,6 +209,35 @@ public class FlverResource : IResource, IDisposable
         }
     }
 
+    /// <summary>
+    /// Several samplers on one chr material (detail blends, body + hair albedo, etc.) map onto the same slot and the
+    /// first one registered wins. For chr models in MATBIN games the materials are therefore processed in passes so
+    /// the most relevant texture claims the slot first:
+    /// 0 = the character's own textures named after the material (e.g. "Hair" material -> c4270_Hair_a),
+    /// 1 = any of the character's own textures,
+    /// 2 = shared (AAT) textures for whatever is left.
+    /// -1 = no ordering (default behaviour).
+    /// </summary>
+    private int _chrTexturePass = -1;
+
+    /// <summary>
+    /// True if the part of the texture name between the "cXXXX_" prefix and the "_a"/"_n"/... suffix appears in the
+    /// material name, e.g. chr/c4270/tex/c4270_hair_a matches the materials "Hair" and "Hair_Cloth".
+    /// </summary>
+    private static bool TextureNameMatchesMaterial(string textureVirtPath, string materialName)
+    {
+        if (string.IsNullOrEmpty(materialName))
+            return false;
+
+        var name = textureVirtPath.Substring(textureVirtPath.LastIndexOf('/') + 1);
+        var parts = name.Split('_');
+        if (parts.Length < 3)
+            return false;
+
+        var token = string.Join("_", parts[1..^1]);
+        return token.Length > 0 && materialName.ToLower().Contains(token);
+    }
+
     private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string? type, string mpath,
         string mtd, string materialName = null)
     {
@@ -240,11 +269,19 @@ public class FlverResource : IResource, IDisposable
                 if (tex == null || !tex.Extended || tex.Path == "")
                 {
                     //Smithbox.Log(this, $"{VirtPath}: Failed to find MTD string: {mtdstring} - {type}");
-                    return;
-                }
 
-                path = tex.Path;
-                //Smithbox.Log(this, $"{VirtPath}: MTD: {path}");
+                    // ER/AC6/NR materials are defined by MATBINs. A same-named MTD (e.g. m10_00_010) can
+                    // exist without the sampler, so fall through to the MATBIN lookup instead of bailing.
+                    if (curProject.Descriptor.ProjectType is not (ProjectType.ER or ProjectType.AC6 or ProjectType.NR))
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    path = tex.Path;
+                    //Smithbox.Log(this, $"{VirtPath}: MTD: {path}");
+                }
             }
 
             // MATBIN
@@ -327,6 +364,17 @@ public class FlverResource : IResource, IDisposable
         }
 
         string textureVirtPath = TextureLocator.GetFlverTextureVirtualPath(VirtPath, path.ToLower(), materialName);
+
+        if (_chrTexturePass >= 0)
+        {
+            var isShared = textureVirtPath.StartsWith("aat/");
+
+            if (_chrTexturePass == 0 && (isShared || !TextureNameMatchesMaterial(textureVirtPath, materialName)))
+                return;
+
+            if (_chrTexturePass == 1 && isShared)
+                return;
+        }
 
         if (!dest.TextureResourceFilled[(int)textureType])
         {
@@ -518,10 +566,21 @@ public class FlverResource : IResource, IDisposable
         var hasSpec2 = false;
         var hasShininess2 = false;
 
-        foreach (IFlverTexture? matparam in mat.Textures)
+        // Chr models in MATBIN games: see _chrTexturePass.
+        var orderedPasses = VirtPath != null && VirtPath.StartsWith("chr/") &&
+                            curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR;
+
+        for (var pass = orderedPasses ? 0 : 2; pass < 3; pass++)
         {
-            ProcessMaterialTexture(dest, matparam.ParamName, matparam.Path, mat.MTD, matName, out blend, out hasNormal2, out hasSpec2, out hasShininess2, out blendMask);
+            _chrTexturePass = orderedPasses ? pass : -1;
+
+            foreach (IFlverTexture? matparam in mat.Textures)
+            {
+                ProcessMaterialTexture(dest, matparam.ParamName, matparam.Path, mat.MTD, matName, out blend, out hasNormal2, out hasSpec2, out hasShininess2, out blendMask);
+            }
         }
+
+        _chrTexturePass = -1;
 
         if (blendMask)
         {
