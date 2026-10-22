@@ -788,22 +788,19 @@ public class HavokBank : IDisposable
 
                 try
                 {
-                    using (MemoryStream memoryStream = new MemoryStream(file.Bytes.ToArray()))
+                    var objEntry = bankDict[fileEntry][internalFilePath];
+
+                    if (objEntry != null)
                     {
-                        var objEntry = bankDict[fileEntry][internalFilePath];
+                        var bw = new BinaryWriterEx(false);
+                        serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
 
-                        if (objEntry != null)
-                        {
-                            var bw = new BinaryWriterEx(false);
-                            serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
-
-                            file.Bytes = bw.FinishBytes();
-                            anyWritten = true;
-                        }
-                        else
-                        {
-                            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
-                        }
+                        file.Bytes = bw.FinishBytes();
+                        anyWritten = true;
+                    }
+                    else
+                    {
+                        Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
                     }
                 }
                 catch (Exception ex)
@@ -844,22 +841,19 @@ public class HavokBank : IDisposable
 
                 try
                 {
-                    using (MemoryStream memoryStream = new MemoryStream(file.Bytes.ToArray()))
+                    var objEntry = bankDict[fileEntry][internalFilePath];
+
+                    if (objEntry != null)
                     {
-                        var objEntry = bankDict[fileEntry][internalFilePath];
+                        var bw = new BinaryWriterEx(false);
+                        serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
 
-                        if (objEntry != null)
-                        {
-                            var bw = new BinaryWriterEx(false);
-                            serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
-
-                            file.Bytes = bw.FinishBytes();
-                            anyWritten = true;
-                        }
-                        else
-                        {
-                            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
-                        }
+                        file.Bytes = bw.FinishBytes();
+                        anyWritten = true;
+                    }
+                    else
+                    {
+                        Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
                     }
                 }
                 catch (Exception ex)
@@ -904,21 +898,21 @@ public class HavokBank : IDisposable
 
             try
             {
-                using (MemoryStream memoryStream = new MemoryStream(file.Bytes.ToArray()))
-                {
-                    var objEntry = bankDict[fileEntry][internalFilePath];
+                var objEntry = bankDict[fileEntry][internalFilePath];
 
-                    if (objEntry != null)
+                if (objEntry != null)
+                {
+                    using (var memoryStream = new MemoryStream())
                     {
                         serializer.Write((HKLib.hk2018.hkRootLevelContainer)objEntry, memoryStream);
 
                         file.Bytes = memoryStream.ToArray();
                         anyWritten = true;
                     }
-                    else
-                    {
-                        Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
-                    }
+                }
+                else
+                {
+                    Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
                 }
             }
             catch (Exception ex)
@@ -1012,30 +1006,27 @@ public class HavokBank : IDisposable
 
                 try
                 {
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    var objEntry = bankDict[fileEntry][internalFilePath];
+                    if (objEntry != null)
                     {
-                        var objEntry = bankDict[fileEntry][internalFilePath];
-                        if (objEntry != null)
+                        var bw = new BinaryWriterEx(false);
+                        serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
+
+                        if (file.Name.Contains(".dcx"))
                         {
-                            var bw = new BinaryWriterEx(false);
-                            serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
-
-                            if (file.Name.Contains(".dcx"))
-                            {
-                                var compressedBytes = DCX.Compress(bw.FinishBytes(), DCX.Type.DCX_KRAK);
-                                file.Bytes = compressedBytes;
-                            }
-                            else
-                            {
-                                file.Bytes = bw.FinishBytes();
-                            }
-
-                            anyWritten = true;
+                            var compressedBytes = DCX.Compress(bw.FinishBytes(), DCX.Type.DCX_KRAK);
+                            file.Bytes = compressedBytes;
                         }
                         else
                         {
-                            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
+                            file.Bytes = bw.FinishBytes();
                         }
+
+                        anyWritten = true;
+                    }
+                    else
+                    {
+                        Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
                     }
                 }
                 catch (Exception ex)
@@ -1068,30 +1059,27 @@ public class HavokBank : IDisposable
 
                 try
                 {
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    var objEntry = bankDict[fileEntry][internalFilePath];
+                    if (objEntry != null)
                     {
-                        var objEntry = bankDict[fileEntry][internalFilePath];
-                        if (objEntry != null)
+                        var bw = new BinaryWriterEx(false);
+                        serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
+
+                        if (file.Name.Contains(".dcx"))
                         {
-                            var bw = new BinaryWriterEx(false);
-                            serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
-
-                            if (file.Name.Contains(".dcx"))
-                            {
-                                var compressedBytes = DCX.Compress(bw.FinishBytes(), DCX.Type.DCX_KRAK);
-                                file.Bytes = compressedBytes;
-                            }
-                            else
-                            {
-                                file.Bytes = bw.FinishBytes();
-                            }
-
-                            anyWritten = true;
+                            var compressedBytes = DCX.Compress(bw.FinishBytes(), DCX.Type.DCX_KRAK);
+                            file.Bytes = compressedBytes;
                         }
                         else
                         {
-                            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
+                            file.Bytes = bw.FinishBytes();
                         }
+
+                        anyWritten = true;
+                    }
+                    else
+                    {
+                        Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
                     }
                 }
                 catch (Exception ex)
@@ -1139,15 +1127,11 @@ public class HavokBank : IDisposable
                     {
                         serializer.Write((HKLib.hk2018.hkRootLevelContainer)objEntry, memoryStream);
 
-                        if (file.Name.Contains(".dcx"))
-                        {
-                            var compressedBytes = DCX.Compress(memoryStream.ToArray(), DCX.Type.DCX_KRAK);
-                            file.Bytes = compressedBytes;
-                        }
-                        else
-                        {
-                            file.Bytes = file.Bytes.ToArray();
-                        }
+                        var bytes = memoryStream.ToArray();
+
+                        file.Bytes = file.Name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase)
+                            ? DCX.Compress(bytes, DCX.Type.DCX_KRAK)
+                            : bytes;
 
                         anyWritten = true;
                     }
