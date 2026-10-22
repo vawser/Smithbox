@@ -69,6 +69,10 @@
       "Text": "Toggle the display of stay params.\n\nCurrent Mode:\n{0}"
     },
     {
+      "Key": "PARAM_ParamWindow_Category_StayParams",
+      "Text": "Stay Params"
+    },
+    {
       "Key": "PARAM_ParamWindow_Category_General",
       "Text": "General"
     },

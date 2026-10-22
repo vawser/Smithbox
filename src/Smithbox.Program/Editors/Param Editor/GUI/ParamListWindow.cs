@@ -52,18 +52,6 @@ public class ParamListWindow
             DisplayPinnedParams();
         }
 
-        // Stay Params
-        if (Project.Descriptor.ProjectType is ProjectType.DS3)
-        {
-            if (CFG.Current.ParamEditor_Param_List_Display_StayParams)
-            {
-                if (Project.Handler.ParamData.PrimaryBank.StayParams.Count > 0)
-                {
-                    DisplayStayParams(doFocus, scrollTo);
-                }
-            }
-        }
-
         DisplayParams(doFocus, scrollTo);
 
         ImGui.EndChild();
@@ -356,6 +344,16 @@ public class ParamListWindow
             DisplayParamList(paramKeyList, paramKeyList, doFocus, scrollTo);
         }
 
+        // DS3 Stay Params: grouped like the other categories
+        if (Project.Descriptor.ProjectType is ProjectType.DS3
+            && CFG.Current.ParamEditor_Param_List_Display_StayParams
+            && Project.Handler.ParamData.PrimaryBank.StayParams.Count > 0
+            && ImGui.CollapsingHeader($"{LOC.Get("PARAM_ParamWindow_Category_StayParams")}##stayParamCategory",
+                ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            DisplayStayParams(doFocus, scrollTo);
+        }
+
         ImGui.EndChild();
     }
 
@@ -595,8 +593,6 @@ public class ParamListWindow
 
     private void DisplayStayParams(bool doFocus, float scrollTo)
     {
-        ImGui.BeginChild("StayParamFileParamSection", new Vector2(0, 110) * DPI.UIScale(), ImGuiChildFlags.Borders);
-
         foreach (var param in Project.Handler.ParamData.PrimaryBank.StayParams)
         {
             var paramKey = param.Key;
@@ -610,15 +606,27 @@ public class ParamListWindow
             }
 
             ImGui.Indent(15.0f);
+
+            var vanilla = Project.Handler.ParamData.VanillaBank?.StayParams.GetValueOrDefault(paramKey);
+            var hasVanillaDiff = vanilla != null && !param.Value.Write().SequenceEqual(vanilla.Write());
+
+            if (hasVanillaDiff)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
+            }
+
             if (ImGui.Selectable($"{paramKey}##selectStayParam{paramKey}", paramKey == ParentView.Selection.ActiveStayParam))
             {
                 SelectStayParam(paramKey);
             }
 
+            if (hasVanillaDiff)
+            {
+                ImGui.PopStyleColor(1);
+            }
+
             ImGui.Unindent(15.0f);
         }
-
-        ImGui.EndChild();
     }
 
     #endregion

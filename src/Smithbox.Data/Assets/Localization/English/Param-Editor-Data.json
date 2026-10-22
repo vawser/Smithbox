@@ -85,20 +85,8 @@
       "Text": "Missing vanilla param {0}"
     },
     {
-      "Key": "PARAM_Data_Failed_to_Find_StayParamContainer",
-      "Text": "Missing stay param container {0} for {1}"
-    },
-    {
-      "Key": "PARAM_Data_Failed_to_Load_StayParamContainer",
-      "Text": "Failed to load stay params at {0} for {1}"
-    },
-    {
       "Key": "PARAM_Data_Failed_to_Load_StayParam",
       "Text": "Failed to load stay param: {0}"
-    },
-    {
-      "Key": "PARAM_Data_Failed_to_Write_StayParam",
-      "Text": "Failed to write stay params: {0}"
     },
     {
       "Key": "PARAM_Data_Setup_ParamDefs_PASS",
