@@ -216,4 +216,8 @@ public class ParamEditorView : IEditorView
         return Project.Handler.ParamData.VanillaBank;
     }
 
+    public void RefreshDecorators()
+    {
+        RowDecorators.Refresh();
+    }
 }

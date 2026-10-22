@@ -69,7 +69,8 @@ public class TextEditorPrefs
                             if (curProject.Handler.ParamEditor != null)
                             {
                                 var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                activeView.RowDecorators.SetupFmgDecorators();
+
+                                activeView.RefreshDecorators();
                             }
                         }
                     }
@@ -130,7 +131,8 @@ public class TextEditorPrefs
                             if (curProject.Handler.ParamEditor != null)
                             {
                                 var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                activeView.RowDecorators.SetupFmgDecorators();
+
+                                activeView.RefreshDecorators();
                             }
                         }
                     }
@@ -190,7 +192,8 @@ public class TextEditorPrefs
                             if (curProject.Handler.ParamEditor != null)
                             {
                                 var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                activeView.RowDecorators.SetupFmgDecorators();
+
+                                activeView.RefreshDecorators();
                             }
                         }
                     }
@@ -250,7 +253,8 @@ public class TextEditorPrefs
                             if (curProject.Handler.ParamEditor != null)
                             {
                                 var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                activeView.RowDecorators.SetupFmgDecorators();
+
+                                activeView.RefreshDecorators();
                             }
                         }
                     }
@@ -310,7 +314,8 @@ public class TextEditorPrefs
                             if (curProject.Handler.ParamEditor != null)
                             {
                                 var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                activeView.RowDecorators.SetupFmgDecorators();
+
+                                activeView.RefreshDecorators();
                             }
                         }
                     }
@@ -370,7 +375,8 @@ public class TextEditorPrefs
                             if (curProject.Handler.ParamEditor != null)
                             {
                                 var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                activeView.RowDecorators.SetupFmgDecorators();
+
+                                activeView.RefreshDecorators();
                             }
                         }
                     }
@@ -430,7 +436,8 @@ public class TextEditorPrefs
                             if (curProject.Handler.ParamEditor != null)
                             {
                                 var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                activeView.RowDecorators.SetupFmgDecorators();
+
+                                activeView.RefreshDecorators();
                             }
                         }
                     }
@@ -490,7 +497,8 @@ public class TextEditorPrefs
                             if (curProject.Handler.ParamEditor != null)
                             {
                                 var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                activeView.RowDecorators.SetupFmgDecorators();
+
+                                activeView.RefreshDecorators();
                             }
                         }
                     }
@@ -550,7 +558,8 @@ public class TextEditorPrefs
                             if (curProject.Handler.ParamEditor != null)
                             {
                                 var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                activeView.RowDecorators.SetupFmgDecorators();
+
+                                activeView.RefreshDecorators();
                             }
                         }
                     }
@@ -610,7 +619,8 @@ public class TextEditorPrefs
                             if (curProject.Handler.ParamEditor != null)
                             {
                                 var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                activeView.RowDecorators.SetupFmgDecorators();
+
+                                activeView.RefreshDecorators();
                             }
                         }
                     }
@@ -670,7 +680,8 @@ public class TextEditorPrefs
                             if (curProject.Handler.ParamEditor != null)
                             {
                                 var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                activeView.RowDecorators.SetupFmgDecorators();
+
+                                activeView.RefreshDecorators();
                             }
                         }
                     }

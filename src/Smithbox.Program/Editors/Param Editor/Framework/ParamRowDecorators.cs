@@ -1,14 +1,7 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.TextEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -21,7 +14,11 @@ public class ParamRowDecorators
 
     public Dictionary<string, FmgRowDecorator> _rowFmgDecorators = new();
 
-    private string CurrentParam = "";
+    /// <summary>
+    /// The param the decorators were last built for.
+    /// Empty means decorators were built for all params (or none are built).
+    /// </summary>
+    private string CachedParam = "";
 
     public ParamRowDecorators(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
     {
@@ -31,43 +28,74 @@ public class ParamRowDecorators
     }
 
     /// <summary>
-    /// Setup the Text Param Row decorators
+    /// Called when the Text Editor wants the decorator text updated.
+    /// Forces a rebuild for whatever is currently active (the selected param, or all params).
     /// </summary>
-    public void SetupFmgDecorators(string targetParam = "")
+    public void Refresh()
     {
-        ClearFmgDecorators();
-        _rowFmgDecorators.Clear();
+        Rebuild(CachedParam);
+    }
+
+    /// <summary>
+    /// Called when a param is selected.
+    /// Does nothing if the decorator for this param is already built, otherwise rebuilds.
+    /// </summary>
+    public void RefreshFmgDecorator(string targetParam = "")
+    {
+        if (!CFG.Current.ParamEditor_Row_List_Display_Decorators)
+        {
+            ClearAll();
+            return;
+        }
+
+        // Same param selected again and its decorator already exists: keep it.
+        if (targetParam != "" &&
+            CachedParam == targetParam &&
+            _rowFmgDecorators.ContainsKey(targetParam))
+        {
+            return;
+        }
+
+        Rebuild(targetParam);
+    }
+
+    private void Rebuild(string targetParam)
+    {
+        ClearAll();
 
         if (!CFG.Current.ParamEditor_Row_List_Display_Decorators)
             return;
 
+        CachedParam = targetParam;
+
         if (targetParam != "")
         {
-            if (CurrentParam != targetParam)
-            {
-                CurrentParam = targetParam;
-
-                var entries = ParamFmgUtils.GetRowDecoratorFmgEntries(Editor, CurrentParam);
-
-                if (entries.Count != 0)
-                {
-                    _rowFmgDecorators.Add(CurrentParam, new FmgRowDecorator(Editor, CurrentParam));
-                }
-            }
+            TryAddDecorator(targetParam);
         }
         else
         {
             foreach (var entry in Project.Handler.ParamData.PrimaryBank.Params)
             {
-                var paramName = entry.Key;
-                var entries = ParamFmgUtils.GetRowDecoratorFmgEntries(Editor, paramName);
-
-                if (entries.Count != 0)
-                {
-                    _rowFmgDecorators.Add(paramName, new FmgRowDecorator(Editor, paramName));
-                }
+                TryAddDecorator(entry.Key);
             }
         }
+    }
+
+    private void TryAddDecorator(string paramName)
+    {
+        var entries = ParamFmgUtils.GetRowDecoratorFmgEntries(Editor, paramName);
+
+        if (entries.Count != 0)
+        {
+            _rowFmgDecorators[paramName] = new FmgRowDecorator(Editor, paramName);
+        }
+    }
+
+    private void ClearAll()
+    {
+        ClearFmgDecorators();
+        _rowFmgDecorators.Clear();
+        CachedParam = "";
     }
 
     /// <summary>
@@ -83,13 +111,7 @@ public class ParamRowDecorators
 
     public FmgRowDecorator GetFmgRowDecorator(string activeParam)
     {
-        FmgRowDecorator decorator = null;
-
-        if (_rowFmgDecorators.ContainsKey(activeParam))
-        {
-            decorator = _rowFmgDecorators[activeParam];
-        }
-
+        _rowFmgDecorators.TryGetValue(activeParam, out var decorator);
         return decorator;
     }
 }
@@ -101,19 +123,24 @@ public class FmgRowDecorator
 
     private readonly Dictionary<int, FMG.Entry> _entryCache = new();
 
+    // Go to Text command lines, cached per row ID
+    private readonly Dictionary<int, string> _commandLineCache = new();
+
+    private bool _populated = false;
+
     private string FmgName;
-    private string CommandLine;
 
     public FmgRowDecorator(ParamEditorScreen editor, string paramName)
     {
         Editor = editor;
         FmgName = paramName;
-        CommandLine = "";
     }
 
     public void ClearDecoratorCache()
     {
         _entryCache.Clear();
+        _commandLineCache.Clear();
+        _populated = false;
     }
 
 
@@ -123,10 +150,8 @@ public class FmgRowDecorator
             return;
 
         PopulateDecorator();
-        FMG.Entry entry = null;
-        _entryCache.TryGetValue(row.ID, out entry);
 
-        if (entry != null)
+        if (_entryCache.TryGetValue(row.ID, out var entry))
         {
             ImGui.SameLine();
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRef_Text);
@@ -137,7 +162,10 @@ public class FmgRowDecorator
 
     public FMG.Entry GetRowFmgEntry(Param.Row row)
     {
-        return _entryCache.Values.FirstOrDefault(e => e.ID == row.ID);
+        PopulateDecorator();
+
+        _entryCache.TryGetValue(row.ID, out var entry);
+        return entry;
     }
 
     public void DecorateContextMenuItems(Param.Row row)
@@ -146,102 +174,43 @@ public class FmgRowDecorator
             return;
 
         PopulateDecorator();
+
         if (!_entryCache.ContainsKey(row.ID))
-        {
             return;
-        }
 
         if (Editor.Project.Handler.TextEditor == null)
             return;
 
-        if (CommandLine == "")
+        // Build the command line for this specific row, once
+        if (!_commandLineCache.TryGetValue(row.ID, out var commandLine))
         {
-            CommandLine = ParamFmgUtils.GetFmgRefCommandLine(Editor, _entryCache, row);
+            commandLine = ParamFmgUtils.GetFmgRefCommandLine(Editor, _entryCache, row) ?? "";
+            _commandLineCache[row.ID] = commandLine;
         }
-        else
+
+        if (commandLine == "")
+            return;
+
+        // Go to Text
+        if (ImGui.Selectable($"{LOC.Get("PARAM_RowDecorator_Action_Go_To_Text")}##goToTextAction"))
         {
-            if (CommandLine != "")
-            {
-                // Go to Text
-                if (ImGui.Selectable($"{LOC.Get("PARAM_RowDecorator_Action_Go_To_Text")}##goToTextAction"))
-                {
-                    EditorCommandQueue.AddCommand(CommandLine);
-                }
-                GUI.Tooltip(LOC.Get("PARAM_RowDecorator_Action_Go_To_Text_TT"));
-            }
+            EditorCommandQueue.AddCommand(commandLine);
         }
+        GUI.Tooltip(LOC.Get("PARAM_RowDecorator_Action_Go_To_Text_TT"));
     }
-
-
-    // NOTE: FMG Descriptor version
-    //public void DecorateContextMenuItems(Param.Row row)
-    //{
-    //    PopulateDecorator();
-
-    //    if (!_entryCache.ContainsKey(row.ID))
-    //    {
-    //        return;
-    //    }
-
-    //    if (Editor.Project.Handler.TextEditor == null)
-    //        return;
-
-    //    if (CommandLine == "")
-    //    {
-    //        var language = CFG.Current.Text_Editor_Primary_Language;
-
-    //        if (_entryCache.Values.Count > 0)
-    //        {
-    //            var cachedEntry = _entryCache.Values.Where(e => e.ID == row.ID).FirstOrDefault();
-
-    //            var fmgDescriptors = Editor.Project.Handler.TextData.FmgDescriptors;
-
-    //            var containerName = "";
-    //            var fmg = cachedEntry.Parent;
-    //            var fmgName = fmg.Name;
-
-    //            foreach (var entry in Editor.Project.Handler.TextData.PrimaryBank.Containers)
-    //            {
-    //                var container = entry.Value;
-
-    //                if (container.Language.Language != language)
-    //                    continue;
-
-    //                foreach (var fmgWrapper in container.FmgWrappers)
-    //                {
-    //                    if (fmgWrapper.Name == fmgName)
-    //                    {
-    //                        containerName = container.Descriptor.FileName;
-    //                    }
-    //                }
-    //            }
-
-    //            CommandLine = $@"text/select/{language}/{containerName}/{fmgName}/{row.ID}";
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (CommandLine != "")
-    //        {
-    //            if (ImGui.Selectable($@"Go to Text"))
-    //            {
-    //                EditorCommandQueue.AddCommand(CommandLine);
-    //            }
-    //        }
-    //    }
-    //}
 
     private void PopulateDecorator()
     {
-        // FMG Name decoration on row 
-        if (_entryCache.Count == 0)
-        {
-            List<FMG.Entry> fmgEntries = ParamFmgUtils.GetRowDecoratorFmgEntries(Editor, FmgName);
+        if (_populated)
+            return;
 
-            foreach (FMG.Entry fmgEntry in fmgEntries)
-            {
-                _entryCache[fmgEntry.ID] = fmgEntry;
-            }
+        _populated = true;
+
+        List<FMG.Entry> fmgEntries = ParamFmgUtils.GetRowDecoratorFmgEntries(Editor, FmgName);
+
+        foreach (FMG.Entry fmgEntry in fmgEntries)
+        {
+            _entryCache[fmgEntry.ID] = fmgEntry;
         }
     }
 }

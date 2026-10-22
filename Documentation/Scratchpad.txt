@@ -14,7 +14,6 @@
 - Add FLVER to OBJ export tool
 
 # Param Editor 
-- Double-clicking param causes FMG decorators to empty
 - Param Delta Patcher: imported row name is funky since it uses row 0's row name (might not be applying row name from delta at all, if not present, it should pull from delta or default to blank, not use row 0's name)
 - Are fields forcefully re-ordered (outside of Field Layouts)
   

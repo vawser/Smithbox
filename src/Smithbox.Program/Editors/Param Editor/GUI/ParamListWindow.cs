@@ -549,7 +549,7 @@ public class ParamListWindow
 
         Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask(true);
 
-        ParentView.RowDecorators.SetupFmgDecorators(paramKey);
+        ParentView.RowDecorators.RefreshFmgDecorator(paramKey);
 
         Smithbox.TextureManager.IconManager.PurgeCache();
     }

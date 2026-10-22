@@ -76,7 +76,7 @@ public class TextViewSelection
             if (paramEditor != null)
             {
                 var activeView = paramEditor.ViewHandler.ActiveView;
-                activeView.RowDecorators.SetupFmgDecorators();
+                activeView.RefreshDecorators();
             }
 
             // Auto-select first FMG

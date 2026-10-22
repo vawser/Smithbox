@@ -290,6 +290,6 @@ public class TextEditorScreen : EditorScreen
     {
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
-        activeView.RowDecorators.SetupFmgDecorators();
+        activeView.RefreshDecorators();
     }
 }
