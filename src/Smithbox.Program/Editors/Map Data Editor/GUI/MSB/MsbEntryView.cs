@@ -288,6 +288,15 @@ public class MsbEntryView
         _cachedEntries.Clear();
         _lastSubType = null;
 
+        if (Project == null)
+            return;
+
+        if (Project.Handler == null)
+            return;
+
+        if (Project.Handler.MapData == null)
+            return;
+
         if (Selection.SelectedMap is null || Selection.SelectedSubCategoryType is null)
             return;
 
