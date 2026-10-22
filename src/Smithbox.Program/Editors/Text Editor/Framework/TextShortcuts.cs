@@ -104,9 +104,6 @@ public class TextShortcuts
     /// </summary>
     public void HandleSelectAll()
     {
-        if (!CFG.Current.TextEditor_Text_Entry_List_Allow_Select_All)
-            return;
-
         var activeView = Editor.ViewHandler.ActiveView;
 
         if (activeView != null)
@@ -118,36 +115,29 @@ public class TextShortcuts
 
             var fmg = activeView.Selection.SelectedFmgWrapper.File;
 
-            // Select All
-            if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
+            multiselect.StoredEntries.Clear();
+
+            if (fmg != null)
             {
-                if (InputManager.IsPressed(KeybindID.SelectAll))
+                for (int j = 0; j < fmg.Entries.Count; j++)
                 {
-                    multiselect.StoredEntries.Clear();
+                    var tEntry = fmg.Entries[j];
 
-                    if (fmg != null)
+                    var input = activeView.TextEntryList.EntryListFilter;
+                    var exactMatch = activeView.TextEntryList.ExactEntryListFilter;
+
+                    var isMatch = EditorFilters.IsMatch(
+                        input, tEntry.ID.ToString(), exactMatch, tEntry.Text);
+
+                    // Ignore normal match if a special conditional commands has been used
+                    if (activeView.TextEntryList.UsedMatchCommands(input))
                     {
-                        for (int j = 0; j < fmg.Entries.Count; j++)
-                        {
-                            var tEntry = fmg.Entries[j];
+                        isMatch = activeView.TextEntryList.HandleMatchCommands(input, tEntry);
+                    }
 
-                            var input = activeView.TextEntryList.EntryListFilter;
-                            var exactMatch = activeView.TextEntryList.ExactEntryListFilter;
-
-                            var isMatch = EditorFilters.IsMatch(
-                                input, tEntry.ID.ToString(), exactMatch, tEntry.Text);
-
-                            // Ignore normal match if a special conditional commands has been used
-                            if (activeView.TextEntryList.UsedMatchCommands(input))
-                            {
-                                isMatch = activeView.TextEntryList.HandleMatchCommands(input, tEntry);
-                            }
-
-                            if (isMatch)
-                            {
-                                multiselect.StoredEntries.Add(j, tEntry);
-                            }
-                        }
+                    if (isMatch)
+                    {
+                        multiselect.StoredEntries.Add(j, tEntry);
                     }
                 }
             }
@@ -163,14 +153,7 @@ public class TextShortcuts
 
         if (activeView != null)
         {
-            // Copy Entry Contents
-            if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
-            {
-                if (InputManager.IsPressed(KeybindID.Copy))
-                {
-                    activeView.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_Text_Clipboard_Include_ID);
-                }
-            }
+            activeView.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_Text_Clipboard_Include_ID);
         }
     }
 }

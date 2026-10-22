@@ -53,16 +53,16 @@
       "Text": "Toggle the display of the null text entries.\n\nCurrent Mode:\n{0}"
     },
     {
-      "Key": "TEXT_EntryList_Select_All_Lock",
-      "Text": "Block Select All"
-    },
-    {
-      "Key": "TEXT_EntryList_Select_All_Unlock",
-      "Text": "Allow Select All"
-    },
-    {
       "Key": "TEXT_EntryList_Select_All_TT",
-      "Text": "Toggle the whether the Select All shortcut is allowed.\n\nCurrent Mode:\n{0}"
+      "Text": "Select all entries."
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Action_Copy_Text",
+      "Text": "Copy ID and Text"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Action_Copy_Text_TT",
+      "Text": "Copy the ID and text from the selected entry to clipboard."
     }
   ]
 }

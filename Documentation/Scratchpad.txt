@@ -19,6 +19,6 @@
 - Are fields forcefully re-ordered (outside of Field Layouts)
   
 # Text Editor
-- Fix the entry selection being 'sticky'
 - For FMG Export, include option to export all members of grouped entry (not just title) - currently Data Transfer only exports Title, which goes against user expectation
 - Add text entry ID search tool
+

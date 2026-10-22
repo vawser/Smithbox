@@ -101,12 +101,14 @@ public class TextEntryList
             "TEXT_EntryList_NullEntries_Visible",
             "TEXT_EntryList_NullEntries_Hint");
 
-        // Toggle: Select All Lock
-        GUI.DisplayToggleButton("selectAllToggle", Icons.Lock,
-            ref CFG.Current.TextEditor_Text_Entry_List_Allow_Select_All,
-            "TEXT_EntryList_Select_All_Lock",
-            "TEXT_EntryList_Select_All_Unlock",
-            "TEXT_EntryList_Select_All_TT");
+        ImGui.SameLine();
+
+        // Action: Select All
+        if (ImGui.Button($"{Icons.Bars}##selectAllButton", DPI.IconButtonSize))
+        {
+            Parent.Editor.Shortcuts.HandleSelectAll();
+        }
+        GUI.Tooltip(LOC.Get("TEXT_EntryList_Select_All_TT"));
 
         ImGui.EndChild();
     }
@@ -288,9 +290,6 @@ public class TextEntryList
         if (Parent.Selection.IsFmgEntrySelected(index))
         {
             ContextMenu("id", index, Parent.Selection.SelectedFmgWrapper, entry, isSelected);
-
-            Parent.Editor.Shortcuts.HandleSelectAll();
-            Parent.Editor.Shortcuts.HandleCopyEntryText();
         }
     }
 
@@ -341,10 +340,7 @@ public class TextEntryList
         // Context Menu / Shortcuts
         if (Parent.Selection.IsFmgEntrySelected(index))
         {
-           ContextMenu("name", index, Parent.Selection.SelectedFmgWrapper, entry, isSelected);
-
-            Parent.Editor.Shortcuts.HandleSelectAll();
-            Parent.Editor.Shortcuts.HandleCopyEntryText();
+            ContextMenu("name", index, Parent.Selection.SelectedFmgWrapper, entry, isSelected);
         }
     }
 
@@ -447,6 +443,12 @@ public class TextEntryList
             if (ImGui.Selectable($"{LOC.Get("TEXT_ContainerList_Context_Action_Delete")}##deleteAction"))
             {
                 Parent.ActionHandler.DeleteEntries();
+            }
+
+            // Copy Text
+            if (ImGui.Selectable($"{LOC.Get("TEXT_ContainerList_Context_Action_Copy_Text")}##copyTextAction"))
+            {
+                Parent.Editor.Shortcuts.HandleCopyEntryText();
             }
 
             ImGui.Separator();
