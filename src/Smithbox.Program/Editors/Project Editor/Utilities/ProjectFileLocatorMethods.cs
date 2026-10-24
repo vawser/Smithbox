@@ -33,6 +33,7 @@ public static class ProjectFileLocatorMethods
             ProjectType.NR => Game.NR,
             ProjectType.AC6 => Game.AC6,
             ProjectType.DS2 => Game.DS2,
+            ProjectType.DB => Game.DB,
             _ => null
         };
 
@@ -42,6 +43,7 @@ public static class ProjectFileLocatorMethods
         {
             case ProjectType.DES:
             case ProjectType.BB:
+            case ProjectType.DB:
                 return true;
         }
 

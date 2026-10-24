@@ -40,6 +40,8 @@ public class ProjectUtils
                 return "AC6";
             case ProjectType.NR:
                 return "NR";
+            case ProjectType.DB:
+                return "DB";
             default:
                 throw new Exception(LOC.Get("PROJECT_Util_Project_Type_Not_Set"));
         }

@@ -72,7 +72,7 @@ public class ModelContainerList
 
         // Objects / Assets
         var name = LOC.Get("MODEL_SourceList_Tab_Objects");
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
         {
             name = LOC.Get("MODEL_SourceList_Tab_Assets");
         }

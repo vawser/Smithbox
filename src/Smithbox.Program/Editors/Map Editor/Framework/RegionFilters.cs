@@ -235,6 +235,8 @@ public class RegionFilters
             case ProjectType.NR:
                 RegionVisibilityTruth = Enumerable.Repeat(defaultValue, RegionTypes_NR.Count).ToList();
                 break;
+            case ProjectType.DB:
+                break;
             default: break;
         }
     }
@@ -262,6 +264,8 @@ public class RegionFilters
                 break;
             case ProjectType.NR:
                 HandleGranularRegionToggles_NR();
+                break;
+            case ProjectType.DB:
                 break;
             default: break;
         }

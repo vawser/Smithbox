@@ -51,22 +51,19 @@ public class HavokVariableView
 
     public void DisplayTab()
     {
-        // WIP: hide for now
-        return;
+        //if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Variables")}##tabVariables"))
+        //{
+        //    SetTabState(true);
 
-        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Variables")}##tabVariables"))
-        {
-            SetTabState(true);
+        //    DisplayTabHeader();
+        //    DisplayTabContents();
 
-            DisplayTabHeader();
-            DisplayTabContents();
-
-            ImGui.EndTabItem();
-        }
-        else
-        {
-            SetTabState(false);
-        }
+        //    ImGui.EndTabItem();
+        //}
+        //else
+        //{
+        //    SetTabState(false);
+        //}
 
     }
 

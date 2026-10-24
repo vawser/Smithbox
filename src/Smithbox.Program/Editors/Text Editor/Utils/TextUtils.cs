@@ -28,6 +28,7 @@ public static class TextUtils
             case ProjectType.ER:   return CFG.Current.TextEditor_Primary_Language_ER;
             case ProjectType.AC6:  return CFG.Current.TextEditor_Primary_Language_AC6;
             case ProjectType.NR:   return CFG.Current.TextEditor_Primary_Language_NR;
+            case ProjectType.DB: return CFG.Current.TextEditor_Primary_Language_DB;
         }
 
         return "English";

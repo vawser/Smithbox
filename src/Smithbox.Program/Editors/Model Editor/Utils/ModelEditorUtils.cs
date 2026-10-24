@@ -170,7 +170,7 @@ public static class ModelEditorUtils
                     {
                         containerType = ResourceContainerType.None;
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
                     {
                         containerType = ResourceContainerType.BND;
                     }
@@ -200,7 +200,7 @@ public static class ModelEditorUtils
                     {
                         containerType = ResourceContainerType.BXF;
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
+                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6 or ProjectType.DB)
                     {
                         containerType = ResourceContainerType.BXF;
                     }
@@ -308,7 +308,7 @@ public static class ModelEditorUtils
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+                else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
                 {
                     containerType = ResourceContainerType.BND;
 
@@ -364,7 +364,7 @@ public static class ModelEditorUtils
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+                else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
                 {
                     if (p.Length == 4)
                     {

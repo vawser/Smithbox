@@ -11,5 +11,5 @@
 - Update non-parts rendering on property change
   
 # Model Editor
-- Add FLVER to OBJ export tool
+- Fix sub-mesh issue
 - Restore simple viewing of textures used by meshes (requires matbin inspection)

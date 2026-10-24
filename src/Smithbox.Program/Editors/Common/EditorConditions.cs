@@ -36,7 +36,8 @@ public static class EditorConditions
             is ProjectType.ER
             or ProjectType.AC6
             or ProjectType.NR
-            or ProjectType.DS3)
+            or ProjectType.DS3
+            or ProjectType.DB)
         {
             return true;
         }

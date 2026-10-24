@@ -271,7 +271,7 @@ public class ModelUniverse : IUniverse
         // AAT
         if (CFG.Current.ModelEditor_TextureLoad_Misc)
         {
-            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
             {
                 var textureAsset = TextureLocator.GetCharacterCommonTextureVirtualPath(View.Project, "common_body");
 
@@ -280,7 +280,7 @@ public class ModelUniverse : IUniverse
             }
 
             // SYSTEX
-            if (View.Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
+            if (View.Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR or ProjectType.DB)
             {
                 var textureAsset = TextureLocator.GetSystexTextureVirtualPath(View.Project, "systex");
 

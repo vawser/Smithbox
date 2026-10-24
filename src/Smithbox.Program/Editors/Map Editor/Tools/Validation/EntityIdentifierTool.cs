@@ -321,6 +321,7 @@ public class EntityIdentifierTool
 
             case ProjectType.ER:
             case ProjectType.NR:
+            case ProjectType.DB:
                 topID = $"{baseIdStr.Substring(0, 2)}";
                 midID = $"{baseIdStr.Substring(2, 2)}"; // Grab the fourth digit, then swap to third digit position
 

@@ -392,7 +392,7 @@ public class MapModelInsightView
                 }
             }
 
-            if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
             {
                 if (matbin != null)
                 {

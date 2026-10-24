@@ -94,7 +94,8 @@ public class MapEntityTypeCache
             or ProjectType.SDT
             or ProjectType.ER
             or ProjectType.NR
-            or ProjectType.AC6)
+            or ProjectType.AC6
+            or ProjectType.DB)
         {
             mapcache.Add(MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
         }

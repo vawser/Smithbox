@@ -507,7 +507,7 @@ public static class AliasHelper
         {
             var paramName = "ItemLotParam";
 
-            if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+            if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
             {
                 paramName = "ItemLotParam_map";
             }

@@ -1193,6 +1193,10 @@ public class MapContainer : ObjectContainer
         {
             AddModelsAC6(msb);
         }
+        else if (game == ProjectType.DB)
+        {
+            // TODO: Duskbloods
+        }
     }
 
     /// <summary>

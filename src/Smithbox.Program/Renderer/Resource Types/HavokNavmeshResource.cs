@@ -50,7 +50,7 @@ public class HavokNavmeshResource : IResource, IDisposable
             Root_HKX2 = (hkRootLevelContainer)des.Deserialize(br);
         }
 
-        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             if (curProject.Handler.MapEditor == null)
                 return false;
@@ -95,7 +95,7 @@ public class HavokNavmeshResource : IResource, IDisposable
                 var des = new PackFileDeserializer();
                 Root_HKX2 = (hkRootLevelContainer)des.Deserialize(new BinaryReaderEx(false, fileData.Value));
             }
-            else if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+            else if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
             {
                 if (curProject.Handler.MapEditor == null)
                     return false;
@@ -154,7 +154,7 @@ public class HavokNavmeshResource : IResource, IDisposable
             }
         }
 
-        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
             {

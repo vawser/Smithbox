@@ -49,6 +49,10 @@
       "Text": "NR"
     },
     {
+      "Key": "EDITOR_Short_Project_Type_DB",
+      "Text": "DB"
+    },
+    {
       "Key": "EDITOR_List_Filter_Exact_Match_TT",
       "Text": "Filter will ignore partial matches when enabled."
     },

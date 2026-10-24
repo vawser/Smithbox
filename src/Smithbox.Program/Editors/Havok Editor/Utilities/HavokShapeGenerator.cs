@@ -154,7 +154,9 @@ public static class HavokShapeGenerator
 
             foreach (var tri in faces)
             {
+#pragma warning disable CA2014 // Do not use stackalloc in loops
                 Span<int> triIndices = stackalloc int[3];
+#pragma warning restore CA2014 // Do not use stackalloc in loops
 
                 for (int i = 0; i < 3; i++)
                 {

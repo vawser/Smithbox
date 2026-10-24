@@ -141,6 +141,8 @@ public class MsbValidator
 
             switch (curProject.Descriptor.ProjectType)
             {
+                case ProjectType.DB:
+                    break;
                 case ProjectType.NR:
                     MSB_NR msb_nr = MSB_NR.Read(data);
                     written = msb_nr.Write(DCX.Type.None);

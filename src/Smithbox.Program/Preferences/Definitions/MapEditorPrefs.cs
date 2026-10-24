@@ -26,7 +26,8 @@ public class MapEditorPrefs
             DisplayRestrictions =
             {
                 ProjectType.ER,
-                ProjectType.NR
+                ProjectType.NR,
+                ProjectType.DB
             },
 
             Section = SectionCategory.MapEditor_General,

@@ -462,6 +462,8 @@ public class FileUnpackerTool
                 file = "AC6-File-Dictionary.json"; break;
             case ProjectType.NR:
                 file = "NR-File-Dictionary.json"; break;
+            case ProjectType.DB:
+                file = "DB-File-Dictionary.json"; break;
             default: break;
         }
 

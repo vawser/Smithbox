@@ -28,7 +28,7 @@ public class BasicFilters
         GUI.ShowActiveStatus(ticked);
         GUI.Tooltip(LOC.Get("MAP_Filters_Map_Pieces_TT"));
 
-        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
         {
             // Asset
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Assets_Title")}##toggleFilter_Asset"))

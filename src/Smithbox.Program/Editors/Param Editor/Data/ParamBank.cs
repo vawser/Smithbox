@@ -111,6 +111,7 @@ public class ParamBank : IDisposable
             case ProjectType.ER: successfulLoad = LoadParameters_ER(); break;
             case ProjectType.AC6: successfulLoad = LoadParameters_AC6(); break;
             case ProjectType.NR: successfulLoad = LoadParameters_NR(); break;
+            // TODO: Duskbloods
         }
 
         ClearParamDiffCaches();
@@ -156,6 +157,9 @@ public class ParamBank : IDisposable
                 successfulSave = SaveParameters_AC6(); break;
             case ProjectType.NR:
                 successfulSave = SaveParameters_NR(); break;
+            case ProjectType.DB:
+                // TODO: Duskbloods
+                break;
             default: break;
         }
 

@@ -340,6 +340,15 @@ public class ProjectScreen
             }
         }
 
+        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DB))
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DB")}##tab_DB_{imguiKey}"))
+            {
+                DisplayProjectListGroup(ProjectType.DB, imguiKey, isLoaded);
+                ImGui.EndTabItem();
+            }
+        }
+
         ImGui.EndTabBar();
     }
 

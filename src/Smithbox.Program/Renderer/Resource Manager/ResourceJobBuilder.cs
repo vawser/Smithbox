@@ -230,7 +230,7 @@ public class ResourceJobBuilder
                 // as some models make use of textures from others.
                 if (CFG.Current.MapEditor_TextureLoad_Objects)
                 {
-                    if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                    if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
                     {
                         if (virtPath.Contains("aet"))
                         {
@@ -279,7 +279,7 @@ public class ResourceJobBuilder
 
                 // Smithbox
                 // For loading the world map TPFs
-                if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+                if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
                 {
                     if (virtPath.Contains("smithbox"))
                     {

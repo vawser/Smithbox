@@ -48,6 +48,10 @@
       "Key": "PROJECT_Enum_ProjectType_NR",
       "Text": "Elden Ring: Nightreign"
     },
+    {
+      "Key": "PROJECT_Enum_ProjectType_DB",
+      "Text": "The Duskbloods"
+    },
     
     {
       "Key": "PROJECT_Enum_ProjectAliasType_None",

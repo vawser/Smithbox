@@ -667,6 +667,8 @@ public class MsbEntity : Entity
 
             switch (curProjectType)
             {
+                case ProjectType.DB:
+                    break;
                 case ProjectType.DS3:
                     if (WrappedObject is MSB3.Part.EnemyBase ds3e)
                     {

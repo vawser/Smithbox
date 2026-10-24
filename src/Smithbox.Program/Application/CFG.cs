@@ -42,6 +42,7 @@ public class CFG
     public string DEVKIT_DataPath_ER = "";
     public string DEVKIT_DataPath_AC6 = "";
     public string DEVKIT_DataPath_NR = "";
+    public string DEVKIT_DataPath_DB = "";
 
     #endregion
 
@@ -852,6 +853,7 @@ public class CFG
     public string TextEditor_Primary_Language_ER = "English";
     public string TextEditor_Primary_Language_AC6 = "English";
     public string TextEditor_Primary_Language_NR = "English";
+    public string TextEditor_Primary_Language_DB = "English";
 
     public bool TextEditor_Include_Vanilla_Cache = true;
 

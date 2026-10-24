@@ -144,7 +144,7 @@ public class ModelContainerWrapper
     {
         var parts = Path.Split("/");
 
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
         {
             // '/map/m30/m30_00_00_00/...'
             if(parts.Length >= 3)

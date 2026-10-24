@@ -24,7 +24,7 @@ public class HavokNavmeshBank
 
     public bool CanUse()
     {
-        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT or ProjectType.ER)
+        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT or ProjectType.ER or ProjectType.NR or ProjectType.DB)
             return true;
 
         // NOTE: SDT doesn't render the meshes as it doesn't have HKX support yet
@@ -35,7 +35,7 @@ public class HavokNavmeshBank
     public void OnLoadMap(string mapId)
     {
         using var __scope = Profiler.TracyZoneAuto();
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             LoadHavokNavmeshModels(mapId);
         }
@@ -43,7 +43,7 @@ public class HavokNavmeshBank
 
     public void OnUnloadMap(string mapId)
     {
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
             {

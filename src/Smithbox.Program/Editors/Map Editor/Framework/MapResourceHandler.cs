@@ -200,7 +200,7 @@ public class MapResourceHandler
         }
 
         // AAT
-        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
         {
             var textureAsset = TextureLocator.GetCharacterCommonTextureVirtualPath(View.Project, "common_body");
 
@@ -209,7 +209,7 @@ public class MapResourceHandler
         }
 
         // SYSTEX
-        if (View.Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR or ProjectType.DB)
         {
             var textureAsset = TextureLocator.GetSystexTextureVirtualPath(View.Project, "systex");
 
@@ -272,7 +272,7 @@ public class MapResourceHandler
         if (CFG.Current.MapEditor_TextureLoad_Objects)
         {
             var name = LOC.Get("MAP_ResourceManager_Object_Textures");
-            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
             {
                 name = LOC.Get("MAP_ResourceManager_Asset_Textures");
             }
@@ -371,7 +371,7 @@ public class MapResourceHandler
         if (CFG.Current.MapEditor_ModelLoad_Objects)
         {
             var name = LOC.Get("MAP_ResourceManager_Object_Models");
-            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
             {
                 name = LOC.Get("MAP_ResourceManager_Asset_Models");
             }

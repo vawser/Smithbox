@@ -46,7 +46,7 @@ public class FlverSelectionMenu
 
         // Objects / Assets
         var name = LOC.Get("HAVOK_FlverSelection_Tab_Objects");
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
         {
             name = LOC.Get("HAVOK_FlverSelection_Tab_Assets");
         }

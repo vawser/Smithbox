@@ -288,6 +288,9 @@ public class ModelInstanceFinder
                         }
                     }
                     break;
+                case ProjectType.DB:
+                    // TODO: Duskbloods
+                    break;
             }
         }
 

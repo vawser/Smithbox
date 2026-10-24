@@ -213,6 +213,8 @@ public class MsbBank : IDisposable
                             return false;
                         }
                         break;
+                    case ProjectType.DB:
+                        break;
                     default: break;
                 }
             }

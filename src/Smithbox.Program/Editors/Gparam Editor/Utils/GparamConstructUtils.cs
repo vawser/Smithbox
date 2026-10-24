@@ -22,7 +22,7 @@ public static class GparamConstructUtils
         newParam.Fields = new();
 
         if(project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or 
-            ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
         {
             newParam.Comments = new();
         }

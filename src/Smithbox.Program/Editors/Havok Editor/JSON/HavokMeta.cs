@@ -33,7 +33,7 @@ public static class HavokMetaHelper
 {
     public static HavokClass GetMeta(ProjectEntry project, Type rootType)
     {
-        if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             if (project.Handler.CommonData.HavokMeta.TryGetValue("hk2018", out var metaSet))
             {

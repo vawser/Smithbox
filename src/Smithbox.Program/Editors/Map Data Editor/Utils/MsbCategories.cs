@@ -102,6 +102,7 @@ public static class MsbCategories
             ["Route"] = typeof(MSB_NR.RouteParam),
             ["Layer"] = typeof(MSB_NR.EmptyParam) // Direct category
         },
+        // TODO: Duskbloods
     };
 
     // Defines the sub-categories for each base category for each project type
@@ -763,6 +764,8 @@ public static class MsbCategories
                 ["Other"] = typeof(MSB_NR.Route.Other)
             }
         }
+
+        // TODO: Duskbloods
     };
 
     public static Dictionary<string, Type> GetBaseCategories(ProjectEntry project)

@@ -117,7 +117,7 @@ public class MapValidatorTool
             ValidateEntityID(mapContainer);
 
             // Collision Name
-            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
             {
                 ValidateReferenceProperty(mapContainer, "CollisionPartName", MapValidationType.CollisionName, true);
 
@@ -135,7 +135,7 @@ public class MapValidatorTool
                 MapValidationType.WalkRoute, true);
 
             // Part Names
-            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
             {
                 ValidateStringArrayReferenceProperty(mapContainer, "PartNames", MapValidationType.PartNames, true);
 

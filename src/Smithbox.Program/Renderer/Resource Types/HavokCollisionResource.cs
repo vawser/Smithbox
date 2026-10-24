@@ -34,7 +34,7 @@ public class HavokCollisionResource : IResource, IDisposable
         }
 
         // HKLib - ER
-        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             var success = HandleHKLibLoad(curProject, virtPath);
 
@@ -79,7 +79,7 @@ public class HavokCollisionResource : IResource, IDisposable
         }
 
         // HKLib - ER
-        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             var success = HandleHKLibLoad(curProject, virtPath);
 
@@ -149,7 +149,7 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool HandleMeshLoad(ProjectEntry curProject, AccessLevel al)
     {
-        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             return HKLib_Helper.LoadCollisionMesh(this, al);
         }
@@ -210,7 +210,7 @@ public class HavokCollisionResource : IResource, IDisposable
     public void DetermineFrontFace(ProjectEntry curProject)
     {
 
-        if (curProject.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER or ProjectType.NR)
+        if (curProject.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             FrontFace = VkFrontFace.Clockwise;
         }

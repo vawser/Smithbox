@@ -1,12 +1,6 @@
-﻿using Andre.IO.VFS;
-using DotNext;
-using Havok.Shared;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using HKLib.hk2018;
-using HKLib.hk2018.hk;
 using HKLib.Serialization.hk2018.Binary;
-using Microsoft.AspNetCore.Mvc.ViewEngines;
-using Octokit;
 using SoulsFormats;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
@@ -92,6 +86,7 @@ public class DeveloperKit
                 DisplayEntry(LOC.Get("DEV_KIT_Col_ER"), ref CFG.Current.DEVKIT_DataPath_ER);
                 DisplayEntry(LOC.Get("DEV_KIT_Col_AC6"), ref CFG.Current.DEVKIT_DataPath_AC6);
                 DisplayEntry(LOC.Get("DEV_KIT_Col_NR"), ref CFG.Current.DEVKIT_DataPath_NR);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_DB"), ref CFG.Current.DEVKIT_DataPath_DB);
 
                 ImGui.EndTable();
             }
@@ -192,6 +187,7 @@ public class DeveloperKit
         GenerateProject(ProjectType.ER, CFG.Current.DEVKIT_DataPath_ER);
         GenerateProject(ProjectType.AC6, CFG.Current.DEVKIT_DataPath_AC6);
         GenerateProject(ProjectType.NR, CFG.Current.DEVKIT_DataPath_NR);
+        GenerateProject(ProjectType.DB, CFG.Current.DEVKIT_DataPath_DB);
 
         GeneratedProjects = true;
     }

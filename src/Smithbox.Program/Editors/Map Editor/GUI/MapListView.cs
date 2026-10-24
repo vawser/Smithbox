@@ -81,7 +81,7 @@ public class MapListView : IActionEventHandler
             DisplayChaliceToggleButton();
         }
 
-        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             ImGui.SameLine();
             if (ImGui.Button($"{Icons.Map}", DPI.IconButtonSize))

@@ -37,7 +37,7 @@ public class HavokCollisionBank
         if (!CFG.Current.MapEditor_ModelLoad_Collisions)
             return;
 
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             if (!MapCollisions.ContainsKey(mapId))
                 MapCollisions.Add(mapId, new List<string>());
@@ -53,7 +53,7 @@ public class HavokCollisionBank
         if (!CFG.Current.MapEditor_ModelLoad_Collisions)
             return;
 
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
             // HACK: clear all viewport collisions on load
             foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())

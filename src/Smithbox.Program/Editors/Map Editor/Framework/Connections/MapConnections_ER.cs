@@ -226,6 +226,11 @@ public static class MapConnections_ER
                 //TODO NR
             }
 
+            if (view.Project.Descriptor.ProjectType == ProjectType.DB)
+            {
+                //TODO DB
+            }
+
             colPatterns[connectMapId] =
                 "^m" + string.Join("_", connectParts.Select(p => p == 0xFF ? @"\d\d" : $"{p:d2}")) + "$";
         }

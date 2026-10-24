@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a box shape." />
+  
+  <Field>
+    <Radius
+    AltName="Width"
+    Wiki="The width of the box." />
+    
+    <Depth
+    AltName="Depth"
+    Wiki="The depth of the box." />
+    
+    <Height
+    AltName="Height"
+    Wiki="The height of the box." />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

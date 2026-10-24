@@ -95,6 +95,10 @@ public class MapQueryBank
                 {
                     msb = MSB_NR.Read((Memory<byte>)msbData);
                 }
+                if (View.Project.Descriptor.ProjectType == ProjectType.DB)
+                {
+                    // TODO: Duskbloods
+                }
             }
             catch
             {

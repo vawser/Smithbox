@@ -2303,7 +2303,7 @@ public class HavokBank : IDisposable
             }
         }
 
-        if(Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if(Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
         {
             return DCX.Type.DCX_KRAK;
         }

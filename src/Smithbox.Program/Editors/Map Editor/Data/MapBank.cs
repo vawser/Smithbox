@@ -226,6 +226,8 @@ public class MapWrapper : IDisposable
                             return false;
                         }
                         break;
+                    case ProjectType.DB:
+                        break;
                     default: break;
                 }
             }

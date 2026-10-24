@@ -411,7 +411,7 @@ public static class ParamMapReferences
                         .Where(e => e.Extension == "objbnd")
                         .ToList();
                 }
-                else if (editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                else if (editor.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
                 {
                     AssetList = editor.Project.Locator.FileDictionary.Entries
                         .Where(e => e.Folder.StartsWith($"/asset"))
@@ -744,6 +744,10 @@ public static class ParamMapReferences
         if (editor.Project.Descriptor.ProjectType is ProjectType.NR)
         {
             ItemLotParam_NR(editor, activeParam, row, currentField);
+        }
+        if (editor.Project.Descriptor.ProjectType is ProjectType.DB)
+        {
+            // TODO: Duskbloods
         }
     }
 

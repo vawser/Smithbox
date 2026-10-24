@@ -248,7 +248,7 @@ public class FlverResource : IResource, IDisposable
             }
 
             // MATBIN
-            if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
             {
                 matbin = bank.GetMatbin(mtdstring);
 

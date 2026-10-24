@@ -336,7 +336,7 @@ public class DataProjectFileLocator
             ProjectType.DS1 => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
             ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/obj"),
             ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => entry.Extension == "geombnd" && entry.Folder.StartsWith("/asset") && !isSd,
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB => entry.Extension == "geombnd" && entry.Folder.StartsWith("/asset") && !isSd,
             _ => false
         };
     }
@@ -349,7 +349,7 @@ public class DataProjectFileLocator
             ProjectType.DS1 => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
             ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/parts"),
             ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts") && !isSd,
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts") && !isSd,
             _ => false
         };
     }
@@ -362,7 +362,7 @@ public class DataProjectFileLocator
             ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "hkxbhd" && entry.Folder.StartsWith("/model/map"),
             ProjectType.DS1 or ProjectType.DES => isMap && entry.Extension == "hkx",
             ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => isMap && entry.Extension == "hkxbhd",
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => isMap && entry.Extension == "hkxbhd" && !isSd,
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB => isMap && entry.Extension == "hkxbhd" && !isSd,
             _ => false
         };
     }
@@ -374,7 +374,7 @@ public class DataProjectFileLocator
         {
             ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "mapbhd" && entry.Folder.StartsWith("/model/map"),
             ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DES => isMap && entry.Extension == "flver",
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR => isMap && entry.Extension == "mapbnd" && !isSd,
+            ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB => isMap && entry.Extension == "mapbnd" && !isSd,
             _ => isMap && entry.Extension == "mapbnd"
         };
     }

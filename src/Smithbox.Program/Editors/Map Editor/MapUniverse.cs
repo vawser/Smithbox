@@ -175,6 +175,11 @@ public class MapUniverse : IUniverse
                             newMap.RootObject.GetUpdateTransformAction(loadTransform).Execute();
                         }
                     }
+
+                    if (View.Project.Descriptor.ProjectType is ProjectType.DB)
+                    {
+                        // TODO: Duskbloods
+                    }
                 }
 
                 Project.Handler.MapData.PrimaryBank.Maps[fileEntry].MapContainer = newMap;
@@ -1037,6 +1042,11 @@ public class MapUniverse : IUniverse
         }
 
         if (View.Project.Descriptor.ProjectType == ProjectType.NR)
+        {
+            return DCX.Type.DCX_DFLT_11000_44_9_15;
+        }
+
+        if (View.Project.Descriptor.ProjectType == ProjectType.DB)
         {
             return DCX.Type.DCX_DFLT_11000_44_9_15;
         }

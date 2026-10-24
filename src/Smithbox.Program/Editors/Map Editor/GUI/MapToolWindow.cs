@@ -35,7 +35,7 @@ public class MapToolWindow
         {
             DataTransferTool.DisplayDropdown();
 
-            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
             {
                 if (ImGui.MenuItem("World Map"))
                 {
