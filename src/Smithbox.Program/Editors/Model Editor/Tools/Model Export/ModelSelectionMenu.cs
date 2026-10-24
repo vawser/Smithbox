@@ -326,11 +326,37 @@ public class ModelSelectionMenu
             FlverMeshSelection = new bool[SourceFlver.Meshes.Count];
             Array.Fill(FlverMeshSelection, true);
 
+            View.ModelExportTool.RefreshCollisionMateriaList();
+
             ImGui.CloseCurrentPopup();
         }
         catch (Exception e)
         {
             Smithbox.LogError(this, LOC.Get("MODEL_FlverSelection_Failed_FLVER_Read", fileEntry.Filename), e);
+        }
+    }
+
+    public void SelectAndLoadCurrentFlver(ModelWrapper currentWrapper)
+    {
+        if (currentWrapper == null)
+            return;
+
+        if (currentWrapper.FLVER == null)
+            return;
+
+        try
+        {
+            SourceFlver = currentWrapper.FLVER;
+
+            FlverPath = currentWrapper.Name;
+            FlverMeshSelection = new bool[SourceFlver.Meshes.Count];
+            Array.Fill(FlverMeshSelection, true);
+
+            View.ModelExportTool.RefreshCollisionMateriaList();
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_FlverSelection_Failed_FLVER_Read", currentWrapper.Name), e);
         }
     }
 }

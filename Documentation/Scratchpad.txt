@@ -13,11 +13,3 @@
 # Model Editor
 - Add FLVER to OBJ export tool
 - Restore simple viewing of textures used by meshes (requires matbin inspection)
-
-# Param Editor 
-- Are fields forcefully re-ordered (outside of Field Layouts)
-
-# Text Editor
-- For FMG Export, include option to export all members of grouped entry (not just title) - currently Data Transfer only exports Title, which goes against user expectation
-
-

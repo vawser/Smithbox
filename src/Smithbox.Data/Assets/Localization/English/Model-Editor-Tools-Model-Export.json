@@ -41,6 +41,22 @@
       "Text": "Failed to find binder file: {0}"
     },
     {
+      "Key": "MODEL_ModelExport_Select_Current_Flver_Action",
+      "Text": "Select Current FLVER"
+    },
+    {
+      "Key": "MODEL_ModelExport_Select_Current_Flver_Action_TT",
+      "Text": "Select the currently loaded FLVER."
+    },
+    {
+      "Key": "MODEL_ModelExport_Select_Flver_Action",
+      "Text": "Select FLVER from List"
+    },
+    {
+      "Key": "MODEL_ModelExport_Select_Flver_Action_TT",
+      "Text": "Open the FLVER selection list."
+    },
+    {
       "Key": "MODEL_ModelExport_Flver_Meshes_Header",
       "Text": "FLVER Meshes"
     },
@@ -123,6 +139,114 @@
     {
       "Key": "MODEL_ModelExport_Select_Destination",
       "Text": "Select OBJ2HKX Directory"
+    },
+    {
+      "Key": "MODEL_ModelExport_SetOutputDirectory",
+      "Text": "Set Output Directory"
+    },
+    {
+      "Key": "MODEL_ModelExport_SetOutputDirectory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_ModelExport_OpenOutputDirectory",
+      "Text": "Open Output Directory"
+    },
+    {
+      "Key": "MODEL_ModelExport_OpenOutputDirectory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_ModelExport_Select_Output_Destination",
+      "Text": "Select Output Directory"
+    },
+    {
+      "Key": "MODEL_Output_Dir_Hint",
+      "Text": "Enter the output directory..."
+    },
+    {
+      "Key": "MODEL_Exported_OBJ",
+      "Text": "Exported OBJ file: {0}"
+    },
+    {
+      "Key": "MODEL_ModelExport_Tab_OBJ",
+      "Text": "OBJ"
+    },
+    {
+      "Key": "MODEL_ModelExport_Tab_HKX",
+      "Text": "HKX"
+    },
+    {
+      "Key": "MODEL_ModelExport_UseColMaterials",
+      "Text": "Use Collision Materials"
+    },
+    {
+      "Key": "MODEL_ModelExport_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "MODEL_ModelExport_Options_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_ModelExport_ColBuilder_Submit",
+      "Text": "Submit"
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_Empty_Output_Directory",
+      "Text": "Output Directory has not been set."
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_No_Source_FLVER",
+      "Text": "Source FLVER has not been set."
+    },
+    {
+      "Key": "MODEL_ModelExport_FlipOBJUVs",
+      "Text": "Flip UVs in OBJ"
+    },
+    {
+      "Key": "MODEL_ModelExport_UseSingleColMat",
+      "Text": "Use Single Collision Material"
+    },
+    {
+      "Key": "MODEL_ModelExport_Input_Directory_Header",
+      "Text": "Input Directory"
+    },
+    {
+      "Key": "MODEL_ModelExport_Input_Directory_Header_TT",
+      "Text": "The directory the OBJ file used to generate the HKX is located."
+    },
+    {
+      "Key": "MODEL_ModelExport_SetInputDirectory",
+      "Text": "Set Input Directory"
+    },
+    {
+      "Key": "MODEL_ModelExport_SetInputDirectory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_ModelExport_OpenInputDirectory",
+      "Text": "Open Input Directory"
+    },
+    {
+      "Key": "MODEL_ModelExport_OpenInputDirectory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MODEL_ModelExport_Select_Input_Destination",
+      "Text": "Select Input Directory"
+    },
+    {
+      "Key": "MODEL_Input_Dir_Hint",
+      "Text": "Enter the input directory..."
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_No_OBJ_for_HKX_File",
+      "Text": "Failed to find target OBJ for HKX conversion."
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_Missing_OBJ2HKX_Bat_File",
+      "Text": "Failed to find obj2fsnp.bat"
     }
   ]
 }

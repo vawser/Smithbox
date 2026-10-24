@@ -161,6 +161,8 @@ public static class FlverToObj
 
         File.WriteAllText(outputObjPath, obj.ToString());
         File.WriteAllText(mtlPath, BuildMtl(flver, usedMaterials, materialNaming));
+
+        Smithbox.Log(typeof(FlverToObj), LOC.Get("MODEL_Exported_OBJ", outputObjPath));
     }
 
     /// <summary>

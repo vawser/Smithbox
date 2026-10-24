@@ -375,6 +375,8 @@ public class ModelWrapper
     // GRASS
     public GRASS GRASS { get; set; }
 
+    public bool HasCollision { get; set; } = false;
+
 
     public void Load()
     {
@@ -570,7 +572,6 @@ public class ModelWrapper
         {
             if (filename == Name)
             {
-
                 try
                 {
                     FLVER = FLVER2.Read(data);
@@ -579,6 +580,15 @@ public class ModelWrapper
                 {
                     Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_FLVER", filepath), e);
                 }
+            }
+        }
+
+        // HKX
+        if(filepath.Contains(".hkx"))
+        {
+            if (filename == Name)
+            {
+                HasCollision = true;
             }
         }
 

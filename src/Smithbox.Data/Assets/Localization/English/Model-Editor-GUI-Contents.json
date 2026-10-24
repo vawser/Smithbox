@@ -13,6 +13,14 @@
       "Text": "No FLVER has been loaded yet."
     },
     {
+      "Key": "MODEL_Contents_Has_Collision_Hint",
+      "Text": "This FLVER has in-built collision."
+    },
+    {
+      "Key": "MODEL_Contents_Lacks_Collision_Hint",
+      "Text": "This FLVER lacks in-built collision."
+    },
+    {
       "Key": "MODEL_Contents_Toggle_Show_All_TT",
       "Text": "Force all model objects to be shown."
     },

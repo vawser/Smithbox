@@ -1,16 +1,9 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using SoulsFormats.KF4;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using Veldrid;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -47,6 +40,18 @@ public class ModelContentsView : IActionEventHandler
         DisplayHeader();
 
         ImGui.BeginChild("ModelContents", new Vector2(0, 0), ImGuiChildFlags.Borders);
+
+        if (View.Selection.SelectedModelWrapper != null)
+        {
+            if (View.Selection.SelectedModelWrapper.HasCollision)
+            {
+                ImGui.Text(LOC.Get("MODEL_Contents_Has_Collision_Hint"));
+            }
+            else
+            {
+                ImGui.Text(LOC.Get("MODEL_Contents_Lacks_Collision_Hint"));
+            }
+        }
 
         if (View.Selection.SelectedModelWrapper != null && 
             View.Selection.SelectedModelWrapper.FLVER != null)

@@ -340,6 +340,13 @@ public class HavokFileView
             }
             GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_CopyName_TT", InputManager.GetHint(KeybindID.Copy)));
 
+            // Compress
+            if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Compress")}##compressAction"))
+            {
+
+            }
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_Compress_TT"));
+
             ImGui.Separator();
 
             // Copy

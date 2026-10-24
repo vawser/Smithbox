@@ -1,14 +1,9 @@
 ﻿using Hexa.NET.ImGui;
-using SoulsFormats;
-using StudioCore.Keybinds;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
+using static StudioCore.Editors.ModelEditor.FlverToObj;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -20,7 +15,11 @@ public class ModelExportTool
 
     public ModelSelectionMenu SelectionMenu;
 
-    private string CollisionToolDir = "";
+    private List<CollisionMaterialDef> CollisionMaterials = new();
+    private int TargetCollisionMaterial = -1;
+
+    private string PreviewColMaterial = "";
+    private string PreviewColProperty = "";
 
     public ModelExportTool(ModelEditorView view, ProjectEntry project)
     {
@@ -52,9 +51,14 @@ public class ModelExportTool
     public void Display()
     {
         GUI.MultiButtonInput("flverActions",
-            "selectFlver",
-            LOC.Get("HAVOK_CollisionGen_Select_Flver_Action"),
-            LOC.Get("HAVOK_CollisionGen_Select_Flver_Action_TT"),
+            "selectCurrentFlver",
+            LOC.Get("MODEL_ModelExport_Select_Current_Flver_Action"),
+            LOC.Get("MODEL_ModelExport_Select_Current_Flver_Action_TT"),
+            SelectCurrentFlver,
+
+            "selectFlverFromList",
+            LOC.Get("MODEL_ModelExport_Select_Flver_Action"),
+            LOC.Get("MODEL_ModelExport_Select_Flver_Action_TT"),
             SelectFlverSource);
 
         GUI.Spacer();
@@ -102,16 +106,272 @@ public class ModelExportTool
             ImGui.EndChild();
         }
 
+        // Output Directory
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_ModelExport_SetOutputDirectory"),
+            LOC.Get("MODEL_ModelExport_SetOutputDirectory_TT"));
+
+        GUI.SinglelineTextInputWithHint("outputDirInput", ref CFG.Current.ModelExport_Output_Directory,
+            LOC.Get("MODEL_Output_Dir_Hint"));
+
+        GUI.MultiButtonInput("outputDirActions",
+            "setDirectory",
+            LOC.Get("MODEL_ModelExport_SetOutputDirectory"),
+            LOC.Get("MODEL_ModelExport_SetOutputDirectory_TT"),
+            SetOutputDirectory,
+
+            "openDirectory",
+            LOC.Get("MODEL_ModelExport_OpenOutputDirectory"),
+            LOC.Get("MODEL_ModelExport_OpenOutputDirectory_TT"),
+            OpenOutputDirectory);
+
+        GUI.Spacer();
+        ImGui.BeginTabBar("modelExportTabs");
+
+        if(ImGui.BeginTabItem($"{LOC.Get("MODEL_ModelExport_Tab_OBJ")}##modelExportObjTab"))
+        {
+            DisplayObjTab();
+
+            ImGui.EndTabItem();
+        }
+
+        if (ImGui.BeginTabItem($"{LOC.Get("MODEL_ModelExport_Tab_HKX")}##modelExportHkxTab"))
+        {
+            DisplayHkxTab();
+
+            ImGui.EndTabItem();
+        }
+
+        ImGui.EndTabBar();
+
+    }
+
+    public void DisplayObjTab()
+    {
+        // Actions
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_ModelExport_Action_Header"),
+            LOC.Get("MODEL_ModelExport_Action_Header_TT"));
+
+        GUI.MultiButtonInput("objActions",
+            "generateOBJ",
+            LOC.Get("MODEL_ModelExport_GenerateOBJ_Action"),
+            LOC.Get("MODEL_ModelExport_GenerateOBJ_Action_TT"),
+            GenerateOBJ);
+
+        // Options
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_ModelExport_Options_Header"),
+            LOC.Get("MODEL_ModelExport_Options_Header_TT"));
+
+        // Flip UVs in OBJ
+        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_FlipOBJUVs")}##flipUvs", ref CFG.Current.ModelExport_FlipUVs);
+
+        // Use Single Collision Material
+        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_UseColMaterials")}##useColMat", ref CFG.Current.ModelExport_UseCollisionMaterial);
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            RefreshCollisionMateriaList();
+        }
+
+        // Use Single Collision Material
+        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_UseSingleColMat")}##useSingleColMat", ref CFG.Current.ModelExport_UseSingleCollisionMaterial);
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            RefreshCollisionMateriaList();
+        }
+
+        // Collision Materials
+        if (CFG.Current.ModelExport_UseCollisionMaterial)
+        {
+            DisplayCollisionMaterialList();
+        }
+    }
+
+    private void DisplayCollisionMaterialList()
+    {
+        GUI.Spacer();
+
+        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
+
+        if (ImGui.BeginTable($"colMatTable", 2, tblFlags))
+        {
+            ImGui.TableSetupColumn("FlverMat", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("ColMat", ImGuiTableColumnFlags.WidthStretch);
+
+            var index = 0;
+            foreach (var entry in CollisionMaterials)
+            {
+                ImGui.TableNextRow();
+                ImGui.TableSetColumnIndex(0);
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text(entry.FlverMaterial);
+
+                ImGui.TableSetColumnIndex(1);
+
+                var curVal = entry.CollisionMateral;
+                ImGui.InputText($"##curMat{index}", ref curVal, 255);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    entry.CollisionMateral = curVal;
+                }
+
+                if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.NR)
+                {
+                    ImGui.SameLine();
+
+                    if (ImGui.ArrowButton($"##colMatBuilderButton{index}", ImGuiDir.Right))
+                    {
+                        TargetCollisionMaterial = index;
+                        ImGui.OpenPopup("colMatBuilder");
+                    }
+                }
+
+                if (index == TargetCollisionMaterial)
+                {
+                    if (ImGui.BeginPopup("colMatBuilder"))
+                    {
+                        // Material
+                        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT)
+                        {
+                            if (ImGui.BeginCombo($"Material##colMatSelect", PreviewColMaterial))
+                            {
+                                foreach (var mat in ColMatConfig.DS3_MatNames)
+                                {
+                                    if (ImGui.Selectable($"{mat.Value}##entry{mat.Key}"))
+                                    {
+                                        PreviewColMaterial = mat.Value;
+                                    }
+                                }
+
+                                ImGui.EndCombo();
+                            }
+                        }
+                        else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+                        {
+                            if (ImGui.BeginCombo($"Material##colMatSelect", PreviewColMaterial))
+                            {
+                                foreach (var mat in ColMatConfig.ER_MatNames)
+                                {
+                                    if (ImGui.Selectable($"{mat.Value}##entry{mat.Key}"))
+                                    {
+                                        PreviewColMaterial = mat.Value;
+                                    }
+                                }
+
+                                ImGui.EndCombo();
+                            }
+                        }
+
+                        // Property
+                        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT)
+                        {
+                            if (ImGui.BeginCombo($"Property##colPropSelect", PreviewColProperty))
+                            {
+                                foreach (var mat in ColMatConfig.DS3_MatProperties)
+                                {
+                                    if (ImGui.Selectable($"{mat.Value}##entry{mat.Key}"))
+                                    {
+                                        PreviewColProperty = mat.Value;
+                                    }
+                                }
+
+                                ImGui.EndCombo();
+                            }
+                        }
+                        else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+                        {
+                            if (ImGui.BeginCombo($"Property##colPropSelect", PreviewColProperty))
+                            {
+                                foreach (var mat in ColMatConfig.ER_MatProperties)
+                                {
+                                    if (ImGui.Selectable($"{mat.Value}##entry{mat.Key}"))
+                                    {
+                                        PreviewColProperty = mat.Value;
+                                    }
+                                }
+
+                                ImGui.EndCombo();
+                            }
+                        }
+
+                        // Submit
+                        if (ImGui.Selectable($"{LOC.Get("MODEL_ModelExport_ColBuilder_Submit")}##submitAction"))
+                        {
+                            if (PreviewColMaterial != "" && PreviewColProperty != "")
+                            {
+                                entry.CollisionMateral = $"hkm_{PreviewColMaterial}_{PreviewColProperty}";
+                                if(CFG.Current.ModelExport_UseSingleCollisionMaterial)
+                                {
+                                    foreach(var mat in CollisionMaterials)
+                                    {
+                                        mat.CollisionMateral = entry.CollisionMateral;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                entry.CollisionMateral = GetDefaultCollisionMaterial();
+                            }
+                        }
+
+                        ImGui.EndPopup();
+                    }
+                }
+
+                index++;
+            }
+
+            ImGui.EndTable();
+        }
+    }
+
+    public void DisplayHkxTab()
+    {
+        // Actions
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_ModelExport_Action_Header"),
+            LOC.Get("MODEL_ModelExport_Action_Header_TT"));
+
+        GUI.MultiButtonInput("hkxActions",
+            "generateHKX",
+            LOC.Get("MODEL_ModelExport_GenerateHKX_Action"),
+            LOC.Get("MODEL_ModelExport_GenerateHKX_Action_TT"),
+            GenerateHKX);
+
+        // Input Directory
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_ModelExport_Input_Directory_Header"),
+            LOC.Get("MODEL_ModelExport_Input_Directory_Header_TT"));
+
+        GUI.SinglelineTextInputWithHint("inputDir", ref CFG.Current.ModelExport_Input_Directory,
+            LOC.Get("MODEL_Input_Dir_Hint"));
+
+        GUI.MultiButtonInput("inputDirAction",
+            "setDirectory",
+            LOC.Get("MODEL_ModelExport_SetInputDirectory"),
+            LOC.Get("MODEL_ModelExport_SetInputDirectory_TT"),
+            SetInputDirectory,
+
+            "openDirectory",
+            LOC.Get("MODEL_ModelExport_OpenInputDirectory"),
+            LOC.Get("MODEL_ModelExport_OpenInputDirectory_TT"),
+            OpenInputDirectory);
+
         // Collision Tool Directory
         GUI.Spacer();
         GUI.SimpleHeader(
             LOC.Get("MODEL_ModelExport_ColTool_Header"),
             LOC.Get("MODEL_ModelExport_ColTool_Header_TT"));
 
-        GUI.SinglelineTextInputWithHint("colToolDir", ref CollisionToolDir,
+        GUI.SinglelineTextInputWithHint("colToolDir", ref CFG.Current.ModelExport_CollisionTool_Directory,
             LOC.Get("MODEL_ColTool_Dir_Hint"));
 
-        GUI.MultiButtonInput("csvImportDirActions",
+        GUI.MultiButtonInput("colDirActions",
             "setDirectory",
             LOC.Get("MODEL_ModelExport_SetColToolDirectory"),
             LOC.Get("MODEL_ModelExport_SetColToolDirectory_TT"),
@@ -121,24 +381,25 @@ public class ModelExportTool
             LOC.Get("MODEL_ModelExport_OpenColToolDirectory"),
             LOC.Get("MODEL_ModelExport_OpenColToolDirectory_TT"),
             OpenColToolDirectory);
-
-        // Actions
-        GUI.Spacer();
-        GUI.SimpleHeader(
-            LOC.Get("MODEL_ModelExport_Action_Header"),
-            LOC.Get("MODEL_ModelExport_Action_Header_TT"));
-
-        GUI.MultiButtonInput("actions",
-            "generateOBJ",
-            LOC.Get("MODEL_ModelExport_GenerateOBJ_Action"),
-            LOC.Get("MODEL_ModelExport_GenerateOBJ_Action_TT"),
-            GenerateOBJ,
-
-            "generateHKX",
-            LOC.Get("MODEL_ModelExport_GenerateHKX_Action"),
-            LOC.Get("MODEL_ModelExport_GenerateHKX_Action_TT"),
-            GenerateHKX);
     }
+
+    public void SetInputDirectory()
+    {
+        string path;
+        var result = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("MODEL_ModelExport_Select_Input_Destination"), out path);
+
+        if (result)
+        {
+            CFG.Current.ModelExport_Input_Directory = path;
+        }
+    }
+
+    public void OpenInputDirectory()
+    {
+        Process.Start("explorer.exe", CFG.Current.ModelExport_Input_Directory);
+    }
+
     public void SetColToolDirectory()
     {
         string path;
@@ -147,13 +408,30 @@ public class ModelExportTool
 
         if (result)
         {
-            CollisionToolDir = path;
+            CFG.Current.ModelExport_CollisionTool_Directory = path;
         }
     }
 
     public void OpenColToolDirectory()
     {
-        Process.Start("explorer.exe", CollisionToolDir);
+        Process.Start("explorer.exe", CFG.Current.ModelExport_CollisionTool_Directory);
+    }
+
+    public void SetOutputDirectory()
+    {
+        string path;
+        var result = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("MODEL_ModelExport_Select_Output_Destination"), out path);
+
+        if (result)
+        {
+            CFG.Current.ModelExport_Output_Directory = path;
+        }
+    }
+
+    public void OpenOutputDirectory()
+    {
+        Process.Start("explorer.exe", CFG.Current.ModelExport_Output_Directory);
     }
 
     public void DetectFlverSelectionMenu()
@@ -171,6 +449,11 @@ public class ModelExportTool
         SelectionMenu.TriggerFlverSelectionMenu = true;
     }
 
+    public void SelectCurrentFlver()
+    {
+        SelectionMenu.SelectAndLoadCurrentFlver(View.Selection.SelectedModelWrapper);
+    }
+
     public void DisplayFlverSelectionMenu()
     {
         if (ImGui.BeginPopup("flverSelectionMenuPopup"))
@@ -181,13 +464,153 @@ public class ModelExportTool
         }
     }
 
+    public string GetDefaultCollisionMaterial()
+    {
+        var matName = "Cobblestone";
+
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        {
+            matName = "Stock";
+        }
+
+        var matProp = "Safe1";
+
+        return $"hkm_{matName}_{matProp}";
+    }
+
+    public void RefreshCollisionMateriaList()
+    {
+        CollisionMaterials = new();
+
+        if (SelectionMenu.SourceFlver != null)
+        {
+            for (int i = 0; i < SelectionMenu.SourceFlver.Meshes.Count; i++)
+            {
+                var mesh = SelectionMenu.SourceFlver.Meshes[i];
+                var material = SelectionMenu.SourceFlver.Materials[mesh.MaterialIndex];
+
+                CollisionMaterials.Add(new CollisionMaterialDef()
+                {
+                    FlverMaterial = material.Name,
+                    CollisionMateral = GetDefaultCollisionMaterial()
+                });
+            }
+        }
+    }
+
     public void GenerateOBJ()
     {
+        var curFlver = SelectionMenu.SourceFlver;
 
+        if (curFlver == null)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_ModelExport_Error_No_Source_FLVER"));
+            return;
+        }
+
+        if (CFG.Current.ModelExport_Output_Directory == "")
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_ModelExport_Error_Empty_Output_Directory"));
+            return;
+        }
+
+        var flverName = Path.GetFileNameWithoutExtension(SelectionMenu.FlverPath);
+        var outputPath = Path.Combine(CFG.Current.ModelExport_Output_Directory, $"{flverName}.obj");
+
+        if (CFG.Current.ModelExport_UseCollisionMaterial)
+        {
+            var materialNamingList = new List<MaterialNaming>();
+            foreach(var entry in CollisionMaterials)
+            {
+                var parts = entry.CollisionMateral.Split("_");
+
+                if (parts.Length >= 2)
+                {
+                    var newNaming = new MaterialNaming(parts[1], parts[2]);
+                    materialNamingList.Add(newNaming);
+                }
+            }
+
+            FlverToObj.Convert(curFlver, outputPath, materialNamingList, CFG.Current.ModelExport_FlipUVs);
+        }
+        else
+        {
+            FlverToObj.Convert(curFlver, outputPath, null, CFG.Current.ModelExport_FlipUVs);
+        }
     }
 
     public void GenerateHKX()
     {
+        var flverName = Path.GetFileNameWithoutExtension(SelectionMenu.FlverPath);
 
+        var inputDir = CFG.Current.ModelExport_Input_Directory;
+        var outputDir = CFG.Current.ModelExport_Output_Directory;
+        var toolDir = CFG.Current.ModelExport_CollisionTool_Directory;
+
+        var targetFile = Path.Combine(inputDir, $"{flverName}.obj");
+        var tempTargetFile = Path.Combine(toolDir, $"{flverName}.obj");
+
+        if (!File.Exists(targetFile))
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_ModelExport_Error_No_OBJ_for_HKX_File"));
+            return;
+        }
+
+        if(File.Exists(tempTargetFile))
+        {
+            File.Delete(tempTargetFile);
+        }
+
+        // Copy file to the Tool dir so the bat file works correctly
+        File.Copy(targetFile, tempTargetFile);
+
+        var batFile = Path.Combine(toolDir, "obj2fsnp.bat");
+
+        if (!File.Exists(batFile))
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_ModelExport_Error_Missing_OBJ2HKX_Bat_File"));
+            return;
+        }
+
+        var startInfo = new ProcessStartInfo
+        {
+            FileName = "cmd.exe",
+            WorkingDirectory = toolDir,
+            UseShellExecute = false,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            CreateNoWindow = true
+        };
+
+        startInfo.ArgumentList.Add("/c");
+        startInfo.ArgumentList.Add(batFile);
+        startInfo.ArgumentList.Add($"{flverName}.obj");
+
+        using var process = Process.Start(startInfo);
+
+        var output = process.StandardOutput.ReadToEnd();
+        var error = process.StandardError.ReadToEnd();
+        process.WaitForExit();
+
+        var tempOutputFile = Path.Combine(toolDir, $"{flverName}.hkx");
+        var outputFile = Path.Combine(outputDir, $"{flverName}.hkx");
+
+        if (File.Exists(outputFile))
+        {
+            File.Delete(outputFile);
+        }
+
+        File.Copy(tempOutputFile, outputFile);
+
+        // Cleanup
+        if (File.Exists(tempTargetFile))
+        {
+            File.Delete(tempTargetFile);
+        }
+
+        if (File.Exists(tempOutputFile))
+        {
+            File.Delete(tempOutputFile);
+        }
     }
 }

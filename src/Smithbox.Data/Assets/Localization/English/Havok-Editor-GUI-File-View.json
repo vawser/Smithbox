@@ -139,6 +139,14 @@
     {
       "Key": "HAVOK_FileView_ContextAction_CopyName_TT",
       "Text": "Copy the name of this file to clipboard.\nShortcut: {0}"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_Compress",
+      "Text": "Compress"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_Compress_TT",
+      "Text": "Compress this HKX file."
     }
   ]
 }
