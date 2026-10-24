@@ -18,10 +18,6 @@
 - Param Delta Patcher: imported row name is funky since it uses row 0's row name (might not be applying row name from delta at all, if not present, it should pull from delta or default to blank, not use row 0's name)
 - Are fields forcefully re-ordered (outside of Field Layouts)
 
-- ER Item Gib
-    "ERItemGiveFuncOffset": "0x5618b0",
-    "ERMapItemManOffset": "0x3d6eae0"
-          
 # Text Editor
 - For FMG Export, include option to export all members of grouped entry (not just title) - currently Data Transfer only exports Title, which goes against user expectation
 - Add text entry ID search tool
