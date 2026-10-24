@@ -132,8 +132,10 @@ public class GlobalTextSearch
 
         if (searchResults.Count > 0)
         {
-            foreach (var result in searchResults)
+            for(int i = 0; i < searchResults.Count; i++)
             {
+                var result = searchResults[i];
+
                 // Ignore results from unused containers if in Simple mode
                 if (CFG.Current.TextEditor_Container_List_Hide_Unused_Containers)
                 {
@@ -175,7 +177,7 @@ public class GlobalTextSearch
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";
 
-                if (ImGui.Selectable(displayText))
+                if (ImGui.Selectable($"{displayText}##searchResult{i}"))
                 {
                     EditorCommandQueue.AddCommand($"text/select/{category}/{result.ContainerName}/{result.FmgName}/{result.Entry.ID}");
                 }
