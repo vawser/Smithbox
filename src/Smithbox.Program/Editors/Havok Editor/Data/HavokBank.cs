@@ -1014,7 +1014,7 @@ public class HavokBank : IDisposable
 
                         if (file.Name.Contains(".dcx"))
                         {
-                            var compressedBytes = DCX.Compress(bw.FinishBytes(), DCX.Type.DCX_KRAK);
+                            var compressedBytes = DCX.Compress(bw.FinishBytes(), GetExistingDCXType(file));
                             file.Bytes = compressedBytes;
                         }
                         else
@@ -1067,7 +1067,7 @@ public class HavokBank : IDisposable
 
                         if (file.Name.Contains(".dcx"))
                         {
-                            var compressedBytes = DCX.Compress(bw.FinishBytes(), DCX.Type.DCX_KRAK);
+                            var compressedBytes = DCX.Compress(bw.FinishBytes(), GetExistingDCXType(file));
                             file.Bytes = compressedBytes;
                         }
                         else
@@ -1130,7 +1130,7 @@ public class HavokBank : IDisposable
                         var bytes = memoryStream.ToArray();
 
                         file.Bytes = file.Name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase)
-                            ? DCX.Compress(bytes, DCX.Type.DCX_KRAK)
+                            ? DCX.Compress(bytes, GetExistingDCXType(file))
                             : bytes;
 
                         anyWritten = true;
@@ -1158,7 +1158,7 @@ public class HavokBank : IDisposable
 
     #endregion
 
-        #region File Manipulation
+    #region File Manipulation
     public void PasteHavokFile(HavokFileView.FileAction fileAction)
     {
         if (fileAction.ClipboardBinder == null)
@@ -1904,7 +1904,7 @@ public class HavokBank : IDisposable
 
         if (HavokTypeUtils.IsBND3(Project))
         {
-            var binder = BND4.Read(binderData.Value);
+            var binder = BND3.Read(binderData.Value);
 
             foreach (var entry in fileAction.Inserts)
             {
@@ -1937,7 +1937,7 @@ public class HavokBank : IDisposable
         }
         else
         {
-            var binder = BND3.Read(binderData.Value);
+            var binder = BND4.Read(binderData.Value);
 
             foreach (var entry in fileAction.Inserts)
             {
@@ -2263,6 +2263,378 @@ public class HavokBank : IDisposable
                     }
                 }
             }
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
+        }
+    }
+
+    #endregion
+
+    #region Compress
+    /// <summary>
+    /// Used when the binder has no existing .dcx entries to copy the compression type from.
+    /// Matches what the Save functions use when re-compressing .dcx entries.
+    /// </summary>
+    private const DCX.Type FallbackDCXType = DCX.Type.DCX_KRAK;
+
+    /// <summary>
+    /// Match the compression type of an existing .dcx entry in the binder, so the new
+    /// entries are compressed the same way the game's own files are.
+    /// </summary>
+    private DCX.Type DetectBinderDCXType(IEnumerable<BinderFile> files)
+    {
+        foreach (var file in files)
+        {
+            if (!file.Name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            try
+            {
+                DCX.Decompress(file.Bytes.ToArray(), out var type);
+
+                if (type != DCX.Type.Unknown && type != DCX.Type.None && type != DCX.Type.Zlib)
+                    return type;
+            }
+            catch
+            {
+                // Not a readable DCX, try the next one
+            }
+        }
+
+        if(Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        {
+            return DCX.Type.DCX_KRAK;
+        }
+        else if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S)
+        {
+            return DCX.Type.DCX_DFLT_10000_24_9;
+        }
+        else if (Project.Descriptor.ProjectType is ProjectType.DS3)
+        {
+            return DCX.Type.DCX_DFLT_10000_44_9;
+        }
+        else if (Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            return DCX.Type.DCX_DFLT_11000_44_9;
+        }
+
+        return FallbackDCXType;
+    }
+
+    /// <summary>
+    /// DCX compresses every targeted file that isn't already compressed, and appends '.dcx' to its name.
+    /// Returns the number of files changed.
+    /// </summary>
+    private int CompressBinderFiles(IEnumerable<BinderFile> files, List<string> targets)
+    {
+        var dcxType = DetectBinderDCXType(files);
+        var count = 0;
+
+        foreach (var file in files)
+        {
+            if (!targets.Contains(file.Name))
+                continue;
+
+            var name = Path.GetFileNameWithoutExtension(file.Name);
+
+            var rawBytes = file.Bytes.ToArray();
+
+            if (file.Name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase) || DCX.Is((Memory<byte>)rawBytes))
+            {
+                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Compress_Skipped_Log", name));
+                continue;
+            }
+
+            try
+            {
+                file.Bytes = DCX.Compress(rawBytes, dcxType);
+                file.Name = $"{file.Name}.dcx";
+
+                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Compress_Log", name, dcxType.ToString()));
+                count++;
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this, LOC.Get("HAVOK_FileView_ContextAction_Compress_FAIL", name), ex);
+            }
+        }
+
+        return count;
+    }
+
+    public void CompressHavokFile(HavokFileView.FileAction fileAction)
+    {
+        if (fileAction.MultipleFilePaths.Count == 0)
+            return;
+
+        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
+            return;
+
+        var binderData = Project.VFS.FS.ReadFile(fileAction.BinderEntry.Path);
+
+        if (Project.VFS.ProjectFS.FileExists(fileAction.BinderEntry.Path))
+        {
+            binderData = Project.VFS.ProjectFS.ReadFile(fileAction.BinderEntry.Path);
+        }
+
+        if (binderData == null)
+            return;
+
+        try
+        {
+            byte[] writtenBinder;
+
+            if (HavokTypeUtils.IsBND3(Project))
+            {
+                var binder = BND3.Read(binderData.Value);
+
+                if (CompressBinderFiles(binder.Files, fileAction.MultipleFilePaths) == 0)
+                    return;
+
+                writtenBinder = binder.Write();
+            }
+            else
+            {
+                var binder = BND4.Read(binderData.Value);
+
+                if (CompressBinderFiles(binder.Files, fileAction.MultipleFilePaths) == 0)
+                    return;
+
+                writtenBinder = binder.Write();
+            }
+
+            Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
+        }
+    }
+
+    public void CompressCombinedHavokFile(HavokFileView.FileAction fileAction)
+    {
+        if (fileAction.MultipleFilePaths.Count == 0)
+            return;
+
+        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
+            return;
+
+        var bhdPath = fileAction.BinderEntry.Path;
+        var bdtPath = fileAction.BinderEntry.Path.Replace("bhd", "bdt");
+
+        try
+        {
+            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
+            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
+
+            if (Project.VFS.ProjectFS.FileExists(bdtPath))
+            {
+                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
+            }
+            if (Project.VFS.ProjectFS.FileExists(bhdPath))
+            {
+                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
+            }
+
+            if (bdtData == null || bhdData == null)
+                return;
+
+            byte[] newBhdBytes;
+            byte[] newBdtBytes;
+
+            if (HavokTypeUtils.IsBXF3(Project))
+            {
+                var packedBinder = BXF3.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+                if (CompressBinderFiles(packedBinder.Files, fileAction.MultipleFilePaths) == 0)
+                    return;
+
+                packedBinder.Write(out newBhdBytes, out newBdtBytes);
+            }
+            else
+            {
+                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+                if (CompressBinderFiles(packedBinder.Files, fileAction.MultipleFilePaths) == 0)
+                    return;
+
+                packedBinder.Write(out newBhdBytes, out newBdtBytes);
+            }
+
+            Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
+            Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
+        }
+    }
+    /// <summary>
+    /// The compression type the entry currently uses, so saving doesn't silently change it.
+    /// Falls back to the default if the entry can't be read as DCX.
+    /// </summary>
+    private DCX.Type GetExistingDCXType(BinderFile file)
+    {
+        try
+        {
+            DCX.Decompress(file.Bytes.ToArray(), out var type);
+
+            if (type != DCX.Type.Unknown && type != DCX.Type.None && type != DCX.Type.Zlib)
+                return type;
+        }
+        catch
+        {
+            // Not a readable DCX, use the fallback
+        }
+
+        return FallbackDCXType;
+    }
+
+    /// <summary>
+    /// Re-compresses every targeted .dcx file with the new type. File names are unchanged.
+    /// Returns the number of files changed.
+    /// </summary>
+    private int ChangeCompressionBinderFiles(IEnumerable<BinderFile> files, List<string> targets, DCX.Type newType)
+    {
+        var count = 0;
+
+        foreach (var file in files)
+        {
+            if (!targets.Contains(file.Name))
+                continue;
+
+            var name = Path.GetFileNameWithoutExtension(file.Name);
+
+            if (!file.Name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase))
+            {
+                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_ChangeCompression_Skipped_Log", name));
+                continue;
+            }
+
+            try
+            {
+                var decompressed = DCX.Decompress(file.Bytes.ToArray(), out var oldType);
+
+                if (oldType == newType)
+                    continue;
+
+                file.Bytes = DCX.Compress(decompressed, newType);
+
+                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_ChangeCompression_Log", name, oldType.ToString(), newType.ToString()));
+                count++;
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this, LOC.Get("HAVOK_FileView_ContextAction_ChangeCompression_FAIL", name), ex);
+            }
+        }
+
+        return count;
+    }
+
+    public void ChangeCompressionHavokFile(HavokFileView.FileAction fileAction)
+    {
+        if (fileAction.MultipleFilePaths.Count == 0 || fileAction.NewCompressionType == DCX.Type.Unknown)
+            return;
+
+        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
+            return;
+
+        var binderData = Project.VFS.FS.ReadFile(fileAction.BinderEntry.Path);
+
+        if (Project.VFS.ProjectFS.FileExists(fileAction.BinderEntry.Path))
+        {
+            binderData = Project.VFS.ProjectFS.ReadFile(fileAction.BinderEntry.Path);
+        }
+
+        if (binderData == null)
+            return;
+
+        try
+        {
+            byte[] writtenBinder;
+
+            if (HavokTypeUtils.IsBND3(Project))
+            {
+                var binder = BND3.Read(binderData.Value);
+
+                if (ChangeCompressionBinderFiles(binder.Files, fileAction.MultipleFilePaths, fileAction.NewCompressionType) == 0)
+                    return;
+
+                writtenBinder = binder.Write();
+            }
+            else
+            {
+                var binder = BND4.Read(binderData.Value);
+
+                if (ChangeCompressionBinderFiles(binder.Files, fileAction.MultipleFilePaths, fileAction.NewCompressionType) == 0)
+                    return;
+
+                writtenBinder = binder.Write();
+            }
+
+            Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
+        }
+    }
+
+    public void ChangeCompressionCombinedHavokFile(HavokFileView.FileAction fileAction)
+    {
+        if (fileAction.MultipleFilePaths.Count == 0 || fileAction.NewCompressionType == DCX.Type.Unknown)
+            return;
+
+        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
+            return;
+
+        var bhdPath = fileAction.BinderEntry.Path;
+        var bdtPath = fileAction.BinderEntry.Path.Replace("bhd", "bdt");
+
+        try
+        {
+            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
+            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
+
+            if (Project.VFS.ProjectFS.FileExists(bdtPath))
+            {
+                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
+            }
+            if (Project.VFS.ProjectFS.FileExists(bhdPath))
+            {
+                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
+            }
+
+            if (bdtData == null || bhdData == null)
+                return;
+
+            byte[] newBhdBytes;
+            byte[] newBdtBytes;
+
+            if (HavokTypeUtils.IsBXF3(Project))
+            {
+                var packedBinder = BXF3.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+                if (ChangeCompressionBinderFiles(packedBinder.Files, fileAction.MultipleFilePaths, fileAction.NewCompressionType) == 0)
+                    return;
+
+                packedBinder.Write(out newBhdBytes, out newBdtBytes);
+            }
+            else
+            {
+                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+                if (ChangeCompressionBinderFiles(packedBinder.Files, fileAction.MultipleFilePaths, fileAction.NewCompressionType) == 0)
+                    return;
+
+                packedBinder.Write(out newBhdBytes, out newBdtBytes);
+            }
+
+            Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
+            Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
         }
         catch (Exception ex)
         {

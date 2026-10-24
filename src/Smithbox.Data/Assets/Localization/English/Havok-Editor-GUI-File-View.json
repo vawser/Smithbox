@@ -147,6 +147,38 @@
     {
       "Key": "HAVOK_FileView_ContextAction_Compress_TT",
       "Text": "Compress this HKX file."
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_Compress_Log",
+      "Text": "Compressed file: {0} as {1}"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_Compress_Skipped_Log",
+      "Text": "Skipped compressing file: {0}"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_Compress_FAIL",
+      "Text": "Failed to compress file: {0}"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_ChangeCompression",
+      "Text": "Change Compression Type"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_ChangeCompression_TT",
+      "Text": "Changes the compression type used for this internal file."
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_ChangeCompression_Log",
+      "Text": "Recompressed file: {0}: changed from {1} to {2}"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_ChangeCompression_Skipped_Log",
+      "Text": "Skipped recompressing file: {0}"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_ChangeCompression_FAIL",
+      "Text": "Failed to recompress file: {0}"
     }
   ]
 }

@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
+using SoulsFormats;
 using StudioCore.Utilities;
 using static StudioCore.Editors.HavokEditor.HavokFileView.FileAction;
 
@@ -19,6 +20,21 @@ public class HavokFileView
     private FileAction QueuedFileAction = null;
     private string RenameFileInput = "";
     public string CopyClipboard = null;
+
+    /// <summary>
+    /// Compression types offered by the 'Change Compression' action.
+    /// </summary>
+    private static readonly DCX.Type[] SelectableDCXTypes = new[]
+    {
+        DCX.Type.DCX_EDGE,
+        DCX.Type.DCX_DFLT_10000_24_9,
+        DCX.Type.DCX_DFLT_10000_44_9,
+        DCX.Type.DCX_DFLT_11000_44_8,
+        DCX.Type.DCX_DFLT_11000_44_9,
+        DCX.Type.DCX_DFLT_11000_44_9_15,
+        DCX.Type.DCX_KRAK,
+        DCX.Type.DCX_KRAK_MAX
+    };
 
     public bool AllowPaste = false;
     public List<string> SoftSelectEntries = new();
@@ -88,7 +104,7 @@ public class HavokFileView
 
     public void DisplayFileList(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict)
     {
-        if(View.Selection.BinderFileEntry == null)
+        if (View.Selection.BinderFileEntry == null)
         {
             ImGui.BeginChild("havokFileSection", ImGuiChildFlags.Borders);
 
@@ -123,7 +139,7 @@ public class HavokFileView
                 var selected = SoftSelectEntries.Contains(filepath);
                 var displayName = Path.GetFileNameWithoutExtension(entry.Key);
 
-                if(entry.Key.Contains(".dcx"))
+                if (entry.Key.Contains(".dcx"))
                 {
                     displayName = Path.GetFileNameWithoutExtension(displayName);
                 }
@@ -137,7 +153,7 @@ public class HavokFileView
                     // Add some prefixes to make it clearer which files are which in short name mode for Behaviors
                     if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
                     {
-                        if(filepath.Contains("Character"))
+                        if (filepath.Contains("Character"))
                         {
                             displayName = $"Character Data: {displayName}";
                         }
@@ -164,7 +180,7 @@ public class HavokFileView
                     if (ImGui.Selectable($"{displayName}##fileEntry_{filepath}", selected))
                     {
                         // 'Soft' select used for multi-selecting for the binder actions
-                        if(InputManager.HasCtrlDown())
+                        if (InputManager.HasCtrlDown())
                         {
                             SoftSelectEntries.Add(filepath);
                         }
@@ -326,8 +342,8 @@ public class HavokFileView
     }
 
     public void DisplayContextMenu(
-        Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, 
-        FileDictionaryEntry curBinderEntry, 
+        Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict,
+        FileDictionaryEntry curBinderEntry,
         string filepath,
         string displayName)
     {
@@ -340,17 +356,60 @@ public class HavokFileView
             }
             GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_CopyName_TT", InputManager.GetHint(KeybindID.Copy)));
 
-            // Compress
-            if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Compress")}##compressAction"))
-            {
+            // Compress (DCX)
+            // Disabled if every selected file is already DCX compressed
+            var allCompressed = SoftSelectEntries.Count > 0 &&
+                SoftSelectEntries.All(e => e.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase));
 
+            var compressFlags = allCompressed ? ImGuiSelectableFlags.Disabled : ImGuiSelectableFlags.None;
+
+            if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Compress")}##compressAction", false, compressFlags))
+            {
+                QueuedFileAction = new FileAction
+                {
+                    BankDict = bankDict,
+                    BinderEntry = curBinderEntry,
+                    FilePath = filepath,
+                    MultipleFilePaths = SoftSelectEntries,
+                    ActionType = FileAction.FileActionType.Compress
+                };
+
+                IsFileActionQueued = true;
             }
             GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_Compress_TT"));
+
+            // Change Compression Type (DCX)
+            // Disabled unless at least one selected file is DCX compressed
+            var anyCompressed = SoftSelectEntries.Any(e => e.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase));
+
+            if (ImGui.BeginMenu($"{LOC.Get("HAVOK_FileView_ContextAction_ChangeCompression")}##changeCompressionMenu", anyCompressed))
+            {
+                foreach (var dcxType in SelectableDCXTypes)
+                {
+                    if (ImGui.Selectable($"{dcxType}##changeCompression_{dcxType}"))
+                    {
+                        QueuedFileAction = new FileAction
+                        {
+                            BankDict = bankDict,
+                            BinderEntry = curBinderEntry,
+                            FilePath = filepath,
+                            MultipleFilePaths = SoftSelectEntries,
+                            NewCompressionType = dcxType,
+                            ActionType = FileAction.FileActionType.ChangeCompression
+                        };
+
+                        IsFileActionQueued = true;
+                    }
+                }
+
+                ImGui.EndMenu();
+            }
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_ChangeCompression_TT"));
 
             ImGui.Separator();
 
             // Copy
-            if(ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Copy")}##copyAction"))
+            if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Copy")}##copyAction"))
             {
                 CopyFile();
             }
@@ -417,12 +476,12 @@ public class HavokFileView
             if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Insert")}##insertAction"))
             {
                 if (PlatformUtils.Instance.OpenMultiFileDialog
-                    (LOC.Get("HAVOK_FileView_ContextAction_Insert_Select_HKX_Files"), 
+                    (LOC.Get("HAVOK_FileView_ContextAction_Insert_Select_HKX_Files"),
                     new[] { "hkx", "dcx" }, out var paths))
                 {
                     var inserts = new List<NewFileInsert>();
 
-                    foreach(var curFilePath in paths)
+                    foreach (var curFilePath in paths)
                     {
                         var data = File.ReadAllBytes(curFilePath);
                         var newInsert = new NewFileInsert
@@ -517,7 +576,7 @@ public class HavokFileView
         if (QueuedFileAction == null)
             return;
 
-        if(QueuedFileAction.ActionType is FileAction.FileActionType.Paste)
+        if (QueuedFileAction.ActionType is FileAction.FileActionType.Paste)
         {
             PasteFile(QueuedFileAction);
         }
@@ -536,6 +595,14 @@ public class HavokFileView
         else if (QueuedFileAction.ActionType is FileAction.FileActionType.Export)
         {
             ExportFile(QueuedFileAction);
+        }
+        else if (QueuedFileAction.ActionType is FileAction.FileActionType.Compress)
+        {
+            CompressFile(QueuedFileAction);
+        }
+        else if (QueuedFileAction.ActionType is FileAction.FileActionType.ChangeCompression)
+        {
+            ChangeCompressionFile(QueuedFileAction);
         }
 
         QueuedFileAction = null;
@@ -592,7 +659,7 @@ public class HavokFileView
 
         foreach (var entry in curBinder)
         {
-            if(SoftSelectEntries.Contains(entry.Key))
+            if (SoftSelectEntries.Contains(entry.Key))
             {
                 ClipboardFileList.Add(entry.Key);
             }
@@ -696,6 +763,48 @@ public class HavokFileView
         View.BinderView.PopulateFileList(true);
     }
 
+    public void CompressFile(FileAction fileAction)
+    {
+        var data = View.HavokBank;
+
+        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            data.CompressCombinedHavokFile(fileAction);
+        }
+        else
+        {
+            data.CompressHavokFile(fileAction);
+        }
+
+        // Compressing renames the entries (.hkx -> .hkx.dcx), so the old selection is stale
+        View.Selection.ClearFileSelection();
+        SoftSelectEntries = new();
+
+        // Update file list
+        View.BinderView.PopulateFileList(true);
+    }
+
+    public void ChangeCompressionFile(FileAction fileAction)
+    {
+        var data = View.HavokBank;
+
+        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        {
+            data.ChangeCompressionCombinedHavokFile(fileAction);
+        }
+        else
+        {
+            data.ChangeCompressionHavokFile(fileAction);
+        }
+
+        // File names are unchanged, but the bank was loaded from the old bytes, so refresh
+        View.Selection.ClearFileSelection();
+        SoftSelectEntries = new();
+
+        // Update file list
+        View.BinderView.PopulateFileList(true);
+    }
+
     public class FileAction
     {
         public FileActionType ActionType;
@@ -707,6 +816,7 @@ public class HavokFileView
         public string FilePath;
         public List<string> MultipleFilePaths = new();
         public string NewFilename;
+        public DCX.Type NewCompressionType = DCX.Type.Unknown;
 
         public List<NewFileInsert> Inserts = new();
 
@@ -720,7 +830,9 @@ public class HavokFileView
             Delete,
             Rename,
             Insert,
-            Export
+            Export,
+            Compress,
+            ChangeCompression
         }
 
         public class NewFileInsert
