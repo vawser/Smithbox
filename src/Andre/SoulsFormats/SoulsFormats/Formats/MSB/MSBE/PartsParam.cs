@@ -1969,9 +1969,11 @@ namespace SoulsFormats
                 public byte UnkT34 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Overrides the gparam set by the collision with this sub-ID
+                /// mXX_XX_AABB
+                /// This value replaces BB in the gparam file lookup
                 /// </summary>
-                public byte UnkT35 { get; set; }
+                public byte GparamOverride { get; set; }    
 
                 /// <summary>
                 /// Disable being able to summon/ride Torrent.
@@ -2056,7 +2058,7 @@ namespace SoulsFormats
                     br.AssertInt32(-1);
                     UnkT30 = br.ReadInt32();
                     UnkT34 = br.ReadByte();
-                    UnkT35 = br.ReadByte();
+                    GparamOverride = br.ReadByte();
                     DisableTorrent = br.ReadBoolean();
                     br.AssertByte(0);
                     br.AssertInt32(-1);
@@ -2097,7 +2099,7 @@ namespace SoulsFormats
                     bw.WriteInt32(-1);
                     bw.WriteInt32(UnkT30);
                     bw.WriteByte(UnkT34);
-                    bw.WriteByte(UnkT35);
+                    bw.WriteByte(GparamOverride);
                     bw.WriteBoolean(DisableTorrent);
                     bw.WriteByte(0);
                     bw.WriteInt32(-1);

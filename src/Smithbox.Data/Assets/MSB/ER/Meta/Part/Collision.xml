@@ -63,9 +63,9 @@
     AltName="Unknown: 0x34"
     Wiki="" />
     
-    <UnkT35
-    AltName="Unknown: 0x35"
-    Wiki="" />
+    <GparamOverride
+    AltName="Gparam Override"
+    Wiki="Overrides the gparam set by the collision with this sub-ID.\nmXX_XX_AABB\nThis value replaces BB in the gparam file lookup" />
     
     <DisableTorrent
     AltName="Disable Torrent Usage"
