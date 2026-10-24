@@ -15,7 +15,6 @@
 - Restore simple viewing of textures used by meshes (requires matbin inspection)
 
 # Param Editor 
-- Param Delta Patcher: imported row name is funky since it uses row 0's row name (might not be applying row name from delta at all, if not present, it should pull from delta or default to blank, not use row 0's name)
 - Are fields forcefully re-ordered (outside of Field Layouts)
 
 # Text Editor

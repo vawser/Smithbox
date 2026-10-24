@@ -125,6 +125,7 @@ public class ParamDeltaImporter
             var newRow = new Param.Row(srcRow);
 
             newRow.ID = rowDelta.ID;
+            newRow.Name = rowDelta.Name;
 
             // Apply the fields from the delta to the new row
             HandleFieldImport(newRow, rowDelta);
