@@ -7,16 +7,16 @@ namespace StudioCore.Renderer;
 public class HavokNavmeshProvider : MeshProvider, IResourceEventListener
 {
     private readonly HavokNavmeshCostGraphProvider _costGraphProvider;
-    private readonly string _resourceName;
+    private readonly ResourceHandle<HavokNavmeshResource> _source;
 
     private int _referenceCount;
     private ResourceHandle<HavokNavmeshResource> _resource;
 
-    public HavokNavmeshProvider(string resource)
+    public HavokNavmeshProvider(ResourceHandle<HavokNavmeshResource> source)
     {
-        _resourceName = resource;
+        _source = source;
         _resource = null;
-        _costGraphProvider = new HavokNavmeshCostGraphProvider(resource);
+        _costGraphProvider = new HavokNavmeshCostGraphProvider(source);
     }
 
     public override int ChildCount => 1;
@@ -66,7 +66,7 @@ public class HavokNavmeshProvider : MeshProvider, IResourceEventListener
         _resource.Acquire();
         NotifyAvailable();
 
-        MeshProviderInspector.Add(_resourceName, this);
+        MeshProviderInspector.Add(_source.FullName, this);
     }
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
@@ -75,8 +75,10 @@ public class HavokNavmeshProvider : MeshProvider, IResourceEventListener
         _resource = null;
         NotifyUnavailable();
 
-        MeshProviderInspector.Remove(_resourceName);
+        MeshProviderInspector.Remove(_source.FullName);
     }
+
+    public override IResourceHandle ResourceHandle => _source;
 
     public override bool TryLock()
     {
@@ -91,8 +93,7 @@ public class HavokNavmeshProvider : MeshProvider, IResourceEventListener
     {
         if (_referenceCount == 0)
         {
-            ResourceManager.AddResourceListener<HavokNavmeshResource>(_resourceName, this,
-                AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.AddResourceListener(_source, this, AccessLevel.AccessGPUOptimizedOnly);
         }
 
         _referenceCount++;

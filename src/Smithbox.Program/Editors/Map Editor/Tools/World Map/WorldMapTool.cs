@@ -607,24 +607,24 @@ public class WorldMapTool : IResourceEventListener
     {
         if (Project.Descriptor.ProjectType is ProjectType.ER)
         {
-            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_vanilla", this, AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.DefaultPool.AddListener<TextureResource>("smithbox/world_map/world_map_vanilla", this, AccessLevel.AccessGPUOptimizedOnly);
 
-            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_sote", this, AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.DefaultPool.AddListener<TextureResource>("smithbox/world_map/world_map_sote", this, AccessLevel.AccessGPUOptimizedOnly);
         }
 
         if (Project.Descriptor.ProjectType is ProjectType.NR)
         {
-            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld", this, AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.DefaultPool.AddListener<TextureResource>("smithbox/world_map/world_map_limveld", this, AccessLevel.AccessGPUOptimizedOnly);
 
-            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld_mountaintops", this, AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.DefaultPool.AddListener<TextureResource>("smithbox/world_map/world_map_limveld_mountaintops", this, AccessLevel.AccessGPUOptimizedOnly);
 
-            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld_crater", this, AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.DefaultPool.AddListener<TextureResource>("smithbox/world_map/world_map_limveld_crater", this, AccessLevel.AccessGPUOptimizedOnly);
 
-            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld_rotted_woods", this, AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.DefaultPool.AddListener<TextureResource>("smithbox/world_map/world_map_limveld_rotted_woods", this, AccessLevel.AccessGPUOptimizedOnly);
 
-            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld_noklateo", this, AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.DefaultPool.AddListener<TextureResource>("smithbox/world_map/world_map_limveld_noklateo", this, AccessLevel.AccessGPUOptimizedOnly);
 
-            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_forsaken_hollows", this, AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.DefaultPool.AddListener<TextureResource>("smithbox/world_map/world_map_forsaken_hollows", this, AccessLevel.AccessGPUOptimizedOnly);
         }
 
         View.Universe.ScheduleWorldMapRefresh();
@@ -847,18 +847,12 @@ public class WorldMapTool : IResourceEventListener
         return size;
     }
 
+    /// <summary>
+    ///     The world map textures are found by name (the last part of the path is the name).
+    /// </summary>
     public ResourceHandle<TextureResource> GetImageTextureHandle(string path)
     {
-        var virtName = $@"{path}".ToLower();
-
-        var resources = ResourceManager.GetResourceDatabase();
-
-        if (resources.ContainsKey(virtName))
-        {
-            return (ResourceHandle<TextureResource>)resources[virtName];
-        }
-
-        return null;
+        return ResourceManager.DefaultPool.TryFind<TextureResource>(path, out var handle) ? handle : null;
     }
 
     private void HandleZoom()

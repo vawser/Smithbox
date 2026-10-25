@@ -733,20 +733,12 @@ public class MapUniverse : IUniverse
             map.AddObject(obj);
         }
 
-        ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading chrs");
-        foreach (ResourceDescriptor chr in chrsToLoad)
+        ResourceManager.DefaultPool.LoadAssets(Project, chrsToLoad, new LoadOptions
         {
-            if (chr.AssetArchiveVirtualPath != null)
-            {
-                job.AddLoadArchiveTask(chr.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceType.Flver);
-            }
-            else if (chr.AssetVirtualPath != null)
-            {
-                job.AddLoadFileTask(chr.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
-        }
-
-        job.Complete();
+            JobName = "Loading chrs",
+            Types = ResourceType.Flver | ResourceType.Texture,
+            AccessLevel = AccessLevel.AccessGPUOptimizedOnly
+        });
     }
 
     public void LoadRelatedMapsER(string mapid)

@@ -1,150 +1,136 @@
-﻿using DotNext.Collections.Generic;
+﻿#nullable enable
 using StudioCore.Application;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace StudioCore.Renderer;
 
+/// <summary>
+///     Hands out the mesh provider for a resource handle. Asking twice for the same resource gives the same provider,
+///     so every renderable of one model shares its GPU data.
+/// </summary>
 public static class MeshProviderCache
 {
-    private static readonly Dictionary<string, MeshProvider> _cache = new();
+    private readonly record struct Key(IResourceHandle Handle, string Uid);
+
+    private static readonly Dictionary<Key, MeshProvider> _cache = new();
     private static readonly object _lock = new();
 
-
-    public static string GetCacheKey(string virtualResourcePath, string uid = "")
+    /// <summary>
+    ///     Gets the provider that suits whatever the handle holds (model, collision or navmesh).
+    /// </summary>
+    public static MeshProvider GetProvider(IResourceHandle handle)
     {
-        return $"{virtualResourcePath}+{uid}";
+        return handle switch
+        {
+            ResourceHandle<FlverResource> h => GetFlverMeshProvider(h),
+            ResourceHandle<HavokCollisionResource> h => GetCollisionMeshProvider(h),
+            ResourceHandle<NVMNavmeshResource> h => GetNVMMeshProvider(h),
+            ResourceHandle<HavokNavmeshResource> h => GetHavokNavMeshProvider(h),
+            _ => throw new ArgumentException($"'{handle.FullName}' is a {handle.ResourceType.Name}, which has no mesh.")
+        };
     }
 
     public static void InvalidateUidEntries(string uid)
     {
+        if (string.IsNullOrEmpty(uid))
+        {
+            return;
+        }
+
         lock (_lock)
         {
-            var keysToRemove = _cache.Keys
-            .Where(k => k.Contains($"+{uid}"))
-            .ToList();
-
-            foreach (var key in keysToRemove)
+            foreach (Key key in _cache.Keys.Where(k => k.Uid.StartsWith(uid, StringComparison.Ordinal)).ToList())
             {
                 _cache.Remove(key);
             }
         }
     }
 
-    public static FlverMeshProvider GetFlverMeshProvider(
-    string virtualResourcePath, IEnumerable<int> masks, string uid)
+    public static FlverMeshProvider GetFlverMeshProvider(ResourceHandle<FlverResource> handle,
+        IEnumerable<int>? masks, string uid)
     {
         if (masks == null || !CFG.Current.Viewport_Enable_Model_Masks)
-            return GetFlverMeshProvider(virtualResourcePath, uid);
+        {
+            return GetFlverMeshProvider(handle, uid);
+        }
 
-        var provider = GetFlverMeshProvider(virtualResourcePath,
-            $"{uid}_masks{string.Join("", masks)}");
+        FlverMeshProvider provider = GetFlverMeshProvider(handle, $"{uid}_masks{string.Join("", masks)}");
         provider.ModelMasks = masks.ToList();
         return provider;
     }
 
-    public static FlverMeshProvider GetFlverMeshProvider(string virtualResourcePath, IEnumerable<int> masks)
+    public static FlverMeshProvider GetFlverMeshProvider(ResourceHandle<FlverResource> handle,
+        IEnumerable<int>? masks)
     {
         if (masks == null || !CFG.Current.Viewport_Enable_Model_Masks)
-            return GetFlverMeshProvider(virtualResourcePath);
+        {
+            return GetFlverMeshProvider(handle);
+        }
 
-        var provider = GetFlverMeshProvider(virtualResourcePath, $"masks{string.Join("", masks)}");
+        FlverMeshProvider provider = GetFlverMeshProvider(handle, $"masks{string.Join("", masks)}");
         provider.ModelMasks = masks.ToList();
         return provider;
     }
 
-    public static FlverMeshProvider GetFlverMeshProvider(string virtualResourcePath, string uid = "")
+    public static FlverMeshProvider GetFlverMeshProvider(ResourceHandle<FlverResource> handle, string uid = "")
     {
-        var cacheKey = GetCacheKey(virtualResourcePath, uid);
-
-        lock (_lock)
-        {
-            if (_cache.TryGetValue(cacheKey, out var existing))
-            {
-                if (existing is FlverMeshProvider fmp)
-                {
-                    return fmp;
-                }
-
-                throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
-            }
-
-            FlverMeshProvider nfmp = new(virtualResourcePath);
-            _cache.Add(cacheKey, nfmp);
-            return nfmp;
-        }
+        return GetOrAdd(handle, uid, () => new FlverMeshProvider(handle));
     }
 
-    public static CollisionMeshProvider GetCollisionMeshProvider(string virtualResourcePath)
+    public static CollisionMeshProvider GetCollisionMeshProvider(ResourceHandle<HavokCollisionResource> handle)
     {
-        lock (_lock)
-        {
-            if (_cache.TryGetValue(virtualResourcePath, out var existing))
-            {
-                if (existing is CollisionMeshProvider fmp)
-                {
-                    return fmp;
-                }
-
-                throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
-            }
-
-            CollisionMeshProvider nfmp = new(virtualResourcePath);
-            _cache.Add(virtualResourcePath, nfmp);
-            return nfmp;
-        }
+        return GetOrAdd(handle, "", () => new CollisionMeshProvider(handle));
     }
 
-    public static NavmeshProvider GetNVMMeshProvider(string virtualResourcePath)
+    public static NavmeshProvider GetNVMMeshProvider(ResourceHandle<NVMNavmeshResource> handle)
     {
-        lock (_lock)
-        {
-            if (_cache.TryGetValue(virtualResourcePath, out var existing))
-            {
-                if (existing is NavmeshProvider fmp)
-                {
-                    return fmp;
-                }
-
-                throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
-            }
-
-            NavmeshProvider nfmp = new(virtualResourcePath);
-            _cache.Add(virtualResourcePath, nfmp);
-            return nfmp;
-        }
+        return GetOrAdd(handle, "", () => new NavmeshProvider(handle));
     }
 
-    public static HavokNavmeshProvider GetHavokNavMeshProvider(string virtualResourcePath, bool temp = false)
+    public static HavokNavmeshProvider GetHavokNavMeshProvider(ResourceHandle<HavokNavmeshResource> handle,
+        bool temp = false)
     {
-        lock (_lock)
+        if (temp)
         {
-            if (!temp && _cache.TryGetValue(virtualResourcePath, out var existing))
-            {
-                if (existing is HavokNavmeshProvider fmp)
-                {
-                    return fmp;
-                }
-
-                throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
-            }
-
-            HavokNavmeshProvider nfmp = new(virtualResourcePath);
-            if (!temp)
-            {
-                _cache.Add(virtualResourcePath, nfmp);
-            }
-
-            return nfmp;
+            return new HavokNavmeshProvider(handle);
         }
+
+        return GetOrAdd(handle, "", () => new HavokNavmeshProvider(handle));
     }
 
     public static void InvalidateMeshProvider(IResourceHandle handle)
     {
         lock (_lock)
         {
-            _cache.Remove(handle.AssetVirtualPath);
+            foreach (Key key in _cache.Keys.Where(k => ReferenceEquals(k.Handle, handle)).ToList())
+            {
+                _cache.Remove(key);
+            }
+        }
+    }
+
+    private static T GetOrAdd<T>(IResourceHandle handle, string uid, Func<T> create) where T : MeshProvider
+    {
+        lock (_lock)
+        {
+            var key = new Key(handle, uid);
+
+            if (_cache.TryGetValue(key, out MeshProvider? existing))
+            {
+                if (existing is T typed)
+                {
+                    return typed;
+                }
+
+                throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
+            }
+
+            T created = create();
+            _cache.Add(key, created);
+            return created;
         }
     }
 }

@@ -132,12 +132,12 @@ public class TextureResource : IResource, IDisposable
         GC.SuppressFinalize(this);
     }
 
-    bool IResource._Load(Memory<byte> bytes, AccessLevel al, string virtPath)
+    bool IResource._Load(Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
         return _LoadTexture(al);
     }
 
-    bool IResource._Load(string file, AccessLevel al, string virtPath)
+    bool IResource._Load(string file, AccessLevel al, ResourceLoadContext ctx)
     {
         return _LoadTexture(al);
     }

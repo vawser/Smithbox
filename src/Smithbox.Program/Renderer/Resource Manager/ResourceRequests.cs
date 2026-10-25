@@ -3,16 +3,14 @@
 namespace StudioCore.Renderer;
 
 /// <summary>
-/// Load Request
+/// Request to be told (on the main thread) when a resource is loaded
 /// </summary>
-/// <param name="ResourceVirtualPath"></param>
-/// <param name="Type"></param>
+/// <param name="Handle"></param>
 /// <param name="Listener"></param>
 /// <param name="AccessLevel"></param>
 /// <param name="tag"></param>
 public readonly record struct AddResourceLoadNotificationRequest(
-        string ResourceVirtualPath,
-        Type Type,
+        IResourceHandle Handle,
         IResourceEventListener Listener,
         AccessLevel AccessLevel,
         int tag);

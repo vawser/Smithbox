@@ -65,20 +65,23 @@ public class FlverResource : IResource, IDisposable
     public GPUBufferAllocator.GPUBufferHandle? StaticBoneBuffer { get; private set; }
 
     public bool IsSpeedtree = false;
-    public string? VirtPath { get; set; }
+    /// <summary>
+    /// Where this model was loaded from. Gives access to the pool its textures are looked up in.
+    /// </summary>
+    public ResourceLoadContext? Context { get; private set; }
 
-    public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
+    public bool _Load(Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        VirtPath = virtPath;
+        Context = ctx;
 
         if (curProject == null)
             return false;
 
         if (CFG.Current.Developer_Enable_Tools)
         {
-            ResourceViewer.ProcessedMeshes.Add(virtPath);
+            ResourceViewer.ProcessedMeshes.Add(ctx.QualifiedName);
             ResourceViewer.MeshConsumptionSize += bytes.Length;
         }
 
@@ -108,7 +111,7 @@ public class FlverResource : IResource, IDisposable
                 FlverCache? cache = al == AccessLevel.AccessGPUOptimizedOnly ? GetCache() : null;
 
                 Flver = FLVER2.Read(bytes, cache);
-                ret = LoadInternal(al, virtPath);
+                ret = LoadInternal(al);
 
                 if(cache != null)
                     ReleaseCache(cache);
@@ -118,11 +121,11 @@ public class FlverResource : IResource, IDisposable
         return ret;
     }
 
-    public bool _Load(string relativePath, AccessLevel al, string virtPath)
+    public bool _Load(string relativePath, AccessLevel al, ResourceLoadContext ctx)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        VirtPath = virtPath;
+        Context = ctx;
 
         if (curProject == null)
             return false;
@@ -163,7 +166,7 @@ public class FlverResource : IResource, IDisposable
                         FlverCache? cache = al == AccessLevel.AccessGPUOptimizedOnly ? GetCache() : null;
 
                         Flver = FLVER2.Read(fileData.Value, cache);
-                        ret = LoadInternal(al, VirtPath);
+                        ret = LoadInternal(al);
 
                         if (cache != null)
                             ReleaseCache(cache);
@@ -239,12 +242,12 @@ public class FlverResource : IResource, IDisposable
                 MTD.Texture? tex = material.Textures.Find(x => x.Type == type);
                 if (tex == null || !tex.Extended || tex.Path == "")
                 {
-                    //Smithbox.Log(this, $"{VirtPath}: Failed to find MTD string: {mtdstring} - {type}");
+                    //Smithbox.Log(this, $"{Context?.QualifiedName}: Failed to find MTD string: {mtdstring} - {type}");
                     return;
                 }
 
                 path = tex.Path;
-                //Smithbox.Log(this, $"{VirtPath}: MTD: {path}");
+                //Smithbox.Log(this, $"{Context?.QualifiedName}: MTD: {path}");
             }
 
             // MATBIN
@@ -316,17 +319,18 @@ public class FlverResource : IResource, IDisposable
 
                     if (tex == null || tex.Path == "")
                     {
-                        //Smithbox.Log(this, $"{VirtPath}: Failed to find MATBIN string: {mtdstring} - {type}");
+                        //Smithbox.Log(this, $"{Context?.QualifiedName}: Failed to find MATBIN string: {mtdstring} - {type}");
                         return;
                     }
 
                     path = tex.Path;
-                    //Smithbox.Log(this, $"{VirtPath}: MATBIN: {path}");
+                    //Smithbox.Log(this, $"{Context?.QualifiedName}: MATBIN: {path}");
                 }
             }
         }
 
-        string textureVirtPath = TextureLocator.GetFlverTextureVirtualPath(VirtPath, path.ToLower());
+        // Textures are found by name, in the same pool as this model
+        string textureName = ResourceName.Normalize(path);
 
         if (!dest.TextureResourceFilled[(int)textureType])
         {
@@ -343,16 +347,16 @@ public class FlverResource : IResource, IDisposable
                 var activeView = mapEditor.ViewHandler.ActiveView;
                 if (activeView != null)
                 {
-                    activeView.ModelInsightTool.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
+                    activeView.ModelInsightTool.UpdateEntry(Context?.Name ?? "", Context?.ContainerPath ?? "", textureName, Flver, material, matbin, mtd);
                 }
             }
 
-            ResourceManager.AddResourceListener<TextureResource>(textureVirtPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
+            (Context?.Pool ?? ResourceManager.DefaultPool).AddListener<TextureResource>(textureName, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;
         }
         else
         {
-            // Smithbox.Log(this, $"{VirtPath}: NO LISTENER for {textureVirtPath}", Microsoft.Extensions.Logging.LogLevel.Error);
+            // Smithbox.Log(this, $"{Context?.QualifiedName}: NO LISTENER for {textureName}", Microsoft.Extensions.Logging.LogLevel.Error);
         }
     }
 
@@ -2090,7 +2094,7 @@ public class FlverResource : IResource, IDisposable
         return true;
     }
 
-    private bool LoadInternal(AccessLevel al, string virtPath = "")
+    private bool LoadInternal(AccessLevel al)
     {
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
             return false;

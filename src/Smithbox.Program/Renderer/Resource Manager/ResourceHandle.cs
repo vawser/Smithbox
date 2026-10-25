@@ -34,7 +34,32 @@ public enum AccessLevel
 
 public interface IResourceHandle
 {
-    public string AssetVirtualPath { get; }
+    /// <summary>
+    /// Pool this handle belongs to. Null for temporary handles.
+    /// </summary>
+    public ResourcePool Pool { get; }
+
+    /// <summary>
+    /// Lookup name of the resource within its pool (see ResourceName)
+    /// </summary>
+    public string Name { get; }
+
+    /// <summary>
+    /// Where the loaded resource came from (container path, entry path). Null until it has been loaded.
+    /// </summary>
+    public ResourceLoadContext Source { get; }
+
+    public void _SetSource(ResourceLoadContext ctx);
+
+    /// <summary>
+    /// "pool:type:name", unique across all pools. For tooling and logging.
+    /// </summary>
+    public string FullName { get; }
+
+    /// <summary>
+    /// The type of resource this handle holds
+    /// </summary>
+    public Type ResourceType { get; }
 
     public AccessLevel AccessLevel { get; }
 
@@ -80,16 +105,27 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     public bool IsLoaded { get; protected set; }
     public AccessLevel AccessLevel { get; protected set; } = AccessLevel.AccessUnloaded;
 
-    /// <summary>
-    /// Virtual path of the entire asset. Used to implement loading
-    /// </summary>
-    public string AssetVirtualPath { get; }
+    public ResourcePool Pool { get; }
+
+    public string Name { get; }
+
+    public string FullName => $"{Pool?.Name}:{typeof(T).Name}:{Name}";
+
+    public ResourceLoadContext Source { get; private set; }
+
+    public void _SetSource(ResourceLoadContext ctx)
+    {
+        Source = ctx;
+    }
+
+    public Type ResourceType => typeof(T);
 
     protected T Resource;
 
-    public ResourceHandle(string virtualPath)
+    public ResourceHandle(ResourcePool pool, string name)
     {
-        AssetVirtualPath = virtualPath;
+        Pool = pool;
+        Name = name;
     }
 
     /// <summary>
@@ -207,7 +243,7 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
 
         if (ReferenceCount < 0)
         {
-            //Smithbox.Log(this, $@"Resource {AssetVirtualPath} reference count already 0", Microsoft.Extensions.Logging.LogLevel.Error);
+            //Smithbox.Log(this, $@"Resource {FullName} reference count already 0", Microsoft.Extensions.Logging.LogLevel.Error);
         }
 
         if (unload)
@@ -230,7 +266,7 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     /// <returns></returns>
     public static ResourceHandle<T> TempHandleFromResource(T res)
     {
-        var ret = new ResourceHandle<T>("temp");
+        var ret = new ResourceHandle<T>(null, "temp");
         ret.AccessLevel = AccessLevel.AccessFull;
         ret.IsLoaded = true;
         ret.Resource = res;
@@ -239,7 +275,7 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
 
     public override string ToString()
     {
-        return AssetVirtualPath;
+        return FullName;
     }
 
     protected readonly record struct EventListener(

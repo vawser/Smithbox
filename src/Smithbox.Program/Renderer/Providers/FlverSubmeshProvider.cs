@@ -65,7 +65,7 @@ public unsafe class FlverSubmeshProvider : MeshProvider
 
     public override uint VertexSize => _resource.Get().GPUMeshes[_meshIndex].Material.VertexSize;
 
-    public string MeshName => Path.GetFileNameWithoutExtension(_resource.AssetVirtualPath);
+    public string MeshName => _resource.Name;
 
     public override bool TryLock()
     {

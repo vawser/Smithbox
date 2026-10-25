@@ -38,7 +38,7 @@ public class HavokNavmeshResource : IResource, IDisposable
     public hkRootLevelContainer Root_HKX2;
     public HKLib.hk2018.hkRootLevelContainer Root_HKX3;
 
-    public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
+    public bool _Load(Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
@@ -60,8 +60,7 @@ public class HavokNavmeshResource : IResource, IDisposable
             if (activeView == null)
                 return false;
 
-            var pathElements = virtPath.Split('/');
-            var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
+            var filename = Path.GetFileNameWithoutExtension(ctx.FileName);
 
             if (activeView.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
             {
@@ -76,7 +75,7 @@ public class HavokNavmeshResource : IResource, IDisposable
         return LoadInternal(al);
     }
 
-    public bool _Load(string relativePath, AccessLevel al, string virtPath)
+    public bool _Load(string relativePath, AccessLevel al, ResourceLoadContext ctx)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
@@ -105,8 +104,7 @@ public class HavokNavmeshResource : IResource, IDisposable
                 if (activeView == null)
                     return false;
 
-                var pathElements = virtPath.Split('/');
-                var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
+                var filename = Path.GetFileNameWithoutExtension(ctx.FileName);
 
                 if (activeView.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
                 {

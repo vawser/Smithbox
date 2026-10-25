@@ -45,11 +45,14 @@ public class HavokNavmeshBank
     {
         if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
-            foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
+            foreach (ResourcePool pool in ResourceManager.Pools)
             {
-                if (item.Key.Contains("nav"))
+                foreach (IResourceHandle handle in pool.Handles)
                 {
-                    item.Value.Release(true);
+                    if (handle.ResourceType == typeof(HavokNavmeshResource))
+                    {
+                        handle.Release(true);
+                    }
                 }
             }
         }

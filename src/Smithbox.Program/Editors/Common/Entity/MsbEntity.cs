@@ -196,14 +196,14 @@ public class MsbEntity : Entity
         var curProject = curUniverse.Project;
         var scene = curUniverse.GetCurrentScene();
 
-        var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene, 
-            asset.AssetVirtualPath, ModelMarkerType.None, EntityCacheUID, GetModelMasks());
+        var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene,
+            ResourceManager.DefaultPool.Find<FlverResource>(asset.Name), ModelMarkerType.None, EntityCacheUID, GetModelMasks());
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.MapPiece;
 
-        LoadAsset(asset, LOC.Get("REND_Loading_Map_Piece"));
+        LoadAsset<FlverResource>(asset, LOC.Get("REND_Loading_Map_Piece"), ResourceType.Flver | ResourceType.Texture);
 
         return mesh;
     }
@@ -215,13 +215,13 @@ public class MsbEntity : Entity
         var scene = curUniverse.GetCurrentScene();
 
         var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene,
-            asset.AssetVirtualPath, ModelMarkerType.Enemy, EntityCacheUID, GetModelMasks());
+            ResourceManager.DefaultPool.Find<FlverResource>(asset.Name), ModelMarkerType.Enemy, EntityCacheUID, GetModelMasks());
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.Character;
 
-        LoadAsset(asset, LOC.Get("REND_Loading_Character"));
+        LoadAsset<FlverResource>(asset, LOC.Get("REND_Loading_Character"), ResourceType.Flver | ResourceType.Texture);
 
         return mesh;
     }
@@ -233,13 +233,13 @@ public class MsbEntity : Entity
         var scene = curUniverse.GetCurrentScene();
 
         var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene,
-            asset.AssetVirtualPath, ModelMarkerType.Object, EntityCacheUID, GetModelMasks());
+            ResourceManager.DefaultPool.Find<FlverResource>(asset.Name), ModelMarkerType.Object, EntityCacheUID, GetModelMasks());
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.Object;
 
-        LoadAsset(asset, LOC.Get("REND_Loading_Object"));
+        LoadAsset<FlverResource>(asset, LOC.Get("REND_Loading_Object"), ResourceType.Flver | ResourceType.Texture);
 
         return mesh;
     }
@@ -250,7 +250,7 @@ public class MsbEntity : Entity
         var scene = curUniverse.GetCurrentScene();
 
         var mesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(
-                scene, asset.AssetVirtualPath, ModelMarkerType.None);
+                scene, ResourceManager.DefaultPool.Find<HavokCollisionResource>(asset.Name), ModelMarkerType.None);
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
@@ -261,7 +261,7 @@ public class MsbEntity : Entity
             mesh.DrawFilter = RenderFilter.ConnectCollision;
         }
 
-        LoadAsset(asset, LOC.Get("REND_Loading_Collision"));
+        LoadAsset<HavokCollisionResource>(asset, LOC.Get("REND_Loading_Collision"), ResourceType.CollisionHKX);
 
         return mesh;
     }
@@ -276,35 +276,31 @@ public class MsbEntity : Entity
             return null;
 
         var mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
-                scene, asset.AssetVirtualPath, ModelMarkerType.None);
+                scene, ResourceManager.DefaultPool.Find<NVMNavmeshResource>(asset.Name), ModelMarkerType.None);
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.Navmesh;
 
-        LoadAsset(asset, LOC.Get("REND_Loading_Navmesh"));
+        LoadAsset<NVMNavmeshResource>(asset, LOC.Get("REND_Loading_Navmesh"), ResourceType.Navmesh);
 
         return mesh;
     }
 
-    public void LoadAsset(ResourceDescriptor asset, string jobMessage)
+    /// <summary>
+    ///     Makes sure the container holding the asset is loaded. Does nothing if the asset is already loaded.
+    /// </summary>
+    public void LoadAsset<T>(ResourceDescriptor asset, string jobMessage, ResourceType types)
+        where T : class, IResource, System.IDisposable, new()
     {
-        ResourceJobBuilder job = ResourceManager.CreateNewJob(jobMessage);
+        var curUniverse = Owner as MapUniverse;
 
-        if (!ResourceManager.IsResourceLoaded(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+        ResourceManager.DefaultPool.LoadAsset<T>(curUniverse.Project, asset, new LoadOptions
         {
-            if (asset.AssetArchiveVirtualPath != null)
-            {
-                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                    false);
-            }
-            else if (asset.AssetVirtualPath != null)
-            {
-                job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
-
-            Task task = job.Complete();
-        }
+            JobName = jobMessage,
+            Types = types,
+            AccessLevel = AccessLevel.AccessGPUOptimizedOnly
+        });
     }
 
     public DebugPrimitiveRenderableProxy CreateCharacterProxyMesh()

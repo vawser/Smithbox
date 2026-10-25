@@ -21,14 +21,14 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool IsConnectCollision = false;
 
-    public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
+    public bool _Load(Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
         if (Smithbox.Orchestrator.SelectedProject == null)
             return false;
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if(virtPath.Contains("connect"))
+        if (ctx.IsConnectCollision)
         {
             IsConnectCollision = true;
         }
@@ -36,7 +36,7 @@ public class HavokCollisionResource : IResource, IDisposable
         // HKLib - ER
         if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
-            var success = HandleHKLibLoad(curProject, virtPath);
+            var success = HandleHKLibLoad(curProject, ctx);
 
             if (!success)
                 return false;
@@ -66,14 +66,14 @@ public class HavokCollisionResource : IResource, IDisposable
         return HandleMeshLoad(curProject, al);
     }
 
-    public bool _Load(string relativePath, AccessLevel al, string virtPath)
+    public bool _Load(string relativePath, AccessLevel al, ResourceLoadContext ctx)
     {
         if (Smithbox.Orchestrator.SelectedProject == null)
             return false;
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (virtPath.Contains("connect"))
+        if (ctx.IsConnectCollision)
         {
             IsConnectCollision = true;
         }
@@ -81,7 +81,7 @@ public class HavokCollisionResource : IResource, IDisposable
         // HKLib - ER
         if (curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
         {
-            var success = HandleHKLibLoad(curProject, virtPath);
+            var success = HandleHKLibLoad(curProject, ctx);
 
             if (!success)
                 return false;
@@ -163,7 +163,7 @@ public class HavokCollisionResource : IResource, IDisposable
         }
     }
 
-    public bool HandleHKLibLoad(ProjectEntry curProject, string virtPath)
+    public bool HandleHKLibLoad(ProjectEntry curProject, ResourceLoadContext ctx)
     {
         if (curProject.Handler.MapEditor == null)
             return false;
@@ -174,8 +174,7 @@ public class HavokCollisionResource : IResource, IDisposable
             return false;
 
         // Map collision
-        var pathElements = virtPath.Split('/');
-        var filename = pathElements[4];
+        var filename = ctx.FileName;
 
         if (activeView.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.Low)
         {

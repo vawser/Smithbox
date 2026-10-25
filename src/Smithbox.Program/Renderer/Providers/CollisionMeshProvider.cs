@@ -7,7 +7,7 @@ namespace StudioCore.Renderer;
 
 public class CollisionMeshProvider : MeshProvider, IResourceEventListener
 {
-    public readonly string _resourceName;
+    private readonly ResourceHandle<HavokCollisionResource> _source;
     public BoundingBox _bounds;
 
     public int _referenceCount;
@@ -15,9 +15,9 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
 
     public List<CollisionSubmeshProvider> _submeshes = new();
 
-    public CollisionMeshProvider(string resource)
+    public CollisionMeshProvider(ResourceHandle<HavokCollisionResource> source)
     {
-        _resourceName = resource;
+        _source = source;
         _resource = null;
     }
 
@@ -38,7 +38,7 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
 
     public override SpecializationConstant[] SpecializationConstants => throw new NotImplementedException();
 
-    public override IResourceHandle ResourceHandle => _resource;
+    public override IResourceHandle ResourceHandle => _source;
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)
     {
@@ -52,7 +52,7 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
         CreateSubmeshes();
         NotifyAvailable();
 
-        MeshProviderInspector.Add(_resourceName, this);
+        MeshProviderInspector.Add(_source.FullName, this);
     }
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
@@ -67,7 +67,7 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
         _submeshes.Clear();
         NotifyUnavailable();
 
-        MeshProviderInspector.Remove(_resourceName);
+        MeshProviderInspector.Remove(_source.FullName);
     }
 
     ~CollisionMeshProvider()
@@ -96,8 +96,7 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
     {
         if (_referenceCount == 0)
         {
-            ResourceManager.AddResourceListener<HavokCollisionResource>(_resourceName, this,
-                AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.AddResourceListener(_source, this, AccessLevel.AccessGPUOptimizedOnly);
         }
 
         _referenceCount++;

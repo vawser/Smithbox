@@ -291,7 +291,7 @@ public class ModelContainer : ObjectContainer
             mapID = wrapper.Parent.MapID;
         }
 
-        ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
+        var isConnectCollision = false;
 
         if (modelName.StartsWith("m", StringComparison.CurrentCultureIgnoreCase))
         {
@@ -328,6 +328,7 @@ public class ModelContainer : ObjectContainer
         else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase) && EntityHelper.IsPartConnectCollision(ent))
         {
             loadCol = true;
+            isConnectCollision = true;
 
             resource = ModelLocator.GetMapCollisionModel(Project, mapID,
                 ModelLocator.GetMapModelName(Project, mapID, modelName), true);
@@ -342,11 +343,11 @@ public class ModelContainer : ObjectContainer
 
         if(loadCol)
         {
-            LoadCollision(job, ent, resource);
+            LoadCollision(ent, resource, isConnectCollision);
         }
         else
         {
-            LoadMesh(job, ent, resource, index);
+            LoadMesh(ent, resource, index);
         }
     }
 
@@ -378,17 +379,16 @@ public class ModelContainer : ObjectContainer
 
         var modelName = wrapper.HKX_Name;
 
-        ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
-
         resource = ModelLocator.GetObjCollision(Project, wrapper.Parent.Name, modelName);
 
-        LoadCollision(job, ent, resource);
+        LoadCollision(ent, resource);
     }
 
-    public void LoadMesh(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource, int index = -1)
+    public void LoadMesh(Entity ent, ResourceDescriptor resource, int index = -1)
     {
         MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                View.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None, ent.EntityCacheUID, null);
+                View.RenderScene, ResourceManager.DefaultPool.Find<FlverResource>(resource.Name),
+                ModelMarkerType.None, ent.EntityCacheUID, null);
 
         mesh.DrawFilter = RenderFilter.Meshes;
         mesh.World = ent.GetWorldMatrix();
@@ -401,13 +401,16 @@ public class ModelContainer : ObjectContainer
 
         ent.RenderSceneMesh = mesh;
 
-        LoadResource(job, ent, resource);
+        LoadResource<FlverResource>(resource, ResourceManager.DefaultPool, ResourceType.Flver | ResourceType.Texture, false);
     }
 
-    public void LoadCollision(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource)
+    public void LoadCollision(Entity ent, ResourceDescriptor resource, bool isConnectCollision = false)
     {
+        // Connect collisions share their files (and so their names) with normal collisions, so they have their own pool
+        ResourcePool pool = isConnectCollision ? ResourceManager.ConnectCollisionPool : ResourceManager.DefaultPool;
+
         MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(
-                View.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None);
+                View.RenderScene, pool.Find<HavokCollisionResource>(resource.Name), ModelMarkerType.None);
 
         mesh.DrawFilter = RenderFilter.Collision;
         mesh.World = ent.GetWorldMatrix();
@@ -415,24 +418,23 @@ public class ModelContainer : ObjectContainer
 
         ent.RenderSceneMesh = mesh;
 
-        LoadResource(job, ent, resource);
+        LoadResource<HavokCollisionResource>(resource, pool, ResourceType.CollisionHKX, isConnectCollision);
     }
 
-    public void LoadResource(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource)
+    /// <summary>
+    ///     Loads the file that holds the resource, unless it is already loaded, and waits for it to be read.
+    /// </summary>
+    private void LoadResource<T>(ResourceDescriptor resource, ResourcePool pool, ResourceType types,
+        bool isConnectCollision) where T : class, IResource, IDisposable, new()
     {
-        if (!ResourceManager.IsResourceLoaded(resource.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+        var options = new LoadOptions
         {
-            if (resource.AssetArchiveVirtualPath != null)
-            {
-                job.AddLoadArchiveTask(resource.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false);
-            }
-            else if (resource.AssetVirtualPath != null)
-            {
-                job.AddLoadFileTask(resource.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
+            JobName = "Loading mesh",
+            Types = types,
+            AccessLevel = AccessLevel.AccessGPUOptimizedOnly,
+            IsConnectCollision = isConnectCollision
+        };
 
-            Task task = job.Complete();
-            task.Wait();
-        }
+        pool.LoadAsset<T>(Project, resource, options).Wait();
     }
 }

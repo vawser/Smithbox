@@ -9,7 +9,7 @@ namespace StudioCore.Renderer;
 
 public class FlverMeshProvider : MeshProvider, IResourceEventListener
 {
-    private readonly string _resourceName;
+    private readonly ResourceHandle<FlverResource> _source;
     private BoundingBox _bounds;
 
     private int _referenceCount;
@@ -21,9 +21,9 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
     private List<FlverSubmeshProvider> _activeSubmeshes = new();
 
-    public FlverMeshProvider(string resource)
+    public FlverMeshProvider(ResourceHandle<FlverResource> source)
     {
-        _resourceName = resource;
+        _source = source;
         _resource = null;
     }
     private void UpdateModelMasks()
@@ -79,7 +79,7 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
     public override SpecializationConstant[] SpecializationConstants => throw new NotImplementedException();
 
-    public string MeshName => Path.GetFileNameWithoutExtension(_resourceName);
+    public string MeshName => _source.Name;
 
     public bool IsSpeedtree;
 
@@ -95,7 +95,7 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
         CreateSubmeshes();
         NotifyAvailable();
 
-        MeshProviderInspector.Add(_resourceName, this);
+        MeshProviderInspector.Add(_source.FullName, this);
     }
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
@@ -110,7 +110,7 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
         _allSubmeshes.Clear();
         NotifyUnavailable();
 
-        MeshProviderInspector.Remove(_resourceName);
+        MeshProviderInspector.Remove(_source.FullName);
     }
 
     ~FlverMeshProvider()
@@ -126,6 +126,8 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
         return _activeSubmeshes[index];
     }
 
+    public override IResourceHandle ResourceHandle => _source;
+
     public override bool TryLock()
     {
         return true;
@@ -139,8 +141,7 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     {
         if (_referenceCount == 0)
         {
-            ResourceManager.AddResourceListener<FlverResource>(_resourceName, this,
-                AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.AddResourceListener(_source, this, AccessLevel.AccessGPUOptimizedOnly);
         }
 
         _referenceCount++;

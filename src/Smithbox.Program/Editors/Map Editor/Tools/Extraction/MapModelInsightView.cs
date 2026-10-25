@@ -156,13 +156,11 @@ public class MapModelInsightView
         GUI.SimpleHeader("flverHeader", "Model", "", UI.Current.ImGui_AliasName_Text);
 
         ImGui.Text($"Name: {entry.Name}");
-        ImGui.Text($"Virtual Path: {entry.VirtualPath}");
+        ImGui.Text($"Container: {entry.ContainerPath}");
 
-        if (ResourceManager.ResourceDatabase.ContainsKey(entry.VirtualPath))
+        if (ResourceManager.DefaultPool.TryFind<FlverResource>(entry.Name, out var listener))
         {
-            var listener = ResourceManager.ResourceDatabase[entry.VirtualPath];
-
-            if (listener.IsLoaded())
+            if (listener.IsLoaded)
             {
                 GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
             }
@@ -178,13 +176,13 @@ public class MapModelInsightView
         foreach (var tex in entry.Entries)
         {
             ImGui.Text($"Name: {tex.Name}");
-            ImGui.Text($"Virtual Path: {tex.VirtualPath}");
+            var found = ResourceManager.DefaultPool.TryFind<TextureResource>(tex.Name, out var texHandle);
 
-            if (ResourceManager.ResourceDatabase.ContainsKey(tex.VirtualPath))
+            ImGui.Text($"Container: {texHandle?.Source?.ContainerPath}");
+
+            if (found)
             {
-                var listener = ResourceManager.ResourceDatabase[tex.VirtualPath];
-
-                if (listener.IsLoaded())
+                if (texHandle.IsLoaded)
                 {
                     GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
                 }
@@ -277,7 +275,7 @@ public class MapModelInsightView
     {
         var successful = false;
 
-        var relativePath = PathBuilder.GetRelativePath(project, entry.VirtualPath);
+        var relativePath = entry.ContainerPath;
 
         var fileName = Path.GetFileName(relativePath);
 
@@ -310,7 +308,7 @@ public class MapModelInsightView
 
         if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
         {
-            var containerType = ModelEditorUtils.GetContainerTypeFromVirtualPath(project, entry.VirtualPath);
+            var containerType = ModelEditorUtils.GetContainerTypeFromPath(relativePath);
 
             if (containerType is ResourceContainerType.None)
             {
@@ -435,7 +433,13 @@ public class MapModelInsightView
 
         foreach (var tex in entry.Entries)
         {
-            var relativePath = PathBuilder.GetRelativePath(project, tex.VirtualPath);
+            // The texture knows which file it was loaded from
+            ResourceManager.DefaultPool.TryFind<TextureResource>(tex.Name, out var texHandle);
+
+            var relativePath = texHandle?.Source?.ContainerPath;
+
+            if (string.IsNullOrEmpty(relativePath))
+                continue;
 
             var fileName = Path.GetFileName(relativePath);
             var fileData = project.VFS.FS.ReadFile(relativePath);
@@ -469,7 +473,7 @@ public class MapModelInsightView
 
             if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
             {
-                var containerType = ModelEditorUtils.GetContainerTypeFromVirtualPath(project, tex.VirtualPath);
+                var containerType = ModelEditorUtils.GetContainerTypeFromPath(relativePath);
 
                 // TPF
                 if (containerType is ResourceContainerType.None)

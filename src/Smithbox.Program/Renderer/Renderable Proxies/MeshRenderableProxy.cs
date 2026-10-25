@@ -15,7 +15,10 @@ namespace StudioCore.Renderer;
 /// </summary>
 public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 {
-    public string VirtPath;
+    /// <summary>
+    ///     Name of the resource this renders, if it came from a pool
+    /// </summary>
+    public string Name;
 
     public readonly MeshProvider _meshProvider;
 
@@ -48,9 +51,9 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     public event Action<MeshRenderableProxy>? MeshAvailabilityChanged;
 
-    public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true, string virtPath = "")
+    public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true, string name = "")
     {
-        VirtPath = virtPath;
+        Name = string.IsNullOrEmpty(name) ? provider.ResourceHandle?.Name ?? "" : name;
         AutoRegister = autoregister;
         _registered = AutoRegister;
         _renderablesSet = renderables;
@@ -662,40 +665,50 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                               cameraDistanceInt);
     }
 
-    public static MeshRenderableProxy MeshRenderableFromFlverResource(RenderScene scene, string virtualPath, ModelMarkerType modelType, string uid, IEnumerable<int>? masks)
+    // Creating a renderable is separate from finding the resource: find the resource in a ResourcePool (or build a
+    // RawMeshProvider from your own data), then pass the handle or provider to one of these.
+
+    /// <summary>
+    ///     Renders any mesh source: a provider made from a pool resource (MeshProviderCache) or from raw data (RawMeshProvider).
+    /// </summary>
+    public static MeshRenderableProxy FromProvider(RenderScene scene, MeshProvider provider,
+        ModelMarkerType modelType = ModelMarkerType.None)
     {
-        var meshProvider = MeshProviderCache.GetFlverMeshProvider(virtualPath, masks, uid);
-
-        MeshRenderableProxy renderable = new(scene.OpaqueRenderables, meshProvider, modelType);
-
-        return renderable;
+        return new MeshRenderableProxy(scene.OpaqueRenderables, provider, modelType);
     }
 
-    public static MeshRenderableProxy MeshRenderableFromCollisionResource(RenderScene scene, string virtualPath, ModelMarkerType modelType, string virtPath = "")
+    /// <summary>
+    ///     Renders a model, collision or navmesh resource found with <see cref="ResourcePool.Find{T}" />.
+    ///     The resource doesn't have to be loaded yet; the renderable appears when it is.
+    /// </summary>
+    public static MeshRenderableProxy FromHandle(RenderScene scene, IResourceHandle handle,
+        ModelMarkerType modelType = ModelMarkerType.None)
     {
-        var meshProvider = MeshProviderCache.GetCollisionMeshProvider(virtualPath);
-
-        MeshRenderableProxy renderable = new(scene.OpaqueRenderables, meshProvider, modelType, true, virtPath);
-
-        return renderable;
+        return FromProvider(scene, MeshProviderCache.GetProvider(handle), modelType);
     }
 
-    public static MeshRenderableProxy MeshRenderableFromNVMResource(RenderScene scene, string virtualPath, ModelMarkerType modelType)
+    public static MeshRenderableProxy MeshRenderableFromFlverResource(RenderScene scene,
+        ResourceHandle<FlverResource> handle, ModelMarkerType modelType, string uid, IEnumerable<int>? masks)
     {
-        var meshProvider = MeshProviderCache.GetNVMMeshProvider(virtualPath);
-
-        MeshRenderableProxy renderable = new(scene.OpaqueRenderables, meshProvider, modelType);
-
-        return renderable;
+        return FromProvider(scene, MeshProviderCache.GetFlverMeshProvider(handle, masks, uid), modelType);
     }
 
-    public static MeshRenderableProxy MeshRenderableFromHavokNavmeshResource(RenderScene scene, string virtualPath, ModelMarkerType modelType, bool temp = false)
+    public static MeshRenderableProxy MeshRenderableFromCollisionResource(RenderScene scene,
+        ResourceHandle<HavokCollisionResource> handle, ModelMarkerType modelType)
     {
-        var meshProvider = MeshProviderCache.GetHavokNavMeshProvider(virtualPath, temp);
+        return FromProvider(scene, MeshProviderCache.GetCollisionMeshProvider(handle), modelType);
+    }
 
-        MeshRenderableProxy renderable = new(scene.OpaqueRenderables, meshProvider, modelType);
+    public static MeshRenderableProxy MeshRenderableFromNVMResource(RenderScene scene,
+        ResourceHandle<NVMNavmeshResource> handle, ModelMarkerType modelType)
+    {
+        return FromProvider(scene, MeshProviderCache.GetNVMMeshProvider(handle), modelType);
+    }
 
-        return renderable;
+    public static MeshRenderableProxy MeshRenderableFromHavokNavmeshResource(RenderScene scene,
+        ResourceHandle<HavokNavmeshResource> handle, ModelMarkerType modelType, bool temp = false)
+    {
+        return FromProvider(scene, MeshProviderCache.GetHavokNavMeshProvider(handle, temp), modelType);
     }
 
 

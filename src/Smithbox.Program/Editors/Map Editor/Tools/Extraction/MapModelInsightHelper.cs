@@ -50,16 +50,16 @@ public class MapModelInsightHelper
         }
     }
 
-    public void UpdateEntry(string flverVirtPath, string texVirtPath, IFlver flver, MTD mtd, MATBIN matbin, string materialStr)
+    /// <param name="flverName">Resource name of the model (see ResourceName)</param>
+    /// <param name="flverContainerPath">Project-relative path of the file the model was loaded from</param>
+    /// <param name="textureName">Resource name of the texture</param>
+    public void UpdateEntry(string flverName, string flverContainerPath, string textureName, IFlver flver, MTD mtd, MATBIN matbin, string materialStr)
     {
         if (Project == null)
             return;
 
         if (Project.Handler.ModelEditor == null)
             return;
-
-        var flverName = Path.GetFileNameWithoutExtension(flverVirtPath);
-        var textureName = Path.GetFileName(texVirtPath);
 
         var curEntity = View.ViewportSelection.GetSelection().FirstOrDefault();
 
@@ -78,7 +78,7 @@ public class MapModelInsightHelper
             {
                 var newModel = new MapFlverInsightEntry();
                 newModel.Name = flverName;
-                newModel.VirtualPath = flverVirtPath.ToLower();
+                newModel.ContainerPath = flverContainerPath;
                 newModel.FLVER2 = (FLVER2)flver;
 
                 entry.Models.Add(newModel);
@@ -94,7 +94,6 @@ public class MapModelInsightHelper
                     {
                         var newTexture = new MapTextureInsightEntry();
                         newTexture.Name = textureName;
-                        newTexture.VirtualPath = texVirtPath.ToLower();
                         newTexture.MTD = mtd;
                         newTexture.MATBIN = matbin;
                         newTexture.MaterialString = materialStr;
@@ -125,7 +124,10 @@ public class MapFlverInsightEntry
 {
     public string Name { get; set; }
 
-    public string VirtualPath { get; set; }
+    /// <summary>
+    /// Project-relative path of the file the model was loaded from
+    /// </summary>
+    public string ContainerPath { get; set; }
 
     public FLVER2 FLVER2 { get; set; }
 
@@ -135,8 +137,6 @@ public class MapFlverInsightEntry
 public class MapTextureInsightEntry
 {
     public string Name { get; set; }
-
-    public string VirtualPath { get; set; }
 
     public string MaterialString { get; set; }
 

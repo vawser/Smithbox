@@ -6,13 +6,13 @@ namespace StudioCore.Renderer;
 
 public class NavmeshProvider : MeshProvider, IResourceEventListener
 {
-    private readonly string _resourceName;
+    private readonly ResourceHandle<NVMNavmeshResource> _source;
     private int _referenceCount;
     private ResourceHandle<NVMNavmeshResource> _resource;
 
-    public NavmeshProvider(string resource)
+    public NavmeshProvider(ResourceHandle<NVMNavmeshResource> source)
     {
-        _resourceName = resource;
+        _source = source;
         _resource = null;
     }
 
@@ -61,7 +61,7 @@ public class NavmeshProvider : MeshProvider, IResourceEventListener
         _resource.Acquire();
         NotifyAvailable();
 
-        MeshProviderInspector.Add(_resourceName, this);
+        MeshProviderInspector.Add(_source.FullName, this);
     }
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
@@ -70,8 +70,10 @@ public class NavmeshProvider : MeshProvider, IResourceEventListener
         _resource = null;
         NotifyUnavailable();
 
-        MeshProviderInspector.Remove(_resourceName);
+        MeshProviderInspector.Remove(_source.FullName);
     }
+
+    public override IResourceHandle ResourceHandle => _source;
 
     public override bool TryLock()
     {
@@ -86,8 +88,7 @@ public class NavmeshProvider : MeshProvider, IResourceEventListener
     {
         if (_referenceCount == 0)
         {
-            ResourceManager.AddResourceListener<NVMNavmeshResource>(_resourceName, this,
-                AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.AddResourceListener(_source, this, AccessLevel.AccessGPUOptimizedOnly);
         }
 
         _referenceCount++;

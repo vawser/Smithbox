@@ -8,23 +8,23 @@ using System.Threading.Tasks.Dataflow;
 namespace StudioCore.Renderer;
 
 public readonly record struct LoadByteResourceRequest(
-    string VirtualPath,
+    ResourceLoadContext Context,
     Memory<byte> Data,
     AccessLevel AccessLevel);
 
 public readonly record struct LoadFileResourceRequest(
-    string VirtualPath,
+    ResourceLoadContext Context,
     string File,
     AccessLevel AccessLevel);
 
 public readonly record struct LoadTPFTextureResourceRequest(
-    string VirtualPath,
+    ResourceLoadContext Context,
     TPF Tpf,
     int Index,
     AccessLevel AccessLevel);
 
 public readonly record struct ResourceLoadedReply(
-    string VirtualPath,
+    ResourceLoadContext Context,
     AccessLevel AccessLevel,
     IResource Resource);
 
@@ -55,11 +55,11 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             {
                 var res = new T();
 
-                var success = res._Load(r.Data, r.AccessLevel, r.VirtualPath);
+                var success = res._Load(r.Data, r.AccessLevel, r.Context);
 
                 if (success)
                 {
-                    var request = new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res);
+                    var request = new ResourceLoadedReply(r.Context, r.AccessLevel, res);
 
                     _loadedResources.Post(request);
                 }
@@ -68,7 +68,7 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             {
                 Smithbox.LogError(this, 
                     LOC.Get("REND_Resource_Pipeline_Load_Error_File_Path",
-                    r.Data, r.VirtualPath, r.AccessLevel), ex);
+                    r.Data, r.Context.QualifiedName, r.AccessLevel), ex);
             }
 
         }, options);
@@ -80,11 +80,11 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             {
                 var res = new T();
 
-                var success = res._Load(r.File, r.AccessLevel, r.VirtualPath);
+                var success = res._Load(r.File, r.AccessLevel, r.Context);
 
                 if (success)
                 {
-                    var request = new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res);
+                    var request = new ResourceLoadedReply(r.Context, r.AccessLevel, res);
 
                     _loadedResources.Post(request);
                 }
@@ -93,20 +93,20 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             {
                 Smithbox.LogError(this, 
                     LOC.Get("REND_Resource_Pipeline_Load_Error_File_Data", 
-                    r.VirtualPath, r.AccessLevel), e1);
+                    r.Context.QualifiedName, r.AccessLevel), e1);
             }
             catch (DirectoryNotFoundException e2)
             {
                 Smithbox.LogError(this,
                     LOC.Get("REND_Resource_Pipeline_Load_Error_File_Data",
-                    r.VirtualPath, r.AccessLevel), e2);
+                    r.Context.QualifiedName, r.AccessLevel), e2);
             }
             // Some DSR FLVERS can't be read due to mismatching layout and vertex sizes
             catch (InvalidDataException e3)
             {
                 Smithbox.LogError(this,
                     LOC.Get("REND_Resource_Pipeline_Load_Error_File_Data",
-                    r.VirtualPath, r.AccessLevel), e3);
+                    r.Context.QualifiedName, r.AccessLevel), e3);
             }
         }, options);
 
@@ -138,7 +138,7 @@ public class TextureLoadPipeline : IResourceLoadPipeline
             if (success)
             {
                 _loadedResources.Post(
-                    new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res));
+                    new ResourceLoadedReply(r.Context, r.AccessLevel, res));
             }
         }, options);
     }

@@ -98,6 +98,25 @@ public static class ModelEditorUtils
         return containerType;
     }
 
+    /// <summary>
+    /// What kind of container a project-relative file path is, going by its extension
+    /// </summary>
+    public static ResourceContainerType GetContainerTypeFromPath(string path)
+    {
+        var name = Path.GetFileName(path ?? "").ToLower();
+
+        if (name.EndsWith(".dcx"))
+            name = name.Substring(0, name.Length - 4);
+
+        if (name.EndsWith("bhd"))
+            return ResourceContainerType.BXF;
+
+        if (name.EndsWith("bnd"))
+            return ResourceContainerType.BND;
+
+        return ResourceContainerType.None;
+    }
+
     public static ResourceContainerType GetContainerTypeFromVirtualPath(ProjectEntry project, string virtPath)
     {
         var containerType = ResourceContainerType.None;

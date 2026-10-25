@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudioCore.Application;
+using System;
 
 namespace StudioCore.Renderer;
 
@@ -60,6 +61,26 @@ public class ResourceDescriptor : IComparable<ResourceDescriptor>
     {
         // Use string default CompareTo logic
         return AssetName.CompareTo(other.AssetName);
+    }
+
+    /// <summary>
+    ///     The name to find this asset by in a <see cref="ResourcePool" />
+    /// </summary>
+    public string Name => ResourceName.Normalize(AssetVirtualPath ?? AssetName ?? "");
+
+    /// <summary>
+    ///     Project-relative path of the file to hand to <see cref="ResourcePool.LoadContainer(string, LoadOptions?)" />:
+    ///     the archive the asset is stored in, or the asset's own file if it isn't in an archive.
+    ///     Null if the asset has no file.
+    /// </summary>
+    public string GetContainerPath(ProjectEntry project)
+    {
+        var virtualPath = AssetArchiveVirtualPath ?? AssetVirtualPath;
+        if (virtualPath == null || virtualPath == "null")
+            return null;
+
+        var relative = PathBuilder.GetRelativePath(project, virtualPath);
+        return string.IsNullOrEmpty(relative) ? null : relative;
     }
 
     public bool IsValid()

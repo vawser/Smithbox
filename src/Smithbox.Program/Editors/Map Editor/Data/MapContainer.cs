@@ -335,7 +335,7 @@ public class MapContainer : ObjectContainer
                 ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
 
                 var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                    View.Universe.GetCurrentScene(), nasset.AssetVirtualPath, ModelMarkerType.Other);
+                    View.Universe.GetCurrentScene(), ResourceManager.DefaultPool.Find<HavokNavmeshResource>(nasset.Name), ModelMarkerType.Other);
 
                 mesh.World = newEntity.GetWorldMatrix();
                 mesh.SetSelectable(newEntity);
@@ -462,7 +462,7 @@ public class MapContainer : ObjectContainer
                 ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
 
                 var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                    View.Universe.GetCurrentScene(), nasset.AssetVirtualPath, ModelMarkerType.Other);
+                    View.Universe.GetCurrentScene(), ResourceManager.DefaultPool.Find<HavokNavmeshResource>(nasset.Name), ModelMarkerType.Other);
 
                 mesh.World = newEntity.GetWorldMatrix();
                 mesh.SetSelectable(newEntity);

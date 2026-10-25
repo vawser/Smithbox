@@ -25,7 +25,7 @@ public class CompassTool : IResourceEventListener
 
     public void RegisterCompassTexture()
     {
-        ResourceManager.AddResourceListener<TextureResource>("smithbox/compass/compass", this, AccessLevel.AccessGPUOptimizedOnly);
+        ResourceManager.DefaultPool.AddListener<TextureResource>("smithbox/compass/compass", this, AccessLevel.AccessGPUOptimizedOnly);
 
         ResourceManager.ScheduleCompassRefresh();
     }
@@ -146,16 +146,7 @@ public class CompassTool : IResourceEventListener
 
     public ResourceHandle<TextureResource> GetImageTextureHandle(string path)
     {
-        var virtName = $@"{path}".ToLower();
-
-        var resources = ResourceManager.GetResourceDatabase();
-
-        if (resources.ContainsKey(virtName))
-        {
-            return (ResourceHandle<TextureResource>)resources[virtName];
-        }
-
-        return null;
+        return ResourceManager.DefaultPool.TryFind<TextureResource>(path, out var handle) ? handle : null;
     }
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)
