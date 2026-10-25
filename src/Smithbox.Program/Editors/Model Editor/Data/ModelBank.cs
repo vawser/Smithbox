@@ -1,6 +1,11 @@
 ﻿using Andre.IO.VFS;
+using Havok.Shared;
+using HKLib.hk2018.hk;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.HavokEditor;
+using System.Reflection;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -376,7 +381,8 @@ public class ModelWrapper
     public GRASS GRASS { get; set; }
 
     public bool HasCollision { get; set; } = false;
-
+    public string HKX_Name { get; set; }
+    public IRootContainer HKX { get; set; }
 
     public void Load()
     {
@@ -588,7 +594,7 @@ public class ModelWrapper
         {
             if (filename == Name)
             {
-                HasCollision = true;
+                HandleHavokCollisionLoad(filename, data);
             }
         }
 
@@ -1078,4 +1084,41 @@ public class ModelWrapper
         }
     }
 
+    private void HandleHavokCollisionLoad(string filename, Memory<byte> data)
+    {
+        HasCollision = true;
+        HKX_Name = filename;
+
+        if (Parent.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
+        {
+            HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
+
+            using (MemoryStream memoryStream = new MemoryStream(data.ToArray()))
+            {
+                try
+                {
+                    HKX = (HKLib.hk2018.hkRootLevelContainer)serializer.Read(memoryStream);
+                }
+                catch (InvalidDataException)
+                {
+                }
+            }
+        }
+        else if (Parent.Project.Descriptor.ProjectType is ProjectType.DS3)
+        {
+            HKX2.PackFileDeserializer deserializer = new HKX2.PackFileDeserializer();
+
+            using (MemoryStream memoryStream = new MemoryStream(data.ToArray()))
+            {
+                try
+                {
+                    var br = new BinaryReaderEx(false, memoryStream.ToArray());
+                    HKX = (HKX2.hkRootLevelContainer)deserializer.Deserialize(br);
+                }
+                catch (InvalidDataException)
+                {
+                }
+            }
+        }
+    }
 }

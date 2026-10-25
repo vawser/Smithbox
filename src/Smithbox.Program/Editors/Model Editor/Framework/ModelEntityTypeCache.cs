@@ -74,7 +74,9 @@ public class ModelEntityTypeCache
             // EDGE
             { ModelEntityType.EDGE, new Dictionary<Type, List<ModelEntity>>() },
             // GRASS
-            { ModelEntityType.GRASS, new Dictionary<Type, List<ModelEntity>>() }
+            { ModelEntityType.GRASS, new Dictionary<Type, List<ModelEntity>>() },
+            // HKX
+            { ModelEntityType.HKX, new Dictionary<Type, List<ModelEntity>>() }
         };
 
 

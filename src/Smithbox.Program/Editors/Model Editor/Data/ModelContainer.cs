@@ -32,6 +32,8 @@ public class ModelContainer : ObjectContainer
     public Entity EDGE_Parent = null;
     public Entity FLVER_Parent = null;
 
+    // The collision stored alongside the FLVER for objects
+    public Entity Collision = null;
 
     public ModelContainer(ModelEditorView view, ProjectEntry project, string modelName)
     {
@@ -46,8 +48,6 @@ public class ModelContainer : ObjectContainer
         Meshes = new();
         //BufferLayouts = new();
         Skeletons = new();
-
-        //Collisions = new();
 
         var rootTransformNode = new ModelTransformNode(modelName);
         var modelTransformNode = new ModelTransformNode(modelName);
@@ -113,6 +113,22 @@ public class ModelContainer : ObjectContainer
             var newObject = new ModelEntity(View.Universe, this, wrapper.GRASS, ModelEntityType.GRASS);
 
             EDGE_Parent = newObject;
+
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
+        }
+
+        // HKX
+        if (wrapper.HKX != null)
+        {
+            var newObject = new ModelEntity(View.Universe, this, wrapper.HKX, ModelEntityType.HKX);
+
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            {
+                AssignCollisionDrawable(newObject, wrapper);
+            }
+
+            Collision = newObject;
 
             Objects.Add(newObject);
             RootObject.AddChild(newObject);
@@ -354,6 +370,19 @@ public class ModelContainer : ObjectContainer
         mesh.SetSelectable(ent);
 
         ent.RenderSceneMesh = mesh;
+    }
+
+    public void AssignCollisionDrawable(Entity ent, ModelWrapper wrapper)
+    {
+        ResourceDescriptor resource;
+
+        var modelName = wrapper.HKX_Name;
+
+        ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
+
+        resource = ModelLocator.GetObjCollision(Project, wrapper.Parent.Name, modelName);
+
+        LoadCollision(job, ent, resource);
     }
 
     public void LoadMesh(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource, int index = -1)

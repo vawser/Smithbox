@@ -231,6 +231,28 @@ public static class ModelLocator
         return ret;
     }
 
+    public static ResourceDescriptor GetObjCollision(ProjectEntry project, string objContainerId, string objId)
+    {
+        ResourceDescriptor ret = new();
+        ret.AssetName = objId;
+        ret.AssetArchiveVirtualPath = $@"obj/{objContainerId}/collision/{objId}.hkx";
+
+        if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        {
+            ret.AssetVirtualPath = $@"obj/{objContainerId}/collision/{objId}.hkx";
+        }
+        else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+        {
+            ret.AssetVirtualPath = $@"obj/{objContainerId}/collision/{objId.ToUpper()}.hkx";
+        }
+        else
+        {
+            ret.AssetVirtualPath = $@"obj/{objContainerId}/collision/{objId}.hkx";
+        }
+
+        return ret;
+    }
+
     public static ResourceDescriptor GetPartsModel(ProjectEntry project, string partContainerId, string partId)
     {
         ResourceDescriptor ret = new();

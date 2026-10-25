@@ -18,5 +18,6 @@ public enum ModelEntityType
     CLM2,
     HKXPWV,
     EDGE,
-    GRASS
+    GRASS,
+    HKX
 }
