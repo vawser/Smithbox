@@ -36,7 +36,7 @@
   },
   {
     "ID": "c2040",
-    "Name": "Man-Beast",
+    "Name": "Beastridden",
     "Tags": [
       ""
     ]
@@ -50,49 +50,49 @@
   },
   {
     "ID": "c2070",
-    "Name": "Upright Man-Beast",
+    "Name": "Beastridden",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "c2071",
-    "Name": "Upright Man-Beast (Large)",
+    "Name": "Giant Beastridden",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "c2080",
-    "Name": "Frog-Beast",
+    "Name": "Lady of the Bog",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "c2081",
-    "Name": "Frog-Beast (Hair)",
+    "Name": "Rana, Lady of the Bog",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "c2100",
-    "Name": "Mounted Aristocrat [Type 1]",
+    "Name": "Milhüsa Cavalryman",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "c2101",
-    "Name": "Mounted Aristocrat [Type 1] (Crystals)",
+    "Name": "Milhüsa Cavalryman (Sorcerer)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "c2103",
-    "Name": "Mounted Aristocrat [Type 2]",
+    "Name": "Milhüsa Cavalry",
     "Tags": [
       ""
     ]
@@ -127,7 +127,7 @@
   },
   {
     "ID": "c2140",
-    "Name": "Winged-Man",
+    "Name": "Vampyr",
     "Tags": [
       ""
     ]
@@ -141,7 +141,7 @@
   },
   {
     "ID": "c6000",
-    "Name": "Winged Spiked Mannequin",
+    "Name": "Nikke",
     "Tags": [
       ""
     ]
