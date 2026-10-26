@@ -226,6 +226,7 @@ public class MapWrapper : IDisposable
                             return false;
                         }
                         break;
+                    case ProjectType.DB_NT:
                     case ProjectType.DB:
                         break;
                     default: break;

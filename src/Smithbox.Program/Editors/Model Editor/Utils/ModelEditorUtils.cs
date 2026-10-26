@@ -181,15 +181,21 @@ public static class ModelEditorUtils
                     {
                         containerType = ResourceContainerType.None;
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS2S 
+                        or ProjectType.DS2)
                     {
                         containerType = ResourceContainerType.BXF;
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.BB or ProjectType.DES)
+                    else if (project.Descriptor.ProjectType is ProjectType.BB 
+                        or ProjectType.DES)
                     {
                         containerType = ResourceContainerType.None;
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+                    else if (project.Descriptor.ProjectType is ProjectType.ER 
+                        or ProjectType.AC6 
+                        or ProjectType.NR
+                        or ProjectType.DB_NT
+                        or ProjectType.DB)
                     {
                         containerType = ResourceContainerType.BND;
                     }
@@ -205,21 +211,28 @@ public static class ModelEditorUtils
                     var hittype = p[i];
                     i++;
 
-                    if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DES)
+                    if (project.Descriptor.ProjectType is ProjectType.DS1 
+                        or ProjectType.DES)
                     {
                     }
                     else if (project.Descriptor.ProjectType == ProjectType.DS1R)
                     {
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS2S 
+                        or ProjectType.DS2)
                     {
                         containerType = ResourceContainerType.BXF;
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS3 
+                        or ProjectType.BB or ProjectType.SDT)
                     {
                         containerType = ResourceContainerType.BXF;
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6 or ProjectType.DB)
+                    else if (project.Descriptor.ProjectType is ProjectType.ER 
+                        or ProjectType.NR 
+                        or ProjectType.AC6 
+                        or ProjectType.DB_NT
+                        or ProjectType.DB)
                     {
                         containerType = ResourceContainerType.BXF;
                     }
@@ -327,7 +340,10 @@ public static class ModelEditorUtils
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
+                else if (project.Descriptor.ProjectType is ProjectType.ER 
+                    or ProjectType.NR
+                    or ProjectType.DB_NT
+                    or ProjectType.DB)
                 {
                     containerType = ResourceContainerType.BND;
 
@@ -383,7 +399,10 @@ public static class ModelEditorUtils
                 {
                     containerType = ResourceContainerType.BND;
                 }
-                else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
+                else if (project.Descriptor.ProjectType is ProjectType.ER 
+                    or ProjectType.NR
+                    or ProjectType.DB_NT
+                    or ProjectType.DB)
                 {
                     if (p.Length == 4)
                     {

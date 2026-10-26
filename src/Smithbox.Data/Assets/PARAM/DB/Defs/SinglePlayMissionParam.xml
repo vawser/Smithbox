@@ -1,0 +1,72 @@
+<PARAMDEF XmlVersion="2">
+  <ParamType>SINGLE_PLAY_MISSION_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="s32 unk00" />
+    <Field Def="s32 unk01" />
+    <Field Def="s32 unk02" />
+    <Field Def="s32 unk03" />
+    <Field Def="s32 unk04" />
+    <Field Def="s32 unk05" />
+    <Field Def="s32 unk06" />
+    <Field Def="s32 unk07" />
+    <Field Def="s32 unk08" />
+    <Field Def="s32 unk09" />
+    <Field Def="s32 unk0A" />
+    <Field Def="s32 unk0B" />
+    <Field Def="s32 unk0C" />
+    <Field Def="s32 unk0D" />
+    <Field Def="s32 unk0E" />
+    <Field Def="s32 unk0F" />
+    <Field Def="s32 unk10" />
+    <Field Def="s32 unk11" />
+    <Field Def="s32 unk12" />
+    <Field Def="s32 unk13" />
+    <Field Def="s32 unk14" />
+    <Field Def="s32 unk15" />
+    <Field Def="s32 unk16" />
+    <Field Def="s32 unk17" />
+    <Field Def="s32 unk18" />
+    <Field Def="s32 unk19" />
+    <Field Def="s32 unk1A" />
+    <Field Def="s32 unk1B" />
+    <Field Def="s32 unk1C" />
+    <Field Def="s32 unk1D" />
+    <Field Def="s32 unk1E" />
+    <Field Def="s32 unk1F" />
+    <Field Def="s32 unk20" />
+    <Field Def="s32 unk21" />
+    <Field Def="s32 unk22" />
+    <Field Def="s32 unk23" />
+    <Field Def="s32 unk24" />
+    <Field Def="s32 unk25" />
+    <Field Def="s32 unk26" />
+    <Field Def="s32 unk27" />
+    <Field Def="s32 unk28" />
+    <Field Def="s32 unk29" />
+    <Field Def="s32 unk2A" />
+    <Field Def="s32 unk2B" />
+    <Field Def="s32 unk2C" />
+    <Field Def="s32 unk2D" />
+    <Field Def="s32 unk2E" />
+    <Field Def="s32 unk2F" />
+    <Field Def="s32 unk30" />
+    <Field Def="s32 unk31" />
+    <Field Def="s32 unk32" />
+    <Field Def="s32 unk33" />
+    <Field Def="s32 unk34" />
+    <Field Def="s32 unk35" />
+    <Field Def="s32 unk36" />
+    <Field Def="s32 unk37" />
+    <Field Def="s32 unk38" />
+    <Field Def="s32 unk39" />
+    <Field Def="s32 unk3A" />
+    <Field Def="s32 unk3B" />
+    <Field Def="s32 unk3C" />
+    <Field Def="s32 unk3D" />
+    <Field Def="s32 unk3E" />
+  </Fields>
+</PARAMDEF>

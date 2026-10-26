@@ -34,7 +34,11 @@ public class BoxSelectionAction
         ImGui.Checkbox("Map Piece", ref CFG.Current.Viewport_Enable_Box_Selection_MapPiece);
 
         var name = "Objects";
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+        if (Project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.AC6 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             name = "Assets";
         }

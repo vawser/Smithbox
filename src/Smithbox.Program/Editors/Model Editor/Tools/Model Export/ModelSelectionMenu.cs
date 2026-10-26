@@ -41,7 +41,11 @@ public class ModelSelectionMenu
 
         // Objects / Assets
         var name = LOC.Get("MODEL_FlverSelection_Tab_Objects");
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+        if (Project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.AC6 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             name = LOC.Get("MODEL_FlverSelection_Tab_Assets");
         }

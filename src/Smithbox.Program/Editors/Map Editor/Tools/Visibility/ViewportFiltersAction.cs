@@ -63,7 +63,11 @@ public class ViewportFiltersAction
         var scene = View.ViewportHandler.ActiveViewport.RenderScene;
 
         var objName = "Object";
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+        if (Project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.AC6 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             objName = "Asset";
         }
@@ -143,7 +147,11 @@ public class ViewportFiltersAction
             {
                 var curType = (HavokCollisionType)entry;
 
-                if (!(Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB))
+                if (!(Project.Descriptor.ProjectType is ProjectType.ER 
+                    or ProjectType.AC6 
+                    or ProjectType.NR
+                    or ProjectType.DB_NT
+                    or ProjectType.DB))
                 {
                     if (curType is HavokCollisionType.FallProtection)
                         continue;

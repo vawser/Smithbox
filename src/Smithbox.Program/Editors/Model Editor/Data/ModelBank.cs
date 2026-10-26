@@ -149,7 +149,11 @@ public class ModelContainerWrapper
     {
         var parts = Path.Split("/");
 
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+        if (Project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.AC6 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             // '/map/m30/m30_00_00_00/...'
             if(parts.Length >= 3)
@@ -164,7 +168,8 @@ public class ModelContainerWrapper
             {
                 MapID = parts[2];
 
-                if(Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                if(Project.Descriptor.ProjectType is ProjectType.DS2 
+                    or ProjectType.DS2S)
                 {
                     MapID = FilePathUtils.GetPureFilename(parts[3]);
                 }
@@ -184,7 +189,9 @@ public class ModelContainerWrapper
         }
         else if (binderType is ResourceContainerType.BND)
         {
-            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            if (Project.Descriptor.ProjectType is ProjectType.DS1 
+                or ProjectType.DS1R 
+                or ProjectType.DES)
             {
                 PopulateBND3();
             }
@@ -1089,7 +1096,10 @@ public class ModelWrapper
         HasCollision = true;
         HKX_Name = filename;
 
-        if (Parent.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
+        if (Parent.Project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
 

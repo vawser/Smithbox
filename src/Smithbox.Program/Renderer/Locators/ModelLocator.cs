@@ -129,7 +129,10 @@ public static class ModelLocator
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/lo";
             }
         }
-        else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
+        else if (project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             if (targetType is HavokCollisionType.High)
             {
@@ -219,7 +222,11 @@ public static class ModelLocator
         {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId}.flv";
         }
-        else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+        else if (project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.AC6 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId.ToUpper()}.flver";
         }
@@ -241,7 +248,11 @@ public static class ModelLocator
         {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/collision/{objId}.hkx";
         }
-        else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+        else if (project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.AC6 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/collision/{objId.ToUpper()}.hkx";
         }

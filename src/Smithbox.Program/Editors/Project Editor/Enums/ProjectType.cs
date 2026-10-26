@@ -45,6 +45,9 @@ public enum ProjectType
     [Display(Name = "PROJECT_Enum_ProjectType_NR")]
     NR = 15, // Elden Ring: Nightreign
 
+    [Display(Name = "PROJECT_Enum_ProjectType_DB_NT")]
+    DB_NT = 16, // The Duskbloods: Network Test
+
     [Display(Name = "PROJECT_Enum_ProjectType_DB")]
-    DB = 16, // The Duskbloods
+    DB = 17, // The Duskbloods
 }

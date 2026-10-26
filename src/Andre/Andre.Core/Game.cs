@@ -16,6 +16,7 @@ namespace Andre.Core
         AC6, // Armored Core VI: Fires of Rubicon
         DS2, // Dark Souls II
         NR, // Elden Ring: Nightreign
+        DB_NT, // The Duskbloods: Network Test
         DB // The Duskbloods
     }
 
@@ -36,6 +37,7 @@ namespace Andre.Core
                 Game.BB => null,
                 Game.DES => null,
                 Game.NR => BHD5.Game.EldenRing,
+                Game.DB_NT => null,
                 Game.DB => null,
                 _ => null
             };

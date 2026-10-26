@@ -111,7 +111,8 @@ public class ParamBank : IDisposable
             case ProjectType.ER: successfulLoad = LoadParameters_ER(); break;
             case ProjectType.AC6: successfulLoad = LoadParameters_AC6(); break;
             case ProjectType.NR: successfulLoad = LoadParameters_NR(); break;
-            // TODO: Duskbloods
+            case ProjectType.DB_NT: successfulLoad = LoadParameters_DB_NT(); break;
+            case ProjectType.DB: successfulLoad = LoadParameters_DB(); break;
         }
 
         ClearParamDiffCaches();
@@ -157,9 +158,10 @@ public class ParamBank : IDisposable
                 successfulSave = SaveParameters_AC6(); break;
             case ProjectType.NR:
                 successfulSave = SaveParameters_NR(); break;
+            case ProjectType.DB_NT:
+                successfulSave = SaveParameters_DB_NT(); break;
             case ProjectType.DB:
-                // TODO: Duskbloods
-                break;
+                successfulSave = SaveParameters_DB(); break;
             default: break;
         }
 
@@ -245,7 +247,7 @@ public class ParamBank : IDisposable
                 {
                     Smithbox.LogError(this, LOC.Get("PARAM_Data_Missing_ParamDef_ParamType", paramName, curParam.ParamType));
 
-                    //ParamDefHelper.GenerateBaseParamDefFile(paramName, $"{curParam.ParamType}");
+                    //ParamDefHelper.GenerateEmptyDefFile(paramName, curParam.ParamType);
 
                     continue;
                 }
@@ -2116,6 +2118,435 @@ public class ParamBank : IDisposable
         }
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_NR)
+        {
+            RowNameHelper.RowNameRestore(Project);
+        }
+
+        return successfulSave;
+    }
+
+    #endregion
+
+    #region The Duskbloods: Network Test
+    private bool LoadParameters_DB_NT()
+    {
+        var successfulLoad = true;
+
+        // Not supported yet as decryption key isn't known
+        //var regPath = $@"regulation.bin";
+
+        var gameParamPath = Path.Join("param", "gameparam", "gameparam_nt.parambnd.dcx");
+        var systemParamPath = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
+        var graphicsConfigParamPath = Path.Join("param", "graphicsconfig", "graphicsconfig.parambnd.dcx");
+
+        // Game Param
+        if (!TargetFS.FileExists(gameParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Find_Param_Path", gameParamPath, Name));
+
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(gameParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("PARAM_Data_Failed_to_Load_GameParam", gameParamPath, Name), e);
+
+                successfulLoad = false;
+            }
+        }
+
+        // System Param
+        if (!TargetFS.FileExists(systemParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Find_Param_Path", systemParamPath, Name));
+
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(systemParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("PARAM_Data_Failed_to_Load_SystemParam", systemParamPath, Name), e);
+
+                successfulLoad = false;
+            }
+        }
+
+        // Graphics Config Param
+        if (!TargetFS.FileExists(graphicsConfigParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Find_Param_Path", graphicsConfigParamPath, Name));
+
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(graphicsConfigParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("PARAM_Data_Failed_to_Load_GraphicsParam", graphicsConfigParamPath, Name), e);
+
+                successfulLoad = false;
+            }
+        }
+
+        return successfulLoad;
+    }
+
+    private bool SaveParameters_DB_NT()
+    {
+        var successfulSave = true;
+
+        void OverwriteParamsDB_NT(BND4 paramBnd)
+        {
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
+            {
+                if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                {
+                    Param paramFile = Params[Path.GetFileNameWithoutExtension(p.Name)];
+                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
+
+                    p.Bytes = paramFile.Write();
+                    paramFile.Rows = backup;
+                }
+            }
+        }
+
+        var fs = Project.VFS.FS;
+        var toFs = ProjectUtils.GetFilesystemForWrite(Project);
+
+        // Regulation
+        //string param = @"regulation.bin";
+
+        //if (!fs.FileExists(param))
+        //{
+        //    Smithbox.LogError(this,
+        //        LOC.Get("PARAM_Data_Failed_to_Locate_Param_Path", Name));
+
+        //    return false;
+        //}
+        //var sourceFs = Project.VFS.FS;
+        //var gameFs = Project.VFS.VanillaRealFS;
+        //var data = fs.GetFile(param).GetData().ToArray();
+
+        //// Use the game root version in this case
+        //if (!sourceFs.FileExists(param) || _pendingUpgrade)
+        //{
+        //    data = gameFs.GetFile(param).GetData().ToArray();
+        //}
+
+        //BND4 regParams = SFUtil.DecryptNightreignRegulation(data);
+
+        //if (CFG.Current.ParamEditor_Row_Name_Strip_NR)
+        //{
+        //    RowNameHelper.RowNameStrip(Project);
+        //}
+
+        //OverwriteParamsNR(regParams);
+
+        //ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.NR);
+
+        // Game Param
+        var gameParamPath = Path.Join("param", "gameparam", "gameparam_nt.parambnd.dcx");
+
+        if (!fs.FileExists(gameParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Locate_Game_Param_Path", Name));
+
+            return false;
+        }
+
+        if (fs.TryGetFile(gameParamPath, out var gameParamF))
+        {
+            using var gameParams = BND4.Read(gameParamF.GetData());
+            OverwriteParamsDB_NT(gameParams);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam_nt.parambnd.dcx"), gameParams);
+        }
+
+        // System Param
+        var systemParamPath = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
+
+        if (!fs.FileExists(systemParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Locate_System_Param_Path", Name));
+
+            return false;
+        }
+
+        if (ParamUtils.IsSystemParamTouched(Project, this))
+        {
+            if (fs.TryGetFile(systemParamPath, out var sysParamF))
+            {
+                using var sysParams = BND4.Read(sysParamF.GetData());
+                OverwriteParamsDB_NT(sysParams);
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
+            }
+        }
+
+        // Graphics Param
+        var graphicsConfigParamPath = Path.Join("param", "graphicsconfig", "graphicsconfig.parambnd.dcx");
+
+        if (!fs.FileExists(graphicsConfigParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Locate_Graphics_Param_Path", Name));
+
+            return false;
+        }
+
+        if (ParamUtils.IsGraphicsParamTouched(Project, this))
+        {
+            if (fs.TryGetFile(graphicsConfigParamPath, out var graphicsParamF))
+            {
+                using var graphicsParams = BND4.Read(graphicsParamF.GetData());
+                OverwriteParamsDB_NT(graphicsParams);
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "graphicsconfig", "graphicsconfig.parambnd.dcx"), graphicsParams);
+            }
+        }
+
+        if (CFG.Current.ParamEditor_Row_Name_Strip_DB)
+        {
+            RowNameHelper.RowNameRestore(Project);
+        }
+
+        return successfulSave;
+    }
+
+    #endregion
+
+
+    #region The Duskbloods
+    private bool LoadParameters_DB()
+    {
+        var successfulLoad = true;
+
+        // Not supported yet as decryption key isn't known
+        //var regPath = $@"regulation.bin";
+
+        var gameParamPath = Path.Join("param", "gameparam", "gameparam.parambnd.dcx");
+        var systemParamPath = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
+        var graphicsConfigParamPath = Path.Join("param", "graphicsconfig", "graphicsconfig.parambnd.dcx");
+
+        // Game Param
+        if (!TargetFS.FileExists(gameParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Find_Param_Path", gameParamPath, Name));
+
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(gameParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("PARAM_Data_Failed_to_Load_GameParam", gameParamPath, Name), e);
+
+                successfulLoad = false;
+            }
+        }
+
+        // System Param
+        if (!TargetFS.FileExists(systemParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Find_Param_Path", systemParamPath, Name));
+
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(systemParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("PARAM_Data_Failed_to_Load_SystemParam", systemParamPath, Name), e);
+
+                successfulLoad = false;
+            }
+        }
+
+        // Graphics Config Param
+        if (!TargetFS.FileExists(graphicsConfigParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Find_Param_Path", graphicsConfigParamPath, Name));
+
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(graphicsConfigParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("PARAM_Data_Failed_to_Load_GraphicsParam", graphicsConfigParamPath, Name), e);
+
+                successfulLoad = false;
+            }
+        }
+
+        return successfulLoad;
+    }
+
+    private bool SaveParameters_DB()
+    {
+        var successfulSave = true;
+
+        void OverwriteParamsDB(BND4 paramBnd)
+        {
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
+            {
+                if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                {
+                    Param paramFile = Params[Path.GetFileNameWithoutExtension(p.Name)];
+                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
+
+                    p.Bytes = paramFile.Write();
+                    paramFile.Rows = backup;
+                }
+            }
+        }
+
+        var fs = Project.VFS.FS;
+        var toFs = ProjectUtils.GetFilesystemForWrite(Project);
+
+        // Regulation
+        //string param = @"regulation.bin";
+
+        //if (!fs.FileExists(param))
+        //{
+        //    Smithbox.LogError(this,
+        //        LOC.Get("PARAM_Data_Failed_to_Locate_Param_Path", Name));
+
+        //    return false;
+        //}
+        //var sourceFs = Project.VFS.FS;
+        //var gameFs = Project.VFS.VanillaRealFS;
+        //var data = fs.GetFile(param).GetData().ToArray();
+
+        //// Use the game root version in this case
+        //if (!sourceFs.FileExists(param) || _pendingUpgrade)
+        //{
+        //    data = gameFs.GetFile(param).GetData().ToArray();
+        //}
+
+        //BND4 regParams = SFUtil.DecryptNightreignRegulation(data);
+
+        //if (CFG.Current.ParamEditor_Row_Name_Strip_NR)
+        //{
+        //    RowNameHelper.RowNameStrip(Project);
+        //}
+
+        //OverwriteParamsNR(regParams);
+
+        //ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.NR);
+
+        // Game Param
+        var gameParamPath = Path.Join("param", "gameparam", "gameparam.parambnd.dcx");
+
+        if (!fs.FileExists(gameParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Locate_Game_Param_Path", Name));
+
+            return false;
+        }
+
+        if (fs.TryGetFile(gameParamPath, out var gameParamF))
+        {
+            using var gameParams = BND4.Read(gameParamF.GetData());
+            OverwriteParamsDB(gameParams);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam_nt.parambnd.dcx"), gameParams);
+        }
+
+        // System Param
+        var systemParamPath = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
+
+        if (!fs.FileExists(systemParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Locate_System_Param_Path", Name));
+
+            return false;
+        }
+
+        if (ParamUtils.IsSystemParamTouched(Project, this))
+        {
+            if (fs.TryGetFile(systemParamPath, out var sysParamF))
+            {
+                using var sysParams = BND4.Read(sysParamF.GetData());
+                OverwriteParamsDB(sysParams);
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
+            }
+        }
+
+        // Graphics Param
+        var graphicsConfigParamPath = Path.Join("param", "graphicsconfig", "graphicsconfig.parambnd.dcx");
+
+        if (!fs.FileExists(graphicsConfigParamPath))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Data_Failed_to_Locate_Graphics_Param_Path", Name));
+
+            return false;
+        }
+
+        if (ParamUtils.IsGraphicsParamTouched(Project, this))
+        {
+            if (fs.TryGetFile(graphicsConfigParamPath, out var graphicsParamF))
+            {
+                using var graphicsParams = BND4.Read(graphicsParamF.GetData());
+                OverwriteParamsDB(graphicsParams);
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "graphicsconfig", "graphicsconfig.parambnd.dcx"), graphicsParams);
+            }
+        }
+
+        if (CFG.Current.ParamEditor_Row_Name_Strip_DB)
         {
             RowNameHelper.RowNameRestore(Project);
         }

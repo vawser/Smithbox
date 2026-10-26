@@ -751,6 +751,67 @@ public class TextEditorPrefs
             }
         };
     }
+    public static PreferenceItem TextEditor_Primary_Language_DB_NT()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TextEditor,
+            Spacer = true,
+            InlineName = false,
+            DisplayRestrictions = new List<ProjectType>()
+            {
+                ProjectType.DB_NT
+            },
+
+            Section = SectionCategory.General,
+
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DB_NT);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", previewName))
+                {
+                    foreach (var entry in languages)
+                    {
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
+                        {
+                            CFG.Current.TextEditor_Primary_Language_DB_NT = entry.Language;
+
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+
+                                activeView.RefreshDecorators();
+                            }
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
     public static PreferenceItem TextEditor_IncludeVanillaCache()
     {
         return new PreferenceItem

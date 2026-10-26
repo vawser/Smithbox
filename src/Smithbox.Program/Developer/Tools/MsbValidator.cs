@@ -141,6 +141,7 @@ public class MsbValidator
 
             switch (curProject.Descriptor.ProjectType)
             {
+                case ProjectType.DB_NT:
                 case ProjectType.DB:
                     break;
                 case ProjectType.NR:

@@ -41,7 +41,11 @@ public static class TextureLocator
         {
             var mid = mapID.Substring(0, 3);
 
-            if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+            if (project.Descriptor.ProjectType is ProjectType.ER 
+                or ProjectType.AC6 
+                or ProjectType.NR
+                or ProjectType.DB_NT
+                or ProjectType.DB)
             {
 
             }
@@ -104,7 +108,11 @@ public static class TextureLocator
         {
             ad.AssetArchiveVirtualPath = $@"chr/{id}/tex";
         }
-        else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+        else if (project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.AC6 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             ad.AssetArchiveVirtualPath = $@"chr/{id}/tex";
 

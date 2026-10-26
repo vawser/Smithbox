@@ -187,6 +187,7 @@ public class DeveloperKit
         GenerateProject(ProjectType.ER, CFG.Current.DEVKIT_DataPath_ER);
         GenerateProject(ProjectType.AC6, CFG.Current.DEVKIT_DataPath_AC6);
         GenerateProject(ProjectType.NR, CFG.Current.DEVKIT_DataPath_NR);
+        GenerateProject(ProjectType.DB_NT, CFG.Current.DEVKIT_DataPath_DB_NT);
         GenerateProject(ProjectType.DB, CFG.Current.DEVKIT_DataPath_DB);
 
         GeneratedProjects = true;

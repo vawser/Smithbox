@@ -226,6 +226,11 @@ public static class MapConnections_ER
                 //TODO NR
             }
 
+            if (view.Project.Descriptor.ProjectType == ProjectType.DB_NT)
+            {
+                //TODO DB
+            }
+
             if (view.Project.Descriptor.ProjectType == ProjectType.DB)
             {
                 //TODO DB

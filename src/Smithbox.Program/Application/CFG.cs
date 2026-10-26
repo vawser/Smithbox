@@ -42,6 +42,7 @@ public class CFG
     public string DEVKIT_DataPath_ER = "";
     public string DEVKIT_DataPath_AC6 = "";
     public string DEVKIT_DataPath_NR = "";
+    public string DEVKIT_DataPath_DB_NT = "";
     public string DEVKIT_DataPath_DB = "";
 
     #endregion
@@ -645,6 +646,7 @@ public class CFG
     public bool ParamEditor_Row_Name_Strip_ER = false;
     public bool ParamEditor_Row_Name_Strip_AC6 = false;
     public bool ParamEditor_Row_Name_Strip_NR = false;
+    public bool ParamEditor_Row_Name_Strip_DB = false;
 
     public bool ParamEditor_Stripped_Row_Name_Load_DES = false;
     public bool ParamEditor_Stripped_Row_Name_Load_DS1 = false;
@@ -655,6 +657,7 @@ public class CFG
     public bool ParamEditor_Stripped_Row_Name_Load_ER = false;
     public bool ParamEditor_Stripped_Row_Name_Load_AC6 = false;
     public bool ParamEditor_Stripped_Row_Name_Load_NR = false;
+    public bool ParamEditor_Stripped_Row_Name_Load_DB = false;
 
     // Param List
     public bool ParamEditor_Param_List_Pinned_Stay_Visible = true;
@@ -853,6 +856,7 @@ public class CFG
     public string TextEditor_Primary_Language_ER = "English";
     public string TextEditor_Primary_Language_AC6 = "English";
     public string TextEditor_Primary_Language_NR = "English";
+    public string TextEditor_Primary_Language_DB_NT = "English";
     public string TextEditor_Primary_Language_DB = "English";
 
     public bool TextEditor_Include_Vanilla_Cache = true;

@@ -288,6 +288,7 @@ public class ModelInstanceFinder
                         }
                     }
                     break;
+                case ProjectType.DB_NT:
                 case ProjectType.DB:
                     // TODO: Duskbloods
                     break;

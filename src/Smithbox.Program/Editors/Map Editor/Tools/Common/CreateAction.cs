@@ -376,8 +376,12 @@ public class CreateAction
             case ProjectType.NR:
                 msbclass = typeof(MSB_NR);
                 break;
+            case ProjectType.DB_NT:
             case ProjectType.DB:
-                throw new ArgumentException("type must be valid");
+                PartsClasses = new();
+                RegionClasses = new();
+                EventClasses = new();
+                return;
             default:
                 throw new ArgumentException("type must be valid");
         }

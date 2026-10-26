@@ -21,8 +21,14 @@ public static class GparamConstructUtils
         newParam.Name = annotation.Name;
         newParam.Fields = new();
 
-        if(project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or 
-            ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+        if(project.Descriptor.ProjectType is ProjectType.DS3 
+            or ProjectType.BB 
+            or ProjectType.SDT 
+            or ProjectType.ER 
+            or ProjectType.AC6 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             newParam.Comments = new();
         }

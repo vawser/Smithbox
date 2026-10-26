@@ -52,7 +52,11 @@ internal static class ResourceFallbacks
             // Asset textures are in the AET container named by the first 10 characters of the texture name.
             // These are loaded after the models since many models use textures from other assets.
             if (CFG.Current.MapEditor_TextureLoad_Objects &&
-                project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB &&
+                project.Descriptor.ProjectType is ProjectType.ER 
+                or ProjectType.AC6 
+                or ProjectType.NR
+                or ProjectType.DB_NT
+                or ProjectType.DB &&
                 name.StartsWith("aet") && name.Length >= 10)
             {
                 AddIfExists(project, vfsPaths, $"aet/{name.Substring(0, 10)}/tex");
@@ -92,7 +96,10 @@ internal static class ResourceFallbacks
     public static void LoadWorldMapTextures(ResourcePool pool)
     {
         ProjectEntry? project = Smithbox.Orchestrator.SelectedProject;
-        if (project == null || project.Descriptor.ProjectType is not (ProjectType.ER or ProjectType.NR or ProjectType.DB))
+        if (project == null || project.Descriptor.ProjectType is not (ProjectType.ER 
+                or ProjectType.NR 
+                or ProjectType.DB_NT
+                or ProjectType.DB))
         {
             return;
         }

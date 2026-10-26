@@ -219,7 +219,12 @@ public class ModelExportTool
                     entry.CollisionMateral = curVal;
                 }
 
-                if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.NR or ProjectType.DB)
+                if (Project.Descriptor.ProjectType is ProjectType.DS3 
+                    or ProjectType.SDT 
+                    or ProjectType.ER 
+                    or ProjectType.NR
+                    or ProjectType.DB_NT
+                    or ProjectType.DB)
                 {
                     ImGui.SameLine();
 
@@ -250,7 +255,10 @@ public class ModelExportTool
                                 ImGui.EndCombo();
                             }
                         }
-                        else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
+                        else if (Project.Descriptor.ProjectType is ProjectType.ER 
+                            or ProjectType.NR
+                            or ProjectType.DB_NT
+                            or ProjectType.DB)
                         {
                             if (ImGui.BeginCombo($"Material##colMatSelect", PreviewColMaterial))
                             {
@@ -282,7 +290,10 @@ public class ModelExportTool
                                 ImGui.EndCombo();
                             }
                         }
-                        else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
+                        else if (Project.Descriptor.ProjectType is ProjectType.ER 
+                            or ProjectType.NR
+                            or ProjectType.DB_NT
+                            or ProjectType.DB)
                         {
                             if (ImGui.BeginCombo($"Property##colPropSelect", PreviewColProperty))
                             {
@@ -468,7 +479,10 @@ public class ModelExportTool
     {
         var matName = "Cobblestone";
 
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
+        if (Project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             matName = "Stock";
         }

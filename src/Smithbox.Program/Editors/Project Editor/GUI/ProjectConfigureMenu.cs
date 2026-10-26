@@ -695,6 +695,7 @@ public static class ProjectTypeOrder
         ProjectType.ER,
         ProjectType.NR,
         ProjectType.AC6,
+        ProjectType.DB_NT,
         ProjectType.DB
     };
 

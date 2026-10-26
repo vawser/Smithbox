@@ -40,6 +40,8 @@ public class ProjectUtils
                 return "AC6";
             case ProjectType.NR:
                 return "NR";
+            case ProjectType.DB_NT:
+                return "DB_NT";
             case ProjectType.DB:
                 return "DB";
             default:

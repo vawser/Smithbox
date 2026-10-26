@@ -1,0 +1,12 @@
+<PARAMDEF XmlVersion="2">
+  <ParamType>RESULT_MENU_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="s32 unk00" />
+    <Field Def="s32 unk01" />
+    <Field Def="s32 unk02" />
+  </Fields>
+</PARAMDEF>

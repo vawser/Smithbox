@@ -1,0 +1,26 @@
+<PARAMDEF XmlVersion="2">
+  <ParamType>BUDDY_MISSION_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="s32 unk00" />
+    <Field Def="s32 unk01" />
+    <Field Def="s32 unk02" />
+    <Field Def="s32 unk03" />
+    <Field Def="s32 unk04" />
+    <Field Def="s32 unk05" />
+    <Field Def="s32 unk06" />
+    <Field Def="s32 unk07" />
+    <Field Def="s32 unk08" />
+    <Field Def="s32 unk09" />
+    <Field Def="s32 unk0A" />
+    <Field Def="s32 unk0B" />
+    <Field Def="s32 unk0C" />
+    <Field Def="s32 unk0D" />
+    <Field Def="s32 unk0E" />
+    <Field Def="s32 unk0F" />
+    <Field Def="s32 unk10" />
+  </Fields>
+</PARAMDEF>

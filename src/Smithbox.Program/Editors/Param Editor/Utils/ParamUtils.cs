@@ -73,6 +73,39 @@ public static class ParamUtils
         "EFID"
     };
 
+    public static List<string> SystemParamPrefixes_DB = new List<string>()
+    {
+        "CameraFadeParam",
+        "DefaultKeyAssign",
+        "GameKey",
+        "KeyRepeat",
+        "MenuOffscrRendParam",
+        "MenuViewParam",
+        "ReverbAuxSendBusParam",
+        "SoundCommonSystemParam",
+        "SoundPerfParam"
+    };
+
+    public static List<string> GraphicsParamPrefixes_DB = new List<string>()
+    {
+        "Gconfig_AAQuality",
+        "Gconfig_DecalQuality",
+        "Gconfig_DLSS",
+        "Gconfig_DOFQuality",
+        "Gconfig_EffectQuality",
+        "Gconfig_LightingQuality",
+        "Gconfig_MipLodBias",
+        "Gconfig_MotionBlurQuality",
+        "Gconfig_ReflectionQuality",
+        "Gconfig_ShaderQuality",
+        "Gconfig_ShadowQuality",
+        "Gconfig_SSAOQuality",
+        "Gconfig_TextureFilterQuality",
+        "Gconfig_VolumetricEffectQuality",
+        "Gconfig_WaterQuality",
+        "GraphicsConfig_ver2",
+    };
+
     public static bool IsSystemParamTouched(ProjectEntry project, ParamBank bank)
     {
         foreach (var param in bank.Params)
@@ -118,6 +151,19 @@ public static class ParamUtils
                     }
                 }
             }
+            if (project.Descriptor.ProjectType is ProjectType.DB or ProjectType.DB_NT)
+            {
+                foreach (var entry in ParamUtils.SystemParamPrefixes_DB)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<Param.Row> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
         }
 
         return false;
@@ -132,6 +178,20 @@ public static class ParamUtils
             if (project.Descriptor.ProjectType is ProjectType.AC6)
             {
                 foreach (var entry in ParamUtils.GraphicsParamPrefixes_AC6)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<Param.Row> primary = bank.VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+
+            if (project.Descriptor.ProjectType is ProjectType.DB or ProjectType.DB_NT)
+            {
+                foreach (var entry in ParamUtils.GraphicsParamPrefixes_DB)
                 {
                     if (key.Contains(entry))
                     {

@@ -663,6 +663,7 @@ public class MsbEntity : Entity
 
             switch (curProjectType)
             {
+                case ProjectType.DB_NT:
                 case ProjectType.DB:
                     break;
                 case ProjectType.DS3:

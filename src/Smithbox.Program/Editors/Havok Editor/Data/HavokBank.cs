@@ -2303,11 +2303,18 @@ public class HavokBank : IDisposable
             }
         }
 
-        if(Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+        if(Project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.AC6 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             return DCX.Type.DCX_KRAK;
         }
-        else if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S)
+        else if (Project.Descriptor.ProjectType is ProjectType.DS1 
+            or ProjectType.DS1R 
+            or ProjectType.DS2 
+            or ProjectType.DS2S)
         {
             return DCX.Type.DCX_DFLT_10000_24_9;
         }

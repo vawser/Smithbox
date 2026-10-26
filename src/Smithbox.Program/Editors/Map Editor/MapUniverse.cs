@@ -176,6 +176,11 @@ public class MapUniverse : IUniverse
                         }
                     }
 
+                    if (View.Project.Descriptor.ProjectType is ProjectType.DB_NT)
+                    {
+                        // TODO: Duskbloods
+                    }
+
                     if (View.Project.Descriptor.ProjectType is ProjectType.DB)
                     {
                         // TODO: Duskbloods
@@ -1039,6 +1044,11 @@ public class MapUniverse : IUniverse
         }
 
         if (View.Project.Descriptor.ProjectType == ProjectType.DB)
+        {
+            return DCX.Type.DCX_DFLT_11000_44_9_15;
+        }
+
+        if (View.Project.Descriptor.ProjectType == ProjectType.DB_NT)
         {
             return DCX.Type.DCX_DFLT_11000_44_9_15;
         }

@@ -668,7 +668,11 @@ public class ViewportMenu
 
             if (Owner is MapUniverse mapUniverse)
             {
-                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER 
+                    or ProjectType.AC6 
+                    or ProjectType.NR
+                    or ProjectType.DB_NT
+                    or ProjectType.DB)
                 {
                     name = LOC.Get("VIEWPORT_Menubar_ML_Assets");
                 }
@@ -723,7 +727,11 @@ public class ViewportMenu
 
             if (Owner is MapUniverse mapUniverse)
             {
-                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER 
+                    or ProjectType.AC6 
+                    or ProjectType.NR
+                    or ProjectType.DB_NT
+                    or ProjectType.DB)
                 {
                     name = LOC.Get("VIEWPORT_Menubar_TL_Assets");
                 }
@@ -770,7 +778,11 @@ public class ViewportMenu
 
             if (Owner is MapUniverse mapUniverse)
             {
-                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER 
+                    or ProjectType.AC6 
+                    or ProjectType.NR
+                    or ProjectType.DB_NT
+                    or ProjectType.DB)
                 {
                     name = LOC.Get("VIEWPORT_Menubar_ML_Assets");
                 }
@@ -817,7 +829,11 @@ public class ViewportMenu
 
             if (Owner is MapUniverse mapUniverse)
             {
-                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+                if (mapUniverse.Project.Descriptor.ProjectType is ProjectType.ER 
+                    or ProjectType.AC6 
+                    or ProjectType.NR
+                    or ProjectType.DB_NT
+                    or ProjectType.DB)
                 {
                     name = LOC.Get("VIEWPORT_Menubar_TL_Assets");
                 }

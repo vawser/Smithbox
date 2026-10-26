@@ -90,7 +90,11 @@ public class DuplicateAction
             GUI.Tooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
         }
 
-        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.AC6 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
             GUI.Tooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");

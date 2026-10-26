@@ -1,5 +1,6 @@
-﻿using SoulsFormats;
-using Andre.Core;
+﻿using Andre.Core;
+using SoulsFormats;
+using System.Text;
 
 namespace Andre.Formats;
 
@@ -488,7 +489,7 @@ public class Param : SoulsFile<Param>
         // If a row size is already read it must match our computed row size
         else if (byteOffset != RowSize)
         {
-            //GenerateFilledParamDefFile(def, RowSize, fileName);
+            GenerateBaseParamDefFile(def, RowSize, fileName);
 
             throw new Exception($@"Row size paramdef mismatch for {ParamType} - byteOffset:{byteOffset} - rowSize:{RowSize}");
         }
@@ -496,46 +497,72 @@ public class Param : SoulsFile<Param>
         Columns = columns;
     }
 
-    // Stuff for generating the param def layouts for new games
-    private List<string> WrittenParamTypes = new();
+    private static List<string> WrittenParamTypes = new();
 
-    public void GenerateFilledParamDefFile(PARAMDEF def, int rowSize, string fileName)
+    public static void GenerateBaseParamDefFile(PARAMDEF def, int rowSize, string fileName)
     {
-        if (fileName != "")
+        var paramType = $"{def.ParamType}";
+
+        if (WrittenParamTypes.Contains(paramType))
+            return;
+
+        StringBuilder fileText = new();
+
+        fileText.AppendLine("<PARAMDEF XmlVersion=\"2\">");
+        fileText.AppendLine($"  <ParamType>{paramType}</ParamType>");
+        fileText.AppendLine($"  <DataVersion>0</DataVersion>");
+        fileText.AppendLine($"  <BigEndian>False</BigEndian>");
+        fileText.AppendLine($"  <Unicode>True</Unicode>");
+        fileText.AppendLine($"  <FormatVersion>0</FormatVersion>");
+        fileText.AppendLine($"  <Fields>");
+
+        // Fields
+        var offset = 0;
+        var fieldIndex = 0;
+        var dataLength = rowSize;
+
+        while (offset + 4 <= dataLength)
         {
-            var paramType = $"{def.ParamType}";
-            if (!WrittenParamTypes.Contains(paramType))
-            {
-                var fields = GetFieldLayout(RowSize);
-
-                var xmlTemplate = $"<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<PARAMDEF XmlVersion=\"1\">\r\n  <ParamType>{paramType}</ParamType>\r\n  <DataVersion>1</DataVersion>\r\n  <BigEndian>False</BigEndian>\r\n  <Unicode>True</Unicode>\r\n  <FormatVersion>203</FormatVersion>\r\n  <Fields>\r\n    {fields}\r\n  </Fields>\r\n</PARAMDEF>";
-
-                var writePath = $@"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\NR\Defs\{fileName}.xml";
-
-                File.WriteAllText(writePath, xmlTemplate);
-
-                WrittenParamTypes.Add(paramType);
-            }
+            WriteField_Int(fileText, $"unk{fieldIndex:X2}");
+            offset += 4;
+            fieldIndex++;
         }
+
+        if (offset + 2 <= dataLength)
+        {
+            WriteField_Short(fileText, $"unk{fieldIndex:X2}");
+            offset += 2;
+            fieldIndex++;
+        }
+
+        if (offset < dataLength)
+        {
+            WriteField_Byte(fileText, $"unk{fieldIndex:X2}");
+        }
+
+        fileText.AppendLine($"  </Fields>");
+        fileText.AppendLine($"</PARAMDEF>");
+
+        var outputPath = $"C:\\Users\\benja\\Programming\\C#\\Smithbox\\src\\Smithbox.Data\\Assets\\PARAM\\DB_NT\\Defs\\{fileName}.xml";
+        File.WriteAllText(outputPath, fileText.ToString());
+
+        WrittenParamTypes.Add(paramType);
     }
-    private string GetFieldLayout(int rowSize)
+
+    private static void WriteField_Int(StringBuilder fileText, string fieldName)
     {
-        var layout = "";
-
-        int fullFields = rowSize / 4;
-        int remainingBytes = rowSize % 4;
-
-        for (int i = 0; i < fullFields; i++)
-        {
-            layout += $"\n    <Field Def=\"s32 tempName_{i}\"/>";
-        }
-
-        for (int i = 0; i < remainingBytes; i++)
-        {
-            layout += $"\n    <Field Def=\"u8 tempByte_{i}\"/>";
-        }
-
-        return layout;
+        var type = "s32";
+        fileText.AppendLine($"    <Field Def=\"{type} {fieldName}\" />");
+    }
+    private static void WriteField_Short(StringBuilder fileText, string fieldName)
+    {
+        var type = "u16";
+        fileText.AppendLine($"    <Field Def=\"{type} {fieldName}\" />");
+    }
+    private static void WriteField_Byte(StringBuilder fileText, string fieldName)
+    {
+        var type = "u8";
+        fileText.AppendLine($"    <Field Def=\"{type} {fieldName}\" />");
     }
 
     /// <summary>

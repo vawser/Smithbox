@@ -1,0 +1,10 @@
+<PARAMDEF XmlVersion="2">
+  <ParamType>STRONG_ENEMY_GROUP_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="s32 unk00" />
+  </Fields>
+</PARAMDEF>

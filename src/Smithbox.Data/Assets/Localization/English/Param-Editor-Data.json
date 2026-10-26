@@ -69,6 +69,10 @@
       "Text": "Failed to load graphics param for at {0} for {1}"
     },
     {
+      "Key": "PARAM_Data_Failed_to_Locate_Game_Param_Path",
+      "Text": "Cannot locate game param files for {0}. Save failed."
+    },
+    {
       "Key": "PARAM_Data_Failed_to_Locate_System_Param_Path",
       "Text": "Cannot locate system param files for {0}. Save failed."
     },

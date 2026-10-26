@@ -1,0 +1,9 @@
+<PARAMDEF XmlVersion="2">
+  <ParamType>TEAM_TYPE_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+  </Fields>
+</PARAMDEF>

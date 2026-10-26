@@ -130,7 +130,11 @@ public class MapEditorScreen : EditorScreen
                 GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTL_TT"));
                 GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTL);
 
-                if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+                if (Project.Descriptor.ProjectType is ProjectType.ER 
+                    or ProjectType.AC6 
+                    or ProjectType.NR
+                    or ProjectType.DB_NT
+                    or ProjectType.DB)
                 {
                     // Collision HKX
                     if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_CollisionHKX")}##manualToggle_collisionHKX"))
@@ -230,7 +234,11 @@ public class MapEditorScreen : EditorScreen
                 GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTL_TT"));
                 GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTL);
 
-                if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+                if (Project.Descriptor.ProjectType is ProjectType.ER 
+                    or ProjectType.AC6 
+                    or ProjectType.NR
+                    or ProjectType.DB_NT
+                    or ProjectType.DB)
                 {
                     // Collision HKX
                     if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_CollisionHKX")}##autoToggle_collisionHKX"))
@@ -584,7 +592,10 @@ public class MapEditorScreen : EditorScreen
         GUI.Tooltip(LOC.Get("MAP_Collision_Header_High_TT"));
         GUI.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
 
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
+        if (Project.Descriptor.ProjectType is ProjectType.ER 
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
             // Fall Protection Collision
             if (ImGui.MenuItem($"{LOC.Get("MAP_Collision_Header_Fall_Protection")}##toggleFallProtectionCollision"))
@@ -795,7 +806,11 @@ public class MapEditorScreen : EditorScreen
             activeView.Universe.SaveAllMaps(autoSave);
 
             // Only these projects are supported for collision editing within the Map Editor
-            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+            if (Project.Descriptor.ProjectType is ProjectType.ER 
+                or ProjectType.AC6 
+                or ProjectType.NR
+                or ProjectType.DB_NT
+                or ProjectType.DB)
             {
                 // Only save if a collision/navmesh was touched
                 if (activeView.MapPropertyView.HavokPropertyView.DirtyFile)

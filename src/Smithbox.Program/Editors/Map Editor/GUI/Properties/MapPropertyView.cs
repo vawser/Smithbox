@@ -259,7 +259,11 @@ public class MapPropertyView
             Entity firstEnt = entSelection.First();
 
             // Is Collision Map Object
-            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+            if (Project.Descriptor.ProjectType is ProjectType.ER 
+                or ProjectType.AC6 
+                or ProjectType.NR
+                or ProjectType.DB_NT
+                or ProjectType.DB)
             {
                 if (EntityHelper.IsPartCollision(firstEnt))
                 {
@@ -279,7 +283,11 @@ public class MapPropertyView
             Entity firstEnt = entSelection.First();
 
             // Is Navmesh Map Object
-            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+            if (Project.Descriptor.ProjectType is ProjectType.ER
+                or ProjectType.AC6 
+                or ProjectType.NR
+                or ProjectType.DB_NT
+                or ProjectType.DB)
             {
                 if (EntityHelper.IsNavmesh(firstEnt))
                 {

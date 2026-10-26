@@ -27,6 +27,7 @@ public class MapEditorPrefs
             {
                 ProjectType.ER,
                 ProjectType.NR,
+                ProjectType.DB_NT,
                 ProjectType.DB
             },
 

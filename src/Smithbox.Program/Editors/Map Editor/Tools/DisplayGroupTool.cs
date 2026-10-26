@@ -49,6 +49,7 @@ public class DisplayGroupTool
             case ProjectType.ER:
             case ProjectType.AC6:
             case ProjectType.NR:
+            case ProjectType.DB_NT:
             case ProjectType.DB:
                 _dispGroupCount = 8; //?
                 break;

@@ -79,7 +79,11 @@ public class ModelSelectorTool
             }
             else if (EntityHelper.IsPartCollision(firstSelection))
             {
-                if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+                if (Project.Descriptor.ProjectType is ProjectType.ER 
+                    or ProjectType.AC6 
+                    or ProjectType.NR
+                    or ProjectType.DB_NT
+                    or ProjectType.DB)
                 {
                     DisplayCollisionList();
                 }
@@ -410,6 +414,7 @@ public class ModelSelectorTool
                         if (s.WrappedObject is MSB_NR.Part.Enemy)
                             isValidObjectType = true;
                         break;
+                    case ProjectType.DB_NT:
                     case ProjectType.DB:
                         throw new ArgumentException("Selected entity type must be Enemy");
                     default:
@@ -458,6 +463,7 @@ public class ModelSelectorTool
                         if (s.WrappedObject is MSB_NR.Part.Asset)
                             isValidObjectType = true;
                         break;
+                    case ProjectType.DB_NT:
                     case ProjectType.DB:
                         throw new ArgumentException("Selected entity type must be Object/Asset");
                     default:
@@ -507,6 +513,7 @@ public class ModelSelectorTool
                         if (s.WrappedObject is MSB_NR.Part.Collision)
                             isValidObjectType = true;
                         break;
+                    case ProjectType.DB_NT:
                     case ProjectType.DB:
                         throw new ArgumentException("Selected entity type must be Object/Asset");
                     default:
@@ -556,6 +563,7 @@ public class ModelSelectorTool
                         if (s.WrappedObject is MSB_NR.Part.MapPiece)
                             isValidObjectType = true;
                         break;
+                    case ProjectType.DB_NT:
                     case ProjectType.DB:
                         throw new ArgumentException("Selected entity type must be MapPiece");
                     default:
