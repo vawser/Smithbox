@@ -1,10 +1,12 @@
-﻿using SoulsFormats;
+﻿using Octokit;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Logger;
 using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -555,6 +557,13 @@ public class ParamData : IDisposable
 
         var rootMetaDir = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Meta");
 
+#if DEBUG
+        if (CFG.Current.Developer_Enable_Tools)
+        {
+            rootMetaDir = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Meta");
+        }
+#endif
+
         var projectMetaDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Meta");
 
         if (CFG.Current.Param_Editor_Enable_Param_Meta_Override)
@@ -630,6 +639,13 @@ public class ParamData : IDisposable
             ParamAnnotations.Entries.Add(lang, paramList);
 
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Annotations", lang.Folder);
+
+#if DEBUG
+            if (CFG.Current.Developer_Enable_Tools)
+            {
+                sourceFolder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Annotations", lang.Folder);
+            }
+#endif
 
             if (Path.Exists(sourceFolder))
             {
@@ -729,6 +745,12 @@ public class ParamData : IDisposable
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Enums");
 
+#if DEBUG
+            if (CFG.Current.Developer_Enable_Tools)
+            {
+                sourceFolder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Enums");
+            }
+#endif
             if (Path.Exists(sourceFolder))
             {
                 foreach (var entry in Directory.EnumerateFiles(sourceFolder))
@@ -838,6 +860,13 @@ public class ParamData : IDisposable
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Row FMG Annotations");
 
+#if DEBUG
+            if (CFG.Current.Developer_Enable_Tools)
+            {
+                sourceFolder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Row FMG Annotations");
+            }
+#endif
+
             if (Path.Exists(sourceFolder))
             {
                 var fileName = Path.Combine(sourceFolder, $"Annotations.json");
@@ -894,6 +923,12 @@ public class ParamData : IDisposable
         if (!CFG.Current.Param_Editor_Enable_Icon_Configuration_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Icon Configurations");
+#if DEBUG
+            if (CFG.Current.Developer_Enable_Tools)
+            {
+                sourceFolder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Icon Configurations");
+            }
+#endif
 
             if (Path.Exists(sourceFolder))
             {

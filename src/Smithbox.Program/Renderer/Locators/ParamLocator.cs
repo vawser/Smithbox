@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Octokit;
+using SoulsFormats;
 using StudioCore.Application;
 using System.IO;
 using System.Linq;
@@ -75,7 +76,7 @@ public static class ParamLocator
 #if DEBUG
         if (CFG.Current.Developer_Enable_Tools)
         {
-            srcFolder = $@"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(project)}";
+            srcFolder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(project)}");
         }
 #endif
 
@@ -85,13 +86,6 @@ public static class ParamLocator
     public static string GetParammetaDir(ProjectEntry project)
     {
         var srcFolder = GetParamAssetsDir(project);
-
-#if DEBUG
-        if (CFG.Current.Developer_Enable_Tools)
-        {
-            srcFolder = $@"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(project)}";
-        }
-#endif
 
         return Path.Join(srcFolder, "Meta");
     }
