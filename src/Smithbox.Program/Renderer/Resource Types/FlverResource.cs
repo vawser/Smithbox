@@ -360,16 +360,79 @@ public class FlverResource : IResource, IDisposable
         }
     }
 
+    /// <summary>
+    /// What the textures of one material say about how it has to be shaded.
+    /// Filled in by looking at every texture of the material, so it describes the material as a whole.
+    /// </summary>
+    private class MaterialLayers
+    {
+        /// <summary>Number of texture layers: the highest layer any albedo/normal/specular/shininess texture is on</summary>
+        public int LayerCount = 1;
+
+        public bool HasBlendMask;
+
+        // Whether the normals / specular / shininess have more than one layer and so need blending
+        public bool BlendNormal;
+        public bool BlendSpecular;
+        public bool BlendShininess;
+
+        public bool IsBlended => LayerCount > 1 || HasBlendMask;
+    }
+
+    private static readonly FlverMaterial.TextureType[] AlbedoLayers =
+    {
+        FlverMaterial.TextureType.AlbedoTextureResource, FlverMaterial.TextureType.AlbedoTextureResource2,
+        FlverMaterial.TextureType.AlbedoTextureResource3, FlverMaterial.TextureType.AlbedoTextureResource4
+    };
+
+    private static readonly FlverMaterial.TextureType[] NormalLayers =
+    {
+        FlverMaterial.TextureType.NormalTextureResource, FlverMaterial.TextureType.NormalTextureResource2,
+        FlverMaterial.TextureType.NormalTextureResource3, FlverMaterial.TextureType.NormalTextureResource4
+    };
+
+    private static readonly FlverMaterial.TextureType[] SpecularLayers =
+    {
+        FlverMaterial.TextureType.SpecularTextureResource, FlverMaterial.TextureType.SpecularTextureResource2,
+        FlverMaterial.TextureType.SpecularTextureResource3, FlverMaterial.TextureType.SpecularTextureResource4
+    };
+
+    private static readonly FlverMaterial.TextureType[] ShininessLayers =
+    {
+        FlverMaterial.TextureType.ShininessTextureResource, FlverMaterial.TextureType.ShininessTextureResource2,
+        FlverMaterial.TextureType.ShininessTextureResource3, FlverMaterial.TextureType.ShininessTextureResource4
+    };
+
+    /// <summary>
+    /// Works out which layer (0 based) of a kind of texture a parameter name refers to.
+    /// Layer 1 (index 0) has no number, the layers after it are numbered 2, 3 and 4.
+    /// </summary>
+    private static bool MatchLayer(string name, string exact1, string exact2, string containsPrefix,
+        string containsBase, out int layer)
+    {
+        for (var n = Material.MaxLayers; n >= 2; n--)
+        {
+            if (name == exact1 + n || name == exact2 + n || name.Contains(containsPrefix + n))
+            {
+                layer = n - 1;
+                return true;
+            }
+        }
+
+        if (name == exact1 || name == exact2 || name.Contains(containsBase))
+        {
+            layer = 0;
+            return true;
+        }
+
+        layer = 0;
+        return false;
+    }
+
     private void ProcessMaterialTexture(FlverMaterial dest, string texType, string mpath, string mtd,
-        out bool blend, out bool hasNormal2, out bool hasSpec2, out bool hasShininess2, out bool blendMask)
+        MaterialLayers layers)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
-
-        blend = false;
-        blendMask = false;
-        hasNormal2 = false;
-        hasSpec2 = false;
-        hasShininess2 = false;
 
         string paramNameCheck;
 
@@ -382,74 +445,95 @@ public class FlverResource : IResource, IDisposable
             paramNameCheck = texType.ToUpper();
         }
 
-        if (paramNameCheck == "G_DIFFUSETEXTURE2" || paramNameCheck == "G_DIFFUSE2" ||
-            paramNameCheck.Contains("ALBEDO_2"))
+        int layer;
+
+        if (MatchLayer(paramNameCheck, "G_DIFFUSETEXTURE", "G_DIFFUSE", "ALBEDO_", "ALBEDO", out layer))
         {
-            LookupTexture(FlverMaterial.TextureType.AlbedoTextureResource2, dest, texType, mpath, mtd);
-            blend = true;
+            LookupTexture(AlbedoLayers[layer], dest, texType, mpath, mtd);
+            layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
         }
-        else if (paramNameCheck == "G_DIFFUSETEXTURE" || paramNameCheck == "G_DIFFUSE" ||
-                 paramNameCheck.Contains("ALBEDO"))
+        else if (MatchLayer(paramNameCheck, "G_BUMPMAPTEXTURE", "G_BUMPMAP", "NORMAL_", "NORMAL", out layer))
         {
-            LookupTexture(FlverMaterial.TextureType.AlbedoTextureResource, dest, texType, mpath, mtd);
+            LookupTexture(NormalLayers[layer], dest, texType, mpath, mtd);
+            layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
+            layers.BlendNormal |= layer > 0;
         }
-        else if (paramNameCheck == "G_BUMPMAPTEXTURE2" || paramNameCheck == "G_BUMPMAP2" ||
-                 paramNameCheck.Contains("NORMAL_2"))
+        else if (MatchLayer(paramNameCheck, "G_SPECULARTEXTURE", "G_SPECULAR", "SPECULAR_", "SPECULAR", out layer))
         {
-            LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, texType, mpath, mtd);
-            blend = true;
-            hasNormal2 = true;
-        }
-        else if (paramNameCheck == "G_BUMPMAPTEXTURE" || paramNameCheck == "G_BUMPMAP" ||
-                 paramNameCheck.Contains("NORMAL"))
-        {
-            LookupTexture(FlverMaterial.TextureType.NormalTextureResource, dest, texType, mpath, mtd);
-        }
-        else if (paramNameCheck == "G_SPECULARTEXTURE2" || paramNameCheck == "G_SPECULAR2" ||
-                 paramNameCheck.Contains("SPECULAR_2"))
-        {
+            layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
+
+            // These games keep their gloss in the specular slot, which the shader reads as shininess
             if (curProject.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
             {
-                LookupTexture(FlverMaterial.TextureType.ShininessTextureResource2, dest, texType, mpath, mtd);
-                blend = true;
-                hasShininess2 = true;
+                LookupTexture(ShininessLayers[layer], dest, texType, mpath, mtd);
+                layers.BlendShininess |= layer > 0;
             }
             else
             {
-                LookupTexture(FlverMaterial.TextureType.SpecularTextureResource2, dest, texType, mpath, mtd);
-                blend = true;
-                hasSpec2 = true;
+                LookupTexture(SpecularLayers[layer], dest, texType, mpath, mtd);
+                layers.BlendSpecular |= layer > 0;
             }
         }
-        else if (paramNameCheck == "G_SPECULARTEXTURE" || paramNameCheck == "G_SPECULAR" ||
-                 paramNameCheck.Contains("SPECULAR"))
+        else if (MatchLayer(paramNameCheck, "G_SHININESSTEXTURE", "G_SHININESS", "SHININESS", "SHININESS", out layer))
         {
-            if (curProject.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
-            {
-                LookupTexture(FlverMaterial.TextureType.ShininessTextureResource, dest, texType, mpath, mtd);
-            }
-            else
-            {
-                LookupTexture(FlverMaterial.TextureType.SpecularTextureResource, dest, texType, mpath, mtd);
-            }
-        }
-        else if (paramNameCheck == "G_SHININESSTEXTURE2" || paramNameCheck == "G_SHININESS2" ||
-                 paramNameCheck.Contains("SHININESS2"))
-        {
-            LookupTexture(FlverMaterial.TextureType.ShininessTextureResource2, dest, texType, mpath, mtd);
-            blend = true;
-            hasShininess2 = true;
-        }
-        else if (paramNameCheck == "G_SHININESSTEXTURE" || paramNameCheck == "G_SHININESS" ||
-                 paramNameCheck.Contains("SHININESS"))
-        {
-            LookupTexture(FlverMaterial.TextureType.ShininessTextureResource, dest, texType, mpath, mtd);
+            LookupTexture(ShininessLayers[layer], dest, texType, mpath, mtd);
+            layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
+            layers.BlendShininess |= layer > 0;
         }
         else if (paramNameCheck.Contains("BLENDMASK"))
         {
             LookupTexture(FlverMaterial.TextureType.BlendmaskTextureResource, dest, texType, mpath, mtd);
-            blendMask = true;
+            layers.HasBlendMask = true;
         }
+    }
+
+    /// <summary>
+    /// Picks the shader, vertex layout and shader constants for a material from what its textures need
+    /// </summary>
+    private static void ConfigureMaterialShader(FlverMaterial dest, MaterialLayers layers)
+    {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (layers.HasBlendMask)
+        {
+            dest.ShaderName = @"FlverShader\FlverShader_blendmask";
+            dest.LayoutType = MeshLayoutType.LayoutUV2;
+        }
+        else if (layers.IsBlended)
+        {
+            dest.ShaderName = @"FlverShader\FlverShader_blend";
+            dest.LayoutType = MeshLayoutType.LayoutUV2;
+        }
+        else
+        {
+            dest.ShaderName = @"FlverShader\FlverShader";
+            dest.LayoutType = MeshLayoutType.LayoutStandard;
+        }
+
+        List<SpecializationConstant> specConstants = new();
+        specConstants.Add(new SpecializationConstant(0, (uint)curProject.Descriptor.ProjectType));
+        if (layers.IsBlended)
+        {
+            specConstants.Add(new SpecializationConstant(1, layers.BlendNormal));
+            specConstants.Add(new SpecializationConstant(2, layers.BlendSpecular));
+            specConstants.Add(new SpecializationConstant(3, layers.BlendShininess));
+            specConstants.Add(new SpecializationConstant(4, (uint)Math.Clamp(layers.LayerCount, 2, Material.MaxLayers)));
+        }
+
+        dest.SpecializationConstants ??= new List<SpecializationConstant>();
+        dest.SpecializationConstants.AddRange(specConstants);
+        dest.VertexLayout = MeshLayoutUtils.GetLayoutDescription(dest.LayoutType);
+        dest.VertexSize = MeshLayoutUtils.GetLayoutVertexSize(dest.LayoutType);
+
+        // The first layer reads the first UV set. The layers blended onto it read the second,
+        // which for meshes with only one UV set is a copy of the first.
+        dest.MaterialData.uvSet = 0;
+        dest.MaterialData.uvSet2 = 1;
+        dest.MaterialData.uvSet3 = 1;
+        dest.MaterialData.uvSet4 = 1;
+
+        // Upload the defaults so a material whose textures never arrive still shows something sensible
+        dest.UpdateMaterial();
     }
 
     private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
@@ -516,47 +600,14 @@ public class FlverResource : IResource, IDisposable
             return;
         }
 
-        var blend = false;
-        var blendMask = false;
-        var hasNormal2 = false;
-        var hasSpec2 = false;
-        var hasShininess2 = false;
+        var layers = new MaterialLayers();
 
         foreach (IFlverTexture? matparam in mat.Textures)
         {
-            ProcessMaterialTexture(dest, matparam.ParamName, matparam.Path, mat.MTD, out blend, out hasNormal2, out hasSpec2, out hasShininess2, out blendMask);
+            ProcessMaterialTexture(dest, matparam.ParamName, matparam.Path, mat.MTD, layers);
         }
 
-        if (blendMask)
-        {
-            dest.ShaderName = @"FlverShader\FlverShader_blendmask";
-            dest.LayoutType = MeshLayoutType.LayoutUV2;
-        }
-        else if (blend)
-        {
-            dest.ShaderName = @"FlverShader\FlverShader_blend";
-            dest.LayoutType = MeshLayoutType.LayoutUV2;
-        }
-        else
-        {
-            dest.ShaderName = @"FlverShader\FlverShader";
-            dest.LayoutType = MeshLayoutType.LayoutStandard;
-        }
-
-        List<SpecializationConstant> specConstants = new();
-        specConstants.Add(new SpecializationConstant(0, (uint)curProject.Descriptor.ProjectType));
-        if (blend || blendMask)
-        {
-            specConstants.Add(new SpecializationConstant(1, hasNormal2));
-            specConstants.Add(new SpecializationConstant(2, hasSpec2));
-            specConstants.Add(new SpecializationConstant(3, hasShininess2));
-        }
-
-        dest.SpecializationConstants.AddRange(specConstants);
-        dest.VertexLayout = MeshLayoutUtils.GetLayoutDescription(dest.LayoutType);
-        dest.VertexSize = MeshLayoutUtils.GetLayoutVertexSize(dest.LayoutType);
-
-        //dest.UpdateMaterial();
+        ConfigureMaterialShader(dest, layers);
     }
 
     private unsafe void ProcessMaterial(FlverMaterial dest, BinaryReaderEx br,
@@ -584,49 +635,16 @@ public class FlverResource : IResource, IDisposable
             return;
         }
 
-        var blend = false;
-        var blendMask = false;
-        var hasNormal2 = false;
-        var hasSpec2 = false;
-        var hasShininess2 = false;
+        var layers = new MaterialLayers();
 
         for (var i = mat.textureIndex; i < mat.textureIndex + mat.textureCount; i++)
         {
             var ttype = isUTF ? br.GetUTF16(textures[i].typeOffset) : br.GetShiftJIS(textures[i].typeOffset);
             var tpath = isUTF ? br.GetUTF16(textures[i].pathOffset) : br.GetShiftJIS(textures[i].pathOffset);
-            ProcessMaterialTexture(dest, ttype, tpath, mtd, out blend, out hasNormal2, out hasSpec2, out hasShininess2, out blendMask);
+            ProcessMaterialTexture(dest, ttype, tpath, mtd, layers);
         }
 
-        if (blendMask)
-        {
-            dest.ShaderName = @"FlverShader\FlverShader_blendmask";
-            dest.LayoutType = MeshLayoutType.LayoutUV2;
-        }
-        else if (blend)
-        {
-            dest.ShaderName = @"FlverShader\FlverShader_blend";
-            dest.LayoutType = MeshLayoutType.LayoutUV2;
-        }
-        else
-        {
-            dest.ShaderName = @"FlverShader\FlverShader";
-            dest.LayoutType = MeshLayoutType.LayoutStandard;
-        }
-
-        List<SpecializationConstant> specConstants = new();
-        specConstants.Add(new SpecializationConstant(0, (uint)curProject.Descriptor.ProjectType));
-        if (blend || blendMask)
-        {
-            specConstants.Add(new SpecializationConstant(1, hasNormal2));
-            specConstants.Add(new SpecializationConstant(2, hasSpec2));
-            specConstants.Add(new SpecializationConstant(3, hasShininess2));
-        }
-
-        dest.SpecializationConstants = specConstants;
-        dest.VertexLayout = MeshLayoutUtils.GetLayoutDescription(dest.LayoutType);
-        dest.VertexSize = MeshLayoutUtils.GetLayoutVertexSize(dest.LayoutType);
-
-        //dest.UpdateMaterial();
+        ConfigureMaterialShader(dest, layers);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -748,13 +766,54 @@ public class FlverResource : IResource, IDisposable
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private unsafe void FillUVShort(short* dest, ref FLVER.Vertex v, byte index)
     {
+        // A vertex doesn't have to have every UV set
+        if (index >= v.UVs.Count)
+        {
+            dest[0] = 0;
+            dest[1] = 0;
+            return;
+        }
+
         Vector3 uv = v.UVs[index];
-        dest[0] = (short)(uv.X * 2048.0f);
-        dest[1] = (short)(uv.Y * 2048.0f);
+        dest[0] = PackUV(uv.X);
+        dest[1] = PackUV(uv.Y);
     }
 
+    /// <summary>
+    /// Vertex UVs are stored as 16 bit fixed point with 11 fractional bits. Values are rounded rather than truncated;
+    /// anything outside the representable range wraps, which the repeat sampler makes invisible for whole tiles.
+    /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private unsafe void FillUVShort(short* dest, BinaryReaderEx br, FLVER.LayoutType type, float uvFactor,
+    private static short PackUV(float value)
+    {
+        return (short)(int)MathF.Round(value * 2048.0f);
+    }
+
+    /// <summary>
+    /// Fills both UV sets. A mesh with a single UV set uses it for both, which is what blended materials
+    /// authored for one UV set expect.
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private unsafe void FillUVPairShort(FlverLayoutUV2* v, ref FLVER.Vertex vert)
+    {
+        FillUVShort((*v).Uv1, ref vert, 0);
+        if (vert.UVs.Count > 1)
+        {
+            FillUVShort((*v).Uv2, ref vert, 1);
+        }
+        else
+        {
+            (*v).Uv2[0] = (*v).Uv1[0];
+            (*v).Uv2[1] = (*v).Uv1[1];
+        }
+    }
+
+    /// <summary>
+    /// Reads a UV member. Some layout types hold two UV sets in one member (a UV pair): the first goes to dest
+    /// and, if dest2 is given, the second to dest2. hasv2 reports whether the second one was stored.
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private unsafe void FillUVShort(short* dest, short* dest2, BinaryReaderEx br, FLVER.LayoutType type, float uvFactor,
         bool allowv2, out bool hasv2)
     {
         Vector3 v;
@@ -764,64 +823,64 @@ public class FlverResource : IResource, IDisposable
         {
             v = new Vector3(br.ReadVector2(), 0);
 
-            dest[0] = (short)(v.X * 2048.0f);
-            dest[1] = (short)(v.Y * 2048.0f);
+            dest[0] = PackUV(v.X);
+            dest[1] = PackUV(v.Y);
         }
         else if (type == FLVER.LayoutType.Float3)
         {
             v = br.ReadVector3();
 
-            dest[0] = (short)(v.X * 2048.0f);
-            dest[1] = (short)(v.Y * 2048.0f);
+            dest[0] = PackUV(v.X);
+            dest[1] = PackUV(v.Y);
         }
         else if (type == FLVER.LayoutType.Float4)
         {
             v = new Vector3(br.ReadVector2(), 0);
             v2 = new Vector3(br.ReadVector2(), 0);
-            hasv2 = allowv2;
+            hasv2 = allowv2 && dest2 != null;
 
-            dest[0] = (short)(v.X * 2048.0f);
-            dest[1] = (short)(v.Y * 2048.0f);
+            dest[0] = PackUV(v.X);
+            dest[1] = PackUV(v.Y);
             if (hasv2)
             {
-                dest[3] = (short)(v2.X * 2048.0f);
-                dest[4] = (short)(v2.Y * 2048.0f);
+                dest2[0] = PackUV(v2.X);
+                dest2[1] = PackUV(v2.Y);
             }
         }
         else if (type == FLVER.LayoutType.Color)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
 
-            dest[0] = (short)(v.X * 2048.0f);
-            dest[1] = (short)(v.Y * 2048.0f);
+            dest[0] = PackUV(v.X);
+            dest[1] = PackUV(v.Y);
         }
         else if (type == FLVER.LayoutType.UByte4)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
 
-            dest[0] = (short)(v.X * 2048.0f);
-            dest[1] = (short)(v.Y * 2048.0f);
+            dest[0] = PackUV(v.X);
+            dest[1] = PackUV(v.Y);
         }
         else if (type == FLVER.LayoutType.Byte4)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
 
-            dest[0] = (short)(v.X * 2048.0f);
-            dest[1] = (short)(v.Y * 2048.0f);
+            dest[0] = PackUV(v.X);
+            dest[1] = PackUV(v.Y);
         }
         else if (type == FLVER.LayoutType.UByte4Norm)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
 
-            dest[0] = (short)(v.X * 2048.0f);
-            dest[1] = (short)(v.Y * 2048.0f);
+            dest[0] = PackUV(v.X);
+            dest[1] = PackUV(v.Y);
         }
         else if (type == FLVER.LayoutType.Short2)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
 
-            dest[0] = (short)(v.X * 2048.0f);
-            dest[1] = (short)(v.Y * 2048.0f);
+            dest[0] = PackUV(v.X);
+            dest[1] = PackUV(v.Y);
         }
         else if (type == FLVER.LayoutType.Half2)
         {
@@ -829,35 +888,35 @@ public class FlverResource : IResource, IDisposable
             float vCoord = (float)(Half)BitConverter.Int16BitsToHalf(br.ReadInt16());
             v = new Vector3(u, vCoord, 0) / uvFactor;
 
-            dest[0] = (short)(v.X * 2048.0f);
-            dest[1] = (short)(v.Y * 2048.0f);
+            dest[0] = PackUV(v.X);
+            dest[1] = PackUV(v.Y);
         }
         else if (type == FLVER.LayoutType.Short4)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
             v2 = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
-            hasv2 = allowv2;
+            hasv2 = allowv2 && dest2 != null;
 
-            dest[0] = (short)(v.X * 2048.0f);
-            dest[1] = (short)(v.Y * 2048.0f);
+            dest[0] = PackUV(v.X);
+            dest[1] = PackUV(v.Y);
             if (hasv2)
             {
-                dest[3] = (short)(v2.X * 2048.0f);
-                dest[4] = (short)(v2.Y * 2048.0f);
+                dest2[0] = PackUV(v2.X);
+                dest2[1] = PackUV(v2.Y);
             }
         }
         else if (type == FLVER.LayoutType.Half4)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
             v2 = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
-            hasv2 = allowv2;
+            hasv2 = allowv2 && dest2 != null;
 
-            dest[0] = (short)(v.X * 2048.0f);
-            dest[1] = (short)(v.Y * 2048.0f);
+            dest[0] = PackUV(v.X);
+            dest[1] = PackUV(v.Y);
             if (hasv2)
             {
-                dest[3] = (short)(v2.X * 2048.0f);
-                dest[4] = (short)(v2.Y * 2048.0f);
+                dest2[0] = PackUV(v2.X);
+                dest2[1] = PackUV(v2.Y);
             }
         }
         else
@@ -967,6 +1026,57 @@ public class FlverResource : IResource, IDisposable
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private unsafe void FillColorUNorm(byte* dest, ref FLVER.Vertex v)
     {
+        if (v.Colors == null || v.Colors.Count == 0)
+        {
+            return;
+        }
+
+        var c = v.Colors[0];
+        dest[0] = ColorChannel(c.R);
+        dest[1] = ColorChannel(c.G);
+        dest[2] = ColorChannel(c.B);
+        dest[3] = ColorChannel(c.A);
+    }
+
+    // Vertex color channels are stored by the format library as either bytes or floats
+    private static byte ColorChannel(byte value)
+    {
+        return value;
+    }
+
+    private static byte ColorChannel(float value)
+    {
+        return (byte)Math.Clamp((int)MathF.Round(value * 255.0f), 0, 255);
+    }
+
+    /// <summary>
+    /// Reads a vertex color member as red, green, blue, alpha.
+    /// </summary>
+    private unsafe void FillVertexColor(byte* dest, BinaryReaderEx br, FLVER.LayoutType type)
+    {
+        switch (type)
+        {
+            case FLVER.LayoutType.Float4:
+                dest[0] = ColorChannel(br.ReadSingle());
+                dest[1] = ColorChannel(br.ReadSingle());
+                dest[2] = ColorChannel(br.ReadSingle());
+                dest[3] = ColorChannel(br.ReadSingle());
+                break;
+            case FLVER.LayoutType.Color:
+            case FLVER.LayoutType.UByte4:
+            case FLVER.LayoutType.UByte4Norm:
+            case FLVER.LayoutType.Byte4:
+            case FLVER.LayoutType.Byte4Norm:
+            case FLVER.LayoutType.Byte4E:
+                dest[0] = br.ReadByte();
+                dest[1] = br.ReadByte();
+                dest[2] = br.ReadByte();
+                dest[3] = br.ReadByte();
+                break;
+            default:
+                EatVertex(br, type);
+                break;
+        }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1139,7 +1249,7 @@ public class FlverResource : IResource, IDisposable
                 else if (l.semantic == FLVER.LayoutSemantic.UV && l.index == 0)
                 {
                     bool hasv2;
-                    FillUVShort((*v).Uv1, br, l.type, uvFactor, false, out hasv2);
+                    FillUVShort((*v).Uv1, null, br, l.type, uvFactor, false, out hasv2);
                 }
                 else if (l.semantic == FLVER.LayoutSemantic.Tangent && l.index == 0)
                 {
@@ -1243,6 +1353,9 @@ public class FlverResource : IResource, IDisposable
             {
                 FlverLayoutUV2* v = &pverts[i];
                 Vector3 n = Vector3.UnitX;
+
+                // The buffer isn't cleared, and not every member is guaranteed to be in the mesh's layout
+                *v = new FlverLayoutUV2();
                 FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
                 var uvsfilled = 0;
                 foreach (FlverBufferLayoutMember l in layouts)
@@ -1270,8 +1383,21 @@ public class FlverResource : IResource, IDisposable
                     else if (l.semantic == FLVER.LayoutSemantic.UV && uvsfilled < 2)
                     {
                         bool hasv2;
-                        FillUVShort(uvsfilled > 0 ? (*v).Uv2 : (*v).Uv1, br, l.type, uvFactor, false, out hasv2);
+                        if (uvsfilled == 0)
+                        {
+                            // A UV pair member holds both sets, so it can fill both
+                            FillUVShort((*v).Uv1, (*v).Uv2, br, l.type, uvFactor, true, out hasv2);
+                        }
+                        else
+                        {
+                            FillUVShort((*v).Uv2, null, br, l.type, uvFactor, false, out hasv2);
+                        }
+
                         uvsfilled += hasv2 ? 2 : 1;
+                    }
+                    else if (l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == 0)
+                    {
+                        FillVertexColor((*v).Color, br, l.type);
                     }
                     else if (l.semantic == FLVER.LayoutSemantic.Tangent && l.index == 0)
                     {
@@ -1281,6 +1407,12 @@ public class FlverResource : IResource, IDisposable
                     {
                         EatVertex(br, l.type);
                     }
+                }
+
+                if (uvsfilled == 1)
+                {
+                    (*v).Uv2[0] = (*v).Uv1[0];
+                    (*v).Uv2[1] = (*v).Uv1[1];
                 }
 
                 pickingVerts[i] = (*v).Position;
@@ -1304,8 +1436,8 @@ public class FlverResource : IResource, IDisposable
                 FlverLayoutUV2* v = &pverts[i];
                 FillVertex(ref (*v).Position, ref vert);
                 FillNormalSNorm8((*v).Normal, ref vert);
-                FillUVShort((*v).Uv1, ref vert, 0);
-                FillUVShort((*v).Uv2, ref vert, 1);
+                FillUVPairShort(v, ref vert);
+                FillColorUNorm((*v).Color, ref vert);
                 if (vert.Tangents.Count > 0)
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
@@ -1332,8 +1464,8 @@ public class FlverResource : IResource, IDisposable
                 FlverLayoutUV2* v = &pverts[i];
                 FillVertex(ref (*v).Position, ref vert);
                 FillNormalSNorm8((*v).Normal, ref vert);
-                FillUVShort((*v).Uv1, ref vert, 0);
-                FillUVShort((*v).Uv2, ref vert, 1);
+                FillUVPairShort(v, ref vert);
+                FillColorUNorm((*v).Color, ref vert);
                 if (vert.Tangents.Count > 0)
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
@@ -2328,6 +2460,14 @@ public class FlverResource : IResource, IDisposable
             ShininessTextureResource,
             ShininessTextureResource2,
             BlendmaskTextureResource,
+            AlbedoTextureResource3,
+            AlbedoTextureResource4,
+            NormalTextureResource3,
+            NormalTextureResource4,
+            SpecularTextureResource3,
+            SpecularTextureResource4,
+            ShininessTextureResource3,
+            ShininessTextureResource4,
             TextureResourceCount
         }
 
@@ -2452,6 +2592,15 @@ public class FlverResource : IResource, IDisposable
             SetMaterialTexture(TextureType.ShininessTextureResource, ref MaterialData.shininessTex, 2);
             SetMaterialTexture(TextureType.ShininessTextureResource2, ref MaterialData.shininessTex2, 2);
             SetMaterialTexture(TextureType.BlendmaskTextureResource, ref MaterialData.blendMaskTex, 0);
+
+            SetMaterialTexture(TextureType.AlbedoTextureResource3, ref MaterialData.colorTex3, 0);
+            SetMaterialTexture(TextureType.AlbedoTextureResource4, ref MaterialData.colorTex4, 0);
+            SetMaterialTexture(TextureType.NormalTextureResource3, ref MaterialData.normalTex3, 1);
+            SetMaterialTexture(TextureType.NormalTextureResource4, ref MaterialData.normalTex4, 1);
+            SetMaterialTexture(TextureType.SpecularTextureResource3, ref MaterialData.specTex3, 2);
+            SetMaterialTexture(TextureType.SpecularTextureResource4, ref MaterialData.specTex4, 2);
+            SetMaterialTexture(TextureType.ShininessTextureResource3, ref MaterialData.shininessTex3, 2);
+            SetMaterialTexture(TextureType.ShininessTextureResource4, ref MaterialData.shininessTex4, 2);
 
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>
             {

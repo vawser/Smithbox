@@ -3,6 +3,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Utilities;
 using System;
+using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
@@ -43,6 +44,18 @@ public class SceneRenderPipeline
 
     public uint EnvMapTexture = 0;
 
+    /// <summary>
+    ///     A light that follows the camera, handy for looking at dark interiors. Off by default.
+    ///     Its position is set every frame; the rest can be changed freely.
+    /// </summary>
+    public SceneLight CameraLight { get; } = new()
+    {
+        Type = SceneLightType.Point,
+        Enabled = false,
+        Intensity = 8.0f,
+        Range = 25.0f
+    };
+
     public unsafe SceneRenderPipeline(RenderScene scene, GraphicsDevice device, int width, int height)
     {
         Scene = scene;
@@ -76,6 +89,8 @@ public class SceneRenderPipeline
         SceneParams.EnableDithering = 1;
         SceneParams.EnableTinting = 1;
         SceneParams.DitherOpacity = 0.5f;
+        SceneParams.SunColor = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+        SceneParams.LightCount = 0;
 
         device.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
 
@@ -161,6 +176,17 @@ public class SceneRenderPipeline
             enableTinting = 0;
 
         Eye = eye;
+
+        // Lights are gathered here, where the scene can't change under us, and copied in below
+        List<SceneLightData> lights = new(SceneLightList.MaxLights);
+        if (CameraLight.Enabled)
+        {
+            CameraLight.Position = eye;
+            lights.Add(CameraLight.ToGpu());
+        }
+
+        Scene.Lights.CollectEnabled(lights);
+
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
             SceneParams.Projection = proj;
@@ -177,6 +203,16 @@ public class SceneRenderPipeline
             SceneParams.EnableDithering = enableDithering;
             SceneParams.EnableTinting = enableTinting;
             SceneParams.DitherOpacity = CFG.Current.Viewport_Selection_Dither_Opacity;
+
+            SceneParams.LightCount = (uint)lights.Count;
+            fixed (float* destination = SceneParams.Lights)
+            {
+                var gpuLights = (SceneLightData*)destination;
+                for (var i = 0; i < lights.Count; i++)
+                {
+                    gpuLights[i] = lights[i];
+                }
+            }
 
             cl.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
         });

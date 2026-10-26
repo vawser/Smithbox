@@ -12,3 +12,6 @@
   
 # Model Editor
 - Restore simple viewing of textures used by meshes (requires matbin inspection)
+- OBJ Export should use these settings for OBJ generation:
+    Mirror X
+    Forward Axis +Z, Up Axis +Y

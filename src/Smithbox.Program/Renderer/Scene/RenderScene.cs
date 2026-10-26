@@ -25,6 +25,11 @@ public class RenderScene
 
     public RenderFilter DrawFilter { get; set; } = RenderFilter.All;
 
+    /// <summary>
+    ///     Lights in the scene, in addition to the sun. See <see cref="SceneLight" />.
+    /// </summary>
+    public SceneLightList Lights { get; } = new();
+
     public DrawGroup DisplayGroup { get; set; } = new();
 
     // Statistics

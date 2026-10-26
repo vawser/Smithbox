@@ -52,6 +52,14 @@ public class HavokCollisionBank
     {
         if (!CFG.Current.MapEditor_ModelLoad_Collisions)
             return;
+
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB)
+        {
+            // NOTE: this used to release every resource whose virtual path contained "collision". Map collisions never
+            // matched that (their virtual paths are map/<id>/hit/...), so nothing was released here and map collisions are
+            // unloaded through the normal reference counting. Releasing them by type would also drop collisions that other
+            // loaded maps are using, so this is left as it effectively behaved.
+        }
     }
 
     private void LoadMapCollision(string mapId, string type)

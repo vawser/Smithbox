@@ -92,7 +92,8 @@ public static class SceneRenderer
         UniformBufferAllocator = new GPUBufferAllocator(5 * 1024 * 1024, VkBufferUsageFlags.StorageBuffer,
             (uint)sizeof(InstanceData));
 
-        MaterialBufferAllocator = new GPUBufferAllocator("materials", 5 * 1024 * 1024,
+        // Materials are 48 bytes, so this holds more of them than the 5MB it used to be did at 32 bytes
+        MaterialBufferAllocator = new GPUBufferAllocator("materials", 8 * 1024 * 1024,
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(Material), VkShaderStageFlags.Fragment);
         BoneBufferAllocator = new GPUBufferAllocator("bones", CFG.Current.Viewport_Limit_Buffer_Flver_Bone * 64,
             VkBufferUsageFlags.StorageBuffer, 64, VkShaderStageFlags.Vertex);

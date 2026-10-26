@@ -7,6 +7,7 @@ using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
+using System.Numerics;
 using Veldrid;
 
 namespace StudioCore.Editors.Viewport;
@@ -53,6 +54,53 @@ public class ViewportMenu
         ImGui.SliderFloat(
             $"{LOC.Get("VIEWPORT_Menubar_Scene_Light_Brightness")}##brightness",
             ref Parent.ViewPipeline.SceneParams.SceneBrightness, 0, 5);
+
+        ImGui.Separator();
+
+        // The sun is the light the direction above belongs to
+        var sunColor = new Vector3(
+            Parent.ViewPipeline.SceneParams.SunColor.X,
+            Parent.ViewPipeline.SceneParams.SunColor.Y,
+            Parent.ViewPipeline.SceneParams.SunColor.Z);
+
+        if (ImGui.ColorEdit3("Sun Color##sunColor", ref sunColor))
+        {
+            Parent.ViewPipeline.SceneParams.SunColor.X = sunColor.X;
+            Parent.ViewPipeline.SceneParams.SunColor.Y = sunColor.Y;
+            Parent.ViewPipeline.SceneParams.SunColor.Z = sunColor.Z;
+        }
+
+        ImGui.SliderFloat("Sun Intensity##sunIntensity", ref Parent.ViewPipeline.SceneParams.SunColor.W, 0, 5);
+
+        // A light that follows the camera, for lighting up dark interiors
+        SceneLight cameraLight = Parent.ViewPipeline.CameraLight;
+
+        var cameraLightEnabled = cameraLight.Enabled;
+        if (ImGui.Checkbox("Camera Light##cameraLightEnabled", ref cameraLightEnabled))
+        {
+            cameraLight.Enabled = cameraLightEnabled;
+        }
+
+        if (cameraLight.Enabled)
+        {
+            var color = cameraLight.Color;
+            if (ImGui.ColorEdit3("Camera Light Color##cameraLightColor", ref color))
+            {
+                cameraLight.Color = color;
+            }
+
+            var intensity = cameraLight.Intensity;
+            if (ImGui.SliderFloat("Camera Light Intensity##cameraLightIntensity", ref intensity, 0, 50))
+            {
+                cameraLight.Intensity = intensity;
+            }
+
+            var range = cameraLight.Range;
+            if (ImGui.SliderFloat("Camera Light Range##cameraLightRange", ref range, 1, 100))
+            {
+                cameraLight.Range = range;
+            }
+        }
     }
 
     public void OverlayMenu()

@@ -24,4 +24,19 @@ public unsafe struct SceneParam
     public uint EnableDithering;
     public uint EnableTinting;
     public float DitherOpacity;
+
+    // Lighting. These follow the fields above exactly as the shaders lay them out, with LightCount filling
+    // the last four bytes of the 16 byte row that DitherOpacity is in.
+
+    /// <summary>How many of <see cref="Lights" /> are in use</summary>
+    public uint LightCount;
+
+    /// <summary>Color (rgb) and intensity (a) of the sun, whose direction is <see cref="LightDirection" /></summary>
+    public Vector4 SunColor;
+
+    /// <summary>
+    ///     Up to <see cref="SceneLightList.MaxLights" /> lights, each <see cref="SceneLightData.FloatCount" /> floats
+    ///     laid out as <see cref="SceneLightData" />.
+    /// </summary>
+    public fixed float Lights[SceneLightList.MaxLights * SceneLightData.FloatCount];
 }
