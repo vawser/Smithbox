@@ -349,6 +349,9 @@ public class ModelContainerList
         if (!AliasTypeMap.TryGetValue(modelListType, out var aliasType)) 
             return;
 
+        if (!Project.Handler.ProjectData.Aliases.ContainsKey(aliasType))
+            return;
+
         var entries = Project.Handler.ProjectData.Aliases[aliasType];
         var existing = entries.FirstOrDefault(e => e.ID == fileEntry.Filename);
 

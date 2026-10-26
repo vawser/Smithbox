@@ -2298,7 +2298,7 @@ public class FlverResource : IResource, IDisposable
         br.AssertASCII("FLVER\0");
         br.BigEndian = br.AssertASCII(["L\0", "B\0"]) == "B\0";
         var version = br.AssertInt32(
-                [0x20005, 0x20007, 0x20009, 0x2000B, 0x2000C, 0x2000D, 0x2000E, 0x2000F, 0x20010, 0x20013, 0x20014, 0x20016, 0x20017, 0x2001A, 0x2001B, 0x20021]);
+                [0x20005, 0x20007, 0x20009, 0x2000B, 0x2000C, 0x2000D, 0x2000E, 0x2000F, 0x20010, 0x20013, 0x20014, 0x20016, 0x20017, 0x2001A, 0x2001B, 0x20021, 0x20022]);
 
         var dataOffset = br.ReadUInt32();
         br.ReadInt32(); // Data length
@@ -2329,7 +2329,7 @@ public class FlverResource : IResource, IDisposable
         br.AssertByte(0);
         br.AssertByte(0);
 
-        br.AssertInt32(0);
+        br.ReadInt32();
         br.AssertInt32(0);
 
         br.AssertInt16([0, 1, 2, 3, 4, 5]);  // unknown

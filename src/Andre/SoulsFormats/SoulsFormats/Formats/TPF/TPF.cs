@@ -488,6 +488,11 @@ namespace SoulsFormats
             /// Headerless DDS with DX10 metadata.
             /// </summary>
             PS5 = 8,
+
+            /// <summary>
+            /// 
+            /// </summary>
+            NintendoSwitch2 = 0xA
         }
 
         /// <summary>

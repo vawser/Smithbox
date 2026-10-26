@@ -289,6 +289,8 @@ namespace SoulsFormats
             public int Unk0C { get; set; } = 0;
             public int Unk10 { get; set; } = 0;
 
+            public byte UnkDB { get; set; } = 0;
+
             /// <summary>
             /// Creates a default RagdollBoneEntry
             /// </summary>
@@ -318,7 +320,7 @@ namespace SoulsFormats
                     NPCPartGroupIndex = br.ReadByte();
                     Unknown = br.ReadByte();
                     br.AssertByte(0);
-                    br.AssertByte(0);
+                    UnkDB = br.ReadByte(); // br.AssertByte(0);
 
                     if (game == GameType.DS3)
                     {
@@ -350,7 +352,7 @@ namespace SoulsFormats
                     bw.WriteByte(NPCPartGroupIndex);
                     bw.WriteByte(Unknown);
                     bw.WriteByte(0);
-                    bw.WriteByte(0);
+                    bw.WriteByte(UnkDB);
 
                     if (game == GameType.DS3)
                     {

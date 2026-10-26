@@ -301,9 +301,7 @@ public class PathBuilder
                     relPath = Path.Combine("chr", $"{chrid}.texbnd.dcx");
                 }
                 else if (project.Descriptor.ProjectType is ProjectType.ER 
-                    or ProjectType.NR
-                    or ProjectType.DB_NT
-                    or ProjectType.DB)
+                    or ProjectType.NR)
                 {
                     relPath = Path.Combine("chr", $"{chrid}_h.texbnd.dcx");
 
@@ -311,6 +309,11 @@ public class PathBuilder
                     {
                         relPath = Path.Combine("chr", $"{chrid}_l.texbnd.dcx");
                     }
+                }
+                else if (project.Descriptor.ProjectType is ProjectType.DB_NT
+                    or ProjectType.DB)
+                {
+                    relPath = Path.Combine("chr", $"{chrid}.texbnd.dcx");
                 }
                 else if (project.Descriptor.ProjectType is ProjectType.AC6)
                 {
