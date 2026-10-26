@@ -21,3 +21,7 @@
     Forward Axis +Z, Up Axis +Y
     
 - Restore simple viewing of textures used by meshes (requires matbin inspection)
+
+# DB new langs
+fraus (French Canadian)
+nldnl (Dutch)

@@ -17,6 +17,9 @@ public enum TextContainerCategory
     [Display(Name = "TEXT_Language_French")] 
     French,
 
+    [Display(Name = "TEXT_Language_FrenchCanadian")]
+    FrenchCanadian,
+
     [Display(Name = "TEXT_Language_German")] 
     German,
 

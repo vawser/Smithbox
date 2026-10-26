@@ -9,6 +9,10 @@
       "Text": "French"
     },
     {
+      "Key": "TEXT_Language_FrenchCanadian",
+      "Text": "French (Canadian)"
+    },
+    {
       "Key": "TEXT_Language_German",
       "Text": "German"
     },

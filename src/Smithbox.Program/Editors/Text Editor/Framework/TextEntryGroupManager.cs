@@ -781,6 +781,107 @@ public class TextEntryGroupManager
                     Menu_MsgBndID_NR.SpEffect_Caption,
                     null));
                 break;
+
+
+            case ProjectType.DB_NT:
+                // Vanilla
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DB_NT.Title_Goods,
+                    Item_MsgBndID_DB_NT.Summary_Goods,
+                    Item_MsgBndID_DB_NT.Description_Goods,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DB_NT.Title_Weapons,
+                    Item_MsgBndID_DB_NT.Summary_Weapons,
+                    Item_MsgBndID_DB_NT.Description_Weapons,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DB_NT.Title_Armor,
+                    Item_MsgBndID_DB_NT.Summary_Armor,
+                    Item_MsgBndID_DB_NT.Description_Armor,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DB_NT.Title_Accessories,
+                    Item_MsgBndID_DB_NT.Summary_Accessories,
+                    Item_MsgBndID_DB_NT.Description_Accessories,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DB_NT.Title_Skill,
+                    Item_MsgBndID_DB_NT.Summary_Skill,
+                    Item_MsgBndID_DB_NT.Description_Skill,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DB_NT.Title_PersonMat,
+                    Item_MsgBndID_DB_NT.Summary_PersonMat,
+                    Item_MsgBndID_DB_NT.Description_PersonMat,
+                    Item_MsgBndID_DB_NT.Effect_PersonMat));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DB_NT.Title_ProfileMat,
+                    Item_MsgBndID_DB_NT.Summary_ProfileMat,
+                    Item_MsgBndID_DB_NT.Description_ProfileMat,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DB_NT.Title_FamilyTreeSheet,
+                    Item_MsgBndID_DB_NT.Summary_FamilyTreeSheet,
+                    Item_MsgBndID_DB_NT.Description_FamilyTreeSheet,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DB_NT.Title_TribeAction,
+                    Item_MsgBndID_DB_NT.Summary_TribeAction,
+                    Item_MsgBndID_DB_NT.Description_TribeAction,
+                    Item_MsgBndID_DB_NT.Effect_TribeAction));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_DB_NT.Tutorial_Title,
+                    null,
+                    Menu_MsgBndID_DB_NT.Tutorial_Text,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_DB_NT.Single_Play_Mission_Title,
+                    Menu_MsgBndID_DB_NT.Single_Play_Mission_Summary,
+                    null,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_DB_NT.Theme_Title,
+                    Menu_MsgBndID_DB_NT.Theme_Summary,
+                    null,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_DB_NT.Theme_Block_Title,
+                    Menu_MsgBndID_DB_NT.Theme_Block_Summary,
+                    Menu_MsgBndID_DB_NT.Theme_Block_Description,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_DB_NT.EnvEvent_Title,
+                    Menu_MsgBndID_DB_NT.EnvEvent_Summary,
+                    Menu_MsgBndID_DB_NT.EnvEvent_Description,
+                    Menu_MsgBndID_DB_NT.EnvEvent_Effect));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_DB_NT.Buddy_Title,
+                    Menu_MsgBndID_DB_NT.Buddy_Summary,
+                    Menu_MsgBndID_DB_NT.Buddy_Description,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_DB_NT.Tips_Text_Title,
+                    null,
+                    Menu_MsgBndID_DB_NT.Tips_Text_Description,
+                    null));
+
+                break;
         }
 
         return groupings;

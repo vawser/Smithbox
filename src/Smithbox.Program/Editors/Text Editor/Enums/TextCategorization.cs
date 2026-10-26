@@ -1944,3 +1944,269 @@ public enum NgWord_MsgBndID_NR
     NgWord = 1
 }
 
+
+/// <summary>
+/// FMG IDs for DB_NT
+/// </summary>
+public enum Item_MsgBndID_DB_NT
+{
+    [Display(Name = "Goods", ShortName = "Title", Description = "")]
+    Title_Goods = 10,
+
+    [Display(Name = "Weapons", ShortName = "Title", Description = "")]
+    Title_Weapons = 11,
+
+    [Display(Name = "Armors", ShortName = "Title", Description = "")]
+    Title_Armor = 12,
+
+    [Display(Name = "Accessories", ShortName = "Title", Description = "")]
+    Title_Accessories = 13,
+
+    [Display(Name = "Skills", ShortName = "Title", Description = "")]
+    Title_Skill = 15,
+
+    [Display(Name = "Skills", ShortName = "Summary", Description = "")]
+    Summary_Skill = 16,
+
+    [Display(Name = "Skills", ShortName = "Description", Description = "")]
+    Description_Skill = 17,
+
+    [Display(Name = "Characters", ShortName = "Common", Description = "")]
+    Title_Characters = 18,
+
+    [Display(Name = "Locations", ShortName = "Common", Description = "")]
+    Title_Locations = 19,
+
+    [Display(Name = "Goods", ShortName = "Summary", Description = "")]
+    Summary_Goods = 20,
+
+    [Display(Name = "Weapons", ShortName = "Summary", Description = "")]
+    Summary_Weapons = 21,
+
+    [Display(Name = "Armors", ShortName = "Summary", Description = "")]
+    Summary_Armor = 22,
+
+    [Display(Name = "Accessories", ShortName = "Summary", Description = "")]
+    Summary_Accessories = 23,
+
+    [Display(Name = "Goods", ShortName = "Description", Description = "")]
+    Description_Goods = 24,
+
+    [Display(Name = "Weapons", ShortName = "Description", Description = "")]
+    Description_Weapons = 25,
+
+    [Display(Name = "Armors", ShortName = "Description", Description = "")]
+    Description_Armor = 26,
+
+    [Display(Name = "Accessories", ShortName = "Description", Description = "")]
+    Description_Accessories = 27,
+
+    [Display(Name = "Item Dialog", ShortName = "Common", Description = "")]
+    Dialog_Item = 30,
+
+    [Display(Name = "Skill Dialog", ShortName = "Common", Description = "")]
+    Dialog_Skill = 40,
+
+    [Display(Name = "Item Get Notice", ShortName = "Common", Description = "")]
+    GetNotice_Item = 41,
+
+    [Display(Name = "Accessory Get Notice", ShortName = "Common", Description = "")]
+    GetNotice_Accessories = 42,
+
+    [Display(Name = "Person Mat", ShortName = "Title", Description = "")]
+    Title_PersonMat = 400,
+
+    [Display(Name = "Person Mat", ShortName = "Summary", Description = "")]
+    Summary_PersonMat = 401,
+
+    [Display(Name = "Person Mat", ShortName = "Description", Description = "")]
+    Description_PersonMat = 402,
+
+    [Display(Name = "Person Mat Awaken", ShortName = "Effect", Description = "")]
+    Effect_PersonMat = 403,
+
+    [Display(Name = "Profile Mat", ShortName = "Title", Description = "")]
+    Title_ProfileMat = 410,
+
+    [Display(Name = "Profile Mat", ShortName = "Summary", Description = "")]
+    Summary_ProfileMat = 411,
+
+    [Display(Name = "Profile Mat", ShortName = "Description", Description = "")]
+    Description_ProfileMat = 412,
+
+    [Display(Name = "Family Tree Sheet", ShortName = "Title", Description = "")]
+    Title_FamilyTreeSheet = 415,
+
+    [Display(Name = "Family Tree Sheet", ShortName = "Summary", Description = "")]
+    Summary_FamilyTreeSheet = 416,
+
+    [Display(Name = "Family Tree Sheet", ShortName = "Description", Description = "")]
+    Description_FamilyTreeSheet = 417,
+
+    [Display(Name = "Tribe Action", ShortName = "Title", Description = "")]
+    Title_TribeAction = 422,
+
+    [Display(Name = "Tribe Action", ShortName = "Summary", Description = "")]
+    Summary_TribeAction = 424,
+
+    [Display(Name = "Tribe Action", ShortName = "Description", Description = "")]
+    Description_TribeAction = 425,
+
+    [Display(Name = "Tribe Action", ShortName = "Effect", Description = "")]
+    Effect_TribeAction = 426,
+
+    [Display(Name = "Tribe Action Dialog", ShortName = "Common", Description = "")]
+    Dialog_TribeAction = 427,
+}
+
+public enum Menu_MsgBndID_DB_NT
+{
+    [Display(Name = "Talk Messages", ShortName = "Common", Description = "")]
+    Talk_Messages = 1,
+
+    [Display(Name = "Text Embed Images", ShortName = "Common", Description = "")]
+    Text_Embed_Image_Name = 50,
+
+    [Display(Name = "Menu Text", ShortName = "Common", Description = "")]
+    Modern_Menu_Text = 200,
+
+    [Display(Name = "Line Help", ShortName = "Common", Description = "")]
+    Modern_Menu_Line_Help = 201,
+
+    [Display(Name = "Key Guide", ShortName = "Common", Description = "")]
+    Modern_Menu_Key_Guide = 202,
+
+    [Display(Name = "System Messages", ShortName = "Common", Description = "")]
+    Modern_Menu_System_Message = 203,
+
+    [Display(Name = "Dialogue", ShortName = "Common", Description = "")]
+    Modern_Menu_Dialogue = 204,
+
+    [Display(Name = "Tutorial Text", ShortName = "Description", Description = "")]
+    Tutorial_Text = 207,
+
+    [Display(Name = "Tutorial Text", ShortName = "Title", Description = "")]
+    Tutorial_Title = 208,
+
+    [Display(Name = "Role Name", ShortName = "Common", Description = "")]
+    Role_Name = 209,
+
+    [Display(Name = "Sub Quest Caption", ShortName = "Common", Description = "")]
+    Sub_Quest_Caption = 210,
+
+    [Display(Name = "Single Play Mission", ShortName = "Title", Description = "")]
+    Single_Play_Mission_Title = 211,
+
+    [Display(Name = "Single Play Mission", ShortName = "Summary", Description = "")]
+    Single_Play_Mission_Summary = 212,
+
+    [Display(Name = "Theme", ShortName = "Title", Description = "")]
+    Theme_Title = 213,
+
+    [Display(Name = "Theme", ShortName = "Summary", Description = "")]
+    Theme_Summary = 214,
+
+    [Display(Name = "Theme Block", ShortName = "Title", Description = "")]
+    Theme_Block_Title = 215,
+
+    [Display(Name = "Theme Block", ShortName = "Summary", Description = "")]
+    Theme_Block_Summary = 216,
+
+    [Display(Name = "Theme Block", ShortName = "Description", Description = "")]
+    Theme_Block_Description = 217,
+
+    [Display(Name = "Chapter", ShortName = "Common", Description = "")]
+    Chapter = 218,
+
+    [Display(Name = "Text Effect Text", ShortName = "Common", Description = "")]
+    Text_Effect_Text = 219,
+
+    [Display(Name = "Sub Quest Text", ShortName = "Common", Description = "")]
+    Sub_Quest_Text = 220,
+
+    [Display(Name = "Network System Text", ShortName = "Common", Description = "")]
+    Network_System_Text = 221,
+
+    [Display(Name = "Network Message Text", ShortName = "Common", Description = "")]
+    Network_Message_Text = 222,
+
+    [Display(Name = "Event Text for Talk", ShortName = "Common", Description = "")]
+    Event_Text_For_Talk = 223,
+
+    [Display(Name = "Event Text for Map", ShortName = "Common", Description = "")]
+    Event_Text_For_Map = 224,
+
+    [Display(Name = "Common Sub Mission Text", ShortName = "Common", Description = "")]
+    Common_Sub_Mission_Text = 226,
+
+    [Display(Name = "Action Button Text", ShortName = "Common", Description = "")]
+    Action_Button_Text = 227,
+
+    [Display(Name = "Phase_Result_Text", ShortName = "Common", Description = "")]
+    Phase_Result_Text = 228,
+
+    [Display(Name = "Environment Event", ShortName = "Title", Description = "")]
+    EnvEvent_Title = 229,
+
+    [Display(Name = "Environment Event", ShortName = "Summary", Description = "")]
+    EnvEvent_Summary = 230,
+
+    [Display(Name = "Environment Event", ShortName = "Effect", Description = "")]
+    EnvEvent_Effect = 232,
+
+    [Display(Name = "Environment Event", ShortName = "Description", Description = "")]
+    EnvEvent_Description = 231,
+
+    [Display(Name = "Environment Event Dialog", ShortName = "Common", Description = "")]
+    EnvEvent_Dialog = 233,
+
+    [Display(Name = "Terms of Service", ShortName = "Common", Description = "")]
+    Terms_of_Service = 234,
+
+    [Display(Name = "Buddy", ShortName = "Title", Description = "")]
+    Buddy_Title = 235,
+
+    [Display(Name = "Buddy", ShortName = "Summary", Description = "")]
+    Buddy_Summary = 236,
+
+    [Display(Name = "Buddy", ShortName = "Description", Description = "")]
+    Buddy_Description = 237,
+
+    [Display(Name = "Role Text Name", ShortName = "Common", Description = "")]
+    Role_Text_Name = 238,
+
+    [Display(Name = "SubQuest Text Name", ShortName = "Common", Description = "")]
+    Sub_Quest_Text_Name = 239,
+
+    [Display(Name = "SubQuest Text Targets", ShortName = "Common", Description = "")]
+    Sub_Quest_Text_Targets = 240,
+
+    [Display(Name = "SubQuest Text Success", ShortName = "Common", Description = "")]
+    Sub_Quest_Text_Success = 241,
+
+    [Display(Name = "SubQuest Text Fail", ShortName = "Common", Description = "")]
+    Sub_Quest_Text_Fail = 242,
+
+    [Display(Name = "SubQuest Text Unable", ShortName = "Common", Description = "")]
+    Sub_Quest_Text_Unable = 243,
+
+    [Display(Name = "SubQuest Text Unable Ingame", ShortName = "Common", Description = "")]
+    Sub_Quest_Text_Unable_Ingame = 244,
+
+    [Display(Name = "Buddy Dialog", ShortName = "Common", Description = "")]
+    Buddy_Dialog = 245,
+
+    [Display(Name = "Tips Text", ShortName = "Title", Description = "")]
+    Tips_Text_Title = 246,
+
+    [Display(Name = "Tips Text", ShortName = "Description", Description = "")]
+    Tips_Text_Description = 247,
+}
+
+
+public enum Item_MsgBndID_DB
+{
+}
+public enum Menu_MsgBndID_DB
+{
+}

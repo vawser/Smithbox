@@ -175,6 +175,48 @@ public static class CategoryGroupings
         TextContainerCategory.Arabic,
     };
 
+    public static List<TextContainerCategory> DB_NT_Languages = new()
+    {
+        TextContainerCategory.English,
+        TextContainerCategory.French,
+        TextContainerCategory.German,
+        TextContainerCategory.FrenchCanadian,
+        TextContainerCategory.Italian,
+        TextContainerCategory.Japanese,
+        TextContainerCategory.Korean,
+        TextContainerCategory.Dutch,
+        TextContainerCategory.Polish,
+        TextContainerCategory.Russian,
+        TextContainerCategory.Spanish,
+        TextContainerCategory.SpanishLatin,
+        TextContainerCategory.TraditionalChinese,
+        TextContainerCategory.SimplifiedChinese,
+        TextContainerCategory.Thai,
+        TextContainerCategory.Arabic,
+        TextContainerCategory.PortugueseLatin,
+    };
+
+    public static List<TextContainerCategory> DB_Languages = new()
+    {
+        TextContainerCategory.English,
+        TextContainerCategory.French,
+        TextContainerCategory.German,
+        TextContainerCategory.FrenchCanadian,
+        TextContainerCategory.Italian,
+        TextContainerCategory.Japanese,
+        TextContainerCategory.Korean,
+        TextContainerCategory.Dutch,
+        TextContainerCategory.Polish,
+        TextContainerCategory.Russian,
+        TextContainerCategory.Spanish,
+        TextContainerCategory.SpanishLatin,
+        TextContainerCategory.TraditionalChinese,
+        TextContainerCategory.SimplifiedChinese,
+        TextContainerCategory.Thai,
+        TextContainerCategory.Arabic,
+        TextContainerCategory.PortugueseLatin,
+    };
+
     public static List<TextContainerCategory> AC4_Languages = new()
     {
         TextContainerCategory.English,

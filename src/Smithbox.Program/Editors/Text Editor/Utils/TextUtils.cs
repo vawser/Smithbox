@@ -154,6 +154,18 @@ public static class TextUtils
                         CFG.Current.TextEditor_Primary_Language_NR = "English";
                     }
                     break;
+                case ProjectType.DB_NT:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DB_NT))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_DB_NT = "English";
+                    }
+                    break;
+                case ProjectType.DB:
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DB))
+                    {
+                        CFG.Current.TextEditor_Primary_Language_DB = "English";
+                    }
+                    break;
             }
 
         }
@@ -191,6 +203,10 @@ public static class TextUtils
                 return CategoryGroupings.NR_Languages.Contains(category);
             case ProjectType.AC6:
                 return CategoryGroupings.AC6_Languages.Contains(category);
+            case ProjectType.DB_NT:
+                return CategoryGroupings.DB_NT_Languages.Contains(category);
+            case ProjectType.DB:
+                return CategoryGroupings.DB_Languages.Contains(category);
             default: break;
         }
 
@@ -222,6 +238,10 @@ public static class TextUtils
                 return CategoryGroupings.NR_Languages;
             case ProjectType.AC6:
                 return CategoryGroupings.AC6_Languages;
+            case ProjectType.DB_NT:
+                return CategoryGroupings.DB_NT_Languages;
+            case ProjectType.DB:
+                return CategoryGroupings.DB_Languages;
             default: break;
         }
 
@@ -619,6 +639,37 @@ public static class TextUtils
                 }
                 break;
 
+            case ProjectType.DB_NT:
+                if (IsItemContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Item_MsgBndID_DB_NT), id))
+                    {
+                        var enumObj = (Item_MsgBndID_DB_NT)id;
+                        name = enumObj.GetDisplayName();
+                    }
+                    else
+                    {
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "DB", id, "Item", nameof(Item_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
+                    }
+                }
+                else if (IsMenuContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DB_NT), id))
+                    {
+                        var enumObj = (Menu_MsgBndID_DB_NT)id;
+                        name = enumObj.GetDisplayName();
+                    }
+                    else
+                    {
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "DB", id, "Menu", nameof(Menu_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
+                    }
+                }
+                break;
+
             default: break;
         }
 
@@ -964,6 +1015,38 @@ public static class TextUtils
                     }
                 }
                 break;
+
+            case ProjectType.DB_NT:
+                if (IsItemContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Item_MsgBndID_DB_NT), id))
+                    {
+                        var enumObj = (Item_MsgBndID_DB_NT)id;
+                        name = enumObj.ToString();
+                    }
+                    else
+                    {
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "DB", id, "Item", nameof(Item_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
+                    }
+                }
+                else if (IsMenuContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DB_NT), id))
+                    {
+                        var enumObj = (Menu_MsgBndID_DB_NT)id;
+                        name = enumObj.ToString();
+                    }
+                    else
+                    {
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "DB", id, "Menu", nameof(Menu_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
+                    }
+                }
+                break;
+
             default: break;
         }
 
@@ -1357,6 +1440,36 @@ public static class TextUtils
                         Smithbox.LogError(typeof(TextUtils),
                             LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
                             "NR", id, "NgWord", nameof(NgWord_MsgBndID_NR), fmgName, info.FileEntry.Path));
+                    }
+                }
+                break;
+            case ProjectType.DB_NT:
+                if (IsItemContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Item_MsgBndID_DB_NT), id))
+                    {
+                        var enumObj = (Item_MsgBndID_DB_NT)id;
+                        name = enumObj.GetShortName();
+                    }
+                    else
+                    {
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "DB", id, "Item", nameof(Item_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
+                    }
+                }
+                else if (IsMenuContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DB_NT), id))
+                    {
+                        var enumObj = (Menu_MsgBndID_DB_NT)id;
+                        name = enumObj.GetShortName();
+                    }
+                    else
+                    {
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "DB", id, "Menu", nameof(Menu_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -1756,6 +1869,36 @@ public static class TextUtils
                     }
                 }
                 break;
+            case ProjectType.DB_NT:
+                if (IsItemContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Item_MsgBndID_DB_NT), id))
+                    {
+                        var enumObj = (Item_MsgBndID_DB_NT)id;
+                        name = enumObj.GetDescription();
+                    }
+                    else
+                    {
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Item_MsgBndID_DB_NT", id));
+                    }
+                }
+                else if (IsMenuContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DB_NT), id))
+                    {
+                        var enumObj = (Menu_MsgBndID_DB_NT)id;
+                        name = enumObj.GetDescription();
+                    }
+                    else
+                    {
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Menu_MsgBndID_DB_NT", id));
+                    }
+                }
+                break;
             default: break;
         }
 
@@ -1959,6 +2102,12 @@ public static class TextUtils
             pathLower.Contains("lang/fr"))
         {
             group = TextContainerCategory.French;
+        }
+
+        // French (Canadian)
+        if (path.Contains("fraus"))
+        {
+            group = TextContainerCategory.FrenchCanadian;
         }
 
         // German
