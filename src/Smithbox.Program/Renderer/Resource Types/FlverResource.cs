@@ -1,17 +1,10 @@
 ﻿#nullable enable
 using SoulsFormats;
 using SoulsFormats.Utilities;
-using StudioCore.Application;
 using StudioCore.Developer;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ModelEditor;
-using StudioCore.Logger;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;

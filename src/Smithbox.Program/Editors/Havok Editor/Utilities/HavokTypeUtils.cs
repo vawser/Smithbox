@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HKLib.hk2018.castTest;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -40,6 +41,26 @@ public static class HavokTypeUtils
     public static bool IsHKX3(ProjectEntry project)
     {
         if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB)
+            return true;
+
+        return false;
+    }
+
+    public static bool IsHKX2_Animation(ProjectEntry project, HKX2.hkRootLevelContainer rootContainer)
+    {
+        var animationContainers = HavokTreeSearch.FindAll<HKX2.hkaAnimationContainer>(rootContainer);
+
+        if (animationContainers.Count > 0)
+            return true;
+
+        return false;
+    }
+
+    public static bool IsHKX2_Collision(ProjectEntry project, HKX2.hkRootLevelContainer rootContainer)
+    {
+        var colData = HavokTreeSearch.FindAll<HKX2.hknpPhysicsSystemData>(rootContainer);
+
+        if (colData.Count > 0)
             return true;
 
         return false;

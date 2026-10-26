@@ -7,11 +7,17 @@
   Map Data Editor
   Map Editor
   
+# General
+- Add support for Duskbloods
+  
 # Map Editor
 - Update non-parts rendering on property change
   
 # Model Editor
-- Restore simple viewing of textures used by meshes (requires matbin inspection)
+- Add support for hknpConvexPolytopeShape to HKX2_Helper so obj collisions can be displayed
+
 - OBJ Export should use these settings for OBJ generation:
     Mirror X
     Forward Axis +Z, Up Axis +Y
+    
+- Restore simple viewing of textures used by meshes (requires matbin inspection)

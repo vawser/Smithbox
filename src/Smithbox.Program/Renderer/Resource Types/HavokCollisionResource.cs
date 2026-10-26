@@ -1,6 +1,8 @@
 ﻿using HKX2;
+using Org.BouncyCastle.Utilities;
 using SoulsFormats;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
 using System.Numerics;
 using Veldrid.Utilities;
@@ -44,11 +46,29 @@ public class HavokCollisionResource : IResource, IDisposable
         // HKX2 - DS3
         else if (curProject.Descriptor.ProjectType is ProjectType.DS3)
         {
-            DCX.Type t;
-            Memory<byte> decomp = DCX.Decompress(bytes, out t);
-            var br = new BinaryReaderEx(false, decomp);
-            var des = new PackFileDeserializer();
-            Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
+            if(DCX.Is(bytes))
+            {
+                DCX.Type t;
+                Memory<byte> decomp = DCX.Decompress(bytes, out t);
+                var br = new BinaryReaderEx(false, decomp);
+                var des = new PackFileDeserializer();
+                Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
+            }
+            else
+            {
+                var br = new BinaryReaderEx(false, bytes);
+                var des = new PackFileDeserializer();
+                Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
+            }
+
+            // Ignore non-collision HKX files
+            if(Hkx2 != null)
+            {
+                if (HavokTypeUtils.IsHKX2_Animation(curProject, Hkx2))
+                {
+                    return false;
+                }
+            }
         }
         // HKX - BB
         else if (curProject.Descriptor.ProjectType is ProjectType.BB)
@@ -93,11 +113,29 @@ public class HavokCollisionResource : IResource, IDisposable
             {
                 var fileData = curProject.VFS.FS.ReadFile(relativePath);
 
-                DCX.Type t;
-                Memory<byte> decomp = DCX.Decompress(fileData.Value, out t);
-                var br = new BinaryReaderEx(false, decomp);
-                var des = new PackFileDeserializer();
-                Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
+                if (DCX.Is(fileData.Value))
+                {
+                    DCX.Type t;
+                    Memory<byte> decomp = DCX.Decompress(fileData.Value, out t);
+                    var br = new BinaryReaderEx(false, decomp);
+                    var des = new PackFileDeserializer();
+                    Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
+                }
+                else
+                {
+                    var br = new BinaryReaderEx(false, fileData.Value);
+                    var des = new PackFileDeserializer();
+                    Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
+                }
+
+                // Ignore non-collision HKX files
+                if (Hkx2 != null)
+                {
+                    if (HavokTypeUtils.IsHKX2_Animation(curProject, Hkx2))
+                    {
+                        return false;
+                    }
+                }
             }
             catch(Exception e)
             {

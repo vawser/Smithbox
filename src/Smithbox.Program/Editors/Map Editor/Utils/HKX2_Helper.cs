@@ -98,6 +98,11 @@ public static class HKX2_Helper
                         Smithbox.Log(typeof(HKX2_Helper), $"Failed to load HKX2 (ExternMeshShape).", LogLevel.Error, LogPriority.High, e);
                     }
                 }
+                else if(bodyInfo.m_shape is hknpConvexPolytopeShape polytopeMesh)
+                {
+                    // TODO: add support for this so obj collisions can be displayed
+                    continue;
+                }
                 else
                 {
                     continue;
