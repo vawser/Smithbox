@@ -1,0 +1,219 @@
+[
+  {
+    "ID": "c0000",
+    "Name": "Player",
+    "Tags": [
+      "character_placeholder"
+    ]
+  },
+  {
+    "ID": "c1000",
+    "Name": "Dummy",
+    "Tags": [
+      "character_placeholder"
+    ]
+  },
+  {
+    "ID": "c1510",
+    "Name": "Zeppelin",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2000",
+    "Name": "Hooded Man",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2010",
+    "Name": "Tall Hooded Man (Cannon)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2040",
+    "Name": "Man-Beast",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2050",
+    "Name": "Jellyfish",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2070",
+    "Name": "Upright Man-Beast",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2071",
+    "Name": "Upright Man-Beast (Large)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2080",
+    "Name": "Frog-Beast",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2081",
+    "Name": "Frog-Beast (Hair)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2100",
+    "Name": "Mounted Aristocrat [Type 1]",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2101",
+    "Name": "Mounted Aristocrat [Type 1] (Crystals)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2103",
+    "Name": "Mounted Aristocrat [Type 2]",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2110",
+    "Name": "Hunting Dog",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2120",
+    "Name": "Furry Rat",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2121",
+    "Name": "Plagued Rat",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2130",
+    "Name": "Man-Tick",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2140",
+    "Name": "Winged-Man",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c2210",
+    "Name": "Hooded Mannequin",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c6000",
+    "Name": "Winged Spiked Mannequin",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c6010",
+    "Name": "Broad Man",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c6020",
+    "Name": "Blindfolded Lady",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c6030",
+    "Name": "Bare-chested Man",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c6040",
+    "Name": "Street Urchin",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c6070",
+    "Name": "Female Assassin",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c6090",
+    "Name": "Wheeled Chariot Guard",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c6100",
+    "Name": "Shaggy Wolf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c6130",
+    "Name": "Serpentine Woman",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c8010",
+    "Name": "Winged Furry Rat",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "c8050",
+    "Name": "Horrific Moon",
+    "Tags": [
+      ""
+    ]
+  }
+]

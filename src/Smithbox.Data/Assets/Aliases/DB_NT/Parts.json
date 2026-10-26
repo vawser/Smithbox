@@ -1,0 +1,240 @@
+[
+  {
+    "ID": "bd_m_1200",
+    "Name": "Albert [Clothes]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "bd_m_1430",
+    "Name": "Bloodhand Jan [Clothes]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "bd_m_1432",
+    "Name": "Bloodhand Jan [Clothes]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "bd_m_1800",
+    "Name": "Sniper Layla [Clothes]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "bd_m_2000",
+    "Name": "Senator Samir Patres [Clothes]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "bd_m_2220",
+    "Name": "Trang Lanh [Clothes]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "bd_m_2800",
+    "Name": "Zork [Clothes]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "bd_m_6000",
+    "Name": "Bloodhand Jan (No Helmet) [Clothes]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "bd_m_8500",
+    "Name": "Albert (No Accessories) [Clothes]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "bd_m_8510",
+    "Name": "Bloodhand Jan [Clothes]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "hd_m_1201",
+    "Name": "Albert [Body]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "hd_m_1431",
+    "Name": "Bloodhand Jan [Body]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "hd_m_1433",
+    "Name": "Bloodhand Jan [Body]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "hd_m_1801",
+    "Name": "Sniper Layla [Body]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "hd_m_2001",
+    "Name": "Senator Samir Patres [Body]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "hd_m_2221",
+    "Name": "Trang Lanh [Body]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "hd_m_6001",
+    "Name": "Bloodhand Jan [Body]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "hd_m_8501",
+    "Name": "Albert [Body]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "hd_m_8511",
+    "Name": "Bloodhand Jan [Body]",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "wp_a_0000",
+    "Name": "Empty",
+    "Tags": [
+      "character"
+    ]
+  },
+  {
+    "ID": "wp_a_0100",
+    "Name": "Lorrik's Jeweled Saber",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_0150",
+    "Name": "SMG",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_0500",
+    "Name": "Bloodthirsty Axe",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_0550",
+    "Name": "Stone of Sorcery",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_0700",
+    "Name": "Full Moon Blade",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_1600",
+    "Name": "Undersea Cable",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_1650",
+    "Name": "Speargun",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_1900",
+    "Name": "Senate Rapier",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_2000",
+    "Name": "Hieroglyph Katars",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_2050",
+    "Name": "Sniper Rifle",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_4020",
+    "Name": "Verd Gatling Gun",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_4060",
+    "Name": "Saurian Form",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_4180",
+    "Name": "Brooch",
+    "Tags": [
+      "weapon"
+    ]
+  },
+  {
+    "ID": "wp_a_8000",
+    "Name": "Bloodthirsty Axe",
+    "Tags": [
+      "weapon"
+    ]
+  }
+]

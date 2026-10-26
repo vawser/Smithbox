@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a sphere shape." />
+  
+  <Field>
+    <Radius
+    AltName="Radius"
+    Wiki="The radius of the sphere." />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>
