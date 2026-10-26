@@ -70,12 +70,30 @@ public static class ParamLocator
 
     public static string GetParamdefDir(ProjectEntry project)
     {
-        return Path.Join(GetParamAssetsDir(project), "Defs");
+        var srcFolder = GetParamAssetsDir(project);
+
+#if DEBUG
+        if (CFG.Current.Developer_Enable_Tools)
+        {
+            srcFolder = $@"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(project)}";
+        }
+#endif
+
+        return Path.Join(srcFolder, "Defs");
     }
 
     public static string GetParammetaDir(ProjectEntry project)
     {
-        return Path.Join(GetParamAssetsDir(project), "Meta");
+        var srcFolder = GetParamAssetsDir(project);
+
+#if DEBUG
+        if (CFG.Current.Developer_Enable_Tools)
+        {
+            srcFolder = $@"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(project)}";
+        }
+#endif
+
+        return Path.Join(srcFolder, "Meta");
     }
 
     public static string GetMassEditScriptCommonDir()

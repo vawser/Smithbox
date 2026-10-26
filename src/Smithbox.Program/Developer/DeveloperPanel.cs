@@ -60,6 +60,11 @@ public class DeveloperPanel
         {
             Visible = !Visible;
         }
+
+        if (ImGui.MenuItem($"Execute Script"))
+        {
+
+        }
     }
 
     public void Display(uint mainDockspaceID)

@@ -5,9 +5,11 @@
   <Unicode>True</Unicode>
   <FormatVersion>0</FormatVersion>
   <Fields>
-    <Field Def="s32 unk00" />
-    <Field Def="s32 unk01" />
-    <Field Def="s32 unk02" />
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    <Field Def="s32 goodsId" />
+    <Field Def="s32 animationId" />
     <Field Def="s32 unk03" />
     <Field Def="s32 unk04" />
     <Field Def="s32 unk05" />
