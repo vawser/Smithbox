@@ -1,0 +1,35 @@
+{
+  "Name": "BudgetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Win64"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "PS4"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "XBoxOne"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "PS5"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Scarlett"
+      ]
+    }
+  ]
+}

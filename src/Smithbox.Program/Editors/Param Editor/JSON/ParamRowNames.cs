@@ -20,20 +20,20 @@ public class RowNameParam
 {
     public string Name { get; set; }
 
-    public List<RowNameEntry> Entries { get; set; }
+    public List<RowNameEntry> Entries { get; set; } = new();
 }
 public class RowNameParamLegacy
 {
     public string Name { get; set; }
 
-    public List<RowNameEntryLegacy> Entries { get; set; }
+    public List<RowNameEntryLegacy> Entries { get; set; } = new();
 }
 
 public class RowNameEntry
 {
     public int ID { get; set; }
 
-    public List<string> Entries { get; set; }
+    public List<string> Entries { get; set; } = new();
 }
 
 public class RowNameEntryLegacy

@@ -4,6 +4,11 @@
           "Key": "PARAM_Language_English",
           "Name": "English",
           "Folder": "English"
+        },
+        {
+          "Key": "PARAM_Language_Japanese",
+          "Name": "Japanese",
+          "Folder": "Japanese"
         }
     ]
 }

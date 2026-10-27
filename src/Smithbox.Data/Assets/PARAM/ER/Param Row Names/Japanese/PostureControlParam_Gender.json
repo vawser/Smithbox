@@ -1,0 +1,41 @@
+{
+  "Name": "PostureControlParam_Gender",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "男性"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "女性"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "騎乗_男性"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "騎乗_女性"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "しゃがみ_男性"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "しゃがみ_女性"
+      ]
+    }
+  ]
+}

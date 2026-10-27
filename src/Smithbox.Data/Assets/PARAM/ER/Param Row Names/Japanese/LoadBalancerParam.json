@@ -1,0 +1,101 @@
+{
+  "Name": "LoadBalancerParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "PS4"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "XboxOne"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Win64"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "XboxOneX"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "PS4 ムービー再生用"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "XboxOne ムービー再生用"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Win64 ムービー再生用"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "XboxOneX ムービー再生用"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "PS5 画質優先モード"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "PS5 パフォーマンス優先モード"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "PS5 レイトレーシングモード"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "XSX 画質優先モード"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "XSX パフォーマンス優先モード"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "XSX レイトレーシングモード"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "XSS 画質優先モード"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "XSS パフォーマンス優先モード"
+      ]
+    }
+  ]
+}

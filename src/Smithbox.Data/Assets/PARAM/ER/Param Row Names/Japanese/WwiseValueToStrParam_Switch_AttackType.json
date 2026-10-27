@@ -1,0 +1,29 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_AttackType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "切る(デフォルト 文字列が見つからなかった時に使用)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "刺す"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "打つ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "擦る"
+      ]
+    }
+  ]
+}

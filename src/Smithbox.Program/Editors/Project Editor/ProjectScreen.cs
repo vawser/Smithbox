@@ -344,7 +344,7 @@ public class ProjectScreen
         {
             if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DB_NT")}##tab_DB_NT_{imguiKey}"))
             {
-                DisplayProjectListGroup(ProjectType.DB, imguiKey, isLoaded);
+                DisplayProjectListGroup(ProjectType.DB_NT, imguiKey, isLoaded);
                 ImGui.EndTabItem();
             }
         }

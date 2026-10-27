@@ -1,0 +1,47 @@
+{
+  "Name": "KnockBackParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "汎用"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "PC用"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "敵汎用old"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "敵汎用テスト"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "敵汎用old2"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "敵汎用old3"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "敵汎用_FDP"
+      ]
+    }
+  ]
+}

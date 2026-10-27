@@ -1,0 +1,29 @@
+{
+  "Name": "WeatherAssetCreateParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "虹"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "虹"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "オーロラ"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "オーロラ"
+      ]
+    }
+  ]
+}

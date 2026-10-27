@@ -1,0 +1,17 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_PlayerVoiceType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "デフォルト。削除禁止。パラがないとこれになります"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "※255までしか登録できない"
+      ]
+    }
+  ]
+}

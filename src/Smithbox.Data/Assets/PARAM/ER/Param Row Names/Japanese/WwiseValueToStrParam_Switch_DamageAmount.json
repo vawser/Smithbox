@@ -1,0 +1,17 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_DamageAmount",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "小(デフォルト 文字列が見つからなかった時に使用)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "大"
+      ]
+    }
+  ]
+}

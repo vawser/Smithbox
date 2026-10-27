@@ -1,0 +1,41 @@
+{
+  "Name": "MultiMPEstusFlaskBonusParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "ホスト"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "白サイン"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "赤サイン"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "侵入"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "救援ゲスト"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "闘技場"
+      ]
+    }
+  ]
+}

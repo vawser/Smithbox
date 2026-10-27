@@ -1,0 +1,77 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_OffensiveMaterial",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "鉄(デフォルト 文字列が見つからなかった時に使用)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "革"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "木"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "肉"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "石"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "エネルギー"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "なし"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "ダミー1"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "ダミー2"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "ダミー3"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "うじ"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "蝋"
+      ]
+    }
+  ]
+}

@@ -175,12 +175,16 @@ public class ParamRowNameTool
                     // Selected Params
                     if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Language_Selected_Param")}##selectedParamsAction"))
                     {
+                        ImportLanguage = language.Name;
+                        ImportFolder = language.Folder;
                         StandardImportSelectedParam();
                     }
 
                     // All Params
                     if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Language_All_Params")}##allParamsAction"))
                     {
+                        ImportLanguage = language.Name;
+                        ImportFolder = language.Folder;
                         StandardImportAllParams();
                     }
 

@@ -1,0 +1,41 @@
+{
+  "Name": "WaypointParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "水場"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "水場横の陸上"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "塔の中"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "キノコ"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "キャンプ"
+      ]
+    }
+  ]
+}

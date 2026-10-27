@@ -1,0 +1,137 @@
+{
+  "Name": "LoadBalancerDrawDistScaleParam_xsx",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[LOD距離スケール] Map/Obj 小"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[LOD距離スケール] Map/Obj 中"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[LOD距離スケール] Map/Obj 大"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[LOD距離スケール] Map/Obj 特大"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[LOD距離スケール] Chr 小"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[LOD距離スケール] Chr 中"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[LOD距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "[LOD距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[LOD距離スケール] ローカルプレイヤー"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "[LOD距離スケール] リモートプレイヤー"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[LOD距離スケール] 幻影"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[テクスチャLOD距離スケール] Map/Obj 小"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[テクスチャLOD距離スケール] Map/Obj 中"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[テクスチャLOD距離スケール] Map/Obj 大"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[テクスチャLOD距離スケール] Map/Obj 特大"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "[テクスチャLOD距離スケール] Chr 小"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[テクスチャLOD距離スケール] Chr 中"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[テクスチャLOD距離スケール] Chr 大"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "[テクスチャLOD距離スケール] Chr 特大"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "[テクスチャLOD距離スケール] ローカルプレイヤー"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "[テクスチャLOD距離スケール] リモートプレイヤー"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[テクスチャLOD距離スケール] 幻影"
+      ]
+    }
+  ]
+}

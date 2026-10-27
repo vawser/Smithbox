@@ -1,0 +1,23 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_HitStop",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "なし(デフォルト 文字列が見つからなかった時に使用)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "あり"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "壁弾かれ"
+      ]
+    }
+  ]
+}
