@@ -266,8 +266,8 @@ typedef struct {
     int unk3c <hidden=true>; Assert(!unk3c);
     int unk40 <hidden=true>; Assert(!unk40);
     byte unk44; // 0
-    byte unk45; Assert(IsBool(unk45)); // 0
-    short unk46 <hidden=true>; Assert(!unk46);
+    byte unk45;
+    short unk46;
     int unk48 <hidden=true>; Assert(!unk48);
     int unk4c <hidden=true>; Assert(!unk4c);
     int unk50 <hidden=true>; Assert(!unk50);

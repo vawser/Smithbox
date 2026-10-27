@@ -109,7 +109,8 @@ namespace SoulsFormats
             {
                 bw.Pad(0x100);
                 texturePaddingSize = 0x80;
-            } else if (Platform == TPFPlatform.PS4)
+            } 
+            else if (Platform == TPFPlatform.PS4)
             {
                 bw.Pad(0x10);
             }
@@ -317,6 +318,7 @@ namespace SoulsFormats
                 }
 
                 uint nameOffset = br.ReadUInt32();
+
                 //Formerly 'Flags2', as seen in Yabber
                 bool hasFloatStruct = br.AssertInt32([0, 1]) == 1;
 

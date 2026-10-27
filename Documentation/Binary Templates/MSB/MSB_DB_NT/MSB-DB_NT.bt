@@ -1,0 +1,63 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: MSB/NR/MSB-DB_NT.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Coremats
+// File Mask: *.msb
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "../Common.bt"
+#include "../MSB.bt"
+
+typedef byte MapId[4] <read=Str("m%02d_%02d_%02d_%02d",
+    this[0], this[1], this[2], this[3])>;
+
+typedef int MapInt <read=(this == -1 ? "mXX_XX_XX_XX" : Str("m%02d_%02d_%02d_%02x",
+    this >> 24, this << 8 >> 24, this << 16 >> 24, this << 24 >> 24))>;
+
+#include "Model.bt"
+#include "Event.bt"
+#include "Point.bt"
+#include "Route.bt"
+#include "Part.bt"
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct (wstring assertName) {
+    ParamHeader header; Assert(header.name == assertName);
+    
+    local int i <hidden=true>;
+    for (i = 0; i < header.count - 1; i++) {
+        FSeek(header.offsets[i]);
+        switch (header.name) {
+            case "MODEL_PARAM_ST": Model models; break;
+            case "EVENT_PARAM_ST": Event events; break;
+            case "POINT_PARAM_ST": Point points; break;
+            case "ROUTE_PARAM_ST": Route routes; break;
+            case "PARTS_PARAM_ST": Part parts; break;
+            default: Assert(false);
+        }    
+    }
+} Param <read=ReadParamHeader(header)>;
+
+//------------------------------------------------
+
+Header header;
+Param modelParam("MODEL_PARAM_ST");
+FSeek(modelParam.header.nextParamOffset);
+Param eventParam("EVENT_PARAM_ST");
+FSeek(eventParam.header.nextParamOffset);
+Param pointParam("POINT_PARAM_ST");
+FSeek(pointParam.header.nextParamOffset);
+Param routeParam("ROUTE_PARAM_ST");
+FSeek(routeParam.header.nextParamOffset);
+Param layerParam("LAYER_PARAM_ST"); Assert(layerParam.header.count == 1);
+FSeek(layerParam.header.nextParamOffset);
+Param partsParam("PARTS_PARAM_ST");

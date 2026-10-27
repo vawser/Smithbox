@@ -11,7 +11,7 @@
 //   History: 
 //------------------------------------------------
 
-enum <byte> PLATFORM { PC = 0, X360 = 1, PS3 = 2, PS4 = 4, Xbone = 5 };
+enum <byte> PLATFORM { PC = 0, X360 = 1, PS3 = 2, PS4 = 4, Xbone = 5, Switch2 = 10 };
 
 if (ReadByte(0xC) == 1 || ReadByte(0xC) == 2)
     BigEndian();
@@ -61,6 +61,14 @@ typedef struct {
                 float unk28;
             }
         } else if (header.platform == PS4 || header.platform == Xbone) {
+            int imageCount;
+            int unk14;
+            uint nameOffset <format=hex>;
+            int unk1C;
+            int dxgiFormat;
+        }
+        else if(header.platform == Switch2)
+        {
             int imageCount;
             int unk14;
             uint nameOffset <format=hex>;

@@ -17,6 +17,7 @@ public class MapListView : IActionEventHandler
     public string SearchBarText = "";
 
     private bool DisplayChaliceDungeons = true;
+    private bool DisplayAssetMsbs = true;
 
     public MapListView(MapEditorView view, ProjectEntry project)
     {
@@ -81,6 +82,12 @@ public class MapListView : IActionEventHandler
             DisplayChaliceToggleButton();
         }
 
+        if (View.Project.Descriptor.ProjectType is ProjectType.DB or ProjectType.DB_NT)
+        {
+            ImGui.SameLine();
+            DisplayAssetToggleButton();
+        }
+
         if (View.Project.Descriptor.ProjectType is ProjectType.ER 
             or ProjectType.NR
             or ProjectType.DB_NT
@@ -143,6 +150,15 @@ public class MapListView : IActionEventHandler
         GUI.Tooltip("Toggles the display of chalice dungeon maps within the map list.");
     }
 
+    private void DisplayAssetToggleButton()
+    {
+        if (ImGui.Button($"{Icons.Adjust}", DPI.IconButtonSize))
+        {
+            DisplayAssetMsbs = !DisplayAssetMsbs;
+        }
+        GUI.Tooltip("Toggles the display of asset MSBs within the map list.");
+    }
+
     /// <summary>
     /// Handles the two types of map ID list
     /// </summary>
@@ -167,6 +183,11 @@ public class MapListView : IActionEventHandler
             }
 
             if (!DisplayChaliceDungeons && wrapper.Name.Contains("m29_"))
+            {
+                continue;
+            }
+
+            if (!DisplayAssetMsbs && wrapper.Name.Contains("aep"))
             {
                 continue;
             }

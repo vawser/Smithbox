@@ -7,9 +7,6 @@
   Map Data Editor
   Map Editor
   
-# General
-- Add support for Duskbloods
-  
 # Map Editor
 - Update non-parts rendering on property change
   
@@ -22,6 +19,3 @@
     
 - Restore simple viewing of textures used by meshes (requires matbin inspection)
 
-# DB new langs
-fraus (French Canadian)
-nldnl (Dutch)

@@ -1,0 +1,803 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: MSB/NR/Event.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> EventType {
+    //EventType = 0, // Unknown
+    //EventType = 1, // Unknown
+    //EventType = 2, // Unknown
+    //EventType = 3, // Unknown
+    EventTypeTreasure = 4, // OBJ用宝箱情報
+    EventTypeGenerator = 5, // 敵ジェネレーター
+    //EventType = 6, // Unknown
+    EventTypeObjAct = 7, // オブジェアクション情報
+    //EventType = 8, // Unknown
+    EventTypeMapOffset = 9, // (GR未使用)マップオフセット
+    //EventType = 10, // Unknown
+    //EventType = 11, // Unknown
+    EventTypePseudoMultiplayer = 12, // NPCへの侵入ポイント
+    //EventType = 13, // Unknown
+    EventTypePatrolInfo = 14, // (GR未使用)敵巡回情報
+    EventTypePlatoonInfo = 15, // 敵小隊情報
+    //EventType = 16, // Unknown
+    //EventType = 17, // Unknown
+    //EventType = 18, // Unknown
+    //EventType = 19, // Unknown
+    EventTypePatrolRoute = 20, // 巡回ルート
+    EventTypeRiding = 21, // 騎乗
+    EventTypeAutoDrawGroup = 22, // 自動描画グループ撮影ポイント所属ヒット
+    EventTypeSignPuddle = 23, // サイン溜まり
+    EventTypeRetryPoint = 24, // リトライポイント
+    EventTypeBirdRoute = 25, // 鳥移動ルート
+    EventTypeTalkInfo = 26, // 会話情報
+    EventTypeTeamFight = 27, // 集団戦
+    EventTypeUnknown28 = 28,
+    EventTypeUnknown30 = 30,
+    EventTypeUnknown31 = 31,
+    EventTypeUnknown32 = 32,
+    EventTypeUnknown33 = 33,
+    EventTypeUnknown34 = 34,
+    EventTypeUnknown35 = 35,
+    EventTypeUnknown36 = 36,
+    EventTypeUnknown37 = 37,
+    EventTypeOther = -1,
+};
+
+struct EventCommon;
+struct EventStruct28;
+
+struct EventTreasure;
+struct EventGenerator;
+struct EventObjAct;
+struct EventPlatoonInfo;
+struct EventPatrolRoute;
+struct EventPatrolInfo;
+struct EventBirdRoute;
+struct EventTeamFight;
+struct EventType28;
+struct EventType30;
+struct EventType31;
+struct EventType32;
+struct EventType33;
+struct EventType34;
+struct EventType35;
+struct EventType36;
+struct EventType37;
+struct EventMapOffset;
+struct EventSignPuddle;
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex>; Assert(nameOffset);
+    int eventNo; // -1
+    EventType type;
+    int typeIndex;
+    int unk14;
+    quad commonOffset <format=hex>; Assert(commonOffset);
+    quad typeOffset <format=hex>;
+    
+    FSeek(start + nameOffset);
+    wstring name;
+    
+    // Align: 8
+    FSeek(start + commonOffset);
+    EventCommon common;
+    
+    switch (type) {
+        case EventTypeTreasure:
+        case EventTypeGenerator:
+        case EventTypeObjAct:
+        case EventTypePlatoonInfo:
+        case EventTypePatrolRoute:
+        case EventTypePatrolInfo: 
+        case EventTypeBirdRoute:
+        case EventTypeTeamFight:
+        case EventTypeUnknown28:
+        case EventTypeUnknown30:
+        case EventTypeUnknown31:
+        case EventTypeUnknown32:
+        case EventTypeUnknown33:
+        case EventTypeUnknown34:
+        case EventTypeUnknown35:
+        case EventTypeUnknown36:
+        case EventTypeUnknown37:
+        case EventTypeMapOffset:
+        case EventTypeSignPuddle:
+            Assert(typeOffset); 
+            break;
+        
+        case EventTypeOther: Assert(!typeOffset); break;
+        
+        default: Assert(false, Str("Unknown event type: %d", type));
+    }
+    
+    if (typeOffset) {
+        FSeek(start + typeOffset);
+        switch (type) {
+            case EventTypeTreasure: EventTreasure treasure; break;
+            case EventTypeGenerator: EventGenerator generator; break;
+            case EventTypeObjAct: EventObjAct objAct; break;
+            case EventTypePlatoonInfo: EventPlatoonInfo platoonInfo; break;
+            case EventTypePatrolRoute: EventPatrolRoute patrolRoute; break;
+            case EventTypePatrolInfo: EventPatrolInfo patrolInfo; break;
+            case EventTypeBirdRoute: EventBirdRoute birdRoute; break;
+            case EventTypeTeamFight: EventTeamFight teamFight; break;
+            case EventTypeUnknown28: EventType28 type28; break;
+            case EventTypeUnknown30: EventType30 type30; break;
+            case EventTypeUnknown31: EventType31 type31; break;
+            case EventTypeUnknown32: EventType32 type32; break;
+            case EventTypeUnknown33: EventType33 type33; break;
+            case EventTypeUnknown34: EventType34 type34; break;
+            case EventTypeUnknown35: EventType35 type35; break;
+            case EventTypeUnknown36: EventType36 type36; break;
+            case EventTypeUnknown37: EventType37 type37; break;
+            case EventTypeMapOffset: EventMapOffset mapOffset; break;
+            case EventTypeSignPuddle: EventSignPuddle signPuddle; break;
+            default: Assert(false, Str("Unexpected event type: %d", type));
+        }
+    }
+    
+} Event <read=ReadEvent, bgcolor=cYellow>;
+
+wstring ReadEvent(Event &e) {
+    return Str("[%4d] <%s> ", e.typeIndex, EnumToString(e.type)) + e.name;    
+}
+
+//------------------------------------------------
+
+typedef struct {
+    int partIndex <hidden=true>; Assert(partIndex == -1);
+    int pointIndex; // -1
+    uint entityId; // 0
+    byte unk0c; // -1
+    byte unk0d <hidden=true>; Assert(!unk0d);
+    short unk0e <hidden=true>; Assert(!unk0e);
+} EventCommon;
+
+
+//------------------------------------------------
+
+typedef struct {
+    int unk00 <hidden=true>; Assert(!unk00);
+    int unk04 <hidden=true>; Assert(!unk04);
+    int partIndex; // -1
+    int unk0c <hidden=true>; Assert(!unk0c);
+    int itemLotParamId; // -1
+    int unk14 <hidden=true>; Assert(unk14 == -1);
+    int unk18 <hidden=true>; Assert(unk18 == -1);
+    int unk1c <hidden=true>; Assert(unk1c == -1);
+    int unk20 <hidden=true>; Assert(unk20 == -1);
+    int unk24 <hidden=true>; Assert(unk24 == -1);
+    int unk28 <hidden=true>; Assert(unk28 == -1);
+    int unk2c <hidden=true>; Assert(unk2c == -1);
+    int unk30 <hidden=true>; Assert(unk30 == -1);
+    int unk34 <hidden=true>; Assert(unk34 == -1);
+    int unk38; // -1
+    int pickupAnim <hidden=true>; Assert(pickupAnim == -1);
+    byte unk40; // 1
+    byte unk41; Assert(IsBool(unk41));
+    byte unk42; Assert(IsBool(unk42));
+    byte unk43; Assert(IsBool(unk43)); // 1
+    int unk44; // -1
+    short unk48; // -1
+    short unk4a;
+    int unk4c <hidden=true>; Assert(!unk4c);
+} EventTreasure;
+
+typedef struct {
+    byte maxNum; // 1
+    byte genType;
+    short limitNum; // -1
+    short minGenNum; // 1
+    short maxGenNum; // 1
+    float minInterval; // 0
+    float maxInterval; // 0
+    byte initialSpawnCount; // -1
+    byte unk11;
+    short unk12;
+    float unk14; // 0
+    float unk18; // 0
+    int unk1c;
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    int pointIndices[8]; // -1
+    int unk50;
+    int unk54;
+    int unk58;
+    int unk5c;
+    int partIndices[32]; // -1
+    int unke0;
+    int unke4;
+    int unke8;
+    int unkec;
+    int unkf0;
+    int unkf4;
+    int unkf8;
+    int unkfc;
+} EventGenerator;
+
+typedef struct {
+    int entityId; // 0
+    int partIndex; // -1
+    int objActParamId;
+    int unk0c; // 5
+    int eventFlagId; // 0
+    int unk14; // -1
+    int unk18 <hidden=true>; Assert(!unk18);
+    int unk1C <hidden=true>; Assert(!unk1C);
+} EventObjAct;
+
+typedef struct {
+    int unk00; // -1
+    byte unk04; Assert(IsBool(unk04)); // 0
+    byte unk05 <hidden=true>; Assert(!unk05);
+    short unk06 <hidden=true>; Assert(!unk06);
+    int unk08 <hidden=true>; Assert(!unk08);
+    int unk0c <hidden=true>; Assert(!unk0c);
+    int partIndices[32]; // -1
+} EventPlatoonInfo;
+
+typedef struct {
+    byte unk00; // 0
+    byte unk01 <hidden=true>; Assert(!unk01);
+    byte unk02 <hidden=true>; Assert(!unk02);
+    byte unk03 <hidden=true>; Assert(unk03 == 1);
+    int unk04 <hidden=true>; Assert(unk04 == -1);
+    int unk08 <hidden=true>; Assert(!unk08);
+    int unk0C <hidden=true>; Assert(!unk0C);
+    short pointIndices[64]; // -1
+} EventPatrolRoute;
+
+typedef struct {
+    byte unk00;
+    byte unk01;
+    byte unk02;
+    byte unk03;
+    int unk04;
+    int unk08;
+    int unk0C;
+    short walkPointIndices[64];
+    
+    // padding / indices: 16
+} EventPatrolInfo;
+
+typedef struct {
+    int unk00;
+    int unk04; // 0
+    int unk08; // 0
+    int unk0c; // 0
+    short pointIndices[32]; // -1
+    
+    // padding / indices: 184
+} EventBirdRoute;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08; // -1
+    int unk0c;
+    int unk14; // 0
+    int unk18; // -1
+    int unk1C; // 0
+    int unk20; // -1
+    int unk24;
+    int unk28;
+    int unk2c;
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3c;
+    int unk40;
+} EventTeamFight;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    
+    // padding: 128
+} EventType28;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+    
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1c;
+    
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3c;
+    
+} EventType30;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+    
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1c;
+    
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3c;
+} EventType31;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+    
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1c;
+    
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3c;
+} EventType32;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+    
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1c;
+    
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3c;
+    
+    int unk40;
+    int unk44;
+    int unk48;
+    int unk4c;
+    
+    int unk50;
+    int unk54;
+    int unk58;
+    int unk5c;
+    
+    int unk60;
+    int unk64;
+    int unk68;
+    int unk6c;
+    
+    int unk70;
+    int unk74;
+    int unk78;
+    int unk7c;
+    
+    int unk80;
+    int unk84;
+    int unk88;
+    int unk8c;
+    
+    int unk90;
+    int unk94;
+    int unk98;
+    int unk9c;
+    
+    int unk100;
+    int unk104;
+    int unk108;
+    int unk10c;
+    
+    int unk110;
+    int unk114;
+    int unk118;
+    int unk11c;
+    
+    int unk120;
+    int unk124;
+    int unk128;
+    int unk12c;
+    
+    int unk130;
+    int unk134;
+    int unk138;
+    int unk13c;
+    
+    int unk140;
+    int unk144;
+    int unk148;
+    int unk14c;
+    
+    int unk150;
+    int unk154;
+    int unk158;
+    int unk15c;
+    
+    int unk160;
+    int unk164;
+    int unk168;
+    int unk16c;
+} EventType33;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+    
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1c;
+    
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3c;
+    
+    int unk40;
+    int unk44;
+    int unk48;
+    int unk4c;
+    
+    int unk50;
+    int unk54;
+    int unk58;
+    int unk5c;
+    
+    int unk60;
+    int unk64;
+    int unk68;
+    int unk6c;
+    
+    int unk70;
+    int unk74;
+    int unk78;
+    int unk7c;
+    
+    int unk80;
+    int unk84;
+    int unk88;
+    int unk8c;
+    
+    int unk90;
+    int unk94;
+    int unk98;
+    int unk9c;
+    
+    int unk100;
+    int unk104;
+    int unk108;
+    int unk10c;
+    
+    int unk110;
+    int unk114;
+    int unk118;
+    int unk11c;
+    
+    int unk120;
+    int unk124;
+    int unk128;
+    int unk12c;
+    
+    int unk130;
+    int unk134;
+    int unk138;
+    int unk13c;
+    
+    int unk140;
+    int unk144;
+    int unk148;
+    int unk14c;
+    
+    int unk150;
+    int unk154;
+    int unk158;
+    int unk15c;
+} EventType34;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+    
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1c;
+    
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3c;
+    
+    int unk40;
+    int unk44;
+    int unk48;
+    int unk4c;
+    
+    int unk50;
+    int unk54;
+    int unk58;
+    int unk5c;
+    
+    int unk60;
+    int unk64;
+    int unk68;
+    int unk6c;
+    
+    int unk70;
+    int unk74;
+    int unk78;
+    int unk7c;
+    
+    int unk80;
+    int unk84;
+    int unk88;
+    int unk8c;
+    
+    int unk90;
+    int unk94;
+    int unk98;
+    int unk9c;
+    
+    int unk100;
+    int unk104;
+    int unk108;
+    int unk10c;
+    
+    int unk110;
+    int unk114;
+    int unk118;
+    int unk11c;
+    
+    int unk120;
+    int unk124;
+    int unk128;
+    int unk12c;
+    
+    int unk130;
+    int unk134;
+    int unk138;
+    int unk13c;
+    
+    int unk140;
+    int unk144;
+    int unk148;
+    int unk14c;
+    
+    int unk150;
+    int unk154;
+    int unk158;
+    int unk15c;
+} EventType35;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+    
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1c;
+    
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3c;
+    
+    int unk40;
+    int unk44;
+    int unk48;
+    int unk4c;
+    
+    int unk50;
+    int unk54;
+    int unk58;
+    int unk5c;
+    
+    int unk60;
+    int unk64;
+    int unk68;
+    int unk6c;
+    
+    int unk70;
+    int unk74;
+    int unk78;
+    int unk7c;
+    
+    int unk80;
+    int unk84;
+    int unk88;
+    int unk8c;
+    
+    int unk90;
+    int unk94;
+    int unk98;
+    int unk9c;
+    
+    int unk100;
+    int unk104;
+    int unk108;
+    int unk10c;
+    
+    int unk110;
+    int unk114;
+    int unk118;
+    int unk11c;
+    
+    int unk120;
+    int unk124;
+    int unk128;
+    int unk12c;
+    
+    int unk130;
+    int unk134;
+    int unk138;
+    int unk13c;
+    
+    int unk140;
+    int unk144;
+    int unk148;
+    int unk14c;
+    
+    int unk150;
+    int unk154;
+    int unk158;
+    int unk15c;
+} EventType36;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+    
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1c;
+    
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3c;
+    
+    int unk40;
+    int unk44;
+    int unk48;
+    int unk4c;
+    
+    int unk50;
+    int unk54;
+    int unk58;
+    int unk5c;
+    
+    int unk60;
+    int unk64;
+    int unk68;
+    int unk6c;
+    
+    int unk70;
+    int unk74;
+    int unk78;
+    int unk7c;
+} EventType37;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+} EventMapOffset;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0c;
+    
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1c;
+    
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3c;
+    
+    int unk40;
+    int unk44;
+    int unk48;
+    int unk4c;
+    
+    int unk50;
+    int unk54;
+    int unk58;
+    int unk5c;
+    
+    int unk60;
+    int unk64;
+    int unk68;
+    int unk6c;
+    
+    int unk70;
+    int unk74;
+    int unk78;
+    int unk7c;
+} EventSignPuddle;

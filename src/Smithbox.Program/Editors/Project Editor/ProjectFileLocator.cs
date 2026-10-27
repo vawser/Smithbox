@@ -356,6 +356,13 @@ public class ProjectFileLocator : IDisposable
             var folder = entry.Folder;
             var archive = entry.Archive;
             var isMap = folder.StartsWith("/map");
+
+            // Duskbloods has 'prefab' like assets that make use of MSB, let us show them in the Map Editor
+            if(Project.Descriptor.ProjectType is ProjectType.DB or ProjectType.DB_NT)
+            {
+                isMap = folder.StartsWith("/map") || folder.StartsWith("/asset/aep/mapstudio");
+            }
+
             var isSd = archive.Contains("sd");
             var isDs2Map = folder.StartsWith("/model/map");
 

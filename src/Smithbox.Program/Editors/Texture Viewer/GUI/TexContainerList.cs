@@ -51,6 +51,7 @@ public class TexContainerList
         DisplayFileCategories_ER();
         DisplayFileCategories_AC6();
         DisplayFileCategories_NR();
+        DisplayFileCategories_DB();
 
         ImGui.EndTabBar();
 
@@ -956,6 +957,68 @@ public class TexContainerList
                 TextureViewCategory.HighDefinitionIcons,
                 new List<string>() { "solo" },
                 Project.Handler.TextureData.PrimaryBank.PackedEntries);
+        }
+    }
+
+    public void DisplayFileCategories_DB()
+    {
+        if (Project.Descriptor.ProjectType is ProjectType.DB or ProjectType.DB_NT)
+        {
+            // Chr
+            DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Characters"),
+                "Characters",
+                TextureViewCategory.Characters,
+                new List<string>() { "/chr" },
+                Project.Handler.TextureData.PrimaryBank.Entries);
+
+            // Assets
+            DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Assets"),
+                "Asset",
+                TextureViewCategory.Assets,
+                new List<string>() { "/asset" },
+                Project.Handler.TextureData.PrimaryBank.Entries);
+
+            // Parts
+            DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Parts"),
+                "Parts",
+                TextureViewCategory.Parts,
+                new List<string>() { "/parts" },
+                Project.Handler.TextureData.PrimaryBank.Entries);
+
+            // Map
+            DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map"),
+                "Map",
+                TextureViewCategory.Map,
+                new List<string>() { "/map" },
+                Project.Handler.TextureData.PrimaryBank.Entries);
+
+            // Menu
+            DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Menu"),
+                "Menu",
+                TextureViewCategory.Menu,
+                new List<string>() { "/menugf" },
+                Project.Handler.TextureData.PrimaryBank.Entries);
+
+            // Other
+            DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Other"),
+                "Other",
+                TextureViewCategory.Other,
+                new List<string>() { "/other" },
+                Project.Handler.TextureData.PrimaryBank.Entries);
+
+            // SFX
+            DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Particles"),
+                "Particles",
+                TextureViewCategory.Particles,
+                new List<string>() { "/sfx" },
+                Project.Handler.TextureData.PrimaryBank.Entries);
         }
     }
 }
