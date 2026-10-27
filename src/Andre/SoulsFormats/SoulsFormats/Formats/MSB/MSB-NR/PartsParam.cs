@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
-using static SoulsFormats.EMEVD;
-using static SoulsFormats.MSB_NR.Part.EnemyBase;
-using static SoulsFormats.MSBE.Part;
 
 namespace SoulsFormats
 {
