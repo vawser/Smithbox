@@ -61,7 +61,7 @@ public static class RowNameHelper
                 };
                 var json = JsonSerializer.Serialize(newRowNameEntry, typeof(RowNameParam), options);
 
-                var outputDir = $@"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\ER\Param Row Names\Japanese\{filename}.json";
+                var outputDir = $@"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\ER\Param Row Names\English (Machine Translated)\{filename}.json";
 
                 File.WriteAllText(outputDir, json);
             }

@@ -1,0 +1,203 @@
+{
+  "Name": "MapNameTexParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Tenebre(-)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Tenebre(+)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Seeker's Hill (-)"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Seeker's Hill (+)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Green South(-)"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Green South(+)"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Lake(-)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Lake(+)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Giant EV Front (-)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Giant EV Front (+)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Hang Terrain (-)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Hang Terrain (+)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Highland(-)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Highland(-)"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Royal Capital (-)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Royal Capital (+)"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Volcano(-)"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Volcano(+)"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Highland Snowy Mountain Connection(-)"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Highland Snowy Mountain Connection(+)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Plains(-)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Plains(+)"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Ruins Descending Origin(-)"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Ruins Descending Origin(+)"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Great Rot Swamp (-)"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Great Rot Swamp (+)"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Snowy Mountain Giant Side (-)"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Snowy Mountain Giant Side (+)"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Giant Graveyard (-)"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Giant Graveyard (+)"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Snowfield(-)"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Snowfield(+)"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "Other"
+      ]
+    }
+  ]
+}

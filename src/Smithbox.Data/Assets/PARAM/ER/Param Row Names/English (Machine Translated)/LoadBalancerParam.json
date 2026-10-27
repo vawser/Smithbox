@@ -1,0 +1,101 @@
+{
+  "Name": "LoadBalancerParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "PS4"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "XboxOne"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Win64"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "XboxOneX"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "PS4 for Movie Playback"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "XboxOne Movie Playback"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Win64 Movie Playback"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "XboxOneX Movie Playback"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "PS5 Quality Priority Mode"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "PS5 Performance Priority Mode"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "PS5 Ray Tracing Mode"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "XSX Quality Priority Mode"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "XSX Performance Priority Mode"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "XSX Ray Tracing Mode"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "XSS Quality Priority Mode"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "XSS Performance Priority Mode"
+      ]
+    }
+  ]
+}

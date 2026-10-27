@@ -1,0 +1,65 @@
+{
+  "Name": "CutSceneTextureLoadParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Dummy Data (Do Not Change)"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "Malenia Battle Start"
+      ]
+    },
+    {
+      "ID": 13000040,
+      "Entries": [
+        "Maliketh HU"
+      ]
+    },
+    {
+      "ID": 60510000,
+      "Entries": [
+        "Radahn HU"
+      ]
+    },
+    {
+      "ID": 91000000,
+      "Entries": [
+        "Radahn HU_Work Use"
+      ]
+    },
+    {
+      "ID": 14000010,
+      "Entries": [
+        "Rennala HU"
+      ]
+    },
+    {
+      "ID": 19000000,
+      "Entries": [
+        "Crumbling Marika HU"
+      ]
+    },
+    {
+      "ID": 12060000,
+      "Entries": [
+        "Pact with Ranni"
+      ]
+    },
+    {
+      "ID": 21010000,
+      "Entries": [
+        "Messmer Battle Start"
+      ]
+    },
+    {
+      "ID": 21010010,
+      "Entries": [
+        "Messmer HU"
+      ]
+    }
+  ]
+}

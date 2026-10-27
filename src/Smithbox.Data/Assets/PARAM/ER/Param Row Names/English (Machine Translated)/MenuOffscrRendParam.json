@@ -1,0 +1,71 @@
+{
+  "Name": "MenuOffscrRendParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "For Character Creation Preview <Full Body>"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For Character Creation Preview <Face>"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Status Menu For <Full Body>"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Ranking Menu Use <Full Body>"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For Character Creation Grid <Face>"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Kick menu for <face>"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Status Menu For <Face>"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Ranking Menu Use <Face>"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "For Summon Sign <Face>"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Game End Confirmation Menu Face"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For Profile Selection <Face>"
+      ]
+    }
+  ]
+}

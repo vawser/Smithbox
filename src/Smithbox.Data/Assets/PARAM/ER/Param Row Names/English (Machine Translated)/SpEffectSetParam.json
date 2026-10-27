@@ -1,0 +1,1811 @@
+{
+  "Name": "SpEffectSetParam",
+  "Entries": [
+    {
+      "ID": 101000,
+      "Entries": [
+        "c****_Generic Character_Running Special Effect"
+      ]
+    },
+    {
+      "ID": 101001,
+      "Entries": [
+        "c****_Generic Character_Running Special Effect (Mounted Only)"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "c****_Generic Character_Combat Damage Taken Reduction_0.00x"
+      ]
+    },
+    {
+      "ID": 102010,
+      "Entries": [
+        "c****_Generic Character_Combat Damage Taken Reduction_0.01x"
+      ]
+    },
+    {
+      "ID": 102020,
+      "Entries": [
+        "c****_Generic Character_Combat Damage Taken Reduction_0.10x"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "c****_Generic Character_Dull Sight and Hearing"
+      ]
+    },
+    {
+      "ID": 103010,
+      "Entries": [
+        "c****_Generic Character_Disable Hearing"
+      ]
+    },
+    {
+      "ID": 103020,
+      "Entries": [
+        "c****_Generic Character_Viewer Multiplier 1.5x"
+      ]
+    },
+    {
+      "ID": 104000,
+      "Entries": [
+        "c****_Generic Character_Appearance Red Phantom"
+      ]
+    },
+    {
+      "ID": 105000,
+      "Entries": [
+        "c****_Generic Character_Character vs Character Combat_Indiscriminate"
+      ]
+    },
+    {
+      "ID": 106100,
+      "Entries": [
+        "c****_Generic Character_Appearance Phantom_Snowy Mountain Wild Animal"
+      ]
+    },
+    {
+      "ID": 106101,
+      "Entries": [
+        "c****_Generic Character_Appearance Phantom_Snowy Mountain Wild Animal (Black Knife Descendant only)"
+      ]
+    },
+    {
+      "ID": 106110,
+      "Entries": [
+        "c****_Generic Character_Appearance Phantom_Sorcerer's Tower"
+      ]
+    },
+    {
+      "ID": 106120,
+      "Entries": [
+        "c****_Generic Character_Appearance Phantom_Plains Town"
+      ]
+    },
+    {
+      "ID": 107000,
+      "Entries": [
+        "c****_Character Generic Night/Late Night (20:00 - 4:00) Sleep"
+      ]
+    },
+    {
+      "ID": 107001,
+      "Entries": [
+        "c****_Generic Character Sleep Morning/Noon (4:00-16:00)"
+      ]
+    },
+    {
+      "ID": 107002,
+      "Entries": [
+        "c****_Generic Character Sleep Morning/Noon/Evening (4:00-20:00)"
+      ]
+    },
+    {
+      "ID": 108000,
+      "Entries": [
+        "c****_Generic Character_Defeated Soldier"
+      ]
+    },
+    {
+      "ID": 108010,
+      "Entries": [
+        "c****_Generic Character_Make Circle Enemy"
+      ]
+    },
+    {
+      "ID": 108100,
+      "Entries": [
+        "c****_Generic Character_Spirit Candle"
+      ]
+    },
+    {
+      "ID": 108110,
+      "Entries": [
+        "c****_Generic Character_Spirit Candle_Noble Version"
+      ]
+    },
+    {
+      "ID": 109000,
+      "Entries": [
+        "c****_Generic Character_Boss Effect"
+      ]
+    },
+    {
+      "ID": 109010,
+      "Entries": [
+        "c****_Generic Character_Mook Effect"
+      ]
+    },
+    {
+      "ID": 109400,
+      "Entries": [
+        "c****_Generic Character_Disable Fall Motion"
+      ]
+    },
+    {
+      "ID": 1200000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 1200010,
+      "Entries": [
+        "c0120_CatapultDummy: Lake Area For_Bullet Fire"
+      ]
+    },
+    {
+      "ID": 1200020,
+      "Entries": [
+        "c0120_CatapultDummy: Highland Area For_Bullet Fire"
+      ]
+    },
+    {
+      "ID": 1200030,
+      "Entries": [
+        "c0120_CatapultDummy: Plains Area For_Bullet Fire"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "c1000_BonfireDummy_Melina Confirmed Appearance Bonfire ID"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "c1000_BonfireDummy_Melina Appearance Bonfire ID"
+      ]
+    },
+    {
+      "ID": 20410000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 20410010,
+      "Entries": [
+        "c2041_Rot Larva_Thread Magic Use"
+      ]
+    },
+    {
+      "ID": 20410020,
+      "Entries": [
+        "c2041_Rot Larva_Thread Magic Use & Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 20410030,
+      "Entries": [
+        "c2041_Rot Larva_Initial Action Pounce"
+      ]
+    },
+    {
+      "ID": 21200000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 21200010,
+      "Entries": [
+        "c2120_Arbitrating Malenia_Cutscene Initial Action"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 21400010,
+      "Entries": [
+        "c2140_Omens_Initial Breath Priority/Curse Only"
+      ]
+    },
+    {
+      "ID": 21400020,
+      "Entries": [
+        "c2140_Omens_Initial Throw Priority/One-handed Axe Only"
+      ]
+    },
+    {
+      "ID": 21400030,
+      "Entries": [
+        "c2140_Omens_Initial Death Mist Priority/Death Prince Follower Only"
+      ]
+    },
+    {
+      "ID": 21400040,
+      "Entries": [
+        "c2140_Omens_Jump Attack Seal"
+      ]
+    },
+    {
+      "ID": 21400050,
+      "Entries": [
+        "c2140_Omens_Initial Curse Explosion Priority/Strong Curse Only"
+      ]
+    },
+    {
+      "ID": 21500000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 21500010,
+      "Entries": [
+        "c2150_Wisp_Lightning Shot_Stopped Version"
+      ]
+    },
+    {
+      "ID": 21500020,
+      "Entries": [
+        "c2150_Wisp_Lightning Shot_Moving Version"
+      ]
+    },
+    {
+      "ID": 22700000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 22700010,
+      "Entries": [
+        "c2270/2271_Death-stench Crab Used with Initial Wait/Special Wait Enable Vision"
+      ]
+    },
+    {
+      "ID": 22700020,
+      "Entries": [
+        "c2270/2271_Death-stench Crab Initial Action_Breath"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 30000010,
+      "Entries": [
+        "c3000_Soldier of the Fallen Race Soldier"
+      ]
+    },
+    {
+      "ID": 30000020,
+      "Entries": [
+        "c3000_Soldier of the Fallen Race Soldier"
+      ]
+    },
+    {
+      "ID": 30000030,
+      "Entries": [
+        "c3000_Soldier of the Fallen Race Soldier"
+      ]
+    },
+    {
+      "ID": 30000040,
+      "Entries": [
+        "c3000_Soldier of the Fallen Race Soldier"
+      ]
+    },
+    {
+      "ID": 30000050,
+      "Entries": [
+        "c3000_Soldier of the Fallen Race Soldier"
+      ]
+    },
+    {
+      "ID": 30000060,
+      "Entries": [
+        "c3000_Soldier of the Fallen Race Soldier"
+      ]
+    },
+    {
+      "ID": 30000070,
+      "Entries": [
+        "c3000_Soldier of the Fallen Race Soldier"
+      ]
+    },
+    {
+      "ID": 30000080,
+      "Entries": [
+        "c3000_Soldier of the Fallen Race Soldier"
+      ]
+    },
+    {
+      "ID": 30000090,
+      "Entries": [
+        "c3000_Soldier of the Fallen Race Soldier"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "c3000_Soldier of the Fallen Race Soldier"
+      ]
+    },
+    {
+      "ID": 30000110,
+      "Entries": [
+        "c3000_Lost Kin soldier"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 30100010,
+      "Entries": [
+        "c3000_Lost Kin Knight"
+      ]
+    },
+    {
+      "ID": 30700000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 30700010,
+      "Entries": [
+        "c3070_Old Woman Bat: Lantern_Fire Pot Fixed Turret"
+      ]
+    },
+    {
+      "ID": 30700020,
+      "Entries": [
+        "c3070_Man-Eater Hag: Dancing Individual_Red Eyes_ON"
+      ]
+    },
+    {
+      "ID": 30701000,
+      "Entries": [
+        "c3070_Man-Eater Hag: Sing and Dance_Song SE_ON"
+      ]
+    },
+    {
+      "ID": 30800000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 30801000,
+      "Entries": [
+        "c3080_Insect Golem_First-time Throw & Throwable"
+      ]
+    },
+    {
+      "ID": 30800200,
+      "Entries": [
+        "c3080_Insect Golem_Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 30800210,
+      "Entries": [
+        "c3080_Insect Golem_Ranged Attacks Disabled"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 31501000,
+      "Entries": [
+        "c3150 Rune Hunting Knight_Snowy Mountain Lower Level Only_Morning Stealth Effect"
+      ]
+    },
+    {
+      "ID": 31700000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 31700010,
+      "Entries": [
+        "c3170_Wolf Rider_Opening Enchant"
+      ]
+    },
+    {
+      "ID": 31700020,
+      "Entries": [
+        "c3170_Wolf Rider_Enchanted Applied"
+      ]
+    },
+    {
+      "ID": 31800000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 31800010,
+      "Entries": [
+        "c3180_Wolf Rider's Wolf_Placement When Mounted"
+      ]
+    },
+    {
+      "ID": 31810000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 31810010,
+      "Entries": [
+        "c3181_Runewolf_Soul Greatsword Usage Type"
+      ]
+    },
+    {
+      "ID": 31810020,
+      "Entries": [
+        "c3181_Runewolf_First Action Wolf Buff"
+      ]
+    },
+    {
+      "ID": 32510000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 32510010,
+      "Entries": [
+        "c3251_Tree Sentinel (Leader): Battle opening_Sacred Ground Skill"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 33200010,
+      "Entries": [
+        "c3320_Mimic Slime_Aggressive"
+      ]
+    },
+    {
+      "ID": 33200020,
+      "Entries": [
+        "c3320_Mimic Slime_Cautious"
+      ]
+    },
+    {
+      "ID": 33200030,
+      "Entries": [
+        "c3320_Mimic Slime_Timid"
+      ]
+    },
+    {
+      "ID": 33200040,
+      "Entries": [
+        "c3320_Marika Slime_Spear Throw Type Conversion"
+      ]
+    },
+    {
+      "ID": 33300000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 33300010,
+      "Entries": [
+        "c3330_Mother Slime_Super Fierce Charge Enabled"
+      ]
+    },
+    {
+      "ID": 33300020,
+      "Entries": [
+        "c3330_Mother Slime_Fierce Charge Enabled"
+      ]
+    },
+    {
+      "ID": 33600000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 33600010,
+      "Entries": [
+        "c3360_Ancestral Follower (Male)_Slows Bow Switching"
+      ]
+    },
+    {
+      "ID": 33600020,
+      "Entries": [
+        "c3360_Ancestral Follower (Male)_Spirit Form"
+      ]
+    },
+    {
+      "ID": 33700000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 33700010,
+      "Entries": [
+        "c3370_Ancestral Follower (Female)_Uses Wild Animal Summon"
+      ]
+    },
+    {
+      "ID": 34700000,
+      "Entries": [
+        "---------------------------------------"
+      ]
+    },
+    {
+      "ID": 34700010,
+      "Entries": [
+        "c3470_Frog-man_Placement Requirement_Sword B Fixed Turret"
+      ]
+    },
+    {
+      "ID": 34700020,
+      "Entries": [
+        "c3470_Frog-man_Placement Requirement_Cartwheel Seal"
+      ]
+    },
+    {
+      "ID": 34700030,
+      "Entries": [
+        "c3470_Frog-man_Placement Requirement_Snowy Mountain Fixed Turret"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "c3500_Buried Skeleton Prohibit Approach When Firing Crossbow"
+      ]
+    },
+    {
+      "ID": 35000020,
+      "Entries": [
+        "c3500_Buried Skeleton Golden Variant Prohibit Flying Breath"
+      ]
+    },
+    {
+      "ID": 35000030,
+      "Entries": [
+        "c3500_Buried Skeleton Golden Variant First Action Flying Breath"
+      ]
+    },
+    {
+      "ID": 35000040,
+      "Entries": [
+        "c3500_Buried Skeleton Spirit Form ※Do not use without permission For Seaside Tower 5-1 Trial"
+      ]
+    },
+    {
+      "ID": 35100000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 35100010,
+      "Entries": [
+        "c3510_New Skeleton First Action Perform Dash Slash (Used for Ambushes"
+      ]
+    },
+    {
+      "ID": 35700000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 35700010,
+      "Entries": [
+        "c3570_Godskin Apostle Another_Opening Roll"
+      ]
+    },
+    {
+      "ID": 36100000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 36100010,
+      "Entries": [
+        "c3610_Servant of the Moon (Small): Fixed Turret"
+      ]
+    },
+    {
+      "ID": 36300000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 36300010,
+      "Entries": [
+        "c3630_Servant of the Moon (Fat): Fixed Turret"
+      ]
+    },
+    {
+      "ID": 36600000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 36600005,
+      "Entries": [
+        "c3660_Rune Citizen: Fire Pot Type"
+      ]
+    },
+    {
+      "ID": 36600010,
+      "Entries": [
+        "c3660_Rune Citizen: Oil Pot Type"
+      ]
+    },
+    {
+      "ID": 36600020,
+      "Entries": [
+        "c3660_Rune Citizen: Snake Pot Type"
+      ]
+    },
+    {
+      "ID": 36600030,
+      "Entries": [
+        "c3660_Rune Citizen: Throw Type (For Fixed Turret)"
+      ]
+    },
+    {
+      "ID": 36600060,
+      "Entries": [
+        "c3660_Rune Citizen: AI-voiced stone throw leader"
+      ]
+    },
+    {
+      "ID": 36600070,
+      "Entries": [
+        "c3660_Rune Citizen_First-time backstab type"
+      ]
+    },
+    {
+      "ID": 36610000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 36610010,
+      "Entries": [
+        "c3661/3662_Rotten Undead_Fire Variant Ambush Conversion"
+      ]
+    },
+    {
+      "ID": 36610020,
+      "Entries": [
+        "c3661/3662_Rotten Undead Poison Variant Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 36610030,
+      "Entries": [
+        "c3661/3662_Rotten Undead All Variants First Action Shove Attack"
+      ]
+    },
+    {
+      "ID": 36610040,
+      "Entries": [
+        "c3661/3662_Rotten Undead All Variants First Action Running Throw Attack"
+      ]
+    },
+    {
+      "ID": 36610050,
+      "Entries": [
+        "c3661/3662_Rotten Undead Congested Undead Begins Active Explosion"
+      ]
+    },
+    {
+      "ID": 36610060,
+      "Entries": [
+        "c3661/3662_Rotten Undead All Variants Deactivation (set Sight and Hearing to 0)"
+      ]
+    },
+    {
+      "ID": 36610070,
+      "Entries": [
+        "c3661/3662_Rotten Undead All Variants Place-Drop Makes It Wander"
+      ]
+    },
+    {
+      "ID": 36610080,
+      "Entries": [
+        "c3661/3662_Rotten Undead Plains Rot Variant Vomit Attack Begins"
+      ]
+    },
+    {
+      "ID": 36700000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 36700010,
+      "Entries": [
+        "c3670_Leg Cripple_Bare Hands Opening Ambush Attack"
+      ]
+    },
+    {
+      "ID": 37020000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 37020010,
+      "Entries": [
+        "c3702_Perfumer Sorcerer_Placement Support_Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 37030010,
+      "Entries": [
+        "c3703_Page_Placement Support_Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 37040000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 37040010,
+      "Entries": [
+        "c3704_Wandering Glintstone Sorcerer_Mad Variant"
+      ]
+    },
+    {
+      "ID": 37500000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 37500010,
+      "Entries": [
+        "c3750 Rune Devourer_Magic: Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 37500020,
+      "Entries": [
+        "c3750 Rune Devourer_Dagger: Bola Seal"
+      ]
+    },
+    {
+      "ID": 38500000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 38500010,
+      "Entries": [
+        "c3850 Balloon Puppet Soldier_Bow AI Stationary Turret Conversion"
+      ]
+    },
+    {
+      "ID": 39700000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 39700010,
+      "Entries": [
+        "c3970_Intelligent Beast Descendants: (Ally Call)"
+      ]
+    },
+    {
+      "ID": 39700020,
+      "Entries": [
+        "c3970_Intelligent Beast Descendants: (Lightning Enchant)"
+      ]
+    },
+    {
+      "ID": 39700030,
+      "Entries": [
+        "c3970_Intelligent Beast Descendants: Placement Correspondence_Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 40200000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 40200010,
+      "Entries": [
+        "c4020_Nazgul Ground Insect Action Added: Falling Attack from Directly Above after Warp"
+      ]
+    },
+    {
+      "ID": 40400000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 40400010,
+      "Entries": [
+        "c4040_Slug Action Restriction: Restricts Jump Attack"
+      ]
+    },
+    {
+      "ID": 40500000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 40500010,
+      "Entries": [
+        "c4050_Nordic Mercenary_First Action A"
+      ]
+    },
+    {
+      "ID": 40500020,
+      "Entries": [
+        "c4050_Nordic Mercenary_First Action B"
+      ]
+    },
+    {
+      "ID": 40700000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 40700010,
+      "Entries": [
+        "c4070 Wolf_Howl"
+      ]
+    },
+    {
+      "ID": 40700020,
+      "Entries": [
+        "c4070_Wolf Team Attack Power 20"
+      ]
+    },
+    {
+      "ID": 40700500,
+      "Entries": [
+        "c4070 Wolf_Wolf Line Initial Action_Ally Call Howl"
+      ]
+    },
+    {
+      "ID": 40700510,
+      "Entries": [
+        "c4070 Wolf_Wolf Line Ally Call Howl Use When Surrounded"
+      ]
+    },
+    {
+      "ID": 40800000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 40800010,
+      "Entries": [
+        "c4080_Dog Rat: Opening_Pounce Attack"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 41000010,
+      "Entries": [
+        "c4100_Gray Demi-Human_Basic: Opener_Rush Attack"
+      ]
+    },
+    {
+      "ID": 41000020,
+      "Entries": [
+        "c4100_Gray Demi-Human_Basic: Volcanic Gas Pot Type_ON"
+      ]
+    },
+    {
+      "ID": 41000030,
+      "Entries": [
+        "c4100_Gray Demi-Human_Basic: Fixed Turret_ON"
+      ]
+    },
+    {
+      "ID": 41000040,
+      "Entries": [
+        "c4100_Gray Demi-Human_Basic: Fire Pot Type_ON"
+      ]
+    },
+    {
+      "ID": 41100000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 41100010,
+      "Entries": [
+        "c4110_Gray Demi-Human_Small: Opener_Walking Rush Attack"
+      ]
+    },
+    {
+      "ID": 41400000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 41400010,
+      "Entries": [
+        "c4140_Snake Snail Magic Individual_Loves Calling Reinforcements"
+      ]
+    },
+    {
+      "ID": 41400020,
+      "Entries": [
+        "c4140_Snake Snail First Action Perform Spit Type"
+      ]
+    },
+    {
+      "ID": 41400030,
+      "Entries": [
+        "c4140_Snake Snail First Action Perform Breath Type *Only Deadly Poison variant or Crystal variant"
+      ]
+    },
+    {
+      "ID": 41400040,
+      "Entries": [
+        "c4140_Snake Snail First Action Perform Pounce Type *Bone variant performs Rolling"
+      ]
+    },
+    {
+      "ID": 41400100,
+      "Entries": [
+        "c4140_Snake Snail Special Effect Set Required for Spirit Ash summon Summoned by Snake Snail"
+      ]
+    },
+    {
+      "ID": 41900000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 41900010,
+      "Entries": [
+        "c4190_Scarab (Colossal): Explosion Type_ON + Sphere Spark SFX"
+      ]
+    },
+    {
+      "ID": 41900020,
+      "Entries": [
+        "c4191_Scarab (Small): Explosion Type_ON + Sphere Spark SFX"
+      ]
+    },
+    {
+      "ID": 41900030,
+      "Entries": [
+        "c4192_Scarab (Colossal): Explosion Type_ON + Sphere Spark SFX"
+      ]
+    },
+    {
+      "ID": 41900040,
+      "Entries": [
+        "c4190_Scarab (Common): Transparent Type_ON + Movement Speed Up"
+      ]
+    },
+    {
+      "ID": 41900041,
+      "Entries": [
+        "c4190_Scarab (Common): Transparent Type_ON"
+      ]
+    },
+    {
+      "ID": 41900050,
+      "Entries": [
+        "c4190_Scarab (Common): Metal Type_Warp Conversion"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 42000010,
+      "Entries": [
+        "c4200_Bat_Low Ceiling AI Adaptation (Restricts Altitude Gain)"
+      ]
+    },
+    {
+      "ID": 42000020,
+      "Entries": [
+        "c4200_Bat_Special Ambush Takeoff Becomes Quick"
+      ]
+    },
+    {
+      "ID": 42000030,
+      "Entries": [
+        "c4200_Bat_Special Ambush Attack Becomes Throw"
+      ]
+    },
+    {
+      "ID": 42100000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 42100010,
+      "Entries": [
+        "c4210_Storm Hawk_Aerial Ambush AI_Attacks while descending when Y offset is high"
+      ]
+    },
+    {
+      "ID": 42400000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 42400010,
+      "Entries": [
+        "c4240 Finger Worm_Paralysis Magic Opening Effect"
+      ]
+    },
+    {
+      "ID": 42600000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 42600010,
+      "Entries": [
+        "c4260 Watchdog Golem_Initial Action_Rising Attack"
+      ]
+    },
+    {
+      "ID": 42600020,
+      "Entries": [
+        "c4260 Watchdog Golem_Enable Rising Attack"
+      ]
+    },
+    {
+      "ID": 42800000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 42800010,
+      "Entries": [
+        "c4281 Pot Ant: Variant_Jumping Headbutt Seal Effect"
+      ]
+    },
+    {
+      "ID": 43000000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 43000010,
+      "Entries": [
+        "c4300 Grave Robber Noble: Magic Type_Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 43000020,
+      "Entries": [
+        "c4300 Grave Robber Noble: Serpent-Head Type"
+      ]
+    },
+    {
+      "ID": 43000030,
+      "Entries": [
+        "c4300 Grave Robber Noble: Killed While Hunted_Weak Torch_ON"
+      ]
+    },
+    {
+      "ID": 43000040,
+      "Entries": [
+        "c4300 Grave Robber Noble: Buried Underground_Exclusive Death Check"
+      ]
+    },
+    {
+      "ID": 43100000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 43100010,
+      "Entries": [
+        "c4310_Wandering Royal Army_a700 Standby Return"
+      ]
+    },
+    {
+      "ID": 43100020,
+      "Entries": [
+        "c4310_Wandering Royal Army_Sniper Vision x4"
+      ]
+    },
+    {
+      "ID": 43100030,
+      "Entries": [
+        "c4310_Wandering Royal Army_Placement Support_Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 43100040,
+      "Entries": [
+        "c4310_Wandering Royal Army_Placement Support_Plains Fort Type"
+      ]
+    },
+    {
+      "ID": 43100050,
+      "Entries": [
+        "c4310_Wandering Royal Army_Placement Support_Chaos Disease"
+      ]
+    },
+    {
+      "ID": 43100060,
+      "Entries": [
+        "c4310_Wandering Royal Army_Placement Support_Initial Chaos Lightning"
+      ]
+    },
+    {
+      "ID": 43100070,
+      "Entries": [
+        "c4310_Wandering Royal Army_Placement Support_Puppet"
+      ]
+    },
+    {
+      "ID": 43100071,
+      "Entries": [
+        "c4310_Wandering Royal Army_Placement Support_Puppet_For Initial Standby a706"
+      ]
+    },
+    {
+      "ID": 43100080,
+      "Entries": [
+        "c4310_Wandering Royal Army_For Tutorial"
+      ]
+    },
+    {
+      "ID": 43210000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 43210010,
+      "Entries": [
+        "c4321_Wandering Lowly Soldier First Action_Smoke Ball Throw"
+      ]
+    },
+    {
+      "ID": 43210020,
+      "Entries": [
+        "c4321_Wandering Lowly Soldier First Action_Rear Throw"
+      ]
+    },
+    {
+      "ID": 43400000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 43400010,
+      "Entries": [
+        "c4340_Pumpkin Head Fire Enchant_Flail"
+      ]
+    },
+    {
+      "ID": 43400020,
+      "Entries": [
+        "c4340_Pumpkin Head Fire Enchant_Hammer"
+      ]
+    },
+    {
+      "ID": 43500000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 43500010,
+      "Entries": [
+        "c4350_Stalwart Army (Elite Mounted Soldier): Greatsword_Blood Enchant"
+      ]
+    },
+    {
+      "ID": 43500020,
+      "Entries": [
+        "c4350_Wandering Royal Army (Elite Cavalry): Chaos Faction"
+      ]
+    },
+    {
+      "ID": 43500030,
+      "Entries": [
+        "c4350_Wandering Royal Army (Elite Cavalry): Royal Capital_Dragon Worshipper"
+      ]
+    },
+    {
+      "ID": 43500040,
+      "Entries": [
+        "c4350_Stalwart Army (Elite Mounted Soldier): Greatsword_Fire Enchant"
+      ]
+    },
+    {
+      "ID": 43500050,
+      "Entries": [
+        "c4350_Wandering Royal Army (Elite Cavalry): Spear_Fire Enchant"
+      ]
+    },
+    {
+      "ID": 43500060,
+      "Entries": [
+        "c4350_Stalwart Army (Elite Mounted Soldier): Greatsword_Instant Death Enchant"
+      ]
+    },
+    {
+      "ID": 43500070,
+      "Entries": [
+        "c4350_Stalwart Army (Elite Mounted Soldier): Spear_Instant Death Enchant"
+      ]
+    },
+    {
+      "ID": 43500080,
+      "Entries": [
+        "c4350_Stalwart Army (Elite Mounted Soldier): Plains_Arrow Rain_ON"
+      ]
+    },
+    {
+      "ID": 43500090,
+      "Entries": [
+        "c4350_Stalwart Army (Elite Mounted Soldier): Greatbow_Stationary Turret_ON"
+      ]
+    },
+    {
+      "ID": 43500100,
+      "Entries": [
+        "c4350_Stalwart Army (Elite Mounted Soldier): Sword/Spear_Capital_Dragon Faith Skill_Initial Action Reservation"
+      ]
+    },
+    {
+      "ID": 43500110,
+      "Entries": [
+        "c4350_Stalwart Army (Elite Mounted Soldier): Greatbow_Capital_Lightning Arrow Usable"
+      ]
+    },
+    {
+      "ID": 43700000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 43700010,
+      "Entries": [
+        "c4370_Wandering Royal Army (Foot Soldier)_Crossbow/Thrown Weapon Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 43700011,
+      "Entries": [
+        "c4370_Wandering Royal Army (Foot Soldier)_Fixed Turret_Does Not Return to Nest in Combat"
+      ]
+    },
+    {
+      "ID": 43700020,
+      "Entries": [
+        "c4370_Wandering Royal Army (Foot Soldier)_Monsan Faction_Self-Destruct Elixir Use"
+      ]
+    },
+    {
+      "ID": 43700021,
+      "Entries": [
+        "c4370_Wandering Royal Army (Foot Soldier)_Monsan Faction_Self-Destruct Priority Use"
+      ]
+    },
+    {
+      "ID": 43700030,
+      "Entries": [
+        "c4370_Wandering Royal Army (Foot Soldier)_Chaos Sickness_Constant Effect"
+      ]
+    },
+    {
+      "ID": 43700031,
+      "Entries": [
+        "c4370_Wandering Royal Army (Foot Soldier)_Chaos Sickness_Chaos Lightning Priority Lottery"
+      ]
+    },
+    {
+      "ID": 43700040,
+      "Entries": [
+        "c4370_Wandering Royal Army (Foot Soldier)_Ghost Variant"
+      ]
+    },
+    {
+      "ID": 43700050,
+      "Entries": [
+        "c4370_Wandering Royal Army (Foot Soldier)_Thrown Weapon Aggressive Conversion"
+      ]
+    },
+    {
+      "ID": 43800000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 43800010,
+      "Entries": [
+        "c4380_Apostle of Destruction（Meteorite）_Turret Mode"
+      ]
+    },
+    {
+      "ID": 43800020,
+      "Entries": [
+        "c4380_Apostle of Destruction（Meteorite）_Sniping Vision Extension"
+      ]
+    },
+    {
+      "ID": 43800021,
+      "Entries": [
+        "c4380_Ruin Sentinel (Meteor Summoner): Slightly Enhanced Hearing"
+      ]
+    },
+    {
+      "ID": 43800022,
+      "Entries": [
+        "c4380_Ruin Sentinel (Meteor Summoner): Reduced Vision"
+      ]
+    },
+    {
+      "ID": 43810000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 43810010,
+      "Entries": [
+        "c4381_Ruin Sentinel (Fire Monk): Red-Eyed Variant_Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 43820000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 43820010,
+      "Entries": [
+        "c4382_Undead Miner (Ore Mining): Backpack_Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 43850000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 43850010,
+      "Entries": [
+        "c4385_Apostle of Destruction (Poison Rot Devotee): For Fixed Turret"
+      ]
+    },
+    {
+      "ID": 44700000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 44700010,
+      "Entries": [
+        "c4470_Rykard's Kidnapper Weapon：Throw_Frequency Up"
+      ]
+    },
+    {
+      "ID": 44800000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 44800010,
+      "Entries": [
+        "c4480_Rune-eating Flower (Large)_Initial Action_Prayer Laser or Glintstone Funnel"
+      ]
+    },
+    {
+      "ID": 44800020,
+      "Entries": [
+        "c4480_Rune-eating Flower (Large)_Disable stem extension in confined spaces"
+      ]
+    },
+    {
+      "ID": 44900000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 44900010,
+      "Entries": [
+        "c4490_Living Jar: Opener_Drum Attack"
+      ]
+    },
+    {
+      "ID": 44900020,
+      "Entries": [
+        "c4490_Living Jar: Iron Body_Individual Used"
+      ]
+    },
+    {
+      "ID": 45100000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 45100010,
+      "Entries": [
+        "c4510_Guardian Lineage_Retreat Usage Type"
+      ]
+    },
+    {
+      "ID": 45100020,
+      "Entries": [
+        "c4510_Guardian Lineage_Flight Action Prohibited"
+      ]
+    },
+    {
+      "ID": 45500000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 45500010,
+      "Entries": [
+        "c4550_Feral Tyrannosaur_First Action Ally Call"
+      ]
+    },
+    {
+      "ID": 45600000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 45600010,
+      "Entries": [
+        "c4560_Raven Tyranno_Logic Search Standby"
+      ]
+    },
+    {
+      "ID": 45700000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 45700010,
+      "Entries": [
+        "c4570_Deracine (Male): Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 46000000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 46000010,
+      "Entries": [
+        "c4600_Troll: Explosive Fireball_Permit"
+      ]
+    },
+    {
+      "ID": 46000020,
+      "Entries": [
+        "c4600_Troll: Strong War Cry_Permit"
+      ]
+    },
+    {
+      "ID": 46000030,
+      "Entries": [
+        "c4600_Troll: Fixed Turret_Permit"
+      ]
+    },
+    {
+      "ID": 46000040,
+      "Entries": [
+        "c4600_Troll: Initial action Rolling_Permitted"
+      ]
+    },
+    {
+      "ID": 46000050,
+      "Entries": [
+        "c4600_Troll: Magic_Big Move Seal"
+      ]
+    },
+    {
+      "ID": 46400000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 46400010,
+      "Entries": [
+        "c4640_Snake Spirit Confined Space; Prohibit Jump Throw"
+      ]
+    },
+    {
+      "ID": 46400020,
+      "Entries": [
+        "c4640_Snake Spirit First Action_Charge"
+      ]
+    },
+    {
+      "ID": 46400030,
+      "Entries": [
+        "c4640_Snake Spirit First Action_HU"
+      ]
+    },
+    {
+      "ID": 46500000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 46500010,
+      "Entries": [
+        "c4650_Ruinator：Summoned Entity_At Long Range_Dive Attack Allowed"
+      ]
+    },
+    {
+      "ID": 46600000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 46600010,
+      "Entries": [
+        "c4660_Guardian of the High Road Wait and watch when path search fails"
+      ]
+    },
+    {
+      "ID": 46600020,
+      "Entries": [
+        "c4660_Guardian of the High Road Underfoot Breath Sealed"
+      ]
+    },
+    {
+      "ID": 46600030,
+      "Entries": [
+        "c4660_Guardian of the High Road_Bow Warning Shot Beyond 160m"
+      ]
+    },
+    {
+      "ID": 46600040,
+      "Entries": [
+        "c4660_Guardian of the High Road_Bow Warning Shot Beyond 190m"
+      ]
+    },
+    {
+      "ID": 46900000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 46900010,
+      "Entries": [
+        "c4690_Grafted Spider Confined Space Logic Conversion (disable high-movement attacks)"
+      ]
+    },
+    {
+      "ID": 46900020,
+      "Entries": [
+        "c4690_Grafted Spider Highland Special Initial Action High Jump Conversion"
+      ]
+    },
+    {
+      "ID": 46900030,
+      "Entries": [
+        "c4690_Grafted Spider HU Action_Holy Enchant"
+      ]
+    },
+    {
+      "ID": 46900040,
+      "Entries": [
+        "c4690_Grafted Spider Initial Action_Holy Enchant"
+      ]
+    },
+    {
+      "ID": 47700000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 47700010,
+      "Entries": [
+        "c4770_Royal Capital Gargoyle Narrow Space Exclusive Logic Prohibit Attacks That Move Far Backward"
+      ]
+    },
+    {
+      "ID": 47700020,
+      "Entries": [
+        "c4770_Royal Capital Gargoyle Collapse Variant Horizontal Sweep Aimed Slightly Low"
+      ]
+    },
+    {
+      "ID": 47700030,
+      "Entries": [
+        "c4770_Royal Capital Gargoyle Collapse Variant Horizontal Sweep Aimed Slightly High"
+      ]
+    },
+    {
+      "ID": 48100000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 48100010,
+      "Entries": [
+        "c4810_World Tree Demon_Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 49500000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 49500010,
+      "Entries": [
+        "c4950/c4960_Night King Followers_Highland_For Submerged Ruins"
+      ]
+    },
+    {
+      "ID": 49500020,
+      "Entries": [
+        "c4950_Nightlord Followers_Green_Dew Village Placement"
+      ]
+    },
+    {
+      "ID": 49500030,
+      "Entries": [
+        "c4950_Night King Followers_Lake_White Lake Area Placement"
+      ]
+    },
+    {
+      "ID": 49500040,
+      "Entries": [
+        "c4950_Nightlord Followers_Snowy Mountain_Sub-route Graveyard Area Placement"
+      ]
+    },
+    {
+      "ID": 49600000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 49600010,
+      "Entries": [
+        "c4960_Nightlord Followers Giant Skeleton_Fixed Event"
+      ]
+    },
+    {
+      "ID": 60100000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 60100010,
+      "Entries": [
+        "c6010_Wildlife_Deer_No Movement When Not in Combat"
+      ]
+    },
+    {
+      "ID": 60720000,
+      "Entries": [
+        "------------------------------------"
+      ]
+    },
+    {
+      "ID": 60720010,
+      "Entries": [
+        "c6072_Wildlife_Messenger Pigeon_Graveyard Crow: Running Escape"
+      ]
+    }
+  ]
+}

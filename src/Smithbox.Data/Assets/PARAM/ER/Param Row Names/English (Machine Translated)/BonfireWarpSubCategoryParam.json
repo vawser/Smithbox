@@ -1,0 +1,227 @@
+{
+  "Name": "BonfireWarpSubCategoryParam",
+  "Entries": [
+    {
+      "ID": 10000,
+      "Entries": [
+        "Stormveil"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Stormveil Separated"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Royal Capital"
+      ]
+    },
+    {
+      "ID": 35000,
+      "Entries": [
+        "Royal Capital Underground Sewers"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "Royal Capital (Ash)"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "World Tree Hollow"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "Royal Capital (Base)"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Underground Labyrinth・Poison Swamp Upper Level"
+      ]
+    },
+    {
+      "ID": 12011,
+      "Entries": [
+        "Underground Labyrinth・Poison Swamp Poison Lake"
+      ]
+    },
+    {
+      "ID": 12012,
+      "Entries": [
+        "Underground Labyrinth・Poison Swamp Lower Level"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Underground Labyrinth・Plains Upper Level"
+      ]
+    },
+    {
+      "ID": 12070,
+      "Entries": [
+        "Underground Labyrinth・Plains Lower Level"
+      ]
+    },
+    {
+      "ID": 12050,
+      "Entries": [
+        "Underground Labyrinth・Plains Interior"
+      ]
+    },
+    {
+      "ID": 12030,
+      "Entries": [
+        "Underground Labyrinth・Royal Capital"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Descending Ruins"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Monsan"
+      ]
+    },
+    {
+      "ID": 15001,
+      "Entries": [
+        "Rotten Great Tree Upper Level"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Rotten Great Tree Lower Level"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Volcano Prison"
+      ]
+    },
+    {
+      "ID": 61000,
+      "Entries": [
+        "Tenebre"
+      ]
+    },
+    {
+      "ID": 61001,
+      "Entries": [
+        "Seeker's Hill"
+      ]
+    },
+    {
+      "ID": 61002,
+      "Entries": [
+        "Green South"
+      ]
+    },
+    {
+      "ID": 18000,
+      "Entries": [
+        "Tutorial"
+      ]
+    },
+    {
+      "ID": 62000,
+      "Entries": [
+        "Lake"
+      ]
+    },
+    {
+      "ID": 62001,
+      "Entries": [
+        "Giant EV Front"
+      ]
+    },
+    {
+      "ID": 39200,
+      "Entries": [
+        "Cliff Tunnel"
+      ]
+    },
+    {
+      "ID": 62002,
+      "Entries": [
+        "Hang Terrain"
+      ]
+    },
+    {
+      "ID": 63000,
+      "Entries": [
+        "Highland Zone"
+      ]
+    },
+    {
+      "ID": 63001,
+      "Entries": [
+        "Volcano Zone"
+      ]
+    },
+    {
+      "ID": 63002,
+      "Entries": [
+        "Royal Capital"
+      ]
+    },
+    {
+      "ID": 64000,
+      "Entries": [
+        "Plains"
+      ]
+    },
+    {
+      "ID": 64001,
+      "Entries": [
+        "Ruins Descending Route"
+      ]
+    },
+    {
+      "ID": 64002,
+      "Entries": [
+        "Great Rot Swamp"
+      ]
+    },
+    {
+      "ID": 63003,
+      "Entries": [
+        "Highland Snowfield Connection"
+      ]
+    },
+    {
+      "ID": 65000,
+      "Entries": [
+        "Snowfield Giant Side"
+      ]
+    },
+    {
+      "ID": 65001,
+      "Entries": [
+        "Giant Graveyard"
+      ]
+    },
+    {
+      "ID": 65002,
+      "Entries": [
+        "Snowfield"
+      ]
+    }
+  ]
+}

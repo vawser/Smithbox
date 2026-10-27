@@ -1,0 +1,665 @@
+{
+  "Name": "SoundCutsceneParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default data. Do not delete."
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "s10_00_0010_Boss Battle: Margit the Fell Omen_Battle Start"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "s10_00_0020_Boss Battle: Grafted King_Battle Start"
+      ]
+    },
+    {
+      "ID": 10000030,
+      "Entries": [
+        "s10_00_0030_Boss Battle: Grafted King_HU"
+      ]
+    },
+    {
+      "ID": 10000040,
+      "Entries": [
+        "s10_00_0040_Introduction (Storyboard Movie)"
+      ]
+    },
+    {
+      "ID": 10000050,
+      "Entries": [
+        "s10_00_0050_Gatekeeper Trap Triggered"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "s10_01_0000_[Blackout CS] Grafted Spider_Defeat *With Dialogue"
+      ]
+    },
+    {
+      "ID": 10010001,
+      "Entries": [
+        "s10_01_0001_[Blackout CS] Grafted Spider_Victory *No Dialogue"
+      ]
+    },
+    {
+      "ID": 10010010,
+      "Entries": [
+        "s10_01_0010_Opening (Storyboard)"
+      ]
+    },
+    {
+      "ID": 11000040,
+      "Entries": [
+        "s11_00_0040_Boss Battle: Margit the Fell Omen (2nd Fight)_Battle Start"
+      ]
+    },
+    {
+      "ID": 11050010,
+      "Entries": [
+        "s11_05_0010_Boss Battle: Godfrey the Beast-clad_Battle Start"
+      ]
+    },
+    {
+      "ID": 11050020,
+      "Entries": [
+        "s11_05_0020_Boss Battle: Godfrey the Beast-clad_HU"
+      ]
+    },
+    {
+      "ID": 12010000,
+      "Entries": [
+        "s12_01_0000 Warp to Underground Labyrinth (Poison Swamp Boss)_First Half"
+      ]
+    },
+    {
+      "ID": 12010001,
+      "Entries": [
+        "s12_01_0001 Warp to Underground Labyrinth (Poison Swamp Boss)_Second Half"
+      ]
+    },
+    {
+      "ID": 12020000,
+      "Entries": [
+        "s12_02_0000_Warp to Underground Labyrinth (Royal Capital)_First Half"
+      ]
+    },
+    {
+      "ID": 12020001,
+      "Entries": [
+        "s12_02_0001_Warp to Underground Labyrinth (Royal Capital)_Second Half"
+      ]
+    },
+    {
+      "ID": 12020020,
+      "Entries": [
+        "s12_02_0020 [Blackout CS] Drinking the Golden Seed"
+      ]
+    },
+    {
+      "ID": 12020021,
+      "Entries": [
+        "s12_02_0021 [Blackout CS] Drinking the Great Golden Seed"
+      ]
+    },
+    {
+      "ID": 12020022,
+      "Entries": [
+        "s12_02_0022 [Blackout CS] Spitting Out Talking Slime"
+      ]
+    },
+    {
+      "ID": 12030010,
+      "Entries": [
+        "s12_03_0010_Warp to Underground Labyrinth (Poison Swamp)_First Half"
+      ]
+    },
+    {
+      "ID": 12030011,
+      "Entries": [
+        "s12_03_0011_Warp to Underground Labyrinth (Poison Swamp)_Second Half"
+      ]
+    },
+    {
+      "ID": 12030020,
+      "Entries": [
+        "s12_03_0020 [Blackout CS] Entering the Dream"
+      ]
+    },
+    {
+      "ID": 12030021,
+      "Entries": [
+        "s12_03_0021 [Blackout CS] Returning to the Dream"
+      ]
+    },
+    {
+      "ID": 12050020,
+      "Entries": [
+        "s12_05_0020_Boss Battle: Greater Demon_Battle Start"
+      ]
+    },
+    {
+      "ID": 12060000,
+      "Entries": [
+        "s12_06_0000_Bond with Ranni"
+      ]
+    },
+    {
+      "ID": 13000010,
+      "Entries": [
+        "s13_00_0010_Boss Battle: Ancient Dragon_Battle Start"
+      ]
+    },
+    {
+      "ID": 13000040,
+      "Entries": [
+        "s13_00_0040_Boss Battle: Maliketh the Black Blade_HU"
+      ]
+    },
+    {
+      "ID": 13000050,
+      "Entries": [
+        "s13_00_0050_World Tree Burning (Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 13000052,
+      "Entries": [
+        "s13_00_0052_World Tree Burning (Pre-render Asset A)"
+      ]
+    },
+    {
+      "ID": 13000054,
+      "Entries": [
+        "s13_00_0054_World Tree Burning (Pre-render Asset B)"
+      ]
+    },
+    {
+      "ID": 13000055,
+      "Entries": [
+        "s13_00_0055_World Tree Burning (Pre-render)"
+      ]
+    },
+    {
+      "ID": 13000056,
+      "Entries": [
+        "s13_00_0056_World Tree Burning (Pre-render Asset C)"
+      ]
+    },
+    {
+      "ID": 13000058,
+      "Entries": [
+        "s13_00_0058_World Tree Burning (Pre-render Asset D)"
+      ]
+    },
+    {
+      "ID": 13000060,
+      "Entries": [
+        "s13_00_0060_World Tree Burning (Royal Capital"
+      ]
+    },
+    {
+      "ID": 14000000,
+      "Entries": [
+        "s14_00_0000_Boss Battle: Rennala of the Full Moon_Battle Start"
+      ]
+    },
+    {
+      "ID": 14000001,
+      "Entries": [
+        "s14_00_0001_Boss Battle: Rennala of the Full Moon_Battle Start (Light Test)"
+      ]
+    },
+    {
+      "ID": 14000010,
+      "Entries": [
+        "s14_00_0010_Boss Battle: Rennala of the Full Moon_HU"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "s15_00_0000_Boss Battle: Malenia_Battle Start"
+      ]
+    },
+    {
+      "ID": 15000010,
+      "Entries": [
+        "s15_00_0010_Boss Battle: Malenia_HU"
+      ]
+    },
+    {
+      "ID": 15000020,
+      "Entries": [
+        "s15_00_0020_Miquella the Bountiful"
+      ]
+    },
+    {
+      "ID": 16000000,
+      "Entries": [
+        "s16_00_0000_Mid-Boss Bridge Opened"
+      ]
+    },
+    {
+      "ID": 16000010,
+      "Entries": [
+        "s16_00_0010_[Blackout CS] Warp to Ghoul King Boss Room"
+      ]
+    },
+    {
+      "ID": 16000020,
+      "Entries": [
+        "s16_00_0020_Boss Battle: Ghoul King_HU"
+      ]
+    },
+    {
+      "ID": 19000000,
+      "Entries": [
+        "s19_00_0000_Crumbling Marika_HU"
+      ]
+    },
+    {
+      "ID": 19000010,
+      "Entries": [
+        "s19_00_0010_Ending A-1 (First Half)"
+      ]
+    },
+    {
+      "ID": 19000011,
+      "Entries": [
+        "s19_00_0011_Ending A-1 (Second Half)"
+      ]
+    },
+    {
+      "ID": 19000015,
+      "Entries": [
+        "s19_00_0015_Ending A (Second Half Royal Capital)"
+      ]
+    },
+    {
+      "ID": 19000019,
+      "Entries": [
+        "s19_00_0019_Ending A-1 (For Pre-render)"
+      ]
+    },
+    {
+      "ID": 19000020,
+      "Entries": [
+        "s19_00_0020_Ending B-1"
+      ]
+    },
+    {
+      "ID": 19000021,
+      "Entries": [
+        "s19_00_0021_Ending B-2"
+      ]
+    },
+    {
+      "ID": 19000030,
+      "Entries": [
+        "s19_00_0030_Ending C-1"
+      ]
+    },
+    {
+      "ID": 19000031,
+      "Entries": [
+        "s19_00_0031_Ending C-2"
+      ]
+    },
+    {
+      "ID": 19000032,
+      "Entries": [
+        "s19_00_0032_Ending C (Prerender: Sky of Dark Flame)"
+      ]
+    },
+    {
+      "ID": 19000034,
+      "Entries": [
+        "s19_00_0034_Ending C (Prerender: Second Half)"
+      ]
+    },
+    {
+      "ID": 19000040,
+      "Entries": [
+        "s19_00_0040_Crumbling Marika Fight Start"
+      ]
+    },
+    {
+      "ID": 19000050,
+      "Entries": [
+        "s19_00_0050_[Blackout CS] Crumbling Marika HU Defeated"
+      ]
+    },
+    {
+      "ID": 19000060,
+      "Entries": [
+        "s19_00_0060_Ending A-2 (First Half)"
+      ]
+    },
+    {
+      "ID": 19000061,
+      "Entries": [
+        "s19_00_0061_Ending A-2 (Second Half)"
+      ]
+    },
+    {
+      "ID": 19000069,
+      "Entries": [
+        "s19_00_0069_Ending A-2 (Prerender)"
+      ]
+    },
+    {
+      "ID": 19000070,
+      "Entries": [
+        "s19_00_0070_Ending A-3 (First Half)"
+      ]
+    },
+    {
+      "ID": 19000071,
+      "Entries": [
+        "s19_00_0071_Ending A-3 (Second Half)"
+      ]
+    },
+    {
+      "ID": 19000079,
+      "Entries": [
+        "s19_00_0079_Ending A-3 (Prerender)"
+      ]
+    },
+    {
+      "ID": 19000080,
+      "Entries": [
+        "s19_00_0080_Ending A-4 (First Half)"
+      ]
+    },
+    {
+      "ID": 19000081,
+      "Entries": [
+        "s19_00_0081_Ending A-4 (Second Half)"
+      ]
+    },
+    {
+      "ID": 19000089,
+      "Entries": [
+        "s19_00_0089_Ending A-4 (Prerender)"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "s31_00_0000 [Blackout CS] Opens Patch's Trapped Chest Without Prompt"
+      ]
+    },
+    {
+      "ID": 31000001,
+      "Entries": [
+        "s31_00_0001 [Blackout CS] Opens Patch's Trapped Chest When Prompted"
+      ]
+    },
+    {
+      "ID": 34100000,
+      "Entries": [
+        "s34_10_0000_Cataclysm: Crater (Green)_Before"
+      ]
+    },
+    {
+      "ID": 34100002,
+      "Entries": [
+        "s34_10_0002_Cataclysm: Crater (Green)_After"
+      ]
+    },
+    {
+      "ID": 34110000,
+      "Entries": [
+        "s34_11_0000_Inverted Tower Reversal"
+      ]
+    },
+    {
+      "ID": 34110001,
+      "Entries": [
+        "s34_11_0001_Inverted Tower Reversal-Restore"
+      ]
+    },
+    {
+      "ID": 34110010,
+      "Entries": [
+        "s34_11_0010_Warp from Inverted Tower Bottom Floor to Bridge of God"
+      ]
+    },
+    {
+      "ID": 34130000,
+      "Entries": [
+        "s34_13_0000_Cataclysm: Crater (Plains)_Before"
+      ]
+    },
+    {
+      "ID": 34130002,
+      "Entries": [
+        "s34_13_0002_Cataclysm: Crater (Plains)_After"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "s35_00_0000_Receiving the Mad Flame"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "s35_00_0010_[Blackout CS] Defiles Dung Eater with Curse"
+      ]
+    },
+    {
+      "ID": 35000020,
+      "Entries": [
+        "s35_00_0020_[Blackout CS] Defiles Dung Eater with Curse and Dies"
+      ]
+    },
+    {
+      "ID": 60370000,
+      "Entries": [
+        "s60_37_0000_Patch Push Off Cliff"
+      ]
+    },
+    {
+      "ID": 60380000,
+      "Entries": [
+        "s60_38_0000_Giant Elevator Activation_Lake→Highland (First Half)"
+      ]
+    },
+    {
+      "ID": 60380001,
+      "Entries": [
+        "s60_38_0001_Giant Elevator Activation_Lake→Highland (Second Half)"
+      ]
+    },
+    {
+      "ID": 60380010,
+      "Entries": [
+        "s60_38_0010_Giant Elevator Activation_Highland→Lake (First Half)"
+      ]
+    },
+    {
+      "ID": 60380011,
+      "Entries": [
+        "s60_38_0011_Giant Elevator Activation_Highland→Lake (Second Half)"
+      ]
+    },
+    {
+      "ID": 60420000,
+      "Entries": [
+        "s60_42_0000_Meeting Daughter Marika_0"
+      ]
+    },
+    {
+      "ID": 60420001,
+      "Entries": [
+        "s60_42_0001_Meeting Daughter Marika_1"
+      ]
+    },
+    {
+      "ID": 60420002,
+      "Entries": [
+        "s60_42_0002_Meeting Daughter Marika_2"
+      ]
+    },
+    {
+      "ID": 60420003,
+      "Entries": [
+        "s60_42_0003_Meeting Daughter Marika_3"
+      ]
+    },
+    {
+      "ID": 60420004,
+      "Entries": [
+        "s60_42_0004_Meeting Daughter Marika_4"
+      ]
+    },
+    {
+      "ID": 60420005,
+      "Entries": [
+        "s60_42_0005_Meeting Daughter Marika_5"
+      ]
+    },
+    {
+      "ID": 60420006,
+      "Entries": [
+        "s60_42_0006_Meeting Daughter Marika_6"
+      ]
+    },
+    {
+      "ID": 60420007,
+      "Entries": [
+        "s60_42_0007_Meeting Daughter Marika_7"
+      ]
+    },
+    {
+      "ID": 60430000,
+      "Entries": [
+        "s60_43_0000_Opening"
+      ]
+    },
+    {
+      "ID": 60490000,
+      "Entries": [
+        "s60_49_0000_Giant Elevator Activation_Highland→Snowy Mountain (First Half)"
+      ]
+    },
+    {
+      "ID": 60490001,
+      "Entries": [
+        "s60_49_0001_Giant Elevator Activation_Highland→Snowy Mountain (Second Half)"
+      ]
+    },
+    {
+      "ID": 60490010,
+      "Entries": [
+        "s60_49_0010_Giant Elevator Activation_Snowy Mountain→Highland (First Half)"
+      ]
+    },
+    {
+      "ID": 60490011,
+      "Entries": [
+        "s60_49_0011_Giant Elevator Activation_Snowy Mountain→Highland (Second Half)"
+      ]
+    },
+    {
+      "ID": 60490020,
+      "Entries": [
+        "s60_49_0020_Giant Elevator Activation_Highland→Mid Snowy Mountain (First Half)"
+      ]
+    },
+    {
+      "ID": 60490021,
+      "Entries": [
+        "s60_49_0021_Giant Elevator Activation_Highland→Mid Snowy Mountain (Second Half)"
+      ]
+    },
+    {
+      "ID": 60490030,
+      "Entries": [
+        "s60_49_0030_Giant Elevator Activation_Mid Snowy Mountain→Highland (First Half)"
+      ]
+    },
+    {
+      "ID": 60490031,
+      "Entries": [
+        "s60_49_0031_Giant Elevator Activation_Mid Snowy Mountain→Highland (Second Half)"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "s60_50_0000_Malenia's Daughter Inserts Needle to Suppress Rot"
+      ]
+    },
+    {
+      "ID": 60510000,
+      "Entries": [
+        "s60_51_0000_Boss Fight: Scrawny Horse Radahn_Fight Start"
+      ]
+    },
+    {
+      "ID": 60510010,
+      "Entries": [
+        "s60_51_0010_Scrawny Horse Radahn Defeated (Meteor Fall)"
+      ]
+    },
+    {
+      "ID": 60510011,
+      "Entries": [
+        "s60_51_0010_Scrawny Horse Radahn Defeated (Meteor Fall) Location Variant"
+      ]
+    },
+    {
+      "ID": 60520010,
+      "Entries": [
+        "s60_52_0010_Boss Fight: Giant_HU"
+      ]
+    },
+    {
+      "ID": 60540000,
+      "Entries": [
+        "s60_54_0000_Obtaining Giant's Flame_First Half"
+      ]
+    },
+    {
+      "ID": 60540001,
+      "Entries": [
+        "s60_54_0001_Obtaining Giant's Flame (Mad Flame Route)_First Half"
+      ]
+    },
+    {
+      "ID": 60540010,
+      "Entries": [
+        "s60_54_0010_Obtaining Giant's Flame_Second Half"
+      ]
+    },
+    {
+      "ID": 60540011,
+      "Entries": [
+        "s60_54_0011_Obtaining Giant's Flame (Mad Flame Route)_Second Half"
+      ]
+    },
+    {
+      "ID": 90000010,
+      "Entries": [
+        "s90_00_0010 Camera Shake Check"
+      ]
+    },
+    {
+      "ID": 90009999,
+      "Entries": [
+        "s90_00_9999 Gparam Error Check"
+      ]
+    }
+  ]
+}

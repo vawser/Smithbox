@@ -1,0 +1,803 @@
+{
+  "Name": "LockCamParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default Value"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For Summon Magic Range Specification"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Mounted Offset_Normal Camera"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Mounted Offset_Lock-On Camera"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Mounted Camera"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Mounted_During Large Jump"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "PC Dragon Communion Magic_Dragon Bite"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "PC Dragon Communion Magic_Dragon Roar"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "PC Dragon Communion Magic_Airborne Breath"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Site of Grace Camera"
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        "Mist Wall Entry Camera"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "PC Large Throw Staging"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "Rennala of the Full Moon (After HU)"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Black Blade Malenia"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Arbitrating Malenia"
+      ]
+    },
+    {
+      "ID": 2121,
+      "Entries": [
+        "Arbitrating Malenia_First Rot Release"
+      ]
+    },
+    {
+      "ID": 2122,
+      "Entries": [
+        "Arbitrating Malenia_Flight"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Margit the Fell Omen_Throw Camera"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Crumbling Marika (Post-HU)"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Crumbling Marika (Post-HU)_Big Move Staging Camera"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Mounted Camera"
+      ]
+    },
+    {
+      "ID": 3015,
+      "Entries": [
+        "Lost Knight When Aged Veteran General Spirit Ash summon"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Aged Veteran General"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "Wolf Rider's Wolf"
+      ]
+    },
+    {
+      "ID": 3181,
+      "Entries": [
+        "Runewolf"
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "※Snake Spirit Possessed Gundah Throw Performance"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Red-Eyed Gypsy's Donkey"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "Tree Sentinel (Aberration)"
+      ]
+    },
+    {
+      "ID": 3251,
+      "Entries": [
+        "Tree Sentinel (Chief)"
+      ]
+    },
+    {
+      "ID": 3252,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)"
+      ]
+    },
+    {
+      "ID": 3460,
+      "Entries": [
+        "Radagon's Children Lion Type"
+      ]
+    },
+    {
+      "ID": 3470,
+      "Entries": [
+        "Frog-man_Long Haft Mixed"
+      ]
+    },
+    {
+      "ID": 3560,
+      "Entries": [
+        "Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 3570,
+      "Entries": [
+        "Godskin Apostle (Another)"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Light / Dark Walker"
+      ]
+    },
+    {
+      "ID": 3620,
+      "Entries": [
+        "Servant of the Moon (Tall)"
+      ]
+    },
+    {
+      "ID": 3630,
+      "Entries": [
+        "Servant of the Moon (Fat)"
+      ]
+    },
+    {
+      "ID": 3664,
+      "Entries": [
+        "Catacomb Shadow"
+      ]
+    },
+    {
+      "ID": 3670,
+      "Entries": [
+        "Leg Cripple"
+      ]
+    },
+    {
+      "ID": 3704,
+      "Entries": [
+        "Wandering Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "Rot's Kin"
+      ]
+    },
+    {
+      "ID": 3910,
+      "Entries": [
+        "Giant's Flame Fat Monk"
+      ]
+    },
+    {
+      "ID": 3950,
+      "Entries": [
+        "Children of Ghouls"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Nazgul(Ground Insect)"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Mercenary Horse"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "Gray Demi-Human_Berserker"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "Gray Demi-Human King"
+      ]
+    },
+    {
+      "ID": 4190,
+      "Entries": [
+        "Scarab (Large)"
+      ]
+    },
+    {
+      "ID": 4191,
+      "Entries": [
+        "Scarab (Small)"
+      ]
+    },
+    {
+      "ID": 4192,
+      "Entries": [
+        "Scarab (Colossal)"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "Land Octopus"
+      ]
+    },
+    {
+      "ID": 4240,
+      "Entries": [
+        "Finger Worm"
+      ]
+    },
+    {
+      "ID": 4241,
+      "Entries": [
+        "Finger Worm(Large)"
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        "Watchdog Golem"
+      ]
+    },
+    {
+      "ID": 4280,
+      "Entries": [
+        "Pot Ant (Mounted)"
+      ]
+    },
+    {
+      "ID": 4320,
+      "Entries": [
+        "Wandering Lowly Soldier"
+      ]
+    },
+    {
+      "ID": 4360,
+      "Entries": [
+        "Wandering Royal Army Horse"
+      ]
+    },
+    {
+      "ID": 4381,
+      "Entries": [
+        "Ruinous Cult (Fire Cult)"
+      ]
+    },
+    {
+      "ID": 4385,
+      "Entries": [
+        "Ruinous Cult (Putrid Cult)"
+      ]
+    },
+    {
+      "ID": 4410,
+      "Entries": [
+        "Carriage Horse (Giant)_Normal Combat"
+      ]
+    },
+    {
+      "ID": 4430,
+      "Entries": [
+        "Living Stone"
+      ]
+    },
+    {
+      "ID": 4441,
+      "Entries": [
+        "Land Barnacle (Large)"
+      ]
+    },
+    {
+      "ID": 4460,
+      "Entries": [
+        "Large Weapon Gunman"
+      ]
+    },
+    {
+      "ID": 4470,
+      "Entries": [
+        "Rykard's Kidnapper Weapon"
+      ]
+    },
+    {
+      "ID": 4490,
+      "Entries": [
+        "Living Jar"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Wyvern"
+      ]
+    },
+    {
+      "ID": 4501,
+      "Entries": [
+        "Wyvern_Flying"
+      ]
+    },
+    {
+      "ID": 4504,
+      "Entries": [
+        "Wyvern (Giant)"
+      ]
+    },
+    {
+      "ID": 4505,
+      "Entries": [
+        "Wyvern (Lesser)"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "Ancestral Follower_Normal Camera"
+      ]
+    },
+    {
+      "ID": 4511,
+      "Entries": [
+        "Ancestral Follower_Staging Camera (Godwyn Arts)"
+      ]
+    },
+    {
+      "ID": 4512,
+      "Entries": [
+        "Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 4513,
+      "Entries": [
+        "Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 4514,
+      "Entries": [
+        "Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 4515,
+      "Entries": [
+        "Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 4516,
+      "Entries": [
+        "Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 4517,
+      "Entries": [
+        "Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 4518,
+      "Entries": [
+        "Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 4521,
+      "Entries": [
+        "Ancient Dragon_Switch Camera Only At Specific Timing"
+      ]
+    },
+    {
+      "ID": 4525,
+      "Entries": [
+        "Ancient Dragon_Boss Room Field Camera"
+      ]
+    },
+    {
+      "ID": 4550,
+      "Entries": [
+        "Feral Tyrannosaur"
+      ]
+    },
+    {
+      "ID": 4560,
+      "Entries": [
+        "Raven Tyranno"
+      ]
+    },
+    {
+      "ID": 4570,
+      "Entries": [
+        "Deracine (Male)"
+      ]
+    },
+    {
+      "ID": 4580,
+      "Entries": [
+        "Deracine (Female)"
+      ]
+    },
+    {
+      "ID": 4581,
+      "Entries": [
+        "Deracine (Female)_Throw Death Camera"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "Troll"
+      ]
+    },
+    {
+      "ID": 4620,
+      "Entries": [
+        "Astel"
+      ]
+    },
+    {
+      "ID": 4640,
+      "Entries": [
+        "Serpent Spirit"
+      ]
+    },
+    {
+      "ID": 4641,
+      "Entries": [
+        "Serpent Spirit_Throw Animation"
+      ]
+    },
+    {
+      "ID": 4650,
+      "Entries": [
+        "Ruinator_Normal"
+      ]
+    },
+    {
+      "ID": 4651,
+      "Entries": [
+        "Ruinator_Airborne"
+      ]
+    },
+    {
+      "ID": 4660,
+      "Entries": [
+        "Guardian of the High Road"
+      ]
+    },
+    {
+      "ID": 4670,
+      "Entries": [
+        "Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 4680,
+      "Entries": [
+        "Meteoric Beast"
+      ]
+    },
+    {
+      "ID": 4681,
+      "Entries": [
+        "Meteoric Beast_Throw 1"
+      ]
+    },
+    {
+      "ID": 4690,
+      "Entries": [
+        "Grafted Spider"
+      ]
+    },
+    {
+      "ID": 4710,
+      "Entries": [
+        "King of Ghouls_Map"
+      ]
+    },
+    {
+      "ID": 4711,
+      "Entries": [
+        "King of Ghouls (Human)_Lock-on"
+      ]
+    },
+    {
+      "ID": 4712,
+      "Entries": [
+        "King of Ghouls (Serpent)_Lock-on"
+      ]
+    },
+    {
+      "ID": 4713,
+      "Entries": [
+        "King of Ghouls (Serpent)_Throw 1"
+      ]
+    },
+    {
+      "ID": 4714,
+      "Entries": [
+        "King of Ghouls (Serpent)_Throw 2"
+      ]
+    },
+    {
+      "ID": 4720,
+      "Entries": [
+        "Godfrey the Beast-clad (Before HU)"
+      ]
+    },
+    {
+      "ID": 4721,
+      "Entries": [
+        "Godfrey the Beast-clad (After HU)"
+      ]
+    },
+    {
+      "ID": 4722,
+      "Entries": [
+        "Godfrey the Beast-clad (After HU)_Throw Use 1"
+      ]
+    },
+    {
+      "ID": 4723,
+      "Entries": [
+        "Godfrey the Beast-clad (After HU)_Throw Use 2"
+      ]
+    },
+    {
+      "ID": 4724,
+      "Entries": [
+        "Godfrey the Beast-clad (After HU)_Throw Use 3"
+      ]
+    },
+    {
+      "ID": 4725,
+      "Entries": [
+        "Godfrey the Beast-clad (After HU)_Special Move_Dedicated Camera"
+      ]
+    },
+    {
+      "ID": 4730,
+      "Entries": [
+        "Radahn (Scrawny Horse)"
+      ]
+    },
+    {
+      "ID": 4750,
+      "Entries": [
+        "Grafted King"
+      ]
+    },
+    {
+      "ID": 4751,
+      "Entries": [
+        "Grafted King_During Throw"
+      ]
+    },
+    {
+      "ID": 4760,
+      "Entries": [
+        "Giant_Standing State"
+      ]
+    },
+    {
+      "ID": 4761,
+      "Entries": [
+        "Giant_Quadruped State"
+      ]
+    },
+    {
+      "ID": 4770,
+      "Entries": [
+        "Capital Gargoyle"
+      ]
+    },
+    {
+      "ID": 4775,
+      "Entries": [
+        "Capital Gargoyle_For Collapse Variant"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "Greater Demon"
+      ]
+    },
+    {
+      "ID": 4810,
+      "Entries": [
+        "World Tree Demon"
+      ]
+    },
+    {
+      "ID": 4811,
+      "Entries": [
+        "World Tree Demon/On Jump"
+      ]
+    },
+    {
+      "ID": 4820,
+      "Entries": [
+        "Wandering Executioner"
+      ]
+    },
+    {
+      "ID": 4910,
+      "Entries": [
+        "King's Mole"
+      ]
+    },
+    {
+      "ID": 4950,
+      "Entries": [
+        "Night King Followers"
+      ]
+    },
+    {
+      "ID": 4960,
+      "Entries": [
+        "Night King Followers_Giant Skeleton"
+      ]
+    },
+    {
+      "ID": 4980,
+      "Entries": [
+        "Deathbird"
+      ]
+    },
+    {
+      "ID": 5240,
+      "Entries": [
+        "Runebear"
+      ]
+    },
+    {
+      "ID": 5241,
+      "Entries": [
+        "Runebear Throw Presentation Camera"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "Wild Animal_Bear(Large)"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Spirit Ash summon_Unique"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Close Range"
+      ]
+    },
+    {
+      "ID": 600001,
+      "Entries": [
+        "Mid Range"
+      ]
+    },
+    {
+      "ID": 600002,
+      "Entries": [
+        "Long Range"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Conversation Camera: General"
+      ]
+    },
+    {
+      "ID": 1001000,
+      "Entries": [
+        "Conversation Camera: Bonfire"
+      ]
+    },
+    {
+      "ID": 1001001,
+      "Entries": [
+        "Conversation Camera: Great Bonfire"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "Name": "MapPieceTexParam_m61",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Graveyard Plains First Half Before Bridge"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Graveyard Plains First Half After Bridge"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Graveyard Plains First Half After Bridge / Graveyard Plains Second Half"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Graveyard Plains First Half After Bridge / Graveyard Plains Second Half_Below Mohenjo-daro"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Graveyard Plains First Half After Bridge B"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Graveyard Plains First Half After Bridge B / Graveyard Plains First Half Before Bridge"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Graveyard Plains First Half After Bridge B / Graveyard Plains First Half After Bridge"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Graveyard Plains First Half After Bridge B / Below Mohenjo-daro"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Graveyard Plains Road Fort"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Graveyard Plains Second Half"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Graveyard Plains Second Half_Below Mohenjo-daro"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Graveyard Plains Second Half_Below Mohenjo-daro / Mohenjo-daro First Half"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Graveyard Plains Second Half_Below Mohenjo-daro / Mohenjo-daro Second Half"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Graveyard Plains Second Half_Grand Church Vicinity"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Graveyard Plains Second Half_Grand Church Vicinity / Central Fort Rear Finger Ruins"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Graveyard Plains Second Half_Moat"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Graveyard Plains Second Half_Moat / Graveyard Plains Second Half"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Graveyard Plains Second Half_Moat / Grand Church Vicinity"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Graveyard Plains Ark"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Graveyard Plains Ark / Graveyard Plains First Half Bridge Front"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Graveyard Plains Ark / Dragon Mountain Foot"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Graveyard Plains Ark / Dragon Mountain West"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Graveyard Plains Ark / Dragon Mountain"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Dragon Mountain West"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Dragon Mountain West / Graveyard Plains First Half"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Dragon Mountain"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Dragon Mountain Foothills"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Dragon Mountain Foothills / Graveyard Plains First Half Post-Bridge"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Dragon Mountain Foothills / Dragon Mountain"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Mohenjo-Daro_First Half"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Mohenjo-Daro_Second Half"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Central Fort Rear Boss Room"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Central Fort Rear Altar"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Central Fort Rear Finger Ruins"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Abyss"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Abyss / Graveyard Plains First Half"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Abyss / Graveyard Plains Second Half"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Abyss / Graveyard Plains Moat"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Abyss / Graveyard Plains near Grand Church"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Abyss / Dragon Mountain"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Abyss / Dragon Mountain Foothills"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Abyss / Dragon Mountain West"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "Other"
+      ]
+    }
+  ]
+}

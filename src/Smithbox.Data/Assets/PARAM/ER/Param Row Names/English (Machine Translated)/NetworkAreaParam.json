@@ -1,0 +1,95 @@
+{
+  "Name": "NetworkAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (Do Not Delete)"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Eclipse Royal Castle 1"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Eclipse Royal Castle 2"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Eclipse Royal Castle 3"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Tower Town"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Wyvern Bridge"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Poison Swamp Forest"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Cathedral Church"
+      ]
+    },
+    {
+      "ID": 360000,
+      "Entries": [
+        "God Tomb"
+      ]
+    },
+    {
+      "ID": 370000,
+      "Entries": [
+        "Anor Londo Ruins"
+      ]
+    },
+    {
+      "ID": 380000,
+      "Entries": [
+        "Ruined Capital"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "Underground Prison"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Base"
+      ]
+    },
+    {
+      "ID": 981000,
+      "Entries": [
+        "Multiplayer Test Map"
+      ]
+    },
+    {
+      "ID": 991000,
+      "Entries": [
+        "Old Multiplayer Test Map"
+      ]
+    }
+  ]
+}

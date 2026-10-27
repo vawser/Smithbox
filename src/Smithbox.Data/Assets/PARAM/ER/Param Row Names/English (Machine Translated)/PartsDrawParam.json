@@ -1,0 +1,2951 @@
+{
+  "Name": "PartsDrawParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default Setting"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "L0 Main"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "L1 Main"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "No LOD"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "testparm"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Local Player"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Remote Player"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Phantom"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "NPC Player"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For Character: Small (1.5m or less)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "For Character: Medium (3m or less)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "For Character: Large (6m or less)"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "For Character: Colossal (12m or less)"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "For Character: Gigantic (25m or less)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "For Character: Fortress (50m or less)"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "For Character: Mausoleum Rain Shelter Asset Only"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "For Character: Does Not Switch to LOD Model"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For Character [Usage TBD]: Small (1.5m or less)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "For Character [Usage TBD]: Medium (3m or less)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "For Character [Usage TBD]: Large (6m or less)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "For Character [Usage TBD]: Colossal (12m or less)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "For Character [Usage TBD]: Gigantic (25m or less)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "For Character [Usage TBD]: Fortress (50m or less)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Costume Change NPC Summoned by Marika Slime (LOD2 Extended)"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Walking Mausoleum Barnacle [Attach processing load varies with draw distance]"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "For Character [Usage TBD]: Displayed Only at Closest Range"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "For Character [Usage TBD]: Does Not Switch to LOD Model"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Default + Crossfade"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "SpeedTree"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "SpeedTree Large"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "SpeedTree Extra Large No L1"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "SpeedTree Small"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "SpeedTree Extra Small (synced with grass draw distance)"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "SpeedTree Forest Test (includes entire display L2 map)"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "SpeedTree (Submerged Forest)"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "SpeedTree (Highland Tree White Birch)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "For Test Close Range LOD With Crossfade"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "For Test Close Range LOD Without Crossfade"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Terrain Structure Asset (L3 assumed)"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Ground Decorative Structure Use (AEG100_001 etc.)"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "GR Asset 60m- Long Distance Draw L2 and No Texture LOD"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "GR Asset 60m- Long Distance Draw L2"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "GR Asset 30-60m L2"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "GR Asset 10-30m L2"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "GR Asset 5-10m L1"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "GR Asset 2-5m L0"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "GR Asset 1-2m L0"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "GR Asset ~1m L0"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "GR Asset 5-10m Exclude from L1"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "GR Item Corpse Series"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "GR Asset Visible up to L2 Map (e.g. Giant Ruins)"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "low texture not switching"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "No LOD Model Switch"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "L2 Only (Reflection Scene Default)"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "No LOD Model Switch (For Poly Drama)"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Balloon Pull-in L1 Distance 350"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Shadow Rock Structure Asset (Assumed L3)"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "53 Texture Distance Extension"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Terrain Structure Asset (L3 assumed) L1"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Highland Rubble Rock L0 Draw 128"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Highland Rubble Rock L0 Draw 256"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "SFXOBJ for"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Multi Wall"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Magic Seal For_No LOD_No texLOD_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Snowy Mountain Rock Inset 1 no texLOD"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Snowy Mountain Rock Inset 2 no texLOD"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Plains_Giant Chair_Pull-in 0"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Snowy Mountain Transparent Floor"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Fallen Ruins Additional Ivy No Shadow Cast"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "AEG_099_653 Flower 1 Support"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "SEQ44392 53 Custom"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Plains Wall Use"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "GR Crucified Corpse"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Chest"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Snowy Mountain Ghost Tree"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Snowy Mountain Petrified Tree Large"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Snowy Mountain Petrified Tree Medium"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "Snowy Mountain Petrified Tree Small"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "Light Tree"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "Open Corpse Asset"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "Map OBJ Text Only 56 Variant"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Open Small-Scale Monument"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "SLOD Small-Scale LOD-Side Param (Standard Church)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "SLOD Small-Scale Base-Side Param (Standard Church)"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "SLOD Large Scale L3 Do Not Use"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "SLOD Medium Scale L3 Do Not Use"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "SLOD Small-Scale L3 Do Not Use"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "SLOD Medium Scale LOD-Side Param (Plains Church)"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "SLOD Medium Scale Base-Side Param (Plains Church)"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "SLOD Medium Scale LOD-Side Param (Bridge)"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "SLOD Medium Scale Base-Side Param (Bridge)"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "SLOD Medium Scale LOD-Side Param (Cliff Tunnel)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "SLOD Medium Scale Base-Side Param (Cliff Tunnel)"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "SLOD Medium Scale LOD-Side Param (Volcano Prison Overall)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "SLOD Medium Scale Base-Side Param (Volcano Prison Overall)"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "SLOD Medium Scale LOD-Side Param (Volcano Prison Entrance)"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "SLOD Medium Scale Base-Side Param (Volcano Prison Entrance)"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "SLOD Medium Scale LOD-Side Param (Monsan Overall)"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "SLOD Medium Scale Base-Side Param (Monsan Overall)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "SLOD Medium Scale LOD-Side Param (Monsan Entrance)"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "SLOD Medium Scale Base-Side Param (Monsan Entrance)"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Monsan_Entrance Building"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "SLOD Mid-scale LOD-side Param (Stormveil Generic Asset)"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "SLOD Mid-scale Base-side Param (Stormveil Generic Asset)"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "SLOD Large Scale LOD-Side Param (Fort Radius 80m)"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "SLOD Large Scale Base-Side Param (Fort)"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "SLOD Small-Scale LOD-Side Param (Small Ruins Radius 40m)"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "SLOD Small-Scale Base-Side Param (Small Ruins)"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "SLOD Large Scale LOD-Side Param (Giant Ruins Radius 80m)"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "SLOD Large Scale Base-Side Param (Giant Ruins)"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "SLOD Large Scale LOD-Side Param (Submerged City Radius 80m)"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "SLOD Large Scale Base-Side Param (Submerged City)"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "SLOD Small-Scale LOD-Side Param (Giant)"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "SLOD Small-Scale Base-Side Param (Giant)"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "SLOD Large Scale LOD-Side Param (Royal Capital)"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "SLOD Large-Scale Base-Side Param (Royal Capital)"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "SLOD Small-Scale LOD-Side Param (Fallen Ruins)"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "SLOD Small-Scale Base-Side Param (Giant Mounted Statue)"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "SLOD Large Scale LOD-Side Param (Bridge of God)"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "SLOD Large-Scale Base-Side Param (Bridge of God)"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Highland Windmill Blade"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Highland Sorcerer's Tower Base Side Param (Standard Church)"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Lake Highland Cliff Material Visible From Lake"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "SLOD Small-Scale LOD-Side Param (Giant Skeleton_Plains)"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "SLOD Small-Scale LOD-Side Param (Arena Plains)"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "SLOD Small-Scale Base-Side Param (Small Ruins"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "SLOD Small-Scale LOD-Side Param (Plains Desert Small Outpost Entrance Distant View) for AEG008_319"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "SLOD Large-Scale Bridge of God (for Snowy Mountain)"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "SLOD Large-Scale Plains Root Distant View Build Limit 300"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "SLOD Large-Scale Plains Root Distant View Build Limit 380"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Shipwreck_No Shadow Cast"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "GR Asset 30-256m Long Distance Draw"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "GR Asset 10-30m Long Distance Draw"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "GR Asset L1 512 Long Distance Draw (Symbol Appearance)"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "GR Asset Royal Capital Wall"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "GR Asset Royal Capital Decorative Stairs"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "GR Asset Royal Capital Decorative Stairs Small Scale"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Colossal Rock/Cliff (assumes no TEXLOD) Level 2"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Colossal Rock/Cliff (assumes no TEXLOD) Level 1"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Large Rock / Cliff (TEXLOD not applied) Level 1"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Mid Rock Cliff (Assumes No TEXLOD) Level 1"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Small Rock/Cliff (assumes no TEXLOD) Level 0"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Plains Roots (assumes no TEXLOD) Level 0 Test"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Insert Terrain Type"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Grass Exclusive"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "GR Asset Medium Building Standard"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Open Use_Size Medium 2_texLOD 80m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "For Open Event"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Open For Near View Overlay"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Open Crystal"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "SLOD Small-Scale LOD-Side Param (Crystal)"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "GR Asset 5-10m texLOD Distance 100m Orig 52"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "GR Asset 2-5m texLOD Distance 50m Orig 53"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "SLOD Large Scale LOD-Side Param (Snowy Mountain Beautified Tree)"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "SLOD Large-Scale Base-Side Param (Snowy Mountain Kaka Tree)"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "GR Asset 10-30m texLOD Distance 100m Orig 51"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "GR Asset 1-2m texLOD Distance Extended (Gravestone Type) Orig 54"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "43_50 For Mini World Tree texLOD Distance 100m orig 52"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "For Open__Distant View Switch Distance_256m"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Cutscene_Default"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Cutscene_s60_42_0000_Meeting Daughter Marika"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Site of Grace / Return OBJ"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "For Sea"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Old Crater Lake"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Underground Plains_Distant Lake"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Ruins Descending_Distant Sea"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "NT版：For Sea"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Crater Lake"
+      ]
+    },
+    {
+      "ID": 840,
+      "Entries": [
+        "World Tree_Trunk"
+      ]
+    },
+    {
+      "ID": 841,
+      "Entries": [
+        "World Tree_Trunk_LOD Enabled"
+      ]
+    },
+    {
+      "ID": 845,
+      "Entries": [
+        "World Tree_Thick Branch"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "Open Sky Dome"
+      ]
+    },
+    {
+      "ID": 851,
+      "Entries": [
+        "Legacy Skydome"
+      ]
+    },
+    {
+      "ID": 852,
+      "Entries": [
+        "Aurora Exclusive"
+      ]
+    },
+    {
+      "ID": 855,
+      "Entries": [
+        "Nightmare Celestial Sphere: Underground Labyrinth Royal Capital"
+      ]
+    },
+    {
+      "ID": 856,
+      "Entries": [
+        "Cliff Fire (Underground Labyrinth Plains Depths)"
+      ]
+    },
+    {
+      "ID": 860,
+      "Entries": [
+        "Celestial Dome_Clouds_Open"
+      ]
+    },
+    {
+      "ID": 861,
+      "Entries": [
+        "Celestial Dome_Clouds_Legacy"
+      ]
+    },
+    {
+      "ID": 862,
+      "Entries": [
+        "Celestial Dome_Clouds_Divine Tower"
+      ]
+    },
+    {
+      "ID": 865,
+      "Entries": [
+        "Celestial Dome_Clouds_Legacy_Front Layer Data"
+      ]
+    },
+    {
+      "ID": 866,
+      "Entries": [
+        "Celestial Dome_Clouds_Legacy_Front Layer Data_For m13 Distant Tornado"
+      ]
+    },
+    {
+      "ID": 867,
+      "Entries": [
+        "Celestial Dome_Clouds_Open_Front Layer Data"
+      ]
+    },
+    {
+      "ID": 868,
+      "Entries": [
+        "Post-Immolation World Tree_Rear Sky (Open)"
+      ]
+    },
+    {
+      "ID": 869,
+      "Entries": [
+        "Post-Burning Erdtree_Background Sky (Legacy)"
+      ]
+    },
+    {
+      "ID": 898,
+      "Entries": [
+        "Distant View Continent_Open"
+      ]
+    },
+    {
+      "ID": 899,
+      "Entries": [
+        "NT用_Distant Haze"
+      ]
+    },
+    {
+      "ID": 993,
+      "Entries": [
+        "GR World-Scale Asset Divine Tower Distant View Only"
+      ]
+    },
+    {
+      "ID": 994,
+      "Entries": [
+        "GR World-Scale Asset World Tree"
+      ]
+    },
+    {
+      "ID": 995,
+      "Entries": [
+        "GR World-Scale Asset"
+      ]
+    },
+    {
+      "ID": 996,
+      "Entries": [
+        "GR World-Scale Asset Highland Phantom Banner (No Shadow for 995)"
+      ]
+    },
+    {
+      "ID": 997,
+      "Entries": [
+        "GR World-Scale Asset Divine Tower Distant View Only"
+      ]
+    },
+    {
+      "ID": 998,
+      "Entries": [
+        "Distant View Test Use Only"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        "GR Asset Forced Draw Temporary Param for Batch Map Creation"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "GR Map Part Applied"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "GR Map Part Applied Farthest View Special AEG"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "GR World Class Asset (Used for Area Symbols"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Legacy_Size Medium_texLOD30m"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m"
+      ]
+    },
+    {
+      "ID": 2044,
+      "Entries": [
+        "For Legacy_No LOD_texLOD10m"
+      ]
+    },
+    {
+      "ID": 2045,
+      "Entries": [
+        "For Legacy_No LOD_texLOD15m"
+      ]
+    },
+    {
+      "ID": 2046,
+      "Entries": [
+        "For Legacy_No LOD_texLOD20m"
+      ]
+    },
+    {
+      "ID": 2048,
+      "Entries": [
+        "For Legacy_No LOD_texLOD30m"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "For Legacy_No LOD_texLOD40m"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "For Legacy_No LOD_texLOD60m"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "For Legacy_No LOD_texLOD80m"
+      ]
+    },
+    {
+      "ID": 2053,
+      "Entries": [
+        "For Legacy_No LOD_texLOD100m"
+      ]
+    },
+    {
+      "ID": 2054,
+      "Entries": [
+        "For Legacy_No LOD_texLOD120m"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None"
+      ]
+    },
+    {
+      "ID": 2068,
+      "Entries": [
+        "Legacy_Size Medium_texLOD None"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD None"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2106,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2108,
+      "Entries": [
+        "Legacy_Size Medium_texLOD30m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2114,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2145,
+      "Entries": [
+        "For Legacy_No LOD_texLOD15m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 2146,
+      "Entries": [
+        "For Legacy_No LOD_texLOD20m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 2148,
+      "Entries": [
+        "For Legacy_No LOD_texLOD30m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "For Legacy_No LOD_texLOD40m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 2151,
+      "Entries": [
+        "For Legacy_No LOD_texLOD60m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 2152,
+      "Entries": [
+        "For Legacy_No LOD_texLOD80m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_LOD Level 3 Enabled"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Draw Distance_64m"
+      ]
+    },
+    {
+      "ID": 2306,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m_Draw Distance_64m"
+      ]
+    },
+    {
+      "ID": 2308,
+      "Entries": [
+        "Legacy_Size Medium_texLOD30m_Draw Distance_160m"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_Draw Distance_160m"
+      ]
+    },
+    {
+      "ID": 2314,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m_Draw Distance_180m"
+      ]
+    },
+    {
+      "ID": 2330,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m_Draw Distance_256m"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Draw Distance_32m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2403,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Draw Distance_48m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2404,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Draw Distance_64m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2406,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m_Draw Distance_64m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2408,
+      "Entries": [
+        "Legacy_Size Medium_texLOD30m_Draw Distance_160m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_Draw Distance_160m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2414,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m_Draw Distance_180m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 2430,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m_Draw Distance_256m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 2504,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Shadow Draw Distance_25m"
+      ]
+    },
+    {
+      "ID": 2506,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m_Shadow Draw Distance_25m"
+      ]
+    },
+    {
+      "ID": 2508,
+      "Entries": [
+        "Legacy_Size Medium_texLOD30m_Shadow Draw Distance_50m"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_Shadow Draw Distance_50m"
+      ]
+    },
+    {
+      "ID": 2514,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m_Shadow Draw Distance_50m"
+      ]
+    },
+    {
+      "ID": 2530,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m_Shadow Draw Distance_150m"
+      ]
+    },
+    {
+      "ID": 2544,
+      "Entries": [
+        "Legacy_Size Small_texLOD None_Shadow Draw Distance_25m"
+      ]
+    },
+    {
+      "ID": 2548,
+      "Entries": [
+        "Legacy_Size Medium_texLOD None_Shadow Draw Distance_50m"
+      ]
+    },
+    {
+      "ID": 2554,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD None_Shadow Draw Distance_50m"
+      ]
+    },
+    {
+      "ID": 2580,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD None_Shadow Draw Distance_150m"
+      ]
+    },
+    {
+      "ID": 2584,
+      "Entries": [
+        "For Legacy_No LOD_texLOD20m_Shadow Draw Distance_25m"
+      ]
+    },
+    {
+      "ID": 2604,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Shadow Draw Distance_25m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 2606,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m_Shadow Draw Distance_25m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 2607,
+      "Entries": [
+        "Legacy_Size Small2_texLOD30m_Shadow Draw Distance_25m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 2608,
+      "Entries": [
+        "For Legacy_Size Medium_texLOD30m_Shadow Draw Distance_50m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_Shadow Draw Distance_50m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 2614,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m_Shadow Draw Distance_50m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 2630,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m_Shadow Draw Distance_150m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 2644,
+      "Entries": [
+        "Legacy_Size Small_texLOD None_Shadow Draw Distance_25m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "For Legacy_Open Terrain Distant View_No LOD_texLOD256m"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "For Legacy_Open Terrain Distant View_No LOD_texLOD512m"
+      ]
+    },
+    {
+      "ID": 2848,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_80m"
+      ]
+    },
+    {
+      "ID": 2850,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_120m"
+      ]
+    },
+    {
+      "ID": 2851,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_160m"
+      ]
+    },
+    {
+      "ID": 2852,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_200m"
+      ]
+    },
+    {
+      "ID": 2854,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_256m"
+      ]
+    },
+    {
+      "ID": 2855,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_300m"
+      ]
+    },
+    {
+      "ID": 2860,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_512m"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Legacy_Underground Labyrinth_Entrance Building"
+      ]
+    },
+    {
+      "ID": 2901,
+      "Entries": [
+        "m13 Tornado Only"
+      ]
+    },
+    {
+      "ID": 2902,
+      "Entries": [
+        "Dragon Nest Exclusive"
+      ]
+    },
+    {
+      "ID": 2905,
+      "Entries": [
+        "Flying Bird 1"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "Small Outpost Entrance_Cave"
+      ]
+    },
+    {
+      "ID": 2911,
+      "Entries": [
+        "Small Outpost Entrance_Catacombs"
+      ]
+    },
+    {
+      "ID": 2912,
+      "Entries": [
+        "Small Outpost Entrance_Tunnel"
+      ]
+    },
+    {
+      "ID": 2920,
+      "Entries": [
+        "Small Outpost Entrance_Distant View Model_Cave"
+      ]
+    },
+    {
+      "ID": 2921,
+      "Entries": [
+        "Small Outpost Entrance_Distant View Model_Catacombs"
+      ]
+    },
+    {
+      "ID": 2922,
+      "Entries": [
+        "Small Outpost Entrance_Distant View Model_Tunnel"
+      ]
+    },
+    {
+      "ID": 2923,
+      "Entries": [
+        "Tutorial Entrance Cave_For Distant View Model"
+      ]
+    },
+    {
+      "ID": 2924,
+      "Entries": [
+        "Small Outpost Entrance_Blackboard for Statue Under-Blind"
+      ]
+    },
+    {
+      "ID": 2925,
+      "Entries": [
+        "Highland m34_12 For"
+      ]
+    },
+    {
+      "ID": 2930,
+      "Entries": [
+        "Loading Delay Prevention Wall (Open and Legacy Common)"
+      ]
+    },
+    {
+      "ID": 2940,
+      "Entries": [
+        "World Tree 1"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Legacy Entrance Distant View"
+      ]
+    },
+    {
+      "ID": 3148,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_80m"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_120m"
+      ]
+    },
+    {
+      "ID": 3151,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_160m"
+      ]
+    },
+    {
+      "ID": 3152,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_200m"
+      ]
+    },
+    {
+      "ID": 3154,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_256m"
+      ]
+    },
+    {
+      "ID": 3155,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_300m"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None Distant View Switch Distance_512m"
+      ]
+    },
+    {
+      "ID": 9945,
+      "Entries": [
+        "Terrain Structure Asset (L4)"
+      ]
+    },
+    {
+      "ID": 9995,
+      "Entries": [
+        "Distant View LOD2 Terrain Map (Test)"
+      ]
+    },
+    {
+      "ID": 9998,
+      "Entries": [
+        "Distant View Test (for Map Parts)"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Distant View Test"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "PG Test for LodMap1 Included"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "PG Test for LodMap2 Included"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "PG Test for LOD Model Does Not Switch low Texture Does Not Switch"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "PG Test for LOD Model Does Not Switch Always low Texture"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "PG Test for Open Build Distance Limit Test (Limit 30m Play 5m)"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "PG Test for NoFarClip"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "No LOD Model Switch"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "SpeedTree Test Large"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "SpeedTree Test Medium"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "SpeedTree Test Small"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "For Menu"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "L0_Prop_Small (1~2m)_(Draw Distance 64m) texLOD 20m"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "L0_Prop_Small (1~2m)_(Draw Distance 64m) texLOD 20m_Does Not Cast Shadow"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "L0_Prop_Medium (3~5m)_(Draw Distance 128m) texLOD 40m"
+      ]
+    },
+    {
+      "ID": 40011,
+      "Entries": [
+        "L0_Prop_Medium (3~5m)_(Draw Distance 128m) texLOD 40m_Does Not Cast Shadow"
+      ]
+    },
+    {
+      "ID": 40020,
+      "Entries": [
+        "L0_Medium Asset (5~7m)_(Draw Distance 256m) texLOD 40m"
+      ]
+    },
+    {
+      "ID": 40021,
+      "Entries": [
+        "L0_Medium Asset (5~7m)_(Draw Distance 256m) texLOD 40m_Does Not Cast Shadow"
+      ]
+    },
+    {
+      "ID": 40030,
+      "Entries": [
+        "L0_Medium Asset (8~10m)_(Draw Distance 256m) texLOD 60m"
+      ]
+    },
+    {
+      "ID": 40031,
+      "Entries": [
+        "L0_Medium Asset (8~10m)_(Draw Distance 256m) texLOD 60m_Does Not Cast Shadow"
+      ]
+    },
+    {
+      "ID": 40060,
+      "Entries": [
+        "L0_Natural Terrain Overlay Asset(Draw Distance 256m) texLOD 128m"
+      ]
+    },
+    {
+      "ID": 41060,
+      "Entries": [
+        "L1_Natural Terrain Overlay Asset(Draw Distance 512m) texLOD 128m"
+      ]
+    },
+    {
+      "ID": 42000,
+      "Entries": [
+        "L2_Terrain Construction Asset(LOD10-90-125-512-768)"
+      ]
+    },
+    {
+      "ID": 42010,
+      "Entries": [
+        "L2_Terrain Construction Asset(LOD40-60-80-512-768)"
+      ]
+    },
+    {
+      "ID": 45200,
+      "Entries": [
+        "L0_SLOD_Radius ~20m Near View"
+      ]
+    },
+    {
+      "ID": 45201,
+      "Entries": [
+        "L2_SLOD_Radius ~20m Distant View texLOD512m"
+      ]
+    },
+    {
+      "ID": 45204,
+      "Entries": [
+        "L0_SLOD_Radius ~20m Near View"
+      ]
+    },
+    {
+      "ID": 45205,
+      "Entries": [
+        "L2_SLOD_Radius ~20m Distant View texLOD768m"
+      ]
+    },
+    {
+      "ID": 45400,
+      "Entries": [
+        "L0_SLOD_Radius ~40m Near View"
+      ]
+    },
+    {
+      "ID": 45401,
+      "Entries": [
+        "L2_SLOD_Radius ~40m Distant View texLOD512m"
+      ]
+    },
+    {
+      "ID": 45404,
+      "Entries": [
+        "L0_SLOD_Radius ~40m Near View"
+      ]
+    },
+    {
+      "ID": 45405,
+      "Entries": [
+        "L2_SLOD_Radius ~40m Distant View texLOD768m"
+      ]
+    },
+    {
+      "ID": 45800,
+      "Entries": [
+        "L1_SLOD_Radius ~80m Near View"
+      ]
+    },
+    {
+      "ID": 45801,
+      "Entries": [
+        "L2_SLOD_Radius ~80m Distant View texLOD1024m"
+      ]
+    },
+    {
+      "ID": 45804,
+      "Entries": [
+        "L1_SLOD_Radius ~80m Near View"
+      ]
+    },
+    {
+      "ID": 45805,
+      "Entries": [
+        "L2_SLOD_Radius ~80m Distant View texLOD1280m"
+      ]
+    },
+    {
+      "ID": 45810,
+      "Entries": [
+        "L1_SLOD_Radius ~80m Near View"
+      ]
+    },
+    {
+      "ID": 45811,
+      "Entries": [
+        "L2_SLOD_Radius ~80m Distant View no texLOD"
+      ]
+    },
+    {
+      "ID": 47000,
+      "Entries": [
+        "L0_SLOD_Highway Fort Radius ~50m Near View"
+      ]
+    },
+    {
+      "ID": 47001,
+      "Entries": [
+        "L2_SLOD_Highway Fort Radius ~50m Distant View texLOD768m"
+      ]
+    },
+    {
+      "ID": 47002,
+      "Entries": [
+        "L1_SLOD_1/4 Grid 128x128 Near View"
+      ]
+    },
+    {
+      "ID": 47003,
+      "Entries": [
+        "L2_SLOD_1/4 Grid 128x128 Distant View texLOD1024m"
+      ]
+    },
+    {
+      "ID": 47004,
+      "Entries": [
+        "L0_SLOD_1/4 Grid 128x128 Near View Shadow Draw LOD Level Offset 2"
+      ]
+    },
+    {
+      "ID": 47005,
+      "Entries": [
+        "L2_SLOD_1/4 Grid 128x128 Distant View texLOD1280m"
+      ]
+    },
+    {
+      "ID": 47006,
+      "Entries": [
+        "L0_SLOD_1/4 Grid 128x128 Near View Shadow Draw LOD Level Offset 1"
+      ]
+    },
+    {
+      "ID": 47007,
+      "Entries": [
+        "L2_SLOD_1/4 Grid 128x128 Distant View texLOD1280m"
+      ]
+    },
+    {
+      "ID": 47010,
+      "Entries": [
+        "L0_SLOD_1/4 Grid 128x128_Near View texLOD128m"
+      ]
+    },
+    {
+      "ID": 47011,
+      "Entries": [
+        "L2_SLOD_1/4 Grid 128x128 Distant View no texLOD"
+      ]
+    },
+    {
+      "ID": 47012,
+      "Entries": [
+        "L2_SLOD_1/1 Grid Placement"
+      ]
+    },
+    {
+      "ID": 47013,
+      "Entries": [
+        "L2_SLOD_Spiral Tower Entrance Unique Support Shorten Build Limit Distance"
+      ]
+    },
+    {
+      "ID": 47020,
+      "Entries": [
+        "L1_SLOD_Radius ~80m Near View"
+      ]
+    },
+    {
+      "ID": 47021,
+      "Entries": [
+        "L2_SLOD_Radius ~80m Distant View texLOD1024m"
+      ]
+    },
+    {
+      "ID": 47022,
+      "Entries": [
+        "L2_SLOD Terrain Near Marika's Hometown Visible from Start Point/For AEG064_900"
+      ]
+    },
+    {
+      "ID": 47023,
+      "Entries": [
+        "Manor Entrance Distant View"
+      ]
+    },
+    {
+      "ID": 47030,
+      "Entries": [
+        "L0 SLOD Dragon Peak Summit_Near View"
+      ]
+    },
+    {
+      "ID": 47031,
+      "Entries": [
+        "L2_SLOD Dragon Peak Summit_Distant View"
+      ]
+    },
+    {
+      "ID": 47040,
+      "Entries": [
+        "L2_Collapsed Spiral Tower Distortion"
+      ]
+    },
+    {
+      "ID": 47801,
+      "Entries": [
+        "Generic Water Surface_Waterfall texLOD320(orig 801)"
+      ]
+    },
+    {
+      "ID": 47850,
+      "Entries": [
+        "Medium-scale asset draw distance 512 L0 LOD1"
+      ]
+    },
+    {
+      "ID": 49001,
+      "Entries": [
+        "Add-on Alpha Cut Ivy (Small)_(Draw Distance 128m) texLOD 60m No Shadow Cast"
+      ]
+    },
+    {
+      "ID": 49002,
+      "Entries": [
+        "L0_Phantom Gravestone (1~2m)_(Draw Distance 64m) texLOD 40m"
+      ]
+    },
+    {
+      "ID": 49003,
+      "Entries": [
+        "L0_Medium Gravestone (15m)_(Draw Distance 256m) texLOD 40m"
+      ]
+    },
+    {
+      "ID": 49004,
+      "Entries": [
+        "L2_Finger Ruin Elevator Draw Distance 2048m"
+      ]
+    },
+    {
+      "ID": 49005,
+      "Entries": [
+        "No LOD_No texLOD_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 49006,
+      "Entries": [
+        "Gimmick Asset L0_Small Prop_Small (1-2m)_(Draw Distance 64m) no texLOD"
+      ]
+    },
+    {
+      "ID": 49007,
+      "Entries": [
+        "L1_Inset Terrain Overlay Part_(Draw Distance 512m) texLOD 128m_Does Not Cast Shadow"
+      ]
+    },
+    {
+      "ID": 49008,
+      "Entries": [
+        "Shadow / SFX Occlusion Data For Use: No LOD"
+      ]
+    },
+    {
+      "ID": 49009,
+      "Entries": [
+        "Miquella Cross"
+      ]
+    },
+    {
+      "ID": 49010,
+      "Entries": [
+        "DLC Map Acquisition OBJ Text-Only 40030 Variant"
+      ]
+    },
+    {
+      "ID": 49200,
+      "Entries": [
+        "Blue/Red Plains_Midground Flower Field_no texLOD"
+      ]
+    },
+    {
+      "ID": 49800,
+      "Entries": [
+        "DLC_Sea Surface"
+      ]
+    },
+    {
+      "ID": 49820,
+      "Entries": [
+        "AEG462_016 Dedicated_Celestial Cloth_z-sort offset 512_TexLOD Disabled"
+      ]
+    },
+    {
+      "ID": 49821,
+      "Entries": [
+        "AEG462_043 Dedicated_Mohenjo-daro Celestial Cloth_z-sort offset 6400"
+      ]
+    },
+    {
+      "ID": 49822,
+      "Entries": [
+        "AEG462_033 Dedicated_Spiral Tower Lower Level_Celestial Cloth_z-sort offset 4000"
+      ]
+    },
+    {
+      "ID": 49825,
+      "Entries": [
+        "Texture LOD Disabled_Base is 49005"
+      ]
+    },
+    {
+      "ID": 49840,
+      "Entries": [
+        "Shadow World Tree_Trunk_LOD1 Stage 60m"
+      ]
+    },
+    {
+      "ID": 49845,
+      "Entries": [
+        "Shadow World Tree_Branches and Ceiling_Forward Translucent"
+      ]
+    },
+    {
+      "ID": 49846,
+      "Entries": [
+        "Shadow World Tree_White Haze_LOD1 Stage 800m"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "BONSAI756 For Use"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "SpeedTree Test Medium LOD3 Billboard Enabled"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "SpeedTree Test Small LOD3 Billboard Enabled"
+      ]
+    },
+    {
+      "ID": 50011,
+      "Entries": [
+        "BONSAI607 For Conifer"
+      ]
+    },
+    {
+      "ID": 50012,
+      "Entries": [
+        "BONSAI607 For Broadleaf Tree"
+      ]
+    },
+    {
+      "ID": 50013,
+      "Entries": [
+        "BONSAI607 For Compatibility Bush Shrub"
+      ]
+    },
+    {
+      "ID": 50014,
+      "Entries": [
+        "BONSAI790 For Use"
+      ]
+    },
+    {
+      "ID": 50015,
+      "Entries": [
+        "Miquella Cross Flicker Reduction_For Indoors"
+      ]
+    },
+    {
+      "ID": 50016,
+      "Entries": [
+        "BONSAI450 For Vegetation_Large"
+      ]
+    },
+    {
+      "ID": 50017,
+      "Entries": [
+        "BONSAI450 For Vegetation_Small"
+      ]
+    },
+    {
+      "ID": 50018,
+      "Entries": [
+        "Small Erdtree Vines"
+      ]
+    },
+    {
+      "ID": 50019,
+      "Entries": [
+        "BONSAI 888 Support"
+      ]
+    },
+    {
+      "ID": 50020,
+      "Entries": [
+        "BONSAI 888 Support"
+      ]
+    },
+    {
+      "ID": 50021,
+      "Entries": [
+        "BONSAI 872 Support"
+      ]
+    },
+    {
+      "ID": 50022,
+      "Entries": [
+        "BONSAI 872 Support"
+      ]
+    },
+    {
+      "ID": 50023,
+      "Entries": [
+        "BONSAI802 For Compatibility Original 801"
+      ]
+    },
+    {
+      "ID": 50024,
+      "Entries": [
+        "BONSAI802 For Compatibility Original 801"
+      ]
+    },
+    {
+      "ID": 50025,
+      "Entries": [
+        "BONSAI1000 Support AEG257_001"
+      ]
+    },
+    {
+      "ID": 50026,
+      "Entries": [
+        "BONSAI1000 Support m000066"
+      ]
+    },
+    {
+      "ID": 50027,
+      "Entries": [
+        "BONSAI1000 Support Map Parts Outdoor"
+      ]
+    },
+    {
+      "ID": 50028,
+      "Entries": [
+        "BONSAI1000 Support Map Parts Indoor"
+      ]
+    },
+    {
+      "ID": 50029,
+      "Entries": [
+        "BONSAI1000 Support Terrain Asset"
+      ]
+    },
+    {
+      "ID": 50030,
+      "Entries": [
+        "BONSAI1000 For Building Asset"
+      ]
+    },
+    {
+      "ID": 50031,
+      "Entries": [
+        "BONSAI1010 For Ancient Dragon Body"
+      ]
+    },
+    {
+      "ID": 50032,
+      "Entries": [
+        "BONSAI1010 For Ancient Dragon Wing_Player Mount"
+      ]
+    },
+    {
+      "ID": 50033,
+      "Entries": [
+        "BONSAI1010 For Giant Architecture"
+      ]
+    },
+    {
+      "ID": 50034,
+      "Entries": [
+        "BONSAI1010 For Underground Waterway"
+      ]
+    },
+    {
+      "ID": 50035,
+      "Entries": [
+        "BONSAI1010 For Architecture"
+      ]
+    },
+    {
+      "ID": 50036,
+      "Entries": [
+        "BONSAI1010 For Rubble"
+      ]
+    },
+    {
+      "ID": 50037,
+      "Entries": [
+        "BONSAI1010 For Corpse"
+      ]
+    },
+    {
+      "ID": 50038,
+      "Entries": [
+        "BONSAI803 For Use_Chain Bundle_Originally 2403"
+      ]
+    },
+    {
+      "ID": 50039,
+      "Entries": [
+        "BONSAI803 For Use_Asset_Originally 2403"
+      ]
+    },
+    {
+      "ID": 50045,
+      "Entries": [
+        "Terrain Structure Asset (L3 assumed) Shadow Draw 150m"
+      ]
+    },
+    {
+      "ID": 50046,
+      "Entries": [
+        "Terrain Structure Asset (L3 assumed) Shadow Draw 60m"
+      ]
+    },
+    {
+      "ID": 50050,
+      "Entries": [
+        "Road Use [GR Asset 30-60m L2]"
+      ]
+    },
+    {
+      "ID": 50065,
+      "Entries": [
+        "For Chapel Awaiting King_Shadow Rock Structure Asset (Assumed L3)"
+      ]
+    },
+    {
+      "ID": 50077,
+      "Entries": [
+        "Farum Azula Ruins Load Improvement Overlay Vines LOD Distance Adjustment"
+      ]
+    },
+    {
+      "ID": 50101,
+      "Entries": [
+        "Farum Azula Ruins Load Improvement LOD Distance Adjustment"
+      ]
+    },
+    {
+      "ID": 52004,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m"
+      ]
+    },
+    {
+      "ID": 52006,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m"
+      ]
+    },
+    {
+      "ID": 52008,
+      "Entries": [
+        "Legacy_Size Medium_texLOD30m"
+      ]
+    },
+    {
+      "ID": 52010,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m"
+      ]
+    },
+    {
+      "ID": 52014,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m"
+      ]
+    },
+    {
+      "ID": 52030,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m"
+      ]
+    },
+    {
+      "ID": 52044,
+      "Entries": [
+        "For Legacy_No LOD_texLOD10m"
+      ]
+    },
+    {
+      "ID": 52045,
+      "Entries": [
+        "For Legacy_No LOD_texLOD15m"
+      ]
+    },
+    {
+      "ID": 52046,
+      "Entries": [
+        "For Legacy_No LOD_texLOD20m"
+      ]
+    },
+    {
+      "ID": 52048,
+      "Entries": [
+        "For Legacy_No LOD_texLOD30m"
+      ]
+    },
+    {
+      "ID": 52050,
+      "Entries": [
+        "For Legacy_No LOD_texLOD40m"
+      ]
+    },
+    {
+      "ID": 52051,
+      "Entries": [
+        "For Legacy_No LOD_texLOD60m"
+      ]
+    },
+    {
+      "ID": 52052,
+      "Entries": [
+        "For Legacy_No LOD_texLOD80m"
+      ]
+    },
+    {
+      "ID": 52053,
+      "Entries": [
+        "For Legacy_No LOD_texLOD100m"
+      ]
+    },
+    {
+      "ID": 52054,
+      "Entries": [
+        "For Legacy_No LOD_texLOD120m"
+      ]
+    },
+    {
+      "ID": 52060,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None"
+      ]
+    },
+    {
+      "ID": 52068,
+      "Entries": [
+        "Legacy_Size Medium_texLOD None"
+      ]
+    },
+    {
+      "ID": 52090,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD None"
+      ]
+    },
+    {
+      "ID": 52104,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52106,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52108,
+      "Entries": [
+        "Legacy_Size Medium_texLOD30m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52110,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52114,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 52130,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52145,
+      "Entries": [
+        "For Legacy_No LOD_texLOD15m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 52146,
+      "Entries": [
+        "For Legacy_No LOD_texLOD20m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 52148,
+      "Entries": [
+        "For Legacy_No LOD_texLOD30m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 52150,
+      "Entries": [
+        "For Legacy_No LOD_texLOD40m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 52151,
+      "Entries": [
+        "For Legacy_No LOD_texLOD60m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 52152,
+      "Entries": [
+        "For Legacy_No LOD_texLOD80m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 52160,
+      "Entries": [
+        "For Legacy_No LOD_texLOD None_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 52210,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_LOD Level 3 Enabled"
+      ]
+    },
+    {
+      "ID": 52304,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Draw Distance_64m"
+      ]
+    },
+    {
+      "ID": 52306,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m_Draw Distance_64m"
+      ]
+    },
+    {
+      "ID": 52308,
+      "Entries": [
+        "Legacy_Size Medium_texLOD30m_Draw Distance_160m"
+      ]
+    },
+    {
+      "ID": 52310,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_Draw Distance_160m"
+      ]
+    },
+    {
+      "ID": 52314,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m_Draw Distance_180m"
+      ]
+    },
+    {
+      "ID": 52330,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m_Draw Distance_256m"
+      ]
+    },
+    {
+      "ID": 52402,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Draw Distance_32m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52403,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Draw Distance_48m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52404,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Draw Distance_64m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52406,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m_Draw Distance_64m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52408,
+      "Entries": [
+        "Legacy_Size Medium_texLOD30m_Draw Distance_160m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52410,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_Draw Distance_160m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52414,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m_Draw Distance_180m_Cast Shadow OFF"
+      ]
+    },
+    {
+      "ID": 52430,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m_Draw Distance_256m_Shadow Casting OFF"
+      ]
+    },
+    {
+      "ID": 52504,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Shadow Draw Distance_25m"
+      ]
+    },
+    {
+      "ID": 52506,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m_Shadow Draw Distance_25m"
+      ]
+    },
+    {
+      "ID": 52508,
+      "Entries": [
+        "Legacy_Size Medium_texLOD30m_Shadow Draw Distance_50m"
+      ]
+    },
+    {
+      "ID": 52510,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_Shadow Draw Distance_50m"
+      ]
+    },
+    {
+      "ID": 52514,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m_Shadow Draw Distance_50m"
+      ]
+    },
+    {
+      "ID": 52530,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m_Shadow Draw Distance_150m"
+      ]
+    },
+    {
+      "ID": 52544,
+      "Entries": [
+        "Legacy_Size Small_texLOD None_Shadow Draw Distance_25m"
+      ]
+    },
+    {
+      "ID": 52548,
+      "Entries": [
+        "Legacy_Size Medium_texLOD None_Shadow Draw Distance_50m"
+      ]
+    },
+    {
+      "ID": 52554,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD None_Shadow Draw Distance_50m"
+      ]
+    },
+    {
+      "ID": 52580,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD None_Shadow Draw Distance_150m"
+      ]
+    },
+    {
+      "ID": 52584,
+      "Entries": [
+        "For Legacy_No LOD_texLOD20m_Shadow Draw Distance_25m"
+      ]
+    },
+    {
+      "ID": 52604,
+      "Entries": [
+        "Legacy_Size Small_texLOD20m_Shadow Draw Distance_25m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 52606,
+      "Entries": [
+        "Legacy_Size Small_texLOD30m_Shadow Draw Distance_25m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 52607,
+      "Entries": [
+        "Legacy_Size Small2_texLOD30m_Shadow Draw Distance_25m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 52608,
+      "Entries": [
+        "For Legacy_Size Medium_texLOD30m_Shadow Draw Distance_50m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 52610,
+      "Entries": [
+        "Legacy_Size Medium_texLOD40m_Shadow Draw Distance_50m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 52614,
+      "Entries": [
+        "For Legacy_Size Medium 2_texLOD80m_Shadow Draw Distance_50m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 52630,
+      "Entries": [
+        "Legacy_Size Extra Large_texLOD160m_Shadow Draw Distance_150m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 52644,
+      "Entries": [
+        "Legacy_Size Small_texLOD None_Shadow Draw Distance_25m_Shadow LOD Offset 1"
+      ]
+    },
+    {
+      "ID": 53000,
+      "Entries": [
+        "Legacy For LOD2 Enabled Shadow LOD1 texLOD20"
+      ]
+    },
+    {
+      "ID": 53001,
+      "Entries": [
+        "Legacy For LOD2 Enabled Shadow LOD1 texLOD40"
+      ]
+    },
+    {
+      "ID": 53002,
+      "Entries": [
+        "Legacy For LOD2 Enabled Shadow LOD1 texLOD60"
+      ]
+    },
+    {
+      "ID": 53003,
+      "Entries": [
+        "Legacy For LOD2 Enabled Shadow LOD1 texLOD80"
+      ]
+    },
+    {
+      "ID": 53004,
+      "Entries": [
+        "Legacy For LOD2 Enabled Shadow LOD1 texLOD100"
+      ]
+    },
+    {
+      "ID": 53005,
+      "Entries": [
+        "Legacy For LOD2 Enabled Shadow LOD1 texLOD120"
+      ]
+    },
+    {
+      "ID": 53006,
+      "Entries": [
+        "Legacy For LOD2 Enabled Shadow LOD1 texLOD140"
+      ]
+    },
+    {
+      "ID": 53007,
+      "Entries": [
+        "Legacy For LOD2 Enabled Shadow LOD1 texLOD160"
+      ]
+    },
+    {
+      "ID": 53008,
+      "Entries": [
+        "Legacy For LOD2 Enabled Shadow LOD1 No texLOD"
+      ]
+    },
+    {
+      "ID": 53010,
+      "Entries": [
+        "Stormveil Castle Terrain Asset"
+      ]
+    },
+    {
+      "ID": 53011,
+      "Entries": [
+        "Volcano Manor_Rykard Area_Distant View Use"
+      ]
+    },
+    {
+      "ID": 53012,
+      "Entries": [
+        "Sorcery Town Saria"
+      ]
+    },
+    {
+      "ID": 99998,
+      "Entries": [
+        "Back Face Check"
+      ]
+    },
+    {
+      "ID": 99999,
+      "Entries": [
+        "For MovelViewr (No LOD) In GR"
+      ]
+    }
+  ]
+}

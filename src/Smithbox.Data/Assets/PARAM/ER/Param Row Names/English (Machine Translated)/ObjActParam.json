@@ -1,0 +1,911 @@
+{
+  "Name": "ObjActParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Required"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Chest"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Chest"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "m93_01_Door_Candle Room"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "m93_01_Door_Candle Room"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "m96_00 Door Concept Map_Entrance"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "m96_00 Door Concept Map_Church Entrance"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "m96_00 Door Concept Map_Distant View Entrance"
+      ]
+    },
+    {
+      "ID": 475,
+      "Entries": [
+        "m20_01_Door_Orphanage 2F_Small"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Carriage Door"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "test_Door Test"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "test_Door Test"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "m60 Fragment of the World Stele"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Catapult"
+      ]
+    },
+    {
+      "ID": 3402,
+      "Entries": [
+        "m60 Fragment of the World 1 Village Key Door"
+      ]
+    },
+    {
+      "ID": 99020,
+      "Entries": [
+        "Generic Square Door"
+      ]
+    },
+    {
+      "ID": 99026,
+      "Entries": [
+        "Open Generic Lever"
+      ]
+    },
+    {
+      "ID": 27002,
+      "Entries": [
+        "Small Exploration: Lever"
+      ]
+    },
+    {
+      "ID": 1027002,
+      "Entries": [
+        "Small Exploration: Lever"
+      ]
+    },
+    {
+      "ID": 27006,
+      "Entries": [
+        "Cave Boss Room Entrance"
+      ]
+    },
+    {
+      "ID": 27019,
+      "Entries": [
+        "m35_00_One-way Door (Single)_"
+      ]
+    },
+    {
+      "ID": 1027019,
+      "Entries": [
+        "m35_00_One-way Door (Single)_Shit-eater Prison Key"
+      ]
+    },
+    {
+      "ID": 27030,
+      "Entries": [
+        "m35_00_One-way Door (Double)_Sewer Entrance"
+      ]
+    },
+    {
+      "ID": 27031,
+      "Entries": [
+        "m35_00_One-way Door (Double)_Sewer Entrance"
+      ]
+    },
+    {
+      "ID": 27039,
+      "Entries": [
+        "m18_00_One-Way Door (Double)_Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 27041,
+      "Entries": [
+        "m30_** Underground Small Exploration Double Door"
+      ]
+    },
+    {
+      "ID": 27043,
+      "Entries": [
+        "m31_** Underground Mini-Dungeon One-Way Door"
+      ]
+    },
+    {
+      "ID": 27056,
+      "Entries": [
+        "m30_** Underground Small Exploration Lift Door"
+      ]
+    },
+    {
+      "ID": 27080,
+      "Entries": [
+        "m31_21 Cave 4-1_Lever_Prison Cell"
+      ]
+    },
+    {
+      "ID": 27115,
+      "Entries": [
+        "m30_**_Lever_Boss Room"
+      ]
+    },
+    {
+      "ID": 27143,
+      "Entries": [
+        "m34_14 One-way Door (Double) Royal Capital ~ Snowy Mountain Elevator Study Entrance"
+      ]
+    },
+    {
+      "ID": 127201,
+      "Entries": [
+        "m34_10_Green Divine Tower Double Doors"
+      ]
+    },
+    {
+      "ID": 227201,
+      "Entries": [
+        "m34_11_Lake Divine Tower Double Doors"
+      ]
+    },
+    {
+      "ID": 327201,
+      "Entries": [
+        "m34_12_Highland Divine Tower Double Doors"
+      ]
+    },
+    {
+      "ID": 427201,
+      "Entries": [
+        "m34_13_Plains Divine Tower Double Doors"
+      ]
+    },
+    {
+      "ID": 527201,
+      "Entries": [
+        "m34_14_Snowy Mountain Divine Tower Double Doors"
+      ]
+    },
+    {
+      "ID": 627201,
+      "Entries": [
+        "m34_15_Divine Tower Double Door"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "m60_51_57 Fort Door_Lower Level Entrance"
+      ]
+    },
+    {
+      "ID": 30183,
+      "Entries": [
+        "m60_51_57 Fort Snow Processed Elevator Lever"
+      ]
+    },
+    {
+      "ID": 99013,
+      "Entries": [
+        "Chest"
+      ]
+    },
+    {
+      "ID": 99182,
+      "Entries": [
+        "Lever"
+      ]
+    },
+    {
+      "ID": 99290,
+      "Entries": [
+        "Warp Chest"
+      ]
+    },
+    {
+      "ID": 99340,
+      "Entries": [
+        "Stormruler-"
+      ]
+    },
+    {
+      "ID": 99630,
+      "Entries": [
+        "Chest A"
+      ]
+    },
+    {
+      "ID": 199630,
+      "Entries": [
+        "Chest A Rennala Boss Room"
+      ]
+    },
+    {
+      "ID": 99631,
+      "Entries": [
+        "Chest B"
+      ]
+    },
+    {
+      "ID": 99632,
+      "Entries": [
+        "Chest Marika Ruins"
+      ]
+    },
+    {
+      "ID": 199632,
+      "Entries": [
+        "Chest Marika Ruins For Underground Labyrinth Plains Event"
+      ]
+    },
+    {
+      "ID": 100101,
+      "Entries": [
+        "m60_00 Carriage Door"
+      ]
+    },
+    {
+      "ID": 110063,
+      "Entries": [
+        "m60_00 Double Door Open Generic (Catacombs)"
+      ]
+    },
+    {
+      "ID": 1110063,
+      "Entries": [
+        "m60_00 Double Door Open Generic (Catacombs) Possible in Multiplayer"
+      ]
+    },
+    {
+      "ID": 110064,
+      "Entries": [
+        "m60_00_One-way Door (Lift)_Catacombs (Statue)_Entrance Door_Back"
+      ]
+    },
+    {
+      "ID": 1110064,
+      "Entries": [
+        "m60_00_One-way Door (Lift)_Catacombs (Statue)_Entrance Door_Front"
+      ]
+    },
+    {
+      "ID": 110100,
+      "Entries": [
+        "m60 Fragment of the World 1 Village Key Door"
+      ]
+    },
+    {
+      "ID": 219000,
+      "Entries": [
+        "m10_00_Single Door_Lower Level Entrance"
+      ]
+    },
+    {
+      "ID": 1219000,
+      "Entries": [
+        "m10_00_Single Door_Rampart Interior Gunpowder Storehouse"
+      ]
+    },
+    {
+      "ID": 2219000,
+      "Entries": [
+        "m10_01_Single Door_Stormveil Detached Beside Church"
+      ]
+    },
+    {
+      "ID": 219001,
+      "Entries": [
+        "m10_00_Double Door_Chapel Entrance"
+      ]
+    },
+    {
+      "ID": 219002,
+      "Entries": [
+        "m10_00_Double Door_Detached Church Entrance"
+      ]
+    },
+    {
+      "ID": 219003,
+      "Entries": [
+        "m10_00_Single Door_Rampart Interior Ladder Room"
+      ]
+    },
+    {
+      "ID": 219010,
+      "Entries": [
+        "m10_00_Generic Lever"
+      ]
+    },
+    {
+      "ID": 219030,
+      "Entries": [
+        "m10_00_Lever_Main Gate"
+      ]
+    },
+    {
+      "ID": 227010,
+      "Entries": [
+        "m11_00_One-way Door (Single)_Section 1_Shortcut"
+      ]
+    },
+    {
+      "ID": 227011,
+      "Entries": [
+        "m11_00_One-way Door (Double)_Section 2_Shortcut"
+      ]
+    },
+    {
+      "ID": 227012,
+      "Entries": [
+        "m11_00_One-way Door (Double)_Section 2_Shortcut"
+      ]
+    },
+    {
+      "ID": 227013,
+      "Entries": [
+        "m11_00_One-way Door (Double)_Section 3_Shortcut"
+      ]
+    },
+    {
+      "ID": 1227013,
+      "Entries": [
+        "m11_10_One-way Door (Both)_Third Section_Entrance to Room Behind Round Table"
+      ]
+    },
+    {
+      "ID": 227020,
+      "Entries": [
+        "m11_00_One-way Door (Single)_Section 2_Shortcut"
+      ]
+    },
+    {
+      "ID": 227030,
+      "Entries": [
+        "m11_00_One-way Door (Double)_Section 3_Shortcut"
+      ]
+    },
+    {
+      "ID": 227032,
+      "Entries": [
+        "m11_00_One-way Door (Double)_Section 2_Floodgate"
+      ]
+    },
+    {
+      "ID": 227033,
+      "Entries": [
+        "m11_00_One-way Door (Double)_Site of Grace"
+      ]
+    },
+    {
+      "ID": 1227033,
+      "Entries": [
+        "m11_00_One-way Door (Double)_Site of Grace"
+      ]
+    },
+    {
+      "ID": 227040,
+      "Entries": [
+        "m11_00_One-way Door (Double)_Section 3_Shortcut"
+      ]
+    },
+    {
+      "ID": 227050,
+      "Entries": [
+        "m11_00_Elevator Lever Section 1"
+      ]
+    },
+    {
+      "ID": 227051,
+      "Entries": [
+        "m11_00_Elevator Lever Section 3"
+      ]
+    },
+    {
+      "ID": 227052,
+      "Entries": [
+        "m11_00_Elevator Lever Gate of God"
+      ]
+    },
+    {
+      "ID": 227070,
+      "Entries": [
+        "m11_00_One-way Door (Single)_Section 2_Prison"
+      ]
+    },
+    {
+      "ID": 239001,
+      "Entries": [
+        "m60_00_Double Door_Underground Labyrinth Entrance"
+      ]
+    },
+    {
+      "ID": 239020,
+      "Entries": [
+        "m12_00_Lever_Underground Labyrinth Waterway Elevator"
+      ]
+    },
+    {
+      "ID": 239021,
+      "Entries": [
+        "m60_00_Lever_Underground Labyrinth Entrance"
+      ]
+    },
+    {
+      "ID": 1239021,
+      "Entries": [
+        "m60_00_Lever_Underground Labyrinth Plains Elevator"
+      ]
+    },
+    {
+      "ID": 257002,
+      "Entries": [
+        "m14_00_Elevator Lever"
+      ]
+    },
+    {
+      "ID": 257013,
+      "Entries": [
+        "m14_00_One-Way Door (Single)_Garden Stair Room"
+      ]
+    },
+    {
+      "ID": 257016,
+      "Entries": [
+        "m14_00_Double Door_Boss Room Entrance"
+      ]
+    },
+    {
+      "ID": 257018,
+      "Entries": [
+        "m14_00_One-Way Door (Double)"
+      ]
+    },
+    {
+      "ID": 267023,
+      "Entries": [
+        "m15_00 Elevator Lever"
+      ]
+    },
+    {
+      "ID": 267038,
+      "Entries": [
+        "m15_00 Elevator Lever"
+      ]
+    },
+    {
+      "ID": 277000,
+      "Entries": [
+        "m16_00_Elevator Lever_Execution Ground etc."
+      ]
+    },
+    {
+      "ID": 277009,
+      "Entries": [
+        "m16_00_One-Way Door (Lift)_Prison"
+      ]
+    },
+    {
+      "ID": 277010,
+      "Entries": [
+        "m16_00_One-Way Door (Single)_Castle Tower"
+      ]
+    },
+    {
+      "ID": 277013,
+      "Entries": [
+        "m16_00_One-Way Door (Double)_Manor Entrance"
+      ]
+    },
+    {
+      "ID": 277014,
+      "Entries": [
+        "m16_00_One-Way Door (Double)_Throne"
+      ]
+    },
+    {
+      "ID": 277015,
+      "Entries": [
+        "m16_00_One-Way Door (Double)_Monastery"
+      ]
+    },
+    {
+      "ID": 277016,
+      "Entries": [
+        "m16_00_One-Way Door (Double)_Manor Exit"
+      ]
+    },
+    {
+      "ID": 277017,
+      "Entries": [
+        "m16_00_One-Way Door (Double)_Annex Entrance"
+      ]
+    },
+    {
+      "ID": 277018,
+      "Entries": [
+        "m16_00_One-Way Door (Double)_Annex Guest Room"
+      ]
+    },
+    {
+      "ID": 1277018,
+      "Entries": [
+        "m16_00_One-Way Door (Double)_Annex Guest Room"
+      ]
+    },
+    {
+      "ID": 2277018,
+      "Entries": [
+        "m16_00_One-Way Door (Double)_Annex Guest Room"
+      ]
+    },
+    {
+      "ID": 277021,
+      "Entries": [
+        "m16_00_Elevator Lever_Inside Chapel"
+      ]
+    },
+    {
+      "ID": 277081,
+      "Entries": [
+        "m16_00_Lever_Lava Great Bridge"
+      ]
+    },
+    {
+      "ID": 300004,
+      "Entries": [
+        "c4450_Walking Mausoleum Door"
+      ]
+    },
+    {
+      "ID": 300005,
+      "Entries": [
+        "c4450_Walking Mausoleum Treasure"
+      ]
+    },
+    {
+      "ID": 400655,
+      "Entries": [
+        "Arena Entrance Door"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "m30_00_Door_Mausoleum Shortcut"
+      ]
+    },
+    {
+      "ID": 300310,
+      "Entries": [
+        "m30_00_Door_Rampart Shortcut"
+      ]
+    },
+    {
+      "ID": 300311,
+      "Entries": [
+        "m30_00_Door_Rampart Shortcut"
+      ]
+    },
+    {
+      "ID": 300312,
+      "Entries": [
+        "m30_00_Door_Mausoleum Shortcut"
+      ]
+    },
+    {
+      "ID": 300320,
+      "Entries": [
+        "m30_01_Door_Old Garden Building"
+      ]
+    },
+    {
+      "ID": 300371,
+      "Entries": [
+        "m30_00_Door_Mausoleum Exit Door"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "m30_00_Lever_Mausoleum Front Elevator"
+      ]
+    },
+    {
+      "ID": 300510,
+      "Entries": [
+        "m30_00_Lever_Rampart Elevator"
+      ]
+    },
+    {
+      "ID": 304873,
+      "Entries": [
+        "m30_01_Lever_Grand Hall Elevator"
+      ]
+    },
+    {
+      "ID": 302420,
+      "Entries": [
+        "m30_02_Lever_Library Elevator"
+      ]
+    },
+    {
+      "ID": 314027,
+      "Entries": [
+        "m31_00_Door_Before Boss Room"
+      ]
+    },
+    {
+      "ID": 324012,
+      "Entries": [
+        "m32_00 Lever_Great Bell"
+      ]
+    },
+    {
+      "ID": 324051,
+      "Entries": [
+        "m32_00 Lever_Bridge Elevator"
+      ]
+    },
+    {
+      "ID": 331312,
+      "Entries": [
+        "m33_00 Lever Poison Swamp Elevator"
+      ]
+    },
+    {
+      "ID": 331321,
+      "Entries": [
+        "m33_00 Double Door Pre-Boss"
+      ]
+    },
+    {
+      "ID": 350003,
+      "Entries": [
+        "m35_00 Lever_Elevator"
+      ]
+    },
+    {
+      "ID": 350005,
+      "Entries": [
+        "m35_00 Large Door_Cathedral Side"
+      ]
+    },
+    {
+      "ID": 350021,
+      "Entries": [
+        "m35_00 Lever_Shutter"
+      ]
+    },
+    {
+      "ID": 350206,
+      "Entries": [
+        "m35_00 Large Door_Cathedral Main Gate"
+      ]
+    },
+    {
+      "ID": 351000,
+      "Entries": [
+        "m35_00 Double Door"
+      ]
+    },
+    {
+      "ID": 360320,
+      "Entries": [
+        "m36_00 Double Door Before Mid-Boss"
+      ]
+    },
+    {
+      "ID": 360330,
+      "Entries": [
+        "m36_00 Double Door Shortcut"
+      ]
+    },
+    {
+      "ID": 370301,
+      "Entries": [
+        "m37_00_Door_Landmark Church Front Plaza"
+      ]
+    },
+    {
+      "ID": 370502,
+      "Entries": [
+        "m37_00_Lever"
+      ]
+    },
+    {
+      "ID": 390301,
+      "Entries": [
+        "m39_00 Shortcut Door"
+      ]
+    },
+    {
+      "ID": 394051,
+      "Entries": [
+        "m39_00_Dungeon Shortcut Elevator"
+      ]
+    },
+    {
+      "ID": 394027,
+      "Entries": [
+        "m39_00_Dungeon Prison Door"
+      ]
+    },
+    {
+      "ID": 394028,
+      "Entries": [
+        "m39_01_Dungeon Shortcut Door"
+      ]
+    },
+    {
+      "ID": 400340,
+      "Entries": [
+        "m40_00_Final Boss Room Door"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1227050,
+      "Entries": [
+        "m11_00_City Gate Release Lever Section 1"
+      ]
+    },
+    {
+      "ID": 1300311,
+      "Entries": [
+        "m30_00_Door_Rampart Shortcut1"
+      ]
+    },
+    {
+      "ID": 2300311,
+      "Entries": [
+        "m30_00_Door_Rampart Shortcut2"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "GR_Test_Generic Door (Double Swing)"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "GR_Test_Locked Door (Double Swing)"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "GR_Test_Internal Key Door"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "GR_Test_Generic Door (Single Swing)"
+      ]
+    },
+    {
+      "ID": 90011,
+      "Entries": [
+        "GR_Test_Locked Door (Single Swing)"
+      ]
+    },
+    {
+      "ID": 90012,
+      "Entries": [
+        "GR_Test_Internal Key Door (Single Swing)"
+      ]
+    },
+    {
+      "ID": 90013,
+      "Entries": [
+        "GR_Test_Playable Operation Check A"
+      ]
+    },
+    {
+      "ID": 90014,
+      "Entries": [
+        "GR_Test_Playable Operation Check B"
+      ]
+    },
+    {
+      "ID": 90015,
+      "Entries": [
+        "GR_Test_Playable Operation Check B"
+      ]
+    },
+    {
+      "ID": 90016,
+      "Entries": [
+        "GR_Test_Hanging Event Support"
+      ]
+    },
+    {
+      "ID": 90017,
+      "Entries": [
+        "GR_Test_Grass Gathering Verification"
+      ]
+    },
+    {
+      "ID": 90018,
+      "Entries": [
+        "GR_Test_Ruin Gargoyle Statue Presentation"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "m70_50_50_Encampment_Wyvern Summon"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "m60_00__Fragment of the World"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "m60_00__Healing Spring_Test"
+      ]
+    }
+  ]
+}

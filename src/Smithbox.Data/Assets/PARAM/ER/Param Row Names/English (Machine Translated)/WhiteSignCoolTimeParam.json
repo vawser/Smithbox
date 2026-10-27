@@ -1,0 +1,65 @@
+{
+  "Name": "WhiteSignCoolTimeParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "White Sign Level 1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "White Sign Level 2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "White Sign Level 3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "White Sign Level 4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "White Sign Level 5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "White Sign Level 6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "White Sign Level 7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "White Sign Level 8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "White Sign Level 9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "White Sign Level 10"
+      ]
+    }
+  ]
+}

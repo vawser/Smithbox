@@ -1,0 +1,2321 @@
+{
+  "Name": "WorldMapPointParam",
+  "Entries": [
+    {
+      "ID": 78500,
+      "Entries": [
+        "Bonfire Guidance Giant's Flame Forge 00 Royal Capital EV Descent Point"
+      ]
+    },
+    {
+      "ID": 78501,
+      "Entries": [
+        "Bonfire Guidance Giant's Flame Forge 01 After Great EV_Before Ruins"
+      ]
+    },
+    {
+      "ID": 78502,
+      "Entries": [
+        "Bonfire Guidance Giant's Flame Forge 02 Great Canyon Entrance"
+      ]
+    },
+    {
+      "ID": 78503,
+      "Entries": [
+        "Bonfire Guidance Giant's Flame Forge 03 Ice Lake"
+      ]
+    },
+    {
+      "ID": 78504,
+      "Entries": [
+        "Bonfire Guidance Giant's Flame Forge 04 Church 5-1"
+      ]
+    },
+    {
+      "ID": 78505,
+      "Entries": [
+        "Bonfire Guidance Giant's Flame Forge 05 Seaside Tower 5-1"
+      ]
+    },
+    {
+      "ID": 78506,
+      "Entries": [
+        "Bonfire Guidance Giant's Flame Forge 06 Giant Graveyard Entrance"
+      ]
+    },
+    {
+      "ID": 78507,
+      "Entries": [
+        "Bonfire Guidance Giant's Flame Forge 07 Giant Graveyard Upper Level"
+      ]
+    },
+    {
+      "ID": 78510,
+      "Entries": [
+        "Site of Grace Guidance Fort_After Veteran General Defeat 00 Before Detached Area Fork"
+      ]
+    },
+    {
+      "ID": 78511,
+      "Entries": [
+        "Site of Grace Guidance Fort_After Veteran General Defeat 01 In front of Fort"
+      ]
+    },
+    {
+      "ID": 78520,
+      "Entries": [
+        "Site of Grace Guidance Snow Town 00 Snowfield Start"
+      ]
+    },
+    {
+      "ID": 78521,
+      "Entries": [
+        "Site of Grace Guidance Snow Town 01 Snowfield Center"
+      ]
+    },
+    {
+      "ID": 95100,
+      "Entries": [
+        "Bonfire Guidance Stormveil 00 Start Point"
+      ]
+    },
+    {
+      "ID": 95101,
+      "Entries": [
+        "Bonfire Guidance Stormveil 01 First Church"
+      ]
+    },
+    {
+      "ID": 95102,
+      "Entries": [
+        "Bonfire Guidance Stormveil 02 Before Checkpoint"
+      ]
+    },
+    {
+      "ID": 95103,
+      "Entries": [
+        "Bonfire Guidance Stormveil 03 Blacksmith Hut"
+      ]
+    },
+    {
+      "ID": 95104,
+      "Entries": [
+        "Bonfire Guidance Stormveil 04 Before Margit"
+      ]
+    },
+    {
+      "ID": 95110,
+      "Entries": [
+        "Site of Grace Guidance Fort 00 In front of Great Bridge"
+      ]
+    },
+    {
+      "ID": 95111,
+      "Entries": [
+        "Site of Grace Guidance Fort 01 Behind Great Bridge"
+      ]
+    },
+    {
+      "ID": 95112,
+      "Entries": [
+        "Site of Grace Guidance Fort 02 In front of Collapsed Wall"
+      ]
+    },
+    {
+      "ID": 95113,
+      "Entries": [
+        "Site of Grace Guidance Fort 03 Fort Interior 01"
+      ]
+    },
+    {
+      "ID": 95200,
+      "Entries": [
+        "Bonfire Guidance Monsan 00 First Church"
+      ]
+    },
+    {
+      "ID": 95201,
+      "Entries": [
+        "Bonfire Guidance Monsan 01 Before Submerged Forest"
+      ]
+    },
+    {
+      "ID": 95202,
+      "Entries": [
+        "Bonfire Guidance Monsan 02 Submerged Forest_Before Ruins"
+      ]
+    },
+    {
+      "ID": 95203,
+      "Entries": [
+        "Bonfire Guidance Monsan 03 Submerged Forest_Upper Large Islet"
+      ]
+    },
+    {
+      "ID": 95204,
+      "Entries": [
+        "Bonfire Guidance Monsan 04 Before Submerged City"
+      ]
+    },
+    {
+      "ID": 95205,
+      "Entries": [
+        "Bonfire Guidance Monsan 05 Curved Bridge"
+      ]
+    },
+    {
+      "ID": 95206,
+      "Entries": [
+        "Bonfire Guidance Monsan 06 Before Monsan"
+      ]
+    },
+    {
+      "ID": 95210,
+      "Entries": [
+        "Bonfire Guidance Great Elevator 00 Before Crest Gate"
+      ]
+    },
+    {
+      "ID": 95211,
+      "Entries": [
+        "Bonfire Guidance Great Elevator 01 Church 2-4"
+      ]
+    },
+    {
+      "ID": 95212,
+      "Entries": [
+        "Bonfire Guidance Great Elevator 02 Before Royal Capital Elevator"
+      ]
+    },
+    {
+      "ID": 95220,
+      "Entries": [
+        "Bonfire Guidance Lake Fort 00 Base of Bell Tower Cluster"
+      ]
+    },
+    {
+      "ID": 95221,
+      "Entries": [
+        "Bonfire Guidance Lake Fort 01 Mist Sorcerer Tower Island"
+      ]
+    },
+    {
+      "ID": 95222,
+      "Entries": [
+        "Site of Grace Guidance Lake Fort 02 In front of Royal Ruins"
+      ]
+    },
+    {
+      "ID": 95223,
+      "Entries": [
+        "Site of Grace Guidance Lake Fort 03 Behind Royal Ruins"
+      ]
+    },
+    {
+      "ID": 95224,
+      "Entries": [
+        "Site of Grace Guidance Lake Fort 03 In front of Fort Main Gate"
+      ]
+    },
+    {
+      "ID": 95230,
+      "Entries": [
+        "Bonfire Guidance Rani Tower Top Floor"
+      ]
+    },
+    {
+      "ID": 95300,
+      "Entries": [
+        "Site of Grace Guidance Royal Capital 00 In front of Carriage Graveyard"
+      ]
+    },
+    {
+      "ID": 95301,
+      "Entries": [
+        "Site of Grace Guidance Royal Capital 01 Highland Entrance"
+      ]
+    },
+    {
+      "ID": 95302,
+      "Entries": [
+        "Site of Grace Guidance Royal Capital 02 Road Fork"
+      ]
+    },
+    {
+      "ID": 95303,
+      "Entries": [
+        "Site of Grace Guidance Royal Capital 03_Inside Castle Wall Plaza"
+      ]
+    },
+    {
+      "ID": 95304,
+      "Entries": [
+        "Site of Grace Guidance Royal Capital 04 Great Battlefield Ruins"
+      ]
+    },
+    {
+      "ID": 95310,
+      "Entries": [
+        "Site of Grace Guidance Royal Capital (Back Route) 00 In front of Collapsed Bridge"
+      ]
+    },
+    {
+      "ID": 95311,
+      "Entries": [
+        "Site of Grace Guidance Royal Capital (Back Route) 01 Windmill Village"
+      ]
+    },
+    {
+      "ID": 95350,
+      "Entries": [
+        "Site of Grace Guidance Volcano Prison 00 Under Elevated Track"
+      ]
+    },
+    {
+      "ID": 95351,
+      "Entries": [
+        "Site of Grace Guidance Volcano Prison 01 Volcano Entrance"
+      ]
+    },
+    {
+      "ID": 95352,
+      "Entries": [
+        "Site of Grace Guidance Volcano Prison 02 Twin Mountain Hut"
+      ]
+    },
+    {
+      "ID": 95353,
+      "Entries": [
+        "Site of Grace Guidance Volcano Prison 03 In front of Summit Plaza"
+      ]
+    },
+    {
+      "ID": 95400,
+      "Entries": [
+        "Bonfire Guidance Malenia Church 00 Start Point"
+      ]
+    },
+    {
+      "ID": 95401,
+      "Entries": [
+        "Bonfire Guidance Malenia Church 01 Ruins 4-4"
+      ]
+    },
+    {
+      "ID": 95402,
+      "Entries": [
+        "Bonfire Guidance Malenia Church 02 Smoldering Wall"
+      ]
+    },
+    {
+      "ID": 95403,
+      "Entries": [
+        "Bonfire Guidance Malenia Church 03 Between Road and Poison Swamp"
+      ]
+    },
+    {
+      "ID": 95404,
+      "Entries": [
+        "Bonfire Guidance Malenia Church 04 Poison Swamp Exploration Start"
+      ]
+    },
+    {
+      "ID": 95405,
+      "Entries": [
+        "Bonfire Guidance Malenia Church 06 Poison Swamp Center"
+      ]
+    },
+    {
+      "ID": 95406,
+      "Entries": [
+        "Bonfire Guidance Malenia Church 07 Plains Town"
+      ]
+    },
+    {
+      "ID": 95407,
+      "Entries": [
+        "Bonfire Guidance Malenia Church 08 After Plains Town Clear"
+      ]
+    },
+    {
+      "ID": 95410,
+      "Entries": [
+        "Bonfire Guidance Radahn Desert 00 Start Point"
+      ]
+    },
+    {
+      "ID": 95411,
+      "Entries": [
+        "Bonfire Guidance Radahn Desert 01 Dragon Sacrifice Church"
+      ]
+    },
+    {
+      "ID": 95412,
+      "Entries": [
+        "Bonfire Guidance Radahn Desert 02 Before Great Bridge"
+      ]
+    },
+    {
+      "ID": 95413,
+      "Entries": [
+        "Bonfire Guidance Radahn Desert 03 Fort"
+      ]
+    },
+    {
+      "ID": 95414,
+      "Entries": [
+        "Bonfire Guidance Radahn Desert 04 Bonfire After Boss Defeat"
+      ]
+    },
+    {
+      "ID": 95600,
+      "Entries": [
+        "Bonfire Guidance Underground Labyrinth Plains Royal Capital Gargoyle Boss Room"
+      ]
+    },
+    {
+      "ID": 96100,
+      "Entries": [
+        "Catacombs 1-3 Pointing Statue Laser"
+      ]
+    },
+    {
+      "ID": 96101,
+      "Entries": [
+        "Catacombs 1-3 Indicator Statue"
+      ]
+    },
+    {
+      "ID": 96102,
+      "Entries": [
+        "Catacombs 1-4 Pointing Statue Laser"
+      ]
+    },
+    {
+      "ID": 96103,
+      "Entries": [
+        "Catacombs 1-4 Pointing Statue"
+      ]
+    },
+    {
+      "ID": 96104,
+      "Entries": [
+        "Catacombs 1-5 Pointing Statue Laser"
+      ]
+    },
+    {
+      "ID": 96105,
+      "Entries": [
+        "Catacombs 1-5 Pointing Statue"
+      ]
+    },
+    {
+      "ID": 96106,
+      "Entries": [
+        "Catacombs 1-1 Indicator Statue Laser"
+      ]
+    },
+    {
+      "ID": 96107,
+      "Entries": [
+        "Catacombs 1-1 Indicator Statue"
+      ]
+    },
+    {
+      "ID": 96108,
+      "Entries": [
+        "Catacombs 1-2 Indicator Statue Laser"
+      ]
+    },
+    {
+      "ID": 96109,
+      "Entries": [
+        "Catacombs 1-2 Indicator Statue"
+      ]
+    },
+    {
+      "ID": 96200,
+      "Entries": [
+        "Catacombs 2-1 Pointing Statue Laser"
+      ]
+    },
+    {
+      "ID": 96201,
+      "Entries": [
+        "Catacombs 2-1 Pointing Statue"
+      ]
+    },
+    {
+      "ID": 96202,
+      "Entries": [
+        "Catacombs 2-2 Pointing Statue Laser"
+      ]
+    },
+    {
+      "ID": 96203,
+      "Entries": [
+        "Catacombs 2-2 Pointing Statue"
+      ]
+    },
+    {
+      "ID": 96204,
+      "Entries": [
+        "Catacombs 2-3 Pointing Statue Laser"
+      ]
+    },
+    {
+      "ID": 96205,
+      "Entries": [
+        "Catacombs 2-3 Pointing Statue"
+      ]
+    },
+    {
+      "ID": 96300,
+      "Entries": [
+        "Catacombs 3-4 Pointing Statue Laser"
+      ]
+    },
+    {
+      "ID": 96301,
+      "Entries": [
+        "Catacombs 3-4 Pointing Statue"
+      ]
+    },
+    {
+      "ID": 96302,
+      "Entries": [
+        "Catacombs 3-5 Guidance Statue Laser"
+      ]
+    },
+    {
+      "ID": 96303,
+      "Entries": [
+        "Catacombs 3-5 Guidance Statue"
+      ]
+    },
+    {
+      "ID": 96304,
+      "Entries": [
+        "Catacombs 3-6 Guidance Statue Laser"
+      ]
+    },
+    {
+      "ID": 96305,
+      "Entries": [
+        "Catacombs 3-6 Guidance Statue"
+      ]
+    },
+    {
+      "ID": 96400,
+      "Entries": [
+        "Catacombs 4-1 Guidance Statue Laser"
+      ]
+    },
+    {
+      "ID": 96401,
+      "Entries": [
+        "Catacombs 4-1 Guidance Statue"
+      ]
+    },
+    {
+      "ID": 96402,
+      "Entries": [
+        "Catacombs 4-2 Guidance Statue Laser"
+      ]
+    },
+    {
+      "ID": 96403,
+      "Entries": [
+        "Catacombs 4-2 Guidance Statue"
+      ]
+    },
+    {
+      "ID": 96404,
+      "Entries": [
+        "Catacombs 4-3 Guidance Statue Laser"
+      ]
+    },
+    {
+      "ID": 96405,
+      "Entries": [
+        "Catacombs 4-3 Guidance Statue"
+      ]
+    },
+    {
+      "ID": 96502,
+      "Entries": [
+        "Catacombs 5-2 Catacombs Guidance Light"
+      ]
+    },
+    {
+      "ID": 96503,
+      "Entries": [
+        "Catacombs 5-2 Catacombs Guidance Statue"
+      ]
+    },
+    {
+      "ID": 96510,
+      "Entries": [
+        "Catacombs 5-3 Catacombs Guidance Light"
+      ]
+    },
+    {
+      "ID": 96511,
+      "Entries": [
+        "Catacombs 5-3 Catacombs Guidance Statue"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Open Green First Half Stormveil Castle"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Open Highland Royal Capital"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "Base"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "Descending Ruins"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "Open Lake First Half Monsan"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Open Snowy Mountain Snowfield Side Rotten Great Tree Lower Level"
+      ]
+    },
+    {
+      "ID": 150001,
+      "Entries": [
+        "Open Snowy Mountain Snowfield Side Rotten Great Tree Upper Level"
+      ]
+    },
+    {
+      "ID": 160000,
+      "Entries": [
+        "Open Highland Volcano Prison"
+      ]
+    },
+    {
+      "ID": 180000,
+      "Entries": [
+        "Open Green First Half Tutorial"
+      ]
+    },
+    {
+      "ID": 180001,
+      "Entries": [
+        "Open Green First Half Hero Statue (Tutorial Exit)"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Open Green Second Half Catacombs 1-1"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "Open Green Second Half Catacombs 1-2"
+      ]
+    },
+    {
+      "ID": 300200,
+      "Entries": [
+        "Open Green First Half Catacombs 1-3"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "Open Lake First Half Catacombs 2-2"
+      ]
+    },
+    {
+      "ID": 300400,
+      "Entries": [
+        "Open Green First Half Catacombs 1-5"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "Open Lake First Half Catacombs 2-1"
+      ]
+    },
+    {
+      "ID": 300600,
+      "Entries": [
+        "Open Lake First Half Catacombs 2-3"
+      ]
+    },
+    {
+      "ID": 300700,
+      "Entries": [
+        "Open Highland Catacombs 3-5"
+      ]
+    },
+    {
+      "ID": 300800,
+      "Entries": [
+        "Open Highland Catacombs 3-1"
+      ]
+    },
+    {
+      "ID": 300900,
+      "Entries": [
+        "Open Highland Catacombs 3-2"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Open Highland Catacombs 3-3"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "Open Green First Half Catacombs 1-4"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "Open Highland Catacombs 3-4"
+      ]
+    },
+    {
+      "ID": 301300,
+      "Entries": [
+        "Open Highland Catacombs 3-6"
+      ]
+    },
+    {
+      "ID": 301400,
+      "Entries": [
+        "Open Plains First Half Catacombs 4-1"
+      ]
+    },
+    {
+      "ID": 301500,
+      "Entries": [
+        "Open Plains First Half Catacombs 4-2"
+      ]
+    },
+    {
+      "ID": 301600,
+      "Entries": [
+        "Open Plains First Half Catacombs 4-3"
+      ]
+    },
+    {
+      "ID": 301700,
+      "Entries": [
+        "Open Snowy Mountain Catacombs 5-1"
+      ]
+    },
+    {
+      "ID": 301800,
+      "Entries": [
+        "Open Snowy Mountain Catacombs 5-2"
+      ]
+    },
+    {
+      "ID": 301900,
+      "Entries": [
+        "Open Snowy Mountain Catacombs 5-3"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Open Snowy Mountain Catacombs 5-4"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Open Green Second Half Cave 1-3"
+      ]
+    },
+    {
+      "ID": 310100,
+      "Entries": [
+        "Open Green Second Half Cave 1-2"
+      ]
+    },
+    {
+      "ID": 310200,
+      "Entries": [
+        "Open Green First Half Cave 1-1"
+      ]
+    },
+    {
+      "ID": 310300,
+      "Entries": [
+        "Open Green First Half Cave 1-4"
+      ]
+    },
+    {
+      "ID": 310400,
+      "Entries": [
+        "Open Lake First Half Cave 2-1"
+      ]
+    },
+    {
+      "ID": 310500,
+      "Entries": [
+        "Open Lake First Half Cave 2-2"
+      ]
+    },
+    {
+      "ID": 310600,
+      "Entries": [
+        "Open Lake First Half Cave 2-3"
+      ]
+    },
+    {
+      "ID": 310700,
+      "Entries": [
+        "Open Highland Cave 3-1"
+      ]
+    },
+    {
+      "ID": 310900,
+      "Entries": [
+        "Open Highland Cave 3-2"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Open Plains First Half Cave 4-2"
+      ]
+    },
+    {
+      "ID": 311100,
+      "Entries": [
+        "Open Plains Second Half Cave 4-4"
+      ]
+    },
+    {
+      "ID": 311200,
+      "Entries": [
+        "Open Snowy Mountain Cave 5-1"
+      ]
+    },
+    {
+      "ID": 311500,
+      "Entries": [
+        "Open Green First Half Cave 1-5"
+      ]
+    },
+    {
+      "ID": 311700,
+      "Entries": [
+        "Open Green First Half Cave 1-6"
+      ]
+    },
+    {
+      "ID": 311800,
+      "Entries": [
+        "Open Highland Cave 3-3"
+      ]
+    },
+    {
+      "ID": 311900,
+      "Entries": [
+        "Open Highland Cave 3-4"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "Open Plains First Half Cave 4-3"
+      ]
+    },
+    {
+      "ID": 312100,
+      "Entries": [
+        "Open Plains First Half Cave 4-1"
+      ]
+    },
+    {
+      "ID": 312200,
+      "Entries": [
+        "Open Snowy Mountain Cave 5-2"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Open Green Second Half Tunnel 1-1"
+      ]
+    },
+    {
+      "ID": 320100,
+      "Entries": [
+        "Open Green First Half Tunnel 1-2"
+      ]
+    },
+    {
+      "ID": 320200,
+      "Entries": [
+        "Open Lake First Half Tunnel 2-1"
+      ]
+    },
+    {
+      "ID": 320400,
+      "Entries": [
+        "Open Highland Tunnel 3-1"
+      ]
+    },
+    {
+      "ID": 320500,
+      "Entries": [
+        "Open Highland Tunnel 3-3"
+      ]
+    },
+    {
+      "ID": 320700,
+      "Entries": [
+        "Open Plains First Half Tunnel 4-1"
+      ]
+    },
+    {
+      "ID": 320800,
+      "Entries": [
+        "Open Plains First Half Tunnel 4-2"
+      ]
+    },
+    {
+      "ID": 321100,
+      "Entries": [
+        "Open Snowy Mountain Tunnel 5-1"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "Open Green First Half Divine Tower"
+      ]
+    },
+    {
+      "ID": 341100,
+      "Entries": [
+        "Open Lake First Half Inverted Tower"
+      ]
+    },
+    {
+      "ID": 341101,
+      "Entries": [
+        "Open Lake First Half Divine Tower"
+      ]
+    },
+    {
+      "ID": 341200,
+      "Entries": [
+        "Open Highland Tunnel 3-2"
+      ]
+    },
+    {
+      "ID": 341201,
+      "Entries": [
+        "Open Highland Divine Tower"
+      ]
+    },
+    {
+      "ID": 341300,
+      "Entries": [
+        "Open Plains Second Half Divine Tower 4"
+      ]
+    },
+    {
+      "ID": 341400,
+      "Entries": [
+        "Open Snowy Mountain Divine Tower"
+      ]
+    },
+    {
+      "ID": 341500,
+      "Entries": [
+        "Crater Lake Divine Tower"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Open Highland Royal Capital Underground Sewers"
+      ]
+    },
+    {
+      "ID": 392000,
+      "Entries": [
+        "Open Highland Cliff Tunnel"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "Royal Capital Arena"
+      ]
+    },
+    {
+      "ID": 450100,
+      "Entries": [
+        "Limgrave Arena"
+      ]
+    },
+    {
+      "ID": 450200,
+      "Entries": [
+        "Caelid Arena"
+      ]
+    },
+    {
+      "ID": 61413200,
+      "Entries": [
+        "Open Green Second Half House 1-1"
+      ]
+    },
+    {
+      "ID": 61413300,
+      "Entries": [
+        "Open Green Second Half Church 1-1"
+      ]
+    },
+    {
+      "ID": 61413301,
+      "Entries": [
+        "Open Green Second Half Ruins 1-1"
+      ]
+    },
+    {
+      "ID": 61413500,
+      "Entries": [
+        "Open Green First Half Church 1-4"
+      ]
+    },
+    {
+      "ID": 61413800,
+      "Entries": [
+        "Open Green First Half House 1-4"
+      ]
+    },
+    {
+      "ID": 61423200,
+      "Entries": [
+        "Open Green Second Half Tower 1-3"
+      ]
+    },
+    {
+      "ID": 61423300,
+      "Entries": [
+        "Open Green Second Half Circular Circle 1-1"
+      ]
+    },
+    {
+      "ID": 61423400,
+      "Entries": [
+        "Open Green Second Half Ruins 1-2"
+      ]
+    },
+    {
+      "ID": 61423600,
+      "Entries": [
+        "First Church"
+      ]
+    },
+    {
+      "ID": 61423700,
+      "Entries": [
+        "Open Green First Half Ruins 1-6"
+      ]
+    },
+    {
+      "ID": 61423701,
+      "Entries": [
+        "Open Green First Half Circular Circle 1-3"
+      ]
+    },
+    {
+      "ID": 61423702,
+      "Entries": [
+        "Open Green First Half Checkpoint"
+      ]
+    },
+    {
+      "ID": 61423800,
+      "Entries": [
+        "Open Green First Half House 1-3"
+      ]
+    },
+    {
+      "ID": 61433100,
+      "Entries": [
+        "Open Green Second Half Fort"
+      ]
+    },
+    {
+      "ID": 61433301,
+      "Entries": [
+        "Open Green First Half Great Tree 2"
+      ]
+    },
+    {
+      "ID": 61433400,
+      "Entries": [
+        "Open Green Second Half Church 1-2"
+      ]
+    },
+    {
+      "ID": 61433401,
+      "Entries": [
+        "Open Green Second Half Ruins 1-3"
+      ]
+    },
+    {
+      "ID": 61433600,
+      "Entries": [
+        "Open Green First Half Ruins 1-5"
+      ]
+    },
+    {
+      "ID": 61443300,
+      "Entries": [
+        "Open Green Second Half Church 1-3"
+      ]
+    },
+    {
+      "ID": 61443302,
+      "Entries": [
+        "Open Green Second Half Village 1-1"
+      ]
+    },
+    {
+      "ID": 61443400,
+      "Entries": [
+        "Open Green First Half Great Bridge"
+      ]
+    },
+    {
+      "ID": 61443401,
+      "Entries": [
+        "Open Green Second Half Tower 1-2"
+      ]
+    },
+    {
+      "ID": 61443500,
+      "Entries": [
+        "Open Green First Half Circular Circle 1-2"
+      ]
+    },
+    {
+      "ID": 61443600,
+      "Entries": [
+        "Open Green First Half Ruins 1-4"
+      ]
+    },
+    {
+      "ID": 61443800,
+      "Entries": [
+        "Open Green First Half House 1-2"
+      ]
+    },
+    {
+      "ID": 61453300,
+      "Entries": [
+        "Open Green Second Half Sorcerer's Tower 1-1"
+      ]
+    },
+    {
+      "ID": 61453600,
+      "Entries": [
+        "Open Green First Half Crater"
+      ]
+    },
+    {
+      "ID": 61453700,
+      "Entries": [
+        "Entrance to Underground Labyrinth"
+      ]
+    },
+    {
+      "ID": 61453701,
+      "Entries": [
+        "Open Green First Half Ruins 1-7"
+      ]
+    },
+    {
+      "ID": 61453702,
+      "Entries": [
+        "Open Green First Half Great Tree 1"
+      ]
+    },
+    {
+      "ID": 61453900,
+      "Entries": [
+        "Open Green First Half Ruins 1-8"
+      ]
+    },
+    {
+      "ID": 61463600,
+      "Entries": [
+        "Open Green First Half Seaside Tower"
+      ]
+    },
+    {
+      "ID": 61463800,
+      "Entries": [
+        "Open Green First Half Church 1-5"
+      ]
+    },
+    {
+      "ID": 62334000,
+      "Entries": [
+        "Open Lake Second Half Sorcerer's Tower 2-6"
+      ]
+    },
+    {
+      "ID": 62334200,
+      "Entries": [
+        "Open Lake Second Half Circular Plaza 2-4"
+      ]
+    },
+    {
+      "ID": 62334300,
+      "Entries": [
+        "Open Lake First Half Small Erdtree 2-1"
+      ]
+    },
+    {
+      "ID": 62334400,
+      "Entries": [
+        "Open Lake First Half House 2-4"
+      ]
+    },
+    {
+      "ID": 62334500,
+      "Entries": [
+        "Open Lake First Half Circular Plaza 2-2"
+      ]
+    },
+    {
+      "ID": 62334700,
+      "Entries": [
+        "Open Lake First Half First Half Bell Tower Cluster"
+      ]
+    },
+    {
+      "ID": 62344100,
+      "Entries": [
+        "Open Lake Second Half Underground Labyrinth Entrance 2-2"
+      ]
+    },
+    {
+      "ID": 62344200,
+      "Entries": [
+        "Open Lake Second Half Ruins 2-4"
+      ]
+    },
+    {
+      "ID": 62344300,
+      "Entries": [
+        "Open Lake First Half Sorcerer's Tower 2-1"
+      ]
+    },
+    {
+      "ID": 62344400,
+      "Entries": [
+        "Open Lake First Half Submerged City (Detached)"
+      ]
+    },
+    {
+      "ID": 62344800,
+      "Entries": [
+        "Open Lake First Half Ruins 2-2"
+      ]
+    },
+    {
+      "ID": 62345000,
+      "Entries": [
+        "Open Lake First Half Sorcerer's Tower 2-3"
+      ]
+    },
+    {
+      "ID": 62345001,
+      "Entries": [
+        "Open Lake First Half Sorcerer's Tower 2-4"
+      ]
+    },
+    {
+      "ID": 62345002,
+      "Entries": [
+        "Open Lake First Half First Half Around Ranni's Tower"
+      ]
+    },
+    {
+      "ID": 62345100,
+      "Entries": [
+        "Open Lake First Half Sorcerer's Tower 2-5"
+      ]
+    },
+    {
+      "ID": 62354100,
+      "Entries": [
+        "Open Lake Second Half Ruins 2-5"
+      ]
+    },
+    {
+      "ID": 62354200,
+      "Entries": [
+        "Open Lake First Half Village 2-1"
+      ]
+    },
+    {
+      "ID": 62354201,
+      "Entries": [
+        "Open Lake Second Half Grand Church"
+      ]
+    },
+    {
+      "ID": 62354400,
+      "Entries": [
+        "Open Lake First Half Church 2-3"
+      ]
+    },
+    {
+      "ID": 62354700,
+      "Entries": [
+        "Open Lake First Half Sorcerer's Tower 2-2"
+      ]
+    },
+    {
+      "ID": 62355000,
+      "Entries": [
+        "Open Lake First Half Fort"
+      ]
+    },
+    {
+      "ID": 62364100,
+      "Entries": [
+        "Open Lake First Half House 2-1"
+      ]
+    },
+    {
+      "ID": 62364300,
+      "Entries": [
+        "Open Lake First Half House 2-2"
+      ]
+    },
+    {
+      "ID": 62364900,
+      "Entries": [
+        "Open Lake First Half Church 2-4"
+      ]
+    },
+    {
+      "ID": 62365000,
+      "Entries": [
+        "Open Lake First Half Circular Plaza 2-3"
+      ]
+    },
+    {
+      "ID": 62374200,
+      "Entries": [
+        "Open Lake First Half Ruins 2-3"
+      ]
+    },
+    {
+      "ID": 62374400,
+      "Entries": [
+        "Open Lake First Half Submerged City"
+      ]
+    },
+    {
+      "ID": 62374600,
+      "Entries": [
+        "Open Lake First Half Church 2-2"
+      ]
+    },
+    {
+      "ID": 62374900,
+      "Entries": [
+        "Open Lake First Half Church 2-6"
+      ]
+    },
+    {
+      "ID": 62384100,
+      "Entries": [
+        "Open Lake First Half Circular Plaza 2-1"
+      ]
+    },
+    {
+      "ID": 62384200,
+      "Entries": [
+        "Open Lake First Half Tower 2-1"
+      ]
+    },
+    {
+      "ID": 62384500,
+      "Entries": [
+        "Open Lake First Half House 2-3"
+      ]
+    },
+    {
+      "ID": 62384600,
+      "Entries": [
+        "Open Lake First Half Underground Labyrinth Entrance 2-1"
+      ]
+    },
+    {
+      "ID": 62384700,
+      "Entries": [
+        "Open Lake First Half First Half Giant Rock Area"
+      ]
+    },
+    {
+      "ID": 62384800,
+      "Entries": [
+        "Open Lake First Half Village 2-2"
+      ]
+    },
+    {
+      "ID": 62384801,
+      "Entries": [
+        "Open Lake First Half Small Erdtree 2-2"
+      ]
+    },
+    {
+      "ID": 62384900,
+      "Entries": [
+        "Open Lake First Half Tower 2-2"
+      ]
+    },
+    {
+      "ID": 62393900,
+      "Entries": [
+        "Open Lake First Half Church 2-1"
+      ]
+    },
+    {
+      "ID": 62394100,
+      "Entries": [
+        "Open Lake First Half Ruins 2-1"
+      ]
+    },
+    {
+      "ID": 62394400,
+      "Entries": [
+        "Open Lake First Half Village 2-3"
+      ]
+    },
+    {
+      "ID": 62394800,
+      "Entries": [
+        "Open Lake First Half Sorcerer's Tower 2-7"
+      ]
+    },
+    {
+      "ID": 63355400,
+      "Entries": [
+        "Open Highland Volcano Side Seaside Tower 3-1"
+      ]
+    },
+    {
+      "ID": 63365100,
+      "Entries": [
+        "Open Highland Royal Capital Side Perfumer Ruins"
+      ]
+    },
+    {
+      "ID": 63365200,
+      "Entries": [
+        "Open Highland Volcano Side House 3-4"
+      ]
+    },
+    {
+      "ID": 63365203,
+      "Entries": [
+        "Open Highland Volcano Side House 3-7"
+      ]
+    },
+    {
+      "ID": 63375100,
+      "Entries": [
+        "Open Highland Royal Capital Side Church 3-1"
+      ]
+    },
+    {
+      "ID": 63375200,
+      "Entries": [
+        "Open Highland Volcano Side Village 3-2"
+      ]
+    },
+    {
+      "ID": 63375400,
+      "Entries": [
+        "Open Highland Volcano Side Great Tree 3"
+      ]
+    },
+    {
+      "ID": 63385000,
+      "Entries": [
+        "Open Highland Royal Capital Side Large Elevator"
+      ]
+    },
+    {
+      "ID": 63385100,
+      "Entries": [
+        "Open Highland Royal Capital Side Ruins 3-3"
+      ]
+    },
+    {
+      "ID": 63385200,
+      "Entries": [
+        "Open Highland Volcano Side Submerged Ruins"
+      ]
+    },
+    {
+      "ID": 63385400,
+      "Entries": [
+        "Open Highland Volcano Side House 3-3"
+      ]
+    },
+    {
+      "ID": 63395000,
+      "Entries": [
+        "Open Highland Royal Capital Side Round Plaza 3-1"
+      ]
+    },
+    {
+      "ID": 63395200,
+      "Entries": [
+        "Open Highland Royal Capital Side Church 3-2"
+      ]
+    },
+    {
+      "ID": 63395300,
+      "Entries": [
+        "Open Highland Royal Capital Side Sorcerer's Tower 3-1"
+      ]
+    },
+    {
+      "ID": 63395400,
+      "Entries": [
+        "Open Highland Royal Capital Side Fort"
+      ]
+    },
+    {
+      "ID": 63405200,
+      "Entries": [
+        "Open Highland Royal Capital Side House 3-1"
+      ]
+    },
+    {
+      "ID": 63405300,
+      "Entries": [
+        "Open Highland Volcano Side Ruins 3-2"
+      ]
+    },
+    {
+      "ID": 63405500,
+      "Entries": [
+        "Open Highland Royal Capital Side Windmill 3-1"
+      ]
+    },
+    {
+      "ID": 63415300,
+      "Entries": [
+        "Open Highland Royal Capital Side Ruins 3-1"
+      ]
+    },
+    {
+      "ID": 63415301,
+      "Entries": [
+        "Open Highland Royal Capital Side Great Tree 1"
+      ]
+    },
+    {
+      "ID": 63415400,
+      "Entries": [
+        "Open Highland Royal Capital Side Village 3-1"
+      ]
+    },
+    {
+      "ID": 63415500,
+      "Entries": [
+        "Open Highland Royal Capital Side Windmill 3-2"
+      ]
+    },
+    {
+      "ID": 63415501,
+      "Entries": [
+        "Open Highland Royal Capital Side Windmill 3-3"
+      ]
+    },
+    {
+      "ID": 63425400,
+      "Entries": [
+        "Open Highland Royal Capital Side Tower 3-1"
+      ]
+    },
+    {
+      "ID": 63435000,
+      "Entries": [
+        "Open Highland Royal Capital Side Church 3-3"
+      ]
+    },
+    {
+      "ID": 63435300,
+      "Entries": [
+        "Open Highland Royal Capital Side House 3-2"
+      ]
+    },
+    {
+      "ID": 63445300,
+      "Entries": [
+        "Open Highland Royal Capital Side Great Tree 2"
+      ]
+    },
+    {
+      "ID": 64464000,
+      "Entries": [
+        "Open Plains First Half Church 4-1"
+      ]
+    },
+    {
+      "ID": 64464001,
+      "Entries": [
+        "Open Plains First Half House 4-1"
+      ]
+    },
+    {
+      "ID": 64473800,
+      "Entries": [
+        "Open Plains First Half Ruins 4-2"
+      ]
+    },
+    {
+      "ID": 64473801,
+      "Entries": [
+        "Open Plains First Half Seaside Tower 4-1"
+      ]
+    },
+    {
+      "ID": 64474000,
+      "Entries": [
+        "Open Plains First Half Ruins 4-1"
+      ]
+    },
+    {
+      "ID": 64474001,
+      "Entries": [
+        "Open Plains First Half Small World Tree 4-1"
+      ]
+    },
+    {
+      "ID": 64474002,
+      "Entries": [
+        "Open Plains First Half Ruins 4-4"
+      ]
+    },
+    {
+      "ID": 64483600,
+      "Entries": [
+        "Open Plains First Half Church 4-2"
+      ]
+    },
+    {
+      "ID": 64483800,
+      "Entries": [
+        "Open Plains First Half Ruins 4-3"
+      ]
+    },
+    {
+      "ID": 64484100,
+      "Entries": [
+        "Open Plains Second Half House 4-2"
+      ]
+    },
+    {
+      "ID": 64493800,
+      "Entries": [
+        "Open Plains First Half Tower 4-1"
+      ]
+    },
+    {
+      "ID": 64493801,
+      "Entries": [
+        "Open Plains First Half Checkpoint"
+      ]
+    },
+    {
+      "ID": 64493900,
+      "Entries": [
+        "Open Plains Second Half Circular Plaza"
+      ]
+    },
+    {
+      "ID": 64494000,
+      "Entries": [
+        "Open Plains First Half Underground Labyrinth Entrance"
+      ]
+    },
+    {
+      "ID": 64503800,
+      "Entries": [
+        "Open Plains First Half House 4-3"
+      ]
+    },
+    {
+      "ID": 64503900,
+      "Entries": [
+        "Open Plains First Half Church 4-3"
+      ]
+    },
+    {
+      "ID": 64503901,
+      "Entries": [
+        "Open Plains First Half Ruined Town"
+      ]
+    },
+    {
+      "ID": 64513600,
+      "Entries": [
+        "Open Plains First Half Fort"
+      ]
+    },
+    {
+      "ID": 64513700,
+      "Entries": [
+        "Open Plains First Half Radahn Desert"
+      ]
+    },
+    {
+      "ID": 64513900,
+      "Entries": [
+        "Open Plains Second Half Seaside Tower 4-2"
+      ]
+    },
+    {
+      "ID": 64514000,
+      "Entries": [
+        "Open Plains First Half Small World Tree 4-2"
+      ]
+    },
+    {
+      "ID": 64514300,
+      "Entries": [
+        "Open Plains Second Half Descending Ruins Building"
+      ]
+    },
+    {
+      "ID": 64524100,
+      "Entries": [
+        "Open Plains Second Half Sorcerer's Tower 4-1"
+      ]
+    },
+    {
+      "ID": 65475500,
+      "Entries": [
+        "Open Snowy Mountain Snowfield Side Ruins 5-3"
+      ]
+    },
+    {
+      "ID": 65475800,
+      "Entries": [
+        "Open Snowy Mountain Snowfield Side Church 5-3"
+      ]
+    },
+    {
+      "ID": 65485700,
+      "Entries": [
+        "Open Snowy Mountain Snowfield Side Snowy Mountain Town"
+      ]
+    },
+    {
+      "ID": 65495300,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side Ruins 5-1"
+      ]
+    },
+    {
+      "ID": 65495301,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side Large Elevator"
+      ]
+    },
+    {
+      "ID": 65505600,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side House 5-1"
+      ]
+    },
+    {
+      "ID": 65505601,
+      "Entries": [
+        "Open Snowy Mountain Snowfield Side Great Tree 2"
+      ]
+    },
+    {
+      "ID": 65505602,
+      "Entries": [
+        "Open Snowy Mountain Snowfield Side Sorcerer's Tower 5-2"
+      ]
+    },
+    {
+      "ID": 65515300,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side Church 5-2"
+      ]
+    },
+    {
+      "ID": 65515600,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side Ruins 5-2"
+      ]
+    },
+    {
+      "ID": 65515700,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side Fort"
+      ]
+    },
+    {
+      "ID": 65525500,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side Tower 5-1"
+      ]
+    },
+    {
+      "ID": 65525600,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side Great Tree 1"
+      ]
+    },
+    {
+      "ID": 65525700,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side Sorcerer's Tower 5-1"
+      ]
+    },
+    {
+      "ID": 65535600,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side Circular Plaza 5-1"
+      ]
+    },
+    {
+      "ID": 65545300,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side Giant's Flame Cauldron"
+      ]
+    },
+    {
+      "ID": 65545500,
+      "Entries": [
+        "Open Snowy Mountain Giant's Flame Side Church 5-1"
+      ]
+    },
+    {
+      "ID": 66120100,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp Lower Level Rune Devourer Ruins"
+      ]
+    },
+    {
+      "ID": 66120102,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp Upper Level Triangle Lake"
+      ]
+    },
+    {
+      "ID": 66120103,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp Upper Level Marika Ruins"
+      ]
+    },
+    {
+      "ID": 66120104,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp Upper Level Final Corridor"
+      ]
+    },
+    {
+      "ID": 66120200,
+      "Entries": [
+        "Underground Labyrinth Plains Upper Level Marika Ruins 2"
+      ]
+    },
+    {
+      "ID": 66120201,
+      "Entries": [
+        "Underground Labyrinth Plains Upper Level Marika Ruins 3"
+      ]
+    },
+    {
+      "ID": 66120202,
+      "Entries": [
+        "Underground Labyrinth Plains Lower Level Ancestor Spirit Boss Room Entrance Ruins"
+      ]
+    },
+    {
+      "ID": 66120203,
+      "Entries": [
+        "Underground Labyrinth Plains Upper Level Ancestor Spirit Boss Room Entrance Ruins"
+      ]
+    },
+    {
+      "ID": 66120500,
+      "Entries": [
+        "Underground Labyrinth Plains Depths Greater"
+      ]
+    },
+    {
+      "ID": 66120700,
+      "Entries": [
+        "Underground Labyrinth Plains Upper Level Marika Ruins 1"
+      ]
+    },
+    {
+      "ID": 80100000,
+      "Entries": [
+        "Gatekeeper_Stormveil_Stormveil Boss Room"
+      ]
+    },
+    {
+      "ID": 80100010,
+      "Entries": [
+        "Rogier_Stormveil_Church"
+      ]
+    },
+    {
+      "ID": 80100015,
+      "Entries": [
+        "Nefeli_Stormveil_Room in middle of curve before boss room"
+      ]
+    },
+    {
+      "ID": 80100016,
+      "Entries": [
+        "Nefeli_Stormveil_Throne"
+      ]
+    },
+    {
+      "ID": 80110000,
+      "Entries": [
+        "Volcano Manor Request_Round Table First Tarnished (Bernard)"
+      ]
+    },
+    {
+      "ID": 80110005,
+      "Entries": [
+        "Golden Mask Seeker_Royal Capital_Near Arena"
+      ]
+    },
+    {
+      "ID": 80110510,
+      "Entries": [
+        "Golden Mask Attendant_Royal Capital_(Ash)"
+      ]
+    },
+    {
+      "ID": 80130000,
+      "Entries": [
+        "Jar Meyer_Descending Ruins"
+      ]
+    },
+    {
+      "ID": 80140010,
+      "Entries": [
+        "Plains Fort Lord_Monsan_Boss Room"
+      ]
+    },
+    {
+      "ID": 80150001,
+      "Entries": [
+        "Malenia's Daughter_Rotten Great Tree_Above Hollow"
+      ]
+    },
+    {
+      "ID": 80160011,
+      "Entries": [
+        "Volcano Manor Recruiter_Volcano Prison_In Volcano Prison"
+      ]
+    },
+    {
+      "ID": 80350005,
+      "Entries": [
+        "Feces Eater_Royal Capital_Sewer 1"
+      ]
+    },
+    {
+      "ID": 80350006,
+      "Entries": [
+        "Feces Eater_Royal Capital_Sewer 2"
+      ]
+    },
+    {
+      "ID": 80392000,
+      "Entries": [
+        "Volcano Manor Request_Tragos (Patch)"
+      ]
+    },
+    {
+      "ID": 81413600,
+      "Entries": [
+        "Red-Eye Merchant Mob 3_Green_Coast"
+      ]
+    },
+    {
+      "ID": 81413900,
+      "Entries": [
+        "Signpost Crone_Green_Green_Broken bridge that once led to the lake"
+      ]
+    },
+    {
+      "ID": 81423900,
+      "Entries": [
+        "Volcano Manor Request Target 1"
+      ]
+    },
+    {
+      "ID": 81433100,
+      "Entries": [
+        "Half-Island Fortress Lord_Green_South Green Fort"
+      ]
+    },
+    {
+      "ID": 81433500,
+      "Entries": [
+        "Chaos Host_Green_Under Arch"
+      ]
+    },
+    {
+      "ID": 81433700,
+      "Entries": [
+        "Demi-Human Seamstress_Green_Plains Before Checkpoint"
+      ]
+    },
+    {
+      "ID": 81433900,
+      "Entries": [
+        "Jar Meyer_Green_Cliff Edge Across Road from Dead-End Underground Graveyard"
+      ]
+    },
+    {
+      "ID": 81443800,
+      "Entries": [
+        "Chaos Host_Green_Upstream of River Flowing into Lake Agire"
+      ]
+    },
+    {
+      "ID": 81443900,
+      "Entries": [
+        "D_Green_Path to Village of the Water Calling"
+      ]
+    },
+    {
+      "ID": 81443905,
+      "Entries": [
+        "Red-Eye Merchant Mob 1_Green_Beyond Bridge Toward Plains"
+      ]
+    },
+    {
+      "ID": 81453400,
+      "Entries": [
+        "Castle Lord's Daughter_Green_Just After Crossing Great Bridge and Starting Down the Slope"
+      ]
+    },
+    {
+      "ID": 81453600,
+      "Entries": [
+        "Red-Eye Merchant Mob 2_Green_Misty Forest"
+      ]
+    },
+    {
+      "ID": 81453800,
+      "Entries": [
+        "Watchtower Noble_Green_On Arch Above Slope Leading to Misty Forest"
+      ]
+    },
+    {
+      "ID": 81453900,
+      "Entries": [
+        "D_Green_Village of the Water Calling"
+      ]
+    },
+    {
+      "ID": 81463900,
+      "Entries": [
+        "D's Information (Transfer Gate to Klang)"
+      ]
+    },
+    {
+      "ID": 82344200,
+      "Entries": [
+        "Nefeli_Lake_Early Lame Village"
+      ]
+    },
+    {
+      "ID": 82345020,
+      "Entries": [
+        "Academy Sorceress_Lake_Puppet Room"
+      ]
+    },
+    {
+      "ID": 82354200,
+      "Entries": [
+        "Ranni_Lake_Grand Church"
+      ]
+    },
+    {
+      "ID": 82354205,
+      "Entries": [
+        "Leg Cripple Village NPC_Lake_End of Leg Cripple Village"
+      ]
+    },
+    {
+      "ID": 82354500,
+      "Entries": [
+        "Red-Eye Merchant Mob 7_Lake_Monsan Curved Bridge"
+      ]
+    },
+    {
+      "ID": 82354600,
+      "Entries": [
+        "Chaos Host_Beyond Monsan's Collapsed Bridge"
+      ]
+    },
+    {
+      "ID": 82355000,
+      "Entries": [
+        "Puppet Master_Lake_Lakeside Fort Church 2F"
+      ]
+    },
+    {
+      "ID": 82364400,
+      "Entries": [
+        "Signpost Crone_Lake_Lake_Beyond the bridge before Monsan"
+      ]
+    },
+    {
+      "ID": 82364805,
+      "Entries": [
+        "Signpost Crone_Lake_Lake_Road_In front of Crest Gate"
+      ]
+    },
+    {
+      "ID": 82364900,
+      "Entries": [
+        "Red-Eye Merchant Mob 8_Lake_Slope Near Church 2-4"
+      ]
+    },
+    {
+      "ID": 82374205,
+      "Entries": [
+        "Volcano Manor Recruiter_Lake_Initial State"
+      ]
+    },
+    {
+      "ID": 82374400,
+      "Entries": [
+        "Mūnō_Lake_Submerged City"
+      ]
+    },
+    {
+      "ID": 82384100,
+      "Entries": [
+        "Castle Lord's Daughter_Lake_Near Waterside of Ruins 2-1"
+      ]
+    },
+    {
+      "ID": 82384300,
+      "Entries": [
+        "Castle Lord's Daughter_Lake_Near Bonfire at Collapsed Bridge"
+      ]
+    },
+    {
+      "ID": 82394400,
+      "Entries": [
+        "Jar Meyer_Lake_Above Jar Village"
+      ]
+    },
+    {
+      "ID": 83355300,
+      "Entries": [
+        "Jar Meyer_Highland_Below Lava Waterfall"
+      ]
+    },
+    {
+      "ID": 83375400,
+      "Entries": [
+        "Bandit Chief_Highland_Before Stone Pillar Bridge"
+      ]
+    },
+    {
+      "ID": 83375405,
+      "Entries": [
+        "Red-Eye Merchant Mob 11_Highland_Area with Continuing Ladders"
+      ]
+    },
+    {
+      "ID": 83385105,
+      "Entries": [
+        "Malenia's Daughter_Highland_Early Viewpoint"
+      ]
+    },
+    {
+      "ID": 83395300,
+      "Entries": [
+        "Volcano Manor Request Target 2"
+      ]
+    },
+    {
+      "ID": 83395405,
+      "Entries": [
+        "Bandit Chief_Highland_Highland Fort"
+      ]
+    },
+    {
+      "ID": 83405200,
+      "Entries": [
+        "Golden Mask Attendant_Highland_Near Map Stone Monument"
+      ]
+    },
+    {
+      "ID": 83405205,
+      "Entries": [
+        "Signpost Crone_Highland_Highland_Where the windmill village and Volcano Prison are visible"
+      ]
+    },
+    {
+      "ID": 83405415,
+      "Entries": [
+        "Golden Mask Seeker_Highland_On Broken Bridge"
+      ]
+    },
+    {
+      "ID": 83435200,
+      "Entries": [
+        "Signpost Crone_Highland_Highland_In front of the Royal Capital stairs"
+      ]
+    },
+    {
+      "ID": 83445200,
+      "Entries": [
+        "Outlaw_Highland_Below the moat inside the castle walls"
+      ]
+    },
+    {
+      "ID": 84483805,
+      "Entries": [
+        "Red-Eye Merchant Mob 12_Plains_Poison Swamp Shore"
+      ]
+    },
+    {
+      "ID": 84483905,
+      "Entries": [
+        "Signpost Crone_Plains_Plains_In front of the smoldering wall"
+      ]
+    },
+    {
+      "ID": 84493700,
+      "Entries": [
+        "Red-Eye Merchant Mob 13_Plains_Near Map Stone Monument"
+      ]
+    },
+    {
+      "ID": 84513610,
+      "Entries": [
+        "Plains Fort Lord_Plains_Fort"
+      ]
+    },
+    {
+      "ID": 85495300,
+      "Entries": [
+        "Lord of Wisdom Info (Lord Lift Elevator)"
+      ]
+    },
+    {
+      "ID": 85495301,
+      "Entries": [
+        "Lord of Wisdom Info (Lord Lift Elevator)_Midpoint"
+      ]
+    },
+    {
+      "ID": 85505600,
+      "Entries": [
+        "Volcano Manor Request Target 3"
+      ]
+    },
+    {
+      "ID": 85515600,
+      "Entries": [
+        "Golden Mask Seeker_Snowy Mountain_On Bridge"
+      ]
+    },
+    {
+      "ID": 85515620,
+      "Entries": [
+        "Red-Eye Merchant Mob 16_Snowy Mountain_Behind Ruins 5-2"
+      ]
+    },
+    {
+      "ID": 86120100,
+      "Entries": [
+        "Red-Eye Merchant Mob 18_Underground Labyrinth_Ground Floor of Two-Story Ruins"
+      ]
+    },
+    {
+      "ID": 86120200,
+      "Entries": [
+        "Wolf-Head Warrior_Underground Labyrinth_Beneath Cliff Edge Pillar"
+      ]
+    },
+    {
+      "ID": 86120205,
+      "Entries": [
+        "D(Danny)_Underground Labyrinth_Marika Ruins 3 Waterway Midpoint"
+      ]
+    },
+    {
+      "ID": 86120215,
+      "Entries": [
+        "Red-Eye Merchant Mob 17_Underground Labyrinth_Beyond Footbridges"
+      ]
+    },
+    {
+      "ID": 86120500,
+      "Entries": [
+        "Red-Eye Merchant Mob 19_Underground Labyrinth_Inside Greater Ruins"
+      ]
+    },
+    {
+      "ID": 86120520,
+      "Entries": [
+        "Battlefield Doctor_Dying/Dead_Underground Labyrinth_Base"
+      ]
+    }
+  ]
+}

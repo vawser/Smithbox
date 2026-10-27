@@ -1,0 +1,755 @@
+{
+  "Name": "MenuPropertyLayoutParam",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Detailed Status: Items"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "02_051_DetailStatus_Item"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Detailed Status: Items: End"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Detailed Status: Talisman"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "02_051_DetailStatus_Item"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Detailed Status: Talisman: End"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Detailed Status: Oath Amulet"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "02_051_DetailStatus_Item"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Detailed Status: Ring: End"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Detailed Status: Elixir"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "02_059_DetailStatus_Elixir"
+      ]
+    },
+    {
+      "ID": 1316,
+      "Entries": [
+        "Detailed Status: Elixir: End"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Detailed Status: Pot"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "02_051_DetailStatus_Item"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "Detailed Status: Pot: End"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Detailed Status: Other"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "※ Upgrade materials"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "02_051_DetailStatus_Item"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "Detailed Status: Other: End"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Detailed Status: Spirit Ash Item"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "02_048_DetailStatus_Buddy"
+      ]
+    },
+    {
+      "ID": 1620,
+      "Entries": [
+        "Detailed Status: Spirit Ash Item: End"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Detailed Status: Item Crafting Material"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "02_051_DetailStatus_Item"
+      ]
+    },
+    {
+      "ID": 1720,
+      "Entries": [
+        "Detailed Status: Item Crafting Material: End"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Detailed Status: Weapon *Excluding Catalysts"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Detailed Status: Weapon *Excluding Catalysts End"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Magic Stone Selected: Detailed Status: Weapon *Non-Catalyst"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Magic Stone Selected: Detailed Status: Weapon *Non-Catalyst End"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Detailed Status: Weapon: Catalyst Only"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "※ Sorcery type"
+      ]
+    },
+    {
+      "ID": 2370,
+      "Entries": [
+        "Detailed Status: Weapon: Catalyst Only End"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Magic Stone Selected: Detailed Status: Weapon: Catalyst Only"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "※ Sorcery type"
+      ]
+    },
+    {
+      "ID": 2470,
+      "Entries": [
+        "Magic Stone Selected: Detailed Status: Weapon: Catalyst Only End"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Detailed Status: Weapon: Catalyst Only"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "※ Incantation type"
+      ]
+    },
+    {
+      "ID": 2570,
+      "Entries": [
+        "Detailed Status: Weapon: Catalyst Only End"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Magic Stone Selected: Detailed Status: Weapon: Catalyst Only"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "※ Incantation type"
+      ]
+    },
+    {
+      "ID": 2670,
+      "Entries": [
+        "Magic Stone Selected: Detailed Status: Weapon: Catalyst Only End"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Detailed Status: Armor"
+      ]
+    },
+    {
+      "ID": 4027,
+      "Entries": [
+        "Detailed Status: Armor: End"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Detailed Status: Sorcery"
+      ]
+    },
+    {
+      "ID": 5018,
+      "Entries": [
+        "Detailed Status: Sorcery: End"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Detailed Status: Arrows"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Detailed Status: Arrows"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Detailed Status: Magic Stones"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "Detailed Status: Magic Stones: End"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Recipe Detail: Tool"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "02_056_DetailStatus_Recipe"
+      ]
+    },
+    {
+      "ID": 7034,
+      "Entries": [
+        "Recipe Detail: Tool: Terminal"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Recipe Detail: Arrow/Bolt"
+      ]
+    },
+    {
+      "ID": 7101,
+      "Entries": [
+        "02_056_DetailStatus_Recipe"
+      ]
+    },
+    {
+      "ID": 7134,
+      "Entries": [
+        "Recipe Detail: Arrow/Bolt: Terminal"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Recipe Detail: Pot"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "02_056_DetailStatus_Recipe"
+      ]
+    },
+    {
+      "ID": 7234,
+      "Entries": [
+        "Recipe Detail: Tool: Terminal"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Player Status (Character Data): Page 1"
+      ]
+    },
+    {
+      "ID": 10027,
+      "Entries": [
+        "Player Status (Character Data): Page 1: End"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Player Status (Character Data): Page 2"
+      ]
+    },
+    {
+      "ID": 11040,
+      "Entries": [
+        "Player Status (Character Data): Page 2: End"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Status: Page 2: Center"
+      ]
+    },
+    {
+      "ID": 15007,
+      "Entries": [
+        "Status: Page 2: Center: Terminus"
+      ]
+    },
+    {
+      "ID": 15500,
+      "Entries": [
+        "Status: Common to Pages 1 and 2: Left Side"
+      ]
+    },
+    {
+      "ID": 15519,
+      "Entries": [
+        "Status: Common to Pages 1 and 2: Left Side: Terminus"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Status: Page 1 (Player Stats)"
+      ]
+    },
+    {
+      "ID": 16046,
+      "Entries": [
+        "Status: Page 1: Terminus"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Inventory: Upper"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "Shop Display: Upper"
+      ]
+    },
+    {
+      "ID": 20102,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "Sell Shop: Upper"
+      ]
+    },
+    {
+      "ID": 20202,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "Equip: Upper"
+      ]
+    },
+    {
+      "ID": 20303,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "Weapon Upgrade: Upper"
+      ]
+    },
+    {
+      "ID": 20402,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        "Magic Stone Equip: Upper"
+      ]
+    },
+    {
+      "ID": 20502,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "Repair: Upper"
+      ]
+    },
+    {
+      "ID": 20602,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 20700,
+      "Entries": [
+        "Alchemy Furnace: Upper"
+      ]
+    },
+    {
+      "ID": 20702,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 20800,
+      "Entries": [
+        "Dragon Communion Shop: Upper"
+      ]
+    },
+    {
+      "ID": 20802,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 20900,
+      "Entries": [
+        "Other item selection: top"
+      ]
+    },
+    {
+      "ID": 20902,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Magic Stone Equip: Selected Magic Stone Data"
+      ]
+    },
+    {
+      "ID": 21006,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 21100,
+      "Entries": [
+        "Soul Refinement: Upper"
+      ]
+    },
+    {
+      "ID": 21102,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 21200,
+      "Entries": [
+        "Free Shop: Upper"
+      ]
+    },
+    {
+      "ID": 21202,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 21300,
+      "Entries": [
+        "Dragon Communion Shop: Upper"
+      ]
+    },
+    {
+      "ID": 21301,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 21400,
+      "Entries": [
+        "Puppet Buddy Shop: Upper"
+      ]
+    },
+    {
+      "ID": 21401,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 21500,
+      "Entries": [
+        "Air Magic Stone Copy: Upper"
+      ]
+    },
+    {
+      "ID": 21501,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 21600,
+      "Entries": [
+        "Dragon Communion (Veil-exclusive) Shop: Upper"
+      ]
+    },
+    {
+      "ID": 21601,
+      "Entries": [
+        "Terminal"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Quantity Select Dialog: Tool"
+      ]
+    },
+    {
+      "ID": 22030,
+      "Entries": [
+        "Quantity Select Dialog: Tool"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "Quantity Select Dialog: Pot"
+      ]
+    },
+    {
+      "ID": 23030,
+      "Entries": [
+        "Quantity Select Dialog: Pot: End"
+      ]
+    },
+    {
+      "ID": 23800,
+      "Entries": [
+        "Elixir Mixing"
+      ]
+    },
+    {
+      "ID": 23804,
+      "Entries": [
+        "Elixir: Terminal"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Level Up Left Side"
+      ]
+    },
+    {
+      "ID": 30016,
+      "Entries": [
+        "Level Up Left Side: End"
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "Level Up Right Side"
+      ]
+    },
+    {
+      "ID": 31032,
+      "Entries": [
+        "Level Up Right Side: End"
+      ]
+    },
+    {
+      "ID": 32000,
+      "Entries": [
+        "Multiplayer Bottom: Cooperative Sign"
+      ]
+    },
+    {
+      "ID": 32003,
+      "Entries": [
+        "Multiplayer Bottom: Cooperative Sign: End"
+      ]
+    },
+    {
+      "ID": 32100,
+      "Entries": [
+        "Multiplayer Bottom: Hostile Sign"
+      ]
+    },
+    {
+      "ID": 32103,
+      "Entries": [
+        "Multiplayer Bottom: Hostile Sign: End"
+      ]
+    },
+    {
+      "ID": 32200,
+      "Entries": [
+        "Multiplayer Bottom: Invasion A"
+      ]
+    },
+    {
+      "ID": 32203,
+      "Entries": [
+        "Multiplayer Bottom: Invasion A: End"
+      ]
+    },
+    {
+      "ID": 32300,
+      "Entries": [
+        "Multiplayer Bottom: Invasion B"
+      ]
+    },
+    {
+      "ID": 32303,
+      "Entries": [
+        "Multiplayer Bottom: Invasion B: End"
+      ]
+    },
+    {
+      "ID": 32400,
+      "Entries": [
+        "Multiplayer Bottom: Rescue"
+      ]
+    },
+    {
+      "ID": 32403,
+      "Entries": [
+        "Multiplayer Bottom: Rescue"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Character Creation Top: Upper"
+      ]
+    },
+    {
+      "ID": 40005,
+      "Entries": [
+        "Character Creation Top: Lower"
+      ]
+    },
+    {
+      "ID": 40015,
+      "Entries": [
+        "Character Creation Top: End"
+      ]
+    }
+  ]
+}

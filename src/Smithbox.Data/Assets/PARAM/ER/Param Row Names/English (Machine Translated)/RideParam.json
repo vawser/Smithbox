@@ -1,0 +1,527 @@
+{
+  "Name": "RideParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test (Do Not Edit)"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "PC→Horse: Directly Below"
+      ]
+    },
+    {
+      "ID": 80020,
+      "Entries": [
+        "PC→Horse (Torrent): Directly Below"
+      ]
+    },
+    {
+      "ID": 80030,
+      "Entries": [
+        "PC→Horse (Tree Sentinel Equipped): Directly Below"
+      ]
+    },
+    {
+      "ID": 80040,
+      "Entries": [
+        "PC→Horse (Carian Royal Armor): Directly Below"
+      ]
+    },
+    {
+      "ID": 80050,
+      "Entries": [
+        "PC→Horse (Burial Gear): Directly Below"
+      ]
+    },
+    {
+      "ID": 300081001,
+      "Entries": [
+        "Lost Kin_Soldier (Engineer) to Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 300081011,
+      "Entries": [
+        "Lost Kin_Soldier (Engineer) to Great Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 300081101,
+      "Entries": [
+        "Lost Kin_Soldier (Engineer) to Flamethrower: Rear"
+      ]
+    },
+    {
+      "ID": 300090090,
+      "Entries": [
+        "Lost Kin_Soldier→Ballista: Front"
+      ]
+    },
+    {
+      "ID": 300090091,
+      "Entries": [
+        "Lost Kin_Soldier→Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 300090092,
+      "Entries": [
+        "Lost Kin_Soldier→Ballista: Left"
+      ]
+    },
+    {
+      "ID": 300090093,
+      "Entries": [
+        "Lost Kin_Soldier→Ballista: Right"
+      ]
+    },
+    {
+      "ID": 315031600,
+      "Entries": [
+        "Rune-hunting Knight→Rune-hunting Knight's Horse: Front"
+      ]
+    },
+    {
+      "ID": 315031601,
+      "Entries": [
+        "Rune-hunting Knight→Rune-hunting Knight's Horse: Rear"
+      ]
+    },
+    {
+      "ID": 315031602,
+      "Entries": [
+        "Rune-hunting Knight→Rune-hunting Knight's Horse: Left"
+      ]
+    },
+    {
+      "ID": 315031603,
+      "Entries": [
+        "Rune-hunting Knight→Rune-hunting Knight's Horse: Right"
+      ]
+    },
+    {
+      "ID": 317031802,
+      "Entries": [
+        "Wolf Rider→Wolf Rider's Wolf: Left"
+      ]
+    },
+    {
+      "ID": 317031803,
+      "Entries": [
+        "Wolf Rider→Wolf Rider's Wolf: Right"
+      ]
+    },
+    {
+      "ID": 320032102,
+      "Entries": [
+        "Red-Eyed Gypsy to Red-Eyed Gypsy's Donkey: Left"
+      ]
+    },
+    {
+      "ID": 320032103,
+      "Entries": [
+        "Red-Eyed Gypsy to Red-Eyed Gypsy's Donkey: Right"
+      ]
+    },
+    {
+      "ID": 330042800,
+      "Entries": [
+        "Direct Lineage of Marika → Pot Ant: Front"
+      ]
+    },
+    {
+      "ID": 330042801,
+      "Entries": [
+        "Direct Lineage of Marika → Pot Ant: Rear"
+      ]
+    },
+    {
+      "ID": 330042802,
+      "Entries": [
+        "Direct Lineage of Marika → Pot Ant: Right"
+      ]
+    },
+    {
+      "ID": 330042803,
+      "Entries": [
+        "Direct Lineage of Marika → Pot Ant: Left"
+      ]
+    },
+    {
+      "ID": 350081001,
+      "Entries": [
+        "Buried Skeleton→Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 350081011,
+      "Entries": [
+        "Buried Skeleton→Great Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 350081101,
+      "Entries": [
+        "Buried Skeleton→Flamethrower: Rear"
+      ]
+    },
+    {
+      "ID": 405040601,
+      "Entries": [
+        "Northern Mercenary→Mercenary Horse: Rear"
+      ]
+    },
+    {
+      "ID": 405040602,
+      "Entries": [
+        "Northern Mercenary→Mercenary Horse: Left"
+      ]
+    },
+    {
+      "ID": 405040603,
+      "Entries": [
+        "Northern Mercenary→Mercenary Horse: Right"
+      ]
+    },
+    {
+      "ID": 435043601,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Rear"
+      ]
+    },
+    {
+      "ID": 435043602,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Left"
+      ]
+    },
+    {
+      "ID": 435043603,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Right"
+      ]
+    },
+    {
+      "ID": 435143611,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Rear: Stormveil"
+      ]
+    },
+    {
+      "ID": 435143612,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Left: Stormveil"
+      ]
+    },
+    {
+      "ID": 435143613,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Right: Stormveil"
+      ]
+    },
+    {
+      "ID": 435243621,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Rear: Monsan"
+      ]
+    },
+    {
+      "ID": 435243622,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Left: Monsan"
+      ]
+    },
+    {
+      "ID": 435243623,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Right: Monsan"
+      ]
+    },
+    {
+      "ID": 435343631,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Rear: Royal Capital"
+      ]
+    },
+    {
+      "ID": 435343632,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Left: Royal Capital"
+      ]
+    },
+    {
+      "ID": 435343633,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Right: Royal Capital"
+      ]
+    },
+    {
+      "ID": 435443641,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Rear: Plains"
+      ]
+    },
+    {
+      "ID": 435443642,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Left: Plains"
+      ]
+    },
+    {
+      "ID": 435443643,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Right: Plains"
+      ]
+    },
+    {
+      "ID": 435543651,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Rear: Mausoleum Guard"
+      ]
+    },
+    {
+      "ID": 435543652,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Left: Mausoleum Guard"
+      ]
+    },
+    {
+      "ID": 435543653,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Right: Mausoleum Guard"
+      ]
+    },
+    {
+      "ID": 435643661,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Rear: Miquella"
+      ]
+    },
+    {
+      "ID": 435643662,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Left: Miquella"
+      ]
+    },
+    {
+      "ID": 435643663,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Right: Miquella"
+      ]
+    },
+    {
+      "ID": 435843681,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Rear: Independent"
+      ]
+    },
+    {
+      "ID": 435843682,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Left: Independent"
+      ]
+    },
+    {
+      "ID": 435843683,
+      "Entries": [
+        "Wandering Royal Army_Upper Mounted Soldier -> Wandering Royal Army Horse: Right: Independent"
+      ]
+    },
+    {
+      "ID": 437081001,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier) → Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437081011,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier) → Great Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437081101,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier) → Flamethrower: Rear"
+      ]
+    },
+    {
+      "ID": 437181001,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction→Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437181011,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction→Great Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437181101,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction→Flamethrower: Rear"
+      ]
+    },
+    {
+      "ID": 437281001,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Monsan Faction→Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437281011,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Monsan Faction→Great Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437281101,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Monsan Faction→Flamethrower: Rear"
+      ]
+    },
+    {
+      "ID": 437381001,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction → Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437381011,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction → Great Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437381101,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction → Flamethrower: Rear"
+      ]
+    },
+    {
+      "ID": 437481001,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction → Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437481011,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction → Great Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437481101,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction → Flamethrower: Rear"
+      ]
+    },
+    {
+      "ID": 437581001,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Mausoleum Guard → Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437581011,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Mausoleum Guard → Great Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437581101,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Mausoleum Guard → Flamethrower: Rear"
+      ]
+    },
+    {
+      "ID": 437681001,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Miquella Faction→Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437681011,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Miquella Faction→Great Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437681101,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Miquella Faction→Flamethrower: Rear"
+      ]
+    },
+    {
+      "ID": 437781001,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier → Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437781011,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier → Great Ballista: Rear"
+      ]
+    },
+    {
+      "ID": 437781101,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier → Flamethrower: Rear"
+      ]
+    },
+    {
+      "ID": 473047400,
+      "Entries": [
+        "Radahn (Scrawny Horse)→Horse: Front"
+      ]
+    },
+    {
+      "ID": 473047401,
+      "Entries": [
+        "Radahn (Scrawny Horse)→Horse: Rear"
+      ]
+    },
+    {
+      "ID": 473047402,
+      "Entries": [
+        "Radahn (Scrawny Horse)→Horse: Left"
+      ]
+    },
+    {
+      "ID": 473047403,
+      "Entries": [
+        "Radahn (Scrawny Horse)→Horse: Right"
+      ]
+    },
+    {
+      "ID": 495149500,
+      "Entries": [
+        "Night King Followers Ship->Night King Followers Front"
+      ]
+    },
+    {
+      "ID": 495149501,
+      "Entries": [
+        "Night King Followers Ship->Night King Followers Rear"
+      ]
+    },
+    {
+      "ID": 495149502,
+      "Entries": [
+        "Night King Followers Ship->Night King Followers Left"
+      ]
+    },
+    {
+      "ID": 495149503,
+      "Entries": [
+        "Night King Followers Ship->Night King Followers Right"
+      ]
+    }
+  ]
+}

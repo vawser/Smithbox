@@ -1,0 +1,311 @@
+{
+  "Name": "ThrowDirectionSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "ForTest"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Weapon Iron"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Mercury"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Weapon Wood"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Weapon Meat"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Shield_Iron"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Shield_Wood"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Dried Meat"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Armor Leather"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Flesh"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Flesh_Weak Point"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Flesh_Weak Point (Large)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Heavy Iron"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Cloth"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Rune"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Rune_Weak Point"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Stone (Soft)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Mud"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Lava_Weak Point"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Lava"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Crystal"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Shell"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Bone"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Shell"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Weakpoint"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Shield_Stone"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Tree"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Shield_Heavy_Iron"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Ghost White"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Ghost Black"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Shadow"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Ghost White(For Guard)"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Ghost Black (For Guard)"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Brass"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "spirit"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Spirit_Weakpoint"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Chain Mail"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Body Fluid"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Body Fluid_weak point"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Rot"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Rot_Weak Point"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "Rune Meat"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Blood Disease"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Scale"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Scale_Weak Point"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Scale_Weak Point(Large)"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "Scale(Hard)"
+      ]
+    }
+  ]
+}

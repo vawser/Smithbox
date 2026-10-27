@@ -1,0 +1,4031 @@
+{
+  "Name": "EquipParamProtector",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Skinhead"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "M Spot"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Short"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Slicked-Back Long"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Tail"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Disheveled Long Hair"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Center Part"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Semi-Long Side Part"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Wave"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Bob"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Male 11"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Male 12"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Male 13"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Male 14"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Male 15"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Male 16"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Male 17"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "Male 18"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "Male 19"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Male 20"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Skin"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Very Short Hair"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Wave Short"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Straight Short"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Straight Long"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Ponytail A"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Ponytail B"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "Wave Long"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "Chignon"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "Braid"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Female 11"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Female 12"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Female 13"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Female 14"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "Female 15"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Female 16"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "Female 17"
+      ]
+    },
+    {
+      "ID": 4700,
+      "Entries": [
+        "Female 18"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "Female 19"
+      ]
+    },
+    {
+      "ID": 4900,
+      "Entries": [
+        "Female 20"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Wandering Hairstyle"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Head"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Body"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "Arm"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "Leg"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Necromancer Armor_Head(HD)"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "Necromancer Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 40200,
+      "Entries": [
+        "Necromancer Armor_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 40300,
+      "Entries": [
+        "Necromancer Armor_Feet(LG)"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Northern Mercenary Equipment_Head (HD)"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "Northern Mercenary Equipment_Body (BD)"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "Northern Mercenary Equipment_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        "Northern Mercenary Equipment_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "Red Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 60100,
+      "Entries": [
+        "Red Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 60200,
+      "Entries": [
+        "Red Armor_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 60300,
+      "Entries": [
+        "Red Armor_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 61000,
+      "Entries": [
+        "Red Armor_Light_Head (HD)"
+      ]
+    },
+    {
+      "ID": 61100,
+      "Entries": [
+        "Red Armor_Light_Body (BD)"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Dragon Scale_Head (HD)"
+      ]
+    },
+    {
+      "ID": 80100,
+      "Entries": [
+        "Dragon Scale_Body (BD)"
+      ]
+    },
+    {
+      "ID": 80200,
+      "Entries": [
+        "Dragon Scale_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 80300,
+      "Entries": [
+        "Dragon Scale_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 81100,
+      "Entries": [
+        "Dragon Scale_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Scholar Perfumer (Court) _Head(HD)"
+      ]
+    },
+    {
+      "ID": 90100,
+      "Entries": [
+        "Scholar Perfumer (Court) _Body(BD)"
+      ]
+    },
+    {
+      "ID": 90200,
+      "Entries": [
+        "Scholar Perfumer (Court) _Arms(AM)"
+      ]
+    },
+    {
+      "ID": 90300,
+      "Entries": [
+        "Scholar Perfumer (Court) _Legs(LG)"
+      ]
+    },
+    {
+      "ID": 91100,
+      "Entries": [
+        "Scholar Perfumer (Court) _Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Scholar Perfumer (Travel) _Head(HD)"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Scholar Perfumer (Travel) _Body(BD)"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Scholar Perfumer (Travel) _Arms(AM)"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "Scholar Perfumer (Travel) _Legs(LG)"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "Scholar Perfumer (Travel)_Light Armor _Body(BD)"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "Glintstone Sorcerer C_Head(HD)"
+      ]
+    },
+    {
+      "ID": 120100,
+      "Entries": [
+        "Glintstone Sorcerer C_Body (BD)"
+      ]
+    },
+    {
+      "ID": 120200,
+      "Entries": [
+        "Glintstone Sorcerer C_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 120300,
+      "Entries": [
+        "Glintstone Sorcerer C_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "Glintstone Sorcerer C_Light Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 121100,
+      "Entries": [
+        "Glintstone Sorcerer C_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "Glintstone Sorcerer B1_Head(HD)"
+      ]
+    },
+    {
+      "ID": 130100,
+      "Entries": [
+        "Glintstone Sorcerer B1_Body(BD)"
+      ]
+    },
+    {
+      "ID": 130200,
+      "Entries": [
+        "Glintstone Sorcerer B1_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 130300,
+      "Entries": [
+        "Glintstone Sorcerer B1_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 131100,
+      "Entries": [
+        "Glintstone Sorcerer B1_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "Horn Armor_Head(HD)"
+      ]
+    },
+    {
+      "ID": 140100,
+      "Entries": [
+        "Horn Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 140200,
+      "Entries": [
+        "Horn Armor_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 140300,
+      "Entries": [
+        "Horn Armor_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Western Wandering Monk_Head(HD)"
+      ]
+    },
+    {
+      "ID": 150100,
+      "Entries": [
+        "Western Komuso_Body (BD)"
+      ]
+    },
+    {
+      "ID": 150200,
+      "Entries": [
+        "Western Wandering Monk_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 150300,
+      "Entries": [
+        "Western Wandering Monk_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 151100,
+      "Entries": [
+        "Western Wandering Monk_Light_Body(BD)"
+      ]
+    },
+    {
+      "ID": 160000,
+      "Entries": [
+        "Subject's Attire _Head(HD)"
+      ]
+    },
+    {
+      "ID": 160100,
+      "Entries": [
+        "Subject's Attire _Body(BD)"
+      ]
+    },
+    {
+      "ID": 160300,
+      "Entries": [
+        "Subject's Attire _Legs(LG)"
+      ]
+    },
+    {
+      "ID": 170000,
+      "Entries": [
+        "Wolf-Head Warrior_Head(HD)"
+      ]
+    },
+    {
+      "ID": 170100,
+      "Entries": [
+        "Wolf-Head Warrior_Body(BD)"
+      ]
+    },
+    {
+      "ID": 170200,
+      "Entries": [
+        "Wolf-Head Warrior_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 170300,
+      "Entries": [
+        "Wolf-Head Warrior_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 171100,
+      "Entries": [
+        "Wolf-Head Warrior_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 180000,
+      "Entries": [
+        "Black Knife Descendant_Head (HD)"
+      ]
+    },
+    {
+      "ID": 180100,
+      "Entries": [
+        "Black Knife Descendant_Body (BD)"
+      ]
+    },
+    {
+      "ID": 180200,
+      "Entries": [
+        "Black Knife Descendant_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 180300,
+      "Entries": [
+        "Black Knife Descendant_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 181100,
+      "Entries": [
+        "Black Knife Descendant_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 190000,
+      "Entries": [
+        "Lost Kin_Soldier_Head (HD)"
+      ]
+    },
+    {
+      "ID": 190100,
+      "Entries": [
+        "Lost Kin_Soldier_Body (BD)"
+      ]
+    },
+    {
+      "ID": 190200,
+      "Entries": [
+        "Lost Kin_Soldier_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 190300,
+      "Entries": [
+        "Lost Kin_Soldier_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Lost Kin_Knight_Head (HD)"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "Lost Kin_Knight_Body (BD)"
+      ]
+    },
+    {
+      "ID": 200200,
+      "Entries": [
+        "Lost Kin_Knight_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Lost Kin_Knight Legs (LG)"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Lost Kin_Knight_Light Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 201100,
+      "Entries": [
+        "Lost Kin_Knight_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 202100,
+      "Entries": [
+        "Lost Kin_Knight_For Peninsula Fort Lord_Body (BD)"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Bloodstained Vulture Knight_Head(HD)"
+      ]
+    },
+    {
+      "ID": 210100,
+      "Entries": [
+        "Bloodstained Vulture Knight_Body (BD)"
+      ]
+    },
+    {
+      "ID": 210200,
+      "Entries": [
+        "Bloodstained Vulture Knight_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 210300,
+      "Entries": [
+        "Bloodstained Vulture Knight_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 211100,
+      "Entries": [
+        "Bloodstained Vulture Knight_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "Attendant_Head (HD)"
+      ]
+    },
+    {
+      "ID": 220100,
+      "Entries": [
+        "Attendant_Body (BD)"
+      ]
+    },
+    {
+      "ID": 220300,
+      "Entries": [
+        "Attendant_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 221100,
+      "Entries": [
+        "Attendant_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "Rune-hunting Knight_Head(HD)"
+      ]
+    },
+    {
+      "ID": 230100,
+      "Entries": [
+        "Rune-hunting Knight_Body(BD)"
+      ]
+    },
+    {
+      "ID": 230200,
+      "Entries": [
+        "Rune-hunting Knight_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 230300,
+      "Entries": [
+        "Rune-hunting Knight_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 231000,
+      "Entries": [
+        "Rune-hunting Knight_Light Armor_Head(HD)"
+      ]
+    },
+    {
+      "ID": 231100,
+      "Entries": [
+        "Rune-hunting Knight_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        "Wolf Rider_Head(HD)"
+      ]
+    },
+    {
+      "ID": 240100,
+      "Entries": [
+        "WolfRider_Body(BD)"
+      ]
+    },
+    {
+      "ID": 240200,
+      "Entries": [
+        "Wolf Rider_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 240300,
+      "Entries": [
+        "Wolf Rider_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 241100,
+      "Entries": [
+        "Wolf Rider_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        "Red-Eyed Gypsy_Head (HD)"
+      ]
+    },
+    {
+      "ID": 250100,
+      "Entries": [
+        "Red-Eyed Gypsy_Body (BD)"
+      ]
+    },
+    {
+      "ID": 250300,
+      "Entries": [
+        "Red-Eyed Gypsy_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 251100,
+      "Entries": [
+        "Red-Eyed Gypsy_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 260000,
+      "Entries": [
+        "Tree Sentinel (Aberration)_Head (HD)"
+      ]
+    },
+    {
+      "ID": 260100,
+      "Entries": [
+        "Tree Sentinel (Aberration)_Body (BD)"
+      ]
+    },
+    {
+      "ID": 260200,
+      "Entries": [
+        "Tree Sentinel (Aberration)_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 260300,
+      "Entries": [
+        "Tree Sentinel (Aberration)_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 270000,
+      "Entries": [
+        "Tree Sentinel (Chief)_Head (HD)"
+      ]
+    },
+    {
+      "ID": 270100,
+      "Entries": [
+        "Tree Sentinel (Chief)_Body (BD)"
+      ]
+    },
+    {
+      "ID": 270200,
+      "Entries": [
+        "Tree Sentinel (Chief)_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 270300,
+      "Entries": [
+        "Tree Sentinel (Chief)_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 271100,
+      "Entries": [
+        "Tree Sentinel (Chief)_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 280000,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)_Head (HD)"
+      ]
+    },
+    {
+      "ID": 280100,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)_Body (BD)"
+      ]
+    },
+    {
+      "ID": 280200,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 280300,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 281100,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 290000,
+      "Entries": [
+        "Direct Lineage of Marika A_Head(HD)"
+      ]
+    },
+    {
+      "ID": 290100,
+      "Entries": [
+        "Direct Lineage of Marika A_Body(BD)"
+      ]
+    },
+    {
+      "ID": 290200,
+      "Entries": [
+        "Direct Lineage of Marika A_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 290300,
+      "Entries": [
+        "Direct Lineage of Marika A_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 291000,
+      "Entries": [
+        "Direct Lineage of Marika A_Light Armor_Head(HD)"
+      ]
+    },
+    {
+      "ID": 291100,
+      "Entries": [
+        "Direct Lineage of Marika A_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 292000,
+      "Entries": [
+        "Direct Lineage of Marika B_Head(HD)"
+      ]
+    },
+    {
+      "ID": 292100,
+      "Entries": [
+        "Direct Lineage of Marika B_Body(BD)"
+      ]
+    },
+    {
+      "ID": 293000,
+      "Entries": [
+        "Direct Lineage of Marika C_Head(HD)"
+      ]
+    },
+    {
+      "ID": 293100,
+      "Entries": [
+        "Direct Lineage of Marika C_Body(BD)"
+      ]
+    },
+    {
+      "ID": 294000,
+      "Entries": [
+        "Direct Lineage of Marika BC_Light Armor_Head(HD)"
+      ]
+    },
+    {
+      "ID": 294100,
+      "Entries": [
+        "Direct Lineage of Marika BC_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Ancestral Follower_Male_Head (HD)"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "Ancestral Follower_Male_Body (BD)"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "Ancestral Follower_Male_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Ancestral Follower_Female_Head (HD)"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "Ancestral Follower_Female_Body (BD)"
+      ]
+    },
+    {
+      "ID": 301300,
+      "Entries": [
+        "Ancestral Follower_Female_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Gladiator_Head (HD)"
+      ]
+    },
+    {
+      "ID": 310100,
+      "Entries": [
+        "Gladiator_Body (BD)"
+      ]
+    },
+    {
+      "ID": 310300,
+      "Entries": [
+        "Gladiator_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 311100,
+      "Entries": [
+        "Gladiator_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Demon's Blood Monk_Head(HD)"
+      ]
+    },
+    {
+      "ID": 320100,
+      "Entries": [
+        "Demon's Blood Monk_Body(BD)"
+      ]
+    },
+    {
+      "ID": 320300,
+      "Entries": [
+        "Demon's Blood Monk_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Bug-eaten Tribe_Head (HD)"
+      ]
+    },
+    {
+      "ID": 330100,
+      "Entries": [
+        "Bug-eaten Tribe_Body (BD)"
+      ]
+    },
+    {
+      "ID": 330200,
+      "Entries": [
+        "Bug-eaten Tribe_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 330300,
+      "Entries": [
+        "Bug-eaten Tribe_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 331100,
+      "Entries": [
+        "Bug-eaten Tribe_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 340000,
+      "Entries": [
+        "Godskin Apostle_Head(HD)"
+      ]
+    },
+    {
+      "ID": 340100,
+      "Entries": [
+        "Putrid Knights_Body (BD)"
+      ]
+    },
+    {
+      "ID": 340200,
+      "Entries": [
+        "Godskin Apostle_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 340300,
+      "Entries": [
+        "Godskin Apostle_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "Godskin Apostle_Light Armor_Head(HD)"
+      ]
+    },
+    {
+      "ID": 341100,
+      "Entries": [
+        "Godskin Apostle_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Giant Flame Monk_Head (HD)"
+      ]
+    },
+    {
+      "ID": 350100,
+      "Entries": [
+        "Giant's Flame Monk_Body(BD)"
+      ]
+    },
+    {
+      "ID": 350200,
+      "Entries": [
+        "Giant's Flame Monk_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 350300,
+      "Entries": [
+        "Giant Flame Monk_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 351000,
+      "Entries": [
+        "Giant's Flame Monk (Godskin)_Head(HD)"
+      ]
+    },
+    {
+      "ID": 351100,
+      "Entries": [
+        "Giant's Flame Monk (Godskin)_Body(BD)"
+      ]
+    },
+    {
+      "ID": 351200,
+      "Entries": [
+        "Giant's Flame Monk (Godskin)_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 351300,
+      "Entries": [
+        "Giant's Flame Monk (Godskin)_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 360000,
+      "Entries": [
+        "Giant's Flame Fat Monk_Head(HD)"
+      ]
+    },
+    {
+      "ID": 360100,
+      "Entries": [
+        "Giant's Flame Fat Monk_Body(BD)"
+      ]
+    },
+    {
+      "ID": 360200,
+      "Entries": [
+        "Giant's Flame Fat Monk_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 360300,
+      "Entries": [
+        "Giant's Flame Fat Monk_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 361100,
+      "Entries": [
+        "Giant's Flame Fat Monk_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 370000,
+      "Entries": [
+        "Grave Robber Noble (Standard)_Head(HD)"
+      ]
+    },
+    {
+      "ID": 370100,
+      "Entries": [
+        "Grave Robber Noble (Standard)_Body(BD)"
+      ]
+    },
+    {
+      "ID": 370300,
+      "Entries": [
+        "Grave Robber Noble (Standard)_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 371100,
+      "Entries": [
+        "Grave Robber Noble (Standard)_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 380000,
+      "Entries": [
+        "Grave Robber Noble (Knight)_Head(HD)"
+      ]
+    },
+    {
+      "ID": 380100,
+      "Entries": [
+        "Grave Robber Noble (Knight)_Body(BD)"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "Grave Robber Noble (Elder Type)_Head(HD)"
+      ]
+    },
+    {
+      "ID": 390100,
+      "Entries": [
+        "Grave Robber Noble (Elder Type)_Body(BD)"
+      ]
+    },
+    {
+      "ID": 390300,
+      "Entries": [
+        "Grave Robber Noble (Elder Type)_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 420000,
+      "Entries": [
+        "Wandering Lowly Soldier_Head(HD)"
+      ]
+    },
+    {
+      "ID": 420100,
+      "Entries": [
+        "Wandering Lowly Soldier_Body(BD)"
+      ]
+    },
+    {
+      "ID": 420200,
+      "Entries": [
+        "Wandering Lowly Soldier_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 420300,
+      "Entries": [
+        "Wandering Lowly Soldier_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 430000,
+      "Entries": [
+        "Mad Performer_Head(HD)"
+      ]
+    },
+    {
+      "ID": 430100,
+      "Entries": [
+        "Mad Performer_Body(BD)"
+      ]
+    },
+    {
+      "ID": 430300,
+      "Entries": [
+        "Mad Performer_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 440000,
+      "Entries": [
+        "Pumpkin Head_Head (HD)"
+      ]
+    },
+    {
+      "ID": 460000,
+      "Entries": [
+        "Godfrey the Beast-clad_Head(HD)"
+      ]
+    },
+    {
+      "ID": 460100,
+      "Entries": [
+        "Godfrey the Beast-clad_Body(BD)"
+      ]
+    },
+    {
+      "ID": 460200,
+      "Entries": [
+        "Godfrey the Beast-clad_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 460300,
+      "Entries": [
+        "Godfrey the Beast-clad_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 461100,
+      "Entries": [
+        "Godfrey the Beast-clad_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 470000,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Head(HD)"
+      ]
+    },
+    {
+      "ID": 470100,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Body(BD)"
+      ]
+    },
+    {
+      "ID": 470200,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 470300,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Feet(LG)"
+      ]
+    },
+    {
+      "ID": 471100,
+      "Entries": [
+        "Radahn (Scrawny Horse) Light Armor_body (BD)"
+      ]
+    },
+    {
+      "ID": 480100,
+      "Entries": [
+        "Greater Demon_Body (BD)"
+      ]
+    },
+    {
+      "ID": 481100,
+      "Entries": [
+        "Greater Demon_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 510000,
+      "Entries": [
+        "Rennala of the Full Moon_Head (HD)"
+      ]
+    },
+    {
+      "ID": 510100,
+      "Entries": [
+        "Rennala of the Full Moon_Body (BD)"
+      ]
+    },
+    {
+      "ID": 510200,
+      "Entries": [
+        "Rennala of the Full Moon_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 510300,
+      "Entries": [
+        "Rennala of the Full Moon_Feet (LG)"
+      ]
+    },
+    {
+      "ID": 520000,
+      "Entries": [
+        "Godskin Apostle_Head (HD)"
+      ]
+    },
+    {
+      "ID": 520100,
+      "Entries": [
+        "Godskin Apostle_Body (BD)"
+      ]
+    },
+    {
+      "ID": 520200,
+      "Entries": [
+        "Godskin Apostle_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 520300,
+      "Entries": [
+        "Godskin Apostle_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 530000,
+      "Entries": [
+        "Godskin Apostle Another_Head (HD)"
+      ]
+    },
+    {
+      "ID": 530100,
+      "Entries": [
+        "Godskin Apostle Another_Body (BD)"
+      ]
+    },
+    {
+      "ID": 530200,
+      "Entries": [
+        "Godskin Apostle Another_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 530300,
+      "Entries": [
+        "Godskin Apostle Another_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 540000,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Head (HD)"
+      ]
+    },
+    {
+      "ID": 540100,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Body (BD)"
+      ]
+    },
+    {
+      "ID": 540200,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 540300,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 541100,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Body (BD)"
+      ]
+    },
+    {
+      "ID": 570000,
+      "Entries": [
+        "Godfrey Sixteen Knights_Head (HD)"
+      ]
+    },
+    {
+      "ID": 570100,
+      "Entries": [
+        "Godfrey Sixteen Knights_Body (BD)"
+      ]
+    },
+    {
+      "ID": 570200,
+      "Entries": [
+        "Godfrey Sixteen Knights_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 570300,
+      "Entries": [
+        "Godfrey Sixteen Knights_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 571000,
+      "Entries": [
+        "Godfrey Sixteen Knights B_Head (HD)"
+      ]
+    },
+    {
+      "ID": 571100,
+      "Entries": [
+        "Godfrey Sixteen Knights B_Body (BD)"
+      ]
+    },
+    {
+      "ID": 572100,
+      "Entries": [
+        "Godfrey Sixteen Knights_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 573100,
+      "Entries": [
+        "Godfrey Sixteen Knights B_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 580000,
+      "Entries": [
+        "Crystal Sorcerers_Head (HD)"
+      ]
+    },
+    {
+      "ID": 580100,
+      "Entries": [
+        "Crystal Sorcerers_Body (BD)"
+      ]
+    },
+    {
+      "ID": 580200,
+      "Entries": [
+        "Crystal Sorcerers_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 580300,
+      "Entries": [
+        "Crystal Sorcerers_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 581000,
+      "Entries": [
+        "Crystal Sorcerers B_Head (HD)"
+      ]
+    },
+    {
+      "ID": 581100,
+      "Entries": [
+        "Crystal Sorcerers B_Body (BD)"
+      ]
+    },
+    {
+      "ID": 581200,
+      "Entries": [
+        "Crystal Sorcerers B_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 590000,
+      "Entries": [
+        "Wisdom King_Head(HD)"
+      ]
+    },
+    {
+      "ID": 590100,
+      "Entries": [
+        "Wisdom King_Body(BD)"
+      ]
+    },
+    {
+      "ID": 590200,
+      "Entries": [
+        "Wisdom King_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 590300,
+      "Entries": [
+        "Wisdom King_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 591100,
+      "Entries": [
+        "Wisdom King_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Twin Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 600100,
+      "Entries": [
+        "Twin Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 600200,
+      "Entries": [
+        "Twin Armor_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 600300,
+      "Entries": [
+        "Twin Armor_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 601100,
+      "Entries": [
+        "Twin Armor_Light_Body (BD)"
+      ]
+    },
+    {
+      "ID": 610000,
+      "Entries": [
+        "Battlefield Beggar_Head (HD)"
+      ]
+    },
+    {
+      "ID": 610100,
+      "Entries": [
+        "Battlefield Beggar_Body (BD)"
+      ]
+    },
+    {
+      "ID": 610200,
+      "Entries": [
+        "Battlefield Beggar_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 610300,
+      "Entries": [
+        "Battlefield Beggar_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Battlefield Beggar_Light Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 611100,
+      "Entries": [
+        "Battlefield Beggar_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 620000,
+      "Entries": [
+        "Persecuted Cleric_Head (HD)"
+      ]
+    },
+    {
+      "ID": 620100,
+      "Entries": [
+        "Persecuted Cleric_Body (BD)"
+      ]
+    },
+    {
+      "ID": 620300,
+      "Entries": [
+        "Persecuted Cleric_Feet (LG)"
+      ]
+    },
+    {
+      "ID": 621100,
+      "Entries": [
+        "Persecuted Cleric_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 622100,
+      "Entries": [
+        "Persecuted Cleric B_Body (BD)"
+      ]
+    },
+    {
+      "ID": 630000,
+      "Entries": [
+        "Stargazing_Head (HD)"
+      ]
+    },
+    {
+      "ID": 630100,
+      "Entries": [
+        "Stargazing_Body (BD)"
+      ]
+    },
+    {
+      "ID": 630200,
+      "Entries": [
+        "Stargazing_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 630300,
+      "Entries": [
+        "Stargazing_Feet (LG)"
+      ]
+    },
+    {
+      "ID": 631100,
+      "Entries": [
+        "Stargazing_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 640000,
+      "Entries": [
+        "Fat Armor_Head(HD)"
+      ]
+    },
+    {
+      "ID": 640100,
+      "Entries": [
+        "Fat Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 640200,
+      "Entries": [
+        "Fat Armor_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 640300,
+      "Entries": [
+        "Fat Armor_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 641100,
+      "Entries": [
+        "Fat Armor_Light_Body(BD)"
+      ]
+    },
+    {
+      "ID": 650000,
+      "Entries": [
+        "White-Haired Ogre_Head(HD)"
+      ]
+    },
+    {
+      "ID": 650100,
+      "Entries": [
+        "White-Haired Ogre_Body(BD)"
+      ]
+    },
+    {
+      "ID": 650200,
+      "Entries": [
+        "White-Haired Ogre_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 650300,
+      "Entries": [
+        "White-Haired Ogre_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 651000,
+      "Entries": [
+        "White-Haired Ogre Ver.B_Head(HD)"
+      ]
+    },
+    {
+      "ID": 652100,
+      "Entries": [
+        "White-Haired Ogre_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 660000,
+      "Entries": [
+        "Exiled Knight_Head (HD)"
+      ]
+    },
+    {
+      "ID": 660100,
+      "Entries": [
+        "Exiled Knight_Body (BD)"
+      ]
+    },
+    {
+      "ID": 660200,
+      "Entries": [
+        "Exiled Knight_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 660300,
+      "Entries": [
+        "Exiled Knight_Feet (LG)"
+      ]
+    },
+    {
+      "ID": 661100,
+      "Entries": [
+        "Exiled Knight_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 670000,
+      "Entries": [
+        "Dancing Swordsman_Head (HD)"
+      ]
+    },
+    {
+      "ID": 670100,
+      "Entries": [
+        "Dancing Swordsman_Body (BD)"
+      ]
+    },
+    {
+      "ID": 670200,
+      "Entries": [
+        "Dancing Swordsman_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 670300,
+      "Entries": [
+        "Dancing Swordsman_Feet (LG)"
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        "Army Doctor Executioner_Head (HD)"
+      ]
+    },
+    {
+      "ID": 680100,
+      "Entries": [
+        "Army Doctor Executioner_Body (BD)"
+      ]
+    },
+    {
+      "ID": 680200,
+      "Entries": [
+        "Army Doctor Executioner_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 680300,
+      "Entries": [
+        "Army Doctor Executioner_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 681100,
+      "Entries": [
+        "Army Doctor Executioner_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 690000,
+      "Entries": [
+        "Corpse Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 690100,
+      "Entries": [
+        "Corpse Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 690200,
+      "Entries": [
+        "Corpse Armor_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 690300,
+      "Entries": [
+        "Corpse Armor_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Highlander_Head (HD)"
+      ]
+    },
+    {
+      "ID": 700100,
+      "Entries": [
+        "Highlander_Body (BD)"
+      ]
+    },
+    {
+      "ID": 700200,
+      "Entries": [
+        "Highlander_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 700300,
+      "Entries": [
+        "Highlander_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Highlander Helm_Head (HD)"
+      ]
+    },
+    {
+      "ID": 702000,
+      "Entries": [
+        "Highlander_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 720000,
+      "Entries": [
+        "Armor of the Blessed_Head(HD)"
+      ]
+    },
+    {
+      "ID": 720100,
+      "Entries": [
+        "Armor of the Blessed_Body(BD)"
+      ]
+    },
+    {
+      "ID": 720200,
+      "Entries": [
+        "Armor of the Blessed_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 720300,
+      "Entries": [
+        "Armor of the Blessed_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 721100,
+      "Entries": [
+        "Armor of the Blessed_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 730000,
+      "Entries": [
+        "Barbarian_Head(HD)"
+      ]
+    },
+    {
+      "ID": 730100,
+      "Entries": [
+        "Barbarian_Body(BD)"
+      ]
+    },
+    {
+      "ID": 730200,
+      "Entries": [
+        "Barbarian_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 730300,
+      "Entries": [
+        "Barbarian_Feet(LG)"
+      ]
+    },
+    {
+      "ID": 740000,
+      "Entries": [
+        "Noble Exile Tale_Head (HD)"
+      ]
+    },
+    {
+      "ID": 740100,
+      "Entries": [
+        "Noble Exile Tale_Body (BD)"
+      ]
+    },
+    {
+      "ID": 740200,
+      "Entries": [
+        "Noble Exile Tale_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 740300,
+      "Entries": [
+        "Noble Exile Tale_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 741000,
+      "Entries": [
+        "Noble Exile Tale Bver_Head (HD)"
+      ]
+    },
+    {
+      "ID": 742000,
+      "Entries": [
+        "Noble Exile Tale_Head (HD)_Without Costume Change Special Effect"
+      ]
+    },
+    {
+      "ID": 760000,
+      "Entries": [
+        "Black Blade Malenia_Head (HD)"
+      ]
+    },
+    {
+      "ID": 760100,
+      "Entries": [
+        "Black Blade Malenia_Body (BD)"
+      ]
+    },
+    {
+      "ID": 760200,
+      "Entries": [
+        "Black Blade Malenia_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 760300,
+      "Entries": [
+        "Black Blade Malenia_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 761100,
+      "Entries": [
+        "Black Blade Malenia_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 770000,
+      "Entries": [
+        "Arbitrating Malenia_Head(HD)"
+      ]
+    },
+    {
+      "ID": 770100,
+      "Entries": [
+        "Arbitrating Malenia_Body(BD)"
+      ]
+    },
+    {
+      "ID": 770200,
+      "Entries": [
+        "Arbitrating Malenia_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 770300,
+      "Entries": [
+        "Arbitrating Malenia_Feet(LG)"
+      ]
+    },
+    {
+      "ID": 771100,
+      "Entries": [
+        "Arbitrating Malenia_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 780000,
+      "Entries": [
+        "Aged Veteran General_Head (HD)"
+      ]
+    },
+    {
+      "ID": 780100,
+      "Entries": [
+        "Aged Veteran General_Body (BD)"
+      ]
+    },
+    {
+      "ID": 780200,
+      "Entries": [
+        "Aged Veteran General_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 780300,
+      "Entries": [
+        "Aged Veteran General_Feet (LG)"
+      ]
+    },
+    {
+      "ID": 781100,
+      "Entries": [
+        "Aged Veteran General_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 790000,
+      "Entries": [
+        "Bolas Hound_Head(HD)"
+      ]
+    },
+    {
+      "ID": 790100,
+      "Entries": [
+        "Bolas Hound_Body(BD)"
+      ]
+    },
+    {
+      "ID": 790200,
+      "Entries": [
+        "Bolas Hound_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 790300,
+      "Entries": [
+        "Bolas Hound_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 791100,
+      "Entries": [
+        "Bolas Hound_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Man-Eater Hag_Head(HD)"
+      ]
+    },
+    {
+      "ID": 800100,
+      "Entries": [
+        "Man-Eater Hag_Body(BD)"
+      ]
+    },
+    {
+      "ID": 801000,
+      "Entries": [
+        "Man-Eater Hag_Light Armor_Head(HD)"
+      ]
+    },
+    {
+      "ID": 801100,
+      "Entries": [
+        "Man-Eater Hag_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 802000,
+      "Entries": [
+        "Man-Eater Hag B_Head(HD)"
+      ]
+    },
+    {
+      "ID": 802100,
+      "Entries": [
+        "Man-Eater Hag B_Body(BD)"
+      ]
+    },
+    {
+      "ID": 810000,
+      "Entries": [
+        "Rune Citizen_Head(HD)"
+      ]
+    },
+    {
+      "ID": 810100,
+      "Entries": [
+        "Rune Citizen_Body (BD)"
+      ]
+    },
+    {
+      "ID": 810300,
+      "Entries": [
+        "Rune Citizen_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 811000,
+      "Entries": [
+        "Rune Citizen_Light Armor_Head(HD)"
+      ]
+    },
+    {
+      "ID": 811100,
+      "Entries": [
+        "Rune Citizen_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 812000,
+      "Entries": [
+        "Rune Citizen C_Body (BD)"
+      ]
+    },
+    {
+      "ID": 812100,
+      "Entries": [
+        "Rune Citizen C_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 820000,
+      "Entries": [
+        "Servants of the Moon_Head (HD)"
+      ]
+    },
+    {
+      "ID": 830000,
+      "Entries": [
+        "Glintstone Sorcerer_Head(HD)"
+      ]
+    },
+    {
+      "ID": 830100,
+      "Entries": [
+        "Glintstone Sorcerer_Body(BD)"
+      ]
+    },
+    {
+      "ID": 830200,
+      "Entries": [
+        "Glintstone Sorcerer_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 830300,
+      "Entries": [
+        "Glintstone Sorcerer_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 831000,
+      "Entries": [
+        "Glintstone Sorcerer (Head Variant A)_Head (HD)"
+      ]
+    },
+    {
+      "ID": 832000,
+      "Entries": [
+        "Glintstone Sorcerer (Head Variant B)_Head (HD)"
+      ]
+    },
+    {
+      "ID": 833000,
+      "Entries": [
+        "Glintstone Sorcerer (Head Variant C)_Head (HD)"
+      ]
+    },
+    {
+      "ID": 834000,
+      "Entries": [
+        "Glintstone Sorcerer_(Head Variant D_Glintstone 100%)_Head(HD)"
+      ]
+    },
+    {
+      "ID": 834100,
+      "Entries": [
+        "Glintstone Sorcerer_(Head Variant D_Glintstone 50%)_Head(HD)"
+      ]
+    },
+    {
+      "ID": 835000,
+      "Entries": [
+        "Glintstone Sorcerer_(Glintstone 50%_Material Change)_Head(HD)"
+      ]
+    },
+    {
+      "ID": 835100,
+      "Entries": [
+        "Glintstone Sorcerer (Material Change)_Body (BD)"
+      ]
+    },
+    {
+      "ID": 835200,
+      "Entries": [
+        "Glintstone Sorcerer (Material Change)_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 835300,
+      "Entries": [
+        "Glintstone Sorcerer (Material Change)_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 836000,
+      "Entries": [
+        "Glintstone Sorcerer_(Head Variant D_Glintstone 100%)_Head(HD)_Costume Change Special Effect Removed"
+      ]
+    },
+    {
+      "ID": 840000,
+      "Entries": [
+        "Balloon Puppet Soldier_Head (HD)"
+      ]
+    },
+    {
+      "ID": 840100,
+      "Entries": [
+        "Balloon Puppet Soldier_Body (BD)"
+      ]
+    },
+    {
+      "ID": 850000,
+      "Entries": [
+        "Flying Puppet Soldier_Head (HD)"
+      ]
+    },
+    {
+      "ID": 860000,
+      "Entries": [
+        "Senior Knight_Head (HD)"
+      ]
+    },
+    {
+      "ID": 860100,
+      "Entries": [
+        "Senior Knight_Body (BD)"
+      ]
+    },
+    {
+      "ID": 860200,
+      "Entries": [
+        "Senior Knight_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 860300,
+      "Entries": [
+        "Senior Knight_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 861100,
+      "Entries": [
+        "Senior Knight_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 870000,
+      "Entries": [
+        "Samurai_Head(HD)"
+      ]
+    },
+    {
+      "ID": 870100,
+      "Entries": [
+        "Samurai_Body(BD)"
+      ]
+    },
+    {
+      "ID": 870200,
+      "Entries": [
+        "Samurai_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 870300,
+      "Entries": [
+        "Samurai_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 871100,
+      "Entries": [
+        "Samurai_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 872000,
+      "Entries": [
+        "For Samurai NPC_Head(HD)"
+      ]
+    },
+    {
+      "ID": 872100,
+      "Entries": [
+        "For Samurai NPC_Body(BD)"
+      ]
+    },
+    {
+      "ID": 872200,
+      "Entries": [
+        "For Samurai NPC_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 872300,
+      "Entries": [
+        "For Samurai NPC_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 873000,
+      "Entries": [
+        "For Samurai NPC_Head(HD)_Without Costume Change Special Effect"
+      ]
+    },
+    {
+      "ID": 880000,
+      "Entries": [
+        "Assassin Knight_Head(HD)"
+      ]
+    },
+    {
+      "ID": 880100,
+      "Entries": [
+        "Assassin Knight_Body(BD)"
+      ]
+    },
+    {
+      "ID": 880200,
+      "Entries": [
+        "Assassin Knight_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 880300,
+      "Entries": [
+        "Assassin Knight_Foot(LG)"
+      ]
+    },
+    {
+      "ID": 881000,
+      "Entries": [
+        "Assassin Knight_Light Armor_Head(HD)"
+      ]
+    },
+    {
+      "ID": 881100,
+      "Entries": [
+        "Assassin Knight_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 890000,
+      "Entries": [
+        "Condemned Prisoner_Head(HD)"
+      ]
+    },
+    {
+      "ID": 890100,
+      "Entries": [
+        "Condemned Prisoner_Body(BD)"
+      ]
+    },
+    {
+      "ID": 890300,
+      "Entries": [
+        "Condemned Prisoner_Feet(LG)"
+      ]
+    },
+    {
+      "ID": 891000,
+      "Entries": [
+        "Condemned Prisoner B_Head(HD)"
+      ]
+    },
+    {
+      "ID": 892100,
+      "Entries": [
+        "Condemned Prisoner_Bloodied_Body(BD)_For NPC"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Saintess_Head (HD)"
+      ]
+    },
+    {
+      "ID": 900100,
+      "Entries": [
+        "Saintess_Body (BD)"
+      ]
+    },
+    {
+      "ID": 900200,
+      "Entries": [
+        "Saintess_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 900300,
+      "Entries": [
+        "Saintess_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 901100,
+      "Entries": [
+        "Saintess_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 901200,
+      "Entries": [
+        "Saintess_(Castellan's Daughter_Chaos) Body (BD)"
+      ]
+    },
+    {
+      "ID": 901600,
+      "Entries": [
+        "Saintess_Light Armor_Bloodied_Body (BD)_For NPC"
+      ]
+    },
+    {
+      "ID": 902000,
+      "Entries": [
+        "Saintess B (Upper)_Head (HD)"
+      ]
+    },
+    {
+      "ID": 902100,
+      "Entries": [
+        "Saintess B (Upper)_Body (BD)"
+      ]
+    },
+    {
+      "ID": 902300,
+      "Entries": [
+        "Saintess B (Upper)_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 903100,
+      "Entries": [
+        "Saintess B (Upper)_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 904100,
+      "Entries": [
+        "Saintess B (Upper)_Bloodied NPC_Body (BD)"
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        "Preceptor's Robe_Head (HD)"
+      ]
+    },
+    {
+      "ID": 910100,
+      "Entries": [
+        "Preceptor's Robe_Body (BD)"
+      ]
+    },
+    {
+      "ID": 910200,
+      "Entries": [
+        "Preceptor's Robe_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 910300,
+      "Entries": [
+        "Preceptor's Robe_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 911000,
+      "Entries": [
+        "Preceptor's Robe_Light Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 911100,
+      "Entries": [
+        "Preceptor's Robe_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 912000,
+      "Entries": [
+        "Preceptor's Robe (Material Change)_Head (HD)"
+      ]
+    },
+    {
+      "ID": 912100,
+      "Entries": [
+        "Preceptor's Robe (Material Change)_Body (BD)"
+      ]
+    },
+    {
+      "ID": 912200,
+      "Entries": [
+        "Preceptor's Robe (Material Change)_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 912300,
+      "Entries": [
+        "Preceptor's Robe (Material Change)_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 913000,
+      "Entries": [
+        "Preceptor's Robe_Head (HD)_Costume Change Without Special Effect"
+      ]
+    },
+    {
+      "ID": 920000,
+      "Entries": [
+        "Green Wig_Head (HD)"
+      ]
+    },
+    {
+      "ID": 930000,
+      "Entries": [
+        "Assassin_Head (HD)"
+      ]
+    },
+    {
+      "ID": 930100,
+      "Entries": [
+        "Assassin_Body (BD)"
+      ]
+    },
+    {
+      "ID": 930200,
+      "Entries": [
+        "Assassin_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 930300,
+      "Entries": [
+        "Assassin_Feet (LG)"
+      ]
+    },
+    {
+      "ID": 931100,
+      "Entries": [
+        "Assassin_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 940000,
+      "Entries": [
+        "Mercenary Swordsman_Head (HD)"
+      ]
+    },
+    {
+      "ID": 940100,
+      "Entries": [
+        "Mercenary Swordsman_Body (BD)"
+      ]
+    },
+    {
+      "ID": 940200,
+      "Entries": [
+        "Mercenary Swordsman_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 940300,
+      "Entries": [
+        "Mercenary Swordsman_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 941000,
+      "Entries": [
+        "Mercenary Swordsman_Light Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 950000,
+      "Entries": [
+        "Scarred Knight_Head(HD)"
+      ]
+    },
+    {
+      "ID": 950100,
+      "Entries": [
+        "Wounded Knight_Body (BD)"
+      ]
+    },
+    {
+      "ID": 950200,
+      "Entries": [
+        "Scarred Knight_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 950300,
+      "Entries": [
+        "Scarred Knight_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 951100,
+      "Entries": [
+        "Scarred Knight_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 960000,
+      "Entries": [
+        "Small Lord's Attire B_Head (HD)"
+      ]
+    },
+    {
+      "ID": 960100,
+      "Entries": [
+        "Small Lord's Attire B_Body (BD)"
+      ]
+    },
+    {
+      "ID": 960300,
+      "Entries": [
+        "Small Lord's Attire B_Feet (LG)"
+      ]
+    },
+    {
+      "ID": 961000,
+      "Entries": [
+        "Small Lord's Attire C_Head (HD)"
+      ]
+    },
+    {
+      "ID": 961100,
+      "Entries": [
+        "Small Lord's Attire C_Body (BD)"
+      ]
+    },
+    {
+      "ID": 962100,
+      "Entries": [
+        "Small Lord's Attire C_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 963000,
+      "Entries": [
+        "Small Lord's Attire E_Head (HD)"
+      ]
+    },
+    {
+      "ID": 963100,
+      "Entries": [
+        "Small Lord's Attire E_Body (BD)"
+      ]
+    },
+    {
+      "ID": 963200,
+      "Entries": [
+        "Small Lord's Attire E_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 964000,
+      "Entries": [
+        "Small Lord's Attire E_Light Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 964100,
+      "Entries": [
+        "Small Lord's Attire E_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 965000,
+      "Entries": [
+        "Small Lord's Attire B (Material Change)_Head (HD)"
+      ]
+    },
+    {
+      "ID": 965100,
+      "Entries": [
+        "Small Lord's Attire B (Material Change)_Body (BD)"
+      ]
+    },
+    {
+      "ID": 965300,
+      "Entries": [
+        "Small Lord's Attire B (Material Change)_Feet (LG)"
+      ]
+    },
+    {
+      "ID": 966000,
+      "Entries": [
+        "Small Lord's Attire C_Head (HD)_Costume Change without Special Effect"
+      ]
+    },
+    {
+      "ID": 967000,
+      "Entries": [
+        "Small Lord's Attire E_Head (HD)_Costume Change without Special Effect"
+      ]
+    },
+    {
+      "ID": 970000,
+      "Entries": [
+        "Omen Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 970100,
+      "Entries": [
+        "Omen Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 970200,
+      "Entries": [
+        "Omen Armor_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 970300,
+      "Entries": [
+        "Omen Armor_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 980000,
+      "Entries": [
+        "Monsan Knight_Head (HD)"
+      ]
+    },
+    {
+      "ID": 980100,
+      "Entries": [
+        "Monsan Knight_Body (BD)"
+      ]
+    },
+    {
+      "ID": 980200,
+      "Entries": [
+        "Monsan Knight_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 980300,
+      "Entries": [
+        "Monsan Knight_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 981100,
+      "Entries": [
+        "Monsan Knight_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 990000,
+      "Entries": [
+        "Sorcery Mercenary_Head(HD)"
+      ]
+    },
+    {
+      "ID": 990100,
+      "Entries": [
+        "Sorcery Mercenary_Body(BD)"
+      ]
+    },
+    {
+      "ID": 990200,
+      "Entries": [
+        "Sorcery Mercenary_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 990300,
+      "Entries": [
+        "Sorcery Mercenary_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 991100,
+      "Entries": [
+        "Sorcery Mercenary_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 992000,
+      "Entries": [
+        "Sorcery Mercenary_Head(HD)_Excluding Costume Change Special Effect"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Wandering Glintstone Sorcerer_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1000100,
+      "Entries": [
+        "Wandering Glintstone Sorcerer_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1000200,
+      "Entries": [
+        "Wandering Glintstone Sorcerer_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 1000300,
+      "Entries": [
+        "Wandering Glintstone Sorcerer_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 1010000,
+      "Entries": [
+        "Ranni_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1010100,
+      "Entries": [
+        "Ranni_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1010300,
+      "Entries": [
+        "Ranni_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 1011100,
+      "Entries": [
+        "Ranni (Light Armor)_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1020100,
+      "Entries": [
+        "Marika_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1020200,
+      "Entries": [
+        "Marika_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1020300,
+      "Entries": [
+        "Marika_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 1030000,
+      "Entries": [
+        "Rennala's Children_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1030100,
+      "Entries": [
+        "Rennala's Children_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1040000,
+      "Entries": [
+        "Golden Mask Seeker_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1040100,
+      "Entries": [
+        "Golden Mask Seeker_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1040200,
+      "Entries": [
+        "Golden Mask Seeker_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 1040300,
+      "Entries": [
+        "Golden Mask Seeker_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 1050100,
+      "Entries": [
+        "Margit the Fell Omen_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1060000,
+      "Entries": [
+        "Frog-man_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1060100,
+      "Entries": [
+        "Frog-man_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1070000,
+      "Entries": [
+        "Buddy Unique_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1070100,
+      "Entries": [
+        "Buddy Unique_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1070200,
+      "Entries": [
+        "Buddy Unique_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 1070300,
+      "Entries": [
+        "Buddy Unique_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 1080000,
+      "Entries": [
+        "Insectoid Golem_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1081000,
+      "Entries": [
+        "Insectoid Golem B_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1082000,
+      "Entries": [
+        "Insectoid Golem C_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1083000,
+      "Entries": [
+        "Insectoid Golem D_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1084000,
+      "Entries": [
+        "Insectoid Golem E_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1085000,
+      "Entries": [
+        "Insectoid Golem F_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1090000,
+      "Entries": [
+        "Marika Slime_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Chainmail"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "Chainmail"
+      ]
+    },
+    {
+      "ID": 1100200,
+      "Entries": [
+        "Chainmail"
+      ]
+    },
+    {
+      "ID": 1100300,
+      "Entries": [
+        "Chainmail"
+      ]
+    },
+    {
+      "ID": 1101000,
+      "Entries": [
+        "Chain & Surcoat (Hyakuchi)_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1101100,
+      "Entries": [
+        "Chain & Surcoat (Hyakuchi)_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1102100,
+      "Entries": [
+        "Chain & Surcoat (Blue)_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1110000,
+      "Entries": [
+        "Land Octopus_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1120000,
+      "Entries": [
+        "Living Jar_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1130000,
+      "Entries": [
+        "Rotten Undead Mushroom_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1130100,
+      "Entries": [
+        "Rotten Undead Mushroom_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1130200,
+      "Entries": [
+        "Rotten Undead Mushroom_Arm (AM)"
+      ]
+    },
+    {
+      "ID": 1130300,
+      "Entries": [
+        "Rotten Undead Mushroom_Leg (LG)"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Mirror Helm A"
+      ]
+    },
+    {
+      "ID": 1301000,
+      "Entries": [
+        "Mirror Helm B"
+      ]
+    },
+    {
+      "ID": 1400000,
+      "Entries": [
+        "Bandit Armor(HD)"
+      ]
+    },
+    {
+      "ID": 1400100,
+      "Entries": [
+        "Bandit Armor(BD)"
+      ]
+    },
+    {
+      "ID": 1400200,
+      "Entries": [
+        "Bandit Armor(AM)"
+      ]
+    },
+    {
+      "ID": 1400300,
+      "Entries": [
+        "Bandit Armor(LG)"
+      ]
+    },
+    {
+      "ID": 1401000,
+      "Entries": [
+        "Bandit Armor(HD)_Light Armor"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Knight Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1500100,
+      "Entries": [
+        "Knight Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1500200,
+      "Entries": [
+        "Knight Armor_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 1500300,
+      "Entries": [
+        "Knight Armor_Feet (LG)"
+      ]
+    },
+    {
+      "ID": 1600000,
+      "Entries": [
+        "Azorean Hood"
+      ]
+    },
+    {
+      "ID": 1610000,
+      "Entries": [
+        "Azorean Hood_Costume Change Without Special Effect"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "Royal Army Stormveil Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1700100,
+      "Entries": [
+        "Royal Army Stormveil Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1700200,
+      "Entries": [
+        "Royal Army Stormveil Faction_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1700300,
+      "Entries": [
+        "Royal Army Stormveil Faction_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 1710000,
+      "Entries": [
+        "Royal Army Monsan Faction_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1710100,
+      "Entries": [
+        "Royal Army Monsan Faction_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1710200,
+      "Entries": [
+        "Royal Army Monsan Faction_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 1710300,
+      "Entries": [
+        "Royal Army Monsan Faction_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 1720000,
+      "Entries": [
+        "Royal Army Royal Capital Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1720100,
+      "Entries": [
+        "Royal Army Royal Capital Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1720200,
+      "Entries": [
+        "Royal Army Royal Capital Faction_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1720300,
+      "Entries": [
+        "Royal Army Royal Capital Faction_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 1730000,
+      "Entries": [
+        "Royal Army Plains Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1730100,
+      "Entries": [
+        "Royal Army Plains Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1730200,
+      "Entries": [
+        "Royal Army Plains Faction_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1730300,
+      "Entries": [
+        "Royal Army Plains Faction_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 1740100,
+      "Entries": [
+        "Royal Army Mausoleum Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1740200,
+      "Entries": [
+        "Royal Army Mausoleum Faction_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1740300,
+      "Entries": [
+        "Royal Army Mausoleum Faction_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 1750000,
+      "Entries": [
+        "Royal Army Miquella Faction_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1750100,
+      "Entries": [
+        "Royal Army Miquella Faction_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1750200,
+      "Entries": [
+        "Royal Army Miquella Faction_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 1750300,
+      "Entries": [
+        "Royal Army Miquella Faction_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 1760000,
+      "Entries": [
+        "Royal Army Senior Cavalry Independent Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1760100,
+      "Entries": [
+        "Royal Army Senior Cavalry Independent Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1760200,
+      "Entries": [
+        "Royal Army Senior Cavalry Independent Faction_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 1760300,
+      "Entries": [
+        "Royal Army Senior Cavalry Independent Faction_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 1761100,
+      "Entries": [
+        "Royal Army Senior Cavalry Independent Faction_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1770000,
+      "Entries": [
+        "Royal Army Elite Cavalry Stormveil Faction_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1770100,
+      "Entries": [
+        "Royal Army Elite Cavalry Stormveil Faction_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1770200,
+      "Entries": [
+        "Royal Army Elite Cavalry Stormveil Faction_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 1770300,
+      "Entries": [
+        "Royal Army Elite Cavalry Stormveil Faction_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 1771100,
+      "Entries": [
+        "Royal Army Elite Cavalry Stormveil Faction_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1780000,
+      "Entries": [
+        "Royal Army Senior Cavalry Monsan Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1780100,
+      "Entries": [
+        "Royal Army Elite Cavalry Monsan Faction_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1780200,
+      "Entries": [
+        "Royal Army Elite Cavalry Monsan Faction_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 1780300,
+      "Entries": [
+        "Royal Army Elite Cavalry Monsan Faction_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 1781100,
+      "Entries": [
+        "Royal Army Elite Cavalry Monsan Faction_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1790000,
+      "Entries": [
+        "Royal Army Senior Cavalry Royal Capital Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1790100,
+      "Entries": [
+        "Royal Army Senior Cavalry Royal Capital Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1790200,
+      "Entries": [
+        "Royal Army Senior Cavalry Royal Capital Faction_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 1790300,
+      "Entries": [
+        "Royal Army Senior Cavalry Royal Capital Faction_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 1791100,
+      "Entries": [
+        "Royal Army Senior Cavalry Royal Capital Faction_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1800000,
+      "Entries": [
+        "Royal Army Senior Cavalry Plains Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1800100,
+      "Entries": [
+        "Royal Army Senior Cavalry Plains Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1800200,
+      "Entries": [
+        "Royal Army Senior Cavalry Plains Faction_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 1800300,
+      "Entries": [
+        "Royal Army Senior Cavalry Plains Faction_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 1801100,
+      "Entries": [
+        "Royal Army Senior Cavalry Plains Faction_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1810100,
+      "Entries": [
+        "Royal Army Senior Cavalry Mausoleum Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1810200,
+      "Entries": [
+        "Royal Army Senior Cavalry Mausoleum Faction_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 1810300,
+      "Entries": [
+        "Royal Army Senior Cavalry Mausoleum Faction_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 1811100,
+      "Entries": [
+        "Royal Army Senior Cavalry Mausoleum Faction_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1820000,
+      "Entries": [
+        "Royal Army Elite Cavalry Miquella Faction_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1820100,
+      "Entries": [
+        "Royal Army Elite Cavalry Miquella Faction_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1820200,
+      "Entries": [
+        "Royal Army Elite Cavalry Miquella Faction_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 1820300,
+      "Entries": [
+        "Royal Army Elite Cavalry Miquella Faction_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 1821100,
+      "Entries": [
+        "Royal Army Elite Cavalry Miquella Faction_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1830000,
+      "Entries": [
+        "Royal Army Foot Soldier Stormveil Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1830100,
+      "Entries": [
+        "Royal Army Foot Soldier Stormveil Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1830200,
+      "Entries": [
+        "Royal Army Foot Soldier Stormveil Faction_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1830300,
+      "Entries": [
+        "Royal Army Foot Soldier Stormveil Faction_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 1840000,
+      "Entries": [
+        "Royal Army Foot Soldier Monsan Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1840100,
+      "Entries": [
+        "Royal Army Foot Soldier Monsan Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1850000,
+      "Entries": [
+        "Royal Army Foot Soldier Royal Capital Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1850100,
+      "Entries": [
+        "Royal Army Foot Soldier Royal Capital Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1860000,
+      "Entries": [
+        "Royal Army Foot Soldier Plains Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1860100,
+      "Entries": [
+        "Royal Army Foot Soldier Plains Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1870100,
+      "Entries": [
+        "Royal Army Foot Soldier Mausoleum Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1880000,
+      "Entries": [
+        "Royal Army Foot Soldier Miquella Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1880100,
+      "Entries": [
+        "Royal Army Foot Soldier Miquella Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1890000,
+      "Entries": [
+        "Wandering Butcher_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1890100,
+      "Entries": [
+        "Wandering Butcher_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1890200,
+      "Entries": [
+        "Wandering Butcher_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1890300,
+      "Entries": [
+        "Wandering Butcher_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 1900000,
+      "Entries": [
+        "Scarab Skill_Head"
+      ]
+    },
+    {
+      "ID": 1901000,
+      "Entries": [
+        "Scarab Faith_Head"
+      ]
+    },
+    {
+      "ID": 1902000,
+      "Entries": [
+        "Scarab Glintstone_Head"
+      ]
+    },
+    {
+      "ID": 1910000,
+      "Entries": [
+        "ScarabHP_Head"
+      ]
+    },
+    {
+      "ID": 1920000,
+      "Entries": [
+        "ScarabFP_Head"
+      ]
+    },
+    {
+      "ID": 1930100,
+      "Entries": [
+        "Yuria's Dress_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1930300,
+      "Entries": [
+        "Yuria's Dress_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 1932100,
+      "Entries": [
+        "Yuria's Dress_Bloodstained_Body (BD)_For NPC"
+      ]
+    },
+    {
+      "ID": 1940000,
+      "Entries": [
+        "Yuria's Robe_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1940100,
+      "Entries": [
+        "Yuria's Robe_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1941100,
+      "Entries": [
+        "Yuria's Robe Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1950100,
+      "Entries": [
+        "Malenia's Daughter_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1950200,
+      "Entries": [
+        "Malenia's Daughter_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1950300,
+      "Entries": [
+        "Malenia's Daughter_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 1960100,
+      "Entries": [
+        "Malenia's Daughter_Missing Limb_For NPC_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1960200,
+      "Entries": [
+        "Malenia's Daughter_Missing Limb_For NPC_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1970100,
+      "Entries": [
+        "Malenia's Daughter_Prosthetic_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1970200,
+      "Entries": [
+        "Malenia's Daughter_Prosthetic_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1971100,
+      "Entries": [
+        "Malenia's Daughter_Prosthetic_For NPC_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1971200,
+      "Entries": [
+        "Malenia's Daughter_Prosthetic_For NPC_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1980000,
+      "Entries": [
+        "Royal Army Foot Soldier Cave Faction_Head(HD)"
+      ]
+    },
+    {
+      "ID": 1980100,
+      "Entries": [
+        "Royal Army Foot Soldier Cave Faction_Body(BD)"
+      ]
+    },
+    {
+      "ID": 1980200,
+      "Entries": [
+        "Royal Army Foot Soldier Cave Faction_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 1990000,
+      "Entries": [
+        "Attendant Elite_Head (HD)"
+      ]
+    },
+    {
+      "ID": 1990100,
+      "Entries": [
+        "Attendant Elite_Body (BD)"
+      ]
+    },
+    {
+      "ID": 1991100,
+      "Entries": [
+        "Attendant Elite_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Gladiator (Malenia Faction)_Head(HD)"
+      ]
+    },
+    {
+      "ID": 2000100,
+      "Entries": [
+        "Gladiator (Malenia Faction)_Body(BD)"
+      ]
+    },
+    {
+      "ID": 2000300,
+      "Entries": [
+        "Gladiator (Malenia Faction)_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 2001100,
+      "Entries": [
+        "Gladiator (Malenia Faction)_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "Destruction Cult (Fire Cult) Putrid_Head (HD)"
+      ]
+    },
+    {
+      "ID": 2020000,
+      "Entries": [
+        "Leg Cripple (Prisoner)_Head(HD)"
+      ]
+    },
+    {
+      "ID": 2030000,
+      "Entries": [
+        "Glintstone Sorcerer (Melee)_Body(BD)"
+      ]
+    },
+    {
+      "ID": 5340000,
+      "Entries": [
+        "Tattooed Man_Head(HD)"
+      ]
+    },
+    {
+      "ID": 5340100,
+      "Entries": [
+        "Tattooed Man_Body(BD)"
+      ]
+    },
+    {
+      "ID": 5340200,
+      "Entries": [
+        "Tattooed Man_Arms(AM)"
+      ]
+    },
+    {
+      "ID": 5340300,
+      "Entries": [
+        "Tattooed Man_Legs(LG)"
+      ]
+    },
+    {
+      "ID": 5350000,
+      "Entries": [
+        "Light Knight_Head (HD)"
+      ]
+    },
+    {
+      "ID": 5350100,
+      "Entries": [
+        "Light Knight_Body (BD)"
+      ]
+    },
+    {
+      "ID": 5350200,
+      "Entries": [
+        "Light Knight_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 5350300,
+      "Entries": [
+        "Light Knight_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 5351100,
+      "Entries": [
+        "Light Knight_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 5360000,
+      "Entries": [
+        "New Lucatiel_Head (HD)"
+      ]
+    },
+    {
+      "ID": 5360100,
+      "Entries": [
+        "New Lucatiel_Body (BD)"
+      ]
+    },
+    {
+      "ID": 5360200,
+      "Entries": [
+        "New Lucatiel_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 5360300,
+      "Entries": [
+        "New Lucatiel_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 5361000,
+      "Entries": [
+        "New Lucatiel_Light Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 5370000,
+      "Entries": [
+        "Heavy Knight_Head(HD)"
+      ]
+    },
+    {
+      "ID": 5370100,
+      "Entries": [
+        "Heavy Knight_Body(BD)"
+      ]
+    },
+    {
+      "ID": 5370200,
+      "Entries": [
+        "Heavy Knight_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 5370300,
+      "Entries": [
+        "Heavy Knight_Leg(LG)"
+      ]
+    }
+  ]
+}

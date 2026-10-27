@@ -1,0 +1,2153 @@
+{
+  "Name": "GrassTypeParam",
+  "Entries": [
+    {
+      "ID": 3,
+      "Entries": [
+        "TestGrass1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "TestGrass2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "TestGrass3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "TestGrass4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "TestGrass5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "TestGrass6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "200 Transplant Area 01 Standard"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "170 Transplant Area 01 Sub"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Grass 9 Turf Creation"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Grass 10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Grass 11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Grass 12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Small Pebble"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Small Pebble"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Small Pebble (Old: Root)"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Bush"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Flower White"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Flower Yellow"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Bush tall"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Grass-Flower Mix (White)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Grass-Flower Mix (Yellow)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Vine Plant"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Grass 7 Turf Creation_Polygon Cut Version"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Small Pebble (Board)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Small Pebble (Board)_Density Level 5"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Grass High Saturation"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Dead Grass"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Flower Yellow (Withered)"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Flower White (Withered)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Grassland Default"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Tall Grass"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Water Grass"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Grass 7 Dead Grass"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Tree Test"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Waterside Grass (Grass 8 Creation Old ID 8) *Quality upgrade later via model replacement"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Lake Region Base 1 (ID7 Basis)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Lake Region Base 2 (ID8 Basis)"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Highland Regional Base 1 (ID7 Compliant)"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Highland Regional Base 2 (ID8 Compliant)"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Plains Region Base 1 (ID7 Compliant)"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Plains Region Base 2 (ID8 Compliant)"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Snowfield Region Base 1 (ID7 compliant)"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Snowfield Region Base 2 (ID8 compliant)"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Volcano Region Base 1 (ID7 Reference)"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Volcano Region Base 2 (ID8 Reference)"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Basic A-1"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Basic Dark A-2"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Basic Ear A-3"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Highland Pampas Grass"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Highland Grass"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Highland Foundation"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Battlefield Ruins_Skeleton Corpse"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Battlefield Ruins_Unused"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Battlefield Ruins_Unused"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Generic Red Flower"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Spider Lily"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Highland Reservation"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Straw_Wood Scraps"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Potato Sack"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Highland Fallen Leaves"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Water Grass"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Small Pebble"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Tutorial Beach Only (48 Distance Extension)"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Generic Flower Yellow"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Generic Flower Orange"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Generic Flower Purple"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Generic Flower Pink"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Generic Flower White"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Generic Flower Dark Red"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Generic Flower Cyan"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "Generic Flower Gold"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "Generic Flower Black"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Generic Flower Black Purple"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Small World Tree Grass Small"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Small World Tree Grass Large"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Small World Tree Pampas Grass"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Snowy Mountain Grass Crystal"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Generic Flower Poison Yellow"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "Highland Golden Flower"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Volcano Region Base Grass (ID42 Reference)"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Volcano Region High Grass (ID43 Reference)"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Volcano Region Pebbles (ID218 Reference)"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Volcano Region High Grass (ID215 Reference)"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Volcano Region Low Grass (ID216 Reference)"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Volcano Region Silver Grass (ID222 Reference)"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Highland Water Grass"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Highland Water Grass"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Plains Region Early Weeds"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Small Pebble Statue Fragment"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Block Gray (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Wood Scraps (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Vine Leaves (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Block White (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Vine Tendril (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Small Pebble (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Fallen Leaves(Legacy Map)"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Wooden Planks (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Fruit (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Rope (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Book (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Straw (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Paper (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Piled Sand(Legacy Map)"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Wood Shavings (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Metal Tableware (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Grassland Default (Open 30 Legacy Transplant)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Castle Wall Block Small (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Fallen Leaves(Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Human Bones (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Cave Icicle (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Cave Pebbles (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Cave Poison Swamp Mycelium (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Block Brown"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Cave Weeds (Legacy Map)"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Sand Clump_Slope (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Sand Clump_Flat Wide Area (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Generic Grass_Withered (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Sand Clump_Underwater: Medium Size (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Sand Clump_Flat Density Adjust (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Small Pebble (Legacy Map: Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Animal Bones (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Wooden Planks (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Wood Shavings (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Small Pebble (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Rope (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Castle Wall Block Small (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Castle Manor_Grass (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Fallen Leaves(Legacy Map: Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Grass (Legacy Map: Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Grass (Legacy Map: Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Grass burned area (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Small Pebble (Legacy Map Monsan)"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Grass 9 Legacy Monsan)"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Royal Capital Grass (Royal Capital)"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Sand Clump_Underwater: Medium Size (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Fern Plant (Legacy: Monsan)"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Charred Tree (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Vegetation Group (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Cave Pebbles_Low Density Ver (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Cave Roots (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Cave Pebbles (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Grass-Flower Mix Monsan (Purple)"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Grass 9 Small Size Legacy Monsan)"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Mycelium(Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "Cave Pebbles_Sand (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Small Pebble_Sparse (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Interior_Tiny Stone (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Interior_Paper (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Human Bones (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Horse Bones (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Cow Bone (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Spore Grass (Rotten Great Tree)"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Lichen"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Interior_Tiny Stone (Legacy Map: Stormveil)"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Wall-side Rock_(Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Interior_Pottery Shards (Legacy Map: Stormveil)"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "Moss (Rotten Great Tree)"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "Yahata Test Grass (Sparse)"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "Yahata Test Grass (Short)"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Generic Grass (height up to player waist)"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Yahata Test Grass (Red Grass)"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Yahata Test Grass (Short Yellow Pampas)"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Yahata Test Grass (Long Yellow Pampas)"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "Yahata Test Grass (White and Red Flowers)"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "Mushroom (Rotten Great Tree)"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Hollow white flower (Rotten Great Tree)"
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "Cave Pebbles_Low Density Ver_White (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        "Lichen (Rotten Great Tree)"
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "Fallen Leaves(Monsan)"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Fallen Leaves Size Small(Monsan)"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Mycelium_Large(Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "White Mushroom Cluster Sparse Type (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "White Mushroom Tall Type (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "White Mushroom Cluster Dense Type (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "Human Bones (Legacy Map: Volcano Prison)"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "Bone_Mycelium Attached (Underground Labyrinth_Ancestor Forest)"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "Small Pebble (Legacy Map: Volcano Prison)"
+      ]
+    },
+    {
+      "ID": 188,
+      "Entries": [
+        "Wall Grass 1 (Cliff Tunnel)"
+      ]
+    },
+    {
+      "ID": 189,
+      "Entries": [
+        "Wall Grass 2 (Cliff Tunnel)"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Wall Grass 3 (Cliff Tunnel)"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "Marika Ruins_Pot Shard (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "Cave Pebbles_Red Sand (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "Generic Vegetation (Royal Capital)"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "Generic Vegetation B (Royal Capital)"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "Ruins Descending Orange Flower"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "Ruins Descending White Flower"
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "Ruins Descending Pampas Grass"
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        "Hollow white flower_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "Hollow white flower_Poison swamp only (Rotten Great Tree)"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Generic Grass (height up to player shin): 169 adjustment"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "New Vegetation 001"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "New Vegetation 002"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "New Vegetation 003"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "New Vegetation 004"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "New Vegetation 005"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "New Vegetation 006"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "New Vegetation 007"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "New Vegetation 008"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "New Vegetation 009"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "New Vegetation 010"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "New Vegetation 011"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "New Vegetation 012"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "New Vegetation 013"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "New Vegetation 014"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Highland Section"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Highland Section"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Highland Section"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Highland Section Rock Planned"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Green Grass (Plains_Wasteland)"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Low Lush Grass (Plains_Wasteland)"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Mohawk Grass (Plains_Wasteland)"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Pampas Grass Highland"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Small Pebble White_Desert Use (Plains_Wasteland)"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Root (Plains_Wasteland)"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Rotten Grass"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "Dead Grass"
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "Bone (Plains_Wasteland)"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Underground Labyrinth Royal Capital Natural Terrain Spot Red Grass"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Underground Labyrinth Royal Capital Natural Terrain Spot Pebbles"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "Moss (Underground Labyrinth Royal Capital)"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Human Bones_Mud-Covered (Royal Capital_Sewer Connection)"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "Small Pebble_Medium (Royal Capital_Sewer Connection)"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "Small Pebble_Small (Royal Capital_Sewer Connection)"
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "Human Flesh_Fragment (Royal Capital_Lower Level)"
+      ]
+    },
+    {
+      "ID": 238,
+      "Entries": [
+        "Rubble (Royal Capital_Sewer Connection)"
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "Small Pebble (Final Boss Room)"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Small Snow Chunk (Open Map: Snowfield)"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Snowfield Region Short Weeds"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "Snowfield Region Dead Branch Grass"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "Snowfield Region Snow Grass"
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "Small Pebble (Open Map: Snowfield)"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "Ice Shard (Open Map: Snowfield)"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "Human Bones (Snowfield)"
+      ]
+    },
+    {
+      "ID": 248,
+      "Entries": [
+        "Small Pebble_Medium_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 249,
+      "Entries": [
+        "Small Pebble_Small_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Moss_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "Dead Grass_Large_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "Dead Grass_Small_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "Red Grass_Large_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "Red Grass_Small_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "Fallen Leaves_Gold(Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 256,
+      "Entries": [
+        "Cave Pebbles (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 257,
+      "Entries": [
+        "Garden Vegetation_Purple Flower_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 258,
+      "Entries": [
+        "Garden Vegetation_Dry Grass_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 259,
+      "Entries": [
+        "Garden Vegetation_Waterside Grass_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Garden Vegetation_Yellow Flower_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "Garden Vegetation_Water Grass_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "Fallen Leaves_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "Generic Vegetation (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        "Generic Vegetation_Tall (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "Water Grass (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "Water Grass (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 267,
+      "Entries": [
+        "Rotten Fallen Leaves (Royal Capital Sewers)"
+      ]
+    },
+    {
+      "ID": 268,
+      "Entries": [
+        "Small Pebble_Small_White Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 269,
+      "Entries": [
+        "Small Pebble_Large_White (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Generic Vegetation_Underwater (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "Flower (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "Boss Area White Flower A (Rotten Great Tree)"
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "Boss Area White Flower B (Rotten Great Tree)"
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "Boss Area White Flower C (Rotten Great Tree)"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "Boss Area_Fallen Leaves (Rotten Great Tree)"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Fallen Leaves Petrified(Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "Grass Petrified (Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 282,
+      "Entries": [
+        "Grass Petrified (Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 283,
+      "Entries": [
+        "Bone (Plains_Desert)"
+      ]
+    },
+    {
+      "ID": 284,
+      "Entries": [
+        "Snowfield Region Snow Grass 7 Modified"
+      ]
+    },
+    {
+      "ID": 285,
+      "Entries": [
+        "Golden Fallen Leaves (Legacy: Underground Labyrinth Royal Capital)"
+      ]
+    },
+    {
+      "ID": 286,
+      "Entries": [
+        "Small Pebble + Snow (Legacy: Underground Labyrinth Royal Capital Ark)"
+      ]
+    },
+    {
+      "ID": 287,
+      "Entries": [
+        "Dead Grass (Legacy Map: Volcano Prison)"
+      ]
+    },
+    {
+      "ID": 288,
+      "Entries": [
+        "Feather (Legacy: Monsan)"
+      ]
+    },
+    {
+      "ID": 289,
+      "Entries": [
+        "Crystal Shard (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Bone_Armor_Bow (Plains_Desert)"
+      ]
+    },
+    {
+      "ID": 291,
+      "Entries": [
+        "Grass (Plains_Desert)"
+      ]
+    },
+    {
+      "ID": 292,
+      "Entries": [
+        "Grass_low (Plains_Desert)"
+      ]
+    },
+    {
+      "ID": 293,
+      "Entries": [
+        "Cave Gravel (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 294,
+      "Entries": [
+        "Water Grass (Royal Capital)"
+      ]
+    },
+    {
+      "ID": 295,
+      "Entries": [
+        "Boss Room_Petrified Corpses(Legacy Map: Volcano Prison)"
+      ]
+    },
+    {
+      "ID": 296,
+      "Entries": [
+        "Boss Room_Rock Cluster(Legacy Map: Volcano Prison)"
+      ]
+    },
+    {
+      "ID": 297,
+      "Entries": [
+        "Plains_Deep Poison Swamp"
+      ]
+    },
+    {
+      "ID": 298,
+      "Entries": [
+        "Silver Vegetation (Legacy Map: Underground Labyrinth Poison Swamp)"
+      ]
+    },
+    {
+      "ID": 299,
+      "Entries": [
+        "Ant Egg (Legacy Map: Underground Labyrinth Poison Swamp)"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Standard Grass (Legacy Map: Stormveil Interior)"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Ant Egg_Wall (Legacy Map: Underground Labyrinth Poison Swamp)"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Tall Grass (Royal Capital)"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Generic Red Flower (Plains Church)"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Cave Poison Swamp_Spore Grass"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Fallen Leaves_Gold(Legacy Map: Royal Capital)_B"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Snowy Mountain Generic Flower Pale Blue"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Snowy Mountain Generic Flower Pale Green"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Human Bones (Legacy Map: Stormveil)"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Drift_Stone (Legacy Map: Stormveil)"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Highland Pink"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Golden Fallen Leaves (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Snowy Mountain Gold Flower"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Snowy Mountain Thorns"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Snowy Mountain Akahana"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Snowy Mountain Akahana"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Snowy Mountain Akahana"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Snowy Mountain Akahana Base"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Bush_Underground Labyrinth Royal Capital"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Meteorite Shard (Small Outpost: Tunnel)"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Mercury Vegetation (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Fallen Leaves_Mercury(Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "Mercury Vegetation (Legacy Map: Underground Labyrinth_Poison Swamp)"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "Spore Grass (Legacy Map: Underground Labyrinth_Poison Swamp)"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "Crystal Shard (Monsan)"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "Glowing Flower_Blue"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "Crystal Shard"
+      ]
+    },
+    {
+      "ID": 327,
+      "Entries": [
+        "Highland White Flower"
+      ]
+    },
+    {
+      "ID": 328,
+      "Entries": [
+        "Glowing Flower_Blue_Plains"
+      ]
+    },
+    {
+      "ID": 329,
+      "Entries": [
+        "Tarnished Gold and Black"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Highland Black Flower"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "Highland Yellow Flower"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "Highland Blue Flower"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "Highland Blue-Purple Flower"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "Highland Red-Black Flower"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        "Highland Tarnished Gold Flower"
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        "Highland Glowing Blue Flower"
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        "Cave Pebbles (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        "Generic Vegetation (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        "Water Grass (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Water Grass (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Royal Capital Exclusive_Highland Base1 (ID7 Compliant)"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "Royal Capital Exclusive Highland Base2 (ID8 Compliant)"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "Cave Pebbles (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 345,
+      "Entries": [
+        "Dead Grass (Legacy Map: Underground Labyrinth Royal Capital)"
+      ]
+    },
+    {
+      "ID": 346,
+      "Entries": [
+        "Snowy Mountain Generic Flower Yellow"
+      ]
+    },
+    {
+      "ID": 347,
+      "Entries": [
+        "Ice Fragment (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 348,
+      "Entries": [
+        "Ice Stalagmite (Small Outpost: Cave)"
+      ]
+    },
+    {
+      "ID": 349,
+      "Entries": [
+        "Nocstella General Vegetation (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Spore Grass (Legacy Map: Underground Labyrinth_Poison Swamp)"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Lake Curse-type Flower"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "Dead Grass_Many (Divine Tower)"
+      ]
+    },
+    {
+      "ID": 353,
+      "Entries": [
+        "Dead Grass_Few (Divine Tower)"
+      ]
+    },
+    {
+      "ID": 354,
+      "Entries": [
+        "Small Pebble (Divine Tower)"
+      ]
+    },
+    {
+      "ID": 355,
+      "Entries": [
+        "Crystal Shard Medium (Lake Area)"
+      ]
+    },
+    {
+      "ID": 356,
+      "Entries": [
+        "Lichen"
+      ]
+    },
+    {
+      "ID": 357,
+      "Entries": [
+        "Moss (Underground Labyrinth Royal Capital)"
+      ]
+    },
+    {
+      "ID": 358,
+      "Entries": [
+        "Lake Region Base 1 (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 359,
+      "Entries": [
+        "New Vegetation 002 (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "New Vegetation 005 (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "New Vegetation 007 (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "New Vegetation 008 (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "Cave Pebbles (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        "Sand Clump_Flat Wide Area (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "Sand Clump_Underwater: Medium Size (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "Original 123_Block Brown"
+      ]
+    },
+    {
+      "ID": 367,
+      "Entries": [
+        "Generic Vegetation (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "7 Performance Reduction"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "8 Performance Reduction"
+      ]
+    },
+    {
+      "ID": 442,
+      "Entries": [
+        "42 Performance Reduction"
+      ]
+    },
+    {
+      "ID": 443,
+      "Entries": [
+        "43 Performance Reduction"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "200 Transplant Area 01 Standard"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "170 Transplant Area 01 Sub"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Generic Flower White"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "TestGrass2"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Grass 7 Turf Creation Old 7"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Grass 8 Turf Creation Old 8"
+      ]
+    }
+  ]
+}

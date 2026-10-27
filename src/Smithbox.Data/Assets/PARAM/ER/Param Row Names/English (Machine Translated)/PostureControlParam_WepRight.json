@@ -1,0 +1,203 @@
+{
+  "Name": "PostureControlParam_WepRight",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Standard"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Reaper"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Catalyst"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Greatshield"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Sword Type"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Fist and Claw Family"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Greatsword Series"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Axe"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Twinblade"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Dueling Shield"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Mounted_Standard"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Mounted_Reaper"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Mounted_Catalyst"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Mounted_Greatshield"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Mounted_Torch"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Mounted_Sword Type"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Mounted_Fist/Claw Type"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Mounted_Heavy Sword Type"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Mounted_Axe/Hammer Type"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Mounted_Twinblade"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Mounted_Dueling Shield"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Crouch_Standard"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Crouch_Reaper"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Crouch_Catalyst"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Crouch_Greatshield"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Crouch_Torch"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Crouch_Sword Type"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Crouch_Fist"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Crouch_Heavy Sword Type"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Crouch_Axe"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Crouch_Twinblade"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Crouch_Dueling Shield"
+      ]
+    }
+  ]
+}

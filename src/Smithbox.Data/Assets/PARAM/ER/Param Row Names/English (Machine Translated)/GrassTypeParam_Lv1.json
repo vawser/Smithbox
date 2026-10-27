@@ -1,0 +1,329 @@
+{
+  "Name": "GrassTypeParam_Lv1",
+  "Entries": [
+    {
+      "ID": 7,
+      "Entries": [
+        "200 Transplant Area 01 Standard"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "170 Transplant Area 01 Sub"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Highland Regional Base 1 (ID7 Compliant)"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Highland Regional Base 2 (ID8 Compliant)"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Plains Region Base 1 (ID7 Compliant)"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Plains Region Base 2 (ID8 Compliant)"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Plains Region Early Weeds"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Fallen Leaves(Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Small Pebble (Legacy Map: Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Fallen Leaves(Legacy Map: Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Grass (Legacy Map: Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Grass (Legacy Map: Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "Human Bones (Legacy Map: Volcano Prison)"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "Small Pebble (Legacy Map: Volcano Prison)"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "Ruins Descending Orange Flower"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "Ruins Descending White Flower"
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "Ruins Descending Pampas Grass"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "New Vegetation 006"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "New Vegetation 008"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "New Vegetation 009"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "New Vegetation 010"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "New Vegetation 011"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "New Vegetation 013"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Rotten Grass"
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "Generic Vegetation (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Fallen Leaves Petrified(Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "Grass Petrified (Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 282,
+      "Entries": [
+        "Grass Petrified (Descending Ruins)"
+      ]
+    },
+    {
+      "ID": 284,
+      "Entries": [
+        "Snowfield Region Snow Grass 7 Modified"
+      ]
+    },
+    {
+      "ID": 288,
+      "Entries": [
+        "Feather (Legacy: Monsan)"
+      ]
+    },
+    {
+      "ID": 295,
+      "Entries": [
+        "Boss Room_Petrified Corpses(Legacy Map: Volcano Prison)"
+      ]
+    },
+    {
+      "ID": 296,
+      "Entries": [
+        "Boss Room_Rock Cluster(Legacy Map: Volcano Prison)"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Standard Grass (Legacy Map: Stormveil Interior)"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Golden Fallen Leaves (Legacy Map: Royal Capital)"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Snowfield Region Snow Grass 7 Modified"
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        "Cave Pebbles (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        "Generic Vegetation (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        "Water Grass (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Water Grass (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Royal Capital Exclusive_Highland Base1 (ID7 Compliant)"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "Royal Capital Exclusive_Highland Base2 (ID8 Compliant)"
+      ]
+    },
+    {
+      "ID": 349,
+      "Entries": [
+        "Nocstella General Vegetation (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 358,
+      "Entries": [
+        "Lake Region Base 1 (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "New Vegetation 007 (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "New Vegetation 008 (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "Cave Pebbles (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        "Sand Clump_Flat Wide Area (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "Sand Clump_Underwater: Medium Size (Legacy Map: Monsan)"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "Original 123_Block Brown"
+      ]
+    },
+    {
+      "ID": 367,
+      "Entries": [
+        "Generic Vegetation (Legacy Map: Underground Labyrinth)"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "200 Transplant Area 01 Standard"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "170 Transplant Area 01 Sub"
+      ]
+    },
+    {
+      "ID": 442,
+      "Entries": [
+        "Highland Regional Base 1 (ID7 Compliant)"
+      ]
+    },
+    {
+      "ID": 443,
+      "Entries": [
+        "Highland Regional Base 2 (ID8 Compliant)"
+      ]
+    }
+  ]
+}

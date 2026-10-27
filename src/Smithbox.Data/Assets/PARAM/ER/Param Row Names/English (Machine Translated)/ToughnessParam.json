@@ -1,0 +1,509 @@
+{
+  "Name": "ToughnessParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Constant Poise"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Generic: 0.2x"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Generic: 0.25x"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Generic: 0.3x"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Generic: 0.35x"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Generic: 0.4x"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Generic: 0.45x"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Generic: 0.5x"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Generic: 0.55x"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Generic: 0.6x"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Generic: 0.65x"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Generic: 0.7x"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Generic: 0.75x"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Generic: 0.8x"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Generic: 0.85x"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Generic: 0.9x"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Generic: 0.95x"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Generic: 1x"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Generic: 1.5x"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Generic: 2.0x"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Generic: 2.5x"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Generic: 3.0x"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Lunge For Poise Fixed Value: 135"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "For Hidden Strength_Poise fixed value: 70"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "For Hidden Strength_Poise fixed value: 20"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Weak Attack"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Weak Attack: Colossal"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Heavy Attack"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Heavy Attack: Colossal"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Heavy Attack_Max Charge"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Heavy Attack_Max Charge: Colossal"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Rolling"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Rolling"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Dash Heavy Attack"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Dash Heavy Attack: Colossal"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Jump Light Attack"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Jump Light Attack: Colossal"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Jump Heavy Attack"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Jump Heavy Attack: Colossal"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Guard Counter"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Guard Counter: Colossal"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Fixed Poise Value: 10"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Fixed Poise Value: 11"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Fixed Poise Value: 12"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Fixed Poise Value: 13"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Fixed Poise Value: 14"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Fixed Poise Value: 15"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Fixed Poise Value: 16"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "Fixed Poise Value: 17"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "Fixed Poise Value: 18"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "Fixed Poise Value: 19"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Fixed Poise Value: 20"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "Fixed Poise Value: 25"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Fixed Poise Value: 30"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Fixed Poise Value: 30_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "Fixed Poise Value: 30_PvP Weakened Version"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "Fixed Poise Value: 35"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "Fixed Poise Value: 35_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Fixed Poise Value: 40"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "Fixed Poise Value: 40_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "Poise Fixed Value: 45"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "Poise Fixed Value: 45_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Poise Fixed Value: 50"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Poise Fixed Value: 50_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Poise Fixed Value: 55"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Poise Fixed Value: 55_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Poise Fixed Value: 60"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Poise Fixed Value: 60_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Poise Fixed Value: 65"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Poise Fixed Value: 65_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Poise Fixed Value: 70"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Poise Fixed Value: 70_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Poise Fixed Value: 75"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Poise Fixed Value: 75_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Poise Fixed Value: 80"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Poise Fixed Value: 80_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "Poise Fixed Value: 85"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "Poise Fixed Value: 85_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Poise Fixed Value: 90"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Poise Fixed Value: 90_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "Poise Fixed Value: 95"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "Poise Fixed Value: 95_Strong Reduction"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Fixed Poise Value: 100"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "Fixed Poise Value: 100_Strong Reduction"
+      ]
+    }
+  ]
+}

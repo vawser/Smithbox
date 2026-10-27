@@ -1,0 +1,425 @@
+{
+  "Name": "WepAbsorpPosParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[GR] Musical Instrument"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[GR] Ballista Test_1"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[GR] Ballista Test_2"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[GR] Ballista Test_3"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[GR] Ballista Test_4"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[GR] Ballista Test_5"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "[GR] Ballista Test_6"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "dmy"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Dagger"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Claw"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Straight Sword"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Twinblade"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Greatsword"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Colossal Sword"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Curved Sword"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Katana"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Axe"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Beast Sword"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Greataxe"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Hammer"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Flail"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Great Hammer"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Great Spear"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Halberd"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Heavy Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Catalyst"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Fist"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Whip"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Bow"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Greatbow"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Crossbow"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Greatshield"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Small Shield"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Medium Shield"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Reaper"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Small Bow"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "[DLC] Throwing sword"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "[DLC] Force grapple"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "[DLC] Perfume bottle"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "[DLC] Dueling Shield"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "[DLC] Reverse-grip sword"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "[DLC] Beast claw"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Straight Sword_Secret Glyph Sword"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Twin Straight Sword_Grafted Spider Sword"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Fist_SecretGlyphFist"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Fist_Golem Fist"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "[1.17] Lucatiel's Greatsword"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Colossal Sword_Radahn (Scrawny Horse) Greatsword"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "[DLC] Light greatsword_asymmetric twinblades"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Catalyst_For Tattoo"
+      ]
+    },
+    {
+      "ID": 480,
+      "Entries": [
+        "Small Shield Unique"
+      ]
+    },
+    {
+      "ID": 482,
+      "Entries": [
+        "Primeval Godhuman Head"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "[DLC] Bear claw"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "4Model Test"
+      ]
+    }
+  ]
+}

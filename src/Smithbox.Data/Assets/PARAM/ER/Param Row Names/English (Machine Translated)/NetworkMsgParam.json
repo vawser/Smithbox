@@ -1,0 +1,443 @@
+{
+  "Name": "NetworkMsgParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Write a summon sign with a password set"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Session Establishment with Host Started (Host)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Session Establishment with Host Started (New Guest)"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Session Establishment with Host Started (Existing Guest)"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Session Established with Host (New Guest)"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Searching for Connection Destination (Invasion Destination)"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Session Creation Failed"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Session Join Failed"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Requesting Assistance as Host"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Searching for Connection Destination (Visit Destination)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Host - New Guest"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Host - New Guest"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Host - New Guest"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Blocklist Check NG"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Blocklist Check NG"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Blocklist Check NG"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "New Guest Dies"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "New Guest Dies"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Timeout"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Timeout"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Timeout"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Generic Error"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Generic Error"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Generic Error"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Guest A was summoned"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Guest A was summoned"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Guest A was summoned"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Guest A was summoned"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Guest A met success condition"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Guest A met success condition"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Guest A met success condition"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "During Deactivate"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Guest A met success condition 2"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Guest A met success condition 2"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Guest A met success condition 2"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Guest A met failure condition"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Guest A died"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Guest A died"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Guest A died"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "Guest A died"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Guest A died"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Guest A self-returned"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Guest A self-returned"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "Guest A self-returned"
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "Guest A self-returned"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Host Dismissed Guest A"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "Host Dismissed Guest A"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "Host Dismissed Guest A"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Host Dead"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "Host Passed Boss Door"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "Host Passed Boss Door"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "Host Passed Boss Door"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Generic Error causes Guest A to leave"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "Generic Error causes Guest A to leave"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "Generic Error causes Guest A to leave"
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "Host Left Area"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "NPC Multi Non-Host Guest A Died"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "NPC Multi Non-Host Guest A Died"
+      ]
+    },
+    {
+      "ID": 282,
+      "Entries": [
+        "NPC Multi Non-Host Guest A Self-Returned"
+      ]
+    },
+    {
+      "ID": 283,
+      "Entries": [
+        "NPC Multi Non-Host Guest A Self-Returned"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Guest A left the host: Preliminary warning"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Guest A left the host: Main warning"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Guest A left the host: Return"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Guest A left the host: Return"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Re-summon of Guest A when distance from host exceeded a set value at time of summon"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Brawl/Co-op: Self Dies"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Brawl/Co-op: Another Player Dies"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Brawl/Co-op: Another Player Dies"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Arena Quick Match Start Notification Send Failed"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Arena All Guests Left"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Matchmaking Waiting"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Matchmaking Waiting"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        "Invalid Value"
+      ]
+    }
+  ]
+}

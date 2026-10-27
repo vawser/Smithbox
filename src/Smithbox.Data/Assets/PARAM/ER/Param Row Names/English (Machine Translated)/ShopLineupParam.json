@@ -1,0 +1,6485 @@
+{
+  "Name": "ShopLineupParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Must Not Extinguish"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "290_Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "292_Fire Pot"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "240_Goddess's Site of Grace"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "201000_Longsword"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "Pebble"
+      ]
+    },
+    {
+      "ID": 100004,
+      "Entries": [
+        "Buckler"
+      ]
+    },
+    {
+      "ID": 100009,
+      "Entries": [
+        "Host Cost"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Bird Dried Meat (Item Drop Rate UP)"
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "Hawk Feather"
+      ]
+    },
+    {
+      "ID": 100012,
+      "Entries": [
+        "Cestus"
+      ]
+    },
+    {
+      "ID": 100013,
+      "Entries": [
+        "GreatArrow"
+      ]
+    },
+    {
+      "ID": 100014,
+      "Entries": [
+        "Large Ballista"
+      ]
+    },
+    {
+      "ID": 100015,
+      "Entries": [
+        "Assassin_Arms"
+      ]
+    },
+    {
+      "ID": 100016,
+      "Entries": [
+        "Assassin_Legs"
+      ]
+    },
+    {
+      "ID": 100017,
+      "Entries": [
+        "Assassin_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 100018,
+      "Entries": [
+        "Weapon Upgrade Material_Lv9 (Master)"
+      ]
+    },
+    {
+      "ID": 100025,
+      "Entries": [
+        "Memory Slot Growth Item"
+      ]
+    },
+    {
+      "ID": 100026,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100050,
+      "Entries": [
+        "Soul Arrow"
+      ]
+    },
+    {
+      "ID": 100051,
+      "Entries": [
+        "Magic Weapon"
+      ]
+    },
+    {
+      "ID": 100052,
+      "Entries": [
+        "Magic Shield"
+      ]
+    },
+    {
+      "ID": 100053,
+      "Entries": [
+        "Fallen Arrow Rain"
+      ]
+    },
+    {
+      "ID": 100054,
+      "Entries": [
+        "Spreading Light Wave"
+      ]
+    },
+    {
+      "ID": 100055,
+      "Entries": [
+        "Soul Missile"
+      ]
+    },
+    {
+      "ID": 100056,
+      "Entries": [
+        "Twisted Soul Spear"
+      ]
+    },
+    {
+      "ID": 100057,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 100058,
+      "Entries": [
+        "Enhanced Soul Missile"
+      ]
+    },
+    {
+      "ID": 100059,
+      "Entries": [
+        "Soul Greatarrow"
+      ]
+    },
+    {
+      "ID": 100060,
+      "Entries": [
+        "Fallen Short Arrow"
+      ]
+    },
+    {
+      "ID": 100061,
+      "Entries": [
+        "Floating Soul Arrow"
+      ]
+    },
+    {
+      "ID": 100062,
+      "Entries": [
+        "Fallen Swift Sword"
+      ]
+    },
+    {
+      "ID": 100075,
+      "Entries": [
+        "Piercing Thrust"
+      ]
+    },
+    {
+      "ID": 100076,
+      "Entries": [
+        "Spinning Slash"
+      ]
+    },
+    {
+      "ID": 100077,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 100078,
+      "Entries": [
+        "Lunge+Upward Slash"
+      ]
+    },
+    {
+      "ID": 100079,
+      "Entries": [
+        "Kick"
+      ]
+    },
+    {
+      "ID": 100080,
+      "Entries": [
+        "Warrior War Cry"
+      ]
+    },
+    {
+      "ID": 100081,
+      "Entries": [
+        "Endure"
+      ]
+    },
+    {
+      "ID": 100082,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 100083,
+      "Entries": [
+        "Sonic Blade"
+      ]
+    },
+    {
+      "ID": 100084,
+      "Entries": [
+        "Lava Placement"
+      ]
+    },
+    {
+      "ID": 100085,
+      "Entries": [
+        "Self-Harm/Curse"
+      ]
+    },
+    {
+      "ID": 100086,
+      "Entries": [
+        "Weapon Skill"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Boss Trauma Item_Margit"
+      ]
+    },
+    {
+      "ID": 100101,
+      "Entries": [
+        "Finger Missionary Recipe (Green 1)"
+      ]
+    },
+    {
+      "ID": 100102,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100103,
+      "Entries": [
+        "Host Cost"
+      ]
+    },
+    {
+      "ID": 100104,
+      "Entries": [
+        "Trash"
+      ]
+    },
+    {
+      "ID": 100105,
+      "Entries": [
+        "Bird Dried Meat (Rune)"
+      ]
+    },
+    {
+      "ID": 100108,
+      "Entries": [
+        "Parrying Dagger"
+      ]
+    },
+    {
+      "ID": 100111,
+      "Entries": [
+        "On-Death Penalty Avoidance"
+      ]
+    },
+    {
+      "ID": 100112,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 100113,
+      "Entries": [
+        "Pseudo-Guidance (Seven-colored Stone that indicates direction)"
+      ]
+    },
+    {
+      "ID": 100114,
+      "Entries": [
+        "Shotgun Knife"
+      ]
+    },
+    {
+      "ID": 100115,
+      "Entries": [
+        "GreatArrow"
+      ]
+    },
+    {
+      "ID": 100116,
+      "Entries": [
+        "Large Ballista"
+      ]
+    },
+    {
+      "ID": 100117,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 100118,
+      "Entries": [
+        "Shotgun Knife"
+      ]
+    },
+    {
+      "ID": 100119,
+      "Entries": [
+        "Estoc"
+      ]
+    },
+    {
+      "ID": 100120,
+      "Entries": [
+        "GreatArrow"
+      ]
+    },
+    {
+      "ID": 100121,
+      "Entries": [
+        "Large Ballista"
+      ]
+    },
+    {
+      "ID": 100122,
+      "Entries": [
+        "WoodShieldVariantA5"
+      ]
+    },
+    {
+      "ID": 100126,
+      "Entries": [
+        "Turn Undead"
+      ]
+    },
+    {
+      "ID": 100127,
+      "Entries": [
+        "Holy Enchant"
+      ]
+    },
+    {
+      "ID": 100150,
+      "Entries": [
+        "Blue Crest"
+      ]
+    },
+    {
+      "ID": 100155,
+      "Entries": [
+        "Crab"
+      ]
+    },
+    {
+      "ID": 100160,
+      "Entries": [
+        "Shrimp"
+      ]
+    },
+    {
+      "ID": 100175,
+      "Entries": [
+        "Invisible Arrow"
+      ]
+    },
+    {
+      "ID": 100176,
+      "Entries": [
+        "Deathly White Mist"
+      ]
+    },
+    {
+      "ID": 100177,
+      "Entries": [
+        "Soul Missile"
+      ]
+    },
+    {
+      "ID": 100185,
+      "Entries": [
+        "Thread Sorcery"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Baton Attack"
+      ]
+    },
+    {
+      "ID": 100201,
+      "Entries": [
+        "Mid-Range Bullet + Approach"
+      ]
+    },
+    {
+      "ID": 100202,
+      "Entries": [
+        "Soul Colossal Sword・2-Stage"
+      ]
+    },
+    {
+      "ID": 100225,
+      "Entries": [
+        "Glowing Wedge Stone_Lv1"
+      ]
+    },
+    {
+      "ID": 100226,
+      "Entries": [
+        "Glowing Wedge Stone_Lv2"
+      ]
+    },
+    {
+      "ID": 100227,
+      "Entries": [
+        "Glowing Wedge Stone_Lv3"
+      ]
+    },
+    {
+      "ID": 100228,
+      "Entries": [
+        "Glowing Wedge Stone_Lv4"
+      ]
+    },
+    {
+      "ID": 100229,
+      "Entries": [
+        "Ring of Fallen"
+      ]
+    },
+    {
+      "ID": 100250,
+      "Entries": [
+        "Soul Arrow"
+      ]
+    },
+    {
+      "ID": 100251,
+      "Entries": [
+        "Spreading Light Wave"
+      ]
+    },
+    {
+      "ID": 100252,
+      "Entries": [
+        "Illuminating Light"
+      ]
+    },
+    {
+      "ID": 100275,
+      "Entries": [
+        "Enhanced Floating Soul Arrow"
+      ]
+    },
+    {
+      "ID": 100276,
+      "Entries": [
+        "Frost Great Arrow"
+      ]
+    },
+    {
+      "ID": 100277,
+      "Entries": [
+        "Frost Mist"
+      ]
+    },
+    {
+      "ID": 100278,
+      "Entries": [
+        "Magic Absorption"
+      ]
+    },
+    {
+      "ID": 100279,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 100280,
+      "Entries": [
+        "Enhanced Soul Missile"
+      ]
+    },
+    {
+      "ID": 100281,
+      "Entries": [
+        "Soul Greatarrow"
+      ]
+    },
+    {
+      "ID": 100282,
+      "Entries": [
+        "Fallen Short Arrow"
+      ]
+    },
+    {
+      "ID": 100283,
+      "Entries": [
+        "Floating Soul Arrow"
+      ]
+    },
+    {
+      "ID": 100284,
+      "Entries": [
+        "Fallen Swift Sword"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "Costume Change NPC (Puppet)_Mr. A"
+      ]
+    },
+    {
+      "ID": 100301,
+      "Entries": [
+        "Costume Change NPC (Puppet)_Mr. B"
+      ]
+    },
+    {
+      "ID": 100302,
+      "Entries": [
+        "Costume Change NPC (Puppet)_Mr. C"
+      ]
+    },
+    {
+      "ID": 100310,
+      "Entries": [
+        "Costume Change NPC (Puppet)_Event Slot"
+      ]
+    },
+    {
+      "ID": 100325,
+      "Entries": [
+        "Glintstone Craftsman Recipe (Snowy Mountain 2)"
+      ]
+    },
+    {
+      "ID": 100326,
+      "Entries": [
+        "Air Jar_Upper Rank"
+      ]
+    },
+    {
+      "ID": 100329,
+      "Entries": [
+        "Old Fang"
+      ]
+    },
+    {
+      "ID": 100330,
+      "Entries": [
+        "Owl Egg"
+      ]
+    },
+    {
+      "ID": 100334,
+      "Entries": [
+        "Magic Parry"
+      ]
+    },
+    {
+      "ID": 100335,
+      "Entries": [
+        "Pardon Item"
+      ]
+    },
+    {
+      "ID": 100336,
+      "Entries": [
+        "Rebirth Item"
+      ]
+    },
+    {
+      "ID": 100337,
+      "Entries": [
+        "Horn Bud"
+      ]
+    },
+    {
+      "ID": 100338,
+      "Entries": [
+        "Frog-man Round Sword"
+      ]
+    },
+    {
+      "ID": 100339,
+      "Entries": [
+        "Leather Shield B"
+      ]
+    },
+    {
+      "ID": 100340,
+      "Entries": [
+        "Guidance Document to the Amber Starlight"
+      ]
+    },
+    {
+      "ID": 100350,
+      "Entries": [
+        "Force"
+      ]
+    },
+    {
+      "ID": 100351,
+      "Entries": [
+        "Recovery Blessing"
+      ]
+    },
+    {
+      "ID": 100352,
+      "Entries": [
+        "Recovery"
+      ]
+    },
+    {
+      "ID": 100353,
+      "Entries": [
+        "Poison Recovery"
+      ]
+    },
+    {
+      "ID": 100354,
+      "Entries": [
+        "Lower Fire Protection"
+      ]
+    },
+    {
+      "ID": 100355,
+      "Entries": [
+        "Lower Magic Protection"
+      ]
+    },
+    {
+      "ID": 100356,
+      "Entries": [
+        "Fire Burst"
+      ]
+    },
+    {
+      "ID": 100357,
+      "Entries": [
+        "Fireball"
+      ]
+    },
+    {
+      "ID": 100358,
+      "Entries": [
+        "Mid Recovery"
+      ]
+    },
+    {
+      "ID": 100359,
+      "Entries": [
+        "Lower Lightning Protection"
+      ]
+    },
+    {
+      "ID": 100360,
+      "Entries": [
+        "White Church Ring"
+      ]
+    },
+    {
+      "ID": 100361,
+      "Entries": [
+        "Order Shield"
+      ]
+    },
+    {
+      "ID": 100362,
+      "Entries": [
+        "Great Ignition"
+      ]
+    },
+    {
+      "ID": 100363,
+      "Entries": [
+        "Fire Jet"
+      ]
+    },
+    {
+      "ID": 100364,
+      "Entries": [
+        "Giant Fireball"
+      ]
+    },
+    {
+      "ID": 100365,
+      "Entries": [
+        "Bursting Fireball (Fire Shotgun)"
+      ]
+    },
+    {
+      "ID": 100366,
+      "Entries": [
+        "Black Fireball"
+      ]
+    },
+    {
+      "ID": 100367,
+      "Entries": [
+        "Black Flame Weapon Enchant"
+      ]
+    },
+    {
+      "ID": 100368,
+      "Entries": [
+        "Greater Recovery"
+      ]
+    },
+    {
+      "ID": 100369,
+      "Entries": [
+        "Poison/Blood Loss/Sleep AoE Recovery"
+      ]
+    },
+    {
+      "ID": 100370,
+      "Entries": [
+        "Stealth"
+      ]
+    },
+    {
+      "ID": 100371,
+      "Entries": [
+        "Darkness"
+      ]
+    },
+    {
+      "ID": 100372,
+      "Entries": [
+        "Order Wheel"
+      ]
+    },
+    {
+      "ID": 100373,
+      "Entries": [
+        "All Status Cure + Buff/Debuff Removal"
+      ]
+    },
+    {
+      "ID": 100374,
+      "Entries": [
+        "Lightning Spear"
+      ]
+    },
+    {
+      "ID": 100375,
+      "Entries": [
+        "Lightning Nito Sword"
+      ]
+    },
+    {
+      "ID": 100376,
+      "Entries": [
+        "Lightning Weapon Enchant"
+      ]
+    },
+    {
+      "ID": 100377,
+      "Entries": [
+        "Lightning Stake"
+      ]
+    },
+    {
+      "ID": 100378,
+      "Entries": [
+        "Surrounding Lightning Strike"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "Placed Soul Arrow"
+      ]
+    },
+    {
+      "ID": 100401,
+      "Entries": [
+        "Soul Greatsword"
+      ]
+    },
+    {
+      "ID": 100402,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 100403,
+      "Entries": [
+        "Enhanced Soul Missile"
+      ]
+    },
+    {
+      "ID": 100404,
+      "Entries": [
+        "Soul Greatarrow"
+      ]
+    },
+    {
+      "ID": 100405,
+      "Entries": [
+        "Fallen Short Arrow"
+      ]
+    },
+    {
+      "ID": 100406,
+      "Entries": [
+        "Floating Soul Arrow"
+      ]
+    },
+    {
+      "ID": 100407,
+      "Entries": [
+        "Fallen Swift Sword"
+      ]
+    },
+    {
+      "ID": 100425,
+      "Entries": [
+        "Light Blessing"
+      ]
+    },
+    {
+      "ID": 100426,
+      "Entries": [
+        "Great Ignition"
+      ]
+    },
+    {
+      "ID": 100428,
+      "Entries": [
+        "Fire Jet"
+      ]
+    },
+    {
+      "ID": 100429,
+      "Entries": [
+        "Giant Fireball"
+      ]
+    },
+    {
+      "ID": 100430,
+      "Entries": [
+        "Bursting Fireball (Fire Shotgun)"
+      ]
+    },
+    {
+      "ID": 100431,
+      "Entries": [
+        "Black Fireball"
+      ]
+    },
+    {
+      "ID": 100432,
+      "Entries": [
+        "Black Flame Weapon Enchant"
+      ]
+    },
+    {
+      "ID": 100433,
+      "Entries": [
+        "Greater Recovery"
+      ]
+    },
+    {
+      "ID": 100434,
+      "Entries": [
+        "Poison/Blood Loss/Sleep AoE Recovery"
+      ]
+    },
+    {
+      "ID": 100435,
+      "Entries": [
+        "Stealth"
+      ]
+    },
+    {
+      "ID": 100436,
+      "Entries": [
+        "Darkness"
+      ]
+    },
+    {
+      "ID": 100437,
+      "Entries": [
+        "Order Wheel"
+      ]
+    },
+    {
+      "ID": 100438,
+      "Entries": [
+        "All Status Cure + Buff/Debuff Removal"
+      ]
+    },
+    {
+      "ID": 100439,
+      "Entries": [
+        "Lightning Spear"
+      ]
+    },
+    {
+      "ID": 100440,
+      "Entries": [
+        "Lightning Nito Sword"
+      ]
+    },
+    {
+      "ID": 100441,
+      "Entries": [
+        "Lightning Weapon Enchant"
+      ]
+    },
+    {
+      "ID": 100442,
+      "Entries": [
+        "Lightning Stake"
+      ]
+    },
+    {
+      "ID": 100443,
+      "Entries": [
+        "Surrounding Lightning Strike"
+      ]
+    },
+    {
+      "ID": 100025,
+      "Entries": [
+        "Memory Slot Growth Item"
+      ]
+    },
+    {
+      "ID": 100026,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100500,
+      "Entries": [
+        "Red-Eye Merchant Info 3_Hint for Searching the Elixir Flask"
+      ]
+    },
+    {
+      "ID": 100501,
+      "Entries": [
+        "Item crafting unlock item"
+      ]
+    },
+    {
+      "ID": 100502,
+      "Entries": [
+        "Fugitive Warrior Recipe (Green 1)"
+      ]
+    },
+    {
+      "ID": 100503,
+      "Entries": [
+        "Fugitive Warrior Recipe"
+      ]
+    },
+    {
+      "ID": 100504,
+      "Entries": [
+        "Finger Missionary Recipe (Green 2)"
+      ]
+    },
+    {
+      "ID": 100505,
+      "Entries": [
+        "Host Cost"
+      ]
+    },
+    {
+      "ID": 100506,
+      "Entries": [
+        "Air Jar"
+      ]
+    },
+    {
+      "ID": 100507,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 100510,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 100511,
+      "Entries": [
+        "Leather Shield"
+      ]
+    },
+    {
+      "ID": 100513,
+      "Entries": [
+        "Spyglass"
+      ]
+    },
+    {
+      "ID": 100514,
+      "Entries": [
+        "Red-Eye Merchant Info 13_Hint on Ceren's Location"
+      ]
+    },
+    {
+      "ID": 100515,
+      "Entries": [
+        "Chainmail_Head"
+      ]
+    },
+    {
+      "ID": 100516,
+      "Entries": [
+        "Chainmail_Body"
+      ]
+    },
+    {
+      "ID": 100517,
+      "Entries": [
+        "Chainmail_Arm"
+      ]
+    },
+    {
+      "ID": 100518,
+      "Entries": [
+        "Chainmail_Leg"
+      ]
+    },
+    {
+      "ID": 100519,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100520,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100525,
+      "Entries": [
+        "Fugitive Warrior Recipe (Green 2)"
+      ]
+    },
+    {
+      "ID": 100539,
+      "Entries": [
+        "Red-Eye Merchant Info 8_Falling Attack on Large Weapon Gunman"
+      ]
+    },
+    {
+      "ID": 100540,
+      "Entries": [
+        "Air Jar"
+      ]
+    },
+    {
+      "ID": 100541,
+      "Entries": [
+        "Turtle Jerky"
+      ]
+    },
+    {
+      "ID": 100542,
+      "Entries": [
+        "Shortsword"
+      ]
+    },
+    {
+      "ID": 100543,
+      "Entries": [
+        "Red-hilted Halberd"
+      ]
+    },
+    {
+      "ID": 100544,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100545,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100546,
+      "Entries": [
+        "Bandit Armor_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 100547,
+      "Entries": [
+        "Weapon Upgrade Material_Lv1"
+      ]
+    },
+    {
+      "ID": 100550,
+      "Entries": [
+        "Perfumer's Recipe (Lake 3)"
+      ]
+    },
+    {
+      "ID": 100551,
+      "Entries": [
+        "Weapon Smith Recipe (Green 3)"
+      ]
+    },
+    {
+      "ID": 100552,
+      "Entries": [
+        "Beast Meat"
+      ]
+    },
+    {
+      "ID": 100553,
+      "Entries": [
+        "Beast Liver"
+      ]
+    },
+    {
+      "ID": 100554,
+      "Entries": [
+        "Meat Chunk"
+      ]
+    },
+    {
+      "ID": 100557,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100560,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100561,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 100562,
+      "Entries": [
+        "Sleep Flower"
+      ]
+    },
+    {
+      "ID": 100563,
+      "Entries": [
+        "HandAxe"
+      ]
+    },
+    {
+      "ID": 100564,
+      "Entries": [
+        "Wooden Small Shield C"
+      ]
+    },
+    {
+      "ID": 100565,
+      "Entries": [
+        "Kite Shield (Colorful"
+      ]
+    },
+    {
+      "ID": 100566,
+      "Entries": [
+        "Sleep Arrow"
+      ]
+    },
+    {
+      "ID": 100567,
+      "Entries": [
+        "Weapon Upgrade Material_Lv1"
+      ]
+    },
+    {
+      "ID": 100568,
+      "Entries": [
+        "Heavy Knight's Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 100575,
+      "Entries": [
+        "Weapon Smith Recipe (Green 2)"
+      ]
+    },
+    {
+      "ID": 100576,
+      "Entries": [
+        "Red-Eye Merchant Info 4_Tunnel Troll Weak Point Info Display"
+      ]
+    },
+    {
+      "ID": 100585,
+      "Entries": [
+        "Red-Eye Merchant Info 10_Land Barnacle Weakness"
+      ]
+    },
+    {
+      "ID": 100586,
+      "Entries": [
+        "Club"
+      ]
+    },
+    {
+      "ID": 100587,
+      "Entries": [
+        "Broadsword"
+      ]
+    },
+    {
+      "ID": 100588,
+      "Entries": [
+        "Iron Small Shield B"
+      ]
+    },
+    {
+      "ID": 100589,
+      "Entries": [
+        "Balloon Puppet Soldier Bow"
+      ]
+    },
+    {
+      "ID": 100590,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100591,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100592,
+      "Entries": [
+        "Poison Cure Medicine"
+      ]
+    },
+    {
+      "ID": 100593,
+      "Entries": [
+        "Bleed Cure Medicine"
+      ]
+    },
+    {
+      "ID": 100594,
+      "Entries": [
+        "Sleep Cure Medicine"
+      ]
+    },
+    {
+      "ID": 100595,
+      "Entries": [
+        "Weapon Upgrade Material_Lv1"
+      ]
+    },
+    {
+      "ID": 100600,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100601,
+      "Entries": [
+        "Kukri"
+      ]
+    },
+    {
+      "ID": 100602,
+      "Entries": [
+        "Wooden Small Shield A"
+      ]
+    },
+    {
+      "ID": 100603,
+      "Entries": [
+        "Round Shield (Wooden Round Shield)"
+      ]
+    },
+    {
+      "ID": 100604,
+      "Entries": [
+        "HP Increase"
+      ]
+    },
+    {
+      "ID": 100605,
+      "Entries": [
+        "Red-Eye Merchant Info 9_About the Demi-Human Group Boss"
+      ]
+    },
+    {
+      "ID": 100606,
+      "Entries": [
+        "Air Jar"
+      ]
+    },
+    {
+      "ID": 100607,
+      "Entries": [
+        "Bastard Sword"
+      ]
+    },
+    {
+      "ID": 100608,
+      "Entries": [
+        "Old Wandering Royal Army Crossbow"
+      ]
+    },
+    {
+      "ID": 100609,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100610,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100611,
+      "Entries": [
+        "GreatArrow"
+      ]
+    },
+    {
+      "ID": 100612,
+      "Entries": [
+        "Large Ballista"
+      ]
+    },
+    {
+      "ID": 100613,
+      "Entries": [
+        "Necromancer_Head"
+      ]
+    },
+    {
+      "ID": 100614,
+      "Entries": [
+        "Necromancer_Body"
+      ]
+    },
+    {
+      "ID": 100615,
+      "Entries": [
+        "Necromancer_Arms"
+      ]
+    },
+    {
+      "ID": 100616,
+      "Entries": [
+        "Necromancer_Legs"
+      ]
+    },
+    {
+      "ID": 100617,
+      "Entries": [
+        "Weapon Upgrade Material_Lv1"
+      ]
+    },
+    {
+      "ID": 100618,
+      "Entries": [
+        "Weapon Upgrade Material_Lv2"
+      ]
+    },
+    {
+      "ID": 100625,
+      "Entries": [
+        "Weapon Craftsman's Recipe (Lake)"
+      ]
+    },
+    {
+      "ID": 100626,
+      "Entries": [
+        "Estoc"
+      ]
+    },
+    {
+      "ID": 100627,
+      "Entries": [
+        "Kite Shield (Iron"
+      ]
+    },
+    {
+      "ID": 100628,
+      "Entries": [
+        "Stargazing_Head"
+      ]
+    },
+    {
+      "ID": 100629,
+      "Entries": [
+        "Stargazing_Body"
+      ]
+    },
+    {
+      "ID": 100630,
+      "Entries": [
+        "Stargazing_Arms"
+      ]
+    },
+    {
+      "ID": 100631,
+      "Entries": [
+        "Stargazing_Legs"
+      ]
+    },
+    {
+      "ID": 100632,
+      "Entries": [
+        "Grave Robber's Lantern"
+      ]
+    },
+    {
+      "ID": 100633,
+      "Entries": [
+        "Stargazer's Staff"
+      ]
+    },
+    {
+      "ID": 100634,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100635,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100636,
+      "Entries": [
+        "Weapon Upgrade Material_Lv1"
+      ]
+    },
+    {
+      "ID": 100637,
+      "Entries": [
+        "Weapon Upgrade Material_Lv2"
+      ]
+    },
+    {
+      "ID": 100650,
+      "Entries": [
+        "Red-Eye Merchant Info 5_How to Enter the Walking Mausoleum"
+      ]
+    },
+    {
+      "ID": 100652,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100654,
+      "Entries": [
+        "Dark Red Herb"
+      ]
+    },
+    {
+      "ID": 100656,
+      "Entries": [
+        "Large Ballista"
+      ]
+    },
+    {
+      "ID": 100657,
+      "Entries": [
+        "On-Death Penalty Avoidance"
+      ]
+    },
+    {
+      "ID": 100658,
+      "Entries": [
+        "Grave Robber's Lantern"
+      ]
+    },
+    {
+      "ID": 100659,
+      "Entries": [
+        "Air Magic Stone"
+      ]
+    },
+    {
+      "ID": 100660,
+      "Entries": [
+        "Zweihander"
+      ]
+    },
+    {
+      "ID": 100661,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100662,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100663,
+      "Entries": [
+        "GreatArrow"
+      ]
+    },
+    {
+      "ID": 100664,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 100665,
+      "Entries": [
+        "Weapon Upgrade Material_Lv2"
+      ]
+    },
+    {
+      "ID": 100666,
+      "Entries": [
+        "Heavy Knight_Head(HD)"
+      ]
+    },
+    {
+      "ID": 100667,
+      "Entries": [
+        "Heavy Knight_Body(BD)"
+      ]
+    },
+    {
+      "ID": 100668,
+      "Entries": [
+        "Heavy Knight_Arm(AM)"
+      ]
+    },
+    {
+      "ID": 100669,
+      "Entries": [
+        "Heavy Knight_Leg(LG)"
+      ]
+    },
+    {
+      "ID": 100675,
+      "Entries": [
+        "Miquella Believer Recipe"
+      ]
+    },
+    {
+      "ID": 100676,
+      "Entries": [
+        "Sleep Flower"
+      ]
+    },
+    {
+      "ID": 100678,
+      "Entries": [
+        "Chaos Fruit (Shabriri Fruit)"
+      ]
+    },
+    {
+      "ID": 100680,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100681,
+      "Entries": [
+        "Air Magic Stone"
+      ]
+    },
+    {
+      "ID": 100682,
+      "Entries": [
+        "On-Death Penalty Avoidance"
+      ]
+    },
+    {
+      "ID": 100686,
+      "Entries": [
+        "Red-Eye Merchant Info 12_Area Healing Magic Reverse Damage"
+      ]
+    },
+    {
+      "ID": 100687,
+      "Entries": [
+        "Document About the Cursed Fire Village"
+      ]
+    },
+    {
+      "ID": 100688,
+      "Entries": [
+        "Insectoid Golem Spirit Ashes"
+      ]
+    },
+    {
+      "ID": 100689,
+      "Entries": [
+        "Sleep Arrow"
+      ]
+    },
+    {
+      "ID": 100690,
+      "Entries": [
+        "Meteor Bolt"
+      ]
+    },
+    {
+      "ID": 100691,
+      "Entries": [
+        "Dancing Swordsman_Head"
+      ]
+    },
+    {
+      "ID": 100692,
+      "Entries": [
+        "Dancing Swordsman_Body"
+      ]
+    },
+    {
+      "ID": 100693,
+      "Entries": [
+        "Dancing Swordsman_Arms"
+      ]
+    },
+    {
+      "ID": 100694,
+      "Entries": [
+        "Dancing Swordsman_Legs"
+      ]
+    },
+    {
+      "ID": 100695,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 100696,
+      "Entries": [
+        "Puppet Room Guidance Document"
+      ]
+    },
+    {
+      "ID": 100700,
+      "Entries": [
+        "Fugitive Warrior Recipe (Highland 2)"
+      ]
+    },
+    {
+      "ID": 100704,
+      "Entries": [
+        "Composite Bow"
+      ]
+    },
+    {
+      "ID": 100705,
+      "Entries": [
+        "Iron Small Shield A"
+      ]
+    },
+    {
+      "ID": 100706,
+      "Entries": [
+        "Heater Shield Tree and River"
+      ]
+    },
+    {
+      "ID": 100709,
+      "Entries": [
+        "Light Knight Shield"
+      ]
+    },
+    {
+      "ID": 100710,
+      "Entries": [
+        "Light Knight_Head (HD)"
+      ]
+    },
+    {
+      "ID": 100711,
+      "Entries": [
+        "Light Knight_Body (BD)"
+      ]
+    },
+    {
+      "ID": 100712,
+      "Entries": [
+        "Light Knight_Arms (AM)"
+      ]
+    },
+    {
+      "ID": 100713,
+      "Entries": [
+        "Light Knight_Legs (LG)"
+      ]
+    },
+    {
+      "ID": 100714,
+      "Entries": [
+        "Major Rune Activation Item"
+      ]
+    },
+    {
+      "ID": 100715,
+      "Entries": [
+        "Charm"
+      ]
+    },
+    {
+      "ID": 100716,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100717,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100718,
+      "Entries": [
+        "Bloodless Dried Meat (Poison/Scarlet Rot Resistance Up)?"
+      ]
+    },
+    {
+      "ID": 100719,
+      "Entries": [
+        "Bloodless Dried Meat (Bleed/Frost Resistance Up)?"
+      ]
+    },
+    {
+      "ID": 100720,
+      "Entries": [
+        "Bloodless Dried Meat (Sleep/Madness Resistance Up)?"
+      ]
+    },
+    {
+      "ID": 100725,
+      "Entries": [
+        "Perfumer Magic Empty Bottle"
+      ]
+    },
+    {
+      "ID": 100726,
+      "Entries": [
+        "Buff Great Arrow"
+      ]
+    },
+    {
+      "ID": 100727,
+      "Entries": [
+        "Tree Sentinel Chief Torch"
+      ]
+    },
+    {
+      "ID": 100728,
+      "Entries": [
+        "Major Rune Activation Item"
+      ]
+    },
+    {
+      "ID": 100729,
+      "Entries": [
+        "Golden Sunflower"
+      ]
+    },
+    {
+      "ID": 100730,
+      "Entries": [
+        "Wandering Royal Army Elite Mounted Soldier Shield"
+      ]
+    },
+    {
+      "ID": 100731,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100732,
+      "Entries": [
+        "Golden Tree Arrow (Old: Death Arrow)"
+      ]
+    },
+    {
+      "ID": 100733,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100734,
+      "Entries": [
+        "Holy Bolt"
+      ]
+    },
+    {
+      "ID": 100735,
+      "Entries": [
+        "GreatArrow"
+      ]
+    },
+    {
+      "ID": 100736,
+      "Entries": [
+        "Large Ballista"
+      ]
+    },
+    {
+      "ID": 100737,
+      "Entries": [
+        "Small Lord's Attire C_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 100738,
+      "Entries": [
+        "Small Lord's Attire B_Legs"
+      ]
+    },
+    {
+      "ID": 100739,
+      "Entries": [
+        "Persecuted Cleric_Head"
+      ]
+    },
+    {
+      "ID": 100740,
+      "Entries": [
+        "Persecuted Cleric_Legs"
+      ]
+    },
+    {
+      "ID": 100741,
+      "Entries": [
+        "Persecuted Cleric B_Body"
+      ]
+    },
+    {
+      "ID": 100742,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 100743,
+      "Entries": [
+        "Red-Eye Merchant Info 18_Royal Capital Underground Sewers Guidance Document"
+      ]
+    },
+    {
+      "ID": 100750,
+      "Entries": [
+        "Dragon Cultist Recipe (Highland 2)"
+      ]
+    },
+    {
+      "ID": 100751,
+      "Entries": [
+        "Red-Eye Merchant Info 2_Hint for Illusory Enemies in Catacombs 3-1/5-1"
+      ]
+    },
+    {
+      "ID": 100752,
+      "Entries": [
+        "Red-Eye Merchant Info 6_Black Knife Descendant Stealth Detection Hint"
+      ]
+    },
+    {
+      "ID": 100753,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100761,
+      "Entries": [
+        "Lightning Bolt"
+      ]
+    },
+    {
+      "ID": 100764,
+      "Entries": [
+        "Kite Shield (Black Knight"
+      ]
+    },
+    {
+      "ID": 100765,
+      "Entries": [
+        "Sazareishi"
+      ]
+    },
+    {
+      "ID": 100766,
+      "Entries": [
+        "Heater Shield Red Wing"
+      ]
+    },
+    {
+      "ID": 100767,
+      "Entries": [
+        "Tower Shield (Relief"
+      ]
+    },
+    {
+      "ID": 100768,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100769,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100770,
+      "Entries": [
+        "Chain & Surcoat_Blue_Body"
+      ]
+    },
+    {
+      "ID": 100771,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 100775,
+      "Entries": [
+        "Weapon Craftsman's Recipe (Volcano 1)"
+      ]
+    },
+    {
+      "ID": 100777,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100784,
+      "Entries": [
+        "Explosive Large Bolt"
+      ]
+    },
+    {
+      "ID": 100789,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100790,
+      "Entries": [
+        "GreatArrow"
+      ]
+    },
+    {
+      "ID": 100791,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100792,
+      "Entries": [
+        "Explosive Bolt"
+      ]
+    },
+    {
+      "ID": 100793,
+      "Entries": [
+        "Large Ballista"
+      ]
+    },
+    {
+      "ID": 100794,
+      "Entries": [
+        "Assassin Knight_Head"
+      ]
+    },
+    {
+      "ID": 100795,
+      "Entries": [
+        "Assassin Knight_Body"
+      ]
+    },
+    {
+      "ID": 100796,
+      "Entries": [
+        "Assassin Knight_Arm"
+      ]
+    },
+    {
+      "ID": 100797,
+      "Entries": [
+        "Assassin Knight_Leg"
+      ]
+    },
+    {
+      "ID": 100798,
+      "Entries": [
+        "Subject's Attire_Head"
+      ]
+    },
+    {
+      "ID": 100801,
+      "Entries": [
+        "Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 100802,
+      "Entries": [
+        "Stone Scatter Throw_Poison Stone (Small)"
+      ]
+    },
+    {
+      "ID": 100803,
+      "Entries": [
+        "Stone Scatter Throw_Multi Poison Stone (Large)"
+      ]
+    },
+    {
+      "ID": 100813,
+      "Entries": [
+        "Plague Cure Medicine"
+      ]
+    },
+    {
+      "ID": 100814,
+      "Entries": [
+        "Malenia Butterfly"
+      ]
+    },
+    {
+      "ID": 100815,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100816,
+      "Entries": [
+        "Fire Arrow"
+      ]
+    },
+    {
+      "ID": 100817,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100825,
+      "Entries": [
+        "Perfumer's Recipe (Plains 4)"
+      ]
+    },
+    {
+      "ID": 100826,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100827,
+      "Entries": [
+        "Air Jar"
+      ]
+    },
+    {
+      "ID": 100837,
+      "Entries": [
+        "Red-Eye Merchant Info 11_Flying Enemies Can Be Shot Down With Gravity Magic"
+      ]
+    },
+    {
+      "ID": 100838,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100839,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100840,
+      "Entries": [
+        "Fire Bolt"
+      ]
+    },
+    {
+      "ID": 100841,
+      "Entries": [
+        "Barbarian_Head"
+      ]
+    },
+    {
+      "ID": 100842,
+      "Entries": [
+        "Barbarian_Body"
+      ]
+    },
+    {
+      "ID": 100843,
+      "Entries": [
+        "Barbarian_Arms"
+      ]
+    },
+    {
+      "ID": 100844,
+      "Entries": [
+        "Barbarian_Legs"
+      ]
+    },
+    {
+      "ID": 100845,
+      "Entries": [
+        "Chain & Surcoat_Head"
+      ]
+    },
+    {
+      "ID": 100875,
+      "Entries": [
+        "Red-Eye Merchant Info 1_Hint for Cave Hidden by Magic Wall"
+      ]
+    },
+    {
+      "ID": 100876,
+      "Entries": [
+        "Air Jar_Upper Rank"
+      ]
+    },
+    {
+      "ID": 100877,
+      "Entries": [
+        "Air Magic Stone"
+      ]
+    },
+    {
+      "ID": 100878,
+      "Entries": [
+        "Sazareishi"
+      ]
+    },
+    {
+      "ID": 100880,
+      "Entries": [
+        "On-Death Penalty Avoidance"
+      ]
+    },
+    {
+      "ID": 100882,
+      "Entries": [
+        "Samurai_Head"
+      ]
+    },
+    {
+      "ID": 100883,
+      "Entries": [
+        "Samurai_Body"
+      ]
+    },
+    {
+      "ID": 100884,
+      "Entries": [
+        "Samurai_Arms"
+      ]
+    },
+    {
+      "ID": 100885,
+      "Entries": [
+        "Samurai_Legs"
+      ]
+    },
+    {
+      "ID": 100886,
+      "Entries": [
+        "Document About the Transfer Gate"
+      ]
+    },
+    {
+      "ID": 100887,
+      "Entries": [
+        "Dragonslayer Resin"
+      ]
+    },
+    {
+      "ID": 100888,
+      "Entries": [
+        "Spiked Cestus"
+      ]
+    },
+    {
+      "ID": 100889,
+      "Entries": [
+        "Beast Ward Torch"
+      ]
+    },
+    {
+      "ID": 100890,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100891,
+      "Entries": [
+        "Poison Arrow"
+      ]
+    },
+    {
+      "ID": 100892,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100893,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 100900,
+      "Entries": [
+        "Miquella Believer Recipe"
+      ]
+    },
+    {
+      "ID": 100901,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100903,
+      "Entries": [
+        "Frost Cure Medicine"
+      ]
+    },
+    {
+      "ID": 100909,
+      "Entries": [
+        "Major Rune Activation Item"
+      ]
+    },
+    {
+      "ID": 100910,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100911,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100912,
+      "Entries": [
+        "GreatArrow"
+      ]
+    },
+    {
+      "ID": 100913,
+      "Entries": [
+        "Large Ballista"
+      ]
+    },
+    {
+      "ID": 100914,
+      "Entries": [
+        "Great Lightning Bolt"
+      ]
+    },
+    {
+      "ID": 100915,
+      "Entries": [
+        "Exiled Knight_Head"
+      ]
+    },
+    {
+      "ID": 100916,
+      "Entries": [
+        "Exiled Knight_Body"
+      ]
+    },
+    {
+      "ID": 100917,
+      "Entries": [
+        "Exiled Knight_Arms"
+      ]
+    },
+    {
+      "ID": 100918,
+      "Entries": [
+        "Exiled Knight_Legs"
+      ]
+    },
+    {
+      "ID": 100925,
+      "Entries": [
+        "Fugitive Warrior Recipe (Underground Labyrinth 1)"
+      ]
+    },
+    {
+      "ID": 100926,
+      "Entries": [
+        "Weapon Smith Recipe (Snowy Mountain)"
+      ]
+    },
+    {
+      "ID": 100928,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100935,
+      "Entries": [
+        "Spirit Arrow (formerly: Homing Arrow)"
+      ]
+    },
+    {
+      "ID": 100936,
+      "Entries": [
+        "Rebirth Item"
+      ]
+    },
+    {
+      "ID": 100937,
+      "Entries": [
+        "Sickle"
+      ]
+    },
+    {
+      "ID": 100938,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 100939,
+      "Entries": [
+        "NormalBolt"
+      ]
+    },
+    {
+      "ID": 100940,
+      "Entries": [
+        "Soap"
+      ]
+    },
+    {
+      "ID": 100941,
+      "Entries": [
+        "Larval Butterfly"
+      ]
+    },
+    {
+      "ID": 100950,
+      "Entries": [
+        "Weapon Craftsman's Recipe"
+      ]
+    },
+    {
+      "ID": 100951,
+      "Entries": [
+        "Perfumer's Recipe (Underground Labyrinth 2)"
+      ]
+    },
+    {
+      "ID": 100953,
+      "Entries": [
+        "Air Magic Stone"
+      ]
+    },
+    {
+      "ID": 100962,
+      "Entries": [
+        "Pardon Item"
+      ]
+    },
+    {
+      "ID": 100963,
+      "Entries": [
+        "Destruction Cult Stone Magic (Pebble)"
+      ]
+    },
+    {
+      "ID": 100964,
+      "Entries": [
+        "Destruction Devotee Stone Magic (Large Pebble)"
+      ]
+    },
+    {
+      "ID": 100965,
+      "Entries": [
+        "Condemned Prisoner_Head"
+      ]
+    },
+    {
+      "ID": 100966,
+      "Entries": [
+        "Condemned Prisoner_Body"
+      ]
+    },
+    {
+      "ID": 100967,
+      "Entries": [
+        "Condemned Prisoner_Legs"
+      ]
+    },
+    {
+      "ID": 100976,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 100977,
+      "Entries": [
+        "Air Magic Stone"
+      ]
+    },
+    {
+      "ID": 100981,
+      "Entries": [
+        "Major Rune Activation Item"
+      ]
+    },
+    {
+      "ID": 100982,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 100983,
+      "Entries": [
+        "Bleed Cure Medicine"
+      ]
+    },
+    {
+      "ID": 100984,
+      "Entries": [
+        "Mogh's Rose"
+      ]
+    },
+    {
+      "ID": 100985,
+      "Entries": [
+        "Spirit Arrow (formerly: Homing Arrow)"
+      ]
+    },
+    {
+      "ID": 100986,
+      "Entries": [
+        "Blood Loss Bolt"
+      ]
+    },
+    {
+      "ID": 101503,
+      "Entries": [
+        "Godfrey the Beast-clad_Head"
+      ]
+    },
+    {
+      "ID": 101504,
+      "Entries": [
+        "Godfrey the Beast-clad_Body"
+      ]
+    },
+    {
+      "ID": 101505,
+      "Entries": [
+        "Godfrey the Beast-clad_Arms"
+      ]
+    },
+    {
+      "ID": 101506,
+      "Entries": [
+        "Godfrey the Beast-clad_Legs"
+      ]
+    },
+    {
+      "ID": 101507,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Head"
+      ]
+    },
+    {
+      "ID": 101508,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Body"
+      ]
+    },
+    {
+      "ID": 101509,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Arms"
+      ]
+    },
+    {
+      "ID": 101510,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Legs"
+      ]
+    },
+    {
+      "ID": 101511,
+      "Entries": [
+        "Greater Demon_Body"
+      ]
+    },
+    {
+      "ID": 101512,
+      "Entries": [
+        "Rennala of the Full Moon_Head"
+      ]
+    },
+    {
+      "ID": 101513,
+      "Entries": [
+        "Rennala of the Full Moon_Body"
+      ]
+    },
+    {
+      "ID": 101514,
+      "Entries": [
+        "Rennala of the Full Moon_Arms"
+      ]
+    },
+    {
+      "ID": 101515,
+      "Entries": [
+        "Rennala of the Full Moon_Legs"
+      ]
+    },
+    {
+      "ID": 101516,
+      "Entries": [
+        "Black Blade Malenia_Head"
+      ]
+    },
+    {
+      "ID": 101517,
+      "Entries": [
+        "Black Blade Malenia_Body"
+      ]
+    },
+    {
+      "ID": 101518,
+      "Entries": [
+        "Black Blade Malenia_Arm"
+      ]
+    },
+    {
+      "ID": 101519,
+      "Entries": [
+        "Black Blade Malenia_Leg"
+      ]
+    },
+    {
+      "ID": 101520,
+      "Entries": [
+        "Arbitrating Malenia_Head"
+      ]
+    },
+    {
+      "ID": 101521,
+      "Entries": [
+        "Arbitrating Malenia_Body"
+      ]
+    },
+    {
+      "ID": 101522,
+      "Entries": [
+        "Arbitrating Malenia_Arms"
+      ]
+    },
+    {
+      "ID": 101523,
+      "Entries": [
+        "Arbitrating Malenia_Legs"
+      ]
+    },
+    {
+      "ID": 101524,
+      "Entries": [
+        "Margit the Fell Omen_Body"
+      ]
+    },
+    {
+      "ID": 101525,
+      "Entries": [
+        "Tree Sentinel (Noble)_Head"
+      ]
+    },
+    {
+      "ID": 101526,
+      "Entries": [
+        "Tree Sentinel (Noble)_Body"
+      ]
+    },
+    {
+      "ID": 101527,
+      "Entries": [
+        "Tree Sentinel (Noble)_Arm"
+      ]
+    },
+    {
+      "ID": 101528,
+      "Entries": [
+        "Tree Sentinel (Noble)_Leg"
+      ]
+    },
+    {
+      "ID": 101529,
+      "Entries": [
+        "Aged Veteran General_Head"
+      ]
+    },
+    {
+      "ID": 101530,
+      "Entries": [
+        "Aged Veteran General_Body"
+      ]
+    },
+    {
+      "ID": 101531,
+      "Entries": [
+        "Aged Veteran General_Arms"
+      ]
+    },
+    {
+      "ID": 101532,
+      "Entries": [
+        "Aged Veteran General_Legs"
+      ]
+    },
+    {
+      "ID": 101549,
+      "Entries": [
+        "Radahn Arrow"
+      ]
+    },
+    {
+      "ID": 101550,
+      "Entries": [
+        "Bloodstained Vulture Knight_Head"
+      ]
+    },
+    {
+      "ID": 101551,
+      "Entries": [
+        "Bloodstained Vulture Knight_Body"
+      ]
+    },
+    {
+      "ID": 101552,
+      "Entries": [
+        "Bloodstained Vulture Knight_Arms"
+      ]
+    },
+    {
+      "ID": 101553,
+      "Entries": [
+        "Bloodstained Vulture Knight_Legs"
+      ]
+    },
+    {
+      "ID": 101775,
+      "Entries": [
+        "Boss Soul_Grafted King"
+      ]
+    },
+    {
+      "ID": 101776,
+      "Entries": [
+        "Boss Soul_Radahn (Scrawny Horse)"
+      ]
+    },
+    {
+      "ID": 101777,
+      "Entries": [
+        "Boss Soul_Margit the Fell Omen (True Type)"
+      ]
+    },
+    {
+      "ID": 101778,
+      "Entries": [
+        "Boss Soul_King of Ghouls"
+      ]
+    },
+    {
+      "ID": 101779,
+      "Entries": [
+        "Boss Soul_Arbitrating Malenia"
+      ]
+    },
+    {
+      "ID": 101780,
+      "Entries": [
+        "Boss Soul_Rennala of the Full Moon"
+      ]
+    },
+    {
+      "ID": 101781,
+      "Entries": [
+        "Boss Soul_Greater Demon"
+      ]
+    },
+    {
+      "ID": 101785,
+      "Entries": [
+        "Boss Soul_Maliketh the Black Blade"
+      ]
+    },
+    {
+      "ID": 101786,
+      "Entries": [
+        "Boss Soul_Godfrey the Beast-clad"
+      ]
+    },
+    {
+      "ID": 101787,
+      "Entries": [
+        "Boss Soul_Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 101788,
+      "Entries": [
+        "Boss Soul_Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 101789,
+      "Entries": [
+        "Boss Soul_Giant"
+      ]
+    },
+    {
+      "ID": 101790,
+      "Entries": [
+        "Boss Soul_Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 101791,
+      "Entries": [
+        "Boss Soul_Crumbling Marika"
+      ]
+    },
+    {
+      "ID": 101792,
+      "Entries": [
+        "Boss Soul_Astel"
+      ]
+    },
+    {
+      "ID": 101800,
+      "Entries": [
+        "Rescue Trigger Item (Host)"
+      ]
+    },
+    {
+      "ID": 101801,
+      "Entries": [
+        "Rescue Trigger Item (Guest)"
+      ]
+    },
+    {
+      "ID": 101802,
+      "Entries": [
+        "Buddy Unlock Item"
+      ]
+    },
+    {
+      "ID": 101803,
+      "Entries": [
+        "Wandering Wolf Spirit Ash"
+      ]
+    },
+    {
+      "ID": 101804,
+      "Entries": [
+        "Physical Protection"
+      ]
+    },
+    {
+      "ID": 101805,
+      "Entries": [
+        "Upper Holy Protection"
+      ]
+    },
+    {
+      "ID": 101806,
+      "Entries": [
+        "Miquella Believer Recipe (Highland)"
+      ]
+    },
+    {
+      "ID": 101807,
+      "Entries": [
+        "Karma"
+      ]
+    },
+    {
+      "ID": 101808,
+      "Entries": [
+        "Weapon Upgrade Material_Lv1"
+      ]
+    },
+    {
+      "ID": 101809,
+      "Entries": [
+        "Weapon Upgrade Material_Lv2"
+      ]
+    },
+    {
+      "ID": 101810,
+      "Entries": [
+        "Undead Miner Gem Throw"
+      ]
+    },
+    {
+      "ID": 101811,
+      "Entries": [
+        "Weapon Upgrade Material_Lv3"
+      ]
+    },
+    {
+      "ID": 101812,
+      "Entries": [
+        "Weapon Upgrade Material_Lv4"
+      ]
+    },
+    {
+      "ID": 101813,
+      "Entries": [
+        "Stone Scatter Throw_Explosive Stone (Small)"
+      ]
+    },
+    {
+      "ID": 101814,
+      "Entries": [
+        "Weapon Upgrade Material_Lv5"
+      ]
+    },
+    {
+      "ID": 101815,
+      "Entries": [
+        "Weapon Upgrade Material_Lv6"
+      ]
+    },
+    {
+      "ID": 101816,
+      "Entries": [
+        "Weapon Upgrade Material_Lv7"
+      ]
+    },
+    {
+      "ID": 101817,
+      "Entries": [
+        "Weapon Upgrade Material_Lv8"
+      ]
+    },
+    {
+      "ID": 101818,
+      "Entries": [
+        "Glowing Wedge Stone_Lv1"
+      ]
+    },
+    {
+      "ID": 101819,
+      "Entries": [
+        "Glowing Wedge Stone_Lv2"
+      ]
+    },
+    {
+      "ID": 101820,
+      "Entries": [
+        "Glowing Wedge Stone_Lv3"
+      ]
+    },
+    {
+      "ID": 101821,
+      "Entries": [
+        "Glowing Wedge Stone_Lv4"
+      ]
+    },
+    {
+      "ID": 101822,
+      "Entries": [
+        "Scrap Crystal"
+      ]
+    },
+    {
+      "ID": 101823,
+      "Entries": [
+        "Glowing Wedge Stone_Lv5"
+      ]
+    },
+    {
+      "ID": 101824,
+      "Entries": [
+        "Glowing Wedge Stone_Lv6"
+      ]
+    },
+    {
+      "ID": 101825,
+      "Entries": [
+        "Glowing Wedge Stone_Lv7"
+      ]
+    },
+    {
+      "ID": 101826,
+      "Entries": [
+        "Glowing Wedge Stone_Lv8"
+      ]
+    },
+    {
+      "ID": 101827,
+      "Entries": [
+        "Precious Stone"
+      ]
+    },
+    {
+      "ID": 101828,
+      "Entries": [
+        "Glowing Wedge Stone LV8.5"
+      ]
+    },
+    {
+      "ID": 101829,
+      "Entries": [
+        "Buddy Upgrade Material_Normal_Lv1"
+      ]
+    },
+    {
+      "ID": 101830,
+      "Entries": [
+        "Buddy Upgrade Material_Normal_Lv2"
+      ]
+    },
+    {
+      "ID": 101831,
+      "Entries": [
+        "Buddy Upgrade Material_Normal_Lv3"
+      ]
+    },
+    {
+      "ID": 101832,
+      "Entries": [
+        "Buddy Upgrade Material_Normal_Lv4"
+      ]
+    },
+    {
+      "ID": 101833,
+      "Entries": [
+        "Buddy Upgrade Material_Normal_Lv5"
+      ]
+    },
+    {
+      "ID": 101834,
+      "Entries": [
+        "Buddy Upgrade Material_Normal_Lv6"
+      ]
+    },
+    {
+      "ID": 101835,
+      "Entries": [
+        "Buddy Upgrade Material_Normal_Lv7"
+      ]
+    },
+    {
+      "ID": 101836,
+      "Entries": [
+        "Buddy Upgrade Material_Normal_Lv8"
+      ]
+    },
+    {
+      "ID": 101837,
+      "Entries": [
+        "Buddy Upgrade Material_Normal_Lv9"
+      ]
+    },
+    {
+      "ID": 101838,
+      "Entries": [
+        "Buddy Upgrade Material_Upper_Lv1"
+      ]
+    },
+    {
+      "ID": 101839,
+      "Entries": [
+        "Buddy Upgrade Material_Upper_Lv2"
+      ]
+    },
+    {
+      "ID": 101840,
+      "Entries": [
+        "Buddy Upgrade Material_Upper_Lv3"
+      ]
+    },
+    {
+      "ID": 101841,
+      "Entries": [
+        "Buddy Upgrade Material_Upper_Lv4"
+      ]
+    },
+    {
+      "ID": 101842,
+      "Entries": [
+        "Buddy Upgrade Material_Upper_Lv5"
+      ]
+    },
+    {
+      "ID": 101843,
+      "Entries": [
+        "Buddy Upgrade Material_Upper_Lv6"
+      ]
+    },
+    {
+      "ID": 101844,
+      "Entries": [
+        "Buddy Upgrade Material_Upper_Lv7"
+      ]
+    },
+    {
+      "ID": 101845,
+      "Entries": [
+        "Buddy Upgrade Material_Upper_Lv8"
+      ]
+    },
+    {
+      "ID": 101846,
+      "Entries": [
+        "Buddy Upgrade Material_Upper_Lv9"
+      ]
+    },
+    {
+      "ID": 101847,
+      "Entries": [
+        "Thin Beast Bone"
+      ]
+    },
+    {
+      "ID": 101848,
+      "Entries": [
+        "Thick Beast Bone"
+      ]
+    },
+    {
+      "ID": 101849,
+      "Entries": [
+        "Beast Meat"
+      ]
+    },
+    {
+      "ID": 101850,
+      "Entries": [
+        "Meat Chunk"
+      ]
+    },
+    {
+      "ID": 101851,
+      "Entries": [
+        "Turtle Neck Meat"
+      ]
+    },
+    {
+      "ID": 101852,
+      "Entries": [
+        "Poison Cure Medicine"
+      ]
+    },
+    {
+      "ID": 101853,
+      "Entries": [
+        "Bleed Cure Medicine"
+      ]
+    },
+    {
+      "ID": 101854,
+      "Entries": [
+        "Frost Cure Medicine"
+      ]
+    },
+    {
+      "ID": 101855,
+      "Entries": [
+        "Sleep Cure Medicine"
+      ]
+    },
+    {
+      "ID": 101856,
+      "Entries": [
+        "Destruction Cult Stone Magic (Pebble)"
+      ]
+    },
+    {
+      "ID": 101857,
+      "Entries": [
+        "Destruction Devotee Stone Magic (Large Pebble)"
+      ]
+    },
+    {
+      "ID": 101858,
+      "Entries": [
+        "Pebble"
+      ]
+    },
+    {
+      "ID": 101859,
+      "Entries": [
+        "Memory Slot Growth Item"
+      ]
+    },
+    {
+      "ID": 101860,
+      "Entries": [
+        "Consumable Key"
+      ]
+    },
+    {
+      "ID": 101861,
+      "Entries": [
+        "Major Rune Activation Item"
+      ]
+    },
+    {
+      "ID": 101862,
+      "Entries": [
+        "Appearance Disguise (Host)"
+      ]
+    },
+    {
+      "ID": 101863,
+      "Entries": [
+        "Appearance Disguise (Guest)"
+      ]
+    },
+    {
+      "ID": 101864,
+      "Entries": [
+        "Dagger"
+      ]
+    },
+    {
+      "ID": 101865,
+      "Entries": [
+        "Longsword"
+      ]
+    },
+    {
+      "ID": 101866,
+      "Entries": [
+        "Scimitar"
+      ]
+    },
+    {
+      "ID": 101867,
+      "Entries": [
+        "Battle Axe"
+      ]
+    },
+    {
+      "ID": 101868,
+      "Entries": [
+        "Mace"
+      ]
+    },
+    {
+      "ID": 101869,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 101870,
+      "Entries": [
+        "Rapier"
+      ]
+    },
+    {
+      "ID": 101871,
+      "Entries": [
+        "Guidance Sacred Seal"
+      ]
+    },
+    {
+      "ID": 101872,
+      "Entries": [
+        "Longbow"
+      ]
+    },
+    {
+      "ID": 101873,
+      "Entries": [
+        "Heater Shield"
+      ]
+    },
+    {
+      "ID": 101874,
+      "Entries": [
+        "Knight Armor_Head"
+      ]
+    },
+    {
+      "ID": 101875,
+      "Entries": [
+        "Knight Armor_Body"
+      ]
+    },
+    {
+      "ID": 101876,
+      "Entries": [
+        "Knight Armor_Arms"
+      ]
+    },
+    {
+      "ID": 101877,
+      "Entries": [
+        "Knight Armor_Legs"
+      ]
+    },
+    {
+      "ID": 101878,
+      "Entries": [
+        "Elixir Bottle"
+      ]
+    },
+    {
+      "ID": 101879,
+      "Entries": [
+        "Item crafting unlock item"
+      ]
+    },
+    {
+      "ID": 101880,
+      "Entries": [
+        "Gem Swap Unlock Item"
+      ]
+    },
+    {
+      "ID": 101881,
+      "Entries": [
+        "Talisman Slot Growth Item"
+      ]
+    },
+    {
+      "ID": 101896,
+      "Entries": [
+        "Reverse-Grip Sword_Degraded"
+      ]
+    },
+    {
+      "ID": 101900,
+      "Entries": [
+        "Grafted King_Grafted King's Greataxe"
+      ]
+    },
+    {
+      "ID": 101901,
+      "Entries": [
+        "Grafted King_Dragon Tooth"
+      ]
+    },
+    {
+      "ID": 101902,
+      "Entries": [
+        "Radahn_Scrawny Horse Radahn Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 101903,
+      "Entries": [
+        "Radahn_Scrawny Horse Radahn Bow"
+      ]
+    },
+    {
+      "ID": 101904,
+      "Entries": [
+        "Margit_True_Margit's Death Sword"
+      ]
+    },
+    {
+      "ID": 101905,
+      "Entries": [
+        "Margit_True_Curse Explosion_Superior"
+      ]
+    },
+    {
+      "ID": 101906,
+      "Entries": [
+        "King of Ghouls_King of Ghouls Sword"
+      ]
+    },
+    {
+      "ID": 101907,
+      "Entries": [
+        "King of Ghouls_Serpent Bullet"
+      ]
+    },
+    {
+      "ID": 101908,
+      "Entries": [
+        "Malenia_Malenia's Prosthetic Blade"
+      ]
+    },
+    {
+      "ID": 101909,
+      "Entries": [
+        "Malenia_Great Rot Magic"
+      ]
+    },
+    {
+      "ID": 101910,
+      "Entries": [
+        "Greater_Greater Demon Spear"
+      ]
+    },
+    {
+      "ID": 101911,
+      "Entries": [
+        "Greater_Single Magic_Salt Scatter"
+      ]
+    },
+    {
+      "ID": 101912,
+      "Entries": [
+        "Maliketh_Black Blade Maliketh's Sword"
+      ]
+    },
+    {
+      "ID": 101913,
+      "Entries": [
+        "Maliketh_Black Blade (Maliketh)"
+      ]
+    },
+    {
+      "ID": 101914,
+      "Entries": [
+        "Godfrey_Godfrey's Greataxe"
+      ]
+    },
+    {
+      "ID": 101915,
+      "Entries": [
+        "Godfrey_Bare Hands Earthquake Magic Stone"
+      ]
+    },
+    {
+      "ID": 101916,
+      "Entries": [
+        "Ancient Dragon_Ancient Thunder Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 101917,
+      "Entries": [
+        "Ancient Dragon_Ancient Dragon Breath"
+      ]
+    },
+    {
+      "ID": 101918,
+      "Entries": [
+        "Rennala_Moon Scepter"
+      ]
+    },
+    {
+      "ID": 101919,
+      "Entries": [
+        "Rennala_Crystal Moon"
+      ]
+    },
+    {
+      "ID": 101920,
+      "Entries": [
+        "Ancestral Follower_Double Lightning Stake"
+      ]
+    },
+    {
+      "ID": 101921,
+      "Entries": [
+        "Ancestral Follower_Fallen Ancestral Follower Sorcery"
+      ]
+    },
+    {
+      "ID": 101922,
+      "Entries": [
+        "Giant_Red Hair Whip"
+      ]
+    },
+    {
+      "ID": 101923,
+      "Entries": [
+        "Giant_Flame Storm"
+      ]
+    },
+    {
+      "ID": 101924,
+      "Entries": [
+        "Ancestor Spirit_Ancestral Follower Special Weapon"
+      ]
+    },
+    {
+      "ID": 101925,
+      "Entries": [
+        "Ancestor Spirit_Ancestor Spirit Talisman"
+      ]
+    },
+    {
+      "ID": 101926,
+      "Entries": [
+        "Marika_Transforming Hammer"
+      ]
+    },
+    {
+      "ID": 101927,
+      "Entries": [
+        "Marika_Corpse Sword"
+      ]
+    },
+    {
+      "ID": 101928,
+      "Entries": [
+        "Astel_Stardust Flail"
+      ]
+    },
+    {
+      "ID": 101929,
+      "Entries": [
+        "Astel_Ground Upheaval Magic Bullet Magic Stone"
+      ]
+    },
+    {
+      "ID": 101950,
+      "Entries": [
+        "Breath Fire"
+      ]
+    },
+    {
+      "ID": 101951,
+      "Entries": [
+        "Breath Ice"
+      ]
+    },
+    {
+      "ID": 101952,
+      "Entries": [
+        "Breath Glintstone"
+      ]
+    },
+    {
+      "ID": 101953,
+      "Entries": [
+        "Breath Rot"
+      ]
+    },
+    {
+      "ID": 101954,
+      "Entries": [
+        "Airborne Breath Fire"
+      ]
+    },
+    {
+      "ID": 101955,
+      "Entries": [
+        "Airborne Breath Frost"
+      ]
+    },
+    {
+      "ID": 101956,
+      "Entries": [
+        "Airborne Breath Glintstone"
+      ]
+    },
+    {
+      "ID": 101957,
+      "Entries": [
+        "Airborne Breath Rot"
+      ]
+    },
+    {
+      "ID": 101958,
+      "Entries": [
+        "Dragon Claw (Dragonclaw)"
+      ]
+    },
+    {
+      "ID": 101959,
+      "Entries": [
+        "Dragon Bite"
+      ]
+    },
+    {
+      "ID": 101960,
+      "Entries": [
+        "Breath Lava"
+      ]
+    },
+    {
+      "ID": 101961,
+      "Entries": [
+        "Large Breath Lava"
+      ]
+    },
+    {
+      "ID": 101962,
+      "Entries": [
+        "Dragon Roar"
+      ]
+    },
+    {
+      "ID": 101975,
+      "Entries": [
+        "Dragon Claw (Dragonclaw)"
+      ]
+    },
+    {
+      "ID": 101976,
+      "Entries": [
+        "Dragon Bite"
+      ]
+    },
+    {
+      "ID": 101980,
+      "Entries": [
+        "Dragon Bite"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Red Armor_Light_Head"
+      ]
+    },
+    {
+      "ID": 110001,
+      "Entries": [
+        "Red Armor_Light_Body"
+      ]
+    },
+    {
+      "ID": 110002,
+      "Entries": [
+        "Dragon Scale_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110003,
+      "Entries": [
+        "Scholar Perfumer (Court)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110004,
+      "Entries": [
+        "Scholar Perfumer (Travel)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110005,
+      "Entries": [
+        "Glintstone Sorcerer B1_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110006,
+      "Entries": [
+        "Western Wandering Monk_Light_Body"
+      ]
+    },
+    {
+      "ID": 110007,
+      "Entries": [
+        "Wolf-Head Warrior_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110008,
+      "Entries": [
+        "Black Knife Descendant_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110009,
+      "Entries": [
+        "Bloodstained Vulture Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110010,
+      "Entries": [
+        "Attendant_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110011,
+      "Entries": [
+        "Rune-hunting Knight_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 110012,
+      "Entries": [
+        "Rune-hunting Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110013,
+      "Entries": [
+        "Wolf Rider_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110014,
+      "Entries": [
+        "Red-Eyed Gypsy_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110015,
+      "Entries": [
+        "Tree Sentinel (Chief)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110016,
+      "Entries": [
+        "Tree Sentinel (Noble)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110017,
+      "Entries": [
+        "Direct Lineage of Marika_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 110018,
+      "Entries": [
+        "Direct Lineage of Marika_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110019,
+      "Entries": [
+        "Direct Lineage of Marika BC_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 110020,
+      "Entries": [
+        "Direct Lineage of Marika BC_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110021,
+      "Entries": [
+        "Gladiator_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110022,
+      "Entries": [
+        "Godskin Apostle_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 110023,
+      "Entries": [
+        "Godskin Apostle_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110024,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110025,
+      "Entries": [
+        "Wisdom King_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110026,
+      "Entries": [
+        "Twin Armor_Light_Body"
+      ]
+    },
+    {
+      "ID": 110029,
+      "Entries": [
+        "Persecuted Cleric_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110030,
+      "Entries": [
+        "Stargazing_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110031,
+      "Entries": [
+        "Fat Armor_Light_Body"
+      ]
+    },
+    {
+      "ID": 110032,
+      "Entries": [
+        "White-Haired Ogre_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110033,
+      "Entries": [
+        "Exiled Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110034,
+      "Entries": [
+        "Army Doctor Executioner_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110036,
+      "Entries": [
+        "Aged Veteran General_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110037,
+      "Entries": [
+        "Bolas Hound_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110038,
+      "Entries": [
+        "Man-Eater Hag_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 110039,
+      "Entries": [
+        "Rune Slave_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110040,
+      "Entries": [
+        "Rune Slave C_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110041,
+      "Entries": [
+        "Senior Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110042,
+      "Entries": [
+        "Samurai_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110043,
+      "Entries": [
+        "Assassin Knight_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 110044,
+      "Entries": [
+        "Assassin Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110045,
+      "Entries": [
+        "Saintess B (Upper)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110047,
+      "Entries": [
+        "Preceptor's Robe_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110049,
+      "Entries": [
+        "Mercenary Swordsman_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 110050,
+      "Entries": [
+        "Scarred Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110051,
+      "Entries": [
+        "Monsan Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110052,
+      "Entries": [
+        "Sorcery Mercenary_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110053,
+      "Entries": [
+        "Royal Army Senior Cavalry Independent Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110054,
+      "Entries": [
+        "Royal Army Elite Cavalry Stormveil Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110055,
+      "Entries": [
+        "Royal Army Elite Cavalry Monsan Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110056,
+      "Entries": [
+        "Royal Army Senior Cavalry Royal Capital Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110057,
+      "Entries": [
+        "Royal Army Senior Cavalry Plains Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110058,
+      "Entries": [
+        "Royal Army Senior Cavalry Mausoleum Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110059,
+      "Entries": [
+        "Royal Army Elite Cavalry Miquella Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110060,
+      "Entries": [
+        "Attendant Elite_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 110061,
+      "Entries": [
+        "Gladiator (Malenia Faction)_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 110062,
+      "Entries": [
+        "Armor of the Blessed_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110063,
+      "Entries": [
+        "Ranni (Light Armor)_Body"
+      ]
+    },
+    {
+      "ID": 110064,
+      "Entries": [
+        "Godfrey Sixteen Knights_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110065,
+      "Entries": [
+        "Godfrey Sixteen Knights B_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110066,
+      "Entries": [
+        "Yuria's Robe_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110067,
+      "Entries": [
+        "Glintstone Sorcerer C_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 110068,
+      "Entries": [
+        "Glintstone Sorcerer C_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110069,
+      "Entries": [
+        "Saintess_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110084,
+      "Entries": [
+        "Light Knight_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 110085,
+      "Entries": [
+        "New Lucatiel_Light Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 110100,
+      "Entries": [
+        "Godfrey the Beast-clad_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110101,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Light Armor"
+      ]
+    },
+    {
+      "ID": 110102,
+      "Entries": [
+        "Greater Demon_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110103,
+      "Entries": [
+        "Black Blade Malenia_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110104,
+      "Entries": [
+        "Arbitrating Malenia_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110200,
+      "Entries": [
+        "Red Armor_Head"
+      ]
+    },
+    {
+      "ID": 110201,
+      "Entries": [
+        "Red Armor_Body"
+      ]
+    },
+    {
+      "ID": 110202,
+      "Entries": [
+        "Dragon Scale_Body"
+      ]
+    },
+    {
+      "ID": 110203,
+      "Entries": [
+        "Scholar Perfumer (Court)_Body"
+      ]
+    },
+    {
+      "ID": 110204,
+      "Entries": [
+        "Scholar Perfumer (Travel)_Body"
+      ]
+    },
+    {
+      "ID": 110205,
+      "Entries": [
+        "Glintstone Sorcerer B1_Body"
+      ]
+    },
+    {
+      "ID": 110206,
+      "Entries": [
+        "Western Komuso_Body"
+      ]
+    },
+    {
+      "ID": 110207,
+      "Entries": [
+        "Wolf-Head Warrior_Body"
+      ]
+    },
+    {
+      "ID": 110208,
+      "Entries": [
+        "Black Knife Descendant_Body"
+      ]
+    },
+    {
+      "ID": 110209,
+      "Entries": [
+        "Bloodstained Vulture Knight_Body"
+      ]
+    },
+    {
+      "ID": 110210,
+      "Entries": [
+        "Attendant_Body"
+      ]
+    },
+    {
+      "ID": 110211,
+      "Entries": [
+        "Rune-hunting Knight_Head"
+      ]
+    },
+    {
+      "ID": 110212,
+      "Entries": [
+        "Rune-hunting Knight_Body"
+      ]
+    },
+    {
+      "ID": 110213,
+      "Entries": [
+        "WolfRider_Body"
+      ]
+    },
+    {
+      "ID": 110214,
+      "Entries": [
+        "Red-Eyed Gypsy_Body"
+      ]
+    },
+    {
+      "ID": 110215,
+      "Entries": [
+        "Tree Sentinel (Chief)_Body"
+      ]
+    },
+    {
+      "ID": 110216,
+      "Entries": [
+        "Tree Sentinel (Noble)_Body"
+      ]
+    },
+    {
+      "ID": 110217,
+      "Entries": [
+        "Direct Lineage of Marika_Head"
+      ]
+    },
+    {
+      "ID": 110218,
+      "Entries": [
+        "Direct Lineage of Marika_Body"
+      ]
+    },
+    {
+      "ID": 110219,
+      "Entries": [
+        "Direct Lineage of Marika B_Head"
+      ]
+    },
+    {
+      "ID": 110220,
+      "Entries": [
+        "Direct Lineage of Marika B_Body"
+      ]
+    },
+    {
+      "ID": 110221,
+      "Entries": [
+        "Gladiator_Body"
+      ]
+    },
+    {
+      "ID": 110222,
+      "Entries": [
+        "Godskin Apostle_Head"
+      ]
+    },
+    {
+      "ID": 110223,
+      "Entries": [
+        "Putrid Knights_Body"
+      ]
+    },
+    {
+      "ID": 110224,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Body"
+      ]
+    },
+    {
+      "ID": 110225,
+      "Entries": [
+        "Wisdom King_Body"
+      ]
+    },
+    {
+      "ID": 110226,
+      "Entries": [
+        "Twin Armor_Body"
+      ]
+    },
+    {
+      "ID": 110229,
+      "Entries": [
+        "Persecuted Cleric B_Body"
+      ]
+    },
+    {
+      "ID": 110230,
+      "Entries": [
+        "Stargazing_Body"
+      ]
+    },
+    {
+      "ID": 110231,
+      "Entries": [
+        "Fat Armor_Body"
+      ]
+    },
+    {
+      "ID": 110232,
+      "Entries": [
+        "White-Haired Ogre_Body"
+      ]
+    },
+    {
+      "ID": 110233,
+      "Entries": [
+        "Exiled Knight_Body"
+      ]
+    },
+    {
+      "ID": 110234,
+      "Entries": [
+        "Army Doctor Executioner_Body"
+      ]
+    },
+    {
+      "ID": 110236,
+      "Entries": [
+        "Aged Veteran General_Body"
+      ]
+    },
+    {
+      "ID": 110237,
+      "Entries": [
+        "Bolas Hound_Body"
+      ]
+    },
+    {
+      "ID": 110238,
+      "Entries": [
+        "Man-Eater Hag_Head"
+      ]
+    },
+    {
+      "ID": 110239,
+      "Entries": [
+        "Rune Slave_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110240,
+      "Entries": [
+        "Rune Slave C_Body"
+      ]
+    },
+    {
+      "ID": 110241,
+      "Entries": [
+        "Senior Knight_Body"
+      ]
+    },
+    {
+      "ID": 110242,
+      "Entries": [
+        "Samurai_Body"
+      ]
+    },
+    {
+      "ID": 110243,
+      "Entries": [
+        "Assassin Knight_Head"
+      ]
+    },
+    {
+      "ID": 110244,
+      "Entries": [
+        "Assassin Knight_Body"
+      ]
+    },
+    {
+      "ID": 110245,
+      "Entries": [
+        "Saintess B (Upper)_Body"
+      ]
+    },
+    {
+      "ID": 110247,
+      "Entries": [
+        "Preceptor's Robe_Body"
+      ]
+    },
+    {
+      "ID": 110249,
+      "Entries": [
+        "Mercenary Swordsman_Head"
+      ]
+    },
+    {
+      "ID": 110250,
+      "Entries": [
+        "Wounded Knight_Body"
+      ]
+    },
+    {
+      "ID": 110251,
+      "Entries": [
+        "Monsan Knight_Body"
+      ]
+    },
+    {
+      "ID": 110252,
+      "Entries": [
+        "Sorcery Mercenary_Body"
+      ]
+    },
+    {
+      "ID": 110253,
+      "Entries": [
+        "Royal Army Senior Cavalry Independent Faction_Body"
+      ]
+    },
+    {
+      "ID": 110254,
+      "Entries": [
+        "Royal Army Elite Cavalry Stormveil Faction_Body"
+      ]
+    },
+    {
+      "ID": 110255,
+      "Entries": [
+        "Royal Army Elite Cavalry Monsan Faction_Body"
+      ]
+    },
+    {
+      "ID": 110256,
+      "Entries": [
+        "Royal Army Senior Cavalry Royal Capital Faction_Body"
+      ]
+    },
+    {
+      "ID": 110257,
+      "Entries": [
+        "Royal Army Senior Cavalry Plains Faction_Body"
+      ]
+    },
+    {
+      "ID": 110258,
+      "Entries": [
+        "Royal Army Senior Cavalry Mausoleum Faction_Body"
+      ]
+    },
+    {
+      "ID": 110259,
+      "Entries": [
+        "Royal Army Elite Cavalry Miquella Faction_Body"
+      ]
+    },
+    {
+      "ID": 110260,
+      "Entries": [
+        "Attendant Elite_Body (BD)"
+      ]
+    },
+    {
+      "ID": 110261,
+      "Entries": [
+        "Gladiator (Malenia Faction)_Body(BD)"
+      ]
+    },
+    {
+      "ID": 110262,
+      "Entries": [
+        "Armor of the Blessed_Body"
+      ]
+    },
+    {
+      "ID": 110263,
+      "Entries": [
+        "Ranni_Body"
+      ]
+    },
+    {
+      "ID": 110264,
+      "Entries": [
+        "Godfrey Sixteen Knights_Body"
+      ]
+    },
+    {
+      "ID": 110265,
+      "Entries": [
+        "Godfrey Sixteen Knights B_Body"
+      ]
+    },
+    {
+      "ID": 110266,
+      "Entries": [
+        "Yuria's Robe_Body"
+      ]
+    },
+    {
+      "ID": 110267,
+      "Entries": [
+        "Glintstone Sorcerer C_Head"
+      ]
+    },
+    {
+      "ID": 110268,
+      "Entries": [
+        "Glintstone Sorcerer C_Body"
+      ]
+    },
+    {
+      "ID": 110269,
+      "Entries": [
+        "Saintess_Body"
+      ]
+    },
+    {
+      "ID": 110284,
+      "Entries": [
+        "Light Knight_Body (BD)"
+      ]
+    },
+    {
+      "ID": 110285,
+      "Entries": [
+        "New Lucatiel_Head (HD)"
+      ]
+    },
+    {
+      "ID": 110300,
+      "Entries": [
+        "Godfrey the Beast-clad_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110301,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Light Armor"
+      ]
+    },
+    {
+      "ID": 110302,
+      "Entries": [
+        "Greater Demon_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110303,
+      "Entries": [
+        "Black Blade Malenia_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 110304,
+      "Entries": [
+        "Arbitrating Malenia_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "Red Armor_Light_Head"
+      ]
+    },
+    {
+      "ID": 111001,
+      "Entries": [
+        "Red Armor_Light_Body"
+      ]
+    },
+    {
+      "ID": 111002,
+      "Entries": [
+        "Dragon Scale_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111003,
+      "Entries": [
+        "Scholar Perfumer (Court)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111004,
+      "Entries": [
+        "Scholar Perfumer (Travel)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111005,
+      "Entries": [
+        "Glintstone Sorcerer B1_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111006,
+      "Entries": [
+        "Western Wandering Monk_Light_Body"
+      ]
+    },
+    {
+      "ID": 111007,
+      "Entries": [
+        "Wolf-Head Warrior_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111008,
+      "Entries": [
+        "Black Knife Descendant_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111009,
+      "Entries": [
+        "Bloodstained Vulture Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111010,
+      "Entries": [
+        "Attendant_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111011,
+      "Entries": [
+        "Rune-hunting Knight_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 111012,
+      "Entries": [
+        "Rune-hunting Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111013,
+      "Entries": [
+        "Wolf Rider_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111014,
+      "Entries": [
+        "Red-Eyed Gypsy_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111015,
+      "Entries": [
+        "Tree Sentinel (Chief)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111016,
+      "Entries": [
+        "Tree Sentinel (Noble)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111017,
+      "Entries": [
+        "Direct Lineage of Marika_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 111018,
+      "Entries": [
+        "Direct Lineage of Marika_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111019,
+      "Entries": [
+        "Direct Lineage of Marika BC_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 111020,
+      "Entries": [
+        "Direct Lineage of Marika BC_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111021,
+      "Entries": [
+        "Gladiator_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111022,
+      "Entries": [
+        "Godskin Apostle_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 111023,
+      "Entries": [
+        "Godskin Apostle_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111024,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111025,
+      "Entries": [
+        "Wisdom King_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111026,
+      "Entries": [
+        "Twin Armor_Light_Body"
+      ]
+    },
+    {
+      "ID": 111029,
+      "Entries": [
+        "Persecuted Cleric_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111030,
+      "Entries": [
+        "Stargazing_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111031,
+      "Entries": [
+        "Fat Armor_Light_Body"
+      ]
+    },
+    {
+      "ID": 111032,
+      "Entries": [
+        "White-Haired Ogre_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111033,
+      "Entries": [
+        "Exiled Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111034,
+      "Entries": [
+        "Army Doctor Executioner_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111036,
+      "Entries": [
+        "Aged Veteran General_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111037,
+      "Entries": [
+        "Bolas Hound_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111038,
+      "Entries": [
+        "Man-Eater Hag_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 111039,
+      "Entries": [
+        "Rune Slave_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111040,
+      "Entries": [
+        "Rune Slave C_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111041,
+      "Entries": [
+        "Senior Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111042,
+      "Entries": [
+        "Samurai_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111043,
+      "Entries": [
+        "Assassin Knight_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 111044,
+      "Entries": [
+        "Assassin Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111045,
+      "Entries": [
+        "Saintess B (Upper)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111047,
+      "Entries": [
+        "Preceptor's Robe_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111049,
+      "Entries": [
+        "Mercenary Swordsman_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 111050,
+      "Entries": [
+        "Scarred Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111051,
+      "Entries": [
+        "Monsan Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111052,
+      "Entries": [
+        "Sorcery Mercenary_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111053,
+      "Entries": [
+        "Royal Army Senior Cavalry Independent Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111054,
+      "Entries": [
+        "Royal Army Elite Cavalry Stormveil Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111055,
+      "Entries": [
+        "Royal Army Elite Cavalry Monsan Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111056,
+      "Entries": [
+        "Royal Army Senior Cavalry Royal Capital Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111057,
+      "Entries": [
+        "Royal Army Senior Cavalry Plains Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111058,
+      "Entries": [
+        "Royal Army Senior Cavalry Mausoleum Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111059,
+      "Entries": [
+        "Royal Army Elite Cavalry Miquella Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111060,
+      "Entries": [
+        "Attendant Elite_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 111061,
+      "Entries": [
+        "Gladiator (Malenia Faction)_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 111062,
+      "Entries": [
+        "Armor of the Blessed_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111063,
+      "Entries": [
+        "Ranni (Light Armor)_Body"
+      ]
+    },
+    {
+      "ID": 111064,
+      "Entries": [
+        "Godfrey Sixteen Knights_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111065,
+      "Entries": [
+        "Godfrey Sixteen Knights B_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111066,
+      "Entries": [
+        "Yuria's Robe_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111067,
+      "Entries": [
+        "Glintstone Sorcerer C_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 111068,
+      "Entries": [
+        "Glintstone Sorcerer C_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111069,
+      "Entries": [
+        "Saintess_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111084,
+      "Entries": [
+        "Light Knight_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 111085,
+      "Entries": [
+        "New Lucatiel_Light Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 111100,
+      "Entries": [
+        "Godfrey the Beast-clad_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111101,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Light Armor"
+      ]
+    },
+    {
+      "ID": 111102,
+      "Entries": [
+        "Greater Demon_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111103,
+      "Entries": [
+        "Black Blade Malenia_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111104,
+      "Entries": [
+        "Arbitrating Malenia_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111200,
+      "Entries": [
+        "Red Armor_Head"
+      ]
+    },
+    {
+      "ID": 111201,
+      "Entries": [
+        "Red Armor_Body"
+      ]
+    },
+    {
+      "ID": 111202,
+      "Entries": [
+        "Dragon Scale_Body"
+      ]
+    },
+    {
+      "ID": 111203,
+      "Entries": [
+        "Scholar Perfumer (Court)_Body"
+      ]
+    },
+    {
+      "ID": 111204,
+      "Entries": [
+        "Scholar Perfumer (Travel)_Body"
+      ]
+    },
+    {
+      "ID": 111205,
+      "Entries": [
+        "Glintstone Sorcerer B1_Body"
+      ]
+    },
+    {
+      "ID": 111206,
+      "Entries": [
+        "Western Komuso_Body"
+      ]
+    },
+    {
+      "ID": 111207,
+      "Entries": [
+        "Wolf-Head Warrior_Body"
+      ]
+    },
+    {
+      "ID": 111208,
+      "Entries": [
+        "Black Knife Descendant_Body"
+      ]
+    },
+    {
+      "ID": 111209,
+      "Entries": [
+        "Bloodstained Vulture Knight_Body"
+      ]
+    },
+    {
+      "ID": 111210,
+      "Entries": [
+        "Attendant_Body"
+      ]
+    },
+    {
+      "ID": 111211,
+      "Entries": [
+        "Rune-hunting Knight_Head"
+      ]
+    },
+    {
+      "ID": 111212,
+      "Entries": [
+        "Rune-hunting Knight_Body"
+      ]
+    },
+    {
+      "ID": 111213,
+      "Entries": [
+        "WolfRider_Body"
+      ]
+    },
+    {
+      "ID": 111214,
+      "Entries": [
+        "Red-Eyed Gypsy_Body"
+      ]
+    },
+    {
+      "ID": 111215,
+      "Entries": [
+        "Tree Sentinel (Chief)_Body"
+      ]
+    },
+    {
+      "ID": 111216,
+      "Entries": [
+        "Tree Sentinel (Noble)_Body"
+      ]
+    },
+    {
+      "ID": 111217,
+      "Entries": [
+        "Direct Lineage of Marika_Head"
+      ]
+    },
+    {
+      "ID": 111218,
+      "Entries": [
+        "Direct Lineage of Marika_Body"
+      ]
+    },
+    {
+      "ID": 111219,
+      "Entries": [
+        "Direct Lineage of Marika B_Head"
+      ]
+    },
+    {
+      "ID": 111220,
+      "Entries": [
+        "Direct Lineage of Marika B_Body"
+      ]
+    },
+    {
+      "ID": 111221,
+      "Entries": [
+        "Gladiator_Body"
+      ]
+    },
+    {
+      "ID": 111222,
+      "Entries": [
+        "Godskin Apostle_Head"
+      ]
+    },
+    {
+      "ID": 111223,
+      "Entries": [
+        "Putrid Knights_Body"
+      ]
+    },
+    {
+      "ID": 111224,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Body"
+      ]
+    },
+    {
+      "ID": 111225,
+      "Entries": [
+        "Wisdom King_Body"
+      ]
+    },
+    {
+      "ID": 111226,
+      "Entries": [
+        "Twin Armor_Body"
+      ]
+    },
+    {
+      "ID": 111229,
+      "Entries": [
+        "Persecuted Cleric B_Body"
+      ]
+    },
+    {
+      "ID": 111230,
+      "Entries": [
+        "Stargazing_Body"
+      ]
+    },
+    {
+      "ID": 111231,
+      "Entries": [
+        "Fat Armor_Body"
+      ]
+    },
+    {
+      "ID": 111232,
+      "Entries": [
+        "White-Haired Ogre_Body"
+      ]
+    },
+    {
+      "ID": 111233,
+      "Entries": [
+        "Exiled Knight_Body"
+      ]
+    },
+    {
+      "ID": 111234,
+      "Entries": [
+        "Army Doctor Executioner_Body"
+      ]
+    },
+    {
+      "ID": 111236,
+      "Entries": [
+        "Aged Veteran General_Body"
+      ]
+    },
+    {
+      "ID": 111237,
+      "Entries": [
+        "Bolas Hound_Body"
+      ]
+    },
+    {
+      "ID": 111238,
+      "Entries": [
+        "Man-Eater Hag_Head"
+      ]
+    },
+    {
+      "ID": 111239,
+      "Entries": [
+        "Rune Slave_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111240,
+      "Entries": [
+        "Rune Slave C_Body"
+      ]
+    },
+    {
+      "ID": 111241,
+      "Entries": [
+        "Senior Knight_Body"
+      ]
+    },
+    {
+      "ID": 111242,
+      "Entries": [
+        "Samurai_Body"
+      ]
+    },
+    {
+      "ID": 111243,
+      "Entries": [
+        "Assassin Knight_Head"
+      ]
+    },
+    {
+      "ID": 111244,
+      "Entries": [
+        "Assassin Knight_Body"
+      ]
+    },
+    {
+      "ID": 111245,
+      "Entries": [
+        "Saintess B (Upper)_Body"
+      ]
+    },
+    {
+      "ID": 111247,
+      "Entries": [
+        "Preceptor's Robe_Body"
+      ]
+    },
+    {
+      "ID": 111249,
+      "Entries": [
+        "Mercenary Swordsman_Head"
+      ]
+    },
+    {
+      "ID": 111250,
+      "Entries": [
+        "Wounded Knight_Body"
+      ]
+    },
+    {
+      "ID": 111251,
+      "Entries": [
+        "Monsan Knight_Body"
+      ]
+    },
+    {
+      "ID": 111252,
+      "Entries": [
+        "Sorcery Mercenary_Body"
+      ]
+    },
+    {
+      "ID": 111253,
+      "Entries": [
+        "Royal Army Senior Cavalry Independent Faction_Body"
+      ]
+    },
+    {
+      "ID": 111254,
+      "Entries": [
+        "Royal Army Elite Cavalry Stormveil Faction_Body"
+      ]
+    },
+    {
+      "ID": 111255,
+      "Entries": [
+        "Royal Army Elite Cavalry Monsan Faction_Body"
+      ]
+    },
+    {
+      "ID": 111256,
+      "Entries": [
+        "Royal Army Senior Cavalry Royal Capital Faction_Body"
+      ]
+    },
+    {
+      "ID": 111257,
+      "Entries": [
+        "Royal Army Senior Cavalry Plains Faction_Body"
+      ]
+    },
+    {
+      "ID": 111258,
+      "Entries": [
+        "Royal Army Senior Cavalry Mausoleum Faction_Body"
+      ]
+    },
+    {
+      "ID": 111259,
+      "Entries": [
+        "Royal Army Elite Cavalry Miquella Faction_Body"
+      ]
+    },
+    {
+      "ID": 111260,
+      "Entries": [
+        "Attendant Elite_Body (BD)"
+      ]
+    },
+    {
+      "ID": 111261,
+      "Entries": [
+        "Gladiator (Malenia Faction)_Body(BD)"
+      ]
+    },
+    {
+      "ID": 111262,
+      "Entries": [
+        "Armor of the Blessed_Body"
+      ]
+    },
+    {
+      "ID": 111263,
+      "Entries": [
+        "Ranni_Body"
+      ]
+    },
+    {
+      "ID": 111264,
+      "Entries": [
+        "Godfrey Sixteen Knights_Body"
+      ]
+    },
+    {
+      "ID": 111265,
+      "Entries": [
+        "Godfrey Sixteen Knights B_Body"
+      ]
+    },
+    {
+      "ID": 111266,
+      "Entries": [
+        "Yuria's Robe_Body"
+      ]
+    },
+    {
+      "ID": 111267,
+      "Entries": [
+        "Glintstone Sorcerer C_Head"
+      ]
+    },
+    {
+      "ID": 111268,
+      "Entries": [
+        "Glintstone Sorcerer C_Body"
+      ]
+    },
+    {
+      "ID": 111269,
+      "Entries": [
+        "Saintess_Body"
+      ]
+    },
+    {
+      "ID": 111284,
+      "Entries": [
+        "Light Knight_Body (BD)"
+      ]
+    },
+    {
+      "ID": 111285,
+      "Entries": [
+        "New Lucatiel_Head (HD)"
+      ]
+    },
+    {
+      "ID": 111300,
+      "Entries": [
+        "Godfrey the Beast-clad_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111301,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Light Armor"
+      ]
+    },
+    {
+      "ID": 111302,
+      "Entries": [
+        "Greater Demon_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111303,
+      "Entries": [
+        "Black Blade Malenia_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 111304,
+      "Entries": [
+        "Arbitrating Malenia_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "Piercing Thrust"
+      ]
+    },
+    {
+      "ID": 112001,
+      "Entries": [
+        "Piercing Katana (Fang Thrust)"
+      ]
+    },
+    {
+      "ID": 112002,
+      "Entries": [
+        "Spinning Slash"
+      ]
+    },
+    {
+      "ID": 112003,
+      "Entries": [
+        "Multi-Hit Thrust"
+      ]
+    },
+    {
+      "ID": 112004,
+      "Entries": [
+        "Combo Frenzy"
+      ]
+    },
+    {
+      "ID": 112005,
+      "Entries": [
+        "Iai (Katana)"
+      ]
+    },
+    {
+      "ID": 112006,
+      "Entries": [
+        "Double Slash"
+      ]
+    },
+    {
+      "ID": 112008,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 112009,
+      "Entries": [
+        "Gehrman Step"
+      ]
+    },
+    {
+      "ID": 112010,
+      "Entries": [
+        "Airborne Forward Roll Slam"
+      ]
+    },
+    {
+      "ID": 112011,
+      "Entries": [
+        "Lunge+Upward Slash"
+      ]
+    },
+    {
+      "ID": 112012,
+      "Entries": [
+        "Lunge+Spin"
+      ]
+    },
+    {
+      "ID": 112013,
+      "Entries": [
+        "Loop Frenzy Axe"
+      ]
+    },
+    {
+      "ID": 112014,
+      "Entries": [
+        "Earthquake"
+      ]
+    },
+    {
+      "ID": 112015,
+      "Entries": [
+        "Kick"
+      ]
+    },
+    {
+      "ID": 112016,
+      "Entries": [
+        "Hip Drop"
+      ]
+    },
+    {
+      "ID": 112017,
+      "Entries": [
+        "Bare Hands Earthquake"
+      ]
+    },
+    {
+      "ID": 112018,
+      "Entries": [
+        "Barbarian War Cry"
+      ]
+    },
+    {
+      "ID": 112019,
+      "Entries": [
+        "Warrior War Cry"
+      ]
+    },
+    {
+      "ID": 112020,
+      "Entries": [
+        "Troll War Cry"
+      ]
+    },
+    {
+      "ID": 112021,
+      "Entries": [
+        "Gladiator War Cry"
+      ]
+    },
+    {
+      "ID": 112022,
+      "Entries": [
+        "Endure"
+      ]
+    },
+    {
+      "ID": 112023,
+      "Entries": [
+        "Charge"
+      ]
+    },
+    {
+      "ID": 112024,
+      "Entries": [
+        "Stance (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 112025,
+      "Entries": [
+        "Lunge Upthrust"
+      ]
+    },
+    {
+      "ID": 112026,
+      "Entries": [
+        "Loop Frenzy Halberd"
+      ]
+    },
+    {
+      "ID": 112027,
+      "Entries": [
+        "Stormleap Plunge"
+      ]
+    },
+    {
+      "ID": 112028,
+      "Entries": [
+        "Storm Spinning Sweep"
+      ]
+    },
+    {
+      "ID": 112029,
+      "Entries": [
+        "Sonic Blade"
+      ]
+    },
+    {
+      "ID": 112030,
+      "Entries": [
+        "Vacuum Wave Slash"
+      ]
+    },
+    {
+      "ID": 112031,
+      "Entries": [
+        "Stomp・Storm"
+      ]
+    },
+    {
+      "ID": 112032,
+      "Entries": [
+        "Concentrate"
+      ]
+    },
+    {
+      "ID": 112033,
+      "Entries": [
+        "Upper Concentrate"
+      ]
+    },
+    {
+      "ID": 112034,
+      "Entries": [
+        "Sumo Train"
+      ]
+    },
+    {
+      "ID": 112035,
+      "Entries": [
+        "Lava Placement"
+      ]
+    },
+    {
+      "ID": 112036,
+      "Entries": [
+        "Fire Sweep + Enveloping Slash"
+      ]
+    },
+    {
+      "ID": 112037,
+      "Entries": [
+        "Fire Tornado"
+      ]
+    },
+    {
+      "ID": 112038,
+      "Entries": [
+        "Single-shot area skill"
+      ]
+    },
+    {
+      "ID": 112039,
+      "Entries": [
+        "Continuous Lightning Strike"
+      ]
+    },
+    {
+      "ID": 112040,
+      "Entries": [
+        "Lightning + Downward Slash"
+      ]
+    },
+    {
+      "ID": 112041,
+      "Entries": [
+        "Rolling Attack/Special Rolling"
+      ]
+    },
+    {
+      "ID": 112042,
+      "Entries": [
+        "Diving Enchant Slash"
+      ]
+    },
+    {
+      "ID": 112043,
+      "Entries": [
+        "Baton Attack"
+      ]
+    },
+    {
+      "ID": 112044,
+      "Entries": [
+        "Funnel+Thrust"
+      ]
+    },
+    {
+      "ID": 112045,
+      "Entries": [
+        "Mid-Range Bullet + Approach"
+      ]
+    },
+    {
+      "ID": 112046,
+      "Entries": [
+        "Gravity Pull"
+      ]
+    },
+    {
+      "ID": 112047,
+      "Entries": [
+        "Soul Colossal Sword"
+      ]
+    },
+    {
+      "ID": 112048,
+      "Entries": [
+        "Soul Colossal Sword・2-Stage"
+      ]
+    },
+    {
+      "ID": 112049,
+      "Entries": [
+        "Ground Upheaval Magic Bullet"
+      ]
+    },
+    {
+      "ID": 112050,
+      "Entries": [
+        "Rock Enchant"
+      ]
+    },
+    {
+      "ID": 112051,
+      "Entries": [
+        "Magic Attack + Enchant (Holy)"
+      ]
+    },
+    {
+      "ID": 112052,
+      "Entries": [
+        "Greater Recovery Strike"
+      ]
+    },
+    {
+      "ID": 112053,
+      "Entries": [
+        "Golden Tree Quake"
+      ]
+    },
+    {
+      "ID": 112054,
+      "Entries": [
+        "Radiant Halo of Miquella"
+      ]
+    },
+    {
+      "ID": 112055,
+      "Entries": [
+        "HipDrop+Magic Bullet"
+      ]
+    },
+    {
+      "ID": 112056,
+      "Entries": [
+        "Sun Oath"
+      ]
+    },
+    {
+      "ID": 112057,
+      "Entries": [
+        "Holy Enchant"
+      ]
+    },
+    {
+      "ID": 112058,
+      "Entries": [
+        "Area Holy Enchant"
+      ]
+    },
+    {
+      "ID": 112059,
+      "Entries": [
+        "Ultrasonic War Cry"
+      ]
+    },
+    {
+      "ID": 112060,
+      "Entries": [
+        "Phantom Double Slash"
+      ]
+    },
+    {
+      "ID": 112061,
+      "Entries": [
+        "Phantom Throw"
+      ]
+    },
+    {
+      "ID": 112062,
+      "Entries": [
+        "Substitute Technique"
+      ]
+    },
+    {
+      "ID": 112063,
+      "Entries": [
+        "Phantom Summon"
+      ]
+    },
+    {
+      "ID": 112064,
+      "Entries": [
+        "Two Hits Poison"
+      ]
+    },
+    {
+      "ID": 112065,
+      "Entries": [
+        "Magic Attack+Enchant (Poison)"
+      ]
+    },
+    {
+      "ID": 112066,
+      "Entries": [
+        "Drain Multi-Thrust"
+      ]
+    },
+    {
+      "ID": 112067,
+      "Entries": [
+        "Blood Slash"
+      ]
+    },
+    {
+      "ID": 112068,
+      "Entries": [
+        "Drain Attack"
+      ]
+    },
+    {
+      "ID": 112069,
+      "Entries": [
+        "Blood Throw"
+      ]
+    },
+    {
+      "ID": 112070,
+      "Entries": [
+        "Self-Harm/Curse"
+      ]
+    },
+    {
+      "ID": 112071,
+      "Entries": [
+        "Seppuku Enchant"
+      ]
+    },
+    {
+      "ID": 112072,
+      "Entries": [
+        "Gae Bolg"
+      ]
+    },
+    {
+      "ID": 112073,
+      "Entries": [
+        "Magic Attack+Enchant (Frost)"
+      ]
+    },
+    {
+      "ID": 112074,
+      "Entries": [
+        "Stomp・Frost Step"
+      ]
+    },
+    {
+      "ID": 112075,
+      "Entries": [
+        "Weapon Skill"
+      ]
+    },
+    {
+      "ID": 112076,
+      "Entries": [
+        "Shield Bash"
+      ]
+    },
+    {
+      "ID": 112077,
+      "Entries": [
+        "Charge Bash"
+      ]
+    },
+    {
+      "ID": 112078,
+      "Entries": [
+        "Mighty Parry"
+      ]
+    },
+    {
+      "ID": 112079,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 112080,
+      "Entries": [
+        "Magic Parry"
+      ]
+    },
+    {
+      "ID": 112081,
+      "Entries": [
+        "Projectile Parry"
+      ]
+    },
+    {
+      "ID": 112082,
+      "Entries": [
+        "Ranged Parry"
+      ]
+    },
+    {
+      "ID": 112083,
+      "Entries": [
+        "Light Wall Parry"
+      ]
+    },
+    {
+      "ID": 112084,
+      "Entries": [
+        "Sacred Area"
+      ]
+    },
+    {
+      "ID": 112085,
+      "Entries": [
+        "Momentary invincibility"
+      ]
+    },
+    {
+      "ID": 112086,
+      "Entries": [
+        "Continuous Shot"
+      ]
+    },
+    {
+      "ID": 112087,
+      "Entries": [
+        "Power Shot"
+      ]
+    },
+    {
+      "ID": 112088,
+      "Entries": [
+        "Arcing Shot"
+      ]
+    },
+    {
+      "ID": 112089,
+      "Entries": [
+        "Piercing Shot"
+      ]
+    },
+    {
+      "ID": 112090,
+      "Entries": [
+        "Homing Shot"
+      ]
+    },
+    {
+      "ID": 112091,
+      "Entries": [
+        "Arrow Rain"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Dagger"
+      ]
+    },
+    {
+      "ID": 600001,
+      "Entries": [
+        "Longsword"
+      ]
+    },
+    {
+      "ID": 600002,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 600003,
+      "Entries": [
+        "Mace"
+      ]
+    },
+    {
+      "ID": 600004,
+      "Entries": [
+        "Longbow"
+      ]
+    },
+    {
+      "ID": 600005,
+      "Entries": [
+        "Falchion"
+      ]
+    },
+    {
+      "ID": 600006,
+      "Entries": [
+        "HandAxe"
+      ]
+    },
+    {
+      "ID": 600007,
+      "Entries": [
+        "Buckler"
+      ]
+    },
+    {
+      "ID": 600008,
+      "Entries": [
+        "Round Shield"
+      ]
+    },
+    {
+      "ID": 600009,
+      "Entries": [
+        "Dancing Swordsman_Helm"
+      ]
+    },
+    {
+      "ID": 600010,
+      "Entries": [
+        "Dancing Swordsman_Armor"
+      ]
+    },
+    {
+      "ID": 600011,
+      "Entries": [
+        "Dancing Swordsman_Hands"
+      ]
+    },
+    {
+      "ID": 600012,
+      "Entries": [
+        "Dancing Swordsman_Feet"
+      ]
+    },
+    {
+      "ID": 600013,
+      "Entries": [
+        "Buddy Summon_Wolf"
+      ]
+    },
+    {
+      "ID": 600014,
+      "Entries": [
+        "Air Jar"
+      ]
+    },
+    {
+      "ID": 600015,
+      "Entries": [
+        "Crafting Recipe (Survival Type)"
+      ]
+    },
+    {
+      "ID": 600016,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 600017,
+      "Entries": [
+        "Rope"
+      ]
+    },
+    {
+      "ID": 600018,
+      "Entries": [
+        "Red-Eye Document (Sleep Cloud)"
+      ]
+    },
+    {
+      "ID": 600019,
+      "Entries": [
+        "Red-Eye Document (Throwing Knife)"
+      ]
+    },
+    {
+      "ID": 600020,
+      "Entries": [
+        "Scrap Crystal"
+      ]
+    },
+    {
+      "ID": 600021,
+      "Entries": [
+        "Pollen of the Devouring Flower"
+      ]
+    },
+    {
+      "ID": 600022,
+      "Entries": [
+        "Flower A3"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Vengeful Spirit Bullet"
+      ]
+    },
+    {
+      "ID": 900001,
+      "Entries": [
+        "Soul Arrow (Vengeful Spirit)"
+      ]
+    },
+    {
+      "ID": 900002,
+      "Entries": [
+        "Vengeful Spirit Slow Bullet"
+      ]
+    },
+    {
+      "ID": 900003,
+      "Entries": [
+        "Vengeful Spirit Laser"
+      ]
+    },
+    {
+      "ID": 900004,
+      "Entries": [
+        "Placed Vengeful Spirit"
+      ]
+    },
+    {
+      "ID": 900010,
+      "Entries": [
+        "Vengeful Spirit Bullet"
+      ]
+    },
+    {
+      "ID": 900011,
+      "Entries": [
+        "Soul Arrow (Vengeful Spirit)"
+      ]
+    },
+    {
+      "ID": 900012,
+      "Entries": [
+        "Vengeful Spirit Slow Bullet"
+      ]
+    },
+    {
+      "ID": 900013,
+      "Entries": [
+        "Vengeful Spirit Laser"
+      ]
+    },
+    {
+      "ID": 900014,
+      "Entries": [
+        "Placed Vengeful Spirit"
+      ]
+    },
+    {
+      "ID": 900020,
+      "Entries": [
+        "Vengeful Spirit Bullet"
+      ]
+    },
+    {
+      "ID": 900021,
+      "Entries": [
+        "Soul Arrow (Vengeful Spirit)"
+      ]
+    },
+    {
+      "ID": 900022,
+      "Entries": [
+        "Vengeful Spirit Slow Bullet"
+      ]
+    },
+    {
+      "ID": 900023,
+      "Entries": [
+        "Vengeful Spirit Laser"
+      ]
+    },
+    {
+      "ID": 900024,
+      "Entries": [
+        "Placed Vengeful Spirit"
+      ]
+    },
+    {
+      "ID": 900030,
+      "Entries": [
+        "Vengeful Spirit Bullet"
+      ]
+    },
+    {
+      "ID": 900031,
+      "Entries": [
+        "Soul Arrow (Vengeful Spirit)"
+      ]
+    },
+    {
+      "ID": 900032,
+      "Entries": [
+        "Vengeful Spirit Slow Bullet"
+      ]
+    },
+    {
+      "ID": 900033,
+      "Entries": [
+        "Vengeful Spirit Laser"
+      ]
+    },
+    {
+      "ID": 900034,
+      "Entries": [
+        "Placed Vengeful Spirit"
+      ]
+    },
+    {
+      "ID": 1600101,
+      "Entries": [
+        "Dagger"
+      ]
+    },
+    {
+      "ID": 1600102,
+      "Entries": [
+        "Longsword"
+      ]
+    },
+    {
+      "ID": 1600103,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 1600104,
+      "Entries": [
+        "Mace"
+      ]
+    },
+    {
+      "ID": 1600105,
+      "Entries": [
+        "Longbow"
+      ]
+    },
+    {
+      "ID": 1600106,
+      "Entries": [
+        "Falchion"
+      ]
+    },
+    {
+      "ID": 1600107,
+      "Entries": [
+        "HandAxe"
+      ]
+    },
+    {
+      "ID": 1600108,
+      "Entries": [
+        "Buckler"
+      ]
+    },
+    {
+      "ID": 1600109,
+      "Entries": [
+        "Round Shield"
+      ]
+    },
+    {
+      "ID": 1600110,
+      "Entries": [
+        "Dancing Swordsman_Helm"
+      ]
+    },
+    {
+      "ID": 1600111,
+      "Entries": [
+        "Dancing Swordsman_Armor"
+      ]
+    },
+    {
+      "ID": 1600112,
+      "Entries": [
+        "Dancing Swordsman_Hands"
+      ]
+    },
+    {
+      "ID": 1600113,
+      "Entries": [
+        "Dancing Swordsman_Feet"
+      ]
+    },
+    {
+      "ID": 1600114,
+      "Entries": [
+        "Buddy Summon_Wolf"
+      ]
+    },
+    {
+      "ID": 1600115,
+      "Entries": [
+        "Air Jar"
+      ]
+    },
+    {
+      "ID": 1600116,
+      "Entries": [
+        "Crafting Recipe (Survival Type)"
+      ]
+    },
+    {
+      "ID": 1600117,
+      "Entries": [
+        "Normal Arrow"
+      ]
+    },
+    {
+      "ID": 1600118,
+      "Entries": [
+        "Rope"
+      ]
+    },
+    {
+      "ID": 1600119,
+      "Entries": [
+        "Red-Eye Document (Sleep Cloud)"
+      ]
+    },
+    {
+      "ID": 1600120,
+      "Entries": [
+        "Red-Eye Document (Throwing Knife)"
+      ]
+    },
+    {
+      "ID": 1600121,
+      "Entries": [
+        "Scrap Crystal"
+      ]
+    },
+    {
+      "ID": 1600122,
+      "Entries": [
+        "Pollen of the Devouring Flower"
+      ]
+    },
+    {
+      "ID": 1600123,
+      "Entries": [
+        "Flower A3"
+      ]
+    },
+    {
+      "ID": 1600401,
+      "Entries": [
+        "Grave Robber Noble Staff"
+      ]
+    },
+    {
+      "ID": 1600402,
+      "Entries": [
+        "Guidance Sacred Seal"
+      ]
+    },
+    {
+      "ID": 1600403,
+      "Entries": [
+        "Beast Sacred Seal"
+      ]
+    },
+    {
+      "ID": 1600404,
+      "Entries": [
+        "Soul Arrow"
+      ]
+    },
+    {
+      "ID": 1600405,
+      "Entries": [
+        "Soul Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 1600406,
+      "Entries": [
+        "Recovery"
+      ]
+    },
+    {
+      "ID": 1600407,
+      "Entries": [
+        "Beast Incantation (Spear Thicket)"
+      ]
+    },
+    {
+      "ID": 1600408,
+      "Entries": [
+        "Fire Breath"
+      ]
+    },
+    {
+      "ID": 1600409,
+      "Entries": [
+        "Helm_Monsan Knight Light Armor"
+      ]
+    },
+    {
+      "ID": 1600410,
+      "Entries": [
+        "Armor_Monsan Knight Light"
+      ]
+    },
+    {
+      "ID": 1600411,
+      "Entries": [
+        "Hand_Monsan Knight Light Armor"
+      ]
+    },
+    {
+      "ID": 1600412,
+      "Entries": [
+        "Legs_Monsan Knight Light Armor"
+      ]
+    },
+    {
+      "ID": 1600413,
+      "Entries": [
+        "Helm_Barbarian"
+      ]
+    },
+    {
+      "ID": 1600414,
+      "Entries": [
+        "Armor_Barbarian"
+      ]
+    },
+    {
+      "ID": 1600415,
+      "Entries": [
+        "Hand_Barbarian"
+      ]
+    },
+    {
+      "ID": 1600416,
+      "Entries": [
+        "Legs_Barbarian"
+      ]
+    },
+    {
+      "ID": 1600417,
+      "Entries": [
+        "HP Increase"
+      ]
+    },
+    {
+      "ID": 1600418,
+      "Entries": [
+        "Charged Attack Enhancement"
+      ]
+    },
+    {
+      "ID": 1600419,
+      "Entries": [
+        "Fire Arrow"
+      ]
+    },
+    {
+      "ID": 1600420,
+      "Entries": [
+        "Red-Eye Document (Mercenary Swordsman)"
+      ]
+    },
+    {
+      "ID": 9000000,
+      "Entries": [
+        "Boss Soul Item Use Test_0"
+      ]
+    },
+    {
+      "ID": 9000001,
+      "Entries": [
+        "Boss Soul Item Use Test_1"
+      ]
+    },
+    {
+      "ID": 9000002,
+      "Entries": [
+        "Boss Soul Item Use Test_2"
+      ]
+    },
+    {
+      "ID": 9000003,
+      "Entries": [
+        "Boss Soul Item Use Test_3"
+      ]
+    },
+    {
+      "ID": 9000004,
+      "Entries": [
+        "Boss Soul Item Use Test_4"
+      ]
+    },
+    {
+      "ID": 9001000,
+      "Entries": [
+        "Armor Swap Test_0"
+      ]
+    },
+    {
+      "ID": 9001001,
+      "Entries": [
+        "Armor Swap Test_1"
+      ]
+    },
+    {
+      "ID": 9001002,
+      "Entries": [
+        "Armor Swap Test_2"
+      ]
+    },
+    {
+      "ID": 9001003,
+      "Entries": [
+        "Armor Swap Test_3"
+      ]
+    },
+    {
+      "ID": 9001004,
+      "Entries": [
+        "Armor Swap Test_4"
+      ]
+    }
+  ]
+}

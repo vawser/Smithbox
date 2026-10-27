@@ -1,0 +1,317 @@
+{
+  "Name": "MoveParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Lightweight"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Lightweight+"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Medium Load"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Medium Load+"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Weight"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Overweight"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Super Lightweight"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Camouflage_Light"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Camouflage_Light+"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Camouflage_Medium Load"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Camouflage_Medium Load+"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Camouflage_Heavy"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Camouflage_Overweight"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Camouflage_Ultralight"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Underwater (Deep)_Light Load"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Underwater (Deep)_Light Load+"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Underwater (Deep)_Medium Load"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Underwater (Deep)_Medium Load+"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Underwater (Deep)_Heavy Load"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Underwater (Deep)_Overweight"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Underwater (Deep)_Super Light Load"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[SP] Guard Alert_Light Load"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "[SP] Guard Alert_Light Load+"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "[SP] Guard Alert_Medium Load"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "[SP] Guard Alert_Medium Load+"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "[SP] Guard Alert_Heavy Load"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "[SP] Guard Alert_Overweight"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "[SP] Guard Alert_Ultralight"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Enemy Basic In Combat"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Bird Standard"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Guard"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Dog"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Dragon Demon"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Enemy Basic Out of Combat"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Scale Miner In Combat"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Scale Miner Non-combat (Sack)"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Scale Miner Non-combat (Pickle)"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Giant Spider_Peering Down"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Gargoyle Test"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Dragon Demon (Tunnel)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "For Storm Beast"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Storm Beast (Child Ray)_Flopping Wait"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Scale Miner Non-combat (Bare Hands)"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Octopus Head Combat"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Gargoyle Airborne (For 3050)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Gargoyle Ground (For 3050)"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Shadow Woman_Disappear Use"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Blood Mite Dedicated"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Parry Aim"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "[DLC]Enemy Basic In combat (version without run/turn animations)"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "PG for 4-Legged Type"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "[GR] Test_First Logic"
+      ]
+    }
+  ]
+}

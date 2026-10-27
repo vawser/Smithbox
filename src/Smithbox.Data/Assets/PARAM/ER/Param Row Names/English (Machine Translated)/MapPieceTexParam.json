@@ -1,0 +1,305 @@
+{
+  "Name": "MapPieceTexParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Green North: Immediately After Start"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Green North: Agheel Lake"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Green North: Plains"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Green North: Misty Forest"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Green North: Town Surroundings"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Green 1 North Side_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Green North: Stormhill"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Green South East"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Green South Fort"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Green South West"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Lake Main"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Lake Main Southwest"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Lake Main Southeast"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Lake Main East"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Lake Main West"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Lake Main Northeast"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Lake Main North"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Lake Main Lake Fort"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Lake Main Around Raya Lucaria Tower"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Lake Main Multi Disabled"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Lake Main In Front of Giant EV"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Lake Overhang Terrain"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Lake Overhang Terrain_Master Support"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Highland Outside Castle Wall_Carriage Graveyard"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Highland Outside Walls_Fort"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Highland Outside Walls_Main Street"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Highland Outside Walls_Deracine Forest"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Highland Outside Walls_Back Street"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Highland Outside Walls_Dragon Worship Land"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Highland Inside Walls"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Highland Volcano Upper Level"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Highland Volcano Upper Level Volcano Prison Surroundings"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Highland Volcano Lower Level"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Plains Entrance"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Plains South Side"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Plains Fort"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Plains Radahn Desert"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Plains Main Great Rot Swamp"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Plains Descending Ruins Origin"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Plains Descending Ruins Origin Dragon's Nest"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Highland Forbidden Area"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Highland Forbidden Area_Multiplayer Prohibited"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Snowy Mountain Giant"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Snowy Mountain Ice Lake"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Snowy Mountain Sub-route"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Snowy Mountain Fort"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Snowy Mountain Giant Grave"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Snowfield"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Snowfield"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "Other"
+      ]
+    }
+  ]
+}

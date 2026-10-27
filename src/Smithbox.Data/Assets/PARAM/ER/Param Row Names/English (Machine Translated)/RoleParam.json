@@ -1,0 +1,299 @@
+{
+  "Name": "RoleParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Surviving Player"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Co-op sign"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Hostile Sign"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Wander"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Wandering NPC"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Normal Enemy"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Animal Enemy"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Boss Enemy"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Grey Ghost"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "NPC"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Replay"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Display"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Invader"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "For Arena"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Blood Writing Message Phantom"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Invasion_A"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Invasion_B"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Rescue Guest"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Invasion_A_Limited"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Co-op sign_NPC"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Invasion_A_NPC"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Invasion_B_NPC"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Invasion_C_NPC"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Max Count"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "White Ghost (Red Hunt White Covenant)"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Black Ghost (Red Hunter White Covenant)"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "White Ghost (Sun Covenant)"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Black Ghost (Sun Covenant)"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "White Ghost (Berserker Covenant)"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "Black Ghost (Berserker Covenant)"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "White Ghost (Sinner Hero Covenant)"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Black Ghost (Sinner Hero Covenant)"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "White Ghost (Rosaria Covenant)"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Black Ghost (Rosalia Covenant)"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "White Ghost (Map Guardian Covenant (Bridge))"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "Black Ghost (Map Guardian Covenant (Bridge))"
+      ]
+    },
+    {
+      "ID": 70001,
+      "Entries": [
+        "White Ghost (Map Guardian Covenant (Anor))"
+      ]
+    },
+    {
+      "ID": 70002,
+      "Entries": [
+        "Black Ghost (Map Guardian Covenant (Anor))"
+      ]
+    },
+    {
+      "ID": 80001,
+      "Entries": [
+        "Blue Church 1"
+      ]
+    },
+    {
+      "ID": 80002,
+      "Entries": [
+        "Blue Church 2"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "White Ghost (Red Hunt 2 Covenant)"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "Black Ghost (Red Hunter 2 Covenant)"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "White Ghost_CodeName"
+      ]
+    },
+    {
+      "ID": 1000002,
+      "Entries": [
+        "Black Ghost_Codename"
+      ]
+    },
+    {
+      "ID": 1000003,
+      "Entries": [
+        "Wander_Codename"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "Replay_Codename"
+      ]
+    },
+    {
+      "ID": 1000014,
+      "Entries": [
+        "Blood Writing Message Phantom_Codename"
+      ]
+    },
+    {
+      "ID": 1000000001,
+      "Entries": [
+        "Invasion_NPC World Invasion_Multiplayer Enabled (Miquella Faction Battle)_Former Host PC"
+      ]
+    },
+    {
+      "ID": 1000000002,
+      "Entries": [
+        "Invasion_NPC World Invasion_Multiplayer Enabled (Miquella Faction Battle)_PC Ally"
+      ]
+    }
+  ]
+}

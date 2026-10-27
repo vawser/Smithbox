@@ -1,0 +1,1709 @@
+{
+  "Name": "NpcAiActionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "R1 Attack"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Bow+Magic Charged"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "R2 Attack"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Bow+Magic Charged"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "L1 Attack"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Bow+Magic Charged"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Skill: Stance"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Kick"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Jump Attack"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "One-handed/Two-handed Toggle"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Item Use"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Spare"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Backstep"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Left weapon switch"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Right weapon switch"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Movement ↑"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Movement ↑←"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Movement ↑→"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Movement ←"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Movement →"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Movement ↓"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Movement ↓←"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Movement ↓→"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Guard movement ↑"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Guard movement ↑←"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Guard movement ↑→"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Guard movement ←"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Guard movement →"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Guard movement ↓"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Guard movement ↓←"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Guard movement ↓→"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Dash Movement"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Guard Dash Movement"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Rolling ↑"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Rolling ↑←"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Rolling ↑→"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Rolling ←"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Rolling →"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Rolling ↓"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Rolling ↓←"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Rolling ↓→"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Skill R1 Attack"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Skill R2 Attack"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Lock-step ↑"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Lock-step ↑←"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Lock-step ↑→"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Lock-step ←"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Lock-step →"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Lock-step ↓"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Lock-step ↓←"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Lock-step ↓→"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Skill Stance Movement ↑"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Skill Stance Movement ↑←"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Skill Stance Movement ↑→"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Skill Stance Movement ←"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Skill Stance Movement →"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Skill Stance Movement ↓"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Skill Stance Movement ↓←"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Skill Stance Movement ↓→"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Skill Stance R1 Attack ↑"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Skill Stance R1 Attack ↑←"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Skill Stance R1 Attack ↑→"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Skill Stance R1 Attack ←"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Skill Stance R1 Attack →"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Skill Stance R1 Attack ↓"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Skill Stance R1 Attack ↓←"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Skill Stance R1 Attack ↓→"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Skill Stance R2 Attack ↑"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Skill Stance R2 Attack ↑←"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Skill Stance R2 Attack ↑→"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Skill Stance R2 Attack ←"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "Skill Stance R2 Attack →"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "Skill Stance R2 Attack ↓"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Skill Stance R2 Attack ↓←"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Skill Stance R2 Attack ↓→"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Shield_Thrust_R1Attack"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Shield_Thrust_R2Attack(Reserve)"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Dash R1 Attack"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Dash R2 Attack"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "Dash L1 Attack"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Ladder"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Ladder"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Left hand weapon two-handed grip"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Mount"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Dismount"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Crouch"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Movement Jump (for Mount Check)"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Dash Button"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Buddy Dismiss Request"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Jump"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Jump ↑"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Jump ↑←"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Jump ↑→"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Jump ←"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Jump →"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Jump ↓"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Jump ↓←"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Jump ↓→"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Dash Jump ↑"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "R1\u3000↑"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "R1\u3000↑←"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "R1\u3000↑→"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "R1\u3000←"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "R1\u3000→"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "R1\u3000↓"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "R1\u3000↓←"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "R1\u3000↓→"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "L1\u3000↑"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "L1\u3000↑←"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "L1\u3000↑→"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "L1\u3000←"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "L1\u3000→"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "L1\u3000↓"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "L1\u3000↓←"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "L1\u3000↓→"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "R1 Hold ↑"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "R1 Hold ↑←"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "R1 Hold ↑→"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "R1 Hold ←"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "R1 Hold →"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "R1 Hold ↓"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "R1 Hold ↓←"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "R1 Hold ↓→"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "L1 Hold ↑"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "L1 Hold ↑←"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "L1 Hold ↑→"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "L1 Hold ←"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "L1 Hold →"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "L1 Hold ↓"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "L1 Hold ↓←"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "L1 Hold ↓→"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Gesture ID00"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Gesture ID01"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Gesture ID02"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Gesture ID03"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Gesture ID04"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Gesture ID05"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Gesture ID06"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Gesture ID07"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Gesture ID08"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Gesture ID09"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Gesture ID10"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Gesture ID11"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Gesture ID12"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Gesture ID13"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Gesture ID14"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Gesture ID15"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Gesture ID16"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Gesture ID17"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "Gesture ID18"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "Gesture ID19"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Gesture ID20"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Gesture ID21"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Gesture ID22"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "Gesture ID23"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "Gesture ID24"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "Gesture ID25"
+      ]
+    },
+    {
+      "ID": 1026,
+      "Entries": [
+        "Gesture ID26"
+      ]
+    },
+    {
+      "ID": 1027,
+      "Entries": [
+        "Gesture ID27"
+      ]
+    },
+    {
+      "ID": 1028,
+      "Entries": [
+        "Gesture ID28"
+      ]
+    },
+    {
+      "ID": 1029,
+      "Entries": [
+        "Gesture ID29"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Gesture ID30"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "Gesture ID31"
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        "Gesture ID32"
+      ]
+    },
+    {
+      "ID": 1033,
+      "Entries": [
+        "Gesture ID33"
+      ]
+    },
+    {
+      "ID": 1034,
+      "Entries": [
+        "Gesture ID34"
+      ]
+    },
+    {
+      "ID": 1035,
+      "Entries": [
+        "Gesture ID35"
+      ]
+    },
+    {
+      "ID": 1036,
+      "Entries": [
+        "Gesture ID36"
+      ]
+    },
+    {
+      "ID": 1037,
+      "Entries": [
+        "Gesture ID37"
+      ]
+    },
+    {
+      "ID": 1038,
+      "Entries": [
+        "Gesture ID38"
+      ]
+    },
+    {
+      "ID": 1039,
+      "Entries": [
+        "Gesture ID39"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Gesture ID40"
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        "Gesture ID41"
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        "Gesture ID42"
+      ]
+    },
+    {
+      "ID": 1043,
+      "Entries": [
+        "Gesture ID43"
+      ]
+    },
+    {
+      "ID": 1044,
+      "Entries": [
+        "Gesture ID44"
+      ]
+    },
+    {
+      "ID": 1045,
+      "Entries": [
+        "Gesture ID45"
+      ]
+    },
+    {
+      "ID": 1046,
+      "Entries": [
+        "Gesture ID46"
+      ]
+    },
+    {
+      "ID": 1047,
+      "Entries": [
+        "Gesture ID47"
+      ]
+    },
+    {
+      "ID": 1048,
+      "Entries": [
+        "Gesture ID48"
+      ]
+    },
+    {
+      "ID": 1049,
+      "Entries": [
+        "Gesture ID49"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Gesture ID50"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "Gesture ID51"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "Gesture ID52"
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        "Gesture ID53"
+      ]
+    },
+    {
+      "ID": 1054,
+      "Entries": [
+        "Gesture ID54"
+      ]
+    },
+    {
+      "ID": 1055,
+      "Entries": [
+        "Gesture ID55"
+      ]
+    },
+    {
+      "ID": 1056,
+      "Entries": [
+        "Gesture ID56"
+      ]
+    },
+    {
+      "ID": 1057,
+      "Entries": [
+        "Gesture ID57"
+      ]
+    },
+    {
+      "ID": 1058,
+      "Entries": [
+        "Gesture ID58"
+      ]
+    },
+    {
+      "ID": 1059,
+      "Entries": [
+        "Gesture ID59"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Gesture ID60"
+      ]
+    },
+    {
+      "ID": 1061,
+      "Entries": [
+        "Gesture ID61"
+      ]
+    },
+    {
+      "ID": 1062,
+      "Entries": [
+        "Gesture ID62"
+      ]
+    },
+    {
+      "ID": 1063,
+      "Entries": [
+        "Gesture ID63"
+      ]
+    },
+    {
+      "ID": 1064,
+      "Entries": [
+        "Gesture ID64"
+      ]
+    },
+    {
+      "ID": 1065,
+      "Entries": [
+        "Gesture ID65"
+      ]
+    },
+    {
+      "ID": 1066,
+      "Entries": [
+        "Gesture ID66"
+      ]
+    },
+    {
+      "ID": 1067,
+      "Entries": [
+        "Gesture ID67"
+      ]
+    },
+    {
+      "ID": 1068,
+      "Entries": [
+        "Gesture ID68"
+      ]
+    },
+    {
+      "ID": 1069,
+      "Entries": [
+        "Gesture ID69"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Gesture ID70"
+      ]
+    },
+    {
+      "ID": 1071,
+      "Entries": [
+        "Gesture ID71"
+      ]
+    },
+    {
+      "ID": 1072,
+      "Entries": [
+        "Gesture ID72"
+      ]
+    },
+    {
+      "ID": 1073,
+      "Entries": [
+        "Gesture ID73"
+      ]
+    },
+    {
+      "ID": 1074,
+      "Entries": [
+        "Gesture ID74"
+      ]
+    },
+    {
+      "ID": 1075,
+      "Entries": [
+        "Gesture ID75"
+      ]
+    },
+    {
+      "ID": 1076,
+      "Entries": [
+        "Gesture ID76"
+      ]
+    },
+    {
+      "ID": 1077,
+      "Entries": [
+        "Gesture ID77"
+      ]
+    },
+    {
+      "ID": 1078,
+      "Entries": [
+        "Gesture ID78"
+      ]
+    },
+    {
+      "ID": 1079,
+      "Entries": [
+        "Gesture ID79"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "Gesture ID80"
+      ]
+    },
+    {
+      "ID": 1081,
+      "Entries": [
+        "Gesture ID81"
+      ]
+    },
+    {
+      "ID": 1082,
+      "Entries": [
+        "Gesture ID82"
+      ]
+    },
+    {
+      "ID": 1083,
+      "Entries": [
+        "Gesture ID83"
+      ]
+    },
+    {
+      "ID": 1084,
+      "Entries": [
+        "Gesture ID84"
+      ]
+    },
+    {
+      "ID": 1085,
+      "Entries": [
+        "Gesture ID85"
+      ]
+    },
+    {
+      "ID": 1086,
+      "Entries": [
+        "Gesture ID86"
+      ]
+    },
+    {
+      "ID": 1087,
+      "Entries": [
+        "Gesture ID87"
+      ]
+    },
+    {
+      "ID": 1088,
+      "Entries": [
+        "Gesture ID88"
+      ]
+    },
+    {
+      "ID": 1089,
+      "Entries": [
+        "Gesture ID89"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "Gesture ID90"
+      ]
+    },
+    {
+      "ID": 1091,
+      "Entries": [
+        "Gesture ID91"
+      ]
+    },
+    {
+      "ID": 1092,
+      "Entries": [
+        "Gesture ID92"
+      ]
+    },
+    {
+      "ID": 1093,
+      "Entries": [
+        "Gesture ID93"
+      ]
+    },
+    {
+      "ID": 1094,
+      "Entries": [
+        "Gesture ID94"
+      ]
+    },
+    {
+      "ID": 1095,
+      "Entries": [
+        "Gesture ID95"
+      ]
+    },
+    {
+      "ID": 1096,
+      "Entries": [
+        "Gesture ID96"
+      ]
+    },
+    {
+      "ID": 1097,
+      "Entries": [
+        "Gesture ID97"
+      ]
+    },
+    {
+      "ID": 1098,
+      "Entries": [
+        "Gesture ID98"
+      ]
+    },
+    {
+      "ID": 1099,
+      "Entries": [
+        "Gesture ID99"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Gesture ID100"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Gesture ID101"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Gesture ID102"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Gesture ID103"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Gesture ID104"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Gesture ID105"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Gesture ID106"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Gesture ID107"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "Gesture ID108"
+      ]
+    },
+    {
+      "ID": 1109,
+      "Entries": [
+        "Gesture ID109"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Gesture ID110"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "Gesture ID111"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "Gesture ID112"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "Gesture ID113"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "Gesture ID114"
+      ]
+    },
+    {
+      "ID": 1115,
+      "Entries": [
+        "Gesture ID115"
+      ]
+    },
+    {
+      "ID": 1116,
+      "Entries": [
+        "Gesture ID116"
+      ]
+    },
+    {
+      "ID": 1117,
+      "Entries": [
+        "Gesture ID117"
+      ]
+    },
+    {
+      "ID": 1118,
+      "Entries": [
+        "Gesture ID118"
+      ]
+    },
+    {
+      "ID": 1119,
+      "Entries": [
+        "Gesture ID119"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Gesture ID120"
+      ]
+    },
+    {
+      "ID": 1121,
+      "Entries": [
+        "Gesture ID121"
+      ]
+    },
+    {
+      "ID": 1122,
+      "Entries": [
+        "Gesture ID122"
+      ]
+    },
+    {
+      "ID": 1123,
+      "Entries": [
+        "Gesture ID123"
+      ]
+    },
+    {
+      "ID": 1124,
+      "Entries": [
+        "Gesture ID124"
+      ]
+    },
+    {
+      "ID": 1125,
+      "Entries": [
+        "Gesture ID125"
+      ]
+    },
+    {
+      "ID": 1126,
+      "Entries": [
+        "Gesture ID126"
+      ]
+    },
+    {
+      "ID": 1127,
+      "Entries": [
+        "Gesture ID127"
+      ]
+    },
+    {
+      "ID": 1128,
+      "Entries": [
+        "Gesture ID128"
+      ]
+    },
+    {
+      "ID": 1129,
+      "Entries": [
+        "Gesture ID129"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Gesture ID130"
+      ]
+    },
+    {
+      "ID": 1131,
+      "Entries": [
+        "Gesture ID131"
+      ]
+    },
+    {
+      "ID": 1132,
+      "Entries": [
+        "Gesture ID132"
+      ]
+    },
+    {
+      "ID": 1133,
+      "Entries": [
+        "Gesture ID133"
+      ]
+    },
+    {
+      "ID": 1134,
+      "Entries": [
+        "Gesture ID134"
+      ]
+    },
+    {
+      "ID": 1135,
+      "Entries": [
+        "Gesture ID135"
+      ]
+    },
+    {
+      "ID": 1136,
+      "Entries": [
+        "Gesture ID136"
+      ]
+    },
+    {
+      "ID": 1137,
+      "Entries": [
+        "Gesture ID137"
+      ]
+    },
+    {
+      "ID": 1138,
+      "Entries": [
+        "Gesture ID138"
+      ]
+    },
+    {
+      "ID": 1139,
+      "Entries": [
+        "Gesture ID139"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "Gesture ID140"
+      ]
+    },
+    {
+      "ID": 1141,
+      "Entries": [
+        "Gesture ID141"
+      ]
+    },
+    {
+      "ID": 1142,
+      "Entries": [
+        "Gesture ID142"
+      ]
+    },
+    {
+      "ID": 1143,
+      "Entries": [
+        "Gesture ID143"
+      ]
+    },
+    {
+      "ID": 1144,
+      "Entries": [
+        "Gesture ID144"
+      ]
+    },
+    {
+      "ID": 1145,
+      "Entries": [
+        "Gesture ID145"
+      ]
+    },
+    {
+      "ID": 1146,
+      "Entries": [
+        "Gesture ID146"
+      ]
+    },
+    {
+      "ID": 1147,
+      "Entries": [
+        "Gesture ID147"
+      ]
+    },
+    {
+      "ID": 1148,
+      "Entries": [
+        "Gesture ID148"
+      ]
+    },
+    {
+      "ID": 1149,
+      "Entries": [
+        "Gesture ID149"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Gesture ID150"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "No Input"
+      ]
+    }
+  ]
+}

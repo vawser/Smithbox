@@ -1,0 +1,5261 @@
+{
+  "Name": "ReinforceParamWeapon",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Normal"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Normal +1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Normal +2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Normal+3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Normal+4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Normal+5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Normal+6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Normal+7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Normal+8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Normal+9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Normal +10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Normal +11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Normal +12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Normal +13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Normal +14"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Normal +15"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Normal +16"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Normal +17"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Normal +18"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Normal +19"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Normal +20"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Normal+21"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Normal+22"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Normal+23"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Normal+24"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Normal+25"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Strength Correction"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Strength Correction+1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Strength Correction+2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Strength Correction+3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Strength Correction+4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Strength Correction+5"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Strength Correction+6"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Strength Correction+7"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Strength Correction+8"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Strength Correction+9"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Strength Correction+10"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Strength Correction+11"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Strength Correction+12"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Strength Correction+13"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Strength Correction+14"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Strength Correction+15"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Strength Correction+16"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Strength Correction+17"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Strength Correction+18"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Strength Correction+19"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Strength Correction+20"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Strength Correction+21"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Strength Correction+22"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Strength Correction+23"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Strength Correction+24"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Strength Correction+25"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Dexterity Correction"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Dexterity Correction+1"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Dexterity Correction+2"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Dexterity Correction+3"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Dexterity Correction+4"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Dexterity Correction+5"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Dexterity Correction+6"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Dexterity Correction+7"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Dexterity Correction+8"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Dexterity Correction+9"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Dexterity Correction+10"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Dexterity Correction+11"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Dexterity Correction+12"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Dexterity Correction+13"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Dexterity Correction+14"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Dexterity Correction+15"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Dexterity Correction+16"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Dexterity Correction+17"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Dexterity Correction+18"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Dexterity Correction+19"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Dexterity Correction+20"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Dexterity Correction+21"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Dexterity Correction+22"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Dexterity Correction+23"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Dexterity Correction+24"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Dexterity Correction+25"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Quality"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Quality+1"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Quality+2"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Quality+3"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Quality+4"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Quality+5"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Quality+6"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Quality+7"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Quality+8"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Quality+9"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Quality+10"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Quality+11"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Quality+12"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Quality+13"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Quality+14"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Quality+15"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Quality+16"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Quality+17"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Quality+18"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Quality+19"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Quality+20"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Quality+21"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "Quality+22"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "Quality+23"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "Quality+24"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "Quality+25"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Warrior Fire"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Warrior Fire +1"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Warrior Fire +2"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Warrior Fire +3"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Warrior Fire +4"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Warrior Fire +5"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Warrior Fire +6"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Warrior Fire +7"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Warrior Fire +8"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Warrior Fire +9"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Warrior Fire +10"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Warrior Fire +11"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "Warrior Fire +12"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "Warrior Fire +13"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "Warrior Fire +14"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "Warrior Fire +15"
+      ]
+    },
+    {
+      "ID": 416,
+      "Entries": [
+        "Warrior Fire +16"
+      ]
+    },
+    {
+      "ID": 417,
+      "Entries": [
+        "Warrior Fire +17"
+      ]
+    },
+    {
+      "ID": 418,
+      "Entries": [
+        "Warrior Fire +18"
+      ]
+    },
+    {
+      "ID": 419,
+      "Entries": [
+        "Warrior Fire +19"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Warrior Fire +20"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "Warrior Fire +21"
+      ]
+    },
+    {
+      "ID": 422,
+      "Entries": [
+        "Warrior Fire +22"
+      ]
+    },
+    {
+      "ID": 423,
+      "Entries": [
+        "Warrior Fire +23"
+      ]
+    },
+    {
+      "ID": 424,
+      "Entries": [
+        "Warrior Fire +24"
+      ]
+    },
+    {
+      "ID": 425,
+      "Entries": [
+        "Warrior Fire +25"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Sorcerer Fire"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Sorcerer Fire+1"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Sorcerer Fire+2"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Sorcerer Fire+3"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Sorcerer Fire+4"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Sorcerer Fire+5"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Sorcerer Fire+6"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Sorcerer Fire+7"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "Sorcerer Fire+8"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "Sorcerer Fire+9"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Sorcerer Fire+10"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Sorcerer Fire+11"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Sorcerer Fire+12"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "Sorcerer Fire+13"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "Sorcerer Fire+14"
+      ]
+    },
+    {
+      "ID": 515,
+      "Entries": [
+        "Sorcerer Fire+15"
+      ]
+    },
+    {
+      "ID": 516,
+      "Entries": [
+        "Sorcerer Fire+16"
+      ]
+    },
+    {
+      "ID": 517,
+      "Entries": [
+        "Sorcerer Fire+17"
+      ]
+    },
+    {
+      "ID": 518,
+      "Entries": [
+        "Sorcerer Fire+18"
+      ]
+    },
+    {
+      "ID": 519,
+      "Entries": [
+        "Sorcerer Fire+19"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Sorcerer Fire+20"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Sorcerer Fire+21"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "Sorcerer Fire+22"
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        "Sorcerer Fire+23"
+      ]
+    },
+    {
+      "ID": 524,
+      "Entries": [
+        "Sorcerer Fire+24"
+      ]
+    },
+    {
+      "ID": 525,
+      "Entries": [
+        "Sorcerer Fire+25"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Lightning"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Lightning +1"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Lightning +2"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Lightning +3"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Lightning +4"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Lightning +5"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Lightning +6"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Lightning +7"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "Lightning +8"
+      ]
+    },
+    {
+      "ID": 609,
+      "Entries": [
+        "Lightning +9"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Lightning +10"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "Lightning +11"
+      ]
+    },
+    {
+      "ID": 612,
+      "Entries": [
+        "Lightning +12"
+      ]
+    },
+    {
+      "ID": 613,
+      "Entries": [
+        "Lightning +13"
+      ]
+    },
+    {
+      "ID": 614,
+      "Entries": [
+        "Lightning +14"
+      ]
+    },
+    {
+      "ID": 615,
+      "Entries": [
+        "Lightning +15"
+      ]
+    },
+    {
+      "ID": 616,
+      "Entries": [
+        "Lightning +16"
+      ]
+    },
+    {
+      "ID": 617,
+      "Entries": [
+        "Lightning +17"
+      ]
+    },
+    {
+      "ID": 618,
+      "Entries": [
+        "Lightning +18"
+      ]
+    },
+    {
+      "ID": 619,
+      "Entries": [
+        "Lightning +19"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Lightning +20"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "Lightning +21"
+      ]
+    },
+    {
+      "ID": 622,
+      "Entries": [
+        "Lightning +22"
+      ]
+    },
+    {
+      "ID": 623,
+      "Entries": [
+        "Lightning +23"
+      ]
+    },
+    {
+      "ID": 624,
+      "Entries": [
+        "Lightning +24"
+      ]
+    },
+    {
+      "ID": 625,
+      "Entries": [
+        "Lightning +25"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Holy"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Holy +1"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Holy +2"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Holy +3"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Holy +4"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Holy +5"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "Holy +6"
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        "Holy +7"
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        "Holy +8"
+      ]
+    },
+    {
+      "ID": 709,
+      "Entries": [
+        "Holy +9"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Holy +10"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "Holy +11"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "Holy +12"
+      ]
+    },
+    {
+      "ID": 713,
+      "Entries": [
+        "Holy +13"
+      ]
+    },
+    {
+      "ID": 714,
+      "Entries": [
+        "Holy +14"
+      ]
+    },
+    {
+      "ID": 715,
+      "Entries": [
+        "Holy +15"
+      ]
+    },
+    {
+      "ID": 716,
+      "Entries": [
+        "Holy +16"
+      ]
+    },
+    {
+      "ID": 717,
+      "Entries": [
+        "Holy +17"
+      ]
+    },
+    {
+      "ID": 718,
+      "Entries": [
+        "Holy +18"
+      ]
+    },
+    {
+      "ID": 719,
+      "Entries": [
+        "Holy +19"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "Holy +20"
+      ]
+    },
+    {
+      "ID": 721,
+      "Entries": [
+        "Holy +21"
+      ]
+    },
+    {
+      "ID": 722,
+      "Entries": [
+        "Holy +22"
+      ]
+    },
+    {
+      "ID": 723,
+      "Entries": [
+        "Holy +23"
+      ]
+    },
+    {
+      "ID": 724,
+      "Entries": [
+        "Holy +24"
+      ]
+    },
+    {
+      "ID": 725,
+      "Entries": [
+        "Holy +25"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Magic"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Magic +1"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Magic+2"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Magic+3"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Magic+4"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Magic+5"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Magic+6"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Magic+7"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Magic+8"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Magic+9"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Magic +10"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "Magic +11"
+      ]
+    },
+    {
+      "ID": 812,
+      "Entries": [
+        "Magic +12"
+      ]
+    },
+    {
+      "ID": 813,
+      "Entries": [
+        "Magic +13"
+      ]
+    },
+    {
+      "ID": 814,
+      "Entries": [
+        "Magic +14"
+      ]
+    },
+    {
+      "ID": 815,
+      "Entries": [
+        "Magic +15"
+      ]
+    },
+    {
+      "ID": 816,
+      "Entries": [
+        "Magic +16"
+      ]
+    },
+    {
+      "ID": 817,
+      "Entries": [
+        "Magic +17"
+      ]
+    },
+    {
+      "ID": 818,
+      "Entries": [
+        "Magic +18"
+      ]
+    },
+    {
+      "ID": 819,
+      "Entries": [
+        "Magic+19"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "Magic+20"
+      ]
+    },
+    {
+      "ID": 821,
+      "Entries": [
+        "Magic+21"
+      ]
+    },
+    {
+      "ID": 822,
+      "Entries": [
+        "Magic+22"
+      ]
+    },
+    {
+      "ID": 823,
+      "Entries": [
+        "Magic+23"
+      ]
+    },
+    {
+      "ID": 824,
+      "Entries": [
+        "Magic+24"
+      ]
+    },
+    {
+      "ID": 825,
+      "Entries": [
+        "Magic+25"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Frost"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Frost +1"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Frost +2"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Frost +3"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "Frost +4"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "Frost +5"
+      ]
+    },
+    {
+      "ID": 906,
+      "Entries": [
+        "Frost +6"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "Frost +7"
+      ]
+    },
+    {
+      "ID": 908,
+      "Entries": [
+        "Frost +8"
+      ]
+    },
+    {
+      "ID": 909,
+      "Entries": [
+        "Frost +9"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "Frost +10"
+      ]
+    },
+    {
+      "ID": 911,
+      "Entries": [
+        "Frost +11"
+      ]
+    },
+    {
+      "ID": 912,
+      "Entries": [
+        "Frost +12"
+      ]
+    },
+    {
+      "ID": 913,
+      "Entries": [
+        "Frost +13"
+      ]
+    },
+    {
+      "ID": 914,
+      "Entries": [
+        "Frost +14"
+      ]
+    },
+    {
+      "ID": 915,
+      "Entries": [
+        "Frost +15"
+      ]
+    },
+    {
+      "ID": 916,
+      "Entries": [
+        "Frost +16"
+      ]
+    },
+    {
+      "ID": 917,
+      "Entries": [
+        "Frost +17"
+      ]
+    },
+    {
+      "ID": 918,
+      "Entries": [
+        "Frost +18"
+      ]
+    },
+    {
+      "ID": 919,
+      "Entries": [
+        "Frost +19"
+      ]
+    },
+    {
+      "ID": 920,
+      "Entries": [
+        "Frost +20"
+      ]
+    },
+    {
+      "ID": 921,
+      "Entries": [
+        "Frost +21"
+      ]
+    },
+    {
+      "ID": 922,
+      "Entries": [
+        "Frost +22"
+      ]
+    },
+    {
+      "ID": 923,
+      "Entries": [
+        "Frost +23"
+      ]
+    },
+    {
+      "ID": 924,
+      "Entries": [
+        "Frost +24"
+      ]
+    },
+    {
+      "ID": 925,
+      "Entries": [
+        "Frost +25"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Poison"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Poison +1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Poison+2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Poison+3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Poison+4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Poison+5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Poison+6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Poison+7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Poison+8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Poison+9"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Poison +10"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Poison +11"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Poison +12"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Poison +13"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Poison +14"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Poison +15"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Poison +16"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Poison +17"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "Poison +18"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "Poison+19"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Poison+20"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Poison+21"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Poison+22"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "Poison+23"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "Poison+24"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "Poison+25"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Blood"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Blood +1"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Blood +2"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Blood +3"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Blood +4"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Blood +5"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Blood +6"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Blood +7"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "Blood +8"
+      ]
+    },
+    {
+      "ID": 1109,
+      "Entries": [
+        "Blood +9"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Blood +10"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "Blood +11"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "Blood +12"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "Blood +13"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "Blood +14"
+      ]
+    },
+    {
+      "ID": 1115,
+      "Entries": [
+        "Blood +15"
+      ]
+    },
+    {
+      "ID": 1116,
+      "Entries": [
+        "Blood +16"
+      ]
+    },
+    {
+      "ID": 1117,
+      "Entries": [
+        "Blood +17"
+      ]
+    },
+    {
+      "ID": 1118,
+      "Entries": [
+        "Blood +18"
+      ]
+    },
+    {
+      "ID": 1119,
+      "Entries": [
+        "Blood +19"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Blood +20"
+      ]
+    },
+    {
+      "ID": 1121,
+      "Entries": [
+        "Blood +21"
+      ]
+    },
+    {
+      "ID": 1122,
+      "Entries": [
+        "Blood +22"
+      ]
+    },
+    {
+      "ID": 1123,
+      "Entries": [
+        "Blood +23"
+      ]
+    },
+    {
+      "ID": 1124,
+      "Entries": [
+        "Blood +24"
+      ]
+    },
+    {
+      "ID": 1125,
+      "Entries": [
+        "Blood +25"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Luck"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Luck+1"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Luck+2"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Luck+3"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Luck+4"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Luck+5"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "Luck+6"
+      ]
+    },
+    {
+      "ID": 1207,
+      "Entries": [
+        "Luck+7"
+      ]
+    },
+    {
+      "ID": 1208,
+      "Entries": [
+        "Luck+8"
+      ]
+    },
+    {
+      "ID": 1209,
+      "Entries": [
+        "Luck+9"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Luck+10"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "Luck+11"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "Luck+12"
+      ]
+    },
+    {
+      "ID": 1213,
+      "Entries": [
+        "Luck+13"
+      ]
+    },
+    {
+      "ID": 1214,
+      "Entries": [
+        "Luck+14"
+      ]
+    },
+    {
+      "ID": 1215,
+      "Entries": [
+        "Luck+15"
+      ]
+    },
+    {
+      "ID": 1216,
+      "Entries": [
+        "Luck+16"
+      ]
+    },
+    {
+      "ID": 1217,
+      "Entries": [
+        "Luck+17"
+      ]
+    },
+    {
+      "ID": 1218,
+      "Entries": [
+        "Luck+18"
+      ]
+    },
+    {
+      "ID": 1219,
+      "Entries": [
+        "Luck+19"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Luck+20"
+      ]
+    },
+    {
+      "ID": 1221,
+      "Entries": [
+        "Luck+21"
+      ]
+    },
+    {
+      "ID": 1222,
+      "Entries": [
+        "Luck+22"
+      ]
+    },
+    {
+      "ID": 1223,
+      "Entries": [
+        "Luck+23"
+      ]
+    },
+    {
+      "ID": 1224,
+      "Entries": [
+        "Luck+24"
+      ]
+    },
+    {
+      "ID": 1225,
+      "Entries": [
+        "Luck+25"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Hybrid Catalyst Boost"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "Hybrid Catalyst Boost +1"
+      ]
+    },
+    {
+      "ID": 1602,
+      "Entries": [
+        "Hybrid Catalyst Boost +2"
+      ]
+    },
+    {
+      "ID": 1603,
+      "Entries": [
+        "Hybrid Catalyst Boost +3"
+      ]
+    },
+    {
+      "ID": 1604,
+      "Entries": [
+        "Hybrid Catalyst Boost +4"
+      ]
+    },
+    {
+      "ID": 1605,
+      "Entries": [
+        "Hybrid Catalyst Boost +5"
+      ]
+    },
+    {
+      "ID": 1606,
+      "Entries": [
+        "Hybrid Catalyst Boost +6"
+      ]
+    },
+    {
+      "ID": 1607,
+      "Entries": [
+        "Hybrid Catalyst Boost +7"
+      ]
+    },
+    {
+      "ID": 1608,
+      "Entries": [
+        "Hybrid Catalyst Boost +8"
+      ]
+    },
+    {
+      "ID": 1609,
+      "Entries": [
+        "Hybrid Catalyst Boost +9"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "Hybrid Catalyst Boost +10"
+      ]
+    },
+    {
+      "ID": 1611,
+      "Entries": [
+        "Hybrid Catalyst Boost +11"
+      ]
+    },
+    {
+      "ID": 1612,
+      "Entries": [
+        "Hybrid Catalyst Boost +12"
+      ]
+    },
+    {
+      "ID": 1613,
+      "Entries": [
+        "Hybrid Catalyst Boost +13"
+      ]
+    },
+    {
+      "ID": 1614,
+      "Entries": [
+        "Hybrid Catalyst Boost +14"
+      ]
+    },
+    {
+      "ID": 1615,
+      "Entries": [
+        "Hybrid Catalyst Boost +15"
+      ]
+    },
+    {
+      "ID": 1616,
+      "Entries": [
+        "Hybrid Catalyst Boost +16"
+      ]
+    },
+    {
+      "ID": 1617,
+      "Entries": [
+        "Hybrid Catalyst Boost +17"
+      ]
+    },
+    {
+      "ID": 1618,
+      "Entries": [
+        "Hybrid Catalyst Boost +18"
+      ]
+    },
+    {
+      "ID": 1619,
+      "Entries": [
+        "Hybrid Catalyst Boost +19"
+      ]
+    },
+    {
+      "ID": 1620,
+      "Entries": [
+        "Hybrid Catalyst Boost +20"
+      ]
+    },
+    {
+      "ID": 1621,
+      "Entries": [
+        "Hybrid Catalyst Boost +21"
+      ]
+    },
+    {
+      "ID": 1622,
+      "Entries": [
+        "Hybrid Catalyst Boost +22"
+      ]
+    },
+    {
+      "ID": 1623,
+      "Entries": [
+        "Hybrid Catalyst Boost +23"
+      ]
+    },
+    {
+      "ID": 1624,
+      "Entries": [
+        "Hybrid Catalyst Boost +24"
+      ]
+    },
+    {
+      "ID": 1625,
+      "Entries": [
+        "Hybrid Catalyst Boost +25"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer)"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer)+1"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +2"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +3"
+      ]
+    },
+    {
+      "ID": 1704,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +4"
+      ]
+    },
+    {
+      "ID": 1705,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +5"
+      ]
+    },
+    {
+      "ID": 1706,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +6"
+      ]
+    },
+    {
+      "ID": 1707,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +7"
+      ]
+    },
+    {
+      "ID": 1708,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +8"
+      ]
+    },
+    {
+      "ID": 1709,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +9"
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer)+10"
+      ]
+    },
+    {
+      "ID": 1711,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer)+11"
+      ]
+    },
+    {
+      "ID": 1712,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer)+12"
+      ]
+    },
+    {
+      "ID": 1713,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer)+13"
+      ]
+    },
+    {
+      "ID": 1714,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer)+14"
+      ]
+    },
+    {
+      "ID": 1715,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer)+15"
+      ]
+    },
+    {
+      "ID": 1716,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer)+16"
+      ]
+    },
+    {
+      "ID": 1717,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer)+17"
+      ]
+    },
+    {
+      "ID": 1718,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer)+18"
+      ]
+    },
+    {
+      "ID": 1719,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +19"
+      ]
+    },
+    {
+      "ID": 1720,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +20"
+      ]
+    },
+    {
+      "ID": 1721,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +21"
+      ]
+    },
+    {
+      "ID": 1722,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +22"
+      ]
+    },
+    {
+      "ID": 1723,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +23"
+      ]
+    },
+    {
+      "ID": 1724,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +24"
+      ]
+    },
+    {
+      "ID": 1725,
+      "Entries": [
+        "Hybrid Catalyst Boost (Early Bloomer) +25"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer)"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +1"
+      ]
+    },
+    {
+      "ID": 1802,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +2"
+      ]
+    },
+    {
+      "ID": 1803,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +3"
+      ]
+    },
+    {
+      "ID": 1804,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +4"
+      ]
+    },
+    {
+      "ID": 1805,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +5"
+      ]
+    },
+    {
+      "ID": 1806,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +6"
+      ]
+    },
+    {
+      "ID": 1807,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +7"
+      ]
+    },
+    {
+      "ID": 1808,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +8"
+      ]
+    },
+    {
+      "ID": 1809,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +9"
+      ]
+    },
+    {
+      "ID": 1810,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +10"
+      ]
+    },
+    {
+      "ID": 1811,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +11"
+      ]
+    },
+    {
+      "ID": 1812,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +12"
+      ]
+    },
+    {
+      "ID": 1813,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +13"
+      ]
+    },
+    {
+      "ID": 1814,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +14"
+      ]
+    },
+    {
+      "ID": 1815,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +15"
+      ]
+    },
+    {
+      "ID": 1816,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +16"
+      ]
+    },
+    {
+      "ID": 1817,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +17"
+      ]
+    },
+    {
+      "ID": 1818,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +18"
+      ]
+    },
+    {
+      "ID": 1819,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +19"
+      ]
+    },
+    {
+      "ID": 1820,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +20"
+      ]
+    },
+    {
+      "ID": 1821,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +21"
+      ]
+    },
+    {
+      "ID": 1822,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +22"
+      ]
+    },
+    {
+      "ID": 1823,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +23"
+      ]
+    },
+    {
+      "ID": 1824,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +24"
+      ]
+    },
+    {
+      "ID": 1825,
+      "Entries": [
+        "Hybrid Catalyst Boost (Late Bloomer) +25"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Catalyst Boost"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "Catalyst Boost+1"
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "Catalyst Boost+2"
+      ]
+    },
+    {
+      "ID": 1903,
+      "Entries": [
+        "Catalyst Boost+3"
+      ]
+    },
+    {
+      "ID": 1904,
+      "Entries": [
+        "Catalyst Boost+4"
+      ]
+    },
+    {
+      "ID": 1905,
+      "Entries": [
+        "Catalyst Boost+5"
+      ]
+    },
+    {
+      "ID": 1906,
+      "Entries": [
+        "Catalyst Boost+6"
+      ]
+    },
+    {
+      "ID": 1907,
+      "Entries": [
+        "Catalyst Boost+7"
+      ]
+    },
+    {
+      "ID": 1908,
+      "Entries": [
+        "Catalyst Boost+8"
+      ]
+    },
+    {
+      "ID": 1909,
+      "Entries": [
+        "Catalyst Boost+9"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "Catalyst Boost+10"
+      ]
+    },
+    {
+      "ID": 1911,
+      "Entries": [
+        "Catalyst Boost+11"
+      ]
+    },
+    {
+      "ID": 1912,
+      "Entries": [
+        "Catalyst Boost+12"
+      ]
+    },
+    {
+      "ID": 1913,
+      "Entries": [
+        "Catalyst Boost+13"
+      ]
+    },
+    {
+      "ID": 1914,
+      "Entries": [
+        "Catalyst Boost+14"
+      ]
+    },
+    {
+      "ID": 1915,
+      "Entries": [
+        "Catalyst Boost+15"
+      ]
+    },
+    {
+      "ID": 1916,
+      "Entries": [
+        "Catalyst Boost+16"
+      ]
+    },
+    {
+      "ID": 1917,
+      "Entries": [
+        "Catalyst Boost+17"
+      ]
+    },
+    {
+      "ID": 1918,
+      "Entries": [
+        "Catalyst Boost+18"
+      ]
+    },
+    {
+      "ID": 1919,
+      "Entries": [
+        "Catalyst Boost+19"
+      ]
+    },
+    {
+      "ID": 1920,
+      "Entries": [
+        "Catalyst Boost+20"
+      ]
+    },
+    {
+      "ID": 1921,
+      "Entries": [
+        "Catalyst Boost+21"
+      ]
+    },
+    {
+      "ID": 1922,
+      "Entries": [
+        "Catalyst Boost+22"
+      ]
+    },
+    {
+      "ID": 1923,
+      "Entries": [
+        "Catalyst Boost+23"
+      ]
+    },
+    {
+      "ID": 1924,
+      "Entries": [
+        "Catalyst Boost+24"
+      ]
+    },
+    {
+      "ID": 1925,
+      "Entries": [
+        "Catalyst Boost+25"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+6"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+7"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+8"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+9"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+10"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+11"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+12"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+13"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+14"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+15"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+16"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+17"
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+18"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+19"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+20"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+21"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+22"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+23"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+24"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "Catalyst Boost (Early Bloomer)+25"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+1"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+2"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+3"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+4"
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+5"
+      ]
+    },
+    {
+      "ID": 2106,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+6"
+      ]
+    },
+    {
+      "ID": 2107,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+7"
+      ]
+    },
+    {
+      "ID": 2108,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+8"
+      ]
+    },
+    {
+      "ID": 2109,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+9"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+10"
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+11"
+      ]
+    },
+    {
+      "ID": 2112,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+12"
+      ]
+    },
+    {
+      "ID": 2113,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+13"
+      ]
+    },
+    {
+      "ID": 2114,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+14"
+      ]
+    },
+    {
+      "ID": 2115,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+15"
+      ]
+    },
+    {
+      "ID": 2116,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+16"
+      ]
+    },
+    {
+      "ID": 2117,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+17"
+      ]
+    },
+    {
+      "ID": 2118,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+18"
+      ]
+    },
+    {
+      "ID": 2119,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+19"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+20"
+      ]
+    },
+    {
+      "ID": 2121,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+21"
+      ]
+    },
+    {
+      "ID": 2122,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+22"
+      ]
+    },
+    {
+      "ID": 2123,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+23"
+      ]
+    },
+    {
+      "ID": 2124,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+24"
+      ]
+    },
+    {
+      "ID": 2125,
+      "Entries": [
+        "Catalyst Boost (Late Bloomer)+25"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Glowing Reinforcement"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Glowing Reinforcement +1"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "Glowing Reinforcement +2"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "Glowing Reinforcement +3"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "Glowing Reinforcement +4"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "Glowing Reinforcement +5"
+      ]
+    },
+    {
+      "ID": 2206,
+      "Entries": [
+        "Glowing Reinforcement +6"
+      ]
+    },
+    {
+      "ID": 2207,
+      "Entries": [
+        "Glowing Reinforcement +7"
+      ]
+    },
+    {
+      "ID": 2208,
+      "Entries": [
+        "Glowing Reinforcement +8"
+      ]
+    },
+    {
+      "ID": 2209,
+      "Entries": [
+        "Glowing Reinforcement +9"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Glowing Reinforcement +10"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Catalyst Glowing Upgrade"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "Catalyst Glow Boost+1"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "Catalyst Glow Boost+2"
+      ]
+    },
+    {
+      "ID": 2403,
+      "Entries": [
+        "Catalyst Glow Boost+3"
+      ]
+    },
+    {
+      "ID": 2404,
+      "Entries": [
+        "Catalyst Glow Boost+4"
+      ]
+    },
+    {
+      "ID": 2405,
+      "Entries": [
+        "Catalyst Glow Boost+5"
+      ]
+    },
+    {
+      "ID": 2406,
+      "Entries": [
+        "Catalyst Glow Boost+6"
+      ]
+    },
+    {
+      "ID": 2407,
+      "Entries": [
+        "Catalyst Glow Boost+7"
+      ]
+    },
+    {
+      "ID": 2408,
+      "Entries": [
+        "Catalyst Glow Boost+8"
+      ]
+    },
+    {
+      "ID": 2409,
+      "Entries": [
+        "Catalyst Glow Boost+9"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "Catalyst Glow Boost+10"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Catalyst Glowing Upgrade (Early Bloomer)"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "Catalyst Glowing Upgrade (Early Bloomer) +1"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "Catalyst Glowing Upgrade (Early Bloomer) +2"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "Catalyst Glowing Upgrade (Early Bloomer) +3"
+      ]
+    },
+    {
+      "ID": 2504,
+      "Entries": [
+        "Catalyst Glowing Upgrade (Early Bloomer) +4"
+      ]
+    },
+    {
+      "ID": 2505,
+      "Entries": [
+        "Catalyst Glowing Upgrade (Early Bloomer) +5"
+      ]
+    },
+    {
+      "ID": 2506,
+      "Entries": [
+        "Catalyst Glowing Upgrade (Early Bloomer) +6"
+      ]
+    },
+    {
+      "ID": 2507,
+      "Entries": [
+        "Catalyst Glowing Upgrade (Early Bloomer) +7"
+      ]
+    },
+    {
+      "ID": 2508,
+      "Entries": [
+        "Catalyst Glowing Upgrade (Early Bloomer) +8"
+      ]
+    },
+    {
+      "ID": 2509,
+      "Entries": [
+        "Catalyst Glowing Upgrade (Early Bloomer) +9"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "Catalyst Glowing Upgrade (Early Bloomer) +10"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Catalyst Glow Boost (Late Bloomer)"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "Catalyst Glow Boost (Late Bloomer)+1"
+      ]
+    },
+    {
+      "ID": 2602,
+      "Entries": [
+        "Catalyst Glow Boost (Late Bloomer)+2"
+      ]
+    },
+    {
+      "ID": 2603,
+      "Entries": [
+        "Catalyst Glow Boost (Late Bloomer)+3"
+      ]
+    },
+    {
+      "ID": 2604,
+      "Entries": [
+        "Catalyst Glow Boost (Late Bloomer)+4"
+      ]
+    },
+    {
+      "ID": 2605,
+      "Entries": [
+        "Catalyst Glow Boost (Late Bloomer)+5"
+      ]
+    },
+    {
+      "ID": 2606,
+      "Entries": [
+        "Catalyst Glow Boost (Late Bloomer)+6"
+      ]
+    },
+    {
+      "ID": 2607,
+      "Entries": [
+        "Catalyst Glow Boost (Late Bloomer)+7"
+      ]
+    },
+    {
+      "ID": 2608,
+      "Entries": [
+        "Catalyst Glow Boost (Late Bloomer)+8"
+      ]
+    },
+    {
+      "ID": 2609,
+      "Entries": [
+        "Catalyst Glow Boost (Late Bloomer)+9"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "Catalyst Glow Boost (Late Bloomer)+10"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost"
+      ]
+    },
+    {
+      "ID": 2701,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost+1"
+      ]
+    },
+    {
+      "ID": 2702,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost+2"
+      ]
+    },
+    {
+      "ID": 2703,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost+3"
+      ]
+    },
+    {
+      "ID": 2704,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost+4"
+      ]
+    },
+    {
+      "ID": 2705,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost+5"
+      ]
+    },
+    {
+      "ID": 2706,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost+6"
+      ]
+    },
+    {
+      "ID": 2707,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost+7"
+      ]
+    },
+    {
+      "ID": 2708,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost+8"
+      ]
+    },
+    {
+      "ID": 2709,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost+9"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost+10"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost (Late Bloomer)"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost (Late Bloomer)+1"
+      ]
+    },
+    {
+      "ID": 2802,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost (Late Bloomer)+2"
+      ]
+    },
+    {
+      "ID": 2803,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost (Late Bloomer)+3"
+      ]
+    },
+    {
+      "ID": 2804,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost (Late Bloomer)+4"
+      ]
+    },
+    {
+      "ID": 2805,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost (Late Bloomer)+5"
+      ]
+    },
+    {
+      "ID": 2806,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost (Late Bloomer)+6"
+      ]
+    },
+    {
+      "ID": 2807,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost (Late Bloomer)+7"
+      ]
+    },
+    {
+      "ID": 2808,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost (Late Bloomer)+8"
+      ]
+    },
+    {
+      "ID": 2809,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost (Late Bloomer)+9"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "Hybrid Catalyst Glowing Boost (Late Bloomer)+10"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "No Upgrade"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Crossbow"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Crossbow +1"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Crossbow +2"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Crossbow +3"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "Crossbow +4"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "Crossbow +5"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "Crossbow +6"
+      ]
+    },
+    {
+      "ID": 3107,
+      "Entries": [
+        "Crossbow +7"
+      ]
+    },
+    {
+      "ID": 3108,
+      "Entries": [
+        "Crossbow +8"
+      ]
+    },
+    {
+      "ID": 3109,
+      "Entries": [
+        "Crossbow +9"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Crossbow +10"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "Crossbow +11"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "Crossbow +12"
+      ]
+    },
+    {
+      "ID": 3113,
+      "Entries": [
+        "Crossbow +13"
+      ]
+    },
+    {
+      "ID": 3114,
+      "Entries": [
+        "Crossbow +14"
+      ]
+    },
+    {
+      "ID": 3115,
+      "Entries": [
+        "Crossbow +15"
+      ]
+    },
+    {
+      "ID": 3116,
+      "Entries": [
+        "Crossbow +16"
+      ]
+    },
+    {
+      "ID": 3117,
+      "Entries": [
+        "Crossbow +17"
+      ]
+    },
+    {
+      "ID": 3118,
+      "Entries": [
+        "Crossbow +18"
+      ]
+    },
+    {
+      "ID": 3119,
+      "Entries": [
+        "Crossbow +19"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Crossbow +20"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "Crossbow +21"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "Crossbow +22"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "Crossbow +23"
+      ]
+    },
+    {
+      "ID": 3124,
+      "Entries": [
+        "Crossbow +24"
+      ]
+    },
+    {
+      "ID": 3125,
+      "Entries": [
+        "Crossbow +25"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Crossbow Glowing Reinforcement"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Crossbow Glowing Reinforcement +1"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "Crossbow Glowing Reinforcement +2"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "Crossbow Glowing Reinforcement +3"
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "Crossbow Glowing Reinforcement +4"
+      ]
+    },
+    {
+      "ID": 3205,
+      "Entries": [
+        "Crossbow Glowing Upgrade +5"
+      ]
+    },
+    {
+      "ID": 3206,
+      "Entries": [
+        "Crossbow Glowing Upgrade +6"
+      ]
+    },
+    {
+      "ID": 3207,
+      "Entries": [
+        "Crossbow Glowing Upgrade +7"
+      ]
+    },
+    {
+      "ID": 3208,
+      "Entries": [
+        "Crossbow Glowing Upgrade +8"
+      ]
+    },
+    {
+      "ID": 3209,
+      "Entries": [
+        "Crossbow Glowing Upgrade +9"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Crossbow Glowing Reinforcement +10"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Averin"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "Averin +1"
+      ]
+    },
+    {
+      "ID": 3302,
+      "Entries": [
+        "Averin +2"
+      ]
+    },
+    {
+      "ID": 3303,
+      "Entries": [
+        "Averin +3"
+      ]
+    },
+    {
+      "ID": 3304,
+      "Entries": [
+        "Averin +4"
+      ]
+    },
+    {
+      "ID": 3305,
+      "Entries": [
+        "Averin +5"
+      ]
+    },
+    {
+      "ID": 3306,
+      "Entries": [
+        "Averin +6"
+      ]
+    },
+    {
+      "ID": 3307,
+      "Entries": [
+        "Averin +7"
+      ]
+    },
+    {
+      "ID": 3308,
+      "Entries": [
+        "Averin +8"
+      ]
+    },
+    {
+      "ID": 3309,
+      "Entries": [
+        "Averin +9"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Averin +10"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Strength Hammer: Growth Plateau Correction"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Strength Hammer: Growth Plateau Correction+1"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Strength Hammer: Growth Plateau Correction+2"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Strength Hammer: Growth Plateau Correction+3"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Strength Hammer: Growth Plateau Correction+4"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Strength Hammer: Growth Plateau Correction+5"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Strength Hammer: Growth Plateau Correction+6"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "Strength Hammer: Growth Plateau Correction+7"
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        "Strength Hammer: Growth Plateau Correction+8"
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        "Strength Hammer: Growth Plateau Correction+9"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Strength Hammer: Growth Plateau Correction+10"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Quality Hammer: Growth Plateau Correction"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "Quality Hammer: Growth Plateau Correction+1"
+      ]
+    },
+    {
+      "ID": 4102,
+      "Entries": [
+        "Quality Hammer: Growth Plateau Correction+2"
+      ]
+    },
+    {
+      "ID": 4103,
+      "Entries": [
+        "Quality Hammer: Growth Plateau Correction+3"
+      ]
+    },
+    {
+      "ID": 4104,
+      "Entries": [
+        "Quality Hammer: Growth Plateau Correction+4"
+      ]
+    },
+    {
+      "ID": 4105,
+      "Entries": [
+        "Quality Hammer: Growth Plateau Correction+5"
+      ]
+    },
+    {
+      "ID": 4106,
+      "Entries": [
+        "Quality Hammer: Growth Plateau Correction+6"
+      ]
+    },
+    {
+      "ID": 4107,
+      "Entries": [
+        "Quality Hammer: Growth Plateau Correction+7"
+      ]
+    },
+    {
+      "ID": 4108,
+      "Entries": [
+        "Quality Hammer: Growth Plateau Correction+8"
+      ]
+    },
+    {
+      "ID": 4109,
+      "Entries": [
+        "Quality Hammer: Growth Plateau Correction+9"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Quality Hammer: Growth Plateau Correction+10"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Scale Boost"
+      ]
+    },
+    {
+      "ID": 4501,
+      "Entries": [
+        "Scale Boost+1"
+      ]
+    },
+    {
+      "ID": 4502,
+      "Entries": [
+        "Scale Boost+2"
+      ]
+    },
+    {
+      "ID": 4503,
+      "Entries": [
+        "Scale Boost+3"
+      ]
+    },
+    {
+      "ID": 4504,
+      "Entries": [
+        "Scale Boost+4"
+      ]
+    },
+    {
+      "ID": 4505,
+      "Entries": [
+        "Scale Boost+5"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "Glowing Reinforcement"
+      ]
+    },
+    {
+      "ID": 4601,
+      "Entries": [
+        "Glowing Reinforcement +1"
+      ]
+    },
+    {
+      "ID": 4602,
+      "Entries": [
+        "Glowing Reinforcement +2"
+      ]
+    },
+    {
+      "ID": 4603,
+      "Entries": [
+        "Glowing Reinforcement +3"
+      ]
+    },
+    {
+      "ID": 4604,
+      "Entries": [
+        "Glowing Reinforcement +4"
+      ]
+    },
+    {
+      "ID": 4605,
+      "Entries": [
+        "Glowing Reinforcement +5"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+1"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+2"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+3"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+4"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+5"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+6"
+      ]
+    },
+    {
+      "ID": 5007,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+7"
+      ]
+    },
+    {
+      "ID": 5008,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+8"
+      ]
+    },
+    {
+      "ID": 5009,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+9"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+10"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+11"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+12"
+      ]
+    },
+    {
+      "ID": 5013,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+13"
+      ]
+    },
+    {
+      "ID": 5014,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+14"
+      ]
+    },
+    {
+      "ID": 5015,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+15"
+      ]
+    },
+    {
+      "ID": 5016,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+16"
+      ]
+    },
+    {
+      "ID": 5017,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+17"
+      ]
+    },
+    {
+      "ID": 5018,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+18"
+      ]
+    },
+    {
+      "ID": 5019,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+19"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+20"
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+21"
+      ]
+    },
+    {
+      "ID": 5022,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+22"
+      ]
+    },
+    {
+      "ID": 5023,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+23"
+      ]
+    },
+    {
+      "ID": 5024,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+24"
+      ]
+    },
+    {
+      "ID": 5025,
+      "Entries": [
+        "High Skill Correction: Growth Plateau Correction+25"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Growth Plateau Strength Correction"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Growth Plateau Strength Correction +1"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Growth Plateau Strength Correction +2"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Growth Plateau Strength Correction +3"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Growth Plateau Strength Correction +4"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "Growth Plateau Strength Correction +5"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "Growth Plateau Strength Correction +6"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "Growth Plateau Strength Correction +7"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "Growth Plateau Strength Correction +8"
+      ]
+    },
+    {
+      "ID": 6009,
+      "Entries": [
+        "Growth Plateau Strength Correction +9"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Growth Plateau Strength Correction +10"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "Growth Plateau Strength Correction +11"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "Growth Plateau Strength Correction +12"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "Growth Plateau Strength Correction +13"
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        "Growth Plateau Strength Correction +14"
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        "Growth Plateau Strength Correction +15"
+      ]
+    },
+    {
+      "ID": 6016,
+      "Entries": [
+        "Growth Plateau Strength Correction +16"
+      ]
+    },
+    {
+      "ID": 6017,
+      "Entries": [
+        "Growth Plateau Strength Correction +17"
+      ]
+    },
+    {
+      "ID": 6018,
+      "Entries": [
+        "Growth Plateau Strength Correction +18"
+      ]
+    },
+    {
+      "ID": 6019,
+      "Entries": [
+        "Growth Plateau Strength Correction +19"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Growth Plateau Strength Correction +20"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "Growth Plateau Strength Correction +21"
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        "Growth Plateau Strength Correction +22"
+      ]
+    },
+    {
+      "ID": 6023,
+      "Entries": [
+        "Growth Plateau Strength Correction +23"
+      ]
+    },
+    {
+      "ID": 6024,
+      "Entries": [
+        "Growth Plateau Strength Correction +24"
+      ]
+    },
+    {
+      "ID": 6025,
+      "Entries": [
+        "Growth Plateau Strength Correction +25"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Quality Axe: Growth Plateau Correction"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Quality Axe: Growth Plateau Correction+1"
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        "Quality Axe: Growth Plateau Correction+2"
+      ]
+    },
+    {
+      "ID": 6103,
+      "Entries": [
+        "Quality Axe: Growth Plateau Correction+3"
+      ]
+    },
+    {
+      "ID": 6104,
+      "Entries": [
+        "Quality Axe: Growth Plateau Correction+4"
+      ]
+    },
+    {
+      "ID": 6105,
+      "Entries": [
+        "Quality Axe: Growth Plateau Correction+5"
+      ]
+    },
+    {
+      "ID": 6106,
+      "Entries": [
+        "Quality Axe: Growth Plateau Correction+6"
+      ]
+    },
+    {
+      "ID": 6107,
+      "Entries": [
+        "Quality Axe: Growth Plateau Correction+7"
+      ]
+    },
+    {
+      "ID": 6108,
+      "Entries": [
+        "Quality Axe: Growth Plateau Correction+8"
+      ]
+    },
+    {
+      "ID": 6109,
+      "Entries": [
+        "Quality Axe: Growth Plateau Correction+9"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "Quality Axe: Growth Plateau Correction+10"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Strength Axe: Growth Plateau Correction"
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        "Strength Axe: Growth Plateau Correction+1"
+      ]
+    },
+    {
+      "ID": 6202,
+      "Entries": [
+        "Strength Axe: Growth Plateau Correction+2"
+      ]
+    },
+    {
+      "ID": 6203,
+      "Entries": [
+        "Strength Axe: Growth Plateau Correction+3"
+      ]
+    },
+    {
+      "ID": 6204,
+      "Entries": [
+        "Strength Axe: Growth Plateau Correction+4"
+      ]
+    },
+    {
+      "ID": 6205,
+      "Entries": [
+        "Strength Axe: Growth Plateau Correction+5"
+      ]
+    },
+    {
+      "ID": 6206,
+      "Entries": [
+        "Strength Axe: Growth Plateau Correction+6"
+      ]
+    },
+    {
+      "ID": 6207,
+      "Entries": [
+        "Strength Axe: Growth Plateau Correction+7"
+      ]
+    },
+    {
+      "ID": 6208,
+      "Entries": [
+        "Strength Axe: Growth Plateau Correction+8"
+      ]
+    },
+    {
+      "ID": 6209,
+      "Entries": [
+        "Strength Axe: Growth Plateau Correction+9"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "Strength Axe: Growth Plateau Correction+10"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Dexterity Axe: Growth Plateau Correction"
+      ]
+    },
+    {
+      "ID": 6301,
+      "Entries": [
+        "Dexterity Axe: Growth Plateau Correction+1"
+      ]
+    },
+    {
+      "ID": 6302,
+      "Entries": [
+        "Dexterity Axe: Growth Plateau Correction+2"
+      ]
+    },
+    {
+      "ID": 6303,
+      "Entries": [
+        "Dexterity Axe: Growth Plateau Correction+3"
+      ]
+    },
+    {
+      "ID": 6304,
+      "Entries": [
+        "Dexterity Axe: Growth Plateau Correction+4"
+      ]
+    },
+    {
+      "ID": 6305,
+      "Entries": [
+        "Dexterity Axe: Growth Plateau Correction+5"
+      ]
+    },
+    {
+      "ID": 6306,
+      "Entries": [
+        "Dexterity Axe: Growth Plateau Correction+6"
+      ]
+    },
+    {
+      "ID": 6307,
+      "Entries": [
+        "Dexterity Axe: Growth Plateau Correction+7"
+      ]
+    },
+    {
+      "ID": 6308,
+      "Entries": [
+        "Dexterity Axe: Growth Plateau Correction+8"
+      ]
+    },
+    {
+      "ID": 6309,
+      "Entries": [
+        "Dexterity Axe: Growth Plateau Correction+9"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Dexterity Axe: Growth Plateau Correction+10"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Quality Type"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Quality Type+1"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Quality Type+2"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Quality Type+3"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "Quality Type+4"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "Quality Type+5"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "Quality Type+6"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "Quality Type+7"
+      ]
+    },
+    {
+      "ID": 7008,
+      "Entries": [
+        "Quality Type+8"
+      ]
+    },
+    {
+      "ID": 7009,
+      "Entries": [
+        "Quality Type+9"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Quality Type+10"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Shield_(Upslope_Large)"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "Shield_(Upslope_Large)+1"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "Shield_(Upslope_Large)+2"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "Shield_(Upslope_Large)+3"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "Shield_(Upslope_Large)+4"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "Shield_(Upslope_Large)+5"
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        "Shield_(Upslope_Large)+6"
+      ]
+    },
+    {
+      "ID": 8007,
+      "Entries": [
+        "Shield_(Upslope_Large)+7"
+      ]
+    },
+    {
+      "ID": 8008,
+      "Entries": [
+        "Shield_(Upslope_Large)+8"
+      ]
+    },
+    {
+      "ID": 8009,
+      "Entries": [
+        "Shield_(Upslope_Large)+9"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Shield_(Upslope_Large)+10"
+      ]
+    },
+    {
+      "ID": 8011,
+      "Entries": [
+        "Shield_(Upslope_Large)+11"
+      ]
+    },
+    {
+      "ID": 8012,
+      "Entries": [
+        "Shield_(Upslope_Large)+12"
+      ]
+    },
+    {
+      "ID": 8013,
+      "Entries": [
+        "Shield_(Upslope_Large)+13"
+      ]
+    },
+    {
+      "ID": 8014,
+      "Entries": [
+        "Shield_(Upslope_Large)+14"
+      ]
+    },
+    {
+      "ID": 8015,
+      "Entries": [
+        "Shield_(Upslope_Large)+15"
+      ]
+    },
+    {
+      "ID": 8016,
+      "Entries": [
+        "Shield_(Upslope_Large)+16"
+      ]
+    },
+    {
+      "ID": 8017,
+      "Entries": [
+        "Shield_(Upslope_Large)+17"
+      ]
+    },
+    {
+      "ID": 8018,
+      "Entries": [
+        "Shield_(Upslope_Large)+18"
+      ]
+    },
+    {
+      "ID": 8019,
+      "Entries": [
+        "Shield_(Upslope_Large)+19"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Shield_(Upslope_Large)+20"
+      ]
+    },
+    {
+      "ID": 8021,
+      "Entries": [
+        "Shield_(Upslope_Large)+21"
+      ]
+    },
+    {
+      "ID": 8022,
+      "Entries": [
+        "Shield_(Upslope_Large)+22"
+      ]
+    },
+    {
+      "ID": 8023,
+      "Entries": [
+        "Shield_(Upslope_Large)+23"
+      ]
+    },
+    {
+      "ID": 8024,
+      "Entries": [
+        "Shield_(Upslope_Large)+24"
+      ]
+    },
+    {
+      "ID": 8025,
+      "Entries": [
+        "Shield_(Upslope_Large)+25"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Shield_(Upslope_Medium)"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "Shield_(Upslope_Medium)+1"
+      ]
+    },
+    {
+      "ID": 8102,
+      "Entries": [
+        "Shield_(Upslope_Medium)+2"
+      ]
+    },
+    {
+      "ID": 8103,
+      "Entries": [
+        "Shield_(Upslope_Medium)+3"
+      ]
+    },
+    {
+      "ID": 8104,
+      "Entries": [
+        "Shield_(Upslope_Medium)+4"
+      ]
+    },
+    {
+      "ID": 8105,
+      "Entries": [
+        "Shield_(Upslope_Medium)+5"
+      ]
+    },
+    {
+      "ID": 8106,
+      "Entries": [
+        "Shield_(Upslope_Medium)+6"
+      ]
+    },
+    {
+      "ID": 8107,
+      "Entries": [
+        "Shield_(Upslope_Medium)+7"
+      ]
+    },
+    {
+      "ID": 8108,
+      "Entries": [
+        "Shield_(Upslope_Medium)+8"
+      ]
+    },
+    {
+      "ID": 8109,
+      "Entries": [
+        "Shield_(Upslope_Medium)+9"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "Shield_(Upslope_Medium)+10"
+      ]
+    },
+    {
+      "ID": 8111,
+      "Entries": [
+        "Shield_(Upslope_Medium)+11"
+      ]
+    },
+    {
+      "ID": 8112,
+      "Entries": [
+        "Shield_(Upslope_Medium)+12"
+      ]
+    },
+    {
+      "ID": 8113,
+      "Entries": [
+        "Shield_(Upslope_Medium)+13"
+      ]
+    },
+    {
+      "ID": 8114,
+      "Entries": [
+        "Shield_(Upslope_Medium)+14"
+      ]
+    },
+    {
+      "ID": 8115,
+      "Entries": [
+        "Shield_(Upslope_Medium)+15"
+      ]
+    },
+    {
+      "ID": 8116,
+      "Entries": [
+        "Shield_(Upslope_Medium)+16"
+      ]
+    },
+    {
+      "ID": 8117,
+      "Entries": [
+        "Shield_(Upslope_Medium)+17"
+      ]
+    },
+    {
+      "ID": 8118,
+      "Entries": [
+        "Shield_(Upslope_Medium)+18"
+      ]
+    },
+    {
+      "ID": 8119,
+      "Entries": [
+        "Shield_(Upslope_Medium)+19"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "Shield_(Upslope_Medium)+20"
+      ]
+    },
+    {
+      "ID": 8121,
+      "Entries": [
+        "Shield_(Upslope_Medium)+21"
+      ]
+    },
+    {
+      "ID": 8122,
+      "Entries": [
+        "Shield_(Upslope_Medium)+22"
+      ]
+    },
+    {
+      "ID": 8123,
+      "Entries": [
+        "Shield_(Upslope_Medium)+23"
+      ]
+    },
+    {
+      "ID": 8124,
+      "Entries": [
+        "Shield_(Upslope_Medium)+24"
+      ]
+    },
+    {
+      "ID": 8125,
+      "Entries": [
+        "Shield_(Upslope_Medium)+25"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Shield_(Upslope_Small)"
+      ]
+    },
+    {
+      "ID": 8201,
+      "Entries": [
+        "Shield_(Upslope_Small)+1"
+      ]
+    },
+    {
+      "ID": 8202,
+      "Entries": [
+        "Shield_(Upslope_Small)+2"
+      ]
+    },
+    {
+      "ID": 8203,
+      "Entries": [
+        "Shield_(Upslope_Small)+3"
+      ]
+    },
+    {
+      "ID": 8204,
+      "Entries": [
+        "Shield_(Upslope_Small)+4"
+      ]
+    },
+    {
+      "ID": 8205,
+      "Entries": [
+        "Shield_(Upslope_Small)+5"
+      ]
+    },
+    {
+      "ID": 8206,
+      "Entries": [
+        "Shield (small upward range) +6"
+      ]
+    },
+    {
+      "ID": 8207,
+      "Entries": [
+        "Shield (small upward range) +7"
+      ]
+    },
+    {
+      "ID": 8208,
+      "Entries": [
+        "Shield (small upward range) +8"
+      ]
+    },
+    {
+      "ID": 8209,
+      "Entries": [
+        "Shield (small upward range) +9"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "Shield_(Upslope_Small)+10"
+      ]
+    },
+    {
+      "ID": 8211,
+      "Entries": [
+        "Shield_(Upslope_Small)+11"
+      ]
+    },
+    {
+      "ID": 8212,
+      "Entries": [
+        "Shield_(Upslope_Small)+12"
+      ]
+    },
+    {
+      "ID": 8213,
+      "Entries": [
+        "Shield_(Upslope_Small)+13"
+      ]
+    },
+    {
+      "ID": 8214,
+      "Entries": [
+        "Shield_(Upslope_Small)+14"
+      ]
+    },
+    {
+      "ID": 8215,
+      "Entries": [
+        "Shield_(Upslope_Small)+15"
+      ]
+    },
+    {
+      "ID": 8216,
+      "Entries": [
+        "Shield_(Upslope_Small)+16"
+      ]
+    },
+    {
+      "ID": 8217,
+      "Entries": [
+        "Shield_(Upslope_Small)+17"
+      ]
+    },
+    {
+      "ID": 8218,
+      "Entries": [
+        "Shield_(Upslope_Small)+18"
+      ]
+    },
+    {
+      "ID": 8219,
+      "Entries": [
+        "Shield_(Upslope_Small)+19"
+      ]
+    },
+    {
+      "ID": 8220,
+      "Entries": [
+        "Shield_(Upslope_Small)+20"
+      ]
+    },
+    {
+      "ID": 8221,
+      "Entries": [
+        "Shield_(Upslope_Small)+21"
+      ]
+    },
+    {
+      "ID": 8222,
+      "Entries": [
+        "Shield_(Upslope_Small)+22"
+      ]
+    },
+    {
+      "ID": 8223,
+      "Entries": [
+        "Shield_(Upslope_Small)+23"
+      ]
+    },
+    {
+      "ID": 8224,
+      "Entries": [
+        "Shield_(Upslope_Small)+24"
+      ]
+    },
+    {
+      "ID": 8225,
+      "Entries": [
+        "Shield_(Upslope_Small)+25"
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "Shield (glowing upgrade)"
+      ]
+    },
+    {
+      "ID": 8301,
+      "Entries": [
+        "Shield (glowing upgrade) +1"
+      ]
+    },
+    {
+      "ID": 8302,
+      "Entries": [
+        "Shield (glowing upgrade) +2"
+      ]
+    },
+    {
+      "ID": 8303,
+      "Entries": [
+        "Shield (glowing upgrade) +3"
+      ]
+    },
+    {
+      "ID": 8304,
+      "Entries": [
+        "Shield (glowing upgrade) +4"
+      ]
+    },
+    {
+      "ID": 8305,
+      "Entries": [
+        "Shield (glowing upgrade) +5"
+      ]
+    },
+    {
+      "ID": 8306,
+      "Entries": [
+        "Shield (glowing upgrade) +6"
+      ]
+    },
+    {
+      "ID": 8307,
+      "Entries": [
+        "Shield (glowing upgrade) +7"
+      ]
+    },
+    {
+      "ID": 8308,
+      "Entries": [
+        "Shield (glowing upgrade) +8"
+      ]
+    },
+    {
+      "ID": 8309,
+      "Entries": [
+        "Shield (glowing upgrade) +9"
+      ]
+    },
+    {
+      "ID": 8310,
+      "Entries": [
+        "Shield (glowing upgrade) +10"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "Shield (glowing upgrade: large growth)"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "Shield (glowing upgrade: large growth) +1"
+      ]
+    },
+    {
+      "ID": 8502,
+      "Entries": [
+        "Shield (glowing upgrade: large growth) +2"
+      ]
+    },
+    {
+      "ID": 8503,
+      "Entries": [
+        "Shield (glowing upgrade: large growth) +3"
+      ]
+    },
+    {
+      "ID": 8504,
+      "Entries": [
+        "Shield (glowing upgrade: large growth) +4"
+      ]
+    },
+    {
+      "ID": 8505,
+      "Entries": [
+        "Shield (glowing upgrade: large growth) +5"
+      ]
+    },
+    {
+      "ID": 8506,
+      "Entries": [
+        "Shield (glowing upgrade: large growth) +6"
+      ]
+    },
+    {
+      "ID": 8507,
+      "Entries": [
+        "Shield (glowing upgrade: large growth) +7"
+      ]
+    },
+    {
+      "ID": 8508,
+      "Entries": [
+        "Shield (glowing upgrade: large growth) +8"
+      ]
+    },
+    {
+      "ID": 8509,
+      "Entries": [
+        "Shield (glowing upgrade: large growth) +9"
+      ]
+    },
+    {
+      "ID": 8510,
+      "Entries": [
+        "Shield (glowing upgrade: large growth) +10"
+      ]
+    },
+    {
+      "ID": 8600,
+      "Entries": [
+        "Shield (Greatshield_large upward range)"
+      ]
+    },
+    {
+      "ID": 8601,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +1"
+      ]
+    },
+    {
+      "ID": 8602,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +2"
+      ]
+    },
+    {
+      "ID": 8603,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +3"
+      ]
+    },
+    {
+      "ID": 8604,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +4"
+      ]
+    },
+    {
+      "ID": 8605,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +5"
+      ]
+    },
+    {
+      "ID": 8606,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +6"
+      ]
+    },
+    {
+      "ID": 8607,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +7"
+      ]
+    },
+    {
+      "ID": 8608,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +8"
+      ]
+    },
+    {
+      "ID": 8609,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +9"
+      ]
+    },
+    {
+      "ID": 8610,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +10"
+      ]
+    },
+    {
+      "ID": 8611,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +11"
+      ]
+    },
+    {
+      "ID": 8612,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +12"
+      ]
+    },
+    {
+      "ID": 8613,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +13"
+      ]
+    },
+    {
+      "ID": 8614,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +14"
+      ]
+    },
+    {
+      "ID": 8615,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +15"
+      ]
+    },
+    {
+      "ID": 8616,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +16"
+      ]
+    },
+    {
+      "ID": 8617,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +17"
+      ]
+    },
+    {
+      "ID": 8618,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +18"
+      ]
+    },
+    {
+      "ID": 8619,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +19"
+      ]
+    },
+    {
+      "ID": 8620,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +20"
+      ]
+    },
+    {
+      "ID": 8621,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +21"
+      ]
+    },
+    {
+      "ID": 8622,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +22"
+      ]
+    },
+    {
+      "ID": 8623,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +23"
+      ]
+    },
+    {
+      "ID": 8624,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +24"
+      ]
+    },
+    {
+      "ID": 8625,
+      "Entries": [
+        "Shield (Greatshield_large upward range) +25"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Shield (for adjustment)"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Shield (for adjustment) +1"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Shield (for adjustment) +2"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "Shield (for adjustment) +3"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "Shield (for adjustment) +4"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "Shield (for adjustment) +5"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "Shield (for adjustment) +6"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "Shield (for adjustment) +7"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "Shield (for adjustment) +8"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "Shield (for adjustment) +9"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Shield (for adjustment) +10"
+      ]
+    }
+  ]
+}

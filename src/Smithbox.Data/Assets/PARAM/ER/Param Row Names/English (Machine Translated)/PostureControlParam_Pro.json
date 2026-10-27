@@ -1,0 +1,77 @@
+{
+  "Name": "PostureControlParam_Pro",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Standard"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Fat Monk A"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Fat B"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Twin Armor"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Mounted_Standard"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Mounted_Fat A"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Mounted_Fat B"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Twin Armor"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Crouch_Standard"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Crouch_Fat A"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Crouch_Fat B"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Twin Armor"
+      ]
+    }
+  ]
+}

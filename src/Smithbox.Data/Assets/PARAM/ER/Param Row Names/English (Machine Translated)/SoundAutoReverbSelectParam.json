@@ -1,0 +1,77 @@
+{
+  "Name": "SoundAutoReverbSelectParam",
+  "Entries": [
+    {
+      "ID": 107,
+      "Entries": [
+        "007_Underground_Tunnel"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "008_Underground_HugeSpace"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "002_Outdoor_Narrow"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "003_Room"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "002_Outdoor_Narrow"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "002_Outdoor_Narrow"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "001_Outdoor"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "003_Room"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "004_Room_Large"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "005_Hall"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "006_Hall_Large"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "000_None"
+      ]
+    }
+  ]
+}

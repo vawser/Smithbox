@@ -1,0 +1,203 @@
+{
+  "Name": "FeTextEffectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Undefined"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Boss Defeat (Legacy Boss Series)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Boss Defeat (Great Rune Boss)"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Boss Defeat (Small Exploration Series)"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Boss Defeat (Plus Alpha)"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Host Defeated"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Invader Repelled"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Objective Complete (Cooperator)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Site of Grace Presentation"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Arena Start"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Arena Victory"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Arena Draw"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Arena Defeat"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Map Fragment Acquired"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Acquiring Major Rune"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Boss Defeat (Final Boss)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Invader Repel (Hostile Sign)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Invader Repelled (Invasion B)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Invader Repelled (Invasion C)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Multiplayer Rank Up: Cooperative Sign Rank 1"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Multiplayer Rank Up: Cooperative Sign Rank 2"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Multiplayer Rank Up: Hostile Sign Rank 1"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Multiplayer Rank Up: Hostile Sign Rank 2"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Multiplayer Rank Up: Invasion_A Rank 1"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Multiplayer Rank Up: Invasion_A Rank 2"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Multiplayer Rank Up: Invasion_B Rank 1"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Multiplayer Rank Up: Invasion_B Rank 2"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Multiplayer Rank Up: Rescue Guest Rank 1"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Multiplayer Rank Up: Rescue Guest Rank 2"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Charm Death"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Died from drinking poison"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Death (With Background Fade)"
+      ]
+    }
+  ]
+}

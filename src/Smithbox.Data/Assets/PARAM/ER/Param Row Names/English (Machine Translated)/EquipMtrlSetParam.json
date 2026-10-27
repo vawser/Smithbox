@@ -1,0 +1,4397 @@
+{
+  "Name": "EquipMtrlSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Normal+0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Normal+1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Normal+2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Normal+3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Normal+4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Normal+5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Normal+6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Normal+7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Normal+8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Normal+9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Normal+10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Normal+11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Normal+12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Normal+13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Normal+14"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Normal+15"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Normal+16"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Normal+17"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Normal+18"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Normal+19"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Normal+20"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Normal+21"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Normal+22"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Normal+23"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Normal+24"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Normal+25"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Dexterity Correction+0"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Dexterity Correction+1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Dexterity Correction+2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Dexterity Correction+3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Dexterity Correction+4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Dexterity Correction+5"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Dexterity Correction+6"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Dexterity Correction+7"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Dexterity Correction+8"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Dexterity Correction+9"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Dexterity Correction+10"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Dexterity Correction+11"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Dexterity Correction+12"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Dexterity Correction+13"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Dexterity Correction+14"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Dexterity Correction+15"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Dexterity Correction+16"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Dexterity Correction+17"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Dexterity Correction+18"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Dexterity Correction+19"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Dexterity Correction+20"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Dexterity Correction+21"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Dexterity Correction+22"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Dexterity Correction+23"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Dexterity Correction+24"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Dexterity Correction+25"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Strength Correction+0"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Strength Correction+1"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Strength Correction+2"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Strength Correction+3"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Strength Correction+4"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Strength Correction+5"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Strength Correction+6"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Strength Correction+7"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Strength Correction+8"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Strength Correction+9"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Strength Correction+10"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Strength Correction+11"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Strength Correction+12"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Strength Correction+13"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Strength Correction+14"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Strength Correction+15"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Strength Correction+16"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Strength Correction+17"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Strength Correction+18"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Strength Correction+19"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Strength Correction+20"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Strength Correction+21"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Strength Correction+22"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Strength Correction+23"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Strength Correction+24"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Strength Correction+25"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Quality+0"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Quality+1"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Quality+2"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Quality+3"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Quality+4"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Quality+5"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Quality+6"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Quality+7"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Quality+8"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Quality+9"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Quality+10"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Quality+11"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Quality+12"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Quality+13"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Quality+14"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Quality+15"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Quality+16"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Quality+17"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Quality+18"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Quality+19"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Quality+20"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Quality+21"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "Quality+22"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "Quality+23"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "Quality+24"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "Quality+25"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Magic+Magic Correction+0"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Magic+Magic Correction+1"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Magic+Magic Correction+2"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Magic+Magic Correction+3"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Magic+Magic Correction+4"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Magic+Magic Correction+5"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Magic+Magic Correction+6"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Magic+Magic Correction+7"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Magic+Magic Correction+8"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Magic+Magic Correction+9"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Magic+Magic Correction+10"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Magic+Magic Correction+11"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "Magic+Magic Correction+12"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "Magic+Magic Correction+13"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "Magic+Magic Correction+14"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "Magic+Magic Correction+15"
+      ]
+    },
+    {
+      "ID": 416,
+      "Entries": [
+        "Magic+Magic Correction+16"
+      ]
+    },
+    {
+      "ID": 417,
+      "Entries": [
+        "Magic+Magic Correction+17"
+      ]
+    },
+    {
+      "ID": 418,
+      "Entries": [
+        "Magic+Magic Correction+18"
+      ]
+    },
+    {
+      "ID": 419,
+      "Entries": [
+        "Magic+Magic Correction+19"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Magic+Magic Correction+20"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "Magic+Magic Correction+21"
+      ]
+    },
+    {
+      "ID": 422,
+      "Entries": [
+        "Magic+Magic Correction+22"
+      ]
+    },
+    {
+      "ID": 423,
+      "Entries": [
+        "Magic+Magic Correction+23"
+      ]
+    },
+    {
+      "ID": 424,
+      "Entries": [
+        "Magic+Magic Correction+24"
+      ]
+    },
+    {
+      "ID": 425,
+      "Entries": [
+        "Magic+Magic Correction+25"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Magic+MP Recovery+0"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Magic+MP Recovery+1"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Magic+MP Recovery+2"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Magic+MP Recovery+3"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Magic+MP Recovery+4"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Magic+MP Recovery+5"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Magic+MP Recovery+6"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Magic+MP Recovery+7"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "Magic+MP Recovery+8"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "Magic+MP Recovery+9"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Magic+MP Recovery+10"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Magic+MP Recovery+11"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Magic+MP Recovery+12"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "Magic+MP Recovery+13"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "Magic+MP Recovery+14"
+      ]
+    },
+    {
+      "ID": 515,
+      "Entries": [
+        "Magic+MP Recovery+15"
+      ]
+    },
+    {
+      "ID": 516,
+      "Entries": [
+        "Magic+MP Recovery+16"
+      ]
+    },
+    {
+      "ID": 517,
+      "Entries": [
+        "Magic+MP Recovery+17"
+      ]
+    },
+    {
+      "ID": 518,
+      "Entries": [
+        "Magic+MP Recovery+18"
+      ]
+    },
+    {
+      "ID": 519,
+      "Entries": [
+        "Magic+MP Recovery+19"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Magic+MP Recovery+20"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Magic+MP Recovery+21"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "Magic+MP Recovery+22"
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        "Magic+MP Recovery+23"
+      ]
+    },
+    {
+      "ID": 524,
+      "Entries": [
+        "Magic+MP Recovery+24"
+      ]
+    },
+    {
+      "ID": 525,
+      "Entries": [
+        "Magic+MP Recovery+25"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Fire+0"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Fire+1"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Fire+2"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Fire+3"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Fire+4"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Fire+5"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Fire+6"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Fire+7"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "Fire+8"
+      ]
+    },
+    {
+      "ID": 609,
+      "Entries": [
+        "Fire+9"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Fire+10"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "Fire+11"
+      ]
+    },
+    {
+      "ID": 612,
+      "Entries": [
+        "Fire+12"
+      ]
+    },
+    {
+      "ID": 613,
+      "Entries": [
+        "Fire+13"
+      ]
+    },
+    {
+      "ID": 614,
+      "Entries": [
+        "Fire+14"
+      ]
+    },
+    {
+      "ID": 615,
+      "Entries": [
+        "Fire+15"
+      ]
+    },
+    {
+      "ID": 616,
+      "Entries": [
+        "Fire+16"
+      ]
+    },
+    {
+      "ID": 617,
+      "Entries": [
+        "Fire+17"
+      ]
+    },
+    {
+      "ID": 618,
+      "Entries": [
+        "Fire+18"
+      ]
+    },
+    {
+      "ID": 619,
+      "Entries": [
+        "Fire+19"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Fire+20"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "Fire+21"
+      ]
+    },
+    {
+      "ID": 622,
+      "Entries": [
+        "Fire+22"
+      ]
+    },
+    {
+      "ID": 623,
+      "Entries": [
+        "Fire+23"
+      ]
+    },
+    {
+      "ID": 624,
+      "Entries": [
+        "Fire+24"
+      ]
+    },
+    {
+      "ID": 625,
+      "Entries": [
+        "Fire+25"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Fire + Fire Correction+0"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Fire + Fire Correction+1"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Fire + Fire Correction+2"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Fire + Fire Correction+3"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Fire + Fire Correction+4"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Fire + Fire Correction+5"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "Fire + Fire Correction+6"
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        "Fire + Fire Correction+7"
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        "Fire + Fire Correction+8"
+      ]
+    },
+    {
+      "ID": 709,
+      "Entries": [
+        "Fire + Fire Correction+9"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Fire + Fire Correction+10"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "Fire + Fire Correction+11"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "Fire + Fire Correction+12"
+      ]
+    },
+    {
+      "ID": 713,
+      "Entries": [
+        "Fire + Fire Correction+13"
+      ]
+    },
+    {
+      "ID": 714,
+      "Entries": [
+        "Fire + Fire Correction+14"
+      ]
+    },
+    {
+      "ID": 715,
+      "Entries": [
+        "Fire + Fire Correction+15"
+      ]
+    },
+    {
+      "ID": 716,
+      "Entries": [
+        "Fire + Fire Correction+16"
+      ]
+    },
+    {
+      "ID": 717,
+      "Entries": [
+        "Fire + Fire Correction+17"
+      ]
+    },
+    {
+      "ID": 718,
+      "Entries": [
+        "Fire + Fire Correction+18"
+      ]
+    },
+    {
+      "ID": 719,
+      "Entries": [
+        "Fire + Fire Correction+19"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "Fire + Fire Correction+20"
+      ]
+    },
+    {
+      "ID": 721,
+      "Entries": [
+        "Fire + Fire Correction+21"
+      ]
+    },
+    {
+      "ID": 722,
+      "Entries": [
+        "Fire + Fire Correction+22"
+      ]
+    },
+    {
+      "ID": 723,
+      "Entries": [
+        "Fire + Fire Correction+23"
+      ]
+    },
+    {
+      "ID": 724,
+      "Entries": [
+        "Fire + Fire Correction+24"
+      ]
+    },
+    {
+      "ID": 725,
+      "Entries": [
+        "Fire + Fire Correction+25"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Lightning +Lightning Correction +0"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Lightning +Lightning Correction +1"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Lightning + Lightning Boost+2"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Lightning + Lightning Boost+3"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Lightning + Lightning Boost+4"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Lightning + Lightning Boost+5"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Lightning + Lightning Boost+6"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Lightning + Lightning Boost+7"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Lightning + Lightning Boost+8"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Lightning + Lightning Boost+9"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Lightning +Lightning Correction +10"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "Lightning +Lightning Correction +11"
+      ]
+    },
+    {
+      "ID": 812,
+      "Entries": [
+        "Lightning +Lightning Correction +12"
+      ]
+    },
+    {
+      "ID": 813,
+      "Entries": [
+        "Lightning +Lightning Correction +13"
+      ]
+    },
+    {
+      "ID": 814,
+      "Entries": [
+        "Lightning +Lightning Correction +14"
+      ]
+    },
+    {
+      "ID": 815,
+      "Entries": [
+        "Lightning +Lightning Correction +15"
+      ]
+    },
+    {
+      "ID": 816,
+      "Entries": [
+        "Lightning +Lightning Correction +16"
+      ]
+    },
+    {
+      "ID": 817,
+      "Entries": [
+        "Lightning +Lightning Correction +17"
+      ]
+    },
+    {
+      "ID": 818,
+      "Entries": [
+        "Lightning + Lightning Boost+18"
+      ]
+    },
+    {
+      "ID": 819,
+      "Entries": [
+        "Lightning + Lightning Boost+19"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "Lightning + Lightning Boost+20"
+      ]
+    },
+    {
+      "ID": 821,
+      "Entries": [
+        "Lightning + Lightning Boost+21"
+      ]
+    },
+    {
+      "ID": 822,
+      "Entries": [
+        "Lightning + Lightning Boost+22"
+      ]
+    },
+    {
+      "ID": 823,
+      "Entries": [
+        "Lightning + Lightning Boost+23"
+      ]
+    },
+    {
+      "ID": 824,
+      "Entries": [
+        "Lightning + Lightning Boost+24"
+      ]
+    },
+    {
+      "ID": 825,
+      "Entries": [
+        "Lightning + Lightning Boost+25"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Dark +0"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Dark +1"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Dark +2"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Dark+3"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "Dark+4"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "Dark+5"
+      ]
+    },
+    {
+      "ID": 906,
+      "Entries": [
+        "Dark+6"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "Dark+7"
+      ]
+    },
+    {
+      "ID": 908,
+      "Entries": [
+        "Dark+8"
+      ]
+    },
+    {
+      "ID": 909,
+      "Entries": [
+        "Dark+9"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "Dark +10"
+      ]
+    },
+    {
+      "ID": 911,
+      "Entries": [
+        "Dark +11"
+      ]
+    },
+    {
+      "ID": 912,
+      "Entries": [
+        "Dark +12"
+      ]
+    },
+    {
+      "ID": 913,
+      "Entries": [
+        "Dark +13"
+      ]
+    },
+    {
+      "ID": 914,
+      "Entries": [
+        "Dark +14"
+      ]
+    },
+    {
+      "ID": 915,
+      "Entries": [
+        "Dark +15"
+      ]
+    },
+    {
+      "ID": 916,
+      "Entries": [
+        "Dark +16"
+      ]
+    },
+    {
+      "ID": 917,
+      "Entries": [
+        "Dark +17"
+      ]
+    },
+    {
+      "ID": 918,
+      "Entries": [
+        "Dark +18"
+      ]
+    },
+    {
+      "ID": 919,
+      "Entries": [
+        "Dark +19"
+      ]
+    },
+    {
+      "ID": 920,
+      "Entries": [
+        "Dark +20"
+      ]
+    },
+    {
+      "ID": 921,
+      "Entries": [
+        "Dark +21"
+      ]
+    },
+    {
+      "ID": 922,
+      "Entries": [
+        "Dark +22"
+      ]
+    },
+    {
+      "ID": 923,
+      "Entries": [
+        "Dark +23"
+      ]
+    },
+    {
+      "ID": 924,
+      "Entries": [
+        "Dark+24"
+      ]
+    },
+    {
+      "ID": 925,
+      "Entries": [
+        "Dark+25"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Dark + Dark Correction+0"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Dark + Dark Correction+1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Dark + Dark Correction+2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Dark + Dark Correction+3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Dark + Dark Correction+4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Dark + Dark Correction+5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Dark + Dark Correction+6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Dark + Dark Correction+7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Dark + Dark Correction+8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Dark + Dark Correction+9"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Dark + Dark Correction+10"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Dark + Dark Correction+11"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Dark + Dark Correction+12"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Dark + Dark Correction+13"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Dark + Dark Correction+14"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Dark + Dark Correction+15"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Dark + Dark Correction+16"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Dark + Dark Correction+17"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "Dark + Dark Correction+18"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "Dark + Dark Correction+19"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Dark + Dark Correction+20"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Dark + Dark Correction+21"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Dark + Dark Correction+22"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "Dark + Dark Correction+23"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "Dark + Dark Correction+24"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "Dark + Dark Correction+25"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Poison+0"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Poison+1"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Poison+2"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Poison+3"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Poison+4"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Poison+5"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Poison+6"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Poison+7"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "Poison+8"
+      ]
+    },
+    {
+      "ID": 1109,
+      "Entries": [
+        "Poison+9"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Poison+10"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Blood Loss+0"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Blood Loss+1"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Blood Loss+2"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Blood Loss+3"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Blood Loss+4"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Blood Loss+5"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "Blood Loss+6"
+      ]
+    },
+    {
+      "ID": 1207,
+      "Entries": [
+        "Blood Loss+7"
+      ]
+    },
+    {
+      "ID": 1208,
+      "Entries": [
+        "Blood Loss+8"
+      ]
+    },
+    {
+      "ID": 1209,
+      "Entries": [
+        "Blood Loss+9"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Blood Loss+10"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Enhanced + Correction Removal +0"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Enhanced + Correction Removal +1"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "Enhanced + Correction Removal +2"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "Enhanced + Correction Removal +3"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "Enhanced + Correction Removal +4"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "Enhanced + Correction Removal +5"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "Enhanced + Correction Removal +6"
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        "Enhanced + Correction Removal +7"
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        "Enhanced + Correction Removal +8"
+      ]
+    },
+    {
+      "ID": 1309,
+      "Entries": [
+        "Enhanced + Correction Removal +9"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Enhanced + Correction Removal +10"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Holy +Regen+0"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Holy +Regen+1"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Holy +Regen+2"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "Holy +Regen+3"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "Holy +Regen+4"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "Holy +Regen+5"
+      ]
+    },
+    {
+      "ID": 1406,
+      "Entries": [
+        "Holy +Regen+6"
+      ]
+    },
+    {
+      "ID": 1407,
+      "Entries": [
+        "Holy +Regen+7"
+      ]
+    },
+    {
+      "ID": 1408,
+      "Entries": [
+        "Holy +Regen+8"
+      ]
+    },
+    {
+      "ID": 1409,
+      "Entries": [
+        "Holy+Regen+9"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "Holy +Regen+10"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Weakened + HP Drain on Undead +0"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Weakened + HP Drain on Undead +1"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "Weakened + HP Drain on Undead +2"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "Weakened + HP Drain on Undead +3"
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "Weakened + HP Drain on Undead +4"
+      ]
+    },
+    {
+      "ID": 1505,
+      "Entries": [
+        "Weakened + HP Drain on Undead +5"
+      ]
+    },
+    {
+      "ID": 1506,
+      "Entries": [
+        "Weakened + HP Drain on Undead +6"
+      ]
+    },
+    {
+      "ID": 1507,
+      "Entries": [
+        "Weakened + HP Drain on Undead +7"
+      ]
+    },
+    {
+      "ID": 1508,
+      "Entries": [
+        "Weakened + HP Drain on Undead +8"
+      ]
+    },
+    {
+      "ID": 1509,
+      "Entries": [
+        "Weakened + HP Drain on Undead +9"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "Weakened + HP Drain on Undead +10"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Demon Enhancement +0"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Demon Enhancement +1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Demon Enhancement +2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Demon Enhancement +3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Demon Enhancement +4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Demon Enhancement +5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Demon Enhancement +6"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Dragon Upgrade +0"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Dragon Upgrade +1"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "Dragon Upgrade +2"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "Dragon Upgrade +3"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "Dragon Upgrade +4"
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        "Dragon Upgrade +5"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Special Reinforcement+0"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Special Reinforcement+1"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "Special Reinforcement+2"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "Special Reinforcement+3"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "Special Reinforcement+4"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "Special Reinforcement+5"
+      ]
+    },
+    {
+      "ID": 2206,
+      "Entries": [
+        "Special Reinforcement+6"
+      ]
+    },
+    {
+      "ID": 2207,
+      "Entries": [
+        "Special Reinforcement+7"
+      ]
+    },
+    {
+      "ID": 2208,
+      "Entries": [
+        "Special Reinforcement+8"
+      ]
+    },
+    {
+      "ID": 2209,
+      "Entries": [
+        "Special Reinforcement+9"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Special Reinforcement+10"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Buddy Upgrade_Normal+0"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Buddy Upgrade_Normal+1"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Buddy Upgrade_Normal+2"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Buddy Upgrade_Normal+3"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Buddy Upgrade_Normal+4"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Buddy Upgrade_Normal+5"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Buddy Upgrade_Normal+6"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "Buddy Upgrade_Normal+7"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "Buddy Upgrade_Normal+8"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "Buddy Upgrade_Normal+9"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Buddy Upgrade_Normal+10"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Buddy Upgrade_Upper+0"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "Buddy Upgrade_Upper+1"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "Buddy Upgrade_Upper+2"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "Buddy Upgrade_Upper+3"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "Buddy Upgrade_Upper+4"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "Buddy Upgrade_Upper+5"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "Buddy Upgrade_Upper+6"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "Buddy Upgrade_Upper+7"
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        "Buddy Upgrade_Upper+8"
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        "Buddy Upgrade_Upper+9"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "Buddy Upgrade_Upper+10"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Hero Gunda's Soul"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Evil Spirit Soul"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "Pursuer's Soul"
+      ]
+    },
+    {
+      "ID": 100003,
+      "Entries": [
+        "Crystal Elder Soul"
+      ]
+    },
+    {
+      "ID": 100004,
+      "Entries": [
+        "Abyss Watcher's Soul"
+      ]
+    },
+    {
+      "ID": 100005,
+      "Entries": [
+        "Dragon Envoy Soul"
+      ]
+    },
+    {
+      "ID": 100006,
+      "Entries": [
+        "Full Armor Beast Soul"
+      ]
+    },
+    {
+      "ID": 100007,
+      "Entries": [
+        "Soul of Ash Demon"
+      ]
+    },
+    {
+      "ID": 100008,
+      "Entries": [
+        "Dragon Guardian Knight Soul"
+      ]
+    },
+    {
+      "ID": 100009,
+      "Entries": [
+        "Storm King's Soul"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Crimson Bat Soul"
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "Eclipse Old King Soul"
+      ]
+    },
+    {
+      "ID": 100012,
+      "Entries": [
+        "Sulyvahn's Soul"
+      ]
+    },
+    {
+      "ID": 100013,
+      "Entries": [
+        "Soul of the Death King"
+      ]
+    },
+    {
+      "ID": 100014,
+      "Entries": [
+        "Colossus Soul"
+      ]
+    },
+    {
+      "ID": 100015,
+      "Entries": [
+        "Cardinal Corps Soul"
+      ]
+    },
+    {
+      "ID": 100016,
+      "Entries": [
+        "Dark Twin Princes Younger Brother Soul"
+      ]
+    },
+    {
+      "ID": 100017,
+      "Entries": [
+        "Hareck's Soul"
+      ]
+    },
+    {
+      "ID": 100018,
+      "Entries": [
+        "Final Boss Soul"
+      ]
+    },
+    {
+      "ID": 100019,
+      "Entries": [
+        "Firewood Demon Soul"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "Dark Twin Princes Full Form Soul"
+      ]
+    },
+    {
+      "ID": 100021,
+      "Entries": [
+        "Rosalia"
+      ]
+    },
+    {
+      "ID": 100022,
+      "Entries": [
+        "Fat Demon Soul"
+      ]
+    },
+    {
+      "ID": 110352,
+      "Entries": [
+        "GR_1st Playable_Self Buff"
+      ]
+    },
+    {
+      "ID": 110353,
+      "Entries": [
+        "Body Enhancement Ritual"
+      ]
+    },
+    {
+      "ID": 110400,
+      "Entries": [
+        "Stealth Enhancement Ritual"
+      ]
+    },
+    {
+      "ID": 110401,
+      "Entries": [
+        "Discovery Enhancement Ritual"
+      ]
+    },
+    {
+      "ID": 110402,
+      "Entries": [
+        "Revival Ritual"
+      ]
+    },
+    {
+      "ID": 110403,
+      "Entries": [
+        "Ritual of the Fallen Kin"
+      ]
+    },
+    {
+      "ID": 110404,
+      "Entries": [
+        "Red-Eye Tribe Ritual"
+      ]
+    },
+    {
+      "ID": 110405,
+      "Entries": [
+        "Giant's Ritual"
+      ]
+    },
+    {
+      "ID": 110406,
+      "Entries": [
+        "Death Ritual"
+      ]
+    },
+    {
+      "ID": 111008,
+      "Entries": [
+        "Rite of Life"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "Environment Ritual_Fog"
+      ]
+    },
+    {
+      "ID": 112001,
+      "Entries": [
+        "Environment Ritual_Dark Night"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Village Lv0→Lv1"
+      ]
+    },
+    {
+      "ID": 113001,
+      "Entries": [
+        "Village Lv1→Lv2"
+      ]
+    },
+    {
+      "ID": 113002,
+      "Entries": [
+        "Village Lv2→Lv3"
+      ]
+    },
+    {
+      "ID": 113003,
+      "Entries": [
+        "Village Lv3→Lv4"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Host Cost"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Fire Pot"
+      ]
+    },
+    {
+      "ID": 301010,
+      "Entries": [
+        "Upper Fire Pot"
+      ]
+    },
+    {
+      "ID": 301020,
+      "Entries": [
+        "Upper Fire Pot 2"
+      ]
+    },
+    {
+      "ID": 301030,
+      "Entries": [
+        "Lightning Pot"
+      ]
+    },
+    {
+      "ID": 301040,
+      "Entries": [
+        "Upper Lightning Pot"
+      ]
+    },
+    {
+      "ID": 301050,
+      "Entries": [
+        "Feces Pot"
+      ]
+    },
+    {
+      "ID": 301060,
+      "Entries": [
+        "Insect Jar"
+      ]
+    },
+    {
+      "ID": 301070,
+      "Entries": [
+        "Holy Water Vial"
+      ]
+    },
+    {
+      "ID": 301080,
+      "Entries": [
+        "Upper Holy Water Flask"
+      ]
+    },
+    {
+      "ID": 301090,
+      "Entries": [
+        "Frost Pot"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "Poison Pot"
+      ]
+    },
+    {
+      "ID": 301110,
+      "Entries": [
+        "Oil Pot"
+      ]
+    },
+    {
+      "ID": 301120,
+      "Entries": [
+        "Chaos Pot ※Lure Skull (PvP)"
+      ]
+    },
+    {
+      "ID": 301130,
+      "Entries": [
+        "Lure Skull (Beast)"
+      ]
+    },
+    {
+      "ID": 301140,
+      "Entries": [
+        "Tethered Fire Pot"
+      ]
+    },
+    {
+      "ID": 301150,
+      "Entries": [
+        "Tethered Lightning Pot"
+      ]
+    },
+    {
+      "ID": 301160,
+      "Entries": [
+        "Tethered Dung Pot"
+      ]
+    },
+    {
+      "ID": 301170,
+      "Entries": [
+        "Tethered Poison Pot"
+      ]
+    },
+    {
+      "ID": 301180,
+      "Entries": [
+        "Tethered Oil Pot"
+      ]
+    },
+    {
+      "ID": 301190,
+      "Entries": [
+        "Tethered Magic Pot"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "Tethered Bug Pot"
+      ]
+    },
+    {
+      "ID": 301220,
+      "Entries": [
+        "Tethered Volcanic Gas Pot"
+      ]
+    },
+    {
+      "ID": 301230,
+      "Entries": [
+        "Tethered Holy Water Flask"
+      ]
+    },
+    {
+      "ID": 301240,
+      "Entries": [
+        "Volcano Gas Pot"
+      ]
+    },
+    {
+      "ID": 301250,
+      "Entries": [
+        "Immortal Hunter's Talisman"
+      ]
+    },
+    {
+      "ID": 301260,
+      "Entries": [
+        "Cursed Blood Pot"
+      ]
+    },
+    {
+      "ID": 301270,
+      "Entries": [
+        "Sleep Pot (Former Sleep Cloud)"
+      ]
+    },
+    {
+      "ID": 301280,
+      "Entries": [
+        "Throw (Those Who Pursue)"
+      ]
+    },
+    {
+      "ID": 301290,
+      "Entries": [
+        "Magic Pot"
+      ]
+    },
+    {
+      "ID": 301300,
+      "Entries": [
+        "Throw (Greater Sorcery Pot)"
+      ]
+    },
+    {
+      "ID": 301310,
+      "Entries": [
+        "Plague Pot"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Horse Feed"
+      ]
+    },
+    {
+      "ID": 302010,
+      "Entries": [
+        "Horse Feed 2"
+      ]
+    },
+    {
+      "ID": 302020,
+      "Entries": [
+        "Horse Feed 3"
+      ]
+    },
+    {
+      "ID": 303000,
+      "Entries": [
+        "Poison Cure Medicine"
+      ]
+    },
+    {
+      "ID": 303010,
+      "Entries": [
+        "Bleed Cure Medicine"
+      ]
+    },
+    {
+      "ID": 303020,
+      "Entries": [
+        "Frost Cure Medicine"
+      ]
+    },
+    {
+      "ID": 303030,
+      "Entries": [
+        "Sleep Cure Medicine"
+      ]
+    },
+    {
+      "ID": 303040,
+      "Entries": [
+        "Plague Recovery"
+      ]
+    },
+    {
+      "ID": 303050,
+      "Entries": [
+        "Death Cure Medicine"
+      ]
+    },
+    {
+      "ID": 303060,
+      "Entries": [
+        "Madness Recovery"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "Turtle Jerky"
+      ]
+    },
+    {
+      "ID": 304010,
+      "Entries": [
+        "Herbivore Jerky (Poison/Scarlet Rot Resistance UP)"
+      ]
+    },
+    {
+      "ID": 304020,
+      "Entries": [
+        "Herbivore Jerky (Blood Loss/Frost Resistance UP)"
+      ]
+    },
+    {
+      "ID": 304030,
+      "Entries": [
+        "Herbivore Jerky (Sleep/Madness Resistance UP)"
+      ]
+    },
+    {
+      "ID": 304040,
+      "Entries": [
+        "Herbivore Jerky (All Resistance UP)"
+      ]
+    },
+    {
+      "ID": 304050,
+      "Entries": [
+        "Herbivore Liver (Cut Rate UP_Magic)"
+      ]
+    },
+    {
+      "ID": 304060,
+      "Entries": [
+        "Herbivore Liver (Cut Rate UP_Fire)"
+      ]
+    },
+    {
+      "ID": 304070,
+      "Entries": [
+        "Herbivore Liver (Cut Rate UP_Lightning)"
+      ]
+    },
+    {
+      "ID": 304080,
+      "Entries": [
+        "Herbivore Liver (Cut Rate UP_Death)"
+      ]
+    },
+    {
+      "ID": 304090,
+      "Entries": [
+        "Bird Dried Meat (Item Drop Rate UP)"
+      ]
+    },
+    {
+      "ID": 304100,
+      "Entries": [
+        "Bird Dried Meat (Rune)"
+      ]
+    },
+    {
+      "ID": 304110,
+      "Entries": [
+        "Dried Carnivore Meat"
+      ]
+    },
+    {
+      "ID": 304130,
+      "Entries": [
+        "Bloodless Dried Meat (Poison/Scarlet Rot Resistance Up)?"
+      ]
+    },
+    {
+      "ID": 304140,
+      "Entries": [
+        "Bloodless Dried Meat (Bleed/Frost Resistance Up)?"
+      ]
+    },
+    {
+      "ID": 304150,
+      "Entries": [
+        "Bloodless Dried Meat (Sleep/Madness Resistance Up)?"
+      ]
+    },
+    {
+      "ID": 304160,
+      "Entries": [
+        "Bloodless Dried Meat (All Resistances Up)?"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Fire Fat"
+      ]
+    },
+    {
+      "ID": 305010,
+      "Entries": [
+        "Lightning Grease"
+      ]
+    },
+    {
+      "ID": 305020,
+      "Entries": [
+        "Magic Fat"
+      ]
+    },
+    {
+      "ID": 305030,
+      "Entries": [
+        "Golden Fat"
+      ]
+    },
+    {
+      "ID": 305040,
+      "Entries": [
+        "Bloodbound Resin"
+      ]
+    },
+    {
+      "ID": 305050,
+      "Entries": [
+        "Sleep Resin"
+      ]
+    },
+    {
+      "ID": 305060,
+      "Entries": [
+        "Poison Fat"
+      ]
+    },
+    {
+      "ID": 305070,
+      "Entries": [
+        "Frostbite Pine Resin"
+      ]
+    },
+    {
+      "ID": 305080,
+      "Entries": [
+        "Dragonslayer Resin"
+      ]
+    },
+    {
+      "ID": 305090,
+      "Entries": [
+        "Plague Resin"
+      ]
+    },
+    {
+      "ID": 305100,
+      "Entries": [
+        "Quick Fire Resin"
+      ]
+    },
+    {
+      "ID": 305110,
+      "Entries": [
+        "Quick Lightning Resin"
+      ]
+    },
+    {
+      "ID": 305120,
+      "Entries": [
+        "Quick Magic Resin"
+      ]
+    },
+    {
+      "ID": 305130,
+      "Entries": [
+        "Quick Golden Resin"
+      ]
+    },
+    {
+      "ID": 305140,
+      "Entries": [
+        "Quick Blood Loss Resin"
+      ]
+    },
+    {
+      "ID": 305150,
+      "Entries": [
+        "Quick Sleep Resin"
+      ]
+    },
+    {
+      "ID": 305160,
+      "Entries": [
+        "Quick Rot Resin"
+      ]
+    },
+    {
+      "ID": 305180,
+      "Entries": [
+        "Quick Scarlet Rot Resin"
+      ]
+    },
+    {
+      "ID": 305190,
+      "Entries": [
+        "Varnish"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "Bone Knife"
+      ]
+    },
+    {
+      "ID": 306010,
+      "Entries": [
+        "Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 306020,
+      "Entries": [
+        "Crystal Knife"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        "Rainbow Stone"
+      ]
+    },
+    {
+      "ID": 307010,
+      "Entries": [
+        "Light Stone"
+      ]
+    },
+    {
+      "ID": 307020,
+      "Entries": [
+        "Seven-Colored Stone Indicating Direction"
+      ]
+    },
+    {
+      "ID": 307030,
+      "Entries": [
+        "Vine-Woven Shoes"
+      ]
+    },
+    {
+      "ID": 307040,
+      "Entries": [
+        "Soap"
+      ]
+    },
+    {
+      "ID": 308000,
+      "Entries": [
+        "Thrown Glintstone Bullet"
+      ]
+    },
+    {
+      "ID": 308010,
+      "Entries": [
+        "Warming Fire"
+      ]
+    },
+    {
+      "ID": 308020,
+      "Entries": [
+        "Chaos Warmth Fire"
+      ]
+    },
+    {
+      "ID": 308030,
+      "Entries": [
+        "Request Advice"
+      ]
+    },
+    {
+      "ID": 308040,
+      "Entries": [
+        "Charm"
+      ]
+    },
+    {
+      "ID": 309000,
+      "Entries": [
+        "Perfumer Magic (Scatter Buff)"
+      ]
+    },
+    {
+      "ID": 309010,
+      "Entries": [
+        "Perfumer Magic (Horizontal Swing Attack)"
+      ]
+    },
+    {
+      "ID": 309020,
+      "Entries": [
+        "Perfumer Magic (Iron Transformation)"
+      ]
+    },
+    {
+      "ID": 309030,
+      "Entries": [
+        "Perfumer Magic (Decadence"
+      ]
+    },
+    {
+      "ID": 309040,
+      "Entries": [
+        "(Beast-tribe toxic pollen)"
+      ]
+    },
+    {
+      "ID": 309050,
+      "Entries": [
+        "Acid Spray"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Handmade Arrow (Fletched)"
+      ]
+    },
+    {
+      "ID": 320010,
+      "Entries": [
+        "Handmade Arrow (Unfletched)"
+      ]
+    },
+    {
+      "ID": 320020,
+      "Entries": [
+        "Fire Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320030,
+      "Entries": [
+        "Fire Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320040,
+      "Entries": [
+        "Poison Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320050,
+      "Entries": [
+        "Poison Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320060,
+      "Entries": [
+        "Sleep Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320070,
+      "Entries": [
+        "Sleep Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320080,
+      "Entries": [
+        "Lightning Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320090,
+      "Entries": [
+        "Lightning Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320100,
+      "Entries": [
+        "Seven-Colored Stone Arrow (No Fletching)"
+      ]
+    },
+    {
+      "ID": 320110,
+      "Entries": [
+        "Sound-sending Arrow (Unfletched)"
+      ]
+    },
+    {
+      "ID": 320120,
+      "Entries": [
+        "Storm Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320130,
+      "Entries": [
+        "Magic Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320140,
+      "Entries": [
+        "Magic Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320150,
+      "Entries": [
+        "Holy Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320160,
+      "Entries": [
+        "Holy Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320170,
+      "Entries": [
+        "Blood Loss Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320180,
+      "Entries": [
+        "Bloodloss Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320190,
+      "Entries": [
+        "Frost Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320200,
+      "Entries": [
+        "Frost Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320210,
+      "Entries": [
+        "Plague Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 320220,
+      "Entries": [
+        "Plague Arrow (Handmade"
+      ]
+    },
+    {
+      "ID": 321000,
+      "Entries": [
+        "Bone Great Arrow"
+      ]
+    },
+    {
+      "ID": 321010,
+      "Entries": [
+        "Bone Great Arrow_Unfletched"
+      ]
+    },
+    {
+      "ID": 322000,
+      "Entries": [
+        "Bone Bolt"
+      ]
+    },
+    {
+      "ID": 322010,
+      "Entries": [
+        "Fire Bolt (Handmade)"
+      ]
+    },
+    {
+      "ID": 322020,
+      "Entries": [
+        "Lightning Bolt (Handmade)"
+      ]
+    },
+    {
+      "ID": 322030,
+      "Entries": [
+        "Magic Bolt (Handmade)"
+      ]
+    },
+    {
+      "ID": 322040,
+      "Entries": [
+        "Holy Bolt (Handmade)"
+      ]
+    },
+    {
+      "ID": 322050,
+      "Entries": [
+        "Poison Bolt (Handmade)"
+      ]
+    },
+    {
+      "ID": 322060,
+      "Entries": [
+        "Blood Loss Bolt (Handmade)"
+      ]
+    },
+    {
+      "ID": 322070,
+      "Entries": [
+        "Frost Bolt (Handmade)"
+      ]
+    },
+    {
+      "ID": 322080,
+      "Entries": [
+        "Plague Bolt (Handmade)"
+      ]
+    },
+    {
+      "ID": 322090,
+      "Entries": [
+        "Sleep Bolt (Handmade)"
+      ]
+    },
+    {
+      "ID": 323000,
+      "Entries": [
+        "Large Bone Bolt"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Grafted King_Grafted King's Greataxe"
+      ]
+    },
+    {
+      "ID": 900001,
+      "Entries": [
+        "Grafted King_Dragon Tooth"
+      ]
+    },
+    {
+      "ID": 900002,
+      "Entries": [
+        "Radahn_Scrawny Horse Radahn Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 900003,
+      "Entries": [
+        "Radahn_Scrawny Horse Radahn Bow"
+      ]
+    },
+    {
+      "ID": 900004,
+      "Entries": [
+        "Margit_True_Margit's Death Sword"
+      ]
+    },
+    {
+      "ID": 900005,
+      "Entries": [
+        "Margit_True_Curse Explosion_Superior"
+      ]
+    },
+    {
+      "ID": 900006,
+      "Entries": [
+        "King of Ghouls_King of Ghouls Sword"
+      ]
+    },
+    {
+      "ID": 900007,
+      "Entries": [
+        "King of Ghouls_Serpent Bullet"
+      ]
+    },
+    {
+      "ID": 900008,
+      "Entries": [
+        "Malenia_Malenia's Prosthetic Blade"
+      ]
+    },
+    {
+      "ID": 900009,
+      "Entries": [
+        "Malenia_Great Rot Magic"
+      ]
+    },
+    {
+      "ID": 900010,
+      "Entries": [
+        "Greater_Greater Demon Spear"
+      ]
+    },
+    {
+      "ID": 900011,
+      "Entries": [
+        "Greater_Single Magic_Salt Scatter"
+      ]
+    },
+    {
+      "ID": 900012,
+      "Entries": [
+        "Maliketh_Black Blade Maliketh's Sword"
+      ]
+    },
+    {
+      "ID": 900013,
+      "Entries": [
+        "Maliketh_Black Blade (Maliketh)"
+      ]
+    },
+    {
+      "ID": 900014,
+      "Entries": [
+        "Godfrey_Godfrey's Greataxe"
+      ]
+    },
+    {
+      "ID": 900015,
+      "Entries": [
+        "Godfrey_Bare Hands Earthquake Magic Stone"
+      ]
+    },
+    {
+      "ID": 900016,
+      "Entries": [
+        "Ancient Dragon_Ancient Thunder Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 900017,
+      "Entries": [
+        "Ancient Dragon_Ancient Dragon Breath"
+      ]
+    },
+    {
+      "ID": 900018,
+      "Entries": [
+        "Rennala_Moon Scepter"
+      ]
+    },
+    {
+      "ID": 900019,
+      "Entries": [
+        "Rennala_Crystal Moon"
+      ]
+    },
+    {
+      "ID": 900020,
+      "Entries": [
+        "Ancestral Follower_Double Lightning Stake"
+      ]
+    },
+    {
+      "ID": 900021,
+      "Entries": [
+        "Ancestral Follower_Fallen Ancestral Follower Sorcery"
+      ]
+    },
+    {
+      "ID": 900022,
+      "Entries": [
+        "Giant_Red Hair Whip"
+      ]
+    },
+    {
+      "ID": 900023,
+      "Entries": [
+        "Giant_Flame Storm"
+      ]
+    },
+    {
+      "ID": 900024,
+      "Entries": [
+        "Ancestor Spirit_Ancestral Follower Special Weapon"
+      ]
+    },
+    {
+      "ID": 900025,
+      "Entries": [
+        "Ancestor Spirit_Ancestor Spirit Talisman"
+      ]
+    },
+    {
+      "ID": 900026,
+      "Entries": [
+        "Marika_Transforming Hammer"
+      ]
+    },
+    {
+      "ID": 900027,
+      "Entries": [
+        "Marika_Corpse Sword"
+      ]
+    },
+    {
+      "ID": 900028,
+      "Entries": [
+        "Astel_Stardust Flail"
+      ]
+    },
+    {
+      "ID": 900029,
+      "Entries": [
+        "Astel_Ground Upheaval Magic Bullet Magic Stone"
+      ]
+    },
+    {
+      "ID": 900100,
+      "Entries": [
+        "Red Armor_Head"
+      ]
+    },
+    {
+      "ID": 900101,
+      "Entries": [
+        "Red Armor_Body"
+      ]
+    },
+    {
+      "ID": 900102,
+      "Entries": [
+        "Dragon Scale_Body"
+      ]
+    },
+    {
+      "ID": 900103,
+      "Entries": [
+        "Scholar Perfumer (Court)_Body"
+      ]
+    },
+    {
+      "ID": 900104,
+      "Entries": [
+        "Scholar Perfumer (Travel)_Body"
+      ]
+    },
+    {
+      "ID": 900105,
+      "Entries": [
+        "Glintstone Sorcerer B1_Body"
+      ]
+    },
+    {
+      "ID": 900106,
+      "Entries": [
+        "Western Komuso_Body"
+      ]
+    },
+    {
+      "ID": 900107,
+      "Entries": [
+        "Wolf-Head Warrior_Body"
+      ]
+    },
+    {
+      "ID": 900108,
+      "Entries": [
+        "Black Knife Descendant_Body"
+      ]
+    },
+    {
+      "ID": 900109,
+      "Entries": [
+        "Bloodstained Vulture Knight_Body"
+      ]
+    },
+    {
+      "ID": 900110,
+      "Entries": [
+        "Attendant_Body"
+      ]
+    },
+    {
+      "ID": 900111,
+      "Entries": [
+        "Rune-hunting Knight_Head"
+      ]
+    },
+    {
+      "ID": 900112,
+      "Entries": [
+        "Rune-hunting Knight_Body"
+      ]
+    },
+    {
+      "ID": 900113,
+      "Entries": [
+        "WolfRider_Body"
+      ]
+    },
+    {
+      "ID": 900114,
+      "Entries": [
+        "Red-Eyed Gypsy_Body"
+      ]
+    },
+    {
+      "ID": 900115,
+      "Entries": [
+        "Tree Sentinel (Chief)_Body"
+      ]
+    },
+    {
+      "ID": 900116,
+      "Entries": [
+        "Tree Sentinel (Noble)_Body"
+      ]
+    },
+    {
+      "ID": 900117,
+      "Entries": [
+        "Direct Lineage of Marika_Head"
+      ]
+    },
+    {
+      "ID": 900118,
+      "Entries": [
+        "Direct Lineage of Marika_Body"
+      ]
+    },
+    {
+      "ID": 900119,
+      "Entries": [
+        "Direct Lineage of Marika B_Head"
+      ]
+    },
+    {
+      "ID": 900120,
+      "Entries": [
+        "Direct Lineage of Marika B_Body"
+      ]
+    },
+    {
+      "ID": 900121,
+      "Entries": [
+        "Gladiator_Body"
+      ]
+    },
+    {
+      "ID": 900122,
+      "Entries": [
+        "Godskin Apostle_Head"
+      ]
+    },
+    {
+      "ID": 900123,
+      "Entries": [
+        "Putrid Knights_Body"
+      ]
+    },
+    {
+      "ID": 900124,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Body"
+      ]
+    },
+    {
+      "ID": 900125,
+      "Entries": [
+        "Wisdom King_Body"
+      ]
+    },
+    {
+      "ID": 900126,
+      "Entries": [
+        "Twin Armor_Body"
+      ]
+    },
+    {
+      "ID": 900129,
+      "Entries": [
+        "Persecuted Cleric B_Body"
+      ]
+    },
+    {
+      "ID": 900130,
+      "Entries": [
+        "Stargazing_Body"
+      ]
+    },
+    {
+      "ID": 900131,
+      "Entries": [
+        "Fat Armor_Body"
+      ]
+    },
+    {
+      "ID": 900132,
+      "Entries": [
+        "White-Haired Ogre_Body"
+      ]
+    },
+    {
+      "ID": 900133,
+      "Entries": [
+        "Exiled Knight_Body"
+      ]
+    },
+    {
+      "ID": 900134,
+      "Entries": [
+        "Army Doctor Executioner_Body"
+      ]
+    },
+    {
+      "ID": 900136,
+      "Entries": [
+        "Aged Veteran General_Body"
+      ]
+    },
+    {
+      "ID": 900137,
+      "Entries": [
+        "Bolas Hound_Body"
+      ]
+    },
+    {
+      "ID": 900138,
+      "Entries": [
+        "Man-Eater Hag_Head"
+      ]
+    },
+    {
+      "ID": 900139,
+      "Entries": [
+        "Rune Slave_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900140,
+      "Entries": [
+        "Rune Slave C_Body"
+      ]
+    },
+    {
+      "ID": 900141,
+      "Entries": [
+        "Senior Knight_Body"
+      ]
+    },
+    {
+      "ID": 900142,
+      "Entries": [
+        "Samurai_Body"
+      ]
+    },
+    {
+      "ID": 900143,
+      "Entries": [
+        "Assassin Knight_Head"
+      ]
+    },
+    {
+      "ID": 900144,
+      "Entries": [
+        "Assassin Knight_Body"
+      ]
+    },
+    {
+      "ID": 900145,
+      "Entries": [
+        "Saintess B (Upper)_Body"
+      ]
+    },
+    {
+      "ID": 900147,
+      "Entries": [
+        "Preceptor's Robe_Body"
+      ]
+    },
+    {
+      "ID": 900149,
+      "Entries": [
+        "Mercenary Swordsman_Head"
+      ]
+    },
+    {
+      "ID": 900150,
+      "Entries": [
+        "Wounded Knight_Body"
+      ]
+    },
+    {
+      "ID": 900151,
+      "Entries": [
+        "Monsan Knight_Body"
+      ]
+    },
+    {
+      "ID": 900152,
+      "Entries": [
+        "Sorcery Mercenary_Body"
+      ]
+    },
+    {
+      "ID": 900153,
+      "Entries": [
+        "Royal Army Senior Cavalry Independent Faction_Body"
+      ]
+    },
+    {
+      "ID": 900154,
+      "Entries": [
+        "Royal Army Elite Cavalry Stormveil Faction_Body"
+      ]
+    },
+    {
+      "ID": 900155,
+      "Entries": [
+        "Royal Army Elite Cavalry Monsan Faction_Body"
+      ]
+    },
+    {
+      "ID": 900156,
+      "Entries": [
+        "Royal Army Senior Cavalry Royal Capital Faction_Body"
+      ]
+    },
+    {
+      "ID": 900157,
+      "Entries": [
+        "Royal Army Senior Cavalry Plains Faction_Body"
+      ]
+    },
+    {
+      "ID": 900158,
+      "Entries": [
+        "Royal Army Senior Cavalry Mausoleum Faction_Body"
+      ]
+    },
+    {
+      "ID": 900159,
+      "Entries": [
+        "Royal Army Elite Cavalry Miquella Faction_Body"
+      ]
+    },
+    {
+      "ID": 900160,
+      "Entries": [
+        "Attendant Elite_Body (BD)"
+      ]
+    },
+    {
+      "ID": 900161,
+      "Entries": [
+        "Gladiator (Malenia Faction)_Body(BD)"
+      ]
+    },
+    {
+      "ID": 900162,
+      "Entries": [
+        "Armor of the Blessed_Body"
+      ]
+    },
+    {
+      "ID": 900163,
+      "Entries": [
+        "Ranni_Body"
+      ]
+    },
+    {
+      "ID": 900164,
+      "Entries": [
+        "Godfrey Sixteen Knights_Body"
+      ]
+    },
+    {
+      "ID": 900165,
+      "Entries": [
+        "Godfrey Sixteen Knights B_Body"
+      ]
+    },
+    {
+      "ID": 900166,
+      "Entries": [
+        "Yuria's Robe_Body"
+      ]
+    },
+    {
+      "ID": 900167,
+      "Entries": [
+        "Glintstone Sorcerer C_Head"
+      ]
+    },
+    {
+      "ID": 900168,
+      "Entries": [
+        "Glintstone Sorcerer C_Body"
+      ]
+    },
+    {
+      "ID": 900169,
+      "Entries": [
+        "Saintess_Body"
+      ]
+    },
+    {
+      "ID": 900184,
+      "Entries": [
+        "Light Knight_Body (BD)"
+      ]
+    },
+    {
+      "ID": 900185,
+      "Entries": [
+        "New Lucatiel_Head (HD)"
+      ]
+    },
+    {
+      "ID": 900200,
+      "Entries": [
+        "Godfrey the Beast-clad_Body"
+      ]
+    },
+    {
+      "ID": 900201,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Body"
+      ]
+    },
+    {
+      "ID": 900202,
+      "Entries": [
+        "Greater Demon_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900203,
+      "Entries": [
+        "Black Blade Malenia_Body"
+      ]
+    },
+    {
+      "ID": 900204,
+      "Entries": [
+        "Arbitrating Malenia_Body"
+      ]
+    },
+    {
+      "ID": 900300,
+      "Entries": [
+        "Red Armor_Light_Head"
+      ]
+    },
+    {
+      "ID": 900301,
+      "Entries": [
+        "Red Armor_Light_Body"
+      ]
+    },
+    {
+      "ID": 900302,
+      "Entries": [
+        "Dragon Scale_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900303,
+      "Entries": [
+        "Scholar Perfumer (Court)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900304,
+      "Entries": [
+        "Scholar Perfumer (Travel)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900305,
+      "Entries": [
+        "Glintstone Sorcerer B1_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900306,
+      "Entries": [
+        "Western Wandering Monk_Light_Body"
+      ]
+    },
+    {
+      "ID": 900307,
+      "Entries": [
+        "Wolf-Head Warrior_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900308,
+      "Entries": [
+        "Black Knife Descendant_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900309,
+      "Entries": [
+        "Bloodstained Vulture Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900310,
+      "Entries": [
+        "Attendant_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900311,
+      "Entries": [
+        "Rune-hunting Knight_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 900312,
+      "Entries": [
+        "Rune-hunting Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900313,
+      "Entries": [
+        "Wolf Rider_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900314,
+      "Entries": [
+        "Red-Eyed Gypsy_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900315,
+      "Entries": [
+        "Tree Sentinel (Chief)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900316,
+      "Entries": [
+        "Tree Sentinel (Noble)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900317,
+      "Entries": [
+        "Direct Lineage of Marika_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 900318,
+      "Entries": [
+        "Direct Lineage of Marika_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900319,
+      "Entries": [
+        "Direct Lineage of Marika BC_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 900320,
+      "Entries": [
+        "Direct Lineage of Marika BC_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900321,
+      "Entries": [
+        "Gladiator_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900322,
+      "Entries": [
+        "Godskin Apostle_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 900323,
+      "Entries": [
+        "Godskin Apostle_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900324,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900325,
+      "Entries": [
+        "Wisdom King_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900326,
+      "Entries": [
+        "Twin Armor_Light_Body"
+      ]
+    },
+    {
+      "ID": 900329,
+      "Entries": [
+        "Persecuted Cleric_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900330,
+      "Entries": [
+        "Stargazing_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900331,
+      "Entries": [
+        "Fat Armor_Light_Body"
+      ]
+    },
+    {
+      "ID": 900332,
+      "Entries": [
+        "White-Haired Ogre_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900333,
+      "Entries": [
+        "Exiled Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900334,
+      "Entries": [
+        "Army Doctor Executioner_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900336,
+      "Entries": [
+        "Aged Veteran General_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900337,
+      "Entries": [
+        "Bolas Hound_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900338,
+      "Entries": [
+        "Man-Eater Hag_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 900339,
+      "Entries": [
+        "Rune Slave_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900340,
+      "Entries": [
+        "Rune Slave C_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900341,
+      "Entries": [
+        "Senior Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900342,
+      "Entries": [
+        "Samurai_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900343,
+      "Entries": [
+        "Assassin Knight_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 900344,
+      "Entries": [
+        "Assassin Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900345,
+      "Entries": [
+        "Saintess B (Upper)_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900347,
+      "Entries": [
+        "Preceptor's Robe_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900349,
+      "Entries": [
+        "Mercenary Swordsman_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 900350,
+      "Entries": [
+        "Scarred Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900351,
+      "Entries": [
+        "Monsan Knight_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900352,
+      "Entries": [
+        "Sorcery Mercenary_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900353,
+      "Entries": [
+        "Royal Army Senior Cavalry Independent Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900354,
+      "Entries": [
+        "Royal Army Elite Cavalry Stormveil Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900355,
+      "Entries": [
+        "Royal Army Elite Cavalry Monsan Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900356,
+      "Entries": [
+        "Royal Army Senior Cavalry Royal Capital Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900357,
+      "Entries": [
+        "Royal Army Senior Cavalry Plains Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900358,
+      "Entries": [
+        "Royal Army Senior Cavalry Mausoleum Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900359,
+      "Entries": [
+        "Royal Army Elite Cavalry Miquella Faction_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900360,
+      "Entries": [
+        "Attendant Elite_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 900361,
+      "Entries": [
+        "Gladiator (Malenia Faction)_Light Armor_Body(BD)"
+      ]
+    },
+    {
+      "ID": 900362,
+      "Entries": [
+        "Armor of the Blessed_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900363,
+      "Entries": [
+        "Ranni (Light Armor)_Body"
+      ]
+    },
+    {
+      "ID": 900364,
+      "Entries": [
+        "Godfrey Sixteen Knights_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900365,
+      "Entries": [
+        "Godfrey Sixteen Knights B_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900366,
+      "Entries": [
+        "Yuria's Robe_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900367,
+      "Entries": [
+        "Glintstone Sorcerer C_Light Armor_Head"
+      ]
+    },
+    {
+      "ID": 900368,
+      "Entries": [
+        "Glintstone Sorcerer C_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900369,
+      "Entries": [
+        "Saintess_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900384,
+      "Entries": [
+        "Light Knight_Light Armor_Body (BD)"
+      ]
+    },
+    {
+      "ID": 900385,
+      "Entries": [
+        "New Lucatiel_Light Armor_Head (HD)"
+      ]
+    },
+    {
+      "ID": 900400,
+      "Entries": [
+        "Godfrey the Beast-clad_Body"
+      ]
+    },
+    {
+      "ID": 900401,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Body"
+      ]
+    },
+    {
+      "ID": 900402,
+      "Entries": [
+        "Greater Demon_Light Armor_Body"
+      ]
+    },
+    {
+      "ID": 900403,
+      "Entries": [
+        "Black Blade Malenia_Body"
+      ]
+    },
+    {
+      "ID": 900404,
+      "Entries": [
+        "Arbitrating Malenia_Body"
+      ]
+    }
+  ]
+}

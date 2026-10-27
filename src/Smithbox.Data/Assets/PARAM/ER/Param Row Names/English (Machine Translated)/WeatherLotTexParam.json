@@ -1,0 +1,155 @@
+{
+  "Name": "WeatherLotTexParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Crater Lake"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Open Green: North"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Open Green: North Storm"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Open Green: North Misty Forest"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Open Green: South"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Open Lake: Full Area"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Open Lake: Around Ranni's Tower"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Open Lake: Around Entrance"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Open Lake: Hang Terrain"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Open Highland: Royal Capital"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Open Highland: Deracine Forest"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Open Highland: Windmill Village"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Open Highland: Volcano"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Open Highland: Connection"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Open Plains:"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Open Plains: Radahn Desert"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Open Plains: Descending Ruins Origin"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Open Plains: Descending Ruins Origin Dragon Nest"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Open Snowy Mountain：Giant Default"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Open Snowy Mountain：Giant Behind Frozen Lake"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Open Snowy Mountain：Giant Around Fire Cauldron"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Open Snowy Mountain：Snowfield Default"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Open Snowy Mountain：Snowfield Snow Town"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Open Snowy Mountain：Snowfield Blizzard"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "Other"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "Name": "MenuColorTableParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Must Not Extinguish"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Generic color: used for tattoo/bruise color"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Skin Tone: used with flesh-colored skin"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Hair color: used for hair"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "※ Black hair"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Eye color: used for eye color"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Makeup Color: used for Blush"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "⇒ Eye bag color"
+      ]
+    },
+    {
+      "ID": 1421,
+      "Entries": [
+        "⇒ Blush color"
+      ]
+    },
+    {
+      "ID": 1441,
+      "Entries": [
+        "⇒ Eyeliner color"
+      ]
+    },
+    {
+      "ID": 1461,
+      "Entries": [
+        "⇒ Eyeshadow color (upper/lower common)"
+      ]
+    },
+    {
+      "ID": 1481,
+      "Entries": [
+        "⇒ Lipstick color"
+      ]
+    }
+  ]
+}

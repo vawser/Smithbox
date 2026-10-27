@@ -1,0 +1,137 @@
+{
+  "Name": "LoadBalancerDrawDistScaleParam_ps4",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[LOD Distance Scale] Map/Obj Small"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[LOD Distance Scale] Map/Obj Medium"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[LOD Distance Scale] Map/Obj Large"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[LOD Distance Scale] Map/Obj Extra Large"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[LOD Distance Scale] Chr Small"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[LOD Distance Scale] Chr Medium"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[LOD Distance Scale] Chr Large"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "[LOD Distance Scale] Chr Extra Large"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[LOD Distance Scale] Local Player"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "[LOD Distance Scale] Remote Player"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[LOD Distance Scale] Phantom"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map/Obj Small"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map/Obj Medium"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map/Obj Large"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map/Obj Extra Large"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Small"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Medium"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Large"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Extra Large"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "[Texture LOD Distance Scale] Local Player"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "[Texture LOD Distance Scale] Remote Player"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Texture LOD Distance Scale] Phantom"
+      ]
+    }
+  ]
+}

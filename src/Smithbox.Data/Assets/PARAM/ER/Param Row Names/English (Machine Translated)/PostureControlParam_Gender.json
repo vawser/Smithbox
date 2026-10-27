@@ -1,0 +1,41 @@
+{
+  "Name": "PostureControlParam_Gender",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Male"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Female"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Mounted_Male"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Mounted_Female"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Crouch_Male"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Crouch_Female"
+      ]
+    }
+  ]
+}

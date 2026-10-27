@@ -1,0 +1,29 @@
+{
+  "Name": "WeatherAssetCreateParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Rainbow"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Rainbow"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Aurora"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Aurora"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1691 @@
+{
+  "Name": "ActionButtonParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test 0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test 1"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Take my own Lost Soul"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Pick Up Invader's Bloodstain"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Access Bloodstain"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Activate Retry Point"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Mounted_Mount"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "White Summon Sign"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Red Summon Sign"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "My Summon Sign"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Read Blood Writing"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Read the blood writing I left"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Read the blood writing left by another."
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Take Relic"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Take Relic"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Loot Item"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "Loot Item (Wide Lower Range)"
+      ]
+    },
+    {
+      "ID": 4202,
+      "Entries": [
+        "Loot Item (Slumped Seated Item Corpse)"
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        "Loot Item"
+      ]
+    },
+    {
+      "ID": 4251,
+      "Entries": [
+        "Loot Item (Wide Lower Range)"
+      ]
+    },
+    {
+      "ID": 4252,
+      "Entries": [
+        "Loot Item (Wide Lower Range_Royal Capital Great Tree Sanctuary)"
+      ]
+    },
+    {
+      "ID": 4253,
+      "Entries": [
+        "Loot Item (Wide Vertical Range)"
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        "Loot Item (Carriage Treasure)"
+      ]
+    },
+    {
+      "ID": 4270,
+      "Entries": [
+        "Loot Item (Destructible Asset Treasure)"
+      ]
+    },
+    {
+      "ID": 4280,
+      "Entries": [
+        "Loot Item (Sarcophagus Treasure)"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Take Treasure"
+      ]
+    },
+    {
+      "ID": 4350,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "OK"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Climb Up Ladder"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Climb Down Ladder"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Conversation Skip"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Light Site of Grace"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Rest at Bonfire"
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        "Light Site of Grace_Base"
+      ]
+    },
+    {
+      "ID": 6103,
+      "Entries": [
+        "Rest at Bonfire_Base"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Greater Demon Dialogue"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "213_Blacksmith"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "202_Beast Priest_Talk To"
+      ]
+    },
+    {
+      "ID": 6221,
+      "Entries": [
+        "202_Beast Priest_Hand Over Death Root"
+      ]
+    },
+    {
+      "ID": 6222,
+      "Entries": [
+        "202_Beast Priest_Talk To"
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        "310_Castellan's Daughter_Touch Eyes"
+      ]
+    },
+    {
+      "ID": 6231,
+      "Entries": [
+        "310_Castellan's Daughter_Examine"
+      ]
+    },
+    {
+      "ID": 6240,
+      "Entries": [
+        "330_Penitent Priest_Talk"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "602_Simple Forge"
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        "226_Living Small Jar_Talk"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "220_Jar Meyer_Talk To"
+      ]
+    },
+    {
+      "ID": 6271,
+      "Entries": [
+        "220_Jar Meyer_Talk To_Lava Bath"
+      ]
+    },
+    {
+      "ID": 6280,
+      "Entries": [
+        "223_Demi-Human Needle Maiden_Talk"
+      ]
+    },
+    {
+      "ID": 6290,
+      "Entries": [
+        "316_Academy Female Sorcerer_Receives Raw Glintstone"
+      ]
+    },
+    {
+      "ID": 6291,
+      "Entries": [
+        "316_Academy Female Sorcerer_Sorcerer Orb_Talk"
+      ]
+    },
+    {
+      "ID": 6292,
+      "Entries": [
+        "316_Academy Female Sorcerer_Uses Raw Glintstone"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "600_Spirit Ash Shop"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "607_Marika Corpse"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "102_Finger Reader Corpse"
+      ]
+    },
+    {
+      "ID": 6321,
+      "Entries": [
+        "Two Fingers Appear_For Gesture Acquisition"
+      ]
+    },
+    {
+      "ID": 6330,
+      "Entries": [
+        "322_Julia_Embrace"
+      ]
+    },
+    {
+      "ID": 6331,
+      "Entries": [
+        "322_Julia_Enter Nightmare"
+      ]
+    },
+    {
+      "ID": 6332,
+      "Entries": [
+        "322_Julia_Talk"
+      ]
+    },
+    {
+      "ID": 6333,
+      "Entries": [
+        "322_Julia_Talk"
+      ]
+    },
+    {
+      "ID": 6340,
+      "Entries": [
+        "228_Wolf Rider_Summon"
+      ]
+    },
+    {
+      "ID": 6350,
+      "Entries": [
+        "326_Volcano Manor Strongest Knight_Examine Sword"
+      ]
+    },
+    {
+      "ID": 6360,
+      "Entries": [
+        "224_Old Servant_Talk"
+      ]
+    },
+    {
+      "ID": 6361,
+      "Entries": [
+        "224_Old Servant_Take Relic"
+      ]
+    },
+    {
+      "ID": 6370,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6380,
+      "Entries": [
+        "Examine Vanity"
+      ]
+    },
+    {
+      "ID": 6390,
+      "Entries": [
+        "Golden Mask Seeker_Conveys the Truth of Radagon"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Stormveil Gatekeeper_Dialogue"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "106_Ranni_Make Drink Puppet Medicine"
+      ]
+    },
+    {
+      "ID": 6411,
+      "Entries": [
+        "106_Ranni_Make Drink Puppet Medicine_High Priority"
+      ]
+    },
+    {
+      "ID": 6412,
+      "Entries": [
+        "106_Ranni_Make Drink Puppet Medicine_Low Priority"
+      ]
+    },
+    {
+      "ID": 6413,
+      "Entries": [
+        "106_Ranni_Ask Where Curse Mark Is"
+      ]
+    },
+    {
+      "ID": 6414,
+      "Entries": [
+        "106_Ranni_Talk To"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "307_Puppeteer_Puppet Shop Insurance"
+      ]
+    },
+    {
+      "ID": 6430,
+      "Entries": [
+        "603_Walking Mausoleum_Boss Soul Copy"
+      ]
+    },
+    {
+      "ID": 6440,
+      "Entries": [
+        "323_Dung Eater_Elden Ring Parts"
+      ]
+    },
+    {
+      "ID": 6450,
+      "Entries": [
+        "351_Golden Mask Seeker_Elden Ring Parts"
+      ]
+    },
+    {
+      "ID": 6460,
+      "Entries": [
+        "322_Julia_Elden Ring Parts"
+      ]
+    },
+    {
+      "ID": 6470,
+      "Entries": [
+        "301_Battlefield Physician_Finger Out"
+      ]
+    },
+    {
+      "ID": 6471,
+      "Entries": [
+        "Stain the Oath Cloth with the Maiden's Blood (Fallen Maiden)"
+      ]
+    },
+    {
+      "ID": 6472,
+      "Entries": [
+        "Stain the Oath Cloth with the Maiden's Blood (Scarred Knight Maiden)"
+      ]
+    },
+    {
+      "ID": 6480,
+      "Entries": [
+        "319_D_Hand Over Davit's Keepsake"
+      ]
+    },
+    {
+      "ID": 6490,
+      "Entries": [
+        "324_Hundred-Sage Lord"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "320_Farnese"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "216_Wolf-Head Warrior_Open Sealed Prison"
+      ]
+    },
+    {
+      "ID": 6511,
+      "Entries": [
+        "325_Roger_Examine Bloodstain"
+      ]
+    },
+    {
+      "ID": 6519,
+      "Entries": [
+        "Offer Flower"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "Examine_Spirit Ash Summon Stele_Small"
+      ]
+    },
+    {
+      "ID": 6521,
+      "Entries": [
+        "Examine_Spirit Ash Summon Stele_Medium"
+      ]
+    },
+    {
+      "ID": 6522,
+      "Entries": [
+        "Examine_Spirit Ash Summon Stele_Large"
+      ]
+    },
+    {
+      "ID": 6523,
+      "Entries": [
+        "Examine_Spirit Ash Summon Monument_SP"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "Examine_Spirit Ash Summon Stele_SP_Unique Buddy"
+      ]
+    },
+    {
+      "ID": 6531,
+      "Entries": [
+        "Examine_Spirit Ash Summon Monument_SP_Troll"
+      ]
+    },
+    {
+      "ID": 6532,
+      "Entries": [
+        "Examine_Spirit Ash Summon Monument_SP_Wolf Rider"
+      ]
+    },
+    {
+      "ID": 6533,
+      "Entries": [
+        "Examine_Spirit Ash Summon Monument_SP_Gunman"
+      ]
+    },
+    {
+      "ID": 6534,
+      "Entries": [
+        "Examine_Spirit Ash Summon Stele_SP_Wyvern"
+      ]
+    },
+    {
+      "ID": 6540,
+      "Entries": [
+        "300_Volcano Manor Mistress_Devouring Rennala Lightning..."
+      ]
+    },
+    {
+      "ID": 6550,
+      "Entries": [
+        "Examine_For Village Level Development Fire Tower"
+      ]
+    },
+    {
+      "ID": 6560,
+      "Entries": [
+        "Examine_For Environmental Ritual Stele"
+      ]
+    },
+    {
+      "ID": 6570,
+      "Entries": [
+        "Talk_Colossal Jar"
+      ]
+    },
+    {
+      "ID": 6580,
+      "Entries": [
+        "Examine_Dragon Feast Altar"
+      ]
+    },
+    {
+      "ID": 6590,
+      "Entries": [
+        "227_Spirit Jellyfish Girl_Examine Grave"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Talk_World Fragment Dialogue"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "Arena OBJ_Duel Arena"
+      ]
+    },
+    {
+      "ID": 6611,
+      "Entries": [
+        "Arena OBJ_Cooperative Arena"
+      ]
+    },
+    {
+      "ID": 6612,
+      "Entries": [
+        "Arena OBJ_Spirit Ash Arena"
+      ]
+    },
+    {
+      "ID": 6613,
+      "Entries": [
+        "Arena OBJ_Cooperative Arena"
+      ]
+    },
+    {
+      "ID": 6700,
+      "Entries": [
+        "[GR Verification] World Fragment Activation_Dialogue"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Open Door_Generic"
+      ]
+    },
+    {
+      "ID": 7101,
+      "Entries": [
+        "Open Door_Generic 101 Baseline"
+      ]
+    },
+    {
+      "ID": 7102,
+      "Entries": [
+        "Open Door_Carriage Door"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "Close Door_Generic"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Open Door_Generic_Guest Disabled"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "Open Door_Generic 101 Baseline_Guest Disabled"
+      ]
+    },
+    {
+      "ID": 7202,
+      "Entries": [
+        "Open Door_Carriage Door_Guest Disabled"
+      ]
+    },
+    {
+      "ID": 7210,
+      "Entries": [
+        "Close Door_Generic_Guest Disabled"
+      ]
+    },
+    {
+      "ID": 7220,
+      "Entries": [
+        "Open Door_Lift_Guest Disabled"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Open Door_Generic_Disabled During Multiplayer"
+      ]
+    },
+    {
+      "ID": 7301,
+      "Entries": [
+        "Open Door_Generic 101 Baseline_Disabled During Multiplayer"
+      ]
+    },
+    {
+      "ID": 7320,
+      "Entries": [
+        "Open Door_Lift_Disabled During Multiplayer"
+      ]
+    },
+    {
+      "ID": 7800,
+      "Entries": [
+        "Gather Materials"
+      ]
+    },
+    {
+      "ID": 7810,
+      "Entries": [
+        "Gather Materials (Flower 1)"
+      ]
+    },
+    {
+      "ID": 7811,
+      "Entries": [
+        "Gather Materials (Flower 2)"
+      ]
+    },
+    {
+      "ID": 7812,
+      "Entries": [
+        "Gather Materials (Flower 3)"
+      ]
+    },
+    {
+      "ID": 7813,
+      "Entries": [
+        "Gather Materials (Flower 4)"
+      ]
+    },
+    {
+      "ID": 7814,
+      "Entries": [
+        "Gather Materials (Grass 1)"
+      ]
+    },
+    {
+      "ID": 7815,
+      "Entries": [
+        "Gather Materials (Grass 2)"
+      ]
+    },
+    {
+      "ID": 7816,
+      "Entries": [
+        "Gather Materials (Grass 3)"
+      ]
+    },
+    {
+      "ID": 7817,
+      "Entries": [
+        "Gather Materials (Shrub 1)"
+      ]
+    },
+    {
+      "ID": 7818,
+      "Entries": [
+        "Gather Materials (Shrub 2)"
+      ]
+    },
+    {
+      "ID": 7819,
+      "Entries": [
+        "Gather Materials (Shrub 3)"
+      ]
+    },
+    {
+      "ID": 7820,
+      "Entries": [
+        "Gather Materials (Dead Tree)"
+      ]
+    },
+    {
+      "ID": 7821,
+      "Entries": [
+        "Gather Materials (Mushroom 1)"
+      ]
+    },
+    {
+      "ID": 7822,
+      "Entries": [
+        "Gather Materials (Mushroom 2)"
+      ]
+    },
+    {
+      "ID": 7823,
+      "Entries": [
+        "Gather Materials (Scrap Crystal)"
+      ]
+    },
+    {
+      "ID": 7824,
+      "Entries": [
+        "Gather Materials (Pure Crystal)"
+      ]
+    },
+    {
+      "ID": 7825,
+      "Entries": [
+        "Gather Materials (Butterfly)"
+      ]
+    },
+    {
+      "ID": 7826,
+      "Entries": [
+        "Gather Materials (Firefly)"
+      ]
+    },
+    {
+      "ID": 7827,
+      "Entries": [
+        "Gather Materials (Glass)"
+      ]
+    },
+    {
+      "ID": 7828,
+      "Entries": [
+        "Gather Materials (Excrement)"
+      ]
+    },
+    {
+      "ID": 7850,
+      "Entries": [
+        "Gather Materials (Mounted Swap Replacement)"
+      ]
+    },
+    {
+      "ID": 7860,
+      "Entries": [
+        "Mounted_Gather Material (Flower 1)"
+      ]
+    },
+    {
+      "ID": 7861,
+      "Entries": [
+        "Mounted_Gather Material (Flower 2)"
+      ]
+    },
+    {
+      "ID": 7862,
+      "Entries": [
+        "Mounted_Gather Material (Flower 3)"
+      ]
+    },
+    {
+      "ID": 7863,
+      "Entries": [
+        "Mounted_Gather Material (Flower 4)"
+      ]
+    },
+    {
+      "ID": 7864,
+      "Entries": [
+        "Mounted_Gather Material (Grass①)"
+      ]
+    },
+    {
+      "ID": 7865,
+      "Entries": [
+        "Mounted_Gather Material (Grass②)"
+      ]
+    },
+    {
+      "ID": 7866,
+      "Entries": [
+        "Mounted_Gather Material (Grass③)"
+      ]
+    },
+    {
+      "ID": 7867,
+      "Entries": [
+        "Mounted_Gather Material (Shrub 1)"
+      ]
+    },
+    {
+      "ID": 7868,
+      "Entries": [
+        "Mounted_Gather Material (Shrub 2)"
+      ]
+    },
+    {
+      "ID": 7869,
+      "Entries": [
+        "Mounted_Gather Material (Shrub 3)"
+      ]
+    },
+    {
+      "ID": 7870,
+      "Entries": [
+        "Mounted_Gather Material (Dead Tree)"
+      ]
+    },
+    {
+      "ID": 7871,
+      "Entries": [
+        "Mounted_Gather Material (Mushroom①)"
+      ]
+    },
+    {
+      "ID": 7872,
+      "Entries": [
+        "Mounted_Gather Material (Mushroom②)"
+      ]
+    },
+    {
+      "ID": 7873,
+      "Entries": [
+        "Mounted_Gather Material (Scrap Crystal)"
+      ]
+    },
+    {
+      "ID": 7874,
+      "Entries": [
+        "Mounted_Gather Material (Pure Crystal)"
+      ]
+    },
+    {
+      "ID": 7875,
+      "Entries": [
+        "Mounted_Gather Material (Butterfly)"
+      ]
+    },
+    {
+      "ID": 7876,
+      "Entries": [
+        "Mounted_Gather Material (Firefly)"
+      ]
+    },
+    {
+      "ID": 7877,
+      "Entries": [
+        "Mounted_Gather Material (Glass)"
+      ]
+    },
+    {
+      "ID": 7878,
+      "Entries": [
+        "Mounted_Gather Material (Excrement)"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Open Chest"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Open Door_Lift"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Activate the mechanism."
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "Activate Lever"
+      ]
+    },
+    {
+      "ID": 8301,
+      "Entries": [
+        "Activate Lever 2"
+      ]
+    },
+    {
+      "ID": 8302,
+      "Entries": [
+        "Activate Lever (Horizontal Rotation)"
+      ]
+    },
+    {
+      "ID": 8310,
+      "Entries": [
+        "Activate Lever (Underground Labyrinth Only_Vertical Lever)"
+      ]
+    },
+    {
+      "ID": 8320,
+      "Entries": [
+        "Activate Lever (Divine Gate Only)"
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        "Activate Lever_Guest Disabled"
+      ]
+    },
+    {
+      "ID": 8401,
+      "Entries": [
+        "Activate Lever 2_Guest Disabled"
+      ]
+    },
+    {
+      "ID": 8402,
+      "Entries": [
+        "Activate Lever (Horizontal Rotation 1)_Guest Disabled"
+      ]
+    },
+    {
+      "ID": 8403,
+      "Entries": [
+        "Activate Lever (Horizontal Rotation 2)_Guest Disabled"
+      ]
+    },
+    {
+      "ID": 8420,
+      "Entries": [
+        "Activate Lever (Divine Gate Only)_Guest Disabled"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "Activate Lever 2_Player Disabled"
+      ]
+    },
+    {
+      "ID": 8920,
+      "Entries": [
+        "Open Door_Back Side"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Event Generic"
+      ]
+    },
+    {
+      "ID": 9051,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer Red Sign Battlefield Physician"
+      ]
+    },
+    {
+      "ID": 9052,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer Red Sign Volcano Manor Request 1"
+      ]
+    },
+    {
+      "ID": 9053,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer Red Sign Volcano Manor Request 2"
+      ]
+    },
+    {
+      "ID": 9054,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer Red Sign Volcano Manor Request 3"
+      ]
+    },
+    {
+      "ID": 9055,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer Red Sign First Tarnished"
+      ]
+    },
+    {
+      "ID": 9056,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer Red Sign Tragos"
+      ]
+    },
+    {
+      "ID": 9057,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer Red Sign Crushed Finger"
+      ]
+    },
+    {
+      "ID": 9058,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer Red Sign Academy Sorceress"
+      ]
+    },
+    {
+      "ID": 9059,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer White Sign Academy Sorceress"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer White Sign Malenia's Daughter"
+      ]
+    },
+    {
+      "ID": 9061,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer Red Sign Malenia's Daughter"
+      ]
+    },
+    {
+      "ID": 9062,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer Red Sign Valley Event"
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer White Sign"
+      ]
+    },
+    {
+      "ID": 9071,
+      "Entries": [
+        "Event NPC Pseudo-Multiplayer Red Sign"
+      ]
+    },
+    {
+      "ID": 9080,
+      "Entries": [
+        "Event Great Rune Acquisition (Grafted King)"
+      ]
+    },
+    {
+      "ID": 9081,
+      "Entries": [
+        "Event Great Rune Acquisition (Radahn)"
+      ]
+    },
+    {
+      "ID": 9082,
+      "Entries": [
+        "Event Great Rune Acquisition (True Margit)"
+      ]
+    },
+    {
+      "ID": 9083,
+      "Entries": [
+        "Event Great Rune Acquisition (King of Ghouls)"
+      ]
+    },
+    {
+      "ID": 9084,
+      "Entries": [
+        "Event Great Rune Acquisition (Arbitrating Malenia)"
+      ]
+    },
+    {
+      "ID": 9085,
+      "Entries": [
+        "Event Great Rune Acquisition (Greater)"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Warp Object: Generic"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "Warp Object: Surprise Painting"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Warp Object: Trapped Chest"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "Warp Device"
+      ]
+    },
+    {
+      "ID": 9190,
+      "Entries": [
+        "Event Warp from Site of Grace"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Kick-Down Ladder"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "Gargoyle Statue (Bargain Bulletin Board)"
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        "Gargoyle Statue (Generic Key)"
+      ]
+    },
+    {
+      "ID": 9230,
+      "Entries": [
+        "Circular Circle"
+      ]
+    },
+    {
+      "ID": 9240,
+      "Entries": [
+        "Stargazing Platform Activation"
+      ]
+    },
+    {
+      "ID": 9250,
+      "Entries": [
+        "Meteorite Site Activation"
+      ]
+    },
+    {
+      "ID": 9260,
+      "Entries": [
+        "Underground Catacombs Guide Statue"
+      ]
+    },
+    {
+      "ID": 9270,
+      "Entries": [
+        "Lookout Platform"
+      ]
+    },
+    {
+      "ID": 9280,
+      "Entries": [
+        "Sign Pool Unlock"
+      ]
+    },
+    {
+      "ID": 9290,
+      "Entries": [
+        "Return Object"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "Ghost Candle"
+      ]
+    },
+    {
+      "ID": 9310,
+      "Entries": [
+        "Painting Event"
+      ]
+    },
+    {
+      "ID": 9320,
+      "Entries": [
+        "Sorcerer's Tower_Mist Wall"
+      ]
+    },
+    {
+      "ID": 9330,
+      "Entries": [
+        "Sword"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "Event: Erdtree Seal"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "Event: Erdtree Seal (Ash)"
+      ]
+    },
+    {
+      "ID": 9503,
+      "Entries": [
+        "Event: Royal Capital Seal"
+      ]
+    },
+    {
+      "ID": 9504,
+      "Entries": [
+        "Event: Royal Capital Seal (Reserved)"
+      ]
+    },
+    {
+      "ID": 9505,
+      "Entries": [
+        "Event: Seal of the Mad Flame"
+      ]
+    },
+    {
+      "ID": 9506,
+      "Entries": [
+        "Event: Passage to Ranni Main Body"
+      ]
+    },
+    {
+      "ID": 9519,
+      "Entries": [
+        "Event: Reserved"
+      ]
+    },
+    {
+      "ID": 9520,
+      "Entries": [
+        "Plains Town Candelabra Ignition"
+      ]
+    },
+    {
+      "ID": 9521,
+      "Entries": [
+        "Event Highland Sorcerer's Tower Device Stop"
+      ]
+    },
+    {
+      "ID": 9522,
+      "Entries": [
+        "Event: Magic Circle Warp to Front of Monsan"
+      ]
+    },
+    {
+      "ID": 9523,
+      "Entries": [
+        "Different-Colored Gargoyle Statue (Bell Tower Group Key)"
+      ]
+    },
+    {
+      "ID": 9524,
+      "Entries": [
+        "Event: Underground Labyrinth Plains_Light Fire"
+      ]
+    },
+    {
+      "ID": 9525,
+      "Entries": [
+        "Event: Underground Labyrinth Plains_Warp to Ancestor Spirit Room"
+      ]
+    },
+    {
+      "ID": 9526,
+      "Entries": [
+        "Event: Underground Labyrinth Plains_Warp to Original Location"
+      ]
+    },
+    {
+      "ID": 9527,
+      "Entries": [
+        "Event: Snowy Mountain_Town_Sealed Prison Stone Tablet"
+      ]
+    },
+    {
+      "ID": 9528,
+      "Entries": [
+        "Event: Snowy Mountain_Town_Seal Release Trigger"
+      ]
+    },
+    {
+      "ID": 9529,
+      "Entries": [
+        "Event: Snowy Mountain_Town_Mist Wall"
+      ]
+    },
+    {
+      "ID": 9530,
+      "Entries": [
+        "Event: Snowy Mountain_Ruins 5-2_Mist Wall"
+      ]
+    },
+    {
+      "ID": 9531,
+      "Entries": [
+        "Event: Swear by the Sword Gesture Acquisition"
+      ]
+    },
+    {
+      "ID": 9532,
+      "Entries": [
+        "Event Volcano Prison Stormruler"
+      ]
+    },
+    {
+      "ID": 9533,
+      "Entries": [
+        "Event Cave 4-4 Glintstone Key Sealed Wall"
+      ]
+    },
+    {
+      "ID": 9540,
+      "Entries": [
+        "Event: Radahn Festival Unique White Summon Sign_NPC1"
+      ]
+    },
+    {
+      "ID": 9541,
+      "Entries": [
+        "Event: Radahn Festival Unique White Summon Sign_NPC2"
+      ]
+    },
+    {
+      "ID": 9542,
+      "Entries": [
+        "Event: Radahn Festival Unique White Summon Sign_NPC3"
+      ]
+    },
+    {
+      "ID": 9543,
+      "Entries": [
+        "Event: Radahn Festival Unique White Summon Sign_NPC4"
+      ]
+    },
+    {
+      "ID": 9544,
+      "Entries": [
+        "Event: Radahn Festival Unique White Summon Sign_NPC5"
+      ]
+    },
+    {
+      "ID": 9545,
+      "Entries": [
+        "Event: Radahn Festival Unique White Summon Sign_NPC6"
+      ]
+    },
+    {
+      "ID": 9546,
+      "Entries": [
+        "Event: Radahn Festival Unique White Summon Sign_NPC7"
+      ]
+    },
+    {
+      "ID": 9547,
+      "Entries": [
+        "Event: Radahn Festival Unique White Summon Sign_NPC8"
+      ]
+    },
+    {
+      "ID": 9550,
+      "Entries": [
+        "Event Volcano Prison Boss"
+      ]
+    },
+    {
+      "ID": 9560,
+      "Entries": [
+        "Event: Radahn Festival Unique White Summon Sign_Patch Version_NPC1"
+      ]
+    },
+    {
+      "ID": 9600,
+      "Entries": [
+        "Cutscene_Ending A"
+      ]
+    },
+    {
+      "ID": 9610,
+      "Entries": [
+        "Cutscene_Ending B"
+      ]
+    },
+    {
+      "ID": 9620,
+      "Entries": [
+        "Cutscene_Ending C"
+      ]
+    },
+    {
+      "ID": 9630,
+      "Entries": [
+        "Cutscene_Pact"
+      ]
+    },
+    {
+      "ID": 9640,
+      "Entries": [
+        "Cutscene_Receive"
+      ]
+    },
+    {
+      "ID": 9650,
+      "Entries": [
+        "Cutscene_Flame of the Giants"
+      ]
+    },
+    {
+      "ID": 9660,
+      "Entries": [
+        "Cutscene_Hear Revelation"
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        "Cutscene_Giant EV"
+      ]
+    },
+    {
+      "ID": 9701,
+      "Entries": [
+        "Cutscene_Giant EV (Separate msg)"
+      ]
+    },
+    {
+      "ID": 9710,
+      "Entries": [
+        "Cutscene_Sarcophagus Warp"
+      ]
+    },
+    {
+      "ID": 9711,
+      "Entries": [
+        "Cutscene_Sarcophagus Warp (Underground Labyrinth Poison Swamp to Ancestor Spirit)"
+      ]
+    },
+    {
+      "ID": 9720,
+      "Entries": [
+        "Cutscene_Gravity Reversal"
+      ]
+    },
+    {
+      "ID": 9721,
+      "Entries": [
+        "Cutscene_Gravity Reversal Reversal"
+      ]
+    },
+    {
+      "ID": 9730,
+      "Entries": [
+        "Cutscene_Open Door"
+      ]
+    },
+    {
+      "ID": 9740,
+      "Entries": [
+        "Cutscene_Enter Hole"
+      ]
+    },
+    {
+      "ID": 9750,
+      "Entries": [
+        "Cutscene_Cataclysm Ritual"
+      ]
+    },
+    {
+      "ID": 9980,
+      "Entries": [
+        "NT版Ladder"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Action Button Dummy"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Enter Light Wall (Generic: Boss)"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Enter Light Wall (generic: reserved)"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Enter Light Wall (Cave 3-2: Boss)"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "cXXXX_Sleep Pickup Range (Default)"
+      ]
+    },
+    {
+      "ID": 32270,
+      "Entries": [
+        "c2270_Sleep Pickup Range (Death-stench Crab)"
+      ]
+    },
+    {
+      "ID": 33180,
+      "Entries": [
+        "c3180_Nemuri Pickup Range (Wolf Rider's Wolf)"
+      ]
+    },
+    {
+      "ID": 33181,
+      "Entries": [
+        "c3181_Nemuri Pickup Range (Runewolf)"
+      ]
+    },
+    {
+      "ID": 33950,
+      "Entries": [
+        "c3950_Nemuri Pickup Range (Ghoul Children)"
+      ]
+    },
+    {
+      "ID": 34220,
+      "Entries": [
+        "c4550_Sleep Pickup Range (Land Octopus)"
+      ]
+    },
+    {
+      "ID": 34280,
+      "Entries": [
+        "c4550_Sleep Pickup Range (Giant Jar Ant)"
+      ]
+    },
+    {
+      "ID": 34420,
+      "Entries": [
+        "c3181_Nemuri Pickup Range (Lake Crayfish)"
+      ]
+    },
+    {
+      "ID": 34490,
+      "Entries": [
+        "c4550_Sleep Pickup Range (Living Jar)"
+      ]
+    },
+    {
+      "ID": 34500,
+      "Entries": [
+        "c3950_Nemuri Pickup Range (Wyvern)"
+      ]
+    },
+    {
+      "ID": 34550,
+      "Entries": [
+        "c4550_Sleep Pickup Range (Feral Tyrannosaur)"
+      ]
+    },
+    {
+      "ID": 34560,
+      "Entries": [
+        "c4560_Sleep Acquisition Range (Raven Tyranno)"
+      ]
+    },
+    {
+      "ID": 34630,
+      "Entries": [
+        "c4630_Sleep Acquisition Range (Runebear)"
+      ]
+    }
+  ]
+}

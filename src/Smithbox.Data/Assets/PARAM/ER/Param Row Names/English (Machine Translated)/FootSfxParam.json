@@ -1,0 +1,323 @@
+{
+  "Name": "FootSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Stone (Dusty)"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Earth"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Lumber"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Grass Ground"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Gravel"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Magma"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Tree"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Heavy Oil"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Nest"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Blood Flesh"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Sand"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Bone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Ash"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Roof Tile"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Cloth"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Fallen Leaves"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Bell"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (Puddle Level)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (Ankle Level)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (Below Knee)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Poison Swamp (Shallow)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Poison Swamp (Deep)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Poison Swamp (Knee Deep)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Poison Swamp (Puddle Level)"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Water (Waist Height and Above)"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Carpet"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Eclipse"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "God Tomb Net"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Cloud"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Abyss"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Glass"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Maggot"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Deadly Poison Swamp (Puddle Level)"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Deadly Poison Swamp (Shallow)"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Deadly Poison Swamp (Up to Knee)"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Deadly Poison Swamp (Waist-High or Above)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Final Boss Room"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Church of Pilgrimage Water Surface Poison"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Anor Londo Boss Room Poison"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Snow"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Mud"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Ice"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Plague Swamp（Shallow）"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Plague Swamp（Deep）"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Blood Swamp"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Great Poison Swamp"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Weak Poison Swamp"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Strong Plague Swamp"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Strong Magma"
+      ]
+    }
+  ]
+}

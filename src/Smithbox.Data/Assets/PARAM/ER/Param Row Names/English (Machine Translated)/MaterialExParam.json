@@ -1,0 +1,1955 @@
+{
+  "Name": "MaterialExParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Buddy Composition Effect"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "c4500 Wyvern HU Effect"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "c3350 Crack Effect"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "c4180 Falloff Color Switch"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "c4180 Tentacle Change in Combat"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "c4660 Gunmen oil leak"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "c3320_Marika Slime Weapon Draw/Sheathe"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "c4760 Giant Rope Break Right"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "c4760 Giant Rope Break Left"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "c4720 Godfrey Beast Materialization"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "c4720 Godfrey Beast Transparency"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "c4520 Ancient Dragon Turn to Ash / Materialize from Ash"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "c2500 Godfrey Sixteen Knights Skill"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "c2110 Maliketh Burning"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "c2110 Maliketh Emission Intensity"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "c3400 Gladiator Phantom Serpent"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "c2190 Crumbling Marika Hair Color Change"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "c2070 World Worm (3 Fingers) Fingertip Red Heat"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "c2070 World Worm (3 Fingers) Fingertip Red Heat Emission Intensity"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "c2070 World Worm (3 Fingers) Overall Cracks"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "c2070 World Worm (3 Fingers) Disappearance"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "c2070 World Worm (3 Fingers) Color Temperature"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "c2070 World Worm (3 Fingers) Fingertip to Palm Gradation"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "c2200 Crumbling Marika (HU後)"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "C[AMSN] System EmissiveInt"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Generic EmissiveInt"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Generic VAPlayFrame"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "C[DB][1000][S2]_EmBaseInt"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "C[DB][1000][S2]_EmStencilInt"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "(Old shader) Cutscene PlayFrame"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "Cutscene Use PlayFrame"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "Cutscene Use VertexAnimationTransfer"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "Cutscene Use VertexAnimationNormal"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "Cutscene Use Generic Face Shader Eyelid"
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "Cutscene Use Generic Face Shader Eyelid Right"
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "Cutscene Use Generic Face Shader Eyelid Left"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "Fade-Out Processing C[PixelKill]_Int"
+      ]
+    },
+    {
+      "ID": 10301,
+      "Entries": [
+        "Fade-Out Processing C[PixelKill][ID1]_Int"
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "c2190_Crumbling Marika Weapon Rune Fade"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Scarab_Estus(HP Orb)_CrystalSet1"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Scarab_Estus(FP Orb)_CrystalSet1"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Scarab_Estus_RuneSet1"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "Scarab_Estus_RuneSet2"
+      ]
+    },
+    {
+      "ID": 20004,
+      "Entries": [
+        "Scarab_Skill_CrystalSet1"
+      ]
+    },
+    {
+      "ID": 20005,
+      "Entries": [
+        "Scarab_Skill_CrystalSet2"
+      ]
+    },
+    {
+      "ID": 20006,
+      "Entries": [
+        "Scarab_Gem_RuneSet1"
+      ]
+    },
+    {
+      "ID": 20007,
+      "Entries": [
+        "Scarab_Gem_RuneSet2"
+      ]
+    },
+    {
+      "ID": 20008,
+      "Entries": [
+        "Scarab_Faith_CrystalSet1"
+      ]
+    },
+    {
+      "ID": 20009,
+      "Entries": [
+        "Scarab_Faith_CrystalSet2"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Scarab_RuneA"
+      ]
+    },
+    {
+      "ID": 20011,
+      "Entries": [
+        "Scarab_RuneB"
+      ]
+    },
+    {
+      "ID": 20012,
+      "Entries": [
+        "Scarab_RuneC"
+      ]
+    },
+    {
+      "ID": 20013,
+      "Entries": [
+        "Scarab_RuneD"
+      ]
+    },
+    {
+      "ID": 20014,
+      "Entries": [
+        "Scarab_Rune Glow"
+      ]
+    },
+    {
+      "ID": 20015,
+      "Entries": [
+        "Scarab_Ore_CrystalSet1"
+      ]
+    },
+    {
+      "ID": 20016,
+      "Entries": [
+        "Scarab_Ore_CrystalSet2"
+      ]
+    },
+    {
+      "ID": 20017,
+      "Entries": [
+        "Scarab_Ore_RuneSet1"
+      ]
+    },
+    {
+      "ID": 20018,
+      "Entries": [
+        "Scarab_Ore_RuneSet2"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "Gypsy_White_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20101,
+      "Entries": [
+        "Gypsy_White_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20102,
+      "Entries": [
+        "Gypsy_White_FloatSet3"
+      ]
+    },
+    {
+      "ID": 20103,
+      "Entries": [
+        "Gypsy_White_FloatSet4"
+      ]
+    },
+    {
+      "ID": 20104,
+      "Entries": [
+        "Gypsy_White_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20105,
+      "Entries": [
+        "Gypsy_Gray_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20106,
+      "Entries": [
+        "Gypsy_Gray_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20107,
+      "Entries": [
+        "Gypsy_Gray_FloatSet3"
+      ]
+    },
+    {
+      "ID": 20108,
+      "Entries": [
+        "Gypsy_Gray_FloatSet4"
+      ]
+    },
+    {
+      "ID": 20109,
+      "Entries": [
+        "Gypsy_Gray_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "Gypsy_Black_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20111,
+      "Entries": [
+        "Gypsy_Black_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20112,
+      "Entries": [
+        "Gypsy_Black_FloatSet3"
+      ]
+    },
+    {
+      "ID": 20113,
+      "Entries": [
+        "Gypsy_Black_FloatSet4"
+      ]
+    },
+    {
+      "ID": 20114,
+      "Entries": [
+        "Gypsy_Black_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20115,
+      "Entries": [
+        "Gypsy_Blue_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20116,
+      "Entries": [
+        "Gypsy_Blue_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20117,
+      "Entries": [
+        "Gypsy_Blue_FloatSet3"
+      ]
+    },
+    {
+      "ID": 20118,
+      "Entries": [
+        "Gypsy_Blue_FloatSet4"
+      ]
+    },
+    {
+      "ID": 20119,
+      "Entries": [
+        "Gypsy_Blue_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20120,
+      "Entries": [
+        "Gypsy_Red_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20121,
+      "Entries": [
+        "Gypsy_Red_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20122,
+      "Entries": [
+        "Gypsy_Red_FloatSet3"
+      ]
+    },
+    {
+      "ID": 20123,
+      "Entries": [
+        "Gypsy_Red_FloatSet4"
+      ]
+    },
+    {
+      "ID": 20124,
+      "Entries": [
+        "Gypsy_Red_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20125,
+      "Entries": [
+        "Gypsy_Yellow_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20126,
+      "Entries": [
+        "Gypsy_Yellow_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20127,
+      "Entries": [
+        "Gypsy_Yellow_FloatSet3"
+      ]
+    },
+    {
+      "ID": 20128,
+      "Entries": [
+        "Gypsy_Yellow_FloatSet4"
+      ]
+    },
+    {
+      "ID": 20129,
+      "Entries": [
+        "Gypsy_Yellow_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20130,
+      "Entries": [
+        "Gypsy_Green_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20131,
+      "Entries": [
+        "Gypsy_Green_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20132,
+      "Entries": [
+        "Gypsy_Green_FloatSet3"
+      ]
+    },
+    {
+      "ID": 20133,
+      "Entries": [
+        "Gypsy_Green_FloatSet4"
+      ]
+    },
+    {
+      "ID": 20134,
+      "Entries": [
+        "Gypsy_Green_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20135,
+      "Entries": [
+        "Gypsy_Orange_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20136,
+      "Entries": [
+        "Gypsy_Orange_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20137,
+      "Entries": [
+        "Gypsy_Orange_FloatSet3"
+      ]
+    },
+    {
+      "ID": 20138,
+      "Entries": [
+        "Gypsy_Orange_FloatSet4"
+      ]
+    },
+    {
+      "ID": 20139,
+      "Entries": [
+        "Gypsy_Orange_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20140,
+      "Entries": [
+        "Gypsy_Purple_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20141,
+      "Entries": [
+        "Gypsy_Purple_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20142,
+      "Entries": [
+        "Gypsy_Purple_FloatSet3"
+      ]
+    },
+    {
+      "ID": 20143,
+      "Entries": [
+        "Gypsy_Purple_FloatSet4"
+      ]
+    },
+    {
+      "ID": 20144,
+      "Entries": [
+        "Gypsy_Purple_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20145,
+      "Entries": [
+        "Gypsy_Daath_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20146,
+      "Entries": [
+        "Gypsy_Daath_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20147,
+      "Entries": [
+        "Gypsy_Daath_FloatSet3"
+      ]
+    },
+    {
+      "ID": 20148,
+      "Entries": [
+        "Gypsy_Daath_FloatSet4"
+      ]
+    },
+    {
+      "ID": 20149,
+      "Entries": [
+        "Gypsy_Daath_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20150,
+      "Entries": [
+        "Gypsy_Malkuth_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "Torrent_White_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20201,
+      "Entries": [
+        "Torrent_White_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20202,
+      "Entries": [
+        "Torrent_White_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20203,
+      "Entries": [
+        "Torrent_Gray_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20204,
+      "Entries": [
+        "Torrent_Gray_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20205,
+      "Entries": [
+        "Torrent_Gray_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20206,
+      "Entries": [
+        "Torrent_Black_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20207,
+      "Entries": [
+        "Torrent_Black_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20208,
+      "Entries": [
+        "Torrent_Black_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20209,
+      "Entries": [
+        "Torrent_Blue_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20210,
+      "Entries": [
+        "Torrent_Blue_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20211,
+      "Entries": [
+        "Torrent_Blue_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20212,
+      "Entries": [
+        "Torrent_Red_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20213,
+      "Entries": [
+        "Torrent_Red_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20214,
+      "Entries": [
+        "Torrent_Red_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20215,
+      "Entries": [
+        "Torrent_Yellow_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20216,
+      "Entries": [
+        "Torrent_Yellow_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20217,
+      "Entries": [
+        "Torrent_Yellow_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20218,
+      "Entries": [
+        "Torrent_Green_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20219,
+      "Entries": [
+        "Torrent_Green_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20220,
+      "Entries": [
+        "Torrent_Green_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20221,
+      "Entries": [
+        "Torrent_Orange_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20222,
+      "Entries": [
+        "Torrent_Orange_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20223,
+      "Entries": [
+        "Torrent_Orange_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20224,
+      "Entries": [
+        "Torrent_Purple_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20225,
+      "Entries": [
+        "Torrent_Purple_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20226,
+      "Entries": [
+        "Torrent_Purple_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20227,
+      "Entries": [
+        "Donkey_Daat_FloatSet1"
+      ]
+    },
+    {
+      "ID": 20228,
+      "Entries": [
+        "Torrent_Dadat_FloatSet2"
+      ]
+    },
+    {
+      "ID": 20229,
+      "Entries": [
+        "Torrent_Dadat_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20230,
+      "Entries": [
+        "Torrent_Malkuth_FloatSet5"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "c4660_Guardian of the High Road Snow Cover Body Color"
+      ]
+    },
+    {
+      "ID": 20301,
+      "Entries": [
+        "c4660_Guardian of the High Road Snow Cover Snow"
+      ]
+    },
+    {
+      "ID": 20302,
+      "Entries": [
+        "c4660_Guardian of the High Road Nearly Broken Body Color"
+      ]
+    },
+    {
+      "ID": 20303,
+      "Entries": [
+        "c4660_Guardian of the High Road Nearly Broken No Effect"
+      ]
+    },
+    {
+      "ID": 20304,
+      "Entries": [
+        "c4660_Guardian of the High Road Nearly Broken Detail"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "c4560_Raven Tyranno_Color"
+      ]
+    },
+    {
+      "ID": 20402,
+      "Entries": [
+        "c4560_Raven Tyranno_Fur"
+      ]
+    },
+    {
+      "ID": 20403,
+      "Entries": [
+        "c4560_Raven Tyranno_Feathers"
+      ]
+    },
+    {
+      "ID": 20404,
+      "Entries": [
+        "c4560_Raven Tyranno_Saturation"
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        "c3702_Glintstone Sorcerer_Melee Robe"
+      ]
+    },
+    {
+      "ID": 20501,
+      "Entries": [
+        "c3702_Glintstone Sorcerer_Melee Robe Dirt"
+      ]
+    },
+    {
+      "ID": 20502,
+      "Entries": [
+        "c3702_Glintstone Sorcerer_Melee Rope"
+      ]
+    },
+    {
+      "ID": 20503,
+      "Entries": [
+        "c3702_Glintstone Sorcerer_Melee Belt"
+      ]
+    },
+    {
+      "ID": 20504,
+      "Entries": [
+        "c3702_Glintstone Sorcerer_Melee Belt Embroidery"
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "c4420_Lake Crayfish Body Color"
+      ]
+    },
+    {
+      "ID": 20601,
+      "Entries": [
+        "c4420_Lake Crayfish Body Saturation"
+      ]
+    },
+    {
+      "ID": 20602,
+      "Entries": [
+        "c4420_Lake Crayfish Fur Color"
+      ]
+    },
+    {
+      "ID": 20603,
+      "Entries": [
+        "c4420_Lake Crayfish Fur Saturation"
+      ]
+    },
+    {
+      "ID": 20604,
+      "Entries": [
+        "c4420_Lake Crayfish AlphaMask Black Strength"
+      ]
+    },
+    {
+      "ID": 20700,
+      "Entries": [
+        "c4600_Troll Snowy Mountain Robe"
+      ]
+    },
+    {
+      "ID": 20701,
+      "Entries": [
+        "c4600_Troll Snowy Mountain Robe"
+      ]
+    },
+    {
+      "ID": 20800,
+      "Entries": [
+        "c4201_Old Woman Bat_Charm_Body Color"
+      ]
+    },
+    {
+      "ID": 20801,
+      "Entries": [
+        "c4201_Old Woman Bat_Charm_Body Color"
+      ]
+    },
+    {
+      "ID": 20900,
+      "Entries": [
+        "c4770_Royal Capital Gargoyle_Incense Powder"
+      ]
+    },
+    {
+      "ID": 20905,
+      "Entries": [
+        "c4770_Royal Capital Gargoyle_Minion Black"
+      ]
+    },
+    {
+      "ID": 20906,
+      "Entries": [
+        "c4770_Royal Capital Gargoyle_Minion Shineness"
+      ]
+    },
+    {
+      "ID": 20907,
+      "Entries": [
+        "c4770_Royal Capital Gargoyle_Minion Gold"
+      ]
+    },
+    {
+      "ID": 20908,
+      "Entries": [
+        "c4770_Royal Capital Gargoyle_Minion Black 2"
+      ]
+    },
+    {
+      "ID": 20909,
+      "Entries": [
+        "c4770_Royal Capital Gargoyle_Minion Hair Saturation"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "c3670_Leg Cripple Dirt 1"
+      ]
+    },
+    {
+      "ID": 21001,
+      "Entries": [
+        "c3670_Leg Cripple Dirt 2"
+      ]
+    },
+    {
+      "ID": 21100,
+      "Entries": [
+        "c2100_Black Knife Descendant (Injured)1"
+      ]
+    },
+    {
+      "ID": 21101,
+      "Entries": [
+        "c2100_Black Knife Descendant (Injured)2"
+      ]
+    },
+    {
+      "ID": 21102,
+      "Entries": [
+        "c2100_Black Knife Descendant (Injured)3"
+      ]
+    },
+    {
+      "ID": 21103,
+      "Entries": [
+        "c2100_Black Knife Descendant (Injured)4"
+      ]
+    },
+    {
+      "ID": 21104,
+      "Entries": [
+        "c2100_Black Knife Descendant (Injured)5"
+      ]
+    },
+    {
+      "ID": 21200,
+      "Entries": [
+        "c4650_Ruinator (post-HU) Body Color"
+      ]
+    },
+    {
+      "ID": 21201,
+      "Entries": [
+        "c4650_Ruinator (post-HU) Frost Intensity"
+      ]
+    },
+    {
+      "ID": 21202,
+      "Entries": [
+        "c4650_Ruinator (post-HU) Body Saturation"
+      ]
+    },
+    {
+      "ID": 21203,
+      "Entries": [
+        "c4650_Ruinator (post-HU) Frost Intensity"
+      ]
+    },
+    {
+      "ID": 21204,
+      "Entries": [
+        "c4650_Ruinator (post-HU) Bandage Saturation"
+      ]
+    },
+    {
+      "ID": 21300,
+      "Entries": [
+        "c3970_Descendants of the Intelligent Beast Lightning Magic 1"
+      ]
+    },
+    {
+      "ID": 21301,
+      "Entries": [
+        "c3970_Descendants of the Intelligent Beast Lightning Magic 2"
+      ]
+    },
+    {
+      "ID": 21302,
+      "Entries": [
+        "c3970_Descendants of the Intelligent Beast Lightning Magic 3"
+      ]
+    },
+    {
+      "ID": 21303,
+      "Entries": [
+        "c3970_Descendants of the Intelligent Beast Lightning Magic 4"
+      ]
+    },
+    {
+      "ID": 21400,
+      "Entries": [
+        "c4180_Spirit Jellyfish Resentment Variant Out of Combat"
+      ]
+    },
+    {
+      "ID": 21401,
+      "Entries": [
+        "c4180_Spirit Jellyfish Resentment Variant In Combat"
+      ]
+    },
+    {
+      "ID": 21500,
+      "Entries": [
+        "c4450_Walking Mausoleum Snowy Mountain Variant ArrayID Specified"
+      ]
+    },
+    {
+      "ID": 21501,
+      "Entries": [
+        "c4450_Walking Mausoleum Snowy Mountain Variant Blend Area Specified"
+      ]
+    },
+    {
+      "ID": 21600,
+      "Entries": [
+        "4620_Astel Withered 1"
+      ]
+    },
+    {
+      "ID": 21601,
+      "Entries": [
+        "4620_Astel Withered 2"
+      ]
+    },
+    {
+      "ID": 21602,
+      "Entries": [
+        "4620_Astel Withered Feather"
+      ]
+    },
+    {
+      "ID": 21603,
+      "Entries": [
+        "4620_Astel Withered Ring"
+      ]
+    },
+    {
+      "ID": 21700,
+      "Entries": [
+        "c3470_c3471_Frog-man Blood Variant"
+      ]
+    },
+    {
+      "ID": 21701,
+      "Entries": [
+        "c3470_c3471_Frog-man Miquella Variant Saturation"
+      ]
+    },
+    {
+      "ID": 21702,
+      "Entries": [
+        "c3470_c3471_Frog-man Miquella Variant Clothing"
+      ]
+    },
+    {
+      "ID": 21703,
+      "Entries": [
+        "c3470_c3471_Frog-man Miquella Variant Clothing"
+      ]
+    },
+    {
+      "ID": 21800,
+      "Entries": [
+        "c3950_Ghoul Children_Volcano Manor Recruiter"
+      ]
+    },
+    {
+      "ID": 21900,
+      "Entries": [
+        "c3350_Crystal Tribe (Crystal Poison)"
+      ]
+    },
+    {
+      "ID": 21901,
+      "Entries": [
+        "c3350_Crystal Tribe Spirit Ash"
+      ]
+    },
+    {
+      "ID": 21902,
+      "Entries": [
+        "c3350_Crystal Tribe (Crystal Poison) Cape Color"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "c2190_Crumbling Marika Body Rune Fade"
+      ]
+    },
+    {
+      "ID": 22100,
+      "Entries": [
+        "c4480_Rune-eating Flower Blue"
+      ]
+    },
+    {
+      "ID": 22101,
+      "Entries": [
+        "c4480_Rune-eating Flower Blue"
+      ]
+    },
+    {
+      "ID": 22102,
+      "Entries": [
+        "c4480_Rune-eating Flower Blue"
+      ]
+    },
+    {
+      "ID": 22103,
+      "Entries": [
+        "c4480_Rune-eating Flower Blue"
+      ]
+    },
+    {
+      "ID": 22104,
+      "Entries": [
+        "c4480_Rune-eating Flower Blue"
+      ]
+    },
+    {
+      "ID": 22105,
+      "Entries": [
+        "c4480_Rune-eating Flower Yellow"
+      ]
+    },
+    {
+      "ID": 22106,
+      "Entries": [
+        "c4480_Rune-eating Flower Yellow"
+      ]
+    },
+    {
+      "ID": 22107,
+      "Entries": [
+        "c4480_Rune-eating Flower Yellow"
+      ]
+    },
+    {
+      "ID": 22108,
+      "Entries": [
+        "c4480_Rune-eating Flower Yellow"
+      ]
+    },
+    {
+      "ID": 22109,
+      "Entries": [
+        "c4480_Rune-eating Flower Yellow"
+      ]
+    },
+    {
+      "ID": 22110,
+      "Entries": [
+        "c4480_Rune-eating Flower Dirty Yellow Flower"
+      ]
+    },
+    {
+      "ID": 22111,
+      "Entries": [
+        "c4480_Rune-eating Flower Dirty Yellow Flower 2"
+      ]
+    },
+    {
+      "ID": 22112,
+      "Entries": [
+        "c4480_Rune-eating Flower Dirty Yellow Stem"
+      ]
+    },
+    {
+      "ID": 22113,
+      "Entries": [
+        "c4480_Rune-eating Flower Dirty Yellow Hair"
+      ]
+    },
+    {
+      "ID": 22200,
+      "Entries": [
+        "c3661_Rotten Undead Rot variant"
+      ]
+    },
+    {
+      "ID": 22300,
+      "Entries": [
+        "c3660_Rune Slave Chaos Clothing Color"
+      ]
+    },
+    {
+      "ID": 22301,
+      "Entries": [
+        "c3660_Rune Slave Death Prince Clothing Color"
+      ]
+    },
+    {
+      "ID": 22302,
+      "Entries": [
+        "c3660_Rune Slave Necromancer Hair Color"
+      ]
+    },
+    {
+      "ID": 22303,
+      "Entries": [
+        "c3660_Rune Slave Prisoner Mark"
+      ]
+    },
+    {
+      "ID": 22400,
+      "Entries": [
+        "c3500_Buried Skeleton Golden Bone"
+      ]
+    },
+    {
+      "ID": 22401,
+      "Entries": [
+        "c3500_Buried Skeleton Golden Metalness"
+      ]
+    },
+    {
+      "ID": 22500,
+      "Entries": [
+        "c3703_Page Robe"
+      ]
+    },
+    {
+      "ID": 22501,
+      "Entries": [
+        "c3703_Page Saturation"
+      ]
+    },
+    {
+      "ID": 22502,
+      "Entries": [
+        "c3703_Page Cape"
+      ]
+    },
+    {
+      "ID": 22503,
+      "Entries": [
+        "c3703_Page Sleeve Embroidery"
+      ]
+    },
+    {
+      "ID": 22504,
+      "Entries": [
+        "c3703_Page Sleeve White"
+      ]
+    },
+    {
+      "ID": 22600,
+      "Entries": [
+        "c6060_Sheep Lightning Layer Color"
+      ]
+    },
+    {
+      "ID": 22601,
+      "Entries": [
+        "c6060_Sheep Lightning Layer Metalness"
+      ]
+    },
+    {
+      "ID": 22602,
+      "Entries": [
+        "c6060_Sheep Lightning Billboard Color"
+      ]
+    },
+    {
+      "ID": 22603,
+      "Entries": [
+        "c6060_Sheep Lightning Billboard Saturation"
+      ]
+    },
+    {
+      "ID": 22604,
+      "Entries": [
+        "c6060_Sheep Lightning Body Color"
+      ]
+    },
+    {
+      "ID": 22700,
+      "Entries": [
+        "c4340_Pumpkin Head Banner Stormveil"
+      ]
+    },
+    {
+      "ID": 22701,
+      "Entries": [
+        "c4340_Pumpkin Head Banner Stormveil"
+      ]
+    },
+    {
+      "ID": 22702,
+      "Entries": [
+        "c4340_Pumpkin Head Banner Monsan"
+      ]
+    },
+    {
+      "ID": 22703,
+      "Entries": [
+        "c4340_Pumpkin Head Banner Monsan"
+      ]
+    },
+    {
+      "ID": 22704,
+      "Entries": [
+        "c4340_Pumpkin Head Banner Royal Capital"
+      ]
+    },
+    {
+      "ID": 22705,
+      "Entries": [
+        "c4340_Pumpkin Head Banner Royal Capital"
+      ]
+    },
+    {
+      "ID": 22706,
+      "Entries": [
+        "c4340_Pumpkin Head Banner Plains Fort"
+      ]
+    },
+    {
+      "ID": 22707,
+      "Entries": [
+        "c4340_Pumpkin Head Banner Plains Fort"
+      ]
+    },
+    {
+      "ID": 22800,
+      "Entries": [
+        "c4502_Wyvern (Sorcery) Blue Variant"
+      ]
+    },
+    {
+      "ID": 22900,
+      "Entries": [
+        "c4550_Feral Tyrannosaur Snowfield Variant Skin"
+      ]
+    },
+    {
+      "ID": 22901,
+      "Entries": [
+        "c4550_Feral Tyrannosaur Snowfield Variant Skin"
+      ]
+    },
+    {
+      "ID": 22902,
+      "Entries": [
+        "c4550_Feral Tyrannosaur Snowfield Variant Skin"
+      ]
+    },
+    {
+      "ID": 22903,
+      "Entries": [
+        "c4550_Feral Tyrannosaur Snowfield Variant Fur"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "c4382_Undead Miner (Ore Carving): Frozen"
+      ]
+    },
+    {
+      "ID": 23001,
+      "Entries": [
+        "c4382_Undead Miner (Ore Carving): Frozen"
+      ]
+    },
+    {
+      "ID": 23002,
+      "Entries": [
+        "c4382_Undead Miner (Ore Carving): Frozen"
+      ]
+    },
+    {
+      "ID": 23003,
+      "Entries": [
+        "c4382_Undead Miner (Ore Carving): Frozen"
+      ]
+    },
+    {
+      "ID": 23100,
+      "Entries": [
+        "c3400_Gladiator Rot Variant Skin Snake Brightness"
+      ]
+    },
+    {
+      "ID": 23101,
+      "Entries": [
+        "c3400_Gladiator Rot Variant Skin Snake Saturation"
+      ]
+    },
+    {
+      "ID": 23102,
+      "Entries": [
+        "c3400_Gladiator Rot Variant Cloth Color"
+      ]
+    },
+    {
+      "ID": 23103,
+      "Entries": [
+        "c3400_Gladiator Rot Variant"
+      ]
+    },
+    {
+      "ID": 23200,
+      "Entries": [
+        "c4430_Living Stone Plains Variant"
+      ]
+    },
+    {
+      "ID": 23201,
+      "Entries": [
+        "c4430_Living Stone Highland Variant"
+      ]
+    },
+    {
+      "ID": 23202,
+      "Entries": [
+        "c4430_Living Stone Snowfield Variant"
+      ]
+    },
+    {
+      "ID": 23203,
+      "Entries": [
+        "c4430_Living Stone Snowfield Variant"
+      ]
+    },
+    {
+      "ID": 23204,
+      "Entries": [
+        "c4430_Living Stone Snowfield Variant"
+      ]
+    },
+    {
+      "ID": 23300,
+      "Entries": [
+        "c4640_Serpent Spirit Red Rot"
+      ]
+    },
+    {
+      "ID": 23301,
+      "Entries": [
+        "c4640_Serpent Spirit Red Rot"
+      ]
+    },
+    {
+      "ID": 23302,
+      "Entries": [
+        "c4640_Serpent Spirit Red Rot"
+      ]
+    },
+    {
+      "ID": 23400,
+      "Entries": [
+        "c4470_Rykard's Kidnapper Weapon Rampage Variant"
+      ]
+    },
+    {
+      "ID": 23401,
+      "Entries": [
+        "c4470_Rykard's Kidnapper Weapon Rampage Variant"
+      ]
+    },
+    {
+      "ID": 23500,
+      "Entries": [
+        "c6072__Carrier Pigeon (Large) Graveyard Crow Variant Black"
+      ]
+    },
+    {
+      "ID": 23501,
+      "Entries": [
+        "c6072__Carrier Pigeon (Large) Graveyard Crow Variant Glossy"
+      ]
+    },
+    {
+      "ID": 23600,
+      "Entries": [
+        "c3451_Ancestor Spirit Lion_Scale Blacksmith"
+      ]
+    },
+    {
+      "ID": 23601,
+      "Entries": [
+        "c3451_Ancestor Spirit Lion_Scale Blacksmith"
+      ]
+    },
+    {
+      "ID": 23700,
+      "Entries": [
+        "c4170_Writhing Carrion_Green Poison"
+      ]
+    },
+    {
+      "ID": 23701,
+      "Entries": [
+        "c4170_Writhing Carrion_Green Poison"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Map_Generic_AMSN tex Offset"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "Map_Underground Labyrinth_Generic_Elevator GlowRate"
+      ]
+    },
+    {
+      "ID": 190000,
+      "Entries": [
+        "Map_Last Boss Area_Cutscene Spear_ApplyRate"
+      ]
+    },
+    {
+      "ID": 190001,
+      "Entries": [
+        "Map_Last Boss Area_Cutscene Arc_ApplyRate"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "s60_38_0000_Giant Elevator Activation Statue Glowing Eyes"
+      ]
+    },
+    {
+      "ID": 600001,
+      "Entries": [
+        "Map_Circle Ring_GlowRate"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "CS_Statue Eye Emissive Intensity"
+      ]
+    },
+    {
+      "ID": 700100,
+      "Entries": [
+        "CS_Ending B_Cold Moon_Fake Light Angle"
+      ]
+    },
+    {
+      "ID": 700110,
+      "Entries": [
+        "CS_Ending B_Cold Moon_Fake Light Color"
+      ]
+    },
+    {
+      "ID": 700120,
+      "Entries": [
+        "CS_Ending B_Cold Moon_Star Color"
+      ]
+    },
+    {
+      "ID": 700130,
+      "Entries": [
+        "CS_Ending B_Cold Moon_Galaxy Color"
+      ]
+    },
+    {
+      "ID": 700140,
+      "Entries": [
+        "CS_Ending B_Cold Moon_Cloud Color"
+      ]
+    },
+    {
+      "ID": 700150,
+      "Entries": [
+        "CS_Ending B_Cold Moon_Boundary Color"
+      ]
+    },
+    {
+      "ID": 700200,
+      "Entries": [
+        "CS_Ancient Dragon Battle Start_Tornado_Height Map Strength"
+      ]
+    },
+    {
+      "ID": 700210,
+      "Entries": [
+        "CS_Ancient Dragon Battle Start_Tornado_Height Map Scale"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "[Skin]Color [For Character Customization Below]"
+      ]
+    },
+    {
+      "ID": 800001,
+      "Entries": [
+        "[Skin]Gloss_Int"
+      ]
+    },
+    {
+      "ID": 800002,
+      "Entries": [
+        "[Skin]Pores_Int"
+      ]
+    },
+    {
+      "ID": 800003,
+      "Entries": [
+        "[Skin]Beard_Int"
+      ]
+    },
+    {
+      "ID": 800004,
+      "Entries": [
+        "[Skin]AroundEye_Int"
+      ]
+    },
+    {
+      "ID": 800005,
+      "Entries": [
+        "[Skin]AroundEye_Color"
+      ]
+    },
+    {
+      "ID": 800006,
+      "Entries": [
+        "[Skin]Cheek_Int"
+      ]
+    },
+    {
+      "ID": 800007,
+      "Entries": [
+        "[Skin]Cheek_Color"
+      ]
+    },
+    {
+      "ID": 800010,
+      "Entries": [
+        "[MakeUp]EyeLine1_Int"
+      ]
+    },
+    {
+      "ID": 800011,
+      "Entries": [
+        "[MakeUp]EyeLine1_Color"
+      ]
+    },
+    {
+      "ID": 800012,
+      "Entries": [
+        "[MakeUp]EyeLine2_Int"
+      ]
+    },
+    {
+      "ID": 800013,
+      "Entries": [
+        "[MakeUp]EyeLine2_Color"
+      ]
+    },
+    {
+      "ID": 800014,
+      "Entries": [
+        "[MakeUp]EyeShadow_Int"
+      ]
+    },
+    {
+      "ID": 800015,
+      "Entries": [
+        "[MakeUp]EyeShadow_Color"
+      ]
+    },
+    {
+      "ID": 800016,
+      "Entries": [
+        "[MakeUp]Lip_Int"
+      ]
+    },
+    {
+      "ID": 800017,
+      "Entries": [
+        "[MakeUp]Lip_Color"
+      ]
+    },
+    {
+      "ID": 800020,
+      "Entries": [
+        "[Decal]Pos"
+      ]
+    },
+    {
+      "ID": 800021,
+      "Entries": [
+        "[Decal]Rot"
+      ]
+    },
+    {
+      "ID": 800022,
+      "Entries": [
+        "[Decal]Scale"
+      ]
+    },
+    {
+      "ID": 800023,
+      "Entries": [
+        "[Decal]Color"
+      ]
+    },
+    {
+      "ID": 800024,
+      "Entries": [
+        "[Decal]Gloss"
+      ]
+    },
+    {
+      "ID": 800025,
+      "Entries": [
+        "[Decal]Texture"
+      ]
+    },
+    {
+      "ID": 800026,
+      "Entries": [
+        "[Decal]Mirror"
+      ]
+    },
+    {
+      "ID": 800027,
+      "Entries": [
+        "[Decal]_Int ※In-game Event Use"
+      ]
+    },
+    {
+      "ID": 800028,
+      "Entries": [
+        "[Body]Hair_Int"
+      ]
+    },
+    {
+      "ID": 800029,
+      "Entries": [
+        "[Body]Hair_Color"
+      ]
+    },
+    {
+      "ID": 800030,
+      "Entries": [
+        "[Iris]Color"
+      ]
+    },
+    {
+      "ID": 800031,
+      "Entries": [
+        "[Iris]Scale"
+      ]
+    },
+    {
+      "ID": 800032,
+      "Entries": [
+        "[Cataract]Int"
+      ]
+    },
+    {
+      "ID": 800033,
+      "Entries": [
+        "[Cataract]Color"
+      ]
+    },
+    {
+      "ID": 800034,
+      "Entries": [
+        "[Sclera]Color"
+      ]
+    },
+    {
+      "ID": 800035,
+      "Entries": [
+        "[Iris]Distance"
+      ]
+    },
+    {
+      "ID": 800040,
+      "Entries": [
+        "[Hair]Color"
+      ]
+    },
+    {
+      "ID": 800041,
+      "Entries": [
+        "[Hair]Shininess_Int"
+      ]
+    },
+    {
+      "ID": 800042,
+      "Entries": [
+        "[HairRoot]Black_Int"
+      ]
+    },
+    {
+      "ID": 800043,
+      "Entries": [
+        "[WhiteHair]Density"
+      ]
+    },
+    {
+      "ID": 800050,
+      "Entries": [
+        "[Eyepatch]Color"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "SEQ01080_White Red"
+      ]
+    },
+    {
+      "ID": 900001,
+      "Entries": [
+        "SEQ01080_Black Blue"
+      ]
+    },
+    {
+      "ID": 900002,
+      "Entries": [
+        "SEQ01080_Fall Off"
+      ]
+    }
+  ]
+}

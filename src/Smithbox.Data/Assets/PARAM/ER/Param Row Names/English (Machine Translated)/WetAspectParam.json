@@ -1,0 +1,125 @@
+{
+  "Name": "WetAspectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Wet Surface"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Poison Wet"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Mud Stain"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Freeze"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Oil Soaked"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "For Hostile Guest"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Iron Body"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[Empty]"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "[Empty]"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Cutscene] Bloodstained"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Cutscene] Tar"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Cutscene] Spare 2"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[Empty]"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "[Empty]"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "[Empty]"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "[Empty]"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Adhesion check"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Mercury"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Plague Wet"
+      ]
+    }
+  ]
+}

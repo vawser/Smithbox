@@ -1,0 +1,17 @@
+{
+  "Name": "FaceRangeParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Area Min Value"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Area Max Value"
+      ]
+    }
+  ]
+}

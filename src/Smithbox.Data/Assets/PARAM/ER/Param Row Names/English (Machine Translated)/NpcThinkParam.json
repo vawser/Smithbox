@@ -1,0 +1,8879 @@
+{
+  "Name": "NpcThinkParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "ForTest"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Do-nothing use"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Harmless data (copy-paste source recommended)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Jump Test"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Ladder Test"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "NPC AI Test"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Stone Saki Test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Auto-Patrol (Default)"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Auto-patrol (run)"
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        "Auto-patrol (walk)"
+      ]
+    },
+    {
+      "ID": 542,
+      "Entries": [
+        "Auto-Patrol (Super Dash)"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "■■■■■Product Start■■■■■"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Group Patrol Dummy Leader"
+      ]
+    },
+    {
+      "ID": 1000100,
+      "Entries": [
+        "For Funnel"
+      ]
+    },
+    {
+      "ID": 1000101,
+      "Entries": [
+        "Enhanced Funnel For"
+      ]
+    },
+    {
+      "ID": 1000102,
+      "Entries": [
+        "Skill Funnel+Thrust (Up/Down/Left/Right Vision Limit)"
+      ]
+    },
+    {
+      "ID": 1001000,
+      "Entries": [
+        "c4020 Nazgul Funnel"
+      ]
+    },
+    {
+      "ID": 1002000,
+      "Entries": [
+        "c4670_For Ancestor Spirit_Dummy character"
+      ]
+    },
+    {
+      "ID": 1003000,
+      "Entries": [
+        "c2031_Rennala (after HU)_dummy character"
+      ]
+    },
+    {
+      "ID": 1004000,
+      "Entries": [
+        "c4600_Troll: Royal Knight Variant Funnel A"
+      ]
+    },
+    {
+      "ID": 1004001,
+      "Entries": [
+        "c4600_Troll: Royal Knight Variant Funnel B"
+      ]
+    },
+    {
+      "ID": 1005000,
+      "Entries": [
+        "Magic Absorb Parry_Funnel Sight"
+      ]
+    },
+    {
+      "ID": 1200000,
+      "Entries": [
+        "Catapult Dummy"
+      ]
+    },
+    {
+      "ID": 1200100,
+      "Entries": [
+        "Catapult Dummy_Evil Eye"
+      ]
+    },
+    {
+      "ID": 1200199,
+      "Entries": [
+        "Catapult Dummy_Evil Eye_Temp for Arrow Rain"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Balloon Dummy"
+      ]
+    },
+    {
+      "ID": 10005000,
+      "Entries": [
+        "Red-Eye Gypsy Dummy Character"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "Wolf-Head Warrior"
+      ]
+    },
+    {
+      "ID": 20108000,
+      "Entries": [
+        "[Rennala_Summon Magic] Wolf-Head Warrior"
+      ]
+    },
+    {
+      "ID": 20108500,
+      "Entries": [
+        "[Shadow Summon]Wolf-Head Warrior"
+      ]
+    },
+    {
+      "ID": 20109000,
+      "Entries": [
+        "[For White Phantom]Wolf-Head Warrior"
+      ]
+    },
+    {
+      "ID": 20109500,
+      "Entries": [
+        "[For White Phantom]Wolf-Head Warrior_For Radahn Festival"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "Rennala of the Full Moon (Before HU)"
+      ]
+    },
+    {
+      "ID": 20300100,
+      "Entries": [
+        "[Dialogue NPC] Rennala of the Full Moon (Before HU)"
+      ]
+    },
+    {
+      "ID": 20310000,
+      "Entries": [
+        "Rennala of the Full Moon (After HU)"
+      ]
+    },
+    {
+      "ID": 20310100,
+      "Entries": [
+        "[Dialogue NPC] Rennala of the Full Moon (After HU)"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "Rennala's Children"
+      ]
+    },
+    {
+      "ID": 20410000,
+      "Entries": [
+        "Rot Larva"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "Sorceress Ranni"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "World Worm (2 Fingers)"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "Black Knife Descendant"
+      ]
+    },
+    {
+      "ID": 21000001,
+      "Entries": [
+        "Black Knife Descendant_Short Sight Range"
+      ]
+    },
+    {
+      "ID": 21000010,
+      "Entries": [
+        "Black Knife Descendant_Catacombs 1-4 Boss Fight"
+      ]
+    },
+    {
+      "ID": 21000030,
+      "Entries": [
+        "Black Knife Descendant_Highland Field Boss_Short Homing Distance"
+      ]
+    },
+    {
+      "ID": 21000052,
+      "Entries": [
+        "Black Knife Descendant_Snowy Mountain Second Half Scent Enabled"
+      ]
+    },
+    {
+      "ID": 21100000,
+      "Entries": [
+        "Black Blade Malenia"
+      ]
+    },
+    {
+      "ID": 21101000,
+      "Entries": [
+        "Black Blade Malenia (HU After)"
+      ]
+    },
+    {
+      "ID": 21102000,
+      "Entries": [
+        "Black Blade Malenia_Dialogue NPC for Beast Priest"
+      ]
+    },
+    {
+      "ID": 21200000,
+      "Entries": [
+        "Arbitrating Malenia"
+      ]
+    },
+    {
+      "ID": 21201000,
+      "Entries": [
+        "Arbitrating Malenia_Phantom"
+      ]
+    },
+    {
+      "ID": 21201010,
+      "Entries": [
+        "Arbitrating Malenia_Phantom"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "Margit the Fell Omen (1st Battle)"
+      ]
+    },
+    {
+      "ID": 21300500,
+      "Entries": [
+        "Margit the Fell Omen (2nd Battle)"
+      ]
+    },
+    {
+      "ID": 21300900,
+      "Entries": [
+        "Margit the Fell Omen (For Stalker Margit)"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "Omens_Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 21400900,
+      "Entries": [
+        "Omens_Greatsword_Divine Tower 5-1 Boss"
+      ]
+    },
+    {
+      "ID": 21401000,
+      "Entries": [
+        "Omens_One-handed Axe"
+      ]
+    },
+    {
+      "ID": 21401900,
+      "Entries": [
+        "Omens_One-handed Axe_Divine Tower 5-1 Boss"
+      ]
+    },
+    {
+      "ID": 21500000,
+      "Entries": [
+        "Wisp"
+      ]
+    },
+    {
+      "ID": 21500010,
+      "Entries": [
+        "Wisp_Sight 40m"
+      ]
+    },
+    {
+      "ID": 21500020,
+      "Entries": [
+        "Wisp_Sight 50m"
+      ]
+    },
+    {
+      "ID": 21500030,
+      "Entries": [
+        "Wisp_Sight 10m"
+      ]
+    },
+    {
+      "ID": 21600000,
+      "Entries": [
+        "c2160_Wedged Person (Male)"
+      ]
+    },
+    {
+      "ID": 21700000,
+      "Entries": [
+        "c2170_Wedged Person (Female)"
+      ]
+    },
+    {
+      "ID": 21800000,
+      "Entries": [
+        "Daughter Marika"
+      ]
+    },
+    {
+      "ID": 21900000,
+      "Entries": [
+        "Crumbling Marika [Pre-HU]"
+      ]
+    },
+    {
+      "ID": 22000000,
+      "Entries": [
+        "Crumbling Marika [Post-HU]"
+      ]
+    },
+    {
+      "ID": 22000010,
+      "Entries": [
+        "Crumbling Marika [Post-HU] Clone Offset Use"
+      ]
+    },
+    {
+      "ID": 22700000,
+      "Entries": [
+        "Deathstench Crab(Large)"
+      ]
+    },
+    {
+      "ID": 22700100,
+      "Entries": [
+        "Deathstench Crab(Large)_Expanded Search Ver."
+      ]
+    },
+    {
+      "ID": 22700200,
+      "Entries": [
+        "Deathstench Crab(Large)_Underground Labyrinth Plains Ver."
+      ]
+    },
+    {
+      "ID": 22710000,
+      "Entries": [
+        "Deathstench Crab (Small)"
+      ]
+    },
+    {
+      "ID": 22710010,
+      "Entries": [
+        "Deathstench Crab (Small)"
+      ]
+    },
+    {
+      "ID": 22710020,
+      "Entries": [
+        "Deathstench Crab (Small)_Timid Type"
+      ]
+    },
+    {
+      "ID": 22720000,
+      "Entries": [
+        "Deathstench Crab(Large): Plague Crab"
+      ]
+    },
+    {
+      "ID": 22720100,
+      "Entries": [
+        "Deathstench Crab(Large): Plague Crab_Expanded Search Ver."
+      ]
+    },
+    {
+      "ID": 22730000,
+      "Entries": [
+        "Deathstench Crab (Small): Plague Crab"
+      ]
+    },
+    {
+      "ID": 22730010,
+      "Entries": [
+        "Deathstench Crab (Small): Plague Crab"
+      ]
+    },
+    {
+      "ID": 22730020,
+      "Entries": [
+        "Death-stench Crab (Small): Sick Crab_Timid Type"
+      ]
+    },
+    {
+      "ID": 22740000,
+      "Entries": [
+        "Deathstench Crab(Large): Homunculus"
+      ]
+    },
+    {
+      "ID": 22740100,
+      "Entries": [
+        "Deathstench Crab(Large): Homunculus_Expanded Search Ver."
+      ]
+    },
+    {
+      "ID": 22740200,
+      "Entries": [
+        "Deathstench Crab(Large): Homunculus_No Return to Nest on Wall Contact_Monsan"
+      ]
+    },
+    {
+      "ID": 22750000,
+      "Entries": [
+        "Deathstench Crab (Small): Homunculus"
+      ]
+    },
+    {
+      "ID": 22750010,
+      "Entries": [
+        "Deathstench Crab (Small): Homunculus"
+      ]
+    },
+    {
+      "ID": 22750020,
+      "Entries": [
+        "Deathstench Crab (Small): Homunculus_Timid Type"
+      ]
+    },
+    {
+      "ID": 22760000,
+      "Entries": [
+        "Deathstench Crab(Large): Death Attribute"
+      ]
+    },
+    {
+      "ID": 22770000,
+      "Entries": [
+        "Deathstench Crab (Small): Death Attribute"
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        "Godfrey Sixteen Knights: Greatsword_Tail"
+      ]
+    },
+    {
+      "ID": 25000010,
+      "Entries": [
+        "Godfrey Sixteen Knights: Greatsword_Tail_Pursues Relentlessly"
+      ]
+    },
+    {
+      "ID": 25000020,
+      "Entries": [
+        "Godfrey Sixteen Knights: Greatsword_Tail_360-degree Search Vision"
+      ]
+    },
+    {
+      "ID": 25000030,
+      "Entries": [
+        "Godfrey Sixteen Knights: Greatsword_Tail Boss Use_Never Forgets Target_Wide Vision"
+      ]
+    },
+    {
+      "ID": 25000040,
+      "Entries": [
+        "Godfrey Sixteen Knights: Greatsword_Tail Plains Fort Boss Use_Never Forgets Target_360-degree Vision"
+      ]
+    },
+    {
+      "ID": 25000050,
+      "Entries": [
+        "Godfrey Sixteen Knights: Greatsword_Tail_Stormveil Placement Use_Does Not Return to Nest on Enemy Wall Contact"
+      ]
+    },
+    {
+      "ID": 25000100,
+      "Entries": [
+        "Godfrey Sixteen Knights: Greatsword_Throat Sac"
+      ]
+    },
+    {
+      "ID": 25000110,
+      "Entries": [
+        "Godfrey Sixteen Knights: Greatsword_Throat Sac_360-degree Search Vision"
+      ]
+    },
+    {
+      "ID": 25001000,
+      "Entries": [
+        "Godfrey Sixteen Knights: Halberd_Arm Horn"
+      ]
+    },
+    {
+      "ID": 25001010,
+      "Entries": [
+        "Godfrey Sixteen Knights: Halberd_Arm Horn_Pursues Relentlessly"
+      ]
+    },
+    {
+      "ID": 25001020,
+      "Entries": [
+        "Godfrey Sixteen Knights: Halberd_Arm Horn_Narrow Hearing"
+      ]
+    },
+    {
+      "ID": 25001030,
+      "Entries": [
+        "Godfrey Sixteen Knights: Halberd_Arm Horn Boss Use_Never Forgets Target_Wide Vision"
+      ]
+    },
+    {
+      "ID": 25001066,
+      "Entries": [
+        "Godfrey Sixteen Knights: Halberd_Arm Horn_Underground Labyrinth Royal Capital Field Boss"
+      ]
+    },
+    {
+      "ID": 25001100,
+      "Entries": [
+        "Godfrey Sixteen Knights: Halberd_Shoulder Horn"
+      ]
+    },
+    {
+      "ID": 25009000,
+      "Entries": [
+        "[Dialogue NPC] Godfrey Sixteen Knights (Mistress's Guard)"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000005,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000006,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000010,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword Initial Crossbow No Search Vision Vision 20m"
+      ]
+    },
+    {
+      "ID": 30000015,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword Initial Crossbow No Search Vision Vision 20m No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30000020,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword Initial Crossbow No Search Vision Vision 40m"
+      ]
+    },
+    {
+      "ID": 30000025,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword Initial Crossbow No Search Vision Vision 40m No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30000030,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword Initial Crossbow No Search Vision Vision 40m No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30000035,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword Initial Crossbow No Search Vision Vision 40m No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000105,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000110,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000115,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000120,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000140,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000200,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000300,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000310,
+      "Entries": [
+        "Lost Kin_Soldier Crossbow & Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000400,
+      "Entries": [
+        "Lost Kin_Soldier_Engineer"
+      ]
+    },
+    {
+      "ID": 30000500,
+      "Entries": [
+        "Lost Kin_Soldier_Engineer"
+      ]
+    },
+    {
+      "ID": 30000600,
+      "Entries": [
+        "Lost Kin_Soldier_Engineer"
+      ]
+    },
+    {
+      "ID": 30000700,
+      "Entries": [
+        "Lost Kin_Soldier_Engineer"
+      ]
+    },
+    {
+      "ID": 30000800,
+      "Entries": [
+        "Lost Kin_Soldier_Engineer"
+      ]
+    },
+    {
+      "ID": 30000900,
+      "Entries": [
+        "Lost Kin_Soldier (Engineer)_For Berserk"
+      ]
+    },
+    {
+      "ID": 30001000,
+      "Entries": [
+        "Lost Kin_Soldier Straight Sword & Small Shield"
+      ]
+    },
+    {
+      "ID": 30001005,
+      "Entries": [
+        "Lost Kin_Soldier Straight Sword & Small Shield No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30001010,
+      "Entries": [
+        "Lost Kin_Soldier Straight Sword & Small Shield No Search Vision"
+      ]
+    },
+    {
+      "ID": 30001015,
+      "Entries": [
+        "Lost Kin_Soldier Straight Sword & Small Shield No Search Vision No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30001100,
+      "Entries": [
+        "Lost Kin_Soldier Straight Sword & Small Shield Stormveil Castle Vision Enhanced"
+      ]
+    },
+    {
+      "ID": 30001200,
+      "Entries": [
+        "Lost Kin_Soldier Straight Sword & Small Shield Hearing Enhanced"
+      ]
+    },
+    {
+      "ID": 30001300,
+      "Entries": [
+        "Lost Kin_Soldier Straight Sword & Small Shield For Ghost (Does Not Sheathe/Draw)"
+      ]
+    },
+    {
+      "ID": 30001800,
+      "Entries": [
+        "Lost Kin_Soldier Straight Sword & Small Shield No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30001900,
+      "Entries": [
+        "Lost Kin_Soldier (Sword/Small Shield)_For Berserk"
+      ]
+    },
+    {
+      "ID": 30002000,
+      "Entries": [
+        "Lost Kin_Soldier Spear & Medium Shield"
+      ]
+    },
+    {
+      "ID": 30002005,
+      "Entries": [
+        "Lost Kin_Soldier Spear & Medium Shield No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30002010,
+      "Entries": [
+        "Lost Kin_Soldier Spear & Medium Shield No Search Vision"
+      ]
+    },
+    {
+      "ID": 30002015,
+      "Entries": [
+        "Lost Kin_Soldier Spear & Medium Shield No Search Vision No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30002800,
+      "Entries": [
+        "Lost Kin_Soldier Spear & Medium Shield No Whistle Response (Use 2005)"
+      ]
+    },
+    {
+      "ID": 30002900,
+      "Entries": [
+        "Lost Kin_Soldier (Spear/Medium Shield)_For Berserk"
+      ]
+    },
+    {
+      "ID": 30003000,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier"
+      ]
+    },
+    {
+      "ID": 30003005,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30003010,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier No Search Vision"
+      ]
+    },
+    {
+      "ID": 30003015,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier No Search Vision No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30003020,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier No Search Vision Vision 40m"
+      ]
+    },
+    {
+      "ID": 30003025,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier No Search Vision Vision 40m No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30003030,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier Vision Height 50m No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30003100,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier_Stormveil Castle Vision Weakened"
+      ]
+    },
+    {
+      "ID": 30003200,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier"
+      ]
+    },
+    {
+      "ID": 30003300,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier No Search Vision Vision 40m"
+      ]
+    },
+    {
+      "ID": 30003400,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier Type That Throws Fire Pot When Path Search Fails"
+      ]
+    },
+    {
+      "ID": 30003800,
+      "Entries": [
+        "Lost Kin_Soldier Torch Soldier_For No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30003900,
+      "Entries": [
+        "Lost Kin_Soldier (Lookout)_For Berserk"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "Lost Kin_Knight: One-handed Sword + Shield"
+      ]
+    },
+    {
+      "ID": 30100100,
+      "Entries": [
+        "Lost Kin_Knight: One-handed Sword + Shield_Legacy Vision Enhanced"
+      ]
+    },
+    {
+      "ID": 30100200,
+      "Entries": [
+        "Lost Kin_Knight: One-handed Sword + Shield_Legacy Vision Reduced"
+      ]
+    },
+    {
+      "ID": 30100300,
+      "Entries": [
+        "Lost Kin_Knight: One-handed Sword + Shield_Memory Fragment Ver"
+      ]
+    },
+    {
+      "ID": 30101000,
+      "Entries": [
+        "Lost Kin_Knight: Dual Wield"
+      ]
+    },
+    {
+      "ID": 30101100,
+      "Entries": [
+        "Lost Kin_Knight: Dual Wield_Longer Vision"
+      ]
+    },
+    {
+      "ID": 30101200,
+      "Entries": [
+        "Lost Kin_Knight: Dual Wield_Red Eyes Snowy Mountain First Half"
+      ]
+    },
+    {
+      "ID": 30102000,
+      "Entries": [
+        "Lost Kin_Knight: Halberd"
+      ]
+    },
+    {
+      "ID": 30102100,
+      "Entries": [
+        "Lost Kin_Knight: Halberd"
+      ]
+    },
+    {
+      "ID": 30102200,
+      "Entries": [
+        "Lost Kin_Knight: Halberd_Reacts to Wolf Call Ally_Snowy Mountain First Half"
+      ]
+    },
+    {
+      "ID": 30106050,
+      "Entries": [
+        "Lost Kin_Knight: One-handed Sword + Shield_Buddy_Snowy Fort Boss Battle"
+      ]
+    },
+    {
+      "ID": 30107050,
+      "Entries": [
+        "Lost Kin_Knight: Dual Wield_Buddy_Snowy Fort Boss Battle"
+      ]
+    },
+    {
+      "ID": 30108050,
+      "Entries": [
+        "Lost Kin_Knight: Halberd_Buddy_Snowy Fort Boss Battle"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "Lost Kin_Soldier (Greataxe)"
+      ]
+    },
+    {
+      "ID": 30200005,
+      "Entries": [
+        "Lost Kin_Soldier (Greataxe) No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30200040,
+      "Entries": [
+        "Lost Kin_Soldier (Greataxe) For Plains Summon"
+      ]
+    },
+    {
+      "ID": 30200800,
+      "Entries": [
+        "Lost Kin_Soldier (Greataxe)_For No Whistle Response"
+      ]
+    },
+    {
+      "ID": 30200900,
+      "Entries": [
+        "Lost Kin_Soldier (Greataxe)_For Berserk"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "Aged Veteran General"
+      ]
+    },
+    {
+      "ID": 30500940,
+      "Entries": [
+        "Aged Veteran General_Plains_Night Vision"
+      ]
+    },
+    {
+      "ID": 30600000,
+      "Entries": [
+        "Buried Skeleton(Large)_Axe"
+      ]
+    },
+    {
+      "ID": 30600010,
+      "Entries": [
+        "Buried Skeleton (Large)_Axe_Shorter Detection Vision"
+      ]
+    },
+    {
+      "ID": 30601000,
+      "Entries": [
+        "Buried Skeleton(Large)_Halberd"
+      ]
+    },
+    {
+      "ID": 30601010,
+      "Entries": [
+        "Buried Skeleton (Large)_Halberd_Shorter Detection Vision"
+      ]
+    },
+    {
+      "ID": 30610000,
+      "Entries": [
+        "Buried Skeleton(Large:Beast)_Axe"
+      ]
+    },
+    {
+      "ID": 30610010,
+      "Entries": [
+        "Buried Skeleton (Large: Beast)_Axe_Shorter Detection Vision"
+      ]
+    },
+    {
+      "ID": 30611000,
+      "Entries": [
+        "Buried Skeleton(Large:Beast)_Halberd"
+      ]
+    },
+    {
+      "ID": 30611010,
+      "Entries": [
+        "Buried Skeleton (Large: Beast)_Halberd_Shorter Detection Vision"
+      ]
+    },
+    {
+      "ID": 30700000,
+      "Entries": [
+        "Man-Eater Hag (Hatchet)"
+      ]
+    },
+    {
+      "ID": 30700100,
+      "Entries": [
+        "Man-Eater Hag (Hatchet): Ignore Ally Call"
+      ]
+    },
+    {
+      "ID": 30701000,
+      "Entries": [
+        "Man-Eater Hag (Jar+Lantern)"
+      ]
+    },
+    {
+      "ID": 30701100,
+      "Entries": [
+        "Man-Eater Hag (Jar+Lantern): Fire Pot_Stationary Turret"
+      ]
+    },
+    {
+      "ID": 30701200,
+      "Entries": [
+        "Man-Eater Hag (Jar+Lantern): Ignore Ally Call"
+      ]
+    },
+    {
+      "ID": 30702000,
+      "Entries": [
+        "Man-Eater Hag (Sickle+Reverse Knife)"
+      ]
+    },
+    {
+      "ID": 30702100,
+      "Entries": [
+        "Man-Eater Hag (Scythe + Reverse-Grip Knife): ignore Ally Call"
+      ]
+    },
+    {
+      "ID": 30703000,
+      "Entries": [
+        "Man-Eater Hag (Hammer)"
+      ]
+    },
+    {
+      "ID": 30703100,
+      "Entries": [
+        "Man-Eater Hag (Hammer): Ignore Ally Call"
+      ]
+    },
+    {
+      "ID": 30704000,
+      "Entries": [
+        "Man-Eater Hag (Hoe)"
+      ]
+    },
+    {
+      "ID": 30704100,
+      "Entries": [
+        "Man-Eater Hag (Hoe): Ignore Ally Call"
+      ]
+    },
+    {
+      "ID": 30800000,
+      "Entries": [
+        "Insectoid Golem Hatchet"
+      ]
+    },
+    {
+      "ID": 30800010,
+      "Entries": [
+        "Insectoid Golem Hatchet: Wide Vision"
+      ]
+    },
+    {
+      "ID": 30800020,
+      "Entries": [
+        "Insectoid Golem Hatchet: Long Vision"
+      ]
+    },
+    {
+      "ID": 30800030,
+      "Entries": [
+        "Insectoid Golem Hatchet: Short Vision"
+      ]
+    },
+    {
+      "ID": 30800040,
+      "Entries": [
+        "Insectoid Golem Hatchet: Very Long Vision"
+      ]
+    },
+    {
+      "ID": 30800100,
+      "Entries": [
+        "Insectoid Golem Hatchet: No Movement When Alert"
+      ]
+    },
+    {
+      "ID": 30800110,
+      "Entries": [
+        "Insectoid Golem Hatchet: No Movement When Alert & Long Vision"
+      ]
+    },
+    {
+      "ID": 30800300,
+      "Entries": [
+        "Insectoid Golem Hatchet/Pickaxe: Fire Pot Usable (to be removed eventually)"
+      ]
+    },
+    {
+      "ID": 30800400,
+      "Entries": [
+        "Insectoid Golem Hatchet/Pickaxe: Fire Pot Turret (to be removed eventually)"
+      ]
+    },
+    {
+      "ID": 30800500,
+      "Entries": [
+        "Insectoid Golem Hatchet/Pickaxe: Blowgun/Fire Pot Not Allowed (to be removed eventually)"
+      ]
+    },
+    {
+      "ID": 30800600,
+      "Entries": [
+        "Insectoid Golem Hatchet/Pickaxe: Throwable (to be removed eventually)"
+      ]
+    },
+    {
+      "ID": 30800900,
+      "Entries": [
+        "Insectoid Golem Hatchet: Team Attack Power Adjustment Graveyard 1-2 Use"
+      ]
+    },
+    {
+      "ID": 30801000,
+      "Entries": [
+        "Insectoid Golem Hatchet/Pickaxe: Blowgun Main (to be removed eventually)"
+      ]
+    },
+    {
+      "ID": 30802000,
+      "Entries": [
+        "Insectoid Golem Greatsword"
+      ]
+    },
+    {
+      "ID": 30803000,
+      "Entries": [
+        "Insectoid Golem Greatsword"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "Bloodstained Vulture Knight"
+      ]
+    },
+    {
+      "ID": 31000030,
+      "Entries": [
+        "Bloodstained Vulture Knight：For Highland Phantom"
+      ]
+    },
+    {
+      "ID": 31000931,
+      "Entries": [
+        "Bloodstained Vulture Knight: Highland Fort"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        "Bloodstained Vulture Knight_Night Enemy Darkness Immunity"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "c3150_Rune Hunting Knight_Axe"
+      ]
+    },
+    {
+      "ID": 31500052,
+      "Entries": [
+        "c3150_Rune Hunting Knight_Axe_Snowy Mountain Second Half Caravan Use"
+      ]
+    },
+    {
+      "ID": 31501000,
+      "Entries": [
+        "c3150_Rune Hunting Knight_Morningstar"
+      ]
+    },
+    {
+      "ID": 31501052,
+      "Entries": [
+        "c3150_Rune Hunting Knight_Morningstar_Snowy Mountain Second Half Caravan Use"
+      ]
+    },
+    {
+      "ID": 31502000,
+      "Entries": [
+        "c3150_Rune-hunting Knight_Axe Do Not Path Check"
+      ]
+    },
+    {
+      "ID": 31503000,
+      "Entries": [
+        "c3150_Rune-hunting Knight_Morning Star Do Not Path Check"
+      ]
+    },
+    {
+      "ID": 31600000,
+      "Entries": [
+        "c3160_Rune-hunting Knight's Horse"
+      ]
+    },
+    {
+      "ID": 31600052,
+      "Entries": [
+        "c3160_Rune-hunting Knight's Horse__Snowy Mountain Second Half Caravan Use"
+      ]
+    },
+    {
+      "ID": 31700000,
+      "Entries": [
+        "WolfRider"
+      ]
+    },
+    {
+      "ID": 31700052,
+      "Entries": [
+        "Wolf Rider_Lower Snowfield Sniping Situation View60over"
+      ]
+    },
+    {
+      "ID": 31700053,
+      "Entries": [
+        "Wolf Rider_Lower Snowfield Sniping Situation View55over"
+      ]
+    },
+    {
+      "ID": 31700054,
+      "Entries": [
+        "Wolf Rider_Lower Snowfield Sniping Situation View50over"
+      ]
+    },
+    {
+      "ID": 31700055,
+      "Entries": [
+        "Wolf Rider_Lower Snowfield Sniping Situation View45over"
+      ]
+    },
+    {
+      "ID": 31700056,
+      "Entries": [
+        "Wolf Rider_Lower Snowfield Sniping Situation View40over"
+      ]
+    },
+    {
+      "ID": 31700057,
+      "Entries": [
+        "Wolf Rider_Lower Snowfield Sniping Situation View35over"
+      ]
+    },
+    {
+      "ID": 31700058,
+      "Entries": [
+        "Wolf Rider_Lower Snowfield Sniping Situation View30over"
+      ]
+    },
+    {
+      "ID": 31700059,
+      "Entries": [
+        "Wolf Rider_Lower Snowfield Sniping Situation View25over"
+      ]
+    },
+    {
+      "ID": 31709000,
+      "Entries": [
+        "[Dialogue NPC] Wolf Rider (Miquella Follower)"
+      ]
+    },
+    {
+      "ID": 31800000,
+      "Entries": [
+        "Wolf Rider's Wolf"
+      ]
+    },
+    {
+      "ID": 31800020,
+      "Entries": [
+        "Wolf Rider's Wolf_Narrowed View"
+      ]
+    },
+    {
+      "ID": 31804000,
+      "Entries": [
+        "Wolf Rider's Wolf_Reacts to Canine Ally Call"
+      ]
+    },
+    {
+      "ID": 31810000,
+      "Entries": [
+        "Runewolf"
+      ]
+    },
+    {
+      "ID": 31810024,
+      "Entries": [
+        "Runewolf_Monsan Mid-Boss"
+      ]
+    },
+    {
+      "ID": 31810052,
+      "Entries": [
+        "Runewolf_For Snowfield_Sight Range"
+      ]
+    },
+    {
+      "ID": 31810500,
+      "Entries": [
+        "Runewolf_For Snowfield"
+      ]
+    },
+    {
+      "ID": 31810510,
+      "Entries": [
+        "Runewolf_For Snowfield_Running Specialized"
+      ]
+    },
+    {
+      "ID": 31810932,
+      "Entries": [
+        "Runewolf_For Boss_m3009"
+      ]
+    },
+    {
+      "ID": 31814000,
+      "Entries": [
+        "Runewolf_Reacts to Wolf-type Ally Call"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "Red-Eyed Gypsy"
+      ]
+    },
+    {
+      "ID": 32009000,
+      "Entries": [
+        "Red-Eye Gypsy: Heroes' Grave Performer Test"
+      ]
+    },
+    {
+      "ID": 32010000,
+      "Entries": [
+        "Red-Eye Guardian"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "Red-Eyed Gypsy's Donkey"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "Tree Sentinel (Aberration)"
+      ]
+    },
+    {
+      "ID": 32500900,
+      "Entries": [
+        "Tree Sentinel (Aberration)_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 32510000,
+      "Entries": [
+        "Tree Sentinel (Chief)"
+      ]
+    },
+    {
+      "ID": 32510100,
+      "Entries": [
+        "Tree Sentinel (Chief)_Tutorial"
+      ]
+    },
+    {
+      "ID": 32510900,
+      "Entries": [
+        "Tree Sentinel (Chief)_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 32511000,
+      "Entries": [
+        "Tree Sentinel (Chief)_Torch"
+      ]
+    },
+    {
+      "ID": 32520000,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)"
+      ]
+    },
+    {
+      "ID": 32520054,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)_Boss (Rotten Great Tree)"
+      ]
+    },
+    {
+      "ID": 32520100,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)_Phantom"
+      ]
+    },
+    {
+      "ID": 32520110,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)_Phantom: Lake Fort Boss"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "Direct Lineage of Marika (Male)"
+      ]
+    },
+    {
+      "ID": 33000900,
+      "Entries": [
+        "Direct Lineage of Marika (Male)_Plains Town Boss"
+      ]
+    },
+    {
+      "ID": 33100000,
+      "Entries": [
+        "Direct Lineage of Marika (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 33100900,
+      "Entries": [
+        "Direct Lineage of Marika (Straight Sword)_Plains Town Boss"
+      ]
+    },
+    {
+      "ID": 33101000,
+      "Entries": [
+        "Direct Lineage of Marika (Dagger)"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        "Marika Slime"
+      ]
+    },
+    {
+      "ID": 33200100,
+      "Entries": [
+        "Marika Slime (Sniper)"
+      ]
+    },
+    {
+      "ID": 33200200,
+      "Entries": [
+        "Marika Slime (Underground Labyrinth Plains Boss Exclusive Long Sight Range)"
+      ]
+    },
+    {
+      "ID": 33209000,
+      "Entries": [
+        "[Dialogue NPC] Marika Slime (Talking Slime)"
+      ]
+    },
+    {
+      "ID": 33300000,
+      "Entries": [
+        "Mother Slime"
+      ]
+    },
+    {
+      "ID": 33300020,
+      "Entries": [
+        "Mother Slime_Iron Ball Test"
+      ]
+    },
+    {
+      "ID": 33300062,
+      "Entries": [
+        "Mother Slime"
+      ]
+    },
+    {
+      "ID": 33500000,
+      "Entries": [
+        "Crystal Tribe: Chakram"
+      ]
+    },
+    {
+      "ID": 33500900,
+      "Entries": [
+        "Crystal Tribe: Chakram_Boss"
+      ]
+    },
+    {
+      "ID": 33500910,
+      "Entries": [
+        "Crystal Tribe: Chakram_Boss_For Tunnel 3-3"
+      ]
+    },
+    {
+      "ID": 33501000,
+      "Entries": [
+        "Crystal Tribe: Spear"
+      ]
+    },
+    {
+      "ID": 33501500,
+      "Entries": [
+        "Crystal Tribe: Spear_Elite"
+      ]
+    },
+    {
+      "ID": 33501900,
+      "Entries": [
+        "Crystal Tribe: Spear_Boss"
+      ]
+    },
+    {
+      "ID": 33501910,
+      "Entries": [
+        "Crystal Tribe: Spear_Boss_For Tunnel 3-3"
+      ]
+    },
+    {
+      "ID": 33502000,
+      "Entries": [
+        "Crystal Tribe: Staff"
+      ]
+    },
+    {
+      "ID": 33502900,
+      "Entries": [
+        "Crystal Tribe: Staff_Boss"
+      ]
+    },
+    {
+      "ID": 33600000,
+      "Entries": [
+        "Spirit Ancestral Follower Male_(Tooth Axe/Bow)_Initial Tooth Axe"
+      ]
+    },
+    {
+      "ID": 33600100,
+      "Entries": [
+        "Spirit Ancestral Follower Male_(Tooth Axe/Bow)_Initial Tooth Axe_Run Up"
+      ]
+    },
+    {
+      "ID": 33600110,
+      "Entries": [
+        "Spirit Ancestral Follower Male_(Tooth Axe/Bow)_Initial Tooth Axe_Run Up_Reduced Field of View Height"
+      ]
+    },
+    {
+      "ID": 33600500,
+      "Entries": [
+        "Spirit Ancestral Follower Male_(Tooth Axe/Bow)_Initial Bow"
+      ]
+    },
+    {
+      "ID": 33600600,
+      "Entries": [
+        "Spirit Ancestral Follower Male_(Tooth Axe/Bow)_Initial Bow_Sniping"
+      ]
+    },
+    {
+      "ID": 33600610,
+      "Entries": [
+        "Spirit Ancestral Follower Male_(Tooth Axe/Bow)_Initial Bow_Sniping_Reduced Field of View Height"
+      ]
+    },
+    {
+      "ID": 33600664,
+      "Entries": [
+        "Spirit Ancestral Follower Male_(Tooth Axe/Bow)_Initial Bow_Sniping_Underground Labyrinth Plains"
+      ]
+    },
+    {
+      "ID": 33600700,
+      "Entries": [
+        "Spirit Ancestral Follower Male_(Tooth Axe/Bow)_Initial Bow_Run Up"
+      ]
+    },
+    {
+      "ID": 33601000,
+      "Entries": [
+        "Spirit Ancestral Follower Male_Horned Hammer"
+      ]
+    },
+    {
+      "ID": 33601100,
+      "Entries": [
+        "Spirit Ancestral Follower Male_Horned Hammer_Run Up"
+      ]
+    },
+    {
+      "ID": 33602000,
+      "Entries": [
+        "Ancestral Follower: Male_Special Weapon"
+      ]
+    },
+    {
+      "ID": 33602100,
+      "Entries": [
+        "Spirit Ancestral Follower Male_Special Weapon:Run Up"
+      ]
+    },
+    {
+      "ID": 33610000,
+      "Entries": [
+        "Ancestral Follower: Male_Poison_(Tooth Axe/Bow)_Initial Tooth Axe"
+      ]
+    },
+    {
+      "ID": 33610110,
+      "Entries": [
+        "Ancestral Follower: Male_Poison_(Tooth Axe/Bow)_Initial Tooth Axe_Reduced Field of View Height"
+      ]
+    },
+    {
+      "ID": 33610500,
+      "Entries": [
+        "Ancestral Follower: Male_Poison_(Tooth Axe/Bow)_Initial Bow"
+      ]
+    },
+    {
+      "ID": 33611000,
+      "Entries": [
+        "Ancestral Follower: Male_Poison_Horned Hammer"
+      ]
+    },
+    {
+      "ID": 33612000,
+      "Entries": [
+        "Ancestral Follower: Male_Poison_Special Weapon"
+      ]
+    },
+    {
+      "ID": 33700000,
+      "Entries": [
+        "Ancestral Follower: Female"
+      ]
+    },
+    {
+      "ID": 33710000,
+      "Entries": [
+        "Ancestral Follower: Female_Poison"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "Gladiator (Greataxe)"
+      ]
+    },
+    {
+      "ID": 34000010,
+      "Entries": [
+        "Gladiator (Greataxe)_For Boss Vision Pickup"
+      ]
+    },
+    {
+      "ID": 34001000,
+      "Entries": [
+        "Gladiator (Twin Hammers)"
+      ]
+    },
+    {
+      "ID": 34001010,
+      "Entries": [
+        "Gladiator (Twin Hammers)_For Boss Vision Pickup"
+      ]
+    },
+    {
+      "ID": 34500000,
+      "Entries": [
+        "Radagon's Children (Base)"
+      ]
+    },
+    {
+      "ID": 34501000,
+      "Entries": [
+        "Radagon's Children (Wing)"
+      ]
+    },
+    {
+      "ID": 34510000,
+      "Entries": [
+        "Radagon's Children (Scale)"
+      ]
+    },
+    {
+      "ID": 34519000,
+      "Entries": [
+        "[Dialogue NPC] Blacksmith"
+      ]
+    },
+    {
+      "ID": 34600000,
+      "Entries": [
+        "Radagon's Children (Lion)"
+      ]
+    },
+    {
+      "ID": 34600010,
+      "Entries": [
+        "Radagon's Children (Lion)_Path Failure Wander"
+      ]
+    },
+    {
+      "ID": 34600020,
+      "Entries": [
+        "Radagon's Children (Lion)_Royal Capital Placement_Homing Limit 60m"
+      ]
+    },
+    {
+      "ID": 34600900,
+      "Entries": [
+        "Radagon's Children (Lion)_Boss Use_Smell 30m"
+      ]
+    },
+    {
+      "ID": 34601000,
+      "Entries": [
+        "Radagon's Children (Lion)_Fort Boss Use"
+      ]
+    },
+    {
+      "ID": 34602000,
+      "Entries": [
+        "Radagon's Children (Lion)_Plains Fort Boss Use"
+      ]
+    },
+    {
+      "ID": 34700000,
+      "Entries": [
+        "Frog-man: Sword A"
+      ]
+    },
+    {
+      "ID": 34700500,
+      "Entries": [
+        "Frog-man: Sword A_Attack Cartwheel"
+      ]
+    },
+    {
+      "ID": 34701000,
+      "Entries": [
+        "Frog-man: Sword B"
+      ]
+    },
+    {
+      "ID": 34701500,
+      "Entries": [
+        "Frog-man: Sword B_Attack Cartwheel"
+      ]
+    },
+    {
+      "ID": 34702000,
+      "Entries": [
+        "Frog-man: Club"
+      ]
+    },
+    {
+      "ID": 34702052,
+      "Entries": [
+        "Frog-man: Club_Snow Mountain Second Half Sight Range"
+      ]
+    },
+    {
+      "ID": 34702500,
+      "Entries": [
+        "Frog-man: Club_Attack Cartwheel"
+      ]
+    },
+    {
+      "ID": 34703000,
+      "Entries": [
+        "Frog-man: Short Club"
+      ]
+    },
+    {
+      "ID": 34704000,
+      "Entries": [
+        "Frog-man: Spear"
+      ]
+    },
+    {
+      "ID": 34704052,
+      "Entries": [
+        "Frog-man: Spear_Snow Mountain Second Half Sight Range"
+      ]
+    },
+    {
+      "ID": 34705000,
+      "Entries": [
+        "Frog-man: Long Club"
+      ]
+    },
+    {
+      "ID": 34705020,
+      "Entries": [
+        "Frog-man: Long Club_For Alert Running"
+      ]
+    },
+    {
+      "ID": 34705052,
+      "Entries": [
+        "Frog-man: Long Club_Snowy Mountain Second Half Long Sight"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Buried Skeleton: Spear"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "Buried Skeleton: Spear:No Homing"
+      ]
+    },
+    {
+      "ID": 35001000,
+      "Entries": [
+        "Buried Skeleton: Crossbow"
+      ]
+    },
+    {
+      "ID": 35001010,
+      "Entries": [
+        "Buried Skeleton: Crossbow: Does Not Return to Nest"
+      ]
+    },
+    {
+      "ID": 35001020,
+      "Entries": [
+        "Buried Skeleton: Crossbow: Does Not Walk to Target (For Fixed Turret)"
+      ]
+    },
+    {
+      "ID": 35001021,
+      "Entries": [
+        "Buried Skeleton: Crossbow: Does Not Walk to Target (For Fixed Turret) (Long Sight)"
+      ]
+    },
+    {
+      "ID": 35002000,
+      "Entries": [
+        "Buried Skeleton: Reaper"
+      ]
+    },
+    {
+      "ID": 35002010,
+      "Entries": [
+        "Buried Skeleton: Reaper:No Homing"
+      ]
+    },
+    {
+      "ID": 35003000,
+      "Entries": [
+        "Buried Skeleton: Straight Sword+Shield"
+      ]
+    },
+    {
+      "ID": 35003010,
+      "Entries": [
+        "Buried Skeleton: Straight Sword+Shield:No Homing"
+      ]
+    },
+    {
+      "ID": 35004000,
+      "Entries": [
+        "Buried Skeleton: Falchion"
+      ]
+    },
+    {
+      "ID": 35004010,
+      "Entries": [
+        "Buried Skeleton: Falchion: Does Not Return to Nest"
+      ]
+    },
+    {
+      "ID": 35100000,
+      "Entries": [
+        "Skeleton (Curved Sword)_Small Shield Bearer"
+      ]
+    },
+    {
+      "ID": 35100010,
+      "Entries": [
+        "Skeleton (Curved Sword)_Small Shield Bearer_Slightly longer sight"
+      ]
+    },
+    {
+      "ID": 35100100,
+      "Entries": [
+        "Skeleton: Curved Sword_No Small Shield (frequent rolling approach)"
+      ]
+    },
+    {
+      "ID": 35100110,
+      "Entries": [
+        "Skeleton: Curved Sword_No Small Shield (frequent rolling approaches) _Somewhat Long Sight Range"
+      ]
+    },
+    {
+      "ID": 35100111,
+      "Entries": [
+        "Skeleton: Curved Sword_No Small Shield (frequent rolling approaches) _Very Long Sight Range"
+      ]
+    },
+    {
+      "ID": 35100200,
+      "Entries": [
+        "Skeleton: Curved Sword_No Small Shield & Headless ※Does not react to sound"
+      ]
+    },
+    {
+      "ID": 35101000,
+      "Entries": [
+        "Skeleton (Greatsword)"
+      ]
+    },
+    {
+      "ID": 35101001,
+      "Entries": [
+        "Skeleton (Greatsword): Walks toward target type"
+      ]
+    },
+    {
+      "ID": 35101100,
+      "Entries": [
+        "Skeleton (Greatsword)_Headless ※Does not react to sound"
+      ]
+    },
+    {
+      "ID": 35102000,
+      "Entries": [
+        "Skeleton (Bow)"
+      ]
+    },
+    {
+      "ID": 35102010,
+      "Entries": [
+        "Skeleton (Bow)_Slightly longer sight"
+      ]
+    },
+    {
+      "ID": 35102020,
+      "Entries": [
+        "Skeleton (Bow)_Does not react to sound"
+      ]
+    },
+    {
+      "ID": 35103000,
+      "Entries": [
+        "Skeleton (Throwing): Fire Pot"
+      ]
+    },
+    {
+      "ID": 35103100,
+      "Entries": [
+        "Skeleton (Throwing): Fire Pot_Headless ※Does not react to sound"
+      ]
+    },
+    {
+      "ID": 35104000,
+      "Entries": [
+        "Skeleton (Throwing): Pursuer Pot"
+      ]
+    },
+    {
+      "ID": 35104010,
+      "Entries": [
+        "Skeleton (Throwing): Pursuer Pot_Slightly longer sight"
+      ]
+    },
+    {
+      "ID": 35104100,
+      "Entries": [
+        "Skeleton (Throwing): Pursuer Pot_Headless ※Does not react to sound"
+      ]
+    },
+    {
+      "ID": 35109000,
+      "Entries": [
+        "Skeleton: Flee"
+      ]
+    },
+    {
+      "ID": 35500000,
+      "Entries": [
+        "Demon's Blood Monk"
+      ]
+    },
+    {
+      "ID": 35600000,
+      "Entries": [
+        "Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 35600100,
+      "Entries": [
+        "Godskin Apostle: For Tag Battle"
+      ]
+    },
+    {
+      "ID": 35600200,
+      "Entries": [
+        "Godskin Apostle: For Underground Labyrinth Poison Swamp"
+      ]
+    },
+    {
+      "ID": 35600900,
+      "Entries": [
+        "Godskin Apostle_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 35600942,
+      "Entries": [
+        "Godskin Apostle_Plains Divine Tower"
+      ]
+    },
+    {
+      "ID": 35700000,
+      "Entries": [
+        "Godskin Apostle (Another)"
+      ]
+    },
+    {
+      "ID": 35700100,
+      "Entries": [
+        "Godskin Apostle (Another): For Tag Battle"
+      ]
+    },
+    {
+      "ID": 35700900,
+      "Entries": [
+        "Godskin Apostle (Another)_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 35700910,
+      "Entries": [
+        "Godskin Apostle (Another)_Cave 5-2 Boss"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "Light Walker"
+      ]
+    },
+    {
+      "ID": 36000062,
+      "Entries": [
+        "Light Walker_For Underground Labyrinth Poison Swamp"
+      ]
+    },
+    {
+      "ID": 36001000,
+      "Entries": [
+        "Dark Walker"
+      ]
+    },
+    {
+      "ID": 36001100,
+      "Entries": [
+        "Dark Walker Boss Use_Never Forget Target_Wide Vision"
+      ]
+    },
+    {
+      "ID": 36100000,
+      "Entries": [
+        "Servant of the Moon (Small)"
+      ]
+    },
+    {
+      "ID": 36100010,
+      "Entries": [
+        "Servant of the Moon (Small)_Long Sight / Height"
+      ]
+    },
+    {
+      "ID": 36100011,
+      "Entries": [
+        "Servant of the Moon (Small)_Long Sight / Height / Low Team Influence"
+      ]
+    },
+    {
+      "ID": 36100020,
+      "Entries": [
+        "Servant of the Moon (Small) Short Sight"
+      ]
+    },
+    {
+      "ID": 36100030,
+      "Entries": [
+        "Servant of the Moon (Small)_Wide Sight"
+      ]
+    },
+    {
+      "ID": 36200000,
+      "Entries": [
+        "Servant of the Moon (Tall)"
+      ]
+    },
+    {
+      "ID": 36300000,
+      "Entries": [
+        "Servant of the Moon (Fat)"
+      ]
+    },
+    {
+      "ID": 36301000,
+      "Entries": [
+        "Servant of the Moon (Fat) Sniper"
+      ]
+    },
+    {
+      "ID": 36301054,
+      "Entries": [
+        "Servant of the Moon (Fat) Sniper_Rotten"
+      ]
+    },
+    {
+      "ID": 36400000,
+      "Entries": [
+        "Servant of the Moon (Infant)"
+      ]
+    },
+    {
+      "ID": 36500000,
+      "Entries": [
+        "Bug-eaten Tribe (Common)"
+      ]
+    },
+    {
+      "ID": 36500100,
+      "Entries": [
+        "Bug-eaten Tribe (Common)_Viewing Angle Higher Height"
+      ]
+    },
+    {
+      "ID": 36600000,
+      "Entries": [
+        "Rune Citizen_Dagger"
+      ]
+    },
+    {
+      "ID": 36600040,
+      "Entries": [
+        "Rune Citizen_Dagger_No Flinch"
+      ]
+    },
+    {
+      "ID": 36600041,
+      "Entries": [
+        "Rune Citizen_Dagger_Audiovisual 0"
+      ]
+    },
+    {
+      "ID": 36600090,
+      "Entries": [
+        "Rune Citizen_Dagger_For Performance_Audiovisual 0"
+      ]
+    },
+    {
+      "ID": 36600100,
+      "Entries": [
+        "Rune Citizen_Dagger_Stone Throw Leader"
+      ]
+    },
+    {
+      "ID": 36600140,
+      "Entries": [
+        "Rune Citizen_Dagger_Stone Throw Leader_No Flinch"
+      ]
+    },
+    {
+      "ID": 36600200,
+      "Entries": [
+        "Rune Citizen_Dagger_Fire Pot"
+      ]
+    },
+    {
+      "ID": 36600210,
+      "Entries": [
+        "Rune Citizen_Dagger_Fire Pot_Fixed Point"
+      ]
+    },
+    {
+      "ID": 36600240,
+      "Entries": [
+        "Rune Citizen_Dagger_Fire Pot_No Flinch"
+      ]
+    },
+    {
+      "ID": 36600300,
+      "Entries": [
+        "Rune Citizen_Dagger_Oil Pot"
+      ]
+    },
+    {
+      "ID": 36600400,
+      "Entries": [
+        "Rune Citizen_Dagger_Snake Pot"
+      ]
+    },
+    {
+      "ID": 36600500,
+      "Entries": [
+        "Rune Citizen_Dagger_Chaos"
+      ]
+    },
+    {
+      "ID": 36600600,
+      "Entries": [
+        "Rune Citizen_Dagger_Dead Prince"
+      ]
+    },
+    {
+      "ID": 36601000,
+      "Entries": [
+        "Rune Citizen_Spear"
+      ]
+    },
+    {
+      "ID": 36601040,
+      "Entries": [
+        "Rune Citizen_Spear_Unflinching"
+      ]
+    },
+    {
+      "ID": 36601100,
+      "Entries": [
+        "Rune Citizen_Spear_Stone Throw Leader"
+      ]
+    },
+    {
+      "ID": 36601200,
+      "Entries": [
+        "Rune Citizen_Spear_Fire Pot"
+      ]
+    },
+    {
+      "ID": 36601300,
+      "Entries": [
+        "Rune Citizen_Spear_Oil Pot"
+      ]
+    },
+    {
+      "ID": 36601400,
+      "Entries": [
+        "Rune Citizen_Spear_Snake Pot"
+      ]
+    },
+    {
+      "ID": 36601500,
+      "Entries": [
+        "Rune Citizen_Spear_Chaos"
+      ]
+    },
+    {
+      "ID": 36601600,
+      "Entries": [
+        "Rune Citizen_Spear_Dead Prince"
+      ]
+    },
+    {
+      "ID": 36602000,
+      "Entries": [
+        "Rune Citizen_Long Torch"
+      ]
+    },
+    {
+      "ID": 36602100,
+      "Entries": [
+        "Rune Citizen_Long Torch_Stone Throw Leader"
+      ]
+    },
+    {
+      "ID": 36602200,
+      "Entries": [
+        "Rune Citizen_Long Torch_Fire Pot"
+      ]
+    },
+    {
+      "ID": 36602300,
+      "Entries": [
+        "Rune Citizen_Long Torch_Oil Pot"
+      ]
+    },
+    {
+      "ID": 36602400,
+      "Entries": [
+        "Rune Citizen_Long Torch_Snake Pot"
+      ]
+    },
+    {
+      "ID": 36602500,
+      "Entries": [
+        "Rune Citizen_Long Torch_Chaos"
+      ]
+    },
+    {
+      "ID": 36602600,
+      "Entries": [
+        "Rune Citizen_Long Torch_Dead Prince"
+      ]
+    },
+    {
+      "ID": 36603000,
+      "Entries": [
+        "Rune Citizen_Necromancer"
+      ]
+    },
+    {
+      "ID": 36603100,
+      "Entries": [
+        "Rune Citizen_Necromancer_Stone Throw Leader"
+      ]
+    },
+    {
+      "ID": 36603200,
+      "Entries": [
+        "Rune Citizen_Necromancer_Fire Pot"
+      ]
+    },
+    {
+      "ID": 36603300,
+      "Entries": [
+        "Rune Citizen_Necromancer_Oil Pot"
+      ]
+    },
+    {
+      "ID": 36603400,
+      "Entries": [
+        "Rune Citizen_Necromancer_Snake Pot"
+      ]
+    },
+    {
+      "ID": 36608000,
+      "Entries": [
+        "Rune Citizen_For Margit Possession"
+      ]
+    },
+    {
+      "ID": 36610000,
+      "Entries": [
+        "Rotten Undead"
+      ]
+    },
+    {
+      "ID": 36610100,
+      "Entries": [
+        "Rotten Undead_Burning"
+      ]
+    },
+    {
+      "ID": 36615000,
+      "Entries": [
+        "Rotten Undead_Blood Congestion"
+      ]
+    },
+    {
+      "ID": 36620000,
+      "Entries": [
+        "Rotten Undead"
+      ]
+    },
+    {
+      "ID": 36620100,
+      "Entries": [
+        "Rotten Undead_Burning"
+      ]
+    },
+    {
+      "ID": 36625000,
+      "Entries": [
+        "Rotten Undead_Blood Congestion"
+      ]
+    },
+    {
+      "ID": 36640000,
+      "Entries": [
+        "Catacomb Shadow"
+      ]
+    },
+    {
+      "ID": 36640010,
+      "Entries": [
+        "Catacomb Shadow_Short Sight"
+      ]
+    },
+    {
+      "ID": 36640020,
+      "Entries": [
+        "Catacomb Shadow_Sight 45m"
+      ]
+    },
+    {
+      "ID": 36640900,
+      "Entries": [
+        "Catacomb Shadow_Smell 30m"
+      ]
+    },
+    {
+      "ID": 36640912,
+      "Entries": [
+        "Catacomb Shadow_Smell 100m_For m3000"
+      ]
+    },
+    {
+      "ID": 36640920,
+      "Entries": [
+        "Catacomb Shadow_Smell 100m_For m3005"
+      ]
+    },
+    {
+      "ID": 36650000,
+      "Entries": [
+        "Gatekeeper"
+      ]
+    },
+    {
+      "ID": 36660000,
+      "Entries": [
+        "Golden Mask Seeker"
+      ]
+    },
+    {
+      "ID": 36700000,
+      "Entries": [
+        "Leg Cripple_Bare Hands Type"
+      ]
+    },
+    {
+      "ID": 36700100,
+      "Entries": [
+        "Leg Cripple_Bare Hands Type_Long Sight"
+      ]
+    },
+    {
+      "ID": 36701000,
+      "Entries": [
+        "Leg Cripple_Black Cloak Type"
+      ]
+    },
+    {
+      "ID": 36701100,
+      "Entries": [
+        "Leg Cripple_Black Cloak Type_Long Sight"
+      ]
+    },
+    {
+      "ID": 36701110,
+      "Entries": [
+        "Leg Cripple_Black Cloak Type_Long Sight_Hanging Bridge Use(EzState-1)"
+      ]
+    },
+    {
+      "ID": 36701120,
+      "Entries": [
+        "Leg Cripple_Black Cloak Type_Long Sight_Search Distance 0"
+      ]
+    },
+    {
+      "ID": 36702000,
+      "Entries": [
+        "Leg Cripple_Restraint Type"
+      ]
+    },
+    {
+      "ID": 36702100,
+      "Entries": [
+        "Leg Cripple_Restraint Type_Rope 1.5m"
+      ]
+    },
+    {
+      "ID": 36702200,
+      "Entries": [
+        "Leg Cripple_Restraint Type_Rope 6m"
+      ]
+    },
+    {
+      "ID": 36702220,
+      "Entries": [
+        "Leg Cripple_Restraint Type_Rope 6m_Wider Vision"
+      ]
+    },
+    {
+      "ID": 36703000,
+      "Entries": [
+        "Leg Cripple_Prisoner Type"
+      ]
+    },
+    {
+      "ID": 36703100,
+      "Entries": [
+        "Leg Cripple_Prisoner Type: Scream Hearing 5m"
+      ]
+    },
+    {
+      "ID": 36703200,
+      "Entries": [
+        "Leg Cripple_Prisoner Type: Scream Hearing 15m"
+      ]
+    },
+    {
+      "ID": 36703300,
+      "Entries": [
+        "Leg Cripple_Prisoner Type: Scream Hearing 25m"
+      ]
+    },
+    {
+      "ID": 36704000,
+      "Entries": [
+        "Leg Cripple_Poison Claw Type"
+      ]
+    },
+    {
+      "ID": 36708000,
+      "Entries": [
+        "[Dialogue NPC] Leg Cripple_Leg Cripple Village NPC"
+      ]
+    },
+    {
+      "ID": 36709000,
+      "Entries": [
+        "[Dialogue NPC] Leg Cripple_Puppeteer (Main Body)"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)"
+      ]
+    },
+    {
+      "ID": 37000001,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Short Vision_No Sound Reaction"
+      ]
+    },
+    {
+      "ID": 37000020,
+      "Entries": [
+        "Perfumer Sorcerer (Decadence)_Narrow Long Vision"
+      ]
+    },
+    {
+      "ID": 37010000,
+      "Entries": [
+        "Scholar Perfumer (Court)"
+      ]
+    },
+    {
+      "ID": 37010010,
+      "Entries": [
+        "Scholar Perfumer (Court)_Homing Limit Short"
+      ]
+    },
+    {
+      "ID": 37010900,
+      "Entries": [
+        "Scholar Perfumer (Court)_Boss Use_Smell 30m"
+      ]
+    },
+    {
+      "ID": 37020000,
+      "Entries": [
+        "Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 37020020,
+      "Entries": [
+        "Glintstone Sorcerer (Long Vision"
+      ]
+    },
+    {
+      "ID": 37020021,
+      "Entries": [
+        "Glintstone Sorcerer (Narrow Vision)"
+      ]
+    },
+    {
+      "ID": 37020022,
+      "Entries": [
+        "Glintstone Sorcerer (Short Search)"
+      ]
+    },
+    {
+      "ID": 37020100,
+      "Entries": [
+        "Glintstone Sorcerer (Long Sight Version)"
+      ]
+    },
+    {
+      "ID": 37020120,
+      "Entries": [
+        "Glintstone Sorcerer (Long Sight Version)_For Fixed Point Shooting"
+      ]
+    },
+    {
+      "ID": 37020121,
+      "Entries": [
+        "Glintstone Sorcerer (Long Sight Version)_For Fixed Point Shooting_Lake Use"
+      ]
+    },
+    {
+      "ID": 37030000,
+      "Entries": [
+        "Page"
+      ]
+    },
+    {
+      "ID": 37030020,
+      "Entries": [
+        "Attendant_No Search Range"
+      ]
+    },
+    {
+      "ID": 37030120,
+      "Entries": [
+        "Attendant_Edge Jump Down"
+      ]
+    },
+    {
+      "ID": 37040000,
+      "Entries": [
+        "Wandering Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 37040010,
+      "Entries": [
+        "Wandering Glintstone Sorcerer_Sight Distance Boost"
+      ]
+    },
+    {
+      "ID": 37040020,
+      "Entries": [
+        "Wandering Glintstone Sorcerer‗Tall Narrow"
+      ]
+    },
+    {
+      "ID": 37040900,
+      "Entries": [
+        "Wandering Glintstone Sorcerer_For Boss"
+      ]
+    },
+    {
+      "ID": 37100000,
+      "Entries": [
+        "Crystal Sorcerers (Blue)"
+      ]
+    },
+    {
+      "ID": 37200000,
+      "Entries": [
+        "Crystal Sorcerers (Red)"
+      ]
+    },
+    {
+      "ID": 37300000,
+      "Entries": [
+        "Sorcerer Orb"
+      ]
+    },
+    {
+      "ID": 37500000,
+      "Entries": [
+        "Rune-eating: (Tethered Harpoon)"
+      ]
+    },
+    {
+      "ID": 37500100,
+      "Entries": [
+        "Rune-eating: (Tethered Harpoon) Slow Reaction_Normal in Combat"
+      ]
+    },
+    {
+      "ID": 37501000,
+      "Entries": [
+        "Rune-eating: (Dagger)"
+      ]
+    },
+    {
+      "ID": 37501100,
+      "Entries": [
+        "Rune-eating: (Dagger) Sight 10m"
+      ]
+    },
+    {
+      "ID": 37501200,
+      "Entries": [
+        "Rune-eating: (Dagger)_Bola Seal"
+      ]
+    },
+    {
+      "ID": 37502000,
+      "Entries": [
+        "Rune-eating: (Bubble Magic)"
+      ]
+    },
+    {
+      "ID": 37502100,
+      "Entries": [
+        "Rune-eating: (Bubble Magic) Sight 10m"
+      ]
+    },
+    {
+      "ID": 38000000,
+      "Entries": [
+        "Putrid Knights_Spear"
+      ]
+    },
+    {
+      "ID": 38000010,
+      "Entries": [
+        "Godskin Apostle_Spear_Graveyard 4-3 Engagement Only"
+      ]
+    },
+    {
+      "ID": 38001000,
+      "Entries": [
+        "Godskin Apostle_Reaper"
+      ]
+    },
+    {
+      "ID": 38100000,
+      "Entries": [
+        "Rot's Kin"
+      ]
+    },
+    {
+      "ID": 38100001,
+      "Entries": [
+        "Rot's Kin_Short Sight"
+      ]
+    },
+    {
+      "ID": 38100010,
+      "Entries": [
+        "Rot's Kin_Wider Vertical Spread"
+      ]
+    },
+    {
+      "ID": 38100100,
+      "Entries": [
+        "Rot's Kin_For Plains Royal Army Battle"
+      ]
+    },
+    {
+      "ID": 38101000,
+      "Entries": [
+        "Rot's Kin_No Thread Magic"
+      ]
+    },
+    {
+      "ID": 38103000,
+      "Entries": [
+        "Rot's Kin_For Plains Cave Turret"
+      ]
+    },
+    {
+      "ID": 38500000,
+      "Entries": [
+        "Balloon Puppet Soldier (Bow)"
+      ]
+    },
+    {
+      "ID": 38500100,
+      "Entries": [
+        "Balloon Puppet Soldier (Bow)_No Edge Jump Down"
+      ]
+    },
+    {
+      "ID": 38500110,
+      "Entries": [
+        "Balloon Puppet Soldier (Bow)_No Edge Jump Down_Wide Sight"
+      ]
+    },
+    {
+      "ID": 38500150,
+      "Entries": [
+        "Balloon Puppet Soldier (Bow)_No Edge Jump Down_Snowy Mountain First Half"
+      ]
+    },
+    {
+      "ID": 38501000,
+      "Entries": [
+        "Balloon Puppet Soldier (Dagger)"
+      ]
+    },
+    {
+      "ID": 38502000,
+      "Entries": [
+        "Balloon Puppet Soldier (Pole Weapon)"
+      ]
+    },
+    {
+      "ID": 38600000,
+      "Entries": [
+        "Flying Puppet Soldier (Dual Swords)"
+      ]
+    },
+    {
+      "ID": 38600001,
+      "Entries": [
+        "Flying Puppet Soldier (Dual Swords)_Ambush"
+      ]
+    },
+    {
+      "ID": 38600011,
+      "Entries": [
+        "Flying Puppet Soldier (Dual Swords)_Ambush (Longer Sightline)"
+      ]
+    },
+    {
+      "ID": 38600500,
+      "Entries": [
+        "Flying Puppet Soldier (Dual Swords)_Ambush (Highland Tiered Cliff Placement)"
+      ]
+    },
+    {
+      "ID": 38601000,
+      "Entries": [
+        "Flying Puppet Soldier (Reaper)"
+      ]
+    },
+    {
+      "ID": 38601001,
+      "Entries": [
+        "Flying Puppet Soldier (Reaper)_Ambush"
+      ]
+    },
+    {
+      "ID": 38601011,
+      "Entries": [
+        "Flying Puppet Soldier (Reaper)_Ambush (Longer Sightline)"
+      ]
+    },
+    {
+      "ID": 39000000,
+      "Entries": [
+        "Giant's Flame Monk_Mace"
+      ]
+    },
+    {
+      "ID": 39000200,
+      "Entries": [
+        "Giant's Flame Monk_Mace_Poor Reaction"
+      ]
+    },
+    {
+      "ID": 39001000,
+      "Entries": [
+        "Giant's Flame Monk_Curved Sword"
+      ]
+    },
+    {
+      "ID": 39001200,
+      "Entries": [
+        "Giant's Flame Monk_Curved Sword_Poor Reaction"
+      ]
+    },
+    {
+      "ID": 39010000,
+      "Entries": [
+        "Giant Flame Monk (Godskin Garb)_Mace"
+      ]
+    },
+    {
+      "ID": 39011000,
+      "Entries": [
+        "Giant Flame Monk (Godskin Garb)_Curved Sword"
+      ]
+    },
+    {
+      "ID": 39011100,
+      "Entries": [
+        "Giant Flame Monk (Godskin Garb)_Curved Sword_Short Memory"
+      ]
+    },
+    {
+      "ID": 39100000,
+      "Entries": [
+        "Giant's Flame Fat Monk_Great Hammer"
+      ]
+    },
+    {
+      "ID": 39100100,
+      "Entries": [
+        "Giant's Flame Fat Monk_Great Hammer_Surcoat"
+      ]
+    },
+    {
+      "ID": 39101000,
+      "Entries": [
+        "Giant's Flame Fat Monk_Whip"
+      ]
+    },
+    {
+      "ID": 39101100,
+      "Entries": [
+        "Giant's Flame Fat Monk_Whip_Surcoat"
+      ]
+    },
+    {
+      "ID": 39500000,
+      "Entries": [
+        "Children of Ghouls_Whip"
+      ]
+    },
+    {
+      "ID": 39500100,
+      "Entries": [
+        "Children of Ghouls_Whip_Stretch Guard"
+      ]
+    },
+    {
+      "ID": 39502000,
+      "Entries": [
+        "Children of Ghouls_Curved Sword"
+      ]
+    },
+    {
+      "ID": 39502100,
+      "Entries": [
+        "Children of Ghouls_Curved Sword_Stretch Guard"
+      ]
+    },
+    {
+      "ID": 39504000,
+      "Entries": [
+        "Children of Ghouls_Royal Scepter"
+      ]
+    },
+    {
+      "ID": 39509000,
+      "Entries": [
+        "[Dialogue NPC] Children of Ghouls (for Stormveil Castle Recruiter Dialogue NPC)"
+      ]
+    },
+    {
+      "ID": 39700000,
+      "Entries": [
+        "Descendants of the Intelligent Beast: Normal Kaiser"
+      ]
+    },
+    {
+      "ID": 39701000,
+      "Entries": [
+        "Descendants of the Intelligent Beast: Large Kaiser"
+      ]
+    },
+    {
+      "ID": 39701100,
+      "Entries": [
+        "Descendants of the Intelligent Beast: Large Kaiser_m3103 Boss Battle Memory Target Long"
+      ]
+    },
+    {
+      "ID": 39701200,
+      "Entries": [
+        "Descendants of the Intelligent Beast: Large Kaiser_m3110 Boss Battle Memory Target Long"
+      ]
+    },
+    {
+      "ID": 39702000,
+      "Entries": [
+        "Descendants of the Intelligent Beast: Throw Kaiser"
+      ]
+    },
+    {
+      "ID": 39702100,
+      "Entries": [
+        "Descendants of the Intelligent Beast: Throw Kaiser_m3110 Boss Battle Memory Target Long"
+      ]
+    },
+    {
+      "ID": 39703000,
+      "Entries": [
+        "Descendants of the Intelligent Beast: Lightning Magic Variant"
+      ]
+    },
+    {
+      "ID": 39703100,
+      "Entries": [
+        "Descendants of the Intelligent Beast: Lightning Magic Variant_Does Not Become Escort"
+      ]
+    },
+    {
+      "ID": 39703200,
+      "Entries": [
+        "Descendants of the Intelligent Beast: Lightning Magic Variant_Forgets Target Quickly"
+      ]
+    },
+    {
+      "ID": 39703300,
+      "Entries": [
+        "Descendants of the Intelligent Beast: Lightning Magic Variant_Sight 60m_Lightning Strike Gimmick Placement"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "Nazgul_Follower: Normal"
+      ]
+    },
+    {
+      "ID": 40000100,
+      "Entries": [
+        "Nazgul_Follower: Normal_Long Sight"
+      ]
+    },
+    {
+      "ID": 40001000,
+      "Entries": [
+        "Nazgul Follower_While Mounted"
+      ]
+    },
+    {
+      "ID": 40200000,
+      "Entries": [
+        "Nazgul_Ground Insect"
+      ]
+    },
+    {
+      "ID": 40200100,
+      "Entries": [
+        "Nazgul_Ground Insect_Short Homing Distance"
+      ]
+    },
+    {
+      "ID": 40400000,
+      "Entries": [
+        "Slug"
+      ]
+    },
+    {
+      "ID": 40400100,
+      "Entries": [
+        "Slug_Weak Vision"
+      ]
+    },
+    {
+      "ID": 40500000,
+      "Entries": [
+        "Northern Mercenary: Greatsword"
+      ]
+    },
+    {
+      "ID": 40500100,
+      "Entries": [
+        "Northern Mercenary: Greatsword_Reacts to Noble Horn"
+      ]
+    },
+    {
+      "ID": 40500900,
+      "Entries": [
+        "Northern Mercenary: Greatsword (Boss)"
+      ]
+    },
+    {
+      "ID": 40501000,
+      "Entries": [
+        "Northern Mercenary: Greatsword_Caravan"
+      ]
+    },
+    {
+      "ID": 40502000,
+      "Entries": [
+        "Northern Mercenary: Greatsword_Actively Mounts"
+      ]
+    },
+    {
+      "ID": 40507500,
+      "Entries": [
+        "Northern Mercenary: Greatsword: Buddy"
+      ]
+    },
+    {
+      "ID": 40508000,
+      "Entries": [
+        "Northern Mercenary: Greatsword (Weak Search)"
+      ]
+    },
+    {
+      "ID": 40508100,
+      "Entries": [
+        "Northern Mercenary: Greatsword_Caravan (Weak Search)"
+      ]
+    },
+    {
+      "ID": 40509000,
+      "Entries": [
+        "Northern Mercenary: Greatsword_Mount Test"
+      ]
+    },
+    {
+      "ID": 40509100,
+      "Entries": [
+        "Northern Mercenary: Late-7 Stealth Test"
+      ]
+    },
+    {
+      "ID": 40509200,
+      "Entries": [
+        "Northern Mercenary: Day/Night Sleep and Wake Test"
+      ]
+    },
+    {
+      "ID": 40509300,
+      "Entries": [
+        "Northern Mercenary: Zone Check Test"
+      ]
+    },
+    {
+      "ID": 40509900,
+      "Entries": [
+        "Northern Mercenary: Greatsword_For Force Action"
+      ]
+    },
+    {
+      "ID": 40600000,
+      "Entries": [
+        "Mercenary Horse"
+      ]
+    },
+    {
+      "ID": 40609900,
+      "Entries": [
+        "Mercenary Horse_For ForceAction"
+      ]
+    },
+    {
+      "ID": 40700000,
+      "Entries": [
+        "Wolf"
+      ]
+    },
+    {
+      "ID": 40700100,
+      "Entries": [
+        "Wolf_Legacy Reduced Sight"
+      ]
+    },
+    {
+      "ID": 40700200,
+      "Entries": [
+        "Wolf_Scout (short sight/slow reaction)"
+      ]
+    },
+    {
+      "ID": 40700300,
+      "Entries": [
+        "Wolf_Keen Hearing"
+      ]
+    },
+    {
+      "ID": 40700500,
+      "Entries": [
+        "Wolf_Snowfield_Walk-Approach Type"
+      ]
+    },
+    {
+      "ID": 40700510,
+      "Entries": [
+        "Wolf_Snowfield_Run-Approach Type"
+      ]
+    },
+    {
+      "ID": 40700600,
+      "Entries": [
+        "Wolf_Runs In When Alerted"
+      ]
+    },
+    {
+      "ID": 40701000,
+      "Entries": [
+        "Wolf_Group Stealth"
+      ]
+    },
+    {
+      "ID": 40702000,
+      "Entries": [
+        "Wolf_Howl"
+      ]
+    },
+    {
+      "ID": 40703000,
+      "Entries": [
+        "Wolf_Immediate Combat"
+      ]
+    },
+    {
+      "ID": 40704000,
+      "Entries": [
+        "Wolf_Responds to Wolf-Family Ally Call"
+      ]
+    },
+    {
+      "ID": 40704052,
+      "Entries": [
+        "Wolf_Responds to Wolf-Family Ally Call_Long Sight"
+      ]
+    },
+    {
+      "ID": 40708000,
+      "Entries": [
+        "[Rennala_Summon Magic] Wolf"
+      ]
+    },
+    {
+      "ID": 40800000,
+      "Entries": [
+        "Dog Rat"
+      ]
+    },
+    {
+      "ID": 40800001,
+      "Entries": [
+        "Dog Rat_Short Sight_Slow Reaction_Normal in Combat"
+      ]
+    },
+    {
+      "ID": 40800002,
+      "Entries": [
+        "Dog Rat_Destructible Object Not Destroyed"
+      ]
+    },
+    {
+      "ID": 40800003,
+      "Entries": [
+        "Dog Rat_Low Team Attack"
+      ]
+    },
+    {
+      "ID": 40800004,
+      "Entries": [
+        "Dog Rat_Short Sight_Slow Reaction_Low Team Attack"
+      ]
+    },
+    {
+      "ID": 40800300,
+      "Entries": [
+        "Dog Rat_Chaos (Long Sight_No Detection)"
+      ]
+    },
+    {
+      "ID": 40900000,
+      "Entries": [
+        "Dog Rat (Large)"
+      ]
+    },
+    {
+      "ID": 40900001,
+      "Entries": [
+        "Dog Rat (Large)_Low Team Attack"
+      ]
+    },
+    {
+      "ID": 40900300,
+      "Entries": [
+        "Feral Dog Rat (Large)_Chaos(No Search)"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "Gray Demi-Human_Basic (Curved Sword + Shield)"
+      ]
+    },
+    {
+      "ID": 41000100,
+      "Entries": [
+        "Gray Demi-Human_Basic (Curved Sword + Shield): No Berserk"
+      ]
+    },
+    {
+      "ID": 41000200,
+      "Entries": [
+        "Gray Demi-Human_Basic (Curved Sword + Shield): Team Attack Power_Low"
+      ]
+    },
+    {
+      "ID": 41001000,
+      "Entries": [
+        "Gray Demi-Human_Basic (Curved Sword)"
+      ]
+    },
+    {
+      "ID": 41001100,
+      "Entries": [
+        "Gray Demi-Human_Basic (Curved Sword): No Berserk"
+      ]
+    },
+    {
+      "ID": 41001200,
+      "Entries": [
+        "Gray Demi-Human_Basic (Curved Sword): Team Attack Power_Low"
+      ]
+    },
+    {
+      "ID": 41002000,
+      "Entries": [
+        "Gray Demi-Human_Basic (Club)"
+      ]
+    },
+    {
+      "ID": 41002100,
+      "Entries": [
+        "Gray Demi-Human_Basic (Club): No Berserk"
+      ]
+    },
+    {
+      "ID": 41002200,
+      "Entries": [
+        "Gray Demi-Human_Basic (Club): Team Attack Power_Low"
+      ]
+    },
+    {
+      "ID": 41009000,
+      "Entries": [
+        "Gray Demi-Human_Basic (Curved Sword + Shield)"
+      ]
+    },
+    {
+      "ID": 41010000,
+      "Entries": [
+        "Gray Demi-Human_Basic (Elite)"
+      ]
+    },
+    {
+      "ID": 41010050,
+      "Entries": [
+        "Gray Demi-Human_Basic (Elite)_Snowy Mountain First Half_Long Sight"
+      ]
+    },
+    {
+      "ID": 41010100,
+      "Entries": [
+        "Gray Demi-Human_Basic (Elite): No Berserk"
+      ]
+    },
+    {
+      "ID": 41010200,
+      "Entries": [
+        "Gray Demi-Human_Basic (Elite): Team Attack Power_Low"
+      ]
+    },
+    {
+      "ID": 41100000,
+      "Entries": [
+        "Gray Demi-Human_Small"
+      ]
+    },
+    {
+      "ID": 41100100,
+      "Entries": [
+        "Gray Demi-Human_Small: No Berserk"
+      ]
+    },
+    {
+      "ID": 41100200,
+      "Entries": [
+        "Gray Demi-Human_Small: Team Attack Power_Low"
+      ]
+    },
+    {
+      "ID": 41109000,
+      "Entries": [
+        "[Dialogue NPC] Gray Demi-Human_Demi-Human Needle Maiden"
+      ]
+    },
+    {
+      "ID": 41200000,
+      "Entries": [
+        "Gray Demi-Human_Berserker"
+      ]
+    },
+    {
+      "ID": 41200100,
+      "Entries": [
+        "Gray Demi-Human_Berserker: No Berserk"
+      ]
+    },
+    {
+      "ID": 41200200,
+      "Entries": [
+        "Gray Demi-Human_Berserker: Team Attack Power_Low"
+      ]
+    },
+    {
+      "ID": 41300000,
+      "Entries": [
+        "Gray Demi-Human King: No HU"
+      ]
+    },
+    {
+      "ID": 41300010,
+      "Entries": [
+        "Gray Demi-Human King: No HU_Narrow Left/Right Vision"
+      ]
+    },
+    {
+      "ID": 41301000,
+      "Entries": [
+        "Gray Demi-Human King: With HU"
+      ]
+    },
+    {
+      "ID": 41301900,
+      "Entries": [
+        "Gray Demi-Human King: With HU_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 41400000,
+      "Entries": [
+        "Snake Snail_Normal Variant"
+      ]
+    },
+    {
+      "ID": 41401000,
+      "Entries": [
+        "Snake Snail_Virulent Variant"
+      ]
+    },
+    {
+      "ID": 41402000,
+      "Entries": [
+        "Snake Snail_Magic Variant"
+      ]
+    },
+    {
+      "ID": 41402001,
+      "Entries": [
+        "Snake Snail_Magic Variant_Long Sight"
+      ]
+    },
+    {
+      "ID": 41402002,
+      "Entries": [
+        "Snake Snail_Magic Variant_Short Sight"
+      ]
+    },
+    {
+      "ID": 41402003,
+      "Entries": [
+        "Snake Snail_Magic Variant_Cave 5-2"
+      ]
+    },
+    {
+      "ID": 41402903,
+      "Entries": [
+        "Snake Snail_Magic Variant_Cave 5-2 Boss"
+      ]
+    },
+    {
+      "ID": 41403000,
+      "Entries": [
+        "Snake Snail_Skeleton Variant"
+      ]
+    },
+    {
+      "ID": 41403001,
+      "Entries": [
+        "Snake Snail_Skeleton Variant_Cave 3-4 Escort"
+      ]
+    },
+    {
+      "ID": 41404000,
+      "Entries": [
+        "Snake Snail_Crystal Variant"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "Basilisk"
+      ]
+    },
+    {
+      "ID": 41500100,
+      "Entries": [
+        "Basilisk: Short Sight / Poor Reaction"
+      ]
+    },
+    {
+      "ID": 41600000,
+      "Entries": [
+        "Undead Dog (Large)"
+      ]
+    },
+    {
+      "ID": 41610000,
+      "Entries": [
+        "Undead Dog (Small)"
+      ]
+    },
+    {
+      "ID": 41610010,
+      "Entries": [
+        "Undead Dog (Small)_Green Encampment Placement"
+      ]
+    },
+    {
+      "ID": 41610101,
+      "Entries": [
+        "Undead Dog (Small)_Short Range"
+      ]
+    },
+    {
+      "ID": 41620000,
+      "Entries": [
+        "Undead Dog (Large)_Descending Ruins"
+      ]
+    },
+    {
+      "ID": 41630000,
+      "Entries": [
+        "Undead Dog (Small)_Descending Ruins"
+      ]
+    },
+    {
+      "ID": 41640000,
+      "Entries": [
+        "Undead Dog (Large)_Blood"
+      ]
+    },
+    {
+      "ID": 41650000,
+      "Entries": [
+        "Undead Dog (Small)_Blood"
+      ]
+    },
+    {
+      "ID": 41660000,
+      "Entries": [
+        "Undead Dog (Large)_Rot"
+      ]
+    },
+    {
+      "ID": 41670000,
+      "Entries": [
+        "Undead Dog (Small)_Rot"
+      ]
+    },
+    {
+      "ID": 41700000,
+      "Entries": [
+        "Writhing Carrion"
+      ]
+    },
+    {
+      "ID": 41700010,
+      "Entries": [
+        "Writhing Carrion_Wider View Angle"
+      ]
+    },
+    {
+      "ID": 41710000,
+      "Entries": [
+        "Writhing Carrion(Large)"
+      ]
+    },
+    {
+      "ID": 41710010,
+      "Entries": [
+        "Writhing Carrion(Large)_Wider View Angle"
+      ]
+    },
+    {
+      "ID": 41800000,
+      "Entries": [
+        "Spirit Jellyfish"
+      ]
+    },
+    {
+      "ID": 41809000,
+      "Entries": [
+        "[Dialogue NPC] Spirit Jellyfish Girl"
+      ]
+    },
+    {
+      "ID": 41900000,
+      "Entries": [
+        "Scarab (Large)"
+      ]
+    },
+    {
+      "ID": 41910000,
+      "Entries": [
+        "Scarab"
+      ]
+    },
+    {
+      "ID": 41912000,
+      "Entries": [
+        "Scarab_Metal Variant"
+      ]
+    },
+    {
+      "ID": 41920000,
+      "Entries": [
+        "Scarab (Colossal)"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "Bat"
+      ]
+    },
+    {
+      "ID": 42000001,
+      "Entries": [
+        "Bat_Wide Vision"
+      ]
+    },
+    {
+      "ID": 42000100,
+      "Entries": [
+        "Bat_Stormveil Placement"
+      ]
+    },
+    {
+      "ID": 42000200,
+      "Entries": [
+        "Bat_Special Ambush"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "Old Woman Bat_Perfumer"
+      ]
+    },
+    {
+      "ID": 42011000,
+      "Entries": [
+        "Old Woman Bat_Charm"
+      ]
+    },
+    {
+      "ID": 42100000,
+      "Entries": [
+        "Stormhawk"
+      ]
+    },
+    {
+      "ID": 42100050,
+      "Entries": [
+        "Stormhawk_Snowy Mountain First Half Vision 45 / Detection 5"
+      ]
+    },
+    {
+      "ID": 42100100,
+      "Entries": [
+        "Stormhawk_Stormveil Castle Vision Boost"
+      ]
+    },
+    {
+      "ID": 42100200,
+      "Entries": [
+        "Stormhawk_Stormveil_Homing Distance 30m"
+      ]
+    },
+    {
+      "ID": 42200000,
+      "Entries": [
+        "Land Octopus"
+      ]
+    },
+    {
+      "ID": 42300000,
+      "Entries": [
+        "Land Octopus (Small)"
+      ]
+    },
+    {
+      "ID": 42400000,
+      "Entries": [
+        "Finger Worm"
+      ]
+    },
+    {
+      "ID": 42400020,
+      "Entries": [
+        "Finger Worm_Long Search"
+      ]
+    },
+    {
+      "ID": 42400050,
+      "Entries": [
+        "Finger Worm Snowy Mountain Placement"
+      ]
+    },
+    {
+      "ID": 42400100,
+      "Entries": [
+        "Finger Worm_Short Sight Range"
+      ]
+    },
+    {
+      "ID": 42400900,
+      "Entries": [
+        "Finger Worm: for simulating event audio"
+      ]
+    },
+    {
+      "ID": 42410000,
+      "Entries": [
+        "Finger Worm(Large)"
+      ]
+    },
+    {
+      "ID": 42410050,
+      "Entries": [
+        "Finger Worm(Large)_Snowy Mountain Placement_No Path Search"
+      ]
+    },
+    {
+      "ID": 42500000,
+      "Entries": [
+        "Finger Worm (Small)"
+      ]
+    },
+    {
+      "ID": 42600000,
+      "Entries": [
+        "Watchdog Golem_Sword"
+      ]
+    },
+    {
+      "ID": 42600200,
+      "Entries": [
+        "Watchdog Golem_Sword_Minion Params"
+      ]
+    },
+    {
+      "ID": 42600900,
+      "Entries": [
+        "Watchdog Golem_Sword_Team Attack 0 For Graveyard 1-2"
+      ]
+    },
+    {
+      "ID": 42601000,
+      "Entries": [
+        "Watchdog Golem_Mace"
+      ]
+    },
+    {
+      "ID": 42601010,
+      "Entries": [
+        "Watchdog Golem_Mace_Team Influence 0"
+      ]
+    },
+    {
+      "ID": 42601100,
+      "Entries": [
+        "Watchdog Golem_Mace_Vision Enhanced"
+      ]
+    },
+    {
+      "ID": 42601200,
+      "Entries": [
+        "Watchdog Golem_Mace_Minion Params"
+      ]
+    },
+    {
+      "ID": 42700000,
+      "Entries": [
+        "Arena Old Lion"
+      ]
+    },
+    {
+      "ID": 42700040,
+      "Entries": [
+        "Arena Old Lion_For Plains Fort"
+      ]
+    },
+    {
+      "ID": 42700100,
+      "Entries": [
+        "Arena Old Lion_Erdtree Area_Return Range 50m"
+      ]
+    },
+    {
+      "ID": 42701000,
+      "Entries": [
+        "Arena Old Lion_Follower Behavior Enabled"
+      ]
+    },
+    {
+      "ID": 42702000,
+      "Entries": [
+        "Arena Old Lion_No Movement Path_For Arena"
+      ]
+    },
+    {
+      "ID": 42800000,
+      "Entries": [
+        "Jar Ant"
+      ]
+    },
+    {
+      "ID": 42800100,
+      "Entries": [
+        "Jar Ant_Poor Reaction (Short Sight / No Sound Response)"
+      ]
+    },
+    {
+      "ID": 42800200,
+      "Entries": [
+        "Jar Ant (Shorter Return Distance)"
+      ]
+    },
+    {
+      "ID": 42801000,
+      "Entries": [
+        "Jar Ant (Satiated Type)"
+      ]
+    },
+    {
+      "ID": 42900000,
+      "Entries": [
+        "Bolas Hound"
+      ]
+    },
+    {
+      "ID": 42900010,
+      "Entries": [
+        "Bolas Hound Team Influence 0"
+      ]
+    },
+    {
+      "ID": 42900011,
+      "Entries": [
+        "Bolas Hound Team Influence 0 & Run When Alert"
+      ]
+    },
+    {
+      "ID": 42900020,
+      "Entries": [
+        "Bolas Hound Long Sight Range"
+      ]
+    },
+    {
+      "ID": 42900030,
+      "Entries": [
+        "Bolas Hound Boss For_Target Not Forgotten_Wide Vision"
+      ]
+    },
+    {
+      "ID": 42900100,
+      "Entries": [
+        "Bolas Hound(Torch Bearer)"
+      ]
+    },
+    {
+      "ID": 42909000,
+      "Entries": [
+        "Bolas Hound For Rennala Summon"
+      ]
+    },
+    {
+      "ID": 43000000,
+      "Entries": [
+        "Grave Robber Noble (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 43000006,
+      "Entries": [
+        "Grave Robber Noble (Straight Sword) For Tutorial"
+      ]
+    },
+    {
+      "ID": 43000010,
+      "Entries": [
+        "Grave Robber Noble (Straight Sword) For Tutorial_Wide View"
+      ]
+    },
+    {
+      "ID": 43000100,
+      "Entries": [
+        "Grave Robber Noble (Straight Sword)_Giant Corpse Scavenger"
+      ]
+    },
+    {
+      "ID": 43000500,
+      "Entries": [
+        "Grave Robber Noble (Straight Sword)_Caravan"
+      ]
+    },
+    {
+      "ID": 43000800,
+      "Entries": [
+        "Grave Robber Noble (Straight Sword)_Group Stealth"
+      ]
+    },
+    {
+      "ID": 43001000,
+      "Entries": [
+        "Grave Robber Noble (Rapier)"
+      ]
+    },
+    {
+      "ID": 43001500,
+      "Entries": [
+        "Grave Robber Noble (Rapier)_Caravan"
+      ]
+    },
+    {
+      "ID": 43001800,
+      "Entries": [
+        "Grave Robber Noble (Rapier)_Group Stealth"
+      ]
+    },
+    {
+      "ID": 43002000,
+      "Entries": [
+        "Grave Robber Noble (Sorcery)"
+      ]
+    },
+    {
+      "ID": 43002010,
+      "Entries": [
+        "Grave Robber Noble (Sorcery)_Long Vision"
+      ]
+    },
+    {
+      "ID": 43002110,
+      "Entries": [
+        "Grave Robber Noble (Sorcery)_Long Vision_For Whistle Reaction"
+      ]
+    },
+    {
+      "ID": 43002500,
+      "Entries": [
+        "Grave Robber Noble (Sorcery)_Caravan"
+      ]
+    },
+    {
+      "ID": 43002700,
+      "Entries": [
+        "Grave Robber Noble (Sorcery)_360-Degree Search Vision"
+      ]
+    },
+    {
+      "ID": 43002800,
+      "Entries": [
+        "Grave Robber Noble (Sorcery)_Group Stealth"
+      ]
+    },
+    {
+      "ID": 43002900,
+      "Entries": [
+        "Grave Robber Noble (Sorcery)_Warning Shot"
+      ]
+    },
+    {
+      "ID": 43003000,
+      "Entries": [
+        "Grave Robber Noble (Banner)"
+      ]
+    },
+    {
+      "ID": 43003500,
+      "Entries": [
+        "Grave Robber Noble (Banner)_Caravan"
+      ]
+    },
+    {
+      "ID": 43003600,
+      "Entries": [
+        "Grave Robber Noble (Banner)_Caravan_Scout"
+      ]
+    },
+    {
+      "ID": 43003800,
+      "Entries": [
+        "Grave Robber Noble (Banner)_Group Stealth"
+      ]
+    },
+    {
+      "ID": 43004000,
+      "Entries": [
+        "Grave Robber Noble (Box)"
+      ]
+    },
+    {
+      "ID": 43004100,
+      "Entries": [
+        "Grave Robber Noble (Box)_Walking Alone"
+      ]
+    },
+    {
+      "ID": 43004500,
+      "Entries": [
+        "Grave Robber Noble (Box)_Caravan"
+      ]
+    },
+    {
+      "ID": 43004800,
+      "Entries": [
+        "Grave Robber Noble (Box)_Group Stealth"
+      ]
+    },
+    {
+      "ID": 43004850,
+      "Entries": [
+        "Grave Robber Noble (Box)_Snowy Mountain Lower Level Behavior AI Audible Type"
+      ]
+    },
+    {
+      "ID": 43005000,
+      "Entries": [
+        "Grave Robber Noble (Torch)"
+      ]
+    },
+    {
+      "ID": 43005850,
+      "Entries": [
+        "Grave Robber Noble (Torch)_Snowy Mountain Lower Level"
+      ]
+    },
+    {
+      "ID": 43006000,
+      "Entries": [
+        "Grave Robber Noble (Bare Hands)"
+      ]
+    },
+    {
+      "ID": 43006100,
+      "Entries": [
+        "Grave Robber Noble (Bare Hands) (For Spirit Candle_No Sight/Hearing)"
+      ]
+    },
+    {
+      "ID": 43006200,
+      "Entries": [
+        "Grave Robber Noble (Bare Hands) (For Spirit Candle_No Sight/Hearing)_No Path Movement"
+      ]
+    },
+    {
+      "ID": 43006850,
+      "Entries": [
+        "Grave Robber Noble (Unarmed)_Snowy Mountain Lower Level Behavior AI Audible Type"
+      ]
+    },
+    {
+      "ID": 43007000,
+      "Entries": [
+        "Grave Robber Noble (Bare Hands) (For Painting Noble_No Sight/Hearing)"
+      ]
+    },
+    {
+      "ID": 43007500,
+      "Entries": [
+        "Grave Robber Noble (Rapier):Buddy"
+      ]
+    },
+    {
+      "ID": 43007600,
+      "Entries": [
+        "Grave Robber Noble (Sorcery): Spirit Ash Summon"
+      ]
+    },
+    {
+      "ID": 43007700,
+      "Entries": [
+        "Grave Robber Noble (Banner):Buddy"
+      ]
+    },
+    {
+      "ID": 43100000,
+      "Entries": [
+        "Wandering Royal Army_One-handed Weapon (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 43100100,
+      "Entries": [
+        "Wandering Royal Army_One-handed Weapon (Straight Sword)_Torch"
+      ]
+    },
+    {
+      "ID": 43101000,
+      "Entries": [
+        "Wandering Royal Army_One-handed Weapon (War Hammer)"
+      ]
+    },
+    {
+      "ID": 43101100,
+      "Entries": [
+        "Wandering Royal Army_One-handed Weapon (War Hammer)_Torch"
+      ]
+    },
+    {
+      "ID": 43102000,
+      "Entries": [
+        "Wandering Royal Army_Two-handed Weapon"
+      ]
+    },
+    {
+      "ID": 43103000,
+      "Entries": [
+        "Wandering Royal Army_Spear Shield"
+      ]
+    },
+    {
+      "ID": 43110000,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_One-handed Weapon (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 43110010,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_One-handed Weapon (Straight Sword)_Noble Whistle Reaction"
+      ]
+    },
+    {
+      "ID": 43110110,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_One-handed Weapon (Straight Sword)_Vision Extension"
+      ]
+    },
+    {
+      "ID": 43110120,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_One-handed Weapon (Straight Sword)_Vision Extension_Green Area"
+      ]
+    },
+    {
+      "ID": 43110200,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_One-handed Weapon (Straight Sword)_Vision Extension_Tutorial Area"
+      ]
+    },
+    {
+      "ID": 43111100,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_One-handed Weapon (Straight Sword)_Torch"
+      ]
+    },
+    {
+      "ID": 43112000,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_One-handed Weapon (War Hammer)"
+      ]
+    },
+    {
+      "ID": 43112010,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_One-handed Weapon (War Hammer) Noble Whistle Reaction"
+      ]
+    },
+    {
+      "ID": 43112100,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_One-handed Weapon (War Hammer)_Torch"
+      ]
+    },
+    {
+      "ID": 43113000,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_Two-handed Weapon"
+      ]
+    },
+    {
+      "ID": 43113900,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_Two-handed Weapon (Tutorial Boss Parry)"
+      ]
+    },
+    {
+      "ID": 43114000,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_Spear and Shield"
+      ]
+    },
+    {
+      "ID": 43114006,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction_Spear and Shield (Tutorial)"
+      ]
+    },
+    {
+      "ID": 43120000,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_One-handed Weapon (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 43120010,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_One-handed Weapon (Straight Sword)_Puppet Longer Sight"
+      ]
+    },
+    {
+      "ID": 43120020,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_One-handed Weapon (Straight Sword)_Sniper Longer Sight"
+      ]
+    },
+    {
+      "ID": 43120100,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_One-handed Weapon (Straight Sword)_Torch"
+      ]
+    },
+    {
+      "ID": 43121000,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_One-handed Weapon (War Hammer)"
+      ]
+    },
+    {
+      "ID": 43121010,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_One-handed Weapon (War Hammer)_Puppet Longer Sight"
+      ]
+    },
+    {
+      "ID": 43121020,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_One-handed Weapon (War Hammer)_Sniper Longer Sight"
+      ]
+    },
+    {
+      "ID": 43121100,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_One-handed Weapon (War Hammer)_Torch"
+      ]
+    },
+    {
+      "ID": 43122000,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_Two-handed Weapon"
+      ]
+    },
+    {
+      "ID": 43122010,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_Two-handed Weapon_Puppet Longer Sight"
+      ]
+    },
+    {
+      "ID": 43123000,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_Spear Shield"
+      ]
+    },
+    {
+      "ID": 43123010,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction_Spear Shield_Puppet Longer Sight"
+      ]
+    },
+    {
+      "ID": 43130000,
+      "Entries": [
+        "Wandering Royal Army_Royal Capital Faction_One-handed Weapon (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 43130100,
+      "Entries": [
+        "Wandering Royal Army_Royal Capital Faction_One-handed Weapon (Straight Sword)_Torch"
+      ]
+    },
+    {
+      "ID": 43131000,
+      "Entries": [
+        "Wandering Royal Army_Royal Capital Faction_One-handed Weapon (War Hammer)"
+      ]
+    },
+    {
+      "ID": 43131100,
+      "Entries": [
+        "Wandering Royal Army_Royal Capital Faction_One-handed Weapon (War Hammer)_Torch"
+      ]
+    },
+    {
+      "ID": 43132000,
+      "Entries": [
+        "Wandering Royal Army_Royal Capital Faction_Two-handed Weapon"
+      ]
+    },
+    {
+      "ID": 43133000,
+      "Entries": [
+        "Wandering Royal Army_Royal Capital Faction_Spear Shield"
+      ]
+    },
+    {
+      "ID": 43140000,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 43140010,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Straight Sword)_For Fixed Turret Conversion"
+      ]
+    },
+    {
+      "ID": 43140020,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Straight Sword)_No Search Vision"
+      ]
+    },
+    {
+      "ID": 43140040,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Straight Sword)_Radahn Battle Co-op Use"
+      ]
+    },
+    {
+      "ID": 43140100,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Straight Sword)_Torch"
+      ]
+    },
+    {
+      "ID": 43140110,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Straight Sword)_Torch_For Battle"
+      ]
+    },
+    {
+      "ID": 43140900,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Straight Sword)_Graveyard 4-3 Engagement"
+      ]
+    },
+    {
+      "ID": 43140910,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Straight Sword)_Graveyard 4-3 Ambush"
+      ]
+    },
+    {
+      "ID": 43141000,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Warhammer)"
+      ]
+    },
+    {
+      "ID": 43141010,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Warhammer)_Fixed Turret Conversion Use"
+      ]
+    },
+    {
+      "ID": 43141020,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Warhammer)_No Search Vision"
+      ]
+    },
+    {
+      "ID": 43141100,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_One-handed Weapon (Warhammer)_Torch"
+      ]
+    },
+    {
+      "ID": 43142000,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_Two-handed Weapon"
+      ]
+    },
+    {
+      "ID": 43142020,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_Two-handed Weapon_No Search Vision"
+      ]
+    },
+    {
+      "ID": 43142040,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_Two-handed Weapon_Combat Use"
+      ]
+    },
+    {
+      "ID": 43143000,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_Spear Shield"
+      ]
+    },
+    {
+      "ID": 43143020,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_Spear Shield_No Search Vision"
+      ]
+    },
+    {
+      "ID": 43143021,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction_Spear Shield_No Search Vision"
+      ]
+    },
+    {
+      "ID": 43150000,
+      "Entries": [
+        "Wandering Royal Army_Mausoleum Guard_One-handed Weapon (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 43150100,
+      "Entries": [
+        "Wandering Royal Army_Mausoleum Guard_One-handed Weapon (Straight Sword)_Torch"
+      ]
+    },
+    {
+      "ID": 43151000,
+      "Entries": [
+        "Wandering Royal Army_Mausoleum Guard_One-handed Weapon (Warhammer)"
+      ]
+    },
+    {
+      "ID": 43151100,
+      "Entries": [
+        "Wandering Royal Army_Mausoleum Guard_One-handed Weapon (Warhammer)_Torch"
+      ]
+    },
+    {
+      "ID": 43152000,
+      "Entries": [
+        "Wandering Royal Army_Mausoleum Guard_Two-handed Weapon"
+      ]
+    },
+    {
+      "ID": 43153000,
+      "Entries": [
+        "Wandering Royal Army_Mausoleum Guard_Spear Shield"
+      ]
+    },
+    {
+      "ID": 43160000,
+      "Entries": [
+        "Wandering Royal Army_Miquella Faction_One-handed Weapon (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 43160100,
+      "Entries": [
+        "Wandering Royal Army_Miquella Faction_One-handed Weapon (Straight Sword)_Torch"
+      ]
+    },
+    {
+      "ID": 43161000,
+      "Entries": [
+        "Wandering Royal Army_Miquella Faction_One-handed Weapon (War Hammer)"
+      ]
+    },
+    {
+      "ID": 43161100,
+      "Entries": [
+        "Wandering Royal Army_Miquella Faction_One-handed Weapon (War Hammer)_Torch"
+      ]
+    },
+    {
+      "ID": 43162000,
+      "Entries": [
+        "Wandering Royal Army_Miquella Faction_Two-handed Weapon"
+      ]
+    },
+    {
+      "ID": 43163000,
+      "Entries": [
+        "Wandering Royal Army_Miquella Faction_Spear Shield"
+      ]
+    },
+    {
+      "ID": 43210000,
+      "Entries": [
+        "Wandering Lowly Soldier (Demi-Human): Long-Handled Cleaver"
+      ]
+    },
+    {
+      "ID": 43210100,
+      "Entries": [
+        "Wandering Lowly Soldier (Demi-Human): Long-Handled Cleaver Maliketh Followers"
+      ]
+    },
+    {
+      "ID": 43211000,
+      "Entries": [
+        "Wandering Lowly Soldier (Demi-Human): Long-Handled Scimitar"
+      ]
+    },
+    {
+      "ID": 43211100,
+      "Entries": [
+        "Wandering Lowly Soldier (Demi-Human): Long-Handled Scimitar Maliketh Followers"
+      ]
+    },
+    {
+      "ID": 43211150,
+      "Entries": [
+        "Wandering Lowly Soldier (Demi-Human): Long-Handled Scimitar Maliketh Followers_Snowy Mountain First Half"
+      ]
+    },
+    {
+      "ID": 43212000,
+      "Entries": [
+        "Wandering Lowly Soldier (Demi-Human): Kusarigama"
+      ]
+    },
+    {
+      "ID": 43212100,
+      "Entries": [
+        "Wandering Lowly Soldier (Demi-Human): Kusarigama Maliketh Followers"
+      ]
+    },
+    {
+      "ID": 43400000,
+      "Entries": [
+        "c4340_Pumpkin Head_Flail"
+      ]
+    },
+    {
+      "ID": 43400100,
+      "Entries": [
+        "c4340_Pumpkin Head_Flail (Berserk When Normal)"
+      ]
+    },
+    {
+      "ID": 43400110,
+      "Entries": [
+        "c4340_Pumpkin Head_Flail (Berserk When Normal)_Boss Vision Adjustment"
+      ]
+    },
+    {
+      "ID": 43400900,
+      "Entries": [
+        "c4340_Pumpkin Head_Flail_Boss"
+      ]
+    },
+    {
+      "ID": 43401000,
+      "Entries": [
+        "c4340_Pumpkin Head_Hammer"
+      ]
+    },
+    {
+      "ID": 43401100,
+      "Entries": [
+        "c4340_Pumpkin Head_Hammer (Berserk When Normal)"
+      ]
+    },
+    {
+      "ID": 43401200,
+      "Entries": [
+        "c4340_Pumpkin Head_Hammer (Berserk When Normal) Green Area_Homing Adjustment"
+      ]
+    },
+    {
+      "ID": 43401900,
+      "Entries": [
+        "c4340_Pumpkin Head_Hammer_Boss"
+      ]
+    },
+    {
+      "ID": 43410000,
+      "Entries": [
+        "c4341_Pumpkin Head (Buddy)_Flail"
+      ]
+    },
+    {
+      "ID": 43411000,
+      "Entries": [
+        "c4341_Pumpkin Head (Buddy)_Hammer"
+      ]
+    },
+    {
+      "ID": 43510000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Stormveil Faction_Sword"
+      ]
+    },
+    {
+      "ID": 43511000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Stormveil Faction_Spear"
+      ]
+    },
+    {
+      "ID": 43512000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Stormveil Faction_Sword+Greatbow"
+      ]
+    },
+    {
+      "ID": 43520000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Monsan Faction_Sword"
+      ]
+    },
+    {
+      "ID": 43520100,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Monsan Faction_Sword_Whistle Reaction"
+      ]
+    },
+    {
+      "ID": 43521000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Monsan Faction_Spear"
+      ]
+    },
+    {
+      "ID": 43521100,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Monsan Faction_Spear_Whistle Reaction"
+      ]
+    },
+    {
+      "ID": 43522000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Monsan Faction_Sword+Greatbow"
+      ]
+    },
+    {
+      "ID": 43530000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Royal Capital Faction_Sword"
+      ]
+    },
+    {
+      "ID": 43531000,
+      "Entries": [
+        "Wandering Royal Army (Elite Mounted Soldier)_Royal Capital Faction_Spear"
+      ]
+    },
+    {
+      "ID": 43532000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Royal Capital Faction_Sword+Greatbow"
+      ]
+    },
+    {
+      "ID": 43532100,
+      "Entries": [
+        "Wandering Royal Army (Elite Mounted Soldier)_Royal Capital Faction_Sword+Greatbow_Sight 100m"
+      ]
+    },
+    {
+      "ID": 43540000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Plains Faction_Sword"
+      ]
+    },
+    {
+      "ID": 43540200,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Plains Faction_Sword_Phantom"
+      ]
+    },
+    {
+      "ID": 43540210,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Plains Faction_Sword_Phantom_Graveyard 4-3 Engagement"
+      ]
+    },
+    {
+      "ID": 43541000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Plains Faction_Spear"
+      ]
+    },
+    {
+      "ID": 43541040,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Plains Faction_Spear_No Search"
+      ]
+    },
+    {
+      "ID": 43541200,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Plains Faction_Spear_Phantom"
+      ]
+    },
+    {
+      "ID": 43542000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Plains Faction_Sword+Greatbow"
+      ]
+    },
+    {
+      "ID": 43542010,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Plains Faction_Sword+Greatbow_For Arrow Rain"
+      ]
+    },
+    {
+      "ID": 43542200,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Plains Faction_Sword+Greatbow_Phantom"
+      ]
+    },
+    {
+      "ID": 43542300,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Plains Faction_Sword+Greatbow_Phantom_Sight 50m"
+      ]
+    },
+    {
+      "ID": 43550000,
+      "Entries": [
+        "Wandering Royal Army (Elite Mounted Soldier)_Mausoleum Guard_Sword"
+      ]
+    },
+    {
+      "ID": 43551000,
+      "Entries": [
+        "Wandering Royal Army (Elite Mounted Soldier)_Mausoleum Guard_Spear"
+      ]
+    },
+    {
+      "ID": 43552000,
+      "Entries": [
+        "Wandering Royal Army (Elite Mounted Soldier)_Mausoleum Guard_Sword+Greatbow"
+      ]
+    },
+    {
+      "ID": 43552100,
+      "Entries": [
+        "Wandering Royal Army (Elite Mounted Soldier)_Mausoleum Guard_Sword+Greatbow_Sight 100m"
+      ]
+    },
+    {
+      "ID": 43560000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Miquella Faction_Sword"
+      ]
+    },
+    {
+      "ID": 43561000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Miquella Faction_Spear"
+      ]
+    },
+    {
+      "ID": 43562000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Miquella Faction_Sword+Greatbow"
+      ]
+    },
+    {
+      "ID": 43580000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Independent Faction_Sword"
+      ]
+    },
+    {
+      "ID": 43581000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Independent Faction_Spear"
+      ]
+    },
+    {
+      "ID": 43582000,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Independent Faction_Sword+Greatbow"
+      ]
+    },
+    {
+      "ID": 43610000,
+      "Entries": [
+        "Wandering Royal Army Horse_Stormveil Faction"
+      ]
+    },
+    {
+      "ID": 43620000,
+      "Entries": [
+        "Wandering Royal Army Horse_Monsan Faction"
+      ]
+    },
+    {
+      "ID": 43630000,
+      "Entries": [
+        "Wandering Royal Army Horse_Royal Capital Faction"
+      ]
+    },
+    {
+      "ID": 43640000,
+      "Entries": [
+        "Wandering Royal Army Horse_Plains Faction"
+      ]
+    },
+    {
+      "ID": 43650000,
+      "Entries": [
+        "Wandering Royal Army Horse_Mausoleum Guard"
+      ]
+    },
+    {
+      "ID": 43680000,
+      "Entries": [
+        "Wandering Royal Army Horse_Independent Faction"
+      ]
+    },
+    {
+      "ID": 43700000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_One-handed Weapon (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43700100,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_One-handed Weapon_Trumpeter (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43700200,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_One-handed Weapon_Equipment Mounted (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43700300,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_One-handed Weapon_Catapult Archer (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43700500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_One-handed Weapon (Crossbow)"
+      ]
+    },
+    {
+      "ID": 43701000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Spear"
+      ]
+    },
+    {
+      "ID": 43701500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Long Torch"
+      ]
+    },
+    {
+      "ID": 43710000,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_One-handed Weapon(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43710010,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_One-handed Weapon(Sword/Dagger)_Team Attack: Low"
+      ]
+    },
+    {
+      "ID": 43710020,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_One-handed Weapon(Sword/Dagger)_For Fixed-point Fire Pot Shooting"
+      ]
+    },
+    {
+      "ID": 43710030,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_One-handed Weapon(Sword/Dagger)_For Fixed-point Fire Pot Shooting Visual Extension"
+      ]
+    },
+    {
+      "ID": 43710100,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_One-handed Weapon_Trumpeter(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43710200,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_One-handed Weapon_Mounted Great Ballista(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43710210,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_One-handed Weapon_Mounted Great Ballista(Sword/Dagger) Long-range Sniping"
+      ]
+    },
+    {
+      "ID": 43710300,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_One-handed Weapon_Catapult Gunner(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43710500,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_One-handed Weapon(Crossbow)"
+      ]
+    },
+    {
+      "ID": 43710510,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_One-handed Weapon(Crossbow)_Team Attack: Low"
+      ]
+    },
+    {
+      "ID": 43710600,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_One-handed Weapon(Sword/Dagger)_For Fixed-point Fire Pot Shooting"
+      ]
+    },
+    {
+      "ID": 43711000,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_Two-handed Weapon_Spear"
+      ]
+    },
+    {
+      "ID": 43711010,
+      "Entries": [
+        "Wandering Royal Army(Foot Soldier)_Stormveil Faction_Spear_Team Attack: Low"
+      ]
+    },
+    {
+      "ID": 43720000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Monsan Faction_One-handed Weapon(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43720100,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Monsan Faction_One-handed Weapon_Trumpeter(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43720200,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Monsan Faction_One-handed Weapon_Great Ballista Mounted(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43720300,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Monsan Faction_One-handed Weapon_Catapult Gunner(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43720500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Monsan Faction_One-handed Weapon(Crossbow)"
+      ]
+    },
+    {
+      "ID": 43721000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Monsan Faction_Two-handed Weapon_Spear"
+      ]
+    },
+    {
+      "ID": 43721500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Monsan Faction_Two-handed Weapon_Long Torch"
+      ]
+    },
+    {
+      "ID": 43730000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction_One-handed Weapon (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43730100,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction_One-handed Weapon_Trumpeter (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43730200,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction_One-handed Weapon_Great Ballista Mounted (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43730300,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction_One-handed Weapon_Catapult Archer (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43730500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction_One-handed Weapon (Crossbow)"
+      ]
+    },
+    {
+      "ID": 43731000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction_Two-handed Weapon_Spear"
+      ]
+    },
+    {
+      "ID": 43731500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction_Two-handed Weapon_Long Torch"
+      ]
+    },
+    {
+      "ID": 43731550,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction_Two-handed Weapon_Long Torch_Snowy Mountain First Half"
+      ]
+    },
+    {
+      "ID": 43740000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_One-handed Weapon (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43740040,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_One-handed Weapon (Sword/Dagger)_For Engagement"
+      ]
+    },
+    {
+      "ID": 43740100,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_One-handed Weapon_Trumpeter (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43740200,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_One-handed Weapon_Great Ballista Mounted (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43740300,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_One-handed Weapon_Catapult Archer (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43740400,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_One-handed Weapon_Flamethrower Mounted (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43740410,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_Flamethrower Mounted_Short Vision"
+      ]
+    },
+    {
+      "ID": 43740500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_One-handed Weapon (Crossbow)"
+      ]
+    },
+    {
+      "ID": 43740600,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_Blast Ballista Mounted (Sword/Dagger)_Long Vision"
+      ]
+    },
+    {
+      "ID": 43740620,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_Blast Ballista Mounted (Sword/Dagger)_Vision Adjust_Plains Fort Placement"
+      ]
+    },
+    {
+      "ID": 43741000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_Two-handed Weapon_Spear"
+      ]
+    },
+    {
+      "ID": 43741500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_Two-handed Weapon_Long Torch"
+      ]
+    },
+    {
+      "ID": 43742000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction_One-handed Weapon_Great Ballista Mounted (Sword/Dagger) DLC Test Vision 120m"
+      ]
+    },
+    {
+      "ID": 43750000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Mausoleum Guard_One-handed Weapon (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43750100,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Mausoleum Guard_One-handed Weapon_Trumpeter (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43750200,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Mausoleum Guard_One-handed Weapon_Great Ballista Mount (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43750300,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Mausoleum Guard_One-handed Weapon_Catapult Archer (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43750500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Mausoleum Guard_One-handed Weapon (Crossbow)"
+      ]
+    },
+    {
+      "ID": 43751000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Mausoleum Guard_Two-handed Weapon_Spear"
+      ]
+    },
+    {
+      "ID": 43760000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Miquella Faction_One-handed Weapon(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43760100,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Miquella Faction_One-handed Weapon_Trumpeter(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43760200,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Miquella Faction_One-handed Weapon_Great Ballista Mounted(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43760300,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Miquella Faction_One-handed Weapon_Catapult Gunner(Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43760500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Miquella Faction_One-handed Weapon(Crossbow)"
+      ]
+    },
+    {
+      "ID": 43761000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Miquella Faction_Two-handed Weapon_Spear"
+      ]
+    },
+    {
+      "ID": 43761500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Miquella Faction_Two-handed Weapon_Long Torch"
+      ]
+    },
+    {
+      "ID": 43770000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier_One-handed Weapon (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43770012,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier_One-handed Weapon (Sword/Dagger) m3100 Search Vision 0"
+      ]
+    },
+    {
+      "ID": 43770100,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier_One-handed Weapon_Trumpeter (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43770200,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier_One-handed Weapon_Great Ballista Mounted (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43770300,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier_One-handed Weapon_Catapult Archer (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 43770500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier_One-handed Weapon (Crossbow)"
+      ]
+    },
+    {
+      "ID": 43771000,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier_Two-handed Weapon_Spear"
+      ]
+    },
+    {
+      "ID": 43771500,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier_Two-handed Weapon_Long Torch"
+      ]
+    },
+    {
+      "ID": 43800000,
+      "Entries": [
+        "Destruction Devotee (Those Who Call Meteors): Ring Present"
+      ]
+    },
+    {
+      "ID": 43800010,
+      "Entries": [
+        "Destruction Devotee (Those Who Call Meteors): Wide Vertical View Angle"
+      ]
+    },
+    {
+      "ID": 43800100,
+      "Entries": [
+        "Destruction Devotee (Those Who Call Meteors): For Fixed Turret"
+      ]
+    },
+    {
+      "ID": 43800110,
+      "Entries": [
+        "Destruction Devotee (Those Who Call Meteors): For Fixed Turret"
+      ]
+    },
+    {
+      "ID": 43800200,
+      "Entries": [
+        "Destruction Devotee (Those Who Call Meteors): Ring Absent"
+      ]
+    },
+    {
+      "ID": 43810000,
+      "Entries": [
+        "Destruction Cult (Fire Cult)"
+      ]
+    },
+    {
+      "ID": 43810050,
+      "Entries": [
+        "Destruction Cult (Fire Cult)_Snowy Mountain_View elevation adjust"
+      ]
+    },
+    {
+      "ID": 43810100,
+      "Entries": [
+        "Destruction Cult (Fire Cult): Weak"
+      ]
+    },
+    {
+      "ID": 43810150,
+      "Entries": [
+        "Destruction Cult (Fire Cult): Weak_Snowy Mountain_View elevation adjust"
+      ]
+    },
+    {
+      "ID": 43820000,
+      "Entries": [
+        "Undead Miner (Ore Carving)"
+      ]
+    },
+    {
+      "ID": 43820100,
+      "Entries": [
+        "Undead Miner (Ore Carving): Keen Senses (For Cliff Tunnel Test)"
+      ]
+    },
+    {
+      "ID": 43820200,
+      "Entries": [
+        "Undead Miner (Ore Carving): Does Not Join Groups"
+      ]
+    },
+    {
+      "ID": 43821000,
+      "Entries": [
+        "Undead Miner (Ore Carving): Back Load (Normal Ore)"
+      ]
+    },
+    {
+      "ID": 43821100,
+      "Entries": [
+        "Undead Miner (Ore Carving): Back Load (Normal Ore)_Extended Visibility"
+      ]
+    },
+    {
+      "ID": 43822000,
+      "Entries": [
+        "Undead Miner (Ore Carving): Back Load (Explosive Ore)"
+      ]
+    },
+    {
+      "ID": 43823000,
+      "Entries": [
+        "Undead Miner (Ore Carving): Flamethrower Lantern"
+      ]
+    },
+    {
+      "ID": 43824000,
+      "Entries": [
+        "Undead Miner (Ore Carving): Back Load (Poison Ore)"
+      ]
+    },
+    {
+      "ID": 43825000,
+      "Entries": [
+        "Undead Miner (Ore Carving): Back Load (Rare Ore)"
+      ]
+    },
+    {
+      "ID": 43826000,
+      "Entries": [
+        "Undead Miner (Ore Carving): Flamethrower Lantern_Back Load (Rare Ore)"
+      ]
+    },
+    {
+      "ID": 43830000,
+      "Entries": [
+        "Undead Miner (Gem Carving):Melee"
+      ]
+    },
+    {
+      "ID": 43830010,
+      "Entries": [
+        "Undead Miner (Gem Carving)_Wide View Cave Placement"
+      ]
+    },
+    {
+      "ID": 43830100,
+      "Entries": [
+        "Undead Miner (Gem Carving):Melee_Sound Send 5m"
+      ]
+    },
+    {
+      "ID": 43830200,
+      "Entries": [
+        "Undead Miner (Gem Carving):Melee_Sound Send 15m"
+      ]
+    },
+    {
+      "ID": 43830300,
+      "Entries": [
+        "Undead Miner (Gem Carving):Melee_Sound Send 25m"
+      ]
+    },
+    {
+      "ID": 43831000,
+      "Entries": [
+        "Undead Miner (Gem Carving):Ranged"
+      ]
+    },
+    {
+      "ID": 43831100,
+      "Entries": [
+        "Undead Miner (Gem Carving):Ranged_Sound Send 5m"
+      ]
+    },
+    {
+      "ID": 43831200,
+      "Entries": [
+        "Undead Miner (Gem Carving):Ranged_Sound Send 15m"
+      ]
+    },
+    {
+      "ID": 43831300,
+      "Entries": [
+        "Undead Miner (Gem Carving):Ranged_Sound Send 25m"
+      ]
+    },
+    {
+      "ID": 43840000,
+      "Entries": [
+        "Undead Miner (Gem Carving Large)"
+      ]
+    },
+    {
+      "ID": 43840100,
+      "Entries": [
+        "Undead Miner (Gem Carving Large)_Sound Send 5m"
+      ]
+    },
+    {
+      "ID": 43840200,
+      "Entries": [
+        "Undead Miner (Gem Carving Large)_Sound Send 15m"
+      ]
+    },
+    {
+      "ID": 43840300,
+      "Entries": [
+        "Undead Miner (Gem Carving Large)_Sound Send 25m"
+      ]
+    },
+    {
+      "ID": 43850000,
+      "Entries": [
+        "Destruction Cult (Putrid Cult)"
+      ]
+    },
+    {
+      "ID": 43850040,
+      "Entries": [
+        "Destruction Cult (Putrid Cult)_No jump-down"
+      ]
+    },
+    {
+      "ID": 44000000,
+      "Entries": [
+        "Carriage"
+      ]
+    },
+    {
+      "ID": 44100000,
+      "Entries": [
+        "Carriage Horse (Giant)"
+      ]
+    },
+    {
+      "ID": 44100100,
+      "Entries": [
+        "Carriage Horse (Giant) [Normal Combat]"
+      ]
+    },
+    {
+      "ID": 44101000,
+      "Entries": [
+        "Carriage Horse (Giant) [Jump Test]"
+      ]
+    },
+    {
+      "ID": 44102000,
+      "Entries": [
+        "Carriage Horse (Giant) [Forest/Demi-Human Test]"
+      ]
+    },
+    {
+      "ID": 44200000,
+      "Entries": [
+        "Lake Marsh Crayfish"
+      ]
+    },
+    {
+      "ID": 44201000,
+      "Entries": [
+        "Lake Marsh Crayfish (Egg Test)"
+      ]
+    },
+    {
+      "ID": 44300000,
+      "Entries": [
+        "Living Stone"
+      ]
+    },
+    {
+      "ID": 44301000,
+      "Entries": [
+        "Living Stone: Dumpling"
+      ]
+    },
+    {
+      "ID": 44400000,
+      "Entries": [
+        "Land Barnacle"
+      ]
+    },
+    {
+      "ID": 44410000,
+      "Entries": [
+        "Land Barnacle (Large)"
+      ]
+    },
+    {
+      "ID": 44500000,
+      "Entries": [
+        "Walking Mausoleum"
+      ]
+    },
+    {
+      "ID": 44500100,
+      "Entries": [
+        "Walking Mausoleum_Magic Fortress Type"
+      ]
+    },
+    {
+      "ID": 44600000,
+      "Entries": [
+        "Large Weapon Gunman"
+      ]
+    },
+    {
+      "ID": 44700000,
+      "Entries": [
+        "Rykard's Kidnapper Weapon_Pendulum"
+      ]
+    },
+    {
+      "ID": 44700100,
+      "Entries": [
+        "Rykard's Kidnapper Weapon_Pendulum_Monsan Garden"
+      ]
+    },
+    {
+      "ID": 44700900,
+      "Entries": [
+        "Rykard's Kidnapper Weapon_Pendulum_For Boss"
+      ]
+    },
+    {
+      "ID": 44701000,
+      "Entries": [
+        "Rykard's Kidnapper Weapon_Wheel"
+      ]
+    },
+    {
+      "ID": 44701900,
+      "Entries": [
+        "Rykard's Kidnapper Weapon_Wheel_For Boss"
+      ]
+    },
+    {
+      "ID": 44702000,
+      "Entries": [
+        "Rykard's Kidnapper Weapon_Hybrid"
+      ]
+    },
+    {
+      "ID": 44800000,
+      "Entries": [
+        "Runeeating Flower_Parent Plant_Normal Flower"
+      ]
+    },
+    {
+      "ID": 44800100,
+      "Entries": [
+        "Runeeating Flower_Parent Plant_Black Flower"
+      ]
+    },
+    {
+      "ID": 44800200,
+      "Entries": [
+        "Runeeating Flower_Parent Plant_Blue Flower"
+      ]
+    },
+    {
+      "ID": 44800300,
+      "Entries": [
+        "Runeeating Flower_Parent Plant_Yellow Flower"
+      ]
+    },
+    {
+      "ID": 44800400,
+      "Entries": [
+        "Runeeating Flower_Parent Plant_Tainted Yellow Flower"
+      ]
+    },
+    {
+      "ID": 44810000,
+      "Entries": [
+        "Runeeating Flower_Child Plant_Normal Flower"
+      ]
+    },
+    {
+      "ID": 44810100,
+      "Entries": [
+        "Runeeating Flower_Child Plant_Black Flower"
+      ]
+    },
+    {
+      "ID": 44810200,
+      "Entries": [
+        "Runeeating Flower_Child Plant_Blue Flower"
+      ]
+    },
+    {
+      "ID": 44810300,
+      "Entries": [
+        "Runeeating Flower_Child Plant_Yellow Flower"
+      ]
+    },
+    {
+      "ID": 44810400,
+      "Entries": [
+        "Rune-eating Flower_Offshoot_Dirty Yellow Flower"
+      ]
+    },
+    {
+      "ID": 44810500,
+      "Entries": [
+        "Rune-eating Flower_Offshoot_Variant_Fixed Offshoot Test"
+      ]
+    },
+    {
+      "ID": 44811000,
+      "Entries": [
+        "Rune-eating Flower_Offshoot_Fixed Trap_Normal Flower"
+      ]
+    },
+    {
+      "ID": 44811100,
+      "Entries": [
+        "Rune-eating Flower_Offshoot_Fixed Trap_Black Flower"
+      ]
+    },
+    {
+      "ID": 44811200,
+      "Entries": [
+        "Rune-eating Flower_Offshoot_Fixed Trap_Blue Flower"
+      ]
+    },
+    {
+      "ID": 44811300,
+      "Entries": [
+        "Rune-eating Flower_Offshoot_Fixed Trap_Yellow Flower"
+      ]
+    },
+    {
+      "ID": 44811400,
+      "Entries": [
+        "Rune-eating Flower_Offshoot_Fixed Trap_Dirty Yellow Flower"
+      ]
+    },
+    {
+      "ID": 44820000,
+      "Entries": [
+        "Runeeating Flower_Parent Plant_Rot"
+      ]
+    },
+    {
+      "ID": 44830000,
+      "Entries": [
+        "Rune-eating Flower_Offshoot_Rotten"
+      ]
+    },
+    {
+      "ID": 44831000,
+      "Entries": [
+        "Runeeating Flower_Child Plant_Rot_Fixed Trap"
+      ]
+    },
+    {
+      "ID": 44900000,
+      "Entries": [
+        "Living Jar"
+      ]
+    },
+    {
+      "ID": 44900040,
+      "Entries": [
+        "Living Jar_Radahn Battle Co-op"
+      ]
+    },
+    {
+      "ID": 44900052,
+      "Entries": [
+        "Living Jar_Giant Battle Co-op"
+      ]
+    },
+    {
+      "ID": 44900100,
+      "Entries": [
+        "Living Jar_Catacombs 2-1"
+      ]
+    },
+    {
+      "ID": 44900200,
+      "Entries": [
+        "Living Jar_Monsan Placement"
+      ]
+    },
+    {
+      "ID": 44900300,
+      "Entries": [
+        "Living Jar_No Path Movement_For Catacombs 5-2"
+      ]
+    },
+    {
+      "ID": 44910000,
+      "Entries": [
+        "Living Jar (Child Jar)"
+      ]
+    },
+    {
+      "ID": 44910100,
+      "Entries": [
+        "Living Jar (Child Jar)_Catacombs 2-1"
+      ]
+    },
+    {
+      "ID": 44910200,
+      "Entries": [
+        "Living Jar (Child Jar)_Visual Audio Short"
+      ]
+    },
+    {
+      "ID": 44919000,
+      "Entries": [
+        "[NPC Dialogue] Living Small Jar"
+      ]
+    },
+    {
+      "ID": 44920000,
+      "Entries": [
+        "Living Jar (Colossal)"
+      ]
+    },
+    {
+      "ID": 45000000,
+      "Entries": [
+        "Wyvern"
+      ]
+    },
+    {
+      "ID": 45000001,
+      "Entries": [
+        "Wyvern (Target Test)"
+      ]
+    },
+    {
+      "ID": 45000100,
+      "Entries": [
+        "Wyvern_Descending Ruins"
+      ]
+    },
+    {
+      "ID": 45000900,
+      "Entries": [
+        "Wyvern_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 45000942,
+      "Entries": [
+        "Wyvern_Boss Night Vision_for Plains Second Half"
+      ]
+    },
+    {
+      "ID": 45008000,
+      "Entries": [
+        "[Rennala_Summon Magic] Wyvern"
+      ]
+    },
+    {
+      "ID": 45010000,
+      "Entries": [
+        "Wyvern (Rot)"
+      ]
+    },
+    {
+      "ID": 45010900,
+      "Entries": [
+        "Wyvern (Rot)_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 45020000,
+      "Entries": [
+        "Wyvern (Magic)"
+      ]
+    },
+    {
+      "ID": 45020020,
+      "Entries": [
+        "Wyvern (Magic) (for Lake First Half)"
+      ]
+    },
+    {
+      "ID": 45020900,
+      "Entries": [
+        "Wyvern (Magic)_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 45020920,
+      "Entries": [
+        "Wyvern (Magic)_Boss Night Vision_Short Homing"
+      ]
+    },
+    {
+      "ID": 45020922,
+      "Entries": [
+        "Wyvern (Magic)_Boss Night Vision_Short Homing_Hang Upper"
+      ]
+    },
+    {
+      "ID": 45030000,
+      "Entries": [
+        "Wyvern (Freeze)"
+      ]
+    },
+    {
+      "ID": 45030900,
+      "Entries": [
+        "Wyvern (Freeze)_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 45040000,
+      "Entries": [
+        "Wyvern (Giant)"
+      ]
+    },
+    {
+      "ID": 45050000,
+      "Entries": [
+        "Wyvern (Lesser)"
+      ]
+    },
+    {
+      "ID": 45100000,
+      "Entries": [
+        "c4510_Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 45100100,
+      "Entries": [
+        "c4510_Guardian Lineage (Summon)"
+      ]
+    },
+    {
+      "ID": 45100200,
+      "Entries": [
+        "c4510_Guardian Lineage_No Homing on Wall Contact"
+      ]
+    },
+    {
+      "ID": 45100300,
+      "Entries": [
+        "c4510_Guardian Lineage_No Homing on Wall Contact_Face Memorized Target Direction"
+      ]
+    },
+    {
+      "ID": 45100900,
+      "Entries": [
+        "c4510_Guardian Lineage_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 45100930,
+      "Entries": [
+        "c4510_Guardian Lineage_Boss Night Vision_Short Homing"
+      ]
+    },
+    {
+      "ID": 45110000,
+      "Entries": [
+        "c4511_Guardian Lineage (Instant Death)"
+      ]
+    },
+    {
+      "ID": 45200000,
+      "Entries": [
+        "c4520_Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 45500000,
+      "Entries": [
+        "Feral Tyrannosaur_Dull"
+      ]
+    },
+    {
+      "ID": 45500040,
+      "Entries": [
+        "Feral Tyrannosaur_Dull_No Combat Search"
+      ]
+    },
+    {
+      "ID": 45500090,
+      "Entries": [
+        "Feral Tyrannosaur_Dull_Responds to Ally Call"
+      ]
+    },
+    {
+      "ID": 45500100,
+      "Entries": [
+        "Feral Tyrannosaur_Sharp"
+      ]
+    },
+    {
+      "ID": 45500110,
+      "Entries": [
+        "Feral Tyrannosaur_Sharp_Wide Vision"
+      ]
+    },
+    {
+      "ID": 45500200,
+      "Entries": [
+        "Feral Tyrannosaur_Dull_Red Eye"
+      ]
+    },
+    {
+      "ID": 45500300,
+      "Entries": [
+        "Feral Tyrannosaur_Sharp_Lookout"
+      ]
+    },
+    {
+      "ID": 45506000,
+      "Entries": [
+        "Feral Tyrannosaur_Snowy Region"
+      ]
+    },
+    {
+      "ID": 45600000,
+      "Entries": [
+        "Raven Tyranno"
+      ]
+    },
+    {
+      "ID": 45600010,
+      "Entries": [
+        "Raven Tyranno_High Ground Standby"
+      ]
+    },
+    {
+      "ID": 45600040,
+      "Entries": [
+        "Raven Tyranno_No Search for Combat"
+      ]
+    },
+    {
+      "ID": 45609990,
+      "Entries": [
+        "Raven Tyranno (Motion Check Test Param)"
+      ]
+    },
+    {
+      "ID": 45610000,
+      "Entries": [
+        "Raven Tyranno (Blood Attribute)"
+      ]
+    },
+    {
+      "ID": 45610010,
+      "Entries": [
+        "Raven Tyranno (Blood Attribute)_Short Sight Range"
+      ]
+    },
+    {
+      "ID": 45700000,
+      "Entries": [
+        "Deracine (Male)"
+      ]
+    },
+    {
+      "ID": 45700100,
+      "Entries": [
+        "Deracine (Male): Fixed Turret"
+      ]
+    },
+    {
+      "ID": 45700200,
+      "Entries": [
+        "Deracine (Male)_No Return to Nest on Wall Contact_Descending Ruins Placement"
+      ]
+    },
+    {
+      "ID": 45800000,
+      "Entries": [
+        "Deracine (Female)"
+      ]
+    },
+    {
+      "ID": 45800100,
+      "Entries": [
+        "Deracine (Female) Wandering Ranged Attack Variant"
+      ]
+    },
+    {
+      "ID": 45800900,
+      "Entries": [
+        "Deracine (Female)_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 46000000,
+      "Entries": [
+        "Troll"
+      ]
+    },
+    {
+      "ID": 46000010,
+      "Entries": [
+        "Troll_Green Checkpoint For"
+      ]
+    },
+    {
+      "ID": 46000040,
+      "Entries": [
+        "Troll_Plains Fort_Visual Adjustment"
+      ]
+    },
+    {
+      "ID": 46000041,
+      "Entries": [
+        "Troll_For Pot Throw"
+      ]
+    },
+    {
+      "ID": 46001000,
+      "Entries": [
+        "Troll_For Caravan"
+      ]
+    },
+    {
+      "ID": 46004000,
+      "Entries": [
+        "Troll_Female"
+      ]
+    },
+    {
+      "ID": 46005000,
+      "Entries": [
+        "Troll (Snow Woman)"
+      ]
+    },
+    {
+      "ID": 46005052,
+      "Entries": [
+        "Troll (Snow Woman)_Snowy Mountain Second Half_Ruins 5-3"
+      ]
+    },
+    {
+      "ID": 46007500,
+      "Entries": [
+        "Troll_For Buddy"
+      ]
+    },
+    {
+      "ID": 46008000,
+      "Entries": [
+        "[Rennala_Summon Magic] Troll"
+      ]
+    },
+    {
+      "ID": 46010000,
+      "Entries": [
+        "Troll (Royal Knight)"
+      ]
+    },
+    {
+      "ID": 46010020,
+      "Entries": [
+        "Troll (Royal Knight)_For Plains Fort"
+      ]
+    },
+    {
+      "ID": 46010900,
+      "Entries": [
+        "Troll (Royal Knight)_For Boss"
+      ]
+    },
+    {
+      "ID": 46020000,
+      "Entries": [
+        "Troll (Snow Man)"
+      ]
+    },
+    {
+      "ID": 46020050,
+      "Entries": [
+        "Troll (Yeti)_Snowy Mountain First Half For Pot Throwing"
+      ]
+    },
+    {
+      "ID": 46021000,
+      "Entries": [
+        "Troll (Snow Man)_For Caravan"
+      ]
+    },
+    {
+      "ID": 46030000,
+      "Entries": [
+        "Troll (Tunnel)"
+      ]
+    },
+    {
+      "ID": 46030100,
+      "Entries": [
+        "Troll (Tunnel)_Vision 35m"
+      ]
+    },
+    {
+      "ID": 46030200,
+      "Entries": [
+        "Troll (Tunnel)_Vision 50m_360 degrees"
+      ]
+    },
+    {
+      "ID": 46040000,
+      "Entries": [
+        "Troll (Grandpa NPC)"
+      ]
+    },
+    {
+      "ID": 46100000,
+      "Entries": [
+        "Sea Monk"
+      ]
+    },
+    {
+      "ID": 46200000,
+      "Entries": [
+        "Astel"
+      ]
+    },
+    {
+      "ID": 46200100,
+      "Entries": [
+        "Astel_Underground Labyrinth Hanging Terrain"
+      ]
+    },
+    {
+      "ID": 46200200,
+      "Entries": [
+        "Astel_Sight 120"
+      ]
+    },
+    {
+      "ID": 46201000,
+      "Entries": [
+        "Astel_Bagworm Standby"
+      ]
+    },
+    {
+      "ID": 46201100,
+      "Entries": [
+        "Astel_Bagworm Standby_Sight 110"
+      ]
+    },
+    {
+      "ID": 46201200,
+      "Entries": [
+        "Astel_Bagworm Standby_Sight 200"
+      ]
+    },
+    {
+      "ID": 46201500,
+      "Entries": [
+        "Astel_Bagworm Standby Cave 3-3/Tunnel Placed Individual Only"
+      ]
+    },
+    {
+      "ID": 46209000,
+      "Entries": [
+        "Astel_Tunnel 5-1 Boss_Boss Main Body"
+      ]
+    },
+    {
+      "ID": 46209100,
+      "Entries": [
+        "Astel_Tunnel 5-1 Boss_Boss Clone A"
+      ]
+    },
+    {
+      "ID": 46209200,
+      "Entries": [
+        "Astel_Tunnel 5-1 Boss_Boss Clone B"
+      ]
+    },
+    {
+      "ID": 46209300,
+      "Entries": [
+        "Astel_Tunnel 5-1 Boss_Boss Clone C"
+      ]
+    },
+    {
+      "ID": 46300000,
+      "Entries": [
+        "Runebear"
+      ]
+    },
+    {
+      "ID": 46300010,
+      "Entries": [
+        "Runebear_Sleeping Ruins Situation Use"
+      ]
+    },
+    {
+      "ID": 46300020,
+      "Entries": [
+        "Runebear_Cave 4-2 Use"
+      ]
+    },
+    {
+      "ID": 46300052,
+      "Entries": [
+        "Runebear_Snowfield Second Half Short Homing Distance"
+      ]
+    },
+    {
+      "ID": 46400000,
+      "Entries": [
+        "Serpent Spirit"
+      ]
+    },
+    {
+      "ID": 46400007,
+      "Entries": [
+        "Serpent Spirit_Tutorial Extra Boss"
+      ]
+    },
+    {
+      "ID": 46400032,
+      "Entries": [
+        "Serpent Spirit_Great Tree 3-3(Does Not Freeze on Path Search Failure)"
+      ]
+    },
+    {
+      "ID": 46400033,
+      "Entries": [
+        "Serpent Spirit_Highland Placement(Shorter Hearing Range)"
+      ]
+    },
+    {
+      "ID": 46400056,
+      "Entries": [
+        "Serpent Spirit_Rotten Great Tree_Rot Swamp *Legacy Behavior on Path Failure"
+      ]
+    },
+    {
+      "ID": 46400062,
+      "Entries": [
+        "Serpent Spirit_Underground Labyrinth Poison Swamp Upper Level"
+      ]
+    },
+    {
+      "ID": 46400100,
+      "Entries": [
+        "Serpent Spirit_Stormveil(Does Not Freeze on Path Search Failure)"
+      ]
+    },
+    {
+      "ID": 46400800,
+      "Entries": [
+        "Serpent Spirit_Catacombs 5-2 Boss_Player Never Lost"
+      ]
+    },
+    {
+      "ID": 46400842,
+      "Entries": [
+        "Serpent Spirit_Catacombs 4-3 Boss_Player Never Lost"
+      ]
+    },
+    {
+      "ID": 46400900,
+      "Entries": [
+        "Serpent Spirit_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 46500000,
+      "Entries": [
+        "Ruinator"
+      ]
+    },
+    {
+      "ID": 46500100,
+      "Entries": [
+        "Ruinator (Underground Labyrinth Poison Swamp Boss Fight Long Return Distance)"
+      ]
+    },
+    {
+      "ID": 46500200,
+      "Entries": [
+        "Ruinator_No HU"
+      ]
+    },
+    {
+      "ID": 46500265,
+      "Entries": [
+        "Ruinator_No HU_Underground Labyrinth Plains Upper Level"
+      ]
+    },
+    {
+      "ID": 46500300,
+      "Entries": [
+        "Ruinator_Summon Body_Long Sight Distance"
+      ]
+    },
+    {
+      "ID": 46500310,
+      "Entries": [
+        "Ruinator_Summon Body_Short Sight Distance"
+      ]
+    },
+    {
+      "ID": 46600000,
+      "Entries": [
+        "Guardian of the High Road"
+      ]
+    },
+    {
+      "ID": 46600100,
+      "Entries": [
+        "Guardian of the High Road_Sight Width 180°"
+      ]
+    },
+    {
+      "ID": 46600200,
+      "Entries": [
+        "Guardian of the High Road_Defensive Type"
+      ]
+    },
+    {
+      "ID": 46600300,
+      "Entries": [
+        "Guardian of the High Road_Sight 100m_Homing Distance 130m"
+      ]
+    },
+    {
+      "ID": 46600301,
+      "Entries": [
+        "Guardian of the High Road_Sight 100m_Homing Distance 105m"
+      ]
+    },
+    {
+      "ID": 46600330,
+      "Entries": [
+        "Guardian of the High Road_Sight 100m_For Highland First Half"
+      ]
+    },
+    {
+      "ID": 46601000,
+      "Entries": [
+        "Guardian of the High Road_Bow Type (Sight 150m)"
+      ]
+    },
+    {
+      "ID": 46601033,
+      "Entries": [
+        "Guardian of the High Road_Bow Type (Sight 300m)_For Highland Royal Capital"
+      ]
+    },
+    {
+      "ID": 46601050,
+      "Entries": [
+        "Guardian of the High Road_Bow Type (Sight 250m)_For Snowfield First Half"
+      ]
+    },
+    {
+      "ID": 46601100,
+      "Entries": [
+        "Guardian of the High Road_Bow Type_Ultra-long Range Sniper"
+      ]
+    },
+    {
+      "ID": 46601133,
+      "Entries": [
+        "Guardian of the High Road_Bow Type (Sight 200m)_For Highland Royal Capital"
+      ]
+    },
+    {
+      "ID": 46601233,
+      "Entries": [
+        "Guardian of the High Road_Bow Type (Sight 150m"
+      ]
+    },
+    {
+      "ID": 46700000,
+      "Entries": [
+        "Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 46700100,
+      "Entries": [
+        "Ancestor Spirit (Underground Labyrinth Ancestor Spirit Boss Fight"
+      ]
+    },
+    {
+      "ID": 46700200,
+      "Entries": [
+        "Ancestor Spirit (Underground Labyrinth Plains)"
+      ]
+    },
+    {
+      "ID": 46700900,
+      "Entries": [
+        "Ancestor Spirit_Night Vision for Boss"
+      ]
+    },
+    {
+      "ID": 46800000,
+      "Entries": [
+        "Meteoric Beast"
+      ]
+    },
+    {
+      "ID": 46800001,
+      "Entries": [
+        "Meteoric Beast_Cliff Tunnel Test"
+      ]
+    },
+    {
+      "ID": 46800900,
+      "Entries": [
+        "Meteoric Beast_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 46800930,
+      "Entries": [
+        "Meteoric Beast_Highland Field Boss"
+      ]
+    },
+    {
+      "ID": 46900000,
+      "Entries": [
+        "Grafted Spider"
+      ]
+    },
+    {
+      "ID": 46900007,
+      "Entries": [
+        "Grafted Spider_Tutorial EX"
+      ]
+    },
+    {
+      "ID": 46900032,
+      "Entries": [
+        "Grafted Spider_Highland Placement For Return Distance Long (Unavoidable Due to Distant Initial Placement)"
+      ]
+    },
+    {
+      "ID": 46900900,
+      "Entries": [
+        "Grafted Spider_Boss"
+      ]
+    },
+    {
+      "ID": 47100000,
+      "Entries": [
+        "King of Ghouls"
+      ]
+    },
+    {
+      "ID": 47110000,
+      "Entries": [
+        "King of Ghouls (Rykard Corpse)"
+      ]
+    },
+    {
+      "ID": 47200000,
+      "Entries": [
+        "Godfrey the Beast-clad (Before HU)"
+      ]
+    },
+    {
+      "ID": 47200900,
+      "Entries": [
+        "Godfrey the Beast-clad (Before HU)"
+      ]
+    },
+    {
+      "ID": 47210000,
+      "Entries": [
+        "Godfrey the Beast-clad (After HU)"
+      ]
+    },
+    {
+      "ID": 47210900,
+      "Entries": [
+        "Godfrey the Beast-clad (After HU)"
+      ]
+    },
+    {
+      "ID": 47300000,
+      "Entries": [
+        "Radahn (Scrawny Horse)"
+      ]
+    },
+    {
+      "ID": 47300100,
+      "Entries": [
+        "Radahn (Scrawny Horse)_Narrow Field of View"
+      ]
+    },
+    {
+      "ID": 47500000,
+      "Entries": [
+        "Grafted King"
+      ]
+    },
+    {
+      "ID": 47600000,
+      "Entries": [
+        "Giant"
+      ]
+    },
+    {
+      "ID": 47600900,
+      "Entries": [
+        "Giant_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 47700000,
+      "Entries": [
+        "Capital Gargoyle_Axe & Twinblade Type"
+      ]
+    },
+    {
+      "ID": 47700010,
+      "Entries": [
+        "Capital Gargoyle_Axe & Twinblade Type_Narrow Vision (25m_90°)"
+      ]
+    },
+    {
+      "ID": 47700011,
+      "Entries": [
+        "Capital Gargoyle_Axe & Twinblade Type_Narrow Vision (28m_20°)"
+      ]
+    },
+    {
+      "ID": 47700050,
+      "Entries": [
+        "Capital Gargoyle_Axe & Twinblade Type_Snowy Mountain First Half (Boss Use_Smell 150)"
+      ]
+    },
+    {
+      "ID": 47700200,
+      "Entries": [
+        "Capital Gargoyle_Axe & Twinblade Type_Boss Exclusive Long Vision"
+      ]
+    },
+    {
+      "ID": 47700900,
+      "Entries": [
+        "Capital Gargoyle_Axe & Twinblade Type_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 47701000,
+      "Entries": [
+        "Capital Gargoyle_Straight Sword & Halberd Type"
+      ]
+    },
+    {
+      "ID": 47701010,
+      "Entries": [
+        "Capital Gargoyle_Straight Sword & Halberd Type_Long Vision"
+      ]
+    },
+    {
+      "ID": 47701200,
+      "Entries": [
+        "Capital Gargoyle_Straight Sword & Halberd Type_Boss Battle Long Vision"
+      ]
+    },
+    {
+      "ID": 47702000,
+      "Entries": [
+        "Capital Gargoyle_Collapse Type"
+      ]
+    },
+    {
+      "ID": 47702010,
+      "Entries": [
+        "Capital Gargoyle_Collapse Type(for Underground Labyrinth Capital)"
+      ]
+    },
+    {
+      "ID": 47702100,
+      "Entries": [
+        "Capital Gargoyle_Collapse Type_Vision 55m"
+      ]
+    },
+    {
+      "ID": 47705000,
+      "Entries": [
+        "Capital Gargoyle_Axe & Twinblade Type_Maliketh Retinue"
+      ]
+    },
+    {
+      "ID": 47705900,
+      "Entries": [
+        "Capital Gargoyle_Axe & Twinblade Type_Maliketh Retinue_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 47705950,
+      "Entries": [
+        "Capital Gargoyle_Axe & Twinblade Type_Maliketh Retinue_Boss Night Vision_Snowy Mountain First Half"
+      ]
+    },
+    {
+      "ID": 47706000,
+      "Entries": [
+        "Capital Gargoyle_Straight Sword & Halberd Type_Maliketh Retinue"
+      ]
+    },
+    {
+      "ID": 47706900,
+      "Entries": [
+        "Capital Gargoyle_Straight Sword & Halberd Type_Maliketh Retinue_Boss Use"
+      ]
+    },
+    {
+      "ID": 48000000,
+      "Entries": [
+        "Greater Demon"
+      ]
+    },
+    {
+      "ID": 48001000,
+      "Entries": [
+        "Greater Demon (Great Bridge Boss)"
+      ]
+    },
+    {
+      "ID": 48100000,
+      "Entries": [
+        "World Tree Demon"
+      ]
+    },
+    {
+      "ID": 48100100,
+      "Entries": [
+        "World Tree Demon_Extended Sight Range (80m)"
+      ]
+    },
+    {
+      "ID": 48100900,
+      "Entries": [
+        "World Tree Demon_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 48110000,
+      "Entries": [
+        "World Tree Demon_Rot Variant"
+      ]
+    },
+    {
+      "ID": 48110040,
+      "Entries": [
+        "World Tree Demon_Rot Variant_For Plains First Half"
+      ]
+    },
+    {
+      "ID": 48110900,
+      "Entries": [
+        "World Tree Demon_Rot Variant_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 48110952,
+      "Entries": [
+        "World Tree Demon_Rot Variant_Boss Night Vision_Snowy Mountain Second Half"
+      ]
+    },
+    {
+      "ID": 48200000,
+      "Entries": [
+        "Wandering Executioner"
+      ]
+    },
+    {
+      "ID": 48200500,
+      "Entries": [
+        "Wandering Executioner View Width Narrowed (For Review)"
+      ]
+    },
+    {
+      "ID": 48200900,
+      "Entries": [
+        "Wandering Executioner_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 49100000,
+      "Entries": [
+        "King's Mole"
+      ]
+    },
+    {
+      "ID": 49100010,
+      "Entries": [
+        "King's Mole Long Vision"
+      ]
+    },
+    {
+      "ID": 49100900,
+      "Entries": [
+        "King's Mole_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 49100926,
+      "Entries": [
+        "King's Mole_Boss Night Vision_Cliff Tunnel"
+      ]
+    },
+    {
+      "ID": 49100932,
+      "Entries": [
+        "King's Mole_Boss Night Vision_Highland Volcano_Homing Distance Adjustment"
+      ]
+    },
+    {
+      "ID": 49100952,
+      "Entries": [
+        "King's Mole_Boss Night Vision_Snowy Mountain Second Half Homing Distance Adjustment"
+      ]
+    },
+    {
+      "ID": 49500000,
+      "Entries": [
+        "Night King Followers"
+      ]
+    },
+    {
+      "ID": 49500050,
+      "Entries": [
+        "Night King Followers_Snowy Mountain First Half*No Warp Type"
+      ]
+    },
+    {
+      "ID": 49500900,
+      "Entries": [
+        "Night King Followers_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 49500932,
+      "Entries": [
+        "Night King Followers_Boss Night Vision(Highland Placement)"
+      ]
+    },
+    {
+      "ID": 49600000,
+      "Entries": [
+        "Night King Followers (Giant Skeleton)"
+      ]
+    },
+    {
+      "ID": 49600050,
+      "Entries": [
+        "Night King Followers (Giant Skeleton)_Snowy Mountain Placement"
+      ]
+    },
+    {
+      "ID": 49600068,
+      "Entries": [
+        "Night King Followers (Giant Skeleton)_Underground Labyrinth Plains Depths"
+      ]
+    },
+    {
+      "ID": 49600900,
+      "Entries": [
+        "Night King Followers (Giant Skeleton)_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 49600932,
+      "Entries": [
+        "Night King Followers (Giant Skeleton)_Boss Night Vision(Highland Placement)"
+      ]
+    },
+    {
+      "ID": 49800000,
+      "Entries": [
+        "c4980_Deathbird"
+      ]
+    },
+    {
+      "ID": 49800100,
+      "Entries": [
+        "c4980_Deathbird_NightEnemyOpenGenericNightVision"
+      ]
+    },
+    {
+      "ID": 49800900,
+      "Entries": [
+        "c4980_Deathbird_BossNightVision"
+      ]
+    },
+    {
+      "ID": 49800950,
+      "Entries": [
+        "c4980_Deathbird_BossNightVision_SnowyMountainFirstHalf"
+      ]
+    },
+    {
+      "ID": 60000000,
+      "Entries": [
+        "Wild Animal_Bird (Ground)"
+      ]
+    },
+    {
+      "ID": 60001000,
+      "Entries": [
+        "Wild Animal_Bird (Airborne)"
+      ]
+    },
+    {
+      "ID": 60010000,
+      "Entries": [
+        "Wild Animal_Bird_Large (Ground)"
+      ]
+    },
+    {
+      "ID": 60010050,
+      "Entries": [
+        "Wild Animal_Bird_Large (Ground)_Vision/Hearing/Smell All 0"
+      ]
+    },
+    {
+      "ID": 60011000,
+      "Entries": [
+        "Wild Animal_Bird_Large (Airborne)"
+      ]
+    },
+    {
+      "ID": 60011050,
+      "Entries": [
+        "Wild Animal_Bird_Large (Airborne)_Vision/Hearing/Smell All 0"
+      ]
+    },
+    {
+      "ID": 60100000,
+      "Entries": [
+        "Wild Animal_Deer"
+      ]
+    },
+    {
+      "ID": 60100010,
+      "Entries": [
+        "Wild Animal_Deer_Poor Hearing"
+      ]
+    },
+    {
+      "ID": 60100050,
+      "Entries": [
+        "Wild Animal_Deer_Sight/Hearing/Smell All 0"
+      ]
+    },
+    {
+      "ID": 60200000,
+      "Entries": [
+        "Wild Animal_Horse"
+      ]
+    },
+    {
+      "ID": 60300000,
+      "Entries": [
+        "Wild Animal_Bear"
+      ]
+    },
+    {
+      "ID": 60310000,
+      "Entries": [
+        "Wild Animal_Bear(Large)"
+      ]
+    },
+    {
+      "ID": 60400000,
+      "Entries": [
+        "Wild Animal_Owl"
+      ]
+    },
+    {
+      "ID": 60400050,
+      "Entries": [
+        "Wild Animal_Owl_Vision/Hearing/Smell All 0"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "Wild Animal_Boar_Timid Variant (Small Tusk)"
+      ]
+    },
+    {
+      "ID": 60501000,
+      "Entries": [
+        "Wild Animal_Boar_Timid Variant (Large Tusk)"
+      ]
+    },
+    {
+      "ID": 60600000,
+      "Entries": [
+        "Wild Animal_Sheep_Timid Variant"
+      ]
+    },
+    {
+      "ID": 60601000,
+      "Entries": [
+        "Wild Animal_Sheep_Aggressive Individual/Rare Individual"
+      ]
+    },
+    {
+      "ID": 60700000,
+      "Entries": [
+        "Wild Animal_Sea Crow"
+      ]
+    },
+    {
+      "ID": 60710000,
+      "Entries": [
+        "Wild Animal_Messenger Pigeon"
+      ]
+    },
+    {
+      "ID": 60720000,
+      "Entries": [
+        "Wild Animal_Messenger Pigeon_Large"
+      ]
+    },
+    {
+      "ID": 60720100,
+      "Entries": [
+        "Wild Animal_Messenger Pigeon_Large: Does Not Flee on Goal Action"
+      ]
+    },
+    {
+      "ID": 60800000,
+      "Entries": [
+        "Wild Animal_Dragonfly"
+      ]
+    },
+    {
+      "ID": 60810000,
+      "Entries": [
+        "Wild Animal_Dragonfly_Large"
+      ]
+    },
+    {
+      "ID": 60820000,
+      "Entries": [
+        "Wild Animal_Dragonfly_Giant"
+      ]
+    },
+    {
+      "ID": 60900000,
+      "Entries": [
+        "Wild Animal_Turtle"
+      ]
+    },
+    {
+      "ID": 60910000,
+      "Entries": [
+        "[Dialogue NPC] Wild Animal_Turtle (Penitent Priest)"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "Wild Animal_Leaping Rabbit"
+      ]
+    },
+    {
+      "ID": 61000010,
+      "Entries": [
+        "Wild Animal_Leaping Rabbit_Poor Hearing"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "Buddy_Generic: Spear+Shield"
+      ]
+    },
+    {
+      "ID": 70000100,
+      "Entries": [
+        "Buddy_Generic: Spear+Torch"
+      ]
+    },
+    {
+      "ID": 70001000,
+      "Entries": [
+        "Buddy_Generic: Shield Only"
+      ]
+    },
+    {
+      "ID": 70002000,
+      "Entries": [
+        "Buddy_Generic: Bow"
+      ]
+    },
+    {
+      "ID": 70003000,
+      "Entries": [
+        "Buddy_Generic: Sword+Shield"
+      ]
+    },
+    {
+      "ID": 70003100,
+      "Entries": [
+        "Buddy_Generic: Sword+Torch"
+      ]
+    },
+    {
+      "ID": 71000000,
+      "Entries": [
+        "Spirit Ash summon_Unique"
+      ]
+    },
+    {
+      "ID": 71000050,
+      "Entries": [
+        "Spirit Ash summon_Unique Ruins 5-1 For Placement Narrow Vision"
+      ]
+    },
+    {
+      "ID": 71000051,
+      "Entries": [
+        "Spirit Ash summon_Unique Ruins 5-1 For Placement Short Vision"
+      ]
+    },
+    {
+      "ID": 71000900,
+      "Entries": [
+        "Spirit Ash summon_Unique_Boss Night Vision"
+      ]
+    },
+    {
+      "ID": 71000950,
+      "Entries": [
+        "Spirit Ash summon_Unique_Boss Night Vision_For m3017"
+      ]
+    },
+    {
+      "ID": 71009000,
+      "Entries": [
+        "Spirit Ash summon_Unique (For Red Eye Gypsy)"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "PC Horse"
+      ]
+    },
+    {
+      "ID": 80001000,
+      "Entries": [
+        "PC Horse (Mounted Route Test)"
+      ]
+    },
+    {
+      "ID": 81000000,
+      "Entries": [
+        "Ballista"
+      ]
+    },
+    {
+      "ID": 81100000,
+      "Entries": [
+        "Flamethrower"
+      ]
+    },
+    {
+      "ID": 81200000,
+      "Entries": [
+        "Chariot"
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "■■■■■Product End■■■■■"
+      ]
+    },
+    {
+      "ID": 90010000,
+      "Entries": [
+        "[Carriage Test] Group Patrol Dummy Leader"
+      ]
+    },
+    {
+      "ID": 90011000,
+      "Entries": [
+        "[Carriage Test] Carriage Dummy"
+      ]
+    },
+    {
+      "ID": 90012000,
+      "Entries": [
+        "[Carriage Test] Carriage Horse (Giant)"
+      ]
+    },
+    {
+      "ID": 90090000,
+      "Entries": [
+        "Ballista (Test)"
+      ]
+    },
+    {
+      "ID": 90555500,
+      "Entries": [
+        "Pierre test"
+      ]
+    },
+    {
+      "ID": 90600100,
+      "Entries": [
+        "Caravan test_Mob (base c4100)"
+      ]
+    },
+    {
+      "ID": 90600200,
+      "Entries": [
+        "Caravan test_Driver (base c4110)"
+      ]
+    },
+    {
+      "ID": 90601000,
+      "Entries": [
+        "Group Patrol Bug Investigation (Base c4050)"
+      ]
+    },
+    {
+      "ID": 90602000,
+      "Entries": [
+        "Test for Making Enemy Perform OBJACT (Base c4300)"
+      ]
+    },
+    {
+      "ID": 90602100,
+      "Entries": [
+        "Sight Distance Check Do Nothing Base"
+      ]
+    },
+    {
+      "ID": 90602200,
+      "Entries": [
+        "Grave Robber Noble (Sorcery)_For Warning Attack"
+      ]
+    },
+    {
+      "ID": 90602300,
+      "Entries": [
+        "Wandering Royal Army_One-handed Weapon (Straight Sword)_Sheathe-Draw Check Use"
+      ]
+    },
+    {
+      "ID": 90602400,
+      "Entries": [
+        "NPC AI Test_For Solo Action"
+      ]
+    },
+    {
+      "ID": 90602500,
+      "Entries": [
+        "Homing behavior check (base c4050)"
+      ]
+    },
+    {
+      "ID": 90602510,
+      "Entries": [
+        "Homing behavior check (base c4070)"
+      ]
+    },
+    {
+      "ID": 90603000,
+      "Entries": [
+        "Common NPC AI Test (Mosas)"
+      ]
+    },
+    {
+      "ID": 90603100,
+      "Entries": [
+        "Common NPC AI Test (Mosas)_Underground Labyrinth Plains Mid-Boss"
+      ]
+    },
+    {
+      "ID": 92200100,
+      "Entries": [
+        "Jumping Person: Warlord Warrior: from Greatsword"
+      ]
+    },
+    {
+      "ID": 98000000,
+      "Entries": [
+        "For Character Control Test"
+      ]
+    },
+    {
+      "ID": 98000100,
+      "Entries": [
+        "For Character Control Test_Unique LOGIC"
+      ]
+    },
+    {
+      "ID": 100000000,
+      "Entries": [
+        "■■■■■Buddy Start■■■■■"
+      ]
+    },
+    {
+      "ID": 100000010,
+      "Entries": [
+        "■Spirit Ash: Costume Change NPC_Marika Slime Copy Destination"
+      ]
+    },
+    {
+      "ID": 100000020,
+      "Entries": [
+        "■Spirit Ash: Costume Change NPC (Puppet)_Daughter of Hundred-Minds Lord (Nepheli)"
+      ]
+    },
+    {
+      "ID": 100000030,
+      "Entries": [
+        "■Spirit Ash: Costume Change NPC (Puppet)_Event (Dung Eater)"
+      ]
+    },
+    {
+      "ID": 100000040,
+      "Entries": [
+        "■Spirit Ash: Costume Change NPC (Puppet)_Mr. A (Fallen Saint)"
+      ]
+    },
+    {
+      "ID": 100000050,
+      "Entries": [
+        "■Spirit Ash: Costume Change NPC (Puppet)_Mr. B (Sleep User)"
+      ]
+    },
+    {
+      "ID": 100000060,
+      "Entries": [
+        "■Spirit Ash: Costume Change NPC (Puppet)_Mr. C (Jar User)"
+      ]
+    },
+    {
+      "ID": 121000000,
+      "Entries": [
+        "■Spirit Ash: Black Knife Descendant"
+      ]
+    },
+    {
+      "ID": 130101000,
+      "Entries": [
+        "■Spirit Ash: Lost Kin_Knight: Dual-wield"
+      ]
+    },
+    {
+      "ID": 130102000,
+      "Entries": [
+        "■Spirit Ash: Lost Kin_Knight: Halberd"
+      ]
+    },
+    {
+      "ID": 130800000,
+      "Entries": [
+        "■Spirit Ash: Insectoid Golem Hatchet"
+      ]
+    },
+    {
+      "ID": 131700000,
+      "Entries": [
+        "■Buddy: Wolf Rider"
+      ]
+    },
+    {
+      "ID": 132010000,
+      "Entries": [
+        "■Spirit Ash: Red Eye Guardian"
+      ]
+    },
+    {
+      "ID": 133100000,
+      "Entries": [
+        "■Buddy: Direct Lineage of Marika: Straight Sword"
+      ]
+    },
+    {
+      "ID": 133101000,
+      "Entries": [
+        "■Buddy: Direct Lineage of Marika: Dagger"
+      ]
+    },
+    {
+      "ID": 133200000,
+      "Entries": [
+        "■Buddy: Marika Slime"
+      ]
+    },
+    {
+      "ID": 133500000,
+      "Entries": [
+        "■Spirit Ash: Crystal Tribe: Chakram"
+      ]
+    },
+    {
+      "ID": 133600500,
+      "Entries": [
+        "■Spirit Ash: Ancestral Follower: Male_(Tooth Axe/Bow)_Initial Bow"
+      ]
+    },
+    {
+      "ID": 134501000,
+      "Entries": [
+        "■Buddy: Children of Radagon (Wings)"
+      ]
+    },
+    {
+      "ID": 134701000,
+      "Entries": [
+        "■Buddy: Frog-man: Sword B"
+      ]
+    },
+    {
+      "ID": 135000000,
+      "Entries": [
+        "■Spirit Ash: Buried Skeleton: Spear"
+      ]
+    },
+    {
+      "ID": 135004000,
+      "Entries": [
+        "■Spirit Ash: Buried Skeleton: Twin Curved Sword"
+      ]
+    },
+    {
+      "ID": 136100000,
+      "Entries": [
+        "■Spirit Ash: Servant of the Moon (Small)"
+      ]
+    },
+    {
+      "ID": 136610000,
+      "Entries": [
+        "■Spirit Ash: Rotten Undead"
+      ]
+    },
+    {
+      "ID": 137000000,
+      "Entries": [
+        "■Spirit Ash: Perfumer Sorcerer (Fallen)"
+      ]
+    },
+    {
+      "ID": 137010000,
+      "Entries": [
+        "■Spirit Ash: Perfumer Sorcerer (Court)"
+      ]
+    },
+    {
+      "ID": 137020100,
+      "Entries": [
+        "■Spirit Ash: Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 137030000,
+      "Entries": [
+        "■Spirit Ash: Page"
+      ]
+    },
+    {
+      "ID": 137040000,
+      "Entries": [
+        "■Buddy: Wandering Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 137502000,
+      "Entries": [
+        "■Buddy: Rune Devourer: (Bubble Magic)"
+      ]
+    },
+    {
+      "ID": 138001000,
+      "Entries": [
+        "■Spirit Ash: Putrid Knights_Reaper"
+      ]
+    },
+    {
+      "ID": 138100000,
+      "Entries": [
+        "■Spirit Ash: Rot's Kin"
+      ]
+    },
+    {
+      "ID": 138500000,
+      "Entries": [
+        "■Spirit Ash: Balloon Puppet Soldier (Bow)"
+      ]
+    },
+    {
+      "ID": 138601000,
+      "Entries": [
+        "■Spirit Ash: Flying Puppet Soldier (Scythe)"
+      ]
+    },
+    {
+      "ID": 139000000,
+      "Entries": [
+        "■Spirit Ash: Giant's Flame Monk_Mace"
+      ]
+    },
+    {
+      "ID": 139011000,
+      "Entries": [
+        "■Spirit Ash: Giant's Flame Monk (Godskin Garb)_Curved Sword"
+      ]
+    },
+    {
+      "ID": 139500000,
+      "Entries": [
+        "■Buddy: Children of Ghouls_Whip"
+      ]
+    },
+    {
+      "ID": 139701000,
+      "Entries": [
+        "■Spirit Ash: Descendants of the Intelligent Beast: Large Kaiser"
+      ]
+    },
+    {
+      "ID": 140500000,
+      "Entries": [
+        "■Spirit Ash: Northern Mercenary"
+      ]
+    },
+    {
+      "ID": 140700000,
+      "Entries": [
+        "■Buddy: Wolf"
+      ]
+    },
+    {
+      "ID": 140800000,
+      "Entries": [
+        "■Spirit Ash: Dog Rat"
+      ]
+    },
+    {
+      "ID": 141000000,
+      "Entries": [
+        "■Spirit Ash: Gray Demi-Human_Basic (Curved Sword + Shield)"
+      ]
+    },
+    {
+      "ID": 141001000,
+      "Entries": [
+        "■Spirit Ash: Gray Demi-Human_Basic (Curved Sword)"
+      ]
+    },
+    {
+      "ID": 141002000,
+      "Entries": [
+        "■Spirit Ash: Gray Demi-Human_Basic (Club)"
+      ]
+    },
+    {
+      "ID": 141010000,
+      "Entries": [
+        "■Spirit Ash: Gray Demi-Human_Basic (Elite)"
+      ]
+    },
+    {
+      "ID": 141100000,
+      "Entries": [
+        "■Spirit Ash: Gray Demi-Human_Small"
+      ]
+    },
+    {
+      "ID": 141660000,
+      "Entries": [
+        "■Buddy: Undead Dog (Large)_Rot"
+      ]
+    },
+    {
+      "ID": 141800000,
+      "Entries": [
+        "■Spirit Ash: Spirit Jellyfish"
+      ]
+    },
+    {
+      "ID": 142100000,
+      "Entries": [
+        "■Spirit Ash: Stormhawk"
+      ]
+    },
+    {
+      "ID": 142900000,
+      "Entries": [
+        "■Buddy: Bolas Hound"
+      ]
+    },
+    {
+      "ID": 143000000,
+      "Entries": [
+        "■Spirit Ash: Grave Robber Noble (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 143001000,
+      "Entries": [
+        "■Spirit Ash: Grave Robber Noble (Rapier)"
+      ]
+    },
+    {
+      "ID": 143002000,
+      "Entries": [
+        "■Spirit Ash: Grave Robber Noble (Sorcery)"
+      ]
+    },
+    {
+      "ID": 143005000,
+      "Entries": [
+        "■Spirit Ash: Grave Robber Noble (Torch)"
+      ]
+    },
+    {
+      "ID": 143110000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army_Stormveil Faction_One-handed Weapon (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 143112000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army_Stormveil Faction_One-handed Weapon (Warhammer)"
+      ]
+    },
+    {
+      "ID": 143122000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army_Monsan Faction_Two-handed Weapon"
+      ]
+    },
+    {
+      "ID": 143133000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army_Royal Capital Faction_Spear and Shield"
+      ]
+    },
+    {
+      "ID": 143140100,
+      "Entries": [
+        "■Buddy: Wandering Royal Army_Plains Faction_One-handed Weapon (Straight Sword)_Torch"
+      ]
+    },
+    {
+      "ID": 143142000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army_Plains Faction_Two-handed Weapon"
+      ]
+    },
+    {
+      "ID": 143150000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army_Mausoleum Guard_One-handed Weapon (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 143151000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army_Mausoleum Guard_One-handed Weapon (Warhammer)"
+      ]
+    },
+    {
+      "ID": 143152000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army_Mausoleum Guard_Two-handed Weapon"
+      ]
+    },
+    {
+      "ID": 143210000,
+      "Entries": [
+        "■Buddy: Wandering Lowly Soldier (Dwarf): Long-Handled Machete"
+      ]
+    },
+    {
+      "ID": 143410000,
+      "Entries": [
+        "■Buddy: Pumpkin Head (Buddy)_Flail"
+      ]
+    },
+    {
+      "ID": 143531000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army (Senior Cavalry)_Royal Capital Faction_Spear"
+      ]
+    },
+    {
+      "ID": 143542000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army (Senior Cavalry)_Plains Faction_Sword + Greatbow"
+      ]
+    },
+    {
+      "ID": 143551000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army (Senior Cavalry)_Mausoleum Guard_Spear"
+      ]
+    },
+    {
+      "ID": 143720000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army (Foot Soldier)_Monsan Faction_One-handed Weapon (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 143760000,
+      "Entries": [
+        "■Buddy: Wandering Royal Army (Foot Soldier)_Miquella Faction_One-handed Weapon (Sword/Dagger)"
+      ]
+    },
+    {
+      "ID": 144400000,
+      "Entries": [
+        "■Spirit Ash: Land Barnacle"
+      ]
+    },
+    {
+      "ID": 144810000,
+      "Entries": [
+        "■Buddy: Rune-eating Flower (Offshoot)"
+      ]
+    },
+    {
+      "ID": 144910000,
+      "Entries": [
+        "■Spirit Ash: Living Jar (Child Jar)"
+      ]
+    },
+    {
+      "ID": 148200000,
+      "Entries": [
+        "■Buddy: Wandering Executioner"
+      ]
+    },
+    {
+      "ID": 170001000,
+      "Entries": [
+        "■Buddy: Buddy_Generic: Shield Only"
+      ]
+    },
+    {
+      "ID": 170002000,
+      "Entries": [
+        "■Buddy: Buddy_Generic: Bow"
+      ]
+    },
+    {
+      "ID": 199999999,
+      "Entries": [
+        "■■■■■Buddy End■■■■■"
+      ]
+    },
+    {
+      "ID": 500000000,
+      "Entries": [
+        "[GR Dialogue] Generic Dialogue Dummy"
+      ]
+    },
+    {
+      "ID": 520000000,
+      "Entries": [
+        "[GR Costume NPC]_Transform Costume NPC Data"
+      ]
+    },
+    {
+      "ID": 523000000,
+      "Entries": [
+        "[GR Costume Change NPC] _300_Volcano Manor Mistress"
+      ]
+    },
+    {
+      "ID": 523010000,
+      "Entries": [
+        "[GR Costume Change NPC] _301_Battlefield Doctor"
+      ]
+    },
+    {
+      "ID": 523011000,
+      "Entries": [
+        "[GR Costume Change NPC] _301_Battlefield Doctor_First Placement Location_Immediately Returns Home"
+      ]
+    },
+    {
+      "ID": 523012000,
+      "Entries": [
+        "[GR Costume Change NPC] _301_Battlefield Doctor_Invasion Hostile Event"
+      ]
+    },
+    {
+      "ID": 523020000,
+      "Entries": [
+        "[GR Costume Change NPC]Subject"
+      ]
+    },
+    {
+      "ID": 523030000,
+      "Entries": [
+        "[GR Costume Change NPC]Mercenary Swordsman"
+      ]
+    },
+    {
+      "ID": 523040000,
+      "Entries": [
+        "[GR Costume Change NPC]Scarred Knight"
+      ]
+    },
+    {
+      "ID": 523050000,
+      "Entries": [
+        "[GR Costume Change NPC]Death Row Prisoner"
+      ]
+    },
+    {
+      "ID": 523060000,
+      "Entries": [
+        "[GR Costume Change NPC]Saintess (Upper Rank)"
+      ]
+    },
+    {
+      "ID": 523070000,
+      "Entries": [
+        "[GR Costume Change NPC] _307_Suspicious Puppeteer"
+      ]
+    },
+    {
+      "ID": 523080000,
+      "Entries": [
+        "[GR Costume Change NPC]Two Fingers Maiden"
+      ]
+    },
+    {
+      "ID": 523090000,
+      "Entries": [
+        "[GR Costume Change NPC] _309_Bandit Chief"
+      ]
+    },
+    {
+      "ID": 523090010,
+      "Entries": [
+        "[GR Costume Change NPC] _309_Bandit Chief_Cave 1-3 Boss"
+      ]
+    },
+    {
+      "ID": 523100000,
+      "Entries": [
+        "[GR Costume Change NPC] 310_Castle Lord's Daughter"
+      ]
+    },
+    {
+      "ID": 523110000,
+      "Entries": [
+        "[GR Costume NPC]_311_Peninsula Fort Lord"
+      ]
+    },
+    {
+      "ID": 523120000,
+      "Entries": [
+        "[GR Costume Change NPC]Plains Fort Lord"
+      ]
+    },
+    {
+      "ID": 523120040,
+      "Entries": [
+        "[GR Costume Change NPC]Plains Fort Lord_For Radahn Fight Co-op"
+      ]
+    },
+    {
+      "ID": 523130000,
+      "Entries": [
+        "[GR Costume NPC]_313_Volcano Manor Recruiter"
+      ]
+    },
+    {
+      "ID": 523140000,
+      "Entries": [
+        "[GR Costume NPC]_314_Mununu"
+      ]
+    },
+    {
+      "ID": 523150000,
+      "Entries": [
+        "[GR Costume NPC]_315_Mununu Partner NPC"
+      ]
+    },
+    {
+      "ID": 523160000,
+      "Entries": [
+        "[GR Costume NPC]_316_Academy Female Sorcerer"
+      ]
+    },
+    {
+      "ID": 523161000,
+      "Entries": [
+        "[GR Costume NPC]_316_Academy Female Sorcerer_Hostile Invasion"
+      ]
+    },
+    {
+      "ID": 523170000,
+      "Entries": [
+        "[GR Costume Change NPC]Daytime Lantern"
+      ]
+    },
+    {
+      "ID": 523180000,
+      "Entries": [
+        "[GR Costume NPC]_318_Host of Chaos (Yupa)"
+      ]
+    },
+    {
+      "ID": 523190000,
+      "Entries": [
+        "[GR Costume NPC]_319_D"
+      ]
+    },
+    {
+      "ID": 523200000,
+      "Entries": [
+        "[GR Costume NPC]_320_Wandering Noble Farnese"
+      ]
+    },
+    {
+      "ID": 523210000,
+      "Entries": [
+        "[GR Costume NPC]_321_Watchtower Noble"
+      ]
+    },
+    {
+      "ID": 523220000,
+      "Entries": [
+        "[GR Costume NPC]_322_Bedfellow Maiden"
+      ]
+    },
+    {
+      "ID": 523230000,
+      "Entries": [
+        "[GR Costume NPC]_323_Dung Eater"
+      ]
+    },
+    {
+      "ID": 523240000,
+      "Entries": [
+        "[GR Costume NPC]_324_Hundred-Wisdom Lord"
+      ]
+    },
+    {
+      "ID": 523240100,
+      "Entries": [
+        "[GR Costume NPC]_324_Hundred-Wisdom Lord"
+      ]
+    },
+    {
+      "ID": 523250000,
+      "Entries": [
+        "[GR Costume NPC]_325_Rogier"
+      ]
+    },
+    {
+      "ID": 523250100,
+      "Entries": [
+        "[GR Costume NPC]_325_Rogier_Underground Labyrinth Royal Capital"
+      ]
+    },
+    {
+      "ID": 523260000,
+      "Entries": [
+        "[GR Costume NPC]_326_Mergatz"
+      ]
+    },
+    {
+      "ID": 523270000,
+      "Entries": [
+        "[GR Costume NPC]_327_Dragon-Feast Female Warrior"
+      ]
+    },
+    {
+      "ID": 523290000,
+      "Entries": [
+        "[GR Costume NPC]_329_Death Priestess (Sister)"
+      ]
+    },
+    {
+      "ID": 523290100,
+      "Entries": [
+        "[GR Costume NPC]_329_Death Priestess (Sister)_Underground Labyrinth Royal Capital"
+      ]
+    },
+    {
+      "ID": 523310000,
+      "Entries": [
+        "[GR Costume NPC]_331 Crab-Eating NPC"
+      ]
+    },
+    {
+      "ID": 523320000,
+      "Entries": [
+        "[GR Costume NPC]_332_Volcano Manor Ghost"
+      ]
+    },
+    {
+      "ID": 523330000,
+      "Entries": [
+        "[GR Costume NPC]_333_Unreturning Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 523340000,
+      "Entries": [
+        "[GR Costume NPC]_334_Hundred-Wisdom Lord's Daughter (Nefeli)"
+      ]
+    },
+    {
+      "ID": 523350000,
+      "Entries": [
+        "[GR Costume NPC]_335_Jiko-bo"
+      ]
+    },
+    {
+      "ID": 523360000,
+      "Entries": [
+        "[GR Costume NPC]_336_Wounded Knight Priestess"
+      ]
+    },
+    {
+      "ID": 523370000,
+      "Entries": [
+        "[GR Costume NPC]_337_Royal Capital Old Man"
+      ]
+    },
+    {
+      "ID": 523380000,
+      "Entries": [
+        "[GR Costume NPC]_338_Collapsed Priestess"
+      ]
+    },
+    {
+      "ID": 523390000,
+      "Entries": [
+        "[GR Costume NPC]_339_Hundred-Wisdom Lord's Underling"
+      ]
+    },
+    {
+      "ID": 523400000,
+      "Entries": [
+        "[GR Costume NPC]_340_A Crushed Finger"
+      ]
+    },
+    {
+      "ID": 523410000,
+      "Entries": [
+        "[GR Costume NPC]_341_Mad Sister"
+      ]
+    },
+    {
+      "ID": 523420000,
+      "Entries": [
+        "[GR Costume NPC]_342_Demi-Human Seamstress (After Rebirth)"
+      ]
+    },
+    {
+      "ID": 523430000,
+      "Entries": [
+        "[GR Costume NPC]_343_Nerius"
+      ]
+    },
+    {
+      "ID": 523440000,
+      "Entries": [
+        "[GR Costume NPC]_344_Tragos"
+      ]
+    },
+    {
+      "ID": 523441000,
+      "Entries": [
+        "[GR Costume NPC]_344_Tragos_For Invasion Hostile Event"
+      ]
+    },
+    {
+      "ID": 523450000,
+      "Entries": [
+        "[GR Costume NPC]_Volcano Manor Request Target 1"
+      ]
+    },
+    {
+      "ID": 523460000,
+      "Entries": [
+        "[GR Costume NPC]_Volcano Manor Request Target 2"
+      ]
+    },
+    {
+      "ID": 523470000,
+      "Entries": [
+        "[GR Costume NPC]_Volcano Manor Request Target 3"
+      ]
+    },
+    {
+      "ID": 523480000,
+      "Entries": [
+        "[GR Costume NPC]_348 Malenia's Daughter"
+      ]
+    },
+    {
+      "ID": 523480040,
+      "Entries": [
+        "[GR Costume NPC]_348 Malenia's Daughter_For Radahn Battle Co-op"
+      ]
+    },
+    {
+      "ID": 523481000,
+      "Entries": [
+        "[GR Costume NPC]_348 Malenia's Daughter_Hostile Invasion Event"
+      ]
+    },
+    {
+      "ID": 523490000,
+      "Entries": [
+        "[GR Costume NPC]_349 Rot Elder"
+      ]
+    },
+    {
+      "ID": 523500000,
+      "Entries": [
+        "[GR Costume NPC]_350 Defeated Noble"
+      ]
+    },
+    {
+      "ID": 523510000,
+      "Entries": [
+        "[GR Costume NPC]_351 Gold Mask Attendant"
+      ]
+    },
+    {
+      "ID": 523520000,
+      "Entries": [
+        "[GR Costume NPC]_Divine Tower Lake NPC"
+      ]
+    },
+    {
+      "ID": 523520100,
+      "Entries": [
+        "[GR Costume NPC]_Divine Tower Lake NPC_Placement Long Return Distance"
+      ]
+    },
+    {
+      "ID": 523520200,
+      "Entries": [
+        "[GR Costume NPC]_Divine Tower Lake NPC_Default Smell_Sight 60m"
+      ]
+    },
+    {
+      "ID": 523530000,
+      "Entries": [
+        "[GR Costume NPC]_Meat Cleaver NPC"
+      ]
+    },
+    {
+      "ID": 523540000,
+      "Entries": [
+        "[GR Costume NPC]_Bandit Leader"
+      ]
+    },
+    {
+      "ID": 523550000,
+      "Entries": [
+        "[GR Costume NPC]_Church 5-2 NPC"
+      ]
+    },
+    {
+      "ID": 523560000,
+      "Entries": [
+        "[GR Costume NPC]_Circular Plaza 2-1 NPC"
+      ]
+    },
+    {
+      "ID": 523570000,
+      "Entries": [
+        "[GR Costume NPC]_NPC Behind Hidden Passage Stairs_Volcano Prison"
+      ]
+    },
+    {
+      "ID": 523580000,
+      "Entries": [
+        "[GR Costume NPC]_Vengeful Spirit Lurking in Highland Volcano House"
+      ]
+    },
+    {
+      "ID": 523590000,
+      "Entries": [
+        "[GR Costume NPC]_Monsan Knight"
+      ]
+    },
+    {
+      "ID": 523590100,
+      "Entries": [
+        "[GR Costume NPC]_Monsan Knight_Monsan Short Return Distance"
+      ]
+    },
+    {
+      "ID": 523600000,
+      "Entries": [
+        "[GR Costume NPC]_Round Table First Tarnished Survivor"
+      ]
+    },
+    {
+      "ID": 523610000,
+      "Entries": [
+        "[GR Costume NPC]_Bedfellows"
+      ]
+    },
+    {
+      "ID": 523610100,
+      "Entries": [
+        "[GR Costume NPC]_Bedfellows_Underground Labyrinth Royal Capital Wide Sight"
+      ]
+    },
+    {
+      "ID": 523620000,
+      "Entries": [
+        "[GR Costume NPC]_Hunting the Deathless Faction"
+      ]
+    },
+    {
+      "ID": 523630000,
+      "Entries": [
+        "[GR Costume NPC]_Puppet_A-san (Fallen Saint)"
+      ]
+    },
+    {
+      "ID": 523640000,
+      "Entries": [
+        "[GR Costume NPC]_Puppet_B-san (Sleep User)"
+      ]
+    },
+    {
+      "ID": 523650000,
+      "Entries": [
+        "[GR Costume NPC]_Puppet_C-san (Pot User)"
+      ]
+    },
+    {
+      "ID": 523670000,
+      "Entries": [
+        "[GR Costume NPC]_Cave 5-2"
+      ]
+    },
+    {
+      "ID": 523680000,
+      "Entries": [
+        "[GR Costume NPC]_Marika Ruins 2 (Transforming Slime)"
+      ]
+    },
+    {
+      "ID": 523690000,
+      "Entries": [
+        "[GR Costume NPC]_369 Volcano Manor Mob"
+      ]
+    },
+    {
+      "ID": 523700000,
+      "Entries": [
+        "[GR Costume NPC]_370_Bedfellows Offline Substitute 2-A"
+      ]
+    },
+    {
+      "ID": 523710000,
+      "Entries": [
+        "[GR Costume NPC]_371_Bedfellows Offline Substitute 2-B"
+      ]
+    },
+    {
+      "ID": 523720000,
+      "Entries": [
+        "[GR Costume NPC]_372_Highland Fort West (Sculpture Dump Minor Lord)"
+      ]
+    },
+    {
+      "ID": 523730000,
+      "Entries": [
+        "[GR Costume NPC]_373_Plains Arena Front Red Phantom 1_Offline"
+      ]
+    },
+    {
+      "ID": 523740000,
+      "Entries": [
+        "[GR Costume NPC]_374_Plains Arena Front Red Phantom 2_Offline"
+      ]
+    },
+    {
+      "ID": 523750000,
+      "Entries": [
+        "[GR Costume NPC]_375_Plains Arena Front Red Phantom 3_Offline"
+      ]
+    },
+    {
+      "ID": 523760000,
+      "Entries": [
+        "[GR Costume NPC]_376_Cave 3-4 (Instant Death User)"
+      ]
+    },
+    {
+      "ID": 523770000,
+      "Entries": [
+        "[GR Costume NPC]_377_Underground Labyrinth Plains Depths Blood Swamp Area"
+      ]
+    },
+    {
+      "ID": 523790000,
+      "Entries": [
+        "[GR Costume NPC]_379_Royal Capital Sewers Endpoint"
+      ]
+    },
+    {
+      "ID": 523800000,
+      "Entries": [
+        "[GR Costume NPC]_380_First Tarnished Survivor Circle_B"
+      ]
+    },
+    {
+      "ID": 523810000,
+      "Entries": [
+        "[GR Costume NPC]_381_Royal Capital Ash Church"
+      ]
+    },
+    {
+      "ID": 523820000,
+      "Entries": [
+        "[GR Costume NPC]_382_Open Snowy Mountain Seaside Tower 5-1_Boss Tier"
+      ]
+    },
+    {
+      "ID": 523830000,
+      "Entries": [
+        "[GR Costume NPC]_383_Open Snowy Mountain Seaside Tower 5-1_Trash"
+      ]
+    },
+    {
+      "ID": 523840000,
+      "Entries": [
+        "[GR Costume NPC]_384_Volcano Manor 2F Enemy"
+      ]
+    },
+    {
+      "ID": 523850000,
+      "Entries": [
+        "[GR Costume NPC]_385_Base 1F Enemy"
+      ]
+    },
+    {
+      "ID": 523860000,
+      "Entries": [
+        "[GR Costume NPC]_386_Royal Capital Underground Catacombs"
+      ]
+    },
+    {
+      "ID": 523870000,
+      "Entries": [
+        "[GR Costume NPC]_387_Millicent's Sister A"
+      ]
+    },
+    {
+      "ID": 523880000,
+      "Entries": [
+        "[GR Costume NPC]_388_Millicent's Sister B"
+      ]
+    },
+    {
+      "ID": 523890000,
+      "Entries": [
+        "[GR Costume NPC]_389_Millicent's Sister C"
+      ]
+    },
+    {
+      "ID": 523900000,
+      "Entries": [
+        "[GR Costume NPC]_390_Millicent's Sister D"
+      ]
+    },
+    {
+      "ID": 523910000,
+      "Entries": [
+        "[GR Costume NPC]_391_Valley Event Target"
+      ]
+    },
+    {
+      "ID": 523920000,
+      "Entries": [
+        "[GR Costume NPC]_Spare Slot 9"
+      ]
+    },
+    {
+      "ID": 523930000,
+      "Entries": [
+        "[GR Costume NPC]_Spare Slot 10"
+      ]
+    },
+    {
+      "ID": 526000000,
+      "Entries": [
+        "[Hostile Costume NPC] Monsan Knight"
+      ]
+    },
+    {
+      "ID": 526010000,
+      "Entries": [
+        "[Hostile Costume NPC]Slime Transformation (Knight)"
+      ]
+    },
+    {
+      "ID": 526020000,
+      "Entries": [
+        "[Hostile Costume NPC]Slime Transformation (Ballista)"
+      ]
+    },
+    {
+      "ID": 526030000,
+      "Entries": [
+        "26030[Hostile Costume Change NPC]_Slime Transformation NPC_Greatsword"
+      ]
+    },
+    {
+      "ID": 526040000,
+      "Entries": [
+        "26040[Hostile Costume Change NPC]_Slime Transformation NPC_Spear Shield"
+      ]
+    },
+    {
+      "ID": 526050000,
+      "Entries": [
+        "[Hostile Costume NPC]_Slime Transformation NPC_Buddy Copy Slime"
+      ]
+    },
+    {
+      "ID": 526060000,
+      "Entries": [
+        "[Hostile Costume NPC]_Slime Transformation NPC_Buddy Spare Slot"
+      ]
+    },
+    {
+      "ID": 526200000,
+      "Entries": [
+        "[Hostile Costume NPC] Those Who Failed to Become King"
+      ]
+    },
+    {
+      "ID": 526300000,
+      "Entries": [
+        "[Hostile Costume NPC] Bandit Leader"
+      ]
+    },
+    {
+      "ID": 526300900,
+      "Entries": [
+        "[Hostile Costume NPC] Bandit Leader_Boss for Night Vision"
+      ]
+    },
+    {
+      "ID": 526400000,
+      "Entries": [
+        "[Hostile Costume NPC] Upside-down Tower Fugitive"
+      ]
+    },
+    {
+      "ID": 533030100,
+      "Entries": [
+        "[White Phantom Costume Change NPC]Mercenary Swordsman_For Co-op"
+      ]
+    },
+    {
+      "ID": 533040100,
+      "Entries": [
+        "[White Phantom Costume Change NPC]Scarred Knight_For Co-op"
+      ]
+    },
+    {
+      "ID": 533090000,
+      "Entries": [
+        "[White Phantom Costume NPC]_309_Bandit Chief"
+      ]
+    },
+    {
+      "ID": 533110000,
+      "Entries": [
+        "[White Phantom Costume NPC]_311_Peninsula Fort Lord"
+      ]
+    },
+    {
+      "ID": 533120000,
+      "Entries": [
+        "[Co-op Costume NPC] Field Fort Lord"
+      ]
+    },
+    {
+      "ID": 533160000,
+      "Entries": [
+        "[White Phantom Costume NPC]_316_Academy Female Sorceress"
+      ]
+    },
+    {
+      "ID": 533161000,
+      "Entries": [
+        "[White Phantom Costume NPC]_316_Academy Female Sorceress_Normal White Phantom"
+      ]
+    },
+    {
+      "ID": 533180000,
+      "Entries": [
+        "[Co-op Costume Change NPC] _318_Chaos Host (Yupa)_Living"
+      ]
+    },
+    {
+      "ID": 533181000,
+      "Entries": [
+        "[White Phantom Costume NPC]_318_Host of Chaos(Yupa)_White Phantom"
+      ]
+    },
+    {
+      "ID": 533190000,
+      "Entries": [
+        "[White Phantom Costume NPC]_319_D"
+      ]
+    },
+    {
+      "ID": 533230000,
+      "Entries": [
+        "[White Phantom Costume NPC]_323_Feces-Eater"
+      ]
+    },
+    {
+      "ID": 533250000,
+      "Entries": [
+        "[White Phantom Costume NPC]_325_Rogier"
+      ]
+    },
+    {
+      "ID": 533260000,
+      "Entries": [
+        "[White Phantom Costume NPC]_326_Mercutio"
+      ]
+    },
+    {
+      "ID": 533261000,
+      "Entries": [
+        "[White Phantom Costume NPC]_326_Mercutio_Normal White Phantom"
+      ]
+    },
+    {
+      "ID": 533290000,
+      "Entries": [
+        "[White Phantom Costume NPC]_329_Death Priestess(Younger Sister)"
+      ]
+    },
+    {
+      "ID": 533310000,
+      "Entries": [
+        "[GR Costume NPC]_331_Crab-Eating NPC"
+      ]
+    },
+    {
+      "ID": 533340000,
+      "Entries": [
+        "[GR Costume NPC]_334_Hundred-Wisdom Lord's Daughter (Nefeli)"
+      ]
+    },
+    {
+      "ID": 533350000,
+      "Entries": [
+        "[White Phantom Costume NPC]_335_Jiko Bo"
+      ]
+    },
+    {
+      "ID": 533440000,
+      "Entries": [
+        "[White Phantom Costume NPC]_344_Tragos_White Phantom"
+      ]
+    },
+    {
+      "ID": 533441000,
+      "Entries": [
+        "[White Phantom Costume NPC]_344_Tragos_For Radahn Festival White Phantom"
+      ]
+    },
+    {
+      "ID": 533450000,
+      "Entries": [
+        "[White Phantom Costume NPC]_345_Volcano Manor Request Target 1"
+      ]
+    },
+    {
+      "ID": 533480000,
+      "Entries": [
+        "[Co-op Costume Change NPC] _348 Malenia's Daughter"
+      ]
+    },
+    {
+      "ID": 533481000,
+      "Entries": [
+        "[Co-op Costume Change NPC] _348 Malenia's Daughter_For Millicent Battle"
+      ]
+    },
+    {
+      "ID": 533550000,
+      "Entries": [
+        "[White Phantom Costume NPC]_Church 5-2 NPC"
+      ]
+    },
+    {
+      "ID": 533630000,
+      "Entries": [
+        "[White Phantom Costume NPC]_Puppet_Miss A (Fallen Saint)"
+      ]
+    },
+    {
+      "ID": 533870000,
+      "Entries": [
+        "[Co-op Costume Change NPC] _387_Millicent's Sister A"
+      ]
+    },
+    {
+      "ID": 533880000,
+      "Entries": [
+        "[Co-op Costume Change NPC] _388_Millicent's Sister B"
+      ]
+    },
+    {
+      "ID": 533890000,
+      "Entries": [
+        "[Co-op Costume NPC]_389_Millicent's Sister C"
+      ]
+    },
+    {
+      "ID": 533900000,
+      "Entries": [
+        "[Co-op Costume NPC]_390_Millicent's Sister D"
+      ]
+    },
+    {
+      "ID": 534000000,
+      "Entries": [
+        "[White Phantom Costume NPC]Reserve Slot 1"
+      ]
+    },
+    {
+      "ID": 534100000,
+      "Entries": [
+        "[White Phantom Costume NPC]Reserve Slot 2"
+      ]
+    },
+    {
+      "ID": 534200000,
+      "Entries": [
+        "[White Phantom Costume NPC]Reserve Slot 3"
+      ]
+    },
+    {
+      "ID": 534300000,
+      "Entries": [
+        "[White Phantom Costume NPC]Reserve Slot 4"
+      ]
+    },
+    {
+      "ID": 534400000,
+      "Entries": [
+        "[White Phantom Costume NPC]Reserve Slot 5"
+      ]
+    },
+    {
+      "ID": 534500000,
+      "Entries": [
+        "[White Phantom Costume NPC]Reserve Slot 6"
+      ]
+    },
+    {
+      "ID": 534600000,
+      "Entries": [
+        "[White Phantom Costume NPC]Reserve Slot 7"
+      ]
+    },
+    {
+      "ID": 534700000,
+      "Entries": [
+        "[White Phantom Costume NPC]_Patch1.17_New Lucatiel_For Radahn Festival White Phantom"
+      ]
+    },
+    {
+      "ID": 534800000,
+      "Entries": [
+        "[White Phantom Costume NPC]Reserve Slot 9"
+      ]
+    },
+    {
+      "ID": 534900000,
+      "Entries": [
+        "[White Phantom Costume NPC]Reserve Slot 10"
+      ]
+    },
+    {
+      "ID": 543030200,
+      "Entries": [
+        "[Dark Spirit Costume NPC]Mercenary Swordsman_For Dark Spirit"
+      ]
+    },
+    {
+      "ID": 543110000,
+      "Entries": [
+        "[Invader Costume Change NPC] _311_Half-Fort Castellan"
+      ]
+    },
+    {
+      "ID": 543230000,
+      "Entries": [
+        "[Invader Costume Change NPC] _323_Dung Eater"
+      ]
+    },
+    {
+      "ID": 543260000,
+      "Entries": [
+        "[Invader Costume Change NPC] _326_Mergatz"
+      ]
+    },
+    {
+      "ID": 543260100,
+      "Entries": [
+        "[Invader Costume Change NPC] _326_Mergatz_Descending Ruins_Long Return Limit"
+      ]
+    },
+    {
+      "ID": 543270000,
+      "Entries": [
+        "[Invader Costume Change NPC] _327_Dragon Communion Female Warrior"
+      ]
+    },
+    {
+      "ID": 543390000,
+      "Entries": [
+        "[Invader Costume Change NPC] _339_Hundred Minds Underling"
+      ]
+    },
+    {
+      "ID": 543430000,
+      "Entries": [
+        "[Invader Costume Change NPC] _343_Nerius"
+      ]
+    },
+    {
+      "ID": 543480000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]_348 Malenia's Daughter"
+      ]
+    },
+    {
+      "ID": 543690000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]_369 Volcano Manor Mob"
+      ]
+    },
+    {
+      "ID": 543850000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]_385_Base 1F Enemy"
+      ]
+    },
+    {
+      "ID": 544000000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]Reserve Slot 1"
+      ]
+    },
+    {
+      "ID": 544100000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]Reserve Slot 2"
+      ]
+    },
+    {
+      "ID": 544200000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]Reserve Slot 3"
+      ]
+    },
+    {
+      "ID": 544300000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]Reserve Slot 4"
+      ]
+    },
+    {
+      "ID": 544400000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]Reserve Slot 5"
+      ]
+    },
+    {
+      "ID": 544500000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]Reserve Slot 6"
+      ]
+    },
+    {
+      "ID": 544600000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]Reserve Slot 7"
+      ]
+    },
+    {
+      "ID": 544700000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]_Patch1.17_New Lucatiel [Hostile]"
+      ]
+    },
+    {
+      "ID": 544710000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]_Patch1.17_Golden Mask Lord's Foremost Disciple [Hostile]"
+      ]
+    },
+    {
+      "ID": 544800000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]Reserve Slot 9"
+      ]
+    },
+    {
+      "ID": 544900000,
+      "Entries": [
+        "[Dark Spirit Costume NPC]Reserve Slot 10"
+      ]
+    },
+    {
+      "ID": 599999999,
+      "Entries": [
+        "Costume Change NPC Test Character"
+      ]
+    }
+  ]
+}

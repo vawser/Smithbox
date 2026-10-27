@@ -1,0 +1,707 @@
+{
+  "Name": "EquipParamAccessory",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "HP Increase"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "HP Increase +1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "HP Increase +2"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "FP Increase"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "FP Increase+1"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "FP Increase+2"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Stamina Increase"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Stamina Increase +1"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Stamina Increase +2"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Max Equip Load Up"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "Max Equip Load Up +1"
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        "Max Equip Load Up +2"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Favor"
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        "Favor +1"
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        "Favor +2"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Demerit-Attached Ability Boost A_Lower"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "Demerit-Attached Ability Boost A_Upper"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Strength Increase"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Dexterity Increase"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "Intellect Increase"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "Faith Increase"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Greedy Gold Serpent Ring"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Greedy Silver Serpent Ring"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "Dark Moon Ring"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Green Flower Ring"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "Talisman of Vigor"
+      ]
+    },
+    {
+      "ID": 1161,
+      "Entries": [
+        "Talisman of Vigor +1"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "Immunity Talisman"
+      ]
+    },
+    {
+      "ID": 1171,
+      "Entries": [
+        "Immunity Talisman +1"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "Mind Talisman"
+      ]
+    },
+    {
+      "ID": 1181,
+      "Entries": [
+        "Mind Talisman +1"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Talisman of Transformation"
+      ]
+    },
+    {
+      "ID": 1191,
+      "Entries": [
+        "Talisman of Transformation +1"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "All Elements Talisman"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "All Elements Talisman +1"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Poise UP"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Demerit-Attached Ability Boost B_Lower"
+      ]
+    },
+    {
+      "ID": 1221,
+      "Entries": [
+        "Demerit-Attached Ability Boost B_Upper"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "Jar Meyer Contents (Small)"
+      ]
+    },
+    {
+      "ID": 1231,
+      "Entries": [
+        "Jar Meyer Contents (Large)"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "Prosthetic Arm Talisman"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Magic Strange Hand Ring"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Lightning Ring of Unorthodox Hands"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Ring of Fire Dexterity"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Ring of the Holy Dexterous Hand"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "HP Reduced Stat Up (Attack)"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "HP Max Stat Up (Attack)"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Thrust Counter Enhancement"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Shield_GuardBreak_Enhanced"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Pontiff's Right Eye"
+      ]
+    },
+    {
+      "ID": 2081,
+      "Entries": [
+        "Pontiff's Right Eye +1"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Wasp Ring"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Arrow Range Up"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Light Armor Ability Boost"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Combo Final Hit Boost"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Charged Attack Enhancement"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Mounted Attack Enhancement"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Arrow Power Up"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "Blood Ecstasy"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Poison Joy"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Jump Attack Enhanced"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "War Cry / Breath Boost"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Guard Counter Enhanced"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Pot-Type Attack Up"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "Perfumer Attack Power UP"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Glintstone Sorcery Power Boost"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Glintstone Sorcery Power Boost+1"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Ring of Mohn"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Sun Eldest's Ring"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Dragon-Crest Ring of Standing"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Ancient Elder's Ring"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "Crown of Dusk Fingers"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "Magic/Skill Charge Enhancement"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Physical Cut Rate UP"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Physical Cut Rate UP+1"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Physical Cut Rate UP+2"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Physical Cut Rate UP+3"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Magic Cut Rate UP"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Magic Cut Rate UP+1"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "Magic Cut Rate UP+2"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Fire Cut Rate UP"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "Fire Cut Rate UP+1"
+      ]
+    },
+    {
+      "ID": 4022,
+      "Entries": [
+        "Fire Cut Rate UP+2"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Lightning Negation Up"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "Lightning Negation Up +1"
+      ]
+    },
+    {
+      "ID": 4032,
+      "Entries": [
+        "Lightning Negation Up +2"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Holy Cut Rate Up"
+      ]
+    },
+    {
+      "ID": 4041,
+      "Entries": [
+        "Holy Cut Rate Up +1"
+      ]
+    },
+    {
+      "ID": 4042,
+      "Entries": [
+        "Holy Cut Rate Up +2"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Full Cut Rate UP"
+      ]
+    },
+    {
+      "ID": 4051,
+      "Entries": [
+        "Full Cut Rate UP +1"
+      ]
+    },
+    {
+      "ID": 4052,
+      "Entries": [
+        "Full Cut Rate UP +2"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Dragon Scale Ring"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "Blood Ring of Cassus"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "HP Reduced Stat Up (Defense)"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "HP Max Stat Up (Defense)"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Ring of the Ominous Bird"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Headshot Disabled"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Estus Ring"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Ash Estus Ring"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Sun Princess's Ring"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Evil Eye Ring"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Pontiff's Left Eye"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Critical Additional Effect (HP recovery)"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "Critical Additional Effect (FP recovery)"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Quietly Sleeping Dragon Seal Ring"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Hidden Shroud"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Ring of Fallen"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Fall Damage Reduction"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Hate"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Damage Taken UP"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "On-Death Penalty Avoidance"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Appearance Disguise (Host)"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Appearance Disguise (Guest)"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Gender Change"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "Ancestor Spirit Talisman"
+      ]
+    },
+    {
+      "ID": 999999999,
+      "Entries": [
+        "■■■■■Last Param Data■■■■■"
+      ]
+    }
+  ]
+}

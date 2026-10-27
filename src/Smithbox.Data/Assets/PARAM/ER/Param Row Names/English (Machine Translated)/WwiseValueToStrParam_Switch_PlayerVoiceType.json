@@ -1,0 +1,17 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_PlayerVoiceType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default. Do not delete. Used when no param exists"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "※ Can only register up to 255"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,461 @@
+{
+  "Name": "RollingObjLotParam",
+  "Entries": [
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Stormveil"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "Stormveil Back Area"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Royal Capital"
+      ]
+    },
+    {
+      "ID": 11050000,
+      "Entries": [
+        "Royal Capital (Ash)"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "Underground Labyrinth"
+      ]
+    },
+    {
+      "ID": 12010000,
+      "Entries": [
+        "Underground Labyrinth: Poison Swamp"
+      ]
+    },
+    {
+      "ID": 12020000,
+      "Entries": [
+        "Underground Labyrinth: Plains"
+      ]
+    },
+    {
+      "ID": 12030000,
+      "Entries": [
+        "Underground Labyrinth: Royal Capital"
+      ]
+    },
+    {
+      "ID": 12040000,
+      "Entries": [
+        "Underground Labyrinth: Hanging Terrain Boss Room"
+      ]
+    },
+    {
+      "ID": 12050000,
+      "Entries": [
+        "Underground Labyrinth: Plains Interior"
+      ]
+    },
+    {
+      "ID": 12060000,
+      "Entries": [
+        "Underground Labyrinth: Royal Capital Ark"
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        "Descending Ruins"
+      ]
+    },
+    {
+      "ID": 14000000,
+      "Entries": [
+        "Monsan"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 15020000,
+      "Entries": [
+        "Rotten Great Tree (For Cutscene)"
+      ]
+    },
+    {
+      "ID": 16000000,
+      "Entries": [
+        "Volcano Prison"
+      ]
+    },
+    {
+      "ID": 17000000,
+      "Entries": [
+        "Deathbird"
+      ]
+    },
+    {
+      "ID": 18000000,
+      "Entries": [
+        "Tutorial"
+      ]
+    },
+    {
+      "ID": 19000000,
+      "Entries": [
+        "Final Boss"
+      ]
+    },
+    {
+      "ID": 34100000,
+      "Entries": [
+        "Divine Tower 1 (Green)"
+      ]
+    },
+    {
+      "ID": 34110000,
+      "Entries": [
+        "Divine Tower 2 (Lake)"
+      ]
+    },
+    {
+      "ID": 34120000,
+      "Entries": [
+        "Divine Tower 3 (Highland)"
+      ]
+    },
+    {
+      "ID": 34130000,
+      "Entries": [
+        "Divine Tower 4 (Plains)"
+      ]
+    },
+    {
+      "ID": 34140000,
+      "Entries": [
+        "Divine Tower 5 (Snowfield)"
+      ]
+    },
+    {
+      "ID": 34150000,
+      "Entries": [
+        "Divine Tower 6 (Crater Lake)"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Royal Capital Underground Sewers"
+      ]
+    },
+    {
+      "ID": 39200000,
+      "Entries": [
+        "Cliff Tunnel"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Catacombs 1-1"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "Catacombs 1-2"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "Catacombs 1-3"
+      ]
+    },
+    {
+      "ID": 30030000,
+      "Entries": [
+        "Catacombs 1-4"
+      ]
+    },
+    {
+      "ID": 30040000,
+      "Entries": [
+        "Catacombs 1-5"
+      ]
+    },
+    {
+      "ID": 30050000,
+      "Entries": [
+        "Catacombs 2-1"
+      ]
+    },
+    {
+      "ID": 30060000,
+      "Entries": [
+        "Catacombs 2-2"
+      ]
+    },
+    {
+      "ID": 30070000,
+      "Entries": [
+        "Catacombs 2-3"
+      ]
+    },
+    {
+      "ID": 30080000,
+      "Entries": [
+        "Catacombs 3-1"
+      ]
+    },
+    {
+      "ID": 30090000,
+      "Entries": [
+        "Catacombs 3-2"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "Catacombs 3-3"
+      ]
+    },
+    {
+      "ID": 30110000,
+      "Entries": [
+        "Catacombs 3-4"
+      ]
+    },
+    {
+      "ID": 30120000,
+      "Entries": [
+        "Catacombs 3-5"
+      ]
+    },
+    {
+      "ID": 30130000,
+      "Entries": [
+        "Catacombs 3-6"
+      ]
+    },
+    {
+      "ID": 30140000,
+      "Entries": [
+        "Catacombs 4-1"
+      ]
+    },
+    {
+      "ID": 30150000,
+      "Entries": [
+        "Catacombs 4-2"
+      ]
+    },
+    {
+      "ID": 30160000,
+      "Entries": [
+        "Catacombs 4-3"
+      ]
+    },
+    {
+      "ID": 30170000,
+      "Entries": [
+        "Catacombs 5-1"
+      ]
+    },
+    {
+      "ID": 30180000,
+      "Entries": [
+        "Catacombs 5-2"
+      ]
+    },
+    {
+      "ID": 30190000,
+      "Entries": [
+        "Catacombs 5-3"
+      ]
+    },
+    {
+      "ID": 31010000,
+      "Entries": [
+        "Cave 1-2"
+      ]
+    },
+    {
+      "ID": 31020000,
+      "Entries": [
+        "Cave 1-3"
+      ]
+    },
+    {
+      "ID": 31030000,
+      "Entries": [
+        "Cave1-4"
+      ]
+    },
+    {
+      "ID": 31040000,
+      "Entries": [
+        "Cave2-1"
+      ]
+    },
+    {
+      "ID": 31050000,
+      "Entries": [
+        "Cave2-2"
+      ]
+    },
+    {
+      "ID": 31060000,
+      "Entries": [
+        "Cave2-3"
+      ]
+    },
+    {
+      "ID": 31070000,
+      "Entries": [
+        "Cave3-1"
+      ]
+    },
+    {
+      "ID": 31080000,
+      "Entries": [
+        "Cave3-2"
+      ]
+    },
+    {
+      "ID": 31090000,
+      "Entries": [
+        "Cave3-3"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "Cave4-1"
+      ]
+    },
+    {
+      "ID": 31110000,
+      "Entries": [
+        "Cave4-2"
+      ]
+    },
+    {
+      "ID": 31120000,
+      "Entries": [
+        "Cave5-1"
+      ]
+    },
+    {
+      "ID": 31130000,
+      "Entries": [
+        "Cave5-2"
+      ]
+    },
+    {
+      "ID": 31140000,
+      "Entries": [
+        "Cave5-3"
+      ]
+    },
+    {
+      "ID": 31150000,
+      "Entries": [
+        "Cave1-5"
+      ]
+    },
+    {
+      "ID": 31170000,
+      "Entries": [
+        "Cave1-6"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "Tunnel 1-1"
+      ]
+    },
+    {
+      "ID": 32010000,
+      "Entries": [
+        "Tunnel 1-2"
+      ]
+    },
+    {
+      "ID": 32020000,
+      "Entries": [
+        "Tunnel 2-1"
+      ]
+    },
+    {
+      "ID": 32030000,
+      "Entries": [
+        "Tunnel 2-2"
+      ]
+    },
+    {
+      "ID": 32040000,
+      "Entries": [
+        "Tunnel 3-1"
+      ]
+    },
+    {
+      "ID": 32050000,
+      "Entries": [
+        "Tunnel 3-2"
+      ]
+    },
+    {
+      "ID": 32060000,
+      "Entries": [
+        "Tunnel3-3"
+      ]
+    },
+    {
+      "ID": 32070000,
+      "Entries": [
+        "Tunnel4-1"
+      ]
+    },
+    {
+      "ID": 32080000,
+      "Entries": [
+        "Tunnel4-2"
+      ]
+    },
+    {
+      "ID": 32090000,
+      "Entries": [
+        "Tunnel4-3"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "Tunnel4-4"
+      ]
+    },
+    {
+      "ID": 32110000,
+      "Entries": [
+        "Tunnel5-1"
+      ]
+    },
+    {
+      "ID": 32120000,
+      "Entries": [
+        "Tunnel5-2"
+      ]
+    }
+  ]
+}

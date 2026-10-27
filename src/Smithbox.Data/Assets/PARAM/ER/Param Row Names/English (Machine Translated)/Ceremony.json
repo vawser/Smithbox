@@ -1,0 +1,167 @@
+{
+  "Name": "Ceremony",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 11100000,
+      "Entries": [
+        "Base Default"
+      ]
+    },
+    {
+      "ID": 11100020,
+      "Entries": [
+        "Base Default_Dark Round Table Space"
+      ]
+    },
+    {
+      "ID": 1042390000,
+      "Entries": [
+        "m60_42_39_00 Green North Default"
+      ]
+    },
+    {
+      "ID": 1042390020,
+      "Entries": [
+        "m60_42_39_00 Green North NPC Pseudo-Multiplayer_Volcano Manor Request 1"
+      ]
+    },
+    {
+      "ID": 14000000,
+      "Entries": [
+        "Monsan Default"
+      ]
+    },
+    {
+      "ID": 14000020,
+      "Entries": [
+        "Monsan Pseudo-Multi NPC_Academy Female Sorcerer"
+      ]
+    },
+    {
+      "ID": 14000030,
+      "Entries": [
+        "Monsan Pseudo-Multi NPC_Plains Fort Lord"
+      ]
+    },
+    {
+      "ID": 1035460000,
+      "Entries": [
+        "m60_35_46_00 Default"
+      ]
+    },
+    {
+      "ID": 1035460040,
+      "Entries": [
+        "m60_35_46_00 NPC Pseudo-Multi_Ash Crushed Finger"
+      ]
+    },
+    {
+      "ID": 39200000,
+      "Entries": [
+        "Cliff Tunnel Default"
+      ]
+    },
+    {
+      "ID": 39200050,
+      "Entries": [
+        "Cliff Tunnel NPC Pseudo-Multiplayer_Tragos"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Royal Capital Default"
+      ]
+    },
+    {
+      "ID": 11000020,
+      "Entries": [
+        "Royal Capital NPC Pseudo-Multiplayer_First Tarnished of the Round Table"
+      ]
+    },
+    {
+      "ID": 1039530000,
+      "Entries": [
+        "m60_39_53_00 Highland Default"
+      ]
+    },
+    {
+      "ID": 1039530020,
+      "Entries": [
+        "m60_39_53_00 Highland NPC Pseudo-Multi_Volcano Manor Request 2"
+      ]
+    },
+    {
+      "ID": 1040530020,
+      "Entries": [
+        "m60_40_53_00 Highland NPC Pseudo-Multiplayer_Valley Event"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "Rotten Great Tree Default"
+      ]
+    },
+    {
+      "ID": 15000020,
+      "Entries": [
+        "Rotten Great Tree NP World Invasion_Malenia's Daughter"
+      ]
+    },
+    {
+      "ID": 15000030,
+      "Entries": [
+        "Rotten Great Tree NP World Invasion_Sisters"
+      ]
+    },
+    {
+      "ID": 1039530000,
+      "Entries": [
+        "m60_50_56_00 Snowy Mountain Default"
+      ]
+    },
+    {
+      "ID": 1050560020,
+      "Entries": [
+        "m60_50_56_00 Snowy Mountain NPC Pseudo-Multiplayer_Volcano Manor Request 3"
+      ]
+    },
+    {
+      "ID": 12050000,
+      "Entries": [
+        "Underground Labyrinth・Plains Interior Default"
+      ]
+    },
+    {
+      "ID": 12050020,
+      "Entries": [
+        "Underground Labyrinth・Plains Interior NPC Pseudo-Multiplayer_Battlefield Physician"
+      ]
+    },
+    {
+      "ID": 99021010,
+      "Entries": [
+        "Sawayama Test Map_White Phantom NPC Pseudo-Multi"
+      ]
+    },
+    {
+      "ID": 99022020,
+      "Entries": [
+        "Sawayama Test Map_Invader NPC Pseudo-Multi"
+      ]
+    },
+    {
+      "ID": 99023030,
+      "Entries": [
+        "Sawayama Test Map_Illusion Event Pseudo-Multi"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "Name": "DirectionCameraParam",
+  "Entries": [
+    {
+      "ID": 80,
+      "Entries": [
+        "Front Defenseless Staging Camera"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Front Defenseless Staging Camera (Draw)"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Front Defenseless Staging Camera (Hammer Slam)"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Front Defenseless Staging Camera (Greatsword)"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Rear Defenseless Staging Camera"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Rear Defenseless Staging Camera (Hammer)"
+      ]
+    }
+  ]
+}

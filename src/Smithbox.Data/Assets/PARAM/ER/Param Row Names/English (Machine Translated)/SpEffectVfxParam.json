@@ -1,0 +1,7757 @@
+{
+  "Name": "SpEffectVfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "ForTest"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Fire"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Poison_Trigger"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Leech"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Corrosion"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Plague_Activation"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Blood Loss_Activation"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Hidden Shroud"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Gravity User"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Status Ailment Cure [Poison]"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Status Ailment Cure [Scarlet Rot]"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Status Ailment Cure [Blood Loss]"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Status Ailment Cure [Universal]"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Soul Steal"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Zoom"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Warp"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Demon's Souls"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Black Ghost dispersal"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Strong Ghost"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "White Hope"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Black Hope"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Black Ghost transformation"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Revival"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Magic Use Disabled"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Miracle motion extension"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Whetstone"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Feigned Death Revival"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Weapon Upgrade"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Defense Shield"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Covered in Thread"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[System] Ghost Param Change"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Bind"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Fly Swarm"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "[GRProto] Slime Freeze"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Flame Fiend_Phase 2"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Flame Fiend_Phase 3"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Flame Fiend_Phase 4"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Phantom Voice"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Soul Coin"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Strong Defense Shield"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Fire Resistance Shield"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "HP Recovery State"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Forced Ghost Form Stage 1"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Forced Ghost Form Stage 2"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Forced Ghost Form Stage 3"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Pheromone"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Cat Landing"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Pinch Attack Up"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Pinch Defense Up"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Regenerate"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Weak Regenerate"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Weak Ghost Camouflage"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Weak Stealth"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Hint Blood Writing"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Leech Foot"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Yellow Robe"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Point Light Source"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Blood Writing Evaluation"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Weapon Upgrade [Medium]"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Fat of Grace + Erdtree Resin + Quick Golden Fat_Weapon Holy Boost (Right Hand)"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Fire Fat + Quick Fire Fat_Fire Boost (Right Hand)"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Fire Boost [Large]"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Magic Fat + Quick Magic Fat_Magic Boost (Right Hand)"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Chimera boost"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Item Drop Correction"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "MP Regenerate"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Weak MP Regenerate"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Revive on Death"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Poison Resistance Up"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Magic Power Up"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Magic Defense Up"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Bleed Resistance Up"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Scarlet Rot Resistance Up"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Stamina Recovery UP"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Soul Gain UP"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Fire Resistance Up"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "Royal Shield Stage 1 Left Foot"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "Royal Shield Stage 2 Left Foot"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Royal Shield Stage 3 Left Foot"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Royal Shield Stage 1 Right Foot"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Royal Shield Stage 2 Right Foot"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Royal Shield Stage 3 Right Foot"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Judicator Abdominal Bleed"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Camouflage"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "[SP] Transformation"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Gasman"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Detection"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Co-op waiting"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Co-op"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Co-op send"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Gravity"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Evil Eye"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Status Release [Cooperation Wait]"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Effect Lv1"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Effect Lv2"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Effect Lv3"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Evil Eye Lv1"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Evil Eye Lv2"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Counter"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Planted Egg Standby"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Planted Egg"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Egg Head Standby"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Egg Head"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Super Lightweight Movement"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Curse"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Petrification"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Curse Removal"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Humanity Damage"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Damage Animation Change_SA Only"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Damage Animation Change_Additional"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Underwater Behavior"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Weapon Head"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Weapon Torso"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Weapon Hand"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Weapon Legs"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Sleep"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Mimic_Disguised"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Mimic_Disguised Sleep"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Mimic_Normal"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Mimic_Normal Sleep"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Charm"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Blood Writing Acquire"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Deflection Change"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Mimic_Normal Sleep Start"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Crystallization"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Resonance Lv0"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Resonance Lv1"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Resonance Lv2"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Resonance Lv3"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Resonance Lv4"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Action ID Specification"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Enemy_Immortal"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Enemy_Feigned Death"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Holy Attribute"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Full-Body Whetstone"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Light Magic"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Rescue Request"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "White Rescue"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Black Rescue"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Lightning Grease + Quick Lightning Grease_Lightning Boost (Right Hand)"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Poison Fat + Quick Rotten Pine Resin_Poison Boost (Right Hand)"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Plague Enhancement"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Flask Use Disabled"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "SA Enhanced"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Durability Reduction Immunity"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Anti-Spirit Enhancement"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Guard boost"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Normal Death Ring Revival"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Ring revived on death by curse"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Warp B"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Warp C"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Warp D"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Warp E"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Warp A"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Oath Breaking"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "[SP] Full Body Transformation"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "Precision Enhancement"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "Resonance Enhancement"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Karma"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "KarmaExplosion"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Sheath Invincibility 1"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Sheath Invincibility 2"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "Sheath Invincibility 3"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "Humanity Revival"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Soul Coin (Undead)"
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "Soul Coin (Beast)"
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        "Ally Buff Sorcery"
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "Curse Effect Lv1"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Curse Effect Lv2"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Curse Effect Lv3"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "Curse Effect Lv4"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "SOS Visible"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "Invisible Weapon"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "Nito Effect"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "Fire Kick"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "Death God Transformation"
+      ]
+    },
+    {
+      "ID": 188,
+      "Entries": [
+        "Forest Bandit Gang Summon Request"
+      ]
+    },
+    {
+      "ID": 189,
+      "Entries": [
+        "Forest Bandit Gang Territory"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Summon Royal Mother Brother Wish"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "Royal Mother's Younger Brother Territory Inside"
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "Egg Head_Second Hit"
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "Lifespan Extension"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "Magic Use Count Up"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "Dragon Newt Sign"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "Bounty Sign"
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "Counter Up"
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        "Egg Drop"
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "HP Drain"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Power of Madness"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Magic Prohibition Effect For"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Dragon Roar"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Magic Use Count Down"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Guard boost [Large]"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Holy Enhanced Right Hand"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Arena 1v1 [Small] Within Territory"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Arena 2v2 [Small] Within Territory"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Arena Battle Royale [Small] Inside Territory"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Arena 1v1 [Small] Summon Request A"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Arena 1v1 [Small] Summon Request B"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Arena 2v2 [Small] Summon Request A1"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Arena 2v2 [Small] Summon Request A2"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Arena 2v2 [Small] Summon Request B1"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Arena 2v2 [Small] Summon Request B2"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Arena Battle Royale [Small] Summon Request A"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Arena Battle Royale [Small] Summon Request B"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Arena Battle Royale [Small] Summon Request C"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Arena Battle Royale [Small] Summon Request D"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Arena 1v1 [Large] Within Territory"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Arena 2v2 [Large] Within Territory"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Arena Battle Royale [Large] Inside Territory"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Arena 1v1 [Large] Summon Request A"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Arena 1v1 [Large] Summon Request B"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Arena 2v2 [Large] Summon Request A1"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Arena 2v2 [Large] Summon Request A2"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Arena 2v2 [Large] Summon Request B1"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Arena 2v2 [Large] Summon Request B2"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "Arena Battle Royale [Large] Summon Request A"
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "Arena Battle Royale [Large] Summon Request B"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Arena Battle Royale [Large] Summon Request C"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Arena Battle Royale [Large] Summon Request D"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Arena Banned Item Usage Prohibited"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "Arena Death"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Arena Provisional 1st"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "Arena NoDead"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "Arena Tied for 1st"
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "Black Dragon Ring"
+      ]
+    },
+    {
+      "ID": 238,
+      "Entries": [
+        "Arena 10+ Wins"
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "Arena 30+ Wins"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Arena 50+ Wins"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Arena 100+ Wins"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "Blood Material Override"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "Blood Material_Blood"
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "Blood Material_Fire"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "Blood Material_Light Blood"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "Stacked Sorcery A_LV1"
+      ]
+    },
+    {
+      "ID": 247,
+      "Entries": [
+        "Stacked Sorcery A_LV2"
+      ]
+    },
+    {
+      "ID": 248,
+      "Entries": [
+        "Stacked Sorcery A_LV3"
+      ]
+    },
+    {
+      "ID": 249,
+      "Entries": [
+        "Stacked Sorcery B_LV1"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Stacked Sorcery B_LV2"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "Stacked Sorcery B_LV3"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "Oil-soaked"
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "Burning"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "Possessed"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "Darkness Magic"
+      ]
+    },
+    {
+      "ID": 256,
+      "Entries": [
+        "Burnt Corpse Burning Level 1"
+      ]
+    },
+    {
+      "ID": 257,
+      "Entries": [
+        "Burnt Corpse Burning Level 2"
+      ]
+    },
+    {
+      "ID": 258,
+      "Entries": [
+        "Sound Multiplier Change"
+      ]
+    },
+    {
+      "ID": 259,
+      "Entries": [
+        "Target Down"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Frost_On-Activation Frost Burst + Frostbite Wet"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "Maggot"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "Status Ailment Cure [Maggot]"
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "Bleed Status"
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        "Ritual Possible"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "Quick Match Request"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "Fall Death Nullified"
+      ]
+    },
+    {
+      "ID": 267,
+      "Entries": [
+        "Change Vision Range"
+      ]
+    },
+    {
+      "ID": 268,
+      "Entries": [
+        "Eclipse Death"
+      ]
+    },
+    {
+      "ID": 269,
+      "Entries": [
+        "Double Incantation Casting"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Generic Avatar Buff 1"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "Generic Avatar Buff 2"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "Generic Avatar Buff 3"
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "Generic Avatar Buff 4"
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "Generic Avatar Buff 5"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Regain Grace Period Presentation (ID2)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Fire Reception"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "PC Horse_Fall Damage Nullified"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Green Flower Ring"
+      ]
+    },
+    {
+      "ID": 4505,
+      "Entries": [
+        "First Dragon Ring"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "Red Tear Stone Ring"
+      ]
+    },
+    {
+      "ID": 4515,
+      "Entries": [
+        "Blue Tear Stone Ring"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "Wolf Ring"
+      ]
+    },
+    {
+      "ID": 4525,
+      "Entries": [
+        "Quietly Sleeping Dragon Seal Ring"
+      ]
+    },
+    {
+      "ID": 4530,
+      "Entries": [
+        "Wasp Ring"
+      ]
+    },
+    {
+      "ID": 4535,
+      "Entries": [
+        "Ring of Regeneration"
+      ]
+    },
+    {
+      "ID": 4540,
+      "Entries": [
+        "Red-Eye Ring"
+      ]
+    },
+    {
+      "ID": 4545,
+      "Entries": [
+        "White Ring"
+      ]
+    },
+    {
+      "ID": 4550,
+      "Entries": [
+        "Fool's Ring (Vanish)"
+      ]
+    },
+    {
+      "ID": 4555,
+      "Entries": [
+        "Flynn's Ring"
+      ]
+    },
+    {
+      "ID": 4560,
+      "Entries": [
+        "Flynn's Ring (Effect Active)"
+      ]
+    },
+    {
+      "ID": 4565,
+      "Entries": [
+        "Ring of Life"
+      ]
+    },
+    {
+      "ID": 4570,
+      "Entries": [
+        "Mist Ring"
+      ]
+    },
+    {
+      "ID": 4575,
+      "Entries": [
+        "Evil Eye Ring (Drain Activated)"
+      ]
+    },
+    {
+      "ID": 4580,
+      "Entries": [
+        "On Critical HP Drain (activate)"
+      ]
+    },
+    {
+      "ID": 4585,
+      "Entries": [
+        "On Critical MP Drain (activate)"
+      ]
+    },
+    {
+      "ID": 4590,
+      "Entries": [
+        "HP Max Attack Power Up Ring"
+      ]
+    },
+    {
+      "ID": 4595,
+      "Entries": [
+        "HP Max Defense Up Ring"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "Rolling Enhanced Ring"
+      ]
+    },
+    {
+      "ID": 4605,
+      "Entries": [
+        "Beast Ring (Attack)"
+      ]
+    },
+    {
+      "ID": 4610,
+      "Entries": [
+        "Beast Ring (HP Recovery)"
+      ]
+    },
+    {
+      "ID": 4615,
+      "Entries": [
+        "Godha's Guardian Ring"
+      ]
+    },
+    {
+      "ID": 4620,
+      "Entries": [
+        "Blood Ecstasy"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Torch_Fire Effect"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Holy Water Pot_Effect Display"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "Upper Holy Water Pot_Effect Display"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "Tethered Holy Water Pot_Effect Display Use"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Cursed Blood Pot (Buddy Aggressive Item)_Enemy Marking"
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        "Cursed Blood Pot (Buddy Aggressive Item)_Buddy Aggressive"
+      ]
+    },
+    {
+      "ID": 5022,
+      "Entries": [
+        "Cursed Blood Pot (Buddy Aggressive Item)_Buddy Aggressive_Red Eye"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Horse Estus Recovery"
+      ]
+    },
+    {
+      "ID": 5031,
+      "Entries": [
+        "Horse Feed_Heal Effect"
+      ]
+    },
+    {
+      "ID": 5032,
+      "Entries": [
+        "Horse Feed B (Premium)_Heal Effect"
+      ]
+    },
+    {
+      "ID": 5033,
+      "Entries": [
+        "Horse Feed C_Heal Effect"
+      ]
+    },
+    {
+      "ID": 5035,
+      "Entries": [
+        "Greater Demon Great Rune Invasion Enhancement Item_Kill Heal Effect"
+      ]
+    },
+    {
+      "ID": 5036,
+      "Entries": [
+        "Greater Demon Great Rune Invasion Enhancement Item_Blood Loss Joy_Attack Power Increase"
+      ]
+    },
+    {
+      "ID": 5037,
+      "Entries": [
+        "Greater Demon Great Rune Invasion Enhancement Item_Enhanced Enemy Identifier Effect"
+      ]
+    },
+    {
+      "ID": 5043,
+      "Entries": [
+        "King of Ghouls Great Rune_Recovery on Kill Effect"
+      ]
+    },
+    {
+      "ID": 5044,
+      "Entries": [
+        "Greater Demon Great Rune_Kill Heal Effect"
+      ]
+    },
+    {
+      "ID": 5045,
+      "Entries": [
+        "Greater Demon Great Rune_Blood Loss Joy_Attack Power Increase"
+      ]
+    },
+    {
+      "ID": 5046,
+      "Entries": [
+        "Greater Demon Great Rune_Appearance"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Major Rune Activation SFX_Activation Aura_Major Rune Unset"
+      ]
+    },
+    {
+      "ID": 5051,
+      "Entries": [
+        "Major Rune Activation SFX_Activation Aura_Grafted King"
+      ]
+    },
+    {
+      "ID": 5052,
+      "Entries": [
+        "Major Rune Activation SFX_Activation Aura_Radahn"
+      ]
+    },
+    {
+      "ID": 5053,
+      "Entries": [
+        "Major Rune Activation SFX_Activation Aura_Margit"
+      ]
+    },
+    {
+      "ID": 5054,
+      "Entries": [
+        "Major Rune Activation SFX_Activation Aura_King of Ghouls"
+      ]
+    },
+    {
+      "ID": 5055,
+      "Entries": [
+        "Major Rune Activation SFX_Activation Aura_Greater Demon"
+      ]
+    },
+    {
+      "ID": 5056,
+      "Entries": [
+        "Major Rune Activation SFX_Activation Aura_Malenia"
+      ]
+    },
+    {
+      "ID": 5090,
+      "Entries": [
+        "Bloodbound Resin + Quick Bloodbound Resin_Bleed Boost (Right Hand)"
+      ]
+    },
+    {
+      "ID": 5091,
+      "Entries": [
+        "Sleep Resin + Quick Sleep Pine Resin_Sleep Boost (Right Hand)"
+      ]
+    },
+    {
+      "ID": 5092,
+      "Entries": [
+        "Frostbite Fat + Quick Frostbite Pine Resin_Frost Boost (Right Hand)"
+      ]
+    },
+    {
+      "ID": 5093,
+      "Entries": [
+        "Dragonslayer Resin_Dragon Boost (Right Hand)"
+      ]
+    },
+    {
+      "ID": 5094,
+      "Entries": [
+        "Plague Resin + Quick Plague Resin_Plague Enhancement (Right Hand)"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Fire Fat + Quick Fire Fat_Fire Boost (Left Hand)"
+      ]
+    },
+    {
+      "ID": 5105,
+      "Entries": [
+        "Lightning Grease + Quick Lightning Grease_Lightning Boost (Left Hand)"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Poison Fat + Quick Rotten Pine Resin_Poison Boost (Left Hand)"
+      ]
+    },
+    {
+      "ID": 5115,
+      "Entries": [
+        "Magic Fat + Quick Magic Fat_Magic Boost (Left Hand)"
+      ]
+    },
+    {
+      "ID": 5120,
+      "Entries": [
+        "Holy Enhanced Left Hand"
+      ]
+    },
+    {
+      "ID": 5125,
+      "Entries": [
+        "Bloodbound Resin + Quick Bloodbound Resin_Bleed Boost (Left Hand)"
+      ]
+    },
+    {
+      "ID": 5130,
+      "Entries": [
+        "Sleep Resin + Quick Sleep Pine Resin_Sleep Boost (Left Hand)"
+      ]
+    },
+    {
+      "ID": 5135,
+      "Entries": [
+        "Frostbite Fat + Quick Frostbite Pine Resin_Frost Boost (Left Hand)"
+      ]
+    },
+    {
+      "ID": 5140,
+      "Entries": [
+        "Fat of Grace + Erdtree Resin + Quick Golden Fat_Weapon Holy Boost (Left Hand)"
+      ]
+    },
+    {
+      "ID": 5145,
+      "Entries": [
+        "Dragonslayer Resin_Dragon Boost (Left Hand)"
+      ]
+    },
+    {
+      "ID": 5150,
+      "Entries": [
+        "Plague Resin + Quick Plague Resin_Plague Enhancement Left Hand (Left Hand)"
+      ]
+    },
+    {
+      "ID": 5160,
+      "Entries": [
+        "Varnish_Right Hand"
+      ]
+    },
+    {
+      "ID": 5165,
+      "Entries": [
+        "Varnish_Left Hand"
+      ]
+    },
+    {
+      "ID": 5190,
+      "Entries": [
+        "Charm"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Liver_Magic Cut Rate UP"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "Liver_Fire Cut Rate UP"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "Liver_Lightning Cut Rate UP"
+      ]
+    },
+    {
+      "ID": 5230,
+      "Entries": [
+        "Liver_Holy Cut Rate UP"
+      ]
+    },
+    {
+      "ID": 5270,
+      "Entries": [
+        "Perfumer Magic (Iron Transformation)_Active"
+      ]
+    },
+    {
+      "ID": 5271,
+      "Entries": [
+        "Perfumer Magic (Iron Transformation)_Activation Effect"
+      ]
+    },
+    {
+      "ID": 5280,
+      "Entries": [
+        "Perfumer Magic (Decadence"
+      ]
+    },
+    {
+      "ID": 5281,
+      "Entries": [
+        "Perfumer Magic (Decadence"
+      ]
+    },
+    {
+      "ID": 5302,
+      "Entries": [
+        "Perfumer Magic (Iron Transformation)"
+      ]
+    },
+    {
+      "ID": 5303,
+      "Entries": [
+        "Perfumer Magic (Decadence"
+      ]
+    },
+    {
+      "ID": 5304,
+      "Entries": [
+        "Warming Fire"
+      ]
+    },
+    {
+      "ID": 5306,
+      "Entries": [
+        "Perfumer Magic (Scatter Buff)_One-time Barrier"
+      ]
+    },
+    {
+      "ID": 5307,
+      "Entries": [
+        "Perfumer Magic (Scatter Buff)_Attack UP"
+      ]
+    },
+    {
+      "ID": 5308,
+      "Entries": [
+        "Chaos Warmth Fire_Recovery"
+      ]
+    },
+    {
+      "ID": 5309,
+      "Entries": [
+        "Chaos Warmth Fire_Madness Buildup"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "Vine-Woven Shoes_PC"
+      ]
+    },
+    {
+      "ID": 5311,
+      "Entries": [
+        "Vine-Woven Shoes_PC Mount 1"
+      ]
+    },
+    {
+      "ID": 5312,
+      "Entries": [
+        "Vine-Woven Shoes_PC Mount 2"
+      ]
+    },
+    {
+      "ID": 5313,
+      "Entries": [
+        "Vine-Woven Shoes_PC Mount 3"
+      ]
+    },
+    {
+      "ID": 5314,
+      "Entries": [
+        "Vine-Woven Boots_PC Horse 4"
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        "Soap_Dirt Removal"
+      ]
+    },
+    {
+      "ID": 5321,
+      "Entries": [
+        "Soap_Antidote"
+      ]
+    },
+    {
+      "ID": 5330,
+      "Entries": [
+        "Veil of Camouflage"
+      ]
+    },
+    {
+      "ID": 5331,
+      "Entries": [
+        "Veil of Camouflage_for hiding other effect VFX"
+      ]
+    },
+    {
+      "ID": 5350,
+      "Entries": [
+        "Dried Carnivore Meat_Attack Power Up"
+      ]
+    },
+    {
+      "ID": 5352,
+      "Entries": [
+        "Turtle Jerky_Stamina Recovery Speed Up"
+      ]
+    },
+    {
+      "ID": 5354,
+      "Entries": [
+        "Bloodless Dried Meat + Herbivore Dried Meat_Poison/Deadly Poison Resistance Up"
+      ]
+    },
+    {
+      "ID": 5356,
+      "Entries": [
+        "Bloodless Dried Meat + Herbivore Dried Meat_Bleed/Frost Resistance Up"
+      ]
+    },
+    {
+      "ID": 5358,
+      "Entries": [
+        "Bloodless Dried Meat + Herbivore Dried Meat_Sleep/Madness Resistance Up"
+      ]
+    },
+    {
+      "ID": 5360,
+      "Entries": [
+        "Bloodless Dried Meat + Herbivore Dried Meat_All Resistances Up"
+      ]
+    },
+    {
+      "ID": 5362,
+      "Entries": [
+        "Bird Dried Meat_Item Drop Rate UP"
+      ]
+    },
+    {
+      "ID": 5364,
+      "Entries": [
+        "Bird Dried Meat_Rune Drop Rate UP"
+      ]
+    },
+    {
+      "ID": 5366,
+      "Entries": [
+        "Herbivore Jerky_Death Resistance UP"
+      ]
+    },
+    {
+      "ID": 5370,
+      "Entries": [
+        "Crab"
+      ]
+    },
+    {
+      "ID": 5372,
+      "Entries": [
+        "Shrimp"
+      ]
+    },
+    {
+      "ID": 5374,
+      "Entries": [
+        "Sleep Liquor_Normal"
+      ]
+    },
+    {
+      "ID": 5376,
+      "Entries": [
+        "Black Blade Malenia Parry Item_Activation SFX"
+      ]
+    },
+    {
+      "ID": 5380,
+      "Entries": [
+        "Insect Jar_Berserk Active"
+      ]
+    },
+    {
+      "ID": 5385,
+      "Entries": [
+        "Crystal Knife_Confusion Active"
+      ]
+    },
+    {
+      "ID": 5386,
+      "Entries": [
+        "Crystal Knife_Confusion Omen"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "Grave Robber's Lantern_Body"
+      ]
+    },
+    {
+      "ID": 5401,
+      "Entries": [
+        "Grave Robber's Lantern_Light Source"
+      ]
+    },
+    {
+      "ID": 5505,
+      "Entries": [
+        "Elixir Effect_Damage Level Reduction"
+      ]
+    },
+    {
+      "ID": 5507,
+      "Entries": [
+        "Elixir_One-time Heal"
+      ]
+    },
+    {
+      "ID": 5520,
+      "Entries": [
+        "Elixir Effect_Temporary Death Penalty Reduction"
+      ]
+    },
+    {
+      "ID": 5530,
+      "Entries": [
+        "Elixir Effect_Fire Attack Power Up"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "Dawn Light Sign (Curtain Blessing)"
+      ]
+    },
+    {
+      "ID": 5610,
+      "Entries": [
+        "Special Veil Blessing"
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        "Acid Spray_Attack Power Down"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "Generic Active SFX_Attack_Red (Physical)"
+      ]
+    },
+    {
+      "ID": 5801,
+      "Entries": [
+        "Generic Active SFX_Attack_Fire"
+      ]
+    },
+    {
+      "ID": 5802,
+      "Entries": [
+        "Generic Active SFX_Attack_Blue"
+      ]
+    },
+    {
+      "ID": 5803,
+      "Entries": [
+        "Generic Active SFX_Attack_Lightning"
+      ]
+    },
+    {
+      "ID": 5804,
+      "Entries": [
+        "Generic Active SFX_Attack_Holy"
+      ]
+    },
+    {
+      "ID": 5805,
+      "Entries": [
+        "Generic Active SFX_Attack_Yellow (Poise)"
+      ]
+    },
+    {
+      "ID": 5806,
+      "Entries": [
+        "Generic Active SFX_Attack_Red_Elixir"
+      ]
+    },
+    {
+      "ID": 5807,
+      "Entries": [
+        "Generic Active SFX_Attack_Explosion Warning_Elixir"
+      ]
+    },
+    {
+      "ID": 5820,
+      "Entries": [
+        "Generic Active SFX_Defense_Iron (Physical)"
+      ]
+    },
+    {
+      "ID": 5821,
+      "Entries": [
+        "Generic Active SFX_Defense_Fire"
+      ]
+    },
+    {
+      "ID": 5822,
+      "Entries": [
+        "Generic Active SFX_Defense_Magic"
+      ]
+    },
+    {
+      "ID": 5823,
+      "Entries": [
+        "Generic Active SFX_Defense_Lightning"
+      ]
+    },
+    {
+      "ID": 5824,
+      "Entries": [
+        "Generic Active SFX_Defense_Holy"
+      ]
+    },
+    {
+      "ID": 5825,
+      "Entries": [
+        "Generic Active SFX_Defense_Yellow (Poise)"
+      ]
+    },
+    {
+      "ID": 5826,
+      "Entries": [
+        "Generic Active SFX_Defense_Pearl"
+      ]
+    },
+    {
+      "ID": 5827,
+      "Entries": [
+        "Generic Active SFX_Defense_Red-Gold (Greater Demon Only)"
+      ]
+    },
+    {
+      "ID": 5842,
+      "Entries": [
+        "Generic Active SFX_Status_Magic"
+      ]
+    },
+    {
+      "ID": 5846,
+      "Entries": [
+        "Generic Active SFX_Status_White"
+      ]
+    },
+    {
+      "ID": 5847,
+      "Entries": [
+        "Generic Active SFX_Status_Mottled (All Resistances)"
+      ]
+    },
+    {
+      "ID": 5848,
+      "Entries": [
+        "Generic Active SFX_Status_Gold-Red (Regen)"
+      ]
+    },
+    {
+      "ID": 5849,
+      "Entries": [
+        "Generic Active SFX_Status_Orange (One-time Recovery)"
+      ]
+    },
+    {
+      "ID": 5850,
+      "Entries": [
+        "Generic Active SFX_Status_Green (Stamina)"
+      ]
+    },
+    {
+      "ID": 5860,
+      "Entries": [
+        "Elixir_Temporary FP Cost Zero (Once)"
+      ]
+    },
+    {
+      "ID": 5865,
+      "Entries": [
+        "Elixir_Temporary Combo Attack Power Up"
+      ]
+    },
+    {
+      "ID": 5866,
+      "Entries": [
+        "Elixir_One-time Guard"
+      ]
+    },
+    {
+      "ID": 5890,
+      "Entries": [
+        "Generic Activation SFX_HP Recovery"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Endure Hammer_Endure_Max Effect"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Endure Hammer_Endure_Interrupt Effect"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Soldier of the Fallen Long Torch"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Glintstone Sorcerer_Gem Glow"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Glintstone Sorcerer Variant A_Gem Glow"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Glintstone Sorcerer Variant B_Gem Glow"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Glintstone Sorcerer Variant C_Gem Glow"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "Glintstone Sorcerer Stone Mask_Gem Glow"
+      ]
+    },
+    {
+      "ID": 7920,
+      "Entries": [
+        "[PC Magic] Black Flame Weapon Enchant"
+      ]
+    },
+    {
+      "ID": 7930,
+      "Entries": [
+        "[PC Sorcery] Aflame"
+      ]
+    },
+    {
+      "ID": 7940,
+      "Entries": [
+        "[PC Magic] Greater Lightning Protection"
+      ]
+    },
+    {
+      "ID": 7950,
+      "Entries": [
+        "[PC Magic] Lightning Buff A"
+      ]
+    },
+    {
+      "ID": 7960,
+      "Entries": [
+        "[PC Magic] Lightning Buff B"
+      ]
+    },
+    {
+      "ID": 7970,
+      "Entries": [
+        "[PC Magic] Lightning Weapon Enchant"
+      ]
+    },
+    {
+      "ID": 7980,
+      "Entries": [
+        "[PC Sorcery] Immunity/Robustness Recovery"
+      ]
+    },
+    {
+      "ID": 7990,
+      "Entries": [
+        "[PC Sorcery] Death Recovery"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[PC Sorcery] Fire Weapon Enhancement"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "[PC Magic] Regeneration Double Incantation"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "[PC Sorcery] Recovery Double Incantation"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "[PC Sorcery] Sun Sword"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "[PC Sorcery] Cold Weapon"
+      ]
+    },
+    {
+      "ID": 8050,
+      "Entries": [
+        "[PC Magic] Magic Weapon"
+      ]
+    },
+    {
+      "ID": 8060,
+      "Entries": [
+        "[PC Magic] Invisible Weapon"
+      ]
+    },
+    {
+      "ID": 8070,
+      "Entries": [
+        "[PC Magic] Magic Absorption"
+      ]
+    },
+    {
+      "ID": 8080,
+      "Entries": [
+        "[PC Magic] Magic Shield"
+      ]
+    },
+    {
+      "ID": 8090,
+      "Entries": [
+        "[PC Sorcery] Poison Enchant"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "[PC Magic] Mind Restoration"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "[PC Sorcery] Scarlet Rot Recovery"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "[PC Magic] Greater Fire Protection"
+      ]
+    },
+    {
+      "ID": 8130,
+      "Entries": [
+        "[PC Sorcery] Inner Strength"
+      ]
+    },
+    {
+      "ID": 8140,
+      "Entries": [
+        "[PC Magic] Magic Barrier"
+      ]
+    },
+    {
+      "ID": 8150,
+      "Entries": [
+        "[PC Sorcery] Solemn Vow"
+      ]
+    },
+    {
+      "ID": 8160,
+      "Entries": [
+        "[PC Sorcery] Blessing of the Depths"
+      ]
+    },
+    {
+      "ID": 8170,
+      "Entries": [
+        "[PC Sorcery] All Element Protection"
+      ]
+    },
+    {
+      "ID": 8180,
+      "Entries": [
+        "[PC Magic] Beacon of Cassus (Berserk)"
+      ]
+    },
+    {
+      "ID": 8190,
+      "Entries": [
+        "[PC Magic] Area Magic Buff"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "[PC Magic] Stealth"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "[PC Sorcery] Disguise"
+      ]
+    },
+    {
+      "ID": 8220,
+      "Entries": [
+        "[PC Magic] Dragon Roar"
+      ]
+    },
+    {
+      "ID": 8230,
+      "Entries": [
+        "[PC Sorcery] Darkness"
+      ]
+    },
+    {
+      "ID": 8240,
+      "Entries": [
+        "[PC Sorcery] Physical Protection"
+      ]
+    },
+    {
+      "ID": 8250,
+      "Entries": [
+        "[PC Magic] Charm"
+      ]
+    },
+    {
+      "ID": 8260,
+      "Entries": [
+        "[PC Magic] Blood Enchant"
+      ]
+    },
+    {
+      "ID": 8270,
+      "Entries": [
+        "[PC Magic] Invisible Body"
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "[PC Sorcery] Grace of Recovery"
+      ]
+    },
+    {
+      "ID": 8310,
+      "Entries": [
+        "[PC Sorcery] Recovery"
+      ]
+    },
+    {
+      "ID": 8320,
+      "Entries": [
+        "[PC Sorcery] Healing of Sunlight"
+      ]
+    },
+    {
+      "ID": 8330,
+      "Entries": [
+        "[PC Sorcery] Poison Recovery"
+      ]
+    },
+    {
+      "ID": 8340,
+      "Entries": [
+        "[PC Magic] Medium Recovery"
+      ]
+    },
+    {
+      "ID": 8350,
+      "Entries": [
+        "[PC Sorcery] Life Surge"
+      ]
+    },
+    {
+      "ID": 8360,
+      "Entries": [
+        "[PC Magic] Blessing of Light"
+      ]
+    },
+    {
+      "ID": 8370,
+      "Entries": [
+        "[PC Sorcery] Blessing of Sunlight"
+      ]
+    },
+    {
+      "ID": 8380,
+      "Entries": [
+        "[PC Sorcery] Greater Recovery"
+      ]
+    },
+    {
+      "ID": 8390,
+      "Entries": [
+        "[PC Sorcery] Area Recovery (Poison/Blood Loss/Sleep)"
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        "Sleep Resin + Quick Sleep Pine Resin_Visual Effect While Sleep Applied"
+      ]
+    },
+    {
+      "ID": 8410,
+      "Entries": [
+        "[PC Sorcery] Illuminating Light"
+      ]
+    },
+    {
+      "ID": 8420,
+      "Entries": [
+        "[PC Magic] Lesser Fire Protection"
+      ]
+    },
+    {
+      "ID": 8430,
+      "Entries": [
+        "[PC Magic] Lesser Magic Protection"
+      ]
+    },
+    {
+      "ID": 8440,
+      "Entries": [
+        "[PC Magic] Lesser Lightning Protection"
+      ]
+    },
+    {
+      "ID": 8450,
+      "Entries": [
+        "[PC Magic] Lesser Holy Protection"
+      ]
+    },
+    {
+      "ID": 8460,
+      "Entries": [
+        "[PC Magic] Greater Holy Protection"
+      ]
+    },
+    {
+      "ID": 8470,
+      "Entries": [
+        "[PC Sorcery] Full Status Recovery + Buff/Debuff Removal"
+      ]
+    },
+    {
+      "ID": 8480,
+      "Entries": [
+        "[PC Magic] Shield of Order"
+      ]
+    },
+    {
+      "ID": 8490,
+      "Entries": [
+        "[PC Magic] Holy Enchantment"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "Lava Placement_Fire Enchant"
+      ]
+    },
+    {
+      "ID": 8505,
+      "Entries": [
+        "Magic Absorb Parry_Absorb Success"
+      ]
+    },
+    {
+      "ID": 8510,
+      "Entries": [
+        "Mighty Parry_Right Hand Shield_Effect Active SFX"
+      ]
+    },
+    {
+      "ID": 8511,
+      "Entries": [
+        "Mighty Parry_Left Hand Shield_Effect Active SFX"
+      ]
+    },
+    {
+      "ID": 8515,
+      "Entries": [
+        "Saintess's Scythe_Flask Prohibited"
+      ]
+    },
+    {
+      "ID": 8520,
+      "Entries": [
+        "Blood Throw: Right Hand_Bleed Enchant_For Effect"
+      ]
+    },
+    {
+      "ID": 8521,
+      "Entries": [
+        "Blood Throw: Left Hand_Bleed Enchant_For Effect"
+      ]
+    },
+    {
+      "ID": 8525,
+      "Entries": [
+        "Self-Curse: Silence"
+      ]
+    },
+    {
+      "ID": 8526,
+      "Entries": [
+        "Self-Curse: Stealth"
+      ]
+    },
+    {
+      "ID": 8530,
+      "Entries": [
+        "Curse Enchantment 2_Enchant"
+      ]
+    },
+    {
+      "ID": 8535,
+      "Entries": [
+        "Vengeful Spirit Slash_HP Drain Activation"
+      ]
+    },
+    {
+      "ID": 8540,
+      "Entries": [
+        "Defense Debuff_ON"
+      ]
+    },
+    {
+      "ID": 8545,
+      "Entries": [
+        "Greater Demon Spear_Right Hand_Blood Flame Enchant_ON"
+      ]
+    },
+    {
+      "ID": 8546,
+      "Entries": [
+        "Greater Demon Spear_Left Hand_Blood Flame Enchant_ON"
+      ]
+    },
+    {
+      "ID": 8550,
+      "Entries": [
+        "Burning Self Enchant"
+      ]
+    },
+    {
+      "ID": 8555,
+      "Entries": [
+        "Leaping Enchant Slash: Right Hand_Blade Enchant ON"
+      ]
+    },
+    {
+      "ID": 8556,
+      "Entries": [
+        "Leaping Enchant Slash: Left Hand_Blade Enchant ON"
+      ]
+    },
+    {
+      "ID": 8560,
+      "Entries": [
+        "Life Drain_Recovery"
+      ]
+    },
+    {
+      "ID": 8561,
+      "Entries": [
+        "Lifesteal_Influence"
+      ]
+    },
+    {
+      "ID": 8565,
+      "Entries": [
+        "Fire Tornado Effect_Right Hand"
+      ]
+    },
+    {
+      "ID": 8566,
+      "Entries": [
+        "Fire Tornado Effect_Left Hand"
+      ]
+    },
+    {
+      "ID": 8570,
+      "Entries": [
+        "Endure"
+      ]
+    },
+    {
+      "ID": 8575,
+      "Entries": [
+        "Malgit's Sword of Death_Right Hand_Blood Flame Enchant_ON"
+      ]
+    },
+    {
+      "ID": 8576,
+      "Entries": [
+        "Malgit's Sword of Death_Left Hand_Blood Flame Enchant_ON"
+      ]
+    },
+    {
+      "ID": 8580,
+      "Entries": [
+        "Sacred Area_Active Effect"
+      ]
+    },
+    {
+      "ID": 8590,
+      "Entries": [
+        "Concentrate_Enchant_Right Hand"
+      ]
+    },
+    {
+      "ID": 8591,
+      "Entries": [
+        "Concentrate_Attack Trigger_Right Hand"
+      ]
+    },
+    {
+      "ID": 8595,
+      "Entries": [
+        "Concentrate_Enchant_Left Hand"
+      ]
+    },
+    {
+      "ID": 8596,
+      "Entries": [
+        "Concentrate_Attack Trigger_Left Hand"
+      ]
+    },
+    {
+      "ID": 8600,
+      "Entries": [
+        "War Cry_Barbarian"
+      ]
+    },
+    {
+      "ID": 8610,
+      "Entries": [
+        "Moonlight Enchant_Right Hand"
+      ]
+    },
+    {
+      "ID": 8611,
+      "Entries": [
+        "Moonlight Enchant_Left Hand"
+      ]
+    },
+    {
+      "ID": 8620,
+      "Entries": [
+        "Sun Oath"
+      ]
+    },
+    {
+      "ID": 8621,
+      "Entries": [
+        "Sun Oath_Weapon Effect"
+      ]
+    },
+    {
+      "ID": 8630,
+      "Entries": [
+        "Greater Recovery Strike_RecoveryEffect"
+      ]
+    },
+    {
+      "ID": 8635,
+      "Entries": [
+        "Flag Skill_Attack Power Up ON"
+      ]
+    },
+    {
+      "ID": 8640,
+      "Entries": [
+        "Two Hits Poison: Additional HP Damage_Activate"
+      ]
+    },
+    {
+      "ID": 8641,
+      "Entries": [
+        "Two Hits Poison: Right Hand_Poison Enchant_Effect"
+      ]
+    },
+    {
+      "ID": 8642,
+      "Entries": [
+        "Two Hits Poison: Left Hand_Poison Enchant_Effect"
+      ]
+    },
+    {
+      "ID": 8645,
+      "Entries": [
+        "Sun Flare Shotel: Right Hand_Instant Death Enchant_ON"
+      ]
+    },
+    {
+      "ID": 8646,
+      "Entries": [
+        "Sun Flare Shotel: Left Hand_Instant Death Enchant_ON"
+      ]
+    },
+    {
+      "ID": 8650,
+      "Entries": [
+        "Warhawk Axe: Right Hand_Lightning Enchant_ON"
+      ]
+    },
+    {
+      "ID": 8651,
+      "Entries": [
+        "Warhawk Axe: Left Hand_Lightning Enchant_ON"
+      ]
+    },
+    {
+      "ID": 8655,
+      "Entries": [
+        "Spire Sword_Cyan Flame Enchant_Right Hand"
+      ]
+    },
+    {
+      "ID": 8656,
+      "Entries": [
+        "Spire Sword_Cyan Flame Enchant_Left Hand"
+      ]
+    },
+    {
+      "ID": 8660,
+      "Entries": [
+        "War Cry_Warrior"
+      ]
+    },
+    {
+      "ID": 8670,
+      "Entries": [
+        "Rock Enchant_Right Hand"
+      ]
+    },
+    {
+      "ID": 8671,
+      "Entries": [
+        "Rock Enchant_Left Hand"
+      ]
+    },
+    {
+      "ID": 8680,
+      "Entries": [
+        "Multi-Hit Drain Thrust Recovery Effect"
+      ]
+    },
+    {
+      "ID": 8690,
+      "Entries": [
+        "Holy Enchant_Right Hand"
+      ]
+    },
+    {
+      "ID": 8691,
+      "Entries": [
+        "Holy Enchant_Left Hand"
+      ]
+    },
+    {
+      "ID": 8700,
+      "Entries": [
+        "Area Holy Enchant"
+      ]
+    },
+    {
+      "ID": 8710,
+      "Entries": [
+        "Gladiator War Cry"
+      ]
+    },
+    {
+      "ID": 8720,
+      "Entries": [
+        "Ruinous Blade_Enchant_Right Hand"
+      ]
+    },
+    {
+      "ID": 8721,
+      "Entries": [
+        "Ruinous Blade_Enchant_Left Hand"
+      ]
+    },
+    {
+      "ID": 8725,
+      "Entries": [
+        "Jellyfish_Right Hand Shield_Glowing Red"
+      ]
+    },
+    {
+      "ID": 8726,
+      "Entries": [
+        "Jellyfish_Left Hand Shield_Glowing Red"
+      ]
+    },
+    {
+      "ID": 8727,
+      "Entries": [
+        "Jellyfish_Attack Power Up ON"
+      ]
+    },
+    {
+      "ID": 8728,
+      "Entries": [
+        "Jellyfish_Right Hand Shield_Glowing Blue"
+      ]
+    },
+    {
+      "ID": 8729,
+      "Entries": [
+        "Jellyfish_Left Hand Shield_Glowing Blue"
+      ]
+    },
+    {
+      "ID": 8740,
+      "Entries": [
+        "Tombstone Sword_Holy Enchant"
+      ]
+    },
+    {
+      "ID": 8750,
+      "Entries": [
+        "Sword of Emanuel_Debuff"
+      ]
+    },
+    {
+      "ID": 8751,
+      "Entries": [
+        "Sword of Emanuel_Debuff_NPC Use"
+      ]
+    },
+    {
+      "ID": 8760,
+      "Entries": [
+        "Grafted Spider Sword_Enchant_Right Hand"
+      ]
+    },
+    {
+      "ID": 8761,
+      "Entries": [
+        "Grafted Spider Sword_Enchant_Left Hand"
+      ]
+    },
+    {
+      "ID": 8770,
+      "Entries": [
+        "Sword-Grafted Greatsword_Buff"
+      ]
+    },
+    {
+      "ID": 8775,
+      "Entries": [
+        "Cold Winter Curved Sword_Skill Telegraph (Right Hand)"
+      ]
+    },
+    {
+      "ID": 8776,
+      "Entries": [
+        "Cold Winter Curved Sword_Skill Telegraph (Left Hand)"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Fire Effect During Death Animation"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Black Flame_HP Slip Damage"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "Sword of Death_HP Slip Damage"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "Sword of Death (Strong)_HP Slip Damage"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "Sword of Death_Max HP Reduction"
+      ]
+    },
+    {
+      "ID": 9014,
+      "Entries": [
+        "Sword of Death_Max HP Reduction_For Maliketh"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "Enemy Defeat SFX"
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        "Respawn Shockwave Omen (Team A)"
+      ]
+    },
+    {
+      "ID": 11111,
+      "Entries": [
+        "Respawn Shockwave Omen (Team B)"
+      ]
+    },
+    {
+      "ID": 11140,
+      "Entries": [
+        "Score 1st Place SFX Use"
+      ]
+    },
+    {
+      "ID": 11150,
+      "Entries": [
+        "Score 1st Place (Multiple) SFX Use"
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "For When Becoming 1st or Defeating 1st Place"
+      ]
+    },
+    {
+      "ID": 11300,
+      "Entries": [
+        "Arena Buddy Appearance_Enemy"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Golden Order Flail_Buff Active SFX_Small"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "Golden Order Flail_Buff Active SFX_Medium"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "Golden Order Flail_Buff Active SFX_Large"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Poison_Reserve"
+      ]
+    },
+    {
+      "ID": 40260,
+      "Entries": [
+        "Frost_Frost Fall VFX During Effect"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "c4300_Grave Robber Noble: Torch SFX_ON"
+      ]
+    },
+    {
+      "ID": 50101,
+      "Entries": [
+        "c4300_Grave Robber Noble: Weak Torch SFX_ON"
+      ]
+    },
+    {
+      "ID": 50102,
+      "Entries": [
+        "c4300_Grave Robber Noble: Staff Lantern SFX_ON"
+      ]
+    },
+    {
+      "ID": 50103,
+      "Entries": [
+        "c4300_Grave Robber Noble: Waist Lantern SFX_ON"
+      ]
+    },
+    {
+      "ID": 50104,
+      "Entries": [
+        "c4300_Grave Robber Noble: Snake Head Type_Poison Smoke"
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        "c4300_Grave Robber Noble: Shield_ON"
+      ]
+    },
+    {
+      "ID": 50111,
+      "Entries": [
+        "c4300_Grave Robber Noble: Stealth_Short Range_ON"
+      ]
+    },
+    {
+      "ID": 50112,
+      "Entries": [
+        "c4300_Grave Robber Noble: Stealth_Mid Range_ON"
+      ]
+    },
+    {
+      "ID": 50113,
+      "Entries": [
+        "c4300_Grave Robber Noble: Stealth_Long Range_ON"
+      ]
+    },
+    {
+      "ID": 50114,
+      "Entries": [
+        "c4300_Grave Robber Noble: Stealth_ON"
+      ]
+    },
+    {
+      "ID": 50115,
+      "Entries": [
+        "c4300_Grave Robber Noble: Stealth_ON"
+      ]
+    },
+    {
+      "ID": 50116,
+      "Entries": [
+        "c4300_Grave Robber Noble: Spirit Candle_Wandering Phantom"
+      ]
+    },
+    {
+      "ID": 50120,
+      "Entries": [
+        "c4020_Nazgul(Ground Insect) Persistent SFX"
+      ]
+    },
+    {
+      "ID": 50121,
+      "Entries": [
+        "c4020_Nazgul(Ground Insect) HU Persistent SFX"
+      ]
+    },
+    {
+      "ID": 50122,
+      "Entries": [
+        "c4020_Nazgul(Ground Insect) Combat SFX"
+      ]
+    },
+    {
+      "ID": 50123,
+      "Entries": [
+        "c4020_Nazgul(Ground Insect) Face Light-up SFX"
+      ]
+    },
+    {
+      "ID": 50124,
+      "Entries": [
+        "c4020_Nazgul(Ground Insect) Transparent"
+      ]
+    },
+    {
+      "ID": 50125,
+      "Entries": [
+        "c4020_Nazgul(Ground Insect) Transparent"
+      ]
+    },
+    {
+      "ID": 50130,
+      "Entries": [
+        "c3000_Soldier of the Fallen Lookout Torch SFX"
+      ]
+    },
+    {
+      "ID": 50131,
+      "Entries": [
+        "c3000_Soldier of the Fallen Lookout Berserk SFX Red Eyes"
+      ]
+    },
+    {
+      "ID": 50132,
+      "Entries": [
+        "c3000_Soldier of the Fallen Lookout Berserk SFX Persistent Style"
+      ]
+    },
+    {
+      "ID": 50133,
+      "Entries": [
+        "c3000_Soldier of the Fallen Lookout Flamethrower Pilot Light"
+      ]
+    },
+    {
+      "ID": 50134,
+      "Entries": [
+        "c3000_Soldier of the Fallen Sword and Shield_Ghost Shader"
+      ]
+    },
+    {
+      "ID": 50160,
+      "Entries": [
+        "c6040_Wild Animal_Owl：Night_Eye Glow ON"
+      ]
+    },
+    {
+      "ID": 50170,
+      "Entries": [
+        "c4600_Troll_Fire Enchant_Base"
+      ]
+    },
+    {
+      "ID": 50171,
+      "Entries": [
+        "c4600_Troll_Fire Enchant_Middle"
+      ]
+    },
+    {
+      "ID": 50172,
+      "Entries": [
+        "c4600_Troll_Fire Enchant_Tip"
+      ]
+    },
+    {
+      "ID": 50173,
+      "Entries": [
+        "c4600_Troll: War Cry VFX_ON"
+      ]
+    },
+    {
+      "ID": 50175,
+      "Entries": [
+        "c4600_Troll: Royal Knight_Headless_Phantom Conversion"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "c3560_Godskin Apostle: HU After_Upper Body_Miasma Aura"
+      ]
+    },
+    {
+      "ID": 50201,
+      "Entries": [
+        "c3560_Godskin Apostle: HU After_Lower Body_Miasma Aura"
+      ]
+    },
+    {
+      "ID": 50202,
+      "Entries": [
+        "c3560_Godskin Apostle: Pope's Left Eye_Heal Triggered VFX"
+      ]
+    },
+    {
+      "ID": 50203,
+      "Entries": [
+        "c3560_Godskin Apostle: Summon_Appearance Presentation"
+      ]
+    },
+    {
+      "ID": 50250,
+      "Entries": [
+        "c3570_Godskin Apostle (Another): After HU_Miasma Aura"
+      ]
+    },
+    {
+      "ID": 50251,
+      "Entries": [
+        "c3570_Ancestral Follower Priest (Another): Pontiff's Left Eye_Heal Triggered VFX"
+      ]
+    },
+    {
+      "ID": 50252,
+      "Entries": [
+        "c3570_Ancestral Follower Priest (Another): Summon_Appearance Effect"
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        "c7000_Spirit Ash summon (generic) Composition Shader (on appear)"
+      ]
+    },
+    {
+      "ID": 50301,
+      "Entries": [
+        "c7000_Spirit Ash summon (generic) Composition Shader (appearing→materialized)"
+      ]
+    },
+    {
+      "ID": 50302,
+      "Entries": [
+        "c7000_Spirit Ash summon (generic) Composition Shader (materialized→dissolving)"
+      ]
+    },
+    {
+      "ID": 50303,
+      "Entries": [
+        "c7000_Spirit Ash summon (generic) Composition Shader (on dissolve)"
+      ]
+    },
+    {
+      "ID": 50310,
+      "Entries": [
+        "c7000_Spirit Ash summon (Generic) Stealth Effect (ON)"
+      ]
+    },
+    {
+      "ID": 50311,
+      "Entries": [
+        "c7000_Spirit Ash summon (Generic) Stealth Effect (OFF)"
+      ]
+    },
+    {
+      "ID": 50316,
+      "Entries": [
+        "c7000_Spirit Ash summon (Generic) Torch SFX"
+      ]
+    },
+    {
+      "ID": 50320,
+      "Entries": [
+        "c7000_Spirit Ash summon (Generic) Go Receive Effect"
+      ]
+    },
+    {
+      "ID": 50321,
+      "Entries": [
+        "c7000_Spirit Ash summon (Generic) Come Receive Effect"
+      ]
+    },
+    {
+      "ID": 50350,
+      "Entries": [
+        "c4050_Nordic Mercenary_War Cry"
+      ]
+    },
+    {
+      "ID": 50400,
+      "Entries": [
+        "c4500_Wyvern：Fire Rune Shader (Never Glows)"
+      ]
+    },
+    {
+      "ID": 50401,
+      "Entries": [
+        "c4500_Wyvern：Fire Rune Shader (Glows)"
+      ]
+    },
+    {
+      "ID": 50402,
+      "Entries": [
+        "c4500_Wyvern：Fire Rune Shader (Disappears)"
+      ]
+    },
+    {
+      "ID": 50403,
+      "Entries": [
+        "c4500_Wyvern：Fire Rune Shader (Constant Glow)"
+      ]
+    },
+    {
+      "ID": 50404,
+      "Entries": [
+        "c4500_Wyvern：Throwable Marker"
+      ]
+    },
+    {
+      "ID": 50405,
+      "Entries": [
+        "c4500_Wyvern：Strongest Variant Red Eyes"
+      ]
+    },
+    {
+      "ID": 50406,
+      "Entries": [
+        "c4500_Wyvern：Giant Wyvern_Dragon Roar_Lesser Red Eyes"
+      ]
+    },
+    {
+      "ID": 50407,
+      "Entries": [
+        "c4500_Wyvern：Giant Wyvern_Dragon Roar_PC Debuff"
+      ]
+    },
+    {
+      "ID": 50505,
+      "Entries": [
+        "c4200_Bat Independent Add_Eyes Glow"
+      ]
+    },
+    {
+      "ID": 50610,
+      "Entries": [
+        "c4800_Greater Demon Enchant State (Weapon Coated in Blood)"
+      ]
+    },
+    {
+      "ID": 50650,
+      "Entries": [
+        "c4800_Greater Demon Countdown Charge_1st (PC Side Effect)"
+      ]
+    },
+    {
+      "ID": 50651,
+      "Entries": [
+        "c4800_Greater Demon Countdown Charge_2nd (PC Side Effect)"
+      ]
+    },
+    {
+      "ID": 50652,
+      "Entries": [
+        "c4800_Greater Demon Countdown Charge_3rd (PC Side Effect)"
+      ]
+    },
+    {
+      "ID": 50653,
+      "Entries": [
+        "c4800_Greater Demon Countdown Charge_Delete (PC Side Effect)"
+      ]
+    },
+    {
+      "ID": 50655,
+      "Entries": [
+        "c4800_Greater Demon Countdown Activation (PC Side Effect)"
+      ]
+    },
+    {
+      "ID": 50660,
+      "Entries": [
+        "c4800_Greater Demon Blood Loss Curse Repel Effect_1st (PC Side Effect)"
+      ]
+    },
+    {
+      "ID": 50661,
+      "Entries": [
+        "c4800_Greater Demon Blood Loss Curse Repel Effect_2nd (PC Side Effect)"
+      ]
+    },
+    {
+      "ID": 50662,
+      "Entries": [
+        "c4800_Greater Demon Blood Loss Curse Repel Effect_3rd (PC Side Effect)"
+      ]
+    },
+    {
+      "ID": 50665,
+      "Entries": [
+        "c4800_Greater Demon Blood Loss Ecstasy_Attack Power Increase"
+      ]
+    },
+    {
+      "ID": 50700,
+      "Entries": [
+        "c4000_Nazgul (Follower)_Lantern"
+      ]
+    },
+    {
+      "ID": 50710,
+      "Entries": [
+        "c4000_Nazgul (Follower)_Targeted State (PC-side effect)"
+      ]
+    },
+    {
+      "ID": 50715,
+      "Entries": [
+        "c4000_Nazgul (Follower)_Fade Out Mount on Dismount"
+      ]
+    },
+    {
+      "ID": 50800,
+      "Entries": [
+        "c3200_RedEyeGypsy Lloyd's Talisman Effect"
+      ]
+    },
+    {
+      "ID": 50810,
+      "Entries": [
+        "c3200_RedEyeGypsy Item HP Recovery"
+      ]
+    },
+    {
+      "ID": 50815,
+      "Entries": [
+        "c3200_RedEyeGypsy Horse Seal Effect"
+      ]
+    },
+    {
+      "ID": 50820,
+      "Entries": [
+        "c3200_RedEyeGypsy Electrified Debuff"
+      ]
+    },
+    {
+      "ID": 50850,
+      "Entries": [
+        "cXXXX_Red Eye Gypsy Spirit Ash Appearance Red Spirit"
+      ]
+    },
+    {
+      "ID": 50851,
+      "Entries": [
+        "cXXXX_Red Eye Gypsy Spirit Ash Appearance Fade"
+      ]
+    },
+    {
+      "ID": 50852,
+      "Entries": [
+        "cXXXX_Red Eye Gypsy Spirit Ash 'Go' Receive Effect"
+      ]
+    },
+    {
+      "ID": 50853,
+      "Entries": [
+        "cXXXX_Red Eye Gypsy Spirit Ash 'Come' Receive Effect"
+      ]
+    },
+    {
+      "ID": 50854,
+      "Entries": [
+        "cXXXX_Red Eye Gypsy Spirit Ash 'Special Action A' Receive Effect"
+      ]
+    },
+    {
+      "ID": 50859,
+      "Entries": [
+        "cXXXX_Gravestone Player Appearance Semi-Transparent Ghost"
+      ]
+    },
+    {
+      "ID": 50900,
+      "Entries": [
+        "c4910_Ground Mole King Magma Enchant On"
+      ]
+    },
+    {
+      "ID": 50901,
+      "Entries": [
+        "c4910_Ground Mole King Magma Enchant Off"
+      ]
+    },
+    {
+      "ID": 50950,
+      "Entries": [
+        "c3050_Aged Veteran General_HU Post Persistent SFX (Torso)"
+      ]
+    },
+    {
+      "ID": 50951,
+      "Entries": [
+        "c3050_Aged Veteran General_HU Post Persistent SFX (Feet)"
+      ]
+    },
+    {
+      "ID": 50955,
+      "Entries": [
+        "c3050_Aged Veteran General_Spirit Ash Buff Attack Power Up"
+      ]
+    },
+    {
+      "ID": 50956,
+      "Entries": [
+        "c3050_Aged Veteran General_Spirit Ash Buff Poise Up"
+      ]
+    },
+    {
+      "ID": 50958,
+      "Entries": [
+        "c3050_Aged Veteran General_Summoned State_Initial Effect"
+      ]
+    },
+    {
+      "ID": 50959,
+      "Entries": [
+        "c3050_Aged Veteran General_Summoned State"
+      ]
+    },
+    {
+      "ID": 50960,
+      "Entries": [
+        "c3050_Aged Veteran General_Summoned_Death Mist_Medium (Full Body)"
+      ]
+    },
+    {
+      "ID": 50961,
+      "Entries": [
+        "c3050_Aged Veteran General_Summoned_Invisible on Death"
+      ]
+    },
+    {
+      "ID": 50962,
+      "Entries": [
+        "c3050_Aged Veteran General_Summoned_Complete Erasure"
+      ]
+    },
+    {
+      "ID": 50970,
+      "Entries": [
+        "c3010_Lost Kin_Knight_Parry SFX1"
+      ]
+    },
+    {
+      "ID": 50971,
+      "Entries": [
+        "c3010_Lost Kin_Knight_Parry SFX2"
+      ]
+    },
+    {
+      "ID": 50972,
+      "Entries": [
+        "c3010_Lost Kin_Knight_Berserk state SFX"
+      ]
+    },
+    {
+      "ID": 50973,
+      "Entries": [
+        "c3010_Lost Kin_Knight_Surcoat Sword & Shield_draw SFX"
+      ]
+    },
+    {
+      "ID": 50974,
+      "Entries": [
+        "c3010_Lost Kin_Knight_Surcoat Dual-wield_draw SFX1"
+      ]
+    },
+    {
+      "ID": 50975,
+      "Entries": [
+        "c3010_Lost Kin_Knight_Surcoat Dual-wield_draw SFX2"
+      ]
+    },
+    {
+      "ID": 50976,
+      "Entries": [
+        "c3010_Lost Kin_Knight_Surcoat Halberd_draw SFX"
+      ]
+    },
+    {
+      "ID": 50978,
+      "Entries": [
+        "c3010_Lost Kin_Knight_Red eye"
+      ]
+    },
+    {
+      "ID": 51000,
+      "Entries": [
+        "c3300_Direct Lineage of Marika PC Slime Transformation"
+      ]
+    },
+    {
+      "ID": 51001,
+      "Entries": [
+        "c3300_Direct Lineage of Marika Boss invisible body"
+      ]
+    },
+    {
+      "ID": 51002,
+      "Entries": [
+        "c3300_Direct Lineage of Marika Boss invisible weapon"
+      ]
+    },
+    {
+      "ID": 51010,
+      "Entries": [
+        "c4100_Gray Demi-Human_Basic: Berserk_Red Eyes"
+      ]
+    },
+    {
+      "ID": 51011,
+      "Entries": [
+        "c4100_Gray Demi-Human_Basic: Super Berserk_Purple Eyes"
+      ]
+    },
+    {
+      "ID": 51012,
+      "Entries": [
+        "c4100_Gray Demi-Human_Basic: Super Berserk_Buff Aura"
+      ]
+    },
+    {
+      "ID": 51020,
+      "Entries": [
+        "c4110_Gray Demi-Human_Small: Berserk_Red Eyes"
+      ]
+    },
+    {
+      "ID": 51021,
+      "Entries": [
+        "c4110_Gray Demi-Human_Small: Super Berserk_Purple Eyes"
+      ]
+    },
+    {
+      "ID": 51022,
+      "Entries": [
+        "c4110_Gray Demi-Human_Small: Super Berserk_Buff Aura"
+      ]
+    },
+    {
+      "ID": 51030,
+      "Entries": [
+        "c4130_Gray Demi-Human King: Super Berserk_Purple Eyes"
+      ]
+    },
+    {
+      "ID": 51031,
+      "Entries": [
+        "c4130_Gray Demi-Human King: Super Berserk_Buff Aura"
+      ]
+    },
+    {
+      "ID": 51040,
+      "Entries": [
+        "c4120_Gray Demi-Human_Berserker: Frenzy_Red Eyes"
+      ]
+    },
+    {
+      "ID": 51041,
+      "Entries": [
+        "c4120_Gray Demi-Human_Berserker: Super Frenzy_Purple Eyes"
+      ]
+    },
+    {
+      "ID": 51042,
+      "Entries": [
+        "c4120_Gray Demi-Human_Berserker: Super Frenzy_Buff Aura"
+      ]
+    },
+    {
+      "ID": 51050,
+      "Entries": [
+        "c3550_Demi-Human Blood Monk_Slow SFX"
+      ]
+    },
+    {
+      "ID": 51051,
+      "Entries": [
+        "c3550_Demi-Human Blood Monk_Enchant SFX"
+      ]
+    },
+    {
+      "ID": 51055,
+      "Entries": [
+        "c3550_Demi-Human Blood Monk_Blood Loss Rapture_Attack Power Up"
+      ]
+    },
+    {
+      "ID": 51100,
+      "Entries": [
+        "c3350_Crystal Tribe_Cracked Appearance"
+      ]
+    },
+    {
+      "ID": 51101,
+      "Entries": [
+        "c3350_Crystal Tribe_Cracked Effect"
+      ]
+    },
+    {
+      "ID": 51110,
+      "Entries": [
+        "c3350_Crystal Tribe_Shatter Expression"
+      ]
+    },
+    {
+      "ID": 51120,
+      "Entries": [
+        "c3350_Crystal Tribe_Blink Signal_Permanent"
+      ]
+    },
+    {
+      "ID": 51121,
+      "Entries": [
+        "c3350_Crystal Tribe_Blink Signal_Release"
+      ]
+    },
+    {
+      "ID": 51130,
+      "Entries": [
+        "c3350_Crystal Tribe_Appearance Elite Conversion"
+      ]
+    },
+    {
+      "ID": 51150,
+      "Entries": [
+        "c4220_Land Octopus_Self-Consume Recovery SFX"
+      ]
+    },
+    {
+      "ID": 51151,
+      "Entries": [
+        "c4220_Land Octopus_Drool"
+      ]
+    },
+    {
+      "ID": 51152,
+      "Entries": [
+        "c4220_Land Octopus_Severed Tentacle (Right)"
+      ]
+    },
+    {
+      "ID": 51153,
+      "Entries": [
+        "c4220_Land Octopus_Severed Tentacle (Left)"
+      ]
+    },
+    {
+      "ID": 51200,
+      "Entries": [
+        "c4310_Wandering Royal Army Torch SFX"
+      ]
+    },
+    {
+      "ID": 51201,
+      "Entries": [
+        "For Enchant Test"
+      ]
+    },
+    {
+      "ID": 51202,
+      "Entries": [
+        "Wandering Series: Spirit Form"
+      ]
+    },
+    {
+      "ID": 51203,
+      "Entries": [
+        "Wandering Series: Death Mist"
+      ]
+    },
+    {
+      "ID": 51204,
+      "Entries": [
+        "Wandering Series: Invisible on Death"
+      ]
+    },
+    {
+      "ID": 51205,
+      "Entries": [
+        "c4310_Wandering Royal Army Fire Enchant Activation (For Straight Sword)"
+      ]
+    },
+    {
+      "ID": 51206,
+      "Entries": [
+        "c4310_Wandering Royal Army Fire Enchant Activation (For Warhammer)"
+      ]
+    },
+    {
+      "ID": 51207,
+      "Entries": [
+        "c4310_Wandering Royal Army Fire Enchant Activation (For Greatsword)"
+      ]
+    },
+    {
+      "ID": 51208,
+      "Entries": [
+        "c4310_Wandering Royal Army Fire Enchant Activation (For Spear and Shield)"
+      ]
+    },
+    {
+      "ID": 51209,
+      "Entries": [
+        "c4310_Wandering Royal Army Fire Enchant Extinguish For"
+      ]
+    },
+    {
+      "ID": 51210,
+      "Entries": [
+        "Wandering Series: Mausoleum Guard Phantom Param"
+      ]
+    },
+    {
+      "ID": 51211,
+      "Entries": [
+        "c4310_Wandering Royal Army Chaos Blight_Eye Glow Constant Effect"
+      ]
+    },
+    {
+      "ID": 51212,
+      "Entries": [
+        "c4310_Wandering Royal Army Holy Enchant Activation（For Straight Sword）"
+      ]
+    },
+    {
+      "ID": 51213,
+      "Entries": [
+        "c4310_Wandering Royal Army Holy Enchant Activation（For Greatsword）"
+      ]
+    },
+    {
+      "ID": 51214,
+      "Entries": [
+        "c4311_Wandering Royal Army Concentrate Activation (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 51215,
+      "Entries": [
+        "c4312_Wandering Royal Army Concentrate Activation (Greatsword)"
+      ]
+    },
+    {
+      "ID": 51216,
+      "Entries": [
+        "c4312_Wandering Royal Army Concentrate Activation_On Attack"
+      ]
+    },
+    {
+      "ID": 51217,
+      "Entries": [
+        "c4310_Wandering Royal Army Concealment Judgment For"
+      ]
+    },
+    {
+      "ID": 51220,
+      "Entries": [
+        "c4140_Snake Snail：Summoned：spirit State"
+      ]
+    },
+    {
+      "ID": 51221,
+      "Entries": [
+        "c4140_Snake Snail：Summoned：Appearance Effect"
+      ]
+    },
+    {
+      "ID": 51222,
+      "Entries": [
+        "c4140_Snake Snail：Summoned：Invisible on Appearance"
+      ]
+    },
+    {
+      "ID": 51223,
+      "Entries": [
+        "c4140_Snake Snail：White Snake Snail Faint Glow While Hidden"
+      ]
+    },
+    {
+      "ID": 51230,
+      "Entries": [
+        "c4140_Snake Snail：White Snake Snail Invisible via Hiding"
+      ]
+    },
+    {
+      "ID": 51250,
+      "Entries": [
+        "c4240_Finger Worm_Paralysis (PC SFX)"
+      ]
+    },
+    {
+      "ID": 51300,
+      "Entries": [
+        "c3170_Wolf Rider_Enchanted State_Bow Center SFX"
+      ]
+    },
+    {
+      "ID": 51301,
+      "Entries": [
+        "c3170_Wolf Rider_Enchanted State_Bow Near-Center SFX"
+      ]
+    },
+    {
+      "ID": 51302,
+      "Entries": [
+        "c3170_Wolf Rider_Enchanted State_Bow Near-Tip SFX"
+      ]
+    },
+    {
+      "ID": 51303,
+      "Entries": [
+        "c3170_Wolf Rider_Enchanted State_Bow Tip SFX"
+      ]
+    },
+    {
+      "ID": 51350,
+      "Entries": [
+        "c4660_Guardian of the High Road_Persistent SFX (Heart)"
+      ]
+    },
+    {
+      "ID": 51351,
+      "Entries": [
+        "c4660_Guardian of the High Road_Breath SFX"
+      ]
+    },
+    {
+      "ID": 51352,
+      "Entries": [
+        "c4660_High Road Guardian_Fire ignites"
+      ]
+    },
+    {
+      "ID": 51353,
+      "Entries": [
+        "c4660_High Road Guardian_Fire out"
+      ]
+    },
+    {
+      "ID": 51354,
+      "Entries": [
+        "c4660_High Road Guardian_Fire going out"
+      ]
+    },
+    {
+      "ID": 51355,
+      "Entries": [
+        "c4660_Guardian of the High Road_Pole Weapon Ancient Enchant"
+      ]
+    },
+    {
+      "ID": 51356,
+      "Entries": [
+        "c4660_Guardian of the High Road_Bow Ancient Enchant"
+      ]
+    },
+    {
+      "ID": 51357,
+      "Entries": [
+        "c4660_Guardian of the High Road_Damaged Variant_Turn Off All Lights"
+      ]
+    },
+    {
+      "ID": 51400,
+      "Entries": [
+        "c3600_Light/Dark Walker_Enhancement Visual_Pattern"
+      ]
+    },
+    {
+      "ID": 51401,
+      "Entries": [
+        "c3600_Light/Dark Walker_Enhancement Visual_Weapon Glow"
+      ]
+    },
+    {
+      "ID": 51402,
+      "Entries": [
+        "c3600_Light/Dark Walker_Enhancement Visual_Pattern"
+      ]
+    },
+    {
+      "ID": 51403,
+      "Entries": [
+        "c3600_Light/Dark Walker_Enhancement Visual_Weapon Glow"
+      ]
+    },
+    {
+      "ID": 51450,
+      "Entries": [
+        "c4710_Ghost King_Human Mode Weapon Idle SFX"
+      ]
+    },
+    {
+      "ID": 51451,
+      "Entries": [
+        "c4710_Ghost King_Serpent Mode Face Hidden"
+      ]
+    },
+    {
+      "ID": 51452,
+      "Entries": [
+        "c4710_Ghost King_Human Mode Face Display"
+      ]
+    },
+    {
+      "ID": 51500,
+      "Entries": [
+        "c3360_Ancestral Follower_Possession SFX_Hidden"
+      ]
+    },
+    {
+      "ID": 51501,
+      "Entries": [
+        "c3360_Ancestral Follower_Possession SFX_Glow"
+      ]
+    },
+    {
+      "ID": 51502,
+      "Entries": [
+        "c3360_Ancestral Follower_Recovery SFX"
+      ]
+    },
+    {
+      "ID": 51503,
+      "Entries": [
+        "c3360_Ancestral Follower_Debuff SFX"
+      ]
+    },
+    {
+      "ID": 51504,
+      "Entries": [
+        "c3360_Ancestral Follower_Drain Status Persistent SFX"
+      ]
+    },
+    {
+      "ID": 51505,
+      "Entries": [
+        "c3360_Ancestral Follower_Drain SFX"
+      ]
+    },
+    {
+      "ID": 51506,
+      "Entries": [
+        "c3360_Ancestral Follower (Male)_Drain SFX on Kill"
+      ]
+    },
+    {
+      "ID": 51507,
+      "Entries": [
+        "c3370_Ancestral Follower (Female)_On-Defeat Drain SFX"
+      ]
+    },
+    {
+      "ID": 51508,
+      "Entries": [
+        "c3360_Ancestral Follower (Male)_Phantom Transform"
+      ]
+    },
+    {
+      "ID": 51509,
+      "Entries": [
+        "c3360_Ancestral Follower (Male) Spirit_Vanishes on Death"
+      ]
+    },
+    {
+      "ID": 51550,
+      "Entries": [
+        "c4260_Watchdog Golem Tail Light Off"
+      ]
+    },
+    {
+      "ID": 51551,
+      "Entries": [
+        "c4260_Watchdog Golem Tail Glow_Fire ver"
+      ]
+    },
+    {
+      "ID": 51552,
+      "Entries": [
+        "c4260_Watchdog Golem Tail Glow_Lightning ver"
+      ]
+    },
+    {
+      "ID": 51553,
+      "Entries": [
+        "c4260_Watchdog Golem Tail Glow_Ice ver"
+      ]
+    },
+    {
+      "ID": 51600,
+      "Entries": [
+        "c3500_Buried Skeleton_Revival Thread Effect"
+      ]
+    },
+    {
+      "ID": 51601,
+      "Entries": [
+        "c3500_Buried Skeleton_Core Effect During Supine Revival"
+      ]
+    },
+    {
+      "ID": 51602,
+      "Entries": [
+        "c3500_Buried Skeleton_Core Effect During Prone Revival"
+      ]
+    },
+    {
+      "ID": 51603,
+      "Entries": [
+        "c3500_Buried Skeleton_Night King Followers Buff (Spear)"
+      ]
+    },
+    {
+      "ID": 51604,
+      "Entries": [
+        "c3500_Buried Skeleton_Night King Followers Buff (Crossbow)"
+      ]
+    },
+    {
+      "ID": 51605,
+      "Entries": [
+        "c3500_Buried Skeleton_Night King Followers Buff (Scythe)"
+      ]
+    },
+    {
+      "ID": 51606,
+      "Entries": [
+        "c3500_Buried Skeleton_Night King Followers Buff (Sword)"
+      ]
+    },
+    {
+      "ID": 51607,
+      "Entries": [
+        "c3500_Buried Skeleton_Night King Followers Buff (Right Dual Blade)"
+      ]
+    },
+    {
+      "ID": 51608,
+      "Entries": [
+        "c3500_Buried Skeleton_Night King Followers Buff (Left Dual Blade)"
+      ]
+    },
+    {
+      "ID": 51609,
+      "Entries": [
+        "c3500_Buried Skeleton_Night King Followers Summon Visibility Boost"
+      ]
+    },
+    {
+      "ID": 51650,
+      "Entries": [
+        "c4310_Wandering Royal Army Torch SFX"
+      ]
+    },
+    {
+      "ID": 51700,
+      "Entries": [
+        "c3150_Rune Hunting Knight"
+      ]
+    },
+    {
+      "ID": 51710,
+      "Entries": [
+        "c3150_Rune Hunting Knight_Morning Stealth"
+      ]
+    },
+    {
+      "ID": 51720,
+      "Entries": [
+        "c3150_Rune-hunting Knight Horse_VFX Playback Category Body + Effect Priority 1"
+      ]
+    },
+    {
+      "ID": 51721,
+      "Entries": [
+        "c3150_Rune-hunting Knight Horse_VFX Playback Category Body - Effect Priority 1"
+      ]
+    },
+    {
+      "ID": 51750,
+      "Entries": [
+        "c3251_Tree Sentinel (Leader): Torch SFX"
+      ]
+    },
+    {
+      "ID": 51751,
+      "Entries": [
+        "c3251_Tree Sentinel (Leader): Magic shield SFX"
+      ]
+    },
+    {
+      "ID": 51752,
+      "Entries": [
+        "c3251_Tree Sentinel (Leader): Sacred Ground_self_active effect VFX"
+      ]
+    },
+    {
+      "ID": 51753,
+      "Entries": [
+        "c3251_Tree Sentinel (Leader): Sacred Ground_ally_active effect VFX"
+      ]
+    },
+    {
+      "ID": 51760,
+      "Entries": [
+        "c3250_Tree Sentinel (Variant)_lightning charge SFX"
+      ]
+    },
+    {
+      "ID": 51761,
+      "Entries": [
+        "c3250_Tree Sentinel (Variant)_magic shield SFX"
+      ]
+    },
+    {
+      "ID": 51770,
+      "Entries": [
+        "c3252_Tree Sentinel (Sorcerer): HU_additional chant SFX_ON"
+      ]
+    },
+    {
+      "ID": 51771,
+      "Entries": [
+        "c3252_Tree Sentinel (Sorcerer): Spirit Representation_ON"
+      ]
+    },
+    {
+      "ID": 51772,
+      "Entries": [
+        "c3252_Tree Sentinel (Sorcerer): On Warp_Hide Appearance_ON"
+      ]
+    },
+    {
+      "ID": 51800,
+      "Entries": [
+        "c3800_Putrid Knights_MagicShieldSFX"
+      ]
+    },
+    {
+      "ID": 51801,
+      "Entries": [
+        "c3800_Putrid Knights_MagicShield_ReservedStateSFX"
+      ]
+    },
+    {
+      "ID": 51802,
+      "Entries": [
+        "c3800_Putrid Knights_GenericDefenseUpSFX"
+      ]
+    },
+    {
+      "ID": 51850,
+      "Entries": [
+        "c4670_Ancestor Spirit_Antler upgraded state hide"
+      ]
+    },
+    {
+      "ID": 51851,
+      "Entries": [
+        "c4670_Ancestor Spirit_Antler upgraded state display"
+      ]
+    },
+    {
+      "ID": 51852,
+      "Entries": [
+        "c4670_Ancestor Spirit_Life drain state"
+      ]
+    },
+    {
+      "ID": 51853,
+      "Entries": [
+        "c4670_Ancestor Spirit_Wild animal phantomization"
+      ]
+    },
+    {
+      "ID": 51900,
+      "Entries": [
+        "c4720_Godfrey the Beast-clad：Resonance Presentation_ON"
+      ]
+    },
+    {
+      "ID": 51901,
+      "Entries": [
+        "c4720_Godfrey the Beast-clad: Spirit Form Display_ON"
+      ]
+    },
+    {
+      "ID": 51950,
+      "Entries": [
+        "c4370_Wandering Royal Army (Foot Soldier) Torch SFX"
+      ]
+    },
+    {
+      "ID": 51951,
+      "Entries": [
+        "c4376_Wandering Royal Army (Foot Soldier) Miquella Faction_Elixir Constant Effect"
+      ]
+    },
+    {
+      "ID": 51952,
+      "Entries": [
+        "c4376_Wandering Royal Army (Foot Soldier) Chaos Disease_Eye Glow Constant Effect"
+      ]
+    },
+    {
+      "ID": 51953,
+      "Entries": [
+        "c4375_Wandering Royal Army (Foot Soldier)_Mausoleum Guard Phantom Parameter"
+      ]
+    },
+    {
+      "ID": 51954,
+      "Entries": [
+        "c4370_Wandering Royal Army (Foot Soldier) Torch SFX_OFF"
+      ]
+    },
+    {
+      "ID": 52000,
+      "Entries": [
+        "c3910_Giant's Flame Fat Monk: Surcoat_Head Dish Flame"
+      ]
+    },
+    {
+      "ID": 52001,
+      "Entries": [
+        "c3910_Giant's Flame Fat Monk: Surcoat_Eruption State"
+      ]
+    },
+    {
+      "ID": 52050,
+      "Entries": [
+        "c3650_Worm-eaten Tribe_Pollen spread"
+      ]
+    },
+    {
+      "ID": 52051,
+      "Entries": [
+        "c3650_Worm-eaten Tribe_Poison spread"
+      ]
+    },
+    {
+      "ID": 52052,
+      "Entries": [
+        "c3650_Worm-eaten Tribe_Flower Grandpa_Buff"
+      ]
+    },
+    {
+      "ID": 52053,
+      "Entries": [
+        "c3650_Worm-eaten Tribe_Awakening_Flower"
+      ]
+    },
+    {
+      "ID": 52054,
+      "Entries": [
+        "c3650_Worm-eaten Tribe_Awakening_Weapon *Unused"
+      ]
+    },
+    {
+      "ID": 52100,
+      "Entries": [
+        "c4190_Scarab (Common): Growth Start_Omen"
+      ]
+    },
+    {
+      "ID": 52101,
+      "Entries": [
+        "c4190_Scarab (Common): Growth Complete_Glow"
+      ]
+    },
+    {
+      "ID": 52102,
+      "Entries": [
+        "c4190_Scarab (Common): Growth Complete_Afterglow"
+      ]
+    },
+    {
+      "ID": 52103,
+      "Entries": [
+        "c4190_Scarab (Common): Stealth ON"
+      ]
+    },
+    {
+      "ID": 52104,
+      "Entries": [
+        "c4190_Scarab (Common): Metal Individual_ON"
+      ]
+    },
+    {
+      "ID": 52105,
+      "Entries": [
+        "c4190_Scarab (Colossal): Explosion Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52106,
+      "Entries": [
+        "c4191_Scarab (Small): Explosion Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52107,
+      "Entries": [
+        "c4192_Scarab (Colossal): Explosion Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52113,
+      "Entries": [
+        "c4190_Scarab (Colossal): Estus Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52114,
+      "Entries": [
+        "c4191_Scarab (Small): Estus Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52115,
+      "Entries": [
+        "c4192_Scarab (Colossal): Estus Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52116,
+      "Entries": [
+        "c4190_Scarab (Colossal): Ore Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52117,
+      "Entries": [
+        "c4191_Scarab (Small): Ore Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52118,
+      "Entries": [
+        "c4192_Scarab (Colossal): Ore Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52119,
+      "Entries": [
+        "c4190_Scarab (Colossal): Sorcery Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52120,
+      "Entries": [
+        "c4191_Scarab (Small): Sorcery Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52121,
+      "Entries": [
+        "c4192_Scarab (Colossal): Sorcery Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52122,
+      "Entries": [
+        "c4190_Scarab (Colossal): Faith Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52123,
+      "Entries": [
+        "c4191_Scarab (Small): Faith Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52124,
+      "Entries": [
+        "c4192_Scarab (Colossal): Faith Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52125,
+      "Entries": [
+        "c4190_Scarab (Colossal): Skill Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52126,
+      "Entries": [
+        "c4191_Scarab (Small): Skill Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52127,
+      "Entries": [
+        "c4192_Scarab (Colossal): Skill Type_Sphere SFX"
+      ]
+    },
+    {
+      "ID": 52150,
+      "Entries": [
+        "c4180_Spirit Jellyfish_Red Glow"
+      ]
+    },
+    {
+      "ID": 52151,
+      "Entries": [
+        "c4180_Spirit Jellyfish_Blue Glow"
+      ]
+    },
+    {
+      "ID": 52152,
+      "Entries": [
+        "c4180_Spirit Jellyfish_Tentacle Color Change"
+      ]
+    },
+    {
+      "ID": 52153,
+      "Entries": [
+        "c4180_Spirit Jellyfish_Red Glow_Weak"
+      ]
+    },
+    {
+      "ID": 52154,
+      "Entries": [
+        "c4180_Spirit Jellyfish_Tentacle Color Change Release"
+      ]
+    },
+    {
+      "ID": 52155,
+      "Entries": [
+        "c4180_Spirit Jellyfish_Purple Glow"
+      ]
+    },
+    {
+      "ID": 52200,
+      "Entries": [
+        "c4730_Radahn (Scrawny Horse): Rock Funnel_A"
+      ]
+    },
+    {
+      "ID": 52201,
+      "Entries": [
+        "c4730_Radahn (Scrawny Horse): Rock Funnel_B"
+      ]
+    },
+    {
+      "ID": 52202,
+      "Entries": [
+        "c4730_Radahn (Scrawny Horse): Rock Funnel_C"
+      ]
+    },
+    {
+      "ID": 52203,
+      "Entries": [
+        "c4730_Radahn (Scrawny Horse): Rock Funnel_D"
+      ]
+    },
+    {
+      "ID": 52204,
+      "Entries": [
+        "c4730_Radahn (Scrawny Horse): Right Leg_Gravity"
+      ]
+    },
+    {
+      "ID": 52205,
+      "Entries": [
+        "c4730_Radahn (Scrawny Horse): Left Foot_Gravity"
+      ]
+    },
+    {
+      "ID": 52206,
+      "Entries": [
+        "c4730_Radahn (Scrawny Horse): HU2_Body Electrified"
+      ]
+    },
+    {
+      "ID": 52207,
+      "Entries": [
+        "c4730_Radahn (Scrawny Horse)：Radahn Festival NPC brief hide appearance on death"
+      ]
+    },
+    {
+      "ID": 52230,
+      "Entries": [
+        "c3400_Gladiator_War Cry Buff"
+      ]
+    },
+    {
+      "ID": 52231,
+      "Entries": [
+        "c3400_Gladiator_Rot Enchant (Greataxe)"
+      ]
+    },
+    {
+      "ID": 52232,
+      "Entries": [
+        "c3400_Gladiator_Rot Enchant (Twin Hammers_Right)"
+      ]
+    },
+    {
+      "ID": 52233,
+      "Entries": [
+        "c3400_Gladiator_Rot Enchant (Twin Hammers_Left)"
+      ]
+    },
+    {
+      "ID": 52250,
+      "Entries": [
+        "c2100_Black Knife Descendant_Vanish"
+      ]
+    },
+    {
+      "ID": 52251,
+      "Entries": [
+        "c2100_Black Knife Descendant_Vanish Release"
+      ]
+    },
+    {
+      "ID": 52252,
+      "Entries": [
+        "c2100_Black Knife Descendant_Vanish_Distance Specified"
+      ]
+    },
+    {
+      "ID": 52300,
+      "Entries": [
+        "c4460_Large Weapon Gunman_Oil-Soaked State"
+      ]
+    },
+    {
+      "ID": 52301,
+      "Entries": [
+        "c4460_Large Weapon Gunman_Oil-Soaked State_Oil Spurt Effect"
+      ]
+    },
+    {
+      "ID": 52302,
+      "Entries": [
+        "c4460_Large Weapon Gunman_Suppress Pipe and Mouth Glow"
+      ]
+    },
+    {
+      "ID": 52303,
+      "Entries": [
+        "c4460_Large Weapon Gunman_Head Exhaust SFX"
+      ]
+    },
+    {
+      "ID": 52304,
+      "Entries": [
+        "c4460_Large Weapon Gunman_Ear and Mouth Heat Haze SFX"
+      ]
+    },
+    {
+      "ID": 52350,
+      "Entries": [
+        "c2040_Rennala's Children_Singing"
+      ]
+    },
+    {
+      "ID": 52351,
+      "Entries": [
+        "c2030_Rennala of the Full Moon_barrier state_intact"
+      ]
+    },
+    {
+      "ID": 52352,
+      "Entries": [
+        "c2040_Rennala's Children_Candle Ignition"
+      ]
+    },
+    {
+      "ID": 52353,
+      "Entries": [
+        "c2040_Rennala's Children_Candle Ignition 2"
+      ]
+    },
+    {
+      "ID": 52354,
+      "Entries": [
+        "c2030_Rennala of the Full Moon_barrier state"
+      ]
+    },
+    {
+      "ID": 52355,
+      "Entries": [
+        "c2030_Rennala of the Full Moon_barrier state_cracked"
+      ]
+    },
+    {
+      "ID": 52356,
+      "Entries": [
+        "c2030_Rennala of the Full Moon_barrier state_about to break"
+      ]
+    },
+    {
+      "ID": 52357,
+      "Entries": [
+        "c2030_Rennala of the Full Moon_summoner"
+      ]
+    },
+    {
+      "ID": 52358,
+      "Entries": [
+        "c2030_Rennala of the Full Moon_barrier state_half-destroyed"
+      ]
+    },
+    {
+      "ID": 52359,
+      "Entries": [
+        "c2030_Rennala of the Full Moon_barrier generating"
+      ]
+    },
+    {
+      "ID": 52390,
+      "Entries": [
+        "c3850_Balloon Puppet Soldier_Magic Supply"
+      ]
+    },
+    {
+      "ID": 52391,
+      "Entries": [
+        "c3850_Balloon Puppet Soldier_Magic Rampage"
+      ]
+    },
+    {
+      "ID": 52392,
+      "Entries": [
+        "c3850_Balloon Puppet Soldier_Fire Pot"
+      ]
+    },
+    {
+      "ID": 52393,
+      "Entries": [
+        "c3850_Balloon Puppet Soldier_Magic Pot"
+      ]
+    },
+    {
+      "ID": 52400,
+      "Entries": [
+        "c2010_WolfHeadWarrior_HU Red Eye"
+      ]
+    },
+    {
+      "ID": 52401,
+      "Entries": [
+        "c2010_WolfHeadWarrior_Recovery Effect SFX"
+      ]
+    },
+    {
+      "ID": 52402,
+      "Entries": [
+        "c2010_WolfHeadWarrior_Shadow Phantom"
+      ]
+    },
+    {
+      "ID": 52403,
+      "Entries": [
+        "c2010_WolfHeadWarrior_Death Sword Enchant"
+      ]
+    },
+    {
+      "ID": 52420,
+      "Entries": [
+        "c3860_Flying Puppet Soldier_Fire Pot"
+      ]
+    },
+    {
+      "ID": 52421,
+      "Entries": [
+        "c3860_Flying Puppet Soldier_Lightning Pot"
+      ]
+    },
+    {
+      "ID": 52450,
+      "Entries": [
+        "c3700_Perfumer Sorcerer_Enhancement Powder Effect"
+      ]
+    },
+    {
+      "ID": 52451,
+      "Entries": [
+        "c3700_Perfumer Sorcerer_Enhancement Powder Effect_SE Part"
+      ]
+    },
+    {
+      "ID": 52452,
+      "Entries": [
+        "c3700_Perfumer Sorcerer_Doping"
+      ]
+    },
+    {
+      "ID": 52453,
+      "Entries": [
+        "c3700_Perfumer Sorcerer_Throw Explosion Presentation"
+      ]
+    },
+    {
+      "ID": 52454,
+      "Entries": [
+        "c3700_Perfumer Sorcerer_Buddy Paralysis Powder_Attach"
+      ]
+    },
+    {
+      "ID": 52455,
+      "Entries": [
+        "c3700_Perfumer Sorcerer_Buddy Paralysis Powder_Explosion"
+      ]
+    },
+    {
+      "ID": 52456,
+      "Entries": [
+        "c3700_Perfumer Sorcerer_Barrier Powder Effect"
+      ]
+    },
+    {
+      "ID": 52500,
+      "Entries": [
+        "c2500_Godfrey Sixteen Knights_Tail Skill Use Check"
+      ]
+    },
+    {
+      "ID": 52501,
+      "Entries": [
+        "c2500_Godfrey Sixteen Knights_Throat Sac Skill Use Check"
+      ]
+    },
+    {
+      "ID": 52502,
+      "Entries": [
+        "c2500_Godfrey Sixteen Knights_Wing Skill Use Check"
+      ]
+    },
+    {
+      "ID": 52503,
+      "Entries": [
+        "c2500_Godfrey Sixteen Knights_Arm Horn Skill Use Check"
+      ]
+    },
+    {
+      "ID": 52504,
+      "Entries": [
+        "c2500_Godfrey Sixteen Knights_Shoulder Horn Skill Use Check"
+      ]
+    },
+    {
+      "ID": 52510,
+      "Entries": [
+        "c4090_Feral Rat (Large): Chaos Variant_Yellow Eyes"
+      ]
+    },
+    {
+      "ID": 52520,
+      "Entries": [
+        "c4080_Feral Rat: Chaos Variant_Yellow Eyes"
+      ]
+    },
+    {
+      "ID": 52530,
+      "Entries": [
+        "c0120_CatapultDummy: Eye Omen Effect"
+      ]
+    },
+    {
+      "ID": 52531,
+      "Entries": [
+        "c0120_CatapultDummy: Eye Damage Effect"
+      ]
+    },
+    {
+      "ID": 52550,
+      "Entries": [
+        "c3660_Rune Citizen_Torch SFX"
+      ]
+    },
+    {
+      "ID": 52551,
+      "Entries": [
+        "c3660_Rune Citizen_Necromancer torch SFX"
+      ]
+    },
+    {
+      "ID": 52552,
+      "Entries": [
+        "c3660_Rune Citizen_Skeleton enhancement buff SFX"
+      ]
+    },
+    {
+      "ID": 52553,
+      "Entries": [
+        "c3660_Rune Citizen: Chaos Individual_Yellow Eyes"
+      ]
+    },
+    {
+      "ID": 52600,
+      "Entries": [
+        "c3252_Tree Sentinel (Sorcerer)_Magic shield SFX"
+      ]
+    },
+    {
+      "ID": 52650,
+      "Entries": [
+        "c4480_Rune-eating Flower (Parent) Ignition"
+      ]
+    },
+    {
+      "ID": 52651,
+      "Entries": [
+        "c4480_Rune-eating Flower (Offshoot) Ignition"
+      ]
+    },
+    {
+      "ID": 52670,
+      "Entries": [
+        "c4310_Wandering Lowly Soldier Holy Enchant Naginata"
+      ]
+    },
+    {
+      "ID": 52671,
+      "Entries": [
+        "c4310_Wandering Lowly Soldier Holy Enchant Sickle"
+      ]
+    },
+    {
+      "ID": 52672,
+      "Entries": [
+        "c4310_Wandering Lowly Soldier Holy Enchant Kusarigama"
+      ]
+    },
+    {
+      "ID": 52700,
+      "Entries": [
+        "c4750：Grafted King_Storm Permanent"
+      ]
+    },
+    {
+      "ID": 52701,
+      "Entries": [
+        "c4750：Grafted King_Fire Storm Permanent"
+      ]
+    },
+    {
+      "ID": 52702,
+      "Entries": [
+        "c4750：Grafted King_Fire Enchant"
+      ]
+    },
+    {
+      "ID": 52703,
+      "Entries": [
+        "c4750：Grafted King_Fire Enchant"
+      ]
+    },
+    {
+      "ID": 52750,
+      "Entries": [
+        "c4430_Living Stone: Eyeball_Glow"
+      ]
+    },
+    {
+      "ID": 52800,
+      "Entries": [
+        "c2110_Maliketh the Black Blade_Moonlight Enchant"
+      ]
+    },
+    {
+      "ID": 52801,
+      "Entries": [
+        "c2110_Maliketh the Black Blade_Moonlight Enchant Release"
+      ]
+    },
+    {
+      "ID": 52810,
+      "Entries": [
+        "c3181_Runewolf_Wolf Buff"
+      ]
+    },
+    {
+      "ID": 52850,
+      "Entries": [
+        "c4510_Guardian Lineage_Electric Charge SFX_Body1"
+      ]
+    },
+    {
+      "ID": 52851,
+      "Entries": [
+        "c4510_Guardian Lineage_Electric Charge SFX_Body2"
+      ]
+    },
+    {
+      "ID": 52852,
+      "Entries": [
+        "c4510_Guardian Lineage_Electric Charge SFX_Body3"
+      ]
+    },
+    {
+      "ID": 52853,
+      "Entries": [
+        "c4510_Guardian Lineage_Electric Charge SFX_Head"
+      ]
+    },
+    {
+      "ID": 52860,
+      "Entries": [
+        "c4510_Guardian Lineage_Horn Glow"
+      ]
+    },
+    {
+      "ID": 52870,
+      "Entries": [
+        "c4510_Guardian Lineage_Weak Point Check"
+      ]
+    },
+    {
+      "ID": 52880,
+      "Entries": [
+        "c4510_Guardian Lineage_Super Charge SFX_Lightning"
+      ]
+    },
+    {
+      "ID": 52881,
+      "Entries": [
+        "c4510_Guardian Lineage_Super Charge SFX_Wind Pressure"
+      ]
+    },
+    {
+      "ID": 52882,
+      "Entries": [
+        "c4510_Guardian Lineage_Auto Nito Sword"
+      ]
+    },
+    {
+      "ID": 52900,
+      "Entries": [
+        "c4550_Feral Tyrannosaur_Red Eyes"
+      ]
+    },
+    {
+      "ID": 52901,
+      "Entries": [
+        "c4550_Feral Tyrannosaur Appearance Adjustment_Dull"
+      ]
+    },
+    {
+      "ID": 52950,
+      "Entries": [
+        "c4760_Giant_CurseUnlock_RightHandCurseEffect_Back"
+      ]
+    },
+    {
+      "ID": 52951,
+      "Entries": [
+        "c4760_Giant_CurseUnlock_RightHandCurseEffect_Finger"
+      ]
+    },
+    {
+      "ID": 52952,
+      "Entries": [
+        "c4760_Giant_CurseUnlock_RightHandCurseEffect_Thumb"
+      ]
+    },
+    {
+      "ID": 52960,
+      "Entries": [
+        "c4760_Giant_CurseUnlock_LeftHandCurseEffect_Back"
+      ]
+    },
+    {
+      "ID": 52961,
+      "Entries": [
+        "c4760_Giant_CurseUnlock_LeftHandCurseEffect_Finger"
+      ]
+    },
+    {
+      "ID": 52962,
+      "Entries": [
+        "c4760_Giant_CurseUnlock_LeftHandCurseEffect_Thumb"
+      ]
+    },
+    {
+      "ID": 52970,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Inner_Stage1"
+      ]
+    },
+    {
+      "ID": 52971,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Inner_Stage2"
+      ]
+    },
+    {
+      "ID": 52972,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Inner_Stage3"
+      ]
+    },
+    {
+      "ID": 52973,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Inner_Stage4"
+      ]
+    },
+    {
+      "ID": 52974,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Inner_Stage5"
+      ]
+    },
+    {
+      "ID": 52975,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Inner_Stage6"
+      ]
+    },
+    {
+      "ID": 52976,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Inner_Stage7"
+      ]
+    },
+    {
+      "ID": 52977,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Inner_Stage8"
+      ]
+    },
+    {
+      "ID": 52978,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Inner_Stage9"
+      ]
+    },
+    {
+      "ID": 52980,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Outer_Stage1"
+      ]
+    },
+    {
+      "ID": 52981,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Outer_Stage2"
+      ]
+    },
+    {
+      "ID": 52982,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Outer_Stage3"
+      ]
+    },
+    {
+      "ID": 52983,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Outer_Stage4"
+      ]
+    },
+    {
+      "ID": 52984,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Outer_Stage5"
+      ]
+    },
+    {
+      "ID": 52985,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Outer_Stage6"
+      ]
+    },
+    {
+      "ID": 52986,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Outer_Stage7"
+      ]
+    },
+    {
+      "ID": 52987,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Outer_Stage8"
+      ]
+    },
+    {
+      "ID": 52988,
+      "Entries": [
+        "c4760_Giant_WeakPointVisual_Outer_Stage9"
+      ]
+    },
+    {
+      "ID": 53000,
+      "Entries": [
+        "c8000_Player Horse_phantom representation"
+      ]
+    },
+    {
+      "ID": 53099,
+      "Entries": [
+        "Frame Reservation"
+      ]
+    },
+    {
+      "ID": 53100,
+      "Entries": [
+        "c4381_Ruin Sentinel (Fire Monk): Staff_Strong Flame"
+      ]
+    },
+    {
+      "ID": 53101,
+      "Entries": [
+        "c4381_Ruin Sentinel (Fire Monk): Red Eyes"
+      ]
+    },
+    {
+      "ID": 53102,
+      "Entries": [
+        "c4381_Ruin Sentinel (Fire Monk): Staff_Weak Flame"
+      ]
+    },
+    {
+      "ID": 53105,
+      "Entries": [
+        "c4385_Apostle of Destruction (Poison Rot Devotee): Poison Joy_Attack Power Up"
+      ]
+    },
+    {
+      "ID": 53150,
+      "Entries": [
+        "c4380_Ruin Sentinel (Meteor Summoner): Rock Enchant_Rock Attach"
+      ]
+    },
+    {
+      "ID": 53151,
+      "Entries": [
+        "c4380_Ruin Sentinel (Meteor Summoner): Rock Enchant_Rock Shatter"
+      ]
+    },
+    {
+      "ID": 53200,
+      "Entries": [
+        "c3320_Marika Slime_Throw Performance Spike Appearance"
+      ]
+    },
+    {
+      "ID": 53201,
+      "Entries": [
+        "c3320_Marika Slime_Electrified Appearance"
+      ]
+    },
+    {
+      "ID": 53202,
+      "Entries": [
+        "c3320_Marika Slime_Mercury Wet on Mimic"
+      ]
+    },
+    {
+      "ID": 53210,
+      "Entries": [
+        "Costume Change NPC_Shader for Invader"
+      ]
+    },
+    {
+      "ID": 53211,
+      "Entries": [
+        "Costume Change NPC_Fake Light Source"
+      ]
+    },
+    {
+      "ID": 53212,
+      "Entries": [
+        "Costume Change NPC_Shader for White Phantom"
+      ]
+    },
+    {
+      "ID": 53213,
+      "Entries": [
+        "Conversation NPC_Talking Corpse Spirit Shader"
+      ]
+    },
+    {
+      "ID": 53214,
+      "Entries": [
+        "Conversation NPC_Talking Corpse Mushroom Pile (temp)"
+      ]
+    },
+    {
+      "ID": 53215,
+      "Entries": [
+        "Conversation NPC_Blood Text Phantom"
+      ]
+    },
+    {
+      "ID": 53216,
+      "Entries": [
+        "Costume Change NPC_Generic Ghost Appearance Shader"
+      ]
+    },
+    {
+      "ID": 53217,
+      "Entries": [
+        "Costume Change NPC_Generic Appearance Hide"
+      ]
+    },
+    {
+      "ID": 53218,
+      "Entries": [
+        "Costume Change NPC_Fake Light Source for Volcano Manor Lady Lord"
+      ]
+    },
+    {
+      "ID": 53219,
+      "Entries": [
+        "Costume Change NPC_Shader for Ranni Faction Phantom"
+      ]
+    },
+    {
+      "ID": 53220,
+      "Entries": [
+        "Costume Change NPC_Shader for Wandering Phantom"
+      ]
+    },
+    {
+      "ID": 53221,
+      "Entries": [
+        "Costume Change NPC_Shader for Blood Pool Phantom"
+      ]
+    },
+    {
+      "ID": 53222,
+      "Entries": [
+        "Conversation NPC_Ranni Exclusive Fake Light Source"
+      ]
+    },
+    {
+      "ID": 53230,
+      "Entries": [
+        "c2190_Crumbling Marika_Funnel appearance 1"
+      ]
+    },
+    {
+      "ID": 53231,
+      "Entries": [
+        "c2190_Crumbling Marika_Funnel Appearance 2"
+      ]
+    },
+    {
+      "ID": 53232,
+      "Entries": [
+        "c2190_Crumbling Marika_Funnel Appearance 3"
+      ]
+    },
+    {
+      "ID": 53233,
+      "Entries": [
+        "c2190_Crumbling Marika_Funnel Appearance 4"
+      ]
+    },
+    {
+      "ID": 53234,
+      "Entries": [
+        "c2190_Crumbling Marika_Funnel Appearance 5"
+      ]
+    },
+    {
+      "ID": 53235,
+      "Entries": [
+        "c2190_Crumbling Marika_Funnel Appearance 6"
+      ]
+    },
+    {
+      "ID": 53236,
+      "Entries": [
+        "c2190_Crumbling Marika_Funnel Appearance 7"
+      ]
+    },
+    {
+      "ID": 53237,
+      "Entries": [
+        "c2190_Crumbling Marika_Funnel Appearance 8"
+      ]
+    },
+    {
+      "ID": 53250,
+      "Entries": [
+        "c2200_Crumbling Marika (Post-HU)_Throw Presentation Test 1"
+      ]
+    },
+    {
+      "ID": 53251,
+      "Entries": [
+        "c2200_Crumbling Marika (Post-HU)_Throw Presentation Test 2"
+      ]
+    },
+    {
+      "ID": 53252,
+      "Entries": [
+        "c2200_Crumbling Marika (Post-HU)_Throw Presentation Test 3"
+      ]
+    },
+    {
+      "ID": 53300,
+      "Entries": [
+        "c6072_Messenger Pigeon: Letter Glow SFX"
+      ]
+    },
+    {
+      "ID": 53301,
+      "Entries": [
+        "c6072_Messenger Pigeon_Graveyard Crow (Gypsy Messenger Pigeon): Letter Glow SFX"
+      ]
+    },
+    {
+      "ID": 53400,
+      "Entries": [
+        "c2120_Arbitrating Malenia Heat-Up Feather"
+      ]
+    },
+    {
+      "ID": 53401,
+      "Entries": [
+        "c2120_Arbitrating Malenia Heat-Up Feather"
+      ]
+    },
+    {
+      "ID": 53402,
+      "Entries": [
+        "c2120_Arbitrating Malenia Heat-Up Feather"
+      ]
+    },
+    {
+      "ID": 53403,
+      "Entries": [
+        "c2120_Arbitrating Malenia Heat-Up Feather"
+      ]
+    },
+    {
+      "ID": 53404,
+      "Entries": [
+        "c2120_Arbitrating Malenia Heat-Up Feather"
+      ]
+    },
+    {
+      "ID": 53405,
+      "Entries": [
+        "c2120_Arbitrating Malenia Heat-Up Feather"
+      ]
+    },
+    {
+      "ID": 53410,
+      "Entries": [
+        "c2120_Arbitrating Malenia Illusion Appearance"
+      ]
+    },
+    {
+      "ID": 53420,
+      "Entries": [
+        "c2120_Arbitrating Malenia Concealment"
+      ]
+    },
+    {
+      "ID": 53430,
+      "Entries": [
+        "c2120_Arbitrating Malenia On-Attack HP Drain (Small)"
+      ]
+    },
+    {
+      "ID": 53431,
+      "Entries": [
+        "c2120_Arbitrating Malenia On-Attack HP Drain (Medium)"
+      ]
+    },
+    {
+      "ID": 53432,
+      "Entries": [
+        "c2120_Arbitrating Malenia On-Attack HP Drain (Large)"
+      ]
+    },
+    {
+      "ID": 53433,
+      "Entries": [
+        "c2120_Arbitrating Malenia On-Attack HP Drain (Extra Large)"
+      ]
+    },
+    {
+      "ID": 53434,
+      "Entries": [
+        "c2120_Arbitrating Malenia On-Attack HP Drain (Massive)"
+      ]
+    },
+    {
+      "ID": 53450,
+      "Entries": [
+        "c7100_Spirit Ash summon Unique：Frenzied State_Curved Sword Frost"
+      ]
+    },
+    {
+      "ID": 53451,
+      "Entries": [
+        "c7100_Spirit Ash summon Unique：Frenzied State_Foot Frost"
+      ]
+    },
+    {
+      "ID": 53500,
+      "Entries": [
+        "c4680_Ferrous Beast_Eye SFX"
+      ]
+    },
+    {
+      "ID": 53501,
+      "Entries": [
+        "c4680_Ferrous Beast_Gravity"
+      ]
+    },
+    {
+      "ID": 53502,
+      "Entries": [
+        "c4680_Ferrous Beast_Part Break"
+      ]
+    },
+    {
+      "ID": 53503,
+      "Entries": [
+        "c4680_Meteorite Beast_HU post cosmic aura"
+      ]
+    },
+    {
+      "ID": 53510,
+      "Entries": [
+        "c3661_Rotten Undead Maggot sfx"
+      ]
+    },
+    {
+      "ID": 53511,
+      "Entries": [
+        "c3661_Rotten Undead Fire sfx"
+      ]
+    },
+    {
+      "ID": 53512,
+      "Entries": [
+        "c3661_Rotten Undead Magic sfx"
+      ]
+    },
+    {
+      "ID": 53520,
+      "Entries": [
+        "c3662_Rotten Undead(Large) Maggot sfx"
+      ]
+    },
+    {
+      "ID": 53521,
+      "Entries": [
+        "c3662_Rotten Undead(Large) Burning sfx"
+      ]
+    },
+    {
+      "ID": 53522,
+      "Entries": [
+        "c3662_Rotten Undead(Large) Magic sfx"
+      ]
+    },
+    {
+      "ID": 53550,
+      "Entries": [
+        "c2140_Omens_Curse Enchant_Greatsword"
+      ]
+    },
+    {
+      "ID": 53551,
+      "Entries": [
+        "c2140_Omens_Curse Enchant_One-handed Axe"
+      ]
+    },
+    {
+      "ID": 53552,
+      "Entries": [
+        "c2140_Furigo_Blood Enchant_One-handed Axe Boss Variant: Greater Demon"
+      ]
+    },
+    {
+      "ID": 53600,
+      "Entries": [
+        "c4280_Pot Ant_Mounted Presentation"
+      ]
+    },
+    {
+      "ID": 53610,
+      "Entries": [
+        "c4420_Lake Crayfish SFX Red Eye"
+      ]
+    },
+    {
+      "ID": 53670,
+      "Entries": [
+        "c4520_Ancient Dragon Fade Out 1.5 sec"
+      ]
+    },
+    {
+      "ID": 53671,
+      "Entries": [
+        "c4520_Ancient Dragon Warp：For Fade Out"
+      ]
+    },
+    {
+      "ID": 53680,
+      "Entries": [
+        "c4520_Ancient Dragon Fade In 1.5 sec"
+      ]
+    },
+    {
+      "ID": 53681,
+      "Entries": [
+        "c4520_Ancient Dragon Warp：For Fade In"
+      ]
+    },
+    {
+      "ID": 53690,
+      "Entries": [
+        "c4520_Ancient Dragon Disappeared"
+      ]
+    },
+    {
+      "ID": 53691,
+      "Entries": [
+        "c4520_Ancient Dragon Enveloped in Mist"
+      ]
+    },
+    {
+      "ID": 53692,
+      "Entries": [
+        "c4520_Ancient Dragon Warp Presentation"
+      ]
+    },
+    {
+      "ID": 53695,
+      "Entries": [
+        "c4520_Ancient Dragon Warp Presentation：Surrounding Mist"
+      ]
+    },
+    {
+      "ID": 53699,
+      "Entries": [
+        "Character test Death Rune on-hit SFX"
+      ]
+    },
+    {
+      "ID": 53700,
+      "Entries": [
+        "c4382_Undead Miner (Ore Mining): Red-Hot Pickaxe Equipped"
+      ]
+    },
+    {
+      "ID": 53701,
+      "Entries": [
+        "c4382_Undead Miner (Ore Mining): Left Hand_Flamethrower_Light Source"
+      ]
+    },
+    {
+      "ID": 53702,
+      "Entries": [
+        "c4382_Undead Miner (Ore Mining): Waist_Lantern_Light Source"
+      ]
+    },
+    {
+      "ID": 53703,
+      "Entries": [
+        "c4382_Undead Miner (Ore Mining): Explosive Stone Backpack Equipped"
+      ]
+    },
+    {
+      "ID": 53704,
+      "Entries": [
+        "c4382_Undead Miner (Ore Mining): Poison Stone Backpack Equipped"
+      ]
+    },
+    {
+      "ID": 53750,
+      "Entries": [
+        "c3670_Leg Cripple:Leg_Shadow Transformation"
+      ]
+    },
+    {
+      "ID": 53800,
+      "Entries": [
+        "c4650_Ruinator: Right Arm_Frost-Lightning_Effects ON"
+      ]
+    },
+    {
+      "ID": 53801,
+      "Entries": [
+        "c4650_Ruinator: Left Arm_Frost-Lightning_Effects ON"
+      ]
+    },
+    {
+      "ID": 53802,
+      "Entries": [
+        "c4650_Ruinator: Right Hand_Frost-Lightning_Visual Effects ON"
+      ]
+    },
+    {
+      "ID": 53803,
+      "Entries": [
+        "c4650_Ruinator: Left Hand_Frost-Lightning_Effects ON"
+      ]
+    },
+    {
+      "ID": 53804,
+      "Entries": [
+        "c4650_Ruinator：Summoned Entity_VFX_ON"
+      ]
+    },
+    {
+      "ID": 53805,
+      "Entries": [
+        "c4650_Ruinator: Hide Figure_ON"
+      ]
+    },
+    {
+      "ID": 53850,
+      "Entries": [
+        "c4690_Grafted Spider_Holy Enchant_Rear Arm"
+      ]
+    },
+    {
+      "ID": 53851,
+      "Entries": [
+        "c4690_Grafted Spider_Holy Magic Enchant_Front Arm"
+      ]
+    },
+    {
+      "ID": 53900,
+      "Entries": [
+        "c4383_Undead Miner (Gem Carving): Waist_SFX Light Source"
+      ]
+    },
+    {
+      "ID": 53901,
+      "Entries": [
+        "c4383_Undead Miner (Gem Carving): Waist_Model Light Source OFF"
+      ]
+    },
+    {
+      "ID": 53920,
+      "Entries": [
+        "c4384_Mine Worker (Gem Carving"
+      ]
+    },
+    {
+      "ID": 53921,
+      "Entries": [
+        "c4384_Mine Worker (Gem Carving"
+      ]
+    },
+    {
+      "ID": 53922,
+      "Entries": [
+        "c4384_Mine Worker (Gem Carving"
+      ]
+    },
+    {
+      "ID": 53950,
+      "Entries": [
+        "c4620_Predator of Stopped Time (Astel): Enchant_Left Hand"
+      ]
+    },
+    {
+      "ID": 53951,
+      "Entries": [
+        "c4620_Predator of Stopped Time (Astel): Enchant_Right Hand"
+      ]
+    },
+    {
+      "ID": 53952,
+      "Entries": [
+        "c4620_Predator of Stopped Time (Astel): Funnel x1"
+      ]
+    },
+    {
+      "ID": 53953,
+      "Entries": [
+        "c4620_Predator of Stopped Time (Astel): Funnel x2"
+      ]
+    },
+    {
+      "ID": 53954,
+      "Entries": [
+        "c4620_Predator of Stopped Time (Astel): Funnel x3"
+      ]
+    },
+    {
+      "ID": 54010,
+      "Entries": [
+        "c4810_World Tree DemonEnchant"
+      ]
+    },
+    {
+      "ID": 54015,
+      "Entries": [
+        "Lost Series Spirit Conversion Effect (Make Appear as Phantom)"
+      ]
+    },
+    {
+      "ID": 54016,
+      "Entries": [
+        "Lost Series Spirit Conversion Effect (Mist on Death)"
+      ]
+    },
+    {
+      "ID": 54017,
+      "Entries": [
+        "Lost Series Spirit Conversion Effect (Vanish on Death)"
+      ]
+    },
+    {
+      "ID": 54020,
+      "Entries": [
+        "c3070_Old Woman Bat: Left Hand Lantern_Constant SFX"
+      ]
+    },
+    {
+      "ID": 54021,
+      "Entries": [
+        "c3070_Man-Eater Hag: Dancing Individual_Red Eyes_ON"
+      ]
+    },
+    {
+      "ID": 54030,
+      "Entries": [
+        "c4640_Serpent Spirit HU post constant SFX Normal variant"
+      ]
+    },
+    {
+      "ID": 54031,
+      "Entries": [
+        "c4640_Serpent Spirit HU post constant SFX Rot variant"
+      ]
+    },
+    {
+      "ID": 54040,
+      "Entries": [
+        "c3664_Tomb Shadow Constant SFX"
+      ]
+    },
+    {
+      "ID": 54041,
+      "Entries": [
+        "c3664_Catacombs Shadow_Bind (PC-side SFX)"
+      ]
+    },
+    {
+      "ID": 54060,
+      "Entries": [
+        "c4960_Nightlord Followers (Giant Skeleton): Spectral Form"
+      ]
+    },
+    {
+      "ID": 54061,
+      "Entries": [
+        "c4950_Night King Followers_Lantern"
+      ]
+    },
+    {
+      "ID": 54062,
+      "Entries": [
+        "c4950_Night King Followers_Water Surface"
+      ]
+    },
+    {
+      "ID": 54070,
+      "Entries": [
+        "c4491_Living Jar_Child Jar: Fire Pot_Kamikaze Type_Black Smoke+Spark SFX"
+      ]
+    },
+    {
+      "ID": 54080,
+      "Entries": [
+        "c4490_Living Jar: Iron Body"
+      ]
+    },
+    {
+      "ID": 54100,
+      "Entries": [
+        "c3970_Intelligent Beast Descendants_Lightning Enchant"
+      ]
+    },
+    {
+      "ID": 54101,
+      "Entries": [
+        "c3970_Intelligent Beast Descendants_Large_Lightning Enchant"
+      ]
+    },
+    {
+      "ID": 54102,
+      "Entries": [
+        "c3970_Intelligent Beast Descendants_Throw_Lightning Enchant"
+      ]
+    },
+    {
+      "ID": 54103,
+      "Entries": [
+        "c3970_Intelligent Beast Descendants_Sacred Seal Glow"
+      ]
+    },
+    {
+      "ID": 54150,
+      "Entries": [
+        "c4980_Deathbird_RedSlash"
+      ]
+    },
+    {
+      "ID": 54151,
+      "Entries": [
+        "c4980_Deathbird_ChargedFlame(Small)"
+      ]
+    },
+    {
+      "ID": 54152,
+      "Entries": [
+        "c4980_Deathbird_ChargedFlame(Large)"
+      ]
+    },
+    {
+      "ID": 54170,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Greatsword_Glintstone Enchant"
+      ]
+    },
+    {
+      "ID": 54171,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Spear_Glintstone Enchant"
+      ]
+    },
+    {
+      "ID": 54172,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Greatsword_Lightning Enchant"
+      ]
+    },
+    {
+      "ID": 54173,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Spear_Lightning Enchant"
+      ]
+    },
+    {
+      "ID": 54174,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Greatsword_Concentrate VFX"
+      ]
+    },
+    {
+      "ID": 54175,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Greatsword_Fire Enchant"
+      ]
+    },
+    {
+      "ID": 54176,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Spear_Fire Enchant"
+      ]
+    },
+    {
+      "ID": 54177,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Greatsword_Holy Enchant"
+      ]
+    },
+    {
+      "ID": 54178,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Spear_Holy Enchant"
+      ]
+    },
+    {
+      "ID": 54181,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Greatsword_Instant Death Enchant"
+      ]
+    },
+    {
+      "ID": 54182,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Spear_Instant Death Enchant"
+      ]
+    },
+    {
+      "ID": 54183,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Spirit Expression_ON"
+      ]
+    },
+    {
+      "ID": 54184,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Goddess Blessing_SFX"
+      ]
+    },
+    {
+      "ID": 54185,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Holy Enchant_Regeneration SFX"
+      ]
+    },
+    {
+      "ID": 54186,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Phantom Expression_ON"
+      ]
+    },
+    {
+      "ID": 54190,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: [Faith B] Firm Oath_SFX"
+      ]
+    },
+    {
+      "ID": 54191,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Chaos Variant_Yellow Eyes_Glow SFX"
+      ]
+    },
+    {
+      "ID": 54192,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: War Cry VFX"
+      ]
+    },
+    {
+      "ID": 54193,
+      "Entries": [
+        "c4350_Stalwart Army_Elite Mounted Soldier: Bleed Elation_Attack Power Up"
+      ]
+    },
+    {
+      "ID": 54210,
+      "Entries": [
+        "c2271_Deathbird_Small: Stone Generation SFX (Monsan individual)"
+      ]
+    },
+    {
+      "ID": 54215,
+      "Entries": [
+        "c4040_Slug Slime-Induced Slow Effect Presentation (PC-side SFX)"
+      ]
+    },
+    {
+      "ID": 54220,
+      "Entries": [
+        "c2180_Marika Persistent VFX_White Phantom Conversion Applies White Phantom Shader"
+      ]
+    },
+    {
+      "ID": 54221,
+      "Entries": [
+        "c2180_Marika Persistent VFX_Weapon Fire Enchant"
+      ]
+    },
+    {
+      "ID": 54225,
+      "Entries": [
+        "c2180_Marika Magic: World Tree's Blessing Add Effect When HoT Is Applied"
+      ]
+    },
+    {
+      "ID": 54230,
+      "Entries": [
+        "c3510_New Skeleton_Thread Effect During Revival"
+      ]
+    },
+    {
+      "ID": 54231,
+      "Entries": [
+        "c3510_New Skeleton_Core Effect During Supine Revival"
+      ]
+    },
+    {
+      "ID": 54232,
+      "Entries": [
+        "c3510_New Skeleton_Core Effect During Prone Revival"
+      ]
+    },
+    {
+      "ID": 54240,
+      "Entries": [
+        "c4210_Storm Hawk_War Cry Buff"
+      ]
+    },
+    {
+      "ID": 54250,
+      "Entries": [
+        "Wild Animal_Ancestor Spirit Summoned Spirit_Despawns on Death"
+      ]
+    },
+    {
+      "ID": 54260,
+      "Entries": [
+        "Snowy Mountain Wildlife Spirit Conversion Effect (Ghost Appearance)"
+      ]
+    },
+    {
+      "ID": 54261,
+      "Entries": [
+        "Snowy Mountain Wildlife Spirit Conversion Effect (Mist on Death)"
+      ]
+    },
+    {
+      "ID": 54262,
+      "Entries": [
+        "Snowy Mountain Wildlife Spirit Conversion Effect (Despawn on Death)"
+      ]
+    },
+    {
+      "ID": 54270,
+      "Entries": [
+        "c3702_Glintstone Sorcerer: Concealment (Close Range)"
+      ]
+    },
+    {
+      "ID": 54271,
+      "Entries": [
+        "c3702_Glintstone Sorcerer: Concealment (Mid Range)"
+      ]
+    },
+    {
+      "ID": 54272,
+      "Entries": [
+        "c3702_Glintstone Sorcerer: Concealment (Long Range)"
+      ]
+    },
+    {
+      "ID": 54280,
+      "Entries": [
+        "cxxx Spirit：Periodically Hides Its Presence While Walking"
+      ]
+    },
+    {
+      "ID": 54290,
+      "Entries": [
+        "c2150_Wisp Appearance"
+      ]
+    },
+    {
+      "ID": 54300,
+      "Entries": [
+        "c4340_Pumpkin Head Fire Enchant_Flail"
+      ]
+    },
+    {
+      "ID": 54301,
+      "Entries": [
+        "c4340_Pumpkin Head Fire Enchant_Hammer"
+      ]
+    },
+    {
+      "ID": 54310,
+      "Entries": [
+        "cxxx_Sorcerer's Tower Enemy_Appearance Phantom"
+      ]
+    },
+    {
+      "ID": 54315,
+      "Entries": [
+        "cxxx_Plains Town Enemy_Appearance Phantom"
+      ]
+    },
+    {
+      "ID": 54320,
+      "Entries": [
+        "c6050_Wildlife_Turtle_Placement Invisible Body"
+      ]
+    },
+    {
+      "ID": 54330,
+      "Entries": [
+        "c8120_Chariot_Remove Footstep SFX on Abyss Pass"
+      ]
+    },
+    {
+      "ID": 54340,
+      "Entries": [
+        "c2130_Margit the Fell Omen (2nd Fight)_Curse Enchant"
+      ]
+    },
+    {
+      "ID": 54341,
+      "Entries": [
+        "c2130_Margit the Fell Omen (2nd Fight)_Curse Enchant Release"
+      ]
+    },
+    {
+      "ID": 54342,
+      "Entries": [
+        "c2130_Margit the Fell Omen (2nd Fight)_PC Curse Enhancement"
+      ]
+    },
+    {
+      "ID": 54343,
+      "Entries": [
+        "c2130_Margit the Fell Omen (2nd Fight)_PC Curse Enhancement_Explosion Omen"
+      ]
+    },
+    {
+      "ID": 57000,
+      "Entries": [
+        "Buddy: Make Appearance a Buddy"
+      ]
+    },
+    {
+      "ID": 57010,
+      "Entries": [
+        "Buddy: Death Mist_Medium (Full Body)"
+      ]
+    },
+    {
+      "ID": 57011,
+      "Entries": [
+        "Buddy: Death Mist_Large (Full Body)"
+      ]
+    },
+    {
+      "ID": 57012,
+      "Entries": [
+        "Buddy: Death Mist_Extra Large (Full Body)"
+      ]
+    },
+    {
+      "ID": 57013,
+      "Entries": [
+        "Buddy: Death Mist_Extra Extra Large (Full Body)"
+      ]
+    },
+    {
+      "ID": 57020,
+      "Entries": [
+        "Buddy: Death Mist_Medium (Single Instance Play)"
+      ]
+    },
+    {
+      "ID": 57021,
+      "Entries": [
+        "Buddy: Death Mist_Large (Single Instance Play)"
+      ]
+    },
+    {
+      "ID": 57022,
+      "Entries": [
+        "Buddy: Death Mist_Extra Large (Single Instance Play)"
+      ]
+    },
+    {
+      "ID": 57023,
+      "Entries": [
+        "Buddy: Death Mist_Extra Extra Large (Single Instance Play)"
+      ]
+    },
+    {
+      "ID": 57030,
+      "Entries": [
+        "Buddy: On-Death Invisibility_α90"
+      ]
+    },
+    {
+      "ID": 57031,
+      "Entries": [
+        "Buddy: On-Death Invisibility_α80"
+      ]
+    },
+    {
+      "ID": 57032,
+      "Entries": [
+        "Buddy: On-Death Invisibility_α70"
+      ]
+    },
+    {
+      "ID": 57033,
+      "Entries": [
+        "Buddy: On-Death Invisibility_α60"
+      ]
+    },
+    {
+      "ID": 57034,
+      "Entries": [
+        "Buddy: On-Death Invisibility_α50"
+      ]
+    },
+    {
+      "ID": 57035,
+      "Entries": [
+        "Buddy: On-Death Invisibility_α40"
+      ]
+    },
+    {
+      "ID": 57036,
+      "Entries": [
+        "Buddy: On-Death Invisibility_α30"
+      ]
+    },
+    {
+      "ID": 57037,
+      "Entries": [
+        "Buddy: On-Death Invisibility_α20"
+      ]
+    },
+    {
+      "ID": 57038,
+      "Entries": [
+        "Buddy: On-Death Invisibility_α10"
+      ]
+    },
+    {
+      "ID": 57039,
+      "Entries": [
+        "Buddy: On-Death Invisibility_α0"
+      ]
+    },
+    {
+      "ID": 57050,
+      "Entries": [
+        "Buddy: Complete Disappearance"
+      ]
+    },
+    {
+      "ID": 57100,
+      "Entries": [
+        "Puppet Buddy: Appearance Puppetized"
+      ]
+    },
+    {
+      "ID": 57101,
+      "Entries": [
+        "Puppet Buddy: Puppetized Blue Eyes_Medium"
+      ]
+    },
+    {
+      "ID": 57102,
+      "Entries": [
+        "Puppet Buddy: Puppetized Blue Eyes_Large"
+      ]
+    },
+    {
+      "ID": 57103,
+      "Entries": [
+        "Puppet Buddy: Puppetized Blue Eyes_Colossal"
+      ]
+    },
+    {
+      "ID": 57104,
+      "Entries": [
+        "Puppet Buddy: Puppetized Blue Eyes_Super Colossal"
+      ]
+    },
+    {
+      "ID": 57110,
+      "Entries": [
+        "Puppet Buddy: Death Mist_Medium (Whole Body)"
+      ]
+    },
+    {
+      "ID": 57111,
+      "Entries": [
+        "Puppet Buddy: Death Mist_Large (Whole Body)"
+      ]
+    },
+    {
+      "ID": 57112,
+      "Entries": [
+        "Puppet Buddy: Death Mist_Colossal (Whole Body)"
+      ]
+    },
+    {
+      "ID": 57113,
+      "Entries": [
+        "Puppet Buddy: Death Mist_Super Colossal (Whole Body)"
+      ]
+    },
+    {
+      "ID": 57120,
+      "Entries": [
+        "Puppet Buddy: Death Mist_Medium (Play Once Only)"
+      ]
+    },
+    {
+      "ID": 57121,
+      "Entries": [
+        "Puppet Buddy: Death Mist_Large (Play Once Only)"
+      ]
+    },
+    {
+      "ID": 57122,
+      "Entries": [
+        "Puppet Buddy: Death Mist_Colossal (Play Once Only)"
+      ]
+    },
+    {
+      "ID": 57123,
+      "Entries": [
+        "Puppet Buddy: Death Mist_Super Colossal (Play Once Only)"
+      ]
+    },
+    {
+      "ID": 57130,
+      "Entries": [
+        "Puppet Buddy: Body Particle_Medium"
+      ]
+    },
+    {
+      "ID": 57131,
+      "Entries": [
+        "Puppet Buddy: Body Particle_Large"
+      ]
+    },
+    {
+      "ID": 57132,
+      "Entries": [
+        "Puppet Buddy: Body Particle_Colossal"
+      ]
+    },
+    {
+      "ID": 57133,
+      "Entries": [
+        "Puppet Buddy: Body Particle_Super Colossal"
+      ]
+    },
+    {
+      "ID": 57900,
+      "Entries": [
+        "Buddy: On-Death Effect_Rune Devourer_Invisibility"
+      ]
+    },
+    {
+      "ID": 57999,
+      "Entries": [
+        "※Slot Reserved"
+      ]
+    },
+    {
+      "ID": 58000,
+      "Entries": [
+        "c7100_Spirit Ash summon Unique Frenzied Frost"
+      ]
+    },
+    {
+      "ID": 58001,
+      "Entries": [
+        "c7100_Spirit Ash summon Unique Frenzied Frost_At Feet"
+      ]
+    },
+    {
+      "ID": 58100,
+      "Entries": [
+        "c7100_Spirit Ash summon Unique Normal Frost"
+      ]
+    },
+    {
+      "ID": 58101,
+      "Entries": [
+        "c7100_Spirit Ash summon Unique Normal Frost"
+      ]
+    },
+    {
+      "ID": 59000,
+      "Entries": [
+        "cXXXX_Night Spirit Test Appearance Ghost"
+      ]
+    },
+    {
+      "ID": 59001,
+      "Entries": [
+        "cXXXX_Night Spirit Test_Slight Fade Out"
+      ]
+    },
+    {
+      "ID": 59002,
+      "Entries": [
+        "cXXXX_Night Spirit Test_Ghost Hunt Appearance Placeholder Effect"
+      ]
+    },
+    {
+      "ID": 59003,
+      "Entries": [
+        "cXXXX_Night Spirit Test_Ghost Hunt Appearance Placeholder Effect"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "[GR] Humanity Acquisition Temporary Staging"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "World Fragment_Blindfold Staging Test"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "World Fragment_Character Appearance Memorization Test"
+      ]
+    },
+    {
+      "ID": 60010,
+      "Entries": [
+        "Soul Drop Amount Up_Eye Glow"
+      ]
+    },
+    {
+      "ID": 60011,
+      "Entries": [
+        "Soul Drop Amount Up_Head Glow"
+      ]
+    },
+    {
+      "ID": 61000,
+      "Entries": [
+        "[Test] Wet Control: Water Wet"
+      ]
+    },
+    {
+      "ID": 61010,
+      "Entries": [
+        "[Test] Wet Control: Poison Wet"
+      ]
+    },
+    {
+      "ID": 61020,
+      "Entries": [
+        "[Test] Wet Control: Mud Wet"
+      ]
+    },
+    {
+      "ID": 61030,
+      "Entries": [
+        "[Test] Wet Control: Frostbite Wet"
+      ]
+    },
+    {
+      "ID": 61040,
+      "Entries": [
+        "[Test] Wet Control: Mercury Wet"
+      ]
+    },
+    {
+      "ID": 99999,
+      "Entries": [
+        "Cursed Corpse"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "[GR] Water Wet_Partial"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "[GR] Water Wet_Whole Body"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "[GR] Poison Wet_Partial"
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "[GR] Poison Wet_Whole Body"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "[GR] Mud Wet_Partial"
+      ]
+    },
+    {
+      "ID": 100021,
+      "Entries": [
+        "[GR] Mud Wet_Whole Body"
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        "[GR] Plague Wet_Partial"
+      ]
+    },
+    {
+      "ID": 100031,
+      "Entries": [
+        "[GR] Plague Wet_Whole Body"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "[GR] Hostile Guest Wet"
+      ]
+    },
+    {
+      "ID": 101900,
+      "Entries": [
+        "Blood Splatter Erase Special Effect"
+      ]
+    },
+    {
+      "ID": 104305,
+      "Entries": [
+        "Enemy Character Generic_SFX/SE_Boss Disappear_Death Mist_Small Size"
+      ]
+    },
+    {
+      "ID": 104306,
+      "Entries": [
+        "Enemy Character Generic_SFX/SE_Boss Disappear_Death Mist_Medium Size"
+      ]
+    },
+    {
+      "ID": 104307,
+      "Entries": [
+        "Enemy Character Generic_SFX/SE_Boss Disappear_Death Mist_Large Size"
+      ]
+    },
+    {
+      "ID": 104308,
+      "Entries": [
+        "Enemy Character Generic_SFX/SE_Boss Disappear_Death Mist_Extra Large Size"
+      ]
+    },
+    {
+      "ID": 104310,
+      "Entries": [
+        "Enemy Character Generic_SFX/SE_Boss Disappear_Mist Explosion_Small Size"
+      ]
+    },
+    {
+      "ID": 104311,
+      "Entries": [
+        "Enemy Character Generic_SFX/SE_Boss Disappear_Mist Explosion_Medium Size"
+      ]
+    },
+    {
+      "ID": 104312,
+      "Entries": [
+        "Enemy Character Generic_SFX/SE_Boss Disappear_Mist Explosion_Large Size"
+      ]
+    },
+    {
+      "ID": 104313,
+      "Entries": [
+        "Enemy Character Generic_SFX/SE_Boss Disappear_Mist Explosion_Extra Large Size"
+      ]
+    },
+    {
+      "ID": 104320,
+      "Entries": [
+        "Enemy Generic_For Graveyard of Heroes_Shadow Transformation"
+      ]
+    },
+    {
+      "ID": 104321,
+      "Entries": [
+        "Enemy Generic_For Graveyard of Heroes_Shadow Transformation_Release"
+      ]
+    },
+    {
+      "ID": 104330,
+      "Entries": [
+        "Circular Circle Enemy_Appearance Change"
+      ]
+    },
+    {
+      "ID": 104340,
+      "Entries": [
+        "Camouflaged enemy_appearance change"
+      ]
+    },
+    {
+      "ID": 104350,
+      "Entries": [
+        "Camouflaged enemy_presence sound"
+      ]
+    },
+    {
+      "ID": 104380,
+      "Entries": [
+        "Enemy Character Generic_Radahn Festival Co-op NPC Sign Hide Form"
+      ]
+    },
+    {
+      "ID": 104610,
+      "Entries": [
+        "Enemy Character Generic Spirit Candle_Hide Form"
+      ]
+    },
+    {
+      "ID": 104611,
+      "Entries": [
+        "Enemy Generic_Spirit Candle_Wandering Phantom"
+      ]
+    },
+    {
+      "ID": 104900,
+      "Entries": [
+        "Small Bonfire_HP Estus Recovery"
+      ]
+    },
+    {
+      "ID": 104901,
+      "Entries": [
+        "Small Bonfire_MP Estus Recovery"
+      ]
+    },
+    {
+      "ID": 108970,
+      "Entries": [
+        "Defeated Soldier_Inactive"
+      ]
+    },
+    {
+      "ID": 108971,
+      "Entries": [
+        "Defeated Soldier_Active"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Buddy Summonable"
+      ]
+    },
+    {
+      "ID": 110010,
+      "Entries": [
+        "Buddy Fading Effect_Alpha Control: Fade Out"
+      ]
+    },
+    {
+      "ID": 110011,
+      "Entries": [
+        "Buddy Fading Effect_Alpha Control: Fade In"
+      ]
+    },
+    {
+      "ID": 110015,
+      "Entries": [
+        "Buddy Fading Effect_SE for PC"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "SFX Effect when Nemuri item can be obtained"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "Generic Warp Trap PC Appearance Hide"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Camera Front SFX Erdtree Blessing"
+      ]
+    },
+    {
+      "ID": 200002,
+      "Entries": [
+        "Camera Front SFX Erdtree Blessing_Small Amount"
+      ]
+    },
+    {
+      "ID": 200005,
+      "Entries": [
+        "Camera Front SFX Erdtree Curse"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "Camera Front SFX Firefly"
+      ]
+    },
+    {
+      "ID": 200011,
+      "Entries": [
+        "Camera Front SFX Sandstorm"
+      ]
+    },
+    {
+      "ID": 200012,
+      "Entries": [
+        "Camera Front SFX Red Rain"
+      ]
+    },
+    {
+      "ID": 200013,
+      "Entries": [
+        "Camera Front SFX Blizzard"
+      ]
+    },
+    {
+      "ID": 312500,
+      "Entries": [
+        "[PC Ring] Prosthetic Talisman_Attack UP"
+      ]
+    },
+    {
+      "ID": 320400,
+      "Entries": [
+        "[PC Ring] Low HP Stat Boost (Attack)"
+      ]
+    },
+    {
+      "ID": 320500,
+      "Entries": [
+        "[PC Ring] Max HP Stat Boost (Attack)"
+      ]
+    },
+    {
+      "ID": 320800,
+      "Entries": [
+        "[PC Ring] Pope's Right Eye_Attack UP"
+      ]
+    },
+    {
+      "ID": 320810,
+      "Entries": [
+        "[PC Ring] Pope's Right Eye +1_Attack UP"
+      ]
+    },
+    {
+      "ID": 321600,
+      "Entries": [
+        "[PC Ring] Blood Joy_Attack Power Up"
+      ]
+    },
+    {
+      "ID": 321700,
+      "Entries": [
+        "[PC Ring] Poison Joy_Attack Power Up"
+      ]
+    },
+    {
+      "ID": 340800,
+      "Entries": [
+        "[PC Ring] Low HP Stat Boost (Defense)"
+      ]
+    },
+    {
+      "ID": 340900,
+      "Entries": [
+        "[PC Ring] Max HP Stat Boost (Defense)"
+      ]
+    },
+    {
+      "ID": 350300,
+      "Entries": [
+        "[PC Ring] Evil Eye Ring_Drain Activation"
+      ]
+    },
+    {
+      "ID": 350400,
+      "Entries": [
+        "[PC Ring] Pope's Left Eye_Recovery Activation"
+      ]
+    },
+    {
+      "ID": 350500,
+      "Entries": [
+        "[PC Ring] Critical Attack Added Effect (HP Recovery)_HP Drain (Active)"
+      ]
+    },
+    {
+      "ID": 350600,
+      "Entries": [
+        "[PC Ring] Critical Attack Added Effect (FP Recovery)_FP Drain (Active)"
+      ]
+    },
+    {
+      "ID": 360000,
+      "Entries": [
+        "[PC Ring] Ring of the Quietly Sleeping Dragon Seal"
+      ]
+    },
+    {
+      "ID": 360100,
+      "Entries": [
+        "[PC Ring] Stealth"
+      ]
+    },
+    {
+      "ID": 360800,
+      "Entries": [
+        "[PC Ring] Appearance Disguise (Host)"
+      ]
+    },
+    {
+      "ID": 360900,
+      "Entries": [
+        "[PC Ring] Appearance Disguise (Guest)"
+      ]
+    },
+    {
+      "ID": 361100,
+      "Entries": [
+        "[PC Ring] Ancestral Talisman_FP Drain Activation"
+      ]
+    },
+    {
+      "ID": 730300,
+      "Entries": [
+        "Dark Spirit Invasion Effect"
+      ]
+    },
+    {
+      "ID": 730301,
+      "Entries": [
+        "White Phantom Invasion Effect"
+      ]
+    },
+    {
+      "ID": 1413000,
+      "Entries": [
+        "[PC Magic] Area Magic Buff"
+      ]
+    },
+    {
+      "ID": 1414000,
+      "Entries": [
+        "[PC Sorcery] Illuminating Light"
+      ]
+    },
+    {
+      "ID": 1436000,
+      "Entries": [
+        "[PC Magic] Crystal Moon_Magic Defense Debuff"
+      ]
+    },
+    {
+      "ID": 1436100,
+      "Entries": [
+        "[PC Sorcery] Frost Moon_Magic Defense Debuff"
+      ]
+    },
+    {
+      "ID": 1446000,
+      "Entries": [
+        "[PC Magic] Magic Weapon"
+      ]
+    },
+    {
+      "ID": 1447000,
+      "Entries": [
+        "[PC Magic] Magic Shield"
+      ]
+    },
+    {
+      "ID": 1448000,
+      "Entries": [
+        "[PC Magic] Mind Restoration"
+      ]
+    },
+    {
+      "ID": 1449000,
+      "Entries": [
+        "[PC Sorcery] Cold Weapon"
+      ]
+    },
+    {
+      "ID": 1464000,
+      "Entries": [
+        "[PC Magic] Magic Absorption"
+      ]
+    },
+    {
+      "ID": 1466000,
+      "Entries": [
+        "[PC Magic] Invisible Weapon"
+      ]
+    },
+    {
+      "ID": 1467000,
+      "Entries": [
+        "[PC Magic] Invisible Body"
+      ]
+    },
+    {
+      "ID": 1467001,
+      "Entries": [
+        "[PC Magic] Invisible Body_Activation Appearance"
+      ]
+    },
+    {
+      "ID": 1467002,
+      "Entries": [
+        "[PC Magic] Invisible Body_For Legs"
+      ]
+    },
+    {
+      "ID": 1467005,
+      "Entries": [
+        "[PC Magic] Invisible Body_For PC Horse"
+      ]
+    },
+    {
+      "ID": 1467006,
+      "Entries": [
+        "[PC Magic] Invisible Body_For PC Horse_Activation Appearance"
+      ]
+    },
+    {
+      "ID": 1604000,
+      "Entries": [
+        "[PC Sorcery] Scarlet Rot Recovery"
+      ]
+    },
+    {
+      "ID": 1604001,
+      "Entries": [
+        "[PC Sorcery] Scarlet Rot Recovery_Self-Damage Embers"
+      ]
+    },
+    {
+      "ID": 1605000,
+      "Entries": [
+        "[PC Sorcery] Inner Strength"
+      ]
+    },
+    {
+      "ID": 1606000,
+      "Entries": [
+        "[PC Magic] Greater Fire Protection"
+      ]
+    },
+    {
+      "ID": 1626000,
+      "Entries": [
+        "[PC Magic] Black Flame Weapon Enchant"
+      ]
+    },
+    {
+      "ID": 1626001,
+      "Entries": [
+        "[PC Magic] Black Flame Weapon Enchant_Slip Damage Effect"
+      ]
+    },
+    {
+      "ID": 1627000,
+      "Entries": [
+        "[PC Sorcery] Physical Protection"
+      ]
+    },
+    {
+      "ID": 1632000,
+      "Entries": [
+        "[PC Magic] Blood Enchant"
+      ]
+    },
+    {
+      "ID": 1633000,
+      "Entries": [
+        "[PC Magic] Magic Barrier"
+      ]
+    },
+    {
+      "ID": 1634000,
+      "Entries": [
+        "[PC Magic] World Tree Protection"
+      ]
+    },
+    {
+      "ID": 1642000,
+      "Entries": [
+        "[PC Sorcery] Grace of Recovery"
+      ]
+    },
+    {
+      "ID": 1642100,
+      "Entries": [
+        "[PC Sorcery] Recovery"
+      ]
+    },
+    {
+      "ID": 1642200,
+      "Entries": [
+        "[PC Magic] Medium Recovery"
+      ]
+    },
+    {
+      "ID": 1642300,
+      "Entries": [
+        "[PC Sorcery] Greater Recovery"
+      ]
+    },
+    {
+      "ID": 1642400,
+      "Entries": [
+        "[PC Sorcery] Healing of Sunlight"
+      ]
+    },
+    {
+      "ID": 1643000,
+      "Entries": [
+        "[PC Magic] Blessing of Light"
+      ]
+    },
+    {
+      "ID": 1643100,
+      "Entries": [
+        "[PC Sorcery] Blessing of Sunlight"
+      ]
+    },
+    {
+      "ID": 1644000,
+      "Entries": [
+        "[PC Sorcery] Poison Recovery"
+      ]
+    },
+    {
+      "ID": 1644100,
+      "Entries": [
+        "[PC Sorcery] Area Recovery (Poison/Blood Loss/Sleep)"
+      ]
+    },
+    {
+      "ID": 1645000,
+      "Entries": [
+        "[PC Magic] Lesser Fire Protection"
+      ]
+    },
+    {
+      "ID": 1646000,
+      "Entries": [
+        "[PC Magic] Lesser Magic Protection"
+      ]
+    },
+    {
+      "ID": 1647000,
+      "Entries": [
+        "[PC Magic] Lesser Lightning Protection"
+      ]
+    },
+    {
+      "ID": 1648000,
+      "Entries": [
+        "[PC Magic] Lesser Holy Protection"
+      ]
+    },
+    {
+      "ID": 1649000,
+      "Entries": [
+        "[PC Magic] Greater Holy Protection"
+      ]
+    },
+    {
+      "ID": 1651000,
+      "Entries": [
+        "[PC Magic] Stealth"
+      ]
+    },
+    {
+      "ID": 1651001,
+      "Entries": [
+        "[PC Magic] Stealth_For PC Horse 1"
+      ]
+    },
+    {
+      "ID": 1651002,
+      "Entries": [
+        "[PC Magic] Stealth_For PC Horse 2"
+      ]
+    },
+    {
+      "ID": 1651003,
+      "Entries": [
+        "[PC Magic] Stealth_For PC Horse 3"
+      ]
+    },
+    {
+      "ID": 1651004,
+      "Entries": [
+        "[PC Magic] Stealth_For PC Horse 4"
+      ]
+    },
+    {
+      "ID": 1653000,
+      "Entries": [
+        "[PC Sorcery] Darkness"
+      ]
+    },
+    {
+      "ID": 1660000,
+      "Entries": [
+        "[PC Sorcery] Solemn Vow"
+      ]
+    },
+    {
+      "ID": 1673000,
+      "Entries": [
+        "[PC Sorcery] Full Status Recovery + Buff/Debuff Removal"
+      ]
+    },
+    {
+      "ID": 1674000,
+      "Entries": [
+        "[PC Magic] Shield of Order"
+      ]
+    },
+    {
+      "ID": 1676000,
+      "Entries": [
+        "[PC Sorcery] Retribution"
+      ]
+    },
+    {
+      "ID": 1676001,
+      "Entries": [
+        "[PC Sorcery] Retribution_Omen Count Presentation"
+      ]
+    },
+    {
+      "ID": 1676002,
+      "Entries": [
+        "[PC Sorcery] Retribution_Pre-Explosion Omen Presentation"
+      ]
+    },
+    {
+      "ID": 1677000,
+      "Entries": [
+        "[PC Magic] Holy Enchantment"
+      ]
+    },
+    {
+      "ID": 1678000,
+      "Entries": [
+        "[PC Sorcery] Death Recovery"
+      ]
+    },
+    {
+      "ID": 1685000,
+      "Entries": [
+        "[PC Sorcery] Life Surge"
+      ]
+    },
+    {
+      "ID": 1686000,
+      "Entries": [
+        "[PC Sorcery] Immunity/Robustness Recovery"
+      ]
+    },
+    {
+      "ID": 1696000,
+      "Entries": [
+        "[PC Magic] Lightning Weapon Enchant"
+      ]
+    },
+    {
+      "ID": 1697000,
+      "Entries": [
+        "[PC Magic] Lightning Buff A_Lightning Enchant"
+      ]
+    },
+    {
+      "ID": 1697001,
+      "Entries": [
+        "[PC Magic] Lightning Buff A_Full-Body Charge for Equip Load Up"
+      ]
+    },
+    {
+      "ID": 1697100,
+      "Entries": [
+        "[PC Magic] Lightning Buff B"
+      ]
+    },
+    {
+      "ID": 1709000,
+      "Entries": [
+        "[PC Magic] Dragon Roar"
+      ]
+    },
+    {
+      "ID": 1723000,
+      "Entries": [
+        "[PC Sorcery] Poison Enchant"
+      ]
+    },
+    {
+      "ID": 1733000,
+      "Entries": [
+        "[PC Magic] Frenzy War Cry_Aggro Up"
+      ]
+    },
+    {
+      "ID": 1753000,
+      "Entries": [
+        "[PC Magic] Black Blade (Maliketh)_Slip Damage Effect"
+      ]
+    },
+    {
+      "ID": 1790000,
+      "Entries": [
+        "[PC Sorcery] Aflame"
+      ]
+    },
+    {
+      "ID": 1790300,
+      "Entries": [
+        "[PC Magic] Greater Lightning Protection"
+      ]
+    },
+    {
+      "ID": 5031401,
+      "Entries": [
+        "[Weapon Property] HP Drain Trigger_Blasphemous Holy Sword"
+      ]
+    },
+    {
+      "ID": 5031601,
+      "Entries": [
+        "[Weapon Property] FP Drain Trigger_Sword of Emanuel"
+      ]
+    },
+    {
+      "ID": 5071101,
+      "Entries": [
+        "[Weapon Property] HP Drain Trigger_Serpent-God's Curved Sword"
+      ]
+    },
+    {
+      "ID": 5120101,
+      "Entries": [
+        "[Weapon Property] HP Drain Trigger_Ancestral Follower's Mallet"
+      ]
+    },
+    {
+      "ID": 5141101,
+      "Entries": [
+        "[Weapon Property] FP Drain Trigger_Guillotine Axe"
+      ]
+    },
+    {
+      "ID": 6018010,
+      "Entries": [
+        "[Armor Property] Black Knife Descendant_Body★Footstep Sound Reduction"
+      ]
+    },
+    {
+      "ID": 6068001,
+      "Entries": [
+        "[Armor Property] Army Surgeon Executioner_Head★Weak Bleed Delight Effect_Attack Power Up"
+      ]
+    },
+    {
+      "ID": 6069000,
+      "Entries": [
+        "[Armor Property] Corpse Armor_Head★Regen When Near Death (up to Rat-Flee threshold)"
+      ]
+    },
+    {
+      "ID": 6201001,
+      "Entries": [
+        "[Armor Property] Apostle of Destruction (Fire Monk) Poison Rot_Head (HD)★Poison/Rot Delight_Activation Standby"
+      ]
+    },
+    {
+      "ID": 6202001,
+      "Entries": [
+        "[Armor Property] Lame Prisoner (Prisoner)_Head (HD)★Attack Power Up on Self Madness"
+      ]
+    },
+    {
+      "ID": 999999999,
+      "Entries": [
+        "■■■■■Last Param Data■■■■■"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,533 @@
+{
+  "Name": "MapMimicryEstablishmentParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Do not delete. Default parameter."
+      ]
+    },
+    {
+      "ID": 6100000,
+      "Entries": [
+        "Green North"
+      ]
+    },
+    {
+      "ID": 6102000,
+      "Entries": [
+        "Green South"
+      ]
+    },
+    {
+      "ID": 6200000,
+      "Entries": [
+        "Lake"
+      ]
+    },
+    {
+      "ID": 6202000,
+      "Entries": [
+        "Lake Overhang Terrain"
+      ]
+    },
+    {
+      "ID": 6300000,
+      "Entries": [
+        "Highland"
+      ]
+    },
+    {
+      "ID": 6301000,
+      "Entries": [
+        "Highland Royal Capital"
+      ]
+    },
+    {
+      "ID": 6302000,
+      "Entries": [
+        "Highland Volcano"
+      ]
+    },
+    {
+      "ID": 6400000,
+      "Entries": [
+        "Plains"
+      ]
+    },
+    {
+      "ID": 6402000,
+      "Entries": [
+        "Plains Dragon Nest"
+      ]
+    },
+    {
+      "ID": 6500000,
+      "Entries": [
+        "Snowy Mountain Forbidden Area"
+      ]
+    },
+    {
+      "ID": 6501000,
+      "Entries": [
+        "Snowy Mountain Giant"
+      ]
+    },
+    {
+      "ID": 6502000,
+      "Entries": [
+        "Snowy Mountain Giant Grave"
+      ]
+    },
+    {
+      "ID": 6503000,
+      "Entries": [
+        "Snowy Mountain Snowfield"
+      ]
+    },
+    {
+      "ID": 10000800,
+      "Entries": [
+        "Stormveil"
+      ]
+    },
+    {
+      "ID": 11000800,
+      "Entries": [
+        "Royal Capital Margit"
+      ]
+    },
+    {
+      "ID": 11000850,
+      "Entries": [
+        "Royal Capital Godfrey (Phantom)"
+      ]
+    },
+    {
+      "ID": 11050800,
+      "Entries": [
+        "Royal Capital (Ash) Godfrey"
+      ]
+    },
+    {
+      "ID": 11050850,
+      "Entries": [
+        "Royal Capital (Ash) Hyakuchi-kyo"
+      ]
+    },
+    {
+      "ID": 12010800,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp"
+      ]
+    },
+    {
+      "ID": 12020800,
+      "Entries": [
+        "Underground Labyrinth Plains"
+      ]
+    },
+    {
+      "ID": 12020850,
+      "Entries": [
+        "Underground Labyrinth Plains"
+      ]
+    },
+    {
+      "ID": 12030800,
+      "Entries": [
+        "Underground Labyrinth Royal Capital"
+      ]
+    },
+    {
+      "ID": 12040800,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp *Inserted in boss area ID order"
+      ]
+    },
+    {
+      "ID": 12050800,
+      "Entries": [
+        "Underground Labyrinth Plains Depths"
+      ]
+    },
+    {
+      "ID": 12080800,
+      "Entries": [
+        "Underground Labyrinth Plains *Inserted in Boss Area ID Order"
+      ]
+    },
+    {
+      "ID": 13000800,
+      "Entries": [
+        "Descending Ruins Maliketh"
+      ]
+    },
+    {
+      "ID": 13000830,
+      "Entries": [
+        "Descending Ruins Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 13000850,
+      "Entries": [
+        "Descending Ruins Godskin Tag Team"
+      ]
+    },
+    {
+      "ID": 14000800,
+      "Entries": [
+        "Monsan Rennala"
+      ]
+    },
+    {
+      "ID": 14000850,
+      "Entries": [
+        "Monsan Runewolf"
+      ]
+    },
+    {
+      "ID": 15000800,
+      "Entries": [
+        "Rotten Great Tree Malenia"
+      ]
+    },
+    {
+      "ID": 15000850,
+      "Entries": [
+        "Rotten Great Tree Sorcerer Tree Guard"
+      ]
+    },
+    {
+      "ID": 16000800,
+      "Entries": [
+        "Volcano Prison King of Ghouls"
+      ]
+    },
+    {
+      "ID": 16000850,
+      "Entries": [
+        "Volcano Prison Godskin Fat"
+      ]
+    },
+    {
+      "ID": 16000860,
+      "Entries": [
+        "Volcano Prison"
+      ]
+    },
+    {
+      "ID": 18000800,
+      "Entries": [
+        "Tutorial Catacombs Side"
+      ]
+    },
+    {
+      "ID": 30000800,
+      "Entries": [
+        "Underground Catacombs 1-1"
+      ]
+    },
+    {
+      "ID": 30010800,
+      "Entries": [
+        "Underground Catacombs 1-2"
+      ]
+    },
+    {
+      "ID": 30020800,
+      "Entries": [
+        "Underground Catacombs 1-3"
+      ]
+    },
+    {
+      "ID": 30030800,
+      "Entries": [
+        "Underground Catacombs 2-2"
+      ]
+    },
+    {
+      "ID": 30040800,
+      "Entries": [
+        "Underground Catacombs 1-5"
+      ]
+    },
+    {
+      "ID": 30050800,
+      "Entries": [
+        "Underground Catacombs 2-1"
+      ]
+    },
+    {
+      "ID": 30060800,
+      "Entries": [
+        "Underground Catacombs 2-3"
+      ]
+    },
+    {
+      "ID": 30070800,
+      "Entries": [
+        "Underground Catacombs 3-5"
+      ]
+    },
+    {
+      "ID": 30080800,
+      "Entries": [
+        "Underground Catacombs 3-1"
+      ]
+    },
+    {
+      "ID": 30090800,
+      "Entries": [
+        "Underground Catacombs 3-2"
+      ]
+    },
+    {
+      "ID": 30100800,
+      "Entries": [
+        "Underground Catacombs 3-3"
+      ]
+    },
+    {
+      "ID": 30110800,
+      "Entries": [
+        "Underground Catacombs 1-4"
+      ]
+    },
+    {
+      "ID": 30120800,
+      "Entries": [
+        "Underground Catacombs 3-4"
+      ]
+    },
+    {
+      "ID": 30130800,
+      "Entries": [
+        "Underground Catacombs 3-6"
+      ]
+    },
+    {
+      "ID": 30140800,
+      "Entries": [
+        "Underground Catacombs 4-1"
+      ]
+    },
+    {
+      "ID": 30150800,
+      "Entries": [
+        "Underground Catacombs 4-2"
+      ]
+    },
+    {
+      "ID": 30160800,
+      "Entries": [
+        "Underground Catacombs 4-3"
+      ]
+    },
+    {
+      "ID": 30170800,
+      "Entries": [
+        "Underground Catacombs 5-1"
+      ]
+    },
+    {
+      "ID": 30180800,
+      "Entries": [
+        "Underground Catacombs 5-2"
+      ]
+    },
+    {
+      "ID": 30190800,
+      "Entries": [
+        "Underground Catacombs 5-3"
+      ]
+    },
+    {
+      "ID": 30200800,
+      "Entries": [
+        "Underground Catacombs 5-4"
+      ]
+    },
+    {
+      "ID": 31000800,
+      "Entries": [
+        "Cave 1-3"
+      ]
+    },
+    {
+      "ID": 31010800,
+      "Entries": [
+        "Cave 1-2"
+      ]
+    },
+    {
+      "ID": 31020800,
+      "Entries": [
+        "Cave 1-1"
+      ]
+    },
+    {
+      "ID": 31030800,
+      "Entries": [
+        "Cave 1-4"
+      ]
+    },
+    {
+      "ID": 31040800,
+      "Entries": [
+        "Cave 2-1"
+      ]
+    },
+    {
+      "ID": 31050800,
+      "Entries": [
+        "Cave 2-2"
+      ]
+    },
+    {
+      "ID": 31060800,
+      "Entries": [
+        "Cave 2-3"
+      ]
+    },
+    {
+      "ID": 31070800,
+      "Entries": [
+        "Cave 3-1"
+      ]
+    },
+    {
+      "ID": 31090800,
+      "Entries": [
+        "Cave 3-2"
+      ]
+    },
+    {
+      "ID": 31100800,
+      "Entries": [
+        "Cave 4-2"
+      ]
+    },
+    {
+      "ID": 31110800,
+      "Entries": [
+        "Cave 4-4"
+      ]
+    },
+    {
+      "ID": 31120800,
+      "Entries": [
+        "Cave 5-1"
+      ]
+    },
+    {
+      "ID": 31150800,
+      "Entries": [
+        "Cave 1-5"
+      ]
+    },
+    {
+      "ID": 31170800,
+      "Entries": [
+        "Cave 1-6"
+      ]
+    },
+    {
+      "ID": 31180800,
+      "Entries": [
+        "Cave 3-3"
+      ]
+    },
+    {
+      "ID": 31190800,
+      "Entries": [
+        "Cave 3-4"
+      ]
+    },
+    {
+      "ID": 31200800,
+      "Entries": [
+        "Cave 4-3"
+      ]
+    },
+    {
+      "ID": 31210800,
+      "Entries": [
+        "Cave 4-1"
+      ]
+    },
+    {
+      "ID": 31220800,
+      "Entries": [
+        "Cave 5-2"
+      ]
+    },
+    {
+      "ID": 32000800,
+      "Entries": [
+        "Cave 1-1"
+      ]
+    },
+    {
+      "ID": 32010800,
+      "Entries": [
+        "Cave 1-2"
+      ]
+    },
+    {
+      "ID": 32020800,
+      "Entries": [
+        "Cave 2-1"
+      ]
+    },
+    {
+      "ID": 32040800,
+      "Entries": [
+        "Cave 3-1"
+      ]
+    },
+    {
+      "ID": 32050800,
+      "Entries": [
+        "Cave 3-3"
+      ]
+    },
+    {
+      "ID": 32070800,
+      "Entries": [
+        "Cave 4-1"
+      ]
+    },
+    {
+      "ID": 32080800,
+      "Entries": [
+        "Cave 4-2"
+      ]
+    },
+    {
+      "ID": 32110800,
+      "Entries": [
+        "Cave 5-1"
+      ]
+    },
+    {
+      "ID": 35000800,
+      "Entries": [
+        "Royal Capital Underground Sewers"
+      ]
+    },
+    {
+      "ID": 35000850,
+      "Entries": [
+        "Royal Capital Underground Sewers Catacombs Side"
+      ]
+    },
+    {
+      "ID": 39200800,
+      "Entries": [
+        "Cliff Tunnel"
+      ]
+    }
+  ]
+}

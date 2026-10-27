@@ -1,0 +1,347 @@
+{
+  "Name": "GestureParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Bow"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Polite / Noble bow"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Religious Bow"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Female Bow"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "War Declaration Bow"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Kneeling Bow"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Welcome"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Wave Hand"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Yo! (raises hand)"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Guh!"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Female Polite Bow"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Point Forward"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Point Upward"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Point Downward"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Beckoning"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Stop"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "It's not time to panic yet (Calm down)."
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Nods with hand on chin"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Dogeza"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Plea for Mercy"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Yay Yay Oh"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Oh"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "I swear it on my sword"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "I swear it on my sword 2"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Chest Beating (Fire Monk)"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Raise Staff"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Clap"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Leaping Joy"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Two-handed Rejoice"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Spins around happily (female-oriented)"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "I've got it!"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Collapses in a heap"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Sit Down Pose"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Cross-legged"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Kneeling on one knee"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Female Sitting"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Cross-legged sleep"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Sleep"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Fetal Sleep"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Playing Dead"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Yurt Standing"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Prayer"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Prayer 2"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Special Religion 1"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Raise Both Hands and Shout Ha"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Golden Order To-Pose"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Golden Order inverted-T pose"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Golden Order T-Pose"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Ring Pose"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Ring Pose (Alternate Route)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Harp"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[DLC] Challenge to a fight"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "[DLC] Two-finger pose"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "[DLC] Miquella ring pose"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "[DLC] Charmed by Miquella"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "[DLC] Maiden pose"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "[DLC] Miquella ring pose (alternate route)"
+      ]
+    }
+  ]
+}

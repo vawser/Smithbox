@@ -1,0 +1,269 @@
+{
+  "Name": "HPEstusFlaskRecoveryParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Host"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Co-op route client"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Invasion Route Client"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Enemy Test"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "HP Estus Flask +1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "HP Estus Flask +2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "HP Estus Flask +3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "HP Estus Flask +4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "HP Estus Flask +5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "HP Estus Flask +6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "HP Estus Flask +7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "HP Estus Flask +8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "HP Estus Flask +9"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "HP Estus Flask +10"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "HP Estus Flask +11"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "HP Estus Flask +12"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "HP Estus Flask +13"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "HP Estus Flask +14"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "HP Estus Flask +15"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Host Only_HP Estus Flask +1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Host Only_HP Estus Flask +2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Host Only_HP Estus Flask +3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Host Only_HP Estus Flask +4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Host Only_HP Estus Flask +5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Host Only_HP Estus Flask +6"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Host Only_HP Estus Flask +7"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Host Only_HP Estus Flask +8"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Host Only_HP Estus Flask +9"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Host Only_HP Estus Flask +10"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Host Only_HP Estus Flask +11"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Host Only_HP Estus Flask +12"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Host Only_HP Estus Flask +13"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Host Only_HP Estus Flask +14"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Host Only_HP Estus Flask +15"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Shady Madman Spirit Reward_HP Estus Flask +3"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Group Defeat Reward Lv0_HP Estus Flask+1"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "Group Defeat Reward Lv0_HP Estus Flask+0"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Group Defeat Reward Lv1_HP Estus Flask+1"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "Group Defeat Reward Lv2_HP Estus Flask+2"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "Group Defeat Reward Lv3_HP Estus Flask+3"
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "Group Defeat Reward Lv4_HP Estus Flask+4"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "Group Defeat Reward Lv5_HP Estus Flask+5"
+      ]
+    },
+    {
+      "ID": 10600,
+      "Entries": [
+        "Group Defeat Reward Lv6_HP Estus Flask+6"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Test ID"
+      ]
+    }
+  ]
+}

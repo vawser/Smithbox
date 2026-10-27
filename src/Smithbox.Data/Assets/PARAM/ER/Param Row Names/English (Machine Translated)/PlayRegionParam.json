@@ -1,0 +1,2753 @@
+{
+  "Name": "PlayRegionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Invalid Data (Do Not Delete)"
+      ]
+    },
+    {
+      "ID": 981001,
+      "Entries": [
+        "TestMap_01"
+      ]
+    },
+    {
+      "ID": 981002,
+      "Entries": [
+        "TestMap_02"
+      ]
+    },
+    {
+      "ID": 981003,
+      "Entries": [
+        "TestMap_03"
+      ]
+    },
+    {
+      "ID": 981004,
+      "Entries": [
+        "TestMap_04"
+      ]
+    },
+    {
+      "ID": 981005,
+      "Entries": [
+        "TestMap_05"
+      ]
+    },
+    {
+      "ID": 981010,
+      "Entries": [
+        "For Open Field Test"
+      ]
+    },
+    {
+      "ID": 981011,
+      "Entries": [
+        "Legacy Map Test"
+      ]
+    },
+    {
+      "ID": 982001,
+      "Entries": [
+        "Open Field Test"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Stormveil_Major Boss"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "Stormveil_1"
+      ]
+    },
+    {
+      "ID": 1000002,
+      "Entries": [
+        "Stormveil_2"
+      ]
+    },
+    {
+      "ID": 1000003,
+      "Entries": [
+        "Stormveil_3"
+      ]
+    },
+    {
+      "ID": 1000004,
+      "Entries": [
+        "Stormveil_4"
+      ]
+    },
+    {
+      "ID": 1000005,
+      "Entries": [
+        "Stormveil_5"
+      ]
+    },
+    {
+      "ID": 1000006,
+      "Entries": [
+        "Stormveil_6"
+      ]
+    },
+    {
+      "ID": 1000007,
+      "Entries": [
+        "Stormveil_7"
+      ]
+    },
+    {
+      "ID": 1000008,
+      "Entries": [
+        "Stormveil_8"
+      ]
+    },
+    {
+      "ID": 1000009,
+      "Entries": [
+        "Stormveil_9"
+      ]
+    },
+    {
+      "ID": 1000011,
+      "Entries": [
+        "Stormveil_11"
+      ]
+    },
+    {
+      "ID": 1000012,
+      "Entries": [
+        "Stormveil_12"
+      ]
+    },
+    {
+      "ID": 1000013,
+      "Entries": [
+        "Stormveil_13"
+      ]
+    },
+    {
+      "ID": 1000090,
+      "Entries": [
+        "Stormveil_Multiplayer Prohibited"
+      ]
+    },
+    {
+      "ID": 1000091,
+      "Entries": [
+        "Stormveil_Conditional Multiplayer Restriction"
+      ]
+    },
+    {
+      "ID": 1001000,
+      "Entries": [
+        "Stormveil Separated_Major Boss"
+      ]
+    },
+    {
+      "ID": 1001001,
+      "Entries": [
+        "Stormveil Separated_1"
+      ]
+    },
+    {
+      "ID": 1001002,
+      "Entries": [
+        "Stormveil Separated_2"
+      ]
+    },
+    {
+      "ID": 1001003,
+      "Entries": [
+        "Stormveil Separated_3"
+      ]
+    },
+    {
+      "ID": 1001090,
+      "Entries": [
+        "Stormveil Separated_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Royal Capital_00 Major Boss"
+      ]
+    },
+    {
+      "ID": 1100001,
+      "Entries": [
+        "Royal Capital_01"
+      ]
+    },
+    {
+      "ID": 1100002,
+      "Entries": [
+        "Royal Capital_02"
+      ]
+    },
+    {
+      "ID": 1100010,
+      "Entries": [
+        "Royal Capital_10 Mid-Boss"
+      ]
+    },
+    {
+      "ID": 1100011,
+      "Entries": [
+        "Royal Capital_11"
+      ]
+    },
+    {
+      "ID": 1100012,
+      "Entries": [
+        "Royal Capital_12"
+      ]
+    },
+    {
+      "ID": 1100013,
+      "Entries": [
+        "Royal Capital_13"
+      ]
+    },
+    {
+      "ID": 1100014,
+      "Entries": [
+        "Royal Capital_14"
+      ]
+    },
+    {
+      "ID": 1100015,
+      "Entries": [
+        "Royal Capital_15"
+      ]
+    },
+    {
+      "ID": 1100016,
+      "Entries": [
+        "Royal Capital_16"
+      ]
+    },
+    {
+      "ID": 1100017,
+      "Entries": [
+        "Royal Capital_17"
+      ]
+    },
+    {
+      "ID": 1100018,
+      "Entries": [
+        "Royal Capital_18"
+      ]
+    },
+    {
+      "ID": 1100019,
+      "Entries": [
+        "Royal Capital_19"
+      ]
+    },
+    {
+      "ID": 1100021,
+      "Entries": [
+        "Royal Capital_21"
+      ]
+    },
+    {
+      "ID": 1100090,
+      "Entries": [
+        "Royal Capital_90"
+      ]
+    },
+    {
+      "ID": 1100091,
+      "Entries": [
+        "Royal Capital_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 1100092,
+      "Entries": [
+        "Royal Capital_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 1105000,
+      "Entries": [
+        "Royal Capital (Ash)_00 Major Boss"
+      ]
+    },
+    {
+      "ID": 1105001,
+      "Entries": [
+        "Royal Capital (Ash)_01"
+      ]
+    },
+    {
+      "ID": 1105002,
+      "Entries": [
+        "Royal Capital (Ash)_02"
+      ]
+    },
+    {
+      "ID": 1105010,
+      "Entries": [
+        "Royal Capital (Ash)_10 Mid Boss"
+      ]
+    },
+    {
+      "ID": 1105011,
+      "Entries": [
+        "Royal Capital (Ash)_11"
+      ]
+    },
+    {
+      "ID": 1105012,
+      "Entries": [
+        "Royal Capital (Ash)_12"
+      ]
+    },
+    {
+      "ID": 1105013,
+      "Entries": [
+        "Royal Capital (Ash)_13"
+      ]
+    },
+    {
+      "ID": 1105014,
+      "Entries": [
+        "Royal Capital (Ash)_14"
+      ]
+    },
+    {
+      "ID": 1105020,
+      "Entries": [
+        "Royal Capital (Ash)_20"
+      ]
+    },
+    {
+      "ID": 1105090,
+      "Entries": [
+        "Royal Capital_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 1105091,
+      "Entries": [
+        "Royal Capital_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 1105092,
+      "Entries": [
+        "Royal Capital_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 1105093,
+      "Entries": [
+        "Royal Capital_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 1110000,
+      "Entries": [
+        "Royal Capital (Base)"
+      ]
+    },
+    {
+      "ID": 1201000,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp_00"
+      ]
+    },
+    {
+      "ID": 1201001,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp_01"
+      ]
+    },
+    {
+      "ID": 1201002,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp_02"
+      ]
+    },
+    {
+      "ID": 1201003,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp_03"
+      ]
+    },
+    {
+      "ID": 1201011,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp_11"
+      ]
+    },
+    {
+      "ID": 1201012,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp_12"
+      ]
+    },
+    {
+      "ID": 1201013,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp_13"
+      ]
+    },
+    {
+      "ID": 1201014,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp_14"
+      ]
+    },
+    {
+      "ID": 1201015,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp_15"
+      ]
+    },
+    {
+      "ID": 1201016,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp_16"
+      ]
+    },
+    {
+      "ID": 1201017,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp_17"
+      ]
+    },
+    {
+      "ID": 1202000,
+      "Entries": [
+        "Underground Labyrinth Plains_00"
+      ]
+    },
+    {
+      "ID": 1202001,
+      "Entries": [
+        "Underground Labyrinth Plains_01"
+      ]
+    },
+    {
+      "ID": 1202002,
+      "Entries": [
+        "Underground Labyrinth Plains_02"
+      ]
+    },
+    {
+      "ID": 1202003,
+      "Entries": [
+        "Underground Labyrinth Plains_03"
+      ]
+    },
+    {
+      "ID": 1202004,
+      "Entries": [
+        "Underground Labyrinth Plains_04"
+      ]
+    },
+    {
+      "ID": 1202005,
+      "Entries": [
+        "Underground Labyrinth Plains_05"
+      ]
+    },
+    {
+      "ID": 1202006,
+      "Entries": [
+        "Underground Labyrinth Plains_06"
+      ]
+    },
+    {
+      "ID": 1202007,
+      "Entries": [
+        "Underground Labyrinth Plains_07"
+      ]
+    },
+    {
+      "ID": 1202011,
+      "Entries": [
+        "Underground Labyrinth Plains_11"
+      ]
+    },
+    {
+      "ID": 1202012,
+      "Entries": [
+        "Underground Labyrinth Plains_12"
+      ]
+    },
+    {
+      "ID": 1202013,
+      "Entries": [
+        "Underground Labyrinth Plains_13"
+      ]
+    },
+    {
+      "ID": 1202020,
+      "Entries": [
+        "Underground Labyrinth Plains_20"
+      ]
+    },
+    {
+      "ID": 1202032,
+      "Entries": [
+        "Underground Labyrinth Plains_32"
+      ]
+    },
+    {
+      "ID": 1202033,
+      "Entries": [
+        "Underground Labyrinth Plains_33"
+      ]
+    },
+    {
+      "ID": 1202034,
+      "Entries": [
+        "Underground Labyrinth Plains_34"
+      ]
+    },
+    {
+      "ID": 1203000,
+      "Entries": [
+        "Underground Labyrinth Royal Capital_00"
+      ]
+    },
+    {
+      "ID": 1203001,
+      "Entries": [
+        "Underground Labyrinth Royal Capital_01"
+      ]
+    },
+    {
+      "ID": 1203002,
+      "Entries": [
+        "Underground Labyrinth Royal Capital_02"
+      ]
+    },
+    {
+      "ID": 1203003,
+      "Entries": [
+        "Underground Labyrinth Royal Capital_03"
+      ]
+    },
+    {
+      "ID": 1203004,
+      "Entries": [
+        "Underground Labyrinth Royal Capital_04"
+      ]
+    },
+    {
+      "ID": 1203005,
+      "Entries": [
+        "Underground Labyrinth Royal Capital_05"
+      ]
+    },
+    {
+      "ID": 1204000,
+      "Entries": [
+        "Underground Labyrinth Hanging Terrain_00"
+      ]
+    },
+    {
+      "ID": 1204001,
+      "Entries": [
+        "Underground Labyrinth Hanging Terrain_01"
+      ]
+    },
+    {
+      "ID": 1205000,
+      "Entries": [
+        "Underground Labyrinth Plains Depths_00"
+      ]
+    },
+    {
+      "ID": 1205001,
+      "Entries": [
+        "Underground Labyrinth Plains Depths_01"
+      ]
+    },
+    {
+      "ID": 1205002,
+      "Entries": [
+        "Underground Labyrinth Plains Depths_02"
+      ]
+    },
+    {
+      "ID": 1205003,
+      "Entries": [
+        "Underground Labyrinth Plains Depths_03"
+      ]
+    },
+    {
+      "ID": 1205004,
+      "Entries": [
+        "Underground Labyrinth Plains Depths_04"
+      ]
+    },
+    {
+      "ID": 1205005,
+      "Entries": [
+        "Underground Labyrinth Plains Depths_05"
+      ]
+    },
+    {
+      "ID": 1205006,
+      "Entries": [
+        "Underground Labyrinth Plains Depths_06"
+      ]
+    },
+    {
+      "ID": 1205007,
+      "Entries": [
+        "Underground Labyrinth Plains Depths_07"
+      ]
+    },
+    {
+      "ID": 1205090,
+      "Entries": [
+        "Underground Labyrinth Plains Depths_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 1207031,
+      "Entries": [
+        "Underground Labyrinth Plains First Half_31"
+      ]
+    },
+    {
+      "ID": 1207021,
+      "Entries": [
+        "Underground Labyrinth Plains First Half_21"
+      ]
+    },
+    {
+      "ID": 1207022,
+      "Entries": [
+        "Underground Labyrinth Plains First Half_22"
+      ]
+    },
+    {
+      "ID": 1207023,
+      "Entries": [
+        "Underground Labyrinth Plains First Half_23"
+      ]
+    },
+    {
+      "ID": 1207024,
+      "Entries": [
+        "Underground Labyrinth Plains First Half_24"
+      ]
+    },
+    {
+      "ID": 1207025,
+      "Entries": [
+        "Underground Labyrinth Plains First Half_25"
+      ]
+    },
+    {
+      "ID": 1207026,
+      "Entries": [
+        "Underground Labyrinth Plains First Half_26"
+      ]
+    },
+    {
+      "ID": 1208000,
+      "Entries": [
+        "Underground Labyrinth Plains Hidden_00"
+      ]
+    },
+    {
+      "ID": 1208001,
+      "Entries": [
+        "Underground Labyrinth Plains Hidden_01"
+      ]
+    },
+    {
+      "ID": 1209000,
+      "Entries": [
+        "Underground Labyrinth Plains Hidden B_00"
+      ]
+    },
+    {
+      "ID": 1209001,
+      "Entries": [
+        "Underground Labyrinth Plains Hidden B_01"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Descending Ruins_00"
+      ]
+    },
+    {
+      "ID": 1300001,
+      "Entries": [
+        "Descending Ruins_01"
+      ]
+    },
+    {
+      "ID": 1300002,
+      "Entries": [
+        "Descending Ruins_02"
+      ]
+    },
+    {
+      "ID": 1300003,
+      "Entries": [
+        "Descending Ruins_03"
+      ]
+    },
+    {
+      "ID": 1300004,
+      "Entries": [
+        "Descending Ruins_04"
+      ]
+    },
+    {
+      "ID": 1300005,
+      "Entries": [
+        "Descending Ruins_05"
+      ]
+    },
+    {
+      "ID": 1300006,
+      "Entries": [
+        "Descending Ruins_06"
+      ]
+    },
+    {
+      "ID": 1300010,
+      "Entries": [
+        "Descending Ruins_10"
+      ]
+    },
+    {
+      "ID": 1300011,
+      "Entries": [
+        "Descending Ruins_11"
+      ]
+    },
+    {
+      "ID": 1300012,
+      "Entries": [
+        "Descending Ruins_12"
+      ]
+    },
+    {
+      "ID": 1300013,
+      "Entries": [
+        "Descending Ruins_13"
+      ]
+    },
+    {
+      "ID": 1300014,
+      "Entries": [
+        "Descending Ruins_14"
+      ]
+    },
+    {
+      "ID": 1300015,
+      "Entries": [
+        "Descending Ruins_15"
+      ]
+    },
+    {
+      "ID": 1300016,
+      "Entries": [
+        "Descending Ruins_16"
+      ]
+    },
+    {
+      "ID": 1300017,
+      "Entries": [
+        "Descending Ruins_17"
+      ]
+    },
+    {
+      "ID": 1300018,
+      "Entries": [
+        "Descending Ruins_18"
+      ]
+    },
+    {
+      "ID": 1300019,
+      "Entries": [
+        "Descending Ruins_19"
+      ]
+    },
+    {
+      "ID": 1300020,
+      "Entries": [
+        "Descending Ruins_20"
+      ]
+    },
+    {
+      "ID": 1300021,
+      "Entries": [
+        "Descending Ruins_21"
+      ]
+    },
+    {
+      "ID": 1300090,
+      "Entries": [
+        "Descending Ruins_Multiplayer Prohibited"
+      ]
+    },
+    {
+      "ID": 1400000,
+      "Entries": [
+        "Monsan_00"
+      ]
+    },
+    {
+      "ID": 1400001,
+      "Entries": [
+        "Monsan_01"
+      ]
+    },
+    {
+      "ID": 1400002,
+      "Entries": [
+        "Monsan_02"
+      ]
+    },
+    {
+      "ID": 1400003,
+      "Entries": [
+        "Monsan_03"
+      ]
+    },
+    {
+      "ID": 1400010,
+      "Entries": [
+        "Monsan_10"
+      ]
+    },
+    {
+      "ID": 1400011,
+      "Entries": [
+        "Monsan_11"
+      ]
+    },
+    {
+      "ID": 1400012,
+      "Entries": [
+        "Monsan_12"
+      ]
+    },
+    {
+      "ID": 1400013,
+      "Entries": [
+        "Monsan_13"
+      ]
+    },
+    {
+      "ID": 1400014,
+      "Entries": [
+        "Monsan_14"
+      ]
+    },
+    {
+      "ID": 1400015,
+      "Entries": [
+        "Monsan_15"
+      ]
+    },
+    {
+      "ID": 1400016,
+      "Entries": [
+        "Monsan_16"
+      ]
+    },
+    {
+      "ID": 1400090,
+      "Entries": [
+        "Monsan_Multiplayer Disabled"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Rotten Great Tree_00"
+      ]
+    },
+    {
+      "ID": 1500001,
+      "Entries": [
+        "Rotten Great Tree_01"
+      ]
+    },
+    {
+      "ID": 1500002,
+      "Entries": [
+        "Rotten Great Tree_02"
+      ]
+    },
+    {
+      "ID": 1500003,
+      "Entries": [
+        "Rotten Great Tree_03"
+      ]
+    },
+    {
+      "ID": 1500004,
+      "Entries": [
+        "Rotten Great Tree_04"
+      ]
+    },
+    {
+      "ID": 1500005,
+      "Entries": [
+        "Rotten Great Tree_05"
+      ]
+    },
+    {
+      "ID": 1500010,
+      "Entries": [
+        "Rotten Great Tree_10"
+      ]
+    },
+    {
+      "ID": 1500011,
+      "Entries": [
+        "Rotten Great Tree_11"
+      ]
+    },
+    {
+      "ID": 1500012,
+      "Entries": [
+        "Rotten Great Tree_12"
+      ]
+    },
+    {
+      "ID": 1500090,
+      "Entries": [
+        "Rotten Great Tree_90"
+      ]
+    },
+    {
+      "ID": 1600000,
+      "Entries": [
+        "Volcano Prison_00"
+      ]
+    },
+    {
+      "ID": 1600001,
+      "Entries": [
+        "Volcano Prison_01"
+      ]
+    },
+    {
+      "ID": 1600002,
+      "Entries": [
+        "Volcano Prison_02"
+      ]
+    },
+    {
+      "ID": 1600003,
+      "Entries": [
+        "Volcano Prison_03"
+      ]
+    },
+    {
+      "ID": 1600004,
+      "Entries": [
+        "Volcano Prison_04"
+      ]
+    },
+    {
+      "ID": 1600005,
+      "Entries": [
+        "Volcano Prison_05"
+      ]
+    },
+    {
+      "ID": 1600006,
+      "Entries": [
+        "Volcano Prison_06"
+      ]
+    },
+    {
+      "ID": 1600010,
+      "Entries": [
+        "Volcano Prison_10"
+      ]
+    },
+    {
+      "ID": 1600011,
+      "Entries": [
+        "Volcano Prison_11"
+      ]
+    },
+    {
+      "ID": 1600012,
+      "Entries": [
+        "Volcano Prison_12"
+      ]
+    },
+    {
+      "ID": 1600013,
+      "Entries": [
+        "Volcano Prison_13"
+      ]
+    },
+    {
+      "ID": 1600014,
+      "Entries": [
+        "Volcano Prison_14"
+      ]
+    },
+    {
+      "ID": 1600015,
+      "Entries": [
+        "Volcano Prison_15"
+      ]
+    },
+    {
+      "ID": 1600016,
+      "Entries": [
+        "Volcano Prison_16"
+      ]
+    },
+    {
+      "ID": 1600017,
+      "Entries": [
+        "Volcano Prison_17"
+      ]
+    },
+    {
+      "ID": 1600020,
+      "Entries": [
+        "Volcano Prison_20"
+      ]
+    },
+    {
+      "ID": 1600021,
+      "Entries": [
+        "Volcano Prison_21"
+      ]
+    },
+    {
+      "ID": 1600022,
+      "Entries": [
+        "Volcano Prison_22"
+      ]
+    },
+    {
+      "ID": 1600023,
+      "Entries": [
+        "Volcano Prison_23"
+      ]
+    },
+    {
+      "ID": 1600024,
+      "Entries": [
+        "Volcano Prison_24"
+      ]
+    },
+    {
+      "ID": 1600025,
+      "Entries": [
+        "Volcano Prison_25"
+      ]
+    },
+    {
+      "ID": 1800000,
+      "Entries": [
+        "Tutorial/EX Dungeon_00"
+      ]
+    },
+    {
+      "ID": 1800001,
+      "Entries": [
+        "Tutorial/EX Dungeon_02"
+      ]
+    },
+    {
+      "ID": 1800002,
+      "Entries": [
+        "Tutorial/EX Dungeon_03"
+      ]
+    },
+    {
+      "ID": 1800010,
+      "Entries": [
+        "Tutorial/EX Dungeon_04"
+      ]
+    },
+    {
+      "ID": 1800090,
+      "Entries": [
+        "Tutorial/EX Dungeon_01"
+      ]
+    },
+    {
+      "ID": 1900000,
+      "Entries": [
+        "Final Boss"
+      ]
+    },
+    {
+      "ID": 1900001,
+      "Entries": [
+        "Final Boss"
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        "Graveyard 1-1_00"
+      ]
+    },
+    {
+      "ID": 3000001,
+      "Entries": [
+        "Graveyard 1-1_01"
+      ]
+    },
+    {
+      "ID": 3001000,
+      "Entries": [
+        "Graveyard 1-2_00"
+      ]
+    },
+    {
+      "ID": 3001001,
+      "Entries": [
+        "Graveyard 1-2_01"
+      ]
+    },
+    {
+      "ID": 3002000,
+      "Entries": [
+        "Graveyard 1-3_00"
+      ]
+    },
+    {
+      "ID": 3002001,
+      "Entries": [
+        "Graveyard 1-3_01"
+      ]
+    },
+    {
+      "ID": 3003000,
+      "Entries": [
+        "Graveyard 2-2_00"
+      ]
+    },
+    {
+      "ID": 3003001,
+      "Entries": [
+        "Graveyard 2-2_01"
+      ]
+    },
+    {
+      "ID": 3004000,
+      "Entries": [
+        "Graveyard 1-4_00"
+      ]
+    },
+    {
+      "ID": 3004001,
+      "Entries": [
+        "Graveyard 1-4_01"
+      ]
+    },
+    {
+      "ID": 3005000,
+      "Entries": [
+        "Graveyard 2-1_00"
+      ]
+    },
+    {
+      "ID": 3005001,
+      "Entries": [
+        "Graveyard 2-1_01"
+      ]
+    },
+    {
+      "ID": 3005010,
+      "Entries": [
+        "Graveyard 2-1_10"
+      ]
+    },
+    {
+      "ID": 3006000,
+      "Entries": [
+        "Graveyard 2-3_00"
+      ]
+    },
+    {
+      "ID": 3006001,
+      "Entries": [
+        "Graveyard 2-3_01"
+      ]
+    },
+    {
+      "ID": 3007000,
+      "Entries": [
+        "Graveyard 3-5_00"
+      ]
+    },
+    {
+      "ID": 3007001,
+      "Entries": [
+        "Graveyard 3-5_01"
+      ]
+    },
+    {
+      "ID": 3008000,
+      "Entries": [
+        "Graveyard 3-1_00"
+      ]
+    },
+    {
+      "ID": 3008001,
+      "Entries": [
+        "Graveyard 3-1_01"
+      ]
+    },
+    {
+      "ID": 3008002,
+      "Entries": [
+        "Graveyard 3-1_02"
+      ]
+    },
+    {
+      "ID": 3008003,
+      "Entries": [
+        "Graveyard 3-1_03"
+      ]
+    },
+    {
+      "ID": 3009000,
+      "Entries": [
+        "Graveyard 3-2_00"
+      ]
+    },
+    {
+      "ID": 3009001,
+      "Entries": [
+        "Graveyard 3-2_01"
+      ]
+    },
+    {
+      "ID": 3009002,
+      "Entries": [
+        "Graveyard 3-2_02"
+      ]
+    },
+    {
+      "ID": 3009003,
+      "Entries": [
+        "Graveyard 3-2_03"
+      ]
+    },
+    {
+      "ID": 3009004,
+      "Entries": [
+        "Graveyard 3-2_04"
+      ]
+    },
+    {
+      "ID": 3010000,
+      "Entries": [
+        "Graveyard 3-3_00"
+      ]
+    },
+    {
+      "ID": 3010001,
+      "Entries": [
+        "Graveyard 3-3_01"
+      ]
+    },
+    {
+      "ID": 3010002,
+      "Entries": [
+        "Graveyard 3-3_02"
+      ]
+    },
+    {
+      "ID": 3010003,
+      "Entries": [
+        "Graveyard 3-3_03"
+      ]
+    },
+    {
+      "ID": 3011000,
+      "Entries": [
+        "Graveyard 1-4_00"
+      ]
+    },
+    {
+      "ID": 3011001,
+      "Entries": [
+        "Graveyard 1-4_01"
+      ]
+    },
+    {
+      "ID": 3012000,
+      "Entries": [
+        "Graveyard 3-4_00"
+      ]
+    },
+    {
+      "ID": 3012001,
+      "Entries": [
+        "Graveyard 3-4_01"
+      ]
+    },
+    {
+      "ID": 3013000,
+      "Entries": [
+        "Graveyard 3-6_00"
+      ]
+    },
+    {
+      "ID": 3013001,
+      "Entries": [
+        "Graveyard 3-6_01"
+      ]
+    },
+    {
+      "ID": 3013090,
+      "Entries": [
+        "Catacombs 3-6 Multiplayer Disabled_00"
+      ]
+    },
+    {
+      "ID": 3013091,
+      "Entries": [
+        "Catacombs 3-6 Multiplayer Disabled_01"
+      ]
+    },
+    {
+      "ID": 3014000,
+      "Entries": [
+        "Graveyard 4-1_00"
+      ]
+    },
+    {
+      "ID": 3014001,
+      "Entries": [
+        "Graveyard 4-1_01"
+      ]
+    },
+    {
+      "ID": 3015000,
+      "Entries": [
+        "Graveyard 4-2_00"
+      ]
+    },
+    {
+      "ID": 3015001,
+      "Entries": [
+        "Graveyard 4-2_01"
+      ]
+    },
+    {
+      "ID": 3016000,
+      "Entries": [
+        "Graveyard 4-3_00"
+      ]
+    },
+    {
+      "ID": 3016001,
+      "Entries": [
+        "Graveyard 4-3_01"
+      ]
+    },
+    {
+      "ID": 3016002,
+      "Entries": [
+        "Graveyard 4-3_02"
+      ]
+    },
+    {
+      "ID": 3016003,
+      "Entries": [
+        "Graveyard 4-3_03"
+      ]
+    },
+    {
+      "ID": 3017000,
+      "Entries": [
+        "Graveyard 5-1_00"
+      ]
+    },
+    {
+      "ID": 3017001,
+      "Entries": [
+        "Graveyard 5-1_01"
+      ]
+    },
+    {
+      "ID": 3017002,
+      "Entries": [
+        "Graveyard 5-1_02"
+      ]
+    },
+    {
+      "ID": 3017003,
+      "Entries": [
+        "Graveyard 5-1_03"
+      ]
+    },
+    {
+      "ID": 3017004,
+      "Entries": [
+        "Graveyard 5-1_04"
+      ]
+    },
+    {
+      "ID": 3017005,
+      "Entries": [
+        "Graveyard 5-1_05"
+      ]
+    },
+    {
+      "ID": 3018000,
+      "Entries": [
+        "Graveyard 5-2_00"
+      ]
+    },
+    {
+      "ID": 3018001,
+      "Entries": [
+        "Graveyard 5-2_01"
+      ]
+    },
+    {
+      "ID": 3018002,
+      "Entries": [
+        "Graveyard 5-2_02"
+      ]
+    },
+    {
+      "ID": 3018003,
+      "Entries": [
+        "Graveyard 5-2_03"
+      ]
+    },
+    {
+      "ID": 3018004,
+      "Entries": [
+        "Graveyard 5-2_04"
+      ]
+    },
+    {
+      "ID": 3019000,
+      "Entries": [
+        "Graveyard 5-3_00"
+      ]
+    },
+    {
+      "ID": 3019001,
+      "Entries": [
+        "Graveyard 5-3_01"
+      ]
+    },
+    {
+      "ID": 3020000,
+      "Entries": [
+        "Graveyard 5-4_00"
+      ]
+    },
+    {
+      "ID": 3020001,
+      "Entries": [
+        "Graveyard 5-4_01"
+      ]
+    },
+    {
+      "ID": 3020002,
+      "Entries": [
+        "Graveyard 5-4_02"
+      ]
+    },
+    {
+      "ID": 3020003,
+      "Entries": [
+        "Graveyard 5-4_03"
+      ]
+    },
+    {
+      "ID": 3020004,
+      "Entries": [
+        "Graveyard 5-4_04"
+      ]
+    },
+    {
+      "ID": 3102000,
+      "Entries": [
+        "Cave 1-1_00"
+      ]
+    },
+    {
+      "ID": 3102001,
+      "Entries": [
+        "Cave 1-1_01"
+      ]
+    },
+    {
+      "ID": 3101000,
+      "Entries": [
+        "Cave 1-2_00"
+      ]
+    },
+    {
+      "ID": 3101001,
+      "Entries": [
+        "Cave 1-2_01"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "Cave 1-3_00"
+      ]
+    },
+    {
+      "ID": 3100001,
+      "Entries": [
+        "Cave 1-3_01"
+      ]
+    },
+    {
+      "ID": 3103000,
+      "Entries": [
+        "Cave1-4_00"
+      ]
+    },
+    {
+      "ID": 3103001,
+      "Entries": [
+        "Cave1-4_01"
+      ]
+    },
+    {
+      "ID": 3115000,
+      "Entries": [
+        "Cave1-5_00"
+      ]
+    },
+    {
+      "ID": 3115001,
+      "Entries": [
+        "Cave1-5_01"
+      ]
+    },
+    {
+      "ID": 3115090,
+      "Entries": [
+        "Cave1-5_No Multi"
+      ]
+    },
+    {
+      "ID": 3117000,
+      "Entries": [
+        "Cave1-6_00"
+      ]
+    },
+    {
+      "ID": 3117001,
+      "Entries": [
+        "Cave1-6_01"
+      ]
+    },
+    {
+      "ID": 3117002,
+      "Entries": [
+        "Cave1-6_02"
+      ]
+    },
+    {
+      "ID": 3117003,
+      "Entries": [
+        "Cave1-6_03"
+      ]
+    },
+    {
+      "ID": 3117004,
+      "Entries": [
+        "Cave1-6_04"
+      ]
+    },
+    {
+      "ID": 3104000,
+      "Entries": [
+        "Cave2-1_00"
+      ]
+    },
+    {
+      "ID": 3104001,
+      "Entries": [
+        "Cave2-1_01"
+      ]
+    },
+    {
+      "ID": 3105000,
+      "Entries": [
+        "Cave2-2_00"
+      ]
+    },
+    {
+      "ID": 3105001,
+      "Entries": [
+        "Cave2-2_01"
+      ]
+    },
+    {
+      "ID": 3105002,
+      "Entries": [
+        "Cave2-2_02"
+      ]
+    },
+    {
+      "ID": 3105003,
+      "Entries": [
+        "Cave2-2_03"
+      ]
+    },
+    {
+      "ID": 3105090,
+      "Entries": [
+        "Cave2-2_No Multi"
+      ]
+    },
+    {
+      "ID": 3106000,
+      "Entries": [
+        "Cave2-3_00"
+      ]
+    },
+    {
+      "ID": 3106001,
+      "Entries": [
+        "Cave2-3_01"
+      ]
+    },
+    {
+      "ID": 3106002,
+      "Entries": [
+        "Cave2-3_02"
+      ]
+    },
+    {
+      "ID": 3106090,
+      "Entries": [
+        "Cave2-3_No Multi"
+      ]
+    },
+    {
+      "ID": 3107000,
+      "Entries": [
+        "Cave3-1_00"
+      ]
+    },
+    {
+      "ID": 3107001,
+      "Entries": [
+        "Cave3-1_01"
+      ]
+    },
+    {
+      "ID": 3107002,
+      "Entries": [
+        "Cave3-1_02"
+      ]
+    },
+    {
+      "ID": 3107003,
+      "Entries": [
+        "Cave3-1_03"
+      ]
+    },
+    {
+      "ID": 3107004,
+      "Entries": [
+        "Cave3-1_04"
+      ]
+    },
+    {
+      "ID": 3109000,
+      "Entries": [
+        "Cave3-2_00"
+      ]
+    },
+    {
+      "ID": 3109001,
+      "Entries": [
+        "Cave3-2_01"
+      ]
+    },
+    {
+      "ID": 3118000,
+      "Entries": [
+        "Cave3-3_00"
+      ]
+    },
+    {
+      "ID": 3118001,
+      "Entries": [
+        "Cave3-3_01"
+      ]
+    },
+    {
+      "ID": 3119000,
+      "Entries": [
+        "Cave3-4_00"
+      ]
+    },
+    {
+      "ID": 3119001,
+      "Entries": [
+        "Cave3-4_01"
+      ]
+    },
+    {
+      "ID": 3119010,
+      "Entries": [
+        "Cave3-4_10"
+      ]
+    },
+    {
+      "ID": 3110000,
+      "Entries": [
+        "Cave4-2_00"
+      ]
+    },
+    {
+      "ID": 3110001,
+      "Entries": [
+        "Cave4-2_01"
+      ]
+    },
+    {
+      "ID": 3110002,
+      "Entries": [
+        "Cave4-2_02"
+      ]
+    },
+    {
+      "ID": 3111000,
+      "Entries": [
+        "Cave4-4_00"
+      ]
+    },
+    {
+      "ID": 3111001,
+      "Entries": [
+        "Cave4-4_01"
+      ]
+    },
+    {
+      "ID": 3111002,
+      "Entries": [
+        "Cave4-4_02"
+      ]
+    },
+    {
+      "ID": 3120000,
+      "Entries": [
+        "Cave4-3_00"
+      ]
+    },
+    {
+      "ID": 3120001,
+      "Entries": [
+        "Cave4-3_01"
+      ]
+    },
+    {
+      "ID": 3120002,
+      "Entries": [
+        "Cave4-3_02"
+      ]
+    },
+    {
+      "ID": 3121000,
+      "Entries": [
+        "Cave4-1_00"
+      ]
+    },
+    {
+      "ID": 3121001,
+      "Entries": [
+        "Cave4-1_01"
+      ]
+    },
+    {
+      "ID": 3121002,
+      "Entries": [
+        "Cave4-1_02"
+      ]
+    },
+    {
+      "ID": 3121090,
+      "Entries": [
+        "Cave4-1 No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3112000,
+      "Entries": [
+        "Cave5-1_00"
+      ]
+    },
+    {
+      "ID": 3112001,
+      "Entries": [
+        "Cave5-1_01"
+      ]
+    },
+    {
+      "ID": 3112002,
+      "Entries": [
+        "Cave5-1_02"
+      ]
+    },
+    {
+      "ID": 3112003,
+      "Entries": [
+        "Cave5-1_03"
+      ]
+    },
+    {
+      "ID": 3122000,
+      "Entries": [
+        "Cave5-2_00"
+      ]
+    },
+    {
+      "ID": 3122001,
+      "Entries": [
+        "Cave5-2_01"
+      ]
+    },
+    {
+      "ID": 3200000,
+      "Entries": [
+        "Tunnel 1-1_00"
+      ]
+    },
+    {
+      "ID": 3200001,
+      "Entries": [
+        "Tunnel 1-1_01"
+      ]
+    },
+    {
+      "ID": 3201000,
+      "Entries": [
+        "Tunnel 1-2_00"
+      ]
+    },
+    {
+      "ID": 3201001,
+      "Entries": [
+        "Tunnel 1-2_01"
+      ]
+    },
+    {
+      "ID": 3202000,
+      "Entries": [
+        "Tunnel 2-1_00"
+      ]
+    },
+    {
+      "ID": 3202001,
+      "Entries": [
+        "Tunnel 2-1_01"
+      ]
+    },
+    {
+      "ID": 3204000,
+      "Entries": [
+        "Tunnel 3-1_00"
+      ]
+    },
+    {
+      "ID": 3204001,
+      "Entries": [
+        "Tunnel 3-1_01"
+      ]
+    },
+    {
+      "ID": 3205000,
+      "Entries": [
+        "Tunnel3-3_00"
+      ]
+    },
+    {
+      "ID": 3205001,
+      "Entries": [
+        "Tunnel3-3_01"
+      ]
+    },
+    {
+      "ID": 3207000,
+      "Entries": [
+        "Tunnel4-1_00"
+      ]
+    },
+    {
+      "ID": 3207001,
+      "Entries": [
+        "Tunnel4-1_01"
+      ]
+    },
+    {
+      "ID": 3207002,
+      "Entries": [
+        "Tunnel4-1_02"
+      ]
+    },
+    {
+      "ID": 3207003,
+      "Entries": [
+        "Tunnel4-1_03"
+      ]
+    },
+    {
+      "ID": 3207090,
+      "Entries": [
+        "Tunnel4-1_MultiplayerProhibited"
+      ]
+    },
+    {
+      "ID": 3208000,
+      "Entries": [
+        "Tunnel4-2_00"
+      ]
+    },
+    {
+      "ID": 3208001,
+      "Entries": [
+        "Tunnel4-2_01"
+      ]
+    },
+    {
+      "ID": 3211000,
+      "Entries": [
+        "Tunnel5-1_00"
+      ]
+    },
+    {
+      "ID": 3211001,
+      "Entries": [
+        "Tunnel5-1_01"
+      ]
+    },
+    {
+      "ID": 3211002,
+      "Entries": [
+        "Tunnel5-1_02"
+      ]
+    },
+    {
+      "ID": 3410000,
+      "Entries": [
+        "Divine Tower (Green)_00"
+      ]
+    },
+    {
+      "ID": 3410001,
+      "Entries": [
+        "Divine Tower (Green)_01"
+      ]
+    },
+    {
+      "ID": 3410002,
+      "Entries": [
+        "Divine Tower (Green)_02"
+      ]
+    },
+    {
+      "ID": 3410003,
+      "Entries": [
+        "Divine Tower (Green)_03"
+      ]
+    },
+    {
+      "ID": 3410004,
+      "Entries": [
+        "Divine Tower (Green)_04"
+      ]
+    },
+    {
+      "ID": 3410090,
+      "Entries": [
+        "Divine Tower (Green)_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3411000,
+      "Entries": [
+        "Divine Tower (Lake)_00"
+      ]
+    },
+    {
+      "ID": 3411001,
+      "Entries": [
+        "Divine Tower (Lake)_01"
+      ]
+    },
+    {
+      "ID": 3411002,
+      "Entries": [
+        "Divine Tower (Lake)_02"
+      ]
+    },
+    {
+      "ID": 3411003,
+      "Entries": [
+        "Divine Tower (Lake)_03"
+      ]
+    },
+    {
+      "ID": 3411004,
+      "Entries": [
+        "Divine Tower (Lake)_04"
+      ]
+    },
+    {
+      "ID": 3411005,
+      "Entries": [
+        "Divine Tower (Lake)_05"
+      ]
+    },
+    {
+      "ID": 3411006,
+      "Entries": [
+        "Divine Tower (Lake)_06"
+      ]
+    },
+    {
+      "ID": 3411007,
+      "Entries": [
+        "Divine Tower (Lake)_07"
+      ]
+    },
+    {
+      "ID": 3411090,
+      "Entries": [
+        "Divine Tower (Lake)_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3412000,
+      "Entries": [
+        "Divine Tower (Highland)_00"
+      ]
+    },
+    {
+      "ID": 3412001,
+      "Entries": [
+        "Divine Tower (Highland)_01"
+      ]
+    },
+    {
+      "ID": 3412002,
+      "Entries": [
+        "Divine Tower (Highland)_02"
+      ]
+    },
+    {
+      "ID": 3412003,
+      "Entries": [
+        "Divine Tower (Highland)_03"
+      ]
+    },
+    {
+      "ID": 3412090,
+      "Entries": [
+        "Divine Tower (Highland)_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3412010,
+      "Entries": [
+        "Tunnel 3-2_10"
+      ]
+    },
+    {
+      "ID": 3412011,
+      "Entries": [
+        "Tunnel 3-2_11"
+      ]
+    },
+    {
+      "ID": 3412012,
+      "Entries": [
+        "Tunnel 3-2_12"
+      ]
+    },
+    {
+      "ID": 3412013,
+      "Entries": [
+        "Tunnel 3-2_13"
+      ]
+    },
+    {
+      "ID": 3413003,
+      "Entries": [
+        "Divine Tower (Plains)_03"
+      ]
+    },
+    {
+      "ID": 3413010,
+      "Entries": [
+        "Divine Tower (Plains)_10"
+      ]
+    },
+    {
+      "ID": 3413011,
+      "Entries": [
+        "Divine Tower (Plains)_11"
+      ]
+    },
+    {
+      "ID": 3413012,
+      "Entries": [
+        "Divine Tower (Plains)_12"
+      ]
+    },
+    {
+      "ID": 3413013,
+      "Entries": [
+        "Divine Tower (Plains)_13"
+      ]
+    },
+    {
+      "ID": 3413090,
+      "Entries": [
+        "Divine Tower (Plains)_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3413091,
+      "Entries": [
+        "Divine Tower (Plains)_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3414000,
+      "Entries": [
+        "Divine Tower (Snowy Mountain)_00_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3414001,
+      "Entries": [
+        "Divine Tower (Snowy Mountain)_01_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3414002,
+      "Entries": [
+        "Divine Tower (Snowy Mountain)_02_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3414010,
+      "Entries": [
+        "Divine Tower (Snowy Mountain)_10_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3414011,
+      "Entries": [
+        "Divine Tower (Snowy Mountain)_11_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3414012,
+      "Entries": [
+        "Divine Tower (Snowy Mountain)_12_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3414013,
+      "Entries": [
+        "Divine Tower (Snowy Mountain)_13_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3414014,
+      "Entries": [
+        "Divine Tower (Snowy Mountain)_14_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3415090,
+      "Entries": [
+        "Divine Tower (Crater Lake)_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 3500000,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_00"
+      ]
+    },
+    {
+      "ID": 3500001,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_01"
+      ]
+    },
+    {
+      "ID": 3500002,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_02"
+      ]
+    },
+    {
+      "ID": 3500003,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_03"
+      ]
+    },
+    {
+      "ID": 3500004,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_04"
+      ]
+    },
+    {
+      "ID": 3500005,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_05"
+      ]
+    },
+    {
+      "ID": 3500006,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_06"
+      ]
+    },
+    {
+      "ID": 3500007,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_07"
+      ]
+    },
+    {
+      "ID": 3500008,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_08"
+      ]
+    },
+    {
+      "ID": 3500009,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_09"
+      ]
+    },
+    {
+      "ID": 3500010,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_10"
+      ]
+    },
+    {
+      "ID": 3500011,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_11"
+      ]
+    },
+    {
+      "ID": 3500090,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_12"
+      ]
+    },
+    {
+      "ID": 3500091,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_13"
+      ]
+    },
+    {
+      "ID": 3500092,
+      "Entries": [
+        "Royal Capital Underground (Sewers)_14"
+      ]
+    },
+    {
+      "ID": 3920000,
+      "Entries": [
+        "Cliff Tunnel_00"
+      ]
+    },
+    {
+      "ID": 3920001,
+      "Entries": [
+        "Cliff Tunnel_01"
+      ]
+    },
+    {
+      "ID": 3920002,
+      "Entries": [
+        "Cliff Tunnel_02"
+      ]
+    },
+    {
+      "ID": 3920003,
+      "Entries": [
+        "Cliff Tunnel_03"
+      ]
+    },
+    {
+      "ID": 3920004,
+      "Entries": [
+        "Cliff Tunnel_04"
+      ]
+    },
+    {
+      "ID": 4500000,
+      "Entries": [
+        "Royal Capital Arena"
+      ]
+    },
+    {
+      "ID": 4501000,
+      "Entries": [
+        "Caelid Arena"
+      ]
+    },
+    {
+      "ID": 4502000,
+      "Entries": [
+        "Limgrave Arena"
+      ]
+    },
+    {
+      "ID": 6000000,
+      "Entries": [
+        "Common Settings"
+      ]
+    },
+    {
+      "ID": 6100000,
+      "Entries": [
+        "Green North: Immediately After Start"
+      ]
+    },
+    {
+      "ID": 6100001,
+      "Entries": [
+        "Green North: Agheel Lake"
+      ]
+    },
+    {
+      "ID": 6100002,
+      "Entries": [
+        "Green North: Plains"
+      ]
+    },
+    {
+      "ID": 6100003,
+      "Entries": [
+        "Green North: Misty Forest"
+      ]
+    },
+    {
+      "ID": 6100004,
+      "Entries": [
+        "Green North: Town Surroundings"
+      ]
+    },
+    {
+      "ID": 6100010,
+      "Entries": [
+        "Green North: Agheel Lake_Sealed Boss Area"
+      ]
+    },
+    {
+      "ID": 6100090,
+      "Entries": [
+        "Green_Map Fragment 0 No Multiplayer"
+      ]
+    },
+    {
+      "ID": 6101000,
+      "Entries": [
+        "Green North: Stormhill"
+      ]
+    },
+    {
+      "ID": 6101010,
+      "Entries": [
+        "Green North: Stormhill_Sealed Boss Area"
+      ]
+    },
+    {
+      "ID": 6101090,
+      "Entries": [
+        "Green North: Stormhill No Multiplayer"
+      ]
+    },
+    {
+      "ID": 6102000,
+      "Entries": [
+        "Green South East"
+      ]
+    },
+    {
+      "ID": 6102001,
+      "Entries": [
+        "Green South Fort"
+      ]
+    },
+    {
+      "ID": 6102002,
+      "Entries": [
+        "Green South West"
+      ]
+    },
+    {
+      "ID": 6102020,
+      "Entries": [
+        "Green South Fort_Sealed Boss Area"
+      ]
+    },
+    {
+      "ID": 6200000,
+      "Entries": [
+        "Lake Main"
+      ]
+    },
+    {
+      "ID": 6200001,
+      "Entries": [
+        "Lake Main Immediately After Start"
+      ]
+    },
+    {
+      "ID": 6200002,
+      "Entries": [
+        "Lake Main Crystal Forest"
+      ]
+    },
+    {
+      "ID": 6200003,
+      "Entries": [
+        "Lake Main Southwest"
+      ]
+    },
+    {
+      "ID": 6200004,
+      "Entries": [
+        "Lake Main Southeast"
+      ]
+    },
+    {
+      "ID": 6200005,
+      "Entries": [
+        "Lake Main East"
+      ]
+    },
+    {
+      "ID": 6200006,
+      "Entries": [
+        "Lake Main West"
+      ]
+    },
+    {
+      "ID": 6200007,
+      "Entries": [
+        "Lake Main Lake Fort"
+      ]
+    },
+    {
+      "ID": 6200008,
+      "Entries": [
+        "Lake Main Around Raya Tower"
+      ]
+    },
+    {
+      "ID": 6200010,
+      "Entries": [
+        "Lake_Map Fragment 5_Sealed Boss Area 1"
+      ]
+    },
+    {
+      "ID": 6200020,
+      "Entries": [
+        "Lake_Map Fragment 5_Sealed Boss Area 2"
+      ]
+    },
+    {
+      "ID": 6200090,
+      "Entries": [
+        "Lake Main Multiplayer Disabled"
+      ]
+    },
+    {
+      "ID": 6201000,
+      "Entries": [
+        "Lake Main In Front of Giant EV"
+      ]
+    },
+    {
+      "ID": 6202000,
+      "Entries": [
+        "Lake Overhang Terrain"
+      ]
+    },
+    {
+      "ID": 6300000,
+      "Entries": [
+        "Highland Outside Castle Wall_Carriage Graveyard"
+      ]
+    },
+    {
+      "ID": 6300001,
+      "Entries": [
+        "Highland Outside Walls_Fort"
+      ]
+    },
+    {
+      "ID": 6300002,
+      "Entries": [
+        "Highland Outside Walls_Main Street"
+      ]
+    },
+    {
+      "ID": 6300003,
+      "Entries": [
+        "Highland Outside Walls_Deracine Forest"
+      ]
+    },
+    {
+      "ID": 6300004,
+      "Entries": [
+        "Highland Outside Walls_Back Street"
+      ]
+    },
+    {
+      "ID": 6300005,
+      "Entries": [
+        "Highland Outside Walls_Dragon Worship Land"
+      ]
+    },
+    {
+      "ID": 6300010,
+      "Entries": [
+        "Highland_Map Fragment 6_Sealed Boss Area 1"
+      ]
+    },
+    {
+      "ID": 6300020,
+      "Entries": [
+        "Highland_Map Fragment 6_Sealed Boss Area 2"
+      ]
+    },
+    {
+      "ID": 6300030,
+      "Entries": [
+        "Highland_Map Fragment 8_Sealed Boss Area 1"
+      ]
+    },
+    {
+      "ID": 6300040,
+      "Entries": [
+        "Highland No Multiplayer"
+      ]
+    },
+    {
+      "ID": 6301000,
+      "Entries": [
+        "Highland Inside Walls"
+      ]
+    },
+    {
+      "ID": 6301090,
+      "Entries": [
+        "Highland Inside Walls No Multiplayer"
+      ]
+    },
+    {
+      "ID": 6302000,
+      "Entries": [
+        "Highland Volcano Upper Level"
+      ]
+    },
+    {
+      "ID": 6302001,
+      "Entries": [
+        "Highland Volcano Upper Level Volcano Prison Surroundings"
+      ]
+    },
+    {
+      "ID": 6302002,
+      "Entries": [
+        "Highland Volcano Lower Level"
+      ]
+    },
+    {
+      "ID": 6400000,
+      "Entries": [
+        "Plains Entrance"
+      ]
+    },
+    {
+      "ID": 6400001,
+      "Entries": [
+        "Plains South Side"
+      ]
+    },
+    {
+      "ID": 6400002,
+      "Entries": [
+        "Plains Fort"
+      ]
+    },
+    {
+      "ID": 6400003,
+      "Entries": [
+        "Plains Radahn Desert"
+      ]
+    },
+    {
+      "ID": 6400010,
+      "Entries": [
+        "Plains Fort_Sealed Boss Area"
+      ]
+    },
+    {
+      "ID": 6400020,
+      "Entries": [
+        "Plains South Side_Sealed Boss Area"
+      ]
+    },
+    {
+      "ID": 6400030,
+      "Entries": [
+        "Plains Entrance_Sealed Boss Area"
+      ]
+    },
+    {
+      "ID": 6400040,
+      "Entries": [
+        "Plains Radahn Desert Sealed Boss Area"
+      ]
+    },
+    {
+      "ID": 6400090,
+      "Entries": [
+        "Plains Fort_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 6400091,
+      "Entries": [
+        "Plains Arena_No Multiplayer"
+      ]
+    },
+    {
+      "ID": 6401000,
+      "Entries": [
+        "Plains Rot Swamp"
+      ]
+    },
+    {
+      "ID": 6402000,
+      "Entries": [
+        "Plains Descending Ruins Origin"
+      ]
+    },
+    {
+      "ID": 6402001,
+      "Entries": [
+        "Plains Descending Ruins Origin Maliketh Origin"
+      ]
+    },
+    {
+      "ID": 6500000,
+      "Entries": [
+        "Snowy Mountain Forbidden Area"
+      ]
+    },
+    {
+      "ID": 6500001,
+      "Entries": [
+        "Snowy Mountain Divine Tower 5-1"
+      ]
+    },
+    {
+      "ID": 6500010,
+      "Entries": [
+        "Snowy Mountain Divine Tower 5-1_Lock-in Boss Area 1"
+      ]
+    },
+    {
+      "ID": 6500090,
+      "Entries": [
+        "Snowy Mountain Forbidden Area No Multiplayer"
+      ]
+    },
+    {
+      "ID": 6501000,
+      "Entries": [
+        "Snowy Mountain Giant"
+      ]
+    },
+    {
+      "ID": 6501001,
+      "Entries": [
+        "Snowy Mountain Ice Lake"
+      ]
+    },
+    {
+      "ID": 6501002,
+      "Entries": [
+        "Snowy Mountain Sub-route"
+      ]
+    },
+    {
+      "ID": 6501003,
+      "Entries": [
+        "Snowy Mountain Fort"
+      ]
+    },
+    {
+      "ID": 6501010,
+      "Entries": [
+        "Snowy Mountain Giant_Lock-in Boss Area 1"
+      ]
+    },
+    {
+      "ID": 6502000,
+      "Entries": [
+        "Snowy Mountain Giant Grave"
+      ]
+    },
+    {
+      "ID": 6502010,
+      "Entries": [
+        "Snowy Mountain Giant Grave_Lock-in Boss Area 1"
+      ]
+    },
+    {
+      "ID": 6503000,
+      "Entries": [
+        "Snowfield"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,959 @@
+{
+  "Name": "AttackElementCorrectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (For Test)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Test: Weapon converts Strength and Dexterity to Lightning"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "※※Unused※※ Fire Pot"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "※※Unused※※ Lightning Bottle"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "※※Unused※※ Holy Water Bottle"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "※※Unused※※ Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "※※Unused※※ Bone Knife"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "※※Unused※※ Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "※※Unused※※ Kukri"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "※※Unused※※ Crystal Knife"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "※※Unused※※ Shotgun Knife"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "※※Unused※※ Pebble"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "※※Unused※※ Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "※※Unused※※ Dragon Body Stone Lv2"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "※※Unused※※ Tethered Fire Pot (Bottle)"
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        "※※Unused※※ Fire Pot Lv2"
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        "※※Unused※※ Fire Pot Lv2 B Faith Scaling Applied"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Weapon: Normal"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Weapon: Warrior Fire"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "Weapon: Luck Type"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Luck→Attribute Correction"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Weapon: Margit's Summoning Dagger"
+      ]
+    },
+    {
+      "ID": 12005,
+      "Entries": [
+        "Weapon: Margit's Summoning Dagger_Warrior Fire"
+      ]
+    },
+    {
+      "ID": 12013,
+      "Entries": [
+        "Weapon: Margit's Summoning Dagger_Luck Type"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Weapon: Sariwan's Longbow"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Weapon: Blue Astel Straight Sword"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "Golden Order Flail"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Staff_Intelligence"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Staff_Intelligence&Faith"
+      ]
+    },
+    {
+      "ID": 20020,
+      "Entries": [
+        "Staff_Faith"
+      ]
+    },
+    {
+      "ID": 20030,
+      "Entries": [
+        "Staff_Intelligence&Luck"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Sacred Seal_Faith"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Sacred Seal_Faith&Intelligence"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "Sacred Seal_Faith&Strength"
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        "Sacred Seal_Faith&Luck"
+      ]
+    },
+    {
+      "ID": 30040,
+      "Entries": [
+        "Sacred Seal_Faith&Strength&Dexterity&Intelligence"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Miracle - Madness throw"
+      ]
+    },
+    {
+      "ID": 42060,
+      "Entries": [
+        "Miracle - Holy Storm"
+      ]
+    },
+    {
+      "ID": 42070,
+      "Entries": [
+        "Miracle - Wrath of God"
+      ]
+    },
+    {
+      "ID": 42080,
+      "Entries": [
+        "Miracle - Force release"
+      ]
+    },
+    {
+      "ID": 42300,
+      "Entries": [
+        "Miracle - 1x multiplier"
+      ]
+    },
+    {
+      "ID": 42310,
+      "Entries": [
+        "Miracle - faith scaling slightly stronger (Erdtree commoner)"
+      ]
+    },
+    {
+      "ID": 42311,
+      "Entries": [
+        "Miracle - faith scaling stronger (Erdtree royal)"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Generic Skill_Disable All Corrections"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Generic Skill__Weapon Correction Influence Rate 10%"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Generic Skill__Weapon Correction Influence Rate 20%"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "Generic Skill__Weapon Correction Influence Rate 30%"
+      ]
+    },
+    {
+      "ID": 50004,
+      "Entries": [
+        "Generic Skill__Weapon Correction Influence Rate 40%"
+      ]
+    },
+    {
+      "ID": 50005,
+      "Entries": [
+        "Generic Skill__Weapon Correction Influence Rate 50%"
+      ]
+    },
+    {
+      "ID": 50006,
+      "Entries": [
+        "Generic Skill__Weapon Correction Influence Rate 60%"
+      ]
+    },
+    {
+      "ID": 50007,
+      "Entries": [
+        "Generic Skill__Weapon Correction Influence Rate 70%"
+      ]
+    },
+    {
+      "ID": 50008,
+      "Entries": [
+        "Generic Skill__Weapon Correction Influence Rate 80%"
+      ]
+    },
+    {
+      "ID": 50009,
+      "Entries": [
+        "Generic Skill__Weapon Correction Influence Rate 90%"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Generic Skill__Weapon Correction Influence Rate 100%"
+      ]
+    },
+    {
+      "ID": 50101,
+      "Entries": [
+        "Generic Skill__Overwrite All Correction Values 10"
+      ]
+    },
+    {
+      "ID": 50102,
+      "Entries": [
+        "Generic Skill__Overwrite All Correction Values 20"
+      ]
+    },
+    {
+      "ID": 50103,
+      "Entries": [
+        "Generic Skill__Overwrite All Correction Values 30"
+      ]
+    },
+    {
+      "ID": 50104,
+      "Entries": [
+        "Generic Skill__Overwrite All Correction Values 40"
+      ]
+    },
+    {
+      "ID": 50105,
+      "Entries": [
+        "Generic Skill__Overwrite All Correction Values 50"
+      ]
+    },
+    {
+      "ID": 50106,
+      "Entries": [
+        "Generic Skill_Overwrite All Correction Values 60"
+      ]
+    },
+    {
+      "ID": 50107,
+      "Entries": [
+        "Generic Skill_Overwrite All Correction Values 70"
+      ]
+    },
+    {
+      "ID": 50108,
+      "Entries": [
+        "Generic Skill_Overwrite All Correction Values 80"
+      ]
+    },
+    {
+      "ID": 50109,
+      "Entries": [
+        "Generic Skill_Overwrite All Correction Values 90"
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        "Generic Skill__Overwrite All Correction Values 100"
+      ]
+    },
+    {
+      "ID": 51000,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Standard"
+      ]
+    },
+    {
+      "ID": 51010,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Heavy"
+      ]
+    },
+    {
+      "ID": 51020,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Keen"
+      ]
+    },
+    {
+      "ID": 51030,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Quality"
+      ]
+    },
+    {
+      "ID": 51040,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Fire"
+      ]
+    },
+    {
+      "ID": 51050,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Fire Sorcery"
+      ]
+    },
+    {
+      "ID": 51060,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Lightning"
+      ]
+    },
+    {
+      "ID": 51070,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Holy"
+      ]
+    },
+    {
+      "ID": 51080,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Magic"
+      ]
+    },
+    {
+      "ID": 51090,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Mystic"
+      ]
+    },
+    {
+      "ID": 51100,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Frost"
+      ]
+    },
+    {
+      "ID": 51110,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Poison"
+      ]
+    },
+    {
+      "ID": 51120,
+      "Entries": [
+        "Generic Skill_Attribute Attack_Blood"
+      ]
+    },
+    {
+      "ID": 52000,
+      "Entries": [
+        "Generic Skill__Fatal Fist"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Fire Pot"
+      ]
+    },
+    {
+      "ID": 200301,
+      "Entries": [
+        "Upper Fire Pot"
+      ]
+    },
+    {
+      "ID": 200302,
+      "Entries": [
+        "Upper Fire Pot B"
+      ]
+    },
+    {
+      "ID": 200320,
+      "Entries": [
+        "Lightning Pot"
+      ]
+    },
+    {
+      "ID": 200321,
+      "Entries": [
+        "Upper Lightning Pot"
+      ]
+    },
+    {
+      "ID": 200330,
+      "Entries": [
+        "Feces Pot"
+      ]
+    },
+    {
+      "ID": 200340,
+      "Entries": [
+        "Insect Jar"
+      ]
+    },
+    {
+      "ID": 200350,
+      "Entries": [
+        "Holy Water Pot"
+      ]
+    },
+    {
+      "ID": 200351,
+      "Entries": [
+        "Upper Holy Water Pot"
+      ]
+    },
+    {
+      "ID": 200360,
+      "Entries": [
+        "Frost Pot"
+      ]
+    },
+    {
+      "ID": 200370,
+      "Entries": [
+        "Poison Pot"
+      ]
+    },
+    {
+      "ID": 200400,
+      "Entries": [
+        "Tethered Fire Pot"
+      ]
+    },
+    {
+      "ID": 200420,
+      "Entries": [
+        "Tethered Lightning Pot"
+      ]
+    },
+    {
+      "ID": 200430,
+      "Entries": [
+        "Tethered Dung Pot"
+      ]
+    },
+    {
+      "ID": 200440,
+      "Entries": [
+        "Tethered Poison Pot"
+      ]
+    },
+    {
+      "ID": 200460,
+      "Entries": [
+        "Tethered Magic Pot"
+      ]
+    },
+    {
+      "ID": 200470,
+      "Entries": [
+        "Tethered Bug Pot"
+      ]
+    },
+    {
+      "ID": 200480,
+      "Entries": [
+        "Tethered Frost Pot"
+      ]
+    },
+    {
+      "ID": 200490,
+      "Entries": [
+        "Tethered Volcanic Gas Pot"
+      ]
+    },
+    {
+      "ID": 200510,
+      "Entries": [
+        "Tethered Holy Water Pot"
+      ]
+    },
+    {
+      "ID": 200600,
+      "Entries": [
+        "Volcano Gas Pot"
+      ]
+    },
+    {
+      "ID": 200640,
+      "Entries": [
+        "Sleep Pot (Former Sleep Cloud)"
+      ]
+    },
+    {
+      "ID": 200650,
+      "Entries": [
+        "Throw (Those Who Pursue)"
+      ]
+    },
+    {
+      "ID": 200660,
+      "Entries": [
+        "Throw (Sorcery Pot)"
+      ]
+    },
+    {
+      "ID": 200661,
+      "Entries": [
+        "Throw (Greater Sorcery Pot)"
+      ]
+    },
+    {
+      "ID": 200670,
+      "Entries": [
+        "Plague Pot"
+      ]
+    },
+    {
+      "ID": 201700,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 201710,
+      "Entries": [
+        "Bone Knife"
+      ]
+    },
+    {
+      "ID": 201720,
+      "Entries": [
+        "Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 201730,
+      "Entries": [
+        "Kukri"
+      ]
+    },
+    {
+      "ID": 201740,
+      "Entries": [
+        "Crystal Knife"
+      ]
+    },
+    {
+      "ID": 201750,
+      "Entries": [
+        "Shotgun Knife"
+      ]
+    },
+    {
+      "ID": 201760,
+      "Entries": [
+        "Pebble"
+      ]
+    },
+    {
+      "ID": 201830,
+      "Entries": [
+        "Stone Scatter Throw_Explosive Stone (Small)"
+      ]
+    },
+    {
+      "ID": 201831,
+      "Entries": [
+        "Stone Scatter Throw_Multi Explosive Stone (Large)"
+      ]
+    },
+    {
+      "ID": 201840,
+      "Entries": [
+        "Stone Scatter Throw_Poison Stone (Small)"
+      ]
+    },
+    {
+      "ID": 201841,
+      "Entries": [
+        "Stone Scatter Throw_Multi Poison Stone (Large)"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Ancestral Magic (Breath)"
+      ]
+    },
+    {
+      "ID": 203010,
+      "Entries": [
+        "Curse Explosion"
+      ]
+    },
+    {
+      "ID": 203011,
+      "Entries": [
+        "Curse Explosion_Upper"
+      ]
+    },
+    {
+      "ID": 203020,
+      "Entries": [
+        "Prayer (Light Pillar)"
+      ]
+    },
+    {
+      "ID": 203030,
+      "Entries": [
+        "Thrown Glintstone Bullet"
+      ]
+    },
+    {
+      "ID": 203050,
+      "Entries": [
+        "Undead Miner Gem Throw"
+      ]
+    },
+    {
+      "ID": 203051,
+      "Entries": [
+        "Undead Miner Gem Throw(Enhanced)"
+      ]
+    },
+    {
+      "ID": 203060,
+      "Entries": [
+        "Destruction Cult Stone Magic (Pebble)"
+      ]
+    },
+    {
+      "ID": 203070,
+      "Entries": [
+        "Destruction Devotee Stone Magic (Large Pebble)"
+      ]
+    },
+    {
+      "ID": 203080,
+      "Entries": [
+        "Night Bell"
+      ]
+    },
+    {
+      "ID": 203510,
+      "Entries": [
+        "Perfumer Magic (Horizontal Swing Attack)"
+      ]
+    },
+    {
+      "ID": 203580,
+      "Entries": [
+        "(Beast-tribe toxic pollen)"
+      ]
+    },
+    {
+      "ID": 203610,
+      "Entries": [
+        "Acid Spray"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "Dark Staff"
+      ]
+    },
+    {
+      "ID": 10010010,
+      "Entries": [
+        "Dark Talisman"
+      ]
+    },
+    {
+      "ID": 10010020,
+      "Entries": [
+        "Dark Bell"
+      ]
+    },
+    {
+      "ID": 10010030,
+      "Entries": [
+        "Sorcery Miracle Bell"
+      ]
+    },
+    {
+      "ID": 10041000,
+      "Entries": [
+        "Dragon Envoy Curved Sword (Moonlight Greatsword)_Skill One-Shot (Magic)"
+      ]
+    },
+    {
+      "ID": 10061700,
+      "Entries": [
+        "Eclipse Old King Greatsword (Blue)_Skill Stance Follow-up R2 (Magic)"
+      ]
+    },
+    {
+      "ID": 10062700,
+      "Entries": [
+        "Twin Prince Combined Sword_Skill Stance Variant R2 (Fire)"
+      ]
+    },
+    {
+      "ID": 10063200,
+      "Entries": [
+        "Moonlight Greatsword_Normal Charge (Magic)"
+      ]
+    },
+    {
+      "ID": 10063210,
+      "Entries": [
+        "Moonlight Greatsword_Skill One-Shot (Magic)"
+      ]
+    },
+    {
+      "ID": 10063400,
+      "Entries": [
+        "Final Boss Sword_Arts One-Shot (Fire)"
+      ]
+    },
+    {
+      "ID": 10062600,
+      "Entries": [
+        "Twin Prince (Elder) Colossal Sword_Skill Lunge (Fire)"
+      ]
+    },
+    {
+      "ID": 10071200,
+      "Entries": [
+        "Firewood Demon_Skill One-Shot (Fire)"
+      ]
+    },
+    {
+      "ID": 10071100,
+      "Entries": [
+        "Dragon Guardian Knight Axe_Skill One-Shot (Lightning)"
+      ]
+    },
+    {
+      "ID": 10081700,
+      "Entries": [
+        "Gargoyle Torch_Arts Hold Variant R2 (Fire)"
+      ]
+    },
+    {
+      "ID": 10081900,
+      "Entries": [
+        "Ash Demon Greathammer_Arts Hold Variant R2 (Fire)"
+      ]
+    },
+    {
+      "ID": 10091800,
+      "Entries": [
+        "Cardinal Corps Spear (Faith to Physical)"
+      ]
+    },
+    {
+      "ID": 10091814,
+      "Entries": [
+        "Cardinal Corps Spear (Faith to Physical): Holy Variant"
+      ]
+    },
+    {
+      "ID": 10091815,
+      "Entries": [
+        "Cardinal Corps Spear (Faith to Physical): Undead Variant"
+      ]
+    },
+    {
+      "ID": 10092200,
+      "Entries": [
+        "Dragonhunter Spear_Skill Charge (Lightning)"
+      ]
+    },
+    {
+      "ID": 10091100,
+      "Entries": [
+        "Gargoyle Spear_Skill Charge R2 Variant (Fire)"
+      ]
+    },
+    {
+      "ID": 10091600,
+      "Entries": [
+        "Storm King's Sword Spear_Skill One-Shot (Lightning)"
+      ]
+    },
+    {
+      "ID": 10101600,
+      "Entries": [
+        "Moonlight Witch Spear_Skill One-Shot (Fire)"
+      ]
+    },
+    {
+      "ID": 10110300,
+      "Entries": [
+        "Firewood Demon Knuckle_Skill Spin (Fire)"
+      ]
+    },
+    {
+      "ID": 10110310,
+      "Entries": [
+        "Firewood Demon Knuckle_Skill Spin Variant R2 (Fire)"
+      ]
+    },
+    {
+      "ID": 10131000,
+      "Entries": [
+        "Maggot Man Staff (Luck to Magic)"
+      ]
+    },
+    {
+      "ID": 10131100,
+      "Entries": [
+        "Cardinal Corps Great Staff (Faith to Magic)"
+      ]
+    },
+    {
+      "ID": 10131200,
+      "Entries": [
+        "Sulyvahn's Spear (Faith to Magic)"
+      ]
+    },
+    {
+      "ID": 10141300,
+      "Entries": [
+        "Sulyvahn's Longbow_Arts One Shot (Magic)"
+      ]
+    },
+    {
+      "ID": 10160400,
+      "Entries": [
+        "Pursuer's Dual Curved Swords_Right Hand (Magic)"
+      ]
+    },
+    {
+      "ID": 10160410,
+      "Entries": [
+        "Pursuer's Dual Curved Swords_Left Hand (Fire)"
+      ]
+    },
+    {
+      "ID": 10160420,
+      "Entries": [
+        "Pursuer's Dual Curved Swords_Left Hand (Weapon Display)"
+      ]
+    }
+  ]
+}

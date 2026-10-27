@@ -1,0 +1,587 @@
+{
+  "Name": "WwiseValueToStrParam_BgmBossChrIdConv",
+  "Entries": [
+    {
+      "ID": 203000,
+      "Entries": [
+        "Major Boss 6 Rennala"
+      ]
+    },
+    {
+      "ID": 203001,
+      "Entries": [
+        "Major Boss 6B Rennala (Round Table Echo)"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "Major Boss 12 Maliketh"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Major Boss 3 Malenia"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Major Boss 7 Margit (Stormveil)"
+      ]
+    },
+    {
+      "ID": 213001,
+      "Entries": [
+        "Major Boss 8 Margit (Royal Capital)"
+      ]
+    },
+    {
+      "ID": 219000,
+      "Entries": [
+        "Major Boss 14 Marika"
+      ]
+    },
+    {
+      "ID": 356000,
+      "Entries": [
+        "Major Boss 5 Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 451000,
+      "Entries": [
+        "Major Boss Lineage of the Guardian"
+      ]
+    },
+    {
+      "ID": 452000,
+      "Entries": [
+        "Major Boss 13 Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 467000,
+      "Entries": [
+        "Major Boss 9 Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 471000,
+      "Entries": [
+        "Major Boss 11 King of Ghouls"
+      ]
+    },
+    {
+      "ID": 472000,
+      "Entries": [
+        "Major Boss 4 Godfrey"
+      ]
+    },
+    {
+      "ID": 472001,
+      "Entries": [
+        "Major Boss 4B Godfrey B"
+      ]
+    },
+    {
+      "ID": 473000,
+      "Entries": [
+        "Major Boss 2 Radahn (Scrawny Horse)"
+      ]
+    },
+    {
+      "ID": 475000,
+      "Entries": [
+        "Major Boss 1 Grafted King"
+      ]
+    },
+    {
+      "ID": 476000,
+      "Entries": [
+        "Major Boss 10 Giant"
+      ]
+    },
+    {
+      "ID": 480000,
+      "Entries": [
+        "Major Boss 15 Greater Demon"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "DLC02 Knight of the Night-Eyed Queen (Ark Boss)"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "DLC02 Crimson Rot Warrior (Babel Boss)"
+      ]
+    },
+    {
+      "ID": 505000,
+      "Entries": [
+        "DLC02 King of Chaos (Manor Boss)"
+      ]
+    },
+    {
+      "ID": 512000,
+      "Entries": [
+        "DLC02 Tempest Bell (Open Boss)"
+      ]
+    },
+    {
+      "ID": 513000,
+      "Entries": [
+        "DLC02 Marika's Son"
+      ]
+    },
+    {
+      "ID": 520000,
+      "Entries": [
+        "DLC02 Finger Nursery (Underground Fort Boss)"
+      ]
+    },
+    {
+      "ID": 521000,
+      "Entries": [
+        "DLC02 Divine Beast Lion Dance (Babel Boss)"
+      ]
+    },
+    {
+      "ID": 522000,
+      "Entries": [
+        "DLC02 Final Boss (Babel Boss)"
+      ]
+    },
+    {
+      "ID": 523000,
+      "Entries": [
+        "DLC02 TBD (Shadow Erdtree Boss)"
+      ]
+    },
+    {
+      "ID": 530000,
+      "Entries": [
+        "DLC02 Messmer's Sword (Central Fort Boss)"
+      ]
+    },
+    {
+      "ID": 920100,
+      "Entries": [
+        "Mid Boss 4 Death Kin"
+      ]
+    },
+    {
+      "ID": 920200,
+      "Entries": [
+        "Mid Boss 6 Golden Tree Knights"
+      ]
+    },
+    {
+      "ID": 920300,
+      "Entries": [
+        "Mid Boss 7 Wyvern"
+      ]
+    },
+    {
+      "ID": 920400,
+      "Entries": [
+        "Mid Boss 9 Marika Ruins Group"
+      ]
+    },
+    {
+      "ID": 920500,
+      "Entries": [
+        "Mid Boss 10 Monsan Royal Lineage"
+      ]
+    },
+    {
+      "ID": 920600,
+      "Entries": [
+        "Mid Boss World Tree Demon"
+      ]
+    },
+    {
+      "ID": 920700,
+      "Entries": [
+        "Mid Boss Astel"
+      ]
+    },
+    {
+      "ID": 920800,
+      "Entries": [
+        "Mid Boss Meteorite Beast (Astel Arrange)"
+      ]
+    },
+    {
+      "ID": 920900,
+      "Entries": [
+        "Mid Boss Ruins Basement Boss"
+      ]
+    },
+    {
+      "ID": 921000,
+      "Entries": [
+        "Mid Boss Dark Knights"
+      ]
+    },
+    {
+      "ID": 921100,
+      "Entries": [
+        "Mid Boss New Circular Circle"
+      ]
+    },
+    {
+      "ID": 921200,
+      "Entries": [
+        "Mid Boss Abyss Boss"
+      ]
+    },
+    {
+      "ID": 921300,
+      "Entries": [
+        "Mid Boss Field Boss Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 921400,
+      "Entries": [
+        "Mid Boss Runewolf"
+      ]
+    },
+    {
+      "ID": 921500,
+      "Entries": [
+        "Mid Boss Black Knife Descendant"
+      ]
+    },
+    {
+      "ID": 921600,
+      "Entries": [
+        "Mid Boss Greater Demon Phantom"
+      ]
+    },
+    {
+      "ID": 921700,
+      "Entries": [
+        "Mid Boss Blood Attribute NPC (Invader Greater Faction Theme)"
+      ]
+    },
+    {
+      "ID": 925000,
+      "Entries": [
+        "Mid Boss 8 Circular Circle"
+      ]
+    },
+    {
+      "ID": 930000,
+      "Entries": [
+        "Mid Boss 1 Catacombs"
+      ]
+    },
+    {
+      "ID": 931000,
+      "Entries": [
+        "Mid Boss 2 Cave"
+      ]
+    },
+    {
+      "ID": 932000,
+      "Entries": [
+        "Mid Boss 5 Tunnel"
+      ]
+    },
+    {
+      "ID": 940000,
+      "Entries": [
+        "DLC_Small Legacy Underground Ruins Boss"
+      ]
+    },
+    {
+      "ID": 941000,
+      "Entries": [
+        "DLC_Small Legacy Prison Boss"
+      ]
+    },
+    {
+      "ID": 942000,
+      "Entries": [
+        "DLC_Godborn Priests"
+      ]
+    },
+    {
+      "ID": 943000,
+      "Entries": [
+        "DLC_Michella Faction Battle"
+      ]
+    },
+    {
+      "ID": 944000,
+      "Entries": [
+        "DLC_Michella Faction Battle Final"
+      ]
+    },
+    {
+      "ID": 950000,
+      "Entries": [
+        "Mid Boss 3 Fort"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "BgmEnemyType Product Use"
+      ]
+    },
+    {
+      "ID": 10000089,
+      "Entries": [
+        "Reserved (Unused)"
+      ]
+    },
+    {
+      "ID": 10000090,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000091,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000092,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000093,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000094,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000095,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000096,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000097,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000098,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000099,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000101,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000102,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000103,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 10000104,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000023,
+      "Entries": [
+        "Invalid Treatment State"
+      ]
+    },
+    {
+      "ID": 11000029,
+      "Entries": [
+        "[GR] SEQ34732 [Sound][BGM]Play dedicated BGM during Radahn Festival"
+      ]
+    },
+    {
+      "ID": 11000030,
+      "Entries": [
+        "[GR] SEQ34732 [Sound][BGM]Play dedicated BGM during Radahn Festival"
+      ]
+    },
+    {
+      "ID": 11000031,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000032,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000033,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000034,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000035,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000036,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000037,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000038,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000039,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000040,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000041,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000042,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000043,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000044,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000045,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000046,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000047,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000048,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000049,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000050,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000051,
+      "Entries": [
+        "DLC02"
+      ]
+    },
+    {
+      "ID": 11000052,
+      "Entries": [
+        "DLC02"
+      ]
+    }
+  ]
+}

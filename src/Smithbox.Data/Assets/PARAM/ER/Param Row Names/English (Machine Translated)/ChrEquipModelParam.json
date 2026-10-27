@@ -1,0 +1,77 @@
+{
+  "Name": "ChrEquipModelParam",
+  "Entries": [
+    {
+      "ID": 200,
+      "Entries": [
+        "Curved Sword_Noxious Fluid Sword"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Curved Sword_Noxious Fluid Hammer"
+      ]
+    },
+    {
+      "ID": 882,
+      "Entries": [
+        "Shadow Erdtree Avatar Weapon"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Whip_Whip"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Whip_Thorn Whip"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Whip_Lava Whip Candlestick"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Whip_Hossu's Petal"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Whip_Giant's Red Hair"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Whip_Urumi"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "Whip_"
+      ]
+    },
+    {
+      "ID": 1209,
+      "Entries": [
+        "Whip_Tooth-row Whip"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Small Shield Coiled Shield"
+      ]
+    }
+  ]
+}

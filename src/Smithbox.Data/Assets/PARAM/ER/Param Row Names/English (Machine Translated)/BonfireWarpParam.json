@@ -1,0 +1,1907 @@
+{
+  "Name": "BonfireWarpParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "m10_00 Stormveil Castle: Grafted King"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "m10_00 Stormveil Castle: Margit"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "m10_00 Stormveil Castle: Before Margit"
+      ]
+    },
+    {
+      "ID": 100003,
+      "Entries": [
+        "m10_00 Stormveil Castle: Main Gate Small Room"
+      ]
+    },
+    {
+      "ID": 100004,
+      "Entries": [
+        "m10_00 Stormveil Castle: Cliff Road"
+      ]
+    },
+    {
+      "ID": 100005,
+      "Entries": [
+        "m10_00 Stormveil Castle: Watchtower"
+      ]
+    },
+    {
+      "ID": 100006,
+      "Entries": [
+        "m10_00 Stormveil Castle: Checkpoint Rampart"
+      ]
+    },
+    {
+      "ID": 100007,
+      "Entries": [
+        "m10_00 Stormveil Castle: Before Grafted King"
+      ]
+    },
+    {
+      "ID": 100008,
+      "Entries": [
+        "m10_00 Stormveil Castle: Before Main Gate"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "m11_00 Royal Capital: Great Tree Stage"
+      ]
+    },
+    {
+      "ID": 110001,
+      "Entries": [
+        "m11_00 Royal Capital: Great Tree Cathedral"
+      ]
+    },
+    {
+      "ID": 110002,
+      "Entries": [
+        "m11_00 Royal Capital: Royal Capital Entrance"
+      ]
+    },
+    {
+      "ID": 110003,
+      "Entries": [
+        "m11_00 Royal Capital: Lower Level Church"
+      ]
+    },
+    {
+      "ID": 110004,
+      "Entries": [
+        "m11_00 Royal Capital: Lower Level Bridge"
+      ]
+    },
+    {
+      "ID": 110005,
+      "Entries": [
+        "m11_00 Royal Capital: City Walls"
+      ]
+    },
+    {
+      "ID": 110007,
+      "Entries": [
+        "m11_00 Royal Capital: Queen's Bedchamber"
+      ]
+    },
+    {
+      "ID": 110008,
+      "Entries": [
+        "m11_00 Royal Capital: Castle Manor First Floor"
+      ]
+    },
+    {
+      "ID": 110009,
+      "Entries": [
+        "m11_00 Royal Capital: Before Divine Tower"
+      ]
+    },
+    {
+      "ID": 110500,
+      "Entries": [
+        "m11_05 Royal Capital (Ash): Performance Stage"
+      ]
+    },
+    {
+      "ID": 110501,
+      "Entries": [
+        "m11_00 Royal Capital (Ash): Great Tree Cathedral"
+      ]
+    },
+    {
+      "ID": 110502,
+      "Entries": [
+        "m11_05 Royal Capital (Ash): Royal Capital Entrance"
+      ]
+    },
+    {
+      "ID": 110503,
+      "Entries": [
+        "m11_05 Royal Capital (Ash): Royal Capital Ash Pool"
+      ]
+    },
+    {
+      "ID": 110504,
+      "Entries": [
+        "m11_05 Royal Capital (Ash): Queen's Bedchamber"
+      ]
+    },
+    {
+      "ID": 110505,
+      "Entries": [
+        "m11_05 Royal Capital (Ash): Front of Divine Tower"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "m11_10 Royal Capital (Base):"
+      ]
+    },
+    {
+      "ID": 120100,
+      "Entries": [
+        "m12_01 Underground Labyrinth: Poison Swamp Ruinator Boss Room"
+      ]
+    },
+    {
+      "ID": 120101,
+      "Entries": [
+        "m12_01 Underground Labyrinth: Poison Swamp Lower Route Entrance"
+      ]
+    },
+    {
+      "ID": 120102,
+      "Entries": [
+        "m12_01 Underground Labyrinth: Poison Swamp Beside Waterway Gate"
+      ]
+    },
+    {
+      "ID": 120103,
+      "Entries": [
+        "m12_01 Underground Labyrinth: Poison Swamp Ruins Island Rear"
+      ]
+    },
+    {
+      "ID": 120104,
+      "Entries": [
+        "m12_01 Underground Labyrinth: Poison Swamp Upper Route Entrance"
+      ]
+    },
+    {
+      "ID": 120105,
+      "Entries": [
+        "m12_01 Underground Labyrinth: Poison Swamp Front of Marika Ruins"
+      ]
+    },
+    {
+      "ID": 120106,
+      "Entries": [
+        "m12_01 Underground Labyrinth: Poison Swamp Great Poison Swamp Lake Front"
+      ]
+    },
+    {
+      "ID": 120108,
+      "Entries": [
+        "m12_01 Underground Labyrinth: Poison Swamp Great Corridor"
+      ]
+    },
+    {
+      "ID": 120109,
+      "Entries": [
+        "m12_01 Underground Labyrinth: Poison Swamp Behind Marika Ruins"
+      ]
+    },
+    {
+      "ID": 120200,
+      "Entries": [
+        "m12_02 Underground Labyrinth: Plains Royal Capital Gargoyle Boss Room"
+      ]
+    },
+    {
+      "ID": 120201,
+      "Entries": [
+        "m12_02 Underground Labyrinth: Plains Copy Slime Boss Room"
+      ]
+    },
+    {
+      "ID": 120203,
+      "Entries": [
+        "m12_02 Underground Labyrinth: Plains Submerged Forest"
+      ]
+    },
+    {
+      "ID": 120204,
+      "Entries": [
+        "m12_02 Underground Labyrinth: Plains Ancestor Spirit Front"
+      ]
+    },
+    {
+      "ID": 120206,
+      "Entries": [
+        "m12_02 Underground Labyrinth: Plains Underground Forest"
+      ]
+    },
+    {
+      "ID": 120207,
+      "Entries": [
+        "m12_02 Underground Labyrinth: Plains Marika Ruins 3"
+      ]
+    },
+    {
+      "ID": 120208,
+      "Entries": [
+        "m12_02 Underground Labyrinth: Plains Marika Ruins 2"
+      ]
+    },
+    {
+      "ID": 120209,
+      "Entries": [
+        "m12_02 Underground Labyrinth: Plains Front of Elevator to Open Plains"
+      ]
+    },
+    {
+      "ID": 120300,
+      "Entries": [
+        "m12_03 Underground Labyrinth: Royal Capital Guardian Lineage Boss Room"
+      ]
+    },
+    {
+      "ID": 120301,
+      "Entries": [
+        "m12_03 Underground Labyrinth: Royal Capital Royal Capital Sewers Side Entrance"
+      ]
+    },
+    {
+      "ID": 120302,
+      "Entries": [
+        "m12_03 Underground Labyrinth: Royal Capital Plains Side Entrance"
+      ]
+    },
+    {
+      "ID": 120303,
+      "Entries": [
+        "m12_03 Underground Labyrinth: Royal Capital Marika Ruins Front"
+      ]
+    },
+    {
+      "ID": 120304,
+      "Entries": [
+        "m12_03 Underground Labyrinth: Royal Capital Walking Mausoleum Front"
+      ]
+    },
+    {
+      "ID": 120305,
+      "Entries": [
+        "m12_03 Underground Labyrinth: Royal Capital Front of Boss Room"
+      ]
+    },
+    {
+      "ID": 120400,
+      "Entries": [
+        "m12_04 Underground Labyrinth: Ancestor Spirit Ancestor Spirit Boss Room"
+      ]
+    },
+    {
+      "ID": 120500,
+      "Entries": [
+        "m12_05 Underground Labyrinth: Plains Interior Boss Room"
+      ]
+    },
+    {
+      "ID": 120501,
+      "Entries": [
+        "m12_05 Underground Labyrinth: Plains Interior Underground Forest Entrance"
+      ]
+    },
+    {
+      "ID": 120502,
+      "Entries": [
+        "m12_05 Underground Labyrinth: Plains Interior Underground Mountain Entrance"
+      ]
+    },
+    {
+      "ID": 120503,
+      "Entries": [
+        "m12_05 Underground Labyrinth: Plains Interior Underground Mountain Elevator Front"
+      ]
+    },
+    {
+      "ID": 120600,
+      "Entries": [
+        "m12_06 Underground Labyrinth: Ark First"
+      ]
+    },
+    {
+      "ID": 120601,
+      "Entries": [
+        "m12_06 Underground Labyrinth: Ark Last"
+      ]
+    },
+    {
+      "ID": 120700,
+      "Entries": [
+        "m12_07 Underground Labyrinth: Plains Misty Forest Elevator Front"
+      ]
+    },
+    {
+      "ID": 120701,
+      "Entries": [
+        "m12_07 Underground Labyrinth: Plains Marika Ruins 1"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "m13_00 Descending Ruins: Boss Room"
+      ]
+    },
+    {
+      "ID": 130001,
+      "Entries": [
+        "m13_00 Descending Ruins: Back Boss Room"
+      ]
+    },
+    {
+      "ID": 130002,
+      "Entries": [
+        "m13_00 Descending Ruins: Mid Boss Room"
+      ]
+    },
+    {
+      "ID": 130003,
+      "Entries": [
+        "m13_00 Descending Ruins: Castle Wall Interior"
+      ]
+    },
+    {
+      "ID": 130004,
+      "Entries": [
+        "m13_00 Descending Ruins: Castle Wall Top"
+      ]
+    },
+    {
+      "ID": 130005,
+      "Entries": [
+        "m13_00 Descending Ruins: Collapsed Castle Wall Lower Level"
+      ]
+    },
+    {
+      "ID": 130006,
+      "Entries": [
+        "m13_00 Descending Ruins: Cross-section Ruins First Half Upper Level"
+      ]
+    },
+    {
+      "ID": 130007,
+      "Entries": [
+        "m13_00 Descending Ruins: Cross-section Ruins First Half Lower Level"
+      ]
+    },
+    {
+      "ID": 130008,
+      "Entries": [
+        "m13_00 Descending Ruins: Upper Level Garden"
+      ]
+    },
+    {
+      "ID": 130009,
+      "Entries": [
+        "m13_00 Descending Ruins: Rooftop"
+      ]
+    },
+    {
+      "ID": 130010,
+      "Entries": [
+        "m13_00 Descending Ruins: Bridge Pier Church"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "m14_00 Monsan: Boss Room"
+      ]
+    },
+    {
+      "ID": 140001,
+      "Entries": [
+        "m14_00 Monsan: Mid Boss Room"
+      ]
+    },
+    {
+      "ID": 140002,
+      "Entries": [
+        "m14_00 Monsan: Church Small Room"
+      ]
+    },
+    {
+      "ID": 140003,
+      "Entries": [
+        "m14_00 Monsan: Academy Backyard"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "m15_00 Rotten Great Tree Rot Malenia"
+      ]
+    },
+    {
+      "ID": 150001,
+      "Entries": [
+        "m15_00 Rotten Great Tree Rot Start"
+      ]
+    },
+    {
+      "ID": 150002,
+      "Entries": [
+        "m15_00 Rotten Great Tree Rot Hollow Front"
+      ]
+    },
+    {
+      "ID": 150003,
+      "Entries": [
+        "m15_00 Rotten Great Tree Rot Hollow Exit"
+      ]
+    },
+    {
+      "ID": 150004,
+      "Entries": [
+        "m15_00 Rotten Great Tree Rot Malenia Room Front"
+      ]
+    },
+    {
+      "ID": 150005,
+      "Entries": [
+        "m15_00 Rotten Great Tree Great Tree Tree Guard"
+      ]
+    },
+    {
+      "ID": 150006,
+      "Entries": [
+        "m15_00 Rotten Great Tree Great Tree Start"
+      ]
+    },
+    {
+      "ID": 150007,
+      "Entries": [
+        "m15_00 Rotten Great Tree Great Tree Residential Area"
+      ]
+    },
+    {
+      "ID": 150008,
+      "Entries": [
+        "m15_00 Rotten Great Tree Great Tree Plaza"
+      ]
+    },
+    {
+      "ID": 160000,
+      "Entries": [
+        "m16_00 Volcano Prison: Great Boss Room"
+      ]
+    },
+    {
+      "ID": 160001,
+      "Entries": [
+        "m16_00 Volcano Prison: Mid-Boss Room"
+      ]
+    },
+    {
+      "ID": 160002,
+      "Entries": [
+        "m16_00 Volcano Prison: Manor"
+      ]
+    },
+    {
+      "ID": 160003,
+      "Entries": [
+        "m16_00 Volcano Prison: Church"
+      ]
+    },
+    {
+      "ID": 160004,
+      "Entries": [
+        "m16_00 Volcano Prison: Noble Manor"
+      ]
+    },
+    {
+      "ID": 160005,
+      "Entries": [
+        "m16_00 Volcano Prison: King of Ghouls Front Room"
+      ]
+    },
+    {
+      "ID": 160006,
+      "Entries": [
+        "m16_00 Volcano Prison: Escape Cave Boss"
+      ]
+    },
+    {
+      "ID": 160007,
+      "Entries": [
+        "m16_00 Volcano Prison: Escape Cave Execution Ground"
+      ]
+    },
+    {
+      "ID": 180000,
+      "Entries": [
+        "m18_00 Tutorial"
+      ]
+    },
+    {
+      "ID": 180001,
+      "Entries": [
+        "m18_00 Tutorial 2"
+      ]
+    },
+    {
+      "ID": 190000,
+      "Entries": [
+        "m19_00 Final Boss"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "m30_00 Catacombs 1-1"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "m30_01 Catacombs 1-2"
+      ]
+    },
+    {
+      "ID": 300200,
+      "Entries": [
+        "m30_02 Catacombs 1-3"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "m30_03 Catacombs 2-2"
+      ]
+    },
+    {
+      "ID": 300400,
+      "Entries": [
+        "m30_04 Catacombs 1-5"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "m30_05 Catacombs 2-1"
+      ]
+    },
+    {
+      "ID": 300600,
+      "Entries": [
+        "m30_06 Catacombs 2-3"
+      ]
+    },
+    {
+      "ID": 300700,
+      "Entries": [
+        "m30_07 Catacombs 3-5"
+      ]
+    },
+    {
+      "ID": 300800,
+      "Entries": [
+        "m30_08 Catacombs 3-1"
+      ]
+    },
+    {
+      "ID": 300900,
+      "Entries": [
+        "m30_09 Catacombs 3-2"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "m30_10 Catacombs 3-3"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "m30_11 Catacombs 1-4"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "m30_12 Catacombs 3-4"
+      ]
+    },
+    {
+      "ID": 301300,
+      "Entries": [
+        "m30_13 Catacombs 3-6"
+      ]
+    },
+    {
+      "ID": 301400,
+      "Entries": [
+        "m30_14 Catacombs 4-1"
+      ]
+    },
+    {
+      "ID": 301500,
+      "Entries": [
+        "m30_15 Catacombs 4-2"
+      ]
+    },
+    {
+      "ID": 301600,
+      "Entries": [
+        "m30_16 Catacombs 4-3"
+      ]
+    },
+    {
+      "ID": 301700,
+      "Entries": [
+        "m30_17 Catacombs 5-1"
+      ]
+    },
+    {
+      "ID": 301800,
+      "Entries": [
+        "m30_18 Catacombs 5-2"
+      ]
+    },
+    {
+      "ID": 301900,
+      "Entries": [
+        "m30_19 Catacombs 5-3"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "m30_19 Catacombs 5-4"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "m31_00 Cave 1-3"
+      ]
+    },
+    {
+      "ID": 310100,
+      "Entries": [
+        "m31_01 Cave 1-2"
+      ]
+    },
+    {
+      "ID": 310200,
+      "Entries": [
+        "m31_02 Cave 1-1"
+      ]
+    },
+    {
+      "ID": 310300,
+      "Entries": [
+        "m31_03 Cave 1-4"
+      ]
+    },
+    {
+      "ID": 310400,
+      "Entries": [
+        "m31_04 Cave 2-1"
+      ]
+    },
+    {
+      "ID": 310500,
+      "Entries": [
+        "m31_05 Cave 2-2"
+      ]
+    },
+    {
+      "ID": 310600,
+      "Entries": [
+        "m31_06 Cave 2-3"
+      ]
+    },
+    {
+      "ID": 310700,
+      "Entries": [
+        "m31_07 Cave 3-1"
+      ]
+    },
+    {
+      "ID": 310900,
+      "Entries": [
+        "m31_09 Cave 3-2"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "m31_10 Cave 4-2"
+      ]
+    },
+    {
+      "ID": 311100,
+      "Entries": [
+        "m31_11 Cave 4-4"
+      ]
+    },
+    {
+      "ID": 311200,
+      "Entries": [
+        "m31_12 Cave 5-1"
+      ]
+    },
+    {
+      "ID": 311500,
+      "Entries": [
+        "m31_15 Cave 1-5"
+      ]
+    },
+    {
+      "ID": 311700,
+      "Entries": [
+        "m31_17 Cave 1-6"
+      ]
+    },
+    {
+      "ID": 311800,
+      "Entries": [
+        "m31_18 Cave 3-3"
+      ]
+    },
+    {
+      "ID": 311900,
+      "Entries": [
+        "m31_19 Cave 3-4"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "m31_20 Cave 4-3"
+      ]
+    },
+    {
+      "ID": 312100,
+      "Entries": [
+        "m31_21 Cave 4-1"
+      ]
+    },
+    {
+      "ID": 312200,
+      "Entries": [
+        "m31_22 Cave 5-2"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "m32_00 Tunnel 1-1"
+      ]
+    },
+    {
+      "ID": 320100,
+      "Entries": [
+        "m32_01 Tunnel 1-2"
+      ]
+    },
+    {
+      "ID": 320200,
+      "Entries": [
+        "m32_02 Tunnel 2-1"
+      ]
+    },
+    {
+      "ID": 320400,
+      "Entries": [
+        "m32_04 Tunnel 3-1"
+      ]
+    },
+    {
+      "ID": 320500,
+      "Entries": [
+        "m32_05 Catacombs 3-3"
+      ]
+    },
+    {
+      "ID": 320700,
+      "Entries": [
+        "m32_07 Catacombs 4-1"
+      ]
+    },
+    {
+      "ID": 320701,
+      "Entries": [
+        "m32_07 Catacombs 4-1 Open Green Side"
+      ]
+    },
+    {
+      "ID": 320800,
+      "Entries": [
+        "m32_08 Catacombs 4-2"
+      ]
+    },
+    {
+      "ID": 321100,
+      "Entries": [
+        "m32_11 Catacombs 5-1"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "m34_10 Divine Tower (Green): Bridge Entrance"
+      ]
+    },
+    {
+      "ID": 341002,
+      "Entries": [
+        "m34_10 Divine Tower (Green): Summit"
+      ]
+    },
+    {
+      "ID": 341100,
+      "Entries": [
+        "m34_11 Divine Tower (Lake): Inverted Tower Entrance"
+      ]
+    },
+    {
+      "ID": 341101,
+      "Entries": [
+        "m34_11 Divine Tower (Lake): Bridge Entrance"
+      ]
+    },
+    {
+      "ID": 341102,
+      "Entries": [
+        "m34_11 Divine Tower (Lake): Summit"
+      ]
+    },
+    {
+      "ID": 341200,
+      "Entries": [
+        "m34_12 Divine Tower (Highland): Summit"
+      ]
+    },
+    {
+      "ID": 341201,
+      "Entries": [
+        "m34_12 Catacombs 3-2"
+      ]
+    },
+    {
+      "ID": 341202,
+      "Entries": [
+        "m34_12 Divine Tower (Highland): Entrance"
+      ]
+    },
+    {
+      "ID": 341301,
+      "Entries": [
+        "m34_13 Divine Tower (Plains): Lower Level"
+      ]
+    },
+    {
+      "ID": 341302,
+      "Entries": [
+        "m34_13 Divine Tower (Plains): Entrance"
+      ]
+    },
+    {
+      "ID": 341400,
+      "Entries": [
+        "m34_14 Divine Tower (Snowy Mountain): Entrance"
+      ]
+    },
+    {
+      "ID": 341401,
+      "Entries": [
+        "m34_14 Divine Tower (Snowy Mountain): Summit"
+      ]
+    },
+    {
+      "ID": 341500,
+      "Entries": [
+        "m34_15 Divine Tower (Crater Lake): Summit"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "m35_00 Royal Capital Underground: Before Altar (Boss Bonfire)"
+      ]
+    },
+    {
+      "ID": 350001,
+      "Entries": [
+        "m35_00 Royal Capital Underground: Main Street"
+      ]
+    },
+    {
+      "ID": 350002,
+      "Entries": [
+        "m35_00 Royal Capital Underground: Great Bottom"
+      ]
+    },
+    {
+      "ID": 350003,
+      "Entries": [
+        "m35_00 Royal Capital Underground Catacombs"
+      ]
+    },
+    {
+      "ID": 350004,
+      "Entries": [
+        "m35_00 Royal Capital Underground: Lowest Level"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "m39_20 Cliff Tunnel"
+      ]
+    },
+    {
+      "ID": 390001,
+      "Entries": [
+        "m39_20 Cliff Tunnel"
+      ]
+    },
+    {
+      "ID": 390002,
+      "Entries": [
+        "m39_20 Cliff Tunnel"
+      ]
+    },
+    {
+      "ID": 61423600,
+      "Entries": [
+        "Open Map: Green Area First Half_First Church"
+      ]
+    },
+    {
+      "ID": 61423601,
+      "Entries": [
+        "Open Map: Green Area First Half_Start Point"
+      ]
+    },
+    {
+      "ID": 61413800,
+      "Entries": [
+        "Open Map: Green Area First Half_House 1-4"
+      ]
+    },
+    {
+      "ID": 61443800,
+      "Entries": [
+        "Open Map: Green Area First Half_House 1-2"
+      ]
+    },
+    {
+      "ID": 61463800,
+      "Entries": [
+        "Open Map: Green Area First Half_Church 1-5"
+      ]
+    },
+    {
+      "ID": 61453600,
+      "Entries": [
+        "Open Map: Green Area First Half_Near Seaside Tower"
+      ]
+    },
+    {
+      "ID": 61443500,
+      "Entries": [
+        "Open Map: Green Area First Half_Before Great Bridge"
+      ]
+    },
+    {
+      "ID": 61433700,
+      "Entries": [
+        "Open Map: Green Area First Half_Lakeside"
+      ]
+    },
+    {
+      "ID": 61413500,
+      "Entries": [
+        "Open Map: Green Area First Half_Island"
+      ]
+    },
+    {
+      "ID": 61423700,
+      "Entries": [
+        "Open Map: Green Area First Half_In Front of Checkpoint"
+      ]
+    },
+    {
+      "ID": 61433500,
+      "Entries": [
+        "Open Map: Green Area First Half_Aguir Lake Pillar Ruins Area"
+      ]
+    },
+    {
+      "ID": 61443700,
+      "Entries": [
+        "Open Map: Green Area First Half_In Front of Misty Forest"
+      ]
+    },
+    {
+      "ID": 61433800,
+      "Entries": [
+        "Open Map: Green Area First Half_River Upstream"
+      ]
+    },
+    {
+      "ID": 61433900,
+      "Entries": [
+        "Open Map: Green Area First Half_Before Bridge to Plains"
+      ]
+    },
+    {
+      "ID": 61423800,
+      "Entries": [
+        "Open Map: Green Area First Half_Gypsy Shack"
+      ]
+    },
+    {
+      "ID": 61443900,
+      "Entries": [
+        "Open Map: Green Area First Half_Near Ruins 1-8"
+      ]
+    },
+    {
+      "ID": 61443600,
+      "Entries": [
+        "Open Map: Green Area First Half_Tenebre Inn Ruins_Basement"
+      ]
+    },
+    {
+      "ID": 61433400,
+      "Entries": [
+        "Open Map: Green Area Second Half_Church 1-2"
+      ]
+    },
+    {
+      "ID": 61443300,
+      "Entries": [
+        "Open Map: Green Area Second Half_In Front of Collapsed Wall"
+      ]
+    },
+    {
+      "ID": 61423300,
+      "Entries": [
+        "Open Map: Green Area Second Half_Near Mausoleum"
+      ]
+    },
+    {
+      "ID": 61443301,
+      "Entries": [
+        "Open Map: Green Area Second Half_Forest Fork"
+      ]
+    },
+    {
+      "ID": 61443302,
+      "Entries": [
+        "Open Map: Green Area Second Half_Outskirts of Village 1-1"
+      ]
+    },
+    {
+      "ID": 61453300,
+      "Entries": [
+        "Open Map: Green Area Second Half_Near Meteorite Crater"
+      ]
+    },
+    {
+      "ID": 61413200,
+      "Entries": [
+        "Open Map: Green Area Second Half_House 1-1"
+      ]
+    },
+    {
+      "ID": 61443400,
+      "Entries": [
+        "Open Map: Green Area Second Half_After Great Bridge"
+      ]
+    },
+    {
+      "ID": 61433100,
+      "Entries": [
+        "Open Map: Green Area Second Half_Green Fort_Entrance"
+      ]
+    },
+    {
+      "ID": 61433101,
+      "Entries": [
+        "Open Map: Green Area Second Half_Green Fort_Toward Back"
+      ]
+    },
+    {
+      "ID": 61433102,
+      "Entries": [
+        "Open Map: Green Area Second Half_Green Fort_In Front of Seaside Single Bridge"
+      ]
+    },
+    {
+      "ID": 61433000,
+      "Entries": [
+        "Open Map: Green Area Second Half_Green Fort_Small Island"
+      ]
+    },
+    {
+      "ID": 61413300,
+      "Entries": [
+        "Open Map: Green Area Second Half_Church 1-1"
+      ]
+    },
+    {
+      "ID": 62394000,
+      "Entries": [
+        "Open Map: Lake Area First Half_First Lake Church"
+      ]
+    },
+    {
+      "ID": 62384000,
+      "Entries": [
+        "Open Map: Lake Area First Half_Before Submerged Forest"
+      ]
+    },
+    {
+      "ID": 62384100,
+      "Entries": [
+        "Open Map: Lake Area First Half_Submerged Forest Interior_Before Ruins"
+      ]
+    },
+    {
+      "ID": 62374200,
+      "Entries": [
+        "Open Map: Lake Area First Half_Submerged Forest Interior_Above Large Floating Island"
+      ]
+    },
+    {
+      "ID": 62374400,
+      "Entries": [
+        "Open Map: Lake Area First Half_Before Submerged City"
+      ]
+    },
+    {
+      "ID": 62354500,
+      "Entries": [
+        "Open Map: Lake Area First Half_Before Curved Bridge Seal"
+      ]
+    },
+    {
+      "ID": 62354600,
+      "Entries": [
+        "Open Map: Lake Area First Half_Before Monsan"
+      ]
+    },
+    {
+      "ID": 62364800,
+      "Entries": [
+        "Open Map: Lake Area First Half_Road_In Front of Crest Gate"
+      ]
+    },
+    {
+      "ID": 62364900,
+      "Entries": [
+        "Open Map: Lake Area First Half_Church 2-4"
+      ]
+    },
+    {
+      "ID": 62385000,
+      "Entries": [
+        "Open Map: Lake Area First Half_Royal Capital Elevator Front"
+      ]
+    },
+    {
+      "ID": 62334600,
+      "Entries": [
+        "Open Map: Lake Area First Half_Bell Tower Group Foot"
+      ]
+    },
+    {
+      "ID": 62344701,
+      "Entries": [
+        "Open Map: Lake Area First Half_Mist Sorcerer Tower Island Entrance"
+      ]
+    },
+    {
+      "ID": 62344800,
+      "Entries": [
+        "Open Map: Lake Area First Half_In Front of Royal Ruins"
+      ]
+    },
+    {
+      "ID": 62344900,
+      "Entries": [
+        "Open Map: Lake Area First Half_Before Arrow Rain Event"
+      ]
+    },
+    {
+      "ID": 62355003,
+      "Entries": [
+        "Open Map: Lake Area First Half_In Front of Lake Fort Main Gate"
+      ]
+    },
+    {
+      "ID": 62364100,
+      "Entries": [
+        "Open Map: Lake Area First Half_House 2-1"
+      ]
+    },
+    {
+      "ID": 62364300,
+      "Entries": [
+        "Open Map: Lake Area First Half_House 2-2"
+      ]
+    },
+    {
+      "ID": 62384500,
+      "Entries": [
+        "Open Map: Lake Area First Half_House 2-3"
+      ]
+    },
+    {
+      "ID": 62334400,
+      "Entries": [
+        "Open Map: Lake Area First Half_House at Giant Rock Foot"
+      ]
+    },
+    {
+      "ID": 62354300,
+      "Entries": [
+        "Open Map: Lake Area First Half_Foly_Before Leg Cripple Village"
+      ]
+    },
+    {
+      "ID": 62344200,
+      "Entries": [
+        "Open Map: Lake Area First Half_Leg Cripple Village"
+      ]
+    },
+    {
+      "ID": 62394200,
+      "Entries": [
+        "Open Map: Lake Area First Half_Near Battlefield Ruins"
+      ]
+    },
+    {
+      "ID": 62384300,
+      "Entries": [
+        "Open Map: Lake Area First Half_Collapsed Bridge"
+      ]
+    },
+    {
+      "ID": 62384501,
+      "Entries": [
+        "Open Map: Lake Area First Half_Before Divine Tower"
+      ]
+    },
+    {
+      "ID": 62374600,
+      "Entries": [
+        "Open Map: Lake Area First Half_Church 2-2"
+      ]
+    },
+    {
+      "ID": 62384700,
+      "Entries": [
+        "Open Map: Lake Area First Half_Maze Area"
+      ]
+    },
+    {
+      "ID": 62374800,
+      "Entries": [
+        "Open Map: Lake Area First Half_Mausoleum Area"
+      ]
+    },
+    {
+      "ID": 62334700,
+      "Entries": [
+        "Open Map: Lake Area First Half_Bell Tower Group Summit"
+      ]
+    },
+    {
+      "ID": 62345000,
+      "Entries": [
+        "Open Map：Lake Area First Half_Ranni Main Tower_2F"
+      ]
+    },
+    {
+      "ID": 62385001,
+      "Entries": [
+        "Open Map: Lake Area First Half_Before Cliff Tunnel"
+      ]
+    },
+    {
+      "ID": 62355000,
+      "Entries": [
+        "Open Map: Lake Area First Half_Lake Fort 1"
+      ]
+    },
+    {
+      "ID": 62355001,
+      "Entries": [
+        "Open Map: Lake Area First Half_Lake Fort 2"
+      ]
+    },
+    {
+      "ID": 62355002,
+      "Entries": [
+        "Open Map: Lake Area First Half_Lake Fort Boss Room"
+      ]
+    },
+    {
+      "ID": 62364500,
+      "Entries": [
+        "Open Map: Lake Area First Half_Submerged City Edge"
+      ]
+    },
+    {
+      "ID": 62384600,
+      "Entries": [
+        "Open Map: Lake Area First Half_In Front of Maze Area"
+      ]
+    },
+    {
+      "ID": 62364901,
+      "Entries": [
+        "Open Map: Lake Area First Half_Before Valley"
+      ]
+    },
+    {
+      "ID": 62364301,
+      "Entries": [
+        "Open Map: Lake Area First Half_Before Church 2-3"
+      ]
+    },
+    {
+      "ID": 62344300,
+      "Entries": [
+        "Open Map: Lake Area First Half_Sorcerer's Tower 2-1"
+      ]
+    },
+    {
+      "ID": 62365000,
+      "Entries": [
+        "Open Map: Lake Area First Half_Behind Fort"
+      ]
+    },
+    {
+      "ID": 62384800,
+      "Entries": [
+        "Open Map: Lake Area First Half_Before Chaos Village"
+      ]
+    },
+    {
+      "ID": 62374900,
+      "Entries": [
+        "Open Map: Lake Area First Half_Chaos Church"
+      ]
+    },
+    {
+      "ID": 62344400,
+      "Entries": [
+        "Open Map: Lake Area First Half_Before Wyvern Nest"
+      ]
+    },
+    {
+      "ID": 62354700,
+      "Entries": [
+        "Open Map: Lake Area First Half_Below Monsan Collapsed Bridge"
+      ]
+    },
+    {
+      "ID": 62344600,
+      "Entries": [
+        "Open Map: Lake Area First Half_Below Bell Tower Group_Lake Forest Area"
+      ]
+    },
+    {
+      "ID": 62394100,
+      "Entries": [
+        "Open Map: Lake Area First Half_Green Great Bridge"
+      ]
+    },
+    {
+      "ID": 62394400,
+      "Entries": [
+        "Open Map: Lake Area First Half_Jar Village"
+      ]
+    },
+    {
+      "ID": 62345001,
+      "Entries": [
+        "Open Map: Lake Area First Half_Rani Main Tower Top Floor"
+      ]
+    },
+    {
+      "ID": 62344100,
+      "Entries": [
+        "Open Map: Lake Area Second Half_Hang Terrain Start Point"
+      ]
+    },
+    {
+      "ID": 62354200,
+      "Entries": [
+        "Open Map: Lake Area Second Half_Grand Church"
+      ]
+    },
+    {
+      "ID": 62334000,
+      "Entries": [
+        "Open Map: Lake Area Second Half_Sorcerer's Tower 2-6"
+      ]
+    },
+    {
+      "ID": 63375100,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63385002,
+      "Entries": [
+        "Open Map：Highland Area Large EV Front"
+      ]
+    },
+    {
+      "ID": 63385100,
+      "Entries": [
+        "Open Map：Highland Area Entrance"
+      ]
+    },
+    {
+      "ID": 63395100,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63405200,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63415201,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63405300,
+      "Entries": [
+        "Open Map：Highland Area Deracine Forest Slope Entrance"
+      ]
+    },
+    {
+      "ID": 63405400,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63415400,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63425100,
+      "Entries": [
+        "Open Map：Highland Area Inside Castle Wall Plaza"
+      ]
+    },
+    {
+      "ID": 63435000,
+      "Entries": [
+        "Open Map：Highland Area Small Erdtree Church"
+      ]
+    },
+    {
+      "ID": 63435300,
+      "Entries": [
+        "Open Map：Highland Area House 3-2"
+      ]
+    },
+    {
+      "ID": 63435301,
+      "Entries": [
+        "Open Map：Highland Area Great Battlefield Ruins"
+      ]
+    },
+    {
+      "ID": 63425500,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63455200,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63395300,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63385400,
+      "Entries": [
+        "Open Map：Highland Area Twin Mountain Hut"
+      ]
+    },
+    {
+      "ID": 63365401,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63365402,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63375200,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63355300,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63365200,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63375300,
+      "Entries": [
+        "Open Map：Highland Area Demi-Human Village Deepest Part"
+      ]
+    },
+    {
+      "ID": 63395400,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63395401,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 63395402,
+      "Entries": [
+        "Open Map: Highland Area"
+      ]
+    },
+    {
+      "ID": 64464000,
+      "Entries": [
+        "Open Map: Plains Area Entrance Church 4-1 Interior"
+      ]
+    },
+    {
+      "ID": 64464001,
+      "Entries": [
+        "Open Map: Plains Area Entrance House 4-1"
+      ]
+    },
+    {
+      "ID": 64473900,
+      "Entries": [
+        "Open Map: Plains Area Sea Watchtower 4-1 Front"
+      ]
+    },
+    {
+      "ID": 64474000,
+      "Entries": [
+        "Open Map: Plains Area First Half_Ruins 4-4"
+      ]
+    },
+    {
+      "ID": 64483600,
+      "Entries": [
+        "Open Map: Plains Area First Half_Dragon Feast Church"
+      ]
+    },
+    {
+      "ID": 64483700,
+      "Entries": [
+        "Open Map: Plains Area Before Rot Wyvern"
+      ]
+    },
+    {
+      "ID": 64483800,
+      "Entries": [
+        "Open Map: Plains Area Poison Swamp Exploration Start"
+      ]
+    },
+    {
+      "ID": 64483801,
+      "Entries": [
+        "Open Map: Plains Area Between Road and Poison Swamp"
+      ]
+    },
+    {
+      "ID": 64483900,
+      "Entries": [
+        "Open Map: Plains Area Smoldering Wall"
+      ]
+    },
+    {
+      "ID": 64484000,
+      "Entries": [
+        "Open Map: Plains Area Underground Labyrinth Entrance"
+      ]
+    },
+    {
+      "ID": 64493700,
+      "Entries": [
+        "Open Map: Plains Area Checkpoint Front"
+      ]
+    },
+    {
+      "ID": 64493800,
+      "Entries": [
+        "Open Map: Veteran General Defeated"
+      ]
+    },
+    {
+      "ID": 64493801,
+      "Entries": [
+        "Open Map: Poison Swamp Center"
+      ]
+    },
+    {
+      "ID": 64493900,
+      "Entries": [
+        "Open Map: Plains Area Plains Town After Clear"
+      ]
+    },
+    {
+      "ID": 64493901,
+      "Entries": [
+        "Open Map: Butcher Defeated"
+      ]
+    },
+    {
+      "ID": 64493902,
+      "Entries": [
+        "Open Map: Plains Area Plains Town"
+      ]
+    },
+    {
+      "ID": 64503600,
+      "Entries": [
+        "Open Map: Plains Area First Half_Fort Bridge Front"
+      ]
+    },
+    {
+      "ID": 64503800,
+      "Entries": [
+        "Open Map: Plains Area Church 4-3"
+      ]
+    },
+    {
+      "ID": 64513600,
+      "Entries": [
+        "Open Map: Plains Fort Boss Defeated"
+      ]
+    },
+    {
+      "ID": 64513601,
+      "Entries": [
+        "Open Map: Plains Fort Interior"
+      ]
+    },
+    {
+      "ID": 64523800,
+      "Entries": [
+        "Open Map: Plains Area Radahn Defeated"
+      ]
+    },
+    {
+      "ID": 64484001,
+      "Entries": [
+        "Open Map: Plains Area Second Half Entrance"
+      ]
+    },
+    {
+      "ID": 64484100,
+      "Entries": [
+        "Open Map: Plains Area House 4-2"
+      ]
+    },
+    {
+      "ID": 64504000,
+      "Entries": [
+        "Open Map: Plains Area Small World Tree Fork"
+      ]
+    },
+    {
+      "ID": 64513900,
+      "Entries": [
+        "Open Map: Plains Area Sea Watchtower 4-2"
+      ]
+    },
+    {
+      "ID": 64514300,
+      "Entries": [
+        "Open Map: Plains Area Marike Building Front"
+      ]
+    },
+    {
+      "ID": 64524100,
+      "Entries": [
+        "Open Map: Plains Area Sorcerer's Tower 4-1"
+      ]
+    },
+    {
+      "ID": 64524200,
+      "Entries": [
+        "Open Map: Plains Area After Great Bridge"
+      ]
+    },
+    {
+      "ID": 65475100,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Royal Capital EV Descent Point"
+      ]
+    },
+    {
+      "ID": 65495300,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_After Large EV_In Front of Ruins"
+      ]
+    },
+    {
+      "ID": 65495301,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Large EV"
+      ]
+    },
+    {
+      "ID": 65515600,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Great Canyon Entrance"
+      ]
+    },
+    {
+      "ID": 65525700,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Ice Lake"
+      ]
+    },
+    {
+      "ID": 65545500,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Church 5-1"
+      ]
+    },
+    {
+      "ID": 65525400,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Giant Graveyard Entrance"
+      ]
+    },
+    {
+      "ID": 65515300,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Church 5-2"
+      ]
+    },
+    {
+      "ID": 65525300,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Giant Graveyard Upper Level"
+      ]
+    },
+    {
+      "ID": 65535200,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_After Giant Defeated"
+      ]
+    },
+    {
+      "ID": 65545300,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Giant's Flame Cauldron"
+      ]
+    },
+    {
+      "ID": 65525600,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_In Front of Seaside Tower 5-1"
+      ]
+    },
+    {
+      "ID": 65515700,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Before Enclave Branch"
+      ]
+    },
+    {
+      "ID": 65515701,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_In Front of Fort"
+      ]
+    },
+    {
+      "ID": 65515702,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Fort_Church Interior"
+      ]
+    },
+    {
+      "ID": 65515703,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Fort_After Veteran General Defeated"
+      ]
+    },
+    {
+      "ID": 65495400,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Snowfield Start"
+      ]
+    },
+    {
+      "ID": 65495500,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Snowfield Center"
+      ]
+    },
+    {
+      "ID": 65485700,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Snow Town"
+      ]
+    },
+    {
+      "ID": 65475800,
+      "Entries": [
+        "Open Map: Snowy Mountain Area_Church at the End"
+      ]
+    }
+  ]
+}

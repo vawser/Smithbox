@@ -1,0 +1,35 @@
+{
+  "Name": "MultiSoulBonusRateParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Host"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "White Sign"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Red Sign"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Invasion"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Rescue Guest"
+      ]
+    }
+  ]
+}

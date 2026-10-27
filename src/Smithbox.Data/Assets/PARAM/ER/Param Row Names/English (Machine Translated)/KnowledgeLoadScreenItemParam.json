@@ -1,0 +1,437 @@
+{
+  "Name": "KnowledgeLoadScreenItemParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Crouch"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Guard"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Guard Counter"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Two-handed Hold"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Charged Attack"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Skill"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Target Lock"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Precision Shot"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Weapon Equip"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Item Use"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Critical Hit"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Gesture"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Map"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Spirit Updraft Jump"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Death and Held Runes"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Spirit Summon"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Rest at Grace"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Discovery of Grace"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Guidance of Grace"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Flask of Holy Grail"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Travel to Grace"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Mounted Attack"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "No-Mount Area"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Item Crafting"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Item Crafting Using Container"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Weapon Customization"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Revival After Death"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Equip Load"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Combat State"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Spirit Enhancement"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Level Up"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Status Ailment: Poison"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Status Ailment: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Status Ailment: Blood Loss"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Status Ailment: Frost"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Status Ailment: Sleep"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Status Ailment: Madness"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Status Ailment: Death"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Poise"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "DLC Player Enhancement Item"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "DLC Spirit Ash Enhancement Item"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Co-op guest objective"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Invader/Hostile Guest Objective"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Multiplayer Max Players"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Summon Sign Visualization"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Write co-op sign"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Write Hostile Sign"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Invasion"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Rescue Request"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Rescue"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Sign Pool"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Group Passphrase"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Multiplayer Password"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Message"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Multiplayer Movement Restriction"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Phantom"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Bloodstain"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Rescue Guest Objective"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Summon Sign"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Message Extension"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Arena"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Arena Rank"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Guard Weakness"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Knock off balance"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Dismount"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Hard Enemy"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Dripping Scarab"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Newly acquired item"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Recently Acquired Items tab"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Sign Pool Cycle and Enable/Disable Toggle"
+      ]
+    }
+  ]
+}

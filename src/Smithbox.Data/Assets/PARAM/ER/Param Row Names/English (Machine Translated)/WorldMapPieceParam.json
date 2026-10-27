@@ -1,0 +1,173 @@
+{
+  "Name": "WorldMapPieceParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Green 1"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Green 2"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Green 3"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Lake1"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Lake2"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Lake3"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Highland1"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Highland2"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Highland3"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Plains1"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Plains2"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Snowy Mountain 1"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Snowy Mountain 2"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Snowy Mountain 3"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Snowy Mountain 4"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Meteorite Lake"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Outer Sea 1 Southwest"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Outer Sea 2 Northwest"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Outer Sea 3 Southeast"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Outer Sea 4 Northeast"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Outer Sea 5 North"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Initial Range"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Underground Poison Swamp 1"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Underground Poison Swamp 2"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Underground Plains 1"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Underground Plains 2"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Underground Royal Capital 1"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Underground Royal Capital 2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,521 @@
+{
+  "Name": "TutorialParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don't extinguish it."
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Tutorial Test 1 (Modal)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Tutorial Test 2 (Toast)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Event: Camera"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Event: Item Use"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Event: Bonfire"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Event: Lock"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Event: Basic Attack (Weak)"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Event: Basic Attack (Strong)"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Event: Sorcery"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Event: Defense"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "Event: Jump"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "Event: Dash"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Event: Weapon Switch"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Event: Lock Toggle"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Event: Guard"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Event: Bow Usage"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "Event: Crouch"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Event: Critical Hit"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "Event: Jump Attack/Charged/"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "Event: HUD Display"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "Event: Guard Counter"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Event: Retry Point"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Event: Skill"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Event: Dodge"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Event: Map"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "Event: Bonfire Guidance"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "Event: Riding"
+      ]
+    },
+    {
+      "ID": 1530,
+      "Entries": [
+        "Event: Death"
+      ]
+    },
+    {
+      "ID": 1550,
+      "Entries": [
+        "Event: Spirit Ash"
+      ]
+    },
+    {
+      "ID": 1560,
+      "Entries": [
+        "Event: Material Gathering"
+      ]
+    },
+    {
+      "ID": 1570,
+      "Entries": [
+        "Event: Item Crafting (Basic)"
+      ]
+    },
+    {
+      "ID": 1580,
+      "Entries": [
+        "Event: Item Crafting (Pot)"
+      ]
+    },
+    {
+      "ID": 1590,
+      "Entries": [
+        "Event: Elixir"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Event: Magic Stone (Skill Swap)"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "Event: Lookout Tower"
+      ]
+    },
+    {
+      "ID": 1620,
+      "Entries": [
+        "Event: Large Jump"
+      ]
+    },
+    {
+      "ID": 1630,
+      "Entries": [
+        "Event: Group Reward"
+      ]
+    },
+    {
+      "ID": 1640,
+      "Entries": [
+        "Event: Estus Scarab"
+      ]
+    },
+    {
+      "ID": 1650,
+      "Entries": [
+        "Event: Multiplayer (Summon)"
+      ]
+    },
+    {
+      "ID": 1660,
+      "Entries": [
+        "Event: Multiplayer (Co-op)"
+      ]
+    },
+    {
+      "ID": 1670,
+      "Entries": [
+        "Event: Multiplayer (Hostile)"
+      ]
+    },
+    {
+      "ID": 1680,
+      "Entries": [
+        "Event: Multiplayer (Invasion)"
+      ]
+    },
+    {
+      "ID": 1690,
+      "Entries": [
+        "Event: Sign Pool"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Event: Multiplayer (Rescue)_Guest"
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        "Event: Spirit Ash Summon Available Range"
+      ]
+    },
+    {
+      "ID": 1720,
+      "Entries": [
+        "Event: Multiplayer (Rescue)_Host"
+      ]
+    },
+    {
+      "ID": 1730,
+      "Entries": [
+        "Event: Map Warp"
+      ]
+    },
+    {
+      "ID": 1740,
+      "Entries": [
+        "Event: Blacksmith Stall"
+      ]
+    },
+    {
+      "ID": 1750,
+      "Entries": [
+        "Event: Weapon Attribute Change"
+      ]
+    },
+    {
+      "ID": 1760,
+      "Entries": [
+        "Event: Multiplayer (NT Version Only)"
+      ]
+    },
+    {
+      "ID": 1770,
+      "Entries": [
+        "Event: Item Box"
+      ]
+    },
+    {
+      "ID": 1780,
+      "Entries": [
+        "Event: Base"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Event: Double Jump"
+      ]
+    },
+    {
+      "ID": 1810,
+      "Entries": [
+        "Event: Great Rune Acquisition"
+      ]
+    },
+    {
+      "ID": 1820,
+      "Entries": [
+        "Event: Cave of Knowledge"
+      ]
+    },
+    {
+      "ID": 1850,
+      "Entries": [
+        "Event: Duel Arena"
+      ]
+    },
+    {
+      "ID": 1860,
+      "Entries": [
+        "Event: Cooperative Arena"
+      ]
+    },
+    {
+      "ID": 1870,
+      "Entries": [
+        "Event: Arena with Spirit Ash"
+      ]
+    },
+    {
+      "ID": 1880,
+      "Entries": [
+        "Event: Round Table Marika Statue"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Event: DLC Player Enhancement Item"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "Event: DLC Spirit Ash Enhancement Item"
+      ]
+    },
+    {
+      "ID": 1920,
+      "Entries": [
+        "Event: Inventory Additional Function"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Menu: Equipment"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Menu: Item Crafting"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Menu: Inventory"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Menu: Status"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Menu: Message"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Menu: Multiplayer"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Menu: Level Up"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Menu: Estus Distribution"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Menu: Sorcery Memory"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Menu: Wooden Chest"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Menu: SHOP"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Menu: Talisman Swap"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Menu: Spirit Ash Upgrade"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "Menu: Memory Replication"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Menu: Great Rune"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Menu: Elixir Crafting"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "Menu: Status Respec"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Menu: Soul Refinement"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Menu: Map"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "Menu: Simple Weapon Upgrade"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "Menu: Arena"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Menu: DLC Player Upgrade"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "Menu: DLC Spirit Ash Upgrade"
+      ]
+    }
+  ]
+}
