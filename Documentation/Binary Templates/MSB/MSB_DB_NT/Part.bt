@@ -238,6 +238,7 @@ typedef struct {
     int unk04;
     int unk08;
     int unk0c;
+    
     float unk10; // -1
     int unk14;
     byte unk18; // -1
@@ -246,19 +247,27 @@ typedef struct {
     byte unk1c;
     byte unk1d; // -1
     short unk1e;
+    
     short unk20; // -1
     short unk22;
     int unk24;
     int unk28;
     int unk2c;
+    
     int unk30;
     int unk34;
     int unk38;
     int unk3c;
+    
     int unk40;
     int unk44;
     int unk48;
     int unk4c;
+    
+    int unk50;
+    int unk54;
+    int unk58;
+    int unk5c;
 } PartSceneGparam;
 
 typedef struct {
@@ -272,10 +281,26 @@ typedef struct {
     int unk04;
     int unk08;
     int unk0c;
+    
     int unk10;
     int unk14;
     int unk18;
     int unk1c;
+    
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2c;
+    
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3c;
+    
+    int unk40;
+    int unk44;
+    int unk48;
+    int unk4c;
 } PartStruct88;
 
 typedef struct {
@@ -318,6 +343,11 @@ typedef struct {
     short unk06;
     int unk08;
     int unk0c;
+    
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1c;
 } PartStructa8;
 
 //------------------------------------------------
