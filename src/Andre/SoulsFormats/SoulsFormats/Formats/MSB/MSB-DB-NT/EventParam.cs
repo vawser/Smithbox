@@ -392,13 +392,13 @@ public partial class MSB_DB_NT
 
             internal Treasure(BinaryReaderEx br, int version) : base(br, version) { }
 
-            internal override void GetNames(MSB_NR msb, Entries entries)
+            internal override void GetNames(MSB_DB_NT msb, Entries entries)
             {
                 base.GetNames(msb, entries);
                 TreasurePartName = MSB.FindName(entries.Parts, TreasurePartIndex);
             }
 
-            internal override void GetIndices(MSB_NR msb, Entries entries)
+            internal override void GetIndices(MSB_DB_NT msb, Entries entries)
             {
                 base.GetIndices(msb, entries);
                 TreasurePartIndex = MSB.FindIndex(this, entries.Parts, TreasurePartName);
@@ -506,14 +506,14 @@ public partial class MSB_DB_NT
                 generator.SpawnPartNames = (string[])SpawnPartNames.Clone();
             }
 
-            internal override void GetNames(MSB_NR msb, Entries entries)
+            internal override void GetNames(MSB_DB_NT msb, Entries entries)
             {
                 base.GetNames(msb, entries);
                 SpawnRegionNames = MSB.FindNames(entries.Regions, SpawnRegionIndices);
                 SpawnPartNames = MSB.FindNames(entries.Parts, SpawnPartIndices);
             }
 
-            internal override void GetIndices(MSB_NR msb, Entries entries)
+            internal override void GetIndices(MSB_DB_NT msb, Entries entries)
             {
                 base.GetIndices(msb, entries);
                 SpawnRegionIndices = MSB.FindIndices(this, entries.Regions, SpawnRegionNames);
@@ -639,13 +639,13 @@ public partial class MSB_DB_NT
             public ObjAct() : base($"{nameof(Event)}: {nameof(ObjAct)}") { }
             internal ObjAct(BinaryReaderEx br, int version) : base(br, version) { }
 
-            internal override void GetNames(MSB_NR msb, Entries entries)
+            internal override void GetNames(MSB_DB_NT msb, Entries entries)
             {
                 base.GetNames(msb, entries);
                 ObjActPartName = MSB.FindName(entries.Parts, ObjActPartIndex);
             }
 
-            internal override void GetIndices(MSB_NR msb, Entries entries)
+            internal override void GetIndices(MSB_DB_NT msb, Entries entries)
             {
                 base.GetIndices(msb, entries);
                 ObjActPartIndex = MSB.FindIndex(this, entries.Parts, ObjActPartName);
@@ -723,13 +723,6 @@ public partial class MSB_DB_NT
             private protected override EventType Type => EventType.PatrolInfo;
             private protected override bool HasTypeData => true;
 
-            public byte PatrolType { get; set; }
-
-            [MSBReference(ReferenceType = typeof(Region))]
-            public string[] WalkRegionNames { get; set; }
-
-            private short[] WalkRegionIndices { get; set; }
-
             public PatrolInfo() : base($"{nameof(Event)}: {nameof(PatrolInfo)}")
             {
                 WalkRegionIndices = new short[64];
@@ -747,26 +740,41 @@ public partial class MSB_DB_NT
             private protected override void ReadTypeData(BinaryReaderEx br, int version)
             {
                 PatrolType = br.ReadByte();
-                br.AssertByte(0);
-                br.AssertByte(0);
-                br.AssertByte(1);
-                br.AssertInt32(-1);
-                br.AssertInt32(0);
-                br.AssertInt32(0);
+                Unk01 = br.ReadByte();
+                Unk02 = br.ReadByte();
+                Unk03 = br.ReadByte();
+                Unk04 = br.ReadInt32();
+                Unk08 = br.ReadInt32();
+                Unk0C = br.ReadInt32();
                 WalkRegionIndices = br.ReadInt16s(64);
             }
 
             private protected override void WriteTypeData(BinaryWriterEx bw)
             {
                 bw.WriteByte(PatrolType);
-                bw.WriteByte(0);
-                bw.WriteByte(0);
-                bw.WriteByte(1);
-                bw.WriteInt32(-1);
-                bw.WriteInt32(0);
-                bw.WriteInt32(0);
+                bw.WriteByte(Unk01);
+                bw.WriteByte(Unk02);
+                bw.WriteByte(Unk03);
+                bw.WriteInt32(Unk04);
+                bw.WriteInt32(Unk08);
+                bw.WriteInt32(Unk0C);
                 bw.WriteInt16s(WalkRegionIndices);
             }
+
+            // Layout
+            public byte PatrolType { get; set; }
+            public byte Unk01 { get; set; } = 0;
+            public byte Unk02 { get; set; } = 0;
+            public byte Unk03 { get; set; } = 0;
+            public int Unk04 { get; set; } = 0;
+            public int Unk08 { get; set; } = 0;
+            public int Unk0C { get; set; } = 0;
+
+            [MSBReference(ReferenceType = typeof(Region))]
+            public string[] WalkRegionNames { get; set; }
+
+            private short[] WalkRegionIndices { get; set; }
+
 
             internal override void GetNames(MSB_DB_NT msb, Entries entries)
             {

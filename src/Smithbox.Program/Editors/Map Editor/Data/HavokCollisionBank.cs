@@ -38,9 +38,7 @@ public class HavokCollisionBank
             return;
 
         if (Project.Descriptor.ProjectType is ProjectType.ER 
-            or ProjectType.NR 
-            or ProjectType.DB_NT
-            or ProjectType.DB)
+            or ProjectType.NR)
         {
             if (!MapCollisions.ContainsKey(mapId))
                 MapCollisions.Add(mapId, new List<string>());

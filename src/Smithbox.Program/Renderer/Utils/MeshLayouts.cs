@@ -34,15 +34,17 @@ public static class MeshLayoutUtils
             case MeshLayoutType.LayoutStandard:
                 return FlverLayout.Layout;
             case MeshLayoutType.LayoutUV2:
-                return FlverLayoutUV2.Layout;
+                return FlverLayoutUV3.Layout;
             case MeshLayoutType.LayoutUV3:
-                return FlverLayoutUV2.Layout;
+                return FlverLayoutUV4.Layout;
             case MeshLayoutType.LayoutUV4:
                 return FlverLayoutUV2.Layout;
             case MeshLayoutType.LayoutCollision:
                 return CollisionLayout.Layout;
             case MeshLayoutType.LayoutNavmesh:
                 return NavmeshLayout.Layout;
+            case MeshLayoutType.LayoutPositionColor:
+                return PositionColor.Layout;
             case MeshLayoutType.LayoutPositionColorNormal:
                 return VertexPositionColorNormal.Layout;
             default:
@@ -63,9 +65,9 @@ public static class MeshLayoutUtils
             case MeshLayoutType.LayoutUV2:
                 return (uint)sizeof(FlverLayoutUV2);
             case MeshLayoutType.LayoutUV3:
-                return (uint)sizeof(FlverLayoutUV2);
+                return (uint)sizeof(FlverLayoutUV3);
             case MeshLayoutType.LayoutUV4:
-                return (uint)sizeof(FlverLayoutUV2);
+                return (uint)sizeof(FlverLayoutUV4);
             case MeshLayoutType.LayoutCollision:
                 return (uint)sizeof(CollisionLayout);
             case MeshLayoutType.LayoutNavmesh:

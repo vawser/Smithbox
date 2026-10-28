@@ -258,6 +258,8 @@ public class GameVisibilityAction
                 msbclass = typeof(MSB_NR);
                 break;
             case ProjectType.DB_NT:
+                msbclass = typeof(MSB_DB_NT);
+                break;
             case ProjectType.DB:
                 throw new ArgumentException("type must be valid");
             default:

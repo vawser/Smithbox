@@ -881,6 +881,46 @@ public class MapContainer : ObjectContainer
 
         m.Models.Add(model);
     }
+    private void AddModelDB_NT(IMsb m, MSB_DB_NT.Model model, string name)
+    {
+        if (LoadedModels.TryGetValue(name, out var existing))
+        {
+            if (existing != null)
+            {
+                m.Models.Add(existing);
+                return;
+            }
+        }
+
+        model.Name = name;
+        if (model is MSB_DB_NT.Model.MapPiece)
+        {
+            model.SibPath = $@"W:\PHX\data\Model\map\{Name}\sib\{name}.sib";
+        }
+        else if (model is MSB_DB_NT.Model.Asset)
+        {
+            model.SibPath = $@"W:\PHX\data\Asset\Environment\geometry\{name.Substring(0, 6)}\{name}\sib\{name}.sib";
+        }
+        else if (model is MSB_DB_NT.Model.Enemy)
+        {
+            model.SibPath = $@"W:\PHX\data\Model\chr\{name}\sib\{name}.sib";
+        }
+        else if (model is MSB_DB_NT.Model.Collision)
+        {
+            model.SibPath = $@"W:\PHX\data\Model\map\{Name}\hkt\{name}.hkt";
+        }
+        else if (model is MSB_DB_NT.Model.Player)
+        {
+            model.SibPath = $@"W:\PHX\data\Model\chr\{name}\sib\{name}.sib";
+        }
+        else if (model is MSB_DB_NT.Model.PrefabAsset)
+        {
+            // TODO: Check
+            model.SibPath = $@"W:\PHX\data\Asset\Environment\geometry\{name.Substring(0, 6)}\{name}\sib\{name}.sib";
+        }
+
+        m.Models.Add(model);
+    }
 
     private void AddModelsDeS(IMsb msb)
     {
@@ -1120,6 +1160,38 @@ public class MapContainer : ObjectContainer
             }
         }
     }
+    private void AddModelsDB_NT(IMsb msb)
+    {
+        foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
+        {
+            var m = mk.Key;
+            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
+            {
+                AddModelDB_NT(msb, new MSB_DB_NT.Model.MapPiece { Name = m }, m);
+                continue;
+            }
+            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
+            {
+                AddModelDB_NT(msb, new MSB_DB_NT.Model.Collision { Name = m }, m);
+                continue;
+            }
+            else if (m.StartsWith("aeg", StringComparison.OrdinalIgnoreCase))
+            {
+                AddModelDB_NT(msb, new MSB_DB_NT.Model.Asset { Name = m }, m);
+                continue;
+            }
+            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
+            {
+                AddModelDB_NT(msb, new MSB_DB_NT.Model.Enemy { Name = m }, m);
+                continue;
+            }
+            else if (m.StartsWith("aep", StringComparison.OrdinalIgnoreCase))
+            {
+                AddModelDB_NT(msb, new MSB_DB_NT.Model.PrefabAsset { Name = m }, m);
+                continue;
+            }
+        }
+    }
 
     public void SerializeToMSB(IMsb msb, ProjectType game)
     {
@@ -1195,7 +1267,7 @@ public class MapContainer : ObjectContainer
         }
         else if (game == ProjectType.DB_NT)
         {
-            // TODO: Duskbloods
+            AddModelsDB_NT(msb);
         }
         else if (game == ProjectType.DB)
         {

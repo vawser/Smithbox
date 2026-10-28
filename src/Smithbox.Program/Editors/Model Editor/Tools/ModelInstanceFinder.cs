@@ -289,6 +289,22 @@ public class ModelInstanceFinder
                     }
                     break;
                 case ProjectType.DB_NT:
+                    foreach (var entry in maps.Entries)
+                    {
+                        try
+                        {
+                            var msbData = targetFS.ReadFile(entry.Path);
+                            var msb = MSB_DB_NT.Read(msbData.Value);
+
+                            if (!MapList.ContainsKey(entry.Filename))
+                                MapList.Add(entry.Filename, msb);
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
+                        }
+                    }
+                    break;
                 case ProjectType.DB:
                     // TODO: Duskbloods
                     break;

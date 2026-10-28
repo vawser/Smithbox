@@ -97,7 +97,7 @@ public class MapQueryBank
                 }
                 if (View.Project.Descriptor.ProjectType == ProjectType.DB_NT)
                 {
-                    // TODO: Duskbloods
+                    msb = MSB_DB_NT.Read((Memory<byte>)msbData);
                 }
                 if (View.Project.Descriptor.ProjectType == ProjectType.DB)
                 {

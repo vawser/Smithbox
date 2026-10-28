@@ -377,6 +377,8 @@ public class CreateAction
                 msbclass = typeof(MSB_NR);
                 break;
             case ProjectType.DB_NT:
+                msbclass = typeof(MSB_DB_NT);
+                break;
             case ProjectType.DB:
                 PartsClasses = new();
                 RegionClasses = new();

@@ -28,9 +28,7 @@ public class HavokNavmeshBank
             or ProjectType.BB 
             or ProjectType.SDT 
             or ProjectType.ER 
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
+            or ProjectType.NR)
             return true;
 
         // NOTE: SDT doesn't render the meshes as it doesn't have HKX support yet
@@ -43,9 +41,7 @@ public class HavokNavmeshBank
         using var __scope = Profiler.TracyZoneAuto();
 
         if (Project.Descriptor.ProjectType is ProjectType.ER 
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
+            or ProjectType.NR)
         {
             LoadHavokNavmeshModels(mapId);
         }
@@ -54,9 +50,7 @@ public class HavokNavmeshBank
     public void OnUnloadMap(string mapId)
     {
         if (Project.Descriptor.ProjectType is ProjectType.ER 
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
+            or ProjectType.NR)
         {
             foreach (ResourcePool pool in ResourceManager.Pools)
             {

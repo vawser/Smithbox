@@ -227,6 +227,18 @@ public class MapWrapper : IDisposable
                         }
                         break;
                     case ProjectType.DB_NT:
+                        try
+                        {
+                            MSB = MSB_DB_NT.Read(mapData.Value);
+                            successfulLoad = true;
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_MSB", Path), e);
+
+                            return false;
+                        }
+                        break;
                     case ProjectType.DB:
                         break;
                     default: break;

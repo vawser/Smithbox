@@ -89,9 +89,7 @@ public class MapListView : IActionEventHandler
         }
 
         if (View.Project.Descriptor.ProjectType is ProjectType.ER 
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
+            or ProjectType.NR)
         {
             ImGui.SameLine();
             if (ImGui.Button($"{Icons.Map}", DPI.IconButtonSize))

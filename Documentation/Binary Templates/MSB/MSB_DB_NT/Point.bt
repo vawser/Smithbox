@@ -311,8 +311,6 @@ typedef struct {
     }
     
     // Align: 8 if type < MufflingBox && type != Other
-    FSeek(start + offset98);
-    PointStruct98 struct98;
 } Point <read=ReadPoint, bgcolor=cAqua>;
 
 wstring ReadPoint(Point &p) {

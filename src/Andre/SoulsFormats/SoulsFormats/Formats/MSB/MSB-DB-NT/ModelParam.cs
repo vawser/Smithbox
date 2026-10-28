@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace SoulsFormats;
@@ -139,7 +140,7 @@ public partial class MSB_DB_NT
         {
             long start = br.Position;
             long nameOffset = br.ReadInt64();
-            br.AssertUInt32((uint)Type);
+            br.ReadInt32(); // Type
             br.ReadInt32(); // ID
             long sibOffset = br.ReadInt64();
             InstanceCount = br.ReadInt32();
@@ -217,11 +218,33 @@ public partial class MSB_DB_NT
         public class MapPiece : Model
         {
             private protected override ModelType Type => ModelType.MapPiece;
-            private protected override bool HasTypeData => false;
+            private protected override bool HasTypeData => true;
 
             public MapPiece() : base("mXXXXXX") { }
 
             internal MapPiece(BinaryReaderEx br) : base(br) { }
+
+            private protected override void ReadTypeData(BinaryReaderEx br)
+            {
+                Unk00 = br.ReadInt32();
+                Unk04 = br.ReadInt32();
+                Unk08 = br.ReadInt32();
+                Unk0C = br.ReadInt32();
+            }
+
+            private protected override void WriteTypeData(BinaryWriterEx bw)
+            {
+                bw.WriteInt32(Unk00);
+                bw.WriteInt32(Unk04);
+                bw.WriteInt32(Unk08);
+                bw.WriteInt32(Unk0C);
+            }
+
+            // Layout
+            public int Unk00 { get; set; } = 0;
+            public int Unk04 { get; set; } = 0;
+            public int Unk08 { get; set; } = 0;
+            public int Unk0C { get; set; } = 0;
         }
 
         public class Enemy : Model

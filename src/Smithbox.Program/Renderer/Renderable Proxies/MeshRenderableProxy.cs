@@ -755,7 +755,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     public override void Dispose()
     {
         UnregisterAndRelease();
-        _meshProvider.Release();
         base.Dispose();
     }
 }

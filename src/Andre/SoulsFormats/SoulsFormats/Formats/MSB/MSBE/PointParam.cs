@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using System.Xml.Serialization;
-using static SoulsFormats.MSBE.Region;
 
 namespace SoulsFormats
 {

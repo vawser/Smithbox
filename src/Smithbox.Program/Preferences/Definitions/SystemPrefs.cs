@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
@@ -76,6 +77,10 @@ public class SystemPrefs
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.System_Ignore_Read_Asserts);
+                if(ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    BinaryReaderEx.IgnoreAsserts = CFG.Current.System_Ignore_Read_Asserts;
+                }
             }
         };
     }

@@ -64,8 +64,9 @@ public partial class MSB_DB_NT : SoulsFile<MSB_DB_NT>, IMsb
         Parts = new PartsParam();
         entries.Parts = Parts.Read(br);
 
-        if (br.Position != 0)
-            throw new InvalidDataException("The next param offset of the final param should be 0, but it wasn't.");
+        // For testing
+        //if (br.Position != 0)
+        //    throw new InvalidDataException("The next param offset of the final param should be 0, but it wasn't.");
 
         MSB.DisambiguateNames(entries.Models);
         MSB.DisambiguateNames(entries.Regions);

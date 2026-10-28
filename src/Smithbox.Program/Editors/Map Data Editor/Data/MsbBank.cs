@@ -214,6 +214,22 @@ public class MsbBank : IDisposable
                         }
                         break;
                     case ProjectType.DB_NT:
+                        try
+                        {
+                            msb = MSB_DB_NT.Read(mapData.Value);
+
+                            if (Maps.ContainsKey(fileEntry))
+                            {
+                                Maps[fileEntry] = msb;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(this, $"[Map Data Editor] Failed to read {fileEntry.Path} as MSB", e);
+
+                            return false;
+                        }
+                        break;
                     case ProjectType.DB:
                         break;
                     default: break;

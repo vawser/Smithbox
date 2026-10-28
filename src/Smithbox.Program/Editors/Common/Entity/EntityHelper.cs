@@ -22,7 +22,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Part ||
             ent.WrappedObject is MSBS.Part ||
             ent.WrappedObject is MSB_AC6.Part ||
-            ent.WrappedObject is MSB_NR.Part ? true : false;
+            ent.WrappedObject is MSB_NR.Part ||
+            ent.WrappedObject is MSB_DB_NT.Part ? true : false;
     }
 
     /// <summary>
@@ -38,7 +39,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Region ||
             ent.WrappedObject is MSBS.Region ||
             ent.WrappedObject is MSB_AC6.Region ||
-            ent.WrappedObject is MSB_NR.Region ? true : false;
+            ent.WrappedObject is MSB_NR.Region ||
+            ent.WrappedObject is MSB_DB_NT.Region ? true : false;
     }
 
     /// <summary>
@@ -54,7 +56,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Event ||
             ent.WrappedObject is MSBS.Event ||
             ent.WrappedObject is MSB_AC6.Event ||
-            ent.WrappedObject is MSB_NR.Event ? true : false;
+            ent.WrappedObject is MSB_NR.Event ||
+            ent.WrappedObject is MSB_DB_NT.Event ? true : false;
     }
 
     /// <summary>
@@ -77,7 +80,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Part.Enemy ||
             ent.WrappedObject is MSBS.Part.Enemy ||
             ent.WrappedObject is MSB_AC6.Part.Enemy ||
-            ent.WrappedObject is MSB_NR.Part.Enemy ? true : false;
+            ent.WrappedObject is MSB_NR.Part.Enemy ||
+            ent.WrappedObject is MSB_DB_NT.Part.Enemy ? true : false;
     }
 
     /// <summary>
@@ -92,7 +96,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Part.DummyEnemy ||
             ent.WrappedObject is MSBS.Part.DummyEnemy ||
             ent.WrappedObject is MSB_AC6.Part.DummyEnemy ||
-            ent.WrappedObject is MSB_NR.Part.DummyEnemy ? true : false;
+            ent.WrappedObject is MSB_NR.Part.DummyEnemy ||
+            ent.WrappedObject is MSB_DB_NT.Part.DummyEnemy ? true : false;
     }
 
     /// <summary>
@@ -108,7 +113,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Part.Asset ||
             ent.WrappedObject is MSBS.Part.Object ||
             ent.WrappedObject is MSB_AC6.Part.Asset ||
-            ent.WrappedObject is MSB_NR.Part.Asset ? true : false;
+            ent.WrappedObject is MSB_NR.Part.Asset ||
+            ent.WrappedObject is MSB_DB_NT.Part.Asset ? true : false;
     }
 
     /// <summary>
@@ -118,7 +124,8 @@ public static class EntityHelper
     {
         return ent.WrappedObject is MSBE.Part.Asset ||
             ent.WrappedObject is MSB_AC6.Part.Asset ||
-            ent.WrappedObject is MSB_NR.Part.Asset ? true : false;
+            ent.WrappedObject is MSB_NR.Part.Asset ||
+            ent.WrappedObject is MSB_DB_NT.Part.Asset ? true : false;
     }
 
     /// <summary>
@@ -133,7 +140,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Part.DummyAsset ||
             ent.WrappedObject is MSBS.Part.DummyObject ||
             ent.WrappedObject is MSB_AC6.Part.DummyAsset ||
-            ent.WrappedObject is MSB_NR.Part.DummyAsset ? true : false;
+            ent.WrappedObject is MSB_NR.Part.DummyAsset ||
+            ent.WrappedObject is MSB_DB_NT.Part.DummyAsset ? true : false;
     }
 
     /// <summary>
@@ -149,7 +157,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Part.MapPiece ||
             ent.WrappedObject is MSBS.Part.MapPiece ||
             ent.WrappedObject is MSB_AC6.Part.MapPiece ||
-            ent.WrappedObject is MSB_NR.Part.MapPiece ? true : false;
+            ent.WrappedObject is MSB_NR.Part.MapPiece ||
+            ent.WrappedObject is MSB_DB_NT.Part.MapPiece ? true : false;
     }
 
     /// <summary>
@@ -165,7 +174,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Part.Collision ||
             ent.WrappedObject is MSBS.Part.Collision ||
             ent.WrappedObject is MSB_AC6.Part.Collision ||
-            ent.WrappedObject is MSB_NR.Part.Collision ? true : false;
+            ent.WrappedObject is MSB_NR.Part.Collision ||
+            ent.WrappedObject is MSB_DB_NT.Part.Collision ? true : false;
     }
 
     /// <summary>
@@ -181,14 +191,15 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Part.ConnectCollision ||
             ent.WrappedObject is MSBS.Part.ConnectCollision ||
             ent.WrappedObject is MSB_AC6.Part.ConnectCollision ||
-            ent.WrappedObject is MSB_NR.Part.ConnectCollision ? true : false;
+            ent.WrappedObject is MSB_NR.Part.ConnectCollision ||
+            ent.WrappedObject is MSB_DB_NT.Part.ConnectCollision ? true : false;
     }
     public static bool IsPartNavmesh(Entity ent)
     {
         return ent.WrappedObject is MSB1.Part.Navmesh ||
             ent.WrappedObject is MSB2.Part.Navmesh ||
             ent.WrappedObject is MSBB.Part.Navmesh ||
-            ent.WrappedObject is MSBD.Part.Navmesh  ? true : false;
+            ent.WrappedObject is MSBD.Part.Navmesh ? true : false;
     }
     public static bool IsNavmesh(Entity ent)
     {
@@ -208,7 +219,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Part.Player ||
             ent.WrappedObject is MSBS.Part.Player ||
             ent.WrappedObject is MSB_AC6.Part.Player ||
-            ent.WrappedObject is MSB_NR.Part.Player ? true : false;
+            ent.WrappedObject is MSB_NR.Part.Player ||
+            ent.WrappedObject is MSB_DB_NT.Part.Player ? true : false;
     }
 
     /// <summary>
@@ -223,7 +235,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBE.Event.Treasure ||
             ent.WrappedObject is MSBS.Event.Treasure ||
             ent.WrappedObject is MSB_AC6.Event.Treasure ||
-            ent.WrappedObject is MSB_NR.Event.Treasure ? true : false;
+            ent.WrappedObject is MSB_NR.Event.Treasure ||
+            ent.WrappedObject is MSB_DB_NT.Event.Treasure ? true : false;
     }
 
     /// <summary>
@@ -236,7 +249,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBB.Event.ObjAct ||
             ent.WrappedObject is MSBE.Event.ObjAct ||
             ent.WrappedObject is MSBS.Event.ObjAct ||
-            ent.WrappedObject is MSB_NR.Event.ObjAct ? true : false;
+            ent.WrappedObject is MSB_NR.Event.ObjAct ||
+            ent.WrappedObject is MSB_DB_NT.Event.ObjAct ? true : false;
     }
 
     /// <summary>
@@ -248,7 +262,8 @@ public static class EntityHelper
             ent.WrappedObject is MSBB.Event.PatrolInfo ||
             ent.WrappedObject is MSBE.Event.PatrolInfo ||
             ent.WrappedObject is MSBS.Event.PatrolInfo ||
-            ent.WrappedObject is MSB_NR.Event.PatrolInfo ? true : false;
+            ent.WrappedObject is MSB_NR.Event.PatrolInfo ||
+            ent.WrappedObject is MSB_DB_NT.Event.PatrolInfo ? true : false;
     }
 
     /// <summary>
@@ -266,7 +281,8 @@ public static class EntityHelper
     public static bool IsRegionConnection(Entity ent)
     {
         return ent.WrappedObject is MSBE.Region.Connection ||
-            ent.WrappedObject is MSB_NR.Region.MapConnection ? true : false;
+            ent.WrappedObject is MSB_NR.Region.MapConnection ||
+            ent.WrappedObject is MSB_DB_NT.Region.MapConnection ? true : false;
     }
 
 }

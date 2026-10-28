@@ -751,7 +751,7 @@ public static class ParamMapReferences
         }
         if (editor.Project.Descriptor.ProjectType is ProjectType.DB_NT)
         {
-            // TODO: Duskbloods
+            ItemLotParam_DB_NT(editor, activeParam, row, currentField);
         }
         if (editor.Project.Descriptor.ProjectType is ProjectType.DB)
         {
@@ -1412,6 +1412,101 @@ public static class ParamMapReferences
                 ItemLotParam_Button(mapId, AssetName);
             }
         }
+    }
+
+    public static void ItemLotParam_DB_NT(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
+    {
+        //if (activeParam == null)
+        //    return;
+
+        //if (row == null)
+        //    return;
+
+        //if (currentField == null)
+        //    return;
+
+        //if (editor.Project.Handler.MapEditor == null)
+        //    return;
+
+        //if (activeParam == "ItemLotParam_map")
+        //{
+        //    bool show = false;
+        //    var mapId = "";
+
+        //    string rowID = row.ID.ToString();
+
+        //    string AA = "";
+        //    string BB = "";
+        //    string CC = "";
+
+        //    // Legacy Dungeon
+        //    if (rowID.Length == 8)
+        //    {
+        //        AA = $"{rowID.Substring(0, 2)}";
+        //        BB = $"{rowID.Substring(2, 2)}";
+        //        CC = $"{rowID.Substring(4, 1)}0";
+        //    }
+        //    // Open-world Tile
+        //    else if (rowID.Length >= 8)
+        //    {
+        //        AA = $"{rowID.Substring(0, 2)}";
+        //        BB = $"{rowID.Substring(2, 2)}";
+        //        CC = $"{rowID.Substring(4, 2)}";
+        //    }
+
+        //    if (AA == "" || BB == "" || CC == "")
+        //        return;
+
+        //    if (AA == "10")
+        //        AA = "60";
+
+        //    if (AA == "20")
+        //        AA = "61";
+
+        //    var rowMapId = $"m{AA}_{BB}_{CC}_00";
+
+        //    var mapList = MsbUtils.GetFullMapList(editor.Project);
+
+        //    if (mapList.Contains(rowMapId))
+        //    {
+        //        show = true;
+        //        mapId = rowMapId;
+        //    }
+
+        //    if (show)
+        //    {
+        //        if (CurrentMapID != rowMapId)
+        //        {
+        //            CurrentMapID = rowMapId;
+
+        //            var mapFileEntry = editor.Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+        //            var mapData = editor.Project.VFS.FS.ReadFile(mapFileEntry.Path);
+        //            if (mapData != null)
+        //            {
+        //                CurrentPeekMap_NR = MSB_NR.Read(mapData.Value);
+        //            }
+        //        }
+
+        //        if (CurrentPeekMap_NR == null)
+        //            return;
+
+        //        string AssetName = null;
+
+        //        foreach (var entry in CurrentPeekMap_NR.Events.Treasures)
+        //        {
+        //            if (entry.ItemLotID == row.ID)
+        //            {
+        //                AssetName = entry.TreasurePartName;
+        //                break;
+        //            }
+        //        }
+
+        //        if (AssetName == null)
+        //            return;
+
+        //        ItemLotParam_Button(mapId, AssetName);
+        //    }
+        //}
     }
 
     public static void ColorPicker(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)

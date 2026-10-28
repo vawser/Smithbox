@@ -415,6 +415,9 @@ public class ModelSelectorTool
                             isValidObjectType = true;
                         break;
                     case ProjectType.DB_NT:
+                        if (s.WrappedObject is MSB_DB_NT.Part.Enemy)
+                            isValidObjectType = true;
+                        break;
                     case ProjectType.DB:
                         throw new ArgumentException("Selected entity type must be Enemy");
                     default:
@@ -464,6 +467,9 @@ public class ModelSelectorTool
                             isValidObjectType = true;
                         break;
                     case ProjectType.DB_NT:
+                        if (s.WrappedObject is MSB_DB_NT.Part.Asset)
+                            isValidObjectType = true;
+                        break;
                     case ProjectType.DB:
                         throw new ArgumentException("Selected entity type must be Object/Asset");
                     default:
@@ -514,6 +520,9 @@ public class ModelSelectorTool
                             isValidObjectType = true;
                         break;
                     case ProjectType.DB_NT:
+                        if (s.WrappedObject is MSB_DB_NT.Part.Collision)
+                            isValidObjectType = true;
+                        break;
                     case ProjectType.DB:
                         throw new ArgumentException("Selected entity type must be Object/Asset");
                     default:
@@ -564,6 +573,9 @@ public class ModelSelectorTool
                             isValidObjectType = true;
                         break;
                     case ProjectType.DB_NT:
+                        if (s.WrappedObject is MSB_DB_NT.Part.MapPiece)
+                            isValidObjectType = true;
+                        break;
                     case ProjectType.DB:
                         throw new ArgumentException("Selected entity type must be MapPiece");
                     default:
