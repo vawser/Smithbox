@@ -12,109 +12,14 @@ public static class LocatorUtils
 {
     public static bool IsTPF(string path)
     {
-        string upperPath = path.ToUpper();
         bool success = false;
 
-        if (upperPath.EndsWith(".TPF") || upperPath.EndsWith(".TPF.DCX"))
+        if (path.EndsWith(".tpf", StringComparison.OrdinalIgnoreCase) || 
+            path.EndsWith(".tpf.dcx", StringComparison.OrdinalIgnoreCase))
         {
             success = true;
         }
 
         return success;
-    }
-
-    public static bool IsFLVER(string path)
-    {
-        string upperPath = path.ToUpper();
-        bool success = false;
-
-        if (upperPath.EndsWith(".FLVER") || upperPath.EndsWith(".FLV") || upperPath.EndsWith(".FLVER.DCX") || upperPath.EndsWith(".FLV.DCX"))
-        {
-            success = true;
-        }
-
-        return success;
-    }
-
-    public static bool IsNavmesh(string virtPath, string path)
-    {
-        string upperPath = path.ToUpper();
-        bool success = false;
-
-        if (virtPath.Contains(@"/nav"))
-        {
-            if (upperPath.EndsWith(".NVM"))
-            {
-                success = true;
-            }
-        }
-
-        return success;
-    }
-
-    public static bool IsHavokNavmesh(string virtPath, string path)
-    {
-        string upperPath = path.ToUpper();
-        bool success = false;
-
-        if (virtPath.Contains(@"/nav"))
-        {
-            if (upperPath.EndsWith(".HKX") || upperPath.EndsWith(".HKX.DCX"))
-            {
-                success = true;
-            }
-        }
-
-        return success;
-    }
-
-    public static bool IsHavokCollision(string virtPath, string path)
-    {
-        string upperPath = path.ToUpper();
-        bool success = false;
-
-        if (virtPath.Contains(@"/hit"))
-        {
-            if (upperPath.EndsWith(".HKX") || upperPath.EndsWith(".HKX.DCX"))
-            {
-                success = true;
-            }
-        }
-
-        if (virtPath.Contains(@"/connect"))
-        {
-            if (upperPath.EndsWith(".HKX") || upperPath.EndsWith(".HKX.DCX"))
-            {
-                success = true;
-            }
-        }
-
-        return success;
-    }
-
-    public static string GetAssetPath(ProjectEntry project, string relpath)
-    {
-        if (project.Descriptor.ProjectPath != null)
-        {
-            var modpath = Path.Join(project.Descriptor.ProjectPath, relpath);
-            if (File.Exists(modpath))
-                return modpath;
-        }
-
-        return Path.Join(project.Descriptor.DataPath, relpath);
-    }
-
-    public static string GetOverridenFilePath(ProjectEntry project, string relpath)
-    {
-        var rootPath = Path.Join(project.Descriptor.DataPath, relpath);
-        var modPath = Path.Join(project.Descriptor.ProjectPath, relpath);
-
-        if (project.Descriptor.ProjectPath != null && File.Exists(modPath))
-            return modPath;
-
-        if (File.Exists($@"{rootPath}"))
-            return rootPath;
-
-        return null;
     }
 }
