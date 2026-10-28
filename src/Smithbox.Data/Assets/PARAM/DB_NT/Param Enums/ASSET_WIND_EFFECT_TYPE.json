@@ -1,0 +1,38 @@
+{
+  "Key": "ASSET_WIND_EFFECT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_WIND_EFFECT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disabled"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enabled"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valid (Individual Judgment)"
+        }
+      ]
+    }
+  ]
+}

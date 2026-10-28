@@ -1,0 +1,20 @@
+{
+  "Key": "MAGIC_AI_NOTIFY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MAGIC_AI_NOTIFY_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    }
+  ]
+}

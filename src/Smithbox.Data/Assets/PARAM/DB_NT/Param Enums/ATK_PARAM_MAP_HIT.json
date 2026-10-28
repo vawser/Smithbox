@@ -1,0 +1,47 @@
+{
+  "Key": "ATK_PARAM_MAP_HIT",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATK_PARAM_MAP_HIT"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Precision"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not on the map"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map, not an asset"
+        }
+      ]
+    }
+  ]
+}

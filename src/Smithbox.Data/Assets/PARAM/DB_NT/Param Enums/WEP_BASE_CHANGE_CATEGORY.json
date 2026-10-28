@@ -1,0 +1,29 @@
+{
+  "Key": "WEP_BASE_CHANGE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEP_BASE_CHANGE_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Category 0"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Category 4"
+        }
+      ]
+    }
+  ]
+}

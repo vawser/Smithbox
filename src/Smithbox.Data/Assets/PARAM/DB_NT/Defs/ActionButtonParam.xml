@@ -5,15 +5,18 @@
   <Unicode>True</Unicode>
   <FormatVersion>0</FormatVersion>
   <Fields>
-    <Field Def="s32 unk00" />
-    <Field Def="s32 unk01" />
-    <Field Def="s32 unk02" />
-    <Field Def="s32 unk03" />
-    <Field Def="s32 unk04" />
-    <Field Def="s32 unk05" />
-    <Field Def="s32 unk06" />
-    <Field Def="s32 unk07" />
-    <Field Def="s32 unk08" />
+    <Field Def="u8 regionType" />
+    <Field Def="u8 category" />
+    <Field Def="dummy8 padding1[2]" />
+    
+    <Field Def="s32 dummyPoly1 = -1" />
+    <Field Def="s32 dummyPoly2 = -1" />
+    <Field Def="f32 radius" />
+    <Field Def="s32 angle = 180" />
+    <Field Def="f32 depth" />
+    <Field Def="f32 width" />
+    <Field Def="f32 height" />
+    <Field Def="f32 baseHeightOffset" />
     <Field Def="s32 unk09" />
     <Field Def="s32 unk0A" />
     <Field Def="s32 unk0B" />

@@ -1,0 +1,38 @@
+{
+  "Key": "RAIN_BLOCKING_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RAIN_BLOCKING_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No cut-off"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Block short distance"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Block long distance"
+        }
+      ]
+    }
+  ]
+}

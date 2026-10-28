@@ -1,0 +1,38 @@
+{
+  "Key": "THROW_PAD_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THROW_PAD_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 3"
+        }
+      ]
+    }
+  ]
+}

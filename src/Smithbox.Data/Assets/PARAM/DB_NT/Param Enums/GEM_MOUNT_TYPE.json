@@ -1,0 +1,29 @@
+{
+  "Key": "GEM_MOUNT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GEM_MOUNT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prevent Change"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Allow Change"
+        }
+      ]
+    }
+  ]
+}

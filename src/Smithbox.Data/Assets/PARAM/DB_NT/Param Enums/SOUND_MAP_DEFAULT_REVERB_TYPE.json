@@ -1,0 +1,47 @@
+{
+  "Key": "SOUND_MAP_DEFAULT_REVERB_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SOUND_MAP_DEFAULT_REVERB_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type -1"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 5"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 6"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 7"
+        }
+      ]
+    }
+  ]
+}

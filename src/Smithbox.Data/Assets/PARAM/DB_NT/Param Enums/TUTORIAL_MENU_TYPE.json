@@ -1,0 +1,38 @@
+{
+  "Key": "TUTORIAL_MENU_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "TUTORIAL_MENU_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Subtle (one-line)"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Subtle (multi-line)"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Intrusive (large)"
+        }
+      ]
+    }
+  ]
+}

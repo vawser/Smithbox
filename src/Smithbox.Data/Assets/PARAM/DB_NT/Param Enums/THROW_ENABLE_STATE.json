@@ -1,0 +1,29 @@
+{
+  "Key": "THROW_ENABLE_STATE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THROW_ENABLE_STATE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    }
+  ]
+}

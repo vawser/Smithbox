@@ -1,0 +1,38 @@
+{
+  "Key": "BUDDY_PC_FOLLOW_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BUDDY_PC_FOLLOW_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Follow/Warp to Player (Needs spEffect 297000)"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wander"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stay Still"
+        }
+      ]
+    }
+  ]
+}

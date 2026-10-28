@@ -1,0 +1,38 @@
+{
+  "Key": "ASSET_AUTO_DRAW_GROUP_DEPTH_WRITE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_AUTO_DRAW_GROUP_DEPTH_WRITE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Only if destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yes"
+        }
+      ]
+    }
+  ]
+}

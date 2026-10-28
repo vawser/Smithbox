@@ -1,0 +1,29 @@
+{
+  "Key": "ATKPARAM_GUARD_RANGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_GUARD_RANGE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Key": "OBJACT_EVENT_KICK_TIMING",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJACT_EVENT_KICK_TIMING"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "After animation playback"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Before animation playback"
+        }
+      ]
+    }
+  ]
+}

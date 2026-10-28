@@ -1,0 +1,47 @@
+{
+  "Key": "MAGIC_STATUS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MAGIC_STATUS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strength"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dexterity"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Faith"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Intelligence"
+        }
+      ]
+    }
+  ]
+}
