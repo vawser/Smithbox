@@ -7,6 +7,9 @@
   Map Data Editor
   Map Editor
   
+# General
+- Add BP checks to saving processes so files are not written if they are BP to vanilla (i.e. don't save unmodified files)
+  
 # Map Editor
 - Update non-parts rendering on property change
   
