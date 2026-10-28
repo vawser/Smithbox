@@ -25,8 +25,6 @@ public class ModelContainer : ObjectContainer
     //public List<Entity> BufferLayouts { get; set; }
     public List<Entity> Skeletons { get; set; }
 
-    //public List<Entity> Collisions { get; set; }
-
     public Entity CLM2_Parent = null;
     public Entity HKXPWV_Parent = null;
     public Entity EDGE_Parent = null;

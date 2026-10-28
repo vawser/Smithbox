@@ -783,7 +783,89 @@ public class FlverResource : IResource, IDisposable
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static short PackUV(float value)
     {
+        if (ReportUVRanges)
+        {
+            UvRangeTracker.Track(value);
+        }
+
         return (short)(int)MathF.Round(value * 2048.0f);
+    }
+
+    /// <summary>
+    /// Debug switch. When true, the UV range of every sub-mesh is logged as it is loaded, and sub-meshes whose
+    /// UVs don't fit the packed 16 bit range are flagged.
+    /// </summary>
+    public static bool ReportUVRanges = false;
+
+    /// <summary>
+    /// Largest magnitude a UV can have once packed as 16 bit fixed point with 11 fractional bits.
+    /// </summary>
+    private const float PackedUVLimit = 32768f / 2048f;
+
+    /// <summary>
+    /// Collects the UV values passed through PackUV while one sub-mesh is being filled. Thread static because
+    /// models can be loaded on several threads at once.
+    /// </summary>
+    private static class UvRangeTracker
+    {
+        [ThreadStatic] private static float _min;
+        [ThreadStatic] private static float _max;
+        [ThreadStatic] private static int _count;
+        [ThreadStatic] private static int _overflowCount;
+        [ThreadStatic] private static bool _hasNonFinite;
+
+        public static void Begin()
+        {
+            _min = float.MaxValue;
+            _max = float.MinValue;
+            _count = 0;
+            _overflowCount = 0;
+            _hasNonFinite = false;
+        }
+
+        public static void Track(float value)
+        {
+            if (!float.IsFinite(value))
+            {
+                _hasNonFinite = true;
+                return;
+            }
+
+            _count++;
+            if (value < _min) _min = value;
+            if (value > _max) _max = value;
+            if (value >= PackedUVLimit || value < -PackedUVLimit) _overflowCount++;
+        }
+
+        public static void End(object owner, string resourceName, int meshIndex, string materialName, int vertexCount)
+        {
+            if (_count == 0 && !_hasNonFinite)
+                return;
+
+            var range = _count > 0 ? $"min {_min:0.####}, max {_max:0.####}" : "no finite values";
+            var flags = "";
+            if (_overflowCount > 0)
+                flags += $"  ** OVERFLOW: {_overflowCount} of {_count} UV values outside +/-{PackedUVLimit} and will wrap **";
+            if (_hasNonFinite)
+                flags += "  ** contains NaN/Infinity **";
+
+            Smithbox.Log(owner, $"UV range: {resourceName} mesh {meshIndex} ({materialName}, {vertexCount} verts): {range}{flags}");
+        }
+    }
+
+    private void BeginUVReport()
+    {
+        if (ReportUVRanges)
+            UvRangeTracker.Begin();
+    }
+
+    private void EndUVReport(int meshIndex, FlverSubmesh mesh)
+    {
+        if (ReportUVRanges)
+        {
+            UvRangeTracker.End(this, Context?.QualifiedName ?? "", meshIndex,
+                mesh.Material?.MaterialName ?? "", mesh.VertexCount);
+        }
     }
 
     /// <summary>
@@ -867,10 +949,18 @@ public class FlverResource : IResource, IDisposable
         }
         else if (type == FLVER.LayoutType.UByte4Norm)
         {
-            v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+            // Two UVs packed into four bytes, each component a byte normalised by 255 (no uvFactor)
+            v = new Vector3(br.ReadByte(), br.ReadByte(), 0) / 255f;
+            v2 = new Vector3(br.ReadByte(), br.ReadByte(), 0) / 255f;
+            hasv2 = allowv2 && dest2 != null;
 
             dest[0] = PackUV(v.X);
             dest[1] = PackUV(v.Y);
+            if (hasv2)
+            {
+                dest2[0] = PackUV(v2.X);
+                dest2[1] = PackUV(v2.Y);
+            }
         }
         else if (type == FLVER.LayoutType.Short2)
         {
@@ -881,10 +971,7 @@ public class FlverResource : IResource, IDisposable
         }
         else if (type == FLVER.LayoutType.Half2)
         {
-            // Halves already hold the real UV value, so there is no fixed point factor to divide out
-            float u = (float)BitConverter.Int16BitsToHalf(br.ReadInt16());
-            float vCoord = (float)BitConverter.Int16BitsToHalf(br.ReadInt16());
-            v = new Vector3(u, vCoord, 0);
+            v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
 
             dest[0] = PackUV(v.X);
             dest[1] = PackUV(v.Y);
@@ -905,10 +992,8 @@ public class FlverResource : IResource, IDisposable
         }
         else if (type == FLVER.LayoutType.Half4)
         {
-            v = new Vector3((float)BitConverter.Int16BitsToHalf(br.ReadInt16()),
-                (float)BitConverter.Int16BitsToHalf(br.ReadInt16()), 0);
-            v2 = new Vector3((float)BitConverter.Int16BitsToHalf(br.ReadInt16()),
-                (float)BitConverter.Int16BitsToHalf(br.ReadInt16()), 0);
+            v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+            v2 = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
             hasv2 = allowv2 && dest2 != null;
 
             dest[0] = PackUV(v.X);
@@ -1926,11 +2011,11 @@ public class FlverResource : IResource, IDisposable
             }
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV2)
             {
-                FillVerticesUV2(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000F ? 2048 : 1024);
+                FillVerticesUV2(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024);
             }
             else
             {
-                FillVerticesStandard(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000F ? 2048 : 1024);
+                FillVerticesStandard(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024);
             }
         }
 
@@ -2186,7 +2271,9 @@ public class FlverResource : IResource, IDisposable
                 GPUMeshes[i] = new FlverSubmesh();
 
                 FLVER0.Mesh? flverMesh = FlverDeS.Meshes[i];
+                BeginUVReport();
                 ProcessMesh(flverMesh, GPUMeshes[i]);
+                EndUVReport(i, GPUMeshes[i]);
                 if (i == 0)
                 {
                     Bounds = GPUMeshes[i].Bounds;
@@ -2256,7 +2343,9 @@ public class FlverResource : IResource, IDisposable
             for (var i = 0; i < Flver.Meshes.Count(); i++)
             {
                 GPUMeshes[i] = new FlverSubmesh();
+                BeginUVReport();
                 ProcessMesh(Flver.Meshes[i], GPUMeshes[i]);
+                EndUVReport(i, GPUMeshes[i]);
                 if (i == 0)
                 {
                     Bounds = GPUMeshes[i].Bounds;
@@ -2418,7 +2507,9 @@ public class FlverResource : IResource, IDisposable
         for (var i = 0; i < meshCount; i++)
         {
             GPUMeshes[i] = new FlverSubmesh();
+            BeginUVReport();
             ProcessMesh(ref meshes[i], br, version, vertexbuffers, bufferLayouts, facesets, GPUMeshes[i]);
+            EndUVReport(i, GPUMeshes[i]);
             if (i == 0)
             {
                 Bounds = GPUMeshes[i].Bounds;
