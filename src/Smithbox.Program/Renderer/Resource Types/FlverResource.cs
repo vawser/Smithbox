@@ -106,7 +106,7 @@ public class FlverResource : IResource, IDisposable
                 Flver = FLVER2.Read(bytes, cache);
                 ret = LoadInternal(al);
 
-                if(cache != null)
+                if (cache != null)
                     ReleaseCache(cache);
             }
         }
@@ -244,8 +244,8 @@ public class FlverResource : IResource, IDisposable
             }
 
             // MATBIN
-            if (curProject.Descriptor.ProjectType is ProjectType.ER 
-                or ProjectType.AC6 
+            if (curProject.Descriptor.ProjectType is ProjectType.ER
+                or ProjectType.AC6
                 or ProjectType.NR
                 or ProjectType.DB_NT
                 or ProjectType.DB)
@@ -881,9 +881,10 @@ public class FlverResource : IResource, IDisposable
         }
         else if (type == FLVER.LayoutType.Half2)
         {
-            float u = (float)(Half)BitConverter.Int16BitsToHalf(br.ReadInt16());
-            float vCoord = (float)(Half)BitConverter.Int16BitsToHalf(br.ReadInt16());
-            v = new Vector3(u, vCoord, 0) / uvFactor;
+            // Halves already hold the real UV value, so there is no fixed point factor to divide out
+            float u = (float)BitConverter.Int16BitsToHalf(br.ReadInt16());
+            float vCoord = (float)BitConverter.Int16BitsToHalf(br.ReadInt16());
+            v = new Vector3(u, vCoord, 0);
 
             dest[0] = PackUV(v.X);
             dest[1] = PackUV(v.Y);
@@ -904,8 +905,10 @@ public class FlverResource : IResource, IDisposable
         }
         else if (type == FLVER.LayoutType.Half4)
         {
-            v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
-            v2 = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+            v = new Vector3((float)BitConverter.Int16BitsToHalf(br.ReadInt16()),
+                (float)BitConverter.Int16BitsToHalf(br.ReadInt16()), 0);
+            v2 = new Vector3((float)BitConverter.Int16BitsToHalf(br.ReadInt16()),
+                (float)BitConverter.Int16BitsToHalf(br.ReadInt16()), 0);
             hasv2 = allowv2 && dest2 != null;
 
             dest[0] = PackUV(v.X);
@@ -2990,7 +2993,7 @@ public class FlverResource : IResource, IDisposable
             {
                 foreach (FlverMaterial m in GPUMaterials)
                 {
-                    if(m != null)
+                    if (m != null)
                         m.Dispose();
                 }
             }

@@ -63,15 +63,6 @@ public class HavokCollisionResource : IResource, IDisposable
                 var des = new PackFileDeserializer();
                 Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
             }
-
-            // Ignore non-collision HKX files
-            if(Hkx2 != null)
-            {
-                if (HavokTypeUtils.IsHKX2_Animation(curProject, Hkx2))
-                {
-                    return false;
-                }
-            }
         }
         // HKX - BB
         else if (curProject.Descriptor.ProjectType is ProjectType.BB)
@@ -132,15 +123,6 @@ public class HavokCollisionResource : IResource, IDisposable
                     var br = new BinaryReaderEx(false, fileData.Value);
                     var des = new PackFileDeserializer();
                     Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
-                }
-
-                // Ignore non-collision HKX files
-                if (Hkx2 != null)
-                {
-                    if (HavokTypeUtils.IsHKX2_Animation(curProject, Hkx2))
-                    {
-                        return false;
-                    }
                 }
             }
             catch(Exception e)
