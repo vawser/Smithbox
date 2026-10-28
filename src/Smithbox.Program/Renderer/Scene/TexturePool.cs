@@ -20,21 +20,57 @@ namespace StudioCore.Renderer;
 /// </summary>
 public class TexturePool
 {
+    /// <summary>
+    ///     Hard upper bound for a pool. Texture indices are packed into 16 bit values in the material
+    ///     buffer (see <c>Material</c> and the flver shaders), so indices past this can't be addressed.
+    /// </summary>
+    public const uint MaxTextureCount = ushort.MaxValue + 1;
+
+    /// <summary>
+    ///     Number of Frame() ticks a freed slot / replaced texture is kept alive before its descriptor is
+    ///     reset and the GPU resource is destroyed. Must be larger than the number of frames in flight.
+    /// </summary>
+    private const int RetireDelayFrames = 5;
+
     private readonly object _allocationLock = new();
 
     private readonly FreeListAllocator _allocator;
-    private readonly object _disposalLock = new();
 
-    private readonly List<Texture> _disposalQueue = new();
+    // Guards _retired
+    private readonly object _disposalLock = new();
+    private readonly List<RetiredEntry> _retired = new();
+
+    // Guards _dirtySlots and _fullRebuildRequired
+    private readonly object _stateLock = new();
+    private HashSet<uint> _dirtySlots = new();
+    private bool _fullRebuildRequired = true;
+
     private readonly List<TextureHandle> _handles = new();
 
     private readonly ResourceLayout _poolLayout;
     private readonly string _resourceName;
-    private int _framesToDisposal;
     private ResourceSet _poolResourceSet;
+
+    // Scratch buffers for in-place descriptor updates (only touched from the render thread)
+    private uint[] _updateIndices = new uint[256];
+    private BindableResource[] _updateResources = new BindableResource[256];
+
+    private sealed class RetiredEntry
+    {
+        public readonly int Slot; // -1 if only a texture (no pool slot) is being retired
+        public readonly Texture Texture;
+        public int Age;
+
+        public RetiredEntry(int slot, Texture texture)
+        {
+            Slot = slot;
+            Texture = texture;
+        }
+    }
 
     public TexturePool(GraphicsDevice d, string name, uint poolsize)
     {
+        poolsize = Math.Min(poolsize, MaxTextureCount);
         _resourceName = name;
         TextureCount = poolsize;
         _allocator = new FreeListAllocator(poolsize);
@@ -48,14 +84,77 @@ public class TexturePool
                 _resourceName,
                 VkDescriptorType.SampledImage,
                 VkShaderStageFlags.Fragment,
-                VkDescriptorBindingFlags.UpdateAfterBind,
+                // UpdateAfterBind lets us rewrite descriptors after the set is bound; UpdateUnusedWhilePending
+                // additionally lets us do so while earlier frames are still executing, provided they don't
+                // sample the element being rewritten.
+                VkDescriptorBindingFlags.UpdateAfterBind | VkDescriptorBindingFlags.UpdateUnusedWhilePending,
                 TextureCount));
         _poolLayout = d.ResourceFactory.CreateResourceLayout(layoutdesc);
     }
 
     public uint TextureCount { get; }
 
-    public bool DescriptorTableDirty { get; private set; }
+    /// <summary>
+    ///     True while the pool has outstanding work: descriptors to write, or retired slots/textures that
+    ///     still need to age out. SceneRenderer polls this once per frame.
+    /// </summary>
+    public bool DescriptorTableDirty
+    {
+        get
+        {
+            lock (_stateLock)
+            {
+                if (_fullRebuildRequired || _dirtySlots.Count > 0)
+                {
+                    return true;
+                }
+            }
+
+            lock (_disposalLock)
+            {
+                return _retired.Count > 0;
+            }
+        }
+    }
+
+    /// <summary>
+    ///     Queue a single descriptor to be rewritten next frame.
+    /// </summary>
+    internal void MarkSlotDirty(uint slot)
+    {
+        lock (_stateLock)
+        {
+            _dirtySlots.Add(slot);
+        }
+    }
+
+    /// <summary>
+    ///     Force the whole set to be recreated next frame. Only needed when a descriptor that may be in use
+    ///     by in-flight frames is replaced, since that can't safely be rewritten in place.
+    /// </summary>
+    internal void MarkFullRebuild()
+    {
+        lock (_stateLock)
+        {
+            _fullRebuildRequired = true;
+        }
+    }
+
+    private void RetireSlot(uint slot, Texture texture)
+    {
+        lock (_disposalLock)
+        {
+            _retired.Add(new RetiredEntry((int)slot, texture));
+        }
+    }
+
+    private void RetireTexture(Texture texture)
+    {
+        lock (_disposalLock)
+        {
+            _retired.Add(new RetiredEntry(-1, texture));
+        }
+    }
 
     private static VkFormat GetPixelFormatFromFourCC(string str)
     {
@@ -261,52 +360,138 @@ public class TexturePool
         return handle;
     }
 
+    /// <summary>
+    ///     Schedules the pool's descriptors to be brought up to date. Normally this only rewrites the
+    ///     descriptors that changed; the whole set is only recreated on first use or when an in-use
+    ///     descriptor was replaced.
+    /// </summary>
     public void RegenerateDescriptorTables()
     {
-        SceneRenderer.AddBackgroundUploadTask((d, cl) =>
+        SceneRenderer.AddBackgroundUploadTask((d, cl) => UpdateDescriptorTable(d));
+    }
+
+    private void UpdateDescriptorTable(GraphicsDevice d)
+    {
+        if (TextureCount == 0)
         {
-            lock (_allocationLock)
+            return;
+        }
+
+        // Every unused or not yet uploaded slot points at the default texture (handle 0).
+        Texture fallback;
+        lock (_allocationLock)
+        {
+            fallback = _handles[0]?._texture;
+        }
+
+        if (fallback == null)
+        {
+            // Default texture hasn't been uploaded yet. Nothing has been consumed, so we stay dirty and retry.
+            return;
+        }
+
+        bool rebuild;
+        HashSet<uint> dirty;
+        lock (_stateLock)
+        {
+            rebuild = _fullRebuildRequired || _poolResourceSet == null;
+            _fullRebuildRequired = false;
+            dirty = _dirtySlots;
+            _dirtySlots = new HashSet<uint>();
+        }
+
+        // Retired slots whose grace period is over: reset their descriptor to the fallback, then release.
+        List<RetiredEntry> due = null;
+        lock (_disposalLock)
+        {
+            for (var i = _retired.Count - 1; i >= 0; i--)
             {
-                if (TextureCount == 0)
+                if (_retired[i].Age >= RetireDelayFrames)
                 {
-                    return;
+                    due ??= new List<RetiredEntry>();
+                    due.Add(_retired[i]);
+                    _retired.RemoveAt(i);
                 }
-
-                if (_poolLayout != null)
-                {
-                    //_poolLayout.Dispose();
-                }
-
-                if (_poolResourceSet != null)
-                {
-                    _poolResourceSet.Dispose();
-                }
-
-                //var layoutdesc = new ResourceLayoutDescription(
-                //    new ResourceLayoutElementDescription(_resourceName, ResourceKind.TextureReadOnly, ShaderStages.Fragment, TextureCount));
-                //_poolLayout = d.ResourceFactory.CreateResourceLayout(layoutdesc);
-
-                var resources = new BindableResource[TextureCount];
-                for (var i = 0; i < _handles.Count; i++)
-                {
-                    if (_handles[i] == null)
-                    {
-                        resources[i] = _handles[0]._texture;
-                        continue;
-                    }
-
-                    resources[_handles[i].TexHandle] = _handles[i]._texture;
-                    if (_handles[i]._texture == null)
-                    {
-                        resources[_handles[i].TexHandle] = _handles[0]._texture;
-                    }
-                }
-
-                _poolResourceSet =
-                    d.ResourceFactory.CreateResourceSet(new ResourceSetDescription(_poolLayout, resources));
-                DescriptorTableDirty = false;
             }
-        });
+        }
+
+        if (due != null)
+        {
+            foreach (RetiredEntry e in due)
+            {
+                if (e.Slot >= 0)
+                {
+                    dirty.Add((uint)e.Slot);
+                }
+            }
+        }
+
+        if (rebuild)
+        {
+            RebuildResourceSet(d, fallback);
+        }
+        else if (dirty.Count > 0)
+        {
+            WriteDirtyDescriptors(dirty, fallback);
+        }
+
+        // Only now that no descriptor references them anymore is it safe to destroy textures / reuse slots.
+        if (due != null)
+        {
+            foreach (RetiredEntry e in due)
+            {
+                e.Texture?.Dispose();
+                if (e.Slot >= 0)
+                {
+                    lock (_allocationLock)
+                    {
+                        _allocator.Free((uint)e.Slot);
+                    }
+                }
+            }
+        }
+    }
+
+    private void RebuildResourceSet(GraphicsDevice d, Texture fallback)
+    {
+        var resources = new BindableResource[TextureCount];
+        lock (_allocationLock)
+        {
+            for (var i = 0; i < resources.Length; i++)
+            {
+                resources[i] = _handles[i]?._texture ?? fallback;
+            }
+        }
+
+        ResourceSet old = _poolResourceSet;
+        _poolResourceSet = d.ResourceFactory.CreateResourceSet(new ResourceSetDescription(_poolLayout, resources));
+        old?.Dispose();
+    }
+
+    private void WriteDirtyDescriptors(HashSet<uint> dirty, Texture fallback)
+    {
+        if (_updateIndices.Length < dirty.Count)
+        {
+            var size = Math.Max(dirty.Count, _updateIndices.Length * 2);
+            _updateIndices = new uint[size];
+            _updateResources = new BindableResource[size];
+        }
+
+        var count = 0;
+        lock (_allocationLock)
+        {
+            foreach (var slot in dirty)
+            {
+                _updateIndices[count] = slot;
+                _updateResources[count] = _handles[(int)slot]?._texture ?? fallback;
+                count++;
+            }
+        }
+
+        _poolResourceSet.UpdateSampledImages(0, _updateIndices, _updateResources, count);
+
+        // Don't hold on to textures through the scratch buffer
+        Array.Clear(_updateResources, 0, count);
     }
 
     public ResourceLayout GetLayout()
@@ -324,23 +509,12 @@ public class TexturePool
 
     public void CleanTexturePool()
     {
+        // Age retired slots/textures. They are released by UpdateDescriptorTable once old enough.
         lock (_disposalLock)
         {
-            _framesToDisposal++;
-            if (_framesToDisposal >= 5)
+            foreach (RetiredEntry e in _retired)
             {
-                _framesToDisposal = 0;
-
-                foreach (Texture t in _disposalQueue)
-                {
-                    t.Dispose();
-                }
-
-                _disposalQueue.Clear();
-            }
-            else
-            {
-                DescriptorTableDirty = true;
+                e.Age++;
             }
         }
 
@@ -569,6 +743,7 @@ public class TexturePool
             desc.CreateFlags = isCubemap ? VkImageCreateFlags.CubeCompatible : VkImageCreateFlags.None;
             desc.Tiling = VkImageTiling.Optimal;
             desc.ArrayLayers = 1;
+            var previousTexture = _texture;
             _texture = d.ResourceFactory.CreateTexture(desc);
             _texture.Name = name;
             cl.CopyTexture(_staging, _texture);
@@ -577,7 +752,7 @@ public class TexturePool
             _staging = null;
 
             Resident = true;
-            _pool.DescriptorTableDirty = true;
+            PublishTexture(previousTexture);
         }
 
         public static void DeswizzleDDSBytesPS4(int width, int height, int offset, int offsetFactor, int Format,
@@ -885,6 +1060,7 @@ public class TexturePool
             desc.CreateFlags = isCubemap ? VkImageCreateFlags.CubeCompatible : VkImageCreateFlags.None;
             desc.Tiling = VkImageTiling.Optimal;
             desc.ArrayLayers = 1;
+            var previousTexture = _texture;
             _texture = d.ResourceFactory.CreateTexture(desc);
             _texture.Name = name;
             cl.CopyTexture(_staging, _texture);
@@ -893,7 +1069,7 @@ public class TexturePool
             _staging = null;
 
             Resident = true;
-            _pool.DescriptorTableDirty = true;
+            PublishTexture(previousTexture);
         }
 
         public unsafe void FillWithColor(GraphicsDevice d, Color c, string name)
@@ -923,12 +1099,11 @@ public class TexturePool
                 Unsafe.CopyBlock(map.Data.ToPointer(), data, 4);
             }
 
-            _pool.DescriptorTableDirty = true;
-
             SceneRenderer.AddBackgroundUploadTask((gd, cl) =>
             {
                 desc.Usage = VkImageUsageFlags.Sampled;
                 desc.Tiling = VkImageTiling.Optimal;
+                var previousTexture = _texture;
                 _texture = d.ResourceFactory.CreateTexture(desc);
                 _texture.Name = name;
                 cl.CopyTexture(_staging, _texture);
@@ -938,7 +1113,7 @@ public class TexturePool
                 _staging = null;
 
                 Resident = true;
-                _pool.DescriptorTableDirty = true;
+                PublishTexture(previousTexture);
             });
         }
 
@@ -972,14 +1147,13 @@ public class TexturePool
                 }
             }
 
-            _pool.DescriptorTableDirty = true;
-
             SceneRenderer.AddBackgroundUploadTask((gd, cl) =>
             {
                 desc.ArrayLayers = 1;
                 desc.Usage = VkImageUsageFlags.Sampled;
                 desc.CreateFlags = VkImageCreateFlags.CubeCompatible;
                 desc.Tiling = VkImageTiling.Optimal;
+                var previousTexture = _texture;
                 _texture = d.ResourceFactory.CreateTexture(desc);
                 cl.CopyTexture(_staging, _texture);
 
@@ -988,25 +1162,22 @@ public class TexturePool
                 _staging = null;
 
                 Resident = true;
-                _pool.DescriptorTableDirty = true;
+                PublishTexture(previousTexture);
             });
         }
 
         public void FillWithGPUTexture(Texture texture)
         {
-            if (_texture != null)
-            {
-                _texture.Dispose();
-            }
-
+            var previousTexture = _texture;
             _texture = texture;
             Resident = true;
-            _pool.DescriptorTableDirty = true;
+            PublishTexture(previousTexture);
         }
 
         public void CreateRenderTarget(GraphicsDevice d, uint width, uint height, uint mips, uint layes,
             VkFormat format, VkImageUsageFlags usage)
         {
+            var previousTexture = _texture;
             _texture = d.ResourceFactory.CreateTexture(
                 TextureDescription.Texture2D(
                     width, height, mips, layes, format,
@@ -1014,7 +1185,26 @@ public class TexturePool
                     VkImageCreateFlags.None,
                     VkImageTiling.Optimal));
             Resident = true;
-            _pool.DescriptorTableDirty = true;
+            PublishTexture(previousTexture);
+        }
+
+        /// <summary>
+        ///     Tells the pool this handle's texture changed. A fresh handle only needs its own descriptor
+        ///     written. If the handle already had a texture, that descriptor may be sampled by frames that are
+        ///     still executing, so the whole set is recreated (the old one is retired by the device) and the
+        ///     old texture is destroyed after a grace period instead of immediately.
+        /// </summary>
+        private void PublishTexture(Texture previousTexture)
+        {
+            if (previousTexture != null && !ReferenceEquals(previousTexture, _texture))
+            {
+                _pool.RetireTexture(previousTexture);
+                _pool.MarkFullRebuild();
+            }
+            else
+            {
+                _pool.MarkSlotDirty(TexHandle);
+            }
         }
 
         public void Clean()
@@ -1039,32 +1229,23 @@ public class TexturePool
                     // TODO: dispose managed state (managed objects).
                 }
 
-                if (_texture != null)
-                {
-                    //_texture.Dispose();
-                    lock (_pool._disposalLock)
-                    {
-                        _pool._disposalQueue.Add(_texture);
-                        _pool._framesToDisposal = 0;
-                        _pool.DescriptorTableDirty = true;
-                    }
-
-                    _texture = null;
-                }
-
                 if (_staging != null)
                 {
                     _staging.Dispose();
                     _staging = null;
                 }
 
-                _pool._allocator.Free(TexHandle);
+                Texture texture = _texture;
+                _texture = null;
+
                 lock (_pool._allocationLock)
                 {
                     _pool._handles[(int)TexHandle] = null;
                 }
 
-                _pool.DescriptorTableDirty = true;
+                // The slot and texture are kept alive until frames that may still sample them have finished.
+                // The pool then points the descriptor back at the fallback, destroys the texture and frees the slot.
+                _pool.RetireSlot(TexHandle, texture);
 
                 disposedValue = true;
             }

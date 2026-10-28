@@ -97,7 +97,9 @@ public static class SceneRenderer
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(Material), VkShaderStageFlags.Fragment);
         BoneBufferAllocator = new GPUBufferAllocator("bones", CFG.Current.Viewport_Limit_Buffer_Flver_Bone * 64,
             VkBufferUsageFlags.StorageBuffer, 64, VkShaderStageFlags.Vertex);
-        GlobalTexturePool = new TexturePool(device, "globalTextures", 6000);
+        // Material texture indices are 16 bit, so this can go up to TexturePool.MaxTextureCount (65536).
+        // Individual descriptors are updated in place, so a larger pool no longer makes texture loads costlier.
+        GlobalTexturePool = new TexturePool(device, "globalTextures", 32768);
         GlobalCubeTexturePool = new TexturePool(device, "globalCubeTextures", 500);
 
         // Initialize default 2D texture at 0

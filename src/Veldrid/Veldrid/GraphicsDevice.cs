@@ -1825,6 +1825,7 @@ namespace Veldrid
                     deviceVulkan12Features.descriptorBindingVariableDescriptorCount != VkBool32.True ||
                     deviceVulkan12Features.runtimeDescriptorArray != VkBool32.True ||
                     deviceVulkan12Features.descriptorBindingSampledImageUpdateAfterBind != VkBool32.True ||
+                    deviceVulkan12Features.descriptorBindingUpdateUnusedWhilePending != VkBool32.True ||
                     deviceVulkan12Features.shaderSampledImageArrayNonUniformIndexing != VkBool32.True)
                     continue;
                 if (deviceVulkan13Features.synchronization2 != VkBool32.True ||
@@ -1974,6 +1975,7 @@ namespace Veldrid
                 descriptorIndexing = VkBool32.True,
                 descriptorBindingVariableDescriptorCount = VkBool32.True,
                 descriptorBindingSampledImageUpdateAfterBind = VkBool32.True,
+                descriptorBindingUpdateUnusedWhilePending = VkBool32.True,
                 runtimeDescriptorArray = VkBool32.True,
                 shaderSampledImageArrayNonUniformIndexing = VkBool32.True
             };
