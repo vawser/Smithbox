@@ -12,6 +12,57 @@ public class BasicFilters
     public BasicFilters(MapEditorView view)
     {
         View = view;
+
+        // On setup, pre-toggle the filters based on the CFG vars so we can persist these filters between sessions.
+        if(!CFG.Current.MapEditor_BasicFilter_MapPiece)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.MapPiece);
+        }
+
+        if (!CFG.Current.MapEditor_BasicFilter_Object)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Object);
+        }
+
+        if (!CFG.Current.MapEditor_BasicFilter_Character)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Character);
+        }
+
+        if (!CFG.Current.MapEditor_BasicFilter_Region)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Region);
+        }
+
+        if (!CFG.Current.MapEditor_BasicFilter_Light)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Light);
+        }
+
+        if (!CFG.Current.MapEditor_BasicFilter_Collision)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Collision);
+        }
+
+        if (!CFG.Current.MapEditor_BasicFilter_ConnectCollision)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.ConnectCollision);
+        }
+
+        if (!CFG.Current.MapEditor_BasicFilter_Navmesh)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
+        }
+
+        if (!CFG.Current.MapEditor_BasicFilter_SpeedTree)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.SpeedTree);
+        }
+
+        if (!CFG.Current.MapEditor_BasicFilter_InvasionPoint)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.AutoInvade);
+        }
     }
 
     public void Display()
@@ -21,6 +72,7 @@ public class BasicFilters
         // Map Piece
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Map_Pieces_Title")}##toggleFilter_MapPiece"))
         {
+            CFG.Current.MapEditor_BasicFilter_MapPiece = !CFG.Current.MapEditor_BasicFilter_MapPiece;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.MapPiece);
             View.DelayPicking();
         }
@@ -37,6 +89,7 @@ public class BasicFilters
             // Asset
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Assets_Title")}##toggleFilter_Asset"))
             {
+                CFG.Current.MapEditor_BasicFilter_Object = !CFG.Current.MapEditor_BasicFilter_Object;
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Object);
                 View.DelayPicking();
             }
@@ -49,6 +102,7 @@ public class BasicFilters
             // Object
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Objects_Title")}##toggleFilter_Object"))
             {
+                CFG.Current.MapEditor_BasicFilter_Object = !CFG.Current.MapEditor_BasicFilter_Object;
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Object);
                 View.DelayPicking();
             }
@@ -60,6 +114,7 @@ public class BasicFilters
         // Character
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Characters_Title")}##toggleFilter_Character"))
         {
+            CFG.Current.MapEditor_BasicFilter_Character = !CFG.Current.MapEditor_BasicFilter_Character;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Character);
             View.DelayPicking();
         }
@@ -70,6 +125,7 @@ public class BasicFilters
         // Region
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Regions_Title")}##toggleFilter_Region"))
         {
+            CFG.Current.MapEditor_BasicFilter_Region = !CFG.Current.MapEditor_BasicFilter_Region;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Region);
             View.DelayPicking();
         }
@@ -80,6 +136,7 @@ public class BasicFilters
         // Light
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Lights_Title")}##toggleFilter_Light"))
         {
+            CFG.Current.MapEditor_BasicFilter_Light = !CFG.Current.MapEditor_BasicFilter_Light;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Light);
             View.DelayPicking();
         }
@@ -90,6 +147,7 @@ public class BasicFilters
         // Collision
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Collisions_Title")}##toggleFilter_Collision"))
         {
+            CFG.Current.MapEditor_BasicFilter_Collision = !CFG.Current.MapEditor_BasicFilter_Collision;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Collision);
             View.DelayPicking();
         }
@@ -100,6 +158,7 @@ public class BasicFilters
         // Collision
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Connect_Collisions_Title")}##toggleFilter_ConnectCollision"))
         {
+            CFG.Current.MapEditor_BasicFilter_ConnectCollision = !CFG.Current.MapEditor_BasicFilter_ConnectCollision;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.ConnectCollision);
             View.DelayPicking();
         }
@@ -111,6 +170,7 @@ public class BasicFilters
         // Navmesh
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Navmeshes_Title")}##toggleFilter_Navmesh"))
         {
+            CFG.Current.MapEditor_BasicFilter_Navmesh = !CFG.Current.MapEditor_BasicFilter_Navmesh;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
             View.DelayPicking();
         }
@@ -121,6 +181,7 @@ public class BasicFilters
         // Speed Trees
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Speed_Trees_Title")}##toggleFilter_SpeedTree"))
         {
+            CFG.Current.MapEditor_BasicFilter_SpeedTree = !CFG.Current.MapEditor_BasicFilter_SpeedTree;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.SpeedTree);
             View.DelayPicking();
         }
@@ -128,11 +189,12 @@ public class BasicFilters
         GUI.ShowActiveStatus(ticked);
         GUI.Tooltip(LOC.Get("MAP_Filters_Speed_Trees_TT"));
 
-        // AutoInvade
+        // Invasion Points
         if (View.Project.Descriptor.ProjectType is ProjectType.ER)
         {
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Invasion_Points_Title")}##toggleFilter_InvasionPoint"))
             {
+                CFG.Current.MapEditor_BasicFilter_InvasionPoint = !CFG.Current.MapEditor_BasicFilter_InvasionPoint;
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.AutoInvade);
                 View.DelayPicking();
             }
@@ -140,19 +202,6 @@ public class BasicFilters
             GUI.ShowActiveStatus(ticked);
             GUI.Tooltip(LOC.Get("MAP_Filters_Invasion_Points_TT"));
         }
-
-        // Light Probe
-        //if (View.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
-        //{
-        //    if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Light_Probes_Title")}##toggleFilter_LightProbe"))
-        //    {
-        //        View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.LightProbe);
-        //        View.DelayPicking();
-        //    }
-        //    ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.LightProbe);
-        //    GUI.ShowActiveStatus(ticked);
-        //    GUI.Tooltip(LOC.Get("MAP_Filters_Light_Probes_TT"));
-        //}
     }
 
 }

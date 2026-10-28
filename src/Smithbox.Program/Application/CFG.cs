@@ -324,6 +324,19 @@ public class CFG
 
     public HavokCollisionType CurrentHavokCollisionType = HavokCollisionType.Low;
 
+
+    // Map Visibility Filters
+    public bool MapEditor_BasicFilter_MapPiece = true;
+    public bool MapEditor_BasicFilter_Object = true;
+    public bool MapEditor_BasicFilter_Character = true;
+    public bool MapEditor_BasicFilter_Region = true;
+    public bool MapEditor_BasicFilter_Light = true;
+    public bool MapEditor_BasicFilter_Collision = true;
+    public bool MapEditor_BasicFilter_ConnectCollision = true;
+    public bool MapEditor_BasicFilter_Navmesh = true;
+    public bool MapEditor_BasicFilter_SpeedTree = true;
+    public bool MapEditor_BasicFilter_InvasionPoint = true;
+
     // Toolbar
     public bool Toolbar_Duplicate_Increment_Entity_ID = false;
     public bool Toolbar_Duplicate_Increment_PartNames = false;
