@@ -5,8 +5,8 @@
   <Unicode>True</Unicode>
   <FormatVersion>0</FormatVersion>
   <Fields>
-    <Field Def="s32 unk00" />
-    <Field Def="s32 unk01" />
+    <Field Def="s32 areaId" />
+    <Field Def="s32 areaAssetId" />
     <Field Def="s32 unk02" />
     <Field Def="s32 unk03" />
   </Fields>

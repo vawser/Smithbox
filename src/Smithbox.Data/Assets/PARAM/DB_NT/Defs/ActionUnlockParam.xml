@@ -5,13 +5,35 @@
   <Unicode>True</Unicode>
   <FormatVersion>0</FormatVersion>
   <Fields>
-    <Field Def="s32 unk00" />
-    <Field Def="s32 unk01" />
-    <Field Def="s32 unk02" />
-    <Field Def="s32 unk03" />
-    <Field Def="s32 unk04" />
-    <Field Def="s32 unk05" />
-    <Field Def="s32 unk06" />
-    <Field Def="u16 unk07" />
+    <Field Def="u8 unk00" />
+    <Field Def="u8 unk01" />
+    <Field Def="u8 unk02" />
+    <Field Def="u8 unk03" />
+    <Field Def="u8 unk04" />
+    <Field Def="u8 unk05" />
+    <Field Def="u8 unk06" />
+    <Field Def="u8 unk07" />
+    <Field Def="u8 unk08" />
+    <Field Def="u8 unk09" />
+    <Field Def="u8 unk0A" />
+    <Field Def="u8 unk0B" />
+    <Field Def="u8 unk0C" />
+    <Field Def="u8 unk0D" />
+    <Field Def="u8 unk0E" />
+    <Field Def="u8 unk0F" />
+    <Field Def="u8 unk10" />
+    <Field Def="u8 unk11" />
+    <Field Def="u8 unk12" />
+    <Field Def="u8 unk13" />
+    <Field Def="u8 unk14" />
+    <Field Def="u8 unk15" />
+    <Field Def="u8 unk16" />
+    <Field Def="u8 unk17" />
+    <Field Def="u8 unk18" />
+    <Field Def="u8 unk19" />
+    <Field Def="u8 unk1A" />
+    <Field Def="u8 unk1B" />
+    <Field Def="u8 unk1C" />
+    <Field Def="u8 unk1D" />
   </Fields>
 </PARAMDEF>

@@ -5,7 +5,10 @@
   <Unicode>True</Unicode>
   <FormatVersion>0</FormatVersion>
   <Fields>
-    <Field Def="s32 unk00" />
-    <Field Def="s32 unk01" />
+    <Field Def="u8 unk00" />
+    <Field Def="u8 unk01" />
+    <Field Def="u8 unk02" />
+    <Field Def="u8 unk03" />
+    <Field Def="f32 unk04" />
   </Fields>
 </PARAMDEF>

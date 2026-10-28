@@ -6,6 +6,6 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="s32 unk00" />
-    <Field Def="s32 unk01" />
+    <Field Def="f32 unk04" />
   </Fields>
 </PARAMDEF>

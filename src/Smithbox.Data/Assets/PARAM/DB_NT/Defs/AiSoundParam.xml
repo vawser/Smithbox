@@ -5,13 +5,21 @@
   <Unicode>True</Unicode>
   <FormatVersion>0</FormatVersion>
   <Fields>
-    <Field Def="s32 unk00" />
-    <Field Def="s32 unk01" />
-    <Field Def="s32 unk02" />
-    <Field Def="s32 unk03" />
-    <Field Def="s32 unk04" />
-    <Field Def="s32 unk05" />
-    <Field Def="s32 unk06" />
+    <Field Def="f32 radius" />
+    <Field Def="f32 lifeFrame" />
+    <Field Def="u8 bSpEffectEnable" />
+    <Field Def="u8 type" />
+    <Field Def="u8 opposeTarget:1 = 1" />
+    <Field Def="u8 friendlyTarget:1" />
+    <Field Def="u8 selfTarget:1" />
+    <Field Def="u8 disableOnTargetPCompany:1" />
+    <Field Def="u8 rank" />
+    <Field Def="f32 forgetTime = -1" />
+    <Field Def="s32 priority = 100" />
+    <Field Def="s32 soundBehaviorId = -1" />
+    <Field Def="u8 aiSoundLevel" />
+    <Field Def="u8 replaningState" />
+    <Field Def="dummy8 pad1[2]" />
     <Field Def="s32 unk07" />
     <Field Def="s32 unk08" />
   </Fields>
