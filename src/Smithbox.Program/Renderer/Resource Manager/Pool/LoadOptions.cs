@@ -8,7 +8,7 @@ namespace StudioCore.Renderer;
 /// </summary>
 public sealed class LoadOptions
 {
-    private HashSet<string>? _onlyNames;
+    private HashSet<string> _onlyNames;
 
     /// <summary>How the loaded resources will be accessed.</summary>
     public AccessLevel AccessLevel { get; set; } = AccessLevel.AccessGPUOptimizedOnly;
@@ -21,7 +21,7 @@ public sealed class LoadOptions
     ///     (e.g. a map's model archive) when only a few models are needed. Names are normalized
     ///     with <see cref="ResourceName.Normalize" />, so file names or paths can be supplied as they are.
     /// </summary>
-    public IEnumerable<string>? OnlyNames
+    public IEnumerable<string> OnlyNames
     {
         get => _onlyNames;
         set
@@ -54,7 +54,7 @@ public sealed class LoadOptions
     public bool IsConnectCollision { get; set; }
 
     /// <summary>Name shown in the resource load window. Defaults to the container path.</summary>
-    public string? JobName { get; set; }
+    public string JobName { get; set; }
 
     public LoadOptions Clone()
     {

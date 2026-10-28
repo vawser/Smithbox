@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
+using System.Collections.Generic;
 using Veldrid;
 using Vortice.Vulkan;
 
@@ -6,15 +7,15 @@ namespace StudioCore.Renderer;
 
 internal static class StaticResourceCache
 {
-    private static readonly Dictionary<GraphicsPipelineDescription, Pipeline> s_pipelines = new();
+    private static readonly ConcurrentDictionary<GraphicsPipelineDescription, Pipeline> s_pipelines = new();
 
-    private static readonly Dictionary<ResourceLayoutDescription, ResourceLayout> s_layouts = new();
+    private static readonly ConcurrentDictionary<ResourceLayoutDescription, ResourceLayout> s_layouts = new();
 
-    private static readonly Dictionary<ShaderSetCacheKey, (Shader, Shader)> s_shaderSets = new();
+    private static readonly ConcurrentDictionary<ShaderSetCacheKey, (Shader, Shader)> s_shaderSets = new();
 
-    private static readonly Dictionary<Texture, TextureView> s_textureViews = new();
+    private static readonly ConcurrentDictionary<Texture, TextureView> s_textureViews = new();
 
-    private static readonly Dictionary<ResourceSetDescription, ResourceSet> s_resourceSets = new();
+    private static readonly ConcurrentDictionary<ResourceSetDescription, ResourceSet> s_resourceSets = new();
 
     public static readonly ResourceLayoutDescription SceneParamLayoutDescription = new(
         new ResourceLayoutElementDescription("SceneParam", VkDescriptorType.UniformBuffer,
@@ -29,7 +30,7 @@ internal static class StaticResourceCache
         if (!s_pipelines.TryGetValue(desc, out Pipeline p))
         {
             p = factory.CreateGraphicsPipeline(ref desc);
-            s_pipelines.Add(desc, p);
+            s_pipelines.TryAdd(desc, p);
         }
 
         return p;
@@ -41,7 +42,7 @@ internal static class StaticResourceCache
         {
             p = factory.CreateResourceLayout(ref desc);
 
-            s_layouts.Add(desc, p);
+            s_layouts.TryAdd(desc, p);
         }
 
         return p;
@@ -57,7 +58,7 @@ internal static class StaticResourceCache
         if (!s_shaderSets.TryGetValue(cacheKey, out (Shader vs, Shader fs) set))
         {
             set = ShaderHelper.LoadSPIRV(gd, factory, name);
-            s_shaderSets.Add(cacheKey, set);
+            s_shaderSets.TryAdd(cacheKey, set);
         }
 
         return set;
@@ -107,7 +108,7 @@ internal static class StaticResourceCache
         if (!s_textureViews.TryGetValue(texture, out TextureView view))
         {
             view = factory.CreateTextureView(texture);
-            s_textureViews.Add(texture, view);
+            s_textureViews.TryAdd(texture, view);
         }
 
         return view;
@@ -118,7 +119,7 @@ internal static class StaticResourceCache
         if (!s_resourceSets.TryGetValue(description, out ResourceSet ret))
         {
             ret = factory.CreateResourceSet(ref description);
-            s_resourceSets.Add(description, ret);
+            s_resourceSets.TryAdd(description, ret);
         }
 
         return ret;

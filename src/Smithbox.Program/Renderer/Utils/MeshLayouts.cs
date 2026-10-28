@@ -280,4 +280,25 @@ public struct VertexPositionColorNormal
         new VertexElementDescription("position", VkFormat.R32G32B32Sfloat),
         new VertexElementDescription("color", VkFormat.R8G8B8A8Uint),
         new VertexElementDescription("normal", VkFormat.R32G32B32Sfloat));
+
+    public bool Equals(VertexPositionColorNormal other)
+    {
+        return Position.Equals(other.Position)
+            && Normal.Equals(other.Normal)
+            && _Color.r == other._Color.r
+            && _Color.g == other._Color.g
+            && _Color.b == other._Color.b
+            && _Color.a == other._Color.a;
+    }
+
+    public override bool Equals(object obj)
+    {
+        return obj is VertexPositionColorNormal other && Equals(other);
+    }
+
+    public override int GetHashCode()
+    {
+        var packedColor = _Color.r | (_Color.g << 8) | (_Color.b << 16) | (_Color.a << 24);
+        return HashCode.Combine(Position, Normal, packedColor);
+    }
 }

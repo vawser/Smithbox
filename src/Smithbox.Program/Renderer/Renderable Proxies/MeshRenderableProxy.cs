@@ -646,7 +646,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     public RenderKey GetRenderKey(float distance)
     {
-        var code = _pipeline != null ? (ulong)_pipeline.GetHashCode() : 0;
+        var code = _pipeline != null ? (ulong)(uint)_pipeline.GetHashCode() : 0;
         ulong index = 0;
 
         var cameraDistanceInt = (uint)Math.Min(uint.MaxValue, distance * 1000f);

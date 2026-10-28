@@ -9,7 +9,7 @@ namespace StudioCore.Renderer;
 
 public class DbgPrimGizmo : DbgPrim
 {
-    public int TriCount => Indices.Length / 3;
+    public int TriCount => Indices.Count / 3;
 
     public override MeshLayoutType LayoutType => MeshLayoutType.LayoutPositionColorNormal;
 
@@ -17,7 +17,13 @@ public class DbgPrimGizmo : DbgPrim
 
     public override BoundingBox Bounds => new(new Vector3(-20, -20, -20), new Vector3(20, 20, 20));
 
-    public override BoundingBox FramingBounds => new(new Vector3(-20, -20, -20), new Vector3(20, 20, 20));
+    public override BoundingBox FramingBounds
+    {
+        get
+        {
+            return new(new Vector3(-20, -20, -20), new Vector3(20, 20, 20));
+        }
+    }
 
     public override string ShaderName => "DebugWire";
 
@@ -52,30 +58,9 @@ public class DbgPrimGizmo : DbgPrim
         var vertB = new VertexPositionColorNormal(b, colorB, norm);
         var vertC = new VertexPositionColorNormal(c, colorC, norm);
 
-        var vertIndexA = Array.IndexOf(Vertices, vertA);
-        var vertIndexB = Array.IndexOf(Vertices, vertB);
-        var vertIndexC = Array.IndexOf(Vertices, vertC);
-
-        //If vertex A can't be recycled from an old one, make a new one.
-        if (vertIndexA == -1)
-        {
-            AddVertex(vertA);
-            vertIndexA = Vertices.Length - 1;
-        }
-
-        //If vertex B can't be recycled from an old one, make a new one.
-        if (vertIndexB == -1)
-        {
-            AddVertex(vertB);
-            vertIndexB = Vertices.Length - 1;
-        }
-
-        //If vertex C can't be recycled from an old one, make a new one.
-        if (vertIndexC == -1)
-        {
-            AddVertex(vertC);
-            vertIndexC = Vertices.Length - 1;
-        }
+        var vertIndexA = AddOrReuseVertex(vertA);
+        var vertIndexB = AddOrReuseVertex(vertB);
+        var vertIndexC = AddOrReuseVertex(vertC);
 
         AddIndex((short)vertIndexC);
         AddIndex((short)vertIndexB);

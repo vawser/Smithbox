@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
 using Veldrid;
@@ -46,12 +47,9 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
     private int bufferIndexCached = -1;
     private bool disposedValue;
 
-
-    protected short[] Indices = new short[0];
     protected bool NeedToRecreateGeomBuffer = true;
     protected ResourceSet PerObjRS;
     protected Shader[] Shaders;
-    protected VertexPositionColorNormal[] Vertices = new VertexPositionColorNormal[0];
     protected GPUBufferAllocator.GPUBufferHandle WorldBuffer;
 
     public Color BaseColor
@@ -109,6 +107,7 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
     public abstract MeshLayoutType LayoutType { get; }
     public abstract VertexLayoutDescription LayoutDescription { get; }
     public abstract BoundingBox Bounds { get; }
+    public abstract BoundingBox FramingBounds { get; }
     public VertexIndexBufferAllocator.VertexIndexBufferHandle GeometryBuffer { get; protected set; }
     public abstract string ShaderName { get; }
     public abstract SpecializationConstant[] SpecializationConstants { get; }
@@ -118,41 +117,42 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
     public abstract VkPrimitiveTopology Topology { get; }
     public abstract uint VertexSize { get; }
 
-    public int IndexCount => Indices.Length;
-    public abstract BoundingBox FramingBounds { get; }
+    public int IndexCount => throw new NotImplementedException();
 
-    // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
-    // ~DbgPrim()
-    // {
-    //     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-    //     Dispose(disposing: false);
-    // }
+    protected List<short> Indices = new();
+    protected List<VertexPositionColorNormal> Vertices = new();
 
-    public void Dispose()
-    {
-        // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-        Dispose(true);
-        GC.SuppressFinalize(this);
-    }
+    // Maps a vertex to its index in Vertices, so triangle builders can reuse identical vertices in O(1).
+    // Only populated by AddOrReuseVertex; lazily created so wire primitives don't pay for it.
+    private Dictionary<VertexPositionColorNormal, int> _vertexLookup;
 
     protected void SetBuffers(VertexIndexBufferAllocator.VertexIndexBufferHandle geomBuffer)
     {
         GeometryBuffer = geomBuffer;
     }
 
+    protected void ReserveGeometry(int vertexCount, int indexCount)
+    {
+        Vertices.EnsureCapacity(Vertices.Count + vertexCount);
+        Indices.EnsureCapacity(Indices.Count + indexCount);
+    }
+
     public void UpdatePerFrameResources(GraphicsDevice device, CommandList cl, SceneRenderPipeline sp)
     {
         if (NeedToRecreateGeomBuffer)
         {
-            //VertBuffer?.Dispose();
             GeometryBuffer = null;
-            if (Vertices.Length > 0 && Indices.Length > 0)
+            if (Vertices.Count > 0 && Indices.Count > 0)
             {
-                GeometryBuffer = SceneRenderer.GeometryBufferAllocator.Allocate(28 * (uint)Vertices.Length,
-                    2 * (uint)Indices.Length, 28, 2, h =>
+                // Snapshot once per rebuild so the callback sees stable data
+                var verts = Vertices.ToArray();
+                var inds = Indices.ToArray();
+
+                GeometryBuffer = SceneRenderer.GeometryBufferAllocator.Allocate(
+                    28 * (uint)verts.Length, 2 * (uint)inds.Length, 28, 2, h =>
                     {
-                        h.FillVBuffer(Vertices);
-                        h.FillIBuffer(Indices);
+                        h.FillVBuffer(verts);
+                        h.FillIBuffer(inds);
                     });
             }
             else
@@ -174,26 +174,41 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
 
     protected void AddVertex(Vector3 pos, Color color, Vector3? normal = null)
     {
-        Array.Resize(ref Vertices, Vertices.Length + 1);
-        Vertices[Vertices.Length - 1].Position = pos;
-        Vertices[Vertices.Length - 1].Color = color;
-        Vertices[Vertices.Length - 1].Normal = normal ?? Vector3.UnitX;
-
+        Vertices.Add(new VertexPositionColorNormal
+        {
+            Position = pos,
+            Color = color,
+            Normal = normal ?? Vector3.UnitX
+        });
         NeedToRecreateGeomBuffer = true;
     }
 
     protected void AddVertex(VertexPositionColorNormal vert)
     {
-        Array.Resize(ref Vertices, Vertices.Length + 1);
-        Vertices[Vertices.Length - 1] = vert;
-
+        Vertices.Add(vert);
         NeedToRecreateGeomBuffer = true;
+    }
+
+    /// <summary>
+    ///     Returns the index of an identical, previously added vertex, or adds the vertex and returns its new index.
+    /// </summary>
+    protected int AddOrReuseVertex(VertexPositionColorNormal vert)
+    {
+        _vertexLookup ??= new Dictionary<VertexPositionColorNormal, int>();
+        if (_vertexLookup.TryGetValue(vert, out var existing))
+        {
+            return existing;
+        }
+
+        AddVertex(vert);
+        var index = Vertices.Count - 1;
+        _vertexLookup[vert] = index;
+        return index;
     }
 
     protected void AddIndex(short index)
     {
-        Array.Resize(ref Indices, Indices.Length + 1);
-        Indices[Indices.Length - 1] = index;
+        Indices.Add(index);
         NeedToRecreateGeomBuffer = true;
     }
 
@@ -263,5 +278,10 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
             // TODO: set large fields to null
             disposedValue = true;
         }
+    }
+
+    public void Dispose()
+    {
+        throw new NotImplementedException();
     }
 }

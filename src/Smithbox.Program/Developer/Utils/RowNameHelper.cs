@@ -65,7 +65,7 @@ public static class RowNameHelper
 
                 File.WriteAllText(outputDir, json);
             }
-            catch (Exception e)
+            catch (Exception)
             {
             }
         }

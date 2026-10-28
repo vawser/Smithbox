@@ -66,6 +66,6 @@ public class VulkanTextureHandle : ITextureHandle
 
     public void Dispose()
     {
-        Handle.Dispose();
+        Handle?.Dispose();
     }
 }

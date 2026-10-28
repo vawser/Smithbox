@@ -26,6 +26,10 @@ public class DbgPrimWireSphere : DbgPrimWire
             Vector3 bottomPoint = -Vector3.UnitY * radius;
             var points = new Vector3[numVerticalSegments, numSidesPerSegment];
 
+            // Per ring point: 1 horizontal line, ~1 vertical line, plus 2 cap rings; 2 verts/indices per line
+            var lineCountEstimate = numVerticalSegments * numSidesPerSegment * 2 + numSidesPerSegment * 2;
+            ReserveGeometry(lineCountEstimate * 2, lineCountEstimate * 2);
+
             for (var i = 0; i < numVerticalSegments; i++)
             {
                 for (var j = 0; j < numSidesPerSegment; j++)

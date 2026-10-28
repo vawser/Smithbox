@@ -85,30 +85,9 @@ public class DbgPrimSkybox : DbgPrim
         var vertB = new VertexPositionColorNormal(b, Color.White, Vector3.Zero);
         var vertC = new VertexPositionColorNormal(c, Color.White, Vector3.Zero);
 
-        var vertIndexA = Array.IndexOf(Vertices, vertA);
-        var vertIndexB = Array.IndexOf(Vertices, vertB);
-        var vertIndexC = Array.IndexOf(Vertices, vertC);
-
-        //If vertex A can't be recycled from an old one, make a new one.
-        if (vertIndexA == -1)
-        {
-            AddVertex(vertA);
-            vertIndexA = Vertices.Length - 1;
-        }
-
-        //If vertex B can't be recycled from an old one, make a new one.
-        if (vertIndexB == -1)
-        {
-            AddVertex(vertB);
-            vertIndexB = Vertices.Length - 1;
-        }
-
-        //If vertex C can't be recycled from an old one, make a new one.
-        if (vertIndexC == -1)
-        {
-            AddVertex(vertC);
-            vertIndexC = Vertices.Length - 1;
-        }
+        var vertIndexA = AddOrReuseVertex(vertA);
+        var vertIndexB = AddOrReuseVertex(vertB);
+        var vertIndexC = AddOrReuseVertex(vertC);
 
         AddIndex((short)vertIndexA);
         AddIndex((short)vertIndexB);

@@ -22,6 +22,9 @@ public class DbgPrimSolidCylinder : DbgPrimSolid
         {
             NameColor = color;
 
+            // 4 tris per segment (top cap, bottom cap, 2 side); vertices are deduplicated so this is an upper bound
+            ReserveGeometry(numSegments * 2 + 2, numSegments * 12);
+
             var topY = height;
             var bottomY = 0;
 

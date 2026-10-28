@@ -311,7 +311,12 @@ internal sealed class ContainerLoadAction
                         return false;
                     }
 
-                    data = (Memory<byte>)_project.VFS.FS.ReadFile(path);
+                    var fileData = _project.VFS.FS.ReadFile(path);
+
+                    if (fileData != null)
+                    {
+                        data = (Memory<byte>)fileData;
+                    }
                     return true;
             }
         }

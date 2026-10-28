@@ -8,7 +8,7 @@ namespace StudioCore.Renderer;
 
 public class DbgPrimWire : DbgPrim
 {
-    public int LineCount => Indices.Length / 2;
+    public int LineCount => Indices.Count / 2;
 
     public override MeshLayoutType LayoutType => MeshLayoutType.LayoutPositionColorNormal;
 
@@ -45,39 +45,11 @@ public class DbgPrimWire : DbgPrim
     {
         var startVert = new VertexPositionColorNormal(start, startColor, Vector3.Zero);
         var endVert = new VertexPositionColorNormal(end, endColor, Vector3.Zero);
-        //int startIndex = Array.IndexOf(Vertices, startVert);
-        //int endIndex = Array.IndexOf(Vertices, endVert);
-        var startIndex = -1;
-        var endIndex = -1;
-
-        //If start vertex can't be recycled from an old one, make a new one.
-        if (startIndex == -1)
-        {
-            AddVertex(startVert);
-            startIndex = Vertices.Length - 1;
-        }
-
-        //If end vertex can't be recycled from an old one, make a new one.
-        if (endIndex == -1)
-        {
-            AddVertex(endVert);
-            endIndex = Vertices.Length - 1;
-        }
-
-        for (var i = 0; i < Indices.Length; i += 2)
-        {
-            int lineStart = Indices[i];
-            if (i + 1 < Indices.Length)
-            {
-                int lineEnd = Indices[i + 1];
-
-                if (lineStart == startIndex && lineEnd == endIndex)
-                {
-                    // Line literally already exists lmao
-                    return;
-                }
-            }
-        }
+        // Wire vertices are never shared, so each line gets its own pair.
+        AddVertex(startVert);
+        AddVertex(endVert);
+        var startIndex = Vertices.Count - 2;
+        var endIndex = Vertices.Count - 1;
 
         AddIndex((short)startIndex);
         AddIndex((short)endIndex);

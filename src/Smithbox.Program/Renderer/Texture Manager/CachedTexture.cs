@@ -41,6 +41,6 @@ public class CachedTexture
 
     public void Dispose()
     {
-        Handle.Dispose();
+        Handle?.Dispose();
     }
 }

@@ -19,6 +19,7 @@ public class DbgPrimWireGrid : DbgPrimWire
         else
         {
             NameColor = color;
+            ReserveGeometry((unitRange * 2 + 1) * 4, (unitRange * 2 + 1) * 4);
             for (var h = -unitRange; h <= unitRange; h++)
             {
                 AddLine(new Vector3(h, 0, unitRange) * unitSize,

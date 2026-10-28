@@ -13,6 +13,9 @@ public class DbgPrimWireCylinder : DbgPrimWire
     {
         NameColor = color;
 
+        // 3 lines per segment, 2 vertices and 2 indices per line
+        ReserveGeometry(numSegments * 6, numSegments * 6);
+
         var top = height; //height / 2;
         var bottom = 0.0f; //-top;
 

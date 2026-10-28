@@ -33,6 +33,10 @@ public class DbgPrimSolidSphere : DbgPrimSolid
         else
         {
             NameColor = color;
+
+            // Quads: 2 tris per quad, plus 2 cap tris per side; vertices are deduplicated
+            ReserveGeometry(numVerticalSegments * numSidesPerSegment + 2,
+                (numVerticalSegments * 2) * numSidesPerSegment * 3);
             var vertices = new Vector3[numVerticalSegments + 2, numSidesPerSegment];
 
             Vector3 topPoint = Vector3.UnitY * radius;
