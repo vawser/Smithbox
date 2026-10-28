@@ -34,11 +34,11 @@ public static class MeshLayoutUtils
             case MeshLayoutType.LayoutStandard:
                 return FlverLayout.Layout;
             case MeshLayoutType.LayoutUV2:
-                return FlverLayoutUV3.Layout;
-            case MeshLayoutType.LayoutUV3:
-                return FlverLayoutUV4.Layout;
-            case MeshLayoutType.LayoutUV4:
                 return FlverLayoutUV2.Layout;
+            case MeshLayoutType.LayoutUV3:
+                return FlverLayoutUV3.Layout;
+            case MeshLayoutType.LayoutUV4:
+                return FlverLayoutUV4.Layout;
             case MeshLayoutType.LayoutCollision:
                 return CollisionLayout.Layout;
             case MeshLayoutType.LayoutNavmesh:
