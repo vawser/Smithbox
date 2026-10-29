@@ -442,8 +442,9 @@ public class EntReplicateAction : ViewportAction
             }
         }
 
+        // The clones no longer exist, so hand the selection (and its outline) back to the originals
         View.ViewportSelection.ClearSelection();
-        foreach (MsbEntity c in Clones)
+        foreach (MsbEntity c in Clonables)
         {
             View.ViewportSelection.AddSelection(c);
         }

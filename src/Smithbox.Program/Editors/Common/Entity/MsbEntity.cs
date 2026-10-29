@@ -106,6 +106,9 @@ public class MsbEntity : Entity
 
             default: break;
         }
+
+        // The mesh now exists, so UpdateRenderModel must not build it a second time
+        SetupRenderMesh = true;
     }
 
     private void SetRenderSceneMesh(RenderableProxy newMesh)
@@ -968,13 +971,7 @@ public class MsbEntity : Entity
         CachedAliasName = null;
 
         AssignDrawable();
-        SetupRenderMesh = true;
         UpdateRenderModel();
-
-        if (RenderSceneMesh != null)
-        {
-            RenderSceneMesh.RenderSelectionOutline = IsSelected;
-        }
     }
 
     public override void UpdateRenderModel()

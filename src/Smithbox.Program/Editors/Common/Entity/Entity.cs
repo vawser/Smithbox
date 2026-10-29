@@ -122,8 +122,17 @@ public class Entity : ISelectable, IDisposable
     {
         set
         {
+            // The outline lives on the proxy, so a replacement proxy must inherit it
+            var keepOutline = IsSelected || (_renderSceneMesh?.RenderSelectionOutline ?? false);
+
             _renderSceneMesh?.Dispose();
             _renderSceneMesh = value;
+
+            if (_renderSceneMesh != null && keepOutline)
+            {
+                _renderSceneMesh.RenderSelectionOutline = true;
+            }
+
             ApplyMeshState();
         }
         get => _renderSceneMesh;

@@ -203,6 +203,14 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             child.Visible = _visible;
             child.DrawFilter = _drawfilter;
             child.DrawGroups = _drawgroups;
+
+            // Children are created once the provider has loaded (async), which can be after the
+            // outline was requested on this proxy. Without this they never get the selection outline.
+            if (_renderOutline)
+            {
+                child.RenderSelectionOutline = true;
+            }
+
             _submeshes.Add(child);
             ISelectable? sel = null;
             if (_selectable != null)

@@ -8,13 +8,12 @@
   Map Editor
   
 # General
-- Add BP checks to saving processes so files are not written if they are BP to vanilla (i.e. don't save unmodified files)
+- Add IsDirty support (requires overhaul of how the files/file containers are tracked) so we can allow more discrete saving (i.e. toggle to only save to disk if file is 'modified')
   
 # Map Editor
-- Update non-parts rendering on property change
-- Fix entity model update so it changes properly when ModelName is changed
   
 # Model Editor
+- Sub-meshes still don't toggle visibility properly
 - Add support for hknpConvexPolytopeShape to HKX2_Helper so obj collisions can be displayed
 
 - OBJ Export should use these settings for OBJ generation:
