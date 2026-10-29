@@ -95,36 +95,56 @@ public abstract class MeshProvider
             listener.OnProviderUnavailable();
         }
 
-        _listeners.Add(new WeakReference<IMeshProviderEventListener>(listener));
+        lock (_listeners)
+        {
+            _listeners.Add(new WeakReference<IMeshProviderEventListener>(listener));
+        }
+    }
+
+    /// <summary>
+    ///     Stops a listener from receiving availability events. Disposed proxies must call this, otherwise they
+    ///     stay subscribed until the garbage collector finds them and keep rebuilding their child proxies
+    ///     whenever the resource is (re)loaded.
+    /// </summary>
+    public void RemoveEventListener(IMeshProviderEventListener listener)
+    {
+        lock (_listeners)
+        {
+            _listeners.RemoveAll(w => !w.TryGetTarget(out IMeshProviderEventListener t) ||
+                                      ReferenceEquals(t, listener));
+        }
+    }
+
+    private IMeshProviderEventListener[] SnapshotListeners()
+    {
+        lock (_listeners)
+        {
+            List<IMeshProviderEventListener> live = new(_listeners.Count);
+            foreach (WeakReference<IMeshProviderEventListener> w in _listeners)
+            {
+                if (w.TryGetTarget(out IMeshProviderEventListener l))
+                {
+                    live.Add(l);
+                }
+            }
+
+            return live.ToArray();
+        }
     }
 
     protected void NotifyAvailable()
     {
-        for(int i = 0; i < _listeners.Count; i++)
+        foreach (IMeshProviderEventListener l in SnapshotListeners())
         {
-            var listener = _listeners[i];
-
-            IMeshProviderEventListener l;
-            var succ = listener.TryGetTarget(out l);
-            if (succ)
-            {
-                l.OnProviderAvailable();
-            }
+            l.OnProviderAvailable();
         }
     }
 
     protected void NotifyUnavailable()
     {
-        for (int i = 0; i < _listeners.Count; i++)
+        foreach (IMeshProviderEventListener l in SnapshotListeners())
         {
-            var listener = _listeners[i];
-
-            IMeshProviderEventListener l;
-            var succ = listener.TryGetTarget(out l);
-            if (succ)
-            {
-                l.OnProviderUnavailable();
-            }
+            l.OnProviderUnavailable();
         }
     }
 

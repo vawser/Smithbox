@@ -56,8 +56,16 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     public event Action<MeshRenderableProxy>? MeshAvailabilityChanged;
 
-    public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true, string name = "")
+    public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true, string name = "", int? submeshIndex = null)
     {
+        // Must be known before AddEventListener: an already-loaded provider calls OnProviderAvailable
+        // from inside this constructor, and only the requested child should be built then.
+        if (submeshIndex.HasValue)
+        {
+            _requestedSubmeshIndex = submeshIndex;
+            _restrictToSingleSubmesh = true;
+        }
+
         Name = string.IsNullOrEmpty(name) ? provider.ResourceHandle?.Name ?? "" : name;
         AutoRegister = autoregister;
         _registered = AutoRegister;
@@ -224,10 +232,33 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     public void OnProviderAvailable()
     {
+        // A released (disposed) proxy is still weakly listed by its provider until collected. It must not
+        // build children: they would be registered with the scene, show the mesh, and belong to nobody.
+        if (_providerReleased)
+        {
+            return;
+        }
+
         var needsPlaceholder = _placeholderType != ModelMarkerType.None;
+
+        // When a single submesh was requested build only that one, instead of building every child
+        // and disposing the rest (which is wasteful and races with their queued construction).
+        var onlyIndex = -1;
+        if (_restrictToSingleSubmesh && _requestedSubmeshIndex.HasValue &&
+            _requestedSubmeshIndex.Value >= 0 && _requestedSubmeshIndex.Value < _meshProvider.ChildCount)
+        {
+            onlyIndex = _requestedSubmeshIndex.Value;
+        }
+
+        _submeshesFiltered = onlyIndex != -1;
 
         for (var i = 0; i < _meshProvider.ChildCount; i++)
         {
+            if (onlyIndex != -1 && i != onlyIndex)
+            {
+                continue;
+            }
+
             MeshRenderableProxy child = new(_renderablesSet, _meshProvider.GetChildProvider(i),
                 ModelMarkerType.None, AutoRegister);
             child.World = _world;
@@ -287,6 +318,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     public void OnProviderUnavailable()
     {
+        if (_providerReleased)
+        {
+            return;
+        }
+
         if (_meshProvider.IsAtomic())
         {
             MeshRenderableProxy[] old;
@@ -390,6 +426,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         if (_meshProvider != null && !_providerReleased)
         {
             _providerReleased = true;
+            _meshProvider.RemoveEventListener(this);
             _meshProvider.Release();
         }
 
@@ -753,6 +790,17 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         return FromProvider(scene, MeshProviderCache.GetFlverMeshProvider(handle, masks, uid), modelType);
     }
 
+    /// <summary>
+    ///     Renders a single submesh of a model. Only that submesh's child proxy is ever created.
+    /// </summary>
+    public static MeshRenderableProxy MeshRenderableFromFlverSubmesh(RenderScene scene,
+        ResourceHandle<FlverResource> handle, ModelMarkerType modelType, string uid, IEnumerable<int>? masks,
+        int submeshIndex)
+    {
+        return new MeshRenderableProxy(scene.OpaqueRenderables,
+            MeshProviderCache.GetFlverMeshProvider(handle, masks, uid), modelType, true, "", submeshIndex);
+    }
+
     public static MeshRenderableProxy MeshRenderableFromCollisionResource(RenderScene scene,
         ResourceHandle<HavokCollisionResource> handle, ModelMarkerType modelType)
     {
@@ -775,6 +823,10 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     private int? _requestedSubmeshIndex = null;
     private bool _restrictToSingleSubmesh = false;
 
+    // True when OnProviderAvailable built only the requested child, so _submeshes no longer maps 1:1 to
+    // the provider's child indices and there is nothing left to trim.
+    private bool _submeshesFiltered = false;
+
     public void RequestSubmesh(int index)
     {
         _requestedSubmeshIndex = index;
@@ -789,7 +841,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     private void ApplySubmeshSelection()
     {
-        if (!_requestedSubmeshIndex.HasValue)
+        if (!_requestedSubmeshIndex.HasValue || _submeshesFiltered)
             return;
 
         int index = _requestedSubmeshIndex.Value;

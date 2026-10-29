@@ -271,6 +271,10 @@ public class ModelContainer : ObjectContainer
             if (obj != null)
             {
                 obj.Dispose();
+
+                // Providers are cached per entity and otherwise live for the whole session, still
+                // subscribed to the resource. Drop them so they can't react to later reloads.
+                MeshProviderCache.InvalidateUidEntries(obj.EntityCacheUID);
             }
         }
     }
@@ -384,18 +388,19 @@ public class ModelContainer : ObjectContainer
 
     public void LoadMesh(Entity ent, ResourceDescriptor resource, int index = -1)
     {
-        MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                View.RenderScene, ResourceManager.DefaultPool.Find<FlverResource>(resource.Name),
-                ModelMarkerType.None, ent.EntityCacheUID, null);
+        var handle = ResourceManager.DefaultPool.Find<FlverResource>(resource.Name);
+
+        // Build only this entity's submesh. Building all of them and discarding the rest created
+        // renderables that outlived the discard (and kept the other entities' meshes drawn).
+        MeshRenderableProxy mesh = index != -1
+            ? MeshRenderableProxy.MeshRenderableFromFlverSubmesh(
+                View.RenderScene, handle, ModelMarkerType.None, ent.EntityCacheUID, null, index)
+            : MeshRenderableProxy.MeshRenderableFromFlverResource(
+                View.RenderScene, handle, ModelMarkerType.None, ent.EntityCacheUID, null);
 
         mesh.DrawFilter = RenderFilter.Meshes;
         mesh.World = ent.GetWorldMatrix();
         mesh.SetSelectable(ent);
-
-        if (index != -1)
-        {
-            mesh.RequestSubmesh(index);
-        }
 
         ent.RenderSceneMesh = mesh;
 

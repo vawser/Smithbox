@@ -90,6 +90,13 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
             return;
         }
 
+        // A provider nobody references any more must not come back to life when the resource is reloaded:
+        // it would re-acquire the resource (leaking it) and notify listeners that were already disposed.
+        if (_referenceCount <= 0)
+        {
+            return;
+        }
+
         _resource = (ResourceHandle<FlverResource>)handle;
         _resource.Acquire();
         CreateSubmeshes();
@@ -139,12 +146,13 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
     public override void Acquire()
     {
-        if (_referenceCount == 0)
+        var first = _referenceCount == 0;
+        _referenceCount++;
+
+        if (first)
         {
             ResourceManager.AddResourceListener(_source, this, AccessLevel.AccessGPUOptimizedOnly);
         }
-
-        _referenceCount++;
     }
 
     public override void Release()
@@ -154,6 +162,7 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
         {
             _referenceCount = 0;
             OnResourceUnloaded(_resource, 0);
+            _source.RemoveResourceEventListener(this);
         }
     }
 

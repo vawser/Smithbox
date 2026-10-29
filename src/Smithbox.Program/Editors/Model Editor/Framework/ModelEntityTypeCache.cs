@@ -27,7 +27,7 @@ public class ModelEntityTypeCache
     public void RemoveModelFromCache(ModelContainer container)
     {
         if (_cachedTypeView != null &&
-            container == null &&
+            container != null &&
             _cachedTypeView.ContainsKey(container.Name))
         {
             _cachedTypeView.Remove(container.Name);

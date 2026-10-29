@@ -47,6 +47,12 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
             return;
         }
 
+        // Released providers must not revive on a later reload (see FlverMeshProvider)
+        if (_referenceCount <= 0)
+        {
+            return;
+        }
+
         _resource = (ResourceHandle<HavokCollisionResource>)handle;
         _resource.Acquire();
         CreateSubmeshes();
@@ -94,12 +100,13 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
 
     public override void Acquire()
     {
-        if (_referenceCount == 0)
+        var first = _referenceCount == 0;
+        _referenceCount++;
+
+        if (first)
         {
             ResourceManager.AddResourceListener(_source, this, AccessLevel.AccessGPUOptimizedOnly);
         }
-
-        _referenceCount++;
     }
 
     public override void Release()
@@ -109,6 +116,7 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
         {
             _referenceCount = 0;
             OnResourceUnloaded(_resource, 0);
+            _source.RemoveResourceEventListener(this);
         }
     }
 

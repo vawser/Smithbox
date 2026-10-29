@@ -149,7 +149,19 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
 
     public void RemoveResourceEventListener(IResourceEventListener listener)
     {
-        // To implement
+        // Copy-on-write so a load/unload notification that is iterating the old list isn't disturbed.
+        // Dead (collected) listeners are dropped at the same time.
+        List<EventListener> kept = new(EventListeners.Count);
+        foreach (EventListener entry in EventListeners)
+        {
+            if (entry.Listener.TryGetTarget(out IResourceEventListener target) &&
+                !ReferenceEquals(target, listener))
+            {
+                kept.Add(entry);
+            }
+        }
+
+        EventListeners = kept;
     }
 
     public int EventListenerCount => EventListeners.Count;

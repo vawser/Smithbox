@@ -13,7 +13,6 @@
 # Map Editor
   
 # Model Editor
-- Model Editor: two sets of meshes are loaded, only after a minute or two is the unassociated set cleared and the visbility and model mask features suddenly work
 - Add support for hknpConvexPolytopeShape to HKX2_Helper so obj collisions can be displayed
 
 - OBJ Export should use these settings for OBJ generation:
