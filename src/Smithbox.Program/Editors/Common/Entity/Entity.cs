@@ -134,6 +134,13 @@ public class Entity : ISelectable, IDisposable
             }
 
             ApplyMeshState();
+
+            // ApplyMeshState skips entities without a transform (e.g. model meshes), so a new proxy would
+            // otherwise start visible even if this entity is hidden.
+            if (_renderSceneMesh != null)
+            {
+                _renderSceneMesh.Visible = _EditorVisible;
+            }
         }
         get => _renderSceneMesh;
     }

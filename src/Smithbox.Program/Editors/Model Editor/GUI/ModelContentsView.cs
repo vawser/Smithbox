@@ -619,11 +619,15 @@ public class ModelContentsView : IActionEventHandler
         {
             if (InputManager.IsPressed(KeybindID.Apply_to_All))
             {
+                // Use one target state for the whole group; inverting each entry individually leaves
+                // mixed states whenever the entries didn't all start out the same.
+                var newVisibleState = !entity.EditorVisible;
+
                 foreach (var entry in container.RootObject.Children)
                 {
                     if (entry.WrappedObject.GetType() == entity.WrappedObject.GetType())
                     {
-                        entry.EditorVisible = !entry.EditorVisible;
+                        entry.EditorVisible = newVisibleState;
                     }
                 }
             }

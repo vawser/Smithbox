@@ -27,6 +27,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     public readonly List<MeshRenderableProxy> _submeshes = new();
 
+    // Submeshes are created/removed on the resource loader thread while the UI and render
+    // threads read them, so every mutation happens under this lock and readers use snapshots.
+    private readonly object _submeshLock = new();
+    private bool _providerReleased;
+
     public RenderFilter _drawfilter = RenderFilter.All;
 
     public DrawGroup _drawgroups = new();
@@ -90,7 +95,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         set
         {
             _autoregister = value;
-            foreach (MeshRenderableProxy c in _submeshes)
+            foreach (MeshRenderableProxy c in SnapshotSubmeshes())
             {
                 c.AutoRegister = value;
             }
@@ -104,7 +109,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         {
             _world = value;
             ScheduleRenderableUpdate();
-            foreach (MeshRenderableProxy sm in _submeshes)
+            foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
             {
                 sm.World = _world;
             }
@@ -117,23 +122,49 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         set
         {
             _visible = value;
-            if (_renderable != -1)
-            {
-                _renderablesSet.cVisible[_renderable]._visible = value;
+            ApplyVisibilityToRenderables();
 
-                if (CFG.Current.Viewport_Enable_Selection_Outline)
-                {
-                    if (!_meshProvider.SelectedRenderBaseMesh && _renderOutline)
-                    {
-                        _renderablesSet.cVisible[_renderable]._visible = false;
-                    }
-                }
+            foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
+            {
+                sm.Visible = value;
+            }
+        }
+    }
+
+    /// <summary>
+    ///     Pushes the current visibility to the renderables this proxy owns, including the selection outline
+    ///     renderable, which otherwise stays visible when the mesh itself is hidden.
+    /// </summary>
+    private void ApplyVisibilityToRenderables()
+    {
+        var visible = _visible;
+
+        var renderable = _renderable;
+        if (renderable != -1)
+        {
+            var baseVisible = visible;
+
+            if (CFG.Current.Viewport_Enable_Selection_Outline &&
+                !_meshProvider.SelectedRenderBaseMesh && _renderOutline)
+            {
+                baseVisible = false;
             }
 
-            foreach (MeshRenderableProxy sm in _submeshes)
-            {
-                sm.Visible = _visible;
-            }
+            _renderablesSet.cVisible[renderable]._visible = baseVisible;
+        }
+
+        var outlineRenderable = _selectionOutlineRenderable;
+        if (outlineRenderable != -1)
+        {
+            _renderablesSet.cVisible[outlineRenderable]._visible = visible;
+        }
+    }
+
+    private MeshRenderableProxy[] SnapshotSubmeshes()
+    {
+        lock (_submeshLock)
+        {
+            return _submeshes.Count == 0 ? Array.Empty<MeshRenderableProxy>() : _submeshes.ToArray();
         }
     }
 
@@ -148,7 +179,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                 _renderablesSet.cSceneVis[_renderable]._renderFilter = value;
             }
 
-            foreach (MeshRenderableProxy sm in _submeshes)
+            foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
             {
                 sm.DrawFilter = _drawfilter;
             }
@@ -166,7 +197,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                 _renderablesSet.cSceneVis[_renderable]._drawGroup = value;
             }
 
-            foreach (MeshRenderableProxy sm in _submeshes)
+            foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
             {
                 sm.DrawGroups = _drawgroups;
             }
@@ -184,7 +215,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                 ScheduleRenderableConstruction();
             }
 
-            foreach (MeshRenderableProxy child in _submeshes)
+            foreach (MeshRenderableProxy child in SnapshotSubmeshes())
             {
                 child.RenderSelectionOutline = value;
             }
@@ -211,7 +242,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                 child.RenderSelectionOutline = true;
             }
 
-            _submeshes.Add(child);
+            lock (_submeshLock)
+            {
+                _submeshes.Add(child);
+            }
+
             ISelectable? sel = null;
             if (_selectable != null)
             {
@@ -234,6 +269,14 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             ApplySubmeshSelection();
         }
 
+        // Visible may have been changed by another thread while the children were being created (before they
+        // were in the list, so the change never reached them). Re-apply the latest value now they are listed.
+        var latestVisible = _visible;
+        foreach (MeshRenderableProxy child in SnapshotSubmeshes())
+        {
+            child.Visible = latestVisible;
+        }
+
         if (_meshProvider.HasMeshData())
         {
             ScheduleRenderableConstruction();
@@ -246,14 +289,17 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     {
         if (_meshProvider.IsAtomic())
         {
-            for(int i = 0; i < _submeshes.Count; i++)
+            MeshRenderableProxy[] old;
+            lock (_submeshLock)
             {
-                var curSubmesh = _submeshes[i];
-
-                curSubmesh.UnregisterAndRelease();
+                old = _submeshes.ToArray();
+                _submeshes.Clear();
             }
 
-            _submeshes.Clear();
+            foreach (MeshRenderableProxy curSubmesh in old)
+            {
+                curSubmesh.UnregisterAndRelease();
+            }
         }
     }
     public bool HasRenderableGeometry()
@@ -261,7 +307,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         if (_meshProvider != null && _meshProvider.IsAvailable() && _meshProvider.IndexCount > 0)
             return true;
 
-        foreach (MeshRenderableProxy sm in _submeshes)
+        foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
         {
             if (sm.HasRenderableGeometry())
                 return true;
@@ -288,8 +334,9 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             return BoundingBox.Transform(_meshProvider.Bounds, _meshProvider.ObjectTransform);
         }
 
-        BoundingBox b = _submeshes.Count > 0 ? _submeshes[0].GetLocalBounds() : new BoundingBox();
-        foreach (MeshRenderableProxy c in _submeshes)
+        MeshRenderableProxy[] subs = SnapshotSubmeshes();
+        BoundingBox b = subs.Length > 0 ? subs[0].GetLocalBounds() : new BoundingBox();
+        foreach (MeshRenderableProxy c in subs)
         {
             b = BoundingBox.Combine(b, c.GetLocalBounds());
         }
@@ -304,7 +351,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             return;
         }
 
-        foreach (MeshRenderableProxy c in _submeshes)
+        foreach (MeshRenderableProxy c in SnapshotSubmeshes())
         {
             c.Register();
         }
@@ -321,7 +368,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             DestroyRenderables();
         }
 
-        foreach (MeshRenderableProxy c in _submeshes)
+        foreach (MeshRenderableProxy c in SnapshotSubmeshes())
         {
             c.UnregisterWithScene();
         }
@@ -334,13 +381,15 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             UnregisterWithScene();
         }
 
-        foreach (MeshRenderableProxy c in _submeshes)
+        foreach (MeshRenderableProxy c in SnapshotSubmeshes())
         {
             c.UnregisterAndRelease();
         }
 
-        if (_meshProvider != null)
+        // Dispose() runs this twice (override + base); releasing the provider twice under-counts shared providers
+        if (_meshProvider != null && !_providerReleased)
         {
+            _providerReleased = true;
             _meshProvider.Release();
         }
 
@@ -359,7 +408,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             return;
         }
 
-        foreach (MeshRenderableProxy c in _submeshes)
+        foreach (MeshRenderableProxy c in SnapshotSubmeshes())
         {
             if (c._registered)
             {
@@ -574,6 +623,9 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             // Selectable
             _renderablesSet.cSelectables[_selectionOutlineRenderable] = _selectable;
         }
+
+        // The outline renderable is created visible; make it follow the proxy's visibility
+        ApplyVisibilityToRenderables();
     }
 
     public override unsafe void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp)
@@ -632,7 +684,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             _selectionOutlineRenderable = -1;
         }
 
-        foreach (MeshRenderableProxy c in _submeshes)
+        foreach (MeshRenderableProxy c in SnapshotSubmeshes())
         {
             c.DestroyRenderables();
         }
@@ -646,7 +698,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             _renderablesSet.cSelectables[_renderable] = _selectable;
         }
 
-        foreach (MeshRenderableProxy child in _submeshes)
+        foreach (MeshRenderableProxy child in SnapshotSubmeshes())
         {
             child.SetSelectable(sel);
         }
@@ -742,22 +794,27 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         int index = _requestedSubmeshIndex.Value;
 
-        if (index < 0 || index >= _submeshes.Count)
-            return;
+        List<MeshRenderableProxy> removed = new();
 
-        var selected = _submeshes[index];
-
-        for (int i = _submeshes.Count - 1; i >= 0; i--)
+        lock (_submeshLock)
         {
-            if (i == index)
-                continue;
+            if (index < 0 || index >= _submeshes.Count)
+                return;
 
-            var sub = _submeshes[i];
+            for (int i = _submeshes.Count - 1; i >= 0; i--)
+            {
+                if (i == index)
+                    continue;
 
+                removed.Add(_submeshes[i]);
+                _submeshes.RemoveAt(i);
+            }
+        }
+
+        foreach (MeshRenderableProxy sub in removed)
+        {
             sub.Dispose();
-
-            _submeshes.RemoveAt(i);
-        };
+        }
     }
 
     public override void Dispose()
