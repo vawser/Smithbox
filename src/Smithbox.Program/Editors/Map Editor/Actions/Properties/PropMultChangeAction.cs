@@ -28,11 +28,6 @@ public class PropMultChangeAction : ViewportAction
         ChangedEnts = changedEnts;
         foreach (Entity o in changedEnts)
         {
-            if (prop.Name == "ModelName")
-            {
-                o.ModelName = newval.ToString();
-            }
-
             var propObj = PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, index, classIndex, false);
             if (propObj != null)
             {
@@ -105,18 +100,9 @@ public class PropMultChangeAction : ViewportAction
             e.Name = null;
             e.CachedAliasName = null;
 
-            if (UpdateRenderMesh)
+            if (UpdateRenderMesh && e is MsbEntity msbEnt)
             {
-                e.UpdateRenderModel();
-                if (e is MsbEntity msbEnt)
-                {
-                    msbEnt.AssignDrawable();
-                }
-
-                if (e.RenderSceneMesh != null)
-                {
-                    e.RenderSceneMesh.RenderSelectionOutline = true;
-                }
+                msbEnt.RefreshModel();
             }
         }
 
@@ -156,17 +142,9 @@ public class PropMultChangeAction : ViewportAction
             e.Name = null;
             e.CachedAliasName = null;
 
-            if (UpdateRenderMesh)
+            if (UpdateRenderMesh && e is MsbEntity msbEnt)
             {
-                e.UpdateRenderModel();
-                if (e is MsbEntity msbEnt)
-                {
-                    msbEnt.AssignDrawable();
-                }
-                if (e.RenderSceneMesh != null)
-                {
-                    e.RenderSceneMesh.RenderSelectionOutline = true;
-                }
+                msbEnt.RefreshModel();
             }
         }
 

@@ -951,6 +951,32 @@ public class MsbEntity : Entity
 
     public bool SetupRenderMesh = false;
 
+    /// <summary>
+    /// Re-syncs the cached model name from the WrappedObject and rebuilds the render mesh.
+    /// Call this after the ModelName property on the WrappedObject has changed (including undo/redo).
+    /// </summary>
+    public void RefreshModel()
+    {
+        // Keep the cached field in sync with the WrappedObject (also covers undo)
+        var modelProp = GetProperty("ModelName");
+        if (modelProp != null && modelProp.GetValue(WrappedObject) is string modelName)
+        {
+            ModelName = modelName;
+        }
+
+        Name = null;
+        CachedAliasName = null;
+
+        AssignDrawable();
+        SetupRenderMesh = true;
+        UpdateRenderModel();
+
+        if (RenderSceneMesh != null)
+        {
+            RenderSceneMesh.RenderSelectionOutline = IsSelected;
+        }
+    }
+
     public override void UpdateRenderModel()
     {
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)

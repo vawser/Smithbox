@@ -1240,7 +1240,8 @@ public class Entity : ISelectable, IDisposable
         var act = new ViewportCompoundAction(actions);
         act.SetPostExecutionAction((undo) =>
         {
-            if (this is MsbEntity msbEnt)
+            // ModelName changes are already handled by PropChangeAction (MsbEntity.RefreshModel)
+            if (propTarget != "ModelName" && this is MsbEntity msbEnt)
             {
                 msbEnt.AssignDrawable();
             }

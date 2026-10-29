@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor;
@@ -131,7 +132,20 @@ public class PropChangeAction : ViewportAction
         if (TargetEnt != null)
             TargetEnt.CachedAliasName = null;
 
+        RefreshModelIfNeeded();
+
         return ActionEvent.NoEvent;
+    }
+
+    /// <summary>
+    /// If this action changed ModelName, rebuild the entity's render model.
+    /// </summary>
+    private void RefreshModelIfNeeded()
+    {
+        if (TargetEnt is MsbEntity msbEnt && Changes.Any(c => c.Property.Name == "ModelName"))
+        {
+            msbEnt.RefreshModel();
+        }
     }
 
     public override ActionEvent Undo()
@@ -164,6 +178,11 @@ public class PropChangeAction : ViewportAction
         {
             PostExecutionAction.Invoke(true);
         }
+
+        if (TargetEnt != null)
+            TargetEnt.CachedAliasName = null;
+
+        RefreshModelIfNeeded();
 
         return ActionEvent.NoEvent;
     }
