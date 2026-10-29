@@ -12,6 +12,7 @@
   
 # Map Editor
 - Update non-parts rendering on property change
+- Fix entity model update so it changes properly when ModelName is changed
   
 # Model Editor
 - Add support for hknpConvexPolytopeShape to HKX2_Helper so obj collisions can be displayed

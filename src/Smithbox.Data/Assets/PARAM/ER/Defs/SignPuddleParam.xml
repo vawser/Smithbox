@@ -36,23 +36,151 @@
     
     <Field Def="dummy8 pad1[24]" RemovedVersion="11210015" />
     
-    <Field Def="s32 unknown_0x20" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x24" FirstVersion="11210015"/>
+    <Field Def="u16 iconId" FirstVersion="11210015">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>アイコンID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>3000</SortID>
+      <UnkC8>アイコンID</UnkC8>
+    </Field>
+    <Field Def="u16 forbiddenIconId" FirstVersion="11210015">
+      <DisplayName>サイン溜まり禁止アイコンID</DisplayName>
+      <Description>無効化時のアイコンID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>3010</SortID>
+      <UnkC8>アイコンID</UnkC8>
+    </Field>
+    <Field Def="u8 dispMask00:1" FirstVersion="11210015">
+      <DisplayName>M00</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>M00で表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>5000</SortID>
+      <UnkC8>表示設定</UnkC8>
+    </Field>
+    <Field Def="u8 dispMask01:1" FirstVersion="11210015">
+      <DisplayName>M01</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>M01で表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>5010</SortID>
+      <UnkC8>表示設定</UnkC8>
+    </Field>
+    <Field Def="u8 dispMask10:1" FirstVersion="11210015">
+      <DisplayName>M10</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>M10で表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>5020</SortID>
+      <UnkC8>表示設定</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad1:5" FirstVersion="11210015">
+      <DisplayName>パッド</DisplayName>
+      <SortID>7123</SortID>
+    </Field>
+    <Field Def="u8 dispMinZoomStep" FirstVersion="11210015">
+      <DisplayName>表示ズームステップ</DisplayName>
+      <Description>表示するズームステップ(0～2：0がズームアウト状態）。これ以上のズームステップのときに表示される</Description>
+      <Minimum>0</Minimum>
+      <Maximum>128</Maximum>
+      <SortID>6000</SortID>
+      <UnkC8>ズームステップ</UnkC8>
+    </Field>
+    <Field Def="u8 selectMinZoomStep" FirstVersion="11210015">
+      <DisplayName>選択可能ズームステップ</DisplayName>
+      <Description>選択可能なズームステップ（0～2：0がズームアウト状態）。これ以上のズームステップのときに選択ができるようになる</Description>
+      <Minimum>0</Minimum>
+      <Maximum>128</Maximum>
+      <SortID>6010</SortID>
+      <UnkC8>ズームステップ</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad4[1]" FirstVersion="11210015">
+      <DisplayName>パッド</DisplayName>
+      <SortID>7124</SortID>
+    </Field>
     
-    <Field Def="u8 areaNo" FirstVersion="11210015"/>
-    <Field Def="u8 gridXNo" FirstVersion="11210015"/>
-    <Field Def="u8 gridZNo" FirstVersion="11210015"/>
-    <Field Def="dummy8 pad3[1]" FirstVersion="11210015"/>
+    <Field Def="u8 areaNo" FirstVersion="11210015">
+      <DisplayName>エリア番号</DisplayName>
+      <Description>mAA_BB_CC_DD の AA 部分</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>7000</SortID>
+      <UnkC8>マップ</UnkC8>
+    </Field>
+    <Field Def="u8 gridXNo" FirstVersion="11210015">
+      <DisplayName>グリッドX番号</DisplayName>
+      <Description>mAA_BB_CC_DD の BB 部分</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>7010</SortID>
+      <UnkC8>マップ</UnkC8>
+    </Field>
+    <Field Def="u8 gridZNo" FirstVersion="11210015">
+      <DisplayName>グリッドZ番号</DisplayName>
+      <Description>mAA_BB_CC_DD の CC 部分</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>7020</SortID>
+      <UnkC8>マップ</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad2[1]" FirstVersion="11210015">
+      <DisplayName>パディング</DisplayName>
+      <SortID>7125</SortID>
+    </Field>
+    <Field Def="f32 posX" FirstVersion="11210015">
+      <DisplayName>X座標</DisplayName>
+      <Description>X座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>7100</SortID>
+      <UnkC8>座標</UnkC8>
+    </Field>
+    <Field Def="f32 posY" FirstVersion="11210015">
+      <DisplayName>Y座標</DisplayName>
+      <Description>Y座標（使っていない）</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>7110</SortID>
+      <UnkC8>座標</UnkC8>
+    </Field>
+    <Field Def="f32 posZ" FirstVersion="11210015">
+      <DisplayName>Z座標</DisplayName>
+      <Description>Z座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>7120</SortID>
+      <UnkC8>座標</UnkC8>
+    </Field>
+    <Field Def="s32 signPuddleSubCategoryId = -1" FirstVersion="11210015">
+      <DisplayName>サブカテゴリID</DisplayName>
+      <Description>サブカテゴリパラメータID（-1:無効)。どのサブカテゴリに属するかを設定する。無効ならサイン溜まり一覧に表示されない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>4000</SortID>
+      <UnkC8>サイン溜まりタブ</UnkC8>
+    </Field>
+    <Field Def="s32 textId = -1" FirstVersion="11210015">
+      <DisplayName>テキストID</DisplayName>
+      <Description>テキストID。サイン溜まり名</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u16 signPuddleSubCategorySortId" FirstVersion="11210015">
+      <DisplayName>ソートID</DisplayName>
+      <Description>サブカテゴリソートID。同じサブカテゴリ内の表示順（昇順）</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>4010</SortID>
+      <UnkC8>サイン溜まりタブ</UnkC8>
+    </Field>
     
-    <Field Def="f32 posX" FirstVersion="11210015"/>
-    <Field Def="f32 posY" FirstVersion="11210015"/>
-    <Field Def="f32 posZ" FirstVersion="11210015"/>
-    
-    <Field Def="s32 signSubCategoryId" FirstVersion="11210015"/>
-    <Field Def="s32 locationTextId" FirstVersion="11210015"/>
-    
-    <Field Def="s32 sortId" FirstVersion="11210015"/>
-    <Field Def="dummy8 endPad[4]" FirstVersion="11210015"/>
+    <Field Def="dummy8 endPad[6]" FirstVersion="11210015"/>
 
   </Fields>
 </PARAMDEF>

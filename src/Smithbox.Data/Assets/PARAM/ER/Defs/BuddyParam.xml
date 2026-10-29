@@ -243,7 +243,7 @@
     <Field Def="s32 arenaHostileSpEffect_3" FirstVersion="10801000" />
     <Field Def="s32 arenaHostileSpEffect_4" FirstVersion="10801000" />
     <Field Def="s32 arenaHostileSpEffect_5" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x98" FirstVersion="10801000" />
-    <Field Def="u32 unknown_0x9c" FirstVersion="10801000" />
+    
+    <Field Def="dummy8 Reserve4[8]" FirstVersion="10801000" />
   </Fields>
 </PARAMDEF>

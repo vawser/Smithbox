@@ -253,12 +253,16 @@
       <Maximum>9999</Maximum>
       <SortID>11000</SortID>
     </Field>
-    <Field Def="dummy8 pad3[1]">
+    <Field Def="u8 isDisableGet:1">
+      <DisplayName>製品版で入手不可か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>製品版で入手不可か</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 pad3:7">
       <DisplayName>pad</DisplayName>
       <Description>pad</Description>
-      <DisplayFormat>%u</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>13014</SortID>
+      <SortID>100004</SortID>
     </Field>
     <Field Def="s8 compTrophySedId = -1">
       <DisplayName>コンプトロフィーSEQ番号</DisplayName>

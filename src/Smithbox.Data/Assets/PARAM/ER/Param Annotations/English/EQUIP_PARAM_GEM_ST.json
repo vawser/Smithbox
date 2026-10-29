@@ -245,9 +245,9 @@
       "Description": "Whether to display in the item acquisition log when acquiring the item (not entered: )"
     },
     {
-      "Field": "pad",
-      "Name": "",
-      "Description": ""
+      "Field": "isDisableGet",
+      "Name": "Disable Availability",
+      "Description": "Is it unavailable in the retail version?"
     },
     {
       "Field": "defaultWepAttr",
@@ -260,9 +260,14 @@
       "Description": ""
     },
     {
-      "Field": "isSpecialSwordArt",
-      "Name": "Is Special Ash of War",
-      "Description": "Determines whether this Ash of War is considered 'special'. Weapons with restrictSpecialSwordArt set to 1 will be unable to slot in these ashes of war."
+      "Field": "disableMount_ThrowingWep",
+      "Name": "Disable For Throwing Weapons",
+      "Description": "Is it unsuitable for attachment to throwing weapons?"
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "pad2",

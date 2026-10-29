@@ -7,27 +7,327 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 mapId" />
-    <Field Def="s32 unknown_0x4" />
-    <Field Def="s32 unknown_0x8" />
-    <Field Def="s32 unknown_0xc" />
-    <Field Def="s32 unknown_0x10" />
-    <Field Def="s32 unknown_0x14" />
-    <Field Def="s32 unknown_0x18" />
-    <Field Def="s32 unknown_0x1c" />
-    <Field Def="s32 unknown_0x20" />
-    <Field Def="s32 unknown_0x24" />
-    <Field Def="s32 unknown_0x28" />
-    <Field Def="u8 unknown_0x2c" />
-    <Field Def="u8 unknown_0x2d" />
-    <Field Def="u8 unknown_0x2e" />
-    <Field Def="u8 unknown_0x2f" />
-    <Field Def="u8 unknown_0x30" />
-    <Field Def="u8 unknown_0x31" />
-    <Field Def="u16 unknown_0x32" />
-    <Field Def="s32 unknown_0x34" />
-    <Field Def="s32 unknown_0x38" />
-    <Field Def="s32 unknown_0x3c" />
-
+    <Field Def="u32 currentGridBlockId">
+      <DisplayName>カレントグリッドID</DisplayName>
+      <Description>現在いるブロックIDを8桁で指定します。LOD0,1,2で指定可能です。範囲が被る場合はLOD0のほうが優先されます(例：m61_48_48_00→61484800、m61_24_24_01→61242401)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="u16 targetGridId00">
+      <DisplayName>対象LOD2グリッド番号00</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u16 targetGridId01">
+      <DisplayName>対象LOD2グリッド番号01</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="u16 targetGridId02">
+      <DisplayName>対象LOD2グリッド番号02</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1020</SortID>
+    </Field>
+    <Field Def="u16 targetGridId03">
+      <DisplayName>対象LOD2グリッド番号03</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1030</SortID>
+    </Field>
+    <Field Def="u16 targetGridId04">
+      <DisplayName>対象LOD2グリッド番号04</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1040</SortID>
+    </Field>
+    <Field Def="u16 targetGridId05">
+      <DisplayName>対象LOD2グリッド番号05</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1050</SortID>
+    </Field>
+    <Field Def="u16 targetGridId06">
+      <DisplayName>対象LOD2グリッド番号06</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1060</SortID>
+    </Field>
+    <Field Def="u16 targetGridId07">
+      <DisplayName>対象LOD2グリッド番号07</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1070</SortID>
+    </Field>
+    <Field Def="u16 targetGridId08">
+      <DisplayName>対象LOD2グリッド番号08</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1080</SortID>
+    </Field>
+    <Field Def="u16 targetGridId09">
+      <DisplayName>対象LOD2グリッド番号09</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1090</SortID>
+    </Field>
+    <Field Def="u16 targetGridId10">
+      <DisplayName>対象LOD2グリッド番号10</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u16 targetGridId11">
+      <DisplayName>対象LOD2グリッド番号11</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="u16 targetGridId12">
+      <DisplayName>対象LOD2グリッド番号12</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1120</SortID>
+    </Field>
+    <Field Def="u16 targetGridId13">
+      <DisplayName>対象LOD2グリッド番号13</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1130</SortID>
+    </Field>
+    <Field Def="u16 targetGridId14">
+      <DisplayName>対象LOD2グリッド番号14</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1140</SortID>
+    </Field>
+    <Field Def="u16 targetGridId15">
+      <DisplayName>対象LOD2グリッド番号15</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1150</SortID>
+    </Field>
+    <Field Def="u16 targetGridId16">
+      <DisplayName>対象LOD2グリッド番号16</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1160</SortID>
+    </Field>
+    <Field Def="u16 targetGridId17">
+      <DisplayName>対象LOD2グリッド番号17</DisplayName>
+      <Description>対象LOD2ブロックを4桁で指定します(例：m61_11_11_02→1111)（0：無効値）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0</Increment>
+      <SortID>1170</SortID>
+    </Field>
+    <Field Def="dummy8 reservedGrid[4]">
+      <DisplayName>リザーブグリッド</DisplayName>
+      <SortID>1172</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace00">
+      <DisplayName>高所Assetが詳細か？00</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1001</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace01">
+      <DisplayName>高所Assetが詳細か？01</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1011</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace02">
+      <DisplayName>高所Assetが詳細か？02</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1021</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace03">
+      <DisplayName>高所Assetが詳細か？03</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1031</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace04">
+      <DisplayName>高所Assetが詳細か？04</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1041</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace05">
+      <DisplayName>高所Assetが詳細か？05</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1051</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace06">
+      <DisplayName>高所Assetが詳細か？06</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1061</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace07">
+      <DisplayName>高所Assetが詳細か？07</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1071</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace08">
+      <DisplayName>高所Assetが詳細か？08</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1081</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace09">
+      <DisplayName>高所Assetが詳細か？09</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1091</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace10">
+      <DisplayName>高所Assetが詳細か？10</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1101</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace11">
+      <DisplayName>高所Assetが詳細か？11</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1111</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace12">
+      <DisplayName>高所Assetが詳細か？12</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1121</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace13">
+      <DisplayName>高所Assetが詳細か？13</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1131</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace14">
+      <DisplayName>高所Assetが詳細か？14</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1141</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace15">
+      <DisplayName>高所Assetが詳細か？15</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1151</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace16">
+      <DisplayName>高所Assetが詳細か？16</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1161</SortID>
+    </Field>
+    <Field Def="u8 isHeightPlace17">
+      <DisplayName>高所Assetが詳細か？17</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>対象LOD2グリッドの高さ状態を指定します（×：低所（デフォルト）、○：高所）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1171</SortID>
+    </Field>
+    <Field Def="dummy8 reservedFlag[2]">
+      <DisplayName>リザーブグリッドフラグ</DisplayName>
+      <SortID>1173</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

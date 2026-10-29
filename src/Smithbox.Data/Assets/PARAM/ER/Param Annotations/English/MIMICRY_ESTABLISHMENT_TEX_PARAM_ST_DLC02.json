@@ -45,29 +45,69 @@
       "Description": "Mimicry probability parameter ID by map (-1 No setting (default value)). The area is combined with Map Studio"
     },
     {
-      "Field": "unknown_0xc",
-      "Name": "",
-      "Description": ""
+      "Field": "mimicryEstablishmentParamIdLowPlace",
+      "Name": "Low Altitude: Mimicry Establishment Param ID",
+      "Description": "Mimicry probability parameter ID by map (-1 No setting (default value))."
     },
     {
-      "Field": "unknown_0x10",
-      "Name": "",
-      "Description": ""
+      "Field": "mimicryEstablishmentParamIdHighPlace",
+      "Name": "High Altitude: Mimicry Establishment Param ID",
+      "Description": "Mimicry probability parameter ID by map (-1 No setting (default value))."
     },
     {
-      "Field": "unknown_0x14",
-      "Name": "",
-      "Description": ""
+      "Field": "borderHeight",
+      "Name": "High / Low Altitude Boundary Height",
+      "Description": "In metres."
     },
     {
-      "Field": "unknown_0x18",
-      "Name": "",
-      "Description": ""
+      "Field": "isUseHeightInfo",
+      "Name": "Separate by High and Low Altitudes",
+      "Description": "Should we set the high and low points separately? If yes, we will refer to the data for the high and low points."
     },
     {
-      "Field": "unknown_0x1c",
-      "Name": "",
-      "Description": ""
+      "Field": "isApplyMimicryLotLimitSpEffect0",
+      "Name": "Apply Mimicry Prohibition Effect: Slot 0",
+      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect1",
+      "Name": "Apply Mimicry Prohibition Effect: Slot 1",
+      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect2",
+      "Name": "Apply Mimicry Prohibition Effect: Slot 2",
+      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect0Low",
+      "Name": "Low Altitude: Apply Mimicry Prohibition Effect: Slot 0",
+      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect1Low",
+      "Name": "Low Altitude: Apply Mimicry Prohibition Effect: Slot 1",
+      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect2Low",
+      "Name": "Low Altitude: Apply Mimicry Prohibition Effect: Slot 2",
+      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect0High",
+      "Name": "High Altitude: Apply Mimicry Prohibition Effect: Slot 0",
+      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect1High",
+      "Name": "High Altitude: Apply Mimicry Prohibition Effect: Slot 1",
+      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
+    },
+    {
+      "Field": "isApplyMimicryLotLimitSpEffect2High",
+      "Name": "High Altitude: Apply Mimicry Prohibition Effect: Slot 2",
+      "Description": "Specify whether to apply a special effect to the PC that prevents the selection of mimicry lottery candidate 1 [GR] SEQ04459 [GR_DLC] Allow specifying the definition of which mimicry transformation destination is displayed for each location using map information image parameters."
     }
   ]
 }

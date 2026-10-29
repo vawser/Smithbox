@@ -129,7 +129,14 @@
     
     <Field Def="dummy8 pad2_0:6" RemovedVersion="11210015"/>
     
-    <Field Def="u8 dispMask02:1" FirstVersion="11210015"/>
+    <Field Def="u8 dispMask10:1" FirstVersion="11210015">
+      <DisplayName>表示設定M10</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>M10で表示するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>820</SortID>
+    </Field>
+    
     <Field Def="dummy8 pad2_0:5" FirstVersion="11210015" >
       <DisplayName>パッド</DisplayName>
       <Description>pad2_0</Description>
@@ -540,8 +547,12 @@
     
     <Field Def="dummy8 pad4_old[9]" RemovedVersion="11210015" />
     
-    <Field Def="u8 unknown_0xb7" FirstVersion="11210015" />
-    <Field Def="u16 altIconId" FirstVersion="11210015" />
+    <Field Def="dummy8 pad5[1]" FirstVersion="11210015">
+      <DisplayName>パッド</DisplayName>
+      <SortID>2907</SortID>
+    </Field>
+    
+    <Field Def="u16 iconId_npc" FirstVersion="11210015" />
     
     <Field Def="dummy8 pad4[6]" FirstVersion="11210015" >
       <DisplayName>パッド</DisplayName>

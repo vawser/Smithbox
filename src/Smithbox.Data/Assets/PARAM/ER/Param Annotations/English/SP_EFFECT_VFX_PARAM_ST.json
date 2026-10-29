@@ -121,8 +121,8 @@
     },
     {
       "Field": "isFullBodyTransformProtectorId",
-      "Name": "Is Full Body Protector ID",
-      "Description": "Is the transformation armor ID for the whole body?"
+      "Name": "Is Full Body Transformation",
+      "Description": "Is the transformation for the body?"
     },
     {
       "Field": "isInvisibleWeapon",
@@ -165,9 +165,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x2f_7",
-      "Name": "",
-      "Description": ""
+      "Field": "isEnableLockOn_forCamouflage",
+      "Name": "Enable Lock-on whilst Invisible",
+      "Description": "If enabled, owner can be target locked when invisible."
     },
     {
       "Field": "decalId1",
@@ -335,27 +335,22 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x96",
-      "Name": "",
-      "Description": ""
+      "Field": "fadeOutRateCamouflage",
+      "Name": "Camouflage: Fade Out Rate",
+      "Description": "The alpha value that changes per second during the fade-out process that occurs when the special effect of concealing the character is applied."
     },
     {
-      "Field": "unknown_0x97",
-      "Name": "",
-      "Description": ""
+      "Field": "fadeInRateCamouflage",
+      "Name": "Camouflage: Fade In Rate",
+      "Description": "The alpha value that changes per second during the fade-in process that occurs when the special effect of concealing the character is applied."
     },
     {
-      "Field": "unknown_0x98",
-      "Name": "",
-      "Description": ""
+      "Field": "isTransformGauntlet",
+      "Name": "Is Transformation for Arms",
+      "Description": "Is the transformation armor ID for the arms"
     },
     {
-      "Field": "unknown_0x99",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x9a",
+      "Field": "pad2",
       "Name": "",
       "Description": ""
     },

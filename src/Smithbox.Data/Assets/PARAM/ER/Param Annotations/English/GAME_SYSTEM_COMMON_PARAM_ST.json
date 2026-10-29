@@ -960,9 +960,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x230",
-      "Name": "",
-      "Description": ""
+      "Field": "dlcRideJumpRegionDefaultSfxId",
+      "Name": "DLC Big Jump Area SFX ID",
+      "Description": "SFX ID for the DLC riding jump area"
     },
     {
       "Field": "aiSightRate_sunloss_light",
@@ -1435,217 +1435,217 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x2f0",
-      "Name": "",
-      "Description": ""
+      "Field": "mimicryParamChange_SpEffectId",
+      "Name": "Chameleon SpEffect ID",
+      "Description": "Special effect ID applied when changing the mimicry probability parameter"
     },
     {
-      "Field": "matchingLevelArenaUpperRel",
+      "Field": "machingLevelBattleRoyalSignUpperRel",
       "Name": "Arena - Level Coefficient 1",
       "Description": "Soul level coefficient of whether to apply level sync"
     },
     {
-      "Field": "matchingLevelArenaUpperAbs",
+      "Field": "machingLevelBattleRoyalSignUpperAbs",
       "Name": "Arena - Level Coefficient 2",
       "Description": "Soul level coefficient of whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_0",
+      "Field": "machingWeaponLevelUpperBattleRoyal_0",
       "Name": "Arena - Max Reinforcement Coefficient 0",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_1",
+      "Field": "machingWeaponLevelUpperBattleRoyal_1",
       "Name": "Arena - Max Reinforcement Coefficient 1",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_2",
+      "Field": "machingWeaponLevelUpperBattleRoyal_2",
       "Name": "Arena - Max Reinforcement Coefficient 2",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_3",
+      "Field": "machingWeaponLevelUpperBattleRoyal_3",
       "Name": "Arena - Max Reinforcement Coefficient 3",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_4",
+      "Field": "machingWeaponLevelUpperBattleRoyal_4",
       "Name": "Arena - Max Reinforcement Coefficient 4",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_5",
+      "Field": "machingWeaponLevelUpperBattleRoyal_5",
       "Name": "Arena - Max Reinforcement Coefficient 5",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_6",
+      "Field": "machingWeaponLevelUpperBattleRoyal_6",
       "Name": "Arena - Max Reinforcement Coefficient 6",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_7",
+      "Field": "machingWeaponLevelUpperBattleRoyal_7",
       "Name": "Arena - Max Reinforcement Coefficient 7",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_8",
+      "Field": "machingWeaponLevelUpperBattleRoyal_8",
       "Name": "Arena - Max Reinforcement Coefficient 8",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_9",
+      "Field": "machingWeaponLevelUpperBattleRoyal_9",
       "Name": "Arena - Max Reinforcement Coefficient 9",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_10",
+      "Field": "machingWeaponLevelUpperBattleRoyal_10",
       "Name": "Arena - Max Reinforcement Coefficient 10",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_11",
+      "Field": "machingWeaponLevelUpperBattleRoyal_11",
       "Name": "Arena - Max Reinforcement Coefficient 11",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_12",
+      "Field": "machingWeaponLevelUpperBattleRoyal_12",
       "Name": "Arena - Max Reinforcement Coefficient 12",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_13",
+      "Field": "machingWeaponLevelUpperBattleRoyal_13",
       "Name": "Arena - Max Reinforcement Coefficient 13",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_14",
+      "Field": "machingWeaponLevelUpperBattleRoyal_14",
       "Name": "Arena - Max Reinforcement Coefficient 14",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_15",
+      "Field": "machingWeaponLevelUpperBattleRoyal_15",
       "Name": "Arena - Max Reinforcement Coefficient 15",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_16",
+      "Field": "machingWeaponLevelUpperBattleRoyal_16",
       "Name": "Arena - Max Reinforcement Coefficient 16",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_17",
+      "Field": "machingWeaponLevelUpperBattleRoyal_17",
       "Name": "Arena - Max Reinforcement Coefficient 17",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_18",
+      "Field": "machingWeaponLevelUpperBattleRoyal_18",
       "Name": "Arena - Max Reinforcement Coefficient 18",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_19",
+      "Field": "machingWeaponLevelUpperBattleRoyal_19",
       "Name": "Arena - Max Reinforcement Coefficient 19",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_20",
+      "Field": "machingWeaponLevelUpperBattleRoyal_20",
       "Name": "Arena - Max Reinforcement Coefficient 20",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_21",
+      "Field": "machingWeaponLevelUpperBattleRoyal_21",
       "Name": "Arena - Max Reinforcement Coefficient 21",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_22",
+      "Field": "machingWeaponLevelUpperBattleRoyal_22",
       "Name": "Arena - Max Reinforcement Coefficient 22",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_23",
+      "Field": "machingWeaponLevelUpperBattleRoyal_23",
       "Name": "Arena - Max Reinforcement Coefficient 23",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_24",
+      "Field": "machingWeaponLevelUpperBattleRoyal_24",
       "Name": "Arena - Max Reinforcement Coefficient 24",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingWeaponLevelUpperArena_25",
+      "Field": "machingWeaponLevelUpperBattleRoyal_25",
       "Name": "Arena - Max Reinforcement Coefficient 25",
       "Description": "Maximum weapon enhancement level factor for whether to apply level sync"
     },
     {
-      "Field": "matchDuel_FirstHalfTime",
+      "Field": "quickMatchDuelTime_FirstHalf",
       "Name": "Arena - First Half Time",
       "Description": "Total time of the first half of the arena match in Duel game mode"
     },
     {
-      "Field": "matchDuel_SecondHalfTime",
+      "Field": "quickMatchDuelTime_SecondHalf",
       "Name": "Arena - Second Half Time",
       "Description": "Total time of the second half of the arena match in Duel game mode"
     },
     {
-      "Field": "matchDM2_FirstHalfTime",
+      "Field": "quickMatchDeathMatch2Time_FirstHalf",
       "Name": "Arena - First Half Time",
       "Description": "Total time of the first half of the arena match in 2 players Death Match game mode"
     },
     {
-      "Field": "matchDM2_SecondHalfTime",
+      "Field": "quickMatchDeathMatch2Time_SecondHalf",
       "Name": "Arena - Second Half Time",
       "Description": "Total time of the second half of the arena match in 2 players Death Match game mode"
     },
     {
-      "Field": "matchDM4_FirstHalfTime",
+      "Field": "quickMatchDeathMatch4Time_FirstHalf",
       "Name": "Arena - First Half Time",
       "Description": "Total time of the first half of the arena match in 4 players Death Match game mode"
     },
     {
-      "Field": "matchDM4_SecondHalfTime",
+      "Field": "quickMatchDeathMatch4Time_SecondHalf",
       "Name": "Arena - Second Half Time",
       "Description": "Total time of the second half of the arena match in 4 players Death Match game mode"
     },
     {
-      "Field": "matchDM6_FirstHalfTime",
+      "Field": "quickMatchDeathMatch6Time_FirstHalf",
       "Name": "Arena - First Half Time",
       "Description": "Total time of the first half of the arena match in 6 players Death Match game mode"
     },
     {
-      "Field": "matchDM6_SecondHalfTime",
+      "Field": "quickMatchDeathMatch6Time_SecondHalf",
       "Name": "Arena - Second Half Time",
       "Description": "Total time of the second half of the arena match in 6 players Death Match game mode"
     },
     {
-      "Field": "matchTM2vs2_FirstHalfTime",
+      "Field": "quickMatchTeamMatch2vs2Time_FirstHalf",
       "Name": "Arena - First Half Time",
       "Description": "Total time of the first half of the arena match in 2vs2 Team Match game mode"
     },
     {
-      "Field": "matchTM2vs2_SecondHalfTime",
+      "Field": "quickMatchTeamMatch2vs2Time_SecondHalf",
       "Name": "Arena - Second Half Time",
       "Description": "Total time of the second half of the arena match in 2vs2 Team Match game mode"
     },
     {
-      "Field": "matchTM3vs3_FirstHalfTime",
+      "Field": "quickMatchTeamMatch3vs3Time_FirstHalf",
       "Name": "Arena - First Half Time",
       "Description": "Total time of the first half of the arena match in 3vs3 Team Match game mode"
     },
     {
-      "Field": "matchTM3vs3_SecondHalfTime",
+      "Field": "quickMatchTeamMatch3vs3Time_SecondHalf",
       "Name": "Arena - Second Half Time",
       "Description": "Total time of the second half of the arena match in 3vs3 Team Match game mode"
     },
     {
-      "Field": "matchTM1vs1_FirstHalfTime",
+      "Field": "quickMatchTeamMatch1vs1Time_FirstHalf",
       "Name": "Arena - First Half Time",
       "Description": "Total time of the first half of the arena match in 1vs1 Team Match game mode"
     },
     {
-      "Field": "matchTM1vs1_SecondHalfTime",
+      "Field": "quickMatchTeamMatch1vs1Time_SecondHalf",
       "Name": "Arena - Second Half Time",
       "Description": "Total time of the second half of the arena match in 1vs1 Team Match game mode"
     },
@@ -1655,143 +1655,168 @@
       "Description": ""
     },
     {
-      "Field": "summonDataCoopMatchingSpiritAshLevelMul",
+      "Field": "summonDataCoopMatchingBuddyLevelMul",
       "Name": "Coop - Maximum Spirit Ash Reinforcement Correction",
       "Description": "Weakened stats when multiplayer. Maximum spirit ash level correction"
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_0",
+      "Field": "machingBuddyLevelUpperBattleRoyal_0",
       "Name": "Spirit Ash - Max Level Coefficient 0",
       "Description": "Maximum Spirit Ash level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_1",
+      "Field": "machingBuddyLevelUpperBattleRoyal_1",
       "Name": "Spirit Ash - Max Level Coefficient 1",
       "Description": "Maximum Spirit Ash level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_2",
+      "Field": "machingBuddyLevelUpperBattleRoyal_2",
       "Name": "Spirit Ash - Max Level Coefficient 2",
       "Description": "Maximum Spirit Ash level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_3",
+      "Field": "machingBuddyLevelUpperBattleRoyal_3",
       "Name": "Spirit Ash - Max Level Coefficient 3",
       "Description": "Maximum Spirit Ash level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_4",
+      "Field": "machingBuddyLevelUpperBattleRoyal_4",
       "Name": "Spirit Ash - Max Level Coefficient 4",
       "Description": "Maximum Spirit Ash level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_5",
+      "Field": "machingBuddyLevelUpperBattleRoyal_5",
       "Name": "Spirit Ash - Max Level Coefficient 5",
       "Description": "Maximum Spirit Ash level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_6",
+      "Field": "machingBuddyLevelUpperBattleRoyal_6",
       "Name": "Spirit Ash - Max Level Coefficient 6",
       "Description": "Maximum Spirit Ash level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_7",
+      "Field": "machingBuddyLevelUpperBattleRoyal_7",
       "Name": "Spirit Ash - Max Level Coefficient 7",
       "Description": "Maximum Spirit Ash level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_8",
+      "Field": "machingBuddyLevelUpperBattleRoyal_8",
       "Name": "Spirit Ash - Max Level Coefficient 8",
       "Description": "Maximum Spirit Ash level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_9",
+      "Field": "machingBuddyLevelUpperBattleRoyal_9",
       "Name": "Spirit Ash - Max Level Coefficient 9",
       "Description": "Maximum Spirit Ash level factor for whether to apply level sync"
     },
     {
-      "Field": "matchingSpiritAshLevelUpper_10",
+      "Field": "machingBuddyLevelUpperBattleRoyal_10",
       "Name": "Spirit Ash - Max Level Coefficient 10",
       "Description": "Maximum Spirit Ash level factor for whether to apply level sync"
     },
     {
-      "Field": "pad_0x34c",
+      "Field": "quickMatchDeathMatch2Time_Invincible",
+      "Name": "Brawl (2 players) - Invincibility Timer upon Resurrection",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchDeathMatch4Time_Invincible",
+      "Name": "Brawl (4 players) - Invincibility Timer upon Resurrection",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchDeathMatch6Time_Invincible",
+      "Name": "Brawl (6 players) - Invincibility Timer upon Resurrection",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchTeamMatch1vs1Time_Invincible",
+      "Name": "Co-op (1v1) - Invincibility Timer upon Resurrection",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchTeamMatch2vs2Time_Invincible",
+      "Name": "Co-op (2v2) - Invincibility Timer upon Resurrection",
+      "Description": ""
+    },
+    {
+      "Field": "quickMatchTeamMatch3vs3Time_Invincible",
+      "Name": "Co-op (3v3) - Invincibility Timer upon Resurrection",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_0x358",
-      "Name": "",
+      "Field": "dlcPlayerDoping_BaseSpecialEffectId",
+      "Name": "DLC Scadu Blessing: Base SpEffect ID",
       "Description": ""
     },
     {
-      "Field": "baseScaduBlessingSpEffectId",
-      "Name": "Base Scadu Blessing SpEffect ID",
+      "Field": "dlcBuddyDoping_BaseSpecialEffectId",
+      "Name": "DLC Revered Spirit Ash Blessing: Base SpEffect ID",
       "Description": ""
     },
     {
-      "Field": "baseReveredSpiritAshBlessingSpEffectId",
-      "Name": "Base Revered Spirit Ash Blessing SpEffect ID",
+      "Field": "dlcRideJumpRegionDefaultDisableSfxId",
+      "Name": "DLC Big Jump Area: Seal SFX ID",
       "Description": ""
     },
     {
-      "Field": "unknown_0x368",
-      "Name": "",
+      "Field": "dlcRideJumpoff_SfxId",
+      "Name": "DLC Descending Big Jump: Aerial SFX ID",
       "Description": ""
     },
     {
-      "Field": "unknown_0x36c",
-      "Name": "",
+      "Field": "dlcRideJumpoff_SfxHeightOffset",
+      "Name": "DLC Descending Big Jump: Aerial SFX Base Point Offset",
       "Description": ""
     },
     {
-      "Field": "unknown_0x370",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "ridingSAReceivedRatePlayer",
+      "Field": "saAttackRate_forVsRideAtkPlayer",
       "Name": "Player Riding Poise - Absorption %",
       "Description": "Applied to isAddBaseAtk attacks only"
     },
     {
-      "Field": "ridingSAReceivedRateNotPlayer",
+      "Field": "saAttackRate_forVsRideAtkEnemy",
       "Name": "Enemy Riding Poise - Absorption %",
       "Description": "Applied to isAddBaseAtk attacks only"
     },
     {
-      "Field": "glovewortCrystalSpiritBuffSpEffectId",
+      "Field": "elixirBuddyEnforceSpEffectId",
       "Name": "Glovewort Crystal Spirit Buff SpEffect ID",
       "Description": ""
     },
     {
-      "Field": "unknown_0x380",
-      "Name": "",
-      "Description": ""
+      "Field": "sleepDeadFadeOutDelayTime",
+      "Name": "Sleep Death Fade Out Delay",
+      "Description": "Delay the start of the sleep-death fade-out by the specified amount of time. In seconds."
     },
     {
-      "Field": "unknown_0x384",
-      "Name": "",
-      "Description": ""
+      "Field": "sleepDeadFadeOutSpeedRate",
+      "Name": "Sleep Death Fade Out Rate",
+      "Description": "The fade-out time upon death from sleep will be multiplied by the specified multiplier (for example, setting it to 2 will double the fade-out time)."
     },
     {
-      "Field": "unknownSpEffectId_0x388",
-      "Name": "Unknown SpEffect ID",
-      "Description": ""
+      "Field": "MimicryLotVariationLimitedSpEffectId_0",
+      "Name": "Block Chameleon Transform: Type 0 - SpEffect ID",
+      "Description": "Special effect ID that prevents transformation into Mimicry Candidate 1 (used when the system applies the effect from image and area information after DLC is open) [-1 or 0: Invalid] [GR] SEQ04459"
     },
     {
-      "Field": "unknownSpEffectId_0x38c",
-      "Name": "Unknown SpEffect ID",
-      "Description": ""
+      "Field": "MimicryLotVariationLimitedSpEffectId_1",
+      "Name": "Block Chameleon Transform: Type 1 - SpEffect ID",
+      "Description": "Special effect ID that prevents transformation into Mimicry Candidate 1 (used when the system applies the effect from image and area information after DLC is open) [-1 or 0: Invalid] [GR] SEQ04459"
     },
     {
-      "Field": "unknownSpEffectId_0x390",
-      "Name": "Unknown SpEffect ID",
-      "Description": ""
+      "Field": "MimicryLotVariationLimitedSpEffectId_2",
+      "Name": "Block Chameleon Transform: Type 2 - SpEffect ID",
+      "Description": "Special effect ID that prevents transformation into Mimicry Candidate 2 (used when the system applies the effect from image and area information after DLC is open) [-1 or 0: Invalid] [GR] SEQ04459"
     },
     {
-      "Field": "baseReveredSpiritTorrentBlessingSpEffectId",
-      "Name": "Base Revered Spirit Torrent Blessing SpEffect ID",
+      "Field": "dlcPcHorseDoping_BaseSpecialEffectId",
+      "Name": "DLC Revered Spirit Torrent Blessing: Base SpEffect ID",
       "Description": ""
     },
     {

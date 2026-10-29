@@ -5,54 +5,54 @@
   "Description": null,
   "Fields": [
     {
-      "Field": "enableRaytraceAO",
-      "Name": "Enable Raytracing Ambient Occlusion",
+      "Field": "enabled",
+      "Name": "Enable All",
       "Description": ""
     },
     {
-      "Field": "enableRaytraceShadows",
-      "Name": "Enable Raytracing Shadows",
+      "Field": "dirLightShadowEnabled",
+      "Name": "Enable Parallel Light Shadows",
       "Description": ""
     },
     {
-      "Field": "Unk0x02",
+      "Field": "aoEnabled",
+      "Name": "Enable Ambient Occlusion",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "Unk0x03",
-      "Name": "",
+      "Field": "dirLightShadowRaySampleScale",
+      "Name": "Parallel Light Shadow Ray Sample Count Scale",
       "Description": ""
     },
     {
-      "Field": "UnkFloat0x04",
-      "Name": "",
+      "Field": "dirLightShadowRaySampleOffset",
+      "Name": "Parallel Light Shadow Ray Sample Count Offset",
       "Description": ""
     },
     {
-      "Field": "Unk0x08",
-      "Name": "",
+      "Field": "aoRaySampleScale",
+      "Name": "AO Shadow Ray Sample Count Scale",
       "Description": ""
     },
     {
-      "Field": "UnkFloat0x0C",
-      "Name": "",
+      "Field": "aoRaySampleOffset",
+      "Name": "AO Shadow Ray Sample Count Offset",
       "Description": ""
     },
     {
-      "Field": "Unk0x10",
-      "Name": "",
-      "Description": ""
+      "Field": "dirLightShadowConeScale",
+      "Name": "Parallel Light Shadow Cone Size Scale",
+      "Description": "Normally, adjust within the range of 0 to 1.0. Setting it to 0 will automatically result in a sample size of 1."
     },
     {
-      "Field": "penumbraSize",
-      "Name": "Penumbra Size",
-      "Description": "Sun source radius"
-    },
-    {
-      "Field": "renderDistance",
-      "Name": "Render Distance",
-      "Description": ""
+      "Field": "compositeDistScale",
+      "Name": "Ray Tracing Effective Range Scale",
+      "Description": "This feature scales the switching distance between SSAO and ShadowMap."
     }
   ]
 }

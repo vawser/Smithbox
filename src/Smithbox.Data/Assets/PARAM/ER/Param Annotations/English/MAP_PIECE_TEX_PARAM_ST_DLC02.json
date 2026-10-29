@@ -50,34 +50,44 @@
       "Description": "Multiplayer area ID (-1 - invalid value)"
     },
     {
-      "Field": "unknown_0x10",
+      "Field": "isUseHeightInfo",
+      "Name": "Separate by High and Low Altitudes",
+      "Description": "Should we set the high and low points separately? If yes, we will refer to the data for the high and low points."
+    },
+    {
+      "Field": "pad2",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_0x14",
+      "Field": "borderHeight",
+      "Name": "High / Low Altitude Boundary Height",
+      "Description": "In metres."
+    },
+    {
+      "Field": "pad3",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_0x18",
-      "Name": "",
-      "Description": ""
+      "Field": "saveMapNameIdLowPlace",
+      "Name": "Low Altitude: Map Name ID for Save Data",
+      "Description": "Map name ID for displaying name in save data"
     },
     {
-      "Field": "unknown_0x1c",
-      "Name": "",
-      "Description": ""
+      "Field": "saveMapNameIdHighPlace",
+      "Name": "Low Altitude: Map Name ID for Save Data",
+      "Description": "Map name ID for displaying name in save data"
     },
     {
-      "Field": "unknownPlayRegion_1",
-      "Name": "Multiplayer Area ID [1]",
-      "Description": ""
+      "Field": "multiPlayAreaIdLowPlace",
+      "Name": "High Altitude: Multiplayer Area ID",
+      "Description": "The play region for the high altitude area."
     },
     {
-      "Field": "unknownPlayRegion_2",
-      "Name": "Multiplayer Area ID [2]",
-      "Description": ""
+      "Field": "multiPlayAreaIdHighPlace",
+      "Name": "High Altitude: Multiplayer Area ID",
+      "Description": "The play region for the low altitude area."
     }
   ]
 }

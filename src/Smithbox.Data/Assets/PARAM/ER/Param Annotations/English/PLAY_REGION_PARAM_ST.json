@@ -161,12 +161,12 @@
     },
     {
       "Field": "dispMask00",
-      "Name": "Display Mask M00",
+      "Name": "Display Mask M00 (World Map)",
       "Description": "Whether to display on map M00"
     },
     {
       "Field": "dispMask01",
-      "Name": "Display Mask M01",
+      "Name": "Display Mask M01 (Underground Map)",
       "Description": "Whether to display on map M01"
     },
     {
@@ -195,9 +195,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x45_1",
-      "Name": "",
-      "Description": ""
+      "Field": "dispMask10",
+      "Name": "Display Mask M10 (DLC World Map)",
+      "Description": "Whether to display on map M10"
     },
     {
       "Field": "pad1",

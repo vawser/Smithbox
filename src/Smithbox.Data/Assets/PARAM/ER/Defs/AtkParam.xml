@@ -1396,14 +1396,75 @@
       <DisplayName>pad</DisplayName>
       <SortID>12005</SortID>
     </Field>
-    <Field Def="s32 finalDamageRateId">
+    
+    <Field Def="s32 finalDamageRateParamId = -1">
+      <DisplayName>対人最終ダメージ倍率ID</DisplayName>
+      <Description>「対人」の場合、最終的な与ダメを計算する際に、最終ダメージ倍率パラメータの各倍率を適用する</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>13000</SortID>
     </Field>
     
     <Field Def="dummy8 pad7_old[12]" RemovedVersion="11210015"/>
     
-    <Field Def="u8 subCategory3" FirstVersion="11210015"/>
-    <Field Def="u8 subCategory4" FirstVersion="11210015"/>
-    <Field Def="dummy8 pad7[10]" FirstVersion="11210015"/>
+    <Field Def="u8 subCategory3" FirstVersion="11210015">
+      <DisplayName>サブカテゴリ3</DisplayName>
+      <Enum>ATK_SUB_CATEGORY</Enum>
+      <Description>サブカテゴリ3</Description>
+      <Maximum>255</Maximum>
+      <SortID>3602</SortID>
+    </Field>
+    <Field Def="u8 subCategory4" FirstVersion="11210015">
+      <DisplayName>サブカテゴリ4</DisplayName>
+      <Enum>ATK_SUB_CATEGORY</Enum>
+      <Description>サブカテゴリ4</Description>
+      <Maximum>255</Maximum>
+      <SortID>3603</SortID>
+    </Field>
+    <Field Def="u8 subCategory5" FirstVersion="11210015">
+      <DisplayName>サブカテゴリ5</DisplayName>
+      <Enum>ATK_SUB_CATEGORY</Enum>
+      <Description>サブカテゴリ5</Description>
+      <Maximum>255</Maximum>
+      <SortID>3604</SortID>
+    </Field>
+    <Field Def="u8 subCategory6" FirstVersion="11210015">
+      <DisplayName>サブカテゴリ6</DisplayName>
+      <Enum>ATK_SUB_CATEGORY</Enum>
+      <Description>サブカテゴリ6</Description>
+      <Maximum>255</Maximum>
+      <SortID>3605</SortID>
+    </Field>
+    <Field Def="u8 subCategory7" FirstVersion="11210015">
+      <DisplayName>サブカテゴリ7</DisplayName>
+      <Enum>ATK_SUB_CATEGORY</Enum>
+      <Description>サブカテゴリ7</Description>
+      <Maximum>255</Maximum>
+      <SortID>3606</SortID>
+    </Field>
+    <Field Def="u8 subCategory8" FirstVersion="11210015">
+      <DisplayName>サブカテゴリ8</DisplayName>
+      <Enum>ATK_SUB_CATEGORY</Enum>
+      <Description>サブカテゴリ8</Description>
+      <Maximum>255</Maximum>
+      <SortID>3607</SortID>
+    </Field>
+    <Field Def="u8 subCategory9" FirstVersion="11210015">
+      <DisplayName>サブカテゴリ9</DisplayName>
+      <Enum>ATK_SUB_CATEGORY</Enum>
+      <Description>サブカテゴリ9</Description>
+      <Maximum>255</Maximum>
+      <SortID>3608</SortID>
+    </Field>
+    <Field Def="u8 subCategory10" FirstVersion="11210015">
+      <DisplayName>サブカテゴリ10</DisplayName>
+      <Enum>ATK_SUB_CATEGORY</Enum>
+      <Description>サブカテゴリ10</Description>
+      <Maximum>255</Maximum>
+      <SortID>3609</SortID>
+    </Field>
+    <Field Def="dummy8 pad7[4]" FirstVersion="11210015"/>
     
   </Fields>
 </PARAMDEF>

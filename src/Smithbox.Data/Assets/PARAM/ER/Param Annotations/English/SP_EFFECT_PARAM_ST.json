@@ -1720,8 +1720,8 @@
       "Description": "If checked, issue an intrusion_B request when activated"
     },
     {
-      "Field": "isDestinedDeathHpMult",
-      "Name": "Is Destined Death HP Mult",
+      "Field": "isMaxHpExpression",
+      "Name": "Display Maximum HP Reduction",
       "Description": "Makes portion of HP bar in UI black when used with max HP multipliers."
     },
     {
@@ -1730,53 +1730,48 @@
       "Description": ""
     },
     {
-      "Field": "isHpBurnEffect",
-      "Name": "Is HP Burn Effect",
-      "Description": "Determines whether this effect applies Destined Death/Black Flame HP Burn."
+      "Field": "isUseNpcParamDamageCorrect",
+      "Name": "Apply NPC Param Damage Correction",
+      "Description": "Should we apply the damage multiplier adjustment for NPC parameters?"
     },
     {
-      "Field": "unknown_0x352_6",
-      "Name": "Unknown 0x352:6",
-      "Description": ""
+      "Field": "excludeSpecifiedNpcOnAttackApply",
+      "Name": "Exclude Specified NPC on Attack Application",
+      "Description": "Used for the anti-Undead effects."
     },
     {
-      "Field": "unknown_0x352_7",
-      "Name": "Unknown 0x352:7",
-      "Description": ""
+      "Field": "isWeakA",
+      "Name": "Apply Weakness Type: A",
+      "Description": "If enabled, the owner of the SpEffect has this weakness type."
+    },
+    {
+      "Field": "isWeakB",
+      "Name": "Apply Weakness Type: B",
+      "Description": "If enabled, the owner of the SpEffect has this weakness type."
+    },
+    {
+      "Field": "isWeakC",
+      "Name": "Apply Weakness Type: C",
+      "Description": "If enabled, the owner of the SpEffect has this weakness type."
+    },
+    {
+      "Field": "isWeakD",
+      "Name": "Apply Weakness Type: D",
+      "Description": "If enabled, the owner of the SpEffect has this weakness type."
+    },
+    {
+      "Field": "isWeakE",
+      "Name": "Apply Weakness Type: E",
+      "Description": "If enabled, the owner of the SpEffect has this weakness type."
+    },
+    {
+      "Field": "isWeakF",
+      "Name": "Apply Weakness Type: F",
+      "Description": "If enabled, the owner of the SpEffect has this weakness type."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_0",
-      "Name": "Unknown 0x353:0",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_1",
-      "Name": "Unknown 0x353:1",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_2",
-      "Name": "Unknown 0x353:2",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_3",
-      "Name": "Unknown 0x353:3",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_4",
-      "Name": "Unknown 0x353:4",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x353_5",
-      "Name": "Unknown 0x353:5",
       "Description": ""
     },
     {

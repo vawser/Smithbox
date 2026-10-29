@@ -1367,8 +1367,41 @@ public class ParamFieldWindow
             printedName = $"{fieldOffset} {printedName}";
         }
 
-        ImGui.AlignTextToFramePadding();
-        ImGui.TextUnformatted(printedName);
+        // Display coloring if field is not covered by META or Annotations
+        if (CFG.Current.Developer_Enable_Tools)
+        {
+            if (cellMeta == null && fieldAnnotation == null)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.78f, 0.01f, 0.99f, 1));
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted(printedName);
+                ImGui.PopStyleColor(1);
+            }
+            else if(cellMeta == null)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.01f, 0.99f, 0.86f, 1));
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted(printedName);
+                ImGui.PopStyleColor(1);
+            }
+            else if(fieldAnnotation == null)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.99f, 0.01f, 0.55f, 1));
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted(printedName);
+                ImGui.PopStyleColor(1);
+            }
+            else
+            {
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted(printedName);
+            }
+        }
+        else
+        {
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted(printedName);
+        }
     }
 
     private void DefaultContextMenu(FieldMetaContext metaContext, string internalName, string activeParam, bool showPinOptions, bool isPinned, Param.Column col, Type propType, dynamic oldval, bool isNameMenu)

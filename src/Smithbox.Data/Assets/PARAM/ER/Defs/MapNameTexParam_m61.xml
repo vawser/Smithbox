@@ -59,16 +59,105 @@
       <EditFlags>None</EditFlags>
       <SortID>200</SortID>
     </Field>
-    <Field Def="s32 unknown_0xc" />
-    <Field Def="u8 unknown_0x10" />
-    <Field Def="u8 unknown_0x11" />
-    <Field Def="u8 unknown_0x12" />
-    <Field Def="u8 unknown_0x13" />
-    <Field Def="s32 unknown_0x14" />
-    <Field Def="s32 unknownTextID_1" />
-    <Field Def="s32 unknownTextID_2" />
-    <Field Def="s32 unknown_0x20" />
-    <Field Def="s32 unknown_0x24" />
+     <Field Def="s16 BgmPlaceInfo = 999">
+      <DisplayName>BGM用場所情報</DisplayName>
+      <Enum>SOUND_BGM_MAP_PLACE_TYPE</Enum>
+      <Description>BGM用場所情報(デフォルト「999:未設定」)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>300</SortID>
+      <UnkC8>通常</UnkC8>
+    </Field>
+    <Field Def="s16 EnvPlaceInfo = 999">
+      <DisplayName>環境音用場所情報</DisplayName>
+      <Enum>SOUND_ENV_MAP_PLACE_TYPE</Enum>
+      <Description>環境音用場所情報(デフォルト「999:未設定」)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>310</SortID>
+      <UnkC8>通常</UnkC8>
+    </Field>
+    <Field Def="u8 isUseHeightInfo">
+      <DisplayName>高所低所分けて設定するか？</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>高所低所分けて設定するか？〇の場合は高所低所分けたほうのデータを参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad2[3]">
+      <DisplayName>パッド2</DisplayName>
+      <SortID>4005</SortID>
+    </Field>
+    <Field Def="s16 borderHeight">
+      <DisplayName>高所低所境界高さ[m]</DisplayName>
+      <Description>高所低所境界高さ[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-32768</Minimum>
+      <Maximum>32767</Maximum>
+      <Increment>0</Increment>
+      <SortID>1001</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad3[2]">
+      <DisplayName>パッド3</DisplayName>
+      <SortID>4006</SortID>
+    </Field>
+    <Field Def="s32 mapNameIdLowPlace">
+      <DisplayName>マップ名ID_地名表示用_低所</DisplayName>
+      <Description>地名表示用のマップ名ID_低所[PlaceName](0:無効値)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-2147483648</Minimum>
+      <Maximum>2147483647</Maximum>
+      <SortID>2000</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="s32 mapNameIdHighPlace">
+      <DisplayName>マップ名ID_地名表示用_高所</DisplayName>
+      <Description>地名表示用のマップ名ID_高所[PlaceName](0:無効値)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-2147483648</Minimum>
+      <Maximum>2147483647</Maximum>
+      <SortID>2001</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="s16 BgmPlaceInfoLowPlace = 999">
+      <DisplayName>BGM用場所情報_低所</DisplayName>
+      <Enum>SOUND_BGM_MAP_PLACE_TYPE</Enum>
+      <Description>BGM用場所情報_低所(デフォルト「999:未設定」)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>3000</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="s16 BgmPlaceInfoHighPlace = 999">
+      <DisplayName>BGM用場所情報_高所</DisplayName>
+      <Enum>SOUND_BGM_MAP_PLACE_TYPE</Enum>
+      <Description>BGM用場所情報_高所(デフォルト「999:未設定」)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>3001</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="s16 EnvPlaceInfoLowPlace = 999">
+      <DisplayName>環境音用場所情報_低所</DisplayName>
+      <Enum>SOUND_ENV_MAP_PLACE_TYPE</Enum>
+      <Description>環境音用場所情報_低所(デフォルト「999:未設定」)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>4000</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="s16 EnvPlaceInfoHighPlace = 999">
+      <DisplayName>環境音用場所情報_高所</DisplayName>
+      <Enum>SOUND_ENV_MAP_PLACE_TYPE</Enum>
+      <Description>環境音用場所情報_高所(デフォルト「999:未設定」)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>4001</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
 
   </Fields>
 </PARAMDEF>

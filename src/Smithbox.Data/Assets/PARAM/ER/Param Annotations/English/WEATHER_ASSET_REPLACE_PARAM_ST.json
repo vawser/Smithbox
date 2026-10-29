@@ -20,9 +20,9 @@
       "Description": ""
     },
     {
-      "Field": "isFireAsh",
-      "Name": "Is Burning Ash",
-      "Description": "Specifies whether or not to adapt to the fire ash state of the map."
+      "Field": "FireAshEventType",
+      "Name": "Burning Ash Event Type",
+      "Description": "Refer to the map's Ashes of Fire event status to specify whether this replacement parameter should be applied. (×: Normally enabled, ○: Enabled during Ashes of Fire, Ignore: Always enabled)"
     },
     {
       "Field": "padding1",

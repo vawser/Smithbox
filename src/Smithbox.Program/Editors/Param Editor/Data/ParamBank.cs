@@ -3,21 +3,8 @@ using Andre.IO.VFS;
 using DotNext.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.GparamEditor;
 using StudioCore.Formats;
-using StudioCore.Renderer;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
-using System.Linq;
-using System.Text.Encodings.Web;
-using System.Text.Json;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 

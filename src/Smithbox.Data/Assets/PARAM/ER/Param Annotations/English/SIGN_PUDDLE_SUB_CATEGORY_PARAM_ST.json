@@ -5,24 +5,34 @@
   "Description": null,
   "Fields": [
     {
-      "Field": "startPad",
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "signPuddleCategoryText",
-      "Name": "Sign Puddle Category Text ID",
+      "Field": "disableParamReserve2",
+      "Name": "",
       "Description": ""
     },
     {
-      "Field": "signPuddleTabId",
+      "Field": "textId",
+      "Name": "Text ID",
+      "Description": "Subcategory display name text ID"
+    },
+    {
+      "Field": "tabId",
       "Name": "Tab ID",
-      "Description": ""
+      "Description": "The tab ID for the signature accumulation. The ID of the tab to which this subcategory belongs."
     },
     {
-      "Field": "unknown_0xa",
-      "Name": "",
-      "Description": ""
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "Sign accumulation tab sort ID. Display order of subcategories within the tab."
     },
     {
       "Field": "endPad",

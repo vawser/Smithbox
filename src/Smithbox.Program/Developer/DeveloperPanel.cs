@@ -63,7 +63,7 @@ public class DeveloperPanel
 
         if (ImGui.MenuItem($"Execute Script"))
         {
-            RowNameHelper.TranslateFromCsvToJson();
+            ParamDefHelper.ConvertPARAMDEFtoXML();
         }
     }
 

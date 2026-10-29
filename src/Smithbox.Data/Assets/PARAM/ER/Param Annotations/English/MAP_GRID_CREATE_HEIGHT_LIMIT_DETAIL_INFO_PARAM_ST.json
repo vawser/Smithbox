@@ -5,107 +5,197 @@
   "Description": null,
   "Fields": [
     {
-      "Field": "mapId",
-      "Name": "Map ID",
-      "Description": "Refers to the map ID without underscores."
+      "Field": "currentGridBlockId",
+      "Name": "Current Grid ID",
+      "Description": "Specify the current block ID in 8 digits. You can specify it using LOD0, 1, or 2. If there is an overlap in ranges, LOD0 takes precedence (e.g., m61_48_48_00 → 61484800, m61_24_24_01 → 61242401)."
     },
     {
-      "Field": "unknown_0x4",
+      "Field": "targetGridId00",
+      "Name": "Target LOD2: Grid Number 00",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId01",
+      "Name": "Target LOD2: Grid Number 01",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId02",
+      "Name": "Target LOD2: Grid Number 02",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId03",
+      "Name": "Target LOD2: Grid Number 03",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId04",
+      "Name": "Target LOD2: Grid Number 04",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId05",
+      "Name": "Target LOD2: Grid Number 05",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId06",
+      "Name": "Target LOD2: Grid Number 06",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId07",
+      "Name": "Target LOD2: Grid Number 07",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId08",
+      "Name": "Target LOD2: Grid Number 08",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId09",
+      "Name": "Target LOD2: Grid Number 09",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId10",
+      "Name": "Target LOD2: Grid Number 10",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId11",
+      "Name": "Target LOD2: Grid Number 11",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId12",
+      "Name": "Target LOD2: Grid Number 12",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId13",
+      "Name": "Target LOD2: Grid Number 13",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId14",
+      "Name": "Target LOD2: Grid Number 14",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId15",
+      "Name": "Target LOD2: Grid Number 15",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId16",
+      "Name": "Target LOD2: Grid Number 16",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "targetGridId17",
+      "Name": "Target LOD2: Grid Number 17",
+      "Description": "Specify the target LOD2 block using four digits (e.g., m61_11_11_02 → 1111) (0: invalid value)."
+    },
+    {
+      "Field": "reservedGrid",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_0x8",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace00",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 00",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0xc",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace01",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 01",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x10",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace02",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 02",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x14",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace03",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 03",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x18",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace04",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 04",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x1c",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace05",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 05",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x20",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace06",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 06",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x24",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace07",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 07",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x28",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace08",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 08",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x2c",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace09",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 09",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x2d",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace10",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 10",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x2e",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace11",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 11",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x2f",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace12",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 12",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x30",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace13",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 13",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x31",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace14",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 14",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x32",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace15",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 15",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x34",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace16",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 16",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x38",
-      "Name": "",
-      "Description": ""
+      "Field": "isHeightPlace17",
+      "Name": "Is High-Altitude Asset Detailed: Grid Number 17",
+      "Description": "Specifies the height state of the target LOD2 grid (×: low (default), ○: high)."
     },
     {
-      "Field": "unknown_0x3c",
+      "Field": "reservedFlag",
       "Name": "",
       "Description": ""
     }

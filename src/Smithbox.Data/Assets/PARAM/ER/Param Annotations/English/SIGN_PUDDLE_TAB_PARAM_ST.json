@@ -5,22 +5,37 @@
   "Description": null,
   "Fields": [
     {
-      "Field": "isDlcTab",
-      "Name": "Is DLC Sign Tab",
-      "Description": ""
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
     },
     {
-      "Field": "tabTextId",
-      "Name": "Tab Text ID",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x8",
+      "Field": "disableParamReserve1",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_0xc",
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "Text ID",
+      "Description": "Tab display name text ID"
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "Tab display order sort ID. The reticle sorts from left to right."
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Tab icon ID. Menu resource compliant."
+    },
+    {
+      "Field": "pad",
       "Name": "",
       "Description": ""
     }

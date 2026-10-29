@@ -7,11 +7,48 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="dummy8 startPad[4]" />
-    <Field Def="s32 signPuddleCategoryText" />
-    <Field Def="u16 signPuddleTabId" />
-    <Field Def="u16 unknown_0xa" />
-    <Field Def="dummy8 endPad[4]" />
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <SortID>302</SortID>
+    </Field>
+    <Field Def="s32 textId = -1">
+      <DisplayName>テキストID</DisplayName>
+      <Description>サブカテゴリの表示名テキストID[MenuText]</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u16 tabId">
+      <DisplayName>サイン溜まりタブID</DisplayName>
+      <Description>サイン溜まりタブID。このサブカテゴリが所属するタブのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u16 sortId">
+      <DisplayName>サイン溜まりタブソートID</DisplayName>
+      <Description>サイン溜まりタブソートID。タブの中サブカテゴリの表示順</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="dummy8 endPad[4]">
+      <DisplayName>pad</DisplayName>
+      <SortID>303</SortID>
+    </Field>
 
   </Fields>
 </PARAMDEF>

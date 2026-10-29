@@ -300,23 +300,23 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x54",
-      "Name": "",
+      "Field": "primInvisibleMask_right_0",
+      "Name": "Right Hand Attachment Mask: 0",
       "Description": ""
     },
     {
-      "Field": "unknown_0x55",
-      "Name": "",
+      "Field": "primInvisibleMask_right_1",
+      "Name": "Right Hand Attachment Mask: 1",
       "Description": ""
     },
     {
-      "Field": "unknown_0x56",
-      "Name": "",
+      "Field": "primInvisibleMask_left_0",
+      "Name": "Left Hand Attachment Mask: 0",
       "Description": ""
     },
     {
-      "Field": "unknown_0x57",
-      "Name": "",
+      "Field": "primInvisibleMask_left_1",
+      "Name": "Left Hand Attachment Mask: 1",
       "Description": ""
     },
     {

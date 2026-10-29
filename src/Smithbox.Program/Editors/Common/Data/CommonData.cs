@@ -1,6 +1,4 @@
-﻿using StudioCore.Editors.MetadataEditor;
-using System.Diagnostics;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace StudioCore.Editors.Common;
 

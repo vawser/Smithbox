@@ -1180,9 +1180,9 @@
       "Description": ""
     },
     {
-      "Field": "hpBurnDamageRate",
-      "Name": "HP Burn Damage %",
-      "Description": "Adjusts the amount of HP Burn suffered from Destined Death/Black Flame sources."
+      "Field": "spEffectDamageCorrectRate",
+      "Name": "SpEffect Damage %",
+      "Description": "Adjusts the amount of damage applied by SpEffects (typically Destined Death)."
     },
     {
       "Field": "lockCameraParamId",
@@ -1445,8 +1445,8 @@
       "Description": ""
     },
     {
-      "Field": "isConsideredUndead",
-      "Name": "Is Considered Undead",
+      "Field": "onAttackSpecialEffectSpecifiedExclude",
+      "Name": "Special Effect upon Attack: Exclude Target Enemy",
       "Description": "Appears to determine whether an NPC is affected by anti-Undead effects."
     },
     {
