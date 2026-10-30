@@ -93,6 +93,66 @@
       "Text": "Dummy {0}: {1}"
     },
     {
+      "Key": "MODEL_Properties_Material_Preview_Header",
+      "Text": "MTD / MATBIN Preview"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Jump_TT",
+      "Text": "View this material in the Material Editor."
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Not_Found",
+      "Text": "No MTD or MATBIN was found for: {0}"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Shader",
+      "Text": "Shader: {0}"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Source",
+      "Text": "Source: {0}"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Description",
+      "Text": "Description: {0}"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Params",
+      "Text": "Parameters"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Textures",
+      "Text": "Textures"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Export_Texture_TT",
+      "Text": "Export this texture to the output folder in the project directory, using the export type set in the Texture Viewer."
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Log_Texture_Not_Loaded",
+      "Text": "Unable to export, the texture is not loaded: {0}"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Log_Texture_Exported",
+      "Text": "Exported texture to {0}"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Col_Name",
+      "Text": "Name"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Col_Value",
+      "Text": "Value"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Col_Type",
+      "Text": "Type"
+    },
+    {
+      "Key": "MODEL_Properties_Material_Preview_Col_Path",
+      "Text": "Path"
+    },
+    {
       "Key": "MODEL_PropertyView_Context_Action_Copy_Name",
       "Text": "Copy Field Name"
     },

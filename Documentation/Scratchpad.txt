@@ -9,5 +9,4 @@
 # Map Editor
   
 # Model Editor
-- Restore simple viewing of textures used by meshes (requires matbin inspection)
 

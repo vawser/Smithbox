@@ -26,7 +26,16 @@ public class MaterialCommandQueue
         // Parse select commands
         if (initcmd != null && initcmd.Length > 1)
         {
+            if (initcmd[0] == "select" && activeView != null)
+            {
+                var bank = Project.Handler.MaterialData.PrimaryBank;
+                var reference = bank.FindReference(initcmd[1]);
 
+                if (reference != null)
+                {
+                    activeView.Selection.JumpTo(bank, reference);
+                }
+            }
         }
     }
 }

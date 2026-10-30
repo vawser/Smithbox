@@ -86,6 +86,12 @@ public class MaterialFileList
                 }
             }
 
+            if (Parent.Selection.ScrollToFile && Parent.Selection.SelectedFileWrapper is MTDFileWrapper)
+            {
+                Parent.Selection.ScrollToFile = false;
+                MaterialUtils.ScrollToIndex(filteredEntries.IndexOf(Parent.Selection.SelectedFileKey));
+            }
+
             var clipper = new ImGuiListClipper();
             clipper.Begin(filteredEntries.Count);
 
@@ -150,6 +156,12 @@ public class MaterialFileList
                     {
                         filteredEntries.Add(entry.Key);
                     }
+                }
+
+                if (Parent.Selection.ScrollToFile && Parent.Selection.SelectedFileWrapper is MATBINFileWrapper)
+                {
+                    Parent.Selection.ScrollToFile = false;
+                    MaterialUtils.ScrollToIndex(filteredEntries.IndexOf(Parent.Selection.SelectedFileKey));
                 }
 
                 var clipper = new ImGuiListClipper();

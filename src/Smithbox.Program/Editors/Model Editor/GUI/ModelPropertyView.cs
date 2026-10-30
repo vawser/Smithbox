@@ -203,6 +203,11 @@ public class ModelPropertyView
         PropEditorGeneric(meta, metaType, selection, entities, entities.First().WrappedObject, classIndex);
 
         ImGui.Columns(1);
+
+        if (entities.Count() == 1 && first.WrappedObject is IFlverMaterial material)
+        {
+            ModelPropertyDecorators.MaterialPreview(View, material.MTD);
+        }
     }
 
     private void PropEditorGeneric(

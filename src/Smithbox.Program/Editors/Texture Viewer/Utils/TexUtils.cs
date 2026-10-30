@@ -7,6 +7,28 @@ namespace StudioCore.Editors.TextureViewer;
 
 public static class TexUtils
 {
+    public static void ExportImage(string exportFilePath, byte[] bytes, TextureExportType exportType)
+    {
+        switch (exportType)
+        {
+            case TextureExportType.DDS: ExportDDSImage(exportFilePath, bytes); break;
+            case TextureExportType.PNG: ExportPNGImage(exportFilePath, bytes); break;
+            case TextureExportType.BMP: ExportBMPImage(exportFilePath, bytes); break;
+            case TextureExportType.TGA: ExportTGAImage(exportFilePath, bytes); break;
+            case TextureExportType.TIFF: ExportTIFFImage(exportFilePath, bytes); break;
+            case TextureExportType.JPEG: ExportJPEGImage(exportFilePath, bytes); break;
+            case TextureExportType.WEBP: ExportWEBPImage(exportFilePath, bytes); break;
+        }
+    }
+
+    /// <summary>
+    /// The extension the export functions append, which is the lowercase name of each type
+    /// </summary>
+    public static string GetExportExtension(TextureExportType exportType)
+    {
+        return $".{exportType.ToString().ToLowerInvariant()}";
+    }
+
     public static void ExportDDSImage(string exportFilePath, byte[] bytes)
     {
         File.WriteAllBytes($"{exportFilePath}.dds", bytes);

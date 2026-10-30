@@ -37,8 +37,15 @@ public class MaterialContainerList
 
         ImGui.BeginTabBar("sourceTabs");
 
+        // The tab bar applies a requested tab on the next frame
+        var requestedType = Parent.Selection.RequestedSourceType;
+        Parent.Selection.RequestedSourceType = null;
+
+        var mtdFlags = requestedType is MaterialSourceType.MTD ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
+        var matbinFlags = requestedType is MaterialSourceType.MATBIN ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
+
         // MTD
-        if (ImGui.BeginTabItem($"{LOC.Get("MAT_ContainerList_Tab_MTD")}##mtdTab"))
+        if (ImGui.BeginTabItem($"{LOC.Get("MAT_ContainerList_Tab_MTD")}##mtdTab", mtdFlags))
         {
             Parent.Selection.SourceType = MaterialSourceType.MTD;
 
@@ -54,7 +61,7 @@ public class MaterialContainerList
         if (MaterialUtils.SupportsMATBIN(Project))
         {
             // MATBIN
-            if (ImGui.BeginTabItem($"{LOC.Get("MAT_ContainerList_Tab_MATBIN")}##matbinTab"))
+            if (ImGui.BeginTabItem($"{LOC.Get("MAT_ContainerList_Tab_MATBIN")}##matbinTab", matbinFlags))
             {
                 Parent.Selection.SourceType = MaterialSourceType.MATBIN;
 
@@ -92,6 +99,12 @@ public class MaterialContainerList
                     {
                         filteredEntries.Add(entry.Key);
                     }
+                }
+
+                if (Parent.Selection.ScrollToContainer && wrappers.ContainsKey(Parent.Selection.SelectedBinderEntry))
+                {
+                    Parent.Selection.ScrollToContainer = false;
+                    MaterialUtils.ScrollToIndex(filteredEntries.IndexOf(Parent.Selection.SelectedBinderEntry));
                 }
 
                 var clipper = new ImGuiListClipper();
@@ -153,6 +166,12 @@ public class MaterialContainerList
                         {
                             filteredEntries.Add(entry.Key);
                         }
+                    }
+
+                    if (Parent.Selection.ScrollToContainer && wrappers.ContainsKey(Parent.Selection.SelectedBinderEntry))
+                    {
+                        Parent.Selection.ScrollToContainer = false;
+                        MaterialUtils.ScrollToIndex(filteredEntries.IndexOf(Parent.Selection.SelectedBinderEntry));
                     }
 
                     var clipper = new ImGuiListClipper();

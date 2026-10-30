@@ -206,47 +206,7 @@ public class TextureExport
 
     private void ExportTextureFile(string exportFilePath, byte[] bytes)
     {
-        // DDS
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.DDS)
-        {
-            TexUtils.ExportDDSImage(exportFilePath, bytes);
-        }
-
-        // PNG
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.PNG)
-        {
-            TexUtils.ExportPNGImage(exportFilePath, bytes);
-        }
-
-        // BMP
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.BMP)
-        {
-            TexUtils.ExportBMPImage(exportFilePath, bytes);
-        }
-
-        // TGA
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.TGA)
-        {
-            TexUtils.ExportTGAImage(exportFilePath, bytes);
-        }
-
-        // TIFF
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.TIFF)
-        {
-            TexUtils.ExportTIFFImage(exportFilePath, bytes);
-        }
-
-        // JPEG
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.JPEG)
-        {
-            TexUtils.ExportJPEGImage(exportFilePath, bytes);
-        }
-
-        // WEBP
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.WEBP)
-        {
-            TexUtils.ExportWEBPImage(exportFilePath, bytes);
-        }
+        TexUtils.ExportImage(exportFilePath, bytes, CFG.Current.TextureViewerToolbar_ExportTextureType);
     }
 
     public async Task ExportTPFsFromContainerAsync(BinderContents binderContents)

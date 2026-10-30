@@ -29,6 +29,9 @@ public class MaterialBank : IDisposable
     private ConcurrentDictionary<string, MTD> MTDLookup = new();
     private ConcurrentDictionary<string, MATBIN> MATBINLookup = new();
 
+    private ConcurrentDictionary<string, MaterialReference> MTDReferences = new(StringComparer.OrdinalIgnoreCase);
+    private ConcurrentDictionary<string, MaterialReference> MATBINReferences = new(StringComparer.OrdinalIgnoreCase);
+
     public MaterialBank(string name, ProjectEntry project, VirtualFileSystem targetFs)
     {
         Project = project;
@@ -48,6 +51,7 @@ public class MaterialBank : IDisposable
                 {
                     var shortName = Path.GetFileNameWithoutExtension(kv.Key.Replace('\\', Path.DirectorySeparatorChar));
                     MTDLookup[shortName] = kv.Value.MTD;
+                    MTDReferences[shortName] = new MaterialReference(MaterialSourceType.MTD, entry, kv.Key, kv.Value);
                 }
             }
         });
@@ -62,6 +66,7 @@ public class MaterialBank : IDisposable
                 {
                     var shortName = Path.GetFileNameWithoutExtension(kv.Key.Replace('\\', Path.DirectorySeparatorChar));
                     MATBINLookup[shortName] = kv.Value.MATBIN;
+                    MATBINReferences[shortName] = new MaterialReference(MaterialSourceType.MATBIN, entry, kv.Key, kv.Value);
                 }
             }
         });
@@ -76,6 +81,20 @@ public class MaterialBank : IDisposable
 
     public MATBIN GetMatbin(string name) =>
         MATBINLookup.TryGetValue(name, out var matbin) ? matbin : null;
+
+    /// <summary>
+    /// Finds the MTD or MATBIN for a FLVER material's virtual path.
+    /// The MATBIN takes priority if both exist, matching the renderer's texture lookup.
+    /// </summary>
+    public MaterialReference FindReference(string materialPath)
+    {
+        var shortName = Path.GetFileNameWithoutExtension(materialPath.Replace('\\', Path.DirectorySeparatorChar));
+
+        if (MATBINReferences.TryGetValue(shortName, out var matbin))
+            return matbin;
+
+        return MTDReferences.TryGetValue(shortName, out var mtd) ? mtd : null;
+    }
 
     public async Task<bool> Save(MaterialEditorView view)
     {
@@ -101,14 +120,23 @@ public class MaterialBank : IDisposable
         MATBINs.Clear();
         MTDLookup.Clear();
         MATBINLookup.Clear();
+        MTDReferences.Clear();
+        MATBINReferences.Clear();
 
         MTDs = null;
         MATBINs = null;
         MTDLookup = null;
         MATBINLookup = null;
+        MTDReferences = null;
+        MATBINReferences = null;
     }
     #endregion
 }
+
+/// <summary>
+/// The location of a material file within the bank
+/// </summary>
+public record MaterialReference(MaterialSourceType SourceType, FileDictionaryEntry BinderEntry, string FileKey, MaterialFileWrapper File);
 
 public class MTDWrapper
 {
