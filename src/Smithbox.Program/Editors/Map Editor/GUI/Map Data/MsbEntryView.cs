@@ -6,6 +6,7 @@ using StudioCore.Keybinds;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using System.Reflection;
 
@@ -177,7 +178,7 @@ public class MsbEntryView
             HandleEntrySelection(listIndex, ent);
         }
 
-        if (ImGui.BeginPopupContextItem($"##EntryCtx_{listIndex}"))
+        if (ent.Type != MsbEntityType.Models && ImGui.BeginPopupContextItem($"##EntryCtx_{listIndex}"))
         {
             View.ReorderAction.OnContext(ent);
             View.DuplicateAction.OnContext();
@@ -233,7 +234,7 @@ public class MsbEntryView
         if (map is null)
             return;
 
-        foreach (var obj in map.Objects)
+        foreach (var obj in map.Objects.Concat(map.Models))
         {
             if (obj is MsbEntity { WrappedObject: not null } ent)
             {
@@ -272,7 +273,7 @@ public class MsbEntryView
                 foreach (var entry in list)
                 {
                     // These are counted from the entities, which reflect the current state of the map
-                    if (entry is null or IMsbPart or IMsbRegion or IMsbEvent)
+                    if (entry is null or IMsbModel or IMsbPart or IMsbRegion or IMsbEvent)
                         continue;
 
                     AddEntryCount(entry);
@@ -334,7 +335,9 @@ public class MsbEntryView
         }
         else
         {
-            foreach (var obj in map.Objects)
+            var entities = Selection.SelectedBaseCategory is "Model" ? map.Models : map.Objects;
+
+            foreach (var obj in entities)
             {
                 if (obj is MsbEntity ent && subType.IsInstanceOfType(ent.WrappedObject))
                 {

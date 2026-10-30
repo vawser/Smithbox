@@ -132,7 +132,7 @@ public class DuplicateToMapAction
         if (TargetMap != (null, null))
         {
             MapContainer targetMap = (MapContainer)TargetMap.Item2;
-            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+            var sel = View.ViewportSelection.GetPlacedEntities();
 
             if (sel.Any(e => e.WrappedObject is BTL.Light))
             {
@@ -169,7 +169,7 @@ public class DuplicateToMapAction
     public void DuplicateToMapActions()
     {
         MapContainer targetMap = (MapContainer)TargetMap.Item2;
-        var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+        var sel = View.ViewportSelection.GetPlacedEntities();
 
         DuplicateToMap(sel, targetMap, TargetBTL.Item2);
     }
@@ -206,7 +206,7 @@ public class DuplicateToMapAction
     {
         StoredSelection = new();
 
-        var sel = activeView.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+        var sel = activeView.ViewportSelection.GetPlacedEntities();
         foreach(var entry in sel)
         {
             var clone = entry.Clone();

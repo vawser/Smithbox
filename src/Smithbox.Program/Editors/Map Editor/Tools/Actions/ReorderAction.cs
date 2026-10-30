@@ -130,7 +130,7 @@ public class ReorderAction
     {
         if (View.ViewportSelection.IsSelection())
         {
-            EntReorderAction action = new(View, View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), direction);
+            EntReorderAction action = new(View, View.ViewportSelection.GetPlacedEntities(), direction);
 
             View.ViewportActionManager.ExecuteAction(action);
         }

@@ -69,7 +69,7 @@ public class MapContainer : ObjectContainer
 
     /// <summary>
     /// The MSB this map was loaded from. Saving serializes the entities instead, so this is only for reading the
-    /// entries that have no entity (models, routes and layers).
+    /// entries that have no entity (routes and layers).
     /// </summary>
     [XmlIgnore]
     public IMsb SourceMsb;
@@ -214,6 +214,11 @@ public class MapContainer : ObjectContainer
                 obj.Dispose();
             }
         }
+
+        foreach (Entity model in Models)
+        {
+            model.Dispose();
+        }
     }
 
     public void LoadMSB(IMsb msb)
@@ -226,6 +231,14 @@ public class MapContainer : ObjectContainer
         {
             using var __modelScope = Profiler.TracyZoneAuto();
             LoadedModels.Add(m.Name, m);
+
+            // Held apart from Objects, as models have no presence in the map: nothing should place, render or search them
+            var n = new MsbEntity(View.Universe, this, m, MsbEntityType.Models);
+
+            // The name is the key parts use to find their model, so it cannot be edited freely
+            n.SupportsName = false;
+
+            Models.Add(n);
             __modelScope.Dispose();
         }
 

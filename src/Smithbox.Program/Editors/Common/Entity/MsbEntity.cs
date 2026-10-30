@@ -48,6 +48,7 @@ public class MsbEntity : Entity
     }
     public override bool HasTransform => 
         Type != MsbEntityType.Event && 
+        Type != MsbEntityType.Models &&
         Type != MsbEntityType.DS2GeneratorRegist &&
         Type != MsbEntityType.DS2Event;
 

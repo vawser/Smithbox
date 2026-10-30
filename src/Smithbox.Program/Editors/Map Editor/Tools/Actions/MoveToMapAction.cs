@@ -111,7 +111,7 @@ public class MoveToMapAction
         {
             MapContainer targetMap = (MapContainer)TargetMap.Item2;
 
-            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+            var sel = View.ViewportSelection.GetPlacedEntities();
 
             if (sel.Any(e => e.WrappedObject is BTL.Light))
             {

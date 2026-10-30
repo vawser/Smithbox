@@ -26,6 +26,8 @@ public class MsbCategoryView
     private string SubCategoryListFilter = "";
     private bool ExactSubCategoryListFilter = false;
 
+    private Dictionary<string, Type> _baseCategories;
+
     public MsbCategoryView(MapEditorView view, ProjectEntry project)
     {
         View = view;
@@ -34,7 +36,7 @@ public class MsbCategoryView
 
     public void Display()
     {
-        var baseCategories = MsbCategories.GetBaseCategories(Project);
+        var baseCategories = _baseCategories ??= MsbCategories.GetBaseCategories(View);
 
         GUI.TitleHeader("Base Categories", "");
 

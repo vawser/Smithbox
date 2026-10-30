@@ -1,4 +1,5 @@
 ﻿using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -150,6 +151,15 @@ public class ViewportSelection
         }
 
         return entities;
+    }
+
+    /// <summary>
+    /// Return the selected entities that are placed in a map. Models are excluded, as they exist for the names
+    /// that parts use, so they cannot be duplicated, deleted or moved independently.
+    /// </summary>
+    public List<MsbEntity> GetPlacedEntities()
+    {
+        return GetFilteredSelection<MsbEntity>(e => e.Type != MsbEntityType.Models).ToList();
     }
 
     /// <summary>

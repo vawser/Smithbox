@@ -73,10 +73,14 @@ public class DeleteAction
     {
         if (View.ViewportSelection.IsSelection())
         {
-            EntDeleteAction action = new(View,
-            View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), true);
+            var mapObjects = View.ViewportSelection.GetPlacedEntities();
 
-            View.ViewportActionManager.ExecuteAction(action);
+            if (mapObjects.Count > 0)
+            {
+                EntDeleteAction action = new(View, mapObjects, true);
+
+                View.ViewportActionManager.ExecuteAction(action);
+            }
         }
         else
         {

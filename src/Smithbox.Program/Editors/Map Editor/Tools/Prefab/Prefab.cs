@@ -259,7 +259,7 @@ internal class Prefab<T> : Prefab
     /// </summary>
     public override void ExportSelection(string filepath, string name, string tags, ViewportSelection _selection)
     {
-        Load(_selection.GetFilteredSelection<MsbEntity>());
+        Load(_selection.GetFilteredSelection<MsbEntity>(e => e.Type != MsbEntityType.Models));
         if (!PrefabUtils.GetMapMsbEntries(pseudoMap).Any())
         {
             Smithbox.LogError<Prefab>("Export failed, nothing in selection could be exported.");

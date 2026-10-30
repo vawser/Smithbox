@@ -171,7 +171,11 @@ public class DuplicateAction
     {
         if (View.ViewportSelection.IsSelection())
         {
-            var mapObjects = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+            var mapObjects = View.ViewportSelection.GetPlacedEntities();
+
+            if (mapObjects.Count == 0)
+                return;
+
             var mapContainer = View.Selection.SelectedMapContainer;
             var btlParent = mapContainer.BTLParents.FirstOrDefault();
 

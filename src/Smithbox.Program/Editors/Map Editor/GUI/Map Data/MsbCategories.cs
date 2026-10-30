@@ -768,13 +768,30 @@ public static class MsbCategories
         // TODO: Duskbloods
     };
 
-    public static Dictionary<string, Type> GetBaseCategories(ProjectEntry project)
+    public static Dictionary<string, Type> GetBaseCategories(MapEditorView view)
     {
+        var projectType = view.Project.Descriptor.ProjectType;
         var dict = new Dictionary<string, Type>();
 
-        if(BaseCategories.ContainsKey(project.Descriptor.ProjectType))
+        if (BaseCategories.TryGetValue(projectType, out var msbCategories))
         {
-            dict = BaseCategories[project.Descriptor.ProjectType];
+            dict = new Dictionary<string, Type>(msbCategories);
+        }
+
+        // The map's other files are direct categories, as each only has one entry type
+        if (projectType is not (ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R))
+        {
+            dict["Light"] = typeof(BTL.Light);
+        }
+
+        if (view.LightAtlasBank.CanUse())
+        {
+            dict["Light Atlas"] = typeof(BTAB.Entry);
+        }
+
+        if (view.LightProbeBank.CanUse())
+        {
+            dict["Light Probe"] = typeof(BTPB.Group);
         }
 
         return dict;

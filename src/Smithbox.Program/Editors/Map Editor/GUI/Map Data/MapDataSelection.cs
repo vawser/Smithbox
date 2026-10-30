@@ -21,9 +21,9 @@ public class MapDataSelection
     public IMsb SourceMsb => SelectedMap?.SourceMsb;
 
     /// <summary>
-    /// Models, routes and layers are not map entities, so they are listed but cannot be selected.
+    /// Routes and layers are not map entities, so they are listed but cannot be selected.
     /// </summary>
-    public bool IsEntityCategory => SelectedBaseCategory is not ("Model" or "Route" or "Layer");
+    public bool IsEntityCategory => SelectedBaseCategory is not ("Route" or "Layer");
 
     public MapDataSelection(MapEditorView view)
     {

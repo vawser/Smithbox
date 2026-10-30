@@ -325,7 +325,7 @@ public class ReplicateAction
     {
         if (View.ViewportSelection.IsSelection())
         {
-            EntReplicateAction action = new(View, View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList());
+            EntReplicateAction action = new(View, View.ViewportSelection.GetPlacedEntities());
 
             View.ViewportActionManager.ExecuteAction(action);
         }
