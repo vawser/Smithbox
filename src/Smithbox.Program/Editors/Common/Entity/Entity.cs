@@ -120,6 +120,11 @@ public class Entity : ISelectable, IDisposable
     [XmlIgnore] public virtual bool HasTransform => false;
 
     /// <summary>
+    /// The text displayed at this entity's position in the viewport. Null if it has none.
+    /// </summary>
+    [XmlIgnore] public virtual string ViewportLabel => null;
+
+    /// <summary>
     /// The associated render scene mesh for this entity.
     /// </summary>
     [XmlIgnore]

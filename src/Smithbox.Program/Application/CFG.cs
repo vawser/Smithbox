@@ -577,6 +577,9 @@ public class CFG
 
     public float DummyMeshSize = 0.05f;
     public float NodeMeshSize = 0.05f;
+    public bool ModelEditor_DisplayDummyLabels = false;
+    public bool ModelEditor_DisplayNodeLabels = false;
+    public float ModelEditor_LabelScale = 1.0f;
     public bool DisplayEdgePoints = false;
     public Vector3 StartEdgePoint = new Vector3();
     public Vector3 EndEdgePoint = new Vector3();

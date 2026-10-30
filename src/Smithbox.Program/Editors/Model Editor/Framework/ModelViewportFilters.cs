@@ -39,6 +39,15 @@ public class ModelViewportFilters
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_DummyPoly_TT"));
             GUI.ShowActiveStatus(ticked);
 
+            // Dummy Labels
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_DummyPoly_Labels")}##dummyPolyLabelsToggle"))
+            {
+                CFG.Current.ModelEditor_DisplayDummyLabels = !CFG.Current.ModelEditor_DisplayDummyLabels;
+            }
+            ticked = CFG.Current.ModelEditor_DisplayDummyLabels;
+            GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_DummyPoly_Labels_TT"));
+            GUI.ShowActiveStatus(ticked);
+
             // Nodes
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Bone")}##boneToggle"))
             {
@@ -46,6 +55,15 @@ public class ModelViewportFilters
             }
             ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Nodes);
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Bone_TT"));
+            GUI.ShowActiveStatus(ticked);
+
+            // Bone Labels
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Bone_Labels")}##boneLabelsToggle"))
+            {
+                CFG.Current.ModelEditor_DisplayNodeLabels = !CFG.Current.ModelEditor_DisplayNodeLabels;
+            }
+            ticked = CFG.Current.ModelEditor_DisplayNodeLabels;
+            GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Bone_Labels_TT"));
             GUI.ShowActiveStatus(ticked);
 
             // Collision

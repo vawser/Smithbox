@@ -645,6 +645,12 @@ public class ViewportMenu
                         modelUniverse.View.ViewportWindow.UpdateDisplayNodes();
                     }
 
+                    ImGui.DragFloat(
+                        $"{LOC.Get("VIEWPORT_Menubar_Setting_Label_Scale")}##labelScale",
+                        ref CFG.Current.ModelEditor_LabelScale, 0.05f, 0.25f, 5f);
+
+                    GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Label_Scale_TT"));
+
                     ImGui.EndMenu();
                 }
             }
@@ -714,7 +720,7 @@ public class ViewportMenu
 
     public void MapTextureLoadMenu()
     {
-        if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Texture_Load_Header_TT")}##textureLoadMenuHeader"))
+        if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Texture_Load_Header")}##textureLoadMenuHeader"))
         {
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Map_Pieces")}##mapPieceToggle"))
             {

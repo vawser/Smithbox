@@ -426,6 +426,65 @@ public class VulkanViewport : IViewport
         ViewportCamera.CameraTransform.Position = pos - camdir * dist;
     }
 
+    /// <summary>
+    /// Converts a world position to screen space, relative to the viewport's top-left corner
+    /// Works correctly for perspective, orthographic, and oblique projections
+    /// Returns whether the point is in front of the camera
+    /// </summary>
+    public Vector2 WorldToScreen(Vector3 worldPos, out bool inFront)
+    {
+        Vector4 world = new(worldPos, 1.0f);
+
+        // Get the view-projection matrix
+        Matrix4x4 viewProjection = ViewportCamera.CameraTransform.CameraViewMatrixLH * ViewportCamera.ProjectionMatrix;
+        Vector4 clip = Vector4.Transform(world, viewProjection);
+
+        bool isOrthographic = ViewportCamera.ViewMode is ViewMode.Orthographic or ViewMode.Oblique;
+
+        if (isOrthographic)
+        {
+            // In orthographic projection, check if Z is within valid range
+            // Use a more lenient check to catch objects near the clipping planes
+            inFront = clip.Z >= -1.5f && clip.Z <= 1.5f;
+
+            // No perspective divide needed for orthographic
+            Vector2 ndc = new Vector2(clip.X, clip.Y);
+
+            return new Vector2(
+                (ndc.X + 1f) / 2f * Width,
+                (1f - ndc.Y) / 2f * Height
+            );
+        }
+        else
+        {
+            // Perspective projection
+            // Point is in front if W > 0
+            inFront = clip.W > 0.001f; // Small epsilon to avoid division issues
+
+            if (!inFront)
+            {
+                // Return position far off-screen
+                return new Vector2(-100000, -100000);
+            }
+
+            // Perspective divide
+            Vector3 ndc = new(clip.X / clip.W, clip.Y / clip.W, clip.Z / clip.W);
+
+            if (ndc.X < -1f || ndc.X > 1f ||
+                ndc.Y < -1f || ndc.Y > 1f ||
+                ndc.Z < 0f || ndc.Z > 1f)
+            {
+                // Return position far off-screen
+                return new Vector2(-100000, -100000);
+            }
+
+            return new Vector2(
+                (ndc.X + 1f) / 2f * Width,
+                (1f - ndc.Y) / 2f * Height
+            );
+        }
+    }
+
     public Ray GetRay(float sx, float sy)
     {
         float x = 2.0f * sx / Width - 1.0f;

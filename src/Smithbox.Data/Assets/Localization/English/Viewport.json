@@ -401,6 +401,14 @@
       "Text": "Determines the radius of the node mesh."
     },
     {
+      "Key": "VIEWPORT_Menubar_Setting_Label_Scale",
+      "Text": "Label Scale"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Label_Scale_TT",
+      "Text": "Determines the size of the dummy polygon ID and bone name text in the viewport."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Model_Load_Header",
       "Text": "Model Load"
     },
@@ -419,6 +427,10 @@
     {
       "Key": "VIEWPORT_Menubar_ML_Assets",
       "Text": "Assets"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Parts",
+      "Text": "Parts"
     },
     {
       "Key": "VIEWPORT_Menubar_ML_Characters",

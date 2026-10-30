@@ -1,4 +1,5 @@
-﻿using StudioCore.Application;
+﻿using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Renderer;
@@ -21,6 +22,13 @@ public class ModelEntity : Entity
     public ModelEntityType Type { get; set; }
 
     public override bool HasTransform => Type is ModelEntityType.Dummy or ModelEntityType.Node;
+
+    public override string ViewportLabel => WrappedObject switch
+    {
+        FLVER.Dummy dummy => dummy.ReferenceID.ToString(),
+        FLVER.Node node => node.Name,
+        _ => null
+    };
 
     public ModelEntity(IUniverse owner) : base(owner)
     {

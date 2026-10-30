@@ -21,12 +21,28 @@
       "Text": "Toggle the display of dummy polygons."
     },
     {
+      "Key": "MODEL_Framework_Filter_DummyPoly_Labels",
+      "Text": "Dummy Polygon IDs"
+    },
+    {
+      "Key": "MODEL_Framework_Filter_DummyPoly_Labels_TT",
+      "Text": "Toggle the display of each dummy polygon's reference ID in the viewport."
+    },
+    {
       "Key": "MODEL_Framework_Filter_Bone",
       "Text": "Bone"
     },
     {
       "Key": "MODEL_Framework_Filter_Bone_TT",
       "Text": "Toggle the display of bones."
+    },
+    {
+      "Key": "MODEL_Framework_Filter_Bone_Labels",
+      "Text": "Bone Names"
+    },
+    {
+      "Key": "MODEL_Framework_Filter_Bone_Labels_TT",
+      "Text": "Toggle the display of each bone's name in the viewport."
     },
     {
       "Key": "MODEL_Framework_Filter_Collision",

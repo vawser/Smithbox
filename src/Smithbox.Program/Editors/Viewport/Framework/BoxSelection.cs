@@ -333,7 +333,7 @@ public class BoxSelection
 
         for (int i = 0; i < 8; i++)
         {
-            Vector2 screenPos = WorldToScreen(corners[i], out bool inFront);
+            Vector2 screenPos = Parent.WorldToScreen(corners[i], out bool inFront);
 
             if (inFront)
             {
@@ -368,71 +368,12 @@ public class BoxSelection
     }
 
     /// <summary>
-    /// Converts a world position to screen space
-    /// Works correctly for perspective, orthographic, and oblique projections
-    /// Returns whether the point is in front of the camera
-    /// </summary>
-    private Vector2 WorldToScreen(Vector3 worldPos, out bool inFront)
-    {
-        Vector4 world = new(worldPos, 1.0f);
-
-        // Get the view-projection matrix
-        Matrix4x4 viewProjection = Parent.ViewportCamera.CameraTransform.CameraViewMatrixLH * Parent.ViewportCamera.ProjectionMatrix;
-        Vector4 clip = Vector4.Transform(world, viewProjection);
-
-        bool isOrthographic = Parent.ViewportCamera.ViewMode is ViewMode.Orthographic or ViewMode.Oblique;
-
-        if (isOrthographic)
-        {
-            // In orthographic projection, check if Z is within valid range
-            // Use a more lenient check to catch objects near the clipping planes
-            inFront = clip.Z >= -1.5f && clip.Z <= 1.5f;
-
-            // No perspective divide needed for orthographic
-            Vector2 ndc = new Vector2(clip.X, clip.Y);
-
-            return new Vector2(
-                (ndc.X + 1f) / 2f * Parent.Width,
-                (1f - ndc.Y) / 2f * Parent.Height
-            );
-        }
-        else
-        {
-            // Perspective projection
-            // Point is in front if W > 0
-            inFront = clip.W > 0.001f; // Small epsilon to avoid division issues
-
-            if (!inFront)
-            {
-                // Return position far off-screen
-                return new Vector2(-100000, -100000);
-            }
-
-            // Perspective divide
-            Vector3 ndc = new(clip.X / clip.W, clip.Y / clip.W, clip.Z / clip.W);
-
-            if (ndc.X < -1f || ndc.X > 1f ||
-                ndc.Y < -1f || ndc.Y > 1f ||
-                ndc.Z < 0f || ndc.Z > 1f)
-            {
-                // Return position far off-screen
-                return new Vector2(-100000, -100000);
-            }
-
-            return new Vector2(
-                (ndc.X + 1f) / 2f * Parent.Width,
-                (1f - ndc.Y) / 2f * Parent.Height
-            );
-        }
-    }
-
-    /// <summary>
     /// Alternative selection method: check if object center is in selection box
     /// Useful for small objects or as a fallback
     /// </summary>
     private bool IsObjectCenterInSelectionBox(Vector3 center, float minX, float minY, float maxX, float maxY)
     {
-        Vector2 screenPos = WorldToScreen(center, out bool inFront);
+        Vector2 screenPos = Parent.WorldToScreen(center, out bool inFront);
 
         if (!inFront)
             return false;
