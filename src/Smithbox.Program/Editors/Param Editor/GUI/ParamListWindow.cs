@@ -200,7 +200,10 @@ public class ParamListWindow
                     }
 
                     ImGui.Indent(15.0f);
-                    if (ImGui.Selectable($"{paramKey}##pin{paramKey}", paramKey == ParentView.Selection.GetActiveParam()))
+                    // Mark params with unsaved changes
+                    var pinnedName = ParentView.GetPrimaryBank().IsParamDirty(paramKey) ? $"{paramKey}*" : paramKey;
+
+                    if (ImGui.Selectable($"{pinnedName}##pin{paramKey}", paramKey == ParentView.Selection.GetActiveParam()))
                     {
                         SelectParam(paramKey);
                     }
@@ -405,6 +408,12 @@ public class ParamListWindow
                         displayedName = paramDisplayName.Name;
                     }
                 }
+            }
+
+            // Mark params with unsaved changes
+            if (ParamDirtyTracker.IsDirty(p))
+            {
+                displayedName = $"{displayedName}*";
             }
 
             if (ImGui.Selectable($"{displayedName}##{paramKey}", paramKey == ParentView.Selection.GetActiveParam()))
@@ -615,7 +624,10 @@ public class ParamListWindow
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
             }
 
-            if (ImGui.Selectable($"{paramKey}##selectStayParam{paramKey}", paramKey == ParentView.Selection.ActiveStayParam))
+            // Mark stay params with unsaved changes
+            var stayParamName = ParamDirtyTracker.IsDirty(param.Value) ? $"{paramKey}*" : paramKey;
+
+            if (ImGui.Selectable($"{stayParamName}##selectStayParam{paramKey}", paramKey == ParentView.Selection.ActiveStayParam))
             {
                 SelectStayParam(paramKey);
             }

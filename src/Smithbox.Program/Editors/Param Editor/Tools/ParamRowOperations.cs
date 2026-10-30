@@ -161,6 +161,9 @@ public static class ParamRowOperations
                 {
                     rf.Item2.Name = row.Name;
                 }
+
+                // The referenced row belongs to another param
+                ParamDirtyTracker.MarkDirty(rf.Item2);
             }
         }
 
@@ -232,6 +235,11 @@ public static class ParamRowOperations
             }
         }
 
+        if (rows.Count > 0)
+        {
+            ParamDirtyTracker.MarkDirty(baseParam);
+        }
+
         if (displayWarning)
         {
             Smithbox.Log(typeof(ParamRowOperations),
@@ -300,6 +308,11 @@ public static class ParamRowOperations
             }
         }
 
+        if (rows.Count > 0)
+        {
+            ParamDirtyTracker.MarkDirty(baseParam);
+        }
+
         if (displayWarning)
         {
             Smithbox.Log(typeof(ParamRowOperations),
@@ -339,6 +352,11 @@ public static class ParamRowOperations
                     row.Name = fmgEntry.Text;
                 }
             }
+        }
+
+        if (rows.Count > 0)
+        {
+            ParamDirtyTracker.MarkDirty(baseParam);
         }
     }
     #endregion
@@ -497,6 +515,11 @@ public static class ParamRowOperations
                     }
                 }
             }
+        }
+
+        if (rows.Count > 0)
+        {
+            ParamDirtyTracker.MarkDirty(baseParam);
         }
 
         if (displayWarning)

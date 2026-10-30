@@ -881,6 +881,14 @@ public class Param : SoulsFile<Param>
             return DataIndex;
         }
 
+        /// <summary>
+        ///     The Param that this row is associated with.
+        /// </summary>
+        public Param GetParentParam()
+        {
+            return Parent;
+        }
+
         internal Row(int id, string? name, Param parent, uint dataIndex)
         {
             ID = id;
@@ -1060,6 +1068,14 @@ public class Param : SoulsFile<Param>
         {
             _row = row;
             _column = column;
+        }
+
+        /// <summary>
+        ///     The row that this cell belongs to.
+        /// </summary>
+        public Row GetRow()
+        {
+            return _row;
         }
 
         /// <summary>

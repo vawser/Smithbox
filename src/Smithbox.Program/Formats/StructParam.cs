@@ -32,7 +32,7 @@ public class StructParam : SoulsFile<StructParam>
         {
             PARAMDEF.Field field = def.Fields[i];
             object value = ParamUtil.ConvertDefaultValue(field);
-            cells[i] = new StructCell(field, value);
+            cells[i] = new StructCell(field, value) { Parent = this };
         }
         Cells = cells;
 
@@ -84,7 +84,7 @@ public class StructParam : SoulsFile<StructParam>
             else
                 throw new NotImplementedException($"Unsupported field type: {type}");
 
-            cells[i] = new StructCell(field, value);
+            cells[i] = new StructCell(field, value) { Parent = this };
         }
 
         Cells = cells;

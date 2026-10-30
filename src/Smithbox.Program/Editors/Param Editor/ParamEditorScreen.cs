@@ -165,39 +165,25 @@ public class ParamEditorScreen : EditorScreen
             {
                 Save();
             }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_SaveAll_TT"));
 
             ImGui.Separator();
 
-            // Manual Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Manual_Save_Output")}##manualSaveMenuHeader"))
+            // Allow Unmodified Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                // PARAM
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_PARAM")}##manualToggle_param"))
-                {
-                    CFG.Current.ParamEditor_ManualSave_IncludePARAM = !CFG.Current.ParamEditor_ManualSave_IncludePARAM;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_PARAM_TT"));
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_ManualSave_IncludePARAM);
-
-
-                ImGui.EndMenu();
+                CFG.Current.ParamEditor_Allow_Unmodified_Save = !CFG.Current.ParamEditor_Allow_Unmodified_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.ParamEditor_Allow_Unmodified_Save);
 
-            // Automatic Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
+            // Allow Automatic Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                // PARAM
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_PARAM")}##autoToggle_param"))
-                {
-                    CFG.Current.ParamEditor_AutomaticSave_IncludePARAM = !CFG.Current.ParamEditor_AutomaticSave_IncludePARAM;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_FMG_TT"));
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_AutomaticSave_IncludePARAM);
-
-                ImGui.EndMenu();
+                CFG.Current.ParamEditor_Allow_Automatic_Save = !CFG.Current.ParamEditor_Allow_Automatic_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.ParamEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -330,7 +316,7 @@ public class ParamEditorScreen : EditorScreen
         {
             SaveLock = true;
 
-            if (CFG.Current.ParamEditor_ManualSave_IncludePARAM)
+            if (autoSave && CFG.Current.ParamEditor_Allow_Automatic_Save || !autoSave)
             {
                 activeView.ParamTableWindow.WriteTableGroupNames();
 
@@ -352,8 +338,11 @@ public class ParamEditorScreen : EditorScreen
 
         try
         {
-            await activeView.GetPrimaryBank().Save();
-            Smithbox.Log(this, LOC.Get("PARAM_Params_Saved"));
+            // The bank logs when the save is skipped because nothing has been modified
+            if (await activeView.GetPrimaryBank().Save())
+            {
+                Smithbox.Log(this, LOC.Get("PARAM_Params_Saved"));
+            }
         }
         catch (SavingFailedException e)
         {

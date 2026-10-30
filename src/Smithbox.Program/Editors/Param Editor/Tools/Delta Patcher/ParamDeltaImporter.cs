@@ -93,6 +93,11 @@ public class ParamDeltaImporter
                 HandleRowImport(curParam.Key, param, vanillaParam.Value, srcRow, rDelta);
             }
 
+            if (pDelta.Rows.Any())
+            {
+                ParamDirtyTracker.MarkDirty(param);
+            }
+
             //Thread.Sleep(1000);
         }
 

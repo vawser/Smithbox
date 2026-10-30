@@ -46,6 +46,8 @@ public class ReorderRowAction : EditorAction
 
     public override ActionEvent Execute()
     {
+        ParamDirtyTracker.MarkDirty(TargetParam);
+
         return IsFullReplace ? ExecuteFullReplace() : ExecuteDrag();
     }
 
@@ -86,6 +88,8 @@ public class ReorderRowAction : EditorAction
 
     public override ActionEvent Undo()
     {
+        ParamDirtyTracker.MarkDirty(TargetParam);
+
         return IsFullReplace ? UndoFullReplace() : UndoDrag();
     }
 

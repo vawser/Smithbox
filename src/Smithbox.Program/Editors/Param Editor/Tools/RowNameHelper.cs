@@ -179,12 +179,12 @@ public static class RowNameHelper
                         {
                             if (row.Name == null || row.Name == "")
                             {
-                                row.Name = nameEntry.Entries[index];
+                                SetRowName(row, nameEntry.Entries[index]);
                             }
                         }
                         else
                         {
-                            row.Name = nameEntry.Entries[index];
+                            SetRowName(row, nameEntry.Entries[index]);
                         }
                     }
                 }
@@ -205,15 +205,28 @@ public static class RowNameHelper
                 {
                     if (row.Name == null || row.Name == "")
                     {
-                        row.Name = nameEntry.Name;
+                        SetRowName(row, nameEntry.Name);
                     }
                 }
                 else
                 {
-                    row.Name = nameEntry.Name;
+                    SetRowName(row, nameEntry.Name);
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Set the row name, marking the param as modified if the name changed
+    /// </summary>
+    private static void SetRowName(Param.Row row, string name)
+    {
+        if (row.Name == name)
+            return;
+
+        row.Name = name;
+
+        ParamDirtyTracker.MarkDirty(row);
     }
 
     #endregion
@@ -549,7 +562,7 @@ public static class RowNameHelper
                     {
                         if (entry.Key == p.Value.Rows[i].ID)
                         {
-                            p.Value.Rows[i].Name = entry.Value;
+                            SetRowName(p.Value.Rows[i], entry.Value);
                         }
                     }
                 }
@@ -625,7 +638,7 @@ public static class RowNameHelper
                             if (match.Success)
                             {
                                 string nonNumericPart = match.Groups[1].Value;
-                                curRow.Name = nonNumericPart;
+                                SetRowName(curRow, nonNumericPart);
                             }
                         }
                     }

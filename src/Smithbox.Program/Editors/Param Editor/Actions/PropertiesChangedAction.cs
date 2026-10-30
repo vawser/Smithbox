@@ -87,6 +87,8 @@ public class PropertiesChangedAction : EditorAction
             }
         }
 
+        ParamDirtyTracker.MarkDirty(ChangedObject);
+
         if (PostExecutionAction != null)
         {
             PostExecutionAction.Invoke(false);
@@ -109,6 +111,8 @@ public class PropertiesChangedAction : EditorAction
                 change.Property.SetValue(ChangedObject, change.OldValue);
             }
         }
+
+        ParamDirtyTracker.MarkDirty(ChangedObject);
 
         if (PostExecutionAction != null)
         {

@@ -9,6 +9,11 @@ public class StructCell
 {
     public PARAMDEF.Field Def { get; }
 
+    /// <summary>
+    /// The struct param that this cell belongs to
+    /// </summary>
+    public StructParam Parent { get; internal set; }
+
     public object Value
     {
         get => value;

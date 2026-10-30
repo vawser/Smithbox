@@ -30,6 +30,8 @@ public class DeleteParamsAction : EditorAction
             Param.RemoveRowAt(RemoveIndices.Last());
         }
 
+        ParamDirtyTracker.MarkDirty(Param);
+
         if (SetSelection)
         {
         }
@@ -52,6 +54,8 @@ public class DeleteParamsAction : EditorAction
         {
             Param.InsertRow(RemoveIndices[i], Deletables[i]);
         }
+
+        ParamDirtyTracker.MarkDirty(Param);
 
         if (SetSelection)
         {

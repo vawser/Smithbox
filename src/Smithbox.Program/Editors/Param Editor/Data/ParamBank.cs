@@ -119,6 +119,13 @@ public class ParamBank : IDisposable
             return false;
         }
 
+        // Only save if the params have been modified
+        if (!CFG.Current.ParamEditor_Allow_Unmodified_Save && !IsDirty())
+        {
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Skip_Save", Name));
+            return false;
+        }
+
         var successfulSave = false;
 
         switch (Project.Descriptor.ProjectType)
@@ -152,8 +159,109 @@ public class ParamBank : IDisposable
             default: break;
         }
 
+        if (successfulSave)
+        {
+            ClearDirtyState();
+        }
+
         return successfulSave;
     }
+
+    #region Dirty State
+    /// <summary>
+    /// Whether the param (or stay param) has been modified since it was last loaded or saved
+    /// </summary>
+    public bool IsParamDirty(string paramName)
+    {
+        if (_params != null && _params.TryGetValue(paramName, out var param))
+            return ParamDirtyTracker.IsDirty(param);
+
+        if (StayParams.TryGetValue(paramName, out var stayParam))
+            return ParamDirtyTracker.IsDirty(stayParam);
+
+        return false;
+    }
+
+    /// <summary>
+    /// Whether any of the params within this bank have been modified
+    /// </summary>
+    public bool IsDirty()
+    {
+        if (_params == null)
+            return false;
+
+        return _params.Values.Any(ParamDirtyTracker.IsDirty)
+            || StayParams.Values.Any(ParamDirtyTracker.IsDirty);
+    }
+
+    public void MarkAllParamsDirty()
+    {
+        if (_params == null)
+            return;
+
+        foreach (var param in _params.Values)
+        {
+            ParamDirtyTracker.MarkDirty(param);
+        }
+
+        foreach (var stayParam in StayParams.Values)
+        {
+            ParamDirtyTracker.MarkDirty(stayParam);
+        }
+    }
+
+    public void ClearDirtyState()
+    {
+        if (_params == null)
+            return;
+
+        foreach (var param in _params.Values)
+        {
+            ParamDirtyTracker.ClearDirty(param);
+        }
+
+        foreach (var stayParam in StayParams.Values)
+        {
+            ParamDirtyTracker.ClearDirty(stayParam);
+        }
+    }
+
+    /// <summary>
+    /// Whether the binder contains any modified params
+    /// </summary>
+    private bool IsBinderDirty(IBinder binder)
+    {
+        return binder.Files.Any(e => IsParamDirty(Path.GetFileNameWithoutExtension(e.Name)));
+    }
+
+    /// <summary>
+    /// Whether the binder should be written: it contains modified params, or unmodified saves are allowed
+    /// </summary>
+    private bool ShouldWriteBinder(IBinder binder)
+    {
+        return CFG.Current.ParamEditor_Allow_Unmodified_Save || IsBinderDirty(binder);
+    }
+
+    /// <summary>
+    /// Whether the secondary binder (system, graphics or event params) should be written: it contains modified params,
+    /// or unmodified saves are allowed and the binder's params differ from vanilla
+    /// </summary>
+    private bool ShouldWriteSecondaryBinder(IBinder binder, Func<bool> isTouched)
+    {
+        if (IsBinderDirty(binder))
+            return true;
+
+        return CFG.Current.ParamEditor_Allow_Unmodified_Save && isTouched();
+    }
+
+    /// <summary>
+    /// Whether the loose param file should be written: it is modified, or unmodified saves are allowed
+    /// </summary>
+    private bool ShouldWriteLooseParam(string paramName)
+    {
+        return CFG.Current.ParamEditor_Allow_Unmodified_Save || IsParamDirty(paramName);
+    }
+    #endregion
 
     #region Param Load
     private void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version, bool checkVersion = false, string parambndFileName = "")
@@ -401,36 +509,39 @@ public class ParamBank : IDisposable
             RowNameHelper.RowNameStrip(Project);
         }
 
-        // Replace params with edited ones
-        foreach (BinderFile p in paramBnd.Files)
+        if (ShouldWriteBinder(paramBnd))
         {
-            if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
             {
-                p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                {
+                    p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                }
             }
+
+            // Write all gameparam variations since we don't know which one the the game will use.
+            // Compressed
+            paramBnd.Compression = DCX.Type.DCX_EDGE;
+            var naParamPath = Path.Join("param", "gameparam", "gameparamna.parambnd.dcx");
+
+            if (fs.FileExists(naParamPath))
+            {
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, naParamPath, paramBnd);
+            }
+
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
+
+            // Decompressed
+            paramBnd.Compression = DCX.Type.None;
+            naParamPath = Path.Join("param", "gameparam", "gameparamna.parambnd");
+            if (fs.FileExists(naParamPath))
+            {
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, naParamPath, paramBnd);
+            }
+
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd"), paramBnd);
         }
-
-        // Write all gameparam variations since we don't know which one the the game will use.
-        // Compressed
-        paramBnd.Compression = DCX.Type.DCX_EDGE;
-        var naParamPath = Path.Join("param", "gameparam", "gameparamna.parambnd.dcx");
-
-        if (fs.FileExists(naParamPath))
-        {
-            ProjectUtils.WriteWithBackup(Project, fs, toFs, naParamPath, paramBnd);
-        }
-
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
-
-        // Decompressed
-        paramBnd.Compression = DCX.Type.None;
-        naParamPath = Path.Join("param", "gameparam", "gameparamna.parambnd");
-        if (fs.FileExists(naParamPath))
-        {
-            ProjectUtils.WriteWithBackup(Project, fs, toFs, naParamPath, paramBnd);
-        }
-
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd"), paramBnd);
 
         // Drawparam
         List<string> drawParambndPaths = new();
@@ -444,6 +555,9 @@ public class ParamBank : IDisposable
             foreach (var bnd in drawParambndPaths)
             {
                 using var drawParamBnd = BND3.Read(fs.GetFile(bnd).GetData());
+
+                if (!ShouldWriteBinder(drawParamBnd))
+                    continue;
 
                 foreach (BinderFile p in drawParamBnd.Files)
                 {
@@ -584,21 +698,28 @@ public class ParamBank : IDisposable
             RowNameHelper.RowNameStrip(Project);
         }
 
-        foreach (BinderFile p in paramBnd.Files)
+        if (ShouldWriteBinder(paramBnd))
         {
-            if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+            foreach (BinderFile p in paramBnd.Files)
             {
-                p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                {
+                    p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                }
             }
-        }
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "GameParam", "GameParam.parambnd"), paramBnd);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "GameParam", "GameParam.parambnd"), paramBnd);
+        }
 
         if (fs.DirectoryExists(Path.Join("param", "DrawParam")))
         {
             foreach (var bnd in fs.GetFileNamesWithExtensions(Path.Join("param", "DrawParam"), ".parambnd"))
             {
                 using var drawParamBnd = BND3.Read(fs.GetFile(bnd).GetData());
+
+                if (!ShouldWriteBinder(drawParamBnd))
+                    continue;
+
                 foreach (BinderFile p in drawParamBnd.Files)
                 {
                     if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
@@ -716,15 +837,18 @@ public class ParamBank : IDisposable
             RowNameHelper.RowNameStrip(Project);
         }
 
-        // Replace params with edited ones
-        foreach (BinderFile p in paramBnd.Files)
+        if (ShouldWriteBinder(paramBnd))
         {
-            if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
             {
-                p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                {
+                    p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                }
             }
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "GameParam", "GameParam.parambnd.dcx"), paramBnd);
         }
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "GameParam", "GameParam.parambnd.dcx"), paramBnd);
 
         //DrawParam
         if (fs.DirectoryExists(Path.Join("param", "DrawParam")))
@@ -732,6 +856,10 @@ public class ParamBank : IDisposable
             foreach (var bnd in fs.GetFileNamesWithExtensions(Path.Join("param", "DrawParam"), ".parambnd.dcx"))
             {
                 using var drawParamBnd = BND3.Read(fs.GetFile(bnd).GetData());
+
+                if (!ShouldWriteBinder(drawParamBnd))
+                    continue;
+
                 foreach (BinderFile p in drawParamBnd.Files)
                 {
                     if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
@@ -1054,6 +1182,8 @@ public class ParamBank : IDisposable
             paramBnd = BND4.Read(data);
         }
 
+        var writeRegulation = true;
+
         if (!CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
         {
             // Save params non-loosely: Replace params regulation and write remaining params loosely.
@@ -1096,6 +1226,8 @@ public class ParamBank : IDisposable
                     RowNameHelper.RowNameStrip(Project);
                 }
 
+                writeRegulation = ShouldWriteBinder(paramBnd);
+
                 foreach (KeyValuePair<string, Param> p in Params)
                 {
                     BinderFile bnd = paramBnd.Files.Find(e => Path.GetFileNameWithoutExtension(e.Name) == p.Key);
@@ -1103,12 +1235,18 @@ public class ParamBank : IDisposable
                     if (bnd != null)
                     {
                         // Regulation contains this param, overwrite it.
-                        bnd.Bytes = p.Value.Write();
+                        if (writeRegulation)
+                        {
+                            bnd.Bytes = p.Value.Write();
+                        }
                     }
                     else
                     {
                         // Regulation does not contain this param, write param loosely.
-                        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("Param", $"{p.Key}.param"), p.Value);
+                        if (ShouldWriteLooseParam(p.Key))
+                        {
+                            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("Param", $"{p.Key}.param"), p.Value);
+                        }
                     }
                 }
             }
@@ -1153,7 +1291,10 @@ public class ParamBank : IDisposable
                 // Write params to loose files.
                 foreach (KeyValuePair<string, Param> p in Params)
                 {
-                    ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("Param", $"{p.Key}.param"), p.Value);
+                    if (ShouldWriteLooseParam(p.Key))
+                    {
+                        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("Param", $"{p.Key}.param"), p.Value);
+                    }
                 }
             }
             catch
@@ -1172,7 +1313,12 @@ public class ParamBank : IDisposable
             }
         }
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"enc_regulation.bnd.dcx", paramBnd);
+        // In loose mode the regulation has its params stripped, which only needs writing once something has changed
+        if (writeRegulation)
+        {
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, @"enc_regulation.bnd.dcx", paramBnd);
+        }
+
         paramBnd.Dispose();
 
         return successfulSave;
@@ -1327,7 +1473,10 @@ public class ParamBank : IDisposable
         // If not loose write out the new regulation
         if (!CFG.Current.ParamEditor_Loose_Param_Mode_DS3)
         {
-            ProjectUtils.WriteWithBackup(Project, fs, toFs, @"Data0.bdt", paramBnd, ProjectType.DS3);
+            if (ShouldWriteBinder(paramBnd))
+            {
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, @"Data0.bdt", paramBnd, ProjectType.DS3);
+            }
         }
         else
         {
@@ -1345,10 +1494,15 @@ public class ParamBank : IDisposable
                 Files = paramBnd.Files.Where(f => f.Name.EndsWith(".param")).ToList()
             };
 
-            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam_dlc2.parambnd.dcx"), paramBND);
+            if (ShouldWriteBinder(paramBND))
+            {
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam_dlc2.parambnd.dcx"), paramBND);
+            }
 
             // Flush stay params to Data0.bdt
-            if (StayParams.Count > 0)
+            var isStayParamsDirty = CFG.Current.ParamEditor_Allow_Unmodified_Save || StayParams.Keys.Any(IsParamDirty);
+
+            if (StayParams.Count > 0 && isStayParamsDirty)
             {
                 ProjectUtils.WriteWithBackup(Project, fs, toFs, @"Data0.bdt", paramBnd, ProjectType.DS3);
             }
@@ -1422,16 +1576,19 @@ public class ParamBank : IDisposable
             RowNameHelper.RowNameStrip(Project);
         }
 
-        // Replace params with edited ones
-        foreach (BinderFile p in paramBnd.Files)
+        if (ShouldWriteBinder(paramBnd))
         {
-            if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
             {
-                p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                {
+                    p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                }
             }
-        }
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
+        }
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_BB)
         {
@@ -1501,33 +1658,36 @@ public class ParamBank : IDisposable
             RowNameHelper.RowNameStrip(Project);
         }
 
-        // Replace params with edited ones
-        foreach (BinderFile p in paramBnd.Files)
+        if (ShouldWriteBinder(paramBnd))
         {
-            var paramName = Path.GetFileNameWithoutExtension(p.Name);
-            if (Params.TryGetValue(paramName, out Param paramFile))
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
             {
-                IReadOnlyList<Param.Row> backup = paramFile.Rows;
-
-                if (_usedTentativeParamTypes.TryGetValue(paramName, out var oldParamType))
+                var paramName = Path.GetFileNameWithoutExtension(p.Name);
+                if (Params.TryGetValue(paramName, out Param paramFile))
                 {
-                    // This param was given a tentative ParamType, return original ParamType if possible.
-                    oldParamType ??= "";
-                    var prevParamType = paramFile.ParamType;
-                    paramFile.ParamType = oldParamType;
+                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
+
+                    if (_usedTentativeParamTypes.TryGetValue(paramName, out var oldParamType))
+                    {
+                        // This param was given a tentative ParamType, return original ParamType if possible.
+                        oldParamType ??= "";
+                        var prevParamType = paramFile.ParamType;
+                        paramFile.ParamType = oldParamType;
+
+                        p.Bytes = paramFile.Write();
+                        paramFile.ParamType = prevParamType;
+                        paramFile.Rows = backup;
+                        continue;
+                    }
 
                     p.Bytes = paramFile.Write();
-                    paramFile.ParamType = prevParamType;
                     paramFile.Rows = backup;
-                    continue;
                 }
-
-                p.Bytes = paramFile.Write();
-                paramFile.Rows = backup;
             }
-        }
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
+        }
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_SDT)
         {
@@ -1646,9 +1806,12 @@ public class ParamBank : IDisposable
             RowNameHelper.RowNameStrip(Project);
         }
 
-        OverwriteParamsER(regParams);
+        if (ShouldWriteBinder(regParams))
+        {
+            OverwriteParamsER(regParams);
 
-        ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"regulation.bin", regParams, ProjectType.ER);
+            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"regulation.bin", regParams, ProjectType.ER);
+        }
 
         var sysParam = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
 
@@ -1660,11 +1823,12 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (ParamUtils.IsSystemParamTouched(Project, this))
+        if (sourceFs.TryGetFile(sysParam, out var sysParamF))
         {
-            if (sourceFs.TryGetFile(sysParam, out var sysParamF))
+            using var sysParams = BND4.Read(sysParamF.GetData());
+
+            if (ShouldWriteSecondaryBinder(sysParams, () => ParamUtils.IsSystemParamTouched(Project, this)))
             {
-                using var sysParams = BND4.Read(sysParamF.GetData());
                 OverwriteParamsER(sysParams);
                 ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
             }
@@ -1855,8 +2019,11 @@ public class ParamBank : IDisposable
             RowNameHelper.RowNameStrip(Project);
         }
 
-        OverwriteParamsAC6(regParams);
-        ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"regulation.bin", regParams, ProjectType.AC6);
+        if (ShouldWriteBinder(regParams))
+        {
+            OverwriteParamsAC6(regParams);
+            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"regulation.bin", regParams, ProjectType.AC6);
+        }
 
         var sysParam = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
 
@@ -1868,11 +2035,12 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (ParamUtils.IsSystemParamTouched(Project, this))
+        if (sourceFs.TryGetFile(sysParam, out var sysParamF))
         {
-            if (sourceFs.TryGetFile(sysParam, out var sysParamF))
+            using var sysParams = BND4.Read(sysParamF.GetData());
+
+            if (ShouldWriteSecondaryBinder(sysParams, () => ParamUtils.IsSystemParamTouched(Project, this)))
             {
-                using var sysParams = BND4.Read(sysParamF.GetData());
                 OverwriteParamsAC6(sysParams);
                 ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, sysParam, sysParams);
             }
@@ -1888,11 +2056,12 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (ParamUtils.IsGraphicsParamTouched(Project, this))
+        if (sourceFs.TryGetFile(graphicsParam, out var graphicsParamF))
         {
-            if (sourceFs.TryGetFile(graphicsParam, out var graphicsParamF))
+            using var graphicsParams = BND4.Read(graphicsParamF.GetData());
+
+            if (ShouldWriteSecondaryBinder(graphicsParams, () => ParamUtils.IsGraphicsParamTouched(Project, this)))
             {
-                using var graphicsParams = BND4.Read(graphicsParamF.GetData());
                 OverwriteParamsAC6(graphicsParams);
                 ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, graphicsParam, graphicsParams);
             }
@@ -1908,11 +2077,12 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (ParamUtils.IsEventParamTouched(Project, this))
+        if (sourceFs.TryGetFile(eventParam, out var eventParamF))
         {
-            if (sourceFs.TryGetFile(eventParam, out var eventParamF))
+            using var eventParams = BND4.Read(eventParamF.GetData());
+
+            if (ShouldWriteSecondaryBinder(eventParams, () => ParamUtils.IsEventParamTouched(Project, this)))
             {
-                using var eventParams = BND4.Read(eventParamF.GetData());
                 OverwriteParamsAC6(eventParams);
                 ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, eventParam, eventParams);
             }
@@ -2060,9 +2230,12 @@ public class ParamBank : IDisposable
             RowNameHelper.RowNameStrip(Project);
         }
 
-        OverwriteParamsNR(regParams);
+        if (ShouldWriteBinder(regParams))
+        {
+            OverwriteParamsNR(regParams);
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.NR);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.NR);
+        }
 
         // System Param
         var sysParam = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
@@ -2075,11 +2248,12 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (ParamUtils.IsSystemParamTouched(Project, this))
+        if (fs.TryGetFile(sysParam, out var sysParamF))
         {
-            if (fs.TryGetFile(sysParam, out var sysParamF))
+            using var sysParams = BND4.Read(sysParamF.GetData());
+
+            if (ShouldWriteSecondaryBinder(sysParams, () => ParamUtils.IsSystemParamTouched(Project, this)))
             {
-                using var sysParams = BND4.Read(sysParamF.GetData());
                 OverwriteParamsNR(sysParams);
                 ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
             }
@@ -2094,11 +2268,12 @@ public class ParamBank : IDisposable
             //return false;
         }
 
-        if (ParamUtils.IsEventParamTouched(Project, this))
+        if (fs.TryGetFile(eventParam, out var eventParamF))
         {
-            if (fs.TryGetFile(eventParam, out var eventParamF))
+            using var eventParams = BND4.Read(eventParamF.GetData());
+
+            if (ShouldWriteSecondaryBinder(eventParams, () => ParamUtils.IsEventParamTouched(Project, this)))
             {
-                using var eventParams = BND4.Read(eventParamF.GetData());
                 OverwriteParamsNR(eventParams);
                 ProjectUtils.WriteWithBackup(Project, fs, toFs, eventParam, eventParams);
             }
@@ -2272,8 +2447,12 @@ public class ParamBank : IDisposable
         if (fs.TryGetFile(gameParamPath, out var gameParamF))
         {
             using var gameParams = BND4.Read(gameParamF.GetData());
-            OverwriteParamsDB_NT(gameParams);
-            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam_nt.parambnd.dcx"), gameParams);
+
+            if (ShouldWriteBinder(gameParams))
+            {
+                OverwriteParamsDB_NT(gameParams);
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam_nt.parambnd.dcx"), gameParams);
+            }
         }
 
         // System Param
@@ -2287,11 +2466,12 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (ParamUtils.IsSystemParamTouched(Project, this))
+        if (fs.TryGetFile(systemParamPath, out var sysParamF))
         {
-            if (fs.TryGetFile(systemParamPath, out var sysParamF))
+            using var sysParams = BND4.Read(sysParamF.GetData());
+
+            if (ShouldWriteSecondaryBinder(sysParams, () => ParamUtils.IsSystemParamTouched(Project, this)))
             {
-                using var sysParams = BND4.Read(sysParamF.GetData());
                 OverwriteParamsDB_NT(sysParams);
                 ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
             }
@@ -2308,11 +2488,12 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (ParamUtils.IsGraphicsParamTouched(Project, this))
+        if (fs.TryGetFile(graphicsConfigParamPath, out var graphicsParamF))
         {
-            if (fs.TryGetFile(graphicsConfigParamPath, out var graphicsParamF))
+            using var graphicsParams = BND4.Read(graphicsParamF.GetData());
+
+            if (ShouldWriteSecondaryBinder(graphicsParams, () => ParamUtils.IsGraphicsParamTouched(Project, this)))
             {
-                using var graphicsParams = BND4.Read(graphicsParamF.GetData());
                 OverwriteParamsDB_NT(graphicsParams);
                 ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "graphicsconfig", "graphicsconfig.parambnd.dcx"), graphicsParams);
             }
@@ -2487,8 +2668,12 @@ public class ParamBank : IDisposable
         if (fs.TryGetFile(gameParamPath, out var gameParamF))
         {
             using var gameParams = BND4.Read(gameParamF.GetData());
-            OverwriteParamsDB(gameParams);
-            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam_nt.parambnd.dcx"), gameParams);
+
+            if (ShouldWriteBinder(gameParams))
+            {
+                OverwriteParamsDB(gameParams);
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam_nt.parambnd.dcx"), gameParams);
+            }
         }
 
         // System Param
@@ -2502,11 +2687,12 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (ParamUtils.IsSystemParamTouched(Project, this))
+        if (fs.TryGetFile(systemParamPath, out var sysParamF))
         {
-            if (fs.TryGetFile(systemParamPath, out var sysParamF))
+            using var sysParams = BND4.Read(sysParamF.GetData());
+
+            if (ShouldWriteSecondaryBinder(sysParams, () => ParamUtils.IsSystemParamTouched(Project, this)))
             {
-                using var sysParams = BND4.Read(sysParamF.GetData());
                 OverwriteParamsDB(sysParams);
                 ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
             }
@@ -2523,11 +2709,12 @@ public class ParamBank : IDisposable
             return false;
         }
 
-        if (ParamUtils.IsGraphicsParamTouched(Project, this))
+        if (fs.TryGetFile(graphicsConfigParamPath, out var graphicsParamF))
         {
-            if (fs.TryGetFile(graphicsConfigParamPath, out var graphicsParamF))
+            using var graphicsParams = BND4.Read(graphicsParamF.GetData());
+
+            if (ShouldWriteSecondaryBinder(graphicsParams, () => ParamUtils.IsGraphicsParamTouched(Project, this)))
             {
-                using var graphicsParams = BND4.Read(graphicsParamF.GetData());
                 OverwriteParamsDB(graphicsParams);
                 ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "graphicsconfig", "graphicsconfig.parambnd.dcx"), graphicsParams);
             }

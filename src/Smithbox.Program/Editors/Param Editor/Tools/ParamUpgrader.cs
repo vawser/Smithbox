@@ -265,6 +265,12 @@ public class ParamUpgrader
         CacheBank.ClearCaches();
         paramData.RefreshAllParamDiffCaches(false);
 
+        // The upgrade rebuilds the params from the new game version, so all of them need to be written
+        if (upgradeTaskFinished)
+        {
+            paramData.PrimaryBank.MarkAllParamsDirty();
+        }
+
         await paramData.PrimaryBank.Save();
     }
 

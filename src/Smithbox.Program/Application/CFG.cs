@@ -818,8 +818,8 @@ public class CFG
     // Saving
     public bool Project_Automatic_Save_Include_Param_Editor = true;
 
-    public bool ParamEditor_AutomaticSave_IncludePARAM = true;
-    public bool ParamEditor_ManualSave_IncludePARAM = true;
+    public bool ParamEditor_Allow_Unmodified_Save = false;
+    public bool ParamEditor_Allow_Automatic_Save = true;
 
     // Misc
     public string Param_Export_Delimiter
