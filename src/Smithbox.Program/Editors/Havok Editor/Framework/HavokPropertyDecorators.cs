@@ -57,14 +57,14 @@ public static class HavokPropertyDecorators
                     {
                         var newBindingSet = Activator.CreateInstance<HKLib.hk2018.hkbVariableBindingSet>();
 
-                        var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
+                        var action = new HavokChangeField(havokEditorView.Selection.SelectedFileWrapper, bindingField, sourceObj, newBindingSet, -1, -1);
                         havokEditorView.ActionManager.ExecuteAction(action);
                     }
                     else if (HavokTypeUtils.IsHKX2(project))
                     {
                         var newBindingSet = Activator.CreateInstance<HKX2.hkbVariableBindingSet>();
 
-                        var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
+                        var action = new HavokChangeField(havokEditorView.Selection.SelectedFileWrapper, bindingField, sourceObj, newBindingSet, -1, -1);
                         havokEditorView.ActionManager.ExecuteAction(action);
                     }
                 }
@@ -90,14 +90,14 @@ public static class HavokPropertyDecorators
                     {
                         var newBindingSet = Activator.CreateInstance<HKLib.hk2018.hkbVariableBindingSet>();
 
-                        var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
+                        var action = new HavokChangeField(havokEditorView.Selection.SelectedFileWrapper, bindingField, sourceObj, newBindingSet, -1, -1);
                         havokEditorView.ActionManager.ExecuteAction(action);
                     }
                     else if(HavokTypeUtils.IsHKX2(project))
                     {
                         var newBindingSet = Activator.CreateInstance<HKX2.hkbVariableBindingSet>();
 
-                        var action = new HavokChangeField(bindingField, sourceObj, newBindingSet, -1, -1);
+                        var action = new HavokChangeField(havokEditorView.Selection.SelectedFileWrapper, bindingField, sourceObj, newBindingSet, -1, -1);
                         havokEditorView.ActionManager.ExecuteAction(action);
                     }
                 }

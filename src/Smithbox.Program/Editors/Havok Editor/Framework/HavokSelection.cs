@@ -18,6 +18,11 @@ public class HavokSelection
     // File List
     public string FilePath;
 
+    /// <summary>
+    /// The wrapper for the selected file, used to track its modified state
+    /// </summary>
+    public HavokFileWrapper SelectedFileWrapper => View.HavokBank.GetFileWrapper(CategoryMode, BinderFileEntry, FilePath);
+
     // Properties
     public HavokPropertyViewType PropertyViewType = HavokPropertyViewType.Structured;
 

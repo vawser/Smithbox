@@ -129,10 +129,13 @@ public class ViewportHavokChangeField : ViewportAction
 public class HavokChangeField : EditorAction
 {
     private readonly List<FieldChange> Changes = new();
+    private readonly HavokFileWrapper FileWrapper;
 
-    public HavokChangeField(FieldInfo prop, object obj, object newval,
+    public HavokChangeField(HavokFileWrapper fileWrapper, FieldInfo prop, object obj, object newval,
         int index = -1, int classIndex = -1)
     {
+        FileWrapper = fileWrapper;
+
         var propObj = PropFinderUtil.FindFieldObject(prop, obj, index, classIndex, false);
         if (propObj != null)
         {
@@ -199,6 +202,9 @@ public class HavokChangeField : EditorAction
             }
         }
 
+        if (FileWrapper != null)
+            FileWrapper.IsDirty = true;
+
         return ActionEvent.NoEvent;
     }
 
@@ -229,6 +235,9 @@ public class HavokChangeField : EditorAction
                 change.Field.SetValue(change.ChangedObj, change.OldValue);
             }
         }
+
+        if (FileWrapper != null)
+            FileWrapper.IsDirty = true;
 
         return ActionEvent.NoEvent;
     }

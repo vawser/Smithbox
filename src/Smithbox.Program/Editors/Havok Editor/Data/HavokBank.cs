@@ -8,16 +8,16 @@ public class HavokBank : IDisposable
 {
     public ProjectEntry Project;
 
-    public Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> AnimationBank = new();
-    public Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> BehaviorBank = new();
-    public Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> CharacterBank = new();
-    public Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> CutsceneBank = new();
-    public Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> NavmeshBank = new();
-    public Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> PartBank = new();
-    public Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> RumbleBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> AnimationBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> BehaviorBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> CharacterBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> CutsceneBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> NavmeshBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> PartBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> RumbleBank = new();
 
-    public Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> MapCollisionBank = new();
-    public Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> AssetCollisionBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> MapCollisionBank = new();
+    public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> AssetCollisionBank = new();
 
     public HavokBank(ProjectEntry project)
     {
@@ -31,656 +31,510 @@ public class HavokBank : IDisposable
         return true;
     }
 
+    #region Banks
+    /// <summary>
+    /// Get the bank that holds the files for the passed category
+    /// </summary>
+    public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> GetBank(HavokCategoryMode category)
+    {
+        return category switch
+        {
+            HavokCategoryMode.Animation => AnimationBank,
+            HavokCategoryMode.Behavior => BehaviorBank,
+            HavokCategoryMode.Character => CharacterBank,
+            HavokCategoryMode.Map_Collision => MapCollisionBank,
+            HavokCategoryMode.Asset_Collision => AssetCollisionBank,
+            HavokCategoryMode.Navmesh => NavmeshBank,
+            HavokCategoryMode.Cutscene => CutsceneBank,
+            HavokCategoryMode.Part_Collidable => PartBank,
+            HavokCategoryMode.Rumble => RumbleBank,
+            _ => null
+        };
+    }
+
+    /// <summary>
+    /// Whether the files for the passed category are stored in a BXF (BHD + BDT) container
+    /// </summary>
+    public bool IsCombinedCategory(HavokCategoryMode category)
+    {
+        return category is HavokCategoryMode.Map_Collision;
+    }
+
+    /// <summary>
+    /// Get the wrapper for the passed file, or null if it is not in the bank
+    /// </summary>
+    public HavokFileWrapper GetFileWrapper(HavokCategoryMode category, FileDictionaryEntry fileEntry, string internalFilePath)
+    {
+        var bankDict = GetBank(category);
+
+        if (bankDict == null || fileEntry == null || internalFilePath == null)
+            return null;
+
+        if (!bankDict.TryGetValue(fileEntry, out var files))
+            return null;
+
+        if (!files.TryGetValue(internalFilePath, out var fileWrapper))
+            return null;
+
+        return fileWrapper;
+    }
+
+    /// <summary>
+    /// Whether any of the files within the passed binder have been modified
+    /// </summary>
+    public bool IsBinderDirty(Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> bankDict, FileDictionaryEntry fileEntry)
+    {
+        if (fileEntry == null || !bankDict.TryGetValue(fileEntry, out var files))
+            return false;
+
+        return IsBinderDirty(files);
+    }
+
+    private bool IsBinderDirty(Dictionary<string, HavokFileWrapper> files)
+    {
+        return files.Values.Any(e => e.IsDirty);
+    }
+    #endregion
+
     #region Populate
     public void PopulateAnimationBank(FileDictionaryEntry entry, bool clearCache = false)
     {
-        PopulateFiles(AnimationBank, entry, clearCache);
+        PopulateFiles(AnimationBank, entry, false, clearCache);
     }
 
     public void PopulateBehaviorBank(FileDictionaryEntry entry, bool clearCache = false)
     {
-        PopulateFiles(BehaviorBank, entry, clearCache);
+        PopulateFiles(BehaviorBank, entry, false, clearCache);
     }
 
     public void PopulateCharacterBank(FileDictionaryEntry entry, bool clearCache = false)
     {
-        PopulateFiles(CharacterBank, entry, clearCache);
+        PopulateFiles(CharacterBank, entry, false, clearCache);
     }
 
     public void PopulateNavmeshBank(FileDictionaryEntry entry, bool clearCache = false)
     {
-        PopulateFiles(NavmeshBank, entry, clearCache);
+        PopulateFiles(NavmeshBank, entry, false, clearCache);
     }
 
     public void PopulateCutsceneBank(FileDictionaryEntry entry, bool clearCache = false)
     {
-        PopulateFiles(CutsceneBank, entry, clearCache);
+        PopulateFiles(CutsceneBank, entry, false, clearCache);
     }
 
     public void PopulatePartBank(FileDictionaryEntry entry, bool clearCache = false)
     {
-        PopulateFiles(PartBank, entry, clearCache);
+        PopulateFiles(PartBank, entry, false, clearCache);
     }
 
     public void PopulateRumbleBank(FileDictionaryEntry entry, bool clearCache = false)
     {
-        PopulateFiles(RumbleBank, entry, clearCache);
+        PopulateFiles(RumbleBank, entry, false, clearCache);
     }
 
     public void PopulateMapCollisionBank(FileDictionaryEntry entry, bool clearCache = false)
     {
-        PopulateCombinedFiles(MapCollisionBank, entry,
-                "HAVOK_Data_Failed_to_Read_Collision_Binder_File", clearCache);
+        PopulateFiles(MapCollisionBank, entry, true, clearCache);
     }
 
     public void PopulateAssetCollisionBank(FileDictionaryEntry entry, bool clearCache = false)
     {
-        PopulateFiles(AssetCollisionBank, entry, clearCache);
+        PopulateFiles(AssetCollisionBank, entry, false, clearCache);
     }
-
     #endregion
 
     #region Load
     public void LoadAnimationFile(FileDictionaryEntry fileEntry, string internalFilePath)
     {
-        LoadHavokFile(AnimationBank, fileEntry, internalFilePath,
+        LoadHavokFile(AnimationBank, fileEntry, internalFilePath, false,
             "HAVOK_Data_Failed_to_Read_Animation_HKX",
             "HAVOK_Data_Failed_to_Read_Animation_Binder_File", true);
     }
 
     public void LoadBehaviorFile(FileDictionaryEntry fileEntry, string internalFilePath)
     {
-        LoadHavokFile(BehaviorBank, fileEntry, internalFilePath,
+        LoadHavokFile(BehaviorBank, fileEntry, internalFilePath, false,
             "HAVOK_Data_Failed_to_Read_Behavior_HKX",
             "HAVOK_Data_Failed_to_Read_Behavior_Binder_File");
     }
 
     public void LoadCharacterFile(FileDictionaryEntry fileEntry, string internalFilePath)
     {
-        LoadHavokFile(CharacterBank, fileEntry, internalFilePath,
+        LoadHavokFile(CharacterBank, fileEntry, internalFilePath, false,
             "HAVOK_Data_Failed_to_Read_Character_HKX",
             "HAVOK_Data_Failed_to_Read_Character_Binder_File");
     }
 
     public void LoadCutsceneFile(FileDictionaryEntry fileEntry, string internalFilePath)
     {
-        LoadHavokFile(CutsceneBank, fileEntry, internalFilePath,
+        LoadHavokFile(CutsceneBank, fileEntry, internalFilePath, false,
             "HAVOK_Data_Failed_to_Read_Cutscene_HKX",
             "HAVOK_Data_Failed_to_Read_Cutscene_Binder_File");
     }
 
     public void LoadNavmeshFile(FileDictionaryEntry fileEntry, string internalFilePath)
     {
-        LoadHavokFile(NavmeshBank, fileEntry, internalFilePath,
+        LoadHavokFile(NavmeshBank, fileEntry, internalFilePath, false,
             "HAVOK_Data_Failed_to_Read_Navmesh_HKX",
             "HAVOK_Data_Failed_to_Read_Navmesh_Binder_File");
     }
 
     public void LoadPartFile(FileDictionaryEntry fileEntry, string internalFilePath)
     {
-        LoadHavokFile(PartBank, fileEntry, internalFilePath,
+        LoadHavokFile(PartBank, fileEntry, internalFilePath, false,
             "HAVOK_Data_Failed_to_Read_Part_HKX",
             "HAVOK_Data_Failed_to_Read_Part_Binder_File");
     }
 
     public void LoadRumbleFile(FileDictionaryEntry fileEntry, string internalFilePath)
     {
-        LoadHavokFile(RumbleBank, fileEntry, internalFilePath,
+        LoadHavokFile(RumbleBank, fileEntry, internalFilePath, false,
             "HAVOK_Data_Failed_to_Read_Rumble_HKX",
             "HAVOK_Data_Failed_to_Read_Rumble_Binder_File");
     }
 
     public void LoadMapCollisionFile(FileDictionaryEntry fileEntry, string internalFilePath)
     {
-        LoadCombinedHavokFile(MapCollisionBank, fileEntry, internalFilePath,
+        LoadHavokFile(MapCollisionBank, fileEntry, internalFilePath, true,
             "HAVOK_Data_Failed_to_Read_Collision_HKX",
-            "HAVOK_Data_Failed_to_Read_Collision_Binder_File");
+            "HAVOK_Data_Failed_to_Read_Collision_Binder_File", true);
     }
 
     public void LoadAssetCollisionFile(FileDictionaryEntry fileEntry, string internalFilePath)
     {
-        LoadHavokFile(AssetCollisionBank, fileEntry, internalFilePath,
+        LoadHavokFile(AssetCollisionBank, fileEntry, internalFilePath, false,
             "HAVOK_Data_Failed_to_Read_Collision_HKX",
             "HAVOK_Data_Failed_to_Read_Collision_Binder_File");
     }
     #endregion
 
     #region Save
-    public void SaveAnimationFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    /// <summary>
+    /// Save the modified files within the passed binder.
+    /// The passed internal file is also saved if unmodified saves are allowed.
+    /// </summary>
+    public bool SaveHavokFile(HavokCategoryMode category, FileDictionaryEntry fileEntry, string internalFilePath)
     {
-        SaveHavokFile(AnimationBank, fileEntry, internalFilePath,
-            "HAVOK_Data_Failed_to_Write_Animation_HKX",
-            "HAVOK_Data_Failed_to_Write_Animation_Binder_File");
+        var bankDict = GetBank(category);
+
+        if (bankDict == null || fileEntry == null)
+            return false;
+
+        if (!bankDict.TryGetValue(fileEntry, out var files))
+            return false;
+
+        return SaveBinder(fileEntry, files, internalFilePath, IsCombinedCategory(category));
     }
 
-    public void SaveBehaviorFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    /// <summary>
+    /// Save all binders that contain modified files
+    /// </summary>
+    public bool SaveAllHavokFiles()
     {
-        SaveHavokFile(BehaviorBank, fileEntry, internalFilePath,
-            "HAVOK_Data_Failed_to_Write_Behavior_HKX",
-            "HAVOK_Data_Failed_to_Write_Behavior_Binder_File");
+        var success = true;
+
+        foreach (var category in Enum.GetValues<HavokCategoryMode>())
+        {
+            var bankDict = GetBank(category);
+
+            if (bankDict == null)
+                continue;
+
+            foreach (var (fileEntry, files) in bankDict)
+            {
+                // Only save the binders that have been modified
+                if (!IsBinderDirty(files))
+                    continue;
+
+                if (!SaveBinder(fileEntry, files, null, IsCombinedCategory(category)))
+                    success = false;
+            }
+        }
+
+        return success;
+    }
+    #endregion
+
+    #region Container Internals
+    /// <summary>
+    /// Read the file, preferring the project version over the game version
+    /// </summary>
+    private Memory<byte>? ReadFileData(string path)
+    {
+        if (Project.VFS.ProjectFS.FileExists(path))
+        {
+            return Project.VFS.ProjectFS.ReadFile(path);
+        }
+
+        return Project.VFS.FS.ReadFile(path);
     }
 
-    public void SaveCharacterFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    /// <summary>
+    /// BXF containers are split into a header (BHD) and data (BDT) file
+    /// </summary>
+    private string GetBdtPath(string bhdPath)
     {
-        SaveHavokFile(CharacterBank, fileEntry, internalFilePath,
-            "HAVOK_Data_Failed_to_Write_Character_HKX",
-            "HAVOK_Data_Failed_to_Write_Character_Binder_File");
+        return bhdPath.Replace("bhd", "bdt");
     }
 
-    public void SaveCutsceneFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    /// <summary>
+    /// Read the container as a BND, or as a BXF if it is combined.
+    /// Returns null if the container files could not be found.
+    /// </summary>
+    private IBinder ReadContainer(FileDictionaryEntry fileEntry, bool isCombined)
     {
-        SaveHavokFile(CutsceneBank, fileEntry, internalFilePath,
-            "HAVOK_Data_Failed_to_Write_Cutscene_HKX",
-            "HAVOK_Data_Failed_to_Write_Cutscene_Binder_File");
+        if (isCombined)
+        {
+            var bhdData = ReadFileData(fileEntry.Path);
+            var bdtData = ReadFileData(GetBdtPath(fileEntry.Path));
+
+            if (bhdData == null || bdtData == null)
+                return null;
+
+            if (HavokTypeUtils.IsBXF3(Project))
+            {
+                return BXF3.Read(bhdData.Value, bdtData.Value);
+            }
+
+            return BXF4.Read(bhdData.Value, bdtData.Value);
+        }
+
+        var binderData = ReadFileData(fileEntry.Path);
+
+        if (binderData == null)
+            return null;
+
+        if (HavokTypeUtils.IsBND3(Project))
+        {
+            return BND3.Read(binderData.Value);
+        }
+
+        return BND4.Read(binderData.Value);
     }
 
-    public void SaveNavmeshFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    /// <summary>
+    /// Write the container to the project, writing both the BHD and BDT for a BXF
+    /// </summary>
+    private void WriteContainer(FileDictionaryEntry fileEntry, IBinder binder)
     {
-        SaveHavokFile(NavmeshBank, fileEntry, internalFilePath,
-            "HAVOK_Data_Failed_to_Write_Navmesh_HKX",
-            "HAVOK_Data_Failed_to_Write_Navmesh_Binder_File");
+        byte[] bhdBytes;
+        byte[] bdtBytes;
+
+        switch (binder)
+        {
+            case BND3 bnd3:
+                Project.VFS.ProjectFS.WriteFile(fileEntry.Path, bnd3.Write());
+                break;
+
+            case BND4 bnd4:
+                Project.VFS.ProjectFS.WriteFile(fileEntry.Path, bnd4.Write());
+                break;
+
+            case BXF3 bxf3:
+                bxf3.Write(out bhdBytes, out bdtBytes);
+
+                Project.VFS.ProjectFS.WriteFile(fileEntry.Path, bhdBytes);
+                Project.VFS.ProjectFS.WriteFile(GetBdtPath(fileEntry.Path), bdtBytes);
+                break;
+
+            case BXF4 bxf4:
+                bxf4.Write(out bhdBytes, out bdtBytes);
+
+                Project.VFS.ProjectFS.WriteFile(fileEntry.Path, bhdBytes);
+                Project.VFS.ProjectFS.WriteFile(GetBdtPath(fileEntry.Path), bdtBytes);
+                break;
+        }
     }
 
-    public void SavePartFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    /// <summary>
+    /// Read the container, apply the modification and write the container back if the modification made a change.
+    /// The editing state of any file renamed by the modification is moved to the new name.
+    /// </summary>
+    private bool ModifyContainer(HavokFileView.FileAction fileAction, bool isCombined, Func<IBinder, bool> modify)
     {
-        SaveHavokFile(PartBank, fileEntry, internalFilePath,
-            "HAVOK_Data_Failed_to_Write_Part_HKX",
-            "HAVOK_Data_Failed_to_Write_Part_Binder_File");
+        try
+        {
+            using var binder = ReadContainer(fileAction.BinderEntry, isCombined);
+
+            if (binder == null)
+            {
+                Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Locate_Container", fileAction.BinderEntry.Path));
+                return false;
+            }
+
+            var originalNames = binder.Files.Select(e => (File: e, Name: e.Name)).ToList();
+
+            if (!modify(binder))
+                return false;
+
+            WriteContainer(fileAction.BinderEntry, binder);
+
+            if (fileAction.BankDict.TryGetValue(fileAction.BinderEntry, out var files))
+            {
+                foreach (var (file, oldName) in originalNames)
+                {
+                    if (file.Name == oldName)
+                        continue;
+
+                    if (files.Remove(oldName, out var fileWrapper))
+                    {
+                        fileWrapper.Key = file.Name;
+                        files[file.Name] = fileWrapper;
+                    }
+                }
+            }
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
+            return false;
+        }
     }
 
-    public void SaveRumbleFile(FileDictionaryEntry fileEntry, string internalFilePath)
+    private bool IsDcxFile(string name)
     {
-        SaveHavokFile(RumbleBank, fileEntry, internalFilePath,
-            "HAVOK_Data_Failed_to_Write_Rumble_HKX",
-            "HAVOK_Data_Failed_to_Write_Rumble_Binder_File");
+        return name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase);
     }
-    public void SaveMapCollisionFile(FileDictionaryEntry fileEntry, string internalFilePath)
-    {
-        SaveCombinedHavokFile(MapCollisionBank, fileEntry, internalFilePath,
-            "HAVOK_Data_Failed_to_Write_Collision_HKX",
-            "HAVOK_Data_Failed_to_Write_Collision_Binder_File");
-    }
-
-    public void SaveAssetCollisionFile(FileDictionaryEntry fileEntry, string internalFilePath)
-    {
-        SaveHavokFile(AssetCollisionBank, fileEntry, internalFilePath,
-            "HAVOK_Data_Failed_to_Write_Collision_HKX",
-            "HAVOK_Data_Failed_to_Write_Collision_Binder_File");
-    }
-
     #endregion
 
     #region Populate Internals
     public void PopulateFiles(
-        Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict,
+        Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> bankDict,
         FileDictionaryEntry fileEntry,
+        bool isCombined,
         bool clearCache = false)
     {
+        // Binders with unsaved changes are kept so the changes are not lost
         if (clearCache)
-            bankDict.Clear();
-
-        if (!bankDict.ContainsKey(fileEntry))
-            bankDict.Add(fileEntry, new Dictionary<string, IRootContainer>());
-
-        var binderData = Project.VFS.FS.ReadFile(fileEntry.Path);
-
-        if (Project.VFS.ProjectFS.FileExists(fileEntry.Path))
         {
-            binderData = Project.VFS.ProjectFS.ReadFile(fileEntry.Path);
-        }
-
-        if (binderData == null)
-            return;
-
-        if (HavokTypeUtils.IsBND3(Project))
-        {
-            var binder = new BND3Reader(binderData.Value);
-            foreach (var file in binder.Files)
+            foreach (var key in bankDict.Keys.ToList())
             {
-                if (bankDict.ContainsKey(fileEntry))
+                if (!IsBinderDirty(bankDict[key]))
                 {
-                    var curTopDict = bankDict[fileEntry];
-
-                    if (!curTopDict.ContainsKey(file.Name))
-                    {
-                        bankDict[fileEntry].Add(file.Name, null);
-
-                        Project.Handler.HavokEditor.ViewHandler.ActiveView.Selection.AddToFileAliasCache(file.Name);
-                    }
+                    bankDict.Remove(key);
                 }
             }
         }
-        else
-        {
-            var binder = new BND4Reader(binderData.Value);
-            foreach (var file in binder.Files)
-            {
-                if (bankDict.ContainsKey(fileEntry))
-                {
-                    var curTopDict = bankDict[fileEntry];
 
-                    if (!curTopDict.ContainsKey(file.Name))
-                    {
-                        bankDict[fileEntry].Add(file.Name, null);
-
-                        Project.Handler.HavokEditor.ViewHandler.ActiveView.Selection.AddToFileAliasCache(file.Name);
-                    }
-                }
-            }
-        }
-    }
-
-    public void PopulateCombinedFiles(
-        Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict,
-        FileDictionaryEntry fileEntry,
-        string failedBinderReadLocKey,
-        bool clearCache = false)
-    {
-        if (clearCache)
-            bankDict.Clear();
-
-        if (!bankDict.ContainsKey(fileEntry))
-            bankDict.Add(fileEntry, new Dictionary<string, IRootContainer>());
-
-        var bhdPath = fileEntry.Path;
-        var bdtPath = fileEntry.Path.Replace("bhd", "bdt");
-
-        var name = Path.GetFileNameWithoutExtension(fileEntry.Path);
+        bankDict.TryGetValue(fileEntry, out var existingFiles);
 
         try
         {
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
+            using var binder = ReadContainer(fileEntry, isCombined);
 
-            if (Project.VFS.ProjectFS.FileExists(bdtPath))
-            {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
-
-            if (bdtData == null || bhdData == null)
+            if (binder == null)
                 return;
 
-            if (HavokTypeUtils.IsBXF3(Project))
+            var files = new Dictionary<string, HavokFileWrapper>();
+
+            foreach (var file in binder.Files)
             {
-                var packedBinder = BXF3.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+                if (files.ContainsKey(file.Name))
+                    continue;
 
-                foreach (var file in packedBinder.Files)
+                HavokFileWrapper fileWrapper = null;
+
+                // Keep the existing state if the file has unsaved changes, or if the binder is not being refreshed
+                if (existingFiles != null && existingFiles.TryGetValue(file.Name, out var existingWrapper))
                 {
-                    if (bankDict.ContainsKey(fileEntry))
+                    if (existingWrapper.IsDirty || !clearCache)
                     {
-                        var curTopDict = bankDict[fileEntry];
-
-                        if (!curTopDict.ContainsKey(file.Name))
-                        {
-                            bankDict[fileEntry].Add(file.Name, null);
-                        }
+                        fileWrapper = existingWrapper;
                     }
                 }
-            }
-            else
-            {
-                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
-                foreach (var file in packedBinder.Files)
+                files.Add(file.Name, fileWrapper ?? new HavokFileWrapper(file.Name));
+
+                if (!isCombined)
                 {
-                    if (bankDict.ContainsKey(fileEntry))
-                    {
-                        var curTopDict = bankDict[fileEntry];
-
-                        if (!curTopDict.ContainsKey(file.Name))
-                        {
-                            bankDict[fileEntry].Add(file.Name, null);
-                        }
-                    }
+                    Project.Handler.HavokEditor.ViewHandler.ActiveView.Selection.AddToFileAliasCache(file.Name);
                 }
             }
+
+            bankDict[fileEntry] = files;
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this,
-                LOC.Get(failedBinderReadLocKey, name), ex);
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", fileEntry.Path), ex);
         }
     }
     #endregion
 
     #region Load Internals
-    public void LoadHavokFile(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string fileReadFailLocKey, string binderReadFailLocKey, bool loadCompendium = false)
+    public void LoadHavokFile(
+        Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> bankDict,
+        FileDictionaryEntry fileEntry,
+        string internalFilePath,
+        bool isCombined,
+        string fileReadFailLocKey,
+        string binderReadFailLocKey,
+        bool loadCompendium = false)
     {
-        if (!bankDict.ContainsKey(fileEntry))
+        if (!bankDict.TryGetValue(fileEntry, out var files))
             return;
 
-        var curTopDict = bankDict[fileEntry];
-
-        if (!curTopDict.ContainsKey(internalFilePath))
+        if (!files.TryGetValue(internalFilePath, out var fileWrapper))
             return;
 
-        var binderData = Project.VFS.FS.ReadFile(fileEntry.Path);
-
-        if (Project.VFS.ProjectFS.FileExists(fileEntry.Path))
-        {
-            binderData = Project.VFS.ProjectFS.ReadFile(fileEntry.Path);
-        }
-
-        if (binderData == null)
+        // Keep the unsaved changes instead of replacing them with the stored version
+        if (fileWrapper.IsDirty)
             return;
 
-        if (HavokTypeUtils.IsHKX2(Project))
-        {
-            LoadHavokFile_HKX2(binderData, bankDict, fileEntry, internalFilePath, fileReadFailLocKey, binderReadFailLocKey, loadCompendium);
-        }
-        else if (HavokTypeUtils.IsHKX3(Project))
-        {
-            LoadHavokFile_HKX3(binderData, bankDict, fileEntry, internalFilePath, fileReadFailLocKey, binderReadFailLocKey, loadCompendium);
-        }
-    }
-
-    public void LoadHavokFile_HKX2(Memory<byte>? binderData, Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string fileReadFailLocKey, string binderReadFailLocKey, bool loadCompendium = false)
-    {
-        HKX2.PackFileDeserializer deserializer = new HKX2.PackFileDeserializer();
-
-        if (HavokTypeUtils.IsBND3(Project))
-        {
-            var binder = new BND3Reader(binderData.Value);
-
-            // NOTE: compendium not used?
-
-            foreach (var file in binder.Files)
-            {
-                var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                if (file.Name != internalFilePath)
-                    continue;
-
-                try
-                {
-                    var fileBytes = binder.ReadFile(file).ToArray();
-
-                    using (MemoryStream memoryStream = new MemoryStream(fileBytes))
-                    {
-                        HKX2.hkRootLevelContainer fileHkx;
-
-                        try
-                        {
-                            var br = new BinaryReaderEx(false, memoryStream.ToArray());
-                            fileHkx = (HKX2.hkRootLevelContainer)deserializer.Deserialize(br);
-
-                            bankDict[fileEntry][internalFilePath] = fileHkx;
-                        }
-                        catch (InvalidDataException ex)
-                        {
-                            Smithbox.LogError(this,
-                                LOC.Get(fileReadFailLocKey, name), ex);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Smithbox.LogError(this,
-                        LOC.Get(binderReadFailLocKey, name), ex);
-                }
-            }
-        }
-        else
-        {
-            var binder = new BND4Reader(binderData.Value);
-
-            // NOTE: compendium not used?
-
-            foreach (var file in binder.Files)
-            {
-                var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                if (file.Name != internalFilePath)
-                    continue;
-
-                try
-                {
-                    var fileBytes = binder.ReadFile(file).ToArray();
-
-                    using (MemoryStream memoryStream = new MemoryStream(fileBytes))
-                    {
-                        HKX2.hkRootLevelContainer fileHkx;
-
-                        try
-                        {
-                            var br = new BinaryReaderEx(false, memoryStream.ToArray());
-                            fileHkx = (HKX2.hkRootLevelContainer)deserializer.Deserialize(br);
-
-                            bankDict[fileEntry][internalFilePath] = fileHkx;
-                        }
-                        catch (InvalidDataException ex)
-                        {
-                            Smithbox.LogError(this,
-                                LOC.Get(fileReadFailLocKey, name), ex);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Smithbox.LogError(this,
-                        LOC.Get(binderReadFailLocKey, name), ex);
-                }
-            }
-        }
-    }
-
-    public void LoadHavokFile_HKX3(Memory<byte>? binderData, Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string fileReadFailLocKey, string binderReadFailLocKey, bool loadCompendium = false)
-    {
-        HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
-
-        var binder = new BND4Reader(binderData.Value);
-
-        if (loadCompendium)
-        {
-            // Get compendium
-            byte[] compendiumFileBytes = null;
-
-            foreach (var file in binder.Files)
-            {
-                if (file.Name.Contains(".compendium.dcx"))
-                {
-                    var fileBytes = binder.ReadFile(file).ToArray();
-
-                    compendiumFileBytes = DCX.Decompress(fileBytes).ToArray();
-                }
-                else if (file.Name.Contains(".compendium"))
-                {
-                    compendiumFileBytes = binder.ReadFile(file).ToArray();
-                }
-            }
-
-            if (compendiumFileBytes != null)
-            {
-                using MemoryStream memoryStream = new MemoryStream(compendiumFileBytes);
-                serializer.LoadCompendium(memoryStream);
-            }
-        }
-
-        foreach (var file in binder.Files)
-        {
-            var name = Path.GetFileNameWithoutExtension(file.Name);
-
-            if (file.Name != internalFilePath)
-                continue;
-
-            try
-            {
-                var fileBytes = binder.ReadFile(file).ToArray();
-
-                using (MemoryStream memoryStream = new MemoryStream(fileBytes))
-                {
-                    HKLib.hk2018.hkRootLevelContainer fileHkx;
-
-                    try
-                    {
-                        fileHkx = (HKLib.hk2018.hkRootLevelContainer)serializer.Read(memoryStream);
-
-                        bankDict[fileEntry][internalFilePath] = fileHkx;
-                    }
-                    catch (InvalidDataException ex)
-                    {
-                        Smithbox.LogError(this,
-                            LOC.Get(fileReadFailLocKey, name), ex);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this,
-                    LOC.Get(binderReadFailLocKey, name), ex);
-            }
-        }
-    }
-
-    public void LoadCombinedHavokFile(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string fileReadFailLocKey, string binderReadFailLocKey)
-    {
-        if (!bankDict.ContainsKey(fileEntry))
+        if (!HavokTypeUtils.IsHKX2(Project) && !HavokTypeUtils.IsHKX3(Project))
             return;
-
-        var curTopDict = bankDict[fileEntry];
-
-        if (!curTopDict.ContainsKey(internalFilePath))
-            return;
-
-        var bhdPath = fileEntry.Path;
-        var bdtPath = fileEntry.Path.Replace("bhd", "bdt");
 
         var name = Path.GetFileNameWithoutExtension(internalFilePath);
 
         try
         {
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
+            using var binder = ReadContainer(fileEntry, isCombined);
 
-            if (Project.VFS.ProjectFS.FileExists(bdtPath))
-            {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
-
-            if (bdtData == null || bhdData == null)
+            if (binder == null)
                 return;
 
-            if (HavokTypeUtils.IsHKX2(Project))
+            HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer = null;
+
+            if (HavokTypeUtils.IsHKX3(Project))
             {
-                LoadCombinedHavokFile_HKX2(bdtData, bhdData, bankDict, fileEntry, internalFilePath, fileReadFailLocKey, binderReadFailLocKey, name);
-            }
-            else if (HavokTypeUtils.IsHKX3(Project))
-            {
-                LoadCombinedHavokFile_HKX3(bdtData, bhdData, bankDict, fileEntry, internalFilePath, fileReadFailLocKey, binderReadFailLocKey, name);
+                serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
+
+                if (loadCompendium)
+                {
+                    LoadCompendium(binder, serializer);
+                }
             }
 
+            var file = binder.Files.FirstOrDefault(e => e.Name == internalFilePath);
+
+            if (file == null)
+                return;
+
+            var fileBytes = IsDcxFile(file.Name)
+                ? DCX.Decompress(file.Bytes).ToArray()
+                : file.Bytes.ToArray();
+
+            try
+            {
+                fileWrapper.Root = ReadRoot(fileBytes, serializer);
+            }
+            catch (InvalidDataException ex)
+            {
+                Smithbox.LogError(this, LOC.Get(fileReadFailLocKey, name), ex);
+            }
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this,
-                LOC.Get(binderReadFailLocKey, name), ex);
+            Smithbox.LogError(this, LOC.Get(binderReadFailLocKey, name), ex);
         }
     }
 
-    public void LoadCombinedHavokFile_HKX2(Memory<byte>? bdtData, Memory<byte>? bhdData, Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string fileReadFailLocKey, string binderReadFailLocKey, string name)
+    private void LoadCompendium(IBinder binder, HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer)
     {
-        if (HavokTypeUtils.IsBXF3(Project))
-        {
-            var packedBinder = BXF3.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-            HKX2.PackFileDeserializer deserializer = new HKX2.PackFileDeserializer();
-
-            foreach (var file in packedBinder.Files)
-            {
-                if (file.Name != internalFilePath)
-                    continue;
-
-                byte[] fileBytes = null;
-
-                if (file.Name.Contains(".dcx"))
-                {
-                    fileBytes = DCX.Decompress(file.Bytes).ToArray();
-                }
-                else
-                {
-                    fileBytes = file.Bytes.ToArray();
-                }
-
-                using (MemoryStream memoryStream = new MemoryStream(fileBytes))
-                {
-                    HKX2.hkRootLevelContainer fileHkx;
-
-                    try
-                    {
-                        var br = new BinaryReaderEx(false, memoryStream.ToArray());
-                        fileHkx = (HKX2.hkRootLevelContainer)deserializer.Deserialize(br);
-
-                        bankDict[fileEntry][internalFilePath] = fileHkx;
-                    }
-                    catch (InvalidDataException ex)
-                    {
-                        Smithbox.LogError(this,
-                            LOC.Get(fileReadFailLocKey, name), ex);
-                    }
-                }
-            }
-        }
-        else
-        {
-            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-            HKX2.PackFileDeserializer deserializer = new HKX2.PackFileDeserializer();
-
-            foreach (var file in packedBinder.Files)
-            {
-                if (file.Name != internalFilePath)
-                    continue;
-
-                byte[] fileBytes = null;
-
-                if (file.Name.Contains(".dcx"))
-                {
-                    fileBytes = DCX.Decompress(file.Bytes).ToArray();
-                }
-                else
-                {
-                    fileBytes = file.Bytes.ToArray();
-                }
-
-                using (MemoryStream memoryStream = new MemoryStream(fileBytes))
-                {
-                    HKX2.hkRootLevelContainer fileHkx;
-
-                    try
-                    {
-                        var br = new BinaryReaderEx(false, memoryStream.ToArray());
-                        fileHkx = (HKX2.hkRootLevelContainer)deserializer.Deserialize(br);
-
-                        bankDict[fileEntry][internalFilePath] = fileHkx;
-                    }
-                    catch (InvalidDataException ex)
-                    {
-                        Smithbox.LogError(this,
-                            LOC.Get(fileReadFailLocKey, name), ex);
-                    }
-                }
-            }
-        }
-    }
-
-    public void LoadCombinedHavokFile_HKX3(Memory<byte>? bdtData, Memory<byte>? bhdData, Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string fileReadFailLocKey, string binderReadFailLocKey, string name)
-    {
-        var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-        HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
-
-        // Get compendium
         byte[] compendiumFileBytes = null;
 
-        foreach (var file in packedBinder.Files)
+        foreach (var file in binder.Files)
         {
             if (file.Name.Contains(".compendium.dcx"))
             {
@@ -697,997 +551,275 @@ public class HavokBank : IDisposable
             using MemoryStream memoryStream = new MemoryStream(compendiumFileBytes);
             serializer.LoadCompendium(memoryStream);
         }
-
-        foreach (var file in packedBinder.Files)
-        {
-            if (file.Name != internalFilePath)
-                continue;
-
-            byte[] fileBytes = null;
-
-            if (file.Name.Contains(".dcx"))
-            {
-                fileBytes = DCX.Decompress(file.Bytes).ToArray();
-            }
-            else
-            {
-                fileBytes = file.Bytes.ToArray();
-            }
-
-            using (MemoryStream memoryStream = new MemoryStream(fileBytes))
-            {
-                HKLib.hk2018.hkRootLevelContainer fileHkx;
-
-                try
-                {
-                    fileHkx = (HKLib.hk2018.hkRootLevelContainer)serializer.Read(memoryStream);
-
-                    bankDict[fileEntry][internalFilePath] = fileHkx;
-                }
-                catch (InvalidDataException ex)
-                {
-                    Smithbox.LogError(this,
-                        LOC.Get(fileReadFailLocKey, name), ex);
-                }
-            }
-        }
     }
 
+    /// <summary>
+    /// Deserialize the Havok file, using the HKX3 serializer if the project uses HKX3
+    /// </summary>
+    private IRootContainer ReadRoot(byte[] fileBytes, HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer)
+    {
+        if (HavokTypeUtils.IsHKX2(Project))
+        {
+            var deserializer = new HKX2.PackFileDeserializer();
+            var br = new BinaryReaderEx(false, fileBytes);
+
+            return (HKX2.hkRootLevelContainer)deserializer.Deserialize(br);
+        }
+
+        using (MemoryStream memoryStream = new MemoryStream(fileBytes))
+        {
+            return (HKLib.hk2018.hkRootLevelContainer)serializer.Read(memoryStream);
+        }
+    }
     #endregion
 
     #region Save Internals
-    public void SaveHavokFile(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string writeFileFailLocKey, string writeBinderFailLocKey)
+    private bool SaveBinder(FileDictionaryEntry fileEntry, Dictionary<string, HavokFileWrapper> files, string selectedFilePath, bool isCombined)
     {
-        if (!bankDict.ContainsKey(fileEntry))
-            return;
+        var targets = files.Values.Where(e => e.IsLoaded() && e.IsDirty).ToList();
 
-        var curTopDict = bankDict[fileEntry];
-
-        if (!curTopDict.ContainsKey(internalFilePath))
-            return;
-
-        var binderData = Project.VFS.FS.ReadFile(fileEntry.Path);
-
-        if (Project.VFS.ProjectFS.FileExists(fileEntry.Path))
+        if (CFG.Current.HavokEditor_Allow_Unmodified_Save && selectedFilePath != null)
         {
-            binderData = Project.VFS.ProjectFS.ReadFile(fileEntry.Path);
+            if (files.TryGetValue(selectedFilePath, out var selectedWrapper) && selectedWrapper.IsLoaded() && !selectedWrapper.IsDirty)
+            {
+                targets.Add(selectedWrapper);
+            }
         }
 
-        if (binderData == null)
-            return;
+        if (targets.Count == 0)
+        {
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", fileEntry.Filename));
+            return false;
+        }
 
+        if (!HavokTypeUtils.IsHKX2(Project) && !HavokTypeUtils.IsHKX3(Project))
+            return false;
+
+        // Container
+        IBinder binder;
+
+        try
+        {
+            binder = ReadContainer(fileEntry, isCombined);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", fileEntry.Path), ex);
+            return false;
+        }
+
+        if (binder == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Locate_Container", fileEntry.Path));
+            return false;
+        }
+
+        using (binder)
+        {
+            var serializer = HavokTypeUtils.IsHKX3(Project)
+                ? new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer()
+                : null;
+
+            // Binder Files
+            var writtenFiles = new List<HavokFileWrapper>();
+
+            foreach (var target in targets)
+            {
+                if (HandleBinderFile(binder, target, serializer))
+                {
+                    writtenFiles.Add(target);
+                }
+            }
+
+            if (writtenFiles.Count == 0)
+                return false;
+
+            // Save Binder
+            try
+            {
+                WriteContainer(fileEntry, binder);
+
+                foreach (var fileWrapper in writtenFiles)
+                {
+                    fileWrapper.IsDirty = false;
+                }
+
+                Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", fileEntry.Filename));
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_Container", fileEntry.Path), ex);
+                return false;
+            }
+
+            return writtenFiles.Count == targets.Count;
+        }
+    }
+
+    /// <summary>
+    /// Write the Havok file into its binder file. Returns false if the file failed to write.
+    /// </summary>
+    private bool HandleBinderFile(IBinder binder, HavokFileWrapper fileWrapper, HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer)
+    {
+        var file = binder.Files.FirstOrDefault(e => e.Name == fileWrapper.Key);
+
+        if (file == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Locate_Internal_File", fileWrapper.Key));
+            return false;
+        }
+
+        // Internal File
+        try
+        {
+            var fileBytes = WriteRoot(fileWrapper.Root, serializer);
+
+            // Keep the compression the file already uses
+            file.Bytes = IsDcxFile(file.Name)
+                ? DCX.Compress(fileBytes, GetExistingDCXType(file))
+                : fileBytes;
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_File", file.Name), ex);
+            return false;
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Serialize the Havok file, using the HKX3 serializer if the project uses HKX3
+    /// </summary>
+    private byte[] WriteRoot(IRootContainer root, HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer)
+    {
         if (HavokTypeUtils.IsHKX2(Project))
         {
-            SaveHavokFile_HKX2(binderData, bankDict, fileEntry, internalFilePath, writeFileFailLocKey, writeBinderFailLocKey);
+            var packSerializer = new HKX2.PackFileSerializer();
+            var bw = new BinaryWriterEx(false);
+
+            packSerializer.Serialize((HKX2.IHavokObject)root, bw);
+
+            return bw.FinishBytes();
         }
-        else if (HavokTypeUtils.IsHKX3(Project))
+
+        using (var memoryStream = new MemoryStream())
         {
-            SaveHavokFile_HKX3(binderData, bankDict, fileEntry, internalFilePath, writeFileFailLocKey, writeBinderFailLocKey);
+            serializer.Write((HKLib.hk2018.hkRootLevelContainer)root, memoryStream);
+
+            return memoryStream.ToArray();
         }
     }
-
-    public void SaveHavokFile_HKX2(Memory<byte>? binderData, Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string writeFileFailLocKey, string writeBinderFailLocKey)
-    {
-        HKX2.PackFileSerializer serializer = new HKX2.PackFileSerializer();
-
-        if (HavokTypeUtils.IsBND3(Project))
-        {
-            var binder = BND3.Read(binderData.Value);
-
-            bool anyWritten = false;
-
-            foreach (var file in binder.Files)
-            {
-                var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                if (file.Name != internalFilePath)
-                    continue;
-
-                if (!bankDict[fileEntry].ContainsKey(internalFilePath))
-                    continue;
-
-                try
-                {
-                    var objEntry = bankDict[fileEntry][internalFilePath];
-
-                    if (objEntry != null)
-                    {
-                        var bw = new BinaryWriterEx(false);
-                        serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
-
-                        file.Bytes = bw.FinishBytes();
-                        anyWritten = true;
-                    }
-                    else
-                    {
-                        Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Smithbox.LogError(this, LOC.Get(writeFileFailLocKey, name), ex);
-                }
-            }
-
-            if (!anyWritten)
-                return;
-
-            try
-            {
-                var writtenBinder = binder.Write();
-
-                Project.VFS.ProjectFS.WriteFile(fileEntry.Path, writtenBinder);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get(writeBinderFailLocKey, fileEntry.Path), ex);
-            }
-        }
-        else
-        {
-            var binder = BND4.Read(binderData.Value);
-
-            bool anyWritten = false;
-
-            foreach (var file in binder.Files)
-            {
-                var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                if (file.Name != internalFilePath)
-                    continue;
-
-                if (!bankDict[fileEntry].ContainsKey(internalFilePath))
-                    continue;
-
-                try
-                {
-                    var objEntry = bankDict[fileEntry][internalFilePath];
-
-                    if (objEntry != null)
-                    {
-                        var bw = new BinaryWriterEx(false);
-                        serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
-
-                        file.Bytes = bw.FinishBytes();
-                        anyWritten = true;
-                    }
-                    else
-                    {
-                        Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Smithbox.LogError(this, LOC.Get(writeFileFailLocKey, name), ex);
-                }
-            }
-
-            if (!anyWritten)
-                return;
-
-            try
-            {
-                var writtenBinder = binder.Write();
-
-                Project.VFS.ProjectFS.WriteFile(fileEntry.Path, writtenBinder);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get(writeBinderFailLocKey, fileEntry.Path), ex);
-            }
-        }
-    }
-
-    public void SaveHavokFile_HKX3(Memory<byte>? binderData, Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string writeFileFailLocKey, string writeBinderFailLocKey)
-    {
-        HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
-
-        var binder = BND4.Read(binderData.Value);
-
-        bool anyWritten = false;
-
-        foreach (var file in binder.Files)
-        {
-            var name = Path.GetFileNameWithoutExtension(file.Name);
-
-            if (file.Name != internalFilePath)
-                continue;
-
-            if (!bankDict[fileEntry].ContainsKey(internalFilePath))
-                continue;
-
-            try
-            {
-                var objEntry = bankDict[fileEntry][internalFilePath];
-
-                if (objEntry != null)
-                {
-                    using (var memoryStream = new MemoryStream())
-                    {
-                        serializer.Write((HKLib.hk2018.hkRootLevelContainer)objEntry, memoryStream);
-
-                        file.Bytes = memoryStream.ToArray();
-                        anyWritten = true;
-                    }
-                }
-                else
-                {
-                    Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
-                }
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get(writeFileFailLocKey, name), ex);
-            }
-        }
-
-        if (!anyWritten)
-            return;
-
-        try
-        {
-            var writtenBinder = binder.Write();
-
-            Project.VFS.ProjectFS.WriteFile(fileEntry.Path, writtenBinder);
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get(writeBinderFailLocKey, fileEntry.Path), ex);
-        }
-    }
-
-    public void SaveCombinedHavokFile(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string writeFileFailLocKey, string writeBinderFailLocKey)
-    {
-        if (!bankDict.ContainsKey(fileEntry))
-            return;
-
-        var curTopDict = bankDict[fileEntry];
-
-        if (!curTopDict.ContainsKey(internalFilePath))
-            return;
-
-        var bhdPath = fileEntry.Path;
-        var bdtPath = fileEntry.Path.Replace("bhd", "bdt");
-
-        try
-        {
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
-
-            if (Project.VFS.ProjectFS.FileExists(bdtPath))
-            {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
-
-            if (bdtData == null || bhdData == null)
-                return;
-
-            if (HavokTypeUtils.IsHKX2(Project))
-            {
-                SaveCombinedHavokFile_HKX2(bdtData, bhdData, bdtPath, bhdPath, bankDict, fileEntry, internalFilePath, writeFileFailLocKey, writeBinderFailLocKey);
-            }
-            else if (HavokTypeUtils.IsHKX3(Project))
-            {
-                SaveCombinedHavokFile_HKX3(bdtData, bhdData, bdtPath, bhdPath, bankDict, fileEntry, internalFilePath, writeFileFailLocKey, writeBinderFailLocKey);
-            }
-
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get(writeBinderFailLocKey, fileEntry.Path), ex);
-        }
-    }
-
-    public void SaveCombinedHavokFile_HKX2(Memory<byte>? bdtData, Memory<byte>? bhdData,
-        string bdtPath, string bhdPath,
-        Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string writeFileFailLocKey, string writeBinderFailLocKey)
-    {
-        bool anyWritten = false;
-
-        HKX2.PackFileSerializer serializer = new HKX2.PackFileSerializer();
-
-        if (HavokTypeUtils.IsBXF3(Project))
-        {
-            var packedBinder = BXF3.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-            foreach (var file in packedBinder.Files)
-            {
-                var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                if (file.Name != internalFilePath)
-                    continue;
-
-                if (!bankDict[fileEntry].ContainsKey(internalFilePath))
-                    continue;
-
-                try
-                {
-                    var objEntry = bankDict[fileEntry][internalFilePath];
-                    if (objEntry != null)
-                    {
-                        var bw = new BinaryWriterEx(false);
-                        serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
-
-                        if (file.Name.Contains(".dcx"))
-                        {
-                            var compressedBytes = DCX.Compress(bw.FinishBytes(), GetExistingDCXType(file));
-                            file.Bytes = compressedBytes;
-                        }
-                        else
-                        {
-                            file.Bytes = bw.FinishBytes();
-                        }
-
-                        anyWritten = true;
-                    }
-                    else
-                    {
-                        Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Smithbox.LogError(this, LOC.Get(writeFileFailLocKey, name), ex);
-                }
-            }
-
-            if (!anyWritten)
-                return;
-
-            packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-            Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-            Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-        }
-        else
-        {
-            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-            foreach (var file in packedBinder.Files)
-            {
-                var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                if (file.Name != internalFilePath)
-                    continue;
-
-                if (!bankDict[fileEntry].ContainsKey(internalFilePath))
-                    continue;
-
-                try
-                {
-                    var objEntry = bankDict[fileEntry][internalFilePath];
-                    if (objEntry != null)
-                    {
-                        var bw = new BinaryWriterEx(false);
-                        serializer.Serialize((HKX2.IHavokObject)objEntry, bw);
-
-                        if (file.Name.Contains(".dcx"))
-                        {
-                            var compressedBytes = DCX.Compress(bw.FinishBytes(), GetExistingDCXType(file));
-                            file.Bytes = compressedBytes;
-                        }
-                        else
-                        {
-                            file.Bytes = bw.FinishBytes();
-                        }
-
-                        anyWritten = true;
-                    }
-                    else
-                    {
-                        Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Smithbox.LogError(this, LOC.Get(writeFileFailLocKey, name), ex);
-                }
-            }
-
-            if (!anyWritten)
-                return;
-
-            packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-            Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-            Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-        }
-    }
-
-    public void SaveCombinedHavokFile_HKX3(Memory<byte>? bdtData, Memory<byte>? bhdData,
-        string bdtPath, string bhdPath,
-        Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict, FileDictionaryEntry fileEntry, string internalFilePath, string writeFileFailLocKey, string writeBinderFailLocKey)
-    {
-        bool anyWritten = false;
-
-        HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
-
-        var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-        foreach (var file in packedBinder.Files)
-        {
-            var name = Path.GetFileNameWithoutExtension(file.Name);
-
-            if (file.Name != internalFilePath)
-                continue;
-
-            if (!bankDict[fileEntry].ContainsKey(internalFilePath))
-                continue;
-
-            try
-            {
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    var objEntry = bankDict[fileEntry][internalFilePath];
-                    if (objEntry != null)
-                    {
-                        serializer.Write((HKLib.hk2018.hkRootLevelContainer)objEntry, memoryStream);
-
-                        var bytes = memoryStream.ToArray();
-
-                        file.Bytes = file.Name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase)
-                            ? DCX.Compress(bytes, GetExistingDCXType(file))
-                            : bytes;
-
-                        anyWritten = true;
-                    }
-                    else
-                    {
-                        Smithbox.LogError(this, LOC.Get("HAVOK_Data_Invalid_Root_Container"));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get(writeFileFailLocKey, name), ex);
-            }
-        }
-
-        if (!anyWritten)
-            return;
-
-        packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-        Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-        Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-    }
-
     #endregion
 
     #region File Manipulation
     public void PasteHavokFile(HavokFileView.FileAction fileAction)
     {
-        if (fileAction.ClipboardBinder == null)
-            return;
-
-        if (fileAction.ClipboardFiles.Count == 0)
-            return;
-
-        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
-            return;
-
-        if (!fileAction.BankDict.ContainsKey(fileAction.ClipboardBinder))
-            return;
-
-        var sourceBinderData = Project.VFS.FS.ReadFile(fileAction.ClipboardBinder.Path);
-        var targetBinderData = Project.VFS.FS.ReadFile(fileAction.BinderEntry.Path);
-
-        if (sourceBinderData == null)
-            return;
-
-        if (targetBinderData == null)
-            return;
-
-        if (HavokTypeUtils.IsBND3(Project))
-        {
-            var sourceBinder = BND3.Read(sourceBinderData.Value);
-            var targetBinder = BND3.Read(targetBinderData.Value);
-
-            var filesToCopy = new List<BinderFile>();
-
-            // Get BinderFile list from source binder (based on clipboard)
-            foreach (var file in sourceBinder.Files)
-            {
-                if (fileAction.ClipboardFiles.Contains(file.Name))
-                {
-                    filesToCopy.Add(file);
-                }
-            }
-
-            var currentNames = new List<string>();
-
-            foreach (var file in targetBinder.Files)
-            {
-                currentNames.Add(file.Name);
-            }
-
-            var lastFile = targetBinder.Files.Last();
-            var newIdBase = lastFile.ID + 1;
-
-            // Add in new BinderFiles to target (current binder selection)
-            foreach (var file in filesToCopy)
-            {
-                var newName = HavokBinderUtils.GetUniqueFileName(file.Name, currentNames, "hkx");
-
-                var newBinderFile = new BinderFile
-                {
-                    Flags = file.Flags,
-                    ID = newIdBase,
-                    Name = newName,
-                    Bytes = file.Bytes,
-                    CompressionType = file.CompressionType
-                };
-
-                currentNames.Add(newName);
-                targetBinder.Files.Add(newBinderFile);
-
-                newIdBase = newIdBase + 1;
-
-                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Paste_Log", newName, fileAction.BinderEntry.Filename));
-            }
-
-            try
-            {
-                var writtenBinder = targetBinder.Write();
-
-                Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-            }
-        }
-        else
-        {
-            var sourceBinder = BND4.Read(sourceBinderData.Value);
-            var targetBinder = BND4.Read(targetBinderData.Value);
-
-            var filesToCopy = new List<BinderFile>();
-
-            // Get BinderFile list from source binder (based on clipboard)
-            foreach (var file in sourceBinder.Files)
-            {
-                if (fileAction.ClipboardFiles.Contains(file.Name))
-                {
-                    filesToCopy.Add(file);
-                }
-            }
-
-            var currentNames = new List<string>();
-
-            foreach (var file in targetBinder.Files)
-            {
-                currentNames.Add(file.Name);
-            }
-
-            var lastFile = targetBinder.Files.Last();
-            var newIdBase = lastFile.ID + 1;
-
-            // Add in new BinderFiles to target (current binder selection)
-            foreach (var file in filesToCopy)
-            {
-                var newName = HavokBinderUtils.GetUniqueFileName(file.Name, currentNames, "hkx");
-
-                var newBinderFile = new BinderFile
-                {
-                    Flags = file.Flags,
-                    ID = newIdBase,
-                    Name = newName,
-                    Bytes = file.Bytes,
-                    CompressionType = file.CompressionType
-                };
-
-                currentNames.Add(newName);
-                targetBinder.Files.Add(newBinderFile);
-
-                newIdBase = newIdBase + 1;
-
-                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Paste_Log", newName, fileAction.BinderEntry.Filename));
-            }
-
-            try
-            {
-                var writtenBinder = targetBinder.Write();
-
-                Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-            }
-        }
+        PasteFiles(fileAction, false);
     }
 
     public void PasteCombinedHavokFile(HavokFileView.FileAction fileAction)
     {
+        PasteFiles(fileAction, true);
+    }
+
+    public void DeleteHavokFile(HavokFileView.FileAction fileAction)
+    {
+        DeleteFiles(fileAction, false);
+    }
+
+    public void DeleteCombinedHavokFile(HavokFileView.FileAction fileAction)
+    {
+        DeleteFiles(fileAction, true);
+    }
+
+    public void RenameHavokFile(HavokFileView.FileAction fileAction)
+    {
+        RenameFile(fileAction, false);
+    }
+
+    public void RenameCombinedHavokFile(HavokFileView.FileAction fileAction)
+    {
+        RenameFile(fileAction, true);
+    }
+
+    public void InsertHavokFile(HavokFileView.FileAction fileAction)
+    {
+        InsertFiles(fileAction, false);
+    }
+
+    public void InsertCombinedHavokFile(HavokFileView.FileAction fileAction)
+    {
+        InsertFiles(fileAction, true);
+    }
+
+    public void ExportHavokFile(HavokFileView.FileAction fileAction)
+    {
+        ExportFiles(fileAction, false);
+    }
+
+    public void ExportCombinedHavokFile(HavokFileView.FileAction fileAction)
+    {
+        ExportFiles(fileAction, true);
+    }
+
+    private void PasteFiles(HavokFileView.FileAction fileAction, bool isCombined)
+    {
         if (fileAction.ClipboardBinder == null)
             return;
 
         if (fileAction.ClipboardFiles.Count == 0)
             return;
 
-        var sourceBhdPath = fileAction.ClipboardBinder.Path;
-        var sourceBdtPath = fileAction.ClipboardBinder.Path.Replace("bhd", "bdt");
-
-        var targetBhdPath = fileAction.BinderEntry.Path;
-        var targetBdtPath = fileAction.BinderEntry.Path.Replace("bhd", "bdt");
-
-        // Target
-        var targetBdtData = Project.VFS.FS.ReadFile(targetBdtPath);
-        var targetBhdData = Project.VFS.FS.ReadFile(targetBhdPath);
-
-        if (Project.VFS.ProjectFS.FileExists(targetBdtPath))
-        {
-            targetBdtData = Project.VFS.ProjectFS.ReadFile(targetBdtPath);
-        }
-        if (Project.VFS.ProjectFS.FileExists(targetBhdPath))
-        {
-            targetBhdData = Project.VFS.ProjectFS.ReadFile(targetBhdPath);
-        }
-
-        // Source
-        var sourceBdtData = Project.VFS.FS.ReadFile(sourceBdtPath);
-        var sourceBhdData = Project.VFS.FS.ReadFile(sourceBhdPath);
-
-        if (Project.VFS.ProjectFS.FileExists(sourceBdtPath))
-        {
-            sourceBdtData = Project.VFS.ProjectFS.ReadFile(sourceBdtPath);
-        }
-        if (Project.VFS.ProjectFS.FileExists(sourceBhdPath))
-        {
-            sourceBhdData = Project.VFS.ProjectFS.ReadFile(sourceBhdPath);
-        }
-
-        if (targetBdtData == null || targetBhdData == null)
-            return;
-
-        if (sourceBdtData == null || sourceBhdData == null)
-            return;
-
-        if (HavokTypeUtils.IsBXF3(Project))
-        {
-            var targetPackedBinder = BXF3.Read((Memory<byte>)targetBhdData, (Memory<byte>)targetBdtData);
-            var sourcePackedBinder = BXF3.Read((Memory<byte>)sourceBhdData, (Memory<byte>)sourceBdtData);
-
-            var filesToCopy = new List<BinderFile>();
-
-            // Get BinderFile list from source binder (based on clipboard)
-            foreach (var file in sourcePackedBinder.Files)
-            {
-                if (fileAction.ClipboardFiles.Contains(file.Name))
-                {
-                    filesToCopy.Add(file);
-                }
-            }
-
-            // Get names for unique naming of pasted file
-            var currentNames = new List<string>();
-
-            foreach (var file in targetPackedBinder.Files)
-            {
-                currentNames.Add(file.Name);
-            }
-
-            var lastFile = targetPackedBinder.Files.Last();
-            var newIdBase = lastFile.ID + 1;
-
-            // Add in new BinderFiles to target (current binder selection)
-            foreach (var file in filesToCopy)
-            {
-                var newName = HavokBinderUtils.GetUniqueFileName(file.Name, currentNames, "hkx");
-
-                var newBinderFile = new BinderFile
-                {
-                    Flags = file.Flags,
-                    ID = newIdBase,
-                    Name = newName,
-                    Bytes = file.Bytes,
-                    CompressionType = file.CompressionType
-                };
-
-                currentNames.Add(newName);
-                targetPackedBinder.Files.Add(newBinderFile);
-
-                newIdBase = newIdBase + 1;
-
-                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Paste_Log", newName, fileAction.BinderEntry.Filename));
-            }
-
-            try
-            {
-                targetPackedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-                Project.VFS.ProjectFS.WriteFile(targetBhdPath, newBhdBytes);
-                Project.VFS.ProjectFS.WriteFile(targetBdtPath, newBdtBytes);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-            }
-        }
-        else
-        {
-            var targetPackedBinder = BXF4.Read((Memory<byte>)targetBhdData, (Memory<byte>)targetBdtData);
-            var sourcePackedBinder = BXF4.Read((Memory<byte>)sourceBhdData, (Memory<byte>)sourceBdtData);
-
-            var filesToCopy = new List<BinderFile>();
-
-            // Get BinderFile list from source binder (based on clipboard)
-            foreach (var file in sourcePackedBinder.Files)
-            {
-                if (fileAction.ClipboardFiles.Contains(file.Name))
-                {
-                    filesToCopy.Add(file);
-                }
-            }
-
-            // Get names for unique naming of pasted file
-            var currentNames = new List<string>();
-
-            foreach (var file in targetPackedBinder.Files)
-            {
-                currentNames.Add(file.Name);
-            }
-
-            var lastFile = targetPackedBinder.Files.Last();
-            var newIdBase = lastFile.ID + 1;
-
-            // Add in new BinderFiles to target (current binder selection)
-            foreach (var file in filesToCopy)
-            {
-                var newName = HavokBinderUtils.GetUniqueFileName(file.Name, currentNames, "hkx");
-
-                var newBinderFile = new BinderFile
-                {
-                    Flags = file.Flags,
-                    ID = newIdBase,
-                    Name = newName,
-                    Bytes = file.Bytes,
-                    CompressionType = file.CompressionType
-                };
-
-                currentNames.Add(newName);
-                targetPackedBinder.Files.Add(newBinderFile);
-
-                newIdBase = newIdBase + 1;
-
-                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Paste_Log", newName, fileAction.BinderEntry.Filename));
-            }
-
-            try
-            {
-                targetPackedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-                Project.VFS.ProjectFS.WriteFile(targetBhdPath, newBhdBytes);
-                Project.VFS.ProjectFS.WriteFile(targetBdtPath, newBdtBytes);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-            }
-        }
-    }
-
-    public void DeleteHavokFile(HavokFileView.FileAction fileAction)
-    {
-        if (fileAction.MultipleFilePaths.Count == 0)
-            return;
-
         if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
             return;
-
-        foreach (var entry in fileAction.MultipleFilePaths)
-        {
-            var curTopDict = fileAction.BankDict[fileAction.BinderEntry];
-
-            if (!curTopDict.ContainsKey(entry))
-                return;
-        }
-
-        var binderData = Project.VFS.FS.ReadFile(fileAction.BinderEntry.Path);
-
-        if (Project.VFS.ProjectFS.FileExists(fileAction.BinderEntry.Path))
-        {
-            binderData = Project.VFS.ProjectFS.ReadFile(fileAction.BinderEntry.Path);
-        }
-
-        if (binderData == null)
-            return;
-
-        bool anyWritten = false;
-
-        if (HavokTypeUtils.IsBND3(Project))
-        {
-            var binder = BND3.Read(binderData.Value);
-
-            foreach (var entry in fileAction.MultipleFilePaths)
-            {
-                var sourceFile = new BinderFile();
-
-                foreach (var file in binder.Files)
-                {
-                    var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                    if (file.Name != entry)
-                        continue;
-
-                    sourceFile = file;
-                    anyWritten = true;
-                }
-
-                binder.Files.Remove(sourceFile);
-
-                var logName = Path.GetFileNameWithoutExtension(sourceFile.Name);
-
-                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Delete_Log", logName, fileAction.BinderEntry.Filename));
-            }
-
-            if (!anyWritten)
-                return;
-
-            try
-            {
-                var writtenBinder = binder.Write();
-
-                Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-            }
-        }
-        else
-        {
-            var binder = BND4.Read(binderData.Value);
-
-            foreach (var entry in fileAction.MultipleFilePaths)
-            {
-                var sourceFile = new BinderFile();
-
-                foreach (var file in binder.Files)
-                {
-                    var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                    if (file.Name != entry)
-                        continue;
-
-                    sourceFile = file;
-                    anyWritten = true;
-                }
-
-                binder.Files.Remove(sourceFile);
-
-                var logName = Path.GetFileNameWithoutExtension(sourceFile.Name);
-
-                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Delete_Log", logName, fileAction.BinderEntry.Filename));
-            }
-
-            if (!anyWritten)
-                return;
-
-            try
-            {
-                var writtenBinder = binder.Write();
-
-                Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-            }
-        }
-    }
-
-    public void DeleteCombinedHavokFile(HavokFileView.FileAction fileAction)
-    {
-        if (fileAction.MultipleFilePaths.Count == 0)
-            return;
-
-        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
-            return;
-
-        foreach (var entry in fileAction.MultipleFilePaths)
-        {
-            var curTopDict = fileAction.BankDict[fileAction.BinderEntry];
-
-            if (!curTopDict.ContainsKey(fileAction.FilePath))
-                return;
-        }
-
-        var bhdPath = fileAction.BinderEntry.Path;
-        var bdtPath = fileAction.BinderEntry.Path.Replace("bhd", "bdt");
 
         try
         {
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
+            using var sourceBinder = ReadContainer(fileAction.ClipboardBinder, isCombined);
 
-            if (Project.VFS.ProjectFS.FileExists(bdtPath))
-            {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
-
-            if (bdtData == null || bhdData == null)
+            if (sourceBinder == null)
                 return;
 
-            bool anyWritten = false;
+            // Get BinderFile list from source binder (based on clipboard)
+            var filesToCopy = sourceBinder.Files
+                .Where(e => fileAction.ClipboardFiles.Contains(e.Name))
+                .ToList();
 
-            if (HavokTypeUtils.IsBXF3(Project))
+            if (filesToCopy.Count == 0)
+                return;
+
+            ModifyContainer(fileAction, isCombined, targetBinder =>
             {
-                var packedBinder = BXF3.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+                // Get names for unique naming of pasted file
+                var currentNames = targetBinder.Files.Select(e => e.Name).ToList();
 
-                foreach (var entry in fileAction.MultipleFilePaths)
+                var newIdBase = targetBinder.Files.Last().ID + 1;
+
+                // Add in new BinderFiles to target (current binder selection)
+                foreach (var file in filesToCopy)
                 {
-                    var sourceFile = new BinderFile();
+                    var newName = HavokBinderUtils.GetUniqueFileName(file.Name, currentNames, "hkx");
 
-                    foreach (var file in packedBinder.Files)
+                    var newBinderFile = new BinderFile
                     {
-                        var name = Path.GetFileNameWithoutExtension(file.Name);
+                        Flags = file.Flags,
+                        ID = newIdBase,
+                        Name = newName,
+                        Bytes = file.Bytes,
+                        CompressionType = file.CompressionType
+                    };
 
-                        if (file.Name != entry)
-                            continue;
+                    currentNames.Add(newName);
+                    targetBinder.Files.Add(newBinderFile);
 
-                        sourceFile = file;
-                        anyWritten = true;
-                    }
+                    newIdBase = newIdBase + 1;
 
-                    packedBinder.Files.Remove(sourceFile);
-
-                    var logName = Path.GetFileNameWithoutExtension(sourceFile.Name);
-
-                    Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Delete_Log", logName, fileAction.BinderEntry.Filename));
+                    Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Paste_Log", newName, fileAction.BinderEntry.Filename));
                 }
 
-                if (!anyWritten)
-                    return;
-
-                packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-                Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-                Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-            }
-            else
-            {
-                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                foreach (var entry in fileAction.MultipleFilePaths)
-                {
-                    var sourceFile = new BinderFile();
-
-                    foreach (var file in packedBinder.Files)
-                    {
-                        var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                        if (file.Name != entry)
-                            continue;
-
-                        sourceFile = file;
-                        anyWritten = true;
-                    }
-
-                    packedBinder.Files.Remove(sourceFile);
-
-                    var logName = Path.GetFileNameWithoutExtension(sourceFile.Name);
-
-                    Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Delete_Log", logName, fileAction.BinderEntry.Filename));
-                }
-
-                if (!anyWritten)
-                    return;
-
-                packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-                Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-                Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-            }
+                return true;
+            });
         }
         catch (Exception ex)
         {
@@ -1695,38 +827,58 @@ public class HavokBank : IDisposable
         }
     }
 
-    public void RenameHavokFile(HavokFileView.FileAction fileAction)
+    private void DeleteFiles(HavokFileView.FileAction fileAction, bool isCombined)
     {
-        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
+        if (fileAction.MultipleFilePaths.Count == 0)
             return;
 
-        var curTopDict = fileAction.BankDict[fileAction.BinderEntry];
-
-        if (!curTopDict.ContainsKey(fileAction.FilePath))
+        if (!fileAction.BankDict.TryGetValue(fileAction.BinderEntry, out var files))
             return;
 
-        var binderData = Project.VFS.FS.ReadFile(fileAction.BinderEntry.Path);
+        if (fileAction.MultipleFilePaths.Any(e => !files.ContainsKey(e)))
+            return;
 
-        if (Project.VFS.ProjectFS.FileExists(fileAction.BinderEntry.Path))
+        ModifyContainer(fileAction, isCombined, binder =>
         {
-            binderData = Project.VFS.ProjectFS.ReadFile(fileAction.BinderEntry.Path);
-        }
+            var anyRemoved = false;
 
-        if (binderData == null)
+            foreach (var entry in fileAction.MultipleFilePaths)
+            {
+                var file = binder.Files.FirstOrDefault(e => e.Name == entry);
+
+                if (file == null)
+                    continue;
+
+                binder.Files.Remove(file);
+                anyRemoved = true;
+
+                var logName = Path.GetFileNameWithoutExtension(file.Name);
+
+                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Delete_Log", logName, fileAction.BinderEntry.Filename));
+            }
+
+            return anyRemoved;
+        });
+    }
+
+    private void RenameFile(HavokFileView.FileAction fileAction, bool isCombined)
+    {
+        if (!fileAction.BankDict.TryGetValue(fileAction.BinderEntry, out var files))
             return;
 
-        bool anyWritten = false;
+        if (!files.ContainsKey(fileAction.FilePath))
+            return;
 
-        if (HavokTypeUtils.IsBND3(Project))
+        ModifyContainer(fileAction, isCombined, binder =>
         {
-            var binder = BND3.Read(binderData.Value);
+            var anyRenamed = false;
 
             foreach (var file in binder.Files)
             {
-                var name = Path.GetFileNameWithoutExtension(file.Name);
-
                 if (file.Name != fileAction.FilePath)
                     continue;
+
+                var name = Path.GetFileNameWithoutExtension(file.Name);
 
                 file.Name = HavokBinderUtils.ReplaceFileName(file.Name, fileAction.NewFilename);
 
@@ -1734,155 +886,14 @@ public class HavokBank : IDisposable
 
                 Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Rename_Log", name, logName));
 
-                anyWritten = true;
+                anyRenamed = true;
             }
 
-            if (!anyWritten)
-                return;
-
-            try
-            {
-                var writtenBinder = binder.Write();
-
-                Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-            }
-        }
-        else
-        {
-            var binder = BND4.Read(binderData.Value);
-
-            foreach (var file in binder.Files)
-            {
-                var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                if (file.Name != fileAction.FilePath)
-                    continue;
-
-                file.Name = HavokBinderUtils.ReplaceFileName(file.Name, fileAction.NewFilename);
-
-                var logName = Path.GetFileNameWithoutExtension(file.Name);
-
-                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Rename_Log", name, logName));
-
-                anyWritten = true;
-            }
-
-            if (!anyWritten)
-                return;
-
-            try
-            {
-                var writtenBinder = binder.Write();
-
-                Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-            }
-        }
+            return anyRenamed;
+        });
     }
 
-    public void RenameCombinedHavokFile(HavokFileView.FileAction fileAction)
-    {
-        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
-            return;
-
-        var curTopDict = fileAction.BankDict[fileAction.BinderEntry];
-
-        if (!curTopDict.ContainsKey(fileAction.FilePath))
-            return;
-
-        var bhdPath = fileAction.BinderEntry.Path;
-        var bdtPath = fileAction.BinderEntry.Path.Replace("bhd", "bdt");
-
-        try
-        {
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
-
-            if (Project.VFS.ProjectFS.FileExists(bdtPath))
-            {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
-
-            if (bdtData == null || bhdData == null)
-                return;
-
-            bool anyWritten = false;
-
-            if (HavokTypeUtils.IsBXF3(Project))
-            {
-                var packedBinder = BXF3.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                foreach (var file in packedBinder.Files)
-                {
-                    var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                    if (file.Name != fileAction.FilePath)
-                        continue;
-
-                    file.Name = HavokBinderUtils.ReplaceFileName(file.Name, fileAction.NewFilename);
-
-                    var logName = Path.GetFileNameWithoutExtension(file.Name);
-
-                    Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Rename_Log", name, logName));
-
-                    anyWritten = true;
-                }
-
-                if (!anyWritten)
-                    return;
-
-                packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-                Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-                Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-            }
-            else
-            {
-                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                foreach (var file in packedBinder.Files)
-                {
-                    var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                    if (file.Name != fileAction.FilePath)
-                        continue;
-
-                    file.Name = HavokBinderUtils.ReplaceFileName(file.Name, fileAction.NewFilename);
-
-                    var logName = Path.GetFileNameWithoutExtension(file.Name);
-
-                    Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Rename_Log", name, logName));
-
-                    anyWritten = true;
-                }
-
-                if (!anyWritten)
-                    return;
-
-                packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-                Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-                Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-            }
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-        }
-    }
-
-    public void InsertHavokFile(HavokFileView.FileAction fileAction)
+    private void InsertFiles(HavokFileView.FileAction fileAction, bool isCombined)
     {
         if (fileAction.Inserts.Count == 0)
             return;
@@ -1890,25 +901,10 @@ public class HavokBank : IDisposable
         if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
             return;
 
-        var binderData = Project.VFS.FS.ReadFile(fileAction.BinderEntry.Path);
-
-        if (Project.VFS.ProjectFS.FileExists(fileAction.BinderEntry.Path))
+        ModifyContainer(fileAction, isCombined, binder =>
         {
-            binderData = Project.VFS.ProjectFS.ReadFile(fileAction.BinderEntry.Path);
-        }
-
-        if (binderData == null)
-            return;
-
-        bool anyWritten = false;
-
-        if (HavokTypeUtils.IsBND3(Project))
-        {
-            var binder = BND3.Read(binderData.Value);
-
             foreach (var entry in fileAction.Inserts)
             {
-                var sourceFile = new BinderFile();
                 var lastFile = binder.Files.Last();
 
                 var filename = Path.GetFileName(entry.FilePath);
@@ -1917,201 +913,45 @@ public class HavokBank : IDisposable
                 binder.Files.Add(insertFile);
 
                 var logName = Path.GetFileNameWithoutExtension(insertFile.Name);
+
                 Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Insert_Log", logName, fileAction.BinderEntry.Path));
-                anyWritten = true;
             }
 
-            if (!anyWritten)
-                return;
-
-            try
-            {
-                var writtenBinder = binder.Write();
-
-                Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-            }
-        }
-        else
-        {
-            var binder = BND4.Read(binderData.Value);
-
-            foreach (var entry in fileAction.Inserts)
-            {
-                var sourceFile = new BinderFile();
-                var lastFile = binder.Files.Last();
-
-                var filename = Path.GetFileName(entry.FilePath);
-                var insertFile = HavokBinderUtils.GetInsertFile(fileAction, lastFile, filename, entry.FileData);
-
-                binder.Files.Add(insertFile);
-
-                var logName = Path.GetFileNameWithoutExtension(insertFile.Name);
-                Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Insert_Log", logName, fileAction.BinderEntry.Path));
-                anyWritten = true;
-            }
-
-            if (!anyWritten)
-                return;
-
-            try
-            {
-                var writtenBinder = binder.Write();
-
-                Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-            }
-        }
+            return true;
+        });
     }
 
-    public void InsertCombinedHavokFile(HavokFileView.FileAction fileAction)
-    {
-        if (fileAction.Inserts.Count == 0)
-            return;
-
-        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
-            return;
-
-        var bhdPath = fileAction.BinderEntry.Path;
-        var bdtPath = fileAction.BinderEntry.Path.Replace("bhd", "bdt");
-
-        try
-        {
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
-
-            if (Project.VFS.ProjectFS.FileExists(bdtPath))
-            {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
-
-            if (bdtData == null || bhdData == null)
-                return;
-
-            bool anyWritten = false;
-
-            if (HavokTypeUtils.IsBXF3(Project))
-            {
-                var packedBinder = BXF3.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                foreach (var entry in fileAction.Inserts)
-                {
-                    var sourceFile = new BinderFile();
-                    var lastFile = packedBinder.Files.Last();
-
-                    var filename = Path.GetFileName(entry.FilePath);
-                    var insertFile = HavokBinderUtils.GetInsertFile(fileAction, lastFile, filename, entry.FileData);
-
-                    packedBinder.Files.Add(insertFile);
-
-                    var logName = Path.GetFileNameWithoutExtension(insertFile.Name);
-                    Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Insert_Log", logName, fileAction.BinderEntry.Path));
-
-                    anyWritten = true;
-                }
-
-                if (!anyWritten)
-                    return;
-
-                packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-                Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-                Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-            }
-            else
-            {
-                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                foreach (var entry in fileAction.Inserts)
-                {
-                    var sourceFile = new BinderFile();
-                    var lastFile = packedBinder.Files.Last();
-
-                    var filename = Path.GetFileName(entry.FilePath);
-                    var insertFile = HavokBinderUtils.GetInsertFile(fileAction, lastFile, filename, entry.FileData);
-
-                    packedBinder.Files.Add(insertFile);
-
-                    var logName = Path.GetFileNameWithoutExtension(insertFile.Name);
-                    Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Insert_Log", logName, fileAction.BinderEntry.Path));
-
-                    anyWritten = true;
-                }
-
-                if (!anyWritten)
-                    return;
-
-                packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-                Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-                Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-            }
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-        }
-    }
-
-    public void ExportHavokFile(HavokFileView.FileAction fileAction)
+    private void ExportFiles(HavokFileView.FileAction fileAction, bool isCombined)
     {
         if (fileAction.MultipleFilePaths.Count == 0)
             return;
 
-        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
+        if (!fileAction.BankDict.TryGetValue(fileAction.BinderEntry, out var files))
             return;
 
-        foreach (var entry in fileAction.MultipleFilePaths)
-        {
-            var curTopDict = fileAction.BankDict[fileAction.BinderEntry];
+        if (fileAction.MultipleFilePaths.Any(e => !files.ContainsKey(e)))
+            return;
 
-            if (!curTopDict.ContainsKey(entry))
+        try
+        {
+            using var binder = ReadContainer(fileAction.BinderEntry, isCombined);
+
+            if (binder == null)
                 return;
-        }
-
-        var binderData = Project.VFS.FS.ReadFile(fileAction.BinderEntry.Path);
-
-        if (Project.VFS.ProjectFS.FileExists(fileAction.BinderEntry.Path))
-        {
-            binderData = Project.VFS.ProjectFS.ReadFile(fileAction.BinderEntry.Path);
-        }
-
-        if (binderData == null)
-            return;
-
-        if (HavokTypeUtils.IsBND3(Project))
-        {
-            var binder = BND3.Read(binderData.Value);
 
             foreach (var entry in fileAction.MultipleFilePaths)
             {
-                var sourceFile = new BinderFile();
-
                 foreach (var file in binder.Files)
                 {
-                    var name = Path.GetFileNameWithoutExtension(file.Name);
+                    if (file.Name != entry)
+                        continue;
 
-                    if (file.Name.Contains(".dcx"))
+                    var name = Path.GetFileNameWithoutExtension(file.Name);
+                    var extension = ".hkx";
+
+                    if (IsDcxFile(file.Name))
                     {
                         name = Path.GetFileNameWithoutExtension(name);
-                    }
-
-                    if (file.Name != entry)
-                        continue;
-
-                    var extension = ".hkx";
-                    if (file.Name.Contains(".dcx"))
-                    {
                         extension = ".hkx.dcx";
                     }
 
@@ -2123,153 +963,11 @@ public class HavokBank : IDisposable
                 }
             }
         }
-        else
-        {
-            var binder = BND4.Read(binderData.Value);
-
-            foreach (var entry in fileAction.MultipleFilePaths)
-            {
-                var sourceFile = new BinderFile();
-
-                foreach (var file in binder.Files)
-                {
-                    var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                    if (file.Name.Contains(".dcx"))
-                    {
-                        name = Path.GetFileNameWithoutExtension(name);
-                    }
-
-                    if (file.Name != entry)
-                        continue;
-
-                    var extension = ".hkx";
-                    if (file.Name.Contains(".dcx"))
-                    {
-                        extension = ".hkx.dcx";
-                    }
-
-                    var exportPath = Path.Join(Project.Descriptor.ProjectPath, $"{name}{extension}");
-
-                    File.WriteAllBytes(exportPath, file.Bytes.ToArray());
-
-                    Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Export_Log", exportPath));
-                }
-            }
-        }
-    }
-
-    public void ExportCombinedHavokFile(HavokFileView.FileAction fileAction)
-    {
-        if (fileAction.MultipleFilePaths.Count == 0)
-            return;
-
-        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
-            return;
-
-        foreach (var entry in fileAction.MultipleFilePaths)
-        {
-            var curTopDict = fileAction.BankDict[fileAction.BinderEntry];
-
-            if (!curTopDict.ContainsKey(fileAction.FilePath))
-                return;
-        }
-
-        var bhdPath = fileAction.BinderEntry.Path;
-        var bdtPath = fileAction.BinderEntry.Path.Replace("bhd", "bdt");
-
-        try
-        {
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
-
-            if (Project.VFS.ProjectFS.FileExists(bdtPath))
-            {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
-
-            if (bdtData == null || bhdData == null)
-                return;
-
-            if (HavokTypeUtils.IsBXF3(Project))
-            {
-                var packedBinder = BXF3.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                foreach (var entry in fileAction.MultipleFilePaths)
-                {
-                    var sourceFile = new BinderFile();
-
-                    foreach (var file in packedBinder.Files)
-                    {
-                        var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                        if (file.Name.Contains(".dcx"))
-                        {
-                            name = Path.GetFileNameWithoutExtension(name);
-                        }
-
-                        if (file.Name != entry)
-                            continue;
-
-                        var extension = ".hkx";
-                        if (file.Name.Contains(".dcx"))
-                        {
-                            extension = ".hkx.dcx";
-                        }
-
-                        var exportPath = Path.Join(Project.Descriptor.ProjectPath, $"{name}{extension}");
-
-                        File.WriteAllBytes(exportPath, file.Bytes.ToArray());
-
-                        Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Export_Log", exportPath));
-                    }
-                }
-            }
-            else
-            {
-                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                foreach (var entry in fileAction.MultipleFilePaths)
-                {
-                    var sourceFile = new BinderFile();
-
-                    foreach (var file in packedBinder.Files)
-                    {
-                        var name = Path.GetFileNameWithoutExtension(file.Name);
-
-                        if (file.Name.Contains(".dcx"))
-                        {
-                            name = Path.GetFileNameWithoutExtension(name);
-                        }
-
-                        if (file.Name != entry)
-                            continue;
-
-                        var extension = ".hkx";
-                        if (file.Name.Contains(".dcx"))
-                        {
-                            extension = ".hkx.dcx";
-                        }
-
-                        var exportPath = Path.Join(Project.Descriptor.ProjectPath, $"{name}{extension}");
-
-                        File.WriteAllBytes(exportPath, file.Bytes.ToArray());
-
-                        Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Export_Log", exportPath));
-                    }
-                }
-            }
-        }
         catch (Exception ex)
         {
             Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
         }
     }
-
     #endregion
 
     #region Compress
@@ -2287,7 +985,7 @@ public class HavokBank : IDisposable
     {
         foreach (var file in files)
         {
-            if (!file.Name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase))
+            if (!IsDcxFile(file.Name))
                 continue;
 
             try
@@ -2303,17 +1001,17 @@ public class HavokBank : IDisposable
             }
         }
 
-        if(Project.Descriptor.ProjectType is ProjectType.ER 
-            or ProjectType.AC6 
+        if(Project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.AC6
             or ProjectType.NR
             or ProjectType.DB_NT
             or ProjectType.DB)
         {
             return DCX.Type.DCX_KRAK;
         }
-        else if (Project.Descriptor.ProjectType is ProjectType.DS1 
-            or ProjectType.DS1R 
-            or ProjectType.DS2 
+        else if (Project.Descriptor.ProjectType is ProjectType.DS1
+            or ProjectType.DS1R
+            or ProjectType.DS2
             or ProjectType.DS2S)
         {
             return DCX.Type.DCX_DFLT_10000_24_9;
@@ -2348,7 +1046,7 @@ public class HavokBank : IDisposable
 
             var rawBytes = file.Bytes.ToArray();
 
-            if (file.Name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase) || DCX.Is((Memory<byte>)rawBytes))
+            if (IsDcxFile(file.Name) || DCX.Is((Memory<byte>)rawBytes))
             {
                 Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Compress_Skipped_Log", name));
                 continue;
@@ -2373,54 +1071,15 @@ public class HavokBank : IDisposable
 
     public void CompressHavokFile(HavokFileView.FileAction fileAction)
     {
-        if (fileAction.MultipleFilePaths.Count == 0)
-            return;
-
-        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
-            return;
-
-        var binderData = Project.VFS.FS.ReadFile(fileAction.BinderEntry.Path);
-
-        if (Project.VFS.ProjectFS.FileExists(fileAction.BinderEntry.Path))
-        {
-            binderData = Project.VFS.ProjectFS.ReadFile(fileAction.BinderEntry.Path);
-        }
-
-        if (binderData == null)
-            return;
-
-        try
-        {
-            byte[] writtenBinder;
-
-            if (HavokTypeUtils.IsBND3(Project))
-            {
-                var binder = BND3.Read(binderData.Value);
-
-                if (CompressBinderFiles(binder.Files, fileAction.MultipleFilePaths) == 0)
-                    return;
-
-                writtenBinder = binder.Write();
-            }
-            else
-            {
-                var binder = BND4.Read(binderData.Value);
-
-                if (CompressBinderFiles(binder.Files, fileAction.MultipleFilePaths) == 0)
-                    return;
-
-                writtenBinder = binder.Write();
-            }
-
-            Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-        }
+        CompressFiles(fileAction, false);
     }
 
     public void CompressCombinedHavokFile(HavokFileView.FileAction fileAction)
+    {
+        CompressFiles(fileAction, true);
+    }
+
+    private void CompressFiles(HavokFileView.FileAction fileAction, bool isCombined)
     {
         if (fileAction.MultipleFilePaths.Count == 0)
             return;
@@ -2428,56 +1087,10 @@ public class HavokBank : IDisposable
         if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
             return;
 
-        var bhdPath = fileAction.BinderEntry.Path;
-        var bdtPath = fileAction.BinderEntry.Path.Replace("bhd", "bdt");
-
-        try
-        {
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
-
-            if (Project.VFS.ProjectFS.FileExists(bdtPath))
-            {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
-
-            if (bdtData == null || bhdData == null)
-                return;
-
-            byte[] newBhdBytes;
-            byte[] newBdtBytes;
-
-            if (HavokTypeUtils.IsBXF3(Project))
-            {
-                var packedBinder = BXF3.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                if (CompressBinderFiles(packedBinder.Files, fileAction.MultipleFilePaths) == 0)
-                    return;
-
-                packedBinder.Write(out newBhdBytes, out newBdtBytes);
-            }
-            else
-            {
-                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                if (CompressBinderFiles(packedBinder.Files, fileAction.MultipleFilePaths) == 0)
-                    return;
-
-                packedBinder.Write(out newBhdBytes, out newBdtBytes);
-            }
-
-            Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-            Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-        }
+        ModifyContainer(fileAction, isCombined, binder =>
+            CompressBinderFiles(binder.Files, fileAction.MultipleFilePaths) > 0);
     }
+
     /// <summary>
     /// The compression type the entry currently uses, so saving doesn't silently change it.
     /// Falls back to the default if the entry can't be read as DCX.
@@ -2514,7 +1127,7 @@ public class HavokBank : IDisposable
 
             var name = Path.GetFileNameWithoutExtension(file.Name);
 
-            if (!file.Name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase))
+            if (!IsDcxFile(file.Name))
             {
                 Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_ChangeCompression_Skipped_Log", name));
                 continue;
@@ -2543,54 +1156,15 @@ public class HavokBank : IDisposable
 
     public void ChangeCompressionHavokFile(HavokFileView.FileAction fileAction)
     {
-        if (fileAction.MultipleFilePaths.Count == 0 || fileAction.NewCompressionType == DCX.Type.Unknown)
-            return;
-
-        if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
-            return;
-
-        var binderData = Project.VFS.FS.ReadFile(fileAction.BinderEntry.Path);
-
-        if (Project.VFS.ProjectFS.FileExists(fileAction.BinderEntry.Path))
-        {
-            binderData = Project.VFS.ProjectFS.ReadFile(fileAction.BinderEntry.Path);
-        }
-
-        if (binderData == null)
-            return;
-
-        try
-        {
-            byte[] writtenBinder;
-
-            if (HavokTypeUtils.IsBND3(Project))
-            {
-                var binder = BND3.Read(binderData.Value);
-
-                if (ChangeCompressionBinderFiles(binder.Files, fileAction.MultipleFilePaths, fileAction.NewCompressionType) == 0)
-                    return;
-
-                writtenBinder = binder.Write();
-            }
-            else
-            {
-                var binder = BND4.Read(binderData.Value);
-
-                if (ChangeCompressionBinderFiles(binder.Files, fileAction.MultipleFilePaths, fileAction.NewCompressionType) == 0)
-                    return;
-
-                writtenBinder = binder.Write();
-            }
-
-            Project.VFS.ProjectFS.WriteFile(fileAction.BinderEntry.Path, writtenBinder);
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-        }
+        ChangeCompressionFiles(fileAction, false);
     }
 
     public void ChangeCompressionCombinedHavokFile(HavokFileView.FileAction fileAction)
+    {
+        ChangeCompressionFiles(fileAction, true);
+    }
+
+    private void ChangeCompressionFiles(HavokFileView.FileAction fileAction, bool isCombined)
     {
         if (fileAction.MultipleFilePaths.Count == 0 || fileAction.NewCompressionType == DCX.Type.Unknown)
             return;
@@ -2598,57 +1172,9 @@ public class HavokBank : IDisposable
         if (!fileAction.BankDict.ContainsKey(fileAction.BinderEntry))
             return;
 
-        var bhdPath = fileAction.BinderEntry.Path;
-        var bdtPath = fileAction.BinderEntry.Path.Replace("bhd", "bdt");
-
-        try
-        {
-            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
-
-            if (Project.VFS.ProjectFS.FileExists(bdtPath))
-            {
-                bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-            }
-            if (Project.VFS.ProjectFS.FileExists(bhdPath))
-            {
-                bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-            }
-
-            if (bdtData == null || bhdData == null)
-                return;
-
-            byte[] newBhdBytes;
-            byte[] newBdtBytes;
-
-            if (HavokTypeUtils.IsBXF3(Project))
-            {
-                var packedBinder = BXF3.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                if (ChangeCompressionBinderFiles(packedBinder.Files, fileAction.MultipleFilePaths, fileAction.NewCompressionType) == 0)
-                    return;
-
-                packedBinder.Write(out newBhdBytes, out newBdtBytes);
-            }
-            else
-            {
-                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                if (ChangeCompressionBinderFiles(packedBinder.Files, fileAction.MultipleFilePaths, fileAction.NewCompressionType) == 0)
-                    return;
-
-                packedBinder.Write(out newBhdBytes, out newBdtBytes);
-            }
-
-            Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-            Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_AddFile_Binder_Write_FAIL", fileAction.BinderEntry.Path), ex);
-        }
+        ModifyContainer(fileAction, isCombined, binder =>
+            ChangeCompressionBinderFiles(binder.Files, fileAction.MultipleFilePaths, fileAction.NewCompressionType) > 0);
     }
-
     #endregion
 
     #region Dispose
@@ -2656,5 +1182,4 @@ public class HavokBank : IDisposable
     {
     }
     #endregion
-
 }

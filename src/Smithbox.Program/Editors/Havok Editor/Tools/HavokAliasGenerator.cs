@@ -16,7 +16,7 @@ public static class HavokAliasGenerator
 {
     public static void GenerateER(ProjectEntry project, HavokEditorView view)
     {
-        var sourceObject = view.HavokBank.BehaviorBank[view.Selection.BinderFileEntry][view.Selection.FilePath];
+        var sourceObject = view.HavokBank.BehaviorBank[view.Selection.BinderFileEntry][view.Selection.FilePath].Root;
 
         var cmsgs = HavokTreeSearch.FindAll<HKLib.hk2018.CustomManualSelectorGenerator>(
             sourceObject, view.PropertyCache.GetCachedHavokFields);
@@ -42,7 +42,7 @@ public static class HavokAliasGenerator
 
     public static void GenerateDS3(ProjectEntry project, HavokEditorView view)
     {
-        var sourceObject = view.HavokBank.BehaviorBank[view.Selection.BinderFileEntry][view.Selection.FilePath];
+        var sourceObject = view.HavokBank.BehaviorBank[view.Selection.BinderFileEntry][view.Selection.FilePath].Root;
 
         var cmsgs = HavokTreeSearch.FindAll<HKX2.CustomManualSelectorGenerator>(
             sourceObject, view.PropertyCache.GetCachedHavokFields);

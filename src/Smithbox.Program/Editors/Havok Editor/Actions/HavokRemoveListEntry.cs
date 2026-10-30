@@ -14,9 +14,11 @@ public class HavokRemoveListEntry : EditorAction
     private object OldValue;
     private readonly FieldInfo Property;
     private Action<bool> PostExecutionAction;
+    private readonly HavokFileWrapper FileWrapper;
 
-    public HavokRemoveListEntry(FieldInfo prop, object changed, int index)
+    public HavokRemoveListEntry(HavokFileWrapper fileWrapper, FieldInfo prop, object changed, int index)
     {
+        FileWrapper = fileWrapper;
         ChangedObject = changed;
         Property = prop;
         Index = index;
@@ -33,6 +35,9 @@ public class HavokRemoveListEntry : EditorAction
         OldValue = list[Index];
         list.RemoveAt(Index);
 
+        if (FileWrapper != null)
+            FileWrapper.IsDirty = true;
+
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(false);
 
@@ -43,6 +48,9 @@ public class HavokRemoveListEntry : EditorAction
     {
         var list = (IList)Property.GetValue(ChangedObject);
         list.Insert(Index, OldValue);
+
+        if (FileWrapper != null)
+            FileWrapper.IsDirty = true;
 
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(true);

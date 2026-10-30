@@ -161,7 +161,7 @@ public class HavokPropertyView
 
     }
 
-    public void DisplayPropertyEditor(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict)
+    public void DisplayPropertyEditor(Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> bankDict)
     {
         if (View.Selection.BinderFileEntry == null)
         {
@@ -211,7 +211,7 @@ public class HavokPropertyView
         {
             ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
-            var sourceObject = bankDict[View.Selection.BinderFileEntry][View.Selection.FilePath];
+            var sourceObject = bankDict[View.Selection.BinderFileEntry][View.Selection.FilePath].Root;
 
             if (sourceObject != null)
             {
@@ -228,7 +228,7 @@ public class HavokPropertyView
         }
         else
         {
-            var sourceObject = bankDict[View.Selection.BinderFileEntry][View.Selection.FilePath];
+            var sourceObject = bankDict[View.Selection.BinderFileEntry][View.Selection.FilePath].Root;
 
             if (sourceObject != null)
             {
@@ -736,7 +736,7 @@ public class HavokPropertyView
             _lastUncommittedAction = null;
         }
 
-        var action = new HavokChangeField((FieldInfo)prop, obj, newval, arrayindex, classIndex);
+        var action = new HavokChangeField(View.Selection.SelectedFileWrapper, (FieldInfo)prop, obj, newval, arrayindex, classIndex);
         View.ActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;
@@ -1083,7 +1083,7 @@ public class HavokPropertyView
                     var firstElem = list[0];
 
                     var newEntry = PropFinderUtil.CreateDefaultListElement(firstElem.GetType());
-                    var action = new HavokAddListEntry(prop, obj, newEntry, list.Count);
+                    var action = new HavokAddListEntry(View.Selection.SelectedFileWrapper, prop, obj, newEntry, list.Count);
                     View.ActionManager.ExecuteAction(action);
                 }
                 else if (HavokTypeUtils.IsHKX2(Project) && elementType == typeof(HKX2.hkbGenerator) && list.Count > 0)
@@ -1091,13 +1091,13 @@ public class HavokPropertyView
                     var firstElem = list[0];
 
                     var newEntry = PropFinderUtil.CreateDefaultListElement(firstElem.GetType());
-                    var action = new HavokAddListEntry(prop, obj, newEntry, list.Count);
+                    var action = new HavokAddListEntry(View.Selection.SelectedFileWrapper, prop, obj, newEntry, list.Count);
                     View.ActionManager.ExecuteAction(action);
                 }
                 else
                 {
                     var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
-                    var action = new HavokAddListEntry(prop, obj, newEntry, list.Count);
+                    var action = new HavokAddListEntry(View.Selection.SelectedFileWrapper, prop, obj, newEntry, list.Count);
                     View.ActionManager.ExecuteAction(action);
                 }
             }
@@ -1175,7 +1175,7 @@ public class HavokPropertyView
 
                 if (removeIndex != -1)
                 {
-                    var action = new HavokRemoveListEntry(prop, obj, removeIndex);
+                    var action = new HavokRemoveListEntry(View.Selection.SelectedFileWrapper, prop, obj, removeIndex);
                     View.ActionManager.ExecuteAction(action);
                 }
             }

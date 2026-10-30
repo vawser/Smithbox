@@ -335,11 +335,12 @@ public class ProjectEntry
                         }
                     }
 
-                    if (CFG.Current.HavokEditor_AutomaticSave_IncludeHKX && Handler.FocusedEditor is HavokEditorScreen)
+                    // Gated by HavokEditor_Allow_Automatic_Save within the editor
+                    if (Handler.FocusedEditor is HavokEditorScreen)
                     {
-                        if (Handler.MaterialEditor != null)
+                        if (Handler.HavokEditor != null)
                         {
-                            Handler.MaterialEditor.Save(true);
+                            Handler.HavokEditor.Save(true);
                         }
                     }
                 }

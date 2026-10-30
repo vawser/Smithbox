@@ -102,7 +102,7 @@ public class HavokFileView
         }
     }
 
-    public void DisplayFileList(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict)
+    public void DisplayFileList(Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> bankDict)
     {
         if (View.Selection.BinderFileEntry == null)
         {
@@ -177,7 +177,15 @@ public class HavokFileView
                 // Only display .hkx files
                 if (filepath.EndsWith(".hkx") || filepath.EndsWith(".hkx.dcx"))
                 {
-                    if (ImGui.Selectable($"{displayName}##fileEntry_{filepath}", selected))
+                    // Mark files with unsaved changes
+                    var labelName = displayName;
+
+                    if (entry.Value.IsDirty)
+                    {
+                        labelName = $"{labelName}*";
+                    }
+
+                    if (ImGui.Selectable($"{labelName}##fileEntry_{filepath}", selected))
                     {
                         // 'Soft' select used for multi-selecting for the binder actions
                         if (InputManager.HasCtrlDown())
@@ -297,7 +305,7 @@ public class HavokFileView
         }
     }
 
-    public void HandleShortcuts(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict)
+    public void HandleShortcuts(Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> bankDict)
     {
         var curBinderEntry = View.Selection.BinderFileEntry;
         var filepath = View.Selection.FilePath;
@@ -342,7 +350,7 @@ public class HavokFileView
     }
 
     public void DisplayContextMenu(
-        Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict,
+        Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> bankDict,
         FileDictionaryEntry curBinderEntry,
         string filepath,
         string displayName)
@@ -650,7 +658,7 @@ public class HavokFileView
         }
     }
 
-    public void CopyFileInternal(Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> bankDict)
+    public void CopyFileInternal(Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> bankDict)
     {
         var curBinder = bankDict[View.Selection.BinderFileEntry];
 
@@ -809,7 +817,7 @@ public class HavokFileView
     {
         public FileActionType ActionType;
 
-        public Dictionary<FileDictionaryEntry, Dictionary<string, IRootContainer>> BankDict = new();
+        public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> BankDict = new();
 
         public FileDictionaryEntry BinderEntry;
 

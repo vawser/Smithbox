@@ -113,6 +113,14 @@ public class HavokBinderView
             }
 
 
+            // Mark binders that contain files with unsaved changes
+            var bankDict = View.HavokBank.GetBank(View.Selection.CategoryMode);
+
+            if (bankDict != null && View.HavokBank.IsBinderDirty(bankDict, entry))
+            {
+                displayName = $"{displayName}*";
+            }
+
             if (ImGui.Selectable($"{displayName}##binderEntry_{entry.Filename}", selected))
             {
                 View.Selection.ClearFileSelection();

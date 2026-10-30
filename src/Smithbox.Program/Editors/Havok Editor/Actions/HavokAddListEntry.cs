@@ -11,9 +11,11 @@ public class HavokAddListEntry : EditorAction
     private readonly object NewValue;
     private readonly FieldInfo Property;
     private Action<bool> PostExecutionAction;
+    private readonly HavokFileWrapper FileWrapper;
 
-    public HavokAddListEntry(FieldInfo prop, object changed, object newValue, int index)
+    public HavokAddListEntry(HavokFileWrapper fileWrapper, FieldInfo prop, object changed, object newValue, int index)
     {
+        FileWrapper = fileWrapper;
         ChangedObject = changed;
         Property = prop;
         NewValue = newValue;
@@ -34,6 +36,9 @@ public class HavokAddListEntry : EditorAction
         else
             list.Insert(Index, NewValue);
 
+        if (FileWrapper != null)
+            FileWrapper.IsDirty = true;
+
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(false);
 
@@ -44,6 +49,9 @@ public class HavokAddListEntry : EditorAction
     {
         var list = (IList)Property.GetValue(ChangedObject);
         list.RemoveAt(Index);
+
+        if (FileWrapper != null)
+            FileWrapper.IsDirty = true;
 
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(true);

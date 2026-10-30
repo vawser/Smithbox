@@ -1075,8 +1075,8 @@ public class CFG
     #endregion
 
     #region Havok Editor
-    public bool HavokEditor_AutomaticSave_IncludeHKX = true;
-    public bool HavokEditor_ManualSave_IncludeHKX = true;
+    public bool HavokEditor_Allow_Unmodified_Save = false;
+    public bool HavokEditor_Allow_Automatic_Save = true;
 
     public bool Interface_HavokEditor_ToolWindow = true;
 

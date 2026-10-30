@@ -72,40 +72,32 @@ public class HavokEditorScreen : EditorScreen
             {
                 Save();
             }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_Save_TT"));
+
+            // Save All
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##saveAllAction"))
+            {
+                SaveAll();
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_SaveAll_TT"));
 
             ImGui.Separator();
 
-            // Manual Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Manual_Save_Output")}##manualSaveMenuHeader"))
+            // Allow Unmodified Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                // HKX
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_HKX")}##manualToggle_hkx"))
-                {
-                    CFG.Current.HavokEditor_ManualSave_IncludeHKX = !CFG.Current.HavokEditor_ManualSave_IncludeHKX;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_HKX_TT"));
-                GUI.ShowActiveStatus(CFG.Current.HavokEditor_ManualSave_IncludeHKX);
-
-
-                ImGui.EndMenu();
+                CFG.Current.HavokEditor_Allow_Unmodified_Save = !CFG.Current.HavokEditor_Allow_Unmodified_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.HavokEditor_Allow_Unmodified_Save);
 
-            // Automatic Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
+            // Allow Automatic Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                // MTD
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_HKX")}##autoToggle_hkx"))
-                {
-                    CFG.Current.HavokEditor_AutomaticSave_IncludeHKX = !CFG.Current.HavokEditor_AutomaticSave_IncludeHKX;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_HKX_TT"));
-                GUI.ShowActiveStatus(CFG.Current.HavokEditor_AutomaticSave_IncludeHKX);
-
-                ImGui.EndMenu();
+                CFG.Current.HavokEditor_Allow_Automatic_Save = !CFG.Current.HavokEditor_Allow_Automatic_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
-
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.HavokEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -195,38 +187,65 @@ public class HavokEditorScreen : EditorScreen
             return;
         }
 
-        if (!autoSave && CFG.Current.HavokEditor_ManualSave_IncludeHKX ||
-            autoSave && CFG.Current.HavokEditor_ManualSave_IncludeHKX)
+        if (autoSave && CFG.Current.HavokEditor_Allow_Automatic_Save || !autoSave)
         {
-            if (IsSavingHavokFile)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_IN_PROGRESS"));
-            }
-            else
-            {
-                IsSavingHavokFile = true;
-
-                bool taskResult;
-                try
-                {
-                    taskResult = await Task.Run(() => SaveHavokFile(data, category, fileEntry, filePath));
-                }
-                finally
-                {
-                    IsSavingHavokFile = false;
-                }
-
-                if (!taskResult)
-                {
-                    Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_FAIL", fileEntry.Path));
-                }
-                else
-                {
-                    Smithbox.Log(this, LOC.Get("HAVOK_Data_Save_File_PASS", fileEntry.Path));
-                }
-            }
+            await RunSaveTask(() => data.SaveHavokFile(category, fileEntry, filePath), fileEntry.Path);
         }
 
+        OnSaveComplete();
+    }
+
+    /// <summary>
+    /// Save all modified Havok files
+    /// </summary>
+    public async void SaveAll(bool autoSave = false)
+    {
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        var data = activeView.HavokBank;
+
+        if (autoSave && CFG.Current.HavokEditor_Allow_Automatic_Save || !autoSave)
+        {
+            await RunSaveTask(() => data.SaveAllHavokFiles(), "");
+        }
+
+        OnSaveComplete();
+    }
+
+    private bool IsSavingHavokFile = false;
+
+    /// <summary>
+    /// Run the save off the main thread, preventing saves from overlapping
+    /// </summary>
+    private async Task RunSaveTask(Func<bool> saveFunc, string path)
+    {
+        if (IsSavingHavokFile)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_IN_PROGRESS"));
+            return;
+        }
+
+        IsSavingHavokFile = true;
+
+        try
+        {
+            await Task.Run(saveFunc);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_FAIL", path), ex);
+        }
+        finally
+        {
+            IsSavingHavokFile = false;
+        }
+    }
+
+    private void OnSaveComplete()
+    {
         // Clear collision cache bank when Havok Editor saves so collision edits
         // appear immediately in Map Editor (on map reload)
         if(Project.Handler.MapEditor != null)
@@ -236,57 +255,5 @@ public class HavokEditorScreen : EditorScreen
 
         // Save the configuration JSONs
         Smithbox.Instance.SaveConfiguration();
-    }
-
-    private bool IsSavingHavokFile = false;
-
-    private bool SaveHavokFile(HavokBank data, HavokCategoryMode category, FileDictionaryEntry fileEntry, string filePath)
-    {
-        try
-        {
-            if (category is HavokCategoryMode.Animation)
-            {
-                data.SaveAnimationFile(fileEntry, filePath);
-            }
-            else if (category is HavokCategoryMode.Behavior)
-            {
-                data.SaveBehaviorFile(fileEntry, filePath);
-            }
-            else if (category is HavokCategoryMode.Character)
-            {
-                data.SaveCharacterFile(fileEntry, filePath);
-            }
-            else if (category is HavokCategoryMode.Map_Collision)
-            {
-                data.SaveMapCollisionFile(fileEntry, filePath);
-            }
-            else if (category is HavokCategoryMode.Asset_Collision)
-            {
-                data.SaveAssetCollisionFile(fileEntry, filePath);
-            }
-            else if (category is HavokCategoryMode.Navmesh)
-            {
-                data.SaveNavmeshFile(fileEntry, filePath);
-            }
-            else if (category is HavokCategoryMode.Cutscene)
-            {
-                data.SaveCutsceneFile(fileEntry, filePath);
-            }
-            else if (category is HavokCategoryMode.Part_Collidable)
-            {
-                data.SavePartFile(fileEntry, filePath);
-            }
-            else if (category is HavokCategoryMode.Rumble)
-            {
-                data.SaveRumbleFile(fileEntry, filePath);
-            }
-
-            return true;
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_FAIL", fileEntry.Path), ex);
-            return false;
-        }
     }
 }
