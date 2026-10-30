@@ -1223,7 +1223,7 @@ public class FlverResource : IResource, IDisposable
                 foreach (FlverBufferLayoutMember l in layouts)
                 {
                     // ER meme
-                    if (l.unk00 == -2147483647)
+                    if (l.IsSpecialMember)
                     {
                         continue;
                     }
@@ -1296,7 +1296,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesStandard(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer)
     {
         br.StepIn(buffer.bufferOffset);
         var pverts = (FlverLayout*)vertBuffer;
@@ -1305,13 +1305,18 @@ public class FlverResource : IResource, IDisposable
         {
             FlverLayout* v = &pverts[i];
             Vector3 n = Vector3.UnitX;
-            FillUVShortZero((*v).Uv1);
-            FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
-            var posfilled = false;
+
+            // A mesh can split its vertices across buffers, so only the first buffer may clear them
+            if (firstBuffer)
+            {
+                *v = new FlverLayout();
+                FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
+            }
+
             foreach (FlverBufferLayoutMember l in layouts)
             {
                 // ER meme
-                if (l.unk00 == -2147483647)
+                if (l.IsSpecialMember)
                 {
                     continue;
                 }
@@ -1325,7 +1330,6 @@ public class FlverResource : IResource, IDisposable
                     }
 
                     FillVertex(&(*v).Position, br, l.type);
-                    posfilled = true;
                 }
                 else if (l.semantic == FLVER.LayoutSemantic.Normal)
                 {
@@ -1344,11 +1348,6 @@ public class FlverResource : IResource, IDisposable
                 {
                     EatVertex(br, l.type);
                 }
-            }
-
-            if (!posfilled)
-            {
-                (*v).Position = new Vector3(0, 0, 0);
             }
 
             pickingVerts[i] = (*v).Position;
@@ -1428,10 +1427,11 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesUV2(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled)
     {
         Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
+        var uvsfilled = uvSetsFilled;
         fixed (FlverLayoutUV2* pverts = verts)
         {
             for (var i = 0; i < buffer.vertexCount; i++)
@@ -1439,14 +1439,19 @@ public class FlverResource : IResource, IDisposable
                 FlverLayoutUV2* v = &pverts[i];
                 Vector3 n = Vector3.UnitX;
 
-                // The buffer isn't cleared, and not every member is guaranteed to be in the mesh's layout
-                *v = new FlverLayoutUV2();
-                FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
-                var uvsfilled = 0;
+                // The buffer isn't cleared, and not every member is guaranteed to be in the mesh's layout.
+                // A mesh can split its vertices across buffers, so only the first buffer may clear them.
+                if (firstBuffer)
+                {
+                    *v = new FlverLayoutUV2();
+                    FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
+                }
+
+                uvsfilled = uvSetsFilled;
                 foreach (FlverBufferLayoutMember l in layouts)
                 {
                     // ER meme
-                    if (l.unk00 == -2147483647)
+                    if (l.IsSpecialMember)
                     {
                         continue;
                     }
@@ -1504,6 +1509,7 @@ public class FlverResource : IResource, IDisposable
             }
         }
 
+        uvSetsFilled = uvsfilled;
         br.StepOut();
     }
 
@@ -1974,6 +1980,9 @@ public class FlverResource : IResource, IDisposable
 
         Span<FlverBufferLayoutMember> layoutmembersBuffer = stackalloc FlverBufferLayoutMember[maxLayoutMemberCount];
 
+        var firstBuffer = true;
+        var uvSetsFilled = 0;
+
         foreach (var vbi in vertexBufferIndices)
         {
             FlverVertexBuffer vb = buffers[vbi];
@@ -2011,12 +2020,14 @@ public class FlverResource : IResource, IDisposable
             }
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV2)
             {
-                FillVerticesUV2(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024);
+                FillVerticesUV2(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled);
             }
             else
             {
-                FillVerticesStandard(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024);
+                FillVerticesStandard(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer);
             }
+
+            firstBuffer = false;
         }
 
         dest.VertexCount = vertexCount;
@@ -2931,6 +2942,9 @@ public class FlverResource : IResource, IDisposable
         public readonly FLVER.LayoutType type;
         public readonly FLVER.LayoutSemantic semantic;
         public readonly int index;
+
+        // Matches the SpecialModifier check in FLVER.Vertex.Read: these members have no data in the vertex
+        public bool IsSpecialMember => (short)(unk00 >> 16) == -32768;
 
         public FlverBufferLayoutMember(BinaryReaderEx br)
         {

@@ -10,7 +10,6 @@
 # Map Editor
 - Move Map Data stuff into Map Editor as a separate mode
 - Implement better scheme for Display/Draw group handling
-- Add texture load request when model changes (via modelname change)
   
 # Model Editor
 - Add support for hknpConvexPolytopeShape to HKX2_Helper so obj collisions can be displayed

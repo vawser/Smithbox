@@ -185,7 +185,7 @@ public class MapResourceHandler
             var textureAsset = TextureLocator.GetCharacterCommonTextureVirtualPath(View.Project, "common_body");
 
             if (textureAsset.IsValid())
-                LoadList_Asset_Texture.Add(textureAsset);
+                LoadList_Other_Texture.Add(textureAsset);
         }
 
         // SYSTEX
@@ -201,7 +201,7 @@ public class MapResourceHandler
             var textureAsset = TextureLocator.GetSystexTextureVirtualPath(View.Project, "systex");
 
             if (textureAsset.IsValid())
-                LoadList_Asset_Texture.Add(textureAsset);
+                LoadList_Other_Texture.Add(textureAsset);
         }
     }
 
