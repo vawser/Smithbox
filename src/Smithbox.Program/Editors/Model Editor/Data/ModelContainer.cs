@@ -121,7 +121,7 @@ public class ModelContainer : ObjectContainer
         {
             var newObject = new ModelEntity(View.Universe, this, wrapper.HKX, ModelEntityType.HKX);
 
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.ModelEditor_ModelLoad_Collisions)
             {
                 AssignCollisionDrawable(newObject, wrapper);
             }
@@ -381,7 +381,7 @@ public class ModelContainer : ObjectContainer
 
         var modelName = wrapper.HKX_Name;
 
-        resource = ModelLocator.GetObjCollision(Project, wrapper.Parent.Name, modelName);
+        resource = ModelLocator.GetObjCollision(Project, wrapper.Parent.Name, modelName, wrapper.HKX_BinderName);
 
         LoadCollision(ent, resource);
     }
@@ -421,21 +421,23 @@ public class ModelContainer : ObjectContainer
 
         ent.RenderSceneMesh = mesh;
 
-        LoadResource<HavokCollisionResource>(resource, pool, ResourceType.CollisionHKX, isConnectCollision);
+        // Binders can hold other hkx files (e.g. animations and cloth), so only the collision itself is loaded
+        LoadResource<HavokCollisionResource>(resource, pool, ResourceType.CollisionHKX, isConnectCollision, resource.Name);
     }
 
     /// <summary>
     ///     Loads the file that holds the resource, unless it is already loaded, and waits for it to be read.
     /// </summary>
     private void LoadResource<T>(ResourceDescriptor resource, ResourcePool pool, ResourceType types,
-        bool isConnectCollision) where T : class, IResource, IDisposable, new()
+        bool isConnectCollision, string onlyName = null) where T : class, IResource, IDisposable, new()
     {
         var options = new LoadOptions
         {
             JobName = "Loading mesh",
             Types = types,
             AccessLevel = AccessLevel.AccessGPUOptimizedOnly,
-            IsConnectCollision = isConnectCollision
+            IsConnectCollision = isConnectCollision,
+            OnlyNames = onlyName == null ? null : new[] { onlyName }
         };
 
         pool.LoadAsset<T>(Project, resource, options).Wait();

@@ -34,9 +34,18 @@ public static class HKX2_Helper
                 return false;
             }
 
-            var physicsscene = (hknpPhysicsSceneData)resource.Hkx2.m_namedVariants[0].m_variant;
+            // Object files can hold animation and cloth data alongside the physics scene, in any order
+            var physicsscene = resource.Hkx2.m_namedVariants
+                .Select(v => v.m_variant)
+                .OfType<hknpPhysicsSceneData>()
+                .FirstOrDefault();
 
-            foreach (hknpBodyCinfo bodyInfo in physicsscene.m_systemDatas[0].m_bodyCinfos)
+            if (physicsscene == null)
+            {
+                return false;
+            }
+
+            foreach (hknpBodyCinfo bodyInfo in physicsscene.m_systemDatas.SelectMany(s => s.m_bodyCinfos))
             {
                 if (bodyInfo.m_shape is fsnpCustomParamCompressedMeshShape ncol)
                 {
@@ -98,10 +107,35 @@ public static class HKX2_Helper
                         Smithbox.Log(typeof(HKX2_Helper), $"Failed to load HKX2 (ExternMeshShape).", LogLevel.Error, LogPriority.High, e);
                     }
                 }
-                else if(bodyInfo.m_shape is hknpConvexPolytopeShape polytopeMesh)
+                else if (bodyInfo.m_shape is hknpConvexPolytopeShape polytopeMesh)
                 {
-                    // TODO: add support for this so obj collisions can be displayed
-                    continue;
+                    try
+                    {
+                        var mesh = new CollisionSubmesh();
+
+                        var indices = new List<int>();
+                        var vertices = new List<Vector3>();
+
+                        (mesh, vertices, indices) = ProcessConvexPolytope(polytopeMesh, bodyInfo, mesh);
+
+                        RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+
+                        if (first)
+                        {
+                            resource.Bounds = mesh.Bounds;
+                            first = false;
+                        }
+                        else
+                        {
+                            resource.Bounds = BoundingBox.Combine(resource.Bounds, mesh.Bounds);
+                        }
+
+                        submeshes.Add(mesh);
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.Log(typeof(HKX2_Helper), $"Failed to load HKX2 (ConvexPolytopeShape).", LogLevel.Error, LogPriority.High, e);
+                    }
                 }
                 else
                 {
@@ -277,6 +311,37 @@ public static class HKX2_Helper
                 indices.Add(tri.m_a);
                 indices.Add(tri.m_b);
                 indices.Add(tri.m_c);
+            }
+        }
+
+        return (dest, verts, indices);
+    }
+
+    /// <summary>
+    /// Processes an hknpConvexPolytopeShape's geometry into data usable for the rendering system.
+    /// The hull is stored as faces, each listing the vertices of a convex polygon, so each
+    /// face is split into a triangle fan around its first vertex.
+    /// </summary>
+    /// <param name="shape"></param>
+    /// <param name="bodyinfo"></param>
+    /// <param name="dest"></param>
+    /// <returns></returns>
+    public static (CollisionSubmesh, List<Vector3>, List<int>) ProcessConvexPolytope(
+        hknpConvexPolytopeShape shape, hknpBodyCinfo bodyinfo, CollisionSubmesh dest)
+    {
+        var verts = shape.m_vertices
+            .Select(v => TransformVert(new Vector3(v.X, v.Y, v.Z), bodyinfo))
+            .ToList();
+
+        var indices = new List<int>();
+
+        foreach (var face in shape.m_faces)
+        {
+            for (var i = 1; i < face.m_numIndices - 1; i++)
+            {
+                indices.Add(shape.m_indices[face.m_firstIndex]);
+                indices.Add(shape.m_indices[face.m_firstIndex + i]);
+                indices.Add(shape.m_indices[face.m_firstIndex + i + 1]);
             }
         }
 

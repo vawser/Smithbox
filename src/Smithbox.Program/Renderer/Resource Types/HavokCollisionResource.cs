@@ -12,6 +12,8 @@ namespace StudioCore.Renderer;
 
 public class HavokCollisionResource : IResource, IDisposable
 {
+    private static readonly object HKLibReadLock = new();
+
     public CollisionSubmesh[] GPUMeshes;
     public HKX Hkx;
     public hkRootLevelContainer Hkx2;
@@ -41,7 +43,9 @@ public class HavokCollisionResource : IResource, IDisposable
             or ProjectType.DB_NT
             or ProjectType.DB)
         {
-            var success = HandleHKLibLoad(curProject, ctx);
+            var success = IsAssetCollision(ctx)
+                ? HandleHKLibAssetLoad(bytes)
+                : HandleHKLibLoad(curProject, ctx);
 
             if (!success)
                 return false;
@@ -190,6 +194,32 @@ public class HavokCollisionResource : IResource, IDisposable
         {
             return HKX_Helper.LoadCollisionMesh(this, al);
         }
+    }
+
+    private static bool IsAssetCollision(ResourceLoadContext ctx)
+    {
+        return ctx.ContainerPath.Contains(".geomhkxbnd", StringComparison.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// Asset collision isn't tied to a loaded map, so it isn't held by the HavokCollisionBank and is read here.
+    /// The HavokBinarySerializer doesn't work with the parallel nature of the Resource Manager, so only one read
+    /// is done at a time.
+    /// </summary>
+    public bool HandleHKLibAssetLoad(Memory<byte> bytes)
+    {
+        var data = DCX.Is(bytes) ? DCX.Decompress(bytes) : bytes;
+
+        using var stream = new MemoryStream(data.ToArray());
+
+        lock (HKLibReadLock)
+        {
+            var serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
+
+            ER_HKX = (HKLib.hk2018.hkRootLevelContainer)serializer.Read(stream);
+        }
+
+        return true;
     }
 
     public bool HandleHKLibLoad(ProjectEntry curProject, ResourceLoadContext ctx)

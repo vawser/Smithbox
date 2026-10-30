@@ -394,6 +394,7 @@ public class ModelWrapper
 
     public bool HasCollision { get; set; } = false;
     public string HKX_Name { get; set; }
+    public string HKX_BinderName { get; set; }
     public IRootContainer HKX { get; set; }
 
     /// <summary>
@@ -457,6 +458,65 @@ public class ModelWrapper
         catch (Exception e)
         {
             Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Binder_File", Parent.Path), e);
+        }
+
+        LoadAssetCollision();
+    }
+
+    /// <summary>
+    /// Assets keep their collision in separate binders beside the model binder, one per collision type.
+    /// Each model within the asset has its own entry in those binders.
+    /// </summary>
+    private void LoadAssetCollision()
+    {
+        if (Parent.Project.Descriptor.ProjectType is not (ProjectType.ER
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB))
+        {
+            return;
+        }
+
+        var folder = Parent.Path.Substring(0, Parent.Path.LastIndexOf('/') + 1);
+
+        // Not every asset has both collision types, so fall back to the other one
+        var suffixes = CFG.Current.CurrentHavokCollisionType is HavokCollisionType.High
+            ? new[] { "h", "l" }
+            : new[] { "l", "h" };
+
+        foreach (var suffix in suffixes)
+        {
+            var binderName = $"{Parent.Name}_{suffix}";
+            var binderPath = $"{folder}{binderName}.geomhkxbnd.dcx";
+
+            if (!Parent.TargetFS.FileExists(binderPath))
+                continue;
+
+            try
+            {
+                var binderData = Parent.TargetFS.ReadFile(binderPath);
+
+                if (binderData == null)
+                    continue;
+
+                using var binder = BND4.Read(binderData.Value);
+
+                foreach (var file in binder.Files)
+                {
+                    var filename = FilePathUtils.GetPureFilename(file.Name);
+
+                    if (filename.Equals($"{Name}_{suffix}", StringComparison.OrdinalIgnoreCase))
+                    {
+                        HKX_BinderName = binderName;
+                        HandleHavokCollisionLoad(filename, file.Bytes);
+                        return;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Binder_File", binderPath), e);
+            }
         }
     }
 

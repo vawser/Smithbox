@@ -15,9 +15,9 @@ namespace HKX2
         public override void Read(PackFileDeserializer des, BinaryReaderEx br)
         {
             base.Read(des, br);
-            // Read TYPE_RELARRAY
-            // Read TYPE_RELARRAY
-            // Read TYPE_RELARRAY
+            m_planes = des.ReadVector4RelArray(br);
+            m_faces = des.ReadClassRelArray<hknpConvexPolytopeShapeFace>(br);
+            m_indices = des.ReadByteRelArray(br);
             br.ReadUInt32();
         }
         

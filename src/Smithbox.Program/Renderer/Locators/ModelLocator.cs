@@ -238,11 +238,12 @@ public static class ModelLocator
         return ret;
     }
 
-    public static ResourceDescriptor GetObjCollision(ProjectEntry project, string objContainerId, string objId)
+    /// <param name="binderName">The binder the collision is stored in, for games that keep it apart from the model</param>
+    public static ResourceDescriptor GetObjCollision(ProjectEntry project, string objContainerId, string objId, string binderName = null)
     {
         ResourceDescriptor ret = new();
         ret.AssetName = objId;
-        ret.AssetArchiveVirtualPath = $@"obj/{objContainerId}/collision/{objId}.hkx";
+        ret.AssetArchiveVirtualPath = $@"obj/{objContainerId}/collision/{binderName ?? objId}.hkx";
 
         if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {

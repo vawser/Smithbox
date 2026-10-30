@@ -805,6 +805,21 @@ namespace HKXClassGen
                     continue;
                 }
 
+                // Relative arrays
+                if (m.VType == VTYPE.TYPE_RELARRAY && !isWriter)
+                {
+                    if (m.VSubType == VTYPE.TYPE_STRUCT)
+                    {
+                        WriteLine($@"m_{m.Name} = des.ReadClassRelArray<{m.CType}>(br);");
+                    }
+                    else
+                    {
+                        brPrimitive = GetSimpleType(m.VSubType) ?? GetComplexType(m.VSubType);
+                        WriteLine($@"m_{m.Name} = des.Read{brPrimitive}RelArray(br);");
+                    }
+                    continue;
+                }
+
                 // Enum
                 if (m.VType == VTYPE.TYPE_ENUM)
                 {

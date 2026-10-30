@@ -30,12 +30,16 @@ public static class HKLib_Helper
                 return false;
             }
 
-            var scene = resource.ER_HKX.m_namedVariants[0].m_variant;
+            // Asset files can hold an hkxScene alongside the physics scene, in any order
+            var scene = resource.ER_HKX.m_namedVariants
+                .Select(v => v.m_variant)
+                .FirstOrDefault(v => v is hknpPhysicsSceneData) ?? resource.ER_HKX.m_namedVariants[0].m_variant;
+
             if (scene is hknpPhysicsSceneData physicsscene)
             {
-                foreach (hknpBodyCinfo bodyInfo in physicsscene.m_systemDatas[0].m_bodyCinfos)
+                foreach (hknpBodyCinfo bodyInfo in physicsscene.m_systemDatas.SelectMany(s => s.m_bodyCinfos))
                 {
-                    if (bodyInfo.m_shape is fsnpCustomParamCompressedMeshShape ncol)
+                    if (bodyInfo.m_shape is hknpCompressedMeshShape ncol)
                     {
                         try
                         {
@@ -118,6 +122,36 @@ public static class HKLib_Helper
                         catch (Exception e)
                         {
                             Smithbox.Log(typeof(HKLib_Helper), $"Failed to load HKLIB.",
+                                LogLevel.Error, LogPriority.High, e);
+                        }
+                    }
+                    else if (bodyInfo.m_shape is hknpConvexPolytopeShape polytopeMesh)
+                    {
+                        try
+                        {
+                            var mesh = new CollisionSubmesh();
+                            var indices = new List<int>();
+                            var vertices = new List<Vector3>();
+
+                            (mesh, vertices, indices) = ProcessConvexPolytope(polytopeMesh, bodyInfo, mesh);
+
+                            RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+
+                            if (first)
+                            {
+                                resource.Bounds = mesh.Bounds;
+                                first = false;
+                            }
+                            else
+                            {
+                                resource.Bounds = BoundingBox.Combine(resource.Bounds, mesh.Bounds);
+                            }
+
+                            submeshes.Add(mesh);
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.Log(typeof(HKLib_Helper), $"Failed to load HKLIB (ConvexPolytopeShape).",
                                 LogLevel.Error, LogPriority.High, e);
                         }
                     }
@@ -234,6 +268,39 @@ public static class HKLib_Helper
         }
 
         return (mesh, vector3List, intList);
+    }
+
+    /// <summary>
+    /// Processes an hknpConvexPolytopeShape's geometry into data usable for the rendering system.
+    /// The hull is stored as faces, each listing the vertices of a convex polygon, so each
+    /// face is split into a triangle fan around its first vertex.
+    /// </summary>
+    /// <param name="shape"></param>
+    /// <param name="bodyinfo"></param>
+    /// <param name="mesh"></param>
+    /// <returns></returns>
+    public static (CollisionSubmesh, List<Vector3>, List<int>) ProcessConvexPolytope(
+        hknpConvexPolytopeShape shape,
+        hknpBodyCinfo bodyinfo,
+        CollisionSubmesh mesh)
+    {
+        var verts = shape.m_vertices
+            .Select(v => TransformVert(new Vector3(v.X, v.Y, v.Z), bodyinfo))
+            .ToList();
+
+        var indices = new List<int>();
+
+        foreach (var face in shape.m_faces)
+        {
+            for (var i = 1; i < face.m_numIndices - 1; i++)
+            {
+                indices.Add(shape.m_indices[face.m_firstIndex]);
+                indices.Add(shape.m_indices[face.m_firstIndex + i]);
+                indices.Add(shape.m_indices[face.m_firstIndex + i + 1]);
+            }
+        }
+
+        return (mesh, verts, indices);
     }
 
     /// <summary>

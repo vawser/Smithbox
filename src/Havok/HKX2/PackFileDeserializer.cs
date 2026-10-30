@@ -40,6 +40,46 @@ namespace HKX2
             return res;
         }
 
+        private List<T> ReadRelArrayBase<T>(BinaryReaderEx br, Func<T> perElement)
+        {
+            // hkRelArray is a ushort size and a ushort offset from the start of the array field itself.
+            // The data is stored inline after the owning object, so unlike hkArray there is no fixup.
+            var start = br.Position;
+            ushort size = br.ReadUInt16();
+            ushort offset = br.ReadUInt16();
+            var res = new List<T>();
+            if (size > 0)
+            {
+                br.StepIn(start + offset);
+                for (int i = 0; i < size; i++)
+                {
+                    res.Add(perElement());
+                }
+                br.StepOut();
+            }
+            return res;
+        }
+
+        public List<T> ReadClassRelArray<T>(BinaryReaderEx br) where T : IHavokObject, new()
+        {
+            return ReadRelArrayBase(br, () =>
+            {
+                var cls = new T();
+                cls.Read(this, br);
+                return cls;
+            });
+        }
+
+        public List<byte> ReadByteRelArray(BinaryReaderEx br)
+        {
+            return ReadRelArrayBase(br, br.ReadByte);
+        }
+
+        public List<Vector4> ReadVector4RelArray(BinaryReaderEx br)
+        {
+            return ReadRelArrayBase(br, () => ReadVector4(br));
+        }
+
         public List<T> ReadClassArray<T>(BinaryReaderEx br) where T : IHavokObject, new()
         {
             // Consume pointer
