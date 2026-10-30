@@ -972,6 +972,37 @@ public class MsbEntity : Entity
 
         AssignDrawable();
         UpdateRenderModel();
+        LoadModelTextures();
+    }
+
+    /// <summary>
+    /// Requests the textures of the current model. Models only load their own container, whereas the
+    /// textures of a newly assigned model can be in a separate one that the map load didn't know about.
+    /// </summary>
+    private void LoadModelTextures()
+    {
+        if (!CFG.Current.Viewport_Enable_Texturing || string.IsNullOrEmpty(ModelName))
+            return;
+
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+
+        var loadTextures = ModelName.StartsWith('c')
+            ? CFG.Current.MapEditor_TextureLoad_Characters
+            : CFG.Current.MapEditor_TextureLoad_Objects;
+
+        if (loadTextures)
+        {
+            ResourceManager.DefaultPool.LoadAssets(curProject, MapResourceHandler.GetModelTextureAssets(curProject, ModelName), new LoadOptions
+            {
+                JobName = LOC.Get("REND_Job_Additional_Textures"),
+                Types = ResourceType.Texture,
+                AccessLevel = AccessLevel.AccessGPUOptimizedOnly
+            });
+        }
+
+        // Runs once the jobs are done, for textures that aren't in the containers above
+        curUniverse.ScheduleTextureRefresh();
     }
 
     public override void UpdateRenderModel()

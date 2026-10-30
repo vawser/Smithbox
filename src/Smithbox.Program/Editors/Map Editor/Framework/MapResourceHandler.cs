@@ -167,38 +167,11 @@ public class MapResourceHandler
         // Models
         foreach (IMsbModel model in Msb.Models.GetEntries())
         {
-            // Character
-            if (model.Name.StartsWith('c'))
+            var loadList = model.Name.StartsWith('c') ? LoadList_Character_Texture : LoadList_Asset_Texture;
+
+            foreach (ResourceDescriptor asset in GetModelTextureAssets(View.Project, model.Name))
             {
-                // TPF
-                var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, model.Name, false);
-
-                if (textureAsset.IsValid())
-                    LoadList_Character_Texture.Add(textureAsset);
-
-                // BND
-                textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, model.Name, true);
-
-                if (textureAsset.IsValid())
-                    LoadList_Character_Texture.Add(textureAsset);
-            }
-
-            // Object
-            if (model.Name.StartsWith('o'))
-            {
-                var textureAsset = TextureLocator.GetObjectTextureVirtualPath(View.Project, model.Name);
-
-                if (textureAsset.IsValid())
-                    LoadList_Asset_Texture.Add(textureAsset);
-            }
-
-            // Assets
-            if (model.Name.StartsWith("AEG") || model.Name.StartsWith("aeg"))
-            {
-                var textureAsset = TextureLocator.GetAssetTextureVirtualPath(View.Project, model.Name);
-
-                if (textureAsset.IsValid())
-                    LoadList_Asset_Texture.Add(textureAsset);
+                loadList.Add(asset);
             }
         }
 
@@ -230,6 +203,38 @@ public class MapResourceHandler
             if (textureAsset.IsValid())
                 LoadList_Asset_Texture.Add(textureAsset);
         }
+    }
+
+    /// <summary>
+    ///     Gets the texture containers named after a character, object or asset model.
+    /// </summary>
+    public static List<ResourceDescriptor> GetModelTextureAssets(ProjectEntry project, string modelName)
+    {
+        List<ResourceDescriptor> assets = new();
+
+        // Character
+        if (modelName.StartsWith('c'))
+        {
+            // TPF
+            assets.Add(TextureLocator.GetCharacterTextureVirtualPath(project, modelName, false));
+
+            // BND
+            assets.Add(TextureLocator.GetCharacterTextureVirtualPath(project, modelName, true));
+        }
+
+        // Object
+        if (modelName.StartsWith('o'))
+        {
+            assets.Add(TextureLocator.GetObjectTextureVirtualPath(project, modelName));
+        }
+
+        // Assets
+        if (modelName.StartsWith("AEG") || modelName.StartsWith("aeg"))
+        {
+            assets.Add(TextureLocator.GetAssetTextureVirtualPath(project, modelName));
+        }
+
+        return assets.Where(e => e.IsValid()).ToList();
     }
 
     /// <summary>
