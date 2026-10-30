@@ -43,7 +43,8 @@ public static class FocusManager
             or EditorFocusContext.MapEditor_MapGroups
             or EditorFocusContext.MapEditor_Properties
             or EditorFocusContext.MapEditor_Tools
-            or EditorFocusContext.MapEditor_Viewport)
+            or EditorFocusContext.MapEditor_Viewport
+            or EditorFocusContext.MapEditor_MapData)
             return true;
 
         return false;
@@ -134,18 +135,6 @@ public static class FocusManager
         return false;
     }
 
-    public static bool IsInMapDataEditor()
-    {
-        if (Focus is EditorFocusContext.MapDataEditor_None
-            or EditorFocusContext.MapDataEditor_CommonView
-            or EditorFocusContext.MapDataEditor_MsbEditor
-            or EditorFocusContext.MapDataEditor_EnflEditor
-            or EditorFocusContext.MapDataEditor_Tools)
-            return true;
-
-        return false;
-    }
-
     public static bool IsInProjectEditor()
     {
         if (Focus is EditorFocusContext.Project_None)
@@ -205,6 +194,7 @@ public enum EditorFocusContext
     MapEditor_Tools,
     MapEditor_Viewport,
     MapEditor_WorldMap,
+    MapEditor_MapData,
 
     ModelEditor_None,
     ModelEditor_FileList,
@@ -250,12 +240,6 @@ public enum EditorFocusContext
     AnimEditor_BehaviorProperties,
     AnimEditor_Viewport,
     AnimEditor_Tools,
-
-    MapDataEditor_None,
-    MapDataEditor_CommonView,
-    MapDataEditor_MsbEditor,
-    MapDataEditor_EnflEditor,
-    MapDataEditor_Tools,
 
     HavokEditor_None,
     HavokEditor_CategoryList,

@@ -30,7 +30,6 @@ public class PreferencesMenu
     private List<PreferenceItem> GparamEditorPrefList = new();
     private List<PreferenceItem> MaterialEditorPrefList = new();
     private List<PreferenceItem> TextureViewerPrefList = new();
-    private List<PreferenceItem> MapDataEditorPrefList = new();
     private List<PreferenceItem> AnimEditorPrefList = new();
 
     public PreferencesMenu()
@@ -46,7 +45,6 @@ public class PreferencesMenu
         GparamEditorPrefList = SetupPrefList(GparamEditorPrefs.GetPrefType());
         MaterialEditorPrefList = SetupPrefList(MaterialEditorPrefs.GetPrefType());
         TextureViewerPrefList = SetupPrefList(TextureViewerPrefs.GetPrefType());
-        MapDataEditorPrefList = SetupPrefList(MapDataEditorPrefs.GetPrefType());
         AnimEditorPrefList = SetupPrefList(AnimEditorPrefs.GetPrefType());
     }
 
@@ -165,28 +163,6 @@ public class PreferencesMenu
                         if (MapEditorPrefList.Count > 0)
                         {
                             DisplaySettings(MapEditorPrefList);
-                        }
-                        else
-                        {
-                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
-                        }
-
-                        ImGui.EndChild();
-
-                        ImGui.EndTabItem();
-                    }
-                }
-
-                if (curProject != null && curProject.Handler != null &&
-                    curProject.Handler.MapDataEditor != null)
-                {
-                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Map_Data_Editor")}##mapDataEditorTab"))
-                    {
-                        ImGui.BeginChild("mapDataEditorPrefSection");
-
-                        if (MapDataEditorPrefList.Count > 0)
-                        {
-                            DisplaySettings(MapDataEditorPrefList);
                         }
                         else
                         {

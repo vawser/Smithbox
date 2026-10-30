@@ -278,17 +278,6 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Visual_Map_Editor_TT"));
         }
 
-        // Map Param Editor
-        if (EditorConditions.SupportsMapDataEditor(Descriptor.ProjectType))
-        {
-            ImGui.Checkbox(
-                LOC.Get("PROJECT_Configuration_Checkbox_Map_Data_Editor"), 
-                ref Descriptor.EnableMapDataEditor);
-
-            GUI.Tooltip(
-                LOC.Get("PROJECT_Configuration_Checkbox_Map_Data_Editor_TT"));
-        }
-
         // Model Editor
         if (EditorConditions.SupportsModelEditor(Descriptor.ProjectType))
         {

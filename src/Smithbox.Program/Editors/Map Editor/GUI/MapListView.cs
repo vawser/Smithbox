@@ -76,6 +76,15 @@ public class MapListView : IActionEventHandler
         ImGui.SameLine();
         View.MapListFilterTool.DisplayHeaderButton();
 
+        ImGui.SameLine();
+        if (ImGui.Button($"{(View.ShowMapData ? Icons.Cube : Icons.Table)}##mapDataToggle", DPI.IconButtonSize))
+        {
+            View.ToggleMapData();
+        }
+        GUI.Tooltip(View.ShowMapData
+            ? "Hide the Map Data window and show the viewport."
+            : "Hide the viewport and show the Map Data window, which lists the MSB data of the selected map.");
+
         if (View.Project.Descriptor.ProjectType is ProjectType.BB)
         {
             ImGui.SameLine();
@@ -416,6 +425,7 @@ public class MapListView : IActionEventHandler
         if (evt.HasFlag(ActionEvent.ObjectAddedRemoved))
         {
             View.EntityTypeCache.InvalidateCache();
+            View.MapDataView.EntryView.Invalidate();
         }
     }
 }

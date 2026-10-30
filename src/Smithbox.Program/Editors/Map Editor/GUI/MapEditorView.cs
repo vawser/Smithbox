@@ -50,6 +50,14 @@ public class MapEditorView : IEditorView
     public MapGroupsView MapGroupsView;
     public MapPropertyView MapPropertyView;
     public MapToolWindow ToolView;
+    public MapDataView MapDataView;
+
+    /// <summary>
+    /// When true, the Map Data window is displayed in place of the viewport.
+    /// </summary>
+    public bool ShowMapData { get; private set; } = false;
+
+    private bool _focusCenterWindow = false;
 
     public BasicFilters BasicFilters;
     public RegionFilters RegionFilters;
@@ -132,6 +140,7 @@ public class MapEditorView : IEditorView
         MapGroupsView = new MapGroupsView(this, project);
         MapPropertyView = new MapPropertyView(this, project);
         ToolView = new MapToolWindow(this, project);
+        MapDataView = new MapDataView(this, project);
 
         // Optional Views
         BasicFilters = new BasicFilters(this);
@@ -275,8 +284,8 @@ public class MapEditorView : IEditorView
 
         ImGui.End();
 
-        // Viewport
-        ViewportWindow.Display(dockspaceId);
+        // Viewport or Map Data
+        DisplayCenterWindow(dockspaceId, viewIndex);
 
         // Properties
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
@@ -368,8 +377,8 @@ public class MapEditorView : IEditorView
 
         ImGui.End();
 
-        // Viewport
-        ViewportWindow.Display(dockspaceId);
+        // Viewport or Map Data
+        DisplayCenterWindow(dockspaceId, viewIndex);
 
         // Right Panel
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
@@ -405,6 +414,54 @@ public class MapEditorView : IEditorView
             }
 
             ImGui.EndTabBar();
+        }
+
+        ImGui.End();
+    }
+
+    public void ToggleMapData()
+    {
+        ShowMapData = !ShowMapData;
+        _focusCenterWindow = true;
+    }
+
+    private void DisplayCenterWindow(uint dockspaceId, int viewIndex)
+    {
+        // Bring the newly shown window to the front of its dock node
+        if (_focusCenterWindow)
+        {
+            _focusCenterWindow = false;
+            ImGui.SetNextWindowFocus();
+        }
+
+        if (!ShowMapData)
+        {
+            ViewportWindow.Display(dockspaceId);
+            return;
+        }
+
+        // Follow the viewport into its dock node, so the two windows swap in place
+        var viewportDockId = GetCurrentViewport()?.LastDockId ?? 0;
+
+        if (viewportDockId != 0)
+        {
+            ImGui.SetNextWindowDockID(viewportDockId, ImGuiCond.Appearing);
+        }
+        else
+        {
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        }
+
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
+        if (ImGui.Begin($@"Map Data##mapEditor_MapData_{viewIndex}", GUI.GetInnerWindowFlags()))
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MapEditor_MapData);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            MapDataView.Display();
         }
 
         ImGui.End();

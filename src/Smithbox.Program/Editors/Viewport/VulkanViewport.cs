@@ -74,6 +74,11 @@ public class VulkanViewport : IViewport
     public bool IsViewportSelected { get; set; }
 
     /// <summary>
+    /// The dock node this viewport was last displayed in.
+    /// </summary>
+    public uint LastDockId { get; private set; }
+
+    /// <summary>
     /// Viewport window position: X coordinate
     /// </summary>
     public int X;
@@ -224,6 +229,8 @@ public class VulkanViewport : IViewport
         if (ImGui.Begin($@"{LOC.Get("VIEWPORT_Window_Name")}###{ID}", flags))
         {
             Visible = true;
+
+            LastDockId = ImGui.GetWindowDockID();
 
             HandleMapEditorFocus();
             HandleModelEditorFocus();

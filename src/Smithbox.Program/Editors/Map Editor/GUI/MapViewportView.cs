@@ -75,6 +75,13 @@ public class MapViewportView
 
     public void Update(float deltatime)
     {
+        // The viewport keeps its last focus and bounds whilst hidden, so it must not respond to input
+        if (View.ShowMapData)
+        {
+            ViewportUsingKeyboard = false;
+            return;
+        }
+
         foreach (var viewport in View.ViewportHandler.Viewports)
         {
             if (viewport == null)
@@ -110,6 +117,9 @@ public class MapViewportView
 
     public bool InputCaptured()
     {
+        if (View.ShowMapData)
+            return false;
+
         var activeViewport = View.ViewportHandler.ActiveViewport;
 
         if (activeViewport.Viewport != null)

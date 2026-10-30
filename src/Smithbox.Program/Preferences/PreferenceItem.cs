@@ -213,10 +213,6 @@ public enum SectionCategory
     [Display(Name = "PREF_Category_MaterialEditor_Properties")]
     MaterialEditor_Properties = 1100,
 
-    // Map Data Editor
-    [Display(Name = "PREF_Category_MapDataEditor_General")]
-    MapDataEditor_General = 1200,
-
     // Anim Editor
     [Display(Name = "PREF_Category_AnimEditor_General")]
     AnimEditor_General = 1200,

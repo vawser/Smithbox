@@ -2,7 +2,6 @@
 using StudioCore.Editors.FileBrowser;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.HavokEditor;
-using StudioCore.Editors.MapDataEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
@@ -64,9 +63,6 @@ public class ProjectEditorHandler : IDisposable
     public TextureViewerStub TextureViewerStub;
 
     // Map Param Editor
-    public MapDataHandler MapDataHandler;
-    public MapDataEditorScreen MapDataEditor;
-    public MapDataEditorStub MapDataEditorStub;
 
     // Havok Editor
     public HavokData HavokData;
@@ -84,7 +80,6 @@ public class ProjectEditorHandler : IDisposable
     private Task<bool> _gparamDataTask;
     private Task<bool> _materialDataTask;
     private Task<bool> _textureDataTask;
-    private Task<bool> _mapDataDataTask;
     private Task<bool> _havokDataTask;
 
     public ProjectEditorHandler(ProjectEntry project)
@@ -102,7 +97,6 @@ public class ProjectEditorHandler : IDisposable
         MaterialEditorStub = new(Project);
         TextureViewerStub = new(Project);
         FileBrowserStub = new(Project);
-        MapDataEditorStub = new(Project);
         HavokEditorStub = new(Project);
     }
 
@@ -179,15 +173,6 @@ public class ProjectEditorHandler : IDisposable
             tasks.Add(_gparamDataTask);
         }
 
-        // Map Data
-        if (Project.Descriptor.EnableMapDataEditor &&
-            initType is ProjectInitType.ProjectDefined)
-        {
-            MapDataHandler = new(Project);
-            _mapDataDataTask = MapDataHandler.Setup();
-            tasks.Add(_mapDataDataTask);
-        }
-
         // Havok Data
         if (Project.Descriptor.EnableHavokEditor &&
             initType is ProjectInitType.ProjectDefined)
@@ -246,11 +231,6 @@ public class ProjectEditorHandler : IDisposable
             Smithbox.Log(this, _textureDataTask.Result
                 ? LOC.Get("PROJECT_Data_Setup_Texture_Data_PASS")
                 : LOC.Get("PROJECT_Data_Setup_Texture_Data_FAIL"));
-
-        if (_mapDataDataTask != null)
-            Smithbox.Log(this, _mapDataDataTask.Result
-                ? LOC.Get("PROJECT_Data_Setup_Map_Data_PASS")
-                : LOC.Get("PROJECT_Data_Setup_Map_Data_FAIL"));
 
         if (_havokDataTask != null)
             Smithbox.Log(this, _havokDataTask.Result
@@ -312,12 +292,6 @@ public class ProjectEditorHandler : IDisposable
             firstEditor ??= TextureViewer;
         }
 
-        if (MapDataHandler != null)
-        {
-            MapDataEditor = new MapDataEditorScreen(Project);
-            firstEditor ??= MapDataEditor;
-        }
-
         if (HavokData != null)
         {
             HavokEditor = new HavokEditorScreen(Project);
@@ -340,7 +314,6 @@ public class ProjectEditorHandler : IDisposable
         GparamData?.Dispose();
         MaterialData?.Dispose();
         TextureData?.Dispose();
-        MapDataHandler?.Dispose();
         HavokData?.Dispose();
     }
     #endregion

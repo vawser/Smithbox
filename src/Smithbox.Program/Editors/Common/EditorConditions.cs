@@ -10,10 +10,6 @@ public static class EditorConditions
     {
         return true;
     }
-    public static bool SupportsMapDataEditor(ProjectType curType)
-    {
-        return true;
-    }
 
     public static bool SupportsModelEditor(ProjectType curType)
     {

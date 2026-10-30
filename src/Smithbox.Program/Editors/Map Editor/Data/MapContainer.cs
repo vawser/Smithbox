@@ -67,6 +67,13 @@ public class MapContainer : ObjectContainer
 
     public List<Entity> PartPoses;
 
+    /// <summary>
+    /// The MSB this map was loaded from. Saving serializes the entities instead, so this is only for reading the
+    /// entries that have no entity (models, routes and layers).
+    /// </summary>
+    [XmlIgnore]
+    public IMsb SourceMsb;
+
     [XmlIgnore]
     public LightAtlasResolver LightAtlasResolver;
 
@@ -212,6 +219,9 @@ public class MapContainer : ObjectContainer
     public void LoadMSB(IMsb msb)
     {
         using var __loadMSBZone = Profiler.TracyZoneAuto("LoadMSB");
+
+        SourceMsb = msb;
+
         foreach (IMsbModel m in msb.Models.GetEntries())
         {
             using var __modelScope = Profiler.TracyZoneAuto();

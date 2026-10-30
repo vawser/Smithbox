@@ -12,7 +12,6 @@ public static class GUI
     public static uint ANIM_EDITOR_DOCK_GROUP = 1002;
     public static uint FILE_BROWSER_DOCK_GROUP = 1003;
     public static uint GPARAM_EDITOR_DOCK_GROUP = 1004;
-    public static uint MAP_DATA_EDITOR_DOCK_GROUP = 1005;
     public static uint MAP_EDITOR_DOCK_GROUP = 1006;
     public static uint MATERIAL_EDITOR_DOCK_GROUP = 1007;
     public static uint MODEL_EDITOR_DOCK_GROUP = 1008;
@@ -27,7 +26,6 @@ public static class GUI
     public static uint ANIM_EDITOR_VIEW_DOCK_GROUP = 1102;
     public static uint FILE_BROWSER_VIEW_DOCK_GROUP = 1103;
     public static uint GPARAM_EDITOR_VIEW_DOCK_GROUP = 1104;
-    public static uint MAP_DATA_EDITOR_VIEW_DOCK_GROUP = 1105;
     public static uint MATERIAL_EDITOR_VIEW_DOCK_GROUP = 1106;
     public static uint PARAM_EDITOR_VIEW_DOCK_GROUP = 1107;
     public static uint TEXT_EDITOR_VIEW_DOCK_GROUP = 1108;
@@ -58,10 +56,6 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_GparamEditor = new(
         classId: GPARAM_EDITOR_DOCK_GROUP,
-        dockingAllowUnclassed: false);
-
-    public static ImGuiWindowClass DockGroup_MapDataEditor = new(
-        classId: MAP_DATA_EDITOR_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static ImGuiWindowClass DockGroup_MapEditor = new(
@@ -110,10 +104,6 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_GparamEditorView = new(
         classId: GPARAM_EDITOR_VIEW_DOCK_GROUP,
-        dockingAllowUnclassed: false);
-
-    public static ImGuiWindowClass DockGroup_MapDataEditorView = new(
-        classId: MAP_DATA_EDITOR_VIEW_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static ImGuiWindowClass DockGroup_MaterialEditorView = new(

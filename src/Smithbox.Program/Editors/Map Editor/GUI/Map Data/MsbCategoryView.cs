@@ -8,17 +8,17 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapDataEditor;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// The 'params' view: select which base category (Model, Part, etc), and then sub-list with the individual cateogories
 /// </summary>
 public class MsbCategoryView
 {
-    public MapDataEditorView View;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    private MapDataSelection Selection => View.Selection;
+    private MapDataSelection Selection => View.MapDataView.Selection;
 
     private string BaseCategoryListFilter = "";
     private bool ExactBaseCategoryListFilter = false;
@@ -26,7 +26,7 @@ public class MsbCategoryView
     private string SubCategoryListFilter = "";
     private bool ExactSubCategoryListFilter = false;
 
-    public MsbCategoryView(MapDataEditorView view, ProjectEntry project)
+    public MsbCategoryView(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
@@ -65,7 +65,7 @@ public class MsbCategoryView
         // List box
         ImGui.BeginChild("##BaseCategoryList", new Vector2(0, 200), ImGuiChildFlags.Borders);
 
-        if (Selection.SelectedMap is null)
+        if (Selection.SourceMsb is null)
         {
             ImGui.TextDisabled("No map selected.");
         }
@@ -82,10 +82,10 @@ public class MsbCategoryView
                 if (!CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories)
                 {
                     var subCats = MsbCategories.GetSubCategories(Project, name);
-                    bool anyEntries = subCats.Any(kvp => View.MsbEditor.EntryView.GetCachedEntryCount(kvp.Value) > 0);
+                    bool anyEntries = subCats.Any(kvp => View.MapDataView.EntryView.GetCachedEntryCount(kvp.Value) > 0);
 
                     // Also count the base itself for direct categories
-                    if (!anyEntries && View.MsbEditor.EntryView.GetCachedEntryCount(type) == 0)
+                    if (!anyEntries && View.MapDataView.EntryView.GetCachedEntryCount(type) == 0)
                         continue;
                 }
 
@@ -114,7 +114,6 @@ public class MsbCategoryView
 
         Selection.SelectedBaseCategory = name;
         Selection.SelectedBaseCategoryType = type;
-        Selection.ResetMsbEntrySelection();
 
         // Reset sub-selection whenever the base changes.
         if (!sameBase)
@@ -140,7 +139,6 @@ public class MsbCategoryView
                 Selection.SelectedSubCategoryType = type;
             }
 
-            Selection.SelectMapEntry = true;
         }
     }
 
@@ -181,7 +179,7 @@ public class MsbCategoryView
                 // Skip empty sub-categories if the toggle is off
                 if (!CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories)
                 {
-                    if (View.MsbEditor.EntryView.GetCachedEntryCount(type) == 0)
+                    if (View.MapDataView.EntryView.GetCachedEntryCount(type) == 0)
                         continue;
                 }
 
@@ -201,7 +199,6 @@ public class MsbCategoryView
     {
         Selection.SelectedSubCategory = name;
         Selection.SelectedSubCategoryType = type;
-        Selection.ResetMsbEntrySelection();
     }
 
     private Dictionary<string, Type> GetSubCategoriesForCurrentBase(Dictionary<string, Type> baseCategories)

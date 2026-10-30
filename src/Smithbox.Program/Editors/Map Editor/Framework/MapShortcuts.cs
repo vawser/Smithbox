@@ -78,8 +78,11 @@ public class MapShortcuts
             }
         }
 
+        // The Map Data window holds input fields, so don't treat typing in them as actions
+        var isMapDataFocus = FocusManager.IsFocus(EditorFocusContext.MapEditor_MapData) && !ImGui.GetIO().WantTextInput;
+
         // Actions
-        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport) || FocusManager.IsFocus(EditorFocusContext.MapEditor_ContentTree))
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport) || FocusManager.IsFocus(EditorFocusContext.MapEditor_ContentTree) || isMapDataFocus)
         {
             if (InputManager.IsPressed(KeybindID.Copy))
             {
@@ -112,7 +115,7 @@ public class MapShortcuts
             }
         }
 
-        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_ContentTree))
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_ContentTree) || isMapDataFocus)
         {
             activeView.ReorderAction.OnShortcut();
         }

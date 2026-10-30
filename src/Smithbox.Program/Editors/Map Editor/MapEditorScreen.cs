@@ -537,7 +537,7 @@ public class MapEditorScreen : EditorScreen
         {
             foreach (var view in ViewHandler.Views)
             {
-                if (view == null)
+                if (view == null || view.ShowMapData)
                     continue;
 
                 foreach(var viewport in view.ViewportHandler.Viewports)

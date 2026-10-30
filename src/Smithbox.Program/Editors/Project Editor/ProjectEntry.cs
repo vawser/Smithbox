@@ -81,9 +81,6 @@ public class ProjectEntry
             if (Handler.FileBrowserStub != null)
                 Handler.FileBrowserStub.Display(dt, commands);
 
-            if (Handler.MapDataEditorStub != null)
-                Handler.MapDataEditorStub.Display(dt, commands);
-
             if (Handler.HavokEditorStub != null)
                 Handler.HavokEditorStub.Display(dt, commands);
         }

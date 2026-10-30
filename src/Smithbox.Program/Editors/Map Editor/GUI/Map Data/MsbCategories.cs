@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapDataEditor;
+namespace StudioCore.Editors.MapEditor;
 
 public static class MsbCategories
 {
