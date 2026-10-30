@@ -21,6 +21,8 @@ public class EntMoveAction : ViewportAction
     // Original placement and target map for each index of Moveables that was moved on the first execute
     private readonly Dictionary<int, (EntityPlacement Source, MapContainer Target)> Moves = new();
 
+    private LightAtlasEdit AtlasEdit;
+
     public EntMoveAction(MapEditorView view, List<MsbEntity> objects, bool setSelection,
         MapContainer targetMap = null, Entity targetBTL = null)
     {
@@ -129,6 +131,17 @@ public class EntMoveAction : ViewportAction
             MapContainer.MarkEntityDirty(move.Target, ent);
         }
 
+        if (AtlasEdit == null)
+        {
+            AtlasEdit = LightAtlasEdit.ForMovedParts(Moves
+                .Where(e => e.Value.Source.Map != e.Value.Target)
+                .Select(e => (Moveables[e.Key], e.Value.Source.Map, e.Value.Target)));
+        }
+        else
+        {
+            AtlasEdit.Redo();
+        }
+
         if (SetSelection)
         {
             universe.View.ViewportSelection.ClearSelection();
@@ -144,6 +157,8 @@ public class EntMoveAction : ViewportAction
     public override ActionEvent Undo()
     {
         var universe = View.Universe;
+
+        AtlasEdit?.Undo();
 
         var restores = new List<(Entity Entity, EntityPlacement Placement)>();
 

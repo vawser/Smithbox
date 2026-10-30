@@ -494,38 +494,38 @@ public class MapEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            //if (activeView.LightAtlasBank.CanUse())
-            //{
-            //    // Light Atlases
-            //    if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_LightAtlas_Header")}##lightAtlasesHeader"))
-            //    {
-            //        // Automatic Adjust
-            //        if (ImGui.MenuItem($"{LOC.Get("MAP_Options_LightAtlas_Automatic_Adjust_Toggle")}##autoAdjustAction"))
-            //        {
-            //            CFG.Current.MapEditor_LightAtlas_AutomaticAdjust = !CFG.Current.MapEditor_LightAtlas_AutomaticAdjust;
-            //        }
-            //        GUI.Tooltip(LOC.Get("MAP_Options_LightAtlas_Automatic_Adjust_Toggle_TT"));
-            //        GUI.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdjust);
+            if (activeView.LightAtlasBank.CanUse())
+            {
+                // Light Atlases
+                if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_LightAtlas_Header")}##lightAtlasesHeader"))
+                {
+                    // Automatic Adjust
+                    if (ImGui.MenuItem($"{LOC.Get("MAP_Options_LightAtlas_Automatic_Adjust_Toggle")}##autoAdjustAction"))
+                    {
+                        CFG.Current.MapEditor_LightAtlas_AutomaticAdjust = !CFG.Current.MapEditor_LightAtlas_AutomaticAdjust;
+                    }
+                    GUI.Tooltip(LOC.Get("MAP_Options_LightAtlas_Automatic_Adjust_Toggle_TT"));
+                    GUI.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdjust);
 
-            //        // Automatic Add
-            //        if (ImGui.MenuItem($"{LOC.Get("MAP_Options_LightAtlas_Automatic_Add_Toggle")}##autoAddAction"))
-            //        {
-            //            CFG.Current.MapEditor_LightAtlas_AutomaticAdd = !CFG.Current.MapEditor_LightAtlas_AutomaticAdd;
-            //        }
-            //        GUI.Tooltip(LOC.Get("MAP_Options_LightAtlas_Automatic_Add_Toggle_TT"));
-            //        GUI.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdd);
+                    // Automatic Add
+                    if (ImGui.MenuItem($"{LOC.Get("MAP_Options_LightAtlas_Automatic_Add_Toggle")}##autoAddAction"))
+                    {
+                        CFG.Current.MapEditor_LightAtlas_AutomaticAdd = !CFG.Current.MapEditor_LightAtlas_AutomaticAdd;
+                    }
+                    GUI.Tooltip(LOC.Get("MAP_Options_LightAtlas_Automatic_Add_Toggle_TT"));
+                    GUI.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdd);
 
-            //        // Automatic Delete
-            //        if (ImGui.MenuItem($"{LOC.Get("MAP_Options_LightAtlas_Automatic_Delete_Toggle")}##autoDeleteAction"))
-            //        {
-            //            CFG.Current.MapEditor_LightAtlas_AutomaticDelete = !CFG.Current.MapEditor_LightAtlas_AutomaticDelete;
-            //        }
-            //        GUI.Tooltip(LOC.Get("MAP_Options_LightAtlas_Automatic_Delete_Toggle_TT"));
-            //        GUI.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticDelete);
+                    // Automatic Delete
+                    if (ImGui.MenuItem($"{LOC.Get("MAP_Options_LightAtlas_Automatic_Delete_Toggle")}##autoDeleteAction"))
+                    {
+                        CFG.Current.MapEditor_LightAtlas_AutomaticDelete = !CFG.Current.MapEditor_LightAtlas_AutomaticDelete;
+                    }
+                    GUI.Tooltip(LOC.Get("MAP_Options_LightAtlas_Automatic_Delete_Toggle_TT"));
+                    GUI.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticDelete);
 
-            //        ImGui.EndMenu();
-            //    }
-            //}
+                    ImGui.EndMenu();
+                }
+            }
 
             ImGui.EndMenu();
         }

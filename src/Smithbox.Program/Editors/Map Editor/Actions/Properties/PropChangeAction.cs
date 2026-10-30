@@ -16,6 +16,8 @@ public class PropChangeAction : ViewportAction
 
     private Entity TargetEnt;
 
+    private LightAtlasEdit AtlasEdit;
+
     public PropChangeAction(object changed)
     {
         ChangedObject = changed;
@@ -145,7 +147,45 @@ public class PropChangeAction : ViewportAction
 
         RefreshModelIfNeeded();
 
+        if (HasNameChange(out var nameChange))
+            RenameEntity((string)nameChange.OldValue, (string)nameChange.NewValue);
+
+        if (HasModelChange())
+        {
+            if (AtlasEdit == null)
+            {
+                AtlasEdit = LightAtlasEdit.ForModelChange(new[] { TargetEnt });
+            }
+            else
+            {
+                AtlasEdit.Redo();
+            }
+        }
+
         return ActionEvent.NoEvent;
+    }
+
+    private bool HasNameChange(out PropertyChange nameChange)
+    {
+        nameChange = Changes.Find(c => c.Property.Name == "Name" && c.OldValue is string);
+
+        return nameChange != null && TargetEnt is MsbEntity && ChangedObject == TargetEnt.WrappedObject;
+    }
+
+    private bool HasModelChange()
+    {
+        return TargetEnt is MsbEntity && ChangedObject == TargetEnt.WrappedObject
+            && Changes.Any(c => c.Property.Name == "ModelName" && !Equals(c.OldValue, c.NewValue));
+    }
+
+    /// <summary>
+    /// The name is written to the wrapped object here, so drop the cached name and update anything that points to it.
+    /// </summary>
+    private void RenameEntity(string oldName, string newName)
+    {
+        TargetEnt.Name = null;
+
+        (TargetEnt.Container as MapContainer)?.LightAtlasResolver.AutomaticAdjustment(TargetEnt, oldName, newName);
     }
 
     /// <summary>
@@ -196,6 +236,11 @@ public class PropChangeAction : ViewportAction
         MapContainer.MarkEntityDirty(TargetEnt);
 
         RefreshModelIfNeeded();
+
+        if (HasNameChange(out var nameChange))
+            RenameEntity((string)nameChange.NewValue, (string)nameChange.OldValue);
+
+        AtlasEdit?.Undo();
 
         return ActionEvent.NoEvent;
     }

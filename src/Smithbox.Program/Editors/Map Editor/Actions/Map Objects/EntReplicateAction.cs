@@ -34,6 +34,8 @@ public class EntReplicateAction : ViewportAction
 
     private ReplicateSquareSideType currentSquareSide;
 
+    private LightAtlasEdit AtlasEdit;
+
     public EntReplicateAction(MapEditorView view, List<MsbEntity> objects, MapContainer targetMap = null, Entity targetBTL = null)
     {
         View = view;
@@ -200,6 +202,15 @@ public class EntReplicateAction : ViewportAction
 
                 }
             }
+        }
+
+        if (AtlasEdit == null)
+        {
+            AtlasEdit = LightAtlasEdit.ForNewParts(Clones, CloneMaps);
+        }
+        else
+        {
+            AtlasEdit.Redo();
         }
 
         View.ViewportSelection.ClearSelection();
@@ -426,6 +437,8 @@ public class EntReplicateAction : ViewportAction
 
     public override ActionEvent Undo()
     {
+        AtlasEdit?.Undo();
+
         for (var i = 0; i < Clones.Count(); i++)
         {
             CloneMaps[i].Objects.Remove(Clones[i]);

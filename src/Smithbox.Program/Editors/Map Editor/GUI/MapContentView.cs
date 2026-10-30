@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -24,6 +25,7 @@ public class MapContentView
     private bool _setNextFocus;
     private ISelectable _pendingClick;
     private HashSet<Entity> _treeOpenEntities = new();
+    private Entity _pendingGoto;
 
     public MapContentView(MapEditorView view, ProjectEntry project)
     {
@@ -38,10 +40,28 @@ public class MapContentView
     }
 
     /// <summary>
+    /// Select an entity and jump to it in the list on the next frame.
+    /// For use by windows drawn after this one, as the goto target is cleared at the end of each frame.
+    /// </summary>
+    public void GotoEntity(Entity ent)
+    {
+        _pendingGoto = ent;
+    }
+
+    /// <summary>
     /// Handles the update for each frame
     /// </summary>
     public void Display(float width, float height)
     {
+        if (_pendingGoto != null)
+        {
+            View.ViewportSelection.ClearSelection();
+            View.ViewportSelection.AddSelection(_pendingGoto);
+            View.ViewportSelection.GotoTreeTarget = _pendingGoto;
+
+            _pendingGoto = null;
+        }
+
         GUI.TitleHeader("Contents", "");
 
         DisplaySearchbar();
@@ -408,6 +428,14 @@ public class MapContentView
                     treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
                 }
 
+                // Goto doesn't normally open tree nodes, but light atlas entries are reached from the part
+                var gotoTarget = View.ViewportSelection.GotoTreeTarget as Entity;
+
+                if (cats.Key == MsbEntityType.LightAtlas && gotoTarget?.WrappedObject is BTAB.Entry)
+                {
+                    ImGui.SetNextItemOpen(true);
+                }
+
                 if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
                 {
                     foreach (KeyValuePair<Type, List<MsbEntity>> typ in cats.Value.OrderBy(q => q.Key.Name))
@@ -461,6 +489,11 @@ public class MapContentView
                                 foreach (Entity parent in map.LightAtlasParents)
                                 {
                                     var parentName = parent.WrappedObject;
+
+                                    if (gotoTarget?.Parent == parent)
+                                    {
+                                        ImGui.SetNextItemOpen(true);
+                                    }
 
                                     if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
                                             treeflags))
@@ -555,6 +588,10 @@ public class MapContentView
             {
                 key = e.Name;
             }
+        }
+        else if (e.WrappedObject is BTAB.Entry atlasEntry && !string.IsNullOrEmpty(atlasEntry.PartName))
+        {
+            key = atlasEntry.PartName;
         }
 
         // Main selectable

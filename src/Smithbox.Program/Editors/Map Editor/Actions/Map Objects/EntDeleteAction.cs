@@ -35,6 +35,25 @@ public class EntDeleteAction : ViewportAction
             Records.Add((obj, EntityPlacement.Capture(map, obj)));
         }
 
+        // The light atlas entries of a deleted part go with it, unless they are being deleted themselves
+        var captured = new HashSet<Entity>(Deletables);
+
+        foreach (var obj in Deletables)
+        {
+            var map = View.Selection.GetMapContainerFromMapID(obj.MapID);
+
+            if (map == null)
+                continue;
+
+            foreach (var entry in map.LightAtlasResolver.AutomaticDeletion(obj))
+            {
+                if (captured.Add(entry))
+                {
+                    Records.Add((entry, EntityPlacement.Capture(map, entry)));
+                }
+            }
+        }
+
         foreach (var (ent, placement) in Records)
         {
             MapContainer.MarkEntityDirty(placement.Map, ent);
@@ -70,7 +89,7 @@ public class EntDeleteAction : ViewportAction
             var sel = View.Universe.View.ViewportSelection;
             sel.ClearSelection();
 
-            foreach (var (ent, _) in Records)
+            foreach (var ent in Deletables)
             {
                 sel.AddSelection(ent);
             }

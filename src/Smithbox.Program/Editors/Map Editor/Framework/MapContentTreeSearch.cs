@@ -261,9 +261,12 @@ public class MapContentTreeSearch
 
         var input = cmd.Replace("name:", "").Trim().ToLower();
 
-        if (curEnt.Name != null)
+        // Light atlas entries have no name of their own, and are listed by the part they point to
+        var name = curEnt.WrappedObject is SoulsFormats.BTAB.Entry atlasEntry ? atlasEntry.PartName : curEnt.Name;
+
+        if (name != null)
         {
-            var entName = curEnt.Name.Trim().ToLower();
+            var entName = name.Trim().ToLower();
 
             if (entName != null)
             {

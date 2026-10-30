@@ -238,7 +238,7 @@
     },
     {
       "Key": "MAP_Options_LightAtlas_Automatic_Add_Toggle_TT",
-      "Text": "If enabled, when new parts are duplicated, the a new light atlas entry pointing to the newly duplicated part is created (deriving the other properties from the source part)."
+      "Text": "If enabled, when map pieces or objects are added to a map or have their model changed, new light atlas entries pointing to them are created, inheriting the properties of the last part that shares the same model. If no part shares the model, you are asked whether to add a default entry."
     },
     {
       "Key": "MAP_Options_LightAtlas_Automatic_Delete_Toggle",
@@ -246,7 +246,15 @@
     },
     {
       "Key": "MAP_Options_LightAtlas_Automatic_Delete_Toggle_TT",
-      "Text": "If enabled, when parts are deleted, if there is a light atlas entry pointing to that part, the entry is deleted."
+      "Text": "If enabled, when parts are deleted, moved to another map or have their model changed, if there is a light atlas entry pointing to that part, the entry is deleted."
+    },
+    {
+      "Key": "MAP_LightAtlas_Dialog_Add_Default_Title",
+      "Text": "Light Atlas"
+    },
+    {
+      "Key": "MAP_LightAtlas_Dialog_Add_Default",
+      "Text": "These models are not in the light atlas of {0}:\n\n{1}\n\nAdd default light atlas entries for the new parts?"
     },
     {
       "Key": "MAP_Universe_Log_Map_Already_Loading",

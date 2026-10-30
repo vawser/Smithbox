@@ -19,6 +19,8 @@ public class EntAddAction : ViewportAction
     private readonly MapContainer Map;
     private readonly Entity Parent;
 
+    private LightAtlasEdit AtlasEdit;
+
     public EntAddAction(MapEditorView view, MapContainer map, List<MsbEntity> objects, Entity parent)
     {
         View = view;
@@ -78,6 +80,15 @@ public class EntAddAction : ViewportAction
             }
         }
 
+        if (AtlasEdit == null)
+        {
+            AtlasEdit = LightAtlasEdit.ForNewParts(Added, AddedMaps);
+        }
+        else
+        {
+            AtlasEdit.Redo();
+        }
+
         View.ViewportSelection.ClearSelection();
         foreach (MsbEntity c in Added)
         {
@@ -89,6 +100,8 @@ public class EntAddAction : ViewportAction
 
     public override ActionEvent Undo()
     {
+        AtlasEdit?.Undo();
+
         for (var i = 0; i < Added.Count(); i++)
         {
             // Nothing was added for this entity if there was no target map

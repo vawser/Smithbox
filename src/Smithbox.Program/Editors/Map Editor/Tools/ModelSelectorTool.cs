@@ -632,6 +632,12 @@ public class ModelSelectorTool
             }
         }
 
+        foreach (var (ent, oldName) in PendingNames)
+        {
+            ent.Name = oldName;
+        }
+        PendingNames.Clear();
+
         if (actlist.Any())
         {
             var action = new ViewportCompoundAction(actlist);
@@ -640,12 +646,21 @@ public class ModelSelectorTool
         }
     }
 
+    private readonly List<(Entity Entity, string OldName)> PendingNames = new();
+
     private ViewportAction UpdateEntityName(string modelName, Entity ent)
     {
         var name = GetUniqueNameString(modelName);
+
+        // Built before the name is set so the action records the old name
+        var action = ent.GetPropertyChangeAction(ent, "Name", name);
+
+        // Applied now so the next selected entity's unique name takes it into account,
+        // and reverted before the actions execute
+        PendingNames.Add((ent, ent.Name));
         ent.Name = name;
 
-        return ent.GetPropertyChangeAction(ent, "Name", name);
+        return action;
     }
 
     private ViewportAction UpdateInstanceID(string modelName, MsbEntity ent)

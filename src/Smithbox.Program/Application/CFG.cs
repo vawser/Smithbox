@@ -313,7 +313,7 @@ public class CFG
     public string MapEditor_ModelDataExtraction_DefaultOutputFolder = "";
 
     public bool MapEditor_LightAtlas_AutomaticAdd = true;
-    public bool MapEditor_LightAtlas_AutomaticDelete = false;
+    public bool MapEditor_LightAtlas_AutomaticDelete = true;
     public bool MapEditor_LightAtlas_AutomaticAdjust = true;
 
 

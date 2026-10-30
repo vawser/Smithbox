@@ -53,5 +53,7 @@ public class EntRenameAction : ViewportAction
         {
             View.MapGroupsView.UpdateMapGroupEntry(oldName, name);
         }
+
+        (entity.Container as MapContainer)?.LightAtlasResolver.AutomaticAdjustment(entity, oldName, name);
     }
 }

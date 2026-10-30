@@ -34,6 +34,8 @@ public class EntDuplicateAction : ViewportAction
 
     private string CreatedMapGroupGUID = "";
 
+    private LightAtlasEdit AtlasEdit;
+
     private readonly bool DuplicateToMap;
     private readonly bool CreateMapGroupEntry;
     private readonly bool IncrementEntityID;
@@ -228,6 +230,15 @@ public class EntDuplicateAction : ViewportAction
             }
         }
 
+        if (AtlasEdit == null)
+        {
+            AtlasEdit = LightAtlasEdit.ForNewParts(Clones, CloneMaps);
+        }
+        else
+        {
+            AtlasEdit.Redo();
+        }
+
         View.ViewportSelection.ClearSelection();
         foreach (MsbEntity c in Clones)
         {
@@ -255,6 +266,8 @@ public class EntDuplicateAction : ViewportAction
 
     public override ActionEvent Undo()
     {
+        AtlasEdit?.Undo();
+
         for (var i = 0; i < Clones.Count(); i++)
         {
             var map = CloneMaps[i] as MapContainer;

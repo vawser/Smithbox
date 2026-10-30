@@ -194,6 +194,8 @@ public class LightAtlasBank
                                     {
                                         file.Bytes = fileOutput;
                                     }
+
+                                    UpdateCachedEntries(entry.Filename, btabData);
                                 }
                             }
 
@@ -263,6 +265,8 @@ public class LightAtlasBank
                                     {
                                         Project.VFS.ProjectFS.WriteFile(entry.Path, fileOutput);
                                     }
+
+                                    UpdateCachedEntries(entry.Filename, btabData);
                                 }
                             }
                         }
@@ -282,5 +286,14 @@ public class LightAtlasBank
         }
 
         return success;
+    }
+
+    // Maps are loaded from Files, so added and removed entries must be reflected here to survive a map reload
+    private void UpdateCachedEntries(string filename, BTAB saved)
+    {
+        if (Files.TryGetValue(filename, out var cached))
+        {
+            cached.Entries = saved.Entries;
+        }
     }
 }

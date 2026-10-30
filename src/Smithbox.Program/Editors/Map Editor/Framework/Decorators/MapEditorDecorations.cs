@@ -1095,7 +1095,42 @@ public static class MapEditorDecorations
         }
         GUI.Tooltip("View this model in the Model Editor, loading it automatically.");
 
+        if (entSelection.Count() == 1)
+        {
+            LightAtlasLinkButtons(view, ent, windowWidth);
+        }
+
         ImGui.EndGroup();
+    }
+
+    /// <summary>
+    /// Light Atlas Link Buttons
+    /// </summary>
+    private static void LightAtlasLinkButtons(MapEditorView view, Entity ent, float windowWidth)
+    {
+        if (ent?.Container is not MapContainer map)
+            return;
+
+        var entries = map.LightAtlasResolver.GetEntries(ent.Name);
+
+        for (int i = 0; i < entries.Count; i++)
+        {
+            var label = "Go to Light Atlas Entry";
+
+            // A part can have an entry per material, in each of the atlas files of the map
+            if (entries.Count > 1)
+            {
+                var material = ((BTAB.Entry)entries[i].WrappedObject).MaterialName;
+
+                label = $"{label} ({entries[i].Parent.WrappedObject} : {material})";
+            }
+
+            if (ImGui.Button($"{label}##lightAtlasLink{i}", DPI.WholeWidthButton(windowWidth, 24)))
+            {
+                view.MapContentView.GotoEntity(entries[i]);
+            }
+            GUI.Tooltip("Select the light atlas entry that points to this map object.");
+        }
     }
 }
 

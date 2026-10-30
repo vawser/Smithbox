@@ -15,6 +15,9 @@ public class PropMultChangeAction : ViewportAction
 
     private bool UpdateRenderMesh = false;
 
+    private readonly List<Entity> ModelChangedEnts = new();
+    private LightAtlasEdit AtlasEdit;
+
     public PropMultChangeAction(MapEditorView view, PropertyInfo prop, HashSet<Entity> changedEnts, object newval,
         int index = -1, int classIndex = -1)
     {
@@ -63,6 +66,11 @@ public class PropMultChangeAction : ViewportAction
                 }
 
                 Changes.Add(change);
+
+                if (UpdateRenderMesh && !Equals(change.OldValue, newval))
+                {
+                    ModelChangedEnts.Add(o);
+                }
             }
         }
     }
@@ -108,6 +116,15 @@ public class PropMultChangeAction : ViewportAction
 
         MapContainer.MarkEntitiesDirty(ChangedEnts);
 
+        if (AtlasEdit == null)
+        {
+            AtlasEdit = LightAtlasEdit.ForModelChange(ModelChangedEnts);
+        }
+        else
+        {
+            AtlasEdit.Redo();
+        }
+
         return ActionEvent.NoEvent;
     }
 
@@ -151,6 +168,8 @@ public class PropMultChangeAction : ViewportAction
         }
 
         MapContainer.MarkEntitiesDirty(ChangedEnts);
+
+        AtlasEdit?.Undo();
 
         return ActionEvent.NoEvent;
     }
