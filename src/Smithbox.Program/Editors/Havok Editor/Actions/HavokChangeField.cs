@@ -12,6 +12,12 @@ namespace StudioCore.Editors.HavokEditor;
 public class ViewportHavokChangeField : ViewportAction
 {
     private readonly List<FieldChange> Changes = new();
+    /// <summary>
+    /// The map whose collision or navmesh file this action modifies
+    /// </summary>
+    public MapContainer TargetMap { get; set; }
+
+    public MapFileType TargetFileType { get; set; } = MapFileType.Collision;
 
     public ViewportHavokChangeField(FieldInfo prop, object obj, object newval,
         int index = -1, int classIndex = -1)
@@ -82,6 +88,8 @@ public class ViewportHavokChangeField : ViewportAction
             }
         }
 
+        TargetMap?.MarkDirty(TargetFileType);
+
         return ActionEvent.NoEvent;
     }
 
@@ -112,6 +120,8 @@ public class ViewportHavokChangeField : ViewportAction
                 change.Field.SetValue(change.ChangedObj, change.OldValue);
             }
         }
+
+        TargetMap?.MarkDirty(TargetFileType);
 
         return ActionEvent.NoEvent;
     }

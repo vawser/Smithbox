@@ -102,10 +102,12 @@ public class AutoInvadeBank
             }
         }
     }
-    public void SaveAIP(MapContainer map)
+    public bool SaveAIP(MapContainer map)
     {
+        var success = true;
+
         if (!CanUse())
-            return;
+            return success;
 
         var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
 
@@ -162,13 +164,17 @@ public class AutoInvadeBank
                     catch (Exception e)
                     {
                         Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_AIPBND", entry.Path), e);
+                        success = false;
                     }
                 }
                 catch (Exception e)
                 {
                     Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_VFS", entry.Path), e);
+                    success = false;
                 }
             }
         }
+
+        return success;
     }
 }

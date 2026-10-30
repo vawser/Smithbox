@@ -138,11 +138,8 @@ public class EntMoveAction : ViewportAction
                 }
 
                 // Mark maps as having unsaved changes
-                sourceMap.HasUnsavedChanges = true;
-                if (sourceMap != targetMap)
-                {
-                    targetMap.HasUnsavedChanges = true;
-                }
+                MapContainer.MarkEntityDirty(sourceMap, Moveables[i]);
+                MapContainer.MarkEntityDirty(targetMap, Moveables[i]);
             }
         }
 
@@ -169,6 +166,9 @@ public class EntMoveAction : ViewportAction
 
             var sourceMap = SourceMaps[i];
             var targetMap = TargetMaps[i];
+
+            MapContainer.MarkEntityDirty(sourceMap, Moveables[i]);
+            MapContainer.MarkEntityDirty(targetMap, Moveables[i]);
 
             // Remove from current location
             targetMap.Objects.Remove(Moveables[i]);

@@ -50,9 +50,6 @@ public class EntChangeTypeAction : ViewportAction
                 Type currentType = ent.WrappedObject.GetType();
                 if (currentType == sourceType)
                 {
-                    MapContainer map = View.Selection.GetMapContainerFromMapID(ent.MapID);
-                    map.HasUnsavedChanges = true;
-
                     var sourceObj = ent.WrappedObject;
                     var targetObj = targetType.GetConstructor(Type.EmptyTypes).Invoke(Array.Empty<object>());
 
@@ -93,6 +90,8 @@ public class EntChangeTypeAction : ViewportAction
         {
             // Assign new dummied/undummied wrappedObj to entity
             mapChangeObj.Entity.WrappedObject = mapChangeObj.NewObject;
+
+            MapContainer.MarkEntityDirty(mapChangeObj.Entity);
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -106,6 +105,8 @@ public class EntChangeTypeAction : ViewportAction
         {
             // Restore old, stored WrappedObject to entity.
             mapChangeObj.Entity.WrappedObject = mapChangeObj.OldObject;
+
+            MapContainer.MarkEntityDirty(mapChangeObj.Entity);
         }
 
         if (SetSelection)

@@ -108,216 +108,25 @@ public class MapEditorScreen : EditorScreen
             {
                 Save();
             }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_SaveAll_TT"));
 
             ImGui.Separator();
 
-            // Manual Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Manual_Save_Output")}##manualSaveMenuHeader"))
+            // Allow Unmodified Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                // MSB
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_MSB")}##manualToggle_msb"))
-                {
-                    CFG.Current.MapEditor_ManualSave_IncludeMSB = !CFG.Current.MapEditor_ManualSave_IncludeMSB;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_MSB_TT"));
-                GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeMSB);
-
-                // BTL
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_BTL")}##manualToggle_btl"))
-                {
-                    CFG.Current.MapEditor_ManualSave_IncludeBTL = !CFG.Current.MapEditor_ManualSave_IncludeBTL;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTL_TT"));
-                GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTL);
-
-                if (Project.Descriptor.ProjectType is ProjectType.ER 
-                    or ProjectType.AC6 
-                    or ProjectType.NR
-                    or ProjectType.DB_NT
-                    or ProjectType.DB)
-                {
-                    // Collision HKX
-                    if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_CollisionHKX")}##manualToggle_collisionHKX"))
-                    {
-                        CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX = !CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX;
-                    }
-                    GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_CollisionHKX_TT"));
-                    GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeCollisionHKX);
-
-                    // Navmesh HKX
-                    if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_NavmeshHKX")}##manualToggle_navmeshHKX"))
-                    {
-                        CFG.Current.MapEditor_ManualSave_IncludeNavmeshHKX = !CFG.Current.MapEditor_ManualSave_IncludeNavmeshHKX;
-                    }
-                    GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_NavmeshHKX_TT"));
-                    GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeNavmeshHKX);
-                }
-
-                if (activeView != null)
-                {
-                    if (activeView.AutoInvadeBank.CanUse())
-                    {
-                        // AIP
-                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_AIP")}##manualToggle_aip"))
-                        {
-                            CFG.Current.MapEditor_ManualSave_IncludeAIP = !CFG.Current.MapEditor_ManualSave_IncludeAIP;
-                        }
-                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_AIP_TT"));
-                        GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeAIP);
-                    }
-
-                    if (activeView.HavokNavmeshBank.CanUse())
-                    {
-                        // NVA
-                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_NVA")}##manualToggle_nva"))
-                        {
-                            CFG.Current.MapEditor_ManualSave_IncludeNVA = !CFG.Current.MapEditor_ManualSave_IncludeNVA;
-                        }
-                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_NVA_TT"));
-                        GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeNVA);
-                    }
-
-                    if (activeView.LightAtlasBank.CanUse())
-                    {
-                        // BTAB
-                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_BTAB")}##manualToggle_btab"))
-                        {
-                            CFG.Current.MapEditor_ManualSave_IncludeBTAB = !CFG.Current.MapEditor_ManualSave_IncludeBTAB;
-                        }
-                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTAB_TT"));
-                        GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTAB);
-                    }
-
-                    if (activeView.LightProbeBank.CanUse())
-                    {
-                        // BTPB
-                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_BTPB")}##manualToggle_btpb"))
-                        {
-                            CFG.Current.MapEditor_ManualSave_IncludeBTPB = !CFG.Current.MapEditor_ManualSave_IncludeBTPB;
-                        }
-                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTPB_TT"));
-                        GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTPB);
-                    }
-
-                    if (activeView.AssetConfigurationBank.CanUse())
-                    {
-                        // ACB
-                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_ACB")}##manualToggle_acb"))
-                        {
-                            CFG.Current.MapEditor_ManualSave_IncludeACB = !CFG.Current.MapEditor_ManualSave_IncludeACB;
-                        }
-                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_ACB_TT"));
-                        GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeACB);
-                    }
-                }
-
-                ImGui.EndMenu();
+                CFG.Current.MapEditor_Allow_Unmodified_Save = !CFG.Current.MapEditor_Allow_Unmodified_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_Allow_Unmodified_Save);
 
-            // Automatic Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
+            // Allow Automatic Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                // MSB
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_MSB")}##autoToggle_msb"))
-                {
-                    CFG.Current.MapEditor_AutomaticSave_IncludeMSB = !CFG.Current.MapEditor_AutomaticSave_IncludeMSB;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_MSB_TT"));
-                GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeMSB);
-
-                // BTL
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_BTL")}##autoToggle_btl"))
-                {
-                    CFG.Current.MapEditor_AutomaticSave_IncludeBTL = !CFG.Current.MapEditor_AutomaticSave_IncludeBTL;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTL_TT"));
-                GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTL);
-
-                if (Project.Descriptor.ProjectType is ProjectType.ER 
-                    or ProjectType.AC6 
-                    or ProjectType.NR
-                    or ProjectType.DB_NT
-                    or ProjectType.DB)
-                {
-                    // Collision HKX
-                    if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_CollisionHKX")}##autoToggle_collisionHKX"))
-                    {
-                        CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX = !CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX;
-                    }
-                    GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_CollisionHKX_TT"));
-                    GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeCollisionHKX);
-
-                    // Navmesh HKX
-                    if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_NavmeshHKX")}##autoToggle_navmeshHKX"))
-                    {
-                        CFG.Current.MapEditor_AutomaticSave_IncludeNavmeshHKX = !CFG.Current.MapEditor_AutomaticSave_IncludeNavmeshHKX;
-                    }
-                    GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_NavmeshHKX_TT"));
-                    GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeNavmeshHKX);
-                }
-
-                if (activeView != null)
-                {
-                    if (activeView.AutoInvadeBank.CanUse())
-                    {
-                        // AIP
-                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_AIP")}##autoToggle_aip"))
-                        {
-                            CFG.Current.MapEditor_AutomaticSave_IncludeAIP = !CFG.Current.MapEditor_AutomaticSave_IncludeAIP;
-                        }
-                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_AIP_TT"));
-                        GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeAIP);
-                    }
-
-                    if (activeView.HavokNavmeshBank.CanUse())
-                    {
-                        // NVA
-                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_NVA")}##autoToggle_nva"))
-                        {
-                            CFG.Current.MapEditor_AutomaticSave_IncludeNVA = !CFG.Current.MapEditor_AutomaticSave_IncludeNVA;
-                        }
-                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_NVA_TT"));
-                        GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeNVA);
-                    }
-
-                    if (activeView.LightAtlasBank.CanUse())
-                    {
-                        // BTAB
-                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_BTAB")}##autoToggle_btab"))
-                        {
-                            CFG.Current.MapEditor_AutomaticSave_IncludeBTAB = !CFG.Current.MapEditor_AutomaticSave_IncludeBTAB;
-                        }
-                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTAB_TT"));
-                        GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTAB);
-                    }
-
-                    if (activeView.LightProbeBank.CanUse())
-                    {
-                        // BTPB
-                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_BTPB")}##autoToggle_btpb"))
-                        {
-                            CFG.Current.MapEditor_AutomaticSave_IncludeBTPB = !CFG.Current.MapEditor_AutomaticSave_IncludeBTPB;
-                        }
-                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_BTPB_TT"));
-                        GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTPB);
-                    }
-
-                    if (activeView.AssetConfigurationBank.CanUse())
-                    {
-                        // ACB
-                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_ACB")}##autoToggle_acb"))
-                        {
-                            CFG.Current.MapEditor_AutomaticSave_IncludeACB = !CFG.Current.MapEditor_AutomaticSave_IncludeACB;
-                        }
-                        GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_ACB_TT"));
-                        GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeACB);
-                    }
-                }
-
-                ImGui.EndMenu();
+                CFG.Current.MapEditor_Allow_Automatic_Save = !CFG.Current.MapEditor_Allow_Automatic_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -802,39 +611,10 @@ public class MapEditorScreen : EditorScreen
 
         try
         {
-            // NOTE: perhaps this should only save the loaded map for the active view (currently does all loaded maps)
-            activeView.Universe.SaveAllMaps(autoSave);
-
-            // Only these projects are supported for collision editing within the Map Editor
-            if (Project.Descriptor.ProjectType is ProjectType.ER 
-                or ProjectType.AC6 
-                or ProjectType.NR
-                or ProjectType.DB_NT
-                or ProjectType.DB)
+            // Saves the modified files of all loaded maps, including their collision and navmesh binders
+            if (autoSave && CFG.Current.MapEditor_Allow_Automatic_Save || !autoSave)
             {
-                // Only save if a collision/navmesh was touched
-                if (activeView.MapPropertyView.HavokPropertyView.DirtyFile)
-                {
-                    activeView.MapPropertyView.HavokPropertyView.DirtyFile = false;
-
-                    // Save the collision binders
-                    foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
-                    {
-                        if (entry.Value.MapContainer != null)
-                        {
-                            activeView.HavokCollisionBank.SaveMapCollisionFiles(entry.Value.Name);
-                        }
-                    }
-
-                    // Save the navmesh binders
-                    foreach (var entry in activeView.Project.Handler.MapData.PrimaryBank.Maps)
-                    {
-                        if (entry.Value.MapContainer != null)
-                        {
-                            activeView.HavokNavmeshBank.SaveHavokNavmeshModels(entry.Value.Name);
-                        }
-                    }
-                }
+                activeView.Universe.SaveAllMaps();
             }
         }
         catch (SavingFailedException e)

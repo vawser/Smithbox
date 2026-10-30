@@ -136,14 +136,16 @@ public class HavokNavmeshBank
         }
     }
 
-    public void SaveHavokNavmeshModels(string mapId)
+    public bool SaveHavokNavmeshModels(string mapId)
     {
+        var success = true;
+
         var binderEntry = Project.Locator.FileDictionary.Entries.FirstOrDefault(
             e => e.Filename == mapId &&
             e.Extension == "nvmhktbnd");
 
         if (binderEntry == null)
-            return;
+            return success;
 
         if (Project.VFS.FS.FileExists(binderEntry.Path))
         {
@@ -157,7 +159,7 @@ public class HavokNavmeshBank
                 }
 
                 if (binderData == null)
-                    return;
+                    return success;
 
                 var binder = BND4.Read(binderData.Value);
 
@@ -189,11 +191,12 @@ public class HavokNavmeshBank
                     catch (Exception ex)
                     {
                         Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_NVA_HKX", name), ex);
+                        success = false;
                     }
                 }
 
                 if (!anyWritten)
-                    return;
+                    return success;
 
                 var writtenBinder = binder.Write();
 
@@ -202,12 +205,16 @@ public class HavokNavmeshBank
             catch (Exception e)
             {
                 Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_NVA_HKXBND", binderEntry.Path), e);
+                success = false;
             }
         }
         else
         {
             Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_NVA_HKXBND", binderEntry.Path));
+            success = false;
         }
+
+        return success;
     }
 
     public void LoadNVA(MapContainer map, MapResourceHandler handler)
@@ -292,10 +299,12 @@ public class HavokNavmeshBank
         }
     }
 
-    public void SaveNVA(MapContainer map)
+    public bool SaveNVA(MapContainer map)
     {
+        var success = true;
+
         if (!CanUse())
-            return;
+            return success;
 
         foreach (var entry in Project.Locator.NavmeshFiles.Entries)
         {
@@ -340,6 +349,7 @@ public class HavokNavmeshBank
                 catch (Exception e)
                 {
                     Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_NVA", entry.Path), e);
+                    success = false;
                 }
             }
             else
@@ -376,9 +386,12 @@ public class HavokNavmeshBank
                 catch (Exception e)
                 {
                     Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_NVA", entry.Path), e);
+                    success = false;
                 }
             }
         }
+
+        return success;
     }
 
     public void WriteNavmeshInfo(MapContainer map, NVA nva)

@@ -1,4 +1,5 @@
 ﻿using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,6 +15,12 @@ public class MapHavokRemoveListEntryAction : ViewportAction
     private object OldValue;
     private readonly FieldInfo Property;
     private Action<bool> PostExecutionAction;
+    /// <summary>
+    /// The map whose collision or navmesh file this action modifies
+    /// </summary>
+    public MapContainer TargetMap { get; set; }
+
+    public MapFileType TargetFileType { get; set; } = MapFileType.Collision;
 
     public MapHavokRemoveListEntryAction(FieldInfo prop, object changed, int index)
     {
@@ -36,6 +43,8 @@ public class MapHavokRemoveListEntryAction : ViewportAction
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(false);
 
+        TargetMap?.MarkDirty(TargetFileType);
+
         return ActionEvent.NoEvent;
     }
 
@@ -46,6 +55,8 @@ public class MapHavokRemoveListEntryAction : ViewportAction
 
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(true);
+
+        TargetMap?.MarkDirty(TargetFileType);
 
         return ActionEvent.NoEvent;
     }

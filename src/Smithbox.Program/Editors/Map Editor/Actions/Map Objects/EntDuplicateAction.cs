@@ -165,11 +165,13 @@ public class EntDuplicateAction : ViewportAction
                     newobj.RenderSceneMesh.SetSelectable(newobj);
                 }
 
+                // Marked on redo as well, as the clones are re-added to the map
+                MapContainer.MarkEntityDirty(map, newobj);
+
                 if (!clonesCached)
                 {
                     Clones.Add(newobj);
                     CloneMaps.Add(map);
-                    map.HasUnsavedChanges = true;
                 }
                 else
                 {
@@ -242,6 +244,7 @@ public class EntDuplicateAction : ViewportAction
         for (var i = 0; i < Clones.Count(); i++)
         {
             CloneMaps[i].Objects.Remove(Clones[i]);
+            MapContainer.MarkEntityDirty(CloneMaps[i] as MapContainer, Clones[i]);
             if (Clones[i] != null)
             {
                 if (Clones[i].Parent != null)

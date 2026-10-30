@@ -65,7 +65,7 @@ public class EntDeleteAction : ViewportAction
         {
             if (r.Map != null && r.MapIndex >= 0)
             {
-                r.Map.HasUnsavedChanges = true;
+                MapContainer.MarkEntityDirty(r.Map, r.Entity);
                 r.Map.Objects.RemoveAt(r.MapIndex);
             }
 
@@ -100,6 +100,7 @@ public class EntDeleteAction : ViewportAction
                 idx = r.Map.Objects.Count;
 
             r.Map.Objects.Insert(idx, r.Entity);
+            MapContainer.MarkEntityDirty(r.Map, r.Entity);
         }
 
         // Restore hierarchy SECOND

@@ -26,6 +26,9 @@ public class EntRenameAction : ViewportAction
         {
             Rename(entity, name);
         }
+
+        MapContainer.MarkEntitiesDirty(Entities);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -35,6 +38,9 @@ public class EntRenameAction : ViewportAction
         {
             Rename(entity, name);
         }
+
+        MapContainer.MarkEntitiesDirty(Entities);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 

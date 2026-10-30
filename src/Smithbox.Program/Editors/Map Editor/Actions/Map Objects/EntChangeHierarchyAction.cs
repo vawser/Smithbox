@@ -84,6 +84,9 @@ public class EntChangeHierarchyAction : ViewportAction
         }
 
         UndoIndices = sourceindices;
+
+        MapContainer.MarkEntitiesDirty(SourceObjects);
+
         if (SetSelection)
         {
             universe.View.ViewportSelection.ClearSelection();

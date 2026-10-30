@@ -53,6 +53,8 @@ public class EntAddAction : ViewportAction
 
                 AddedMaps.Add(Map);
 
+                MapContainer.MarkEntityDirty(Map, Added[i]);
+
                 // Prefab-specific
                 if (CFG.Current.Prefab_ApplyUniqueInstanceID)
                 {
@@ -87,6 +89,8 @@ public class EntAddAction : ViewportAction
         for (var i = 0; i < Added.Count(); i++)
         {
             AddedMaps[i].Objects.Remove(Added[i]);
+            MapContainer.MarkEntityDirty(AddedMaps[i] as MapContainer, Added[i]);
+
             if (Added[i] != null)
             {
                 Added[i].Parent.RemoveChild(Added[i]);

@@ -450,45 +450,58 @@ public class MapUniverse : IUniverse
         return btl;
     }
 
-    public void SaveMap(MapContainer map, bool autoSave = false)
+    /// <summary>
+    /// Whether the map file should be saved: it has been modified, or unmodified saves are allowed
+    /// </summary>
+    private bool ShouldSaveFile(MapContainer map, MapFileType fileType)
     {
-        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeBTL ||
-            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeBTL)
+        return CFG.Current.MapEditor_Allow_Unmodified_Save || map.IsDirty(fileType);
+    }
+
+    /// <summary>
+    /// Save the map file if it should be saved, clearing its modified state if the save succeeded
+    /// </summary>
+    private void SaveFile(MapContainer map, MapFileType fileType, Func<bool> save)
+    {
+        if (!ShouldSaveFile(map, fileType))
+            return;
+
+        if (save())
         {
-            SaveBTL(View, map);
+            map.ClearDirty(fileType);
+        }
+    }
+
+    /// <summary>
+    /// Save the files of the map that have been modified
+    /// </summary>
+    public void SaveMap(MapContainer map)
+    {
+        if (!CFG.Current.MapEditor_Allow_Unmodified_Save && map.DirtyFiles is MapFileType.None)
+        {
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", map.Name));
+            return;
         }
 
-        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeAIP ||
-            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeAIP)
+        SaveFile(map, MapFileType.BTL, () => SaveBTL(View, map));
+        SaveFile(map, MapFileType.AIP, () => View.AutoInvadeBank.SaveAIP(map));
+        SaveFile(map, MapFileType.BTAB, () => View.LightAtlasBank.SaveBTAB(map));
+        SaveFile(map, MapFileType.BTPB, () => View.LightProbeBank.SaveBTPB(map));
+        SaveFile(map, MapFileType.ACB, () => View.AssetConfigurationBank.SaveACB(map));
+        SaveFile(map, MapFileType.NVA, () => View.HavokNavmeshBank.SaveNVA(map));
+
+        // Only these projects are supported for collision editing within the Map Editor
+        if (Project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.AC6
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
         {
-            View.AutoInvadeBank.SaveAIP(map);
+            SaveFile(map, MapFileType.Collision, () => View.HavokCollisionBank.SaveMapCollisionFiles(map.Name));
+            SaveFile(map, MapFileType.Navmesh, () => View.HavokNavmeshBank.SaveHavokNavmeshModels(map.Name));
         }
 
-        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeBTAB ||
-            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeBTAB)
-        {
-            View.LightAtlasBank.SaveBTAB(map);
-        }
-
-        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeBTPB ||
-            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeBTPB)
-        {
-            View.LightProbeBank.SaveBTPB(map);
-        }
-        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeACB ||
-            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeACB)
-        {
-            View.AssetConfigurationBank.SaveACB(map);
-        }
-
-        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeNVA ||
-            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeNVA)
-        {
-            View.HavokNavmeshBank.SaveNVA(map);
-        }
-
-        if (!autoSave && CFG.Current.MapEditor_ManualSave_IncludeMSB ||
-            autoSave && CFG.Current.MapEditor_AutomaticSave_IncludeMSB)
+        if (ShouldSaveFile(map, MapFileType.MSB))
         {
             try
             {
@@ -578,7 +591,7 @@ public class MapUniverse : IUniverse
 
                     CheckDupeEntityIDs(map);
 
-                    map.HasUnsavedChanges = false;
+                    map.ClearDirty(MapFileType.MSB);
                     Smithbox.Log(this, LOC.Get("MAP_Universe_Save_Map_PASS", curEntry.Filename));
                 }
                 catch (Exception e)
@@ -1077,8 +1090,10 @@ public class MapUniverse : IUniverse
         return DCX.Type.None;
     }
 
-    public void SaveBTL(MapEditorView view, MapContainer map)
+    public bool SaveBTL(MapEditorView view, MapContainer map)
     {
+        var success = true;
+
         var fileEntries = View.Project.Locator.LightFiles.Entries;
 
         if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -1118,21 +1133,22 @@ public class MapUniverse : IUniverse
                             {
                                 btl.Lights = newLights;
                                 file.Bytes = btl.Write();
+
+                                var bhdData = new byte[0];
+                                var bdtData = new byte[0];
+
+                                packedBinder.Write(out bhdData, out bdtData);
+
+                                Project.VFS.ProjectFS.WriteFile(bhdPath, bhdData);
+                                Project.VFS.ProjectFS.WriteFile(bdtPath, bdtData);
                             }
-
-                            var bhdData = new byte[0];
-                            var bdtData = new byte[0];
-
-                            packedBinder.Write(out bhdData, out bdtData);
-
-                            Project.VFS.ProjectFS.WriteFile(bhdPath, bhdData);
-                            Project.VFS.ProjectFS.WriteFile(bdtPath, bdtData);
                         }
                     }
                 }
                 catch (Exception e)
                 {
                     Smithbox.LogError(this, LOC.Get("MAP_Universe_Save_BTL_FAIL", entry.Path), e);
+                    success = false;
                 }
             }
             else
@@ -1140,37 +1156,50 @@ public class MapUniverse : IUniverse
                 if (!entry.Filename.Contains(map.Name))
                     continue;
 
-                var btlFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(entry.Path);
-
-                var btl = BTL.Read(btlFile);
-
-                if (btl != null)
+                try
                 {
-                    List<BTL.Light> newLights = map.SerializeBtlLights(entry.Filename);
+                    var btlFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(entry.Path);
 
-                    // Only save BTL if it has been modified
-                    if (JsonSerializer.Serialize(btl.Lights, BtlLightSerializerContext.Default.ListLight) !=
-                        JsonSerializer.Serialize(newLights, BtlLightSerializerContext.Default.ListLight))
+                    var btl = BTL.Read(btlFile);
+
+                    if (btl != null)
                     {
-                        btl.Lights = newLights;
-                        btlFile = btl.Write();
+                        List<BTL.Light> newLights = map.SerializeBtlLights(entry.Filename);
+
+                        // Only save BTL if it has been modified, so unedited BTLs are not added to the project
+                        if (JsonSerializer.Serialize(btl.Lights, BtlLightSerializerContext.Default.ListLight) !=
+                            JsonSerializer.Serialize(newLights, BtlLightSerializerContext.Default.ListLight))
+                        {
+                            btl.Lights = newLights;
+                            btlFile = btl.Write();
+
+                            Project.VFS.ProjectFS.WriteFile(entry.Path, btlFile.ToArray());
+                            Smithbox.Log(this, LOC.Get("MAP_Universe_Save_BTL_PASS", entry.Path));
+                        }
                     }
                 }
-
-                Project.VFS.ProjectFS.WriteFile(entry.Path, btlFile.ToArray());
-                Smithbox.Log(this, LOC.Get("MAP_Universe_Save_BTL_PASS", entry.Path));
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Universe_Save_BTL_FAIL", entry.Path), e);
+                    success = false;
+                }
             }
         }
+
+        return success;
     }
 
 
-    public void SaveAllMaps(bool autoSave = false)
+    /// <summary>
+    /// Save the modified files of all loaded maps
+    /// </summary>
+    public void SaveAllMaps()
     {
         foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer != null)
             {
-                SaveMap(entry.Value.MapContainer, autoSave);
+                SaveMap(entry.Value.MapContainer);
             }
         }
     }

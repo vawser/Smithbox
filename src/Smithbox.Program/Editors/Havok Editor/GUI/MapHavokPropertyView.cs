@@ -28,7 +28,8 @@ public class MapHavokPropertyView
     public MapCollisionEditType CollisionEditType = MapCollisionEditType.High;
     public MapNavmeshEditType NavmeshEditType = MapNavmeshEditType.N;
 
-    public bool DirtyFile = false;
+    // The map of the entity being edited, whose collision or navmesh file is marked as modified by the edits
+    private MapContainer _editedMap;
 
     public MapHavokPropertyView(MapEditorView view, ProjectEntry project)
     {
@@ -41,6 +42,14 @@ public class MapHavokPropertyView
         PropertyMode = newMode;
     }
 
+    /// <summary>
+    /// The map file that edits in the current property mode are saved to
+    /// </summary>
+    private MapFileType GetEditedFileType()
+    {
+        return PropertyMode is HavokPropertyMode.Navmesh ? MapFileType.Navmesh : MapFileType.Collision;
+    }
+
     public void Display()
     {
         HashSet<Entity> entSelection = View.ViewportSelection.GetFilteredSelection<Entity>();
@@ -51,6 +60,7 @@ public class MapHavokPropertyView
         if (View.Universe.HasProcessedMapLoad && entSelection.Any())
         {
             Entity firstEnt = entSelection.First();
+            _editedMap = firstEnt.Container as MapContainer;
             if (firstEnt.WrappedObject == null)
             {
                 ImGui.Text("Select a map object to edit its properties.");
@@ -555,7 +565,6 @@ public class MapHavokPropertyView
     {
         if (changed)
         {
-            DirtyFile = true;
             ChangeProperty(prop, obj, oldval, newval, ref committed, arrayindex, classIndex);
         }
 
@@ -590,6 +599,8 @@ public class MapHavokPropertyView
         }
 
         var action = new ViewportHavokChangeField((FieldInfo)prop, obj, newval, arrayindex, classIndex);
+        action.TargetMap = _editedMap;
+        action.TargetFileType = GetEditedFileType();
         View.ViewportActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;
@@ -932,9 +943,10 @@ public class MapHavokPropertyView
             {
                 var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
                 var action = new MapHavokAddListEntryAction(prop, obj, newEntry, list.Count);
+                action.TargetMap = _editedMap;
+                action.TargetFileType = GetEditedFileType();
                 View.ViewportActionManager.ExecuteAction(action);
 
-                DirtyFile = true;
             }
             GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
         }
@@ -966,7 +978,6 @@ public class MapHavokPropertyView
                         if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
                         {
                             OnRemove();
-                            DirtyFile = true;
                         }
                         GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
 
@@ -1006,6 +1017,8 @@ public class MapHavokPropertyView
                 if (removeIndex != -1)
                 {
                     var action = new MapHavokRemoveListEntryAction(prop, obj, removeIndex);
+                    action.TargetMap = _editedMap;
+                    action.TargetFileType = GetEditedFileType();
                     View.ViewportActionManager.ExecuteAction(action);
                 }
             }

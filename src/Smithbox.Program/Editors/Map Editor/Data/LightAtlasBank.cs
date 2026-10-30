@@ -135,10 +135,12 @@ public class LightAtlasBank
         }
     }
 
-    public void SaveBTAB(MapContainer map)
+    public bool SaveBTAB(MapContainer map)
     {
+        var success = true;
+
         if (!CanUse())
-            return;
+            return success;
 
         var fs = View.Project.Handler.MapData.PrimaryBank.TargetFS;
 
@@ -209,11 +211,13 @@ public class LightAtlasBank
                     catch (Exception e)
                     {
                         Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_GI", bhdPath), e);
+                        success = false;
                     }
                 }
                 else
                 {
                     Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_GI_File", bhdPath));
+                    success = false;
                 }
             }
         }
@@ -267,14 +271,18 @@ public class LightAtlasBank
                         catch (Exception e)
                         {
                             Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_BTAB", entry.Path), e);
+                            success = false;
                         }
                     }
                 }
                 else
                 {
                     Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_BTAB", entry.Path));
+                    success = false;
                 }
             }
         }
+
+        return success;
     }
 }

@@ -507,25 +507,8 @@ public class CFG
     // Saving
     public bool Project_Automatic_Save_Include_Map_Editor = true;
 
-    public bool MapEditor_AutomaticSave_IncludeMSB = true;
-    public bool MapEditor_AutomaticSave_IncludeBTL = false;
-    public bool MapEditor_AutomaticSave_IncludeAIP = false;
-    public bool MapEditor_AutomaticSave_IncludeNVA = false;
-    public bool MapEditor_AutomaticSave_IncludeBTAB = false;
-    public bool MapEditor_AutomaticSave_IncludeBTPB = false;
-    public bool MapEditor_AutomaticSave_IncludeCollisionHKX = false;
-    public bool MapEditor_AutomaticSave_IncludeNavmeshHKX = false;
-    public bool MapEditor_AutomaticSave_IncludeACB = false;
-
-    public bool MapEditor_ManualSave_IncludeMSB = true;
-    public bool MapEditor_ManualSave_IncludeBTL = true;
-    public bool MapEditor_ManualSave_IncludeAIP = true;
-    public bool MapEditor_ManualSave_IncludeNVA = true;
-    public bool MapEditor_ManualSave_IncludeBTAB = true;
-    public bool MapEditor_ManualSave_IncludeBTPB = true;
-    public bool MapEditor_ManualSave_IncludeCollisionHKX = true;
-    public bool MapEditor_ManualSave_IncludeNavmeshHKX = true;
-    public bool MapEditor_ManualSave_IncludeACB = true;
+    public bool MapEditor_Allow_Unmodified_Save = false;
+    public bool MapEditor_Allow_Automatic_Save = true;
 
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;

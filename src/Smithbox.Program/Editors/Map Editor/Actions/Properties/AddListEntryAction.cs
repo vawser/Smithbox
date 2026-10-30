@@ -45,6 +45,8 @@ public class AddListEntryAction : ViewportAction
         if (TargetEnt != null)
             TargetEnt.CachedAliasName = null;
 
+        MapContainer.MarkEntityDirty(TargetEnt);
+
         return ActionEvent.NoEvent;
     }
 
@@ -58,6 +60,8 @@ public class AddListEntryAction : ViewportAction
 
         if (TargetEnt != null)
             TargetEnt.CachedAliasName = null;
+
+        MapContainer.MarkEntityDirty(TargetEnt);
 
         return ActionEvent.NoEvent;
     }

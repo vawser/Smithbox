@@ -203,6 +203,8 @@ public class EntReorderAction : ViewportAction
             }
         }
 
+        MapContainer.MarkEntitiesDirty(selection);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -217,6 +219,8 @@ public class EntReorderAction : ViewportAction
             MapContainer mapRoot = View.Selection.GetMapContainerFromMapID(curSel.MapID);
             mapRoot.Objects = storedObjectOrder;
         }
+
+        MapContainer.MarkEntitiesDirty(selection);
 
         return ActionEvent.ObjectAddedRemoved;
     }

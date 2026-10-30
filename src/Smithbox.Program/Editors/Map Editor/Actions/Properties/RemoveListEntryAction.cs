@@ -41,6 +41,8 @@ public class RemoveListEntryAction : ViewportAction
         if (TargetEnt != null)
             TargetEnt.CachedAliasName = null;
 
+        MapContainer.MarkEntityDirty(TargetEnt);
+
         return ActionEvent.NoEvent;
     }
 
@@ -54,6 +56,8 @@ public class RemoveListEntryAction : ViewportAction
 
         if (TargetEnt != null)
             TargetEnt.CachedAliasName = null;
+
+        MapContainer.MarkEntityDirty(TargetEnt);
 
         return ActionEvent.NoEvent;
     }

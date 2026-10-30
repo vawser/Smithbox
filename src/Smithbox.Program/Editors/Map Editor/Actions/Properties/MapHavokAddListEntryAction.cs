@@ -15,6 +15,12 @@ public class MapHavokAddListEntryAction : ViewportAction
     private readonly object NewValue;
     private readonly FieldInfo Property;
     private Action<bool> PostExecutionAction;
+    /// <summary>
+    /// The map whose collision or navmesh file this action modifies
+    /// </summary>
+    public MapContainer TargetMap { get; set; }
+
+    public MapFileType TargetFileType { get; set; } = MapFileType.Collision;
 
     public MapHavokAddListEntryAction(FieldInfo prop, object changed, object newValue, int index)
     {
@@ -41,6 +47,8 @@ public class MapHavokAddListEntryAction : ViewportAction
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(false);
 
+        TargetMap?.MarkDirty(TargetFileType);
+
         return ActionEvent.NoEvent;
     }
 
@@ -51,6 +59,8 @@ public class MapHavokAddListEntryAction : ViewportAction
 
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(true);
+
+        TargetMap?.MarkDirty(TargetFileType);
 
         return ActionEvent.NoEvent;
     }

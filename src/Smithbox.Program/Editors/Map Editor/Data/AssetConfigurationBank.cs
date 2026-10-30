@@ -101,10 +101,12 @@ public class AssetConfigurationBank
         }
     }
 
-    public void SaveACB(MapContainer map)
+    public bool SaveACB(MapContainer map)
     {
+        var success = true;
+
         if (!CanUse())
-            return;
+            return success;
 
         var fs = View.Project.Handler.MapData.PrimaryBank.TargetFS;
 
@@ -172,6 +174,7 @@ public class AssetConfigurationBank
                             catch (Exception e)
                             {
                                 Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_ACB", binderFile.Name), e);
+                                success = false;
                             }
                         }
                     }
@@ -189,8 +192,11 @@ public class AssetConfigurationBank
                 catch (Exception e)
                 {
                     Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_MAPBND", bhdPath), e);
+                    success = false;
                 }
             }
         }
+
+        return success;
     }
 }

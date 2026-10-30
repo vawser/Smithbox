@@ -1154,7 +1154,7 @@ public class Entity : ISelectable, IDisposable
         }
         else
         {
-            PropChangeAction act = new(WrappedObject);
+            PropChangeAction act = new(this, WrappedObject);
 
             // Position
             PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
@@ -1210,7 +1210,7 @@ public class Entity : ISelectable, IDisposable
 
     public ViewportAction ApplySavedPosition()
     {
-        PropChangeAction act = new(WrappedObject);
+        PropChangeAction act = new(this, WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
         act.AddPropertyChange(prop, CFG.Current.SavedPosition);
 
@@ -1222,7 +1222,7 @@ public class Entity : ISelectable, IDisposable
     }
     public ViewportAction ApplySavedRotation()
     {
-        PropChangeAction act = new(WrappedObject);
+        PropChangeAction act = new(this, WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Rotation");
         act.AddPropertyChange(prop, CFG.Current.SavedRotation);
 
@@ -1235,7 +1235,7 @@ public class Entity : ISelectable, IDisposable
 
     public ViewportAction ApplySavedScale()
     {
-        PropChangeAction act = new(WrappedObject);
+        PropChangeAction act = new(this, WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Scale");
         act.AddPropertyChange(prop, CFG.Current.SavedScale);
 

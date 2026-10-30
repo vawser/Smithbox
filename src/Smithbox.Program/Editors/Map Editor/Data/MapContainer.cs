@@ -64,6 +64,84 @@ public class MapContainer : ObjectContainer
     [XmlIgnore]
     public LightAtlasResolver LightAtlasResolver;
 
+    /// <summary>
+    /// The files of this map that have been modified since they were last loaded or saved
+    /// </summary>
+    [XmlIgnore]
+    public MapFileType DirtyFiles { get; private set; } = MapFileType.None;
+
+    public void MarkDirty(MapFileType fileType)
+    {
+        if (fileType is MapFileType.None)
+            return;
+
+        DirtyFiles |= fileType;
+        HasUnsavedChanges = true;
+    }
+
+    public bool IsDirty(MapFileType fileType)
+    {
+        return (DirtyFiles & fileType) != 0;
+    }
+
+    public void ClearDirty(MapFileType fileType)
+    {
+        DirtyFiles &= ~fileType;
+        HasUnsavedChanges = DirtyFiles != MapFileType.None;
+    }
+
+    /// <summary>
+    /// The map file that the entity is saved to
+    /// </summary>
+    public static MapFileType GetFileType(Entity ent)
+    {
+        if (ent is not MsbEntity msbEnt)
+            return MapFileType.MSB;
+
+        return msbEnt.Type switch
+        {
+            MsbEntityType.MapRoot => MapFileType.None,
+            MsbEntityType.Editor => MapFileType.None,
+            MsbEntityType.Light => MapFileType.BTL,
+            MsbEntityType.AutoInvadePoint => MapFileType.AIP,
+            MsbEntityType.LightAtlas => MapFileType.BTAB,
+            MsbEntityType.LightProbeVolume => MapFileType.BTPB,
+            MsbEntityType.Navmesh => MapFileType.NVA,
+            MsbEntityType.AssetConfiguration => MapFileType.ACB,
+            _ => MapFileType.MSB
+        };
+    }
+
+    /// <summary>
+    /// Mark the file that the entity is saved to as modified, on the passed map
+    /// </summary>
+    public static void MarkEntityDirty(MapContainer map, Entity ent)
+    {
+        if (map == null || ent == null)
+            return;
+
+        map.MarkDirty(GetFileType(ent));
+    }
+
+    /// <summary>
+    /// Mark the file that the entity is saved to as modified, on the map that contains the entity
+    /// </summary>
+    public static void MarkEntityDirty(Entity ent)
+    {
+        if (ent == null)
+            return;
+
+        MarkEntityDirty(ent.Container as MapContainer, ent);
+    }
+
+    public static void MarkEntitiesDirty(IEnumerable<Entity> ents)
+    {
+        foreach (var ent in ents)
+        {
+            MarkEntityDirty(ent);
+        }
+    }
+
     public MapContainer(MapEditorView view, string mapid)
     {
         View = view;

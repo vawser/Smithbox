@@ -309,6 +309,12 @@ public class MapListView : IActionEventHandler
                     displayedName = $"{mapId}: {mapName}";
                 }
 
+                // Mark maps with unsaved changes
+                if (curWrapper.MapContainer != null && curWrapper.MapContainer.HasUnsavedChanges)
+                {
+                    displayedName = $"{displayedName}*";
+                }
+
                 if (loadType == MapContentLoadState.Loaded)
                 {
                     GUI.DisplayColoredAlias(displayedName, UI.Current.ImGui_AliasName_Text, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);

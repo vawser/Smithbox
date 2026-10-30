@@ -175,15 +175,19 @@ public class HavokCollisionBank
         }
     }
 
-    public void SaveMapCollisionFiles(string mapId)
+    public bool SaveMapCollisionFiles(string mapId)
     {
-        SaveMapCollision(mapId, "h");
-        SaveMapCollision(mapId, "l");
-        SaveMapCollision(mapId, "f");
+        var success = SaveMapCollision(mapId, "h");
+        success &= SaveMapCollision(mapId, "l");
+        success &= SaveMapCollision(mapId, "f");
+
+        return success;
     }
 
-    public void SaveMapCollision(string mapId, string type)
+    public bool SaveMapCollision(string mapId, string type)
     {
+        var success = true;
+
         var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
         var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
 
@@ -206,7 +210,7 @@ public class HavokCollisionBank
                 }
 
                 if (bdtData == null || bhdData == null)
-                    return;
+                    return success;
 
                 var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
@@ -247,11 +251,12 @@ public class HavokCollisionBank
                     catch (Exception ex)
                     {
                         Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
+                        success = false;
                     }
                 }
 
                 if (!anyWritten)
-                    return;
+                    return success;
 
                 // BXF4.Write returns the BHD bytes and outputs the BDT bytes via out param.
                 packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
@@ -265,12 +270,16 @@ public class HavokCollisionBank
             catch (Exception e)
             {
                 Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_HKXBND", bdtPath), e);
+                success = false;
             }
         }
         else
         {
+            // Not every map has every collision type, so a missing binder is not a failure
             Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_HKXBND", bdtPath));
         }
+
+        return success;
     }
 
 }

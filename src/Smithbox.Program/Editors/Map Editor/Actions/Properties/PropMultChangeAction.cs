@@ -106,6 +106,8 @@ public class PropMultChangeAction : ViewportAction
             }
         }
 
+        MapContainer.MarkEntitiesDirty(ChangedEnts);
+
         return ActionEvent.NoEvent;
     }
 
@@ -147,6 +149,8 @@ public class PropMultChangeAction : ViewportAction
                 msbEnt.RefreshModel();
             }
         }
+
+        MapContainer.MarkEntitiesDirty(ChangedEnts);
 
         return ActionEvent.NoEvent;
     }

@@ -21,6 +21,15 @@ public class PropChangeAction : ViewportAction
         ChangedObject = changed;
     }
 
+    /// <summary>
+    /// Used to build up the changes with AddPropertyChange, for an object belonging to the entity
+    /// </summary>
+    public PropChangeAction(Entity ent, object changed)
+    {
+        TargetEnt = ent;
+        ChangedObject = changed;
+    }
+
     public PropChangeAction(Entity ent, PropertyInfo prop, object changed, object newval, string entityName = "")
     {
         TargetEnt = ent;
@@ -132,6 +141,8 @@ public class PropChangeAction : ViewportAction
         if (TargetEnt != null)
             TargetEnt.CachedAliasName = null;
 
+        MapContainer.MarkEntityDirty(TargetEnt);
+
         RefreshModelIfNeeded();
 
         return ActionEvent.NoEvent;
@@ -181,6 +192,8 @@ public class PropChangeAction : ViewportAction
 
         if (TargetEnt != null)
             TargetEnt.CachedAliasName = null;
+
+        MapContainer.MarkEntityDirty(TargetEnt);
 
         RefreshModelIfNeeded();
 

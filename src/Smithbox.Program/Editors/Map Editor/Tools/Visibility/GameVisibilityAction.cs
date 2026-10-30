@@ -183,6 +183,7 @@ public class GameVisibilityAction
                         if (View.Project.Descriptor.ProjectType == ProjectType.ER)
                         {
                             s.SetPropertyValue("GameEditionDisable", (uint)1);
+                            MapContainer.MarkEntityDirty(s);
                         }
                     }
                 }
@@ -194,6 +195,7 @@ public class GameVisibilityAction
                         if (View.Project.Descriptor.ProjectType == ProjectType.ER)
                         {
                             s.SetPropertyValue("GameEditionDisable", (uint)0);
+                            MapContainer.MarkEntityDirty(s);
                         }
                     }
                 }
