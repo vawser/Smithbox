@@ -1649,18 +1649,18 @@ public class MapMsbPropertyView
 
     private void CommitProperty(MapEntityPropertyFieldMeta meta, Entity selection, object oldval, object newval, bool destroyRenderModel)
     {
-        // Invalidate name cache
         if (selection != null)
         {
+            // Invalidate name cache
             selection.Name = null;
-        }
 
-        if (meta != null && meta.EntityIdentifierProperty)
-        {
-            View.EntityIdentifierTool.UpdateEntityCache(selection, oldval, newval);
-        }
+            if (meta != null && meta.EntityIdentifierProperty)
+            {
+                View.EntityIdentifierTool.UpdateEntityCache(selection, oldval, newval);
+            }
 
-        selection.BuildReferenceMap();
+            selection.BuildReferenceMap();
+        }
         // Undo and redo the last action with a rendering update
         //if (_lastUncommittedAction != null && View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
         //{

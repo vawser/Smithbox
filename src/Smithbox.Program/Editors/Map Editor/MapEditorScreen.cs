@@ -575,10 +575,17 @@ public class MapEditorScreen : EditorScreen
 
         activeView.ViewportWindow.Update(dt);
 
-        // Throw any exceptions that ocurred during async map loading.
-        if (activeView.Universe.LoadMapExceptions != null)
+        // Throw any exceptions that ocurred during async map loading, in any view.
+        // Cleared before throwing so a handled exception is not rethrown every frame.
+        foreach (var view in ViewHandler.Views)
         {
-            activeView.Universe.LoadMapExceptions.Throw();
+            var loadException = view?.Universe.LoadMapExceptions;
+
+            if (loadException != null)
+            {
+                view.Universe.LoadMapExceptions = null;
+                loadException.Throw();
+            }
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -83,6 +84,32 @@ public class MapViewHandler
         if (!Views.Contains(view))
         {
             return false;
+        }
+
+        // Maps loaded by this view are bound to its render scene and banks,
+        // so they cannot outlive it; unload them, confirming first if any have unsaved changes
+        var ownedMaps = Project.Handler.MapData.PrimaryBank.Maps.Values
+            .Select(e => e.MapContainer)
+            .Where(e => e != null && e.OwnerView == view)
+            .ToList();
+
+        var unsavedNames = ownedMaps.Where(e => e.HasUnsavedChanges).Select(e => e.Name).ToList();
+        if (unsavedNames.Count > 0)
+        {
+            DialogResult result = PlatformUtils.Instance.MessageBox(
+                LOC.Get("MAP_View_Dialog_Close_Unsaved", string.Join(", ", unsavedNames)),
+                LOC.Get("MAP_Options_Dialog_Confirm"),
+                MessageBoxButtons.YesNo);
+
+            if (result != DialogResult.Yes)
+            {
+                return false;
+            }
+        }
+
+        foreach (var map in ownedMaps)
+        {
+            view.Universe.UnloadMap(map.Name);
         }
 
         Views[view.ViewIndex] = null;

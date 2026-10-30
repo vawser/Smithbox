@@ -291,7 +291,7 @@ public class MapListView : IActionEventHandler
                     {
                         if (loadType == MapContentLoadState.Loaded)
                         {
-                            View.Universe.UnloadMap(curWrapper.Name);
+                            View.Universe.RequestUnloadMap(curWrapper.Name);
                         }
                         else
                         {
@@ -373,7 +373,7 @@ public class MapListView : IActionEventHandler
                 // Unload Map
                 if (ImGui.Selectable("Unload Map"))
                 {
-                    View.Universe.UnloadMap(mapWrapper.Name);
+                    View.Universe.RequestUnloadMap(mapWrapper.Name);
                 }
             }
 

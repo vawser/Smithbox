@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Logger;
 using StudioCore.Renderer;
+using StudioCore.Utilities;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 using System.Text.Json;
@@ -104,11 +105,13 @@ public class MapUniverse : IUniverse
             return false;
         }
 
+        MapContainer newMap = null;
+
         try
         {
             HasProcessedMapLoad = false;
 
-            var newMap = new MapContainer(View, mapid);
+            newMap = new MapContainer(View, mapid);
 
             ModelDataMapID = newMap.Name;
 
@@ -187,6 +190,13 @@ public class MapUniverse : IUniverse
                     }
                 }
 
+                // This method continues on a thread pool thread after its first await, so build
+                // every object of the map before publishing it, where the UI thread can iterate it
+                if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                {
+                    LoadDS2Generators(resourceHandler.AdjustedMapID, newMap);
+                }
+
                 Project.Handler.MapData.PrimaryBank.Maps[fileEntry].MapContainer = newMap;
                 newMap.LoadState = MapContentLoadState.Loaded;
 
@@ -199,11 +209,6 @@ public class MapUniverse : IUniverse
                         View.ViewportSelection.ClearSelection();
                         View.ViewportSelection.AddSelection(newMap.RootObject);
                     }
-                }
-
-                if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-                {
-                    LoadDS2Generators(resourceHandler.AdjustedMapID, newMap);
                 }
 
                 var tasks = new List<Task>();
@@ -258,13 +263,18 @@ public class MapUniverse : IUniverse
         }
         catch (Exception e)
         {
-#if DEBUG
             Smithbox.LogError(this, LOC.Get("MAP_Universe_Map_Load_Failed"), e);
-            throw;
-#else
-                // Store async exception so it can be caught by crash handler.
-                LoadMapExceptions = System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e);
-#endif
+
+            // A map that never got published should not linger in the model insight tool
+            if (newMap != null && fileEntry != null &&
+                Project.Handler.MapData.PrimaryBank.Maps[fileEntry].MapContainer != newMap)
+            {
+                View.ModelInsightTool.ClearEntry(newMap);
+            }
+
+            // This task is fire-and-forget, so a rethrow here would be lost (even in debug builds).
+            // Store the exception instead; it is rethrown on the main thread in MapEditorScreen.Update.
+            LoadMapExceptions = ExceptionDispatchInfo.Capture(e);
         }
         finally
         {
@@ -278,8 +288,43 @@ public class MapUniverse : IUniverse
         return true;
     }
 
+    /// <summary>
+    /// Asks the user to confirm discarding unsaved changes, if the map has any
+    /// </summary>
+    public bool ConfirmDiscardChanges(MapContainer map)
+    {
+        if (map == null || !map.HasUnsavedChanges)
+            return true;
+
+        DialogResult result = PlatformUtils.Instance.MessageBox(
+            LOC.Get("MAP_Universe_Dialog_Unload_Unsaved", map.Name),
+            LOC.Get("MAP_Options_Dialog_Confirm"),
+            MessageBoxButtons.YesNo);
+
+        return result == DialogResult.Yes;
+    }
+
+    /// <summary>
+    /// Unloads the map, asking first if it has unsaved changes
+    /// </summary>
+    public void RequestUnloadMap(string mapID)
+    {
+        if (!ConfirmDiscardChanges(View.Selection.GetMapContainerFromMapID(mapID)))
+            return;
+
+        UnloadMap(mapID);
+    }
+
     public void UnloadMap(string mapID, bool clearFromList = false)
     {
+        // The map's selection, undo history and havok data live in the view that loaded it
+        var ownerView = View.Selection.GetMapContainerFromMapID(mapID)?.OwnerView;
+        if (ownerView != null && ownerView != View)
+        {
+            ownerView.Universe.UnloadMap(mapID, clearFromList);
+            return;
+        }
+
         View.ViewportSelection.ClearSelection();
         View.ViewportActionManager.Clear();
 
@@ -314,7 +359,7 @@ public class MapUniverse : IUniverse
 
                 View.MapContentView.OnMapUnloaded();
 
-                if (wrapper != null)
+                if (wrapper?.MapContainer != null)
                 {
                     wrapper.MapContainer.LoadState = MapContentLoadState.Unloaded;
                     wrapper.MapContainer.Unload();
@@ -477,6 +522,15 @@ public class MapUniverse : IUniverse
     /// </summary>
     public void SaveMap(MapContainer map)
     {
+        // Sidecar files (collision, navmesh, AIP, etc.) are held by the banks of the view that loaded the map,
+        // so saving through any other view would silently write nothing for them
+        var ownerView = map.OwnerView;
+        if (ownerView != null && ownerView != View)
+        {
+            ownerView.Universe.SaveMap(map);
+            return;
+        }
+
         if (!CFG.Current.MapEditor_Allow_Unmodified_Save && map.DirtyFiles is MapFileType.None)
         {
             Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", map.Name));
@@ -706,7 +760,22 @@ public class MapUniverse : IUniverse
 
                 if (chrid != null)
                 {
-                    generatorObjs[row.ID].ModelName = $"c{chrid}";
+                    var chrName = $"c{chrid}";
+
+                    // Queue the character's model and textures so the generator's drawable has something to show
+                    var modelAsset = ModelLocator.GetChrModel(Project, chrName, chrName);
+                    if (modelAsset.IsValid())
+                        chrsToLoad.Add(modelAsset);
+
+                    var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Project, chrName, false);
+                    if (textureAsset.IsValid())
+                        chrsToLoad.Add(textureAsset);
+
+                    textureAsset = TextureLocator.GetCharacterTextureVirtualPath(Project, chrName, true);
+                    if (textureAsset.IsValid())
+                        chrsToLoad.Add(textureAsset);
+
+                    generatorObjs[row.ID].ModelName = chrName;
                     if(generatorObjs[row.ID] is MsbEntity msbEnt)
                     {
                         msbEnt.AssignDrawable();
@@ -1209,12 +1278,27 @@ public class MapUniverse : IUniverse
     /// </summary>
     public void SaveAllMaps()
     {
+        // Keep saving the remaining maps if one fails, then report the first failure
+        SavingFailedException firstFailure = null;
+
         foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer != null)
             {
-                SaveMap(entry.Value.MapContainer);
+                try
+                {
+                    SaveMap(entry.Value.MapContainer);
+                }
+                catch (SavingFailedException e)
+                {
+                    firstFailure ??= e;
+                }
             }
+        }
+
+        if (firstFailure != null)
+        {
+            ExceptionDispatchInfo.Capture(firstFailure).Throw();
         }
     }
 

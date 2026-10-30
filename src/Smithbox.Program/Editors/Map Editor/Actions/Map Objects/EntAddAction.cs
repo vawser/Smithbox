@@ -30,6 +30,9 @@ public class EntAddAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
+        // Rebuilt on every execute so it stays index-aligned with Added on redo
+        AddedMaps.Clear();
+
         for (var i = 0; i < Added.Count(); i++)
         {
             if (Map != null)
@@ -88,6 +91,10 @@ public class EntAddAction : ViewportAction
     {
         for (var i = 0; i < Added.Count(); i++)
         {
+            // Nothing was added for this entity if there was no target map
+            if (AddedMaps[i] == null)
+                continue;
+
             AddedMaps[i].Objects.Remove(Added[i]);
             MapContainer.MarkEntityDirty(AddedMaps[i] as MapContainer, Added[i]);
 

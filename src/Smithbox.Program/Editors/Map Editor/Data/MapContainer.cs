@@ -25,6 +25,12 @@ public class MapContainer : ObjectContainer
     [XmlIgnore]
     private MapEditorView View;
 
+    /// <summary>
+    /// The view that loaded this map. Its entities, render meshes, havok banks and undo history belong to this view.
+    /// </summary>
+    [XmlIgnore]
+    public MapEditorView OwnerView => View;
+
     // This keeps all models that exist when loading a map, so that saves
     // can be byte perfect
     private readonly Dictionary<string, IMsbModel> LoadedModels;

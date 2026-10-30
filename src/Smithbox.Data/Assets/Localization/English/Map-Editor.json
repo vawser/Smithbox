@@ -105,6 +105,14 @@
       "Text": "Unload all maps?"
     },
     {
+      "Key": "MAP_Universe_Dialog_Unload_Unsaved",
+      "Text": "{0} has unsaved changes. Unload it and discard them?"
+    },
+    {
+      "Key": "MAP_View_Dialog_Close_Unsaved",
+      "Text": "This view has maps with unsaved changes: {0}. Close the view and discard them?"
+    },
+    {
       "Key": "MAP_Options_Header_List_Filters",
       "Text": "List Filters"
     },

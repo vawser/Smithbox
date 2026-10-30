@@ -26,6 +26,10 @@ public class EntDuplicateAction : ViewportAction
     private readonly List<ObjectContainer> CloneMaps = new();
     private readonly List<MsbEntity> Clones = new();
 
+    // Clone for each index of Clonables; sources that were skipped have no entry,
+    // so Clones and Clonables indices do not line up
+    private readonly Dictionary<int, MsbEntity> CloneBySource = new();
+
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
 
@@ -117,7 +121,17 @@ public class EntDuplicateAction : ViewportAction
                     objectnames.Add(Clonables[i].MapID, nameset);
                 }
 
-                MsbEntity newobj = clonesCached ? Clones[i] : (MsbEntity)Clonables[i].Clone();
+                MsbEntity newobj;
+                if (clonesCached)
+                {
+                    // Only redo the clones that were made on the first execute
+                    if (!CloneBySource.TryGetValue(i, out newobj))
+                        continue;
+                }
+                else
+                {
+                    newobj = (MsbEntity)Clonables[i].Clone();
+                }
 
                 GenerateUniqueName(Clonables[i], newobj, objectnames);
 
@@ -172,13 +186,14 @@ public class EntDuplicateAction : ViewportAction
                 {
                     Clones.Add(newobj);
                     CloneMaps.Add(map);
+                    CloneBySource[i] = newobj;
                 }
                 else
                 {
-                    if (Clones[i].RenderSceneMesh != null)
+                    if (newobj.RenderSceneMesh != null)
                     {
-                        Clones[i].RenderSceneMesh.AutoRegister = true;
-                        Clones[i].RenderSceneMesh.Register();
+                        newobj.RenderSceneMesh.AutoRegister = true;
+                        newobj.RenderSceneMesh.Register();
                     }
                 }
 

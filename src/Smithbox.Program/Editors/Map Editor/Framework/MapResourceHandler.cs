@@ -143,12 +143,15 @@ public class MapResourceHandler
                         LoadList_Navmesh.Add(modelAsset);
                 }
             }
-            else if (View.HavokNavmeshBank.CanUse())
-            {
-                ResourceDescriptor nav = ModelLocator.GetHavokNavmeshes(View.Project, AdjustedMapID);
+        }
 
-                LoadList_Navmesh.Add(nav);
-            }
+        // Havok navmeshes are one archive per map, not per model
+        if (View.Project.Descriptor.ProjectType is not (ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES) &&
+            View.HavokNavmeshBank.CanUse())
+        {
+            ResourceDescriptor nav = ModelLocator.GetHavokNavmeshes(View.Project, AdjustedMapID);
+
+            LoadList_Navmesh.Add(nav);
         }
     }
 
