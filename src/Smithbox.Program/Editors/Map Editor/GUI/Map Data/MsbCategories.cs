@@ -794,6 +794,16 @@ public static class MsbCategories
             dict["Light Probe"] = typeof(BTPB.Group);
         }
 
+        if (view.AutoInvadeBank.CanUse())
+        {
+            dict["Auto Invade Point"] = typeof(AIP.AutoInvadePointInstance);
+        }
+
+        if (view.AssetConfigurationBank.CanUse())
+        {
+            dict["Asset Configuration"] = typeof(ACB.Asset);
+        }
+
         return dict;
     }
 
