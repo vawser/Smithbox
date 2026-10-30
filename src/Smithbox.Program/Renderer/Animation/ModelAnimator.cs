@@ -36,7 +36,7 @@ public sealed class ModelAnimator : IDisposable
     public bool Playing { get; private set; }
 
     // These go through instance data rather than the bone buffer, so they have to be told about each pose
-    private bool HasBoneFollowingMeshes => Array.Exists(_rig.Meshes, m => m.Mode == MeshSkinMode.RigidMesh);
+    public bool HasBoneFollowingMeshes => Array.Exists(_rig.Meshes, m => m.Mode == MeshSkinMode.RigidMesh);
 
     public int NodeCount => _rig.NodeNames.Length;
     public float Duration => CurrentClip?.Duration ?? 0;
@@ -118,7 +118,7 @@ public sealed class ModelAnimator : IDisposable
     }
 
     /// <summary>
-    ///     Advances playback, and returns true if meshes that follow a single bone have moved.
+    ///     Advances playback, and returns true if the pose has changed.
     /// </summary>
     public bool Update(float deltaTime)
     {
@@ -134,7 +134,15 @@ public sealed class ModelAnimator : IDisposable
 
         _poseDirty = false;
         ApplyPose();
-        return HasBoneFollowingMeshes;
+        return true;
+    }
+
+    /// <summary>
+    ///     How far a FLVER node has moved from its rest pose, for anything else that follows the skeleton.
+    /// </summary>
+    public Matrix4x4 GetNodeDelta(int node)
+    {
+        return _rig.NodeInverseReferenceWorld[node] * _pose.NodeWorld[node];
     }
 
     private void Advance(float delta)

@@ -11,8 +11,6 @@
 - Move Map Data stuff into Map Editor as a separate mode
   
 # Model Editor
-- Add support for hknpConvexPolytopeShape to HKX2_Helper so obj collisions can be displayed
-
 - OBJ Export should use these settings for OBJ generation:
     Mirror X
     Forward Axis +Z, Up Axis +Y

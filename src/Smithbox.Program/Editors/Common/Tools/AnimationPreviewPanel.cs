@@ -22,6 +22,7 @@ namespace StudioCore.Editors.Common;
 /// <param name="ContainerPath">The binder holding the model.</param>
 /// <param name="GetMeshes">The meshes to drive. Empty while the model is still loading.</param>
 /// <param name="IsAlive">False once the meshes have gone, which ends playback.</param>
+/// <param name="PoseChanged">Called with each new pose, then with null when playback ends.</param>
 public sealed record AnimationTarget(
     object Key,
     string ModelName,
@@ -29,7 +30,8 @@ public sealed record AnimationTarget(
     VirtualFileSystem FileSystem,
     string ContainerPath,
     Func<IReadOnlyList<MeshRenderableProxy>> GetMeshes,
-    Func<bool> IsAlive);
+    Func<bool> IsAlive,
+    Action<ModelAnimator?>? PoseChanged = null);
 
 /// <summary>
 ///     Previews the Havok animations of a model in the viewport.
@@ -83,12 +85,22 @@ public class AnimationPreviewPanel
 
             if (active.Animator.Update(deltaTime))
             {
-                foreach (MeshRenderableProxy mesh in active.Meshes)
-                {
-                    mesh.Animator = active.Animator;
-                }
+                OnPoseChanged(active);
             }
         }
+    }
+
+    private static void OnPoseChanged(ActiveAnimation active)
+    {
+        if (active.Animator.HasBoneFollowingMeshes)
+        {
+            foreach (MeshRenderableProxy mesh in active.Meshes)
+            {
+                mesh.Animator = active.Animator;
+            }
+        }
+
+        active.Target.PoseChanged?.Invoke(active.Animator);
     }
 
     /// <summary>
@@ -271,6 +283,8 @@ public class AnimationPreviewPanel
             {
                 mesh.Animator = active.Animator;
             }
+
+            active.Target.PoseChanged?.Invoke(active.Animator);
         }
         else if (active.Animator.CurrentClip == null)
         {
@@ -290,6 +304,7 @@ public class AnimationPreviewPanel
             mesh.Animator = null;
         }
 
+        active.Target.PoseChanged?.Invoke(null);
         active.Animator.Dispose();
 
         ReleaseUnusedModels();
