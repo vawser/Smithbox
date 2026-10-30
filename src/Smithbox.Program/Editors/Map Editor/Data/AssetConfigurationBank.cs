@@ -5,14 +5,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class AssetConfigurationBank
 {
-    public MapEditorView View;
     public ProjectEntry Project;
 
     public Dictionary<string, ACB> Files = new();
 
-    public AssetConfigurationBank(MapEditorView view, ProjectEntry project)
+    public AssetConfigurationBank(ProjectEntry project)
     {
-        View = view;
         Project = project;
 
         Setup();
@@ -31,7 +29,7 @@ public class AssetConfigurationBank
         if (!CanUse())
             return;
 
-        var fs = View.Project.Handler.MapData.PrimaryBank.TargetFS;
+        var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
 
         // ACB in mapbhd (the gibhd one isn't used by the game)
         foreach (var entry in Project.Locator.MapPieceFiles.Entries)
@@ -45,10 +43,10 @@ public class AssetConfigurationBank
             var bdtFile = (Memory<byte>)fs.ReadFile(bdtPath);
             var bhdFile = (Memory<byte>)fs.ReadFile(bhdPath);
 
-            if(View.Project.VFS.ProjectFS.FileExists(bhdPath) && View.Project.VFS.ProjectFS.FileExists(bdtPath))
+            if(Project.VFS.ProjectFS.FileExists(bhdPath) && Project.VFS.ProjectFS.FileExists(bdtPath))
             {
-                bdtFile = (Memory<byte>)View.Project.VFS.ProjectFS.ReadFile(bdtPath);
-                bhdFile = (Memory<byte>)View.Project.VFS.ProjectFS.ReadFile(bhdPath);
+                bdtFile = (Memory<byte>)Project.VFS.ProjectFS.ReadFile(bdtPath);
+                bhdFile = (Memory<byte>)Project.VFS.ProjectFS.ReadFile(bhdPath);
             }
 
             try
@@ -84,7 +82,7 @@ public class AssetConfigurationBank
 
         foreach (var entry in Files)
         {
-            if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 var worldBlock = map.Name.Substring(1);
 
@@ -108,9 +106,9 @@ public class AssetConfigurationBank
         if (!CanUse())
             return success;
 
-        var fs = View.Project.Handler.MapData.PrimaryBank.TargetFS;
+        var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
 
-        if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             foreach (var entry in Project.Locator.MapPieceFiles.Entries)
             {
@@ -128,10 +126,10 @@ public class AssetConfigurationBank
                 var bdtFile = (Memory<byte>)fs.ReadFile(bdtPath);
                 var bhdFile = (Memory<byte>)fs.ReadFile(bhdPath);
 
-                if (View.Project.VFS.ProjectFS.FileExists(bhdPath) && View.Project.VFS.ProjectFS.FileExists(bdtPath))
+                if (Project.VFS.ProjectFS.FileExists(bhdPath) && Project.VFS.ProjectFS.FileExists(bdtPath))
                 {
-                    bdtFile = (Memory<byte>)View.Project.VFS.ProjectFS.ReadFile(bdtPath);
-                    bhdFile = (Memory<byte>)View.Project.VFS.ProjectFS.ReadFile(bhdPath);
+                    bdtFile = (Memory<byte>)Project.VFS.ProjectFS.ReadFile(bdtPath);
+                    bhdFile = (Memory<byte>)Project.VFS.ProjectFS.ReadFile(bhdPath);
                 }
 
                 var applyEdit = false;

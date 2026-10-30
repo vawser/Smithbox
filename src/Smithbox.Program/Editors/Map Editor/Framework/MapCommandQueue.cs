@@ -1,5 +1,4 @@
-﻿using Org.BouncyCastle.Asn1.X509;
-using StudioCore.Application;
+﻿using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System;
 using System.Linq;

@@ -13,14 +13,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class AutoInvadeBank
 {
-    public MapEditorView View;
     public ProjectEntry Project;
 
     public Dictionary<string, AIP> Files = new();
 
-    public AutoInvadeBank(MapEditorView view, ProjectEntry project)
+    public AutoInvadeBank(ProjectEntry project)
     {
-        View = view;
         Project = project;
 
         Setup();

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
-using SoulsFormats;
+﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;

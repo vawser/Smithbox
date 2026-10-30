@@ -14,7 +14,7 @@ public class EntDeleteAction : ViewportAction
     private readonly List<MsbEntity> Deletables = new();
     private readonly bool SetSelection;
 
-    private readonly List<DeleteRecord> Records = new();
+    private readonly List<(Entity Entity, EntityPlacement Placement)> Records = new();
 
     public EntDeleteAction(MapEditorView view, List<MsbEntity> objects, bool setSelection)
     {
@@ -27,67 +27,22 @@ public class EntDeleteAction : ViewportAction
     {
         Records.Clear();
 
-        // MapContainer is not comparable, so group records by the order each map is first seen
-        var mapOrders = new Dictionary<MapContainer, int>(ReferenceEqualityComparer.Instance);
-
+        // Capture every placement before removing anything, so the indices are all relative to the original lists
         foreach (var obj in Deletables)
         {
             var map = View.Selection.GetMapContainerFromMapID(obj.MapID);
 
-            int mapOrder = -1;
-            if (map != null && !mapOrders.TryGetValue(map, out mapOrder))
-            {
-                mapOrder = mapOrders.Count;
-                mapOrders.Add(map, mapOrder);
-            }
-
-            int mapIndex = -1;
-            if (map != null)
-                mapIndex = map.Objects.IndexOf(obj);
-
-            var parent = (MsbEntity)obj.Parent;
-            int parentIndex = -1;
-
-            if (parent != null)
-                parentIndex = parent.ChildIndex(obj);
-
-            Records.Add(new DeleteRecord
-            {
-                Map = map,
-                MapOrder = mapOrder,
-                Entity = obj,
-                MapIndex = mapIndex,
-                Parent = parent,
-                ParentIndex = parentIndex
-            });
+            Records.Add((obj, EntityPlacement.Capture(map, obj)));
         }
 
-        // Remove map objects safely
-        Records.Sort((a, b) =>
+        foreach (var (ent, placement) in Records)
         {
-            int mapCmp = a.MapOrder.CompareTo(b.MapOrder);
-            if (mapCmp != 0)
-                return mapCmp;
+            MapContainer.MarkEntityDirty(placement.Map, ent);
 
-            return b.MapIndex.CompareTo(a.MapIndex);
-        });
+            EntityPlacement.Detach(placement.Map, ent);
 
-        foreach (var r in Records)
-        {
-            if (r.Map != null && r.MapIndex >= 0)
-            {
-                MapContainer.MarkEntityDirty(r.Map, r.Entity);
-                r.Map.Objects.RemoveAt(r.MapIndex);
-            }
-
-            if (r.Parent != null)
-            {
-                r.Parent.RemoveChild(r.Entity);
-                r.Entity.Parent = null;
-            }
-
-            r.Entity.RenderSceneMesh?.Dispose();
-            r.Entity.RenderSceneMesh = null;
+            ent.RenderSceneMesh?.Dispose();
+            ent.RenderSceneMesh = null;
         }
 
         if (SetSelection)
@@ -98,46 +53,16 @@ public class EntDeleteAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        // Restore map objects FIRST
-        var mapOrdered = Records
-            .Where(r => r.Map != null && r.MapIndex >= 0)
-            .OrderBy(r => r.MapOrder)
-            .ThenBy(r => r.MapIndex);
+        EntityPlacement.RestoreAll(Records);
 
-        foreach (var r in mapOrdered)
+        foreach (var (ent, placement) in Records)
         {
-            int idx = r.MapIndex;
-            if (idx > r.Map.Objects.Count)
-                idx = r.Map.Objects.Count;
+            MapContainer.MarkEntityDirty(placement.Map, ent);
 
-            r.Map.Objects.Insert(idx, r.Entity);
-            MapContainer.MarkEntityDirty(r.Map, r.Entity);
-        }
-
-        // Restore hierarchy SECOND
-        var parentGroups = Records
-            .Where(r => r.Parent != null && r.ParentIndex >= 0)
-            .GroupBy(r => r.Parent);
-
-        foreach (var group in parentGroups)
-        {
-            foreach (var r in group.OrderBy(x => x.ParentIndex))
+            if (ent is MsbEntity msbEnt)
             {
-                int idx = r.ParentIndex;
-                if (idx > r.Parent.Children.Count)
-                    idx = r.Parent.Children.Count;
-
-                if (r.Entity.Parent != null)
-                    r.Entity.Parent.RemoveChild(r.Entity);
-
-                r.Entity.Parent = r.Parent;
-                r.Parent.AddChild(r.Entity, idx);
+                msbEnt.AssignDrawable();
             }
-        }
-
-        foreach (var r in Records)
-        {
-            r.Entity.AssignDrawable();
         }
 
         if (SetSelection)
@@ -145,24 +70,12 @@ public class EntDeleteAction : ViewportAction
             var sel = View.Universe.View.ViewportSelection;
             sel.ClearSelection();
 
-            foreach (var r in Records)
+            foreach (var (ent, _) in Records)
             {
-                if (r.Entity != null)
-                    sel.AddSelection(r.Entity);
+                sel.AddSelection(ent);
             }
         }
 
         return ActionEvent.ObjectAddedRemoved;
-    }
-
-    private struct DeleteRecord
-    {
-        public MapContainer Map;
-        public int MapOrder;
-        public MsbEntity Entity;
-        public int MapIndex;
-
-        public MsbEntity Parent;
-        public int ParentIndex;
     }
 }

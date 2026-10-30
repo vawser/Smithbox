@@ -1,5 +1,4 @@
 ﻿using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editors.Common;
@@ -633,22 +632,6 @@ public class MapEditorScreen : EditorScreen
         Smithbox.Instance.SaveConfiguration();
     }
 
-
-    public void ReloadUniverse()
-    {
-        var activeView = ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
-        activeView.Universe.UnloadAllMaps();
-
-        GC.Collect();
-        GC.WaitForPendingFinalizers();
-        GC.Collect();
-
-        activeView.CreateAction.PopulateClassNames();
-    }
 
     public void HandleSaveException(SavingFailedException e)
     {

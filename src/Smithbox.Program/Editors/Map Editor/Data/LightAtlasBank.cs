@@ -5,14 +5,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class LightAtlasBank
 {
-    public MapEditorView View;
     public ProjectEntry Project;
 
     public Dictionary<string, BTAB> Files = new();
 
-    public LightAtlasBank(MapEditorView view, ProjectEntry project)
+    public LightAtlasBank(ProjectEntry project)
     {
-        View = view;
         Project = project;
 
         Setup();
@@ -31,9 +29,9 @@ public class LightAtlasBank
         if (!CanUse())
             return;
 
-        var fs = View.Project.Handler.MapData.PrimaryBank.TargetFS;
+        var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
 
-        if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
             {
@@ -105,7 +103,7 @@ public class LightAtlasBank
 
         foreach (var entry in Files)
         {
-            if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 var worldBlock = map.Name.Substring(1);
 
@@ -142,9 +140,9 @@ public class LightAtlasBank
         if (!CanUse())
             return success;
 
-        var fs = View.Project.Handler.MapData.PrimaryBank.TargetFS;
+        var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
 
-        if (View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             foreach (var entry in Project.Locator.LightAtlasFiles.Entries)
             {

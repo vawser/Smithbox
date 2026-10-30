@@ -34,6 +34,14 @@ public class MapData : IDisposable
     public SpeedTreeList SpeedTreeList;
     public GrassList GrassList;
 
+    // Map sidecar file banks, keyed by map or file name.
+    // Shared by all map editor views, as each map can only be loaded once.
+    public HavokCollisionBank HavokCollisionBank;
+    public HavokNavmeshBank HavokNavmeshBank;
+    public AutoInvadeBank AutoInvadeBank;
+    public LightAtlasBank LightAtlasBank;
+    public LightProbeBank LightProbeBank;
+    public AssetConfigurationBank AssetConfigurationBank;
 
     public MapData(ProjectEntry project)
     {
@@ -59,6 +67,15 @@ public class MapData : IDisposable
         {
             Smithbox.Log(this, LOC.Get("MAP_Data_Setup_Primary_Bank_PASS"));
         }
+
+        // Sidecar banks read through the primary bank's file system (some during construction),
+        // so they are created once it exists
+        HavokCollisionBank = new HavokCollisionBank(Project);
+        HavokNavmeshBank = new HavokNavmeshBank(Project);
+        AutoInvadeBank = new AutoInvadeBank(Project);
+        LightAtlasBank = new LightAtlasBank(Project);
+        LightProbeBank = new LightProbeBank(Project);
+        AssetConfigurationBank = new AssetConfigurationBank(Project);
 
         // Vanilla Bank
         Task<bool> vanillaBankTask = VanillaBank.Setup();

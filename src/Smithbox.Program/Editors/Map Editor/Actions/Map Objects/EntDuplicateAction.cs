@@ -1,5 +1,4 @@
 ﻿using HKX2;
-using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using SoulsFormats.KF4;
@@ -258,15 +257,10 @@ public class EntDuplicateAction : ViewportAction
     {
         for (var i = 0; i < Clones.Count(); i++)
         {
-            CloneMaps[i].Objects.Remove(Clones[i]);
-            MapContainer.MarkEntityDirty(CloneMaps[i] as MapContainer, Clones[i]);
-            if (Clones[i] != null)
-            {
-                if (Clones[i].Parent != null)
-                {
-                    Clones[i].Parent.RemoveChild(Clones[i]);
-                }
-            }
+            var map = CloneMaps[i] as MapContainer;
+
+            MapContainer.MarkEntityDirty(map, Clones[i]);
+            EntityPlacement.Detach(map, Clones[i]);
 
             if (Clones[i].RenderSceneMesh != null)
             {

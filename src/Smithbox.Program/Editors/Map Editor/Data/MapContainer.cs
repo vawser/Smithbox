@@ -400,125 +400,27 @@ public class MapContainer : ObjectContainer
 
     public void LoadNVA(string mapName, NVA nva)
     {
-        var nvaParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
+        var nvaParent = CreateNavmeshParent(mapName);
 
-        MapOffsetNode.AddChild(nvaParent);
-
-        // Navmesh Info
         foreach (var curNavmesh in nva.NavmeshInfoEntries)
         {
-            var newEntity = new MsbEntity(View.Universe, this, curNavmesh, MsbEntityType.Navmesh);
-
-            newEntity.SupportsName = false;
-
-            var navid = $@"n{curNavmesh.ModelID:D6}";
-            var navname = "n" + ModelLocator.MapModelNameToAssetName(View.Project, mapName, navid).Substring(1);
-
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-            {
-                ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
-
-                var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                    View.Universe.GetCurrentScene(), ResourceManager.DefaultPool.Find<HavokNavmeshResource>(nasset.Name), ModelMarkerType.Other);
-
-                mesh.World = newEntity.GetWorldMatrix();
-                mesh.SetSelectable(newEntity);
-                mesh.DrawFilter = RenderFilter.Navmesh;
-                newEntity.RenderSceneMesh = mesh;
-            }
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
+            AddNavmeshInfo(nvaParent, mapName, curNavmesh, $@"n{curNavmesh.ModelID:D6}");
         }
 
-        // Face Data
-        foreach (var curEntry in nva.FaceDataEntries)
-        {
-            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+        AddNavmeshEntries(nvaParent, nva.FaceDataEntries);
+        AddNavmeshEntries(nvaParent, nva.NodeBankEntries);
+        AddNavmeshEntries(nvaParent, nva.ConnectorEntries);
 
-            newEntity.SupportsName = false;
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
-        }
-
-        // Node Bank Data
-        foreach (var curEntry in nva.NodeBankEntries)
-        {
-            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-            newEntity.SupportsName = false;
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
-        }
-
-        // Connectors
-        foreach (var curEntry in nva.ConnectorEntries)
-        {
-            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-            newEntity.SupportsName = false;
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
-        }
-
-        // Level Connectors
         foreach (var curEntry in nva.LevelConnectorEntries)
         {
-            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-            newEntity.SupportsName = false;
-
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-            {
-                var mesh = RenderableHelper.GetLevelConnectorSphereProxy(View.ViewportHandler.ActiveViewport.RenderScene);
-
-                mesh.World = newEntity.GetWorldMatrix();
-                mesh.SetSelectable(newEntity);
-                mesh.DrawFilter = RenderFilter.Navmesh;
-                newEntity.RenderSceneMesh = mesh;
-            }
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
+            AddLevelConnector(nvaParent, curEntry);
         }
 
         if (nva.Version == NVA.NVAVersion.EldenRing)
         {
-            // Section 10
-            foreach (var curEntry in nva.Section10Entries)
-            {
-                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-                newEntity.SupportsName = false;
-
-                Objects.Add(newEntity);
-                nvaParent.AddChild(newEntity);
-            }
-
-            // Section 11
-            foreach (var curEntry in nva.Section11Entries)
-            {
-                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-                newEntity.SupportsName = false;
-
-                Objects.Add(newEntity);
-                nvaParent.AddChild(newEntity);
-            }
-
-            // Section 13
-            foreach (var curEntry in nva.Section13Entries)
-            {
-                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-                newEntity.SupportsName = false;
-
-                Objects.Add(newEntity);
-                nvaParent.AddChild(newEntity);
-            }
+            AddNavmeshEntries(nvaParent, nva.Section10Entries);
+            AddNavmeshEntries(nvaParent, nva.Section11Entries);
+            AddNavmeshEntries(nvaParent, nva.Section13Entries);
         }
 
         NavmeshParent = nvaParent;
@@ -527,754 +429,104 @@ public class MapContainer : ObjectContainer
     // ER specific
     public void LoadNVA(string mapName, NVA_ER nva)
     {
-        var nvaParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
+        var nvaParent = CreateNavmeshParent(mapName);
 
-        MapOffsetNode.AddChild(nvaParent);
-
-        // Navmesh Info
         foreach (var curNavmesh in nva.Navmeshes)
         {
-            var newEntity = new MsbEntity(View.Universe, this, curNavmesh, MsbEntityType.Navmesh);
-
-            newEntity.SupportsName = false;
-
-            var navid = $@"n{curNavmesh.ModelID:D6}";
-            var navname = "n" + ModelLocator.MapModelNameToAssetName(View.Project, mapName, navid).Substring(1);
-
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-            {
-                ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
-
-                var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                    View.Universe.GetCurrentScene(), ResourceManager.DefaultPool.Find<HavokNavmeshResource>(nasset.Name), ModelMarkerType.Other);
-
-                mesh.World = newEntity.GetWorldMatrix();
-                mesh.SetSelectable(newEntity);
-                mesh.DrawFilter = RenderFilter.Navmesh;
-                newEntity.RenderSceneMesh = mesh;
-            }
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
+            AddNavmeshInfo(nvaParent, mapName, curNavmesh, $@"n{curNavmesh.ModelID:D6}");
         }
 
-        // Face Data
-        foreach (var curEntry in nva.FaceDatas)
-        {
-            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+        AddNavmeshEntries(nvaParent, nva.FaceDatas);
+        AddNavmeshEntries(nvaParent, nva.NodeBanks);
+        AddNavmeshEntries(nvaParent, nva.Connectors);
 
-            newEntity.SupportsName = false;
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
-        }
-
-        // Node Bank Data
-        foreach (var curEntry in nva.NodeBanks)
-        {
-            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-            newEntity.SupportsName = false;
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
-        }
-
-        // Connectors
-        foreach (var curEntry in nva.Connectors)
-        {
-            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-            newEntity.SupportsName = false;
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
-        }
-
-        // Level Connectors
         foreach (var curEntry in nva.LevelConnectors)
         {
-            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-            newEntity.SupportsName = false;
-
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-            {
-                var mesh = RenderableHelper.GetLevelConnectorSphereProxy(View.ViewportHandler.ActiveViewport.RenderScene);
-
-                mesh.World = newEntity.GetWorldMatrix();
-                mesh.SetSelectable(newEntity);
-                mesh.DrawFilter = RenderFilter.Navmesh;
-                newEntity.RenderSceneMesh = mesh;
-            }
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
+            AddLevelConnector(nvaParent, curEntry);
         }
 
-        // Section 10
-        foreach (var curEntry in nva.Entries10)
-        {
-            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-            newEntity.SupportsName = false;
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
-        }
-
-        // Section 11
-        foreach (var curEntry in nva.Entries11)
-        {
-            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-            newEntity.SupportsName = false;
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
-        }
-
-        // Section 13
-        foreach (var curEntry in nva.Entries13)
-        {
-            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
-
-            newEntity.SupportsName = false;
-
-            Objects.Add(newEntity);
-            nvaParent.AddChild(newEntity);
-        }
+        AddNavmeshEntries(nvaParent, nva.Entries10);
+        AddNavmeshEntries(nvaParent, nva.Entries11);
+        AddNavmeshEntries(nvaParent, nva.Entries13);
 
         NavmeshParent = nvaParent;
     }
 
+    private MsbEntity CreateNavmeshParent(string mapName)
+    {
+        var nvaParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
+
+        MapOffsetNode.AddChild(nvaParent);
+
+        return nvaParent;
+    }
+
+    private MsbEntity CreateNavmeshEntity(object entry)
+    {
+        var newEntity = new MsbEntity(View.Universe, this, entry, MsbEntityType.Navmesh);
+
+        newEntity.SupportsName = false;
+
+        return newEntity;
+    }
+
+    private void AttachNavmeshEntity(Entity nvaParent, MsbEntity newEntity)
+    {
+        Objects.Add(newEntity);
+        nvaParent.AddChild(newEntity);
+    }
+
+    private void AddNavmeshEntries(Entity nvaParent, IEnumerable<object> entries)
+    {
+        foreach (var curEntry in entries)
+        {
+            AttachNavmeshEntity(nvaParent, CreateNavmeshEntity(curEntry));
+        }
+    }
+
+    // The render meshes below take the entity's world matrix before it is parented, as the original loaders did
+
+    private void AddNavmeshInfo(Entity nvaParent, string mapName, object curNavmesh, string navid)
+    {
+        var newEntity = CreateNavmeshEntity(curNavmesh);
+
+        var navname = "n" + ModelLocator.MapModelNameToAssetName(View.Project, mapName, navid).Substring(1);
+
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+        {
+            ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
+
+            var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
+                View.Universe.GetCurrentScene(), ResourceManager.DefaultPool.Find<HavokNavmeshResource>(nasset.Name), ModelMarkerType.Other);
+
+            mesh.World = newEntity.GetWorldMatrix();
+            mesh.SetSelectable(newEntity);
+            mesh.DrawFilter = RenderFilter.Navmesh;
+            newEntity.RenderSceneMesh = mesh;
+        }
+
+        AttachNavmeshEntity(nvaParent, newEntity);
+    }
+
+    private void AddLevelConnector(Entity nvaParent, object curEntry)
+    {
+        var newEntity = CreateNavmeshEntity(curEntry);
+
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+        {
+            var mesh = RenderableHelper.GetLevelConnectorSphereProxy(View.ViewportHandler.ActiveViewport.RenderScene);
+
+            mesh.World = newEntity.GetWorldMatrix();
+            mesh.SetSelectable(newEntity);
+            mesh.DrawFilter = RenderFilter.Navmesh;
+            newEntity.RenderSceneMesh = mesh;
+        }
+
+        AttachNavmeshEntity(nvaParent, newEntity);
+    }
+
     public IMsbModel GetModel(string name) {
         return LoadedModels[name];
-    }
-
-    private void AddModelDeS(IMsb m, MSBD.Model model, string name)
-    {
-        if (LoadedModels.TryGetValue(name, out var existing))
-        {
-            if (existing != null)
-            {
-                m.Models.Add(existing);
-                return;
-            }
-        }
-
-        model.Name = name;
-        if (model is MSBD.Model.MapPiece)
-        {
-            model.SibPath = $@"N:\DemonsSoul\data\Model\map\{Name}\sib\{name}.sib";
-        }
-        else if (model is MSBD.Model.Object)
-        {
-            model.SibPath = $@"N:\DemonsSoul\data\Model\obj\{name}\sib\{name}.sib";
-        }
-        else if (model is MSBD.Model.Enemy)
-        {
-            model.SibPath = $@"N:\DemonsSoul\data\Model\chr\{name}\sib\{name}.sib";
-        }
-        else if (model is MSBD.Model.Collision)
-        {
-            model.SibPath = $@"N:\DemonsSoul\data\Model\map\{Name}\hkxwin\{name}.hkxwin";
-        }
-        else if (model is MSBD.Model.Navmesh)
-        {
-            model.SibPath = $@"N:\DemonsSoul\data\Model\map\{Name}\navimesh\{name}.SIB";
-        }
-
-        m.Models.Add(model);
-    }
-
-    private void AddModelDS1(IMsb m, MSB1.Model model, string name)
-    {
-        if (LoadedModels.TryGetValue(name, out var existing))
-        {
-            if (existing != null)
-            {
-                m.Models.Add(existing);
-                return;
-            }
-        }
-
-        model.Name = name;
-        if (model is MSB1.Model.MapPiece)
-        {
-            model.SibPath = $@"N:\FRPG\data\Model\map\{Name}\sib\{name}.sib";
-        }
-        else if (model is MSB1.Model.Object)
-        {
-            model.SibPath = $@"N:\FRPG\data\Model\obj\{name}\sib\{name}.sib";
-        }
-        else if (model is MSB1.Model.Enemy)
-        {
-            model.SibPath = $@"N:\FRPG\data\Model\chr\{name}\sib\{name}.sib";
-        }
-        else if (model is MSB1.Model.Collision)
-        {
-            model.SibPath = $@"N:\FRPG\data\Model\map\{Name}\hkxwin\{name}.hkxwin";
-        }
-        else if (model is MSB1.Model.Navmesh)
-        {
-            model.SibPath = $@"N:\FRPG\data\Model\map\{Name}\navimesh\{name}.sib";
-        }
-
-        m.Models.Add(model);
-    }
-
-    private void AddModelDS2(IMsb m, MSB2.Model model, string name)
-    {
-        if (LoadedModels.TryGetValue(name, out var existing))
-        {
-            m.Models.Add(LoadedModels[name]);
-            return;
-        }
-
-        model.Name = name;
-        m.Models.Add(model);
-    }
-
-    private void AddModelBB(IMsb m, MSBB.Model model, string name)
-    {
-        if (LoadedModels.TryGetValue(name, out var existing))
-        {
-            if (existing != null)
-            {
-                m.Models.Add(existing);
-                return;
-            }
-        }
-
-        var a = $@"A{Name.Substring(1, 2)}";
-        model.Name = name;
-        if (model is MSBB.Model.MapPiece)
-        {
-            model.SibPath = $@"N:\SPRJ\data\Model\map\{Name}\sib\{name}{a}.sib";
-        }
-        else if (model is MSBB.Model.Object)
-        {
-            model.SibPath = $@"N:\SPRJ\data\Model\obj\{name.Substring(0, 3)}\{name}\sib\{name}.sib";
-        }
-        else if (model is MSBB.Model.Enemy)
-        {
-            // Not techincally required but doing so means that unedited bloodborne maps
-            // will write identical to the original byte for byte
-            if (name == "c0000")
-            {
-                model.SibPath = $@"N:\SPRJ\data\Model\chr\{name}\sib\{name}.SIB";
-            }
-            else
-            {
-                model.SibPath = $@"N:\SPRJ\data\Model\chr\{name}\sib\{name}.sib";
-            }
-        }
-        else if (model is MSBB.Model.Collision)
-        {
-            model.SibPath = $@"N:\SPRJ\data\Model\map\{Name}\hkt\{name}{a}.hkt";
-        }
-        else if (model is MSBB.Model.Navmesh)
-        {
-            model.SibPath = $@"N:\SPRJ\data\Model\map\{Name}\navimesh\{name}{a}.sib";
-        }
-        else if (model is MSBB.Model.Other)
-        {
-            model.SibPath = @"";
-        }
-
-        m.Models.Add(model);
-    }
-
-    private void AddModelDS3(IMsb m, MSB3.Model model, string name)
-    {
-        if (LoadedModels.TryGetValue(name, out var existing))
-        {
-            if (existing != null)
-            {
-                m.Models.Add(existing);
-                return;
-            }
-        }
-
-        model.Name = name;
-        if (model is MSB3.Model.MapPiece)
-        {
-            model.SibPath = $@"N:\FDP\data\Model\map\{Name}\sib\{name}.sib";
-        }
-        else if (model is MSB3.Model.Object)
-        {
-            model.SibPath = $@"N:\FDP\data\Model\obj\{name}\sib\{name}.sib";
-        }
-        else if (model is MSB3.Model.Enemy)
-        {
-            model.SibPath = $@"N:\FDP\data\Model\chr\{name}\sib\{name}.sib";
-        }
-        else if (model is MSB3.Model.Collision)
-        {
-            model.SibPath = $@"N:\FDP\data\Model\map\{Name}\hkt\{name}.hkt";
-        }
-        else if (model is MSB3.Model.Other)
-        {
-            model.SibPath = @"";
-        }
-
-        m.Models.Add(model);
-    }
-
-    private void AddModelSekiro(IMsb m, MSBS.Model model, string name)
-    {
-        if (LoadedModels.TryGetValue(name, out var existing))
-        {
-            if (existing != null)
-            {
-                m.Models.Add(existing);
-                return;
-            }
-        }
-
-        model.Name = name;
-        if (model is MSBS.Model.MapPiece)
-        {
-            model.SibPath = $@"N:\FDP\data\Model\map\{Name}\sib\{name}.sib";
-        }
-        else if (model is MSBS.Model.Object)
-        {
-            model.SibPath = $@"N:\FDP\data\Model\obj\{name}\sib\{name}.sib";
-        }
-        else if (model is MSBS.Model.Enemy)
-        {
-            model.SibPath = $@"N:\FDP\data\Model\chr\{name}\sib\{name}.sib";
-        }
-        else if (model is MSBS.Model.Collision)
-        {
-            model.SibPath = $@"N:\FDP\data\Model\map\{Name}\hkt\{name}.hkt";
-        }
-        else if (model is MSBS.Model.Player)
-        {
-            model.SibPath = @"";
-        }
-
-        m.Models.Add(model);
-    }
-
-    private void AddModelER(IMsb m, MSBE.Model model, string name)
-    {
-        if (LoadedModels.TryGetValue(name, out var existing))
-        {
-            if (existing != null)
-            {
-                m.Models.Add(existing);
-                return;
-            }
-        }
-
-        model.Name = name;
-        if (model is MSBE.Model.MapPiece)
-        {
-            model.SibPath = $@"N:\GR\data\Model\map\{Name}\sib\{name}.sib";
-        }
-        else if (model is MSBE.Model.Asset)
-        {
-            model.SibPath = $@"N:\GR\data\Asset\Environment\geometry\{name.Substring(0, 6)}\{name}\sib\{name}.sib";
-        }
-        else if (model is MSBE.Model.Enemy)
-        {
-            model.SibPath = $@"N:\GR\data\Model\chr\{name}\sib\{name}.sib";
-        }
-        else if (model is MSBE.Model.Collision)
-        {
-            model.SibPath = $@"N:\GR\data\Model\map\{Name}\hkt\{name}.hkt";
-        }
-        else if (model is MSBE.Model.Player)
-        {
-            model.SibPath = $@"N:\GR\data\Model\chr\{name}\sib\{name}.sib";
-        }
-
-        m.Models.Add(model);
-    }
-    private void AddModelNR(IMsb m, MSB_NR.Model model, string name)
-    {
-        if (LoadedModels.TryGetValue(name, out var existing))
-        {
-            if (existing != null)
-            {
-                m.Models.Add(existing);
-                return;
-            }
-        }
-
-        model.Name = name;
-        if (model is MSB_NR.Model.MapPiece)
-        {
-            model.SibPath = $@"W:\CL\data\Model\map\{Name}\sib\{name}.sib";
-        }
-        else if (model is MSB_NR.Model.Asset)
-        {
-            model.SibPath = $@"W:\CL\data\Asset\Environment\geometry\{name.Substring(0, 6)}\{name}\sib\{name}.sib";
-        }
-        else if (model is MSB_NR.Model.Enemy)
-        {
-            model.SibPath = $@"W:\CL\data\Model\chr\{name}\sib\{name}.sib";
-        }
-        else if (model is MSB_NR.Model.Collision)
-        {
-            model.SibPath = $@"W:\CL\data\Model\map\{Name}\hkt\{name}.hkt";
-        }
-        else if (model is MSB_NR.Model.Player)
-        {
-            model.SibPath = $@"W:\CL\data\Model\chr\{name}\sib\{name}.sib";
-        }
-
-        m.Models.Add(model);
-    }
-
-
-    private void AddModelAC6(IMsb m, MSB_AC6.Model model, string name)
-    {
-        if (LoadedModels.TryGetValue(name, out var existing))
-        {
-            if (existing != null)
-            {
-                m.Models.Add(existing);
-                return;
-            }
-        }
-
-        model.Name = name;
-        if (model is MSB_AC6.Model.MapPiece)
-        {
-            model.SourcePath = $@"N:\FNR\data\Model\map\{Name}\sib\{name}.sib";
-        }
-        else if (model is MSB_AC6.Model.Asset)
-        {
-            model.SourcePath = $@"N:\FNR\data\Asset\Environment\geometry\{name.Substring(0, 6)}\{name}\sib\{name}.sib";
-        }
-        else if (model is MSB_AC6.Model.Enemy)
-        {
-            model.SourcePath = $@"N:\FNR\data\Model\chr\{name}\sib\{name}.sib";
-        }
-        else if (model is MSB_AC6.Model.Collision)
-        {
-            model.SourcePath = $@"N:\FNR\data\Model\map\{Name}\hkt\{name}.hkt";
-        }
-        else if (model is MSB_AC6.Model.Player)
-        {
-            model.SourcePath = $@"N:\FNR\data\Model\chr\{name}\sib\{name}.sib";
-        }
-
-        m.Models.Add(model);
-    }
-    private void AddModelDB_NT(IMsb m, MSB_DB_NT.Model model, string name)
-    {
-        if (LoadedModels.TryGetValue(name, out var existing))
-        {
-            if (existing != null)
-            {
-                m.Models.Add(existing);
-                return;
-            }
-        }
-
-        model.Name = name;
-        if (model is MSB_DB_NT.Model.MapPiece)
-        {
-            model.SibPath = $@"W:\PHX\data\Model\map\{Name}\sib\{name}.sib";
-        }
-        else if (model is MSB_DB_NT.Model.Asset)
-        {
-            model.SibPath = $@"W:\PHX\data\Asset\Environment\geometry\{name.Substring(0, 6)}\{name}\sib\{name}.sib";
-        }
-        else if (model is MSB_DB_NT.Model.Enemy)
-        {
-            model.SibPath = $@"W:\PHX\data\Model\chr\{name}\sib\{name}.sib";
-        }
-        else if (model is MSB_DB_NT.Model.Collision)
-        {
-            model.SibPath = $@"W:\PHX\data\Model\map\{Name}\hkt\{name}.hkt";
-        }
-        else if (model is MSB_DB_NT.Model.Player)
-        {
-            model.SibPath = $@"W:\PHX\data\Model\chr\{name}\sib\{name}.sib";
-        }
-        else if (model is MSB_DB_NT.Model.PrefabAsset)
-        {
-            // TODO: Check
-            model.SibPath = $@"W:\PHX\data\Asset\Environment\geometry\{name.Substring(0, 6)}\{name}\sib\{name}.sib";
-        }
-
-        m.Models.Add(model);
-    }
-
-    private void AddModelsDeS(IMsb msb)
-    {
-        foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
-        {
-            var m = mk.Key;
-            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDeS(msb, new MSBD.Model.MapPiece(), m);
-            }
-            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDeS(msb, new MSBD.Model.Collision(), m);
-            }
-            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDeS(msb, new MSBD.Model.Object(), m);
-            }
-            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDeS(msb, new MSBD.Model.Enemy(), m);
-            }
-            else if (m.StartsWith("n", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDeS(msb, new MSBD.Model.Navmesh(), m);
-            }
-        }
-    }
-
-    private void AddModelsDS1(IMsb msb)
-    {
-        foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
-        {
-            var m = mk.Key;
-            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS1(msb, new MSB1.Model.MapPiece(), m);
-            }
-            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS1(msb, new MSB1.Model.Collision(), m);
-            }
-            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS1(msb, new MSB1.Model.Object(), m);
-            }
-            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS1(msb, new MSB1.Model.Enemy(), m);
-            }
-            else if (m.StartsWith("n", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS1(msb, new MSB1.Model.Navmesh(), m);
-            }
-        }
-    }
-
-    private void AddModelsDS2(IMsb msb)
-    {
-        foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
-        {
-            var m = mk.Key;
-            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS2(msb, new MSB2.Model.MapPiece(), m);
-            }
-            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS2(msb, new MSB2.Model.Collision(), m);
-            }
-            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS2(msb, new MSB2.Model.Object(), m);
-            }
-            else if (m.StartsWith("n", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS2(msb, new MSB2.Model.Navmesh(), m);
-            }
-        }
-    }
-
-    private void AddModelsBB(IMsb msb)
-    {
-        foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
-        {
-            var m = mk.Key;
-            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelBB(msb, new MSBB.Model.MapPiece { Name = m }, m);
-            }
-            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelBB(msb, new MSBB.Model.Collision { Name = m }, m);
-            }
-            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelBB(msb, new MSBB.Model.Object { Name = m }, m);
-            }
-            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelBB(msb, new MSBB.Model.Enemy { Name = m }, m);
-            }
-            else if (m.StartsWith("n", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelBB(msb, new MSBB.Model.Navmesh { Name = m }, m);
-            }
-        }
-    }
-
-    private void AddModelsDS3(IMsb msb)
-    {
-        foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
-        {
-            var m = mk.Key;
-            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS3(msb, new MSB3.Model.MapPiece { Name = m }, m);
-            }
-            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS3(msb, new MSB3.Model.Collision { Name = m }, m);
-            }
-            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS3(msb, new MSB3.Model.Object { Name = m }, m);
-            }
-            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDS3(msb, new MSB3.Model.Enemy { Name = m }, m);
-            }
-        }
-    }
-
-    private void AddModelsSekiro(IMsb msb)
-    {
-        foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
-        {
-            var m = mk.Key;
-            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelSekiro(msb, new MSBS.Model.MapPiece { Name = m }, m);
-            }
-            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelSekiro(msb, new MSBS.Model.Collision { Name = m }, m);
-            }
-            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelSekiro(msb, new MSBS.Model.Object { Name = m }, m);
-            }
-            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelSekiro(msb, new MSBS.Model.Enemy { Name = m }, m);
-            }
-        }
-    }
-
-    private void AddModelsER(IMsb msb)
-    {
-        foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
-        {
-            var m = mk.Key;
-            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelER(msb, new MSBE.Model.MapPiece { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelER(msb, new MSBE.Model.Collision { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("aeg", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelER(msb, new MSBE.Model.Asset { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelER(msb, new MSBE.Model.Enemy { Name = m }, m);
-                continue;
-            }
-        }
-    }
-    private void AddModelsNR(IMsb msb)
-    {
-        foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
-        {
-            var m = mk.Key;
-            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelNR(msb, new MSB_NR.Model.MapPiece { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelNR(msb, new MSB_NR.Model.Collision { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("aeg", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelNR(msb, new MSB_NR.Model.Asset { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelNR(msb, new MSB_NR.Model.Enemy { Name = m }, m);
-                continue;
-            }
-        }
-    }
-
-    private void AddModelsAC6(IMsb msb)
-    {
-        foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
-        {
-            var m = mk.Key;
-            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelAC6(msb, new MSB_AC6.Model.MapPiece { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelAC6(msb, new MSB_AC6.Model.Collision { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("aeg", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelAC6(msb, new MSB_AC6.Model.Asset { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelAC6(msb, new MSB_AC6.Model.Enemy { Name = m }, m);
-                continue;
-            }
-        }
-    }
-    private void AddModelsDB_NT(IMsb msb)
-    {
-        foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
-        {
-            var m = mk.Key;
-            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDB_NT(msb, new MSB_DB_NT.Model.MapPiece { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDB_NT(msb, new MSB_DB_NT.Model.Collision { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("aeg", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDB_NT(msb, new MSB_DB_NT.Model.Asset { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDB_NT(msb, new MSB_DB_NT.Model.Enemy { Name = m }, m);
-                continue;
-            }
-            else if (m.StartsWith("aep", StringComparison.OrdinalIgnoreCase))
-            {
-                AddModelDB_NT(msb, new MSB_DB_NT.Model.PrefabAsset { Name = m }, m);
-                continue;
-            }
-        }
     }
 
     public void SerializeToMSB(IMsb msb, ProjectType game)
@@ -1313,50 +565,7 @@ public class MapContainer : ObjectContainer
             }
         }
 
-        if (game == ProjectType.DES)
-        {
-            AddModelsDeS(msb);
-        }
-        else if (game == ProjectType.DS1 || game == ProjectType.DS1R)
-        {
-            AddModelsDS1(msb);
-        }
-        else if (game == ProjectType.DS2 || game == ProjectType.DS2S)
-        {
-            AddModelsDS2(msb);
-        }
-        else if (game == ProjectType.BB)
-        {
-            AddModelsBB(msb);
-        }
-        else if (game == ProjectType.DS3)
-        {
-            AddModelsDS3(msb);
-        }
-        else if (game == ProjectType.SDT)
-        {
-            AddModelsSekiro(msb);
-        }
-        else if (game == ProjectType.ER)
-        {
-            AddModelsER(msb);
-        }
-        else if (game == ProjectType.NR)
-        {
-            AddModelsNR(msb);
-        }
-        else if (game == ProjectType.AC6)
-        {
-            AddModelsAC6(msb);
-        }
-        else if (game == ProjectType.DB_NT)
-        {
-            AddModelsDB_NT(msb);
-        }
-        else if (game == ProjectType.DB)
-        {
-            // TODO: Duskbloods
-        }
+        MsbGameAdapter.For(game)?.AddModels(msb, Name, LoadedModels);
     }
 
     /// <summary>

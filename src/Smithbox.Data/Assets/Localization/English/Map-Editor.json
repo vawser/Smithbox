@@ -105,6 +105,10 @@
       "Text": "Unload all maps?"
     },
     {
+      "Key": "MAP_Universe_Save_Map_Unsupported",
+      "Text": "Saving maps is not supported for {0}."
+    },
+    {
       "Key": "MAP_Universe_Dialog_Unload_Unsaved",
       "Text": "{0} has unsaved changes. Unload it and discard them?"
     },

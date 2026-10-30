@@ -95,13 +95,10 @@ public class EntAddAction : ViewportAction
             if (AddedMaps[i] == null)
                 continue;
 
-            AddedMaps[i].Objects.Remove(Added[i]);
-            MapContainer.MarkEntityDirty(AddedMaps[i] as MapContainer, Added[i]);
+            var map = AddedMaps[i] as MapContainer;
 
-            if (Added[i] != null)
-            {
-                Added[i].Parent.RemoveChild(Added[i]);
-            }
+            MapContainer.MarkEntityDirty(map, Added[i]);
+            EntityPlacement.Detach(map, Added[i]);
 
             if (Added[i].RenderSceneMesh != null)
             {

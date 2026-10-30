@@ -14,13 +14,12 @@ public class EntMoveAction : ViewportAction
     private MapEditorView View;
 
     private readonly List<MsbEntity> Moveables = new();
-    private readonly List<MapContainer> SourceMaps = new();
-    private readonly List<MapContainer> TargetMaps = new();
-    private readonly List<Entity> OriginalParents = new();
-    private readonly List<int> OriginalIndices = new();
     private readonly bool SetSelection;
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
+
+    // Original placement and target map for each index of Moveables that was moved on the first execute
+    private readonly Dictionary<int, (EntityPlacement Source, MapContainer Target)> Moves = new();
 
     public EntMoveAction(MapEditorView view, List<MsbEntity> objects, bool setSelection,
         MapContainer targetMap = null, Entity targetBTL = null)
@@ -36,111 +35,98 @@ public class EntMoveAction : ViewportAction
     {
         var universe = View.Universe;
 
-        var movesCached = SourceMaps.Count > 0;
+        var movesCached = Moves.Count > 0;
 
         for (var i = 0; i < Moveables.Count(); i++)
         {
-            if (Moveables[i].MapID == null)
+            var ent = Moveables[i];
+
+            if (ent.MapID == null)
             {
                 Smithbox.LogError(this,
-                    LOC.Get("MAP_Actions_Duplicate_Failed", Moveables[i].Name));
+                    LOC.Get("MAP_Actions_Duplicate_Failed", ent.Name));
                 continue;
             }
 
-            MapContainer sourceMap = View.Selection.GetMapContainerFromMapID(Moveables[i].MapID);
-            MapContainer targetMap;
+            (EntityPlacement Source, MapContainer Target) move;
 
-            if (TargetMap != null)
+            if (movesCached)
             {
-                targetMap = View.Selection.GetMapContainerFromMapID(TargetMap.Name);
+                // Only redo the moves that were made on the first execute
+                if (!Moves.TryGetValue(i, out move))
+                    continue;
             }
             else
             {
-                targetMap = sourceMap; // Moving within the same map
+                MapContainer sourceMap = View.Selection.GetMapContainerFromMapID(ent.MapID);
+
+                // Moving within the same map if no target is given
+                MapContainer targetMap = TargetMap != null
+                    ? View.Selection.GetMapContainerFromMapID(TargetMap.Name)
+                    : sourceMap;
+
+                if (sourceMap == null || targetMap == null)
+                    continue;
+
+                move = (EntityPlacement.Capture(sourceMap, ent), targetMap);
+                Moves[i] = move;
             }
 
-            if (sourceMap != null && targetMap != null)
+            var source = move.Source;
+
+            // Remove from source map and parent, then add to target map
+            EntityPlacement.Detach(source.Map, ent);
+            move.Target.Objects.Add(ent);
+
+            // Update MapID if moving to a different map
+            if (TargetMap != null && source.Map != move.Target)
             {
-                // Cache original position and parent info for undo if not already cached
-                if (!movesCached)
-                {
-                    SourceMaps.Add(sourceMap);
-                    TargetMaps.Add(targetMap);
-                    OriginalParents.Add(Moveables[i].Parent);
+                ent.ContainingMap = move.Target;
+            }
 
-                    if (Moveables[i].Parent != null)
-                    {
-                        OriginalIndices.Add(Moveables[i].Parent.ChildIndex(Moveables[i]));
-                    }
-                    else
-                    {
-                        OriginalIndices.Add(sourceMap.Objects.IndexOf(Moveables[i]));
-                    }
-                }
-
-                // Remove from source map and parent
-                sourceMap.Objects.Remove(Moveables[i]);
-                if (Moveables[i].Parent != null)
+            // Set new parent
+            if (TargetBTL != null && ent.WrappedObject is BTL.Light)
+            {
+                TargetBTL.AddChild(ent);
+            }
+            else if (TargetMap != null)
+            {
+                // Moving to a targeted map, update parent.
+                if (TargetMap.MapOffsetNode != null)
                 {
-                    Moveables[i].Parent.RemoveChild(Moveables[i]);
-                }
-
-                // Add to target map
-                targetMap.Objects.Add(Moveables[i]);
-
-                // Update MapID if moving to a different map
-                if (TargetMap != null && sourceMap != targetMap)
-                {
-                    Moveables[i].ContainingMap = targetMap;
-                }
-
-                // Set new parent
-                if (TargetBTL != null && Moveables[i].WrappedObject is BTL.Light)
-                {
-                    TargetBTL.AddChild(Moveables[i]);
-                }
-                else if (TargetMap != null)
-                {
-                    // Moving to a targeted map, update parent.
-                    if (TargetMap.MapOffsetNode != null)
-                    {
-                        TargetMap.MapOffsetNode.AddChild(Moveables[i]);
-                    }
-                    else
-                    {
-                        TargetMap.RootObject.AddChild(Moveables[i]);
-                    }
+                    TargetMap.MapOffsetNode.AddChild(ent);
                 }
                 else
                 {
-                    // Moving within the same map, restore to original parent or root
-                    if (OriginalParents[i] != null)
-                    {
-                        OriginalParents[i].AddChild(Moveables[i]);
-                    }
-                    else
-                    {
-                        sourceMap.RootObject.AddChild(Moveables[i]);
-                    }
+                    TargetMap.RootObject.AddChild(ent);
                 }
-
-                // Update render model
-                if (Moveables[i] is MsbEntity msbEnt)
-                {
-                    msbEnt.AssignDrawable();
-                }
-                Moveables[i].UpdateRenderModel();
-
-                if (Moveables[i].RenderSceneMesh != null)
-                {
-                    Moveables[i].RenderSceneMesh.RenderSelectionOutline = true;
-                    Moveables[i].RenderSceneMesh.SetSelectable(Moveables[i]);
-                }
-
-                // Mark maps as having unsaved changes
-                MapContainer.MarkEntityDirty(sourceMap, Moveables[i]);
-                MapContainer.MarkEntityDirty(targetMap, Moveables[i]);
             }
+            else
+            {
+                // Moving within the same map, restore to original parent or root
+                if (source.Parent != null)
+                {
+                    source.Parent.AddChild(ent);
+                }
+                else
+                {
+                    source.Map.RootObject.AddChild(ent);
+                }
+            }
+
+            // Update render model
+            ent.AssignDrawable();
+            ent.UpdateRenderModel();
+
+            if (ent.RenderSceneMesh != null)
+            {
+                ent.RenderSceneMesh.RenderSelectionOutline = true;
+                ent.RenderSceneMesh.SetSelectable(ent);
+            }
+
+            // Mark maps as having unsaved changes
+            MapContainer.MarkEntityDirty(source.Map, ent);
+            MapContainer.MarkEntityDirty(move.Target, ent);
         }
 
         if (SetSelection)
@@ -159,55 +145,36 @@ public class EntMoveAction : ViewportAction
     {
         var universe = View.Universe;
 
-        for (var i = 0; i < Moveables.Count(); i++)
+        var restores = new List<(Entity Entity, EntityPlacement Placement)>();
+
+        foreach (var (i, move) in Moves)
         {
-            if (i >= SourceMaps.Count || i >= TargetMaps.Count)
-                continue;
+            var ent = Moveables[i];
 
-            var sourceMap = SourceMaps[i];
-            var targetMap = TargetMaps[i];
-
-            MapContainer.MarkEntityDirty(sourceMap, Moveables[i]);
-            MapContainer.MarkEntityDirty(targetMap, Moveables[i]);
+            MapContainer.MarkEntityDirty(move.Source.Map, ent);
+            MapContainer.MarkEntityDirty(move.Target, ent);
 
             // Remove from current location
-            targetMap.Objects.Remove(Moveables[i]);
-            if (Moveables[i].Parent != null)
-            {
-                Moveables[i].Parent.RemoveChild(Moveables[i]);
-            }
-
-            // Restore to original location
-            if (OriginalIndices[i] < sourceMap.Objects.Count)
-            {
-                sourceMap.Objects.Insert(OriginalIndices[i], Moveables[i]);
-            }
-            else
-            {
-                sourceMap.Objects.Add(Moveables[i]);
-            }
+            EntityPlacement.Detach(move.Target, ent);
 
             // Restore MapID if it was changed
-            if (sourceMap != targetMap)
+            if (move.Source.Map != move.Target)
             {
-                Moveables[i].ContainingMap = sourceMap;
+                ent.ContainingMap = move.Source.Map;
             }
 
-            // Restore original parent
-            if (OriginalParents[i] != null)
+            restores.Add((ent, move.Source));
+        }
+
+        // Restore original map index and parent index
+        EntityPlacement.RestoreAll(restores);
+
+        // Entities that had no parent were at the map root
+        foreach (var (ent, placement) in restores)
+        {
+            if (placement.Parent == null)
             {
-                if (OriginalIndices[i] < OriginalParents[i].Children.Count)
-                {
-                    OriginalParents[i].AddChild(Moveables[i], OriginalIndices[i]);
-                }
-                else
-                {
-                    OriginalParents[i].AddChild(Moveables[i]);
-                }
-            }
-            else
-            {
-                sourceMap.RootObject.AddChild(Moveables[i]);
+                placement.Map.RootObject.AddChild(ent);
             }
         }
 

@@ -522,15 +522,6 @@ public class MapUniverse : IUniverse
     /// </summary>
     public void SaveMap(MapContainer map)
     {
-        // Sidecar files (collision, navmesh, AIP, etc.) are held by the banks of the view that loaded the map,
-        // so saving through any other view would silently write nothing for them
-        var ownerView = map.OwnerView;
-        if (ownerView != null && ownerView != View)
-        {
-            ownerView.Universe.SaveMap(map);
-            return;
-        }
-
         if (!CFG.Current.MapEditor_Allow_Unmodified_Save && map.DirtyFiles is MapFileType.None)
         {
             Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", map.Name));
@@ -557,132 +548,52 @@ public class MapUniverse : IUniverse
 
         if (ShouldSaveFile(map, MapFileType.MSB))
         {
-            try
+            SaveMSB(map);
+        }
+    }
+
+    /// <summary>
+    /// Serialize the map into a new MSB and write it to the project.
+    /// Every failure is logged here and, unless ignored, thrown as one SavingFailedException
+    /// that wraps the original exception (e.g. MissingReferenceException).
+    /// </summary>
+    private void SaveMSB(MapContainer map)
+    {
+        try
+        {
+            var adapter = MsbGameAdapter.For(Project.Descriptor.ProjectType)
+                ?? throw new NotSupportedException(LOC.Get("MAP_Universe_Save_Map_Unsupported", Project.Descriptor.ProjectType));
+
+            var curEntry = Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == map.Name)
+                ?? throw new FileNotFoundException(LOC.Get("MAP_Data_Failed_Find_VPS", map.Name));
+
+            var mapData = (Memory<byte>)Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
+
+            var msb = adapter.CreateForWrite(mapData);
+            map.SerializeToMSB(msb, Project.Descriptor.ProjectType);
+
+            var newMapData = msb.Write(adapter.Compression);
+            Project.VFS.ProjectFS.WriteFile(curEntry.Path, newMapData);
+
+            if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             {
-                var curEntry = Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);
-                var mapData = (Memory<byte>)Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
-
-                IMsb msb;
-                DCX.Type compressionType = GetCompressionType();
-                if (View.Project.Descriptor.ProjectType == ProjectType.DS3)
-                {
-                    var prev = MSB3.Read(mapData);
-                    MSB3 n = new();
-                    //n.PartsPoses = prev.PartsPoses;
-                    n.Layers = prev.Layers;
-                    n.Routes = prev.Routes;
-                    msb = n;
-                }
-                else if (View.Project.Descriptor.ProjectType == ProjectType.ER)
-                {
-                    var prev = MSBE.Read(mapData);
-                    MSBE n = new();
-                    n.Layers = prev.Layers;
-                    n.Routes = prev.Routes;
-                    msb = n;
-                }
-                else if (View.Project.Descriptor.ProjectType == ProjectType.NR)
-                {
-                    var prev = MSB_NR.Read(mapData);
-                    MSB_NR n = new();
-                    n.Layers = prev.Layers;
-                    n.Routes = prev.Routes;
-                    msb = n;
-                }
-                else if (View.Project.Descriptor.ProjectType == ProjectType.DB_NT)
-                {
-                    var prev = MSB_DB_NT.Read(mapData);
-                    MSB_DB_NT n = new();
-                    n.Layers = prev.Layers;
-                    n.Routes = prev.Routes;
-                    msb = n;
-                }
-                else if (View.Project.Descriptor.ProjectType == ProjectType.AC6)
-                {
-                    var prev = MSB_AC6.Read(mapData);
-                    MSB_AC6 n = new();
-                    n.Layers = prev.Layers;
-                    n.Routes = prev.Routes;
-                    msb = n;
-                }
-                else if (View.Project.Descriptor.ProjectType == ProjectType.DS2S || View.Project.Descriptor.ProjectType == ProjectType.DS2)
-                {
-                    var prev = MSB2.Read(mapData);
-                    MSB2 n = new();
-                    //n.PartPoses = prev.PartPoses;
-                    msb = n;
-                }
-                else if (View.Project.Descriptor.ProjectType == ProjectType.SDT)
-                {
-                    var prev = MSBS.Read(mapData);
-                    MSBS n = new();
-                    n.PartsPoses = prev.PartsPoses;
-                    n.Layers = prev.Layers;
-                    n.Routes = prev.Routes;
-                    msb = n;
-                }
-                else if (View.Project.Descriptor.ProjectType == ProjectType.BB)
-                {
-                    msb = new MSBB();
-                }
-                else if (View.Project.Descriptor.ProjectType == ProjectType.DES)
-                {
-                    var prev = MSBD.Read(mapData);
-                    MSBD n = new();
-                    n.Trees = prev.Trees;
-                    msb = n;
-                }
-                else
-                {
-                    msb = new MSB1();
-                    //var t = MSB1.Read(ad.AssetPath);
-                    //((MSB1)msb).Models = t.Models;
-                }
-
-                map.SerializeToMSB(msb, View.Project.Descriptor.ProjectType);
-
-                try
-                {
-                    var newMapData = msb.Write(compressionType);
-                    Project.VFS.ProjectFS.WriteFile(curEntry.Path, newMapData);
-
-                    if (View.Project.Descriptor.ProjectType == ProjectType.DS2S || View.Project.Descriptor.ProjectType == ProjectType.DS2)
-                    {
-                        SaveDS2Generators(map);
-                    }
-
-                    CheckDupeEntityIDs(map);
-
-                    map.ClearDirty(MapFileType.MSB);
-                    Smithbox.Log(this, LOC.Get("MAP_Universe_Save_Map_PASS", curEntry.Filename));
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, LOC.Get("MAP_Universe_Save_Map_FAIL", curEntry.Filename), e);
-
-                    if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
-                    {
-                        throw new SavingFailedException(Path.GetFileName(map.Name), e);
-                    }
-                }
+                SaveDS2Generators(map);
             }
-            catch (SavingFailedException)
+
+            CheckDupeEntityIDs(map);
+
+            map.ClearDirty(MapFileType.MSB);
+            Smithbox.Log(this, LOC.Get("MAP_Universe_Save_Map_PASS", curEntry.Filename));
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Universe_Save_Map_FAIL", map.Name), e);
+
+            if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
             {
-                // Already wrapped by the inner write handler; rethrow as-is so the
-                // original exception (e.g. MissingReferenceException) stays in Wrapped
-                throw;
-            }
-            catch (Exception e)
-            {
-                if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
-                {
-                    throw new SavingFailedException(Path.GetFileName(map.Name), e);
-                }
+                throw new SavingFailedException(Path.GetFileName(map.Name), e);
             }
         }
-
-        // Save the current map transform for this map
-        //map.SaveMapTransform();
     }
 
     public void LoadDS2Generators(string mapid, MapContainer map)
@@ -690,9 +601,6 @@ public class MapUniverse : IUniverse
         Dictionary<long, Param.Row> registParams = new();
         Dictionary<long, MergedParamRow> generatorParams = new();
         Dictionary<long, Entity> generatorObjs = new();
-        Dictionary<long, Param.Row> eventParams = new();
-        Dictionary<long, Param.Row> eventLocationParams = new();
-        Dictionary<long, Param.Row> objectInstanceParams = new();
 
         Param regparam = Project.Handler.ParamData.PrimaryBank.Params[$"generatorregistparam_{mapid}"];
         foreach (Param.Row row in regparam.Rows)
@@ -792,8 +700,6 @@ public class MapUniverse : IUniverse
                 row.Name = "event_" + row.ID;
             }
 
-            eventParams.Add(row.ID, row);
-
             MsbEntity obj = new(View.Universe, map, row, MsbEntityType.DS2Event);
             map.AddObject(obj);
         }
@@ -805,8 +711,6 @@ public class MapUniverse : IUniverse
             {
                 row.Name = "eventloc_" + row.ID;
             }
-
-            eventLocationParams.Add(row.ID, row);
 
             MsbEntity obj = new(View.Universe, map, row, MsbEntityType.DS2EventLocation);
             map.AddObject(obj);
@@ -827,8 +731,6 @@ public class MapUniverse : IUniverse
             {
                 row.Name = "objinstance_" + row.ID;
             }
-
-            objectInstanceParams.Add(row.ID, row);
 
             MsbEntity obj = new(View.Universe, map, row, MsbEntityType.DS2ObjectInstance);
             map.AddObject(obj);
@@ -909,41 +811,12 @@ public class MapUniverse : IUniverse
     private void SaveDS2Generators(MapContainer map)
     {
         // Load all the params
-        ResourceDescriptor regparamad = ParamLocator.GetDS2GeneratorRegistParam(View.Project, map.Name);
-        ResourceDescriptor regparamadw = ParamLocator.GetDS2GeneratorRegistParam(View.Project, map.Name, true);
-        Param regparam = Param.Read(regparamad.AssetPath);
-        PARAMDEF reglayout = ParamLocator.GetParamdefForParam(View.Project, regparam.ParamType);
-        regparam.ApplyParamdef(reglayout);
-
-        ResourceDescriptor locparamad = ParamLocator.GetDS2GeneratorLocationParam(View.Project, map.Name);
-        ResourceDescriptor locparamadw = ParamLocator.GetDS2GeneratorLocationParam(View.Project, map.Name, true);
-        Param locparam = Param.Read(locparamad.AssetPath);
-        PARAMDEF loclayout = ParamLocator.GetParamdefForParam(View.Project, locparam.ParamType);
-        locparam.ApplyParamdef(loclayout);
-
-        ResourceDescriptor genparamad = ParamLocator.GetDS2GeneratorParam(View.Project, map.Name);
-        ResourceDescriptor genparamadw = ParamLocator.GetDS2GeneratorParam(View.Project, map.Name, true);
-        Param genparam = Param.Read(genparamad.AssetPath);
-        PARAMDEF genlayout = ParamLocator.GetParamdefForParam(View.Project, genparam.ParamType);
-        genparam.ApplyParamdef(genlayout);
-
-        ResourceDescriptor evtparamad = ParamLocator.GetDS2EventParam(View.Project, map.Name);
-        ResourceDescriptor evtparamadw = ParamLocator.GetDS2EventParam(View.Project, map.Name, true);
-        Param evtparam = Param.Read(evtparamad.AssetPath);
-        PARAMDEF evtlayout = ParamLocator.GetParamdefForParam(View.Project, evtparam.ParamType);
-        evtparam.ApplyParamdef(evtlayout);
-
-        ResourceDescriptor evtlparamad = ParamLocator.GetDS2EventLocationParam(View.Project, map.Name);
-        ResourceDescriptor evtlparamadw = ParamLocator.GetDS2EventLocationParam(View.Project, map.Name, true);
-        Param evtlparam = Param.Read(evtlparamad.AssetPath);
-        PARAMDEF evtllayout = ParamLocator.GetParamdefForParam(View.Project, evtlparam.ParamType);
-        evtlparam.ApplyParamdef(evtllayout);
-
-        ResourceDescriptor objparamad = ParamLocator.GetDS2ObjInstanceParam(View.Project, map.Name);
-        ResourceDescriptor objparamadw = ParamLocator.GetDS2ObjInstanceParam(View.Project, map.Name, true);
-        Param objparam = Param.Read(objparamad.AssetPath);
-        PARAMDEF objlayout = ParamLocator.GetParamdefForParam(View.Project, objparam.ParamType);
-        objparam.ApplyParamdef(objlayout);
+        var (regparam, regparamPath) = ReadDS2Param(ParamLocator.GetDS2GeneratorRegistParam, map.Name);
+        var (locparam, locparamPath) = ReadDS2Param(ParamLocator.GetDS2GeneratorLocationParam, map.Name);
+        var (genparam, genparamPath) = ReadDS2Param(ParamLocator.GetDS2GeneratorParam, map.Name);
+        var (evtparam, evtparamPath) = ReadDS2Param(ParamLocator.GetDS2EventParam, map.Name);
+        var (evtlparam, evtlparamPath) = ReadDS2Param(ParamLocator.GetDS2EventLocationParam, map.Name);
+        var (objparam, objparamPath) = ReadDS2Param(ParamLocator.GetDS2ObjInstanceParam, map.Name);
 
         // Clear them out
         regparam.ClearRows();
@@ -980,197 +853,65 @@ public class MapUniverse : IUniverse
         }
 
         // Create a param directory if it does not exist
-        if (!Directory.Exists(Path.GetDirectoryName(regparamadw.AssetPath)))
+        if (!Directory.Exists(Path.GetDirectoryName(regparamPath)))
         {
-            Directory.CreateDirectory(Path.GetDirectoryName(regparamadw.AssetPath));
+            Directory.CreateDirectory(Path.GetDirectoryName(regparamPath));
         }
 
         // Save all the params
-        if (File.Exists(regparamadw.AssetPath + ".temp"))
-        {
-            File.Delete(regparamadw.AssetPath + ".temp");
-        }
-
-        regparam.Write(regparamadw.AssetPath + ".temp", DCX.Type.None);
-        if (File.Exists(regparamadw.AssetPath))
-        {
-            if (CFG.Current.Project_Enable_Backup_Saves)
-            {
-                if (!File.Exists(regparamadw.AssetPath + ".bak"))
-                {
-                    File.Copy(regparamadw.AssetPath, regparamadw.AssetPath + ".bak", true);
-                }
-
-                File.Copy(regparamadw.AssetPath, regparamadw.AssetPath + ".prev", true);
-            }
-            File.Delete(regparamadw.AssetPath);
-        }
-
-        File.Move(regparamadw.AssetPath + ".temp", regparamadw.AssetPath);
-
-        if (File.Exists(locparamadw.AssetPath + ".temp"))
-        {
-            File.Delete(locparamadw.AssetPath + ".temp");
-        }
-
-        locparam.Write(locparamadw.AssetPath + ".temp", DCX.Type.None);
-        if (File.Exists(locparamadw.AssetPath))
-        {
-            if (CFG.Current.Project_Enable_Backup_Saves)
-            {
-                if (!File.Exists(locparamadw.AssetPath + ".bak"))
-                {
-                    File.Copy(locparamadw.AssetPath, locparamadw.AssetPath + ".bak", true);
-                }
-
-                File.Copy(locparamadw.AssetPath, locparamadw.AssetPath + ".prev", true);
-            }
-            File.Delete(locparamadw.AssetPath);
-        }
-
-        File.Move(locparamadw.AssetPath + ".temp", locparamadw.AssetPath);
-
-        if (File.Exists(genparamadw.AssetPath + ".temp"))
-        {
-            File.Delete(genparamadw.AssetPath + ".temp");
-        }
-
-        genparam.Write(genparamadw.AssetPath + ".temp", DCX.Type.None);
-        if (File.Exists(genparamadw.AssetPath))
-        {
-            if (CFG.Current.Project_Enable_Backup_Saves)
-            {
-                if (!File.Exists(genparamadw.AssetPath + ".bak"))
-                {
-                    File.Copy(genparamadw.AssetPath, genparamadw.AssetPath + ".bak", true);
-                }
-
-                File.Copy(genparamadw.AssetPath, genparamadw.AssetPath + ".prev", true);
-            }
-            File.Delete(genparamadw.AssetPath);
-        }
-
-        File.Move(genparamadw.AssetPath + ".temp", genparamadw.AssetPath);
-
-        // Events
-        if (File.Exists(evtparamadw.AssetPath + ".temp"))
-        {
-            File.Delete(evtparamadw.AssetPath + ".temp");
-        }
-
-        evtparam.Write(evtparamadw.AssetPath + ".temp", DCX.Type.None);
-        if (File.Exists(evtparamadw.AssetPath))
-        {
-            if (CFG.Current.Project_Enable_Backup_Saves)
-            {
-                if (!File.Exists(evtparamadw.AssetPath + ".bak"))
-                {
-                    File.Copy(evtparamadw.AssetPath, evtparamadw.AssetPath + ".bak", true);
-                }
-
-                File.Copy(evtparamadw.AssetPath, evtparamadw.AssetPath + ".prev", true);
-            }
-            File.Delete(evtparamadw.AssetPath);
-        }
-
-        File.Move(evtparamadw.AssetPath + ".temp", evtparamadw.AssetPath);
-
-        // Event regions
-        if (File.Exists(evtlparamadw.AssetPath + ".temp"))
-        {
-            File.Delete(evtlparamadw.AssetPath + ".temp");
-        }
-
-        evtlparam.Write(evtlparamadw.AssetPath + ".temp", DCX.Type.None);
-        if (File.Exists(evtlparamadw.AssetPath))
-        {
-            if (CFG.Current.Project_Enable_Backup_Saves)
-            {
-                if (!File.Exists(evtlparamadw.AssetPath + ".bak"))
-                {
-                    File.Copy(evtlparamadw.AssetPath, evtlparamadw.AssetPath + ".bak", true);
-                }
-
-                File.Copy(evtlparamadw.AssetPath, evtlparamadw.AssetPath + ".prev", true);
-            }
-            File.Delete(evtlparamadw.AssetPath);
-        }
-
-        File.Move(evtlparamadw.AssetPath + ".temp", evtlparamadw.AssetPath);
-
-        // Object instances
-        if (File.Exists(objparamadw.AssetPath + ".temp"))
-        {
-            File.Delete(objparamadw.AssetPath + ".temp");
-        }
-
-        objparam.Write(objparamadw.AssetPath + ".temp", DCX.Type.None);
-        if (File.Exists(objparamadw.AssetPath))
-        {
-            if (CFG.Current.Project_Enable_Backup_Saves)
-            {
-                if (!File.Exists(objparamadw.AssetPath + ".bak"))
-                {
-                    File.Copy(objparamadw.AssetPath, objparamadw.AssetPath + ".bak", true);
-                }
-
-                File.Copy(objparamadw.AssetPath, objparamadw.AssetPath + ".prev", true);
-            }
-            File.Delete(objparamadw.AssetPath);
-        }
-
-        File.Move(objparamadw.AssetPath + ".temp", objparamadw.AssetPath);
+        WriteDS2Param(regparam, regparamPath);
+        WriteDS2Param(locparam, locparamPath);
+        WriteDS2Param(genparam, genparamPath);
+        WriteDS2Param(evtparam, evtparamPath);
+        WriteDS2Param(evtlparam, evtlparamPath);
+        WriteDS2Param(objparam, objparamPath);
     }
 
-    private DCX.Type GetCompressionType()
+    /// <summary>
+    /// Reads a DS2 per-map param with its paramdef applied, returning it with the path it should be written to
+    /// </summary>
+    private (Param Param, string WritePath) ReadDS2Param(Func<ProjectEntry, string, bool, ResourceDescriptor> locate, string mapId)
     {
-        if (View.Project.Descriptor.ProjectType == ProjectType.DS3)
+        ResourceDescriptor readDescriptor = locate(View.Project, mapId, false);
+        ResourceDescriptor writeDescriptor = locate(View.Project, mapId, true);
+
+        Param param = Param.Read(readDescriptor.AssetPath);
+        PARAMDEF layout = ParamLocator.GetParamdefForParam(View.Project, param.ParamType);
+        param.ApplyParamdef(layout);
+
+        return (param, writeDescriptor.AssetPath);
+    }
+
+    /// <summary>
+    /// Writes a DS2 per-map param via a temp file, keeping .bak (first save) and .prev backups if enabled
+    /// </summary>
+    private static void WriteDS2Param(Param param, string path)
+    {
+        var tempPath = path + ".temp";
+
+        if (File.Exists(tempPath))
         {
-            return DCX.Type.DCX_DFLT_10000_44_9;
+            File.Delete(tempPath);
         }
 
-        if (View.Project.Descriptor.ProjectType == ProjectType.ER)
+        param.Write(tempPath, DCX.Type.None);
+
+        if (File.Exists(path))
         {
-            return DCX.Type.DCX_DFLT_10000_44_9;
+            if (CFG.Current.Project_Enable_Backup_Saves)
+            {
+                if (!File.Exists(path + ".bak"))
+                {
+                    File.Copy(path, path + ".bak", true);
+                }
+
+                File.Copy(path, path + ".prev", true);
+            }
+
+            File.Delete(path);
         }
 
-        if (View.Project.Descriptor.ProjectType == ProjectType.NR)
-        {
-            return DCX.Type.DCX_DFLT_11000_44_9_15;
-        }
-
-        if (View.Project.Descriptor.ProjectType == ProjectType.DB)
-        {
-            return DCX.Type.DCX_DFLT_11000_44_9_15;
-        }
-
-        if (View.Project.Descriptor.ProjectType == ProjectType.DB_NT)
-        {
-            return DCX.Type.DCX_DFLT_11000_44_9_15;
-        }
-
-        if (View.Project.Descriptor.ProjectType == ProjectType.AC6)
-        {
-            return DCX.Type.DCX_KRAK_MAX;
-        }
-        else if (View.Project.Descriptor.ProjectType == ProjectType.DS2S || View.Project.Descriptor.ProjectType == ProjectType.DS2)
-        {
-            return DCX.Type.None;
-        }
-        else if (View.Project.Descriptor.ProjectType == ProjectType.SDT)
-        {
-            return DCX.Type.DCX_DFLT_10000_44_9;
-        }
-        else if (View.Project.Descriptor.ProjectType == ProjectType.BB)
-        {
-            return DCX.Type.DCX_DFLT_10000_44_9;
-        }
-        else if (View.Project.Descriptor.ProjectType == ProjectType.DES)
-        {
-            return DCX.Type.None;
-        }
-
-        return DCX.Type.None;
+        File.Move(tempPath, path);
     }
 
     public bool SaveBTL(MapEditorView view, MapContainer map)
@@ -1303,17 +1044,6 @@ public class MapUniverse : IUniverse
     }
 
     public void UnloadAllMaps()
-    {
-        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
-        {
-            if (entry.Value.MapContainer != null)
-            {
-                UnloadMap(entry.Key.Filename);
-            }
-        }
-    }
-
-    public void UnloadAll(bool clearFromList = false)
     {
         foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {

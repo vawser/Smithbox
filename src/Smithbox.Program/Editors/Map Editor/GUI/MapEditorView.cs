@@ -1,5 +1,4 @@
-﻿using CsvHelper.Configuration.Attributes;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
@@ -29,12 +28,13 @@ public class MapEditorView : IEditorView
 
     public MapUniverse Universe;
 
-    public AutoInvadeBank AutoInvadeBank;
-    public HavokCollisionBank HavokCollisionBank;
-    public HavokNavmeshBank HavokNavmeshBank;
-    public LightAtlasBank LightAtlasBank;
-    public LightProbeBank LightProbeBank;
-    public AssetConfigurationBank AssetConfigurationBank;
+    // Project-level banks, shared by all views
+    public AutoInvadeBank AutoInvadeBank => Project.Handler.MapData.AutoInvadeBank;
+    public HavokCollisionBank HavokCollisionBank => Project.Handler.MapData.HavokCollisionBank;
+    public HavokNavmeshBank HavokNavmeshBank => Project.Handler.MapData.HavokNavmeshBank;
+    public LightAtlasBank LightAtlasBank => Project.Handler.MapData.LightAtlasBank;
+    public LightProbeBank LightProbeBank => Project.Handler.MapData.LightProbeBank;
+    public AssetConfigurationBank AssetConfigurationBank => Project.Handler.MapData.AssetConfigurationBank;
 
 
     public MapSelection Selection;
@@ -120,13 +120,6 @@ public class MapEditorView : IEditorView
         ViewportHandler = new(this);
 
         EntityTypeCache = new MapEntityTypeCache(this, project);
-
-        HavokCollisionBank = new HavokCollisionBank(this, project);
-        HavokNavmeshBank = new HavokNavmeshBank(this, project);
-        AutoInvadeBank = new AutoInvadeBank(this, project);
-        LightAtlasBank = new LightAtlasBank(this, project);
-        LightProbeBank = new LightProbeBank(this, project);
-        AssetConfigurationBank = new AssetConfigurationBank(this, project);
 
         Selection = new(this, project);
 

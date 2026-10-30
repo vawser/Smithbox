@@ -8,7 +8,6 @@ namespace StudioCore.Editors.MapEditor;
 
 public class HavokNavmeshBank
 {
-    public MapEditorView View;
     public ProjectEntry Project;
 
     public Dictionary<string, NVA> Files = new();
@@ -16,9 +15,8 @@ public class HavokNavmeshBank
 
     public Dictionary<string, hkRootLevelContainer> HKX3_Containers = new Dictionary<string, hkRootLevelContainer>();
 
-    public HavokNavmeshBank(MapEditorView view, ProjectEntry project)
+    public HavokNavmeshBank(ProjectEntry project)
     {
-        View = view;
         Project = project;
     }
 

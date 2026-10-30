@@ -9,7 +9,6 @@ namespace StudioCore.Editors.MapEditor;
 
 public class HavokCollisionBank
 {
-    public MapEditorView View;
     public ProjectEntry Project;
 
     public Dictionary<string, hkRootLevelContainer> HavokContainers = new Dictionary<string, hkRootLevelContainer>();
@@ -18,9 +17,8 @@ public class HavokCollisionBank
 
     public HavokCollisionType VisibleCollisionType = HavokCollisionType.Low;
 
-    public HavokCollisionBank(MapEditorView view, ProjectEntry project)
+    public HavokCollisionBank(ProjectEntry project)
     {
-        View = view;
         Project = project;
 
         VisibleCollisionType = CFG.Current.CurrentHavokCollisionType;
