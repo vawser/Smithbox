@@ -69,6 +69,10 @@ public class ModelEditorView : IEditorView
 
         EntityTypeCache = new(this, project);
 
+        // The action history is cleared whenever the loaded model changes, so every action applies to the loaded model
+        ViewportActionManager.ActionPerformed += MarkLoadedModelDirty;
+        ActionManager.ActionPerformed += MarkLoadedModelDirty;
+
         Universe = new ModelUniverse(this, project);
 
         ViewportWindow = new(this, project);
@@ -96,6 +100,14 @@ public class ModelEditorView : IEditorView
         GotoAction = new GotoAction(this, Project);
         PullToCameraAction = new PullToCameraAction(this, Project);
         ReorderAction = new ReorderAction(this, Project);
+    }
+
+    private void MarkLoadedModelDirty()
+    {
+        if (Selection.SelectedModelWrapper != null)
+        {
+            Selection.SelectedModelWrapper.IsDirty = true;
+        }
     }
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)

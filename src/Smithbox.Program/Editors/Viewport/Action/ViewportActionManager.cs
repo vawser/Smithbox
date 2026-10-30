@@ -14,6 +14,11 @@ public class ViewportActionManager
 
     private readonly Stack<ViewportAction> UndoStack = new();
 
+    /// <summary>
+    /// Raised whenever an action is executed, undone or redone, regardless of the event it returns
+    /// </summary>
+    public event Action ActionPerformed;
+
     public void AddEventHandler(IActionEventHandler handler)
     {
         _eventHandlers.Add(handler);
@@ -35,6 +40,7 @@ public class ViewportActionManager
     public void ExecuteAction(ViewportAction a)
     {
         NotifyHandlers(a.Execute());
+        ActionPerformed?.Invoke();
         UndoStack.Push(a);
         RedoStack.Clear();
     }
@@ -58,6 +64,7 @@ public class ViewportActionManager
 
         ViewportAction a = UndoStack.Pop();
         NotifyHandlers(a.Undo());
+        ActionPerformed?.Invoke();
         RedoStack.Push(a);
     }
 
@@ -72,6 +79,7 @@ public class ViewportActionManager
         {
             ViewportAction a = UndoStack.Pop();
             NotifyHandlers(a.Undo());
+            ActionPerformed?.Invoke();
             RedoStack.Push(a);
         }
     }
@@ -85,6 +93,7 @@ public class ViewportActionManager
 
         ViewportAction a = RedoStack.Pop();
         NotifyHandlers(a.Execute(true));
+        ActionPerformed?.Invoke();
         UndoStack.Push(a);
     }
 

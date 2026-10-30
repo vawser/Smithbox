@@ -14,6 +14,11 @@ public class ActionManager
 
     private readonly Stack<EditorAction> UndoStack = new();
 
+    /// <summary>
+    /// Raised whenever an action is executed, undone or redone, regardless of the event it returns
+    /// </summary>
+    public event Action ActionPerformed;
+
     public void AddEventHandler(IActionEventHandler handler)
     {
         _eventHandlers.Add(handler);
@@ -35,6 +40,7 @@ public class ActionManager
     public void ExecuteAction(EditorAction a)
     {
         NotifyHandlers(a.Execute());
+        ActionPerformed?.Invoke();
         UndoStack.Push(a);
         RedoStack.Clear();
         CacheBank.ClearCaches();
@@ -45,6 +51,7 @@ public class ActionManager
         List<EditorAction> childList = child.UndoStack.ToList();
         childList.Reverse();
         UndoStack.Push(new CompoundAction(childList));
+        ActionPerformed?.Invoke();
         RedoStack.Clear();
         CacheBank.ClearCaches();
     }
@@ -68,6 +75,7 @@ public class ActionManager
 
         EditorAction a = UndoStack.Pop();
         NotifyHandlers(a.Undo());
+        ActionPerformed?.Invoke();
         RedoStack.Push(a);
         CacheBank.ClearCaches();
     }
@@ -83,6 +91,7 @@ public class ActionManager
         {
             EditorAction a = UndoStack.Pop();
             NotifyHandlers(a.Undo());
+            ActionPerformed?.Invoke();
             RedoStack.Push(a);
             CacheBank.ClearCaches();
         }
@@ -97,6 +106,7 @@ public class ActionManager
 
         EditorAction a = RedoStack.Pop();
         NotifyHandlers(a.Execute());
+        ActionPerformed?.Invoke();
         UndoStack.Push(a);
         CacheBank.ClearCaches();
     }

@@ -73,6 +73,12 @@ public class ModelFileList
             if (!isMatch)
                 continue;
 
+            // Mark models with unsaved changes
+            if (curWrapper.IsDirty)
+            {
+                displayedName = $"{displayedName}*";
+            }
+
             if (ImGui.Selectable($"{displayedName}##modelSelectListEntry{i}", selected, ImGuiSelectableFlags.AllowDoubleClick))
             {
                 if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))

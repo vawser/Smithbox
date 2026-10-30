@@ -241,7 +241,15 @@ public class ModelContainerList
                     flags = ImGuiSelectableFlags.AllowDoubleClick;
                 }
 
-                if (ImGui.Selectable($"{displayedName}##modelSourceListEntry{modelListType.ToString()}{i}", selected, 
+                // Mark containers that contain models with unsaved changes
+                var labelName = displayedName;
+
+                if (Project.Handler.ModelData.PrimaryBank.Models.TryGetValue(fileEntry, out var containerWrapper) && containerWrapper.IsDirty())
+                {
+                    labelName = $"{labelName}*";
+                }
+
+                if (ImGui.Selectable($"{labelName}##modelSourceListEntry{modelListType.ToString()}{i}", selected, 
                     flags))
                 {
                     SelectModel(fileEntry);

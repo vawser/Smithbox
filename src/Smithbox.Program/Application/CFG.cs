@@ -615,8 +615,8 @@ public class CFG
     public bool Interface_ModelEditor_Tool_ModelExport = true;
 
     // Saving
-    public bool ModelEditor_AutomaticSave_IncludeFLVER = true;
-    public bool ModelEditor_ManualSave_IncludeFLVER = true;
+    public bool ModelEditor_Allow_Unmodified_Save = false;
+    public bool ModelEditor_Allow_Automatic_Save = true;
     public bool AutomaticSave_ModelEditor = true;
 
     #endregion

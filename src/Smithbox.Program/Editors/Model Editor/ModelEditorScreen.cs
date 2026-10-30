@@ -99,40 +99,32 @@ public class ModelEditorScreen : EditorScreen
             {
                 Save();
             }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_Save_TT"));
+
+            // Save All
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##saveAllAction"))
+            {
+                SaveAll();
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_SaveAll_TT"));
 
             ImGui.Separator();
 
-            // Manual Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Manual_Save_Output")}##manualSaveMenuHeader"))
+            // Allow Unmodified Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                // FLVER
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_FLVER_TT")}##manualToggle_flver"))
-                {
-                    CFG.Current.ModelEditor_ManualSave_IncludeFLVER = !CFG.Current.ModelEditor_ManualSave_IncludeFLVER;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_FLVER_TT"));
-                GUI.ShowActiveStatus(CFG.Current.ModelEditor_ManualSave_IncludeFLVER);
-
-
-                ImGui.EndMenu();
+                CFG.Current.ModelEditor_Allow_Unmodified_Save = !CFG.Current.ModelEditor_Allow_Unmodified_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_Allow_Unmodified_Save);
 
-            // Automatic Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
+            // Allow Automatic Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                // FLVER
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_FLVER_TT")}##autoToggle_flver"))
-                {
-                    CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER = !CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_FLVER_TT"));
-                GUI.ShowActiveStatus(CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER);
-
-                ImGui.EndMenu();
+                CFG.Current.ModelEditor_Allow_Automatic_Save = !CFG.Current.ModelEditor_Allow_Automatic_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
-
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -355,13 +347,32 @@ public class ModelEditorScreen : EditorScreen
         if (activeView == null)
             return;
 
-        if (!autoSave && CFG.Current.ModelEditor_ManualSave_IncludeFLVER ||
-        autoSave && CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER)
+        if (autoSave && CFG.Current.ModelEditor_Allow_Automatic_Save || !autoSave)
         {
             if (activeView.Selection.SelectedModelWrapper != null)
             {
                 activeView.Selection.SelectedModelWrapper.Save();
             }
+        }
+
+        // Save the configuration JSONs
+        Smithbox.Instance.SaveConfiguration();
+    }
+
+    /// <summary>
+    /// Save all modified models, including those that are not currently loaded
+    /// </summary>
+    public void SaveAll(bool autoSave = false)
+    {
+        if (Project.Descriptor.ProjectType == ProjectType.DES)
+        {
+            Smithbox.Log(this, LOC.Get("MODEL_Editor_Invalid_Save_Project_Type_DES"), LogLevel.Warning);
+            return;
+        }
+
+        if (autoSave && CFG.Current.ModelEditor_Allow_Automatic_Save || !autoSave)
+        {
+            Project.Handler.ModelData.PrimaryBank.SaveAllModels();
         }
 
         // Save the configuration JSONs
