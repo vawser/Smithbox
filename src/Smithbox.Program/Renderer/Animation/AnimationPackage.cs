@@ -281,6 +281,15 @@ public sealed class AnimationPackage : IDisposable
             : file.ID >= FirstAnimationId;
     }
 
+    /// <summary>
+    ///     Finds an animation by the ID that maps and events refer to it with.
+    /// </summary>
+    public AnimationEntry? FindAnimation(int animationId)
+    {
+        // Binder IDs of later games have 1000000000 added on top of the animation ID
+        return Animations.Find(a => a.Id % FirstAnimationId == animationId);
+    }
+
     private static string NormalizeName(string name)
     {
         return Path.GetFileName(name.Replace('\\', '/'));

@@ -6,6 +6,7 @@ using StudioCore.Logger;
 using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -36,12 +37,17 @@ public sealed record AnimationTarget(
 /// </summary>
 public class AnimationPreviewPanel
 {
+    private const int PendingBudgetMilliseconds = 8;
+
     private readonly ProjectEntry _project;
 
     // Every placement of a model shares the same animations
     private readonly Dictionary<string, Task<LoadedModel?>> _models = new(StringComparer.OrdinalIgnoreCase);
 
     private readonly Dictionary<object, ActiveAnimation> _active = new();
+
+    // Requests wait here for their model to load
+    private readonly List<PendingAnimation> _pending = new();
 
     private string _filter = "";
 
@@ -58,6 +64,8 @@ public class AnimationPreviewPanel
     /// </summary>
     public void Update()
     {
+        StartPendingAnimations();
+
         if (_active.Count == 0)
         {
             return;
@@ -84,10 +92,53 @@ public class AnimationPreviewPanel
     }
 
     /// <summary>
+    ///     Plays an animation once the model has loaded, for starting many at once without waiting on each.
+    /// </summary>
+    /// <param name="target">What to animate.</param>
+    /// <param name="selectAnimation">Picks the animation. Null leaves the target alone.</param>
+    public void QueueAnimation(AnimationTarget target, Func<AnimationPackage, AnimationEntry?> selectAnimation)
+    {
+        _pending.Add(new PendingAnimation(target, GetOrLoadModel(target), selectAnimation));
+    }
+
+    private void StartPendingAnimations()
+    {
+        if (_pending.Count == 0)
+        {
+            return;
+        }
+
+        // Decoding clips and uploading skin data adds up over a whole map, so spread it across frames
+        var timer = Stopwatch.StartNew();
+
+        for (var i = _pending.Count - 1; i >= 0 && timer.ElapsedMilliseconds < PendingBudgetMilliseconds; i--)
+        {
+            PendingAnimation pending = _pending[i];
+            if (!pending.Load.IsCompleted)
+            {
+                continue;
+            }
+
+            _pending.RemoveAt(i);
+
+            if (pending.Load.IsCompletedSuccessfully && pending.Load.Result is { } model && pending.Target.IsAlive() &&
+                pending.SelectAnimation(model.Package) is { } entry)
+            {
+                Play(pending.Target, model, entry);
+            }
+        }
+    }
+
+    /// <summary>
     ///     Displays the list of playing animations, for editors that can animate several things at once.
     /// </summary>
     public void DisplayActiveSummary()
     {
+        if (_pending.Count > 0)
+        {
+            GUI.WrappedText($"Starting {_pending.Count} more...");
+        }
+
         if (_active.Count == 0)
         {
             return;
@@ -246,6 +297,8 @@ public class AnimationPreviewPanel
 
     public void StopAll()
     {
+        _pending.Clear();
+
         foreach (var key in _active.Keys.ToArray())
         {
             Stop(key);
@@ -256,7 +309,7 @@ public class AnimationPreviewPanel
     {
         foreach ((var name, Task<LoadedModel?> load) in _models.ToArray())
         {
-            if (!load.IsCompleted)
+            if (!load.IsCompleted || _pending.Any(p => p.Load == load))
             {
                 continue;
             }
@@ -318,6 +371,11 @@ public class AnimationPreviewPanel
     }
 
     private sealed record LoadedModel(AnimationPackage Package, ModelRig Rig);
+
+    private sealed record PendingAnimation(
+        AnimationTarget Target,
+        Task<LoadedModel?> Load,
+        Func<AnimationPackage, AnimationEntry?> SelectAnimation);
 
     private sealed record ActiveAnimation(
         AnimationTarget Target,
