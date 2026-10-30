@@ -67,6 +67,11 @@ public unsafe class FlverSubmeshProvider : MeshProvider
 
     public string MeshName => _resource.Name;
 
+    /// <summary>
+    ///     Index of this mesh within its FLVER.
+    /// </summary>
+    public int MeshIndex => _meshIndex;
+
     public override bool TryLock()
     {
         return true;

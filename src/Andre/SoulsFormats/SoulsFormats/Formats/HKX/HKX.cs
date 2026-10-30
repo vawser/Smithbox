@@ -517,6 +517,11 @@ namespace SoulsFormats
                             hkobject = new HKASplineCompressedAnimation();
                             hkobject.Read(hkx, this, br, variation);
                         }
+                        else if (reference.ClassName.ClassName == "hkaInterleavedUncompressedAnimation")
+                        {
+                            hkobject = new HKAInterleavedUncompressedAnimation();
+                            hkobject.Read(hkx, this, br, variation);
+                        }
                         else if (reference.ClassName.ClassName == "hkaAnimationBinding")
                         {
                             hkobject = new HKAAnimationBinding();

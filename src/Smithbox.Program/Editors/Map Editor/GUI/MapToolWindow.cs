@@ -210,6 +210,14 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_Animation)
+        {
+            if (ImGui.CollapsingHeader("Animation"))
+            {
+                View.MapAnimationTool.OnToolWindow();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_Tool_Validation)
         {
             if (ImGui.CollapsingHeader("Validation"))
@@ -318,6 +326,12 @@ public class MapToolWindow
                 CFG.Current.Interface_MapEditor_Tool_ModelSelector = !CFG.Current.Interface_MapEditor_Tool_ModelSelector;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_ModelSelector);
+
+            if (ImGui.MenuItem("Animation"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_Animation = !CFG.Current.Interface_MapEditor_Tool_Animation;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Animation);
 
             if (ImGui.MenuItem("Display Groups"))
             {

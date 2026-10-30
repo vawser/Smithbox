@@ -54,6 +54,8 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     public Matrix4x4 _world = Matrix4x4.Identity;
     public GPUBufferAllocator.GPUBufferHandle? _worldBuffer;
 
+    private ModelAnimator? _animator;
+
     public event Action<MeshRenderableProxy>? MeshAvailabilityChanged;
 
     public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true, string name = "", int? submeshIndex = null)
@@ -120,6 +122,23 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
             {
                 sm.World = _world;
+            }
+        }
+    }
+
+    /// <summary>
+    ///     Drives this mesh from an animator instead of its static pose. Null returns it to the static pose.
+    /// </summary>
+    public ModelAnimator? Animator
+    {
+        get => _animator;
+        set
+        {
+            _animator = value;
+            ScheduleRenderableUpdate();
+            foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
+            {
+                sm.Animator = value;
             }
         }
     }
@@ -265,6 +284,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             child.Visible = _visible;
             child.DrawFilter = _drawfilter;
             child.DrawGroups = _drawgroups;
+            child.Animator = _animator;
 
             // Children are created once the provider has loaded (async), which can be after the
             // outline was requested on this proxy. Without this they never get the selection outline.
@@ -597,7 +617,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         meshcomp._bufferIndex = geombuffer.BufferIndex;
 
         // Instantiate renderable
-        BoundingBox bounds = BoundingBox.Transform(_meshProvider.Bounds, _meshProvider.ObjectTransform * _world);
+        BoundingBox bounds = GetWorldBounds();
         _renderable = _renderablesSet.CreateMesh(ref bounds, ref meshcomp);
         _renderablesSet.cRenderKeys[_renderable] = GetRenderKey(0.0f);
 
@@ -606,21 +626,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         _renderablesSet.cSelectionPipelines[_renderable] = _pickingPipeline;
 
         // Update instance data
-        InstanceData dat = new();
-        dat.WorldMatrix = _meshProvider.ObjectTransform * _world;
-
-        dat.MaterialID = _meshProvider.MaterialIndex;
-
-        if (_meshProvider.BoneBuffer != null)
-        {
-            dat.BoneStartIndex = _meshProvider.BoneBuffer.AllocationStart / 64;
-        }
-        else
-        {
-            dat.BoneStartIndex = 0;
-        }
-
-        dat.EntityID = GetPackedEntityID(_renderablesSet.RenderableSystemIndex, _renderable);
+        InstanceData dat = CreateInstanceData();
         _worldBuffer.FillBuffer(gd, cl, ref dat);
 
         // Selectable
@@ -673,19 +679,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             return;
         }
 
-        InstanceData dat = new();
-        dat.WorldMatrix = _meshProvider.ObjectTransform * _world;
-        dat.MaterialID = _meshProvider.MaterialIndex;
-        if (_meshProvider.BoneBuffer != null)
-        {
-            dat.BoneStartIndex = _meshProvider.BoneBuffer.AllocationStart / 64;
-        }
-        else
-        {
-            dat.BoneStartIndex = 0;
-        }
-
-        dat.EntityID = GetPackedEntityID(_renderablesSet.RenderableSystemIndex, _renderable);
+        InstanceData dat = CreateInstanceData();
         if (_worldBuffer == null)
         {
             _worldBuffer =
@@ -696,15 +690,64 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         if (_renderable != -1)
         {
-            _renderablesSet.cBounds[_renderable] =
-                BoundingBox.Transform(_meshProvider.Bounds, _meshProvider.ObjectTransform * _world);
+            _renderablesSet.cBounds[_renderable] = GetWorldBounds();
         }
 
         if (_selectionOutlineRenderable != -1)
         {
-            _renderablesSet.cBounds[_selectionOutlineRenderable] =
-                BoundingBox.Transform(_meshProvider.Bounds, _meshProvider.ObjectTransform * _world);
+            _renderablesSet.cBounds[_selectionOutlineRenderable] = GetWorldBounds();
         }
+    }
+
+    private InstanceData CreateInstanceData()
+    {
+        InstanceData dat = new();
+        dat.WorldMatrix = _meshProvider.ObjectTransform * _world;
+        dat.MaterialID = _meshProvider.MaterialIndex;
+
+        if (_meshProvider.BoneBuffer != null)
+        {
+            dat.BoneStartIndex = _meshProvider.BoneBuffer.AllocationStart / 64;
+        }
+        else
+        {
+            dat.BoneStartIndex = 0;
+        }
+
+        if (_animator != null && _meshProvider is FlverSubmeshProvider flverMesh &&
+            _meshProvider.GeometryBuffer != null)
+        {
+            var vertexOffset = _meshProvider.GeometryBuffer.VAllocationStart / _meshProvider.VertexSize;
+
+            if (_animator.TryGetMeshState(flverMesh.MeshIndex, vertexOffset, out var boneStart, out var skinReference,
+                    out Matrix4x4? transform))
+            {
+                dat.BoneStartIndex = boneStart;
+                dat.SkinReference = skinReference;
+
+                if (transform != null)
+                {
+                    dat.WorldMatrix = transform.Value * _world;
+                }
+            }
+        }
+
+        dat.EntityID = GetPackedEntityID(_renderablesSet.RenderableSystemIndex, _renderable);
+        return dat;
+    }
+
+    private BoundingBox GetWorldBounds()
+    {
+        BoundingBox bounds = BoundingBox.Transform(_meshProvider.Bounds, _meshProvider.ObjectTransform * _world);
+
+        if (_animator != null)
+        {
+            // Culling cannot see the vertex shader, and limbs can swing well outside the rest pose
+            Vector3 margin = (bounds.Max - bounds.Min) * 1.5f + Vector3.One;
+            bounds = new BoundingBox(bounds.Min - margin, bounds.Max + margin);
+        }
+
+        return bounds;
     }
 
     public override void DestroyRenderables()

@@ -38,6 +38,10 @@ layout(set = 7, binding = 0, std140) buffer BoneBuffer
     readonly mat4 bones[];
 };
 
+layout(set = 7, binding = 0, std430) buffer SkinBuffer
+{
+    readonly uvec4 skin[];
+};
 layout (constant_id = 50) const bool c_normalWBoneTransform = false;
 
 layout(location = 0) in vec3 position;
@@ -64,6 +68,32 @@ layout(location = 9) flat out uint fsin_entityid;
 // UVs are stored as signed 16 bit fixed point with 11 fractional bits
 const float UV_SCALE = 1.0 / 2048.0;
 
+// materialID.z is 0 unless the instance is being animated, which keeps static models untouched:
+//   1            - rigid, the bone only needs to reach the normals as well
+//   high bit set - weighted, the low bits plus gl_VertexIndex index the skin data
+mat4 GetBoneMatrix()
+{
+	uint skinRef = idata[gl_InstanceIndex].materialID.z;
+	uint boneBase = idata[gl_InstanceIndex].materialID.y;
+
+	if ((skinRef & 0x80000000u) != 0u)
+	{
+		uvec4 s = skin[(skinRef + uint(gl_VertexIndex)) & 0x7FFFFFFFu];
+		vec4 weights = unpackUnorm4x8(s.z);
+
+		return bones[boneBase + (s.x & 0xFFFFu)] * weights.x +
+			bones[boneBase + (s.x >> 16)] * weights.y +
+			bones[boneBase + (s.y & 0xFFFFu)] * weights.z +
+			bones[boneBase + (s.y >> 16)] * weights.w;
+	}
+
+	if (c_normalWBoneTransform)
+	{
+		return bones[boneBase + normal.w];
+	}
+
+	return mat4(1.0);
+}
 void main()
 {
 	mat4 w = idata[gl_InstanceIndex].world;
@@ -79,18 +109,13 @@ void main()
 	fsin_mat = idata[gl_InstanceIndex].materialID.x;
 	fsin_entityid = idata[gl_InstanceIndex].materialID.w;
 
-	vec4 localPos = vec4(position, 1.0);
-	if (c_normalWBoneTransform)
-	{
-		localPos = bones[idata[gl_InstanceIndex].materialID.y + normal.w] * localPos;
-	}
-
-	vec4 worldPos = w * localPos;
+	mat4 bone = GetBoneMatrix();
+	vec4 worldPos = w * bone * vec4(position, 1.0);
 	fsin_worldpos = worldPos.xyz;
 
 	// Normals need the inverse transpose of the world matrix to stay correct under non-uniform scale.
 	// Tangents are directions along the surface, so they use the matrix itself.
-	mat3 wm = mat3(w);
+	mat3 wm = mat3(idata[gl_InstanceIndex].materialID.z != 0u ? w * bone : w);
 	mat3 normalMatrix = wm;
 	if (abs(determinant(wm)) > 1e-12)
 	{

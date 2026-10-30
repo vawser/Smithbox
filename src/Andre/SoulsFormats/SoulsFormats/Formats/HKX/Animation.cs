@@ -222,6 +222,53 @@ namespace SoulsFormats
             }
         }
 
+        public class HKAInterleavedUncompressedAnimation : HKXObject
+        {
+            public AnimationType AnimationType;
+            public float Duration;
+            public int TransformTrackCount;
+            public int FloatTrackCount;
+            public HKArray<Transform> Transforms;
+            public HKArray<HKFloat> Floats;
+
+            public override void Read(HKX hkx, HKXSection section, BinaryReaderEx br, HKXVariation variation)
+            {
+                SectionOffset = (uint)br.Position;
+
+                AssertPointer(hkx, br);
+
+                if (variation == HKXVariation.HKXBloodBorne)
+                    br.AssertInt32(0);
+                else
+                    AssertPointer(hkx, br);
+
+                AnimationType = br.ReadEnum32<AnimationType>();
+                Duration = br.ReadSingle();
+                TransformTrackCount = br.ReadInt32();
+                FloatTrackCount = br.ReadInt32();
+
+                if (variation == HKXVariation.HKXBloodBorne)
+                    br.Pad(16);
+
+                // Annotations
+                if (variation == HKXVariation.HKXDS1)
+                    br.ReadInt64s(2);
+                else
+                    br.ReadInt64s(3);
+
+                Transforms = new HKArray<Transform>(hkx, section, this, br, variation);
+                Floats = new HKArray<HKFloat>(hkx, section, this, br, variation);
+
+                DataSize = (uint)br.Position - SectionOffset;
+                ResolveDestinations(hkx, section);
+            }
+
+            public override void Write(HKX hkx, HKXSection section, BinaryWriterEx bw, uint sectionBaseOffset, HKXVariation variation)
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public class HKAAnimationBinding : HKXObject
         {
             public HKArray<HKShort> TransformTrackToBoneIndices;

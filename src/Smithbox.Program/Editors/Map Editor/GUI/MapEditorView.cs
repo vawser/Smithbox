@@ -93,6 +93,7 @@ public class MapEditorView : IEditorView
     public WorldMapTool WorldMapTool;
     public EntityIdentifierTool EntityIdentifierTool;
     public MapGridTool MapGridTool;
+    public MapAnimationTool MapAnimationTool;
     public WorldMapLayoutTool WorldMapLayoutTool;
     public MapListFilterTool MapListFilterTool;
     public MapValidatorTool MapValidatorTool;
@@ -178,6 +179,7 @@ public class MapEditorView : IEditorView
         NavmeshBuilderTool = new NavmeshBuilderTool(this, project);
         EntityIdentifierTool = new EntityIdentifierTool(this, project);
         MapGridTool = new MapGridTool(this, project);
+        MapAnimationTool = new MapAnimationTool(this, project);
         WorldMapTool = new WorldMapTool(this, project);
         WorldMapLayoutTool = new WorldMapLayoutTool(this, project);
         MapListFilterTool = new MapListFilterTool(this, project);
@@ -207,6 +209,7 @@ public class MapEditorView : IEditorView
 
         MapListFilterTool.Update();
         LocalSearchView.Update();
+        MapAnimationTool.Update();
 
         WorldMapTool.DisplayPopup();
 
