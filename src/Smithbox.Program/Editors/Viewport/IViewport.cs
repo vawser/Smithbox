@@ -20,5 +20,6 @@ public interface IViewport
     public void Draw(GraphicsDevice device, CommandList cl);
     public void SetEnvMap(uint index);
     public void FrameBox(BoundingBox box, Vector3 offset, float distance = 5);
+    public void FitBox(BoundingBox box);
     public void FramePosition(Vector3 pos, float dist);
 }

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Threading.Tasks;
+using Veldrid.Utilities;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -262,6 +263,34 @@ public class ModelContainer : ObjectContainer
         Entity.BuildReferenceMaps(Objects);
         // Add references after all others
         RootObject.BuildReferenceMap();
+    }
+
+    /// <summary>
+    ///     Gets the bounds of all the meshes. Returns false if the mesh resources haven't finished loading yet.
+    /// </summary>
+    public bool TryGetMeshBounds(out BoundingBox bounds)
+    {
+        bounds = new BoundingBox();
+
+        var hasBounds = false;
+
+        foreach (var ent in Meshes)
+        {
+            if (ent.RenderSceneMesh is not MeshRenderableProxy mesh)
+                continue;
+
+            if (!mesh._meshProvider.IsAvailable())
+                return false;
+
+            // Meshes without facesets have no bounds of their own
+            if (!mesh.HasRenderableGeometry())
+                continue;
+
+            bounds = hasBounds ? BoundingBox.Combine(bounds, mesh.GetBounds()) : mesh.GetBounds();
+            hasBounds = true;
+        }
+
+        return hasBounds;
     }
 
     public void Unload()

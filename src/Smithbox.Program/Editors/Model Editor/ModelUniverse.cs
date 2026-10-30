@@ -79,6 +79,8 @@ public class ModelUniverse : IUniverse
         {
             Selection.ClearSelection();
             Selection.AddSelection(newContainer.RootObject);
+
+            View.ViewportWindow.PendingFrameContainer = newContainer;
         }
 
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
@@ -401,6 +403,7 @@ public class ModelUniverse : IUniverse
         View.ViewportSelection.ClearSelection();
         View.ViewportActionManager.Clear();
         View.ActionManager.Clear();
+        View.ViewportWindow.PendingFrameContainer = null;
 
         ResourceManager.ClearUnusedResources();
 

@@ -25,6 +25,9 @@ public class ModelViewportWindow
     public EdgePointEntity EndEdgePoint;
     public EdgePointEntity PullEdgePoint;
 
+    // The model to frame once its meshes have loaded
+    public ModelContainer PendingFrameContainer;
+
     public ModelViewportWindow(ModelEditorView view, ProjectEntry project)
     {
         View = view;
@@ -54,6 +57,8 @@ public class ModelViewportWindow
         if (Viewport is VulkanViewport vulkanViewport)
         {
             vulkanViewport.Display();
+
+            UpdatePendingFrame();
 
             // Start Edge Point
             if (View.Universe != null && StartEdgePoint == null)
@@ -89,6 +94,23 @@ public class ModelViewportWindow
         if (Viewport is NullViewport nullViewport)
         {
             nullViewport.Display();
+        }
+    }
+
+    /// <summary>
+    /// Mesh bounds are only known once the resource manager has committed the model,
+    /// which happens on the main thread some frames after the load was requested.
+    /// </summary>
+    private void UpdatePendingFrame()
+    {
+        if (PendingFrameContainer == null)
+            return;
+
+        if (PendingFrameContainer.TryGetMeshBounds(out var bounds))
+        {
+            Viewport.FitBox(bounds);
+
+            PendingFrameContainer = null;
         }
     }
 

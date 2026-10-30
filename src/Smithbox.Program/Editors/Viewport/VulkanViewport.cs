@@ -419,6 +419,43 @@ public class VulkanViewport : IViewport
     }
 
     /// <summary>
+    ///     Moves the camera such that the whole bounding box is visible, whichever way the camera
+    ///     is facing. Camera will face the same direction as before.
+    /// </summary>
+    /// <param name="box">The bounding box to fit into the view</param>
+    public void FitBox(BoundingBox box)
+    {
+        // Slightly larger than the box so the model doesn't touch the viewport edges
+        float radius = Vector3.Distance(box.Max, box.Min) * 0.5f * 1.05f;
+
+        if (radius <= 0 || Width <= 0 || Height <= 0)
+        {
+            return;
+        }
+
+        float aspectRatio = Width / (float)Height;
+        float dist = radius;
+
+        if (ViewportCamera.ViewMode is ViewMode.Perspective)
+        {
+            float halfFovY = CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 360.0f;
+            float halfFovX = (float)Math.Atan(Math.Tan(halfFovY) * aspectRatio);
+
+            // The near clip is added so that small models aren't cut by it
+            dist = radius / (float)Math.Sin(Math.Min(halfFovX, halfFovY)) + CFG.Current.Viewport_Perspective_Near_Clip;
+        }
+        else
+        {
+            ViewportCamera.OrthographicSize = Math.Clamp(radius * 2.0f / Math.Min(aspectRatio, 1.0f),
+                ViewportCamera.OrthographicMinSize, ViewportCamera.OrthographicMaxSize);
+
+            ViewportCamera.UpdateProjectionMatrix();
+        }
+
+        FramePosition(box.GetCenter(), dist);
+    }
+
+    /// <summary>
     ///     Moves the camera position such that it is directly looking at a position.
     public void FramePosition(Vector3 pos, float dist)
     {

@@ -87,6 +87,10 @@ public class NullViewport : IViewport
     {
     }
 
+    public void FitBox(BoundingBox box)
+    {
+    }
+
     public void FramePosition(Vector3 pos, float dist)
     {
     }
