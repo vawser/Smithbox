@@ -14,9 +14,11 @@ public class MatRemoveListEntry : EditorAction
     private object OldValue;
     private readonly PropertyInfo Property;
     private Action<bool> PostExecutionAction;
+    private readonly MaterialFileWrapper FileWrapper;
 
-    public MatRemoveListEntry(PropertyInfo prop, object changed, int index)
+    public MatRemoveListEntry(MaterialFileWrapper fileWrapper, PropertyInfo prop, object changed, int index)
     {
+        FileWrapper = fileWrapper;
         ChangedObject = changed;
         Property = prop;
         Index = index;
@@ -33,6 +35,9 @@ public class MatRemoveListEntry : EditorAction
         OldValue = list[Index];
         list.RemoveAt(Index);
 
+        if (FileWrapper != null)
+            FileWrapper.IsDirty = true;
+
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(false);
 
@@ -43,6 +48,9 @@ public class MatRemoveListEntry : EditorAction
     {
         var list = (IList)Property.GetValue(ChangedObject);
         list.Insert(Index, OldValue);
+
+        if (FileWrapper != null)
+            FileWrapper.IsDirty = true;
 
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(true);

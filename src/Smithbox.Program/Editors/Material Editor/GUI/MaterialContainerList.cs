@@ -106,6 +106,12 @@ public class MaterialContainerList
 
                         var displayName = $"{key.Filename}";
 
+                        // Mark binders that contain files with unsaved changes
+                        if (curWrapper.IsDirty())
+                        {
+                            displayName = $"{displayName}*";
+                        }
+
                         if (ImGui.Selectable($"{displayName}##mtdEntry_{key.Filename}{i}", key == Parent.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             Parent.Selection.SelectedBinderEntry = key;
@@ -114,6 +120,7 @@ public class MaterialContainerList
                             Parent.Selection.SelectedFileKey = "";
                             Parent.Selection.SelectedMTD = null;
                             Parent.Selection.SelectedMATBIN = null;
+                            Parent.Selection.SelectedFileWrapper = null;
                         }
                     }
                 }
@@ -160,6 +167,12 @@ public class MaterialContainerList
 
                             var displayName = $"{key.Filename}";
 
+                            // Mark binders that contain files with unsaved changes
+                            if (curWrapper.IsDirty())
+                            {
+                                displayName = $"{displayName}*";
+                            }
+
                             if (ImGui.Selectable($"{displayName}##matbinEntry_{key}", key == Parent.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
                             {
                                 Parent.Selection.SelectedBinderEntry = key;
@@ -168,6 +181,7 @@ public class MaterialContainerList
                                 Parent.Selection.SelectedFileKey = "";
                                 Parent.Selection.SelectedMTD = null;
                                 Parent.Selection.SelectedMATBIN = null;
+                                Parent.Selection.SelectedFileWrapper = null;
                             }
                         }
                     }

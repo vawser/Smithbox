@@ -28,6 +28,11 @@ public class MaterialSelection
 
     public MATBIN SelectedMATBIN { get; set; }
 
+    /// <summary>
+    /// The wrapper for the selected MTD or MATBIN, used to track its modified state
+    /// </summary>
+    public MaterialFileWrapper SelectedFileWrapper { get; set; }
+
     // Focus
     public bool SelectFileListEntry = false;
 }

@@ -557,7 +557,7 @@ public class MaterialProperties
             _lastUncommittedAction = null;
         }
 
-        var action = new MatPropertyChange(View, (PropertyInfo)prop, obj, newval, arrayindex, classIndex);
+        var action = new MatPropertyChange(View, View.Selection.SelectedFileWrapper, (PropertyInfo)prop, obj, newval, arrayindex, classIndex);
         View.ActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;
@@ -598,7 +598,7 @@ public class MaterialProperties
                     newEntry = new MATBIN.Param();
                 }
 
-                var action = new MatAddListEntry(prop, obj, newEntry, list.Count);
+                var action = new MatAddListEntry(View.Selection.SelectedFileWrapper, prop, obj, newEntry, list.Count);
                 View.ActionManager.ExecuteAction(action);
             }
             GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
@@ -681,7 +681,7 @@ public class MaterialProperties
 
                 if (removeIndex != -1)
                 {
-                    var action = new MatRemoveListEntry(prop, obj, removeIndex);
+                    var action = new MatRemoveListEntry(View.Selection.SelectedFileWrapper, prop, obj, removeIndex);
                     View.ActionManager.ExecuteAction(action);
                 }
             }

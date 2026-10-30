@@ -153,38 +153,6 @@
       "Text": "Editor is loading..."
     },
     {
-      "Key": "EDITOR_Menubar_Action_Save",
-      "Text": "Save"
-    },
-    {
-      "Key": "EDITOR_Menubar_Action_Save_TT",
-      "Text": "Save the currently selected file."
-    },
-    {
-      "Key": "EDITOR_Menubar_Action_SaveAll",
-      "Text": "Save All Modified"
-    },
-    {
-      "Key": "EDITOR_Menubar_Action_SaveAll_TT",
-      "Text": "Save all files that have been modified."
-    },
-    {
-      "Key": "EDITOR_Menubar_Allow_Unmodified_Save",
-      "Text": "Allow Unmodified Save"
-    },
-    {
-      "Key": "EDITOR_Menubar_Allow_Unmodified_Save_TT",
-      "Text": "If enabled, saving unmodified files is allowed."
-    },
-    {
-      "Key": "EDITOR_Menubar_Allow_Automatic_Save",
-      "Text": "Allow Automatic Save"
-    },
-    {
-      "Key": "EDITOR_Menubar_Allow_Automatic_Save_TT",
-      "Text": "If enabled, automatic saving can occur."
-    },
-    {
       "Key": "EDITOR_Menubar_Manual_Save_Output_TT",
       "Text": "Determines which files are outputted during the manual saving process."
     },

@@ -1,7 +1,10 @@
 ﻿using Andre.IO.VFS;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Crypto;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.GparamEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Concurrent;
@@ -44,7 +47,7 @@ public class MaterialBank : IDisposable
                 foreach (var kv in wrapper.Entries)
                 {
                     var shortName = Path.GetFileNameWithoutExtension(kv.Key.Replace('\\', Path.DirectorySeparatorChar));
-                    MTDLookup[shortName] = kv.Value;
+                    MTDLookup[shortName] = kv.Value.MTD;
                 }
             }
         });
@@ -58,7 +61,7 @@ public class MaterialBank : IDisposable
                 foreach (var kv in wrapper.Entries)
                 {
                     var shortName = Path.GetFileNameWithoutExtension(kv.Key.Replace('\\', Path.DirectorySeparatorChar));
-                    MATBINLookup[shortName] = kv.Value;
+                    MATBINLookup[shortName] = kv.Value.MATBIN;
                 }
             }
         });
@@ -80,12 +83,12 @@ public class MaterialBank : IDisposable
 
         if(view.Selection.SourceType is MaterialSourceType.MTD)
         {
-            await view.Selection.MTDWrapper.Save(view);
+            return await view.Selection.MTDWrapper.Save(view);
         }
 
         if (view.Selection.SourceType is MaterialSourceType.MATBIN)
         {
-            await view.Selection.MATBINWrapper.Save(view);
+            return await view.Selection.MATBINWrapper.Save(view);
         }
 
         return true;
@@ -112,15 +115,23 @@ public class MTDWrapper
     public ProjectEntry Project;
     public VirtualFileSystem TargetFS;
     public string Name { get; set; }
-    public string Path { get; set; }
-    public Dictionary<string, MTD> Entries { get; set; } = new();
+    public string FilePath { get; set; }
+    public Dictionary<string, MTDFileWrapper> Entries { get; set; } = new();
 
     public MTDWrapper(ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
     {
         Project = project;
         TargetFS = targetFS;
         Name = dictEntry.Filename;
-        Path = dictEntry.Path;
+        FilePath = dictEntry.Path;
+    }
+
+    /// <summary>
+    /// Whether any of the files within this binder have been modified
+    /// </summary>
+    public bool IsDirty()
+    {
+        return Entries.Values.Any(e => e.IsDirty);
     }
 
     public async Task<bool> Load()
@@ -129,9 +140,9 @@ public class MTDWrapper
 
         try
         {
-            if (TargetFS.FileExists(Path))
+            if (TargetFS.FileExists(FilePath))
             {
-                var binderData = TargetFS.ReadFile(Path);
+                var binderData = TargetFS.ReadFile(FilePath);
 
                 if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                 {
@@ -145,14 +156,7 @@ public class MTDWrapper
                             {
                                 var mtd = MTD.Read(entry.Bytes);
 
-                                if (Entries.ContainsKey(entry.Name))
-                                {
-                                    Entries[entry.Name] = mtd;
-                                }
-                                else
-                                {
-                                    Entries.Add(entry.Name, mtd);
-                                }
+                                Entries[entry.Name] = new MTDFileWrapper(entry.Name, mtd);
                             }
                             catch (Exception e)
                             {
@@ -175,14 +179,7 @@ public class MTDWrapper
                             {
                                 var mtd = MTD.Read(entry.Bytes);
 
-                                if (Entries.ContainsKey(entry.Name))
-                                {
-                                    Entries[entry.Name] = mtd;
-                                }
-                                else
-                                {
-                                    Entries.Add(entry.Name, mtd);
-                                }
+                                Entries[entry.Name] = new MTDFileWrapper(entry.Name, mtd);
                             }
                             catch (Exception e)
                             {
@@ -198,13 +195,13 @@ public class MTDWrapper
             }
             else
             {
-                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Find_File", Path));
+                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Find_File", FilePath));
                 return false;
             }
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_File", Path), e);
+            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_File", FilePath), e);
             return false;
         }
     }
@@ -213,79 +210,148 @@ public class MTDWrapper
     {
         await Task.Yield();
 
-        if (TargetFS.FileExists(Path))
+        var filename = Path.GetFileNameWithoutExtension(FilePath);
+
+        if (!CFG.Current.MaterialEditor_Allow_Unmodified_Save)
         {
-            if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+            if (!view.Selection.SelectedFileWrapper.IsDirty)
             {
-                try
-                {
-                    var binderData = TargetFS.ReadFile(Path);
-                    var binder = BND4.Read(binderData.Value);
-
-                    foreach (var entry in binder.Files)
-                    {
-                        if (entry.Name == view.Selection.SelectedFileKey)
-                        {
-                            try
-                            {
-                                entry.Bytes = view.Selection.SelectedMTD.Write();
-                            }
-                            catch (Exception e)
-                            {
-                                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Write_MTD", entry.Name), e);
-                            }
-                        }
-                    }
-
-                    var newBinderData = binder.Write();
-                    Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, newBinderData);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Write_File", Path), e);
-
-                    return false;
-                }
+                Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", filename));
+                return false;
             }
-            else
-            {
-                try
-                {
-                    var binderData = TargetFS.ReadFile(Path);
-                    var binder = BND4.Read(binderData.Value);
+        }
 
-                    foreach (var entry in binder.Files)
-                    {
-                        if (entry.Name == view.Selection.SelectedFileKey)
-                        {
-                            try
-                            {
-                                entry.Bytes = view.Selection.SelectedMTD.Write();
-                            }
-                            catch (Exception e)
-                            {
-                                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Write_MTD", entry.Name), e);
-                            }
-                        }
-                    }
+        if (!TargetFS.FileExists(FilePath))
+        {
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Failed_Locate_Container", FilePath));
+            return false;
+        }
 
-                    var newBinderData = binder.Write();
-                    Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, newBinderData);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Write_File", Path), e);
-                    return false;
-                }
-            }
+        if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+        {
+            return HandleContainer_BND3(view);
         }
         else
         {
-            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Find_File", Path));
+            return HandleContainer_BND4(view);
+        }
+    }
+
+    private bool HandleContainer_BND3(MaterialEditorView view)
+    {
+        // Container
+        var containerFileData = TargetFS.ReadFile(FilePath);
+
+        if (containerFileData == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
+            return false;
+        }
+
+        // Binder
+        var binder = BND3.Read(containerFileData.Value);
+
+        if (binder == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
+            return false;
+        }
+
+        // Binder Files
+        foreach (var curFile in binder.Files)
+        {
+            HandleBinderFile(view, curFile);
+        }
+
+        // Save Binder
+        try
+        {
+            var writeFile = binder.Write();
+
+            Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, writeFile);
+
+            ClearDirtyState(view.Selection.SelectedFileKey);
+
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", FilePath));
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_Container", FilePath), ex);
             return false;
         }
 
         return true;
+    }
+
+    private bool HandleContainer_BND4(MaterialEditorView view)
+    {
+        // Container
+        var containerFileData = TargetFS.ReadFile(FilePath);
+
+        if (containerFileData == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
+            return false;
+        }
+
+        // Binder
+        var binder = BND4.Read(containerFileData.Value);
+
+        if (binder == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
+            return false;
+        }
+
+        // Binder Files
+        foreach (var curFile in binder.Files)
+        {
+            HandleBinderFile(view, curFile);
+        }
+
+        // Save Binder
+        try
+        {
+            var writeFile = binder.Write();
+
+            Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, writeFile);
+
+            ClearDirtyState(view.Selection.SelectedFileKey);
+
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", FilePath));
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_Container", FilePath), ex);
+            return false;
+        }
+
+        return true;
+    }
+
+    private void HandleBinderFile(MaterialEditorView view, BinderFile file)
+    {
+        if (view.Selection.SelectedFileKey != file.Name)
+            return;
+
+        // Internal File
+        try
+        {
+            file.Bytes = view.Selection.SelectedMTD.Write();
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_File", file.Name), ex);
+            return;
+        }
+    }
+
+    private void ClearDirtyState(string key)
+    {
+        if (Entries.TryGetValue(key, out var fileWrapper))
+        {
+            fileWrapper.IsDirty = false;
+        }
     }
 }
 
@@ -294,26 +360,34 @@ public class MATBINWrapper
     public ProjectEntry Project;
     public VirtualFileSystem TargetFS;
     public string Name { get; set; }
-    public string Path { get; set; }
-    public Dictionary<string, MATBIN> Entries { get; set; } = new();
+    public string FilePath { get; set; }
+    public Dictionary<string, MATBINFileWrapper> Entries { get; set; } = new();
 
     public MATBINWrapper(ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
     {
         Project = project;
         TargetFS = targetFS;
         Name = dictEntry.Filename;
-        Path = dictEntry.Path;
+        FilePath = dictEntry.Path;
+    }
+
+    /// <summary>
+    /// Whether any of the files within this binder have been modified
+    /// </summary>
+    public bool IsDirty()
+    {
+        return Entries.Values.Any(e => e.IsDirty);
     }
 
     public async Task<bool> Load()
     {
         await Task.Yield();
 
-        if (TargetFS.FileExists(Path))
+        if (TargetFS.FileExists(FilePath))
         {
             try
             {
-                var binderData = TargetFS.ReadFile(Path);
+                var binderData = TargetFS.ReadFile(FilePath);
                 var binder = BND4.Read(binderData.Value);
 
                 foreach (var entry in binder.Files)
@@ -323,14 +397,7 @@ public class MATBINWrapper
                         try
                         {
                             var matbin = MATBIN.Read(entry.Bytes);
-                            if (Entries.ContainsKey(entry.Name))
-                            {
-                                Entries[entry.Name] = matbin;
-                            }
-                            else
-                            {
-                                Entries.Add(entry.Name, matbin);
-                            }
+                            Entries[entry.Name] = new MATBINFileWrapper(entry.Name, matbin);
                         }
                         catch (Exception e)
                         {
@@ -344,13 +411,13 @@ public class MATBINWrapper
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_File", Path), e);
+                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_File", FilePath), e);
                 return false;
             }
         }
         else
         {
-            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Find_File", Path));
+            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Find_File", FilePath));
             return false;
         }
     }
@@ -359,39 +426,94 @@ public class MATBINWrapper
     {
         await Task.Yield();
 
-        if (TargetFS.FileExists(Path))
+        var filename = Path.GetFileNameWithoutExtension(FilePath);
+
+        if (!CFG.Current.MaterialEditor_Allow_Unmodified_Save)
         {
-            try
+            if (!view.Selection.SelectedFileWrapper.IsDirty)
             {
-                var binderData = TargetFS.ReadFile(Path);
-                var binder = BND4.Read(binderData.Value);
-
-                foreach (var entry in binder.Files)
-                {
-                    if (entry.Name == view.Selection.SelectedFileKey)
-                    {
-                        try
-                        {
-                            entry.Bytes = view.Selection.SelectedMATBIN.Write();
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Write_MATBIN", entry.Name), e);
-                            return false;
-                        }
-                    }
-                }
-
-                var newBinderData = binder.Write();
-                Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, newBinderData);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_File", Path), e);
+                Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", filename));
                 return false;
             }
         }
 
+        if (!TargetFS.FileExists(FilePath))
+        {
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Failed_Locate_Container", FilePath));
+            return false;
+        }
+
+        return HandleContainer_BND4(view);
+    }
+
+    private bool HandleContainer_BND4(MaterialEditorView view)
+    {
+        // Container
+        var containerFileData = TargetFS.ReadFile(FilePath);
+
+        if (containerFileData == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
+            return false;
+        }
+
+        // Binder
+        var binder = BND4.Read(containerFileData.Value);
+
+        if (binder == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
+            return false;
+        }
+
+        // Binder Files
+        foreach (var curFile in binder.Files)
+        {
+            HandleBinderFile(view, curFile);
+        }
+
+        // Save Binder
+        try
+        {
+            var writeFile = binder.Write();
+
+            Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, writeFile);
+
+            ClearDirtyState(view.Selection.SelectedFileKey);
+
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", FilePath));
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_Container", FilePath), ex);
+            return false;
+        }
+
         return true;
+    }
+
+    private void HandleBinderFile(MaterialEditorView view, BinderFile file)
+    {
+        if (view.Selection.SelectedFileKey != file.Name)
+            return;
+
+        // Internal File
+        try
+        {
+            file.Bytes = view.Selection.SelectedMATBIN.Write();
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_File", file.Name), ex);
+            return;
+        }
+    }
+
+    private void ClearDirtyState(string key)
+    {
+        if (Entries.TryGetValue(key, out var fileWrapper))
+        {
+            fileWrapper.IsDirty = false;
+        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Andre.IO.VFS;
+using Org.BouncyCastle.Crypto;
 using SoulsFormats;
+using System.Reflection;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -201,82 +203,117 @@ public class GparamBank : IDisposable
         {
             if (!wrapper.IsDirty)
             {
-                Smithbox.Log(this, LOC.Get("GPARAM_Data_Block_Save_File", fileEntry.Filename));
+                Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", fileEntry.Filename));
                 return false;
             }
         }
-
-        var gparamEntry = wrapper.Gparam;
 
         if (fileEntry.Extension == "gparambnd")
         {
-            if (TargetFS.FileExists(fileEntry.Path))
-            {
-                var bnd = TargetFS.ReadFile(fileEntry.Path);
-
-                var binder = BND4.Read(bnd.Value);
-
-                foreach (var entry in binder.Files)
-                {
-                    var filename = Path.GetFileNameWithoutExtension(entry.Name);
-
-                    if (filename != fileEntry.Filename)
-                        continue;
-
-                    try
-                    {
-                        try
-                        {
-                            entry.Bytes = gparamEntry.Write();
-                        }
-                        catch (Exception ex)
-                        {
-                            Smithbox.LogError(this,
-                                LOC.Get("GPARAM_Data_Failed_Write_GPARAM", entry.Name), ex);
-
-                            return false;
-                        }
-
-                        var writeFile = binder.Write();
-
-                        Project.VFS.ProjectFS.WriteFile(fileEntry.Path, writeFile);
-
-                        wrapper.IsDirty = false;
-                    }
-                    catch (Exception ex)
-                    {
-                        Smithbox.LogError(this,
-                            LOC.Get("GPARAM_Data_Failed_Write_Binder", fileEntry.Path), ex);
-                    }
-                }
-            }
-            else
-            {
-                Smithbox.LogError(this,
-                    LOC.Get("GPARAM_Data_Failed_Find_VFS", fileEntry.Path));
-            }
+            return HandleContainerFile(fileEntry, wrapper);
         }
         else
         {
-            try
-            {
-                var bytes = gparamEntry.Write();
+            return HandleExternalFile(fileEntry, wrapper);
+        }
+    }
 
-                Project.VFS.ProjectFS.WriteFile(fileEntry.Path, bytes);
+    private bool HandleContainerFile(FileDictionaryEntry fileEntry, GparamWrapper wrapper)
+    {
+        if (!TargetFS.FileExists(fileEntry.Path))
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Locate_Container", fileEntry.Path));
+            return false;
 
-                wrapper.IsDirty = false;
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this,
-                    LOC.Get("GPARAM_Data_Failed_Write_GPARAM", fileEntry.Path), e);
-
-                return false;
-            }
         }
 
-        Smithbox.Log(this,
-            LOC.Get("GPARAM_Data_Save_File", fileEntry.Filename));
+        // Container
+        var containerFileData = TargetFS.ReadFile(fileEntry.Path);
+
+        if(containerFileData == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", fileEntry.Path));
+            return false;
+        }
+
+        // Binder
+        var binder = BND4.Read(containerFileData.Value);
+
+        if (binder == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", fileEntry.Path));
+            return false;
+        }
+
+        // Binder Files
+        foreach (var curFile in binder.Files)
+        {
+            HandleBinderFile(fileEntry, wrapper, binder, curFile);
+        }
+
+        // Save Binder
+        try
+        {
+            var writeFile = binder.Write();
+
+            Project.VFS.ProjectFS.WriteFile(fileEntry.Path, writeFile);
+
+            wrapper.IsDirty = false;
+
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", fileEntry.Filename));
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_Container", fileEntry.Path), ex);
+            return false;
+        }
+
+        return true;
+    }
+
+    private void HandleBinderFile(FileDictionaryEntry fileEntry, GparamWrapper wrapper, BND4 binder, BinderFile file)
+    {
+        var filename = Path.GetFileNameWithoutExtension(file.Name);
+
+        if (filename != fileEntry.Filename)
+            return;
+
+        // Internal File
+        try
+        {
+            file.Bytes = wrapper.Gparam.Write();
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_File", file.Name), ex);
+            return;
+        }
+    }
+
+    private bool HandleExternalFile(FileDictionaryEntry fileEntry, GparamWrapper wrapper)
+    {
+        if (!TargetFS.FileExists(fileEntry.Path))
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Locate_External_File", fileEntry.Path));
+            return false;
+        }
+
+        // External File
+        try
+        {
+            var fileData = wrapper.Gparam.Write();
+
+            Project.VFS.ProjectFS.WriteFile(fileEntry.Path, fileData);
+
+            wrapper.IsDirty = false;
+
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", fileEntry.Filename));
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_File", fileEntry.Path), e);
+            return false;
+        }
 
         return true;
     }

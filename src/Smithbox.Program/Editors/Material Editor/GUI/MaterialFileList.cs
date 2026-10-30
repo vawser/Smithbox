@@ -98,10 +98,17 @@ public class MaterialFileList
 
                     var displayName = GetPrettyName($"{key}");
 
+                    // Mark files with unsaved changes
+                    if (curFile.IsDirty)
+                    {
+                        displayName = $"{displayName}*";
+                    }
+
                     if (ImGui.Selectable($"{displayName}##mtdFileEntry_{key}{i}", key == Parent.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         Parent.Selection.SelectedFileKey = key;
-                        Parent.Selection.SelectedMTD = curFile;
+                        Parent.Selection.SelectedMTD = curFile.MTD;
+                        Parent.Selection.SelectedFileWrapper = curFile;
                     }
 
                     // Arrow Selection
@@ -110,7 +117,8 @@ public class MaterialFileList
                         Parent.Selection.SelectFileListEntry = false;
 
                         Parent.Selection.SelectedFileKey = key;
-                        Parent.Selection.SelectedMTD = curFile;
+                        Parent.Selection.SelectedMTD = curFile.MTD;
+                        Parent.Selection.SelectedFileWrapper = curFile;
                     }
 
                     if (ImGui.IsItemFocused())
@@ -156,10 +164,17 @@ public class MaterialFileList
 
                         var displayName = GetPrettyName($"{key}");
 
+                        // Mark files with unsaved changes
+                        if (curFile.IsDirty)
+                        {
+                            displayName = $"{displayName}*";
+                        }
+
                         if (ImGui.Selectable($"{displayName}##matbinFileEntry_{key}", key == Parent.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             Parent.Selection.SelectedFileKey = key;
-                            Parent.Selection.SelectedMATBIN = curFile;
+                            Parent.Selection.SelectedMATBIN = curFile.MATBIN;
+                            Parent.Selection.SelectedFileWrapper = curFile;
                         }
 
                         // Arrow Selection
@@ -168,7 +183,8 @@ public class MaterialFileList
                             Parent.Selection.SelectFileListEntry = false;
 
                             Parent.Selection.SelectedFileKey = key;
-                            Parent.Selection.SelectedMATBIN = curFile;
+                            Parent.Selection.SelectedMATBIN = curFile.MATBIN;
+                            Parent.Selection.SelectedFileWrapper = curFile;
                         }
 
                         if (ImGui.IsItemFocused())

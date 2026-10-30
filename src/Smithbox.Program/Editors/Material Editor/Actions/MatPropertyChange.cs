@@ -12,13 +12,15 @@ namespace StudioCore.Editors.MaterialEditor;
 public class MatPropertyChange : EditorAction
 {
     private IEditorView View;
+    private MaterialFileWrapper FileWrapper;
 
     private readonly List<PropertyChange> Changes = new();
 
-    public MatPropertyChange(IEditorView view, PropertyInfo prop, object obj, object newval,
+    public MatPropertyChange(IEditorView view, MaterialFileWrapper fileWrapper, PropertyInfo prop, object obj, object newval,
         int index = -1, int classIndex = -1)
     {
         View = view;
+        FileWrapper = fileWrapper;
 
         var propObj = PropFinderUtil.FindPropertyObject(prop, obj, index, classIndex, false);
         if (propObj != null)
@@ -86,6 +88,9 @@ public class MatPropertyChange : EditorAction
             }
         }
 
+        if (FileWrapper != null)
+            FileWrapper.IsDirty = true;
+
         return ActionEvent.NoEvent;
     }
 
@@ -116,6 +121,9 @@ public class MatPropertyChange : EditorAction
                 change.Property.SetValue(change.ChangedObj, change.OldValue);
             }
         }
+
+        if (FileWrapper != null)
+            FileWrapper.IsDirty = true;
 
         return ActionEvent.NoEvent;
     }

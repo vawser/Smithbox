@@ -1033,11 +1033,8 @@ public class CFG
     // Saving
     public bool Project_Automatic_Save_Include_Material_Editor = false;
 
-    public bool MaterialEditor_AutomaticSave_IncludeMTD = true;
-    public bool MaterialEditor_AutomaticSave_IncludeMATBIN = true;
-
-    public bool MaterialEditor_ManualSave_IncludeMTD = true;
-    public bool MaterialEditor_ManualSave_IncludeMATBIN = true;
+    public bool MaterialEditor_Allow_Unmodified_Save = false;
+    public bool MaterialEditor_Allow_Automatic_Save = true;
 
     #endregion
 

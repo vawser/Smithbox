@@ -71,54 +71,26 @@ public class MaterialEditorScreen : EditorScreen
             {
                 Save();
             }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_Save_TT"));
 
             ImGui.Separator();
 
-            // Manual Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Manual_Save_Output")}##manualSaveMenuHeader"))
+            // Allow Unmodified Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                // MTD
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_MTD")}##manualToggle_mtd"))
-                {
-                    CFG.Current.MaterialEditor_ManualSave_IncludeMTD = !CFG.Current.MaterialEditor_ManualSave_IncludeMTD;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_MTD_TT"));
-                GUI.ShowActiveStatus(CFG.Current.MaterialEditor_ManualSave_IncludeMTD);
-
-                // MATBIN
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_MATBIN")}##manualToggle_matbin"))
-                {
-                    CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN = !CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_MATBIN_TT"));
-                GUI.ShowActiveStatus(CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN);
-
-                ImGui.EndMenu();
+                CFG.Current.MaterialEditor_Allow_Unmodified_Save = !CFG.Current.MaterialEditor_Allow_Unmodified_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Allow_Unmodified_Save);
 
-            // Automatic Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
+            // Allow Automatic Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                // MTD
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_MTD")}##autoToggle_mtd"))
-                {
-                    CFG.Current.MaterialEditor_AutomaticSave_IncludeMTD = !CFG.Current.MaterialEditor_AutomaticSave_IncludeMTD;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_MTD_TT"));
-                GUI.ShowActiveStatus(CFG.Current.MaterialEditor_AutomaticSave_IncludeMTD);
-
-                // MATBIN
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_MATBIN")}##autoToggle_matbin"))
-                {
-                    CFG.Current.MaterialEditor_AutomaticSave_IncludeMATBIN = !CFG.Current.MaterialEditor_AutomaticSave_IncludeMATBIN;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_MATBIN_TT"));
-                GUI.ShowActiveStatus(CFG.Current.MaterialEditor_AutomaticSave_IncludeMATBIN);
-
-                ImGui.EndMenu();
+                CFG.Current.MaterialEditor_Allow_Automatic_Save = !CFG.Current.MaterialEditor_Allow_Automatic_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Allow_Automatic_Save);
+
 
             ImGui.EndMenu();
         }
@@ -205,12 +177,6 @@ public class MaterialEditorScreen : EditorScreen
 
             if (activeView.Selection.SelectedMTD == null)
                 return;
-
-            if (!autoSave && !CFG.Current.MaterialEditor_ManualSave_IncludeMTD)
-                return;
-
-            if (autoSave && !CFG.Current.MaterialEditor_AutomaticSave_IncludeMTD)
-                return;
         }
 
         if (activeView.Selection.SourceType is MaterialSourceType.MATBIN)
@@ -220,26 +186,18 @@ public class MaterialEditorScreen : EditorScreen
 
             if (activeView.Selection.SelectedMATBIN == null)
                 return;
-
-            if (!autoSave && !CFG.Current.MaterialEditor_ManualSave_IncludeMATBIN)
-                return;
-
-            if (autoSave && !CFG.Current.MaterialEditor_AutomaticSave_IncludeMATBIN)
-                return;
         }
 
-        Task<bool> saveTask = Project.Handler.MaterialData.PrimaryBank.Save(activeView);
-        bool saveTaskResult = await saveTask;
+        // Only save if the selected file has been modified
+        if (activeView.Selection.SelectedFileWrapper == null)
+            return;
 
-        var displayName = Path.GetFileName(activeView.Selection.SelectedFileKey);
+        if (autoSave && CFG.Current.MaterialEditor_Allow_Automatic_Save || !autoSave)
+        {
+            Task<bool> saveTask = Project.Handler.MaterialData.PrimaryBank.Save(activeView);
+            bool saveTaskResult = await saveTask;
 
-        if (saveTaskResult)
-        {
-            Smithbox.Log(this, LOC.Get("MAT_Save_Entry", displayName, activeView.Selection.SelectedBinderEntry.Filename));
-        }
-        else
-        {
-            Smithbox.Log(this, LOC.Get("MAT_Failed_Save_Entry", displayName, activeView.Selection.SelectedBinderEntry.Filename));
+            var displayName = Path.GetFileName(activeView.Selection.SelectedFileKey);
         }
 
         // Save the configuration JSONs
