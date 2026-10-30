@@ -1,6 +1,7 @@
 ﻿using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
@@ -568,6 +569,11 @@ public class CFG
     public bool ModelExport_UseCollisionMaterial = false;
     public bool ModelExport_UseSingleCollisionMaterial = false;
     public bool ModelExport_FlipUVs = true;
+    public bool ModelExport_MirrorX = false;
+    public bool ModelExport_MirrorY = false;
+    public bool ModelExport_MirrorZ = false;
+    public ModelExportAxis ModelExport_ForwardAxis = ModelExportAxis.PosZ;
+    public ModelExportAxis ModelExport_UpAxis = ModelExportAxis.PosY;
 
     public float DummyMeshSize = 0.05f;
     public float NodeMeshSize = 0.05f;

@@ -60,10 +60,20 @@ public static class FlverToObj
     /// FLVER stores V with 0 at the top (DirectX-style); OBJ/most other tools expect 0 at the bottom.
     /// Leave this true unless your target tool expects DirectX-style UVs.
     /// </param>
-    public static void Convert(FLVER2 flver, string outputObjPath, IList<MaterialNaming> materialNaming = null, bool flipUVsForOBJ = true)
+    /// <param name="transform">
+    /// Optional transform applied to positions and normals, see <see cref="BuildTransform"/>.
+    /// If omitted, the FLVER coordinates are written unchanged.
+    /// </param>
+    public static void Convert(FLVER2 flver, string outputObjPath, IList<MaterialNaming> materialNaming = null, bool flipUVsForOBJ = true, Matrix4x4? transform = null)
     {
         string mtlPath = Path.ChangeExtension(outputObjPath, ".mtl");
         string mtlFileName = Path.GetFileName(mtlPath);
+
+        Matrix4x4 vertexTransform = transform ?? Matrix4x4.Identity;
+
+        // A negative determinant means the transform mirrors the model, which turns
+        // every triangle inside out unless the winding order is reversed to match.
+        bool reverseWinding = vertexTransform.GetDeterminant() < 0;
 
         var obj = new StringBuilder();
         var usedMaterials = new HashSet<int>();
@@ -100,7 +110,7 @@ public static class FlverToObj
             // Positions
             foreach (FLVER.Vertex vert in mesh.Vertices)
             {
-                Vector3 p = vert.Position;
+                Vector3 p = Vector3.Transform(vert.Position, vertexTransform);
                 obj.AppendLine(FormattableString.Invariant(
                     $"v {p.X.ToString(CultureInfo.InvariantCulture)} {p.Y.ToString(CultureInfo.InvariantCulture)} {p.Z.ToString(CultureInfo.InvariantCulture)}"));
             }
@@ -127,6 +137,8 @@ public static class FlverToObj
                 else
                     n = Vector3.Normalize(n);
 
+                n = Vector3.TransformNormal(n, vertexTransform);
+
                 obj.AppendLine(FormattableString.Invariant(
                     $"vn {n.X.ToString(CultureInfo.InvariantCulture)} {n.Y.ToString(CultureInfo.InvariantCulture)} {n.Z.ToString(CultureInfo.InvariantCulture)}"));
             }
@@ -147,6 +159,9 @@ public static class FlverToObj
                     int i2 = triangles[i + 1] + 1;
                     int i3 = triangles[i + 2] + 1;
 
+                    if (reverseWinding)
+                        (i2, i3) = (i3, i2);
+
                     obj.AppendLine(BuildFaceLine(i1, i2, i3, vOffset, vtOffset, vnOffset, hasUVs));
                 }
             }
@@ -163,6 +178,52 @@ public static class FlverToObj
         File.WriteAllText(mtlPath, BuildMtl(flver, usedMaterials, materialNaming));
 
         Smithbox.Log(typeof(FlverToObj), LOC.Get("MODEL_Exported_OBJ", outputObjPath));
+    }
+
+    /// <summary>
+    /// Returns true if the forward and up axes can define an orientation, i.e. they are not
+    /// both on the same axis.
+    /// </summary>
+    public static bool AreAxesValid(ModelExportAxis forward, ModelExportAxis up)
+    {
+        return Vector3.Dot(GetAxisVector(forward), GetAxisVector(up)) == 0;
+    }
+
+    /// <summary>
+    /// Builds the transform from FLVER space to OBJ space. The FLVER's +Z is sent to
+    /// <paramref name="forward"/> and its +Y to <paramref name="up"/>, with +X derived from them
+    /// so that the axis change is always a pure rotation. Mirroring is applied afterwards,
+    /// so it negates the axes of the written OBJ.
+    /// </summary>
+    public static Matrix4x4 BuildTransform(ModelExportAxis forward, ModelExportAxis up, bool mirrorX, bool mirrorY, bool mirrorZ)
+    {
+        Vector3 f = GetAxisVector(forward);
+        Vector3 u = GetAxisVector(up);
+        Vector3 r = Vector3.Cross(u, f);
+
+        var axes = new Matrix4x4(
+            r.X, r.Y, r.Z, 0,
+            u.X, u.Y, u.Z, 0,
+            f.X, f.Y, f.Z, 0,
+            0, 0, 0, 1);
+
+        var mirror = Matrix4x4.CreateScale(mirrorX ? -1 : 1, mirrorY ? -1 : 1, mirrorZ ? -1 : 1);
+
+        return axes * mirror;
+    }
+
+    private static Vector3 GetAxisVector(ModelExportAxis axis)
+    {
+        return axis switch
+        {
+            ModelExportAxis.PosX => Vector3.UnitX,
+            ModelExportAxis.NegX => -Vector3.UnitX,
+            ModelExportAxis.PosY => Vector3.UnitY,
+            ModelExportAxis.NegY => -Vector3.UnitY,
+            ModelExportAxis.PosZ => Vector3.UnitZ,
+            ModelExportAxis.NegZ => -Vector3.UnitZ,
+            _ => throw new ArgumentOutOfRangeException(nameof(axis)),
+        };
     }
 
     /// <summary>

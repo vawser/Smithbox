@@ -205,6 +205,70 @@
       "Text": "Flip UVs in OBJ"
     },
     {
+      "Key": "MODEL_ModelExport_Mirror_Header",
+      "Text": "Mirror"
+    },
+    {
+      "Key": "MODEL_ModelExport_Mirror_Header_TT",
+      "Text": "Negates the selected axes in the OBJ, after the Forward and Up axes are applied. Face winding is corrected automatically."
+    },
+    {
+      "Key": "MODEL_ModelExport_Mirror_X",
+      "Text": "X"
+    },
+    {
+      "Key": "MODEL_ModelExport_Mirror_Y",
+      "Text": "Y"
+    },
+    {
+      "Key": "MODEL_ModelExport_Mirror_Z",
+      "Text": "Z"
+    },
+    {
+      "Key": "MODEL_ModelExport_ForwardAxis_Header",
+      "Text": "Forward Axis"
+    },
+    {
+      "Key": "MODEL_ModelExport_ForwardAxis_Header_TT",
+      "Text": "The OBJ axis that the +Z axis of the FLVER is written to."
+    },
+    {
+      "Key": "MODEL_ModelExport_UpAxis_Header",
+      "Text": "Up Axis"
+    },
+    {
+      "Key": "MODEL_ModelExport_UpAxis_Header_TT",
+      "Text": "The OBJ axis that the +Y axis of the FLVER is written to."
+    },
+    {
+      "Key": "MODEL_ModelExport_Axis_PosX",
+      "Text": "+X"
+    },
+    {
+      "Key": "MODEL_ModelExport_Axis_NegX",
+      "Text": "-X"
+    },
+    {
+      "Key": "MODEL_ModelExport_Axis_PosY",
+      "Text": "+Y"
+    },
+    {
+      "Key": "MODEL_ModelExport_Axis_NegY",
+      "Text": "-Y"
+    },
+    {
+      "Key": "MODEL_ModelExport_Axis_PosZ",
+      "Text": "+Z"
+    },
+    {
+      "Key": "MODEL_ModelExport_Axis_NegZ",
+      "Text": "-Z"
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_Invalid_Axes",
+      "Text": "Forward Axis and Up Axis cannot be on the same axis."
+    },
+    {
       "Key": "MODEL_ModelExport_UseSingleColMat",
       "Text": "Use Single Collision Material"
     },

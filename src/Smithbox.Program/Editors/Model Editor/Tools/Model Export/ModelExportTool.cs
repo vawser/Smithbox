@@ -169,6 +169,36 @@ public class ModelExportTool
         // Flip UVs in OBJ
         ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_FlipOBJUVs")}##flipUvs", ref CFG.Current.ModelExport_FlipUVs);
 
+        // Mirroring
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_ModelExport_Mirror_Header"),
+            LOC.Get("MODEL_ModelExport_Mirror_Header_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_Mirror_X")}##mirrorX", ref CFG.Current.ModelExport_MirrorX);
+        ImGui.SameLine();
+        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_Mirror_Y")}##mirrorY", ref CFG.Current.ModelExport_MirrorY);
+        ImGui.SameLine();
+        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_Mirror_Z")}##mirrorZ", ref CFG.Current.ModelExport_MirrorZ);
+
+        // Forward Axis
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_ModelExport_ForwardAxis_Header"),
+            LOC.Get("MODEL_ModelExport_ForwardAxis_Header_TT"));
+
+        DisplayAxisCombo("##forwardAxis", ref CFG.Current.ModelExport_ForwardAxis);
+
+        // Up Axis
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MODEL_ModelExport_UpAxis_Header"),
+            LOC.Get("MODEL_ModelExport_UpAxis_Header_TT"));
+
+        DisplayAxisCombo("##upAxis", ref CFG.Current.ModelExport_UpAxis);
+
+        GUI.Spacer();
+
         // Use Single Collision Material
         ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_UseColMaterials")}##useColMat", ref CFG.Current.ModelExport_UseCollisionMaterial);
         if (ImGui.IsItemDeactivatedAfterEdit())
@@ -187,6 +217,23 @@ public class ModelExportTool
         if (CFG.Current.ModelExport_UseCollisionMaterial)
         {
             DisplayCollisionMaterialList();
+        }
+    }
+
+    private void DisplayAxisCombo(string id, ref ModelExportAxis axis)
+    {
+        DPI.ApplyInputWidth();
+        if (ImGui.BeginCombo(id, LOC.Get(axis.GetDisplayName())))
+        {
+            foreach (var entry in Enum.GetValues<ModelExportAxis>())
+            {
+                if (ImGui.Selectable(LOC.Get(entry.GetDisplayName())))
+                {
+                    axis = entry;
+                }
+            }
+
+            ImGui.EndCombo();
         }
     }
 
@@ -528,6 +575,19 @@ public class ModelExportTool
             return;
         }
 
+        if (!FlverToObj.AreAxesValid(CFG.Current.ModelExport_ForwardAxis, CFG.Current.ModelExport_UpAxis))
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_ModelExport_Error_Invalid_Axes"));
+            return;
+        }
+
+        var transform = FlverToObj.BuildTransform(
+            CFG.Current.ModelExport_ForwardAxis,
+            CFG.Current.ModelExport_UpAxis,
+            CFG.Current.ModelExport_MirrorX,
+            CFG.Current.ModelExport_MirrorY,
+            CFG.Current.ModelExport_MirrorZ);
+
         var flverName = Path.GetFileNameWithoutExtension(SelectionMenu.FlverPath);
         var outputPath = Path.Combine(CFG.Current.ModelExport_Output_Directory, $"{flverName}.obj");
 
@@ -545,11 +605,11 @@ public class ModelExportTool
                 }
             }
 
-            FlverToObj.Convert(curFlver, outputPath, materialNamingList, CFG.Current.ModelExport_FlipUVs);
+            FlverToObj.Convert(curFlver, outputPath, materialNamingList, CFG.Current.ModelExport_FlipUVs, transform);
         }
         else
         {
-            FlverToObj.Convert(curFlver, outputPath, null, CFG.Current.ModelExport_FlipUVs);
+            FlverToObj.Convert(curFlver, outputPath, null, CFG.Current.ModelExport_FlipUVs, transform);
         }
     }
 
