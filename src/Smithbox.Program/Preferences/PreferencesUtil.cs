@@ -67,19 +67,15 @@ public static class PreferencesUtil
 
         CFG.Current.Viewport_Box_Region_Base_Color = CFG.Default.Viewport_Box_Region_Base_Color;
         CFG.Current.Viewport_Box_Region_Highlight_Color = CFG.Default.Viewport_Box_Region_Highlight_Color;
-        CFG.Current.Viewport_Box_Region_Alpha = CFG.Default.Viewport_Box_Region_Alpha;
 
         CFG.Current.Viewport_Cylinder_Region_Base_Color = CFG.Default.Viewport_Cylinder_Region_Base_Color;
         CFG.Current.Viewport_Cylinder_Region_Highlight_Color = CFG.Default.Viewport_Cylinder_Region_Highlight_Color;
-        CFG.Current.Viewport_Cylinder_Region_Alpha = CFG.Default.Viewport_Cylinder_Region_Alpha;
 
         CFG.Current.Viewport_Sphere_Region_Base_Color = CFG.Default.Viewport_Sphere_Region_Base_Color;
         CFG.Current.Viewport_Sphere_Region_Highlight_Color = CFG.Default.Viewport_Sphere_Region_Highlight_Color;
-        CFG.Current.Viewport_Sphere_Region_Alpha = CFG.Default.Viewport_Sphere_Region_Alpha;
 
         CFG.Current.Viewport_Point_Region_Base_Color = CFG.Default.Viewport_Point_Region_Base_Color;
         CFG.Current.Viewport_Point_Region_Highlight_Color = CFG.Default.Viewport_Point_Region_Highlight_Color;
-        CFG.Current.Viewport_Point_Region_Alpha = CFG.Default.Viewport_Point_Region_Alpha;
 
         CFG.Current.Viewport_Region_Selection_Fill_Alpha = CFG.Default.Viewport_Region_Selection_Fill_Alpha;
 
@@ -107,17 +103,13 @@ public static class PreferencesUtil
         CFG.Current.Viewport_Other_Marker_Highlight_Color = CFG.Default.Viewport_Other_Marker_Highlight_Color;
         CFG.Current.Viewport_Other_Marker_Alpha = CFG.Default.Viewport_Other_Marker_Alpha;
 
-        CFG.Current.Viewport_Point_Light_Base_Color = CFG.Default.Viewport_Point_Light_Base_Color;
         CFG.Current.Viewport_Point_Light_Highlight_Color = CFG.Default.Viewport_Point_Light_Highlight_Color;
-        CFG.Current.Viewport_Point_Light_Alpha = CFG.Default.Viewport_Point_Light_Alpha;
 
-        CFG.Current.Viewport_Spot_Light_Base_Color = CFG.Default.Viewport_Spot_Light_Base_Color;
         CFG.Current.Viewport_Spot_Light_Highlight_Color = CFG.Default.Viewport_Spot_Light_Highlight_Color;
-        CFG.Current.Viewport_Spot_Light_Alpha = CFG.Default.Viewport_Spot_Light_Alpha;
 
-        CFG.Current.Viewport_Directional_Light_Base_Color = CFG.Default.Viewport_Directional_Light_Base_Color;
         CFG.Current.Viewport_Directional_Light_Highlight_Color = CFG.Default.Viewport_Directional_Light_Highlight_Color;
-        CFG.Current.Viewport_Directional_Light_Alpha = CFG.Default.Viewport_Directional_Light_Alpha;
+
+        CFG.Current.Viewport_Light_Intensity_Scale = CFG.Default.Viewport_Light_Intensity_Scale;
 
         CFG.Current.Viewport_Auto_Invade_Marker_Base_Color = CFG.Default.Viewport_Auto_Invade_Marker_Base_Color;
         CFG.Current.Viewport_Auto_Invade_Marker_Highlight_Color = CFG.Default.Viewport_Auto_Invade_Marker_Highlight_Color;

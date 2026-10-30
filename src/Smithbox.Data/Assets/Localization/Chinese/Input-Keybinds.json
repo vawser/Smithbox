@@ -409,14 +409,6 @@
       "Text": "将复制参数应用于选择。"
     },
     {
-      "Key": "KEY_MapEditor_Cycle_Render_Type",
-      "Text": "循环渲染类型"
-    },
-    {
-      "Key": "KEY_MapEditor_Cycle_Render_Type_TT",
-      "Text": "循环切换地图对象的渲染类型。"
-    },
-    {
       "Key": "KEY_MapEditor_Make_Dummy_Object",
       "Text": "将地图对象设置为虚拟对象"
     },

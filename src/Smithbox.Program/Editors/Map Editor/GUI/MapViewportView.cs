@@ -25,10 +25,13 @@ public class MapViewportView
 
     public PlacementEntity PlacementOrb;
 
+    private readonly SelectedLightPreview LightPreview;
+
     public MapViewportView(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+        LightPreview = new SelectedLightPreview(view);
 
         view.Window = Smithbox.Instance._context.Window;
         view.Device = Smithbox.Instance._context.Device;
@@ -75,6 +78,8 @@ public class MapViewportView
 
     public void Update(float deltatime)
     {
+        LightPreview.Update();
+
         // The viewport keeps its last focus and bounds whilst hidden, so it must not respond to input
         if (View.ShowMapData)
         {
@@ -234,7 +239,6 @@ public class MapViewportView
                 {
                     View.ScrambleAction.OnContext(targetedEnt);
                     View.ReplicateAction.OnContext(targetedEnt);
-                    View.RenderTypeAction.OnContext(targetedEnt);
 
                     ImGui.Separator();
 

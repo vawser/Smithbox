@@ -1136,19 +1136,15 @@ public class CFG
 
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
-    public float Viewport_Box_Region_Alpha = 75.0f;
 
     public Vector3 Viewport_Cylinder_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Cylinder_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
-    public float Viewport_Cylinder_Region_Alpha = 75.0f;
 
     public Vector3 Viewport_Sphere_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Sphere_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
-    public float Viewport_Sphere_Region_Alpha = 75.0f;
 
     public Vector3 Viewport_Point_Region_Base_Color = Utils.GetDecimalColor(Color.Yellow);
     public Vector3 Viewport_Point_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
-    public float Viewport_Point_Region_Alpha = 75.0f;
 
     public float Viewport_Region_Selection_Fill_Alpha = 20.0f;
 
@@ -1176,17 +1172,13 @@ public class CFG
     public Vector3 Viewport_Other_Marker_Highlight_Color = Utils.GetDecimalColor(Color.AntiqueWhite);
     public float Viewport_Other_Marker_Alpha = 75.0f;
 
-    public Vector3 Viewport_Point_Light_Base_Color = Utils.GetDecimalColor(Color.YellowGreen);
-    public Vector3 Viewport_Point_Light_Highlight_Color = Utils.GetDecimalColor(Color.Yellow);
-    public float Viewport_Point_Light_Alpha = 75.0f;
+    public Vector3 Viewport_Point_Light_Highlight_Color = Utils.GetDecimalColor(Color.White);
 
-    public Vector3 Viewport_Spot_Light_Base_Color = Utils.GetDecimalColor(Color.Goldenrod);
     public Vector3 Viewport_Spot_Light_Highlight_Color = Utils.GetDecimalColor(Color.Violet);
-    public float Viewport_Spot_Light_Alpha = 75.0f;
 
-    public Vector3 Viewport_Directional_Light_Base_Color = Utils.GetDecimalColor(Color.Cyan);
     public Vector3 Viewport_Directional_Light_Highlight_Color = Utils.GetDecimalColor(Color.AliceBlue);
-    public float Viewport_Directional_Light_Alpha = 75.0f;
+
+    public float Viewport_Light_Intensity_Scale = 5.0f;
 
     public Vector3 Viewport_Auto_Invade_Marker_Base_Color = Utils.GetDecimalColor(Color.Red);
     public Vector3 Viewport_Auto_Invade_Marker_Highlight_Color = Utils.GetDecimalColor(Color.DarkRed);

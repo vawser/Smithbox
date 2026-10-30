@@ -165,7 +165,7 @@ public enum KeybindID
     [Display(Name = "KEY_MapEditor_Replicate", Description = "KEY_MapEditor_Replicate_TT")]
     MapEditor_Replicate,
 
-    [Display(Name = "KEY_MapEditor_Cycle_Render_Type", Description = "KEY_MapEditor_Cycle_Render_Type_TT")]
+    // Retired, but saved keybind files can still name it. An unknown name would fail the whole load.
     MapEditor_Cycle_Render_Type,
 
     [Display(Name = "KEY_MapEditor_Make_Dummy_Object", Description = "KEY_MapEditor_Make_Dummy_Object_TT")]
@@ -491,7 +491,6 @@ public static class DefaultKeyBindings
 
         InputManager.Bind(KeybindID.MapEditor_Scramble, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Replicate, new() { Key = Key.Unknown });
-        InputManager.Bind(KeybindID.MapEditor_Cycle_Render_Type, new() { Key = Key.O });
 
         InputManager.Bind(KeybindID.MapEditor_Make_Dummy_Object, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Make_Normal_Object, new() { Key = Key.Unknown });
@@ -666,7 +665,6 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_Reset_Rotation, InputCategory.MapEditor },
         { KeybindID.MapEditor_Scramble, InputCategory.MapEditor },
         { KeybindID.MapEditor_Replicate, InputCategory.MapEditor },
-        { KeybindID.MapEditor_Cycle_Render_Type, InputCategory.MapEditor },
         { KeybindID.MapEditor_Make_Dummy_Object, InputCategory.MapEditor },
         { KeybindID.MapEditor_Make_Normal_Object, InputCategory.MapEditor },
         { KeybindID.MapEditor_Enable_Game_Presence, InputCategory.MapEditor },

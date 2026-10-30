@@ -77,7 +77,6 @@ public class MapEditorView : IEditorView
     public RotateAction RotateAction;
     public ScrambleAction ScrambleAction;
     public ReplicateAction ReplicateAction;
-    public RenderTypeAction RenderTypeAction;
     public SelectAllAction SelectAllAction;
     public EditorVisibilityAction EditorVisibilityAction;
     public GameVisibilityAction GameVisibilityAction;
@@ -164,7 +163,6 @@ public class MapEditorView : IEditorView
         RotateAction = new RotateAction(this, project);
         ScrambleAction = new ScrambleAction(this, project);
         ReplicateAction = new ReplicateAction(this, project);
-        RenderTypeAction = new RenderTypeAction(this, project);
         SelectAllAction = new SelectAllAction(this, project);
         EditorVisibilityAction = new EditorVisibilityAction(this, project);
         GameVisibilityAction = new GameVisibilityAction(this, project);

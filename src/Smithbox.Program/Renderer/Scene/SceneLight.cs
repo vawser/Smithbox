@@ -47,6 +47,12 @@ public class SceneLight
     /// <summary>Distance at which a point or spot light has faded to nothing. 0 means it never does.</summary>
     public float Range { get; set; } = 20.0f;
 
+    /// <summary>
+    ///     Fades from full strength at the light to nothing at <see cref="Range" />, as game lights are
+    ///     authored, instead of falling off with the square of the distance.
+    /// </summary>
+    public bool FadeAcrossRange { get; set; }
+
     /// <summary>Spot lights: angle from the center of the cone within which the light is at full strength</summary>
     public float InnerConeAngleDegrees { get; set; } = 20.0f;
 
@@ -66,7 +72,8 @@ public class SceneLight
             PositionRange = new Vector4(Position, Math.Max(Range, 0.0f)),
             DirectionType = new Vector4(direction, (float)Type),
             ColorIntensity = new Vector4(Color, Math.Max(Intensity, 0.0f)),
-            Spot = new Vector4(MathF.Cos(inner * toRadians), MathF.Cos(outer * toRadians), 0.0f, 0.0f)
+            Spot = new Vector4(MathF.Cos(inner * toRadians), MathF.Cos(outer * toRadians),
+                FadeAcrossRange ? 1.0f : 0.0f, 0.0f)
         };
     }
 }

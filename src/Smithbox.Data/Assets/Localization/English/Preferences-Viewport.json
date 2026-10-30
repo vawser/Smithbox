@@ -249,20 +249,12 @@
       "Text": "Region Selection Fill: Transparency"
     },
     {
-      "Key": "PREF_Viewport_Box_Region_Alpha",
-      "Text": "Box Region: Transparency"
-    },
-    {
       "Key": "PREF_Viewport_Cylinder_Region_Base_Color",
       "Text": "Cylinder Region: Base Color"
     },
     {
       "Key": "PREF_Viewport_Cylinder_Region_Highlight_Color",
       "Text": "Cylinder Region: Highlight Color"
-    },
-    {
-      "Key": "PREF_Viewport_Cylinder_Region_Alpha",
-      "Text": "Cylinder Region: Transparency"
     },
     {
       "Key": "PREF_Viewport_Sphere_Region_Base_Color",
@@ -273,20 +265,12 @@
       "Text": "Sphere Region: Highlight Color"
     },
     {
-      "Key": "PREF_Viewport_Sphere_Region_Alpha",
-      "Text": "Sphere Region: Transparency"
-    },
-    {
       "Key": "PREF_Viewport_Point_Region_Base_Color",
       "Text": "Point Region: Base Color"
     },
     {
       "Key": "PREF_Viewport_Point_Region_Highlight_Color",
       "Text": "Point Region: Highlight Color"
-    },
-    {
-      "Key": "PREF_Viewport_Point_Region_Alpha",
-      "Text": "Point Region: Transparency"
     },
     {
       "Key": "PREF_Viewport_Dummy_Polygon_Base_Color",
@@ -361,40 +345,24 @@
       "Text": "Other Marker: Transparency"
     },
     {
-      "Key": "PREF_Viewport_Point_Light_Base_Color",
-      "Text": "Point Light: Base Color"
-    },
-    {
       "Key": "PREF_Viewport_Point_Light_Highlight_Color",
       "Text": "Point Light: Highlight Color"
-    },
-    {
-      "Key": "PREF_Viewport_Point_Light_Alpha",
-      "Text": "Point Light: Transparency"
-    },
-    {
-      "Key": "PREF_Viewport_Spot_Light_Base_Color",
-      "Text": "Spot Light: Base Color"
     },
     {
       "Key": "PREF_Viewport_Spot_Light_Highlight_Color",
       "Text": "Spot Light: Highlight Color"
     },
     {
-      "Key": "PREF_Viewport_Spot_Light_Alpha",
-      "Text": "Spot Light: Transparency"
+      "Key": "PREF_Viewport_Light_Intensity_Scale",
+      "Text": "Selected Light: Intensity Scale"
     },
     {
-      "Key": "PREF_Viewport_Directional_Light_Base_Color",
-      "Text": "Directional Light: Base Color"
+      "Key": "PREF_Viewport_Light_Intensity_Scale_TT",
+      "Text": "Multiplies the diffuse power of a selected BTL light, to adjust how brightly it lights the viewport. This does not change the BTL file."
     },
     {
       "Key": "PREF_Viewport_Directional_Light_Highlight_Color",
       "Text": "Directional Light: Highlight Color"
-    },
-    {
-      "Key": "PREF_Viewport_Directional_Light_Alpha",
-      "Text": "Directional Light: Transparency"
     },
     {
       "Key": "PREF_Viewport_Auto_Invade_Marker_Base_Color",

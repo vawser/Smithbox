@@ -61,7 +61,7 @@ struct sceneLight
 	vec4 positionRange;  // xyz: position, w: range (0 = no limit)
 	vec4 directionType;  // xyz: direction the light travels, w: type
 	vec4 colorIntensity; // rgb: color, a: intensity
-	vec4 spot;           // x: cos(inner angle), y: cos(outer angle)
+	vec4 spot;           // x: cos(inner angle), y: cos(outer angle), z: 1 to fade across the range
 };
 
 struct sceneParams
@@ -319,13 +319,23 @@ vec3 LightRadiance(sceneLight light, vec3 worldPos, out vec3 L)
 	float dist = length(toLight);
 	L = toLight / max(dist, 1e-4);
 
-	// inverse square falloff, windowed to zero at the light's range
-	float attenuation = 1.0 / (dist * dist + 1.0);
+	float attenuation;
 	float range = light.positionRange.w;
-	if (range > 0.0)
+	if (light.spot.z > 0.5 && range > 0.0)
 	{
-		float window = clamp(1.0 - pow(dist / range, 4.0), 0.0, 1.0);
-		attenuation *= window * window;
+		// full strength at the light, fading away across its range
+		float fade = clamp(1.0 - dist / range, 0.0, 1.0);
+		attenuation = fade * fade;
+	}
+	else
+	{
+		// inverse square falloff, windowed to zero at the light's range
+		attenuation = 1.0 / (dist * dist + 1.0);
+		if (range > 0.0)
+		{
+			float window = clamp(1.0 - pow(dist / range, 4.0), 0.0, 1.0);
+			attenuation *= window * window;
+		}
 	}
 
 	if (type == LIGHT_SPOT)

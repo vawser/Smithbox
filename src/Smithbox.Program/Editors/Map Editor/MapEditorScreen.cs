@@ -163,7 +163,6 @@ public class MapEditorScreen : EditorScreen
                 activeView.RotateAction.OnMenu();
                 activeView.ScrambleAction.OnMenu();
                 activeView.ReplicateAction.OnMenu();
-                activeView.RenderTypeAction.OnMenu();
 
                 ImGui.Separator();
 

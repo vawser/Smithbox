@@ -249,20 +249,12 @@
       "Text": "区域选中填充：透明度"
     },
     {
-      "Key": "PREF_Viewport_Box_Region_Alpha",
-      "Text": "盒区域：透明度"
-    },
-    {
       "Key": "PREF_Viewport_Cylinder_Region_Base_Color",
       "Text": "圆柱区域：基础色"
     },
     {
       "Key": "PREF_Viewport_Cylinder_Region_Highlight_Color",
       "Text": "圆柱区域：高亮色"
-    },
-    {
-      "Key": "PREF_Viewport_Cylinder_Region_Alpha",
-      "Text": "圆柱区域：透明度"
     },
     {
       "Key": "PREF_Viewport_Sphere_Region_Base_Color",
@@ -273,20 +265,12 @@
       "Text": "球体区域：高亮色"
     },
     {
-      "Key": "PREF_Viewport_Sphere_Region_Alpha",
-      "Text": "球体区域：透明度"
-    },
-    {
       "Key": "PREF_Viewport_Point_Region_Base_Color",
       "Text": "点区域：基础色"
     },
     {
       "Key": "PREF_Viewport_Point_Region_Highlight_Color",
       "Text": "点区域：高亮色"
-    },
-    {
-      "Key": "PREF_Viewport_Point_Region_Alpha",
-      "Text": "点区域：透明度"
     },
     {
       "Key": "PREF_Viewport_Dummy_Polygon_Base_Color",
@@ -361,40 +345,24 @@
       "Text": "其他标记：透明度"
     },
     {
-      "Key": "PREF_Viewport_Point_Light_Base_Color",
-      "Text": "点光源：基础色"
-    },
-    {
       "Key": "PREF_Viewport_Point_Light_Highlight_Color",
       "Text": "点光源：高亮色"
-    },
-    {
-      "Key": "PREF_Viewport_Point_Light_Alpha",
-      "Text": "点光源：透明度"
-    },
-    {
-      "Key": "PREF_Viewport_Spot_Light_Base_Color",
-      "Text": "聚光灯：基础色"
     },
     {
       "Key": "PREF_Viewport_Spot_Light_Highlight_Color",
       "Text": "聚光灯：高亮色"
     },
     {
-      "Key": "PREF_Viewport_Spot_Light_Alpha",
-      "Text": "聚光灯：透明度"
+      "Key": "PREF_Viewport_Light_Intensity_Scale",
+      "Text": "选中光源：强度缩放"
     },
     {
-      "Key": "PREF_Viewport_Directional_Light_Base_Color",
-      "Text": "方向光：基础色"
+      "Key": "PREF_Viewport_Light_Intensity_Scale_TT",
+      "Text": "放大选中 BTL 光源的漫反射强度，以调整其在视口中的亮度。这不会更改 BTL 文件。"
     },
     {
       "Key": "PREF_Viewport_Directional_Light_Highlight_Color",
       "Text": "方向光：高亮色"
-    },
-    {
-      "Key": "PREF_Viewport_Directional_Light_Alpha",
-      "Text": "方向光：透明度"
     },
     {
       "Key": "PREF_Viewport_Auto_Invade_Marker_Base_Color",

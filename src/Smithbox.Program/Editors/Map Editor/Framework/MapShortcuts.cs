@@ -122,7 +122,6 @@ public class MapShortcuts
 
         if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
         {
-            activeView.RenderTypeAction.OnShortcut();
             activeView.PullToCameraAction.OnShortcut();
             activeView.AdjustToGridAction.OnShortcut();
         }

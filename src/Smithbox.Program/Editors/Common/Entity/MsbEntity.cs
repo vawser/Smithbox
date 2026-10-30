@@ -31,9 +31,6 @@ public class MsbEntity : Entity
 
     public MsbEntityType Type { get; set; }
 
-    public bool IsSwitchingRenderType = false;
-    private RenderModelType EntityRenderType = RenderModelType.Wireframe;
-
     public MapContainer ContainingMap
     {
         get => (MapContainer)Container;
@@ -448,101 +445,58 @@ public class MsbEntity : Entity
 
         if (WrappedObject is IMsbRegion r)
         {
-            // SOLID
-            if (EntityRenderType is RenderModelType.Solid)
+            // BOX
+            if (r.Shape is MSB.Shape.Box)
             {
-                // BOX
-                if (r.Shape is MSB.Shape.Box)
-                {
-                    mesh = RenderableHelper.GetSolidBoxRegionProxy(scene);
-                }
-                // SPHERE
-                else if (r.Shape is MSB.Shape.Sphere)
-                {
-                    mesh = RenderableHelper.GetSolidSphereRegionProxy(scene);
-                }
-                // CYLINDER
-                else if (r.Shape is MSB.Shape.Cylinder)
-                {
-                    mesh = RenderableHelper.GetSolidCylinderRegionProxy(scene);
-                }
-                // POINT
-                else if (r.Shape is MSB.Shape.Point)
-                {
-                    mesh = RenderableHelper.GetSolidPointRegionProxy(scene);
-                }
-                // RECTANGLE
-                else if (r.Shape is MSB.Shape.Rectangle)
-                {
-                    mesh = RenderableHelper.GetSolidBoxRegionProxy(scene);
-                }
-                // CIRCLE
-                else if (r.Shape is MSB.Shape.Circle)
-                {
-                    mesh = RenderableHelper.GetSolidCylinderRegionProxy(scene);
-                }
-                // COMPOSITE
-                else if (r.Shape is MSB.Shape.Composite)
-                {
-                    mesh = RenderableHelper.GetSolidPointRegionProxy(scene);
-                }
+                mesh = RenderableHelper.GetBoxRegionProxy(scene);
             }
-            // WIREFRAME
-            else if (EntityRenderType is RenderModelType.Wireframe)
+            // SPHERE
+            else if (r.Shape is MSB.Shape.Sphere)
             {
-                // BOX
-                if (r.Shape is MSB.Shape.Box)
-                {
-                    mesh = RenderableHelper.GetBoxRegionProxy(scene);
-                }
-                // SPHERE
-                else if (r.Shape is MSB.Shape.Sphere)
-                {
-                    mesh = RenderableHelper.GetSphereRegionProxy(scene);
-                }
-                // CYLINDER
-                else if (r.Shape is MSB.Shape.Cylinder)
-                {
-                    mesh = RenderableHelper.GetCylinderRegionProxy(scene);
-                }
-                // POINT
-                else if (r.Shape is MSB.Shape.Point)
-                {
-                    mesh = RenderableHelper.GetPointRegionProxy(scene);
-                }
-                // RECTANGLE
-                else if (r.Shape is MSB.Shape.Rectangle)
-                {
-                    mesh = RenderableHelper.GetBoxRegionProxy(scene);
-                }
-                // CIRCLE
-                else if (r.Shape is MSB.Shape.Circle)
-                {
-                    mesh = RenderableHelper.GetCylinderRegionProxy(scene);
-                }
-                // COMPOSITE
-                else if (r.Shape is MSB.Shape.Composite)
-                {
-                    mesh = RenderableHelper.GetPointRegionProxy(scene);
-                }
+                mesh = RenderableHelper.GetSphereRegionProxy(scene);
+            }
+            // CYLINDER
+            else if (r.Shape is MSB.Shape.Cylinder)
+            {
+                mesh = RenderableHelper.GetCylinderRegionProxy(scene);
+            }
+            // POINT
+            else if (r.Shape is MSB.Shape.Point)
+            {
+                mesh = RenderableHelper.GetPointRegionProxy(scene);
+            }
+            // RECTANGLE
+            else if (r.Shape is MSB.Shape.Rectangle)
+            {
+                mesh = RenderableHelper.GetBoxRegionProxy(scene);
+            }
+            // CIRCLE
+            else if (r.Shape is MSB.Shape.Circle)
+            {
+                mesh = RenderableHelper.GetCylinderRegionProxy(scene);
+            }
+            // COMPOSITE
+            else if (r.Shape is MSB.Shape.Composite)
+            {
+                mesh = RenderableHelper.GetPointRegionProxy(scene);
+            }
 
-                // A wireframe only has a volume to show once selected
-                if (r.Shape is MSB.Shape.Box or MSB.Shape.Rectangle)
-                {
-                    fill = RenderableHelper.GetBoxRegionFillProxy(scene);
-                }
-                else if (r.Shape is MSB.Shape.Sphere)
-                {
-                    fill = RenderableHelper.GetSphereRegionFillProxy(scene);
-                }
-                else if (r.Shape is MSB.Shape.Cylinder or MSB.Shape.Circle)
-                {
-                    fill = RenderableHelper.GetCylinderRegionFillProxy(scene);
-                }
-                else if (r.Shape is MSB.Shape.Point or MSB.Shape.Composite)
-                {
-                    fill = RenderableHelper.GetPointRegionFillProxy(scene);
-                }
+            // A wireframe only has a volume to show once selected
+            if (r.Shape is MSB.Shape.Box or MSB.Shape.Rectangle)
+            {
+                fill = RenderableHelper.GetBoxRegionFillProxy(scene);
+            }
+            else if (r.Shape is MSB.Shape.Sphere)
+            {
+                fill = RenderableHelper.GetSphereRegionFillProxy(scene);
+            }
+            else if (r.Shape is MSB.Shape.Cylinder or MSB.Shape.Circle)
+            {
+                fill = RenderableHelper.GetCylinderRegionFillProxy(scene);
+            }
+            else if (r.Shape is MSB.Shape.Point or MSB.Shape.Composite)
+            {
+                fill = RenderableHelper.GetPointRegionFillProxy(scene);
             }
         }
 
@@ -577,41 +531,19 @@ public class MsbEntity : Entity
 
         DebugPrimitiveRenderableProxy mesh = null;
 
-        // SOLID
-        if (EntityRenderType is RenderModelType.Solid)
+        if (light.Type is BTL.LightType.Directional)
         {
-            if (light.Type is BTL.LightType.Directional)
-            {
-                mesh = RenderableHelper.GetSolidDirectionalLightProxy(this, scene);
-            }
-
-            if (light.Type is BTL.LightType.Point)
-            {
-                mesh = RenderableHelper.GetSolidPointLightProxy(this, scene);
-            }
-
-            if (light.Type is BTL.LightType.Spot)
-            {
-                mesh = RenderableHelper.GetSolidSpotLightProxy(this, scene);
-            }
+            mesh = RenderableHelper.GetDirectionalLightProxy(scene);
         }
-        // WIREFRAME
-        else if (EntityRenderType is RenderModelType.Wireframe)
+
+        if (light.Type is BTL.LightType.Point)
         {
-            if (light.Type is BTL.LightType.Directional)
-            {
-                mesh = RenderableHelper.GetDirectionalLightProxy(scene);
-            }
+            mesh = RenderableHelper.GetPointLightProxy(scene);
+        }
 
-            if (light.Type is BTL.LightType.Point)
-            {
-                mesh = RenderableHelper.GetPointLightProxy(scene);
-            }
-
-            if (light.Type is BTL.LightType.Spot)
-            {
-                mesh = RenderableHelper.GetSpotLightProxy(scene);
-            }
+        if (light.Type is BTL.LightType.Spot)
+        {
+            mesh = RenderableHelper.GetSpotLightProxy(scene);
         }
 
         if (mesh == null)
@@ -625,6 +557,12 @@ public class MsbEntity : Entity
         mesh.DrawFilter = RenderFilter.Light;
 
         RenderSceneMesh = mesh;
+
+        var fill = RenderableHelper.GetLightFillProxy(scene);
+        fill.World = GetWorldMatrix();
+        fill.DrawFilter = RenderFilter.Light;
+
+        SelectionFillMesh = fill;
     }
 
     // DS2
@@ -871,24 +809,6 @@ public class MsbEntity : Entity
         return null;
     }
 
-    public void SwitchRenderType()
-    {
-        IsSwitchingRenderType = true;
-
-        switch (EntityRenderType)
-        {
-            case RenderModelType.Solid:
-                EntityRenderType = RenderModelType.Wireframe;
-                break;
-            case RenderModelType.Wireframe:
-                EntityRenderType = RenderModelType.Solid;
-                break;
-        }
-
-        SetupRenderMesh = false;
-        IsSwitchingRenderType = false;
-    }
-
     public override void BuildReferenceMap()
     {
         if (Owner is MapUniverse)
@@ -960,33 +880,6 @@ public class MsbEntity : Entity
             else if (shape != null && shape is MSB.Shape.Circle ci)
             {
                 t.Scale = new Vector3(ci.Radius, 0.0f, ci.Radius);
-            }
-        }
-        else if (Type == MsbEntityType.Light)
-        {
-            var lightType = GetPropertyValue("Type");
-            if (lightType != null)
-            {
-                if (lightType is BTL.LightType.Directional)
-                {
-                }
-                else if (lightType is BTL.LightType.Spot)
-                {
-                    var rad = (float)GetPropertyValue("Radius");
-                    t.Scale = new Vector3(rad);
-
-                    // TODO: Better transformation (or update primitive) using BTL ConeAngle
-                    /*
-                        var ang = (float)GetPropertyValue("ConeAngle");
-                        t.Scale.X += ang;
-                        t.Scale.Y += ang;
-                    */
-                }
-                else if (lightType is BTL.LightType.Point)
-                {
-                    var rad = (float)GetPropertyValue("Radius");
-                    t.Scale = new Vector3(rad);
-                }
             }
         }
         // DS2 event regions

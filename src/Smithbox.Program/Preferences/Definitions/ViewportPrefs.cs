@@ -605,11 +605,6 @@ public class ViewportPrefs
                     ref CFG.Current.Viewport_Box_Region_Highlight_Color);
 
                 DPI.ApplyInputWidth();
-                ImGui.DragFloat(
-                    $"{LOC.Get("PREF_Viewport_Box_Region_Alpha")}##Viewport_Box_Region_Alpha",
-                    ref CFG.Current.Viewport_Box_Region_Alpha, 1.0f, 1.0f, 100.0f);
-
-                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Cylinder_Region_Base_Color")}##Viewport_Cylinder_Region_Base_Color",
                     ref CFG.Current.Viewport_Cylinder_Region_Base_Color);
@@ -618,11 +613,6 @@ public class ViewportPrefs
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Cylinder_Region_Highlight_Color")}##Viewport_Cylinder_Region_Highlight_Color",
                     ref CFG.Current.Viewport_Cylinder_Region_Highlight_Color);
-
-                DPI.ApplyInputWidth();
-                ImGui.DragFloat(
-                    $"{LOC.Get("PREF_Viewport_Cylinder_Region_Alpha")}##Viewport_Cylinder_Region_Alpha",
-                    ref CFG.Current.Viewport_Cylinder_Region_Alpha, 1.0f, 1.0f, 100.0f);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
@@ -635,11 +625,6 @@ public class ViewportPrefs
                     ref CFG.Current.Viewport_Sphere_Region_Highlight_Color);
 
                 DPI.ApplyInputWidth();
-                ImGui.DragFloat(
-                    $"{LOC.Get("PREF_Viewport_Sphere_Region_Alpha")}##Viewport_Sphere_Region_Alpha",
-                    ref CFG.Current.Viewport_Sphere_Region_Alpha, 1.0f, 1.0f, 100.0f);
-
-                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Point_Region_Base_Color")}##Viewport_Point_Region_Base_Color",
                     ref CFG.Current.Viewport_Point_Region_Base_Color);
@@ -648,11 +633,6 @@ public class ViewportPrefs
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Point_Region_Highlight_Color")}##Viewport_Point_Region_Highlight_Color",
                     ref CFG.Current.Viewport_Point_Region_Highlight_Color);
-
-                DPI.ApplyInputWidth();
-                ImGui.DragFloat(
-                    $"{LOC.Get("PREF_Viewport_Point_Region_Alpha")}##Viewport_Point_Region_Alpha",
-                    ref CFG.Current.Viewport_Point_Region_Alpha, 1.0f, 1.0f, 100.0f);
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat(
@@ -751,38 +731,13 @@ public class ViewportPrefs
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
-                    $"{LOC.Get("PREF_Viewport_Point_Light_Base_Color")}##Viewport_Point_Light_Base_Color",
-                    ref CFG.Current.Viewport_Point_Light_Base_Color);
-
-                DPI.ApplyInputWidth();
-                ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Point_Light_Highlight_Color")}##Viewport_Point_Light_Highlight_Color",
                     ref CFG.Current.Viewport_Point_Light_Highlight_Color);
-
-                DPI.ApplyInputWidth();
-                ImGui.DragFloat(
-                    $"{LOC.Get("PREF_Viewport_Point_Light_Alpha")}##Viewport_Point_Light_Alpha",
-                    ref CFG.Current.Viewport_Point_Light_Alpha, 1.0f, 1.0f, 100.0f);
-
-                DPI.ApplyInputWidth();
-                ImGui.ColorEdit3(
-                    $"{LOC.Get("PREF_Viewport_Spot_Light_Base_Color")}##Viewport_Spot_Light_Base_Color",
-                    ref CFG.Current.Viewport_Spot_Light_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Spot_Light_Highlight_Color")}##Viewport_Splot_Light_Highlight_Color",
                     ref CFG.Current.Viewport_Spot_Light_Highlight_Color);
-
-                DPI.ApplyInputWidth();
-                ImGui.DragFloat(
-                    $"{LOC.Get("PREF_Viewport_Spot_Light_Alpha")}##Viewport_Spot_Light_Alpha",
-                    ref CFG.Current.Viewport_Spot_Light_Alpha, 1.0f, 1.0f, 100.0f);
-
-                DPI.ApplyInputWidth();
-                ImGui.ColorEdit3(
-                    $"{LOC.Get("PREF_Viewport_Directional_Light_Base_Color")}##Viewport_Directional_Light_Base_Color",
-                    ref CFG.Current.Viewport_Directional_Light_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
@@ -791,8 +746,9 @@ public class ViewportPrefs
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat(
-                    $"{LOC.Get("PREF_Viewport_Directional_Light_Alpha")}##Viewport_Directional_Light_Alpha",
-                    ref CFG.Current.Viewport_Directional_Light_Alpha, 1.0f, 1.0f, 100.0f);
+                    $"{LOC.Get("PREF_Viewport_Light_Intensity_Scale")}##Viewport_Light_Intensity_Scale",
+                    ref CFG.Current.Viewport_Light_Intensity_Scale, 0.1f, 0.1f, 1000.0f);
+                GUI.Tooltip(LOC.Get("PREF_Viewport_Light_Intensity_Scale_TT"));
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(

@@ -28,13 +28,6 @@ public static class RenderableHelper
     private static DbgPrimWirePoint _regionPoint;
     private static DbgPrimSolidPoint _regionSolidPoint;
 
-    private static DbgPrimBulb _pointLight;
-    private static DbgPrimSolidSphere _pointLightSolid;
-
-    private static DbgPrimWireSpotLight _spotLight;
-
-    private static DbgPrimWireSpheroidWithArrow _directionalLight;
-
     private static DbgPrimWireSpheroidWithArrow _modelMarkerChr;
     private static DbgPrimWireWallBox _modelMarkerObj;
     private static DbgPrimWireSpheroidWithArrow _modelMarkerPlayer;
@@ -207,32 +200,6 @@ public static class RenderableHelper
             Color.Brown,
             Color.Green);
 
-        // LIGHT
-        _pointLight = new DbgPrimBulb(
-            Transform.Default);
-
-        _pointLightSolid = new DbgPrimSolidSphere(
-            Transform.Default,
-            1.0f,
-            Color.Yellow,
-            6,
-            6);
-
-        _spotLight = new DbgPrimWireSpotLight(
-            Transform.Default,
-            1.0f,
-            1.0f,
-            Color.Yellow);
-
-        _directionalLight = new DbgPrimWireSpheroidWithArrow(
-            Transform.Default,
-            5.0f,
-            Color.Yellow,
-            4,
-            2,
-            false,
-            true);
-
         _autoInvadeSphere = new DbgPrimWireSphere(
             Transform.Default,
             1.0f,
@@ -303,27 +270,11 @@ public static class RenderableHelper
 
         return r;
     }
-    public static DebugPrimitiveRenderableProxy GetSolidBoxRegionProxy(RenderScene scene)
-    {
-        var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
-        var transparency = CFG.Current.Viewport_Box_Region_Alpha;
-
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox);
-
-        r.RenderTranslucent = true;
-        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        //ColorHelper.ApplyColorVariance(r);
-
-        return r;
-    }
 
     public static DebugPrimitiveRenderableProxy GetDefaultBoxProxy(RenderScene scene)
     {
         var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
         var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
-        var transparency = CFG.Current.Viewport_Box_Region_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox_Default);
 
@@ -338,7 +289,6 @@ public static class RenderableHelper
     {
         var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
         var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
-        var transparency = CFG.Current.Viewport_Box_Region_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox_Player);
 
@@ -353,7 +303,6 @@ public static class RenderableHelper
     {
         var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
         var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
-        var transparency = CFG.Current.Viewport_Box_Region_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox_Enemy);
 
@@ -380,21 +329,6 @@ public static class RenderableHelper
 
         return r;
     }
-    public static DebugPrimitiveRenderableProxy GetSolidCylinderRegionProxy(RenderScene scene)
-    {
-        var baseColor = CFG.Current.Viewport_Cylinder_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Cylinder_Region_Highlight_Color;
-        var transparency = CFG.Current.Viewport_Cylinder_Region_Alpha;
-
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidCylinder);
-
-        r.RenderTranslucent = true;
-        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        //ColorHelper.ApplyColorVariance(r);
-
-        return r;
-    }
 
 
     // SPHERE REGION
@@ -413,26 +347,10 @@ public static class RenderableHelper
         return r;
     }
 
-    public static DebugPrimitiveRenderableProxy GetSolidSphereRegionProxy(RenderScene scene)
-    {
-        var baseColor = CFG.Current.Viewport_Sphere_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Sphere_Region_Highlight_Color;
-        var transparency = CFG.Current.Viewport_Sphere_Region_Alpha;
-
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidSphere);
-
-        r.RenderTranslucent = true;
-        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        //ColorHelper.ApplyColorVariance(r);
-
-        return r;
-    }
     public static DebugPrimitiveRenderableProxy GetInteractableSphereProxy(RenderScene scene)
     {
         var baseColor = CFG.Current.Viewport_Sphere_Region_Base_Color;
         var highlightColor = CFG.Current.Viewport_Sphere_Region_Highlight_Color;
-        var transparency = CFG.Current.Viewport_Sphere_Region_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidSphere_Interactable);
 
@@ -453,22 +371,6 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionPoint);
 
-        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        //ColorHelper.ApplyColorVariance(r);
-
-        return r;
-    }
-
-    public static DebugPrimitiveRenderableProxy GetSolidPointRegionProxy(RenderScene scene)
-    {
-        var baseColor = CFG.Current.Viewport_Point_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Point_Region_Highlight_Color;
-        var transparency = CFG.Current.Viewport_Point_Region_Alpha;
-
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidPoint);
-
-        r.RenderTranslucent = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
@@ -497,6 +399,11 @@ public static class RenderableHelper
         return GetRegionFillProxy(scene, _regionSolidPoint, CFG.Current.Viewport_Point_Region_Highlight_Color);
     }
 
+    public static DebugPrimitiveRenderableProxy GetLightFillProxy(RenderScene scene)
+    {
+        return GetRegionFillProxy(scene, _regionSolidPoint, Utils.GetDecimalColor(Color.Yellow));
+    }
+
     private static DebugPrimitiveRenderableProxy GetRegionFillProxy(RenderScene scene, IDbgPrim prim, Vector3 color)
     {
         var fillColor = ColorHelper.GetTransparencyColor(color, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
@@ -515,104 +422,27 @@ public static class RenderableHelper
     // LIGHT
     public static DebugPrimitiveRenderableProxy GetPointLightProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Point_Light_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Point_Light_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
-
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _pointLight);
-
-        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        //ColorHelper.ApplyColorVariance(r);
-
-        return r;
-    }
-    public static DebugPrimitiveRenderableProxy GetSolidPointLightProxy(Entity obj, RenderScene scene)
-    {
-        var transparency = CFG.Current.Viewport_Point_Light_Alpha;
-
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _pointLightSolid);
-
-        r.RenderOverlay = true;
-
-        // Override color with light color
-        var light = (BTL.Light)obj.WrappedObject;
-        if(light != null)
-        {
-            var baseColor = Color.FromArgb(light.DiffuseColor.R, light.DiffuseColor.G, light.DiffuseColor.B);
-            var highlightColor = baseColor;
-
-            r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
-            r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        }
-        else
-        {
-            var baseColor = CFG.Current.Viewport_Point_Light_Base_Color;
-            var highlightColor = CFG.Current.Viewport_Point_Light_Highlight_Color;
-
-            r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
-            r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        }
-
-        return r;
+        return GetLightMarkerProxy(scene, CFG.Current.Viewport_Point_Light_Highlight_Color);
     }
 
     public static DebugPrimitiveRenderableProxy GetSpotLightProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Spot_Light_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Spot_Light_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
-
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _spotLight);
-
-        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        //ColorHelper.ApplyColorVariance(r);
-
-        return r;
-    }
-    public static DebugPrimitiveRenderableProxy GetSolidSpotLightProxy(Entity obj, RenderScene scene)
-    {
-        var baseColor = CFG.Current.Viewport_Spot_Light_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Spot_Light_Highlight_Color;
-        var transparency = CFG.Current.Viewport_Spot_Light_Alpha;
-
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _spotLight);
-
-        r.RenderOverlay = true;
-        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        //ColorHelper.ApplyColorVariance(r);
-
-        return r;
+        return GetLightMarkerProxy(scene, CFG.Current.Viewport_Spot_Light_Highlight_Color);
     }
 
     public static DebugPrimitiveRenderableProxy GetDirectionalLightProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Directional_Light_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Directional_Light_Highlight_Color;
+        return GetLightMarkerProxy(scene, CFG.Current.Viewport_Directional_Light_Highlight_Color);
+    }
+
+    private static DebugPrimitiveRenderableProxy GetLightMarkerProxy(RenderScene scene, Vector3 highlightColor)
+    {
         var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
 
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _directionalLight);
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionPoint);
 
-        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.BaseColor = ColorHelper.GetTransparencyColor(Color.Yellow, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        //ColorHelper.ApplyColorVariance(r);
-
-        return r;
-    }
-    public static DebugPrimitiveRenderableProxy GetSolidDirectionalLightProxy(Entity obj, RenderScene scene)
-    {
-        var baseColor = CFG.Current.Viewport_Directional_Light_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Directional_Light_Highlight_Color;
-        var transparency = CFG.Current.Viewport_Directional_Light_Alpha;
-
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _directionalLight);
-
-        r.RenderOverlay = true;
-        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        //ColorHelper.ApplyColorVariance(r);
 
         return r;
     }
