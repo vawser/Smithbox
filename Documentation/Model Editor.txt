@@ -9,7 +9,6 @@
 #----------------------------------------------------
 # Model Editor Bugs
 #----------------------------------------------------
-- Submeshes aren't working correctly
 - dummy duplicate doesn't stick
 - bone position cannot be changed (resets itself on gizmo move)
 - DS2 chrs loading badly, parts + map pieces failed to find
