@@ -58,6 +58,8 @@ internal sealed class ContainerLoadAction
         _job = job;
         var success = false;
 
+        ResourceLoadTracker.SetCurrentFile(ResourceName.FileName(Path));
+
         try
         {
             _project = Smithbox.Orchestrator.SelectedProject;

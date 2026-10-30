@@ -244,6 +244,7 @@ public static class ResourceManager
             {
                 int o;
                 ActiveJobProgress.TryRemove(rm, out o);
+                ResourceLoadTracker.Retire(rm);
             }
         }
         else
@@ -275,6 +276,8 @@ public static class ResourceManager
                 ResourceFallbacks.LoadCompassTextures(DefaultPool);
             }
         }
+
+        ResourceLoadTracker.Update();
 
         _prevCount = ActiveJobProgress.Count;
     }

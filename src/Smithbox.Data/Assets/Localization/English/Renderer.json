@@ -89,6 +89,26 @@
       "Text": "Resource Load Tasks"
     },
     {
+      "Key": "REND_Load_Panel_Title",
+      "Text": "Loading {0}"
+    },
+    {
+      "Key": "REND_Load_Panel_Title_Multiple",
+      "Text": "Loading {0} (+{1} more)"
+    },
+    {
+      "Key": "REND_Load_Panel_Title_Resources",
+      "Text": "Loading resources"
+    },
+    {
+      "Key": "REND_Load_Panel_Waiting",
+      "Text": "Waiting"
+    },
+    {
+      "Key": "REND_Load_Panel_Done",
+      "Text": "Done"
+    },
+    {
       "Key": "REND_Path_Builder_Failed_File_VFS",
       "Text": "Failed to find file in VFS: {0}"
     },
@@ -130,15 +150,15 @@
     },
     {
       "Key": "REND_Job_Additional_Textures",
-      "Text": "Loading additional textures"
+      "Text": "Additional Textures"
     },
     {
       "Key": "REND_Job_World_Map_Textures",
-      "Text": "Loading world map textures"
+      "Text": "World Map Textures"
     },
     {
       "Key": "REND_Job_Compass_Textures",
-      "Text": "Loading compass textures"
+      "Text": "Compass Textures"
     },
     {
       "Key": "REND_FlverResource_Load_Failed",

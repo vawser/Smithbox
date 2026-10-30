@@ -25,7 +25,6 @@ public class MapEditorScreen : EditorScreen
     public MapCommandQueue CommandQueue;
     public MapShortcuts Shortcuts;
 
-    public ResourceLoadWindow LoadingModal;
     public ResourceListTool ResourceList;
 
     public MapEditorScreen(ProjectEntry project)
@@ -34,7 +33,6 @@ public class MapEditorScreen : EditorScreen
 
         ViewHandler = new(this, project);
 
-        LoadingModal = new();
         ResourceList = new();
 
         CommandQueue = new MapCommandQueue(this, project);
@@ -83,16 +81,6 @@ public class MapEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_MapEditor);
 
         ViewHandler.HandleViews(dsid);
-
-        if (activeView != null)
-        {
-            var curViewport = activeView.ViewportHandler.ActiveViewport;
-
-            if (curViewport.Viewport != null)
-            {
-                LoadingModal.DisplayWindow(curViewport.Viewport.Width, curViewport.Viewport.Height);
-            }
-        }
     }
 
     public void FileMenu()

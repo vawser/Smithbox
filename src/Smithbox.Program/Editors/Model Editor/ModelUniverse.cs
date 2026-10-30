@@ -85,15 +85,54 @@ public class ModelUniverse : IUniverse
 
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
         {
-            Tasks = LoadTextures(Tasks, newContainer);
-            await Task.WhenAll(Tasks);
-            Tasks = LoadModels(Tasks, newContainer);
-            await Task.WhenAll(Tasks);
+            ResourceLoadTracker.BeginSession(modelWrapper.Name);
 
-            ScheduleTextureRefresh();
+            try
+            {
+                ReserveLoadCategories();
+
+                Tasks = LoadTextures(Tasks, newContainer);
+                await Task.WhenAll(Tasks);
+                Tasks = LoadModels(Tasks, newContainer);
+                await Task.WhenAll(Tasks);
+
+                ScheduleTextureRefresh();
+            }
+            finally
+            {
+                ResourceLoadTracker.EndSession(modelWrapper.Name);
+            }
         }
 
         await Task.WhenAll(Tasks);
+    }
+
+    /// <summary>
+    ///     Lists everything this model is going to load, so it can be displayed before its load begins.
+    /// </summary>
+    private void ReserveLoadCategories()
+    {
+        void Reserve(bool enabled, HashSet<ResourceDescriptor> assets, string name)
+        {
+            if (enabled && assets.Count > 0)
+            {
+                ResourceLoadTracker.Reserve(name);
+            }
+        }
+
+        if (CFG.Current.Viewport_Enable_Texturing)
+        {
+            Reserve(CFG.Current.ModelEditor_TextureLoad_MapPieces, LoadList_Map_Texture, "Map Piece Textures");
+            Reserve(CFG.Current.ModelEditor_TextureLoad_Characters, LoadList_Character_Texture, "Character Textures");
+            Reserve(CFG.Current.ModelEditor_TextureLoad_Objects, LoadList_Asset_Texture, "Asset Textures");
+            Reserve(CFG.Current.ModelEditor_TextureLoad_Parts, LoadList_Part_Texture, "Part Textures");
+        }
+
+        Reserve(CFG.Current.ModelEditor_ModelLoad_MapPieces, LoadList_MapPiece_Model, "Map Pieces");
+        Reserve(CFG.Current.ModelEditor_ModelLoad_Characters, LoadList_Character_Model, "Characters");
+        Reserve(CFG.Current.ModelEditor_ModelLoad_Objects, LoadList_Asset_Model, "Assets");
+        Reserve(CFG.Current.ModelEditor_ModelLoad_Parts, LoadList_Part_Model, "Parts");
+        Reserve(CFG.Current.ModelEditor_ModelLoad_Collisions, LoadList_Collision, "Collisions");
     }
 
     public void SetupModelLoadList(string modelName, ModelContainerWrapper parent)
@@ -316,7 +355,10 @@ public class ModelUniverse : IUniverse
             AccessLevel = AccessLevel.AccessGPUOptimizedOnly
         };
 
-        return ResourceManager.DefaultPool.LoadAssets(View.Project, assets, options, onlyListedAssets);
+        Task load = ResourceManager.DefaultPool.LoadAssets(View.Project, assets, options, onlyListedAssets);
+        ResourceLoadTracker.MarkRequested(jobName);
+
+        return load;
     }
 
     public List<Task> LoadTextures(List<Task> tasks, ModelContainer container)

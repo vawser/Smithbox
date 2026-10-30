@@ -22,8 +22,6 @@ public class ModelEditorScreen : EditorScreen
     public ModelCommandQueue CommandQueue;
     public ModelShortcuts Shortcuts;
 
-    public ResourceLoadWindow LoadingModal;
-
     public ModelEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -32,8 +30,6 @@ public class ModelEditorScreen : EditorScreen
 
         CommandQueue = new ModelCommandQueue(this, project);
         Shortcuts = new ModelShortcuts(this, project);
-
-        LoadingModal = new();
     }
 
     public string EditorName => "Model Editor";
@@ -79,14 +75,6 @@ public class ModelEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_ModelEditor);
 
         ViewHandler.HandleViews(dsid);
-
-        if (activeView != null)
-        {
-            if (activeView.ViewportWindow.Viewport != null)
-            {
-                LoadingModal.DisplayWindow(activeView.ViewportWindow.Viewport.Width, activeView.ViewportWindow.Viewport.Height);
-            }
-        }
     }
 
     public void FileMenu()

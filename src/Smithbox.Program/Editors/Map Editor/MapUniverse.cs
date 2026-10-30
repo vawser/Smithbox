@@ -88,7 +88,6 @@ public class MapUniverse : IUniverse
     public async Task<bool> LoadMapAsync(string mapid, bool selectOnLoad = false)
     {
         IsLoading = true;
-        View.Editor.LoadingModal.AllowDisplay = true;
 
         Profiler.TracyFiberEnter("loadMapAsync");
         using var __loadMapZone = Profiler.TracyZoneAuto();
@@ -106,6 +105,8 @@ public class MapUniverse : IUniverse
         }
 
         MapContainer newMap = null;
+
+        ResourceLoadTracker.BeginSession(mapid);
 
         try
         {
@@ -139,6 +140,11 @@ public class MapUniverse : IUniverse
                     using var __texScope = Profiler.TracyZoneAuto();
                     resourceHandler.SetupTextureLoadLists();
                     __texScope.Dispose();
+
+                    if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
+                    {
+                        resourceHandler.ReserveLoadCategories();
+                    }
                 }
 
                 using var __lightScope = Profiler.TracyZoneAuto();
@@ -281,7 +287,7 @@ public class MapUniverse : IUniverse
             __loadMapZone.Dispose();
             Profiler.TracyFiberLeave();
 
-            View.Editor.LoadingModal.AllowDisplay = false;
+            ResourceLoadTracker.EndSession(mapid);
             IsLoading = false;
         }
 
@@ -738,7 +744,7 @@ public class MapUniverse : IUniverse
 
         ResourceManager.DefaultPool.LoadAssets(Project, chrsToLoad, new LoadOptions
         {
-            JobName = "Loading chrs",
+            JobName = LOC.Get("MAP_ResourceManager_Character_Models"),
             Types = ResourceType.Flver | ResourceType.Texture,
             AccessLevel = AccessLevel.AccessGPUOptimizedOnly
         });

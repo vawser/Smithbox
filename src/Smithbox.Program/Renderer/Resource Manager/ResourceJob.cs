@@ -15,6 +15,7 @@ public class ResourceJob
 
     private readonly ActionBlock<ContainerLoadAction> _loadContainers;
     private readonly BufferBlock<ResourceLoadedReply> _processedResources;
+    private int _containersRead;
     private int _courseSize;
     private int TotalSize;
 
@@ -24,7 +25,11 @@ public class ResourceJob
 
         ExecutionDataflowBlockOptions options = new() { MaxDegreeOfParallelism = DataflowBlockOptions.Unbounded };
 
-        _loadContainers = new ActionBlock<ContainerLoadAction>(a => a.Run(this), options);
+        _loadContainers = new ActionBlock<ContainerLoadAction>(a =>
+        {
+            a.Run(this);
+            Interlocked.Increment(ref _containersRead);
+        }, options);
 
         _processedResources = new BufferBlock<ResourceLoadedReply>();
 
@@ -52,9 +57,24 @@ public class ResourceJob
         Interlocked.Add(ref TotalSize, size);
     }
 
+    /// <summary>
+    ///     True until every container has been read, as the size of the job isn't known before then.
+    /// </summary>
+    public bool IsEstimating => Volatile.Read(ref _containersRead) < Volatile.Read(ref _courseSize);
+
     public int GetEstimateTaskSize()
     {
-        return Math.Max(TotalSize, _courseSize);
+        var read = Volatile.Read(ref _containersRead);
+        var total = Volatile.Read(ref TotalSize);
+
+        if (read == 0)
+        {
+            return Math.Max(total, _courseSize);
+        }
+
+        // The number of resources in a container is only known once it is read,
+        // so assume that the containers yet to be read hold as many as the ones that have been
+        return Math.Max(total, (int)((long)total * _courseSize / read));
     }
 
     internal void AddContainer(ContainerLoadAction action)
@@ -74,6 +94,7 @@ public class ResourceJob
                _processedResources.TryReceive(out ResourceLoadedReply p))
         {
             p.Context.Pool.Register(p.Context, p.Resource, p.AccessLevel);
+            ResourceLoadTracker.SetCurrentFile(p.Context.Name);
             committed++;
         }
 

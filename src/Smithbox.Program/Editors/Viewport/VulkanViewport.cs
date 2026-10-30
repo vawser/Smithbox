@@ -44,6 +44,7 @@ public class VulkanViewport : IViewport
 
     public ViewportMenu ViewportMenu;
     public ViewportOverlay ViewportOverlay;
+    public ResourceLoadWindow ResourceLoadWindow;
 
     public ClickSelection ClickSelection;
     public BoxSelection BoxSelection;
@@ -117,6 +118,7 @@ public class VulkanViewport : IViewport
 
         ViewportMenu = new(this);
         ViewportOverlay = new(this);
+        ResourceLoadWindow = new();
 
         Width = width;
         Height = height;
@@ -222,7 +224,9 @@ public class VulkanViewport : IViewport
 
     public void Display()
     {
-        var flags = ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav | ImGuiWindowFlags.MenuBar;
+        // The resource load panel ends at the very bottom of the window, which would otherwise make it scrollable
+        var flags = ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav | ImGuiWindowFlags.MenuBar
+            | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
 
         ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0, 0, 0, 0)); // Transparent
 
@@ -242,7 +246,11 @@ public class VulkanViewport : IViewport
 
             Vector2 p = ImGui.GetWindowPos();
             Vector2 s = ImGui.GetWindowSize();
-            Rectangle newViewportSize = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
+
+            // The viewport gives up the space that the resource load panel needs
+            var loadPanelHeight = (int)(IsFocusedViewport() ? ResourceLoadWindow.GetHeight(s) : 0);
+
+            Rectangle newViewportSize = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3 - loadPanelHeight);
 
             ResizeViewport(Device, newViewportSize);
 
@@ -261,6 +269,11 @@ public class VulkanViewport : IViewport
 
             ClickSelection.Update();
             BoxSelection.Update();
+
+            if (loadPanelHeight > 0)
+            {
+                ResourceLoadWindow.Display(p, s, loadPanelHeight);
+            }
 
             IsViewportVisible = true;
         }
@@ -310,6 +323,31 @@ public class VulkanViewport : IViewport
 
         //Gizmos.DebugGui();
         return kbbusy;
+    }
+
+    /// <summary>
+    /// True if this is the viewport the user last used, out of the viewports in all of the editor's views.
+    /// Unlike <see cref="IsActiveViewport"/>, this stays true when the mouse leaves the viewport.
+    /// </summary>
+    private bool IsFocusedViewport()
+    {
+        if (Owner is MapUniverse mapUniverse)
+        {
+            var view = mapUniverse.View;
+
+            return view.Editor.ViewHandler.ActiveView == view
+                && view.ViewportHandler.ActiveViewport?.Viewport == this;
+        }
+
+        if (Owner is ModelUniverse modelUniverse)
+        {
+            var view = modelUniverse.View;
+
+            return view.Editor.ViewHandler.ActiveView == view
+                && view.ViewportWindow.Viewport == this;
+        }
+
+        return false;
     }
 
     public void HandleCompass()

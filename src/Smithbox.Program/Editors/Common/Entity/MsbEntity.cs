@@ -241,7 +241,7 @@ public class MsbEntity : Entity
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.MapPiece;
 
-        LoadAsset<FlverResource>(asset, LOC.Get("REND_Loading_Map_Piece"), ResourceType.Flver | ResourceType.Texture);
+        LoadAsset<FlverResource>(asset, LOC.Get("MAP_ResourceManager_Map_Piece_Models"), ResourceType.Flver | ResourceType.Texture);
 
         return mesh;
     }
@@ -259,7 +259,7 @@ public class MsbEntity : Entity
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.Character;
 
-        LoadAsset<FlverResource>(asset, LOC.Get("REND_Loading_Character"), ResourceType.Flver | ResourceType.Texture);
+        LoadAsset<FlverResource>(asset, LOC.Get("MAP_ResourceManager_Character_Models"), ResourceType.Flver | ResourceType.Texture);
 
         return mesh;
     }
@@ -277,7 +277,7 @@ public class MsbEntity : Entity
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.Object;
 
-        LoadAsset<FlverResource>(asset, LOC.Get("REND_Loading_Object"), ResourceType.Flver | ResourceType.Texture);
+        LoadAsset<FlverResource>(asset, MapResourceHandler.GetObjectModelsName(curProject), ResourceType.Flver | ResourceType.Texture);
 
         return mesh;
     }
@@ -299,7 +299,9 @@ public class MsbEntity : Entity
             mesh.DrawFilter = RenderFilter.ConnectCollision;
         }
 
-        LoadAsset<HavokCollisionResource>(asset, LOC.Get("REND_Loading_Collision"), ResourceType.CollisionHKX);
+        var jobName = LOC.Get(isConnectCollision ? "MAP_ResourceManager_Connect_Collision_Models" : "MAP_ResourceManager_Collision_Models");
+
+        LoadAsset<HavokCollisionResource>(asset, jobName, ResourceType.CollisionHKX);
 
         return mesh;
     }
@@ -317,7 +319,7 @@ public class MsbEntity : Entity
         mesh.DrawFilter = RenderFilter.ObjectCollision;
 
         // Binders can hold other hkx files (e.g. animations and cloth), so only the collision itself is loaded
-        LoadAsset<HavokCollisionResource>(asset, LOC.Get("REND_Loading_Collision"), ResourceType.CollisionHKX, asset.Name);
+        LoadAsset<HavokCollisionResource>(asset, LOC.Get("MAP_ResourceManager_Collision_Models"), ResourceType.CollisionHKX, asset.Name);
 
         return mesh;
     }
@@ -338,7 +340,7 @@ public class MsbEntity : Entity
         mesh.SetSelectable(this);
         mesh.DrawFilter = RenderFilter.Navmesh;
 
-        LoadAsset<NVMNavmeshResource>(asset, LOC.Get("REND_Loading_Navmesh"), ResourceType.Navmesh);
+        LoadAsset<NVMNavmeshResource>(asset, LOC.Get("MAP_ResourceManager_Navmesh_Models"), ResourceType.Navmesh);
 
         return mesh;
     }

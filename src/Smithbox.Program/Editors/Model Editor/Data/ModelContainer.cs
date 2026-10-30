@@ -462,7 +462,7 @@ public class ModelContainer : ObjectContainer
     {
         var options = new LoadOptions
         {
-            JobName = "Loading mesh",
+            JobName = "Meshes",
             Types = types,
             AccessLevel = AccessLevel.AccessGPUOptimizedOnly,
             IsConnectCollision = isConnectCollision,

@@ -238,6 +238,60 @@ public class MapResourceHandler
     }
 
     /// <summary>
+    ///     The name of the load category for object models, which are called assets in the later games.
+    /// </summary>
+    public static string GetObjectModelsName(ProjectEntry project)
+    {
+        return LOC.Get(UsesAssets(project) ? "MAP_ResourceManager_Asset_Models" : "MAP_ResourceManager_Object_Models");
+    }
+
+    /// <summary>
+    ///     The name of the load category for object textures, which are called assets in the later games.
+    /// </summary>
+    public static string GetObjectTexturesName(ProjectEntry project)
+    {
+        return LOC.Get(UsesAssets(project) ? "MAP_ResourceManager_Asset_Textures" : "MAP_ResourceManager_Object_Textures");
+    }
+
+    private static bool UsesAssets(ProjectEntry project)
+    {
+        return project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.AC6
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB;
+    }
+
+    /// <summary>
+    ///     Lists everything this map is going to load, so it can be displayed before its load begins.
+    /// </summary>
+    public void ReserveLoadCategories()
+    {
+        void Reserve(bool enabled, HashSet<ResourceDescriptor> assets, string name)
+        {
+            if (enabled && assets.Count > 0)
+            {
+                ResourceLoadTracker.Reserve(name);
+            }
+        }
+
+        Reserve(CFG.Current.MapEditor_ModelLoad_MapPieces, LoadList_MapPiece_Model, LOC.Get("MAP_ResourceManager_Map_Piece_Models"));
+        Reserve(CFG.Current.MapEditor_ModelLoad_Characters, LoadList_Character_Model, LOC.Get("MAP_ResourceManager_Character_Models"));
+        Reserve(CFG.Current.MapEditor_ModelLoad_Objects, LoadList_Asset_Model, GetObjectModelsName(View.Project));
+        Reserve(CFG.Current.MapEditor_ModelLoad_Collisions, LoadList_Collision, LOC.Get("MAP_ResourceManager_Collision_Models"));
+        Reserve(CFG.Current.MapEditor_ModelLoad_Collisions, LoadList_ConnectCollision, LOC.Get("MAP_ResourceManager_Connect_Collision_Models"));
+        Reserve(CFG.Current.MapEditor_ModelLoad_Navmeshes, LoadList_Navmesh, LOC.Get("MAP_ResourceManager_Navmesh_Models"));
+
+        if (!CFG.Current.Viewport_Enable_Texturing)
+            return;
+
+        Reserve(CFG.Current.MapEditor_TextureLoad_MapPieces, LoadList_Map_Texture, LOC.Get("MAP_ResourceManager_Map_Textures"));
+        Reserve(CFG.Current.MapEditor_TextureLoad_Characters, LoadList_Character_Texture, LOC.Get("MAP_ResourceManager_Character_Textures"));
+        Reserve(CFG.Current.MapEditor_TextureLoad_Objects, LoadList_Asset_Texture, GetObjectTexturesName(View.Project));
+        Reserve(CFG.Current.MapEditor_TextureLoad_Misc, LoadList_Other_Texture, LOC.Get("MAP_ResourceManager_Miscellaneous_Textures"));
+    }
+
+    /// <summary>
     ///     Loads the containers that hold a set of assets into a pool as one job.
     /// </summary>
     private Task LoadAssets(IEnumerable<ResourceDescriptor> assets, string jobName, ResourceType types,
@@ -251,7 +305,10 @@ public class MapResourceHandler
             IsConnectCollision = isConnectCollision
         };
 
-        return (pool ?? ResourceManager.DefaultPool).LoadAssets(View.Project, assets, options, onlyListedAssets);
+        Task load = (pool ?? ResourceManager.DefaultPool).LoadAssets(View.Project, assets, options, onlyListedAssets);
+        ResourceLoadTracker.MarkRequested(jobName);
+
+        return load;
     }
 
     public List<Task> LoadTextures(List<Task> tasks, MapContainer map)
@@ -262,9 +319,7 @@ public class MapResourceHandler
         // Map
         if (CFG.Current.MapEditor_TextureLoad_MapPieces)
         {
-            var name = LOC.Get("MAP_ResourceManager_Map_Textures", AdjustedMapID);
-
-            task = LoadAssets(LoadList_Map_Texture, name, ResourceType.Texture);
+            task = LoadAssets(LoadList_Map_Texture, LOC.Get("MAP_ResourceManager_Map_Textures"), ResourceType.Texture);
             tasks.Add(task);
         }
 
@@ -278,17 +333,7 @@ public class MapResourceHandler
         // Asset
         if (CFG.Current.MapEditor_TextureLoad_Objects)
         {
-            var name = LOC.Get("MAP_ResourceManager_Object_Textures");
-            if (View.Project.Descriptor.ProjectType is ProjectType.ER 
-                or ProjectType.AC6 
-                or ProjectType.NR
-                or ProjectType.DB_NT
-                or ProjectType.DB)
-            {
-                name = LOC.Get("MAP_ResourceManager_Asset_Textures");
-            }
-
-            task = LoadAssets(LoadList_Asset_Texture, name, ResourceType.Texture);
+            task = LoadAssets(LoadList_Asset_Texture, GetObjectTexturesName(View.Project), ResourceType.Texture);
             tasks.Add(task);
         }
 
@@ -324,17 +369,7 @@ public class MapResourceHandler
         // Objects
         if (CFG.Current.MapEditor_ModelLoad_Objects)
         {
-            var name = LOC.Get("MAP_ResourceManager_Object_Models");
-            if (View.Project.Descriptor.ProjectType is ProjectType.ER 
-                or ProjectType.AC6 
-                or ProjectType.NR 
-                or ProjectType.DB_NT
-                or ProjectType.DB)
-            {
-                name = LOC.Get("MAP_ResourceManager_Asset_Models");
-            }
-
-            task = LoadAssets(LoadList_Asset_Model, name, modelTypes);
+            task = LoadAssets(LoadList_Asset_Model, GetObjectModelsName(View.Project), modelTypes);
             tasks.Add(task);
         }
 
