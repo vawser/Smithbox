@@ -589,6 +589,7 @@ public class CFG
     public bool Interface_ModelEditor_Tool_ModelInsight = true;
     public bool Interface_ModelEditor_Tool_ModelInstanceFinder = true;
     public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
+    public bool Interface_ModelEditor_Tool_Animation = true;
     public bool Interface_ModelEditor_Tool_ResourceMonitor = true;
     public bool Interface_ModelEditor_Tool_Data_Transfer = true;
     public bool Interface_ModelEditor_Tool_ModelExport = true;

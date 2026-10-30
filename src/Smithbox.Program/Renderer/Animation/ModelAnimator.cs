@@ -46,7 +46,7 @@ public sealed class ModelAnimator : IDisposable
     {
         Package = package;
         _rig = rig;
-        _pose = new ModelPose(rig, package.Skeleton!);
+        _pose = new ModelPose(rig, package.Skeleton!, package.RetargetSkeleton);
 
         _meshSkinStart = new int[rig.Meshes.Length];
         Array.Fill(_meshSkinStart, -1);

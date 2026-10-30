@@ -291,6 +291,7 @@ public sealed class ModelPose
     private readonly int[] _nodeToBone;
 
     private readonly NewBlendableTransform[] _reference;
+    private readonly Vector3[] _translationOffset;
     private readonly Matrix4x4[] _boneRotationTranslation;
     private readonly Vector3[] _boneScale;
     private readonly Matrix4x4[] _boneWorld;
@@ -305,7 +306,13 @@ public sealed class ModelPose
     /// </summary>
     public int MappedNodeCount { get; }
 
-    public ModelPose(ModelRig rig, HavokSkeletonData skeleton)
+    /// <param name="skeleton">The skeleton the clips are bound to.</param>
+    /// <param name="retargetSkeleton">
+    ///     The model's own skeleton, if the clips belong to another character. Bone order can differ between
+    ///     the two, so clips still go through <paramref name="skeleton" />, but the bones keep the lengths
+    ///     of this one so that the model is not stretched to the proportions of the other character.
+    /// </param>
+    public ModelPose(ModelRig rig, HavokSkeletonData skeleton, HavokSkeletonData? retargetSkeleton = null)
     {
         _rig = rig;
         _skeleton = skeleton;
@@ -313,6 +320,7 @@ public sealed class ModelPose
         var boneCount = skeleton.BoneCount;
         _boneOrder = ModelRig.SortParentsFirst(skeleton.Parents.Select(p => (int)p).ToArray());
         _reference = skeleton.ReferencePose.Select(t => t.ToBlendable()).ToArray();
+        _translationOffset = new Vector3[boneCount];
         _boneRotationTranslation = new Matrix4x4[boneCount];
         _boneScale = new Vector3[boneCount];
         _boneWorld = new Matrix4x4[boneCount];
@@ -321,6 +329,18 @@ public sealed class ModelPose
         for (var i = 0; i < boneCount; i++)
         {
             bonesByName.TryAdd(skeleton.Names[i], i);
+        }
+
+        if (retargetSkeleton != null)
+        {
+            for (var i = 0; i < retargetSkeleton.BoneCount; i++)
+            {
+                if (bonesByName.TryGetValue(retargetSkeleton.Names[i], out var bone))
+                {
+                    _translationOffset[bone] = retargetSkeleton.ReferencePose[i].Translation - _reference[bone].Translation;
+                    _reference[bone].Translation += _translationOffset[bone];
+                }
+            }
         }
 
         _nodeToBone = new int[rig.NodeNames.Length];
@@ -380,6 +400,11 @@ public sealed class ModelPose
         }
 
         NewBlendableTransform sampled = clip!.Sample(track, frame);
+
+        if (clip.BlendMode == HavokBlendMode.Normal)
+        {
+            sampled.Translation += _translationOffset[bone];
+        }
 
         return clip.BlendMode switch
         {

@@ -21,6 +21,14 @@
       "Text": "Model Mask Toggler"
     },
     {
+      "Key": "MODEL_ToolWindow_View_Animation",
+      "Text": "Animation"
+    },
+    {
+      "Key": "MODEL_Animation_Header",
+      "Text": "Animation"
+    },
+    {
       "Key": "MODEL_ToolWindow_View_Resource_Monitor",
       "Text": "Resource Monitor"
     },

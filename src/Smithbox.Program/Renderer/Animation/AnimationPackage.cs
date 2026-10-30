@@ -53,6 +53,16 @@ public sealed class AnimationPackage : IDisposable
     public HavokSkeletonData? Skeleton { get; private set; }
     public List<AnimationEntry> Animations { get; } = new();
 
+    /// <summary>
+    ///     The model whose animation set this is, which differs from the requested model when that shares a set.
+    /// </summary>
+    public string SourceModel { get; private set; } = "";
+
+    /// <summary>
+    ///     The skeleton of the requested model, when it plays the animations of another.
+    /// </summary>
+    public HavokSkeletonData? RetargetSkeleton { get; private set; }
+
     private AnimationPackage(ProjectType game)
     {
         Game = game;
@@ -82,6 +92,59 @@ public sealed class AnimationPackage : IDisposable
     public static AnimationPackage? Load(VirtualFileSystem fs, ProjectType game, AnimatedModelKind kind,
         string modelName, string containerPath)
     {
+        HavokSkeletonData? ownSkeleton = null;
+
+        foreach (var setName in GetAnimationSetNames(kind, modelName))
+        {
+            AnimationPackage package = LoadSet(fs, game, kind, setName, containerPath);
+
+            if (package.Skeleton != null && package.Animations.Count > 0)
+            {
+                package.SourceModel = setName;
+                package.RetargetSkeleton = ownSkeleton;
+                package.Animations.Sort((a, b) => a.Id.CompareTo(b.Id));
+                return package;
+            }
+
+            // A character sharing a set usually still has a skeleton of its own, in an otherwise empty anibnd
+            ownSkeleton ??= package.Skeleton;
+            package.Dispose();
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    ///     Variants of a character share the animations of a base character: c2041 plays the set of
+    ///     c2040, and c3020 that of c3000. The nearest set wins, starting with the character itself.
+    /// </summary>
+    private static IEnumerable<string> GetAnimationSetNames(AnimatedModelKind kind, string modelName)
+    {
+        yield return modelName;
+
+        if (kind != AnimatedModelKind.Character || !Regex.IsMatch(modelName, @"^c\d{4}$", RegexOptions.IgnoreCase))
+        {
+            yield break;
+        }
+
+        var tens = modelName[..4] + "0";
+        var hundreds = modelName[..3] + "00";
+
+        if (!tens.Equals(modelName, StringComparison.OrdinalIgnoreCase))
+        {
+            yield return tens;
+        }
+
+        if (!hundreds.Equals(modelName, StringComparison.OrdinalIgnoreCase) &&
+            !hundreds.Equals(tens, StringComparison.OrdinalIgnoreCase))
+        {
+            yield return hundreds;
+        }
+    }
+
+    private static AnimationPackage LoadSet(VirtualFileSystem fs, ProjectType game, AnimatedModelKind kind,
+        string modelName, string containerPath)
+    {
         AnimationPackage package = new(game);
 
         try
@@ -107,13 +170,6 @@ public sealed class AnimationPackage : IDisposable
             throw;
         }
 
-        if (package.Skeleton == null || package.Animations.Count == 0)
-        {
-            package.Dispose();
-            return null;
-        }
-
-        package.Animations.Sort((a, b) => a.Id.CompareTo(b.Id));
         return package;
     }
 
@@ -124,11 +180,11 @@ public sealed class AnimationPackage : IDisposable
     private static IEnumerable<string> FindCharacterBinders(VirtualFileSystem fs, string containerPath,
         string modelName)
     {
-        var folder = Path.GetDirectoryName(containerPath)?.Replace('\\', '/') ?? "";
-        var pattern = $@"(^|/){Regex.Escape(modelName)}(_[^/]*)?\.anibnd(\.dcx)?$";
+        var folder = Path.GetDirectoryName(containerPath)?.Replace('\\', '/').Trim('/') ?? "";
+        var pattern = $@"(?i)(^|/){Regex.Escape(modelName)}(_[^/]*)?\.anibnd(\.dcx)?$";
 
         var found = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        foreach (var path in fs.GetFileNamesMatching(folder.Length > 0 ? "/" + folder : "/", pattern))
+        foreach (var path in fs.GetFileNamesMatching("/" + folder, pattern))
         {
             found.Add(path);
         }
