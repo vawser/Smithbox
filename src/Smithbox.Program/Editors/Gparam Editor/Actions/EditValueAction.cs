@@ -34,12 +34,14 @@ public class EditValueAction : EditorAction
     {
         StoredOldValues = new List<object>();
         DispatchOnField(TargetField, TargetValues, true);
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
         return ActionEvent.ObjectAddedRemoved;
     }
 
     public override ActionEvent Undo()
     {
         DispatchOnField(TargetField, TargetValues, false);
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
         return ActionEvent.ObjectAddedRemoved;
     }
 

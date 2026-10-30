@@ -50,6 +50,8 @@ public class ReplaceFieldAction : EditorAction
             }
         }
 
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 

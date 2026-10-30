@@ -47,6 +47,8 @@ public class DeleteFieldAction : EditorAction
             TargetGroup.Fields.RemoveAt(idx);
         }
 
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -62,6 +64,8 @@ public class DeleteFieldAction : EditorAction
 
             TargetGroup.Fields.Insert(insertIndex, StoredFields[i]);
         }
+
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
     }

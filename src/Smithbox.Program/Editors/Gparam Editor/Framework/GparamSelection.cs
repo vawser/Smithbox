@@ -131,7 +131,7 @@ public class GparamSelection
          == entry.Filename && e.Key.Extension == entry.Extension);
 
         _selectedGparamKey = targetEntry.Key.Filename;
-        _selectedGparam = targetEntry.Value;
+        _selectedGparam = targetEntry.Value.Gparam;
     }
 
     /// <summary>

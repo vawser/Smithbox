@@ -11,7 +11,7 @@ public class GparamBank : IDisposable
 
     public string Name;
 
-    public Dictionary<FileDictionaryEntry, GPARAM> Entries = new();
+    public Dictionary<FileDictionaryEntry, GparamWrapper> Entries = new();
 
     public GparamBank(string name, ProjectEntry project, VirtualFileSystem targetFs)
     {
@@ -38,10 +38,26 @@ public class GparamBank : IDisposable
 
         foreach (var entry in Project.Locator.GparamFiles.Entries)
         {
-            Entries.Add(entry, null);
+            Entries.Add(entry, new GparamWrapper(entry));
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Mark the wrapper that holds the passed GPARAM as modified
+    /// </summary>
+    public void MarkAsDirty(GPARAM gparam)
+    {
+        if (gparam == null)
+            return;
+
+        var wrapper = Entries.Values.FirstOrDefault(e => e.Gparam == gparam);
+
+        if (wrapper != null)
+        {
+            wrapper.IsDirty = true;
+        }
     }
 
     public async Task<bool> LoadGraphicsParam(FileDictionaryEntry fileEntry)
@@ -49,7 +65,7 @@ public class GparamBank : IDisposable
         await Task.Yield();
 
         // If already loaded, just ignore
-        if (Entries.Any(e => e.Key.Filename == fileEntry.Filename && e.Key.Extension == fileEntry.Extension && e.Value != null))
+        if (Entries.Any(e => e.Key.Filename == fileEntry.Filename && e.Key.Extension == fileEntry.Extension && e.Value.IsLoaded()))
         {
             return true;
         }
@@ -82,7 +98,8 @@ public class GparamBank : IDisposable
                                 {
                                     var gparam = GPARAM.Read(gparamData);
 
-                                    Entries[key] = gparam;
+                                    Entries[key].Gparam = gparam;
+                                    Entries[key].IsDirty = false;
                                 }
                                 catch (Exception e)
                                 {
@@ -120,7 +137,8 @@ public class GparamBank : IDisposable
                             {
                                 var gparam = GPARAM.Read(gparamData.Value);
 
-                                Entries[key] = gparam;
+                                Entries[key].Gparam = gparam;
+                                Entries[key].IsDirty = false;
                             }
                             catch (Exception e)
                             {
@@ -162,15 +180,33 @@ public class GparamBank : IDisposable
 
         foreach (var entry in Entries)
         {
+            // Only save the files that have been modified
+            if (!entry.Value.IsLoaded() || !entry.Value.IsDirty)
+                continue;
+
             await SaveGraphicsParam(entry.Key, entry.Value);
         }
 
         return true;
     }
 
-    public async Task<bool> SaveGraphicsParam(FileDictionaryEntry fileEntry, GPARAM gparamEntry)
+    public async Task<bool> SaveGraphicsParam(FileDictionaryEntry fileEntry, GparamWrapper wrapper)
     {
         await Task.Yield();
+
+        if (!wrapper.IsLoaded())
+            return false;
+
+        if (!CFG.Current.GparamEditor_Allow_Unmodified_Save)
+        {
+            if (!wrapper.IsDirty)
+            {
+                Smithbox.Log(this, LOC.Get("GPARAM_Data_Block_Save_File", fileEntry.Filename));
+                return false;
+            }
+        }
+
+        var gparamEntry = wrapper.Gparam;
 
         if (fileEntry.Extension == "gparambnd")
         {
@@ -197,11 +233,15 @@ public class GparamBank : IDisposable
                         {
                             Smithbox.LogError(this,
                                 LOC.Get("GPARAM_Data_Failed_Write_GPARAM", entry.Name), ex);
+
+                            return false;
                         }
 
                         var writeFile = binder.Write();
 
                         Project.VFS.ProjectFS.WriteFile(fileEntry.Path, writeFile);
+
+                        wrapper.IsDirty = false;
                     }
                     catch (Exception ex)
                     {
@@ -223,6 +263,8 @@ public class GparamBank : IDisposable
                 var bytes = gparamEntry.Write();
 
                 Project.VFS.ProjectFS.WriteFile(fileEntry.Path, bytes);
+
+                wrapper.IsDirty = false;
             }
             catch (Exception e)
             {
@@ -232,6 +274,9 @@ public class GparamBank : IDisposable
                 return false;
             }
         }
+
+        Smithbox.Log(this,
+            LOC.Get("GPARAM_Data_Save_File", fileEntry.Filename));
 
         return true;
     }

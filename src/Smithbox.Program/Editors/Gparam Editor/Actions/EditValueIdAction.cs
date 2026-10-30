@@ -46,6 +46,8 @@ public class EditValueIdAction : EditorAction
 
         UpdateGroupIndexes(Data);
 
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -57,6 +59,8 @@ public class EditValueIdAction : EditorAction
         }
 
         Data.UnkParamExtras = StoredParamExtras;
+
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
     }

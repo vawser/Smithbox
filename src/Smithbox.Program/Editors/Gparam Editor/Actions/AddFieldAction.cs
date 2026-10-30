@@ -47,6 +47,8 @@ public class AddFieldAction : EditorAction
             insertIndex++;
         }
 
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -56,6 +58,8 @@ public class AddFieldAction : EditorAction
         {
             TargetGroup.Fields.RemoveAt(StoredIndices[i]);
         }
+
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
     }

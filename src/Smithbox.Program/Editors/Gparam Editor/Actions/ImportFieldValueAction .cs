@@ -71,6 +71,8 @@ public class InsertFieldValueAction : EditorAction
             Field.AddValue(ValueIndex, NewValue);
         }
 
+        MarkAsDirty();
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -82,11 +84,22 @@ public class InsertFieldValueAction : EditorAction
 
         if (target != null)
         {
-            Project.Handler.GparamData.PrimaryBank.Entries[FileEntry] = StoredGparam;
+            target.Gparam = StoredGparam;
+            target.IsDirty = true;
         }
 
         View.Selection.ResetSelection();
 
         return ActionEvent.ObjectAddedRemoved;
+    }
+
+    private void MarkAsDirty()
+    {
+        var target = Project.Handler.GparamData.PrimaryBank.Entries.GetValueOrDefault(FileEntry);
+
+        if (target != null)
+        {
+            target.IsDirty = true;
+        }
     }
 }

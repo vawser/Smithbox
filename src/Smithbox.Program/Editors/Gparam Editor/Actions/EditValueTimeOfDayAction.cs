@@ -38,6 +38,8 @@ public class EditValueTimeOfDayAction : EditorAction
             val.TimeOfDay = NewValue;
         }
 
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -47,6 +49,8 @@ public class EditValueTimeOfDayAction : EditorAction
         {
             TargetValues[i].TimeOfDay = StoredOldValues[i];
         }
+
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
     }

@@ -33,10 +33,10 @@ public class ImportGparamAction : EditorAction
     {
         var target = Project.Handler.GparamData.PrimaryBank.Entries.GetValueOrDefault(FileEntry);
 
-
         if (target != null)
         {
-            Project.Handler.GparamData.PrimaryBank.Entries[FileEntry] = NewGparam;
+            target.Gparam = NewGparam;
+            target.IsDirty = true;
         }
 
         View.Selection.ResetSelection();
@@ -50,7 +50,8 @@ public class ImportGparamAction : EditorAction
 
         if (target != null)
         {
-            Project.Handler.GparamData.PrimaryBank.Entries[FileEntry] = StoredGparam;
+            target.Gparam = StoredGparam;
+            target.IsDirty = true;
         }
 
         View.Selection.ResetSelection();

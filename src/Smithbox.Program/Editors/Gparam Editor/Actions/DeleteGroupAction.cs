@@ -47,6 +47,8 @@ public class DeleteGroupAction : EditorAction
             Data.Params.RemoveAt(idx);
         }
 
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -62,6 +64,8 @@ public class DeleteGroupAction : EditorAction
 
             Data.Params.Insert(insertIndex, StoredGroups[i]);
         }
+
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
     }

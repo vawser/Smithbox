@@ -45,6 +45,8 @@ public class AddGroupAction : EditorAction
             insertIndex++;
         }
 
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -54,6 +56,8 @@ public class AddGroupAction : EditorAction
         {
             Data.Params.RemoveAt(StoredIndices[i]);
         }
+
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
     }

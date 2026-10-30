@@ -95,8 +95,10 @@ public class GparamFileList
         }
     }
 
-    private void DisplayFileSelectable(FileDictionaryEntry fileEntry, GPARAM curGparam, int index)
+    private void DisplayFileSelectable(FileDictionaryEntry fileEntry, GparamWrapper wrapper, int index)
     {
+        var curGparam = wrapper.Gparam;
+
         var alias = AliasHelper.GetGparamAliasName(View.Project, fileEntry.Filename);
 
         var isMatch = EditorFilters.IsMatch(
@@ -117,8 +119,15 @@ public class GparamFileList
             }
         }
 
+        // Mark files with unsaved changes
+        if (wrapper.IsDirty)
+        {
+            filename = $"{filename}*";
+        }
+
         // File row
-        if (ImGui.Selectable($@" {filename}", fileEntry.Filename == View.Selection._selectedGparamKey))
+        // The ## suffix keeps the ImGui ID stable when the dirty marker toggles
+        if (ImGui.Selectable($@" {filename}##gparamFile_{fileEntry.Filename}", fileEntry.Filename == View.Selection._selectedGparamKey))
         {
             View.Selection.SetFileSelection(fileEntry);
         }
@@ -291,7 +300,7 @@ public class GparamFileList
                     newFileEntry.Filename = newFileEntry.Filename.Replace(oldName, CopyAsFileName);
 
                     Project.Locator.GparamFiles.Entries.Add(newFileEntry);
-                    Project.Handler.GparamData.PrimaryBank.Entries.Add(newFileEntry, null);
+                    Project.Handler.GparamData.PrimaryBank.Entries.Add(newFileEntry, new GparamWrapper(newFileEntry));
 
                     var copyPath = Path.Join(ProjectFileLocator.NormalizePath(Project.Descriptor.ProjectPath), newFileEntry.Path);
 

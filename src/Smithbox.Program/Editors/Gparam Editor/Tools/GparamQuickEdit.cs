@@ -149,12 +149,12 @@ public class GparamQuickEdit
             if (!IsTargetFile(entry.Key))
                 continue;
 
-            if (entry.Value == null)
+            if (!entry.Value.IsLoaded())
                 continue;
 
             TargetFile = entry.Key;
-            targetGparam = entry.Value;
-            GPARAM data = entry.Value;
+            targetGparam = entry.Value.Gparam;
+            GPARAM data = entry.Value.Gparam;
             string curParamName = entry.Key.Filename;
 
             foreach (GPARAM.Param curEntry in data.Params)
@@ -289,10 +289,10 @@ public class GparamQuickEdit
     {
         var match = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == gparamName);
 
-        if (match.Value == null)
+        if (match.Value == null || !match.Value.IsLoaded())
             return null;
 
-        var gparam = match.Value;
+        var gparam = match.Value.Gparam;
 
         var group = gparam.Params.FirstOrDefault(e => e.Key == groupName);
 
@@ -336,7 +336,10 @@ public class GparamQuickEdit
             if (entry.Key.Filename != Parent.Selection._selectedGparamKey)
                 continue;
 
-            foreach (var paramGroup in entry.Value.Params)
+            if (!entry.Value.IsLoaded())
+                continue;
+
+            foreach (var paramGroup in entry.Value.Gparam.Params)
             {
                 if (paramGroup.Key != selectedGroup.Key)
                     continue;

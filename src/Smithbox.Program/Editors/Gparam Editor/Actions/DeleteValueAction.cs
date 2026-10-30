@@ -38,6 +38,8 @@ public class DeleteValueAction : EditorAction
         RemoveValues(TargetField, StoredValues);
         UpdateGroupIndexes(Data);
 
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -45,6 +47,8 @@ public class DeleteValueAction : EditorAction
     {
         AddValues(TargetField, StoredValues);
         Data.UnkParamExtras = StoredParamExtras;
+
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
     }

@@ -77,45 +77,32 @@ public class GparamEditorScreen : EditorScreen
             {
                 Save();
             }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_Save_TT"));
 
             // Save All
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##saveAllAction"))
             {
                 SaveAll();
             }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_SaveAll_TT"));
 
             ImGui.Separator();
 
-            // Manual Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Manual_Save_Output")}##manualSaveMenuHeader"))
+            // Allow Unmodified Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                // GPARAM
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_GPARAM")}##manualToggle_gparam"))
-                {
-                    CFG.Current.GparamEditor_ManualSave_IncludeGPARAM = !CFG.Current.GparamEditor_ManualSave_IncludeGPARAM;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_GPARAM_TT"));
-                GUI.ShowActiveStatus(CFG.Current.GparamEditor_ManualSave_IncludeGPARAM);
-
-
-                ImGui.EndMenu();
+                CFG.Current.GparamEditor_Allow_Unmodified_Save = !CFG.Current.GparamEditor_Allow_Unmodified_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.GparamEditor_Allow_Unmodified_Save);
 
-            // Automatic Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
+            // Allow Automatic Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                // GPARAM
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_GPARAM")}##manualToggle_gparam"))
-                {
-                    CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM = !CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_GPARAM_TT"));
-                GUI.ShowActiveStatus(CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM);
-
-                ImGui.EndMenu();
+                CFG.Current.GparamEditor_Allow_Automatic_Save = !CFG.Current.GparamEditor_Allow_Automatic_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.GparamEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -249,17 +236,13 @@ public class GparamEditorScreen : EditorScreen
         if (activeView == null)
             return;
 
-        if (!autoSave && CFG.Current.GparamEditor_ManualSave_IncludeGPARAM ||
-            autoSave && CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM)
+        if(autoSave && CFG.Current.GparamEditor_Allow_Automatic_Save || !autoSave)
         {
             var targetScript = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == activeView.Selection.SelectedFileEntry.Filename && e.Key.Extension == activeView.Selection.SelectedFileEntry.Extension);
 
             if (targetScript.Key != null)
             {
                 await Project.Handler.GparamData.PrimaryBank.SaveGraphicsParam(targetScript.Key, targetScript.Value);
-
-                Smithbox.Log(this,
-                    LOC.Get("GPARAM_Data_Save_File", targetScript.Key.Filename));
             }
         }
 
@@ -269,8 +252,7 @@ public class GparamEditorScreen : EditorScreen
 
     public async void SaveAll(bool autoSave = false)
     {
-        if (!autoSave && CFG.Current.GparamEditor_ManualSave_IncludeGPARAM ||
-            autoSave && CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM)
+        if (autoSave && CFG.Current.GparamEditor_Allow_Automatic_Save || !autoSave)
         {
             await Project.Handler.GparamData.PrimaryBank.SaveAllGraphicsParams();
         }

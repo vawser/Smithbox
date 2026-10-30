@@ -64,6 +64,13 @@ public class ImportParamAction : EditorAction
             CurrentGparam.Params.Add(NewGroup);
         }
 
+        var wrapper = Project.Handler.GparamData.PrimaryBank.Entries.GetValueOrDefault(FileEntry);
+
+        if (wrapper != null)
+        {
+            wrapper.IsDirty = true;
+        }
+
         View.Selection.ResetSelection();
 
         return ActionEvent.ObjectAddedRemoved;
@@ -77,7 +84,8 @@ public class ImportParamAction : EditorAction
 
         if (target != null)
         {
-            Project.Handler.GparamData.PrimaryBank.Entries[FileEntry] = StoredGparam;
+            target.Gparam = StoredGparam;
+            target.IsDirty = true;
         }
 
         View.Selection.ResetSelection();

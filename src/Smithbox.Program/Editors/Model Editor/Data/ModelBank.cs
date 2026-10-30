@@ -1,11 +1,7 @@
 ﻿using Andre.IO.VFS;
 using Havok.Shared;
-using HKLib.hk2018.hk;
-using Octokit;
 using SoulsFormats;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.HavokEditor;
-using System.Reflection;
 
 namespace StudioCore.Editors.ModelEditor;
 

@@ -154,7 +154,7 @@ public class GparamDataFinder
          == result.FileEntry.Filename && e.Key.Extension == result.FileEntry.Extension);
 
         view.Selection._selectedGparamKey = targetEntry.Key.Filename;
-        view.Selection._selectedGparam = targetEntry.Value;
+        view.Selection._selectedGparam = targetEntry.Value.Gparam;
 
         // Select group
         if (view.Selection.IsFileSelected())
@@ -301,7 +301,7 @@ public class GparamDataFinder
             if (!IsTargetFile(View, entry.Key))
                 continue;
 
-            if (entry.Value == null)
+            if (!entry.Value.IsLoaded())
             {
                 Task<bool> loadTask = Project.Handler.GparamData.PrimaryBank.LoadGraphicsParam(entry.Key);
 
@@ -313,7 +313,7 @@ public class GparamDataFinder
 
         foreach (var entry in Project.Handler.GparamData.PrimaryBank.Entries)
         {
-            GPARAM data = entry.Value;
+            GPARAM data = entry.Value.Gparam;
 
             if (data == null)
                 continue;
@@ -328,7 +328,7 @@ public class GparamDataFinder
                     if (!IsTargetField(View, curField))
                         continue;
 
-                    ResolveValues(View, entry.Key, entry.Value, curEntry, curField);
+                    ResolveValues(View, entry.Key, data, curEntry, curField);
                 }
             }
         }

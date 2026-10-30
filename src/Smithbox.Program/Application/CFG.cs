@@ -982,8 +982,8 @@ public class CFG
     // Saving
     public bool Project_Automatic_Save_Include_Gparam_Editor = false;
 
-    public bool GparamEditor_AutomaticSave_IncludeGPARAM = true;
-    public bool GparamEditor_ManualSave_IncludeGPARAM = true;
+    public bool GparamEditor_Allow_Unmodified_Save = false;
+    public bool GparamEditor_Allow_Automatic_Save = true;
 
     #endregion
 

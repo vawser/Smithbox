@@ -5,6 +5,10 @@
       "Text": "Saved graphics param file: {0}"
     },
     {
+      "Key": "GPARAM_Data_Block_Save_File",
+      "Text": "File has not been modified, so save was ignored: {0}"
+    },
+    {
       "Key": "GPARAM_Data_Failed_Read_GPARAM",
       "Text": "Failed to read GPARAM file: {0}"
     },

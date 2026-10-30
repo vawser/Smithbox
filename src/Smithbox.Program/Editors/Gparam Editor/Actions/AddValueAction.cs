@@ -46,6 +46,8 @@ public class AddValueAction : EditorAction
 
         UpdateGroupIndexes(Data);
 
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
+
         return ActionEvent.ObjectAddedRemoved;
     }
 
@@ -53,6 +55,8 @@ public class AddValueAction : EditorAction
     {
         DispatchOnField(TargetField, StoredValues, add: false);
         Data.UnkParamExtras = StoredParamExtras;
+
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
     }
