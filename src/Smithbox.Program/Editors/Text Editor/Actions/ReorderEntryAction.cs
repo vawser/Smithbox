@@ -4,6 +4,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.TextEditor;
 public class ReorderEntryAction : EditorAction
 {
+    private readonly TextContainerWrapper Info;
     private readonly FMG TargetFmg;
     private readonly List<FMG.Entry> EntriesToMove;
 
@@ -18,16 +19,18 @@ public class ReorderEntryAction : EditorAction
     private List<FMG.Entry> PreviousOrder = new();
 
     // Drag to Order
-    public ReorderEntryAction(FMG targetFmg, List<FMG.Entry> targetEntries, int dropIndex)
+    public ReorderEntryAction(TextContainerWrapper info, FMG targetFmg, List<FMG.Entry> targetEntries, int dropIndex)
     {
+        Info = info;
         TargetFmg = targetFmg;
         EntriesToMove = targetEntries;
         DropTargetIndex = dropIndex;
     }
 
     // Full Replace
-    public ReorderEntryAction(FMG targetFmg, List<FMG.Entry> targetEntries, bool fullReplace)
+    public ReorderEntryAction(TextContainerWrapper info, FMG targetFmg, List<FMG.Entry> targetEntries, bool fullReplace)
     {
+        Info = info;
         TargetFmg = targetFmg;
         IsFullReplace = true;
         DesiredOrder = new List<FMG.Entry>(targetEntries);
@@ -37,6 +40,9 @@ public class ReorderEntryAction : EditorAction
 
     public override ActionEvent Execute()
     {
+        if (Info != null)
+            Info.MarkDirty(TargetFmg);
+
         return IsFullReplace ? ExecuteFullReplace() : ExecuteDrag();
     }
 
@@ -87,6 +93,9 @@ public class ReorderEntryAction : EditorAction
 
     public override ActionEvent Undo()
     {
+        if (Info != null)
+            Info.MarkDirty(TargetFmg);
+
         return IsFullReplace ? UndoFullReplace() : UndoDrag();
     }
     private ActionEvent UndoFullReplace()

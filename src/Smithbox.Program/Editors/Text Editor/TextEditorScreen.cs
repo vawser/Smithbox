@@ -75,44 +75,32 @@ public class TextEditorScreen : EditorScreen
             {
                 Save();
             }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_Save_TT"));
 
             // Save All
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##saveAllAction"))
             {
                 SaveAll();
             }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_SaveAll_TT"));
 
             ImGui.Separator();
 
-            // Manual Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Manual_Save_Output")}##manualSaveMenuHeader"))
+            // Allow Unmodified Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                // FMG
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_FMG")}##manualToggle_fmg"))
-                {
-                    CFG.Current.TextEditor_ManualSave_IncludeFMG = !CFG.Current.TextEditor_ManualSave_IncludeFMG;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_FMG_TT"));
-                GUI.ShowActiveStatus(CFG.Current.TextEditor_ManualSave_IncludeFMG);
-
-                ImGui.EndMenu();
+                CFG.Current.TextEditor_Allow_Unmodified_Save = !CFG.Current.TextEditor_Allow_Unmodified_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.TextEditor_Allow_Unmodified_Save);
 
-            // Automatic Save Output
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
+            // Allow Automatic Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                // FMG
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_FMG")}##autoToggle_fmg"))
-                {
-                    CFG.Current.TextEditor_AutomaticSave_IncludeFMG = !CFG.Current.TextEditor_AutomaticSave_IncludeFMG;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_FMG_TT"));
-                GUI.ShowActiveStatus(CFG.Current.TextEditor_AutomaticSave_IncludeFMG);
-
-                ImGui.EndMenu();
+                CFG.Current.TextEditor_Allow_Automatic_Save = !CFG.Current.TextEditor_Allow_Automatic_Save;
             }
-            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.TextEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -223,8 +211,7 @@ public class TextEditorScreen : EditorScreen
                 return;
             }
 
-            if (!autoSave && CFG.Current.TextEditor_ManualSave_IncludeFMG ||
-                autoSave && CFG.Current.TextEditor_AutomaticSave_IncludeFMG)
+            if (autoSave && CFG.Current.TextEditor_Allow_Automatic_Save || !autoSave)
             {
                 try
                 {
@@ -236,8 +223,6 @@ public class TextEditorScreen : EditorScreen
                     {
                         await Project.Handler.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
                     }
-
-                    Smithbox.Log(this, LOC.Get("TEXT_Save_File_PASS", fileEntry.Path));
                 }
                 catch (Exception ex)
                 {
@@ -261,14 +246,11 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public async void SaveAll(bool autoSave = false)
     {
-        if (!autoSave && CFG.Current.TextEditor_ManualSave_IncludeFMG ||
-            autoSave && CFG.Current.TextEditor_AutomaticSave_IncludeFMG)
+        if (autoSave && CFG.Current.TextEditor_Allow_Automatic_Save || !autoSave)
         {
             try
             {
                 await Project.Handler.TextData.PrimaryBank.SaveTextFiles();
-
-                Smithbox.Log(this, LOC.Get("TEXT_Save_All_File_PASS"));
             }
             catch (Exception ex)
             {

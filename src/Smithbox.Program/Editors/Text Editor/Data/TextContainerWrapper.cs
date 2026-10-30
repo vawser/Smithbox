@@ -2,6 +2,7 @@
 using StudioCore.Application;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -14,11 +15,6 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
     public FileDictionaryEntry FileEntry { get; set; }
 
     private ProjectEntry Project;
-
-    /// <summary>
-    /// Whether the contents of this container has been modified
-    /// </summary>
-    public bool IsModified { get; set; }
 
     /// <summary>
     /// The DCX compression type used by this container
@@ -46,10 +42,59 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
     /// </summary>
     public List<TextFmgWrapper> FmgWrappers { get; set; }
 
-    public TextContainerWrapper(ProjectEntry project) 
+    public TextContainerWrapper(ProjectEntry project)
     {
         Project = project;
-        IsModified = false;
+    }
+
+    /// <summary>
+    /// Whether any of the FMG files within this container have been modified
+    /// </summary>
+    public bool IsDirty()
+    {
+        if (FmgWrappers == null)
+            return false;
+
+        return FmgWrappers.Any(e => e.IsDirty);
+    }
+
+    /// <summary>
+    /// Mark the FMG wrapper that holds the passed FMG as modified.
+    /// If the FMG does not belong to this container, all FMG wrappers are marked
+    /// so the change is not lost on save.
+    /// </summary>
+    public void MarkDirty(FMG fmg)
+    {
+        if (FmgWrappers == null)
+            return;
+
+        var fmgWrapper = FmgWrappers.FirstOrDefault(e => e.File == fmg);
+
+        if (fmgWrapper != null)
+        {
+            fmgWrapper.IsDirty = true;
+        }
+        else
+        {
+            foreach (var curWrapper in FmgWrappers)
+            {
+                curWrapper.IsDirty = true;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Clear the modified state of all FMG files within this container
+    /// </summary>
+    public void ClearDirtyState()
+    {
+        if (FmgWrappers == null)
+            return;
+
+        foreach (var curWrapper in FmgWrappers)
+        {
+            curWrapper.IsDirty = false;
+        }
     }
 
     public int CompareTo(TextContainerWrapper other)

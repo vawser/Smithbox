@@ -14,6 +14,7 @@ public class SortFmgList : EditorAction
     public override ActionEvent Execute()
     {
         Wrapper.File.Entries.Sort();
+        Wrapper.IsDirty = true;
 
         return ActionEvent.NoEvent;
     }

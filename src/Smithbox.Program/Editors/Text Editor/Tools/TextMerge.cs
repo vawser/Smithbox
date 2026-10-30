@@ -174,9 +174,11 @@ public class TextMerge
                     {
                         if (curWrapper.ID == tarWrapper.ID)
                         {
-                            targetContainer.IsModified = true;
-
-                            await ProcessFmg(curWrapper, tarWrapper);
+                            // The merged entries are written into the primary FMG, so mark that as modified
+                            if (await ProcessFmg(curWrapper, tarWrapper))
+                            {
+                                curWrapper.IsDirty = true;
+                            }
                         }
                     }
                 }
@@ -186,9 +188,14 @@ public class TextMerge
         return true;
     }
 
+    /// <summary>
+    /// Merge the target FMG into the source FMG. Returns true if the source FMG was changed.
+    /// </summary>
     private async Task<bool> ProcessFmg(TextFmgWrapper sourceWrapper, TextFmgWrapper targetWrapper)
     {
         await Task.Yield();
+
+        var isChanged = false;
 
         var sourceLookup = sourceWrapper.File.Entries.ToLookup(e => e.ID);
         List<FMG.Entry> missingEntries = new();
@@ -219,6 +226,8 @@ public class TextMerge
             newEntry.Parent = sourceWrapper.File;
 
             sourceList.Insert(insertIndex + 1, newEntry);
+
+            isChanged = true;
         }
 
         if (replaceModifiedRows)
@@ -229,10 +238,12 @@ public class TextMerge
                 if (toModify != null)
                 {
                     toModify.Text = entry.Text;
+
+                    isChanged = true;
                 }
             }
         }
 
-        return true;
+        return isChanged;
     }
 }

@@ -282,25 +282,25 @@ public class TextBank : IDisposable
 
         foreach (var (fileEntry, containerInfo) in Containers)
         {
-            // Only save all modified files
-            if (containerInfo.IsModified)
+            // Only save the files that have been modified
+            if (!containerInfo.IsDirty())
+                continue;
+
+            if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-                {
-                    Task<bool> saveTask = SaveLooseFmg(fileEntry, containerInfo);
-                    bool saveTaskResult = await saveTask;
+                Task<bool> saveTask = SaveLooseFmg(fileEntry, containerInfo);
+                bool saveTaskResult = await saveTask;
 
-                    if (!saveTaskResult)
-                        success = false;
-                }
-                else
-                {
-                    Task<bool> saveTask = SaveFmgContainer(fileEntry, containerInfo);
-                    bool saveTaskResult = await saveTask;
+                if (!saveTaskResult)
+                    success = false;
+            }
+            else
+            {
+                Task<bool> saveTask = SaveFmgContainer(fileEntry, containerInfo);
+                bool saveTaskResult = await saveTask;
 
-                    if (!saveTaskResult)
-                        success = false;
-                }
+                if (!saveTaskResult)
+                    success = false;
             }
         }
 
@@ -314,98 +314,175 @@ public class TextBank : IDisposable
     {
         await Task.Yield();
 
-        if (entry == null || containerWrapper == null)
+        if (entry == null || containerWrapper == null || containerWrapper.FmgWrappers == null)
             return false;
 
-        byte[] fileBytes = null;
-
-        if (TargetFS.FileExists(entry.Path))
+        if (!CFG.Current.TextEditor_Allow_Unmodified_Save)
         {
-            try
+            if (!containerWrapper.IsDirty())
             {
-                var containerBytes = TargetFS.ReadFile(entry.Path);
-
-                if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
-                {
-                    using (IBinder binder = BND3.Read(containerBytes.Value))
-                    {
-                        foreach (var file in binder.Files)
-                        {
-                            WriteFmgContents(file, containerWrapper.FmgWrappers);
-                        }
-
-                        using (BND3 writeBinder = binder as BND3)
-                        {
-                            fileBytes = writeBinder.Write(containerWrapper.CompressionType);
-                        }
-                    }
-                }
-                else
-                {
-                    using (IBinder binder = BND4.Read(containerBytes.Value))
-                    {
-                        foreach (var file in binder.Files)
-                        {
-                            WriteFmgContents(file, containerWrapper.FmgWrappers);
-                        }
-
-                        using (BND4 writeBinder = binder as BND4)
-                        {
-                            fileBytes = writeBinder.Write(containerWrapper.CompressionType);
-                        }
-                    }
-                }
-
-                try
-                {
-                    Project.VFS.ProjectFS.WriteFile(entry.Path, fileBytes);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this,
-                        LOC.Get("TEXT_Data_Write_File_FAIL", entry.Filename, Name), e);
-
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this,
-                    LOC.Get("TEXT_Data_Read_File_VFS_FAIL", entry.Filename, Name), e);
-
+                Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", entry.Filename));
                 return false;
             }
         }
+
+        if (!TargetFS.FileExists(entry.Path))
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Locate_Container", entry.Path));
+            return false;
+        }
+
+        if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+        {
+            return HandleContainer_BND3(entry, containerWrapper);
+        }
         else
         {
-            Smithbox.LogError(this,
-                LOC.Get("TEXT_Data_Find_File_VFS_FAIL", entry.Filename, Name));
+            return HandleContainer_BND4(entry, containerWrapper);
+        }
+    }
+
+    private bool HandleContainer_BND3(FileDictionaryEntry entry, TextContainerWrapper containerWrapper)
+    {
+        // Container
+        var containerFileData = TargetFS.ReadFile(entry.Path);
+
+        if (containerFileData == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", entry.Path));
+            return false;
+        }
+
+        // Binder
+        BND3 binder;
+
+        try
+        {
+            binder = BND3.Read(containerFileData.Value);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", entry.Path), ex);
+            return false;
+        }
+
+        using (binder)
+        {
+            // Binder Files
+            var isFilesWritten = true;
+
+            foreach (var curFile in binder.Files)
+            {
+                if (!HandleBinderFile(curFile, containerWrapper))
+                    isFilesWritten = false;
+            }
+
+            // Save Binder
+            try
+            {
+                var writeFile = binder.Write(containerWrapper.CompressionType);
+
+                Project.VFS.ProjectFS.WriteFile(entry.Path, writeFile);
+
+                // Only clear the dirty state if every FMG was written successfully
+                if (isFilesWritten)
+                    containerWrapper.ClearDirtyState();
+
+                Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", entry.Filename));
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_Container", entry.Path), ex);
+                return false;
+            }
+
+            return isFilesWritten;
+        }
+    }
+
+    private bool HandleContainer_BND4(FileDictionaryEntry entry, TextContainerWrapper containerWrapper)
+    {
+        // Container
+        var containerFileData = TargetFS.ReadFile(entry.Path);
+
+        if (containerFileData == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", entry.Path));
+            return false;
+        }
+
+        // Binder
+        BND4 binder;
+
+        try
+        {
+            binder = BND4.Read(containerFileData.Value);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", entry.Path), ex);
+            return false;
+        }
+
+        using (binder)
+        {
+            // Binder Files
+            var isFilesWritten = true;
+
+            foreach (var curFile in binder.Files)
+            {
+                if (!HandleBinderFile(curFile, containerWrapper))
+                    isFilesWritten = false;
+            }
+
+            // Save Binder
+            try
+            {
+                var writeFile = binder.Write(containerWrapper.CompressionType);
+
+                Project.VFS.ProjectFS.WriteFile(entry.Path, writeFile);
+
+                // Only clear the dirty state if every FMG was written successfully
+                if (isFilesWritten)
+                    containerWrapper.ClearDirtyState();
+
+                Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", entry.Filename));
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_Container", entry.Path), ex);
+                return false;
+            }
+
+            return isFilesWritten;
+        }
+    }
+
+    /// <summary>
+    /// Write the matching FMG into the binder file. Returns false if the FMG failed to write.
+    /// </summary>
+    private bool HandleBinderFile(BinderFile file, TextContainerWrapper containerWrapper)
+    {
+        if (!file.Name.Contains(".fmg"))
+            return true;
+
+        var fmgWrapper = containerWrapper.FmgWrappers.FirstOrDefault(e => e.ID == file.ID);
+
+        if (fmgWrapper == null)
+            return true;
+
+        // Internal File
+        try
+        {
+            file.Bytes = fmgWrapper.File.Write();
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_File", file.Name), ex);
             return false;
         }
 
         return true;
-    }
-
-    private void WriteFmgContents(BinderFile file, List<TextFmgWrapper> fmgList)
-    {
-        if (file.Name.Contains(".fmg"))
-        {
-            foreach (var entry in fmgList)
-            {
-                if (entry.ID == file.ID)
-                {
-                    try
-                    {
-                        file.Bytes = entry.File.Write();
-                    }
-                    catch (Exception ex)
-                    {
-                        Smithbox.LogError(this,
-                            LOC.Get("TEXT_Data_Write_FMG_FAIL", file.ID, Name), ex);
-                    }
-                }
-            }
-        }
     }
 
     /// <summary>
@@ -415,30 +492,40 @@ public class TextBank : IDisposable
     {
         await Task.Yield();
 
-        if (entry == null || containerWrapper == null)
+        if (entry == null || containerWrapper == null || containerWrapper.FmgWrappers == null)
             return false;
 
-        try
+        if (!CFG.Current.TextEditor_Allow_Unmodified_Save)
         {
-            var newFmgBytes = containerWrapper.FmgWrappers.First().File.Write();
-
-            try
+            if (!containerWrapper.IsDirty())
             {
-                Project.VFS.ProjectFS.WriteFile(entry.Path, newFmgBytes);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this,
-                    LOC.Get("TEXT_Data_Write_File_FAIL", entry.Filename, Name), e);
-
+                Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", entry.Filename));
                 return false;
             }
         }
+
+        var fmgWrapper = containerWrapper.FmgWrappers.FirstOrDefault();
+
+        if (fmgWrapper == null)
+        {
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Locate_External_File", entry.Path));
+            return false;
+        }
+
+        // External File
+        try
+        {
+            var fileData = fmgWrapper.File.Write();
+
+            Project.VFS.ProjectFS.WriteFile(entry.Path, fileData);
+
+            containerWrapper.ClearDirtyState();
+
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", entry.Filename));
+        }
         catch (Exception e)
         {
-            Smithbox.LogError(this,
-                LOC.Get("TEXT_Data_Write_FMG_FAIL", entry.Filename, Name), e);
-
+            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_File", entry.Path), e);
             return false;
         }
 

@@ -274,7 +274,7 @@ public class TextEntryList
                         }
                         else
                         {
-                            var action = new ReorderEntryAction(fmg, entriesToMove, dropTargetIndex);
+                            var action = new ReorderEntryAction(Parent.Selection.SelectedContainerWrapper, fmg, entriesToMove, dropTargetIndex);
                             Parent.ActionManager.ExecuteAction(action);
                         }
                     }

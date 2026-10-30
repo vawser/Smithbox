@@ -86,25 +86,25 @@ public static class FmgEntryUtils
 
         if (titleFmg != null)
         {
-            var action = new ReorderEntryAction(titleFmg, titleEntries, dropTargetIndex);
+            var action = new ReorderEntryAction(wrapper?.Parent, titleFmg, titleEntries, dropTargetIndex);
             actions.Add(action);
         }
 
         if (summaryFmg != null)
         {
-            var action = new ReorderEntryAction(summaryFmg, summaryEntries, dropTargetIndex);
+            var action = new ReorderEntryAction(wrapper?.Parent, summaryFmg, summaryEntries, dropTargetIndex);
             actions.Add(action);
         }
 
         if (descriptionFmg != null)
         {
-            var action = new ReorderEntryAction(descriptionFmg, descriptionEntries, dropTargetIndex);
+            var action = new ReorderEntryAction(wrapper?.Parent, descriptionFmg, descriptionEntries, dropTargetIndex);
             actions.Add(action);
         }
 
         if (effectFmg != null)
         {
-            var action = new ReorderEntryAction(effectFmg, effectEntries, dropTargetIndex);
+            var action = new ReorderEntryAction(wrapper?.Parent, effectFmg, effectEntries, dropTargetIndex);
             actions.Add(action);
         }
 

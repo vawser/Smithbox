@@ -50,7 +50,7 @@ public class AddFmgEntry : EditorAction
             Fmg.Entries.Add(NewEntry);
         }
 
-        Info.IsModified = true;
+        Info.MarkDirty(Fmg);
 
         if (!IgnoreDiffCheck)
         {
@@ -71,7 +71,7 @@ public class AddFmgEntry : EditorAction
             Fmg.Entries.Remove(NewEntry);
         }
 
-        Info.IsModified = false;
+        Info.MarkDirty(Fmg);
 
         if (!IgnoreDiffCheck)
         {

@@ -39,7 +39,7 @@ public class ChangeFmgEntryText : EditorAction
             }
         }
 
-        Info.IsModified = true;
+        Info.MarkDirty(Entry.Parent);
 
         if (!IgnoreDiffCheck)
         {
@@ -52,7 +52,7 @@ public class ChangeFmgEntryText : EditorAction
     public override ActionEvent Undo()
     {
         Entry.Text = OldText;
-        Info.IsModified = false;
+        Info.MarkDirty(Entry.Parent);
 
         if (!IgnoreDiffCheck)
         {

@@ -36,7 +36,7 @@ public class DuplicateFmgEntry : EditorAction
     public override ActionEvent Execute()
     {
         Fmg.Entries.Insert(InsertionIndex, NewEntry);
-        Info.IsModified = true;
+        Info.MarkDirty(Fmg);
 
         Parent.DifferenceManager.TrackFmgDifferences();
 
@@ -46,7 +46,7 @@ public class DuplicateFmgEntry : EditorAction
     public override ActionEvent Undo()
     {
         Fmg.Entries.RemoveAt(InsertionIndex);
-        Info.IsModified = false;
+        Info.MarkDirty(Fmg);
 
         Parent.DifferenceManager.TrackFmgDifferences();
 

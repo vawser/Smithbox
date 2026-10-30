@@ -214,6 +214,12 @@ public class TextContainerList
 
         if (isMatch)
         {
+            // Mark containers that contain files with unsaved changes
+            if (wrapper.IsDirty())
+            {
+                displayName = $"{displayName}*";
+            }
+
             // Script row
             if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Filename}{index}", index == View.Selection.SelectedContainerKey))
             {

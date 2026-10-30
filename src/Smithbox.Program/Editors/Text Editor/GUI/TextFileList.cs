@@ -338,8 +338,16 @@ public class TextFileList
                 selectableName = $"{selectableName} [{dlcGroupingName}]";
             }
 
+            // Mark files with unsaved changes
+            var labelName = selectableName;
+
+            if (info.IsDirty)
+            {
+                labelName = $"{labelName}*";
+            }
+
             // Script row
-            if (ImGui.Selectable($"{selectableName}##{id}{selectableName}", id == View.Selection.SelectedFmgKey))
+            if (ImGui.Selectable($"{labelName}##{id}{selectableName}", id == View.Selection.SelectedFmgKey))
             {
                 View.Selection.SelectFmg(info);
             }

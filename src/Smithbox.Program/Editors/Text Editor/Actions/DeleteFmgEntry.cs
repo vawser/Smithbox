@@ -37,7 +37,7 @@ public class DeleteFmgEntry : EditorAction
     public override ActionEvent Execute()
     {
         Fmg.Entries.RemoveAt(InsertionIndex);
-        Info.IsModified = true;
+        Info.MarkDirty(Fmg);
 
         Parent.DifferenceManager.TrackFmgDifferences();
 
@@ -47,7 +47,7 @@ public class DeleteFmgEntry : EditorAction
     public override ActionEvent Undo()
     {
         Fmg.Entries.Insert(InsertionIndex, OldEntry);
-        Info.IsModified = false;
+        Info.MarkDirty(Fmg);
 
         Parent.DifferenceManager.TrackFmgDifferences();
 

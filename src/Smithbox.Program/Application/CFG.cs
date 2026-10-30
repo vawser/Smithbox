@@ -940,8 +940,8 @@ public class CFG
     // Saving
     public bool Project_Automatic_Save_Include_Text_Editor = true;
 
-    public bool TextEditor_AutomaticSave_IncludeFMG = true;
-    public bool TextEditor_ManualSave_IncludeFMG = true;
+    public bool TextEditor_Allow_Unmodified_Save = false;
+    public bool TextEditor_Allow_Automatic_Save = true;
 
     #endregion
 

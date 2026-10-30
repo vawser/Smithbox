@@ -28,9 +28,14 @@ public class TextFmgWrapper : IComparable<TextFmgWrapper>
     /// </summary>
     public TextContainerWrapper Parent { get; set; }
 
+    /// <summary>
+    /// Whether the FMG has been modified since it was last loaded or saved
+    /// </summary>
+    public bool IsDirty { get; set; }
+
     public TextFmgWrapper()
     {
-
+        IsDirty = false;
     }
 
     public int CompareTo(TextFmgWrapper other)

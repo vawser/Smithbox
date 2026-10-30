@@ -24,7 +24,7 @@ public class ChangeFmgEntryID : EditorAction
     public override ActionEvent Execute()
     {
         Entry.ID = NewID;
-        Info.IsModified = true;
+        Info.MarkDirty(Entry.Parent);
 
         Parent.DifferenceManager.TrackFmgDifferences();
 
@@ -34,7 +34,7 @@ public class ChangeFmgEntryID : EditorAction
     public override ActionEvent Undo()
     {
         Entry.ID = OldID;
-        Info.IsModified = false;
+        Info.MarkDirty(Entry.Parent);
 
         Parent.DifferenceManager.TrackFmgDifferences();
 
