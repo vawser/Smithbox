@@ -27,9 +27,19 @@ public class EntDeleteAction : ViewportAction
     {
         Records.Clear();
 
+        // MapContainer is not comparable, so group records by the order each map is first seen
+        var mapOrders = new Dictionary<MapContainer, int>(ReferenceEqualityComparer.Instance);
+
         foreach (var obj in Deletables)
         {
             var map = View.Selection.GetMapContainerFromMapID(obj.MapID);
+
+            int mapOrder = -1;
+            if (map != null && !mapOrders.TryGetValue(map, out mapOrder))
+            {
+                mapOrder = mapOrders.Count;
+                mapOrders.Add(map, mapOrder);
+            }
 
             int mapIndex = -1;
             if (map != null)
@@ -44,6 +54,7 @@ public class EntDeleteAction : ViewportAction
             Records.Add(new DeleteRecord
             {
                 Map = map,
+                MapOrder = mapOrder,
                 Entity = obj,
                 MapIndex = mapIndex,
                 Parent = parent,
@@ -54,7 +65,7 @@ public class EntDeleteAction : ViewportAction
         // Remove map objects safely
         Records.Sort((a, b) =>
         {
-            int mapCmp = Comparer<MapContainer>.Default.Compare(a.Map, b.Map);
+            int mapCmp = a.MapOrder.CompareTo(b.MapOrder);
             if (mapCmp != 0)
                 return mapCmp;
 
@@ -90,7 +101,7 @@ public class EntDeleteAction : ViewportAction
         // Restore map objects FIRST
         var mapOrdered = Records
             .Where(r => r.Map != null && r.MapIndex >= 0)
-            .OrderBy(r => r.Map)
+            .OrderBy(r => r.MapOrder)
             .ThenBy(r => r.MapIndex);
 
         foreach (var r in mapOrdered)
@@ -147,6 +158,7 @@ public class EntDeleteAction : ViewportAction
     private struct DeleteRecord
     {
         public MapContainer Map;
+        public int MapOrder;
         public MsbEntity Entity;
         public int MapIndex;
 

@@ -535,6 +535,14 @@ public class MapUniverse : IUniverse
                     n.Routes = prev.Routes;
                     msb = n;
                 }
+                else if (View.Project.Descriptor.ProjectType == ProjectType.DB_NT)
+                {
+                    var prev = MSB_DB_NT.Read(mapData);
+                    MSB_DB_NT n = new();
+                    n.Layers = prev.Layers;
+                    n.Routes = prev.Routes;
+                    msb = n;
+                }
                 else if (View.Project.Descriptor.ProjectType == ProjectType.AC6)
                 {
                     var prev = MSB_AC6.Read(mapData);
@@ -603,6 +611,12 @@ public class MapUniverse : IUniverse
                         throw new SavingFailedException(Path.GetFileName(map.Name), e);
                     }
                 }
+            }
+            catch (SavingFailedException)
+            {
+                // Already wrapped by the inner write handler; rethrow as-is so the
+                // original exception (e.g. MissingReferenceException) stays in Wrapped
+                throw;
             }
             catch (Exception e)
             {

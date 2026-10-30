@@ -51,8 +51,17 @@ public class HavokCollisionBank
 
     public void OnUnloadMap(string mapId)
     {
-        if (!CFG.Current.MapEditor_ModelLoad_Collisions)
+        // Always release, even if collision loading was toggled off after this map was loaded,
+        // so a later reload reads the files again instead of reusing stale (possibly edited) containers
+        if (!MapCollisions.TryGetValue(mapId, out var collisionNames))
             return;
+
+        foreach (var name in collisionNames)
+        {
+            HavokContainers.Remove(name);
+        }
+
+        MapCollisions.Remove(mapId);
     }
 
     private void LoadMapCollision(string mapId, string type)

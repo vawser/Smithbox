@@ -28,6 +28,9 @@ public class EntReorderAction : ViewportAction
     {
         var universe = View.Universe;
 
+        // Re-captured on every execute (including redo), so it always reflects the order before this action
+        storedObjectOrder.Clear();
+
         // TODO: allow this to work with multi-selections
         // Will require more rigorous validation of the indices
         if (selection.Count > 1)
@@ -192,7 +195,7 @@ public class EntReorderAction : ViewportAction
                         }
 
                         // For all entries below it, move them up
-                        for (int i = rootIndex; i <= indexEnd; i++)
+                        for (int i = rootIndex; i < indexEnd; i++)
                         {
                             mapRoot.Objects[i] = mapRoot.Objects[i + 1];
                         }
@@ -212,12 +215,19 @@ public class EntReorderAction : ViewportAction
     {
         var universe = View.Universe;
 
-        if (selection.Count > 0)
+        // Nothing was captured if execute bailed out early (multi-selection, BTL light, no map)
+        if (selection.Count > 0 && storedObjectOrder.Count > 0)
         {
             var curSel = selection.First();
 
             MapContainer mapRoot = View.Selection.GetMapContainerFromMapID(curSel.MapID);
-            mapRoot.Objects = storedObjectOrder;
+
+            if (mapRoot != null)
+            {
+                // Restore into the existing list rather than aliasing it to the stored snapshot
+                mapRoot.Objects.Clear();
+                mapRoot.Objects.AddRange(storedObjectOrder);
+            }
         }
 
         MapContainer.MarkEntitiesDirty(selection);

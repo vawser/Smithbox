@@ -152,7 +152,7 @@ public class MapViewHandler
                         }
                     }
 
-                    ImGui.EndMenu();
+                    ImGui.EndPopup();
                 }
             }
 
