@@ -193,7 +193,8 @@ public class PropChangeAction : ViewportAction
     /// </summary>
     private void RefreshModelIfNeeded()
     {
-        if (TargetEnt is MsbEntity msbEnt && Changes.Any(c => c.Property.Name == "ModelName"))
+        if (TargetEnt is MsbEntity msbEnt && Changes.Any(c => c.Property.Name == "ModelName" ||
+                CharacterComposition.IsAppearanceProperty(c.Property.Name)))
         {
             msbEnt.RefreshModel();
         }

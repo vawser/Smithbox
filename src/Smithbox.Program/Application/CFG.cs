@@ -219,6 +219,7 @@ public class CFG
 
     public bool MapEditor_Enable_Character_Substitution = false;
     public string MapEditor_Character_Substitution_ID = "c0000";
+    public bool MapEditor_Enable_Character_Composition = true;
 
     public bool MapEditor_Selection_Group_Frame_Selection_On_Use = true;
     public bool MapEditor_Selection_Group_Enable_Quick_Creation = false;
@@ -600,6 +601,7 @@ public class CFG
     public bool Interface_ModelEditor_Tool_ModelInstanceFinder = true;
     public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
     public bool Interface_ModelEditor_Tool_Animation = true;
+    public bool Interface_ModelEditor_Tool_CharacterPreview = true;
     public bool Interface_ModelEditor_Tool_ResourceMonitor = true;
     public bool Interface_ModelEditor_Tool_Data_Transfer = true;
     public bool Interface_ModelEditor_Tool_ModelExport = true;

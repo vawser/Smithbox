@@ -75,6 +75,13 @@ public class ModelUniverse : IUniverse
 
         modelWrapper.Container = newContainer;
 
+        // The model of a composite character is only a skeleton, so the rest of it comes from the part models
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering &&
+            CFG.Current.ModelEditor_ModelLoad_Parts && CharacterComposition.IsComposite(modelWrapper.Name))
+        {
+            newContainer.AssignCharacterParts(CharacterComposition.Resolve(Project, View.ModelCharacterPreview.SelectedCharaInitId));
+        }
+
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
         {
             Selection.ClearSelection();
@@ -269,6 +276,12 @@ public class ModelUniverse : IUniverse
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
+
+                if (CharacterComposition.IsComposite(modelName) &&
+                    CharacterComposition.GetCommonTexture(View.Project) is { } commonTexture)
+                {
+                    LoadList_Character_Texture.Add(commonTexture);
+                }
             }
         }
 

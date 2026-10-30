@@ -137,6 +137,14 @@
       "Text": "If enabled, map object references will display the alias of the map object."
     },
     {
+      "Key": "PREF_MapEditor_Enable_Character_Composition",
+      "Text": "Display Player-Like Characters"
+    },
+    {
+      "Key": "PREF_MapEditor_Enable_Character_Composition_TT",
+      "Text": "If enabled, 'c0000' enemies are displayed with their body and the armor from their CharaInitParam row, instead of a character marker. Maps with many of these characters will take longer to load."
+    },
+    {
       "Key": "PREF_MapEditor_Enable_Character_Substitution",
       "Text": "Enable Substitution"
     },

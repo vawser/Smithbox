@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.Common;
@@ -23,6 +24,7 @@ namespace StudioCore.Editors.Common;
 /// <param name="GetMeshes">The meshes to drive. Empty while the model is still loading.</param>
 /// <param name="IsAlive">False once the meshes have gone, which ends playback.</param>
 /// <param name="PoseChanged">Called with each new pose, then with null when playback ends.</param>
+/// <param name="Parts">Further models that are skinned to the same skeleton, each with bones of its own.</param>
 public sealed record AnimationTarget(
     object Key,
     string ModelName,
@@ -31,7 +33,21 @@ public sealed record AnimationTarget(
     string ContainerPath,
     Func<IReadOnlyList<MeshRenderableProxy>> GetMeshes,
     Func<bool> IsAlive,
-    Action<ModelAnimator?>? PoseChanged = null);
+    Action<ModelAnimator?>? PoseChanged = null,
+    IReadOnlyList<AnimatedPart>? Parts = null);
+
+/// <summary>
+///     A model that follows the animations of the character wearing it.
+/// </summary>
+/// <param name="ModelName">Name of the model within its binder.</param>
+/// <param name="ContainerPath">The binder holding the model.</param>
+/// <param name="Mesh">The mesh to drive.</param>
+/// <param name="AttachNode">
+///     The node of the character that the whole model is held by, as with a weapon. Null if it is skinned instead.
+/// </param>
+/// <param name="AttachOffset">How the model sits on <paramref name="AttachNode" />.</param>
+public sealed record AnimatedPart(string ModelName, string ContainerPath, MeshRenderableProxy Mesh,
+    string? AttachNode = null, Matrix4x4? AttachOffset = null);
 
 /// <summary>
 ///     Previews the Havok animations of a model in the viewport.
@@ -45,6 +61,9 @@ public class AnimationPreviewPanel
 
     // Every placement of a model shares the same animations
     private readonly Dictionary<string, Task<LoadedModel?>> _models = new(StringComparer.OrdinalIgnoreCase);
+
+    // Characters tend to have equipment in common
+    private readonly Dictionary<string, Task<ModelRig?>> _partRigs = new(StringComparer.OrdinalIgnoreCase);
 
     private readonly Dictionary<object, ActiveAnimation> _active = new();
 
@@ -100,7 +119,27 @@ public class AnimationPreviewPanel
             }
         }
 
+        foreach (ActivePart part in active.Parts)
+        {
+            part.Animator.Follow(active.Animator);
+
+            if (part.Animator.HasBoneFollowingMeshes)
+            {
+                part.Mesh.Animator = part.Animator;
+            }
+        }
+
+        UpdateAttachments(active);
+
         active.Target.PoseChanged?.Invoke(active.Animator);
+    }
+
+    private static void UpdateAttachments(ActiveAnimation active)
+    {
+        foreach (ActiveAttachment attachment in active.Attachments)
+        {
+            attachment.Mesh.AttachTransform = attachment.Offset * active.Animator.GetNodeWorld(attachment.Node);
+        }
     }
 
     /// <summary>
@@ -265,13 +304,23 @@ public class AnimationPreviewPanel
     {
         if (!_active.TryGetValue(target.Key, out ActiveAnimation? active))
         {
+            // Armor can come with hundreds of megabytes of textures to skip over, so read its bones on the side
+            Task<ModelRig?[]> rigs = GetOrLoadPartRigs(target);
+            if (!rigs.IsCompleted)
+            {
+                _pending.Add(new PendingAnimation(target, GetOrLoadModel(target), _ => entry));
+                return;
+            }
+
             IReadOnlyList<MeshRenderableProxy> meshes = target.GetMeshes();
-            if (meshes.Count == 0)
+            List<ActivePart> parts = CreateParts(target, model, rigs);
+            List<ActiveAttachment> attachments = CreateAttachments(target, model);
+            if (meshes.Count == 0 && parts.Count == 0 && attachments.Count == 0)
             {
                 return;
             }
 
-            active = new ActiveAnimation(target, meshes, new ModelAnimator(model.Package, model.Rig));
+            active = new ActiveAnimation(target, meshes, new ModelAnimator(model.Package, model.Rig), parts, attachments);
             _active.Add(target.Key, active);
         }
 
@@ -284,12 +333,59 @@ public class AnimationPreviewPanel
                 mesh.Animator = active.Animator;
             }
 
+            foreach (ActivePart part in active.Parts)
+            {
+                part.Animator.Follow(active.Animator);
+                part.Mesh.Animator = part.Animator;
+            }
+
+            UpdateAttachments(active);
+
             active.Target.PoseChanged?.Invoke(active.Animator);
         }
         else if (active.Animator.CurrentClip == null)
         {
             Stop(target.Key);
         }
+    }
+
+    private static List<ActivePart> CreateParts(AnimationTarget target, LoadedModel model, Task<ModelRig?[]> rigs)
+    {
+        List<ActivePart> parts = new();
+
+        if (target.Parts == null || !rigs.IsCompletedSuccessfully)
+        {
+            return parts;
+        }
+
+        for (var i = 0; i < target.Parts.Count; i++)
+        {
+            // A part that can't be read stays in its rest pose
+            if (rigs.Result[i] is { } rig)
+            {
+                parts.Add(new ActivePart(target.Parts[i].Mesh, new ModelAnimator(model.Package, rig)));
+            }
+        }
+
+        return parts;
+    }
+
+    private static List<ActiveAttachment> CreateAttachments(AnimationTarget target, LoadedModel model)
+    {
+        List<ActiveAttachment> attachments = new();
+
+        foreach (AnimatedPart part in target.Parts ?? Array.Empty<AnimatedPart>())
+        {
+            var node = part.AttachNode != null ? model.Rig.FindNode(part.AttachNode) : -1;
+
+            if (node >= 0)
+            {
+                attachments.Add(new ActiveAttachment(part.Mesh, node, part.AttachOffset ?? Matrix4x4.Identity,
+                    part.Mesh.AttachTransform));
+            }
+        }
+
+        return attachments;
     }
 
     private void Stop(object key)
@@ -302,6 +398,17 @@ public class AnimationPreviewPanel
         foreach (MeshRenderableProxy mesh in active.Meshes)
         {
             mesh.Animator = null;
+        }
+
+        foreach (ActivePart part in active.Parts)
+        {
+            part.Mesh.Animator = null;
+            part.Animator.Dispose();
+        }
+
+        foreach (ActiveAttachment attachment in active.Attachments)
+        {
+            attachment.Mesh.AttachTransform = attachment.Rest;
         }
 
         active.Target.PoseChanged?.Invoke(null);
@@ -338,6 +445,59 @@ public class AnimationPreviewPanel
             model?.Package.Dispose();
             _models.Remove(name);
         }
+
+        if (_active.Count == 0 && _pending.Count == 0)
+        {
+            foreach ((var key, Task<ModelRig?> rig) in _partRigs.ToArray())
+            {
+                if (rig.IsCompleted)
+                {
+                    _partRigs.Remove(key);
+                }
+            }
+        }
+    }
+
+    private Task<ModelRig?[]> GetOrLoadPartRigs(AnimationTarget target)
+    {
+        if (target.Parts == null)
+        {
+            return Task.FromResult(Array.Empty<ModelRig?>());
+        }
+
+        return Task.WhenAll(target.Parts.Select(part =>
+        {
+            // These move as a whole, so their own bones don't matter
+            if (part.AttachNode != null)
+            {
+                return Task.FromResult<ModelRig?>(null);
+            }
+
+            var key = $"{part.ContainerPath}|{part.ModelName}|{target.FileSystem.GetHashCode()}";
+
+            if (!_partRigs.TryGetValue(key, out Task<ModelRig?>? load))
+            {
+                load = Task.Run(() => LoadPartRig(target, part));
+                _partRigs.Add(key, load);
+            }
+
+            return load;
+        }));
+    }
+
+    private ModelRig? LoadPartRig(AnimationTarget target, AnimatedPart part)
+    {
+        try
+        {
+            return target.FileSystem.ReadFile(part.ContainerPath) is { } container
+                ? ModelRig.Read(_project.Descriptor.ProjectType, container, part.ModelName)
+                : null;
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, $"Failed to read the bones of {part.ModelName}", LogPriority.High, ex);
+            return null;
+        }
     }
 
     private Task<LoadedModel?> GetOrLoadModel(AnimationTarget target)
@@ -367,7 +527,7 @@ public class AnimationPreviewPanel
             }
 
             ModelRig? rig = target.FileSystem.ReadFile(target.ContainerPath) is { } container
-                ? ModelRig.Read(package, container, target.ModelName)
+                ? ModelRig.Read(package.Game, container, target.ModelName)
                 : null;
 
             if (rig == null)
@@ -395,5 +555,11 @@ public class AnimationPreviewPanel
     private sealed record ActiveAnimation(
         AnimationTarget Target,
         IReadOnlyList<MeshRenderableProxy> Meshes,
-        ModelAnimator Animator);
+        ModelAnimator Animator,
+        IReadOnlyList<ActivePart> Parts,
+        IReadOnlyList<ActiveAttachment> Attachments);
+
+    private sealed record ActivePart(MeshRenderableProxy Mesh, ModelAnimator Animator);
+
+    private sealed record ActiveAttachment(MeshRenderableProxy Mesh, int Node, Matrix4x4 Offset, Matrix4x4 Rest);
 }

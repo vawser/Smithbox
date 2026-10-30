@@ -372,6 +372,25 @@ public class MapEditorPrefs
     #endregion
 
     #region Character Substitution
+    public static PreferenceItem MapEditor_Enable_Character_Composition()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
+            Category = PreferenceCategory.MapEditor,
+            Spacer = true,
+
+            Section = SectionCategory.MapEditor_Character_Substitution,
+
+            Title = "PREF_MapEditor_Enable_Character_Composition",
+            Description = "PREF_MapEditor_Enable_Character_Composition_TT",
+
+            Draw = () =>
+            {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Enable_Character_Composition);
+            }
+        };
+    }
     public static PreferenceItem MapEditor_Enable_Character_Substitution()
     {
         return new PreferenceItem

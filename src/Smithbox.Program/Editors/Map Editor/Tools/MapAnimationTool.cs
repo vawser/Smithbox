@@ -162,15 +162,20 @@ public class MapAnimationTool
             ? ModelLocator.GetChrModel(Project, modelName, modelName)
             : ModelLocator.GetObjModel(Project, modelName, modelName);
 
+        // The model of a composite character is only a skeleton, and all of its meshes are parts
+        CharacterAppearance? appearance = entity.CharacterAppearance;
+
         return new AnimationTarget(
             entity,
             modelName,
             isCharacter ? AnimatedModelKind.Character : AnimatedModelKind.Asset,
             Project.VFS.FS,
             PathBuilder.GetRelativePath(Project, asset.AssetVirtualPath),
-            () => new[] { mesh },
+            () => appearance != null ? Array.Empty<MeshRenderableProxy>() : new[] { mesh },
             // The mesh is replaced or removed when the model is changed or the map is unloaded
-            () => entity.RenderSceneMesh == mesh);
+            () => entity.RenderSceneMesh == mesh,
+            null,
+            appearance != null ? CharacterComposition.GetAnimatedParts(Project, appearance, mesh) : null);
     }
 
     private MsbEntity? GetSelectedEntity()

@@ -617,7 +617,9 @@ public class PathBuilder
 
             if (p[i].Equals("tex"))
             {
-                relPath = Path.Combine("parts", $"{containerName}.tpf.dcx");
+                relPath = project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R
+                    ? Path.Combine("parts", $"{containerName}.tpf")
+                    : Path.Combine("parts", $"{containerName}.tpf.dcx");
             }
         }
         // --- SYSTEX ---

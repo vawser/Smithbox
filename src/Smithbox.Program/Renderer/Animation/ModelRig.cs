@@ -67,9 +67,9 @@ public sealed class ModelRig
     /// <summary>
     ///     Reads the rig of the named model from its binder. Returns null if the binder has no such model.
     /// </summary>
-    public static ModelRig? Read(AnimationPackage package, Memory<byte> containerData, string modelName)
+    public static ModelRig? Read(ProjectType game, Memory<byte> containerData, string modelName)
     {
-        using BinderReader binder = AnimationPackage.OpenBinder(package.Game, containerData);
+        using BinderReader binder = AnimationPackage.OpenBinder(game, containerData);
 
         BinderFileHeader? match = null;
         foreach (BinderFileHeader file in binder.Files)
@@ -101,6 +101,14 @@ public sealed class ModelRig
         }
 
         return FLVER2.Is(data) ? FromFlver(FLVER2.Read(data)) : FromFlver(FLVER0.Read(data));
+    }
+
+    /// <summary>
+    ///     Gets the index of the named node, or -1 if there is no such node.
+    /// </summary>
+    public int FindNode(string name)
+    {
+        return Array.IndexOf(NodeNames, name);
     }
 
     public static ModelRig FromFlver(FLVER2 flver)

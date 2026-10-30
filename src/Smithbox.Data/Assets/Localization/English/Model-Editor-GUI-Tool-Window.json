@@ -25,6 +25,14 @@
       "Text": "Animation"
     },
     {
+      "Key": "MODEL_ToolWindow_View_Character_Preview",
+      "Text": "Character Preview"
+    },
+    {
+      "Key": "MODEL_CharacterPreview_Header",
+      "Text": "Character Preview"
+    },
+    {
       "Key": "MODEL_Animation_Header",
       "Text": "Animation"
     },

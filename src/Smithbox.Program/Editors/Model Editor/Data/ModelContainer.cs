@@ -5,6 +5,7 @@ using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
@@ -33,6 +34,10 @@ public class ModelContainer : ObjectContainer
 
     // The collision stored alongside the FLVER for objects
     public Entity Collision = null;
+
+    // The part models of a player-like character. These are only displayed: they aren't part of this model.
+    public MeshRenderableProxy CharacterMesh { get; private set; }
+    public CharacterAppearance CharacterAppearance { get; private set; }
 
     public ModelContainer(ModelEditorView view, ProjectEntry project, string modelName)
     {
@@ -290,11 +295,54 @@ public class ModelContainer : ObjectContainer
             hasBounds = true;
         }
 
+        if (CharacterMesh != null)
+        {
+            if (CharacterMesh.Submeshes.Any(part => !part._meshProvider.IsAvailable()))
+                return false;
+
+            if (CharacterMesh.HasRenderableGeometry())
+            {
+                bounds = hasBounds ? BoundingBox.Combine(bounds, CharacterMesh.GetBounds()) : CharacterMesh.GetBounds();
+                hasBounds = true;
+            }
+        }
+
         return hasBounds;
+    }
+
+    /// <summary>
+    ///     Displays a set of part models with this model, in place of any displayed before.
+    /// </summary>
+    public void AssignCharacterParts(CharacterAppearance appearance)
+    {
+        ClearCharacterParts();
+
+        CharacterAppearance = appearance;
+
+        CharacterMesh = CharacterComposition.CreateMesh(Project, View.RenderScene, appearance,
+            RootObject.EntityCacheUID, "Parts");
+
+        if (CharacterMesh != null)
+        {
+            CharacterMesh.World = RootObject.GetWorldMatrix();
+            CharacterMesh.SetSelectable(RootObject);
+            CharacterMesh.DrawFilter = RenderFilter.Meshes;
+        }
+    }
+
+    private void ClearCharacterParts()
+    {
+        CharacterMesh?.Dispose();
+        CharacterMesh = null;
+        CharacterAppearance = null;
+
+        MeshProviderCache.InvalidateUidEntries(RootObject.EntityCacheUID);
     }
 
     public void Unload()
     {
+        ClearCharacterParts();
+
         foreach (Entity obj in Objects)
         {
             if (obj != null)

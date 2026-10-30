@@ -46,6 +46,7 @@ public class ModelEditorView : IEditorView
     public ModelInstanceFinder ModelInstanceFinder;
     public ModelMaskToggler ModelMaskToggler;
     public ModelAnimationTool ModelAnimationTool;
+    public ModelCharacterPreview ModelCharacterPreview;
     public ResourceListTool ResourceListTool;
     public ModelExportTool ModelExportTool;
 
@@ -92,6 +93,7 @@ public class ModelEditorView : IEditorView
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
         ModelMaskToggler = new ModelMaskToggler(this, Project);
         ModelAnimationTool = new ModelAnimationTool(this, Project);
+        ModelCharacterPreview = new ModelCharacterPreview(this, Project);
         ResourceListTool = new ResourceListTool();
         ModelExportTool = new ModelExportTool(this, Project);
 

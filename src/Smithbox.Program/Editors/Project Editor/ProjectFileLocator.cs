@@ -625,7 +625,7 @@ public class ProjectFileLocator : IDisposable
     {
         return projectType switch
         {
-            ProjectType.DS1 => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
+            ProjectType.DS1 or ProjectType.DS1R => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
             ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/parts"),
             ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
             ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB or ProjectType.DB_NT => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts") && !isSd,

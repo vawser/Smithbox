@@ -138,6 +138,27 @@ public sealed class ModelAnimator : IDisposable
     }
 
     /// <summary>
+    ///     Takes on the pose of another animator of the same package, for models built from several FLVERs.
+    /// </summary>
+    public void Follow(ModelAnimator leader)
+    {
+        CurrentAnimation = leader.CurrentAnimation;
+        CurrentClip = leader.CurrentClip;
+        Time = leader.Time;
+
+        _poseDirty = false;
+        ApplyPose();
+    }
+
+    /// <summary>
+    ///     Current model space matrix of a FLVER node, for models attached to it.
+    /// </summary>
+    public Matrix4x4 GetNodeWorld(int node)
+    {
+        return _pose.NodeWorld[node];
+    }
+
+    /// <summary>
     ///     How far a FLVER node has moved from its rest pose, for anything else that follows the skeleton.
     /// </summary>
     public Matrix4x4 GetNodeDelta(int node)

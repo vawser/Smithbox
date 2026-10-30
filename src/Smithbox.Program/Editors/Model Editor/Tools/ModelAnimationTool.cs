@@ -74,6 +74,7 @@ public class ModelAnimationTool
     private AnimationTarget CreateTarget(ModelWrapper wrapper, AnimatedModelKind kind)
     {
         ModelContainer container = wrapper.Container;
+        MeshRenderableProxy? characterMesh = container.CharacterMesh;
 
         return new AnimationTarget(
             container,
@@ -82,9 +83,14 @@ public class ModelAnimationTool
             wrapper.Parent.TargetFS,
             wrapper.Parent.Path,
             () => GetMeshes(container),
-            // Loading another model discards the container, and the meshes along with it
-            () => wrapper.Container == container && View.Selection.SelectedModelWrapper == wrapper,
-            animator => UpdateMarkers(container, animator));
+            // Loading another model discards the container, and the meshes along with it.
+            // Changing the equipment of a character replaces its part meshes.
+            () => wrapper.Container == container && View.Selection.SelectedModelWrapper == wrapper &&
+                  container.CharacterMesh == characterMesh,
+            animator => UpdateMarkers(container, animator),
+            characterMesh != null
+                ? CharacterComposition.GetAnimatedParts(Project, container.CharacterAppearance, characterMesh)
+                : null);
     }
 
     /// <summary>

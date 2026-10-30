@@ -23,7 +23,9 @@ public class PropMultChangeAction : ViewportAction
     {
         View = view;
 
-        if(prop.Name == "ModelName")
+        var isModelChange = prop.Name == "ModelName";
+
+        if (isModelChange || CharacterComposition.IsAppearanceProperty(prop.Name))
         {
             UpdateRenderMesh = true;
         }
@@ -67,7 +69,7 @@ public class PropMultChangeAction : ViewportAction
 
                 Changes.Add(change);
 
-                if (UpdateRenderMesh && !Equals(change.OldValue, newval))
+                if (isModelChange && !Equals(change.OldValue, newval))
                 {
                     ModelChangedEnts.Add(o);
                 }

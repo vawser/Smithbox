@@ -60,6 +60,11 @@ public class ModelToolWindow
             View.ModelAnimationTool.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_ModelEditor_Tool_CharacterPreview)
+        {
+            View.ModelCharacterPreview.OnToolWindow();
+        }
+
         if (CFG.Current.Interface_ModelEditor_Tool_ModelExport)
         {
             View.ModelExportTool.OnToolWindow();
@@ -103,6 +108,13 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_Animation = !CFG.Current.Interface_ModelEditor_Tool_Animation;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_Animation);
+
+            // Character Preview
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Character_Preview")}##modelCharacterPreviewToggle"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_CharacterPreview = !CFG.Current.Interface_ModelEditor_Tool_CharacterPreview;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_CharacterPreview);
 
             // Mdoel Export
             if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Model_Export")}##modelExportToggle"))

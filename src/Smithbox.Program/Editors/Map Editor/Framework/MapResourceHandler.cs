@@ -220,6 +220,13 @@ public class MapResourceHandler
 
             // BND
             assets.Add(TextureLocator.GetCharacterTextureVirtualPath(project, modelName, true));
+
+            if (CFG.Current.MapEditor_Enable_Character_Composition &&
+                CharacterComposition.IsComposite(modelName) &&
+                CharacterComposition.GetCommonTexture(project) is { } commonTexture)
+            {
+                assets.Add(commonTexture);
+            }
         }
 
         // Object

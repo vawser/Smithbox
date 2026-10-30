@@ -31,6 +31,12 @@ public class MsbEntity : Entity
 
     public MsbEntityType Type { get; set; }
 
+    /// <summary>
+    /// The parts of the render mesh, if this is a character built from part models.
+    /// </summary>
+    [XmlIgnore]
+    public CharacterAppearance CharacterAppearance { get; private set; }
+
     public MapContainer ContainingMap
     {
         get => (MapContainer)Container;
@@ -147,8 +153,13 @@ public class MsbEntity : Entity
         // Enemy
         if (EntityHelper.IsPartEnemy(this) || EntityHelper.IsPartDummyEnemy(this))
         {
-            asset = ModelLocator.GetChrModel(curProject, modelName, modelName);
-            AssignCharacterOrPlaceholder(asset, modelName);
+            CharacterAppearance = null;
+
+            if (!TryAssignCompositeCharacter(modelName))
+            {
+                asset = ModelLocator.GetChrModel(curProject, modelName, modelName);
+                AssignCharacterOrPlaceholder(asset, modelName);
+            }
         }
 
         // Player
@@ -1075,6 +1086,39 @@ public class MsbEntity : Entity
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Assigns a mesh built from the part models of a player-like character, dressed by its CharaInitParam row.
+    /// Returns false if the model isn't one of these, or there are no parts to display for it.
+    /// </summary>
+    private bool TryAssignCompositeCharacter(string modelName)
+    {
+        if (!CFG.Current.MapEditor_Enable_Character_Composition || !CharacterComposition.IsComposite(modelName))
+            return false;
+
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+
+        var charaInitProp = GetProperty("CharaInitID") ?? GetProperty("CharaInitParamId");
+        var charaInitId = charaInitProp?.GetValue(WrappedObject) as int? ?? -1;
+
+        var appearance = CharacterComposition.Resolve(curProject, charaInitId);
+
+        var mesh = CharacterComposition.CreateMesh(curProject, curUniverse.GetCurrentScene(), appearance,
+            EntityCacheUID, LOC.Get("MAP_ResourceManager_Character_Models"));
+
+        if (mesh == null)
+            return false;
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Character;
+
+        CharacterAppearance = appearance;
+        SetRenderSceneMesh(mesh);
+
+        return true;
     }
 
     private void AssignCharacterOrPlaceholder(ResourceDescriptor asset, string modelName)

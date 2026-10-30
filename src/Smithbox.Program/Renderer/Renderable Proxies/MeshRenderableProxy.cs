@@ -56,6 +56,8 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     private ModelAnimator? _animator;
 
+    private Matrix4x4 _attachTransform = Matrix4x4.Identity;
+
     public event Action<MeshRenderableProxy>? MeshAvailabilityChanged;
 
     public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true, string name = "", int? submeshIndex = null)
@@ -139,6 +141,24 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
             {
                 sm.Animator = value;
+            }
+        }
+    }
+
+    /// <summary>
+    ///     Places this mesh within the model it is attached to, such as a weapon on a hand bone.
+    ///     This sits between the mesh and <see cref="World" />, so moving the model leaves it in place.
+    /// </summary>
+    public Matrix4x4 AttachTransform
+    {
+        get => _attachTransform;
+        set
+        {
+            _attachTransform = value;
+            ScheduleRenderableUpdate();
+            foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
+            {
+                sm.AttachTransform = value;
             }
         }
     }
@@ -285,6 +305,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             child.DrawFilter = _drawfilter;
             child.DrawGroups = _drawgroups;
             child.Animator = _animator;
+            child.AttachTransform = _attachTransform;
 
             // Children are created once the provider has loaded (async), which can be after the
             // outline was requested on this proxy. Without this they never get the selection outline.
@@ -387,7 +408,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         if (_meshProvider.IsAvailable() && _meshProvider.HasMeshData() && _meshProvider.TryLock())
         {
             _meshProvider.Unlock();
-            return BoundingBox.Transform(_meshProvider.Bounds, _meshProvider.ObjectTransform);
+            return BoundingBox.Transform(_meshProvider.Bounds, _meshProvider.ObjectTransform * _attachTransform);
         }
 
         MeshRenderableProxy[] subs = SnapshotSubmeshes();
@@ -702,7 +723,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     private InstanceData CreateInstanceData()
     {
         InstanceData dat = new();
-        dat.WorldMatrix = _meshProvider.ObjectTransform * _world;
+        dat.WorldMatrix = _meshProvider.ObjectTransform * _attachTransform * _world;
         dat.MaterialID = _meshProvider.MaterialIndex;
 
         if (_meshProvider.BoneBuffer != null)
@@ -727,7 +748,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
                 if (transform != null)
                 {
-                    dat.WorldMatrix = transform.Value * _world;
+                    dat.WorldMatrix = transform.Value * _attachTransform * _world;
                 }
             }
         }
@@ -738,7 +759,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     private BoundingBox GetWorldBounds()
     {
-        BoundingBox bounds = BoundingBox.Transform(_meshProvider.Bounds, _meshProvider.ObjectTransform * _world);
+        BoundingBox bounds = BoundingBox.Transform(_meshProvider.Bounds, _meshProvider.ObjectTransform * _attachTransform * _world);
 
         if (_animator != null)
         {

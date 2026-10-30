@@ -7,6 +7,9 @@
   Map Editor
   
 # Map Editor
+- Add support for grass display (i.e. sub-meshes laid upon asset)
+- Add support for c0000 display (based on CharaInit)
   
 # Model Editor
+- Add support for c0000 display (based on default + user-configurable options)
 
