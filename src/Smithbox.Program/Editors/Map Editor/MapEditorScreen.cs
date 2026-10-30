@@ -585,6 +585,8 @@ public class MapEditorScreen : EditorScreen
                 view.Universe.LoadMapExceptions = null;
                 loadException.Throw();
             }
+
+            view?.HavokCollisionBank.UpdateObjectCollision(view.ViewportHandler.ActiveViewport.RenderScene.DrawFilter);
         }
     }
 

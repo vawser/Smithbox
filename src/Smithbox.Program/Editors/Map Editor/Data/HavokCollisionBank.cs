@@ -17,6 +17,8 @@ public class HavokCollisionBank
 
     public HavokCollisionType VisibleCollisionType = HavokCollisionType.Low;
 
+    private bool ObjectCollisionVisible = false;
+
     public HavokCollisionBank(ProjectEntry project)
     {
         Project = project;
@@ -176,6 +178,42 @@ public class HavokCollisionBank
                             msbEnt.AssignDrawable();
                         }
                         ent.UpdateRenderModel();
+                    }
+                }
+            }
+        }
+
+        RefreshObjectCollision();
+    }
+
+    /// <summary>
+    /// Object collision is only read while it is displayed, so it has to be picked up when the filter
+    /// is turned on. Checked here as the filter can be changed from several places (e.g. the presets).
+    /// </summary>
+    public void UpdateObjectCollision(RenderFilter filter)
+    {
+        var visible = filter.HasFlag(RenderFilter.ObjectCollision);
+
+        if (visible && !ObjectCollisionVisible)
+        {
+            RefreshObjectCollision();
+        }
+
+        ObjectCollisionVisible = visible;
+    }
+
+    private void RefreshObjectCollision()
+    {
+        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
+        {
+            if (entry.Value.MapContainer != null)
+            {
+                foreach (var ent in entry.Value.MapContainer.Objects)
+                {
+                    // Entities still being set up get their collision along with the rest of their drawable
+                    if (ent is MsbEntity { SetupRenderMesh: true } msbEnt)
+                    {
+                        msbEnt.AssignObjectCollisionDrawable();
                     }
                 }
             }

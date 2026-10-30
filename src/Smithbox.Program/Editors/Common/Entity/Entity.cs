@@ -37,6 +37,11 @@ public class Entity : ISelectable, IDisposable
     private RenderableProxy _renderSceneMesh;
 
     /// <summary>
+    /// Internal. Associated collision mesh for the entity.
+    /// </summary>
+    private RenderableProxy _collisionSceneMesh;
+
+    /// <summary>
     /// Cached name for the entity.
     /// </summary>
     public string CachedAliasName;
@@ -141,8 +146,35 @@ public class Entity : ISelectable, IDisposable
             {
                 _renderSceneMesh.Visible = _EditorVisible;
             }
+
+            // Nothing is displayed for this entity any more, e.g. it has been deleted
+            if (value == null)
+            {
+                CollisionSceneMesh = null;
+            }
         }
         get => _renderSceneMesh;
+    }
+
+    /// <summary>
+    /// The collision mesh displayed alongside the render scene mesh, for entities that have both (e.g. assets).
+    /// </summary>
+    [XmlIgnore]
+    public RenderableProxy CollisionSceneMesh
+    {
+        set
+        {
+            _collisionSceneMesh?.Dispose();
+            _collisionSceneMesh = value;
+
+            if (_collisionSceneMesh != null && IsSelected)
+            {
+                _collisionSceneMesh.RenderSelectionOutline = true;
+            }
+
+            ApplyMeshState();
+        }
+        get => _collisionSceneMesh;
     }
 
     /// <summary>
@@ -241,6 +273,11 @@ public class Entity : ISelectable, IDisposable
                 RenderSceneMesh.Visible = _EditorVisible;
             }
 
+            if (CollisionSceneMesh != null)
+            {
+                CollisionSceneMesh.Visible = _EditorVisible;
+            }
+
             foreach (Entity child in Children)
             {
                 child.EditorVisible = _EditorVisible;
@@ -270,6 +307,11 @@ public class Entity : ISelectable, IDisposable
         {
             RenderSceneMesh.RenderSelectionOutline = true;
         }
+
+        if (CollisionSceneMesh != null)
+        {
+            CollisionSceneMesh.RenderSelectionOutline = true;
+        }
     }
 
     public void OnDeselected()
@@ -281,6 +323,11 @@ public class Entity : ISelectable, IDisposable
         if (RenderSceneMesh != null)
         {
             RenderSceneMesh.RenderSelectionOutline = false;
+        }
+
+        if (CollisionSceneMesh != null)
+        {
+            CollisionSceneMesh.RenderSelectionOutline = false;
         }
     }
 
@@ -1374,6 +1421,12 @@ public class Entity : ISelectable, IDisposable
                     RenderSceneMesh.Dispose();
                     _renderSceneMesh = null;
                 }
+
+                if (CollisionSceneMesh != null)
+                {
+                    CollisionSceneMesh.Dispose();
+                    _collisionSceneMesh = null;
+                }
             }
 
             disposedValue = true;
@@ -1415,7 +1468,7 @@ public class Entity : ISelectable, IDisposable
                 return;
         }
 
-        if (_renderSceneMesh == null)
+        if (_renderSceneMesh == null && _collisionSceneMesh == null)
             return;
 
         Matrix4x4 t = UseTempTransform ? TempTransform.WorldMatrix : GetLocalTransform().WorldMatrix;
@@ -1426,14 +1479,29 @@ public class Entity : ISelectable, IDisposable
             p = p.Parent;
         }
 
-        _renderSceneMesh.World = t;
-        _renderSceneMesh.Visible = _EditorVisible;
+        var useRenderGroups = Owner is MapUniverse && HasRenderGroups;
 
-        if (Owner is MapUniverse && HasRenderGroups)
+        if (useRenderGroups)
         {
             UpdateDispDrawGroups();
-            _renderSceneMesh.DrawGroups.AlwaysVisible = false;
-            _renderSceneMesh.DrawGroups.RenderGroups = DrawGroups;
+        }
+
+        ApplyProxyState(_renderSceneMesh, t, useRenderGroups);
+        ApplyProxyState(_collisionSceneMesh, t, useRenderGroups);
+    }
+
+    private void ApplyProxyState(RenderableProxy proxy, Matrix4x4 world, bool useRenderGroups)
+    {
+        if (proxy == null)
+            return;
+
+        proxy.World = world;
+        proxy.Visible = _EditorVisible;
+
+        if (useRenderGroups)
+        {
+            proxy.DrawGroups.AlwaysVisible = false;
+            proxy.DrawGroups.RenderGroups = DrawGroups;
         }
     }
 

@@ -27,6 +27,7 @@ public class ViewportFiltersAction
     private bool RenderLight = false;
     private bool RenderCollision = false;
     private bool RenderConnectCollision = false;
+    private bool RenderObjectCollision = false;
     private bool RenderNavmesh = false;
     private bool RenderSpeedTree = false;
     private bool RenderInvasionPoint = false;
@@ -51,6 +52,7 @@ public class ViewportFiltersAction
         RenderLight = drawFilter.HasFlag(RenderFilter.Light);
         RenderCollision = drawFilter.HasFlag(RenderFilter.Collision);
         RenderConnectCollision = drawFilter.HasFlag(RenderFilter.ConnectCollision);
+        RenderObjectCollision = drawFilter.HasFlag(RenderFilter.ObjectCollision);
         RenderNavmesh = drawFilter.HasFlag(RenderFilter.Navmesh);
         RenderSpeedTree = drawFilter.HasFlag(RenderFilter.SpeedTree);
         RenderInvasionPoint = drawFilter.HasFlag(RenderFilter.AutoInvade);
@@ -107,7 +109,7 @@ public class ViewportFiltersAction
             RenderLight = scene.DrawFilter.HasFlag(RenderFilter.Light);
         }
 
-        if (ImGui.Checkbox("Collision", ref RenderCollision))
+        if (ImGui.Checkbox("Map Collision", ref RenderCollision))
         {
             scene.ToggleDrawFilter(RenderFilter.Collision);
             RenderCollision = scene.DrawFilter.HasFlag(RenderFilter.Collision);
@@ -117,6 +119,13 @@ public class ViewportFiltersAction
         {
             scene.ToggleDrawFilter(RenderFilter.ConnectCollision);
             RenderConnectCollision = scene.DrawFilter.HasFlag(RenderFilter.ConnectCollision);
+        }
+
+        if (ImGui.Checkbox($"{objName} Collision", ref RenderObjectCollision))
+        {
+            scene.ToggleDrawFilter(RenderFilter.ObjectCollision);
+            RenderObjectCollision = scene.DrawFilter.HasFlag(RenderFilter.ObjectCollision);
+            CFG.Current.MapEditor_BasicFilter_ObjectCollision = RenderObjectCollision;
         }
 
         if (ImGui.Checkbox("Navmesh", ref RenderNavmesh))

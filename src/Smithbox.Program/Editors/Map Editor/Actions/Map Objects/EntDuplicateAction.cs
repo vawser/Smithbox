@@ -280,6 +280,8 @@ public class EntDuplicateAction : ViewportAction
                 Clones[i].RenderSceneMesh.AutoRegister = false;
                 Clones[i].RenderSceneMesh.UnregisterWithScene();
             }
+
+            Clones[i].CollisionSceneMesh = null;
         }
 
         // The clones no longer exist, so hand the selection (and its outline) back to the originals

@@ -14,7 +14,7 @@
     },
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_Collision",
-      "Text": "Collision"
+      "Text": "Map Collision"
     },
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_Character",
@@ -63,6 +63,10 @@
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_ConnectCollision",
       "Text": "Connect Collision"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_ObjectCollision",
+      "Text": "Object Collision"
     },
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_All",

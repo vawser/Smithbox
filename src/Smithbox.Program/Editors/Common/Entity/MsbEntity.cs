@@ -75,6 +75,7 @@ public class MsbEntity : Entity
         {
             case MsbEntityType.Part:
                 AssignPartDrawable();
+                AssignObjectCollisionDrawable();
                 break;
 
             case MsbEntityType.Region:
@@ -194,6 +195,39 @@ public class MsbEntity : Entity
         }
     }
 
+    /// <summary>
+    /// Assigns the collision mesh of an object or asset, which is displayed alongside its model.
+    /// Only done while object collision is displayed, as it is rarely needed and has to be read per model.
+    /// </summary>
+    public void AssignObjectCollisionDrawable()
+    {
+        if (!EntityHelper.IsPartAsset(this) && !EntityHelper.IsPartDummyAsset(this))
+            return;
+
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+
+        CollisionSceneMesh = null;
+
+        if (!CFG.Current.MapEditor_ModelLoad_Collisions ||
+            !curUniverse.GetCurrentScene().DrawFilter.HasFlag(RenderFilter.ObjectCollision))
+            return;
+
+        var modelProp = GetProperty("ModelName");
+
+        if (modelProp == null)
+            return;
+
+        var modelName = (string)modelProp.GetValue(WrappedObject);
+        var asset = ModelLocator.GetMapObjCollision(curProject, modelName,
+            curUniverse.View.HavokCollisionBank.VisibleCollisionType);
+
+        if (asset.GetContainerPath(curProject) == null)
+            return;
+
+        CollisionSceneMesh = CreateObjectCollisionMesh(asset);
+    }
+
     public MeshRenderableProxy CreateMapPieceMesh(ResourceDescriptor asset)
     {
         var curUniverse = Owner as MapUniverse;
@@ -270,6 +304,24 @@ public class MsbEntity : Entity
         return mesh;
     }
 
+    public MeshRenderableProxy CreateObjectCollisionMesh(ResourceDescriptor asset)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(
+                scene, ResourceManager.DefaultPool.Find<HavokCollisionResource>(asset.Name), ModelMarkerType.None);
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.ObjectCollision;
+
+        // Binders can hold other hkx files (e.g. animations and cloth), so only the collision itself is loaded
+        LoadAsset<HavokCollisionResource>(asset, LOC.Get("REND_Loading_Collision"), ResourceType.CollisionHKX, asset.Name);
+
+        return mesh;
+    }
+
     public MeshRenderableProxy CreateNavmeshMesh(ResourceDescriptor asset)
     {
         var curUniverse = Owner as MapUniverse;
@@ -294,7 +346,7 @@ public class MsbEntity : Entity
     /// <summary>
     ///     Makes sure the container holding the asset is loaded. Does nothing if the asset is already loaded.
     /// </summary>
-    public void LoadAsset<T>(ResourceDescriptor asset, string jobMessage, ResourceType types)
+    public void LoadAsset<T>(ResourceDescriptor asset, string jobMessage, ResourceType types, string onlyName = null)
         where T : class, IResource, System.IDisposable, new()
     {
         var curUniverse = Owner as MapUniverse;
@@ -303,7 +355,8 @@ public class MsbEntity : Entity
         {
             JobName = jobMessage,
             Types = types,
-            AccessLevel = AccessLevel.AccessGPUOptimizedOnly
+            AccessLevel = AccessLevel.AccessGPUOptimizedOnly,
+            OnlyNames = onlyName == null ? null : new[] { onlyName }
         });
     }
 

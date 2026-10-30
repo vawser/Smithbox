@@ -49,6 +49,16 @@ public class BasicFilters
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.ConnectCollision);
         }
 
+        // This one is off by default, but RenderFilter.All in the stored filter includes it, so it can't be toggled
+        if (CFG.Current.MapEditor_BasicFilter_ObjectCollision)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.ObjectCollision;
+        }
+        else
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.ObjectCollision;
+        }
+
         if (!CFG.Current.MapEditor_BasicFilter_Navmesh)
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
@@ -166,6 +176,28 @@ public class BasicFilters
         GUI.ShowActiveStatus(ticked);
         GUI.Tooltip(LOC.Get("MAP_Filters_Connect_Collisions_TT"));
 
+        // Object / Asset Collision
+        var usesAssets = View.Project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.AC6
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB;
+
+        var objectCollisionTitle = usesAssets
+            ? LOC.Get("MAP_Filters_Asset_Collisions_Title")
+            : LOC.Get("MAP_Filters_Object_Collisions_Title");
+
+        if (ImGui.MenuItem($"{objectCollisionTitle}##toggleFilter_ObjectCollision"))
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.ObjectCollision);
+            CFG.Current.MapEditor_BasicFilter_ObjectCollision = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.ObjectCollision);
+            View.DelayPicking();
+        }
+        ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.ObjectCollision);
+        GUI.ShowActiveStatus(ticked);
+        GUI.Tooltip(usesAssets
+            ? LOC.Get("MAP_Filters_Asset_Collisions_TT")
+            : LOC.Get("MAP_Filters_Object_Collisions_TT"));
 
         // Navmesh
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Navmeshes_Title")}##toggleFilter_Navmesh"))

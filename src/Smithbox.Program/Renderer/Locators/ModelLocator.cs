@@ -265,6 +265,49 @@ public static class ModelLocator
         return ret;
     }
 
+    /// <summary>
+    /// Gets the collision of an object or asset placed in a map, or the null asset if it can't be displayed.
+    /// </summary>
+    public static ResourceDescriptor GetMapObjCollision(ProjectEntry project, string modelName, HavokCollisionType collisionType)
+    {
+        if (project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
+        {
+            // Not every asset has both collision types, so fall back to the other one
+            var suffixes = collisionType is HavokCollisionType.High
+                ? new[] { "h", "l" }
+                : new[] { "l", "h" };
+
+            foreach (var suffix in suffixes)
+            {
+                var binderName = $"{modelName}_{suffix}";
+                var asset = GetObjCollision(project, modelName, binderName, binderName);
+                var path = asset.GetContainerPath(project);
+
+                if (path != null && project.VFS.FS.FileExists(path))
+                    return asset;
+            }
+
+            return GetNullAsset();
+        }
+
+        if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+            return GetObjCollision(project, modelName, $"{modelName}_h", modelName);
+
+        if (project.Descriptor.ProjectType is ProjectType.DES
+            or ProjectType.DS1
+            or ProjectType.DS1R
+            or ProjectType.BB
+            or ProjectType.DS3)
+        {
+            return GetObjCollision(project, modelName, modelName);
+        }
+
+        return GetNullAsset();
+    }
+
     public static ResourceDescriptor GetPartsModel(ProjectEntry project, string partContainerId, string partId)
     {
         ResourceDescriptor ret = new();

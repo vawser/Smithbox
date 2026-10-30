@@ -50,7 +50,7 @@
     },
     {
       "Key": "MAP_Filters_Collisions_Title",
-      "Text": "Collisions"
+      "Text": "Map Collisions"
     },
     {
       "Key": "MAP_Filters_Collisions_TT",
@@ -63,6 +63,22 @@
     {
       "Key": "MAP_Filters_Connect_Collisions_TT",
       "Text": "Toggle the display of map objects classified as 'Connect Collisions'."
+    },
+    {
+      "Key": "MAP_Filters_Object_Collisions_Title",
+      "Text": "Object Collisions"
+    },
+    {
+      "Key": "MAP_Filters_Object_Collisions_TT",
+      "Text": "Toggle the display of the collision meshes of objects. These are read when first displayed, so turning this on can take a moment."
+    },
+    {
+      "Key": "MAP_Filters_Asset_Collisions_Title",
+      "Text": "Asset Collisions"
+    },
+    {
+      "Key": "MAP_Filters_Asset_Collisions_TT",
+      "Text": "Toggle the display of the collision meshes of assets. These are read when first displayed, so turning this on can take a moment."
     },
     {
       "Key": "MAP_Filters_Navmeshes_Title",

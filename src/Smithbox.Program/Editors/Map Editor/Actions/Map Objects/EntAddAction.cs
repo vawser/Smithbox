@@ -118,6 +118,8 @@ public class EntAddAction : ViewportAction
                 Added[i].RenderSceneMesh.AutoRegister = false;
                 Added[i].RenderSceneMesh.UnregisterWithScene();
             }
+
+            Added[i].CollisionSceneMesh = null;
         }
 
         View.ViewportSelection.ClearSelection();

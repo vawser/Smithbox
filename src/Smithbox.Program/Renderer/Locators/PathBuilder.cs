@@ -392,6 +392,14 @@ public class PathBuilder
                         relPath = Path.Combine("asset", "environment", "geometry", $"{colName}.geomhkxbnd.dcx");
                     }
                 }
+                else if (project.Descriptor.ProjectType is ProjectType.DS1)
+                {
+                    relPath = Path.Combine("obj", $"{objid}.objbnd");
+                }
+                else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                {
+                    relPath = Path.Combine("model", "obj", $"{objid}.bnd");
+                }
                 else
                 {
                     relPath = Path.Combine("obj", $"{objid}.objbnd.dcx");

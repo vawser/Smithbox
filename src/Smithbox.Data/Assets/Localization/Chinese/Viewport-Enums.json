@@ -14,7 +14,7 @@
     },
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_Collision",
-      "Text": "碰撞"
+      "Text": "地图碰撞"
     },
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_Character",
@@ -63,6 +63,10 @@
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_ConnectCollision",
       "Text": "连接碰撞"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_ObjectCollision",
+      "Text": "对象碰撞"
     },
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_All",
