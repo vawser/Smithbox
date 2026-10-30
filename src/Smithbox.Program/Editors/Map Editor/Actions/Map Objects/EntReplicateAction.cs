@@ -459,6 +459,7 @@ public class EntReplicateAction : ViewportAction
             }
 
             Clones[i].CollisionSceneMesh = null;
+            Clones[i].SelectionFillMesh = null;
         }
 
         // The clones no longer exist, so hand the selection (and its outline) back to the originals

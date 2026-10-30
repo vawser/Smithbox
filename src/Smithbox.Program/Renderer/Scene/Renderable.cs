@@ -2,6 +2,7 @@
 using StudioCore.Editors.Common;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
@@ -193,6 +194,7 @@ public class Renderables
 /// </summary>
 public class MeshRenderables : Renderables
 {
+    public bool[] cBackToFront;
     public BoundingBox[] cBounds;
     public bool[] cCulled;
     public MeshDrawParametersComponent[] cDrawParameters;
@@ -205,6 +207,7 @@ public class MeshRenderables : Renderables
         RenderableSystemIndex = id;
 
         // Initialize mesh-specific arrays
+        cBackToFront = new bool[Capacity];
         cBounds = new BoundingBox[Capacity];
         cCulled = new bool[Capacity];
         cDrawParameters = new MeshDrawParametersComponent[Capacity];
@@ -218,6 +221,7 @@ public class MeshRenderables : Renderables
         base.ResizeArrays(newCapacity);
 
         // Resize mesh-specific arrays
+        Array.Resize(ref cBackToFront, newCapacity);
         Array.Resize(ref cBounds, newCapacity);
         Array.Resize(ref cCulled, newCapacity);
         Array.Resize(ref cDrawParameters, newCapacity);
@@ -229,6 +233,7 @@ public class MeshRenderables : Renderables
     public int CreateMesh(ref BoundingBox bounds, ref MeshDrawParametersComponent drawArgs)
     {
         var idx = AllocateValidAndVisibleRenderable();
+        cBackToFront[idx] = false;
         cBounds[idx] = bounds;
         cDrawParameters[idx] = drawArgs;
         return idx;
@@ -283,13 +288,18 @@ public class MeshRenderables : Renderables
         }
     }
 
-    public void SubmitRenderables(SceneRenderer.RenderQueue queue)
+    public void SubmitRenderables(SceneRenderer.RenderQueue queue, Vector3 eye)
     {
         for (var i = 0; i < _topIndex; i++)
         {
             if (cVisible[i]._valid && !cCulled[i])
             {
-                queue.Add(i, cRenderKeys[i]);
+                // These depend on where the camera is, so can't be stored
+                var key = cBackToFront[i]
+                    ? RenderKey.CreateBackToFront(Vector3.Distance(eye, cBounds[i].GetCenter()))
+                    : cRenderKeys[i];
+
+                queue.Add(i, key);
             }
         }
     }
@@ -314,6 +324,7 @@ public class MeshRenderables : Renderables
                     cVisible[writeIndex] = cVisible[readIndex];
                     cRenderKeys[writeIndex] = cRenderKeys[readIndex];
                     cSceneVis[writeIndex] = cSceneVis[readIndex];
+                    cBackToFront[writeIndex] = cBackToFront[readIndex];
                     cBounds[writeIndex] = cBounds[readIndex];
                     cCulled[writeIndex] = cCulled[readIndex];
                     cDrawParameters[writeIndex] = cDrawParameters[readIndex];

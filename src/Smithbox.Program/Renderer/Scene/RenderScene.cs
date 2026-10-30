@@ -105,7 +105,7 @@ public class RenderScene
         Profiler.TracyCZoneEnd(ctx);
 
         ctx = Profiler.TracyCZoneN(1, "Submit");
-        OpaqueRenderables.SubmitRenderables(queue);
+        OpaqueRenderables.SubmitRenderables(queue, pipeline.Eye);
         Profiler.TracyCZoneEnd(ctx);
 
         queue.SetDrawParameters(OpaqueRenderables.cDrawParameters,
@@ -114,7 +114,7 @@ public class RenderScene
         ctx = Profiler.TracyCZoneN(1, "Overlays");
         OverlayRenderables.CullRenderables(frustum);
         OverlayRenderables.ProcessSceneVisibility(DrawFilter, DisplayGroup);
-        OverlayRenderables.SubmitRenderables(overlayQueue);
+        OverlayRenderables.SubmitRenderables(overlayQueue, pipeline.Eye);
         overlayQueue.SetDrawParameters(OverlayRenderables.cDrawParameters,
             overlayQueue.PickingEnabled ? OverlayRenderables.cSelectionPipelines : OverlayRenderables.cPipelines);
         Profiler.TracyCZoneEnd(ctx);

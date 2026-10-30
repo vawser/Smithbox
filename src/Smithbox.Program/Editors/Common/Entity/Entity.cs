@@ -40,6 +40,7 @@ public class Entity : ISelectable, IDisposable
     /// Internal. Associated collision mesh for the entity.
     /// </summary>
     private RenderableProxy _collisionSceneMesh;
+    private RenderableProxy _selectionFillMesh;
 
     /// <summary>
     /// Cached name for the entity.
@@ -156,6 +157,7 @@ public class Entity : ISelectable, IDisposable
             if (value == null)
             {
                 CollisionSceneMesh = null;
+                SelectionFillMesh = null;
             }
         }
         get => _renderSceneMesh;
@@ -180,6 +182,22 @@ public class Entity : ISelectable, IDisposable
             ApplyMeshState();
         }
         get => _collisionSceneMesh;
+    }
+
+    /// <summary>
+    /// The volume displayed alongside the render scene mesh while this entity is selected (e.g. regions).
+    /// </summary>
+    [XmlIgnore]
+    public RenderableProxy SelectionFillMesh
+    {
+        set
+        {
+            _selectionFillMesh?.Dispose();
+            _selectionFillMesh = value;
+
+            ApplyMeshState();
+        }
+        get => _selectionFillMesh;
     }
 
     /// <summary>
@@ -281,6 +299,11 @@ public class Entity : ISelectable, IDisposable
             if (CollisionSceneMesh != null)
             {
                 CollisionSceneMesh.Visible = _EditorVisible;
+            }
+
+            if (SelectionFillMesh != null)
+            {
+                SelectionFillMesh.Visible = _EditorVisible && IsSelected;
             }
 
             foreach (Entity child in Children)
@@ -1432,6 +1455,12 @@ public class Entity : ISelectable, IDisposable
                     CollisionSceneMesh.Dispose();
                     _collisionSceneMesh = null;
                 }
+
+                if (SelectionFillMesh != null)
+                {
+                    SelectionFillMesh.Dispose();
+                    _selectionFillMesh = null;
+                }
             }
 
             disposedValue = true;
@@ -1493,15 +1522,21 @@ public class Entity : ISelectable, IDisposable
 
         ApplyProxyState(_renderSceneMesh, t, useRenderGroups);
         ApplyProxyState(_collisionSceneMesh, t, useRenderGroups);
+        ApplyProxyState(_selectionFillMesh, t, useRenderGroups, _EditorVisible && IsSelected);
     }
 
     private void ApplyProxyState(RenderableProxy proxy, Matrix4x4 world, bool useRenderGroups)
+    {
+        ApplyProxyState(proxy, world, useRenderGroups, _EditorVisible);
+    }
+
+    private void ApplyProxyState(RenderableProxy proxy, Matrix4x4 world, bool useRenderGroups, bool visible)
     {
         if (proxy == null)
             return;
 
         proxy.World = world;
-        proxy.Visible = _EditorVisible;
+        proxy.Visible = visible;
 
         if (useRenderGroups)
         {

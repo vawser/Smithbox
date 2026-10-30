@@ -26,6 +26,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     protected GPUBufferAllocator.GPUBufferHandle? _materialBuffer;
 
     private bool _overdraw;
+    private bool _pickable = true;
+    private bool _translucent;
     protected ResourceSet? _perObjectResourceSet;
     protected Pipeline? _pickingPipeline;
 
@@ -61,6 +63,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         _initialColor = clone._initialColor;
         _baseColor = clone.BaseColor;
         _highlightedColor = clone._highlightedColor;
+        _pickable = clone._pickable;
+        _translucent = clone._translucent;
         if (clone._hasColorVariance)
         {
             ColorHelper.ApplyColorVariance(this);
@@ -163,6 +167,41 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
             var old = _overdraw;
             _overdraw = true;
             if (_registered && _overdraw != old)
+            {
+                ScheduleRenderableConstruction();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Translucent primitives don't write depth, so they can't hide what is behind them, and are drawn
+    /// back to front.
+    /// </summary>
+    public bool RenderTranslucent
+    {
+        get => _translucent;
+        set
+        {
+            var old = _translucent;
+            _translucent = value;
+            if (_registered && _translucent != old)
+            {
+                ScheduleRenderableConstruction();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Whether this primitive can be clicked in the viewport. If not, clicks reach whatever is behind it.
+    /// </summary>
+    public bool Pickable
+    {
+        get => _pickable;
+        set
+        {
+            var old = _pickable;
+            _pickable = value;
+            if (_registered && _pickable != old)
             {
                 ScheduleRenderableConstruction();
             }
@@ -312,7 +351,9 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
 
         pipelineDescription.BlendState = BlendStateDescription.SingleAlphaBlend;
 
-        pipelineDescription.DepthStencilState = DepthStencilStateDescription.DepthOnlyGreaterEqual;
+        pipelineDescription.DepthStencilState = _translucent
+            ? DepthStencilStateDescription.DepthOnlyGreaterEqualRead
+            : DepthStencilStateDescription.DepthOnlyGreaterEqual;
 
         pipelineDescription.RasterizerState = new RasterizerStateDescription(
             _debugPrimitive.CullMode,
@@ -337,17 +378,22 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         pipelineDescription.Outputs = gd.SwapchainFramebuffer.OutputDescription;
         _pipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
 
-        // Build picking pipeline
-        var pickingSpecializationConstants =
-            new SpecializationConstant[_debugPrimitive.SpecializationConstants.Length + 1];
-        Array.Copy(_debugPrimitive.SpecializationConstants, pickingSpecializationConstants,
-            _debugPrimitive.SpecializationConstants.Length);
-        pickingSpecializationConstants[pickingSpecializationConstants.Length - 1] =
-            new SpecializationConstant(99, true);
-        pipelineDescription.ShaderSet = new ShaderSetDescription(
-            mainVertexLayouts,
-            _shaders, pickingSpecializationConstants);
-        _pickingPipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
+        // Build picking pipeline. Unpickable primitives keep drawing during a picking
+        // frame, but with the default pipeline so they never write to the picking buffer.
+        _pickingPipeline = _pipeline;
+        if (_pickable)
+        {
+            var pickingSpecializationConstants =
+                new SpecializationConstant[_debugPrimitive.SpecializationConstants.Length + 1];
+            Array.Copy(_debugPrimitive.SpecializationConstants, pickingSpecializationConstants,
+                _debugPrimitive.SpecializationConstants.Length);
+            pickingSpecializationConstants[pickingSpecializationConstants.Length - 1] =
+                new SpecializationConstant(99, true);
+            pipelineDescription.ShaderSet = new ShaderSetDescription(
+                mainVertexLayouts,
+                _shaders, pickingSpecializationConstants);
+            _pickingPipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
+        }
 
         // Create draw call arguments
         MeshDrawParametersComponent meshcomp = new();
@@ -369,6 +415,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         BoundingBox bounds = BoundingBox.Transform(_debugPrimitive.Bounds, _world);
         _renderable = _renderablesSet.CreateMesh(ref bounds, ref meshcomp);
         _renderablesSet.cRenderKeys[_renderable] = GetRenderKey(0.0f);
+        _renderablesSet.cBackToFront[_renderable] = _translucent;
 
         // Pipelines
         _renderablesSet.cPipelines[_renderable] = _pipeline;

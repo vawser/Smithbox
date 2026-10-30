@@ -245,6 +245,10 @@
       "Text": "Box Region: Highlight Color"
     },
     {
+      "Key": "PREF_Viewport_Region_Selection_Fill_Alpha",
+      "Text": "Region Selection Fill: Transparency"
+    },
+    {
       "Key": "PREF_Viewport_Box_Region_Alpha",
       "Text": "Box Region: Transparency"
     },

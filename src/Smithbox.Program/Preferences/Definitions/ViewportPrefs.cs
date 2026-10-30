@@ -655,6 +655,11 @@ public class ViewportPrefs
                     ref CFG.Current.Viewport_Point_Region_Alpha, 1.0f, 1.0f, 100.0f);
 
                 DPI.ApplyInputWidth();
+                ImGui.DragFloat(
+                    $"{LOC.Get("PREF_Viewport_Region_Selection_Fill_Alpha")}##Viewport_Region_Selection_Fill_Alpha",
+                    ref CFG.Current.Viewport_Region_Selection_Fill_Alpha, 1.0f, 1.0f, 100.0f);
+
+                DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Dummy_Polygon_Base_Color")}##Viewport_Dummy_Polygon_Base_Color",
                     ref CFG.Current.Viewport_Dummy_Polygon_Base_Color);

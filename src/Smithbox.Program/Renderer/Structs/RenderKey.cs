@@ -36,6 +36,18 @@ public struct RenderKey : IComparable<RenderKey>, IComparable
             bufferID);
     }
 
+    /// <summary>
+    /// Creates a key that sorts after everything but overlays, with distant objects first, as
+    /// translucent objects must be drawn over whatever is behind them.
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static RenderKey CreateBackToFront(float cameraDistance)
+    {
+        var cameraDistanceInt = (uint)Math.Clamp(cameraDistance * 1000f, 0f, 4.0e9f);
+
+        return new RenderKey(((ulong)uint.MaxValue << 32) | (uint.MaxValue - cameraDistanceInt));
+    }
+
     public int CompareTo(RenderKey other)
     {
         return Value.CompareTo(other.Value);

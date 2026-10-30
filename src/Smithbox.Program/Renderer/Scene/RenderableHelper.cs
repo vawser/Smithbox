@@ -311,7 +311,7 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox);
 
-        r.RenderOverlay = true;
+        r.RenderTranslucent = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
@@ -388,7 +388,7 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidCylinder);
 
-        r.RenderOverlay = true;
+        r.RenderTranslucent = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
@@ -421,7 +421,7 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidSphere);
 
-        r.RenderOverlay = true;
+        r.RenderTranslucent = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
@@ -468,10 +468,46 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidPoint);
 
-        r.RenderOverlay = true;
+        r.RenderTranslucent = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+
+    // REGION SELECTION FILL
+    public static DebugPrimitiveRenderableProxy GetBoxRegionFillProxy(RenderScene scene)
+    {
+        return GetRegionFillProxy(scene, _regionSolidBox, CFG.Current.Viewport_Box_Region_Highlight_Color);
+    }
+
+    public static DebugPrimitiveRenderableProxy GetCylinderRegionFillProxy(RenderScene scene)
+    {
+        return GetRegionFillProxy(scene, _regionSolidCylinder, CFG.Current.Viewport_Cylinder_Region_Highlight_Color);
+    }
+
+    public static DebugPrimitiveRenderableProxy GetSphereRegionFillProxy(RenderScene scene)
+    {
+        return GetRegionFillProxy(scene, _regionSolidSphere, CFG.Current.Viewport_Sphere_Region_Highlight_Color);
+    }
+
+    public static DebugPrimitiveRenderableProxy GetPointRegionFillProxy(RenderScene scene)
+    {
+        return GetRegionFillProxy(scene, _regionSolidPoint, CFG.Current.Viewport_Point_Region_Highlight_Color);
+    }
+
+    private static DebugPrimitiveRenderableProxy GetRegionFillProxy(RenderScene scene, IDbgPrim prim, Vector3 color)
+    {
+        var fillColor = ColorHelper.GetTransparencyColor(color, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, prim);
+
+        r.RenderTranslucent = true;
+        r.Pickable = false;
+        r.Visible = false;
+        r.BaseColor = fillColor;
+        r.HighlightedColor = fillColor;
 
         return r;
     }

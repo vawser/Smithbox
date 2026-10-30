@@ -81,6 +81,8 @@ public static class PreferencesUtil
         CFG.Current.Viewport_Point_Region_Highlight_Color = CFG.Default.Viewport_Point_Region_Highlight_Color;
         CFG.Current.Viewport_Point_Region_Alpha = CFG.Default.Viewport_Point_Region_Alpha;
 
+        CFG.Current.Viewport_Region_Selection_Fill_Alpha = CFG.Default.Viewport_Region_Selection_Fill_Alpha;
+
         CFG.Current.Viewport_Dummy_Polygon_Base_Color = CFG.Default.Viewport_Dummy_Polygon_Base_Color;
         CFG.Current.Viewport_Dummy_Polygon_Highlight_Color = CFG.Default.Viewport_Dummy_Polygon_Highlight_Color;
         CFG.Current.Viewport_Dummy_Polygon_Alpha = CFG.Default.Viewport_Dummy_Polygon_Alpha;

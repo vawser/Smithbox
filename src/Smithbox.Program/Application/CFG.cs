@@ -1150,6 +1150,8 @@ public class CFG
     public Vector3 Viewport_Point_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
     public float Viewport_Point_Region_Alpha = 75.0f;
 
+    public float Viewport_Region_Selection_Fill_Alpha = 20.0f;
+
     public Vector3 Viewport_Dummy_Polygon_Base_Color = Utils.GetDecimalColor(Color.Yellow);
     public Vector3 Viewport_Dummy_Polygon_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
     public float Viewport_Dummy_Polygon_Alpha = 75.0f;

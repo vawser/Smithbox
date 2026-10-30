@@ -444,6 +444,7 @@ public class MsbEntity : Entity
         var scene = curUniverse.GetCurrentScene();
 
         DebugPrimitiveRenderableProxy mesh = null;
+        DebugPrimitiveRenderableProxy fill = null;
 
         if (WrappedObject is IMsbRegion r)
         {
@@ -524,6 +525,24 @@ public class MsbEntity : Entity
                 {
                     mesh = RenderableHelper.GetPointRegionProxy(scene);
                 }
+
+                // A wireframe only has a volume to show once selected
+                if (r.Shape is MSB.Shape.Box or MSB.Shape.Rectangle)
+                {
+                    fill = RenderableHelper.GetBoxRegionFillProxy(scene);
+                }
+                else if (r.Shape is MSB.Shape.Sphere)
+                {
+                    fill = RenderableHelper.GetSphereRegionFillProxy(scene);
+                }
+                else if (r.Shape is MSB.Shape.Cylinder or MSB.Shape.Circle)
+                {
+                    fill = RenderableHelper.GetCylinderRegionFillProxy(scene);
+                }
+                else if (r.Shape is MSB.Shape.Point or MSB.Shape.Composite)
+                {
+                    fill = RenderableHelper.GetPointRegionFillProxy(scene);
+                }
             }
         }
 
@@ -538,6 +557,14 @@ public class MsbEntity : Entity
         mesh.DrawFilter = RenderFilter.Region;
 
         RenderSceneMesh = mesh;
+
+        if (fill != null)
+        {
+            fill.World = GetWorldMatrix();
+            fill.DrawFilter = RenderFilter.Region;
+        }
+
+        SelectionFillMesh = fill;
     }
 
     public void AssignLightDrawable()

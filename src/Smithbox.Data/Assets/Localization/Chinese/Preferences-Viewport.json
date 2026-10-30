@@ -245,6 +245,10 @@
       "Text": "盒区域：高亮色"
     },
     {
+      "Key": "PREF_Viewport_Region_Selection_Fill_Alpha",
+      "Text": "区域选中填充：透明度"
+    },
+    {
       "Key": "PREF_Viewport_Box_Region_Alpha",
       "Text": "盒区域：透明度"
     },

@@ -120,6 +120,7 @@ public class EntAddAction : ViewportAction
             }
 
             Added[i].CollisionSceneMesh = null;
+            Added[i].SelectionFillMesh = null;
         }
 
         View.ViewportSelection.ClearSelection();
