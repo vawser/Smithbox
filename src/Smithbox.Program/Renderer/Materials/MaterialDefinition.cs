@@ -34,7 +34,13 @@ public enum MaterialDeformer
     VatLoop,
 
     /// <summary>Rotates vertices back and forth around a pivot stored per vertex</summary>
-    Swing
+    Swing,
+
+    /// <summary>Flaps by a vertex animation while flying around an ellipse</summary>
+    Birds,
+
+    /// <summary>Leans around a pivot stored per vertex, and moves by a wave with its phase from a noise texture</summary>
+    DirectionalWave
 }
 
 /// <summary>

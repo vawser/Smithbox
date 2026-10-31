@@ -8,8 +8,12 @@
   
 # Map/Model Editor
 - Loading sometimes throw Veldrid error due to lost device
+- Find out issue that causes missed texturing
 
+Models that have missed texture on sub-mesh
 m910009
 m910004
 AEG232_609
 AEG230_857
+AEG232_144
+m200005

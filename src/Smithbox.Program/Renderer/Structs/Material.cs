@@ -169,7 +169,8 @@ public unsafe struct MaterialDeform
     /// <summary>Frames a second for a vertex animation, cycles a second for sway, phase spread for wind</summary>
     public float Rate;
 
-    private fixed float _padding[2];
+    /// <summary>Further values of the deformers that need them, see FlverShader.vert</summary>
+    public float Extra0, Extra1;
 
     /// <summary>The direction of sway, unused by vertex animation</summary>
     public Vector4 Direction;
@@ -178,7 +179,7 @@ public unsafe struct MaterialDeform
     public uint VatPositionTex;
     public uint VatNormalTex;
 
-    private fixed uint _padding2[2];
+    public float Extra2, Extra3;
 }
 
 /// <summary>

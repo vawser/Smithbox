@@ -93,6 +93,8 @@ layout (constant_id = 50) const bool c_normalWBoneTransform = false;
 #define DEFORM_WIND_PIVOT 4
 #define DEFORM_VAT_LOOP 5
 #define DEFORM_SWING 6
+#define DEFORM_BIRDS 7
+#define DEFORM_DIRECTIONAL_WAVE 8
 layout (constant_id = 60) const int c_deformer = 0;
 
 layout(set = 2, binding = 0) uniform texture2D globalTextures[];
@@ -100,9 +102,10 @@ layout(set = 2, binding = 0) uniform texture2D globalTextures[];
 // Three entries after a material in the material buffer. Same size as the fragment stage's materialData
 struct deformData
 {
-	vec4 params;    // x: amplitude, y: frames or cycles a second
+	vec4 params;    // x: amplitude, y: frames or cycles a second, zw: as each deformer needs
 	vec4 direction; // xyz: direction of sway
-	uvec4 textures; // x: vertex animation positions, y: vertex animation normals
+	uvec2 textures; // x: vertex animation positions, y: vertex animation normals
+	vec2 extra;     // as each deformer needs
 };
 
 layout(set = 4, binding = 0, std140) buffer materials
@@ -283,6 +286,118 @@ void DeformWindPivot(deformData deform, mat4 toWorld, vec3 up, inout vec3 worldP
 	worldPos += (rotated - worldPos) * (1.0 - texcoord2.z);
 }
 
+float SmoothTriangle(float time)
+{
+	float t = clamp(abs(fract(time) * 2.0 - 1.0), 0.0, 1.0);
+
+	return t * t * (3.0 - 2.0 * t);
+}
+
+// Birds flap by a vertex animation, roll around their body and fly around an ellipse. Each bird in the
+// mesh has its body's centre in TEXCOORD3 and its own speed in TEXCOORD2.x. The game's order of operations.
+//   params: x radius, y frames a second, z speed, w offset
+//   direction: xyz size of the ellipse in each axis, w roll
+//   extra: x how much a bird's own speed counts (0 is off), y cycles a second of the bob (0 is off)
+void DeformBirds(deformData deform, inout vec3 pos)
+{
+	float frameTime = sceneparam.materialTime;
+	uint vat = deform.textures.x;
+
+	if (vat != 0u)
+	{
+		ivec2 size = textureSize(sampler2D(globalTextures[nonuniformEXT(int(vat))], linearSampler), 0);
+		float height = float(size.y);
+		float frame = fract((height * fract(texcoord2.x) + frameTime) * deform.params.y / height) * height;
+		int column = min(int(texcoord1.x * 255.0 + texcoord1.y * 65280.0 + 0.5), size.x - 1);
+		int row = int(floor(frame));
+
+		pos += mix(FetchVat(vat, column, row), FetchVat(vat, column, min(row + 1, size.y - 1)), fract(frame));
+	}
+
+	float time = frameTime * deform.params.z;
+	float angle = -time - deform.params.w;
+
+	if (deform.extra.x != 0.0)
+	{
+		angle *= (fract(texcoord2.x) + 1.0) * deform.extra.x;
+	}
+
+	float radius = deform.params.x;
+	float sinAngle = sin(angle);
+	float cosAngle = cos(angle);
+
+	float bobWave = SmoothTriangle(time * deform.extra.y);
+	float bobHeight = deform.direction.y * (deform.extra.y != 0.0 ? bobWave : 1.0);
+	vec3 orbit = vec3(deform.direction.x * cosAngle, bobHeight * sinAngle, sinAngle * deform.direction.z) * radius;
+	float lift = deform.extra.y != 0.0 ? (bobWave - 0.5) * 2.0 : 0.0;
+
+	if (dot(orbit, orbit) < 1e-8)
+	{
+		pos += orbit;
+		return;
+	}
+
+	// Roll around the direction of travel, through the body
+	vec2 heading = orbit.xz * inversesqrt(dot(orbit, orbit));
+	vec2 axis = normalize(vec2(-heading.y, heading.x));
+
+	vec3 fromBody = pos - texcoord3.xyz;
+	vec2 onAxis = texcoord3.xz + axis * dot(axis, fromBody.xz);
+	vec2 aside = pos.xz - onAxis;
+
+	float roll = cosAngle * deform.direction.w;
+	float sinRoll = sin(roll);
+	float cosRoll = cos(roll);
+	float sideways = aside.x * axis.y - aside.y * axis.x;
+
+	vec3 rolled = vec3(
+		onAxis.x + cosRoll * aside.x - sinRoll * axis.y * fromBody.y,
+		texcoord3.y + cosRoll * fromBody.y + sinRoll * sideways,
+		onAxis.y + cosRoll * aside.y + sinRoll * axis.x * fromBody.y);
+
+	// Then turn to face along the path
+	vec3 lifted = rolled - lift;
+	float sinTurn = sin(-angle);
+	float cosTurn = cos(-angle);
+
+	pos = vec3(
+		orbit.x + lift + cosTurn * lifted.x + sinTurn * lifted.z,
+		orbit.y + lift + lifted.y,
+		orbit.z + lift + cosTurn * lifted.z - sinTurn * lifted.x);
+}
+
+// Leans around the pivot in TEXCOORD3 and moves by a wave, with a phase from a noise texture at the pivot.
+// TEXCOORD1.z is how far the vertex stays where it is, and TEXCOORD1.x how far it follows the wave.
+//   params: x lean, y cycles a second, z how much the noise moves the phase, w world size of the noise
+//   direction: xyz axis of the lean, w vertical wave
+//   extra: horizontal wave
+void DeformDirectionalWave(deformData deform, mat4 toWorld, inout vec3 worldPos)
+{
+	vec3 pivot = (toWorld * vec4(texcoord3.xyz, 1.0)).xyz;
+	float noise = 0.0;
+
+	if (deform.textures.x != 0u && deform.params.w != 0.0)
+	{
+		noise = textureLod(sampler2D(globalTextures[nonuniformEXT(int(deform.textures.x))], linearSampler), pivot.xz / deform.params.w, 0.0).r;
+	}
+
+	float wave = SmoothTriangle((deform.params.z * noise + sceneparam.materialTime) * deform.params.y);
+	float free = 1.0 - texcoord1.z;
+
+	if (dot(deform.direction.xyz, deform.direction.xyz) > 1e-8)
+	{
+		vec3 axis = normalize(deform.direction.xyz);
+		vec3 toVertex = worldPos - pivot;
+		vec3 along = axis * dot(axis, toVertex);
+		float lean = deform.params.x;
+
+		vec3 leaned = pivot + along + (toVertex - along) * cos(lean) + cross(axis, toVertex) * sin(lean);
+		worldPos += (leaned - worldPos) * free;
+	}
+
+	worldPos += vec3(deform.extra.x * texcoord1.x, deform.direction.w, deform.extra.y * texcoord1.x) * free * wave;
+}
+
 // Swings around the pivot in TEXCOORD3 by a smoothed triangle wave. TEXCOORD2.x offsets
 // its start, and TEXCOORD1.z is how far the vertex stays where it is
 void DeformSwing(deformData deform, mat4 toWorld, inout vec3 worldPos)
@@ -327,6 +442,10 @@ void main()
 	{
 		DeformVat(deform, texcoord1.xy, 1.0, texcoord2.x, localPosition, localNormal);
 	}
+	else if (c_deformer == DEFORM_BIRDS)
+	{
+		DeformBirds(deform, localPosition);
+	}
 	else if (c_deformer == DEFORM_SWAY)
 	{
 		DeformSway(deform, localPosition);
@@ -363,6 +482,10 @@ void main()
 	else if (c_deformer == DEFORM_SWING)
 	{
 		DeformSwing(deform, w * bone, worldPos.xyz);
+	}
+	else if (c_deformer == DEFORM_DIRECTIONAL_WAVE)
+	{
+		DeformDirectionalWave(deform, w * bone, worldPos.xyz);
 	}
 #endif
 

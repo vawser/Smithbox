@@ -54,6 +54,54 @@
     "M[A]_Grass": { "Deformer": "WindBend" },
     "M[AMSN_V][Spiderweb]": { "Deformer": "WindBend" },
     "M[AMSN_V][Ov_A]_Edge_Vegetation": { "Deformer": "WindBend" },
+    "M[Birds]": {
+      "Deformer": "Birds",
+      "Params": {
+        "Amplitude": "snp_0_float_2",
+        "FrameRate": "snp_0_float_0",
+        "Speed": "snp_0_float_1",
+        "Offset": "snp_0_float_14",
+        "Roll": "snp_0_float_17",
+        "Spin": "snp_0_float_4",
+        "UseSpin": "snp_0_bool_1",
+        "Bob": "snp_0_float_18",
+        "UseBob": "snp_0_bool_3",
+        "Direction": "snp_0_float3_0"
+      },
+      "Textures": { "VatPosition": 2 }
+    },
+    "M[directional_grass]": {
+      "Deformer": "DirectionalWave",
+      "Params": {
+        "Amplitude": "snp_0_float_9",
+        "Speed": "snp_0_float_5",
+        "NoisePhase0": "snp_0_float_1",
+        "NoisePhase1": "snp_0_float_2",
+        "NoiseScale": "snp_0_float_10",
+        "Direction": "snp_0_float3_1",
+        "Wave": "snp_0_float3_0",
+        "WaveScale": "snp_0_float3_2"
+      },
+      "Textures": { "VatPosition": 2 }
+    },
+    "M[directional_grass][Far_ColorAdjust]]": {
+      "Deformer": "DirectionalWave",
+      "Params": {
+        "Amplitude": "snp_0_float_9",
+        "Speed": "snp_0_float_5",
+        "NoisePhase0": "snp_0_float_1",
+        "NoisePhase1": "snp_0_float_2",
+        "NoiseScale": "snp_0_float_10",
+        "Direction": "snp_0_float3_1",
+        "Wave": "snp_0_float3_0",
+        "WaveScale": "snp_0_float3_2"
+      },
+      "Textures": { "VatPosition": 2 }
+    },
+    "M[AMSN_V]_Grass2_LOD1": {
+      "Deformer": "WindPivot",
+      "Params": { "Amplitude": "snp_0_float_9", "Phase": "snp_0_float_5" }
+    },
     "M[AMSN_V]_Grass2": {
       "Deformer": "WindPivot",
       "Params": { "Amplitude": "snp_0_float_9", "Phase": "snp_0_float_5" }

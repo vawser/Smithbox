@@ -815,7 +815,8 @@ public class FlverResource : IResource, IDisposable
     /// </summary>
     private void LoadDeformTextures(FlverMaterial dest, string mtd)
     {
-        if (dest.Definition?.Deformer is not (MaterialDeformer.Vat or MaterialDeformer.VatLoop))
+        if (dest.Definition?.Deformer is not (MaterialDeformer.Vat or MaterialDeformer.VatLoop
+            or MaterialDeformer.Birds or MaterialDeformer.DirectionalWave))
             return;
 
         if (dest.Definition.DeformerTextures.TryGetValue("VatPosition", out var position))
@@ -843,7 +844,7 @@ public class FlverResource : IResource, IDisposable
             definition.Deformer is MaterialDeformer.Vat or MaterialDeformer.VatLoop ? 1 : 0);
         deform.Rate = GetDeformValue(definition, definition.Deformer switch
         {
-            MaterialDeformer.Vat or MaterialDeformer.VatLoop => "FrameRate",
+            MaterialDeformer.Vat or MaterialDeformer.VatLoop or MaterialDeformer.Birds => "FrameRate",
             MaterialDeformer.WindPivot => "Phase",
             _ => "Speed"
         }, 0);
@@ -851,6 +852,31 @@ public class FlverResource : IResource, IDisposable
         if (definition.DeformerParams.TryGetValue("Direction", out var direction) && direction.Length >= 3)
         {
             deform.Direction = new Vector4(direction[0], direction[1], direction[2], GetDeformValue(definition, "Phase", 0));
+        }
+
+        if (definition.Deformer == MaterialDeformer.Birds)
+        {
+            deform.Extra0 = GetDeformValue(definition, "Speed", 0);
+            deform.Extra1 = GetDeformValue(definition, "Offset", 0);
+            deform.Direction.W = GetDeformValue(definition, "Roll", 0);
+            deform.Extra2 = GetDeformValue(definition, "UseSpin", 0) != 0 ? GetDeformValue(definition, "Spin", 0) : 0;
+            deform.Extra3 = GetDeformValue(definition, "UseBob", 0) != 0 ? GetDeformValue(definition, "Bob", 0) : 0;
+        }
+
+        if (definition.Deformer == MaterialDeformer.DirectionalWave)
+        {
+            definition.DeformerParams.TryGetValue("Wave", out var wave);
+            definition.DeformerParams.TryGetValue("WaveScale", out var waveScale);
+
+            if (wave?.Length >= 3 && waveScale?.Length >= 3)
+            {
+                deform.Extra2 = wave[0] * (waveScale[0] + 1);
+                deform.Direction.W = wave[1] * wave[2];
+                deform.Extra3 = wave[2] * (waveScale[2] + 1);
+            }
+
+            deform.Extra0 = GetDeformValue(definition, "NoisePhase0", 0) + GetDeformValue(definition, "NoisePhase1", 0);
+            deform.Extra1 = GetDeformValue(definition, "NoiseScale", 1);
         }
 
         return deform;
@@ -874,6 +900,9 @@ public class FlverResource : IResource, IDisposable
         {
             MaterialDeformer.Vat or MaterialDeformer.VatLoop => Math.Abs(deform.Amplitude) * 2.0f,
             MaterialDeformer.Sway => Math.Abs(deform.Amplitude) * deform.Direction.Length(),
+
+            // The whole flight path is around the model, on top of the animation
+            MaterialDeformer.Birds => Math.Abs(deform.Amplitude) * new Vector3(deform.Direction.X, deform.Direction.Y, deform.Direction.Z).Length() + 2.0f,
 
             // Wind depends on the viewport's settings rather than the material
             _ => 1.0f
@@ -1877,6 +1906,10 @@ public class FlverResource : IResource, IDisposable
     {
         if (semantic != FLVER.LayoutSemantic.UV || index < 1 || index > FlverLayoutDeform.TexCoord3Index + 1)
             return -1;
+
+        // Lower detail meshes have the pivot of TEXCOORD3 one attribute earlier, and no TEXCOORD3
+        if (type == FLVER.LayoutType.Half4 && index - 1 == FlverLayoutDeform.TexCoord3Index - 1)
+            return FlverLayoutDeform.TexCoord3Index;
 
         var isTexCoord = type == FLVER.LayoutType.UByte4Norm
             || (type == FLVER.LayoutType.Half4 && index - 1 == FlverLayoutDeform.TexCoord3Index);
