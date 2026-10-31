@@ -231,8 +231,18 @@ public class FlverResource : IResource, IDisposable
         {
             var mtdstring = Path.GetFileNameWithoutExtension(mtd.Replace('\\', Path.DirectorySeparatorChar));
 
-            // MTD
-            material = bank.GetMaterial(mtdstring);
+            if (curProject.Descriptor.ProjectType is ProjectType.ER
+                or ProjectType.AC6
+                or ProjectType.NR
+                or ProjectType.DB_NT
+                or ProjectType.DB)
+            {
+                matbin = bank.GetMatbin(mtdstring);
+            }
+
+            // MTD. These games can still have an old MTD by the name of a MATBIN, for a different
+            // shader, so it would be missing the textures the FLVER asks for
+            material = matbin == null ? bank.GetMaterial(mtdstring) : null;
 
             if (material != null)
             {
@@ -248,86 +258,77 @@ public class FlverResource : IResource, IDisposable
             }
 
             // MATBIN
-            if (curProject.Descriptor.ProjectType is ProjectType.ER
-                or ProjectType.AC6
-                or ProjectType.NR
-                or ProjectType.DB_NT
-                or ProjectType.DB)
+            if (matbin != null)
             {
-                matbin = bank.GetMatbin(mtdstring);
+                MATBIN.Sampler? tex = null;
 
-                if (matbin != null)
+                bool match = false;
+
+                foreach (var t in matbin.Samplers)
                 {
-                    MATBIN.Sampler? tex = null;
+                    if (t.Type == type)
+                    {
+                        tex = t;
+                        match = true;
+                        break;
+                    }
+                }
 
-                    bool match = false;
-
+                // If normal match fails, try heuristic match to account for disparities between sampler and source
+                if (!match)
+                {
                     foreach (var t in matbin.Samplers)
                     {
-                        if (t.Type == type)
+                        if (type == null)
+                            continue;
+
+                        // Hack to allow some differing paths between sampler and source to work correctly in ER
+                        // Namely for these aspects of the paths:
+                        // Mb<x> where <x> is a number, but differs between sampler and source
+                        // <x>Mask where <x> is a number, but differs between sampler and source
+                        if (t.Type.Contains("__") && type.Contains("__"))
                         {
-                            tex = t;
-                            match = true;
-                            break;
+                            var samplerType = t.Type.Split("__")[1];
+                            var sourceType = type.Split("__")[1];
+
+                            if (samplerType == sourceType)
+                            {
+                                tex = t;
+                                break;
+                            }
                         }
-                    }
 
-                    // If normal match fails, try heuristic match to account for disparities between sampler and source
-                    if (!match)
-                    {
-                        foreach (var t in matbin.Samplers)
+                        // Loose match for Albedo
+                        if (type == "g_DiffuseTexture" || type.Contains("AlbedoMap"))
                         {
-                            if (type == null)
-                                continue;
-
-                            // Hack to allow some differing paths between sampler and source to work correctly in ER
-                            // Namely for these aspects of the paths:
-                            // Mb<x> where <x> is a number, but differs between sampler and source
-                            // <x>Mask where <x> is a number, but differs between sampler and source
-                            if (t.Type.Contains("__") && type.Contains("__"))
+                            if (t.Type.Contains("AlbedoMap"))
                             {
-                                var samplerType = t.Type.Split("__")[1];
-                                var sourceType = type.Split("__")[1];
-
-                                if (samplerType == sourceType)
-                                {
-                                    tex = t;
-                                    break;
-                                }
+                                tex = t;
+                                break;
                             }
+                        }
 
-                            // Loose match for Albedo
-                            if (type == "g_DiffuseTexture" || type.Contains("AlbedoMap"))
+                        // Loose match for Normal
+                        if (type == "g_BumpmapTexture" || type.Contains("NormalMap"))
+                        {
+                            if (t.Type.Contains("NormalMap"))
                             {
-                                if (t.Type.Contains("AlbedoMap"))
-                                {
-                                    tex = t;
-                                    break;
-                                }
-                            }
-
-                            // Loose match for Normal
-                            if (type == "g_BumpmapTexture" || type.Contains("NormalMap"))
-                            {
-                                if (t.Type.Contains("NormalMap"))
-                                {
-                                    tex = t;
-                                    break;
-                                }
+                                tex = t;
+                                break;
                             }
                         }
                     }
-
-                    if (tex == null || tex.Path == "")
-                    {
-                        //Smithbox.Log(this, $"{Context?.QualifiedName}: Failed to find MATBIN string: {mtdstring} - {type}");
-                        return;
-                    }
-
-                    path = tex.Path;
-                    resolvedType = tex.Type;
-                    //Smithbox.Log(this, $"{Context?.QualifiedName}: MATBIN: {path}");
                 }
+
+                if (tex == null || tex.Path == "")
+                {
+                    //Smithbox.Log(this, $"{Context?.QualifiedName}: Failed to find MATBIN string: {mtdstring} - {type}");
+                    return;
+                }
+
+                path = tex.Path;
+                resolvedType = tex.Type;
+                //Smithbox.Log(this, $"{Context?.QualifiedName}: MATBIN: {path}");
             }
         }
 

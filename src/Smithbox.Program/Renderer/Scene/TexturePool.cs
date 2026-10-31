@@ -26,6 +26,9 @@ public class TexturePool
     /// </summary>
     public const uint MaxTextureCount = ushort.MaxValue + 1;
 
+    /// <summary>The TPF format of BC1 textures that hold data rather than color</summary>
+    private const byte LinearBC1Format = 108;
+
     /// <summary>
     ///     Number of Frame() ticks a freed slot / replaced texture is kept alive before its descriptor is
     ///     reset and the GPU resource is destroyed. Must be larger than the number of frames in flight.
@@ -639,6 +642,12 @@ public class TexturePool
                     else
                     {
                         format = GetPixelFormatFromFourCC(dds.ddspf.dwFourCC);
+
+                        // DDS can't say if BC1 is color data, so only the TPF knows this is a normal map
+                        if (format == VkFormat.Bc1RgbaSrgbBlock && tex.Format == LinearBC1Format)
+                        {
+                            format = VkFormat.Bc1RgbaUnormBlock;
+                        }
                     }
 
                     //Smithbox.Log(this, $"{name}: {format}");
