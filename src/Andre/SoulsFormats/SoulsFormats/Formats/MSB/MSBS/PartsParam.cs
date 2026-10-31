@@ -904,33 +904,38 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int Unk00 { get; set; }
+                [MSBParamReference(ParamName = "GrassTypeParam")]
+                public int GrassTypeParamID0 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int Unk04 { get; set; }
+                [MSBParamReference(ParamName = "GrassTypeParam")]
+                public int GrassTypeParamID1 { get; set; }
 
                 /// <summary>
                 /// ID in GrassTypeParam determining properties of dynamic grass on a map piece.
                 /// </summary>
                 [MSBParamReference(ParamName = "GrassTypeParam")]
-                public int GrassTypeParamID { get; set; }
+                public int GrassTypeParamID2 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int Unk0C { get; set; }
+                [MSBParamReference(ParamName = "GrassTypeParam")]
+                public int GrassTypeParamID3 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int Unk10 { get; set; }
+                [MSBParamReference(ParamName = "GrassTypeParam")]
+                public int GrassTypeParamID4 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int Unk14 { get; set; }
+                [MSBParamReference(ParamName = "GrassTypeParam")]
+                public int GrassTypeParamID5 { get; set; }
 
                 /// <summary>
                 /// Creates an UnkStruct7 with default values.
@@ -947,24 +952,24 @@ namespace SoulsFormats
 
                 internal GrassConfigStruct(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
-                    Unk04 = br.ReadInt32();
-                    GrassTypeParamID = br.ReadInt32();
-                    Unk0C = br.ReadInt32();
-                    Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadInt32();
+                    GrassTypeParamID0 = br.ReadInt32();
+                    GrassTypeParamID1 = br.ReadInt32();
+                    GrassTypeParamID2 = br.ReadInt32();
+                    GrassTypeParamID3 = br.ReadInt32();
+                    GrassTypeParamID4 = br.ReadInt32();
+                    GrassTypeParamID5 = br.ReadInt32();
                     br.AssertInt32(-1);
                     br.AssertInt32(0);
                 }
 
                 internal void Write(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteInt32(GrassTypeParamID);
-                    bw.WriteInt32(Unk0C);
-                    bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32(GrassTypeParamID0);
+                    bw.WriteInt32(GrassTypeParamID1);
+                    bw.WriteInt32(GrassTypeParamID2);
+                    bw.WriteInt32(GrassTypeParamID3);
+                    bw.WriteInt32(GrassTypeParamID4);
+                    bw.WriteInt32(GrassTypeParamID5);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(0);
                 }

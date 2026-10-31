@@ -271,7 +271,7 @@ public class MsbEntity : Entity
         return property?.GetValue(WrappedObject) switch
         {
             MSBE.Part.GrassConfigStruct e => new[] { e.GrassParamId0, e.GrassParamId1, e.GrassParamId2, e.GrassParamId3, e.GrassParamId4, e.GrassParamId5 },
-            MSBS.Part.GrassConfigStruct s => new[] { s.Unk00, s.Unk04, s.GrassTypeParamID, s.Unk0C, s.Unk10, s.Unk14 },
+            MSBS.Part.GrassConfigStruct s => new[] { s.GrassTypeParamID0, s.GrassTypeParamID1, s.GrassTypeParamID2, s.GrassTypeParamID3, s.GrassTypeParamID4, s.GrassTypeParamID5 },
             MSB_AC6.Part.GrassConfigStruct ac6 => ac6.GrassTypeParamIds,
             MSB_NR.Part.GrassStruct nr => nr.GrassParamIds,
             MSB_DB_NT.Part.GrassStruct db => db.GrassParamIds,

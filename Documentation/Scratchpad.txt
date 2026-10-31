@@ -7,7 +7,6 @@
   Map Editor
   
 # Map Editor
-- Add support for grass display (i.e. sub-meshes laid upon asset)
   
 # Model Editor
 

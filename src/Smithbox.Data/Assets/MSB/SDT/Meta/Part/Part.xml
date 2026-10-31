@@ -231,30 +231,35 @@
     AltName="Grass Configuration"
     Wiki="" />
     
-    <Unk00
-    AltName="Unknown: 0x0"
-    Wiki="" />
-    
-    <Unk04
-    AltName="Unknown: 0x4"
-    Wiki="" />
-    
-    <GrassTypeParamID
-    AltName="Grass Type ID"
+    <GrassTypeParamID0
+    AltName="Grass Type ID: 0"
     Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
     ParamRef="GrassTypeParam" />
     
-    <Unk0C
-    AltName="Unknown: 0x0C"
-    Wiki="" />
+    <GrassTypeParamID1
+    AltName="Grass Type ID: 1"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
     
-    <Unk10
-    AltName="Unknown: 0x10"
-    Wiki="" />
+    <GrassTypeParamID2
+    AltName="Grass Type ID: 2"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
     
-    <Unk14
-    AltName="Unknown: 0x14"
-    Wiki="" />
+    <GrassTypeParamID3
+    AltName="Grass Type ID: 3"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
+    
+    <GrassTypeParamID4
+    AltName="Grass Type ID: 4"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
+    
+    <GrassTypeParamID5
+    AltName="Grass Type ID: 5"
+    Wiki="The ID in GrassTypeParam determining properties of dynamic grass on a map piece." 
+    ParamRef="GrassTypeParam" />
     
   </Field>
   <Enums>
