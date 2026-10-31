@@ -18,7 +18,12 @@ public sealed class ModelAnimator : IDisposable
     private const int SkinVertexSize = 16;
 
     private readonly ModelRig _rig;
-    private readonly ModelPose _pose;
+    private readonly ModelPose? _pose;
+
+    // Set on the parts of a character: they follow its skeleton, and have no pose of their own
+    private readonly ModelAnimator? _leader;
+    private readonly int[]? _leaderNodes;
+    private readonly Matrix4x4[]? _followedNodeWorld;
     private readonly int[] _meshSkinStart;
 
     private GPUBufferAllocator.GPUBufferHandle? _boneBuffer;
@@ -42,11 +47,26 @@ public sealed class ModelAnimator : IDisposable
     public float Duration => CurrentClip?.Duration ?? 0;
     public float Frame => CurrentClip is { FrameDuration: > 0 } ? Time / CurrentClip.FrameDuration : 0;
 
-    public ModelAnimator(AnimationPackage package, ModelRig rig)
+    private Matrix4x4[] NodeWorld => _pose?.NodeWorld ?? _followedNodeWorld!;
+
+    /// <param name="package">The animations to play.</param>
+    /// <param name="rig">The model to animate.</param>
+    /// <param name="leader">The character this model is a part of. It drives this one, see <see cref="Follow" />.</param>
+    public ModelAnimator(AnimationPackage package, ModelRig rig, ModelAnimator? leader = null)
     {
         Package = package;
         _rig = rig;
-        _pose = new ModelPose(rig, package.Skeleton!, package.RetargetSkeleton);
+
+        if (leader != null)
+        {
+            _leader = leader;
+            _leaderNodes = MapNodes(rig, leader._rig);
+            _followedNodeWorld = (Matrix4x4[])rig.NodeReferenceWorld.Clone();
+        }
+        else
+        {
+            _pose = new ModelPose(rig, package.Skeleton!, package.RetargetSkeleton);
+        }
 
         _meshSkinStart = new int[rig.Meshes.Length];
         Array.Fill(_meshSkinStart, -1);
@@ -138,16 +158,50 @@ public sealed class ModelAnimator : IDisposable
     }
 
     /// <summary>
-    ///     Takes on the pose of another animator of the same package, for models built from several FLVERs.
+    ///     Takes on the current pose of the leader. The bones of a part can't be posed directly, as they aren't
+    ///     always those of the character (in Dark Souls III they have other lengths and frames). All that the
+    ///     part shares with it is model space, so each of its nodes moves by as much as the matching node did.
     /// </summary>
-    public void Follow(ModelAnimator leader)
+    public void Follow()
     {
-        CurrentAnimation = leader.CurrentAnimation;
-        CurrentClip = leader.CurrentClip;
-        Time = leader.Time;
+        var count = NodeCount;
 
-        _poseDirty = false;
-        ApplyPose();
+        // A new array each time, as the upload happens later on the render thread
+        var matrices = new Matrix4x4[count * 2];
+        for (var i = 0; i < count; i++)
+        {
+            Matrix4x4 delta = _leaderNodes![i] >= 0 ? _leader!.GetNodeDelta(_leaderNodes[i]) : Matrix4x4.Identity;
+
+            _followedNodeWorld![i] = _rig.NodeReferenceWorld[i] * delta;
+
+            matrices[i] = delta;
+            matrices[count + i] = _followedNodeWorld[i];
+        }
+
+        _boneBuffer?.FillBuffer(matrices);
+    }
+
+    /// <summary>
+    ///     Finds the node of the leader that each node follows: the one of the same name,
+    ///     or for nodes it doesn't have, the same as their parent. -1 if there is none.
+    /// </summary>
+    private static int[] MapNodes(ModelRig rig, ModelRig leader)
+    {
+        var map = new int[rig.NodeNames.Length];
+
+        foreach (var i in rig.NodeOrder)
+        {
+            var parent = rig.NodeParents[i];
+
+            map[i] = leader.FindNode(rig.NodeNames[i]);
+
+            if (map[i] < 0)
+            {
+                map[i] = parent >= 0 && parent < map.Length ? map[parent] : -1;
+            }
+        }
+
+        return map;
     }
 
     /// <summary>
@@ -155,7 +209,7 @@ public sealed class ModelAnimator : IDisposable
     /// </summary>
     public Matrix4x4 GetNodeWorld(int node)
     {
-        return _pose.NodeWorld[node];
+        return NodeWorld[node];
     }
 
     /// <summary>
@@ -163,7 +217,7 @@ public sealed class ModelAnimator : IDisposable
     /// </summary>
     public Matrix4x4 GetNodeDelta(int node)
     {
-        return _rig.NodeInverseReferenceWorld[node] * _pose.NodeWorld[node];
+        return _rig.NodeInverseReferenceWorld[node] * NodeWorld[node];
     }
 
     private void Advance(float delta)
@@ -194,7 +248,7 @@ public sealed class ModelAnimator : IDisposable
 
     private void ApplyPose()
     {
-        _pose.Apply(CurrentClip, Math.Min(Frame, Math.Max(0, (CurrentClip?.FrameCount ?? 1) - 1)));
+        _pose!.Apply(CurrentClip, Math.Min(Frame, Math.Max(0, (CurrentClip?.FrameCount ?? 1) - 1)));
 
         var count = NodeCount;
 
@@ -202,8 +256,8 @@ public sealed class ModelAnimator : IDisposable
         var matrices = new Matrix4x4[count * 2];
         for (var i = 0; i < count; i++)
         {
-            matrices[i] = _rig.NodeInverseReferenceWorld[i] * _pose.NodeWorld[i];
-            matrices[count + i] = _pose.NodeWorld[i];
+            matrices[i] = _rig.NodeInverseReferenceWorld[i] * NodeWorld[i];
+            matrices[count + i] = NodeWorld[i];
         }
 
         _boneBuffer?.FillBuffer(matrices);
@@ -256,7 +310,7 @@ public sealed class ModelAnimator : IDisposable
             case MeshSkinMode.RigidMesh:
                 if (mesh.NodeIndex >= 0 && mesh.NodeIndex < NodeCount)
                 {
-                    transform = _pose.NodeWorld[mesh.NodeIndex];
+                    transform = NodeWorld[mesh.NodeIndex];
                 }
 
                 return true;

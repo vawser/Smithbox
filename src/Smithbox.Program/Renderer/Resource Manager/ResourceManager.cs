@@ -290,6 +290,18 @@ public static class ResourceManager
         }
     }
 
+    /// <summary>
+    ///     Unloads everything in every pool. Resources are found by name and containers by their path within the
+    ///     project, and games share both, so anything left behind would stand in for the next project's files.
+    /// </summary>
+    public static void ClearAllPools()
+    {
+        foreach (ResourcePool pool in Pools)
+        {
+            pool.Clear();
+        }
+    }
+
     public static void Shutdown()
     {
         JobScheduler.Dispose();

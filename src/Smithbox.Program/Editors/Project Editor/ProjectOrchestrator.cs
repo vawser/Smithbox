@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MetadataEditor;
 using StudioCore.Logger;
+using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -257,6 +258,7 @@ public class ProjectOrchestrator : IDisposable
         if (oldProject != null)
         {
             oldProject.Dispose();
+            ResourceManager.ClearAllPools();
         }
 
         IsProjectLoading = true;
@@ -337,10 +339,15 @@ public class ProjectOrchestrator : IDisposable
 
     public void UnloadProject(ProjectEntry project)
     {
-        if (SelectedProject == project)
+        var isSelected = SelectedProject == project;
+
+        if (isSelected)
             SelectedProject = null;
 
         project.Dispose();
+
+        if (isSelected)
+            ResourceManager.ClearAllPools();
 
         Smithbox.Instance.ResetProgramName();
     }
@@ -357,6 +364,7 @@ public class ProjectOrchestrator : IDisposable
         if (oldProject != null)
         {
             SelectedProject.Dispose();
+            ResourceManager.ClearAllPools();
         }
 
         IsProjectLoading = true;

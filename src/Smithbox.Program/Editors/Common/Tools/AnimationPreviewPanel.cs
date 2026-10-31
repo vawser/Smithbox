@@ -121,7 +121,7 @@ public class AnimationPreviewPanel
 
         foreach (ActivePart part in active.Parts)
         {
-            part.Animator.Follow(active.Animator);
+            part.Animator.Follow();
 
             if (part.Animator.HasBoneFollowingMeshes)
             {
@@ -313,14 +313,16 @@ public class AnimationPreviewPanel
             }
 
             IReadOnlyList<MeshRenderableProxy> meshes = target.GetMeshes();
-            List<ActivePart> parts = CreateParts(target, model, rigs);
+            ModelAnimator animator = new(model.Package, model.Rig);
+            List<ActivePart> parts = CreateParts(target, model, rigs, animator);
             List<ActiveAttachment> attachments = CreateAttachments(target, model);
             if (meshes.Count == 0 && parts.Count == 0 && attachments.Count == 0)
             {
+                animator.Dispose();
                 return;
             }
 
-            active = new ActiveAnimation(target, meshes, new ModelAnimator(model.Package, model.Rig), parts, attachments);
+            active = new ActiveAnimation(target, meshes, animator, parts, attachments);
             _active.Add(target.Key, active);
         }
 
@@ -335,7 +337,7 @@ public class AnimationPreviewPanel
 
             foreach (ActivePart part in active.Parts)
             {
-                part.Animator.Follow(active.Animator);
+                part.Animator.Follow();
                 part.Mesh.Animator = part.Animator;
             }
 
@@ -349,7 +351,8 @@ public class AnimationPreviewPanel
         }
     }
 
-    private static List<ActivePart> CreateParts(AnimationTarget target, LoadedModel model, Task<ModelRig?[]> rigs)
+    private static List<ActivePart> CreateParts(AnimationTarget target, LoadedModel model, Task<ModelRig?[]> rigs,
+        ModelAnimator leader)
     {
         List<ActivePart> parts = new();
 
@@ -363,7 +366,7 @@ public class AnimationPreviewPanel
             // A part that can't be read stays in its rest pose
             if (rigs.Result[i] is { } rig)
             {
-                parts.Add(new ActivePart(target.Parts[i].Mesh, new ModelAnimator(model.Package, rig)));
+                parts.Add(new ActivePart(target.Parts[i].Mesh, new ModelAnimator(model.Package, rig, leader)));
             }
         }
 
