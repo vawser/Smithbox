@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using StudioCore.Renderer;
+using System.Text.Json;
 
 namespace StudioCore.Editors.MaterialEditor;
 
@@ -39,6 +40,7 @@ public class MaterialData : IDisposable
         }
 
         PrimaryBank = new("Primary", Project, Project.VFS.FS);
+        PrimaryBank.ShaderTable = await LoadShaderTable();
         //VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
 
         // Primary Bank
@@ -98,6 +100,34 @@ public class MaterialData : IDisposable
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Loads what is known about this game's shaders. Kept apart from Assets/MATERIAL, where every
+    /// file is read as a MaterialClass. Games without a table are fine, their shaders are just unknown.
+    /// </summary>
+    private async Task<MaterialShaderTable> LoadShaderTable()
+    {
+        var path = Path.Join(AppContext.BaseDirectory, "Assets", "Material Definitions",
+            $"{Project.Descriptor.ProjectType}.json");
+
+        if (!File.Exists(path))
+        {
+            return new MaterialShaderTable();
+        }
+
+        try
+        {
+            string text = await File.ReadAllTextAsync(path);
+
+            return JsonSerializer.Deserialize(text, MaterialEditorJsonSerializerContext.Default.MaterialShaderTable)
+                ?? new MaterialShaderTable();
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAT_Data_Deserialize_Shader_Table_FAIL", path), e);
+            return new MaterialShaderTable();
+        }
     }
 
     #region Dispose

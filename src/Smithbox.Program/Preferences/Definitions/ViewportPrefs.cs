@@ -107,6 +107,26 @@ public class ViewportPrefs
         };
     }
 
+    public static PreferenceItem Viewport_Enable_Material_Animation()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.Viewport,
+            Spacer = true,
+
+            Section = SectionCategory.Rendering,
+
+            Title = "PREF_Viewport_Enable_Material_Animation",
+            Description = "PREF_Viewport_Enable_Material_Animation_TT",
+
+            Draw = () =>
+            {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Material_Animation);
+            }
+        };
+    }
+
     public static PreferenceItem Viewport_Limit_Buffer_Indirect_Draw()
     {
         return new PreferenceItem

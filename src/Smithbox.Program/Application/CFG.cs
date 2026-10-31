@@ -504,7 +504,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_TreasureMaker = false;
     public bool Interface_MapEditor_Tool_WorldMapLayoutGenerator = false;
     public bool Interface_MapEditor_Tool_GridConfiguration = true;
-    public bool Interface_MapEditor_Tool_ModelSelector = true;
+    public bool Interface_MapEditor_Tool_ModelBrowser = true;
     public bool Interface_MapEditor_Tool_Animation = true;
     public bool Interface_MapEditor_Tool_DisplayGroups = true;
     public bool Interface_MapEditor_Tool_Validation = true;
@@ -1097,6 +1097,7 @@ public class CFG
     public float Viewport_Frame_Rate = 60.0f;
     public bool Viewport_Enable_Rendering = true;
     public bool Viewport_Enable_Texturing = true;
+    public bool Viewport_Enable_Material_Animation = true;
     public bool Viewport_Enable_Culling = true;
 
     public bool Viewport_Enable_Selection_Tint = true;

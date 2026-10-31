@@ -17,8 +17,6 @@
 
 - "Bounding Box" visualisation toggle / shortcut: display the bounding box for the selection using wire box primitives 
  
-- Implement Asset Browser with thumbnail previews
- 
 - 'Focus' toggle button when multiple maps are loaded:
     - Applies gray dither shader to all viewport elements that aren't part of the currently selected map
     - Would be useful for having the ability to see the greater area whilst quickly being able to discern which objects belong to the currently selected map

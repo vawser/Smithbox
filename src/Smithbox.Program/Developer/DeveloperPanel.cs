@@ -20,6 +20,7 @@ public class DeveloperPanel
     private WorldMapLayoutGenerator WorldMapLayoutGenerator;
     private DokuWikiGenerator DokuWikiGenerator;
     private FileDictionaryGenerator FileDictionaryGenerator;
+    private MaterialDefinitionDumper MaterialDefinitionDumper;
 
     private ValidatorType ValidatorType = ValidatorType.None;
 
@@ -39,6 +40,7 @@ public class DeveloperPanel
         WorldMapLayoutGenerator = new();
         DokuWikiGenerator = new();
         FileDictionaryGenerator = new();
+        MaterialDefinitionDumper = new();
 
         ParamValidator = new();
         NvaValidator = new();
@@ -119,6 +121,16 @@ public class DeveloperPanel
             {
                 ImGui.BeginChild("fileDictSection", ImGuiChildFlags.Borders);
                 FileDictionaryGenerator.Display();
+                ImGui.EndChild();
+
+                ImGui.EndTabItem();
+            }
+
+            // Material Definition Dumper
+            if (ImGui.BeginTabItem($"{LOC.Get("DEV_PNL_Tab_Material_Definition_Dumper")}##materialDefinitionDumperTab"))
+            {
+                ImGui.BeginChild("materialDumpSection", ImGuiChildFlags.Borders);
+                MaterialDefinitionDumper.Display();
                 ImGui.EndChild();
 
                 ImGui.EndTabItem();

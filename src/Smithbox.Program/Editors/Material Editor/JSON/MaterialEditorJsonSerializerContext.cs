@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudioCore.Renderer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace StudioCore.Editors.MaterialEditor;
 [JsonSerializable(typeof(MaterialMeta))]
 [JsonSerializable(typeof(MaterialClass))]
 [JsonSerializable(typeof(MaterialField))]
+[JsonSerializable(typeof(MaterialShaderTable))]
+[JsonSerializable(typeof(List<MaterialDefinition>))]
 
 internal partial class MaterialEditorJsonSerializerContext : JsonSerializerContext
 {

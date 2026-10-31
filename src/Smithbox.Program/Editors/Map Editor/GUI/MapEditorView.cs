@@ -93,7 +93,7 @@ public class MapEditorView : IEditorView
 
     // Tools
     public MassEditTool MassEditTool;
-    public ModelSelectorTool ModelSelectorTool;
+    public ModelSelectorTool ModelBrowserTool;
     public AssetBrowserTool AssetBrowserTool;
     public DisplayGroupTool DisplayGroupTool;
     public PrefabTool PrefabTool;
@@ -183,10 +183,10 @@ public class MapEditorView : IEditorView
         DisplayGroupTool = new DisplayGroupTool(this, project);
         GlobalSearchTool = new GlobalSearchTool(this, project);
         LocalSearchView = new LocalSearchTool(this, project);
-        ModelSelectorTool = new ModelSelectorTool(this, project);
+        ModelBrowserTool = new ModelSelectorTool(this, project);
         AssetBrowserTool = new AssetBrowserTool(project,
             "Double-click an asset to switch the selected map objects to it.",
-            e => ModelSelectorTool.ApplyMapAssetSelection(e.ID, FileSelectionType.Asset));
+            e => ModelBrowserTool.ApplyMapAssetSelection(e.ID, FileSelectionType.Asset));
         PrefabTool = new PrefabTool(this, project);
         NavmeshBuilderTool = new NavmeshBuilderTool(this, project);
         EntityIdentifierTool = new EntityIdentifierTool(this, project);

@@ -19,12 +19,12 @@ public static class SamplerSet
             new ResourceLayoutElementDescription(
                 "linearSampler",
                 VkDescriptorType.Sampler,
-                VkShaderStageFlags.Fragment,
+                VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment,
                 VkDescriptorBindingFlags.None),
             new ResourceLayoutElementDescription(
                 "anisoLinearSampler",
                 VkDescriptorType.Sampler,
-                VkShaderStageFlags.Fragment,
+                VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment,
                 VkDescriptorBindingFlags.None));
         SamplersLayout = d.ResourceFactory.CreateResourceLayout(layoutdesc);
 

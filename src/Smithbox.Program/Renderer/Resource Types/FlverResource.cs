@@ -536,11 +536,22 @@ public class FlverResource : IResource, IDisposable
         dest.UpdateMaterial();
     }
 
+    /// <summary>
+    /// The resolved form of the MTD or MATBIN a FLVER material points at, if the project has it
+    /// </summary>
+    private static MaterialDefinition? GetMaterialDefinition(string mtd)
+    {
+        var bank = Smithbox.Orchestrator.SelectedProject?.Handler?.MaterialData?.PrimaryBank;
+
+        return bank?.GetDefinition(Path.GetFileNameWithoutExtension(mtd.Replace('\\', Path.DirectorySeparatorChar)));
+    }
+
     private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
         dest.MaterialName = Path.GetFileNameWithoutExtension(mat.MTD);
+        dest.Definition = GetMaterialDefinition(mat.MTD);
         dest.MaterialBuffer = SceneRenderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
         dest.MaterialData = new Material();
 
@@ -618,6 +629,7 @@ public class FlverResource : IResource, IDisposable
         var mtd = isUTF ? br.GetUTF16(mat.mtdOffset) : br.GetShiftJIS(mat.mtdOffset);
         var matName = isUTF ? br.GetUTF16(mat.nameOffset) : br.GetShiftJIS(mat.nameOffset);
         dest.MaterialName = Path.GetFileNameWithoutExtension(mtd);
+        dest.Definition = GetMaterialDefinition(mtd);
         if (!string.IsNullOrWhiteSpace(matName) && matName.Length >= 3 && matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
         {
             dest.MaterialMask = int.Parse(matName.Substring(1, 2));
@@ -2590,6 +2602,7 @@ public class FlverResource : IResource, IDisposable
         public GPUBufferAllocator.GPUBufferHandle? MaterialBuffer;
         public Material MaterialData;
         public string? MaterialName;
+        public MaterialDefinition? Definition;
         public int MaterialMask = -1;
 
         public string? ShaderName;

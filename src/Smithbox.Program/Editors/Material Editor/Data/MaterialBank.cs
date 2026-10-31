@@ -5,6 +5,7 @@ using Org.BouncyCastle.Crypto;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.GparamEditor;
+using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Concurrent;
@@ -31,6 +32,10 @@ public class MaterialBank : IDisposable
 
     private ConcurrentDictionary<string, MaterialReference> MTDReferences = new(StringComparer.OrdinalIgnoreCase);
     private ConcurrentDictionary<string, MaterialReference> MATBINReferences = new(StringComparer.OrdinalIgnoreCase);
+
+    private ConcurrentDictionary<string, MaterialDefinition> Definitions = new();
+
+    public MaterialShaderTable ShaderTable { get; set; } = new();
 
     public MaterialBank(string name, ProjectEntry project, VirtualFileSystem targetFs)
     {
@@ -83,6 +88,36 @@ public class MaterialBank : IDisposable
         MATBINLookup.TryGetValue(name, out var matbin) ? matbin : null;
 
     /// <summary>
+    /// The resolved form of a material, or null if there is no such material.
+    /// The MATBIN takes priority if both exist, matching the renderer's texture lookup.
+    /// </summary>
+    public MaterialDefinition GetDefinition(string name)
+    {
+        if (Definitions.TryGetValue(name, out var definition))
+            return definition;
+
+        definition = ResolveDefinition(name);
+
+        return definition == null ? null : Definitions.GetOrAdd(name, definition);
+    }
+
+    /// <summary>
+    /// Resolves every material as it is now, whatever has been resolved before.
+    /// </summary>
+    public List<MaterialDefinition> ResolveAllDefinitions()
+    {
+        return MATBINLookup.Keys.Union(MTDLookup.Keys).Select(ResolveDefinition).ToList();
+    }
+
+    private MaterialDefinition ResolveDefinition(string name)
+    {
+        if (MATBINLookup.TryGetValue(name, out var matbin))
+            return MaterialDefinition.FromMatbin(name, matbin, ShaderTable);
+
+        return MTDLookup.TryGetValue(name, out var mtd) ? MaterialDefinition.FromMtd(name, mtd, ShaderTable) : null;
+    }
+
+    /// <summary>
     /// Finds the MTD or MATBIN for a FLVER material's virtual path.
     /// The MATBIN takes priority if both exist, matching the renderer's texture lookup.
     /// </summary>
@@ -122,6 +157,7 @@ public class MaterialBank : IDisposable
         MATBINLookup.Clear();
         MTDReferences.Clear();
         MATBINReferences.Clear();
+        Definitions.Clear();
 
         MTDs = null;
         MATBINs = null;
@@ -129,6 +165,7 @@ public class MaterialBank : IDisposable
         MATBINLookup = null;
         MTDReferences = null;
         MATBINReferences = null;
+        Definitions = null;
     }
     #endregion
 }

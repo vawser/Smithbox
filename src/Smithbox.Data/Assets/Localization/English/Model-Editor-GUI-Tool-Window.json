@@ -22,7 +22,7 @@
     },
     {
       "Key": "MODEL_ToolWindow_View_Animation",
-      "Text": "Animation"
+      "Text": "Animation Browser"
     },
     {
       "Key": "MODEL_ToolWindow_View_Character_Preview",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "MODEL_Animation_Header",
-      "Text": "Animation"
+      "Text": "Animation Browser"
     },
     {
       "Key": "MODEL_ToolWindow_View_Resource_Monitor",
@@ -46,11 +46,11 @@
     },
     {
       "Key": "MODEL_ToolWindow_View_Asset_Browser",
-      "Text": "Asset Browser"
+      "Text": "Model Browser"
     },
     {
       "Key": "MODEL_AssetBrowser_Header",
-      "Text": "Asset Browser"
+      "Text": "Model Browser"
     },
     {
       "Key": "MODEL_AssetBrowser_Hint",

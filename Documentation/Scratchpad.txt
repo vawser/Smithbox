@@ -6,3 +6,5 @@
   Gparam Editor
   Map Editor
   
+# Map/Model Editor
+- Loading sometimes throw Veldrid error due to lost device

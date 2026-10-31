@@ -39,4 +39,13 @@ public unsafe struct SceneParam
     ///     laid out as <see cref="SceneLightData" />.
     /// </summary>
     public fixed float Lights[SceneLightList.MaxLights * SceneLightData.FloatCount];
+
+    /// <summary>
+    ///     Seconds of animation, see <see cref="MaterialClock" />. Kept at the end so that the shaders which
+    ///     don't use it can leave it out, along with the lights before it.
+    /// </summary>
+    public float MaterialTime;
+
+    // Keeps the struct a whole number of 16 byte rows
+    public fixed float MaterialTimePadding[3];
 }

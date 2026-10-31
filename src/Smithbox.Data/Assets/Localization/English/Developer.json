@@ -193,6 +193,50 @@
       "Text": ""
     },
     {
+      "Key": "DEV_Tool_Header_Output_Folder",
+      "Text": "Output Folder"
+    },
+    {
+      "Key": "DEV_Tool_Header_Output_Folder_TT",
+      "Text": "The folder the dump files are written to."
+    },
+    {
+      "Key": "DEV_Tool_Header_Material_Filter",
+      "Text": "Filter"
+    },
+    {
+      "Key": "DEV_Tool_Header_Material_Filter_TT",
+      "Text": "Only dump materials whose name or shader name contains this text. Leave empty to dump all materials."
+    },
+    {
+      "Key": "DEV_Tool_Action_Dump_Material_Definitions",
+      "Text": "Dump Material Definitions"
+    },
+    {
+      "Key": "DEV_Tool_Action_Dump_Material_Definitions_TT",
+      "Text": "Writes how the materials of the current project resolve to a JSON file, and a summary of their shaders to a TSV file."
+    },
+    {
+      "Key": "DEV_Tool_Dialog_Select_Folder",
+      "Text": "Select Folder"
+    },
+    {
+      "Key": "DEV_Tool_Material_Dump_No_Project",
+      "Text": "Material dump skipped: the current project has no material data."
+    },
+    {
+      "Key": "DEV_Tool_Material_Dump_No_Output",
+      "Text": "Material dump skipped: select an output folder that exists."
+    },
+    {
+      "Key": "DEV_Tool_Material_Dump_Done",
+      "Text": "Dumped {0} material definitions to {1}."
+    },
+    {
+      "Key": "DEV_Tool_Material_Dump_Failed",
+      "Text": "Failed to write the material dump to {0}."
+    },
+    {
       "Key": "DEV_Tool_Dialog_Select_File",
       "Text": "Select File"
     },
@@ -347,6 +391,10 @@
     {
       "Key": "DEV_PNL_Tab_Resource_Viewer",
       "Text": "Resource Viewer"
+    },
+    {
+      "Key": "DEV_PNL_Tab_Material_Definition_Dumper",
+      "Text": "Material Definition Dumper"
     },
     {
       "Key": "DEV_PNL_Tab_File_Dictionary_Generator",

@@ -83,7 +83,7 @@ public class TexturePool
             new ResourceLayoutElementDescription(
                 _resourceName,
                 VkDescriptorType.SampledImage,
-                VkShaderStageFlags.Fragment,
+                VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment,
                 // UpdateAfterBind lets us rewrite descriptors after the set is bound; UpdateUnusedWhilePending
                 // additionally lets us do so while earlier frames are still executing, provided they don't
                 // sample the element being rewritten.
@@ -553,6 +553,15 @@ public class TexturePool
 
         public TPF.Texture TpfTexture { get; set; }
 
+        /// <summary>
+        /// Whether a texture is the position (_vat) or normal (_van) half of a vertex animation
+        /// </summary>
+        private static bool IsVertexAnimationTexture(string name)
+        {
+            return name.EndsWith("_vat", StringComparison.OrdinalIgnoreCase)
+                || name.EndsWith("_van", StringComparison.OrdinalIgnoreCase);
+        }
+
         public static bool IsTPFCube(TPF.Texture tex, TPF.TPFPlatform platform)
         {
             if (platform == TPF.TPFPlatform.PC)
@@ -594,6 +603,8 @@ public class TexturePool
             Width = width;
             Height = height;
 
+            var isVertexAnimation = IsVertexAnimationTexture(tex.Name);
+
             VkFormat format;
 
             try
@@ -616,7 +627,8 @@ public class TexturePool
                     if (dds.ddspf.dwFlags == (DDS.DDPF.RGB | DDS.DDPF.ALPHAPIXELS) &&
                         dds.ddspf.dwRGBBitCount == 32)
                     {
-                        format = VkFormat.R8G8B8A8Srgb;
+                        // Vertex animation textures hold data rather than color
+                        format = isVertexAnimation ? VkFormat.R8G8B8A8Unorm : VkFormat.R8G8B8A8Srgb;
                     }
                     else if (dds.ddspf.dwFlags == DDS.DDPF.RGB && dds.ddspf.dwRGBBitCount == 24)
                     {
@@ -647,6 +659,12 @@ public class TexturePool
             if (curProject != null && curProject.Handler != null)
             {
                 var checkPow = true;
+
+                // Their size is the vertex and frame count of the animation
+                if (isVertexAnimation)
+                {
+                    checkPow = false;
+                }
 
                 // Ignore the World Map textures
                 if (WorldMapTool.TextureExlusions.Contains(tex.Name))
@@ -733,8 +751,25 @@ public class TexturePool
                     var mipInfo = GetMipInfo(format, dds.dwWidth, dds.dwHeight, (int)level, false);
                     //paddedSize = mipInfo.ByteCount;
                     paddedSize = mipInfo;
-                    Span<byte> dest = new(map.Data.ToPointer(), paddedSize);
-                    bytes.Span.Slice(copyOffset, paddedSize).CopyTo(dest);
+
+                    var mipHeight = (int)Math.Max(1u, height >> (int)level);
+                    var rowSize = paddedSize / mipHeight;
+
+                    if (!isCompressed && map.RowPitch != rowSize)
+                    {
+                        // Rows of a linear image are padded unless their width happens to line up
+                        for (var row = 0; row < mipHeight; row++)
+                        {
+                            Span<byte> destRow = new((byte*)map.Data.ToPointer() + (row * map.RowPitch), rowSize);
+                            bytes.Span.Slice(copyOffset + (row * rowSize), rowSize).CopyTo(destRow);
+                        }
+                    }
+                    else
+                    {
+                        Span<byte> dest = new(map.Data.ToPointer(), paddedSize);
+                        bytes.Span.Slice(copyOffset, paddedSize).CopyTo(dest);
+                    }
+
                     copyOffset += paddedSize;
                 }
             }

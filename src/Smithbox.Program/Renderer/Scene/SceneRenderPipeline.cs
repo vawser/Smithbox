@@ -201,6 +201,8 @@ public class SceneRenderPipeline
 
         Scene.Lights.CollectEnabled(lights);
 
+        var materialTime = MaterialClock.Time;
+
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
             SceneParams.Projection = proj;
@@ -217,6 +219,7 @@ public class SceneRenderPipeline
             SceneParams.EnableDithering = enableDithering;
             SceneParams.EnableTinting = enableTinting;
             SceneParams.DitherOpacity = CFG.Current.Viewport_Selection_Dither_Opacity;
+            SceneParams.MaterialTime = materialTime;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)

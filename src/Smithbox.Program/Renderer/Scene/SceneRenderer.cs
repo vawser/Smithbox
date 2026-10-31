@@ -102,7 +102,8 @@ public static class SceneRenderer
 
         // Materials are 48 bytes, so this holds more of them than the 5MB it used to be did at 32 bytes
         MaterialBufferAllocator = new GPUBufferAllocator("materials", 8 * 1024 * 1024,
-            VkBufferUsageFlags.StorageBuffer, (uint)sizeof(Material), VkShaderStageFlags.Fragment);
+            VkBufferUsageFlags.StorageBuffer, (uint)sizeof(Material),
+            VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment);
         BoneBufferAllocator = new GPUBufferAllocator("bones", CFG.Current.Viewport_Limit_Buffer_Flver_Bone * 64,
             VkBufferUsageFlags.StorageBuffer, 64, VkShaderStageFlags.Vertex);
         // Material texture indices are 16 bit, so this can go up to TexturePool.MaxTextureCount (65536).

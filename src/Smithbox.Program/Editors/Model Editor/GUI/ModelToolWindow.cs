@@ -40,34 +40,9 @@ public class ModelToolWindow
             ImGui.EndMenuBar();
         }
 
-        if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
-        {
-            View.ModelGridTool.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
-        {
-            View.ModelInstanceFinder.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler)
-        {
-            View.ModelMaskToggler.OnToolWindow();
-        }
-
         if (CFG.Current.Interface_ModelEditor_Tool_Animation)
         {
             View.ModelAnimationTool.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_CharacterPreview)
-        {
-            View.ModelCharacterPreview.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_ModelExport)
-        {
-            View.ModelExportTool.OnToolWindow();
         }
 
         if (CFG.Current.Interface_ModelEditor_Tool_AssetBrowser)
@@ -76,6 +51,31 @@ public class ModelToolWindow
             {
                 View.AssetBrowserTool.Display();
             }
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_CharacterPreview)
+        {
+            View.ModelCharacterPreview.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler)
+        {
+            View.ModelMaskToggler.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelExport)
+        {
+            View.ModelExportTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
+        {
+            View.ModelGridTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
+        {
+            View.ModelInstanceFinder.OnToolWindow();
         }
 
         if (CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor)
