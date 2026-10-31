@@ -44,6 +44,12 @@ layout(location = 1) in ivec4 normal;
 layout(location = 0) out vec4 fsin_color;
 layout(location = 1) out uint fsin_entityid;
 
+// Stale or wrong instance data can ask for any bone, and reading past the end of the buffer loses the device
+mat4 ReadBone(uint index)
+{
+	return index < uint(bones.length()) ? bones[index] : mat4(1.0);
+}
+
 // materialID.z is 0 unless the instance is being animated, which keeps static models untouched:
 //   1            - rigid, the bone only needs to reach the normals as well
 //   high bit set - weighted, the low bits plus gl_VertexIndex index the skin data
@@ -54,18 +60,24 @@ mat4 GetBoneMatrix()
 
 	if ((skinRef & 0x80000000u) != 0u)
 	{
-		uvec4 s = skin[(skinRef + uint(gl_VertexIndex)) & 0x7FFFFFFFu];
+		uint skinIndex = (skinRef + uint(gl_VertexIndex)) & 0x7FFFFFFFu;
+		if (skinIndex >= uint(skin.length()))
+		{
+			return mat4(1.0);
+		}
+
+		uvec4 s = skin[skinIndex];
 		vec4 weights = unpackUnorm4x8(s.z);
 
-		return bones[boneBase + (s.x & 0xFFFFu)] * weights.x +
-			bones[boneBase + (s.x >> 16)] * weights.y +
-			bones[boneBase + (s.y & 0xFFFFu)] * weights.z +
-			bones[boneBase + (s.y >> 16)] * weights.w;
+		return ReadBone(boneBase + (s.x & 0xFFFFu)) * weights.x +
+			ReadBone(boneBase + (s.x >> 16)) * weights.y +
+			ReadBone(boneBase + (s.y & 0xFFFFu)) * weights.z +
+			ReadBone(boneBase + (s.y >> 16)) * weights.w;
 	}
 
 	if (c_normalWBoneTransform)
 	{
-		return bones[boneBase + normal.w];
+		return ReadBone(boneBase + (uint(normal.w) & 0xFFu));
 	}
 
 	return mat4(1.0);
@@ -82,4 +94,4 @@ void main()
 	vec4 posbase = sceneparam.projection * sceneparam.view * w * bone * vec4(position, 1);
 
     gl_Position = posbase + vec4(ssnormal, 0.0) * posbase.w * 0.005;
-}
+}

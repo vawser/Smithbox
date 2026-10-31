@@ -44,7 +44,7 @@ public static class SceneRenderer
     private static bool _readyForReadback;
     private static int _readbackPendingFence = -1;
 
-    private static readonly int BUFFER_COUNT = 3;
+    private const int BUFFER_COUNT = 3;
     private static readonly List<Fence> _drawFences = new();
     private static int _currentBuffer;
 
@@ -111,6 +111,8 @@ public static class SceneRenderer
         GlobalTexturePool = new TexturePool(device, "globalTextures", 32768);
         GlobalCubeTexturePool = new TexturePool(device, "globalCubeTextures", 500);
 
+        GraphicsDevice.DeviceLostContext = DescribeLoad;
+
         // Initialize default 2D texture at 0
         TexturePool.TextureHandle handle = GlobalTexturePool.AllocateTextureDescriptor();
         handle.FillWithColor(device, Color.Gray, "Gray");
@@ -139,6 +141,43 @@ public static class SceneRenderer
     public static void RegisterRenderQueue(RenderQueue queue)
     {
         RenderQueues.Add(queue);
+    }
+
+    /// <summary>
+    /// Gives up a range of a shared buffer once nothing can still be drawing from it.
+    /// If it were freed at once, it could be handed out and rewritten under a frame that is still executing.
+    /// </summary>
+    public static void DisposeAfterFramesInFlight(IDisposable range, int frames = BUFFER_COUNT + 1)
+    {
+        AddBackgroundUploadTask((_, _) =>
+        {
+            if (frames <= 1)
+            {
+                range.Dispose();
+            }
+            else
+            {
+                DisposeAfterFramesInFlight(range, frames - 1);
+            }
+        });
+    }
+
+    /// <summary>
+    /// How much is loaded, for the crash log if the device is lost
+    /// </summary>
+    private static string DescribeLoad()
+    {
+        var materials = MaterialBufferAllocator.GetStats();
+        var instances = UniformBufferAllocator.GetStats();
+        var bones = BoneBufferAllocator.GetStats();
+
+        return $"  Textures: {GlobalTexturePool.AllocatedTextureCount} of {GlobalTexturePool.TextureCount}\n" +
+            $"  Materials: {materials.allocationCount}, {materials.usedSpace / 1024} KiB of {materials.totalSize / 1024} KiB\n" +
+            $"  Instances: {instances.allocationCount}, {instances.usedSpace / 1024} KiB of {instances.totalSize / 1024} KiB (starts at 5120 KiB)\n" +
+            $"  Bones: {bones.allocationCount}, {bones.usedSpace / 1024} KiB of {bones.totalSize / 1024} KiB\n" +
+            $"  Geometry: {GeometryBufferAllocator.TotalVertexFootprint / (1024 * 1024)} MiB vertices, {GeometryBufferAllocator.TotalIndexFootprint / (1024 * 1024)} MiB indices\n" +
+            $"  Upload tasks queued: {LowPriorityBackgroundUploadQueue.Count + LowPriorityBackgroundUploadQueueBackfill.Count}\n" +
+            $"  Load jobs active: {ResourceManager.ActiveJobProgress.Count}";
     }
 
     public static void AddBackgroundUploadTask(Action<GraphicsDevice, CommandList> action)
@@ -706,6 +745,7 @@ public static class SceneRenderer
             var c = _batchCount[_renderSet] > 0 ? _batchCount[_renderSet] - 1 : 0;
             for (var i = 0; i < _batchCount[_renderSet]; i++)
             {
+                cl.SetCheckpoint($"Draw batch {i + 1} of {_batchCount[_renderSet]}: {_batches[(MAX_BATCH * _renderSet) + i]._pipeline.Name}");
                 cl.SetPipeline(_batches[(MAX_BATCH * _renderSet) + i]._pipeline);
                 pipeline.BindResources(cl);
                 cl.SetGraphicsResourceSet(1, _batches[(MAX_BATCH * _renderSet) + i]._objectRS);

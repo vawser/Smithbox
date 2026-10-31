@@ -10,12 +10,30 @@ namespace Veldrid
         private static Lazy<bool> s_isVulkanLoaded = new Lazy<bool>(TryLoadVulkan);
         private static readonly Lazy<string[]> s_instanceExtensions = new Lazy<string[]>(EnumerateInstanceExtensions);
 
+        /// <summary>
+        /// Builds the description of a lost device, set when the device is created.
+        /// </summary>
+        internal static Func<string> DeviceLostReport;
+
         [Conditional("DEBUG")]
         public static void CheckResult(VkResult result)
         {
+            CheckDeviceLost(result);
+
             if (result != VkResult.Success)
             {
                 throw new VeldridException("Unsuccessful VkResult: " + result);
+            }
+        }
+
+        /// <summary>
+        /// Unlike <see cref="CheckResult"/> this is in every build, as nothing can continue after a device is lost.
+        /// </summary>
+        public static void CheckDeviceLost(VkResult result)
+        {
+            if (result == VkResult.ErrorDeviceLost)
+            {
+                throw new VeldridException(DeviceLostReport?.Invoke() ?? "Unsuccessful VkResult: " + result);
             }
         }
 

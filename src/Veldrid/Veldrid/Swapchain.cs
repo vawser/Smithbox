@@ -122,6 +122,7 @@ namespace Veldrid
                 semaphore,
                 fence,
                 out _currentImageIndex);
+            VulkanUtil.CheckDeviceLost(result);
             _framebuffer.SetImageIndex(_currentImageIndex);
             if (result == VkResult.ErrorOutOfDateKHR || result == VkResult.SuboptimalKHR)
             {

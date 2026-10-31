@@ -377,8 +377,11 @@ public class GPUBufferAllocator
             {
                 if (disposing)
                 {
-                    _allocator._allocations.Remove(this);
-                    _allocator.Free(AllocationStart);
+                    lock (_allocator._allocationLock)
+                    {
+                        _allocator._allocations.Remove(this);
+                        _allocator.Free(AllocationStart);
+                    }
                 }
 
                 disposedValue = true;

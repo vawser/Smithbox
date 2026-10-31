@@ -30,6 +30,7 @@ internal static class StaticResourceCache
         if (!s_pipelines.TryGetValue(desc, out Pipeline p))
         {
             p = factory.CreateGraphicsPipeline(ref desc);
+            p.Name = desc.ShaderSet.Shaders[0].Name;
             s_pipelines.TryAdd(desc, p);
         }
 

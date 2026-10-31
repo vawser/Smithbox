@@ -57,8 +57,16 @@ public static class Program
                 }
                 catch
                 {
-                    Instance.AttemptSaveOnCrash();
-                    Instance.CrashShutdown();
+                    // Shutting down can fail as well, which must not hide what caused the crash
+                    try
+                    {
+                        Instance.AttemptSaveOnCrash();
+                        Instance.CrashShutdown();
+                    }
+                    catch (Exception shutdownException)
+                    {
+                        Console.WriteLine("Crash shutdown failed : " + shutdownException.Message);
+                    }
 
                     throw;
                 }

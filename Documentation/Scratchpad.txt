@@ -8,14 +8,4 @@
   
 # Map/Model Editor
 - Loading sometimes throw Veldrid error due to lost device
-- Find out issue that causes missed texturing
 
-Models that have missed texture on sub-mesh
-m000010
-m000041
-AEG217_240
-AEG210_370
-AEG210_371
-AEG210_361
-
-Looking into the issue on the assets, it looks like the texture listeners aren't being created for the textures. For example, AEG232_609, the listener for AET230_035_a, _n and _m aren't created (which is what the trim sub-mesh uses). However, most of the other meshes do have their textures, so there must be an issue causing this set of textures to be skipped.

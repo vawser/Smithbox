@@ -1668,6 +1668,8 @@ namespace Veldrid
 
         private void PushDebugGroupCore(string name)
         {
+            SetCheckpoint(name);
+
             if (!_gd.DebugLabelsEnabled)
                 return;
 
@@ -1694,6 +1696,16 @@ namespace Veldrid
         public void PopDebugGroup()
         {
             PopDebugGroupCore();
+        }
+
+        /// <summary>
+        /// Leaves a named point in the CommandList. If the device is lost, the crash log gives the last of these
+        /// that the GPU reached, so they should be placed around work that could be what it was stuck on.
+        /// </summary>
+        /// <param name="name">What the commands after this point are doing.</param>
+        public void SetCheckpoint(string name)
+        {
+            _gd.DeviceLostDiagnostics.SetCheckpoint(_cb, name);
         }
 
         private void PopDebugGroupCore()

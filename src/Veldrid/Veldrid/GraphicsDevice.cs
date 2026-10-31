@@ -85,6 +85,14 @@ namespace Veldrid
         internal VmaAllocator Allocator => _vmaAllocator;
         internal VkDescriptorPoolManager DescriptorPoolManager => _descriptorPoolManager;
         internal bool DebugLabelsEnabled => _debugLabelEnabled;
+
+        private DeviceLostDiagnostics _deviceLostDiagnostics;
+        internal DeviceLostDiagnostics DeviceLostDiagnostics => _deviceLostDiagnostics;
+
+        /// <summary>
+        /// Describes what the application was doing, for the report of a lost device.
+        /// </summary>
+        public static Func<string> DeviceLostContext { get; set; }
         public vkCreateMetalSurfaceEXT_t CreateMetalSurfaceEXT => _createMetalSurfaceEXT;
 
         private readonly object _submittedFencesLock = new();
@@ -140,7 +148,7 @@ namespace Veldrid
                     VkFence* fences = stackalloc VkFence[WaitFences.Count];
                     for (int i = 0; i < WaitFences.Count; i++)
                         fences[i] = WaitFences[i];
-                    vkWaitForFences(device._device, (uint)WaitFences.Count, fences, VkBool32.True, UInt64.MaxValue);
+                    CheckDeviceLost(vkWaitForFences(device._device, (uint)WaitFences.Count, fences, VkBool32.True, UInt64.MaxValue));
                     vkResetFences(device._device, (uint)WaitFences.Count, fences);
                     foreach (var fence in WaitFences)
                         device._availableSubmissionFences.Enqueue(fence);
@@ -479,6 +487,7 @@ namespace Veldrid
         {
             Vortice.Vulkan.VkFence vkFence = fence.DeviceFence;
             VkResult result = vkWaitForFences(_device, 1, &vkFence, true, nanosecondTimeout);
+            CheckDeviceLost(result);
             return result == VkResult.Success;
         }
 
@@ -527,6 +536,7 @@ namespace Veldrid
             }
 
             VkResult result = vkWaitForFences(_device, (uint)fenceCount, fencesPtr, waitAll, nanosecondTimeout);
+            CheckDeviceLost(result);
             return result == VkResult.Success;
         }
 
@@ -576,11 +586,11 @@ namespace Veldrid
             object presentLock = _submitLock;
             lock (presentLock)
             {
-                vkQueuePresentKHR(_queues[(int)QueueType.Graphics], &presentInfo);
+                CheckDeviceLost(vkQueuePresentKHR(_queues[(int)QueueType.Graphics], &presentInfo));
                 if (vkSC.AcquireNextImage(_device, VkSemaphore.Null, vkSC.ImageAvailableFence))
                 {
                     VkFence fence = vkSC.ImageAvailableFence;
-                    vkWaitForFences(_device, 1, &fence, true, ulong.MaxValue);
+                    CheckDeviceLost(vkWaitForFences(_device, 1, &fence, true, ulong.MaxValue));
                     vkResetFences(_device, 1, &fence);
                 }
             }
@@ -628,7 +638,7 @@ namespace Veldrid
                 {
                     NextFrame();
                 }
-                vkDeviceWaitIdle(_device);
+                CheckDeviceLost(vkDeviceWaitIdle(_device));
             }
         }
 
@@ -1457,6 +1467,7 @@ namespace Veldrid
             lock (_submitLock)
             {
                 VkResult result = vkQueueSubmit2(queue, 1, &si, vkFence);
+                CheckDeviceLost(result);
                 CheckResult(result);
                 if (useExtraFence)
                 {
@@ -2000,6 +2011,9 @@ namespace Veldrid
 
             bool hasMemReqs2 = false;
             bool hasDedicatedAllocation = false;
+            bool hasCheckpoints = false;
+            bool hasDeviceFault = false;
+            bool hasMemoryBudget = false;
             var extensionNames = new StackList<IntPtr>();
             for (int property = 0; property < propertyCount; property++)
             {
@@ -2027,6 +2041,24 @@ namespace Veldrid
                     requiredInstanceExtensions.Remove(extensionName);
                     hasDedicatedAllocation = true;
                 }
+                else if (extensionName == "VK_NV_device_diagnostic_checkpoints")
+                {
+                    extensionNames.Add((IntPtr)properties[property].extensionName);
+                    requiredInstanceExtensions.Remove(extensionName);
+                    hasCheckpoints = true;
+                }
+                else if (extensionName == "VK_EXT_device_fault")
+                {
+                    extensionNames.Add((IntPtr)properties[property].extensionName);
+                    requiredInstanceExtensions.Remove(extensionName);
+                    hasDeviceFault = true;
+                }
+                else if (extensionName == "VK_EXT_memory_budget")
+                {
+                    extensionNames.Add((IntPtr)properties[property].extensionName);
+                    requiredInstanceExtensions.Remove(extensionName);
+                    hasMemoryBudget = true;
+                }
                 else if (requiredInstanceExtensions.Remove(extensionName))
                 {
                     extensionNames.Add((IntPtr)properties[property].extensionName);
@@ -2045,7 +2077,22 @@ namespace Veldrid
             {
                 layerNames.Add(CommonStrings.StandardValidationLayerName);
             }
-            
+
+            var deviceFaultFeatures = new VkPhysicalDeviceFaultFeaturesEXT();
+            if (hasDeviceFault)
+            {
+                var queriedFeatures = new VkPhysicalDeviceFeatures2 { pNext = &deviceFaultFeatures };
+                vkGetPhysicalDeviceFeatures2(_physicalDevice, &queriedFeatures);
+
+                hasDeviceFault = deviceFaultFeatures.deviceFault;
+                deviceFaultFeatures.deviceFaultVendorBinary = VkBool32.False;
+
+                if (hasDeviceFault)
+                {
+                    deviceFeatures13.pNext = &deviceFaultFeatures;
+                }
+            }
+
             var physicalDeviceFeatures2 = new VkPhysicalDeviceFeatures2
             {
                 features = deviceFeatures,
@@ -2073,6 +2120,9 @@ namespace Veldrid
             {
                 vkGetDeviceQueue(_device, _queueFamilyIndices[i], _queueIndices[i], out _queues[i]);
             }
+
+            _deviceLostDiagnostics = new DeviceLostDiagnostics(this, _queues, hasCheckpoints, hasDeviceFault, hasMemoryBudget);
+            DeviceLostReport = _deviceLostDiagnostics.GetReport;
 
             if (_debugLabelEnabled)
             {

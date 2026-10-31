@@ -166,6 +166,12 @@ const float TWO_PI = 6.2831853;
 const float WIND_FORCE_SCALE = 0.05;
 #endif
 
+// Stale or wrong instance data can ask for any bone, and reading past the end of the buffer loses the device
+mat4 ReadBone(uint index)
+{
+	return index < uint(bones.length()) ? bones[index] : mat4(1.0);
+}
+
 // materialID.z is 0 unless the instance is being animated, which keeps static models untouched:
 //   1            - rigid, the bone only needs to reach the normals as well
 //   high bit set - weighted, the low bits plus gl_VertexIndex index the skin data
@@ -176,28 +182,46 @@ mat4 GetBoneMatrix()
 
 	if ((skinRef & 0x80000000u) != 0u)
 	{
-		uvec4 s = skin[(skinRef + uint(gl_VertexIndex)) & 0x7FFFFFFFu];
+		uint skinIndex = (skinRef + uint(gl_VertexIndex)) & 0x7FFFFFFFu;
+		if (skinIndex >= uint(skin.length()))
+		{
+			return mat4(1.0);
+		}
+
+		uvec4 s = skin[skinIndex];
 		vec4 weights = unpackUnorm4x8(s.z);
 
-		return bones[boneBase + (s.x & 0xFFFFu)] * weights.x +
-			bones[boneBase + (s.x >> 16)] * weights.y +
-			bones[boneBase + (s.y & 0xFFFFu)] * weights.z +
-			bones[boneBase + (s.y >> 16)] * weights.w;
+		return ReadBone(boneBase + (s.x & 0xFFFFu)) * weights.x +
+			ReadBone(boneBase + (s.x >> 16)) * weights.y +
+			ReadBone(boneBase + (s.y & 0xFFFFu)) * weights.z +
+			ReadBone(boneBase + (s.y >> 16)) * weights.w;
 	}
 
 	if (c_normalWBoneTransform)
 	{
-		return bones[boneBase + normal.w];
+		return ReadBone(boneBase + (uint(normal.w) & 0xFFu));
 	}
 
 	return mat4(1.0);
 }
 
 #ifdef MATERIAL_DEFORM
-// One frame of a vertex animation. Columns are vertices and rows are frames
+// Freed material memory can be reused for anything, and a texture past the pool loses the device.
+// Same as the size of GlobalTexturePool in SceneRenderer
+int TextureIndex(uint tex)
+{
+	return tex < 32768u ? int(tex) : 0;
+}
+
+// One frame of a vertex animation. Columns are vertices and rows are frames.
+// The position works out where to read, but a texture can be the 1x1 default until it is uploaded
+// or after it is unloaded, and reading outside of a texture here makes the GPU lose the device
 vec3 FetchVat(uint tex, int column, int row)
 {
-	return texelFetch(sampler2D(globalTextures[nonuniformEXT(int(tex))], linearSampler), ivec2(column, row), 0).xyz;
+	ivec2 size = textureSize(sampler2D(globalTextures[nonuniformEXT(TextureIndex(tex))], linearSampler), 0);
+	ivec2 texel = clamp(ivec2(column, row), ivec2(0), size - 1);
+
+	return texelFetch(sampler2D(globalTextures[nonuniformEXT(TextureIndex(tex))], linearSampler), texel, 0).xyz;
 }
 
 // Plays a baked animation. The vertex's column is stored as two bytes, as vertices that were split on
@@ -213,7 +237,7 @@ void DeformVat(deformData deform, vec2 columnBytes, float strength, float startO
 		return;
 	}
 
-	ivec2 size = textureSize(sampler2D(globalTextures[nonuniformEXT(int(vat))], linearSampler), 0);
+	ivec2 size = textureSize(sampler2D(globalTextures[nonuniformEXT(TextureIndex(vat))], linearSampler), 0);
 	float height = float(size.y);
 
 	float start = fract(startOffset);
@@ -324,7 +348,7 @@ void DeformBirds(deformData deform, inout vec3 pos)
 
 	if (vat != 0u)
 	{
-		ivec2 size = textureSize(sampler2D(globalTextures[nonuniformEXT(int(vat))], linearSampler), 0);
+		ivec2 size = textureSize(sampler2D(globalTextures[nonuniformEXT(TextureIndex(vat))], linearSampler), 0);
 		float height = float(size.y);
 		float frame = fract((height * fract(texcoord2.x) + frameTime) * deform.params.y / height) * height;
 		int column = min(int(texcoord1.x * 255.0 + texcoord1.y * 65280.0 + 0.5), size.x - 1);
@@ -397,7 +421,7 @@ void DeformDirectionalWave(deformData deform, mat4 toWorld, inout vec3 worldPos)
 
 	if (deform.textures.x != 0u && deform.params.w != 0.0)
 	{
-		noise = textureLod(sampler2D(globalTextures[nonuniformEXT(int(deform.textures.x))], linearSampler), pivot.xz / deform.params.w, 0.0).r;
+		noise = textureLod(sampler2D(globalTextures[nonuniformEXT(TextureIndex(deform.textures.x))], linearSampler), pivot.xz / deform.params.w, 0.0).r;
 	}
 
 	float wave = SmoothTriangle((deform.params.z * noise + sceneparam.materialTime) * deform.params.y);

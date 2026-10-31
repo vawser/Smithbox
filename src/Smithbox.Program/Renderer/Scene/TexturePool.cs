@@ -98,6 +98,20 @@ public class TexturePool
     public uint TextureCount { get; }
 
     /// <summary>
+    ///     How many of the pool's slots are in use.
+    /// </summary>
+    public int AllocatedTextureCount
+    {
+        get
+        {
+            lock (_stateLock)
+            {
+                return _handles.Count(h => h != null);
+            }
+        }
+    }
+
+    /// <summary>
     ///     True while the pool has outstanding work: descriptors to write, or retired slots/textures that
     ///     still need to age out. SceneRenderer polls this once per frame.
     /// </summary>
@@ -790,6 +804,7 @@ public class TexturePool
             var previousTexture = _texture;
             _texture = d.ResourceFactory.CreateTexture(desc);
             _texture.Name = name;
+            cl.SetCheckpoint($"Upload texture {name} ({width}x{height}, {format})");
             cl.CopyTexture(_staging, _texture);
 
             _staging.Dispose();

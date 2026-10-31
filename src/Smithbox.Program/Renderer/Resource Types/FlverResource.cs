@@ -3594,7 +3594,7 @@ public class FlverResource : IResource, IDisposable
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>
             {
                 Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"Material upload");
-                if (MaterialBuffer != null)
+                if (MaterialBuffer != null && !disposedValue)
                 {
                     if (glowing is MaterialWithMagma magmaData)
                     {
@@ -3625,16 +3625,18 @@ public class FlverResource : IResource, IDisposable
         {
             if (!disposedValue)
             {
+                // First, as releasing the textures would otherwise upload to the buffer being given up
+                disposedValue = true;
+
                 if (disposing)
                 {
                     if (MaterialBuffer != null)
                     {
-                        MaterialBuffer.Dispose();
+                        SceneRenderer.DisposeAfterFramesInFlight(MaterialBuffer);
                     }
                 }
 
                 ReleaseTextures();
-                disposedValue = true;
             }
         }
 
@@ -4025,7 +4027,7 @@ public class FlverResource : IResource, IDisposable
 
             if (StaticBoneBuffer != null)
             {
-                StaticBoneBuffer.Dispose();
+                SceneRenderer.DisposeAfterFramesInFlight(StaticBoneBuffer);
             }
 
             disposedValue = true;

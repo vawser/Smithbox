@@ -344,11 +344,18 @@ bool HasFeature(uint feature)
 	return (sceneparam.materialFeatures & feature) != 0u;
 }
 
+// Freed material memory can be reused for anything, and a texture past the pool loses the device.
+// Same as the size of GlobalTexturePool in SceneRenderer
+int TextureIndex(uint tex)
+{
+	return tex < 32768u ? int(tex) : 0;
+}
+
 // Samples with explicit derivatives, so a layer can be skipped without making derivatives undefined
 vec4 SampleAt(uint tex, int uvSet, vec2 tiling, vec2 scroll)
 {
 	return textureGrad(
-		sampler2D(globalTextures[nonuniformEXT(int(tex))], anisoLinearSampler),
+		sampler2D(globalTextures[nonuniformEXT(TextureIndex(tex))], anisoLinearSampler),
 		(g_uv[uvSet] + (HasFeature(FEATURE_UV_SCROLL) ? scroll * sceneparam.materialTime : vec2(0.0))) * tiling, g_dx[uvSet] * tiling, g_dy[uvSet] * tiling);
 }
 
@@ -575,7 +582,7 @@ vec3 MagmaGlow()
 	float green = magma.info.y == 0u ? sample1.g : sample0.g;
 
 	vec2 bent = (g_uv[0] + magma.distort.xy * red) * tiling;
-	float blue = textureGrad(sampler2D(globalTextures[nonuniformEXT(int(tex))], anisoLinearSampler), bent, g_dx[0] * tiling, g_dy[0] * tiling).b;
+	float blue = textureGrad(sampler2D(globalTextures[nonuniformEXT(TextureIndex(tex))], anisoLinearSampler), bent, g_dx[0] * tiling, g_dy[0] * tiling).b;
 
 	float glow = red * green * pow(max(flow.tiling.z * blue, 0.001), (green + 0.5) * flow.tiling.w);
 
