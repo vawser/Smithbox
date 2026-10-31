@@ -437,6 +437,38 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         return false;
     }
 
+    /// <summary>
+    ///     True once all of the geometry of this mesh has been built into renderables, so that it will be drawn.
+    /// </summary>
+    public bool AreRenderablesConstructed()
+    {
+        var hasOwnGeometry = _meshProvider != null && _meshProvider.IsAvailable() && _meshProvider.HasMeshData() &&
+                             _meshProvider.IndexCount > 0;
+        var constructed = hasOwnGeometry && _renderable != -1;
+
+        if (hasOwnGeometry && !constructed)
+        {
+            return false;
+        }
+
+        foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
+        {
+            if (!sm.HasRenderableGeometry())
+            {
+                continue;
+            }
+
+            if (!sm.AreRenderablesConstructed())
+            {
+                return false;
+            }
+
+            constructed = true;
+        }
+
+        return constructed;
+    }
+
     public override BoundingBox GetBounds()
     {
         return BoundingBox.Transform(GetLocalBounds(), _world);

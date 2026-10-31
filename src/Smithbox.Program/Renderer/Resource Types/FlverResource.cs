@@ -63,6 +63,9 @@ public class FlverResource : IResource, IDisposable
     /// </summary>
     public ResourceLoadContext? Context { get; private set; }
 
+    // Set before anything is read, so that all of the load can follow it
+    private bool ModelsOnly => Context?.Pool?.ModelsOnly == true;
+
     public bool _Load(Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -90,7 +93,7 @@ public class FlverResource : IResource, IDisposable
             if (al == AccessLevel.AccessGPUOptimizedOnly &&
                 curProject.Descriptor.ProjectType != ProjectType.NR &&
                 curProject.Descriptor.ProjectType != ProjectType.DS1R &&
-                curProject.Descriptor.ProjectType != ProjectType.DS1 && !FocusManager.IsInModelEditor())
+                curProject.Descriptor.ProjectType != ProjectType.DS1 && (ModelsOnly || !FocusManager.IsInModelEditor()))
             {
                 BinaryReaderEx br = new(false, bytes);
                 DCX.Type ctype;
@@ -145,7 +148,7 @@ public class FlverResource : IResource, IDisposable
                     if (al == AccessLevel.AccessGPUOptimizedOnly &&
                         curProject.Descriptor.ProjectType != ProjectType.NR &&
                         curProject.Descriptor.ProjectType != ProjectType.DS1R &&
-                        curProject.Descriptor.ProjectType != ProjectType.DS1 && !FocusManager.IsInModelEditor())
+                        curProject.Descriptor.ProjectType != ProjectType.DS1 && (ModelsOnly || !FocusManager.IsInModelEditor()))
                     {
                         BinaryReaderEx br = new(false, fileData.Value);
                         DCX.Type ctype;
@@ -588,7 +591,7 @@ public class FlverResource : IResource, IDisposable
             }
         }
 
-        if (!CFG.Current.Viewport_Enable_Texturing)
+        if (!CFG.Current.Viewport_Enable_Texturing || ModelsOnly)
         {
             dest.ShaderName = @"SimpleFlver";
             dest.LayoutType = MeshLayoutType.LayoutSky;
@@ -622,7 +625,7 @@ public class FlverResource : IResource, IDisposable
         dest.MaterialBuffer = SceneRenderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
         dest.MaterialData = new Material();
 
-        if (!CFG.Current.Viewport_Enable_Texturing)
+        if (!CFG.Current.Viewport_Enable_Texturing || ModelsOnly)
         {
             dest.ShaderName = @"SimpleFlver";
             dest.LayoutType = MeshLayoutType.LayoutSky;

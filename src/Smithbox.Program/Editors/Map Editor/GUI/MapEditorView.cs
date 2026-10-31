@@ -94,6 +94,7 @@ public class MapEditorView : IEditorView
     // Tools
     public MassEditTool MassEditTool;
     public ModelSelectorTool ModelSelectorTool;
+    public AssetBrowserTool AssetBrowserTool;
     public DisplayGroupTool DisplayGroupTool;
     public PrefabTool PrefabTool;
     public NavmeshBuilderTool NavmeshBuilderTool;
@@ -110,7 +111,6 @@ public class MapEditorView : IEditorView
     public MapModelInsightHelper ModelInsightTool;
     public AutomaticPreviewTool AutomaticPreviewTool;
     public PatrolDrawManager PatrolDrawManager;
-    public AssetBrowserTool AssetBrowser;
     public CompassTool CompassTool;
 
     public ResourceListTool ResourceListTool;
@@ -184,6 +184,9 @@ public class MapEditorView : IEditorView
         GlobalSearchTool = new GlobalSearchTool(this, project);
         LocalSearchView = new LocalSearchTool(this, project);
         ModelSelectorTool = new ModelSelectorTool(this, project);
+        AssetBrowserTool = new AssetBrowserTool(project,
+            "Double-click an asset to switch the selected map objects to it.",
+            e => ModelSelectorTool.ApplyMapAssetSelection(e.ID, FileSelectionType.Asset));
         PrefabTool = new PrefabTool(this, project);
         NavmeshBuilderTool = new NavmeshBuilderTool(this, project);
         EntityIdentifierTool = new EntityIdentifierTool(this, project);
@@ -196,7 +199,6 @@ public class MapEditorView : IEditorView
         MapModelInsightTool = new MapModelInsightView(this, project);
         ModelInsightTool = new MapModelInsightHelper(this, project);
         PatrolDrawManager = new PatrolDrawManager(this);
-        AssetBrowser = new AssetBrowserTool(this, project);
         CompassTool = new CompassTool(this, project);
 
         ResourceListTool = new ResourceListTool();

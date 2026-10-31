@@ -289,6 +289,21 @@ public class ModelContainerList
         clipper.End();
     }
 
+    /// <summary>
+    /// Loads a model into the view, as if it had been picked from the list.
+    /// </summary>
+    public void SelectAndLoadModel(string filename)
+    {
+        var entry = Project.Handler.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == filename);
+
+        if (entry.Value != null)
+        {
+            View.Selection.SelectedModelContainerWrapper = entry.Value;
+
+            LoadModel(entry.Value);
+        }
+    }
+
     private void SelectModel(FileDictionaryEntry fileEntry)
     {
         var entry = Project.Handler.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);

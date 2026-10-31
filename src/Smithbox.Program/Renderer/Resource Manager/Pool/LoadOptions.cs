@@ -56,6 +56,12 @@ public sealed class LoadOptions
     /// <summary>Name shown in the resource load window. Defaults to the container path.</summary>
     public string JobName { get; set; }
 
+    /// <summary>
+    ///     Keep the load out of the resource load window. The window takes its height from the viewport,
+    ///     so small and frequent loads would make the viewport resize over and over.
+    /// </summary>
+    public bool HideFromLoadWindow { get; set; }
+
     public LoadOptions Clone()
     {
         var clone = (LoadOptions)MemberwiseClone();

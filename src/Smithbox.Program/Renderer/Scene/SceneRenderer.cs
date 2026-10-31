@@ -309,11 +309,30 @@ public static class SceneRenderer
             return null;
         }
 
+        CommandList offscreenCommandList = null;
+
         for (int i = 0; i < RenderQueues.Count; i++)
         {
             var curRq = RenderQueues[i];
-            curRq.Execute(drawCommandList, _drawFences[_nextBuffer]);
+
+            if (curRq.IsOffscreen)
+            {
+                offscreenCommandList ??= Factory.CreateCommandList(QueueType.Graphics);
+                offscreenCommandList.Name = "Offscreen";
+                curRq.Execute(offscreenCommandList, _drawFences[_nextBuffer]);
+            }
+            else
+            {
+                curRq.Execute(drawCommandList, _drawFences[_nextBuffer]);
+            }
+
             curRq.Clear();
+        }
+
+        // Ahead of the draw list, so what was rendered here can be sampled by the UI this frame
+        if (offscreenCommandList != null)
+        {
+            Device.SubmitCommands(offscreenCommandList);
         }
 
         // Handle readbacks
@@ -777,6 +796,13 @@ public static class SceneRenderer
     public class RenderQueue
     {
         public bool PickingEnabled { get; set; }
+
+        /// <summary>
+        ///     Records into a command list of its own rather than the draw list. Leaving the swapchain framebuffer
+        ///     part way through the draw list and returning to it would discard everything drawn so far, so a queue
+        ///     that renders somewhere else has to use this.
+        /// </summary>
+        public bool IsOffscreen { get; set; }
 
         // Number of frames in flight planned for this queue
         private readonly int _bufferCount = 3;

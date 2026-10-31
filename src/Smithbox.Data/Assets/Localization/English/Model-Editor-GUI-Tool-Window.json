@@ -43,6 +43,62 @@
     {
       "Key": "MODEL_ToolWindow_View_Model_Export",
       "Text": "Model Export"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Asset_Browser",
+      "Text": "Asset Browser"
+    },
+    {
+      "Key": "MODEL_AssetBrowser_Header",
+      "Text": "Asset Browser"
+    },
+    {
+      "Key": "MODEL_AssetBrowser_Hint",
+      "Text": "Double-click an asset to load it."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_List_Mode",
+      "Text": "List"
+    },
+    {
+      "Key": "EDITOR_ModelPreview_List_Mode_TT",
+      "Text": "Display the models as a list of names."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Preview_Mode",
+      "Text": "3D Previews"
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Preview_Mode_TT",
+      "Text": "Display the models as a grid of 3D previews."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Size",
+      "Text": "Preview Size"
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Size_TT",
+      "Text": "The size of each 3D preview, in pixels."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Refresh",
+      "Text": "Refresh"
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Refresh_TT",
+      "Text": "Render the 3D previews again, to pick up changes to the models."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Pending",
+      "Text": "Loading..."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Unavailable",
+      "Text": "No Preview"
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Unsupported",
+      "Text": "3D previews require the Vulkan renderer."
     }
   ]
 }

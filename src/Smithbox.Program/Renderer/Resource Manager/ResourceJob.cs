@@ -43,6 +43,11 @@ public class ResourceJob
     public string Name { get; }
     public int Progress { get; private set; }
 
+    /// <summary>
+    ///     Kept out of the resource load window, for loads the user isn't waiting on.
+    /// </summary>
+    public bool Hidden { get; set; }
+
     // Asset load pipelines
     internal IResourceLoadPipeline FlverLoadPipeline { get; }
     internal IResourceLoadPipeline HavokCollisionLoadPipeline { get; }

@@ -42,6 +42,11 @@ public class SceneRenderPipeline
 
     public float CPURenderTime => _renderQueue.CPURenderTime;
 
+    /// <summary>
+    ///     Number of renderables submitted by the last <see cref="RenderScene" />, up until the queue is executed.
+    /// </summary>
+    public int QueuedDrawCount => _renderQueue.Count;
+
     public uint EnvMapTexture = 0;
 
     /// <summary>
@@ -132,6 +137,15 @@ public class SceneRenderPipeline
 
         _overlayQueue = new SceneRenderer.RenderQueue("Overlay Render", device, this);
         SceneRenderer.RegisterRenderQueue(_overlayQueue);
+    }
+
+    /// <summary>
+    ///     Renders this pipeline to its own framebuffer instead of the swapchain.
+    /// </summary>
+    public void SetOffscreen()
+    {
+        _renderQueue.IsOffscreen = true;
+        _overlayQueue.IsOffscreen = true;
     }
 
     public void SetViewportSetupAction(Action<GraphicsDevice, CommandList> action)

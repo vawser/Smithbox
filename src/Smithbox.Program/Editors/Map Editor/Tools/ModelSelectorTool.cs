@@ -4,6 +4,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MetadataEditor;
 using StudioCore.Keybinds;
+using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -23,10 +24,18 @@ public class ModelSelectorTool
     public string ModelFilter = "";
     public bool ExactModelFilter = false;
 
+    private ModelPreviewBrowser PreviewBrowser;
+
+    // The entries for the previews, which only change along with these
+    private List<ModelPreviewEntry> PreviewEntries = new();
+    private (ProjectAliasType AliasType, string MapID, string Filter, bool Exact, bool LowDetail) PreviewEntriesKey;
+
     public ModelSelectorTool(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+
+        PreviewBrowser = new ModelPreviewBrowser(project);
     }
 
     /// <summary>
@@ -35,6 +44,22 @@ public class ModelSelectorTool
     public void OnToolWindow()
     {
         ImGui.BeginChild("ModelSelectorToolSection", ImGuiChildFlags.Borders);
+
+        if (ImGui.RadioButton("List##modelSelectorListMode", !CFG.Current.MapEditor_Model_Selector_Use_Previews))
+        {
+            CFG.Current.MapEditor_Model_Selector_Use_Previews = false;
+        }
+        GUI.Tooltip("Display the models as a list of names.");
+
+        ImGui.SameLine();
+
+        if (ImGui.RadioButton("3D Previews##modelSelectorPreviewMode", CFG.Current.MapEditor_Model_Selector_Use_Previews))
+        {
+            CFG.Current.MapEditor_Model_Selector_Use_Previews = true;
+        }
+        GUI.Tooltip("Display the models as a grid of 3D previews.");
+
+        GUI.Spacer();
 
         GUI.WrappedText("Use this to switch a selected map object to a different model.");
 
@@ -54,8 +79,15 @@ public class ModelSelectorTool
         //ImGui.Checkbox("Update Params on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_NpcParams);
         //UIHelper.Tooltip("When a map object is switched to a new form, update the NpcParam and NpcThinkParam to the closest suitable rows (based on the character ID).");
 
+        var usePreviews = CFG.Current.MapEditor_Model_Selector_Use_Previews;
+
         GUI.Spacer();
-        GUI.SimpleHeader("List", "");
+        GUI.SimpleHeader(usePreviews ? "3D Previews" : "List", "");
+
+        if (usePreviews)
+        {
+            PreviewBrowser.DisplayOptions();
+        }
 
         EditorFilters.DisplayFramedListFilter("modelSelector", ref ModelFilter, ref ExactModelFilter);
 
@@ -67,15 +99,37 @@ public class ModelSelectorTool
 
             if (EntityHelper.IsPartEnemy(firstSelection) || EntityHelper.IsPartDummyEnemy(firstSelection))
             {
-                DisplayCharacterList();
+                if (usePreviews)
+                {
+                    DisplayPreviews(ProjectAliasType.Characters, ModelPreviewKind.Character, FileSelectionType.Character);
+                }
+                else
+                {
+                    DisplayCharacterList();
+                }
             }
             else if (EntityHelper.IsPartAsset(firstSelection) || EntityHelper.IsPartDummyAsset(firstSelection))
             {
-                DisplayAssetList();
+                if (usePreviews)
+                {
+                    DisplayPreviews(ProjectAliasType.Assets, ModelPreviewKind.Asset, FileSelectionType.Asset);
+                }
+                else
+                {
+                    DisplayAssetList();
+                }
             }
             else if (EntityHelper.IsPartMapPiece(firstSelection))
             {
-                DisplayMapPieceList();
+                if (usePreviews && firstSelection.Parent != null)
+                {
+                    // Map pieces are specific to a map, so the only ones that can be switched to are in this one
+                    DisplayPreviews(ProjectAliasType.MapPieces, ModelPreviewKind.MapPiece, FileSelectionType.MapPiece, firstSelection.Parent.Name);
+                }
+                else
+                {
+                    DisplayMapPieceList();
+                }
             }
             else if (EntityHelper.IsPartCollision(firstSelection))
             {
@@ -99,6 +153,46 @@ public class ModelSelectorTool
         }
 
         ImGui.EndChild();
+    }
+
+    private void DisplayPreviews(ProjectAliasType aliasType, ModelPreviewKind kind, FileSelectionType selectionType, string mapId = "")
+    {
+        var key = (aliasType, mapId, ModelFilter, ExactModelFilter, CFG.Current.MapEditor_Model_Selector_Display_Low_Detail_Entries);
+
+        if (key != PreviewEntriesKey)
+        {
+            PreviewEntriesKey = key;
+
+            PreviewEntries = new();
+
+            if (View.Project.Handler.ProjectData.Aliases.TryGetValue(aliasType, out List<AliasEntry> aliases))
+            {
+                foreach (var entry in aliases)
+                {
+                    if ((mapId == "" || IsMapPieceOfMap(entry, mapId)) && FilterSelectionList(entry))
+                    {
+                        PreviewEntries.Add(new ModelPreviewEntry(entry.ID, entry.Name, kind, mapId));
+                    }
+                }
+            }
+        }
+
+        PreviewBrowser.SelectedID = _selectedEntry;
+
+        PreviewBrowser.Display("modelSelector", PreviewEntries, e => ApplyMapAssetSelection(e.ID, selectionType, mapId));
+
+        _selectedEntry = PreviewBrowser.SelectedID;
+    }
+
+    private bool IsMapPieceOfMap(AliasEntry entry, string mapId)
+    {
+        // DS1 names its map pieces m0000B0A10, the rest m10_00_00_00_000000
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        {
+            return entry.ID.EndsWith($"A{mapId.Substring(1, 2)}");
+        }
+
+        return entry.ID.StartsWith(mapId);
     }
 
     private void DisplayCharacterList()
@@ -345,7 +439,7 @@ public class ModelSelectorTool
         }
     }
 
-    private void ApplyMapAssetSelection(string _selectedName, FileSelectionType type, string mapId = "")
+    public void ApplyMapAssetSelection(string _selectedName, FileSelectionType type, string mapId = "")
     {
         var modelName = _selectedName;
 

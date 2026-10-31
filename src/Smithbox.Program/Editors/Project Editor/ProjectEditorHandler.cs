@@ -8,6 +8,7 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
+using StudioCore.Renderer;
 
 namespace StudioCore.Application;
 
@@ -305,6 +306,8 @@ public class ProjectEditorHandler : IDisposable
 
     public void Dispose()
     {
+        ModelPreviewCache.Release(Project);
+
         ProjectData?.Dispose();
 
         MapData?.Dispose();

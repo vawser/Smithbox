@@ -15,6 +15,11 @@ public class ResourceJobBuilder
         _job = new ResourceJob(name);
     }
 
+    internal void SetHidden(bool hidden)
+    {
+        _job.Hidden = hidden;
+    }
+
     internal void AddContainer(ContainerLoadAction action)
     {
         _job.AddContainer(action);

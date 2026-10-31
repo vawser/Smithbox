@@ -216,6 +216,10 @@ public class CFG
     public bool MapEditor_Model_Selector_Display_Aliases = true;
     public bool MapEditor_Model_Selector_Display_Tags = false;
     public bool MapEditor_Model_Selector_Display_Low_Detail_Entries = false;
+    public bool MapEditor_Model_Selector_Use_Previews = false;
+
+    public int Interface_Model_Preview_Size = 150;
+    public bool Interface_Asset_Browser_Use_Previews = true;
 
     public bool MapEditor_Enable_Character_Substitution = false;
     public string MapEditor_Character_Substitution_ID = "c0000";
@@ -608,6 +612,7 @@ public class CFG
     public bool Interface_ModelEditor_Tool_ResourceMonitor = true;
     public bool Interface_ModelEditor_Tool_Data_Transfer = true;
     public bool Interface_ModelEditor_Tool_ModelExport = true;
+    public bool Interface_ModelEditor_Tool_AssetBrowser = true;
 
     // Saving
     public bool ModelEditor_Allow_Unmodified_Save = false;

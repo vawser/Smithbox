@@ -129,6 +129,11 @@ public static class ResourceLoadTracker
     /// </summary>
     internal static void Retire(ResourceJob job)
     {
+        if (job.Hidden)
+        {
+            return;
+        }
+
         lock (_lock)
         {
             GetCategory(job.Name).Retired += Math.Max(job.Progress, job.GetEstimateTaskSize());
@@ -168,6 +173,12 @@ public static class ResourceLoadTracker
             foreach (KeyValuePair<ResourceJob, int> entry in ResourceManager.ActiveJobProgress)
             {
                 ResourceJob job = entry.Key;
+
+                if (job.Hidden)
+                {
+                    continue;
+                }
+
                 Category category = GetCategory(job.Name);
                 var size = job.GetEstimateTaskSize();
 

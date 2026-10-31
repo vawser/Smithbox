@@ -50,6 +50,13 @@ public sealed class ResourcePool : IDisposable
     public string Name { get; }
 
     /// <summary>
+    ///     Models in this pool are for looking at the shape of and nothing else. They don't ask for their
+    ///     textures, whatever the viewport's texturing setting is, and take the quickest route through loading.
+    ///     Set this before anything is loaded.
+    /// </summary>
+    public bool ModelsOnly { get; init; }
+
+    /// <summary>
     ///     Snapshot of every handle in the pool, loaded or not. Cheap to call repeatedly.
     /// </summary>
     public IReadOnlyList<IResourceHandle> Handles
@@ -163,6 +170,7 @@ public sealed class ResourcePool : IDisposable
                 }
 
                 builder ??= ResourceManager.CreateNewJob(options.JobName ?? $"{Name}: {source.Path}");
+                builder.SetHidden(options.HideFromLoadWindow);
                 builder.AddContainer(new ContainerLoadAction(this, source.Path, source.Origin, source.Data, options,
                     GetSequence(key), success => OnContainerFinished(key, options, source.Origin, success)));
                 added.Add(key);

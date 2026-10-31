@@ -5,8 +5,6 @@
 
 - add Object Mass Edit that allows for addition/deletion of map objects programmatically
 
-- implement Edge support for SDT
-
 - Get gizmos to work in Orthographic/Oblique view mode
 
 - Add progress modal to the prefab import/export

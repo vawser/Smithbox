@@ -9,6 +9,7 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Logger;
+using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.IO;
@@ -48,6 +49,8 @@ public class ProjectEntry
 
             if (Handler.ModelEditorStub != null)
                 Handler.ModelEditorStub.Draw(device, cl);
+
+            ModelPreviewCache.Draw(this);
         }
     }
 

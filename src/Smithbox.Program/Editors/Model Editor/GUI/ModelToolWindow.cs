@@ -70,6 +70,14 @@ public class ModelToolWindow
             View.ModelExportTool.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_ModelEditor_Tool_AssetBrowser)
+        {
+            if (ImGui.CollapsingHeader($"{LOC.Get("MODEL_AssetBrowser_Header")}##modelAssetBrowserHeader"))
+            {
+                View.AssetBrowserTool.Display();
+            }
+        }
+
         if (CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor)
         {
             View.ResourceListTool.Display("modelEditor", View.Universe);
@@ -122,6 +130,13 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_ModelExport = !CFG.Current.Interface_ModelEditor_Tool_ModelExport;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelExport);
+
+            // Asset Browser
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Asset_Browser")}##assetBrowserToggle"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_AssetBrowser = !CFG.Current.Interface_ModelEditor_Tool_AssetBrowser;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_AssetBrowser);
 
             // Resource Monitor
             if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Resource_Monitor")}##resourceMonitorToggle"))

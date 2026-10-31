@@ -254,13 +254,13 @@ public class MapToolWindow
             View.ResourceListTool.Display("mapEditor", View.Universe);
         }
 
-        //if (CFG.Current.Interface_MapEditor_Tool_AssetBrowser)
-        //{
-        //    if (ImGui.CollapsingHeader("Asset Browser"))
-        //    {
-        //        activeView.AssetBrowser.Display();
-        //    }
-        //}
+        if (CFG.Current.Interface_MapEditor_Tool_AssetBrowser)
+        {
+            if (ImGui.CollapsingHeader("Asset Browser"))
+            {
+                View.AssetBrowserTool.Display();
+            }
+        }
     }
 
     public void ViewMenu()
@@ -339,7 +339,7 @@ public class MapToolWindow
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_DisplayGroups);
 
-            if (ImGui.MenuItem("Display Groups"))
+            if (ImGui.MenuItem("Asset Browser"))
             {
                 CFG.Current.Interface_MapEditor_Tool_AssetBrowser = !CFG.Current.Interface_MapEditor_Tool_AssetBrowser;
             }

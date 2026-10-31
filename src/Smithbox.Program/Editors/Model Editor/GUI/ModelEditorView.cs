@@ -49,6 +49,7 @@ public class ModelEditorView : IEditorView
     public ModelCharacterPreview ModelCharacterPreview;
     public ResourceListTool ResourceListTool;
     public ModelExportTool ModelExportTool;
+    public AssetBrowserTool AssetBrowserTool;
 
     // Actions
     public DuplicateAction DuplicateAction;
@@ -96,6 +97,8 @@ public class ModelEditorView : IEditorView
         ModelCharacterPreview = new ModelCharacterPreview(this, Project);
         ResourceListTool = new ResourceListTool();
         ModelExportTool = new ModelExportTool(this, Project);
+        AssetBrowserTool = new AssetBrowserTool(Project, LOC.Get("MODEL_AssetBrowser_Hint"),
+            e => SourceList.SelectAndLoadModel(e.ID));
 
         // Actions
         DuplicateAction = new DuplicateAction(this, Project);
