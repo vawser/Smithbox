@@ -37,6 +37,7 @@ public class MapData : IDisposable
     // Map sidecar file banks, keyed by map or file name.
     // Shared by all map editor views, as each map can only be loaded once.
     public HavokCollisionBank HavokCollisionBank;
+    public GrassBank GrassBank;
     public HavokNavmeshBank HavokNavmeshBank;
     public AutoInvadeBank AutoInvadeBank;
     public LightAtlasBank LightAtlasBank;
@@ -71,6 +72,7 @@ public class MapData : IDisposable
         // Sidecar banks read through the primary bank's file system (some during construction),
         // so they are created once it exists
         HavokCollisionBank = new HavokCollisionBank(Project);
+        GrassBank = new GrassBank(Project);
         HavokNavmeshBank = new HavokNavmeshBank(Project);
         AutoInvadeBank = new AutoInvadeBank(Project);
         LightAtlasBank = new LightAtlasBank(Project);

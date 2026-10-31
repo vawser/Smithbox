@@ -69,6 +69,10 @@
       "Text": "Object Collision"
     },
     {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Grass",
+      "Text": "Grass"
+    },
+    {
       "Key": "VIEWPORT_ENUM_RenderFilter_All",
       "Text": "All"
     },

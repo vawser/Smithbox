@@ -58,6 +58,12 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     private Matrix4x4 _attachTransform = Matrix4x4.Identity;
 
+    private Matrix4x4[]? _instanceTransforms;
+    private BoundingBox _instanceBounds;
+
+    // Instance count of _worldBuffer, 0 for the single slot of a non-instanced mesh
+    private int _worldBufferInstances;
+
     public event Action<MeshRenderableProxy>? MeshAvailabilityChanged;
 
     public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true, string name = "", int? submeshIndex = null)
@@ -159,6 +165,43 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
             {
                 sm.AttachTransform = value;
+            }
+        }
+    }
+
+    /// <summary>
+    ///     Draws this mesh once per transform with a single instanced draw, such as grass on a model.
+    ///     Each transform sits between the mesh and <see cref="World" />. Null draws the mesh once.
+    /// </summary>
+    public Matrix4x4[]? InstanceTransforms
+    {
+        get => _instanceTransforms;
+        set
+        {
+            _instanceTransforms = value;
+
+            if (value is { Length: > 0 })
+            {
+                Vector3 min = value[0].Translation;
+                Vector3 max = min;
+
+                foreach (Matrix4x4 transform in value)
+                {
+                    min = Vector3.Min(min, transform.Translation);
+                    max = Vector3.Max(max, transform.Translation);
+                }
+
+                _instanceBounds = new BoundingBox(min, max);
+            }
+
+            if (_registered)
+            {
+                ScheduleRenderableConstruction();
+            }
+
+            foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
+            {
+                sm.InstanceTransforms = value;
             }
         }
     }
@@ -306,6 +349,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             child.DrawGroups = _drawgroups;
             child.Animator = _animator;
             child.AttachTransform = _attachTransform;
+            child.InstanceTransforms = _instanceTransforms;
 
             // Children are created once the provider has loaded (async), which can be after the
             // outline was requested on this proxy. Without this they never get the selection outline.
@@ -476,6 +520,8 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             _worldBuffer.Dispose();
             _worldBuffer = null;
         }
+
+        _worldBufferInstances = 0;
     }
 
     public override unsafe void ConstructRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp)
@@ -524,10 +570,9 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         }
 
         ResourceFactory? factory = gd.ResourceFactory;
-        if (_worldBuffer == null)
+        if (!EnsureWorldBuffer())
         {
-            _worldBuffer =
-                SceneRenderer.UniformBufferAllocator.Allocate((uint)sizeof(InstanceData), sizeof(InstanceData));
+            return;
         }
 
         // Construct pipeline
@@ -584,7 +629,9 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         _perObjectResourceSet = StaticResourceCache.GetResourceSet(factory, new ResourceSetDescription(
             mainPerObjectLayout,
-            SceneRenderer.UniformBufferAllocator.BackingBuffer));
+            _worldBufferInstances > 0
+                ? SceneRenderer.GrassInstanceAllocator.Value.BackingBuffer
+                : SceneRenderer.UniformBufferAllocator.BackingBuffer));
 
         // Build default pipeline
         GraphicsPipelineDescription pipelineDescription = new();
@@ -628,7 +675,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                          (uint)_meshProvider.IndexOffset;
         meshcomp._indirectArgs.FirstInstance = _worldBuffer.AllocationStart / (uint)sizeof(InstanceData);
         meshcomp._indirectArgs.VertexOffset = (int)(geombuffer.VAllocationStart / _meshProvider.VertexSize);
-        meshcomp._indirectArgs.InstanceCount = 1;
+        meshcomp._indirectArgs.InstanceCount = (uint)Math.Max(_worldBufferInstances, 1);
         meshcomp._indirectArgs.FirstIndex = indexStart;
         meshcomp._indirectArgs.IndexCount = (uint)_meshProvider.IndexCount;
 
@@ -647,8 +694,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         _renderablesSet.cSelectionPipelines[_renderable] = _pickingPipeline;
 
         // Update instance data
-        InstanceData dat = CreateInstanceData();
-        _worldBuffer.FillBuffer(gd, cl, ref dat);
+        FillWorldBuffer(gd, cl);
 
         // Selectable
         _renderablesSet.cSelectables[_renderable] = _selectable;
@@ -700,14 +746,12 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             return;
         }
 
-        InstanceData dat = CreateInstanceData();
-        if (_worldBuffer == null)
+        if (!EnsureWorldBuffer())
         {
-            _worldBuffer =
-                SceneRenderer.UniformBufferAllocator.Allocate((uint)sizeof(InstanceData), sizeof(InstanceData));
+            return;
         }
 
-        _worldBuffer.FillBuffer(gd, cl, ref dat);
+        FillWorldBuffer(gd, cl);
 
         if (_renderable != -1)
         {
@@ -718,6 +762,53 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         {
             _renderablesSet.cBounds[_selectionOutlineRenderable] = GetWorldBounds();
         }
+    }
+
+    /// <summary>
+    ///     Makes sure the world buffer fits the current instances. Instanced meshes use a fixed budget, as
+    ///     renderables keep the resource set of the buffer they were built with, so it can't grow under them.
+    ///     False if the budget has run out, in which case the mesh isn't drawn.
+    /// </summary>
+    private unsafe bool EnsureWorldBuffer()
+    {
+        var instances = _instanceTransforms?.Length ?? 0;
+
+        if (_worldBuffer != null && _worldBufferInstances == instances)
+        {
+            return true;
+        }
+
+        _worldBuffer?.Dispose();
+
+        _worldBuffer = instances > 0
+            ? SceneRenderer.GrassInstanceAllocator.Value.TryAllocate((uint)(sizeof(InstanceData) * instances), sizeof(InstanceData))
+            : SceneRenderer.UniformBufferAllocator.Allocate((uint)sizeof(InstanceData), sizeof(InstanceData));
+
+        _worldBufferInstances = instances;
+
+        return _worldBuffer != null;
+    }
+
+    private void FillWorldBuffer(GraphicsDevice gd, CommandList cl)
+    {
+        InstanceData dat = CreateInstanceData();
+
+        if (_worldBufferInstances == 0)
+        {
+            _worldBuffer!.FillBuffer(gd, cl, ref dat);
+            return;
+        }
+
+        var instances = new InstanceData[_worldBufferInstances];
+        Matrix4x4 attachedWorld = _attachTransform * _world;
+
+        for (var i = 0; i < instances.Length; i++)
+        {
+            instances[i] = dat;
+            instances[i].WorldMatrix = _meshProvider.ObjectTransform * _instanceTransforms![i] * attachedWorld;
+        }
+
+        _worldBuffer!.FillBuffer(gd, cl, instances);
     }
 
     private InstanceData CreateInstanceData()
@@ -759,6 +850,16 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     private BoundingBox GetWorldBounds()
     {
+        if (_instanceTransforms is { Length: > 0 })
+        {
+            // Instances are scaled up to 200%, and the mesh can be turned any way around its position
+            var margin = (_meshProvider.Bounds.Max - _meshProvider.Bounds.Min).Length() * 2f;
+            Vector3 extent = new(margin);
+            BoundingBox grown = new(_instanceBounds.Min - extent, _instanceBounds.Max + extent);
+
+            return BoundingBox.Transform(grown, _attachTransform * _world);
+        }
+
         BoundingBox bounds = BoundingBox.Transform(_meshProvider.Bounds, _meshProvider.ObjectTransform * _attachTransform * _world);
 
         if (_animator != null)

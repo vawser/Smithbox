@@ -41,6 +41,7 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     private RenderableProxy _collisionSceneMesh;
     private RenderableProxy _selectionFillMesh;
+    private IReadOnlyList<RenderableProxy> _grassSceneMeshes;
 
     /// <summary>
     /// Cached name for the entity.
@@ -158,6 +159,7 @@ public class Entity : ISelectable, IDisposable
             {
                 CollisionSceneMesh = null;
                 SelectionFillMesh = null;
+                GrassSceneMeshes = null;
             }
         }
         get => _renderSceneMesh;
@@ -182,6 +184,29 @@ public class Entity : ISelectable, IDisposable
             ApplyMeshState();
         }
         get => _collisionSceneMesh;
+    }
+
+    /// <summary>
+    /// The grass meshes laid upon the render scene mesh, one per grass type used (e.g. map pieces and assets).
+    /// </summary>
+    [XmlIgnore]
+    public IReadOnlyList<RenderableProxy> GrassSceneMeshes
+    {
+        set
+        {
+            if (_grassSceneMeshes != null)
+            {
+                foreach (RenderableProxy mesh in _grassSceneMeshes)
+                {
+                    mesh.Dispose();
+                }
+            }
+
+            _grassSceneMeshes = value;
+
+            ApplyMeshState();
+        }
+        get => _grassSceneMeshes;
     }
 
     /// <summary>
@@ -304,6 +329,14 @@ public class Entity : ISelectable, IDisposable
             if (SelectionFillMesh != null)
             {
                 SelectionFillMesh.Visible = _EditorVisible && IsSelected;
+            }
+
+            if (_grassSceneMeshes != null)
+            {
+                foreach (RenderableProxy mesh in _grassSceneMeshes)
+                {
+                    mesh.Visible = _EditorVisible;
+                }
             }
 
             foreach (Entity child in Children)
@@ -1461,6 +1494,11 @@ public class Entity : ISelectable, IDisposable
                     SelectionFillMesh.Dispose();
                     _selectionFillMesh = null;
                 }
+
+                if (GrassSceneMeshes != null)
+                {
+                    GrassSceneMeshes = null;
+                }
             }
 
             disposedValue = true;
@@ -1523,6 +1561,14 @@ public class Entity : ISelectable, IDisposable
         ApplyProxyState(_renderSceneMesh, t, useRenderGroups);
         ApplyProxyState(_collisionSceneMesh, t, useRenderGroups);
         ApplyProxyState(_selectionFillMesh, t, useRenderGroups, _EditorVisible && IsSelected);
+
+        if (_grassSceneMeshes != null)
+        {
+            foreach (RenderableProxy mesh in _grassSceneMeshes)
+            {
+                ApplyProxyState(mesh, t, useRenderGroups);
+            }
+        }
     }
 
     private void ApplyProxyState(RenderableProxy proxy, Matrix4x4 world, bool useRenderGroups)

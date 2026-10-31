@@ -331,6 +331,8 @@ public class CFG
     public bool MapEditor_BasicFilter_Collision = true;
     public bool MapEditor_BasicFilter_ConnectCollision = true;
     public bool MapEditor_BasicFilter_ObjectCollision = false;
+    public bool MapEditor_BasicFilter_Grass = false;
+    public float MapEditor_Grass_Density = 1f;
     public bool MapEditor_BasicFilter_Navmesh = true;
     public bool MapEditor_BasicFilter_SpeedTree = true;
     public bool MapEditor_BasicFilter_InvasionPoint = true;

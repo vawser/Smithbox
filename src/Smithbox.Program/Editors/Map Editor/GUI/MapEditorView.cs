@@ -31,6 +31,7 @@ public class MapEditorView : IEditorView
     // Project-level banks, shared by all views
     public AutoInvadeBank AutoInvadeBank => Project.Handler.MapData.AutoInvadeBank;
     public HavokCollisionBank HavokCollisionBank => Project.Handler.MapData.HavokCollisionBank;
+    public GrassBank GrassBank => Project.Handler.MapData.GrassBank;
     public HavokNavmeshBank HavokNavmeshBank => Project.Handler.MapData.HavokNavmeshBank;
     public LightAtlasBank LightAtlasBank => Project.Handler.MapData.LightAtlasBank;
     public LightProbeBank LightProbeBank => Project.Handler.MapData.LightProbeBank;

@@ -575,6 +575,12 @@ public class MapEditorScreen : EditorScreen
 
             view?.HavokCollisionBank.UpdateObjectCollision(view.ViewportHandler.ActiveViewport.RenderScene.DrawFilter);
         }
+
+        // The bank is shared by all views, so grass stays built while any of them displays it
+        var showGrass = ViewHandler.Views.Any(view => view != null &&
+            view.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Grass));
+
+        ViewHandler.ActiveView?.GrassBank.Update(showGrass);
     }
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)

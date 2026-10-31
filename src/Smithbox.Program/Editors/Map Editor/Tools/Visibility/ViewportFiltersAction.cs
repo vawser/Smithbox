@@ -28,6 +28,8 @@ public class ViewportFiltersAction
     private bool RenderCollision = false;
     private bool RenderConnectCollision = false;
     private bool RenderObjectCollision = false;
+    private bool RenderGrass = false;
+    private float GrassDensity = CFG.Current.MapEditor_Grass_Density;
     private bool RenderNavmesh = false;
     private bool RenderSpeedTree = false;
     private bool RenderInvasionPoint = false;
@@ -53,6 +55,7 @@ public class ViewportFiltersAction
         RenderCollision = drawFilter.HasFlag(RenderFilter.Collision);
         RenderConnectCollision = drawFilter.HasFlag(RenderFilter.ConnectCollision);
         RenderObjectCollision = drawFilter.HasFlag(RenderFilter.ObjectCollision);
+        RenderGrass = drawFilter.HasFlag(RenderFilter.Grass);
         RenderNavmesh = drawFilter.HasFlag(RenderFilter.Navmesh);
         RenderSpeedTree = drawFilter.HasFlag(RenderFilter.SpeedTree);
         RenderInvasionPoint = drawFilter.HasFlag(RenderFilter.AutoInvade);
@@ -126,6 +129,21 @@ public class ViewportFiltersAction
             scene.ToggleDrawFilter(RenderFilter.ObjectCollision);
             RenderObjectCollision = scene.DrawFilter.HasFlag(RenderFilter.ObjectCollision);
             CFG.Current.MapEditor_BasicFilter_ObjectCollision = RenderObjectCollision;
+        }
+
+        if (ImGui.Checkbox("Grass", ref RenderGrass))
+        {
+            scene.ToggleDrawFilter(RenderFilter.Grass);
+            RenderGrass = scene.DrawFilter.HasFlag(RenderFilter.Grass);
+            CFG.Current.MapEditor_BasicFilter_Grass = RenderGrass;
+        }
+
+        ImGui.SliderFloat("Grass Density", ref GrassDensity, 0.1f, 4f);
+
+        // Each change rebuilds the grass, so it waits for the slider to be let go
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            CFG.Current.MapEditor_Grass_Density = GrassDensity;
         }
 
         if (ImGui.Checkbox("Navmesh", ref RenderNavmesh))

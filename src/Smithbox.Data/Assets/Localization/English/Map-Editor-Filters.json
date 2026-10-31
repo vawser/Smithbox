@@ -81,6 +81,14 @@
       "Text": "Toggle the display of the collision meshes of assets. These are read when first displayed, so turning this on can take a moment."
     },
     {
+      "Key": "MAP_Filters_Grass_Title",
+      "Text": "Grass"
+    },
+    {
+      "Key": "MAP_Filters_Grass_TT",
+      "Text": "Toggle the display of the grass laid upon map pieces and assets. It is built when first displayed, and its layout only approximates the game's."
+    },
+    {
       "Key": "MAP_Filters_Navmeshes_Title",
       "Text": "Navmeshes"
     },

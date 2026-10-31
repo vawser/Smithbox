@@ -198,6 +198,9 @@ public class PropChangeAction : ViewportAction
         {
             msbEnt.RefreshModel();
         }
+
+        // Only rebuilds if the grass fields have changed
+        (TargetEnt as MsbEntity)?.RefreshGrass();
     }
 
     public override ActionEvent Undo()

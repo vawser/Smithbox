@@ -79,6 +79,7 @@ public class MsbEntity : Entity
             case MsbEntityType.Part:
                 AssignPartDrawable();
                 AssignObjectCollisionDrawable();
+                RefreshGrass();
                 break;
 
             case MsbEntityType.Region:
@@ -234,6 +235,122 @@ public class MsbEntity : Entity
             return;
 
         CollisionSceneMesh = CreateObjectCollisionMesh(asset);
+    }
+
+    /// <summary>
+    /// What the displayed (or requested) grass was built from. Null if there is none.
+    /// </summary>
+    [XmlIgnore]
+    public string GrassKey { get; set; }
+
+    /// <summary>
+    /// Requests the grass of this part. Only does anything while grass is displayed and when it has changed.
+    /// </summary>
+    public void RefreshGrass()
+    {
+        if (Type is not MsbEntityType.Part || Owner is not MapUniverse curUniverse)
+            return;
+
+        curUniverse.Project.Handler.MapData.GrassBank?.Request(this);
+    }
+
+    public void ClearGrass()
+    {
+        GrassKey = null;
+        GrassSceneMeshes = null;
+    }
+
+    /// <summary>
+    /// The GrassTypeParam rows of this part, one for each density in the GRASS file of its model.
+    /// Null if this part doesn't have any.
+    /// </summary>
+    public int[] GetGrassParamIds()
+    {
+        var property = GetProperty("GrassConfigStruct") ?? GetProperty("GrassData");
+
+        return property?.GetValue(WrappedObject) switch
+        {
+            MSBE.Part.GrassConfigStruct e => new[] { e.GrassParamId0, e.GrassParamId1, e.GrassParamId2, e.GrassParamId3, e.GrassParamId4, e.GrassParamId5 },
+            MSBS.Part.GrassConfigStruct s => new[] { s.Unk00, s.Unk04, s.GrassTypeParamID, s.Unk0C, s.Unk10, s.Unk14 },
+            MSB_AC6.Part.GrassConfigStruct ac6 => ac6.GrassTypeParamIds,
+            MSB_NR.Part.GrassStruct nr => nr.GrassParamIds,
+            MSB_DB_NT.Part.GrassStruct db => db.GrassParamIds,
+            _ => null
+        };
+    }
+
+    public string GetPartModelName()
+    {
+        return GetProperty("ModelName")?.GetValue(WrappedObject) as string;
+    }
+
+    /// <summary>
+    /// The name of the model file of this part, without its extension.
+    /// </summary>
+    public string GetGrassModelFile()
+    {
+        var curProject = ((MapUniverse)Owner).Project;
+        var modelName = GetPartModelName();
+
+        if (!EntityHelper.IsPartMapPiece(this))
+            return modelName;
+
+        return ModelLocator.MapModelNameToAssetName(curProject, PathBuilder.GetAssetMapID(curProject, MapID), modelName);
+    }
+
+    /// <summary>
+    /// Displays finished grass. The models are requested here, as most of them aren't placed in any map.
+    /// </summary>
+    public void ApplyGrass(IReadOnlyList<GrassLayer> layers, HashSet<string> loadedModels)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        List<RenderableProxy> meshes = new();
+
+        foreach (GrassLayer layer in layers)
+        {
+            var asset = ModelLocator.GetObjModel(curProject, layer.ModelName, layer.ModelName);
+
+            var handle = ResourceManager.DefaultPool.Find<FlverResource>(asset.Name);
+
+            curUniverse.Project.Handler.MapData.GrassBank.HoldModel(handle);
+
+            var mesh = MeshRenderableProxy.FromHandle(scene, handle);
+
+            mesh.InstanceTransforms = layer.Transforms;
+            mesh.World = GetWorldMatrix();
+            mesh.SetSelectable(this);
+            mesh.DrawFilter = RenderFilter.Grass;
+
+            meshes.Add(mesh);
+
+            if (loadedModels.Add(layer.ModelName))
+            {
+                LoadAsset<FlverResource>(asset, MapResourceHandler.GetObjectModelsName(curProject), ResourceType.Flver | ResourceType.Texture);
+                LoadGrassTextures(layer.ModelName);
+            }
+        }
+
+        GrassSceneMeshes = meshes;
+    }
+
+    private void LoadGrassTextures(string modelName)
+    {
+        if (!CFG.Current.Viewport_Enable_Texturing || !CFG.Current.MapEditor_TextureLoad_Objects)
+            return;
+
+        var curUniverse = Owner as MapUniverse;
+
+        ResourceManager.DefaultPool.LoadAssets(curUniverse.Project, MapResourceHandler.GetModelTextureAssets(curUniverse.Project, modelName), new LoadOptions
+        {
+            JobName = LOC.Get("REND_Job_Additional_Textures"),
+            Types = ResourceType.Texture,
+            AccessLevel = AccessLevel.AccessGPUOptimizedOnly
+        });
+
+        curUniverse.ScheduleTextureRefresh();
     }
 
     public MeshRenderableProxy CreateMapPieceMesh(ResourceDescriptor asset)
@@ -1002,6 +1119,9 @@ public class MsbEntity : Entity
             AssignDrawable();
             SetupRenderMesh = true;
         }
+
+        // Editing the grass fields of a part only reaches here
+        RefreshGrass();
 
         base.UpdateRenderModel();
     }

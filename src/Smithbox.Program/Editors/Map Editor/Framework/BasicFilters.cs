@@ -59,6 +59,16 @@ public class BasicFilters
             View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.ObjectCollision;
         }
 
+        // Same as the above
+        if (CFG.Current.MapEditor_BasicFilter_Grass)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.Grass;
+        }
+        else
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.Grass;
+        }
+
         if (!CFG.Current.MapEditor_BasicFilter_Navmesh)
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
@@ -198,6 +208,17 @@ public class BasicFilters
         GUI.Tooltip(usesAssets
             ? LOC.Get("MAP_Filters_Asset_Collisions_TT")
             : LOC.Get("MAP_Filters_Object_Collisions_TT"));
+
+        // Grass
+        if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Grass_Title")}##toggleFilter_Grass"))
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Grass);
+            CFG.Current.MapEditor_BasicFilter_Grass = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Grass);
+            View.DelayPicking();
+        }
+        ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Grass);
+        GUI.ShowActiveStatus(ticked);
+        GUI.Tooltip(LOC.Get("MAP_Filters_Grass_TT"));
 
         // Navmesh
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Navmeshes_Title")}##toggleFilter_Navmesh"))

@@ -114,6 +114,9 @@ public class PropMultChangeAction : ViewportAction
             {
                 msbEnt.RefreshModel();
             }
+
+            // Only rebuilds if the grass fields have changed
+            (e as MsbEntity)?.RefreshGrass();
         }
 
         MapContainer.MarkEntitiesDirty(ChangedEnts);
@@ -167,6 +170,9 @@ public class PropMultChangeAction : ViewportAction
             {
                 msbEnt.RefreshModel();
             }
+
+            // Only rebuilds if the grass fields have changed
+            (e as MsbEntity)?.RefreshGrass();
         }
 
         MapContainer.MarkEntitiesDirty(ChangedEnts);

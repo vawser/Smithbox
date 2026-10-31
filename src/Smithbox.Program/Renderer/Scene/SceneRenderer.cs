@@ -52,6 +52,12 @@ public static class SceneRenderer
 
     public static VertexIndexBufferAllocator GeometryBufferAllocator { get; private set; }
     public static GPUBufferAllocator UniformBufferAllocator { get; private set; }
+
+    /// <summary>
+    /// Fixed budget for the per-instance data of grass. Only created once grass is displayed.
+    /// </summary>
+    public static Lazy<GPUBufferAllocator> GrassInstanceAllocator { get; private set; }
+
     public static GPUBufferAllocator MaterialBufferAllocator { get; private set; }
     public static GPUBufferAllocator BoneBufferAllocator { get; private set; }
     public static TexturePool GlobalTexturePool { get; private set; }
@@ -91,6 +97,8 @@ public static class SceneRenderer
         GeometryBufferAllocator = new VertexIndexBufferAllocator(Device, 256 * 1024 * 1024, 128 * 1024 * 1024);
         UniformBufferAllocator = new GPUBufferAllocator(5 * 1024 * 1024, VkBufferUsageFlags.StorageBuffer,
             (uint)sizeof(InstanceData));
+        GrassInstanceAllocator = new Lazy<GPUBufferAllocator>(() => new GPUBufferAllocator(64 * 1024 * 1024,
+            VkBufferUsageFlags.StorageBuffer, (uint)sizeof(InstanceData)));
 
         // Materials are 48 bytes, so this holds more of them than the 5MB it used to be did at 32 bytes
         MaterialBufferAllocator = new GPUBufferAllocator("materials", 8 * 1024 * 1024,

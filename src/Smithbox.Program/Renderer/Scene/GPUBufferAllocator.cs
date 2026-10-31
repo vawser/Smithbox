@@ -215,6 +215,24 @@ public class GPUBufferAllocator
         return handle;
     }
 
+    /// <summary>
+    /// Allocates without growing the buffer, for allocators with a fixed budget.
+    /// </summary>
+    public GPUBufferHandle TryAllocate(uint size, int alignment)
+    {
+        lock (_allocationLock)
+        {
+            if (!_allocator.AlignedAlloc(size, (uint)alignment, out var addr))
+            {
+                return null;
+            }
+
+            var handle = new GPUBufferHandle(this, addr, size);
+            _allocations.Add(handle);
+            return handle;
+        }
+    }
+
     private void Free(uint addr)
     {
         lock (_allocationLock)
@@ -315,6 +333,21 @@ public class GPUBufferAllocator
         }
 
         public void FillBuffer<T>(GraphicsDevice d, CommandList cl, ref T data) where T : struct
+        {
+            d.UpdateBuffer(_allocator._stagingBuffer, AllocationStart, data);
+            cl.CopyBuffer(_allocator._stagingBuffer,
+                AllocationStart,
+                _allocator._backingBuffer,
+                AllocationStart,
+                AllocationSize);
+            cl.BufferBarrier(_allocator._backingBuffer,
+                VkPipelineStageFlags2.Transfer,
+                VkAccessFlags2.TransferWrite,
+                VkPipelineStageFlags2.AllGraphics,
+                _allocator._dstAccessFlags);
+        }
+
+        public void FillBuffer<T>(GraphicsDevice d, CommandList cl, T[] data) where T : struct
         {
             d.UpdateBuffer(_allocator._stagingBuffer, AllocationStart, data);
             cl.CopyBuffer(_allocator._stagingBuffer,

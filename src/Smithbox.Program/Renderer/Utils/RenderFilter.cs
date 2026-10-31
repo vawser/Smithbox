@@ -57,6 +57,9 @@ public enum RenderFilter
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_ObjectCollision")]
     ObjectCollision = 65536,
 
+    [Display(Name = "VIEWPORT_ENUM_RenderFilter_Grass")]
+    Grass = 131072,
+
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_All")]
     All = 0xFFFFFFF
 }

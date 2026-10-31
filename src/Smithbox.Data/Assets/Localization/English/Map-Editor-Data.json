@@ -237,6 +237,10 @@
       "Text": "Failed to setup Grass List."
     },
     {
+      "Key": "MAP_Grass_Failed_To_Read",
+      "Text": "Failed to read the grass of {0}."
+    },
+    {
       "Key": "MAP_Data_Setup_Aux_Bank_FAIL",
       "Text": "Failed to setup Auxiliary MSB Bank for {0}."
     },
