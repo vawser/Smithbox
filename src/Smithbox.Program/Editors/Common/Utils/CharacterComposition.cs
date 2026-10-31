@@ -26,6 +26,32 @@ public sealed record CharacterPart(string Name, string? AttachNode = null);
 public sealed record CharacterAppearance(IReadOnlyList<CharacterPart> Parts, int[]? Masks);
 
 /// <summary>
+///     The places on a character that hold a part model.
+/// </summary>
+public enum CharacterSlot
+{
+    Head,
+    Body,
+    Arms,
+    Legs,
+    RightHand,
+    LeftHand
+}
+
+/// <summary>
+///     A set of part models chosen by hand, rather than coming from CharaInitParam.
+/// </summary>
+public sealed class CharacterLoadout
+{
+    public bool IsFemale { get; set; }
+
+    /// <summary>
+    ///     The part model in each slot. Slots that aren't listed are empty.
+    /// </summary>
+    public Dictionary<CharacterSlot, string> Parts { get; } = new();
+}
+
+/// <summary>
 ///     Builds player-like characters. The FLVER of c0000 only holds a skeleton: what is drawn is the
 ///     body from the parts folder, and the armor and weapons on top of it come from CharaInitParam.
 ///     Faces (fg_*) are not displayed yet.
@@ -47,9 +73,8 @@ public static class CharacterComposition
     private const string RightHandNode = "R_Weapon";
     private const string LeftHandNode = "L_Weapon";
 
-    // Weapons point down -Y from the grip, which is behind the character in the space of these bones.
-    // Rolling around the forearm turns the blade around, and puts the plate of a shield on the outside.
-    private static readonly Matrix4x4 WeaponGrip = Matrix4x4.CreateRotationX(MathF.PI);
+    // Rolling around the forearm turns a blade around, and puts the plate of a shield on the outside
+    private static readonly Matrix4x4 WeaponRoll = Matrix4x4.CreateRotationX(MathF.PI);
 
     // Elden Ring leaves the plain flags empty, and uses the SexVer ones instead
     private static readonly Regex InvisibleFlag = new(@"^invisibleFlag(?:_SexVer)?(\d+)$",
@@ -106,7 +131,7 @@ public static class CharacterComposition
             }
         }
 
-        AddFirstFound($"fc_{sex}_0100", $"fc_{sex}_0000", "fc_m_0100", "fc_m_0000");
+        AddFirstFound(GetBodyPartNames(sex));
 
         if (charaInit == null)
         {
@@ -173,6 +198,109 @@ public static class CharacterComposition
     }
 
     /// <summary>
+    ///     Gets the parts of a character dressed by hand.
+    /// </summary>
+    public static CharacterAppearance Resolve(ProjectEntry project, CharacterLoadout loadout)
+    {
+        HashSet<string> partNames = GetPartNames(project);
+
+        var sex = loadout.IsFemale ? "f" : "m";
+        var hasSplitBody = project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R;
+
+        List<CharacterPart> parts = new();
+
+        if (GetBodyPartNames(sex).FirstOrDefault(partNames.Contains) is { } body)
+        {
+            parts.Add(new CharacterPart(body));
+        }
+
+        var masks = new int[MaskCount];
+        Array.Fill(masks, 1);
+
+        foreach (CharacterSlot slot in Enum.GetValues<CharacterSlot>())
+        {
+            var isWeapon = slot is CharacterSlot.RightHand or CharacterSlot.LeftHand;
+
+            if (loadout.Parts.TryGetValue(slot, out var name) && partNames.Contains(name))
+            {
+                if (isWeapon)
+                {
+                    parts.Add(new CharacterPart(name, slot is CharacterSlot.RightHand ? RightHandNode : LeftHandNode));
+                }
+                else
+                {
+                    parts.Add(new CharacterPart(name));
+
+                    if (FindProtector(project, slot, name) is { } protector)
+                    {
+                        HideMasks(protector, masks);
+                    }
+                }
+            }
+            else if (hasSplitBody && !isWeapon && slot is not CharacterSlot.Head)
+            {
+                var prefix = GetSlotPrefix(slot);
+
+                if (new[] { $"{prefix}_{sex}_0000", $"{prefix}_m_0000" }.FirstOrDefault(partNames.Contains) is { } bare)
+                {
+                    parts.Add(new CharacterPart(bare));
+                }
+            }
+        }
+
+        return new CharacterAppearance(parts, masks);
+    }
+
+    /// <summary>
+    ///     Gets the names of the part models that can fill a slot.
+    /// </summary>
+    public static IReadOnlyList<string> GetSlotParts(ProjectEntry project, CharacterSlot slot)
+    {
+        Regex name = new($@"^{GetSlotPrefix(slot)}_[a-z]_\d{{4}}$");
+
+        return GetPartNames(project).Where(p => name.IsMatch(p)).OrderBy(p => p, StringComparer.Ordinal).ToList();
+    }
+
+    private static string GetSlotPrefix(CharacterSlot slot)
+    {
+        return slot switch
+        {
+            CharacterSlot.Head => "hd",
+            CharacterSlot.Body => "bd",
+            CharacterSlot.Arms => "am",
+            CharacterSlot.Legs => "lg",
+            _ => "wp"
+        };
+    }
+
+    // The body is stored as a face model, and these are in order of preference
+    private static string[] GetBodyPartNames(string sex)
+    {
+        return new[] { $"fc_{sex}_0100", $"fc_{sex}_0000", "fc_m_0100", "fc_m_0000" };
+    }
+
+    // A chosen model comes without a row, so use a row that wears it to find out what it covers
+    private static Param.Row? FindProtector(ProjectEntry project, CharacterSlot slot, string partName)
+    {
+        if (project.Handler.ParamData?.PrimaryBank?.Params is not { } bank ||
+            !bank.TryGetValue("EquipParamProtector", out Param? param) ||
+            !int.TryParse(partName.AsSpan(partName.Length - 4), out var modelId))
+        {
+            return null;
+        }
+
+        var slotField = slot switch
+        {
+            CharacterSlot.Head => "headEquip",
+            CharacterSlot.Body => "bodyEquip",
+            CharacterSlot.Arms => "armEquip",
+            _ => "legEquip"
+        };
+
+        return param.Rows.FirstOrDefault(r => GetValue(r, "equipModelId") == modelId && GetValue(r, slotField) != 0);
+    }
+
+    /// <summary>
     ///     Creates a mesh of all the parts of a character, and loads them. Returns null if it has no parts.
     ///     The submeshes of the mesh are the parts, in order.
     /// </summary>
@@ -212,7 +340,7 @@ public static class CharacterComposition
         {
             if (appearance.Parts[i].AttachNode is { } attachNode && skeleton.FindNode(attachNode) is >= 0 and var node)
             {
-                mesh.Submeshes[i].AttachTransform = WeaponGrip * skeleton.NodeReferenceWorld[node];
+                mesh.Submeshes[i].AttachTransform = GetWeaponGrip(skeleton, attachNode) * skeleton.NodeReferenceWorld[node];
             }
         }
 
@@ -227,13 +355,16 @@ public static class CharacterComposition
     {
         List<AnimatedPart> parts = new();
 
+        ModelRig skeleton = GetSkeleton(project);
+
         for (var i = 0; i < appearance.Parts.Count && i < mesh.Submeshes.Count; i++)
         {
             CharacterPart part = appearance.Parts[i];
             ResourceDescriptor asset = ModelLocator.GetPartsModel(project, part.Name, part.Name);
 
             parts.Add(new AnimatedPart(part.Name, PathBuilder.GetRelativePath(project, asset.AssetVirtualPath),
-                mesh.Submeshes[i], part.AttachNode, WeaponGrip));
+                mesh.Submeshes[i], part.AttachNode,
+                part.AttachNode != null ? GetWeaponGrip(skeleton, part.AttachNode) : null));
         }
 
         return parts;
@@ -281,6 +412,22 @@ public static class CharacterComposition
 
             return new ModelRig();
         });
+    }
+
+    // Weapons point down -Y from the grip, and the front of the skeleton is -Z. The hand bones don't agree
+    // between games on which way they face (Elden Ring's left hand is turned around), so ask the bone.
+    private static Matrix4x4 GetWeaponGrip(ModelRig skeleton, string node)
+    {
+        var index = skeleton.FindNode(node);
+
+        if (index < 0)
+        {
+            return Matrix4x4.Identity;
+        }
+
+        return Vector3.TransformNormal(Vector3.UnitY, skeleton.NodeReferenceWorld[index]).Z < 0
+            ? WeaponRoll
+            : Matrix4x4.Identity;
     }
 
     // Characters can have upgraded equipment, which uses the row of the base item

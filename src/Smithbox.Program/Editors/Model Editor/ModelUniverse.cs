@@ -79,7 +79,7 @@ public class ModelUniverse : IUniverse
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering &&
             CFG.Current.ModelEditor_ModelLoad_Parts && CharacterComposition.IsComposite(modelWrapper.Name))
         {
-            newContainer.AssignCharacterParts(CharacterComposition.Resolve(Project, View.ModelCharacterPreview.SelectedCharaInitId));
+            newContainer.AssignCharacterParts(View.ModelCharacterPreview.GetAppearance());
         }
 
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
