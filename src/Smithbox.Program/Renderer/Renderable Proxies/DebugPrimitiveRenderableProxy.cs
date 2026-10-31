@@ -281,10 +281,11 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         }
 
         ResourceFactory? factory = gd.ResourceFactory;
+        _worldBuffer ??= SceneRenderer.TryAllocateInstance();
+
         if (_worldBuffer == null)
         {
-            _worldBuffer =
-                SceneRenderer.UniformBufferAllocator.Allocate((uint)sizeof(InstanceData), sizeof(InstanceData));
+            return;
         }
 
         if (_materialBuffer == null)
@@ -457,10 +458,11 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         dat.WorldMatrix = _world;
         dat.MaterialID = _materialBuffer.AllocationStart / (uint)sizeof(DbgMaterial);
         dat.EntityID = GetPackedEntityID(_renderablesSet.RenderableSystemIndex, _renderable);
+        _worldBuffer ??= SceneRenderer.TryAllocateInstance();
+
         if (_worldBuffer == null)
         {
-            _worldBuffer =
-                SceneRenderer.UniformBufferAllocator.Allocate((uint)sizeof(InstanceData), sizeof(InstanceData));
+            return;
         }
 
         _worldBuffer.FillBuffer(gd, cl, ref dat);

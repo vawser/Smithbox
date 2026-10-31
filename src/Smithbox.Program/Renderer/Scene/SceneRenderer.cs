@@ -95,7 +95,10 @@ public static class SceneRenderer
         SamplerSet.Initialize(device);
 
         GeometryBufferAllocator = new VertexIndexBufferAllocator(Device, 256 * 1024 * 1024, 128 * 1024 * 1024);
-        UniformBufferAllocator = new GPUBufferAllocator(5 * 1024 * 1024, VkBufferUsageFlags.StorageBuffer,
+        // Renderables keep the resource set of the buffer they were built with, so this has a fixed budget: if
+        // it grew, they would go on reading the old buffer. It has room for about 838,000 instances, where
+        // the densest maps take around 40,000 each.
+        UniformBufferAllocator = new GPUBufferAllocator(64 * 1024 * 1024, VkBufferUsageFlags.StorageBuffer,
             (uint)sizeof(InstanceData));
         GrassInstanceAllocator = new Lazy<GPUBufferAllocator>(() => new GPUBufferAllocator(64 * 1024 * 1024,
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(InstanceData)));
@@ -142,6 +145,25 @@ public static class SceneRenderer
     {
         RenderQueues.Add(queue);
     }
+
+    /// <summary>
+    /// Gets the instance data of one renderable, or null if the budget has run out, in which case it isn't drawn.
+    /// </summary>
+    public static unsafe GPUBufferAllocator.GPUBufferHandle TryAllocateInstance()
+    {
+        GPUBufferAllocator.GPUBufferHandle handle =
+            UniformBufferAllocator.TryAllocate((uint)sizeof(InstanceData), sizeof(InstanceData));
+
+        if (handle == null && !_instanceBudgetReported)
+        {
+            _instanceBudgetReported = true;
+            Smithbox.Log(typeof(SceneRenderer), "The instance budget has run out, so some models will not be drawn.");
+        }
+
+        return handle;
+    }
+
+    private static bool _instanceBudgetReported;
 
     /// <summary>
     /// Gives up a range of a shared buffer once nothing can still be drawing from it.

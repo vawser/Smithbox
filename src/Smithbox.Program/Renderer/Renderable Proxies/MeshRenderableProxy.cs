@@ -821,7 +821,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         _worldBuffer = instances > 0
             ? SceneRenderer.GrassInstanceAllocator.Value.TryAllocate((uint)(sizeof(InstanceData) * instances), sizeof(InstanceData))
-            : SceneRenderer.UniformBufferAllocator.Allocate((uint)sizeof(InstanceData), sizeof(InstanceData));
+            : SceneRenderer.TryAllocateInstance();
 
         _worldBufferInstances = instances;
 
