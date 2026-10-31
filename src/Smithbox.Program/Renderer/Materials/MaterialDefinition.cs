@@ -266,6 +266,9 @@ public class MaterialDetailRecipe
 
     public int? Normal { get; set; }
     public string? NormalStrength { get; set; }
+
+    /// <summary>The color parameter that is the albedo of a shader with no albedo texture</summary>
+    public string? BaseColor { get; set; }
 }
 
 /// <summary>A <see cref="MaterialDetailRecipe"/> with the values of one material filled in</summary>
@@ -276,6 +279,8 @@ public class MaterialResolvedDetail
 
     public string? NormalType { get; set; }
     public float NormalStrength { get; set; }
+
+    public float[]? BaseColor { get; set; }
 }
 
 /// <summary>
@@ -743,7 +748,8 @@ public class MaterialDefinition
             AlbedoType = TypeOf(recipe.Albedo),
             Color = LayerTint(recipe.Color),
             NormalType = TypeOf(recipe.Normal),
-            NormalStrength = recipe.NormalStrength == null ? 0 : EvaluateProduct(recipe.NormalStrength)
+            NormalStrength = recipe.NormalStrength == null ? 0 : EvaluateProduct(recipe.NormalStrength),
+            BaseColor = recipe.BaseColor != null && Params.TryGetValue(recipe.BaseColor, out var baseColor) && baseColor.Length >= 3 ? baseColor[..3] : null
         };
 
         if (detail.AlbedoType != null || detail.NormalType != null)

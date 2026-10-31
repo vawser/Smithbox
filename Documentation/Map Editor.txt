@@ -3,6 +3,8 @@
 #----------------------------------------------------
 - Implement viewport grid via shader
 
+- Add 'camera path' authoring for new camera hkxs for cutscenes
+
 - add Object Mass Edit that allows for addition/deletion of map objects programmatically
 
 - Get gizmos to work in Orthographic/Oblique view mode

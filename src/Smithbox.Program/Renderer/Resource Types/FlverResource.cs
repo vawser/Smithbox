@@ -619,7 +619,10 @@ public class FlverResource : IResource, IDisposable
             return;
         }
 
-        if (texType != null && texType.Contains("Emissive", StringComparison.OrdinalIgnoreCase))
+        // Only what follows the slot says what this is: the rest is the shader's name, which can be M[...]_Emissive_Glow
+        var samplerName = texType?[(texType.LastIndexOf("Texture2D_", StringComparison.Ordinal) + 1)..];
+
+        if (samplerName != null && samplerName.Contains("Emissive", StringComparison.OrdinalIgnoreCase))
         {
             LookupTexture(FlverMaterial.TextureType.EmissiveTextureResource, dest, texType, mpath, mtd);
             return;
@@ -696,6 +699,11 @@ public class FlverResource : IResource, IDisposable
         {
             dest.AlbedoFromColor = true;
             dest.AlbedoTint = Vector3.Min(new Vector3(colorOnly.Color![0], colorOnly.Color[1], colorOnly.Color[2]), Vector3.One);
+        }
+        else if (!hasAlbedo && definition.Detail?.BaseColor is { } baseColor)
+        {
+            dest.AlbedoFromColor = true;
+            dest.AlbedoTint = Vector3.Min(new Vector3(baseColor[0], baseColor[1], baseColor[2]), Vector3.One);
         }
 
         // A recipe tints each of its layers instead

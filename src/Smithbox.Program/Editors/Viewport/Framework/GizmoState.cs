@@ -13,7 +13,7 @@ public static class GizmoState
 {
     public static GizmosMode Mode = GizmosMode.Translate;
     public static GizmosSpace Space = GizmosSpace.Local;
-    public static GizmosOrigin Origin = GizmosOrigin.World;
+    public static GizmosOrigin Origin = GizmosOrigin.BoundingBox;
 
     public static void OnMenu(VulkanViewport viewport)
     {
