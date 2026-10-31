@@ -58,9 +58,11 @@ layout (constant_id = 99) const bool c_picking = false;
 #define FEATURE_UV_SCROLL 256u
 #define FEATURE_UNLIT 512u
 #define FEATURE_WATER 1024u
+#define FEATURE_FUR 2048u
 
 #define SURFACE_UNLIT 1
 #define SURFACE_WATER 2
+#define SURFACE_FUR 3
 
 #define MAX_LAYERS 4
 #define MAX_SCENE_LIGHTS 16
@@ -228,7 +230,7 @@ layout(set = 4, binding = 0, std140) buffer materialWaterVolume
 // The entry after that
 struct effectsData
 {
-	vec4 emissiveColor;  // xyz: multiplies the emissive texture
+	vec4 emissiveColor;  // xyz: multiplies the emissive texture, w: how far the dither moves the alpha of fur
 	vec4 emissiveTiling; // xy: tiling, zw: UV movement each second
 	vec4 scroll;         // xy: UV movement of layer 0's albedo each second, zw: of its normal
 };
@@ -533,6 +535,13 @@ void ComputeRecipeWeights()
 
 void ComputeLayerWeights()
 {
+	// Fur only uses the second layer for its strands, which main puts on top of the first itself
+	if (c_surface == SURFACE_FUR)
+	{
+		g_weight = float[MAX_LAYERS](1.0, 0.0, 0.0, 0.0);
+		return;
+	}
+
 	if (c_blendFromRecipe)
 	{
 		if (HasFeature(FEATURE_LAYER_BLENDING))
@@ -849,6 +858,25 @@ float WaterEdge(float thickness)
 	return clamp(thickness * watervolumedata[g_mat + 12u].scatter.w, 0.0, 1.0);
 }
 
+// 4x4 Bayer ordered dither, from 0 up to 1
+float OrderedDither()
+{
+	mat4 bayerMatrix = mat4(
+		 0.0/16.0,  8.0/16.0,  2.0/16.0, 10.0/16.0,
+		12.0/16.0,  4.0/16.0, 14.0/16.0,  6.0/16.0,
+		 3.0/16.0, 11.0/16.0,  1.0/16.0,  9.0/16.0,
+		15.0/16.0,  7.0/16.0, 13.0/16.0,  5.0/16.0
+	);
+
+	ivec2 pixelCoord = ivec2(gl_FragCoord.xy) % 4;
+	return bayerMatrix[pixelCoord.x][pixelCoord.y];
+}
+
+bool IsFur()
+{
+	return c_surface == SURFACE_FUR && HasFeature(FEATURE_FUR);
+}
+
 void main()
 {
 #ifdef OUTLINE
@@ -885,6 +913,17 @@ void main()
 
 	vec4 diffuseAlpha = shadingdata[g_mat + 1u].diffuseAlpha;
 
+#ifdef MATERIAL_BLEND
+	// The shape of fur comes from its strands alone, which are as dark on average as the overlays below
+	if (IsFur())
+	{
+		vec4 strands = SampleLayer(ROW_ALBEDO, 1);
+		diffuseColor.rgb = clamp(diffuseColor.rgb * strands.rgb * 4.55, 0.0, 1.0);
+		diffuseColor.w = strands.w * fsin_color.a
+			+ (OrderedDither() - 0.5) * effectsdata[g_mat + 2u].emissiveColor.w;
+	}
+#endif
+
 	// These textures average about 0.22, so 4.55 leaves the albedo as it was on average
 	if (c_detail && HasFeature(FEATURE_OVERLAYS) && detaildata[g_mat + 8u].textures.x != 0u)
 	{
@@ -901,18 +940,7 @@ void main()
 #ifdef SELECTED
 	if (sceneparam.EnableDithering == 1)
 	{
-		// 4x4 Bayer ordered dither
-		mat4 bayerMatrix = mat4(
-			 0.0/16.0,  8.0/16.0,  2.0/16.0, 10.0/16.0,
-			12.0/16.0,  4.0/16.0, 14.0/16.0,  6.0/16.0,
-			 3.0/16.0, 11.0/16.0,  1.0/16.0,  9.0/16.0,
-			15.0/16.0,  7.0/16.0, 13.0/16.0,  5.0/16.0
-		);
-
-		ivec2 pixelCoord = ivec2(gl_FragCoord.xy) % 4;
-		float threshold = bayerMatrix[pixelCoord.x][pixelCoord.y];
-
-		if (sceneparam.ditherOpacity < threshold)
+		if (sceneparam.ditherOpacity < OrderedDither())
 		{
 			discard;
 		}
@@ -929,6 +957,23 @@ void main()
 #ifdef MATERIAL_BLEND
 	vec3 normalColor = SampleLayered(ROW_NORMAL, c_blendNormal).xyz;
 	vec3 F0 = SampleLayered(ROW_SPECULAR, c_blendSpecular).xyz;
+
+	// Each strand bends the normal underneath it, and knows how glossy it is. Index 1 is the default normal,
+	// which isn't quite flat: most fur only has the strands' normals, so that would lean all of them over
+	if (IsFur())
+	{
+		if (MaterialValue(ROW_NORMAL, 0) == 1u)
+		{
+			normalColor.xy = vec2(0.5);
+		}
+
+		if (MaterialValue(ROW_NORMAL, 1) != 1u)
+		{
+			vec3 strandNormal = SampleLayer(ROW_NORMAL, 1).xyz;
+			normalColor.xy += strandNormal.xy - 0.5;
+			normalColor.z = strandNormal.z;
+		}
+	}
 #else
 	vec3 normalColor = SampleLayer(ROW_NORMAL, 0).xyz;
 	vec3 F0 = SampleLayer(ROW_SPECULAR, 0).xyz;

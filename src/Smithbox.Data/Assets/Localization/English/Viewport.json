@@ -329,6 +329,14 @@
       "Text": "Water gets moving ripples and a smooth surface. This stands in for the game's shaders, which rely on its scene."
     },
     {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Fur",
+      "Text": "Fur"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Fur_TT",
+      "Text": "Fur is cut out into strands instead of being drawn as solid cards."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Header_Scene_Lighting",
       "Text": "Scene Lighting"
     },

@@ -455,6 +455,29 @@ public class FlverResource : IResource, IDisposable
                 : FlverMaterial.TextureType.AlbedoTextureResource, dest, dest.Definition.SurfaceType, "", mtd);
         }
 
+        if (dest.Definition?.Fur is { } fur)
+        {
+            if (fur.BaseType != null)
+            {
+                LookupTexture(FlverMaterial.TextureType.AlbedoTextureResource, dest, fur.BaseType, "", mtd);
+            }
+
+            LookupTexture(FlverMaterial.TextureType.AlbedoTextureResource2, dest, fur.StrandType, "", mtd);
+
+            if (fur.BaseNormalType != null)
+            {
+                LookupTexture(FlverMaterial.TextureType.NormalTextureResource, dest, fur.BaseNormalType, "", mtd);
+            }
+
+            if (fur.StrandNormalType != null)
+            {
+                LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, fur.StrandNormalType, "", mtd);
+            }
+
+            // Only the blended shaders have a second UV set
+            layers.LayerCount = 2;
+        }
+
         if (dest.Definition?.Water?.DetailType is { } waterDetail)
         {
             LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, waterDetail, "", mtd);
@@ -583,6 +606,13 @@ public class FlverResource : IResource, IDisposable
             return;
         }
 
+        // The same goes for fur, and its albedos as well
+        if (dest.Definition?.Fur != null
+            && dest.Definition.Samplers.Find(x => x.Type == texType)?.Role is "AlbedoMap" or "NormalMap")
+        {
+            return;
+        }
+
         if (TryProcessKnownBlendTexture(dest, texType, mtd, layers))
         {
             return;
@@ -696,10 +726,25 @@ public class FlverResource : IResource, IDisposable
         var hasDetail = dest.Definition?.Detail != null;
         var hasMagma = dest.Definition?.Magma != null;
         var hasWater = dest.Definition?.Water != null;
+        MaterialResolvedFur? fur = dest.Definition?.Fur;
+
+        if (fur != null)
+        {
+            dest.AlbedoTint = new Vector3(fur.Color[0], fur.Color[1], fur.Color[2]);
+            dest.Effects.EmissiveColor.W = fur.DitherWidth;
+        }
 
         if (dest.Definition != null)
         {
             ApplyDefinitionShading(dest, dest.Definition);
+        }
+
+        // The shader multiplies the strands by 4.55, as a base averages out to 1 / 4.55 once it is under them.
+        // Without one the strands should come out as they are, so a white texture has to be brought down to that
+        if (fur is { BaseType: null })
+        {
+            dest.AlbedoFromColor = true;
+            dest.Shading.DiffuseAlpha *= new Vector4(new Vector3(1 / 4.55f), 1);
         }
 
         if (deformer != MaterialDeformer.None || knownBlend)
@@ -759,6 +804,11 @@ public class FlverResource : IResource, IDisposable
             dest.MaterialData.uvSet2 = 0;
             dest.MaterialData.uvSet3 = 0;
             dest.MaterialData.uvSet4 = 0;
+        }
+
+        if (fur != null)
+        {
+            dest.MaterialData.uvSet2 = (ushort)(fur.ThirdUv ? 1 : 0);
         }
 
         if (deformer != MaterialDeformer.None)
@@ -1282,12 +1332,12 @@ public class FlverResource : IResource, IDisposable
     /// authored for one UV set expect.
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private unsafe void FillUVPairShort(FlverLayoutUV2* v, ref FLVER.Vertex vert)
+    private unsafe void FillUVPairShort(FlverLayoutUV2* v, ref FLVER.Vertex vert, int maxUvSets = 2)
     {
         FillUVShort((*v).Uv1, ref vert, 0);
         if (vert.UVs.Count > 1)
         {
-            FillUVShort((*v).Uv2, ref vert, 1);
+            FillUVShort((*v).Uv2, ref vert, (byte)(Math.Min(vert.UVs.Count, maxUvSets) - 1));
         }
         else
         {
@@ -1836,7 +1886,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesUV2(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled, int maxUvSets)
     {
         Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
@@ -1879,7 +1929,7 @@ public class FlverResource : IResource, IDisposable
                     {
                         FillNormalSNorm8((*v).Normal, br, l.type, &n, meshBoneIndices, useNormalWTransform);
                     }
-                    else if (l.semantic == FLVER.LayoutSemantic.UV && uvsfilled < 2)
+                    else if (l.semantic == FLVER.LayoutSemantic.UV && uvsfilled < maxUvSets)
                     {
                         bool hasv2;
                         if (uvsfilled == 0)
@@ -1957,7 +2007,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesDeform(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled, int maxUvSets)
     {
         Span<FlverLayoutDeform> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
@@ -2016,7 +2066,7 @@ public class FlverResource : IResource, IDisposable
                             }
                         }
                     }
-                    else if (l.semantic == FLVER.LayoutSemantic.UV && uvsfilled < 2)
+                    else if (l.semantic == FLVER.LayoutSemantic.UV && uvsfilled < maxUvSets)
                     {
                         bool hasv2;
                         if (uvsfilled == 0)
@@ -2096,7 +2146,7 @@ public class FlverResource : IResource, IDisposable
         return uvs;
     }
 
-    private unsafe void FillVerticesDeform(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
+    private unsafe void FillVerticesDeform(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, int maxUvSets)
     {
         var texCoordUVs = GetTexCoordUVs(mesh, out var halfTexCoord3);
 
@@ -2116,7 +2166,7 @@ public class FlverResource : IResource, IDisposable
                 FlverLayoutUV2* v = (FlverLayoutUV2*)d;
                 FillVertex(ref (*v).Position, ref vert);
                 FillNormalSNorm8((*v).Normal, ref vert);
-                FillUVPairShort(v, ref vert);
+                FillUVPairShort(v, ref vert, maxUvSets);
                 FillColorUNorm((*v).Color, ref vert);
                 if (vert.Tangents.Count > 0)
                 {
@@ -2154,7 +2204,7 @@ public class FlverResource : IResource, IDisposable
         }
     }
 
-    private unsafe void FillVerticesUV2(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
+    private unsafe void FillVerticesUV2(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, int maxUvSets)
     {
         Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         fixed (FlverLayoutUV2* pverts = verts)
@@ -2168,7 +2218,7 @@ public class FlverResource : IResource, IDisposable
                 FlverLayoutUV2* v = &pverts[i];
                 FillVertex(ref (*v).Position, ref vert);
                 FillNormalSNorm8((*v).Normal, ref vert);
-                FillUVPairShort(v, ref vert);
+                FillUVPairShort(v, ref vert, maxUvSets);
                 FillColorUNorm((*v).Color, ref vert);
                 if (vert.Tangents.Count > 0)
                 {
@@ -2399,11 +2449,11 @@ public class FlverResource : IResource, IDisposable
         }
         else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV2)
         {
-            FillVerticesUV2(mesh, pvhandle, meshVertices);
+            FillVerticesUV2(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets);
         }
         else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
         {
-            FillVerticesDeform(mesh, pvhandle, meshVertices);
+            FillVerticesDeform(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets);
         }
         else
         {
@@ -2665,11 +2715,11 @@ public class FlverResource : IResource, IDisposable
             }
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV2)
             {
-                FillVerticesUV2(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled);
+                FillVerticesUV2(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled, dest.Material.MaxUvSets);
             }
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
             {
-                FillVerticesDeform(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled);
+                FillVerticesDeform(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled, dest.Material.MaxUvSets);
             }
             else
             {
@@ -3286,6 +3336,12 @@ public class FlverResource : IResource, IDisposable
 
         public MaterialBlending Blending = MaterialBlending.Opaque;
         public bool DepthWrite = true;
+
+        /// <summary>
+        /// How many of a mesh's UV sets to read. The last that fits goes in the second UV slot of a vertex,
+        /// which is how fur gets its third set without the vertices of everything else growing to hold it.
+        /// </summary>
+        public int MaxUvSets => Definition?.Fur?.ThirdUv == true ? 3 : 2;
 
         public int MaterialMask = -1;
 

@@ -540,6 +540,7 @@ public class ViewportMenu
 
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Unlit", ref CFG.Current.Viewport_Material_Unlit);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Water", ref CFG.Current.Viewport_Material_Water);
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Fur", ref CFG.Current.Viewport_Material_Fur);
 
         ImGui.Separator();
 

@@ -22,7 +22,8 @@ public enum MaterialFeatures : uint
     Emissive = 128,
     UvScroll = 256,
     Unlit = 512,
-    Water = 1024
+    Water = 1024,
+    Fur = 2048
 }
 
 /// <summary>
@@ -84,6 +85,7 @@ public static class MaterialClock
             Add(CFG.Current.Viewport_Material_UV_Scroll, MaterialFeatures.UvScroll);
             Add(CFG.Current.Viewport_Material_Unlit, MaterialFeatures.Unlit);
             Add(CFG.Current.Viewport_Material_Water, MaterialFeatures.Water);
+            Add(CFG.Current.Viewport_Material_Fur, MaterialFeatures.Fur);
 
             return current;
         }

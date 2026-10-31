@@ -1111,6 +1111,7 @@ public class CFG
     public bool Viewport_Material_UV_Scroll = true;
     public bool Viewport_Material_Unlit = true;
     public bool Viewport_Material_Water = true;
+    public bool Viewport_Material_Fur = true;
     public bool Viewport_Enable_Culling = true;
 
     public bool Viewport_Enable_Selection_Tint = true;
