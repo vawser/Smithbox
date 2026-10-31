@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Numerics;
+using System.Runtime.InteropServices;
 
 namespace StudioCore.Renderer;
 
@@ -48,4 +49,39 @@ public unsafe struct Material
     public ushort uvSet2;
     public ushort uvSet3;
     public ushort uvSet4;
+}
+
+/// <summary>
+///     How a material moves its vertices. Read by the flver vertex shader as the entry straight after the
+///     material's <see cref="Material" />, which is the only reason it has the same 48 byte size.
+///     Only materials with a deformer allocate it, so static materials don't pay for it.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe struct MaterialDeform
+{
+    public float Amplitude;
+
+    /// <summary>Frames a second for a vertex animation, cycles a second for sway</summary>
+    public float Rate;
+
+    private fixed float _padding[2];
+
+    /// <summary>The direction of sway, unused by vertex animation</summary>
+    public Vector4 Direction;
+
+    /// <summary>Global texture index of the positions and normals of a vertex animation. 0 until they load</summary>
+    public uint VatPositionTex;
+    public uint VatNormalTex;
+
+    private fixed uint _padding2[2];
+}
+
+/// <summary>
+///     What is uploaded for a material with a deformer
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialWithDeform
+{
+    public Material Material;
+    public MaterialDeform Deform;
 }

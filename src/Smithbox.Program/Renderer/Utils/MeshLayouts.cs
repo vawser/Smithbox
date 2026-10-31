@@ -15,6 +15,7 @@ public enum MeshLayoutType
     LayoutUV2,
     LayoutUV3,
     LayoutUV4,
+    LayoutDeform,
     LayoutCollision,
     LayoutNavmesh,
     LayoutPositionColorNormal,
@@ -39,6 +40,8 @@ public static class MeshLayoutUtils
                 return FlverLayoutUV3.Layout;
             case MeshLayoutType.LayoutUV4:
                 return FlverLayoutUV4.Layout;
+            case MeshLayoutType.LayoutDeform:
+                return FlverLayoutDeform.Layout;
             case MeshLayoutType.LayoutCollision:
                 return CollisionLayout.Layout;
             case MeshLayoutType.LayoutNavmesh:
@@ -68,6 +71,8 @@ public static class MeshLayoutUtils
                 return (uint)sizeof(FlverLayoutUV3);
             case MeshLayoutType.LayoutUV4:
                 return (uint)sizeof(FlverLayoutUV4);
+            case MeshLayoutType.LayoutDeform:
+                return (uint)sizeof(FlverLayoutDeform);
             case MeshLayoutType.LayoutCollision:
                 return (uint)sizeof(CollisionLayout);
             case MeshLayoutType.LayoutNavmesh:
@@ -194,6 +199,39 @@ public unsafe struct FlverLayoutUV4
         new VertexElementDescription("uv2", VkFormat.R16G16Sint),
         new VertexElementDescription("uv3", VkFormat.R16G16Sint),
         new VertexElementDescription("uv4", VkFormat.R16G16Sint));
+}
+
+/// <summary>
+///     <see cref="FlverLayoutUV2" /> plus the TEXCOORD1-3 byte attributes, which ER era shaders use for blend
+///     weights and vertex animation. Only materials that need them use this layout. It starts with the same
+///     fields as <see cref="FlverLayoutUV2" />, so the two can share fill code.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe struct FlverLayoutDeform
+{
+    public const int TexCoordSize = 4;
+    public const int TexCoordCount = 3;
+
+    public Vector3 Position;
+    public fixed short Uv1[2];
+    public fixed sbyte Normal[4];
+    public fixed sbyte Binormal[4];
+    public fixed sbyte Bitangent[4];
+    public fixed byte Color[4];
+    public fixed short Uv2[2];
+    public fixed byte TexCoords[TexCoordSize * TexCoordCount];
+
+    public static VertexLayoutDescription Layout = new(
+        new VertexElementDescription("position", VkFormat.R32G32B32Sfloat),
+        new VertexElementDescription("uv1", VkFormat.R16G16Sint),
+        new VertexElementDescription("normal", VkFormat.R8G8B8A8Sint),
+        new VertexElementDescription("binormal", VkFormat.R8G8B8A8Sint),
+        new VertexElementDescription("bitangent", VkFormat.R8G8B8A8Sint),
+        new VertexElementDescription("color", VkFormat.R8G8B8A8Uint),
+        new VertexElementDescription("uv2", VkFormat.R16G16Sint),
+        new VertexElementDescription("texcoord1", VkFormat.R8G8B8A8Unorm),
+        new VertexElementDescription("texcoord2", VkFormat.R8G8B8A8Unorm),
+        new VertexElementDescription("texcoord3", VkFormat.R8G8B8A8Unorm));
 }
 
 [StructLayout(LayoutKind.Sequential, Pack = 1)]

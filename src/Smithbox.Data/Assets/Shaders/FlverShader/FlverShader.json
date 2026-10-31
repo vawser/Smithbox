@@ -96,6 +96,94 @@
 		]
 	},
 	{
+		"Name": "FlverShader_deform",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_selected",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "SELECTED"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_blend",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "MATERIAL_BLEND"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_blend_selected",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "SELECTED"
+			}
+		]
+	},
+	{
 		"Name": "FlverShader_blendmask_selected",
 		"Shaders": [
 			{

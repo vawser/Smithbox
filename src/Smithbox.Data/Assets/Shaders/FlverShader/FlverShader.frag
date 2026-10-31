@@ -7,6 +7,7 @@
 // Macros (set by the variant list in FlverShader.json):
 //   MATERIAL_BLEND       - the material has more than one texture layer
 //   MATERIAL_BLEND_MASK  - layer weights come from a blend mask texture instead of the vertex colors
+//   MATERIAL_DEFORM      - the mesh has the TEXCOORD1-3 attributes, which can hold the layer weight
 //   SELECTED             - used for selected objects: adds selection dithering and tinting
 //
 // Lighting: one sun (sceneparam.lightDirection / sunColor) plus up to MAX_SCENE_LIGHTS point, spot or
@@ -18,6 +19,7 @@
 // With two layers this is exactly mix(layer0, layer1, channel0).
 // Weight source:
 //     MATERIAL_BLEND_MASK  -> blend mask texture, channels r, g, b
+//     c_blendFromTexCoord  -> TEXCOORD1.x, for two layers
 //     otherwise            -> vertex color, channels a, r, g
 
 #define GAME_DES 1
@@ -33,6 +35,7 @@ layout (constant_id = 1) const bool c_blendNormal = false;
 layout (constant_id = 2) const bool c_blendSpecular = false;
 layout (constant_id = 3) const bool c_blendShininess = false;
 layout (constant_id = 4) const int c_layerCount = 2;
+layout (constant_id = 5) const bool c_blendFromTexCoord = false;
 #endif
 
 layout (constant_id = 99) const bool c_picking = false;
@@ -52,6 +55,9 @@ layout(location = 8) flat in uint fsin_mat;
 layout(location = 9) flat in uint fsin_entityid;
 #ifdef MATERIAL_BLEND
 	layout(location = 10) in vec2 fsin_texcoord2;
+#endif
+#if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
+	layout(location = 11) in float fsin_blendWeight;
 #endif
 
 layout(location = 0) out vec4 fsout_color;
@@ -228,6 +234,17 @@ vec4 SampleLayered(int row, bool blendLayers)
 #ifdef MATERIAL_BLEND
 void ComputeLayerWeights()
 {
+  #ifdef MATERIAL_DEFORM
+	if (c_blendFromTexCoord)
+	{
+		g_weight[1] = clamp(fsin_blendWeight, 0.0, 1.0);
+		g_weight[0] = 1.0 - g_weight[1];
+		g_weight[2] = 0.0;
+		g_weight[3] = 0.0;
+		return;
+	}
+  #endif
+
 	vec3 channels;
   #ifdef MATERIAL_BLEND_MASK
 	channels = SampleAt(MaterialValue(ROW_EXTRA, 0), 0).rgb;

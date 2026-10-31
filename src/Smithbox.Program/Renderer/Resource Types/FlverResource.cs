@@ -429,10 +429,63 @@ public class FlverResource : IResource, IDisposable
         return false;
     }
 
+    /// <summary>
+    /// Whether the renderer knows how to weigh the layers of this material. Otherwise only its
+    /// first layer is shown, since blending by the wrong weights looks worse than not blending.
+    /// </summary>
+    private static bool HasKnownBlend(FlverMaterial dest)
+    {
+        return dest.Definition is { BlendWeight: MaterialBlendWeight.TexCoord1X, BlendLayers.Count: 2 };
+    }
+
+    /// <summary>
+    /// Handles a texture of a material whose layers the definition has worked out. These can't be told
+    /// apart by name: the layers of M[Flag][Mb2] have identical endings, and its normals are mixed in with
+    /// an overlay normal that isn't a layer. Returns false for textures that aren't its concern.
+    /// </summary>
+    private bool TryProcessKnownBlendTexture(FlverMaterial dest, string? texType, string mtd, MaterialLayers layers)
+    {
+        if (texType == null || !HasKnownBlend(dest))
+        {
+            return false;
+        }
+
+        MaterialDefinition definition = dest.Definition!;
+
+        for (var i = 0; i < definition.BlendLayers.Count; i++)
+        {
+            MaterialBlendLayer layer = definition.BlendLayers[i];
+
+            if (layer.Albedo == texType)
+            {
+                LookupTexture(AlbedoLayers[i], dest, texType, "", mtd);
+                layers.LayerCount = Math.Max(layers.LayerCount, i + 1);
+                return true;
+            }
+
+            if (layer.Normal == texType)
+            {
+                LookupTexture(NormalLayers[i], dest, texType, "", mtd);
+                layers.BlendNormal = true;
+                return true;
+            }
+        }
+
+        // Anything else in the role of a layer would take that layer's slot
+        var role = definition.Samplers.Find(x => x.Type == texType)?.Role;
+
+        return role is "AlbedoMap" or "NormalMap";
+    }
+
     private void ProcessMaterialTexture(FlverMaterial dest, string texType, string mpath, string mtd,
         MaterialLayers layers)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (TryProcessKnownBlendTexture(dest, texType, mtd, layers))
+        {
+            return;
+        }
 
         string paramNameCheck;
 
@@ -494,7 +547,15 @@ public class FlverResource : IResource, IDisposable
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (layers.HasBlendMask)
+        var deformer = dest.Definition?.Deformer ?? MaterialDeformer.None;
+        var knownBlend = HasKnownBlend(dest);
+
+        if (deformer != MaterialDeformer.None || knownBlend)
+        {
+            dest.ShaderName = layers.IsBlended ? @"FlverShader\FlverShader_deform_blend" : @"FlverShader\FlverShader_deform";
+            dest.LayoutType = MeshLayoutType.LayoutDeform;
+        }
+        else if (layers.HasBlendMask)
         {
             dest.ShaderName = @"FlverShader\FlverShader_blendmask";
             dest.LayoutType = MeshLayoutType.LayoutUV2;
@@ -518,7 +579,10 @@ public class FlverResource : IResource, IDisposable
             specConstants.Add(new SpecializationConstant(2, layers.BlendSpecular));
             specConstants.Add(new SpecializationConstant(3, layers.BlendShininess));
             specConstants.Add(new SpecializationConstant(4, (uint)Math.Clamp(layers.LayerCount, 2, Material.MaxLayers)));
+            specConstants.Add(new SpecializationConstant(5, knownBlend));
         }
+
+        specConstants.Add(new SpecializationConstant(60, (uint)deformer));
 
         dest.SpecializationConstants ??= new List<SpecializationConstant>();
         dest.SpecializationConstants.AddRange(specConstants);
@@ -531,6 +595,19 @@ public class FlverResource : IResource, IDisposable
         dest.MaterialData.uvSet2 = 1;
         dest.MaterialData.uvSet3 = 1;
         dest.MaterialData.uvSet4 = 1;
+
+        // These shaders read every layer through the first UV set
+        if (knownBlend)
+        {
+            dest.MaterialData.uvSet2 = 0;
+            dest.MaterialData.uvSet3 = 0;
+            dest.MaterialData.uvSet4 = 0;
+        }
+
+        if (deformer != MaterialDeformer.None)
+        {
+            dest.Deform = BuildMaterialDeform(dest.Definition!);
+        }
 
         // Upload the defaults so a material whose textures never arrive still shows something sensible
         dest.UpdateMaterial();
@@ -546,13 +623,86 @@ public class FlverResource : IResource, IDisposable
         return bank?.GetDefinition(Path.GetFileNameWithoutExtension(mtd.Replace('\\', Path.DirectorySeparatorChar)));
     }
 
+    /// <summary>
+    /// A material with a deformer takes two entries of the material buffer, see <see cref="MaterialDeform"/>
+    /// </summary>
+    private static unsafe GPUBufferAllocator.GPUBufferHandle AllocateMaterialBuffer(FlverMaterial dest)
+    {
+        var size = dest.Definition?.Deformer is null or MaterialDeformer.None
+            ? sizeof(Material)
+            : sizeof(MaterialWithDeform);
+
+        return SceneRenderer.MaterialBufferAllocator.Allocate((uint)size, sizeof(Material));
+    }
+
+    /// <summary>
+    /// Starts loading the textures of a vertex animation. Nothing in <see cref="ProcessMaterialTexture"/>
+    /// recognizes them, so the shader table says which they are.
+    /// </summary>
+    private void LoadDeformTextures(FlverMaterial dest, string mtd)
+    {
+        if (dest.Definition?.Deformer != MaterialDeformer.Vat)
+            return;
+
+        if (dest.Definition.DeformerTextures.TryGetValue("VatPosition", out var position))
+        {
+            LookupTexture(FlverMaterial.TextureType.VatPositionTextureResource, dest, null, position, mtd);
+        }
+
+        if (dest.Definition.DeformerTextures.TryGetValue("VatNormal", out var normal))
+        {
+            LookupTexture(FlverMaterial.TextureType.VatNormalTextureResource, dest, null, normal, mtd);
+        }
+    }
+
+    private static float GetDeformValue(MaterialDefinition definition, string role, float fallback)
+    {
+        return definition.DeformerParams.TryGetValue(role, out var value) && value.Length > 0 ? value[0] : fallback;
+    }
+
+    private static MaterialDeform BuildMaterialDeform(MaterialDefinition definition)
+    {
+        MaterialDeform deform = new();
+        deform.Amplitude = GetDeformValue(definition, "Amplitude", 0);
+        deform.Rate = GetDeformValue(definition, definition.Deformer == MaterialDeformer.Vat ? "FrameRate" : "Speed", 0);
+
+        if (definition.DeformerParams.TryGetValue("Direction", out var direction) && direction.Length >= 3)
+        {
+            deform.Direction = new Vector4(direction[0], direction[1], direction[2], 0);
+        }
+
+        return deform;
+    }
+
+    /// <summary>
+    /// Grows the bounds of a submesh to cover its deformed vertices, so that it isn't culled while on screen.
+    /// </summary>
+    private static void PadDeformedBounds(FlverSubmesh dest)
+    {
+        MaterialDefinition? definition = dest.Material?.Definition;
+
+        if (definition == null || definition.Deformer == MaterialDeformer.None)
+            return;
+
+        MaterialDeform deform = BuildMaterialDeform(definition);
+
+        // How far a vertex animation moves isn't known without its texture, but the
+        // offsets seen so far stay under a world unit, before the amplitude scales them
+        var reach = Math.Abs(deform.Amplitude) * (definition.Deformer == MaterialDeformer.Vat
+            ? 2.0f
+            : deform.Direction.Length());
+
+        Vector3 pad = new(reach);
+        dest.Bounds = new BoundingBox(dest.Bounds.Min - pad, dest.Bounds.Max + pad);
+    }
+
     private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
         dest.MaterialName = Path.GetFileNameWithoutExtension(mat.MTD);
         dest.Definition = GetMaterialDefinition(mat.MTD);
-        dest.MaterialBuffer = SceneRenderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
+        dest.MaterialBuffer = AllocateMaterialBuffer(dest);
         dest.MaterialData = new Material();
 
         var matName = mat.Name;
@@ -618,6 +768,7 @@ public class FlverResource : IResource, IDisposable
             ProcessMaterialTexture(dest, matparam.ParamName, matparam.Path, mat.MTD, layers);
         }
 
+        LoadDeformTextures(dest, mat.MTD);
         ConfigureMaterialShader(dest, layers);
     }
 
@@ -634,7 +785,7 @@ public class FlverResource : IResource, IDisposable
         {
             dest.MaterialMask = int.Parse(matName.Substring(1, 2));
         }
-        dest.MaterialBuffer = SceneRenderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
+        dest.MaterialBuffer = AllocateMaterialBuffer(dest);
         dest.MaterialData = new Material();
 
         if (!CFG.Current.Viewport_Enable_Texturing || ModelsOnly)
@@ -656,6 +807,7 @@ public class FlverResource : IResource, IDisposable
             ProcessMaterialTexture(dest, ttype, tpath, mtd, layers);
         }
 
+        LoadDeformTextures(dest, mtd);
         ConfigureMaterialShader(dest, layers);
     }
 
@@ -1528,6 +1680,193 @@ public class FlverResource : IResource, IDisposable
         br.StepOut();
     }
 
+    /// <summary>
+    /// Which of TEXCOORD1-3 a layout member holds, or -1 if it isn't one of them.
+    /// Their position in the layout says nothing, as other members can come before them.
+    /// </summary>
+    private static int GetTexCoordIndex(FLVER.LayoutSemantic semantic, FLVER.LayoutType type, int index)
+    {
+        return semantic == FLVER.LayoutSemantic.UV && type == FLVER.LayoutType.UByte4Norm
+            && index >= 1 && index <= FlverLayoutDeform.TexCoordCount ? index - 1 : -1;
+    }
+
+    private unsafe void FillVerticesDeform(BinaryReaderEx br, ref FlverVertexBuffer buffer,
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled)
+    {
+        Span<FlverLayoutDeform> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
+        br.StepIn(buffer.bufferOffset);
+        var uvsfilled = uvSetsFilled;
+        fixed (FlverLayoutDeform* pverts = verts)
+        {
+            for (var i = 0; i < buffer.vertexCount; i++)
+            {
+                FlverLayoutDeform* d = &pverts[i];
+                FlverLayoutUV2* v = (FlverLayoutUV2*)d;
+                Vector3 n = Vector3.UnitX;
+
+                // See FillVerticesUV2
+                if (firstBuffer)
+                {
+                    *d = new FlverLayoutDeform();
+                    FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
+                }
+
+                uvsfilled = uvSetsFilled;
+                foreach (FlverBufferLayoutMember l in layouts)
+                {
+                    // ER meme
+                    if (l.IsSpecialMember)
+                    {
+                        continue;
+                    }
+
+                    var texCoord = GetTexCoordIndex(l.semantic, l.type, l.index);
+
+                    if (l.semantic == FLVER.LayoutSemantic.Position)
+                    {
+                        // Edge compression is not supported here
+                        if (l.type == LayoutType.EdgeCompressed)
+                        {
+                            continue;
+                        }
+
+                        FillVertex(&(*v).Position, br, l.type);
+                    }
+                    else if (l.semantic == FLVER.LayoutSemantic.Normal)
+                    {
+                        FillNormalSNorm8((*v).Normal, br, l.type, &n, meshBoneIndices, useNormalWTransform);
+                    }
+                    else if (texCoord >= 0)
+                    {
+                        for (var c = 0; c < FlverLayoutDeform.TexCoordSize; c++)
+                        {
+                            (*d).TexCoords[(texCoord * FlverLayoutDeform.TexCoordSize) + c] = br.ReadByte();
+                        }
+                    }
+                    else if (l.semantic == FLVER.LayoutSemantic.UV && uvsfilled < 2)
+                    {
+                        bool hasv2;
+                        if (uvsfilled == 0)
+                        {
+                            // A UV pair member holds both sets, so it can fill both
+                            FillUVShort((*v).Uv1, (*v).Uv2, br, l.type, uvFactor, true, out hasv2);
+                        }
+                        else
+                        {
+                            FillUVShort((*v).Uv2, null, br, l.type, uvFactor, false, out hasv2);
+                        }
+
+                        uvsfilled += hasv2 ? 2 : 1;
+                    }
+                    else if (l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == 0)
+                    {
+                        FillVertexColor((*v).Color, br, l.type);
+                    }
+                    else if (l.semantic == FLVER.LayoutSemantic.Tangent && l.index == 0)
+                    {
+                        FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, &n, br, l.type);
+                    }
+                    else
+                    {
+                        EatVertex(br, l.type);
+                    }
+                }
+
+                if (uvsfilled == 1)
+                {
+                    (*v).Uv2[0] = (*v).Uv1[0];
+                    (*v).Uv2[1] = (*v).Uv1[1];
+                }
+
+                pickingVerts[i] = (*v).Position;
+            }
+        }
+
+        uvSetsFilled = uvsfilled;
+        br.StepOut();
+    }
+
+    /// <summary>
+    /// Finds where TEXCOORD1-3 ended up in the flat UV list of a vertex: each entry is the index of a
+    /// member's first UV, by TEXCOORD, or -1 for one the mesh doesn't have.
+    /// </summary>
+    private int[] GetTexCoordUVs(FLVER2.Mesh mesh)
+    {
+        var uvs = new int[FlverLayoutDeform.TexCoordCount];
+        Array.Fill(uvs, -1);
+
+        var uvIndex = 0;
+        foreach (FLVER2.VertexBuffer buffer in mesh.VertexBuffers)
+        {
+            foreach (FLVER.LayoutMember member in Flver!.BufferLayouts[buffer.LayoutIndex])
+            {
+                if (member.Semantic != FLVER.LayoutSemantic.UV)
+                {
+                    continue;
+                }
+
+                var texCoord = GetTexCoordIndex(member.Semantic, member.Type, member.Index);
+                if (texCoord >= 0)
+                {
+                    uvs[texCoord] = uvIndex;
+                }
+
+                // These are read as two UVs each
+                uvIndex += member.Type is FLVER.LayoutType.Float4 or FLVER.LayoutType.UByte4Norm
+                    or FLVER.LayoutType.Short4 or FLVER.LayoutType.Half4 ? 2 : 1;
+            }
+        }
+
+        return uvs;
+    }
+
+    private unsafe void FillVerticesDeform(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
+    {
+        var texCoordUVs = GetTexCoordUVs(mesh);
+
+        Span<FlverLayoutDeform> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
+        fixed (FlverLayoutDeform* pverts = verts)
+        {
+            for (var i = 0; i < mesh.Vertices.Count; i++)
+            {
+                FLVER.Vertex vert = mesh.Vertices[i];
+
+                verts[i] = new FlverLayoutDeform();
+                pickingVerts[i] = new Vector3(vert.Position.X, vert.Position.Y, vert.Position.Z);
+                FlverLayoutDeform* d = &pverts[i];
+                FlverLayoutUV2* v = (FlverLayoutUV2*)d;
+                FillVertex(ref (*v).Position, ref vert);
+                FillNormalSNorm8((*v).Normal, ref vert);
+                FillUVPairShort(v, ref vert);
+                FillColorUNorm((*v).Color, ref vert);
+                if (vert.Tangents.Count > 0)
+                {
+                    FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
+                }
+                else
+                {
+                    FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
+                }
+
+                for (var t = 0; t < texCoordUVs.Length; t++)
+                {
+                    if (texCoordUVs[t] < 0)
+                    {
+                        continue;
+                    }
+
+                    Vector3 first = vert.UVs[texCoordUVs[t]];
+                    Vector3 second = vert.UVs[texCoordUVs[t] + 1];
+                    byte* texCoord = (*d).TexCoords + (t * FlverLayoutDeform.TexCoordSize);
+                    texCoord[0] = (byte)Math.Round(first.X * 255f);
+                    texCoord[1] = (byte)Math.Round(first.Y * 255f);
+                    texCoord[2] = (byte)Math.Round(second.X * 255f);
+                    texCoord[3] = (byte)Math.Round(second.Y * 255f);
+                }
+            }
+        }
+    }
+
     private unsafe void FillVerticesUV2(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
     {
         Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
@@ -1774,6 +2113,10 @@ public class FlverResource : IResource, IDisposable
         else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV2)
         {
             FillVerticesUV2(mesh, pvhandle, meshVertices);
+        }
+        else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
+        {
+            FillVerticesDeform(mesh, pvhandle, meshVertices);
         }
         else
         {
@@ -2036,6 +2379,10 @@ public class FlverResource : IResource, IDisposable
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV2)
             {
                 FillVerticesUV2(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled);
+            }
+            else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
+            {
+                FillVerticesDeform(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled);
             }
             else
             {
@@ -2371,6 +2718,7 @@ public class FlverResource : IResource, IDisposable
                 GPUMeshes[i] = new FlverSubmesh();
                 BeginUVReport();
                 ProcessMesh(Flver.Meshes[i], GPUMeshes[i]);
+                PadDeformedBounds(GPUMeshes[i]);
                 EndUVReport(i, GPUMeshes[i]);
                 if (i == 0)
                 {
@@ -2535,6 +2883,7 @@ public class FlverResource : IResource, IDisposable
             GPUMeshes[i] = new FlverSubmesh();
             BeginUVReport();
             ProcessMesh(ref meshes[i], br, version, vertexbuffers, bufferLayouts, facesets, GPUMeshes[i]);
+            PadDeformedBounds(GPUMeshes[i]);
             EndUVReport(i, GPUMeshes[i]);
             if (i == 0)
             {
@@ -2585,6 +2934,8 @@ public class FlverResource : IResource, IDisposable
             SpecularTextureResource4,
             ShininessTextureResource3,
             ShininessTextureResource4,
+            VatPositionTextureResource,
+            VatNormalTextureResource,
             TextureResourceCount
         }
 
@@ -2603,6 +2954,10 @@ public class FlverResource : IResource, IDisposable
         public Material MaterialData;
         public string? MaterialName;
         public MaterialDefinition? Definition;
+
+        /// <summary>Set for materials with a deformer, and uploaded straight after the material</summary>
+        public MaterialDeform? Deform;
+
         public int MaterialMask = -1;
 
         public string? ShaderName;
@@ -2720,12 +3075,33 @@ public class FlverResource : IResource, IDisposable
             SetMaterialTexture(TextureType.ShininessTextureResource3, ref MaterialData.shininessTex3, 2);
             SetMaterialTexture(TextureType.ShininessTextureResource4, ref MaterialData.shininessTex4, 2);
 
+            MaterialWithDeform? deformed = null;
+
+            if (Deform is MaterialDeform deform)
+            {
+                ushort position = 0;
+                ushort normal = 0;
+                SetMaterialTexture(TextureType.VatPositionTextureResource, ref position, 0);
+                SetMaterialTexture(TextureType.VatNormalTextureResource, ref normal, 0);
+                deform.VatPositionTex = position;
+                deform.VatNormalTex = normal;
+
+                deformed = new MaterialWithDeform { Material = MaterialData, Deform = deform };
+            }
+
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>
             {
                 Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"Material upload");
                 if (MaterialBuffer != null)
                 {
-                    MaterialBuffer.FillBuffer(d, cl, ref MaterialData);
+                    if (deformed is MaterialWithDeform data)
+                    {
+                        MaterialBuffer.FillBuffer(d, cl, ref data);
+                    }
+                    else
+                    {
+                        MaterialBuffer.FillBuffer(d, cl, ref MaterialData);
+                    }
                 }
                 Profiler.TracyCZoneEnd(ctx);
             });
