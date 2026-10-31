@@ -38,6 +38,7 @@ layout (constant_id = 4) const int c_layerCount = 2;
 layout (constant_id = 5) const bool c_blendFromTexCoord = false;
 #endif
 
+layout (constant_id = 6) const bool c_transparent = false;
 layout (constant_id = 99) const bool c_picking = false;
 
 #define MAX_LAYERS 4
@@ -122,6 +123,19 @@ layout(set = 4, binding = 0, std140) buffer materials
     readonly materialData matdata[];
 };
 
+// The entry after a material in the same buffer
+struct shadingData
+{
+	vec4 diffuseAlpha; // xyz: multiplies the albedo, w: alpha below which a pixel is discarded
+	vec4 tiling;       // xy: albedo of layer 0, zw: normal of layer 0
+	vec4 tiling2;      // xy: albedo of layer 1, zw: normal of layer 1
+};
+
+layout(set = 4, binding = 0, std140) buffer materialShading
+{
+    readonly shadingData shadingdata[];
+};
+
 layout(set = 5, binding = 0) uniform sampler linearSampler;
 layout(set = 5, binding = 1) uniform sampler anisoLinearSampler;
 
@@ -197,18 +211,30 @@ uint MaterialValue(int row, int index)
 }
 
 // Samples with explicit derivatives, so a layer can be skipped without making derivatives undefined
-vec4 SampleAt(uint tex, int uvSet)
+vec4 SampleAt(uint tex, int uvSet, vec2 tiling)
 {
 	return textureGrad(
 		sampler2D(globalTextures[nonuniformEXT(int(tex))], anisoLinearSampler),
-		g_uv[uvSet], g_dx[uvSet], g_dy[uvSet]);
+		g_uv[uvSet] * tiling, g_dx[uvSet] * tiling, g_dy[uvSet] * tiling);
+}
+
+// Specular and shininess follow the albedo of their layer. Layers after the first two aren't tiled
+vec2 LayerTiling(int row, int layer)
+{
+	if (layer > 1)
+	{
+		return vec2(1.0);
+	}
+
+	vec4 tiling = layer == 0 ? shadingdata[g_mat + 1u].tiling : shadingdata[g_mat + 1u].tiling2;
+	return row == ROW_NORMAL ? tiling.zw : tiling.xy;
 }
 
 // One layer of a texture row, using the UV set that layer is authored against
 vec4 SampleLayer(int row, int layer)
 {
 	int uvSet = clamp(int(MaterialValue(ROW_UVSET, layer)), 0, 1);
-	return SampleAt(MaterialValue(row, layer), uvSet);
+	return SampleAt(MaterialValue(row, layer), uvSet, LayerTiling(row, layer));
 }
 
 // Either layer 0 only, or all layers mixed by their weights
@@ -247,7 +273,7 @@ void ComputeLayerWeights()
 
 	vec3 channels;
   #ifdef MATERIAL_BLEND_MASK
-	channels = SampleAt(MaterialValue(ROW_EXTRA, 0), 0).rgb;
+	channels = SampleAt(MaterialValue(ROW_EXTRA, 0), 0, vec2(1.0)).rgb;
   #else
 	channels = vec3(fsin_color.a, fsin_color.r, fsin_color.g);
   #endif
@@ -427,7 +453,9 @@ void main()
 	vec4 diffuseColor = SampleLayer(ROW_ALBEDO, 0);
 #endif
 
-	if (diffuseColor.w < 0.5)
+	vec4 diffuseAlpha = shadingdata[g_mat + 1u].diffuseAlpha;
+
+	if (diffuseColor.w < diffuseAlpha.w)
 	{
 		discard;
 	}
@@ -491,7 +519,7 @@ void main()
 	normalMap = normalize(fsin_worldToTangent * normalMap);
 
 	Surface surface;
-	surface.diffuse = diffuseColor.xyz;
+	surface.diffuse = diffuseColor.xyz * diffuseAlpha.xyz;
 	surface.F0 = F0;
 	surface.roughness = roughness;
 	surface.N = (gl_FrontFacing ? normalMap : -normalMap);
@@ -525,5 +553,5 @@ void main()
 	}
 #endif
 
-	fsout_color = sqrt(vec4(max(litColor, vec3(0.0)), 1.0));
+	fsout_color = vec4(sqrt(max(litColor, vec3(0.0))), c_transparent ? diffuseColor.w : 1.0);
 }

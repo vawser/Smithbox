@@ -233,6 +233,18 @@
       "Text": "Dumped {0} material definitions to {1}."
     },
     {
+      "Key": "DEV_Tool_Action_Generate_Texture_Groups",
+      "Text": "Generate Texture Groups"
+    },
+    {
+      "Key": "DEV_Tool_Action_Generate_Texture_Groups_TT",
+      "Text": "Reads the current project's game shaders and writes which UV group each of their textures is in. The file belongs in Assets/Material Definitions."
+    },
+    {
+      "Key": "DEV_Tool_Material_Dump_Groups_Done",
+      "Text": "Wrote the texture groups of {0} shaders to {1}."
+    },
+    {
       "Key": "DEV_Tool_Material_Dump_Failed",
       "Text": "Failed to write the material dump to {0}."
     },

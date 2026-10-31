@@ -91,7 +91,7 @@ layout (constant_id = 60) const int c_deformer = 0;
 
 layout(set = 2, binding = 0) uniform texture2D globalTextures[];
 
-// The entry after a material in the material buffer. Same size as the fragment stage's materialData
+// Two entries after a material in the material buffer. Same size as the fragment stage's materialData
 struct deformData
 {
 	vec4 params;    // x: amplitude, y: frames or cycles a second
@@ -222,7 +222,7 @@ void main()
 	vec3 localNormal = vec3(normal);
 
 #ifdef MATERIAL_DEFORM
-	deformData deform = deformdata[idata[gl_InstanceIndex].materialID.x + 1u];
+	deformData deform = deformdata[idata[gl_InstanceIndex].materialID.x + 2u];
 
 	if (c_deformer == DEFORM_VAT)
 	{

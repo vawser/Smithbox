@@ -67,6 +67,15 @@ public abstract class MeshProvider
 
     public virtual VkPrimitiveTopology Topology => VkPrimitiveTopology.TriangleList;
 
+    public virtual BlendStateDescription BlendState => BlendStateDescription.SingleOverrideBlend;
+
+    public virtual bool DepthWrite => true;
+
+    /// <summary>
+    ///     Whether what's behind this mesh shows through, so that it has to be drawn after it
+    /// </summary>
+    public virtual bool IsTransparent => false;
+
     // Mesh data
     public virtual bool Is32Bit => false;
 

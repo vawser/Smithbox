@@ -8,6 +8,11 @@ namespace StudioCore.Renderer;
 
 public unsafe class FlverSubmeshProvider : MeshProvider
 {
+    private static readonly BlendStateDescription SubtractBlend = new(RgbaFloat.Black, new BlendAttachmentDescription(
+        true,
+        VkBlendFactor.SrcAlpha, VkBlendFactor.One, VkBlendOp.ReverseSubtract,
+        VkBlendFactor.Zero, VkBlendFactor.One, VkBlendOp.Add));
+
     private readonly int _meshIndex;
 
     private readonly ResourceHandle<FlverResource> _resource;
@@ -45,8 +50,23 @@ public unsafe class FlverSubmeshProvider : MeshProvider
 
     public override VkCullModeFlags CullMode =>
         _resource.Get().GPUMeshes[_meshIndex].MeshFacesets[0].BackfaceCulling
+        && _resource.Get().GPUMeshes[_meshIndex].Material.Definition?.CullNone != true
             ? VkCullModeFlags.Back
             : VkCullModeFlags.None;
+
+    public override BlendStateDescription BlendState =>
+        _resource.Get().GPUMeshes[_meshIndex].Material.Blending switch
+        {
+            MaterialBlending.Alpha => BlendStateDescription.SingleAlphaBlend,
+            MaterialBlending.Add => BlendStateDescription.SingleAdditiveBlend,
+            MaterialBlending.Subtract => SubtractBlend,
+            _ => BlendStateDescription.SingleOverrideBlend
+        };
+
+    public override bool DepthWrite => _resource.Get().GPUMeshes[_meshIndex].Material.DepthWrite;
+
+    public override bool IsTransparent =>
+        _resource.Get().GPUMeshes[_meshIndex].Material.Blending != MaterialBlending.Opaque;
 
     public override VkFrontFace FrontFace => VkFrontFace.CounterClockwise;
 

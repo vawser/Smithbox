@@ -38,12 +38,30 @@ public enum MaterialBlendWeight
 }
 
 /// <summary>
+/// How a material's color combines with what is behind it.
+/// </summary>
+public enum MaterialBlending
+{
+    Opaque,
+    Alpha,
+    Add,
+    Subtract
+}
+
+/// <summary>
 /// The per-game table of what is known about each shader. The numbered parameters of a shader
 /// (such as snp_0_float_0) only have a meaning within that shader, so they are looked up here.
 /// </summary>
 public class MaterialShaderTable
 {
     public Dictionary<string, MaterialShaderEntry> Shaders { get; set; } = new();
+
+    /// <summary>
+    /// Shader name to texture slot to UV group, generated from the game's shaders by the
+    /// Material Definition Dumper. Materials give the tiling of a group, not of a texture.
+    /// </summary>
+    [JsonIgnore]
+    public Dictionary<string, Dictionary<int, string>> TextureGroups { get; set; } = new();
 }
 
 public class MaterialShaderEntry
@@ -75,7 +93,11 @@ public class MaterialSampler
 
     public string Path { get; set; } = "";
 
+    /// <summary>The scale stored with the sampler. 0, 0 means it leaves it to the UV group</summary>
     public float[] Scale { get; set; } = [];
+
+    /// <summary>What UVs are multiplied by to sample this texture</summary>
+    public float[] Tiling { get; set; } = [1, 1];
 }
 
 /// <summary>
@@ -93,6 +115,11 @@ public class MaterialBlendLayer
 /// </summary>
 public class MaterialDefinition
 {
+    public const int BlendModeEdge = 1;
+    public const int BlendModeAlpha = 2;
+    public const int BlendModeAdd = 4;
+    public const int BlendModeSubtract = 5;
+
     private const string AlbedoRole = "AlbedoMap";
     private const string NormalRole = "NormalMap";
 
@@ -193,6 +220,7 @@ public class MaterialDefinition
         }
 
         ResolveBlendLayers();
+        ResolveTiling(table);
 
         if (table != null && table.Shaders.TryGetValue(ShaderName, out MaterialShaderEntry? entry))
         {
@@ -262,6 +290,29 @@ public class MaterialDefinition
                 : i < normals.Count ? normals[i] : null;
 
             BlendLayers.Add(new MaterialBlendLayer { Albedo = albedos[i].Type, Normal = normal?.Type });
+        }
+    }
+
+    /// <summary>
+    /// A sampler's own scale wins if it has one. Otherwise it takes the scale of its UV group.
+    /// </summary>
+    private void ResolveTiling(MaterialShaderTable? table)
+    {
+        Dictionary<int, string>? groups = null;
+        table?.TextureGroups.TryGetValue(ShaderName, out groups);
+
+        foreach (MaterialSampler sampler in Samplers)
+        {
+            if (sampler.Scale.Length >= 2 && (sampler.Scale[0] != 0 || sampler.Scale[1] != 0))
+            {
+                sampler.Tiling = sampler.Scale[..2];
+            }
+            else if (groups != null && groups.TryGetValue(sampler.Slot, out var group)
+                && Params.TryGetValue($"{group}_CommonUV-UVParam", out var scale)
+                && scale.Length >= 2 && scale[0] != 0 && scale[1] != 0)
+            {
+                sampler.Tiling = scale[..2];
+            }
         }
     }
 

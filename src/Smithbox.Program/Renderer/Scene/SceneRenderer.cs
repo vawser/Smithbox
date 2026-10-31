@@ -100,8 +100,8 @@ public static class SceneRenderer
         GrassInstanceAllocator = new Lazy<GPUBufferAllocator>(() => new GPUBufferAllocator(64 * 1024 * 1024,
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(InstanceData)));
 
-        // Materials are 48 bytes, so this holds more of them than the 5MB it used to be did at 32 bytes
-        MaterialBufferAllocator = new GPUBufferAllocator("materials", 8 * 1024 * 1024,
+        // Materials take at least two 48 byte entries, see MaterialShading
+        MaterialBufferAllocator = new GPUBufferAllocator("materials", 16 * 1024 * 1024,
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(Material),
             VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment);
         BoneBufferAllocator = new GPUBufferAllocator("bones", CFG.Current.Viewport_Limit_Buffer_Flver_Bone * 64,

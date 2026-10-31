@@ -108,26 +108,38 @@ public class MaterialData : IDisposable
     /// </summary>
     private async Task<MaterialShaderTable> LoadShaderTable()
     {
-        var path = Path.Join(AppContext.BaseDirectory, "Assets", "Material Definitions",
-            $"{Project.Descriptor.ProjectType}.json");
+        var folder = Path.Join(AppContext.BaseDirectory, "Assets", "Material Definitions");
+        var game = Project.Descriptor.ProjectType;
 
-        if (!File.Exists(path))
-        {
-            return new MaterialShaderTable();
-        }
+        var path = Path.Join(folder, $"{game}.json");
+        var groupsPath = Path.Join(folder, $"{game}_TextureGroups.json");
+
+        MaterialShaderTable table = new();
 
         try
         {
-            string text = await File.ReadAllTextAsync(path);
+            if (File.Exists(path))
+            {
+                string text = await File.ReadAllTextAsync(path);
 
-            return JsonSerializer.Deserialize(text, MaterialEditorJsonSerializerContext.Default.MaterialShaderTable)
-                ?? new MaterialShaderTable();
+                table = JsonSerializer.Deserialize(text, MaterialEditorJsonSerializerContext.Default.MaterialShaderTable)
+                    ?? table;
+            }
+
+            if (File.Exists(groupsPath))
+            {
+                string text = await File.ReadAllTextAsync(groupsPath);
+
+                table.TextureGroups = JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringDictionaryInt32String) ?? new();
+            }
         }
         catch (Exception e)
         {
             Smithbox.LogError(this, LOC.Get("MAT_Data_Deserialize_Shader_Table_FAIL", path), e);
-            return new MaterialShaderTable();
         }
+
+        return table;
     }
 
     #region Dispose

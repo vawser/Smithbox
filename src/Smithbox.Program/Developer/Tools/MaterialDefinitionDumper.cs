@@ -1,3 +1,4 @@
+using SoulsFormats;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -43,7 +44,73 @@ public class MaterialDefinitionDumper
             "dumpMaterials",
             LOC.Get("DEV_Tool_Action_Dump_Material_Definitions"),
             LOC.Get("DEV_Tool_Action_Dump_Material_Definitions_TT"),
-            Dump);
+            Dump,
+
+            "generateTextureGroups",
+            LOC.Get("DEV_Tool_Action_Generate_Texture_Groups"),
+            LOC.Get("DEV_Tool_Action_Generate_Texture_Groups_TT"),
+            GenerateTextureGroups);
+    }
+
+    /// <summary>
+    /// Writes the table of which UV group each texture of each shader is in. The result
+    /// belongs in Assets/Material Definitions, and only changes if a game's shaders do.
+    /// </summary>
+    public void GenerateTextureGroups()
+    {
+        var project = Smithbox.Orchestrator.SelectedProject;
+
+        if (project == null)
+        {
+            Smithbox.Log(this, LOC.Get("DEV_Tool_Material_Dump_No_Project"));
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(_outputPath) || !Directory.Exists(_outputPath))
+        {
+            Smithbox.Log(this, LOC.Get("DEV_Tool_Material_Dump_No_Output"));
+            return;
+        }
+
+        var game = project.Descriptor.ProjectType;
+        var path = Path.Join(_outputPath, $"{game}_TextureGroups.json");
+
+        try
+        {
+            Dictionary<string, Dictionary<int, string>> groups = new();
+
+            foreach (var bundlePath in project.VFS.FS.GetFileNamesMatching("/shader", @"\.shaderbdlebnd(\.dcx)?$"))
+            {
+                foreach (BinderFile bundle in BND4.Read(project.VFS.FS.ReadFile(bundlePath).Value).Files)
+                {
+                    if (!bundle.Name.EndsWith(".shaderbdle"))
+                        continue;
+
+                    foreach (BinderFile file in BND4.Read(bundle.Bytes).Files)
+                    {
+                        if (!file.Name.EndsWith(".metaparam"))
+                            continue;
+
+                        var shader = Path.GetFileNameWithoutExtension(file.Name.Split('\\', '/')[^1]);
+                        var textureGroups = MaterialMetaparam.ReadTextureGroups(file.Bytes.ToArray());
+
+                        if (textureGroups.Count > 0)
+                        {
+                            groups[shader] = textureGroups;
+                        }
+                    }
+                }
+            }
+
+            File.WriteAllText(path, JsonSerializer.Serialize(groups,
+                MaterialEditorJsonSerializerContext.Default.DictionaryStringDictionaryInt32String));
+
+            Smithbox.Log(this, LOC.Get("DEV_Tool_Material_Dump_Groups_Done", groups.Count, path));
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("DEV_Tool_Material_Dump_Failed", path), e);
+        }
     }
 
     public void SelectOutput()

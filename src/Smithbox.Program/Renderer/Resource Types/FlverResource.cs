@@ -222,6 +222,7 @@ public class FlverResource : IResource, IDisposable
         var bank = curProject.Handler.MaterialData.PrimaryBank;
 
         var path = mpath;
+        var resolvedType = type;
 
         MTD? material = null;
         MATBIN? matbin = null;
@@ -324,6 +325,7 @@ public class FlverResource : IResource, IDisposable
                     }
 
                     path = tex.Path;
+                    resolvedType = tex.Type;
                     //Smithbox.Log(this, $"{Context?.QualifiedName}: MATBIN: {path}");
                 }
             }
@@ -353,6 +355,7 @@ public class FlverResource : IResource, IDisposable
 
             (Context?.Pool ?? ResourceManager.DefaultPool).AddListener<TextureResource>(textureName, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;
+            dest.ApplySamplerTiling(textureType, resolvedType);
         }
         else
         {
@@ -541,6 +544,30 @@ public class FlverResource : IResource, IDisposable
     }
 
     /// <summary>
+    /// Fills in the values a material sets. The alpha reference is 0 to 255 in the file, and materials
+    /// that don't set one only have an alpha test if they are in the "edge" blend mode of the older games.
+    /// </summary>
+    private static void ApplyDefinitionShading(FlverMaterial dest, MaterialDefinition definition)
+    {
+        var alphaRef = definition.AlphaRef > 0
+            ? definition.AlphaRef / 255f
+            : definition.BlendMode == MaterialDefinition.BlendModeEdge ? MaterialShading.DefaultAlphaRef : 0;
+
+        var color = definition.DiffuseColor;
+        dest.Shading.DiffuseAlpha = new Vector4(color[0], color[1], color[2], alphaRef);
+
+        dest.Blending = definition.BlendMode switch
+        {
+            MaterialDefinition.BlendModeAlpha => MaterialBlending.Alpha,
+            MaterialDefinition.BlendModeAdd => MaterialBlending.Add,
+            MaterialDefinition.BlendModeSubtract => MaterialBlending.Subtract,
+            _ => MaterialBlending.Opaque
+        };
+
+        dest.DepthWrite = dest.Blending == MaterialBlending.Opaque && !definition.DisableDepthWrite;
+    }
+
+    /// <summary>
     /// Picks the shader, vertex layout and shader constants for a material from what its textures need
     /// </summary>
     private static void ConfigureMaterialShader(FlverMaterial dest, MaterialLayers layers)
@@ -549,6 +576,11 @@ public class FlverResource : IResource, IDisposable
 
         var deformer = dest.Definition?.Deformer ?? MaterialDeformer.None;
         var knownBlend = HasKnownBlend(dest);
+
+        if (dest.Definition != null)
+        {
+            ApplyDefinitionShading(dest, dest.Definition);
+        }
 
         if (deformer != MaterialDeformer.None || knownBlend)
         {
@@ -582,6 +614,7 @@ public class FlverResource : IResource, IDisposable
             specConstants.Add(new SpecializationConstant(5, knownBlend));
         }
 
+        specConstants.Add(new SpecializationConstant(6, dest.Blending != MaterialBlending.Opaque));
         specConstants.Add(new SpecializationConstant(60, (uint)deformer));
 
         dest.SpecializationConstants ??= new List<SpecializationConstant>();
@@ -624,12 +657,13 @@ public class FlverResource : IResource, IDisposable
     }
 
     /// <summary>
-    /// A material with a deformer takes two entries of the material buffer, see <see cref="MaterialDeform"/>
+    /// A material takes two entries of the material buffer, or three with a deformer.
+    /// See <see cref="MaterialShading"/> and <see cref="MaterialDeform"/>
     /// </summary>
     private static unsafe GPUBufferAllocator.GPUBufferHandle AllocateMaterialBuffer(FlverMaterial dest)
     {
         var size = dest.Definition?.Deformer is null or MaterialDeformer.None
-            ? sizeof(Material)
+            ? sizeof(MaterialWithShading)
             : sizeof(MaterialWithDeform);
 
         return SceneRenderer.MaterialBufferAllocator.Allocate((uint)size, sizeof(Material));
@@ -2955,8 +2989,14 @@ public class FlverResource : IResource, IDisposable
         public string? MaterialName;
         public MaterialDefinition? Definition;
 
-        /// <summary>Set for materials with a deformer, and uploaded straight after the material</summary>
+        /// <summary>Uploaded straight after the material</summary>
+        public MaterialShading Shading = MaterialShading.Default;
+
+        /// <summary>Set for materials with a deformer, and uploaded straight after the shading</summary>
         public MaterialDeform? Deform;
+
+        public MaterialBlending Blending = MaterialBlending.Opaque;
+        public bool DepthWrite = true;
 
         public int MaterialMask = -1;
 
@@ -3015,6 +3055,38 @@ public class FlverResource : IResource, IDisposable
                     SpecializationConstants.Add(new SpecializationConstant(50, true));
                 }
                 _setNormalWBoneTransform = true;
+            }
+        }
+
+        /// <summary>
+        /// Tiles a texture slot by the sampler that was chosen for it. Only the slots of the
+        /// first two layers have tiling, as those are the only ones a material can blend.
+        /// </summary>
+        public void ApplySamplerTiling(TextureType textureType, string? samplerType)
+        {
+            var tiling = Definition?.Samplers.Find(x => x.Type == samplerType)?.Tiling;
+
+            if (tiling == null || tiling.Length < 2)
+                return;
+
+            switch (textureType)
+            {
+                case TextureType.AlbedoTextureResource:
+                    Shading.Tiling.X = tiling[0];
+                    Shading.Tiling.Y = tiling[1];
+                    break;
+                case TextureType.NormalTextureResource:
+                    Shading.Tiling.Z = tiling[0];
+                    Shading.Tiling.W = tiling[1];
+                    break;
+                case TextureType.AlbedoTextureResource2:
+                    Shading.Tiling2.X = tiling[0];
+                    Shading.Tiling2.Y = tiling[1];
+                    break;
+                case TextureType.NormalTextureResource2:
+                    Shading.Tiling2.Z = tiling[0];
+                    Shading.Tiling2.W = tiling[1];
+                    break;
             }
         }
 
@@ -3086,8 +3158,10 @@ public class FlverResource : IResource, IDisposable
                 deform.VatPositionTex = position;
                 deform.VatNormalTex = normal;
 
-                deformed = new MaterialWithDeform { Material = MaterialData, Deform = deform };
+                deformed = new MaterialWithDeform { Material = MaterialData, Shading = Shading, Deform = deform };
             }
+
+            MaterialWithShading shaded = new() { Material = MaterialData, Shading = Shading };
 
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>
             {
@@ -3100,7 +3174,7 @@ public class FlverResource : IResource, IDisposable
                     }
                     else
                     {
-                        MaterialBuffer.FillBuffer(d, cl, ref MaterialData);
+                        MaterialBuffer.FillBuffer(d, cl, ref shaded);
                     }
                 }
                 Profiler.TracyCZoneEnd(ctx);

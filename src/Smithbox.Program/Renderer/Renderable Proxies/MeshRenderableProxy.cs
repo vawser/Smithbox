@@ -667,8 +667,10 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         // Build default pipeline
         GraphicsPipelineDescription pipelineDescription = new();
-        pipelineDescription.BlendState = BlendStateDescription.SingleOverrideBlend;
-        pipelineDescription.DepthStencilState = DepthStencilStateDescription.DepthOnlyGreaterEqual;
+        pipelineDescription.BlendState = _meshProvider.BlendState;
+        pipelineDescription.DepthStencilState = _meshProvider.DepthWrite
+            ? DepthStencilStateDescription.DepthOnlyGreaterEqual
+            : DepthStencilStateDescription.DepthOnlyGreaterEqualRead;
         pipelineDescription.RasterizerState = new RasterizerStateDescription(
             _meshProvider.CullMode,
             _meshProvider.FillMode,
@@ -720,6 +722,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         BoundingBox bounds = GetWorldBounds();
         _renderable = _renderablesSet.CreateMesh(ref bounds, ref meshcomp);
         _renderablesSet.cRenderKeys[_renderable] = GetRenderKey(0.0f);
+        _renderablesSet.cBackToFront[_renderable] = _meshProvider.IsTransparent;
 
         // Pipelines
         _renderablesSet.cPipelines[_renderable] = _pipeline;
@@ -739,6 +742,8 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         if (_renderOutline && CFG.Current.Viewport_Enable_Selection_Outline)
         {
+            pipelineDescription.BlendState = BlendStateDescription.SingleOverrideBlend;
+            pipelineDescription.DepthStencilState = DepthStencilStateDescription.DepthOnlyGreaterEqual;
             pipelineDescription.RasterizerState = new RasterizerStateDescription(
                 _meshProvider.SelectedUseBackface
                     ? _meshProvider.CullMode == VkCullModeFlags.Front ? VkCullModeFlags.Back : VkCullModeFlags.Front
