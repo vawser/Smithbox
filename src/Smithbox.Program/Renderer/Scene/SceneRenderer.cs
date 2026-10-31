@@ -414,7 +414,7 @@ public static class SceneRenderer
     /// </summary>
     public class IndirectDrawEncoder
     {
-        private const int MAX_BATCH = 100;
+        private const int MAX_BATCH = 1000;
         private const uint INITIAL_CALL_COUNT = 10000;
         private const float GROWTH_FACTOR = 1.5f;
 
@@ -577,8 +577,10 @@ public static class SceneRenderer
             {
                 if (_batchCount[_stagingSet] >= MAX_BATCH)
                 {
-                    //throw new Exception("Batch count is not large enough");
-                    return; // Drop the batch for now
+                    // The draw is already in the buffer, and left there the last batch would draw it with the wrong
+                    // pipeline and buffers, so it has to be taken back out
+                    _indirectDrawCount[_stagingSet]--;
+                    return;
                 }
 
                 // Add a new batch
@@ -627,8 +629,10 @@ public static class SceneRenderer
             {
                 if (_batchCount[_stagingSet] >= MAX_BATCH)
                 {
-                    //throw new Exception("Batch count is not large enough");
-                    return; // Drop the batch for now
+                    // The draw is already in the buffer, and left there the last batch would draw it with the wrong
+                    // pipeline and buffers, so it has to be taken back out
+                    _indirectDrawCount[_stagingSet]--;
+                    return;
                 }
 
                 // Add a new batch

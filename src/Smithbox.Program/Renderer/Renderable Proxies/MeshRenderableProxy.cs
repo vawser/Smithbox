@@ -922,7 +922,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             }
         }
 
-        return new RenderKey(code << 41 | index << 40 |
+        // Instanced meshes use another resource set, so mixed in with the rest they would split it into
+        // a batch at every change, which can be enough to run out of batches
+        var instanced = _worldBufferInstances > 0 ? 1ul << 63 : 0;
+
+        return new RenderKey(instanced | (code << 41 & ~(1ul << 63)) | index << 40 |
                              ((ulong)(_renderablesSet.cDrawParameters[_renderable]._bufferIndex & 0xFF) << 32) +
                               cameraDistanceInt);
     }
