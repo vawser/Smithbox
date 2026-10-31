@@ -12,9 +12,8 @@ namespace StudioCore.Renderer;
 /// </summary>
 public static class MaterialMetaparam
 {
-    private const int TextureCountOffset = 0x0C;
-    private const int FirstTextureOffset = 0x98;
-    private const int TextureSize = 0x30;
+    private const int FirstEntryOffset = 0x98;
+    private const int EntrySize = 0x30;
     private const int GroupNameOffset = 0x18;
 
     private static readonly Regex SlotName = new(@"Texture2D_(\d+)_", RegexOptions.Compiled);
@@ -26,16 +25,41 @@ public static class MaterialMetaparam
     {
         Dictionary<int, string> groups = new();
 
-        var count = BitConverter.ToInt32(data, TextureCountOffset);
-
-        for (var i = 0; i < count; i++)
+        if (data.Length < FirstEntryOffset + EntrySize)
         {
-            var entry = FirstTextureOffset + (i * TextureSize);
+            return groups;
+        }
 
-            Match slot = SlotName.Match(ReadString(data, BitConverter.ToInt64(data, entry)));
-            var group = ReadString(data, BitConverter.ToInt64(data, entry + GroupNameOffset));
+        // The strings come straight after the entries, starting with the name of the first
+        var entriesEnd = Math.Min(BitConverter.ToInt64(data, FirstEntryOffset), data.Length);
 
-            if (slot.Success && group.Length > 0)
+        // Textures are followed by entries for other things, which aren't laid out the same
+        for (var entry = FirstEntryOffset; entry + EntrySize <= entriesEnd; entry += EntrySize)
+        {
+            var nameOffset = BitConverter.ToInt64(data, entry);
+
+            if (nameOffset < entriesEnd || nameOffset >= data.Length)
+            {
+                break;
+            }
+
+            Match slot = SlotName.Match(ReadString(data, nameOffset));
+
+            if (!slot.Success)
+            {
+                continue;
+            }
+
+            var groupOffset = BitConverter.ToInt64(data, entry + GroupNameOffset);
+
+            if (groupOffset < entriesEnd || groupOffset >= data.Length)
+            {
+                continue;
+            }
+
+            var group = ReadString(data, groupOffset);
+
+            if (group.Length > 0)
             {
                 groups[int.Parse(slot.Groups[1].Value)] = group;
             }

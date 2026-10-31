@@ -1,0 +1,7 @@
+{
+  "Shaders": {
+    "M[AMSN_V][Mb2]": {
+      "BlendWeight": "TexCoord1X"
+    }
+  }
+}

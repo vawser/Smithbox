@@ -1,0 +1,27 @@
+{
+  "Shaders": {
+    "M[Flag][Mb2]": {
+      "Deformer": "Vat",
+      "BlendWeight": "TexCoord1X",
+      "Params": {
+        "Amplitude": "snp_0_float_0",
+        "FrameRate": "snp_0_float_20"
+      },
+      "Textures": {
+        "VatPosition": 9,
+        "VatNormal": 0
+      }
+    },
+    "M[AMSN][Sway]": {
+      "Deformer": "Sway",
+      "Params": {
+        "Amplitude": "snp_0_float_0",
+        "Speed": "snp_0_float_2",
+        "Direction": "snp_0_float3_0"
+      }
+    },
+    "M[AMSN_V][Mb2]": {
+      "BlendWeight": "TexCoord1X"
+    }
+  }
+}

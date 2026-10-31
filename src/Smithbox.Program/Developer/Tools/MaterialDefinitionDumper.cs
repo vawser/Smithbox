@@ -16,6 +16,8 @@ namespace StudioCore.Application;
 /// </summary>
 public class MaterialDefinitionDumper
 {
+    private static readonly string[] ShaderFolders = ["/shader", "/shader_d3d12"];
+
     public string _outputPath = "";
     public string _filter = "";
 
@@ -79,7 +81,13 @@ public class MaterialDefinitionDumper
         {
             Dictionary<string, Dictionary<int, string>> groups = new();
 
-            foreach (var bundlePath in project.VFS.FS.GetFileNamesMatching("/shader", @"\.shaderbdlebnd(\.dcx)?$"))
+            // AC6 only has them in the D3D12 folder. Ray tracing variants have the same shaders
+            var bundlePaths = ShaderFolders
+                .SelectMany(x => project.VFS.FS.GetFileNamesMatching(x, @"\.shaderbdlebnd\.dcx$"))
+                .Where(x => !x.Contains("[rt]"))
+                .Select(x => x.Replace('\\', '/'));
+
+            foreach (var bundlePath in bundlePaths)
             {
                 foreach (BinderFile bundle in BND4.Read(project.VFS.FS.ReadFile(bundlePath).Value).Files)
                 {
