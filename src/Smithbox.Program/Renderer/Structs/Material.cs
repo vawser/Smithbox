@@ -102,6 +102,61 @@ public struct MaterialEffects
 }
 
 /// <summary>
+///     The tiling that doesn't fit in <see cref="MaterialShading" />, read by the flver fragment
+///     shader as the entry after the deform entry. Only materials with a blend recipe have this and the next three.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialLayerTiling
+{
+    /// <summary>xy tiles the albedo of layer 2, zw its normal</summary>
+    public Vector4 Tiling3;
+
+    /// <summary>xy tiles the albedo of layer 3, zw its normal</summary>
+    public Vector4 Tiling4;
+
+    /// <summary>xy tiles the blend mask, zw the detail mask</summary>
+    public Vector4 MaskTiling;
+
+    public static MaterialLayerTiling Default => new()
+    {
+        Tiling3 = Vector4.One,
+        Tiling4 = Vector4.One,
+        MaskTiling = Vector4.One
+    };
+}
+
+/// <summary>How the layers are weighed, see <see cref="MaterialBlendRecipe" /></summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialBlend
+{
+    /// <summary>xyz is the sharpness of layers 1 to 3, w the bias of the detail mask</summary>
+    public Vector4 Sharpness;
+
+    /// <summary>xyz is how much of the detail mask layers 1 to 3 use, w the scale of the weights</summary>
+    public Vector4 Detail;
+
+    /// <summary>Where the value of layers 1 to 3 comes from</summary>
+    public uint Source1, Source2, Source3;
+
+    /// <summary>The texture index of the detail mask</summary>
+    public uint DetailTex;
+}
+
+/// <summary>The rgb of each is the tint of layers 1 to 3, and the three w are the tint of layer 0</summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialLayerTint
+{
+    public Vector4 Tint2, Tint3, Tint4;
+}
+
+/// <summary>How far the UVs of layers 1 to 3 move each second: xy for the albedo, zw for the normal</summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialLayerScroll
+{
+    public Vector4 Scroll2, Scroll3, Scroll4;
+}
+
+/// <summary>
 ///     How a material moves its vertices. Read by the flver vertex shader as the entry straight after the
 ///     material's <see cref="MaterialEffects" />, which is the only reason it has the same 48 byte size.
 ///     Only materials with a deformer allocate it, so static materials don't pay for it.
@@ -147,4 +202,79 @@ public struct MaterialWithDeform
     public MaterialShading Shading;
     public MaterialEffects Effects;
     public MaterialDeform Deform;
+}
+
+/// <summary>
+///     The overlay of a material. Read by the flver fragment shader as the entry after <see cref="MaterialLayerScroll" />.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialDetail
+{
+    /// <summary>xy tiles the albedo, zw the normal</summary>
+    public Vector4 Tiling;
+
+    /// <summary>rgb multiplies the albedo, w is the strength of the normal</summary>
+    public Vector4 ColorStrength;
+
+    /// <summary>The texture indices of the albedo and normal, 0 if there is none</summary>
+    public uint AlbedoTex, NormalTex, Pad0, Pad1;
+}
+
+/// <summary>
+///     The glow of a [magma] material, read by the flver fragment shader as the two entries after
+///     <see cref="MaterialDetail" />. See <see cref="MaterialMagmaRecipe" /> for what these do.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialMagma
+{
+    /// <summary>xy moves the first sample's UVs each second, zw scales them</summary>
+    public Vector4 Flow0;
+
+    /// <summary>xy moves the second sample's UVs each second, zw scales them</summary>
+    public Vector4 Flow1;
+
+    /// <summary>xy tiles the texture, z is the strength, w the power</summary>
+    public Vector4 Tiling;
+
+    /// <summary>xy bends the third sample's UVs, zw is unused</summary>
+    public Vector4 Distort;
+
+    /// <summary>rgb is the color, w the limit</summary>
+    public Vector4 Color;
+
+    /// <summary>The texture index, and which sample has the red</summary>
+    public uint Tex, RedSample, Pad0, Pad1;
+}
+
+/// <summary>
+///     Everything of a material with a blend recipe. The deform entry is there
+///     even if it doesn't deform, so that the entries always have the same offsets.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialWithBlend
+{
+    public Material Material;
+    public MaterialShading Shading;
+    public MaterialEffects Effects;
+    public MaterialDeform Deform;
+    public MaterialLayerTiling LayerTiling;
+    public MaterialBlend Blend;
+    public MaterialLayerTint LayerTint;
+    public MaterialLayerScroll LayerScroll;
+}
+
+/// <summary>Everything of a material with a glow, which has the entries of an overlay in front of it</summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialWithMagma
+{
+    public MaterialWithDetail Detailed;
+    public MaterialMagma Magma;
+}
+
+/// <summary>Everything of a material with an overlay, which has the entries of a blend recipe in front of it</summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialWithDetail
+{
+    public MaterialWithBlend Blended;
+    public MaterialDetail Detail;
 }

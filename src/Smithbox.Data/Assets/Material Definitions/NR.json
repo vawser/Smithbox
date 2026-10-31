@@ -12,6 +12,14 @@
         "VatNormal": 0
       }
     },
+    "M[AMSN][Ov_N][Sway]": {
+      "Deformer": "Sway",
+      "Params": {
+        "Amplitude": "snp_0_float_0",
+        "Speed": "snp_0_float_2",
+        "Direction": "snp_0_float3_0"
+      }
+    },
     "M[AMSN][Sway]": {
       "Deformer": "Sway",
       "Params": {

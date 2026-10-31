@@ -12,6 +12,8 @@
 ./FlverShader\FlverShader_deform.frag.spv
 ./FlverShader\FlverShader_deform_selected.vert.spv
 ./FlverShader\FlverShader_deform_selected.frag.spv
+./FlverShader\FlverShader_deform_outline.vert.spv
+./FlverShader\FlverShader_deform_outline.frag.spv
 ./FlverShader\FlverShader_deform_blend.vert.spv
 ./FlverShader\FlverShader_deform_blend.frag.spv
 ./FlverShader\FlverShader_deform_blend_selected.vert.spv

@@ -753,7 +753,9 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                 true,
                 false);
 
-            Tuple<Shader, Shader> s = StaticResourceCache.GetShaders(gd, gd.ResourceFactory, "SimpleFlver_Outline").ToTuple();
+            // A mesh that deforms needs its outline to deform with it, which only the flver shader can do
+            var outlineShader = _meshProvider.ShaderName.Contains("_deform") ? @"FlverShader\FlverShader_deform_outline" : "SimpleFlver_Outline";
+            Tuple<Shader, Shader> s = StaticResourceCache.GetShaders(gd, gd.ResourceFactory, outlineShader).ToTuple();
             _shaders = new[] { s.Item1, s.Item2 };
             pipelineDescription.ShaderSet = new ShaderSetDescription(
                 mainVertexLayouts,

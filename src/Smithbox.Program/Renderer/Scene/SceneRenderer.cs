@@ -101,7 +101,7 @@ public static class SceneRenderer
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(InstanceData)));
 
         // Materials take at least three 48 byte entries, see MaterialShading
-        MaterialBufferAllocator = new GPUBufferAllocator("materials", 24 * 1024 * 1024,
+        MaterialBufferAllocator = new GPUBufferAllocator("materials", 32 * 1024 * 1024,
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(Material),
             VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment);
         BoneBufferAllocator = new GPUBufferAllocator("bones", CFG.Current.Viewport_Limit_Buffer_Flver_Bone * 64,

@@ -12,6 +12,33 @@
         "VatNormal": 0
       }
     },
+    "C[AMSN][VA_Loop]": {
+      "Deformer": "VatLoop",
+      "Params": { "FrameRate": "snp_0_float_0" },
+      "Textures": { "VatPosition": 0, "VatNormal": 4 }
+    },
+    "M[Flag2]": {
+      "Deformer": "Vat",
+      "Params": { "FrameRate": "snp_0_float_0" },
+      "Textures": { "VatPosition": 3, "VatNormal": 0 }
+    },
+    "M[WorldTree_Leaves]": {
+      "Deformer": "Swing",
+      "Params": {
+        "Amplitude": "snp_0_float_0",
+        "Speed": "snp_0_float_11",
+        "Phase": "snp_0_float_1",
+        "Direction": "snp_0_float3_0"
+      }
+    },
+    "M[AMSN][Ov_N][Sway]": {
+      "Deformer": "Sway",
+      "Params": {
+        "Amplitude": "snp_0_float_0",
+        "Speed": "snp_0_float_2",
+        "Direction": "snp_0_float3_0"
+      }
+    },
     "M[AMSN][Sway]": {
       "Deformer": "Sway",
       "Params": {

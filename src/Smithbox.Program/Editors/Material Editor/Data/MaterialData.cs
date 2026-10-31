@@ -114,6 +114,9 @@ public class MaterialData : IDisposable
         var path = Path.Join(folder, $"{game}.json");
         var groupsPath = Path.Join(folder, $"{game}_TextureGroups.json");
         var inputsPath = Path.Join(folder, $"{game}_TextureInputs.json");
+        var blendsPath = Path.Join(folder, $"{game}_Blends.json");
+        var detailsPath = Path.Join(folder, $"{game}_Details.json");
+        var magmaPath = Path.Join(folder, $"{game}_Magma.json");
 
         MaterialShaderTable table = new();
 
@@ -141,6 +144,30 @@ public class MaterialData : IDisposable
 
                 table.TextureInputs = JsonSerializer.Deserialize(text,
                     MaterialEditorJsonSerializerContext.Default.DictionaryStringDictionaryInt32MaterialTextureInput) ?? new();
+            }
+
+            if (File.Exists(blendsPath))
+            {
+                string text = await File.ReadAllTextAsync(blendsPath);
+
+                table.Blends = JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialBlendRecipe) ?? new();
+            }
+
+            if (File.Exists(detailsPath))
+            {
+                string text = await File.ReadAllTextAsync(detailsPath);
+
+                table.Details = JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialDetailRecipe) ?? new();
+            }
+
+            if (File.Exists(magmaPath))
+            {
+                string text = await File.ReadAllTextAsync(magmaPath);
+
+                table.Magma = JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialMagmaRecipe) ?? new();
             }
         }
         catch (Exception e)

@@ -438,7 +438,73 @@ public class FlverResource : IResource, IDisposable
     /// </summary>
     private static bool HasKnownBlend(FlverMaterial dest)
     {
-        return dest.Definition is { BlendWeight: MaterialBlendWeight.TexCoord1X, BlendLayers.Count: 2 };
+        return dest.Definition is { BlendWeight: MaterialBlendWeight.Recipe } or { BlendWeight: MaterialBlendWeight.TexCoord1X, BlendLayers.Count: 2 };
+    }
+
+    /// <summary>
+    /// Loads the textures of a recipe by what the material calls them, as the names
+    /// in the flver don't always match, and a recipe can use textures the flver doesn't list.
+    /// </summary>
+    private void LoadBlendRecipe(FlverMaterial dest, string mtd, MaterialLayers layers)
+    {
+        if (dest.Definition?.SurfaceType != null)
+        {
+            LookupTexture(dest.Definition.Surface == MaterialSurface.Water
+                ? FlverMaterial.TextureType.NormalTextureResource
+                : FlverMaterial.TextureType.AlbedoTextureResource, dest, dest.Definition.SurfaceType, "", mtd);
+        }
+
+        if (dest.Definition?.Magma is { } magma)
+        {
+            LookupTexture(FlverMaterial.TextureType.MagmaTextureResource, dest, magma.TextureType, "", mtd);
+        }
+
+        MaterialResolvedDetail? detail = dest.Definition?.Detail;
+
+        if (detail?.AlbedoType != null)
+        {
+            LookupTexture(FlverMaterial.TextureType.DetailAlbedoTextureResource, dest, detail.AlbedoType, "", mtd);
+        }
+
+        if (detail?.NormalType != null)
+        {
+            LookupTexture(FlverMaterial.TextureType.DetailNormalTextureResource, dest, detail.NormalType, "", mtd);
+        }
+
+        MaterialResolvedBlend? blend = dest.Definition?.Blend;
+
+        if (blend == null)
+        {
+            return;
+        }
+
+        List<MaterialBlendLayer> blendLayers = dest.Definition!.BlendLayers;
+
+        for (var i = 0; i < blendLayers.Count; i++)
+        {
+            if (blendLayers[i].Albedo != null)
+            {
+                LookupTexture(AlbedoLayers[i], dest, blendLayers[i].Albedo, "", mtd);
+            }
+
+            if (blendLayers[i].Normal != null)
+            {
+                LookupTexture(NormalLayers[i], dest, blendLayers[i].Normal, "", mtd);
+                layers.BlendNormal = true;
+            }
+        }
+
+        layers.LayerCount = blendLayers.Count;
+
+        if (blend.MaskType != null)
+        {
+            LookupTexture(FlverMaterial.TextureType.BlendmaskTextureResource, dest, blend.MaskType, "", mtd);
+        }
+
+        if (blend.DetailType != null)
+        {
+            LookupTexture(FlverMaterial.TextureType.DetailMaskTextureResource, dest, blend.DetailType, "", mtd);
+        }
     }
 
     /// <summary>
@@ -454,6 +520,14 @@ public class FlverResource : IResource, IDisposable
         }
 
         MaterialDefinition definition = dest.Definition!;
+
+        if (definition.Blend != null)
+        {
+            MaterialSampler? known = definition.Samplers.Find(x => x.Type == texType);
+
+            return known != null && (known.Role is "AlbedoMap" or "NormalMap" || known.Type == definition.Blend.MaskType
+                || known.Type == definition.Blend.DetailType);
+        }
 
         for (var i = 0; i < definition.BlendLayers.Count; i++)
         {
@@ -484,6 +558,17 @@ public class FlverResource : IResource, IDisposable
         MaterialLayers layers)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (dest.Definition?.Magma?.TextureType == texType)
+        {
+            return;
+        }
+
+        // Already loaded, and they would otherwise be taken for the main textures
+        if (dest.Definition?.Detail is { } overlay && (texType == overlay.AlbedoType || texType == overlay.NormalType))
+        {
+            return;
+        }
 
         if (TryProcessKnownBlendTexture(dest, texType, mtd, layers))
         {
@@ -569,7 +654,9 @@ public class FlverResource : IResource, IDisposable
             dest.AlbedoTint = Vector3.Min(new Vector3(colorOnly.Color![0], colorOnly.Color[1], colorOnly.Color[2]), Vector3.One);
         }
 
-        var color = new Vector3(definition.DiffuseColor[0], definition.DiffuseColor[1], definition.DiffuseColor[2]) * dest.AlbedoTint;
+        // A recipe tints each of its layers instead
+        var tint = definition.Blend != null ? Vector3.One : dest.AlbedoTint;
+        var color = new Vector3(definition.DiffuseColor[0], definition.DiffuseColor[1], definition.DiffuseColor[2]) * tint;
         dest.Shading.DiffuseAlpha = new Vector4(color, alphaRef);
 
         dest.Blending = definition.BlendMode switch
@@ -592,6 +679,9 @@ public class FlverResource : IResource, IDisposable
 
         var deformer = dest.Definition?.Deformer ?? MaterialDeformer.None;
         var knownBlend = HasKnownBlend(dest);
+        var hasRecipe = dest.Definition?.Blend != null;
+        var hasDetail = dest.Definition?.Detail != null;
+        var hasMagma = dest.Definition?.Magma != null;
 
         if (dest.Definition != null)
         {
@@ -627,10 +717,14 @@ public class FlverResource : IResource, IDisposable
             specConstants.Add(new SpecializationConstant(2, layers.BlendSpecular));
             specConstants.Add(new SpecializationConstant(3, layers.BlendShininess));
             specConstants.Add(new SpecializationConstant(4, (uint)Math.Clamp(layers.LayerCount, 2, Material.MaxLayers)));
-            specConstants.Add(new SpecializationConstant(5, knownBlend));
+            specConstants.Add(new SpecializationConstant(5, knownBlend && !hasRecipe));
+            specConstants.Add(new SpecializationConstant(7, hasRecipe));
         }
 
         specConstants.Add(new SpecializationConstant(6, dest.Blending != MaterialBlending.Opaque));
+        specConstants.Add(new SpecializationConstant(8, hasDetail));
+        specConstants.Add(new SpecializationConstant(9, hasMagma));
+        specConstants.Add(new SpecializationConstant(10, (uint)(dest.Definition?.Surface ?? MaterialSurface.Standard)));
         specConstants.Add(new SpecializationConstant(60, (uint)deformer));
 
         dest.SpecializationConstants ??= new List<SpecializationConstant>();
@@ -658,6 +752,21 @@ public class FlverResource : IResource, IDisposable
             dest.Deform = BuildMaterialDeform(dest.Definition!);
         }
 
+        if (hasRecipe)
+        {
+            dest.ApplyBlend(dest.Definition!.Blend!);
+        }
+
+        if (hasDetail)
+        {
+            dest.ApplyDetail(dest.Definition!.Detail!);
+        }
+
+        if (hasMagma)
+        {
+            dest.ApplyMagma(dest.Definition!.Magma!);
+        }
+
         // Upload the defaults so a material whose textures never arrive still shows something sensible
         dest.UpdateMaterial();
     }
@@ -673,14 +782,29 @@ public class FlverResource : IResource, IDisposable
     }
 
     /// <summary>
-    /// A material takes three entries of the material buffer, or four with a deformer.
-    /// See <see cref="MaterialShading"/>, <see cref="MaterialEffects"/> and <see cref="MaterialDeform"/>
+    /// A material takes three entries of the material buffer, four with a deformer, or eight with a blend recipe.
+    /// See <see cref="MaterialShading"/>, <see cref="MaterialEffects"/>, <see cref="MaterialDeform"/> and <see cref="MaterialWithBlend"/>
     /// </summary>
     private static unsafe GPUBufferAllocator.GPUBufferHandle AllocateMaterialBuffer(FlverMaterial dest)
     {
         var size = dest.Definition?.Deformer is null or MaterialDeformer.None
             ? sizeof(MaterialWithShading)
             : sizeof(MaterialWithDeform);
+
+        if (dest.Definition?.Blend != null)
+        {
+            size = sizeof(MaterialWithBlend);
+        }
+
+        if (dest.Definition?.Detail != null)
+        {
+            size = sizeof(MaterialWithDetail);
+        }
+
+        if (dest.Definition?.Magma != null)
+        {
+            size = sizeof(MaterialWithMagma);
+        }
 
         return SceneRenderer.MaterialBufferAllocator.Allocate((uint)size, sizeof(Material));
     }
@@ -691,7 +815,7 @@ public class FlverResource : IResource, IDisposable
     /// </summary>
     private void LoadDeformTextures(FlverMaterial dest, string mtd)
     {
-        if (dest.Definition?.Deformer != MaterialDeformer.Vat)
+        if (dest.Definition?.Deformer is not (MaterialDeformer.Vat or MaterialDeformer.VatLoop))
             return;
 
         if (dest.Definition.DeformerTextures.TryGetValue("VatPosition", out var position))
@@ -713,17 +837,20 @@ public class FlverResource : IResource, IDisposable
     private static MaterialDeform BuildMaterialDeform(MaterialDefinition definition)
     {
         MaterialDeform deform = new();
-        deform.Amplitude = GetDeformValue(definition, "Amplitude", 0);
+
+        // Some vertex animations play as they are, with no parameter to scale them
+        deform.Amplitude = GetDeformValue(definition, "Amplitude",
+            definition.Deformer is MaterialDeformer.Vat or MaterialDeformer.VatLoop ? 1 : 0);
         deform.Rate = GetDeformValue(definition, definition.Deformer switch
         {
-            MaterialDeformer.Vat => "FrameRate",
+            MaterialDeformer.Vat or MaterialDeformer.VatLoop => "FrameRate",
             MaterialDeformer.WindPivot => "Phase",
             _ => "Speed"
         }, 0);
 
         if (definition.DeformerParams.TryGetValue("Direction", out var direction) && direction.Length >= 3)
         {
-            deform.Direction = new Vector4(direction[0], direction[1], direction[2], 0);
+            deform.Direction = new Vector4(direction[0], direction[1], direction[2], GetDeformValue(definition, "Phase", 0));
         }
 
         return deform;
@@ -745,7 +872,7 @@ public class FlverResource : IResource, IDisposable
         // offsets seen so far stay under a world unit, before the amplitude scales them
         var reach = definition.Deformer switch
         {
-            MaterialDeformer.Vat => Math.Abs(deform.Amplitude) * 2.0f,
+            MaterialDeformer.Vat or MaterialDeformer.VatLoop => Math.Abs(deform.Amplitude) * 2.0f,
             MaterialDeformer.Sway => Math.Abs(deform.Amplitude) * deform.Direction.Length(),
 
             // Wind depends on the viewport's settings rather than the material
@@ -822,6 +949,7 @@ public class FlverResource : IResource, IDisposable
         }
 
         var layers = new MaterialLayers();
+        LoadBlendRecipe(dest, mat.MTD, layers);
 
         foreach (IFlverTexture? matparam in mat.Textures)
         {
@@ -859,6 +987,7 @@ public class FlverResource : IResource, IDisposable
         }
 
         var layers = new MaterialLayers();
+        LoadBlendRecipe(dest, mtd, layers);
 
         for (var i = mat.textureIndex; i < mat.textureIndex + mat.textureCount; i++)
         {
@@ -3036,6 +3165,10 @@ public class FlverResource : IResource, IDisposable
             ShininessTextureResource3,
             ShininessTextureResource4,
             EmissiveTextureResource,
+            DetailMaskTextureResource,
+            DetailAlbedoTextureResource,
+            DetailNormalTextureResource,
+            MagmaTextureResource,
             VatPositionTextureResource,
             VatNormalTextureResource,
             TextureResourceCount
@@ -3069,6 +3202,21 @@ public class FlverResource : IResource, IDisposable
 
         /// <summary>Set for materials with a deformer, and uploaded straight after the effects</summary>
         public MaterialDeform? Deform;
+
+        /// <summary>Set for materials with a blend recipe, and uploaded straight after the deform entry</summary>
+        public MaterialWithBlend? Blend;
+
+        /// <summary>Set for materials with an overlay, and uploaded straight after the blend entries</summary>
+        public MaterialDetail? Detail;
+
+        /// <summary>Set for materials with a glow, and uploaded straight after the overlay</summary>
+        public MaterialMagma? Magma;
+
+        /// <summary>Tiling and scroll of the layers past the second, gathered as textures are found</summary>
+        public MaterialLayerTiling LayerTiling = MaterialLayerTiling.Default;
+        public MaterialLayerScroll LayerScroll;
+        public Vector4 DetailTiling = Vector4.One;
+        public Vector2 MagmaTiling = Vector2.One;
 
         /// <summary>What the material's parameters multiply the first layer's albedo by</summary>
         public Vector3 AlbedoTint = Vector3.One;
@@ -3139,6 +3287,54 @@ public class FlverResource : IResource, IDisposable
             }
         }
 
+        /// <summary>Fills in the glow's values, leaving the textures to <see cref="UpdateMaterial"/></summary>
+        public void ApplyMagma(MaterialResolvedMagma magma)
+        {
+            Magma = new MaterialMagma
+            {
+                Flow0 = new Vector4(magma.Scroll0[0], magma.Scroll0[1], magma.Scale0[0], magma.Scale0[1]),
+                Flow1 = new Vector4(magma.Scroll1[0], magma.Scroll1[1], magma.Scale1[0], magma.Scale1[1]),
+                Tiling = new Vector4(1, 1, magma.Strength, magma.Power),
+                Distort = new Vector4(magma.Distort[0], magma.Distort[1], 0, 0),
+                Color = new Vector4(magma.Color[0], magma.Color[1], magma.Color[2], magma.Limit),
+                RedSample = (uint)magma.RedSample
+            };
+        }
+
+        /// <summary>Fills in the overlay's values, leaving the textures to <see cref="UpdateMaterial"/></summary>
+        public void ApplyDetail(MaterialResolvedDetail detail)
+        {
+            Detail = new MaterialDetail
+            {
+                Tiling = Vector4.One,
+                ColorStrength = new Vector4(detail.Color[0], detail.Color[1], detail.Color[2], detail.NormalStrength)
+            };
+        }
+
+        /// <summary>Fills in the recipe's values, leaving the textures to <see cref="UpdateMaterial"/></summary>
+        public void ApplyBlend(MaterialResolvedBlend blend)
+        {
+            var t = blend.Tints;
+
+            Blend = new MaterialWithBlend
+            {
+                Blend = new MaterialBlend
+                {
+                    Sharpness = new Vector4(blend.Sharpness[0], blend.Sharpness[1], blend.Sharpness[2], blend.DetailBias),
+                    Detail = new Vector4(blend.Detail[0], blend.Detail[1], blend.Detail[2], blend.Scale),
+                    Source1 = blend.Sources[0],
+                    Source2 = blend.Sources[1],
+                    Source3 = blend.Sources[2]
+                },
+                LayerTint = new MaterialLayerTint
+                {
+                    Tint2 = new Vector4(t[1][0], t[1][1], t[1][2], t[0][0]),
+                    Tint3 = new Vector4(t[2][0], t[2][1], t[2][2], t[0][1]),
+                    Tint4 = new Vector4(t[3][0], t[3][1], t[3][2], t[0][2])
+                }
+            };
+        }
+
         /// <summary>
         /// Applies what the sampler chosen for a texture slot says about it. Only the slots of the first
         /// two layers have tiling, as those are the only ones a material can blend, and only the
@@ -3182,13 +3378,61 @@ public class FlverResource : IResource, IDisposable
                         Effects.EmissiveColor = new Vector4(sampler.Color[0], sampler.Color[1], sampler.Color[2], 0);
                     }
                     break;
+                case TextureType.MagmaTextureResource:
+                    MagmaTiling.X = tiling[0];
+                    MagmaTiling.Y = tiling[1];
+                    break;
+                case TextureType.DetailAlbedoTextureResource:
+                    DetailTiling.X = tiling[0];
+                    DetailTiling.Y = tiling[1];
+                    break;
+                case TextureType.DetailNormalTextureResource:
+                    DetailTiling.Z = tiling[0];
+                    DetailTiling.W = tiling[1];
+                    break;
+                case TextureType.BlendmaskTextureResource:
+                    LayerTiling.MaskTiling.X = tiling[0];
+                    LayerTiling.MaskTiling.Y = tiling[1];
+                    break;
+                case TextureType.DetailMaskTextureResource:
+                    LayerTiling.MaskTiling.Z = tiling[0];
+                    LayerTiling.MaskTiling.W = tiling[1];
+                    break;
+                case TextureType.AlbedoTextureResource3:
+                    LayerTiling.Tiling3.X = tiling[0];
+                    LayerTiling.Tiling3.Y = tiling[1];
+                    LayerScroll.Scroll3.X = scroll[0];
+                    LayerScroll.Scroll3.Y = scroll[1];
+                    break;
+                case TextureType.NormalTextureResource3:
+                    LayerTiling.Tiling3.Z = tiling[0];
+                    LayerTiling.Tiling3.W = tiling[1];
+                    LayerScroll.Scroll3.Z = scroll[0];
+                    LayerScroll.Scroll3.W = scroll[1];
+                    break;
+                case TextureType.AlbedoTextureResource4:
+                    LayerTiling.Tiling4.X = tiling[0];
+                    LayerTiling.Tiling4.Y = tiling[1];
+                    LayerScroll.Scroll4.X = scroll[0];
+                    LayerScroll.Scroll4.Y = scroll[1];
+                    break;
+                case TextureType.NormalTextureResource4:
+                    LayerTiling.Tiling4.Z = tiling[0];
+                    LayerTiling.Tiling4.W = tiling[1];
+                    LayerScroll.Scroll4.Z = scroll[0];
+                    LayerScroll.Scroll4.W = scroll[1];
+                    break;
                 case TextureType.AlbedoTextureResource2:
                     Shading.Tiling2.X = tiling[0];
                     Shading.Tiling2.Y = tiling[1];
+                    LayerScroll.Scroll2.X = scroll[0];
+                    LayerScroll.Scroll2.Y = scroll[1];
                     break;
                 case TextureType.NormalTextureResource2:
                     Shading.Tiling2.Z = tiling[0];
                     Shading.Tiling2.W = tiling[1];
+                    LayerScroll.Scroll2.Z = scroll[0];
+                    LayerScroll.Scroll2.W = scroll[1];
                     break;
             }
         }
@@ -3265,6 +3509,52 @@ public class FlverResource : IResource, IDisposable
                 deformed = new MaterialWithDeform { Material = MaterialData, Shading = Shading, Effects = Effects, Deform = deform };
             }
 
+            MaterialWithBlend? blended = null;
+
+            // An overlay comes after the blend entries, which are just unused without a recipe
+            if ((Detail != null || Magma != null ? Blend ?? new MaterialWithBlend() : Blend) is MaterialWithBlend blend)
+            {
+                ushort detail = 0;
+                SetMaterialTexture(TextureType.DetailMaskTextureResource, ref detail, BlackTexture);
+
+                blend.Material = MaterialData;
+                blend.Shading = Shading;
+                blend.Effects = Effects;
+                blend.Deform = deformed?.Deform ?? default;
+                blend.LayerTiling = LayerTiling;
+                blend.LayerScroll = LayerScroll;
+                blend.Blend.DetailTex = detail;
+                blended = blend;
+            }
+
+            MaterialWithDetail? detailed = null;
+
+            if ((Magma != null ? Detail ?? new MaterialDetail() : Detail) is MaterialDetail overlay)
+            {
+                ushort overlayAlbedo = 0;
+                ushort overlayNormal = 0;
+                SetMaterialTexture(TextureType.DetailAlbedoTextureResource, ref overlayAlbedo, 0);
+                SetMaterialTexture(TextureType.DetailNormalTextureResource, ref overlayNormal, 0);
+
+                overlay.Tiling = DetailTiling;
+                overlay.AlbedoTex = overlayAlbedo;
+                overlay.NormalTex = overlayNormal;
+                detailed = new MaterialWithDetail { Blended = blended!.Value, Detail = overlay };
+            }
+
+            MaterialWithMagma? glowing = null;
+
+            if (Magma is MaterialMagma magma)
+            {
+                ushort magmaTex = 0;
+                SetMaterialTexture(TextureType.MagmaTextureResource, ref magmaTex, 0);
+
+                magma.Tex = magmaTex;
+                magma.Tiling.X = MagmaTiling.X;
+                magma.Tiling.Y = MagmaTiling.Y;
+                glowing = new MaterialWithMagma { Detailed = detailed!.Value, Magma = magma };
+            }
+
             MaterialWithShading shaded = new() { Material = MaterialData, Shading = Shading, Effects = Effects };
 
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>
@@ -3272,7 +3562,19 @@ public class FlverResource : IResource, IDisposable
                 Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"Material upload");
                 if (MaterialBuffer != null)
                 {
-                    if (deformed is MaterialWithDeform data)
+                    if (glowing is MaterialWithMagma magmaData)
+                    {
+                        MaterialBuffer.FillBuffer(d, cl, ref magmaData);
+                    }
+                    else if (detailed is MaterialWithDetail detailData)
+                    {
+                        MaterialBuffer.FillBuffer(d, cl, ref detailData);
+                    }
+                    else if (blended is MaterialWithBlend blendData)
+                    {
+                        MaterialBuffer.FillBuffer(d, cl, ref blendData);
+                    }
+                    else if (deformed is MaterialWithDeform data)
                     {
                         MaterialBuffer.FillBuffer(d, cl, ref data);
                     }

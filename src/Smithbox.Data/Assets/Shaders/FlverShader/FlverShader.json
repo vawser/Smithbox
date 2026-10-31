@@ -137,6 +137,28 @@
 		]
 	},
 	{
+		"Name": "FlverShader_deform_outline",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "OUTLINE"
+			}
+		]
+	},
+	{
 		"Name": "FlverShader_deform_blend",
 		"Shaders": [
 			{

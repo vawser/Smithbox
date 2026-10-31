@@ -91,6 +91,8 @@ layout (constant_id = 50) const bool c_normalWBoneTransform = false;
 #define DEFORM_SWAY 2
 #define DEFORM_WIND_BEND 3
 #define DEFORM_WIND_PIVOT 4
+#define DEFORM_VAT_LOOP 5
+#define DEFORM_SWING 6
 layout (constant_id = 60) const int c_deformer = 0;
 
 layout(set = 2, binding = 0) uniform texture2D globalTextures[];
@@ -137,7 +139,7 @@ layout(location = 9) flat out uint fsin_entityid;
 	layout(location = 10) out vec2 fsin_texcoord2;
 #endif
 #if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
-	layout(location = 11) out float fsin_blendWeight;
+	layout(location = 11) out vec3 fsin_vertexBlend;
 #endif
 
 // UVs are stored as signed 16 bit fixed point with 11 fractional bits
@@ -182,9 +184,9 @@ vec3 FetchVat(uint tex, int column, int row)
 	return texelFetch(sampler2D(globalTextures[nonuniformEXT(int(tex))], linearSampler), ivec2(column, row), 0).xyz;
 }
 
-// Plays a baked animation. The vertex's column is stored in TEXCOORD2, as vertices that were split
-// on export share one. TEXCOORD1.z is how strongly the vertex follows it, TEXCOORD3.x offsets its start
-void DeformVat(deformData deform, inout vec3 pos, inout vec3 nrm)
+// Plays a baked animation. The vertex's column is stored as two bytes, as vertices that were split on
+// export share one, along with how strongly it follows the animation and an offset to its start
+void DeformVat(deformData deform, vec2 columnBytes, float strength, float startOffset, inout vec3 pos, inout vec3 nrm)
 {
 	uint vat = deform.textures.x;
 	uint van = deform.textures.y;
@@ -198,16 +200,16 @@ void DeformVat(deformData deform, inout vec3 pos, inout vec3 nrm)
 	ivec2 size = textureSize(sampler2D(globalTextures[nonuniformEXT(int(vat))], linearSampler), 0);
 	float height = float(size.y);
 
-	float start = fract(texcoord3.x);
+	float start = fract(startOffset);
 	float frame = fract((height * start + sceneparam.materialTime) * deform.params.y / height) * height;
 
-	int column = min(int(texcoord2.x * 255.0 + texcoord2.y * 65280.0 + 0.5), size.x - 1);
+	int column = min(int(columnBytes.x * 255.0 + columnBytes.y * 65280.0 + 0.5), size.x - 1);
 	int row = int(floor(frame));
 	int nextRow = min(row + 1, size.y - 1);
 	float blend = fract(frame);
 
 	vec3 offset = mix(FetchVat(vat, column, row), FetchVat(vat, column, nextRow), blend);
-	pos += offset * deform.params.x * texcoord1.z;
+	pos += offset * deform.params.x * strength;
 
 	nrm = mix(FetchVat(van, column, row), FetchVat(van, column, nextRow), blend) * 2.0 - 1.0;
 }
@@ -228,8 +230,13 @@ vec3 WindForce(vec3 worldPos, float timeOffset)
 {
 	vec2 direction = sceneparam.wind.xy;
 	float time = sceneparam.materialTime + timeOffset;
-	float wave = sin(TWO_PI / sceneparam.windPeriod * (time - dot(worldPos.xz, direction)));
-	float force = (sceneparam.wind.z + sceneparam.wind.w * wave) * WIND_FORCE_SCALE;
+	float phase = dot(worldPos.xz, direction);
+	float wave = sin(TWO_PI / sceneparam.windPeriod * (time - phase));
+
+	// Gusts aren't the game's, which gets them from its wind sources. These are two slow waves, so they never quite repeat
+	float gust = 0.75 + 0.25 * sin(TWO_PI * 0.07 * time - phase * 0.05) * sin(TWO_PI * 0.19 * time - phase * 0.11);
+
+	float force = (sceneparam.wind.z + sceneparam.wind.w * wave) * gust * WIND_FORCE_SCALE;
 
 	return vec3(direction.x, 0.0, direction.y) * force;
 }
@@ -275,6 +282,31 @@ void DeformWindPivot(deformData deform, mat4 toWorld, vec3 up, inout vec3 worldP
 
 	worldPos += (rotated - worldPos) * (1.0 - texcoord2.z);
 }
+
+// Swings around the pivot in TEXCOORD3 by a smoothed triangle wave. TEXCOORD2.x offsets
+// its start, and TEXCOORD1.z is how far the vertex stays where it is
+void DeformSwing(deformData deform, mat4 toWorld, inout vec3 worldPos)
+{
+	float time = (deform.direction.w * texcoord2.x + sceneparam.materialTime) * deform.params.y;
+	float t = abs(fract(time) * 2.0 - 1.0);
+	float angle = (t * t * (3.0 - 2.0 * t) * 2.0 - 1.0) * deform.params.x;
+
+	vec3 axis = mat3(toWorld) * deform.direction.xyz;
+
+	if (dot(axis, axis) < 1e-8)
+	{
+		return;
+	}
+
+	axis = normalize(axis);
+
+	vec3 pivot = (toWorld * vec4(texcoord3.xyz, 1.0)).xyz;
+	vec3 toVertex = worldPos - pivot;
+
+	vec3 rotated = pivot + axis * dot(axis, toVertex) * (1.0 - cos(angle)) + toVertex * cos(angle) + cross(axis, toVertex) * sin(angle);
+
+	worldPos += (rotated - worldPos) * (1.0 - texcoord1.z);
+}
 #endif
 
 void main()
@@ -289,7 +321,11 @@ void main()
 
 	if (c_deformer == DEFORM_VAT)
 	{
-		DeformVat(deform, localPosition, localNormal);
+		DeformVat(deform, texcoord2.xy, texcoord1.z, texcoord3.x, localPosition, localNormal);
+	}
+	else if (c_deformer == DEFORM_VAT_LOOP)
+	{
+		DeformVat(deform, texcoord1.xy, 1.0, texcoord2.x, localPosition, localNormal);
 	}
 	else if (c_deformer == DEFORM_SWAY)
 	{
@@ -302,7 +338,7 @@ void main()
 	fsin_texcoord2 = vec2(uv2) * UV_SCALE;
 #endif
 #if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
-	fsin_blendWeight = texcoord1.x;
+	fsin_vertexBlend = texcoord1.xyz;
 #endif
 
 	// Vertex colors are used as blend weights by blended materials
@@ -323,6 +359,10 @@ void main()
 	else if (c_deformer == DEFORM_WIND_PIVOT)
 	{
 		DeformWindPivot(deform, w * bone, w[1].xyz, worldPos.xyz);
+	}
+	else if (c_deformer == DEFORM_SWING)
+	{
+		DeformSwing(deform, w * bone, worldPos.xyz);
 	}
 #endif
 
@@ -357,4 +397,10 @@ void main()
 	fsin_worldToTangent = mat3(T, B, N);
 
 	gl_Position = sceneparam.projection * sceneparam.view * worldPos;
+
+#ifdef OUTLINE
+	// Pushed out along the normal in screen space, so it keeps its width at any distance
+	vec3 screenNormal = mat3(sceneparam.projection) * mat3(sceneparam.view) * N;
+	gl_Position += vec4(screenNormal, 0.0) * gl_Position.w * 0.005;
+#endif
 }

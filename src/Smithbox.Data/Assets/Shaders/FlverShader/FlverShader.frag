@@ -9,6 +9,7 @@
 //   MATERIAL_BLEND_MASK  - layer weights come from a blend mask texture instead of the vertex colors
 //   MATERIAL_DEFORM      - the mesh has the TEXCOORD1-3 attributes, which can hold the layer weight
 //   SELECTED             - used for selected objects: adds selection dithering and tinting
+//   OUTLINE              - only draws the selection outline, for meshes with a deformer to outline
 //
 // Lighting: one sun (sceneparam.lightDirection / sunColor) plus up to MAX_SCENE_LIGHTS point, spot or
 // directional lights from the scene's light list.
@@ -20,6 +21,7 @@
 // Weight source:
 //     MATERIAL_BLEND_MASK  -> blend mask texture, channels r, g, b
 //     c_blendFromTexCoord  -> TEXCOORD1.x, for two layers
+//     c_blendFromRecipe    -> worked out as the game's shader does, see ComputeRecipeWeights
 //     otherwise            -> vertex color, channels a, r, g
 
 #define GAME_DES 1
@@ -36,10 +38,17 @@ layout (constant_id = 2) const bool c_blendSpecular = false;
 layout (constant_id = 3) const bool c_blendShininess = false;
 layout (constant_id = 4) const int c_layerCount = 2;
 layout (constant_id = 5) const bool c_blendFromTexCoord = false;
+layout (constant_id = 7) const bool c_blendFromRecipe = false;
 #endif
 
 layout (constant_id = 6) const bool c_transparent = false;
+layout (constant_id = 8) const bool c_detail = false;
+layout (constant_id = 9) const bool c_magma = false;
+layout (constant_id = 10) const int c_surface = 0;
 layout (constant_id = 99) const bool c_picking = false;
+
+#define SURFACE_UNLIT 1
+#define SURFACE_WATER 2
 
 #define MAX_LAYERS 4
 #define MAX_SCENE_LIGHTS 16
@@ -58,7 +67,7 @@ layout(location = 9) flat in uint fsin_entityid;
 	layout(location = 10) in vec2 fsin_texcoord2;
 #endif
 #if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
-	layout(location = 11) in float fsin_blendWeight;
+	layout(location = 11) in vec3 fsin_vertexBlend;
 #endif
 
 layout(location = 0) out vec4 fsout_color;
@@ -138,6 +147,44 @@ layout(set = 4, binding = 0, std140) buffer materialShading
     readonly shadingData shadingdata[];
 };
 
+// Eight entries after a material, for materials with an overlay
+struct detailData
+{
+	vec4 tiling;        // xy: albedo, zw: normal
+	vec4 colorStrength; // rgb: multiplies the albedo, w: strength of the normal
+	uvec4 textures;     // x: albedo, y: normal, 0 if there is none
+};
+
+layout(set = 4, binding = 0, std140) buffer materialDetail
+{
+    readonly detailData detaildata[];
+};
+
+// Nine and ten entries after a material, for materials with a glow
+struct magmaFlowData
+{
+	vec4 flow0;   // xy: UV movement of the first sample each second, zw: its UV scale
+	vec4 flow1;   // xy: UV movement of the second sample each second, zw: its UV scale
+	vec4 tiling;  // xy: tiling, z: strength, w: power
+};
+
+struct magmaColorData
+{
+	vec4 distort; // xy: how far the red bends the third sample
+	vec4 color;   // rgb: color, w: the most it can give off
+	uvec4 info;   // x: texture index, y: which sample has the red
+};
+
+layout(set = 4, binding = 0, std140) buffer materialMagmaFlow
+{
+    readonly magmaFlowData magmaflowdata[];
+};
+
+layout(set = 4, binding = 0, std140) buffer materialMagmaColor
+{
+    readonly magmaColorData magmacolordata[];
+};
+
 // The entry after that
 struct effectsData
 {
@@ -150,6 +197,58 @@ layout(set = 4, binding = 0, std140) buffer materialEffects
 {
     readonly effectsData effectsdata[];
 };
+
+#ifdef MATERIAL_BLEND
+// The entries after the deform entry, for materials with a blend recipe
+struct layerTilingData
+{
+	vec4 tiling3;    // xy: albedo of layer 2, zw: normal of layer 2
+	vec4 tiling4;    // xy: albedo of layer 3, zw: normal of layer 3
+	vec4 maskTiling; // xy: blend mask, zw: detail mask
+};
+
+struct blendData
+{
+	vec4 sharpness; // xyz: layers 1 to 3, w: bias of the detail mask
+	vec4 detail;    // xyz: layers 1 to 3, w: scale of the weights
+	uvec4 sources;  // xyz: layers 1 to 3 as below, w: texture index of the detail mask
+};
+
+struct layerTintData
+{
+	vec4 tint[3];   // rgb: layers 1 to 3, and the three w are layer 0
+};
+
+struct layerScrollData
+{
+	vec4 scroll[3]; // layers 1 to 3, xy: albedo, zw: normal
+};
+
+layout(set = 4, binding = 0, std140) buffer materialLayerTiling
+{
+    readonly layerTilingData layertilingdata[];
+};
+
+layout(set = 4, binding = 0, std140) buffer materialBlend
+{
+    readonly blendData blenddata[];
+};
+
+layout(set = 4, binding = 0, std140) buffer materialLayerTint
+{
+    readonly layerTintData layertintdata[];
+};
+
+layout(set = 4, binding = 0, std140) buffer materialLayerScroll
+{
+    readonly layerScrollData layerscrolldata[];
+};
+
+// A source is a channel: 0-2 the blend mask, 3-5 TEXCOORD1, 6 the vertex color. On top of that are these flags
+#define SOURCE_CHANNEL_MASK 7u
+#define SOURCE_INVERT 8u
+#define SOURCE_SOFT 16u
+#endif
 
 layout(set = 5, binding = 0) uniform sampler linearSampler;
 layout(set = 5, binding = 1) uniform sampler anisoLinearSampler;
@@ -233,11 +332,18 @@ vec4 SampleAt(uint tex, int uvSet, vec2 tiling, vec2 scroll)
 		(g_uv[uvSet] + scroll * sceneparam.materialTime) * tiling, g_dx[uvSet] * tiling, g_dy[uvSet] * tiling);
 }
 
-// Only the first layer scrolls. Specular and shininess follow the albedo
+// Layers past the first only scroll with a blend recipe. Specular and shininess follow the albedo
 vec2 LayerScroll(int row, int layer)
 {
 	if (layer != 0)
 	{
+#ifdef MATERIAL_BLEND
+		if (c_blendFromRecipe)
+		{
+			vec4 layerScroll = layerscrolldata[g_mat + 7u].scroll[layer - 1];
+			return row == ROW_NORMAL ? layerScroll.zw : layerScroll.xy;
+		}
+#endif
 		return vec2(0.0);
 	}
 
@@ -245,11 +351,18 @@ vec2 LayerScroll(int row, int layer)
 	return row == ROW_NORMAL ? scroll.zw : scroll.xy;
 }
 
-// Specular and shininess follow the albedo of their layer. Layers after the first two aren't tiled
+// Specular and shininess follow the albedo of their layer. Layers after the first two need a blend recipe
 vec2 LayerTiling(int row, int layer)
 {
 	if (layer > 1)
 	{
+#ifdef MATERIAL_BLEND
+		if (c_blendFromRecipe)
+		{
+			vec4 upper = layer == 2 ? layertilingdata[g_mat + 4u].tiling3 : layertilingdata[g_mat + 4u].tiling4;
+			return row == ROW_NORMAL ? upper.zw : upper.xy;
+		}
+#endif
 		return vec2(1.0);
 	}
 
@@ -264,6 +377,15 @@ vec4 SampleLayer(int row, int layer)
 	return SampleAt(MaterialValue(row, layer), uvSet, LayerTiling(row, layer), LayerScroll(row, layer));
 }
 
+#ifdef MATERIAL_BLEND
+vec3 LayerTint(int layer)
+{
+	vec4 tints[3] = layertintdata[g_mat + 6u].tint;
+
+	return layer == 0 ? vec3(tints[0].w, tints[1].w, tints[2].w) : tints[layer - 1].rgb;
+}
+#endif
+
 // Either layer 0 only, or all layers mixed by their weights
 vec4 SampleLayered(int row, bool blendLayers)
 {
@@ -275,7 +397,12 @@ vec4 SampleLayered(int row, bool blendLayers)
 		{
 			if (i < c_layerCount && g_weight[i] > 0.0)
 			{
-				result += SampleLayer(row, i) * g_weight[i];
+				vec4 layerColor = SampleLayer(row, i);
+				if (c_blendFromRecipe && row == ROW_ALBEDO)
+				{
+					layerColor.rgb *= LayerTint(i);
+				}
+				result += layerColor * g_weight[i];
 			}
 		}
 		return result;
@@ -285,12 +412,84 @@ vec4 SampleLayered(int row, bool blendLayers)
 }
 
 #ifdef MATERIAL_BLEND
+// The game's shaders mix each layer over the ones before it. The rest of this
+// file adds up layers by weight, so each mix takes its share from the layers below
+void ComputeRecipeWeights()
+{
+	layerTilingData tiling = layertilingdata[g_mat + 4u];
+	blendData blend = blenddata[g_mat + 5u];
+
+	vec3 mask = SampleAt(MaterialValue(ROW_EXTRA, 0), 0, tiling.maskTiling.xy, vec2(0.0)).rgb;
+	float detailMask = SampleAt(blend.sources.w, 0, tiling.maskTiling.zw, vec2(0.0)).r;
+
+	g_weight[0] = 1.0;
+
+	for (int i = 1; i < MAX_LAYERS; i++)
+	{
+		g_weight[i] = 0.0;
+
+		if (i >= c_layerCount)
+		{
+			continue;
+		}
+
+		uint source = blend.sources[i - 1];
+		uint channel = source & SOURCE_CHANNEL_MASK;
+
+		float value = 0.0;
+		if (channel < 3u)
+		{
+			value = mask[channel];
+		}
+		else if (channel == 6u)
+		{
+			value = fsin_color.r;
+		}
+  #ifdef MATERIAL_DEFORM
+		else
+		{
+			value = fsin_vertexBlend[channel - 3u];
+		}
+  #endif
+
+		if ((source & SOURCE_INVERT) != 0u)
+		{
+			value = 1.0 - value;
+		}
+
+		float sharpness = blend.sharpness[i - 1];
+		float detail = blend.detail[i - 1] * detailMask + blend.sharpness.w;
+		float weight;
+
+		if ((source & SOURCE_SOFT) != 0u)
+		{
+			weight = clamp(value - sharpness * (1.0 - value) * (detail + 0.01), 0.0, 1.0);
+		}
+		else
+		{
+			weight = clamp(1.0 - blend.detail.w * sharpness * (2.0 * value - detail), 0.0, 1.0);
+		}
+
+		for (int j = 0; j < i; j++)
+		{
+			g_weight[j] *= 1.0 - weight;
+		}
+		g_weight[i] = weight;
+	}
+}
+
 void ComputeLayerWeights()
 {
+	if (c_blendFromRecipe)
+	{
+		ComputeRecipeWeights();
+		return;
+	}
+
   #ifdef MATERIAL_DEFORM
 	if (c_blendFromTexCoord)
 	{
-		g_weight[1] = clamp(fsin_blendWeight, 0.0, 1.0);
+		g_weight[1] = clamp(fsin_vertexBlend.x, 0.0, 1.0);
 		g_weight[0] = 1.0 - g_weight[1];
 		g_weight[2] = 0.0;
 		g_weight[3] = 0.0;
@@ -327,6 +526,34 @@ void ComputeLayerWeights()
 	g_weight[0] = max(1.0 - used, 0.0);
 }
 #endif
+
+// The flowing glow of [magma] shaders. See MaterialMagmaRecipe
+vec3 MagmaGlow()
+{
+	magmaFlowData flow = magmaflowdata[g_mat + 9u];
+	magmaColorData magma = magmacolordata[g_mat + 10u];
+
+	uint tex = magma.info.x;
+	if (tex == 0u)
+	{
+		return vec3(0.0);
+	}
+
+	vec2 tiling = flow.tiling.xy;
+
+	vec4 sample0 = SampleAt(tex, 0, tiling * flow.flow0.zw, flow.flow0.xy);
+	vec4 sample1 = SampleAt(tex, 0, tiling * flow.flow1.zw, flow.flow1.xy);
+
+	float red = magma.info.y == 0u ? sample0.r : sample1.r;
+	float green = magma.info.y == 0u ? sample1.g : sample0.g;
+
+	vec2 bent = (g_uv[0] + magma.distort.xy * red) * tiling;
+	float blue = textureGrad(sampler2D(globalTextures[nonuniformEXT(int(tex))], anisoLinearSampler), bent, g_dx[0] * tiling, g_dy[0] * tiling).b;
+
+	float glow = red * green * pow(max(flow.tiling.z * blue, 0.001), (green + 0.5) * flow.tiling.w);
+
+	return min(glow * magma.color.rgb, vec3(magma.color.w));
+}
 
 // ---------------------------------------------------------------------------------------------
 // Lighting
@@ -453,6 +680,11 @@ vec3 IndirectLight(Surface s)
 
 void main()
 {
+#ifdef OUTLINE
+	fsout_color = sceneparam.outlineColor;
+	return;
+#endif
+
 	g_mat = fsin_mat;
 
 	vec3 viewVec = normalize(sceneparam.eye.xyz - fsin_worldpos);
@@ -481,6 +713,14 @@ void main()
 #endif
 
 	vec4 diffuseAlpha = shadingdata[g_mat + 1u].diffuseAlpha;
+
+	// These textures average about 0.22, so 4.55 leaves the albedo as it was on average
+	if (c_detail && detaildata[g_mat + 8u].textures.x != 0u)
+	{
+		detailData overlay = detaildata[g_mat + 8u];
+		vec3 overlayColor = SampleAt(overlay.textures.x, 0, overlay.tiling.xy, vec2(0.0)).rgb;
+		diffuseColor.rgb = clamp(diffuseColor.rgb * overlayColor * 4.55 * overlay.colorStrength.rgb, 0.0, 1.0);
+	}
 
 	if (diffuseColor.w < diffuseAlpha.w)
 	{
@@ -523,6 +763,15 @@ void main()
 	vec3 F0 = SampleLayer(ROW_SPECULAR, 0).xyz;
 #endif
 
+	// A second set of ripples going the other way, so that water never looks like a sliding picture
+	if (c_surface == SURFACE_WATER)
+	{
+		vec2 ripples = SampleAt(MaterialValue(ROW_NORMAL, 0), 0, LayerTiling(ROW_NORMAL, 0) * 1.37, LayerScroll(ROW_NORMAL, 0) * -0.7).xy;
+		normalColor.xy = (normalColor.xy + ripples) * 0.5;
+		normalColor.z = 0.9;
+		F0 = vec3(0.02);
+	}
+
 	float roughness;
 	if (c_gameID == GAME_BLOODBORNE || c_gameID == GAME_DS1_PTDE || c_gameID == GAME_DS2)
 	{
@@ -541,6 +790,14 @@ void main()
 
 	vec3 normalMap;
 	normalMap.xy = normalColor.xy * 2.0 - 1.0;
+
+	if (c_detail && detaildata[g_mat + 8u].textures.y != 0u)
+	{
+		detailData overlay = detaildata[g_mat + 8u];
+		vec2 overlayNormal = SampleAt(overlay.textures.y, 0, overlay.tiling.zw, vec2(0.0)).xy * 2.0 - 1.0;
+		normalMap.xy += overlayNormal * overlay.colorStrength.w;
+	}
+
 	normalMap.z = sqrt(1.0 - min(dot(normalMap.xy, normalMap.xy), 1.0));
 	normalMap = normalize(normalMap);
 	normalMap = normalize(fsin_worldToTangent * normalMap);
@@ -571,6 +828,11 @@ void main()
 	vec3 litColor = (direct * sceneparam.directLightMult + indirect * sceneparam.indirectLightMult) *
 		sceneparam.sceneBrightness;
 
+	if (c_surface == SURFACE_UNLIT)
+	{
+		litColor = diffuseColor.rgb * diffuseAlpha.rgb * sceneparam.sceneBrightness * sceneparam.emissiveMapMult;
+	}
+
 	// Materials without an emissive texture have the black default, which is index 2
 	uint emissiveTex = MaterialValue(ROW_EXTRA, 1);
 	if (emissiveTex != 2u)
@@ -578,6 +840,11 @@ void main()
 		effectsData effects = effectsdata[g_mat + 2u];
 		vec3 emissive = SampleAt(emissiveTex, 0, effects.emissiveTiling.xy, effects.emissiveTiling.zw).rgb;
 		litColor += emissive * effects.emissiveColor.xyz * sceneparam.emissiveMapMult;
+	}
+
+	if (c_magma)
+	{
+		litColor += MagmaGlow() * sceneparam.emissiveMapMult;
 	}
 
 #ifdef SELECTED
