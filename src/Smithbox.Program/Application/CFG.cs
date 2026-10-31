@@ -508,6 +508,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_Animation = true;
     public bool Interface_MapEditor_Tool_DisplayGroups = true;
     public bool Interface_MapEditor_Tool_Validation = true;
+    public bool Interface_MapEditor_Tool_EnemyAIVisualization = true;
     public bool Interface_MapEditor_Tool_AssetBrowser = true;
 
     // Saving

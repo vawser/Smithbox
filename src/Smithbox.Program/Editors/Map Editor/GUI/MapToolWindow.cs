@@ -250,6 +250,14 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization)
+        {
+            if (ImGui.CollapsingHeader("Enemy AI Visualization"))
+            {
+                View.EnemyAIVisualizationTool.OnToolWindow();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_ResourceList)
         {
             View.ResourceListTool.Display("mapEditor", View.Universe);
@@ -331,6 +339,12 @@ public class MapToolWindow
                 CFG.Current.Interface_MapEditor_Tool_DisplayGroups = !CFG.Current.Interface_MapEditor_Tool_DisplayGroups;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_DisplayGroups);
+
+            if (ImGui.MenuItem("Enemy AI Visualization"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization = !CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization);
 
             if (ImGui.MenuItem("Asset Browser"))
             {

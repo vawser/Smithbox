@@ -462,6 +462,29 @@ public static class RenderableHelper
         return r;
     }
 
+    // ENEMY AI DETECTION
+    public static DebugPrimitiveRenderableProxy GetDetectionSphereProxy(RenderScene scene, Color color)
+    {
+        var wireColor = ColorHelper.GetTransparencyColor(color, CFG.Current.GFX_Renderable_Default_Wireframe_Alpha);
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSphere);
+
+        r.Pickable = false;
+        r.BaseColor = wireColor;
+        r.HighlightedColor = wireColor;
+
+        return r;
+    }
+
+    public static DebugPrimitiveRenderableProxy GetDetectionSphereFillProxy(RenderScene scene, Color color)
+    {
+        DebugPrimitiveRenderableProxy r = GetRegionFillProxy(scene, _regionSolidSphere, Utils.GetDecimalColor(color));
+
+        r.Visible = true;
+
+        return r;
+    }
+
     // LIGHT
     public static DebugPrimitiveRenderableProxy GetPointLightProxy(RenderScene scene)
     {

@@ -112,6 +112,7 @@ public class MapEditorView : IEditorView
     public AutomaticPreviewTool AutomaticPreviewTool;
     public PatrolDrawManager PatrolDrawManager;
     public CompassTool CompassTool;
+    public EnemyAIVisualizationTool EnemyAIVisualizationTool;
 
     public ResourceListTool ResourceListTool;
 
@@ -200,6 +201,7 @@ public class MapEditorView : IEditorView
         ModelInsightTool = new MapModelInsightHelper(this, project);
         PatrolDrawManager = new PatrolDrawManager(this);
         CompassTool = new CompassTool(this, project);
+        EnemyAIVisualizationTool = new EnemyAIVisualizationTool(this, project);
 
         ResourceListTool = new ResourceListTool();
 

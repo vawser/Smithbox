@@ -79,6 +79,7 @@ public class MapViewportView
     public void Update(float deltatime)
     {
         LightPreview.Update();
+        View.EnemyAIVisualizationTool.Update();
 
         // The viewport keeps its last focus and bounds whilst hidden, so it must not respond to input
         if (View.ShowMapData)

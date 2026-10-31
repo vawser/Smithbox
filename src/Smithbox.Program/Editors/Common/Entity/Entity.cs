@@ -60,6 +60,11 @@ public class Entity : ISelectable, IDisposable
     private bool disposedValue;
 
     /// <summary>
+    /// True once this entity has been disposed, such as by its map being unloaded.
+    /// </summary>
+    [XmlIgnore] public bool IsDisposed => disposedValue;
+
+    /// <summary>
     /// Objects referencing the entity.
     /// </summary>
     public HashSet<Entity> ReferencingObjects;
