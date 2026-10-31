@@ -100,8 +100,8 @@ public static class SceneRenderer
         GrassInstanceAllocator = new Lazy<GPUBufferAllocator>(() => new GPUBufferAllocator(64 * 1024 * 1024,
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(InstanceData)));
 
-        // Materials take at least two 48 byte entries, see MaterialShading
-        MaterialBufferAllocator = new GPUBufferAllocator("materials", 16 * 1024 * 1024,
+        // Materials take at least three 48 byte entries, see MaterialShading
+        MaterialBufferAllocator = new GPUBufferAllocator("materials", 24 * 1024 * 1024,
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(Material),
             VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment);
         BoneBufferAllocator = new GPUBufferAllocator("bones", CFG.Current.Viewport_Limit_Buffer_Flver_Bone * 64,
@@ -122,6 +122,10 @@ public static class SceneRenderer
         // Default spec at 2
         handle = GlobalTexturePool.AllocateTextureDescriptor();
         handle.FillWithColor(device, Color.Black, "Black");
+
+        // Default for materials whose color comes from the material alone, at 3
+        handle = GlobalTexturePool.AllocateTextureDescriptor();
+        handle.FillWithColor(device, Color.White, "White");
 
         // Default GI envmap texture at 0
         handle = GlobalCubeTexturePool.AllocateTextureDescriptor();

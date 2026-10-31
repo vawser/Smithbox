@@ -355,7 +355,7 @@ public class FlverResource : IResource, IDisposable
 
             (Context?.Pool ?? ResourceManager.DefaultPool).AddListener<TextureResource>(textureName, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;
-            dest.ApplySamplerTiling(textureType, resolvedType);
+            dest.ApplySampler(textureType, resolvedType);
         }
         else
         {
@@ -490,6 +490,12 @@ public class FlverResource : IResource, IDisposable
             return;
         }
 
+        if (texType != null && texType.Contains("Emissive", StringComparison.OrdinalIgnoreCase))
+        {
+            LookupTexture(FlverMaterial.TextureType.EmissiveTextureResource, dest, texType, mpath, mtd);
+            return;
+        }
+
         string paramNameCheck;
 
         if (texType == null)
@@ -553,8 +559,18 @@ public class FlverResource : IResource, IDisposable
             ? definition.AlphaRef / 255f
             : definition.BlendMode == MaterialDefinition.BlendModeEdge ? MaterialShading.DefaultAlphaRef : 0;
 
-        var color = definition.DiffuseColor;
-        dest.Shading.DiffuseAlpha = new Vector4(color[0], color[1], color[2], alphaRef);
+        // A material with no albedo texture but a color is that color. Without the color it stays the default gray
+        MaterialSampler? colorOnly = definition.Samplers.Find(x => x.Role == "AlbedoMap" && x.Color != null);
+        var hasAlbedo = dest.TextureResourceFilled[(int)FlverMaterial.TextureType.AlbedoTextureResource];
+
+        if (!hasAlbedo && colorOnly != null)
+        {
+            dest.AlbedoFromColor = true;
+            dest.AlbedoTint = Vector3.Min(new Vector3(colorOnly.Color![0], colorOnly.Color[1], colorOnly.Color[2]), Vector3.One);
+        }
+
+        var color = new Vector3(definition.DiffuseColor[0], definition.DiffuseColor[1], definition.DiffuseColor[2]) * dest.AlbedoTint;
+        dest.Shading.DiffuseAlpha = new Vector4(color, alphaRef);
 
         dest.Blending = definition.BlendMode switch
         {
@@ -657,8 +673,8 @@ public class FlverResource : IResource, IDisposable
     }
 
     /// <summary>
-    /// A material takes two entries of the material buffer, or three with a deformer.
-    /// See <see cref="MaterialShading"/> and <see cref="MaterialDeform"/>
+    /// A material takes three entries of the material buffer, or four with a deformer.
+    /// See <see cref="MaterialShading"/>, <see cref="MaterialEffects"/> and <see cref="MaterialDeform"/>
     /// </summary>
     private static unsafe GPUBufferAllocator.GPUBufferHandle AllocateMaterialBuffer(FlverMaterial dest)
     {
@@ -3019,10 +3035,15 @@ public class FlverResource : IResource, IDisposable
             SpecularTextureResource4,
             ShininessTextureResource3,
             ShininessTextureResource4,
+            EmissiveTextureResource,
             VatPositionTextureResource,
             VatNormalTextureResource,
             TextureResourceCount
         }
+
+        // Indices of the default textures, see SceneRenderer
+        private const ushort BlackTexture = 2;
+        private const ushort WhiteTexture = 3;
 
         public readonly bool[] TextureResourceFilled = new bool[(int)TextureType.TextureResourceCount];
 
@@ -3043,8 +3064,17 @@ public class FlverResource : IResource, IDisposable
         /// <summary>Uploaded straight after the material</summary>
         public MaterialShading Shading = MaterialShading.Default;
 
-        /// <summary>Set for materials with a deformer, and uploaded straight after the shading</summary>
+        /// <summary>Uploaded straight after the shading</summary>
+        public MaterialEffects Effects = MaterialEffects.Default;
+
+        /// <summary>Set for materials with a deformer, and uploaded straight after the effects</summary>
         public MaterialDeform? Deform;
+
+        /// <summary>What the material's parameters multiply the first layer's albedo by</summary>
+        public Vector3 AlbedoTint = Vector3.One;
+
+        /// <summary>The material has no albedo texture, so <see cref="AlbedoTint"/> is its whole color</summary>
+        public bool AlbedoFromColor;
 
         public MaterialBlending Blending = MaterialBlending.Opaque;
         public bool DepthWrite = true;
@@ -3110,25 +3140,47 @@ public class FlverResource : IResource, IDisposable
         }
 
         /// <summary>
-        /// Tiles a texture slot by the sampler that was chosen for it. Only the slots of the
-        /// first two layers have tiling, as those are the only ones a material can blend.
+        /// Applies what the sampler chosen for a texture slot says about it. Only the slots of the first
+        /// two layers have tiling, as those are the only ones a material can blend, and only the
+        /// first layer has color and scrolling.
         /// </summary>
-        public void ApplySamplerTiling(TextureType textureType, string? samplerType)
+        public void ApplySampler(TextureType textureType, string? samplerType)
         {
-            var tiling = Definition?.Samplers.Find(x => x.Type == samplerType)?.Tiling;
+            MaterialSampler? sampler = Definition?.Samplers.Find(x => x.Type == samplerType);
 
-            if (tiling == null || tiling.Length < 2)
+            if (sampler == null || sampler.Tiling.Length < 2)
                 return;
+
+            var tiling = sampler.Tiling;
+            var scroll = sampler.Scroll;
 
             switch (textureType)
             {
                 case TextureType.AlbedoTextureResource:
                     Shading.Tiling.X = tiling[0];
                     Shading.Tiling.Y = tiling[1];
+                    Effects.Scroll.X = scroll[0];
+                    Effects.Scroll.Y = scroll[1];
+
+                    if (sampler.Color != null)
+                    {
+                        // The game saturates this, unlike the color of light given off
+                        AlbedoTint = Vector3.Min(new Vector3(sampler.Color[0], sampler.Color[1], sampler.Color[2]), Vector3.One);
+                    }
                     break;
                 case TextureType.NormalTextureResource:
                     Shading.Tiling.Z = tiling[0];
                     Shading.Tiling.W = tiling[1];
+                    Effects.Scroll.Z = scroll[0];
+                    Effects.Scroll.W = scroll[1];
+                    break;
+                case TextureType.EmissiveTextureResource:
+                    Effects.EmissiveTiling = new Vector4(tiling[0], tiling[1], scroll[0], scroll[1]);
+
+                    if (sampler.Color != null)
+                    {
+                        Effects.EmissiveColor = new Vector4(sampler.Color[0], sampler.Color[1], sampler.Color[2], 0);
+                    }
                     break;
                 case TextureType.AlbedoTextureResource2:
                     Shading.Tiling2.X = tiling[0];
@@ -3179,7 +3231,8 @@ public class FlverResource : IResource, IDisposable
 
         public void UpdateMaterial()
         {
-            SetMaterialTexture(TextureType.AlbedoTextureResource, ref MaterialData.colorTex, 0);
+            SetMaterialTexture(TextureType.AlbedoTextureResource, ref MaterialData.colorTex, AlbedoFromColor ? WhiteTexture : (ushort)0);
+            SetMaterialTexture(TextureType.EmissiveTextureResource, ref MaterialData.emissiveTex, BlackTexture);
             SetMaterialTexture(TextureType.AlbedoTextureResource2, ref MaterialData.colorTex2, 0);
             SetMaterialTexture(TextureType.NormalTextureResource, ref MaterialData.normalTex, 1);
             SetMaterialTexture(TextureType.NormalTextureResource2, ref MaterialData.normalTex2, 1);
@@ -3209,10 +3262,10 @@ public class FlverResource : IResource, IDisposable
                 deform.VatPositionTex = position;
                 deform.VatNormalTex = normal;
 
-                deformed = new MaterialWithDeform { Material = MaterialData, Shading = Shading, Deform = deform };
+                deformed = new MaterialWithDeform { Material = MaterialData, Shading = Shading, Effects = Effects, Deform = deform };
             }
 
-            MaterialWithShading shaded = new() { Material = MaterialData, Shading = Shading };
+            MaterialWithShading shaded = new() { Material = MaterialData, Shading = Shading, Effects = Effects };
 
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>
             {

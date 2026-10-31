@@ -19,6 +19,7 @@ namespace StudioCore.Editors.MaterialEditor;
 [JsonSerializable(typeof(MaterialShaderTable))]
 [JsonSerializable(typeof(List<MaterialDefinition>))]
 [JsonSerializable(typeof(Dictionary<string, Dictionary<int, string>>))]
+[JsonSerializable(typeof(Dictionary<string, Dictionary<int, MaterialTextureInput>>))]
 
 internal partial class MaterialEditorJsonSerializerContext : JsonSerializerContext
 {

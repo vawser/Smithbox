@@ -58,7 +58,7 @@ public unsafe struct Material
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct MaterialShading
 {
-    /// <summary>The value textures are loaded with until a material says otherwise</summary>
+    /// <summary>The alpha test used when there is no material to ask</summary>
     public const float DefaultAlphaRef = 0.5f;
 
     /// <summary>xyz multiplies the albedo, w is the alpha below which a pixel is discarded</summary>
@@ -79,8 +79,31 @@ public struct MaterialShading
 }
 
 /// <summary>
+///     What a material does over time and adds to its lighting. Read by the flver fragment shader
+///     as the entry straight after the material's <see cref="MaterialShading" />.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialEffects
+{
+    /// <summary>rgb multiplies the emissive texture, w is unused</summary>
+    public Vector4 EmissiveColor;
+
+    /// <summary>xy tiles the emissive texture, zw is how far its UVs move each second</summary>
+    public Vector4 EmissiveTiling;
+
+    /// <summary>xy is how far the albedo's UVs of the first layer move each second, zw its normal's</summary>
+    public Vector4 Scroll;
+
+    public static MaterialEffects Default => new()
+    {
+        EmissiveColor = new Vector4(1, 1, 1, 0),
+        EmissiveTiling = new Vector4(1, 1, 0, 0)
+    };
+}
+
+/// <summary>
 ///     How a material moves its vertices. Read by the flver vertex shader as the entry straight after the
-///     material's <see cref="MaterialShading" />, which is the only reason it has the same 48 byte size.
+///     material's <see cref="MaterialEffects" />, which is the only reason it has the same 48 byte size.
 ///     Only materials with a deformer allocate it, so static materials don't pay for it.
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -111,6 +134,7 @@ public struct MaterialWithShading
 {
     public Material Material;
     public MaterialShading Shading;
+    public MaterialEffects Effects;
 }
 
 /// <summary>
@@ -121,5 +145,6 @@ public struct MaterialWithDeform
 {
     public Material Material;
     public MaterialShading Shading;
+    public MaterialEffects Effects;
     public MaterialDeform Deform;
 }

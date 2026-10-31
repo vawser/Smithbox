@@ -113,6 +113,7 @@ public class MaterialData : IDisposable
 
         var path = Path.Join(folder, $"{game}.json");
         var groupsPath = Path.Join(folder, $"{game}_TextureGroups.json");
+        var inputsPath = Path.Join(folder, $"{game}_TextureInputs.json");
 
         MaterialShaderTable table = new();
 
@@ -132,6 +133,14 @@ public class MaterialData : IDisposable
 
                 table.TextureGroups = JsonSerializer.Deserialize(text,
                     MaterialEditorJsonSerializerContext.Default.DictionaryStringDictionaryInt32String) ?? new();
+            }
+
+            if (File.Exists(inputsPath))
+            {
+                string text = await File.ReadAllTextAsync(inputsPath);
+
+                table.TextureInputs = JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringDictionaryInt32MaterialTextureInput) ?? new();
             }
         }
         catch (Exception e)

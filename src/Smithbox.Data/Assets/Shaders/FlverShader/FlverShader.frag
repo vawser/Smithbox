@@ -96,6 +96,8 @@ struct sceneParams
 	uint lightCount;
 	vec4 sunColor;       // rgb: color, a: intensity
 	sceneLight lights[MAX_SCENE_LIGHTS];
+
+	float materialTime;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -134,6 +136,19 @@ struct shadingData
 layout(set = 4, binding = 0, std140) buffer materialShading
 {
     readonly shadingData shadingdata[];
+};
+
+// The entry after that
+struct effectsData
+{
+	vec4 emissiveColor;  // xyz: multiplies the emissive texture
+	vec4 emissiveTiling; // xy: tiling, zw: UV movement each second
+	vec4 scroll;         // xy: UV movement of layer 0's albedo each second, zw: of its normal
+};
+
+layout(set = 4, binding = 0, std140) buffer materialEffects
+{
+    readonly effectsData effectsdata[];
 };
 
 layout(set = 5, binding = 0) uniform sampler linearSampler;
@@ -211,11 +226,23 @@ uint MaterialValue(int row, int index)
 }
 
 // Samples with explicit derivatives, so a layer can be skipped without making derivatives undefined
-vec4 SampleAt(uint tex, int uvSet, vec2 tiling)
+vec4 SampleAt(uint tex, int uvSet, vec2 tiling, vec2 scroll)
 {
 	return textureGrad(
 		sampler2D(globalTextures[nonuniformEXT(int(tex))], anisoLinearSampler),
-		g_uv[uvSet] * tiling, g_dx[uvSet] * tiling, g_dy[uvSet] * tiling);
+		(g_uv[uvSet] + scroll * sceneparam.materialTime) * tiling, g_dx[uvSet] * tiling, g_dy[uvSet] * tiling);
+}
+
+// Only the first layer scrolls. Specular and shininess follow the albedo
+vec2 LayerScroll(int row, int layer)
+{
+	if (layer != 0)
+	{
+		return vec2(0.0);
+	}
+
+	vec4 scroll = effectsdata[g_mat + 2u].scroll;
+	return row == ROW_NORMAL ? scroll.zw : scroll.xy;
 }
 
 // Specular and shininess follow the albedo of their layer. Layers after the first two aren't tiled
@@ -234,7 +261,7 @@ vec2 LayerTiling(int row, int layer)
 vec4 SampleLayer(int row, int layer)
 {
 	int uvSet = clamp(int(MaterialValue(ROW_UVSET, layer)), 0, 1);
-	return SampleAt(MaterialValue(row, layer), uvSet, LayerTiling(row, layer));
+	return SampleAt(MaterialValue(row, layer), uvSet, LayerTiling(row, layer), LayerScroll(row, layer));
 }
 
 // Either layer 0 only, or all layers mixed by their weights
@@ -273,7 +300,7 @@ void ComputeLayerWeights()
 
 	vec3 channels;
   #ifdef MATERIAL_BLEND_MASK
-	channels = SampleAt(MaterialValue(ROW_EXTRA, 0), 0, vec2(1.0)).rgb;
+	channels = SampleAt(MaterialValue(ROW_EXTRA, 0), 0, vec2(1.0), vec2(0.0)).rgb;
   #else
 	channels = vec3(fsin_color.a, fsin_color.r, fsin_color.g);
   #endif
@@ -543,6 +570,15 @@ void main()
 
 	vec3 litColor = (direct * sceneparam.directLightMult + indirect * sceneparam.indirectLightMult) *
 		sceneparam.sceneBrightness;
+
+	// Materials without an emissive texture have the black default, which is index 2
+	uint emissiveTex = MaterialValue(ROW_EXTRA, 1);
+	if (emissiveTex != 2u)
+	{
+		effectsData effects = effectsdata[g_mat + 2u];
+		vec3 emissive = SampleAt(emissiveTex, 0, effects.emissiveTiling.xy, effects.emissiveTiling.zw).rgb;
+		litColor += emissive * effects.emissiveColor.xyz * sceneparam.emissiveMapMult;
+	}
 
 #ifdef SELECTED
 	if (sceneparam.EnableTinting == 1)
