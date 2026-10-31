@@ -222,6 +222,7 @@ public class SceneRenderPipeline
             SceneParams.DitherOpacity = CFG.Current.Viewport_Selection_Dither_Opacity;
             SceneParams.MaterialTime = materialTime;
             SceneParams.WindPeriod = MaterialClock.WindPeriod;
+            SceneParams.MaterialFeatures = (uint)MaterialClock.Features;
             SceneParams.Wind = wind;
 
             SceneParams.LightCount = (uint)lights.Count;

@@ -49,8 +49,11 @@ public unsafe struct SceneParam
     /// <summary>Seconds a gust of wind takes to come around</summary>
     public float WindPeriod;
 
+    /// <summary>What is switched on, see <see cref="MaterialFeatures" /></summary>
+    public uint MaterialFeatures;
+
     // Keeps the next field on a 16 byte row
-    public fixed float MaterialTimePadding[2];
+    public float MaterialTimePadding;
 
     /// <summary>xy is the world XZ direction the wind blows in, z its steady force and w the force of its waves</summary>
     public Vector4 Wind;

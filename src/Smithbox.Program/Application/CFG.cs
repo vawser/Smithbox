@@ -1100,6 +1100,17 @@ public class CFG
     public bool Viewport_Enable_Material_Animation = true;
     public float Viewport_Wind_Strength = 1.0f;
     public float Viewport_Wind_Direction = 45.0f;
+    public bool Viewport_Material_Wind = true;
+    public bool Viewport_Material_Vertex_Animation = true;
+    public bool Viewport_Material_Sway = true;
+    public bool Viewport_Material_Birds = true;
+    public bool Viewport_Material_Layer_Blending = true;
+    public bool Viewport_Material_Overlays = true;
+    public bool Viewport_Material_Magma = true;
+    public bool Viewport_Material_Emissive = true;
+    public bool Viewport_Material_UV_Scroll = true;
+    public bool Viewport_Material_Unlit = true;
+    public bool Viewport_Material_Water = true;
     public bool Viewport_Enable_Culling = true;
 
     public bool Viewport_Enable_Selection_Tint = true;

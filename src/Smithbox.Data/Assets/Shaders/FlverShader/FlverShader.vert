@@ -52,6 +52,7 @@ struct sceneParams
 
 	float materialTime;
 	float windPeriod;
+	uint materialFeatures;
 	vec4 wind; // xy: world XZ direction, z: steady force, w: force of the waves
 #endif
 };
@@ -95,6 +96,18 @@ layout (constant_id = 50) const bool c_normalWBoneTransform = false;
 #define DEFORM_SWING 6
 #define DEFORM_BIRDS 7
 #define DEFORM_DIRECTIONAL_WAVE 8
+
+#define FEATURE_WIND 1u
+#define FEATURE_VERTEX_ANIMATION 2u
+#define FEATURE_SWAY 4u
+#define FEATURE_BIRDS 8u
+#define FEATURE_LAYER_BLENDING 16u
+#define FEATURE_OVERLAYS 32u
+#define FEATURE_MAGMA 64u
+#define FEATURE_EMISSIVE 128u
+#define FEATURE_UV_SCROLL 256u
+#define FEATURE_UNLIT 512u
+#define FEATURE_WATER 1024u
 layout (constant_id = 60) const int c_deformer = 0;
 
 layout(set = 2, binding = 0) uniform texture2D globalTextures[];
@@ -286,6 +299,12 @@ void DeformWindPivot(deformData deform, mat4 toWorld, vec3 up, inout vec3 worldP
 	worldPos += (rotated - worldPos) * (1.0 - texcoord2.z);
 }
 
+// What is switched on in the viewport, see MaterialFeatures
+bool HasFeature(uint feature)
+{
+	return (sceneparam.materialFeatures & feature) != 0u;
+}
+
 float SmoothTriangle(float time)
 {
 	float t = clamp(abs(fract(time) * 2.0 - 1.0), 0.0, 1.0);
@@ -434,19 +453,19 @@ void main()
 #ifdef MATERIAL_DEFORM
 	deformData deform = deformdata[idata[gl_InstanceIndex].materialID.x + 3u];
 
-	if (c_deformer == DEFORM_VAT)
+	if (c_deformer == DEFORM_VAT && HasFeature(FEATURE_VERTEX_ANIMATION))
 	{
 		DeformVat(deform, texcoord2.xy, texcoord1.z, texcoord3.x, localPosition, localNormal);
 	}
-	else if (c_deformer == DEFORM_VAT_LOOP)
+	else if (c_deformer == DEFORM_VAT_LOOP && HasFeature(FEATURE_VERTEX_ANIMATION))
 	{
 		DeformVat(deform, texcoord1.xy, 1.0, texcoord2.x, localPosition, localNormal);
 	}
-	else if (c_deformer == DEFORM_BIRDS)
+	else if (c_deformer == DEFORM_BIRDS && HasFeature(FEATURE_BIRDS))
 	{
 		DeformBirds(deform, localPosition);
 	}
-	else if (c_deformer == DEFORM_SWAY)
+	else if (c_deformer == DEFORM_SWAY && HasFeature(FEATURE_SWAY))
 	{
 		DeformSway(deform, localPosition);
 	}
@@ -471,19 +490,19 @@ void main()
 
 #ifdef MATERIAL_DEFORM
 	// Wind blows in world space, unlike the deformers above
-	if (c_deformer == DEFORM_WIND_BEND)
+	if (c_deformer == DEFORM_WIND_BEND && HasFeature(FEATURE_WIND))
 	{
 		DeformWindBend(worldPos.xyz);
 	}
-	else if (c_deformer == DEFORM_WIND_PIVOT)
+	else if (c_deformer == DEFORM_WIND_PIVOT && HasFeature(FEATURE_WIND))
 	{
 		DeformWindPivot(deform, w * bone, w[1].xyz, worldPos.xyz);
 	}
-	else if (c_deformer == DEFORM_SWING)
+	else if (c_deformer == DEFORM_SWING && HasFeature(FEATURE_SWAY))
 	{
 		DeformSwing(deform, w * bone, worldPos.xyz);
 	}
-	else if (c_deformer == DEFORM_DIRECTIONAL_WAVE)
+	else if (c_deformer == DEFORM_DIRECTIONAL_WAVE && HasFeature(FEATURE_WIND))
 	{
 		DeformDirectionalWave(deform, w * bone, worldPos.xyz);
 	}

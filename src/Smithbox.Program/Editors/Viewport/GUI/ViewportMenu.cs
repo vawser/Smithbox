@@ -488,6 +488,13 @@ public class ViewportMenu
                 ImGui.EndMenu();
             }
 
+            if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Materials")}##materialsMenuHeader"))
+            {
+                MaterialsMenu();
+
+                ImGui.EndMenu();
+            }
+
             // Map Editor
             if (Owner is MapUniverse mapUniverse)
             {
@@ -505,6 +512,53 @@ public class ViewportMenu
 
             ImGui.EndMenu();
         }
+    }
+
+    /// <summary>
+    /// What the flver shaders do. These apply at once, as the shaders read them every frame
+    /// </summary>
+    private void MaterialsMenu()
+    {
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Animation", ref CFG.Current.Viewport_Enable_Material_Animation);
+
+        ImGui.Separator();
+
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Wind", ref CFG.Current.Viewport_Material_Wind);
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Vertex_Animation", ref CFG.Current.Viewport_Material_Vertex_Animation);
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Sway", ref CFG.Current.Viewport_Material_Sway);
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Birds", ref CFG.Current.Viewport_Material_Birds);
+
+        ImGui.Separator();
+
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Layer_Blending", ref CFG.Current.Viewport_Material_Layer_Blending);
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Overlays", ref CFG.Current.Viewport_Material_Overlays);
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Magma", ref CFG.Current.Viewport_Material_Magma);
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Emissive", ref CFG.Current.Viewport_Material_Emissive);
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_UV_Scroll", ref CFG.Current.Viewport_Material_UV_Scroll);
+
+        ImGui.Separator();
+
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Unlit", ref CFG.Current.Viewport_Material_Unlit);
+        MaterialToggle("VIEWPORT_Menubar_Setting_Material_Water", ref CFG.Current.Viewport_Material_Water);
+
+        ImGui.Separator();
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Setting_Wind_Strength")}##windStrength", ref CFG.Current.Viewport_Wind_Strength, 0.0f, 5.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wind_Strength_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Setting_Wind_Direction")}##windDirection", ref CFG.Current.Viewport_Wind_Direction, 0.0f, 360.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wind_Direction_TT"));
+    }
+
+    private static void MaterialToggle(string key, ref bool value)
+    {
+        if (ImGui.MenuItem($"{LOC.Get(key)}##{key}", value))
+        {
+            value = !value;
+        }
+        GUI.Tooltip(LOC.Get($"{key}_TT"));
     }
 
     public void FilterMenu()

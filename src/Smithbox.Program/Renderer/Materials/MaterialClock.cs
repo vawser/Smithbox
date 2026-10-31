@@ -5,6 +5,27 @@ using System.Numerics;
 namespace StudioCore.Renderer;
 
 /// <summary>
+/// The material features that can be switched off from the viewport. These are read by the
+/// flver shaders every frame, so they apply at once. The values must match FlverShader.vert and .frag.
+/// </summary>
+[Flags]
+public enum MaterialFeatures : uint
+{
+    None = 0,
+    Wind = 1,
+    VertexAnimation = 2,
+    Sway = 4,
+    Birds = 8,
+    LayerBlending = 16,
+    Overlays = 32,
+    Magma = 64,
+    Emissive = 128,
+    UvScroll = 256,
+    Unlit = 512,
+    Water = 1024
+}
+
+/// <summary>
 /// The time that animated materials run on. Every viewport shares it, so that they stay in step.
 /// Pausing holds the materials on their current frame rather than resetting them.
 /// </summary>
@@ -32,6 +53,39 @@ public static class MaterialClock
 
             return new Vector4(MathF.Sin(angle), MathF.Cos(angle),
                 WindSteadyForce * strength, WindWaveForce * strength);
+        }
+    }
+
+    /// <summary>
+    /// The features that are switched on.
+    /// </summary>
+    public static MaterialFeatures Features
+    {
+        get
+        {
+            var current = MaterialFeatures.None;
+
+            void Add(bool enabled, MaterialFeatures feature)
+            {
+                if (enabled)
+                {
+                    current |= feature;
+                }
+            }
+
+            Add(CFG.Current.Viewport_Material_Wind, MaterialFeatures.Wind);
+            Add(CFG.Current.Viewport_Material_Vertex_Animation, MaterialFeatures.VertexAnimation);
+            Add(CFG.Current.Viewport_Material_Sway, MaterialFeatures.Sway);
+            Add(CFG.Current.Viewport_Material_Birds, MaterialFeatures.Birds);
+            Add(CFG.Current.Viewport_Material_Layer_Blending, MaterialFeatures.LayerBlending);
+            Add(CFG.Current.Viewport_Material_Overlays, MaterialFeatures.Overlays);
+            Add(CFG.Current.Viewport_Material_Magma, MaterialFeatures.Magma);
+            Add(CFG.Current.Viewport_Material_Emissive, MaterialFeatures.Emissive);
+            Add(CFG.Current.Viewport_Material_UV_Scroll, MaterialFeatures.UvScroll);
+            Add(CFG.Current.Viewport_Material_Unlit, MaterialFeatures.Unlit);
+            Add(CFG.Current.Viewport_Material_Water, MaterialFeatures.Water);
+
+            return current;
         }
     }
 

@@ -47,6 +47,18 @@ layout (constant_id = 9) const bool c_magma = false;
 layout (constant_id = 10) const int c_surface = 0;
 layout (constant_id = 99) const bool c_picking = false;
 
+#define FEATURE_WIND 1u
+#define FEATURE_VERTEX_ANIMATION 2u
+#define FEATURE_SWAY 4u
+#define FEATURE_BIRDS 8u
+#define FEATURE_LAYER_BLENDING 16u
+#define FEATURE_OVERLAYS 32u
+#define FEATURE_MAGMA 64u
+#define FEATURE_EMISSIVE 128u
+#define FEATURE_UV_SCROLL 256u
+#define FEATURE_UNLIT 512u
+#define FEATURE_WATER 1024u
+
 #define SURFACE_UNLIT 1
 #define SURFACE_WATER 2
 
@@ -107,6 +119,8 @@ struct sceneParams
 	sceneLight lights[MAX_SCENE_LIGHTS];
 
 	float materialTime;
+	float windPeriod;
+	uint materialFeatures;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -324,12 +338,18 @@ uint MaterialValue(int row, int index)
 	return (packed >> uint((index & 1) * 16)) & 0xFFFFu;
 }
 
+// What is switched on in the viewport, see MaterialFeatures
+bool HasFeature(uint feature)
+{
+	return (sceneparam.materialFeatures & feature) != 0u;
+}
+
 // Samples with explicit derivatives, so a layer can be skipped without making derivatives undefined
 vec4 SampleAt(uint tex, int uvSet, vec2 tiling, vec2 scroll)
 {
 	return textureGrad(
 		sampler2D(globalTextures[nonuniformEXT(int(tex))], anisoLinearSampler),
-		(g_uv[uvSet] + scroll * sceneparam.materialTime) * tiling, g_dx[uvSet] * tiling, g_dy[uvSet] * tiling);
+		(g_uv[uvSet] + (HasFeature(FEATURE_UV_SCROLL) ? scroll * sceneparam.materialTime : vec2(0.0))) * tiling, g_dx[uvSet] * tiling, g_dy[uvSet] * tiling);
 }
 
 // Layers past the first only scroll with a blend recipe. Specular and shininess follow the albedo
@@ -482,7 +502,14 @@ void ComputeLayerWeights()
 {
 	if (c_blendFromRecipe)
 	{
-		ComputeRecipeWeights();
+		if (HasFeature(FEATURE_LAYER_BLENDING))
+		{
+			ComputeRecipeWeights();
+		}
+		else
+		{
+			g_weight = float[MAX_LAYERS](1.0, 0.0, 0.0, 0.0);
+		}
 		return;
 	}
 
@@ -715,7 +742,7 @@ void main()
 	vec4 diffuseAlpha = shadingdata[g_mat + 1u].diffuseAlpha;
 
 	// These textures average about 0.22, so 4.55 leaves the albedo as it was on average
-	if (c_detail && detaildata[g_mat + 8u].textures.x != 0u)
+	if (c_detail && HasFeature(FEATURE_OVERLAYS) && detaildata[g_mat + 8u].textures.x != 0u)
 	{
 		detailData overlay = detaildata[g_mat + 8u];
 		vec3 overlayColor = SampleAt(overlay.textures.x, 0, overlay.tiling.xy, vec2(0.0)).rgb;
@@ -764,7 +791,7 @@ void main()
 #endif
 
 	// A second set of ripples going the other way, so that water never looks like a sliding picture
-	if (c_surface == SURFACE_WATER)
+	if (c_surface == SURFACE_WATER && HasFeature(FEATURE_WATER))
 	{
 		vec2 ripples = SampleAt(MaterialValue(ROW_NORMAL, 0), 0, LayerTiling(ROW_NORMAL, 0) * 1.37, LayerScroll(ROW_NORMAL, 0) * -0.7).xy;
 		normalColor.xy = (normalColor.xy + ripples) * 0.5;
@@ -791,7 +818,7 @@ void main()
 	vec3 normalMap;
 	normalMap.xy = normalColor.xy * 2.0 - 1.0;
 
-	if (c_detail && detaildata[g_mat + 8u].textures.y != 0u)
+	if (c_detail && HasFeature(FEATURE_OVERLAYS) && detaildata[g_mat + 8u].textures.y != 0u)
 	{
 		detailData overlay = detaildata[g_mat + 8u];
 		vec2 overlayNormal = SampleAt(overlay.textures.y, 0, overlay.tiling.zw, vec2(0.0)).xy * 2.0 - 1.0;
@@ -828,21 +855,21 @@ void main()
 	vec3 litColor = (direct * sceneparam.directLightMult + indirect * sceneparam.indirectLightMult) *
 		sceneparam.sceneBrightness;
 
-	if (c_surface == SURFACE_UNLIT)
+	if (c_surface == SURFACE_UNLIT && HasFeature(FEATURE_UNLIT))
 	{
 		litColor = diffuseColor.rgb * diffuseAlpha.rgb * sceneparam.sceneBrightness * sceneparam.emissiveMapMult;
 	}
 
 	// Materials without an emissive texture have the black default, which is index 2
 	uint emissiveTex = MaterialValue(ROW_EXTRA, 1);
-	if (emissiveTex != 2u)
+	if (emissiveTex != 2u && HasFeature(FEATURE_EMISSIVE))
 	{
 		effectsData effects = effectsdata[g_mat + 2u];
 		vec3 emissive = SampleAt(emissiveTex, 0, effects.emissiveTiling.xy, effects.emissiveTiling.zw).rgb;
 		litColor += emissive * effects.emissiveColor.xyz * sceneparam.emissiveMapMult;
 	}
 
-	if (c_magma)
+	if (c_magma && HasFeature(FEATURE_MAGMA))
 	{
 		litColor += MagmaGlow() * sceneparam.emissiveMapMult;
 	}
