@@ -481,16 +481,16 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Render")}##renderMenuHeader"))
         {
-            if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Scene_Lighting")}##sceneLightingMenuHeader"))
+            if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Materials")}##materialsMenuHeader"))
             {
-                SceneParamsGui();
+                MaterialsMenu();
 
                 ImGui.EndMenu();
             }
 
-            if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Materials")}##materialsMenuHeader"))
+            if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Scene_Lighting")}##sceneLightingMenuHeader"))
             {
-                MaterialsMenu();
+                SceneParamsGui();
 
                 ImGui.EndMenu();
             }
