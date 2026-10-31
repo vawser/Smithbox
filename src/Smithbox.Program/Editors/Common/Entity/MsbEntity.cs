@@ -1278,7 +1278,7 @@ public class MsbEntity : Entity
         return false;
     }
 
-    public bool IsSpeedTreePlaceholder(string modelName)
+    public bool IsSpeedTree(string modelName)
     {
         var curUniverse = Owner as MapUniverse;
         var curProject = curUniverse.Project;
@@ -1289,6 +1289,18 @@ public class MsbEntity : Entity
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// The vertices of SpeedTree models can only be read for some games, the others show a placeholder.
+    /// See FlverResource.HasSpeedTreeVertices
+    /// </summary>
+    public bool IsSpeedTreePlaceholder(string modelName)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+
+        return IsSpeedTree(modelName) && curProject.Descriptor.ProjectType is not (ProjectType.ER or ProjectType.NR);
     }
 
     /// <summary>
@@ -1360,20 +1372,28 @@ public class MsbEntity : Entity
             return;
         }
 
-        if (IsAssetPlaceholder(modelName, ProjectAliasType.Assets))
+        var isSpeedTree = IsSpeedTree(modelName);
+
+        if (!isSpeedTree && IsAssetPlaceholder(modelName, ProjectAliasType.Assets))
         {
             SetRenderSceneMesh(CreateObjectProxyMesh());
             return;
         }
 
         var meshProxy = CreateObjectMesh(asset);
+
+        if (isSpeedTree)
+        {
+            meshProxy.DrawFilter = RenderFilter.SpeedTree;
+        }
+
         SetRenderSceneMesh(meshProxy);
 
         meshProxy.MeshAvailabilityChanged += proxy =>
         {
             if (ReferenceEquals(RenderSceneMesh, proxy) && !proxy.HasRenderableGeometry())
             {
-                SetRenderSceneMesh(CreateObjectProxyMesh());
+                SetRenderSceneMesh(isSpeedTree ? CreateSpeedTreeProxyMesh() : CreateObjectProxyMesh());
             }
         };
     }

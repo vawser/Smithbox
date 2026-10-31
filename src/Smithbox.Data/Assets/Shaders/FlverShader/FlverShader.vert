@@ -293,8 +293,7 @@ void DeformWindBend(inout vec3 worldPos)
 	worldPos += vec3(bend.x, height, bend.y) * strength;
 }
 
-// Rotates around the pivot in TEXCOORD3, tipping the instance's up axis towards the wind.
-// The rotation is the game's: its axis term isn't scaled by (1 - cos), which only matters at large angles
+// Rotates around the pivot in TEXCOORD3, tipping the instance's up axis towards the wind
 void DeformWindPivot(deformData deform, mat4 toWorld, vec3 up, inout vec3 worldPos)
 {
 	vec3 force = WindForce(worldPos, deform.params.y * texcoord1.x);
@@ -316,9 +315,10 @@ void DeformWindPivot(deformData deform, mat4 toWorld, vec3 up, inout vec3 worldP
 
 	float angle = log(magnitude + 1.0) * deform.params.x;
 	vec3 pivot = (toWorld * vec4(texcoord3.xyz, 1.0)).xyz;
-	vec3 toVertex = worldPos - pivot;
+	vec3 onAxis = pivot + axis * dot(axis, worldPos - pivot);
+	vec3 fromAxis = worldPos - onAxis;
 
-	vec3 rotated = pivot + axis * dot(axis, toVertex) + toVertex * cos(angle) + cross(axis, toVertex) * sin(angle);
+	vec3 rotated = onAxis + fromAxis * cos(angle) + cross(axis, fromAxis) * sin(angle);
 
 	worldPos += (rotated - worldPos) * (1.0 - texcoord2.z);
 }

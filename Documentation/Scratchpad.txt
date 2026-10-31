@@ -7,5 +7,3 @@
   Map Editor
   
 # Map/Model Editor
-
-m000155 Shoreline blending

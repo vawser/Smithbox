@@ -1669,6 +1669,151 @@ public class FlverResource : IResource, IDisposable
         }
     }
 
+    /// <summary>
+    /// SpeedTree models lay their vertices out differently, which is only known for these games.
+    /// See <see cref="FillVerticesSpeedTree(BinaryReaderEx, ref FlverVertexBuffer, Span{FlverBufferLayoutMember}, Span{Vector3}, nint, FlverMaterial)"/>
+    /// </summary>
+    private bool HasSpeedTreeVertices => IsSpeedtree &&
+        Smithbox.Orchestrator.SelectedProject?.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR;
+
+    /// <summary>
+    /// Stores a SpeedTree vertex in the layout of its material. The tangent of a SpeedTree vertex follows U, where
+    /// the one of a standard FLVER follows V with its handedness flipped, so it is converted to what the shader expects.
+    /// </summary>
+    private static unsafe void StoreSpeedTreeVertex(byte* dest, FlverMaterial material, Vector3 position, Vector2 uv,
+        Vector3 normal, Vector3 tangent, float handedness)
+    {
+        new Span<byte>(dest, (int)material.VertexSize).Clear();
+
+        Vector3 n = Vector3.Normalize(normal);
+
+        if (material.LayoutType == MeshLayoutType.LayoutSky)
+        {
+            FlverLayoutSky* sky = (FlverLayoutSky*)dest;
+            (*sky).Position = position;
+            (*sky).Normal[0] = (sbyte)(n.X * 127.0f);
+            (*sky).Normal[1] = (sbyte)(n.Y * 127.0f);
+            (*sky).Normal[2] = (sbyte)(n.Z * 127.0f);
+            return;
+        }
+
+        // The other layouts all start the same
+        FlverLayout* v = (FlverLayout*)dest;
+        (*v).Position = position;
+        (*v).Uv1[0] = PackUV(uv.X);
+        (*v).Uv1[1] = PackUV(uv.Y);
+        (*v).Normal[0] = (sbyte)(n.X * 127.0f);
+        (*v).Normal[1] = (sbyte)(n.Y * 127.0f);
+        (*v).Normal[2] = (sbyte)(n.Z * 127.0f);
+
+        Vector3 t = Vector3.Normalize(tangent);
+        Vector3 standardTangent = Vector3.Cross(n, t) * handedness;
+        (*v).Bitangent[0] = (sbyte)(standardTangent.X * 127.0f);
+        (*v).Bitangent[1] = (sbyte)(standardTangent.Y * 127.0f);
+        (*v).Bitangent[2] = (sbyte)(standardTangent.Z * 127.0f);
+        (*v).Bitangent[3] = (sbyte)(-handedness * 127.0f);
+        (*v).Binormal[0] = (sbyte)(t.X * 127.0f);
+        (*v).Binormal[1] = (sbyte)(t.Y * 127.0f);
+        (*v).Binormal[2] = (sbyte)(t.Z * 127.0f);
+
+        if (material.LayoutType is MeshLayoutType.LayoutUV2 or MeshLayoutType.LayoutDeform)
+        {
+            FlverLayoutUV2* uv2 = (FlverLayoutUV2*)dest;
+            (*uv2).Uv2[0] = (*uv2).Uv1[0];
+            (*uv2).Uv2[1] = (*uv2).Uv1[1];
+        }
+    }
+
+    /// <summary>
+    /// The layout of a SpeedTree model doesn't describe its vertices. What it calls the position and the first two UVs
+    /// are the instance data of the game, which isn't in the file, and the rest is labelled as UVs:
+    /// half4 position.xyz, half4 uv.xy, wind data, ubyte4 normal.xyz + handedness, ubyte4 tangent.xyz.
+    /// The billboards start with a float4 instead. They need an atlas that isn't in the file, so they are left empty.
+    /// </summary>
+    private unsafe void FillVerticesSpeedTree(BinaryReaderEx br, ref FlverVertexBuffer buffer,
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, FlverMaterial material)
+    {
+        var hasGeometry = false;
+        foreach (FlverBufferLayoutMember l in layouts)
+        {
+            if (!l.IsSpecialMember)
+            {
+                hasGeometry = l.type == FLVER.LayoutType.Half4;
+                break;
+            }
+        }
+
+        if (!hasGeometry)
+        {
+            new Span<byte>(vertBuffer.ToPointer(), buffer.vertexCount * (int)material.VertexSize).Clear();
+            pickingVerts.Clear();
+            return;
+        }
+
+        br.StepIn(buffer.bufferOffset);
+        for (var i = 0; i < buffer.vertexCount; i++)
+        {
+            long start = buffer.bufferOffset + (long)i * buffer.vertexSize;
+
+            br.Position = start;
+            Vector3 position = new(ReadHalf(br), ReadHalf(br), ReadHalf(br));
+            br.Position = start + 8;
+            Vector2 uv = new(ReadHalf(br), ReadHalf(br));
+
+            br.Position = start + buffer.vertexSize - 8;
+            Vector4 normal = FLVER.Vertex.ReadByteNormXYZW(br);
+            Vector4 tangent = FLVER.Vertex.ReadByteNormXYZW(br);
+
+            StoreSpeedTreeVertex((byte*)vertBuffer + (i * material.VertexSize), material, position, uv,
+                new Vector3(normal.X, normal.Y, normal.Z), new Vector3(tangent.X, tangent.Y, tangent.Z), MathF.Sign(normal.W));
+
+            pickingVerts[i] = position;
+        }
+
+        br.StepOut();
+    }
+
+    private unsafe void FillVerticesSpeedTree(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, FlverMaterial material)
+    {
+        FLVER.LayoutMember? first = mesh.VertexBuffers
+            .SelectMany(b => Flver!.BufferLayouts[b.LayoutIndex])
+            .FirstOrDefault(e => e.SpecialModifier == 0);
+
+        if (first?.Type != FLVER.LayoutType.Half4)
+        {
+            new Span<byte>(vertBuffer.ToPointer(), mesh.Vertices.Count * (int)material.VertexSize).Clear();
+            pickingVerts.Clear();
+            return;
+        }
+
+        // FLVER.Vertex reads half floats as if they were 16 bit fixed point, so this gets the bits back
+        float uvFactor = Flver!.Header.Version >= 0x2000E ? 2048 : 1024;
+        float Half(float value) => (float)BitConverter.UInt16BitsToHalf((ushort)(short)Math.Round(value * uvFactor));
+
+        for (var i = 0; i < mesh.Vertices.Count; i++)
+        {
+            List<Vector3> uvs = mesh.Vertices[i].UVs;
+
+            Vector3 position = new(Half(uvs[0].X), Half(uvs[0].Y), Half(uvs[1].X));
+            Vector2 uv = new(Half(uvs[2].X), Half(uvs[2].Y));
+
+            // Bytes are kept as 0 to 1, and read as two UVs each
+            Vector3 normal = new(uvs[^4].X * 2 - 1, uvs[^4].Y * 2 - 1, uvs[^3].X * 2 - 1);
+            Vector3 tangent = new(uvs[^2].X * 2 - 1, uvs[^2].Y * 2 - 1, uvs[^1].X * 2 - 1);
+            float handedness = MathF.Sign(uvs[^3].Y * 2 - 1);
+
+            StoreSpeedTreeVertex((byte*)vertBuffer + (i * material.VertexSize), material, position, uv, normal, tangent, handedness);
+
+            pickingVerts[i] = position;
+        }
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static float ReadHalf(BinaryReaderEx br)
+    {
+        return (float)BitConverter.UInt16BitsToHalf(br.ReadUInt16());
+    }
+
     private unsafe void FillVerticesNormalOnly(BinaryReaderEx br, ref FlverVertexBuffer buffer,
         Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, ref bool posfilled)
     {
@@ -2442,8 +2587,12 @@ public class FlverResource : IResource, IDisposable
         var meshVertices = dest.GeomBuffer.MapVBuffer();
         var meshIndices = dest.GeomBuffer.MapIBuffer();
 
+        if (HasSpeedTreeVertices)
+        {
+            FillVerticesSpeedTree(mesh, pvhandle, meshVertices, dest.Material);
+        }
         // Untextured
-        if (dest.Material.LayoutType == MeshLayoutType.LayoutSky)
+        else if (dest.Material.LayoutType == MeshLayoutType.LayoutSky)
         {
             FillVerticesNormalOnly(mesh, pvhandle, meshVertices);
         }
@@ -2476,7 +2625,8 @@ public class FlverResource : IResource, IDisposable
             {
                 continue;
             }
-            if (!CFG.Current.Viewport_Enable_LOD_Facesets &&
+            // The LODs of a SpeedTree model are whole meshes of their own, which would be drawn over each other
+            if ((!CFG.Current.Viewport_Enable_LOD_Facesets || HasSpeedTreeVertices) &&
                 faceset.Flags != FLVER2.FaceSet.FSFlags.None &&
                 faceset.Flags != FLVER2.FaceSet.FSFlags.EdgeCompressed)
             {
@@ -2709,7 +2859,11 @@ public class FlverResource : IResource, IDisposable
                 continue;
             }
 
-            if (dest.Material.LayoutType == MeshLayoutType.LayoutSky)
+            if (HasSpeedTreeVertices)
+            {
+                FillVerticesSpeedTree(br, ref vb, layoutmembers, pvhandle, meshVertices, dest.Material);
+            }
+            else if (dest.Material.LayoutType == MeshLayoutType.LayoutSky)
             {
                 FillVerticesNormalOnly(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, ref posfilled);
             }
@@ -3173,7 +3327,8 @@ public class FlverResource : IResource, IDisposable
         for (var i = 0; i < faceSetCount; i++)
         {
             var faceset = new FlverFaceset(br, version, vertexIndicesSize, dataOffset);
-            if (!CFG.Current.Viewport_Enable_LOD_Facesets &&
+            // The LODs of a SpeedTree model are whole meshes of their own, which would be drawn over each other
+            if ((!CFG.Current.Viewport_Enable_LOD_Facesets || HasSpeedTreeVertices) &&
                 faceset.flags != FLVER2.FaceSet.FSFlags.None &&
                 faceset.flags != FLVER2.FaceSet.FSFlags.EdgeCompressed)
             {
