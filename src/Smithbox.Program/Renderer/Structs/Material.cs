@@ -248,6 +248,32 @@ public struct MaterialMagma
 }
 
 /// <summary>
+///     The ripples and volume of water, read by the flver fragment shader as the two entries
+///     after <see cref="MaterialMagma" />. See <see cref="MaterialResolvedWater" /> for what these do.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialWater
+{
+    /// <summary>xy tiles the second normal, zw is how far its UVs move each second</summary>
+    public Vector4 DetailTiling;
+
+    /// <summary>xy is how far the first normal's blue bends the second's UVs, z its strength, w the gloss</summary>
+    public Vector4 DetailBend;
+
+    /// <summary>rgb multiplies the light the water scatters, w is 1 if it has a volume to color</summary>
+    public Vector4 Tint;
+
+    /// <summary>rgb is the scattering, w what depth is multiplied by to fade in at the shore</summary>
+    public Vector4 Scatter;
+
+    /// <summary>rgb is the absorption, w is unused</summary>
+    public Vector4 Absorption;
+
+    /// <summary>Unused, to fill out the second entry</summary>
+    public Vector4 Pad;
+}
+
+/// <summary>
 ///     Everything of a material with a blend recipe. The deform entry is there
 ///     even if it doesn't deform, so that the entries always have the same offsets.
 /// </summary>
@@ -262,6 +288,14 @@ public struct MaterialWithBlend
     public MaterialBlend Blend;
     public MaterialLayerTint LayerTint;
     public MaterialLayerScroll LayerScroll;
+}
+
+/// <summary>Everything of a material of water, which has the entries of a glow in front of it</summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialWithWater
+{
+    public MaterialWithMagma Glowing;
+    public MaterialWater Water;
 }
 
 /// <summary>Everything of a material with a glow, which has the entries of an overlay in front of it</summary>

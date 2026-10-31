@@ -121,6 +121,7 @@ struct sceneParams
 	float materialTime;
 	float windPeriod;
 	uint materialFeatures;
+	uint sceneDepthTexture; // index in globalTextures of the depth behind transparent draws, 0 if there is none
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -197,6 +198,31 @@ layout(set = 4, binding = 0, std140) buffer materialMagmaFlow
 layout(set = 4, binding = 0, std140) buffer materialMagmaColor
 {
     readonly magmaColorData magmacolordata[];
+};
+
+// Eleven and twelve entries after a material, for water
+struct waterDetailData
+{
+	vec4 tiling; // xy: tiling of the second normal, zw: UV movement each second
+	vec4 bend;   // xy: how far the first normal's blue bends its UVs, z: its strength, w: gloss
+	vec4 tint;   // rgb: multiplies the scattered light, w: 1 if the color comes from the volume
+};
+
+struct waterVolumeData
+{
+	vec4 scatter;    // rgb: scattering, w: what depth is multiplied by to fade in at the shore
+	vec4 absorption; // rgb: absorption
+	vec4 unused;
+};
+
+layout(set = 4, binding = 0, std140) buffer materialWaterDetail
+{
+    readonly waterDetailData waterdetaildata[];
+};
+
+layout(set = 4, binding = 0, std140) buffer materialWaterVolume
+{
+    readonly waterVolumeData watervolumedata[];
 };
 
 // The entry after that
@@ -712,6 +738,117 @@ vec3 IndirectLight(Surface s)
 	return indirectDiffuse + indirectSpecular;
 }
 
+// ---------------------------------------------------------------------------------------------
+// Water
+// ---------------------------------------------------------------------------------------------
+
+// How deep water is taken to be where the scene behind it can't be read, in meters
+#define WATER_ASSUMED_DEPTH 2.0
+#define WATER_OPAQUE_DEPTH 10000.0
+
+// The share of the light that scattering sends back up: the shaders' 1 / (4 pi), times the pi lighting leaves out here
+#define WATER_SCATTER_PHASE 0.25
+
+bool IsWater()
+{
+	return c_surface == SURFACE_WATER && HasFeature(FEATURE_WATER);
+}
+
+// The finer ripples, on top of the first normal, whose blue bends them. Only the first normal's scroll is in its row
+vec2 WaterRipples(float height)
+{
+	waterDetailData water = waterdetaildata[g_mat + 11u];
+
+	vec2 scroll = HasFeature(FEATURE_UV_SCROLL) ? water.tiling.zw * sceneparam.materialTime : vec2(0.0);
+	vec2 uv = (g_uv[0] + scroll + water.bend.xy * clamp(height, 0.0, 1.0)) * water.tiling.xy;
+
+	vec2 ripple = textureGrad(
+		sampler2D(globalTextures[nonuniformEXT(TextureIndex(MaterialValue(ROW_NORMAL, 1)))], anisoLinearSampler),
+		uv, g_dx[0] * water.tiling.xy, g_dy[0] * water.tiling.xy).xy;
+
+	return (ripple - 0.5) * water.bend.z;
+}
+
+// Distance from the camera along its axis of a value in the depth buffer
+float ViewDepth(float depth)
+{
+	mat4 projection = sceneparam.projection;
+
+	// Orthographic cameras keep w at 1
+	if (abs(projection[2][3]) < 1e-6)
+	{
+		return abs((depth - projection[3][2]) / projection[2][2]);
+	}
+
+	return abs(projection[3][2] / (depth * projection[2][3] - projection[2][2]));
+}
+
+// How much water the view passes through before it reaches the scene. Only transparent
+// draws can ask, as the depth is copied after everything opaque has been drawn
+float WaterThickness()
+{
+	if (!c_transparent)
+	{
+		return WATER_OPAQUE_DEPTH;
+	}
+
+	if (sceneparam.sceneDepthTexture == 0u)
+	{
+		return WATER_ASSUMED_DEPTH;
+	}
+
+	float stored = texelFetch(
+		sampler2D(globalTextures[nonuniformEXT(TextureIndex(sceneparam.sceneDepthTexture))], linearSampler),
+		ivec2(gl_FragCoord.xy), 0).r;
+
+	return max(ViewDepth(stored) - ViewDepth(gl_FragCoord.z), 0.0);
+}
+
+// The color and alpha of water, from what its surface reflects. Blending can only let the same amount of each color
+// through, so the amount of the color that gets through the least is left to it, and the rest of what gets
+// through is added here. That can't know what is behind the water, so it takes the sky's light to be close enough
+vec4 WaterVolume(Surface s, vec3 reflection, float thickness)
+{
+	waterDetailData detail = waterdetaildata[g_mat + 11u];
+	waterVolumeData volume = watervolumedata[g_mat + 12u];
+
+	vec3 scatter = volume.scatter.rgb;
+	vec3 extinction = scatter + volume.absorption.rgb;
+	vec3 transmitted = exp(-extinction * thickness);
+
+	float NdotV = clamp(dot(s.N, s.V), 0.0, 1.0);
+	float fresnel = 0.02 + 0.98 * pow(1.0 - NdotV, 5.0);
+
+	vec3 sky = textureLod(
+		samplerCube(globalTexturesCube[nonuniformEXT(int(sceneparam.envmap))], linearSampler),
+		vec3(s.N * vec3(1, 1, -1)), 5).xyz * sceneparam.ambientLightMult * sceneparam.indirectLightMult;
+
+	vec3 sunDir = dot(sceneparam.lightDirection.xyz, sceneparam.lightDirection.xyz) > 1e-10
+		? normalize(sceneparam.lightDirection.xyz) : vec3(0.0, -1.0, 0.0);
+	vec3 sun = sceneparam.sunColor.rgb * sceneparam.sunColor.a * sceneparam.directLightMult
+		* clamp(dot(s.N, -sunDir), 0.0, 1.0);
+
+	vec3 light = (sky + sun) * sceneparam.sceneBrightness;
+
+	vec3 albedo = detail.tint.rgb * scatter / max(extinction, vec3(1e-4));
+	vec3 scattered = albedo * light * WATER_SCATTER_PHASE * (1.0 - transmitted);
+
+	vec3 through = transmitted * (1.0 - fresnel);
+	float blended = min(through.r, min(through.g, through.b));
+
+	vec3 color = reflection + scattered * (1.0 - fresnel) + (through - blended) * sky * sceneparam.sceneBrightness;
+
+	float alpha = max(1.0 - blended, 0.001);
+
+	return vec4(color / alpha, alpha);
+}
+
+// Water thins out to nothing where it meets the shore
+float WaterEdge(float thickness)
+{
+	return clamp(thickness * watervolumedata[g_mat + 12u].scatter.w, 0.0, 1.0);
+}
+
 void main()
 {
 #ifdef OUTLINE
@@ -797,13 +934,14 @@ void main()
 	vec3 F0 = SampleLayer(ROW_SPECULAR, 0).xyz;
 #endif
 
-	// A second set of ripples going the other way, so that water never looks like a sliding picture
-	if (c_surface == SURFACE_WATER && HasFeature(FEATURE_WATER))
+	bool volumeWater = false;
+
+	if (IsWater())
 	{
-		vec2 ripples = SampleAt(MaterialValue(ROW_NORMAL, 0), 0, LayerTiling(ROW_NORMAL, 0) * 1.37, LayerScroll(ROW_NORMAL, 0) * -0.7).xy;
-		normalColor.xy = (normalColor.xy + ripples) * 0.5;
-		normalColor.z = 0.9;
+		normalColor.xy += WaterRipples(normalColor.z);
+		normalColor.z = waterdetaildata[g_mat + 11u].bend.w;
 		F0 = vec3(0.02);
+		volumeWater = waterdetaildata[g_mat + 11u].tint.w > 0.5;
 	}
 
 	float roughness;
@@ -837,7 +975,8 @@ void main()
 	normalMap = normalize(fsin_worldToTangent * normalMap);
 
 	Surface surface;
-	surface.diffuse = diffuseColor.xyz * diffuseAlpha.xyz;
+	// The color of water comes from its volume, so all that is lit here is what its surface reflects
+	surface.diffuse = volumeWater ? vec3(0.0) : diffuseColor.xyz * diffuseAlpha.xyz;
 	surface.F0 = F0;
 	surface.roughness = roughness;
 	surface.N = (gl_FrontFacing ? normalMap : -normalMap);
@@ -867,6 +1006,25 @@ void main()
 		litColor = diffuseColor.rgb * diffuseAlpha.rgb * sceneparam.sceneBrightness * sceneparam.emissiveMapMult;
 	}
 
+	float alpha = c_transparent ? diffuseColor.w : 1.0;
+
+	if (IsWater())
+	{
+		float thickness = WaterThickness();
+
+		if (volumeWater)
+		{
+			vec4 water = WaterVolume(surface, litColor, thickness);
+			litColor = water.rgb;
+			alpha = c_transparent ? water.a : 1.0;
+		}
+
+		if (c_transparent)
+		{
+			alpha *= WaterEdge(thickness);
+		}
+	}
+
 	// Materials without an emissive texture have the black default, which is index 2
 	uint emissiveTex = MaterialValue(ROW_EXTRA, 1);
 	if (emissiveTex != 2u && HasFeature(FEATURE_EMISSIVE))
@@ -890,5 +1048,5 @@ void main()
 	}
 #endif
 
-	fsout_color = vec4(sqrt(max(litColor, vec3(0.0))), c_transparent ? diffuseColor.w : 1.0);
+	fsout_color = vec4(sqrt(max(litColor, vec3(0.0))), alpha);
 }

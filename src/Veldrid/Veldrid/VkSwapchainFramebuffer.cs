@@ -129,7 +129,7 @@ namespace Veldrid
                     1,
                     1,
                     _depthFormat.Value,
-                    VkImageUsageFlags.DepthStencilAttachment,
+                    VkImageUsageFlags.DepthStencilAttachment | VkImageUsageFlags.TransferSrc,
                     VkImageCreateFlags.None,
                     VkImageTiling.Optimal));
                 _depthAttachment = new FramebufferAttachment(depthTexture, 0);

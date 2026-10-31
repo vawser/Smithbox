@@ -132,7 +132,7 @@ public class SceneRenderPipeline
                 VmaAllocationCreateFlags.Mapped));
         device.UpdateBuffer(PickingResultReadbackBuffer, 0, ref PickingResult, (uint)sizeof(PickingResult));
 
-        _renderQueue = new SceneRenderer.RenderQueue("Viewport Render", device, this);
+        _renderQueue = new SceneRenderer.RenderQueue("Viewport Render", device, this) { CapturesSceneDepth = true };
         SceneRenderer.RegisterRenderQueue(_renderQueue);
 
         _overlayQueue = new SceneRenderer.RenderQueue("Overlay Render", device, this);
@@ -146,6 +146,9 @@ public class SceneRenderPipeline
     {
         _renderQueue.IsOffscreen = true;
         _overlayQueue.IsOffscreen = true;
+
+        // Scene depth comes from the swapchain, which has nothing to do with what is drawn here
+        _renderQueue.CapturesSceneDepth = false;
     }
 
     public void SetViewportSetupAction(Action<GraphicsDevice, CommandList> action)
@@ -203,6 +206,7 @@ public class SceneRenderPipeline
 
         var materialTime = MaterialClock.Time;
         Vector4 wind = MaterialClock.Wind;
+        var sceneDepth = _renderQueue.CapturesSceneDepth ? SceneDepth.TextureIndex : 0;
 
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
@@ -223,6 +227,7 @@ public class SceneRenderPipeline
             SceneParams.MaterialTime = materialTime;
             SceneParams.WindPeriod = MaterialClock.WindPeriod;
             SceneParams.MaterialFeatures = (uint)MaterialClock.Features;
+            SceneParams.SceneDepthTexture = sceneDepth;
             SceneParams.Wind = wind;
 
             SceneParams.LightCount = (uint)lights.Count;

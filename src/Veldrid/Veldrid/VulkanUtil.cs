@@ -153,7 +153,24 @@ namespace Veldrid
             barrier.subresourceRange.baseArrayLayer = baseArrayLayer;
             barrier.subresourceRange.layerCount = layerCount;
             
-            if ((oldLayout == VkImageLayout.Undefined || oldLayout == VkImageLayout.Preinitialized) && newLayout == VkImageLayout.TransferDstOptimal)
+            if (oldLayout == VkImageLayout.DepthStencilAttachmentOptimal
+                && newLayout is VkImageLayout.TransferSrcOptimal or VkImageLayout.TransferDstOptimal)
+            {
+                barrier.srcAccessMask = VkAccessFlags2.DepthStencilAttachmentWrite;
+                barrier.dstAccessMask = newLayout == VkImageLayout.TransferSrcOptimal
+                    ? VkAccessFlags2.TransferRead
+                    : VkAccessFlags2.TransferWrite;
+                barrier.srcStageMask = VkPipelineStageFlags2.EarlyFragmentTests | VkPipelineStageFlags2.LateFragmentTests;
+                barrier.dstStageMask = VkPipelineStageFlags2.Transfer;
+            }
+            else if (oldLayout == VkImageLayout.TransferSrcOptimal && newLayout == VkImageLayout.DepthStencilAttachmentOptimal)
+            {
+                barrier.srcAccessMask = VkAccessFlags2.TransferRead;
+                barrier.dstAccessMask = VkAccessFlags2.DepthStencilAttachmentRead | VkAccessFlags2.DepthStencilAttachmentWrite;
+                barrier.srcStageMask = VkPipelineStageFlags2.Transfer;
+                barrier.dstStageMask = VkPipelineStageFlags2.EarlyFragmentTests | VkPipelineStageFlags2.LateFragmentTests;
+            }
+            else if ((oldLayout == VkImageLayout.Undefined || oldLayout == VkImageLayout.Preinitialized) && newLayout == VkImageLayout.TransferDstOptimal)
             {
                 barrier.srcAccessMask = VkAccessFlags2.None;
                 barrier.dstAccessMask = VkAccessFlags2.TransferWrite;

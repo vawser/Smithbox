@@ -520,6 +520,10 @@ public static class SceneRenderer
         private int _renderSet = -1;
         private int _stagingSet;
 
+        // The batch of each set that scene depth is captured ahead of, or -1
+        private readonly int[] _depthCaptureBatch = [-1, -1];
+        private bool _startNewBatch;
+
         public IndirectDrawEncoder(uint initialCallCount)
         {
             _currentCapacity = Math.Max(initialCallCount, INITIAL_CALL_COUNT);
@@ -620,6 +624,17 @@ public static class SceneRenderer
 
             _indirectDrawCount[_stagingSet] = 0;
             _batchCount[_stagingSet] = 0;
+            _depthCaptureBatch[_stagingSet] = -1;
+            _startNewBatch = false;
+        }
+
+        /// <summary>
+        ///     Has scene depth captured before the next draw that is added
+        /// </summary>
+        public void CaptureDepthBeforeNextDraw()
+        {
+            _depthCaptureBatch[_stagingSet] = (int)_batchCount[_stagingSet];
+            _startNewBatch = true;
         }
 
         /// <summary>
@@ -703,7 +718,7 @@ public static class SceneRenderer
             _indirectDrawCount[_stagingSet]++;
 
             // Determine if we need a new batch
-            if (_batchCount[_stagingSet] == 0 ||
+            if (_batchCount[_stagingSet] == 0 || _startNewBatch ||
                 _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet] - 1]._pipeline != pipeline ||
                 _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet] - 1]._objectRS !=
                 drawparams._objectResourceSet ||
@@ -719,6 +734,8 @@ public static class SceneRenderer
                     _indirectDrawCount[_stagingSet]--;
                     return;
                 }
+
+                _startNewBatch = false;
 
                 // Add a new batch
                 _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet]]._bufferIndex =
@@ -767,6 +784,11 @@ public static class SceneRenderer
             var c = _batchCount[_renderSet] > 0 ? _batchCount[_renderSet] - 1 : 0;
             for (var i = 0; i < _batchCount[_renderSet]; i++)
             {
+                if (i == _depthCaptureBatch[_renderSet])
+                {
+                    SceneDepth.Capture(Device, cl);
+                }
+
                 cl.SetCheckpoint($"Draw batch {i + 1} of {_batchCount[_renderSet]}: {_batches[(MAX_BATCH * _renderSet) + i]._pipeline.Name}");
                 cl.SetPipeline(_batches[(MAX_BATCH * _renderSet) + i]._pipeline);
                 pipeline.BindResources(cl);
@@ -870,6 +892,11 @@ public static class SceneRenderer
         ///     that renders somewhere else has to use this.
         /// </summary>
         public bool IsOffscreen { get; set; }
+
+        /// <summary>
+        ///     Takes a copy of scene depth for its transparent draws, which come after all of its opaque ones.
+        /// </summary>
+        public bool CapturesSceneDepth { get; set; }
 
         // Number of frames in flight planned for this queue
         private readonly int _bufferCount = 3;
@@ -975,8 +1002,16 @@ public static class SceneRenderer
             Profiler.TracyCZoneEnd(ctx);
 
             ctx = Profiler.TracyCZoneN(1, "RenderQueue::Execute encode draws");
+            var captureDepth = CapturesSceneDepth;
+
             foreach (KeyIndex obj in Indices)
             {
+                if (captureDepth && obj.Key.Value >= RenderKey.BackToFrontStart)
+                {
+                    captureDepth = false;
+                    _drawEncoders[_nextBuffer].CaptureDepthBeforeNextDraw();
+                }
+
                 var o = Renderables[obj.ItemIndex];
                 _drawEncoders[_nextBuffer].AddDraw(ref _drawParameters[o], _pipelines[o]);
             }

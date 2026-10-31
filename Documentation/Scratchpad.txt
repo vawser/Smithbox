@@ -7,5 +7,5 @@
   Map Editor
   
 # Map/Model Editor
-- Loading sometimes throw Veldrid error due to lost device
 
+m000155 Shoreline blending

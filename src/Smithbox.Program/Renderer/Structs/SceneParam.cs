@@ -52,8 +52,8 @@ public unsafe struct SceneParam
     /// <summary>What is switched on, see <see cref="MaterialFeatures" /></summary>
     public uint MaterialFeatures;
 
-    // Keeps the next field on a 16 byte row
-    public float MaterialTimePadding;
+    /// <summary>The index of <see cref="SceneDepth" /> in the global texture pool, or 0 if there is none to read</summary>
+    public uint SceneDepthTexture;
 
     /// <summary>xy is the world XZ direction the wind blows in, z its steady force and w the force of its waves</summary>
     public Vector4 Wind;

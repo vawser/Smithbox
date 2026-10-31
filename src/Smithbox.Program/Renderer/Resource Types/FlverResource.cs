@@ -455,6 +455,11 @@ public class FlverResource : IResource, IDisposable
                 : FlverMaterial.TextureType.AlbedoTextureResource, dest, dest.Definition.SurfaceType, "", mtd);
         }
 
+        if (dest.Definition?.Water?.DetailType is { } waterDetail)
+        {
+            LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, waterDetail, "", mtd);
+        }
+
         if (dest.Definition?.Magma is { } magma)
         {
             LookupTexture(FlverMaterial.TextureType.MagmaTextureResource, dest, magma.TextureType, "", mtd);
@@ -571,6 +576,13 @@ public class FlverResource : IResource, IDisposable
             return;
         }
 
+        // All of the normals of water end the same, and the last would replace the one that was chosen
+        if (dest.Definition?.Water != null && dest.Definition.SurfaceType != null
+            && dest.Definition.Samplers.Find(x => x.Type == texType)?.Role == "NormalMap")
+        {
+            return;
+        }
+
         if (TryProcessKnownBlendTexture(dest, texType, mtd, layers))
         {
             return;
@@ -683,6 +695,7 @@ public class FlverResource : IResource, IDisposable
         var hasRecipe = dest.Definition?.Blend != null;
         var hasDetail = dest.Definition?.Detail != null;
         var hasMagma = dest.Definition?.Magma != null;
+        var hasWater = dest.Definition?.Water != null;
 
         if (dest.Definition != null)
         {
@@ -768,6 +781,11 @@ public class FlverResource : IResource, IDisposable
             dest.ApplyMagma(dest.Definition!.Magma!);
         }
 
+        if (hasWater)
+        {
+            dest.ApplyWater(dest.Definition!.Water!);
+        }
+
         // Upload the defaults so a material whose textures never arrive still shows something sensible
         dest.UpdateMaterial();
     }
@@ -805,6 +823,11 @@ public class FlverResource : IResource, IDisposable
         if (dest.Definition?.Magma != null)
         {
             size = sizeof(MaterialWithMagma);
+        }
+
+        if (dest.Definition?.Water != null)
+        {
+            size = sizeof(MaterialWithWater);
         }
 
         return SceneRenderer.MaterialBufferAllocator.Allocate((uint)size, sizeof(Material));
@@ -3246,6 +3269,9 @@ public class FlverResource : IResource, IDisposable
         /// <summary>Set for materials with a glow, and uploaded straight after the overlay</summary>
         public MaterialMagma? Magma;
 
+        /// <summary>Set for water, and uploaded straight after the glow</summary>
+        public MaterialWater? Water;
+
         /// <summary>Tiling and scroll of the layers past the second, gathered as textures are found</summary>
         public MaterialLayerTiling LayerTiling = MaterialLayerTiling.Default;
         public MaterialLayerScroll LayerScroll;
@@ -3332,6 +3358,18 @@ public class FlverResource : IResource, IDisposable
                 Distort = new Vector4(magma.Distort[0], magma.Distort[1], 0, 0),
                 Color = new Vector4(magma.Color[0], magma.Color[1], magma.Color[2], magma.Limit),
                 RedSample = (uint)magma.RedSample
+            };
+        }
+
+        public void ApplyWater(MaterialResolvedWater water)
+        {
+            Water = new MaterialWater
+            {
+                DetailTiling = new Vector4(water.DetailTiling[0], water.DetailTiling[1], water.DetailScroll[0], water.DetailScroll[1]),
+                DetailBend = new Vector4(water.DetailBend[0], water.DetailBend[1], water.DetailStrength, water.Gloss),
+                Tint = new Vector4(water.Tint[0], water.Tint[1], water.Tint[2], water.HasVolume ? 1 : 0),
+                Scatter = new Vector4(water.Scatter[0], water.Scatter[1], water.Scatter[2], water.EdgeFade),
+                Absorption = new Vector4(water.Absorption[0], water.Absorption[1], water.Absorption[2], 0)
             };
         }
 
@@ -3546,7 +3584,7 @@ public class FlverResource : IResource, IDisposable
             MaterialWithBlend? blended = null;
 
             // An overlay comes after the blend entries, which are just unused without a recipe
-            if ((Detail != null || Magma != null ? Blend ?? new MaterialWithBlend() : Blend) is MaterialWithBlend blend)
+            if ((Detail != null || Magma != null || Water != null ? Blend ?? new MaterialWithBlend() : Blend) is MaterialWithBlend blend)
             {
                 ushort detail = 0;
                 SetMaterialTexture(TextureType.DetailMaskTextureResource, ref detail, BlackTexture);
@@ -3563,7 +3601,7 @@ public class FlverResource : IResource, IDisposable
 
             MaterialWithDetail? detailed = null;
 
-            if ((Magma != null ? Detail ?? new MaterialDetail() : Detail) is MaterialDetail overlay)
+            if ((Magma != null || Water != null ? Detail ?? new MaterialDetail() : Detail) is MaterialDetail overlay)
             {
                 ushort overlayAlbedo = 0;
                 ushort overlayNormal = 0;
@@ -3578,7 +3616,7 @@ public class FlverResource : IResource, IDisposable
 
             MaterialWithMagma? glowing = null;
 
-            if (Magma is MaterialMagma magma)
+            if ((Water != null ? Magma ?? new MaterialMagma() : Magma) is MaterialMagma magma)
             {
                 ushort magmaTex = 0;
                 SetMaterialTexture(TextureType.MagmaTextureResource, ref magmaTex, 0);
@@ -3589,6 +3627,10 @@ public class FlverResource : IResource, IDisposable
                 glowing = new MaterialWithMagma { Detailed = detailed!.Value, Magma = magma };
             }
 
+            MaterialWithWater? watery = Water is MaterialWater water
+                ? new MaterialWithWater { Glowing = glowing!.Value, Water = water }
+                : null;
+
             MaterialWithShading shaded = new() { Material = MaterialData, Shading = Shading, Effects = Effects };
 
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>
@@ -3596,7 +3638,11 @@ public class FlverResource : IResource, IDisposable
                 Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"Material upload");
                 if (MaterialBuffer != null && !disposedValue)
                 {
-                    if (glowing is MaterialWithMagma magmaData)
+                    if (watery is MaterialWithWater waterData)
+                    {
+                        MaterialBuffer.FillBuffer(d, cl, ref waterData);
+                    }
+                    else if (glowing is MaterialWithMagma magmaData)
                     {
                         MaterialBuffer.FillBuffer(d, cl, ref magmaData);
                     }

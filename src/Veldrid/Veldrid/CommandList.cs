@@ -1470,6 +1470,58 @@ namespace Veldrid
         }
 
         /// <summary>
+        /// Copies the depth of a framebuffer's depth target to a texture of the same format that shaders can sample. Both
+        /// need the DepthStencilAttachment usage. This ends the render pass, but the framebuffer stays bound, so the
+        /// next draw carries on with what is already there. The source is left ready to be rendered to again.
+        /// </summary>
+        public void CopyDepthTexture(Texture source, Texture destination)
+        {
+            // A render pass has to have run for the source to have contents, and for the next one to load them
+            if (_activeRenderPass == VkRenderPass.Null && !_currentFramebufferEverActive && _currentFramebuffer != null)
+            {
+                BeginCurrentRenderPass();
+            }
+
+            EnsureNoRenderPass();
+
+            // The swapchain framebuffer doesn't keep track of its depth target
+            source.SetImageLayout(0, 0, VkImageLayout.DepthStencilAttachmentOptimal);
+
+            source.TransitionImageLayout(_cb, 0, 1, 0, 1, VkImageLayout.TransferSrcOptimal);
+            destination.TransitionImageLayout(_cb, 0, 1, 0, 1, VkImageLayout.TransferDstOptimal);
+
+            VkImageSubresourceLayers subresource = new VkImageSubresourceLayers
+            {
+                aspectMask = VkImageAspectFlags.Depth,
+                layerCount = 1
+            };
+
+            VkImageCopy region = new VkImageCopy
+            {
+                srcSubresource = subresource,
+                dstSubresource = subresource,
+                extent = new VkExtent3D
+                {
+                    width = Math.Min(source.Width, destination.Width),
+                    height = Math.Min(source.Height, destination.Height),
+                    depth = 1
+                }
+            };
+
+            vkCmdCopyImage(
+                _cb,
+                source.OptimalDeviceImage,
+                VkImageLayout.TransferSrcOptimal,
+                destination.OptimalDeviceImage,
+                VkImageLayout.TransferDstOptimal,
+                1,
+                &region);
+
+            source.TransitionImageLayout(_cb, 0, 1, 0, 1, VkImageLayout.DepthStencilAttachmentOptimal);
+            destination.TransitionImageLayout(_cb, 0, 1, 0, 1, VkImageLayout.ShaderReadOnlyOptimal);
+        }
+
+        /// <summary>
         /// Generates mipmaps for the given <see cref="Texture"/>. The largest mipmap is used to generate all of the lower mipmap
         /// levels contained in the Texture. The previous contents of all lower mipmap levels are overwritten by this operation.
         /// The target Texture must have been created with <see cref="TextureUsage"/>.<see cref="TextureUsage.GenerateMipmaps"/>.
