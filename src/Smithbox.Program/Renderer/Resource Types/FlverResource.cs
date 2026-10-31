@@ -445,8 +445,9 @@ public class FlverResource : IResource, IDisposable
     /// <summary>
     /// Loads the textures of a recipe by what the material calls them, as the names
     /// in the flver don't always match, and a recipe can use textures the flver doesn't list.
+    /// A path in the flver wins over the material's: terrain shares a material, and sets its own mask per piece.
     /// </summary>
-    private void LoadBlendRecipe(FlverMaterial dest, string mtd, MaterialLayers layers)
+    private void LoadBlendRecipe(FlverMaterial dest, string mtd, MaterialLayers layers, Dictionary<string, string> flverPaths)
     {
         if (dest.Definition?.SurfaceType != null)
         {
@@ -513,12 +514,12 @@ public class FlverResource : IResource, IDisposable
         {
             if (blendLayers[i].Albedo != null)
             {
-                LookupTexture(AlbedoLayers[i], dest, blendLayers[i].Albedo, "", mtd);
+                LookupTexture(AlbedoLayers[i], dest, blendLayers[i].Albedo, flverPaths.GetValueOrDefault(blendLayers[i].Albedo!, ""), mtd);
             }
 
             if (blendLayers[i].Normal != null)
             {
-                LookupTexture(NormalLayers[i], dest, blendLayers[i].Normal, "", mtd);
+                LookupTexture(NormalLayers[i], dest, blendLayers[i].Normal, flverPaths.GetValueOrDefault(blendLayers[i].Normal!, ""), mtd);
                 layers.BlendNormal = true;
             }
         }
@@ -527,12 +528,12 @@ public class FlverResource : IResource, IDisposable
 
         if (blend.MaskType != null)
         {
-            LookupTexture(FlverMaterial.TextureType.BlendmaskTextureResource, dest, blend.MaskType, "", mtd);
+            LookupTexture(FlverMaterial.TextureType.BlendmaskTextureResource, dest, blend.MaskType, flverPaths.GetValueOrDefault(blend.MaskType, ""), mtd);
         }
 
         if (blend.DetailType != null)
         {
-            LookupTexture(FlverMaterial.TextureType.DetailMaskTextureResource, dest, blend.DetailType, "", mtd);
+            LookupTexture(FlverMaterial.TextureType.DetailMaskTextureResource, dest, blend.DetailType, flverPaths.GetValueOrDefault(blend.DetailType, ""), mtd);
         }
     }
 
@@ -541,7 +542,7 @@ public class FlverResource : IResource, IDisposable
     /// apart by name: the layers of M[Flag][Mb2] have identical endings, and its normals are mixed in with
     /// an overlay normal that isn't a layer. Returns false for textures that aren't its concern.
     /// </summary>
-    private bool TryProcessKnownBlendTexture(FlverMaterial dest, string? texType, string mtd, MaterialLayers layers)
+    private bool TryProcessKnownBlendTexture(FlverMaterial dest, string? texType, string mpath, string mtd, MaterialLayers layers)
     {
         if (texType == null || !HasKnownBlend(dest))
         {
@@ -564,14 +565,14 @@ public class FlverResource : IResource, IDisposable
 
             if (layer.Albedo == texType)
             {
-                LookupTexture(AlbedoLayers[i], dest, texType, "", mtd);
+                LookupTexture(AlbedoLayers[i], dest, texType, mpath, mtd);
                 layers.LayerCount = Math.Max(layers.LayerCount, i + 1);
                 return true;
             }
 
             if (layer.Normal == texType)
             {
-                LookupTexture(NormalLayers[i], dest, texType, "", mtd);
+                LookupTexture(NormalLayers[i], dest, texType, mpath, mtd);
                 layers.BlendNormal = true;
                 return true;
             }
@@ -613,7 +614,7 @@ public class FlverResource : IResource, IDisposable
             return;
         }
 
-        if (TryProcessKnownBlendTexture(dest, texType, mtd, layers))
+        if (TryProcessKnownBlendTexture(dest, texType, mpath, mtd, layers))
         {
             return;
         }
@@ -1052,7 +1053,17 @@ public class FlverResource : IResource, IDisposable
         }
 
         var layers = new MaterialLayers();
-        LoadBlendRecipe(dest, mat.MTD, layers);
+        var flverPaths = new Dictionary<string, string>();
+
+        foreach (IFlverTexture? matparam in mat.Textures)
+        {
+            if (matparam.ParamName != null)
+            {
+                flverPaths[matparam.ParamName] = matparam.Path;
+            }
+        }
+
+        LoadBlendRecipe(dest, mat.MTD, layers, flverPaths);
 
         foreach (IFlverTexture? matparam in mat.Textures)
         {
@@ -1090,7 +1101,15 @@ public class FlverResource : IResource, IDisposable
         }
 
         var layers = new MaterialLayers();
-        LoadBlendRecipe(dest, mtd, layers);
+        var flverPaths = new Dictionary<string, string>();
+
+        for (var i = mat.textureIndex; i < mat.textureIndex + mat.textureCount; i++)
+        {
+            var ttype = isUTF ? br.GetUTF16(textures[i].typeOffset) : br.GetShiftJIS(textures[i].typeOffset);
+            flverPaths[ttype] = isUTF ? br.GetUTF16(textures[i].pathOffset) : br.GetShiftJIS(textures[i].pathOffset);
+        }
+
+        LoadBlendRecipe(dest, mtd, layers, flverPaths);
 
         for (var i = mat.textureIndex; i < mat.textureIndex + mat.textureCount; i++)
         {
