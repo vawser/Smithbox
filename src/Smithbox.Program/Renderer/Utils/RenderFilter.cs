@@ -60,6 +60,9 @@ public enum RenderFilter
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_Grass")]
     Grass = 131072,
 
+    [Display(Name = "VIEWPORT_ENUM_RenderFilter_EdgePoint")]
+    EdgePoint = 262144,
+
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_All")]
     All = 0xFFFFFFF
 }

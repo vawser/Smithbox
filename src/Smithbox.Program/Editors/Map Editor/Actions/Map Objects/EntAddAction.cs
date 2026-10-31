@@ -122,6 +122,7 @@ public class EntAddAction : ViewportAction
             Added[i].CollisionSceneMesh = null;
             Added[i].SelectionFillMesh = null;
             (Added[i] as MsbEntity)?.ClearGrass();
+            (Added[i] as MsbEntity)?.ClearEdgePoints();
         }
 
         View.ViewportSelection.ClearSelection();

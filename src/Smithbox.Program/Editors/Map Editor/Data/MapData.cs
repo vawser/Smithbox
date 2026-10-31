@@ -38,6 +38,7 @@ public class MapData : IDisposable
     // Shared by all map editor views, as each map can only be loaded once.
     public HavokCollisionBank HavokCollisionBank;
     public GrassBank GrassBank;
+    public EdgeBank EdgeBank;
     public HavokNavmeshBank HavokNavmeshBank;
     public AutoInvadeBank AutoInvadeBank;
     public LightAtlasBank LightAtlasBank;
@@ -73,6 +74,7 @@ public class MapData : IDisposable
         // so they are created once it exists
         HavokCollisionBank = new HavokCollisionBank(Project);
         GrassBank = new GrassBank(Project);
+        EdgeBank = new EdgeBank(Project);
         HavokNavmeshBank = new HavokNavmeshBank(Project);
         AutoInvadeBank = new AutoInvadeBank(Project);
         LightAtlasBank = new LightAtlasBank(Project);

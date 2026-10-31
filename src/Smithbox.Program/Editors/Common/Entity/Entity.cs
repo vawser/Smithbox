@@ -18,6 +18,11 @@ using PropChangeAction = StudioCore.Editors.MapEditor.PropChangeAction;
 namespace StudioCore.Editors.Common;
 
 /// <summary>
+/// A mesh marking an EDGE point, which is placed relative to its entity.
+/// </summary>
+public record EdgePointMesh(RenderableProxy Mesh, Matrix4x4 LocalTransform);
+
+/// <summary>
 /// A logical map object that can be either a part, region, event, or light. Uses reflection to access and update properties
 /// </summary>
 public class Entity : ISelectable, IDisposable
@@ -42,6 +47,7 @@ public class Entity : ISelectable, IDisposable
     private RenderableProxy _collisionSceneMesh;
     private RenderableProxy _selectionFillMesh;
     private IReadOnlyList<RenderableProxy> _grassSceneMeshes;
+    private IReadOnlyList<EdgePointMesh> _edgePointMeshes;
 
     /// <summary>
     /// Cached name for the entity.
@@ -160,6 +166,7 @@ public class Entity : ISelectable, IDisposable
                 CollisionSceneMesh = null;
                 SelectionFillMesh = null;
                 GrassSceneMeshes = null;
+                EdgePointMeshes = null;
             }
         }
         get => _renderSceneMesh;
@@ -207,6 +214,29 @@ public class Entity : ISelectable, IDisposable
             ApplyMeshState();
         }
         get => _grassSceneMeshes;
+    }
+
+    /// <summary>
+    /// The meshes marking the EDGE points of this entity, each placed relative to it.
+    /// </summary>
+    [XmlIgnore]
+    public IReadOnlyList<EdgePointMesh> EdgePointMeshes
+    {
+        set
+        {
+            if (_edgePointMeshes != null)
+            {
+                foreach (EdgePointMesh entry in _edgePointMeshes)
+                {
+                    entry.Mesh.Dispose();
+                }
+            }
+
+            _edgePointMeshes = value;
+
+            ApplyMeshState();
+        }
+        get => _edgePointMeshes;
     }
 
     /// <summary>
@@ -336,6 +366,14 @@ public class Entity : ISelectable, IDisposable
                 foreach (RenderableProxy mesh in _grassSceneMeshes)
                 {
                     mesh.Visible = _EditorVisible;
+                }
+            }
+
+            if (_edgePointMeshes != null)
+            {
+                foreach (EdgePointMesh entry in _edgePointMeshes)
+                {
+                    entry.Mesh.Visible = _EditorVisible;
                 }
             }
 
@@ -1499,6 +1537,11 @@ public class Entity : ISelectable, IDisposable
                 {
                     GrassSceneMeshes = null;
                 }
+
+                if (EdgePointMeshes != null)
+                {
+                    EdgePointMeshes = null;
+                }
             }
 
             disposedValue = true;
@@ -1567,6 +1610,14 @@ public class Entity : ISelectable, IDisposable
             foreach (RenderableProxy mesh in _grassSceneMeshes)
             {
                 ApplyProxyState(mesh, t, useRenderGroups);
+            }
+        }
+
+        if (_edgePointMeshes != null)
+        {
+            foreach (EdgePointMesh entry in _edgePointMeshes)
+            {
+                ApplyProxyState(entry.Mesh, entry.LocalTransform * t, useRenderGroups);
             }
         }
     }

@@ -30,6 +30,7 @@ public class ViewportFiltersAction
     private bool RenderObjectCollision = false;
     private bool RenderGrass = false;
     private float GrassDensity = CFG.Current.MapEditor_Grass_Density;
+    private bool RenderEdgePoint = false;
     private bool RenderNavmesh = false;
     private bool RenderSpeedTree = false;
     private bool RenderInvasionPoint = false;
@@ -56,6 +57,7 @@ public class ViewportFiltersAction
         RenderConnectCollision = drawFilter.HasFlag(RenderFilter.ConnectCollision);
         RenderObjectCollision = drawFilter.HasFlag(RenderFilter.ObjectCollision);
         RenderGrass = drawFilter.HasFlag(RenderFilter.Grass);
+        RenderEdgePoint = drawFilter.HasFlag(RenderFilter.EdgePoint);
         RenderNavmesh = drawFilter.HasFlag(RenderFilter.Navmesh);
         RenderSpeedTree = drawFilter.HasFlag(RenderFilter.SpeedTree);
         RenderInvasionPoint = drawFilter.HasFlag(RenderFilter.AutoInvade);
@@ -144,6 +146,16 @@ public class ViewportFiltersAction
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
             CFG.Current.MapEditor_Grass_Density = GrassDensity;
+        }
+
+        if (Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            if (ImGui.Checkbox("Edge Point", ref RenderEdgePoint))
+            {
+                scene.ToggleDrawFilter(RenderFilter.EdgePoint);
+                RenderEdgePoint = scene.DrawFilter.HasFlag(RenderFilter.EdgePoint);
+                CFG.Current.MapEditor_BasicFilter_EdgePoint = RenderEdgePoint;
+            }
         }
 
         if (ImGui.Checkbox("Navmesh", ref RenderNavmesh))

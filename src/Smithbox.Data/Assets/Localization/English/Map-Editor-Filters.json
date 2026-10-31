@@ -89,6 +89,14 @@
       "Text": "Toggle the display of the grass laid upon map pieces and assets. It is built when first displayed, and its layout only approximates the game's."
     },
     {
+      "Key": "MAP_Filters_Edge_Points_Title",
+      "Text": "Edge Points"
+    },
+    {
+      "Key": "MAP_Filters_Edge_Points_TT",
+      "Text": "Toggle the display of the EDGE points of collisions and objects: the grapple points, hangable ledges and huggable walls. These are read when first displayed, and can't be selected or edited here."
+    },
+    {
       "Key": "MAP_Filters_Navmeshes_Title",
       "Text": "Navmeshes"
     },

@@ -581,6 +581,12 @@ public class MapEditorScreen : EditorScreen
             view.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Grass));
 
         ViewHandler.ActiveView?.GrassBank.Update(showGrass);
+
+        // Same as the above
+        var showEdgePoints = ViewHandler.Views.Any(view => view != null &&
+            view.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.EdgePoint));
+
+        ViewHandler.ActiveView?.EdgeBank.Update(showEdgePoints);
     }
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)

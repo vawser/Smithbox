@@ -378,6 +378,49 @@ public static class RenderableHelper
         return r;
     }
 
+    // EDGE POINT
+    public static DebugPrimitiveRenderableProxy GetEdgePointProxy(RenderScene scene)
+    {
+        return GetEdgeWireProxy(scene, _regionPoint);
+    }
+
+    public static DebugPrimitiveRenderableProxy GetEdgePointFillProxy(RenderScene scene)
+    {
+        return GetEdgeFillProxy(scene, _regionSolidPoint);
+    }
+
+    public static DebugPrimitiveRenderableProxy GetEdgeSegmentProxy(RenderScene scene)
+    {
+        return GetEdgeWireProxy(scene, _regionCylinder);
+    }
+
+    public static DebugPrimitiveRenderableProxy GetEdgeSegmentFillProxy(RenderScene scene)
+    {
+        return GetEdgeFillProxy(scene, _regionSolidCylinder);
+    }
+
+    private static DebugPrimitiveRenderableProxy GetEdgeWireProxy(RenderScene scene, IDbgPrim prim)
+    {
+        var color = ColorHelper.GetTransparencyColor(Color.Cyan, CFG.Current.GFX_Renderable_Default_Wireframe_Alpha);
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, prim);
+
+        r.Pickable = false;
+        r.BaseColor = color;
+        r.HighlightedColor = color;
+
+        return r;
+    }
+
+    private static DebugPrimitiveRenderableProxy GetEdgeFillProxy(RenderScene scene, IDbgPrim prim)
+    {
+        DebugPrimitiveRenderableProxy r = GetRegionFillProxy(scene, prim, Utils.GetDecimalColor(Color.Cyan));
+
+        r.Visible = true;
+
+        return r;
+    }
+
     // REGION SELECTION FILL
     public static DebugPrimitiveRenderableProxy GetBoxRegionFillProxy(RenderScene scene)
     {

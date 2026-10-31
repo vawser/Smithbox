@@ -32,6 +32,7 @@ public class MapEditorView : IEditorView
     public AutoInvadeBank AutoInvadeBank => Project.Handler.MapData.AutoInvadeBank;
     public HavokCollisionBank HavokCollisionBank => Project.Handler.MapData.HavokCollisionBank;
     public GrassBank GrassBank => Project.Handler.MapData.GrassBank;
+    public EdgeBank EdgeBank => Project.Handler.MapData.EdgeBank;
     public HavokNavmeshBank HavokNavmeshBank => Project.Handler.MapData.HavokNavmeshBank;
     public LightAtlasBank LightAtlasBank => Project.Handler.MapData.LightAtlasBank;
     public LightProbeBank LightProbeBank => Project.Handler.MapData.LightProbeBank;

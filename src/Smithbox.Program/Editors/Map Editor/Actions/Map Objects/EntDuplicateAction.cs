@@ -284,6 +284,7 @@ public class EntDuplicateAction : ViewportAction
             Clones[i].CollisionSceneMesh = null;
             Clones[i].SelectionFillMesh = null;
             Clones[i].ClearGrass();
+            Clones[i].ClearEdgePoints();
         }
 
         // The clones no longer exist, so hand the selection (and its outline) back to the originals

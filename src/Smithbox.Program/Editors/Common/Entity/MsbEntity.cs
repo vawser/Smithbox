@@ -80,6 +80,7 @@ public class MsbEntity : Entity
                 AssignPartDrawable();
                 AssignObjectCollisionDrawable();
                 RefreshGrass();
+                RefreshEdgePoints();
                 break;
 
             case MsbEntityType.Region:
@@ -334,6 +335,87 @@ public class MsbEntity : Entity
         }
 
         GrassSceneMeshes = meshes;
+    }
+
+    // The region meshes these reuse are a unit in size, which would swallow the geometry they mark
+    private const float EdgePointSize = 0.15f;
+    private const float EdgeSegmentRadius = 0.05f;
+
+    /// <summary>
+    /// What the displayed (or requested) EDGE points were built from. Null if there are none.
+    /// </summary>
+    [XmlIgnore]
+    public string EdgeKey { get; set; }
+
+    /// <summary>
+    /// Requests the EDGE points of this part. Only does anything while they are displayed and when they have changed.
+    /// </summary>
+    public void RefreshEdgePoints()
+    {
+        if (Type is not MsbEntityType.Part || Owner is not MapUniverse curUniverse)
+            return;
+
+        curUniverse.Project.Handler.MapData.EdgeBank?.Request(this);
+    }
+
+    public void ClearEdgePoints()
+    {
+        EdgeKey = null;
+        EdgePointMeshes = null;
+    }
+
+    /// <summary>
+    /// Displays finished EDGE points. These are purely visual, so they can't be selected.
+    /// </summary>
+    public void ApplyEdgePoints(EdgeMarkers markers)
+    {
+        var scene = (Owner as MapUniverse).GetCurrentScene();
+
+        List<EdgePointMesh> meshes = new((markers.Points.Count + markers.Segments.Count) * 2);
+
+        foreach (Vector3 point in markers.Points)
+        {
+            var local = Matrix4x4.CreateScale(EdgePointSize) * Matrix4x4.CreateTranslation(point);
+
+            AddEdgePointMesh(meshes, RenderableHelper.GetEdgePointProxy(scene), local);
+            AddEdgePointMesh(meshes, RenderableHelper.GetEdgePointFillProxy(scene), local);
+        }
+
+        foreach (var (start, end) in markers.Segments)
+        {
+            var local = GetEdgeSegmentTransform(start, end);
+
+            AddEdgePointMesh(meshes, RenderableHelper.GetEdgeSegmentProxy(scene), local);
+            AddEdgePointMesh(meshes, RenderableHelper.GetEdgeSegmentFillProxy(scene), local);
+        }
+
+        EdgePointMeshes = meshes;
+    }
+
+    private static void AddEdgePointMesh(List<EdgePointMesh> meshes, DebugPrimitiveRenderableProxy mesh, Matrix4x4 local)
+    {
+        mesh.DrawFilter = RenderFilter.EdgePoint;
+        meshes.Add(new EdgePointMesh(mesh, local));
+    }
+
+    /// <summary>
+    /// Fits the unit cylinder, which stands on the origin, between two points with its top at the start.
+    /// </summary>
+    private static Matrix4x4 GetEdgeSegmentTransform(Vector3 start, Vector3 end)
+    {
+        var axis = start - end;
+        var length = axis.Length();
+        var direction = axis / length;
+        var dot = Vector3.Dot(Vector3.UnitY, direction);
+
+        // The cross product used for the rotation is empty when pointing straight down
+        var rotation = dot < -0.9999f
+            ? Quaternion.CreateFromAxisAngle(Vector3.UnitX, MathF.PI)
+            : Quaternion.Normalize(new Quaternion(Vector3.Cross(Vector3.UnitY, direction), 1 + dot));
+
+        return Matrix4x4.CreateScale(EdgeSegmentRadius, length, EdgeSegmentRadius)
+            * Matrix4x4.CreateFromQuaternion(rotation)
+            * Matrix4x4.CreateTranslation(end);
     }
 
     private void LoadGrassTextures(string modelName)
@@ -1122,6 +1204,7 @@ public class MsbEntity : Entity
 
         // Editing the grass fields of a part only reaches here
         RefreshGrass();
+        RefreshEdgePoints();
 
         base.UpdateRenderModel();
     }

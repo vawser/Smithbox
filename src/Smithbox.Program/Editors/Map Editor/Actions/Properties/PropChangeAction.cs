@@ -201,6 +201,7 @@ public class PropChangeAction : ViewportAction
 
         // Only rebuilds if the grass fields have changed
         (TargetEnt as MsbEntity)?.RefreshGrass();
+        (TargetEnt as MsbEntity)?.RefreshEdgePoints();
     }
 
     public override ActionEvent Undo()

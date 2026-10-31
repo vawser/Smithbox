@@ -61,6 +61,7 @@ public class EntDeleteAction : ViewportAction
             EntityPlacement.Detach(placement.Map, ent);
 
             (ent as MsbEntity)?.ClearGrass();
+            (ent as MsbEntity)?.ClearEdgePoints();
 
             ent.RenderSceneMesh?.Dispose();
             ent.RenderSceneMesh = null;

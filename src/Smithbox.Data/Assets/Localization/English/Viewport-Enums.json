@@ -73,6 +73,10 @@
       "Text": "Grass"
     },
     {
+      "Key": "VIEWPORT_ENUM_RenderFilter_EdgePoint",
+      "Text": "Edge Point"
+    },
+    {
       "Key": "VIEWPORT_ENUM_RenderFilter_All",
       "Text": "All"
     },
