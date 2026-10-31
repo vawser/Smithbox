@@ -22,6 +22,35 @@
     },
     "M[AMSN_V][Mb2]": {
       "BlendWeight": "TexCoord1X"
+    },
+    "M[AMSN_V]_Grass": { "Deformer": "WindBend" },
+    "M[AMSN_V]_Grass_ColorAdjust": { "Deformer": "WindBend" },
+    "M[A]_Grass": { "Deformer": "WindBend" },
+    "M[AMSN_V][Spiderweb]": { "Deformer": "WindBend" },
+    "M[AMSN_V][Ov_A]_Edge_Vegetation": { "Deformer": "WindBend" },
+    "M[AMSN_V]_Grass2": {
+      "Deformer": "WindPivot",
+      "Params": { "Amplitude": "snp_0_float_9", "Phase": "snp_0_float_5" }
+    },
+    "M[AMSN_V]_Vesitation": {
+      "Deformer": "WindPivot",
+      "Params": { "Amplitude": "snp_0_float_9", "Phase": "snp_0_float_5" }
+    },
+    "M[AMSN_V]_Vesitation_Emissive_Glow": {
+      "Deformer": "WindPivot",
+      "Params": { "Amplitude": "snp_0_float_9", "Phase": "snp_0_float_5" }
+    },
+    "M[AMSN]_Vesitation": {
+      "Deformer": "WindPivot",
+      "Params": { "Amplitude": "snp_0_float_9", "Phase": "snp_0_float_5" }
+    },
+    "M[AMSN]_Vesitation_Emissive_Glow": {
+      "Deformer": "WindPivot",
+      "Params": { "Amplitude": "snp_0_float_9", "Phase": "snp_0_float_5" }
+    },
+    "M[Flower_m10]": {
+      "Deformer": "WindPivot",
+      "Params": { "Amplitude": "snp_0_float_9", "Phase": "snp_0_float_5" }
     }
   }
 }

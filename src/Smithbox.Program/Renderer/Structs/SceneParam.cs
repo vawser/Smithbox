@@ -46,6 +46,12 @@ public unsafe struct SceneParam
     /// </summary>
     public float MaterialTime;
 
-    // Keeps the struct a whole number of 16 byte rows
-    public fixed float MaterialTimePadding[3];
+    /// <summary>Seconds a gust of wind takes to come around</summary>
+    public float WindPeriod;
+
+    // Keeps the next field on a 16 byte row
+    public fixed float MaterialTimePadding[2];
+
+    /// <summary>xy is the world XZ direction the wind blows in, z its steady force and w the force of its waves</summary>
+    public Vector4 Wind;
 }

@@ -88,7 +88,7 @@ public unsafe struct MaterialDeform
 {
     public float Amplitude;
 
-    /// <summary>Frames a second for a vertex animation, cycles a second for sway</summary>
+    /// <summary>Frames a second for a vertex animation, cycles a second for sway, phase spread for wind</summary>
     public float Rate;
 
     private fixed float _padding[2];

@@ -210,7 +210,11 @@ public unsafe struct FlverLayoutUV4
 public unsafe struct FlverLayoutDeform
 {
     public const int TexCoordSize = 4;
-    public const int TexCoordCount = 3;
+
+    /// <summary>TEXCOORD1 and TEXCOORD2. TEXCOORD3 is separate, as it needs more range than bytes have</summary>
+    public const int ByteTexCoordCount = 2;
+
+    public const int TexCoord3Index = 2;
 
     public Vector3 Position;
     public fixed short Uv1[2];
@@ -219,7 +223,10 @@ public unsafe struct FlverLayoutDeform
     public fixed sbyte Bitangent[4];
     public fixed byte Color[4];
     public fixed short Uv2[2];
-    public fixed byte TexCoords[TexCoordSize * TexCoordCount];
+    public fixed byte TexCoords[TexCoordSize * ByteTexCoordCount];
+
+    /// <summary>The bits of four half floats, which can hold anything from a phase to a model space pivot</summary>
+    public fixed ushort TexCoord3[4];
 
     public static VertexLayoutDescription Layout = new(
         new VertexElementDescription("position", VkFormat.R32G32B32Sfloat),
@@ -231,7 +238,7 @@ public unsafe struct FlverLayoutDeform
         new VertexElementDescription("uv2", VkFormat.R16G16Sint),
         new VertexElementDescription("texcoord1", VkFormat.R8G8B8A8Unorm),
         new VertexElementDescription("texcoord2", VkFormat.R8G8B8A8Unorm),
-        new VertexElementDescription("texcoord3", VkFormat.R8G8B8A8Unorm));
+        new VertexElementDescription("texcoord3", VkFormat.R16G16B16A16Sfloat));
 }
 
 [StructLayout(LayoutKind.Sequential, Pack = 1)]

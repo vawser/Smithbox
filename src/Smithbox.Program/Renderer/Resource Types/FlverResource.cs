@@ -698,7 +698,12 @@ public class FlverResource : IResource, IDisposable
     {
         MaterialDeform deform = new();
         deform.Amplitude = GetDeformValue(definition, "Amplitude", 0);
-        deform.Rate = GetDeformValue(definition, definition.Deformer == MaterialDeformer.Vat ? "FrameRate" : "Speed", 0);
+        deform.Rate = GetDeformValue(definition, definition.Deformer switch
+        {
+            MaterialDeformer.Vat => "FrameRate",
+            MaterialDeformer.WindPivot => "Phase",
+            _ => "Speed"
+        }, 0);
 
         if (definition.DeformerParams.TryGetValue("Direction", out var direction) && direction.Length >= 3)
         {
@@ -722,9 +727,14 @@ public class FlverResource : IResource, IDisposable
 
         // How far a vertex animation moves isn't known without its texture, but the
         // offsets seen so far stay under a world unit, before the amplitude scales them
-        var reach = Math.Abs(deform.Amplitude) * (definition.Deformer == MaterialDeformer.Vat
-            ? 2.0f
-            : deform.Direction.Length());
+        var reach = definition.Deformer switch
+        {
+            MaterialDeformer.Vat => Math.Abs(deform.Amplitude) * 2.0f,
+            MaterialDeformer.Sway => Math.Abs(deform.Amplitude) * deform.Direction.Length(),
+
+            // Wind depends on the viewport's settings rather than the material
+            _ => 1.0f
+        };
 
         Vector3 pad = new(reach);
         dest.Bounds = new BoundingBox(dest.Bounds.Min - pad, dest.Bounds.Max + pad);
@@ -1720,8 +1730,28 @@ public class FlverResource : IResource, IDisposable
     /// </summary>
     private static int GetTexCoordIndex(FLVER.LayoutSemantic semantic, FLVER.LayoutType type, int index)
     {
-        return semantic == FLVER.LayoutSemantic.UV && type == FLVER.LayoutType.UByte4Norm
-            && index >= 1 && index <= FlverLayoutDeform.TexCoordCount ? index - 1 : -1;
+        if (semantic != FLVER.LayoutSemantic.UV || index < 1 || index > FlverLayoutDeform.TexCoord3Index + 1)
+            return -1;
+
+        var isTexCoord = type == FLVER.LayoutType.UByte4Norm
+            || (type == FLVER.LayoutType.Half4 && index - 1 == FlverLayoutDeform.TexCoord3Index);
+
+        return isTexCoord ? index - 1 : -1;
+    }
+
+    /// <summary>
+    /// Stores a byte attribute, which TEXCOORD3 keeps as half floats whatever the mesh had
+    /// </summary>
+    private static unsafe void SetByteTexCoord(FlverLayoutDeform* dest, int texCoord, int component, byte value)
+    {
+        if (texCoord == FlverLayoutDeform.TexCoord3Index)
+        {
+            (*dest).TexCoord3[component] = BitConverter.HalfToUInt16Bits((Half)(value / 255f));
+        }
+        else
+        {
+            (*dest).TexCoords[(texCoord * FlverLayoutDeform.TexCoordSize) + component] = value;
+        }
     }
 
     private unsafe void FillVerticesDeform(BinaryReaderEx br, ref FlverVertexBuffer buffer,
@@ -1774,7 +1804,14 @@ public class FlverResource : IResource, IDisposable
                     {
                         for (var c = 0; c < FlverLayoutDeform.TexCoordSize; c++)
                         {
-                            (*d).TexCoords[(texCoord * FlverLayoutDeform.TexCoordSize) + c] = br.ReadByte();
+                            if (l.type == FLVER.LayoutType.Half4)
+                            {
+                                (*d).TexCoord3[c] = br.ReadUInt16();
+                            }
+                            else
+                            {
+                                SetByteTexCoord(d, texCoord, c, br.ReadByte());
+                            }
                         }
                     }
                     else if (l.semantic == FLVER.LayoutSemantic.UV && uvsfilled < 2)
@@ -1824,10 +1861,12 @@ public class FlverResource : IResource, IDisposable
     /// Finds where TEXCOORD1-3 ended up in the flat UV list of a vertex: each entry is the index of a
     /// member's first UV, by TEXCOORD, or -1 for one the mesh doesn't have.
     /// </summary>
-    private int[] GetTexCoordUVs(FLVER2.Mesh mesh)
+    private int[] GetTexCoordUVs(FLVER2.Mesh mesh, out bool halfTexCoord3)
     {
-        var uvs = new int[FlverLayoutDeform.TexCoordCount];
+        var uvs = new int[FlverLayoutDeform.TexCoord3Index + 1];
         Array.Fill(uvs, -1);
+
+        halfTexCoord3 = false;
 
         var uvIndex = 0;
         foreach (FLVER2.VertexBuffer buffer in mesh.VertexBuffers)
@@ -1843,6 +1882,7 @@ public class FlverResource : IResource, IDisposable
                 if (texCoord >= 0)
                 {
                     uvs[texCoord] = uvIndex;
+                    halfTexCoord3 |= member.Type == FLVER.LayoutType.Half4;
                 }
 
                 // These are read as two UVs each
@@ -1856,7 +1896,10 @@ public class FlverResource : IResource, IDisposable
 
     private unsafe void FillVerticesDeform(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
     {
-        var texCoordUVs = GetTexCoordUVs(mesh);
+        var texCoordUVs = GetTexCoordUVs(mesh, out var halfTexCoord3);
+
+        // FLVER.Vertex reads half floats as if they were 16 bit fixed point, so this gets the bits back
+        float uvFactor = Flver!.Header.Version >= 0x2000E ? 2048 : 1024;
 
         Span<FlverLayoutDeform> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         fixed (FlverLayoutDeform* pverts = verts)
@@ -1891,11 +1934,19 @@ public class FlverResource : IResource, IDisposable
 
                     Vector3 first = vert.UVs[texCoordUVs[t]];
                     Vector3 second = vert.UVs[texCoordUVs[t] + 1];
-                    byte* texCoord = (*d).TexCoords + (t * FlverLayoutDeform.TexCoordSize);
-                    texCoord[0] = (byte)Math.Round(first.X * 255f);
-                    texCoord[1] = (byte)Math.Round(first.Y * 255f);
-                    texCoord[2] = (byte)Math.Round(second.X * 255f);
-                    texCoord[3] = (byte)Math.Round(second.Y * 255f);
+                    if (halfTexCoord3 && t == FlverLayoutDeform.TexCoord3Index)
+                    {
+                        (*d).TexCoord3[0] = (ushort)(short)Math.Round(first.X * uvFactor);
+                        (*d).TexCoord3[1] = (ushort)(short)Math.Round(first.Y * uvFactor);
+                        (*d).TexCoord3[2] = (ushort)(short)Math.Round(second.X * uvFactor);
+                        (*d).TexCoord3[3] = (ushort)(short)Math.Round(second.Y * uvFactor);
+                        continue;
+                    }
+
+                    SetByteTexCoord(d, t, 0, (byte)Math.Round(first.X * 255f));
+                    SetByteTexCoord(d, t, 1, (byte)Math.Round(first.Y * 255f));
+                    SetByteTexCoord(d, t, 2, (byte)Math.Round(second.X * 255f));
+                    SetByteTexCoord(d, t, 3, (byte)Math.Round(second.Y * 255f));
                 }
             }
         }

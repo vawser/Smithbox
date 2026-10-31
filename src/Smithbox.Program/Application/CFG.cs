@@ -1098,6 +1098,8 @@ public class CFG
     public bool Viewport_Enable_Rendering = true;
     public bool Viewport_Enable_Texturing = true;
     public bool Viewport_Enable_Material_Animation = true;
+    public float Viewport_Wind_Strength = 1.0f;
+    public float Viewport_Wind_Direction = 45.0f;
     public bool Viewport_Enable_Culling = true;
 
     public bool Viewport_Enable_Selection_Tint = true;

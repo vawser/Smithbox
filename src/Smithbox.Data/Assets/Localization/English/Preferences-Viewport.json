@@ -17,6 +17,22 @@
       "Text": "If enabled, materials that animate over time will play in the viewport. If disabled, they hold their current frame."
     },
     {
+      "Key": "PREF_Viewport_Wind_Strength",
+      "Text": "Wind Strength"
+    },
+    {
+      "Key": "PREF_Viewport_Wind_Strength_TT",
+      "Text": "How strongly vegetation moves in the viewport. The game's own wind varies by place, so this is an approximation of it."
+    },
+    {
+      "Key": "PREF_Viewport_Wind_Direction",
+      "Text": "Wind Direction"
+    },
+    {
+      "Key": "PREF_Viewport_Wind_Direction_TT",
+      "Text": "The direction vegetation is blown in, in degrees."
+    },
+    {
       "Key": "PREF_Viewport_Enable_Rendering",
       "Text": "Enable Model Rendering"
     },

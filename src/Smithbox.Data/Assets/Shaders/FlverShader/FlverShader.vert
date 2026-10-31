@@ -51,6 +51,8 @@ struct sceneParams
 	sceneLight lights[MAX_SCENE_LIGHTS];
 
 	float materialTime;
+	float windPeriod;
+	vec4 wind; // xy: world XZ direction, z: steady force, w: force of the waves
 #endif
 };
 
@@ -87,6 +89,8 @@ layout (constant_id = 50) const bool c_normalWBoneTransform = false;
 #ifdef MATERIAL_DEFORM
 #define DEFORM_VAT 1
 #define DEFORM_SWAY 2
+#define DEFORM_WIND_BEND 3
+#define DEFORM_WIND_PIVOT 4
 layout (constant_id = 60) const int c_deformer = 0;
 
 layout(set = 2, binding = 0) uniform texture2D globalTextures[];
@@ -138,6 +142,11 @@ layout(location = 9) flat out uint fsin_entityid;
 
 // UVs are stored as signed 16 bit fixed point with 11 fractional bits
 const float UV_SCALE = 1.0 / 2048.0;
+
+#ifdef MATERIAL_DEFORM
+const float TWO_PI = 6.2831853;
+const float WIND_FORCE_SCALE = 0.05;
+#endif
 
 // materialID.z is 0 unless the instance is being animated, which keeps static models untouched:
 //   1            - rigid, the bone only needs to reach the normals as well
@@ -212,6 +221,60 @@ void DeformSway(deformData deform, inout vec3 pos)
 
 	pos += deform.direction.xyz * deform.params.x * texcoord1.z * wave;
 }
+
+// The game sums up to 8 wind sources it has at runtime. This is its sum for one source that
+// blows everywhere: a wave travelling along the wind on top of a steady force
+vec3 WindForce(vec3 worldPos, float timeOffset)
+{
+	vec2 direction = sceneparam.wind.xy;
+	float time = sceneparam.materialTime + timeOffset;
+	float wave = sin(TWO_PI / sceneparam.windPeriod * (time - dot(worldPos.xz, direction)));
+	float force = (sceneparam.wind.z + sceneparam.wind.w * wave) * WIND_FORCE_SCALE;
+
+	return vec3(direction.x, 0.0, direction.y) * force;
+}
+
+// Bends over along the wind by TEXCOORD1.y, keeping the height of the vertex on a sphere
+void DeformWindBend(inout vec3 worldPos)
+{
+	float strength = texcoord1.y;
+	vec2 bend = WindForce(worldPos, 0.0).xz * strength;
+	bend /= sqrt(dot(bend, bend) + 1.0);
+
+	float height = sqrt(clamp(1.0 - dot(bend, bend), 0.0, 1.0)) - 1.0;
+
+	worldPos += vec3(bend.x, height, bend.y) * strength;
+}
+
+// Rotates around the pivot in TEXCOORD3, tipping the instance's up axis towards the wind.
+// The rotation is the game's: its axis term isn't scaled by (1 - cos), which only matters at large angles
+void DeformWindPivot(deformData deform, mat4 toWorld, vec3 up, inout vec3 worldPos)
+{
+	vec3 force = WindForce(worldPos, deform.params.y * texcoord1.x);
+	float magnitude = length(force);
+
+	if (magnitude < 1e-5)
+	{
+		return;
+	}
+
+	vec3 axis = cross(normalize(up), force / magnitude);
+
+	if (dot(axis, axis) < 1e-8)
+	{
+		return;
+	}
+
+	axis = normalize(axis);
+
+	float angle = log(magnitude + 1.0) * deform.params.x;
+	vec3 pivot = (toWorld * vec4(texcoord3.xyz, 1.0)).xyz;
+	vec3 toVertex = worldPos - pivot;
+
+	vec3 rotated = pivot + axis * dot(axis, toVertex) + toVertex * cos(angle) + cross(axis, toVertex) * sin(angle);
+
+	worldPos += (rotated - worldPos) * (1.0 - texcoord2.z);
+}
 #endif
 
 void main()
@@ -250,6 +313,19 @@ void main()
 
 	mat4 bone = GetBoneMatrix();
 	vec4 worldPos = w * bone * vec4(localPosition, 1.0);
+
+#ifdef MATERIAL_DEFORM
+	// Wind blows in world space, unlike the deformers above
+	if (c_deformer == DEFORM_WIND_BEND)
+	{
+		DeformWindBend(worldPos.xyz);
+	}
+	else if (c_deformer == DEFORM_WIND_PIVOT)
+	{
+		DeformWindPivot(deform, w * bone, w[1].xyz, worldPos.xyz);
+	}
+#endif
+
 	fsin_worldpos = worldPos.xyz;
 
 	// Normals need the inverse transpose of the world matrix to stay correct under non-uniform scale.

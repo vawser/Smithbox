@@ -21,7 +21,13 @@ public enum MaterialDeformer
     Vat,
 
     /// <summary>Offsets vertices along a direction by a smoothed triangle wave</summary>
-    Sway
+    Sway,
+
+    /// <summary>Bends vertices over in the direction of the wind, by a strength stored per vertex</summary>
+    WindBend,
+
+    /// <summary>Rotates vertices around a pivot stored per vertex, towards the wind</summary>
+    WindPivot
 }
 
 /// <summary>

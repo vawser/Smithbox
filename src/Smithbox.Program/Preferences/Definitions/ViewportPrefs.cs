@@ -127,6 +127,50 @@ public class ViewportPrefs
         };
     }
 
+    public static PreferenceItem Viewport_Wind_Strength()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.Viewport,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.Rendering,
+
+            Title = "PREF_Viewport_Wind_Strength",
+            Description = "PREF_Viewport_Wind_Strength_TT",
+
+            Draw = () =>
+            {
+                DPI.ApplyInputWidth();
+                ImGui.SliderFloat("##inputValue", ref CFG.Current.Viewport_Wind_Strength, 0.0f, 5.0f);
+            }
+        };
+    }
+
+    public static PreferenceItem Viewport_Wind_Direction()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.Viewport,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.Rendering,
+
+            Title = "PREF_Viewport_Wind_Direction",
+            Description = "PREF_Viewport_Wind_Direction_TT",
+
+            Draw = () =>
+            {
+                DPI.ApplyInputWidth();
+                ImGui.SliderFloat("##inputValue", ref CFG.Current.Viewport_Wind_Direction, 0.0f, 360.0f);
+            }
+        };
+    }
+
     public static PreferenceItem Viewport_Limit_Buffer_Indirect_Draw()
     {
         return new PreferenceItem

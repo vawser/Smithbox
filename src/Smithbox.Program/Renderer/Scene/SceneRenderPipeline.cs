@@ -202,6 +202,7 @@ public class SceneRenderPipeline
         Scene.Lights.CollectEnabled(lights);
 
         var materialTime = MaterialClock.Time;
+        Vector4 wind = MaterialClock.Wind;
 
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
@@ -220,6 +221,8 @@ public class SceneRenderPipeline
             SceneParams.EnableTinting = enableTinting;
             SceneParams.DitherOpacity = CFG.Current.Viewport_Selection_Dither_Opacity;
             SceneParams.MaterialTime = materialTime;
+            SceneParams.WindPeriod = MaterialClock.WindPeriod;
+            SceneParams.Wind = wind;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)
