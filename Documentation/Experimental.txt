@@ -1,8 +1,4 @@
-#-------------
-# Bullet Simulator
-#-------------
-- Add primitive simulation of bullet behavior, making use of the primitive draw elements to display the path and projectiles.
- 
+
 #-------------
 # World Map Editor
 #-------------

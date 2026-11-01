@@ -37,29 +37,35 @@ public class ProjectileSimulatorTool
     private float Time;
     private float Speed = 1.0f;
 
-    private float LaunchHeight = 1.5f;
-    private CastOrientation Orientation = CastOrientation.Forward;
-    private bool GroundCollision = true;
-    private bool SimulateWall;
-    private float WallDistance = 10.0f;
-    private float WallWidth = 12.0f;
-    private float WallHeight = 8.0f;
-    private ImpactSurface Surface = ImpactSurface.Map;
-    private bool SimulateTarget;
-    private Vector3 TargetPosition = new(5.0f, 1.5f, 15.0f);
-    private float TargetRadius = 0.5f;
-    private bool UseEnemyAttacks;
-    private int Seed = 1;
-
     public ProjectileSimulatorTool(ParamEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
     }
 
-    private SimulationSettings Settings =>
-        new(LaunchHeight, Orientation, GroundCollision, SimulateWall, WallDistance, WallWidth, WallHeight, Surface,
-            SimulateTarget, TargetPosition, TargetRadius, Seed);
+    private static SimulationSettings Settings
+    {
+        get
+        {
+            CFG cfg = CFG.Current;
+
+            return new SimulationSettings(cfg.ParamEditor_ProjectileSimulator_LaunchHeight,
+                cfg.ParamEditor_ProjectileSimulator_Orientation,
+                cfg.ParamEditor_ProjectileSimulator_GroundCollision,
+                cfg.ParamEditor_ProjectileSimulator_SimulateWall,
+                cfg.ParamEditor_ProjectileSimulator_WallDistance,
+                cfg.ParamEditor_ProjectileSimulator_WallWidth,
+                cfg.ParamEditor_ProjectileSimulator_WallHeight,
+                cfg.ParamEditor_ProjectileSimulator_Surface,
+                cfg.ParamEditor_ProjectileSimulator_SimulateTarget,
+                cfg.ParamEditor_ProjectileSimulator_TargetPosition,
+                cfg.ParamEditor_ProjectileSimulator_TargetRadius,
+                cfg.ParamEditor_ProjectileSimulator_TargetMotion,
+                cfg.ParamEditor_ProjectileSimulator_TargetSpeed,
+                cfg.ParamEditor_ProjectileSimulator_TargetRange,
+                cfg.ParamEditor_ProjectileSimulator_Seed);
+        }
+    }
 
     public void Display()
     {
@@ -70,7 +76,7 @@ public class ProjectileSimulatorTool
 
         if (ImGui.BeginChild("projectileSimulatorSettings", new Vector2(width, 0), ImGuiChildFlags.ResizeX))
         {
-            DisplaySettings();
+            DisplaySettings(Project.Descriptor.ProjectType);
         }
 
         ImGui.EndChild();
@@ -85,12 +91,12 @@ public class ProjectileSimulatorTool
         ImGui.EndChild();
     }
 
-    private void DisplaySettings()
+    private void DisplaySettings(ProjectType projectType)
     {
         DisplayTarget();
         DisplaySetup();
         DisplayWarnings();
-        DisplayProjectiles();
+        DisplayProjectiles(projectType);
     }
 
     // The tool can be open in the tool window and its own window at once, which mustn't double its speed
@@ -189,7 +195,7 @@ public class ProjectileSimulatorTool
 
     private AttackDefinition FindAttack(int id)
     {
-        Param.Row row = GetAttackParam(UseEnemyAttacks)?[id] ?? GetAttackParam(!UseEnemyAttacks)?[id];
+        Param.Row row = GetAttackParam(CFG.Current.ParamEditor_ProjectileSimulator_UseEnemyAttacks)?[id] ?? GetAttackParam(!CFG.Current.ParamEditor_ProjectileSimulator_UseEnemyAttacks)?[id];
 
         return row != null ? AttackDefinition.FromRow(row) : null;
     }
@@ -339,18 +345,18 @@ public class ProjectileSimulatorTool
         GUI.SimpleHeader(LOC.Get("PARAM_ProjectileSimulator_Header_Setup"), "");
 
         ImGui.SetNextItemWidth(-1);
-        changed |= ImGui.SliderFloat("##launchHeight", ref LaunchHeight, 0, 20,
+        changed |= ImGui.SliderFloat("##launchHeight", ref CFG.Current.ParamEditor_ProjectileSimulator_LaunchHeight, 0, 20,
             $"{LOC.Get("PARAM_ProjectileSimulator_Launch_Height")}: %.1f m");
 
         ImGui.SetNextItemWidth(-1);
 
-        if (ImGui.BeginCombo("##castOrientation", $"{LOC.Get("PARAM_ProjectileSimulator_Cast_Orientation")}: {GetOrientationName(Orientation)}"))
+        if (ImGui.BeginCombo("##castOrientation", $"{LOC.Get("PARAM_ProjectileSimulator_Cast_Orientation")}: {GetOrientationName(CFG.Current.ParamEditor_ProjectileSimulator_Orientation)}"))
         {
             foreach (CastOrientation orientation in Enum.GetValues<CastOrientation>())
             {
-                if (ImGui.Selectable(GetOrientationName(orientation), orientation == Orientation))
+                if (ImGui.Selectable(GetOrientationName(orientation), orientation == CFG.Current.ParamEditor_ProjectileSimulator_Orientation))
                 {
-                    Orientation = orientation;
+                    CFG.Current.ParamEditor_ProjectileSimulator_Orientation = orientation;
                     changed = true;
                 }
             }
@@ -361,46 +367,46 @@ public class ProjectileSimulatorTool
 
         if (ImGui.Button($"{LOC.Get("PARAM_ProjectileSimulator_Reroll")}##reroll"))
         {
-            Seed++;
+            CFG.Current.ParamEditor_ProjectileSimulator_Seed++;
             changed = true;
         }
         GUI.Tooltip(LOC.Get("PARAM_ProjectileSimulator_Reroll_TT"));
 
-        changed |= ImGui.Checkbox($"{LOC.Get("PARAM_ProjectileSimulator_Enemy_Attacks")}##useEnemyAttacks", ref UseEnemyAttacks);
+        changed |= ImGui.Checkbox($"{LOC.Get("PARAM_ProjectileSimulator_Enemy_Attacks")}##useEnemyAttacks", ref CFG.Current.ParamEditor_ProjectileSimulator_UseEnemyAttacks);
         GUI.Tooltip(LOC.Get("PARAM_ProjectileSimulator_Enemy_Attacks_TT"));
 
-        changed |= ImGui.Checkbox($"{LOC.Get("PARAM_ProjectileSimulator_Ground_Collision")}##groundCollision", ref GroundCollision);
+        changed |= ImGui.Checkbox($"{LOC.Get("PARAM_ProjectileSimulator_Ground_Collision")}##groundCollision", ref CFG.Current.ParamEditor_ProjectileSimulator_GroundCollision);
         GUI.Tooltip(LOC.Get("PARAM_ProjectileSimulator_Ground_Collision_TT"));
 
-        changed |= ImGui.Checkbox($"{LOC.Get("PARAM_ProjectileSimulator_Simulate_Wall")}##simulateWall", ref SimulateWall);
+        changed |= ImGui.Checkbox($"{LOC.Get("PARAM_ProjectileSimulator_Simulate_Wall")}##simulateWall", ref CFG.Current.ParamEditor_ProjectileSimulator_SimulateWall);
         GUI.Tooltip(LOC.Get("PARAM_ProjectileSimulator_Simulate_Wall_TT"));
 
-        if (SimulateWall)
+        if (CFG.Current.ParamEditor_ProjectileSimulator_SimulateWall)
         {
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##wallDistance", ref WallDistance, 0.5f, 100,
+            changed |= ImGui.SliderFloat("##wallDistance", ref CFG.Current.ParamEditor_ProjectileSimulator_WallDistance, 0.5f, 100,
                 $"{LOC.Get("PARAM_ProjectileSimulator_Wall_Distance")}: %.1f m");
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##wallWidth", ref WallWidth, 1, 50,
+            changed |= ImGui.SliderFloat("##wallWidth", ref CFG.Current.ParamEditor_ProjectileSimulator_WallWidth, 1, 50,
                 $"{LOC.Get("PARAM_ProjectileSimulator_Wall_Width")}: %.1f m");
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##wallHeight", ref WallHeight, 1, 50,
+            changed |= ImGui.SliderFloat("##wallHeight", ref CFG.Current.ParamEditor_ProjectileSimulator_WallHeight, 1, 50,
                 $"{LOC.Get("PARAM_ProjectileSimulator_Wall_Height")}: %.1f m");
         }
 
-        if (GroundCollision || SimulateWall)
+        if (CFG.Current.ParamEditor_ProjectileSimulator_GroundCollision || CFG.Current.ParamEditor_ProjectileSimulator_SimulateWall)
         {
             ImGui.SetNextItemWidth(-1);
 
-            if (ImGui.BeginCombo("##surface", GetSurfaceName(Surface)))
+            if (ImGui.BeginCombo("##surface", GetSurfaceName(CFG.Current.ParamEditor_ProjectileSimulator_Surface)))
             {
                 foreach (ImpactSurface surface in new[] { ImpactSurface.Map, ImpactSurface.Water })
                 {
-                    if (ImGui.Selectable(GetSurfaceName(surface), surface == Surface))
+                    if (ImGui.Selectable(GetSurfaceName(surface), surface == CFG.Current.ParamEditor_ProjectileSimulator_Surface))
                     {
-                        Surface = surface;
+                        CFG.Current.ParamEditor_ProjectileSimulator_Surface = surface;
                         changed = true;
                     }
                 }
@@ -410,26 +416,28 @@ public class ProjectileSimulatorTool
             GUI.Tooltip(LOC.Get("PARAM_ProjectileSimulator_Surface_TT"));
         }
 
-        changed |= ImGui.Checkbox($"{LOC.Get("PARAM_ProjectileSimulator_Simulate_Target")}##simulateTarget", ref SimulateTarget);
+        changed |= ImGui.Checkbox($"{LOC.Get("PARAM_ProjectileSimulator_Simulate_Target")}##simulateTarget", ref CFG.Current.ParamEditor_ProjectileSimulator_SimulateTarget);
         GUI.Tooltip(LOC.Get("PARAM_ProjectileSimulator_Simulate_Target_TT"));
 
-        if (SimulateTarget)
+        if (CFG.Current.ParamEditor_ProjectileSimulator_SimulateTarget)
         {
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.DragFloat("##targetX", ref TargetPosition.X, 0.1f, -200, 200,
+            changed |= ImGui.DragFloat("##targetX", ref CFG.Current.ParamEditor_ProjectileSimulator_TargetPosition.X, 0.1f, -200, 200,
                 $"{LOC.Get("PARAM_ProjectileSimulator_Target_Right")}: %.1f m");
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.DragFloat("##targetY", ref TargetPosition.Y, 0.1f, -50, 200,
+            changed |= ImGui.DragFloat("##targetY", ref CFG.Current.ParamEditor_ProjectileSimulator_TargetPosition.Y, 0.1f, -50, 200,
                 $"{LOC.Get("PARAM_ProjectileSimulator_Target_Height")}: %.1f m");
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.DragFloat("##targetZ", ref TargetPosition.Z, 0.1f, -200, 200,
+            changed |= ImGui.DragFloat("##targetZ", ref CFG.Current.ParamEditor_ProjectileSimulator_TargetPosition.Z, 0.1f, -200, 200,
                 $"{LOC.Get("PARAM_ProjectileSimulator_Target_Forward")}: %.1f m");
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##targetRadius", ref TargetRadius, 0.1f, 10,
+            changed |= ImGui.SliderFloat("##targetRadius", ref CFG.Current.ParamEditor_ProjectileSimulator_TargetRadius, 0.1f, 10,
                 $"{LOC.Get("PARAM_ProjectileSimulator_Target_Radius")}: %.1f m");
+
+            changed |= DisplayTargetMotion();
         }
 
         if (changed)
@@ -438,6 +446,41 @@ public class ProjectileSimulatorTool
         }
 
         GUI.Spacer();
+    }
+
+    private static bool DisplayTargetMotion()
+    {
+        var changed = false;
+
+        ImGui.SetNextItemWidth(-1);
+
+        if (ImGui.BeginCombo("##targetMotion", $"{LOC.Get("PARAM_ProjectileSimulator_Target_Motion")}: {GetMotionName(CFG.Current.ParamEditor_ProjectileSimulator_TargetMotion)}"))
+        {
+            foreach (TargetMotion motion in Enum.GetValues<TargetMotion>())
+            {
+                if (ImGui.Selectable(GetMotionName(motion), motion == CFG.Current.ParamEditor_ProjectileSimulator_TargetMotion))
+                {
+                    CFG.Current.ParamEditor_ProjectileSimulator_TargetMotion = motion;
+                    changed = true;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("PARAM_ProjectileSimulator_Target_Motion_TT"));
+
+        if (CFG.Current.ParamEditor_ProjectileSimulator_TargetMotion is not TargetMotion.Still)
+        {
+            ImGui.SetNextItemWidth(-1);
+            changed |= ImGui.SliderFloat("##targetSpeed", ref CFG.Current.ParamEditor_ProjectileSimulator_TargetSpeed, 0.5f, 30,
+                $"{LOC.Get("PARAM_ProjectileSimulator_Target_Speed")}: %.1f m/s");
+
+            ImGui.SetNextItemWidth(-1);
+            changed |= ImGui.SliderFloat("##targetRange", ref CFG.Current.ParamEditor_ProjectileSimulator_TargetRange, 0.5f, 30,
+                $"{LOC.Get("PARAM_ProjectileSimulator_Target_Range")}: %.1f m");
+        }
+
+        return changed;
     }
 
     private void DisplayWarnings()
@@ -479,7 +522,7 @@ public class ProjectileSimulatorTool
         }
     }
 
-    private void DisplayProjectiles()
+    private void DisplayProjectiles(ProjectType projectType)
     {
         if (Result == null)
         {
@@ -506,7 +549,7 @@ public class ProjectileSimulatorTool
 
                 if (ImGui.IsItemHovered())
                 {
-                    ImGui.SetItemTooltip(GetTrackDescription(track));
+                    ImGui.SetItemTooltip(GetTrackDescription(track, projectType));
                 }
             }
         }
@@ -514,7 +557,7 @@ public class ProjectileSimulatorTool
         ImGui.EndChild();
     }
 
-    private string GetTrackDescription(ProjectileTrack track)
+    private string GetTrackDescription(ProjectileTrack track, ProjectType projectType)
     {
         var origin = track.Origin switch
         {
@@ -537,7 +580,7 @@ public class ProjectileSimulatorTool
         if (track.Attack != null)
         {
             description += $"\n{LOC.Get("PARAM_ProjectileSimulator_Attack", track.Attack.RowId, track.Attack.Radius)}" +
-                           $"\n{ProjectileViewport.FormatDamage(track.Attack.Flat, track.Attack.Correction)}";
+                           $"\n{ProjectileViewport.FormatDamage(track.Attack.Flat, track.Attack.Correction, projectType)}";
         }
 
         if (track.ChainWithheld)
@@ -556,7 +599,7 @@ public class ProjectileSimulatorTool
 
         if (size.X > 1 && size.Y > 1)
         {
-            Viewport.Display("##projectileViewport", size, Result, Settings, Time);
+            Viewport.Display("##projectileViewport", size, Result, Settings, Time, Project.Descriptor.ProjectType);
 
             // The movement keys are on the same keys as the editor's shortcuts, with Ctrl being the slow speed
             if (Viewport.IsUsingCamera)
@@ -628,6 +671,17 @@ public class ProjectileSimulatorTool
     private static string GetRowLabel(int id, string name)
     {
         return string.IsNullOrEmpty(name) ? $"{id}" : $"{id} {name}";
+    }
+
+    private static string GetMotionName(TargetMotion motion)
+    {
+        return motion switch
+        {
+            TargetMotion.Strafe => LOC.Get("PARAM_ProjectileSimulator_Motion_Strafe"),
+            TargetMotion.Advance => LOC.Get("PARAM_ProjectileSimulator_Motion_Advance"),
+            TargetMotion.Circle => LOC.Get("PARAM_ProjectileSimulator_Motion_Circle"),
+            _ => LOC.Get("PARAM_ProjectileSimulator_Motion_Still")
+        };
     }
 
     private static string GetOrientationName(CastOrientation orientation)

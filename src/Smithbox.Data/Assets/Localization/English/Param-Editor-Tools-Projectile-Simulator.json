@@ -89,6 +89,10 @@
       "Text": "Dark"
     },
     {
+      "Key": "PARAM_ProjectileSimulator_Damage_Holy",
+      "Text": "Holy"
+    },
+    {
       "Key": "PARAM_ProjectileSimulator_Damage_Stamina",
       "Text": "Stamina"
     },
@@ -167,6 +171,38 @@
     {
       "Key": "PARAM_ProjectileSimulator_Target_Forward",
       "Text": "Target Forward"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Target_Motion",
+      "Text": "Target Motion"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Target_Motion_TT",
+      "Text": "Moves the target around its position during the simulation, which shows how well a bullet keeps up with it. The speed is its fastest, at the middle of its range."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Motion_Still",
+      "Text": "Still"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Motion_Strafe",
+      "Text": "Strafe"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Motion_Advance",
+      "Text": "Advance and Retreat"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Motion_Circle",
+      "Text": "Circle"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Target_Speed",
+      "Text": "Target Speed"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Target_Range",
+      "Text": "Target Range"
     },
     {
       "Key": "PARAM_ProjectileSimulator_Target_Radius",

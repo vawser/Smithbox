@@ -24,6 +24,17 @@ public enum CastOrientation
     Up
 }
 
+/// <summary>
+///     How the target moves around its position, which is what shows how well a bullet homes.
+/// </summary>
+public enum TargetMotion
+{
+    Still,
+    Strafe,
+    Advance,
+    Circle
+}
+
 public enum ProjectileOrigin
 {
     Root,
@@ -66,6 +77,9 @@ public enum SimulationWarning
 /// <param name="SimulateTarget">Whether there is a target, which is what homing bullets need.</param>
 /// <param name="TargetPosition">The center of the target.</param>
 /// <param name="TargetRadius">The radius of the target.</param>
+/// <param name="Motion">How the target moves.</param>
+/// <param name="TargetSpeed">How fast the target moves.</param>
+/// <param name="TargetRange">How far the target moves from its position.</param>
 /// <param name="Seed">Rows can vary their timing and aim, so this keeps a simulation repeatable.</param>
 public sealed record SimulationSettings(
     float LaunchHeight,
@@ -79,7 +93,40 @@ public sealed record SimulationSettings(
     bool SimulateTarget,
     Vector3 TargetPosition,
     float TargetRadius,
-    int Seed);
+    TargetMotion Motion,
+    float TargetSpeed,
+    float TargetRange,
+    int Seed)
+{
+    public bool IsTargetMoving => Motion is not TargetMotion.Still && TargetSpeed > 0 && TargetRange > 0;
+
+    /// <summary>
+    ///     How long the target takes to get back to where it started.
+    /// </summary>
+    public float TargetPeriod => IsTargetMoving ? MathF.Tau * TargetRange / TargetSpeed : 0;
+
+    /// <summary>
+    ///     Where the target is at a point in the simulation, which is a sine wave so that it keeps to its speed
+    ///     through the middle of its range and slows down to turn around.
+    /// </summary>
+    public Vector3 GetTargetPosition(float time)
+    {
+        if (!IsTargetMoving)
+        {
+            return TargetPosition;
+        }
+
+        var phase = time * TargetSpeed / TargetRange;
+        var sine = MathF.Sin(phase) * TargetRange;
+
+        return Motion switch
+        {
+            TargetMotion.Strafe => TargetPosition + Vector3.UnitX * sine,
+            TargetMotion.Advance => TargetPosition + Vector3.UnitZ * sine,
+            _ => TargetPosition + new Vector3(sine, 0, MathF.Cos(phase) * TargetRange)
+        };
+    }
+}
 
 public readonly record struct TrackSample(float Time, Vector3 Position);
 
@@ -202,6 +249,8 @@ public sealed class ProjectileSimulation
     private float Time;
     private int Step;
 
+    private Vector3 Target => Settings.GetTargetPosition(Time);
+
     private sealed record PendingShot(
         BulletDefinition Definition,
         Vector3 Position,
@@ -227,7 +276,7 @@ public sealed class ProjectileSimulation
         public float Life;
         public float NextInterval;
         public int IntervalCount;
-        public Vector3 AimPoint;
+        public Vector3 AimOffset;
         public bool HomingStopped;
         public float NextDamageTime;
     }
@@ -317,8 +366,10 @@ public sealed class ProjectileSimulation
 
         if (Settings.SimulateTarget)
         {
-            Include(Settings.TargetPosition - new Vector3(Settings.TargetRadius));
-            Include(Settings.TargetPosition + new Vector3(Settings.TargetRadius));
+            var reach = Settings.TargetRadius + (Settings.IsTargetMoving ? Settings.TargetRange : 0);
+
+            Include(Settings.TargetPosition - new Vector3(reach));
+            Include(Settings.TargetPosition + new Vector3(reach));
         }
 
         Result.BoundsMin = BoundsMin;
@@ -394,8 +445,8 @@ public sealed class ProjectileSimulation
                 Speed = shot.Speed ?? definition.InitialSpeed,
                 Life = definition.Life < 0 ? float.MaxValue : definition.Life + Random(definition.LifeRandom),
                 NextInterval = definition.IntervalWait + GetInterval(definition),
-                AimPoint = Settings.TargetPosition + Vector3.UnitY * definition.HomingHeightOffset +
-                           new Vector3(Random(definition.HomingOffset), Random(definition.HomingOffset),
+                AimOffset = Vector3.UnitY * definition.HomingHeightOffset +
+                            new Vector3(Random(definition.HomingOffset), Random(definition.HomingOffset),
                                Random(definition.HomingOffset))
             });
         }
@@ -512,7 +563,7 @@ public sealed class ProjectileSimulation
 
         var reach = GetReach(shot.Definition, radius) + Settings.TargetRadius + ReachTolerance;
 
-        if (Vector3.Distance(shot.Position, Settings.TargetPosition) > reach)
+        if (Vector3.Distance(shot.Position, Target) > reach)
         {
             return;
         }
@@ -544,7 +595,7 @@ public sealed class ProjectileSimulation
             return;
         }
 
-        Vector3 toTarget = shot.AimPoint - shot.Position;
+        Vector3 toTarget = Target + shot.AimOffset - shot.Position;
         var distance = toTarget.Length();
 
         if (distance < Epsilon || distance <= definition.HomingStopRange ||
@@ -787,7 +838,8 @@ public sealed class ProjectileSimulation
 
         // Where a sphere moving in a line first touches another sphere, as a quadratic in progress
         Vector3 move = to - from;
-        Vector3 offset = from - Settings.TargetPosition;
+        Vector3 target = Target;
+        Vector3 offset = from - target;
 
         var reach = radius + Settings.TargetRadius;
         var a = move.LengthSquared();
@@ -819,7 +871,7 @@ public sealed class ProjectileSimulation
             }
         }
 
-        Vector3 contact = Vector3.Lerp(from, to, progress) - Settings.TargetPosition;
+        Vector3 contact = Vector3.Lerp(from, to, progress) - target;
         Vector3 normal = contact.LengthSquared() > Epsilon ? Vector3.Normalize(contact) : -Vector3.UnitZ;
 
         return new Impact(progress, ProjectileEnd.HitTarget, ImpactSurface.Character, normal);

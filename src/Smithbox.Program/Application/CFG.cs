@@ -823,6 +823,24 @@ public class CFG
     public bool ParamEditor_Show_Tool_Projectile_Simulator = true;
     public bool ParamEditor_Show_Projectile_Simulator_Window = false;
 
+    // Projectile Simulator
+    public float ParamEditor_ProjectileSimulator_LaunchHeight = 1.5f;
+    public CastOrientation ParamEditor_ProjectileSimulator_Orientation = CastOrientation.Forward;
+    public bool ParamEditor_ProjectileSimulator_GroundCollision = true;
+    public bool ParamEditor_ProjectileSimulator_SimulateWall = false;
+    public float ParamEditor_ProjectileSimulator_WallDistance = 10.0f;
+    public float ParamEditor_ProjectileSimulator_WallWidth = 12.0f;
+    public float ParamEditor_ProjectileSimulator_WallHeight = 8.0f;
+    public ImpactSurface ParamEditor_ProjectileSimulator_Surface = ImpactSurface.Map;
+    public bool ParamEditor_ProjectileSimulator_SimulateTarget = false;
+    public Vector3 ParamEditor_ProjectileSimulator_TargetPosition = new Vector3(5.0f, 1.5f, 15.0f);
+    public float ParamEditor_ProjectileSimulator_TargetRadius = 0.5f;
+    public TargetMotion ParamEditor_ProjectileSimulator_TargetMotion = TargetMotion.Still;
+    public float ParamEditor_ProjectileSimulator_TargetSpeed = 5.0f;
+    public float ParamEditor_ProjectileSimulator_TargetRange = 5.0f;
+    public bool ParamEditor_ProjectileSimulator_UseEnemyAttacks = false;
+    public int ParamEditor_ProjectileSimulator_Seed = 1;
+
     // Saving
     public bool Project_Automatic_Save_Include_Param_Editor = true;
 

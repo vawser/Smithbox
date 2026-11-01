@@ -17,8 +17,9 @@ public sealed class ProjectileViewport
 
     private const float MinFrameRadius = 2.0f;
 
-    private const int GridRadius = 25;
+    private const int GridRadius = 100;
     private const int MaxWallCells = 12;
+    private const int TargetPathSegments = 48;
 
     private const int SphereRings = 6;
     private const int SphereSegments = 10;
@@ -137,7 +138,7 @@ public sealed class ProjectileViewport
         Camera.CameraTransform.Position = center - forward * (radius / MathF.Sin(FieldOfView * 0.5f));
     }
 
-    public void Display(string id, Vector2 size, SimulationResult result, SimulationSettings settings, float time)
+    public void Display(string id, Vector2 size, SimulationResult result, SimulationSettings settings, float time, ProjectType projectType)
     {
         Vector2 min = ImGui.GetCursorScreenPos();
         Vector2 max = min + size;
@@ -167,7 +168,7 @@ public sealed class ProjectileViewport
 
         if (settings.SimulateTarget)
         {
-            AddTarget(settings);
+            AddTarget(settings, time);
         }
 
         if (result != null)
@@ -188,7 +189,7 @@ public sealed class ProjectileViewport
 
         if (result != null && settings.SimulateTarget)
         {
-            DrawDamage(drawList, min, result, settings, time);
+            DrawDamage(drawList, min, result, settings, time, projectType);
         }
 
         drawList.AddRect(min, max, ImGui.GetColorU32(ImGuiCol.Border));
@@ -351,11 +352,16 @@ public sealed class ProjectileViewport
     /// <summary>
     ///     The line down to the ground is there to show where the target is, which is hard to tell from one angle.
     /// </summary>
-    private void AddTarget(SimulationSettings settings)
+    private void AddTarget(SimulationSettings settings, float time)
     {
-        Vector3 position = settings.TargetPosition;
+        Vector3 position = settings.GetTargetPosition(time);
 
         AddLine(position, new Vector3(position.X, 0, position.Z), TargetColor);
+
+        if (settings.IsTargetMoving)
+        {
+            AddTargetPath(settings);
+        }
 
         Items.Add(new DrawItem
         {
@@ -365,6 +371,22 @@ public sealed class ProjectileViewport
             Radius = settings.TargetRadius,
             Color = TargetColor
         });
+    }
+
+    private void AddTargetPath(SimulationSettings settings)
+    {
+        Vector4 color = WithAlpha(TargetColor, 0.4f);
+
+        Vector3 previous = settings.GetTargetPosition(0);
+
+        for (var i = 1; i <= TargetPathSegments; i++)
+        {
+            Vector3 position = settings.GetTargetPosition(settings.TargetPeriod * i / TargetPathSegments);
+
+            AddLine(previous, position, color);
+
+            previous = position;
+        }
     }
 
     private void AddTrails(SimulationResult result, float time)
@@ -462,7 +484,7 @@ public sealed class ProjectileViewport
     }
 
     private void DrawDamage(ImDrawListPtr drawList, Vector2 min, SimulationResult result, SimulationSettings settings,
-        float time)
+        float time, ProjectType projectType)
     {
         var color = ImGui.GetColorU32(DamageColor);
 
@@ -482,10 +504,10 @@ public sealed class ProjectileViewport
         if (hits > 0)
         {
             drawList.AddText(min + new Vector2(OverlayMargin), color,
-                LOC.Get("PARAM_ProjectileSimulator_Damage_Total", hits, FormatDamage(total, default)));
+                LOC.Get("PARAM_ProjectileSimulator_Damage_Total", hits, FormatDamage(total, default, projectType)));
         }
 
-        if (!Project(settings.TargetPosition + Vector3.UnitY * settings.TargetRadius, out Vector2 anchor, out _))
+        if (!Project(settings.GetTargetPosition(time) + Vector3.UnitY * settings.TargetRadius, out Vector2 anchor, out _))
         {
             return;
         }
@@ -504,7 +526,7 @@ public sealed class ProjectileViewport
             var height = (time - hit.Time) * DamageRiseSpeed + lines * ImGui.GetTextLineHeight();
 
             drawList.AddText(anchor - new Vector2(0, height + ImGui.GetTextLineHeight()), color,
-                FormatDamage(hit.Attack.Flat, hit.Attack.Correction));
+                FormatDamage(hit.Attack.Flat, hit.Attack.Correction, projectType));
 
             lines++;
         }
@@ -514,15 +536,22 @@ public sealed class ProjectileViewport
     ///     Attack power is shown as it is. Percentages of the attacker's power are only shown when they aren't
     ///     the usual 100, unless they are the only thing that the attack has.
     /// </summary>
-    public static string FormatDamage(AttackDamage flat, AttackDamage correction)
+    public static string FormatDamage(AttackDamage flat, AttackDamage correction, ProjectType projectType)
     {
         List<string> parts = new();
+
+        var darkDamageLoc = "PARAM_ProjectileSimulator_Damage_Dark";
+
+        if (projectType is ProjectType.ER or ProjectType.NR)
+        {
+            darkDamageLoc = "PARAM_ProjectileSimulator_Damage_Holy";
+        }
 
         AddDamage(parts, "PARAM_ProjectileSimulator_Damage_Physical", flat.Physical, correction.Physical);
         AddDamage(parts, "PARAM_ProjectileSimulator_Damage_Magic", flat.Magic, correction.Magic);
         AddDamage(parts, "PARAM_ProjectileSimulator_Damage_Fire", flat.Fire, correction.Fire);
         AddDamage(parts, "PARAM_ProjectileSimulator_Damage_Lightning", flat.Lightning, correction.Lightning);
-        AddDamage(parts, "PARAM_ProjectileSimulator_Damage_Dark", flat.Dark, correction.Dark);
+        AddDamage(parts, darkDamageLoc, flat.Dark, correction.Dark);
         AddDamage(parts, "PARAM_ProjectileSimulator_Damage_Stamina", flat.Stamina, correction.Stamina);
 
         if (parts.Count > 0)
