@@ -5,6 +5,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,6 +21,9 @@ public class MapAnimationTool
 
     private readonly AnimationPreviewPanel _panel;
 
+    // Maps finish loading on a thread pool thread, whereas the panel belongs to the UI thread
+    private readonly ConcurrentQueue<MapContainer> _loadedMaps = new();
+
     public MapAnimationTool(MapEditorView view, ProjectEntry project)
     {
         View = view;
@@ -30,7 +34,23 @@ public class MapAnimationTool
 
     public void Update()
     {
+        while (_loadedMaps.TryDequeue(out MapContainer? map))
+        {
+            HoldIdlePoses(map);
+        }
+
         _panel.Update();
+    }
+
+    /// <summary>
+    ///     Called once every model of a map has loaded. This can be on any thread.
+    /// </summary>
+    public void OnMapLoaded(MapContainer map)
+    {
+        if (CFG.Current.MapEditor_Hold_Idle_Poses_On_Load && _panel.IsSupported)
+        {
+            _loadedMaps.Enqueue(map);
+        }
     }
 
     /// <summary>
@@ -54,6 +74,9 @@ public class MapAnimationTool
             "playAssetPoses", "Play Asset Poses",
             "Holds every corpse and other object in the loaded maps in the animation set on its map part.",
             PlayAssetPoses);
+
+        ImGui.Checkbox("Hold Idle Poses on Map Load##holdIdlePoses", ref CFG.Current.MapEditor_Hold_Idle_Poses_On_Load);
+        GUI.Tooltip("Places characters and posed assets in the first frame of their animation once a map has loaded. This has no ongoing playback cost.");
         GUI.Spacer();
 
         _panel.DisplayActiveSummary();
@@ -73,28 +96,50 @@ public class MapAnimationTool
 
     private void PlayCharacterIdles()
     {
-        foreach ((MsbEntity entity, MeshRenderableProxy mesh) in GetLoadedEntities())
+        QueueCharacterIdles(GetLoadedEntities(), false);
+    }
+
+    private void PlayAssetPoses()
+    {
+        QueueAssetPoses(GetLoadedEntities(), false);
+    }
+
+    private void HoldIdlePoses(MapContainer map)
+    {
+        var entities = GetEntities(map).ToList();
+
+        //QueueCharacterIdles(entities, true);
+        QueueAssetPoses(entities, true);
+    }
+
+    private void QueueCharacterIdles(IEnumerable<(MsbEntity Entity, MeshRenderableProxy Mesh)> entities,
+        bool holdFirstFrame)
+    {
+        foreach ((MsbEntity entity, MeshRenderableProxy mesh) in entities)
         {
             if (IsCharacter(entity))
             {
                 // Sorted by ID, which puts the idle first
-                _panel.QueueAnimation(CreateTarget(entity, mesh), package => package.Animations.FirstOrDefault());
+                _panel.QueueAnimation(CreateTarget(entity, mesh), package => package.Animations.FirstOrDefault(),
+                    holdFirstFrame);
             }
         }
     }
 
-    private void PlayAssetPoses()
+    private void QueueAssetPoses(IEnumerable<(MsbEntity Entity, MeshRenderableProxy Mesh)> entities,
+        bool holdFirstFrame)
     {
         // Only Elden Ring has this data, as it is what tells a pose of 0 apart from an unset value
         var poseModels = Project.Handler.MapData.AssetMasks?.List
             .Select(e => e.model)
             .ToHashSet(StringComparer.OrdinalIgnoreCase) ?? new HashSet<string>();
 
-        foreach ((MsbEntity entity, MeshRenderableProxy mesh) in GetLoadedEntities())
+        foreach ((MsbEntity entity, MeshRenderableProxy mesh) in entities)
         {
             if (GetPoseAnimationId(entity.WrappedObject, poseModels) is { } animationId)
             {
-                _panel.QueueAnimation(CreateTarget(entity, mesh), package => package.FindAnimation(animationId));
+                _panel.QueueAnimation(CreateTarget(entity, mesh), package => package.FindAnimation(animationId),
+                    holdFirstFrame);
             }
         }
     }
@@ -108,12 +153,20 @@ public class MapAnimationTool
                 continue;
             }
 
-            foreach (Entity obj in map.MapContainer.Objects)
+            foreach ((MsbEntity Entity, MeshRenderableProxy Mesh) entry in GetEntities(map.MapContainer))
             {
-                if (obj is MsbEntity { RenderSceneMesh: MeshRenderableProxy mesh } entity)
-                {
-                    yield return (entity, mesh);
-                }
+                yield return entry;
+            }
+        }
+    }
+
+    private static IEnumerable<(MsbEntity Entity, MeshRenderableProxy Mesh)> GetEntities(MapContainer map)
+    {
+        foreach (Entity obj in map.Objects)
+        {
+            if (obj is MsbEntity { RenderSceneMesh: MeshRenderableProxy mesh } entity)
+            {
+                yield return (entity, mesh);
             }
         }
     }

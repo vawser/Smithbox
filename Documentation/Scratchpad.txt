@@ -8,6 +8,5 @@
   
 # Map/Model Editor
 - Added some kind of detection for LOD-only assets/map-pieces so we can add a toggle for hiding them quickly
-- Change the solid markers to filled wireframe (character placeholder, asset placeholder, player part)
 - Add method to set all chrs and assets with idles to first frame of said animation rather than rest pose (looks better + shows corpse anims)
 

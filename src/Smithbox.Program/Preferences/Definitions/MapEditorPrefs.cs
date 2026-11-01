@@ -43,6 +43,26 @@ public class MapEditorPrefs
         };
     }
 
+    public static PreferenceItem MapEditor_Hold_Idle_Poses_On_Load()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.MapEditor,
+            Spacer = true,
+
+            Section = SectionCategory.MapEditor_General,
+
+            Title = "PREF_MapEditor_Hold_Idle_Poses_On_Load",
+            Description = "PREF_MapEditor_Hold_Idle_Poses_On_Load_TT",
+
+            Draw = () =>
+            {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Hold_Idle_Poses_On_Load);
+            }
+        };
+    }
+
     #endregion
 
     #region Map List

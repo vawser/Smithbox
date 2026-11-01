@@ -224,6 +224,7 @@ public class CFG
     public bool MapEditor_Enable_Character_Substitution = false;
     public string MapEditor_Character_Substitution_ID = "c0000";
     public bool MapEditor_Enable_Character_Composition = true;
+    public bool MapEditor_Hold_Idle_Poses_On_Load = false;
 
     public bool MapEditor_Selection_Group_Frame_Selection_On_Use = true;
     public bool MapEditor_Selection_Group_Enable_Quick_Creation = false;

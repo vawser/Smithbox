@@ -147,9 +147,11 @@ public class AnimationPreviewPanel
     /// </summary>
     /// <param name="target">What to animate.</param>
     /// <param name="selectAnimation">Picks the animation. Null leaves the target alone.</param>
-    public void QueueAnimation(AnimationTarget target, Func<AnimationPackage, AnimationEntry?> selectAnimation)
+    /// <param name="holdFirstFrame">Stays on the first frame, so the pose costs nothing from then on.</param>
+    public void QueueAnimation(AnimationTarget target, Func<AnimationPackage, AnimationEntry?> selectAnimation,
+        bool holdFirstFrame = false)
     {
-        _pending.Add(new PendingAnimation(target, GetOrLoadModel(target), selectAnimation));
+        _pending.Add(new PendingAnimation(target, GetOrLoadModel(target), selectAnimation, holdFirstFrame));
     }
 
     private void StartPendingAnimations()
@@ -175,7 +177,7 @@ public class AnimationPreviewPanel
             if (pending.Load.IsCompletedSuccessfully && pending.Load.Result is { } model && pending.Target.IsAlive() &&
                 pending.SelectAnimation(model.Package) is { } entry)
             {
-                Play(pending.Target, model, entry);
+                Play(pending.Target, model, entry, pending.HoldFirstFrame);
             }
         }
     }
@@ -195,7 +197,9 @@ public class AnimationPreviewPanel
             return;
         }
 
-        GUI.WrappedText($"Playing on {_active.Count} {(_active.Count == 1 ? "entity" : "entities")}.");
+        var playing = _active.Values.Count(a => a.Animator.Playing);
+        GUI.WrappedText($"Playing on {playing} {(playing == 1 ? "entity" : "entities")}, " +
+            $"{_active.Count - playing} held in a pose.");
         GUI.MultiButtonInput("animationGlobalActions",
             "stopAll", "Stop All", "Stop every animation and return to the rest pose.", StopAll);
         GUI.Spacer();
@@ -300,7 +304,7 @@ public class AnimationPreviewPanel
         ImGui.EndChild();
     }
 
-    private void Play(AnimationTarget target, LoadedModel model, AnimationEntry entry)
+    private void Play(AnimationTarget target, LoadedModel model, AnimationEntry entry, bool holdFirstFrame = false)
     {
         if (!_active.TryGetValue(target.Key, out ActiveAnimation? active))
         {
@@ -308,7 +312,7 @@ public class AnimationPreviewPanel
             Task<ModelRig?[]> rigs = GetOrLoadPartRigs(target);
             if (!rigs.IsCompleted)
             {
-                _pending.Add(new PendingAnimation(target, GetOrLoadModel(target), _ => entry));
+                _pending.Add(new PendingAnimation(target, GetOrLoadModel(target), _ => entry, holdFirstFrame));
                 return;
             }
 
@@ -328,6 +332,7 @@ public class AnimationPreviewPanel
 
         if (active.Animator.Play(entry))
         {
+            active.Animator.SetPlaying(!holdFirstFrame);
             active.Animator.Update(0);
 
             foreach (MeshRenderableProxy mesh in active.Meshes)
@@ -553,7 +558,8 @@ public class AnimationPreviewPanel
     private sealed record PendingAnimation(
         AnimationTarget Target,
         Task<LoadedModel?> Load,
-        Func<AnimationPackage, AnimationEntry?> SelectAnimation);
+        Func<AnimationPackage, AnimationEntry?> SelectAnimation,
+        bool HoldFirstFrame);
 
     private sealed record ActiveAnimation(
         AnimationTarget Target,

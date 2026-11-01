@@ -250,6 +250,8 @@ public class MapUniverse : IUniverse
                     {
                         obj.UpdateRenderModel();
                     }
+
+                    View.MapAnimationTool.OnMapLoaded(newMap);
                 }
 
                 newMap.LightAtlasResolver.BuildReferenceMaps();
