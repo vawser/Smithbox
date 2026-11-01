@@ -63,6 +63,11 @@ public class TimeActPlayback
     /// </summary>
     public float ClipDuration => Animator?.Duration ?? 0;
 
+    /// <summary>
+    /// How long the animation really plays for. Events are free to run past this.
+    /// </summary>
+    public float PlaybackDuration => ClipDuration > 0 ? ClipDuration : GetEventDuration();
+
     public float FrameDuration => Animator?.CurrentClip is { FrameDuration: > 0 } clip
         ? clip.FrameDuration
         : DefaultFrameDuration;

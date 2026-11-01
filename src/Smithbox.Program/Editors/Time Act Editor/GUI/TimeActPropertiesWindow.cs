@@ -109,7 +109,7 @@ public class TimeActPropertiesWindow
         {
             FieldText.Remove(nameKey);
 
-            if (float.TryParse(text, out var newValue) && newValue >= 0)
+            if (float.TryParse(text, out var newValue))
             {
                 var (start, end) = apply(newValue);
 

@@ -27,6 +27,14 @@ public class TimeActGraphWindow
     private const float MinFrameLineSpacing = 4f;
     private const float MinFrameLabelSpacing = 48f;
 
+    // Times are stored as floats, so events that only touch can differ by a little either way
+    private const float OverlapTolerance = 0.001f;
+
+    // How many frames are always on show either side of everything in the animation
+    private const int TimelinePaddingFrames = 10;
+
+    private static readonly Vector4 OutsidePlaybackTint = new(0.35f, 0.35f, 0.35f, 0.55f);
+
     // New events start out this long
     private const int DefaultEventFrames = 10;
 
@@ -51,6 +59,11 @@ public class TimeActGraphWindow
     private float DragGrabTime;
     private float DragOriginalStart;
     private float DragOriginalEnd;
+
+    private List<Placement> LayoutPlacements;
+    private List<string> LayoutRowLabels;
+    private int LayoutFirstFrame;
+    private int LayoutLastFrame;
 
     private bool OpenAddEventMenu = false;
     private float AddEventTime;
@@ -149,21 +162,31 @@ public class TimeActGraphWindow
 
         var scale = DPI.UIScale();
 
-        var gutter = GutterWidth * scale;
+        var gutter = CFG.Current.TimeActEditor_Graph_Display_Event_Names ? GutterWidth * scale : 0;
         var ruler = RulerHeight * scale;
         var rowHeight = RowHeight * scale;
 
         var frameDuration = View.Playback.FrameDuration;
         var frameWidth = CFG.Current.TimeActEditor_Graph_Frame_Width * Zoom * scale;
 
-        var placements = LayoutEvents(animation, template, out var rowLabels);
+        // The rows hold still during a drag, so that the event stays under the cursor
+        if (DragEvent == null)
+        {
+            LayoutPlacements = LayoutEvents(animation, template, frameDuration, out LayoutRowLabels);
 
-        var duration = Math.Max(Math.Max(View.Playback.ClipDuration, View.Playback.GetEventDuration()), View.Playback.Time);
-        var timelineEnd = (MathF.Ceiling(duration / frameDuration) + 1) * frameDuration;
+            LayoutTimeline(animation, frameDuration);
+        }
+
+        var placements = LayoutPlacements;
+        var rowLabels = LayoutRowLabels;
+
+        var firstFrame = LayoutFirstFrame;
+        var lastFrame = LayoutLastFrame;
+        var timelineEnd = lastFrame * frameDuration;
 
         var viewPos = ImGui.GetWindowPos();
         var viewSize = ImGui.GetWindowSize();
-        var contentSize = new Vector2(gutter + timelineEnd / frameDuration * frameWidth,
+        var contentSize = new Vector2(gutter + (lastFrame - firstFrame) * frameWidth,
             Math.Max(ruler + rowLabels.Count * rowHeight, viewSize.Y - ImGui.GetStyle().ScrollbarSize));
 
         var origin = ImGui.GetCursorScreenPos();
@@ -174,8 +197,8 @@ public class TimeActGraphWindow
         var hovered = ImGui.IsItemHovered();
         var mouse = ImGui.GetMousePos();
 
-        float TimeToX(float time) => origin.X + gutter + time / frameDuration * frameWidth;
-        float XToTime(float x) => (x - origin.X - gutter) / frameWidth * frameDuration;
+        float TimeToX(float time) => origin.X + gutter + (time / frameDuration - firstFrame) * frameWidth;
+        float XToTime(float x) => ((x - origin.X - gutter) / frameWidth + firstFrame) * frameDuration;
         float RowToY(int row) => origin.Y + ruler + row * rowHeight;
 
         // Events that last until the end of the animation are stored with a placeholder time
@@ -192,7 +215,8 @@ public class TimeActGraphWindow
                 var y = RowToY(placement.Row);
 
                 if (mouse.Y >= y && mouse.Y < y + rowHeight &&
-                    mouse.X >= TimeToX(placement.Event.StartTime) && mouse.X < GetBarEnd(placement.Event))
+                    mouse.X >= TimeToX(placement.Event.StartTime) && mouse.X < GetBarEnd(placement.Event) &&
+                    mouse.X < TimeToX(timelineEnd))
                 {
                     hoveredEvent = placement.Event;
                 }
@@ -270,19 +294,49 @@ public class TimeActGraphWindow
         HandleShortcuts();
 
         DrawGraph(placements, rowLabels, template, viewPos, viewSize, origin, gutter, ruler, rowHeight,
-            frameDuration, frameWidth, timelineEnd);
+            frameDuration, frameWidth, firstFrame, lastFrame);
 
-        KeepPlayheadInView(viewSize, gutter, frameWidth, frameDuration);
+        KeepPlayheadInView(viewSize, gutter, frameWidth, frameDuration, firstFrame);
 
         DisplayEventMenu();
         DisplayAddEventMenu(template);
     }
 
     /// <summary>
+    /// Events can start before the animation and run past its end, so the
+    /// timeline reaches far enough either side of playback to show all of them.
+    /// </summary>
+    private void LayoutTimeline(TAE.Animation animation, float frameDuration)
+    {
+        if (!CFG.Current.TimeActEditor_Graph_Display_Outside_Playback)
+        {
+            LayoutFirstFrame = 0;
+            LayoutLastFrame = (int)MathF.Ceiling(View.Playback.PlaybackDuration / frameDuration);
+            return;
+        }
+
+        var earliest = animation.Events.Count > 0 ? Math.Min(animation.Events.Min(e => e.StartTime), 0) : 0;
+
+        var latest = Math.Max(Math.Max(View.Playback.PlaybackDuration, View.Playback.GetEventDuration()), View.Playback.Time);
+
+        LayoutFirstFrame = (int)MathF.Floor(earliest / frameDuration) - TimelinePaddingFrames;
+        LayoutLastFrame = (int)MathF.Ceiling(latest / frameDuration) + TimelinePaddingFrames;
+    }
+
+    /// <summary>
+    /// Gets the first multiple of the interval on the timeline, which keeps the frame lines on round numbers
+    /// </summary>
+    private static int AlignFrame(int firstFrame, int interval)
+    {
+        return (int)MathF.Ceiling(firstFrame / (float)interval) * interval;
+    }
+
+    /// <summary>
     /// Sorts the events into rows. Rows are worked out each frame, as events
     /// can be moved over each other, and an animation only has so many of them.
     /// </summary>
-    private List<Placement> LayoutEvents(TAE.Animation animation, TAE.Template.BankTemplate template, out List<string> rowLabels)
+    private List<Placement> LayoutEvents(TAE.Animation animation, TAE.Template.BankTemplate template, float frameDuration,
+        out List<string> rowLabels)
     {
         var placements = new List<Placement>(animation.Events.Count);
         var labels = new List<string>();
@@ -294,7 +348,7 @@ public class TimeActGraphWindow
 
             foreach (var ev in track.OrderBy(e => e.StartTime))
             {
-                var row = rowEnds.FindIndex(end => end <= ev.StartTime);
+                var row = rowEnds.FindIndex(end => end <= ev.StartTime + OverlapTolerance);
 
                 if (row < 0)
                 {
@@ -303,7 +357,8 @@ public class TimeActGraphWindow
                     labels.Add(row == 0 ? GetEventName(ev, template) : "");
                 }
 
-                rowEnds[row] = ev.EndTime;
+                // An event takes up at least a frame on screen, however short it is
+                rowEnds[row] = Math.Max(ev.EndTime, ev.StartTime + frameDuration);
 
                 placements.Add(new Placement(ev, firstRow + row));
             }
@@ -379,18 +434,29 @@ public class TimeActGraphWindow
 
         if (Drag == DragMode.Playhead)
         {
-            View.Playback.Seek(Math.Max(Snap(time), 0));
+            View.Playback.Seek(Math.Clamp(Snap(time), 0, View.Playback.PlaybackDuration));
             return;
         }
 
-        var delta = time - DragGrabTime;
+        // Events move by whole frames, so a click that doesn't drag leaves them exactly where they were
+        var delta = Snap(time - DragGrabTime);
 
         var isOpenEnded = IsOpenEnded(DragEvent);
+
+        // An event can already sit before the timeline, if the frames there are hidden
+        var firstAllowed = Math.Min(LayoutFirstFrame * frameDuration, DragOriginalStart);
+
+        if (delta == 0)
+        {
+            DragEvent.StartTime = DragOriginalStart;
+            DragEvent.EndTime = DragOriginalEnd;
+            return;
+        }
 
         switch (Drag)
         {
             case DragMode.Move:
-                var start = Math.Max(Snap(DragOriginalStart + delta), 0);
+                var start = Math.Max(DragOriginalStart + delta, firstAllowed);
 
                 DragEvent.StartTime = start;
 
@@ -402,11 +468,11 @@ public class TimeActGraphWindow
                 break;
 
             case DragMode.ResizeStart:
-                DragEvent.StartTime = Math.Clamp(Snap(DragOriginalStart + delta), 0, Math.Max(DragOriginalEnd - frameDuration, 0));
+                DragEvent.StartTime = Math.Clamp(DragOriginalStart + delta, firstAllowed, Math.Max(DragOriginalEnd - frameDuration, firstAllowed));
                 break;
 
             case DragMode.ResizeEnd:
-                DragEvent.EndTime = Math.Max(Snap(DragOriginalEnd + delta), DragOriginalStart + frameDuration);
+                DragEvent.EndTime = Math.Max(DragOriginalEnd + delta, DragOriginalStart + frameDuration);
                 break;
         }
     }
@@ -453,7 +519,7 @@ public class TimeActGraphWindow
 
     private void DrawGraph(List<Placement> placements, List<string> rowLabels, TAE.Template.BankTemplate template,
         Vector2 viewPos, Vector2 viewSize, Vector2 origin, float gutter, float ruler, float rowHeight,
-        float frameDuration, float frameWidth, float timelineEnd)
+        float frameDuration, float frameWidth, int firstFrame, int lastFrame)
     {
         var drawList = ImGui.GetWindowDrawList();
 
@@ -466,25 +532,30 @@ public class TimeActGraphWindow
         var viewMax = viewPos + viewSize;
 
         var tracksMin = new Vector2(viewPos.X + gutter, viewPos.Y + ruler);
-        var timelineWidth = timelineEnd / frameDuration * frameWidth;
 
         var framesPerLine = Math.Max((int)MathF.Ceiling(MinFrameLineSpacing / frameWidth), 1);
         var framesPerLabel = GetLabelInterval(frameWidth);
-        var frameCount = (int)MathF.Ceiling(timelineEnd / frameDuration);
 
-        float FrameToX(float frame) => origin.X + gutter + frame * frameWidth;
+        float FrameToX(float frame) => origin.X + gutter + (frame - firstFrame) * frameWidth;
 
-        // Tracks
-        drawList.PushClipRect(tracksMin, viewMax, true);
+        var timelineEnd = lastFrame * frameDuration;
+
+        var playbackStartX = FrameToX(0);
+        var playbackEndX = FrameToX(View.Playback.PlaybackDuration / frameDuration);
+
+        var outsideColor = ImGui.ColorConvertFloat4ToU32(OutsidePlaybackTint);
+
+        // Tracks. With the frames outside of playback hidden, events get cut off where the timeline ends.
+        drawList.PushClipRect(tracksMin, new Vector2(Math.Min(FrameToX(lastFrame), viewMax.X), viewMax.Y), true);
 
         for (int i = 0; i < rowLabels.Count; i += 2)
         {
             var y = origin.Y + ruler + i * rowHeight;
 
-            drawList.AddRectFilled(new Vector2(tracksMin.X, y), new Vector2(FrameToX(0) + timelineWidth, y + rowHeight), rowColor);
+            drawList.AddRectFilled(new Vector2(tracksMin.X, y), new Vector2(FrameToX(lastFrame), y + rowHeight), rowColor);
         }
 
-        for (int frame = 0; frame <= frameCount; frame += framesPerLine)
+        for (int frame = AlignFrame(firstFrame, framesPerLine); frame <= lastFrame; frame += framesPerLine)
         {
             var x = FrameToX(frame);
 
@@ -519,26 +590,33 @@ public class TimeActGraphWindow
             drawList.PopClipRect();
         }
 
+        // This goes over the events, so that the parts of them outside of playback are tinted as well
+        DrawOutsidePlayback(drawList, FrameToX(firstFrame), playbackStartX, playbackEndX, FrameToX(lastFrame),
+            tracksMin.Y, viewMax.Y, outsideColor, textColor);
+
         drawList.PopClipRect();
 
         // Track names stay in place as the timeline scrolls past them
-        drawList.PushClipRect(new Vector2(viewPos.X, tracksMin.Y), new Vector2(tracksMin.X, viewMax.Y), true);
-
-        drawList.AddRectFilled(new Vector2(viewPos.X, tracksMin.Y), new Vector2(tracksMin.X, viewMax.Y), headerColor);
-
-        for (int i = 0; i < rowLabels.Count; i++)
+        if (gutter > 0)
         {
-            drawList.AddText(new Vector2(viewPos.X + 4, origin.Y + ruler + i * rowHeight + 2), textColor, rowLabels[i]);
-        }
+            drawList.PushClipRect(new Vector2(viewPos.X, tracksMin.Y), new Vector2(tracksMin.X, viewMax.Y), true);
 
-        drawList.PopClipRect();
+            drawList.AddRectFilled(new Vector2(viewPos.X, tracksMin.Y), new Vector2(tracksMin.X, viewMax.Y), headerColor);
+
+            for (int i = 0; i < rowLabels.Count; i++)
+            {
+                drawList.AddText(new Vector2(viewPos.X + 4, origin.Y + ruler + i * rowHeight + 2), textColor, rowLabels[i]);
+            }
+
+            drawList.PopClipRect();
+        }
 
         // Ruler
         drawList.PushClipRect(viewPos, new Vector2(viewMax.X, tracksMin.Y), true);
 
         drawList.AddRectFilled(viewPos, new Vector2(viewMax.X, tracksMin.Y), headerColor);
 
-        for (int frame = 0; frame <= frameCount; frame += framesPerLabel)
+        for (int frame = AlignFrame(firstFrame, framesPerLabel); frame <= lastFrame; frame += framesPerLabel)
         {
             var x = FrameToX(frame);
 
@@ -548,6 +626,9 @@ public class TimeActGraphWindow
                 drawList.AddText(new Vector2(x + 3, viewPos.Y + 3), textColor, frame.ToString());
             }
         }
+
+        DrawOutsidePlayback(drawList, FrameToX(firstFrame), playbackStartX, playbackEndX, FrameToX(lastFrame),
+            viewPos.Y, tracksMin.Y, outsideColor, textColor);
 
         drawList.PopClipRect();
 
@@ -559,6 +640,22 @@ public class TimeActGraphWindow
             drawList.AddLine(new Vector2(playheadX, viewPos.Y), new Vector2(playheadX, viewMax.Y),
                 ImGui.ColorConvertFloat4ToU32(new Vector4(1, 0.25f, 0.25f, 1)), 2);
         }
+    }
+
+    /// <summary>
+    /// Tints the frames that are only there to show events, and marks where playback starts and ends
+    /// </summary>
+    private static void DrawOutsidePlayback(ImDrawListPtr drawList, float timelineStartX, float playbackStartX,
+        float playbackEndX, float timelineEndX, float top, float bottom, uint tintColor, uint lineColor)
+    {
+        if (CFG.Current.TimeActEditor_Graph_Display_Outside_Playback)
+        {
+            drawList.AddRectFilled(new Vector2(timelineStartX, top), new Vector2(playbackStartX, bottom), tintColor);
+            drawList.AddRectFilled(new Vector2(playbackEndX, top), new Vector2(timelineEndX, bottom), tintColor);
+        }
+
+        drawList.AddLine(new Vector2(playbackStartX, top), new Vector2(playbackStartX, bottom), lineColor);
+        drawList.AddLine(new Vector2(playbackEndX, top), new Vector2(playbackEndX, bottom), lineColor);
     }
 
     private static int GetLabelInterval(float frameWidth)
@@ -600,12 +697,12 @@ public class TimeActGraphWindow
         return ImGui.ColorConvertFloat4ToU32(new Vector4(color, 1));
     }
 
-    private void KeepPlayheadInView(Vector2 viewSize, float gutter, float frameWidth, float frameDuration)
+    private void KeepPlayheadInView(Vector2 viewSize, float gutter, float frameWidth, float frameDuration, int firstFrame)
     {
         if (!View.Playback.Playing)
             return;
 
-        var x = View.Playback.Time / frameDuration * frameWidth;
+        var x = (View.Playback.Time / frameDuration - firstFrame) * frameWidth;
         var scroll = ImGui.GetScrollX();
         var visibleWidth = viewSize.X - gutter;
 

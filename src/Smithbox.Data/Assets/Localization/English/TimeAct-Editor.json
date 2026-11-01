@@ -73,6 +73,22 @@
       "Text": "Failed to read time act template: {0}"
     },
     {
+      "Key": "TAE_Editor_Options_Outside_Playback",
+      "Text": "Display Frames Outside Playback"
+    },
+    {
+      "Key": "TAE_Editor_Options_Outside_Playback_TT",
+      "Text": "If enabled, the event graph also shows the frames before the start and after the end of the animation, so events that run past them are fully visible."
+    },
+    {
+      "Key": "TAE_Editor_Options_Event_Names",
+      "Text": "Display Event Name Column"
+    },
+    {
+      "Key": "TAE_Editor_Options_Event_Names_TT",
+      "Text": "If enabled, the event graph shows the name of each track in a column on its left."
+    },
+    {
       "Key": "TAE_Editor_Save_Not_Supported",
       "Text": "Time acts can't be saved for this game."
     },

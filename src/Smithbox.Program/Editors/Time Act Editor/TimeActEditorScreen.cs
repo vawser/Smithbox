@@ -178,6 +178,21 @@ public class TimeActEditorScreen : EditorScreen
         // Options
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Options")}##optionsMenuHeader"))
         {
+            // Outside Playback
+            if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Outside_Playback")}##outsidePlaybackToggle"))
+            {
+                CFG.Current.TimeActEditor_Graph_Display_Outside_Playback = !CFG.Current.TimeActEditor_Graph_Display_Outside_Playback;
+            }
+            GUI.Tooltip(LOC.Get("TAE_Editor_Options_Outside_Playback_TT"));
+            GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Graph_Display_Outside_Playback);
+
+            // Event Names
+            if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Event_Names")}##eventNamesToggle"))
+            {
+                CFG.Current.TimeActEditor_Graph_Display_Event_Names = !CFG.Current.TimeActEditor_Graph_Display_Event_Names;
+            }
+            GUI.Tooltip(LOC.Get("TAE_Editor_Options_Event_Names_TT"));
+            GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Graph_Display_Event_Names);
 
             ImGui.EndMenu();
         }

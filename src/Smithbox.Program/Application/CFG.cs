@@ -641,6 +641,8 @@ public class CFG
     public bool Interface_TimeActEditor_Tool_ResourceMonitor = true;
 
     public float TimeActEditor_Graph_Frame_Width = 10f;
+    public bool TimeActEditor_Graph_Display_Outside_Playback = true;
+    public bool TimeActEditor_Graph_Display_Event_Names = true;
 
     #endregion
 
