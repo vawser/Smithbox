@@ -574,6 +574,7 @@ public class MapEditorScreen : EditorScreen
             }
 
             view?.HavokCollisionBank.UpdateObjectCollision(view.ViewportHandler.ActiveViewport.RenderScene.DrawFilter);
+            view?.PrefabTool.Update();
         }
 
         // The bank is shared by all views, so grass stays built while any of them displays it

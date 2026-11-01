@@ -4,6 +4,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -123,6 +124,17 @@ public static class MsbUtils
         return entry.Name == name && refType.IsAssignableFrom(entry.GetType());
     }
 
+    // Reading attributes is slow, and a type's references never change
+    private static readonly ConcurrentDictionary<Type, (PropertyInfo, MSBReference)[]> MsbReferenceProperties = new();
+
+    private static (PropertyInfo, MSBReference)[] FindMsbReferenceProperties(Type type)
+    {
+        return type.GetProperties()
+            .Select(property => (property, property.GetCustomAttribute<MSBReference>()))
+            .Where(e => e.Item2 != null)
+            .ToArray();
+    }
+
     /// <summary>
     /// This will yield the value and a setter for that value for each field in `entry` that's a MSBReference
     /// </summary>
@@ -133,11 +145,8 @@ public static class MsbUtils
         if(entry == null) 
             yield break;
 
-        foreach (var property in entry.GetType().GetProperties())
+        foreach (var (property, msbReference) in MsbReferenceProperties.GetOrAdd(entry.GetType(), FindMsbReferenceProperties))
         {
-            if (property.GetCustomAttribute<MSBReference>() is not MSBReference msbReference) 
-                continue;
-
             var value = property.GetValue(entry);
             if (value is string[] array)
             {
@@ -168,6 +177,31 @@ public static class MsbUtils
             }
         }
         target.Name = newName;
+    }
+
+    /// <summary>
+    /// Prepends 'prefix' to the name of every entry, and to every reference between them.
+    /// Equivalent to calling RenameWithRefs on each entry, without searching all of them for each rename.
+    /// </summary>
+    public static void PrefixNamesWithRefs(IReadOnlyCollection<IMsbEntry> entries, string prefix)
+    {
+        var entriesByName = entries.ToLookup(e => e.Name);
+
+        foreach (var entry in entries)
+        {
+            foreach (var (current, type, set) in GetMsbReferences(entry))
+            {
+                if (entriesByName[current].Any(target => Matches(current, type, target)))
+                {
+                    set(prefix + current);
+                }
+            }
+        }
+
+        foreach (var entry in entries)
+        {
+            entry.Name = prefix + entry.Name;
+        }
     }
 
     /// <summary>

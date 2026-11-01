@@ -21,6 +21,10 @@
       "Text": "Miscellaneous Textures"
     },
     {
+      "Key": "MAP_ResourceManager_Prefab_Objects",
+      "Text": "Prefab Objects"
+    },
+    {
       "Key": "MAP_ResourceManager_Map_Piece_Models",
       "Text": "Map Pieces"
     },

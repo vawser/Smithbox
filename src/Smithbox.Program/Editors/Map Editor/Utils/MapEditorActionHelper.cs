@@ -15,6 +15,16 @@ using static StudioCore.Editors.MapEditor.DuplicateAction;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
+/// The IDs in use on a map, so that assigning IDs to many objects doesn't have to search the map for each one.
+/// Only valid while the objects of the map are not otherwise changing.
+/// </summary>
+public class UniqueIdCache
+{
+    public HashSet<long> EntityIDs;
+    public Dictionary<string, HashSet<int>> InstanceIDs;
+}
+
+/// <summary>
 /// For functions that multiple EntityActions make use of.
 /// </summary>
 public static class MapEditorActionHelper
@@ -126,7 +136,7 @@ public static class MapEditorActionHelper
         }
     }
 
-    public static void SetUniqueEntityID(MapEditorView view, MsbEntity sel, MapContainer map)
+    public static void SetUniqueEntityID(MapEditorView view, MsbEntity sel, MapContainer map, UniqueIdCache cache = null)
     {
         if (sel.WrappedObject is BTL.Light)
             return;
@@ -136,19 +146,71 @@ public static class MapEditorActionHelper
 
         if (view.Project.Descriptor.ProjectType is ProjectType.AC6)
         {
-            SetUniqueEntityID_AC6(view, sel, map);
+            SetUniqueEntityID_AC6(view, sel, map, cache);
         }
         else if (view.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
-            SetUniqueEntityID_ER(view, sel, map);
+            SetUniqueEntityID_ER(view, sel, map, cache);
         }
         else
         {
-            SetUniqueEntityID_Int(view, sel, map);
+            SetUniqueEntityID_Int(view, sel, map, cache);
         }
     }
 
-    public static void SetUniqueEntityID_AC6(MapEditorView view, MsbEntity sel, MapContainer map)
+    /// <summary>
+    /// Gets the Entity IDs in use on the map, which must not include the ID being replaced.
+    /// </summary>
+    private static HashSet<long> GetUsedEntityIDs(MapContainer map, UniqueIdCache cache)
+    {
+        if (cache?.EntityIDs != null)
+            return cache.EntityIDs;
+
+        HashSet<long> vals = new();
+
+        foreach (var e in map?.Objects)
+        {
+            switch (PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject))
+            {
+                case int entInt:
+                    vals.Add(entInt);
+                    break;
+                case uint entUint:
+                    vals.Add(entUint);
+                    break;
+            }
+        }
+
+        if (cache != null)
+            cache.EntityIDs = vals;
+
+        return vals;
+    }
+
+    /// <summary>
+    /// Gets the first unused ID in the range, preferring those after the original ID. Returns 0 if the range is full.
+    /// </summary>
+    /// <param name="preferredMinId">IDs below this are only used if nothing else is free</param>
+    private static long FindUnusedID(HashSet<long> used, long originalID, long minId, long maxId, long preferredMinId = 0)
+    {
+        // Prefer IDs after the original ID first
+        for (var id = Math.Max(Math.Max(originalID + 1, minId), preferredMinId); id < maxId; id++)
+        {
+            if (!used.Contains(id))
+                return id;
+        }
+
+        // No match in preferred range, get first of possible values.
+        for (var id = minId; id < maxId; id++)
+        {
+            if (!used.Contains(id))
+                return id;
+        }
+
+        return 0;
+    }
+
+    public static void SetUniqueEntityID_AC6(MapEditorView view, MsbEntity sel, MapContainer map, UniqueIdCache cache = null)
     {
         uint originalID = (uint)sel.GetPropertyValue("EntityID");
 
@@ -157,100 +219,29 @@ public static class MapEditorActionHelper
 
         sel.SetPropertyValue("EntityID", (uint)0);
 
-        HashSet<uint> vals = new();
-
-        foreach (var e in map?.Objects)
-        {
-            var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-            if (val == null)
-                continue;
-
-            uint entUint;
-            if (val is int entInt)
-                entUint = (uint)entInt;
-            else
-                entUint = (uint)val;
-
-            if (entUint == 0 || entUint == uint.MaxValue)
-                continue;
-
-            vals.Add(entUint);
-        }
-
-        var mapIdParts = map.Name.Replace("m", "").Split("_");
+        var vals = GetUsedEntityIDs(map, cache);
 
         uint minId = 100;
         uint maxId = 9999;
 
-        // Build base entity ID list
-        var baseVals = new HashSet<uint>();
-        for (uint i = minId; i < maxId; i++)
-        {
-            baseVals.Add(i);
-        }
+        var newID = (uint)FindUnusedID(vals, originalID, minId, maxId);
 
-        // Remove elements that are present in both hashsets, to get the list of unique IDs
-        baseVals.SymmetricExceptWith(vals);
-
-        bool hasMatch = false;
-        uint newID = 0;
-
-        // Prefer IDs after the original ID first
-        foreach (var entry in baseVals)
-        {
-            if (!hasMatch)
-            {
-                if (entry > originalID)
-                {
-                    newID = entry;
-                    hasMatch = true;
-                }
-            }
-            else
-            {
-                break;
-            }
-        }
-
-        // No match in preferred range, get first of possible values.
-        if (!hasMatch)
-        {
-            newID = baseVals.First();
-        }
-
+        vals.Add(newID);
         sel.SetPropertyValue("EntityID", newID);
     }
 
-    public static void SetUniqueEntityID_ER(MapEditorView view, MsbEntity sel, MapContainer map)
+    public static void SetUniqueEntityID_ER(MapEditorView view, MsbEntity sel, MapContainer map, UniqueIdCache cache = null)
     {
         uint originalID = (uint)sel.GetPropertyValue("EntityID");
 
         // Don't set entity ID if the original entity doesn't have one
         if (originalID == 0)
             return;
-        
+
         sel.SetPropertyValue("EntityID", (uint)0);
 
-        HashSet<uint> vals = new();
-
         // For enemies, only fill vals with other enemy IDs, as ER enemies use 7 digits, not 8 like the other map objects
-        foreach (var e in map?.Objects)
-        {
-            var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-            if (val == null)
-                continue;
-
-            uint entUint;
-            if (val is int entInt)
-                entUint = (uint)entInt;
-            else
-                entUint = (uint)val;
-
-            if (entUint == 0 || entUint == uint.MaxValue)
-                continue;
-
-            vals.Add(entUint);
-        }
+        var vals = GetUsedEntityIDs(map, cache);
 
         var mapIdParts = map.Name.Replace("m", "").Split("_");
 
@@ -273,46 +264,13 @@ public static class MapEditorActionHelper
             maxId = uint.Parse($"20{mapIdParts[1]}{mapIdParts[2]}9999");
         }
 
-        // Build base entity ID list
-        var baseVals = new HashSet<uint>();
-        for (uint i = minId; i < maxId; i++)
-        {
-            baseVals.Add(i);
-        }
+        var newID = (uint)FindUnusedID(vals, originalID, minId, maxId);
 
-        // Remove elements that are present in both hashsets, to get the list of unique IDs
-        baseVals.SymmetricExceptWith(vals);
-
-        bool hasMatch = false;
-        uint newID = 0;
-
-        // Prefer IDs after the original ID first
-        foreach (var entry in baseVals)
-        {
-            if (!hasMatch)
-            {
-                if (entry > originalID)
-                {
-                    newID = entry;
-                    hasMatch = true;
-                }
-            }
-            else
-            {
-                break;
-            }
-        }
-
-        // No match in preferred range, get first of possible values.
-        if (!hasMatch)
-        {
-            newID = baseVals.First();
-        }
-
+        vals.Add(newID);
         sel.SetPropertyValue("EntityID", newID);
     }
 
-    public static void SetUniqueEntityID_Int(MapEditorView view, MsbEntity sel, MapContainer map)
+    public static void SetUniqueEntityID_Int(MapEditorView view, MsbEntity sel, MapContainer map, UniqueIdCache cache = null)
     {
         int originalID = (int)sel.GetPropertyValue("EntityID");
 
@@ -321,22 +279,8 @@ public static class MapEditorActionHelper
 
         sel.SetPropertyValue("EntityID", -1);
 
-        HashSet<int> vals = new();
-
         // Get currently used Entity IDs
-        foreach (var e in map?.Objects)
-        {
-            var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-            if (val == null)
-                continue;
-
-            int entInt = (int)val;
-
-            if (entInt == 0 || entInt == int.MaxValue)
-                continue;
-
-            vals.Add(entInt);
-        }
+        var vals = GetUsedEntityIDs(map, cache);
 
         // Build set of all 'valid' Entity IDs
         var mapIdParts = map.Name.Replace("m", "").Split("_");
@@ -350,49 +294,12 @@ public static class MapEditorActionHelper
         minId = int.Parse($"{mapIdParts[0]}{part}0000");
         maxId = int.Parse($"{mapIdParts[0]}{part}9999");
 
-        var baseVals = new HashSet<int>();
-        for (int i = minId; i < maxId; i++)
-        {
-            baseVals.Add(i);
-        }
+        // This is to ignore the 4 digit Entity IDs used in some DS1 maps
+        var preferredMinId = view.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R ? 10000 : 0;
 
-        baseVals.SymmetricExceptWith(vals);
+        var newID = (int)FindUnusedID(vals, originalID, minId, maxId, preferredMinId);
 
-        bool hasMatch = false;
-        int newID = 0;
-
-        // Prefer IDs after the original ID first
-        foreach (var entry in baseVals)
-        {
-            if (!hasMatch)
-            {
-                if (entry > originalID)
-                {
-                    newID = entry;
-                    hasMatch = true;
-
-                    // This is to ignore the 4 digit Entity IDs used in some DS1 maps
-                    if (view.Project.Descriptor.ProjectType == ProjectType.DS1 || view.Project.Descriptor.ProjectType == ProjectType.DS1R)
-                    {
-                        if (newID < 10000)
-                        {
-                            hasMatch = false;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                break;
-            }
-        }
-
-        // No match in preferred range, get first of possible values.
-        if (!hasMatch)
-        {
-            newID = baseVals.First();
-        }
-
+        vals.Add(newID);
         sel.SetPropertyValue("EntityID", newID);
     }
 
@@ -576,95 +483,97 @@ public static class MapEditorActionHelper
         }
     }
 
-    public static void SetUniqueInstanceID(MapEditorView view, MsbEntity ent, MapContainer m)
+    public static void SetUniqueInstanceID(MapEditorView view, MsbEntity ent, MapContainer m, UniqueIdCache cache = null)
     {
         if (view.Project.Descriptor.ProjectType == ProjectType.ER)
         {
-            Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
-
             if (ent.WrappedObject is MSBE.Part msbePart)
             {
-                if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
-                {
-                    foreach (Entity tent in m.Objects)
-                    {
-                        if (ent.WrappedObject != null && tent.WrappedObject is MSBE.Part)
-                        {
-                            mapPartEntities[m].Add((MsbEntity)tent);
-                        }
-                    }
-                }
-
-                var newInstanceID = msbePart.InstanceID;
-                while (mapPartEntities[m].FirstOrDefault(e =>
-                           ((MSBE.Part)e.WrappedObject).ModelName == msbePart.ModelName
-                           && ((MSBE.Part)e.WrappedObject).InstanceID == newInstanceID) != null)
-                {
-                    newInstanceID++;
-                }
-
-                msbePart.InstanceID = newInstanceID;
-                mapPartEntities[m].Add(ent);
+                msbePart.InstanceID = GetUniqueInstanceID(m, cache, msbePart.ModelName, msbePart.InstanceID, GetInstanceKey_ER);
             }
         }
 
         if (view.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
-            Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
-
             if (ent.WrappedObject is MSB_AC6.Part msbPart)
             {
-                if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
-                {
-                    foreach (Entity tent in m.Objects)
-                    {
-                        if (ent.WrappedObject != null && tent.WrappedObject is MSB_AC6.Part)
-                        {
-                            mapPartEntities[m].Add((MsbEntity)tent);
-                        }
-                    }
-                }
-
-                var newInstanceID = msbPart.TypeIndex;
-                while (mapPartEntities[m].FirstOrDefault(e => ((MSB_AC6.Part)e.WrappedObject).TypeIndex == newInstanceID) != null)
-                {
-                    newInstanceID++;
-                }
-
-                msbPart.TypeIndex = newInstanceID;
-                mapPartEntities[m].Add(ent);
+                msbPart.TypeIndex = GetUniqueInstanceID(m, cache, "", msbPart.TypeIndex, GetInstanceKey_AC6);
             }
         }
 
         if (view.Project.Descriptor.ProjectType == ProjectType.NR)
         {
-            Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
-
             if (ent.WrappedObject is MSB_NR.Part msbNrPart)
             {
-                if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
-                {
-                    foreach (Entity tent in m.Objects)
-                    {
-                        if (ent.WrappedObject != null && tent.WrappedObject is MSB_NR.Part)
-                        {
-                            mapPartEntities[m].Add((MsbEntity)tent);
-                        }
-                    }
-                }
-
-                var newInstanceID = msbNrPart.InstanceID;
-                while (mapPartEntities[m].FirstOrDefault(e =>
-                           ((MSB_NR.Part)e.WrappedObject).ModelName == msbNrPart.ModelName
-                           && ((MSB_NR.Part)e.WrappedObject).InstanceID == newInstanceID) != null)
-                {
-                    newInstanceID++;
-                }
-
-                msbNrPart.InstanceID = newInstanceID;
-                mapPartEntities[m].Add(ent);
+                msbNrPart.InstanceID = GetUniqueInstanceID(m, cache, msbNrPart.ModelName, msbNrPart.InstanceID, GetInstanceKey_NR);
             }
         }
+    }
+
+    private static (string Group, int ID)? GetInstanceKey_ER(object obj)
+    {
+        return obj is MSBE.Part part ? (part.ModelName, part.InstanceID) : null;
+    }
+
+    private static (string Group, int ID)? GetInstanceKey_AC6(object obj)
+    {
+        return obj is MSB_AC6.Part part ? ("", part.TypeIndex) : null;
+    }
+
+    private static (string Group, int ID)? GetInstanceKey_NR(object obj)
+    {
+        return obj is MSB_NR.Part part ? (part.ModelName, part.InstanceID) : null;
+    }
+
+    /// <summary>
+    /// Gets the next ID after the passed one that isn't used by another part of the group.
+    /// </summary>
+    private static int GetUniqueInstanceID(MapContainer m, UniqueIdCache cache, string group, int currentID,
+        Func<object, (string Group, int ID)?> getKey)
+    {
+        var usedIDs = cache?.InstanceIDs;
+
+        if (usedIDs == null)
+        {
+            usedIDs = new();
+
+            foreach (Entity tent in m.Objects)
+            {
+                if (getKey(tent.WrappedObject) is var (partGroup, id))
+                {
+                    GetInstanceGroup(usedIDs, partGroup).Add(id);
+                }
+            }
+
+            if (cache != null)
+                cache.InstanceIDs = usedIDs;
+        }
+
+        var used = GetInstanceGroup(usedIDs, group);
+
+        // A cached part is already on the map, and the cache may not have been built with it, so its own ID is skipped
+        var newInstanceID = cache != null ? currentID + 1 : currentID;
+        while (used.Contains(newInstanceID))
+        {
+            newInstanceID++;
+        }
+
+        used.Add(newInstanceID);
+
+        return newInstanceID;
+    }
+
+    private static HashSet<int> GetInstanceGroup(Dictionary<string, HashSet<int>> usedIDs, string group)
+    {
+        group ??= "";
+
+        if (!usedIDs.TryGetValue(group, out var used))
+        {
+            used = new();
+            usedIDs[group] = used;
+        }
+
+        return used;
     }
 
     public static void SetSpecificEntityGroupID(MapEditorView view, MsbEntity ent, MapContainer m)

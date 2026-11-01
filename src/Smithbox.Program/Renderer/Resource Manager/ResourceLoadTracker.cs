@@ -40,6 +40,10 @@ public static class ResourceLoadTracker
         // Size of the jobs that have finished
         public int Retired;
 
+        // Progress of work that isn't a resource job, set by SetTaskProgress
+        public int TaskLoaded;
+        public int TaskTotal;
+
         // Sum of the running jobs, recalculated by Update
         public int Loaded;
         public int Total;
@@ -116,6 +120,22 @@ public static class ResourceLoadTracker
     }
 
     /// <summary>
+    ///     Sets the progress of a category for work that doesn't run as a resource job.
+    ///     Must be called within a session, as nothing else keeps the category displayed.
+    /// </summary>
+    public static void SetTaskProgress(string name, int loaded, int total)
+    {
+        lock (_lock)
+        {
+            Category category = GetCategory(name);
+
+            category.Requested = true;
+            category.TaskLoaded = loaded;
+            category.TaskTotal = total;
+        }
+    }
+
+    /// <summary>
     ///     Sets the file displayed as being worked on. Called from the job threads, so the latest one wins.
     /// </summary>
     internal static void SetCurrentFile(string file)
@@ -164,9 +184,9 @@ public static class ResourceLoadTracker
 
             foreach (Category category in _categories)
             {
-                category.Loaded = category.Retired;
-                category.Total = category.Retired;
-                category.Active = false;
+                category.Loaded = category.Retired + category.TaskLoaded;
+                category.Total = category.Retired + category.TaskTotal;
+                category.Active = category.TaskLoaded < category.TaskTotal;
                 category.IsEstimate = false;
             }
 

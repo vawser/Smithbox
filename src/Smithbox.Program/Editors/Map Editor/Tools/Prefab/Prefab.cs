@@ -62,22 +62,18 @@ public abstract class Prefab : PrefabAttributes
         };
     }
 
-    public void ImportToMap(MapEditorView view, MapContainer targetMap, RenderScene _scene, ViewportActionManager _actionManager, string prefixName = null)
+    /// <summary>
+    /// Builds the action that adds this prefab to the map. Nothing here touches the map itself, so this can run on a background thread.
+    /// </summary>
+    /// <param name="placementOrigin">The position to place the prefab at, or null to keep its original co-ordinates</param>
+    public EntAddAction CreateImportAction(MapEditorView view, MapContainer targetMap, Vector3? placementOrigin, string prefixName = null)
     {
-        if (targetMap is null)
-        {
-            Smithbox.LogError(this, $"Failed to create prefab {PrefabName}: Target map is null.");
-            return;
-        }
-
         prefixName ??= PrefabName;
         var parent = targetMap.RootObject;
         List<MsbEntity> ents = GenerateMapEntities(targetMap);
 
-        if (CFG.Current.Prefab_PlaceAtPlacementOrb)
+        if (placementOrigin != null)
         {
-            var placementOrigin = view.ViewportWindow.GetPlacementPosition();
-
             Vector3 currentCenter = Vector3.Zero;
             foreach (var entity in ents)
             {
@@ -90,7 +86,7 @@ public abstract class Prefab : PrefabAttributes
 
             currentCenter /= ents.Count;
 
-            Vector3 offset = placementOrigin - currentCenter;
+            Vector3 offset = placementOrigin.Value - currentCenter;
 
             foreach (var entity in ents)
             {
@@ -100,15 +96,9 @@ public abstract class Prefab : PrefabAttributes
             }
         }
 
-        var entries = ents.Select((entity) => entity.WrappedObject as IMsbEntry);
+        MsbUtils.PrefixNamesWithRefs(ents.Select((entity) => entity.WrappedObject as IMsbEntry).ToList(), prefixName);
 
-        foreach (var entry in entries)
-        {
-            MsbUtils.RenameWithRefs(entries, entry, prefixName + entry.Name);
-        }
-
-        EntAddAction act = new(view, targetMap, ents, parent);
-        _actionManager.ExecuteAction(act);
+        return new(view, targetMap, ents, parent);
     }
 
     public List<string> GetSelectedPrefabObjects()

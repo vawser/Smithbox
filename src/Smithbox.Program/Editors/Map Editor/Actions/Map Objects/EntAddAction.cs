@@ -3,6 +3,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -21,6 +22,12 @@ public class EntAddAction : ViewportAction
 
     private LightAtlasEdit AtlasEdit;
 
+    private int NextIndex;
+    private UniqueIdCache IdCache;
+
+    public int AddedCount => NextIndex;
+    public int TotalCount => Added.Count;
+
     public EntAddAction(MapEditorView view, MapContainer map, List<MsbEntity> objects, Entity parent)
     {
         View = view;
@@ -30,55 +37,95 @@ public class EntAddAction : ViewportAction
         Added.AddRange(objects);
     }
 
-    public override ActionEvent Execute(bool isRedo = false)
+    /// <summary>
+    /// Adds objects until the time budget is used, so a large action can be spread across several frames.
+    /// Execute must still be called afterwards, and will only add the objects that are left.
+    /// </summary>
+    /// <returns>True if every object has been added.</returns>
+    public bool ExecuteStep(TimeSpan budget)
     {
-        // Rebuilt on every execute so it stays index-aligned with Added on redo
-        AddedMaps.Clear();
+        var timer = Stopwatch.StartNew();
 
-        for (var i = 0; i < Added.Count(); i++)
+        while (NextIndex < Added.Count)
         {
-            if (Map != null)
+            AddNext();
+
+            if (timer.Elapsed >= budget)
+                break;
+        }
+
+        return NextIndex >= Added.Count;
+    }
+
+    private void AddNext()
+    {
+        if (NextIndex == 0)
+        {
+            // Rebuilt on every execute so it stays index-aligned with Added on redo
+            AddedMaps.Clear();
+            IdCache = new();
+        }
+
+        var i = NextIndex;
+        NextIndex++;
+
+        if (Map != null)
+        {
+            var msbEnt = Added[i];
+
+            // Adding a child builds its mesh, unless that has already been done by an earlier execute
+            var hasMesh = msbEnt.SetupRenderMesh;
+
+            Map.Objects.Add(msbEnt);
+            Parent.AddChild(msbEnt);
+
+            if (hasMesh)
             {
-                Map.Objects.Add(Added[i]);
-                Parent.AddChild(Added[i]);
-
-                if (Added[i] is MsbEntity msbEnt)
-                {
-                    msbEnt.AssignDrawable();
-                }
-                Added[i].UpdateRenderModel();
-
-                if (Added[i].RenderSceneMesh != null)
-                {
-                    Added[i].RenderSceneMesh.RenderSelectionOutline = true;
-                    Added[i].RenderSceneMesh.SetSelectable(Added[i]);
-                    Added[i].RenderSceneMesh.AutoRegister = true;
-                    Added[i].RenderSceneMesh.Register();
-                }
-
-                AddedMaps.Add(Map);
-
-                MapContainer.MarkEntityDirty(Map, Added[i]);
-
-                // Prefab-specific
-                if (CFG.Current.Prefab_ApplyUniqueInstanceID)
-                {
-                    MapEditorActionHelper.SetUniqueInstanceID(View, Added[i], Map);
-                }
-                if (CFG.Current.Prefab_ApplyUniqueEntityID)
-                {
-                    MapEditorActionHelper.SetUniqueEntityID(View, Added[i], Map);
-                }
-                if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
-                {
-                    MapEditorActionHelper.SetSpecificEntityGroupID(View, Added[i], Map);
-                }
+                msbEnt.AssignDrawable();
+                msbEnt.UpdateRenderModel();
             }
-            else
+
+            if (msbEnt.RenderSceneMesh != null)
             {
-                AddedMaps.Add(null);
+                msbEnt.RenderSceneMesh.RenderSelectionOutline = true;
+                msbEnt.RenderSceneMesh.SetSelectable(msbEnt);
+                msbEnt.RenderSceneMesh.AutoRegister = true;
+                msbEnt.RenderSceneMesh.Register();
+            }
+
+            AddedMaps.Add(Map);
+
+            MapContainer.MarkEntityDirty(Map, msbEnt);
+
+            // Prefab-specific
+            if (CFG.Current.Prefab_ApplyUniqueInstanceID)
+            {
+                MapEditorActionHelper.SetUniqueInstanceID(View, msbEnt, Map, IdCache);
+            }
+            if (CFG.Current.Prefab_ApplyUniqueEntityID)
+            {
+                MapEditorActionHelper.SetUniqueEntityID(View, msbEnt, Map, IdCache);
+            }
+            if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
+            {
+                MapEditorActionHelper.SetSpecificEntityGroupID(View, msbEnt, Map);
             }
         }
+        else
+        {
+            AddedMaps.Add(null);
+        }
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        while (NextIndex < Added.Count)
+        {
+            AddNext();
+        }
+
+        NextIndex = 0;
+        IdCache = null;
 
         if (AtlasEdit == null)
         {

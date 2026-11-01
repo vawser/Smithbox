@@ -3,12 +3,15 @@ using Octokit;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
+using StudioCore.Renderer;
 using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -26,7 +29,14 @@ public class PrefabTool
     
     public (string, ObjectContainer) TargetMap = ("None", null);
 
-    public PrefabTool(MapEditorView view, ProjectEntry project) 
+    // How long an import may hold up each frame
+    private static readonly TimeSpan ImportFrameBudget = TimeSpan.FromMilliseconds(20);
+
+    private record PrefabImport(string Name, string ProgressName, MapContainer Map, Task<EntAddAction> Prepare);
+
+    private PrefabImport ActiveImport;
+
+    public PrefabTool(MapEditorView view, ProjectEntry project)
     { 
         View = view;
         Project = project;
@@ -421,12 +431,10 @@ public class PrefabTool
             prefixName = CFG.Current.Prefab_OverrideName;
         }
 
-        var loadedPrefab = GetLoadedPrefab(SelectedPrefab.PrefabName);
+        var name = SelectedPrefab.PrefabName;
+        var prefabPath = Path.Join(PrefabUtils.GetPrefabStorageDirectory(View.Project), $"{name}.json");
 
-        if (loadedPrefab != null)
-        {
-            loadedPrefab.ImportToMap(View, TargetMap.Item2 as MapContainer, View.ViewportHandler.ActiveViewport.RenderScene, View.ViewportActionManager, prefixName);
-        }
+        BeginImport(name, prefabPath, TargetMap.Item2 as MapContainer, prefixName);
     }
 
     public void ImportPrefabFromFileAction()
@@ -435,8 +443,6 @@ public class PrefabTool
 
         if (dialog && path.EndsWith(".json") && Path.Exists(path))
         {
-            var newPrefab = GetLoadedPrefabFromFile(path);
-
             string prefixName = null;
 
             if (CFG.Current.Prefab_ApplyOverrideName)
@@ -444,12 +450,121 @@ public class PrefabTool
                 prefixName = CFG.Current.Prefab_OverrideName;
             }
 
-            if (newPrefab != null)
-            {
-                newPrefab.ImportToMap(View, TargetMap.Item2 as MapContainer, View.ViewportHandler.ActiveViewport.RenderScene, View.ViewportActionManager, prefixName);
-            }
+            BeginImport(Path.GetFileNameWithoutExtension(path), path, TargetMap.Item2 as MapContainer, prefixName);
         }
 
+    }
+
+    /// <summary>
+    /// Starts an import. The prefab is read on a background thread, and Update then adds its objects
+    /// over several frames, so the viewport keeps drawing and the load panel can show the progress.
+    /// </summary>
+    private void BeginImport(string name, string path, MapContainer targetMap, string prefixName)
+    {
+        if (ActiveImport != null)
+        {
+            Smithbox.LogError<PrefabTool>($"Failed to import prefab {name}: another prefab is being imported.");
+            return;
+        }
+
+        if (targetMap is null)
+        {
+            Smithbox.LogError<PrefabTool>($"Failed to import prefab {name}: Target map is null.");
+            return;
+        }
+
+        var prefab = LoadedPrefabs.GetValueOrDefault(name);
+        var isRead = prefab != null;
+
+        prefab ??= Prefab.New(View);
+
+        if (prefab == null)
+        {
+            Smithbox.Log(this, "Prefabs are not supported for this project type.");
+            return;
+        }
+
+        Vector3? placementOrigin = CFG.Current.Prefab_PlaceAtPlacementOrb ? View.ViewportWindow.GetPlacementPosition() : null;
+
+        var progressName = LOC.Get("MAP_ResourceManager_Prefab_Objects");
+
+        ResourceLoadTracker.BeginSession(name);
+        ResourceLoadTracker.Reserve(progressName);
+
+        var prepare = Task.Run(() =>
+        {
+            if (!isRead && !prefab.ImportJson(path))
+                return null;
+
+            return prefab.CreateImportAction(View, targetMap, placementOrigin, prefixName);
+        });
+
+        ActiveImport = new PrefabImport(name, progressName, targetMap, prepare);
+    }
+
+    /// <summary>
+    /// Advances the current import. Runs once per frame, regardless of whether the tool window is displayed.
+    /// </summary>
+    public void Update()
+    {
+        if (ActiveImport == null || !ActiveImport.Prepare.IsCompleted)
+            return;
+
+        if (ActiveImport.Prepare.Exception != null)
+        {
+            Smithbox.LogError<PrefabTool>($"Failed to import prefab {ActiveImport.Name}.", ActiveImport.Prepare.Exception.GetBaseException());
+            EndImport();
+            return;
+        }
+
+        var action = ActiveImport.Prepare.Result;
+
+        // The error has already been logged if the prefab could not be read
+        if (action == null)
+        {
+            EndImport();
+            return;
+        }
+
+        if (ActiveImport.Map.LoadState is not MapContentLoadState.Loaded)
+        {
+            Smithbox.LogError<PrefabTool>($"Failed to import prefab {ActiveImport.Name}: the target map was unloaded.");
+            EndImport();
+            return;
+        }
+
+        var finished = action.ExecuteStep(ImportFrameBudget);
+
+        ResourceLoadTracker.SetTaskProgress(ActiveImport.ProgressName, action.AddedCount, action.TotalCount);
+
+        if (finished)
+        {
+            View.ViewportActionManager.ExecuteAction(action);
+            EndImport();
+        }
+    }
+
+    /// <summary>
+    /// Finishes the current import at once, for when the view is closing and Update would stop being called.
+    /// </summary>
+    public void FinishImport()
+    {
+        if (ActiveImport == null)
+            return;
+
+        ((IAsyncResult)ActiveImport.Prepare).AsyncWaitHandle.WaitOne();
+
+        while (ActiveImport != null)
+        {
+            Update();
+        }
+    }
+
+    private void EndImport()
+    {
+        // The session ending leaves the panel displaying any model loads the import started
+        ResourceLoadTracker.EndSession(ActiveImport.Name);
+        ActiveImport = null;
     }
 
     public void RefreshPrefabList()

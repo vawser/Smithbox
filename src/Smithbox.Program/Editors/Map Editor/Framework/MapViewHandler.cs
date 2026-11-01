@@ -86,6 +86,8 @@ public class MapViewHandler
             return false;
         }
 
+        view.PrefabTool.FinishImport();
+
         // Maps loaded by this view are bound to its render scene and banks,
         // so they cannot outlive it; unload them, confirming first if any have unsaved changes
         var ownedMaps = Project.Handler.MapData.PrimaryBank.Maps.Values
