@@ -68,7 +68,7 @@ public class ModelCharacterPreview
 
     public void OnToolWindow()
     {
-        if (ImGui.CollapsingHeader($"{LOC.Get("MODEL_CharacterPreview_Header")}##modelCharacterPreviewHeader"))
+        if (ToolSections.Header($"{LOC.Get("MODEL_CharacterPreview_Header")}##modelCharacterPreviewHeader"))
         {
             ImGui.BeginChild("ModelCharacterPreviewSection");
             Display();

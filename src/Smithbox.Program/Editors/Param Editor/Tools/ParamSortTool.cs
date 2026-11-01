@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using StudioCore;
 using StudioCore.Application;
+using StudioCore.Editors;
 using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ public class ParamSortTool
     public void Display()
     {
         // Sort Rows
-        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_RowSort_Header_Sort_Rows")}##sortRowsHeader"))
+        if (ToolSections.Header($"{LOC.Get("PARAM_RowSort_Header_Sort_Rows")}##sortRowsHeader"))
         {
             ImGui.BeginChild("SortRowSection", ImGuiChildFlags.Borders);
 

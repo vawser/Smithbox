@@ -33,7 +33,7 @@ public class ModelExportTool
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (ImGui.CollapsingHeader($"{LOC.Get("MODEL_ModelExport_Header")}##modelExportHeader"))
+        if (ToolSections.Header($"{LOC.Get("MODEL_ModelExport_Header")}##modelExportHeader"))
         {
             ImGui.BeginChild("ModelExportOverallSection", ImGuiChildFlags.Borders);
 

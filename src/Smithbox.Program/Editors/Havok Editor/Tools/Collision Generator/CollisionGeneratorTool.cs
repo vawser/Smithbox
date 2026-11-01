@@ -33,7 +33,7 @@ public class CollisionGeneratorTool
         if (!CFG.Current.HavokEditor_ToolVisibility_CollisionGenerator)
             return;
 
-        if(ImGui.CollapsingHeader($"{LOC.Get("HAVOK_Tools_Collision_Generator_Tool")}##collisionGeneratorTool"))
+        if(ToolSections.Header($"{LOC.Get("HAVOK_Tools_Collision_Generator_Tool")}##collisionGeneratorTool"))
         {
             ImGui.BeginChild("CollisionGeneratorSection", ImGuiChildFlags.Borders);
 

@@ -39,7 +39,7 @@ public class ModelInstanceFinder
         var windowWidth = ImGui.GetWindowWidth();
 
         // Model Instance Finder
-        if (ImGui.CollapsingHeader($"{LOC.Get("MODEL_InstanceFinder_Header")}##modelInstanceFinder"))
+        if (ToolSections.Header($"{LOC.Get("MODEL_InstanceFinder_Header")}##modelInstanceFinder"))
         {
             ImGui.BeginChild("ModelInstanceFinderToolSection", ImGuiChildFlags.Borders);
 

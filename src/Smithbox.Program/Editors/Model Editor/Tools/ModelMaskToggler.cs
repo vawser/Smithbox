@@ -25,7 +25,7 @@ public class ModelMaskToggler
         var windowWidth = ImGui.GetWindowWidth();
 
         // Model Mask Toggler
-        if (ImGui.CollapsingHeader($"{LOC.Get("MODEL_MaskToggler_Header")}##modelMaskTogglerHeader"))
+        if (ToolSections.Header($"{LOC.Get("MODEL_MaskToggler_Header")}##modelMaskTogglerHeader"))
         {
             GUI.WrappedText(LOC.Get("MODEL_MaskToggler_Hint"));
             GUI.Spacer();

@@ -202,6 +202,25 @@ public class InterfacePrefs
         };
     }
 
+    public static PreferenceItem Interface_Tool_Window_Single_Section()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 8,
+            Category = PreferenceCategory.Interface,
+            Spacer = true,
+
+            Section = SectionCategory.General,
+
+            Title = "PREF_Interface_Tool_Window_Single_Section",
+            Description = "PREF_Interface_Tool_Window_Single_Section_TT",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Tool_Window_Single_Section);
+            }
+        };
+    }
+
     #endregion
 
     #region Editor Presentation

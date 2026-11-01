@@ -44,7 +44,7 @@ public class ParamMerger
         var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
 
         // Merge Params
-        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Merger_Header")}##paramMergerHeader"))
+        if (ToolSections.Header($"{LOC.Get("PARAM_Merger_Header")}##paramMergerHeader"))
         {
             ImGui.BeginChild("ParamMergerToolSection", ImGuiChildFlags.Borders);
 

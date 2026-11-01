@@ -32,6 +32,8 @@ public class MaterialToolWindow
         {
             ViewMenu();
 
+            ToolSections.OptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

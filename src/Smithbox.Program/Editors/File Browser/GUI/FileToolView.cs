@@ -23,6 +23,8 @@ public class FileToolView
     public FileUnpackerTool UnpackTool;
     public FileExporterTool ExtractTool;
 
+    private ToolSections Sections = new();
+
     public FileToolView(FileEditorView view, ProjectEntry project)
     {
         View = view;
@@ -38,12 +40,16 @@ public class FileToolView
         {
             ViewMenu();
 
+            ToolSections.OptionsMenu();
+
             ImGui.EndMenuBar();
         }
 
+        Sections.Begin();
+
         if (CFG.Current.Interface_FileBrowser_Tool_GameUnpacker)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("FILE_Tools_File_Unpacker_Header")}##fileUnpacker"))
+            if (ToolSections.Header($"{LOC.Get("FILE_Tools_File_Unpacker_Header")}##fileUnpacker"))
             {
                 UnpackTool.Display();
             }
@@ -51,11 +57,13 @@ public class FileToolView
 
         if (CFG.Current.Interface_FileBrowser_Tool_FileExtract)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("FILE_Tools_File_Exporter_Header")}##fileExporter"))
+            if (ToolSections.Header($"{LOC.Get("FILE_Tools_File_Exporter_Header")}##fileExporter"))
             {
                 ExtractTool.Display();
             }
         }
+
+        Sections.End();
     }
 
     public void ViewMenu()

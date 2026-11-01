@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Components.Forms;
+using StudioCore.Editors;
 using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace StudioCore.Application;
 public class ProjectToolWindow
 {
     public ProjectScreen Editor;
+
+    private ToolSections Sections = new();
 
     public ProjectToolWindow(ProjectScreen editor)
     {
@@ -34,8 +37,12 @@ public class ProjectToolWindow
                 ImGui.EndMenu();
             }
 
+            ToolSections.OptionsMenu();
+
             ImGui.EndMenuBar();
         }
+
+        Sections.Begin();
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
@@ -60,11 +67,13 @@ public class ProjectToolWindow
         {
             GUI.WrappedText(LOC.Get("PROJECT_Tools_No_Selected_Project"));
         }
+
+        Sections.End();
     }
 
     public void DisplayProjectMerge(ParamEditorView view)
     {
-        if (ImGui.CollapsingHeader($"{LOC.Get("PROJECT_Tools_Project_Merge")}##projectMergeHeader"))
+        if (ToolSections.Header($"{LOC.Get("PROJECT_Tools_Project_Merge")}##projectMergeHeader"))
         {
             ImGui.BeginChild("ProjectMergeSection", ImGuiChildFlags.Borders);
 

@@ -44,7 +44,7 @@ public class ParamPinGroups
         var windowWidth = ImGui.GetWindowWidth();
 
         // Pin Groups
-        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_PinGroups_Header")}##pinGroupsHeader"))
+        if (ToolSections.Header($"{LOC.Get("PARAM_PinGroups_Header")}##pinGroupsHeader"))
         {
             ImGui.BeginChild("PinGroupToolSection", ImGuiChildFlags.Borders);
 

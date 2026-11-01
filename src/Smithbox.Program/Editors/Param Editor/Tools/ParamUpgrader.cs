@@ -36,7 +36,7 @@ public class ParamUpgrader
         var windowWidth = ImGui.GetWindowWidth();
         var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
 
-        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Upgrader_Header")}##paramUpgraderHeader"))
+        if (ToolSections.Header($"{LOC.Get("PARAM_Upgrader_Header")}##paramUpgraderHeader"))
         {
             ImGui.BeginChild("ParamUpgraderToolSection", ImGuiChildFlags.Borders);
 

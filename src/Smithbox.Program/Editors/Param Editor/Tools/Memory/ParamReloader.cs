@@ -89,7 +89,7 @@ public class ParamReloader
         // Param Reloader
         if (ParamReloadSupported(View.Project.Descriptor.ProjectType))
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Tools_Reloader_Header")}##reloaderHeader"))
+            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Reloader_Header")}##reloaderHeader"))
             {
                 ImGui.BeginChild("ParamReloaderSection", ImGuiChildFlags.Borders);
 

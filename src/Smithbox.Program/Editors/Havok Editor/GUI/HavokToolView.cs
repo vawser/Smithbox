@@ -11,6 +11,8 @@ public class HavokToolView
 
     public HavokScriptReloader HavokScriptReloader;
 
+    private ToolSections Sections = new();
+
     public HavokToolView(HavokEditorView view, ProjectEntry project)
     {
         View = view;
@@ -53,11 +55,17 @@ public class HavokToolView
                 ImGui.EndMenu();
             }
 
+            ToolSections.OptionsMenu();
+
             ImGui.EndMenuBar();
         }
 
+        Sections.Begin();
+
         CollisionGeneratorTool.Display();
         HavokScriptReloader.Display();
+
+        Sections.End();
     }
 
     public void Shortcuts()

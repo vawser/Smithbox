@@ -19,7 +19,7 @@ public class ViewportGridTool
 
     public void OnToolWindow()
     {
-        if (ImGui.CollapsingHeader($"{LOC.Get("VIEWPORT_GridConfig_Header")}##viewportGridTool"))
+        if (ToolSections.Header($"{LOC.Get("VIEWPORT_GridConfig_Header")}##viewportGridTool"))
         {
             ImGui.BeginChild("ViewportGridToolSection", ImGuiChildFlags.Borders);
 

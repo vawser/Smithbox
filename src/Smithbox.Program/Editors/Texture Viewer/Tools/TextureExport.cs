@@ -32,7 +32,7 @@ public class TextureExport
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (ImGui.CollapsingHeader($"{LOC.Get("TEXVIEW_TexExport_Header_Data_Export")}##dataExportHeader"))
+        if (ToolSections.Header($"{LOC.Get("TEXVIEW_TexExport_Header_Data_Export")}##dataExportHeader"))
         {
             ImGui.BeginChild("TextureExportToolSection", ImGuiChildFlags.Borders);
 

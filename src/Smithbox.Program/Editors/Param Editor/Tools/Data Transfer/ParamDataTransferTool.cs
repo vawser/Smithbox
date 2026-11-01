@@ -69,7 +69,7 @@ public class ParamDataTransferTool
 
     public void Display()
     {
-        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_DataTransfer_Header_Data_Transfer")}##dataTransferHeader"))
+        if (ToolSections.Header($"{LOC.Get("PARAM_DataTransfer_Header_Data_Transfer")}##dataTransferHeader"))
         {
             ImGui.BeginChild("DataTransferSection", ImGuiChildFlags.Borders);
 

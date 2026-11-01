@@ -13,6 +13,8 @@ public class GparamToolView
     public GparamDataFinder DataFinder;
     public GparamDataTransferTool DataTransferTool;
 
+    private ToolSections Sections = new();
+
     public GparamToolView(GparamEditorView view, ProjectEntry project)
     {
         View = view;
@@ -28,13 +30,17 @@ public class GparamToolView
         {
             ViewMenu();
 
+            ToolSections.OptionsMenu();
+
             ImGui.EndMenuBar();
         }
+
+        Sections.Begin();
 
         if (CFG.Current.Interface_GparamEditor_Tool_DataTransfer)
         {
             // Data Transfer
-            if (ImGui.CollapsingHeader($"{LOC.Get("GPARAM_Tools_Data_Transfer")}##dataTransferHeader"))
+            if (ToolSections.Header($"{LOC.Get("GPARAM_Tools_Data_Transfer")}##dataTransferHeader"))
             {
                 DataTransferTool.Display();
             }
@@ -43,7 +49,7 @@ public class GparamToolView
         if (CFG.Current.Interface_GparamEditor_Tool_Finder)
         {
             // Data Finder
-            if (ImGui.CollapsingHeader($"{LOC.Get("GPARAM_Tools_Data_Finder")}##dataFinderHeader"))
+            if (ToolSections.Header($"{LOC.Get("GPARAM_Tools_Data_Finder")}##dataFinderHeader"))
             {
                 DataFinder.Display();
             }
@@ -52,17 +58,19 @@ public class GparamToolView
         if (CFG.Current.Interface_GparamEditor_Tool_QuickEdit)
         {
             // Quick Edit
-            if (ImGui.CollapsingHeader($"{LOC.Get("GPARAM_Tools_Quick_Edit")}##quickEditHeader"))
+            if (ToolSections.Header($"{LOC.Get("GPARAM_Tools_Quick_Edit")}##quickEditHeader"))
             {
                 View.QuickEditHandler.DisplayInputWindow();
             }
 
             // Quick Edit
-            if (ImGui.CollapsingHeader($"{LOC.Get("GPARAM_Tools_Quick_Edit_Commands")}##quickEditCommandsHeader"))
+            if (ToolSections.Header($"{LOC.Get("GPARAM_Tools_Quick_Edit_Commands")}##quickEditCommandsHeader"))
             {
                 QuickEditCheatsheet.Display();
             }
         }
+
+        Sections.End();
     }
 
     public void DisplayDropdown()

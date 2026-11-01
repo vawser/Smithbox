@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Utilities;
@@ -27,7 +28,7 @@ public class ResourceListTool
 
     public void Display(string menuId, IUniverse owner)
     {
-        if (ImGui.CollapsingHeader($"{LOC.Get("REND_Tool_Resource_Monitor")}##resourceMonitorTool"))
+        if (ToolSections.Header($"{LOC.Get("REND_Tool_Resource_Monitor")}##resourceMonitorTool"))
         {
             EditorFilters.DisplayFramedListFilter($"resourceMonitor_{menuId}", ref ResourceListFilter, ref ExactResourceListFilter);
 

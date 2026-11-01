@@ -12,6 +12,8 @@ public class ModelToolWindow
 
     public ModelDataTransferTool DataTransferTool;
 
+    private ToolSections Sections = new();
+
     public ModelToolWindow(ModelEditorView view, ProjectEntry project)
     {
         View = view;
@@ -37,8 +39,12 @@ public class ModelToolWindow
         {
             ViewMenu();
 
+            ToolSections.OptionsMenu();
+
             ImGui.EndMenuBar();
         }
+
+        Sections.Begin();
 
         if (CFG.Current.Interface_ModelEditor_Tool_Animation)
         {
@@ -47,7 +53,7 @@ public class ModelToolWindow
 
         if (CFG.Current.Interface_ModelEditor_Tool_AssetBrowser)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("MODEL_AssetBrowser_Header")}##modelAssetBrowserHeader"))
+            if (ToolSections.Header($"{LOC.Get("MODEL_AssetBrowser_Header")}##modelAssetBrowserHeader"))
             {
                 View.AssetBrowserTool.Display();
             }
@@ -82,6 +88,8 @@ public class ModelToolWindow
         {
             View.ResourceListTool.Display("modelEditor", View.Universe);
         }
+
+        Sections.End();
     }
 
     public void ViewMenu()

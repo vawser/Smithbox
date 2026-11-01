@@ -58,7 +58,7 @@ public class ParamDeltaPatcher
         var paramData = Project.Handler.ParamData;
 
         // Param Delta Patcher
-        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_DeltaPatcher_Header_Patcher")}##deltaPatcherHeader"))
+        if (ToolSections.Header($"{LOC.Get("PARAM_DeltaPatcher_Header_Patcher")}##deltaPatcherHeader"))
         {
             ImGui.BeginChild("ParamDeltaPatcherToolSection", ImGuiChildFlags.Borders);
 

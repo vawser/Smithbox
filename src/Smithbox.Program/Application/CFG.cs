@@ -162,6 +162,7 @@ public class CFG
     public bool Interface_Scale_by_DPI = true;
     public float Interface_Font_Size = 14.0f;
     public bool Interface_Allow_Window_Movement = true;
+    public bool Interface_Tool_Window_Single_Section = true;
 
     public bool Interface_Alias_Wordwrap_General = true;
     public bool Interface_Alias_Wordwrap_Map_Editor = true;

@@ -30,7 +30,7 @@ public class ParamListCategories
 
     public void Display()
     {
-        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_ListCat_Header")}##paramListCategoriesHeader"))
+        if (ToolSections.Header($"{LOC.Get("PARAM_ListCat_Header")}##paramListCategoriesHeader"))
         {
             ImGui.BeginChild("ParamListCategories", ImGuiChildFlags.Borders);
 

@@ -40,7 +40,7 @@ public class ParamRowNameTool
 
     public void Display()
     {
-        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_RowNames_Header")}##rowNamesHeader"))
+        if (ToolSections.Header($"{LOC.Get("PARAM_RowNames_Header")}##rowNamesHeader"))
         {
             ImGui.BeginChild("RowNameSection", ImGuiChildFlags.Borders);
 

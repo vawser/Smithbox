@@ -35,6 +35,8 @@ public class ParamToolMenu
     public ParamRowNameManipulationTool RowNameManipulationTool;
     public ProjectileSimulatorTool ProjectileSimulator;
 
+    private ToolSections Sections = new();
+
     public ParamToolMenu(ParamEditorView view, ProjectEntry project)
     {
         View = view;
@@ -228,8 +230,12 @@ public class ParamToolMenu
                 ImGui.EndMenu();
             }
 
+            ToolSections.OptionsMenu();
+
             ImGui.EndMenuBar();
         }
+
+        Sections.Begin();
 
         if (CFG.Current.ParamEditor_Show_Tool_Sort_Rows)
         {
@@ -291,7 +297,7 @@ public class ParamToolMenu
 
         if (CFG.Current.ParamEditor_Show_Tool_Data_Finders)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Tools_Header_Data_Finders")}##dataFindersMenuHeader"))
+            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Data_Finders")}##dataFindersMenuHeader"))
             {
                 ImGui.BeginChild("DataFinderToolSection", ImGuiChildFlags.Borders);
 
@@ -349,7 +355,7 @@ public class ParamToolMenu
 
         if (CFG.Current.ParamEditor_Show_Tool_Mass_Edit)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Tools_Header_Mass_Edit")}##massEditMenuHeader"))
+            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Mass_Edit")}##massEditMenuHeader"))
             {
                 ImGui.BeginChild("MassEditToolSection", ImGuiChildFlags.Borders);
 
@@ -361,7 +367,7 @@ public class ParamToolMenu
 
         if(CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Tools_Header_Row_Name_Manipulation")}##rowNameManipMenuHeader"))
+            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Row_Name_Manipulation")}##rowNameManipMenuHeader"))
             {
                 ImGui.BeginChild("RowNameManipToolSection", ImGuiChildFlags.Borders);
 
@@ -373,7 +379,7 @@ public class ParamToolMenu
 
         if (CFG.Current.ParamEditor_Show_Tool_Projectile_Simulator)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Tools_Header_Projectile_Simulator")}##projectileSimulatorMenuHeader"))
+            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Projectile_Simulator")}##projectileSimulatorMenuHeader"))
             {
                 ImGui.BeginChild("ProjectileSimulatorToolSection", ImGuiChildFlags.Borders);
 
@@ -382,5 +388,7 @@ public class ParamToolMenu
                 ImGui.EndChild();
             }
         }
+
+        Sections.End();
     }
 }

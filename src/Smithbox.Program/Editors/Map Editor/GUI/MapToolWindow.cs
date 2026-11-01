@@ -15,6 +15,8 @@ public class MapToolWindow
     public VisibilityActionTool VisibilityActionTool;
     public MapDataTransferTool DataTransferTool;
 
+    private ToolSections Sections = new();
+
     public MapToolWindow(MapEditorView view, ProjectEntry project)
     {
         View = view;
@@ -98,19 +100,23 @@ public class MapToolWindow
         {
             ViewMenu();
 
+            ToolSections.OptionsMenu();
+
             ImGui.EndMenuBar();
         }
 
+        Sections.Begin();
+
         if(CFG.Current.Interface_MapEditor_Tool_Common_Action)
         {
-            if (ImGui.CollapsingHeader("Common Actions"))
+            if (ToolSections.Header("Common Actions"))
             {
                 CommonActionTool.Display();
             }
         }
         if (CFG.Current.Interface_MapEditor_Tool_Properties_Action)
         {
-            if (ImGui.CollapsingHeader("Property Actions"))
+            if (ToolSections.Header("Property Actions"))
             {
                 PropertiesActionTool.Display();
             }
@@ -118,7 +124,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_Select_Action)
         {
-            if (ImGui.CollapsingHeader("Selection"))
+            if (ToolSections.Header("Selection"))
             {
                 SelectActionTool.Display();
             }
@@ -126,7 +132,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_Visbility_Action)
         {
-            if (ImGui.CollapsingHeader("Visibility"))
+            if (ToolSections.Header("Visibility"))
             {
                 VisibilityActionTool.Display();
             }
@@ -134,7 +140,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_Search)
         {
-            if (ImGui.CollapsingHeader("Search"))
+            if (ToolSections.Header("Search"))
             {
                 ImGui.BeginChild("searchSection", ImGuiChildFlags.Borders);
 
@@ -162,7 +168,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_Validation)
         {
-            if (ImGui.CollapsingHeader("Validation"))
+            if (ToolSections.Header("Validation"))
             {
                 ImGui.BeginChild("validationSection", ImGuiChildFlags.Borders);
 
@@ -193,7 +199,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_DisplayGroups)
         {
-            if (ImGui.CollapsingHeader("Render Groups"))
+            if (ToolSections.Header("Render Groups"))
             {
                 View.DisplayGroupTool.OnToolWindow();
             }
@@ -202,7 +208,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_Animation)
         {
-            if (ImGui.CollapsingHeader("Animation Browser"))
+            if (ToolSections.Header("Animation Browser"))
             {
                 View.MapAnimationTool.OnToolWindow();
             }
@@ -210,7 +216,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_ModelBrowser)
         {
-            if (ImGui.CollapsingHeader("Model Browser"))
+            if (ToolSections.Header("Model Browser"))
             {
                 View.ModelBrowserTool.OnToolWindow();
             }
@@ -218,7 +224,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_Prefab)
         {
-            if (ImGui.CollapsingHeader("Prefabs"))
+            if (ToolSections.Header("Prefabs"))
             {
                 View.PrefabTool.OnToolWindow();
             }
@@ -226,7 +232,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit)
         {
-            if (ImGui.CollapsingHeader("Mass Edit"))
+            if (ToolSections.Header("Mass Edit"))
             {
                 View.MassEditTool.OnToolWindow();
             }
@@ -234,7 +240,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization)
         {
-            if (ImGui.CollapsingHeader("Detection Visualization"))
+            if (ToolSections.Header("Detection Visualization"))
             {
                 View.EnemyAIVisualizationTool.OnToolWindow();
             }
@@ -249,6 +255,8 @@ public class MapToolWindow
         {
             View.ResourceListTool.Display("mapEditor", View.Universe);
         }
+
+        Sections.End();
     }
 
     public void ViewMenu()

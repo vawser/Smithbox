@@ -44,7 +44,7 @@ public class ParamComparisonTool
 
     public void Display()
     {
-        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Comparison_Header")}##dataComparisonHeader"))
+        if (ToolSections.Header($"{LOC.Get("PARAM_Comparison_Header")}##dataComparisonHeader"))
         {
             ImGui.BeginChild("ComparisonSection", ImGuiChildFlags.Borders);
 

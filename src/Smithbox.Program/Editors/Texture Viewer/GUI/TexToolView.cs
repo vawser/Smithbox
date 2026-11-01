@@ -12,6 +12,8 @@ public class TexToolView
 
     public TextureExport TextureExport;
 
+    private ToolSections Sections = new();
+
     public TexToolView(TexEditorView view, ProjectEntry project)
     {
         View = view;
@@ -26,14 +28,20 @@ public class TexToolView
         {
             ViewMenu();
 
+            ToolSections.OptionsMenu();
+
             ImGui.EndMenuBar();
         }
+
+        Sections.Begin();
 
         // Export Texture
         if (CFG.Current.Interface_TextureViewer_Tool_ExportTexture)
         {
             TextureExport.Display();
         }
+
+        Sections.End();
     }
 
     public void ViewMenu()

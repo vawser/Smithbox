@@ -106,7 +106,7 @@ public class ItemGib
             return;
         }
 
-        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Tools_ItemGib_Header")}##itemGibHeader"))
+        if (ToolSections.Header($"{LOC.Get("PARAM_Tools_ItemGib_Header")}##itemGibHeader"))
         {
             ImGui.BeginChild("ItemGibSection", ImGuiChildFlags.Borders);
 

@@ -38,7 +38,7 @@ public class ModelAnimationTool
 
     public void OnToolWindow()
     {
-        if (ImGui.CollapsingHeader($"{LOC.Get("MODEL_Animation_Header")}##modelAnimationHeader"))
+        if (ToolSections.Header($"{LOC.Get("MODEL_Animation_Header")}##modelAnimationHeader"))
         {
             ImGui.BeginChild("ModelAnimationToolSection");
             Display();

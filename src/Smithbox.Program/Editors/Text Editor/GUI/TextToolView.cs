@@ -17,6 +17,8 @@ public class TextToolView
     public TextLanguageSyncTool LanguageSyncTool;
     public TextDataTransferTool DataTransferTool;
 
+    private ToolSections Sections = new();
+
     public TextToolView(TextEditorView view, ProjectEntry project)
     {
         View = view;
@@ -38,13 +40,17 @@ public class TextToolView
         {
             ViewMenu();
 
+            ToolSections.OptionsMenu();
+
             ImGui.EndMenuBar();
         }
+
+        Sections.Begin();
 
         // Entry Creator
         if (CFG.Current.Interface_TextEditor_Tool_EntryCreator)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Header_Text_Entry_Creator")}##textEntryCreatorSection"))
+            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Header_Text_Entry_Creator")}##textEntryCreatorSection"))
             {
                 View.TextEntryCreator.DisplayTool();
             }
@@ -53,7 +59,7 @@ public class TextToolView
         // Data Transfer
         if (CFG.Current.Interface_TextEditor_Tool_DataTransfer)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Header_Data_Transfer")}##dataTransferSection"))
+            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Header_Data_Transfer")}##dataTransferSection"))
             {
                 DataTransferTool.Display();
             }
@@ -62,7 +68,7 @@ public class TextToolView
         // Language Sync
         if (CFG.Current.Interface_TextEditor_Tool_LanguageSync)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Language_Sync")}##languageSyncSection"))
+            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Language_Sync")}##languageSyncSection"))
             {
                 LanguageSyncTool.Display();
             }
@@ -71,7 +77,7 @@ public class TextToolView
         // Global Text Search
         if (CFG.Current.Interface_TextEditor_Tool_TextSearch)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Search")}##globalTextSearchSection"))
+            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Text_Search")}##globalTextSearchSection"))
             {
                 TextSearch.Display();
             }
@@ -80,7 +86,7 @@ public class TextToolView
         // Global Text Replacement
         if (CFG.Current.Interface_TextEditor_Tool_TextReplacement)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Replacement")}##globalTextReplacementSection"))
+            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Text_Replacement")}##globalTextReplacementSection"))
             {
                 TextReplace.Display();
             }
@@ -89,11 +95,13 @@ public class TextToolView
         // Text Merge
         if (CFG.Current.Interface_TextEditor_Tool_TextMerge)
         {
-            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Merge")}##textMergeSection"))
+            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Text_Merge")}##textMergeSection"))
             {
                 TextMerge.Display();
             }
         }
+
+        Sections.End();
     }
     public void ViewMenu()
     {
