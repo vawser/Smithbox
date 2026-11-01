@@ -190,6 +190,22 @@ public class TimeActEditorScreen : EditorScreen
             GUI.Tooltip(LOC.Get("TAE_Editor_Options_Auto_Play_TT"));
             GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Auto_Play_Animation);
 
+            // Event Markers
+            if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Event_Markers")}##eventMarkersToggle"))
+            {
+                CFG.Current.TimeActEditor_Display_Event_Markers = !CFG.Current.TimeActEditor_Display_Event_Markers;
+            }
+            GUI.Tooltip(LOC.Get("TAE_Editor_Options_Event_Markers_TT"));
+            GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Display_Event_Markers);
+
+            // Attack Capsules
+            if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Attack_Capsules")}##attackCapsulesToggle"))
+            {
+                CFG.Current.TimeActEditor_Display_Attack_Capsules = !CFG.Current.TimeActEditor_Display_Attack_Capsules;
+            }
+            GUI.Tooltip(LOC.Get("TAE_Editor_Options_Attack_Capsules_TT"));
+            GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Display_Attack_Capsules);
+
             // Outside Playback
             if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Outside_Playback")}##outsidePlaybackToggle"))
             {

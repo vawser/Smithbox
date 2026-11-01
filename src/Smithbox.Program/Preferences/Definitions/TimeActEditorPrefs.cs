@@ -31,4 +31,25 @@ public class TimeActEditorPrefs
         };
     }
     #endregion
+
+    #region Event Display
+    public static PreferenceItem TimeActEditor_Event_Marker_Size()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.TimeActEditor,
+            Spacer = true,
+
+            Section = SectionCategory.TimeActEditor_Event_Display,
+
+            Title = "PREF_TimeActEditor_Event_Marker_Size",
+            Description = "PREF_TimeActEditor_Event_Marker_Size_TT",
+
+            Draw = () => {
+                ImGui.DragFloat("##inputValue", ref CFG.Current.TimeActEditor_Event_Marker_Size, 0.05f, 0.1f, 10f);
+            }
+        };
+    }
+    #endregion
 }

@@ -84,6 +84,12 @@ public class TimeActPropertiesWindow
 
         ImGui.EndDisabled();
 
+        if (View.Playback.EventDisplay.GetStatus(ev) is { } status)
+        {
+            GUI.Spacer();
+            GUI.WrappedText(status);
+        }
+
         if (ev.Parameters == null)
         {
             GUI.WrappedText(LOC.Get("TAE_PropertiesWindow_No_Template", ev.Type));

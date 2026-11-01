@@ -64,6 +64,9 @@ public class TimeActEditorView : IEditorView
         Universe = new TimeActUniverse(this, project);
         Playback = new TimeActPlayback(this, project);
 
+        // Editing the parameters of an event can change what it displays
+        ViewportActionManager.ActionPerformed += Playback.EventDisplay.Invalidate;
+
         ViewportWindow = new(this, project);
         ViewportFilters = new(this, project);
 

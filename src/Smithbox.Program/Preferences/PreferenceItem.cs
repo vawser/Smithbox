@@ -221,4 +221,7 @@ public enum SectionCategory
     // Time Act Editor
     [Display(Name = "PREF_Category_TimeActEditor_Event_Graph")]
     TimeActEditor_Event_Graph = 1300,
+
+    [Display(Name = "PREF_Category_TimeActEditor_Event_Display")]
+    TimeActEditor_Event_Display = 1301,
 }

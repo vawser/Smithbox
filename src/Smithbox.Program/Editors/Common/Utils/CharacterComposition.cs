@@ -16,7 +16,8 @@ namespace StudioCore.Editors.Common;
 /// </summary>
 /// <param name="Name">The name of the model.</param>
 /// <param name="AttachNode">The bone that holds the model, for parts that aren't skinned to the character.</param>
-public sealed record CharacterPart(string Name, string? AttachNode = null);
+/// <param name="EquipParamId">The EquipParamWeapon row of a weapon, or -1 if there is none.</param>
+public sealed record CharacterPart(string Name, string? AttachNode = null, int EquipParamId = -1);
 
 /// <summary>
 ///     The part models a character is built from.
@@ -189,7 +190,7 @@ public static class CharacterComposition
 
             if (id > 0 && partNames.Contains(name))
             {
-                parts.Add(new CharacterPart(name, node));
+                parts.Add(new CharacterPart(name, node, weapon.ID));
             }
         }
 
@@ -227,7 +228,8 @@ public static class CharacterComposition
             {
                 if (isWeapon)
                 {
-                    parts.Add(new CharacterPart(name, slot is CharacterSlot.RightHand ? RightHandNode : LeftHandNode));
+                    parts.Add(new CharacterPart(name, slot is CharacterSlot.RightHand ? RightHandNode : LeftHandNode,
+                        FindWeaponRow(project, name)));
                 }
                 else
                 {
@@ -279,6 +281,27 @@ public static class CharacterComposition
     private static string[] GetBodyPartNames(string sex)
     {
         return new[] { $"fc_{sex}_0100", $"fc_{sex}_0000", "fc_m_0100", "fc_m_0000" };
+    }
+
+    /// <summary>
+    ///     Whether a part is held in the left hand.
+    /// </summary>
+    public static bool IsLeftHand(CharacterPart part)
+    {
+        return part.AttachNode == LeftHandNode;
+    }
+
+    // A chosen model comes without a row, so use the first weapon that uses the model
+    private static int FindWeaponRow(ProjectEntry project, string partName)
+    {
+        if (project.Handler.ParamData?.PrimaryBank?.Params is not { } bank ||
+            !bank.TryGetValue("EquipParamWeapon", out Param? param) ||
+            !int.TryParse(partName.AsSpan(partName.Length - 4), out var modelId))
+        {
+            return -1;
+        }
+
+        return param.Rows.FirstOrDefault(r => GetValue(r, "equipModelId") == modelId)?.ID ?? -1;
     }
 
     // A chosen model comes without a row, so use a row that wears it to find out what it covers
@@ -453,7 +476,7 @@ public static class CharacterComposition
             ?? GetRow(project, paramName, id - id % 10000);
     }
 
-    private static Param.Row? GetRow(ProjectEntry project, string paramName, int id)
+    public static Param.Row? GetRow(ProjectEntry project, string paramName, int id)
     {
         if (id < 0 || project.Handler.ParamData?.PrimaryBank?.Params is not { } bank)
         {
@@ -464,12 +487,25 @@ public static class CharacterComposition
     }
 
     // Field names differ in case between the games (e.g. NpcPlayerSex and npcPlayerSex)
-    private static bool HasField(Param.Row row, string field)
+    public static bool HasField(Param.Row row, string field)
     {
         return row.Cells.Any(c => c.Def.InternalName.Equals(field, StringComparison.OrdinalIgnoreCase));
     }
 
-    private static int GetValue(Param.Row row, string field)
+    public static float GetFloat(Param.Row row, string field)
+    {
+        foreach (var cell in row.Cells)
+        {
+            if (cell.Def.InternalName.Equals(field, StringComparison.OrdinalIgnoreCase))
+            {
+                return cell.Value is IConvertible value ? value.ToSingle(null) : 0;
+            }
+        }
+
+        return 0;
+    }
+
+    public static int GetValue(Param.Row row, string field)
     {
         foreach (var cell in row.Cells)
         {

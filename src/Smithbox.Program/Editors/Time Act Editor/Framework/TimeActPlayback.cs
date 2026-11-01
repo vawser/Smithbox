@@ -51,12 +51,16 @@ public class TimeActPlayback
     /// </summary>
     public bool IsClipMissing { get; private set; }
 
+    public TimeActEventDisplay EventDisplay { get; }
+
     public TimeActPlayback(TimeActEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
 
         _panel = new AnimationPreviewPanel(project);
+
+        EventDisplay = new TimeActEventDisplay(view, project);
     }
 
     private ModelAnimator? Animator => _target != null ? _panel.GetAnimator(_target) : null;
@@ -110,6 +114,8 @@ public class TimeActPlayback
         {
             AdvanceClock();
         }
+
+        EventDisplay.Update(animator, _time, PlaybackDuration);
     }
 
     private void UpdateAutoPlay()
@@ -237,6 +243,9 @@ public class TimeActPlayback
     {
         if (View.Selection.SelectedAnimation == null)
             return;
+
+        // Attacks of a player go by the weapon, which may have just changed
+        EventDisplay.Invalidate();
 
         // Queued first, as the animations would otherwise be released along with the last thing playing them
         QueueClip();

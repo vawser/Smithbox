@@ -77,6 +77,78 @@
       "Text": "Failed to read time act template: {0}"
     },
     {
+      "Key": "TAE_Editor_Options_Event_Markers",
+      "Text": "Display Effect and Sound Markers"
+    },
+    {
+      "Key": "TAE_Editor_Options_Event_Markers_TT",
+      "Text": "If enabled, a shape appears in the viewport where effects and sounds play, and grows over the event."
+    },
+    {
+      "Key": "TAE_Editor_Options_Attack_Capsules",
+      "Text": "Display Attack and Bullet Capsules"
+    },
+    {
+      "Key": "TAE_Editor_Options_Attack_Capsules_TT",
+      "Text": "If enabled, the hit capsules of attack and bullet events appear in the viewport while they are active."
+    },
+    {
+      "Key": "TAE_EventDisplay_On_Dummy",
+      "Text": "Displayed on dummy poly {0}."
+    },
+    {
+      "Key": "TAE_EventDisplay_On_Body",
+      "Text": "Displayed at the center of the body."
+    },
+    {
+      "Key": "TAE_EventDisplay_Attack",
+      "Text": "BehaviorParam {0} -> AtkParam {1} ({2} hits)"
+    },
+    {
+      "Key": "TAE_EventDisplay_Bullet",
+      "Text": "BehaviorParam {0} -> Bullet {1}"
+    },
+    {
+      "Key": "TAE_EventDisplay_Not_An_Attack",
+      "Text": "BehaviorParam {0} doesn't point to an attack."
+    },
+    {
+      "Key": "TAE_EventDisplay_Not_A_Bullet",
+      "Text": "BehaviorParam {0} doesn't point to a bullet."
+    },
+    {
+      "Key": "TAE_EventDisplay_No_Attack_Row",
+      "Text": "AtkParam {0} doesn't exist."
+    },
+    {
+      "Key": "TAE_EventDisplay_No_Bullet_Row",
+      "Text": "Bullet {0} doesn't exist."
+    },
+    {
+      "Key": "TAE_EventDisplay_No_Params",
+      "Text": "Params aren't loaded, so this event can't be displayed."
+    },
+    {
+      "Key": "TAE_EventDisplay_No_Judge",
+      "Text": "This event has no behavior judge ID."
+    },
+    {
+      "Key": "TAE_EventDisplay_No_Weapon",
+      "Text": "This attack needs a weapon: equip one with the Character Preview tool."
+    },
+    {
+      "Key": "TAE_EventDisplay_No_Behavior",
+      "Text": "No BehaviorParam row was found for behavior judge ID {0}."
+    },
+    {
+      "Key": "TAE_EventDisplay_No_Npc",
+      "Text": "No NpcParam row was found for {0}."
+    },
+    {
+      "Key": "TAE_EventDisplay_Failed_To_Read_Weapon",
+      "Text": "Failed to read the dummy polys of {0}"
+    },
+    {
       "Key": "TAE_Editor_Options_Auto_Play",
       "Text": "Auto-Play Selected Animation"
     },

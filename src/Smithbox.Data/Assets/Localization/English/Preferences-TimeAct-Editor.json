@@ -9,6 +9,18 @@
       "Text": "Event Graph"
     },
     {
+      "Key": "PREF_Category_TimeActEditor_Event_Display",
+      "Text": "Event Display"
+    },
+    {
+      "Key": "PREF_TimeActEditor_Event_Marker_Size",
+      "Text": "Effect and Sound Marker Size"
+    },
+    {
+      "Key": "PREF_TimeActEditor_Event_Marker_Size_TT",
+      "Text": "Multiplies the size of the effect and sound markers in the viewport. Attacks and bullets always display at their true size."
+    },
+    {
       "Key": "PREF_TimeActEditor_Graph_Frame_Width",
       "Text": "Frame Width"
     },
