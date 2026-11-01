@@ -33,6 +33,7 @@ public class ParamToolMenu
     public ParamPinGroups PinGroups;
     public ParamDeltaPatcher DeltaPatcher;
     public ParamRowNameManipulationTool RowNameManipulationTool;
+    public ProjectileSimulatorTool ProjectileSimulator;
 
     public ParamToolMenu(ParamEditorView view, ProjectEntry project)
     {
@@ -59,6 +60,7 @@ public class ParamToolMenu
         PinGroups = new(view, project);
         DeltaPatcher = new(view, project);
         RowNameManipulationTool = new(view, project);
+        ProjectileSimulator = new(view, project);
     }
 
     public void DisplayMenu()
@@ -99,6 +101,13 @@ public class ParamToolMenu
 
                 ImGui.EndMenu();
             }
+
+            // Projectile Simulator
+            if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Projectile_Simulator_Window")}##projectileSimulatorMenuItem"))
+            {
+                CFG.Current.ParamEditor_Show_Projectile_Simulator_Window = !CFG.Current.ParamEditor_Show_Projectile_Simulator_Window;
+            }
+            GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Projectile_Simulator_Window);
 
             ImGui.EndMenu();
         }
@@ -208,6 +217,13 @@ public class ParamToolMenu
                     CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation = !CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation;
                 }
                 GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation);
+
+                // Projectile Simulator
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Projectile_Simulator")}##viewToggle_ProjectileSimulator"))
+                {
+                    CFG.Current.ParamEditor_Show_Tool_Projectile_Simulator = !CFG.Current.ParamEditor_Show_Tool_Projectile_Simulator;
+                }
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Projectile_Simulator);
 
                 ImGui.EndMenu();
             }
@@ -350,6 +366,18 @@ public class ParamToolMenu
                 ImGui.BeginChild("RowNameManipToolSection", ImGuiChildFlags.Borders);
 
                 RowNameManipulationTool.Display();
+
+                ImGui.EndChild();
+            }
+        }
+
+        if (CFG.Current.ParamEditor_Show_Tool_Projectile_Simulator)
+        {
+            if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Tools_Header_Projectile_Simulator")}##projectileSimulatorMenuHeader"))
+            {
+                ImGui.BeginChild("ProjectileSimulatorToolSection", ImGuiChildFlags.Borders);
+
+                ProjectileSimulator.Display();
 
                 ImGui.EndChild();
             }

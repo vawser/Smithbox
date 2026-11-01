@@ -1,0 +1,316 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Tools_View_Projectile_Simulator",
+      "Text": "Projectile Simulator"
+    },
+    {
+      "Key": "PARAM_Tools_View_Projectile_Simulator_Window",
+      "Text": "Projectile Simulator Window"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Projectile_Simulator",
+      "Text": "Projectile Simulator"
+    },
+    {
+      "Key": "PARAM_Window_Projectile_Simulator",
+      "Text": "Projectile Simulator"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Header_Bullet",
+      "Text": "Bullet"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Header_Bullet_TT",
+      "Text": "What is being simulated. Select a row in a bullet or magic param to change it."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_No_Bullet",
+      "Text": "Select a row in a bullet or magic param to simulate it."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Spell_Bullets",
+      "Text": "Bullets fired together:"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Slot_Charged",
+      "Text": "Charged"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Slot_None",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Spell_No_Bullets",
+      "Text": "This row has no bullets."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Enemy_Attacks",
+      "Text": "Prefer Enemy Attacks"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Enemy_Attacks_TT",
+      "Text": "Some attack IDs exist for both players and enemies. This looks in AtkParam_Npc first, rather than AtkParam_Pc."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Attack",
+      "Text": "Attack {0}, reach {1:F2} m."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Damage_Total",
+      "Text": "{0} hit(s): {1}"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Damage_Attacker",
+      "Text": "Attacker's power"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Damage_None",
+      "Text": "None"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Damage_Physical",
+      "Text": "Phys"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Damage_Magic",
+      "Text": "Magic"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Damage_Fire",
+      "Text": "Fire"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Damage_Lightning",
+      "Text": "Lightning"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Damage_Dark",
+      "Text": "Dark"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Damage_Stamina",
+      "Text": "Stamina"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Unsupported_Layout",
+      "Text": "The fields of this param aren't known for this game, so it can't be simulated."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Header_Setup",
+      "Text": "Setup"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Launch_Height",
+      "Text": "Launch Height"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Cast_Orientation",
+      "Text": "Cast Orientation"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Cast_Orientation_TT",
+      "Text": "The way that the first bullets are pointing. In-game this comes from the casting animation rather than the row, and all of a bullet's angles are relative to it."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Orientation_Forward",
+      "Text": "Forward"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Orientation_Down",
+      "Text": "Down"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Orientation_Up",
+      "Text": "Up"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Reroll",
+      "Text": "Reroll Random Values"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Reroll_TT",
+      "Text": "Bullets can vary their aim, life and creation timing. This tries another set of random values."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Ground_Collision",
+      "Text": "Ground Collision"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Ground_Collision_TT",
+      "Text": "Bullets that come down land on the ground. Otherwise they keep falling through it."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Simulate_Wall",
+      "Text": "Wall"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Simulate_Wall_TT",
+      "Text": "Places a wall in the line of fire for bullets to hit."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Simulate_Target",
+      "Text": "Target"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Simulate_Target_TT",
+      "Text": "Places a target for homing bullets to turn towards. Bullets that reach it count as hitting a character. The shooter still fires straight ahead."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Target_Right",
+      "Text": "Target Right"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Target_Height",
+      "Text": "Target Height"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Target_Forward",
+      "Text": "Target Forward"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Target_Radius",
+      "Text": "Target Radius"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Wall_Distance",
+      "Text": "Wall Distance"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Wall_Width",
+      "Text": "Wall Width"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Wall_Height",
+      "Text": "Wall Height"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Surface_TT",
+      "Text": "What the ground and wall are made of. This decides whether a bullet passes through, and which chain conditions are met."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Surface_Map",
+      "Text": "Map"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Surface_Water",
+      "Text": "Water"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Header_Warnings",
+      "Text": "Notes"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Header_Warnings_TT",
+      "Text": "Ways in which this simulation differs from what happens in-game."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Warning_Projectile_Limit",
+      "Text": "Stopped creating bullets at the limit of {0}."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Warning_Time_Limit",
+      "Text": "Stopped at the limit of {0} seconds."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Warning_Missing_Row",
+      "Text": "A bullet refers to a row that doesn't exist, so that bullet was skipped."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Warning_Self_Reference",
+      "Text": "A bullet refers to itself, which was skipped."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Warning_Undocumented_Condition",
+      "Text": "A bullet uses an undocumented launch condition, which was treated as Always."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Warning_Absorbed_Condition",
+      "Text": "A bullet only chains when absorbing another bullet, which isn't simulated."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Ignored_Homing",
+      "Text": "Homing needs a target, so this bullet flies straight."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Ignored_Emit_Position",
+      "Text": "Bullets that are created away from their source start from their source here."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Ignored_Following",
+      "Text": "Following the shooter isn't simulated."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Header_Projectiles",
+      "Text": "Projectiles"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Header_Projectiles_TT",
+      "Text": "Every bullet in the simulation in the order they appear, with the time they appear at. Each generation of bullets has a color of its own."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Origin_Root",
+      "Text": "Fired directly."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Origin_Chain",
+      "Text": "Chained from {0}."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Origin_Interval",
+      "Text": "Emitted by {0}."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_End_Hit_Wall",
+      "Text": "Hit the wall at {0:F2}s."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_End_Hit_Ground",
+      "Text": "Hit the ground at {0:F2}s."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_End_Hit_Target",
+      "Text": "Hit the target at {0:F2}s."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_End_Expired",
+      "Text": "Expired at {0:F2}s."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_End_Time_Limit",
+      "Text": "Still active when the simulation stopped at {0:F2}s."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Chain_Withheld",
+      "Text": "Its launch condition wasn't met, so it didn't chain."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Viewport_TT",
+      "Text": "Hold right mouse to look around. While a mouse button is held, the viewport movement keys fly the camera, Shift and Ctrl change its speed, and scrolling adjusts that speed."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Play",
+      "Text": "Play"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Pause",
+      "Text": "Pause"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Stop",
+      "Text": "Stop"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Frame",
+      "Text": "Frame"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Loop",
+      "Text": "Loop"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Speed",
+      "Text": "Speed"
+    }
+  ]
+}

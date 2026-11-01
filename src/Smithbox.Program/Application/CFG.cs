@@ -820,6 +820,8 @@ public class CFG
     public bool ParamEditor_Show_Tool_Pin_Groups = true;
     public bool ParamEditor_Show_Tool_Param_Delta_Patcher = true;
     public bool ParamEditor_Show_Tool_Row_Name_Manipulation = true;
+    public bool ParamEditor_Show_Tool_Projectile_Simulator = true;
+    public bool ParamEditor_Show_Projectile_Simulator_Window = false;
 
     // Saving
     public bool Project_Automatic_Save_Include_Param_Editor = true;

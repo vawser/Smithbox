@@ -199,6 +199,24 @@ public class ParamEditorView : IEditorView
             ImGui.End();
         }
 
+        // Projectile Simulator
+        if (CFG.Current.ParamEditor_Show_Projectile_Simulator_Window)
+        {
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
+            if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Projectile_Simulator")}###paramEditor_ProjectileSimulator_{viewIndex}", GUI.GetInnerWindowFlags()))
+            {
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.ParamEditor_Tools);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                ToolMenu.ProjectileSimulator.Display();
+            }
+
+            ImGui.End();
+        }
     }
 
     public ParamData GetParamData()
