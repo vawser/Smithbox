@@ -146,7 +146,7 @@ namespace Veldrid
 
         public void RecycleBlock(Block block)
         {
-            if (block.Size != _blockSize || _blocks.Count >= MaxBlocks)
+            if (block?.Size != _blockSize || _blocks.Count >= MaxBlocks)
             {
                 block.Dispose();
                 return;

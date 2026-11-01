@@ -19,8 +19,14 @@
 
 - Apply overhaul done to Selection Groups to Prefabs, allowing for quick and simple creation and usage.
 
+- Support MPW (MultiPlayerWall) rendering (and edit?)
+
 #----------------------------------------------------
 # Map Editor Bugs
 #----------------------------------------------------
 - fix ER NVA so saves are BP correct (currently the Write side is quite off)
 - DS3 navmeshes position seems off in some maps (Undead Settlement) 
+
+- Formats to fix:
+ - ER NVA
+ - DB MSB

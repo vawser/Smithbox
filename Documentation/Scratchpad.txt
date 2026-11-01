@@ -6,5 +6,4 @@
   Gparam Editor
   Map Editor
   
-# Map/Model Editor
-
+Check Projectile Simulator for each project type

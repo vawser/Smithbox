@@ -35,6 +35,20 @@ public enum BulletChildPosture
 }
 
 /// <summary>
+///     Where a bullet starts. The values match EmittePosType.
+/// </summary>
+public enum BulletEmitPosition
+{
+    Source = 0,
+    AroundSource = 1,
+    AboveSource = 2,
+    Target = 3,
+    AroundTarget = 4,
+    Parent = 5,
+    BehindTarget = 6
+}
+
+/// <summary>
 ///     How a spell slot gets used. The values match consumeType.
 /// </summary>
 public enum SpellSlotType
@@ -58,7 +72,8 @@ public enum BulletIgnoredBehavior
     None = 0,
     Homing = 1,
     EmitPosition = 2,
-    Following = 4
+    Following = 4,
+    Arc = 8
 }
 
 /// <summary>
@@ -138,6 +153,20 @@ public sealed class BulletDefinition
     public float IntervalWait { get; init; }
     public int IntervalLimit { get; init; }
 
+    public bool FiresBackward { get; init; }
+
+    // Every row that fires backward also has these, which lob it at the target when there is one
+    public float HowitzerAngleMin { get; init; }
+    public float HowitzerAngleMax { get; init; }
+    public float HowitzerSpeedMin { get; init; }
+    public float HowitzerSpeedMax { get; init; }
+
+    public BulletEmitPosition EmitPosition { get; init; }
+
+    // How far around its source or target a bullet can start. Older games have no field for this,
+    // as they use a fixed distance
+    public float? EmitRadius { get; init; }
+
     public BulletChildPosture ChildPosture { get; init; }
     public bool ChildAimedFromOwner { get; init; }
     public bool ChildInheritsSpeed { get; init; }
@@ -207,7 +236,9 @@ public sealed class BulletDefinition
             ignored |= BulletIgnoredBehavior.Homing;
         }
 
-        if (Int(row, 0, "EmittePosType") != 0)
+        var emitPosition = (BulletEmitPosition)Int(row, 0, "EmittePosType");
+
+        if (emitPosition is BulletEmitPosition.Target or BulletEmitPosition.AroundTarget or BulletEmitPosition.BehindTarget)
         {
             ignored |= BulletIgnoredBehavior.EmitPosition;
         }
@@ -215,6 +246,11 @@ public sealed class BulletDefinition
         if (Int(row, 0, "FollowType") != 0)
         {
             ignored |= BulletIgnoredBehavior.Following;
+        }
+
+        if (Int(row, 0, "ballisticCalcType") == 1)
+        {
+            ignored |= BulletIgnoredBehavior.Arc;
         }
 
         var attack = Int(row, -1, "atkId_Bullet", "atkBullet_Id");
@@ -274,7 +310,16 @@ public sealed class BulletDefinition
             IntervalWait = Float(row, 0, "intervalCreateWaitTime"),
             IntervalLimit = Int(row, 0, "intervalCreateBulletMax"),
 
-            ChildPosture = (BulletChildPosture)Int(row, 0, "sfxPostureType"),
+            FiresBackward = Int(row, 0, "ballisticCalcType") == 1,
+            HowitzerAngleMin = Float(row, 0, "howitzerShootAngleXMin"),
+            HowitzerAngleMax = Float(row, 0, "howitzerShootAngleXMax"),
+            HowitzerSpeedMin = Float(row, 0, "howitzerInitMinVelocity"),
+            HowitzerSpeedMax = Float(row, 0, "howitzerInitMaxVelocity"),
+            EmitPosition = emitPosition,
+            EmitRadius = row["randomCreateRadius"] != null ? Float(row, 0, "randomCreateRadius") : null,
+
+            // Games without this field measure from the horizontal, which is how shootAngleXZ is described
+            ChildPosture = (BulletChildPosture)Int(row, (int)BulletChildPosture.Horizontal, "sfxPostureType"),
             ChildAimedFromOwner = Int(row, 0, "isOwnerOverrideInitAngle") != 0,
             ChildInheritsSpeed = Int(row, 0, "isInheritSpeedToChild", "IsInheritSpeedToChild") != 0,
 

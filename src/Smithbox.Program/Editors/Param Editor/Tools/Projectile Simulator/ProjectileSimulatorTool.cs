@@ -50,6 +50,10 @@ public class ProjectileSimulatorTool
             CFG cfg = CFG.Current;
 
             return new SimulationSettings(cfg.ParamEditor_ProjectileSimulator_LaunchHeight,
+                cfg.ParamEditor_ProjectileSimulator_EmitHeight,
+                cfg.ParamEditor_ProjectileSimulator_FixedEmitRadius,
+                cfg.ParamEditor_ProjectileSimulator_BehindTargetHeight,
+                cfg.ParamEditor_ProjectileSimulator_BehindTargetDistance,
                 cfg.ParamEditor_ProjectileSimulator_Orientation,
                 cfg.ParamEditor_ProjectileSimulator_GroundCollision,
                 cfg.ParamEditor_ProjectileSimulator_SimulateWall,
@@ -349,6 +353,20 @@ public class ProjectileSimulatorTool
             $"{LOC.Get("PARAM_ProjectileSimulator_Launch_Height")}: %.1f m");
 
         ImGui.SetNextItemWidth(-1);
+        changed |= ImGui.SliderFloat("##emitHeight", ref CFG.Current.ParamEditor_ProjectileSimulator_EmitHeight, 0, 5,
+            $"{LOC.Get("PARAM_ProjectileSimulator_Emit_Height")}: %.1f m");
+        GUI.Tooltip(LOC.Get("PARAM_ProjectileSimulator_Emit_Height_TT"));
+
+        // Later games have a field for this
+        if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB)
+        {
+            ImGui.SetNextItemWidth(-1);
+            changed |= ImGui.SliderFloat("##fixedEmitRadius", ref CFG.Current.ParamEditor_ProjectileSimulator_FixedEmitRadius, 0, 30,
+                $"{LOC.Get("PARAM_ProjectileSimulator_Fixed_Emit_Radius")}: %.1f m");
+            GUI.Tooltip(LOC.Get("PARAM_ProjectileSimulator_Fixed_Emit_Radius_TT"));
+        }
+
+        ImGui.SetNextItemWidth(-1);
 
         if (ImGui.BeginCombo("##castOrientation", $"{LOC.Get("PARAM_ProjectileSimulator_Cast_Orientation")}: {GetOrientationName(CFG.Current.ParamEditor_ProjectileSimulator_Orientation)}"))
         {
@@ -438,6 +456,16 @@ public class ProjectileSimulatorTool
                 $"{LOC.Get("PARAM_ProjectileSimulator_Target_Radius")}: %.1f m");
 
             changed |= DisplayTargetMotion();
+
+            ImGui.SetNextItemWidth(-1);
+            changed |= ImGui.SliderFloat("##behindTargetHeight", ref CFG.Current.ParamEditor_ProjectileSimulator_BehindTargetHeight, 0, 30,
+                $"{LOC.Get("PARAM_ProjectileSimulator_Behind_Target_Height")}: %.1f m");
+            GUI.Tooltip(LOC.Get("PARAM_ProjectileSimulator_Behind_Target_TT"));
+
+            ImGui.SetNextItemWidth(-1);
+            changed |= ImGui.SliderFloat("##behindTargetDistance", ref CFG.Current.ParamEditor_ProjectileSimulator_BehindTargetDistance, 0, 30,
+                $"{LOC.Get("PARAM_ProjectileSimulator_Behind_Target_Distance")}: %.1f m");
+            GUI.Tooltip(LOC.Get("PARAM_ProjectileSimulator_Behind_Target_TT"));
         }
 
         if (changed)
@@ -502,6 +530,7 @@ public class ProjectileSimulatorTool
         DisplayIgnored(BulletIgnoredBehavior.Homing, "PARAM_ProjectileSimulator_Ignored_Homing");
         DisplayIgnored(BulletIgnoredBehavior.EmitPosition, "PARAM_ProjectileSimulator_Ignored_Emit_Position");
         DisplayIgnored(BulletIgnoredBehavior.Following, "PARAM_ProjectileSimulator_Ignored_Following");
+        DisplayIgnored(BulletIgnoredBehavior.Arc, "PARAM_ProjectileSimulator_Ignored_Arc");
 
         GUI.Spacer();
     }

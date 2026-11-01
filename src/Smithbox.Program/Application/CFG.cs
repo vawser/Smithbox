@@ -825,6 +825,10 @@ public class CFG
 
     // Projectile Simulator
     public float ParamEditor_ProjectileSimulator_LaunchHeight = 1.5f;
+    public float ParamEditor_ProjectileSimulator_EmitHeight = 1.0f;
+    public float ParamEditor_ProjectileSimulator_FixedEmitRadius = 6.0f;
+    public float ParamEditor_ProjectileSimulator_BehindTargetHeight = 8.0f;
+    public float ParamEditor_ProjectileSimulator_BehindTargetDistance = 2.0f;
     public CastOrientation ParamEditor_ProjectileSimulator_Orientation = CastOrientation.Forward;
     public bool ParamEditor_ProjectileSimulator_GroundCollision = true;
     public bool ParamEditor_ProjectileSimulator_SimulateWall = false;

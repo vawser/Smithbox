@@ -109,6 +109,34 @@
       "Text": "Launch Height"
     },
     {
+      "Key": "PARAM_ProjectileSimulator_Emit_Height",
+      "Text": "Emit Height"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Emit_Height_TT",
+      "Text": "How far above their source that bullets with an emit position of 'Higher elevation' start. The game doesn't say how much this is, and it sets the spacing of chains that hop along the ground."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Fixed_Emit_Radius",
+      "Text": "Emit Radius"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Fixed_Emit_Radius_TT",
+      "Text": "How far around the cast point that storm spells can emit. This game uses a fixed distance that isn't in its params, so this is an estimate."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Behind_Target_Height",
+      "Text": "Behind Target Height"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Behind_Target_Distance",
+      "Text": "Behind Target Distance"
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Behind_Target_TT",
+      "Text": "Where bullets with an emit position of 'Above and behind target' start. The params don't say how far this is, so this is an estimate."
+    },
+    {
       "Key": "PARAM_ProjectileSimulator_Cast_Orientation",
       "Text": "Cast Orientation"
     },
@@ -270,11 +298,15 @@
     },
     {
       "Key": "PARAM_ProjectileSimulator_Ignored_Emit_Position",
-      "Text": "Bullets that are created away from their source start from their source here."
+      "Text": "Some bullets start by the target, so these start from their source without one."
     },
     {
       "Key": "PARAM_ProjectileSimulator_Ignored_Following",
       "Text": "Following the shooter isn't simulated."
+    },
+    {
+      "Key": "PARAM_ProjectileSimulator_Ignored_Arc",
+      "Text": "This bullet lobs itself at a target, so without one it fires backward instead."
     },
     {
       "Key": "PARAM_ProjectileSimulator_Header_Projectiles",

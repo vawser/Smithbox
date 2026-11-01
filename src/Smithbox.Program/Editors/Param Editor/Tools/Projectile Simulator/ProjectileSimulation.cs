@@ -67,6 +67,10 @@ public enum SimulationWarning
 }
 
 /// <param name="LaunchHeight">The height above the ground that the first bullet is fired from.</param>
+/// <param name="EmitHeight">How far above their source that bullets set to start above it begin.</param>
+/// <param name="FixedEmitRadius">How far around their source bullets can start, in games with no field for it.</param>
+/// <param name="BehindTargetHeight">How far above the target that bullets set to start behind it begin.</param>
+/// <param name="BehindTargetDistance">How far past the target that bullets set to start behind it begin.</param>
 /// <param name="Orientation">The way that the first bullet is pointing.</param>
 /// <param name="GroundCollision">Whether bullets land on the ground, rather than falling through it.</param>
 /// <param name="SimulateWall">Whether there is a wall.</param>
@@ -83,6 +87,10 @@ public enum SimulationWarning
 /// <param name="Seed">Rows can vary their timing and aim, so this keeps a simulation repeatable.</param>
 public sealed record SimulationSettings(
     float LaunchHeight,
+    float EmitHeight,
+    float FixedEmitRadius,
+    float BehindTargetHeight,
+    float BehindTargetDistance,
     CastOrientation Orientation,
     bool GroundCollision,
     bool SimulateWall,
@@ -230,6 +238,8 @@ public sealed class ProjectileSimulation
 
     private const float Epsilon = 0.0001f;
     private const float VerticalLimit = 0.999f;
+    private const float ArcAngleStep = 0.5f;
+    private const float MinArcCosine = 0.01f;
 
     // A bullet stopped by the target sits at the very edge of its reach
     private const float ReachTolerance = 0.01f;
@@ -382,7 +392,10 @@ public sealed class ProjectileSimulation
     private void Fire(BulletDefinition definition, float time, Vector3 position, Vector3 forward, float? speed,
         ProjectileOrigin origin, int parent, int generation)
     {
-        Result.Ignored |= Settings.SimulateTarget ? definition.Ignored & ~BulletIgnoredBehavior.Homing : definition.Ignored;
+        // These are only out of reach for want of a target
+        Result.Ignored |= Settings.SimulateTarget
+            ? definition.Ignored & ~(BulletIgnoredBehavior.Homing | BulletIgnoredBehavior.EmitPosition | BulletIgnoredBehavior.Arc)
+            : definition.Ignored;
 
         for (var volley = 0; volley < definition.VolleyCount; volley++)
         {
@@ -399,12 +412,163 @@ public sealed class ProjectileSimulation
                 var angleX = definition.AngleX + volley * definition.VolleyAngleX + shot * definition.ShotAngleX +
                              Random(definition.AngleXRandom);
 
-                Vector3 direction = RotateFrom(forward, float.DegreesToRadians(angleY), float.DegreesToRadians(angleX));
+                var due = time + volley * definition.VolleyInterval;
 
-                Pending.Enqueue(new PendingShot(definition, position, direction, speed, origin, parent, generation),
-                    time + volley * definition.VolleyInterval);
+                Vector3 start = GetStart(definition, position, forward, due);
+                Vector3 facing = definition.EmitPosition is BulletEmitPosition.BehindTarget
+                    ? GetFacingTarget(start, forward, due)
+                    : forward;
+
+                float? shotSpeed = speed;
+
+                if (definition.FiresBackward && Settings.SimulateTarget &&
+                    TrySolveArc(definition, start, due, out Vector3 aim, out var arcAngle, out var arcSpeed))
+                {
+                    facing = aim;
+                    angleX += arcAngle - definition.AngleX;
+                    shotSpeed = arcSpeed;
+                }
+                else if (definition.FiresBackward)
+                {
+                    // Turning around keeps it pointing up or down, which negating the whole direction wouldn't
+                    facing = new Vector3(-facing.X, facing.Y, -facing.Z);
+                }
+
+                Vector3 direction = RotateFrom(facing, float.DegreesToRadians(angleY), float.DegreesToRadians(angleX));
+
+                Pending.Enqueue(new PendingShot(definition, start, direction, shotSpeed, origin, parent, generation), due);
             }
         }
+    }
+
+    /// <summary>
+    ///     Works out where a bullet begins. Anything that goes by the target falls back on
+    ///     the source when there isn't one, which is also what the game does.
+    /// </summary>
+    private Vector3 GetStart(BulletDefinition definition, Vector3 source, Vector3 forward, float time)
+    {
+        Vector3 target = Settings.SimulateTarget ? Settings.GetTargetPosition(time) : source;
+
+        switch (definition.EmitPosition)
+        {
+            case BulletEmitPosition.AroundSource:
+                return GetPointAround(source, definition) with { Y = 0 };
+
+            case BulletEmitPosition.AboveSource:
+                return source + Vector3.UnitY * Settings.EmitHeight;
+
+            case BulletEmitPosition.Target:
+                return target;
+
+            case BulletEmitPosition.AroundTarget:
+                return GetPointAround(target, definition);
+
+            case BulletEmitPosition.BehindTarget:
+                Vector3 away = Settings.SimulateTarget ? Flatten(target - source, forward) : -Flatten(forward, Vector3.UnitZ);
+
+                return target + Vector3.UnitY * Settings.BehindTargetHeight + away * Settings.BehindTargetDistance;
+
+            default:
+                return source;
+        }
+    }
+
+    /// <summary>
+    ///     Finds the angle and speed that land a lobbed bullet on the target, staying inside the limits of the row.
+    ///     The angle closest to the row's own is used, and a target out of reach gets the bullet's best effort.
+    /// </summary>
+    /// <param name="aim">The level direction towards the target.</param>
+    /// <param name="angle">The elevation in degrees.</param>
+    /// <param name="speed">The speed to fire at.</param>
+    private bool TrySolveArc(BulletDefinition definition, Vector3 start, float time, out Vector3 aim, out float angle,
+        out float speed)
+    {
+        Vector3 offset = Settings.GetTargetPosition(time) - start;
+        var distance = (offset with { Y = 0 }).Length();
+
+        aim = default;
+        angle = 0;
+        speed = 0;
+
+        if (distance < Epsilon)
+        {
+            return false;
+        }
+
+        aim = (offset with { Y = 0 }) / distance;
+
+        var minAngle = Math.Min(definition.HowitzerAngleMin, definition.HowitzerAngleMax);
+        var maxAngle = Math.Max(definition.HowitzerAngleMin, definition.HowitzerAngleMax);
+
+        // Some rows leave these empty, which leaves the bullet with the speed it has
+        var hasSpeedLimits = definition.HowitzerSpeedMax > 0;
+        var minSpeed = hasSpeedLimits ? definition.HowitzerSpeedMin : definition.InitialSpeed;
+        var maxSpeed = hasSpeedLimits ? definition.HowitzerSpeedMax : definition.InitialSpeed;
+
+        var preferred = Math.Clamp(definition.AngleX, minAngle, maxAngle);
+
+        angle = preferred;
+        speed = Math.Clamp(GetArcSpeed(definition, preferred, distance, offset.Y), minSpeed, maxSpeed);
+
+        var closest = float.MaxValue;
+
+        for (var candidate = minAngle; candidate <= maxAngle; candidate += ArcAngleStep)
+        {
+            var needed = GetArcSpeed(definition, candidate, distance, offset.Y);
+
+            if (needed >= minSpeed && needed <= maxSpeed && MathF.Abs(candidate - preferred) < closest)
+            {
+                closest = MathF.Abs(candidate - preferred);
+                angle = candidate;
+                speed = needed;
+            }
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    ///     The speed needed to land on a point at an angle, or a very large number if that angle can't reach it.
+    /// </summary>
+    private static float GetArcSpeed(BulletDefinition definition, float angle, float distance, float height)
+    {
+        var radians = float.DegreesToRadians(angle);
+        var cosine = MathF.Cos(radians);
+        var climb = distance * MathF.Tan(radians) - height;
+
+        if (cosine < MinArcCosine || climb <= 0 || definition.GravityInRange <= 0)
+        {
+            return float.MaxValue;
+        }
+
+        return MathF.Sqrt(definition.GravityInRange * distance * distance / (2 * cosine * cosine * climb));
+    }
+
+    /// <summary>
+    ///     Picks a point around a position, spread evenly over the whole circle.
+    /// </summary>
+    private Vector3 GetPointAround(Vector3 position, BulletDefinition definition)
+    {
+        var radius = definition.EmitRadius ?? Settings.FixedEmitRadius;
+        var distance = radius * MathF.Sqrt(Rng.NextSingle());
+        var angle = Rng.NextSingle() * MathF.Tau;
+
+        return position + new Vector3(MathF.Sin(angle), 0, MathF.Cos(angle)) * distance;
+    }
+
+    /// <summary>
+    ///     The way that a bullet behind the target faces, so that its angles carry it back towards the target.
+    /// </summary>
+    private Vector3 GetFacingTarget(Vector3 start, Vector3 forward, float time)
+    {
+        return Settings.SimulateTarget ? Flatten(Settings.GetTargetPosition(time) - start, forward) : forward;
+    }
+
+    private static Vector3 Flatten(Vector3 direction, Vector3 fallback)
+    {
+        Vector3 flat = direction with { Y = 0 };
+
+        return flat.LengthSquared() > Epsilon ? Vector3.Normalize(flat) : fallback;
     }
 
     private void SpawnDueShots()
@@ -517,7 +681,11 @@ public sealed class ProjectileSimulation
             DealDamage(shot, radius);
 
             EndTrack(shot, impact.End);
-            Chain(shot, impact);
+
+            // The bullet stops with its edge touching, which leaves what it hit that far from its center
+            var reach = impact.End is ProjectileEnd.HitTarget ? GetReach(definition, radius) : radius;
+
+            Chain(shot, impact, contact - impact.Normal * reach);
 
             return false;
         }
@@ -534,7 +702,7 @@ public sealed class ProjectileSimulation
             shot.Track.Samples.Add(new TrackSample(Time, next));
 
             EndTrack(shot, ProjectileEnd.Expired);
-            Chain(shot, null);
+            Chain(shot, null, null);
 
             return false;
         }
@@ -598,7 +766,13 @@ public sealed class ProjectileSimulation
         Vector3 toTarget = Target + shot.AimOffset - shot.Position;
         var distance = toTarget.Length();
 
-        if (distance < Epsilon || distance <= definition.HomingStopRange ||
+        // A bullet can start on top of the target, which leaves nothing to aim at for now
+        if (distance < Epsilon)
+        {
+            return;
+        }
+
+        if (distance <= definition.HomingStopRange ||
             definition.HomingEndDistance > 0 && shot.Travelled >= definition.HomingEndDistance)
         {
             shot.HomingStopped = true;
@@ -647,11 +821,11 @@ public sealed class ProjectileSimulation
             shot.IntervalCount++;
             shot.NextInterval += Math.Max(GetInterval(definition), StepTime);
 
-            FireChildren(shot, definition.IntervalChildren, Time, ProjectileOrigin.Interval, null);
+            FireChildren(shot, definition.IntervalChildren, Time, ProjectileOrigin.Interval, null, null);
         }
     }
 
-    private void Chain(ActiveShot shot, Impact? impact)
+    private void Chain(ActiveShot shot, Impact? impact, Vector3? hitLocation)
     {
         BulletDefinition definition = shot.Definition;
 
@@ -676,11 +850,11 @@ public sealed class ProjectileSimulation
         }
 
         FireChildren(shot, definition.ChainChildren, Time + (impact != null ? definition.ChainDelay : 0),
-            ProjectileOrigin.Chain, impact?.Normal);
+            ProjectileOrigin.Chain, impact?.Normal, hitLocation);
     }
 
     private void FireChildren(ActiveShot shot, IReadOnlyList<int> children, float time, ProjectileOrigin origin,
-        Vector3? impactNormal)
+        Vector3? impactNormal, Vector3? hitLocation)
     {
         BulletDefinition definition = shot.Definition;
 
@@ -701,7 +875,11 @@ public sealed class ProjectileSimulation
                 continue;
             }
 
-            Fire(child, time, shot.Position, GetChildForward(shot, child, impactNormal),
+            Vector3 source = child.EmitPosition is BulletEmitPosition.Parent
+                ? shot.Position
+                : hitLocation ?? shot.Position;
+
+            Fire(child, time, source, GetChildForward(shot, child, impactNormal),
                 definition.ChildInheritsSpeed ? shot.Speed : null, origin, shot.Index, shot.Track.Generation + 1);
         }
     }
