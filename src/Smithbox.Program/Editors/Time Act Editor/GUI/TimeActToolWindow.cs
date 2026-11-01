@@ -38,6 +38,13 @@ public class TimeActToolWindow
             View.CharacterPreview.OnToolWindow();
         }
 
+        // Player characters are dressed by the Character Preview, as their masks come from what they wear
+        if (CFG.Current.Interface_TimeActEditor_Tool_ModelMaskToggler &&
+            !CharacterComposition.IsComposite(View.Selection.SelectedTimeActModelWrapper?.Name))
+        {
+            View.MaskToggler.OnToolWindow();
+        }
+
         if (CFG.Current.Interface_TimeActEditor_Tool_ResourceMonitor)
         {
             View.ResourceListTool.Display("timeActEditor", View.Universe);
@@ -57,6 +64,13 @@ public class TimeActToolWindow
                 CFG.Current.Interface_TimeActEditor_Tool_CharacterPreview = !CFG.Current.Interface_TimeActEditor_Tool_CharacterPreview;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_CharacterPreview);
+
+            // Model Mask Toggler
+            if (ImGui.MenuItem($"{LOC.Get("TAE_ToolWindow_View_Toggle_Mask_Toggler")}##maskTogglerToggle"))
+            {
+                CFG.Current.Interface_TimeActEditor_Tool_ModelMaskToggler = !CFG.Current.Interface_TimeActEditor_Tool_ModelMaskToggler;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_ModelMaskToggler);
 
             // Resource Monitor
             if (ImGui.MenuItem($"{LOC.Get("TAE_ToolWindow_View_Toggle_Resource_Monitor")}##resourceMonitorToggle"))

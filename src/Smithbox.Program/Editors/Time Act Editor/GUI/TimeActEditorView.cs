@@ -45,6 +45,7 @@ public class TimeActEditorView : IEditorView
     public ViewportGridTool GridTool;
     public ResourceListTool ResourceListTool;
     public ModelCharacterPreview CharacterPreview;
+    public ModelMaskToggler MaskToggler;
 
     public TimeActEditorView(TimeActEditorScreen editor, ProjectEntry project, int imguiId)
     {
@@ -81,6 +82,16 @@ public class TimeActEditorView : IEditorView
         GridTool = new ViewportGridTool(ViewportGridEditor.TimeAct);
         ResourceListTool = new ResourceListTool();
         CharacterPreview = new ModelCharacterPreview(project, GetCharacterPreviewTarget);
+        MaskToggler = new ModelMaskToggler(project, GetModelMaskTarget);
+    }
+
+    private ModelMaskTarget GetModelMaskTarget()
+    {
+        TimeActModelWrapper wrapper = Selection.SelectedTimeActModelWrapper;
+
+        return wrapper?.Container != null
+            ? new ModelMaskTarget(wrapper.Name, wrapper.FLVER, wrapper.Container.Meshes)
+            : null;
     }
 
     private CharacterPreviewTarget GetCharacterPreviewTarget()
@@ -110,6 +121,8 @@ public class TimeActEditorView : IEditorView
     }
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
+        ViewportFilters.Update();
+
         Playback.Update();
 
         DisplayWindows(dockspaceId, viewIndex, doFocus, isActiveView);

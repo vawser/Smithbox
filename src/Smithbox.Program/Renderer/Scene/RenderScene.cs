@@ -49,6 +49,11 @@ public class RenderScene
         }
     }
 
+    public void SetDrawFilter(RenderFilter filter, bool enabled)
+    {
+        DrawFilter = enabled ? DrawFilter | filter : DrawFilter & ~filter;
+    }
+
     private int RayCastFilter(Ray ray, IDrawable d, List<RayCastHit<IDrawable>> hits)
     {
         BoundingBox bb = d.GetBounds();

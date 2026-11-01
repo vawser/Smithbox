@@ -18,6 +18,15 @@ public class TimeActViewportFilters
         Project = project;
     }
 
+    /// <summary>
+    /// Keeps the scene in line with the saved toggles, which all the views of the editor share
+    /// </summary>
+    public void Update()
+    {
+        View.RenderScene.SetDrawFilter(RenderFilter.Dummies, CFG.Current.TimeActEditor_DisplayDummies);
+        View.RenderScene.SetDrawFilter(RenderFilter.Nodes, CFG.Current.TimeActEditor_DisplayNodes);
+    }
+
     public void Display()
     {
         bool ticked;
@@ -36,36 +45,36 @@ public class TimeActViewportFilters
             // Dummies
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_DummyPoly")}##dummyPolyToggle"))
             {
-                View.RenderScene.ToggleDrawFilter(RenderFilter.Dummies);
+                CFG.Current.TimeActEditor_DisplayDummies = !CFG.Current.TimeActEditor_DisplayDummies;
             }
-            ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Dummies);
+            ticked = CFG.Current.TimeActEditor_DisplayDummies;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_DummyPoly_TT"));
             GUI.ShowActiveStatus(ticked);
 
             // Dummy Labels
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_DummyPoly_Labels")}##dummyPolyLabelsToggle"))
             {
-                CFG.Current.ModelEditor_DisplayDummyLabels = !CFG.Current.ModelEditor_DisplayDummyLabels;
+                CFG.Current.TimeActEditor_DisplayDummyLabels = !CFG.Current.TimeActEditor_DisplayDummyLabels;
             }
-            ticked = CFG.Current.ModelEditor_DisplayDummyLabels;
+            ticked = CFG.Current.TimeActEditor_DisplayDummyLabels;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_DummyPoly_Labels_TT"));
             GUI.ShowActiveStatus(ticked);
 
             // Nodes
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Bone")}##boneToggle"))
             {
-                View.RenderScene.ToggleDrawFilter(RenderFilter.Nodes);
+                CFG.Current.TimeActEditor_DisplayNodes = !CFG.Current.TimeActEditor_DisplayNodes;
             }
-            ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Nodes);
+            ticked = CFG.Current.TimeActEditor_DisplayNodes;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Bone_TT"));
             GUI.ShowActiveStatus(ticked);
 
             // Bone Labels
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Bone_Labels")}##boneLabelsToggle"))
             {
-                CFG.Current.ModelEditor_DisplayNodeLabels = !CFG.Current.ModelEditor_DisplayNodeLabels;
+                CFG.Current.TimeActEditor_DisplayNodeLabels = !CFG.Current.TimeActEditor_DisplayNodeLabels;
             }
-            ticked = CFG.Current.ModelEditor_DisplayNodeLabels;
+            ticked = CFG.Current.TimeActEditor_DisplayNodeLabels;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Bone_Labels_TT"));
             GUI.ShowActiveStatus(ticked);
 

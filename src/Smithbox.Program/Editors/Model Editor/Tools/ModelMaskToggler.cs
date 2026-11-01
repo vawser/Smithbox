@@ -1,23 +1,34 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.ModelEditor;
 
+/// <summary>
+/// The model having its masks toggled, as described by the editor hosting the tool.
+/// </summary>
+/// <param name="ModelName">Name of the loaded model.</param>
+/// <param name="Flver">The model, for its materials.</param>
+/// <param name="Meshes">The entities of its meshes.</param>
+public sealed record ModelMaskTarget(string ModelName, FLVER2 Flver, IReadOnlyList<Entity> Meshes);
+
 public class ModelMaskToggler
 {
-    public ModelEditorView View;
     public ProjectEntry Project;
+
+    // Null while no model is loaded
+    private readonly Func<ModelMaskTarget> _getTarget;
 
     private bool SelectEntry = false;
     private int SelectedID = -1;
 
-    public ModelMaskToggler(ModelEditorView view, ProjectEntry project)
+    public ModelMaskToggler(ProjectEntry project, Func<ModelMaskTarget> getTarget)
     {
-        View = view;
         Project = project;
+        _getTarget = getTarget;
     }
 
     public void OnToolWindow()
@@ -46,31 +57,33 @@ public class ModelMaskToggler
             return;
         }
 
-        if (View.Project.Handler.ParamEditor == null)
+        if (Project.Handler.ParamEditor == null)
         {
             GUI.WrappedText(LOC.Get("MODEL_MaskToggler_No_Param_Editor"));
 
             return;
         }
 
-        if(View.Selection.SelectedModelWrapper == null)
+        var target = _getTarget();
+
+        if (target == null)
         {
             GUI.WrappedText(LOC.Get("MODEL_MaskToggler_No_Model"));
 
             return;
         }
 
-        var filename = View.Selection.SelectedModelWrapper.Name;
+        var filename = target.ModelName;
         var npcParamKey = "NpcParam";
 
-        if (!View.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(npcParamKey))
+        if (!Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(npcParamKey))
         {
             GUI.WrappedText(LOC.Get("MODEL_MaskToggler_No_Npc_Param"));
 
             return;
         }
 
-        var npcParam = View.Project.Handler.ParamData.PrimaryBank.Params[npcParamKey];
+        var npcParam = Project.Handler.ParamData.PrimaryBank.Params[npcParamKey];
 
         if (npcParam == null)
         {
@@ -85,7 +98,7 @@ public class ModelMaskToggler
             {
                 if (ImGui.Selectable($"[{entry.ID}]##row{entry.ID}", entry.ID == SelectedID, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    ToggleMeshes(entry);
+                    ToggleMeshes(target, entry);
                     SelectedID = entry.ID;
                 }
 
@@ -94,7 +107,7 @@ public class ModelMaskToggler
                 {
                     SelectEntry = false;
                     SelectedID = entry.ID;
-                    ToggleMeshes(entry);
+                    ToggleMeshes(target, entry);
                 }
 
                 if (ImGui.IsItemFocused())
@@ -126,7 +139,7 @@ public class ModelMaskToggler
         return false;
     }
 
-    public void ToggleMeshes(Param.Row row)
+    public void ToggleMeshes(ModelMaskTarget target, Param.Row row)
     {
         List<bool> maskList = new List<bool>();
 
@@ -150,8 +163,7 @@ public class ModelMaskToggler
             }
         }
 
-        var container = View.Selection.SelectedModelWrapper.Container;
-        var flver = View.Selection.SelectedModelWrapper.FLVER;
+        var flver = target.Flver;
 
         Dictionary<int, FLVER2.Material> materialDict = new();
 
@@ -162,7 +174,7 @@ public class ModelMaskToggler
             materialDict.Add(i, material);
         }
 
-        foreach (var entry in container.Meshes)
+        foreach (var entry in target.Meshes)
         {
             entry.EditorVisible = false;
 

@@ -15,6 +15,15 @@ public class ModelViewportFilters
         Project = project;
     }
 
+    /// <summary>
+    /// Keeps the scene in line with the saved toggles, which all the views of the editor share
+    /// </summary>
+    public void Update()
+    {
+        View.RenderScene.SetDrawFilter(RenderFilter.Dummies, CFG.Current.ModelEditor_DisplayDummies);
+        View.RenderScene.SetDrawFilter(RenderFilter.Nodes, CFG.Current.ModelEditor_DisplayNodes);
+    }
+
     public void Display()
     {
         bool ticked;
@@ -33,9 +42,9 @@ public class ModelViewportFilters
             // Dummies
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_DummyPoly")}##dummyPolyToggle"))
             {
-                View.RenderScene.ToggleDrawFilter(RenderFilter.Dummies);
+                CFG.Current.ModelEditor_DisplayDummies = !CFG.Current.ModelEditor_DisplayDummies;
             }
-            ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Dummies);
+            ticked = CFG.Current.ModelEditor_DisplayDummies;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_DummyPoly_TT"));
             GUI.ShowActiveStatus(ticked);
 
@@ -51,9 +60,9 @@ public class ModelViewportFilters
             // Nodes
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Bone")}##boneToggle"))
             {
-                View.RenderScene.ToggleDrawFilter(RenderFilter.Nodes);
+                CFG.Current.ModelEditor_DisplayNodes = !CFG.Current.ModelEditor_DisplayNodes;
             }
-            ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Nodes);
+            ticked = CFG.Current.ModelEditor_DisplayNodes;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Bone_TT"));
             GUI.ShowActiveStatus(ticked);
 

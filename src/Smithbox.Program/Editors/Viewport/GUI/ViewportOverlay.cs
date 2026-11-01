@@ -78,12 +78,12 @@ public class ViewportOverlay
 
             if (container != null)
             {
-                if (CFG.Current.ModelEditor_DisplayDummyLabels && drawFilter.HasFlag(RenderFilter.Dummies))
+                if (CFG.Current.TimeActEditor_DisplayDummyLabels && drawFilter.HasFlag(RenderFilter.Dummies))
                 {
                     DrawEntityLabels(container.Dummies, CFG.Current.Viewport_Dummy_Polygon_Base_Color);
                 }
 
-                if (CFG.Current.ModelEditor_DisplayNodeLabels && drawFilter.HasFlag(RenderFilter.Nodes))
+                if (CFG.Current.TimeActEditor_DisplayNodeLabels && drawFilter.HasFlag(RenderFilter.Nodes))
                 {
                     DrawEntityLabels(container.Nodes, CFG.Current.Viewport_Bone_Marker_Base_Color);
                 }

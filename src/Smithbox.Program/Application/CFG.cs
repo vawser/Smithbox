@@ -593,6 +593,8 @@ public class CFG
     public float NodeMeshSize = 0.05f;
     public bool ModelEditor_DisplayDummyLabels = false;
     public bool ModelEditor_DisplayNodeLabels = false;
+    public bool ModelEditor_DisplayDummies = true;
+    public bool ModelEditor_DisplayNodes = true;
     public float ModelEditor_LabelScale = 1.0f;
     public bool DisplayEdgePoints = false;
     public Vector3 StartEdgePoint = new Vector3();
@@ -640,8 +642,13 @@ public class CFG
 
     public bool Interface_TimeActEditor_Tool_ResourceMonitor = true;
     public bool Interface_TimeActEditor_Tool_CharacterPreview = true;
+    public bool Interface_TimeActEditor_Tool_ModelMaskToggler = true;
 
     public float TimeActEditor_Graph_Frame_Width = 10f;
+    public bool TimeActEditor_DisplayDummies = true;
+    public bool TimeActEditor_DisplayNodes = true;
+    public bool TimeActEditor_DisplayDummyLabels = false;
+    public bool TimeActEditor_DisplayNodeLabels = false;
     public bool TimeActEditor_Graph_Display_Outside_Playback = true;
     public bool TimeActEditor_Graph_Display_Event_Names = true;
     public bool TimeActEditor_Auto_Play_Animation = false;

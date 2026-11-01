@@ -297,6 +297,10 @@
       "Text": "Character Preview"
     },
     {
+      "Key": "TAE_ToolWindow_View_Toggle_Mask_Toggler",
+      "Text": "Model Mask Toggler"
+    },
+    {
       "Key": "TAE_ToolWindow_View_Toggle_Resource_Monitor",
       "Text": "Resource Monitor"
     },

@@ -29,7 +29,7 @@ public class ModelCharacterPreview
         Loadout
     }
 
-    private const int SlotListRows = 4;
+    private const int SlotListRows = 8;
 
     private static readonly (CharacterSlot Slot, string Name)[] Slots =
     {
@@ -228,9 +228,16 @@ public class ModelCharacterPreview
 
     private void DisplaySlot(CharacterPreviewTarget target, CharacterSlot slot, string name)
     {
-        ImGui.TextUnformatted(name);
-
         _loadout.Parts.TryGetValue(slot, out var current);
+
+        // The header says what's chosen, so that it can still be seen with the section closed.
+        // The ID stays the same, as a change of label would otherwise close the section.
+        var header = current != null ? $"{name}: {GetPartLabel(current)}" : name;
+
+        if (!ImGui.CollapsingHeader($"{header}###characterPreviewSection{slot}"))
+        {
+            return;
+        }
 
         _slotFilters.TryGetValue(slot, out var filter);
         filter ??= "";

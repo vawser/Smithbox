@@ -92,7 +92,7 @@ public class ModelEditorView : IEditorView
         GridTool = new ViewportGridTool(ViewportGridEditor.Model);
         //ModelInsightMenu = new ModelInsightView(this, Project);
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
-        ModelMaskToggler = new ModelMaskToggler(this, Project);
+        ModelMaskToggler = new ModelMaskToggler(Project, GetModelMaskTarget);
         ModelAnimationTool = new ModelAnimationTool(this, Project);
         ModelCharacterPreview = new ModelCharacterPreview(Project, GetCharacterPreviewTarget);
         ResourceListTool = new ResourceListTool();
@@ -107,6 +107,15 @@ public class ModelEditorView : IEditorView
         GotoAction = new GotoAction(this, Project);
         PullToCameraAction = new PullToCameraAction(this, Project);
         ReorderAction = new ReorderAction(this, Project);
+    }
+
+    private ModelMaskTarget GetModelMaskTarget()
+    {
+        ModelWrapper wrapper = Selection.SelectedModelWrapper;
+
+        return wrapper?.Container != null
+            ? new ModelMaskTarget(wrapper.Name, wrapper.FLVER, wrapper.Container.Meshes)
+            : null;
     }
 
     private CharacterPreviewTarget GetCharacterPreviewTarget()
@@ -135,6 +144,8 @@ public class ModelEditorView : IEditorView
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
+        ViewportFilters.Update();
+
         if (CFG.Current.Interface_ModelEditor_EditorDisplayType is EditorDisplayType.Windows)
         {
             DisplayWindows(dockspaceId, viewIndex, doFocus, isActiveView);

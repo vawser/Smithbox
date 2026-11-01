@@ -1,5 +1,6 @@
 #nullable enable
 using Andre.Formats;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Renderer;
 using System;
@@ -79,12 +80,16 @@ public static class CharacterComposition
     // Rolling around the forearm turns a blade around, and puts the plate of a shield on the outside
     private static readonly Matrix4x4 WeaponRoll = Matrix4x4.CreateRotationX(MathF.PI);
 
+    // Turning around the length of a weapon, for one sitting on a dummy poly
+    private static readonly Matrix4x4 WeaponTurn = Matrix4x4.CreateRotationY(MathF.PI);
+
     // Elden Ring leaves the plain flags empty, and uses the SexVer ones instead
     private static readonly Regex InvisibleFlag = new(@"^invisibleFlag(?:_SexVer)?(\d+)$",
         RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
     private static readonly ConditionalWeakTable<ProjectEntry, HashSet<string>> _partNames = new();
     private static readonly ConditionalWeakTable<ProjectEntry, ModelRig> _skeletons = new();
+    private static readonly ConditionalWeakTable<ProjectEntry, List<FLVER.Dummy>> _bodyDummies = new();
 
     public static bool IsComposite(string? modelName)
     {
@@ -371,9 +376,11 @@ public static class CharacterComposition
 
         for (var i = 0; i < appearance.Parts.Count && i < mesh.Submeshes.Count; i++)
         {
-            if (appearance.Parts[i].AttachNode is { } attachNode && skeleton.FindNode(attachNode) is >= 0 and var node)
+            if (appearance.Parts[i].AttachNode != null &&
+                GetWeaponAttachment(project, appearance.Parts[i], skeleton) is var (attachNode, offset) &&
+                skeleton.FindNode(attachNode) is >= 0 and var node)
             {
-                mesh.Submeshes[i].AttachTransform = GetWeaponGrip(skeleton, attachNode) * skeleton.NodeReferenceWorld[node];
+                mesh.Submeshes[i].AttachTransform = offset * skeleton.NodeReferenceWorld[node];
             }
         }
 
@@ -395,9 +402,10 @@ public static class CharacterComposition
             CharacterPart part = appearance.Parts[i];
             ResourceDescriptor asset = ModelLocator.GetPartsModel(project, part.Name, part.Name);
 
+            var attachment = part.AttachNode != null ? GetWeaponAttachment(project, part, skeleton) : ((string, Matrix4x4)?)null;
+
             parts.Add(new AnimatedPart(part.Name, PathBuilder.GetRelativePath(project, asset.AssetVirtualPath),
-                mesh.Submeshes[i], part.AttachNode,
-                part.AttachNode != null ? GetWeaponGrip(skeleton, part.AttachNode) : null));
+                mesh.Submeshes[i], attachment?.Item1, attachment?.Item2));
         }
 
         return parts;
@@ -447,8 +455,97 @@ public static class CharacterComposition
         });
     }
 
-    // Weapons point down -Y from the grip, and the front of the skeleton is -Z. The hand bones don't agree
-    // between games on which way they face (Elden Ring's left hand is turned around), so ask the bone.
+    /// <summary>
+    ///     Works out how a weapon is held: the bone that carries it, and how it sits on that bone.
+    /// </summary>
+    private static (string Node, Matrix4x4 Offset) GetWeaponAttachment(ProjectEntry project, CharacterPart part, ModelRig skeleton)
+    {
+        return GetAbsorptionAttachment(project, part, skeleton)
+            ?? (part.AttachNode!, GetWeaponGrip(skeleton, part.AttachNode!));
+    }
+
+    /// <summary>
+    ///     Weapons name a WepAbsorpPosParam row, which holds the dummy polys of the character that they sit on.
+    ///     Returns null for games without the param, and for weapons that are bound to the skeleton instead.
+    /// </summary>
+    private static (string Node, Matrix4x4 Offset)? GetAbsorptionAttachment(ProjectEntry project, CharacterPart part, ModelRig skeleton)
+    {
+        if (GetRow(project, "EquipParamWeapon", part.EquipParamId) is not { } weapon || !HasField(weapon, "absorpParamId") ||
+            GetRow(project, "WepAbsorpPosParam", GetValue(weapon, "absorpParamId")) is not { } absorption ||
+            GetValue(absorption, "isSkeletonBind") != 0)
+        {
+            return null;
+        }
+
+        var dummyId = GetValue(absorption, IsLeftHand(part) ? "left_0" : "right_0");
+
+        if (GetBodyDummies(project).FirstOrDefault(d => d.ReferenceID == dummyId) is not { } dummy)
+        {
+            return null;
+        }
+
+        var node = dummy.AttachBoneIndex >= 0 ? dummy.AttachBoneIndex : dummy.ParentBoneIndex;
+
+        if (node < 0 || node >= skeleton.NodeNames.Length || dummy.Forward == Vector3.Zero ||
+            !Matrix4x4.Invert(skeleton.NodeReferenceWorld[node], out Matrix4x4 inverseNode))
+        {
+            return null;
+        }
+
+        Matrix4x4 world = GetDummyWorld(dummy, skeleton);
+
+        // With tips down -Y, this points blades the way the thumb does. Armored Core has its own convention.
+        if (project.Descriptor.ProjectType is not ProjectType.AC6)
+        {
+            world = WeaponTurn * world;
+        }
+
+        return (skeleton.NodeNames[node], world * inverseNode);
+    }
+
+    private static Matrix4x4 GetDummyWorld(FLVER.Dummy dummy, ModelRig skeleton)
+    {
+        Vector3 up = dummy.UseUpwardVector && dummy.Upward != Vector3.Zero ? Vector3.Normalize(dummy.Upward) : Vector3.UnitY;
+
+        Matrix4x4 local = Matrix4x4.CreateWorld(dummy.Position, Vector3.Normalize(dummy.Forward), up);
+
+        return dummy.ParentBoneIndex >= 0 && dummy.ParentBoneIndex < skeleton.NodeReferenceWorld.Length
+            ? local * skeleton.NodeReferenceWorld[dummy.ParentBoneIndex]
+            : local;
+    }
+
+    private static IReadOnlyList<FLVER.Dummy> GetBodyDummies(ProjectEntry project)
+    {
+        return _bodyDummies.GetValue(project, p =>
+        {
+            ResourceDescriptor asset = ModelLocator.GetChrModel(p, CompositeModel, CompositeModel);
+            var path = asset.AssetVirtualPath != null ? PathBuilder.GetRelativePath(p, asset.AssetVirtualPath) : null;
+
+            try
+            {
+                if (path != null && p.VFS.FS.FileExists(path) && p.VFS.FS.ReadFile(path) is { } data)
+                {
+                    using IBinder binder = p.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES
+                        ? BND3.Read(data)
+                        : BND4.Read(data);
+
+                    if (binder.Files.FirstOrDefault(f => f.Name.Contains(".flv", StringComparison.OrdinalIgnoreCase)) is { } file)
+                    {
+                        return FLVER2.Read(file.Bytes).Dummies;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(typeof(CharacterComposition), $"Failed to read the dummy polys of {CompositeModel}", e);
+            }
+
+            return new List<FLVER.Dummy>();
+        });
+    }
+
+    // Used where nothing says how a weapon is held. Weapons point down -Y from the grip, and the front of the
+    // skeleton is -Z. The hand bones don't agree between games on which way they face, so ask the bone.
     private static Matrix4x4 GetWeaponGrip(ModelRig skeleton, string node)
     {
         var index = skeleton.FindNode(node);
