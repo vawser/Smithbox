@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,13 @@ public class TimeActSelectionWindow
     private bool ExactTimeActFilter = false;
 
     private bool _arrowKeyPressed = false;
+
+    // Rebuilt only when the filter or the time acts change, as the aliases are matched as well
+    private List<TimeActEntry> CachedFilteredTimeActs;
+    private List<TimeActEntry> CachedTimeActs;
+    private int CachedTimeActCount;
+    private string CachedFilter = "";
+    private bool CachedExactFilter = false;
 
     public TimeActSelectionWindow(TimeActEditorView view, ProjectEntry project)
     {
@@ -47,38 +55,84 @@ public class TimeActSelectionWindow
         if (source == null)
             return;
 
+        var filteredTimeActs = GetFilteredTimeActs(source);
+
         if (InputManager.HasArrowSelection())
         {
             _arrowKeyPressed = true;
         }
 
-        foreach (var entry in source.TimeActs)
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(filteredTimeActs.Count);
+
+        while (clipper.Step())
         {
-            if (!EditorFilters.IsMatch(TimeActListFilter, entry.Name, ExactTimeActFilter))
-                continue;
-
-            var selected = View.Selection.SelectedTimeAct == entry;
-
-            var label = entry.Name;
-
-            // The animation count isn't known until the time act has been read
-            if (entry.TimeAct != null)
+            for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
             {
-                label = LOC.Get("TAE_SelectionWindow_Entry_Details", entry.Name, entry.TimeAct.Animations.Count);
-            }
+                var entry = filteredTimeActs[i];
 
-            if (ImGui.Selectable($"{label}##timeActEntry{entry.BinderID}", selected))
-            {
-                SelectTimeAct(entry);
-            }
+                var selected = View.Selection.SelectedTimeAct == entry;
 
-            if (_arrowKeyPressed && ImGui.IsItemFocused() && !selected)
-            {
-                SelectTimeAct(entry);
+                var alias = GetTimeActAlias(source, entry);
 
-                _arrowKeyPressed = false;
+                if (ImGui.Selectable($"{entry.Name}##timeActEntry{entry.BinderID}", selected))
+                {
+                    SelectTimeAct(entry);
+                }
+
+                // The animation count isn't known until the time act has been read
+                if (entry.TimeAct != null)
+                {
+                    GUI.Tooltip(LOC.Get("TAE_SelectionWindow_Entry_Details", entry.Name, entry.TimeAct.Animations.Count));
+                }
+
+                if (_arrowKeyPressed && ImGui.IsItemFocused() && !selected)
+                {
+                    SelectTimeAct(entry);
+
+                    _arrowKeyPressed = false;
+                }
+
+                if (alias != "")
+                {
+                    GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
+                }
             }
         }
+
+        clipper.End();
+    }
+
+    private List<TimeActEntry> GetFilteredTimeActs(TimeActContainerWrapper source)
+    {
+        if (CachedFilteredTimeActs != null &&
+            CachedTimeActs == source.TimeActs &&
+            CachedTimeActCount == source.TimeActs.Count &&
+            CachedFilter == TimeActListFilter &&
+            CachedExactFilter == ExactTimeActFilter)
+        {
+            return CachedFilteredTimeActs;
+        }
+
+        CachedTimeActs = source.TimeActs;
+        CachedTimeActCount = source.TimeActs.Count;
+        CachedFilter = TimeActListFilter;
+        CachedExactFilter = ExactTimeActFilter;
+
+        CachedFilteredTimeActs = source.TimeActs
+            .Where(e => EditorFilters.IsMatch(TimeActListFilter, e.Name, ExactTimeActFilter,
+                GetTimeActAlias(source, e), true, true))
+            .ToList();
+
+        return CachedFilteredTimeActs;
+    }
+
+    /// <summary>
+    /// Time act aliases are stored per character: a000 of c0000 is stored as c0000_000.
+    /// </summary>
+    private string GetTimeActAlias(TimeActContainerWrapper source, TimeActEntry entry)
+    {
+        return Project.GetAliasName(ProjectAliasType.TimeActs, $"{source.Name}_{entry.Name.Substring(1)}");
     }
 
     private void SelectTimeAct(TimeActEntry entry)
