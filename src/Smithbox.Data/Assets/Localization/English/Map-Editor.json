@@ -45,18 +45,6 @@
       "Text": "Clear the display of connections between patrol route nodes."
     },
     {
-      "Key": "MAP_MapCollisionEditType_Low",
-      "Text": "Low Collision"
-    },
-    {
-      "Key": "MAP_MapCollisionEditType_High",
-      "Text": "High Collision"
-    },
-    {
-      "Key": "MAP_MapCollisionEditType_FallProtection",
-      "Text": "Fall Protection Collision"
-    },
-    {
       "Key": "MAP_Collision_Header_Low",
       "Text": "Low Collision"
     },

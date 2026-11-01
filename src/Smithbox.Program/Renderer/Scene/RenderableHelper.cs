@@ -16,6 +16,7 @@ public static class RenderableHelper
     private static DbgPrimSolidBox _regionSolidBox_Enemy;
     private static DbgPrimSolidBox _regionSolidBox_Player;
     private static DbgPrimSolidBox _regionSolidBox_Default;
+    private static DbgPrimWireBox _placeholderBox;
 
     private static DbgPrimWireCylinder _regionCylinder;
     private static DbgPrimSolidCylinder _regionSolidCylinder;
@@ -79,6 +80,12 @@ public static class RenderableHelper
             new Vector3(-0.5f, 0.0f, -0.5f),
             new Vector3(0.5f, 2.0f, 0.5f),
             Color.DarkBlue);
+
+        _placeholderBox = new DbgPrimWireBox(
+            Transform.Default,
+            new Vector3(-0.5f, 0.0f, -0.5f),
+            new Vector3(0.5f, 2.0f, 0.5f),
+            Color.Blue);
 
         _regionBox = new DbgPrimWireBox(
             Transform.Default,
@@ -271,45 +278,67 @@ public static class RenderableHelper
         return r;
     }
 
+    // PLACEHOLDER
     public static DebugPrimitiveRenderableProxy GetDefaultBoxProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
-
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox_Default);
-
-        r.RenderOverlay = true;
-        r.BaseColor = Color.DarkCyan;
-        r.HighlightedColor = Color.Cyan;
-        //ColorHelper.ApplyColorVariance(r);
-
-        return r;
+        return GetPlaceholderWireProxy(scene, _placeholderBox, Color.DarkCyan, Color.Cyan);
     }
+
+    public static DebugPrimitiveRenderableProxy GetDefaultBoxFillProxy(RenderScene scene)
+    {
+        return GetPlaceholderFillProxy(scene, _regionSolidBox_Default, Color.DarkCyan, Color.Cyan);
+    }
+
     public static DebugPrimitiveRenderableProxy GetPlayerBoxProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
+        return GetPlaceholderWireProxy(scene, _placeholderBox, Color.DarkBlue, Color.Blue);
+    }
 
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox_Player);
+    public static DebugPrimitiveRenderableProxy GetPlayerBoxFillProxy(RenderScene scene)
+    {
+        return GetPlaceholderFillProxy(scene, _regionSolidBox_Player, Color.DarkBlue, Color.Blue);
+    }
 
-        r.RenderOverlay = true;
-        r.BaseColor = Color.DarkBlue;
-        r.HighlightedColor = Color.Blue;
-        //ColorHelper.ApplyColorVariance(r);
+    public static DebugPrimitiveRenderableProxy GetEnemyBoxProxy(RenderScene scene)
+    {
+        return GetPlaceholderWireProxy(scene, _placeholderBox, Color.DarkRed, Color.Red);
+    }
+
+    public static DebugPrimitiveRenderableProxy GetEnemyBoxFillProxy(RenderScene scene)
+    {
+        return GetPlaceholderFillProxy(scene, _regionSolidBox_Enemy, Color.DarkRed, Color.Red);
+    }
+
+    public static DebugPrimitiveRenderableProxy GetInteractableSphereProxy(RenderScene scene)
+    {
+        return GetPlaceholderWireProxy(scene, _regionSphere, Color.Blue, Color.LightBlue);
+    }
+
+    public static DebugPrimitiveRenderableProxy GetInteractableSphereFillProxy(RenderScene scene)
+    {
+        return GetPlaceholderFillProxy(scene, _regionSolidSphere_Interactable, Color.Blue, Color.LightBlue);
+    }
+
+    private static DebugPrimitiveRenderableProxy GetPlaceholderWireProxy(RenderScene scene, IDbgPrim prim, Color baseColor, Color highlightColor)
+    {
+        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, prim);
+
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
 
         return r;
     }
-    public static DebugPrimitiveRenderableProxy GetEnemyBoxProxy(RenderScene scene)
+
+    private static DebugPrimitiveRenderableProxy GetPlaceholderFillProxy(RenderScene scene, IDbgPrim prim, Color baseColor, Color highlightColor)
     {
-        var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
+        DebugPrimitiveRenderableProxy r = GetRegionFillProxy(scene, prim, Utils.GetDecimalColor(baseColor));
 
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox_Enemy);
-
-        r.RenderOverlay = true;
-        r.BaseColor = Color.DarkRed;
-        r.HighlightedColor = Color.Red;
-        //ColorHelper.ApplyColorVariance(r);
+        // Placeholders are small, so unlike a region volume the fill stays clickable
+        r.Pickable = true;
+        r.Visible = true;
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
 
         return r;
     }
@@ -342,21 +371,6 @@ public static class RenderableHelper
 
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
-        //ColorHelper.ApplyColorVariance(r);
-
-        return r;
-    }
-
-    public static DebugPrimitiveRenderableProxy GetInteractableSphereProxy(RenderScene scene)
-    {
-        var baseColor = CFG.Current.Viewport_Sphere_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Sphere_Region_Highlight_Color;
-
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidSphere_Interactable);
-
-        r.RenderOverlay = true;
-        r.BaseColor = Color.Blue;
-        r.HighlightedColor = Color.LightBlue;
         //ColorHelper.ApplyColorVariance(r);
 
         return r;

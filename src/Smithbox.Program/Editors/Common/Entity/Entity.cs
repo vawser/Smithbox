@@ -255,10 +255,23 @@ public class Entity : ISelectable, IDisposable
             _selectionFillMesh?.Dispose();
             _selectionFillMesh = value;
 
+            if (_selectionFillMesh != null && IsSelected)
+            {
+                _selectionFillMesh.RenderSelectionOutline = true;
+            }
+
             ApplyMeshState();
         }
         get => _selectionFillMesh;
     }
+
+    /// <summary>
+    /// Whether the selection fill mesh is displayed all the time instead of only while selected (e.g. placeholders).
+    /// </summary>
+    [XmlIgnore]
+    public bool FillAlwaysVisible { get; protected set; }
+
+    private bool IsFillVisible => _EditorVisible && (IsSelected || FillAlwaysVisible);
 
     /// <summary>
     /// A bool to track if this entity has render groups.
@@ -363,7 +376,7 @@ public class Entity : ISelectable, IDisposable
 
             if (SelectionFillMesh != null)
             {
-                SelectionFillMesh.Visible = _EditorVisible && IsSelected;
+                SelectionFillMesh.Visible = IsFillVisible;
             }
 
             if (_grassSceneMeshes != null)
@@ -416,6 +429,11 @@ public class Entity : ISelectable, IDisposable
         {
             CollisionSceneMesh.RenderSelectionOutline = true;
         }
+
+        if (SelectionFillMesh != null)
+        {
+            SelectionFillMesh.RenderSelectionOutline = true;
+        }
     }
 
     public void OnDeselected()
@@ -432,6 +450,11 @@ public class Entity : ISelectable, IDisposable
         if (CollisionSceneMesh != null)
         {
             CollisionSceneMesh.RenderSelectionOutline = false;
+        }
+
+        if (SelectionFillMesh != null)
+        {
+            SelectionFillMesh.RenderSelectionOutline = false;
         }
     }
 
@@ -1608,7 +1631,7 @@ public class Entity : ISelectable, IDisposable
 
         ApplyProxyState(_renderSceneMesh, t, useRenderGroups);
         ApplyProxyState(_collisionSceneMesh, t, useRenderGroups);
-        ApplyProxyState(_selectionFillMesh, t, useRenderGroups, _EditorVisible && IsSelected);
+        ApplyProxyState(_selectionFillMesh, t, useRenderGroups, IsFillVisible);
 
         if (_grassSceneMeshes != null)
         {

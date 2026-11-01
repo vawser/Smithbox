@@ -74,6 +74,9 @@ public class MsbEntity : Entity
 
         MeshProviderCache.InvalidateUidEntries(EntityCacheUID);
 
+        // A part can go from a placeholder to a real model, which has no fill
+        SelectionFillMesh = null;
+
         switch (Type)
         {
             case MsbEntityType.Part:
@@ -576,12 +579,9 @@ public class MsbEntity : Entity
         var scene = curUniverse.GetCurrentScene();
 
         var mesh = RenderableHelper.GetEnemyBoxProxy(scene);
+        var fill = RenderableHelper.GetEnemyBoxFillProxy(scene);
 
-        mesh.World = GetWorldMatrix();
-        mesh.SetSelectable(this);
-        mesh.DrawFilter = GetPartDrawFilter(RenderFilter.Character);
-
-        return mesh;
+        return SetupPlaceholderMesh(mesh, fill, GetPartDrawFilter(RenderFilter.Character));
     }
 
     public DebugPrimitiveRenderableProxy CreateInteractableProxyMesh()
@@ -591,12 +591,9 @@ public class MsbEntity : Entity
         var scene = curUniverse.GetCurrentScene();
 
         var mesh = RenderableHelper.GetInteractableSphereProxy(scene);
+        var fill = RenderableHelper.GetInteractableSphereFillProxy(scene);
 
-        mesh.World = GetWorldMatrix();
-        mesh.SetSelectable(this);
-        mesh.DrawFilter = GetPartDrawFilter(RenderFilter.Character);
-
-        return mesh;
+        return SetupPlaceholderMesh(mesh, fill, GetPartDrawFilter(RenderFilter.Character));
     }
 
     public DebugPrimitiveRenderableProxy CreatePlayerProxyMesh()
@@ -606,12 +603,9 @@ public class MsbEntity : Entity
         var scene = curUniverse.GetCurrentScene();
 
         var mesh = RenderableHelper.GetPlayerBoxProxy(scene);
+        var fill = RenderableHelper.GetPlayerBoxFillProxy(scene);
 
-        mesh.World = GetWorldMatrix();
-        mesh.SetSelectable(this);
-        mesh.DrawFilter = RenderFilter.Character;
-
-        return mesh;
+        return SetupPlaceholderMesh(mesh, fill, RenderFilter.Character);
     }
 
     public DebugPrimitiveRenderableProxy CreateObjectProxyMesh()
@@ -621,10 +615,26 @@ public class MsbEntity : Entity
         var scene = curUniverse.GetCurrentScene();
 
         var mesh = RenderableHelper.GetDefaultBoxProxy(scene);
+        var fill = RenderableHelper.GetDefaultBoxFillProxy(scene);
 
+        return SetupPlaceholderMesh(mesh, fill, GetPartDrawFilter(RenderFilter.Object));
+    }
+
+    /// <summary>
+    /// Placeholders are a wireframe with a fill that is always displayed, as they have no model to show.
+    /// </summary>
+    private DebugPrimitiveRenderableProxy SetupPlaceholderMesh(DebugPrimitiveRenderableProxy mesh, DebugPrimitiveRenderableProxy fill, RenderFilter filter)
+    {
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
-        mesh.DrawFilter = GetPartDrawFilter(RenderFilter.Object);
+        mesh.DrawFilter = filter;
+
+        fill.World = GetWorldMatrix();
+        fill.SetSelectable(this);
+        fill.DrawFilter = filter;
+
+        FillAlwaysVisible = true;
+        SelectionFillMesh = fill;
 
         return mesh;
     }
