@@ -1,6 +1,8 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MetadataEditor;
+using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
@@ -76,6 +78,7 @@ public class TimeActPropertiesWindow
                         continue;
 
                     DisplayParameter(ev, key, parameter);
+                    DisplayParameterMeta(ev, key, parameter);
                 }
             }
 
@@ -158,7 +161,9 @@ public class TimeActPropertiesWindow
             FieldText[key] = text;
         }
 
-        GUI.Tooltip(parameter.Type.ToString());
+        var description = Project.Handler.TimeActData.GetFieldMeta(parameter.Name)?.Description;
+
+        GUI.Tooltip(string.IsNullOrEmpty(description) ? parameter.Type.ToString() : $"{parameter.Type}\n{description}");
 
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
@@ -173,6 +178,84 @@ public class TimeActPropertiesWindow
                 Smithbox.Log(this, LOC.Get("TAE_PropertiesWindow_Invalid_Value", text, parameter.Type));
             }
         }
+    }
+
+    /// <summary>
+    /// Adds a row under a parameter that refers to something, showing what it refers to
+    /// </summary>
+    private void DisplayParameterMeta(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter)
+    {
+        if (Project.Handler.TimeActData.GetFieldMeta(parameter.Name) is not { } meta)
+            return;
+
+        ImGui.PushID(key);
+
+        DisplayParamReference(ev, key, meta);
+        DisplayAlias(ev, key, meta);
+
+        ImGui.PopID();
+    }
+
+    private void DisplayParamReference(TAE.Event ev, string key, TimeActField meta)
+    {
+        if (meta.ParamRef == "" || !CFG.Current.ParamEditor_Field_List_Display_References ||
+            Project.Handler.ParamEditor?.ViewHandler.ActiveView is not { } paramView)
+        {
+            return;
+        }
+
+        var bank = paramView.GetPrimaryBank().Params;
+
+        // Not every game has every param
+        var refs = meta.ParamRef.Split(',')
+            .Where(name => bank != null && bank.ContainsKey(name))
+            .Select(name => new ParamRef(null, name))
+            .ToList();
+
+        if (refs.Count == 0)
+            return;
+
+        object value = ev.Parameters[key];
+        object newValue = null;
+
+        ImGui.TableNextRow();
+
+        ImGui.TableSetColumnIndex(0);
+        ParamReferenceHelper.Label(paramView, refs, null);
+
+        ImGui.TableSetColumnIndex(1);
+        ParamReferenceHelper.Hint(paramView, refs, null, value);
+        ParamReferenceHelper.Click(paramView, value, null, refs);
+
+        if (ImGui.BeginPopupContextItem("##paramRefContextMenu"))
+        {
+            var changed = ParamReferenceHelper.ContextMenu(paramView, refs, null, value, ref newValue, null);
+
+            ImGui.EndPopup();
+
+            if (changed && newValue != null)
+            {
+                SetParameter(ev, key, newValue);
+            }
+        }
+    }
+
+    private void DisplayAlias(TAE.Event ev, string key, TimeActField meta)
+    {
+        if (!Enum.TryParse(meta.Alias, out ProjectAliasType aliasType))
+            return;
+
+        var alias = Project.GetAliasName(aliasType, $"{ev.Parameters[key]}");
+
+        if (alias == "")
+            return;
+
+        ImGui.TableNextRow();
+
+        ImGui.TableSetColumnIndex(1);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+        ImGui.TextUnformatted(alias);
+        ImGui.PopStyleColor();
     }
 
     private void DisplayEnumParameter(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter, object value)

@@ -73,6 +73,10 @@
       "Text": "Failed to read time act: {0}"
     },
     {
+      "Key": "TAE_Data_Failed_To_Read_Meta",
+      "Text": "Failed to read the time act meta: {0}"
+    },
+    {
       "Key": "TAE_Data_Failed_To_Read_Template",
       "Text": "Failed to read time act template: {0}"
     },

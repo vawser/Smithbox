@@ -1,0 +1,51 @@
+{
+  "Fields": [
+    {
+      "Field": "SpEffectID",
+      "IsPrefix": true,
+      "ParamRef": "SpEffectParam",
+      "Description": "The SpEffectParam row to apply."
+    },
+    {
+      "Field": "BulletID",
+      "ParamRef": "Bullet",
+      "Description": "The Bullet row to fire."
+    },
+    {
+      "Field": "DecalParamID",
+      "ParamRef": "DecalParam",
+      "Description": "The DecalParam row to place."
+    },
+    {
+      "Field": "LockCamParamID",
+      "ParamRef": "LockCamParam",
+      "Description": "The LockCamParam row to use while locked on."
+    },
+    {
+      "Field": "ToughnessParamID",
+      "ParamRef": "ToughnessParam",
+      "Description": "The ToughnessParam row to use."
+    },
+    {
+      "Field": "AISoundID",
+      "ParamRef": "AiSoundParam",
+      "Description": "The AiSoundParam row of the sound that AI can hear."
+    },
+    {
+      "Field": "RumbleCamID",
+      "ParamRef": "CameraRumbleParam",
+      "Description": "The CameraRumbleParam row to play."
+    },
+    {
+      "Field": "FFXID",
+      "IsPrefix": true,
+      "Alias": "Particles",
+      "Description": "The ID of the visual effect."
+    },
+    {
+      "Field": "SoundID",
+      "Alias": "Sounds",
+      "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+    }
+  ]
+}

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.Json;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -16,6 +17,11 @@ public class TimeActData : IDisposable
     // Keyed by file name. A template that failed to load stays null.
     private Dictionary<string, TAE.Template.BankTemplate> Templates = new();
 
+    public TimeActMeta Meta = new();
+
+    // Parameters are looked up every frame while they are on display
+    private Dictionary<string, TimeActField> FieldMetaCache = new();
+
     public TimeActData(ProjectEntry project)
     {
         Project = project;
@@ -23,6 +29,8 @@ public class TimeActData : IDisposable
     public async Task<bool> Setup()
     {
         await Task.Yield();
+
+        LoadMeta();
 
         PrimaryBank = new("Primary", Project, Project.VFS.FS);
 
@@ -40,6 +48,37 @@ public class TimeActData : IDisposable
         }
 
         return primaryBankTaskResult;
+    }
+
+    private void LoadMeta()
+    {
+        var path = Path.Join(AppContext.BaseDirectory, "Assets", "TAE", "TimeAct-Meta.json");
+
+        try
+        {
+            Meta = JsonSerializer.Deserialize(File.ReadAllText(path), TimeActEditorJsonSerializerContext.Default.TimeActMeta)
+                ?? new TimeActMeta();
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_Meta", path), e);
+        }
+    }
+
+    /// <summary>
+    /// Gets the meta of an event parameter, or null if there is none. An exact match goes first.
+    /// </summary>
+    public TimeActField GetFieldMeta(string parameterName)
+    {
+        if (!FieldMetaCache.TryGetValue(parameterName, out var field))
+        {
+            field = Meta.Fields.FirstOrDefault(e => e.Field.Equals(parameterName, StringComparison.OrdinalIgnoreCase))
+                ?? Meta.Fields.FirstOrDefault(e => e.IsPrefix && parameterName.StartsWith(e.Field, StringComparison.OrdinalIgnoreCase));
+
+            FieldMetaCache[parameterName] = field;
+        }
+
+        return field;
     }
 
     /// <summary>
