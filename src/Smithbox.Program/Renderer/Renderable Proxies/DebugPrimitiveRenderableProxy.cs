@@ -15,6 +15,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
 
     private readonly MeshRenderables _renderablesSet;
     private Color _baseColor = Color.Gray;
+    private float _gridCells;
 
     private RenderFilter _drawfilter = RenderFilter.All;
 
@@ -92,6 +93,19 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         set
         {
             _highlightedColor = value;
+            ScheduleRenderableUpdate();
+        }
+    }
+
+    /// <summary>
+    /// Squares either side of the center of a <see cref="DbgPrimGridPlane" />.
+    /// </summary>
+    public float GridCells
+    {
+        get => _gridCells;
+        set
+        {
+            _gridCells = value;
             ScheduleRenderableUpdate();
         }
     }
@@ -432,6 +446,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         // Update material data
         DbgMaterial colmat = new();
         colmat.Color = _renderOutline ? HighlightedColor : BaseColor;
+        colmat.GridCells = _gridCells;
         _materialBuffer.FillBuffer(gd, cl, ref colmat);
 
         // Selectable
@@ -469,6 +484,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
 
         DbgMaterial colmat = new();
         colmat.Color = _renderOutline ? HighlightedColor : BaseColor;
+        colmat.GridCells = _gridCells;
 
         _materialBuffer.FillBuffer(gd, cl, ref colmat);
 

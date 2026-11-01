@@ -1,0 +1,28 @@
+#----------------------------------------------------
+# Rendering
+#----------------------------------------------------
+- DS3: random crash on High Wall load (flver vertex)
+- NR: random crash on Roundtable Hold (flver vertex)
+
+- DS3: some chrs missing textures: c1280
+- DS3: non-map external resource usage: m903400
+- SDT: regression for some objects/mappieces, pink multi-color, flame shader related?: m504040, m002679
+- SDT: water shader doesn't exist: m800003
+- SDT: non-map external resource usage: m902000
+- ER: Waterfall textures look a bit simple
+- AC6 chrs missing textures
+- NR: various assets missing textures (AEG576_127, AEG576_111)
+
+- Small issues:
+ - ER: z-fighting on m004500 for decal textures
+ - ER: Rat skin messed up for c4080 / c4090 (rats)
+ - ER: Messed up texturing for c4640 (ulcerated)
+ - ER: Messed up texturing for c3320 (blob)
+ - ER: Flame asset doesn't look correct (AEG094_111), multi-colored with incorrect alpha
+ - ER: Multi-colored mesh (m400000)
+ - ER: Strange light white rock (AEG230_921 / AEG230_835 / m100056) 
+ - ER: Strange white trunk (AEG232_478 / AEG232_474)
+ - AC6: AEG410_184 uncolored
+ - AC6: AEG410_180 uncolored (crystal)
+ - AC6: AEG300_860 untextured
+ - AC6: AEG300_891 uncolored

@@ -41,7 +41,7 @@ public class ModelEditorView : IEditorView
     public ModelToolWindow ToolView;
 
     // Tools
-    public ModelGridConfiguration ModelGridTool;
+    public ViewportGridTool GridTool;
     //public ModelInsightView ModelInsightMenu;
     public ModelInstanceFinder ModelInstanceFinder;
     public ModelMaskToggler ModelMaskToggler;
@@ -89,7 +89,7 @@ public class ModelEditorView : IEditorView
         ToolView = new(this, project);
 
         // Tools
-        ModelGridTool = new ModelGridConfiguration(this, Project);
+        GridTool = new ViewportGridTool(ViewportGridEditor.Model);
         //ModelInsightMenu = new ModelInsightView(this, Project);
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
         ModelMaskToggler = new ModelMaskToggler(this, Project);

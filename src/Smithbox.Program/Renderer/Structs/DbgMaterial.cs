@@ -16,7 +16,11 @@ public unsafe struct DbgMaterial
     }
 
     private _color _Color;
-    public fixed int pad[3];
+
+    /// <summary>Squares either side of the center of a <see cref="DbgPrimGridPlane" /></summary>
+    public float GridCells;
+
+    public fixed int pad[2];
 
     public Color Color
     {

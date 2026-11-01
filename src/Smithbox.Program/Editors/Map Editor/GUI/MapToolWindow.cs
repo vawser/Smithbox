@@ -213,10 +213,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
         {
-            if (ImGui.CollapsingHeader("Map Grid"))
-            {
-                View.MapGridTool.OnToolWindow();
-            }
+            View.GridTool.OnToolWindow();
         }
 
         if (CFG.Current.Interface_MapEditor_Tool_Validation)
@@ -316,7 +313,7 @@ public class MapToolWindow
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit);
 
-            if (ImGui.MenuItem("Map Grid"))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_GridConfig_Header")}##toggleGridConfigTool"))
             {
                 CFG.Current.Interface_MapEditor_Tool_GridConfiguration = !CFG.Current.Interface_MapEditor_Tool_GridConfiguration;
             }

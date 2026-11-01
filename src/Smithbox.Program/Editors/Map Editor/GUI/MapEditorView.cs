@@ -102,7 +102,7 @@ public class MapEditorView : IEditorView
     public GlobalSearchTool GlobalSearchTool;
     public WorldMapTool WorldMapTool;
     public EntityIdentifierTool EntityIdentifierTool;
-    public MapGridTool MapGridTool;
+    public ViewportGridTool GridTool;
     public MapAnimationTool MapAnimationTool;
     public WorldMapLayoutTool WorldMapLayoutTool;
     public MapListFilterTool MapListFilterTool;
@@ -191,7 +191,7 @@ public class MapEditorView : IEditorView
         PrefabTool = new PrefabTool(this, project);
         NavmeshBuilderTool = new NavmeshBuilderTool(this, project);
         EntityIdentifierTool = new EntityIdentifierTool(this, project);
-        MapGridTool = new MapGridTool(this, project);
+        GridTool = new ViewportGridTool(ViewportGridEditor.Map);
         MapAnimationTool = new MapAnimationTool(this, project);
         WorldMapTool = new WorldMapTool(this, project);
         WorldMapLayoutTool = new WorldMapLayoutTool(this, project);

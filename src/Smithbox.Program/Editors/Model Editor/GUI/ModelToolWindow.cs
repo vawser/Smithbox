@@ -70,7 +70,7 @@ public class ModelToolWindow
 
         if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
         {
-            View.ModelGridTool.OnToolWindow();
+            View.GridTool.OnToolWindow();
         }
 
         if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
@@ -90,7 +90,7 @@ public class ModelToolWindow
         if (ImGui.BeginMenu($"{LOC.Get("MODEL_ToolWindow_View_Header")}##viewMenuHeader"))
         {
             // Grid Configuration
-            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Grid_Configuration")}##toggleGridConfigTool"))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_GridConfig_Header")}##toggleGridConfigTool"))
             {
                 CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration = !CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration;
             }

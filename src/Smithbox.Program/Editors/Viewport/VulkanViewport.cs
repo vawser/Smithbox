@@ -28,13 +28,9 @@ public class VulkanViewport : IViewport
 
     public Gizmos Gizmos;
 
-    public MapGrid MapPrimaryGrid;
-    public MapGrid MapSecondaryGrid;
-    public MapGrid MapTertiaryGrid;
-
-    public ModelGrid ModelPrimaryGrid;
-    public ModelGrid ModelSecondaryGrid;
-    public ModelGrid ModelTertiaryGrid;
+    public ViewportGrid PrimaryGrid;
+    public ViewportGrid SecondaryGrid;
+    public ViewportGrid TertiaryGrid;
 
     public RenderScene RenderScene;
     public ViewportSelection ViewportSelection;
@@ -167,44 +163,13 @@ public class VulkanViewport : IViewport
                 cl.ClearDepthStencil(0);
             });
 
-            if (owner is MapUniverse)
+            if (owner is MapUniverse || owner is ModelUniverse)
             {
                 Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
 
-                MapPrimaryGrid = new MapGrid(owner, RenderScene.OpaqueRenderables,
-                    CFG.Current.MapEditor_PrimaryGrid_Size,
-                    CFG.Current.MapEditor_PrimaryGrid_SectionSize,
-                    CFG.Current.MapEditor_PrimaryGrid_Color);
-
-                MapSecondaryGrid = new MapGrid(owner, RenderScene.OpaqueRenderables,
-                    CFG.Current.MapEditor_SecondaryGrid_Size,
-                    CFG.Current.MapEditor_SecondaryGrid_SectionSize,
-                    CFG.Current.MapEditor_SecondaryGrid_Color);
-
-                MapTertiaryGrid = new MapGrid(owner, RenderScene.OpaqueRenderables,
-                    CFG.Current.MapEditor_TertiaryGrid_Size,
-                    CFG.Current.MapEditor_TertiaryGrid_SectionSize,
-                    CFG.Current.MapEditor_TertiaryGrid_Color);
-            }
-
-            if (owner is ModelUniverse)
-            {
-                Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
-
-                ModelPrimaryGrid = new ModelGrid(owner, RenderScene.OpaqueRenderables,
-                    CFG.Current.ModelEditor_PrimaryGrid_Size,
-                    CFG.Current.ModelEditor_PrimaryGrid_SectionSize,
-                    CFG.Current.ModelEditor_PrimaryGrid_Color);
-
-                ModelSecondaryGrid = new ModelGrid(owner, RenderScene.OpaqueRenderables,
-                    CFG.Current.ModelEditor_SecondaryGrid_Size,
-                    CFG.Current.ModelEditor_SecondaryGrid_SectionSize,
-                    CFG.Current.ModelEditor_SecondaryGrid_Color);
-
-                ModelTertiaryGrid = new ModelGrid(owner, RenderScene.OpaqueRenderables,
-                    CFG.Current.ModelEditor_TertiaryGrid_Size,
-                    CFG.Current.ModelEditor_TertiaryGrid_SectionSize,
-                    CFG.Current.ModelEditor_TertiaryGrid_Color);
+                PrimaryGrid = new ViewportGrid(RenderScene.OpaqueRenderables);
+                SecondaryGrid = new ViewportGrid(RenderScene.OpaqueRenderables);
+                TertiaryGrid = new ViewportGrid(RenderScene.OpaqueRenderables);
             }
 
             ClickSelection = new(this);
@@ -310,7 +275,7 @@ public class VulkanViewport : IViewport
 
         Gizmos.Update(ray, CanInteract && MouseInViewport(), IsActiveViewport);
 
-        UpdateGrids(ray);
+        UpdateGrids();
 
         bool kbbusy = false;
 
@@ -630,98 +595,24 @@ public class VulkanViewport : IViewport
         return true;
     }
 
-    public void UpdateGrids(Ray ray)
+    public void UpdateGrids()
     {
         if (Owner is MapUniverse mapUniverse)
         {
-            MapPrimaryGrid.Update(
-                CFG.Current.MapEditor_DisplayPrimaryGrid,
-                ray,
-                CFG.Current.MapEditor_PrimaryGrid_Size,
-                CFG.Current.MapEditor_PrimaryGrid_SectionSize,
-                CFG.Current.MapEditor_PrimaryGrid_Color,
-                CFG.Current.MapEditor_PrimaryGrid_Position_X,
-                CFG.Current.MapEditor_PrimaryGrid_Position_Y,
-                CFG.Current.MapEditor_PrimaryGrid_Position_Z,
-                CFG.Current.MapEditor_PrimaryGrid_Rotation_X,
-                CFG.Current.MapEditor_PrimaryGrid_Rotation_Y,
-                CFG.Current.MapEditor_PrimaryGrid_Rotation_Z,
-                ref CFG.Current.MapEditor_RegeneratePrimaryGrid);
-
-            MapSecondaryGrid.Update(
-                CFG.Current.MapEditor_DisplaySecondaryGrid,
-                ray,
-                CFG.Current.MapEditor_SecondaryGrid_Size,
-                CFG.Current.MapEditor_SecondaryGrid_SectionSize,
-                CFG.Current.MapEditor_SecondaryGrid_Color,
-                CFG.Current.MapEditor_SecondaryGrid_Position_X,
-                CFG.Current.MapEditor_SecondaryGrid_Position_Y,
-                CFG.Current.MapEditor_SecondaryGrid_Position_Z,
-                CFG.Current.MapEditor_SecondaryGrid_Rotation_X,
-                CFG.Current.MapEditor_SecondaryGrid_Rotation_Y,
-                CFG.Current.MapEditor_SecondaryGrid_Rotation_Z,
-                ref CFG.Current.MapEditor_RegenerateSecondaryGrid);
-
-            MapTertiaryGrid.Update(
-                CFG.Current.MapEditor_DisplayTertiaryGrid,
-                ray,
-                CFG.Current.MapEditor_TertiaryGrid_Size,
-                CFG.Current.MapEditor_TertiaryGrid_SectionSize,
-                CFG.Current.MapEditor_TertiaryGrid_Color,
-                CFG.Current.MapEditor_TertiaryGrid_Position_X,
-                CFG.Current.MapEditor_TertiaryGrid_Position_Y,
-                CFG.Current.MapEditor_TertiaryGrid_Position_Z,
-                CFG.Current.MapEditor_TertiaryGrid_Rotation_X,
-                CFG.Current.MapEditor_TertiaryGrid_Rotation_Y,
-                CFG.Current.MapEditor_TertiaryGrid_Rotation_Z,
-                ref CFG.Current.MapEditor_RegenerateTertiaryGrid);
-
+            UpdateGrids(ViewportGridEditor.Map, mapUniverse.Project.Handler.FocusedEditor is MapEditorScreen);
         }
 
         if (Owner is ModelUniverse modelUniverse)
         {
-            ModelPrimaryGrid.Update(
-                CFG.Current.ModelEditor_DisplayPrimaryGrid,
-                ray,
-                CFG.Current.ModelEditor_PrimaryGrid_Size,
-                CFG.Current.ModelEditor_PrimaryGrid_SectionSize,
-                CFG.Current.ModelEditor_PrimaryGrid_Color,
-                CFG.Current.ModelEditor_PrimaryGrid_Position_X,
-                CFG.Current.ModelEditor_PrimaryGrid_Position_Y,
-                CFG.Current.ModelEditor_PrimaryGrid_Position_Z,
-                CFG.Current.ModelEditor_PrimaryGrid_Rotation_X,
-                CFG.Current.ModelEditor_PrimaryGrid_Rotation_Y,
-                CFG.Current.ModelEditor_PrimaryGrid_Rotation_Z,
-                ref CFG.Current.ModelEditor_RegeneratePrimaryGrid);
-
-            ModelSecondaryGrid.Update(
-                CFG.Current.ModelEditor_DisplaySecondaryGrid,
-                ray,
-                CFG.Current.ModelEditor_SecondaryGrid_Size,
-                CFG.Current.ModelEditor_SecondaryGrid_SectionSize,
-                CFG.Current.ModelEditor_SecondaryGrid_Color,
-                CFG.Current.ModelEditor_SecondaryGrid_Position_X,
-                CFG.Current.ModelEditor_SecondaryGrid_Position_Y,
-                CFG.Current.ModelEditor_SecondaryGrid_Position_Z,
-                CFG.Current.ModelEditor_SecondaryGrid_Rotation_X,
-                CFG.Current.ModelEditor_SecondaryGrid_Rotation_Y,
-                CFG.Current.ModelEditor_SecondaryGrid_Rotation_Z,
-                ref CFG.Current.ModelEditor_RegenerateSecondaryGrid);
-
-            ModelTertiaryGrid.Update(
-                CFG.Current.ModelEditor_DisplayTertiaryGrid,
-                ray,
-                CFG.Current.ModelEditor_TertiaryGrid_Size,
-                CFG.Current.ModelEditor_TertiaryGrid_SectionSize,
-                CFG.Current.ModelEditor_TertiaryGrid_Color,
-                CFG.Current.ModelEditor_TertiaryGrid_Position_X,
-                CFG.Current.ModelEditor_TertiaryGrid_Position_Y,
-                CFG.Current.ModelEditor_TertiaryGrid_Position_Z,
-                CFG.Current.ModelEditor_TertiaryGrid_Rotation_X,
-                CFG.Current.ModelEditor_TertiaryGrid_Rotation_Y,
-                CFG.Current.ModelEditor_TertiaryGrid_Rotation_Z,
-                ref CFG.Current.ModelEditor_RegenerateTertiaryGrid);
+            UpdateGrids(ViewportGridEditor.Model, modelUniverse.Project.Handler.FocusedEditor is ModelEditorScreen);
         }
+    }
+
+    private void UpdateGrids(ViewportGridEditor editor, bool isEditorFocused)
+    {
+        PrimaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Primary));
+        SecondaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Secondary));
+        TertiaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Tertiary));
     }
 
     public void DelayPicking()

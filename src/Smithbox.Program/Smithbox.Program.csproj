@@ -80,7 +80,6 @@
     <Compile Include="Editors\Map Editor\Enums\QueryMapListType.cs" />
     <Compile Include="Editors\Map Editor\Enums\QuerySelectionConditionLogic.cs" />
     <Compile Include="Editors\Map Editor\Enums\ReplicateSquareSideType.cs" />
-    <Compile Include="Editors\Map Editor\Enums\TargetMapGridType.cs" />
     <Compile Include="Editors\Map Editor\Enums\ViewportGridRootAxis.cs" />
     <Compile Include="Editors\Map Editor\Enums\ViewportTargetGridType.cs" />
     <Compile Include="Editors\Map Editor\Enums\WorldMapImageSource.cs" />

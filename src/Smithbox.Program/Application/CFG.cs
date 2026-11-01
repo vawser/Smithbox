@@ -1252,7 +1252,6 @@ public class CFG
 
     // Map Editor: Primary Grid
     public bool MapEditor_DisplayPrimaryGrid = false;
-    public bool MapEditor_RegeneratePrimaryGrid = false;
     public int MapEditor_PrimaryGrid_Size = 1000;
     public float MapEditor_PrimaryGrid_SectionSize = 10;
     public Vector3 MapEditor_PrimaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
@@ -1277,7 +1276,6 @@ public class CFG
 
     // Map Editor: Secondary Grid
     public bool MapEditor_DisplaySecondaryGrid = false;
-    public bool MapEditor_RegenerateSecondaryGrid = false;
     public int MapEditor_SecondaryGrid_Size = 1000;
     public float MapEditor_SecondaryGrid_SectionSize = 10;
     public Vector3 MapEditor_SecondaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
@@ -1302,7 +1300,6 @@ public class CFG
 
     // Map Editor: Tertiary Grid
     public bool MapEditor_DisplayTertiaryGrid = false;
-    public bool MapEditor_RegenerateTertiaryGrid = false;
     public int MapEditor_TertiaryGrid_Size = 1000;
     public float MapEditor_TertiaryGrid_SectionSize = 10;
     public Vector3 MapEditor_TertiaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
@@ -1327,7 +1324,6 @@ public class CFG
 
     // Model Editor: Primary Grid
     public bool ModelEditor_DisplayPrimaryGrid = false;
-    public bool ModelEditor_RegeneratePrimaryGrid = false;
     public int ModelEditor_PrimaryGrid_Size = 1000;
     public float ModelEditor_PrimaryGrid_SectionSize = 10;
 
@@ -1343,7 +1339,6 @@ public class CFG
 
     // Model Editor: Secondary Grid
     public bool ModelEditor_DisplaySecondaryGrid = false;
-    public bool ModelEditor_RegenerateSecondaryGrid = false;
     public int ModelEditor_SecondaryGrid_Size = 1000;
     public float ModelEditor_SecondaryGrid_SectionSize = 10;
 
@@ -1359,7 +1354,6 @@ public class CFG
 
     // Model Editor: Tertiary Grid
     public bool ModelEditor_DisplayTertiaryGrid = false;
-    public bool ModelEditor_RegenerateTertiaryGrid = false;
     public int ModelEditor_TertiaryGrid_Size = 1000;
     public float ModelEditor_TertiaryGrid_SectionSize = 10;
 

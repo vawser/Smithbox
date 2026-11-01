@@ -8,17 +8,8 @@
   
 # Map/Model Editor
 - Implement viewport grid via shader (and make configuration shared)
+- Add toggles for DummyEnemy and DummyAsset/DummyObject
 - Added some kind of detection for LOD-only assets/map-pieces so we can add a toggle for hiding them quickly
 - Change the solid markers to filled wireframe (character placeholder, asset placeholder, player part)
 - Add method to set all chrs and assets with idles to first frame of said animation rather than rest pose (looks better + shows corpse anims)
-- Waterfall textures look a bit simple
 
-- Small issues:
- - z-fighting on m004500 for decal textures
- - Rat skin messed up for c4080 / c4090 (rats)
- - Messed up texturing for c4640 (ulcerated)
- - Messed up texturing for c3320 (blob)
- - Flame asset doesn't look correct (AEG094_111), multi-colored with incorrect alpha
- - Multi-colored mesh (m400000)
- - Strange light white rock (AEG230_921 / AEG230_835 / m100056) 
- - Strange white trunk (AEG232_478 / AEG232_474)
