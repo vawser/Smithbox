@@ -9,6 +9,7 @@ public class TimeActSelection
 {
     public TimeActContainerWrapper SelectedTimeActContainerWrapper;
     public TimeActModelWrapper SelectedTimeActModelWrapper;
+    public TimeActEntry SelectedTimeAct;
 
     public bool IsAnyModelLoaded()
     {

@@ -41,6 +41,34 @@
       "Text": ""
     },
     {
+      "Key": "TAE_SourceWindow_Tab_Characters",
+      "Text": "Characters"
+    },
+    {
+      "Key": "TAE_SourceWindow_Tab_Objects",
+      "Text": "Objects"
+    },
+    {
+      "Key": "TAE_SourceWindow_Tab_Assets",
+      "Text": "Assets"
+    },
+    {
+      "Key": "TAE_SourceWindow_Scanning",
+      "Text": "Finding sources: {0} / {1}"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Entry_Details",
+      "Text": "{0} ({1} animations)"
+    },
+    {
+      "Key": "TAE_Data_Failed_To_Read_Source",
+      "Text": "Failed to read time act source: {0}"
+    },
+    {
+      "Key": "TAE_Data_Failed_To_Read_TimeAct",
+      "Text": "Failed to read time act: {0}"
+    },
+    {
       "Key": "TAE_SelectionWindow_List_Header",
       "Text": "Time Acts"
     },

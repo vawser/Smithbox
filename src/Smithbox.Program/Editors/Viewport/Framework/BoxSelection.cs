@@ -106,7 +106,7 @@ public class BoxSelection
         {
             SelectOpaqueRenderables(start, end);
         }
-        else if (FocusManager.IsInModelEditor())
+        else if (FocusManager.IsInModelEditor() || FocusManager.IsInTimeActEditor())
         {
             if (InputManager.IsDown(KeybindID.ModelEditor_Select_Primitives_Only))
             {
@@ -281,9 +281,9 @@ public class BoxSelection
 
                 var add = true;
 
-                if (curEnt is ModelEntity ent)
+                if (curEnt is ModelEntity or TimeActModelEntity)
                 {
-                    if(ent.WrappedObject is FLVER2.Mesh)
+                    if(curEnt is Common.Entity { WrappedObject: FLVER2.Mesh })
                     {
                         add = false;
                     }

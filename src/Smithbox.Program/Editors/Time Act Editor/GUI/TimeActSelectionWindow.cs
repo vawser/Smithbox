@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
@@ -14,6 +15,8 @@ public class TimeActSelectionWindow
 
     private string TimeActListFilter = "";
     private bool ExactTimeActFilter = false;
+
+    private bool _arrowKeyPressed = false;
 
     public TimeActSelectionWindow(TimeActEditorView view, ProjectEntry project)
     {
@@ -39,6 +42,49 @@ public class TimeActSelectionWindow
 
     public void DisplaySelectionList()
     {
+        var source = View.Selection.SelectedTimeActContainerWrapper;
 
+        if (source == null)
+            return;
+
+        if (InputManager.HasArrowSelection())
+        {
+            _arrowKeyPressed = true;
+        }
+
+        foreach (var entry in source.TimeActs)
+        {
+            if (!EditorFilters.IsMatch(TimeActListFilter, entry.Name, ExactTimeActFilter))
+                continue;
+
+            var selected = View.Selection.SelectedTimeAct == entry;
+
+            var label = entry.Name;
+
+            // The animation count isn't known until the time act has been read
+            if (entry.TimeAct != null)
+            {
+                label = LOC.Get("TAE_SelectionWindow_Entry_Details", entry.Name, entry.TimeAct.Animations.Count);
+            }
+
+            if (ImGui.Selectable($"{label}##timeActEntry{entry.BinderID}", selected))
+            {
+                SelectTimeAct(entry);
+            }
+
+            if (_arrowKeyPressed && ImGui.IsItemFocused() && !selected)
+            {
+                SelectTimeAct(entry);
+
+                _arrowKeyPressed = false;
+            }
+        }
+    }
+
+    private void SelectTimeAct(TimeActEntry entry)
+    {
+        entry.Load();
+
+        View.Selection.SelectedTimeAct = entry;
     }
 }

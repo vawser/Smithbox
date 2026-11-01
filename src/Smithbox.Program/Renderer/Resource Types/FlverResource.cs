@@ -65,6 +65,7 @@ public class FlverResource : IResource, IDisposable
 
     // Set before anything is read, so that all of the load can follow it
     private bool ModelsOnly => Context?.Pool?.ModelsOnly == true;
+    private static bool RequiresFullFlver => FocusManager.IsInModelEditor() || FocusManager.IsInTimeActEditor();
 
     public bool _Load(Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
@@ -93,7 +94,7 @@ public class FlverResource : IResource, IDisposable
             if (al == AccessLevel.AccessGPUOptimizedOnly &&
                 curProject.Descriptor.ProjectType != ProjectType.NR &&
                 curProject.Descriptor.ProjectType != ProjectType.DS1R &&
-                curProject.Descriptor.ProjectType != ProjectType.DS1 && (ModelsOnly || !FocusManager.IsInModelEditor()))
+                curProject.Descriptor.ProjectType != ProjectType.DS1 && (ModelsOnly || !RequiresFullFlver))
             {
                 BinaryReaderEx br = new(false, bytes);
                 DCX.Type ctype;
@@ -148,7 +149,7 @@ public class FlverResource : IResource, IDisposable
                     if (al == AccessLevel.AccessGPUOptimizedOnly &&
                         curProject.Descriptor.ProjectType != ProjectType.NR &&
                         curProject.Descriptor.ProjectType != ProjectType.DS1R &&
-                        curProject.Descriptor.ProjectType != ProjectType.DS1 && (ModelsOnly || !FocusManager.IsInModelEditor()))
+                        curProject.Descriptor.ProjectType != ProjectType.DS1 && (ModelsOnly || !RequiresFullFlver))
                     {
                         BinaryReaderEx br = new(false, fileData.Value);
                         DCX.Type ctype;

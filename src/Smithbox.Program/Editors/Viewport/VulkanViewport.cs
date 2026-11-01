@@ -652,7 +652,7 @@ public class VulkanViewport : IViewport
 
         if (Owner is TimeActUniverse timeActUniverse)
         {
-            UpdateGrids(ViewportGridEditor.Model, timeActUniverse.Project.Handler.FocusedEditor is TimeActEditorScreen);
+            UpdateGrids(ViewportGridEditor.TimeAct, timeActUniverse.Project.Handler.FocusedEditor is TimeActEditorScreen);
         }
     }
 

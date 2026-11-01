@@ -16,18 +16,87 @@ public class TimeActContainerWrapper
     public string MapID { get; set; }
 
     public string Name { get; set; }
+
+    /// <summary>
+    /// The container that holds the model. Null if this source has no model.
+    /// </summary>
     public string Path { get; set; }
+
+    /// <summary>
+    /// The anibnd, or the container that the anibnd is nested in for objects and assets
+    /// </summary>
+    public string SourcePath { get; set; }
 
     public List<TimeActModelWrapper> Models { get; set; }
 
-    public TimeActContainerWrapper(ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
+    public List<TimeActEntry> TimeActs { get; set; }
+
+    public TimeActContainerWrapper(ProjectEntry project, FileDictionaryEntry sourceEntry, FileDictionaryEntry modelEntry, VirtualFileSystem targetFS)
     {
         Project = project;
         TargetFS = targetFS;
-        Name = dictEntry.Filename;
-        Path = dictEntry.Path;
+        Name = sourceEntry.Filename;
+        SourcePath = sourceEntry.Path;
+        Path = modelEntry?.Path;
 
         Models = new();
+        TimeActs = new();
+    }
+
+    public void PopulateTimeActList()
+    {
+        TimeActs = ReadTimeActs();
+    }
+
+    /// <summary>
+    /// Reads the .tae files of this source, in the order of their binder IDs.
+    /// The file data is copied, so the entries can outlive the binder.
+    /// </summary>
+    public List<TimeActEntry> ReadTimeActs()
+    {
+        var entries = new List<TimeActEntry>();
+
+        using var binder = ReadBinderFile(SourcePath);
+
+        if (binder == null)
+            return entries;
+
+        var nestedFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".anibnd"));
+
+        if (nestedFile == null)
+        {
+            AddTimeActs(binder, entries);
+        }
+        else
+        {
+            using var anibnd = ReadBinder(nestedFile.Bytes);
+
+            AddTimeActs(anibnd, entries);
+        }
+
+        entries.Sort((a, b) => a.BinderID.CompareTo(b.BinderID));
+
+        return entries;
+    }
+
+    private void AddTimeActs(IBinder binder, List<TimeActEntry> entries)
+    {
+        foreach (var file in binder.Files)
+        {
+            if (file.Name.ToLower().Contains(".tae"))
+            {
+                entries.Add(new TimeActEntry(FilePathUtils.GetPureFilename(file.Name), file.ID, file.Bytes.ToArray()));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Gets the model this source animates, or the first model of the container if none shares its name
+    /// </summary>
+    public TimeActModelWrapper GetPrimaryModel()
+    {
+        return Models.FirstOrDefault(e => e.Name.Equals(Name, StringComparison.OrdinalIgnoreCase))
+            ?? Models.FirstOrDefault();
     }
 
     /// <summary>
@@ -67,6 +136,9 @@ public class TimeActContainerWrapper
 
     public void PopulateModelList()
     {
+        if (Path == null)
+            return;
+
         // Keep the wrappers that are loaded or have unsaved changes, so their state is not lost
         var existingModels = new Dictionary<string, TimeActModelWrapper>();
 
@@ -142,45 +214,58 @@ public class TimeActContainerWrapper
     /// <summary>
     /// BXF containers are split into a header (BHD) and data (BDT) file
     /// </summary>
-    private string GetBdtPath()
+    private string GetBdtPath(string path)
     {
-        return Path.Replace("bhd", "bdt");
+        return path.Replace("bhd", "bdt");
     }
 
     /// <summary>
-    /// Read the container as a BND, or as a BXF if it is split into a header and data file.
-    /// Returns null if the container could not be found or is not a binder.
+    /// Read the model container. Returns null if it could not be found or is not a binder.
     /// </summary>
     public IBinder ReadContainer()
     {
-        var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Project, Path);
+        return ReadBinderFile(Path);
+    }
+
+    private IBinder ReadBinder(Memory<byte> data)
+    {
+        if (UsesBinder3())
+        {
+            return BND3.Read(data);
+        }
+
+        return BND4.Read(data);
+    }
+
+    /// <summary>
+    /// Read the file as a BND, or as a BXF if it is split into a header and data file.
+    /// Returns null if the file could not be found or is not a binder.
+    /// </summary>
+    private IBinder ReadBinderFile(string path)
+    {
+        var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Project, path);
 
         if (binderType is ResourceContainerType.BND)
         {
-            if (!TargetFS.FileExists(Path))
+            if (!TargetFS.FileExists(path))
                 return null;
 
-            var binderData = TargetFS.ReadFile(Path);
+            var binderData = TargetFS.ReadFile(path);
 
             if (binderData == null)
                 return null;
 
-            if (UsesBinder3())
-            {
-                return BND3.Read(binderData.Value);
-            }
-
-            return BND4.Read(binderData.Value);
+            return ReadBinder(binderData.Value);
         }
 
         if (binderType is ResourceContainerType.BXF)
         {
-            var bdtPath = GetBdtPath();
+            var bdtPath = GetBdtPath(path);
 
-            if (!TargetFS.FileExists(Path) || !TargetFS.FileExists(bdtPath))
+            if (!TargetFS.FileExists(path) || !TargetFS.FileExists(bdtPath))
                 return null;
 
-            var bhdData = TargetFS.ReadFile(Path);
+            var bhdData = TargetFS.ReadFile(path);
             var bdtData = TargetFS.ReadFile(bdtPath);
 
             if (bhdData == null || bdtData == null || bhdData.Value.Length == 0 || bdtData.Value.Length == 0)
@@ -219,14 +304,14 @@ public class TimeActContainerWrapper
                 bxf3.Write(out bhdBytes, out bdtBytes);
 
                 Project.VFS.ProjectFS.WriteFile(Path, bhdBytes);
-                Project.VFS.ProjectFS.WriteFile(GetBdtPath(), bdtBytes);
+                Project.VFS.ProjectFS.WriteFile(GetBdtPath(Path), bdtBytes);
                 break;
 
             case BXF4 bxf4:
                 bxf4.Write(out bhdBytes, out bdtBytes);
 
                 Project.VFS.ProjectFS.WriteFile(Path, bhdBytes);
-                Project.VFS.ProjectFS.WriteFile(GetBdtPath(), bdtBytes);
+                Project.VFS.ProjectFS.WriteFile(GetBdtPath(Path), bdtBytes);
                 break;
         }
     }

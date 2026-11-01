@@ -3,6 +3,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.TimeActEditor;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -587,6 +588,12 @@ public class ViewportMenu
         {
             modelUniverse.View.ViewportFilters.Display();
         }
+
+        // Time Act Editor
+        if (Owner is TimeActUniverse timeActUniverse)
+        {
+            timeActUniverse.View.ViewportFilters.Display();
+        }
     }
 
     public void GizmoMenu()
@@ -679,48 +686,58 @@ public class ViewportMenu
 
             if (Owner is ModelUniverse modelUniverse)
             {
-                ImGui.Separator();
-
-                ModelModelLoadMenu();
-                ModelTextureLoadMenu();
-
-                ImGui.Separator();
-
-                if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Display_Nodes")}##displayNodeMenuHeader"))
-                {
-                    ImGui.DragFloat(
-                        $"{LOC.Get("VIEWPORT_Menubar_Setting_Dummy_Size")}##dummyMeshSize",
-                        ref CFG.Current.DummyMeshSize, 0.1f, 0.0001f, 1f);
-
-                    GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Dummy_Size_TT"));
-
-                    if(ImGui.IsItemDeactivatedAfterEdit())
-                    {
-                        RenderableHelper.UpdateProxySizes();
-                        modelUniverse.View.ViewportWindow.UpdateDisplayNodes();
-                    }
-
-                    ImGui.DragFloat(
-                        $"{LOC.Get("VIEWPORT_Menubar_Setting_Node_Size")}##nodeMeshSize",
-                        ref CFG.Current.NodeMeshSize, 0.1f, 0.0001f, 1f);
-
-                    GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Node_Size_TT"));
-
-                    if (ImGui.IsItemDeactivatedAfterEdit())
-                    {
-                        RenderableHelper.UpdateProxySizes();
-                        modelUniverse.View.ViewportWindow.UpdateDisplayNodes();
-                    }
-
-                    ImGui.DragFloat(
-                        $"{LOC.Get("VIEWPORT_Menubar_Setting_Label_Scale")}##labelScale",
-                        ref CFG.Current.ModelEditor_LabelScale, 0.05f, 0.25f, 5f);
-
-                    GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Label_Scale_TT"));
-
-                    ImGui.EndMenu();
-                }
+                ModelSettingsMenu(modelUniverse.View.ViewportWindow.UpdateDisplayNodes);
             }
+
+            if (Owner is TimeActUniverse timeActUniverse)
+            {
+                ModelSettingsMenu(timeActUniverse.View.ViewportWindow.UpdateDisplayNodes);
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    private void ModelSettingsMenu(Action updateDisplayNodes)
+    {
+        ImGui.Separator();
+
+        ModelModelLoadMenu();
+        ModelTextureLoadMenu();
+
+        ImGui.Separator();
+
+        if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Display_Nodes")}##displayNodeMenuHeader"))
+        {
+            ImGui.DragFloat(
+                $"{LOC.Get("VIEWPORT_Menubar_Setting_Dummy_Size")}##dummyMeshSize",
+                ref CFG.Current.DummyMeshSize, 0.1f, 0.0001f, 1f);
+
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Dummy_Size_TT"));
+
+            if(ImGui.IsItemDeactivatedAfterEdit())
+            {
+                RenderableHelper.UpdateProxySizes();
+                updateDisplayNodes();
+            }
+
+            ImGui.DragFloat(
+                $"{LOC.Get("VIEWPORT_Menubar_Setting_Node_Size")}##nodeMeshSize",
+                ref CFG.Current.NodeMeshSize, 0.1f, 0.0001f, 1f);
+
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Node_Size_TT"));
+
+            if (ImGui.IsItemDeactivatedAfterEdit())
+            {
+                RenderableHelper.UpdateProxySizes();
+                updateDisplayNodes();
+            }
+
+            ImGui.DragFloat(
+                $"{LOC.Get("VIEWPORT_Menubar_Setting_Label_Scale")}##labelScale",
+                ref CFG.Current.ModelEditor_LabelScale, 0.05f, 0.25f, 5f);
+
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Label_Scale_TT"));
 
             ImGui.EndMenu();
         }

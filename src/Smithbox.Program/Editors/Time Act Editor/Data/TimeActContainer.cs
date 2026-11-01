@@ -39,8 +39,8 @@ public class TimeActContainer : ObjectContainer
         var rootTransformNode = new ModelTransformNode(modelName);
         var modelTransformNode = new ModelTransformNode(modelName);
 
-        RootObject = new ModelEntity(view.Universe, this, rootTransformNode, ModelEntityType.ModelRoot);
-        ModelOffsetNode = new ModelEntity(view.Universe, this, modelTransformNode);
+        RootObject = new TimeActModelEntity(view.Universe, this, rootTransformNode, ModelEntityType.ModelRoot);
+        ModelOffsetNode = new TimeActModelEntity(view.Universe, this, modelTransformNode);
 
         RootObject.AddChild(ModelOffsetNode);
     }
@@ -68,7 +68,7 @@ public class TimeActContainer : ObjectContainer
         // Nodes
         foreach (var entry in flver.Nodes)
         {
-            var newObject = new ModelEntity(View.Universe, this, entry, ModelEntityType.Node);
+            var newObject = new TimeActModelEntity(View.Universe, this, entry, ModelEntityType.Node);
 
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
@@ -107,7 +107,7 @@ public class TimeActContainer : ObjectContainer
         // Dummies
         foreach (var entry in flver.Dummies)
         {
-            var newObject = new ModelEntity(View.Universe, this, entry, ModelEntityType.Dummy);
+            var newObject = new TimeActModelEntity(View.Universe, this, entry, ModelEntityType.Dummy);
 
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
@@ -141,7 +141,7 @@ public class TimeActContainer : ObjectContainer
         int index = 0;
         foreach (var entry in flver.Meshes)
         {
-            var newObject = new ModelEntity(View.Universe, this, entry, ModelEntityType.Mesh);
+            var newObject = new TimeActModelEntity(View.Universe, this, entry, ModelEntityType.Mesh);
 
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {

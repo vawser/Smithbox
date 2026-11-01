@@ -3,6 +3,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.TimeActEditor;
 using StudioCore.Renderer;
 using System.Collections.Generic;
 using System.Numerics;
@@ -54,6 +55,26 @@ public class ViewportOverlay
         {
             var container = modelUniverse.View.Selection.SelectedModelWrapper?.Container;
             var drawFilter = modelUniverse.View.RenderScene.DrawFilter;
+
+            if (container != null)
+            {
+                if (CFG.Current.ModelEditor_DisplayDummyLabels && drawFilter.HasFlag(RenderFilter.Dummies))
+                {
+                    DrawEntityLabels(container.Dummies, CFG.Current.Viewport_Dummy_Polygon_Base_Color);
+                }
+
+                if (CFG.Current.ModelEditor_DisplayNodeLabels && drawFilter.HasFlag(RenderFilter.Nodes))
+                {
+                    DrawEntityLabels(container.Nodes, CFG.Current.Viewport_Bone_Marker_Base_Color);
+                }
+            }
+        }
+
+        // Time Act Editor
+        if (Parent.Owner is TimeActUniverse timeActUniverse)
+        {
+            var container = timeActUniverse.View.Selection.SelectedTimeActModelWrapper?.Container;
+            var drawFilter = timeActUniverse.View.RenderScene.DrawFilter;
 
             if (container != null)
             {

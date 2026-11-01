@@ -70,7 +70,7 @@ public class TimeActEditorView : IEditorView
         ToolWindow = new(this, project);
 
         // Tools
-        GridTool = new ViewportGridTool(ViewportGridEditor.Model);
+        GridTool = new ViewportGridTool(ViewportGridEditor.TimeAct);
         ResourceListTool = new ResourceListTool();
     }
 
