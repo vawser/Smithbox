@@ -996,6 +996,15 @@ public class FlverResource : IResource, IDisposable
         dest.Bounds = new BoundingBox(dest.Bounds.Min - pad, dest.Bounds.Max + pad);
     }
 
+    /// <summary>
+    /// Elden Ring's body models hold their body hair as extra meshes, such as #03#_hairy and #03#_hairy_plane.
+    /// These share their masks with the skin (#03#), so masks can't tell the two apart.
+    /// </summary>
+    private static bool IsBodyHairMaterial(string? materialName)
+    {
+        return materialName != null && materialName.Contains("_hairy", StringComparison.OrdinalIgnoreCase);
+    }
+
     private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -1010,6 +1019,7 @@ public class FlverResource : IResource, IDisposable
         {
             dest.MaterialMask = int.Parse(matName.Substring(1, 2));
         }
+        dest.IsBodyHair = IsBodyHairMaterial(matName);
 
         dest.SpecializationConstants = new List<SpecializationConstant>();
 
@@ -1096,6 +1106,7 @@ public class FlverResource : IResource, IDisposable
         {
             dest.MaterialMask = int.Parse(matName.Substring(1, 2));
         }
+        dest.IsBodyHair = IsBodyHairMaterial(matName);
         dest.MaterialBuffer = AllocateMaterialBuffer(dest);
         dest.MaterialData = new Material();
 
@@ -3527,6 +3538,8 @@ public class FlverResource : IResource, IDisposable
         public int MaxUvSets => Definition?.Fur?.ThirdUv == true ? 3 : 2;
 
         public int MaterialMask = -1;
+
+        public bool IsBodyHair;
 
         public string? ShaderName;
         public List<SpecializationConstant>? SpecializationConstants;

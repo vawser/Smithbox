@@ -171,6 +171,7 @@ public static class FocusManager
         if (Focus is EditorFocusContext.TimeActEditor_None
             or EditorFocusContext.TimeActEditor_SourceWindow
             or EditorFocusContext.TimeActEditor_SelectionWindow
+            or EditorFocusContext.TimeActEditor_AnimationSelectionWindow
             or EditorFocusContext.TimeActEditor_Viewport
             or EditorFocusContext.TimeActEditor_GraphWindow
             or EditorFocusContext.TimeActEditor_PropertiesWindow
@@ -264,6 +265,7 @@ public enum EditorFocusContext
     TimeActEditor_None,
     TimeActEditor_SourceWindow,
     TimeActEditor_SelectionWindow,
+    TimeActEditor_AnimationSelectionWindow,
     TimeActEditor_GraphWindow,
     TimeActEditor_Viewport,
     TimeActEditor_PropertiesWindow,

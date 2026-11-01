@@ -21,6 +21,10 @@
       "Text": "Time Acts"
     },
     {
+      "Key": "TAE_Editor_Animation_Selection_Window",
+      "Text": "Animations"
+    },
+    {
       "Key": "TAE_Editor_Graph_Window",
       "Text": "Time Act Events"
     },
@@ -71,6 +75,14 @@
     {
       "Key": "TAE_Data_Failed_To_Read_Template",
       "Text": "Failed to read time act template: {0}"
+    },
+    {
+      "Key": "TAE_Editor_Options_Auto_Play",
+      "Text": "Auto-Play Selected Animation"
+    },
+    {
+      "Key": "TAE_Editor_Options_Auto_Play_TT",
+      "Text": "If enabled, an animation starts playing once it has stayed selected for half a second."
     },
     {
       "Key": "TAE_Editor_Options_Outside_Playback",

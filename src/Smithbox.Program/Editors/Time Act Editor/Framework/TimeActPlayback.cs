@@ -18,6 +18,9 @@ public class TimeActPlayback
 {
     private const float DefaultFrameDuration = 1f / 30f;
 
+    // How long an animation has to stay selected before it plays by itself
+    private const float AutoPlayDelay = 0.5f;
+
     // Animations can import ones that import others, but not endlessly
     private const int MaxImportDepth = 8;
 
@@ -36,6 +39,9 @@ public class TimeActPlayback
 
     private float _time;
     private bool _playing;
+
+    // Counts down while an animation waits to play by itself. Selecting another one starts it over.
+    private float _autoPlayCountdown;
 
     public bool Loop = true;
     public float Speed = 1;
@@ -76,6 +82,8 @@ public class TimeActPlayback
     {
         _panel.Update();
 
+        UpdateAutoPlay();
+
         ModelAnimator? animator = Animator;
 
         if (animator?.CurrentAnimation != _boundClip)
@@ -101,6 +109,21 @@ public class TimeActPlayback
         else if (_playing)
         {
             AdvanceClock();
+        }
+    }
+
+    private void UpdateAutoPlay()
+    {
+        if (_autoPlayCountdown <= 0)
+            return;
+
+        _autoPlayCountdown -= ImGui.GetIO().DeltaTime;
+
+        if (_autoPlayCountdown <= 0)
+        {
+            // If the clip is still loading, it picks this up once it arrives
+            _playing = true;
+            Animator?.SetPlaying(true);
         }
     }
 
@@ -132,6 +155,8 @@ public class TimeActPlayback
 
     public void TogglePlaying()
     {
+        _autoPlayCountdown = 0;
+
         var finished = Animator is { } animator
             ? animator.Time >= animator.Duration
             : _time >= GetEventDuration();
@@ -148,6 +173,7 @@ public class TimeActPlayback
 
     public void Stop()
     {
+        _autoPlayCountdown = 0;
         _playing = false;
         Animator?.SetPlaying(false);
 
@@ -163,6 +189,7 @@ public class TimeActPlayback
 
     public void Pause()
     {
+        _autoPlayCountdown = 0;
         _playing = false;
         Animator?.SetPlaying(false);
     }
@@ -179,6 +206,7 @@ public class TimeActPlayback
         _boundClip = null;
         _time = 0;
         _playing = false;
+        _autoPlayCountdown = 0;
         IsClipMissing = false;
     }
 
@@ -190,6 +218,10 @@ public class TimeActPlayback
         _time = 0;
         _playing = false;
         IsClipMissing = false;
+
+        _autoPlayCountdown = CFG.Current.TimeActEditor_Auto_Play_Animation && View.Selection.SelectedAnimation != null
+            ? AutoPlayDelay
+            : 0;
 
         Animator?.Seek(0);
         Animator?.SetPlaying(false);

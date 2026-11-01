@@ -60,6 +60,8 @@ public static class CharacterComposition
 {
     public const string CompositeModel = "c0000";
 
+    private const string BodyPartPrefix = "fc_";
+
     // Larger than the invisible flags of any game, as masks past the end of the list are treated as disabled
     private const int MaskCount = 128;
 
@@ -319,9 +321,14 @@ public static class CharacterComposition
             ResourceDescriptor asset = ModelLocator.GetPartsModel(project, part.Name, part.Name);
 
             // The masks are for the meshes of the body and armor, and mean something else on a weapon
-            providers.Add(MeshProviderCache.GetFlverMeshProvider(
+            FlverMeshProvider provider = MeshProviderCache.GetFlverMeshProvider(
                 ResourceManager.DefaultPool.Find<FlverResource>(asset.Name),
-                part.AttachNode == null ? appearance.Masks : null, uid));
+                part.AttachNode == null ? appearance.Masks : null, uid);
+
+            // The fur on armor is left alone, as only the body models have meshes marked as body hair
+            provider.HideBodyHair = part.Name.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase);
+
+            providers.Add(provider);
 
             ResourceManager.DefaultPool.LoadAsset<FlverResource>(project, asset, new LoadOptions
             {

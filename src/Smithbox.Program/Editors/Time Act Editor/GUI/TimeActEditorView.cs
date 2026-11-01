@@ -35,6 +35,7 @@ public class TimeActEditorView : IEditorView
 
     public TimeActSourceWindow SourceWindow;
     public TimeActSelectionWindow SelectionWindow;
+    public TimeActAnimationSelectionWindow AnimationSelectionWindow;
     public TimeActGraphWindow GraphWindow;
     public TimeActViewportWindow ViewportWindow;
     public TimeActPropertiesWindow PropertiesWindow;
@@ -68,6 +69,7 @@ public class TimeActEditorView : IEditorView
 
         SourceWindow = new(this, project);
         SelectionWindow = new(this, project);
+        AnimationSelectionWindow = new(this, project);
         GraphWindow = new(this, project);
         PropertiesWindow = new(this, project);
         ToolWindow = new(this, project);
@@ -148,6 +150,25 @@ public class TimeActEditorView : IEditorView
             }
 
             SelectionWindow.Display(width, height);
+        }
+
+        ImGui.End();
+
+        // Animation Selection Window
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TimeActEditorView);
+        if (ImGui.Begin($@"{LOC.Get("TAE_Editor_Animation_Selection_Window")}##timeActEditor_AnimationSelectionWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.TimeActEditor_AnimationSelectionWindow);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            AnimationSelectionWindow.Display(width, height);
         }
 
         ImGui.End();

@@ -182,6 +182,14 @@ public class TimeActEditorScreen : EditorScreen
         // Options
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Options")}##optionsMenuHeader"))
         {
+            // Auto Play
+            if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Auto_Play")}##autoPlayToggle"))
+            {
+                CFG.Current.TimeActEditor_Auto_Play_Animation = !CFG.Current.TimeActEditor_Auto_Play_Animation;
+            }
+            GUI.Tooltip(LOC.Get("TAE_Editor_Options_Auto_Play_TT"));
+            GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Auto_Play_Animation);
+
             // Outside Playback
             if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Outside_Playback")}##outsidePlaybackToggle"))
             {

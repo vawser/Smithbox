@@ -17,6 +17,11 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
     public List<int> ModelMasks = new();
 
+    /// <summary>
+    /// Leaves out the body hair meshes of a body model
+    /// </summary>
+    public bool HideBodyHair = false;
+
     public List<FlverSubmeshProvider> _allSubmeshes = new();
 
     private List<FlverSubmeshProvider> _activeSubmeshes = new();
@@ -28,7 +33,7 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     }
     private void UpdateModelMasks()
     {
-        if (!ModelMasks.Any())
+        if (!ModelMasks.Any() && !HideBodyHair)
         {
             _activeSubmeshes = _allSubmeshes;
             return;
@@ -40,6 +45,16 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
             if (res.GPUMeshes.Length > i)
             {
+                if (HideBodyHair && res.GPUMeshes[i].Material.IsBodyHair)
+                {
+                    return false;
+                }
+
+                if (!ModelMasks.Any())
+                {
+                    return true;
+                }
+
                 var mask = res.GPUMeshes[i].Material.MaterialMask;
 
                 if (mask < ModelMasks.Count && mask > -1)
