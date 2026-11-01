@@ -504,6 +504,21 @@ public class TimeActGraphWindow
         {
             DeleteSelectedEvent();
         }
+
+        if (InputManager.IsPressed(KeybindID.Duplicate))
+        {
+            DuplicateSelectedEvent();
+        }
+
+        if (InputManager.IsPressed(KeybindID.Copy))
+        {
+            CopySelectedEvent();
+        }
+
+        if (InputManager.IsPressed(KeybindID.Paste))
+        {
+            PasteEvent(Snap(View.Playback.Time));
+        }
     }
 
     private void DeleteSelectedEvent()
@@ -712,11 +727,81 @@ public class TimeActGraphWindow
         }
     }
 
+    /// <summary>
+    /// Places a copy of the selected event straight after it, with the same length and parameters
+    /// </summary>
+    private void DuplicateSelectedEvent()
+    {
+        var source = View.Selection.SelectedEvent;
+
+        if (source == null)
+            return;
+
+        var frameDuration = View.Playback.FrameDuration;
+
+        // Events that last until the end of the animation have no end to go after
+        var offset = IsOpenEnded(source)
+            ? DefaultEventFrames * frameDuration
+            : Math.Max(source.EndTime - source.StartTime, frameDuration);
+
+        AddCopyOfEvent(source, source.StartTime + offset);
+    }
+
+    /// <summary>
+    /// Stores a copy of the selected event. Later edits to the event don't carry over to it,
+    /// and it doesn't depend on the source, so it can be pasted into any time act of the project.
+    /// </summary>
+    private void CopySelectedEvent()
+    {
+        var selection = View.Selection;
+
+        if (selection.SelectedEvent == null)
+            return;
+
+        View.Editor.CopiedEvent = selection.SelectedEvent.GetClone(selection.SelectedTimeAct.TimeAct.BigEndian);
+    }
+
+    private void PasteEvent(float time)
+    {
+        if (View.Editor.CopiedEvent == null || View.Selection.SelectedAnimation == null)
+            return;
+
+        AddCopyOfEvent(View.Editor.CopiedEvent, time);
+    }
+
+    private void AddCopyOfEvent(TAE.Event source, float startTime)
+    {
+        if (!CanEdit)
+            return;
+
+        var selection = View.Selection;
+
+        var copy = source.GetClone(selection.SelectedTimeAct.TimeAct.BigEndian);
+
+        copy.StartTime = startTime;
+
+        // The placeholder has to stay as it is, or the copy will stop short of the end
+        copy.EndTime = IsOpenEnded(source) ? source.EndTime : startTime + source.EndTime - source.StartTime;
+
+        View.ViewportActionManager.ExecuteAction(new TimeActAddEventAction(selection, selection.SelectedTimeAct,
+            selection.SelectedAnimation, copy));
+    }
+
     private void DisplayEventMenu()
     {
         if (ImGui.BeginPopup("##graphEventMenu"))
         {
+            if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Copy_Event")}##copyEvent", InputManager.GetHint(KeybindID.Copy)))
+            {
+                CopySelectedEvent();
+            }
+
             ImGui.BeginDisabled(!CanEdit);
+
+            if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Duplicate_Event")}##duplicateEvent", InputManager.GetHint(KeybindID.Duplicate)))
+            {
+                DuplicateSelectedEvent();
+            }
 
             if (ImGui.Selectable($"{LOC.Get("TAE_GraphWindow_Delete_Event")}##deleteEvent"))
             {
@@ -737,6 +822,18 @@ public class TimeActGraphWindow
 
         if (ImGui.BeginPopup("##graphAddEventMenu"))
         {
+            if (View.Editor.CopiedEvent != null)
+            {
+                if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Paste_Event")}##pasteEvent", InputManager.GetHint(KeybindID.Paste)))
+                {
+                    PasteEvent(AddEventTime);
+
+                    ImGui.CloseCurrentPopup();
+                }
+
+                ImGui.Separator();
+            }
+
             if (template == null)
             {
                 ImGui.TextDisabled(LOC.Get("TAE_GraphWindow_No_Templates"));

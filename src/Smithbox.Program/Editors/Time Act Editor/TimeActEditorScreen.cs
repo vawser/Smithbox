@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
+using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.Viewport;
@@ -28,6 +29,9 @@ public class TimeActEditorScreen : EditorScreen
     public TimeActCommandQueue CommandQueue;
 
     public TimeActEditorShortcuts Shortcuts;
+
+    // Kept here rather than on a view, so that it can be pasted anywhere in the editor
+    public TAE.Event CopiedEvent;
 
     public TimeActEditorScreen(ProjectEntry project)
     {

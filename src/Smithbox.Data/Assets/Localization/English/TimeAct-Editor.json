@@ -141,6 +141,18 @@
       "Text": "Filter..."
     },
     {
+      "Key": "TAE_GraphWindow_Copy_Event",
+      "Text": "Copy Event"
+    },
+    {
+      "Key": "TAE_GraphWindow_Paste_Event",
+      "Text": "Paste Event"
+    },
+    {
+      "Key": "TAE_GraphWindow_Duplicate_Event",
+      "Text": "Duplicate Event"
+    },
+    {
       "Key": "TAE_GraphWindow_Delete_Event",
       "Text": "Delete Event"
     },
