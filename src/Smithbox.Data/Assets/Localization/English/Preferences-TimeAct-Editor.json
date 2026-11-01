@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_Tab_Time_Act_Editor",
+      "Text": "Time Act Editor"
+    },
+    {
+      "Key": "PREF_Category_TimeActEditor_Event_Graph",
+      "Text": "Event Graph"
+    },
+    {
+      "Key": "PREF_TimeActEditor_Graph_Frame_Width",
+      "Text": "Frame Width"
+    },
+    {
+      "Key": "PREF_TimeActEditor_Graph_Frame_Width_TT",
+      "Text": "The width in pixels of a frame in the event graph, before any zoom is applied."
+    }
+  ]
+}

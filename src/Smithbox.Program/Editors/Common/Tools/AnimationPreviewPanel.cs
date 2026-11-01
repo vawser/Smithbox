@@ -396,7 +396,15 @@ public class AnimationPreviewPanel
         return attachments;
     }
 
-    private void Stop(object key)
+    /// <summary>
+    ///     Gets the animator of something that is being animated, for editors that drive playback themselves.
+    /// </summary>
+    public ModelAnimator? GetAnimator(object key)
+    {
+        return _active.TryGetValue(key, out ActiveAnimation? active) ? active.Animator : null;
+    }
+
+    public void Stop(object key)
     {
         if (!_active.Remove(key, out ActiveAnimation? active))
         {

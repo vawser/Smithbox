@@ -31,6 +31,7 @@ public class PreferencesMenu
     private List<PreferenceItem> MaterialEditorPrefList = new();
     private List<PreferenceItem> TextureViewerPrefList = new();
     private List<PreferenceItem> AnimEditorPrefList = new();
+    private List<PreferenceItem> TimeActEditorPrefList = new();
 
     public PreferencesMenu()
     {
@@ -46,6 +47,7 @@ public class PreferencesMenu
         MaterialEditorPrefList = SetupPrefList(MaterialEditorPrefs.GetPrefType());
         TextureViewerPrefList = SetupPrefList(TextureViewerPrefs.GetPrefType());
         AnimEditorPrefList = SetupPrefList(AnimEditorPrefs.GetPrefType());
+        TimeActEditorPrefList = SetupPrefList(TimeActEditorPrefs.GetPrefType());
     }
 
     public List<PreferenceItem> SetupPrefList(Type targetPref)
@@ -295,6 +297,28 @@ public class PreferencesMenu
                         if (TextureViewerPrefList.Count > 0)
                         {
                             DisplaySettings(TextureViewerPrefList);
+                        }
+                        else
+                        {
+                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                        }
+
+                        ImGui.EndChild();
+
+                        ImGui.EndTabItem();
+                    }
+                }
+
+                if (curProject != null && curProject.Handler != null &&
+                    curProject.Handler.TimeActEditor != null)
+                {
+                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Time_Act_Editor")}##timeActEditorTab"))
+                    {
+                        ImGui.BeginChild("timeActEditorPrefSection");
+
+                        if (TimeActEditorPrefList.Count > 0)
+                        {
+                            DisplaySettings(TimeActEditorPrefList);
                         }
                         else
                         {

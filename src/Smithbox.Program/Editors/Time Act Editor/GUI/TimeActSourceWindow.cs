@@ -145,7 +145,9 @@ public class TimeActSourceWindow
 
                 var alias = ModelEditorUtils.GetAliasForSourceListEntry(Project, source.Name, listType);
 
-                if (ImGui.Selectable($"{source.Name}##timeActSourceEntry{listType}{i}", selected))
+                var labelName = source.HasUnsavedTimeActs ? $"{source.Name}*" : source.Name;
+
+                if (ImGui.Selectable($"{labelName}##timeActSourceEntry{listType}{i}", selected))
                 {
                     SelectSource(source);
                 }
@@ -177,9 +179,12 @@ public class TimeActSourceWindow
         if (selection.SelectedTimeActContainerWrapper == source)
             return;
 
-        if (selection.SelectedTimeActContainerWrapper != null)
+        View.Playback.Clear();
+
+        // Unsaved changes only exist in the time acts, so those have to stay around
+        if (selection.SelectedTimeActContainerWrapper is { HasUnsavedTimeActs: false } previous)
         {
-            selection.SelectedTimeActContainerWrapper.TimeActs.Clear();
+            previous.TimeActs.Clear();
         }
 
         selection.SelectedTimeActModelWrapper?.Unload();
@@ -187,6 +192,8 @@ public class TimeActSourceWindow
 
         selection.SelectedTimeActContainerWrapper = source;
         selection.SelectedTimeAct = null;
+        selection.SelectedAnimation = null;
+        selection.SelectedEvent = null;
 
         try
         {

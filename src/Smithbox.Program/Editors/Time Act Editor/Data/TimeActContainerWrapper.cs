@@ -43,9 +43,116 @@ public class TimeActContainerWrapper
         TimeActs = new();
     }
 
+    /// <summary>
+    /// How many animation IDs each category of animations spans
+    /// </summary>
+    public int AnimationCategorySize =>
+        Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R ? 10000 : 1000000;
+
+    /// <summary>
+    /// Whether any of the time acts have changes that are yet to be saved
+    /// </summary>
+    public bool HasUnsavedTimeActs => TimeActs.Any(e => e.IsDirty);
+
     public void PopulateTimeActList()
     {
+        // Keep the unsaved changes instead of replacing them with the stored version
+        if (HasUnsavedTimeActs)
+            return;
+
         TimeActs = ReadTimeActs();
+    }
+
+    /// <summary>
+    /// Gets the display name of an animation, which matches the name of its HKX file
+    /// </summary>
+    public string GetAnimationName(TimeActEntry entry, TAE.Animation animation)
+    {
+        var size = AnimationCategorySize;
+        var id = entry.GetFullAnimationID(animation, size);
+
+        return size == 10000 ? $"a{id / size:D2}_{id % size:D4}" : $"a{id / size:D3}_{id % size:D6}";
+    }
+
+    /// <summary>
+    /// Finds the animation with a full animation ID, as used by the animations that import another
+    /// </summary>
+    public bool TryFindAnimation(long id, out TimeActEntry entry, out TAE.Animation animation)
+    {
+        var size = AnimationCategorySize;
+
+        foreach (var candidate in TimeActs)
+        {
+            candidate.Load();
+
+            animation = candidate.TimeAct?.Animations.FirstOrDefault(e => candidate.GetFullAnimationID(e, size) == id);
+
+            if (animation != null)
+            {
+                entry = candidate;
+                return true;
+            }
+        }
+
+        entry = null;
+        animation = null;
+        return false;
+    }
+
+    /// <summary>
+    /// Writes the modified time acts into the source container
+    /// </summary>
+    public void SaveTimeActs()
+    {
+        var modified = TimeActs.Where(e => e.IsDirty && e.TimeAct != null).ToList();
+
+        if (modified.Count == 0)
+            return;
+
+        using var binder = ReadBinderFile(SourcePath);
+
+        if (binder == null)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", SourcePath));
+            return;
+        }
+
+        var nestedFile = FindNestedAnibnd(binder);
+
+        if (nestedFile == null)
+        {
+            UpdateTimeActFiles(binder, modified);
+        }
+        else
+        {
+            using var anibnd = ReadBinder(nestedFile.Bytes);
+
+            UpdateTimeActFiles(anibnd, modified);
+
+            nestedFile.Bytes = anibnd is BND3 bnd3 ? bnd3.Write() : ((BND4)anibnd).Write();
+        }
+
+        WriteBinderFile(binder, SourcePath);
+
+        foreach (var entry in modified)
+        {
+            entry.IsDirty = false;
+        }
+    }
+
+    private void UpdateTimeActFiles(IBinder binder, List<TimeActEntry> modified)
+    {
+        foreach (var entry in modified)
+        {
+            var file = binder.Files.First(e => e.ID == entry.BinderID);
+
+            file.Bytes = entry.TimeAct.Write();
+        }
+    }
+
+    private static BinderFile FindNestedAnibnd(IBinder binder)
+    {
+        return binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".anibnd"));
     }
 
     /// <summary>
@@ -61,7 +168,7 @@ public class TimeActContainerWrapper
         if (binder == null)
             return entries;
 
-        var nestedFile = binder.Files.FirstOrDefault(e => e.Name.ToLower().Contains(".anibnd"));
+        var nestedFile = FindNestedAnibnd(binder);
 
         if (nestedFile == null)
         {
@@ -81,11 +188,17 @@ public class TimeActContainerWrapper
 
     private void AddTimeActs(IBinder binder, List<TimeActEntry> entries)
     {
+        // Binders with a version marker moved their time acts
+        var firstID = binder.Files.Any(e => e.ID == 9999999) && Project.Descriptor.ProjectType is not ProjectType.DES
+            ? 5000000 : 3000000;
+
         foreach (var file in binder.Files)
         {
-            if (file.Name.ToLower().Contains(".tae"))
+            // Some binders hold empty placeholders for unused categories
+            if (file.Name.ToLower().Contains(".tae") && file.Bytes.Length >= 4)
             {
-                entries.Add(new TimeActEntry(FilePathUtils.GetPureFilename(file.Name), file.ID, file.Bytes.ToArray()));
+                entries.Add(new TimeActEntry(FilePathUtils.GetPureFilename(file.Name), file.ID, file.ID % firstID,
+                    file.Bytes.ToArray()));
             }
         }
     }
@@ -287,31 +400,36 @@ public class TimeActContainerWrapper
     /// </summary>
     public void WriteContainer(IBinder binder)
     {
+        WriteBinderFile(binder, Path);
+    }
+
+    private void WriteBinderFile(IBinder binder, string path)
+    {
         byte[] bhdBytes;
         byte[] bdtBytes;
 
         switch (binder)
         {
             case BND3 bnd3:
-                Project.VFS.ProjectFS.WriteFile(Path, bnd3.Write());
+                Project.VFS.ProjectFS.WriteFile(path, bnd3.Write());
                 break;
 
             case BND4 bnd4:
-                Project.VFS.ProjectFS.WriteFile(Path, bnd4.Write());
+                Project.VFS.ProjectFS.WriteFile(path, bnd4.Write());
                 break;
 
             case BXF3 bxf3:
                 bxf3.Write(out bhdBytes, out bdtBytes);
 
-                Project.VFS.ProjectFS.WriteFile(Path, bhdBytes);
-                Project.VFS.ProjectFS.WriteFile(GetBdtPath(Path), bdtBytes);
+                Project.VFS.ProjectFS.WriteFile(path, bhdBytes);
+                Project.VFS.ProjectFS.WriteFile(GetBdtPath(path), bdtBytes);
                 break;
 
             case BXF4 bxf4:
                 bxf4.Write(out bhdBytes, out bdtBytes);
 
-                Project.VFS.ProjectFS.WriteFile(Path, bhdBytes);
-                Project.VFS.ProjectFS.WriteFile(GetBdtPath(Path), bdtBytes);
+                Project.VFS.ProjectFS.WriteFile(path, bhdBytes);
+                Project.VFS.ProjectFS.WriteFile(GetBdtPath(path), bdtBytes);
                 break;
         }
     }

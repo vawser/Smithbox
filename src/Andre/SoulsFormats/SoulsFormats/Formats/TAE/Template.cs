@@ -29,12 +29,15 @@ namespace SoulsFormats
             private Template(XmlDocument xml)
                 : base()
             {
-                XmlNode templateNode = xml.SelectSingleNode("event_template");
+                // DS Anim Studio templates call events actions, and list them without any banks
+                XmlNode templateNode = xml.SelectSingleNode("event_template") ?? xml.SelectSingleNode("action_template");
                 Game = (TAEFormat)Enum.Parse(typeof(TAEFormat), templateNode.Attributes["game"].InnerText);
 
                 Dictionary<BankTemplate, long> basedOnMap = new Dictionary<BankTemplate, long>();
 
-                foreach (XmlNode bankNode in templateNode.SelectNodes("bank"))
+                XmlNodeList bankNodes = templateNode.SelectNodes("bank");
+
+                foreach (XmlNode bankNode in bankNodes.Count > 0 ? bankNodes.Cast<XmlNode>() : new[] { templateNode })
                 {
                     var newBank = new BankTemplate(bankNode, out long basedOn);
                     basedOnMap.Add(newBank, basedOn);
@@ -106,14 +109,14 @@ namespace SoulsFormats
                 internal BankTemplate(XmlNode bankNode, out long basedOn)
                     : base()
                 {
-                    ID = long.Parse(bankNode.Attributes["id"].InnerText);
-                    Name = bankNode.Attributes["name"].InnerText;
+                    ID = long.Parse(bankNode.Attributes["id"]?.InnerText ?? "0");
+                    Name = bankNode.Attributes["name"]?.InnerText ?? "";
 
                     basedOn = long.Parse(bankNode.Attributes["basedon"]?.InnerText ?? "-1");
 
                     EventTemplate lastGoodEventTemplate = null;
 
-                    foreach (XmlNode eventNode in bankNode.SelectNodes("event"))
+                    foreach (XmlNode eventNode in bankNode.SelectNodes("event | action"))
                     {
                         try
                         {
@@ -260,9 +263,9 @@ namespace SoulsFormats
                         case ParamType.f64: return double.Parse(str);
                         case ParamType.b:
                             string toLower = str.ToLower().Trim();
-                            if (toLower == "true")
+                            if (toLower == "true" || toLower == "1")
                                 return true;
-                            else if (toLower == "false")
+                            else if (toLower == "false" || toLower == "0")
                                 return false;
                             else
                                 throw new FormatException("Boolean value must be either 'True' or 'False', case-insensitive.");
@@ -699,6 +702,11 @@ namespace SoulsFormats
                             continue;
                         var newParam = new ParameterTemplate(bankId, ID, i++, paramNode, offset);
                         var paramSize = newParam.GetByteCount();
+
+                        // Unnamed parameters are told apart by their offset, and some templates repeat a name
+                        if (ContainsKey(newParam.GetKeyString()))
+                            newParam.Name = $"{newParam.Name} ({offset:X2})";
+
                         Add(newParam.GetKeyString(), newParam);
                         offset += paramSize;
                     }

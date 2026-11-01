@@ -250,7 +250,12 @@ public class TimeActEditorScreen : EditorScreen
 
         if (autoSave && CFG.Current.TimeActEditor_Allow_Automatic_Save || !autoSave)
         {
+            var source = activeView.Selection.SelectedTimeActContainerWrapper;
 
+            if (source != null)
+            {
+                SaveSources([source]);
+            }
         }
 
         // Save the configuration JSONs
@@ -260,10 +265,38 @@ public class TimeActEditorScreen : EditorScreen
     {
         if (autoSave && CFG.Current.TimeActEditor_Allow_Automatic_Save || !autoSave)
         {
+            var bank = Project.Handler.TimeActData.PrimaryBank;
 
+            SaveSources(bank.GetCharacters().Concat(bank.GetAssets()));
         }
 
         // Save the configuration JSONs
         Smithbox.Instance.SaveConfiguration();
+    }
+
+    private void SaveSources(IEnumerable<TimeActContainerWrapper> sources)
+    {
+        foreach (var source in sources)
+        {
+            if (!source.HasUnsavedTimeActs)
+                continue;
+
+            if (!Project.Handler.TimeActData.CanSaveTimeActs)
+            {
+                Smithbox.Log(this, LOC.Get("TAE_Editor_Save_Not_Supported"));
+                return;
+            }
+
+            try
+            {
+                source.SaveTimeActs();
+
+                Smithbox.Log(this, LOC.Get("TAE_Editor_Saved_Source", source.Name));
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("TAE_Editor_Failed_To_Save_Source", source.Name), e);
+            }
+        }
     }
 }

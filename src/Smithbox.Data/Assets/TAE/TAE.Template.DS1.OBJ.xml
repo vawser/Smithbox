@@ -1,66 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<event_template game="DS1">
-	<event id="3" name="Event 3">
-		<s32 assert="0"/>
-		<s32 assert="0"/>
-		<s32 assert="0"/>
-		<s32 assert="0"/>
-	</event>
-	<event id="96" name="Spawn One Shot FFX">
-		<s32 name="FFX ID" aliasEnum="Particle"/>
-		<s32 name="Dummy Poly ID"/>
-		<s32 name="Slot ID"/>
-		<b name="Ignore Dummy Poly Angle"/>
-		<b name="Follow Dummy Poly"/>
-		<b name="Restrict to Dummy Poly"/>
-		<u8 name="Additional Spawn Condition"/>
-	</event>
-	<event id="128" name="Play Sound - General">
-		<s32 name="Sound Type">
-			<entry value="0" name="(a) Environment"/>
-			<entry value="1" name="(c) Character"/>
-			<entry value="2" name="(f) Menu SE"/>
-			<entry value="3" name="(o) Object"/>
-			<entry value="4" name="(p) Cutscene SE"/>
-			<entry value="5" name="(s) SFX"/>
-			<entry value="6" name="(m) BGM"/>
-			<entry value="7" name="(v) Voice"/>
-			<entry value="8" name="(x) Floor Material Determined"/>
-			<entry value="9" name="(b) Armor Material Determined"/>
-			<entry value="10" name="(g) Ghost"/>
-		</s32>
-		<s32 name="Sound ID" aliasEnum="Sound"/>
-		<s32 assert="0"/>
-		<s32 assert="0"/>
-	</event>
-	<event id="129" name="Play Sound - Extra">
-		<s32 name="Sound Type">
-			<entry value="0" name="(a) Environment"/>
-			<entry value="1" name="(c) Character"/>
-			<entry value="2" name="(f) Menu SE"/>
-			<entry value="3" name="(o) Object"/>
-			<entry value="4" name="(p) Cutscene SE"/>
-			<entry value="5" name="(s) SFX"/>
-			<entry value="6" name="(m) BGM"/>
-			<entry value="7" name="(v) Voice"/>
-			<entry value="8" name="(x) Floor Material Determined"/>
-			<entry value="9" name="(b) Armor Material Determined"/>
-			<entry value="10" name="(g) Ghost"/>
-		</s32>
-		<s32 name="Sound ID"/>
-		<s32 name="Dummy Poly ID"/>
-		<s32 name="Slot ID"/>
-	</event>
-	<event id="193" name="Set Opacity Keyframe">
-		<f32 name="Opacity at Event Start"/>
-		<f32 name="Opacity at Event End"/>
-		<s32 assert="0"/>
-		<s32 assert="0"/>
-	</event>
-	<event id="400" name="Event 400">
-		<s32 assert="0"/>
-		<s32 assert="0"/>
-		<s32 assert="0"/>
-		<s32 assert="0"/>
-	</event>
-</event_template>
+<action_template game="DS1">
+    <action id="0" name="ChrActionFlag">
+        <s32 name="FlagType">
+            <entry value="0" name="0: Do Nothing"/>
+            <entry value="1" name="1: Right Hand Attack Key Input" name_jp="右手攻撃キー入力"/>
+            <entry value="3" name="3: Guarding|ArgB:Guard BehaviorJudgeID" name_jp="ガード中"/>
+            <entry value="4" name="4: Right Hand Attack Anim Cancel" name_jp="右手攻撃アニメキャンセル"/>
+            <entry value="5" name="5: Parry Possible|ArgC:Unknown" name_jp="パリィ可能"/>
+            <entry value="6" name="6: Shield Push Possible" name_jp="盾プッシュ可能"/>
+            <entry value="7" name="7: Disable Turning" name_jp="旋回不可"/>
+            <entry value="8" name="8: Invincible" name_jp="無敵"/>
+            <entry value="9" name="9: Left Hand Attack Key Input" name_jp="左手攻撃キー入力"/>
+            <entry value="10" name="10: Magic Key Input" name_jp="魔法キー入力"/>
+            <entry value="11" name="11: Anim Cancel By Movement Key Input" name_jp="移動キー入力でアニメキャンセル"/>
+            <entry value="12" name="12: Death State" name_jp="死状態"/>
+            <entry value="13" name="13: ?"/>
+            <entry value="14" name="14: Right Hand Attack Release Input" name_jp="右手攻撃リリース入力"/>
+            <entry value="15" name="15: Left Hand Attack Release Input" name_jp="左手攻撃リリース入力"/>
+            <entry value="16" name="16: Left Hand Attack Anim Cancel" name_jp="左手攻撃アニメキャンセル"/>
+            <entry value="17" name="17: Anim Cancel After Dealing Damage" name_jp="ダメージを与えた後にアニメキャンセル"/>
+            <entry value="18" name="18: Anim Cancel After Successful Parry" name_jp="パリィ成功後にアニメキャンセル"/>
+            <entry value="19" name="19: Disable Map/Object Collision" name_jp="マップ・オブジェあたり無効"/>
+            <entry value="20" name="20: Ghost Info Send Start Flag At The Time Of Death"
+                   name_jp="死亡時のゴースト情報転送開始フラグ"/>
+            <entry value="21" name="21: Left Hand Guard Key Input" name_jp="左手ガードキー入力"/>
+            <entry value="22" name="22: Left Hand Guard Anim Cancel" name_jp="左手ガードアニメキャンセル"/>
+            <entry value="23" name="23: AI Continuation Attack Flag" name_jp="AI連続攻撃フラグ"/>
+            <entry value="24" name="24: Super Armor" name_jp="スーパーアーマー"/>
+            <entry value="25" name="25: Step Movement Key Input" name_jp="ステップ移動キー入力"/>
+            <entry value="26" name="26: Step Movement Anim Cancel" name_jp="ステップ移動アニメキャンセル"/>
+            <entry value="27" name="27: Ignore Gravity" name_jp="重力無視"/>
+            <entry value="28" name="28: Disable Foot IK" name_jp="足IK無効"/>
+            <entry value="29" name="29: Magic Anim Cancel" name_jp="魔法アニメキャンセル"/>
+            <entry value="30" name="30: [x] Item Key Input" name_jp="[x] アイテムキー入力"/>
+            <entry value="31" name="31: Item Anim Cancel" name_jp="アイテムアニメキャンセル"/>
+            <entry value="32" name="32: Generic Anim Cancel" name_jp="汎用アニメキャンセル"/>
+            <entry value="35" name="35: First Step Right Hand Attack Key Input" name_jp="一段目右手攻撃キー入力"/>
+            <entry value="36" name="36: First Step Right Hand Attack Anim Cancel" name_jp="一段目右手攻撃アニメキャンセル"/>
+            <entry value="37" name="37: Left/Right Movement Possible" name_jp="左右移動可能"/>
+            <entry value="38" name="38: Flying Character Fall" name_jp="飛行キャラ落下"/>
+            <entry value="39" name="39: Disable Enemy Character Collision" name_jp="対キャラあたり無効"/>
+            <entry value="40" name="40: Temporary Death State" name_jp="仮死状態"/>
+            <entry value="41" name="41: Gap" name_jp="隙"/>
+            <entry value="42" name="42: Sweet Spot" name_jp="スイートスポット"/>
+            <entry value="43" name="43: Enable Foot IK" name_jp="足IK有効"/>
+            <entry value="44" name="44: Disable Event Object Collision" name_jp="対イベントオブジェあたり無効"/>
+            <entry value="45" name="45: Disable Super Armor" name_jp="スーパーアーマー無効"/>
+            <entry value="46" name="46: Completely Disable. Cannot Return From Anim."
+                   name_jp="完全無効。アニメからの復帰不可"/>
+            <entry value="47" name="47: Death State (Same as 12)" name_jp="47: ?"/>
+            <entry value="48" name="48: Death State (Same as 12)" name_jp="48: ?"/>
+            <entry value="49" name="49: Disable Lock-On" name_jp="ロックオン不可"/>
+            <entry value="50" name="50: Disable Character Capsule Collision" name_jp="キャラカプセルあたりだけ無効"/>
+            <entry value="51" name="51: Disable Fall Motion" name_jp="落下モーション無効"/>
+            <entry value="52" name="52: Disable Vertical Movement Sync" name_jp="起伏にあわせる無効"/>
+            <entry value="53" name="53: Disable Floating Gauge Display" name_jp="フローティングゲージ表示無効"/>
+            <entry value="54" name="54: Disable Menu Display" name_jp="メニュー表示無効"/>
+            <entry value="55" name="55: Disable Lock-On Operation" name_jp="ロック操作不可"/>
+            <entry value="56" name="56: Disable Wall Attack Clang" name_jp="壁攻撃弾き無効"/>
+            <entry value="57" name="57: Disable NPC Wall Attack Clang" name_jp="NPC用壁攻撃弾き無効"/>
+            <entry value="58" name="58: ?" name_jp="58: ?"/>
+            <entry value="59" name="59: Attack Weak Spot" name_jp="攻撃ウィークスポット"/>
+            <entry value="60" name="60: Throw Angle Cancel" name_jp="投げ角度取り消し"/>
+            <entry value="61" name="61: Disable Y-Axis Of Movement Target" name_jp="移動目標のＹ軸を無効にする"/>
+            <entry value="62" name="62: Display Fixed Y-Axis Direction" name_jp="表示方向をＹ軸固定"/>
+            <entry value="63" name="63: Parry Timing" name_jp="パリィタイミング"/>
+            <entry value="64" name="64: Camouflage OK Flag" name_jp="カムフラージュOKフラグ"/>
+            <entry value="65" name="65: Extend Special Effects Lifespan" name_jp="特殊効果寿命延長"/>
+            <entry value="66" name="66: Special Transition" name_jp="特殊遷移"/>
+            <entry value="67" name="67: Invincible Excluding Throw Attacks" name_jp="投げ攻撃以外無敵"/>
+            <entry value="68" name="68: Invincible Excluding Throw Damage" name_jp="投げ抜けダメージ以外無敵"/>
+            <entry value="69" name="69: Throw Death Transition Decision" name_jp="投げ死亡遷移判定"/>
+            <entry value="70" name="70: Throw Escape Transition Decision" name_jp="投げ抜け遷移判定"/>
+            <entry value="71" name="71: SA Break Unrecoverable Flag" name_jp="SAブレイク回復不可フラグ"/>
+            <entry value="72" name="72: Knockback Take-Over Time" name_jp="KB肩代わり時間"/>
+            <entry value="73" name="73: Parry Possible State" name_jp="パリィ可能状態"/>
+            <entry value="74" name="74: Ladder Collision Start" name_jp="はしごアタリ開始"/>
+            <entry value="75" name="75: Item Acquisition Anim Cancel Possible Start"
+                   name_jp="アイテム取得アニメキャンセル可能開始"/>
+            <entry value="76" name="76: ?"/>
+            <entry value="78" name="78: AI Movement Anim Cancel" name_jp="AI移動アニメキャンセル"/>
+            <entry value="79" name="79: AI Step Anim Cancel" name_jp="AIステップアニメキャンセル"/>
+            <entry value="80" name="80: Item Acquisition Anim Cancel Queue Start" name_jp="アイテム取得アニメキャンセル受付開始"/>
+            <entry value="81" name="81: Item Acquisition: Close Button Disable Start"
+                   name_jp="アイテム取得：閉じるボタン無効化開始"/>
+            <entry value="82" name="82: Perfectly Match Ragdoll Pose" name_jp="ラグドル姿勢完全あわせ"/>
+            <entry value="83" name="83: Mimicry Force Cancel Flag" name_jp="擬態強制解除フラグ"/>
+            <entry value="84" name="84: Special Transition 2" name_jp="特殊遷移２"/>
+            <entry value="85" name="85: Light Lantern Weapon" name_jp="ランタン武器点灯"/>
+            <entry value="86" name="86: AI Attack Anim Cancel" name_jp="AI攻撃アニメキャンセル"/>
+            <entry value="87" name="87: Common Key Input" name_jp="共通キー入力"/>
+            <entry value="88" name="88: Disable Precision Shooting" name_jp="精密射撃無効"/>
+            <entry value="89" name="89: Completely Disable Movement" name_jp="全移動不可"/>
+            <entry value="90" name="90: No Dash/Run" name_jp="ダッシュ・走り不可"/>
+            <entry value="91" name="91: No Dash" name_jp="ダッシュ不可"/>
+            <entry value="92" name="92: Sky Death Warp Possible" name_jp="空中死亡ワープ可能"/>
+            <entry value="94" name="94: Perfect Invincibility" name_jp="完全無敵"/>
+            <entry value="95" name="95: Disable Shadow Displaying" name_jp="影表示無効"/>
+            <entry value="96" name="96: Set Immortality" name_jp="不死設定"/>
+            <entry value="97" name="97: Disable Magic / Item Use Anim Cancel Flag"
+                   name_jp="魔法/アイテム使用アニメキャンセルフラグ無効"/>
+        </s32>
+        <!-- THE ARGS BELOW ARE MATCHED TO KEYWORDS IN THE ENUM VALUES ABOVE DO NOT CHANGE LOL -->
+        <f32 name="ArgA"/>
+        <s32 name="ArgB"/>
+        <u8 name="ArgC"/>
+        <u8 name="ArgD"/>
+        <s16 name="ArgE"/>
+    </action>
+    <action id="3" name="NULL">
+        <s32 assert="0"/>
+        <s32 assert="0"/>
+        <s32 assert="0"/>
+        <s32 assert="0"/>
+    </action>
+    <action id="96" name="InvokeOneShotFFX_0x1406711F0">
+        <s32 name="FFXID"/>
+        <s32 name="DummyPolyID"/>
+        <s32 name="SlotID"/>
+        <b name="IsIgnoreDummyPolyAngle"/>
+        <b name="IsFollowDummyPoly"/>
+        <b name="IsRestrictToDummyPoly"/>
+        <u8 name="ExtraSpawnCondition"/>
+    </action>
+    <action id="128" name="PlaySound_General">
+        <s32 name="SoundType">
+            <entry value="0" name="0: (a) Environment"/>
+            <entry value="1" name="1: (c) Character"/>
+            <entry value="2" name="2: (f) Menu SE"/>
+            <entry value="3" name="3: (o) Object"/>
+            <entry value="4" name="4: (p) Cutscene SE"/>
+            <entry value="5" name="5: (s) SFX"/>
+            <entry value="6" name="6: (m) BGM"/>
+            <entry value="7" name="7: (v) Voice"/>
+            <entry value="8" name="8: (x) Floor Material Determined"/>
+            <entry value="9" name="9: (b) Armor Material Determined"/>
+            <entry value="10" name="10: (g) Ghost"/>
+        </s32>
+        <s32 name="SoundID"/>
+        <s32 assert="0"/>
+        <s32 assert="0"/>
+    </action>
+    <action id="129" name="PlaySound_Extra">
+        <s32 name="SoundType">
+            <entry value="0" name="0: (a) Environment"/>
+            <entry value="1" name="1: (c) Character"/>
+            <entry value="2" name="2: (f) Menu SE"/>
+            <entry value="3" name="3: (o) Object"/>
+            <entry value="4" name="4: (p) Cutscene SE"/>
+            <entry value="5" name="5: (s) SFX"/>
+            <entry value="6" name="6: (m) BGM"/>
+            <entry value="7" name="7: (v) Voice"/>
+            <entry value="8" name="8: (x) Floor Material Determined"/>
+            <entry value="9" name="9: (b) Armor Material Determined"/>
+            <entry value="10" name="10: (g) Ghost"/>
+        </s32>
+        <s32 name="SoundID"/>
+        <s32 name="DummyPolyID"/>
+        <s32 name="TimerID (probably)"/>
+    </action>
+    <action id="193" name="SetOpacityKeyframe">
+        <f32 name="GhostVal1"/>
+        <f32 name="GhostVal2"/>
+        <s32 assert="0"/>
+        <s32 assert="0"/>
+    </action>
+    <action id="400" name="0x140655DD0">
+        <s32 assert="0"/>
+        <s32 assert="0"/>
+        <s32 assert="0"/>
+        <s32 assert="0"/>
+    </action>
+</action_template>

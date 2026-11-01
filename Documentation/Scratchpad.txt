@@ -7,13 +7,3 @@
   Map Editor
   
 Time Act Editor
-
-Phase 3: Implement the TAE Action Graph
-- You will need to first apply the TAE templates to the events within the TAE file. These templates are per game, and can be found in \Smithbox\DSAnimStudio\DSAnimStudioNETCore\Res\
-- I've supplied the DSAnimStudio source which implements all aspects of TAE editing, so use it as reference (avoid copying code from it directly)
-
-- The action graph should represent the TAE events on several horizontal tracks, with a width of 10px representing a frame (this can be adjustable in the preferences). The user needs to be able to move the TAE events, zoom the resolution in and out.
- - Additionally, they will need to be able to create and delete TAE events.
- - When a TAE event is selected, the parameters should be editable in the PropertiesWindow
- 
-- Additionally, the animation the TAE event is associated to should be played in the viewport (on the loaded model). This should sync with the playback of the action graph.

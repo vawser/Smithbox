@@ -86,7 +86,9 @@ namespace SoulsFormats
                     }
                     else if (format == TAEFormat.DS3 || format == TAEFormat.SDT)
                     {
-                        br.AssertVarint(0);
+                        // AC6 has the same format, but goes straight on to the group values here
+                        if (format == TAEFormat.DS3 || br.GetVarint(br.Position) == 0)
+                            br.AssertVarint(0);
                     }
                     else
                     {

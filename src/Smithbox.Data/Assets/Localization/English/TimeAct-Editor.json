@@ -69,6 +69,98 @@
       "Text": "Failed to read time act: {0}"
     },
     {
+      "Key": "TAE_Data_Failed_To_Read_Template",
+      "Text": "Failed to read time act template: {0}"
+    },
+    {
+      "Key": "TAE_Editor_Save_Not_Supported",
+      "Text": "Time acts can't be saved for this game."
+    },
+    {
+      "Key": "TAE_Editor_Saved_Source",
+      "Text": "Saved time acts: {0}"
+    },
+    {
+      "Key": "TAE_Editor_Failed_To_Save_Source",
+      "Text": "Failed to save time acts: {0}"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Animation_Header",
+      "Text": "Animations"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Animation_Header_TT",
+      "Text": "The animations of the selected time act."
+    },
+    {
+      "Key": "TAE_GraphWindow_Play",
+      "Text": "Play"
+    },
+    {
+      "Key": "TAE_GraphWindow_Pause",
+      "Text": "Pause"
+    },
+    {
+      "Key": "TAE_GraphWindow_Stop",
+      "Text": "Stop"
+    },
+    {
+      "Key": "TAE_GraphWindow_Loop",
+      "Text": "Loop"
+    },
+    {
+      "Key": "TAE_GraphWindow_Speed",
+      "Text": "Speed: %.2f"
+    },
+    {
+      "Key": "TAE_GraphWindow_Zoom_TT",
+      "Text": "Zoom the timeline. Hold Ctrl and scroll over the graph to zoom around the cursor."
+    },
+    {
+      "Key": "TAE_GraphWindow_Add_Event",
+      "Text": "Add Event"
+    },
+    {
+      "Key": "TAE_GraphWindow_Add_Event_Filter",
+      "Text": "Filter..."
+    },
+    {
+      "Key": "TAE_GraphWindow_Delete_Event",
+      "Text": "Delete Event"
+    },
+    {
+      "Key": "TAE_GraphWindow_Frame",
+      "Text": "Frame: {0}"
+    },
+    {
+      "Key": "TAE_GraphWindow_No_Clip",
+      "Text": "No animation clip to display."
+    },
+    {
+      "Key": "TAE_GraphWindow_Read_Only",
+      "Text": "Read only: time acts can't be saved for this game."
+    },
+    {
+      "Key": "TAE_GraphWindow_No_Templates",
+      "Text": "No event templates are available for this game."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Start_Time",
+      "Text": "Start Time"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_End_Time",
+      "Text": "End Time"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_No_Template",
+      "Text": "No template fits event type {0}, so its parameters can't be edited. Raw parameter data:"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Invalid_Value",
+      "Text": "'{0}' is not a valid {1} value."
+    },
+    {
       "Key": "TAE_SelectionWindow_List_Header",
       "Text": "Time Acts"
     },

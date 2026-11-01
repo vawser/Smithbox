@@ -31,6 +31,7 @@ public class TimeActEditorView : IEditorView
 
     public TimeActViewportFilters ViewportFilters;
     public TimeActUniverse Universe;
+    public TimeActPlayback Playback;
 
     public TimeActSourceWindow SourceWindow;
     public TimeActSelectionWindow SelectionWindow;
@@ -59,6 +60,7 @@ public class TimeActEditorView : IEditorView
         ActionManager.ActionPerformed += MarkLoadedModelDirty;
 
         Universe = new TimeActUniverse(this, project);
+        Playback = new TimeActPlayback(this, project);
 
         ViewportWindow = new(this, project);
         ViewportFilters = new(this, project);
@@ -83,6 +85,8 @@ public class TimeActEditorView : IEditorView
     }
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
+        Playback.Update();
+
         DisplayWindows(dockspaceId, viewIndex, doFocus, isActiveView);
 
         ViewportSelection.ClearGotoTarget();

@@ -1,4 +1,5 @@
-﻿using StudioCore.Editors.ModelEditor;
+﻿using SoulsFormats;
+using StudioCore.Editors.ModelEditor;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +11,8 @@ public class TimeActSelection
     public TimeActContainerWrapper SelectedTimeActContainerWrapper;
     public TimeActModelWrapper SelectedTimeActModelWrapper;
     public TimeActEntry SelectedTimeAct;
+    public TAE.Animation SelectedAnimation;
+    public TAE.Event SelectedEvent;
 
     public bool IsAnyModelLoaded()
     {

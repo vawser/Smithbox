@@ -640,6 +640,8 @@ public class CFG
 
     public bool Interface_TimeActEditor_Tool_ResourceMonitor = true;
 
+    public float TimeActEditor_Graph_Frame_Width = 10f;
+
     #endregion
 
     #region Animation Editor
