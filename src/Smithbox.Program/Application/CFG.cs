@@ -639,6 +639,7 @@ public class CFG
     public bool AutomaticSave_TimeActEditor = true;
 
     public bool Interface_TimeActEditor_Tool_ResourceMonitor = true;
+    public bool Interface_TimeActEditor_Tool_CharacterPreview = true;
 
     public float TimeActEditor_Graph_Frame_Width = 10f;
     public bool TimeActEditor_Graph_Display_Outside_Playback = true;

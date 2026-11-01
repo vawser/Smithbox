@@ -197,6 +197,10 @@
       "Text": "View"
     },
     {
+      "Key": "TAE_ToolWindow_View_Toggle_Character_Preview",
+      "Text": "Character Preview"
+    },
+    {
       "Key": "TAE_ToolWindow_View_Toggle_Resource_Monitor",
       "Text": "Resource Monitor"
     },

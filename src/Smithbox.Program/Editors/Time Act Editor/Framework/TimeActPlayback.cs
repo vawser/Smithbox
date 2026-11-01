@@ -187,14 +187,40 @@ public class TimeActPlayback
     /// </summary>
     public void OnAnimationChanged()
     {
-        var request = ++_request;
-
         _time = 0;
         _playing = false;
         IsClipMissing = false;
 
         Animator?.Seek(0);
         Animator?.SetPlaying(false);
+
+        QueueClip();
+    }
+
+    /// <summary>
+    /// Changing what a character wears replaces the meshes that were being animated, so the clip
+    /// starts over on the new ones. It picks up at the current time, as with any clip that loads late.
+    /// </summary>
+    public void OnPartsChanged()
+    {
+        if (View.Selection.SelectedAnimation == null)
+            return;
+
+        // Queued first, as the animations would otherwise be released along with the last thing playing them
+        QueueClip();
+
+        if (_target != null)
+        {
+            _panel.Stop(_target);
+        }
+
+        // It's the same clip that comes back, so this is what makes it join in at the current time
+        _boundClip = null;
+    }
+
+    private void QueueClip()
+    {
+        var request = ++_request;
 
         var selection = View.Selection;
 
@@ -211,6 +237,7 @@ public class TimeActPlayback
         }
 
         var container = wrapper.Container;
+        var characterMesh = container.CharacterMesh;
 
         _target = container;
 
@@ -221,8 +248,12 @@ public class TimeActPlayback
             wrapper.Parent.TargetFS,
             wrapper.Parent.Path,
             () => container.Meshes.Select(e => e.RenderSceneMesh).OfType<MeshRenderableProxy>().ToList(),
-            () => wrapper.Container == container && selection.SelectedTimeActModelWrapper == wrapper,
-            animator => UpdateMarkers(container, animator));
+            () => wrapper.Container == container && selection.SelectedTimeActModelWrapper == wrapper &&
+                  container.CharacterMesh == characterMesh,
+            animator => UpdateMarkers(container, animator),
+            characterMesh != null
+                ? CharacterComposition.GetAnimatedParts(Project, container.CharacterAppearance!, characterMesh)
+                : null);
 
         _panel.QueueAnimation(target, package =>
         {

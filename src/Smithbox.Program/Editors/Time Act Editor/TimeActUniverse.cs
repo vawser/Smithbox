@@ -72,10 +72,10 @@ public class TimeActUniverse : IUniverse
         modelWrapper.Container = newContainer;
 
         // The model of a composite character is only a skeleton, so the rest of it comes from the part models
-        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering && CharacterComposition.IsComposite(modelWrapper.Name))
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering &&
+            CFG.Current.ModelEditor_ModelLoad_Parts && CharacterComposition.IsComposite(modelWrapper.Name))
         {
-            // TODO
-            //newContainer.AssignCharacterParts(View.ModelCharacterPreview.GetAppearance());
+            newContainer.AssignCharacterParts(View.CharacterPreview.GetAppearance());
         }
 
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)

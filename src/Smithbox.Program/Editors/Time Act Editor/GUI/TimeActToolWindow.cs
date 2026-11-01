@@ -33,6 +33,11 @@ public class TimeActToolWindow
 
         Sections.Begin();
 
+        if (CFG.Current.Interface_TimeActEditor_Tool_CharacterPreview)
+        {
+            View.CharacterPreview.OnToolWindow();
+        }
+
         if (CFG.Current.Interface_TimeActEditor_Tool_ResourceMonitor)
         {
             View.ResourceListTool.Display("timeActEditor", View.Universe);
@@ -46,6 +51,13 @@ public class TimeActToolWindow
         // View
         if (ImGui.BeginMenu($"{LOC.Get("TAE_ToolWindow_View_Header")}##viewMenuHeader"))
         {
+            // Character Preview
+            if (ImGui.MenuItem($"{LOC.Get("TAE_ToolWindow_View_Toggle_Character_Preview")}##characterPreviewToggle"))
+            {
+                CFG.Current.Interface_TimeActEditor_Tool_CharacterPreview = !CFG.Current.Interface_TimeActEditor_Tool_CharacterPreview;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_CharacterPreview);
+
             // Resource Monitor
             if (ImGui.MenuItem($"{LOC.Get("TAE_ToolWindow_View_Toggle_Resource_Monitor")}##resourceMonitorToggle"))
             {

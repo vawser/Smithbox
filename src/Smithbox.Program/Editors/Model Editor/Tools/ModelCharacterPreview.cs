@@ -11,6 +11,14 @@ using System.Numerics;
 namespace StudioCore.Editors.ModelEditor;
 
 /// <summary>
+///     The character being dressed, as described by the editor hosting the tool.
+/// </summary>
+/// <param name="ModelName">Name of the loaded model.</param>
+/// <param name="Appearance">The parts that are currently displayed.</param>
+/// <param name="Assign">Displays a new set of parts.</param>
+public sealed record CharacterPreviewTarget(string ModelName, CharacterAppearance Appearance, Action<CharacterAppearance> Assign);
+
+/// <summary>
 ///     Chooses what a player-like character is wearing while it is displayed. Nothing here is saved.
 /// </summary>
 public class ModelCharacterPreview
@@ -33,8 +41,10 @@ public class ModelCharacterPreview
         (CharacterSlot.LeftHand, "Left Hand")
     };
 
-    public ModelEditorView View;
     public ProjectEntry Project;
+
+    // Null while no model is loaded
+    private readonly Func<CharacterPreviewTarget> _getTarget;
 
     private readonly CharacterLoadout _loadout = new();
     private readonly Dictionary<CharacterSlot, IReadOnlyList<string>> _slotParts = new();
@@ -50,10 +60,10 @@ public class ModelCharacterPreview
     private string _filter = "";
     private readonly Dictionary<CharacterSlot, string> _slotFilters = new();
 
-    public ModelCharacterPreview(ModelEditorView view, ProjectEntry project)
+    public ModelCharacterPreview(ProjectEntry project, Func<CharacterPreviewTarget> getTarget)
     {
-        View = view;
         Project = project;
+        _getTarget = getTarget;
     }
 
     /// <summary>
@@ -78,17 +88,15 @@ public class ModelCharacterPreview
 
     private void Display()
     {
-        ModelWrapper wrapper = View.Selection.SelectedModelWrapper;
+        CharacterPreviewTarget target = _getTarget();
 
-        if (wrapper?.Container == null || !CharacterComposition.IsComposite(wrapper.Name))
+        if (target == null || !CharacterComposition.IsComposite(target.ModelName))
         {
             GUI.WrappedText($"Load {CharacterComposition.CompositeModel} to preview its equipment.");
             return;
         }
 
-        ModelContainer container = wrapper.Container;
-
-        if (container.CharacterAppearance is { Parts.Count: > 0 } appearance)
+        if (target.Appearance is { Parts.Count: > 0 } appearance)
         {
             GUI.SimpleHeader("Parts", "The models that are currently displayed.");
 
@@ -108,15 +116,15 @@ public class ModelCharacterPreview
         {
             if (ImGui.BeginTabItem("CharaInitParam##characterPreviewCharaInit"))
             {
-                SetSource(container, PreviewSource.CharaInit);
-                DisplayCharaInitList(container);
+                SetSource(target, PreviewSource.CharaInit);
+                DisplayCharaInitList(target);
                 ImGui.EndTabItem();
             }
 
             if (ImGui.BeginTabItem("Individual Parts##characterPreviewLoadout"))
             {
-                SetSource(container, PreviewSource.Loadout);
-                DisplayLoadout(container);
+                SetSource(target, PreviewSource.Loadout);
+                DisplayLoadout(target);
                 ImGui.EndTabItem();
             }
 
@@ -124,16 +132,16 @@ public class ModelCharacterPreview
         }
     }
 
-    private void SetSource(ModelContainer container, PreviewSource source)
+    private void SetSource(CharacterPreviewTarget target, PreviewSource source)
     {
         if (_source != source)
         {
             _source = source;
-            Apply(container);
+            Apply(target);
         }
     }
 
-    private void DisplayCharaInitList(ModelContainer container)
+    private void DisplayCharaInitList(CharacterPreviewTarget target)
     {
         GUI.SimpleHeader("Equipment", "Click a row of CharaInitParam to dress the character in it.");
 
@@ -153,7 +161,7 @@ public class ModelCharacterPreview
         {
             if (ImGui.Selectable("Bare body##characterPreviewBare", _selectedCharaInitId < 0))
             {
-                SelectCharaInit(container, -1);
+                SelectCharaInit(target, -1);
             }
 
             foreach (Param.Row row in charaInit.Rows)
@@ -167,7 +175,7 @@ public class ModelCharacterPreview
 
                 if (ImGui.Selectable($"{label}##characterPreviewRow{row.ID}", row.ID == _selectedCharaInitId))
                 {
-                    SelectCharaInit(container, row.ID);
+                    SelectCharaInit(target, row.ID);
                 }
             }
         }
@@ -175,14 +183,14 @@ public class ModelCharacterPreview
         ImGui.EndChild();
     }
 
-    private void SelectCharaInit(ModelContainer container, int charaInitId)
+    private void SelectCharaInit(CharacterPreviewTarget target, int charaInitId)
     {
         _selectedCharaInitId = charaInitId;
 
-        Apply(container);
+        Apply(target);
     }
 
-    private void DisplayLoadout(ModelContainer container)
+    private void DisplayLoadout(CharacterPreviewTarget target)
     {
         GUI.SimpleHeader("Slots", "Choose the part model for each slot. Empty slots show the bare body.");
 
@@ -191,7 +199,7 @@ public class ModelCharacterPreview
         if (ImGui.RadioButton("Male##characterPreviewMale", !isFemale) && isFemale)
         {
             _loadout.IsFemale = false;
-            Apply(container);
+            Apply(target);
         }
 
         ImGui.SameLine();
@@ -199,7 +207,7 @@ public class ModelCharacterPreview
         if (ImGui.RadioButton("Female##characterPreviewFemale", isFemale) && !isFemale)
         {
             _loadout.IsFemale = true;
-            Apply(container);
+            Apply(target);
         }
 
         GUI.Spacer();
@@ -207,18 +215,18 @@ public class ModelCharacterPreview
         if (ImGui.Button("Clear All##characterPreviewClear"))
         {
             _loadout.Parts.Clear();
-            Apply(container);
+            Apply(target);
         }
 
         GUI.Spacer();
 
         foreach ((CharacterSlot slot, var name) in Slots)
         {
-            DisplaySlot(container, slot, name);
+            DisplaySlot(target, slot, name);
         }
     }
 
-    private void DisplaySlot(ModelContainer container, CharacterSlot slot, string name)
+    private void DisplaySlot(CharacterPreviewTarget target, CharacterSlot slot, string name)
     {
         ImGui.TextUnformatted(name);
 
@@ -242,7 +250,7 @@ public class ModelCharacterPreview
         if (ImGui.Selectable($"None##characterPreviewNone{slot}", current == null))
         {
             _loadout.Parts.Remove(slot);
-            Apply(container);
+            Apply(target);
         }
 
         if (!_slotParts.TryGetValue(slot, out IReadOnlyList<string> parts))
@@ -263,7 +271,7 @@ public class ModelCharacterPreview
             if (ImGui.Selectable($"{label}##characterPreviewPart{slot}{part}", part == current))
             {
                 _loadout.Parts[slot] = part;
-                Apply(container);
+                Apply(target);
             }
         }
 
@@ -290,10 +298,8 @@ public class ModelCharacterPreview
         return _partAliases.TryGetValue(part, out var name) ? $"{part} <{name}>" : part;
     }
 
-    private void Apply(ModelContainer container)
+    private void Apply(CharacterPreviewTarget target)
     {
-        container.AssignCharacterParts(GetAppearance());
-
-        View.Universe.ScheduleTextureRefresh();
+        target.Assign(GetAppearance());
     }
 }

@@ -94,7 +94,7 @@ public class ModelEditorView : IEditorView
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
         ModelMaskToggler = new ModelMaskToggler(this, Project);
         ModelAnimationTool = new ModelAnimationTool(this, Project);
-        ModelCharacterPreview = new ModelCharacterPreview(this, Project);
+        ModelCharacterPreview = new ModelCharacterPreview(Project, GetCharacterPreviewTarget);
         ResourceListTool = new ResourceListTool();
         ModelExportTool = new ModelExportTool(this, Project);
         AssetBrowserTool = new AssetBrowserTool(Project, LOC.Get("MODEL_AssetBrowser_Hint"),
@@ -107,6 +107,22 @@ public class ModelEditorView : IEditorView
         GotoAction = new GotoAction(this, Project);
         PullToCameraAction = new PullToCameraAction(this, Project);
         ReorderAction = new ReorderAction(this, Project);
+    }
+
+    private CharacterPreviewTarget GetCharacterPreviewTarget()
+    {
+        ModelWrapper wrapper = Selection.SelectedModelWrapper;
+        ModelContainer container = wrapper?.Container;
+
+        if (container == null)
+            return null;
+
+        return new CharacterPreviewTarget(wrapper.Name, container.CharacterAppearance, appearance =>
+        {
+            container.AssignCharacterParts(appearance);
+
+            Universe.ScheduleTextureRefresh();
+        });
     }
 
     private void MarkLoadedModelDirty()

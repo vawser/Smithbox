@@ -43,6 +43,7 @@ public class TimeActEditorView : IEditorView
     // Tools
     public ViewportGridTool GridTool;
     public ResourceListTool ResourceListTool;
+    public ModelCharacterPreview CharacterPreview;
 
     public TimeActEditorView(TimeActEditorScreen editor, ProjectEntry project, int imguiId)
     {
@@ -74,6 +75,25 @@ public class TimeActEditorView : IEditorView
         // Tools
         GridTool = new ViewportGridTool(ViewportGridEditor.TimeAct);
         ResourceListTool = new ResourceListTool();
+        CharacterPreview = new ModelCharacterPreview(project, GetCharacterPreviewTarget);
+    }
+
+    private CharacterPreviewTarget GetCharacterPreviewTarget()
+    {
+        TimeActModelWrapper wrapper = Selection.SelectedTimeActModelWrapper;
+        TimeActContainer container = wrapper?.Container;
+
+        if (container == null)
+            return null;
+
+        return new CharacterPreviewTarget(wrapper.Name, container.CharacterAppearance, appearance =>
+        {
+            container.AssignCharacterParts(appearance);
+
+            Universe.ScheduleTextureRefresh();
+
+            Playback.OnPartsChanged();
+        });
     }
 
     private void MarkLoadedModelDirty()

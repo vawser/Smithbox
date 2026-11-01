@@ -151,6 +151,9 @@ public class AnimationPreviewPanel
     public void QueueAnimation(AnimationTarget target, Func<AnimationPackage, AnimationEntry?> selectAnimation,
         bool holdFirstFrame = false)
     {
+        // Only the latest request counts: an earlier one could otherwise finish last and replace it
+        _pending.RemoveAll(p => p.Target.Key.Equals(target.Key));
+
         _pending.Add(new PendingAnimation(target, GetOrLoadModel(target), selectAnimation, holdFirstFrame));
     }
 
