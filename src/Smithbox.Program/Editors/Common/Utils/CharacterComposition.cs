@@ -326,7 +326,10 @@ public static class CharacterComposition
                 part.AttachNode == null ? appearance.Masks : null, uid);
 
             // The fur on armor is left alone, as only the body models have meshes marked as body hair
-            provider.HideBodyHair = part.Name.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase);
+            var isBody = part.Name.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase);
+
+            provider.HideBodyHair = isBody;
+            provider.HideHead = isBody && project.Descriptor.ProjectType is ProjectType.ER;
 
             providers.Add(provider);
 

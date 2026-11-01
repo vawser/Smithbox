@@ -22,6 +22,17 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     /// </summary>
     public bool HideBodyHair = false;
 
+    /// <summary>
+    /// Leaves out the head of a body model, along with any face mesh that sits on it
+    /// </summary>
+    public bool HideHead = false;
+
+    // Every mesh of an Elden Ring body model has its part of the body as its mask, and this one is the head
+    private const int HeadMask = 3;
+
+    // Faces are meant to be the fg_ part models, so a body model that has one uses their material
+    private const string FaceMaterialPrefix = "P[FG_";
+
     public List<FlverSubmeshProvider> _allSubmeshes = new();
 
     private List<FlverSubmeshProvider> _activeSubmeshes = new();
@@ -33,7 +44,7 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     }
     private void UpdateModelMasks()
     {
-        if (!ModelMasks.Any() && !HideBodyHair)
+        if (!ModelMasks.Any() && !HideBodyHair && !HideHead)
         {
             _activeSubmeshes = _allSubmeshes;
             return;
@@ -45,7 +56,15 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
             if (res.GPUMeshes.Length > i)
             {
-                if (HideBodyHair && res.GPUMeshes[i].Material.IsBodyHair)
+                var material = res.GPUMeshes[i].Material;
+
+                if (HideBodyHair && material.IsBodyHair)
+                {
+                    return false;
+                }
+
+                if (HideHead && (material.MaterialMask == HeadMask ||
+                    material.MaterialName?.StartsWith(FaceMaterialPrefix, StringComparison.OrdinalIgnoreCase) == true))
                 {
                     return false;
                 }
