@@ -44,6 +44,8 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     public bool _renderOutline;
 
+    public bool _renderFocusGhost;
+
     public WeakReference<ISelectable>? _selectable;
     public Pipeline? _selectedPipeline;
     public int _selectionOutlineRenderable = -1;
@@ -312,6 +314,25 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         }
     }
 
+    public override bool RenderFocusGhost
+    {
+        get => _renderFocusGhost;
+        set
+        {
+            var old = _renderFocusGhost;
+            _renderFocusGhost = value;
+            if (_registered && old != value)
+            {
+                ScheduleRenderableConstruction();
+            }
+
+            foreach (MeshRenderableProxy child in SnapshotSubmeshes())
+            {
+                child.RenderFocusGhost = value;
+            }
+        }
+    }
+
     public void OnProviderAvailable()
     {
         // A released (disposed) proxy is still weakly listed by its provider until collected. It must not
@@ -356,6 +377,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             if (_renderOutline)
             {
                 child.RenderSelectionOutline = true;
+            }
+
+            if (_renderFocusGhost)
+            {
+                child.RenderFocusGhost = true;
             }
 
             lock (_submeshLock)
@@ -631,6 +657,10 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         if(_renderOutline)
         {
             res = StaticResourceCache.GetShaders(gd, gd.ResourceFactory, _meshProvider.ShaderName + (_meshProvider.UseSelectedShader ? "_selected" : "")).ToTuple();
+        }
+        else if (_renderFocusGhost)
+        {
+            res = StaticResourceCache.GetShaders(gd, gd.ResourceFactory, _meshProvider.ShaderName + "_focus").ToTuple();
         }
 
         _shaders = new[] { res.Item1, res.Item2 };

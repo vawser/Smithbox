@@ -45,6 +45,12 @@ public class MapData : IDisposable
     public LightProbeBank LightProbeBank;
     public AssetConfigurationBank AssetConfigurationBank;
 
+    /// <summary>
+    /// The maps in focus, with every other loaded map ghosted. Empty if nothing is focused.
+    /// Replaced rather than changed, as maps being loaded on another thread read this.
+    /// </summary>
+    public HashSet<MapContainer> FocusedMaps = new();
+
     public MapData(ProjectEntry project)
     {
         Project = project;

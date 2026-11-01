@@ -31,6 +31,19 @@ public class MapContainer : ObjectContainer
     [XmlIgnore]
     public MapEditorView OwnerView => View;
 
+    /// <summary>
+    /// True if other maps are focused, which leaves this one ghosted.
+    /// </summary>
+    public bool IsOutOfFocus
+    {
+        get
+        {
+            HashSet<MapContainer> focused = View.Project.Handler.MapData.FocusedMaps;
+
+            return focused.Count > 0 && !focused.Contains(this);
+        }
+    }
+
     // This keeps all models that exist when loading a map, so that saves
     // can be byte perfect
     private readonly Dictionary<string, IMsbModel> LoadedModels;

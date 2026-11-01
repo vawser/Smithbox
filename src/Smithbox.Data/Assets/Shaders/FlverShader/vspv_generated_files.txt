@@ -20,3 +20,13 @@
 ./FlverShader\FlverShader_deform_blend_selected.frag.spv
 ./FlverShader\FlverShader_blendmask_selected.vert.spv
 ./FlverShader\FlverShader_blendmask_selected.frag.spv
+./FlverShader\FlverShader_focus.vert.spv
+./FlverShader\FlverShader_focus.frag.spv
+./FlverShader\FlverShader_blend_focus.vert.spv
+./FlverShader\FlverShader_blend_focus.frag.spv
+./FlverShader\FlverShader_blendmask_focus.vert.spv
+./FlverShader\FlverShader_blendmask_focus.frag.spv
+./FlverShader\FlverShader_deform_focus.vert.spv
+./FlverShader\FlverShader_deform_focus.frag.spv
+./FlverShader\FlverShader_deform_blend_focus.vert.spv
+./FlverShader\FlverShader_deform_blend_focus.frag.spv

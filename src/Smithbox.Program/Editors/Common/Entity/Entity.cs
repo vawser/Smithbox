@@ -403,6 +403,51 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
+    /// True if this entity belongs to a map that is out of focus.
+    /// </summary>
+    [XmlIgnore]
+    public bool IsFocusGhosted => Container is MapContainer map && map.IsOutOfFocus;
+
+    /// <summary>
+    /// Updates the meshes of this entity after the focused maps have changed.
+    /// </summary>
+    public void UpdateFocusState()
+    {
+        var ghosted = IsFocusGhosted;
+
+        if (_renderSceneMesh != null)
+        {
+            _renderSceneMesh.RenderFocusGhost = ghosted;
+        }
+
+        if (_collisionSceneMesh != null)
+        {
+            _collisionSceneMesh.RenderFocusGhost = ghosted;
+        }
+
+        if (_selectionFillMesh != null)
+        {
+            _selectionFillMesh.RenderFocusGhost = ghosted;
+        }
+
+        if (_grassSceneMeshes != null)
+        {
+            foreach (RenderableProxy mesh in _grassSceneMeshes)
+            {
+                mesh.RenderFocusGhost = ghosted;
+            }
+        }
+
+        if (_edgePointMeshes != null)
+        {
+            foreach (EdgePointMesh entry in _edgePointMeshes)
+            {
+                entry.Mesh.RenderFocusGhost = ghosted;
+            }
+        }
+    }
+
+    /// <summary>
     /// Function executed upon the disposal of this entity.
     /// </summary>
     public void Dispose()
@@ -1662,6 +1707,7 @@ public class Entity : ISelectable, IDisposable
 
         proxy.World = world;
         proxy.Visible = visible;
+        proxy.RenderFocusGhost = IsFocusGhosted;
 
         if (useRenderGroups)
         {

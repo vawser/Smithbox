@@ -10,6 +10,7 @@
 //   MATERIAL_DEFORM      - the mesh has the TEXCOORD1-3 attributes, which can hold the layer weight
 //   SELECTED             - used for selected objects: adds selection dithering and tinting
 //   OUTLINE              - only draws the selection outline, for meshes with a deformer to outline
+//   FOCUS                - used for maps that are out of focus: dithers and greys out the object
 //
 // Lighting: one sun (sceneparam.lightDirection / sunColor) plus up to MAX_SCENE_LIGHTS point, spot or
 // directional lights from the scene's light list.
@@ -66,6 +67,9 @@ layout (constant_id = 99) const bool c_picking = false;
 
 #define MAX_LAYERS 4
 #define MAX_SCENE_LIGHTS 16
+
+// The share of pixels kept for a map that is out of focus
+#define FOCUS_OPACITY 0.4
 
 #define LIGHT_DIRECTIONAL 0
 #define LIGHT_POINT 1
@@ -954,6 +958,14 @@ void main()
 		UpdatePickingBuffer(coord, uint64_t(fsin_entityid), gl_FragCoord.z);
 	}
 
+#ifdef FOCUS
+	// After picking, so the gaps in the dither can still be clicked
+	if (FOCUS_OPACITY < OrderedDither())
+	{
+		discard;
+	}
+#endif
+
 #ifdef MATERIAL_BLEND
 	vec3 normalColor = SampleLayered(ROW_NORMAL, c_blendNormal).xyz;
 	vec3 F0 = SampleLayered(ROW_SPECULAR, c_blendSpecular).xyz;
@@ -1093,5 +1105,11 @@ void main()
 	}
 #endif
 
-	fsout_color = vec4(sqrt(max(litColor, vec3(0.0))), alpha);
+	vec3 finalColor = sqrt(max(litColor, vec3(0.0)));
+
+#ifdef FOCUS
+	finalColor = mix(vec3(dot(finalColor, vec3(0.299, 0.587, 0.114))), vec3(0.5), 0.5);
+#endif
+
+	fsout_color = vec4(finalColor, alpha);
 }

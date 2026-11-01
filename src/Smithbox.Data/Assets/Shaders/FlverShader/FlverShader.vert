@@ -9,6 +9,7 @@
 //   MATERIAL_BLEND  - the mesh has a second UV set, which is passed on for blended materials
 //   MATERIAL_DEFORM - the mesh has the TEXCOORD1-3 attributes, for vertex animation and blend weights
 //   SELECTED        - used for selected objects (shares this file; the fragment stage does the tinting)
+//   FOCUS           - used for maps that are out of focus (the fragment stage does the dithering)
 
 #ifdef MATERIAL_DEFORM
 #define MAX_SCENE_LIGHTS 16

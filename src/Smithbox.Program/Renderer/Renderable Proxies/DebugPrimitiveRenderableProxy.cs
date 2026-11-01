@@ -11,6 +11,8 @@ namespace StudioCore.Renderer;
 
 public class DebugPrimitiveRenderableProxy : RenderableProxy
 {
+    private static readonly Color FocusGhostColor = Color.FromArgb(90, 128, 128, 128);
+
     private IDbgPrim? _debugPrimitive;
 
     private readonly MeshRenderables _renderablesSet;
@@ -37,6 +39,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     private int _renderable = -1;
 
     private bool _renderOutline;
+    private bool _renderFocusGhost;
     private WeakReference<ISelectable>? _selectable;
     protected Shader[]? _shaders;
 
@@ -172,6 +175,25 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
             }
         }
     }
+
+    public override bool RenderFocusGhost
+    {
+        get => _renderFocusGhost;
+        set
+        {
+            var old = _renderFocusGhost;
+            _renderFocusGhost = value;
+            if (_registered && old != _renderFocusGhost)
+            {
+                ScheduleRenderableUpdate();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Primitives are already alpha blended, so all they need for focus is another color.
+    /// </summary>
+    private Color CurrentColor => _renderOutline ? HighlightedColor : _renderFocusGhost ? FocusGhostColor : BaseColor;
 
     public bool RenderOverlay
     {
@@ -445,7 +467,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
 
         // Update material data
         DbgMaterial colmat = new();
-        colmat.Color = _renderOutline ? HighlightedColor : BaseColor;
+        colmat.Color = CurrentColor;
         colmat.GridCells = _gridCells;
         _materialBuffer.FillBuffer(gd, cl, ref colmat);
 
@@ -483,7 +505,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         _worldBuffer.FillBuffer(gd, cl, ref dat);
 
         DbgMaterial colmat = new();
-        colmat.Color = _renderOutline ? HighlightedColor : BaseColor;
+        colmat.Color = CurrentColor;
         colmat.GridCells = _gridCells;
 
         _materialBuffer.FillBuffer(gd, cl, ref colmat);

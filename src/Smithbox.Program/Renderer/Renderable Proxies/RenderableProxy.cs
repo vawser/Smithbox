@@ -22,6 +22,12 @@ public abstract class RenderableProxy : SceneRenderer.IRendererUpdatable, IDispo
 
     public abstract bool RenderSelectionOutline { set; get; }
 
+    /// <summary>
+    /// Draws this as part of a map that is out of focus: semi-transparent and grey.
+    /// A selection outline takes priority, so a selected object always looks selected.
+    /// </summary>
+    public virtual bool RenderFocusGhost { get; set; }
+
     public abstract Matrix4x4 World { get; set; }
 
     public abstract bool Visible { get; set; }

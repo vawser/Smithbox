@@ -196,6 +196,19 @@ public class EditorVisibilityAction
             "disableVis", "Make Invisible", "Force the current visibility state to invisible.", MakeInvisibleGlobalAction);
 
         GUI.Spacer();
+        GUI.SimpleHeader("Focus", "Temporarily ghost the map objects of every loaded map other than those of the current selection.");
+
+        GUI.MultiButtonInput("focusActions",
+            "focusMap", "Focus", "Ghost all map objects that do not belong to the same map as the current selection.", FocusAction,
+            "clearFocus", "Clear Focus", "Return all map objects to their normal appearance.", ClearFocusAction);
+
+        var focusedMaps = Project.Handler.MapData.FocusedMaps;
+        if (focusedMaps.Count > 0)
+        {
+            GUI.WrappedText($"Focused: {string.Join(", ", focusedMaps.Select(x => x.Name))}");
+        }
+
+        GUI.Spacer();
         GUI.SimpleHeader("Target Tag", "Toggle the visibility of map objects with the associated alias tag (i.e. LOD).");
 
         GUI.HintTextInput("TagToggleInput", ref CFG.Current.Toolbar_Tag_Visibility_Target, "Enter the tag you want to target...");
@@ -249,6 +262,58 @@ public class EditorVisibilityAction
         CFG.Current.Toolbar_Tag_Visibility_State_Disabled = true;
 
         ApplyEditorVisibilityChangeByTag();
+    }
+
+    public void FocusAction()
+    {
+        HashSet<MapContainer> maps = View.ViewportSelection.GetFilteredSelection<Entity>()
+            .Select(x => x.Container)
+            .OfType<MapContainer>()
+            .ToHashSet();
+
+        if (maps.Count == 0)
+        {
+            Smithbox.LogError<EditorVisibilityAction>("No map object selected.");
+            return;
+        }
+
+        SetFocusedMaps(maps);
+    }
+
+    public void ClearFocusAction()
+    {
+        SetFocusedMaps(new());
+    }
+
+    /// <summary>
+    /// A focused map can't stay focused once it is gone, or the rest would stay ghosted for no reason.
+    /// </summary>
+    public void OnMapUnloaded(MapContainer map)
+    {
+        HashSet<MapContainer> focused = Project.Handler.MapData.FocusedMaps;
+
+        if (focused.Contains(map))
+        {
+            SetFocusedMaps(focused.Where(x => x != map).ToHashSet());
+        }
+    }
+
+    private void SetFocusedMaps(HashSet<MapContainer> maps)
+    {
+        Project.Handler.MapData.FocusedMaps = maps;
+
+        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
+        {
+            if (entry.Value.MapContainer == null)
+                continue;
+
+            foreach (Entity obj in entry.Value.MapContainer.Objects)
+            {
+                obj.UpdateFocusState();
+            }
+        }
+
+        View.DelayPicking();
     }
 
     /// <summary>
