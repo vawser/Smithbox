@@ -628,6 +628,20 @@ public class CFG
 
     #endregion
 
+    #region Time Act Editor
+    ///------------------------------------------------------------
+    /// Time Act Editor
+    ///------------------------------------------------------------
+    public bool Interface_TimeActEditor_ToolWindow = true;
+
+    public bool TimeActEditor_Allow_Unmodified_Save = false;
+    public bool TimeActEditor_Allow_Automatic_Save = true;
+    public bool AutomaticSave_TimeActEditor = true;
+
+    public bool Interface_TimeActEditor_Tool_ResourceMonitor = true;
+
+    #endregion
+
     #region Animation Editor
     public bool Interface_AnimEditor_Viewport_Grid = true;
     public bool Interface_AnimEditor_ResourceList = true;

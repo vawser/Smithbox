@@ -166,6 +166,19 @@ public static class FocusManager
 
         return false;
     }
+    public static bool IsInTimeActEditor()
+    {
+        if (Focus is EditorFocusContext.TimeActEditor_None
+            or EditorFocusContext.TimeActEditor_SourceWindow
+            or EditorFocusContext.TimeActEditor_SelectionWindow
+            or EditorFocusContext.TimeActEditor_Viewport
+            or EditorFocusContext.TimeActEditor_GraphWindow
+            or EditorFocusContext.TimeActEditor_PropertiesWindow
+            or EditorFocusContext.TimeActEditor_ToolWindow)
+            return true;
+
+        return false;
+    }
 }
 
 public enum EditorFocusContext
@@ -246,5 +259,13 @@ public enum EditorFocusContext
     HavokEditor_BinderList,
     HavokEditor_FileList,
     HavokEditor_Properties,
-    HavokEditor_Tools
+    HavokEditor_Tools,
+
+    TimeActEditor_None,
+    TimeActEditor_SourceWindow,
+    TimeActEditor_SelectionWindow,
+    TimeActEditor_GraphWindow,
+    TimeActEditor_Viewport,
+    TimeActEditor_PropertiesWindow,
+    TimeActEditor_ToolWindow
 }

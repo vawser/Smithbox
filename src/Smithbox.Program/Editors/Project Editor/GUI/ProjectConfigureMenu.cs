@@ -289,6 +289,17 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Model_Editor_TT"));
         }
 
+        // TimeAct Editor
+        if (EditorConditions.SupportsTimeActEditor(Descriptor.ProjectType))
+        {
+            ImGui.Checkbox(
+                LOC.Get("PROJECT_Configuration_Checkbox_TimeAct_Editor"),
+                ref Descriptor.EnableTimeActEditor);
+
+            GUI.Tooltip(
+                LOC.Get("PROJECT_Configuration_Checkbox_TimeAct_Editor_TT"));
+        }
+
         // Param Editor
         if (EditorConditions.SupportsParamEditor(Descriptor.ProjectType))
         {

@@ -16,6 +16,18 @@ public static class EditorConditions
         return true;
     }
 
+    public static bool SupportsTimeActEditor(ProjectType curType)
+    {
+        if (curType
+            is ProjectType.DS2
+            or ProjectType.DS2S)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
     public static bool SupportsTextEditor(ProjectType curType)
     {
         return true;

@@ -1,6 +1,4 @@
-﻿using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
-using StudioCore.Editors.Common;
+﻿using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
@@ -8,12 +6,7 @@ using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
-using StudioCore.Logger;
 using StudioCore.Renderer;
-using StudioCore.Utilities;
-using System;
-using System.IO;
-using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
 
@@ -50,6 +43,9 @@ public class ProjectEntry
             if (Handler.ModelEditorStub != null)
                 Handler.ModelEditorStub.Draw(device, cl);
 
+            if (Handler.TimeActEditorStub != null)
+                Handler.TimeActEditorStub.Draw(device, cl);
+
             ModelPreviewCache.Draw(this);
         }
     }
@@ -65,6 +61,9 @@ public class ProjectEntry
 
             if (Handler.ModelEditorStub != null)
                 Handler.ModelEditorStub.Display(dt, commands);
+
+            if (Handler.TimeActEditorStub != null)
+                Handler.TimeActEditorStub.Display(dt, commands);
 
             if (Handler.TextEditorStub != null)
                 Handler.TextEditorStub.Display(dt, commands);
@@ -113,6 +112,9 @@ public class ProjectEntry
 
             if (Handler.ModelEditorStub != null)
                 Handler.ModelEditorStub.EditorResized(window, device);
+
+            if (Handler.TimeActEditorStub != null)
+                Handler.TimeActEditorStub.EditorResized(window, device);
         }
     }
 

@@ -7,7 +7,8 @@ namespace StudioCore.Editors.Viewport;
 public enum ViewportGridEditor
 {
     Map,
-    Model
+    Model,
+    TimeAct
 }
 
 public enum ViewportGridType
@@ -129,6 +130,45 @@ public ref struct ViewportGridConfig
                     ref cfg.ModelEditor_SecondaryGrid_Rotation_Z);
 
             case (ViewportGridEditor.Model, ViewportGridType.Tertiary):
+                return new(
+                    ref cfg.ModelEditor_DisplayTertiaryGrid,
+                    ref cfg.ModelEditor_TertiaryGrid_Size,
+                    ref cfg.ModelEditor_TertiaryGrid_SectionSize,
+                    ref cfg.ModelEditor_TertiaryGrid_Color,
+                    ref cfg.ModelEditor_TertiaryGrid_Position_X,
+                    ref cfg.ModelEditor_TertiaryGrid_Position_Y,
+                    ref cfg.ModelEditor_TertiaryGrid_Position_Z,
+                    ref cfg.ModelEditor_TertiaryGrid_Rotation_X,
+                    ref cfg.ModelEditor_TertiaryGrid_Rotation_Y,
+                    ref cfg.ModelEditor_TertiaryGrid_Rotation_Z);
+
+            case (ViewportGridEditor.TimeAct, ViewportGridType.Primary):
+                return new(
+                    ref cfg.ModelEditor_DisplayPrimaryGrid,
+                    ref cfg.ModelEditor_PrimaryGrid_Size,
+                    ref cfg.ModelEditor_PrimaryGrid_SectionSize,
+                    ref cfg.ModelEditor_PrimaryGrid_Color,
+                    ref cfg.ModelEditor_PrimaryGrid_Position_X,
+                    ref cfg.ModelEditor_PrimaryGrid_Position_Y,
+                    ref cfg.ModelEditor_PrimaryGrid_Position_Z,
+                    ref cfg.ModelEditor_PrimaryGrid_Rotation_X,
+                    ref cfg.ModelEditor_PrimaryGrid_Rotation_Y,
+                    ref cfg.ModelEditor_PrimaryGrid_Rotation_Z);
+
+            case (ViewportGridEditor.TimeAct, ViewportGridType.Secondary):
+                return new(
+                    ref cfg.ModelEditor_DisplaySecondaryGrid,
+                    ref cfg.ModelEditor_SecondaryGrid_Size,
+                    ref cfg.ModelEditor_SecondaryGrid_SectionSize,
+                    ref cfg.ModelEditor_SecondaryGrid_Color,
+                    ref cfg.ModelEditor_SecondaryGrid_Position_X,
+                    ref cfg.ModelEditor_SecondaryGrid_Position_Y,
+                    ref cfg.ModelEditor_SecondaryGrid_Position_Z,
+                    ref cfg.ModelEditor_SecondaryGrid_Rotation_X,
+                    ref cfg.ModelEditor_SecondaryGrid_Rotation_Y,
+                    ref cfg.ModelEditor_SecondaryGrid_Rotation_Z);
+
+            case (ViewportGridEditor.TimeAct, ViewportGridType.Tertiary):
                 return new(
                     ref cfg.ModelEditor_DisplayTertiaryGrid,
                     ref cfg.ModelEditor_TertiaryGrid_Size,

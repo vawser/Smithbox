@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "TAE_Editor_Title",
+      "Text": "Time Act Editor"
+    },
+    {
+      "Key": "TAE_Editor_View_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "TAE_Universe_Model_Already_Loaded",
+      "Text": "Model '{0}' is already loaded"
+    },
+    {
+      "Key": "TAE_Editor_Source_Window",
+      "Text": "Time Act Sources"
+    },
+    {
+      "Key": "TAE_Editor_Selection_Window",
+      "Text": "Time Acts"
+    },
+    {
+      "Key": "TAE_Editor_Graph_Window",
+      "Text": "Time Act Events"
+    },
+    {
+      "Key": "TAE_Editor_Properties_Window",
+      "Text": "Time Act Event Properties"
+    },
+    {
+      "Key": "TAE_Editor_Tool_Window",
+      "Text": "Tools"
+    },
+    {
+      "Key": "TAE_SourceWindow_List_Header",
+      "Text": "Sources"
+    },
+    {
+      "Key": "TAE_SourceWindow_List_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TAE_SelectionWindow_List_Header",
+      "Text": "Time Acts"
+    },
+    {
+      "Key": "TAE_SelectionWindow_List_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TAE_PropertiesWindow_List_Header",
+      "Text": "Properties"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_List_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TAE_ToolWindow_View_Header",
+      "Text": "View"
+    },
+    {
+      "Key": "TAE_ToolWindow_View_Toggle_Resource_Monitor",
+      "Text": "Resource Monitor"
+    },
+    {
+      "Key": "TAE_Data_Setup_Primary_Bank_FAIL",
+      "Text": "Failed to setup the Primary Bank."
+    },
+    {
+      "Key": "TAE_Data_Setup_Primary_Bank_PASS",
+      "Text": "Setup the Primary Bank."
+    }
+  ]
+}

@@ -1,6 +1,9 @@
 #----------------------------------------------------
 # Graphics Param Editor Features
 #----------------------------------------------------
+- 3D Preview support
+ - Load model
+ - Approximate graphical effect from gparam
 
 #----------------------------------------------------
 # Graphics Param Editor Bugs

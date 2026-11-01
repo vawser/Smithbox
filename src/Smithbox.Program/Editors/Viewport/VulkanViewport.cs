@@ -2,6 +2,7 @@
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.TimeActEditor;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -139,6 +140,13 @@ public class VulkanViewport : IViewport
             ActionManager = modelUniverse.View.ViewportActionManager;
         }
 
+        if (owner is TimeActUniverse timeActUniverse)
+        {
+            RenderScene = timeActUniverse.View.RenderScene;
+            ViewportSelection = timeActUniverse.View.ViewportSelection;
+            ActionManager = timeActUniverse.View.ViewportActionManager;
+        }
+
         if (RenderScene != null && Device != null)
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
@@ -163,7 +171,7 @@ public class VulkanViewport : IViewport
                 cl.ClearDepthStencil(0);
             });
 
-            if (owner is MapUniverse || owner is ModelUniverse)
+            if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse)
             {
                 Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
 
@@ -203,6 +211,7 @@ public class VulkanViewport : IViewport
 
             HandleMapEditorFocus();
             HandleModelEditorFocus();
+            HandleTimeActEditorFocus();
 
             HandleCompass();
 
@@ -312,6 +321,14 @@ public class VulkanViewport : IViewport
                 && view.ViewportWindow.Viewport == this;
         }
 
+        if (Owner is TimeActUniverse timeActUniverse)
+        {
+            var view = timeActUniverse.View;
+
+            return view.Editor.ViewHandler.ActiveView == view
+                && view.ViewportWindow.Viewport == this;
+        }
+
         return false;
     }
 
@@ -371,6 +388,32 @@ public class VulkanViewport : IViewport
                     if (wrapper.ViewportWindow.Viewport == this)
                     {
                         modelUniverse.View.Editor.ViewHandler.ActiveView = wrapper;
+                        IsActiveViewport = true;
+                    }
+                }
+            }
+            else
+            {
+                IsActiveViewport = false;
+            }
+        }
+    }
+    public void HandleTimeActEditorFocus()
+    {
+        if (Owner is TimeActUniverse timeActUniverse)
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.TimeActEditor_Viewport);
+
+                foreach (var wrapper in timeActUniverse.View.Editor.ViewHandler.Views)
+                {
+                    if (wrapper == null)
+                        continue;
+
+                    if (wrapper.ViewportWindow.Viewport == this)
+                    {
+                        timeActUniverse.View.Editor.ViewHandler.ActiveView = wrapper;
                         IsActiveViewport = true;
                     }
                 }
@@ -605,6 +648,11 @@ public class VulkanViewport : IViewport
         if (Owner is ModelUniverse modelUniverse)
         {
             UpdateGrids(ViewportGridEditor.Model, modelUniverse.Project.Handler.FocusedEditor is ModelEditorScreen);
+        }
+
+        if (Owner is TimeActUniverse timeActUniverse)
+        {
+            UpdateGrids(ViewportGridEditor.Model, timeActUniverse.Project.Handler.FocusedEditor is TimeActEditorScreen);
         }
     }
 

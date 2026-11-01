@@ -8,6 +8,7 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
+using StudioCore.Editors.TimeActEditor;
 using StudioCore.Renderer;
 
 namespace StudioCore.Application;
@@ -38,6 +39,11 @@ public class ProjectEditorHandler : IDisposable
     public ModelData ModelData;
     public ModelEditorScreen ModelEditor;
     public ModelEditorStub ModelEditorStub;
+
+    // TimeAct Editor
+    public TimeActData TimeActData;
+    public TimeActEditorScreen TimeActEditor;
+    public TimeActEditorStub TimeActEditorStub;
 
     // Param Editor
     public ParamData ParamData;
@@ -82,6 +88,7 @@ public class ProjectEditorHandler : IDisposable
     private Task<bool> _materialDataTask;
     private Task<bool> _textureDataTask;
     private Task<bool> _havokDataTask;
+    private Task<bool> _timeActDataTask;
 
     public ProjectEditorHandler(ProjectEntry project)
     {
@@ -92,6 +99,7 @@ public class ProjectEditorHandler : IDisposable
     {
         MapEditorStub = new(Project);
         ModelEditorStub = new(Project);
+        TimeActEditorStub = new(Project);
         TextEditorStub = new(Project);
         ParamEditorStub = new(Project);
         GparamEditorStub = new(Project);
@@ -144,6 +152,16 @@ public class ProjectEditorHandler : IDisposable
             ModelData = new(Project);
             _modelDataTask = ModelData.Setup();
             tasks.Add(_modelDataTask);
+            tasks.Add(_materialDataTask);
+        }
+
+        // Time Act
+        if (Project.Descriptor.EnableTimeActEditor &&
+            initType is ProjectInitType.ProjectDefined)
+        {
+            TimeActData = new(Project);
+            _timeActDataTask = TimeActData.Setup();
+            tasks.Add(_timeActDataTask);
             tasks.Add(_materialDataTask);
         }
 
@@ -208,6 +226,11 @@ public class ProjectEditorHandler : IDisposable
                 ? LOC.Get("PROJECT_Data_Setup_Model_Data_PASS")
                 : LOC.Get("PROJECT_Data_Setup_Model_Data_FAIL"));
 
+        if (_timeActDataTask != null)
+            Smithbox.Log(this, _timeActDataTask.Result
+                ? LOC.Get("PROJECT_Data_Setup_TimeAct_Data_PASS")
+                : LOC.Get("PROJECT_Data_Setup_TimeAct_Data_FAIL"));
+
         if (_materialDataTask != null)
             Smithbox.Log(this, _materialDataTask.Result
                 ? LOC.Get("PROJECT_Data_Setup_Material_Data_PASS")
@@ -260,6 +283,12 @@ public class ProjectEditorHandler : IDisposable
         {
             ModelEditor = new ModelEditorScreen(Project);
             firstEditor ??= ModelEditor;
+        }
+
+        if (TimeActData != null)
+        {
+            TimeActEditor = new TimeActEditorScreen(Project);
+            firstEditor ??= TimeActEditor;
         }
 
         if (ParamData != null)

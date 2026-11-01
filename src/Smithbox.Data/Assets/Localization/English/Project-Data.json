@@ -49,6 +49,14 @@
       "Text": "[Model Editor] Failed to setup Model Data Banks."
     },
     {
+      "Key": "PROJECT_Data_Setup_TimeAct_Data_PASS",
+      "Text": "[Time Act Editor] Setup Time Act Data Banks."
+    },
+    {
+      "Key": "PROJECT_Data_Setup_TimeAct_Data_FAIL",
+      "Text": "[Time Act Editor] Failed to setup Time Act Data Banks."
+    },
+    {
       "Key": "PROJECT_Data_Setup_Material_Data_PASS",
       "Text": "[Material Data] Setup Material Data."
     },

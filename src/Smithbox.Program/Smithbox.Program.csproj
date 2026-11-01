@@ -131,6 +131,11 @@
     <Folder Include="Editors\File Browser\Actions\" />
     <Folder Include="Editors\File Browser\Data\" />
     <Folder Include="Editors\File Browser\Utils\" />
+    <Folder Include="Editors\Time Act Editor\Actions\" />
+    <Folder Include="Editors\Time Act Editor\Enums\" />
+    <Folder Include="Editors\Time Act Editor\JSON\" />
+    <Folder Include="Editors\Time Act Editor\Utils\" />
+    <Folder Include="Editors\Time Act Editor\Tools\" />
   </ItemGroup>
 
   <ItemGroup>
