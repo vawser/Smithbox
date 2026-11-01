@@ -1,4 +1,5 @@
 using Andre.Formats;
+using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Renderer;
@@ -38,6 +39,8 @@ public class EnemyAIVisualizationTool
 
     public void OnToolWindow()
     {
+        ImGui.BeginChild("enemyAiVisSection", ImGuiChildFlags.Borders);
+
         // These have no NpcThinkParam, no think ID in their MSB, or an undocumented NpcThinkParam layout
         if (Project.Descriptor.ProjectType is ProjectType.DS2
             or ProjectType.DS2S
@@ -46,6 +49,7 @@ public class EnemyAIVisualizationTool
             or ProjectType.DB_NT)
         {
             GUI.WrappedText("This tool is not supported for this project type.");
+            ImGui.EndChild();
             return;
         }
 
@@ -66,6 +70,8 @@ public class EnemyAIVisualizationTool
 
         GUI.MultiButtonInput("enemyAiClear",
             "clearSpheres", "Clear", "Remove all of the detection radius spheres.", Clear);
+
+        ImGui.EndChild();
     }
 
     /// <summary>

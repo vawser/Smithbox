@@ -29,6 +29,25 @@ public class BasicFilters
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Character);
         }
 
+        // The stored filter may predate these two, so they can't be toggled
+        if (CFG.Current.MapEditor_BasicFilter_DummyEnemy)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.DummyEnemy;
+        }
+        else
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.DummyEnemy;
+        }
+
+        if (CFG.Current.MapEditor_BasicFilter_DummyAsset)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.DummyAsset;
+        }
+        else
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.DummyAsset;
+        }
+
         if (!CFG.Current.MapEditor_BasicFilter_Region)
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Region);
@@ -152,6 +171,43 @@ public class BasicFilters
         GUI.ShowActiveStatus(ticked);
         GUI.Tooltip(LOC.Get("MAP_Filters_Characters_TT"));
 
+        var usesAssets = View.Project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.AC6
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB;
+
+        if (View.Project.Descriptor.ProjectType is not (ProjectType.DS2 or ProjectType.DS2S))
+        {
+            // Dummy Enemy
+            if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Dummy_Enemies_Title")}##toggleFilter_DummyEnemy"))
+            {
+                View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.DummyEnemy);
+                CFG.Current.MapEditor_BasicFilter_DummyEnemy = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.DummyEnemy);
+                View.DelayPicking();
+            }
+            ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.DummyEnemy);
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip(LOC.Get("MAP_Filters_Dummy_Enemies_TT"));
+
+            // Dummy Asset / Object
+            var dummyAssetTitle = usesAssets
+                ? LOC.Get("MAP_Filters_Dummy_Assets_Title")
+                : LOC.Get("MAP_Filters_Dummy_Objects_Title");
+
+            if (ImGui.MenuItem($"{dummyAssetTitle}##toggleFilter_DummyAsset"))
+            {
+                View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.DummyAsset);
+                CFG.Current.MapEditor_BasicFilter_DummyAsset = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.DummyAsset);
+                View.DelayPicking();
+            }
+            ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.DummyAsset);
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip(usesAssets
+                ? LOC.Get("MAP_Filters_Dummy_Assets_TT")
+                : LOC.Get("MAP_Filters_Dummy_Objects_TT"));
+        }
+
         // Region
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Regions_Title")}##toggleFilter_Region"))
         {
@@ -197,12 +253,6 @@ public class BasicFilters
         GUI.Tooltip(LOC.Get("MAP_Filters_Connect_Collisions_TT"));
 
         // Object / Asset Collision
-        var usesAssets = View.Project.Descriptor.ProjectType is ProjectType.ER
-            or ProjectType.AC6
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB;
-
         var objectCollisionTitle = usesAssets
             ? LOC.Get("MAP_Filters_Asset_Collisions_Title")
             : LOC.Get("MAP_Filters_Object_Collisions_Title");

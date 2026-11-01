@@ -77,6 +77,14 @@
       "Text": "Edge Point"
     },
     {
+      "Key": "VIEWPORT_ENUM_RenderFilter_DummyEnemy",
+      "Text": "Dummy Enemy"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_DummyAsset",
+      "Text": "Dummy Asset"
+    },
+    {
       "Key": "VIEWPORT_ENUM_RenderFilter_All",
       "Text": "All"
     },

@@ -63,6 +63,12 @@ public enum RenderFilter
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_EdgePoint")]
     EdgePoint = 262144,
 
+    [Display(Name = "VIEWPORT_ENUM_RenderFilter_DummyEnemy")]
+    DummyEnemy = 524288,
+
+    [Display(Name = "VIEWPORT_ENUM_RenderFilter_DummyAsset")]
+    DummyAsset = 1048576,
+
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_All")]
     All = 0xFFFFFFF
 }

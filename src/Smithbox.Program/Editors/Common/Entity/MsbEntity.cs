@@ -464,7 +464,7 @@ public class MsbEntity : Entity
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
-        mesh.DrawFilter = RenderFilter.Character;
+        mesh.DrawFilter = GetPartDrawFilter(RenderFilter.Character);
 
         LoadAsset<FlverResource>(asset, LOC.Get("MAP_ResourceManager_Character_Models"), ResourceType.Flver | ResourceType.Texture);
 
@@ -482,7 +482,7 @@ public class MsbEntity : Entity
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
-        mesh.DrawFilter = RenderFilter.Object;
+        mesh.DrawFilter = GetPartDrawFilter(RenderFilter.Object);
 
         LoadAsset<FlverResource>(asset, MapResourceHandler.GetObjectModelsName(curProject), ResourceType.Flver | ResourceType.Texture);
 
@@ -579,7 +579,7 @@ public class MsbEntity : Entity
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
-        mesh.DrawFilter = RenderFilter.Character;
+        mesh.DrawFilter = GetPartDrawFilter(RenderFilter.Character);
 
         return mesh;
     }
@@ -594,7 +594,7 @@ public class MsbEntity : Entity
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
-        mesh.DrawFilter = RenderFilter.Character;
+        mesh.DrawFilter = GetPartDrawFilter(RenderFilter.Character);
 
         return mesh;
     }
@@ -624,7 +624,7 @@ public class MsbEntity : Entity
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
-        mesh.DrawFilter = RenderFilter.Object;
+        mesh.DrawFilter = GetPartDrawFilter(RenderFilter.Object);
 
         return mesh;
     }
@@ -639,9 +639,23 @@ public class MsbEntity : Entity
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
-        mesh.DrawFilter = RenderFilter.SpeedTree;
+        mesh.DrawFilter = GetPartDrawFilter(RenderFilter.SpeedTree);
 
         return mesh;
+    }
+
+    /// <summary>
+    /// Dummy parts have their own filters, whatever kind of mesh they display. Other parts use the passed filter.
+    /// </summary>
+    private RenderFilter GetPartDrawFilter(RenderFilter filter)
+    {
+        if (EntityHelper.IsPartDummyEnemy(this))
+            return RenderFilter.DummyEnemy;
+
+        if (EntityHelper.IsPartDummyAsset(this))
+            return RenderFilter.DummyAsset;
+
+        return filter;
     }
 
     public void AssignRegionDrawable()
@@ -1328,7 +1342,7 @@ public class MsbEntity : Entity
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
-        mesh.DrawFilter = RenderFilter.Character;
+        mesh.DrawFilter = GetPartDrawFilter(RenderFilter.Character);
 
         CharacterAppearance = appearance;
         SetRenderSceneMesh(mesh);
@@ -1384,7 +1398,7 @@ public class MsbEntity : Entity
 
         if (isSpeedTree)
         {
-            meshProxy.DrawFilter = RenderFilter.SpeedTree;
+            meshProxy.DrawFilter = GetPartDrawFilter(RenderFilter.SpeedTree);
         }
 
         SetRenderSceneMesh(meshProxy);

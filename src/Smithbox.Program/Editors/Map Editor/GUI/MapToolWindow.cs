@@ -1,8 +1,6 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Application;
-using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
-using StudioCore.Renderer;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -162,6 +160,37 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_Validation)
+        {
+            if (ImGui.CollapsingHeader("Validation"))
+            {
+                ImGui.BeginChild("validationSection", ImGuiChildFlags.Borders);
+
+                ImGui.BeginTabBar("validationTabs");
+
+                if (!(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S))
+                {
+                    if (ImGui.BeginTabItem("Entity ID##entityIdSearch"))
+                    {
+                        View.EntityIdentifierTool.OnToolWindow();
+
+                        ImGui.EndTabItem();
+                    }
+                }
+
+                if (ImGui.BeginTabItem("MSB Validation##msbValidation"))
+                {
+                    View.MapValidatorTool.OnToolWindow();
+
+                    ImGui.EndTabItem();
+                }
+
+                ImGui.EndTabBar();
+
+                ImGui.EndChild();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_Tool_DisplayGroups)
         {
             if (ImGui.CollapsingHeader("Render Groups"))
@@ -203,56 +232,17 @@ public class MapToolWindow
             }
         }
 
-        //if (CFG.Current.Interface_MapEditor_Tool_Data_Transfer)
-        //{
-        //    if (ImGui.CollapsingHeader("Data Transfer"))
-        //    {
-        //        DataTransferTool.Display();
-        //    }
-        //}
+        if (CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization)
+        {
+            if (ImGui.CollapsingHeader("Detection Visualization"))
+            {
+                View.EnemyAIVisualizationTool.OnToolWindow();
+            }
+        }
 
         if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
         {
             View.GridTool.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_MapEditor_Tool_Validation)
-        {
-            if (ImGui.CollapsingHeader("Validation"))
-            {
-                ImGui.BeginChild("validationSection", ImGuiChildFlags.Borders);
-
-                ImGui.BeginTabBar("validationTabs");
-
-                if (!(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S))
-                {
-                    if (ImGui.BeginTabItem("Entity ID##entityIdSearch"))
-                    {
-                        View.EntityIdentifierTool.OnToolWindow();
-
-                        ImGui.EndTabItem();
-                    }
-                }
-
-                if (ImGui.BeginTabItem("MSB Validation##msbValidation"))
-                {
-                    View.MapValidatorTool.OnToolWindow();
-
-                    ImGui.EndTabItem();
-                }
-
-                ImGui.EndTabBar();
-
-                ImGui.EndChild();
-            }
-        }
-
-        if (CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization)
-        {
-            if (ImGui.CollapsingHeader("Enemy AI Visualization"))
-            {
-                View.EnemyAIVisualizationTool.OnToolWindow();
-            }
         }
 
         if (CFG.Current.Interface_MapEditor_ResourceList)
@@ -319,7 +309,7 @@ public class MapToolWindow
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_GridConfiguration);
 
-            if (ImGui.MenuItem("Asset Browser"))
+            if (ImGui.MenuItem("Model Browser"))
             {
                 CFG.Current.Interface_MapEditor_Tool_ModelBrowser = !CFG.Current.Interface_MapEditor_Tool_ModelBrowser;
             }
@@ -337,17 +327,17 @@ public class MapToolWindow
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_DisplayGroups);
 
-            if (ImGui.MenuItem("Enemy AI Visualization"))
+            if (ImGui.MenuItem("Detection Visualization"))
             {
                 CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization = !CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization);
 
-            if (ImGui.MenuItem("Asset Browser"))
+            if (ImGui.MenuItem("Viewport Configuration"))
             {
-                CFG.Current.Interface_MapEditor_Tool_AssetBrowser = !CFG.Current.Interface_MapEditor_Tool_AssetBrowser;
+                CFG.Current.Interface_MapEditor_Tool_ViewportConfig = !CFG.Current.Interface_MapEditor_Tool_ViewportConfig;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_AssetBrowser);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_ViewportConfig);
 
             if (ImGui.MenuItem("Resource List"))
             {

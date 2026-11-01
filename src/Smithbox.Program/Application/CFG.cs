@@ -330,6 +330,8 @@ public class CFG
     public bool MapEditor_BasicFilter_MapPiece = true;
     public bool MapEditor_BasicFilter_Object = true;
     public bool MapEditor_BasicFilter_Character = true;
+    public bool MapEditor_BasicFilter_DummyEnemy = true;
+    public bool MapEditor_BasicFilter_DummyAsset = true;
     public bool MapEditor_BasicFilter_Region = true;
     public bool MapEditor_BasicFilter_Light = true;
     public bool MapEditor_BasicFilter_Collision = true;
@@ -510,6 +512,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_Validation = true;
     public bool Interface_MapEditor_Tool_EnemyAIVisualization = true;
     public bool Interface_MapEditor_Tool_AssetBrowser = true;
+    public bool Interface_MapEditor_Tool_ViewportConfig = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Map_Editor = true;
@@ -519,11 +522,11 @@ public class CFG
 
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
-    public RenderFilterPreset Viewport_Filter_Preset_1 { get; set; } = new("Map", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
-    public RenderFilterPreset Viewport_Filter_Preset_2 { get; set; } = new("Collision", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
-    public RenderFilterPreset Viewport_Filter_Preset_3 { get; set; } = new("Collision & Navmesh", RenderFilter.Collision | RenderFilter.Navmesh | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
-    public RenderFilterPreset Viewport_Filter_Preset_4 { get; set; } = new("Lighting (Map)", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
-    public RenderFilterPreset Viewport_Filter_Preset_5 { get; set; } = new("Lighting (Collision)", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
+    public RenderFilterPreset Viewport_Filter_Preset_1 { get; set; } = new("Map", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.DummyEnemy | RenderFilter.DummyAsset | RenderFilter.Region);
+    public RenderFilterPreset Viewport_Filter_Preset_2 { get; set; } = new("Collision", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.DummyEnemy | RenderFilter.DummyAsset | RenderFilter.Region);
+    public RenderFilterPreset Viewport_Filter_Preset_3 { get; set; } = new("Collision & Navmesh", RenderFilter.Collision | RenderFilter.Navmesh | RenderFilter.Object | RenderFilter.Character | RenderFilter.DummyEnemy | RenderFilter.DummyAsset | RenderFilter.Region);
+    public RenderFilterPreset Viewport_Filter_Preset_4 { get; set; } = new("Lighting (Map)", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.DummyEnemy | RenderFilter.DummyAsset | RenderFilter.Light);
+    public RenderFilterPreset Viewport_Filter_Preset_5 { get; set; } = new("Lighting (Collision)", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.DummyEnemy | RenderFilter.DummyAsset | RenderFilter.Light);
     public RenderFilterPreset Viewport_Filter_Preset_6 { get; set; } = new("All", RenderFilter.All);
 
     #endregion
@@ -614,6 +617,7 @@ public class CFG
     public bool Interface_ModelEditor_Tool_Data_Transfer = true;
     public bool Interface_ModelEditor_Tool_ModelExport = true;
     public bool Interface_ModelEditor_Tool_AssetBrowser = true;
+    public bool Interface_ModelEditor_Tool_ViewportConfig = true;
 
     // Saving
     public bool ModelEditor_Allow_Unmodified_Save = false;

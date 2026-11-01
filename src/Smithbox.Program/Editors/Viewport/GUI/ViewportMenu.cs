@@ -17,6 +17,8 @@ public class ViewportMenu
     public IUniverse Owner;
     public VulkanViewport Parent;
 
+    private float GrassDensity = CFG.Current.MapEditor_Grass_Density;
+
     public ViewportMenu(VulkanViewport parent)
     {
         Parent = parent;
@@ -551,6 +553,16 @@ public class ViewportMenu
         DPI.ApplyInputWidth();
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Setting_Wind_Direction")}##windDirection", ref CFG.Current.Viewport_Wind_Direction, 0.0f, 360.0f);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wind_Direction_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat("Grass Density", ref GrassDensity, 0.1f, 4f);
+
+        // Each change rebuilds the grass, so it waits for the slider to be let go
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            CFG.Current.MapEditor_Grass_Density = GrassDensity;
+        }
+
     }
 
     private static void MaterialToggle(string key, ref bool value)

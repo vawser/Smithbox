@@ -33,6 +33,30 @@
       "Text": "Toggle the display of map objects classified as 'Characters'."
     },
     {
+      "Key": "MAP_Filters_Dummy_Enemies_Title",
+      "Text": "Dummy Enemies"
+    },
+    {
+      "Key": "MAP_Filters_Dummy_Enemies_TT",
+      "Text": "Toggle the display of map objects classified as 'Dummy Enemies'."
+    },
+    {
+      "Key": "MAP_Filters_Dummy_Assets_Title",
+      "Text": "Dummy Assets"
+    },
+    {
+      "Key": "MAP_Filters_Dummy_Assets_TT",
+      "Text": "Toggle the display of map objects classified as 'Dummy Assets'."
+    },
+    {
+      "Key": "MAP_Filters_Dummy_Objects_Title",
+      "Text": "Dummy Objects"
+    },
+    {
+      "Key": "MAP_Filters_Dummy_Objects_TT",
+      "Text": "Toggle the display of map objects classified as 'Dummy Objects'."
+    },
+    {
       "Key": "MAP_Filters_Regions_Title",
       "Text": "Regions"
     },

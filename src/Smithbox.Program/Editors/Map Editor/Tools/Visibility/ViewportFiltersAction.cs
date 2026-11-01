@@ -23,13 +23,14 @@ public class ViewportFiltersAction
     private bool RenderMapPiece = false;
     private bool RenderObject = false;
     private bool RenderCharacter = false;
+    private bool RenderDummyEnemy = false;
+    private bool RenderDummyAsset = false;
     private bool RenderRegion = false;
     private bool RenderLight = false;
     private bool RenderCollision = false;
     private bool RenderConnectCollision = false;
     private bool RenderObjectCollision = false;
     private bool RenderGrass = false;
-    private float GrassDensity = CFG.Current.MapEditor_Grass_Density;
     private bool RenderEdgePoint = false;
     private bool RenderNavmesh = false;
     private bool RenderSpeedTree = false;
@@ -51,6 +52,8 @@ public class ViewportFiltersAction
         RenderMapPiece = drawFilter.HasFlag(RenderFilter.MapPiece);
         RenderObject = drawFilter.HasFlag(RenderFilter.Object);
         RenderCharacter = drawFilter.HasFlag(RenderFilter.Character);
+        RenderDummyEnemy = drawFilter.HasFlag(RenderFilter.DummyEnemy);
+        RenderDummyAsset = drawFilter.HasFlag(RenderFilter.DummyAsset);
         RenderRegion = drawFilter.HasFlag(RenderFilter.Region);
         RenderLight = drawFilter.HasFlag(RenderFilter.Light);
         RenderCollision = drawFilter.HasFlag(RenderFilter.Collision);
@@ -102,6 +105,23 @@ public class ViewportFiltersAction
             RenderCharacter = scene.DrawFilter.HasFlag(RenderFilter.Character);
         }
 
+        if (Project.Descriptor.ProjectType is not (ProjectType.DS2 or ProjectType.DS2S))
+        {
+            if (ImGui.Checkbox("Dummy Enemy", ref RenderDummyEnemy))
+            {
+                scene.ToggleDrawFilter(RenderFilter.DummyEnemy);
+                RenderDummyEnemy = scene.DrawFilter.HasFlag(RenderFilter.DummyEnemy);
+                CFG.Current.MapEditor_BasicFilter_DummyEnemy = RenderDummyEnemy;
+            }
+
+            if (ImGui.Checkbox($"Dummy {objName}", ref RenderDummyAsset))
+            {
+                scene.ToggleDrawFilter(RenderFilter.DummyAsset);
+                RenderDummyAsset = scene.DrawFilter.HasFlag(RenderFilter.DummyAsset);
+                CFG.Current.MapEditor_BasicFilter_DummyAsset = RenderDummyAsset;
+            }
+        }
+
         if (ImGui.Checkbox("Region", ref RenderRegion))
         {
             scene.ToggleDrawFilter(RenderFilter.Region);
@@ -138,14 +158,6 @@ public class ViewportFiltersAction
             scene.ToggleDrawFilter(RenderFilter.Grass);
             RenderGrass = scene.DrawFilter.HasFlag(RenderFilter.Grass);
             CFG.Current.MapEditor_BasicFilter_Grass = RenderGrass;
-        }
-
-        ImGui.SliderFloat("Grass Density", ref GrassDensity, 0.1f, 4f);
-
-        // Each change rebuilds the grass, so it waits for the slider to be let go
-        if (ImGui.IsItemDeactivatedAfterEdit())
-        {
-            CFG.Current.MapEditor_Grass_Density = GrassDensity;
         }
 
         if (Project.Descriptor.ProjectType is ProjectType.SDT)
