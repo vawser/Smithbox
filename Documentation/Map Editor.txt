@@ -19,6 +19,11 @@
 - Add 'camera path' authoring for new camera hkxs for cutscenes
 - Add Object Mass Edit that allows for addition/deletion of map objects programmatically
 
+- Lighting:
+    - See if GPARAM can be used to tune sun for more accurate sun lighting (plus add gparam switcher, like Model Mask switcher)
+    - GIIV
+    - EnvMaps
+
 - Investigate:
     - FVB: FogVolumeBank? requires format implemetation
     - IVInfo: Irradiance Volume Info: requires format implementation

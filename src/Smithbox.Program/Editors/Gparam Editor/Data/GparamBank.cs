@@ -80,6 +80,7 @@ public class GparamBank : IDisposable
             {
                 var key = scriptEntry.Key;
 
+                // Container
                 if (scriptEntry.Key.Extension == "gparambnd")
                 {
                     if (TargetFS.FileExists(key.Path))
@@ -90,6 +91,7 @@ public class GparamBank : IDisposable
 
                         var file = binder.Files.FirstOrDefault(e => Path.GetFileNameWithoutExtension(e.Name) == scriptEntry.Key.Filename);
 
+                        // Internal File
                         if (file != null)
                         {
                             try
@@ -106,7 +108,7 @@ public class GparamBank : IDisposable
                                 catch (Exception e)
                                 {
                                     Smithbox.LogError(this, 
-                                        LOC.Get("GPARAM_Data_Failed_Read_GPARAM", file.Name), e);
+                                        LOC.Get("EDITOR_Data_Failed_Read_Internal_File", file.Name), e);
 
                                     return false;
                                 }
@@ -114,7 +116,7 @@ public class GparamBank : IDisposable
                             catch (Exception e)
                             {
                                 Smithbox.LogError(this,
-                                    LOC.Get("GPARAM_Data_Failed_Read_VFS", file.Name), e);
+                                    LOC.Get("EDITOR_Data_Failed_Read_Internal_File", file.Name), e);
                                 return false;
                             }
                         }
@@ -122,11 +124,12 @@ public class GparamBank : IDisposable
                     else
                     {
                         Smithbox.LogError(this, 
-                            LOC.Get("GPARAM_Data_Failed_Find_VFS", key.Path));
+                            LOC.Get("EDITOR_Data_Failed_Locate_Container", key.Path));
 
                         return false;
                     }
                 }
+                // External File
                 else
                 {
                     if (TargetFS.FileExists(key.Path))
@@ -145,7 +148,7 @@ public class GparamBank : IDisposable
                             catch (Exception e)
                             {
                                 Smithbox.LogError(this,
-                                    LOC.Get("GPARAM_Data_Failed_Read_GPARAM", key.Path), e);
+                                    LOC.Get("EDITOR_Data_Failed_Read_External_File", key.Path), e);
 
                                 return false;
                             }
@@ -153,7 +156,7 @@ public class GparamBank : IDisposable
                         catch (Exception e)
                         {
                             Smithbox.LogError(this,
-                                LOC.Get("GPARAM_Data_Failed_Read_VFS", key.Path), e);
+                                LOC.Get("EDITOR_Data_Failed_Read_External_File", key.Path), e);
 
                             return false;
                         }
@@ -161,7 +164,7 @@ public class GparamBank : IDisposable
                     else
                     {
                         Smithbox.LogError(this,
-                            LOC.Get("GPARAM_Data_Failed_Find_VFS", key.Path));
+                            LOC.Get("EDITOR_Data_Failed_Locate_External_File", key.Path));
 
                         return false;
                     }

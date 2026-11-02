@@ -1,7 +1,8 @@
 #----------------------------------------------------
-# Project Features
+# Project TODO
 #----------------------------------------------------
 
-#----------------------------------------------------
-# Project Bugs
-#----------------------------------------------------
+- Implement test suite for:
+    - verifying round-trip read and write for formats
+    - expected functionality of data actions (i.e. Create/Duplicate/Delete, undo/redo chains)
+    - expected functionality of tool actions
