@@ -32,6 +32,11 @@ namespace SoulsFormats
             Sekiro = 5,
 
             /// <summary>
+            /// Armored Core 6; laid out like Elden Ring without Sections 12 and 13
+            /// </summary>
+            ArmoredCore6 = 7,
+
+            /// <summary>
             /// Elden Ring
             /// </summary>
             EldenRing = 8,
@@ -142,6 +147,20 @@ namespace SoulsFormats
             GraphConnectionSection graphConns = null;
             GateNodeSection gateNodes = null;
 
+            // The constructor creates the Elden Ring sections, so only keep those the file has,
+            // e.g. Armored Core 6 has no Section 12 or 13
+            Navmeshes = null;
+            FaceDatas = null;
+            NodeBanks = null;
+            Entries3 = null;
+            Connectors = null;
+            LevelConnectors = null;
+            Entries9 = null;
+            Entries10 = null;
+            Entries11 = null;
+            HasSection12 = false;
+            Entries13 = null;
+
             for (int i = 0; i < sectionCount; i++)
             {
                 // Peek at the index of the next section
@@ -149,7 +168,7 @@ namespace SoulsFormats
 
                 switch (index)
                 {
-                    case 0: Navmeshes = new NavmeshSection(br); break;
+                    case 0: Navmeshes = new NavmeshSection(br, Version); break;
                     case 1: FaceDatas = new FaceDataSection(br); break;
                     case 2: NodeBanks = new NodeBankSection(br); break;
                     case 3: Entries3 = new Section3(br); break;
@@ -235,7 +254,13 @@ namespace SoulsFormats
 
             // Write sections only if they exist
             if (Entries11 != null) Entries11.Write(bw, 11);
-            if (Navmeshes != null) Navmeshes.Write(bw, 0);
+
+            // The navmesh layout depends on the file version, and the section may have been created without it
+            if (Navmeshes != null)
+            {
+                Navmeshes.FileVersion = Version;
+                Navmeshes.Write(bw, 0);
+            }
             if (FaceDatas != null) FaceDatas.Write(bw, 1);
             if (NodeBanks != null) NodeBanks.Write(bw, 2);
             if (Entries3 != null) Entries3.Write(bw, 3);
@@ -285,8 +310,16 @@ namespace SoulsFormats
                 Version = version;
             }
 
-            internal Section(BinaryReaderEx br, int index, params int[] versions) : base()
+            /// <summary>
+            /// The version of the file the section was read from, for sections whose layout depends on it.
+            /// </summary>
+            internal NVAVersion FileVersion { get; set; } = NVAVersion.EldenRing;
+
+            internal Section(BinaryReaderEx br, int index, params int[] versions) : this(br, index, NVAVersion.EldenRing, versions) { }
+
+            internal Section(BinaryReaderEx br, int index, NVAVersion fileVersion, params int[] versions) : base()
             {
+                FileVersion = fileVersion;
                 br.AssertInt32(index);
                 Version = br.AssertInt32(versions);
                 int length = br.ReadInt32();
@@ -327,18 +360,23 @@ namespace SoulsFormats
             /// </summary>
             public NavmeshSection(int version) : base(version) { }
 
-            internal NavmeshSection(BinaryReaderEx br) : base(br, 0, 2, 3, 4) { }
+            internal NavmeshSection(BinaryReaderEx br, NVAVersion fileVersion) : base(br, 0, fileVersion, 2, 3, 4) { }
+
+            /// <summary>
+            /// Armored Core 6 uses version 3, but its entries are laid out like version 4.
+            /// </summary>
+            private int EntryVersion => FileVersion == NVAVersion.ArmoredCore6 ? 4 : Version;
 
             internal override void ReadEntries(BinaryReaderEx br, int count)
             {
                 for (int i = 0; i < count; i++)
-                    Add(new Navmesh(br, Version));
+                    Add(new Navmesh(br, EntryVersion));
             }
 
             internal override void WriteEntries(BinaryWriterEx bw)
             {
                 for (int i = 0; i < Count; i++)
-                    this[i].Write(bw, Version, i);
+                    this[i].Write(bw, EntryVersion, i);
             }
         }
 

@@ -173,11 +173,14 @@ public class MapHavokPropertyView
             fullName = $"o{mapID.Replace("m", "")}_{modelID}";
         }
 
-        if (View.HavokNavmeshBank.HKX3_Containers.ContainsKey(fullName))
+        // AC6 navmeshes are Havok 2019, so they are held apart from the 2018 navmeshes
+        IRootContainer curNavmesh = View.HavokNavmeshBank.HKX3_Containers.TryGetValue(fullName, out var erNavmesh)
+            ? erNavmesh
+            : View.HavokNavmeshBank.AC6_Containers.GetValueOrDefault(fullName);
+
+        if (curNavmesh != null)
         {
             GUI.SimpleHeader($"{fullName}", "");
-
-            var curNavmesh = View.HavokNavmeshBank.HKX3_Containers[fullName];
 
             HavokPropEdit(curNavmesh);
         }

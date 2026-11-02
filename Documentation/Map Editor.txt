@@ -6,6 +6,7 @@
 - Support Farmodel param (SDT)
 - Supoert AEP (MSB prefabs) (DB)
 - Fix navmesh positioning in viewport (DS3)
+- Support for NVVA (AC6 flying nav)
 
 - Add option to control collision mesh transparency, mainly to make it easier to work with
 - Added some kind of detection for LOD-only assets/map-pieces so we can add a toggle for hiding them quickly

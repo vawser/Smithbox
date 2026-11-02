@@ -15,6 +15,11 @@ public class HavokNavmeshBank
 
     public Dictionary<string, hkRootLevelContainer> HKX3_Containers = new Dictionary<string, hkRootLevelContainer>();
 
+    /// <summary>
+    /// AC6 navmeshes, which are Havok 2019
+    /// </summary>
+    public Dictionary<string, HKLib.hk2019.hkRootLevelContainer> AC6_Containers = new();
+
     public HavokNavmeshBank(ProjectEntry project)
     {
         Project = project;
@@ -24,8 +29,9 @@ public class HavokNavmeshBank
     {
         if (Project.Descriptor.ProjectType is ProjectType.DS3 
             or ProjectType.BB 
-            or ProjectType.SDT 
-            or ProjectType.ER 
+            or ProjectType.SDT
+            or ProjectType.ER
+            or ProjectType.AC6
             or ProjectType.NR)
             return true;
 
@@ -38,7 +44,8 @@ public class HavokNavmeshBank
     {
         using var __scope = Profiler.TracyZoneAuto();
 
-        if (Project.Descriptor.ProjectType is ProjectType.ER 
+        if (Project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.AC6
             or ProjectType.NR)
         {
             LoadHavokNavmeshModels(mapId);
@@ -47,7 +54,8 @@ public class HavokNavmeshBank
 
     public void OnUnloadMap(string mapId)
     {
-        if (Project.Descriptor.ProjectType is ProjectType.ER 
+        if (Project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.AC6
             or ProjectType.NR)
         {
             foreach (ResourcePool pool in ResourceManager.Pools)
@@ -88,8 +96,6 @@ public class HavokNavmeshBank
 
                 var binder = new BND4Reader(binderData.Value);
 
-                HavokBinarySerializer serializer = new HavokBinarySerializer();
-
                 foreach (var file in binder.Files)
                 {
                     var name = Path.GetFileNameWithoutExtension(file.Name);
@@ -100,16 +106,9 @@ public class HavokNavmeshBank
                     {
                         using (MemoryStream memoryStream = new MemoryStream(FileBytes))
                         {
-                            hkRootLevelContainer fileHkx;
-
                             try
                             {
-                                fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
-
-                                if (!HKX3_Containers.ContainsKey(name))
-                                {
-                                    HKX3_Containers.Add(name, fileHkx);
-                                }
+                                ReadNavmeshFile(name, memoryStream);
                             }
                             catch (InvalidDataException ex)
                             {
@@ -132,6 +131,48 @@ public class HavokNavmeshBank
         {
             Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_NVA_HKXBND", binderEntry.Path));
         }
+    }
+
+    /// <summary>
+    /// Reads a navmesh file of the binder, with the HKLib version the project uses. Each file holds its own types.
+    /// </summary>
+    private void ReadNavmeshFile(string name, Stream stream)
+    {
+        if (Project.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
+            AC6_Containers.TryAdd(name, (HKLib.hk2019.hkRootLevelContainer)serializer.Read(stream));
+        }
+        else
+        {
+            var serializer = new HavokBinarySerializer();
+            HKX3_Containers.TryAdd(name, (hkRootLevelContainer)serializer.Read(stream));
+        }
+    }
+
+    /// <summary>
+    /// Writes a loaded navmesh file, or returns null if the file isn't loaded.
+    /// </summary>
+    private byte[] WriteNavmeshFile(string name)
+    {
+        using var memoryStream = new MemoryStream();
+
+        if (Project.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            if (!AC6_Containers.TryGetValue(name, out var container))
+                return null;
+
+            new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer().Write(container, memoryStream);
+        }
+        else
+        {
+            if (!HKX3_Containers.TryGetValue(name, out var container))
+                return null;
+
+            new HavokBinarySerializer().Write(container, memoryStream);
+        }
+
+        return memoryStream.ToArray();
     }
 
     public bool SaveHavokNavmeshModels(string mapId)
@@ -161,8 +202,6 @@ public class HavokNavmeshBank
 
                 var binder = BND4.Read(binderData.Value);
 
-                HavokBinarySerializer serializer = new HavokBinarySerializer();
-
                 bool anyWritten = false;
 
                 foreach (var file in binder.Files)
@@ -172,19 +211,15 @@ public class HavokNavmeshBank
                     if (!file.Name.Contains(".hkx"))
                         continue;
 
-                    // Only re-serialize entries we actually have loaded (and presumably edited)
-                    if (!HKX3_Containers.ContainsKey(name))
-                        continue;
-
                     try
                     {
-                        using (MemoryStream memoryStream = new MemoryStream(file.Bytes.ToArray()))
-                        {
-                            serializer.Write(HKX3_Containers[name], memoryStream);
+                        // Only re-serialize entries we actually have loaded (and presumably edited)
+                        var fileBytes = WriteNavmeshFile(name);
+                        if (fileBytes == null)
+                            continue;
 
-                            file.Bytes = memoryStream.ToArray();
-                            anyWritten = true;
-                        }
+                        file.Bytes = fileBytes;
+                        anyWritten = true;
                     }
                     catch (Exception ex)
                     {
@@ -229,7 +264,7 @@ public class HavokNavmeshBank
                 map.LoadNVA(map.Name, nva);
             }
         }
-        else if (Project.Descriptor.ProjectType is ProjectType.ER && ER_Files.ContainsKey(map.Name))
+        else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 && ER_Files.ContainsKey(map.Name))
         {
             var nva = ER_Files[map.Name];
 
@@ -251,7 +286,7 @@ public class HavokNavmeshBank
                     {
                         var nvaData = fs.ReadFile(entry.Path);
 
-                        if (Project.Descriptor.ProjectType is ProjectType.ER)
+                        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6)
                         {
                             try
                             {
@@ -309,7 +344,7 @@ public class HavokNavmeshBank
             if (entry.Filename != map.Name)
                 continue;
 
-            if (Project.Descriptor.ProjectType is ProjectType.ER)
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
                 var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
 
@@ -505,8 +540,17 @@ public class HavokNavmeshBank
         nva.NodeBanks = newSection;
     }
 
+    private static bool HasNavmeshEntities<T>(MapContainer map)
+    {
+        return map.NavmeshParent.Children.Any(e => e.WrappedObject is T);
+    }
+
     public void WriteSection3(MapContainer map, NVA nva)
     {
+        // These entries aren't loaded into the map, so the section is kept as it was read
+        if (!HasNavmeshEntities<NVA.Entry3>(map))
+            return;
+
         var version = nva.Section3Entries.Version;
 
         var newSection = new NVA.Section3();
@@ -526,6 +570,10 @@ public class HavokNavmeshBank
 
     public void WriteSection3(MapContainer map, NVA_ER nva)
     {
+        // These entries aren't loaded into the map, so the section is kept as it was read
+        if (!HasNavmeshEntities<NVA_ER.Entry3>(map))
+            return;
+
         var version = nva.Entries3.Version;
 
         var newSection = new NVA_ER.Section3();
@@ -621,6 +669,11 @@ public class HavokNavmeshBank
 
     public void WriteSection9(MapContainer map, NVA_ER nva)
     {
+        // Not every version has this section, and its entries aren't loaded into the map,
+        // so the section is kept as it was read
+        if (nva.Entries9 == null || !HasNavmeshEntities<NVA_ER.Entry9>(map))
+            return;
+
         var version = nva.Entries9.Version;
 
         var newSection = new NVA_ER.Section9();
@@ -640,6 +693,10 @@ public class HavokNavmeshBank
 
     public void WriteSection10(MapContainer map, NVA_ER nva)
     {
+        // Not every version has this section
+        if (nva.Entries10 == null)
+            return;
+
         var version = nva.Entries10.Version;
 
         var newSection = new NVA_ER.Section10();
@@ -659,6 +716,10 @@ public class HavokNavmeshBank
 
     public void WriteSection11(MapContainer map, NVA_ER nva)
     {
+        // Not every version has this section
+        if (nva.Entries11 == null)
+            return;
+
         var version = nva.Entries11.Version;
 
         var newSection = new NVA_ER.Section11();
@@ -678,6 +739,10 @@ public class HavokNavmeshBank
 
     public void WriteSection13(MapContainer map, NVA_ER nva)
     {
+        // Not every version has this section, e.g. AC6 has no Section 13
+        if (nva.Entries13 == null)
+            return;
+
         var version = nva.Entries13.Version;
 
         var newSection = new NVA_ER.Section13();

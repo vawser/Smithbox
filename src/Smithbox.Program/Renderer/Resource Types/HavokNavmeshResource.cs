@@ -37,6 +37,7 @@ public class HavokNavmeshResource : IResource, IDisposable
     public HKX Root_HKX1;
     public hkRootLevelContainer Root_HKX2;
     public HKLib.hk2018.hkRootLevelContainer Root_HKX3;
+    public HKLib.hk2019.hkRootLevelContainer Root_HKX3_2019;
 
     public bool _Load(Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
@@ -48,6 +49,12 @@ public class HavokNavmeshResource : IResource, IDisposable
         {
             var des = new PackFileDeserializer();
             Root_HKX2 = (hkRootLevelContainer)des.Deserialize(br);
+        }
+
+        // HKLib 2019 - AC6
+        if (curProject.Descriptor.ProjectType is ProjectType.AC6 && !HandleAC6Load(curProject, ctx))
+        {
+            return false;
         }
 
         if (curProject.Descriptor.ProjectType is ProjectType.ER 
@@ -121,6 +128,10 @@ public class HavokNavmeshResource : IResource, IDisposable
                     return false;
                 }
             }
+            else if (curProject.Descriptor.ProjectType is ProjectType.AC6 && !HandleAC6Load(curProject, ctx))
+            {
+                return false;
+            }
         }
         catch (Exception e)
         {
@@ -131,9 +142,49 @@ public class HavokNavmeshResource : IResource, IDisposable
         return LoadInternal(al);
     }
 
+    /// <summary>
+    /// AC6 navmeshes are Havok 2019, read by the HavokNavmeshBank when the map is loaded
+    /// </summary>
+    private bool HandleAC6Load(ProjectEntry curProject, ResourceLoadContext ctx)
+    {
+        var activeView = curProject.Handler.MapEditor?.ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return false;
+
+        var filename = Path.GetFileNameWithoutExtension(ctx.FileName);
+
+        Root_HKX3_2019 = activeView.HavokNavmeshBank.AC6_Containers.GetValueOrDefault(filename);
+
+        return Root_HKX3_2019 != null;
+    }
+
     private bool LoadInternal(AccessLevel al)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (curProject.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
+            {
+                Bounds = new BoundingBox();
+
+                if (Root_HKX3_2019 != null)
+                {
+                    var variants = Root_HKX3_2019.m_namedVariants.Select(v => v.m_variant).ToList();
+
+                    if (variants.OfType<HKLib.hk2019.hkaiNavMesh>().FirstOrDefault() is { } mesh)
+                    {
+                        ProcessMesh_HKX3(mesh);
+                    }
+
+                    if (variants.OfType<HKLib.hk2019.hkaiDirectedGraphExplicitCost>().FirstOrDefault() is { } graph)
+                    {
+                        ProcessGraph_HKX3(graph);
+                    }
+                }
+            }
+        }
 
         if (curProject.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
         {
@@ -189,6 +240,7 @@ public class HavokNavmeshResource : IResource, IDisposable
             Root_HKX1 = null;
             Root_HKX2 = null;
             Root_HKX3 = null;
+            Root_HKX3_2019 = null;
         }
 
         return true;
@@ -424,15 +476,34 @@ public class HavokNavmeshResource : IResource, IDisposable
     }
 
 
-    private unsafe void ProcessMesh_HKX3(HKLib.hk2018.hkaiNavMesh mesh)
+    private void ProcessMesh_HKX3(HKLib.hk2018.hkaiNavMesh mesh)
     {
-        List<Vector4> verts = mesh.m_vertices;
+        ProcessMesh_HKX3(mesh.m_vertices,
+            mesh.m_faces.Select(f => new NavmeshFace(f.m_startEdgeIndex, f.m_numEdges, f.m_clusterIndex)).ToList(),
+            mesh.m_edges.Select(e => e.m_a).ToList());
+    }
+
+    private void ProcessMesh_HKX3(HKLib.hk2019.hkaiNavMesh mesh)
+    {
+        ProcessMesh_HKX3(mesh.m_vertices,
+            mesh.m_faces.Select(f => new NavmeshFace(f.m_startEdgeIndex, f.m_numEdges, f.m_clusterIndex)).ToList(),
+            mesh.m_edges.Select(e => e.m_a).ToList());
+    }
+
+    /// <summary>
+    /// The parts of an hkaiNavMesh face used to draw it, so 2018 and 2019 navmeshes are drawn the same way
+    /// </summary>
+    private record struct NavmeshFace(int StartEdgeIndex, int NumEdges, int ClusterIndex);
+
+    /// <param name="edgeVertices">The vertex index each edge starts at</param>
+    private unsafe void ProcessMesh_HKX3(List<Vector4> verts, List<NavmeshFace> faces, List<int> edgeVertices)
+    {
         var indexCount = 0;
 
-        foreach (HKLib.hk2018.hkaiNavMesh.Face f in mesh.m_faces)
+        foreach (NavmeshFace f in faces)
         {
             // Simple formula for indices count for a triangulation of a poly
-            indexCount += (f.m_numEdges - 2) * 3;
+            indexCount += (f.NumEdges - 2) * 3;
         }
 
         VertexCount = indexCount * 3;
@@ -454,15 +525,15 @@ public class HavokNavmeshResource : IResource, IDisposable
 
         var maxcluster = 0;
 
-        for (var id = 0; id < mesh.m_faces.Count; id++)
+        for (var id = 0; id < faces.Count; id++)
         {
-            if (mesh.m_faces[id].m_clusterIndex > maxcluster)
+            if (faces[id].ClusterIndex > maxcluster)
             {
-                maxcluster = mesh.m_faces[id].m_clusterIndex;
+                maxcluster = faces[id].ClusterIndex;
             }
 
-            var sedge = mesh.m_faces[id].m_startEdgeIndex;
-            var ecount = mesh.m_faces[id].m_numEdges;
+            var sedge = faces[id].StartEdgeIndex;
+            var ecount = faces[id].NumEdges;
 
             // Use simple algorithm for convex polygon trianglization
             for (var t = 0; t < ecount - 2; t++)
@@ -473,9 +544,9 @@ public class HavokNavmeshResource : IResource, IDisposable
                 }
 
                 var end = t + 2 >= ecount ? sedge : sedge + t + 2;
-                Vector4 vert1 = mesh.m_vertices[mesh.m_edges[sedge].m_a];
-                Vector4 vert2 = mesh.m_vertices[mesh.m_edges[sedge + t + 1].m_a];
-                Vector4 vert3 = mesh.m_vertices[mesh.m_edges[end].m_a];
+                Vector4 vert1 = verts[edgeVertices[sedge]];
+                Vector4 vert2 = verts[edgeVertices[sedge + t + 1]];
+                Vector4 vert3 = verts[edgeVertices[end]];
 
                 MeshVertices[idx] = new NavmeshLayout();
                 MeshVertices[idx + 1] = new NavmeshLayout();
@@ -548,14 +619,34 @@ public class HavokNavmeshResource : IResource, IDisposable
         }
     }
 
-    private unsafe void ProcessGraph_HKX3(HKLib.hk2018.hkaiDirectedGraphExplicitCost graph)
+    private void ProcessGraph_HKX3(HKLib.hk2018.hkaiDirectedGraphExplicitCost graph)
     {
-        List<Vector4> verts = graph.m_positions;
+        ProcessGraph_HKX3(graph.m_positions,
+            graph.m_nodes.Select(n => new NavmeshGraphNode(n.m_startEdgeIndex, n.m_numEdges)).ToList(),
+            graph.m_edges.Select(e => (int)e.m_target).ToList());
+    }
+
+    private void ProcessGraph_HKX3(HKLib.hk2019.hkaiDirectedGraphExplicitCost graph)
+    {
+        ProcessGraph_HKX3(graph.m_positions,
+            graph.m_nodes.Select(n => new NavmeshGraphNode(n.m_startEdgeIndex, n.m_numEdges)).ToList(),
+            graph.m_edges.Select(e => (int)e.m_target).ToList());
+    }
+
+    /// <summary>
+    /// The parts of a cost graph node used to draw it, so 2018 and 2019 graphs are drawn the same way
+    /// </summary>
+    private record struct NavmeshGraphNode(int StartEdgeIndex, int NumEdges);
+
+    /// <param name="edgeTargets">The node each edge leads to</param>
+    private unsafe void ProcessGraph_HKX3(List<Vector4> positions, List<NavmeshGraphNode> nodes, List<int> edgeTargets)
+    {
+        List<Vector4> verts = positions;
         var indexCount = 0;
-        foreach (HKLib.hk2018.hkaiDirectedGraphExplicitCost.Node g in graph.m_nodes)
+        foreach (NavmeshGraphNode g in nodes)
         {
             // Simple formula for indices count for a triangulation of a poly
-            indexCount += g.m_numEdges;
+            indexCount += g.NumEdges;
         }
 
         GraphVertexCount = indexCount * 2;
@@ -572,16 +663,16 @@ public class HavokNavmeshResource : IResource, IDisposable
 
         var idx = 0;
 
-        for (var id = 0; id < graph.m_nodes.Count; id++)
+        for (var id = 0; id < nodes.Count; id++)
         {
-            var sedge = graph.m_nodes[id].m_startEdgeIndex;
-            var ecount = graph.m_nodes[id].m_numEdges;
+            var sedge = nodes[id].StartEdgeIndex;
+            var ecount = nodes[id].NumEdges;
 
             for (var e = 0; e < ecount; e++)
             {
-                Vector4 vert1 = graph.m_positions[id];
+                Vector4 vert1 = positions[id];
                 Vector4 vert2 =
-                    graph.m_positions[(int)graph.m_edges[graph.m_nodes[id].m_startEdgeIndex + e].m_target];
+                    positions[edgeTargets[nodes[id].StartEdgeIndex + e]];
 
                 MeshVertices[idx] = new PositionColor();
                 MeshVertices[idx + 1] = new PositionColor();

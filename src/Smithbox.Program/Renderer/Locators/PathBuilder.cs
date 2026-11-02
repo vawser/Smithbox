@@ -203,17 +203,19 @@ public class PathBuilder
                     {
                         relPath = Path.Combine("map", mapid, $"{mapid}.nvmbnd.dcx");
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.DS3 
-                        or ProjectType.BB 
-                        or ProjectType.SDT 
+                    else if (project.Descriptor.ProjectType is ProjectType.DS3
+                        or ProjectType.BB
+                        or ProjectType.SDT
                         or ProjectType.ER
+                        or ProjectType.AC6
                         or ProjectType.NR
                         or ProjectType.DB_NT
                         or ProjectType.DB)
                     {
                         relPath = Path.Combine("map", mapid, $"{mapid}.nvmhktbnd.dcx");
 
-                        if (project.Descriptor.ProjectType is ProjectType.ER 
+                        if (project.Descriptor.ProjectType is ProjectType.ER
+                            or ProjectType.AC6
                             or ProjectType.NR
                             or ProjectType.DB_NT
                             or ProjectType.DB)

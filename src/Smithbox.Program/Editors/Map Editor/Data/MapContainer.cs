@@ -538,6 +538,10 @@ public class MapContainer : ObjectContainer
 
     private void AddNavmeshEntries(Entity nvaParent, IEnumerable<object> entries)
     {
+        // Not every version has every section, e.g. AC6 has no Section 13
+        if (entries == null)
+            return;
+
         foreach (var curEntry in entries)
         {
             AttachNavmeshEntity(nvaParent, CreateNavmeshEntity(curEntry));
