@@ -1225,7 +1225,7 @@ public class CFG
     public Vector3 Viewport_Collision_Color = new Vector3(53, 157, 255);
     public Vector3 Viewport_High_Collision_Color = new Vector3(255, 160, 40);
     public Vector3 Viewport_FallProtection_Collision_Color = new Vector3(70, 210, 90);
-    public Vector3 Viewport_Wall_Color = new Vector3(40, 200, 255);
+    public Vector3 Viewport_Wall_Fill_Color = new Vector3(60, 230, 120);
     public Vector3 Viewport_Wall_Other_Collision_Color = new Vector3(190, 90, 255);
     public Vector3 Viewport_Wall_None_Color = new Vector3(255, 60, 60);
     public Vector3 Viewport_Wall_Hover_Color = new Vector3(255, 255, 255);

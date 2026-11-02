@@ -3,7 +3,6 @@
 #----------------------------------------------------
 
 - Fix navmesh positioning in viewport (DS3)
-- Support WALL rendering/editing (SDT)
 - Support MPW (MultiPlayerWall) rendering/editing (ER)
 - Support BREAKGEOM/BREAKOBJ generation
 - Support LOADLIST editing (worldloadlistlist, ingamestay)

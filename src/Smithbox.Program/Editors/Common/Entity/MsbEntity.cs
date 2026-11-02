@@ -471,7 +471,7 @@ public class MsbEntity : Entity
 
         List<WallMesh> meshes = new();
 
-        AddWallMeshes(meshes, scene, cells.Walls, CFG.Current.Viewport_Wall_Color);
+        AddWallMeshes(meshes, scene, cells.Walls, CFG.Current.Viewport_Wall_Fill_Color);
         AddWallMeshes(meshes, scene, cells.OtherCollisionWalls, CFG.Current.Viewport_Wall_Other_Collision_Color);
         AddWallMeshes(meshes, scene, cells.None, CFG.Current.Viewport_Wall_None_Color);
 

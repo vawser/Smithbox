@@ -65,6 +65,8 @@ public class WallPaintTool
         GUI.WrappedText("Paint the walls of collisions in the viewport. Each triangle of the low collision under the cursor is marked as a whole, replacing any finer cells it had.");
         GUI.WrappedText("");
 
+        DisplayLegend();
+
         var scene = View.ViewportHandler.ActiveViewport.RenderScene;
         var wallsShown = scene.DrawFilter.HasFlag(RenderFilter.Wall);
 
@@ -104,7 +106,7 @@ public class WallPaintTool
         ImGui.SameLine();
         if (ImGui.RadioButton("Not Wall##wallPaintModeNone", Mode is WallPaintMode.NotWall))
             Mode = WallPaintMode.NotWall;
-        GUI.Tooltip("Mark triangles as not being walls.");
+        GUI.Tooltip("Mark triangles as not being walls. The game never marks a whole triangle like this, only parts of split ones; to stop a whole triangle being a wall, Remove it instead.");
 
         ImGui.SameLine();
         if (ImGui.RadioButton("Remove##wallPaintModeRemove", Mode is WallPaintMode.Remove))
@@ -128,6 +130,39 @@ public class WallPaintTool
         }
 
         ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Explains the colors the walls are displayed in.
+    /// </summary>
+    private static void DisplayLegend()
+    {
+        GUI.WrappedText("Colors:");
+
+        LegendEntry(CFG.Current.Viewport_Wall_Fill_Color, "Wall",
+            "A wall of this collision.");
+        LegendEntry(CFG.Current.Viewport_Wall_Other_Collision_Color, "Wall (other collision)",
+            "A wall that belongs to a neighbouring collision, usually along the edge where the two meet.");
+        LegendEntry(CFG.Current.Viewport_Wall_None_Color, "Not Wall",
+            "Part of a triangle that is not a wall.");
+        LegendEntry(CFG.Current.Viewport_Wall_Hover_Color, "Cursor",
+            "The triangle that will be painted.");
+
+        GUI.WrappedText("Collision without any of these colors isn't in the WALL file, so it isn't a wall. The game only lists steep triangles.");
+        GUI.WrappedText("");
+        GUI.WrappedText("The low collision is coarse, so the game splits some of its triangles into smaller cells, and a single triangle can be partly a wall and partly not. Painting a triangle replaces its cells with one mark.");
+        GUI.WrappedText("");
+    }
+
+    private static void LegendEntry(Vector3 color, string name, string description)
+    {
+        var size = ImGui.GetTextLineHeight();
+
+        ImGui.ColorButton($"##wallLegend{name}", new Vector4(color / 255.0f, 1.0f),
+            ImGuiColorEditFlags.NoTooltip | ImGuiColorEditFlags.NoPicker, new Vector2(size, size));
+        ImGui.SameLine();
+        ImGui.Text(name);
+        GUI.Tooltip(description);
     }
 
     private static string DescribeTriangle(WALL.Triangle triangle)
@@ -245,8 +280,7 @@ public class WallPaintTool
                 return;
 
             // Lifted further than the cells, so it shows above them
-            var normal = Vector3.Cross(b - a, c - a);
-            var offset = normal.LengthSquared() > 1e-12f ? Vector3.Normalize(normal) * 0.05f : Vector3.Zero;
+            var offset = WallBank.GetFrontNormal(a, b, c) * 0.05f;
 
             var primitive = new DbgPrimWallCells(new[] { (a + offset, b + offset, c + offset) });
             var proxy = MsbEntity.CreateWallProxy(View.ViewportHandler.ActiveViewport.RenderScene, primitive,

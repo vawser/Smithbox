@@ -328,16 +328,27 @@ public class WallBank
             if (!geometry.TryGetTriangle(triangle.ShapeKey, out var a, out var b, out var c))
                 continue;
 
-            var normal = Vector3.Cross(b - a, c - a);
-            if (normal.LengthSquared() < 1e-12f)
+            var normal = GetFrontNormal(a, b, c);
+            if (normal == Vector3.Zero)
                 continue;
 
-            var offset = Vector3.Normalize(normal) * SurfaceOffset;
+            var offset = normal * SurfaceOffset;
 
             AddCell(wall, triangle, a + offset, b + offset, c + offset, cells);
         }
 
         return cells;
+    }
+
+    /// <summary>
+    /// The side of a collision triangle that faces out, which cells are lifted towards so they show
+    /// in front of the collision. Zero if the triangle has no area.
+    /// </summary>
+    public static Vector3 GetFrontNormal(Vector3 a, Vector3 b, Vector3 c)
+    {
+        var normal = Vector3.Cross(b - a, c - a);
+
+        return normal.LengthSquared() < 1e-12f ? Vector3.Zero : Vector3.Normalize(normal);
     }
 
     /// <summary>
