@@ -26,5 +26,10 @@ public enum MapFileType
     /// <summary>
     /// The WALL files of the collisions (SDT)
     /// </summary>
-    Wall = 1 << 9
+    Wall = 1 << 9,
+
+    /// <summary>
+    /// The MPW file of an open world tile (ER)
+    /// </summary>
+    MPW = 1 << 10
 }

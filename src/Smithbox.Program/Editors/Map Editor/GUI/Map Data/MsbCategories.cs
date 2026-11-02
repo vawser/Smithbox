@@ -799,6 +799,11 @@ public static class MsbCategories
             dict["Auto Invade Point"] = typeof(AIP.AutoInvadePointInstance);
         }
 
+        if (view.MultiPlayerWallBank.CanUse())
+        {
+            dict["Multiplayer Wall"] = typeof(MPW.Panel);
+        }
+
         if (view.AssetConfigurationBank.CanUse())
         {
             dict["Asset Configuration"] = typeof(ACB.Asset);

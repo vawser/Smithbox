@@ -26,6 +26,7 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary LightFiles = new();
     public FileDictionary DS2_LightFiles = new();
     public FileDictionary NavmeshFiles = new();
+    public FileDictionary MultiPlayerWallFiles = new();
     public FileDictionary AutoInvadeFiles = new();
     public FileDictionary LightAtlasFiles = new();
     public FileDictionary LightProbeFiles = new();
@@ -325,6 +326,7 @@ public class ProjectFileLocator : IDisposable
         var lightFiles = new HashSet<FileDictionaryEntry>();
         var ds2LightFiles = new HashSet<FileDictionaryEntry>();
         var navmeshFiles = new HashSet<FileDictionaryEntry>();
+        var multiPlayerWallFiles = new HashSet<FileDictionaryEntry>();
         var autoInvadeFiles = new HashSet<FileDictionaryEntry>();
         var lightAtlasFiles = new HashSet<FileDictionaryEntry>();
         var lightProbeFiles = new HashSet<FileDictionaryEntry>();
@@ -416,6 +418,10 @@ public class ProjectFileLocator : IDisposable
             // Navmesh
             if (isMap && ext == "nva" && !isSd)
                 navmeshFiles.Add(entry);
+
+            // Multiplayer walls (ER)
+            if (isMap && ext == "mpw" && !isSd)
+                multiPlayerWallFiles.Add(entry);
 
             // Auto invade
             if (folder.StartsWith("/other") && ext == "aipbnd" && !isSd)
@@ -538,6 +544,7 @@ public class ProjectFileLocator : IDisposable
         LightFiles.Entries = lightFiles;
         DS2_LightFiles.Entries = ds2LightFiles;
         NavmeshFiles.Entries = navmeshFiles;
+        MultiPlayerWallFiles.Entries = multiPlayerWallFiles;
         AutoInvadeFiles.Entries = autoInvadeFiles;
         LightAtlasFiles.Entries = lightAtlasFiles;
         LightProbeFiles.Entries = lightProbeFiles;
@@ -717,6 +724,7 @@ public class ProjectFileLocator : IDisposable
         LightFiles = null;
         DS2_LightFiles = null;
         NavmeshFiles = null;
+        MultiPlayerWallFiles = null;
         CollisionFiles = null;
         AutoInvadeFiles = null;
         LightAtlasFiles = null;

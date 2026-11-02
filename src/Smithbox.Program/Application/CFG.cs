@@ -353,6 +353,7 @@ public class CFG
     public bool MapEditor_BasicFilter_Navmesh = true;
     public bool MapEditor_BasicFilter_SpeedTree = true;
     public bool MapEditor_BasicFilter_InvasionPoint = true;
+    public bool MapEditor_BasicFilter_MultiPlayerWall = true;
 
     // Toolbar
     public bool Toolbar_Duplicate_Increment_Entity_ID = false;
@@ -1285,6 +1286,8 @@ public class CFG
 
     public Vector3 Viewport_Auto_Invade_Marker_Base_Color = Utils.GetDecimalColor(Color.Red);
     public Vector3 Viewport_Auto_Invade_Marker_Highlight_Color = Utils.GetDecimalColor(Color.DarkRed);
+    public Vector3 Viewport_MultiPlayer_Wall_Base_Color = Utils.GetDecimalColor(Color.Gold);
+    public Vector3 Viewport_MultiPlayer_Wall_Highlight_Color = Utils.GetDecimalColor(Color.DarkGoldenrod);
 
     public Vector3 GFX_Renderable_LightProbeSphere_BaseColor = Utils.GetDecimalColor(Color.Yellow);
     public Vector3 GFX_Renderable_LightProbeSphere_HighlightColor = Utils.GetDecimalColor(Color.YellowGreen);

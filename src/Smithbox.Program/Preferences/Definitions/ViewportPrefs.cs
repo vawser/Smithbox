@@ -780,6 +780,16 @@ public class ViewportPrefs
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
+                    $"{LOC.Get("PREF_Viewport_MultiPlayer_Wall_Base_Color")}##Viewport_MultiPlayer_Wall_Base_Color",
+                    ref CFG.Current.Viewport_MultiPlayer_Wall_Base_Color);
+
+                DPI.ApplyInputWidth();
+                ImGui.ColorEdit3(
+                    $"{LOC.Get("PREF_Viewport_MultiPlayer_Wall_Highlight_Color")}##Viewport_MultiPlayer_Wall_Highlight_Color",
+                    ref CFG.Current.Viewport_MultiPlayer_Wall_Highlight_Color);
+
+                DPI.ApplyInputWidth();
+                ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Level_Connector_Marker_Base_Color")}##Viewport_Level_Connector_Marker_Base_Color",
                     ref CFG.Current.Viewport_Level_Connector_Marker_Base_Color);
 

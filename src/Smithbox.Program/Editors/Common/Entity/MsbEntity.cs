@@ -108,6 +108,10 @@ public class MsbEntity : Entity
                 AssignInvasionPointDrawable();
                 break;
 
+            case MsbEntityType.MultiPlayerWall:
+                AssignMultiPlayerWallDrawable();
+                break;
+
             case MsbEntityType.Navmesh:
                 AssignNavmeshDrawable();
                 break;
@@ -380,6 +384,9 @@ public class MsbEntity : Entity
     // The region meshes these reuse are a unit in size, which would swallow the geometry they mark
     private const float EdgePointSize = 0.15f;
     private const float EdgeSegmentRadius = 0.05f;
+
+    // MPW panels have no thickness in the game, but are given some so they can be seen and clicked edge on
+    private const float MultiPlayerWallDepth = 0.2f;
 
     /// <summary>
     /// What the displayed (or requested) EDGE points were built from. Null if there are none.
@@ -967,6 +974,21 @@ public class MsbEntity : Entity
         RenderSceneMesh = mesh;
     }
 
+    /// <summary>
+    /// A wireframe of the panel with a fill that is always displayed, so the boundary shows at a glance.
+    /// The panel is sized by its transform; see GetLocalTransform.
+    /// </summary>
+    public void AssignMultiPlayerWallDrawable()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = RenderableHelper.GetMultiPlayerWallProxy(scene);
+        var fill = RenderableHelper.GetMultiPlayerWallFillProxy(scene);
+
+        RenderSceneMesh = SetupPlaceholderMesh(mesh, fill, RenderFilter.MultiPlayerWall);
+    }
+
     public void AssignNavmeshDrawable()
     {
         var curUniverse = Owner as MapUniverse;
@@ -1250,6 +1272,11 @@ public class MsbEntity : Entity
             {
                 t.Scale.Z = (float)sz;
             }
+        }
+        // MPW panels have a fixed size, so the unit box is scaled to it
+        else if (Type == MsbEntityType.MultiPlayerWall)
+        {
+            t.Scale = new Vector3(MPW.PanelWidth, MPW.PanelHeight, MultiPlayerWallDepth);
         }
 
         // Prevent zero scale since it won't render

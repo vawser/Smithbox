@@ -81,6 +81,10 @@
       "Text": "Wall"
     },
     {
+      "Key": "VIEWPORT_ENUM_RenderFilter_MultiPlayerWall",
+      "Text": "Multiplayer Wall"
+    },
+    {
       "Key": "VIEWPORT_ENUM_RenderFilter_DummyEnemy",
       "Text": "Dummy Enemy"
     },

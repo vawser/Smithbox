@@ -35,6 +35,7 @@ public class ViewportFiltersAction
     private bool RenderNavmesh = false;
     private bool RenderSpeedTree = false;
     private bool RenderInvasionPoint = false;
+    private bool RenderMultiPlayerWall = false;
 
     private bool DisplayRegionFilters = true;
     private List<bool> RegionVisibilityTruth { get; set; } = new();
@@ -64,6 +65,7 @@ public class ViewportFiltersAction
         RenderNavmesh = drawFilter.HasFlag(RenderFilter.Navmesh);
         RenderSpeedTree = drawFilter.HasFlag(RenderFilter.SpeedTree);
         RenderInvasionPoint = drawFilter.HasFlag(RenderFilter.AutoInvade);
+        RenderMultiPlayerWall = drawFilter.HasFlag(RenderFilter.MultiPlayerWall);
 
         SetupTruthList(true);
     }
@@ -186,6 +188,12 @@ public class ViewportFiltersAction
         {
             scene.ToggleDrawFilter(RenderFilter.AutoInvade);
             RenderInvasionPoint = scene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
+        }
+
+        if (ImGui.Checkbox("Multiplayer Wall", ref RenderMultiPlayerWall))
+        {
+            scene.ToggleDrawFilter(RenderFilter.MultiPlayerWall);
+            RenderMultiPlayerWall = scene.DrawFilter.HasFlag(RenderFilter.MultiPlayerWall);
         }
 
         GUI.Spacer();

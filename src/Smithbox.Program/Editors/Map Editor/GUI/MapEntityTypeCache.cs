@@ -107,6 +107,12 @@ public class MapEntityTypeCache
             mapcache.Add(MsbEntityType.AutoInvadePoint, new Dictionary<Type, List<MsbEntity>>());
         }
 
+        // External: MPW
+        if (View.MultiPlayerWallBank.CanUse())
+        {
+            mapcache.Add(MsbEntityType.MultiPlayerWall, new Dictionary<Type, List<MsbEntity>>());
+        }
+
         // External: BTAB
         if (View.LightAtlasBank.CanUse())
         {

@@ -2,13 +2,12 @@
 # Map Editor TODO
 #----------------------------------------------------
 
-- Fix navmesh positioning in viewport (DS3)
-- Support MPW (MultiPlayerWall) rendering/editing (ER)
 - Support BREAKGEOM/BREAKOBJ generation
 - Support LOADLIST editing (worldloadlistlist, ingamestay)
 - Support ENTRYFILELIST editing
 - Support Farmodel param (SDT)
 - Supoert AEP (MSB prefabs) (DB)
+- Fix navmesh positioning in viewport (DS3)
 
 - Added some kind of detection for LOD-only assets/map-pieces so we can add a toggle for hiding them quickly
 - Get gizmos to work in Orthographic/Oblique view mode

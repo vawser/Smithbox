@@ -651,6 +651,37 @@ public static class RenderableHelper
         return r;
     }
 
+    // MULTIPLAYER WALL PANEL
+    // The unit boxes stand on the origin, so a panel scaled to its size rises from its position
+    public static DebugPrimitiveRenderableProxy GetMultiPlayerWallProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.Viewport_MultiPlayer_Wall_Base_Color;
+        var highlightColor = CFG.Current.Viewport_MultiPlayer_Wall_Highlight_Color;
+        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionBox);
+
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+
+        return r;
+    }
+
+    public static DebugPrimitiveRenderableProxy GetMultiPlayerWallFillProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.Viewport_MultiPlayer_Wall_Base_Color;
+        var highlightColor = CFG.Current.Viewport_MultiPlayer_Wall_Highlight_Color;
+
+        DebugPrimitiveRenderableProxy r = GetRegionFillProxy(scene, _regionSolidBox, baseColor);
+
+        // Like a placeholder, the fill is the panel, so it is always displayed and clickable
+        r.Pickable = true;
+        r.Visible = true;
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
+
+        return r;
+    }
+
     // LIGHT PROBE SPHERE REGION
     public static DebugPrimitiveRenderableProxy GetLightProbeSphereProxy(RenderScene scene)
     {

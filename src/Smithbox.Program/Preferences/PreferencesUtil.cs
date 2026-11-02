@@ -115,6 +115,8 @@ public static class PreferencesUtil
 
         CFG.Current.Viewport_Auto_Invade_Marker_Base_Color = CFG.Default.Viewport_Auto_Invade_Marker_Base_Color;
         CFG.Current.Viewport_Auto_Invade_Marker_Highlight_Color = CFG.Default.Viewport_Auto_Invade_Marker_Highlight_Color;
+        CFG.Current.Viewport_MultiPlayer_Wall_Base_Color = CFG.Default.Viewport_MultiPlayer_Wall_Base_Color;
+        CFG.Current.Viewport_MultiPlayer_Wall_Highlight_Color = CFG.Default.Viewport_MultiPlayer_Wall_Highlight_Color;
 
         CFG.Current.Viewport_Level_Connector_Marker_Base_Color = CFG.Default.Viewport_Level_Connector_Marker_Base_Color;
         CFG.Current.Viewport_Level_Connector_Marker_Highlight_Color = CFG.Default.Viewport_Level_Connector_Marker_Highlight_Color;

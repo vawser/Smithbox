@@ -381,6 +381,14 @@
       "Text": "Invasion Spot Marker: Highlight Color"
     },
     {
+      "Key": "PREF_Viewport_MultiPlayer_Wall_Base_Color",
+      "Text": "Multiplayer Wall: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_MultiPlayer_Wall_Highlight_Color",
+      "Text": "Multiplayer Wall: Highlight Color"
+    },
+    {
       "Key": "PREF_Viewport_Level_Connector_Marker_Base_Color",
       "Text": "Level Connector Marker: Base Color"
     },

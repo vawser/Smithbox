@@ -68,6 +68,9 @@ public class MapContainer : ObjectContainer
     [XmlIgnore]
     public Entity NavmeshParent = null;
 
+    [XmlIgnore]
+    public Entity MultiPlayerWallParent = null;
+
     public Entity MapOffsetNode { get; set; }
 
     public List<Entity> Parts;
@@ -134,6 +137,7 @@ public class MapContainer : ObjectContainer
             MsbEntityType.LightProbeVolume => MapFileType.BTPB,
             MsbEntityType.Navmesh => MapFileType.NVA,
             MsbEntityType.AssetConfiguration => MapFileType.ACB,
+            MsbEntityType.MultiPlayerWall => MapFileType.MPW,
             _ => MapFileType.MSB
         };
     }
@@ -376,6 +380,26 @@ public class MapContainer : ObjectContainer
         }
 
         AutoInvadeParent = autoInvadeParent;
+    }
+
+    public void LoadMPW(string mapName, MPW mpw)
+    {
+        using var __scope = Profiler.TracyZoneAuto();
+        var wallParent = new MsbEntity(View.Universe, this, $"{mapName} (MPW)", MsbEntityType.Editor);
+
+        MapOffsetNode.AddChild(wallParent);
+
+        foreach (var panel in mpw.Panels)
+        {
+            var newEntity = new MsbEntity(View.Universe, this, panel, MsbEntityType.MultiPlayerWall);
+
+            newEntity.SupportsName = false;
+
+            Objects.Add(newEntity);
+            wallParent.AddChild(newEntity);
+        }
+
+        MultiPlayerWallParent = wallParent;
     }
 
     public void LoadBTAB(string fileName, BTAB btab)

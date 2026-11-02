@@ -72,6 +72,9 @@ public enum RenderFilter
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_Wall")]
     Wall = 2097152,
 
+    [Display(Name = "VIEWPORT_ENUM_RenderFilter_MultiPlayerWall")]
+    MultiPlayerWall = 4194304,
+
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_All")]
     All = 0xFFFFFFF
 }

@@ -1,0 +1,35 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: MPW.bt
+//   Authors: 
+//   Version: 
+//   Purpose: Elden Ring .mpw files (MultiPlayerWall)
+//  Category: Dantelion
+// File Mask: *.mpw
+//  ID Bytes: 6D 70 57 46
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "mpWF");
+    int version; Assert(version == 1);
+    int fileSize <format=hex>;
+    int panelCount;
+} Header <bgcolor=cLtRed>;
+
+// A 4 m wide, 10 m tall panel, centered on its position and standing up from it
+typedef struct {
+    float position[3];
+    float rotationY; // Radians: 0 runs along X, pi / 2 along Z
+} Panel <bgcolor=cLtGreen, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+struct { Panel panels[header.panelCount]; } panels;

@@ -122,6 +122,11 @@ public class BasicFilters
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.AutoInvade);
         }
+
+        if (!CFG.Current.MapEditor_BasicFilter_MultiPlayerWall)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.MultiPlayerWall);
+        }
     }
 
     public void Display()
@@ -348,6 +353,16 @@ public class BasicFilters
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
             GUI.ShowActiveStatus(ticked);
             GUI.Tooltip(LOC.Get("MAP_Filters_Invasion_Points_TT"));
+
+            if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Multiplayer_Walls_Title")}##toggleFilter_MultiPlayerWall"))
+            {
+                CFG.Current.MapEditor_BasicFilter_MultiPlayerWall = !CFG.Current.MapEditor_BasicFilter_MultiPlayerWall;
+                View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.MultiPlayerWall);
+                View.DelayPicking();
+            }
+            ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.MultiPlayerWall);
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip(LOC.Get("MAP_Filters_Multiplayer_Walls_TT"));
         }
     }
 
