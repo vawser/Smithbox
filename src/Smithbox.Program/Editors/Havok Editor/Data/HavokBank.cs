@@ -494,13 +494,13 @@ public class HavokBank : IDisposable
             if (binder == null)
                 return;
 
-            HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer = null;
+            HavokTagSerializer serializer = null;
 
             if (HavokTypeUtils.IsHKX3(Project))
             {
-                serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
+                serializer = HavokTagSerializer.Create(Project);
 
-                if (loadCompendium)
+                if (loadCompendium || serializer.UsesBinderCompendium)
                 {
                     LoadCompendium(binder, serializer);
                 }
@@ -530,7 +530,7 @@ public class HavokBank : IDisposable
         }
     }
 
-    private void LoadCompendium(IBinder binder, HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer)
+    private void LoadCompendium(IBinder binder, HavokTagSerializer serializer)
     {
         byte[] compendiumFileBytes = null;
 
@@ -556,7 +556,7 @@ public class HavokBank : IDisposable
     /// <summary>
     /// Deserialize the Havok file, using the HKX3 serializer if the project uses HKX3
     /// </summary>
-    private IRootContainer ReadRoot(byte[] fileBytes, HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer)
+    private IRootContainer ReadRoot(byte[] fileBytes, HavokTagSerializer serializer)
     {
         if (HavokTypeUtils.IsHKX2(Project))
         {
@@ -568,7 +568,7 @@ public class HavokBank : IDisposable
 
         using (MemoryStream memoryStream = new MemoryStream(fileBytes))
         {
-            return (HKLib.hk2018.hkRootLevelContainer)serializer.Read(memoryStream);
+            return serializer.Read(memoryStream);
         }
     }
     #endregion
@@ -617,8 +617,14 @@ public class HavokBank : IDisposable
         using (binder)
         {
             var serializer = HavokTypeUtils.IsHKX3(Project)
-                ? new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer()
+                ? HavokTagSerializer.Create(Project)
                 : null;
+
+            // Files written with the compendium loaded refer to it, like the files they replace
+            if (serializer is { UsesBinderCompendium: true })
+            {
+                LoadCompendium(binder, serializer);
+            }
 
             // Binder Files
             var writtenFiles = new List<HavokFileWrapper>();
@@ -659,7 +665,7 @@ public class HavokBank : IDisposable
     /// <summary>
     /// Write the Havok file into its binder file. Returns false if the file failed to write.
     /// </summary>
-    private bool HandleBinderFile(IBinder binder, HavokFileWrapper fileWrapper, HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer)
+    private bool HandleBinderFile(IBinder binder, HavokFileWrapper fileWrapper, HavokTagSerializer serializer)
     {
         var file = binder.Files.FirstOrDefault(e => e.Name == fileWrapper.Key);
 
@@ -691,7 +697,7 @@ public class HavokBank : IDisposable
     /// <summary>
     /// Serialize the Havok file, using the HKX3 serializer if the project uses HKX3
     /// </summary>
-    private byte[] WriteRoot(IRootContainer root, HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer)
+    private byte[] WriteRoot(IRootContainer root, HavokTagSerializer serializer)
     {
         if (HavokTypeUtils.IsHKX2(Project))
         {
@@ -705,7 +711,7 @@ public class HavokBank : IDisposable
 
         using (var memoryStream = new MemoryStream())
         {
-            serializer.Write((HKLib.hk2018.hkRootLevelContainer)root, memoryStream);
+            serializer.Write(root, memoryStream);
 
             return memoryStream.ToArray();
         }
@@ -1001,8 +1007,11 @@ public class HavokBank : IDisposable
             }
         }
 
-        if(Project.Descriptor.ProjectType is ProjectType.ER
-            or ProjectType.AC6
+        if (Project.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            return DCX.Type.DCX_KRAK_MAX;
+        }
+        else if(Project.Descriptor.ProjectType is ProjectType.ER
             or ProjectType.NR
             or ProjectType.DB_NT
             or ProjectType.DB)

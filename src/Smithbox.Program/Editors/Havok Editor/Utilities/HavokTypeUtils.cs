@@ -50,6 +50,14 @@ public static class HavokTypeUtils
         return false;
     }
 
+    /// <summary>
+    /// HKX3 projects whose files are Havok 2019 rather than 2018, read with the HKLib hk2019 classes.
+    /// </summary>
+    public static bool IsHKX3_2019(ProjectEntry project)
+    {
+        return project.Descriptor.ProjectType is ProjectType.AC6;
+    }
+
     public static bool IsHKX2_Animation(ProjectEntry project, HKX2.hkRootLevelContainer rootContainer)
     {
         var animationContainers = HavokTreeSearch.FindAll<HKX2.hkaAnimationContainer>(rootContainer);

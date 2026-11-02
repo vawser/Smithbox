@@ -33,8 +33,9 @@ public static class HavokMetaHelper
 {
     public static HavokClass GetMeta(ProjectEntry project, Type rootType)
     {
-        if (project.Descriptor.ProjectType is ProjectType.ER 
-            or ProjectType.NR 
+        if (project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.AC6
+            or ProjectType.NR
             or ProjectType.DB_NT
             or ProjectType.DB)
         {
@@ -46,6 +47,13 @@ public static class HavokMetaHelper
                 if (fullName.Contains("`"))
                 {
                     fullName = fullName.Split("`")[0];
+                }
+
+                // The hk2019 classes are named like the hk2018 ones, so they share their descriptions.
+                // Fields only in 2019 have none.
+                if (fullName.StartsWith("HKLib.hk2019."))
+                {
+                    fullName = "HKLib.hk2018." + fullName["HKLib.hk2019.".Length..];
                 }
 
                 if (metaSet.TryGetValue(fullName, out var fieldMeta))

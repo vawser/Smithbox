@@ -389,7 +389,16 @@ public class CollisionGeneratorTool
         var collisionName = Path.GetFileName(View.Selection.FilePath);
         var sourceObject = View.PropertyView.GetSourceObject();
 
-        if (HavokTypeUtils.IsHKX3(Project))
+        if (HavokTypeUtils.IsHKX3_2019(Project))
+        {
+            var shape = HavokShapeGenerator_HKX3_2019.BuildExternMeshShape(verts, indices);
+
+            if (HavokShapeGenerator_HKX3_2019.ReplaceExternMeshShape((HKLib.hk2019.hkRootLevelContainer)sourceObject, shape))
+            {
+                Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
+            }
+        }
+        else if (HavokTypeUtils.IsHKX3(Project))
         {
             var shape = HavokShapeGenerator_HKX3.BuildExternMeshShape(
                 verts, indices);

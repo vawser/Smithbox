@@ -116,11 +116,14 @@ public class MapHavokPropertyView
             fullName = $"f{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
         }
 
-        if (View.HavokCollisionBank.HavokContainers.ContainsKey(fullName))
+        // AC6 collision is Havok 2019, so it is held apart from the 2018 collision
+        IRootContainer curCollision = View.HavokCollisionBank.HavokContainers.TryGetValue(fullName, out var erCollision)
+            ? erCollision
+            : View.HavokCollisionBank.GetAC6Container(fullName);
+
+        if (curCollision != null)
         {
             GUI.SimpleHeader($"{fullName}", "");
-
-            var curCollision = View.HavokCollisionBank.HavokContainers[fullName];
 
             HavokPropEdit(curCollision);
         }
