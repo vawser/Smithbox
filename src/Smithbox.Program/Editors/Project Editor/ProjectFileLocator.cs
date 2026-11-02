@@ -33,6 +33,7 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary LightProbeFiles = new();
 
     public FileDictionary EntryFileListFiles = new();
+    public FileDictionary LoadListFiles = new();
 
     public FileDictionary GparamFiles = new();
     public FileDictionary TextFiles = new();
@@ -341,6 +342,7 @@ public class ProjectFileLocator : IDisposable
         var shoeboxFiles = new HashSet<FileDictionaryEntry>();
         var timeActFiles = new HashSet<FileDictionaryEntry>();
         var entryFileListFiles = new HashSet<FileDictionaryEntry>();
+        var loadListFiles = new HashSet<FileDictionaryEntry>();
 
         var havokAnimationFiles = new HashSet<FileDictionaryEntry>();
         var havokBehaviorFiles = new HashSet<FileDictionaryEntry>();
@@ -463,6 +465,13 @@ public class ProjectFileLocator : IDisposable
                 }
             }
 
+            // Load List (worldloadlistlist, ingamestay)
+            if (!isSd && ((ext == "worldloadlistlist" && folder == "/map")
+                || (ext == "loadlist" && folder == "/other")))
+            {
+                loadListFiles.Add(entry);
+            }
+
             // Gparam
             if (folder.StartsWith("/param") && ext == "gparam" && !isSd)
             gparamFiles.Add(entry);
@@ -563,6 +572,7 @@ public class ProjectFileLocator : IDisposable
         ShoeboxFiles.Entries = shoeboxFiles;
         TimeActFiles.Entries = timeActFiles;
         EntryFileListFiles.Entries = entryFileListFiles;
+        LoadListFiles.Entries = loadListFiles;
 
         HavokAnimationFiles.Entries = havokAnimationFiles;
         HavokBehaviorFiles.Entries = havokBehaviorFiles;
@@ -738,6 +748,7 @@ public class ProjectFileLocator : IDisposable
         LightAtlasFiles = null;
         LightProbeFiles = null;
         GparamFiles = null;
+        LoadListFiles = null;
         TextFiles = null;
         MTD_Files = null;
         MATBIN_Files = null;

@@ -608,6 +608,12 @@ public class MapEditorScreen : EditorScreen
             if (autoSave && CFG.Current.MapEditor_Allow_Automatic_Save || !autoSave)
             {
                 activeView.Universe.SaveAllMaps();
+
+                // Load list edits are kept per view, so each view's are saved
+                foreach (var view in ViewHandler.Views)
+                {
+                    view.LoadListTool.SaveModified();
+                }
             }
         }
         catch (SavingFailedException e)

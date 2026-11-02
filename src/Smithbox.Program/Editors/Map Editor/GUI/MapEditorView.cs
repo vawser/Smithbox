@@ -117,6 +117,7 @@ public class MapEditorView : IEditorView
     public EnemyAIVisualizationTool EnemyAIVisualizationTool;
     public WallPaintTool WallPaintTool;
     public DestructionGenerationTool DestructionGenerationTool;
+    public LoadListTool LoadListTool;
 
     public ResourceListTool ResourceListTool;
 
@@ -208,6 +209,7 @@ public class MapEditorView : IEditorView
         EnemyAIVisualizationTool = new EnemyAIVisualizationTool(this, project);
         WallPaintTool = new WallPaintTool(this, project);
         DestructionGenerationTool = new DestructionGenerationTool(this, project);
+        LoadListTool = new LoadListTool(this, project);
 
         ResourceListTool = new ResourceListTool();
 

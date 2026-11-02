@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_Load_List_Saved",
+      "Text": "Saved load list {0}."
+    },
+    {
+      "Key": "MAP_Load_List_Failed_Find",
+      "Text": "Failed to find load list {0}."
+    },
+    {
+      "Key": "MAP_Load_List_Failed_Read",
+      "Text": "Failed to read load list {0}."
+    },
+    {
+      "Key": "MAP_Load_List_Failed_Write",
+      "Text": "Failed to write load list {0}."
+    }
+  ]
+}

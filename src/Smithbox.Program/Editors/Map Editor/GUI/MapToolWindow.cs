@@ -285,6 +285,14 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_LoadList)
+        {
+            if (ToolSections.Header("Load Lists"))
+            {
+                View.LoadListTool.OnToolWindow();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
         {
             View.GridTool.OnToolWindow();
@@ -397,6 +405,12 @@ public class MapToolWindow
                 }
                 GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_DestructionGeneration);
             }
+
+            if (ImGui.MenuItem("Load Lists"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_LoadList = !CFG.Current.Interface_MapEditor_Tool_LoadList;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_LoadList);
 
             if (ImGui.MenuItem("Viewport Configuration"))
             {
