@@ -55,9 +55,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x18",
-      "Name": "",
-      "Description": ""
+      "Field": "GparamCopyMapId",
+      "Name": "Gparam Copy Map ID",
+      "Description": "Please enter the map number to which you want to add and copy the Gparam as an 8-digit number. If it's 0, it won't be copied. Adding the Gparam will be done if you turn on Enable Gparam copy destination map specification? in the In-game rendering parameters action. [GR] SEQ07212"
     },
     {
       "Field": "reserved_2",

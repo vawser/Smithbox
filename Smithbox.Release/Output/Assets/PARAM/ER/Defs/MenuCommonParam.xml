@@ -587,19 +587,51 @@
     <Field Def="dummy8 reserved33_old[32]" RemovedVersion="11210015" />
     
     <Field Def="u32 worldMap_DlcLayerEventFlagId" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xe4" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xe5" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xe6" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xe7" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xe8" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xe9" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xea" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xeb" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xec" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xed" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xee" FirstVersion="11210015" />
     
-    <Field Def="dummy8 reserved33[17]" FirstVersion="11210015" >
+    <Field Def="dummy8 reserved[4]" FirstVersion="11210015">
+      <DisplayName>予約</DisplayName>
+      <Description>(dummy8)</Description>
+      <SortID>13002</SortID>
+    </Field>
+    
+    <Field Def="u16 mouseScrollArea_Left = 150" FirstVersion="11210015">
+      <DisplayName>マウスによるスクロール開始範囲[px]（左端）</DisplayName>
+      <Description>マウスによる左端スクロール開始[px]。マップメニューにて左方向へスクロールするための領域（画面左端からの距離）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>50</Minimum>
+      <Maximum>960</Maximum>
+      <SortID>2340</SortID>
+      <UnkC8>世界地図</UnkC8>
+    </Field>
+    <Field Def="u16 mouseScrollArea_Right = 150" FirstVersion="11210015">
+      <DisplayName>マウスによるスクロール開始範囲[px]（右端）</DisplayName>
+      <Description>マウスによる右端スクロール開始[px]。マップメニューにて右方向へスクロールするための領域（画面右端からの距離）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>50</Minimum>
+      <Maximum>960</Maximum>
+      <SortID>2341</SortID>
+      <UnkC8>世界地図</UnkC8>
+    </Field>
+    <Field Def="u16 mouseScrollArea_Top = 150" FirstVersion="11210015">
+      <DisplayName>マウスによるスクロール開始範囲[px]（上端）</DisplayName>
+      <Description>マウスによる上端スクロール開始[px]。マップメニューにて上方向へスクロールするための領域（画面上端からの距離）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>50</Minimum>
+      <Maximum>540</Maximum>
+      <SortID>2342</SortID>
+      <UnkC8>世界地図</UnkC8>
+    </Field>
+    <Field Def="u16 mouseScrollArea_Bottom = 150" FirstVersion="11210015">
+      <DisplayName>マウスによるスクロール開始範囲[px]（下端）</DisplayName>
+      <Description>マウスによる下端スクロール開始[px]。マップメニューにて下方向へスクロールするための領域（画面下端からの距離）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>50</Minimum>
+      <Maximum>540</Maximum>
+      <SortID>2343</SortID>
+      <UnkC8>世界地図</UnkC8>
+    </Field>
+    
+    <Field Def="dummy8 reserved33[16]" FirstVersion="11210015" >
       <DisplayName>予約</DisplayName>
       <Description>(dummy8)</Description>
       <SortID>13002</SortID>

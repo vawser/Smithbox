@@ -35,14 +35,14 @@
       "Description": "This is the correction factor applied to the toughness correction factor of the armor when determining the toughness."
     },
     {
-      "Field": "unk1",
-      "Name": "",
-      "Description": ""
+      "Field": "pvpToughnessDamageRate",
+      "Name": "PVP: Toughness Damage Reduction",
+      "Description": "While the poise ID set in TAE is active, a multiplier is applied to all poise damage received in PvP."
     },
     {
-      "Field": "unk2",
-      "Name": "",
-      "Description": ""
+      "Field": "pvpHpDamageRate",
+      "Name": "PVP: Damage Reduction",
+      "Description": "While the Toughness ID set in TAE is active, a multiplier is applied to all HP damage received in PvP."
     },
     {
       "Field": "pad1",

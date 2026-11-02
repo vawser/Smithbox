@@ -1619,7 +1619,7 @@
       <SortID>2000003</SortID>
     </Field>
     
-    <Field Def="u8 hpBurnDamageRate" FirstVersion="11210015" />
+    <Field Def="u8 spEffectDamageCorrectRate" FirstVersion="11210015" />
     
     <Field Def="s32 lockCameraParamId = -1">
       <DisplayName>ロックカメラパラメータID</DisplayName>
@@ -1984,7 +1984,7 @@
       <SortID>2000004</SortID>
     </Field>
     
-    <Field Def="u8 isConsideredUndead" FirstVersion="11210015" />
+    <Field Def="u8 onAttackSpecialEffectSpecifiedExclude" FirstVersion="11210015" />
     
     <Field Def="u8 wheelRotType">
       <DisplayName>車輪制御タイプ</DisplayName>

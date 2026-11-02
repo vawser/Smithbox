@@ -181,6 +181,14 @@
       "Text": "If enabled, the Model Editor and associated data will be initialized for this project."
     },
     {
+      "Key": "PROJECT_Configuration_Checkbox_TimeAct_Editor",
+      "Text": "Time Act Editor"
+    },
+    {
+      "Key": "PROJECT_Configuration_Checkbox_TimeAct_Editor_TT",
+      "Text": "If enabled, the Time Act Editor and associated data will be initialized for this project."
+    },
+    {
       "Key": "PROJECT_Configuration_Checkbox_Param_Editor",
       "Text": "Param Editor"
     },

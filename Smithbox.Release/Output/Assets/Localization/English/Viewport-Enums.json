@@ -14,7 +14,7 @@
     },
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_Collision",
-      "Text": "Collision"
+      "Text": "Map Collision"
     },
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_Character",
@@ -63,6 +63,34 @@
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_ConnectCollision",
       "Text": "Connect Collision"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_ObjectCollision",
+      "Text": "Object Collision"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Grass",
+      "Text": "Grass"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_EdgePoint",
+      "Text": "Edge Point"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Wall",
+      "Text": "Wall"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_MultiPlayerWall",
+      "Text": "Multiplayer Wall"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_DummyEnemy",
+      "Text": "Dummy Enemy"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_DummyAsset",
+      "Text": "Dummy Asset"
     },
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_All",

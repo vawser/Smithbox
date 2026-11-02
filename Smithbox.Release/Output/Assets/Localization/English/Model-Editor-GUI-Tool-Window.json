@@ -9,10 +9,6 @@
       "Text": "View"
     },
     {
-      "Key": "MODEL_ToolWindow_View_Grid_Configuration",
-      "Text": "Model Grid Configuration"
-    },
-    {
       "Key": "MODEL_ToolWindow_View_Instance_Finder",
       "Text": "Model Instance Finder"
     },
@@ -21,8 +17,84 @@
       "Text": "Model Mask Toggler"
     },
     {
+      "Key": "MODEL_ToolWindow_View_Animation",
+      "Text": "Animation Browser"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Character_Preview",
+      "Text": "Character Preview"
+    },
+    {
+      "Key": "MODEL_CharacterPreview_Header",
+      "Text": "Character Preview"
+    },
+    {
+      "Key": "MODEL_Animation_Header",
+      "Text": "Animation Browser"
+    },
+    {
       "Key": "MODEL_ToolWindow_View_Resource_Monitor",
       "Text": "Resource Monitor"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Model_Export",
+      "Text": "Model Export"
+    },
+    {
+      "Key": "MODEL_ToolWindow_View_Asset_Browser",
+      "Text": "Model Browser"
+    },
+    {
+      "Key": "MODEL_AssetBrowser_Header",
+      "Text": "Model Browser"
+    },
+    {
+      "Key": "MODEL_AssetBrowser_Hint",
+      "Text": "Double-click an asset to load it."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_List_Mode",
+      "Text": "List"
+    },
+    {
+      "Key": "EDITOR_ModelPreview_List_Mode_TT",
+      "Text": "Display the models as a list of names."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Preview_Mode",
+      "Text": "3D Previews"
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Preview_Mode_TT",
+      "Text": "Display the models as a grid of 3D previews."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Size",
+      "Text": "Preview Size"
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Size_TT",
+      "Text": "The size of each 3D preview, in pixels."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Refresh",
+      "Text": "Refresh"
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Refresh_TT",
+      "Text": "Render the 3D previews again, to pick up changes to the models."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Pending",
+      "Text": "Loading..."
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Unavailable",
+      "Text": "No Preview"
+    },
+    {
+      "Key": "EDITOR_ModelPreview_Unsupported",
+      "Text": "3D previews require the Vulkan renderer."
     }
   ]
 }

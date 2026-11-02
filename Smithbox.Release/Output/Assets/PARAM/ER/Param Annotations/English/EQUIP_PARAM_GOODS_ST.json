@@ -445,13 +445,13 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x73_1",
-      "Name": "",
-      "Description": ""
+      "Field": "isDisableGet",
+      "Name": "Disable Availability",
+      "Description": "Is it unavailable in the retail version?"
     },
     {
       "Field": "quickMatchReplenish",
-      "Name": "Replenish after quick match",
+      "Name": "Replenish after Quick Match",
       "Description": "Should amount of this item be stored and replenished after quick match?"
     },
     {

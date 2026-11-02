@@ -300,6 +300,11 @@
       "Description": "Threshold for displaying the PC horse HP gauge at the time of recovery. Constant value of Display HP bar when it increases more than a certain value at a time"
     },
     {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    },
+    {
       "Field": "reserved33_old",
       "Name": "",
       "Description": ""
@@ -310,59 +315,24 @@
       "Description": "The event flag that must be ON for the DLC world map to be displayed."
     },
     {
-      "Field": "unknown_0xe4",
-      "Name": "",
-      "Description": ""
+      "Field": "mouseScrollArea_Left",
+      "Name": "Mouse Scroll Start Range: Left Edge",
+      "Description": "In pixels. Mouse-based leftward scrolling starts. This indicates the area (distance from the left edge of the screen) for scrolling to the left in the map menu."
     },
     {
-      "Field": "unknown_0xe5",
-      "Name": "",
-      "Description": ""
+      "Field": "mouseScrollArea_Right",
+      "Name": "Mouse Scroll Start Range: Right Edge",
+      "Description": "In pixels. Mouse-based rightward scrolling starts. This indicates the area (distance from the right edge of the screen) for scrolling to the right in the map menu."
     },
     {
-      "Field": "unknown_0xe6",
-      "Name": "",
-      "Description": ""
+      "Field": "mouseScrollArea_Top",
+      "Name": "Mouse Scroll Start Range: Top Edge",
+      "Description": "In pixels. Mouse-based upward scrolling starts. This indicates the area (distance from the top edge of the screen) for scrolling to the top in the map menu."
     },
     {
-      "Field": "unknown_0xe7",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xe8",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xe9",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xea",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xeb",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xec",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xed",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0xee",
-      "Name": "",
-      "Description": ""
+      "Field": "mouseScrollArea_Bottom",
+      "Name": "Mouse Scroll Start Range: Bottom Edge",
+      "Description": "In pixels. Mouse-based downward scrolling starts. This indicates the area (distance from the bottom edge of the screen) for scrolling to the bottom in the map menu."
     },
     {
       "Field": "reserved33",

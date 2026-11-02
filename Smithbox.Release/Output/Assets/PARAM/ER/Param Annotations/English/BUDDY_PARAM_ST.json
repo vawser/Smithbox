@@ -225,12 +225,7 @@
       "Description": "SpEffect applied on hostile summons in arena."
     },
     {
-      "Field": "unknown_0x98",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x9c",
+      "Field": "Reserve4",
       "Name": "",
       "Description": ""
     }

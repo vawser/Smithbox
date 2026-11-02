@@ -33,6 +33,30 @@
       "Text": "Toggle the display of map objects classified as 'Characters'."
     },
     {
+      "Key": "MAP_Filters_Dummy_Enemies_Title",
+      "Text": "Dummy Enemies"
+    },
+    {
+      "Key": "MAP_Filters_Dummy_Enemies_TT",
+      "Text": "Toggle the display of map objects classified as 'Dummy Enemies'."
+    },
+    {
+      "Key": "MAP_Filters_Dummy_Assets_Title",
+      "Text": "Dummy Assets"
+    },
+    {
+      "Key": "MAP_Filters_Dummy_Assets_TT",
+      "Text": "Toggle the display of map objects classified as 'Dummy Assets'."
+    },
+    {
+      "Key": "MAP_Filters_Dummy_Objects_Title",
+      "Text": "Dummy Objects"
+    },
+    {
+      "Key": "MAP_Filters_Dummy_Objects_TT",
+      "Text": "Toggle the display of map objects classified as 'Dummy Objects'."
+    },
+    {
       "Key": "MAP_Filters_Regions_Title",
       "Text": "Regions"
     },
@@ -50,7 +74,7 @@
     },
     {
       "Key": "MAP_Filters_Collisions_Title",
-      "Text": "Collisions"
+      "Text": "Map Collisions"
     },
     {
       "Key": "MAP_Filters_Collisions_TT",
@@ -63,6 +87,46 @@
     {
       "Key": "MAP_Filters_Connect_Collisions_TT",
       "Text": "Toggle the display of map objects classified as 'Connect Collisions'."
+    },
+    {
+      "Key": "MAP_Filters_Object_Collisions_Title",
+      "Text": "Object Collisions"
+    },
+    {
+      "Key": "MAP_Filters_Object_Collisions_TT",
+      "Text": "Toggle the display of the collision meshes of objects. These are read when first displayed, so turning this on can take a moment."
+    },
+    {
+      "Key": "MAP_Filters_Asset_Collisions_Title",
+      "Text": "Asset Collisions"
+    },
+    {
+      "Key": "MAP_Filters_Asset_Collisions_TT",
+      "Text": "Toggle the display of the collision meshes of assets. These are read when first displayed, so turning this on can take a moment."
+    },
+    {
+      "Key": "MAP_Filters_Grass_Title",
+      "Text": "Grass"
+    },
+    {
+      "Key": "MAP_Filters_Grass_TT",
+      "Text": "Toggle the display of the grass laid upon map pieces and assets. It is built when first displayed, and its layout only approximates the game's."
+    },
+    {
+      "Key": "MAP_Filters_Edge_Points_Title",
+      "Text": "Edge Points"
+    },
+    {
+      "Key": "MAP_Filters_Edge_Points_TT",
+      "Text": "Toggle the display of the EDGE points of collisions and objects: the grapple points, hangable ledges and huggable walls. These are read when first displayed, and can't be selected or edited here."
+    },
+    {
+      "Key": "MAP_Filters_Walls_Title",
+      "Text": "Walls"
+    },
+    {
+      "Key": "MAP_Filters_Walls_TT",
+      "Text": "Toggle the display of the WALL and NOJUMPWALL files of collisions: which parts of the low collision are walls, which are not, and which can't be jumped off. These are read when first displayed, and can be painted with the Wall Painting tool."
     },
     {
       "Key": "MAP_Filters_Navmeshes_Title",
@@ -87,6 +151,14 @@
     {
       "Key": "MAP_Filters_Invasion_Points_TT",
       "Text": "Toggle the display of map objects classified as 'Invasion Points'."
+    },
+    {
+      "Key": "MAP_Filters_Multiplayer_Walls_Title",
+      "Text": "Multiplayer Walls"
+    },
+    {
+      "Key": "MAP_Filters_Multiplayer_Walls_TT",
+      "Text": "Toggle the display of the MPW files of open world tiles: the panels of the walls that keep players in a tile during multiplayer."
     },
     {
       "Key": "MAP_Filters_Light_Probes_Title",

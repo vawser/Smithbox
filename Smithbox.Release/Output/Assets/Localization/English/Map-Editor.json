@@ -105,6 +105,18 @@
       "Text": "Unload all maps?"
     },
     {
+      "Key": "MAP_Universe_Save_Map_Unsupported",
+      "Text": "Saving maps is not supported for {0}."
+    },
+    {
+      "Key": "MAP_Universe_Dialog_Unload_Unsaved",
+      "Text": "{0} has unsaved changes. Unload it and discard them?"
+    },
+    {
+      "Key": "MAP_View_Dialog_Close_Unsaved",
+      "Text": "This view has maps with unsaved changes: {0}. Close the view and discard them?"
+    },
+    {
       "Key": "MAP_Options_Header_List_Filters",
       "Text": "List Filters"
     },
@@ -153,16 +165,16 @@
       "Text": "Delete an existing list filter."
     },
     {
-      "Key": "MAP_Options_Header_Contents",
-      "Text": "Contents"
+      "Key": "MAP_Options_Header_Display_Modes",
+      "Text": "Display Modes"
     },
     {
       "Key": "MAP_Options_Header_Content_Display",
-      "Text": "Content Display"
+      "Text": "Map Content Display Type"
     },
     {
       "Key": "MAP_Options_ContentDisplay_Action_Tree",
-      "Text": "Tree"
+      "Text": "Tree List"
     },
     {
       "Key": "MAP_Options_ContentDisplay_Action_Tree_TT",
@@ -170,7 +182,7 @@
     },
     {
       "Key": "MAP_Options_ContentDisplay_Action_Flat",
-      "Text": "Flat"
+      "Text": "Flat List"
     },
     {
       "Key": "MAP_Options_ContentDisplay_Action_Flat_TT",
@@ -226,7 +238,7 @@
     },
     {
       "Key": "MAP_Options_LightAtlas_Automatic_Add_Toggle_TT",
-      "Text": "If enabled, when new parts are duplicated, the a new light atlas entry pointing to the newly duplicated part is created (deriving the other properties from the source part)."
+      "Text": "If enabled, when map pieces or objects are added to a map or have their model changed, new light atlas entries pointing to them are created, inheriting the properties of the last part that shares the same model. If no part shares the model, you are asked whether to add a default entry."
     },
     {
       "Key": "MAP_Options_LightAtlas_Automatic_Delete_Toggle",
@@ -234,7 +246,15 @@
     },
     {
       "Key": "MAP_Options_LightAtlas_Automatic_Delete_Toggle_TT",
-      "Text": "If enabled, when parts are deleted, if there is a light atlas entry pointing to that part, the entry is deleted."
+      "Text": "If enabled, when parts are deleted, moved to another map or have their model changed, if there is a light atlas entry pointing to that part, the entry is deleted."
+    },
+    {
+      "Key": "MAP_LightAtlas_Dialog_Add_Default_Title",
+      "Text": "Light Atlas"
+    },
+    {
+      "Key": "MAP_LightAtlas_Dialog_Add_Default",
+      "Text": "These models are not in the light atlas of {0}:\n\n{1}\n\nAdd default light atlas entries for the new parts?"
     },
     {
       "Key": "MAP_Universe_Log_Map_Already_Loading",

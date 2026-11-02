@@ -865,13 +865,13 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x17c_5",
-      "Name": "",
-      "Description": ""
+      "Field": "isDisableGet",
+      "Name": "Disable Availability",
+      "Description": "Is it unavailable in the retail version?"
     },
     {
       "Field": "quickMatchReplenish",
-      "Name": "Replenish after quick match",
+      "Name": "Replenish after Quick Match",
       "Description": "Should amount of this item be stored and replenished after quick match?"
     },
     {
@@ -1370,9 +1370,14 @@
       "Description": ""
     },
     {
-      "Field": "restrictSpecialSwordArt",
-      "Name": "Restrict Special Ashes of War",
-      "Description": "If set to true, then ashes of war in EquipParamGem with isSpecialSwordArt set to 1 cannot be applied to this weapon."
+      "Field": "isThrowingWep",
+      "Name": "Is Throwing Weapon",
+      "Description": "If enabled, this weapon is considered a throwing weapon."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "pad",

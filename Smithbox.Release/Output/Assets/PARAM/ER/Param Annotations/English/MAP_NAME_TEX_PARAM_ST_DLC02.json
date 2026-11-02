@@ -45,54 +45,64 @@
       "Description": "Map name ID for displaying place names [PlaceName] (0 - invalid value)"
     },
     {
-      "Field": "unknown_0xc",
+      "Field": "BgmPlaceInfo",
+      "Name": "Background Sound Usage Information",
+      "Description": "Location information for background music (default 999: Not set)"
+    },
+    {
+      "Field": "EnvPlaceInfo",
+      "Name": "Ambient Sound Usage Information",
+      "Description": "Location information for ambient sounds (default 999: Not set)"
+    },
+    {
+      "Field": "isUseHeightInfo",
+      "Name": "Separate by High and Low Altitudes",
+      "Description": "Should we set the high and low points separately? If yes, we will refer to the data for the high and low points."
+    },
+    {
+      "Field": "pad2",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_0x10",
+      "Field": "borderHeight",
+      "Name": "High / Low Altitude Boundary Height",
+      "Description": "In metres."
+    },
+    {
+      "Field": "pad3",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_0x11",
-      "Name": "",
-      "Description": ""
+      "Field": "mapNameIdLowPlace",
+      "Name": "Low Altitude: Location Text ID",
+      "Description": "Map name ID for displaying place names"
     },
     {
-      "Field": "unknown_0x12",
-      "Name": "",
-      "Description": ""
+      "Field": "mapNameIdHighPlace",
+      "Name": "High Altitude: Location Text ID",
+      "Description": "Map name ID for displaying place names"
     },
     {
-      "Field": "unknown_0x13",
-      "Name": "",
-      "Description": ""
+      "Field": "BgmPlaceInfoLowPlace",
+      "Name": "Low Altitude: Background Sound Usage Information",
+      "Description": "Location information for background music - Low level (default 999: Not set)"
     },
     {
-      "Field": "unknown_0x14",
-      "Name": "",
-      "Description": ""
+      "Field": "BgmPlaceInfoHighPlace",
+      "Name": "High Altitude: Background Sound Usage Information",
+      "Description": "Location information for background music - High level (default 999: Not set)"
     },
     {
-      "Field": "unknownTextID_1",
-      "Name": "Location Text ID [1]",
-      "Description": ""
+      "Field": "EnvPlaceInfoLowPlace",
+      "Name": "Low Altitude: Ambient Sound Usage Information",
+      "Description": "Location information for ambient music - Low level (default 999: Not set)"
     },
     {
-      "Field": "unknownTextID_2",
-      "Name": "Location Text ID [2]",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x20",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x24",
-      "Name": "",
-      "Description": ""
+      "Field": "EnvPlaceInfoHighPlace",
+      "Name": "High Altitude: Ambient Sound Usage Information",
+      "Description": "Location information for ambient music - High level (default 999: Not set)"
     }
   ]
 }

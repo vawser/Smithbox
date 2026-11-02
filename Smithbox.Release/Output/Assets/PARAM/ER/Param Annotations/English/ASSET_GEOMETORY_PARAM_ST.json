@@ -145,6 +145,11 @@
       "Description": "Do you play the attack (0: do not play, 1: play)"
     },
     {
+      "Field": "isNoRayTracing_unused",
+      "Name": "Is No Ray Tracing",
+      "Description": ""
+    },
+    {
       "Field": "Reserve_2",
       "Name": "",
       "Description": ""
@@ -460,14 +465,14 @@
       "Description": "Will the bullet hit and land? Which bullet para to refer to when deciding? The value that determines."
     },
     {
-      "Field": "unkR3",
-      "Name": "",
-      "Description": ""
+      "Field": "rayTracingCullingMode",
+      "Name": "Ray Tracing Culling Mode",
+      "Description": "The culling mode applied during ray tracing rendering. If set to Automatic, the default value set in the program will be used."
     },
     {
-      "Field": "unkR4",
-      "Name": "",
-      "Description": ""
+      "Field": "overrideRayTracingEnableDist",
+      "Name": "Ray Tracing Effective Distance Override",
+      "Description": "In metres. The boundary distance for ray tracing distance (LOD) usually refers to the shadow drawing distance, but this can be overridden (0 or less: no override)."
     },
     {
       "Field": "soundBreakSECpId",
@@ -550,9 +555,9 @@
       "Description": "Set whether sign / blood character can be created when on the asset (after destruction) : Possible, : Impossible (Details: SEQ122568)"
     },
     {
-      "Field": "unkR1",
-      "Name": "",
-      "Description": ""
+      "Field": "rayTracingTargetType",
+      "Name": "Ray Tracing Target Type",
+      "Description": "This specifies whether or not to include ray tracing. Dynamic and static tracing are automatically determined by default, but you can also specify them explicitly (SEQ47540)."
     },
     {
       "Field": "generateMultiForbiddenRegion",
@@ -620,38 +625,23 @@
       "Description": "Legacy_PS4 exclusion rate [GR] SEQ25310"
     },
     {
-      "Field": "Reserve_0_old",
-      "Name": "",
-      "Description": ""
+      "Field": "autoBreakAnimDistance",
+      "Name": "Automatic Destruction Distance",
+      "Description": "This feature performs a special animation destruction that switches the animation ID when the player enters a certain distance. It is intended to use special animation assets that utilize a shader added at the end of the GR_DLC, so only assets with animation destruction settings will work. [GR] SEQ01001 [GR_DLC]"
     },
     {
-      "Field": "unknown_0x120",
-      "Name": "",
-      "Description": ""
+      "Field": "rayTracingBLASRebuildTypePreBreak",
+      "Name": "Ray Tracing BLAS Rebuild Settings (Before Destruction)",
+      "Description": "BLAS rebuild settings for ray tracing before destruction. If set to Automatic, the default values ​​set in the program will be used. Rebuilding needs to be enabled for large objects like bosses or objects that zoom in and cover the camera."
     },
     {
-      "Field": "unknown_0x121",
-      "Name": "",
-      "Description": ""
+      "Field": "rayTracingBLASRebuildTypePostBreak",
+      "Name": "Ray Tracing BLAS Rebuild Settings (Adter Destruction)",
+      "Description": "BLAS rebuild settings for ray tracing after destruction. If set to Automatic, the default values ​​set in the program will be used. Rebuilding needs to be enabled for large objects like bosses or objects that zoom in and cover the camera."
     },
     {
-      "Field": "unknown_0x122",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x123",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x124",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x125",
-      "Name": "",
+      "Field": "NoneBoostLodDrawParamID",
+      "Name": "LOD Parameter ID in Normal Mode",
       "Description": ""
     },
     {

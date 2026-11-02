@@ -7,15 +7,54 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="u8 equipModelCategory" />
-    <Field Def="u8 equipModelGender" />
-    <Field Def="u8 unknown0x2" />
-    <Field Def="u8 unknown0x3" />
-    <Field Def="u8 unknown0x4" />
-    <Field Def="u8 unknown0x5" />
-    <Field Def="u8 unknown0x6" />
-    <Field Def="u8 unknown0x7" />
-    <Field Def="u16 equipModelId" />
-    <Field Def="u16 unknown0xa" />
+    <Field Def="u8 equipModelType">
+      <DisplayName>装備モデル種別</DisplayName>
+      <Enum>EQUIP_MODEL_PARAM_MODEL_CATEGORY_TYPE</Enum>
+      <Description>装備モデル種別</Description>
+      <Maximum>9</Maximum>
+    </Field>
+    <Field Def="u8 equipModelGenderType">
+      <DisplayName>装備モデル性別</DisplayName>
+      <Enum>EQUIP_MODEL_PARAM_MODEL_GENDER_TYPE</Enum>
+      <Description>装備モデル性別 A：性別なし(Default)、M：男性、F：女性</Description>
+      <Maximum>9</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 isNoRayTracing">
+      <DisplayName>レイトレーシングシーンに登録しないか</DisplayName>
+      <Description>レイトレーシングシーンに登録しないか。(1:登録しない 0:登録する)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="s8 rayTracingCullingMode">
+      <DisplayName>レイトレーシングカリングモード</DisplayName>
+      <Enum>ASSET_RAY_TRACING_CULLING_TYPE_ENUM</Enum>
+      <Description>レイトレーシング描画時に適用されるカリングモード。「自動」の場合は、プログラム上で設定されたデフォルト値になります。</Description>
+      <Maximum>3</Maximum>
+      <SortID>410</SortID>
+    </Field>
+    <Field Def="u8 rayTracingBLASRebuildType">
+      <DisplayName>レイトレーシングBLASリビルド設定</DisplayName>
+      <Enum>RAYTRACING_BLAS_REBUILD_TYPE</Enum>
+      <Description>レイトレーシングのBLASのリビルド設定。「自動」の場合は、プログラム上で設定されたデフォルト値になります。ボスの様に大きなもの、カメラを覆うようにアップになるものなどについてはリビルド有効にする必要があります</Description>
+      <Maximum>255</Maximum>
+      <SortID>420</SortID>
+    </Field>
+    <Field Def="dummy8 reserve0[3]">
+      <DisplayName>リザーブ0</DisplayName>
+      <SortID>421</SortID>
+    </Field>
+    <Field Def="u16 equipModelId">
+      <DisplayName>装備モデルID</DisplayName>
+      <Description>装備モデルID。WP_A_????などの????の部分を指定</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 reserve1[2]">
+      <DisplayName>リザーブ1</DisplayName>
+      <SortID>422</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

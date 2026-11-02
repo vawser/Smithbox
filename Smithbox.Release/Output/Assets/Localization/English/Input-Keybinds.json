@@ -417,14 +417,6 @@
       "Text": "Applies the replicate parameters to the selection."
     },
     {
-      "Key": "KEY_MapEditor_Cycle_Render_Type",
-      "Text": "Cycle Render Type"
-    },
-    {
-      "Key": "KEY_MapEditor_Cycle_Render_Type_TT",
-      "Text": "Cycles through the render types for map objects."
-    },
-    {
       "Key": "KEY_MapEditor_Make_Dummy_Object",
       "Text": "Set Map Object to Dummy"
     },

@@ -1,0 +1,72 @@
+// Automatically Generated
+
+using System.Diagnostics.CodeAnalysis;
+
+namespace HKLib.Reflection.hk2019;
+
+internal class hkFpMathFpIntVec3_4Data : HavokData<HKLib.hk2019.hkFpMath.FpIntVec3_4> 
+{
+    public hkFpMathFpIntVec3_4Data(HavokType type, HKLib.hk2019.hkFpMath.FpIntVec3_4 instance) : base(type, instance) {}
+
+    public override bool TryGetField<TGet>(string fieldName, [MaybeNull] out TGet value)
+    {
+        value = default;
+        switch (fieldName)
+        {
+            case "m_x":
+            case "x":
+            {
+                if (instance.m_x is not TGet castValue) return false;
+                value = castValue;
+                return true;
+            }
+            case "m_y":
+            case "y":
+            {
+                if (instance.m_y is not TGet castValue) return false;
+                value = castValue;
+                return true;
+            }
+            case "m_z":
+            case "z":
+            {
+                if (instance.m_z is not TGet castValue) return false;
+                value = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+    public override bool TrySetField<TSet>(string fieldName, TSet value)
+    {
+        switch (fieldName)
+        {
+            case "m_x":
+            case "x":
+            {
+                if (value is not List<byte> castValue) return false;
+                instance.m_x = castValue;
+                return true;
+            }
+            case "m_y":
+            case "y":
+            {
+                if (value is not List<byte> castValue) return false;
+                instance.m_y = castValue;
+                return true;
+            }
+            case "m_z":
+            case "z":
+            {
+                if (value is not List<byte> castValue) return false;
+                instance.m_z = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+}

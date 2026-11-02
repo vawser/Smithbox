@@ -60,10 +60,50 @@
       <Minimum>-1</Minimum>
       <SortID>200</SortID>
     </Field>
-    <Field Def="s32 unknown_0xc" />
-    <Field Def="s32 unknown_0x10" />
-    <Field Def="s32 unknown_0x14" />
-    <Field Def="s32 unknown_0x18" />
-
+    <Field Def="u8 isUseHeightInfo">
+      <DisplayName>高所低所分けて設定するか？</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>高所低所分けて設定するか？〇の場合は高所低所分けたほうのデータを参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad2[3]">
+      <DisplayName>パッド2</DisplayName>
+      <SortID>2005</SortID>
+    </Field>
+    <Field Def="s16 borderHeight">
+      <DisplayName>高所低所境界高さ[m]</DisplayName>
+      <Description>高所低所境界高さ[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-32768</Minimum>
+      <Maximum>32767</Maximum>
+      <Increment>0</Increment>
+      <SortID>1001</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad3[2]">
+      <DisplayName>パッド3</DisplayName>
+      <SortID>2006</SortID>
+    </Field>
+    <Field Def="s32 weatherLotIdLowPlace = -1">
+      <DisplayName>天候抽選ID_低所</DisplayName>
+      <Description>天候抽選ID_低所(-1:設定なし(デフォルト値))</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>2147483647</Maximum>
+      <SortID>2000</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="s32 weatherLotIdHighPlace = -1">
+      <DisplayName>天候抽選ID_高所</DisplayName>
+      <Description>天候抽選ID_高所(-1:設定なし(デフォルト値))</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>2147483647</Maximum>
+      <SortID>2001</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
   </Fields>
 </PARAMDEF>

@@ -207,11 +207,12 @@
       <SortID>99999</SortID>
     </Field>
     
-    <Field Def="u8 unknown_0x3b_7:1" FirstVersion="11210015">
-      <DisplayName>リザーブ2</DisplayName>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>99999</SortID>
+    <Field Def="u8 isNoRayTracing_unused:1" FirstVersion="11210015" >
+      <DisplayName>レイトレーシング対象外か【未使用】</DisplayName>
+      <Description>レイトレーシングの処理を行わないか。(0:行う 1:行わない)【未使用「レイトレーシング対象か」に移行】</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>9999</SortID>
     </Field>
     
     <Field Def="u8 isLadder:1">
@@ -653,17 +654,19 @@
       <Maximum>4</Maximum>
       <SortID>2502</SortID>
     </Field>
-    <Field Def="u8 unkR3">
-      <DisplayName>リザーブ3</DisplayName>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>99999</SortID>
+    <Field Def="s8 rayTracingCullingMode">
+      <DisplayName>レイトレーシングカリングモード</DisplayName>
+      <Enum>ASSET_RAY_TRACING_CULLING_TYPE_ENUM</Enum>
+      <Description>レイトレーシング描画時に適用されるカリングモード。「自動」の場合は、プログラム上で設定されたデフォルト値になります。</Description>
+      <Maximum>3</Maximum>
+      <SortID>1007</SortID>
     </Field>
-    <Field Def="f32 unkR4">
-      <DisplayName>リザーブ4</DisplayName>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>99999</SortID>
+    <Field Def="f32 overrideRayTracingEnableDist = -1">
+      <DisplayName>レイトレーシング有効距離上書き[m]</DisplayName>
+      <Description>レイトレーシング距離LODの境界距離は通常影描画距離が参照されますがそれを上書きできます（0以下：上書きなし）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1008</SortID>
     </Field>
     <Field Def="s32 soundBreakSECpId = -1">
       <DisplayName>破壊音ダミポリID</DisplayName>
@@ -778,9 +781,12 @@
       <Maximum>1</Maximum>
       <SortID>4102</SortID>
     </Field>
-    <Field Def="u8 unkR1:2">
-      <DisplayName>リザーブ1</DisplayName>
-      <SortID>100000</SortID>
+    <Field Def="u8 rayTracingTargetType:2">
+      <DisplayName>レイトレーシング対象か</DisplayName>
+      <Enum>ASSET_RAY_TRACING_TARGET_TYPE_ENUM</Enum>
+      <Description>レイトレーシング対象かを指定します。動的静的はデフォルトは自動判定ですが、明示的に指定することも可能です(SEQ47540)</Description>
+      <Maximum>3</Maximum>
+      <SortID>1006</SortID>
     </Field>
     <Field Def="u8 generateMultiForbiddenRegion">
       <DisplayName>召喚禁止/侵入禁止領域生成（ダミポリ）</DisplayName>
@@ -866,20 +872,38 @@
       <SortID>3</SortID>
     </Field>
     
-    <Field Def="dummy8 Reserve_0_old[32]" RemovedVersion="11210015" >
-      <DisplayName>リザーブ0</DisplayName>
-      <Description>リザーブ0</Description>
-      <SortID>99999</SortID>
+    <Field Def="dummy8 Reserve_0_old[32]" RemovedVersion="11210015" />
+    
+    <Field Def="f32 autoBreakAnimDistance = -1" FirstVersion="11210015">
+      <DisplayName>プレイヤー接近時自動アニメ破壊_距離(m) </DisplayName>
+      <Description>プレイヤーが一定距離内に入るとアニメIDを切り替える特殊なアニメ破壊を実行します。GR_DLC末期に追加されたShaderを使用した特殊なアニメアセット使用する想定のためアニメ破壊設定のアセットのみ動作します【GR】SEQ01001 【GR_DLC】</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3011</SortID>
+    </Field><Field Def="u8 rayTracingBLASRebuildTypePreBreak" FirstVersion="11210015">
+      <DisplayName>レイトレーシングBLASリビルド設定(破壊前) </DisplayName>
+      <Enum>RAYTRACING_BLAS_REBUILD_TYPE</Enum>
+      <Description>破壊前のレイトレーシングのBLASのリビルド設定。「自動」の場合は、プログラム上で設定されたデフォルト値になります。ボスの様に大きなもの、カメラを覆うようにアップになるものなどについてはリビルド有効にする必要があります</Description>
+      <Maximum>255</Maximum>
+      <SortID>1009</SortID>
+    </Field>
+    <Field Def="u8 rayTracingBLASRebuildTypePostBreak" FirstVersion="11210015">
+      <DisplayName>レイトレーシングBLASリビルド設定(破壊後) </DisplayName>
+      <Enum>RAYTRACING_BLAS_REBUILD_TYPE</Enum>
+      <Description>破壊後のレイトレーシングのBLASのリビルド設定。「自動」の場合は、プログラム上で設定されたデフォルト値になります。ボスの様に大きなもの、カメラを覆うようにアップになるものなどについてはリビルド有効にする必要があります</Description>
+      <Maximum>255</Maximum>
+      <SortID>1010</SortID>
+    </Field>
+    <Field Def="s16 NoneBoostLodDrawParamID = -1" FirstVersion="11210015">
+      <DisplayName>ノーマルモード時のLODパラメータID</DisplayName>
+      <Description>ノーマルモード時のLODパラメータID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>32767</Maximum>
+      <SortID>9003</SortID>
     </Field>
     
-    <Field Def="u8 unknown_0x120" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x121" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x122" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x123" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x124" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x125" FirstVersion="11210015" />
-    
-    <Field Def="dummy8 Reserve_0[26]" FirstVersion="11210015">
+    <Field Def="dummy8 Reserve_0[24]" FirstVersion="11210015">
       <DisplayName>リザーブ0</DisplayName>
       <Description>リザーブ0</Description>
       <SortID>99999</SortID>

@@ -1508,8 +1508,15 @@
       <SortID>70001</SortID>
     </Field>
 
-    <Field Def="s32 unknown_0x230" FirstVersion="11210015" />
-
+	<Field Def="s32 dlcRideJumpRegionDefaultSfxId" FirstVersion="11210015">
+      <DisplayName>DLC大ジャンプ領域SFXID</DisplayName>
+      <Description>DLC騎乗大ジャンプ領域のSFXID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>5400</SortID>
+    </Field>
+    
     <Field Def="f32 aiSightRate_sunloss_light = 1">
       <DisplayName>AI視界倍率_太陽が見えない場所(明るい)</DisplayName>
       <Description>AI視界倍率_太陽が見えない場所(明るい)</Description>
@@ -2211,85 +2218,519 @@
       <SortID>70003</SortID>
     </Field>
 
-    <Field Def="s32 unknown_0x2f0" FirstVersion="11210015" />
-    <Field Def="u8 matchingLevelArenaUpperRel" FirstVersion="11210015" />
-    <Field Def="u8 matchingLevelArenaUpperAbs" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_0" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_1" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_2" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_3" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_4" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_5" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_6" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_7" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_8" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_9" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_10" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_11" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_12" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_13" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_14" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_15" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_16" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_17" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_18" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_19" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_20" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_21" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_22" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_23" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_24" FirstVersion="11210015" />
-    <Field Def="u8 matchingWeaponLevelUpperArena_25" FirstVersion="11210015" />
+    <Field Def="s32 mimicryParamChange_SpEffectId = -1" FirstVersion="11210015">
+      <DisplayName>擬態確率パラ変更時にかかる特殊効果ID</DisplayName>
+      <Description>擬態確率パラ変更時にかかる特殊効果ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>80000</SortID>
+    </Field>
+    
+    <Field Def="u8 machingLevelBattleRoyalSignUpperRel" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定係数１闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかのソウルレベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>9900</SortID>
+    </Field>
+    <Field Def="u8 machingLevelBattleRoyalSignUpperAbs" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定係数２闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかのソウルレベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>9910</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_0" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数０闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10200</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_1" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10201</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_2" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10202</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_3" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数３闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10203</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_4" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数４闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10204</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_5" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数５闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10205</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_6" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数６闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10206</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_7" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数７闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10207</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_8" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数８闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10208</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_9" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数９闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10209</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_10" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１０闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10210</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_11" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１１闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10211</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_12" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１２闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10212</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_13" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１３闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10213</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_14" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１４闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10214</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_15" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１５闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10215</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_16" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１６闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10216</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_17" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１７闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10217</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_18" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１８闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10218</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_19" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数１９闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10219</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_20" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２０闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10220</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_21" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２１闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10221</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_22" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２２闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10222</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_23" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２３闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10223</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_24" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２４闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10224</SortID>
+    </Field>
+    <Field Def="u8 machingWeaponLevelUpperBattleRoyal_25" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２５闘技場</DisplayName>
+      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10225</SortID>
+    </Field>
 
-    <Field Def="f32 matchDuel_FirstHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchDuel_SecondHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchDM2_FirstHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchDM2_SecondHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchDM4_FirstHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchDM4_SecondHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchDM6_FirstHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchDM6_SecondHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchTM2vs2_FirstHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchTM2vs2_SecondHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchTM3vs3_FirstHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchTM3vs3_SecondHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchTM1vs1_FirstHalfTime" FirstVersion="10701000" />
-    <Field Def="f32 matchTM1vs1_SecondHalfTime" FirstVersion="10701000" />
+    <Field Def="f32 quickMatchDuelTime_FirstHalf = 1" FirstVersion="10701000">
+      <DisplayName>決闘前半用秒数</DisplayName>
+      <Description>決闘前半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10400</SortID>
+    </Field>
+    <Field Def="f32 quickMatchDuelTime_SecondHalf = 1" FirstVersion="10701000">
+      <DisplayName>決闘後半用秒数</DisplayName>
+      <Description>決闘後半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10410</SortID>
+    </Field>
+    <Field Def="f32 quickMatchDeathMatch2Time_FirstHalf = 1" FirstVersion="10701000">
+      <DisplayName>乱闘（2人）前半用秒数</DisplayName>
+      <Description>乱闘（2人）前半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10420</SortID>
+    </Field>
+    <Field Def="f32 quickMatchDeathMatch2Time_SecondHalf = 1" FirstVersion="10701000">
+      <DisplayName>乱闘（2人）後半用秒数</DisplayName>
+      <Description>乱闘（2人）後半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10430</SortID>
+    </Field>
+    <Field Def="f32 quickMatchDeathMatch4Time_FirstHalf = 1" FirstVersion="10701000">
+      <DisplayName>乱闘（4人）前半用秒数</DisplayName>
+      <Description>乱闘（4人）前半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10440</SortID>
+    </Field>
+    <Field Def="f32 quickMatchDeathMatch4Time_SecondHalf = 1" FirstVersion="10701000">
+      <DisplayName>乱闘（4人）後半用秒数</DisplayName>
+      <Description>乱闘（4人）後半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10450</SortID>
+    </Field>
+    <Field Def="f32 quickMatchDeathMatch6Time_FirstHalf = 1" FirstVersion="10701000">
+      <DisplayName>乱闘（6人）前半用秒数</DisplayName>
+      <Description>乱闘（6人）前半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10460</SortID>
+    </Field>
+    <Field Def="f32 quickMatchDeathMatch6Time_SecondHalf = 1" FirstVersion="10701000">
+      <DisplayName>乱闘（6人）後半用秒数</DisplayName>
+      <Description>乱闘（6人）後半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10470</SortID>
+    </Field>
+    <Field Def="f32 quickMatchTeamMatch2vs2Time_FirstHalf = 1" FirstVersion="10701000">
+      <DisplayName>共闘（2対2）前半用秒数</DisplayName>
+      <Description>共闘（2対2）前半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10500</SortID>
+    </Field>
+    <Field Def="f32 quickMatchTeamMatch2vs2Time_SecondHalf = 1" FirstVersion="10701000">
+      <DisplayName>共闘（2対2）後半用秒数</DisplayName>
+      <Description>共闘（2対2）後半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10510</SortID>
+    </Field>
+    <Field Def="f32 quickMatchTeamMatch3vs3Time_FirstHalf = 1" FirstVersion="10701000">
+      <DisplayName>共闘（3対3）前半用秒数</DisplayName>
+      <Description>共闘（3対3）前半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10520</SortID>
+    </Field>
+    <Field Def="f32 quickMatchTeamMatch3vs3Time_SecondHalf = 1" FirstVersion="10701000">
+      <DisplayName>共闘（3対3）後半用秒数</DisplayName>
+      <Description>共闘（3対3）後半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10530</SortID>
+    </Field>
+    <Field Def="f32 quickMatchTeamMatch1vs1Time_FirstHalf = 1" FirstVersion="10701000">
+      <DisplayName>共闘（1対1）前半用秒数</DisplayName>
+      <Description>共闘（1対1）前半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10480</SortID>
+    </Field>
+    <Field Def="f32 quickMatchTeamMatch1vs1Time_SecondHalf = 1" FirstVersion="10701000">
+      <DisplayName>共闘（1対1）後半用秒数</DisplayName>
+      <Description>共闘（1対1）後半用秒数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>3600</Maximum>
+      <SortID>10490</SortID>
+    </Field>
 
     <Field Def="dummy8 pad_0x348[40]" FirstVersion="10701000" RemovedVersion="11210015"/>
 
-    <Field Def="s16 summonDataCoopMatchingSpiritAshLevelMul" FirstVersion="11210015"/>
+    <Field Def="s16 summonDataCoopMatchingBuddyLevelMul" FirstVersion="11210015">
+      <DisplayName>マルチ弱体化最大バディ補正係数</DisplayName>
+      <Description>マルチ弱体化最大バディ補正係数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>9350</SortID>
+    </Field>
 
-    <Field Def="u8 matchingSpiritAshLevelUpper_0" FirstVersion="11210015"/>
-    <Field Def="u8 matchingSpiritAshLevelUpper_1" FirstVersion="11210015"/>
-    <Field Def="u8 matchingSpiritAshLevelUpper_2" FirstVersion="11210015"/>
-    <Field Def="u8 matchingSpiritAshLevelUpper_3" FirstVersion="11210015"/>
-    <Field Def="u8 matchingSpiritAshLevelUpper_4" FirstVersion="11210015"/>
-    <Field Def="u8 matchingSpiritAshLevelUpper_5" FirstVersion="11210015"/>
-    <Field Def="u8 matchingSpiritAshLevelUpper_6" FirstVersion="11210015"/>
-    <Field Def="u8 matchingSpiritAshLevelUpper_7" FirstVersion="11210015"/>
-    <Field Def="u8 matchingSpiritAshLevelUpper_8" FirstVersion="11210015"/>
-    <Field Def="u8 matchingSpiritAshLevelUpper_9" FirstVersion="11210015"/>
-    <Field Def="u8 matchingSpiritAshLevelUpper_10" FirstVersion="11210015"/>
+    <Field Def="u8 machingBuddyLevelUpperBattleRoyal_0" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大バディ強化レベル係数０闘技場</DisplayName>
+      <Description>レベルシンク適用判定最大バディ強化レベル係数０闘技場</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10300</SortID>
+    </Field>
+    <Field Def="u8 machingBuddyLevelUpperBattleRoyal_1" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大バディ強化レベル係数１闘技場</DisplayName>
+      <Description>レベルシンク適用判定最大バディ強化レベル係数１闘技場</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10301</SortID>
+    </Field>
+    <Field Def="u8 machingBuddyLevelUpperBattleRoyal_2" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大バディ強化レベル係数２闘技場</DisplayName>
+      <Description>レベルシンク適用判定最大バディ強化レベル係数２闘技場</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10302</SortID>
+    </Field>
+    <Field Def="u8 machingBuddyLevelUpperBattleRoyal_3" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大バディ強化レベル係数３闘技場</DisplayName>
+      <Description>レベルシンク適用判定最大バディ強化レベル係数３闘技場</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10303</SortID>
+    </Field>
+    <Field Def="u8 machingBuddyLevelUpperBattleRoyal_4" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大バディ強化レベル係数４闘技場</DisplayName>
+      <Description>レベルシンク適用判定最大バディ強化レベル係数４闘技場</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10304</SortID>
+    </Field>
+    <Field Def="u8 machingBuddyLevelUpperBattleRoyal_5" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大バディ強化レベル係数５闘技場</DisplayName>
+      <Description>レベルシンク適用判定最大バディ強化レベル係数５闘技場</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10305</SortID>
+    </Field>
+    <Field Def="u8 machingBuddyLevelUpperBattleRoyal_6" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大バディ強化レベル係数６闘技場</DisplayName>
+      <Description>レベルシンク適用判定最大バディ強化レベル係数６闘技場</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10306</SortID>
+    </Field>
+    <Field Def="u8 machingBuddyLevelUpperBattleRoyal_7" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大バディ強化レベル係数７闘技場</DisplayName>
+      <Description>レベルシンク適用判定最大バディ強化レベル係数７闘技場</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10307</SortID>
+    </Field>
+    <Field Def="u8 machingBuddyLevelUpperBattleRoyal_8" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大バディ強化レベル係数８闘技場</DisplayName>
+      <Description>レベルシンク適用判定最大バディ強化レベル係数８闘技場</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10308</SortID>
+    </Field>
+    <Field Def="u8 machingBuddyLevelUpperBattleRoyal_9" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大バディ強化レベル係数９闘技場</DisplayName>
+      <Description>レベルシンク適用判定最大バディ強化レベル係数９闘技場</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10309</SortID>
+    </Field>
+    <Field Def="u8 machingBuddyLevelUpperBattleRoyal_10" FirstVersion="11210015">
+      <DisplayName>レベルシンク適用判定最大バディ強化レベル係数１０闘技場</DisplayName>
+      <Description>レベルシンク適用判定最大バディ強化レベル係数１０闘技場</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>25</Maximum>
+      <SortID>10310</SortID>
+    </Field>
 
-    <Field Def="dummy8 pad_0x34c[3]" FirstVersion="11210015"/>
+    <Field Def="u8 quickMatchDeathMatch2Time_Invincible" FirstVersion="11210015">
+      <DisplayName>乱闘（2人）復活時無敵タイマー</DisplayName>
+      <Description>乱闘（2人）復活時無敵タイマー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>10600</SortID>
+    </Field>
+    <Field Def="u8 quickMatchDeathMatch4Time_Invincible" FirstVersion="11210015">
+      <DisplayName>乱闘（4人）復活時無敵タイマー</DisplayName>
+      <Description>乱闘（4人）復活時無敵タイマー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>10610</SortID>
+    </Field>
+    <Field Def="u8 quickMatchDeathMatch6Time_Invincible" FirstVersion="11210015">
+      <DisplayName>乱闘（6人）復活時無敵タイマー</DisplayName>
+      <Description>乱闘（6人）復活時無敵タイマー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>10620</SortID>
+    </Field>
+    <Field Def="u8 quickMatchTeamMatch1vs1Time_Invincible" FirstVersion="11210015">
+      <DisplayName>共闘（1対1）復活時無敵タイマー</DisplayName>
+      <Description>共闘（1対1）復活時無敵タイマー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>10630</SortID>
+    </Field>
+    <Field Def="u8 quickMatchTeamMatch2vs2Time_Invincible" FirstVersion="11210015">
+      <DisplayName>共闘（2対2）復活時無敵タイマー</DisplayName>
+      <Description>共闘（2対2）復活時無敵タイマー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>10640</SortID>
+    </Field>
+    <Field Def="u8 quickMatchTeamMatch3vs3Time_Invincible" FirstVersion="11210015">
+      <DisplayName>共闘（3対3）復活時無敵タイマー</DisplayName>
+      <Description>共闘（3対3）復活時無敵タイマー</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>60</Maximum>
+      <SortID>10650</SortID>
+    </Field>
+    
+    <Field Def="dummy8 reserved[1]" FirstVersion="11210015"/>
 
-    <Field Def="s32 unknown_0x358" FirstVersion="11210015"/>
-    <Field Def="s32 baseScaduBlessingSpEffectId" FirstVersion="11210015"/>
-    <Field Def="s32 baseReveredSpiritAshBlessingSpEffectId" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x368" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x36c" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x370" FirstVersion="11210015"/>
+    <Field Def="s32 dlcPlayerDoping_BaseSpecialEffectId" FirstVersion="11210015"/>
+    <Field Def="s32 dlcBuddyDoping_BaseSpecialEffectId" FirstVersion="11210015"/>
+    <Field Def="s32 dlcRideJumpRegionDefaultDisableSfxId" FirstVersion="11210015"/>
+    <Field Def="s32 dlcRideJumpoff_SfxId" FirstVersion="11210015"/>
+    <Field Def="f32 dlcRideJumpoff_SfxHeightOffset" FirstVersion="11210015"/>
 
-    <Field Def="f32 ridingSAReceivedRatePlayer" FirstVersion="11210015"/>
-    <Field Def="f32 ridingSAReceivedRateNotPlayer" FirstVersion="11210015"/>
-    <Field Def="s32 glovewortCrystalSpiritBuffSpEffectId" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x380" FirstVersion="11210015"/>
-    <Field Def="f32 unknown_0x384" FirstVersion="11210015"/>
-    <Field Def="s32 unknownSpEffectId_0x388" FirstVersion="11210015"/>
-    <Field Def="s32 unknownSpEffectId_0x38c" FirstVersion="11210015"/>
-    <Field Def="s32 unknownSpEffectId_0x390" FirstVersion="11210015"/>
-    <Field Def="s32 baseReveredSpiritTorrentBlessingSpEffectId" FirstVersion="11210015"/>
+    <Field Def="f32 saAttackRate_forVsRideAtkPlayer" FirstVersion="11210015"/>
+    <Field Def="f32 saAttackRate_forVsRideAtkEnemy" FirstVersion="11210015"/>
+    <Field Def="s32 elixirBuddyEnforceSpEffectId" FirstVersion="11210015"/>
+    <Field Def="f32 sleepDeadFadeOutDelayTime" FirstVersion="11210015"/>
+    <Field Def="f32 sleepDeadFadeOutSpeedRate" FirstVersion="11210015"/>
+    <Field Def="s32 MimicryLotVariationLimitedSpEffectId_0" FirstVersion="11210015"/>
+    <Field Def="s32 MimicryLotVariationLimitedSpEffectId_1" FirstVersion="11210015"/>
+    <Field Def="s32 MimicryLotVariationLimitedSpEffectId_2" FirstVersion="11210015"/>
+    <Field Def="s32 dlcPcHorseDoping_BaseSpecialEffectId" FirstVersion="11210015"/>
 
     <Field Def="dummy8 endPad[108]" FirstVersion="11210015"/>
 

@@ -25,7 +25,13 @@
         "subCategory2",
         "subCategory3",
         "subCategory4",
-        "finalDamageRateId",
+        "subCategory5",
+        "subCategory6",
+        "subCategory7",
+        "subCategory8",
+        "subCategory9",
+        "subCategory10",
+        "finalDamageRateParamId",
         "overwriteAttackElementCorrectId"
       ]
     },

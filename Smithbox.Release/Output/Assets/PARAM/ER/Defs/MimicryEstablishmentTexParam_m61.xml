@@ -61,11 +61,119 @@
       <Maximum>999999999</Maximum>
       <SortID>200</SortID>
     </Field>
-    <Field Def="s32 unknown_0xc" />
-    <Field Def="s32 unknown_0x10" />
-    <Field Def="s32 unknown_0x14" />
-    <Field Def="s32 unknown_0x18" />
-    <Field Def="s32 unknown_0x1c" />
+    <Field Def="s32 mimicryEstablishmentParamIdLowPlace = -1">
+      <DisplayName>【未使用】マップ別擬態確率パラメータID_低所</DisplayName>
+      <Description>【未使用】マップ別擬態確率パラメータID_高所(-1:設定なし)。GRでは使用メモリの制限でマルチプレイエリアIDに依存した切り替えをするようになったので未使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="s32 mimicryEstablishmentParamIdHighPlace = -1">
+      <DisplayName>【未使用】マップ別擬態確率パラメータID_低所</DisplayName>
+      <Description>【未使用】マップ別擬態確率パラメータID_低所(-1:設定なし)。GRでは使用メモリの制限でマルチプレイエリアIDに依存した切り替えをするようになったので未使用</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="s16 borderHeight">
+      <DisplayName>高所低所境界高さ[m]</DisplayName>
+      <Description>高所低所境界高さ[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-32768</Minimum>
+      <Maximum>32767</Maximum>
+      <Increment>0</Increment>
+      <SortID>1001</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="u8 isUseHeightInfo">
+      <DisplayName>高所低所分けて設定するか？</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>高所低所分けて設定するか？〇の場合は高所低所分けたほうのデータを参照します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1000</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="u8 isApplyMimicryLotLimitSpEffect0">
+      <DisplayName>擬態先1抽選禁止特殊効果をかける</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>擬態抽選候補1が選択されなくなる特殊効果をPCにかけるかを指定【GR】SEQ04459 【GR_DLC】擬態変身先を場所ごとに出し分ける定義をマップ情報画像パラで指定できるようにする</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="u8 isApplyMimicryLotLimitSpEffect1">
+      <DisplayName>擬態先2抽選禁止特殊効果をかける</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>擬態抽選候補2が選択されなくなる特殊効果をPCにかけるかを指定【GR】SEQ04459 【GR_DLC】擬態変身先を場所ごとに出し分ける定義をマップ情報画像パラで指定できるようにする</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>202</SortID>
+    </Field>
+    <Field Def="u8 isApplyMimicryLotLimitSpEffect2">
+      <DisplayName>擬態先3抽選禁止特殊効果をかける</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>擬態抽選候補3が選択されなくなる特殊効果をPCにかけるかを指定【GR】SEQ04459 【GR_DLC】擬態変身先を場所ごとに出し分ける定義をマップ情報画像パラで指定できるようにする</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>203</SortID>
+    </Field>
+    <Field Def="u8 isApplyMimicryLotLimitSpEffect0Low">
+      <DisplayName>擬態先1抽選禁止特殊効果をかける_低所</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>擬態抽選候補1が選択されなくなる特殊効果をPCにかけるかを指定_低所【GR】SEQ04459 【GR_DLC】擬態変身先を場所ごとに出し分ける定義をマップ情報画像パラで指定できるようにする</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1501</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="u8 isApplyMimicryLotLimitSpEffect1Low">
+      <DisplayName>擬態先2抽選禁止特殊効果をかける_低所</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>擬態抽選候補2が選択されなくなる特殊効果をPCにかけるかを指定_低所【GR】SEQ04459 【GR_DLC】擬態変身先を場所ごとに出し分ける定義をマップ情報画像パラで指定できるようにする</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1502</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="u8 isApplyMimicryLotLimitSpEffect2Low">
+      <DisplayName>擬態先3抽選禁止特殊効果をかける_低所</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>擬態抽選候補3が選択されなくなる特殊効果をPCにかけるかを指定_低所【GR】SEQ04459 【GR_DLC】擬態変身先を場所ごとに出し分ける定義をマップ情報画像パラで指定できるようにする</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1503</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="u8 isApplyMimicryLotLimitSpEffect0High">
+      <DisplayName>擬態先1抽選禁止特殊効果をかける_高所</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>擬態抽選候補1が選択されなくなる特殊効果をPCにかけるかを指定_高所【GR】SEQ04459 【GR_DLC】擬態変身先を場所ごとに出し分ける定義をマップ情報画像パラで指定できるようにする</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1601</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="u8 isApplyMimicryLotLimitSpEffect1High">
+      <DisplayName>擬態先2抽選禁止特殊効果をかける_高所</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>擬態抽選候補2が選択されなくなる特殊効果をPCにかけるかを指定_高所【GR】SEQ04459 【GR_DLC】擬態変身先を場所ごとに出し分ける定義をマップ情報画像パラで指定できるようにする</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1602</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
+    <Field Def="u8 isApplyMimicryLotLimitSpEffect2High">
+      <DisplayName>擬態先3抽選禁止特殊効果をかける_高所</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>擬態抽選候補3が選択されなくなる特殊効果をPCにかけるかを指定_高所【GR】SEQ04459 【GR_DLC】擬態変身先を場所ごとに出し分ける定義をマップ情報画像パラで指定できるようにする</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1603</SortID>
+      <UnkC8>高度別</UnkC8>
+    </Field>
 
   </Fields>
 </PARAMDEF>

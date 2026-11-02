@@ -26,10 +26,10 @@
       <DisplayName>reserved0</DisplayName>
       <SortID>9999</SortID>
     </Field>
-    <Field Def="u8 isFireAsh">
+    <Field Def="u8 FireAshEventType">
       <DisplayName>「火の灰」後か？</DisplayName>
-      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
-      <Description>マップの「火の灰」状態での適応の有無を指定します。</Description>
+      <Enum>FIRE_ASH_EVENT_TYPE_FOR_WEATHE_ASSET</Enum>
+      <Description>マップの「火の灰」イベント状態を参照し、この差し替えパラメータの適応の有無を指定します。（×：通常で有効、○：「火の灰」で有効、無視：常時有効）</Description>
       <EditFlags>None</EditFlags>
       <Maximum>1</Maximum>
       <SortID>1</SortID>

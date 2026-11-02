@@ -1,10 +1,6 @@
 {
   "Entries": [
     {
-      "Key": "GPARAM_Data_Save_File",
-      "Text": "Saved graphics param file: {0}"
-    },
-    {
       "Key": "GPARAM_Data_Failed_Read_GPARAM",
       "Text": "Failed to read GPARAM file: {0}"
     },

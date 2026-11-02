@@ -45,9 +45,21 @@
       <Maximum>10</Maximum>
       <SortID>150</SortID>
     </Field>
-    <Field Def="f32 unk1 = 1">
+    <Field Def="f32 pvpToughnessDamageRate = 1">
+      <DisplayName>対人時強靭ダメージ軽減</DisplayName>
+      <Description>TAEで設定した強靭度IDが有効の間、対人において受けるすべての強靭ダメージに倍率を適用する</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9.99</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>400</SortID>
     </Field>
-    <Field Def="f32 unk2 = 1">
+    <Field Def="f32 pvpHpDamageRate = 1">
+      <DisplayName>対人時ダメージ軽減</DisplayName>
+      <Description>TAEで設定した強靭度IDが有効の間、対人において受けるすべてのHPダメージに倍率を適用する</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9.99</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>500</SortID>
     </Field>
     <Field Def="dummy8 pad1[8]">
       <DisplayName>パッド</DisplayName>

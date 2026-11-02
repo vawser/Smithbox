@@ -20,19 +20,9 @@
       "Description": ""
     },
     {
-      "Field": "swordArtsType",
-      "Name": "Sword Arts Type (Obsolete)",
-      "Description": "Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler"
-    },
-    {
       "Field": "artsSpeedType",
       "Name": "Arts Speed Type",
       "Description": "Which cancellation timing do you see? 0: Normal (left hand attack) / 1: Early / 2: Slow"
-    },
-    {
-      "Field": "refStatus",
-      "Name": "Reference Status Type",
-      "Description": "Which system of arts points to refer to"
     },
     {
       "Field": "isRefRightArts",
@@ -55,29 +45,14 @@
       "Description": "Whether to gray out when displaying the arts name of both hands"
     },
     {
-      "Field": "reserve2",
+      "Field": "pad1",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "usePoint_L1",
-      "Name": "Arts Points - L1",
-      "Description": "Points to spend when putting out arts by L1"
-    },
-    {
-      "Field": "usePoint_L2",
-      "Name": "Arts Points - L2",
-      "Description": "Points to spend when putting out arts by L2"
-    },
-    {
-      "Field": "usePoint_R1",
-      "Name": "Arts Points - R1",
-      "Description": "Points to spend when putting out arts by R1"
-    },
-    {
-      "Field": "usePoint_R2",
-      "Name": "Arts Points - R2",
-      "Description": "Points to spend when putting out arts by R2"
+      "Field": "reserve2",
+      "Name": "",
+      "Description": ""
     },
     {
       "Field": "textId",

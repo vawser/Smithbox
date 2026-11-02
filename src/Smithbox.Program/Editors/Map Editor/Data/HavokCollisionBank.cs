@@ -18,6 +18,11 @@ public class HavokCollisionBank
     /// </summary>
     public Dictionary<string, HKX2.hkRootLevelContainer> TagContainers = new();
 
+    /// <summary>
+    /// AC6 collision, which is Havok 2019. Keyed by file name, like HavokContainers.
+    /// </summary>
+    public Dictionary<string, HKLib.hk2019.hkRootLevelContainer> AC6Containers = new();
+
     public Dictionary<string, List<string>> MapCollisions = new();
 
     private bool ObjectCollisionVisible = false;
@@ -36,6 +41,7 @@ public class HavokCollisionBank
         yield return HavokCollisionType.High;
 
         if (Project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.AC6
             or ProjectType.NR
             or ProjectType.DB_NT
             or ProjectType.DB)
@@ -106,6 +112,7 @@ public class HavokCollisionBank
     public void Clear()
     {
         HavokContainers.Clear();
+        AC6Containers.Clear();
 
         lock (TagContainers)
         {
@@ -137,6 +144,93 @@ public class HavokCollisionBank
 
             LoadTagMapCollision(mapId, "h");
             LoadTagMapCollision(mapId, "l");
+        }
+
+        if (Project.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            if (!MapCollisions.ContainsKey(mapId))
+                MapCollisions.Add(mapId, new List<string>());
+
+            LoadAC6MapCollision(mapId, "h");
+            LoadAC6MapCollision(mapId, "l");
+            LoadAC6MapCollision(mapId, "f");
+        }
+    }
+
+    /// <summary>
+    /// Gets the collision of an AC6 map, e.g. l03_20_00_00_000100.hkx.dcx. Null if it isn't loaded.
+    /// </summary>
+    public HKLib.hk2019.hkRootLevelContainer GetAC6Container(string fileName)
+    {
+        return AC6Containers.GetValueOrDefault(fileName);
+    }
+
+    /// <summary>
+    /// Reads the collision of an AC6 map. These are Havok 2019 tagfiles that refer to a compendium held in the
+    /// same binder.
+    /// </summary>
+    private void LoadAC6MapCollision(string mapId, string type)
+    {
+        using var __scope = Profiler.TracyZoneAuto();
+
+        var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
+        var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
+
+        if (!Project.VFS.FS.FileExists(bdtPath) || !Project.VFS.FS.FileExists(bhdPath))
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_HKXBND", bdtPath));
+            return;
+        }
+
+        try
+        {
+            var bdtData = Project.VFS.ProjectFS.FileExists(bdtPath)
+                ? Project.VFS.ProjectFS.ReadFile(bdtPath)
+                : Project.VFS.FS.ReadFile(bdtPath);
+            var bhdData = Project.VFS.ProjectFS.FileExists(bhdPath)
+                ? Project.VFS.ProjectFS.ReadFile(bhdPath)
+                : Project.VFS.FS.ReadFile(bhdPath);
+
+            if (bdtData == null || bhdData == null)
+                return;
+
+            using var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+            var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
+
+            var compendiumFile = packedBinder.Files.FirstOrDefault(e => e.Name.Contains(".compendium"));
+            if (compendiumFile != null)
+            {
+                using var compendiumStream = new MemoryStream(DCX.Decompress(compendiumFile.Bytes).ToArray());
+                serializer.LoadCompendium(compendiumStream);
+            }
+
+            var files = packedBinder.Files
+                .Where(e => e.Name.Contains(".hkx.dcx") && e.Name.Split('\\').Length == 2);
+
+            foreach (var file in files)
+            {
+                var name = file.Name.Split('\\')[1];
+
+                try
+                {
+                    using var stream = new MemoryStream(DCX.Decompress(file.Bytes).ToArray());
+                    var container = (HKLib.hk2019.hkRootLevelContainer)serializer.Read(stream);
+
+                    if (AC6Containers.TryAdd(name, container))
+                    {
+                        MapCollisions[mapId].Add(name);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", name), ex);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", bdtPath), e);
         }
     }
 
@@ -232,6 +326,7 @@ public class HavokCollisionBank
         foreach (var name in collisionNames)
         {
             HavokContainers.Remove(name);
+            AC6Containers.Remove(name);
 
             lock (TagContainers)
             {
@@ -400,6 +495,10 @@ public class HavokCollisionBank
 
     public bool SaveMapCollisionFiles(string mapId)
     {
+        // Havok 2019 files can't be written, and AC6 collision is display only
+        if (Project.Descriptor.ProjectType is ProjectType.AC6)
+            return true;
+
         var success = SaveMapCollision(mapId, "h");
         success &= SaveMapCollision(mapId, "l");
         success &= SaveMapCollision(mapId, "f");

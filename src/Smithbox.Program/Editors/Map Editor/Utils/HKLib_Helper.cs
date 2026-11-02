@@ -309,7 +309,7 @@ public static class HKLib_Helper
     /// <param name="dest"></param>
     /// <param name="verts"></param>
     /// <param name="indices"></param>
-    private static unsafe void RenderMesh(CollisionSubmesh dest, List<Vector3> verts, List<int> indices, Vector3 color)
+    internal static unsafe void RenderMesh(CollisionSubmesh dest, List<Vector3> verts, List<int> indices, Vector3 color)
     {
         byte colR = (byte)color.X;
         byte colG = (byte)color.Y;

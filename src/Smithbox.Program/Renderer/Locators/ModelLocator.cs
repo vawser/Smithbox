@@ -135,7 +135,8 @@ public static class ModelLocator
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/lo";
             }
         }
-        else if (project.Descriptor.ProjectType is ProjectType.ER 
+        else if (project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.AC6
             or ProjectType.NR
             or ProjectType.DB_NT
             or ProjectType.DB)
@@ -277,6 +278,7 @@ public static class ModelLocator
     public static ResourceDescriptor GetMapObjCollision(ProjectEntry project, string modelName, HavokCollisionType collisionType)
     {
         if (project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.AC6
             or ProjectType.NR
             or ProjectType.DB_NT
             or ProjectType.DB)

@@ -1040,8 +1040,8 @@
       "Description": ""
     },
     {
-      "Field": "finalDamageRateId",
-      "Name": "Final Damage % ID",
+      "Field": "finalDamageRateParamId",
+      "Name": "Final Damage Rate ID",
       "Description": ""
     },
     {
@@ -1058,6 +1058,36 @@
       "Field": "subCategory4",
       "Name": "Conditional Category [4]",
       "Description": "Subcategory 4"
+    },
+    {
+      "Field": "subCategory5",
+      "Name": "Conditional Category [5]",
+      "Description": "Subcategory 5"
+    },
+    {
+      "Field": "subCategory6",
+      "Name": "Conditional Category [6]",
+      "Description": "Subcategory 6"
+    },
+    {
+      "Field": "subCategory7",
+      "Name": "Conditional Category [7]",
+      "Description": "Subcategory 7"
+    },
+    {
+      "Field": "subCategory8",
+      "Name": "Conditional Category [8]",
+      "Description": "Subcategory 8"
+    },
+    {
+      "Field": "subCategory9",
+      "Name": "Conditional Category [9]",
+      "Description": "Subcategory 9"
+    },
+    {
+      "Field": "subCategory10",
+      "Name": "Conditional Category [10]",
+      "Description": "Subcategory 10"
     },
     {
       "Field": "pad7",

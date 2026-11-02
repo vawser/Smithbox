@@ -81,12 +81,12 @@
     },
     {
       "Field": "dispMask00",
-      "Name": "Display Mask M00",
+      "Name": "Display Mask M00 (World Map)",
       "Description": "Whether to display with M00"
     },
     {
       "Field": "dispMask01",
-      "Name": "Display Mask M01",
+      "Name": "Display Mask M01 (Underground Map)",
       "Description": "Whether to display with M01"
     },
     {
@@ -95,9 +95,9 @@
       "Description": ""
     },
     {
-      "Field": "dispMask02",
-      "Name": "Display Mask M02",
-      "Description": "Whether to display with M02"
+      "Field": "dispMask10",
+      "Name": "Display Mask M10 (DLC World Map)",
+      "Description": "Whether to display with M10"
     },
     {
       "Field": "pad2_0",
@@ -370,14 +370,19 @@
       "Description": ""
     },
     {
+      "Field": "pad5",
+      "Name": "",
+      "Description": ""
+    },
+    {
       "Field": "unknown_0xb7",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "altIconId",
-      "Name": "Alternate Icon ID",
-      "Description": "Icon ID that applies when a Text Enable Flag ID is true and it's corrosponding Text Type is set to 1"
+      "Field": "iconId_npc",
+      "Name": "Icon ID: NPC Name",
+      "Description": "Icon ID when the NPC name is present"
     },
     {
       "Field": "pad4",

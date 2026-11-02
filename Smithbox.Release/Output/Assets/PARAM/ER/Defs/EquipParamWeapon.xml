@@ -1238,7 +1238,7 @@
       <SortID>30103</SortID>
     </Field>
     
-    <Field Def="u8 unknown_0x17c_5:1" FirstVersion="11210015" />
+    <Field Def="u8 isDisableGet:1" FirstVersion="11210015" />
     <Field Def="u8 quickMatchReplenish:1" FirstVersion="11210015" />
     <Field Def="u8 isWeaponCatalyst:1" FirstVersion="11210015" />
     
@@ -1947,7 +1947,18 @@
     
     <Field Def="dummy8 pad_old[8]" FirstVersion="10210038" RemovedVersion="11210015" />
     
-    <Field Def="u8 restrictSpecialSwordArt" FirstVersion="11210015" />
+    <Field Def="u8 isThrowingWep:1" FirstVersion="11210015">
+      <DisplayName>投擲武器か？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>投擲武器か？</Description>
+      <Maximum>1</Maximum>
+      <SortID>1951</SortID>
+    </Field>
+    <Field Def="dummy8 pad2:7" FirstVersion="11210015">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>100003</SortID>
+    </Field>
     
     <Field Def="dummy8 pad[7]" FirstVersion="11210015">
       <Description>pad</Description>

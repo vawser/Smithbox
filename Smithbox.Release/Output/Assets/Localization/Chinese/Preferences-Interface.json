@@ -65,6 +65,14 @@
       "Text": "启用后，内部窗口可以自由移动和停靠。"
     },
     {
+      "Key": "PREF_Interface_Tool_Window_Single_Section",
+      "Text": "一次仅显示一个工具分区"
+    },
+    {
+      "Key": "PREF_Interface_Tool_Window_Single_Section_TT",
+      "Text": "启用后，在工具窗口中展开一个分区时会隐藏其他分区，直到将其折叠。"
+    },
+    {
       "Key": "PREF_English_Font",
       "Text": "英文字体"
     },

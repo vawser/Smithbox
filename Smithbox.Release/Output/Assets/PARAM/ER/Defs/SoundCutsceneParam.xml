@@ -81,10 +81,15 @@
     
     <Field Def="dummy8 reserved_old[8]" RemovedVersion="11210015" />
     
-    <Field Def="u8 unknown_0x18" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x19" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x1a" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x1b" FirstVersion="11210015" />
+    <Field Def="f32 IgnoreStopBgmEventOnPostCutsceneEnd = -1" FirstVersion="11210015">
+      <DisplayName>カットシーン終了後に一定時間BGM停止を無視する[秒](0より小さい：無効)</DisplayName>
+      <Description>カットシーン終了後に一定時間BGM停止を無視する[秒](0より小さい：無効)(SEQ45369ワークアラウンド用)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>8</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>14</SortID>
+    </Field>
     
     <Field Def="dummy8 reserved[4]" FirstVersion="11210015" >
       <DisplayName>リザーブ</DisplayName>

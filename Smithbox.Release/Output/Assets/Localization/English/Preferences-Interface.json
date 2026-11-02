@@ -65,6 +65,14 @@
       "Text": "If enabled, the internal windows can be moved and docked freely."
     },
     {
+      "Key": "PREF_Interface_Tool_Window_Single_Section",
+      "Text": "Show One Tool Section at a Time"
+    },
+    {
+      "Key": "PREF_Interface_Tool_Window_Single_Section_TT",
+      "Text": "If enabled, opening a section in a Tools window hides the other sections until it is collapsed."
+    },
+    {
       "Key": "PREF_English_Font",
       "Text": "English Font"
     },

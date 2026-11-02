@@ -185,6 +185,11 @@
       "Description": "Items of the same group cannot be equipped at the same time"
     },
     {
+      "Field": "isDisableGet",
+      "Name": "Disable Availability",
+      "Description": "Is it unavailable in the retail version?"
+    },
+    {
       "Field": "pad3",
       "Name": "",
       "Description": ""

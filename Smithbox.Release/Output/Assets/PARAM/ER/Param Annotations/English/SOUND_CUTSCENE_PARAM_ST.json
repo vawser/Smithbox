@@ -60,29 +60,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x18",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x19",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x1a",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown_0x1b",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "reserved",
-      "Name": "",
-      "Description": ""
+      "Field": "IgnoreStopBgmEventOnPostCutsceneEnd",
+      "Name": "Duration for BGM to Persist After Cutscene End",
+      "Description": "Ignores background music (BGM) pause for a certain period after the cutscene ends [seconds] (less than 0: disabled)"
     },
     {
       "Field": "reserved2",

@@ -18,14 +18,19 @@
 		"Shaders": [
 			{
 				"Stage": "1",
-				"FileName": "FlverShader_selected.vert"
+				"FileName": "FlverShader.vert"
 			},
 			{
 				"Stage": "16",
-				"FileName": "FlverShader_selected.frag"
+				"FileName": "FlverShader.frag"
 			}
 		],
-		"Targets": []
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "SELECTED"
+			}
+		]
 	},
 	{
 		"Name": "FlverShader_blend",
@@ -41,7 +46,9 @@
 		],
 		"Targets": [],
 		"Macros": [
-			{ "Name": "MATERIAL_BLEND" }
+			{
+				"Name": "MATERIAL_BLEND"
+			}
 		]
 	},
 	{
@@ -49,16 +56,21 @@
 		"Shaders": [
 			{
 				"Stage": "1",
-				"FileName": "FlverShader_selected.vert"
+				"FileName": "FlverShader.vert"
 			},
 			{
 				"Stage": "16",
-				"FileName": "FlverShader_selected.frag"
+				"FileName": "FlverShader.frag"
 			}
 		],
 		"Targets": [],
 		"Macros": [
-			{ "Name": "MATERIAL_BLEND" }
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "SELECTED"
+			}
 		]
 	},
 	{
@@ -75,8 +87,122 @@
 		],
 		"Targets": [],
 		"Macros": [
-			{ "Name": "MATERIAL_BLEND" },
-			{ "Name": "MATERIAL_BLEND_MASK"}
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_BLEND_MASK"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_selected",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "SELECTED"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_outline",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "OUTLINE"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_blend",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "MATERIAL_BLEND"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_blend_selected",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "SELECTED"
+			}
 		]
 	},
 	{
@@ -84,17 +210,137 @@
 		"Shaders": [
 			{
 				"Stage": "1",
-				"FileName": "FlverShader_selected.vert"
+				"FileName": "FlverShader.vert"
 			},
 			{
 				"Stage": "16",
-				"FileName": "FlverShader_selected.frag"
+				"FileName": "FlverShader.frag"
 			}
 		],
 		"Targets": [],
 		"Macros": [
-			{ "Name": "MATERIAL_BLEND" },
-			{ "Name": "MATERIAL_BLEND_MASK"}
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_BLEND_MASK"
+			},
+			{
+				"Name": "SELECTED"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_focus",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "FOCUS"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blend_focus",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "FOCUS"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blendmask_focus",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_BLEND_MASK"
+			},
+			{
+				"Name": "FOCUS"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_focus",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "FOCUS"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_blend_focus",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "FOCUS"
+			}
 		]
 	}
 ]

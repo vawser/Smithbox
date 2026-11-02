@@ -18,6 +18,7 @@ public class HavokCollisionResource : IResource, IDisposable
     public HKX Hkx;
     public hkRootLevelContainer Hkx2;
     public HKLib.hk2018.hkRootLevelContainer ER_HKX;
+    public HKLib.hk2019.hkRootLevelContainer AC6_HKX;
 
     public BoundingBox Bounds { get; set; }
 
@@ -53,6 +54,16 @@ public class HavokCollisionResource : IResource, IDisposable
             var success = IsAssetCollision(ctx)
                 ? HandleHKLibAssetLoad(bytes)
                 : HandleHKLibLoad(curProject, ctx);
+
+            if (!success)
+                return false;
+        }
+        // HKLib 2019 - AC6
+        else if (curProject.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            var success = IsAssetCollision(ctx)
+                ? HandleHKLib2019AssetLoad(bytes)
+                : HandleHKLib2019Load(curProject, ctx);
 
             if (!success)
                 return false;
@@ -120,6 +131,12 @@ public class HavokCollisionResource : IResource, IDisposable
             var success = HandleHKLibLoad(curProject, ctx);
 
             if (!success)
+                return false;
+        }
+        // HKLib 2019 - AC6
+        else if (curProject.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            if (!HandleHKLib2019Load(curProject, ctx))
                 return false;
         }
         // HKX2 tagfile - SDT
@@ -218,6 +235,10 @@ public class HavokCollisionResource : IResource, IDisposable
         {
             return HKLib_Helper.LoadCollisionMesh(this, al);
         }
+        else if (curProject.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            return HKLib2019_Helper.LoadCollisionMesh(this, al);
+        }
         else if (curProject.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT)
         {
             return HKX2_Helper.LoadCollisionMesh(this, al);
@@ -252,6 +273,38 @@ public class HavokCollisionResource : IResource, IDisposable
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// AC6 asset collision holds its own types, unlike map collision which refers to a compendium.
+    /// </summary>
+    public bool HandleHKLib2019AssetLoad(Memory<byte> bytes)
+    {
+        var data = DCX.Is(bytes) ? DCX.Decompress(bytes) : bytes;
+
+        using var stream = new MemoryStream(data.ToArray());
+
+        lock (HKLibReadLock)
+        {
+            var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
+
+            AC6_HKX = (HKLib.hk2019.hkRootLevelContainer)serializer.Read(stream);
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// AC6 map collision refers to a compendium in its binder, so it is read by the HavokCollisionBank when the map
+    /// is loaded.
+    /// </summary>
+    public bool HandleHKLib2019Load(ProjectEntry curProject, ResourceLoadContext ctx)
+    {
+        var activeView = curProject.Handler.MapEditor?.ViewHandler.ActiveView;
+
+        AC6_HKX = activeView?.HavokCollisionBank.GetAC6Container(ctx.FileName);
+
+        return AC6_HKX != null;
     }
 
     /// <summary>
@@ -350,7 +403,8 @@ public class HavokCollisionResource : IResource, IDisposable
             or ProjectType.DS3
             or ProjectType.SDT
             or ProjectType.BB
-            or ProjectType.ER 
+            or ProjectType.ER
+            or ProjectType.AC6
             or ProjectType.NR
             or ProjectType.DB_NT
             or ProjectType.DB)

@@ -48,7 +48,7 @@ public class HavokBinaryReader : BinaryReaderEx
         if (Position > sectionInfo.End)
         {
             throw new InvalidOperationException(
-                $"Read past the end of section {_sectionInfos.Peek().Id}. Current Position: {Position}, Section End: {sectionInfo.End}");
+                $"Read past the end of section {sectionInfo.Id}. Current Position: {Position}, Section End: {sectionInfo.End}");
         }
 
         while (Position != sectionInfo.End)

@@ -69,6 +69,10 @@
       "Text": "Params saved."
     },
     {
+      "Key": "PARAM_Data_Skip_Save",
+      "Text": "Params have not been modified, so save was ignored: {0}"
+    },
+    {
       "Key": "PARAM_Param_Save_in_Progress",
       "Text": "Param saving already in progress."
     }

@@ -201,28 +201,28 @@
     },
     {
       "Field": "enable_live",
-      "Name": "Unknown",
+      "Name": "Enable: Live Phantom",
       "Description": ""
     },
     {
       "Field": "enable_gray",
-      "Name": "Unknown",
+      "Name": "Enable: Gray Phantom",
       "Description": ""
     },
     {
       "Field": "enable_white",
-      "Name": "Unknown",
+      "Name": "Enable: White Phantom",
       "Description": ""
     },
     {
       "Field": "enable_black",
-      "Name": "Unknown",
+      "Name": "Enable: Black Phantom",
       "Description": ""
     },
     {
       "Field": "disable_offline",
-      "Name": "Vow Type 0",
-      "Description": "No Covenant"
+      "Name": "Disable Offline",
+      "Description": ""
     },
     {
       "Field": "vowType1",
@@ -311,17 +311,17 @@
     },
     {
       "Field": "CastSfx1",
-      "Name": "VFX ID - Casting",
+      "Name": "VFX ID - Cast",
       "Description": ""
     },
     {
       "Field": "CastSfx2",
-      "Name": "VFX ID - On Cast",
+      "Name": "VFX ID - Prepare Cast",
       "Description": ""
     },
     {
       "Field": "CastSfx3",
-      "Name": "VFX ID - After Cast",
+      "Name": "VFX ID - Finish Cast",
       "Description": ""
     },
     {

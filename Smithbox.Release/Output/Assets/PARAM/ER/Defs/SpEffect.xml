@@ -2517,37 +2517,77 @@
       <Maximum>1</Maximum>
       <SortID>78100</SortID>
     </Field>
-	<Field Def="u8 isDestinedDeathHpMult:1">
-	  <Enum>SP_EFFECT_BOOL</Enum>
-	  <Maximum>1</Maximum>
-	</Field>
+	<Field Def="u8 isMaxHpExpression:1">
+      <DisplayName>最大HP減少表現をする</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>最大HP減少表現をする</Description>
+      <Maximum>1</Maximum>
+      <SortID>21500</SortID>
+    </Field>
     
 	<Field Def="u8 padbit_old:3" RemovedVersion="11210015" />
-    
-	<Field Def="u8 isHpBurnEffect:1" FirstVersion="11210015">
-	  <Enum>SP_EFFECT_BOOL</Enum>
-	  <Maximum>1</Maximum>
-	</Field>
-	<Field Def="u8 unknown_0x352_6:1" FirstVersion="11210015">
-	  <Enum>SP_EFFECT_BOOL</Enum>
-	  <Maximum>1</Maximum>
-	</Field>
-	<Field Def="u8 unknown_0x352_7:1" FirstVersion="11210015">
-	  <Enum>SP_EFFECT_BOOL</Enum>
-	  <Maximum>1</Maximum>
-	</Field>
-    
     <Field Def="dummy8 pad2[1]" RemovedVersion="11210015" >
       <DisplayName>pad</DisplayName>
       <SortID>470001</SortID>
     </Field>
     
-    <Field Def="u8 unknown_0x353_0:1" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x353_1:1" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x353_2:1" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x353_3:1" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x353_4:1" FirstVersion="11210015" />
-    <Field Def="dummy8 unknown_0x353_5:3" FirstVersion="11210015" />
+	<Field Def="u8 isUseNpcParamDamageCorrect:1">
+      <DisplayName>NPCパラメータのダメージ倍率補正を適応するか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>NPCパラメータのダメージ倍率補正を適応するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>17600</SortID>
+    </Field>
+    <Field Def="u8 excludeSpecifiedNpcOnAttackApply:1">
+      <DisplayName>特殊効果_指定エネミー除外</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>特殊効果_指定エネミー除外</Description>
+      <Maximum>1</Maximum>
+      <SortID>480000</SortID>
+    </Field>
+	<Field Def="u8 isWeakA:1">
+      <DisplayName>特攻Aか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>特攻ダメージAが効くようになる。防御側のキャラに掛ける</Description>
+      <Maximum>1</Maximum>
+      <SortID>46560</SortID>
+    </Field>
+    <Field Def="u8 isWeakB:1">
+      <DisplayName>特攻Bか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>特攻ダメージBが効くようになる。防御側のキャラに掛ける</Description>
+      <Maximum>1</Maximum>
+      <SortID>46561</SortID>
+    </Field>
+    <Field Def="u8 isWeakC:1">
+      <DisplayName>特攻Cか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>特攻ダメージCが効くようになる。防御側のキャラに掛ける</Description>
+      <Maximum>1</Maximum>
+      <SortID>46562</SortID>
+    </Field>
+    <Field Def="u8 isWeakD:1">
+      <DisplayName>特攻Dか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>特攻ダメージDが効くようになる。防御側のキャラに掛ける</Description>
+      <Maximum>1</Maximum>
+      <SortID>46563</SortID>
+    </Field>
+    <Field Def="u8 isWeakE:1">
+      <DisplayName>特攻Eか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>特攻ダメージEが効くようになる。防御側のキャラに掛ける</Description>
+      <Maximum>1</Maximum>
+      <SortID>46564</SortID>
+    </Field>
+    <Field Def="u8 isWeakF:1">
+      <DisplayName>特攻Fか？</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>特攻ダメージFが効くようになる。防御側のキャラに掛ける</Description>
+      <Maximum>1</Maximum>
+      <SortID>46565</SortID>
+    </Field>
+    <Field Def="dummy8 pad2:3" FirstVersion="11210015" />
     
     <Field Def="f32 changeSuperArmorPoint">
       <DisplayName>最大SA加算値[point]</DisplayName>

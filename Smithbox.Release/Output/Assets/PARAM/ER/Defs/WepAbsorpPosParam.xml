@@ -382,10 +382,34 @@
     
     <Field Def="dummy8 reserve_old[12]" RemovedVersion="11210015" />
     
-    <Field Def="s8 unknown_0x54" FirstVersion="11210015" />
-    <Field Def="s8 unknown_0x55" FirstVersion="11210015" />
-    <Field Def="s8 unknown_0x56" FirstVersion="11210015" />
-    <Field Def="s8 unknown_0x57" FirstVersion="11210015" />
+    <Field Def="s8 primInvisibleMask_right_0 = -1" FirstVersion="11210015">
+      <DisplayName>右手吸着時非表示マスク_1</DisplayName>
+      <Description>右手吸着時非表示マスク_1</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>127</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="s8 primInvisibleMask_right_1 = -1" FirstVersion="11210015">
+      <DisplayName>右手吸着時非表示マスク_2</DisplayName>
+      <Description>右手吸着時非表示マスク_2</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>127</Maximum>
+      <SortID>1610</SortID>
+    </Field>
+    <Field Def="s8 primInvisibleMask_left_0 = -1" FirstVersion="11210015">
+      <DisplayName>左手吸着時非表示マスク_1</DisplayName>
+      <Description>左手吸着時非表示マスク_1</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>127</Maximum>
+      <SortID>1620</SortID>
+    </Field>
+    <Field Def="s8 primInvisibleMask_left_1 = -1" FirstVersion="11210015">
+      <DisplayName>左手吸着時非表示マスク_2</DisplayName>
+      <Description>左手吸着時非表示マスク_2</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>127</Maximum>
+      <SortID>1630</SortID>
+    </Field>
     
     <Field Def="dummy8 reserve[8]" FirstVersion="11210015" >
       <DisplayName>予約領域</DisplayName>

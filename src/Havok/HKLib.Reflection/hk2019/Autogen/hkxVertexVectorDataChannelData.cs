@@ -1,0 +1,44 @@
+// Automatically Generated
+
+using System.Diagnostics.CodeAnalysis;
+
+namespace HKLib.Reflection.hk2019;
+
+internal class hkxVertexVectorDataChannelData : HavokData<HKLib.hk2019.hkxVertexVectorDataChannel> 
+{
+    public hkxVertexVectorDataChannelData(HavokType type, HKLib.hk2019.hkxVertexVectorDataChannel instance) : base(type, instance) {}
+
+    public override bool TryGetField<TGet>(string fieldName, [MaybeNull] out TGet value)
+    {
+        value = default;
+        switch (fieldName)
+        {
+            case "m_perVertexVectors":
+            case "perVertexVectors":
+            {
+                if (instance.m_perVertexVectors is not TGet castValue) return false;
+                value = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+    public override bool TrySetField<TSet>(string fieldName, TSet value)
+    {
+        switch (fieldName)
+        {
+            case "m_perVertexVectors":
+            case "perVertexVectors":
+            {
+                if (value is not List<float> castValue) return false;
+                instance.m_perVertexVectors = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+}

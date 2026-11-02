@@ -38,9 +38,23 @@
       "Field": "reportAnimMemSizeMb",
       "Name": "Send Report - Animation Memory Size MB",
       "Description": "If this value is exceeded, a report will be sent by the reporting system."
+    },{
+      "Field": "isNoRayTracing",
+      "Name": "Is No Ray Tracing",
+      "Description": "Would you like to register for the ray tracing scene? (1: Do not register 0: Register)"
     },
     {
-      "Field": "unk",
+      "Field": "rayTracingCullingMode",
+      "Name": "Ray Tracing Culling Mode",
+      "Description": "The culling mode applied during ray tracing rendering. If set to Automatic, the default value set in the program will be used."
+    },
+    {
+      "Field": "rayTracingBLASRebuildType",
+      "Name": "Ray Tracing BLAS Rebuild Type",
+      "Description": "Ray tracing BLAS rebuild settings. If set to Automatic, the default values ​​set in the program will be used. Rebuilding needs to be enabled for large objects like bosses or objects that zoom in and cover the camera."
+    },
+    {
+      "Field": "reserve",
       "Name": "",
       "Description": ""
     }

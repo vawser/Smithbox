@@ -420,9 +420,9 @@
       "Description": "Weakness damage Whether to skip animation playback. Part damage rate and defense material are treated as weak points just by not playing the animation."
     },
     {
-      "Field": "pad06",
-      "Name": "",
-      "Description": ""
+      "Field": "isDisableGet",
+      "Name": "Disable Availability",
+      "Description": "Is it unavailable in the retail version?"
     },
     {
       "Field": "defenseMaterialVariationValue_Weak",
@@ -1250,163 +1250,158 @@
       "Description": ""
     },
     {
-      "Field": "unk404_a_1",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer96",
+      "Name": "Mask 96 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_a_2",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer97",
+      "Name": "Mask 97 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_a_3",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer98",
+      "Name": "Mask 98 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_a_4",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer99",
+      "Name": "Mask 99 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_a_5",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer100",
+      "Name": "Mask 100 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_a_6",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer101",
+      "Name": "Mask 101 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_a_7",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer102",
+      "Name": "Mask 102 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_a_8",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer103",
+      "Name": "Mask 103 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_b_1",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer104",
+      "Name": "Mask 104 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_b_2",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer105",
+      "Name": "Mask 105 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_b_3",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer106",
+      "Name": "Mask 106 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_b_4",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer107",
+      "Name": "Mask 107 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_b_5",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer108",
+      "Name": "Mask 108 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_b_6",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer109",
+      "Name": "Mask 109 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_b_7",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer110",
+      "Name": "Mask 110 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_b_8",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer111",
+      "Name": "Mask 111 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_c_1",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer112",
+      "Name": "Mask 112 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_c_2",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer113",
+      "Name": "Mask 113 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_c_3",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer114",
+      "Name": "Mask 114 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_c_4",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer115",
+      "Name": "Mask 115 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_c_5",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer116",
+      "Name": "Mask 116 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_c_6",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer117",
+      "Name": "Mask 117 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_c_7",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer118",
+      "Name": "Mask 118 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_c_8",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer119",
+      "Name": "Mask 119 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_d_1",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer120",
+      "Name": "Mask 120 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_d_2",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer121",
+      "Name": "Mask 121 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_d_3",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer122",
+      "Name": "Mask 122 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_d_4",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer123",
+      "Name": "Mask 123 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_d_5",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer124",
+      "Name": "Mask 124 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_d_6",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer125",
+      "Name": "Mask 125 - Unknown",
       "Description": ""
     },
     {
-      "Field": "unk404_d_7",
-      "Name": "Mask - Unknown",
-      "Description": ""
-    },
-    {
-      "Field": "unk404_d_8",
-      "Name": "Mask - Unknown",
+      "Field": "invisibleFlag_SexVer126",
+      "Name": "Mask 126 - Unknown",
       "Description": ""
     },
     {
@@ -1415,7 +1410,7 @@
       "Description": ""
     },
     {
-      "Field": "pad408",
+      "Field": "pad406",
       "Name": "",
       "Description": ""
     }

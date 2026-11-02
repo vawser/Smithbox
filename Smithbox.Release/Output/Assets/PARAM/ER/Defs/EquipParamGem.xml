@@ -360,11 +360,11 @@
       <Maximum>1</Maximum>
       <SortID>6100</SortID>
     </Field>
-    <Field Def="dummy8 pad:1">
-      <Description>pad</Description>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>6303</SortID>
+    <Field Def="u8 isDisableGet:1">
+      <DisplayName>製品版で入手不可か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>製品版で入手不可か</Description>
+      <Maximum>1</Maximum>
     </Field>
     <Field Def="u8 defaultWepAttr">
       <DisplayName>デフォルト武器属性ID</DisplayName>
@@ -375,7 +375,19 @@
     
     <Field Def="dummy8 pad2_old[2]" RemovedVersion="11210015" />
     
-    <Field Def="u8 isSpecialSwordArt" FirstVersion="11210015" />
+    <Field Def="u8 disableMount_ThrowingWep:1" FirstVersion="11210015">
+      <DisplayName>投擲武器に装着不可か？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>投擲武器に装着不可か？</Description>
+      <Maximum>1</Maximum>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="dummy8 pad3:7" FirstVersion="11210015">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>100003</SortID>
+    </Field>
+    
     <Field Def="dummy8 pad2[1]" FirstVersion="11210015" >
       <Description>pad2</Description>
       <DisplayFormat>%d</DisplayFormat>

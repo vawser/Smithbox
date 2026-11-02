@@ -604,7 +604,12 @@
 
     <Field Def="dummy8 pad1_old:7" RemovedVersion="11210015" />
 
-    <Field Def="u8 unknown_0x73_1:1" FirstVersion="11210015" />
+    <Field Def="u8 isDisableGet:1" FirstVersion="11210015">
+      <DisplayName>製品版で入手不可か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>製品版で入手不可か</Description>
+      <Maximum>1</Maximum>
+    </Field>
     <Field Def="u8 quickMatchReplenish:1" FirstVersion="11210015">
       <SortID>2250</SortID>
     </Field>

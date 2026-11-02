@@ -5,52 +5,42 @@
   "Description": null,
   "Fields": [
     {
-      "Field": "equipModelCategory",
-      "Name": "",
+      "Field": "equipModelType",
+      "Name": "Equipment Model Type",
       "Description": ""
     },
     {
-      "Field": "equipModelGender",
-      "Name": "",
+      "Field": "equipModelGenderType",
+      "Name": "Equipment Model Gender",
       "Description": ""
     },
     {
-      "Field": "unknown0x2",
-      "Name": "",
-      "Description": ""
+      "Field": "isNoRayTracing",
+      "Name": "Is No Ray Tracing",
+      "Description": "Would you like to register for the ray tracing scene? (1: Do not register 0: Register)"
     },
     {
-      "Field": "unknown0x3",
-      "Name": "",
-      "Description": ""
+      "Field": "rayTracingCullingMode",
+      "Name": "Ray Tracing Culling Mode",
+      "Description": "The culling mode applied during ray tracing rendering. If set to Automatic, the default value set in the program will be used."
     },
     {
-      "Field": "unknown0x4",
-      "Name": "",
-      "Description": ""
+      "Field": "rayTracingBLASRebuildType",
+      "Name": "Ray Tracing BLAS Rebuild Type",
+      "Description": "Ray tracing BLAS rebuild settings. If set to Automatic, the default values ​​set in the program will be used. Rebuilding needs to be enabled for large objects like bosses or objects that zoom in and cover the camera."
     },
     {
-      "Field": "unknown0x5",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown0x6",
-      "Name": "",
-      "Description": ""
-    },
-    {
-      "Field": "unknown0x7",
+      "Field": "reserve0",
       "Name": "",
       "Description": ""
     },
     {
       "Field": "equipModelId",
-      "Name": "",
+      "Name": "Equipment Model ID",
       "Description": ""
     },
     {
-      "Field": "unknown0xa",
+      "Field": "reserve1",
       "Name": "",
       "Description": ""
     }

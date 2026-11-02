@@ -561,11 +561,11 @@
       <Maximum>1</Maximum>
       <SortID>1850</SortID>
     </Field>
-    <Field Def="dummy8 pad06:1">
-      <DisplayName>パディング</DisplayName>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>998000</SortID>
+    <Field Def="u8 isDisableGet:1">
+      <DisplayName>製品版で入手不可か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>製品版で入手不可か</Description>
+      <Maximum>1</Maximum>
     </Field>
     <Field Def="u8 defenseMaterialVariationValue_Weak">
       <DisplayName>弱点防御材質バリエーション値</DisplayName>
@@ -1564,43 +1564,194 @@
       <SortID>998808</SortID>
     </Field>
     
-    <Field Def="u8 unk404_a_1:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_a_2:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_a_3:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_a_4:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_a_5:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_a_6:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_a_7:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_a_8:1" FirstVersion="11701000" />
+    <Field Def="u8 invisibleFlag_SexVer96:2" FirstVersion="11701000" >
+      <DisplayName>#96#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>8960</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer97:2" FirstVersion="11701000" >
+      <DisplayName>#97#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>8960</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer98:2" FirstVersion="11701000" >
+      <DisplayName>#98#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>8970</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer99:2" FirstVersion="11701000" >
+      <DisplayName>#99#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>8980</SortID>
+    </Field>
     
-    <Field Def="u8 unk404_b_1:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_b_2:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_b_3:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_b_4:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_b_5:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_b_6:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_b_7:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_b_8:1" FirstVersion="11701000" />
+    <Field Def="u8 invisibleFlag_SexVer100:2" FirstVersion="11701000" >
+      <DisplayName>#100#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>8990</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer101:2" FirstVersion="11701000" >
+      <DisplayName>#101#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer102:2" FirstVersion="11701000" >
+      <DisplayName>#102#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9010</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer103:2" FirstVersion="11701000" >
+      <DisplayName>#103#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9020</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer104:2" FirstVersion="11701000">
+      <DisplayName>#104#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9030</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer105:2" FirstVersion="11701000">
+      <DisplayName>#105#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9040</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer106:2" FirstVersion="11701000">
+      <DisplayName>#106#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9050</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer107:2" FirstVersion="11701000">
+      <DisplayName>#107#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9060</SortID>
+    </Field>
     
-    <Field Def="u8 unk404_c_1:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_c_2:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_c_3:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_c_4:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_c_5:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_c_6:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_c_7:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_c_8:1" FirstVersion="11701000" />
-    
-    <Field Def="u8 unk404_d_1:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_d_2:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_d_3:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_d_4:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_d_5:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_d_6:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_d_7:1" FirstVersion="11701000" />
-    <Field Def="u8 unk404_d_8:1" FirstVersion="11701000" />
-    
-    <Field Def="dummy8 pad408[10]" FirstVersion="11701000">
+    <Field Def="u8 invisibleFlag_SexVer108:2" FirstVersion="11701000">
+      <DisplayName>#108#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9070</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer109:2" FirstVersion="11701000">
+      <DisplayName>#109#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9080</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer110:2" FirstVersion="11701000">
+      <DisplayName>#110#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9090</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer111:2" FirstVersion="11701000">
+      <DisplayName>#111#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9100</SortID>
+    </Field><Field Def="u8 invisibleFlag_SexVer112:2" FirstVersion="11701000">
+      <DisplayName>#112#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9110</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer113:2" FirstVersion="11701000">
+      <DisplayName>#113#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9120</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer114:2" FirstVersion="11701000">
+      <DisplayName>#114#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9130</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer115:2" FirstVersion="11701000">
+      <DisplayName>#115#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9140</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer116:2" FirstVersion="11701000">
+      <DisplayName>#116#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9150</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer117:2" FirstVersion="11701000">
+      <DisplayName>#117#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9160</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer118:2" FirstVersion="11701000">
+      <DisplayName>#118#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9170</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer119:2" FirstVersion="11701000">
+      <DisplayName>#119#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9180</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer120:2" FirstVersion="11701000">
+      <DisplayName>#120#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9190</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer121:2" FirstVersion="11701000">
+      <DisplayName>#121#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9200</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer122:2" FirstVersion="11701000">
+      <DisplayName>#122#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9210</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer123:2" FirstVersion="11701000">
+      <DisplayName>#123#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9220</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer124:2" FirstVersion="11701000">
+      <DisplayName>#124#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9230</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer125:2" FirstVersion="11701000">
+      <DisplayName>#125#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9240</SortID>
+    </Field>
+    <Field Def="u8 invisibleFlag_SexVer126:2" FirstVersion="11701000">
+      <DisplayName>#126#非表示(男女指定)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+      <SortID>9250</SortID>
+    </Field>
+    <Field Def="dummy8 pad406[6]" FirstVersion="11701000">
       <DisplayName>パディング</DisplayName>
       <Description>パディング</Description>
       <DisplayFormat>%d</DisplayFormat>

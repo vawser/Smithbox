@@ -213,6 +213,130 @@
       "Text": "Render"
     },
     {
+      "Key": "VIEWPORT_Menubar_Header_Materials",
+      "Text": "Materials"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Animation",
+      "Text": "Enable Material Animation"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Animation_TT",
+      "Text": "If enabled, materials that animate over time will play in the viewport. If disabled, they hold their current frame."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wind_Strength",
+      "Text": "Wind Strength"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wind_Strength_TT",
+      "Text": "How strongly vegetation moves in the viewport. The game's own wind varies by place, so this is an approximation of it."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wind_Direction",
+      "Text": "Wind Direction"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wind_Direction_TT",
+      "Text": "The direction vegetation is blown in, in degrees."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Wind",
+      "Text": "Wind"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Wind_TT",
+      "Text": "Vegetation moves in the wind."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Vertex_Animation",
+      "Text": "Vertex Animation"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Vertex_Animation_TT",
+      "Text": "Flags, cloth and creatures with baked vertex animations play them."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Sway",
+      "Text": "Sway"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Sway_TT",
+      "Text": "Hanging objects and leaves sway back and forth."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Birds",
+      "Text": "Birds"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Birds_TT",
+      "Text": "Flocks of birds flap and fly around their paths."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Layer_Blending",
+      "Text": "Layer Blending"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Layer_Blending_TT",
+      "Text": "Materials blend their texture layers. If disabled, only the first layer is shown."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Overlays",
+      "Text": "Overlay Textures"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Overlays_TT",
+      "Text": "Materials apply their detail albedo and overlay normal textures."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Magma",
+      "Text": "Magma"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Magma_TT",
+      "Text": "Magma materials give off their flowing glow."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Emissive",
+      "Text": "Emissive Textures"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Emissive_TT",
+      "Text": "Materials give off light from their emissive textures."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_UV_Scroll",
+      "Text": "UV Scrolling"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_UV_Scroll_TT",
+      "Text": "Textures that scroll keep moving."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Unlit",
+      "Text": "Sky, Clouds and Flames"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Unlit_TT",
+      "Text": "Sky, clouds and flames are drawn unlit. This stands in for the game's shaders, which rely on its scene."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Water",
+      "Text": "Water"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Water_TT",
+      "Text": "Water gets moving ripples and a smooth surface. This stands in for the game's shaders, which rely on its scene."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Fur",
+      "Text": "Fur"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Material_Fur_TT",
+      "Text": "Fur is cut out into strands instead of being drawn as solid cards."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Header_Scene_Lighting",
       "Text": "Scene Lighting"
     },
@@ -401,6 +525,14 @@
       "Text": "Determines the radius of the node mesh."
     },
     {
+      "Key": "VIEWPORT_Menubar_Setting_Label_Scale",
+      "Text": "Label Scale"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Label_Scale_TT",
+      "Text": "Determines the size of the dummy polygon ID and bone name text in the viewport."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Model_Load_Header",
       "Text": "Model Load"
     },
@@ -419,6 +551,10 @@
     {
       "Key": "VIEWPORT_Menubar_ML_Assets",
       "Text": "Assets"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Parts",
+      "Text": "Parts"
     },
     {
       "Key": "VIEWPORT_Menubar_ML_Characters",
@@ -461,7 +597,7 @@
       "Text": "Miscellaneous"
     },
     {
-      "Key": "VIEWPORT_Menubar_ML_Parts",
+      "Key": "VIEWPORT_Menubar_TL_Parts",
       "Text": "Parts"
     },
     {

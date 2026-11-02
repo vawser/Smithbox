@@ -26,10 +26,9 @@
       <DisplayFormat>%d</DisplayFormat>
       <SortID>1102</SortID>
     </Field>
-    <Field Def="u8 swordArtsType">
-      <DisplayName>剣戟ID</DisplayName>
-      <Description>ビヘイビアスクリプトに渡してどの剣戟か判定するためのもの</Description>
-      <SortID>100</SortID>
+    <Field Def="dummy8 pad2[1]">
+      <DisplayName>pad</DisplayName>
+      <SortID>1103</SortID>
     </Field>
     <Field Def="u8 artsSpeedType">
       <DisplayName>アーツ速度</DisplayName>
@@ -37,13 +36,9 @@
       <Maximum>2</Maximum>
       <SortID>200</SortID>
     </Field>
-    <Field Def="s8 refStatus">
-      <DisplayName>関連ステータス</DisplayName>
-      <Enum>SWORD_ARTS_REF_STATUS_TYPE</Enum>
-      <Description>どの系統のアーツポイントを参照するか</Description>
-      <Minimum>0</Minimum>
-      <Maximum>128</Maximum>
-      <SortID>400</SortID>
+    <Field Def="dummy8 pad3[1]">
+      <DisplayName>pad</DisplayName>
+      <SortID>1104</SortID>
     </Field>
     <Field Def="u8 isRefRightArts:1">
       <DisplayName>左手（片手持ち）時に右手のアーツを表示するか</DisplayName>
@@ -77,33 +72,9 @@
       <DisplayName>予約領域</DisplayName>
       <SortID>1103</SortID>
     </Field>
-    <Field Def="s8 usePoint_L1">
-      <DisplayName>消費ポイント L1</DisplayName>
-      <Description>L1によりアーツを出したときに消費するポイント</Description>
-      <Minimum>-1</Minimum>
-      <Maximum>99</Maximum>
-      <SortID>500</SortID>
-    </Field>
-    <Field Def="s8 usePoint_L2">
-      <DisplayName>消費ポイント L2</DisplayName>
-      <Description>L2によりアーツを出したときに消費するポイント</Description>
-      <Minimum>-1</Minimum>
-      <Maximum>99</Maximum>
-      <SortID>600</SortID>
-    </Field>
-    <Field Def="s8 usePoint_R1">
-      <DisplayName>消費ポイント R1</DisplayName>
-      <Description>R1によりアーツを出したときに消費するポイント</Description>
-      <Minimum>-1</Minimum>
-      <Maximum>99</Maximum>
-      <SortID>700</SortID>
-    </Field>
-    <Field Def="s8 usePoint_R2">
-      <DisplayName>消費ポイント R2</DisplayName>
-      <Description>R2によりアーツを出したときに消費するポイント</Description>
-      <Minimum>-1</Minimum>
-      <Maximum>99</Maximum>
-      <SortID>800</SortID>
+    <Field Def="dummy8 pad1[4]">
+      <DisplayName>pad</DisplayName>
+      <SortID>1106</SortID>
     </Field>
     <Field Def="s32 textId">
       <DisplayName>テキストID</DisplayName>

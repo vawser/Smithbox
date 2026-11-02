@@ -30,14 +30,44 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0x20",
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Icon for sign when available."
+    },
+    {
+      "Field": "forbiddenIconId",
+      "Name": "Forbidden Icon ID",
+      "Description": "Icon for sign when forbidden."
+    },
+    {
+      "Field": "dispMask00",
+      "Name": "Display Mask: M00 (World Map)",
+      "Description": "If enabled, sign appears on M00 map."
+    },
+    {
+      "Field": "dispMask01",
+      "Name": "Display Mask: M01 (Underground Map)",
+      "Description": "If enabled, sign appears on M01 map."
+    },
+    {
+      "Field": "dispMask10",
+      "Name": "Display Mask: M10 (DLC World Map)",
+      "Description": "If enabled, sign appears on M10 map."
+    },
+    {
+      "Field": "pad1",
       "Name": "",
       "Description": ""
     },
     {
-      "Field": "unknown_0x24",
-      "Name": "",
-      "Description": ""
+      "Field": "dispMinZoomStep",
+      "Name": "Display Zoomn Step",
+      "Description": "The zoom step displayed (0-2:0 is zoomed out). This is displayed when the zoom step is greater than this."
+    },
+    {
+      "Field": "selectMinZoomStep",
+      "Name": "Selectable Zoomn Step",
+      "Description": "Selectable zoom steps (0-2:0 is zoom out). Selection becomes available at zoom steps greater than this."
     },
     {
       "Field": "areaNo",
@@ -55,39 +85,39 @@
       "Description": "CC part of mAA_BB_CC_DD"
     },
     {
-      "Field": "pad3",
+      "Field": "pad2",
       "Name": "",
       "Description": ""
     },
     {
       "Field": "posX",
-      "Name": "Coordinate: X",
+      "Name": "Position: X",
       "Description": "X coordinate"
     },
     {
       "Field": "posY",
-      "Name": "Coordinate: Y",
+      "Name": "Position: Y",
       "Description": "Y coordinate (not used)"
     },
     {
       "Field": "posZ",
-      "Name": "Coordinate: Z",
+      "Name": "Position: Z",
       "Description": "Z coordinate"
     },
     {
-      "Field": "signSubCategoryId",
+      "Field": "signPuddleSubCategoryId",
       "Name": "Sign Sub Category ID",
-      "Description": ""
+      "Description": "Subcategory parameter ID (-1: Disabled). Specifies which subcategory the item belongs to. If disabled, it will not be displayed in the sign accumulation list."
     },
     {
-      "Field": "locationTextId",
+      "Field": "textId",
       "Name": "Location Text ID",
-      "Description": ""
+      "Description": "Text ID. Signature collection name."
     },
     {
-      "Field": "sortId",
+      "Field": "signPuddleSubCategorySortId",
       "Name": "Sort ID",
-      "Description": ""
+      "Description": "Subcategory sort ID. Display order (ascending) within the same subcategory."
     },
     {
       "Field": "endPad",
