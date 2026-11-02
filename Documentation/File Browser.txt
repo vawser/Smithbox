@@ -1,8 +1,12 @@
 #----------------------------------------------------
-# File Browser Features
+# File Browser TODO
 #----------------------------------------------------
-- Add File Mover utility to the File Browser: lets you move files from binders into other binders, i.e. from map-specific AI into common AI binder.
- 
-#----------------------------------------------------
-# File Browser Bugs
-#----------------------------------------------------
+
+- Introduce Data / Project directory distinction so the user knows which files are present in their mod and which are from the game data.
+ - Color the list entry differently (game data is default grey, project is light blue)
+
+- File Mover:
+    - User can define a list of internal files to 'hold'.
+    - User can then import these held files into another binder file.
+    - When files are imported, that binder file is added to project (if not already present)
+    - Example: copying AI lua files from one map AI binder to another

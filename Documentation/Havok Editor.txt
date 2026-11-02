@@ -1,11 +1,21 @@
 #----------------------------------------------------
-# Havok Editor Features
+# Havok Editor TODO
 #----------------------------------------------------
+- Unify how Havok files are handled:
+    - One single library for all versions
+    - Unify how the HavokTypeRegistry is represented
+
 - Add compatability for the other Havok versions
  - Minor changes to behavior classes for NR (most other hkx work correctly)
  - hk2019 for AC6 (may just need HKLib update
  - hk2016 for SDT
  - HKX2 for DES, DS1, DS2, DS3, BB
+ 
+ 
+- Add Category window:
+    - Lists each of the used havok categories
+        - Which is then a sub-list of each entry of that category
+        - Filters the Properties window to that specific object
 
 - Add variable binding support
  - Display in-line with clip generator
@@ -27,6 +37,7 @@
  - Read TAE files to determine which clip generators are missing (each TAE entry == one clip gen)
  - Create any missing clip gens, and append them to the associated CMSG for their anim ID
  
-#----------------------------------------------------
-# Havok Editor Bugs
-#----------------------------------------------------
+- Improve Collision Generator:
+    - Derive how the compressed mesh type can be generated
+    - Include support for more project types (contingent on compatability)
+ 

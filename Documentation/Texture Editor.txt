@@ -1,14 +1,19 @@
 #----------------------------------------------------
-# Texture Editor Features
+# Texture Editor TODO
 #----------------------------------------------------
-- add individual icon export based on subtexture
 
-- adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
-(i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
-
-- Add tool to quickly add new shoebox layout entry for supported textures
-  - Use the overlay tech from World Map to visualize the placement
+- Introduce Data / Project directory distinction so the user knows which files are present in their mod and which are from the game data.
+ - Color the list entry differently (game data is default grey, project is light blue)
  
-#----------------------------------------------------
-# Texture Editor Bugs
-#----------------------------------------------------
+- Rename Texture Viewer loc to Texture Editor
+
+- Add window for editing shoebox layouts. 
+    - Shoebox layouts should be automatically associated with the image behind the scenes
+    - Editor then displays the 'bounds' of each icon the layout defines
+    - User should be able to add a new entry either procedurally (i.e. for the icon grid, let them add a new rectangle in a logical position)
+        - For the irregular layouts, allow the user to draw the bounds (determining the four corners from that drawing)
+ 
+- Add easy export of individual icons (from shoebox supported images) via left-click context menu
+ 
+- Add support for generating 'fake' shoebox layouts for the older games as these are used for Icon Preview support in the Param Editor
+ 

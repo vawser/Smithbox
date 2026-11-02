@@ -1,11 +1,11 @@
 #----------------------------------------------------
-# Graphics Param Editor Features
+# Graphics Param Editor TODO
 #----------------------------------------------------
+
 - 3D Preview support
  - Load model
  - Approximate graphical effect from gparam
 
-#----------------------------------------------------
-# Graphics Param Editor Bugs
-#----------------------------------------------------
-- DS2 fog color values are inverted (BGR, not RGB)
+- Bug: DS2 fog color values are inverted (BGR, not RGB)
+
+- Replace Quick Edit with proper Mass Edit system

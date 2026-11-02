@@ -6,4 +6,3 @@
   Gparam Editor
   Map Editor
   
-Time Act Editor

@@ -1,32 +1,27 @@
 #----------------------------------------------------
-# Map Editor Features
+# Map Editor TODO
 #----------------------------------------------------
+
+- Fix ER NVA write
+- Fix navmesh positioning in viewport
+- Support WALL rendering/editing (SDT)
+- Support MPW (MultiPlayerWall) rendering/editing (ER)
+- Support BREAKGEOM/BREAKOBJ generation
+- Support LOADLIST editing (worldloadlistlist, ingamestay)
+- Support ENTRYFILELIST editing
+- Support Farmodel param (SDT)
+- Supoert AEP (MSB prefabs) (DB)
+
+- Separate the map collision into the two/three types so they can all be visible (keep association with single col however)
 
 - Added some kind of detection for LOD-only assets/map-pieces so we can add a toggle for hiding them quickly
-
-- Add 'camera path' authoring for new camera hkxs for cutscenes
-
-- add Object Mass Edit that allows for addition/deletion of map objects programmatically
-
 - Get gizmos to work in Orthographic/Oblique view mode
+- Add 'camera path' authoring for new camera hkxs for cutscenes
+- Add Object Mass Edit that allows for addition/deletion of map objects programmatically
 
-- "Follow" toggle / shortcut for camera that allows a selection to be 'followed' by the camera (i.e. keep look-at spot focused on selection centre and adjust camera position if translation occurs)
-
-- "Bounding Box" visualisation toggle / shortcut: display the bounding box for the selection using wire box primitives 
- 
-- Add 'Mass Replace' tool
-    - Internally similar to Global Mass Edit, but simplified so user only inputs target and replacement ChrID, NpcParam, NpcThinkParam values
-
-- Apply overhaul done to Selection Groups to Prefabs, allowing for quick and simple creation and usage.
-
-- Support MPW (MultiPlayerWall) rendering (and edit?)
-
-#----------------------------------------------------
-# Map Editor Bugs
-#----------------------------------------------------
-- fix ER NVA so saves are BP correct (currently the Write side is quite off)
-- DS3 navmeshes position seems off in some maps (Undead Settlement) 
-
-- Formats to fix:
- - ER NVA
- - DB MSB
+- Investigate:
+    - FVB: FogVolumeBank? requires format implemetation
+    - IVInfo: Irradiance Volume Info: requires format implementation
+    - EnvMap: how they are applied and how they'd be integrated into the renderer
+    - NVC: navmesh connectors?
+    - ONAV: oNav?

@@ -1,0 +1,54 @@
+#----------------------------------------------------
+# Time Act Editor TODO
+#----------------------------------------------------
+- Time Act List:
+    - Duplicate/Delete actions
+    - Export: export the .tae file
+    
+- Animations List:
+    - Re-name action
+    - Edit properties for the TAE.Entry class
+    - Create/Duplicate/Delete actions
+    - Sort action
+    - Drag and drop re-order
+    - Export: export the animation .hkx file (include mass export option)
+    
+- Action Graph:
+    - Multi-select
+        - If same, allow edits to apply change to all members of selection (displaying first entry in the properties window)
+        - If different, only display first entry in properties window and edit normally.
+        - Include support for Duplicate/Delete/Copy/Paste
+    - Drag select
+    - Select all action
+    - Filter: grays out non-matches. Can filter by event name, or value of parameters (i.e. 45 would match to the SpEffectID of a AddSpEffect_Multiplayer event)
+    
+- Properties:
+    - Expand meta:
+        - Aliases (param aliases support)
+        - Attack/Bullet/Common/PC behavior links
+        - State Info (param enum support)
+        
+- Tools:
+    - Search
+        - Supports:
+            - Animations
+            - Usage of Events
+            - Usage of values in paramters of events
+        - Include list of results, with quick links to jump to selection of animation/event
+        
+    - Mass Edit:
+        - The user experience of this interface is important. Internals can be similar to param Mass Edit.
+        - Conditions - filter by:
+            - Animation
+            - Event (and parameters + values)
+        
+        - Commands - apply edits (for X animations, or if X event is present with Y parameter value)
+            - Value Change: set/add/subtract/multiply/divide
+            - Add Event
+            - Delete Event
+            - Move Event: adjusts frame timing
+            
+    - Combo Builder:
+        - User can define a set of animations for X model
+        - Combo builder can then allow them to be played in order
+        - Used to help visualize what a moveset could look like.
