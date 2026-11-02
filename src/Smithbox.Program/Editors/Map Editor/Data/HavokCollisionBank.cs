@@ -495,15 +495,106 @@ public class HavokCollisionBank
 
     public bool SaveMapCollisionFiles(string mapId)
     {
-        // Havok 2019 files can't be written, and AC6 collision is display only
         if (Project.Descriptor.ProjectType is ProjectType.AC6)
-            return true;
+        {
+            var ac6Success = SaveAC6MapCollision(mapId, "h");
+            ac6Success &= SaveAC6MapCollision(mapId, "l");
+            ac6Success &= SaveAC6MapCollision(mapId, "f");
+
+            return ac6Success;
+        }
 
         var success = SaveMapCollision(mapId, "h");
         success &= SaveMapCollision(mapId, "l");
         success &= SaveMapCollision(mapId, "f");
 
         return success;
+    }
+
+    /// <summary>
+    /// Writes the loaded collision of an AC6 map back into its binder. The binder's compendium is loaded first, so the
+    /// written files refer to it like the original files do.
+    /// </summary>
+    public bool SaveAC6MapCollision(string mapId, string type)
+    {
+        var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
+        var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
+
+        // Not every map has every collision type, so a missing binder is not a failure
+        if (!Project.VFS.FS.FileExists(bdtPath) || !Project.VFS.FS.FileExists(bhdPath))
+            return true;
+
+        try
+        {
+            var bdtData = Project.VFS.ProjectFS.FileExists(bdtPath)
+                ? Project.VFS.ProjectFS.ReadFile(bdtPath)
+                : Project.VFS.FS.ReadFile(bdtPath);
+            var bhdData = Project.VFS.ProjectFS.FileExists(bhdPath)
+                ? Project.VFS.ProjectFS.ReadFile(bhdPath)
+                : Project.VFS.FS.ReadFile(bhdPath);
+
+            if (bdtData == null || bhdData == null)
+                return true;
+
+            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+            var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
+
+            var compendiumFile = packedBinder.Files.FirstOrDefault(e => e.Name.Contains(".compendium"));
+            if (compendiumFile != null)
+            {
+                using var compendiumStream = new MemoryStream(DCX.Decompress(compendiumFile.Bytes).ToArray());
+                serializer.LoadCompendium(compendiumStream);
+            }
+
+            var success = true;
+            var anyWritten = false;
+
+            foreach (var file in packedBinder.Files)
+            {
+                var parts = file.Name.Split('\\');
+
+                if (parts.Length != 2 || !file.Name.Contains(".hkx.dcx"))
+                    continue;
+
+                var name = parts[1];
+
+                if (!AC6Containers.TryGetValue(name, out var container))
+                    continue;
+
+                try
+                {
+                    // Keep the compression of the original file
+                    DCX.Decompress(file.Bytes, out DCX.Type compression);
+
+                    using var memoryStream = new MemoryStream();
+                    serializer.Write(container, memoryStream);
+
+                    file.Bytes = DCX.Compress(memoryStream.ToArray(), compression);
+                    anyWritten = true;
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
+                    success = false;
+                }
+            }
+
+            if (!anyWritten)
+                return success;
+
+            packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
+
+            Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
+            Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
+
+            return success;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_HKXBND", bdtPath), e);
+            return false;
+        }
     }
 
     public bool SaveMapCollision(string mapId, string type)

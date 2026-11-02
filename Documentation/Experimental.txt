@@ -10,6 +10,9 @@
 
 - SFX Renderer/Editor
 
+- HKS intepreter (to link with behaviors and animation playback)
+    - Work allow for powerful visualization of movesets
+
 - Cutscene Editor
     - Cutscenes are staged in maps + a set of parts associated with the cutscene
     - Typically animations play on the camera + parts

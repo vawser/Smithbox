@@ -55,13 +55,17 @@ public class IndexItem
 
     public void WriteObjects(HavokBinaryWriter writer, BinarySerializeContext context)
     {
-        writer.Pad(AlignmentOverride ?? Type.Alignment);
+        // arrays are aligned to 16 bytes, except for strings
+        writer.Pad(AlignmentOverride ?? (Kind == ItemKind.Array ? Math.Max(16, Type.Alignment) : Type.Alignment));
         Offset = writer.Position;
         if (Objects is null || Objects.Length == 0) throw new InvalidOperationException("Objects haven't been set");
 
+        context.BeginItem(this);
         foreach (object obj in Objects)
         {
             FormatHandler.Write(writer, Type, obj, context);
         }
+
+        context.EndItem(writer);
     }
 }

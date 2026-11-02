@@ -282,6 +282,9 @@ internal class ArrayFormatHandler<T> : ArrayFormatHandler
             case "hkRelArray":
                 WriteHkRelArray(writer, type, value, context);
                 break;
+            case "hkRelArray32":
+                WriteHkRelArray32(writer, type, value, context);
+                break;
             case "T[N]":
                 WriteArray(writer, type, value, context);
                 break;
@@ -333,6 +336,24 @@ internal class ArrayFormatHandler<T> : ArrayFormatHandler
         return list;
     }
 
+    /// <summary>
+    /// Unlike hkRelArray, the pointer of a hkRelArray32 is patched.
+    /// </summary>
+    private static void WriteHkRelArray32(HavokBinaryWriter writer, HavokType type, object? value,
+        BinarySerializeContext context)
+    {
+        if (value is not List<T> { Count: > 0 } list)
+        {
+            writer.WriteUInt64(0);
+            return;
+        }
+
+        ulong pointer = EnqueueList(writer, type, context, list, 4);
+        context.RegisterPatch(type, writer.Position);
+        writer.WriteUInt32((uint)pointer);
+        writer.WriteUInt32(0);
+    }
+
     private static void WriteHkRelArray(HavokBinaryWriter writer, HavokType type, object? value,
         BinarySerializeContext context)
     {
@@ -349,7 +370,7 @@ internal class ArrayFormatHandler<T> : ArrayFormatHandler
             return;
         }
 
-        ulong pointer = EnqueueList(writer, type, context, list);
+        ulong pointer = EnqueueList(writer, type, context, list, 4);
         writer.WriteUInt32((uint)pointer);
     }
 
@@ -394,8 +415,9 @@ internal class ArrayFormatHandler<T> : ArrayFormatHandler
         writer.WriteUInt64(0);
     }
 
+    /// <param name="pointerSize">Size of the pointer which is written for the list, 4 for hkRelArray</param>
     private static ulong EnqueueList(HavokBinaryWriter writer, HavokType type, BinarySerializeContext context,
-        List<T> list)
+        List<T> list, int pointerSize = 8)
     {
         object[] objects = new object[list.Count];
         for (int i = 0; i < list.Count; i++)
@@ -403,7 +425,7 @@ internal class ArrayFormatHandler<T> : ArrayFormatHandler
             objects[i] = list[i]!;
         }
 
-        ulong pointer = context.Enqueue(type.SubType!, writer.Position, objects, list);
+        ulong pointer = context.Enqueue(type.SubType!, writer.Position, objects, list, pointerSize);
         return pointer;
     }
 
