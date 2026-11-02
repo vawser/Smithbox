@@ -285,8 +285,9 @@ public class HavokNavmeshResource : IResource, IDisposable
             indexCount += (f.m_numEdges - 2) * 3;
         }
 
-        VertexCount = indexCount * 3;
-        IndexCount = indexCount * 3;
+        // indexCount already counts each triangle's 3 indices, and every index gets its own vertex
+        VertexCount = indexCount;
+        IndexCount = indexCount;
         var buffersize = (uint)IndexCount * 4u;
         var vbuffersize = (uint)VertexCount * NavmeshLayout.SizeInBytes;
         GeomBuffer =
@@ -506,8 +507,9 @@ public class HavokNavmeshResource : IResource, IDisposable
             indexCount += (f.NumEdges - 2) * 3;
         }
 
-        VertexCount = indexCount * 3;
-        IndexCount = indexCount * 3;
+        // indexCount already counts each triangle's 3 indices, and every index gets its own vertex
+        VertexCount = indexCount;
+        IndexCount = indexCount;
         var buffersize = (uint)IndexCount * 4u;
         var vbuffersize = (uint)VertexCount * NavmeshLayout.SizeInBytes;
         GeomBuffer =

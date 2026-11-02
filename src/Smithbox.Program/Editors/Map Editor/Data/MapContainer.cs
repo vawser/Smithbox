@@ -205,7 +205,7 @@ public class MapContainer : ObjectContainer
 
     /// <summary>
     ///     The map offset used to transform BTL lights, DS2 Generators, and Navmesh.
-    ///     Only DS2, Bloodborne, DS3, and Sekiro define map offsets.
+    ///     Only DS2, Bloodborne, DS3, Sekiro, and AC6 define map offsets.
     /// </summary>
     public Transform MapOffset
     {
@@ -310,6 +310,13 @@ public class MapContainer : ObjectContainer
                 var t = Transform.Default;
                 t.Position = mo4.Position;
                 t.EulerRotation = new Vector3(0f, Utils.DegToRadians(mo4.RotationY), 0f);
+                MapOffset = t;
+            }
+            else if (p is MSB_AC6.Event.MapOffset mo5)
+            {
+                var t = Transform.Default;
+                t.Position = mo5.Translation;
+                t.EulerRotation = new Vector3(0f, Utils.DegToRadians(mo5.Rotation), 0f);
                 MapOffset = t;
             }
 
