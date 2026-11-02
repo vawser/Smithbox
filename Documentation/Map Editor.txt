@@ -3,7 +3,7 @@
 #----------------------------------------------------
 
 - Fix ER NVA write
-- Fix navmesh positioning in viewport
+- Fix navmesh positioning in viewport (DS3)
 - Support WALL rendering/editing (SDT)
 - Support MPW (MultiPlayerWall) rendering/editing (ER)
 - Support BREAKGEOM/BREAKOBJ generation
@@ -11,8 +11,6 @@
 - Support ENTRYFILELIST editing
 - Support Farmodel param (SDT)
 - Supoert AEP (MSB prefabs) (DB)
-
-- Separate the map collision into the two/three types so they can all be visible (keep association with single col however)
 
 - Added some kind of detection for LOD-only assets/map-pieces so we can add a toggle for hiding them quickly
 - Get gizmos to work in Orthographic/Oblique view mode

@@ -339,9 +339,6 @@ namespace SoulsFormats
             {
                 for (int i = 0; i < Count; i++)
                     this[i].Write(bw, Version, i);
-
-                for (int i = 0; i < Count; i++)
-                    this[i].WriteNameRefs(bw, Version, i);
             }
         }
 
@@ -386,8 +383,22 @@ namespace SoulsFormats
             /// </summary>
             public int FaceCount { get; set; }
             public int Unk4C { get; set; }
-            public bool IsConnectedNavmeshesInline { get; set; }
 
+            /// <summary>
+            /// Unknown; only present in version 4. Usually 2.4, sometimes 2.0.
+            /// Occupies the slot used by the connected navmesh count in older versions.
+            /// </summary>
+            public float Unk44 { get; set; }
+
+            /// <summary>
+            /// Unknown; only present in version 4. Usually 0xFF01, also seen as 0xFF00, 0x1, 0x101, 0x201 and 0x301.
+            /// </summary>
+            public int Unk50 { get; set; }
+
+            /// <summary>
+            /// Connected navmesh indices for versions below 4 (max 16).
+            /// In version 4 this is a fixed block of 12 ints, which is always zero in shipped files.
+            /// </summary>
             public List<int> ConnectedNavmeshes { get; set; }
             /// <summary>
             /// Adjacent nodes in an inter-navmesh graph.
@@ -396,7 +407,6 @@ namespace SoulsFormats
 
             private short GateNodeIndex;
             private short GateNodeCount;
-            private int ConnectedNavmeshesCount;
 
             /// <summary>
             /// Creates a Navmesh with default values.
@@ -408,9 +418,8 @@ namespace SoulsFormats
 
                 ConnectedNavmeshes = new List<int>();
                 GateNodes = new List<GateNode>();
-                // No clue. Maybe a sentinel value for when 
-                // ConnectedNavmeshes is inline (even though unkOffset seems to also do that?)
-                ConnectedNavmeshesCount = 1075419545;
+                Unk44 = 2.4f;
+                Unk50 = 0xFF01;
             }
 
             internal Navmesh(BinaryReaderEx br, int version)
@@ -429,39 +438,33 @@ namespace SoulsFormats
                 FaceDataIndex = br.ReadInt32();
                 Unk3C = br.ReadInt32();
                 FaceCount = br.ReadInt32();
-                ConnectedNavmeshesCount = br.ReadInt32();
+
+                int connectedNavmeshesCount = 0;
+                if (version < 4)
+                    connectedNavmeshesCount = br.ReadInt32();
+                else
+                    Unk44 = br.ReadSingle();
+
                 GateNodeIndex = br.ReadInt16();
                 GateNodeCount = br.ReadInt16();
                 Unk4C = br.ReadInt32();
 
                 if (version < 4)
                 {
-                    if (ConnectedNavmeshesCount > 16)
+                    if (connectedNavmeshesCount > 16)
                         throw new InvalidDataException("Connected navmeshes count should not exceed 16 in DS3/BB.");
-                    ConnectedNavmeshes = new List<int>(br.ReadInt32s(ConnectedNavmeshesCount));
-                    for (int i = 0; i < 16 - ConnectedNavmeshesCount; i++)
+                    ConnectedNavmeshes = new List<int>(br.ReadInt32s(connectedNavmeshesCount));
+                    for (int i = 0; i < 16 - connectedNavmeshesCount; i++)
                         br.AssertInt32(-1);
                 }
                 else
                 {
-                    int unkOffset = br.ReadInt32();
+                    // Version 4 entries are always 0x90 bytes; the trailing ints are inline, never offset-referenced.
+                    Unk50 = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
-
-                    if (unkOffset == 0xFF01)
-                    {
-                        IsConnectedNavmeshesInline = true;
-                        ConnectedNavmeshes = new List<int>(br.ReadInt32s(12));
-                    }
-                    else if (ConnectedNavmeshesCount > 0)
-                    {
-                        ConnectedNavmeshes = new List<int>(br.GetInt32s(unkOffset, ConnectedNavmeshesCount));
-                    }
-                    else
-                    {
-                        ConnectedNavmeshes = new List<int>();
-                    }
+                    ConnectedNavmeshes = new List<int>(br.ReadInt32s(12));
                 }
             }
 
@@ -497,7 +500,12 @@ namespace SoulsFormats
                 bw.WriteInt32(FaceDataIndex);
                 bw.WriteInt32(Unk3C);
                 bw.WriteInt32(FaceCount);
-                bw.WriteInt32(IsConnectedNavmeshesInline ? ConnectedNavmeshesCount : ConnectedNavmeshes.Count);
+
+                if (version < 4)
+                    bw.WriteInt32(ConnectedNavmeshes.Count);
+                else
+                    bw.WriteSingle(Unk44);
+
                 bw.WriteInt16(GateNodeIndex);
                 bw.WriteInt16((short)GateNodes.Count);
                 bw.WriteInt32(Unk4C);
@@ -512,40 +520,15 @@ namespace SoulsFormats
                 }
                 else
                 {
-                    if (IsConnectedNavmeshesInline)
-                    {
-                        bw.WriteInt32(0xFF01);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        for (int i = 0; i < 12; i++)
-                        {
-                            bw.WriteInt32(i < ConnectedNavmeshes.Count ? ConnectedNavmeshes[i] : 0);
-                        }
-                    }
-                    else
-                    {
-                        bw.ReserveInt32($"UnkOffset{index}");
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                    }
-                }
-            }
+                    if (ConnectedNavmeshes.Count > 12)
+                        throw new InvalidDataException("Connected navmeshes count should not exceed 12 in ER.");
 
-            internal void WriteNameRefs(BinaryWriterEx bw, int version, int index)
-            {
-                if (version >= 4 && !IsConnectedNavmeshesInline)
-                {
-                    if (ConnectedNavmeshes.Count > 0)
-                    {
-                        bw.FillInt32($"UnkOffset{index}", (int)bw.Position);
-                        bw.WriteInt32s(ConnectedNavmeshes);
-                    }
-                    else
-                    {
-                        bw.FillInt32($"UnkOffset{index}", 0);
-                    }
+                    bw.WriteInt32(Unk50);
+                    bw.WriteInt32(0);
+                    bw.WriteInt32(0);
+                    bw.WriteInt32(0);
+                    for (int i = 0; i < 12; i++)
+                        bw.WriteInt32(i < ConnectedNavmeshes.Count ? ConnectedNavmeshes[i] : 0);
                 }
             }
         }
