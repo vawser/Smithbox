@@ -143,6 +143,13 @@ public static class HKX2_Helper
                 }
             }
 
+            // TEMP: SDT collision diagnostics
+            if (submeshes.Count == 0)
+            {
+                var shapes = string.Join(", ", physicsscene.m_systemDatas.SelectMany(s => s.m_bodyCinfos).Select(b => b.m_shape?.GetType().Name ?? "null"));
+                Smithbox.Log(typeof(HKX2_Helper), $"[SDT Collision] No meshes built. Body shapes: {shapes}");
+            }
+
             resource.GPUMeshes = submeshes.ToArray();
         }
 
@@ -435,7 +442,7 @@ public static class HKX2_Helper
         }
     }
 
-    private static Vector3 TransformVert(Vector3 vert, hknpBodyCinfo body)
+    public static Vector3 TransformVert(Vector3 vert, hknpBodyCinfo body)
     {
         Vector3 vector3_1 = new Vector3(vert.X, vert.Y, vert.Z);
         if (body == null)

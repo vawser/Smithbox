@@ -69,6 +69,9 @@ public enum RenderFilter
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_DummyAsset")]
     DummyAsset = 1048576,
 
+    [Display(Name = "VIEWPORT_ENUM_RenderFilter_Wall")]
+    Wall = 2097152,
+
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_All")]
     All = 0xFFFFFFF
 }

@@ -242,7 +242,12 @@ public class VulkanViewport : IViewport
             CanInteract = ImGui.IsWindowFocused();
 
             ClickSelection.Update();
-            BoxSelection.Update();
+
+            // Dragging paints while walls are being painted, so it mustn't start a box selection
+            if (!IsWallPainting())
+            {
+                BoxSelection.Update();
+            }
 
             if (loadPanelHeight > 0)
             {
@@ -288,11 +293,20 @@ public class VulkanViewport : IViewport
 
         bool kbbusy = false;
 
-        if (!Gizmos.IsMouseBusy() && !BoxSelection.IsBoxSelecting() && CanInteract && MouseInViewport())
+        var canPick = !Gizmos.IsMouseBusy() && !BoxSelection.IsBoxSelecting() && CanInteract && MouseInViewport();
+
+        // Only the active viewport is updated, so it is the one that paints
+        var painting = Owner is MapUniverse mapUniverse &&
+                       mapUniverse.View.WallPaintTool.HandleViewportInput(ray, canPick);
+
+        if (canPick)
         {
             kbbusy = ViewportCamera.UpdateInput(window, dt);
 
-            ClickSelection.HandlePickingRequest();
+            if (!painting)
+            {
+                ClickSelection.HandlePickingRequest();
+            }
         }
 
         //Gizmos.DebugGui();
@@ -330,6 +344,11 @@ public class VulkanViewport : IViewport
         }
 
         return false;
+    }
+
+    private bool IsWallPainting()
+    {
+        return Owner is MapUniverse mapUniverse && mapUniverse.View.WallPaintTool.IsPainting;
     }
 
     public void HandleCompass()

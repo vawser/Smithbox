@@ -354,6 +354,7 @@ public class MapUniverse : IUniverse
                 }
 
                 View.HavokCollisionBank.OnUnloadMap(curMapID);
+                View.WallBank.OnUnloadMap(curMapID);
                 View.HavokNavmeshBank.OnUnloadMap(curMapID);
 
                 if (wrapper != null)
@@ -554,6 +555,11 @@ public class MapUniverse : IUniverse
         {
             SaveFile(map, MapFileType.Collision, () => View.HavokCollisionBank.SaveMapCollisionFiles(map.Name));
             SaveFile(map, MapFileType.Navmesh, () => View.HavokNavmeshBank.SaveHavokNavmeshModels(map.Name));
+        }
+
+        if (Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            SaveFile(map, MapFileType.Wall, () => View.WallBank.SaveWalls(map.Name));
         }
 
         if (ShouldSaveFile(map, MapFileType.MSB))

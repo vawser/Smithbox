@@ -120,7 +120,7 @@ public static class ModelLocator
             ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/{model}.hkx.dcx";
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/hi";
         }
-        else if (project.Descriptor.ProjectType == ProjectType.DS3 || project.Descriptor.ProjectType == ProjectType.BB)
+        else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
         {
             if (targetType is HavokCollisionType.High)
             {

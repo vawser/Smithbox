@@ -246,6 +246,14 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_WallPaint && View.Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            if (ToolSections.Header("Wall Painting"))
+            {
+                View.WallPaintTool.OnToolWindow();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
         {
             View.GridTool.OnToolWindow();
@@ -340,6 +348,15 @@ public class MapToolWindow
                 CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization = !CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization);
+
+            if (View.Project.Descriptor.ProjectType is ProjectType.SDT)
+            {
+                if (ImGui.MenuItem("Wall Painting"))
+                {
+                    CFG.Current.Interface_MapEditor_Tool_WallPaint = !CFG.Current.Interface_MapEditor_Tool_WallPaint;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_WallPaint);
+            }
 
             if (ImGui.MenuItem("Viewport Configuration"))
             {

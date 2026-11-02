@@ -23,6 +23,12 @@ namespace StudioCore.Editors.Common;
 public record EdgePointMesh(RenderableProxy Mesh, Matrix4x4 LocalTransform);
 
 /// <summary>
+/// A batch of the cells of a WALL file, which is placed relative to its collision part.
+/// The primitive is held so its geometry can be freed along with the mesh.
+/// </summary>
+public record WallMesh(RenderableProxy Mesh, DbgPrimWallCells Primitive);
+
+/// <summary>
 /// A logical map object that can be either a part, region, event, or light. Uses reflection to access and update properties
 /// </summary>
 public class Entity : ISelectable, IDisposable
@@ -49,6 +55,7 @@ public class Entity : ISelectable, IDisposable
     private RenderableProxy _selectionFillMesh;
     private IReadOnlyList<RenderableProxy> _grassSceneMeshes;
     private IReadOnlyList<EdgePointMesh> _edgePointMeshes;
+    private IReadOnlyList<WallMesh> _wallMeshes;
 
     /// <summary>
     /// Cached name for the entity.
@@ -174,6 +181,7 @@ public class Entity : ISelectable, IDisposable
                 SelectionFillMesh = null;
                 GrassSceneMeshes = null;
                 EdgePointMeshes = null;
+                WallMeshes = null;
             }
         }
         get => _renderSceneMesh;
@@ -276,6 +284,30 @@ public class Entity : ISelectable, IDisposable
             ApplyMeshState();
         }
         get => _edgePointMeshes;
+    }
+
+    /// <summary>
+    /// The meshes displaying the WALL file of this collision part, placed relative to it.
+    /// </summary>
+    [XmlIgnore]
+    public IReadOnlyList<WallMesh> WallMeshes
+    {
+        set
+        {
+            if (_wallMeshes != null)
+            {
+                foreach (WallMesh entry in _wallMeshes)
+                {
+                    entry.Mesh.Dispose();
+                    entry.Primitive.Release();
+                }
+            }
+
+            _wallMeshes = value;
+
+            ApplyMeshState();
+        }
+        get => _wallMeshes;
     }
 
     /// <summary>
@@ -437,6 +469,14 @@ public class Entity : ISelectable, IDisposable
                 }
             }
 
+            if (_wallMeshes != null)
+            {
+                foreach (WallMesh entry in _wallMeshes)
+                {
+                    entry.Mesh.Visible = _EditorVisible;
+                }
+            }
+
             foreach (Entity child in Children)
             {
                 child.EditorVisible = _EditorVisible;
@@ -491,6 +531,14 @@ public class Entity : ISelectable, IDisposable
         if (_edgePointMeshes != null)
         {
             foreach (EdgePointMesh entry in _edgePointMeshes)
+            {
+                entry.Mesh.RenderFocusGhost = ghosted;
+            }
+        }
+
+        if (_wallMeshes != null)
+        {
+            foreach (WallMesh entry in _wallMeshes)
             {
                 entry.Mesh.RenderFocusGhost = ghosted;
             }
@@ -1685,6 +1733,11 @@ public class Entity : ISelectable, IDisposable
                 {
                     EdgePointMeshes = null;
                 }
+
+                if (WallMeshes != null)
+                {
+                    WallMeshes = null;
+                }
             }
 
             disposedValue = true;
@@ -1769,6 +1822,14 @@ public class Entity : ISelectable, IDisposable
             foreach (EdgePointMesh entry in _edgePointMeshes)
             {
                 ApplyProxyState(entry.Mesh, entry.LocalTransform * t, useRenderGroups);
+            }
+        }
+
+        if (_wallMeshes != null)
+        {
+            foreach (WallMesh entry in _wallMeshes)
+            {
+                ApplyProxyState(entry.Mesh, t, useRenderGroups);
             }
         }
     }

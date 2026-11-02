@@ -245,6 +245,18 @@
       "Text": "Failed to read the EDGE data of {0}."
     },
     {
+      "Key": "MAP_Wall_Failed_To_Read",
+      "Text": "Failed to read the WALL data of {0}."
+    },
+    {
+      "Key": "MAP_Wall_Failed_To_Write",
+      "Text": "Failed to write the WALL data of {0}."
+    },
+    {
+      "Key": "MAP_Wall_Save_PASS",
+      "Text": "Saved the WALL data of {0}."
+    },
+    {
       "Key": "MAP_Data_Setup_Aux_Bank_FAIL",
       "Text": "Failed to setup Auxiliary MSB Bank for {0}."
     },

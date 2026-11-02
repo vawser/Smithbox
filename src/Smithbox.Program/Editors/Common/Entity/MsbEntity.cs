@@ -85,6 +85,7 @@ public class MsbEntity : Entity
                 AssignObjectCollisionDrawable();
                 RefreshGrass();
                 RefreshEdgePoints();
+                RefreshWalls();
                 break;
 
             case MsbEntityType.Region:
@@ -435,6 +436,75 @@ public class MsbEntity : Entity
     {
         mesh.DrawFilter = RenderFilter.EdgePoint;
         meshes.Add(new EdgePointMesh(mesh, local));
+    }
+
+    /// <summary>
+    /// The model name the displayed (or requested) walls were built from. Null if there are none.
+    /// </summary>
+    [XmlIgnore]
+    public string WallKey { get; set; }
+
+    /// <summary>
+    /// Requests the walls of this collision part. Only does anything while they are displayed and when they have changed.
+    /// </summary>
+    public void RefreshWalls()
+    {
+        if (Type is not MsbEntityType.Part || Owner is not MapUniverse curUniverse)
+            return;
+
+        curUniverse.Project.Handler.MapData.WallBank?.Request(this);
+    }
+
+    public void ClearWalls()
+    {
+        WallKey = null;
+        WallMeshes = null;
+    }
+
+    /// <summary>
+    /// Displays the cells of a WALL file, in a batch of meshes for each color. They can't be selected,
+    /// so clicks reach the collision behind them.
+    /// </summary>
+    public void ApplyWalls(WallCells cells)
+    {
+        var scene = (Owner as MapUniverse).GetCurrentScene();
+
+        List<WallMesh> meshes = new();
+
+        AddWallMeshes(meshes, scene, cells.Walls, CFG.Current.Viewport_Wall_Color);
+        AddWallMeshes(meshes, scene, cells.OtherCollisionWalls, CFG.Current.Viewport_Wall_Other_Collision_Color);
+        AddWallMeshes(meshes, scene, cells.None, CFG.Current.Viewport_Wall_None_Color);
+
+        WallMeshes = meshes;
+    }
+
+    private void AddWallMeshes(List<WallMesh> meshes, RenderScene scene,
+        List<(Vector3 A, Vector3 B, Vector3 C)> triangles, Vector3 color)
+    {
+        for (var start = 0; start < triangles.Count; start += DbgPrimWallCells.MaxTriangles)
+        {
+            var count = Math.Min(DbgPrimWallCells.MaxTriangles, triangles.Count - start);
+            var primitive = new DbgPrimWallCells(triangles.GetRange(start, count));
+
+            meshes.Add(new WallMesh(CreateWallProxy(scene, primitive, color), primitive));
+        }
+    }
+
+    /// <summary>
+    /// A translucent, unselectable mesh for wall cells, which only shows while walls are displayed.
+    /// </summary>
+    public static DebugPrimitiveRenderableProxy CreateWallProxy(RenderScene scene, IDbgPrim primitive, Vector3 color)
+    {
+        var fill = ColorHelper.GetTransparencyColor(color / 255.0f, CFG.Current.Viewport_Wall_Alpha);
+
+        return new DebugPrimitiveRenderableProxy(scene.OpaqueRenderables, primitive)
+        {
+            Pickable = false,
+            RenderTranslucent = true,
+            BaseColor = fill,
+            HighlightedColor = fill,
+            DrawFilter = RenderFilter.Wall
+        };
     }
 
     /// <summary>

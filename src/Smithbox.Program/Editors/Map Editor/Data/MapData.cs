@@ -39,6 +39,7 @@ public class MapData : IDisposable
     public HavokCollisionBank HavokCollisionBank;
     public GrassBank GrassBank;
     public EdgeBank EdgeBank;
+    public WallBank WallBank;
     public HavokNavmeshBank HavokNavmeshBank;
     public AutoInvadeBank AutoInvadeBank;
     public LightAtlasBank LightAtlasBank;
@@ -81,6 +82,7 @@ public class MapData : IDisposable
         HavokCollisionBank = new HavokCollisionBank(Project);
         GrassBank = new GrassBank(Project);
         EdgeBank = new EdgeBank(Project);
+        WallBank = new WallBank(Project);
         HavokNavmeshBank = new HavokNavmeshBank(Project);
         AutoInvadeBank = new AutoInvadeBank(Project);
         LightAtlasBank = new LightAtlasBank(Project);

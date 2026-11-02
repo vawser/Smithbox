@@ -98,6 +98,16 @@ public class BasicFilters
             View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.EdgePoint;
         }
 
+        // Same as the above
+        if (CFG.Current.MapEditor_BasicFilter_Wall)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.Wall;
+        }
+        else
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.Wall;
+        }
+
         if (!CFG.Current.MapEditor_BasicFilter_Navmesh)
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
@@ -292,6 +302,16 @@ public class BasicFilters
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.EdgePoint);
             GUI.ShowActiveStatus(ticked);
             GUI.Tooltip(LOC.Get("MAP_Filters_Edge_Points_TT"));
+
+            if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Walls_Title")}##toggleFilter_Wall"))
+            {
+                View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Wall);
+                CFG.Current.MapEditor_BasicFilter_Wall = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Wall);
+                View.DelayPicking();
+            }
+            ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Wall);
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip(LOC.Get("MAP_Filters_Walls_TT"));
         }
 
         // Navmesh

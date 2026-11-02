@@ -33,6 +33,7 @@ public class MapEditorView : IEditorView
     public HavokCollisionBank HavokCollisionBank => Project.Handler.MapData.HavokCollisionBank;
     public GrassBank GrassBank => Project.Handler.MapData.GrassBank;
     public EdgeBank EdgeBank => Project.Handler.MapData.EdgeBank;
+    public WallBank WallBank => Project.Handler.MapData.WallBank;
     public HavokNavmeshBank HavokNavmeshBank => Project.Handler.MapData.HavokNavmeshBank;
     public LightAtlasBank LightAtlasBank => Project.Handler.MapData.LightAtlasBank;
     public LightProbeBank LightProbeBank => Project.Handler.MapData.LightProbeBank;
@@ -113,6 +114,7 @@ public class MapEditorView : IEditorView
     public PatrolDrawManager PatrolDrawManager;
     public CompassTool CompassTool;
     public EnemyAIVisualizationTool EnemyAIVisualizationTool;
+    public WallPaintTool WallPaintTool;
 
     public ResourceListTool ResourceListTool;
 
@@ -202,6 +204,7 @@ public class MapEditorView : IEditorView
         PatrolDrawManager = new PatrolDrawManager(this);
         CompassTool = new CompassTool(this, project);
         EnemyAIVisualizationTool = new EnemyAIVisualizationTool(this, project);
+        WallPaintTool = new WallPaintTool(this, project);
 
         ResourceListTool = new ResourceListTool();
 

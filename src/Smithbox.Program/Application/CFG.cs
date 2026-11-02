@@ -347,6 +347,7 @@ public class CFG
     public bool MapEditor_BasicFilter_Grass = false;
     public float MapEditor_Grass_Density = 1f;
     public bool MapEditor_BasicFilter_EdgePoint = false;
+    public bool MapEditor_BasicFilter_Wall = false;
     public bool MapEditor_BasicFilter_Navmesh = true;
     public bool MapEditor_BasicFilter_SpeedTree = true;
     public bool MapEditor_BasicFilter_InvasionPoint = true;
@@ -518,6 +519,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_DisplayGroups = true;
     public bool Interface_MapEditor_Tool_Validation = true;
     public bool Interface_MapEditor_Tool_EnemyAIVisualization = true;
+    public bool Interface_MapEditor_Tool_WallPaint = true;
     public bool Interface_MapEditor_Tool_AssetBrowser = true;
     public bool Interface_MapEditor_Tool_ViewportConfig = true;
 
@@ -1223,6 +1225,11 @@ public class CFG
     public Vector3 Viewport_Collision_Color = new Vector3(53, 157, 255);
     public Vector3 Viewport_High_Collision_Color = new Vector3(255, 160, 40);
     public Vector3 Viewport_FallProtection_Collision_Color = new Vector3(70, 210, 90);
+    public Vector3 Viewport_Wall_Color = new Vector3(40, 200, 255);
+    public Vector3 Viewport_Wall_Other_Collision_Color = new Vector3(190, 90, 255);
+    public Vector3 Viewport_Wall_None_Color = new Vector3(255, 60, 60);
+    public Vector3 Viewport_Wall_Hover_Color = new Vector3(255, 255, 255);
+    public float Viewport_Wall_Alpha = 45.0f;
     public Vector3 Viewport_Connect_Collision_Color = new Vector3(146, 57, 158);
     public Vector3 Viewport_Navmesh_Color = new Vector3(157, 53, 255);
     public Vector3 Viewport_Navmesh_Gate_Color = new Vector3(50, 220, 0);

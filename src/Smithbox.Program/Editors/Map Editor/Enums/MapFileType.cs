@@ -21,5 +21,10 @@ public enum MapFileType
     ACB = 1 << 5,
     NVA = 1 << 6,
     Collision = 1 << 7,
-    Navmesh = 1 << 8
+    Navmesh = 1 << 8,
+
+    /// <summary>
+    /// The WALL files of the collisions (SDT)
+    /// </summary>
+    Wall = 1 << 9
 }

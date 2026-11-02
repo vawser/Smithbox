@@ -2,7 +2,6 @@
 # Map Editor TODO
 #----------------------------------------------------
 
-- Fix ER NVA write
 - Fix navmesh positioning in viewport (DS3)
 - Support WALL rendering/editing (SDT)
 - Support MPW (MultiPlayerWall) rendering/editing (ER)

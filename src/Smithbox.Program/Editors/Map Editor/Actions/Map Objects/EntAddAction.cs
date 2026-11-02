@@ -171,6 +171,7 @@ public class EntAddAction : ViewportAction
             Added[i].SelectionFillMesh = null;
             (Added[i] as MsbEntity)?.ClearGrass();
             (Added[i] as MsbEntity)?.ClearEdgePoints();
+            (Added[i] as MsbEntity)?.ClearWalls();
         }
 
         View.ViewportSelection.ClearSelection();

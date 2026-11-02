@@ -91,5 +91,87 @@ namespace HKX2
             float z = ((float)((vertex >> 22) & 0x3FF)) * scale.Z + offset.Z;
             return new Vector3(x, y, z);
         }
+
+        /// <summary>
+        /// Gets a vertex of a primitive, which is either packed in its section or shared between sections.
+        /// </summary>
+        public Vector3 GetPrimitiveVertex(hkcdStaticMeshTreeBaseSection section, byte index)
+        {
+            var sharedVerticesLength = section.m_sharedVertices.m_data & 0xFF;
+            var sharedVerticesIndex = section.m_sharedVertices.m_data >> 8;
+
+            if (index < sharedVerticesLength)
+            {
+                var offset = new Vector3(section.m_codecParms_0, section.m_codecParms_1, section.m_codecParms_2);
+                var scale = new Vector3(section.m_codecParms_3, section.m_codecParms_4, section.m_codecParms_5);
+                return DecompressPackedVertex(m_meshTree.m_packedVertices[(int)(index + section.m_firstPackedVertex)], scale, offset);
+            }
+
+            var shared = m_meshTree.m_sharedVerticesIndex[(int)(index + sharedVerticesIndex - sharedVerticesLength)];
+            return DecompressSharedVertex(m_meshTree.m_sharedVertices[shared], m_meshTree.m_domain.m_min, m_meshTree.m_domain.m_max);
+        }
+
+        /// <summary>
+        /// Builds the shape key of a triangle. Keys are filled from the top bit down with the section, the
+        /// primitive within it, and which half of a quad the triangle is, with the bits that aren't used set.
+        /// </summary>
+        public uint GetShapeKey(int sectionIndex, int primitiveIndex, int quadHalf)
+        {
+            var bits = (int)m_meshTree.m_bitsPerKey;
+            var key = (uint)((sectionIndex << 8) | (primitiveIndex << 1) | quadHalf);
+            var unused = 32 - bits;
+
+            return (key << unused) | (uint)((1L << unused) - 1);
+        }
+
+        /// <summary>
+        /// Gets the corners of the triangle with the given shape key, in local space. The second half of a
+        /// quad uses its first, third and fourth vertices. Returns false if the key isn't a triangle of this mesh.
+        /// </summary>
+        public bool TryGetShapeKeyTriangle(uint shapeKey, out Vector3 a, out Vector3 b, out Vector3 c)
+        {
+            a = b = c = default;
+
+            var bits = (int)m_meshTree.m_bitsPerKey;
+            if (bits <= 1 || bits > 32)
+                return false;
+
+            var value = shapeKey >> (32 - bits);
+            var sectionIndex = (int)(value >> 8);
+            var primitiveIndex = (int)((value >> 1) & 0x7F);
+            var quadHalf = (int)(value & 1);
+
+            if (sectionIndex >= m_meshTree.m_sections.Count)
+                return false;
+
+            var section = m_meshTree.m_sections[sectionIndex];
+            if (primitiveIndex >= (section.m_primitives.m_data & 0xFF))
+                return false;
+
+            var primitive = m_meshTree.m_primitives[primitiveIndex + (int)(section.m_primitives.m_data >> 8)];
+
+            // Marks a shape that isn't a mesh primitive
+            if (primitive.m_indices_0 == 0xDE && primitive.m_indices_1 == 0xAD && primitive.m_indices_2 == 0xDE &&
+                primitive.m_indices_3 == 0xAD)
+                return false;
+
+            var isQuad = primitive.m_indices_2 != primitive.m_indices_3;
+            if (quadHalf == 1 && !isQuad)
+                return false;
+
+            a = GetPrimitiveVertex(section, primitive.m_indices_0);
+            if (quadHalf == 0)
+            {
+                b = GetPrimitiveVertex(section, primitive.m_indices_1);
+                c = GetPrimitiveVertex(section, primitive.m_indices_2);
+            }
+            else
+            {
+                b = GetPrimitiveVertex(section, primitive.m_indices_2);
+                c = GetPrimitiveVertex(section, primitive.m_indices_3);
+            }
+
+            return true;
+        }
     }
 }

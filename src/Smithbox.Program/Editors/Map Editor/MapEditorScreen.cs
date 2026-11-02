@@ -567,6 +567,12 @@ public class MapEditorScreen : EditorScreen
             view.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.EdgePoint));
 
         ViewHandler.ActiveView?.EdgeBank.Update(showEdgePoints);
+
+        // Same as the above
+        var showWalls = ViewHandler.Views.Any(view => view != null &&
+            view.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Wall));
+
+        ViewHandler.ActiveView?.WallBank.Update(showWalls);
     }
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)

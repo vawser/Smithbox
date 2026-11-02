@@ -286,6 +286,7 @@ public class EntDuplicateAction : ViewportAction
             Clones[i].SelectionFillMesh = null;
             Clones[i].ClearGrass();
             Clones[i].ClearEdgePoints();
+            Clones[i].ClearWalls();
         }
 
         // The clones no longer exist, so hand the selection (and its outline) back to the originals

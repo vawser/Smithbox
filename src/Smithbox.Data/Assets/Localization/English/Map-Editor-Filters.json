@@ -121,6 +121,14 @@
       "Text": "Toggle the display of the EDGE points of collisions and objects: the grapple points, hangable ledges and huggable walls. These are read when first displayed, and can't be selected or edited here."
     },
     {
+      "Key": "MAP_Filters_Walls_Title",
+      "Text": "Walls"
+    },
+    {
+      "Key": "MAP_Filters_Walls_TT",
+      "Text": "Toggle the display of the WALL files of collisions: which parts of the low collision are walls, and which are not. These are read when first displayed, and can be painted with the Wall Painting tool."
+    },
+    {
       "Key": "MAP_Filters_Navmeshes_Title",
       "Text": "Navmeshes"
     },

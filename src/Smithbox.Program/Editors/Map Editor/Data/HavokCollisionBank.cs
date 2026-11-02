@@ -13,6 +13,11 @@ public class HavokCollisionBank
 
     public Dictionary<string, hkRootLevelContainer> HavokContainers = new Dictionary<string, hkRootLevelContainer>();
 
+    /// <summary>
+    /// Sekiro collision, which is read as tagfiles into the HKX2 classes. Keyed by file name, like HavokContainers.
+    /// </summary>
+    public Dictionary<string, HKX2.hkRootLevelContainer> TagContainers = new();
+
     public Dictionary<string, List<string>> MapCollisions = new();
 
     private bool ObjectCollisionVisible = false;
@@ -101,6 +106,11 @@ public class HavokCollisionBank
     public void Clear()
     {
         HavokContainers.Clear();
+
+        lock (TagContainers)
+        {
+            TagContainers.Clear();
+        }
     }
 
     public void OnLoadMap(string mapId)
@@ -119,6 +129,100 @@ public class HavokCollisionBank
             LoadMapCollision(mapId, "l");
             LoadMapCollision(mapId, "f");
         }
+
+        if (Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            if (!MapCollisions.ContainsKey(mapId))
+                MapCollisions.Add(mapId, new List<string>());
+
+            LoadTagMapCollision(mapId, "h");
+            LoadTagMapCollision(mapId, "l");
+        }
+    }
+
+    /// <summary>
+    /// Gets the collision of a Sekiro map, e.g. l10_00_00_00_000100.hkx.dcx. Null if it isn't loaded.
+    /// </summary>
+    public HKX2.hkRootLevelContainer GetTagContainer(string fileName)
+    {
+        lock (TagContainers)
+        {
+            return TagContainers.GetValueOrDefault(fileName);
+        }
+    }
+
+    /// <summary>
+    /// Reads the collision of a Sekiro map. These are tagfiles that refer to a compendium held in the same binder.
+    /// The files don't depend on each other, so they are read in parallel.
+    /// </summary>
+    private void LoadTagMapCollision(string mapId, string type)
+    {
+        using var __scope = Profiler.TracyZoneAuto();
+
+        var bdtPath = Path.Join("map", mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
+        var bhdPath = Path.Join("map", mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
+
+        if (!Project.VFS.FS.FileExists(bdtPath) || !Project.VFS.FS.FileExists(bhdPath))
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_HKXBND", bdtPath));
+            return;
+        }
+
+        try
+        {
+            var bdtData = Project.VFS.FS.ReadFile(bdtPath);
+            var bhdData = Project.VFS.FS.ReadFile(bhdPath);
+
+            if (bdtData == null || bhdData == null)
+                return;
+
+            using var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+            HKX2.TagFileDeserializer.Compendium compendium = null;
+
+            var compendiumFile = packedBinder.Files.FirstOrDefault(e => e.Name.Contains(".compendium"));
+            if (compendiumFile != null)
+            {
+                compendium = HKX2.TagFileDeserializer.ReadCompendium(DCX.Decompress(compendiumFile.Bytes).ToArray());
+            }
+
+            var files = packedBinder.Files
+                .Where(e => e.Name.Contains(".hkx.dcx") && e.Name.Split('\\').Length == 2)
+                .ToList();
+
+            Parallel.ForEach(files, file =>
+            {
+                var name = file.Name.Split('\\')[1];
+
+                try
+                {
+                    var fileBytes = DCX.Decompress(file.Bytes).ToArray();
+                    var container = new HKX2.TagFileDeserializer().Deserialize(fileBytes, compendium) as HKX2.hkRootLevelContainer;
+
+                    if (container == null)
+                        return;
+
+                    lock (TagContainers)
+                    {
+                        if (TagContainers.TryAdd(name, container))
+                        {
+                            MapCollisions[mapId].Add(name);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", name), ex);
+                }
+            });
+
+            // TEMP: SDT collision diagnostics
+            Smithbox.Log(this, $"[SDT Collision] {bhdPath}: {files.Count} hkx files, {MapCollisions[mapId].Count(n => n.StartsWith(type))} read, compendium {(compendium != null ? "found" : "missing")}");
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", bdtPath), e);
+        }
     }
 
     public void OnUnloadMap(string mapId)
@@ -131,6 +235,11 @@ public class HavokCollisionBank
         foreach (var name in collisionNames)
         {
             HavokContainers.Remove(name);
+
+            lock (TagContainers)
+            {
+                TagContainers.Remove(name);
+            }
         }
 
         MapCollisions.Remove(mapId);
