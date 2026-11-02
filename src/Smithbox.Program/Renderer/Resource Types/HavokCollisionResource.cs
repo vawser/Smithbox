@@ -12,8 +12,6 @@ namespace StudioCore.Renderer;
 
 public class HavokCollisionResource : IResource, IDisposable
 {
-    private static readonly object HKLibReadLock = new();
-
     public CollisionSubmesh[] GPUMeshes;
     public HKX Hkx;
     public hkRootLevelContainer Hkx2;
@@ -256,8 +254,6 @@ public class HavokCollisionResource : IResource, IDisposable
 
     /// <summary>
     /// Asset collision isn't tied to a loaded map, so it isn't held by the HavokCollisionBank and is read here.
-    /// The HavokBinarySerializer doesn't work with the parallel nature of the Resource Manager, so only one read
-    /// is done at a time.
     /// </summary>
     public bool HandleHKLibAssetLoad(Memory<byte> bytes)
     {
@@ -265,12 +261,9 @@ public class HavokCollisionResource : IResource, IDisposable
 
         using var stream = new MemoryStream(data.ToArray());
 
-        lock (HKLibReadLock)
-        {
-            var serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
+        var serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
 
-            ER_HKX = (HKLib.hk2018.hkRootLevelContainer)serializer.Read(stream);
-        }
+        ER_HKX = (HKLib.hk2018.hkRootLevelContainer)serializer.Read(stream);
 
         return true;
     }
@@ -284,12 +277,9 @@ public class HavokCollisionResource : IResource, IDisposable
 
         using var stream = new MemoryStream(data.ToArray());
 
-        lock (HKLibReadLock)
-        {
-            var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
+        var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
 
-            AC6_HKX = (HKLib.hk2019.hkRootLevelContainer)serializer.Read(stream);
-        }
+        AC6_HKX = (HKLib.hk2019.hkRootLevelContainer)serializer.Read(stream);
 
         return true;
     }
@@ -352,9 +342,8 @@ public class HavokCollisionResource : IResource, IDisposable
         // file name already carries the prefix of its type (h, l or f)
         var filename = ctx.FileName;
 
-        // HKX for ER is loaded directly in HavokCollisionManager
-        // This is required since the parallel nature of the
-        // Resource Manager doesn't work with the HavokBinarySerializer
+        // Map collision for ER refers to a compendium in its binder,
+        // so it is read by the HavokCollisionBank when the map is loaded
         if (activeView.HavokCollisionBank.HavokContainers.ContainsKey(filename))
         {
             ER_HKX = activeView.HavokCollisionBank.HavokContainers[filename];

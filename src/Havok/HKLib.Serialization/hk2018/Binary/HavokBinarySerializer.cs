@@ -5,6 +5,10 @@ using HKLib.Serialization.hk2018.Binary.Util;
 
 namespace HKLib.Serialization.hk2018.Binary;
 
+/// <summary>
+/// Reads and writes Havok 2018 tagfiles. Reads keep their state per call, so once a compendium is loaded, one serializer
+/// can read files on several threads at once.
+/// </summary>
 public class HavokBinarySerializer : HavokSerializer
 {
     private HavokCompendium? _compendium;

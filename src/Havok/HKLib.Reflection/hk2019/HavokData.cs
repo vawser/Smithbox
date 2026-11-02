@@ -1,5 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
+﻿using System.Collections.Concurrent;
+using System.Diagnostics.CodeAnalysis;
 using HKLib.hk2019;
 
 namespace HKLib.Reflection.hk2019;
@@ -10,7 +10,10 @@ namespace HKLib.Reflection.hk2019;
 /// </summary>
 public abstract class HavokData
 {
-    private static readonly Dictionary<Type, Type> ReflectorCache = new();
+    // Files are read in parallel, so the reflector of a type may be looked up by several threads at once
+    private static readonly ConcurrentDictionary<Type, Type> ReflectorCache = new();
+
+    private static readonly Type[] AssemblyTypes = typeof(HavokData).Assembly.GetTypes();
 
     internal HavokData(HavokType type)
     {
@@ -82,38 +85,34 @@ public abstract class HavokData
     /// </summary>
     public static HavokData Of<T>(T obj, HavokType type) where T : class, IHavokObject
     {
-        Type objectType = obj.GetType();
-        if (!ReflectorCache.TryGetValue(objectType, out Type? reflectorType))
-        {
-            if (objectType.IsConstructedGenericType)
-            {
-                // it's not possible to create a partially open generic type so we have to create the final closed type for each type we test
-                Type[] genericArguments = objectType.GetGenericArguments();
-                Type reflectorParentType = typeof(HavokData<>).MakeGenericType(objectType);
-                reflectorType = Assembly.GetAssembly(typeof(HavokData))!.GetTypes()
-                    .Where(x => x.IsGenericType && x.Namespace == reflectorParentType.Namespace)
-                    .Select(x =>
-                    {
-                        // performing checks in advance should be faster than catching exceptions
-                        Type[] args = x.GetGenericArguments();
-                        if (args.Length != genericArguments.Length) return null;
-                        return args.Any(typeArg => typeArg.GetGenericParameterConstraints().Length != 0)
-                            ? null
-                            : x.MakeGenericType(genericArguments);
-                    })
-                    .Single(x => x?.IsSubclassOf(reflectorParentType) ?? false)!;
-            }
-            else
-            {
-                Type reflectorParentType = typeof(HavokData<>).MakeGenericType(objectType);
-                reflectorType = Assembly.GetAssembly(typeof(HavokData))!.GetTypes()
-                    .Single(x => x.IsSubclassOf(reflectorParentType))!;
-            }
-
-            ReflectorCache.Add(objectType, reflectorType);
-        }
+        Type reflectorType = ReflectorCache.GetOrAdd(obj.GetType(), FindReflectorType);
 
         return (HavokData)Activator.CreateInstance(reflectorType, type, obj)!;
+    }
+
+    private static Type FindReflectorType(Type objectType)
+    {
+        Type reflectorParentType = typeof(HavokData<>).MakeGenericType(objectType);
+
+        if (!objectType.IsConstructedGenericType)
+        {
+            return AssemblyTypes.Single(x => x.IsSubclassOf(reflectorParentType));
+        }
+
+        // it's not possible to create a partially open generic type so we have to create the final closed type for each type we test
+        Type[] genericArguments = objectType.GetGenericArguments();
+        return AssemblyTypes
+            .Where(x => x.IsGenericType && x.Namespace == reflectorParentType.Namespace)
+            .Select(x =>
+            {
+                // performing checks in advance should be faster than catching exceptions
+                Type[] args = x.GetGenericArguments();
+                if (args.Length != genericArguments.Length) return null;
+                return args.Any(typeArg => typeArg.GetGenericParameterConstraints().Length != 0)
+                    ? null
+                    : x.MakeGenericType(genericArguments);
+            })
+            .Single(x => x?.IsSubclassOf(reflectorParentType) ?? false)!;
     }
 
     /// <summary>

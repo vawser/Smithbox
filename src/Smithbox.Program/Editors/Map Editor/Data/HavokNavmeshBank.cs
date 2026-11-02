@@ -96,19 +96,24 @@ public class HavokNavmeshBank
 
                 var binder = new BND4Reader(binderData.Value);
 
-                foreach (var file in binder.Files)
-                {
-                    var name = Path.GetFileNameWithoutExtension(file.Name);
+                // The binder is read on this thread, then the files are read in parallel as they don't depend on each other
+                var files = binder.Files
+                    .Select(file => (Name: Path.GetFileNameWithoutExtension(file.Name), Bytes: binder.ReadFile(file).ToArray()))
+                    .ToList();
 
-                    var FileBytes = binder.ReadFile(file).ToArray();
+                var containers = new object[files.Count];
+
+                Parallel.For(0, files.Count, i =>
+                {
+                    var name = files[i].Name;
 
                     try
                     {
-                        using (MemoryStream memoryStream = new MemoryStream(FileBytes))
+                        using (MemoryStream memoryStream = new MemoryStream(files[i].Bytes))
                         {
                             try
                             {
-                                ReadNavmeshFile(name, memoryStream);
+                                containers[i] = ReadNavmeshFile(memoryStream);
                             }
                             catch (InvalidDataException ex)
                             {
@@ -119,6 +124,20 @@ public class HavokNavmeshBank
                     catch (Exception ex)
                     {
                         Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_NVA_HKX", name), ex);
+                    }
+                });
+
+                // Added in binder order on this thread, as the containers are read elsewhere without a lock
+                for (int i = 0; i < files.Count; i++)
+                {
+                    switch (containers[i])
+                    {
+                        case HKLib.hk2019.hkRootLevelContainer ac6Container:
+                            AC6_Containers.TryAdd(files[i].Name, ac6Container);
+                            break;
+                        case hkRootLevelContainer container:
+                            HKX3_Containers.TryAdd(files[i].Name, container);
+                            break;
                     }
                 }
             }
@@ -136,18 +155,14 @@ public class HavokNavmeshBank
     /// <summary>
     /// Reads a navmesh file of the binder, with the HKLib version the project uses. Each file holds its own types.
     /// </summary>
-    private void ReadNavmeshFile(string name, Stream stream)
+    private object ReadNavmeshFile(Stream stream)
     {
         if (Project.Descriptor.ProjectType is ProjectType.AC6)
         {
-            var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
-            AC6_Containers.TryAdd(name, (HKLib.hk2019.hkRootLevelContainer)serializer.Read(stream));
+            return (HKLib.hk2019.hkRootLevelContainer)new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer().Read(stream);
         }
-        else
-        {
-            var serializer = new HavokBinarySerializer();
-            HKX3_Containers.TryAdd(name, (hkRootLevelContainer)serializer.Read(stream));
-        }
+
+        return (hkRootLevelContainer)new HavokBinarySerializer().Read(stream);
     }
 
     /// <summary>

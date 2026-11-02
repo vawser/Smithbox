@@ -8,7 +8,6 @@
 - Fix navmesh positioning in viewport (DS3)
 - Support for NVVA (AC6 flying nav)
 
-- Map loads with HKLib based collisions/navmeshes are too slow. HKLib needs to be adjusted to allow them to be loaded in parallel.
 - Add option to control collision mesh transparency, mainly to make it easier to work with
 - Added some kind of detection for LOD-only assets/map-pieces so we can add a toggle for hiding them quickly
 - Get gizmos to work in Orthographic/Oblique view mode
@@ -26,3 +25,5 @@
     - EnvMap: how they are applied and how they'd be integrated into the renderer
     - NVC: navmesh connectors?
     - ONAV: oNav?
+    
+    aeg506_990

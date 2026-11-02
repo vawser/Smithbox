@@ -206,25 +206,36 @@ public class HavokCollisionBank
             }
 
             var files = packedBinder.Files
-                .Where(e => e.Name.Contains(".hkx.dcx") && e.Name.Split('\\').Length == 2);
+                .Where(e => e.Name.Contains(".hkx.dcx") && e.Name.Split('\\').Length == 2)
+                .ToList();
 
-            foreach (var file in files)
+            // The files don't depend on each other, so they are read in parallel.
+            // Reads only share the compendium, so one serializer serves every thread.
+            var containers = new HKLib.hk2019.hkRootLevelContainer[files.Count];
+
+            Parallel.For(0, files.Count, i =>
             {
-                var name = file.Name.Split('\\')[1];
+                var name = files[i].Name.Split('\\')[1];
 
                 try
                 {
-                    using var stream = new MemoryStream(DCX.Decompress(file.Bytes).ToArray());
-                    var container = (HKLib.hk2019.hkRootLevelContainer)serializer.Read(stream);
-
-                    if (AC6Containers.TryAdd(name, container))
-                    {
-                        MapCollisions[mapId].Add(name);
-                    }
+                    using var stream = new MemoryStream(DCX.Decompress(files[i].Bytes).ToArray());
+                    containers[i] = (HKLib.hk2019.hkRootLevelContainer)serializer.Read(stream);
                 }
                 catch (Exception ex)
                 {
                     Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", name), ex);
+                }
+            });
+
+            // Added in binder order on this thread, as the containers are read elsewhere without a lock
+            for (int i = 0; i < files.Count; i++)
+            {
+                var name = files[i].Name.Split('\\')[1];
+
+                if (containers[i] != null && AC6Containers.TryAdd(name, containers[i]))
+                {
+                    MapCollisions[mapId].Add(name);
                 }
             }
         }
@@ -383,45 +394,45 @@ public class HavokCollisionBank
                     serializer.LoadCompendium(memoryStream);
                 }
 
-                foreach (var file in packedBinder.Files)
+                var files = packedBinder.Files
+                    .Where(e => e.Name.Contains(".hkx.dcx") && e.Name.Split('\\').Length == 2)
+                    .ToList();
+
+                // The files don't depend on each other, so they are read in parallel.
+                // Reads only share the compendium, so one serializer serves every thread.
+                var containers = new hkRootLevelContainer[files.Count];
+
+                Parallel.For(0, files.Count, i =>
                 {
-                    var parts = file.Name.Split('\\');
-
-                    if (parts.Length != 2)
-                        continue;
-
-                    var name = parts[1];
-
-                    if (!file.Name.Contains(".hkx.dcx"))
-                        continue;
-
-                    var FileBytes = DCX.Decompress(file.Bytes).ToArray();
+                    var name = files[i].Name.Split('\\')[1];
 
                     try
                     {
-                        using (MemoryStream memoryStream = new MemoryStream(FileBytes))
+                        using var memoryStream = new MemoryStream(DCX.Decompress(files[i].Bytes).ToArray());
+
+                        try
                         {
-                            hkRootLevelContainer fileHkx;
-                            try
-                            {
-                                fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
-
-                                if (!HavokContainers.ContainsKey(name))
-                                {
-                                    HavokContainers.Add(name, fileHkx);
-
-                                    MapCollisions[mapId].Add(name);
-                                }
-                            }
-                            catch (InvalidDataException ex)
-                            {
-                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", name), ex);
-                            }
+                            containers[i] = (hkRootLevelContainer)serializer.Read(memoryStream);
+                        }
+                        catch (InvalidDataException ex)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", name), ex);
                         }
                     }
                     catch (Exception ex)
                     {
                         Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
+                    }
+                });
+
+                // Added in binder order on this thread, as the containers are read elsewhere without a lock
+                for (int i = 0; i < files.Count; i++)
+                {
+                    var name = files[i].Name.Split('\\')[1];
+
+                    if (containers[i] != null && HavokContainers.TryAdd(name, containers[i]))
+                    {
+                        MapCollisions[mapId].Add(name);
                     }
                 }
             }

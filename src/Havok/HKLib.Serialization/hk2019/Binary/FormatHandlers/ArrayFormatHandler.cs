@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Collections.Concurrent;
+using System.Numerics;
 using HKLib.Serialization.hk2019.Binary.Util;
 using HKLib.ValueTypes;
 using HavokType = HKLib.Reflection.hk2019.HavokType;
@@ -7,17 +8,13 @@ namespace HKLib.Serialization.hk2019.Binary.FormatHandlers;
 
 internal abstract class ArrayFormatHandler
 {
-    private static readonly Dictionary<Type, ArrayFormatHandler> ArrayFormatHandlers = new();
+    // Files are read in parallel, so the handler of a type may be looked up by several threads at once
+    private static readonly ConcurrentDictionary<Type, ArrayFormatHandler> ArrayFormatHandlers = new();
 
     private static ArrayFormatHandler GetFormatHandler(Type subType)
     {
-        if (ArrayFormatHandlers.TryGetValue(subType, out ArrayFormatHandler? arrayFormatHandler))
-            return arrayFormatHandler;
-
-        Type formatHandlerType = typeof(ArrayFormatHandler<>).MakeGenericType(subType);
-        ArrayFormatHandler formatHandler = (ArrayFormatHandler)Activator.CreateInstance(formatHandlerType)!;
-        ArrayFormatHandlers.Add(subType, formatHandler);
-        return formatHandler;
+        return ArrayFormatHandlers.GetOrAdd(subType, static type =>
+            (ArrayFormatHandler)Activator.CreateInstance(typeof(ArrayFormatHandler<>).MakeGenericType(type))!);
     }
 
     public static object Read(HavokBinaryReader reader, HavokType type, BinaryDeserializeContext context)
