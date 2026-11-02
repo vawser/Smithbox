@@ -60,4 +60,22 @@ public class MapActionHandler
         Smithbox.Log(this, LOC.Get("MAP_MCG_MCP_Log_Generated"));
     }
 
+    /// <summary>
+    /// Generate Break Data (BREAKOBJ/BREAKGEOM) from the saved MSBs of the loaded maps, or of every map
+    /// </summary>
+    public void GenerateBreakData(bool loadedMapsOnly)
+    {
+        var mapIds = Project.Handler.MapData.PrimaryBank.Maps
+            .Where(e => !loadedMapsOnly || e.Value.MapContainer != null)
+            .Select(e => e.Key.Filename)
+            .ToList();
+
+        if (mapIds.Count == 0)
+        {
+            Smithbox.Log(this, LOC.Get("MAP_Break_Data_No_Maps"));
+            return;
+        }
+
+        Project.Handler.MapData.BreakDataGenerator.GenerateTask(mapIds);
+    }
 }

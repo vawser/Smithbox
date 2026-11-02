@@ -27,6 +27,7 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary DS2_LightFiles = new();
     public FileDictionary NavmeshFiles = new();
     public FileDictionary MultiPlayerWallFiles = new();
+    public FileDictionary BreakFiles = new();
     public FileDictionary AutoInvadeFiles = new();
     public FileDictionary LightAtlasFiles = new();
     public FileDictionary LightProbeFiles = new();
@@ -327,6 +328,7 @@ public class ProjectFileLocator : IDisposable
         var ds2LightFiles = new HashSet<FileDictionaryEntry>();
         var navmeshFiles = new HashSet<FileDictionaryEntry>();
         var multiPlayerWallFiles = new HashSet<FileDictionaryEntry>();
+        var breakFiles = new HashSet<FileDictionaryEntry>();
         var autoInvadeFiles = new HashSet<FileDictionaryEntry>();
         var lightAtlasFiles = new HashSet<FileDictionaryEntry>();
         var lightProbeFiles = new HashSet<FileDictionaryEntry>();
@@ -422,6 +424,10 @@ public class ProjectFileLocator : IDisposable
             // Multiplayer walls (ER)
             if (isMap && ext == "mpw" && !isSd)
                 multiPlayerWallFiles.Add(entry);
+
+            // Break data (DS2 keeps its breakobj files outside of /map)
+            if ((ext == "breakobj" || ext == "breakgeom") && !isSd)
+                breakFiles.Add(entry);
 
             // Auto invade
             if (folder.StartsWith("/other") && ext == "aipbnd" && !isSd)
@@ -545,6 +551,7 @@ public class ProjectFileLocator : IDisposable
         DS2_LightFiles.Entries = ds2LightFiles;
         NavmeshFiles.Entries = navmeshFiles;
         MultiPlayerWallFiles.Entries = multiPlayerWallFiles;
+        BreakFiles.Entries = breakFiles;
         AutoInvadeFiles.Entries = autoInvadeFiles;
         LightAtlasFiles.Entries = lightAtlasFiles;
         LightProbeFiles.Entries = lightProbeFiles;
@@ -725,6 +732,7 @@ public class ProjectFileLocator : IDisposable
         DS2_LightFiles = null;
         NavmeshFiles = null;
         MultiPlayerWallFiles = null;
+        BreakFiles = null;
         CollisionFiles = null;
         AutoInvadeFiles = null;
         LightAtlasFiles = null;

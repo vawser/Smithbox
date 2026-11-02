@@ -1,4 +1,5 @@
 ﻿using StudioCore.Editors.ParamEditor;
+using StudioCore.Formats;
 using StudioCore.Logger;
 using System.Text;
 using System.Text.Encodings.Web;
@@ -46,6 +47,7 @@ public class MapData : IDisposable
     public LightAtlasBank LightAtlasBank;
     public LightProbeBank LightProbeBank;
     public AssetConfigurationBank AssetConfigurationBank;
+    public BreakDataGenerator BreakDataGenerator;
 
     /// <summary>
     /// The maps in focus, with every other loaded map ghosted. Empty if nothing is focused.
@@ -90,6 +92,7 @@ public class MapData : IDisposable
         LightAtlasBank = new LightAtlasBank(Project);
         LightProbeBank = new LightProbeBank(Project);
         AssetConfigurationBank = new AssetConfigurationBank(Project);
+        BreakDataGenerator = new BreakDataGenerator(Project);
 
         // Vanilla Bank
         Task<bool> vanillaBankTask = VanillaBank.Setup();

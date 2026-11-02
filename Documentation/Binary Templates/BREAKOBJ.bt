@@ -1,0 +1,63 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: BREAKOBJ.bt
+//   Authors:
+//   Version:
+//   Purpose: DeS, DS1, BB and DS3 .breakobj files (DS2 is BREAKOBJ2.bt)
+//  Category: Dantelion
+// File Mask: *.breakobj
+//  ID Bytes:
+//   History:
+//------------------------------------------------
+
+// The header is little-endian in DS1/DS3 ("BJBO") and big-endian in DeS/BB ("OBJB").
+// The rest is big-endian only in DeS: BB has a big-endian header over a little-endian body.
+// Not supported: the BB chalice dungeon file (m29_00_00_00), version 0x14102201, has no object mask.
+
+local int headerBE = ReadUByte(0) == 'O';
+local int bodyBE = headerBE && ReadUInt(4) != 0x01250814 && ReadUInt(4) != 0x14082501;
+
+if (headerBE) BigEndian(); else LittleEndian();
+
+typedef struct {
+    char magic[4];
+    uint version <format=hex>; // 0x08051701 DeS/DS1/DS3, 0x14082501 BB
+} Header <bgcolor=cLtRed>;
+
+Header header;
+
+if (bodyBE) BigEndian(); else LittleEndian();
+int objectCount; // The number of Object parts in the MSB
+
+// A bit per Object part in MSB order, from the low bit of each byte; set if the object has a block below
+ubyte mask[(objectCount + 7) / 8] <format=binary, bgcolor=cLtYellow>;
+
+// One per set bit: a 3-bit type and 13-bit length as C bitfields (from the low bit of the first byte when
+// little-endian, from its high bit when big-endian), then the low byte of the piece count, then the pieces
+typedef struct {
+    ubyte packed00;
+    ubyte lengthLow01;
+    ubyte countLow02;
+
+    local int type = bodyBE ? packed00 >> 5 : packed00 & 7; // 1, or 2 for some DeS objects
+    local int dataLength = (bodyBE ? packed00 & 0x1F : packed00 >> 3) << 8 | lengthLow01;
+    local int count = (dataLength - 3) / 8;
+    Assert((count & 0xFF) == countLow02);
+
+    uint64 pieces[count] <format=hex>; // Baked per placement; several packed small signed fields
+} Block <read=ReadBlock, bgcolor=cAqua, optimize=false>;
+
+string ReadBlock(Block& block) {
+    string str;
+    return SPrintf(str, "type %i [%3i]", block.type, block.count);
+}
+
+local int i;
+local int blocks = 0;
+for (i = 0; i < objectCount; i++) {
+    if ((mask[i / 8] >> (i % 8)) & 1) blocks++;
+}
+if (blocks > 0) {
+    Block objects[blocks];
+}

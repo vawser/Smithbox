@@ -33,13 +33,13 @@ string ReadHeader(Header& header) {
 }
 
 
+// One per breakable asset part, sorted by model then instance
 typedef struct {
-    byte unk00; Assert(unk00 == 1);
-    ubyte unk01; Assert(unk01 == 0 || unk01 == 0x80);
-    short unk02;
-    int unk04; // Dubious
+    uint packed00 <format=hex>; Assert((packed00 & 0x7FFF) == 1);
+    local int instanceID = packed00 >> 15; // AEGxxx_yyy_[instanceID]
+    int modelID; // 10000000 + xxx * 1000 + yyy for AEGxxx_yyy
     quad offset08 <format=hex>;
-    
+
     local quad pos <hidden=true> = FTell();
     FSeek(offset08);
     Child child;
@@ -48,19 +48,20 @@ typedef struct {
 
 string ReadParent(Parent& parent) {
     string str;
-    return SPrintf(str, "%4i %8i", parent.unk02, parent.unk04);
+    return SPrintf(str, "AEG%03i_%03i_%04i", (parent.modelID - 10000000) / 1000, parent.modelID % 1000, parent.instanceID);
 }
 
 
+// Same block as BREAKOBJ: a 3-bit type and 13-bit length as LE bitfields, then the low byte of the piece count
 typedef struct {
-    ubyte unk00; Assert(unk00 == 1 || unk00 == 9 || unk00 == 17 || unk00 == 25);
-    ubyte unk01;
-    ubyte count02;
-    
-    // Why?
-    local int dataLength <hidden=true> = (unk00 - 1) * 0x20 + unk01;
-    Assert(dataLength == count02 * 8 + 3);
-    Item items[count02];
+    ubyte packed00; Assert((packed00 & 7) == 1);
+    ubyte lengthLow01;
+    ubyte countLow02;
+
+    local int dataLength <hidden=true> = (packed00 >> 3) << 8 | lengthLow01;
+    local int count <hidden=true> = (dataLength - 3) / 8; // Models can have more than 255 pieces
+    Assert((count & 0xFF) == countLow02);
+    Item items[count];
 } Child <bgcolor=cAqua>;
 
 

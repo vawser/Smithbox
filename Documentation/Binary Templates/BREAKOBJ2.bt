@@ -27,8 +27,8 @@ typedef struct {
 } Member <bgcolor=cAqua>;
 
 typedef struct {
-    int id;
-    int unk04; Assert(unk04 == 0);
+    int id; // ObjectInstanceID of the MSB part; vanilla also has entries with 0
+    int unk04; // 0 in DS2, hash-like in DS2S
     int unk08;
     int memberCount;
     Member members[memberCount];

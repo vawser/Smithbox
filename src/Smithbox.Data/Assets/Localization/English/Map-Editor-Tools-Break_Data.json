@@ -1,0 +1,44 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_Break_Data_Task_PASS",
+      "Text": "Break Data generation finished."
+    },
+    {
+      "Key": "MAP_Break_Data_Task_FAIL",
+      "Text": "Break Data generation failed."
+    },
+    {
+      "Key": "MAP_Break_Data_Building_Templates",
+      "Text": "Reading the vanilla break data for templates. This can take a while the first time."
+    },
+    {
+      "Key": "MAP_Break_Data_Template_Skipped",
+      "Text": "Skipped vanilla break data {0}: {1}"
+    },
+    {
+      "Key": "MAP_Break_Data_No_Maps",
+      "Text": "No maps to generate Break Data for. Load a map first."
+    },
+    {
+      "Key": "MAP_Break_Data_No_MSB",
+      "Text": "Skipped the Break Data of {0}: its MSB could not be found."
+    },
+    {
+      "Key": "MAP_Break_Data_Unsaved_Map",
+      "Text": "{0} has unsaved changes, which are not included in its Break Data. Save the map and generate again."
+    },
+    {
+      "Key": "MAP_Break_Data_Map_PASS",
+      "Text": "Generated the Break Data of {0}: {1} objects kept their vanilla data, {2} were given a copy from their model."
+    },
+    {
+      "Key": "MAP_Break_Data_Map_FAIL",
+      "Text": "Failed to generate the Break Data of {0}."
+    },
+    {
+      "Key": "MAP_Break_Data_Generated",
+      "Text": "Break Data generated: {0} of {1} maps changed."
+    }
+  ]
+}

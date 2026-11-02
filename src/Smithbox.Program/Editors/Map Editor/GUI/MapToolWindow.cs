@@ -66,6 +66,29 @@ public class MapToolWindow
                 }
 
                 ///--------------------
+                /// Generate Break Data
+                ///--------------------
+                if (Project.Handler.MapData?.BreakDataGenerator?.CanUse() == true)
+                {
+                    if (ImGui.BeginMenu("Break Data"))
+                    {
+                        if (ImGui.MenuItem("Generate for Loaded Maps"))
+                        {
+                            View.ActionHandler.GenerateBreakData(loadedMapsOnly: true);
+                        }
+                        GUI.Tooltip("Rebuild the break data (BREAKOBJ/BREAKGEOM) of the loaded maps from their saved MSBs.\nObjects unchanged from vanilla keep their vanilla break data; new breakable objects get a copy from a vanilla instance of their model.\nSave the maps first: unsaved changes are not included.");
+
+                        if (ImGui.MenuItem("Generate for All Maps"))
+                        {
+                            View.ActionHandler.GenerateBreakData(loadedMapsOnly: false);
+                        }
+                        GUI.Tooltip("Rebuild the break data of every map in the project. Only files that change are written.");
+
+                        ImGui.EndMenu();
+                    }
+                }
+
+                ///--------------------
                 /// Entity ID Checker
                 ///--------------------
                 if (View.Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
@@ -254,6 +277,14 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_DestructionGeneration && View.DestructionGenerationTool.CanUse())
+        {
+            if (ToolSections.Header(View.DestructionGenerationTool.Title))
+            {
+                View.DestructionGenerationTool.OnToolWindow();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
         {
             View.GridTool.OnToolWindow();
@@ -356,6 +387,15 @@ public class MapToolWindow
                     CFG.Current.Interface_MapEditor_Tool_WallPaint = !CFG.Current.Interface_MapEditor_Tool_WallPaint;
                 }
                 GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_WallPaint);
+            }
+
+            if (View.DestructionGenerationTool.CanUse())
+            {
+                if (ImGui.MenuItem(View.DestructionGenerationTool.Title))
+                {
+                    CFG.Current.Interface_MapEditor_Tool_DestructionGeneration = !CFG.Current.Interface_MapEditor_Tool_DestructionGeneration;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_DestructionGeneration);
             }
 
             if (ImGui.MenuItem("Viewport Configuration"))

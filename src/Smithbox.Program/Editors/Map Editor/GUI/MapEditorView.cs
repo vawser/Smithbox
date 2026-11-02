@@ -116,6 +116,7 @@ public class MapEditorView : IEditorView
     public CompassTool CompassTool;
     public EnemyAIVisualizationTool EnemyAIVisualizationTool;
     public WallPaintTool WallPaintTool;
+    public DestructionGenerationTool DestructionGenerationTool;
 
     public ResourceListTool ResourceListTool;
 
@@ -206,6 +207,7 @@ public class MapEditorView : IEditorView
         CompassTool = new CompassTool(this, project);
         EnemyAIVisualizationTool = new EnemyAIVisualizationTool(this, project);
         WallPaintTool = new WallPaintTool(this, project);
+        DestructionGenerationTool = new DestructionGenerationTool(this, project);
 
         ResourceListTool = new ResourceListTool();
 

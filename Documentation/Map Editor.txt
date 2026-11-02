@@ -2,7 +2,6 @@
 # Map Editor TODO
 #----------------------------------------------------
 
-- Support BREAKGEOM/BREAKOBJ generation
 - Support LOADLIST editing (worldloadlistlist, ingamestay)
 - Support ENTRYFILELIST editing
 - Support Farmodel param (SDT)
