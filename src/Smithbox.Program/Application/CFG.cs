@@ -348,6 +348,8 @@ public class CFG
     public float MapEditor_Grass_Density = 1f;
     public bool MapEditor_BasicFilter_EdgePoint = false;
     public bool MapEditor_BasicFilter_Wall = false;
+    public bool MapEditor_Wall_Display_Cells = true;
+    public bool MapEditor_Wall_Display_NoJump = true;
     public bool MapEditor_BasicFilter_Navmesh = true;
     public bool MapEditor_BasicFilter_SpeedTree = true;
     public bool MapEditor_BasicFilter_InvasionPoint = true;
@@ -1228,6 +1230,7 @@ public class CFG
     public Vector3 Viewport_Wall_Fill_Color = new Vector3(60, 230, 120);
     public Vector3 Viewport_Wall_Other_Collision_Color = new Vector3(190, 90, 255);
     public Vector3 Viewport_Wall_None_Color = new Vector3(255, 60, 60);
+    public Vector3 Viewport_Wall_NoJump_Color = new Vector3(255, 170, 30);
     public Vector3 Viewport_Wall_Hover_Color = new Vector3(255, 255, 255);
     public float Viewport_Wall_Alpha = 45.0f;
     public Vector3 Viewport_Connect_Collision_Color = new Vector3(146, 57, 158);

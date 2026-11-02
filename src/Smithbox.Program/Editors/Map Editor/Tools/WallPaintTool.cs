@@ -17,12 +17,15 @@ public enum WallPaintMode
 {
     Wall,
     NotWall,
-    Remove
+    Remove,
+    NoJump,
+    AllowJump
 }
 
 /// <summary>
-/// Paints the WALL files of Sekiro collisions in the viewport. Each triangle of a low collision under the
-/// cursor is marked entirely as a wall or not a wall, or removed from the file, replacing any finer cells it had.
+/// Paints the WALL and NOJUMPWALL files of Sekiro collisions in the viewport. In the WALL file, each triangle of a
+/// low collision under the cursor is marked entirely as a wall or not a wall, or removed from the file, replacing
+/// any finer cells it had. In the NOJUMPWALL file, it is added or removed.
 /// A stroke, from pressing the button to releasing it, is undone as one action.
 /// </summary>
 public class WallPaintTool
@@ -63,41 +66,23 @@ public class WallPaintTool
         }
 
         GUI.WrappedText("Paint the walls of collisions in the viewport. Each triangle of the low collision under the cursor is marked as a whole, replacing any finer cells it had.");
-        GUI.WrappedText("");
 
-        DisplayLegend();
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        var scene = View.ViewportHandler.ActiveViewport.RenderScene;
-        var wallsShown = scene.DrawFilter.HasFlag(RenderFilter.Wall);
+        GUI.MultiButtonInput("wallPaintToggle",
+            "wallPaintToggleButton", Active ? "Stop Paint" : "Start Paint",
+            "While painting, clicking or dragging in the viewport paints triangles instead of selecting.",
+            TogglePainting);
 
-        if (!wallsShown)
-        {
-            GUI.WrappedText("Walls are hidden. They must be displayed to be painted.");
-
-            if (ImGui.Button("Display Walls##wallPaintShow"))
-            {
-                scene.SetDrawFilter(RenderFilter.Wall, true);
-                CFG.Current.MapEditor_BasicFilter_Wall = true;
-            }
-
-            GUI.WrappedText("");
-        }
+        GUI.Spacer();
+        GUI.SimpleHeader("wallPaintOptions", "Paint Options", "How painting in the viewport changes the triangles under the cursor.", UI.Current.ImGui_Default_Text_Color);
 
         if (!CFG.Current.MapEditor_ModelLoad_Collisions || CFG.Current.MapEditor_SkipHavokLoad)
         {
             GUI.WrappedText("Collision isn't loaded, so there is nothing to paint. Enable collision loading and load the map again.");
             GUI.WrappedText("");
         }
-
-        if (ImGui.Checkbox("Paint##wallPaintActive", ref Active))
-        {
-            if (!Active)
-            {
-                EndStroke();
-                SetHover(null);
-            }
-        }
-        GUI.Tooltip("While ticked, clicking or dragging in the viewport paints triangles instead of selecting.");
 
         if (ImGui.RadioButton("Wall##wallPaintModeWall", Mode is WallPaintMode.Wall))
             Mode = WallPaintMode.Wall;
@@ -113,16 +98,31 @@ public class WallPaintTool
             Mode = WallPaintMode.Remove;
         GUI.Tooltip("Remove triangles from the WALL file. The game only lists steep triangles in these files.");
 
-        GUI.WrappedText("");
+        if (ImGui.RadioButton("No Jump##wallPaintModeNoJump", Mode is WallPaintMode.NoJump))
+            Mode = WallPaintMode.NoJump;
+        GUI.Tooltip("Add triangles to the NOJUMPWALL file, so they can't be jumped off. This is separate from the WALL file, so it doesn't change how they are marked there.");
+
+        ImGui.SameLine();
+        if (ImGui.RadioButton("Allow Jump##wallPaintModeAllowJump", Mode is WallPaintMode.AllowJump))
+            Mode = WallPaintMode.AllowJump;
+        GUI.Tooltip("Remove triangles from the NOJUMPWALL file. A collision left without any is saved without the file, as the game does.");
+
+        DisplayVisibility();
+
+        GUI.Spacer();
+        GUI.SimpleHeader("Legend", "");
 
         if (Hover != null)
         {
+            var mapId = Hover.Entity.MapID;
             var modelName = Hover.Entity.GetPartModelName();
-            var triangle = View.WallBank.GetTriangle(Hover.Entity.MapID, modelName, Hover.ShapeKey);
+            var triangle = View.WallBank.GetTriangle(mapId, modelName, Hover.ShapeKey);
+            var noJump = View.WallBank.IsNoJump(mapId, modelName, Hover.ShapeKey);
 
             GUI.WrappedText($"Collision: {Hover.Entity.Name} ({modelName})");
             GUI.WrappedText($"Shape Key: 0x{Hover.ShapeKey:X8}");
             GUI.WrappedText($"Marked As: {DescribeTriangle(triangle)}");
+            GUI.WrappedText($"No Jump: {(noJump ? "Yes" : "No")}");
         }
         else if (IsPainting)
         {
@@ -130,6 +130,58 @@ public class WallPaintTool
         }
 
         ImGui.EndChild();
+    }
+
+    private void TogglePainting()
+    {
+        Active = !Active;
+
+        if (!Active)
+        {
+            EndStroke();
+            SetHover(null);
+        }
+    }
+
+    /// <summary>
+    /// Toggles for what is displayed, and the colors it is displayed in.
+    /// </summary>
+    private void DisplayVisibility()
+    {
+        GUI.Spacer();
+        GUI.SimpleHeader("wallPaintVisibility", "Visibility", "What is displayed on the collisions while walls are displayed.", UI.Current.ImGui_Default_Text_Color);
+
+        var scene = View.ViewportHandler.ActiveViewport.RenderScene;
+
+        if (!scene.DrawFilter.HasFlag(RenderFilter.Wall))
+        {
+            GUI.WrappedText("Walls are hidden. They must be displayed to be painted.");
+
+            if (ImGui.Button("Display Walls##wallPaintShow"))
+            {
+                scene.SetDrawFilter(RenderFilter.Wall, true);
+                CFG.Current.MapEditor_BasicFilter_Wall = true;
+            }
+
+            GUI.WrappedText("");
+        }
+
+        if (ImGui.Checkbox("WALL##wallDisplayCells", ref CFG.Current.MapEditor_Wall_Display_Cells))
+        {
+            View.WallBank.RebuildAll();
+        }
+        GUI.Tooltip("Display the cells of the WALL files: which parts of each triangle are walls and which are not.");
+
+        ImGui.SameLine();
+        if (ImGui.Checkbox("NOJUMPWALL##wallDisplayNoJump", ref CFG.Current.MapEditor_Wall_Display_NoJump))
+        {
+            View.WallBank.RebuildAll();
+        }
+        GUI.Tooltip("Display the triangles of the NOJUMPWALL files, which can't be jumped off.");
+
+        GUI.WrappedText("");
+
+        DisplayLegend();
     }
 
     /// <summary>
@@ -145,6 +197,8 @@ public class WallPaintTool
             "A wall that belongs to a neighbouring collision, usually along the edge where the two meet.");
         LegendEntry(CFG.Current.Viewport_Wall_None_Color, "Not Wall",
             "Part of a triangle that is not a wall.");
+        LegendEntry(CFG.Current.Viewport_Wall_NoJump_Color, "No Jump",
+            "A triangle in the NOJUMPWALL file, which can't be jumped off. Drawn over its wall cells, so they are tinted by it.");
         LegendEntry(CFG.Current.Viewport_Wall_Hover_Color, "Cursor",
             "The triangle that will be painted.");
 
@@ -220,24 +274,40 @@ public class WallPaintTool
         if (string.IsNullOrEmpty(modelName) || !View.WallBank.IsMapLoaded(mapId))
             return;
 
-        var before = View.WallBank.GetTriangle(mapId, modelName, hit.ShapeKey);
-        var after = Mode switch
+        WallTriangleChange change;
+
+        if (Mode is WallPaintMode.NoJump or WallPaintMode.AllowJump)
         {
-            WallPaintMode.Wall => WallBank.CreateTriangle(modelName, hit.ShapeKey, WALL.CellType.Wall),
-            WallPaintMode.NotWall => WallBank.CreateTriangle(modelName, hit.ShapeKey, WALL.CellType.None),
-            _ => null
-        };
+            var noJumpBefore = View.WallBank.IsNoJump(mapId, modelName, hit.ShapeKey);
+            var noJumpAfter = Mode is WallPaintMode.NoJump;
 
-        if (before == null && after == null)
-            return;
+            if (noJumpBefore == noJumpAfter)
+                return;
 
-        var change = new WallTriangleChange(entity, mapId, modelName, hit.ShapeKey, before, after);
+            change = new WallTriangleChange(entity, mapId, modelName, hit.ShapeKey, WallLayer.NoJump,
+                NoJumpBefore: noJumpBefore, NoJumpAfter: noJumpAfter);
+        }
+        else
+        {
+            var before = View.WallBank.GetTriangle(mapId, modelName, hit.ShapeKey);
+            var after = Mode switch
+            {
+                WallPaintMode.Wall => WallBank.CreateTriangle(modelName, hit.ShapeKey, WALL.CellType.Wall),
+                WallPaintMode.NotWall => WallBank.CreateTriangle(modelName, hit.ShapeKey, WALL.CellType.None),
+                _ => null
+            };
+
+            if (before == null && after == null)
+                return;
+
+            change = new WallTriangleChange(entity, mapId, modelName, hit.ShapeKey, WallLayer.Wall, before, after);
+        }
 
         Stroke[(entity, hit.ShapeKey)] = change;
         StrokeOrder.Add(change);
 
         // Shown straight away, then recorded as one action when the stroke ends
-        View.WallBank.SetTriangle(mapId, modelName, hit.ShapeKey, after);
+        WallPaintAction.Apply(View.WallBank, change, true);
         View.WallBank.Rebuild(entity);
     }
 

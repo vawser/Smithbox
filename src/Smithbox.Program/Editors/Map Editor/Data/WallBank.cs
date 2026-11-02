@@ -138,7 +138,8 @@ public sealed class WallGeometry
 public record WallCells(
     List<(Vector3 A, Vector3 B, Vector3 C)> Walls,
     List<(Vector3 A, Vector3 B, Vector3 C)> OtherCollisionWalls,
-    List<(Vector3 A, Vector3 B, Vector3 C)> None);
+    List<(Vector3 A, Vector3 B, Vector3 C)> None,
+    List<(Vector3 A, Vector3 B, Vector3 C)> NoJump);
 
 /// <summary>
 /// The triangle of a collision part that a ray hit.
@@ -146,14 +147,21 @@ public record WallCells(
 public record WallHit(MsbEntity Entity, uint ShapeKey, float Distance);
 
 /// <summary>
-/// Holds the WALL files of Sekiro maps, which mark the parts of each low collision that are walls.
-/// A collision part uses the file with its model name (e.g. h000100) in the wallbhd of its map, and the
-/// triangles it refers to come from the low collision of the same number. Nothing is read until walls are displayed.
+/// Holds the WALL and NOJUMPWALL files of Sekiro maps. WALL files mark the parts of each low collision that are
+/// walls, and NOJUMPWALL files list its triangles that can't be jumped off. A collision part uses the files with its
+/// model name (e.g. h000100) in the wallbhd of its map, and the triangles they refer to come from the low collision
+/// of the same number. Nothing is read until walls are displayed.
 /// </summary>
 public class WallBank
 {
     // Lifts the cells off the collision, so they aren't hidden by it
     private const float SurfaceOffset = 0.02f;
+
+    // No-jump triangles are lifted further, so they show over the wall cells of the same triangle
+    private const float NoJumpOffset = 0.035f;
+
+    private const string WallExtension = ".wall.dcx";
+    private const string NoJumpExtension = ".nojumpwall.dcx";
 
     // Applied per frame, as each part creates several meshes
     private const int MaxAppliedPerFrame = 32;
@@ -161,11 +169,13 @@ public class WallBank
     private record WallResult(MsbEntity Entity, string Key, WallCells Cells);
 
     /// <summary>
-    /// The WALL files of a map, keyed by model name, and the compression each was stored with.
+    /// The WALL and NOJUMPWALL files of a map, keyed by model name. Compression and changes are tracked by
+    /// file name in the binder (e.g. h000100.wall.dcx), as a model can have one of each.
     /// </summary>
     private sealed class MapWalls
     {
         public readonly Dictionary<string, WALL> Files = new(StringComparer.OrdinalIgnoreCase);
+        public readonly Dictionary<string, NOJUMPWALL> NoJumpFiles = new(StringComparer.OrdinalIgnoreCase);
         public readonly Dictionary<string, DCX.Type> Compression = new(StringComparer.OrdinalIgnoreCase);
         public readonly HashSet<string> Modified = new(StringComparer.OrdinalIgnoreCase);
     }
@@ -237,13 +247,13 @@ public class WallBank
             if (geometry == null)
                 return;
 
-            WALL wall;
+            WallCells cells;
             lock (files)
             {
-                wall = files.Files.GetValueOrDefault(modelName);
+                cells = BuildCells(files, modelName, geometry);
             }
 
-            Completed.Enqueue(new WallResult(entity, modelName, BuildCells(wall, geometry)));
+            Completed.Enqueue(new WallResult(entity, modelName, cells));
         });
     }
 
@@ -259,14 +269,31 @@ public class WallBank
         if (geometry == null || files == null)
             return;
 
-        WALL wall;
+        WallCells cells;
         lock (files)
         {
-            wall = files.Files.GetValueOrDefault(modelName);
+            cells = BuildCells(files, modelName, geometry);
         }
 
         entity.WallKey = modelName;
-        entity.ApplyWalls(BuildCells(wall, geometry));
+        entity.ApplyWalls(cells);
+    }
+
+    /// <summary>
+    /// Rebuilds the walls of every part that displays them, e.g. after what is displayed has changed.
+    /// </summary>
+    public void RebuildAll()
+    {
+        if (!Visible)
+            return;
+
+        foreach (var entity in GetCollisionParts())
+        {
+            if (entity.WallKey != null && entity.WallMeshes != null)
+            {
+                Rebuild(entity);
+            }
+        }
     }
 
     /// <summary>
@@ -316,25 +343,41 @@ public class WallBank
 
     #region Cells
 
-    private static WallCells BuildCells(WALL wall, WallGeometry geometry)
+    /// <summary>
+    /// Builds the cells of a model's WALL file and the triangles of its NOJUMPWALL file. Called with the files locked.
+    /// </summary>
+    private static WallCells BuildCells(MapWalls files, string modelName, WallGeometry geometry)
     {
-        var cells = new WallCells(new(), new(), new());
+        var cells = new WallCells(new(), new(), new(), new());
 
-        if (wall == null)
-            return cells;
-
-        foreach (var triangle in wall.Triangles)
+        if (files.Files.TryGetValue(modelName, out var wall))
         {
-            if (!geometry.TryGetTriangle(triangle.ShapeKey, out var a, out var b, out var c))
-                continue;
+            foreach (var triangle in wall.Triangles)
+            {
+                if (!geometry.TryGetTriangle(triangle.ShapeKey, out var a, out var b, out var c))
+                    continue;
 
-            var normal = GetFrontNormal(a, b, c);
-            if (normal == Vector3.Zero)
-                continue;
+                var normal = GetFrontNormal(a, b, c);
+                if (normal == Vector3.Zero)
+                    continue;
 
-            var offset = normal * SurfaceOffset;
+                var offset = normal * SurfaceOffset;
 
-            AddCell(wall, triangle, a + offset, b + offset, c + offset, cells);
+                AddCell(wall, triangle, a + offset, b + offset, c + offset, cells);
+            }
+        }
+
+        if (files.NoJumpFiles.TryGetValue(modelName, out var noJump))
+        {
+            foreach (var key in noJump.ShapeKeys)
+            {
+                if (!geometry.TryGetTriangle(key, out var a, out var b, out var c))
+                    continue;
+
+                var offset = GetFrontNormal(a, b, c) * NoJumpOffset;
+
+                cells.NoJump.Add((a + offset, b + offset, c + offset));
+            }
         }
 
         return cells;
@@ -517,7 +560,64 @@ public class WallBank
                 }
             }
 
-            files.Modified.Add(modelName);
+            files.Modified.Add(modelName + WallExtension);
+        }
+    }
+
+    /// <summary>
+    /// Whether a triangle is listed in the NOJUMPWALL file of a collision, so it can't be jumped off.
+    /// </summary>
+    public bool IsNoJump(string mapId, string modelName, uint key)
+    {
+        var files = GetLoadedMapWalls(mapId);
+
+        if (files == null)
+            return false;
+
+        lock (files)
+        {
+            return files.NoJumpFiles.TryGetValue(modelName, out var noJump) && noJump.ShapeKeys.BinarySearch(key) >= 0;
+        }
+    }
+
+    /// <summary>
+    /// Adds a triangle to, or removes it from, the NOJUMPWALL file of a collision, keeping the keys in ascending
+    /// order. Creates the file if the collision doesn't have one.
+    /// </summary>
+    public void SetNoJump(string mapId, string modelName, uint key, bool noJump)
+    {
+        var files = GetLoadedMapWalls(mapId);
+
+        if (files == null)
+            return;
+
+        lock (files)
+        {
+            if (!files.NoJumpFiles.TryGetValue(modelName, out var file))
+            {
+                if (!noJump)
+                    return;
+
+                file = new NOJUMPWALL();
+                files.NoJumpFiles[modelName] = file;
+            }
+
+            var index = file.ShapeKeys.BinarySearch(key);
+
+            if (noJump && index < 0)
+            {
+                file.ShapeKeys.Insert(~index, key);
+            }
+            else if (!noJump && index >= 0)
+            {
+                file.ShapeKeys.RemoveAt(index);
+            }
+            else
+            {
+                return;
+            }
+
+            files.Modified.Add(modelName + NoJumpExtension);
         }
     }
 
@@ -668,15 +768,28 @@ public class WallBank
 
             foreach (var file in binder.Files)
             {
-                // e.g. h000100.wall.dcx. The binder also holds .nojumpwall files, which are another format
-                if (!file.Name.EndsWith(".wall.dcx", StringComparison.OrdinalIgnoreCase))
+                // e.g. h000100.wall.dcx and h000100.nojumpwall.dcx
+                var fileName = GetFileName(file.Name);
+                var name = fileName.Split('.')[0];
+
+                var isWall = fileName.EndsWith(WallExtension, StringComparison.OrdinalIgnoreCase);
+                var isNoJump = fileName.EndsWith(NoJumpExtension, StringComparison.OrdinalIgnoreCase);
+
+                if (!isWall && !isNoJump)
                     continue;
 
-                var name = GetFileName(file.Name).Split('.')[0];
                 var data = DCX.Decompress(file.Bytes, out var compression);
 
-                walls.Files[name] = WALL.Read(data);
-                walls.Compression[name] = compression;
+                if (isWall)
+                {
+                    walls.Files[name] = WALL.Read(data);
+                }
+                else
+                {
+                    walls.NoJumpFiles[name] = NOJUMPWALL.Read(data);
+                }
+
+                walls.Compression[fileName] = compression;
             }
         }
         catch (Exception e)
@@ -688,7 +801,7 @@ public class WallBank
     }
 
     /// <summary>
-    /// Writes the WALL files of a map that have been painted. Returns false if they couldn't be written.
+    /// Writes the WALL and NOJUMPWALL files of a map that have been painted. Returns false if they couldn't be written.
     /// </summary>
     public bool SaveWalls(string mapId)
     {
@@ -723,16 +836,39 @@ public class WallBank
 
                 using (binder)
                 {
-                    foreach (var name in walls.Modified)
+                    foreach (var fileName in walls.Modified)
                     {
-                        if (!walls.Files.TryGetValue(name, out var wall))
-                            continue;
+                        var name = fileName.Split('.')[0];
+                        byte[] data;
 
-                        var compression = walls.Compression.GetValueOrDefault(name, DCX.Type.DCX_KRAK);
-                        var bytes = DCX.Compress(wall.Write(), compression);
+                        if (fileName.EndsWith(NoJumpExtension, StringComparison.OrdinalIgnoreCase))
+                        {
+                            if (!walls.NoJumpFiles.TryGetValue(name, out var noJump))
+                                continue;
+
+                            // Collisions without any no-jump triangles have no file, rather than an empty one
+                            if (noJump.ShapeKeys.Count == 0)
+                            {
+                                binder.Files.RemoveAll(e =>
+                                    GetFileName(e.Name).Equals(fileName, StringComparison.OrdinalIgnoreCase));
+                                continue;
+                            }
+
+                            data = noJump.Write();
+                        }
+                        else
+                        {
+                            if (!walls.Files.TryGetValue(name, out var wall))
+                                continue;
+
+                            data = wall.Write();
+                        }
+
+                        var compression = walls.Compression.GetValueOrDefault(fileName, DCX.Type.DCX_KRAK);
+                        var bytes = DCX.Compress(data, compression);
 
                         var file = binder.Files.FirstOrDefault(e =>
-                            GetFileName(e.Name).Equals($"{name}.wall.dcx", StringComparison.OrdinalIgnoreCase));
+                            GetFileName(e.Name).Equals(fileName, StringComparison.OrdinalIgnoreCase));
 
                         if (file != null)
                         {
@@ -741,7 +877,7 @@ public class WallBank
                         else
                         {
                             var nextId = binder.Files.Count == 0 ? 0 : binder.Files.Max(e => e.ID) + 1;
-                            binder.Files.Add(new BinderFile(Binder.FileFlags.Flag1, nextId, $"{name}.wall.dcx", bytes));
+                            binder.Files.Add(new BinderFile(Binder.FileFlags.Flag1, nextId, fileName, bytes));
                         }
                     }
 
