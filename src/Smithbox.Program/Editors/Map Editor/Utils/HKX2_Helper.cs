@@ -143,13 +143,6 @@ public static class HKX2_Helper
                 }
             }
 
-            // TEMP: SDT collision diagnostics
-            if (submeshes.Count == 0)
-            {
-                var shapes = string.Join(", ", physicsscene.m_systemDatas.SelectMany(s => s.m_bodyCinfos).Select(b => b.m_shape?.GetType().Name ?? "null"));
-                Smithbox.Log(typeof(HKX2_Helper), $"[SDT Collision] No meshes built. Body shapes: {shapes}");
-            }
-
             resource.GPUMeshes = submeshes.ToArray();
         }
 

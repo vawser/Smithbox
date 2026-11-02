@@ -215,9 +215,6 @@ public class HavokCollisionBank
                     Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", name), ex);
                 }
             });
-
-            // TEMP: SDT collision diagnostics
-            Smithbox.Log(this, $"[SDT Collision] {bhdPath}: {files.Count} hkx files, {MapCollisions[mapId].Count(n => n.StartsWith(type))} read, compendium {(compendium != null ? "found" : "missing")}");
         }
         catch (Exception e)
         {

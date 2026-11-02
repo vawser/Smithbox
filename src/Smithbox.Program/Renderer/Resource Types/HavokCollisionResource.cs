@@ -267,9 +267,6 @@ public class HavokCollisionResource : IResource, IDisposable
         if (Hkx2 != null)
             return true;
 
-        // TEMP: SDT collision diagnostics
-        Smithbox.Log(this, $"[SDT Collision] No loaded container for '{ctx.FileName}' (container: {ctx.ContainerPath}), reading it directly");
-
         var data = DCX.Is(bytes) ? DCX.Decompress(bytes) : bytes;
 
         if (!TagFileDeserializer.IsTagFile(data.Span))
