@@ -544,6 +544,24 @@ public class ViewportPrefs
                     CFG.Current.Viewport_Collision_Color = Utils.GetRgbColor(curColor);
                 }
 
+                curColor = Utils.GetDecimalColor(CFG.Current.Viewport_High_Collision_Color);
+                DPI.ApplyInputWidth();
+                if (ImGui.ColorEdit3(
+                    $"{LOC.Get("PREF_Viewport_High_Collision_Color")}##Viewport_High_Collision_Color",
+                    ref curColor))
+                {
+                    CFG.Current.Viewport_High_Collision_Color = Utils.GetRgbColor(curColor);
+                }
+
+                curColor = Utils.GetDecimalColor(CFG.Current.Viewport_FallProtection_Collision_Color);
+                DPI.ApplyInputWidth();
+                if (ImGui.ColorEdit3(
+                    $"{LOC.Get("PREF_Viewport_FallProtection_Collision_Color")}##Viewport_FallProtection_Collision_Color",
+                    ref curColor))
+                {
+                    CFG.Current.Viewport_FallProtection_Collision_Color = Utils.GetRgbColor(curColor);
+                }
+
                 curColor = Utils.GetDecimalColor(CFG.Current.Viewport_Connect_Collision_Color);
                 DPI.ApplyInputWidth();
                 if (ImGui.ColorEdit3(

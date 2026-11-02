@@ -76,6 +76,7 @@ public class MsbEntity : Entity
 
         // A part can go from a placeholder to a real model, which has no fill
         SelectionFillMesh = null;
+        CollisionLayerMeshes = null;
 
         switch (Type)
         {
@@ -184,9 +185,8 @@ public class MsbEntity : Entity
         if (EntityHelper.IsPartCollision(this))
         {
             var name = ModelLocator.MapModelNameToAssetName(curProject, amapid, modelName);
-            asset = ModelLocator.GetMapCollisionModel(curProject, amapid, name);
 
-            RenderSceneMesh = CreateCollisionMesh(asset, false);
+            AssignCollisionDrawables(curProject, amapid, name);
         }
 
         // Connect Collision
@@ -205,6 +205,42 @@ public class MsbEntity : Entity
             asset = ModelLocator.GetMapNVMModel(curProject, amapid, name);
 
             RenderSceneMesh = CreateNavmeshMesh(asset);
+        }
+    }
+
+    /// <summary>
+    /// Assigns a mesh for each displayed collision type of a collision part. The first is the render scene mesh,
+    /// the others are displayed alongside it, so the part is still selected and moved as one.
+    /// </summary>
+    private void AssignCollisionDrawables(ProjectEntry curProject, string amapid, string name)
+    {
+        var curUniverse = Owner as MapUniverse;
+
+        List<ResourceDescriptor> assets = new();
+
+        foreach (var type in curUniverse.View.HavokCollisionBank.GetVisibleCollisionTypes())
+        {
+            var asset = ModelLocator.GetMapCollisionModel(curProject, amapid, name, false, type);
+
+            // Some games store a single collision for every type, or don't have the type at all
+            if (!asset.IsValid() || assets.Any(e => e.Name == asset.Name))
+                continue;
+
+            assets.Add(asset);
+        }
+
+        if (assets.Count == 0)
+        {
+            assets.Add(ModelLocator.GetMapCollisionModel(curProject, amapid, name));
+        }
+
+        RenderSceneMesh = CreateCollisionMesh(assets[0], false);
+
+        if (assets.Count > 1)
+        {
+            CollisionLayerMeshes = assets.Skip(1)
+                .Select(e => (RenderableProxy)CreateCollisionMesh(e, false))
+                .ToList();
         }
     }
 
@@ -233,7 +269,7 @@ public class MsbEntity : Entity
 
         var modelName = (string)modelProp.GetValue(WrappedObject);
         var asset = ModelLocator.GetMapObjCollision(curProject, modelName,
-            curUniverse.View.HavokCollisionBank.VisibleCollisionType);
+            curUniverse.View.HavokCollisionBank.PrimaryCollisionType);
 
         if (asset.GetContainerPath(curProject) == null)
             return;

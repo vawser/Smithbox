@@ -110,14 +110,19 @@ public class MapResourceHandler
                     LoadList_Asset_Model.Add(modelAsset);
             }
 
-            // Collision
+            // Collision: every displayed type is loaded, as they can be shown together
             if (model.Name.StartsWith('h'))
             {
-                var modelAsset = ModelLocator.GetMapCollisionModel(View.Project, AdjustedMapID, ModelLocator.MapModelNameToAssetName(View.Project, AdjustedMapID, model.Name));
+                var name = ModelLocator.MapModelNameToAssetName(View.Project, AdjustedMapID, model.Name);
 
-                if (modelAsset.IsValid())
+                foreach (var type in View.HavokCollisionBank.GetVisibleCollisionTypes())
                 {
-                    LoadList_Collision.Add(modelAsset);
+                    var modelAsset = ModelLocator.GetMapCollisionModel(View.Project, AdjustedMapID, name, false, type);
+
+                    if (modelAsset.IsValid())
+                    {
+                        LoadList_Collision.Add(modelAsset);
+                    }
                 }
             }
 

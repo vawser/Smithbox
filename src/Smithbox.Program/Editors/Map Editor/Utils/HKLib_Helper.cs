@@ -52,14 +52,14 @@ public static class HKLib_Helper
                                 (mesh, vertices, indices) = ProcessColData(
                                     (hknpCompressedMeshShapeData)shape2.m_data, bodyInfo, mesh);
 
-                                RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+                                RenderMesh(mesh, vertices, indices, resource.Color);
                             }
                             else if (bodyInfo.m_shape is hknpCompressedMeshShape shape1)
                             {
                                 (mesh, vertices, indices) = ProcessColData(
                                     (hknpCompressedMeshShapeData)shape1.m_data, bodyInfo, mesh);
 
-                                RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+                                RenderMesh(mesh, vertices, indices, resource.Color);
                             }
 
                             if (first)
@@ -103,7 +103,7 @@ public static class HKLib_Helper
                                         indices.Add(tri.m_c);
                                     }
 
-                                    RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+                                    RenderMesh(mesh, vertices, indices, resource.Color);
                                 }
                             }
 
@@ -135,7 +135,7 @@ public static class HKLib_Helper
 
                             (mesh, vertices, indices) = ProcessConvexPolytope(polytopeMesh, bodyInfo, mesh);
 
-                            RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+                            RenderMesh(mesh, vertices, indices, resource.Color);
 
                             if (first)
                             {
@@ -309,19 +309,12 @@ public static class HKLib_Helper
     /// <param name="dest"></param>
     /// <param name="verts"></param>
     /// <param name="indices"></param>
-    private static unsafe void RenderMesh(CollisionSubmesh dest, List<Vector3> verts, List<int> indices, bool isConnectCollision = false)
+    private static unsafe void RenderMesh(CollisionSubmesh dest, List<Vector3> verts, List<int> indices, Vector3 color)
     {
-        byte colR = (byte)CFG.Current.Viewport_Collision_Color.X;
-        byte colG = (byte)CFG.Current.Viewport_Collision_Color.Y;
-        byte colB = (byte)CFG.Current.Viewport_Collision_Color.Z;
+        byte colR = (byte)color.X;
+        byte colG = (byte)color.Y;
+        byte colB = (byte)color.Z;
         byte colA = 255;
-
-        if(isConnectCollision)
-        {
-            colR = (byte)CFG.Current.Viewport_Connect_Collision_Color.X;
-            colG = (byte)CFG.Current.Viewport_Connect_Collision_Color.Y;
-            colB = (byte)CFG.Current.Viewport_Connect_Collision_Color.Z;
-        }
 
         dest.PickingIndices = indices.ToArray();
         dest.PickingVertices = verts.ToArray();

@@ -327,6 +327,11 @@ public class CFG
 
     public HavokCollisionType CurrentHavokCollisionType = HavokCollisionType.Low;
 
+    // Map collision types displayed in the Map Editor, any combination of them can be shown at once
+    public bool MapEditor_Display_Low_Collision = true;
+    public bool MapEditor_Display_High_Collision = false;
+    public bool MapEditor_Display_FallProtection_Collision = false;
+
 
     // Map Visibility Filters
     public bool MapEditor_BasicFilter_MapPiece = true;
@@ -1216,6 +1221,8 @@ public class CFG
     public float GFX_Renderable_Default_Wireframe_Alpha = 100.0f;
 
     public Vector3 Viewport_Collision_Color = new Vector3(53, 157, 255);
+    public Vector3 Viewport_High_Collision_Color = new Vector3(255, 160, 40);
+    public Vector3 Viewport_FallProtection_Collision_Color = new Vector3(70, 210, 90);
     public Vector3 Viewport_Connect_Collision_Color = new Vector3(146, 57, 158);
     public Vector3 Viewport_Navmesh_Color = new Vector3(157, 53, 255);
     public Vector3 Viewport_Navmesh_Gate_Color = new Vector3(50, 220, 0);

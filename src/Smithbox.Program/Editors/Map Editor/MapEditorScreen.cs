@@ -363,46 +363,25 @@ public class MapEditorScreen : EditorScreen
         var validViewportState = activeView.ViewportHandler.ActiveViewport.RenderScene != null &&
             activeView.ViewportHandler.ActiveViewport.Viewport != null;
 
-        // Low Collision
-        if (ImGui.MenuItem($"{LOC.Get("MAP_Collision_Header_Low")}##toggleLowCollision"))
+        var bank = activeView.HavokCollisionBank;
+
+        // Each type is toggled on its own, so any combination of them can be displayed
+        foreach (var type in bank.GetSupportedCollisionTypes())
         {
-            activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.Low;
-            CFG.Current.CurrentHavokCollisionType = HavokCollisionType.Low;
-
-            activeView.HavokCollisionBank.RefreshCollision();
-            activeView.DelayPicking();
-        }
-        GUI.Tooltip(LOC.Get("MAP_Collision_Header_Low_TT"));
-        GUI.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.Low);
-
-        // High Collision
-        if (ImGui.MenuItem($"{LOC.Get("MAP_Collision_Header_High")}##toggleHighCollision"))
-        {
-            activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.High;
-            CFG.Current.CurrentHavokCollisionType = HavokCollisionType.High;
-
-            activeView.HavokCollisionBank.RefreshCollision();
-            activeView.DelayPicking();
-        }
-        GUI.Tooltip(LOC.Get("MAP_Collision_Header_High_TT"));
-        GUI.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
-
-        if (Project.Descriptor.ProjectType is ProjectType.ER 
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
-        {
-            // Fall Protection Collision
-            if (ImGui.MenuItem($"{LOC.Get("MAP_Collision_Header_Fall_Protection")}##toggleFallProtectionCollision"))
+            var (header, id) = type switch
             {
-                activeView.HavokCollisionBank.VisibleCollisionType = HavokCollisionType.FallProtection;
-                CFG.Current.CurrentHavokCollisionType = HavokCollisionType.FallProtection;
+                HavokCollisionType.High => ("MAP_Collision_Header_High", "toggleHighCollision"),
+                HavokCollisionType.FallProtection => ("MAP_Collision_Header_Fall_Protection", "toggleFallProtectionCollision"),
+                _ => ("MAP_Collision_Header_Low", "toggleLowCollision")
+            };
 
-                activeView.HavokCollisionBank.RefreshCollision();
+            if (ImGui.MenuItem($"{LOC.Get(header)}##{id}"))
+            {
+                bank.ToggleCollisionType(type);
                 activeView.DelayPicking();
             }
-            GUI.Tooltip(LOC.Get("MAP_Collision_Header_Fall_Protection_TT"));
-            GUI.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.FallProtection);
+            GUI.Tooltip(LOC.Get($"{header}_TT"));
+            GUI.ShowActiveStatus(bank.IsCollisionTypeVisible(type));
         }
     }
 

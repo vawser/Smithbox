@@ -36,7 +36,7 @@ public static class HKX_Helper
                 {
                     var mesh = new CollisionSubmesh();
 
-                    ProcessMesh(col, mesh, resource.IsConnectCollision);
+                    ProcessMesh(col, mesh, resource.Color);
 
                     if (first)
                     {
@@ -76,7 +76,7 @@ public static class HKX_Helper
                         {
                             var mesh = new CollisionSubmesh();
 
-                            ProcessMesh(ncol, bodyInfo, mesh, resource.IsConnectCollision);
+                            ProcessMesh(ncol, bodyInfo, mesh, resource.Color);
 
                             if (first)
                             {
@@ -115,19 +115,12 @@ public static class HKX_Helper
     /// </summary>
     /// <param name="mesh"></param>
     /// <param name="dest"></param>
-    public static unsafe void ProcessMesh(HKX.HKPStorageExtendedMeshShapeMeshSubpartStorage mesh, CollisionSubmesh dest, bool isConnectCollision = false)
+    public static unsafe void ProcessMesh(HKX.HKPStorageExtendedMeshShapeMeshSubpartStorage mesh, CollisionSubmesh dest, Vector3 color)
     {
-        byte colR = (byte)CFG.Current.Viewport_Collision_Color.X;
-        byte colG = (byte)CFG.Current.Viewport_Collision_Color.Y;
-        byte colB = (byte)CFG.Current.Viewport_Collision_Color.Z;
+        byte colR = (byte)color.X;
+        byte colG = (byte)color.Y;
+        byte colB = (byte)color.Z;
         byte colA = 255;
-
-        if (isConnectCollision)
-        {
-            colR = (byte)CFG.Current.Viewport_Connect_Collision_Color.X;
-            colG = (byte)CFG.Current.Viewport_Connect_Collision_Color.Y;
-            colB = (byte)CFG.Current.Viewport_Connect_Collision_Color.Z;
-        }
 
         List<HKX.HKVector4> verts = mesh.Vertices.GetArrayData().Elements;
         dynamic indices;
@@ -229,19 +222,12 @@ public static class HKX_Helper
     /// <param name="mesh"></param>
     /// <param name="bodyinfo"></param>
     /// <param name="dest"></param>
-    public static unsafe void ProcessMesh(HKX.FSNPCustomParamCompressedMeshShape mesh, HKX.HKNPBodyCInfo bodyinfo, CollisionSubmesh dest, bool isConnectCollision = false)
+    public static unsafe void ProcessMesh(HKX.FSNPCustomParamCompressedMeshShape mesh, HKX.HKNPBodyCInfo bodyinfo, CollisionSubmesh dest, Vector3 color)
     {
-        byte colR = (byte)CFG.Current.Viewport_Collision_Color.X;
-        byte colG = (byte)CFG.Current.Viewport_Collision_Color.Y;
-        byte colB = (byte)CFG.Current.Viewport_Collision_Color.Z;
+        byte colR = (byte)color.X;
+        byte colG = (byte)color.Y;
+        byte colB = (byte)color.Z;
         byte colA = 255;
-
-        if (isConnectCollision)
-        {
-            colR = (byte)CFG.Current.Viewport_Connect_Collision_Color.X;
-            colG = (byte)CFG.Current.Viewport_Connect_Collision_Color.Y;
-            colB = (byte)CFG.Current.Viewport_Connect_Collision_Color.Z;
-        }
 
         var verts = new List<Vector3>();
         var indices = new List<int>();

@@ -459,6 +459,7 @@ public class EntReplicateAction : ViewportAction
             }
 
             Clones[i].CollisionSceneMesh = null;
+            Clones[i].CollisionLayerMeshes = null;
             Clones[i].SelectionFillMesh = null;
             Clones[i].ClearGrass();
             Clones[i].ClearEdgePoints();

@@ -61,6 +61,8 @@ public static class PreferencesUtil
         CFG.Current.GFX_Renderable_Default_Wireframe_Alpha = CFG.Default.GFX_Renderable_Default_Wireframe_Alpha;
 
         CFG.Current.Viewport_Collision_Color = CFG.Default.Viewport_Collision_Color;
+        CFG.Current.Viewport_High_Collision_Color = CFG.Default.Viewport_High_Collision_Color;
+        CFG.Current.Viewport_FallProtection_Collision_Color = CFG.Default.Viewport_FallProtection_Collision_Color;
         CFG.Current.Viewport_Connect_Collision_Color = CFG.Default.Viewport_Connect_Collision_Color;
         CFG.Current.Viewport_Navmesh_Color = CFG.Default.Viewport_Navmesh_Color;
         CFG.Current.Viewport_Navmesh_Gate_Color = CFG.Default.Viewport_Navmesh_Gate_Color;

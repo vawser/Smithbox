@@ -189,33 +189,17 @@ public class ViewportFiltersAction
         }
 
         GUI.Spacer();
-        GUI.SimpleHeader("Collision Type", "Toggle which type of collision mesh is displayed.");
+        GUI.SimpleHeader("Collision Type", "Toggle which types of collision mesh are displayed. Several can be displayed at once.");
 
-        GUI.SetInputWidth();
-        if (ImGui.BeginCombo("##colType", View.HavokCollisionBank.VisibleCollisionType.GetDisplayName()))
+        foreach (var curType in View.HavokCollisionBank.GetSupportedCollisionTypes())
         {
-            foreach (var entry in Enum.GetValues(typeof(HavokCollisionType)))
+            var visible = View.HavokCollisionBank.IsCollisionTypeVisible(curType);
+
+            if (ImGui.Checkbox($"{curType.GetDisplayName()}##colType{curType}", ref visible))
             {
-                var curType = (HavokCollisionType)entry;
-
-                if (!(Project.Descriptor.ProjectType is ProjectType.ER 
-                    or ProjectType.AC6 
-                    or ProjectType.NR
-                    or ProjectType.DB_NT
-                    or ProjectType.DB))
-                {
-                    if (curType is HavokCollisionType.FallProtection)
-                        continue;
-                }
-
-                if (ImGui.Selectable($"{curType.GetDisplayName()}", curType == View.HavokCollisionBank.VisibleCollisionType))
-                {
-                    View.HavokCollisionBank.VisibleCollisionType = curType;
-                    View.HavokCollisionBank.RefreshCollision();
-                }
+                View.HavokCollisionBank.ToggleCollisionType(curType);
+                View.DelayPicking();
             }
-
-            ImGui.EndCombo();
         }
 
         if (!(Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S))

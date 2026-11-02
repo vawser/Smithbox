@@ -45,6 +45,7 @@ public class Entity : ISelectable, IDisposable
     /// Internal. Associated collision mesh for the entity.
     /// </summary>
     private RenderableProxy _collisionSceneMesh;
+    private IReadOnlyList<RenderableProxy> _collisionLayerMeshes;
     private RenderableProxy _selectionFillMesh;
     private IReadOnlyList<RenderableProxy> _grassSceneMeshes;
     private IReadOnlyList<EdgePointMesh> _edgePointMeshes;
@@ -169,12 +170,45 @@ public class Entity : ISelectable, IDisposable
             if (value == null)
             {
                 CollisionSceneMesh = null;
+                CollisionLayerMeshes = null;
                 SelectionFillMesh = null;
                 GrassSceneMeshes = null;
                 EdgePointMeshes = null;
             }
         }
         get => _renderSceneMesh;
+    }
+
+    /// <summary>
+    /// The meshes of the other collision types displayed alongside the render scene mesh, for collision parts
+    /// that display several at once (e.g. low and high). They all belong to this entity.
+    /// </summary>
+    [XmlIgnore]
+    public IReadOnlyList<RenderableProxy> CollisionLayerMeshes
+    {
+        set
+        {
+            if (_collisionLayerMeshes != null)
+            {
+                foreach (RenderableProxy mesh in _collisionLayerMeshes)
+                {
+                    mesh.Dispose();
+                }
+            }
+
+            _collisionLayerMeshes = value;
+
+            if (_collisionLayerMeshes != null)
+            {
+                foreach (RenderableProxy mesh in _collisionLayerMeshes)
+                {
+                    mesh.RenderSelectionOutline = IsSelected;
+                }
+            }
+
+            ApplyMeshState();
+        }
+        get => _collisionLayerMeshes;
     }
 
     /// <summary>
@@ -374,6 +408,14 @@ public class Entity : ISelectable, IDisposable
                 CollisionSceneMesh.Visible = _EditorVisible;
             }
 
+            if (_collisionLayerMeshes != null)
+            {
+                foreach (RenderableProxy mesh in _collisionLayerMeshes)
+                {
+                    mesh.Visible = _EditorVisible;
+                }
+            }
+
             if (SelectionFillMesh != null)
             {
                 SelectionFillMesh.Visible = IsFillVisible;
@@ -423,6 +465,14 @@ public class Entity : ISelectable, IDisposable
         if (_collisionSceneMesh != null)
         {
             _collisionSceneMesh.RenderFocusGhost = ghosted;
+        }
+
+        if (_collisionLayerMeshes != null)
+        {
+            foreach (RenderableProxy mesh in _collisionLayerMeshes)
+            {
+                mesh.RenderFocusGhost = ghosted;
+            }
         }
 
         if (_selectionFillMesh != null)
@@ -475,6 +525,8 @@ public class Entity : ISelectable, IDisposable
             CollisionSceneMesh.RenderSelectionOutline = true;
         }
 
+        SetCollisionLayerOutline(true);
+
         if (SelectionFillMesh != null)
         {
             SelectionFillMesh.RenderSelectionOutline = true;
@@ -497,9 +549,22 @@ public class Entity : ISelectable, IDisposable
             CollisionSceneMesh.RenderSelectionOutline = false;
         }
 
+        SetCollisionLayerOutline(false);
+
         if (SelectionFillMesh != null)
         {
             SelectionFillMesh.RenderSelectionOutline = false;
+        }
+    }
+
+    private void SetCollisionLayerOutline(bool outline)
+    {
+        if (_collisionLayerMeshes == null)
+            return;
+
+        foreach (RenderableProxy mesh in _collisionLayerMeshes)
+        {
+            mesh.RenderSelectionOutline = outline;
         }
     }
 
@@ -1600,6 +1665,11 @@ public class Entity : ISelectable, IDisposable
                     _collisionSceneMesh = null;
                 }
 
+                if (CollisionLayerMeshes != null)
+                {
+                    CollisionLayerMeshes = null;
+                }
+
                 if (SelectionFillMesh != null)
                 {
                     SelectionFillMesh.Dispose();
@@ -1677,6 +1747,14 @@ public class Entity : ISelectable, IDisposable
         ApplyProxyState(_renderSceneMesh, t, useRenderGroups);
         ApplyProxyState(_collisionSceneMesh, t, useRenderGroups);
         ApplyProxyState(_selectionFillMesh, t, useRenderGroups, IsFillVisible);
+
+        if (_collisionLayerMeshes != null)
+        {
+            foreach (RenderableProxy mesh in _collisionLayerMeshes)
+            {
+                ApplyProxyState(mesh, t, useRenderGroups);
+            }
+        }
 
         if (_grassSceneMeshes != null)
         {

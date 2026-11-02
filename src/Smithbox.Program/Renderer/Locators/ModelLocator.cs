@@ -74,7 +74,9 @@ public static class ModelLocator
         return ret;
     }
 
-    public static ResourceDescriptor GetMapCollisionModel(ProjectEntry project, string mapid, string model, bool isConnectCollision = false)
+    /// <param name="collisionType">The type of collision to get. If not set, the type selected in the Map Editor is used.</param>
+    public static ResourceDescriptor GetMapCollisionModel(ProjectEntry project, string mapid, string model, bool isConnectCollision = false,
+        HavokCollisionType? collisionType = null)
     {
         ResourceDescriptor ret = new();
 
@@ -84,7 +86,11 @@ public static class ModelLocator
 
         var targetType = HavokCollisionType.Low;
 
-        if (project.Handler.MapEditor != null)
+        if (collisionType != null)
+        {
+            targetType = collisionType.Value;
+        }
+        else if (project.Handler.MapEditor != null)
         {
             targetType = CFG.Current.CurrentHavokCollisionType;
         }

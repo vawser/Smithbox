@@ -58,7 +58,7 @@ public static class HKX2_Helper
 
                         (mesh, vertices, indices) = ProcessMesh(ncol, bodyInfo, mesh);
 
-                        RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+                        RenderMesh(mesh, vertices, indices, resource.Color);
 
                         if (first)
                         {
@@ -88,7 +88,7 @@ public static class HKX2_Helper
 
                         (mesh, vertices, indices) = ProcessExternMesh(externMesh, bodyInfo, mesh);
 
-                        RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+                        RenderMesh(mesh, vertices, indices, resource.Color);
 
                         if (first)
                         {
@@ -118,7 +118,7 @@ public static class HKX2_Helper
 
                         (mesh, vertices, indices) = ProcessConvexPolytope(polytopeMesh, bodyInfo, mesh);
 
-                        RenderMesh(mesh, vertices, indices, resource.IsConnectCollision);
+                        RenderMesh(mesh, vertices, indices, resource.Color);
 
                         if (first)
                         {
@@ -354,19 +354,12 @@ public static class HKX2_Helper
     /// <param name="dest"></param>
     /// <param name="verts"></param>
     /// <param name="indices"></param>
-    public static unsafe void RenderMesh(CollisionSubmesh dest, List<Vector3> verts, List<int> indices, bool isConnectCollision = false)
+    public static unsafe void RenderMesh(CollisionSubmesh dest, List<Vector3> verts, List<int> indices, Vector3 color)
     {
-        byte colR = (byte)CFG.Current.Viewport_Collision_Color.X;
-        byte colG = (byte)CFG.Current.Viewport_Collision_Color.Y;
-        byte colB = (byte)CFG.Current.Viewport_Collision_Color.Z;
+        byte colR = (byte)color.X;
+        byte colG = (byte)color.Y;
+        byte colB = (byte)color.Z;
         byte colA = 255;
-
-        if (isConnectCollision)
-        {
-            colR = (byte)CFG.Current.Viewport_Connect_Collision_Color.X;
-            colG = (byte)CFG.Current.Viewport_Connect_Collision_Color.Y;
-            colB = (byte)CFG.Current.Viewport_Connect_Collision_Color.Z;
-        }
 
         dest.PickingIndices = indices.ToArray();
         dest.PickingVertices = verts.ToArray();

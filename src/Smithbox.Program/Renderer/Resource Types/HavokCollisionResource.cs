@@ -25,6 +25,11 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool IsConnectCollision = false;
 
+    /// <summary>
+    /// The color the mesh is drawn in, which tells the collision types apart when several are displayed.
+    /// </summary>
+    public Vector3 Color;
+
     public bool _Load(Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
         if (Smithbox.Orchestrator.SelectedProject == null)
@@ -36,6 +41,8 @@ public class HavokCollisionResource : IResource, IDisposable
         {
             IsConnectCollision = true;
         }
+
+        DetermineColor(ctx);
 
         // HKLib - ER
         if (curProject.Descriptor.ProjectType is ProjectType.ER 
@@ -96,8 +103,10 @@ public class HavokCollisionResource : IResource, IDisposable
             IsConnectCollision = true;
         }
 
+        DetermineColor(ctx);
+
         // HKLib - ER
-        if (curProject.Descriptor.ProjectType is ProjectType.ER 
+        if (curProject.Descriptor.ProjectType is ProjectType.ER
             or ProjectType.NR
             or ProjectType.DB_NT
             or ProjectType.DB)
@@ -232,23 +241,9 @@ public class HavokCollisionResource : IResource, IDisposable
         if(activeView == null) 
             return false;
 
-        // Map collision
+        // Map collision: each type is read from its own binder, so the
+        // file name already carries the prefix of its type (h, l or f)
         var filename = ctx.FileName;
-
-        if (activeView.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.Low)
-        {
-            filename = $"l{filename.Substring(1)}";
-        }
-
-        if (activeView.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.High)
-        {
-            filename = $"h{filename.Substring(1)}";
-        }
-
-        if (activeView.HavokCollisionBank.VisibleCollisionType is HavokCollisionType.FallProtection)
-        {
-            filename = $"f{filename.Substring(1)}";
-        }
 
         // HKX for ER is loaded directly in HavokCollisionManager
         // This is required since the parallel nature of the
@@ -263,6 +258,34 @@ public class HavokCollisionResource : IResource, IDisposable
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Map collision files are prefixed by their type (h, l or f). Anything else,
+    /// e.g. object and asset collision, uses the base collision color.
+    /// </summary>
+    private void DetermineColor(ResourceLoadContext ctx)
+    {
+        Color = CFG.Current.Viewport_Collision_Color;
+
+        if (IsConnectCollision)
+        {
+            Color = CFG.Current.Viewport_Connect_Collision_Color;
+            return;
+        }
+
+        if (IsAssetCollision(ctx) || ctx.FileName.Length == 0)
+            return;
+
+        switch (char.ToLowerInvariant(ctx.FileName[0]))
+        {
+            case 'h':
+                Color = CFG.Current.Viewport_High_Collision_Color;
+                break;
+            case 'f':
+                Color = CFG.Current.Viewport_FallProtection_Collision_Color;
+                break;
+        }
     }
 
     public void DetermineFrontFace(ProjectEntry curProject)

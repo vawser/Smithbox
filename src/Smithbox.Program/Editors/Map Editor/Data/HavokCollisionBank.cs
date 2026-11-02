@@ -15,15 +15,87 @@ public class HavokCollisionBank
 
     public Dictionary<string, List<string>> MapCollisions = new();
 
-    public HavokCollisionType VisibleCollisionType = HavokCollisionType.Low;
-
     private bool ObjectCollisionVisible = false;
 
     public HavokCollisionBank(ProjectEntry project)
     {
         Project = project;
+    }
 
-        VisibleCollisionType = CFG.Current.CurrentHavokCollisionType;
+    /// <summary>
+    /// The collision types the project has, in the order they are preferred when only one can be displayed.
+    /// </summary>
+    public IEnumerable<HavokCollisionType> GetSupportedCollisionTypes()
+    {
+        yield return HavokCollisionType.Low;
+        yield return HavokCollisionType.High;
+
+        if (Project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
+        {
+            yield return HavokCollisionType.FallProtection;
+        }
+    }
+
+    public bool IsCollisionTypeVisible(HavokCollisionType type)
+    {
+        return type switch
+        {
+            HavokCollisionType.Low => CFG.Current.MapEditor_Display_Low_Collision,
+            HavokCollisionType.High => CFG.Current.MapEditor_Display_High_Collision,
+            HavokCollisionType.FallProtection => CFG.Current.MapEditor_Display_FallProtection_Collision,
+            _ => false
+        };
+    }
+
+    /// <summary>
+    /// The collision types displayed for each collision part. Always holds at least one type.
+    /// </summary>
+    public List<HavokCollisionType> GetVisibleCollisionTypes()
+    {
+        var types = GetSupportedCollisionTypes().Where(IsCollisionTypeVisible).ToList();
+
+        // A collision part always displays something, so it can still be seen and selected
+        if (types.Count == 0)
+            types.Add(HavokCollisionType.Low);
+
+        return types;
+    }
+
+    /// <summary>
+    /// The collision type used where only one can be displayed, e.g. object collision.
+    /// </summary>
+    public HavokCollisionType PrimaryCollisionType => GetVisibleCollisionTypes()[0];
+
+    /// <summary>
+    /// Shows or hides a collision type, then rebuilds the collision meshes. The last visible type can't be hidden.
+    /// </summary>
+    public void ToggleCollisionType(HavokCollisionType type)
+    {
+        var visible = !IsCollisionTypeVisible(type);
+
+        if (!visible && GetVisibleCollisionTypes().Count <= 1)
+            return;
+
+        switch (type)
+        {
+            case HavokCollisionType.Low:
+                CFG.Current.MapEditor_Display_Low_Collision = visible;
+                break;
+            case HavokCollisionType.High:
+                CFG.Current.MapEditor_Display_High_Collision = visible;
+                break;
+            case HavokCollisionType.FallProtection:
+                CFG.Current.MapEditor_Display_FallProtection_Collision = visible;
+                break;
+        }
+
+        // The Model Editor displays a single type, which follows the one displayed here
+        CFG.Current.CurrentHavokCollisionType = PrimaryCollisionType;
+
+        RefreshCollision();
     }
 
     public void Clear()

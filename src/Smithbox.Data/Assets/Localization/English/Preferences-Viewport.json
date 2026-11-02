@@ -225,6 +225,14 @@
       "Text": "Collision: Base Color"
     },
     {
+      "Key": "PREF_Viewport_High_Collision_Color",
+      "Text": "High Collision: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_FallProtection_Collision_Color",
+      "Text": "Fall Protection Collision: Base Color"
+    },
+    {
       "Key": "PREF_Viewport_Connect_Collision_Color",
       "Text": "Connect Collision: Base Color"
     },
