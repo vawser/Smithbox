@@ -447,6 +447,18 @@ public class SceneRenderPipeline
 
         Fog.Prepare(view, proj, mapLighting, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z));
 
+        // Wet surfaces, from the chosen weather's Wet values
+        var wet = mapLighting?.PostEffects.Wet;
+        var wetness = CFG.Current.Viewport_Post_Effects && CFG.Current.Viewport_Post_Wet && wet != null
+            ? Math.Clamp(wet.Wetness, 0.0f, 1.0f)
+            : 0.0f;
+        var wetAlbedo = wet != null
+            ? new Vector4(wet.OverrideAlbedo.X, wet.OverrideAlbedo.Y, wet.OverrideAlbedo.Z, Math.Clamp(wet.AlbedoRate, 0.0f, 1.0f) * wetness)
+            : Vector4.Zero;
+        var wetShininess = wet != null
+            ? new Vector4(wet.OverrideShininess, Math.Clamp(wet.ShininessRate, 0.0f, 1.0f) * wetness, 0.0f, 0.0f)
+            : Vector4.Zero;
+
         var shadowParams = Shadows?.Parameters ?? default;
         var shadowCount = (uint)(Shadows?.ActiveCount ?? 0);
         var shadowTexture = Shadows?.TextureIndex ?? 0;
@@ -526,6 +538,9 @@ public class SceneRenderPipeline
             SceneParams.ShadowCascadeFade = shadowParams.CascadeFade;
             SceneParams.ShadowStrength = shadowStrength;
             SceneParams.ShadowMapSize = shadowMapSize;
+
+            SceneParams.WetAlbedo = wetAlbedo;
+            SceneParams.WetShininess = wetShininess;
 
             // A copy, so the viewport's own sun stays in SceneParams for its sliders
             var uploaded = SceneParams;

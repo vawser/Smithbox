@@ -1291,8 +1291,15 @@ public class CFG
     // the scene's; off until compared with the game
     public bool Viewport_Map_Lighting_Model_Lights = false;
 
-    // The weather to light with: the WW of the area's mAA_BB_CCWW files (WeatherParam's GparamId), 0 for none
+    // The weather to light with (WeatherParam's GparamId), 0 for none: the WW of the area's mAA_BB_CCWW files, and the
+    // shared m00_00_WWWW_weatheroutdoor/_weatherbase overlays, which the game puts over outdoor areas
     public int Viewport_Map_Lighting_Weather = 0;
+
+    // Whether the chosen weather's shared overlays are read, for an outdoor map; off for an interior
+    public bool Viewport_Map_Lighting_Weather_Outdoor = true;
+
+    // Wet surfaces in a weather that wets them, from the GPARAM's Wet group
+    public bool Viewport_Post_Wet = true;
 
     // Elden Ring: whether the irradiance volumes' bakes follow the time of day (bake N is timezone N), loading the
     // bakes they need as the time moves, instead of the Global Illumination tab's bake settings

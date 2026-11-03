@@ -211,8 +211,9 @@ public class GparamColorGrading
 }
 
 /// <summary>
-/// Wet ParamEditor. Only Elden Ring's weather overlays (m00_00_WWWW_weatherbase, _weatheroutdoor) set the rates,
-/// which aren't in the chain yet, so they stay 0.
+/// Wet ParamEditor. Only Elden Ring's weather overlays (m00_00_WWWW_weatherbase, _weatheroutdoor) set the rates, so
+/// they are 0 without a weather. Wet surfaces lean towards OverrideAlbedo by AlbedoRate and towards
+/// OverrideShininess by ShininessRate, by <see cref="Wetness" />.
 /// </summary>
 public class GparamWet
 {
@@ -220,4 +221,10 @@ public class GparamWet
     public float OverrideShininess = 1.0f;
     public float AlbedoRate = 0.0f;
     public float ShininessRate = 0.0f;
+
+    /// <summary>
+    /// How wet surfaces are, from the chosen weather's WeatherParam (WetTime above 0), not the GPARAM: every weather's
+    /// overlays carry the Wet values, wet or not
+    /// </summary>
+    public float Wetness = 0.0f;
 }

@@ -81,6 +81,9 @@ public class GparamLighting
     /// <summary>The TimeOfDay the values were interpolated at</summary>
     public float Hours;
 
+    /// <summary>The chosen weather's shared GPARAMs, looked up before <see cref="File" />, nearest first</summary>
+    public List<string> WeatherOverlays = new();
+
     /// <summary>
     /// The model set (LightSet ID 100) that characters are lit with, resolved with the scene's for the viewports;
     /// null on the model set itself and when resolved alone

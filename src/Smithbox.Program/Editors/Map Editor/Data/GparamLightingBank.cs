@@ -176,7 +176,8 @@ public class GparamLightingBank
     }
 
     /// <summary>
-    /// The weathers a map's area has files for: the WW of its mAA_BB_CCWW files, above 0
+    /// The weathers a map can be lit with: the WW of its area's mAA_BB_CCWW files, and the weathers of the shared
+    /// overlays (m00_00_WWWW_weatheroutdoor), above 0
     /// </summary>
     public List<int> ListWeathers(string mapId)
     {
@@ -188,7 +189,67 @@ public class GparamLightingBank
                 weathers.Add(weather);
         }
 
+        foreach (var entry in Project.Locator.GparamFiles.Entries)
+        {
+            var name = entry.Filename;
+
+            if (name.StartsWith(WeatherOverlayArea, StringComparison.OrdinalIgnoreCase) &&
+                name.EndsWith(WeatherOutdoorSuffix, StringComparison.OrdinalIgnoreCase) &&
+                int.TryParse(name.Substring(WeatherOverlayArea.Length, 4), out var weather) && weather > 0)
+                weathers.Add(weather);
+        }
+
         return weathers.ToList();
+    }
+
+    // The game's m%02u_%02u_%04u_WeatherOutdoor and _WeatherBase, which Elden Ring only has for m00_00, the WWWW being
+    // WeatherParam's GparamId. Base has only the Wet group, and only 0000 of it exists.
+    private const string WeatherOverlayArea = "m00_00_";
+    private const string WeatherOutdoorSuffix = "_weatheroutdoor";
+    private const string WeatherBaseSuffix = "_weatherbase";
+
+    /// <summary>
+    /// The shared weather GPARAMs read before a map's own for <paramref name="weather" />, nearest first: its
+    /// m00_00_WWWW_weatheroutdoor, then m00_00_WWWW_weatherbase or, failing that, m00_00_0000_weatherbase. Empty
+    /// for no weather, or with the outdoor weather switched off.
+    /// </summary>
+    public List<string> GetWeatherOverlays(int weather)
+    {
+        var overlays = new List<string>();
+
+        if (weather <= 0 || !CFG.Current.Viewport_Map_Lighting_Weather_Outdoor)
+            return overlays;
+
+        var outdoor = $"{WeatherOverlayArea}{weather:D4}{WeatherOutdoorSuffix}";
+        if (HasFile(outdoor))
+            overlays.Add(outdoor);
+
+        var weatherBase = $"{WeatherOverlayArea}{weather:D4}{WeatherBaseSuffix}";
+        var defaultBase = $"{WeatherOverlayArea}0000{WeatherBaseSuffix}";
+
+        if (HasFile(weatherBase))
+            overlays.Add(weatherBase);
+        else if (HasFile(defaultBase))
+            overlays.Add(defaultBase);
+
+        return overlays;
+    }
+
+    /// <summary>
+    /// How wet surfaces are in <paramref name="weather" />: 1 if a WeatherParam row with that GparamId wets them
+    /// (WetTime above 0, the seconds they take to soak in the game), else 0
+    /// </summary>
+    public float GetWetness(int weather)
+    {
+        if (weather <= 0 || Project.Handler.ParamData?.PrimaryBank?.Params is not { } bank ||
+            !bank.TryGetValue("WeatherParam", out var param))
+            return 0.0f;
+
+        var wets = param.Rows.Any(r =>
+            CharacterComposition.HasField(r, "GparamId") && CharacterComposition.GetValue(r, "GparamId") == weather &&
+            CharacterComposition.HasField(r, "WetTime") && CharacterComposition.GetFloat(r, "WetTime") > 0.0f);
+
+        return wets ? 1.0f : 0.0f;
     }
 
     /// <summary>
@@ -291,11 +352,13 @@ public class GparamLightingBank
     {
         var file = ChooseFile(mapId, chosen);
         var hours = CFG.Current.Viewport_Map_Lighting_Hours;
+        var overlays = GetWeatherOverlays(CFG.Current.Viewport_Map_Lighting_Weather);
 
         var cached = ViewportLighting;
 
         if (cached != null && ViewportLightingMap == mapId &&
-            string.Equals(cached.File, file, StringComparison.OrdinalIgnoreCase) && cached.Hours == hours)
+            string.Equals(cached.File, file, StringComparison.OrdinalIgnoreCase) && cached.Hours == hours &&
+            cached.WeatherOverlays.SequenceEqual(overlays, StringComparer.OrdinalIgnoreCase))
             return cached;
 
         cached = Resolve(mapId, file, SceneLightSetId, hours);
@@ -347,7 +410,8 @@ public class GparamLightingBank
     }
 
     /// <summary>
-    /// The lighting of a map, looked up in <paramref name="file" /> (the map's own GPARAM if null or empty), then
+    /// The lighting of a map, looked up in the chosen weather's shared overlays first (see
+    /// <see cref="GetWeatherOverlays" />), then <paramref name="file" /> (the map's own GPARAM if null or empty), then
     /// mapbase, then default, with <paramref name="lightSetId" /> for the LightSet group and ID 0 for the others,
     /// at <paramref name="hours" /> on the GPARAMs' TimeOfDay scale
     /// </summary>
@@ -356,11 +420,14 @@ public class GparamLightingBank
         if (string.IsNullOrEmpty(file))
             file = GetDefaultFile(mapId);
 
+        var weather = CFG.Current.Viewport_Map_Lighting_Weather;
+
         var lighting = new GparamLighting
         {
             File = file ?? "",
             LightSetId = lightSetId,
-            Hours = hours
+            Hours = hours,
+            WeatherOverlays = GetWeatherOverlays(weather)
         };
 
         if (!CanUse())
@@ -368,7 +435,8 @@ public class GparamLightingBank
 
         var chain = new List<(string Name, GPARAM Gparam)>();
 
-        foreach (var name in new[] { file }.Concat(SharedFiles))
+        // The weather's overlays are sparse, and go over the map's own: what they leave out comes from the map
+        foreach (var name in lighting.WeatherOverlays.Concat(new[] { file }).Concat(SharedFiles))
         {
             if (string.IsNullOrEmpty(name) || chain.Any(c => c.Name.Equals(name, StringComparison.OrdinalIgnoreCase)))
                 continue;
@@ -432,6 +500,9 @@ public class GparamLightingBank
         ReadPostEffects(reader, lightSetId, lighting.PostEffects);
 
         // The LUTs are looked up in the area of the file read first, whose IDs they are
+        // Wet's values are in every weather's overlays; whether the weather wets anything is the WeatherParam's
+        lighting.PostEffects.Wet.Wetness = GetWetness(weather);
+
         var grading = lighting.PostEffects.ColorGrading;
         var lutArea = file != null && file.Length >= 6 && file[0] is 'm' or 'M' ? file.Substring(0, 6) : GetArea(mapId);
         grading.Luts = GetLuts();

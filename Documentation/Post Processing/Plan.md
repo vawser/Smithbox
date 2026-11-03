@@ -570,6 +570,58 @@ Check:
 Check: ER m60 tile with a rain weather (WW 20 or 30): ground darker and glossier, more so with weather 30; sheltered
 interiors unchanged once the rain mask is in.
 
+### Phase 8 as built (2026-11-03; not yet checked in the app)
+
+**Survey.**
+- The exe's formats are `m%02u_%02u_%04u_WeatherBase` and `m%02u_%02u_%04u_WeatherOutdoor`. ER ships only m00_00
+  ones: one `m00_00_0000_weatherbase`, and 86 `m00_00_WWWW_weatheroutdoor` files numbered 0000-0881. Their WWWW
+  matches WeatherParam's IDs (Default 0, Cloudless 1, Flat Clouds 10, Rain 20, Windy Rain 30…), through `GparamId`.
+- What they hold:
+  - weatherbase has only the Wet group: AlbedoRate 0.3, ShininessRate 0.4, OverrideShininess 0.5, black albedo.
+  - weatheroutdoor_0000 (Default) is empty.
+  - Rain (0020) replaces the whole LightSet, Tone Map, colour fields, Wet, VolumetricFog and more. Wet there is 0.3 /
+    0.4, and 0.4 / 0.5 for 0030.
+- Every weather has non-zero Wet values through weatherbase, clear ones too. So the GPARAM can't say whether
+  surfaces are wet: that is taken to be WeatherParam's `WetTime`, the seconds rain takes to soak them in the game.
+
+**Built:**
+- The existing weather setting (`Viewport_Map_Lighting_Weather`, a GparamId) now also adds the shared overlays to the
+  front of the resolve chain, `GetWeatherOverlays`: m00_00_WWWW_weatheroutdoor, then m00_00_WWWW_weatherbase or
+  m00_00_0000_weatherbase, then the map's file (or its own mAA_BB_CCWW variant, as before), mapbase and default.
+  - The weather list gains every weatheroutdoor GparamId.
+  - CFG `Viewport_Map_Lighting_Weather_Outdoor` (on, beside the weather combo) leaves the overlays out for
+    interiors.
+  - `GparamLighting.WeatherOverlays` records them, and the viewport cache key includes them.
+- `GparamWet.Wetness` is 1 when a WeatherParam row with that GparamId has WetTime > 0, else 0.
+- `SceneParam` gains `WetAlbedo` (rgb override, a = AlbedoRate × wetness) and `WetShininess` (x override, y =
+  ShininessRate × wetness), at the struct's end, so the shaders that declare less of it are unaffected.
+- FlverShader: before the surface is shaded, albedo is mixed towards Override Albedo and shininess (1 - roughness)
+  towards Override Shininess, each by its rate × `smoothstep(-0.3, 0.3, N.y)` of the mesh's normal. Water and unlit
+  surfaces are left out. All 16 variants were rebuilt.
+- CFG `Viewport_Post_Wet` (on), "Wet Surfaces" in Post Effects. The table's Wet row adds the wetness.
+
+**How the values are read** (a reading, not decoded from the game): wetness is all or nothing (the game soaks in over
+WetTime), and only up-facing surfaces get the full effect.
+
+**Known gaps:**
+- No rain mask, so roofed interiors get wet too.
+- Fog volume boxes (FogVolumeBank) still read only the map's file, not the overlays, which override FogVolume in 42
+  files.
+- `DistViewWeatherGparamOverrideWeight` (WeatherParam), probably a partial blend of the overlay over distant views, is
+  not used: the overlay replaces the map's values outright.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| ER m60_42_36_00, map lighting on | Weather: 20 (Rain) | Overcast light and tone; Post Effects Wet row reads albedo 0.3 towards black, shininess 0.4 towards 0.4, wetness 1 | Wetness 0: WetTime isn't > 0 for that row, report it. Nothing changes: the overlay isn't in the chain |
+| Same | Toggle Wet Surfaces | Ground and rooftops darker and a little glossier; walls half as much; ceilings unchanged | Everything black: the albedo mix is inverted |
+| Same, SSR on | Look low along wet ground | More of the ground passes SSR's shininess reject than when dry, showing reflections | |
+| Same | Weather: 30 (Windy Rain) | Darker and glossier than 20 | |
+| Same | Weather: 1 (Cloudless) or 0 | No wet look, lighting as before | Wet look on a clear weather: wetness from the wrong rows |
+| Same | Untick Outdoor Weather | Back to the map's own lighting | |
+| ER m10_00_00_00 with Rain | | The courtyard darkens and SSR starts to show on it (Phase 6's gap) | |
+
 ### Phase 9: TAA
 
 Jitter the projection by `JitterCount` Halton offsets, reproject the history with the previous view-projection from

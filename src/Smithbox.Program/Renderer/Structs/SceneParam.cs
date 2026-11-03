@@ -174,6 +174,15 @@ public unsafe struct SceneParam
     public float ShadowPad0;
     public float ShadowPad1;
     public float ShadowPad2;
+
+    /// <summary>
+    ///     The GPARAM Wet group in a weather that wets: rgb the albedo wet surfaces lean towards, a how far (AlbedoRate
+    ///     times the wetness). 0 in a, so nothing changes, when it is dry.
+    /// </summary>
+    public Vector4 WetAlbedo;
+
+    /// <summary>x: the shininess wet surfaces lean towards, y: how far (ShininessRate times the wetness)</summary>
+    public Vector4 WetShininess;
 }
 
 /// <summary>A directional light of the map's GPARAM, as the shaders read it</summary>

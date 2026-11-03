@@ -197,6 +197,10 @@ struct sceneParams
 	float shadowCascadeFade; // the share of each cascade's range that blends into the next
 	float shadowStrength;    // how much of the sun a shadow takes away
 	float shadowMapSize;     // texels across the whole map, two cascades to a side
+
+	// The GPARAM Wet group in a weather that wets, see SceneParam.cs; the rates are 0 when it is dry
+	vec4 wetAlbedo;          // rgb: the albedo wet surfaces lean towards, a: how far
+	vec4 wetShininess;       // x: the shininess they lean towards, y: how far
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -1463,9 +1467,23 @@ void main()
 	normalMap = normalize(normalMap);
 	normalMap = normalize(fsin_worldToTangent * normalMap);
 
+	// In rain, what faces the sky darkens and turns glossier, walls half as much, and what faces down not at all.
+	// Nothing knows what is sheltered, so interiors under a roof are wet too.
+	vec3 albedo = diffuseColor.xyz * diffuseAlpha.xyz;
+	if (sceneparam.wetAlbedo.a > 0.0 || sceneparam.wetShininess.y > 0.0)
+	{
+		vec3 faceNormal = normalize(fsin_worldToTangent[2]) * (gl_FrontFacing ? 1.0 : -1.0);
+		float exposed = (IsWater() || (c_surface == SURFACE_UNLIT && HasFeature(FEATURE_UNLIT)))
+			? 0.0 : smoothstep(-0.3, 0.3, faceNormal.y);
+
+		albedo = mix(albedo, sceneparam.wetAlbedo.rgb, sceneparam.wetAlbedo.a * exposed);
+		roughness = 1.0 - mix(1.0 - roughness, clamp(sceneparam.wetShininess.x, 0.0, 1.0),
+			sceneparam.wetShininess.y * exposed);
+	}
+
 	Surface surface;
 	// The color of water comes from its volume, so all that is lit here is what its surface reflects
-	surface.diffuse = volumeWater ? vec3(0.0) : diffuseColor.xyz * diffuseAlpha.xyz;
+	surface.diffuse = volumeWater ? vec3(0.0) : albedo;
 	surface.F0 = F0;
 	surface.roughness = roughness;
 	surface.N = (gl_FrontFacing ? normalMap : -normalMap);

@@ -466,7 +466,15 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Weather_TT",
-      "Text": "Light with the weather's version of the GPARAM: mAA_BB_CCWW, where WW is the weather's GparamId in WeatherParam. Areas without a file for the weather keep the plain one."
+      "Text": "Light with a weather, by its GparamId in WeatherParam: the area's own version of the GPARAM (mAA_BB_CCWW) where there is one, and the shared outdoor overlays m00_00_WWWW_weatheroutdoor and _weatherbase over it, which are what rain and snow change."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Weather_Outdoor",
+      "Text": "Outdoor Weather"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Weather_Outdoor_TT",
+      "Text": "Read the weather's shared overlays (m00_00_WWWW_weatheroutdoor, then _weatherbase) before the map's own GPARAM, as the game does outdoors. Their light, tone map, fog and Wet values replace the map's. Switch off for an interior."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Weather_None",
@@ -1237,6 +1245,14 @@
       "Text": "Shades the fog's sunlight with the sun's shadow maps, which gives shafts of shadow through gaps. Needs Shadows on."
     },
     {
+      "Key": "VIEWPORT_Rendering_Post_Wet_Enable",
+      "Text": "Wet Surfaces"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Wet_Enable_TT",
+      "Text": "In a weather whose WeatherParam wets things (Wet Time above 0), surfaces facing the sky darken towards the GPARAM Wet group's Override Albedo and turn glossier towards Override Shininess, by Albedo Rate and Shininess Rate; walls half as much. Sheltered places aren't known, so interiors get wet too. Needs a weather and Outdoor Weather."
+    },
+    {
       "Key": "VIEWPORT_Rendering_Post_Light_Shafts_Enable",
       "Text": "Light Shafts"
     },
@@ -1450,7 +1466,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Wet_Value",
-      "Text": "albedo {0} towards {1}, shininess {2} towards {3}"
+      "Text": "albedo {0} towards {1}, shininess {2} towards {3}, wetness {4}"
     }
   ]
 }

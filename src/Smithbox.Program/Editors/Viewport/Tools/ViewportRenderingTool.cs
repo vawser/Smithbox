@@ -873,6 +873,12 @@ public class ViewportRenderingTool
                 ImGui.EndCombo();
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Weather_TT"));
+
+            ImGui.BeginDisabled(CFG.Current.Viewport_Map_Lighting_Weather <= 0);
+            ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Weather_Outdoor")}##mapLightingWeatherOutdoor",
+                ref CFG.Current.Viewport_Map_Lighting_Weather_Outdoor);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Weather_Outdoor_TT"));
+            ImGui.EndDisabled();
         }
     }
 
@@ -1031,6 +1037,9 @@ public class ViewportRenderingTool
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Light_Shafts_Enable")}##postLightShafts",
             ref CFG.Current.Viewport_Post_Light_Shafts);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Light_Shafts_Enable_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Wet_Enable")}##postWet", ref CFG.Current.Viewport_Post_Wet);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Wet_Enable_TT"));
 
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Ssao_Enable")}##postSsao", ref CFG.Current.Viewport_Post_Ssao);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Ssao_Enable_TT"));
@@ -1249,7 +1258,7 @@ public class ViewportRenderingTool
         Row("VIEWPORT_Rendering_Post_Row_Wet",
             wet.AlbedoRate > 0.0f || wet.ShininessRate > 0.0f
                 ? LOC.Get("VIEWPORT_Rendering_Post_Wet_Value", $"{wet.AlbedoRate:0.###}", Color(wet.OverrideAlbedo),
-                    $"{wet.ShininessRate:0.###}", $"{wet.OverrideShininess:0.###}")
+                    $"{wet.ShininessRate:0.###}", $"{wet.OverrideShininess:0.###}", $"{wet.Wetness:0.##}")
                 : off,
             "Wet-AlbedoRate");
 
