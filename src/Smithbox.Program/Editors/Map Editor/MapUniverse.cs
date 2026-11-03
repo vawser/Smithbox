@@ -374,6 +374,7 @@ public class MapUniverse : IUniverse
                 if (wrapper?.MapContainer != null)
                 {
                     View.EditorVisibilityAction.OnMapUnloaded(wrapper.MapContainer);
+                    View.LowDetailVisibilityAction.OnMapUnloaded(wrapper.MapContainer);
 
                     wrapper.MapContainer.LoadState = MapContentLoadState.Unloaded;
                     wrapper.MapContainer.Unload();

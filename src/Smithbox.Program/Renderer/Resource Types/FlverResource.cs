@@ -57,6 +57,21 @@ public class FlverResource : IResource, IDisposable
 
     public GPUBufferAllocator.GPUBufferHandle? StaticBoneBuffer { get; private set; }
 
+    /// <summary>
+    /// Triangles of the full detail facesets, so not counting faceset LODs or motion blur.
+    /// </summary>
+    public int DetailTriangleCount { get; private set; }
+
+    /// <summary>
+    /// Surface area of the full detail facesets, in model space.
+    /// </summary>
+    public float DetailSurfaceArea { get; private set; }
+
+    /// <summary>
+    /// A material or texture is named as a low detail one (i.e. m30_00_low_hall_03_a).
+    /// </summary>
+    public bool HasLowDetailNaming { get; private set; }
+
     public bool IsSpeedtree = false;
     /// <summary>
     /// Where this model was loaded from. Gives access to the pool its textures are looked up in.
@@ -1005,6 +1020,104 @@ public class FlverResource : IResource, IDisposable
         return materialName != null && materialName.Contains("_hairy", StringComparison.OrdinalIgnoreCase);
     }
 
+    private static readonly char[] NameTokenSeparators = ['_', ' ', '-', '#', '.'];
+
+    /// <summary>
+    /// Matches whole name tokens only, so m30_00_low_hall_03_a matches, but m30_00_lower_hall does not.
+    /// </summary>
+    private static bool IsLowDetailName(string? path)
+    {
+        if (string.IsNullOrEmpty(path))
+            return false;
+
+        var name = Path.GetFileNameWithoutExtension(path.Replace('\\', '/'));
+
+        foreach (var token in name.Split(NameTokenSeparators, StringSplitOptions.RemoveEmptyEntries))
+        {
+            if (token.Equals("low", StringComparison.OrdinalIgnoreCase) ||
+                token.Equals("lowpoly", StringComparison.OrdinalIgnoreCase))
+                return true;
+
+            // lod, lod1, lod2 and so on
+            if (token.StartsWith("lod", StringComparison.OrdinalIgnoreCase) &&
+                token.Skip(3).All(char.IsDigit))
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Adds the full detail facesets of a mesh to the detail stats, which the low detail filter reads.
+    /// Called before the index buffer is unmapped, as the indices can't be read back after.
+    /// </summary>
+    private void AddDetailStats(FlverSubmesh dest, Span<Vector3> positions, Span<ushort> fs16, Span<int> fs32)
+    {
+        foreach (var faceset in dest.MeshFacesets)
+        {
+            if (faceset.LOD != 0 || faceset.IsMotionBlur)
+                continue;
+
+            // The previous two indices of the strip, or of the current triangle of a list
+            int a = -1, b = -1;
+            var stripLength = 0;
+
+            for (var i = 0; i < faceset.IndexCount; i++)
+            {
+                var offset = faceset.IndexOffset + i;
+                var c = faceset.Is32Bit ? fs32[offset] : (fs16[offset] == 0xFFFF ? -1 : fs16[offset]);
+
+                if (c < 0 || c >= positions.Length)
+                {
+                    stripLength = 0;
+                    continue;
+                }
+
+                stripLength++;
+
+                if (faceset.IsTriangleStrip)
+                {
+                    if (stripLength >= 3)
+                        AddTriangle(positions[a], positions[b], positions[c]);
+
+                    a = b;
+                    b = c;
+                }
+                else
+                {
+                    if (stripLength == 1)
+                        a = c;
+                    else if (stripLength == 2)
+                        b = c;
+                    else
+                    {
+                        AddTriangle(positions[a], positions[b], positions[c]);
+                        stripLength = 0;
+                    }
+                }
+            }
+        }
+    }
+
+    private void ResetDetailStats()
+    {
+        DetailTriangleCount = 0;
+        DetailSurfaceArea = 0.0f;
+        HasLowDetailNaming = false;
+    }
+
+    private void AddTriangle(Vector3 a, Vector3 b, Vector3 c)
+    {
+        var area = Vector3.Cross(b - a, c - a).Length() * 0.5f;
+
+        // Strips join with degenerate triangles, which aren't real faces
+        if (area <= 0.0f || float.IsNaN(area))
+            return;
+
+        DetailTriangleCount++;
+        DetailSurfaceArea += area;
+    }
+
     private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -1020,6 +1133,11 @@ public class FlverResource : IResource, IDisposable
             dest.MaterialMask = int.Parse(matName.Substring(1, 2));
         }
         dest.IsBodyHair = IsBodyHairMaterial(matName);
+
+        if (IsLowDetailName(matName) || IsLowDetailName(mat.MTD) || mat.Textures.Any(x => IsLowDetailName(x.Path)))
+        {
+            HasLowDetailNaming = true;
+        }
 
         dest.SpecializationConstants = new List<SpecializationConstant>();
 
@@ -1109,6 +1227,18 @@ public class FlverResource : IResource, IDisposable
         dest.IsBodyHair = IsBodyHairMaterial(matName);
         dest.MaterialBuffer = AllocateMaterialBuffer(dest);
         dest.MaterialData = new Material();
+
+        // Read before the untextured return, as the naming is needed either way
+        if (IsLowDetailName(matName) || IsLowDetailName(mtd))
+        {
+            HasLowDetailNaming = true;
+        }
+
+        for (var i = mat.textureIndex; i < mat.textureIndex + mat.textureCount && !HasLowDetailNaming; i++)
+        {
+            var tpath = isUTF ? br.GetUTF16(textures[i].pathOffset) : br.GetShiftJIS(textures[i].pathOffset);
+            HasLowDetailNaming = IsLowDetailName(tpath);
+        }
 
         if (!CFG.Current.Viewport_Enable_Texturing || ModelsOnly)
         {
@@ -2569,6 +2699,8 @@ public class FlverResource : IResource, IDisposable
             dest.MeshFacesets.Add(newFaceSet);
         }
 
+        AddDetailStats(dest, pvhandle, fs16, fs32);
+
         dest.GeomBuffer.UnmapVBuffer();
         dest.GeomBuffer.UnmapIBuffer();
 
@@ -2736,6 +2868,8 @@ public class FlverResource : IResource, IDisposable
             dest.MeshFacesets.Add(newFaceSet);
             idxoffset += faceset.Indices.Count;
         }
+
+        AddDetailStats(dest, pvhandle, fs16, fs32);
 
         dest.GeomBuffer.UnmapVBuffer();
         dest.GeomBuffer.UnmapIBuffer();
@@ -3032,6 +3166,8 @@ public class FlverResource : IResource, IDisposable
             idxoffset += newFaceSet.IndexCount;
         }
 
+        AddDetailStats(dest, pvhandle, fs16, fs32);
+
         dest.GeomBuffer.UnmapIBuffer();
         dest.GeomBuffer.UnmapVBuffer();
 
@@ -3155,6 +3291,7 @@ public class FlverResource : IResource, IDisposable
             GPUMeshes = new FlverSubmesh[FlverDeS.Meshes.Count()];
             GPUMaterials = new FlverMaterial[FlverDeS.Materials.Count()];
             Bounds = new BoundingBox();
+            ResetDetailStats();
             Bones = FlverDeS.Nodes;
             BoneTransforms = new List<Matrix4x4>();
             for (var i = 0; i < Bones.Count; i++)
@@ -3235,6 +3372,7 @@ public class FlverResource : IResource, IDisposable
             GPUMeshes = new FlverSubmesh[Flver.Meshes.Count()];
             GPUMaterials = new FlverMaterial[Flver.Materials.Count()];
             Bounds = new BoundingBox();
+            ResetDetailStats();
             Bones = Flver.Nodes;
 
             for (var i = 0; i < Flver.Materials.Count(); i++)
@@ -3401,6 +3539,7 @@ public class FlverResource : IResource, IDisposable
         GPUMeshes = new FlverSubmesh[meshCount];
         GPUMaterials = new FlverMaterial[materialCount];
         Bounds = new BoundingBox();
+        ResetDetailStats();
         //Bones = Flver.Bones;
 
         for (var i = 0; i < materialCount; i++)

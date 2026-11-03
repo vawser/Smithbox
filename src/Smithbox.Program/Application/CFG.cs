@@ -407,6 +407,11 @@ public class CFG
     public bool Toolbar_Tag_Visibility_State_Enabled = false;
     public bool Toolbar_Tag_Visibility_State_Disabled = true;
 
+    public bool Toolbar_LowDetail_Use_Naming = true;
+    public bool Toolbar_LowDetail_Use_Density = true;
+    public float Toolbar_LowDetail_Max_Density = 2.0f;
+    public float Toolbar_LowDetail_Min_Size = 80.0f;
+
     public bool Toolbar_ShowScramblerMenu = false;
 
     public bool Scrambler_RandomisePosition_X = false;

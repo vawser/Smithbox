@@ -28,6 +28,7 @@ public class VisibilityActionTool
         ViewportFiltersTab();
         EditorVisibilityTab();
         GameVisibilityTab();
+        LowDetailTab();
 
         ImGui.EndTabBar();
 
@@ -59,6 +60,16 @@ public class VisibilityActionTool
         if (ImGui.BeginTabItem("Game Visibility##gameVisTab"))
         {
             View.GameVisibilityAction.OnToolWindow();
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    public void LowDetailTab()
+    {
+        if (ImGui.BeginTabItem("Low Detail##lowDetailVisTab"))
+        {
+            View.LowDetailVisibilityAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }

@@ -2,8 +2,6 @@
 # Map Editor TODO
 #----------------------------------------------------
 
-- Supoert AEP (MSB prefabs) (DB)
-
 - Navmesh editing
 - Display of navmesh feature: i.e. jump spots
 

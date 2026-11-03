@@ -85,6 +85,7 @@ public class MapEditorView : IEditorView
     public SelectAllAction SelectAllAction;
     public EditorVisibilityAction EditorVisibilityAction;
     public GameVisibilityAction GameVisibilityAction;
+    public LowDetailVisibilityAction LowDetailVisibilityAction;
     public SelectionOutlineAction SelectionOutlineAction;
     public AdjustToGridAction AdjustToGridAction;
     public EntityInfoAction EntityInfoAction;
@@ -177,6 +178,7 @@ public class MapEditorView : IEditorView
         SelectAllAction = new SelectAllAction(this, project);
         EditorVisibilityAction = new EditorVisibilityAction(this, project);
         GameVisibilityAction = new GameVisibilityAction(this, project);
+        LowDetailVisibilityAction = new LowDetailVisibilityAction(this, project);
         SelectionOutlineAction = new SelectionOutlineAction(this, project);
         AdjustToGridAction = new AdjustToGridAction(this, project);
         EntityInfoAction = new EntityInfoAction(this, project);
