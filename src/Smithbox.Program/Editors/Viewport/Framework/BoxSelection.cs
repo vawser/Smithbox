@@ -175,7 +175,7 @@ public class BoxSelection
 
                     if (!CFG.Current.Viewport_Enable_Box_Selection_Asset)
                     {
-                        if (EntityHelper.IsPartAsset(ent) || EntityHelper.IsPartDummyAsset(ent))
+                        if (EntityHelper.IsPartAsset(ent) || EntityHelper.IsPartDummyAsset(ent) || EntityHelper.IsPartPrefabAsset(ent))
                         {
                             add = false;
                         }

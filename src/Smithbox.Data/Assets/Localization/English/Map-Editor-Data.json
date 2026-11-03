@@ -241,6 +241,10 @@
       "Text": "Failed to read the grass of {0}."
     },
     {
+      "Key": "MAP_Prefab_Failed_To_Read",
+      "Text": "Failed to read the prefab MSB of {0}."
+    },
+    {
       "Key": "MAP_Edge_Failed_To_Read",
       "Text": "Failed to read the EDGE data of {0}."
     },

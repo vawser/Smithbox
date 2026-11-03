@@ -29,6 +29,11 @@ public record EdgePointMesh(RenderableProxy Mesh, Matrix4x4 LocalTransform);
 public record WallMesh(RenderableProxy Mesh, DbgPrimWallCells Primitive);
 
 /// <summary>
+/// The model of a part placed by a prefab asset, which is placed relative to the prefab.
+/// </summary>
+public record PrefabMemberMesh(RenderableProxy Mesh, Matrix4x4 LocalTransform);
+
+/// <summary>
 /// A logical map object that can be either a part, region, event, or light. Uses reflection to access and update properties
 /// </summary>
 public class Entity : ISelectable, IDisposable
@@ -56,6 +61,7 @@ public class Entity : ISelectable, IDisposable
     private IReadOnlyList<RenderableProxy> _grassSceneMeshes;
     private IReadOnlyList<EdgePointMesh> _edgePointMeshes;
     private IReadOnlyList<WallMesh> _wallMeshes;
+    private IReadOnlyList<PrefabMemberMesh> _prefabMemberMeshes;
 
     /// <summary>
     /// Cached name for the entity.
@@ -182,6 +188,7 @@ public class Entity : ISelectable, IDisposable
                 GrassSceneMeshes = null;
                 EdgePointMeshes = null;
                 WallMeshes = null;
+                PrefabMemberMeshes = null;
             }
         }
         get => _renderSceneMesh;
@@ -308,6 +315,31 @@ public class Entity : ISelectable, IDisposable
             ApplyMeshState();
         }
         get => _wallMeshes;
+    }
+
+    /// <summary>
+    /// The models of the parts placed by a prefab asset, each placed relative to it. They all belong to this
+    /// entity, so the prefab is selected and moved as one.
+    /// </summary>
+    [XmlIgnore]
+    public IReadOnlyList<PrefabMemberMesh> PrefabMemberMeshes
+    {
+        set
+        {
+            if (_prefabMemberMeshes != null)
+            {
+                foreach (PrefabMemberMesh entry in _prefabMemberMeshes)
+                {
+                    entry.Mesh.Dispose();
+                }
+            }
+
+            _prefabMemberMeshes = value;
+
+            SetPrefabMemberOutline(IsSelected);
+            ApplyMeshState();
+        }
+        get => _prefabMemberMeshes;
     }
 
     /// <summary>
@@ -477,6 +509,14 @@ public class Entity : ISelectable, IDisposable
                 }
             }
 
+            if (_prefabMemberMeshes != null)
+            {
+                foreach (PrefabMemberMesh entry in _prefabMemberMeshes)
+                {
+                    entry.Mesh.Visible = _EditorVisible;
+                }
+            }
+
             foreach (Entity child in Children)
             {
                 child.EditorVisible = _EditorVisible;
@@ -543,6 +583,14 @@ public class Entity : ISelectable, IDisposable
                 entry.Mesh.RenderFocusGhost = ghosted;
             }
         }
+
+        if (_prefabMemberMeshes != null)
+        {
+            foreach (PrefabMemberMesh entry in _prefabMemberMeshes)
+            {
+                entry.Mesh.RenderFocusGhost = ghosted;
+            }
+        }
     }
 
     /// <summary>
@@ -574,6 +622,7 @@ public class Entity : ISelectable, IDisposable
         }
 
         SetCollisionLayerOutline(true);
+        SetPrefabMemberOutline(true);
 
         if (SelectionFillMesh != null)
         {
@@ -598,6 +647,7 @@ public class Entity : ISelectable, IDisposable
         }
 
         SetCollisionLayerOutline(false);
+        SetPrefabMemberOutline(false);
 
         if (SelectionFillMesh != null)
         {
@@ -613,6 +663,17 @@ public class Entity : ISelectable, IDisposable
         foreach (RenderableProxy mesh in _collisionLayerMeshes)
         {
             mesh.RenderSelectionOutline = outline;
+        }
+    }
+
+    private void SetPrefabMemberOutline(bool outline)
+    {
+        if (_prefabMemberMeshes == null)
+            return;
+
+        foreach (PrefabMemberMesh entry in _prefabMemberMeshes)
+        {
+            entry.Mesh.RenderSelectionOutline = outline;
         }
     }
 
@@ -1738,6 +1799,11 @@ public class Entity : ISelectable, IDisposable
                 {
                     WallMeshes = null;
                 }
+
+                if (PrefabMemberMeshes != null)
+                {
+                    PrefabMemberMeshes = null;
+                }
             }
 
             disposedValue = true;
@@ -1830,6 +1896,14 @@ public class Entity : ISelectable, IDisposable
             foreach (WallMesh entry in _wallMeshes)
             {
                 ApplyProxyState(entry.Mesh, t, useRenderGroups);
+            }
+        }
+
+        if (_prefabMemberMeshes != null)
+        {
+            foreach (PrefabMemberMesh entry in _prefabMemberMeshes)
+            {
+                ApplyProxyState(entry.Mesh, entry.LocalTransform * t, useRenderGroups);
             }
         }
     }

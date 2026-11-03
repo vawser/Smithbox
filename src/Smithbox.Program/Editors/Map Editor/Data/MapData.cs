@@ -39,6 +39,7 @@ public class MapData : IDisposable
     // Shared by all map editor views, as each map can only be loaded once.
     public HavokCollisionBank HavokCollisionBank;
     public GrassBank GrassBank;
+    public PrefabAssetBank PrefabAssetBank;
     public EdgeBank EdgeBank;
     public WallBank WallBank;
     public HavokNavmeshBank HavokNavmeshBank;
@@ -85,6 +86,7 @@ public class MapData : IDisposable
         // so they are created once it exists
         HavokCollisionBank = new HavokCollisionBank(Project);
         GrassBank = new GrassBank(Project);
+        PrefabAssetBank = new PrefabAssetBank(Project);
         EdgeBank = new EdgeBank(Project);
         WallBank = new WallBank(Project);
         HavokNavmeshBank = new HavokNavmeshBank(Project);

@@ -129,6 +129,14 @@ public static class EntityHelper
     }
 
     /// <summary>
+    /// Returns true if this entity is a PrefabAsset (AEP), which places the parts of an MSB of its own
+    /// </summary>
+    public static bool IsPartPrefabAsset(Entity ent)
+    {
+        return ent.WrappedObject is MSB_DB_NT.Part.PrefabAsset ? true : false;
+    }
+
+    /// <summary>
     /// Returns true if this entity is an DummyAsset
     /// </summary>
     public static bool IsPartDummyAsset(Entity ent)

@@ -110,6 +110,15 @@ public class MapResourceHandler
                     LoadList_Asset_Model.Add(modelAsset);
             }
 
+            // Prefab Asset: the models of the parts it places
+            foreach (var memberModel in View.Project.Handler.MapData.PrefabAssetBank.GetMemberModels(model.Name))
+            {
+                var modelAsset = ModelLocator.GetObjModel(View.Project, memberModel, memberModel);
+
+                if (modelAsset.IsValid())
+                    LoadList_Asset_Model.Add(modelAsset);
+            }
+
             // Collision: every displayed type is loaded, as they can be shown together
             if (model.Name.StartsWith('h'))
             {
@@ -252,7 +261,14 @@ public class MapResourceHandler
             assets.Add(TextureLocator.GetAssetTextureVirtualPath(project, modelName));
         }
 
-        return assets.Where(e => e.IsValid()).ToList();
+        // Prefab Assets: the textures of the parts it places
+        foreach (var memberModel in project.Handler.MapData.PrefabAssetBank?.GetMemberModels(modelName) ?? Enumerable.Empty<string>())
+        {
+            assets.AddRange(GetModelTextureAssets(project, memberModel));
+        }
+
+        // Prefab members can share texture containers
+        return assets.Where(e => e.IsValid()).Distinct().ToList();
     }
 
     /// <summary>

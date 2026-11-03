@@ -571,6 +571,9 @@ public class MapUniverse : IUniverse
         if (ShouldSaveFile(map, MapFileType.MSB))
         {
             SaveMSB(map);
+
+            // Maps loaded after this place the saved contents of a prefab
+            Project.Handler.MapData.PrefabAssetBank?.Invalidate(map.Name);
         }
     }
 

@@ -3,7 +3,9 @@
 #----------------------------------------------------
 
 - Supoert AEP (MSB prefabs) (DB)
-- Support for PTIDL (Parts token ID list) (AC6)
+
+- Navmesh editing
+- Display of navmesh feature: i.e. jump spots
 
 - Added some kind of detection for LOD-only assets/map-pieces so we can add a toggle for hiding them quickly
 - Get gizmos to work in Orthographic/Oblique view mode

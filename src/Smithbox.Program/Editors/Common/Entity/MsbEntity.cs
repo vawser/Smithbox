@@ -84,6 +84,7 @@ public class MsbEntity : Entity
         // A part can go from a placeholder to a real model, which has no fill
         SelectionFillMesh = null;
         CollisionLayerMeshes = null;
+        PrefabMemberMeshes = null;
 
         switch (Type)
         {
@@ -197,6 +198,12 @@ public class MsbEntity : Entity
             AssignAssetOrPlaceholder(asset, modelName);
         }
 
+        // Prefab Asset
+        if (EntityHelper.IsPartPrefabAsset(this))
+        {
+            AssignPrefabAssetDrawables(curProject, modelName);
+        }
+
         // Collision
         if (EntityHelper.IsPartCollision(this))
         {
@@ -222,6 +229,67 @@ public class MsbEntity : Entity
 
             RenderSceneMesh = CreateNavmeshMesh(asset);
         }
+    }
+
+    /// <summary>
+    /// Assigns a box at the origin of a prefab asset, with the models of the parts it places displayed alongside it.
+    /// The parts all belong to this entity, so the prefab is selected and moved as one. They can't be edited
+    /// here, as they are stored in the prefab's own MSB.
+    /// </summary>
+    private void AssignPrefabAssetDrawables(ProjectEntry curProject, string modelName)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var scene = curUniverse.GetCurrentScene();
+
+        // The box is what the prefab is placed by, and is all that shows if its MSB can't be read
+        var marker = RenderableHelper.GetDefaultBoxProxy(scene);
+        marker.World = GetWorldMatrix();
+        marker.SetSelectable(this);
+        marker.DrawFilter = RenderFilter.Object;
+
+        SetRenderSceneMesh(marker);
+
+        var fill = RenderableHelper.GetDefaultBoxFillProxy(scene);
+        fill.World = GetWorldMatrix();
+        fill.SetSelectable(this);
+        fill.DrawFilter = RenderFilter.Object;
+
+        SelectionFillMesh = fill;
+
+        List<PrefabMemberMesh> meshes = new();
+        Dictionary<string, ResourceDescriptor> memberAssets = new(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var member in curProject.Handler.MapData.PrefabAssetBank.GetMembers(modelName))
+        {
+            if (!memberAssets.TryGetValue(member.ModelName, out var asset))
+            {
+                // SpeedTree vertices can't be read for this game, and members have no placeholder of their own
+                asset = IsSpeedTreePlaceholder(member.ModelName)
+                    ? null
+                    : ModelLocator.GetObjModel(curProject, member.ModelName, member.ModelName);
+
+                memberAssets[member.ModelName] = asset;
+
+                if (asset != null)
+                {
+                    LoadAsset<FlverResource>(asset, MapResourceHandler.GetObjectModelsName(curProject), ResourceType.Flver | ResourceType.Texture);
+                }
+            }
+
+            if (asset == null)
+                continue;
+
+            // Members share the provider of their model, as they have no model masks of their own
+            var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene,
+                ResourceManager.DefaultPool.Find<FlverResource>(asset.Name), ModelMarkerType.None, "", null);
+
+            mesh.SetSelectable(this);
+            mesh.DrawFilter = RenderFilter.Object;
+
+            meshes.Add(new PrefabMemberMesh(mesh, member.LocalTransform));
+        }
+
+        PrefabMemberMeshes = meshes;
     }
 
     /// <summary>
