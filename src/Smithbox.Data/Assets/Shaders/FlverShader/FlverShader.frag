@@ -162,6 +162,10 @@ struct sceneParams
 	mapDirectionalLight modelLights[4];
 	vec4 modelHemiUp;
 	vec4 modelHemiDown;
+
+	// The map's lights near the camera: entries of maplightdata, see SceneLightTable
+	uint mapLightStart;
+	uint mapLightCount;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -214,6 +218,12 @@ struct irradianceVolumeData
 layout(set = 4, binding = 0, std140) buffer irradianceVolumes
 {
     readonly irradianceVolumeData volumedata[];
+};
+
+// The map's lights near the camera, in the same buffer, see SceneLightTable
+layout(set = 4, binding = 0, std140) buffer mapLights
+{
+    readonly sceneLight maplightdata[];
 };
 
 // The entry after a material in the same buffer
@@ -1313,6 +1323,29 @@ void main()
 	{
 		vec3 L;
 		vec3 radiance = LightRadiance(sceneparam.lights[i], fsin_worldpos, L);
+		if (dot(radiance, radiance) > 0.0)
+		{
+			direct += ShadeLight(surface, L, radiance, radiance);
+		}
+	}
+
+	// The map's lights near the camera. Most are out of range of any given pixel, so only their position and
+	// range are read for those.
+	for (uint i = 0u; i < sceneparam.mapLightCount; i++)
+	{
+		uint index = sceneparam.mapLightStart + i;
+		vec4 positionRange = maplightdata[index].positionRange;
+		vec3 toLight = positionRange.xyz - fsin_worldpos;
+
+		if (positionRange.w > 0.0 && dot(toLight, toLight) > positionRange.w * positionRange.w &&
+			int(maplightdata[index].directionType.w + 0.5) != LIGHT_DIRECTIONAL)
+			continue;
+
+		// Copied out, as the buffer's readonly entries can't be passed to a function
+		sceneLight light = maplightdata[index];
+
+		vec3 L;
+		vec3 radiance = LightRadiance(light, fsin_worldpos, L);
 		if (dot(radiance, radiance) > 0.0)
 		{
 			direct += ShadeLight(surface, L, radiance, radiance);

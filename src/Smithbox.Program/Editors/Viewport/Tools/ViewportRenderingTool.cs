@@ -68,17 +68,6 @@ public class ViewportRenderingTool
         // Map Editor
         if (viewport.Owner is MapUniverse mapUniverse)
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Environment_Map")}##viewportRenderingEnvMap"))
-            {
-                if (ImGui.Button($"{LOC.Get("VIEWPORT_Menubar_Action_Default")}##defaultEnvMap"))
-                {
-                    viewport.SetEnvMap(0);
-                    viewport.DelayPicking();
-                }
-
-                ImGui.EndTabItem();
-            }
-
             if (mapUniverse.View.IrradianceVolumeBank.CanUse())
             {
                 if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Global_Illumination")}##viewportRenderingGlobalIllumination"))
@@ -98,6 +87,13 @@ public class ViewportRenderingTool
                     ImGui.EndTabItem();
                 }
             }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_BTL_Lights")}##viewportRenderingBtlLights"))
+            {
+                BtlLightsTab(mapUniverse.View);
+
+                ImGui.EndTabItem();
+            }
         }
 
         if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Parts")}##viewportRenderingParts"))
@@ -112,6 +108,53 @@ public class ViewportRenderingTool
         }
 
         ImGui.EndTabBar();
+    }
+
+    /// <summary>
+    /// Which of the loaded maps' BTL lights light the viewports, and how brightly. These apply at once, as the
+    /// lights are gathered every frame.
+    /// </summary>
+    private void BtlLightsTab(MapEditorView view)
+    {
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_BTL_Near_Camera")}##btlNearCamera",
+            ref CFG.Current.Viewport_BTL_Lights_Near_Camera);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_BTL_Near_Camera_TT"));
+
+        ImGui.BeginDisabled(!CFG.Current.Viewport_BTL_Lights_Near_Camera);
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_BTL_Radius")}##btlRadius",
+            ref CFG.Current.Viewport_BTL_Light_Radius, 1.0f, 1000.0f, "%.0f m");
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_BTL_Radius_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_BTL_Enable_Distance")}##btlEnableDistance",
+            ref CFG.Current.Viewport_BTL_Light_Use_Enable_Distance);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_BTL_Enable_Distance_TT"));
+
+        ImGui.EndDisabled();
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderInt($"{LOC.Get("VIEWPORT_Rendering_BTL_Max_Count")}##btlMaxCount",
+            ref CFG.Current.Viewport_BTL_Light_Max_Count, 0, SceneLightTable.Capacity);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_BTL_Max_Count_TT"));
+
+        // With map lighting, the lights take the GPARAM's exposure, as the sun does
+        var exposureFromMap = SceneRenderer.MapLighting != null;
+
+        ImGui.BeginDisabled(exposureFromMap);
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("PREF_Viewport_Light_Intensity_Scale")}##btlIntensityScale",
+            ref CFG.Current.Viewport_Light_Intensity_Scale, 0.1f, 50.0f);
+        ImGui.EndDisabled();
+        GUI.Tooltip(exposureFromMap
+            ? LOC.Get("VIEWPORT_Rendering_BTL_Intensity_Map_TT",
+                SceneRenderer.MapLighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale)
+            : LOC.Get("PREF_Viewport_Light_Intensity_Scale_TT"));
+
+        ImGui.Separator();
+
+        var collector = view.ViewportWindow.LightCollector;
+        ImGui.Text(LOC.Get("VIEWPORT_Rendering_BTL_Status", collector.ShadedCount, collector.InRangeCount));
     }
 
     /// <summary>

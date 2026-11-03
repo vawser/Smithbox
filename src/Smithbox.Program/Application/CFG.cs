@@ -1344,6 +1344,14 @@ public class CFG
 
     public float Viewport_Light_Intensity_Scale = 5.0f;
 
+    // The Map Editor's BTL lights: those within this many metres of the camera light the viewports, nearest first,
+    // up to the count; with the enable distance on, each also only within its own EnableDist, as in game.
+    // Selected lights always do.
+    public bool Viewport_BTL_Lights_Near_Camera = true;
+    public float Viewport_BTL_Light_Radius = 150.0f;
+    public bool Viewport_BTL_Light_Use_Enable_Distance = true;
+    public int Viewport_BTL_Light_Max_Count = 256;
+
     public Vector3 Viewport_Auto_Invade_Marker_Base_Color = Utils.GetDecimalColor(Color.Red);
     public Vector3 Viewport_Auto_Invade_Marker_Highlight_Color = Utils.GetDecimalColor(Color.DarkRed);
     public Vector3 Viewport_MultiPlayer_Wall_Base_Color = Utils.GetDecimalColor(Color.Gold);

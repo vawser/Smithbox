@@ -525,6 +525,50 @@
       "Text": "No viewport is open."
     },
     {
+      "Key": "VIEWPORT_Rendering_Tab_BTL_Lights",
+      "Text": "BTL Lights"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Near_Camera",
+      "Text": "Light with the Lights Near the Camera"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Near_Camera_TT",
+      "Text": "Light the viewports with the loaded maps' BTL lights near the camera, nearest first. When off, only selected lights shine. Selected lights always shine, wherever they are."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Radius",
+      "Text": "Light Radius"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Radius_TT",
+      "Text": "How far from the camera a light can be and still shine."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Enable_Distance",
+      "Text": "Use Each Light's Enable Distance"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Enable_Distance_TT",
+      "Text": "Also only light with a light within its own EnableDist of the camera, as the game turns it on. An EnableDist of 0 is taken as no limit."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Max_Count",
+      "Text": "Most Lights"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Max_Count_TT",
+      "Text": "The most lights shaded at once, the nearest kept. Every pixel checks each of them, so lower this if the viewport slows down."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Intensity_Map_TT",
+      "Text": "Not used while the map's GPARAMs light the viewport: the lights' power is in the game's units, so it takes the GPARAM's exposure ({0:0.###}), as the sun does."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Status",
+      "Text": "Lighting with {0} of the {1} lights in range."
+    },
+    {
       "Key": "VIEWPORT_Menubar_GI_Auto_Exposure_Map_TT",
       "Text": "Not used while the map's GPARAMs light the viewport: the volumes take the GPARAM's exposure, as the sun does."
     },

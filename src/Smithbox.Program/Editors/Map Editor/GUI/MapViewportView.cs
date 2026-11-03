@@ -25,13 +25,13 @@ public class MapViewportView
 
     public PlacementEntity PlacementOrb;
 
-    private readonly SelectedLightPreview LightPreview;
+    public readonly MapLightCollector LightCollector;
 
     public MapViewportView(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
-        LightPreview = new SelectedLightPreview(view);
+        LightCollector = new MapLightCollector(view);
 
         view.Window = Smithbox.Instance._context.Window;
         view.Device = Smithbox.Instance._context.Device;
@@ -78,7 +78,7 @@ public class MapViewportView
 
     public void Update(float deltatime)
     {
-        LightPreview.Update();
+        LightCollector.Update();
         View.EnemyAIVisualizationTool.Update();
 
         // The viewport keeps its last focus and bounds whilst hidden, so it must not respond to input

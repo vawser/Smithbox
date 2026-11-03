@@ -61,6 +61,12 @@ public class SceneRenderPipeline
     /// </summary>
     public bool UseMapLighting = false;
 
+    /// <summary>
+    ///     Whether models are lit by the map's lights in <see cref="SceneRenderer.MapLights" />. Only the Map Editor's
+    ///     viewports are, as the table holds the BTL lights of its loaded maps.
+    /// </summary>
+    public bool UseMapLights = false;
+
     /// <summary>The map lighting this pipeline is lit with this frame, or null if it uses its own settings</summary>
     public GparamLighting ActiveMapLighting => UseMapLighting && CFG.Current.Viewport_Map_Lighting
         ? SceneRenderer.MapLighting
@@ -352,6 +358,10 @@ public class SceneRenderPipeline
             SceneParams.IrradianceVolumeCount = useIrradianceVolumes ? SceneRenderer.IrradianceVolumes.Count : 0;
             SceneParams.IrradianceVolumeExposure = irradianceExposure;
             SceneParams.IrradianceVolumeFlags = irradianceFlags;
+
+            // As with the volumes, read here so the count only covers lights already on the GPU
+            SceneParams.MapLightStart = SceneRenderer.MapLights.Start;
+            SceneParams.MapLightCount = UseMapLights ? SceneRenderer.MapLights.Count : 0;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)

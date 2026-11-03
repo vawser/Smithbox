@@ -154,8 +154,9 @@ public class VulkanViewport : IViewport
             // The irradiance volume table holds the Map Editor's loaded maps
             ViewPipeline.UseIrradianceVolumes = Owner is MapUniverse;
 
-            // So is the lighting of their GPARAMs
+            // So is the lighting of their GPARAMs, and their BTL lights
             ViewPipeline.UseMapLighting = Owner is MapUniverse;
+            ViewPipeline.UseMapLights = Owner is MapUniverse;
 
             ViewportCamera.UpdateProjectionMatrix();
 

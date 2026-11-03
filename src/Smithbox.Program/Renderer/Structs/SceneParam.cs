@@ -118,6 +118,16 @@ public unsafe struct SceneParam
     /// <summary>The model set's hemisphere light, as <see cref="HemiUp" /> and <see cref="HemiDown" /></summary>
     public Vector4 ModelHemiUp;
     public Vector4 ModelHemiDown;
+
+    /// <summary>The first entry of <see cref="SceneRenderer.MapLights" /> in the material buffer</summary>
+    public uint MapLightStart;
+
+    /// <summary>How many of the map's lights to light with, 0 outside the Map Editor</summary>
+    public uint MapLightCount;
+
+    // Fills the last 16 byte row, as the shaders lay the struct out
+    public uint MapLightPad0;
+    public uint MapLightPad1;
 }
 
 /// <summary>A directional light of the map's GPARAM, as the shaders read it</summary>
