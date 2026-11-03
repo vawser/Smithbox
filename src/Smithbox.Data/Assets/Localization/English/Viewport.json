@@ -369,6 +369,14 @@
       "Text": "Volume textures on the GPU: {0}"
     },
     {
+      "Key": "VIEWPORT_Menubar_GI_Shaded_Volumes",
+      "Text": "Volumes in the shading table: {0} of {1}"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Shaded_Volumes_TT",
+      "Text": "The linked environment boxes whose four textures of the bake are on the GPU. Boxes the game skips are left out."
+    },
+    {
       "Key": "VIEWPORT_Menubar_GI_Map_Status",
       "Text": "{0}: {1} volumes in bake {2}, {3} of {4} environment boxes linked"
     },

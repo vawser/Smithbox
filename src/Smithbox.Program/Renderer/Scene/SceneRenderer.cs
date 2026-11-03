@@ -64,10 +64,14 @@ public static class SceneRenderer
     public static TexturePool GlobalCubeTexturePool { get; private set; }
 
     /// <summary>
-    /// 3D textures: the irradiance volumes of AC6, ER and NR maps. Not bound to the FLVER pipelines yet;
-    /// see Documentation/Full GI/Plan.md phases 3 and 4.
+    /// 3D textures: the irradiance volumes of AC6, ER and NR maps. Binding 1 of the cube textures' set (set 3).
     /// </summary>
     public static TexturePool GlobalVolumeTexturePool { get; private set; }
+
+    /// <summary>
+    /// The irradiance volumes to light the Map Editor's models with, kept in the material buffer
+    /// </summary>
+    public static IrradianceVolumeTable IrradianceVolumes { get; private set; }
     private static int _nextBuffer => (_currentBuffer + 1) % BUFFER_COUNT;
     private static int _prevBuffer => (_currentBuffer - 1 + BUFFER_COUNT) % BUFFER_COUNT;
 
@@ -113,15 +117,17 @@ public static class SceneRenderer
         MaterialBufferAllocator = new GPUBufferAllocator("materials", 32 * 1024 * 1024,
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(Material),
             VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment);
+        IrradianceVolumes = new IrradianceVolumeTable(MaterialBufferAllocator);
         BoneBufferAllocator = new GPUBufferAllocator("bones", CFG.Current.Viewport_Limit_Buffer_Flver_Bone * 64,
             VkBufferUsageFlags.StorageBuffer, 64, VkShaderStageFlags.Vertex);
         // Material texture indices are 16 bit, so this can go up to TexturePool.MaxTextureCount (65536).
         // Individual descriptors are updated in place, so a larger pool no longer makes texture loads costlier.
         GlobalTexturePool = new TexturePool(device, "globalTextures", 32768);
-        GlobalCubeTexturePool = new TexturePool(device, "globalCubeTextures", 500);
-
-        // Each volume has four textures per bake, and ER maps have around 130 volumes
-        GlobalVolumeTexturePool = new TexturePool(device, "globalVolumeTextures", 2048);
+        // The volumes share the cube textures' descriptor set, as binding 1, so the flver pipelines stay within
+        // 8 descriptor sets, the most some GPUs allow. Each volume has four textures per bake, and ER maps have
+        // around 130 volumes.
+        GlobalCubeTexturePool = new TexturePool(device, "globalCubeTextures", 500, "globalVolumeTextures", 2048);
+        GlobalVolumeTexturePool = GlobalCubeTexturePool.Secondary;
 
         GraphicsDevice.DeviceLostContext = DescribeLoad;
 
@@ -292,9 +298,9 @@ public static class SceneRenderer
                 cleanCubeTexPool = true;
             }
 
+            // Its descriptors are written by the cube pool's update above, which shares its set
             if (GlobalVolumeTexturePool.DescriptorTableDirty)
             {
-                GlobalVolumeTexturePool.RegenerateDescriptorTables();
                 cleanVolumeTexPool = true;
             }
 

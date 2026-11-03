@@ -540,6 +540,13 @@ public class MapEditorScreen : EditorScreen
 
         activeView.ViewportWindow.Update(dt);
 
+        // The irradiance volumes of every loaded map, shared by all views
+        activeView.IrradianceVolumeBank.UpdateGpuTable(
+            activeView.Project.Handler.MapData.PrimaryBank.Maps.Values
+                .Select(w => w.MapContainer)
+                .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded),
+            CFG.Current.Viewport_GI_Bake);
+
         // Throw any exceptions that ocurred during async map loading, in any view.
         // Cleared before throwing so a handled exception is not rethrown every frame.
         foreach (var view in ViewHandler.Views)

@@ -1,0 +1,56 @@
+using System;
+using System.Runtime.InteropServices;
+
+namespace StudioCore.Renderer;
+
+/// <summary>
+/// The irradiance volumes the flver shader lights with, in drawing order (coarse first, so finer volumes blend
+/// over them). Kept in one allocation of the material buffer, which the shader already binds (set 4), so no
+/// descriptor set is needed: the shader reads it from the entry at <see cref="Start" />, for <see cref="Count" />
+/// entries, both passed in the scene params.
+/// </summary>
+public class IrradianceVolumeTable
+{
+    /// <summary>The most volumes shaded at once. ER maps have around 130 each.</summary>
+    public const int Capacity = 512;
+
+    private readonly GPUBufferAllocator.GPUBufferHandle _allocation;
+
+    // The last entries uploaded, so an unchanged table isn't uploaded again
+    private byte[] _uploaded = Array.Empty<byte>();
+
+    public IrradianceVolumeTable(GPUBufferAllocator materialBuffer)
+    {
+        // Aligned to the entry size, so the start is a whole entry index
+        _allocation = materialBuffer.Allocate(Capacity * IrradianceVolumeData.Size, IrradianceVolumeData.Size);
+    }
+
+    /// <summary>The index of the first entry in the material buffer, counted in entries</summary>
+    public uint Start => _allocation.AllocationStart / IrradianceVolumeData.Size;
+
+    /// <summary>How many entries the shader reads. Only updated once their data is on the GPU.</summary>
+    public uint Count { get; private set; }
+
+    public void Upload(IrradianceVolumeData[] entries, int count)
+    {
+        count = Math.Min(count, Capacity);
+
+        var bytes = MemoryMarshal.AsBytes(entries.AsSpan(0, count)).ToArray();
+
+        if (bytes.AsSpan().SequenceEqual(_uploaded))
+        {
+            return;
+        }
+
+        _uploaded = bytes;
+
+        if (count == 0)
+        {
+            Count = 0;
+            return;
+        }
+
+        var data = entries.AsSpan(0, count).ToArray();
+        _allocation.FillBuffer(data, () => Count = (uint)count);
+    }
+}

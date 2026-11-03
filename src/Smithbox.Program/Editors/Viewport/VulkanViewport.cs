@@ -151,6 +151,9 @@ public class VulkanViewport : IViewport
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
 
+            // The irradiance volume table holds the Map Editor's loaded maps
+            ViewPipeline.UseIrradianceVolumes = Owner is MapUniverse;
+
             ViewportCamera.UpdateProjectionMatrix();
 
             ViewPipeline.SetViewportSetupAction((d, cl) =>

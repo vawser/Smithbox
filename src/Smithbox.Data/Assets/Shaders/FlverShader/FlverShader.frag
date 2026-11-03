@@ -128,6 +128,15 @@ struct sceneParams
 	float windPeriod;
 	uint materialFeatures;
 	uint sceneDepthTexture; // index in globalTextures of the depth behind transparent draws, 0 if there is none
+
+	vec4 wind;
+	float collisionOpacity;
+	float navVolumeSliceHeight;
+	uint navVolumeSliceFlags;
+
+	// The irradiance volumes to light with: entries of volumedata, see IrradianceVolumeTable
+	uint irradianceVolumeStart;
+	uint irradianceVolumeCount;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -137,6 +146,9 @@ layout(set = 0, binding = 0) uniform SceneParamBuffer
 
 layout(set = 2, binding = 0) uniform texture2D globalTextures[];
 layout(set = 3, binding = 0) uniform textureCube globalTexturesCube[];
+
+// The irradiance volumes of AC6, ER and NR maps, sharing the cube textures' set
+layout(set = 3, binding = 1) uniform texture3D globalTexturesVolume[];
 
 // Texture indices into globalTextures, stored as 16 bit values packed two to a 32 bit word.
 // Six rows of four values:
@@ -153,6 +165,22 @@ struct materialData
 layout(set = 4, binding = 0, std140) buffer materials
 {
     readonly materialData matdata[];
+};
+
+// An irradiance volume, laid out as IrradianceVolumeData. The table is an allocation of the material buffer,
+// starting at entry sceneparam.irradianceVolumeStart.
+struct irradianceVolumeData
+{
+	mat4 worldToLocal;      // world to the volume's box, -1 to 1 on each axis
+	vec4 extentsFade;       // xyz: half the box size in metres, w: 1 / fade distance
+	vec4 voxelCountsScale;  // xyz: voxel counts, w: diffuse scale
+	uvec4 textures;         // X, Y, Z, W in globalTexturesVolume
+	vec4 info;              // x: volume ID, y: bake, z: priority
+};
+
+layout(set = 4, binding = 0, std140) buffer irradianceVolumes
+{
+    readonly irradianceVolumeData volumedata[];
 };
 
 // The entry after a material in the same buffer

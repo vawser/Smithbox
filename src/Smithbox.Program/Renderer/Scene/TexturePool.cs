@@ -54,6 +54,15 @@ public class TexturePool
     private readonly string _resourceName;
     private ResourceSet _poolResourceSet;
 
+    // A pool can share its descriptor set with a second pool, as binding 1, so another kind of texture array
+    // doesn't need a descriptor set of its own. The owner keeps the set; the secondary only has slots.
+    private readonly TexturePool _owner;
+
+    /// <summary>
+    ///     The pool sharing this pool's descriptor set as binding 1, if any
+    /// </summary>
+    public TexturePool Secondary { get; }
+
     // Scratch buffers for in-place descriptor updates (only touched from the render thread)
     private uint[] _updateIndices = new uint[256];
     private BindableResource[] _updateResources = new BindableResource[256];
@@ -71,28 +80,46 @@ public class TexturePool
         }
     }
 
-    public TexturePool(GraphicsDevice d, string name, uint poolsize)
+    /// <param name="secondaryName">If set, a second pool is made that shares this pool's descriptor set as binding 1</param>
+    public TexturePool(GraphicsDevice d, string name, uint poolsize, string secondaryName = null, uint secondarySize = 0)
+        : this(name, poolsize, null)
+    {
+        if (secondaryName != null)
+        {
+            Secondary = new TexturePool(secondaryName, secondarySize, this);
+        }
+
+        var elements = Secondary == null
+            ? new[] { LayoutElement(_resourceName, TextureCount) }
+            : new[] { LayoutElement(_resourceName, TextureCount), LayoutElement(Secondary._resourceName, Secondary.TextureCount) };
+
+        _poolLayout = d.ResourceFactory.CreateResourceLayout(new ResourceLayoutDescription(elements));
+    }
+
+    private TexturePool(string name, uint poolsize, TexturePool owner)
     {
         poolsize = Math.Min(poolsize, MaxTextureCount);
         _resourceName = name;
+        _owner = owner;
         TextureCount = poolsize;
         _allocator = new FreeListAllocator(poolsize);
         for (var i = 0; i < poolsize; i++)
         {
             _handles.Add(null);
         }
+    }
 
-        ResourceLayoutDescription layoutdesc = new(
-            new ResourceLayoutElementDescription(
-                _resourceName,
-                VkDescriptorType.SampledImage,
-                VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment,
-                // UpdateAfterBind lets us rewrite descriptors after the set is bound; UpdateUnusedWhilePending
-                // additionally lets us do so while earlier frames are still executing, provided they don't
-                // sample the element being rewritten.
-                VkDescriptorBindingFlags.UpdateAfterBind | VkDescriptorBindingFlags.UpdateUnusedWhilePending,
-                TextureCount));
-        _poolLayout = d.ResourceFactory.CreateResourceLayout(layoutdesc);
+    private static ResourceLayoutElementDescription LayoutElement(string name, uint count)
+    {
+        return new ResourceLayoutElementDescription(
+            name,
+            VkDescriptorType.SampledImage,
+            VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment,
+            // UpdateAfterBind lets us rewrite descriptors after the set is bound; UpdateUnusedWhilePending
+            // additionally lets us do so while earlier frames are still executing, provided they don't
+            // sample the element being rewritten.
+            VkDescriptorBindingFlags.UpdateAfterBind | VkDescriptorBindingFlags.UpdateUnusedWhilePending,
+            count);
     }
 
     public uint TextureCount { get; }
@@ -119,6 +146,11 @@ public class TexturePool
     {
         get
         {
+            if (Secondary != null && Secondary.DescriptorTableDirty)
+            {
+                return true;
+            }
+
             lock (_stateLock)
             {
                 if (_fullRebuildRequired || _dirtySlots.Count > 0)
@@ -384,7 +416,99 @@ public class TexturePool
     /// </summary>
     public void RegenerateDescriptorTables()
     {
+        // A secondary pool's descriptors live in its owner's set, which updates both
+        if (_owner != null)
+        {
+            _owner.RegenerateDescriptorTables();
+            return;
+        }
+
         SceneRenderer.AddBackgroundUploadTask((d, cl) => UpdateDescriptorTable(d));
+    }
+
+    /// <summary>
+    ///     The descriptor work a pool has queued up, taken in one go so it can be applied to a shared set
+    /// </summary>
+    private sealed class PendingWork
+    {
+        public bool Rebuild;
+        public HashSet<uint> Dirty;
+        public List<RetiredEntry> Due;
+        public Texture Fallback;
+    }
+
+    /// <summary>
+    ///     The pool's default texture (handle 0), which every unused or not yet uploaded slot points at
+    /// </summary>
+    private Texture GetFallback()
+    {
+        lock (_allocationLock)
+        {
+            return _handles[0]?._texture;
+        }
+    }
+
+    private PendingWork TakeWork(Texture fallback)
+    {
+        var work = new PendingWork { Fallback = fallback };
+
+        lock (_stateLock)
+        {
+            work.Rebuild = _fullRebuildRequired;
+            _fullRebuildRequired = false;
+            work.Dirty = _dirtySlots;
+            _dirtySlots = new HashSet<uint>();
+        }
+
+        // Retired slots whose grace period is over: reset their descriptor to the fallback, then release.
+        lock (_disposalLock)
+        {
+            for (var i = _retired.Count - 1; i >= 0; i--)
+            {
+                if (_retired[i].Age >= RetireDelayFrames)
+                {
+                    work.Due ??= new List<RetiredEntry>();
+                    work.Due.Add(_retired[i]);
+                    _retired.RemoveAt(i);
+                }
+            }
+        }
+
+        if (work.Due != null)
+        {
+            foreach (RetiredEntry e in work.Due)
+            {
+                if (e.Slot >= 0)
+                {
+                    work.Dirty.Add((uint)e.Slot);
+                }
+            }
+        }
+
+        return work;
+    }
+
+    /// <summary>
+    ///     Only once no descriptor references them anymore is it safe to destroy textures / reuse slots
+    /// </summary>
+    private void ReleaseDue(PendingWork work)
+    {
+        if (work.Due == null)
+        {
+            return;
+        }
+
+        foreach (RetiredEntry e in work.Due)
+        {
+            e.Texture?.Dispose();
+            if (e.Slot >= 0)
+            {
+                lock (_allocationLock)
+                {
+                    _allocator.Free((uint)e.Slot);
+                }
+            }
+        }
     }
 
     private void UpdateDescriptorTable(GraphicsDevice d)
@@ -394,99 +518,77 @@ public class TexturePool
             return;
         }
 
-        // Every unused or not yet uploaded slot points at the default texture (handle 0).
-        Texture fallback;
-        lock (_allocationLock)
-        {
-            fallback = _handles[0]?._texture;
-        }
+        // The set can only be filled once every pool in it has its default texture. Until then nothing is
+        // consumed, so we stay dirty and retry.
+        Texture fallback = GetFallback();
+        Texture secondaryFallback = Secondary?.GetFallback();
 
-        if (fallback == null)
+        if (fallback == null || (Secondary != null && secondaryFallback == null))
         {
-            // Default texture hasn't been uploaded yet. Nothing has been consumed, so we stay dirty and retry.
             return;
         }
 
-        bool rebuild;
-        HashSet<uint> dirty;
-        lock (_stateLock)
-        {
-            rebuild = _fullRebuildRequired || _poolResourceSet == null;
-            _fullRebuildRequired = false;
-            dirty = _dirtySlots;
-            _dirtySlots = new HashSet<uint>();
-        }
+        PendingWork work = TakeWork(fallback);
+        PendingWork secondaryWork = Secondary?.TakeWork(secondaryFallback);
 
-        // Retired slots whose grace period is over: reset their descriptor to the fallback, then release.
-        List<RetiredEntry> due = null;
-        lock (_disposalLock)
-        {
-            for (var i = _retired.Count - 1; i >= 0; i--)
-            {
-                if (_retired[i].Age >= RetireDelayFrames)
-                {
-                    due ??= new List<RetiredEntry>();
-                    due.Add(_retired[i]);
-                    _retired.RemoveAt(i);
-                }
-            }
-        }
-
-        if (due != null)
-        {
-            foreach (RetiredEntry e in due)
-            {
-                if (e.Slot >= 0)
-                {
-                    dirty.Add((uint)e.Slot);
-                }
-            }
-        }
+        var rebuild = work.Rebuild || secondaryWork?.Rebuild == true || _poolResourceSet == null;
 
         if (rebuild)
         {
-            RebuildResourceSet(d, fallback);
+            RebuildResourceSet(d, secondaryWork);
         }
-        else if (dirty.Count > 0)
+        else
         {
-            WriteDirtyDescriptors(dirty, fallback);
+            WriteDirtyDescriptors(_poolResourceSet, 0, work);
+
+            if (secondaryWork != null)
+            {
+                Secondary.WriteDirtyDescriptors(_poolResourceSet, 1, secondaryWork);
+            }
         }
 
-        // Only now that no descriptor references them anymore is it safe to destroy textures / reuse slots.
-        if (due != null)
+        ReleaseDue(work);
+
+        if (secondaryWork != null)
         {
-            foreach (RetiredEntry e in due)
+            Secondary.ReleaseDue(secondaryWork);
+        }
+    }
+
+    private void FillResources(BindableResource[] resources, int start, Texture fallback)
+    {
+        lock (_allocationLock)
+        {
+            for (var i = 0; i < TextureCount; i++)
             {
-                e.Texture?.Dispose();
-                if (e.Slot >= 0)
-                {
-                    lock (_allocationLock)
-                    {
-                        _allocator.Free((uint)e.Slot);
-                    }
-                }
+                resources[start + i] = _handles[i]?._texture ?? fallback;
             }
         }
     }
 
-    private void RebuildResourceSet(GraphicsDevice d, Texture fallback)
+    private void RebuildResourceSet(GraphicsDevice d, PendingWork secondaryWork)
     {
-        var resources = new BindableResource[TextureCount];
-        lock (_allocationLock)
-        {
-            for (var i = 0; i < resources.Length; i++)
-            {
-                resources[i] = _handles[i]?._texture ?? fallback;
-            }
-        }
+        // The resources of each binding, one after another
+        var resources = new BindableResource[TextureCount + (Secondary?.TextureCount ?? 0)];
+
+        FillResources(resources, 0, GetFallback());
+        Secondary?.FillResources(resources, (int)TextureCount, secondaryWork.Fallback);
 
         ResourceSet old = _poolResourceSet;
         _poolResourceSet = d.ResourceFactory.CreateResourceSet(new ResourceSetDescription(_poolLayout, resources));
         old?.Dispose();
     }
 
-    private void WriteDirtyDescriptors(HashSet<uint> dirty, Texture fallback)
+    private void WriteDirtyDescriptors(ResourceSet set, uint binding, PendingWork work)
     {
+        var dirty = work.Dirty;
+        var fallback = work.Fallback;
+
+        if (dirty.Count == 0)
+        {
+            return;
+        }
+
         if (_updateIndices.Length < dirty.Count)
         {
             var size = Math.Max(dirty.Count, _updateIndices.Length * 2);
@@ -505,7 +607,7 @@ public class TexturePool
             }
         }
 
-        _poolResourceSet.UpdateSampledImages(0, _updateIndices, _updateResources, count);
+        set.UpdateSampledImages(binding, _updateIndices, _updateResources, count);
 
         // Don't hold on to textures through the scratch buffer
         Array.Clear(_updateResources, 0, count);
@@ -513,11 +615,18 @@ public class TexturePool
 
     public ResourceLayout GetLayout()
     {
-        return _poolLayout;
+        return _owner?.GetLayout() ?? _poolLayout;
     }
 
     public void BindTexturePool(CommandList cl, uint slot)
     {
+        // A secondary pool is bound with its owner's set
+        if (_owner != null)
+        {
+            _owner.BindTexturePool(cl, slot);
+            return;
+        }
+
         if (_poolResourceSet != null)
         {
             cl.SetGraphicsResourceSet(slot, _poolResourceSet);
@@ -566,6 +675,11 @@ public class TexturePool
         // Information
         public uint Width { get; set; }
         public uint Height { get; set; }
+
+        /// <summary>The depth of a volume, 1 for other textures</summary>
+        public uint Depth { get; set; } = 1;
+
+        public TexturePool Pool => _pool;
         public VkFormat Format { get; set; }
 
         public TPF.Texture TpfTexture { get; set; }
@@ -645,6 +759,7 @@ public class TexturePool
             // another. In the 2D pool, e.g. for the texture viewer, only the first slice is uploaded, as before.
             var isVolume = IsDDSVolume(dds) && _pool == SceneRenderer.GlobalVolumeTexturePool;
             var depth = isVolume ? (uint)Math.Max(1, dds.dwDepth) : 1u;
+            Depth = depth;
 
             VkFormat format;
 

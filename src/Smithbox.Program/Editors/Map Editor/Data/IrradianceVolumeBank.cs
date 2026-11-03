@@ -1,10 +1,12 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
@@ -231,6 +233,133 @@ public class IrradianceVolumeBank
             return false;
 
         return r.Shape is not MSB.Shape.Box || r.Name == null || r.Name.Length != 10;
+    }
+
+    /// <summary>
+    /// How many volumes the last table update gave the shaders
+    /// </summary>
+    public int ShadedVolumeCount { get; private set; }
+
+    private IrradianceVolumeData[] _tableEntries = new IrradianceVolumeData[IrradianceVolumeTable.Capacity];
+
+    /// <summary>
+    /// Rebuild the volume table the shaders light with, from the loaded maps' linked boxes whose four textures of
+    /// the bake are on the GPU. Done every frame, so moved, resized or relinked boxes follow at once; the table is
+    /// only uploaded when it changes.
+    /// </summary>
+    public void UpdateGpuTable(IEnumerable<MapContainer> maps, int bake)
+    {
+        var table = SceneRenderer.IrradianceVolumes;
+
+        if (table == null)
+            return;
+
+        var found = new List<(IrradianceVolumeData Data, int Priority, float Size)>();
+
+        if (CanUse())
+        {
+            foreach (var map in maps)
+            {
+                var volumes = GetMap(map.Name);
+
+                if (volumes == null)
+                    continue;
+
+                foreach (var entity in map.Regions)
+                {
+                    if (TryBuildEntry(map.Name, entity, volumes, bake, out var data, out var priority, out var size))
+                        found.Add((data, priority, size));
+                }
+            }
+        }
+
+        // Coarse first, so finer volumes blend over them, as nested boxes do in game
+        found.Sort((a, b) => a.Priority != b.Priority ? a.Priority.CompareTo(b.Priority) : b.Size.CompareTo(a.Size));
+
+        var count = Math.Min(found.Count, IrradianceVolumeTable.Capacity);
+
+        for (var i = 0; i < count; i++)
+            _tableEntries[i] = found[i].Data;
+
+        ShadedVolumeCount = count;
+        table.Upload(_tableEntries, count);
+    }
+
+    private bool TryBuildEntry(string mapId, Entity entity, MapVolumes volumes, int bake,
+        out IrradianceVolumeData data, out int priority, out float size)
+    {
+        data = default;
+        priority = 0;
+        size = 0;
+
+        var region = entity.WrappedObject;
+        var id = GetVolumeId(region);
+
+        if (id == null || id < 0 || IsSkippedByGame(region) || !volumes.HasVolume(id.Value, bake))
+            return false;
+
+        var textures = new TexturePool.TextureHandle[4];
+        var names = GetTextureNames(mapId, id.Value, bake);
+
+        for (var i = 0; i < 4; i++)
+        {
+            if (!ResourceManager.DefaultPool.TryFind<TextureResource>(names[i], out var handle))
+                return false;
+
+            var gpu = handle?.Get()?.GPUTexture;
+
+            if (gpu == null || !gpu.Resident || gpu.Pool != SceneRenderer.GlobalVolumeTexturePool)
+                return false;
+
+            textures[i] = gpu;
+        }
+
+        float fadeDistance;
+        float diffuseScale;
+
+        switch (region)
+        {
+            case MSBE.Region.EnvironmentMapEffectBox er:
+                fadeDistance = er.FadeDistance;
+                priority = er.Priority;
+                diffuseScale = er.AmbientDiffuseIntensity;
+                break;
+            case MSB_NR.Region.EnvMapEffectBox nr:
+                fadeDistance = nr.FadeDistance;
+                priority = nr.Priority;
+                diffuseScale = nr.AmbientDiffuseIntensity;
+                break;
+            case MSB_AC6.Region.EnvMapEffectBox ac6:
+                // The same layout as ER's: TransitionDist is the fade distance, UnkT09 the priority
+                fadeDistance = ac6.TransitionDist;
+                priority = ac6.EnvMapEffectBox_UnkT09;
+                diffuseScale = 1.0f;
+                break;
+            default:
+                return false;
+        }
+
+        // The region's unit box spans -0.5 to 0.5 on X and Z and 0 to 1 on Y (its position is the bottom
+        // centre); the game's volume space spans -1 to 1 on every axis
+        var world = entity.GetWorldMatrix();
+
+        if (!Matrix4x4.Invert(world, out var inverse))
+            return false;
+
+        Matrix4x4.Decompose(world, out var scale, out _, out _);
+
+        data.WorldToLocal = inverse * Matrix4x4.CreateScale(2.0f) * Matrix4x4.CreateTranslation(0.0f, -1.0f, 0.0f);
+        data.ExtentsFade = new Vector4(scale * 0.5f, fadeDistance > 0 ? 1.0f / fadeDistance : 1.0e4f);
+        data.VoxelCountsScale = new Vector4(textures[0].Width, textures[0].Height, textures[0].Depth, diffuseScale);
+        data.TextureX = textures[0].TexHandle;
+        data.TextureY = textures[1].TexHandle;
+        data.TextureZ = textures[2].TexHandle;
+        data.TextureW = textures[3].TexHandle;
+        data.Info = new Vector4(id.Value, bake, priority, 0);
+
+        size = MathF.Abs(scale.X * scale.Y * scale.Z);
+
+        return true;
     }
 
     public struct LinkSummary

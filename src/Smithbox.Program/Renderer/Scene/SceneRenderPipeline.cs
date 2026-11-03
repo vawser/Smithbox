@@ -50,6 +50,12 @@ public class SceneRenderPipeline
     public uint EnvMapTexture = 0;
 
     /// <summary>
+    ///     Whether models are lit by the irradiance volumes of <see cref="SceneRenderer.IrradianceVolumes" />. Only the
+    ///     Map Editor's viewports are, as the table holds the volumes of its loaded maps.
+    /// </summary>
+    public bool UseIrradianceVolumes = false;
+
+    /// <summary>
     ///     A light that follows the camera, handy for looking at dark interiors. Off by default.
     ///     Its position is set every frame; the rest can be changed freely.
     /// </summary>
@@ -213,6 +219,7 @@ public class SceneRenderPipeline
         var collisionOpacity = Math.Clamp(CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
         var navVolumeSliceHeight = NavVolumeSlice.Height;
         var navVolumeSliceFlags = NavVolumeSlice.Flags;
+        var useIrradianceVolumes = UseIrradianceVolumes;
 
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
@@ -238,6 +245,10 @@ public class SceneRenderPipeline
             SceneParams.CollisionOpacity = collisionOpacity;
             SceneParams.NavVolumeSliceHeight = navVolumeSliceHeight;
             SceneParams.NavVolumeSliceFlags = navVolumeSliceFlags;
+
+            // Read here, on the upload, so the count only covers entries whose data is already on the GPU
+            SceneParams.IrradianceVolumeStart = SceneRenderer.IrradianceVolumes.Start;
+            SceneParams.IrradianceVolumeCount = useIrradianceVolumes ? SceneRenderer.IrradianceVolumes.Count : 0;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)

@@ -66,4 +66,10 @@ public unsafe struct SceneParam
 
     /// <summary>Whether nav volumes are cut, and shown with a cross-section, see <see cref="NavVolumeSlice" /></summary>
     public uint NavVolumeSliceFlags;
+
+    /// <summary>The first entry of the <see cref="IrradianceVolumeTable" /> in the material buffer</summary>
+    public uint IrradianceVolumeStart;
+
+    /// <summary>How many irradiance volumes to light with, 0 outside the Map Editor</summary>
+    public uint IrradianceVolumeCount;
 }

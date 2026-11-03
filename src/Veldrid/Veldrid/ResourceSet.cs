@@ -103,6 +103,10 @@ namespace Veldrid
                             _sampledTextures.Add(texView.Target);
                             boundr++;
                         }
+
+                        // boundr has already moved past every element of the array, so a following binding
+                        // starts at the next resource
+                        continue;
                     }
                     else if (type == VkDescriptorType.StorageImage)
                     {
