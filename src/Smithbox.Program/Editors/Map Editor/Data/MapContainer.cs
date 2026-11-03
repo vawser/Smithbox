@@ -68,6 +68,12 @@ public class MapContainer : ObjectContainer
     [XmlIgnore]
     public Entity NavmeshParent = null;
 
+    /// <summary>
+    /// The nav volume for flying movement (AC6), whose entries are held apart from the navmesh as they are saved to the NVVA
+    /// </summary>
+    [XmlIgnore]
+    public Entity NavVolumeParent = null;
+
     [XmlIgnore]
     public Entity MultiPlayerWallParent = null;
 
@@ -135,11 +141,21 @@ public class MapContainer : ObjectContainer
             MsbEntityType.AutoInvadePoint => MapFileType.AIP,
             MsbEntityType.LightAtlas => MapFileType.BTAB,
             MsbEntityType.LightProbeVolume => MapFileType.BTPB,
-            MsbEntityType.Navmesh => MapFileType.NVA,
+            MsbEntityType.Navmesh => IsNavVolumeEntity(msbEnt) ? MapFileType.NVVA : MapFileType.NVA,
             MsbEntityType.AssetConfiguration => MapFileType.ACB,
             MsbEntityType.MultiPlayerWall => MapFileType.MPW,
             _ => MapFileType.MSB
         };
+    }
+
+    /// <summary>
+    /// Nav volume entries are the same types as navmesh entries, so they are told apart by their parent
+    /// </summary>
+    private static bool IsNavVolumeEntity(Entity ent)
+    {
+        return ent.Container is MapContainer map
+            && map.NavVolumeParent != null
+            && ent.Parent == map.NavVolumeParent;
     }
 
     /// <summary>
@@ -519,6 +535,32 @@ public class MapContainer : ObjectContainer
         NavmeshParent = nvaParent;
     }
 
+    // AC6 specific
+    public void LoadNVVA(string mapName, NVA_ER nvva)
+    {
+        var nvvaParent = CreateNavmeshParent($"{mapName} (NVVA)");
+
+        // There is a single entry, for the one volume of the map
+        foreach (var curVolume in nvva.Navmeshes)
+        {
+            AddNavVolumeInfo(nvvaParent, mapName, curVolume);
+        }
+
+        AddNavmeshEntries(nvvaParent, nvva.FaceDatas);
+        AddNavmeshEntries(nvvaParent, nvva.NodeBanks);
+        AddNavmeshEntries(nvvaParent, nvva.Connectors);
+
+        foreach (var curEntry in nvva.LevelConnectors)
+        {
+            AddLevelConnector(nvvaParent, curEntry, RenderFilter.NavVolume);
+        }
+
+        AddNavmeshEntries(nvvaParent, nvva.Entries10);
+        AddNavmeshEntries(nvvaParent, nvva.Entries11);
+
+        NavVolumeParent = nvvaParent;
+    }
+
     private MsbEntity CreateNavmeshParent(string mapName)
     {
         var nvaParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
@@ -579,7 +621,27 @@ public class MapContainer : ObjectContainer
         AttachNavmeshEntity(nvaParent, newEntity);
     }
 
-    private void AddLevelConnector(Entity nvaParent, object curEntry)
+    private void AddNavVolumeInfo(Entity nvvaParent, string mapName, object curVolume)
+    {
+        var newEntity = CreateNavmeshEntity(curVolume);
+
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+        {
+            ResourceDescriptor vasset = ModelLocator.GetHavokNavVolumeModel(View.Project, mapName);
+
+            var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
+                View.Universe.GetCurrentScene(), ResourceManager.DefaultPool.Find<HavokNavmeshResource>(vasset.Name), ModelMarkerType.Other);
+
+            mesh.World = newEntity.GetWorldMatrix();
+            mesh.SetSelectable(newEntity);
+            mesh.DrawFilter = RenderFilter.NavVolume;
+            newEntity.RenderSceneMesh = mesh;
+        }
+
+        AttachNavmeshEntity(nvvaParent, newEntity);
+    }
+
+    private void AddLevelConnector(Entity nvaParent, object curEntry, RenderFilter drawFilter = RenderFilter.Navmesh)
     {
         var newEntity = CreateNavmeshEntity(curEntry);
 
@@ -589,7 +651,7 @@ public class MapContainer : ObjectContainer
 
             mesh.World = newEntity.GetWorldMatrix();
             mesh.SetSelectable(newEntity);
-            mesh.DrawFilter = RenderFilter.Navmesh;
+            mesh.DrawFilter = drawFilter;
             newEntity.RenderSceneMesh = mesh;
         }
 

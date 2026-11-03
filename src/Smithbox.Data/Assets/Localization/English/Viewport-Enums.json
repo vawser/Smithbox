@@ -29,6 +29,10 @@
       "Text": "Navmesh"
     },
     {
+      "Key": "VIEWPORT_ENUM_RenderFilter_NavVolume",
+      "Text": "Nav Volume"
+    },
+    {
       "Key": "VIEWPORT_ENUM_RenderFilter_Region",
       "Text": "Region"
     },

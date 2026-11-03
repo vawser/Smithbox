@@ -205,6 +205,33 @@ public static class ModelLocator
         return ret;
     }
 
+    /// <summary>
+    /// The nav volume of an AC6 map is one archive per map, holding a single volume
+    /// </summary>
+    public static ResourceDescriptor GetHavokNavVolumes(ProjectEntry project, string mapid)
+    {
+        ResourceDescriptor ret = new();
+
+        ret.AssetName = mapid;
+        ret.AssetArchiveVirtualPath = $@"map/{mapid}/navvol";
+
+        return ret;
+    }
+
+    public static ResourceDescriptor GetHavokNavVolumeModel(ProjectEntry project, string mapid)
+    {
+        ResourceDescriptor ret = new();
+
+        // e.g. n10_00_00_00_navivolume in m10_00_00_00
+        var model = $@"n{mapid.Substring(1)}_navivolume";
+
+        ret.AssetName = model;
+        ret.AssetArchiveVirtualPath = $@"map/{mapid}/navvol";
+        ret.AssetVirtualPath = $@"map/{mapid}/navvol/{model}.hkx";
+
+        return ret;
+    }
+
     public static ResourceDescriptor GetChrModel(ProjectEntry project, string chrContainerId, string chrId)
     {
         ResourceDescriptor ret = new();

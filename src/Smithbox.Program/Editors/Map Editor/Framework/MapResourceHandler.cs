@@ -157,6 +157,12 @@ public class MapResourceHandler
             ResourceDescriptor nav = ModelLocator.GetHavokNavmeshes(View.Project, AdjustedMapID);
 
             LoadList_Navmesh.Add(nav);
+
+            // AC6 also has a nav volume for flying movement
+            if (View.Project.Descriptor.ProjectType is ProjectType.AC6)
+            {
+                LoadList_Navmesh.Add(ModelLocator.GetHavokNavVolumes(View.Project, AdjustedMapID));
+            }
         }
     }
 

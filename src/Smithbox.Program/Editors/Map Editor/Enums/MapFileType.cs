@@ -31,5 +31,10 @@ public enum MapFileType
     /// <summary>
     /// The MPW file of an open world tile (ER)
     /// </summary>
-    MPW = 1 << 10
+    MPW = 1 << 10,
+
+    /// <summary>
+    /// The NVVA file of a map, the nav volume for flying movement (AC6)
+    /// </summary>
+    NVVA = 1 << 11
 }

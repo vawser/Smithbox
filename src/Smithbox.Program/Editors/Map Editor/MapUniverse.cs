@@ -160,6 +160,7 @@ public class MapUniverse : IUniverse
 
                 using var __navScope = Profiler.TracyZoneAuto();
                 View.HavokNavmeshBank.LoadNVA(newMap, resourceHandler);
+                View.HavokNavmeshBank.LoadNVVA(newMap);
                 __navScope.Dispose();
 
                 if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
@@ -547,6 +548,7 @@ public class MapUniverse : IUniverse
         SaveFile(map, MapFileType.BTPB, () => View.LightProbeBank.SaveBTPB(map));
         SaveFile(map, MapFileType.ACB, () => View.AssetConfigurationBank.SaveACB(map));
         SaveFile(map, MapFileType.NVA, () => View.HavokNavmeshBank.SaveNVA(map));
+        SaveFile(map, MapFileType.NVVA, () => View.HavokNavmeshBank.SaveNVVA(map));
 
         // Only these projects are supported for collision editing within the Map Editor
         if (Project.Descriptor.ProjectType is ProjectType.ER

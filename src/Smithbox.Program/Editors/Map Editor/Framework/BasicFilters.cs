@@ -113,6 +113,16 @@ public class BasicFilters
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
         }
 
+        // Off by default, and the stored filter may predate it, like the object collisions
+        if (CFG.Current.MapEditor_BasicFilter_NavVolume)
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.NavVolume;
+        }
+        else
+        {
+            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.NavVolume;
+        }
+
         if (!CFG.Current.MapEditor_BasicFilter_SpeedTree)
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.SpeedTree);
@@ -329,6 +339,20 @@ public class BasicFilters
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Navmesh);
         GUI.ShowActiveStatus(ticked);
         GUI.Tooltip(LOC.Get("MAP_Filters_Navmeshes_TT"));
+
+        // Nav Volumes
+        if (View.Project.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Nav_Volumes_Title")}##toggleFilter_NavVolume"))
+            {
+                View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.NavVolume);
+                CFG.Current.MapEditor_BasicFilter_NavVolume = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.NavVolume);
+                View.DelayPicking();
+            }
+            ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.NavVolume);
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip(LOC.Get("MAP_Filters_Nav_Volumes_TT"));
+        }
 
         // Speed Trees
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Speed_Trees_Title")}##toggleFilter_SpeedTree"))

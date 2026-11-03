@@ -211,6 +211,8 @@ public class SceneRenderPipeline
 
         CollisionTransparency.Refresh();
         var collisionOpacity = Math.Clamp(CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
+        var navVolumeSliceHeight = NavVolumeSlice.Height;
+        var navVolumeSliceFlags = NavVolumeSlice.Flags;
 
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
@@ -234,6 +236,8 @@ public class SceneRenderPipeline
             SceneParams.SceneDepthTexture = sceneDepth;
             SceneParams.Wind = wind;
             SceneParams.CollisionOpacity = collisionOpacity;
+            SceneParams.NavVolumeSliceHeight = navVolumeSliceHeight;
+            SceneParams.NavVolumeSliceFlags = navVolumeSliceFlags;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)

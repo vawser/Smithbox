@@ -43,6 +43,8 @@ layout(location = 1) out vec4 fsin_color;
 layout(location = 2) out vec3 fsin_view;
 layout(location = 3) out uint fsin_entityid;
 layout(location = 4) out vec2 fsin_barycentric;
+layout(location = 5) out float fsin_worldY;
+layout(location = 6) flat out uint fsin_volumeFlags;
 
 void main()
 {
@@ -50,6 +52,9 @@ void main()
 	fsin_normal = mat3(w) * vec3((vec3(normal) / 255.0));
 	fsin_color = vec4(color / 255.0);
 	fsin_barycentric = vec2(barycentric.xy);
+	// Nav volumes are sliced by world height, and flag their vertices in z
+	fsin_worldY = (w * vec4(position, 1)).y;
+	fsin_volumeFlags = barycentric.z;
     //fsin_color = vec4(vec3((vec4(tnormal, 1.0) / 255.0) + 0.5), 1.0);
 	fsin_view = normalize(sceneparam.eye.xyz - vec3(w * vec4(position, 1)));
 	fsin_entityid = idata[gl_InstanceIndex].materialID.w;

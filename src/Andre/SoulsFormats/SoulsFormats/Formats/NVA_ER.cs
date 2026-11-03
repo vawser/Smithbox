@@ -8,6 +8,7 @@ namespace SoulsFormats
 {
     /// <summary>
     /// A file that defines the placement and properties of navmeshes in BB, DS3, Sekiro, and ER. Extension: .nva
+    /// Also reads the flying navigation volumes of AC6. Extension: .nvva
     /// </summary>
     public class NVA_ER : SoulsFile<NVA_ER>
     {
@@ -16,6 +17,11 @@ namespace SoulsFormats
         /// </summary>
         public enum NVAVersion : uint
         {
+            /// <summary>
+            /// Armored Core 6 flying navigation volumes (.nvva); laid out like Armored Core 6, but with the magic NVVA
+            /// </summary>
+            ArmoredCore6NavVolume = 1,
+
             /// <summary>
             /// Used for a single BB test map, m29_03_10_00; has no Section8
             /// </summary>
@@ -129,8 +135,13 @@ namespace SoulsFormats
                 return false;
 
             string magic = br.GetASCII(0, 4);
-            return magic == "NVMA";
+            return magic == "NVMA" || magic == "NVVA";
         }
+
+        /// <summary>
+        /// The magic of the file, which is the only thing apart from the version that sets the nav volumes apart.
+        /// </summary>
+        private string Magic => Version == NVAVersion.ArmoredCore6NavVolume ? "NVVA" : "NVMA";
 
         /// <summary>
         /// Deserializes file data from a stream.
@@ -138,7 +149,7 @@ namespace SoulsFormats
         protected override void Read(BinaryReaderEx br)
         {
             br.BigEndian = false;
-            br.AssertASCII("NVMA");
+            br.AssertASCII(["NVMA", "NVVA"]);
             Version = br.ReadEnum32<NVAVersion>();
             br.ReadUInt32(); // File size
             int sectionCount = br.ReadInt32();
@@ -247,7 +258,7 @@ namespace SoulsFormats
             if (Entries13 != null) sectionCount++;
 
             bw.BigEndian = false;
-            bw.WriteASCII("NVMA");
+            bw.WriteASCII(Magic);
             bw.WriteUInt32((uint)Version);
             bw.ReserveUInt32("FileSize");
             bw.WriteInt32(sectionCount);
@@ -365,7 +376,7 @@ namespace SoulsFormats
             /// <summary>
             /// Armored Core 6 uses version 3, but its entries are laid out like version 4.
             /// </summary>
-            private int EntryVersion => FileVersion == NVAVersion.ArmoredCore6 ? 4 : Version;
+            private int EntryVersion => FileVersion is NVAVersion.ArmoredCore6 or NVAVersion.ArmoredCore6NavVolume ? 4 : Version;
 
             internal override void ReadEntries(BinaryReaderEx br, int count)
             {
@@ -434,6 +445,21 @@ namespace SoulsFormats
             public int Unk50 { get; set; }
 
             /// <summary>
+            /// Unknown; only present in version 4. Zero in navmeshes, -1 in AC6 nav volumes.
+            /// </summary>
+            public int Unk54 { get; set; }
+
+            /// <summary>
+            /// Unknown; only present in version 4. Zero in navmeshes, -1 in AC6 nav volumes.
+            /// </summary>
+            public int Unk58 { get; set; }
+
+            /// <summary>
+            /// Unknown; only present in version 4. Zero in navmeshes, -1 in AC6 nav volumes.
+            /// </summary>
+            public int Unk5C { get; set; }
+
+            /// <summary>
             /// Connected navmesh indices for versions below 4 (max 16).
             /// In version 4 this is a fixed block of 12 ints, which is always zero in shipped files.
             /// </summary>
@@ -499,9 +525,9 @@ namespace SoulsFormats
                 {
                     // Version 4 entries are always 0x90 bytes; the trailing ints are inline, never offset-referenced.
                     Unk50 = br.ReadInt32();
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
+                    Unk54 = br.ReadInt32();
+                    Unk58 = br.ReadInt32();
+                    Unk5C = br.ReadInt32();
                     ConnectedNavmeshes = new List<int>(br.ReadInt32s(12));
                 }
             }
@@ -562,9 +588,9 @@ namespace SoulsFormats
                         throw new InvalidDataException("Connected navmeshes count should not exceed 12 in ER.");
 
                     bw.WriteInt32(Unk50);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
+                    bw.WriteInt32(Unk54);
+                    bw.WriteInt32(Unk58);
+                    bw.WriteInt32(Unk5C);
                     for (int i = 0; i < 12; i++)
                         bw.WriteInt32(i < ConnectedNavmeshes.Count ? ConnectedNavmeshes[i] : 0);
                 }

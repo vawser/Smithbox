@@ -33,6 +33,7 @@ public class ViewportFiltersAction
     private bool RenderGrass = false;
     private bool RenderEdgePoint = false;
     private bool RenderNavmesh = false;
+    private bool RenderNavVolume = false;
     private bool RenderSpeedTree = false;
     private bool RenderInvasionPoint = false;
     private bool RenderMultiPlayerWall = false;
@@ -63,6 +64,7 @@ public class ViewportFiltersAction
         RenderGrass = drawFilter.HasFlag(RenderFilter.Grass);
         RenderEdgePoint = drawFilter.HasFlag(RenderFilter.EdgePoint);
         RenderNavmesh = drawFilter.HasFlag(RenderFilter.Navmesh);
+        RenderNavVolume = drawFilter.HasFlag(RenderFilter.NavVolume);
         RenderSpeedTree = drawFilter.HasFlag(RenderFilter.SpeedTree);
         RenderInvasionPoint = drawFilter.HasFlag(RenderFilter.AutoInvade);
         RenderMultiPlayerWall = drawFilter.HasFlag(RenderFilter.MultiPlayerWall);
@@ -178,6 +180,16 @@ public class ViewportFiltersAction
             RenderNavmesh = scene.DrawFilter.HasFlag(RenderFilter.Navmesh);
         }
 
+        if (Project.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            if (ImGui.Checkbox("Nav Volume", ref RenderNavVolume))
+            {
+                scene.ToggleDrawFilter(RenderFilter.NavVolume);
+                RenderNavVolume = scene.DrawFilter.HasFlag(RenderFilter.NavVolume);
+                CFG.Current.MapEditor_BasicFilter_NavVolume = RenderNavVolume;
+            }
+        }
+
         if (ImGui.Checkbox("Speed Tree", ref RenderSpeedTree))
         {
             scene.ToggleDrawFilter(RenderFilter.SpeedTree);
@@ -194,6 +206,11 @@ public class ViewportFiltersAction
         {
             scene.ToggleDrawFilter(RenderFilter.MultiPlayerWall);
             RenderMultiPlayerWall = scene.DrawFilter.HasFlag(RenderFilter.MultiPlayerWall);
+        }
+
+        if (Project.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            DisplayNavVolumeSlice();
         }
 
         GUI.Spacer();
@@ -377,6 +394,102 @@ public class ViewportFiltersAction
                 GUI.WrappedText("Not supported for this project type.");
             }
         }
+    }
+
+    private void DisplayNavVolumeSlice()
+    {
+        GUI.Spacer();
+        GUI.SimpleHeader("Nav Volume Slice", "Cut the nav volumes at a height, hiding everything above it, to see the space that can be flown through at that height.");
+
+        var enabled = NavVolumeSlice.Enabled;
+        if (ImGui.Checkbox("Slice##navVolumeSlice", ref enabled))
+        {
+            NavVolumeSlice.Enabled = enabled;
+
+            // Nothing is shown of the volume while its filter is off
+            if (enabled && !RenderNavVolume)
+            {
+                View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.NavVolume;
+                RenderNavVolume = true;
+                CFG.Current.MapEditor_BasicFilter_NavVolume = true;
+            }
+
+            // Starts in the middle of the volumes, as the last height may be outside of them
+            if (enabled && GetNavVolumeHeightRange() is (float low, float high)
+                && (NavVolumeSlice.Height < low || NavVolumeSlice.Height > high))
+            {
+                NavVolumeSlice.Height = (low + high) / 2.0f;
+            }
+
+            View.DelayPicking();
+        }
+        GUI.Tooltip("Hide the parts of the nav volumes above the slice height.");
+
+        if (!NavVolumeSlice.Enabled)
+            return;
+
+        var height = NavVolumeSlice.Height;
+        GUI.SetInputWidth();
+
+        if (GetNavVolumeHeightRange() is (float min, float max))
+        {
+            if (ImGui.SliderFloat("Height##navVolumeSliceHeight", ref height, min, max, "%.1f"))
+            {
+                NavVolumeSlice.Height = height;
+            }
+        }
+        else if (ImGui.DragFloat("Height##navVolumeSliceHeight", ref height, 1.0f))
+        {
+            NavVolumeSlice.Height = height;
+        }
+        GUI.Tooltip("The world height the nav volumes are cut at.");
+
+        if (ImGui.Button("Use Camera Height##navVolumeSliceCamera"))
+        {
+            NavVolumeSlice.Height = View.ViewportHandler.ActiveViewport.Viewport.ViewportCamera.CameraTransform.Position.Y;
+        }
+        GUI.Tooltip("Cut the nav volumes at the height of the camera.");
+
+        var crossSection = NavVolumeSlice.ShowCrossSection;
+        if (ImGui.Checkbox("Show Cross-Section##navVolumeCrossSection", ref crossSection))
+        {
+            NavVolumeSlice.ShowCrossSection = crossSection;
+        }
+        GUI.Tooltip("Draw where the slice passes through open space as a flat orange surface, with gaps where flight is blocked. It is only drawn while the camera is above the slice.");
+    }
+
+    /// <summary>
+    /// The world heights covered by the loaded nav volumes, or null if none are loaded yet
+    /// </summary>
+    private (float Min, float Max)? GetNavVolumeHeightRange()
+    {
+        float? min = null;
+        float? max = null;
+
+        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
+        {
+            var parent = entry.Value.MapContainer?.NavVolumeParent;
+
+            if (parent == null)
+                continue;
+
+            foreach (var child in parent.Children)
+            {
+                if (child.RenderSceneMesh is not MeshRenderableProxy mesh)
+                    continue;
+
+                var bounds = mesh.GetBounds();
+
+                // The bounds are empty until the volume has loaded
+                if (bounds.Max.Y <= bounds.Min.Y)
+                    continue;
+
+                min = Math.Min(min ?? bounds.Min.Y, bounds.Min.Y);
+                max = Math.Max(max ?? bounds.Max.Y, bounds.Max.Y);
+            }
+        }
+
+        return min is float low && max is float high ? (low, high) : null;
     }
 
     public void DisplayIndividualToggle(Type regionType, string name, int truthIndex)

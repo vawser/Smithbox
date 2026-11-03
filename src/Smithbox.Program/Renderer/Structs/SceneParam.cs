@@ -60,4 +60,10 @@ public unsafe struct SceneParam
 
     /// <summary>How opaque collision and navmesh faces are, see <see cref="CollisionTransparency" /></summary>
     public float CollisionOpacity;
+
+    /// <summary>The world height nav volumes are cut at, see <see cref="NavVolumeSlice" /></summary>
+    public float NavVolumeSliceHeight;
+
+    /// <summary>Whether nav volumes are cut, and shown with a cross-section, see <see cref="NavVolumeSlice" /></summary>
+    public uint NavVolumeSliceFlags;
 }

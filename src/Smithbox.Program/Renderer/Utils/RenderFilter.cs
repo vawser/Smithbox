@@ -75,6 +75,9 @@ public enum RenderFilter
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_MultiPlayerWall")]
     MultiPlayerWall = 4194304,
 
+    [Display(Name = "VIEWPORT_ENUM_RenderFilter_NavVolume")]
+    NavVolume = 8388608,
+
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_All")]
     All = 0xFFFFFFF
 }

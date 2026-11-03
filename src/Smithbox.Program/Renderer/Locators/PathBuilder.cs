@@ -225,6 +225,16 @@ public class PathBuilder
                         }
                     }
                 }
+                // Nav volume (AC6 flying navigation)
+                else if (p[i].Equals("navvol"))
+                {
+                    i++;
+
+                    if (project.Descriptor.ProjectType is ProjectType.AC6)
+                    {
+                        relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"{mapid}.nvvhktbnd.dcx");
+                    }
+                }
             }
         }
         // --- Characters ---

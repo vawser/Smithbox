@@ -137,6 +137,14 @@
       "Text": "Toggle the display of map objects classified as 'Navmeshes'."
     },
     {
+      "Key": "MAP_Filters_Nav_Volumes_Title",
+      "Text": "Nav Volumes"
+    },
+    {
+      "Key": "MAP_Filters_Nav_Volumes_TT",
+      "Text": "Toggle the display of the nav volumes used for flying movement (NVVA). These are made of hundreds of thousands of cells, so they are hidden by default."
+    },
+    {
       "Key": "MAP_Filters_Speed_Trees_Title",
       "Text": "Speed Trees"
     },

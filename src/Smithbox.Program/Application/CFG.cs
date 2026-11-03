@@ -351,6 +351,7 @@ public class CFG
     public bool MapEditor_Wall_Display_Cells = true;
     public bool MapEditor_Wall_Display_NoJump = true;
     public bool MapEditor_BasicFilter_Navmesh = true;
+    public bool MapEditor_BasicFilter_NavVolume = false;
     public bool MapEditor_BasicFilter_SpeedTree = true;
     public bool MapEditor_BasicFilter_InvasionPoint = true;
     public bool MapEditor_BasicFilter_MultiPlayerWall = true;

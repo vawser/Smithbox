@@ -6,6 +6,8 @@ layout(location = 1) in vec4 color;
 layout(location = 2) in vec3 view;
 layout(location = 3) flat in uint fsin_entityid;
 layout(location = 4) in vec2 fsin_barycentric;
+layout(location = 5) in float fsin_worldY;
+layout(location = 6) flat in uint fsin_volumeFlags;
 layout(location = 0) out vec4 fsout_color;
 
 layout (constant_id = 99) const bool c_picking = false;
@@ -54,6 +56,10 @@ struct sceneParams
 	vec4 wind;
 
 	float collisionOpacity;
+
+	// The nav volume slice, see NavVolumeSlice
+	float navVolumeSliceHeight;
+	uint navVolumeSliceFlags;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -118,12 +124,62 @@ float gridFactor(vec2 b, float width)
 	return min(min(a3.x, a3.y), a3.z);
 }
 
+// Nav volume vertices are flagged, see HavokNavmeshResource: 1 for the volume, 2 for the walls of its grid
+#define VOLUME_FLAG 1u
+#define VOLUME_WALL_FLAG 2u
+
+// The nav volume slice, see NavVolumeSlice
+#define SLICE_ENABLED 1u
+#define SLICE_CROSS_SECTION 2u
+
+#define CROSS_SECTION_COLOR vec3(1.0, 0.55, 0.15)
+
+// Discards the parts of a nav volume that aren't shown: everything above the slice, and the walls of its grid.
+// Returns whether the fragment is seen through the cut from inside the volume, so it is drawn as the cross-section
+bool NavVolumeClip()
+{
+	if ((fsin_volumeFlags & VOLUME_FLAG) == 0u)
+	{
+		return false;
+	}
+
+	bool sliced = (sceneparam.navVolumeSliceFlags & SLICE_ENABLED) != 0u;
+
+	if (sliced && fsin_worldY > sceneparam.navVolumeSliceHeight)
+	{
+		discard;
+	}
+
+	// The faces point out of the volume, so through the cut its inside is made of the faces pointing away
+	bool crossSection = sliced
+		&& (sceneparam.navVolumeSliceFlags & SLICE_CROSS_SECTION) != 0u
+		&& sceneparam.eye.y > sceneparam.navVolumeSliceHeight
+		&& dot(normal, view) < 0.0;
+
+	// The walls only close the volume, so that the cross-section has no gaps at its edges
+	if ((fsin_volumeFlags & VOLUME_WALL_FLAG) != 0u && !crossSection)
+	{
+		discard;
+	}
+
+	return crossSection;
+}
+
 void main()
 {
+	// Comes first, so the hidden parts of a nav volume can't be picked
+	bool crossSection = NavVolumeClip();
+
 	if (c_picking)
 	{
 		ivec2 coord = ivec2(gl_FragCoord.xy - vec2(0.49, 0.49));
 		UpdatePickingBuffer(coord, uint64_t(fsin_entityid), gl_FragCoord.z);
+	}
+
+	if (crossSection)
+	{
+		fsout_color = vec4(CROSS_SECTION_COLOR, color.a * sceneparam.collisionOpacity);
+		return;
 	}
 
     //fsout_color = vec4(1.0, 1.0, 1.0, 1.0);

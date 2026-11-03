@@ -143,6 +143,12 @@ public class HavokNavmeshResource : IResource, IDisposable
                         ProcessMesh_HKX3(mesh);
                     }
 
+                    // The flying navigation of AC6 (.nvva) is a nav volume rather than a navmesh
+                    if (variants.OfType<HKLib.hk2019.hkaiNavVolume>().FirstOrDefault() is { } volume)
+                    {
+                        ProcessVolume_HKX3(volume);
+                    }
+
                     if (variants.OfType<HKLib.hk2019.hkaiDirectedGraphExplicitCost>().FirstOrDefault() is { } graph)
                     {
                         ProcessGraph_HKX3(graph);
@@ -592,6 +598,201 @@ public class HavokNavmeshResource : IResource, IDisposable
         {
             Bounds = new BoundingBox();
         }
+    }
+
+    // The flags of nav volume vertices, kept in the unused third barycentric. Matches the NavSolid shaders
+    private const byte VolumeFlag = 1;
+    private const byte VolumeWallFlag = 2;
+
+    // Floors are what stands below the open space, ceilings what hangs above it
+    private static ReadOnlySpan<byte> VolumeFloorColor => [80, 220, 255];
+    private static ReadOnlySpan<byte> VolumeCeilingColor => [40, 90, 200];
+    private static ReadOnlySpan<byte> VolumeWallColor => [50, 160, 230];
+
+    /// <summary>
+    /// Draws the cells of a nav volume as boxes. A cell face is only drawn if the cells next to it don't cover all
+    /// of it, as the faces inside the volume can't be seen and there are hundreds of thousands of cells in a map.
+    /// </summary>
+    private unsafe void ProcessVolume_HKX3(HKLib.hk2019.hkaiNavVolume volume)
+    {
+        var cells = volume.m_cells;
+
+        // Each face is the cell index * 6 + the face: the axis * 2, + 1 for the max side
+        var faces = new List<int>();
+
+        for (var cellIndex = 0; cellIndex < cells.Count; cellIndex++)
+        {
+            for (var face = 0; face < 6; face++)
+            {
+                if (!IsVolumeFaceCovered(volume, cellIndex, face / 2, face % 2 == 1))
+                {
+                    faces.Add(cellIndex * 6 + face);
+                }
+            }
+        }
+
+        // Each face is a quad of 2 triangles
+        VertexCount = faces.Count * 4;
+        IndexCount = faces.Count * 6;
+        var buffersize = (uint)IndexCount * 4u;
+        var vbuffersize = (uint)VertexCount * NavmeshLayout.SizeInBytes;
+        GeomBuffer =
+            SceneRenderer.GeometryBufferAllocator.Allocate(
+                vbuffersize, buffersize, (int)NavmeshLayout.SizeInBytes, 4);
+
+        // The allocator only uploads a buffer once everything allocated in it is filled, so this is always marked
+        // filled, even if reading fails, or nothing else in the buffer would be drawn
+        try
+        {
+            var MeshIndices = new Span<int>(GeomBuffer.MapIBuffer().ToPointer(), IndexCount);
+            var MeshVertices =
+                new Span<NavmeshLayout>(GeomBuffer.MapVBuffer().ToPointer(), VertexCount);
+
+            // Cells are stored as quantized bounds within the volume's aabb
+            Vector4 scale = volume.m_quantizationScale;
+            Vector4 offset = volume.m_quantizationOffset;
+
+            Span<float> min = stackalloc float[3];
+            Span<float> max = stackalloc float[3];
+            Span<float> corner = stackalloc float[3];
+
+            // The corners of the quad, as (u, w), and their barycentrics. The quad is split on its B-D diagonal,
+            // and A and C share the barycentric, so the edges of the quad are drawn by the grid in both triangles
+            ReadOnlySpan<int> cornerU = [0, 1, 1, 0];
+            ReadOnlySpan<int> cornerW = [0, 0, 1, 1];
+            ReadOnlySpan<byte> baryX = [0, 1, 0, 0];
+            ReadOnlySpan<byte> baryY = [0, 0, 0, 1];
+
+            for (var i = 0; i < faces.Count; i++)
+            {
+                var cell = cells[faces[i] / 6];
+                var axis = faces[i] % 6 / 2;
+                var isMaxSide = faces[i] % 2 == 1;
+
+                for (var a = 0; a < 3; a++)
+                {
+                    min[a] = offset[a] + cell.m_min[a] * scale[a];
+                    max[a] = offset[a] + cell.m_max[a] * scale[a];
+                }
+
+                var u = (axis + 1) % 3;
+                var w = (axis + 2) % 3;
+
+                // The normal points out of the volume, into what can't be flown through
+                sbyte normal = isMaxSide ? (sbyte)127 : (sbyte)-127;
+
+                // The faces on the edge of the volume's grid only bound it, rather than showing where flight is blocked,
+                // and as the volume is nearly all open space they would hide everything else. They are kept so the
+                // volume is closed when it is sliced, see NavVolumeClip in NavSolid.frag
+                var plane = isMaxSide ? cell.m_max[axis] : cell.m_min[axis];
+                var isGridWall = plane == 0 || plane == volume.m_res[axis];
+
+                byte flags = (byte)(VolumeFlag | (isGridWall ? VolumeWallFlag : 0));
+
+                // Coloured by what is beyond the face, so floors, ceilings and walls can be told apart
+                ReadOnlySpan<byte> color = axis != 1 ? VolumeWallColor
+                    : isMaxSide ? VolumeCeilingColor
+                    : VolumeFloorColor;
+
+                var vertex = i * 4;
+
+                for (var c = 0; c < 4; c++)
+                {
+                    corner[axis] = isMaxSide ? max[axis] : min[axis];
+                    corner[u] = cornerU[c] == 1 ? max[u] : min[u];
+                    corner[w] = cornerW[c] == 1 ? max[w] : min[w];
+
+                    var v = new NavmeshLayout();
+                    v.Position = new Vector3(corner[0], corner[1], corner[2]);
+
+                    v.Normal[axis] = normal;
+
+                    v.Color[0] = color[0];
+                    v.Color[1] = color[1];
+                    v.Color[2] = color[2];
+                    v.Color[3] = 255;
+
+                    v.Barycentric[0] = baryX[c];
+                    v.Barycentric[1] = baryY[c];
+                    v.Barycentric[2] = flags;
+
+                    MeshVertices[vertex + c] = v;
+                }
+
+                // A-B-D and B-C-D
+                var index = i * 6;
+                MeshIndices[index] = vertex;
+                MeshIndices[index + 1] = vertex + 1;
+                MeshIndices[index + 2] = vertex + 3;
+                MeshIndices[index + 3] = vertex + 1;
+                MeshIndices[index + 4] = vertex + 2;
+                MeshIndices[index + 5] = vertex + 3;
+            }
+        }
+        finally
+        {
+            GeomBuffer.UnmapIBuffer();
+            GeomBuffer.UnmapVBuffer();
+        }
+
+        Vector4 aabbMin = volume.m_aabb.m_min;
+        Vector4 aabbMax = volume.m_aabb.m_max;
+
+        Bounds = VertexCount > 0
+            ? new BoundingBox(new Vector3(aabbMin.X, aabbMin.Y, aabbMin.Z), new Vector3(aabbMax.X, aabbMax.Y, aabbMax.Z))
+            : new BoundingBox();
+    }
+
+    /// <summary>
+    /// Whether the face of a nav volume cell is fully covered by the cells it connects to on that side.
+    /// </summary>
+    private static bool IsVolumeFaceCovered(HKLib.hk2019.hkaiNavVolume volume, int cellIndex, int axis, bool isMaxSide)
+    {
+        var cell = volume.m_cells[cellIndex];
+
+        var u = (axis + 1) % 3;
+        var w = (axis + 2) % 3;
+
+        long faceArea = (long)(cell.m_max[u] - cell.m_min[u]) * (cell.m_max[w] - cell.m_min[w]);
+        long coveredArea = 0;
+
+        int plane = isMaxSide ? cell.m_max[axis] : cell.m_min[axis];
+
+        for (var e = 0; e < cell.m_numEdges; e++)
+        {
+            var edge = volume.m_edges[cell.m_startEdgeIndex + e];
+
+            // These lead out of the volume, or are custom connections, rather than to a cell next to this one
+            if ((edge.m_flags & (HKLib.hk2019.hkaiNavVolume.CellEdgeFlagBits.EDGE_EXTERNAL_OPPOSITE
+                | HKLib.hk2019.hkaiNavVolume.CellEdgeFlagBits.EDGE_USER)) != 0)
+            {
+                continue;
+            }
+
+            if (edge.m_oppositeCell >= volume.m_cells.Count)
+            {
+                continue;
+            }
+
+            var opposite = volume.m_cells[(int)edge.m_oppositeCell];
+
+            // Only the cells that touch this side of the cell cover it
+            if ((isMaxSide ? opposite.m_min[axis] : opposite.m_max[axis]) != plane)
+            {
+                continue;
+            }
+
+            long du = Math.Min(cell.m_max[u], opposite.m_max[u]) - Math.Max(cell.m_min[u], opposite.m_min[u]);
+            long dw = Math.Min(cell.m_max[w], opposite.m_max[w]) - Math.Max(cell.m_min[w], opposite.m_min[w]);
+
+            if (du > 0 && dw > 0)
+            {
+                coveredArea += du * dw;
+            }
+        }
+
+        // Cells don't overlap, so the areas they cover add up
+        return coveredArea >= faceArea;
     }
 
     private void ProcessGraph_HKX3(HKLib.hk2018.hkaiDirectedGraphExplicitCost graph)

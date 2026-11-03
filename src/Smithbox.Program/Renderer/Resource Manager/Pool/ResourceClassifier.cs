@@ -98,7 +98,7 @@ internal static class ResourceClassifier
             // Both allowed: hkx is used for many things (animations, skeletons...), so go by the container
             var c = containerPath.Replace('\\', '/').ToLowerInvariant();
 
-            if (c.Contains("nvmhktbnd") || c.Contains("/nav"))
+            if (c.Contains("nvmhktbnd") || c.Contains("nvvhktbnd") || c.Contains("/nav"))
             {
                 return ResourceKind.NavmeshHKX;
             }
