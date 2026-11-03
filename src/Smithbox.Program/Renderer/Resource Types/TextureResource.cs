@@ -40,6 +40,10 @@ public class TextureResource : IResource, IDisposable
         {
             GPUTexture = SceneRenderer.GlobalCubeTexturePool.AllocateTextureDescriptor();
         }
+        else if (TexturePool.TextureHandle.IsTPFVolume(Texture.Textures[TPFIndex], Texture.Platform))
+        {
+            GPUTexture = SceneRenderer.GlobalVolumeTexturePool.AllocateTextureDescriptor();
+        }
         else
         {
             GPUTexture = SceneRenderer.GlobalTexturePool.AllocateTextureDescriptor();

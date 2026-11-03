@@ -179,6 +179,20 @@ public static class TextureLocator
         return ad;
     }
 
+    /// <summary>
+    /// An envmap file of a map (AC6, ER, NR), which holds its irradiance volumes, e.g. m10_00_00_00_envmap_00_high_00
+    /// </summary>
+    public static ResourceDescriptor GetEnvMapTextureVirtualPath(string mapId, string fileName)
+    {
+        ResourceDescriptor ad = new();
+
+        ad.AssetArchiveVirtualPath = null;
+        ad.AssetVirtualPath = $@"map/{mapId}/envmap/{fileName}";
+        ad.AssetName = fileName;
+
+        return ad;
+    }
+
     public static ResourceDescriptor GetSystexTextureVirtualPath(ProjectEntry project, string id, bool binder = false, bool lowDetail = false)
     {
         ResourceDescriptor ad = new();

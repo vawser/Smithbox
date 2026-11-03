@@ -590,6 +590,25 @@ public class TexturePool
             return tex.Type == TPF.TexType.Cubemap;
         }
 
+        /// <summary>
+        /// Whether a texture is a 3D volume, such as the GIIV irradiance volumes of the AC6, ER and NR envmaps
+        /// </summary>
+        public static bool IsTPFVolume(TPF.Texture tex, TPF.TPFPlatform platform)
+        {
+            if (platform == TPF.TPFPlatform.PC)
+            {
+                return IsDDSVolume(new DDS(tex.Bytes));
+            }
+
+            return tex.Type == TPF.TexType.Volume;
+        }
+
+        private static bool IsDDSVolume(DDS dds)
+        {
+            return dds.header10?.resourceDimension == DDS.DIMENSION.TEXTURE3D
+                || (dds.dwCaps2 & DDS.DDSCAPS2.VOLUME) > 0;
+        }
+
         public unsafe void FillWithTPF(GraphicsDevice d, CommandList cl, TPF.TPFPlatform platform, TPF.Texture tex,
             string name)
         {
@@ -621,6 +640,11 @@ public class TexturePool
             Height = height;
 
             var isVertexAnimation = IsVertexAnimationTexture(tex.Name);
+
+            // Volumes in the volume pool are uploaded as 3D images, with each mip's depth slices stored one after
+            // another. In the 2D pool, e.g. for the texture viewer, only the first slice is uploaded, as before.
+            var isVolume = IsDDSVolume(dds) && _pool == SceneRenderer.GlobalVolumeTexturePool;
+            var depth = isVolume ? (uint)Math.Max(1, dds.dwDepth) : 1u;
 
             VkFormat format;
 
@@ -689,6 +713,12 @@ public class TexturePool
                     checkPow = false;
                 }
 
+                // Their size is the voxel count of the volume's box, a multiple of 4
+                if (isVolume)
+                {
+                    checkPow = false;
+                }
+
                 // Ignore the World Map textures
                 if (WorldMapTool.TextureExlusions.Contains(tex.Name))
                 {
@@ -729,14 +759,17 @@ public class TexturePool
             var isCubemap = (dds.dwCaps2 & DDS.DDSCAPS2.CUBEMAP) > 0;
             var arrayCount = isCubemap ? 6u : 1;
 
+            // The game's volumes have one mip, which some files leave as a count of 0
+            var mipCount = isVolume ? (uint)Math.Max(1, dds.dwMipMapCount) : (uint)dds.dwMipMapCount;
+
             TextureDescription desc = new();
             desc.Width = width;
             desc.Height = height;
-            desc.MipLevels = (uint)dds.dwMipMapCount;
+            desc.MipLevels = mipCount;
             desc.SampleCount = VkSampleCountFlags.Count1;
             desc.ArrayLayers = arrayCount;
-            desc.Depth = 1;
-            desc.Type = VkImageType.Image2D;
+            desc.Depth = depth;
+            desc.Type = isVolume ? VkImageType.Image3D : VkImageType.Image2D;
             desc.Usage = VkImageUsageFlags.None;
             desc.CreateFlags = VkImageCreateFlags.None;
             desc.Tiling = VkImageTiling.Linear;
@@ -767,21 +800,23 @@ public class TexturePool
 
             for (var slice = 0; slice < arrayCount; slice++)
             {
-                for (uint level = 0; level < dds.dwMipMapCount; level++)
+                for (uint level = 0; level < mipCount; level++)
                 {
                     MappedResource map = d.Map(_staging, MapMode.Write,
-                        ((uint)slice * (uint)dds.dwMipMapCount) + level);
+                        ((uint)slice * mipCount) + level);
                     var mipInfo = GetMipInfo(format, dds.dwWidth, dds.dwHeight, (int)level, false);
-                    //paddedSize = mipInfo.ByteCount;
-                    paddedSize = mipInfo;
+
+                    // A volume's mip is its depth slices one after another, as in the staging buffer
+                    var mipDepth = (int)Math.Max(1u, depth >> (int)level);
+                    paddedSize = mipInfo * mipDepth;
 
                     var mipHeight = (int)Math.Max(1u, height >> (int)level);
-                    var rowSize = paddedSize / mipHeight;
+                    var rowSize = mipInfo / mipHeight;
 
                     if (!isCompressed && map.RowPitch != rowSize)
                     {
                         // Rows of a linear image are padded unless their width happens to line up
-                        for (var row = 0; row < mipHeight; row++)
+                        for (var row = 0; row < mipHeight * mipDepth; row++)
                         {
                             Span<byte> destRow = new((byte*)map.Data.ToPointer() + (row * map.RowPitch), rowSize);
                             bytes.Span.Slice(copyOffset + (row * rowSize), rowSize).CopyTo(destRow);
@@ -1217,6 +1252,48 @@ public class TexturePool
                 cl.CopyTexture(_staging, _texture);
 
                 // Dispose staging immediately after the copy is issued.
+                _staging.Dispose();
+                _staging = null;
+
+                Resident = true;
+                PublishTexture(previousTexture);
+            });
+        }
+
+        /// <summary>
+        /// A 1x1x1 volume of one color, for the default of the volume pool
+        /// </summary>
+        public unsafe void FillWithColorVolume(GraphicsDevice d, Vector4 c)
+        {
+            TextureDescription desc = new();
+            desc.Width = 1;
+            desc.Height = 1;
+            desc.MipLevels = 1;
+            desc.SampleCount = VkSampleCountFlags.Count1;
+            desc.ArrayLayers = 1;
+            desc.Depth = 1;
+            desc.Type = VkImageType.Image3D;
+            desc.Usage = VkImageUsageFlags.None;
+            desc.CreateFlags = VkImageCreateFlags.None;
+            desc.Tiling = VkImageTiling.Linear;
+            desc.Format = VkFormat.R32G32B32A32Sfloat;
+            _staging = d.ResourceFactory.CreateTexture(desc);
+
+            var col = new float[] { c.X, c.Y, c.Z, c.W };
+            MappedResource map = d.Map(_staging, MapMode.Write, 0);
+            fixed (void* data = col)
+            {
+                Unsafe.CopyBlock(map.Data.ToPointer(), data, 16);
+            }
+
+            SceneRenderer.AddBackgroundUploadTask((gd, cl) =>
+            {
+                desc.Usage = VkImageUsageFlags.Sampled;
+                desc.Tiling = VkImageTiling.Optimal;
+                var previousTexture = _texture;
+                _texture = d.ResourceFactory.CreateTexture(desc);
+                cl.CopyTexture(_staging, _texture);
+
                 _staging.Dispose();
                 _staging = null;
 

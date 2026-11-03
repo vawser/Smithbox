@@ -62,6 +62,12 @@ public static class SceneRenderer
     public static GPUBufferAllocator BoneBufferAllocator { get; private set; }
     public static TexturePool GlobalTexturePool { get; private set; }
     public static TexturePool GlobalCubeTexturePool { get; private set; }
+
+    /// <summary>
+    /// 3D textures: the irradiance volumes of AC6, ER and NR maps. Not bound to the FLVER pipelines yet;
+    /// see Documentation/Full GI/Plan.md phases 3 and 4.
+    /// </summary>
+    public static TexturePool GlobalVolumeTexturePool { get; private set; }
     private static int _nextBuffer => (_currentBuffer + 1) % BUFFER_COUNT;
     private static int _prevBuffer => (_currentBuffer - 1 + BUFFER_COUNT) % BUFFER_COUNT;
 
@@ -114,6 +120,9 @@ public static class SceneRenderer
         GlobalTexturePool = new TexturePool(device, "globalTextures", 32768);
         GlobalCubeTexturePool = new TexturePool(device, "globalCubeTextures", 500);
 
+        // Each volume has four textures per bake, and ER maps have around 130 volumes
+        GlobalVolumeTexturePool = new TexturePool(device, "globalVolumeTextures", 2048);
+
         GraphicsDevice.DeviceLostContext = DescribeLoad;
 
         // Initialize default 2D texture at 0
@@ -135,6 +144,10 @@ public static class SceneRenderer
         // Default GI envmap texture at 0
         handle = GlobalCubeTexturePool.AllocateTextureDescriptor();
         handle.FillWithColorCube(device, new Vector4(0.5f, 0.5f, 0.5f, 1.0f));
+
+        // Default volume at 0: 0.5 in every channel decodes to no light
+        handle = GlobalVolumeTexturePool.AllocateTextureDescriptor();
+        handle.FillWithColorVolume(device, new Vector4(0.5f, 0.5f, 0.5f, 0.5f));
 
         // Initialize global debug primitives
         // TODO: Make vertex buffer allocation smarter so that we don't need to do this
@@ -263,6 +276,7 @@ public static class SceneRenderer
         Queue<Action<GraphicsDevice, CommandList>> work;
         var cleanTexPool = false;
         var cleanCubeTexPool = false;
+        var cleanVolumeTexPool = false;
         lock (BackgroundUploadQueue)
         {
             Profiler.___tracy_c_zone_context ctx3 = Profiler.TracyCZoneN(1, "Regenerate descriptor tables");
@@ -276,6 +290,12 @@ public static class SceneRenderer
             {
                 GlobalCubeTexturePool.RegenerateDescriptorTables();
                 cleanCubeTexPool = true;
+            }
+
+            if (GlobalVolumeTexturePool.DescriptorTableDirty)
+            {
+                GlobalVolumeTexturePool.RegenerateDescriptorTables();
+                cleanVolumeTexPool = true;
             }
 
             Profiler.TracyCZoneEnd(ctx3);
@@ -388,6 +408,11 @@ public static class SceneRenderer
         if (cleanCubeTexPool)
         {
             GlobalCubeTexturePool.CleanTexturePool();
+        }
+
+        if (cleanVolumeTexPool)
+        {
+            GlobalVolumeTexturePool.CleanTexturePool();
         }
 
         if (backgroundOnly)

@@ -32,6 +32,7 @@ public class MapEditorView : IEditorView
     public AutoInvadeBank AutoInvadeBank => Project.Handler.MapData.AutoInvadeBank;
     public MultiPlayerWallBank MultiPlayerWallBank => Project.Handler.MapData.MultiPlayerWallBank;
     public FogVolumeBank FogVolumeBank => Project.Handler.MapData.FogVolumeBank;
+    public IrradianceVolumeBank IrradianceVolumeBank => Project.Handler.MapData.IrradianceVolumeBank;
     public MapLimitBank MapLimitBank => Project.Handler.MapData.MapLimitBank;
     public HavokCollisionBank HavokCollisionBank => Project.Handler.MapData.HavokCollisionBank;
     public GrassBank GrassBank => Project.Handler.MapData.GrassBank;
@@ -112,6 +113,7 @@ public class MapEditorView : IEditorView
     public WorldMapLayoutTool WorldMapLayoutTool;
     public MapListFilterTool MapListFilterTool;
     public MapValidatorTool MapValidatorTool;
+    public IrradianceVolumeIdTool IrradianceVolumeIdTool;
     public MapModelInsightView MapModelInsightTool;
     public MapModelInsightHelper ModelInsightTool;
     public AutomaticPreviewTool AutomaticPreviewTool;
@@ -208,6 +210,7 @@ public class MapEditorView : IEditorView
         WorldMapLayoutTool = new WorldMapLayoutTool(this, project);
         MapListFilterTool = new MapListFilterTool(this, project);
         MapValidatorTool = new MapValidatorTool(this, project);
+        IrradianceVolumeIdTool = new IrradianceVolumeIdTool(this, project);
         MapModelInsightTool = new MapModelInsightView(this, project);
         ModelInsightTool = new MapModelInsightHelper(this, project);
         PatrolDrawManager = new PatrolDrawManager(this);

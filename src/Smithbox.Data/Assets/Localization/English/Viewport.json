@@ -353,6 +353,42 @@
       "Text": "Default"
     },
     {
+      "Key": "VIEWPORT_Menubar_Header_Global_Illumination",
+      "Text": "Global Illumination"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Bake",
+      "Text": "Bake"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Bake_TT",
+      "Text": "The bake of the irradiance volumes to light the maps with, the NN of the map's envmap_NN files. Bakes are probably times of day; most Nightreign maps only have bake 0. A change applies the next time a map is loaded."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_GPU_Textures",
+      "Text": "Volume textures on the GPU: {0}"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Map_Status",
+      "Text": "{0}: {1} volumes in bake {2}, {3} of {4} environment boxes linked"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_No_Maps",
+      "Text": "No maps are loaded."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Unlinked",
+      "Text": "{0} environment boxes have no volume ID."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Open_Tool",
+      "Text": "Fill Volume IDs..."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Open_Tool_TT",
+      "Text": "Open the Irradiance Volumes tab of the Validation tools, which can fill these boxes' volume ID property."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Header_Gizmos",
       "Text": "Gizmos"
     },

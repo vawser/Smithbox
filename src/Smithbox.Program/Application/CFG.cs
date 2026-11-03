@@ -1252,6 +1252,9 @@ public class CFG
     public Vector3 Viewport_Navmesh_Gate_Color = new Vector3(50, 220, 0);
     public float Viewport_Collision_Opacity = 1.0f;
 
+    // The bake of the irradiance volumes to light maps with (AC6, ER, NR), the NN of mAA_BB_CC_DD_envmap_NN
+    public int Viewport_GI_Bake = 0;
+
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
 

@@ -153,6 +153,7 @@ public class MapUniverse : IUniverse
                 View.AutoInvadeBank.LoadAIP(newMap);
                 View.MultiPlayerWallBank.LoadMPW(newMap);
                 View.FogVolumeBank.LoadFVB(newMap);
+                View.IrradianceVolumeBank.LoadMap(newMap);
                 View.MapLimitBank.LoadMSLD(newMap);
                 View.LightAtlasBank.LoadBTAB(newMap);
                 View.LightProbeBank.LoadBTPB(newMap);
@@ -360,6 +361,7 @@ public class MapUniverse : IUniverse
                 View.HavokCollisionBank.OnUnloadMap(curMapID);
                 View.WallBank.OnUnloadMap(curMapID);
                 View.HavokNavmeshBank.OnUnloadMap(curMapID);
+                View.IrradianceVolumeBank.OnUnloadMap(curMapID);
 
                 if (wrapper != null)
                 {

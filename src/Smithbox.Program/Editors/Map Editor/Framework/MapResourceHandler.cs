@@ -235,6 +235,15 @@ public class MapResourceHandler
             if (textureAsset.IsValid())
                 LoadList_Asset_Texture.Add(textureAsset);
         }
+
+        // Irradiance volumes: the envmap files of the chosen bake, which become 3D textures
+        if (View.IrradianceVolumeBank.GetBakeFiles(MapID).TryGetValue(CFG.Current.Viewport_GI_Bake, out var bakeFiles))
+        {
+            foreach (var entry in bakeFiles)
+            {
+                LoadList_Other_Texture.Add(TextureLocator.GetEnvMapTextureVirtualPath(MapID, entry.Filename));
+            }
+        }
     }
 
     /// <summary>

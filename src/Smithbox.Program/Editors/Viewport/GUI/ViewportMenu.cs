@@ -511,6 +511,16 @@ public class ViewportMenu
 
                     ImGui.EndMenu();
                 }
+
+                if (mapUniverse.View.IrradianceVolumeBank.CanUse())
+                {
+                    if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Global_Illumination")}##globalIlluminationMenuHeader"))
+                    {
+                        GlobalIlluminationMenu(mapUniverse.View);
+
+                        ImGui.EndMenu();
+                    }
+                }
             }
 
             if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Parts")}##partsMenuHeader"))
@@ -525,6 +535,66 @@ public class ViewportMenu
             }
 
             ImGui.EndMenu();
+        }
+    }
+
+    /// <summary>
+    /// The baked irradiance volumes of the loaded maps (AC6, ER, NR): the bake to use, and how many of each map's
+    /// EnvMapEffectBoxes are linked to a volume
+    /// </summary>
+    private void GlobalIlluminationMenu(MapEditorView view)
+    {
+        DPI.ApplyInputWidth();
+        if (ImGui.InputInt($"{LOC.Get("VIEWPORT_Menubar_GI_Bake")}##giBake", ref CFG.Current.Viewport_GI_Bake))
+        {
+            CFG.Current.Viewport_GI_Bake = Math.Clamp(CFG.Current.Viewport_GI_Bake, 0, 99);
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Bake_TT"));
+
+        ImGui.Separator();
+
+        var unlinked = 0;
+        var anyMap = false;
+
+        foreach (var wrapper in view.Project.Handler.MapData.PrimaryBank.Maps.Values)
+        {
+            var map = wrapper.MapContainer;
+
+            if (map == null || map.LoadState != MapContentLoadState.Loaded)
+                continue;
+
+            anyMap = true;
+
+            var summary = view.IrradianceVolumeBank.Summarise(map);
+            var volumes = view.IrradianceVolumeBank.GetMap(map.Name);
+
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Map_Status",
+                map.Name, volumes?.CountInBake(CFG.Current.Viewport_GI_Bake) ?? 0, CFG.Current.Viewport_GI_Bake,
+                summary.Linked, summary.Boxes));
+
+            unlinked += summary.Unlinked;
+        }
+
+        if (!anyMap)
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
+        }
+
+        // Slot 0 holds the default volume
+        ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_GPU_Textures", Math.Max(0, SceneRenderer.GlobalVolumeTexturePool.AllocatedTextureCount - 1)));
+
+        if (unlinked > 0 && view.IrradianceVolumeBank.HasNameFallback())
+        {
+            ImGui.Separator();
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Unlinked", unlinked));
+
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_GI_Open_Tool")}##giOpenTool"))
+            {
+                CFG.Current.Interface_MapEditor_ToolWindow = true;
+                CFG.Current.Interface_MapEditor_Tool_Validation = true;
+                view.IrradianceVolumeIdTool.FocusRequested = true;
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Open_Tool_TT"));
         }
     }
 

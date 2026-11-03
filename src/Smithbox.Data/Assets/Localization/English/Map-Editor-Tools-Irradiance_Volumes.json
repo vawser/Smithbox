@@ -1,0 +1,88 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_GI_Failed_Read_IvInfo",
+      "Text": "Failed to read {0} as an IVINFO binder"
+    },
+    {
+      "Key": "MAP_GI_Load_Summary",
+      "Text": "Irradiance volumes of {0}: {1} volume infos, bakes {2}, {3} envmap files. Environment boxes: {4}, linked {5}, unlinked {6}, linked without a volume {7}, skipped by the game {8}."
+    },
+    {
+      "Key": "MAP_GI_Tool_Tab",
+      "Text": "Irradiance Volumes"
+    },
+    {
+      "Key": "MAP_GI_Tool_Description",
+      "Text": "Each environment box (EnvMapEffectBox) lights the area inside it with a baked irradiance volume. Smithbox finds a box's volume by its volume ID property only. Vanilla boxes leave that property at -1, and the game then reads the ID from the last three digits of the name, so these boxes have no volume in Smithbox. Fill Volume IDs writes the ID the game already uses into the property, which changes nothing in game and keeps the link if the box is renamed. One undo reverts it."
+    },
+    {
+      "Key": "MAP_GI_Tool_Description_AC6",
+      "Text": "Each environment box (EnvMapEffectBox) lights the area inside it with a baked irradiance volume, chosen by its volume ID property (EnvMapEffectBox_UnkT32)."
+    },
+    {
+      "Key": "MAP_GI_Tool_No_Maps",
+      "Text": "No maps are loaded."
+    },
+    {
+      "Key": "MAP_GI_Tool_Map_Summary",
+      "Text": "{0} volume infos. Environment boxes: {1}, linked {2}, unlinked {3}, linked without a volume {4}."
+    },
+    {
+      "Key": "MAP_GI_Tool_Fill",
+      "Text": "Fill Volume IDs ({0})"
+    },
+    {
+      "Key": "MAP_GI_Tool_Fill_TT",
+      "Text": "Set the volume ID property of the unlinked boxes to the ID the game reads from their names. The map is marked as changed and is not saved until you save it."
+    },
+    {
+      "Key": "MAP_GI_Tool_Fill_Log",
+      "Text": "Filled the volume IDs of {0} environment boxes in {1}."
+    },
+    {
+      "Key": "MAP_GI_Tool_Column_Box",
+      "Text": "Box"
+    },
+    {
+      "Key": "MAP_GI_Tool_Column_Id",
+      "Text": "Volume ID"
+    },
+    {
+      "Key": "MAP_GI_Tool_Column_Status",
+      "Text": "Status"
+    },
+    {
+      "Key": "MAP_GI_Tool_Status_Linked",
+      "Text": "Linked"
+    },
+    {
+      "Key": "MAP_GI_Tool_Status_No_Volume",
+      "Text": "Linked, but the map has no volume with this ID"
+    },
+    {
+      "Key": "MAP_GI_Tool_Status_Unlinked",
+      "Text": "No volume ID"
+    },
+    {
+      "Key": "MAP_GI_Tool_Status_Fillable",
+      "Text": "No volume ID; fill would set {0}"
+    },
+    {
+      "Key": "MAP_GI_Tool_Status_Fillable_No_Volume",
+      "Text": "No volume ID; fill would set {0}, but the map has no volume with that ID"
+    },
+    {
+      "Key": "MAP_GI_Tool_Status_Not_Digits",
+      "Text": "No volume ID, and the name doesn't end in three digits, so it isn't filled"
+    },
+    {
+      "Key": "MAP_GI_Tool_Status_Skipped_Shape",
+      "Text": "The game skips this box: its shape is not a Box"
+    },
+    {
+      "Key": "MAP_GI_Tool_Status_Skipped_Name",
+      "Text": "The game skips this box: its name is not exactly 10 characters"
+    }
+  ]
+}

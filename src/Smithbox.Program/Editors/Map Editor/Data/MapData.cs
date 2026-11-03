@@ -46,6 +46,7 @@ public class MapData : IDisposable
     public AutoInvadeBank AutoInvadeBank;
     public MultiPlayerWallBank MultiPlayerWallBank;
     public FogVolumeBank FogVolumeBank;
+    public IrradianceVolumeBank IrradianceVolumeBank;
     public MapLimitBank MapLimitBank;
     public LightAtlasBank LightAtlasBank;
     public LightProbeBank LightProbeBank;
@@ -94,6 +95,7 @@ public class MapData : IDisposable
         AutoInvadeBank = new AutoInvadeBank(Project);
         MultiPlayerWallBank = new MultiPlayerWallBank(Project);
         FogVolumeBank = new FogVolumeBank(Project);
+        IrradianceVolumeBank = new IrradianceVolumeBank(Project);
         MapLimitBank = new MapLimitBank(Project);
         LightAtlasBank = new LightAtlasBank(Project);
         LightProbeBank = new LightProbeBank(Project);

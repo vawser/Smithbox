@@ -191,6 +191,10 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_Validation)
         {
+            // The viewport's Global Illumination menu asks for the irradiance volume tab
+            if (View.IrradianceVolumeIdTool.FocusRequested)
+                ImGui.SetNextItemOpen(true);
+
             if (ToolSections.Header("Validation"))
             {
                 ImGui.BeginChild("validationSection", ImGuiChildFlags.Borders);
@@ -212,6 +216,19 @@ public class MapToolWindow
                     View.MapValidatorTool.OnToolWindow();
 
                     ImGui.EndTabItem();
+                }
+
+                if (View.IrradianceVolumeBank.CanUse())
+                {
+                    var flags = View.IrradianceVolumeIdTool.FocusRequested ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
+                    View.IrradianceVolumeIdTool.FocusRequested = false;
+
+                    if (ImGui.BeginTabItem($"{LOC.Get("MAP_GI_Tool_Tab")}##irradianceVolumes", flags))
+                    {
+                        View.IrradianceVolumeIdTool.OnToolWindow();
+
+                        ImGui.EndTabItem();
+                    }
                 }
 
                 ImGui.EndTabBar();

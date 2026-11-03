@@ -43,6 +43,16 @@ public class ProjectFileLocator : IDisposable
     /// </summary>
     public FileDictionary FogVolumeFiles = new();
 
+    /// <summary>
+    /// The irradiance volume infos of the maps, one ivinfobnd per quality level (AC6, ER, NR)
+    /// </summary>
+    public FileDictionary IrradianceVolumeFiles = new();
+
+    /// <summary>
+    /// The envmap textures of the maps, which hold the irradiance volumes and reflection cubemaps (AC6, ER, NR)
+    /// </summary>
+    public FileDictionary EnvMapTextureFiles = new();
+
     public FileDictionary BreakFiles = new();
     public FileDictionary AutoInvadeFiles = new();
     public FileDictionary LightAtlasFiles = new();
@@ -353,6 +363,8 @@ public class ProjectFileLocator : IDisposable
         var mapLimitFiles = new HashSet<FileDictionaryEntry>();
         var multiPlayerWallFiles = new HashSet<FileDictionaryEntry>();
         var fogVolumeFiles = new HashSet<FileDictionaryEntry>();
+        var irradianceVolumeFiles = new HashSet<FileDictionaryEntry>();
+        var envMapTextureFiles = new HashSet<FileDictionaryEntry>();
         var breakFiles = new HashSet<FileDictionaryEntry>();
         var autoInvadeFiles = new HashSet<FileDictionaryEntry>();
         var lightAtlasFiles = new HashSet<FileDictionaryEntry>();
@@ -463,6 +475,14 @@ public class ProjectFileLocator : IDisposable
             // Fog volumes (AC6, ER, NR)
             if (isMap && ext == "fvb" && !isSd)
                 fogVolumeFiles.Add(entry);
+
+            // Irradiance volumes (AC6, ER, NR): infos, and the envmap textures holding the volumes
+            // (ER/NR mAA_BB_CC_DD_envmap_00_high_00.tpfbnd, AC6 mAA_BB_CC_DD_envmap_00_high_w.tpf)
+            if (isMap && ext == "ivinfobnd" && !isSd)
+                irradianceVolumeFiles.Add(entry);
+            if (isMap && (ext == "tpfbnd" || ext == "tpf") && !isSd
+                && entry.Filename.Contains("_envmap_", StringComparison.OrdinalIgnoreCase))
+                envMapTextureFiles.Add(entry);
 
             // Break data (DS2 keeps its breakobj files outside of /map)
             if ((ext == "breakobj" || ext == "breakgeom") && !isSd)
@@ -606,6 +626,8 @@ public class ProjectFileLocator : IDisposable
         MapLimitFiles.Entries = mapLimitFiles;
         MultiPlayerWallFiles.Entries = multiPlayerWallFiles;
         FogVolumeFiles.Entries = fogVolumeFiles;
+        IrradianceVolumeFiles.Entries = irradianceVolumeFiles;
+        EnvMapTextureFiles.Entries = envMapTextureFiles;
         BreakFiles.Entries = breakFiles;
         AutoInvadeFiles.Entries = autoInvadeFiles;
         LightAtlasFiles.Entries = lightAtlasFiles;
@@ -792,6 +814,8 @@ public class ProjectFileLocator : IDisposable
         MapLimitFiles = null;
         MultiPlayerWallFiles = null;
         FogVolumeFiles = null;
+        IrradianceVolumeFiles = null;
+        EnvMapTextureFiles = null;
         BreakFiles = null;
         CollisionFiles = null;
         AutoInvadeFiles = null;

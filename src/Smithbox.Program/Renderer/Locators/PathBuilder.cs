@@ -235,6 +235,20 @@ public class PathBuilder
                         relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"{mapid}.nvvhktbnd.dcx");
                     }
                 }
+                // Envmaps, which hold the irradiance volumes: one TPF per texture in AC6, a binder of TPFs in ER and NR
+                else if (p[i].Equals("envmap"))
+                {
+                    i++;
+
+                    if (project.Descriptor.ProjectType is ProjectType.AC6)
+                    {
+                        relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"{p[i]}.tpf.dcx");
+                    }
+                    else if (project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+                    {
+                        relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"{p[i]}.tpfbnd.dcx");
+                    }
+                }
             }
         }
         // --- Characters ---
