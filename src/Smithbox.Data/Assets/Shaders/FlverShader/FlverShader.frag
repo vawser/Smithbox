@@ -48,6 +48,12 @@ layout (constant_id = 9) const bool c_magma = false;
 layout (constant_id = 10) const int c_surface = 0;
 layout (constant_id = 99) const bool c_picking = false;
 
+// True when drawn into the HDR scene target, where the output is linear light, see SceneTarget.cs
+layout (constant_id = 97) const bool c_linearOutput = false;
+
+// True for the sun's shadow map, which takes depth alone: only the alpha test is done, see ShadowCascades.cs
+layout (constant_id = 98) const bool c_shadowPass = false;
+
 #define FEATURE_WIND 1u
 #define FEATURE_VERTEX_ANIMATION 2u
 #define FEATURE_SWAY 4u
@@ -87,6 +93,10 @@ layout(location = 9) flat in uint fsin_entityid;
 #if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
 	layout(location = 11) in vec3 fsin_vertexBlend;
 #endif
+// 1: the instance receives no shadows, an MSB part's IsShadowDest
+layout(location = 12) flat in uint fsin_flags;
+
+#define INSTANCE_NO_SHADOW 1u
 
 layout(location = 0) out vec4 fsout_color;
 
@@ -166,6 +176,21 @@ struct sceneParams
 	// The map's lights near the camera: entries of maplightdata, see SceneLightTable
 	uint mapLightStart;
 	uint mapLightCount;
+
+	// The sun's cascaded shadow maps, see ShadowCascades.cs. Depth is reversed: 1 nearest the sun.
+	mat4 shadowMatrices[4];  // world to each cascade's clip space
+	vec4 shadowSplits;       // how far along the view each cascade ends
+	vec4 shadowTexelSizes;   // meters per shadow map texel in each cascade
+	vec4 shadowDepthScales;  // shadow map depth per meter towards the sun in each cascade
+	uint shadowTexture;      // index in globalTextures of the map holding the cascades, 0 for no shadows
+	uint shadowCascadeCount;
+	float shadowFadeStart;   // where shadows start to fade out along the view
+	float shadowFadeEnd;     // and where they are gone
+	float shadowDepthBias;   // the GPARAM's Depth Bias
+	float shadowSlopeBias;   // and Slope Scaled Depth Bias
+	float shadowCascadeFade; // the share of each cascade's range that blends into the next
+	float shadowStrength;    // how much of the sun a shadow takes away
+	float shadowMapSize;     // texels across the whole map, two cascades to a side
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -1149,10 +1174,122 @@ bool IsFur()
 	return c_surface == SURFACE_FUR && HasFeature(FEATURE_FUR);
 }
 
+// 1 if the shadow map texel is no nearer the sun than depth, kept within the cascade's square of the map
+float ShadowCompare(ivec2 texel, ivec2 low, ivec2 high, float depth)
+{
+	texel = clamp(texel, low, high);
+	float stored = texelFetch(sampler2D(globalTextures[nonuniformEXT(sceneparam.shadowTexture)], linearSampler),
+		texel, 0).r;
+
+	return depth >= stored ? 1.0 : 0.0;
+}
+
+// How lit a point is in one cascade, from 0 in shadow to 1. Filtered over a 3x3 texel tent, made of 4x4 fetches
+// weighted by where the point falls between texels, so the edges are smooth however the camera moves.
+float SampleCascade(int cascade, vec3 worldPos, float bias)
+{
+	vec4 clip = sceneparam.shadowMatrices[cascade] * vec4(worldPos, 1.0);
+	vec3 ndc = clip.xyz / clip.w;
+
+	// Outside the cascade, or past where it reaches towards the sun, nothing is known to shade the point
+	if (any(greaterThan(abs(ndc.xy), vec2(1.0))) || ndc.z > 1.0)
+	{
+		return 1.0;
+	}
+
+	int size = int(sceneparam.shadowMapSize) / 2;
+	ivec2 low = ivec2(cascade % 2, cascade / 2) * size;
+	ivec2 high = low + size - 1;
+
+	vec2 coord = (ndc.xy * 0.5 + 0.5) * float(size) + vec2(low) - 0.5;
+	ivec2 base = ivec2(floor(coord));
+	vec2 f = coord - vec2(base);
+
+	float wx[4] = float[](1.0 - f.x, 1.0, 1.0, f.x);
+	float wy[4] = float[](1.0 - f.y, 1.0, 1.0, f.y);
+	float depth = ndc.z + bias;
+	float lit = 0.0;
+
+	for (int y = 0; y < 4; y++)
+	{
+		for (int x = 0; x < 4; x++)
+		{
+			lit += wx[x] * wy[y] * ShadowCompare(base + ivec2(x - 1, y - 1), low, high, depth);
+		}
+	}
+
+	return lit / 9.0;
+}
+
+// The point in one cascade, moved off its surface by the GPARAM's bias, here in texels of the cascade: the depth bias
+// along the normal, and the slope scaled bias towards the sun, more where the sun grazes the surface
+float ShadowInCascade(int cascade, vec3 worldPos, vec3 geometryNormal, float slope)
+{
+	float texel = sceneparam.shadowTexelSizes[cascade];
+	vec3 offsetPos = worldPos + geometryNormal * texel * 0.5 * sceneparam.shadowDepthBias;
+	float bias = texel * 0.5 * sceneparam.shadowSlopeBias * slope * sceneparam.shadowDepthScales[cascade];
+
+	return SampleCascade(cascade, offsetPos, bias);
+}
+
+// How much of the sun reaches a point, from 1 - shadowStrength in shadow to 1. sunTravel is the direction the
+// sun's light travels in; geometryNormal faces the side being drawn.
+float SunShadow(vec3 worldPos, vec3 geometryNormal, vec3 sunTravel)
+{
+	if (sceneparam.shadowTexture == 0u || sceneparam.shadowCascadeCount == 0u || (fsin_flags & INSTANCE_NO_SHADOW) != 0u)
+	{
+		return 1.0;
+	}
+
+	float viewDepth = (sceneparam.view * vec4(worldPos, 1.0)).z;
+
+	if (viewDepth >= sceneparam.shadowFadeEnd)
+	{
+		return 1.0;
+	}
+
+	int count = int(min(sceneparam.shadowCascadeCount, 4u));
+	int cascade = count - 1;
+
+	for (int i = 0; i < count; i++)
+	{
+		if (viewDepth < sceneparam.shadowSplits[i])
+		{
+			cascade = i;
+			break;
+		}
+	}
+
+	float NdotL = clamp(dot(geometryNormal, -sunTravel), 0.0, 1.0);
+	float slope = clamp(sqrt(1.0 - NdotL * NdotL) / max(NdotL, 0.05), 0.0, 8.0);
+
+	float lit = ShadowInCascade(cascade, worldPos, geometryNormal, slope);
+
+	// The end of each cascade's range blends into the next, so the change in detail doesn't show as a line
+	if (cascade + 1 < count && sceneparam.shadowCascadeFade > 0.0)
+	{
+		float start = cascade > 0 ? sceneparam.shadowSplits[cascade - 1] : 0.0;
+		float end = sceneparam.shadowSplits[cascade];
+		float blendStart = end - (end - start) * sceneparam.shadowCascadeFade;
+
+		if (viewDepth > blendStart)
+		{
+			float next = ShadowInCascade(cascade + 1, worldPos, geometryNormal, slope);
+			lit = mix(lit, next, clamp((viewDepth - blendStart) / max(end - blendStart, 1e-4), 0.0, 1.0));
+		}
+	}
+
+	lit = mix(lit, 1.0, smoothstep(sceneparam.shadowFadeStart, sceneparam.shadowFadeEnd, viewDepth));
+
+	return mix(1.0, lit, sceneparam.shadowStrength);
+}
+
 void main()
 {
 #ifdef OUTLINE
 	fsout_color = sceneparam.outlineColor;
+	if (c_linearOutput)
+		fsout_color.rgb *= fsout_color.rgb;
 	return;
 #endif
 
@@ -1208,6 +1345,13 @@ void main()
 	if (diffuseColor.w < diffuseAlpha.w)
 	{
 		discard;
+	}
+
+	// The shadow map has no color, so all it needs is which pixels the alpha test keeps
+	if (c_shadowPass)
+	{
+		fsout_color = vec4(0.0);
+		return;
 	}
 
 #ifdef SELECTED
@@ -1308,12 +1452,17 @@ void main()
 	surface.N = (gl_FrontFacing ? normalMap : -normalMap);
 	surface.V = viewVec;
 
+	// The sun's shadow is found with the mesh's own normal, which the normal map doesn't bend, facing the side drawn
+	vec3 geometryNormal = normalize(fsin_worldToTangent[2]);
+	geometryNormal = gl_FrontFacing ? geometryNormal : -geometryNormal;
+	float sunShadow = SunShadow(fsin_worldpos, geometryNormal, sunDir);
+
 	// The sun, then every light in the scene
 	vec3 direct = vec3(0.0);
 
 	if (g_modelLit)
 	{
-		// The model set's sun and fill lights
+		// The model set's sun and fill lights. Its sun is the one that casts the shadows.
 		for (uint i = 0u; i < 4u; i++)
 		{
 			mapDirectionalLight light = sceneparam.modelLights[i];
@@ -1322,13 +1471,14 @@ void main()
 
 			vec3 travel = light.direction.xyz;
 			travel = dot(travel, travel) > 1e-10 ? normalize(travel) : vec3(0.0, -1.0, 0.0);
-			direct += ShadeLight(surface, -travel, light.color.rgb * light.color.a, light.specColor.rgb * light.specColor.a);
+			direct += ShadeLight(surface, -travel, light.color.rgb * light.color.a, light.specColor.rgb * light.specColor.a) *
+				(i == 0u ? sunShadow : 1.0);
 		}
 	}
 	else
 	{
 		direct = ShadeLight(surface, -sunDir, sceneparam.sunColor.rgb * sceneparam.sunColor.a,
-			sceneparam.sunSpecColor.rgb * sceneparam.sunSpecColor.a);
+			sceneparam.sunSpecColor.rgb * sceneparam.sunSpecColor.a) * sunShadow;
 	}
 
 	uint lightCount = min(sceneparam.lightCount, uint(MAX_SCENE_LIGHTS));
@@ -1424,6 +1574,13 @@ void main()
 #ifdef FOCUS
 	finalColor = mix(vec3(dot(finalColor, vec3(0.299, 0.587, 0.114))), vec3(0.5), 0.5);
 #endif
+
+	// In the HDR target the tone map applies the square root, so it is undone: what is left is linear light, kept
+	// above 1 for the tone map to bring down
+	if (c_linearOutput)
+	{
+		finalColor *= finalColor;
+	}
 
 	fsout_color = vec4(finalColor, alpha);
 }

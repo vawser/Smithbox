@@ -4,22 +4,20 @@ using Vortice.Vulkan;
 namespace StudioCore.Renderer;
 
 /// <summary>
-///     A copy of the swapchain's depth, taken after a viewport's opaque draws, so that what is drawn after them can
-///     tell how far it is from the scene behind it. Viewports are regions of the same swapchain, so they share
-///     this. Shaders read it by index from the global texture pool, at the pixel they are drawing.
+///     A copy of a pipeline's scene depth, taken after its opaque draws, so that what is drawn after them can tell
+///     how far it is from the scene behind it. Each pipeline draws into a <see cref="SceneTarget" /> of its own, so
+///     each has one of these. Shaders read it by index from the global texture pool, at the pixel they are drawing.
 /// </summary>
-public static class SceneDepth
+public class SceneDepth
 {
-    private static TexturePool.TextureHandle Handle;
-    private static Texture Copy;
+    private TexturePool.TextureHandle Handle;
+    private Texture Copy;
 
     /// <summary>The index in the global texture pool, or 0 until the first capture</summary>
-    public static uint TextureIndex => Handle?.TexHandle ?? 0;
+    public uint TextureIndex => Handle?.TexHandle ?? 0;
 
-    public static void Capture(GraphicsDevice device, CommandList cl)
+    public void Capture(GraphicsDevice device, CommandList cl, Texture source)
     {
-        Texture source = device.SwapchainFramebuffer.DepthTarget?.Target;
-
         if (source == null)
         {
             return;

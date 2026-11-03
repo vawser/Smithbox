@@ -8,6 +8,9 @@ layout(location = 3) flat in uint fsin_entityid;
 layout(location = 4) in vec2 fsin_barycentric;
 layout(location = 0) out vec4 fsout_color;
 
+// True when drawn into the HDR scene target, see SceneTarget.cs
+layout (constant_id = 97) const bool c_linearOutput = false;
+
 layout (constant_id = 99) const bool c_picking = false;
 
 #define MAX_SCENE_LIGHTS 16
@@ -133,4 +136,8 @@ void main()
 	float grid = gridFactor(fsin_barycentric, 0.5);
 	vec3 col = diffuse * color.xyz * 0.8 + ambient * color.xyz * 0.2;
 	fsout_color = vec4(col * grid + (1.0 - grid) * vec3(1.0, 0.5, 0.0), sceneparam.collisionOpacity);
+
+	// In the HDR target the tone map applies the gamma, so this display color is squared to linear light
+	if (c_linearOutput)
+		fsout_color.rgb *= fsout_color.rgb;
 }

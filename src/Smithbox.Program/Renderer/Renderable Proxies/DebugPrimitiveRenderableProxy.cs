@@ -396,9 +396,13 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
 
         pipelineDescription.PrimitiveTopology = _debugPrimitive.Topology;
 
+        // Primitives in the scene go in the HDR target, where the shaders output linear light; overlays don't
+        SpecializationConstant[] specializationConstants =
+            SceneTarget.Specialize(_debugPrimitive.SpecializationConstants, _renderablesSet);
+
         pipelineDescription.ShaderSet = new ShaderSetDescription(
             mainVertexLayouts,
-            _shaders, _debugPrimitive.SpecializationConstants);
+            _shaders, specializationConstants);
 
         pipelineDescription.ResourceLayouts = new[]
         {
@@ -407,7 +411,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
             SamplerSet.SamplersLayout, pickingResultLayout, SceneRenderer.BoneBufferAllocator.GetLayout()
         };
 
-        pipelineDescription.Outputs = gd.SwapchainFramebuffer.OutputDescription;
+        pipelineDescription.Outputs = SceneTarget.OutputsFor(gd, _renderablesSet);
         _pipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
 
         // Build picking pipeline. Unpickable primitives keep drawing during a picking
@@ -416,9 +420,9 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         if (_pickable)
         {
             var pickingSpecializationConstants =
-                new SpecializationConstant[_debugPrimitive.SpecializationConstants.Length + 1];
-            Array.Copy(_debugPrimitive.SpecializationConstants, pickingSpecializationConstants,
-                _debugPrimitive.SpecializationConstants.Length);
+                new SpecializationConstant[specializationConstants.Length + 1];
+            Array.Copy(specializationConstants, pickingSpecializationConstants,
+                specializationConstants.Length);
             pickingSpecializationConstants[pickingSpecializationConstants.Length - 1] =
                 new SpecializationConstant(99, true);
             pipelineDescription.ShaderSet = new ShaderSetDescription(

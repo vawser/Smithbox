@@ -332,6 +332,65 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         }
     }
 
+    /// <summary>
+    ///     Whether the mesh casts the sun's shadow: an MSB part's IsShadowSrc (or IsShadowOnly). Only meshes drawn with
+    ///     the flver shader can, and transparent ones don't.
+    /// </summary>
+    public bool CastsShadow
+    {
+        get => _castsShadow;
+        set
+        {
+            var old = _castsShadow;
+            _castsShadow = value;
+
+            if (_renderable != -1 && old != value)
+            {
+                _renderablesSet.cShadowPipelines[_renderable] = value ? _shadowPipeline : null;
+            }
+
+            foreach (MeshRenderableProxy child in SnapshotSubmeshes())
+            {
+                child.CastsShadow = value;
+            }
+        }
+    }
+
+    /// <summary>Whether the sun's shadows fall on the mesh: an MSB part's IsShadowDest</summary>
+    public bool ReceivesShadow
+    {
+        get => _receivesShadow;
+        set
+        {
+            var old = _receivesShadow;
+            _receivesShadow = value;
+
+            if (_registered && old != value)
+            {
+                ScheduleRenderableUpdate();
+            }
+
+            foreach (MeshRenderableProxy child in SnapshotSubmeshes())
+            {
+                child.ReceivesShadow = value;
+            }
+        }
+    }
+
+    private bool _castsShadow = true;
+    private bool _receivesShadow = true;
+    private Pipeline? _shadowPipeline;
+
+    /// <summary>
+    ///     Set in the instance's material ID for FlverShader.vert when the mesh receives no shadows. Material IDs
+    ///     never reach it: the material buffer has room for far fewer entries.
+    /// </summary>
+    public const uint NoShadowMaterialFlag = 0x80000000u;
+
+    /// <summary>Whether the mesh's shader is the flver shader, which casts and receives shadows</summary>
+    private bool UsesFlverShader => _meshProvider is FlverSubmeshProvider &&
+                                    _meshProvider.ShaderName.StartsWith(@"FlverShader\", StringComparison.Ordinal);
+
     public void OnProviderAvailable()
     {
         // A released (disposed) proxy is still weakly listed by its provider until collected. It must not
@@ -370,6 +429,8 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             child.Animator = _animator;
             child.AttachTransform = _attachTransform;
             child.InstanceTransforms = _instanceTransforms;
+            child.CastsShadow = _castsShadow;
+            child.ReceivesShadow = _receivesShadow;
 
             // Children are created once the provider has loaded (async), which can be after the
             // outline was requested on this proxy. Without this they never get the selection outline.
@@ -688,6 +749,10 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                     VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment,
                     VkDescriptorBindingFlags.None)));
 
+        // The scene's renderables go in the HDR target, where the shaders output linear light
+        SpecializationConstant[] specializationConstants =
+            SceneTarget.Specialize(_meshProvider.SpecializationConstants, _renderablesSet);
+
         // Build default pipeline
         GraphicsPipelineDescription pipelineDescription = new();
         pipelineDescription.BlendState = _meshProvider.BlendState;
@@ -703,27 +768,49 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         pipelineDescription.PrimitiveTopology = _meshProvider.Topology;
         pipelineDescription.ShaderSet = new ShaderSetDescription(
             mainVertexLayouts,
-            _shaders, _meshProvider.SpecializationConstants);
+            _shaders, specializationConstants);
         pipelineDescription.ResourceLayouts = new[]
         {
             projViewLayout, mainPerObjectLayout, SceneRenderer.GlobalTexturePool.GetLayout(),
             SceneRenderer.GlobalCubeTexturePool.GetLayout(), SceneRenderer.MaterialBufferAllocator.GetLayout(),
             SamplerSet.SamplersLayout, pickingResultLayout, SceneRenderer.BoneBufferAllocator.GetLayout()
         };
-        pipelineDescription.Outputs = gd.SwapchainFramebuffer.OutputDescription;
+        pipelineDescription.Outputs = SceneTarget.OutputsFor(gd, _renderablesSet);
         _pipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
 
         // Build picking pipeline
         var pickingSpecializationConstants =
-            new SpecializationConstant[_meshProvider.SpecializationConstants.Length + 1];
-        Array.Copy(_meshProvider.SpecializationConstants, pickingSpecializationConstants,
-            _meshProvider.SpecializationConstants.Length);
+            new SpecializationConstant[specializationConstants.Length + 1];
+        Array.Copy(specializationConstants, pickingSpecializationConstants,
+            specializationConstants.Length);
         pickingSpecializationConstants[pickingSpecializationConstants.Length - 1] =
             new SpecializationConstant(99, true);
         pipelineDescription.ShaderSet = new ShaderSetDescription(
             mainVertexLayouts,
             _shaders, pickingSpecializationConstants);
         _pickingPipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
+
+        // Build the shadow map pipeline: depth alone, from the shader without the selection or focus effects. Both
+        // faces are drawn, as map pieces are often open on their far side, which would let the sun through.
+        _shadowPipeline = null;
+        if (_renderablesSet.RenderableSystemIndex == 0 && UsesFlverShader && !_meshProvider.IsTransparent)
+        {
+            Tuple<Shader, Shader> shadowShaders =
+                StaticResourceCache.GetShaders(gd, gd.ResourceFactory, _meshProvider.ShaderName).ToTuple();
+            var shadowSpecializationConstants = new SpecializationConstant[specializationConstants.Length + 1];
+            Array.Copy(specializationConstants, shadowSpecializationConstants, specializationConstants.Length);
+            shadowSpecializationConstants[^1] = new SpecializationConstant(ShadowCascades.ShadowPassConstant, true);
+
+            GraphicsPipelineDescription shadowDescription = pipelineDescription;
+            shadowDescription.BlendState = new BlendStateDescription(RgbaFloat.Black);
+            shadowDescription.DepthStencilState = DepthStencilStateDescription.DepthOnlyGreaterEqual;
+            shadowDescription.RasterizerState = new RasterizerStateDescription(VkCullModeFlags.None,
+                VkPolygonMode.Fill, _meshProvider.FrontFace, true, false);
+            shadowDescription.ShaderSet = new ShaderSetDescription(mainVertexLayouts,
+                new[] { shadowShaders.Item1, shadowShaders.Item2 }, shadowSpecializationConstants);
+            shadowDescription.Outputs = ShadowCascades.Outputs;
+            _shadowPipeline = StaticResourceCache.GetPipeline(factory, ref shadowDescription);
+        }
 
         // Create draw call arguments
         MeshDrawParametersComponent meshcomp = new();
@@ -753,6 +840,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         // Pipelines
         _renderablesSet.cPipelines[_renderable] = _pipeline;
         _renderablesSet.cSelectionPipelines[_renderable] = _pickingPipeline;
+        _renderablesSet.cShadowPipelines[_renderable] = _castsShadow ? _shadowPipeline : null;
 
         // Update instance data
         FillWorldBuffer(gd, cl);
@@ -785,7 +873,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             _shaders = new[] { s.Item1, s.Item2 };
             pipelineDescription.ShaderSet = new ShaderSetDescription(
                 mainVertexLayouts,
-                _shaders, _meshProvider.SpecializationConstants);
+                _shaders, specializationConstants);
             _selectedPipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
 
             _selectionOutlineRenderable = _renderablesSet.CreateMesh(ref bounds, ref meshcomp);
@@ -881,6 +969,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         InstanceData dat = new();
         dat.WorldMatrix = _meshProvider.ObjectTransform * _attachTransform * _world;
         dat.MaterialID = _meshProvider.MaterialIndex;
+
+        if (!_receivesShadow && UsesFlverShader)
+        {
+            dat.MaterialID |= NoShadowMaterialFlag;
+        }
 
         if (_meshProvider.BoneBuffer != null)
         {

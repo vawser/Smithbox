@@ -20,10 +20,27 @@ public class SceneRenderPipeline
     private readonly SceneRenderer.RenderQueue _overlayQueue;
     private readonly SceneRenderer.RenderQueue _renderQueue;
     private readonly RenderScene Scene;
+    private readonly GraphicsDevice Device;
+
+    /// <summary>The settings of the sun's shadows without map lighting: Elden Ring's mapbase</summary>
+    private static readonly GparamShadow DefaultShadow = new();
+
+    /// <summary>The HDR target the scene is drawn into, before <see cref="ToneMap" /> takes it to the screen</summary>
+    public SceneTarget Target { get; } = new();
+
+    public ToneMapPass ToneMap { get; } = new();
+
+    /// <summary>The copy of <see cref="Target" />'s depth that transparent draws read</summary>
+    public SceneDepth SceneDepth { get; } = new();
+
+    /// <summary>The sun's shadow maps, or null for a pipeline drawn without shadows</summary>
+    public ShadowCascades Shadows { get; }
 
     // Scene Parameters
     public DeviceBuffer SceneParamBuffer { get; }
     public ResourceSet SceneParamResourceSet { get; }
+    private DeviceBuffer OverlayParamBuffer { get; }
+    private ResourceSet OverlayParamResourceSet { get; }
 
     public SceneParam SceneParams;
 
@@ -73,25 +90,27 @@ public class SceneRenderPipeline
         : null;
 
     /// <summary>
-    ///     The viewport's background with map lighting: the GPARAM's BG color, which is in the game's units like its
-    ///     lights, so it takes their exposure and the shaders' gamma (a square root) to reach the screen. Null to keep
-    ///     the background color of the settings.
+    ///     The viewport's background as linear light, which <see cref="Target" /> is cleared to. With map lighting it is
+    ///     the GPARAM's BG color, which is in the game's units like its lights, so it takes their exposure; otherwise
+    ///     the background color of the settings, which is a display value, so is squared to undo the tone map's gamma.
     /// </summary>
-    public Vector4? MapBackgroundColor
+    public RgbaFloat BackgroundColor
     {
         get
         {
             var lighting = ActiveMapLighting;
 
             if (lighting == null || !CFG.Current.Viewport_Map_Lighting_Background)
-                return null;
+            {
+                var display = CFG.Current.Viewport_Bg_Color;
+                return new RgbaFloat(display.X * display.X, display.Y * display.Y, display.Z * display.Z, 1.0f);
+            }
 
             var bg = lighting.BackgroundColor;
             var exposure = lighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale;
             var linear = Vector3.Max(new Vector3(bg.X, bg.Y, bg.Z) * bg.W * exposure, Vector3.Zero);
-            var display = Vector3.Min(Vector3.SquareRoot(linear), Vector3.One);
 
-            return new Vector4(display, 1.0f);
+            return new RgbaFloat(linear.X, linear.Y, linear.Z, 1.0f);
         }
     }
 
@@ -107,9 +126,12 @@ public class SceneRenderPipeline
         Range = 25.0f
     };
 
-    public unsafe SceneRenderPipeline(RenderScene scene, GraphicsDevice device, int width, int height)
+    /// <param name="shadows">Whether the sun casts shadows in this pipeline's scene</param>
+    public unsafe SceneRenderPipeline(RenderScene scene, GraphicsDevice device, int width, int height,
+        bool shadows = true)
     {
         Scene = scene;
+        Device = device;
 
         ResourceFactory factory = device.ResourceFactory;
 
@@ -151,6 +173,12 @@ public class SceneRenderPipeline
 
         SceneParamResourceSet = StaticResourceCache.GetResourceSet(device.ResourceFactory, new ResourceSetDescription(sceneParamLayout, SceneParamBuffer));
 
+        // The overlays' copy, which differs in the cursor: they are drawn on the swapchain, and the scene in its target
+        OverlayParamBuffer = factory.CreateBuffer(
+            new BufferDescription((uint)sizeof(SceneParam), VkBufferUsageFlags.UniformBuffer | VkBufferUsageFlags.TransferDst, VmaMemoryUsage.Auto, 0));
+        device.UpdateBuffer(OverlayParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
+        OverlayParamResourceSet = factory.CreateResourceSet(new ResourceSetDescription(sceneParamLayout, OverlayParamBuffer));
+
         // Setup picking uniform buffer
         PickingResultsBuffer = factory.CreateBuffer(
             new BufferDescription(
@@ -180,23 +208,42 @@ public class SceneRenderPipeline
                 VmaAllocationCreateFlags.Mapped));
         device.UpdateBuffer(PickingResultReadbackBuffer, 0, ref PickingResult, (uint)sizeof(PickingResult));
 
-        _renderQueue = new SceneRenderer.RenderQueue("Viewport Render", device, this) { CapturesSceneDepth = true };
+        // The queues run in the order they are registered: the shadow maps have to be drawn before the scene that
+        // reads them, and all of a pipeline's queues have to be together, as binding another framebuffer in between
+        // would discard its target
+        if (shadows)
+        {
+            Shadows = new ShadowCascades(device, this);
+        }
+
+        // The scene goes into the pipeline's own HDR target, on the offscreen list, so it is drawn before the
+        // overlay queue tone maps it onto the swapchain
+        _renderQueue = new SceneRenderer.RenderQueue("Viewport Render", device, this)
+        {
+            CapturesSceneDepth = true,
+            IsOffscreen = true
+        };
         SceneRenderer.RegisterRenderQueue(_renderQueue);
 
-        _overlayQueue = new SceneRenderer.RenderQueue("Overlay Render", device, this);
+        _overlayQueue = new SceneRenderer.RenderQueue("Overlay Render", device, this)
+        {
+            SceneParamSet = OverlayParamResourceSet
+        };
         SceneRenderer.RegisterRenderQueue(_overlayQueue);
     }
 
     /// <summary>
-    ///     Renders this pipeline to its own framebuffer instead of the swapchain.
+    ///     Draws this pipeline's overlays on the offscreen list too, for a pipeline that doesn't reach the swapchain.
     /// </summary>
     public void SetOffscreen()
     {
-        _renderQueue.IsOffscreen = true;
         _overlayQueue.IsOffscreen = true;
+    }
 
-        // Scene depth comes from the swapchain, which has nothing to do with what is drawn here
-        _renderQueue.CapturesSceneDepth = false;
+    /// <summary>Copies <see cref="Target" />'s depth for the transparent draws that follow, see <see cref="SceneDepth" /></summary>
+    public void CaptureSceneDepth(CommandList cl)
+    {
+        SceneDepth.Capture(Device, cl, Target.Depth);
     }
 
     public void SetViewportSetupAction(Action<GraphicsDevice, CommandList> action)
@@ -209,7 +256,11 @@ public class SceneRenderPipeline
         _overlayQueue.SetPredrawSetupAction(action);
     }
 
-    public unsafe void UpdateSceneParameters(Matrix4x4 proj, Matrix4x4 view, Vector3 eye, int cursorx, int cursory)
+    /// <param name="cursorx">The cursor in the pixels of the framebuffer the overlays are drawn to</param>
+    /// <param name="targetx">Where <see cref="Target" />'s first pixel is in that framebuffer, so the scene's picking
+    /// can take the cursor in its own pixels</param>
+    public unsafe void UpdateSceneParameters(Matrix4x4 proj, Matrix4x4 view, Vector3 eye, int cursorx, int cursory,
+        int targetx = 0, int targety = 0)
     {
         var selectionColor = new Vector4(
             CFG.Current.Viewport_Selection_Tint_Color.X, 
@@ -255,6 +306,7 @@ public class SceneRenderPipeline
         var materialTime = MaterialClock.Time;
         Vector4 wind = MaterialClock.Wind;
         var sceneDepth = _renderQueue.CapturesSceneDepth ? SceneDepth.TextureIndex : 0;
+        var shadowStrength = Math.Clamp(CFG.Current.Viewport_Shadow_Strength, 0.0f, 1.0f);
 
         CollisionTransparency.Refresh();
         var collisionOpacity = Math.Clamp(CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
@@ -328,14 +380,27 @@ public class SceneRenderPipeline
             }
         }
 
+        // The cascades follow the sun the shaders light with, and the GPARAM's Shadows group
+        var sunDirection = mapLighting != null ? mapLightDirection : SceneParams.LightDirection;
+        var sunIntensity = mapLighting != null ? mapSunColor.W : SceneParams.SunColor.W;
+        var castShadows = CFG.Current.Viewport_Shadows && sunIntensity > 0.0f;
+
+        Shadows?.Update(castShadows, view, proj, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z),
+            mapLighting?.Shadow ?? DefaultShadow);
+
+        var shadowParams = Shadows?.Parameters ?? default;
+        var shadowCount = (uint)(Shadows?.ActiveCount ?? 0);
+        var shadowTexture = Shadows?.TextureIndex ?? 0;
+        var shadowMapSize = Shadows?.MapSize ?? 0.0f;
+
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
             SceneParams.Projection = proj;
             SceneParams.View = view;
             SceneParams.EyePosition = new Vector4(eye, 0.0f);
             SceneParams.EnvMap = EnvMapTexture;
-            SceneParams.CursorPosition[0] = cursorx;
-            SceneParams.CursorPosition[1] = cursory;
+            SceneParams.CursorPosition[0] = cursorx - targetx;
+            SceneParams.CursorPosition[1] = cursory - targety;
 
             SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Flat_Model_Brightness;
             SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Flat_Model_Saturation;
@@ -386,19 +451,40 @@ public class SceneRenderPipeline
             SceneParams.ModelHemiUp = mapModelHemiUp;
             SceneParams.ModelHemiDown = mapModelHemiDown;
 
-            if (mapLighting == null)
-            {
-                cl.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
-                return;
-            }
+            SceneParams.ShadowMatrix0 = shadowParams.Matrix0;
+            SceneParams.ShadowMatrix1 = shadowParams.Matrix1;
+            SceneParams.ShadowMatrix2 = shadowParams.Matrix2;
+            SceneParams.ShadowMatrix3 = shadowParams.Matrix3;
+            SceneParams.ShadowSplits = shadowParams.Splits;
+            SceneParams.ShadowTexelSizes = shadowParams.TexelSizes;
+            SceneParams.ShadowDepthScales = shadowParams.DepthScales;
+            SceneParams.ShadowTexture = shadowTexture;
+            SceneParams.ShadowCascadeCount = shadowTexture != 0 ? shadowCount : 0;
+            SceneParams.ShadowFadeStart = shadowParams.FadeStart;
+            SceneParams.ShadowFadeEnd = shadowParams.FadeEnd;
+            SceneParams.ShadowDepthBias = shadowParams.DepthBias;
+            SceneParams.ShadowSlopeBias = shadowParams.SlopeBias;
+            SceneParams.ShadowCascadeFade = shadowParams.CascadeFade;
+            SceneParams.ShadowStrength = shadowStrength;
+            SceneParams.ShadowMapSize = shadowMapSize;
 
             // A copy, so the viewport's own sun stays in SceneParams for its sliders
             var uploaded = SceneParams;
-            uploaded.LightDirection = mapLightDirection;
-            uploaded.SunColor = mapSunColor;
-            uploaded.SunSpecColor = mapSunSpecColor;
+
+            if (mapLighting != null)
+            {
+                uploaded.LightDirection = mapLightDirection;
+                uploaded.SunColor = mapSunColor;
+                uploaded.SunSpecColor = mapSunSpecColor;
+            }
 
             cl.UpdateBuffer(SceneParamBuffer, 0, ref uploaded, (uint)sizeof(SceneParam));
+            Shadows?.Upload(cl, uploaded);
+
+            var overlay = uploaded;
+            overlay.CursorPosition[0] = cursorx;
+            overlay.CursorPosition[1] = cursory;
+            cl.UpdateBuffer(OverlayParamBuffer, 0, ref overlay, (uint)sizeof(SceneParam));
         });
     }
 
@@ -419,15 +505,17 @@ public class SceneRenderPipeline
         };
     }
 
-    public void BindResources(CommandList cl)
+    /// <param name="sceneParams">The scene parameters to draw with, or null for this pipeline's own</param>
+    public void BindResources(CommandList cl, ResourceSet sceneParams = null)
     {
-        cl.SetGraphicsResourceSet(0, SceneParamResourceSet);
+        cl.SetGraphicsResourceSet(0, sceneParams ?? SceneParamResourceSet);
         cl.SetGraphicsResourceSet(6, PickingResultResourceSet);
     }
 
     public void RenderScene(BoundingFrustum frustum)
     {
         Scene.Render(_renderQueue, _overlayQueue, frustum, this);
+        Shadows?.Submit(Scene.OpaqueRenderables, Scene.DrawFilter, Scene.DisplayGroup);
     }
 
     /// <summary>

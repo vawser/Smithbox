@@ -103,7 +103,8 @@ public sealed class ModelPreviewRenderer
 
         OutputDescription outputs = device.SwapchainFramebuffer.OutputDescription;
 
-        // Mesh pipelines are built for the swapchain, so matching its formats lets them be used here as they are
+        // The model is drawn into the pipeline's HDR target, then tone mapped into this, which has the swapchain's
+        // formats so that it can be copied into a preview that ImGui draws
         TextureDescription colorDescription = TextureDescription.Texture2D(Resolution, Resolution, 1, 1,
             outputs.ColorAttachments[0].Format, VkImageUsageFlags.ColorAttachment | VkImageUsageFlags.TransferSrc,
             VkImageCreateFlags.None, VkImageTiling.Optimal, VkSampleCountFlags.Count1);
@@ -116,28 +117,34 @@ public sealed class ModelPreviewRenderer
         DepthTarget = device.ResourceFactory.CreateTexture(ref depthDescription);
         Framebuffer = device.ResourceFactory.CreateFramebuffer(new FramebufferDescription(DepthTarget, ColorTarget));
 
-        Pipeline = new SceneRenderPipeline(Scene, device, (int)Resolution, (int)Resolution);
+        // Previews are drawn with the flat shader, which casts no shadows
+        Pipeline = new SceneRenderPipeline(Scene, device, (int)Resolution, (int)Resolution, shadows: false);
         Pipeline.SetOffscreen();
 
         Pipeline.SetViewportSetupAction((d, cl) =>
         {
-            cl.SetFramebuffer(Framebuffer);
+            Pipeline.Target.EnsureSize(d, Resolution, Resolution);
 
             if (CaptureThisFrame)
             {
-                Vector3 background = CFG.Current.Viewport_Bg_Color;
-
-                cl.ClearColorTarget(0, new RgbaFloat(background.X, background.Y, background.Z, 1.0f));
-                cl.ClearDepthStencil(0);
+                Pipeline.Target.BeginScene(cl, Pipeline.BackgroundColor);
+            }
+            else
+            {
+                cl.SetFramebuffer(Pipeline.Target.Framebuffer);
             }
         });
 
         // The overlay queue runs after the model has been drawn, and this scene has no overlays of its own
         Pipeline.SetOverlayViewportSetupAction((d, cl) =>
         {
+            cl.SetFramebuffer(Framebuffer);
+
             if (CaptureThisFrame)
             {
                 CaptureThisFrame = false;
+                cl.SetFullViewport(0);
+                Pipeline.ToneMap.Draw(d, cl, Pipeline.Target, Framebuffer.OutputDescription, Vector2.Zero, null);
                 cl.CopyTexture(ColorTarget, PreviewTexture);
             }
         });

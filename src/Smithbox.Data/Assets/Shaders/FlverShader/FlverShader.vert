@@ -158,6 +158,12 @@ layout(location = 9) flat out uint fsin_entityid;
 #if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
 	layout(location = 11) out vec3 fsin_vertexBlend;
 #endif
+// 1: the instance receives no shadows
+layout(location = 12) flat out uint fsin_flags;
+
+// The top bit of the instance's material ID is a flag, MeshRenderableProxy.NoShadowMaterialFlag
+#define MATERIAL_ID_MASK 0x7FFFFFFFu
+#define MATERIAL_NO_SHADOW 0x80000000u
 
 // UVs are stored as signed 16 bit fixed point with 11 fractional bits
 const float UV_SCALE = 1.0 / 2048.0;
@@ -476,7 +482,7 @@ void main()
 	vec3 localNormal = vec3(normal);
 
 #ifdef MATERIAL_DEFORM
-	deformData deform = deformdata[idata[gl_InstanceIndex].materialID.x + 3u];
+	deformData deform = deformdata[(idata[gl_InstanceIndex].materialID.x & MATERIAL_ID_MASK) + 3u];
 
 	if (c_deformer == DEFORM_VAT && HasFeature(FEATURE_VERTEX_ANIMATION))
 	{
@@ -507,7 +513,8 @@ void main()
 	// Vertex colors are used as blend weights by blended materials
 	fsin_color = vec4(color) / 255.0;
 
-	fsin_mat = idata[gl_InstanceIndex].materialID.x;
+	fsin_mat = idata[gl_InstanceIndex].materialID.x & MATERIAL_ID_MASK;
+	fsin_flags = (idata[gl_InstanceIndex].materialID.x & MATERIAL_NO_SHADOW) != 0u ? 1u : 0u;
 	fsin_entityid = idata[gl_InstanceIndex].materialID.w;
 
 	mat4 bone = GetBoneMatrix();

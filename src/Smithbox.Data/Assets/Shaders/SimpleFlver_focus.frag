@@ -3,6 +3,9 @@
 #extension GL_EXT_shader_explicit_arithmetic_types : enable
 layout(location = 0) in vec4 color;
 layout(location = 0) out vec4 fsout_color;
+
+// True when drawn into the HDR scene target, see SceneTarget.cs
+layout (constant_id = 97) const bool c_linearOutput = false;
 layout(location = 1) flat in uint fsin_entityid;
 
 layout (constant_id = 99) const bool c_picking = false;
@@ -119,4 +122,8 @@ void main()
 	}
 
 	fsout_color = vec4(FocusGrey(color.rgb), color.a);
+
+	// In the HDR target the tone map applies the gamma, so this display color is squared to linear light
+	if (c_linearOutput)
+		fsout_color.rgb *= fsout_color.rgb;
 }

@@ -1298,6 +1298,22 @@ public class CFG
     // bakes they need as the time moves, instead of the Global Illumination tab's bake settings
     public bool Viewport_Map_Lighting_Follow_Bakes = true;
 
+    // How the viewports' HDR scene is taken to the screen, a ToneMapSetting: from the map's GPARAM Tone Map group,
+    // or a fixed curve. The exposure is on top of the GPARAM's, and the white point is for a fixed Reinhard curve.
+    public int Viewport_ToneMap = 0;
+    public float Viewport_ToneMap_Exposure = 1.0f;
+    public float Viewport_ToneMap_White_Point = 1.5f;
+
+    // Sun shadows: cascaded shadow maps whose splits, fade and bias come from the map's GPARAM Shadows group, or
+    // Elden Ring's mapbase without map lighting. The resolution is that of one cascade; the map holds four.
+    public bool Viewport_Shadows = true;
+    public int Viewport_Shadow_Resolution = 2048;
+    public float Viewport_Shadow_Bias_Scale = 1.0f;
+    public float Viewport_Shadow_Strength = 1.0f;
+
+    // Whether MSB parts cast and receive shadows as their IsShadowSrc and IsShadowDest flags say; all do otherwise
+    public bool Viewport_Shadows_Use_Msb_Flags = true;
+
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
 

@@ -10,6 +10,9 @@ layout(location = 5) in float fsin_worldY;
 layout(location = 6) flat in uint fsin_volumeFlags;
 layout(location = 0) out vec4 fsout_color;
 
+// True when drawn into the HDR scene target, see SceneTarget.cs
+layout (constant_id = 97) const bool c_linearOutput = false;
+
 layout (constant_id = 99) const bool c_picking = false;
 
 #define MAX_SCENE_LIGHTS 16
@@ -179,6 +182,8 @@ void main()
 	if (crossSection)
 	{
 		fsout_color = vec4(CROSS_SECTION_COLOR, color.a * sceneparam.collisionOpacity);
+		if (c_linearOutput)
+			fsout_color.rgb *= fsout_color.rgb;
 		return;
 	}
 
@@ -189,4 +194,8 @@ void main()
 	float grid = gridFactor(fsin_barycentric, 0.5);
 	vec3 col = diffuse * color.xyz * 0.8 + ambient * color.xyz * 0.2;
 	fsout_color = vec4(col * grid + (1.0 - grid) * col * 0.4, color.a * sceneparam.collisionOpacity);
+
+	// In the HDR target the tone map applies the gamma, so this display color is squared to linear light
+	if (c_linearOutput)
+		fsout_color.rgb *= fsout_color.rgb;
 }

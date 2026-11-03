@@ -6,6 +6,9 @@ layout(location = 1) flat in uint fsin_mat;
 layout(location = 2) flat in uint fsin_entityid;
 layout(location = 0) out vec4 fsout_color;
 
+// True when drawn into the HDR scene target, see SceneTarget.cs
+layout (constant_id = 97) const bool c_linearOutput = false;
+
 layout (constant_id = 99) const bool c_picking = false;
 
 struct sceneParams
@@ -101,4 +104,8 @@ void main()
     fsout_color = vec4(col & 255, (col >> 8) & 255, (col >> 16) & 255, (col >> 24) & 255);
     //fsout_color = vec4(1.0, 1.0, 1.0, 1.0);
 	fsout_color = fsout_color / 255.0f;
+
+	// In the HDR target the tone map applies the gamma, so this display color is squared to linear light
+	if (c_linearOutput)
+		fsout_color.rgb *= fsout_color.rgb;
 }

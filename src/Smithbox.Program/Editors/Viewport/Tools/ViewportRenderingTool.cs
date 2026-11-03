@@ -68,6 +68,20 @@ public class ViewportRenderingTool
             ImGui.EndTabItem();
         }
 
+        if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_Tone_Map")}##viewportRenderingToneMap"))
+        {
+            ToneMapTab(viewport);
+
+            ImGui.EndTabItem();
+        }
+
+        if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_Shadows")}##viewportRenderingShadows"))
+        {
+            ShadowsTab(viewport);
+
+            ImGui.EndTabItem();
+        }
+
         // Map Editor
         if (viewport.Owner is MapUniverse mapUniverse)
         {
@@ -358,6 +372,95 @@ public class ViewportRenderingTool
             view.IrradianceVolumeIdTool.FocusRequested = true;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Open_Tool_TT"));
+    }
+
+    private static readonly int[] ShadowResolutions = { 1024, 2048, 4096 };
+
+    /// <summary>
+    /// How the HDR scene is taken to the screen: the map GPARAM's Tone Map group under map lighting, or a fixed curve.
+    /// Applies at once, as the tone map is drawn every frame.
+    /// </summary>
+    private void ToneMapTab(VulkanViewport viewport)
+    {
+        var pipeline = viewport.ViewPipeline;
+
+        string[] curves =
+        {
+            LOC.Get("VIEWPORT_Rendering_Tone_Map_Gparam"), LOC.Get("VIEWPORT_Rendering_Tone_Map_Clamp"),
+            LOC.Get("VIEWPORT_Rendering_Tone_Map_Reinhard"), LOC.Get("VIEWPORT_Rendering_Tone_Map_Filmic")
+        };
+
+        DPI.ApplyInputWidth();
+        ImGui.Combo($"{LOC.Get("VIEWPORT_Rendering_Tone_Map")}##toneMap", ref CFG.Current.Viewport_ToneMap, curves, curves.Length);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Tone_Map_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Tone_Map_Exposure")}##toneMapExposure",
+            ref CFG.Current.Viewport_ToneMap_Exposure, 0.0f, 4.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Tone_Map_Exposure_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Tone_Map_White_Point")}##toneMapWhitePoint",
+            ref CFG.Current.Viewport_ToneMap_White_Point, 0.5f, 8.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Tone_Map_White_Point_TT"));
+
+        if (pipeline != null)
+        {
+            var (op, whitePoint) = ToneMapPass.Resolve(pipeline.ActiveMapLighting);
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Tone_Map_Active", op, whitePoint));
+        }
+    }
+
+    /// <summary>
+    /// The sun's cascaded shadows, whose splits, fade and bias come from the map GPARAM's Shadows group under map
+    /// lighting. Applies at once, as the cascades are placed every frame.
+    /// </summary>
+    private void ShadowsTab(VulkanViewport viewport)
+    {
+        var pipeline = viewport.ViewPipeline;
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Shadows")}##shadows", ref CFG.Current.Viewport_Shadows);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Shadows_TT"));
+
+        var resolution = Array.IndexOf(ShadowResolutions, CFG.Current.Viewport_Shadow_Resolution);
+        string[] resolutionNames = ShadowResolutions.Select(r => r.ToString()).ToArray();
+
+        DPI.ApplyInputWidth();
+        if (ImGui.Combo($"{LOC.Get("VIEWPORT_Rendering_Shadow_Resolution")}##shadowResolution", ref resolution,
+                resolutionNames, resolutionNames.Length))
+        {
+            CFG.Current.Viewport_Shadow_Resolution = ShadowResolutions[Math.Clamp(resolution, 0, ShadowResolutions.Length - 1)];
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Shadow_Resolution_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Shadow_Strength")}##shadowStrength",
+            ref CFG.Current.Viewport_Shadow_Strength, 0.0f, 1.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Shadow_Strength_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Shadow_Bias_Scale")}##shadowBiasScale",
+            ref CFG.Current.Viewport_Shadow_Bias_Scale, 0.0f, 8.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Shadow_Bias_Scale_TT"));
+
+        // Read from the parts when their render models are updated, so it takes a reload to apply to all of them
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Shadows_Msb_Flags")}##shadowsMsbFlags",
+            ref CFG.Current.Viewport_Shadows_Use_Msb_Flags);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Shadows_Msb_Flags_TT"));
+
+        var shadows = pipeline?.Shadows;
+
+        if (shadows != null && shadows.ActiveCount > 0)
+        {
+            var splits = shadows.Parameters.Splits;
+            var ends = new[] { splits.X, splits.Y, splits.Z, splits.W }.Take(shadows.ActiveCount)
+                .Select(s => s.ToString("0.#"));
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Shadow_Active", shadows.ActiveCount, string.Join(", ", ends)));
+        }
+        else
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Shadow_Inactive"));
+        }
     }
 
     /// <summary>

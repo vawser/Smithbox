@@ -24,7 +24,6 @@ public class VulkanViewport : IViewport
     public readonly string ID = "";
 
     public ViewportActionManager ActionManager;
-    public FullScreenQuad ClearQuad;
     public GraphicsDevice Device;
 
     public Gizmos Gizmos;
@@ -160,21 +159,26 @@ public class VulkanViewport : IViewport
 
             ViewportCamera.UpdateProjectionMatrix();
 
+            // The scene is drawn into the pipeline's HDR target, which is the size of the viewport, on the
+            // offscreen list. Something has to be bound for its draws, so a hidden viewport keeps a 1x1 target.
             ViewPipeline.SetViewportSetupAction((d, cl) =>
+            {
+                ViewPipeline.Target.EnsureSize(d, (uint)Math.Max(Width, 1), (uint)Math.Max(Height, 1));
+                ViewPipeline.Target.BeginScene(cl, ViewPipeline.BackgroundColor);
+            });
+
+            // The overlays are drawn on the swapchain, once the scene has been tone mapped onto it, so their colors
+            // are kept as they are
+            ViewPipeline.SetOverlayViewportSetupAction((d, cl) =>
             {
                 cl.SetFramebuffer(Device.SwapchainFramebuffer);
                 cl.SetViewport(0, RenderViewport);
                 if (IsViewportVisible)
                 {
-                    ClearQuad.Render(d, cl, ViewPipeline.MapBackgroundColor);
+                    ViewPipeline.ToneMap.Draw(d, cl, ViewPipeline.Target, Device.SwapchainFramebuffer.OutputDescription,
+                        new Vector2(RenderViewport.X, RenderViewport.Y), ViewPipeline.ActiveMapLighting);
                 }
                 IsViewportVisible = false;
-            });
-
-            ViewPipeline.SetOverlayViewportSetupAction((d, cl) =>
-            {
-                cl.SetFramebuffer(Device.SwapchainFramebuffer);
-                cl.SetViewport(0, RenderViewport);
                 cl.ClearDepthStencil(0);
             });
 
@@ -189,14 +193,6 @@ public class VulkanViewport : IViewport
 
             ClickSelection = new(this);
             BoxSelection = new(this);
-
-            ClearQuad = new FullScreenQuad();
-
-            SceneRenderer.AddBackgroundUploadTask((gd, cl) =>
-            {
-                ClearQuad.CreateDeviceObjects(gd, cl);
-            });
-
         }
 
         Instantiated = true;
@@ -276,8 +272,9 @@ public class VulkanViewport : IViewport
     {
         ViewportCamera.UpdateProjectionMatrix(true);
 
+        // The scene's pixels start at the viewport's corner, in its own target; the overlays' are the window's
         ViewPipeline.UpdateSceneParameters(ViewportCamera.ProjectionMatrix, ViewportCamera.CameraTransform.CameraViewMatrixLH,
-            ViewportCamera.CameraTransform.Position, CursorX, CursorY);
+            ViewportCamera.CameraTransform.Position, CursorX, CursorY, (int)RenderViewport.X, (int)RenderViewport.Y);
 
         ViewPipeline.RenderScene(ViewportCamera.Frustum);
 

@@ -991,6 +991,106 @@
     {
       "Key": "VIEWPORT_Overlay_Index_Buffers_Size",
       "Text": "Index Buffers Size: {0} MB"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tab_Tone_Map",
+      "Text": "Tone Map"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tab_Shadows",
+      "Text": "Shadows"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tone_Map",
+      "Text": "Curve"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tone_Map_TT",
+      "Text": "How the viewport's HDR scene is brought down to the screen. From GPARAM uses the map's Tone Map group under map lighting: ToneMapMode 8, which every Elden Ring GPARAM uses, is a Reinhard curve whose white point is the Reinhard Contrast times the Reinhard White Balance, and 7 is the filmic curve. This is an approximation of the game's curves, and anything without map lighting is clipped. Clamp clips at white, as the viewport did before it had an HDR target."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tone_Map_Gparam",
+      "Text": "From GPARAM"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tone_Map_Clamp",
+      "Text": "Clamp"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tone_Map_Reinhard",
+      "Text": "Reinhard"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tone_Map_Filmic",
+      "Text": "Filmic"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tone_Map_Exposure",
+      "Text": "Exposure"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tone_Map_Exposure_TT",
+      "Text": "Multiplies the scene before the curve. The GPARAM's exposure is already applied to the map's lighting, so this is on top of it."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tone_Map_White_Point",
+      "Text": "White Point"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tone_Map_White_Point_TT",
+      "Text": "The brightness that the Reinhard curve takes to white, when the curve is set to Reinhard. From GPARAM uses the map's own."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tone_Map_Active",
+      "Text": "Drawing with: {0}, white point {1:0.##}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadows",
+      "Text": "Sun Shadows"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadows_TT",
+      "Text": "Shadows cast by the sun, in up to four cascades. Under map lighting the cascade splits, the far fade and the bias come from the map's GPARAM Shadows group; otherwise from Elden Ring's mapbase. Only models drawn with the full material shader cast and receive them."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadow_Resolution",
+      "Text": "Cascade Resolution"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadow_Resolution_TT",
+      "Text": "The size of each cascade's shadow map. The four cascades share one map twice this size on each side, for each viewport."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadow_Strength",
+      "Text": "Strength"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadow_Strength_TT",
+      "Text": "How much of the sun a shadow takes away: 1 for all of it."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadow_Bias_Scale",
+      "Text": "Bias Scale"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadow_Bias_Scale_TT",
+      "Text": "Multiplies the GPARAM's Depth Bias and Slope Scaled Depth Bias. Raise it if surfaces shade themselves in stripes, lower it if shadows come away from what casts them."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadows_Msb_Flags",
+      "Text": "Use MSB Shadow Flags"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadows_Msb_Flags_TT",
+      "Text": "Whether parts cast shadows as their IsShadowSrc or IsShadowOnly says, and receive them as their IsShadowDest says (ShadowSource and ShadowDest in DS3 and Bloodborne). Otherwise every part does both. Applies to parts as they are loaded or edited, so reload the map to apply it to all of them."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadow_Active",
+      "Text": "{0} cascades, ending at {1} m"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Shadow_Inactive",
+      "Text": "No shadows are being drawn."
     }
   ]
 }

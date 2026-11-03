@@ -142,6 +142,46 @@ public class MsbEntity : Entity
 
         // The mesh now exists, so UpdateRenderModel must not build it a second time
         SetupRenderMesh = true;
+
+        RefreshShadowFlags();
+    }
+
+    /// <summary>
+    /// Has the part's mesh cast and receive the sun's shadow as its MSB flags say: IsShadowSrc (ShadowSource in DS3
+    /// and BB) or IsShadowOnly to cast, IsShadowDest (ShadowDest) to receive. A format without the flags, and every
+    /// part when Viewport_Shadows_Use_Msb_Flags is off, does both.
+    /// </summary>
+    private void RefreshShadowFlags()
+    {
+        if (RenderSceneMesh is not MeshRenderableProxy mesh)
+            return;
+
+        if (!CFG.Current.Viewport_Shadows_Use_Msb_Flags || Type != MsbEntityType.Part)
+        {
+            mesh.CastsShadow = true;
+            mesh.ReceivesShadow = true;
+            return;
+        }
+
+        var source = ReadShadowFlag("IsShadowSrc") ?? ReadShadowFlag("ShadowSource") ?? true;
+        var only = ReadShadowFlag("IsShadowOnly") ?? false;
+        var dest = ReadShadowFlag("IsShadowDest") ?? ReadShadowFlag("ShadowDest") ?? true;
+
+        mesh.CastsShadow = source || only;
+        mesh.ReceivesShadow = dest;
+    }
+
+    /// <summary>A shadow flag of the part, which is a bool or a byte depending on the format, or null if it has none</summary>
+    private bool? ReadShadowFlag(string name)
+    {
+        return GetPropertyValue(name) switch
+        {
+            bool b => b,
+            byte b => b != 0,
+            sbyte b => b != 0,
+            int i => i != 0,
+            _ => null
+        };
     }
 
     private void SetRenderSceneMesh(RenderableProxy newMesh)
@@ -1604,6 +1644,7 @@ public class MsbEntity : Entity
         RefreshGrass();
         RefreshEdgePoints();
         RefreshFogVolume();
+        RefreshShadowFlags();
 
         base.UpdateRenderModel();
     }

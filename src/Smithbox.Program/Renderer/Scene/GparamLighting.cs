@@ -29,7 +29,43 @@ public class GparamDirectionalLight
 }
 
 /// <summary>
-/// The lighting of a map at one time of day, from its GPARAMs: the LightSet, Tone Map, EnvironmentConfig and
+/// The sun's cascaded shadow maps, from the "ShadowParam ParamEditor" group. The defaults are Elden Ring's mapbase;
+/// its default.gparam has the same, but for a far fade starting at 4000.
+/// </summary>
+public class GparamShadow
+{
+    /// <summary>Where the first cascade starts, in meters from the camera</summary>
+    public float Near = 0.1f;
+
+    /// <summary>Where each cascade hands over to the next: 0->1, 1->2 and 2->3</summary>
+    public Vector3 CascadeSplits = new(32.0f, 160.0f, 900.0f);
+
+    /// <summary>Where shadows start to fade out, and over how far; the last cascade ends where they are gone</summary>
+    public float FarFadeStart = 3000.0f;
+    public float FarFadeDistance = 10.0f;
+
+    /// <summary>The share of each cascade's range over which it blends into the next</summary>
+    public float CascadeFadeRangeScale = 0.05f;
+
+    /// <summary>
+    /// Bias as the game's rasterizer takes it: a constant in depth units, and a scale on the depth slope. Applied
+    /// here at the receiver, in shadow map texels, see SunShadow in FlverShader.frag.
+    /// </summary>
+    public int DepthBias = 2;
+    public float SlopeScaledDepthBias = 3.0f;
+
+    /// <summary>How many cascades are drawn, at most 4</summary>
+    public int CascadeCount = 4;
+
+    /// <summary>Whether the cascades move in whole texels, which stops shadow edges crawling as the camera moves</summary>
+    public bool AlignTexel = true;
+
+    /// <summary>Where the last cascade ends</summary>
+    public float FarDistance => FarFadeStart + Math.Max(FarFadeDistance, 0.0f);
+}
+
+/// <summary>
+/// The lighting of a map at one time of day, from its GPARAMs: the LightSet, Tone Map, Shadows, EnvironmentConfig and
 /// Setting Info groups. Colors keep the game's convention of rgb with an intensity in w.
 /// A value that isn't found keeps these defaults, which are those of row 0 in Elden Ring's mapbase at t4.
 /// See Documentation/Full GI/Gparam Lighting.md.
@@ -63,6 +99,14 @@ public class GparamLighting
     public float Exposure = 3.5f;
     public bool AutoExposure = false;
     public float MiddleGray = -7.0f;
+
+    /// <summary>The TONE_MAP_MODE: 8, "Reinhard Contrast and White Balance", in every Elden Ring GPARAM</summary>
+    public int ToneMapMode = 8;
+    public float ReinhardContrast = 1.35f;
+    public float ReinhardWhiteBalance = 1.0f;
+
+    // Shadows
+    public GparamShadow Shadow = new();
 
     // EnvironmentConfig
     public float EnvMapHue = 0.0f;

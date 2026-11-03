@@ -128,6 +128,52 @@ public unsafe struct SceneParam
     // Fills the last 16 byte row, as the shaders lay the struct out
     public uint MapLightPad0;
     public uint MapLightPad1;
+
+    /// <summary>
+    ///     World to shadow map clip space of each cascade, see <see cref="ShadowCascades" />. The shadow map's depth
+    ///     is reversed, as the viewport's is: 1 nearest the sun.
+    /// </summary>
+    public Matrix4x4 ShadowMatrix0;
+    public Matrix4x4 ShadowMatrix1;
+    public Matrix4x4 ShadowMatrix2;
+    public Matrix4x4 ShadowMatrix3;
+
+    /// <summary>How far from the camera, along its view, each cascade ends</summary>
+    public Vector4 ShadowSplits;
+
+    /// <summary>The width in meters of one shadow map texel in each cascade</summary>
+    public Vector4 ShadowTexelSizes;
+
+    /// <summary>Each cascade's shadow map depth per meter towards the sun</summary>
+    public Vector4 ShadowDepthScales;
+
+    /// <summary>The index of the shadow map in the global texture pool, or 0 for no shadows</summary>
+    public uint ShadowTexture;
+
+    /// <summary>How many cascades are drawn</summary>
+    public uint ShadowCascadeCount;
+
+    /// <summary>Where shadows start to fade out, and where they are gone</summary>
+    public float ShadowFadeStart;
+    public float ShadowFadeEnd;
+
+    /// <summary>The GPARAM's depth bias and slope scaled depth bias, with the viewport's scale on both</summary>
+    public float ShadowDepthBias;
+    public float ShadowSlopeBias;
+
+    /// <summary>The share of each cascade's range over which it blends into the next</summary>
+    public float ShadowCascadeFade;
+
+    /// <summary>How much of the sun a shadow takes away, 1 for all of it</summary>
+    public float ShadowStrength;
+
+    /// <summary>The shadow map's size in texels, one side of the whole map that holds the four cascades</summary>
+    public float ShadowMapSize;
+
+    // Fills the last 16 byte row, as the shaders lay the struct out
+    public float ShadowPad0;
+    public float ShadowPad1;
+    public float ShadowPad2;
 }
 
 /// <summary>A directional light of the map's GPARAM, as the shaders read it</summary>

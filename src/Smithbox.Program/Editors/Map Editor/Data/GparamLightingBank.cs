@@ -35,6 +35,7 @@ public class GparamLightingBank
     private const string ToneMapKey = "Tone Map[Yebis]";
     private const string EnvironmentConfigKey = "EnvironmentConfig ParamEditor";
     private const string SettingInfoKey = "Setting Info[Yebis]";
+    private const string ShadowKey = "ShadowParam ParamEditor";
 
     // The shared GPARAMs a field is looked for in when the map's own file doesn't have it
     private static readonly string[] SharedFiles = { "mapbase", "default" };
@@ -378,6 +379,24 @@ public class GparamLightingBank
         lighting.Exposure = reader.Get(ToneMapKey, "GS Presents - ToneMap-Exposure", 0, lighting.Exposure);
         lighting.AutoExposure = reader.Get(ToneMapKey, "GS Presents - ToneMap-Enable AutoExposure", 0, lighting.AutoExposure);
         lighting.MiddleGray = reader.Get(ToneMapKey, "GS Presents - ToneMap-AutoExposure Middle Gray", 0, lighting.MiddleGray);
+        lighting.ToneMapMode = reader.Get(ToneMapKey, "GS Presents - ToneMap-ToneMapMode", 0, lighting.ToneMapMode);
+        lighting.ReinhardContrast = reader.Get(ToneMapKey, "GS Presents - ToneMap-ReinhardContrast", 0, lighting.ReinhardContrast);
+        lighting.ReinhardWhiteBalance = reader.Get(ToneMapKey, "GS Presents - ToneMap-ReinhardWhiteBalance", 0, lighting.ReinhardWhiteBalance);
+
+        // Shadows
+        var shadow = lighting.Shadow;
+        shadow.Near = reader.Get(ShadowKey, "ShadowParam - Shadow: Near", 0, shadow.Near);
+        shadow.CascadeSplits = new Vector3(
+            reader.Get(ShadowKey, "ShadowParam - Shadow: Cascade Dist 0->1", 0, shadow.CascadeSplits.X),
+            reader.Get(ShadowKey, "ShadowParam - Shadow: Cascade Dist 1->2", 0, shadow.CascadeSplits.Y),
+            reader.Get(ShadowKey, "ShadowParam - Shadow: Cascade Dist 2->3", 0, shadow.CascadeSplits.Z));
+        shadow.FarFadeStart = reader.Get(ShadowKey, "ShadowParam - Shadow: Far Fade Start", 0, shadow.FarFadeStart);
+        shadow.FarFadeDistance = reader.Get(ShadowKey, "ShadowParam - Shadow: Far Fade Dist", 0, shadow.FarFadeDistance);
+        shadow.CascadeFadeRangeScale = reader.Get(ShadowKey, "ShadowParam - Shadow: Cascade Fade Range Scale", 0, shadow.CascadeFadeRangeScale);
+        shadow.DepthBias = reader.Get(ShadowKey, "ShadowParam - Depth Bias", 0, shadow.DepthBias);
+        shadow.SlopeScaledDepthBias = reader.Get(ShadowKey, "ShadowParam - Slope Scaled Depth Bias", 0, shadow.SlopeScaledDepthBias);
+        shadow.CascadeCount = reader.Get(ShadowKey, "ShadowParam Cascade Count", 0, shadow.CascadeCount);
+        shadow.AlignTexel = reader.Get(ShadowKey, "ShadowParam - AlignTexel", 0, shadow.AlignTexel);
 
         // EnvironmentConfig
         lighting.EnvMapHue = reader.Get(EnvironmentConfigKey, "EnvironmentConfig EnvMapColorConvert Hue", 0, lighting.EnvMapHue);

@@ -205,6 +205,9 @@ public class MeshRenderables : Renderables
     public WeakReference<ISelectable>[] cSelectables;
     public Pipeline[] cSelectionPipelines;
 
+    /// <summary>The pipeline that draws the renderable into the sun's shadow map, or null if it casts no shadow</summary>
+    public Pipeline[] cShadowPipelines;
+
     public MeshRenderables(int id) : base()
     {
         RenderableSystemIndex = id;
@@ -217,6 +220,7 @@ public class MeshRenderables : Renderables
         cPipelines = new Pipeline[Capacity];
         cSelectables = new WeakReference<ISelectable>[Capacity];
         cSelectionPipelines = new Pipeline[Capacity];
+        cShadowPipelines = new Pipeline[Capacity];
     }
 
     protected override void ResizeArrays(int newCapacity)
@@ -231,6 +235,7 @@ public class MeshRenderables : Renderables
         Array.Resize(ref cPipelines, newCapacity);
         Array.Resize(ref cSelectables, newCapacity);
         Array.Resize(ref cSelectionPipelines, newCapacity);
+        Array.Resize(ref cShadowPipelines, newCapacity);
     }
 
     public int CreateMesh(ref BoundingBox bounds, ref MeshDrawParametersComponent drawArgs)
@@ -239,7 +244,44 @@ public class MeshRenderables : Renderables
         cBackToFront[idx] = false;
         cBounds[idx] = bounds;
         cDrawParameters[idx] = drawArgs;
+        cShadowPipelines[idx] = null;
         return idx;
+    }
+
+    /// <summary>
+    ///     Adds the shadow casters inside <paramref name="frustum" /> to a shadow cascade's queue. It is culled on its
+    ///     own, leaving <see cref="cCulled" /> as the view's culling set it, and keeps to the same filters and draw
+    ///     groups, so what is hidden casts no shadow.
+    /// </summary>
+    public void SubmitShadowCasters(SceneRenderer.RenderQueue queue, BoundingFrustum frustum, RenderFilter filter,
+        DrawGroup dispGroup)
+    {
+        var alwaysVis = dispGroup == null || dispGroup.AlwaysVisible;
+
+        for (var i = 0; i < _topIndex; i++)
+        {
+            if (!cVisible[i]._valid || !cVisible[i]._visible || cShadowPipelines[i] == null)
+            {
+                continue;
+            }
+
+            if ((cSceneVis[i]._renderFilter & filter) == 0)
+            {
+                continue;
+            }
+
+            if (!alwaysVis && cSceneVis[i]._drawGroup != null && !cSceneVis[i]._drawGroup.IsInDisplayGroup(dispGroup))
+            {
+                continue;
+            }
+
+            if (CFG.Current.Viewport_Enable_Culling && frustum.Contains(ref cBounds[i]) == ContainmentType.Disjoint)
+            {
+                continue;
+            }
+
+            queue.Add(i, cRenderKeys[i]);
+        }
     }
 
     public void CullRenderables(BoundingFrustum frustum)
@@ -334,6 +376,7 @@ public class MeshRenderables : Renderables
                     cPipelines[writeIndex] = cPipelines[readIndex];
                     cSelectables[writeIndex] = cSelectables[readIndex];
                     cSelectionPipelines[writeIndex] = cSelectionPipelines[readIndex];
+                    cShadowPipelines[writeIndex] = cShadowPipelines[readIndex];
                 }
                 writeIndex++;
             }

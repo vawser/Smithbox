@@ -284,7 +284,7 @@ public class FogVolumeRenderableProxy : RenderableProxy, IResourceEventListener
             pipelineDescription.ShaderSet = new ShaderSetDescription(
                 new[] { _box.LayoutDescription },
                 new[] { shaders.Item1, shaders.Item2 },
-                _box.SpecializationConstants);
+                SceneTarget.Specialize(_box.SpecializationConstants, _renderablesSet));
 
             pipelineDescription.ResourceLayouts = new[]
             {
@@ -293,7 +293,7 @@ public class FogVolumeRenderableProxy : RenderableProxy, IResourceEventListener
                 SamplerSet.SamplersLayout, pickingResultLayout, SceneRenderer.BoneBufferAllocator.GetLayout()
             };
 
-            pipelineDescription.Outputs = gd.SwapchainFramebuffer.OutputDescription;
+            pipelineDescription.Outputs = SceneTarget.OutputsFor(gd, _renderablesSet);
             _pipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
         }
 

@@ -833,7 +833,8 @@ public static class SceneRenderer
         ///     Submit the encoded batches as indirect draw calls
         /// </summary>
         /// <param name="cl"></param>
-        public void SubmitBatches(CommandList cl, SceneRenderPipeline pipeline)
+        /// <param name="sceneParams">The scene parameters to draw with, or null for the pipeline's own</param>
+        public void SubmitBatches(CommandList cl, SceneRenderPipeline pipeline, ResourceSet sceneParams)
         {
             // If renderset is -1, no work has actually been uploaded to the gpu yet
             if (_renderSet == -1)
@@ -847,12 +848,12 @@ public static class SceneRenderer
             {
                 if (i == _depthCaptureBatch[_renderSet])
                 {
-                    SceneDepth.Capture(Device, cl);
+                    pipeline.CaptureSceneDepth(cl);
                 }
 
                 cl.SetCheckpoint($"Draw batch {i + 1} of {_batchCount[_renderSet]}: {_batches[(MAX_BATCH * _renderSet) + i]._pipeline.Name}");
                 cl.SetPipeline(_batches[(MAX_BATCH * _renderSet) + i]._pipeline);
-                pipeline.BindResources(cl);
+                pipeline.BindResources(cl, sceneParams);
                 cl.SetGraphicsResourceSet(1, _batches[(MAX_BATCH * _renderSet) + i]._objectRS);
                 GlobalTexturePool.BindTexturePool(cl, 2);
                 GlobalCubeTexturePool.BindTexturePool(cl, 3);
@@ -958,6 +959,12 @@ public static class SceneRenderer
         ///     Takes a copy of scene depth for its transparent draws, which come after all of its opaque ones.
         /// </summary>
         public bool CapturesSceneDepth { get; set; }
+
+        /// <summary>
+        ///     The scene parameters this queue draws with, in place of its pipeline's: a shadow cascade's view of the
+        ///     scene from the sun. Null for the pipeline's own.
+        /// </summary>
+        public ResourceSet SceneParamSet { get; set; }
 
         // Number of frames in flight planned for this queue
         private readonly int _bufferCount = 3;
@@ -1094,7 +1101,7 @@ public static class SceneRenderer
             //Device.WaitForFence(_resourcesUpdatedFence[_nextBuffer], ulong.MaxValue - 1);
             ctx = Profiler.TracyCZoneN(1, "RenderQueue::Execute submit draw");
             drawCommandList.PushDebugGroup($@"{Name}: Draw");
-            _drawEncoders[_currentBuffer].SubmitBatches(drawCommandList, Pipeline);
+            _drawEncoders[_currentBuffer].SubmitBatches(drawCommandList, Pipeline, SceneParamSet);
             drawCommandList.PopDebugGroup();
             Profiler.TracyCZoneEnd(ctx);
             watch.Stop();
