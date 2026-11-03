@@ -1077,7 +1077,7 @@ public class MsbEntity : Entity
     }
 
     // The fog ID and textures the fog of a volume was last drawn with, so it is only updated when they change
-    private (int FogID, string HeightMap, string ColorMap)? _fogVolumeState;
+    private (int FogID, string HeightMap, string ColorMap, int SettingsVersion)? _fogVolumeState;
 
     /// <summary>
     /// The fog of the volume, which is always displayed, with a wireframe and fill of its box displayed while it
@@ -1113,24 +1113,26 @@ public class MsbEntity : Entity
     }
 
     /// <summary>
-    /// Updates the fog of a volume after its fog ID or textures have been edited
+    /// Updates the fog of a volume after its fog ID or textures have been edited, or the GPARAM settings it is
+    /// looked up with have changed (<see cref="FogVolumeBank.SettingsVersion" />)
     /// </summary>
-    private void RefreshFogVolume()
+    public void RefreshFogVolume()
     {
         if (Type != MsbEntityType.FogVolume || RenderSceneMesh is not FogVolumeRenderableProxy fog
             || WrappedObject is not FVB.Volume volume)
             return;
 
-        var state = (volume.FogID, volume.HeightMapName, volume.ColorMapName);
+        var curUniverse = Owner as MapUniverse;
+        var bank = curUniverse.View.FogVolumeBank;
+
+        var state = (volume.FogID, volume.HeightMapName, volume.ColorMapName, bank.SettingsVersion);
 
         if (_fogVolumeState == state)
             return;
 
         _fogVolumeState = state;
 
-        var curUniverse = Owner as MapUniverse;
-
-        fog.Settings = curUniverse.View.FogVolumeBank.GetSettings(Container?.Name, volume.FogID);
+        fog.Settings = bank.GetSettings(Container?.Name, volume.FogID);
         fog.SetTextures(volume.HeightMapName, volume.ColorMapName);
     }
 

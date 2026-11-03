@@ -1,5 +1,6 @@
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -13,9 +14,11 @@ namespace StudioCore.Editors.MapEditor;
 /// Holds the FVB files of Armored Core VI, Elden Ring and Nightreign maps, which place the boxes of volumetric fog.
 /// A map can have several, named after its MSB with a suffix (e.g. m31_06_00_00_0000 and _0002). A file is read
 /// when its map is loaded, and its volumes become entities of the map.
-/// The settings a volume is drawn with are the row of its FogID in the "FogVolume ParamEditor" group of a GPARAM:
-/// the map's own GPARAM (mAA_BB_0000), or else mapbase (ER, NR), or else another GPARAM of the map, such as
-/// m41_00_0100 in AC6. The weather GPARAMs can also hold the row, but the default weather is used here.
+/// The settings a volume is drawn with are the row of its FogID in the "FogVolume ParamEditor" group of the GPARAMs
+/// the map lighting uses (<see cref="GparamLightingBank" />): the file, weather and time of day chosen in
+/// Viewport Rendering > Map Lighting, then the area's own (mAA_BB_0000, after GparamRefSettings), mapbase (ER, NR),
+/// default, and the area's other GPARAMs, such as m41_00_0100 in AC6. Each field is looked up in each file with the
+/// row in turn, so a weather file only needs the fields it changes, and is interpolated through the day.
 /// </summary>
 public class FogVolumeBank
 {
@@ -193,37 +196,88 @@ public class FogVolumeBank
     }
 
     /// <summary>
-    /// The settings of a fog ID for a map: the row in the map's own GPARAM, or else in mapbase, or else in the
-    /// map's other GPARAMs
+    /// Goes up whenever the settings of a volume may have changed: the file, weather or time of day chosen, or the
+    /// GPARAMs read again. Volumes drawn with an older one look their settings up again.
+    /// </summary>
+    public int SettingsVersion { get; private set; }
+
+    // What the settings were last looked up with, and the version volumes were last refreshed to
+    private (bool Lighting, string File, int Weather, float Hours)? SettingsInputs;
+    private int RefreshedVersion = -1;
+
+    /// <summary>
+    /// The settings of a fog ID for a map, from the GPARAMs the map lighting uses, see the class
     /// </summary>
     public FogVolumeSettings GetSettings(string mapId, int fogId)
     {
         if (!CanUse() || mapId == null || mapId.Length < 6)
             return FogVolumeSettings.Default;
 
-        var mapPrefix = mapId.Substring(0, 6);
+        var lighting = Project.Handler.MapData.GparamLightingBank;
 
-        // The map's other GPARAMs: the plain ones (mAA_BB_0100) before those for events and weather
-        var otherGparams = Project.Locator.GparamFiles.Entries
-            .Select(e => e.Filename)
-            .Where(n => n.StartsWith($"{mapPrefix}_", StringComparison.OrdinalIgnoreCase))
-            .OrderBy(n => n.Length)
-            .ThenBy(n => n, StringComparer.OrdinalIgnoreCase);
+        var own = lighting.GetDefaultFile(mapId);
+        var chosen = CFG.Current.Viewport_Map_Lighting ? lighting.ChooseFile(mapId, CFG.Current.Viewport_Map_Lighting_File) : own;
 
-        foreach (var gparamName in new[] { $"{mapPrefix}_0000", "mapbase" }.Concat(otherGparams))
+        // The area's other GPARAMs come in ListFiles' order: the plain ones (mAA_BB_0100) before those for events
+        // and weather
+        var names = new[] { chosen, own, "mapbase", "default" }
+            .Concat(lighting.ListFiles(mapId))
+            .Where(n => !string.IsNullOrEmpty(n))
+            .Distinct(StringComparer.OrdinalIgnoreCase);
+
+        var rows = new List<(string Name, GPARAM.Param Group)>();
+
+        foreach (var name in names)
         {
-            var group = GetFogGroup(gparamName);
+            var group = GetFogGroup(name);
 
-            if (group == null)
-                continue;
-
-            if (group.Fields.Any(f => f.Values.Any(v => v.ID == fogId)))
-            {
-                return ReadSettings(group, fogId, gparamName);
-            }
+            if (group != null && group.Fields.Any(f => f.Values.Any(v => v.ID == fogId)))
+                rows.Add((name, group));
         }
 
-        return FogVolumeSettings.Default;
+        if (rows.Count == 0)
+            return FogVolumeSettings.Default;
+
+        return ReadSettings(rows, fogId, CFG.Current.Viewport_Map_Lighting_Hours);
+    }
+
+    /// <summary>
+    /// Looks the settings of the loaded maps' fog volumes up again when the Map Lighting menu's file, weather or
+    /// time of day changes, or the GPARAMs have been read again. Called every frame by the Map Editor.
+    /// </summary>
+    public void Update(IEnumerable<MapContainer> maps)
+    {
+        if (!CanUse())
+            return;
+
+        var inputs = (CFG.Current.Viewport_Map_Lighting, CFG.Current.Viewport_Map_Lighting_File ?? "",
+            CFG.Current.Viewport_Map_Lighting_Weather, CFG.Current.Viewport_Map_Lighting_Hours);
+
+        if (SettingsInputs != inputs)
+        {
+            SettingsInputs = inputs;
+            SettingsVersion++;
+        }
+
+        if (RefreshedVersion == SettingsVersion)
+            return;
+
+        RefreshedVersion = SettingsVersion;
+
+        foreach (var map in maps)
+        {
+            if (map.FogVolumeParents == null)
+                continue;
+
+            foreach (var parent in map.FogVolumeParents)
+            {
+                foreach (var child in parent.Children)
+                {
+                    if (child is MsbEntity entity)
+                        entity.RefreshFogVolume();
+                }
+            }
+        }
     }
 
     private GPARAM.Param GetFogGroup(string gparamName)
@@ -274,37 +328,37 @@ public class FogVolumeBank
         {
             FogGroups.Clear();
         }
+
+        SettingsVersion++;
     }
 
-    private static FogVolumeSettings ReadSettings(GPARAM.Param group, int fogId, string source)
+    /// <summary>
+    /// The settings of a fog ID from the files that have its row, in order, at a time of day
+    /// </summary>
+    private static FogVolumeSettings ReadSettings(List<(string Name, GPARAM.Param Group)> rows, int fogId, float hours)
     {
         var d = FogVolumeSettings.Default;
 
-        // A row that leaves a field out takes the value of row 0, as the game's tools fill new rows from it
-        T Get<T>(string name, T fallback)
+        // Each field is looked for in the row of each file in turn. A row that leaves a field out of every file
+        // takes the value of row 0 in the first file, as the game's tools fill new rows from it.
+        T Get<T>(string name, T fallback, bool isAngle = false)
         {
-            var field = group.Fields.FirstOrDefault(f => f.Key == $"FogVolume {name}");
+            var key = $"FogVolume {name}";
 
-            if (field == null)
-                return fallback;
-
-            var value = field.Values.FirstOrDefault(v => v.ID == fogId) ?? field.Values.FirstOrDefault(v => v.ID == 0);
-
-            if (value?.Value is T t)
-                return t;
-
-            // Some files store a field as another number type, e.g. HeightFallOff as an int in AC6
-            if (value?.Value is IConvertible && fallback is IConvertible)
+            foreach (var (_, group) in rows)
             {
-                try
-                {
-                    return (T)Convert.ChangeType(value.Value, typeof(T));
-                }
-                catch (Exception)
-                {
-                    return fallback;
-                }
+                var field = group.Fields.FirstOrDefault(f => f.Key == key);
+
+                // Some files store a field as another number type, e.g. HeightFallOff as an int in AC6, which
+                // TryGetValue converts
+                if (field != null && GparamLightingBank.TryGetValue(field, fogId, hours, fallback, out T value, isAngle))
+                    return value;
             }
+
+            var first = rows[0].Group.Fields.FirstOrDefault(f => f.Key == key);
+
+            if (first != null && GparamLightingBank.TryGetValue(first, 0, hours, fallback, out T rowZero, isAngle))
+                return rowZero;
 
             return fallback;
         }
@@ -321,7 +375,12 @@ public class FogVolumeBank
             FadeDistanceForHeightMap = Get("DrawArea FadeDistanceForHeightMap", d.FadeDistanceForHeightMap),
             MaxInjectingDepth = Get("DrawArea MaxInjectingDepth", d.MaxInjectingDepth),
             MaxSampleCount = Get("RayMarching MaxSampleCount", d.MaxSampleCount),
-            DirectionalLightAngle = Get("Light DirectionalLightAngle", d.DirectionalLightAngle),
+            SteppingDistance = Get("RayMarching SteppingDistance", d.SteppingDistance),
+            SuspendedTransmittance = Get("RayMarching SuspendedTransmittance", d.SuspendedTransmittance),
+            LightProcessingInterval = Get("RayMarching LightProcessingInterval", d.LightProcessingInterval),
+            LightProcessingIntervalThreshold = Get("RayMarching LightProcessingIntervalThreshold", d.LightProcessingIntervalThreshold),
+            ShadowingIntensity = Get("Light ShadowingIntensity", d.ShadowingIntensity),
+            DirectionalLightAngle = Get("Light DirectionalLightAngle", d.DirectionalLightAngle, isAngle: true),
             DirectionalLightColor = Get("Light DirectionalLightColor", d.DirectionalLightColor),
             DirectionalLightOppositeColor = Get("Light DirectionalLightOppositeColor", d.DirectionalLightOppositeColor),
             AmbientColor = Get("Light AmbientColor", d.AmbientColor),
@@ -343,7 +402,7 @@ public class FogVolumeBank
                 Get("Scroll Speed-y", d.ScrollSpeed.Y),
                 Get("Scroll Speed-z", d.ScrollSpeed.Z)),
             ScrollDetailScale = Get("Scroll DetailScale", d.ScrollDetailScale),
-            Source = source
+            Source = rows[0].Name
         };
     }
 }

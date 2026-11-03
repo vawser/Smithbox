@@ -392,7 +392,7 @@ public class FogVolumeRenderableProxy : RenderableProxy, IResourceEventListener
             ColorMapTexture = GetTextureIndex(ColorMapTag),
             Octaves = s.OctaveNumPerlinNoise,
             MaxSampleCount = s.MaxSampleCount,
-            Misc = new Vector4(s.MaxInjectingDepth, 0.0f, 0.0f, 0.0f)
+            Misc = new Vector4(s.MaxInjectingDepth, s.SteppingDistance, s.SuspendedTransmittance, 0.0f)
         };
     }
 

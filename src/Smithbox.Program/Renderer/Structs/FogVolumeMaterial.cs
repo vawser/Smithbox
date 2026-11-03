@@ -44,6 +44,9 @@ public struct FogVolumeMaterial
     public uint Octaves;
     public uint MaxSampleCount;
 
-    /// <summary>x: max injecting depth (0 for none), yzw: unused</summary>
+    /// <summary>
+    /// x: max injecting depth (0 for none), y: stepping distance as a fraction of the ray (0 for MaxSampleCount steps),
+    /// z: suspended transmittance, w: unused
+    /// </summary>
     public Vector4 Misc;
 }

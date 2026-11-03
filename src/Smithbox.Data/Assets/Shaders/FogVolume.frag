@@ -7,8 +7,9 @@
 // scene behind it if that is nearer, read from the scene depth. The fog is the "FogVolume ParamEditor" row of a
 // GPARAM, see FogVolumeMaterial.cs. It is an approximation of the game's fog: Perlin noise scrolled over time,
 // faded at the edges of the box, by the camera distance, with height and under the height map, and lit by the
-// directional light colors facing towards and away from the sun. Shadowing and the attenuation values are not
-// modelled.
+// directional light colors facing towards and away from the sun. The ray is cut into SteppingDistance steps,
+// taken as fractions of the ray through the box, and stops once the light let through falls below
+// SuspendedTransmittance. Shadowing, the light processing interval and the attenuation values are not modelled.
 //
 // Both sides of the box are drawn without depth testing, so only the far side is kept: there the pixel is where
 // the ray leaves the box.
@@ -81,7 +82,7 @@ struct fogMaterial
 	vec4 light;           // xy: directional light angle, z: 1 if the angle overrides the sun, w: color map intensity
 	vec4 colorMap;        // xy: color map tiling, z: attenuation intensity, w: attenuation offset
 	uvec4 textures;       // x: height map, y: color map, z: noise octaves, w: max sample count
-	vec4 misc;            // x: max injecting depth, 0 for none
+	vec4 misc;            // x: max injecting depth, 0 for none, y: stepping distance, z: suspended transmittance
 };
 
 layout(set = 4, binding = 0, std140) buffer materials
@@ -256,7 +257,10 @@ void main()
 	float towardsSun = clamp(dot(rayDir, -sunTravel) * 0.5 + 0.5, 0.0, 1.0);
 	vec3 lightColor = m.ambientColor.rgb + mix(m.oppositeColor.rgb * m.oppositeColor.a, m.directionalColor.rgb * m.directionalColor.a, towardsSun);
 
-	uint steps = clamp(m.textures.w, 8u, uint(MAX_STEPS));
+	// SteppingDistance 0.1 is 10 steps, no more than MaxSampleCount
+	uint steps = m.misc.y > 0.0
+		? clamp(min(m.textures.w, uint(ceil(1.0 / m.misc.y))), 4u, uint(MAX_STEPS))
+		: clamp(m.textures.w, 8u, uint(MAX_STEPS));
 	float stepS = (sEnd - sEnter) / float(steps);
 	float stepLength = stepS * rayLength;
 
@@ -303,7 +307,7 @@ void main()
 		scattered += transmittance * (1.0 - stepTransmittance) * color;
 		transmittance *= stepTransmittance;
 
-		if (transmittance < 0.001)
+		if (transmittance < (m.misc.z > 0.0 ? m.misc.z : 0.001))
 		{
 			break;
 		}

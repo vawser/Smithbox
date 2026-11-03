@@ -405,6 +405,22 @@ public class GparamLightingBank
             light.FollowCamera = reader.Get(LightSetKey, followKey, id, light.FollowCamera);
     }
 
+    /// <summary>
+    /// The value of a field for a value ID at <paramref name="hours" />, interpolated between its TimeOfDay keys as
+    /// <see cref="Resolve" /> does. False if the field has no value of that ID, or not one of the type asked for.
+    /// </summary>
+    public static bool TryGetValue<T>(GPARAM.IField field, int id, float hours, T fallback, out T result, bool isAngle = false)
+    {
+        result = fallback;
+
+        var values = field.Values.Where(v => v.ID == id).ToList();
+
+        if (values.Count == 0)
+            return false;
+
+        return FieldReader.TryConvert(FieldReader.Interpolate(values, hours, isAngle), fallback, out result);
+    }
+
     public static string FormatColor(Vector4 c) => $"({c.X:0.###}, {c.Y:0.###}, {c.Z:0.###}) x {c.W:0.###}";
 
     public static string FormatAngle(Vector2 a) => $"({a.X:0.###}, {a.Y:0.###})";
@@ -463,7 +479,7 @@ public class GparamLightingBank
         /// The value at a time of day: between the keys either side of it, wrapping from the last key of the day
         /// round to the first. Numbers and vectors are blended; anything else takes the earlier key.
         /// </summary>
-        private static object Interpolate(List<GPARAM.IFieldValue> values, float hours, bool isAngle)
+        internal static object Interpolate(List<GPARAM.IFieldValue> values, float hours, bool isAngle)
         {
             if (values.Count == 1)
                 return values[0].Value;
@@ -513,7 +529,7 @@ public class GparamLightingBank
 
         private static Vector4 ToVector(Color c) => new(c.R / 255.0f, c.G / 255.0f, c.B / 255.0f, c.A / 255.0f);
 
-        private static bool TryConvert<T>(object value, T fallback, out T result)
+        internal static bool TryConvert<T>(object value, T fallback, out T result)
         {
             result = fallback;
 

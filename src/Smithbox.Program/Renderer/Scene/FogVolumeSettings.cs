@@ -23,8 +23,17 @@ public class FogVolumeSettings
 
     // Ray Marching
     public uint MaxSampleCount = 16;
+    /// <summary>The length of a step as a fraction of the ray through the box: 0.1 is 10 steps, at most MaxSampleCount</summary>
+    public float SteppingDistance = 0.1f;
+    /// <summary>The march stops once less than this much light gets through</summary>
+    public float SuspendedTransmittance = 0.001f;
+    // Read, not drawn: the game lights the fog every LightProcessingInterval steps, which only saves time
+    public uint LightProcessingInterval = 4;
+    public float LightProcessingIntervalThreshold = 0.5f;
 
     // Light
+    // Read, not drawn: the sun's shadow on the fog, and Smithbox has no shadow map
+    public float ShadowingIntensity = 1.0f;
     public Vector2 DirectionalLightAngle = new(-0.785398f, 1.570796f);
     public Vector4 DirectionalLightColor = Vector4.One;
     public Vector4 DirectionalLightOppositeColor = Vector4.One;
@@ -50,7 +59,8 @@ public class FogVolumeSettings
     public float ScrollDetailScale = 1.0f;
 
     /// <summary>
-    /// The GPARAM the values came from, or null if the defaults are used
+    /// The first GPARAM with the volume's row, which the values are looked up in before the others, or null if the
+    /// defaults are used
     /// </summary>
     public string Source;
 }

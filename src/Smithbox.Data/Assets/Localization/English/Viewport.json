@@ -482,7 +482,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Follow_Bakes_TT",
-      "Text": "Light with the irradiance volume bakes of the time of day, blending between the two timezones either side of it, as the game does: bake N is timezone N. Bakes not loaded yet are loaded as the time reaches them; until then the volumes keep the bakes they have."
+      "Text": "Light with the irradiance volume bakes of the time of day, blending between the two timezones either side of it, as the game does: bake N is timezone N. Every bake is loaded with the map, so the time can be changed without waiting; maps loaded before this was switched on load their other bakes as the time reaches them."
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Bakes_Follow_Time",

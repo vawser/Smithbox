@@ -554,6 +554,9 @@ public class MapEditorScreen : EditorScreen
         // The sun and exposure of the loaded maps' GPARAMs, shared by all views
         SceneRenderer.MapLighting = activeView.GparamLightingBank.ResolveForViewport(loadedMaps);
 
+        // The fog volumes follow the same GPARAM file, weather and time of day
+        activeView.FogVolumeBank.Update(loadedMaps);
+
         // Throw any exceptions that ocurred during async map loading, in any view.
         // Cleared before throwing so a handled exception is not rethrown every frame.
         foreach (var view in ViewHandler.Views)

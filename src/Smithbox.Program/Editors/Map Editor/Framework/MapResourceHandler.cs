@@ -236,12 +236,12 @@ public class MapResourceHandler
                 LoadList_Asset_Texture.Add(textureAsset);
         }
 
-        // Irradiance volumes: the envmap files of the chosen bake, and of the bake blended towards, which become
-        // 3D textures
+        // Irradiance volumes: the envmap files of every bake when they follow the time of day, else of the chosen
+        // bake and the bake blended towards, which become 3D textures
         var bakeFilesByBake = View.IrradianceVolumeBank.GetBakeFiles(MapID);
 
-        // Other bakes are queued later if the volumes change to them, see IrradianceVolumeBank.ResolveBakes
-        foreach (var bake in View.IrradianceVolumeBank.GetBakesToLoad())
+        // Bakes not loaded here are queued later if the volumes change to them, see IrradianceVolumeBank.ResolveBakes
+        foreach (var bake in View.IrradianceVolumeBank.GetBakesToLoad(MapID))
         {
             if (!bakeFilesByBake.TryGetValue(bake, out var bakeFiles))
                 continue;

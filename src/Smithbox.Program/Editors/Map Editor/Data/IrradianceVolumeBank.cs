@@ -204,16 +204,14 @@ public class IrradianceVolumeBank
         CFG.Current.Viewport_Map_Lighting && CFG.Current.Viewport_Map_Lighting_Follow_Bakes;
 
     /// <summary>
-    /// The bakes whose envmap files are loaded with a map: those of the time of day when the bakes follow it,
-    /// otherwise the Global Illumination tab's bake and the bake it blends towards
+    /// The bakes whose envmap files are loaded with a map: every bake of the map when the bakes follow the time of
+    /// day, so moving through the day never waits for a load, otherwise the Global Illumination tab's bake and the
+    /// bake it blends towards
     /// </summary>
-    public HashSet<int> GetBakesToLoad()
+    public HashSet<int> GetBakesToLoad(string mapId)
     {
         if (BakesFollowTime)
-        {
-            var (from, to, _) = GparamLighting.TimezonesAt(CFG.Current.Viewport_Map_Lighting_Hours);
-            return new HashSet<int> { from, to };
-        }
+            return GetBakeFiles(mapId).Keys.ToHashSet();
 
         var bakes = new HashSet<int> { CFG.Current.Viewport_GI_Bake };
 
@@ -292,8 +290,9 @@ public class IrradianceVolumeBank
 
     /// <summary>
     /// The bake, the bake to blend towards (-1 for none) and how far, to light the loaded maps' volumes with this
-    /// frame. When the bakes follow the time of day, the timezones either side of it, queued for every loaded map;
-    /// the volumes keep the bakes they have until the new ones are on the GPU.
+    /// frame. When the bakes follow the time of day, the timezones either side of it. Every bake is loaded with its
+    /// map then, but they are queued here too in case following was switched on after the load; the volumes keep
+    /// the bakes they have until the new ones are on the GPU.
     /// </summary>
     public (int Bake, int BlendBake, float BlendRatio) ResolveBakes(IEnumerable<MapContainer> maps)
     {
