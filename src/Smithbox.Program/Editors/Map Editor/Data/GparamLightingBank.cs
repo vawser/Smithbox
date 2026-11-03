@@ -116,9 +116,10 @@ public class GparamLightingBank
     private string ViewportLightingMap;
 
     /// <summary>
-    /// The scene's lighting for the Map Editor's viewports: that of the first of the loaded maps (by name) with
-    /// its own GPARAM, with the file and time of day the viewport menu chose. Null if map lighting is off or no
-    /// loaded map has a GPARAM. Only resolved again when one of those changes.
+    /// The scene's lighting for the Map Editor's viewports, with the model set in <see cref="GparamLighting.Models" />:
+    /// that of the first of the loaded maps (by name) with its own GPARAM, with the file and time of day the viewport
+    /// menu chose. Null if map lighting is off or no loaded map has a GPARAM. Only resolved again when one of those
+    /// changes.
     /// </summary>
     public GparamLighting ResolveForViewport(IEnumerable<MapContainer> maps)
     {
@@ -143,6 +144,7 @@ public class GparamLightingBank
             return cached;
 
         cached = Resolve(map.Name, file, SceneLightSetId, hours);
+        cached.Models = Resolve(map.Name, file, ModelLightSetId, hours);
 
         ViewportLightingMap = map.Name;
         ViewportLighting = cached;

@@ -691,6 +691,10 @@ public class ViewportMenu
             ref CFG.Current.Viewport_Map_Lighting_Background);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Background_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Model_Lights")}##mapLightingModelLights",
+            ref CFG.Current.Viewport_Map_Lighting_Model_Lights);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Model_Lights_TT", GparamLightingBank.ModelLightSetId));
+
         var active = SceneRenderer.MapLighting;
 
         if (CFG.Current.Viewport_Map_Lighting)

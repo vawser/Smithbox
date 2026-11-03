@@ -271,6 +271,9 @@ public class SceneRenderPipeline
         var mapEnvMapScale = Vector4.One;
         var mapEnvMapSaturate = 1.0f;
         var mapLightingFlags = 0u;
+        MapDirectionalLightData[] mapModelLights = null;
+        var mapModelHemiUp = Vector4.Zero;
+        var mapModelHemiDown = Vector4.Zero;
 
         if (mapLighting != null)
         {
@@ -289,6 +292,34 @@ public class SceneRenderPipeline
             mapEnvMapSaturate = mapLighting.EnvMapSaturate;
 
             mapLightingFlags = 1u | (CFG.Current.Viewport_Map_Lighting_Hemi_Inside_Volumes ? 2u : 0u);
+
+            // Characters take the model set: its own sun, the fill lights, and its hemisphere
+            var models = mapLighting.Models;
+
+            if (models != null && CFG.Current.Viewport_Map_Lighting_Model_Lights)
+            {
+                // Light1 can turn with the camera, by the camera's yaw on the GPARAM angles' scale
+                var cameraYaw = 0.0f;
+
+                if (Matrix4x4.Invert(view, out var cameraWorld))
+                {
+                    var forward = Vector3.TransformNormal(-Vector3.UnitZ, cameraWorld);
+                    cameraYaw = MathF.Atan2(forward.X, forward.Z);
+                }
+
+                mapModelLights = new[]
+                {
+                    ToGpu(models.Sun, exposure, cameraYaw),
+                    ToGpu(models.Light1, exposure, cameraYaw),
+                    ToGpu(models.LocalLight1, exposure, cameraYaw),
+                    ToGpu(models.LocalLight2, exposure, cameraYaw)
+                };
+
+                mapModelHemiUp = new Vector4(new Vector3(models.HemiUp.X, models.HemiUp.Y, models.HemiUp.Z) * models.HemiUp.W * exposure, 1.0f);
+                mapModelHemiDown = new Vector4(new Vector3(models.HemiDown.X, models.HemiDown.Y, models.HemiDown.Z) * models.HemiDown.W * exposure, 1.0f);
+
+                mapLightingFlags |= 4u;
+            }
         }
 
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
@@ -338,6 +369,12 @@ public class SceneRenderPipeline
             SceneParams.HemiDown = mapHemiDown;
             SceneParams.EnvMapScale = mapEnvMapScale;
             SceneParams.EnvMapSaturate = mapEnvMapSaturate;
+            SceneParams.ModelLight0 = mapModelLights?[0] ?? default;
+            SceneParams.ModelLight1 = mapModelLights?[1] ?? default;
+            SceneParams.ModelLight2 = mapModelLights?[2] ?? default;
+            SceneParams.ModelLight3 = mapModelLights?[3] ?? default;
+            SceneParams.ModelHemiUp = mapModelHemiUp;
+            SceneParams.ModelHemiDown = mapModelHemiDown;
 
             if (mapLighting == null)
             {
@@ -353,6 +390,23 @@ public class SceneRenderPipeline
 
             cl.UpdateBuffer(SceneParamBuffer, 0, ref uploaded, (uint)sizeof(SceneParam));
         });
+    }
+
+    /// <summary>
+    ///     A GPARAM directional light as the shaders read it, at the exposure. A light that is off gets an intensity
+    ///     of 0; one that follows the camera turns by <paramref name="cameraYaw" />.
+    /// </summary>
+    private static MapDirectionalLightData ToGpu(GparamDirectionalLight light, float exposure, float cameraYaw)
+    {
+        var intensity = light.Enabled ? exposure : 0.0f;
+        var angle = light.FollowCamera ? new Vector2(light.Angle.X, light.Angle.Y + cameraYaw) : light.Angle;
+
+        return new MapDirectionalLightData
+        {
+            Direction = new Vector4(GparamLighting.AngleToDirection(angle), 0.0f),
+            Color = new Vector4(light.Diffuse.X, light.Diffuse.Y, light.Diffuse.Z, light.Diffuse.W * intensity),
+            SpecColor = new Vector4(light.Specular.X, light.Specular.Y, light.Specular.Z, light.Specular.W * intensity)
+        };
     }
 
     public void BindResources(CommandList cl)

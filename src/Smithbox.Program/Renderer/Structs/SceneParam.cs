@@ -105,4 +105,31 @@ public unsafe struct SceneParam
     public float MapLightingPad0;
     public float MapLightingPad1;
     public float MapLightingPad2;
+
+    /// <summary>
+    ///     The model set of the map's GPARAM LightSet, which lights characters when <see cref="MapLightingFlags" />
+    ///     has 4: its sun, then Light1, LocalLight1 and LocalLight2. Lights that are off have an intensity of 0.
+    /// </summary>
+    public MapDirectionalLightData ModelLight0;
+    public MapDirectionalLightData ModelLight1;
+    public MapDirectionalLightData ModelLight2;
+    public MapDirectionalLightData ModelLight3;
+
+    /// <summary>The model set's hemisphere light, as <see cref="HemiUp" /> and <see cref="HemiDown" /></summary>
+    public Vector4 ModelHemiUp;
+    public Vector4 ModelHemiDown;
+}
+
+/// <summary>A directional light of the map's GPARAM, as the shaders read it</summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MapDirectionalLightData
+{
+    /// <summary>xyz: the direction the light travels in</summary>
+    public Vector4 Direction;
+
+    /// <summary>rgb: color, a: intensity with the exposure</summary>
+    public Vector4 Color;
+
+    /// <summary>The color and intensity of the light's highlights</summary>
+    public Vector4 SpecColor;
 }

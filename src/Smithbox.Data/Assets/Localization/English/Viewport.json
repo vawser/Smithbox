@@ -449,6 +449,14 @@
       "Text": "The GPARAM's hemisphere light (sky color from above, ground color from below) lights what the irradiance volumes don't cover, and the reflections. With this on it also adds to the volumes' light, which matches the game."
     },
     {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Model_Lights",
+      "Text": "Light Characters with the Model Set"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Model_Lights_TT",
+      "Text": "Light characters (c####) with the GPARAM LightSet's model set (ID {0}) instead of the scene's: its own sun, the fill lights (Light 1, which can turn with the camera, and the local lights) and its hemisphere. Not yet compared with the game, so it is off by default."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Background",
       "Text": "Use the GPARAM's Background Color"
     },

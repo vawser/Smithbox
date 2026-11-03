@@ -45,6 +45,12 @@ public class GparamLighting
     /// <summary>The TimeOfDay the values were interpolated at</summary>
     public float Hours;
 
+    /// <summary>
+    /// The model set (LightSet ID 100) that characters are lit with, resolved with the scene's for the viewports;
+    /// null on the model set itself and when resolved alone
+    /// </summary>
+    public GparamLighting Models;
+
     // LightSet
     public GparamDirectionalLight Sun = new() { Diffuse = new(1, 1, 1, 0.5f), Specular = new(1, 1, 1, 0.5f) };
     public GparamDirectionalLight Light1 = new();

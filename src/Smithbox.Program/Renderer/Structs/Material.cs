@@ -14,6 +14,12 @@ public unsafe struct Material
     /// <summary>The most texture layers a material can blend</summary>
     public const int MaxLayers = 4;
 
+    /// <summary>
+    ///     Set in <see cref="uvSet" />, above the UV set itself: the material belongs to a character, which the map's
+    ///     GPARAM lights with its model set, see GparamLighting
+    /// </summary>
+    public const ushort ModelLightingFlag = 0x100;
+
     // Row 0: albedo, layers 0-3
     public ushort colorTex;
     public ushort colorTex2;
@@ -44,7 +50,8 @@ public unsafe struct Material
     public ushort lightmapTex;
     public ushort lightmapTex2;
 
-    // Row 5: the UV set (0 = first, 1 = second) that each layer's textures use
+    // Row 5: the UV set (0 = first, 1 = second) that each layer's textures use, in the low 8 bits.
+    // The first also holds the material's flags above them, see ModelLightingFlag.
     public ushort uvSet;
     public ushort uvSet2;
     public ushort uvSet3;

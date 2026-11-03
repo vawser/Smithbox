@@ -98,6 +98,14 @@ struct sceneLight
 	vec4 spot;           // x: cos(inner angle), y: cos(outer angle), z: 1 to fade across the range
 };
 
+// A directional light of the map's GPARAM
+struct mapDirectionalLight
+{
+	vec4 direction;  // xyz: the direction the light travels in
+	vec4 color;      // rgb: color, a: intensity with the exposure
+	vec4 specColor;  // the color and intensity of its highlights
+};
+
 struct sceneParams
 {
 	mat4 projection;
@@ -148,6 +156,12 @@ struct sceneParams
 	vec4 hemiDown;
 	vec4 envMapScale;               // reflections' color scale, rgb
 	float envMapSaturate;           // reflections' saturation, 0 grey, 1 unchanged
+
+	// The model set of the map's GPARAM LightSet, for characters when mapLightingFlags has 4: its sun, Light1,
+	// LocalLight1 and LocalLight2, and its hemisphere
+	mapDirectionalLight modelLights[4];
+	vec4 modelHemiUp;
+	vec4 modelHemiDown;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -384,6 +398,7 @@ void UpdatePickingBuffer(ivec2 pos, uint64_t identity, float z)
 
 // State shared by the sampling helpers, set once at the start of main
 uint g_mat;
+bool g_modelLit = false; // lit by the model set of the map's GPARAM, see ModelLit
 vec2 g_uv[2];
 vec2 g_dx[2];
 vec2 g_dy[2];
@@ -479,7 +494,7 @@ vec2 LayerTiling(int row, int layer)
 // One layer of a texture row, using the UV set that layer is authored against
 vec4 SampleLayer(int row, int layer)
 {
-	int uvSet = clamp(int(MaterialValue(ROW_UVSET, layer)), 0, 1);
+	int uvSet = clamp(int(MaterialValue(ROW_UVSET, layer) & 0xFFu), 0, 1);
 	return SampleAt(MaterialValue(row, layer), uvSet, LayerTiling(row, layer), LayerScroll(row, layer));
 }
 
@@ -890,9 +905,19 @@ bool MapLighting()
 }
 
 // The map's GPARAM hemisphere light arriving from direction D: its up color from above, its down color from below
+// Characters take the model set's hemisphere
 vec3 Hemisphere(vec3 D)
 {
-	return mix(sceneparam.hemiDown.rgb, sceneparam.hemiUp.rgb, clamp(D.y * 0.5 + 0.5, 0.0, 1.0));
+	vec3 up = g_modelLit ? sceneparam.modelHemiUp.rgb : sceneparam.hemiUp.rgb;
+	vec3 down = g_modelLit ? sceneparam.modelHemiDown.rgb : sceneparam.hemiDown.rgb;
+	return mix(down, up, clamp(D.y * 0.5 + 0.5, 0.0, 1.0));
+}
+
+// Whether the current material is a character's lit by the model set of the map's GPARAM LightSet: its own sun,
+// the fill lights, and its hemisphere. The flag is above the first UV set, see Material.ModelLightingFlag.
+bool ModelLit()
+{
+	return MapLighting() && (sceneparam.mapLightingFlags & 4u) != 0u && (MaterialValue(ROW_UVSET, 0) & 0x100u) != 0u;
 }
 
 // Ambient light from direction N where there are no volumes: the map's hemisphere when its GPARAMs light the
@@ -1109,6 +1134,7 @@ void main()
 #endif
 
 	g_mat = fsin_mat;
+	g_modelLit = ModelLit();
 
 	vec3 viewVec = normalize(sceneparam.eye.xyz - fsin_worldpos);
 
@@ -1260,8 +1286,27 @@ void main()
 	surface.V = viewVec;
 
 	// The sun, then every light in the scene
-	vec3 direct = ShadeLight(surface, -sunDir, sceneparam.sunColor.rgb * sceneparam.sunColor.a,
-		sceneparam.sunSpecColor.rgb * sceneparam.sunSpecColor.a);
+	vec3 direct = vec3(0.0);
+
+	if (g_modelLit)
+	{
+		// The model set's sun and fill lights
+		for (uint i = 0u; i < 4u; i++)
+		{
+			mapDirectionalLight light = sceneparam.modelLights[i];
+			if (light.color.a <= 0.0 && light.specColor.a <= 0.0)
+				continue;
+
+			vec3 travel = light.direction.xyz;
+			travel = dot(travel, travel) > 1e-10 ? normalize(travel) : vec3(0.0, -1.0, 0.0);
+			direct += ShadeLight(surface, -travel, light.color.rgb * light.color.a, light.specColor.rgb * light.specColor.a);
+		}
+	}
+	else
+	{
+		direct = ShadeLight(surface, -sunDir, sceneparam.sunColor.rgb * sceneparam.sunColor.a,
+			sceneparam.sunSpecColor.rgb * sceneparam.sunSpecColor.a);
+	}
 
 	uint lightCount = min(sceneparam.lightCount, uint(MAX_SCENE_LIGHTS));
 	for (uint i = 0; i < lightCount; i++)

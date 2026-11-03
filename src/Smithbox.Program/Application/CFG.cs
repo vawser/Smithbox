@@ -1284,6 +1284,10 @@ public class CFG
     // Whether the viewport's background takes the GPARAM's BG color instead of Viewport_Bg_Color
     public bool Viewport_Map_Lighting_Background = true;
 
+    // Whether characters are lit by the GPARAM LightSet's model set (its sun, fill lights and hemisphere) instead of
+    // the scene's; off until compared with the game
+    public bool Viewport_Map_Lighting_Model_Lights = false;
+
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
 

@@ -1279,6 +1279,7 @@ public class FlverResource : IResource, IDisposable
 
         LoadDeformTextures(dest, mat.MTD);
         ConfigureMaterialShader(dest, layers);
+        MarkModelLighting(dest);
     }
 
     private unsafe void ProcessMaterial(FlverMaterial dest, BinaryReaderEx br,
@@ -1340,6 +1341,22 @@ public class FlverResource : IResource, IDisposable
 
         LoadDeformTextures(dest, mtd);
         ConfigureMaterialShader(dest, layers);
+        MarkModelLighting(dest);
+    }
+
+    /// <summary>
+    /// Characters (c####) are lit by the model set of the map's GPARAM LightSet instead of the scene's, as the game
+    /// lights them. Flagged in the material, see <see cref="Material.ModelLightingFlag" />.
+    /// </summary>
+    private void MarkModelLighting(FlverMaterial dest)
+    {
+        var name = Context?.Name;
+
+        if (name == null || name.Length < 5 || char.ToLowerInvariant(name[0]) != 'c' ||
+            !char.IsDigit(name[1]) || !char.IsDigit(name[2]) || !char.IsDigit(name[3]) || !char.IsDigit(name[4]))
+            return;
+
+        dest.MaterialData.uvSet |= Material.ModelLightingFlag;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
