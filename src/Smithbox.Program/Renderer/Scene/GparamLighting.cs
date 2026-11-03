@@ -80,6 +80,47 @@ public class GparamLighting
     public Dictionary<string, string> Sources = new(StringComparer.Ordinal);
 
     /// <summary>
+    /// The TimeOfDay keys of the game's seven timezones (CutsceneGparamTimeParam: morning, noon A, noon B, evening,
+    /// night, deep night A, deep night B), at which Elden Ring keys its lighting. Elden Ring's seven irradiance
+    /// volume bakes are these in order: bake N is lit as key N (Gparam Lighting.md, Phase 5).
+    /// </summary>
+    public static readonly float[] TimeKeys = { 0.0f, 4.0f, 8.0f, 12.0f, 15.0f, 21.0f, 22.5f };
+
+    /// <summary>The localization keys of the timezones' names, in the order of <see cref="TimeKeys" /></summary>
+    public static readonly string[] TimezoneNames =
+    {
+        "MAP_Lighting_Timezone_Morning", "MAP_Lighting_Timezone_Noon_A", "MAP_Lighting_Timezone_Noon_B",
+        "MAP_Lighting_Timezone_Evening", "MAP_Lighting_Timezone_Night", "MAP_Lighting_Timezone_Deep_Night_A",
+        "MAP_Lighting_Timezone_Deep_Night_B"
+    };
+
+    /// <summary>
+    /// The timezones either side of a time, and how far it is from the first to the second, wrapping from the last
+    /// round to the first: the bakes to blend at that time
+    /// </summary>
+    public static (int From, int To, float Ratio) TimezonesAt(float hours)
+    {
+        hours = ((hours % 24.0f) + 24.0f) % 24.0f;
+
+        var from = TimeKeys.Length - 1;
+
+        for (var i = TimeKeys.Length - 1; i >= 0; i--)
+        {
+            if (TimeKeys[i] <= hours)
+            {
+                from = i;
+                break;
+            }
+        }
+
+        var to = (from + 1) % TimeKeys.Length;
+        var span = ((TimeKeys[to] - TimeKeys[from]) % 24.0f + 24.0f) % 24.0f;
+        var ratio = span > 0.0f ? (((hours - TimeKeys[from]) % 24.0f + 24.0f) % 24.0f) / span : 0.0f;
+
+        return (from, to, Math.Clamp(ratio, 0.0f, 1.0f));
+    }
+
+    /// <summary>
     /// The direction a light with this GPARAM angle travels in: negative elevations point down, as all the game's
     /// files have them. Checked against the game in the Map Editor (Gparam Lighting.md, Phase 2).
     /// </summary>

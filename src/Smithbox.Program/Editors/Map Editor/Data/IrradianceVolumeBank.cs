@@ -181,6 +181,152 @@ public class IrradianceVolumeBank
         {
             Maps.Remove(mapId);
         }
+
+        lock (RequestedBakes)
+        {
+            RequestedBakes.RemoveWhere(r => r.MapId.Equals(mapId, StringComparison.OrdinalIgnoreCase));
+            ResidentBakes.RemoveWhere(r => r.MapId.Equals(mapId, StringComparison.OrdinalIgnoreCase));
+        }
+    }
+
+    // The bakes whose envmap files have been queued for each map, and those whose textures are all on the GPU
+    private readonly HashSet<(string MapId, int Bake)> RequestedBakes = new();
+    private readonly HashSet<(string MapId, int Bake)> ResidentBakes = new();
+
+    // The bakes the volumes are lit with while they follow the time of day
+    private (int From, int To, float Ratio)? FollowedBakes;
+
+    /// <summary>
+    /// Whether the bakes follow the map lighting's time of day instead of the GI menu's settings. Only Elden Ring's
+    /// bakes are known to match the GPARAM timezones (bake N = timezone N).
+    /// </summary>
+    public bool BakesFollowTime => Project.Descriptor.ProjectType is ProjectType.ER &&
+        CFG.Current.Viewport_Map_Lighting && CFG.Current.Viewport_Map_Lighting_Follow_Bakes;
+
+    /// <summary>
+    /// The bakes whose envmap files are loaded with a map: those of the time of day when the bakes follow it,
+    /// otherwise the GI menu's bake and the bake it blends towards
+    /// </summary>
+    public HashSet<int> GetBakesToLoad()
+    {
+        if (BakesFollowTime)
+        {
+            var (from, to, _) = GparamLighting.TimezonesAt(CFG.Current.Viewport_Map_Lighting_Hours);
+            return new HashSet<int> { from, to };
+        }
+
+        var bakes = new HashSet<int> { CFG.Current.Viewport_GI_Bake };
+
+        if (CFG.Current.Viewport_GI_Bake_Blend)
+            bakes.Add(CFG.Current.Viewport_GI_Blend_Bake);
+
+        return bakes;
+    }
+
+    /// <summary>
+    /// Notes that a map's load queued a bake's envmap files, so <see cref="RequestBake" /> doesn't queue them again
+    /// </summary>
+    public void MarkBakeRequested(string mapId, int bake)
+    {
+        lock (RequestedBakes)
+        {
+            RequestedBakes.Add((mapId, bake));
+        }
+    }
+
+    /// <summary>
+    /// Queues the envmap files of a loaded map's bake, once, so the volumes can change to it
+    /// </summary>
+    public void RequestBake(string mapId, int bake)
+    {
+        lock (RequestedBakes)
+        {
+            if (!RequestedBakes.Add((mapId, bake)))
+                return;
+        }
+
+        if (!GetBakeFiles(mapId).TryGetValue(bake, out var files) || files.Count == 0)
+            return;
+
+        var assets = files.Select(f => TextureLocator.GetEnvMapTextureVirtualPath(mapId, f.Filename)).ToList();
+        var jobName = LOC.Get("MAP_GI_Load_Bake", mapId, bake);
+
+        ResourceManager.DefaultPool.LoadAssets(Project, assets, new LoadOptions
+        {
+            JobName = jobName,
+            Types = ResourceType.Texture,
+            AccessLevel = AccessLevel.AccessGPUOptimizedOnly
+        });
+    }
+
+    /// <summary>
+    /// Whether every volume of a map's bake has its textures on the GPU. True if the map has no such bake, as there
+    /// is nothing to wait for.
+    /// </summary>
+    public bool IsBakeResident(string mapId, int bake)
+    {
+        lock (RequestedBakes)
+        {
+            if (ResidentBakes.Contains((mapId, bake)))
+                return true;
+        }
+
+        var volumes = GetMap(mapId);
+
+        if (volumes == null || !volumes.Bakes.Contains(bake))
+            return true;
+
+        foreach (var key in volumes.Infos.Keys.Where(k => k.Bake == bake))
+        {
+            if (!TryGetBakeTextures(mapId, key.Id, bake, out _))
+                return false;
+        }
+
+        lock (RequestedBakes)
+        {
+            ResidentBakes.Add((mapId, bake));
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// The bake, the bake to blend towards (-1 for none) and how far, to light the loaded maps' volumes with this
+    /// frame. When the bakes follow the time of day, the timezones either side of it, queued for every loaded map;
+    /// the volumes keep the bakes they have until the new ones are on the GPU.
+    /// </summary>
+    public (int Bake, int BlendBake, float BlendRatio) ResolveBakes(IEnumerable<MapContainer> maps)
+    {
+        if (!BakesFollowTime)
+        {
+            FollowedBakes = null;
+
+            return (CFG.Current.Viewport_GI_Bake,
+                CFG.Current.Viewport_GI_Bake_Blend ? CFG.Current.Viewport_GI_Blend_Bake : -1,
+                CFG.Current.Viewport_GI_Blend_Ratio);
+        }
+
+        var wanted = GparamLighting.TimezonesAt(CFG.Current.Viewport_Map_Lighting_Hours);
+        var ready = true;
+
+        foreach (var map in maps)
+        {
+            RequestBake(map.Name, wanted.From);
+            RequestBake(map.Name, wanted.To);
+
+            ready &= IsBakeResident(map.Name, wanted.From) && IsBakeResident(map.Name, wanted.To);
+        }
+
+        var current = FollowedBakes;
+
+        // The same pair only moves its ratio; a new pair waits for its textures, unless there is nothing yet
+        if (ready || current == null || (current.Value.From == wanted.From && current.Value.To == wanted.To))
+        {
+            current = wanted;
+            FollowedBakes = current;
+        }
+
+        return (current.Value.From, current.Value.Ratio > 0.0f ? current.Value.To : -1, current.Value.Ratio);
     }
 
     public MapVolumes GetMap(string mapId)

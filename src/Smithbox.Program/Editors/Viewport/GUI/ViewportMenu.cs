@@ -587,6 +587,17 @@ public class ViewportMenu
             0.0f, CFG.Current.Viewport_GI_Auto_Exposure || exposureFromMap ? 4.0f : 200.0f);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Intensity_TT"));
 
+        // With the bakes following the map lighting's time of day, the bake settings below aren't used
+        var bakesFollowTime = view.IrradianceVolumeBank.BakesFollowTime;
+
+        if (bakesFollowTime)
+        {
+            var (from, to, ratio) = GparamLighting.TimezonesAt(CFG.Current.Viewport_Map_Lighting_Hours);
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Bakes_Follow_Time", from, to, ratio));
+        }
+
+        ImGui.BeginDisabled(bakesFollowTime);
+
         DPI.ApplyInputWidth();
         if (ImGui.InputInt($"{LOC.Get("VIEWPORT_Menubar_GI_Bake")}##giBake", ref CFG.Current.Viewport_GI_Bake))
         {
@@ -610,6 +621,8 @@ public class ViewportMenu
             ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio")}##giBlendRatio", ref CFG.Current.Viewport_GI_Blend_Ratio, 0.0f, 1.0f);
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio_TT"));
         }
+
+        ImGui.EndDisabled();
 
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections")}##giNormalizeReflections", ref CFG.Current.Viewport_GI_Normalize_Reflections);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections_TT"));
@@ -737,10 +750,75 @@ public class ViewportMenu
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_File_TT"));
 
+        // The file the selected collision's scene GPARAM picks, as the game does when the player stands on it
+        var collisionFile = view.ViewportSelection.GetSelection()
+            .OfType<Entity>()
+            .Select(e => GparamLightingBank.GetSceneSubId(e.WrappedObject) is { } subId && e.Container is MapContainer map
+                ? bank.GetSubIdFile(map.Name, subId)
+                : null)
+            .FirstOrDefault(f => f != null);
+
+        ImGui.BeginDisabled(collisionFile == null);
+        if (ImGui.Button($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_From_Collision")}##mapLightingFromCollision"))
+        {
+            CFG.Current.Viewport_Map_Lighting_File = collisionFile;
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(collisionFile != null
+            ? LOC.Get("VIEWPORT_Menubar_Map_Lighting_From_Collision_TT", collisionFile)
+            : LOC.Get("VIEWPORT_Menubar_Map_Lighting_From_Collision_None_TT"));
+
+        // Weathers: the WW of the area's mAA_BB_CCWW files, named by the WeatherParam rows that use them
+        var weathers = maps.SelectMany(m => bank.ListWeathers(m.Name)).Distinct().OrderBy(w => w).ToList();
+
+        if (weathers.Count > 0)
+        {
+            string WeatherLabel(int weather) => weather <= 0
+                ? LOC.Get("VIEWPORT_Menubar_Map_Lighting_Weather_None")
+                : bank.GetWeatherName(weather) is { } name ? $"{weather:D2}: {name}" : $"{weather:D2}";
+
+            DPI.ApplyInputWidth();
+            if (ImGui.BeginCombo($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Weather")}##mapLightingWeather",
+                WeatherLabel(CFG.Current.Viewport_Map_Lighting_Weather)))
+            {
+                foreach (var weather in new[] { 0 }.Concat(weathers))
+                {
+                    if (ImGui.Selectable($"{WeatherLabel(weather)}##mapLightingWeather_{weather}",
+                        CFG.Current.Viewport_Map_Lighting_Weather == weather))
+                    {
+                        CFG.Current.Viewport_Map_Lighting_Weather = weather;
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Weather_TT"));
+        }
+
         DPI.ApplyInputWidth();
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Hours")}##mapLightingHours",
             ref CFG.Current.Viewport_Map_Lighting_Hours, 0.0f, 24.0f, "%.2f");
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Hours_TT"));
+
+        // The timezones' keys, as the game's cutscenes pick them
+        for (var i = 0; i < GparamLighting.TimeKeys.Length; i++)
+        {
+            if (i > 0)
+                ImGui.SameLine();
+
+            if (ImGui.SmallButton($"{LOC.Get(GparamLighting.TimezoneNames[i])}##mapLightingTimezone{i}"))
+            {
+                CFG.Current.Viewport_Map_Lighting_Hours = GparamLighting.TimeKeys[i];
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Timezone_TT", GparamLighting.TimeKeys[i], i));
+        }
+
+        if (view.Project.Descriptor.ProjectType is ProjectType.ER && view.IrradianceVolumeBank.CanUse())
+        {
+            ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Follow_Bakes")}##mapLightingFollowBakes",
+                ref CFG.Current.Viewport_Map_Lighting_Follow_Bakes);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Follow_Bakes_TT"));
+        }
 
         ImGui.Separator();
 
@@ -759,7 +837,7 @@ public class ViewportMenu
 
         foreach (var map in maps)
         {
-            var file = GparamLightingBank.ChooseFile(map.Name, chosen);
+            var file = bank.ChooseFile(map.Name, chosen);
             var scene = bank.Resolve(map.Name, file, GparamLightingBank.SceneLightSetId, hours);
             var model = bank.Resolve(map.Name, file, GparamLightingBank.ModelLightSetId, hours);
 

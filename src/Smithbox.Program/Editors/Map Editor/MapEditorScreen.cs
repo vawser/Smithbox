@@ -540,20 +540,19 @@ public class MapEditorScreen : EditorScreen
 
         activeView.ViewportWindow.Update(dt);
 
-        // The irradiance volumes of every loaded map, shared by all views
-        activeView.IrradianceVolumeBank.UpdateGpuTable(
-            activeView.Project.Handler.MapData.PrimaryBank.Maps.Values
-                .Select(w => w.MapContainer)
-                .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded),
-            CFG.Current.Viewport_GI_Bake,
-            CFG.Current.Viewport_GI_Bake_Blend ? CFG.Current.Viewport_GI_Blend_Bake : -1,
-            CFG.Current.Viewport_GI_Blend_Ratio);
+        // The irradiance volumes of every loaded map, shared by all views, with the bakes of the menu or of the
+        // map lighting's time of day
+        var loadedMaps = activeView.Project.Handler.MapData.PrimaryBank.Maps.Values
+            .Select(w => w.MapContainer)
+            .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
+            .ToList();
+
+        var (bake, blendBake, blendRatio) = activeView.IrradianceVolumeBank.ResolveBakes(loadedMaps);
+
+        activeView.IrradianceVolumeBank.UpdateGpuTable(loadedMaps, bake, blendBake, blendRatio);
 
         // The sun and exposure of the loaded maps' GPARAMs, shared by all views
-        SceneRenderer.MapLighting = activeView.GparamLightingBank.ResolveForViewport(
-            activeView.Project.Handler.MapData.PrimaryBank.Maps.Values
-                .Select(w => w.MapContainer)
-                .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded));
+        SceneRenderer.MapLighting = activeView.GparamLightingBank.ResolveForViewport(loadedMaps);
 
         // Throw any exceptions that ocurred during async map loading, in any view.
         // Cleared before throwing so a handled exception is not rethrown every frame.

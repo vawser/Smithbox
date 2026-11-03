@@ -239,15 +239,14 @@ public class MapResourceHandler
         // Irradiance volumes: the envmap files of the chosen bake, and of the bake blended towards, which become
         // 3D textures
         var bakeFilesByBake = View.IrradianceVolumeBank.GetBakeFiles(MapID);
-        var bakes = new HashSet<int> { CFG.Current.Viewport_GI_Bake };
 
-        if (CFG.Current.Viewport_GI_Bake_Blend)
-            bakes.Add(CFG.Current.Viewport_GI_Blend_Bake);
-
-        foreach (var bake in bakes)
+        // Other bakes are queued later if the volumes change to them, see IrradianceVolumeBank.ResolveBakes
+        foreach (var bake in View.IrradianceVolumeBank.GetBakesToLoad())
         {
             if (!bakeFilesByBake.TryGetValue(bake, out var bakeFiles))
                 continue;
+
+            View.IrradianceVolumeBank.MarkBakeRequested(MapID, bake);
 
             foreach (var entry in bakeFiles)
             {

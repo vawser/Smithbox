@@ -5,6 +5,10 @@
       "Text": "Failed to read {0} as an IVINFO binder"
     },
     {
+      "Key": "MAP_GI_Load_Bake",
+      "Text": "Irradiance volumes of {0}: bake {1}"
+    },
+    {
       "Key": "MAP_GI_Load_Summary",
       "Text": "Irradiance volumes of {0}: {1} volume infos, bakes {2}, {3} envmap files. Environment boxes: {4}, linked {5}, unlinked {6}, linked without a volume {7}, skipped by the game {8}."
     },

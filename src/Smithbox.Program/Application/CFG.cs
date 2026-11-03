@@ -1288,6 +1288,13 @@ public class CFG
     // the scene's; off until compared with the game
     public bool Viewport_Map_Lighting_Model_Lights = false;
 
+    // The weather to light with: the WW of the area's mAA_BB_CCWW files (WeatherParam's GparamId), 0 for none
+    public int Viewport_Map_Lighting_Weather = 0;
+
+    // Elden Ring: whether the irradiance volumes' bakes follow the time of day (bake N is timezone N), loading the
+    // bakes they need as the time moves, instead of the GI menu's bake settings
+    public bool Viewport_Map_Lighting_Follow_Bakes = true;
+
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
 

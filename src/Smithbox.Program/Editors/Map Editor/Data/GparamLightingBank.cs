@@ -1,5 +1,6 @@
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -55,28 +56,138 @@ public class GparamLightingBank
     }
 
     /// <summary>
-    /// The map's own GPARAM, mAA_BB_0000 for map mAA_BB_CC_DD
+    /// The area whose GPARAMs a map uses, mAA_BB. Elden Ring maps can take another map's
+    /// (GparamRefSettings: row AABBCCDD, RefTargetMapId, e.g. every catacomb m30-m31 takes m30_00), and the open
+    /// world tiles (m60, m61) share mAA_00. Null for a map ID that isn't mAA_BB_CC_DD.
     /// </summary>
-    public static string GetDefaultFile(string mapId)
+    public string GetArea(string mapId)
     {
-        if (mapId == null || mapId.Length < 6)
-            return null;
+        if (mapId == null || mapId.Length < 12 || !int.TryParse($"{mapId.Substring(1, 2)}{mapId.Substring(4, 2)}{mapId.Substring(7, 2)}{mapId.Substring(10, 2)}", out var rowId))
+            return mapId != null && mapId.Length >= 6 ? mapId.Substring(0, 6) : null;
 
-        return $"{mapId.Substring(0, 6)}_0000";
+        var target = rowId;
+
+        if (CharacterComposition.GetRow(Project, "GparamRefSettings", rowId) is { } row &&
+            CharacterComposition.HasField(row, "RefTargetMapId") &&
+            CharacterComposition.GetValue(row, "RefTargetMapId") is var refTarget && refTarget >= 0)
+        {
+            target = refTarget;
+        }
+
+        var aa = target / 1000000;
+        var bb = target / 10000 % 100;
+
+        if (aa is 60 or 61)
+            bb = 0;
+
+        return $"m{aa:D2}_{bb:D2}";
+    }
+
+    /// <summary>
+    /// The map's own GPARAM, the plain one of its area (mAA_BB_0000)
+    /// </summary>
+    public string GetDefaultFile(string mapId)
+    {
+        var area = GetArea(mapId);
+
+        return area == null ? null : $"{area}_0000";
     }
 
     /// <summary>
     /// The GPARAM to look a map's lighting up in first: the chosen file if it belongs to the map's area, else the
-    /// map's own
+    /// map's own; then, if a weather is chosen and the area has a file for it, that file's weather version
+    /// (mAA_BB_CCWW, WW being WeatherParam's GparamId)
     /// </summary>
-    public static string ChooseFile(string mapId, string chosen)
+    public string ChooseFile(string mapId, string chosen)
     {
         var own = GetDefaultFile(mapId);
 
-        if (own == null || string.IsNullOrEmpty(chosen))
-            return own;
+        if (own == null)
+            return null;
 
-        return chosen.StartsWith(own.Substring(0, 7), StringComparison.OrdinalIgnoreCase) ? chosen : own;
+        var file = !string.IsNullOrEmpty(chosen) && chosen.StartsWith(own.Substring(0, 7), StringComparison.OrdinalIgnoreCase)
+            ? chosen
+            : own;
+
+        var weather = CFG.Current.Viewport_Map_Lighting_Weather;
+
+        if (weather is > 0 and < 100 && file.Length == 11)
+        {
+            var withWeather = $"{file.Substring(0, 9)}{weather:D2}";
+
+            if (ListFiles(mapId).Contains(withWeather, StringComparer.OrdinalIgnoreCase))
+                return withWeather;
+        }
+
+        return file;
+    }
+
+    /// <summary>
+    /// The file of a scene GPARAM sub ID in a map's area, mAA_BB_0N00 (N -1 is 0), as the collisions' scene GPARAM
+    /// picks it (GparamSubID_Base; Unk18 in Nightreign). Null if the area has no such file.
+    /// </summary>
+    public string GetSubIdFile(string mapId, int subId)
+    {
+        var area = GetArea(mapId);
+
+        if (area == null || subId > 99)
+            return null;
+
+        var file = $"{area}_{Math.Max(subId, 0):D2}00";
+
+        return ListFiles(mapId).Contains(file, StringComparer.OrdinalIgnoreCase) ? file : null;
+    }
+
+    /// <summary>
+    /// The scene GPARAM sub ID of a part, -1 if it has none or the part has no scene GPARAM. Only collisions have one.
+    /// </summary>
+    public static int? GetSceneSubId(object part)
+    {
+        var sceneProperty = part?.GetType().GetProperties()
+            .FirstOrDefault(p => p.PropertyType.Name.Contains("SceneGparam", StringComparison.Ordinal));
+
+        var scene = sceneProperty?.GetValue(part);
+
+        if (scene == null)
+            return null;
+
+        var subId = scene.GetType().GetProperty("GparamSubID_Base") ?? scene.GetType().GetProperty("Unk18");
+
+        return subId?.GetValue(scene) is IConvertible value ? Convert.ToInt32(value) : null;
+    }
+
+    /// <summary>
+    /// The weathers a map's area has files for: the WW of its mAA_BB_CCWW files, above 0
+    /// </summary>
+    public List<int> ListWeathers(string mapId)
+    {
+        var weathers = new SortedSet<int>();
+
+        foreach (var file in ListFiles(mapId))
+        {
+            if (file.Length == 11 && int.TryParse(file.Substring(9, 2), out var weather) && weather > 0)
+                weathers.Add(weather);
+        }
+
+        return weathers.ToList();
+    }
+
+    /// <summary>
+    /// The names of the WeatherParam rows with this GparamId, for the weather menu
+    /// </summary>
+    public string GetWeatherName(int gparamId)
+    {
+        if (Project.Handler.ParamData?.PrimaryBank?.Params is not { } bank ||
+            !bank.TryGetValue("WeatherParam", out var param))
+            return null;
+
+        var names = param.Rows
+            .Where(r => CharacterComposition.HasField(r, "GparamId") && CharacterComposition.GetValue(r, "GparamId") == gparamId)
+            .Select(r => string.IsNullOrWhiteSpace(r.Name) ? r.ID.ToString() : r.Name)
+            .Distinct()
+            .ToList();
+
+        return names.Count > 0 ? string.Join(", ", names) : null;
     }
 
     /// <summary>
@@ -84,10 +195,12 @@ public class GparamLightingBank
     /// </summary>
     public List<string> ListFiles(string mapId)
     {
-        if (mapId == null || mapId.Length < 6)
+        var area = GetArea(mapId);
+
+        if (area == null)
             return new List<string>();
 
-        var prefix = $"{mapId.Substring(0, 6)}_";
+        var prefix = $"{area}_";
 
         return Project.Locator.GparamFiles.Entries
             .Select(e => e.Filename)
@@ -140,7 +253,8 @@ public class GparamLightingBank
 
         var cached = ViewportLighting;
 
-        if (cached != null && ViewportLightingMap == map.Name && cached.File == file && cached.Hours == hours)
+        if (cached != null && ViewportLightingMap == map.Name &&
+            string.Equals(cached.File, file, StringComparison.OrdinalIgnoreCase) && cached.Hours == hours)
             return cached;
 
         cached = Resolve(map.Name, file, SceneLightSetId, hours);

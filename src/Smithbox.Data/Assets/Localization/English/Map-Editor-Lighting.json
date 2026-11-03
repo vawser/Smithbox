@@ -3,6 +3,34 @@
     {
       "Key": "MAP_Lighting_Failed_Read_GPARAM",
       "Text": "Failed to read the GPARAM {0} for map lighting."
+    },
+    {
+      "Key": "MAP_Lighting_Timezone_Morning",
+      "Text": "Morning"
+    },
+    {
+      "Key": "MAP_Lighting_Timezone_Noon_A",
+      "Text": "Noon A"
+    },
+    {
+      "Key": "MAP_Lighting_Timezone_Noon_B",
+      "Text": "Noon B"
+    },
+    {
+      "Key": "MAP_Lighting_Timezone_Evening",
+      "Text": "Evening"
+    },
+    {
+      "Key": "MAP_Lighting_Timezone_Night",
+      "Text": "Night"
+    },
+    {
+      "Key": "MAP_Lighting_Timezone_Deep_Night_A",
+      "Text": "Deep Night A"
+    },
+    {
+      "Key": "MAP_Lighting_Timezone_Deep_Night_B",
+      "Text": "Deep Night B"
     }
   ]
 }

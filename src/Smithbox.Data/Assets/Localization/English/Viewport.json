@@ -449,6 +449,46 @@
       "Text": "The GPARAM's hemisphere light (sky color from above, ground color from below) lights what the irradiance volumes don't cover, and the reflections. With this on it also adds to the volumes' light, which matches the game."
     },
     {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_From_Collision",
+      "Text": "Use the Selected Collision's GPARAM"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_From_Collision_TT",
+      "Text": "Light with {0}, the GPARAM the selected collision's scene GPARAM picks (its sub ID N picks mAA_BB_0N00), as the game does while the player is on it."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_From_Collision_None_TT",
+      "Text": "Select a collision whose scene GPARAM sub ID has a file in its area, to light with that GPARAM."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Weather",
+      "Text": "Weather"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Weather_TT",
+      "Text": "Light with the weather's version of the GPARAM: mAA_BB_CCWW, where WW is the weather's GparamId in WeatherParam. Areas without a file for the weather keep the plain one."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Weather_None",
+      "Text": "None"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Timezone_TT",
+      "Text": "Time {0}: the GPARAMs' key for this timezone. In Elden Ring it is also the time irradiance volume bake {1} was made at."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Follow_Bakes",
+      "Text": "Irradiance Volumes Follow the Time of Day"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Follow_Bakes_TT",
+      "Text": "Light with the irradiance volume bakes of the time of day, blending between the two timezones either side of it, as the game does: bake N is timezone N. Bakes not loaded yet are loaded as the time reaches them; until then the volumes keep the bakes they have."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Bakes_Follow_Time",
+      "Text": "The bakes follow the time of day (Map Lighting): bake {0} towards {1} by {2:0.##}."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Model_Lights",
       "Text": "Light Characters with the Model Set"
     },
