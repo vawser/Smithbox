@@ -169,6 +169,14 @@
       "Text": "Toggle the display of the MPW files of open world tiles: the panels of the walls that keep players in a tile during multiplayer."
     },
     {
+      "Key": "MAP_Filters_Map_Limits_Title",
+      "Text": "Mission Area Limits"
+    },
+    {
+      "Key": "MAP_Filters_Map_Limits_TT",
+      "Text": "Toggle the display of the MSLD files of maps: the walls around the areas of a mission."
+    },
+    {
       "Key": "MAP_Filters_Light_Probes_Title",
       "Text": "Light Probes"
     },

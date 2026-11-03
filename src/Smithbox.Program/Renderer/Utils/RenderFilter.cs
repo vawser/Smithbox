@@ -78,6 +78,9 @@ public enum RenderFilter
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_NavVolume")]
     NavVolume = 8388608,
 
+    [Display(Name = "VIEWPORT_ENUM_RenderFilter_MapLimit")]
+    MapLimit = 16777216,
+
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_All")]
     All = 0xFFFFFFF
 }

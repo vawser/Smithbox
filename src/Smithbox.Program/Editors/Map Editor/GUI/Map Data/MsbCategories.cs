@@ -804,6 +804,12 @@ public static class MsbCategories
             dict["Multiplayer Wall"] = typeof(MPW.Panel);
         }
 
+        if (view.MapLimitBank.CanUse())
+        {
+            dict["Mission Area Limit"] = typeof(MSLD.Area);
+            dict["Mission Area Limit Edge"] = typeof(MSLD.Edge);
+        }
+
         if (view.AssetConfigurationBank.CanUse())
         {
             dict["Asset Configuration"] = typeof(ACB.Asset);

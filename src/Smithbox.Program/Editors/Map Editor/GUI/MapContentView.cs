@@ -513,6 +513,25 @@ public class MapContentView
                                     }
                                 }
                             }
+                            else if (cats.Key == MsbEntityType.MapLimitArea)
+                            {
+                                // Each area is a node holding its edges
+                                if (ImGui.TreeNodeEx(typ.Key.Name, treeflags))
+                                {
+                                    int index = 0;
+                                    foreach (MsbEntity obj in typ.Value)
+                                    {
+                                        if (View.MapContentFilter.ContentFilter(map, obj))
+                                        {
+                                            MapObjectSelectable(map, obj, true, index, true);
+                                        }
+
+                                        index++;
+                                    }
+
+                                    ImGui.TreePop();
+                                }
+                            }
                             else if (cats.Key == MsbEntityType.LightProbeVolume)
                             {
                                 foreach (Entity parent in map.LightProbeParents)
@@ -591,6 +610,14 @@ public class MapContentView
         else if (e.WrappedObject is BTAB.Entry atlasEntry && !string.IsNullOrEmpty(atlasEntry.PartName))
         {
             key = atlasEntry.PartName;
+        }
+        else if (e.WrappedObject is MSLD.Area)
+        {
+            key = e.PrettyName;
+        }
+        else if (e.WrappedObject is MSLD.Edge && e.Parent != null)
+        {
+            key = $"Edge {e.Parent.ChildIndex(e)}";
         }
 
         // Main selectable

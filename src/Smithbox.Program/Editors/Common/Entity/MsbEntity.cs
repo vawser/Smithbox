@@ -46,14 +46,21 @@ public class MsbEntity : Entity
     {
         get
         {
+            // MSLD areas have no name of their own, so they go by the collision they were built from
+            if (WrappedObject is MSLD.Area area)
+                return $"h{area.CollisionNumber:D6}";
+
             return $@"{Utils.ImGuiEscape(Name, null)}";
         }
     }
-    public override bool HasTransform => 
-        Type != MsbEntityType.Event && 
+
+    // MSLD areas are only a group for their edges, which are already in the space of the map
+    public override bool HasTransform =>
+        Type != MsbEntityType.Event &&
         Type != MsbEntityType.Models &&
         Type != MsbEntityType.DS2GeneratorRegist &&
-        Type != MsbEntityType.DS2Event;
+        Type != MsbEntityType.DS2Event &&
+        Type != MsbEntityType.MapLimitArea;
 
     [XmlIgnore]
     public string MapID { get; set; }
@@ -110,6 +117,10 @@ public class MsbEntity : Entity
 
             case MsbEntityType.MultiPlayerWall:
                 AssignMultiPlayerWallDrawable();
+                break;
+
+            case MsbEntityType.MapLimitEdge:
+                AssignMapLimitEdgeDrawable();
                 break;
 
             case MsbEntityType.Navmesh:
@@ -387,6 +398,9 @@ public class MsbEntity : Entity
 
     // MPW panels have no thickness in the game, but are given some so they can be seen and clicked edge on
     private const float MultiPlayerWallDepth = 0.2f;
+
+    // As are MSLD edges, which are far larger, so they are given more
+    private const float MapLimitEdgeDepth = 1.0f;
 
     /// <summary>
     /// What the displayed (or requested) EDGE points were built from. Null if there are none.
@@ -989,6 +1003,78 @@ public class MsbEntity : Entity
         RenderSceneMesh = SetupPlaceholderMesh(mesh, fill, RenderFilter.MultiPlayerWall);
     }
 
+    /// <summary>
+    /// A wireframe of the wall with a fill that is always displayed, so the mission area shows at a glance.
+    /// The wall is placed and sized by its transform; see GetMapLimitEdgeTransform.
+    /// </summary>
+    public void AssignMapLimitEdgeDrawable()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = RenderableHelper.GetMapLimitEdgeProxy(scene);
+        var fill = RenderableHelper.GetMapLimitEdgeFillProxy(scene);
+
+        RenderSceneMesh = SetupPlaceholderMesh(mesh, fill, RenderFilter.MapLimit);
+    }
+
+    /// <summary>
+    /// The transform of the unit box that stands on the origin, so it rises from the middle of the edge's
+    /// bottom, runs along it, and is as tall as the wall. Only the yaw of the edge is used, as the walls are
+    /// always vertical and the ends of the vanilla edges are always level.
+    /// </summary>
+    private static Transform GetMapLimitEdgeTransform(MSLD.Edge edge)
+    {
+        var t = Transform.Default;
+        var dir = edge.End - edge.Start;
+
+        t.Position = (edge.Start + edge.End) / 2;
+        t.Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitY, MathF.Atan2(-dir.Z, dir.X));
+        t.Scale = new Vector3(new Vector2(dir.X, dir.Z).Length(), edge.Height, MapLimitEdgeDepth);
+
+        return t;
+    }
+
+    /// <summary>
+    /// Moves the ends of an MSLD edge with its transform: they follow the position and the yaw, and the
+    /// length and height follow the scale if it is included. Edges have no position or rotation of their own,
+    /// so the base action, which sets those properties, would do nothing.
+    /// </summary>
+    public override ViewportAction GetUpdateTransformAction(Transform newt, bool includeScale = false)
+    {
+        if (Type != MsbEntityType.MapLimitEdge || WrappedObject is not MSLD.Edge edge)
+            return base.GetUpdateTransformAction(newt, includeScale);
+
+        var oldt = GetMapLimitEdgeTransform(edge);
+        var mid = oldt.Position;
+
+        // The yaw of the new transform, from where it turns the edge's direction
+        var forward = Vector3.Transform(Vector3.UnitX, newt.Rotation);
+        var newYaw = MathF.Atan2(-forward.Z, forward.X);
+        var oldDir = edge.End - edge.Start;
+        var oldYaw = MathF.Atan2(-oldDir.Z, oldDir.X);
+        var turn = Quaternion.CreateFromAxisAngle(Vector3.UnitY, newYaw - oldYaw);
+
+        // The ends keep their offsets from the middle, so ends that aren't level stay as they were
+        var lengthScale = includeScale && oldt.Scale.X > 0 ? newt.Scale.X / oldt.Scale.X : 1.0f;
+        var startOffset = Vector3.Transform(edge.Start - mid, turn) * new Vector3(lengthScale, 1, lengthScale);
+        var endOffset = Vector3.Transform(edge.End - mid, turn) * new Vector3(lengthScale, 1, lengthScale);
+
+        PropChangeAction act = new(this, WrappedObject);
+        act.AddPropertyChange(GetProperty("Start"), newt.Position + startOffset);
+        act.AddPropertyChange(GetProperty("End"), newt.Position + endOffset);
+
+        if (includeScale)
+            act.AddPropertyChange(GetProperty("Height"), newt.Scale.Y);
+
+        act.SetPostExecutionAction(undo =>
+        {
+            UpdateRenderModel();
+        });
+
+        return act;
+    }
+
     public void AssignNavmeshDrawable()
     {
         var curUniverse = Owner as MapUniverse;
@@ -1226,6 +1312,20 @@ public class MsbEntity : Entity
 
     public override Transform GetLocalTransform()
     {
+        // MSLD edges are placed by their ends rather than a position and rotation
+        if (Type == MsbEntityType.MapLimitEdge && WrappedObject is MSLD.Edge edge)
+        {
+            Transform edgeTransform = GetMapLimitEdgeTransform(edge);
+
+            // Prevent zero scale since it won't render
+            if (edgeTransform.Scale.X == 0)
+                edgeTransform.Scale.X = 0.1f;
+            if (edgeTransform.Scale.Y == 0)
+                edgeTransform.Scale.Y = 0.1f;
+
+            return edgeTransform;
+        }
+
         Transform t = base.GetLocalTransform();
         // If this is a region scale the region primitive by its respective parameters
         if (Type == MsbEntityType.Region)

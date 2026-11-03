@@ -397,6 +397,14 @@
       "Text": "Multiplayer Wall: Highlight Color"
     },
     {
+      "Key": "PREF_Viewport_Map_Limit_Wall_Base_Color",
+      "Text": "Mission Area Limit: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Map_Limit_Wall_Highlight_Color",
+      "Text": "Mission Area Limit: Highlight Color"
+    },
+    {
       "Key": "PREF_Viewport_Level_Connector_Marker_Base_Color",
       "Text": "Level Connector Marker: Base Color"
     },

@@ -77,6 +77,12 @@ public class MapContainer : ObjectContainer
     [XmlIgnore]
     public Entity MultiPlayerWallParent = null;
 
+    /// <summary>
+    /// The limits of the mission area (AC6). Its children are the areas, and theirs are the edges of each area.
+    /// </summary>
+    [XmlIgnore]
+    public Entity MapLimitParent = null;
+
     public Entity MapOffsetNode { get; set; }
 
     public List<Entity> Parts;
@@ -144,6 +150,8 @@ public class MapContainer : ObjectContainer
             MsbEntityType.Navmesh => IsNavVolumeEntity(msbEnt) ? MapFileType.NVVA : MapFileType.NVA,
             MsbEntityType.AssetConfiguration => MapFileType.ACB,
             MsbEntityType.MultiPlayerWall => MapFileType.MPW,
+            MsbEntityType.MapLimitArea => MapFileType.MSLD,
+            MsbEntityType.MapLimitEdge => MapFileType.MSLD,
             _ => MapFileType.MSB
         };
     }
@@ -423,6 +431,35 @@ public class MapContainer : ObjectContainer
         }
 
         MultiPlayerWallParent = wallParent;
+    }
+
+    public void LoadMSLD(string mapName, MSLD msld)
+    {
+        using var __scope = Profiler.TracyZoneAuto();
+        var limitParent = new MsbEntity(View.Universe, this, $"{mapName} (MSLD)", MsbEntityType.Editor);
+
+        MapOffsetNode.AddChild(limitParent);
+
+        foreach (var area in msld.Areas)
+        {
+            var areaEntity = new MsbEntity(View.Universe, this, area, MsbEntityType.MapLimitArea);
+            areaEntity.SupportsName = false;
+
+            Objects.Add(areaEntity);
+            limitParent.AddChild(areaEntity);
+
+            // The edges are saved from the children of their area, so the area's own list is left as it was read
+            foreach (var edge in area.Edges)
+            {
+                var edgeEntity = new MsbEntity(View.Universe, this, edge, MsbEntityType.MapLimitEdge);
+                edgeEntity.SupportsName = false;
+
+                Objects.Add(edgeEntity);
+                areaEntity.AddChild(edgeEntity);
+            }
+        }
+
+        MapLimitParent = limitParent;
     }
 
     public void LoadBTAB(string fileName, BTAB btab)

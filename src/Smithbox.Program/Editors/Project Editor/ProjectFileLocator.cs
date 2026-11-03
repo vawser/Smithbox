@@ -31,6 +31,11 @@ public class ProjectFileLocator : IDisposable
     /// The nav volumes for flying movement (AC6)
     /// </summary>
     public FileDictionary NavVolumeFiles = new();
+
+    /// <summary>
+    /// The mission area limits (AC6)
+    /// </summary>
+    public FileDictionary MapLimitFiles = new();
     public FileDictionary MultiPlayerWallFiles = new();
     public FileDictionary BreakFiles = new();
     public FileDictionary AutoInvadeFiles = new();
@@ -334,6 +339,7 @@ public class ProjectFileLocator : IDisposable
         var ds2LightFiles = new HashSet<FileDictionaryEntry>();
         var navmeshFiles = new HashSet<FileDictionaryEntry>();
         var navVolumeFiles = new HashSet<FileDictionaryEntry>();
+        var mapLimitFiles = new HashSet<FileDictionaryEntry>();
         var multiPlayerWallFiles = new HashSet<FileDictionaryEntry>();
         var breakFiles = new HashSet<FileDictionaryEntry>();
         var autoInvadeFiles = new HashSet<FileDictionaryEntry>();
@@ -432,6 +438,10 @@ public class ProjectFileLocator : IDisposable
             // Nav volumes (AC6)
             if (isMap && ext == "nvva" && !isSd)
                 navVolumeFiles.Add(entry);
+
+            // Mission area limits (AC6)
+            if (isMap && ext == "msld" && !isSd)
+                mapLimitFiles.Add(entry);
 
             // Multiplayer walls (ER)
             if (isMap && ext == "mpw" && !isSd)
@@ -570,6 +580,7 @@ public class ProjectFileLocator : IDisposable
         DS2_LightFiles.Entries = ds2LightFiles;
         NavmeshFiles.Entries = navmeshFiles;
         NavVolumeFiles.Entries = navVolumeFiles;
+        MapLimitFiles.Entries = mapLimitFiles;
         MultiPlayerWallFiles.Entries = multiPlayerWallFiles;
         BreakFiles.Entries = breakFiles;
         AutoInvadeFiles.Entries = autoInvadeFiles;
@@ -753,6 +764,7 @@ public class ProjectFileLocator : IDisposable
         DS2_LightFiles = null;
         NavmeshFiles = null;
         NavVolumeFiles = null;
+        MapLimitFiles = null;
         MultiPlayerWallFiles = null;
         BreakFiles = null;
         CollisionFiles = null;

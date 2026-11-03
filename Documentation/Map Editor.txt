@@ -3,7 +3,6 @@
 #----------------------------------------------------
 
 - Supoert AEP (MSB prefabs) (DB)
-- Support for MSLD (AC6)
 - Support for PTIDL (Parts token ID list) (AC6)
 
 - Added some kind of detection for LOD-only assets/map-pieces so we can add a toggle for hiding them quickly

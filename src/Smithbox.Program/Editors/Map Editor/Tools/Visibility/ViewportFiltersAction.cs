@@ -74,6 +74,7 @@ public class ViewportFiltersAction
         if (Project.Descriptor.ProjectType is ProjectType.AC6)
         {
             FilterCheckbox(scene, "Nav Volume", RenderFilter.NavVolume);
+            FilterCheckbox(scene, "Mission Area Limit", RenderFilter.MapLimit);
         }
 
         FilterCheckbox(scene, "Speed Tree", RenderFilter.SpeedTree);
@@ -95,7 +96,7 @@ public class ViewportFiltersAction
         {
             var visible = View.HavokCollisionBank.IsCollisionTypeVisible(curType);
 
-            if (ImGui.Checkbox($"{LOC.Get("curType.GetDisplayName()")}##colType{curType}", ref visible))
+            if (ImGui.Checkbox($"{LOC.Get(curType.GetDisplayName())}##colType{curType}", ref visible))
             {
                 View.HavokCollisionBank.ToggleCollisionType(curType);
                 View.DelayPicking();

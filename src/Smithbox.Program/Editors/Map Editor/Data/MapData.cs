@@ -44,6 +44,7 @@ public class MapData : IDisposable
     public HavokNavmeshBank HavokNavmeshBank;
     public AutoInvadeBank AutoInvadeBank;
     public MultiPlayerWallBank MultiPlayerWallBank;
+    public MapLimitBank MapLimitBank;
     public LightAtlasBank LightAtlasBank;
     public LightProbeBank LightProbeBank;
     public AssetConfigurationBank AssetConfigurationBank;
@@ -89,6 +90,7 @@ public class MapData : IDisposable
         HavokNavmeshBank = new HavokNavmeshBank(Project);
         AutoInvadeBank = new AutoInvadeBank(Project);
         MultiPlayerWallBank = new MultiPlayerWallBank(Project);
+        MapLimitBank = new MapLimitBank(Project);
         LightAtlasBank = new LightAtlasBank(Project);
         LightProbeBank = new LightProbeBank(Project);
         AssetConfigurationBank = new AssetConfigurationBank(Project);

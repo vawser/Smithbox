@@ -24,5 +24,7 @@ public enum MsbEntityType
     LightProbeVolume,
     Navmesh,
     AssetConfiguration,
-    MultiPlayerWall
+    MultiPlayerWall,
+    MapLimitArea,
+    MapLimitEdge
 }

@@ -113,6 +113,12 @@ public class MapEntityTypeCache
             mapcache.Add(MsbEntityType.MultiPlayerWall, new Dictionary<Type, List<MsbEntity>>());
         }
 
+        // External: MSLD, listed by area with the edges under each
+        if (View.MapLimitBank.CanUse())
+        {
+            mapcache.Add(MsbEntityType.MapLimitArea, new Dictionary<Type, List<MsbEntity>>());
+        }
+
         // External: BTAB
         if (View.LightAtlasBank.CanUse())
         {

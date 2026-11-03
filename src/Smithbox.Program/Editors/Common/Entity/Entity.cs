@@ -1464,7 +1464,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Get action for updating the Transform of this object.
     /// </summary>
-    public ViewportAction GetUpdateTransformAction(Transform newt, bool includeScale = false)
+    public virtual ViewportAction GetUpdateTransformAction(Transform newt, bool includeScale = false)
     {
         // Is param, e.g. DS2 enemy
         if (WrappedObject is Param.Row || WrappedObject is MergedParamRow)

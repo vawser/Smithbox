@@ -36,5 +36,10 @@ public enum MapFileType
     /// <summary>
     /// The NVVA file of a map, the nav volume for flying movement (AC6)
     /// </summary>
-    NVVA = 1 << 11
+    NVVA = 1 << 11,
+
+    /// <summary>
+    /// The MSLD file of a map, the limits of the mission area (AC6)
+    /// </summary>
+    MSLD = 1 << 12
 }

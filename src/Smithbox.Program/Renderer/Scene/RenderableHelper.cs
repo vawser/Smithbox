@@ -682,6 +682,36 @@ public static class RenderableHelper
         return r;
     }
 
+    // MISSION AREA LIMIT EDGE
+    // Built as the multiplayer wall panels are, as both are walls that rise from a line
+    public static DebugPrimitiveRenderableProxy GetMapLimitEdgeProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.Viewport_Map_Limit_Wall_Base_Color;
+        var highlightColor = CFG.Current.Viewport_Map_Limit_Wall_Highlight_Color;
+        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionBox);
+
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+
+        return r;
+    }
+
+    public static DebugPrimitiveRenderableProxy GetMapLimitEdgeFillProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.Viewport_Map_Limit_Wall_Base_Color;
+        var highlightColor = CFG.Current.Viewport_Map_Limit_Wall_Highlight_Color;
+
+        DebugPrimitiveRenderableProxy r = GetRegionFillProxy(scene, _regionSolidBox, baseColor);
+
+        r.Pickable = true;
+        r.Visible = true;
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
+
+        return r;
+    }
+
     // LIGHT PROBE SPHERE REGION
     public static DebugPrimitiveRenderableProxy GetLightProbeSphereProxy(RenderScene scene)
     {

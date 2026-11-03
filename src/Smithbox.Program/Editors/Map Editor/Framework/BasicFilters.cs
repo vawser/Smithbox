@@ -35,6 +35,7 @@ public class BasicFilters
         scene.SetDrawFilter(RenderFilter.SpeedTree, CFG.Current.MapEditor_BasicFilter_SpeedTree);
         scene.SetDrawFilter(RenderFilter.AutoInvade, CFG.Current.MapEditor_BasicFilter_InvasionPoint);
         scene.SetDrawFilter(RenderFilter.MultiPlayerWall, CFG.Current.MapEditor_BasicFilter_MultiPlayerWall);
+        scene.SetDrawFilter(RenderFilter.MapLimit, CFG.Current.MapEditor_BasicFilter_MapLimit);
     }
 
     /// <summary>
@@ -63,6 +64,7 @@ public class BasicFilters
         CFG.Current.MapEditor_BasicFilter_SpeedTree = filter.HasFlag(RenderFilter.SpeedTree);
         CFG.Current.MapEditor_BasicFilter_InvasionPoint = filter.HasFlag(RenderFilter.AutoInvade);
         CFG.Current.MapEditor_BasicFilter_MultiPlayerWall = filter.HasFlag(RenderFilter.MultiPlayerWall);
+        CFG.Current.MapEditor_BasicFilter_MapLimit = filter.HasFlag(RenderFilter.MapLimit);
 
         CFG.Current.LastSceneFilter = filter;
     }
@@ -315,6 +317,20 @@ public class BasicFilters
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.MultiPlayerWall);
             GUI.ShowActiveStatus(ticked);
             GUI.Tooltip(LOC.Get("MAP_Filters_Multiplayer_Walls_TT"));
+        }
+
+        // Mission Area Limits
+        if (View.Project.Descriptor.ProjectType is ProjectType.AC6)
+        {
+            if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Map_Limits_Title")}##toggleFilter_MapLimit"))
+            {
+                View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.MapLimit);
+                StoreFilterState();
+                View.DelayPicking();
+            }
+            ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.MapLimit);
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip(LOC.Get("MAP_Filters_Map_Limits_TT"));
         }
     }
 
