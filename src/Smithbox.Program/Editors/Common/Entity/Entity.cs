@@ -58,6 +58,7 @@ public class Entity : ISelectable, IDisposable
     private RenderableProxy _collisionSceneMesh;
     private IReadOnlyList<RenderableProxy> _collisionLayerMeshes;
     private RenderableProxy _selectionFillMesh;
+    private RenderableProxy _selectionWireMesh;
     private IReadOnlyList<RenderableProxy> _grassSceneMeshes;
     private IReadOnlyList<EdgePointMesh> _edgePointMeshes;
     private IReadOnlyList<WallMesh> _wallMeshes;
@@ -185,6 +186,7 @@ public class Entity : ISelectable, IDisposable
                 CollisionSceneMesh = null;
                 CollisionLayerMeshes = null;
                 SelectionFillMesh = null;
+                SelectionWireMesh = null;
                 GrassSceneMeshes = null;
                 EdgePointMeshes = null;
                 WallMeshes = null;
@@ -372,6 +374,30 @@ public class Entity : ISelectable, IDisposable
     private bool IsFillVisible => _EditorVisible && (IsSelected || FillAlwaysVisible);
 
     /// <summary>
+    /// A wireframe displayed only while this entity is selected, for entities whose render scene mesh is not
+    /// an outline of their shape (e.g. fog volumes, which display the fog itself).
+    /// </summary>
+    [XmlIgnore]
+    public RenderableProxy SelectionWireMesh
+    {
+        set
+        {
+            _selectionWireMesh?.Dispose();
+            _selectionWireMesh = value;
+
+            if (_selectionWireMesh != null && IsSelected)
+            {
+                _selectionWireMesh.RenderSelectionOutline = true;
+            }
+
+            ApplyMeshState();
+        }
+        get => _selectionWireMesh;
+    }
+
+    private bool IsWireVisible => _EditorVisible && IsSelected;
+
+    /// <summary>
     /// A bool to track if this entity has render groups.
     /// </summary>
     [XmlIgnore] 
@@ -485,6 +511,11 @@ public class Entity : ISelectable, IDisposable
                 SelectionFillMesh.Visible = IsFillVisible;
             }
 
+            if (SelectionWireMesh != null)
+            {
+                SelectionWireMesh.Visible = IsWireVisible;
+            }
+
             if (_grassSceneMeshes != null)
             {
                 foreach (RenderableProxy mesh in _grassSceneMeshes)
@@ -560,6 +591,11 @@ public class Entity : ISelectable, IDisposable
             _selectionFillMesh.RenderFocusGhost = ghosted;
         }
 
+        if (_selectionWireMesh != null)
+        {
+            _selectionWireMesh.RenderFocusGhost = ghosted;
+        }
+
         if (_grassSceneMeshes != null)
         {
             foreach (RenderableProxy mesh in _grassSceneMeshes)
@@ -628,6 +664,11 @@ public class Entity : ISelectable, IDisposable
         {
             SelectionFillMesh.RenderSelectionOutline = true;
         }
+
+        if (SelectionWireMesh != null)
+        {
+            SelectionWireMesh.RenderSelectionOutline = true;
+        }
     }
 
     public void OnDeselected()
@@ -652,6 +693,11 @@ public class Entity : ISelectable, IDisposable
         if (SelectionFillMesh != null)
         {
             SelectionFillMesh.RenderSelectionOutline = false;
+        }
+
+        if (SelectionWireMesh != null)
+        {
+            SelectionWireMesh.RenderSelectionOutline = false;
         }
     }
 
@@ -1785,6 +1831,12 @@ public class Entity : ISelectable, IDisposable
                     _selectionFillMesh = null;
                 }
 
+                if (SelectionWireMesh != null)
+                {
+                    SelectionWireMesh.Dispose();
+                    _selectionWireMesh = null;
+                }
+
                 if (GrassSceneMeshes != null)
                 {
                     GrassSceneMeshes = null;
@@ -1866,6 +1918,7 @@ public class Entity : ISelectable, IDisposable
         ApplyProxyState(_renderSceneMesh, t, useRenderGroups);
         ApplyProxyState(_collisionSceneMesh, t, useRenderGroups);
         ApplyProxyState(_selectionFillMesh, t, useRenderGroups, IsFillVisible);
+        ApplyProxyState(_selectionWireMesh, t, useRenderGroups, IsWireVisible);
 
         if (_collisionLayerMeshes != null)
         {

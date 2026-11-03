@@ -37,6 +37,12 @@ public class ProjectFileLocator : IDisposable
     /// </summary>
     public FileDictionary MapLimitFiles = new();
     public FileDictionary MultiPlayerWallFiles = new();
+
+    /// <summary>
+    /// The fog volume banks of the maps (ER, NR)
+    /// </summary>
+    public FileDictionary FogVolumeFiles = new();
+
     public FileDictionary BreakFiles = new();
     public FileDictionary AutoInvadeFiles = new();
     public FileDictionary LightAtlasFiles = new();
@@ -346,6 +352,7 @@ public class ProjectFileLocator : IDisposable
         var navVolumeFiles = new HashSet<FileDictionaryEntry>();
         var mapLimitFiles = new HashSet<FileDictionaryEntry>();
         var multiPlayerWallFiles = new HashSet<FileDictionaryEntry>();
+        var fogVolumeFiles = new HashSet<FileDictionaryEntry>();
         var breakFiles = new HashSet<FileDictionaryEntry>();
         var autoInvadeFiles = new HashSet<FileDictionaryEntry>();
         var lightAtlasFiles = new HashSet<FileDictionaryEntry>();
@@ -452,6 +459,10 @@ public class ProjectFileLocator : IDisposable
             // Multiplayer walls (ER)
             if (isMap && ext == "mpw" && !isSd)
                 multiPlayerWallFiles.Add(entry);
+
+            // Fog volumes (ER, NR)
+            if (isMap && ext == "fvb" && !isSd)
+                fogVolumeFiles.Add(entry);
 
             // Break data (DS2 keeps its breakobj files outside of /map)
             if ((ext == "breakobj" || ext == "breakgeom") && !isSd)
@@ -594,6 +605,7 @@ public class ProjectFileLocator : IDisposable
         NavVolumeFiles.Entries = navVolumeFiles;
         MapLimitFiles.Entries = mapLimitFiles;
         MultiPlayerWallFiles.Entries = multiPlayerWallFiles;
+        FogVolumeFiles.Entries = fogVolumeFiles;
         BreakFiles.Entries = breakFiles;
         AutoInvadeFiles.Entries = autoInvadeFiles;
         LightAtlasFiles.Entries = lightAtlasFiles;
@@ -779,6 +791,7 @@ public class ProjectFileLocator : IDisposable
         NavVolumeFiles = null;
         MapLimitFiles = null;
         MultiPlayerWallFiles = null;
+        FogVolumeFiles = null;
         BreakFiles = null;
         CollisionFiles = null;
         AutoInvadeFiles = null;

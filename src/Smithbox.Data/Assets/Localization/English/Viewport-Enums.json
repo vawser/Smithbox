@@ -93,6 +93,10 @@
       "Text": "Mission Area Limit"
     },
     {
+      "Key": "VIEWPORT_ENUM_RenderFilter_FogVolume",
+      "Text": "Fog Volume"
+    },
+    {
       "Key": "VIEWPORT_ENUM_RenderFilter_DummyEnemy",
       "Text": "Dummy Enemy"
     },

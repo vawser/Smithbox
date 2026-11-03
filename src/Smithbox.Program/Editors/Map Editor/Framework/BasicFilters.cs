@@ -36,6 +36,7 @@ public class BasicFilters
         scene.SetDrawFilter(RenderFilter.AutoInvade, CFG.Current.MapEditor_BasicFilter_InvasionPoint);
         scene.SetDrawFilter(RenderFilter.MultiPlayerWall, CFG.Current.MapEditor_BasicFilter_MultiPlayerWall);
         scene.SetDrawFilter(RenderFilter.MapLimit, CFG.Current.MapEditor_BasicFilter_MapLimit);
+        scene.SetDrawFilter(RenderFilter.FogVolume, CFG.Current.MapEditor_BasicFilter_FogVolume);
     }
 
     /// <summary>
@@ -65,6 +66,7 @@ public class BasicFilters
         CFG.Current.MapEditor_BasicFilter_InvasionPoint = filter.HasFlag(RenderFilter.AutoInvade);
         CFG.Current.MapEditor_BasicFilter_MultiPlayerWall = filter.HasFlag(RenderFilter.MultiPlayerWall);
         CFG.Current.MapEditor_BasicFilter_MapLimit = filter.HasFlag(RenderFilter.MapLimit);
+        CFG.Current.MapEditor_BasicFilter_FogVolume = filter.HasFlag(RenderFilter.FogVolume);
 
         CFG.Current.LastSceneFilter = filter;
     }
@@ -331,6 +333,20 @@ public class BasicFilters
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.MapLimit);
             GUI.ShowActiveStatus(ticked);
             GUI.Tooltip(LOC.Get("MAP_Filters_Map_Limits_TT"));
+        }
+
+        // Fog Volumes
+        if (View.FogVolumeBank.CanUse())
+        {
+            if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Fog_Volumes_Title")}##toggleFilter_FogVolume"))
+            {
+                View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.FogVolume);
+                StoreFilterState();
+                View.DelayPicking();
+            }
+            ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.FogVolume);
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip(LOC.Get("MAP_Filters_Fog_Volumes_TT"));
         }
     }
 

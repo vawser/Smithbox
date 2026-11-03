@@ -142,14 +142,24 @@ namespace SoulsFormats
             public int ID { get; set; }
 
             /// <summary>
-            /// The kind of value the property holds, which decides the type of <see cref="Value"/>.
+            /// The kind of value the property holds, which decides which of the value properties is written.
             /// </summary>
             public PropertyType Type { get; set; }
 
             /// <summary>
-            /// The value: an int for Int and Enum, a float for Float and a byte for Bool.
+            /// The value of an Int or Enum property.
             /// </summary>
-            public object Value { get; set; }
+            public int IntValue { get; set; }
+
+            /// <summary>
+            /// The value of a Float property.
+            /// </summary>
+            public float FloatValue { get; set; }
+
+            /// <summary>
+            /// The value of a Bool property.
+            /// </summary>
+            public byte ByteValue { get; set; }
 
             /// <summary>
             /// Creates an Int property with a value of -1.
@@ -157,17 +167,7 @@ namespace SoulsFormats
             public Property()
             {
                 Type = PropertyType.Int;
-                Value = -1;
-            }
-
-            /// <summary>
-            /// Creates a property with the given values.
-            /// </summary>
-            public Property(int id, PropertyType type, object value)
-            {
-                ID = id;
-                Type = type;
-                Value = value;
+                IntValue = -1;
             }
 
             /// <summary>
@@ -192,12 +192,12 @@ namespace SoulsFormats
 
                 br.StepIn(HeaderSize + valueOffset);
                 {
-                    Value = Type switch
+                    switch (Type)
                     {
-                        PropertyType.Float => br.ReadSingle(),
-                        PropertyType.Bool => br.ReadByte(),
-                        _ => br.ReadInt32(),
-                    };
+                        case PropertyType.Float: FloatValue = br.ReadSingle(); break;
+                        case PropertyType.Bool: ByteValue = br.ReadByte(); break;
+                        default: IntValue = br.ReadInt32(); break;
+                    }
                 }
                 br.StepOut();
             }
@@ -214,9 +214,9 @@ namespace SoulsFormats
             {
                 switch (Type)
                 {
-                    case PropertyType.Float: bw.WriteSingle(Convert.ToSingle(Value)); break;
-                    case PropertyType.Bool: bw.WriteByte(Convert.ToByte(Value)); break;
-                    default: bw.WriteInt32(Convert.ToInt32(Value)); break;
+                    case PropertyType.Float: bw.WriteSingle(FloatValue); break;
+                    case PropertyType.Bool: bw.WriteByte(ByteValue); break;
+                    default: bw.WriteInt32(IntValue); break;
                 }
             }
 
@@ -225,7 +225,13 @@ namespace SoulsFormats
             /// </summary>
             public override string ToString()
             {
-                return $"{ID} {Type} = {Value}";
+                string value = Type switch
+                {
+                    PropertyType.Float => FloatValue.ToString(),
+                    PropertyType.Bool => ByteValue.ToString(),
+                    _ => IntValue.ToString(),
+                };
+                return $"{ID} {Type} = {value}";
             }
         }
 
@@ -279,17 +285,18 @@ namespace SoulsFormats
             public string TextureName3 { get; set; }
 
             /// <summary>
-            /// The center of the box.
+            /// The center of the box. Enemies standing in ground fog are often below it, so it is not the base.
             /// </summary>
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// The rotation of the box, in radians.
             /// </summary>
+            [RotationRadians]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
-            /// The size of the box on each axis.
+            /// The full size of the box on each axis.
             /// </summary>
             public Vector3 Scale { get; set; }
 

@@ -177,6 +177,14 @@
       "Text": "Toggle the display of the MSLD files of maps: the walls around the areas of a mission."
     },
     {
+      "Key": "MAP_Filters_Fog_Volumes_Title",
+      "Text": "Fog Volumes"
+    },
+    {
+      "Key": "MAP_Filters_Fog_Volumes_TT",
+      "Text": "Toggle the display of the FVB files of maps: the boxes of volumetric fog, drawn with the settings of the map's graphics params."
+    },
+    {
       "Key": "MAP_Filters_Light_Probes_Title",
       "Text": "Light Probes"
     },

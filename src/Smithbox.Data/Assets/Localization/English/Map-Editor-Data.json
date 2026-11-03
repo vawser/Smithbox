@@ -273,6 +273,22 @@
       "Text": "Saved the MPW data of {0}."
     },
     {
+      "Key": "MAP_Data_Failed_Read_FVB",
+      "Text": "Failed to read {0} as FVB"
+    },
+    {
+      "Key": "MAP_Data_Failed_Write_FVB",
+      "Text": "Failed to write {0} as FVB"
+    },
+    {
+      "Key": "MAP_Data_Save_FVB_PASS",
+      "Text": "Saved the FVB data of {0}."
+    },
+    {
+      "Key": "MAP_Data_Failed_Read_Fog_GPARAM",
+      "Text": "Failed to read {0} for the settings of fog volumes"
+    },
+    {
       "Key": "MAP_Data_Failed_Read_MSLD",
       "Text": "Failed to read {0} as MSLD"
     },

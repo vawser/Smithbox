@@ -152,6 +152,7 @@ public class MapUniverse : IUniverse
 
                 View.AutoInvadeBank.LoadAIP(newMap);
                 View.MultiPlayerWallBank.LoadMPW(newMap);
+                View.FogVolumeBank.LoadFVB(newMap);
                 View.MapLimitBank.LoadMSLD(newMap);
                 View.LightAtlasBank.LoadBTAB(newMap);
                 View.LightProbeBank.LoadBTPB(newMap);
@@ -546,6 +547,7 @@ public class MapUniverse : IUniverse
         SaveFile(map, MapFileType.BTL, () => SaveBTL(View, map));
         SaveFile(map, MapFileType.AIP, () => View.AutoInvadeBank.SaveAIP(map));
         SaveFile(map, MapFileType.MPW, () => View.MultiPlayerWallBank.SaveMPW(map));
+        SaveFile(map, MapFileType.FVB, () => View.FogVolumeBank.SaveFVB(map));
         SaveFile(map, MapFileType.MSLD, () => View.MapLimitBank.SaveMSLD(map));
         SaveFile(map, MapFileType.BTAB, () => View.LightAtlasBank.SaveBTAB(map));
         SaveFile(map, MapFileType.BTPB, () => View.LightProbeBank.SaveBTPB(map));

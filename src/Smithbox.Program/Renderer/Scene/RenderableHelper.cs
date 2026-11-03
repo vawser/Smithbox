@@ -18,6 +18,11 @@ public static class RenderableHelper
     private static DbgPrimSolidBox _regionSolidBox_Default;
     private static DbgPrimWireBox _placeholderBox;
 
+    // Fog volumes are centered on their position, unlike region boxes
+    private static DbgPrimWireBox _fogVolumeBox;
+    private static DbgPrimSolidBox _fogVolumeSolidBox;
+    private static DbgPrimFogBox _fogVolumeFogBox;
+
     private static DbgPrimWireCylinder _regionCylinder;
     private static DbgPrimSolidCylinder _regionSolidCylinder;
 
@@ -92,6 +97,20 @@ public static class RenderableHelper
             new Vector3(-0.5f, 0.0f, -0.5f),
             new Vector3(0.5f, 1.0f, 0.5f),
             Color.Blue);
+
+        _fogVolumeBox = new DbgPrimWireBox(
+            Transform.Default,
+            new Vector3(-0.5f),
+            new Vector3(0.5f),
+            Color.Gray);
+
+        _fogVolumeSolidBox = new DbgPrimSolidBox(
+            Transform.Default,
+            new Vector3(-0.5f),
+            new Vector3(0.5f),
+            Color.Gray);
+
+        _fogVolumeFogBox = new DbgPrimFogBox();
 
         // CYLINDER
         _regionSolidCylinder = new DbgPrimSolidCylinder(
@@ -677,6 +696,40 @@ public static class RenderableHelper
         // Like a placeholder, the fill is the panel, so it is always displayed and clickable
         r.Pickable = true;
         r.Visible = true;
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
+
+        return r;
+    }
+
+    // FOG VOLUME
+    // The fog itself, which is always displayed. The box around it is only displayed while it is selected.
+    public static FogVolumeRenderableProxy GetFogVolumeProxy(RenderScene scene)
+    {
+        return new FogVolumeRenderableProxy(scene.OpaqueRenderables, _fogVolumeFogBox);
+    }
+
+    public static DebugPrimitiveRenderableProxy GetFogVolumeWireProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.Viewport_Fog_Volume_Base_Color;
+        var highlightColor = CFG.Current.Viewport_Fog_Volume_Highlight_Color;
+        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _fogVolumeBox);
+
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        r.Visible = false;
+
+        return r;
+    }
+
+    public static DebugPrimitiveRenderableProxy GetFogVolumeFillProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.Viewport_Fog_Volume_Base_Color;
+        var highlightColor = CFG.Current.Viewport_Fog_Volume_Highlight_Color;
+
+        // Not clickable, as fog volumes are often bigger than the map pieces in them
+        DebugPrimitiveRenderableProxy r = GetRegionFillProxy(scene, _fogVolumeSolidBox, baseColor);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
 
         return r;

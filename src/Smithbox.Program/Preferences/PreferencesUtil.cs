@@ -119,6 +119,8 @@ public static class PreferencesUtil
         CFG.Current.Viewport_MultiPlayer_Wall_Base_Color = CFG.Default.Viewport_MultiPlayer_Wall_Base_Color;
         CFG.Current.Viewport_MultiPlayer_Wall_Highlight_Color = CFG.Default.Viewport_MultiPlayer_Wall_Highlight_Color;
         CFG.Current.Viewport_Map_Limit_Wall_Base_Color = CFG.Default.Viewport_Map_Limit_Wall_Base_Color;
+        CFG.Current.Viewport_Fog_Volume_Base_Color = CFG.Default.Viewport_Fog_Volume_Base_Color;
+        CFG.Current.Viewport_Fog_Volume_Highlight_Color = CFG.Default.Viewport_Fog_Volume_Highlight_Color;
         CFG.Current.Viewport_Map_Limit_Wall_Highlight_Color = CFG.Default.Viewport_Map_Limit_Wall_Highlight_Color;
 
         CFG.Current.Viewport_Level_Connector_Marker_Base_Color = CFG.Default.Viewport_Level_Connector_Marker_Base_Color;

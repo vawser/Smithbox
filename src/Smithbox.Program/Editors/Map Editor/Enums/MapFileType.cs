@@ -41,5 +41,10 @@ public enum MapFileType
     /// <summary>
     /// The MSLD file of a map, the limits of the mission area (AC6)
     /// </summary>
-    MSLD = 1 << 12
+    MSLD = 1 << 12,
+
+    /// <summary>
+    /// The FVB files of a map, its fog volumes (ER, NR)
+    /// </summary>
+    FVB = 1 << 13
 }

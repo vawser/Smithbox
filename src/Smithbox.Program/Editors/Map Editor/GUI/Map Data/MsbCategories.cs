@@ -804,6 +804,11 @@ public static class MsbCategories
             dict["Multiplayer Wall"] = typeof(MPW.Panel);
         }
 
+        if (view.FogVolumeBank.CanUse())
+        {
+            dict["Fog Volume"] = typeof(FVB.Volume);
+        }
+
         if (view.MapLimitBank.CanUse())
         {
             dict["Mission Area Limit"] = typeof(MSLD.Area);

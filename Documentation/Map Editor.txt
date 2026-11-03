@@ -36,7 +36,8 @@
 - Add Object Mass Edit that allows for addition/deletion of map objects programmatically
 
 - Lighting:
-    - See if GPARAM can be used to tune sun for more accurate sun lighting (plus add gparam switcher, like Model Mask switcher)
+    - Introduce GPARAM elements
+    - Introduce shadows
     - GIIV
     - EnvMaps
 

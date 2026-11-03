@@ -81,6 +81,9 @@ public enum RenderFilter
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_MapLimit")]
     MapLimit = 16777216,
 
+    [Display(Name = "VIEWPORT_ENUM_RenderFilter_FogVolume")]
+    FogVolume = 33554432,
+
     [Display(Name = "VIEWPORT_ENUM_RenderFilter_All")]
     All = 0xFFFFFFF
 }

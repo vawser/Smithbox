@@ -113,6 +113,12 @@ public class MapEntityTypeCache
             mapcache.Add(MsbEntityType.MultiPlayerWall, new Dictionary<Type, List<MsbEntity>>());
         }
 
+        // External: FVB
+        if (View.FogVolumeBank.CanUse())
+        {
+            mapcache.Add(MsbEntityType.FogVolume, new Dictionary<Type, List<MsbEntity>>());
+        }
+
         // External: MSLD, listed by area with the edges under each
         if (View.MapLimitBank.CanUse())
         {

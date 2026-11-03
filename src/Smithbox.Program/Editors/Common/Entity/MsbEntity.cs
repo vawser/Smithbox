@@ -83,6 +83,7 @@ public class MsbEntity : Entity
 
         // A part can go from a placeholder to a real model, which has no fill
         SelectionFillMesh = null;
+        SelectionWireMesh = null;
         CollisionLayerMeshes = null;
         PrefabMemberMeshes = null;
 
@@ -130,6 +131,10 @@ public class MsbEntity : Entity
 
             case MsbEntityType.LightProbeVolume:
                 //AssignLightProbeDrawable();
+                break;
+
+            case MsbEntityType.FogVolume:
+                AssignFogVolumeDrawable();
                 break;
 
             default: break;
@@ -1071,6 +1076,64 @@ public class MsbEntity : Entity
         RenderSceneMesh = SetupPlaceholderMesh(mesh, fill, RenderFilter.MultiPlayerWall);
     }
 
+    // The fog ID and textures the fog of a volume was last drawn with, so it is only updated when they change
+    private (int FogID, string HeightMap, string ColorMap)? _fogVolumeState;
+
+    /// <summary>
+    /// The fog of the volume, which is always displayed, with a wireframe and fill of its box displayed while it
+    /// is selected. The box is sized by its transform, as the volume's scale is its size.
+    /// </summary>
+    public void AssignFogVolumeDrawable()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var scene = curUniverse.GetCurrentScene();
+
+        var fog = RenderableHelper.GetFogVolumeProxy(scene);
+        fog.World = GetWorldMatrix();
+        fog.SetSelectable(this);
+        fog.DrawFilter = RenderFilter.FogVolume;
+
+        var wire = RenderableHelper.GetFogVolumeWireProxy(scene);
+        wire.World = GetWorldMatrix();
+        wire.SetSelectable(this);
+        wire.DrawFilter = RenderFilter.FogVolume;
+
+        var fill = RenderableHelper.GetFogVolumeFillProxy(scene);
+        fill.World = GetWorldMatrix();
+        fill.SetSelectable(this);
+        fill.DrawFilter = RenderFilter.FogVolume;
+
+        _fogVolumeState = null;
+
+        RenderSceneMesh = fog;
+        SelectionWireMesh = wire;
+        SelectionFillMesh = fill;
+
+        RefreshFogVolume();
+    }
+
+    /// <summary>
+    /// Updates the fog of a volume after its fog ID or textures have been edited
+    /// </summary>
+    private void RefreshFogVolume()
+    {
+        if (Type != MsbEntityType.FogVolume || RenderSceneMesh is not FogVolumeRenderableProxy fog
+            || WrappedObject is not FVB.Volume volume)
+            return;
+
+        var state = (volume.FogID, volume.HeightMapName, volume.ColorMapName);
+
+        if (_fogVolumeState == state)
+            return;
+
+        _fogVolumeState = state;
+
+        var curUniverse = Owner as MapUniverse;
+
+        fog.Settings = curUniverse.View.FogVolumeBank.GetSettings(Container?.Name, volume.FogID);
+        fog.SetTextures(volume.HeightMapName, volume.ColorMapName);
+    }
+
     /// <summary>
     /// A wireframe of the wall with a fill that is always displayed, so the mission area shows at a glance.
     /// The wall is placed and sized by its transform; see GetMapLimitEdgeTransform.
@@ -1538,6 +1601,7 @@ public class MsbEntity : Entity
         // Editing the grass fields of a part only reaches here
         RefreshGrass();
         RefreshEdgePoints();
+        RefreshFogVolume();
 
         base.UpdateRenderModel();
     }

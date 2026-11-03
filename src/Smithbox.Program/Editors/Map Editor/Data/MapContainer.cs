@@ -86,6 +86,12 @@ public class MapContainer : ObjectContainer
     [XmlIgnore]
     public Entity MapLimitParent = null;
 
+    /// <summary>
+    /// The fog volume banks of the map (ER, NR), one per FVB file. Their children are the volumes.
+    /// </summary>
+    [XmlIgnore]
+    public List<Entity> FogVolumeParents;
+
     public Entity MapOffsetNode { get; set; }
 
     public List<Entity> Parts;
@@ -155,6 +161,7 @@ public class MapContainer : ObjectContainer
             MsbEntityType.MultiPlayerWall => MapFileType.MPW,
             MsbEntityType.MapLimitArea => MapFileType.MSLD,
             MsbEntityType.MapLimitEdge => MapFileType.MSLD,
+            MsbEntityType.FogVolume => MapFileType.FVB,
             _ => MapFileType.MSB
         };
     }
@@ -211,6 +218,7 @@ public class MapContainer : ObjectContainer
         BTLParents = new();
         LightAtlasParents = new();
         LightProbeParents = new();
+        FogVolumeParents = new();
 
         Parts = new();
         Events = new();
@@ -434,6 +442,27 @@ public class MapContainer : ObjectContainer
         }
 
         MultiPlayerWallParent = wallParent;
+    }
+
+    /// <summary>
+    /// Adds the volumes of an FVB file under a parent named after the file, so they are saved back to it
+    /// </summary>
+    public void LoadFVB(string fileName, FVB fvb)
+    {
+        using var __scope = Profiler.TracyZoneAuto();
+        var fogParent = new MsbEntity(View.Universe, this, fileName, MsbEntityType.Editor);
+
+        MapOffsetNode.AddChild(fogParent);
+
+        foreach (var volume in fvb.Volumes)
+        {
+            var newEntity = new MsbEntity(View.Universe, this, volume, MsbEntityType.FogVolume);
+
+            Objects.Add(newEntity);
+            fogParent.AddChild(newEntity);
+        }
+
+        FogVolumeParents.Add(fogParent);
     }
 
     public void LoadMSLD(string mapName, MSLD msld)

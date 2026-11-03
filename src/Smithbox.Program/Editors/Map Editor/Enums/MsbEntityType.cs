@@ -26,5 +26,6 @@ public enum MsbEntityType
     AssetConfiguration,
     MultiPlayerWall,
     MapLimitArea,
-    MapLimitEdge
+    MapLimitEdge,
+    FogVolume
 }

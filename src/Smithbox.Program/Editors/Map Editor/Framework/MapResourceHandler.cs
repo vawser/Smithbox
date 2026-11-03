@@ -223,6 +223,18 @@ public class MapResourceHandler
             if (textureAsset.IsValid())
                 LoadList_Other_Texture.Add(textureAsset);
         }
+
+        // Fog volumes: their height and color maps are asset textures, e.g. AET822_009_1m in aet822_009
+        foreach (var textureName in View.FogVolumeBank.GetTextureNames(MapID))
+        {
+            if (textureName.Length < 10)
+                continue;
+
+            var textureAsset = TextureLocator.GetAssetTextureVirtualPath(View.Project, textureName.Substring(0, 10).ToLowerInvariant());
+
+            if (textureAsset.IsValid())
+                LoadList_Asset_Texture.Add(textureAsset);
+        }
     }
 
     /// <summary>

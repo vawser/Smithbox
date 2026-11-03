@@ -405,6 +405,14 @@
       "Text": "Mission Area Limit: Highlight Color"
     },
     {
+      "Key": "PREF_Viewport_Fog_Volume_Base_Color",
+      "Text": "Fog Volume: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Fog_Volume_Highlight_Color",
+      "Text": "Fog Volume: Highlight Color"
+    },
+    {
       "Key": "PREF_Viewport_Level_Connector_Marker_Base_Color",
       "Text": "Level Connector Marker: Base Color"
     },

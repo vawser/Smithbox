@@ -170,6 +170,7 @@ public class EntAddAction : ViewportAction
             Added[i].CollisionLayerMeshes = null;
             Added[i].PrefabMemberMeshes = null;
             Added[i].SelectionFillMesh = null;
+            Added[i].SelectionWireMesh = null;
             (Added[i] as MsbEntity)?.ClearGrass();
             (Added[i] as MsbEntity)?.ClearEdgePoints();
             (Added[i] as MsbEntity)?.ClearWalls();

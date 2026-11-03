@@ -462,6 +462,7 @@ public class EntReplicateAction : ViewportAction
             Clones[i].CollisionLayerMeshes = null;
             Clones[i].PrefabMemberMeshes = null;
             Clones[i].SelectionFillMesh = null;
+            Clones[i].SelectionWireMesh = null;
             Clones[i].ClearGrass();
             Clones[i].ClearEdgePoints();
             Clones[i].ClearWalls();

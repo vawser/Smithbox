@@ -356,6 +356,7 @@ public class CFG
     public bool MapEditor_BasicFilter_InvasionPoint = true;
     public bool MapEditor_BasicFilter_MultiPlayerWall = true;
     public bool MapEditor_BasicFilter_MapLimit = true;
+    public bool MapEditor_BasicFilter_FogVolume = true;
 
     // Toolbar
     public bool Toolbar_Duplicate_Increment_Entity_ID = false;
@@ -1303,6 +1304,8 @@ public class CFG
     public Vector3 Viewport_MultiPlayer_Wall_Highlight_Color = Utils.GetDecimalColor(Color.DarkGoldenrod);
     public Vector3 Viewport_Map_Limit_Wall_Base_Color = Utils.GetDecimalColor(Color.OrangeRed);
     public Vector3 Viewport_Map_Limit_Wall_Highlight_Color = Utils.GetDecimalColor(Color.DarkOrange);
+    public Vector3 Viewport_Fog_Volume_Base_Color = Utils.GetDecimalColor(Color.Gray);
+    public Vector3 Viewport_Fog_Volume_Highlight_Color = Utils.GetDecimalColor(Color.LightGray);
 
     public Vector3 GFX_Renderable_LightProbeSphere_BaseColor = Utils.GetDecimalColor(Color.Yellow);
     public Vector3 GFX_Renderable_LightProbeSphere_HighlightColor = Utils.GetDecimalColor(Color.YellowGreen);

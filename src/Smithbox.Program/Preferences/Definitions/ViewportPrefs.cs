@@ -801,6 +801,16 @@ public class ViewportPrefs
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
+                    $"{LOC.Get("PREF_Viewport_Fog_Volume_Base_Color")}##Viewport_Fog_Volume_Base_Color",
+                    ref CFG.Current.Viewport_Fog_Volume_Base_Color);
+
+                DPI.ApplyInputWidth();
+                ImGui.ColorEdit3(
+                    $"{LOC.Get("PREF_Viewport_Fog_Volume_Highlight_Color")}##Viewport_Fog_Volume_Highlight_Color",
+                    ref CFG.Current.Viewport_Fog_Volume_Highlight_Color);
+
+                DPI.ApplyInputWidth();
+                ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Map_Limit_Wall_Highlight_Color")}##Viewport_Map_Limit_Wall_Highlight_Color",
                     ref CFG.Current.Viewport_Map_Limit_Wall_Highlight_Color);
 
