@@ -262,6 +262,9 @@ public class TimeActEditorScreen : EditorScreen
             return;
 
         activeView.ViewportWindow.Update(dt);
+
+        // The map lighting and irradiance volume the viewports borrow
+        Project.Handler.ViewportEnvironment.Update();
     }
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)

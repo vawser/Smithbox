@@ -29,8 +29,17 @@
 - Add 'camera path' authoring for new camera hkxs for cutscenes
 - Add Object Mass Edit that allows for addition/deletion of map objects programmatically
 
-- Lighting:
+- Renderer:
     - Introduce GPARAM elements
-    - Introduce shadows
-
-    
+        - Fog
+        - VolumetricFog
+        - Cloud Shadow
+        - SSAO
+        - AO
+        - SSR
+        - LightShaft
+        - Bloom / Glow Filter
+        - Anti-Alias
+        - ColorGrading
+        - Wet
+        - Sea Waves

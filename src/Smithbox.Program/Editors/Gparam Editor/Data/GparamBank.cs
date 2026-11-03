@@ -220,6 +220,9 @@ public class GparamBank : IDisposable
         {
             Project.Handler.MapData?.FogVolumeBank?.ClearSettingsCache();
             Project.Handler.MapData?.GparamLightingBank?.ClearCache();
+
+            // So does the Model and Time Act Editors' viewport environment
+            Project.Handler.ExistingViewportEnvironment?.LightingBank.ClearCache();
         }
 
         return saved;

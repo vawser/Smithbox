@@ -83,15 +83,67 @@ public class IrradianceVolumeBank
         if (!CanUse())
             return;
 
+        var volumes = LoadVolumes(map.Name);
+
+        // Temporary diagnostics for checking the links, see Full GI Plan.md phase 1
+        var summary = Summarise(map);
+        Smithbox.Log(this, LOC.Get("MAP_GI_Load_Summary",
+            map.Name,
+            volumes.Infos.Count,
+            string.Join(" ", volumes.Bakes.Select(b => $"{b:D2} ({volumes.CountInBake(b)})")),
+            volumes.BakeFiles.Values.Sum(f => f.Count),
+            summary.Boxes,
+            summary.Linked,
+            summary.Unlinked,
+            summary.LinkedWithoutVolume,
+            summary.SkippedByGame));
+    }
+
+    /// <summary>
+    /// Whether the project has the IVINFOs of a map
+    /// </summary>
+    public bool HasVolumes(string mapId)
+    {
+        return Project.Locator.IrradianceVolumeFiles.Entries
+            .Any(e => e.Filename.Equals($"{mapId}_{Quality}", StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>
+    /// The maps the project has IVINFOs for
+    /// </summary>
+    public List<string> ListMapsWithVolumes()
+    {
+        var suffix = $"_{Quality}";
+
+        return Project.Locator.IrradianceVolumeFiles.Entries
+            .Select(e => e.Filename)
+            .Where(n => n.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
+            .Select(n => n.Substring(0, n.Length - suffix.Length))
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderBy(n => n, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+    }
+
+    /// <summary>
+    /// Reads a map's IVINFOs and lists its envmap files, without the map itself, and keeps them for
+    /// <see cref="GetMap" />
+    /// </summary>
+    public MapVolumes LoadVolumes(string mapId)
+    {
         var volumes = new MapVolumes();
+
+        if (!CanUse() || mapId == null)
+            return volumes;
+
         var infoEntry = Project.Locator.IrradianceVolumeFiles.Entries
-            .FirstOrDefault(e => e.Filename.Equals($"{map.Name}_{Quality}", StringComparison.OrdinalIgnoreCase));
+            .FirstOrDefault(e => e.Filename.Equals($"{mapId}_{Quality}", StringComparison.OrdinalIgnoreCase));
 
         if (infoEntry != null)
         {
             try
             {
-                var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
+                // The project's own, which the Map Editor's bank reads too, so this works without the Map Editor
+                var fs = Project.VFS.FS;
 
                 if (fs.FileExists(infoEntry.Path))
                 {
@@ -115,25 +167,14 @@ public class IrradianceVolumeBank
             }
         }
 
-        volumes.BakeFiles = GetBakeFiles(map.Name);
+        volumes.BakeFiles = GetBakeFiles(mapId);
 
         lock (Maps)
         {
-            Maps[map.Name] = volumes;
+            Maps[mapId] = volumes;
         }
 
-        // Temporary diagnostics for checking the links, see Full GI Plan.md phase 1
-        var summary = Summarise(map);
-        Smithbox.Log(this, LOC.Get("MAP_GI_Load_Summary",
-            map.Name,
-            volumes.Infos.Count,
-            string.Join(" ", volumes.Bakes.Select(b => $"{b:D2} ({volumes.CountInBake(b)})")),
-            volumes.BakeFiles.Values.Sum(f => f.Count),
-            summary.Boxes,
-            summary.Linked,
-            summary.Unlinked,
-            summary.LinkedWithoutVolume,
-            summary.SkippedByGame));
+        return volumes;
     }
 
     /// <summary>
@@ -258,6 +299,19 @@ public class IrradianceVolumeBank
     }
 
     /// <summary>
+    /// Forgets that a bake was queued and found on the GPU, so <see cref="RequestBake" /> queues it again, for
+    /// textures that were unloaded since
+    /// </summary>
+    public void ForgetBake(string mapId, int bake)
+    {
+        lock (RequestedBakes)
+        {
+            RequestedBakes.Remove((mapId, bake));
+            ResidentBakes.Remove((mapId, bake));
+        }
+    }
+
+    /// <summary>
     /// Whether every volume of a map's bake has its textures on the GPU. True if the map has no such bake, as there
     /// is nothing to wait for.
     /// </summary>
@@ -296,6 +350,12 @@ public class IrradianceVolumeBank
     /// </summary>
     public (int Bake, int BlendBake, float BlendRatio) ResolveBakes(IEnumerable<MapContainer> maps)
     {
+        return ResolveBakes(maps.Select(m => m.Name));
+    }
+
+    /// <inheritdoc cref="ResolveBakes(IEnumerable{MapContainer})" />
+    public (int Bake, int BlendBake, float BlendRatio) ResolveBakes(IEnumerable<string> mapIds)
+    {
         if (!BakesFollowTime)
         {
             FollowedBakes = null;
@@ -308,12 +368,12 @@ public class IrradianceVolumeBank
         var wanted = GparamLighting.TimezonesAt(CFG.Current.Viewport_Map_Lighting_Hours);
         var ready = true;
 
-        foreach (var map in maps)
+        foreach (var mapId in mapIds)
         {
-            RequestBake(map.Name, wanted.From);
-            RequestBake(map.Name, wanted.To);
+            RequestBake(mapId, wanted.From);
+            RequestBake(mapId, wanted.To);
 
-            ready &= IsBakeResident(map.Name, wanted.From) && IsBakeResident(map.Name, wanted.To);
+            ready &= IsBakeResident(mapId, wanted.From) && IsBakeResident(mapId, wanted.To);
         }
 
         var current = FollowedBakes;
@@ -479,7 +539,7 @@ public class IrradianceVolumeBank
     private IrradianceVolumeData[] _tableEntries = new IrradianceVolumeData[IrradianceVolumeTable.Capacity];
 
     // The light of the viewport's default environment map, which models are lit by outside the volumes
-    private const double AmbientTarget = 0.5;
+    public const double AmbientTarget = 0.5;
 
     /// <summary>
     /// Rebuild the volume table the shaders light with, from the loaded maps' linked boxes whose four textures of
@@ -547,7 +607,7 @@ public class IrradianceVolumeBank
     /// <summary>
     /// The four textures of a volume's bake, if all are on the GPU in the volume pool
     /// </summary>
-    private static bool TryGetBakeTextures(string mapId, int id, int bake, out TexturePool.TextureHandle[] textures)
+    public static bool TryGetBakeTextures(string mapId, int id, int bake, out TexturePool.TextureHandle[] textures)
     {
         textures = new TexturePool.TextureHandle[4];
         var names = GetTextureNames(mapId, id, bake);
@@ -582,22 +642,6 @@ public class IrradianceVolumeBank
         if (id < 0 || region is not IMsbRegion { Shape: MSB.Shape.Box } || !volumes.HasVolume(id, bake))
             return false;
 
-        if (!TryGetBakeTextures(mapId, id, bake, out var textures))
-            return false;
-
-        // The bake to blend towards, if the volume has it and its textures are loaded; otherwise the first again
-        var blendTextures = textures;
-        var blendInfo = volumes.Infos[(id, bake)];
-        var ratio = 0.0f;
-
-        if (blendBake >= 0 && blendBake != bake && blendRatio > 0 && volumes.HasVolume(id, blendBake)
-            && TryGetBakeTextures(mapId, id, blendBake, out var loaded))
-        {
-            blendTextures = loaded;
-            blendInfo = volumes.Infos[(id, blendBake)];
-            ratio = Math.Clamp(blendRatio, 0.0f, 1.0f);
-        }
-
         float fadeDistance;
         float diffuseScale;
         float specularScale;
@@ -629,10 +673,49 @@ public class IrradianceVolumeBank
                 return false;
         }
 
-        // The region's unit box spans -0.5 to 0.5 on X and Z and 0 to 1 on Y (its position is the bottom
-        // centre); the game's volume space spans -1 to 1 on every axis
         var world = entity.GetWorldMatrix();
 
+        if (!TryBuildEntry(mapId, volumes, id, bake, blendBake, blendRatio, world, fadeDistance, diffuseScale,
+                specularScale, out data))
+            return false;
+
+        Matrix4x4.Decompose(world, out var scale, out _, out _);
+
+        size = MathF.Abs(scale.X * scale.Y * scale.Z);
+
+        return true;
+    }
+
+    /// <summary>
+    /// The shaders' entry for a volume's bake placed by <paramref name="world" />, the world matrix of a region's
+    /// unit box, if its textures are on the GPU. Also used for a volume placed somewhere other than its box, as the
+    /// Model and Time Act Editors' viewport environment does.
+    /// </summary>
+    /// <param name="blendBake">The bake to blend towards, or -1; the first again if it isn't loaded</param>
+    public static bool TryBuildEntry(string mapId, MapVolumes volumes, int id, int bake, int blendBake,
+        float blendRatio, Matrix4x4 world, float fadeDistance, float diffuseScale, float specularScale,
+        out IrradianceVolumeData data)
+    {
+        data = default;
+
+        if (volumes == null || !volumes.HasVolume(id, bake) || !TryGetBakeTextures(mapId, id, bake, out var textures))
+            return false;
+
+        // The bake to blend towards, if the volume has it and its textures are loaded; otherwise the first again
+        var blendTextures = textures;
+        var blendInfo = volumes.Infos[(id, bake)];
+        var ratio = 0.0f;
+
+        if (blendBake >= 0 && blendBake != bake && blendRatio > 0 && volumes.HasVolume(id, blendBake)
+            && TryGetBakeTextures(mapId, id, blendBake, out var loaded))
+        {
+            blendTextures = loaded;
+            blendInfo = volumes.Infos[(id, blendBake)];
+            ratio = Math.Clamp(blendRatio, 0.0f, 1.0f);
+        }
+
+        // The region's unit box spans -0.5 to 0.5 on X and Z and 0 to 1 on Y (its position is the bottom
+        // centre); the game's volume space spans -1 to 1 on every axis
         if (!Matrix4x4.Invert(world, out var inverse))
             return false;
 
@@ -670,8 +753,6 @@ public class IrradianceVolumeBank
 
         data.BoundsMin = new Vector4(min, 0);
         data.BoundsMax = new Vector4(max, 0);
-
-        size = MathF.Abs(scale.X * scale.Y * scale.Z);
 
         return true;
     }

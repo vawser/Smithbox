@@ -9,6 +9,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
+using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
 
 namespace StudioCore.Application;
@@ -76,6 +77,14 @@ public class ProjectEditorHandler : IDisposable
     public HavokEditorScreen HavokEditor;
     public HavokEditorStub HavokEditorStub;
 
+
+    // The lighting the Model and Time Act Editors' viewports borrow from a map, made when a viewport first asks
+    private ViewportEnvironment _viewportEnvironment;
+
+    public ViewportEnvironment ViewportEnvironment => _viewportEnvironment ??= new ViewportEnvironment(Project);
+
+    /// <summary>The viewport environment if one has been made, for clearing its caches without making one</summary>
+    public ViewportEnvironment ExistingViewportEnvironment => _viewportEnvironment;
 
     // Data tasks
     private Task<bool> _commonDataTask;
@@ -347,6 +356,9 @@ public class ProjectEditorHandler : IDisposable
         MaterialData?.Dispose();
         TextureData?.Dispose();
         HavokData?.Dispose();
+
+        _viewportEnvironment?.Dispose();
+        _viewportEnvironment = null;
     }
     #endregion
 }

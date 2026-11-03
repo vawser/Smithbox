@@ -1298,6 +1298,15 @@ public class CFG
     // bakes they need as the time moves, instead of the Global Illumination tab's bake settings
     public bool Viewport_Map_Lighting_Follow_Bakes = true;
 
+    // The Model and Time Act Editors' viewport environment (AC6, ER, NR): the map whose GPARAM lighting and
+    // irradiance bake light them ("" for the project type's default, see ViewportEnvironment), the GPARAM looked in
+    // first ("" for the map's own), the volume of the bake (-1 for the one of median light), and the size of the
+    // box it is stretched over, which is centred on the origin
+    public string Viewport_Environment_Map = "";
+    public string Viewport_Environment_Lighting_File = "";
+    public int Viewport_Environment_Volume = -1;
+    public float Viewport_Environment_Volume_Size = 30.0f;
+
     // How the viewports' HDR scene is taken to the screen, a ToneMapSetting: from the map's GPARAM Tone Map group,
     // or a fixed curve. The exposure is on top of the GPARAM's, and the white point is for a fixed Reinhard curve.
     public int Viewport_ToneMap = 0;

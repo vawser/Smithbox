@@ -9,20 +9,32 @@ namespace StudioCore.Renderer;
 /// descriptor set is needed: the shader reads it from the entry at <see cref="Start" />, for <see cref="Count" />
 /// entries, both passed in the scene params.
 /// </summary>
-public class IrradianceVolumeTable
+public class IrradianceVolumeTable : IDisposable
 {
     /// <summary>The most volumes shaded at once. ER maps have around 130 each.</summary>
     public const int Capacity = 512;
 
     private readonly GPUBufferAllocator.GPUBufferHandle _allocation;
 
+    // The most entries this table holds
+    private readonly int _capacity;
+
     // The last entries uploaded, so an unchanged table isn't uploaded again
     private byte[] _uploaded = Array.Empty<byte>();
 
-    public IrradianceVolumeTable(GPUBufferAllocator materialBuffer)
+    /// <param name="capacity">The most entries the table holds, <see cref="Capacity" /> for the Map Editor's</param>
+    public IrradianceVolumeTable(GPUBufferAllocator materialBuffer, int capacity = Capacity)
     {
+        _capacity = Math.Clamp(capacity, 1, Capacity);
+
         // Aligned to the entry size, so the start is a whole entry index
-        _allocation = materialBuffer.Allocate(Capacity * IrradianceVolumeData.Size, IrradianceVolumeData.Size);
+        _allocation = materialBuffer.Allocate((uint)(_capacity * IrradianceVolumeData.Size), IrradianceVolumeData.Size);
+    }
+
+    public void Dispose()
+    {
+        Count = 0;
+        _allocation?.Dispose();
     }
 
     /// <summary>The index of the first entry in the material buffer, counted in entries</summary>
@@ -39,7 +51,7 @@ public class IrradianceVolumeTable
 
     public void Upload(IrradianceVolumeData[] entries, int count)
     {
-        count = Math.Min(count, Capacity);
+        count = Math.Min(count, _capacity);
 
         var bytes = MemoryMarshal.AsBytes(entries.AsSpan(0, count)).ToArray();
 

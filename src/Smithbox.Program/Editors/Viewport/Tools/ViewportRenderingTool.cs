@@ -2,9 +2,12 @@ using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.TimeActEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
@@ -12,8 +15,10 @@ namespace StudioCore.Editors.Viewport;
 
 /// <summary>
 /// The tool window section that configures how an editor's viewport renders: its materials, lighting and, in the
-/// Map Editor, the environment map, irradiance volumes and the map's GPARAM lighting. Each is a tab. The values
-/// apply to the editor's current viewport, or to every viewport for those kept in the settings.
+/// Map Editor, the environment map, irradiance volumes and the map's GPARAM lighting. The Model and Time Act
+/// Editors get the irradiance volume and GPARAM lighting tabs too, for the map they borrow them from
+/// (<see cref="ViewportEnvironment" />). Each is a tab. The values apply to the editor's current viewport, or to
+/// every viewport for those kept in the settings.
 /// </summary>
 public class ViewportRenderingTool
 {
@@ -48,6 +53,24 @@ public class ViewportRenderingTool
 
             ImGui.EndChild();
         }
+    }
+
+    /// <summary>
+    /// The environment a Model or Time Act Editor viewport borrows from a map, null for other viewports and for
+    /// project types without map lighting
+    /// </summary>
+    private static ViewportEnvironment GetEnvironment(VulkanViewport viewport)
+    {
+        var project = viewport.Owner switch
+        {
+            ModelUniverse model => model.Project,
+            TimeActUniverse timeAct => timeAct.Project,
+            _ => null
+        };
+
+        return project?.Handler.ExistingViewportEnvironment is { } environment && environment.CanUse()
+            ? environment
+            : null;
     }
 
     private void DisplayTabs(VulkanViewport viewport)
@@ -99,7 +122,7 @@ public class ViewportRenderingTool
             {
                 if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
                 {
-                    MapLightingTab(mapUniverse.View);
+                    MapLightingTab(viewport, mapUniverse.View);
 
                     ImGui.EndTabItem();
                 }
@@ -108,6 +131,26 @@ public class ViewportRenderingTool
             if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_BTL_Lights")}##viewportRenderingBtlLights"))
             {
                 BtlLightsTab(mapUniverse.View);
+
+                ImGui.EndTabItem();
+            }
+        }
+        // Model and Time Act Editors, which borrow a map's
+        else if (GetEnvironment(viewport) is { } environment)
+        {
+            if (environment.Table != null)
+            {
+                if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Global_Illumination")}##viewportRenderingGlobalIllumination"))
+                {
+                    EnvironmentGlobalIlluminationTab(viewport, environment);
+
+                    ImGui.EndTabItem();
+                }
+            }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
+            {
+                EnvironmentLightingTab(viewport, environment);
 
                 ImGui.EndTabItem();
             }
@@ -263,64 +306,7 @@ public class ViewportRenderingTool
     /// </summary>
     private void GlobalIlluminationTab(VulkanViewport viewport, MapEditorView view)
     {
-        // These apply at once, as they are passed in the scene params every frame
-        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Enable")}##giEnable", ref CFG.Current.Viewport_GI_Enable);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Enable_TT"));
-
-        // With map lighting, the volumes take the GPARAM's exposure, as the sun does
-        var exposureFromMap = viewport.ViewPipeline.ActiveMapLighting != null;
-
-        ImGui.BeginDisabled(exposureFromMap);
-        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure")}##giAutoExposure", ref CFG.Current.Viewport_GI_Auto_Exposure);
-        ImGui.EndDisabled();
-        GUI.Tooltip(exposureFromMap
-            ? LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure_Map_TT")
-            : LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure_TT", SceneRenderer.IrradianceVolumes.AutoExposure));
-
-        DPI.ApplyInputWidth();
-        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_GI_Intensity")}##giIntensity", ref CFG.Current.Viewport_GI_Intensity,
-            0.0f, CFG.Current.Viewport_GI_Auto_Exposure || exposureFromMap ? 4.0f : 200.0f);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Intensity_TT"));
-
-        // With the bakes following the map lighting's time of day, the bake settings below aren't used
-        var bakesFollowTime = view.IrradianceVolumeBank.BakesFollowTime;
-
-        if (bakesFollowTime)
-        {
-            var (from, to, ratio) = GparamLighting.TimezonesAt(CFG.Current.Viewport_Map_Lighting_Hours);
-            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Bakes_Follow_Time", from, to, ratio));
-        }
-
-        ImGui.BeginDisabled(bakesFollowTime);
-
-        DPI.ApplyInputWidth();
-        if (ImGui.InputInt($"{LOC.Get("VIEWPORT_Menubar_GI_Bake")}##giBake", ref CFG.Current.Viewport_GI_Bake))
-        {
-            CFG.Current.Viewport_GI_Bake = Math.Clamp(CFG.Current.Viewport_GI_Bake, 0, 99);
-        }
-        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Bake_TT"));
-
-        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Bake_Blend")}##giBakeBlend", ref CFG.Current.Viewport_GI_Bake_Blend);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Bake_Blend_TT"));
-
-        if (CFG.Current.Viewport_GI_Bake_Blend)
-        {
-            DPI.ApplyInputWidth();
-            if (ImGui.InputInt($"{LOC.Get("VIEWPORT_Menubar_GI_Blend_Bake")}##giBlendBake", ref CFG.Current.Viewport_GI_Blend_Bake))
-            {
-                CFG.Current.Viewport_GI_Blend_Bake = Math.Clamp(CFG.Current.Viewport_GI_Blend_Bake, 0, 99);
-            }
-            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Blend_Bake_TT"));
-
-            DPI.ApplyInputWidth();
-            ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio")}##giBlendRatio", ref CFG.Current.Viewport_GI_Blend_Ratio, 0.0f, 1.0f);
-            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio_TT"));
-        }
-
-        ImGui.EndDisabled();
-
-        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections")}##giNormalizeReflections", ref CFG.Current.Viewport_GI_Normalize_Reflections);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections_TT"));
+        GlobalIlluminationSettings(viewport, view.IrradianceVolumeBank.BakesFollowTime);
 
         ImGui.Separator();
 
@@ -372,6 +358,184 @@ public class ViewportRenderingTool
             view.IrradianceVolumeIdTool.FocusRequested = true;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Open_Tool_TT"));
+    }
+
+    /// <summary>
+    /// The Model and Time Act Editors' irradiance volume: the settings every viewport shares, then the map it is
+    /// borrowed from, which of its volumes, and the size of the box it is stretched over
+    /// </summary>
+    private void EnvironmentGlobalIlluminationTab(VulkanViewport viewport, ViewportEnvironment environment)
+    {
+        GlobalIlluminationSettings(viewport, environment.VolumeBank.BakesFollowTime);
+
+        ImGui.Separator();
+
+        EnvironmentMapCombo(environment);
+
+        var volumes = environment.MapId != null ? environment.VolumeBank.GetMap(environment.MapId) : null;
+
+        var chosen = CFG.Current.Viewport_Environment_Volume;
+        var autoLabel = LOC.Get("VIEWPORT_Rendering_Environment_Volume_Auto", environment.MedianVolumeId);
+
+        DPI.ApplyInputWidth();
+        if (ImGui.BeginCombo($"{LOC.Get("VIEWPORT_Rendering_Environment_Volume")}##environmentVolume",
+            chosen >= 0 && volumes?.HasVolume(chosen) == true ? $"{chosen:D4}" : autoLabel, ImGuiComboFlags.HeightLarge))
+        {
+            if (ImGui.Selectable($"{autoLabel}##environmentVolumeAuto", chosen < 0))
+            {
+                CFG.Current.Viewport_Environment_Volume = -1;
+            }
+
+            if (volumes != null)
+            {
+                // Each volume with the bakes it has and its average light, as the median is picked by it
+                foreach (var group in volumes.Infos.GroupBy(i => i.Key.Id).OrderBy(g => g.Key))
+                {
+                    var light = group.Average(i => i.Value.ShLuminance.W);
+                    var label = LOC.Get("VIEWPORT_Rendering_Environment_Volume_Entry", group.Key, group.Count(), light);
+
+                    if (ImGui.Selectable($"{label}##environmentVolume_{group.Key}", chosen == group.Key))
+                    {
+                        CFG.Current.Viewport_Environment_Volume = group.Key;
+                    }
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Environment_Volume_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Environment_Volume_Size")}##environmentVolumeSize",
+            ref CFG.Current.Viewport_Environment_Volume_Size, 1.0f, 500.0f, "%.0f m");
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Environment_Volume_Size_TT"));
+
+        ImGui.Separator();
+
+        if (environment.MapId == null || volumes == null || environment.VolumeId < 0)
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Environment_No_Volume"));
+        }
+        else if (environment.VolumeShaded)
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Environment_Volume_Status",
+                environment.MapId, environment.VolumeId, environment.Bakes.Bake));
+        }
+        else
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Environment_Volume_Loading",
+                environment.MapId, environment.VolumeId, environment.Bakes.Bake));
+        }
+    }
+
+    // The map list's filter
+    private string EnvironmentMapFilter = "";
+
+    /// <summary>
+    /// The map the Model and Time Act Editors' viewports borrow their lighting and volume from
+    /// </summary>
+    private void EnvironmentMapCombo(ViewportEnvironment environment)
+    {
+        var defaultMap = ViewportEnvironment.GetDefaultMap(environment.Project.Descriptor.ProjectType);
+        var defaultLabel = LOC.Get("VIEWPORT_Rendering_Environment_Map_Default", defaultMap ?? "-");
+        var chosen = CFG.Current.Viewport_Environment_Map;
+
+        DPI.ApplyInputWidth();
+        if (ImGui.BeginCombo($"{LOC.Get("VIEWPORT_Rendering_Environment_Map")}##environmentMap",
+            string.IsNullOrEmpty(chosen) ? defaultLabel : chosen, ImGuiComboFlags.HeightLarge))
+        {
+            if (ImGui.IsWindowAppearing())
+                ImGui.SetKeyboardFocusHere();
+
+            ImGui.InputTextWithHint("##environmentMapFilter", LOC.Get("VIEWPORT_Menubar_Map_Lighting_File_Filter"),
+                ref EnvironmentMapFilter, 255);
+
+            if (ImGui.Selectable($"{defaultLabel}##environmentMapDefault", string.IsNullOrEmpty(chosen)))
+            {
+                CFG.Current.Viewport_Environment_Map = "";
+            }
+
+            foreach (var map in environment.ListMaps())
+            {
+                if (!string.IsNullOrEmpty(EnvironmentMapFilter) &&
+                    !map.Contains(EnvironmentMapFilter, StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                if (ImGui.Selectable($"{map}##environmentMap_{map}", map.Equals(chosen, StringComparison.OrdinalIgnoreCase)))
+                {
+                    CFG.Current.Viewport_Environment_Map = map;
+
+                    // Another map's volumes have other IDs
+                    CFG.Current.Viewport_Environment_Volume = -1;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Environment_Map_TT", environment.MapId ?? "-"));
+    }
+
+    /// <summary>
+    /// The Global Illumination settings every editor's viewports share
+    /// </summary>
+    private static void GlobalIlluminationSettings(VulkanViewport viewport, bool bakesFollowTime)
+    {
+        // These apply at once, as they are passed in the scene params every frame
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Enable")}##giEnable", ref CFG.Current.Viewport_GI_Enable);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Enable_TT"));
+
+        // With map lighting, the volumes take the GPARAM's exposure, as the sun does
+        var exposureFromMap = viewport.ViewPipeline.ActiveMapLighting != null;
+
+        ImGui.BeginDisabled(exposureFromMap);
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure")}##giAutoExposure", ref CFG.Current.Viewport_GI_Auto_Exposure);
+        ImGui.EndDisabled();
+        GUI.Tooltip(exposureFromMap
+            ? LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure_Map_TT")
+            : LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure_TT", viewport.ViewPipeline.ActiveVolumeTable.AutoExposure));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_GI_Intensity")}##giIntensity", ref CFG.Current.Viewport_GI_Intensity,
+            0.0f, CFG.Current.Viewport_GI_Auto_Exposure || exposureFromMap ? 4.0f : 200.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Intensity_TT"));
+
+        // With the bakes following the map lighting's time of day, the bake settings below aren't used
+        if (bakesFollowTime)
+        {
+            var (from, to, ratio) = GparamLighting.TimezonesAt(CFG.Current.Viewport_Map_Lighting_Hours);
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Bakes_Follow_Time", from, to, ratio));
+        }
+
+        ImGui.BeginDisabled(bakesFollowTime);
+
+        DPI.ApplyInputWidth();
+        if (ImGui.InputInt($"{LOC.Get("VIEWPORT_Menubar_GI_Bake")}##giBake", ref CFG.Current.Viewport_GI_Bake))
+        {
+            CFG.Current.Viewport_GI_Bake = Math.Clamp(CFG.Current.Viewport_GI_Bake, 0, 99);
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Bake_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Bake_Blend")}##giBakeBlend", ref CFG.Current.Viewport_GI_Bake_Blend);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Bake_Blend_TT"));
+
+        if (CFG.Current.Viewport_GI_Bake_Blend)
+        {
+            DPI.ApplyInputWidth();
+            if (ImGui.InputInt($"{LOC.Get("VIEWPORT_Menubar_GI_Blend_Bake")}##giBlendBake", ref CFG.Current.Viewport_GI_Blend_Bake))
+            {
+                CFG.Current.Viewport_GI_Blend_Bake = Math.Clamp(CFG.Current.Viewport_GI_Blend_Bake, 0, 99);
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Blend_Bake_TT"));
+
+            DPI.ApplyInputWidth();
+            ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio")}##giBlendRatio", ref CFG.Current.Viewport_GI_Blend_Ratio, 0.0f, 1.0f);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio_TT"));
+        }
+
+        ImGui.EndDisabled();
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections")}##giNormalizeReflections", ref CFG.Current.Viewport_GI_Normalize_Reflections);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections_TT"));
     }
 
     private static readonly int[] ShadowResolutions = { 1024, 2048, 4096 };
@@ -467,10 +631,101 @@ public class ViewportRenderingTool
     /// The lighting the loaded maps' GPARAMs give (AC6, ER, NR), for the scene and for models, and where each value
     /// came from, and what the viewports are lit with, see Gparam Lighting.md
     /// </summary>
-    private void MapLightingTab(MapEditorView view)
+    private void MapLightingTab(VulkanViewport viewport, MapEditorView view)
     {
         var bank = view.GparamLightingBank;
 
+        MapLightingSettings(viewport);
+
+        ImGui.Separator();
+
+        var maps = view.Project.Handler.MapData.PrimaryBank.Maps.Values
+            .Select(w => w.MapContainer)
+            .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
+            .ToList();
+
+        // The files of every loaded map's area first, then any other of the project's, which lights every map
+        var files = maps.SelectMany(m => bank.ListFiles(m.Name)).Distinct(StringComparer.OrdinalIgnoreCase).ToList();
+        var chosen = CFG.Current.Viewport_Map_Lighting_File;
+
+        LightingFileCombo(bank, files, chosen, file => CFG.Current.Viewport_Map_Lighting_File = file);
+
+        // The file the selected collision's scene GPARAM picks, as the game does when the player stands on it
+        var collisionFile = view.ViewportSelection.GetSelection()
+            .OfType<Entity>()
+            .Select(e => GparamLightingBank.GetSceneSubId(e.WrappedObject) is { } subId && e.Container is MapContainer map
+                ? bank.GetSubIdFile(map.Name, subId)
+                : null)
+            .FirstOrDefault(f => f != null);
+
+        ImGui.BeginDisabled(collisionFile == null);
+        if (ImGui.Button($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_From_Collision")}##mapLightingFromCollision"))
+        {
+            CFG.Current.Viewport_Map_Lighting_File = collisionFile;
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(collisionFile != null
+            ? LOC.Get("VIEWPORT_Menubar_Map_Lighting_From_Collision_TT", collisionFile)
+            : LOC.Get("VIEWPORT_Menubar_Map_Lighting_From_Collision_None_TT"));
+
+        WeatherCombo(bank, maps.SelectMany(m => bank.ListWeathers(m.Name)).Distinct().OrderBy(w => w).ToList());
+
+        TimeOfDaySettings(view.Project, view.IrradianceVolumeBank.CanUse());
+
+        ImGui.Separator();
+
+        if (maps.Count == 0)
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
+            return;
+        }
+
+        foreach (var map in maps)
+        {
+            LightingTable(bank, map.Name, bank.ChooseFile(map.Name, chosen));
+        }
+    }
+
+    /// <summary>
+    /// The Model and Time Act Editors' map lighting: the settings every viewport shares, then the map it is borrowed
+    /// from, and the file, weather and time of day it is read at
+    /// </summary>
+    private void EnvironmentLightingTab(VulkanViewport viewport, ViewportEnvironment environment)
+    {
+        var bank = environment.LightingBank;
+
+        MapLightingSettings(viewport);
+
+        ImGui.Separator();
+
+        EnvironmentMapCombo(environment);
+
+        var mapId = environment.MapId;
+
+        if (mapId == null)
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Environment_No_Map"));
+            return;
+        }
+
+        var chosen = CFG.Current.Viewport_Environment_Lighting_File;
+
+        LightingFileCombo(bank, bank.ListFiles(mapId), chosen, file => CFG.Current.Viewport_Environment_Lighting_File = file);
+
+        WeatherCombo(bank, bank.ListWeathers(mapId));
+
+        TimeOfDaySettings(environment.Project, environment.Table != null);
+
+        ImGui.Separator();
+
+        LightingTable(bank, mapId, bank.ChooseFile(mapId, chosen));
+    }
+
+    /// <summary>
+    /// The map lighting settings every editor's viewports share
+    /// </summary>
+    private static void MapLightingSettings(VulkanViewport viewport)
+    {
         // These apply at once, as the lighting is resolved every frame
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Enable")}##mapLightingEnable", ref CFG.Current.Viewport_Map_Lighting);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Enable_TT"));
@@ -492,7 +747,7 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Map_Lighting_Model_Lights);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Model_Lights_TT", GparamLightingBank.ModelLightSetId));
 
-        var active = SceneRenderer.MapLighting;
+        var active = viewport.ViewPipeline.ActiveMapLighting;
 
         if (CFG.Current.Viewport_Map_Lighting)
         {
@@ -500,18 +755,15 @@ public class ViewportRenderingTool
                 ? LOC.Get("VIEWPORT_Menubar_Map_Lighting_Active", active.File, active.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale)
                 : LOC.Get("VIEWPORT_Menubar_Map_Lighting_None"));
         }
+    }
 
-        ImGui.Separator();
-
-        var maps = view.Project.Handler.MapData.PrimaryBank.Maps.Values
-            .Select(w => w.MapContainer)
-            .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
-            .ToList();
-
-        // The files of every loaded map's area first, then any other of the project's, which lights every map
-        var files = maps.SelectMany(m => bank.ListFiles(m.Name)).Distinct(StringComparer.OrdinalIgnoreCase).ToList();
+    /// <summary>
+    /// The GPARAM to look the lighting up in first: the map's own, one of <paramref name="files" />, or any other
+    /// of the project's
+    /// </summary>
+    private void LightingFileCombo(GparamLightingBank bank, List<string> files, string chosen, Action<string> choose)
+    {
         var ownLabel = LOC.Get("VIEWPORT_Menubar_Map_Lighting_File_Own");
-        var chosen = CFG.Current.Viewport_Map_Lighting_File;
 
         DPI.ApplyInputWidth();
         if (ImGui.BeginCombo($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_File")}##mapLightingFile",
@@ -530,13 +782,13 @@ public class ViewportRenderingTool
             {
                 if (ImGui.Selectable($"{file}##mapLightingFile_{file}", file.Equals(chosen, StringComparison.OrdinalIgnoreCase)))
                 {
-                    CFG.Current.Viewport_Map_Lighting_File = file;
+                    choose(file);
                 }
             }
 
             if (ImGui.Selectable($"{ownLabel}##mapLightingFileOwn", string.IsNullOrEmpty(chosen)))
             {
-                CFG.Current.Viewport_Map_Lighting_File = "";
+                choose("");
             }
 
             foreach (var file in files.Where(Matches))
@@ -562,28 +814,13 @@ public class ViewportRenderingTool
             ImGui.EndCombo();
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_File_TT"));
+    }
 
-        // The file the selected collision's scene GPARAM picks, as the game does when the player stands on it
-        var collisionFile = view.ViewportSelection.GetSelection()
-            .OfType<Entity>()
-            .Select(e => GparamLightingBank.GetSceneSubId(e.WrappedObject) is { } subId && e.Container is MapContainer map
-                ? bank.GetSubIdFile(map.Name, subId)
-                : null)
-            .FirstOrDefault(f => f != null);
-
-        ImGui.BeginDisabled(collisionFile == null);
-        if (ImGui.Button($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_From_Collision")}##mapLightingFromCollision"))
-        {
-            CFG.Current.Viewport_Map_Lighting_File = collisionFile;
-        }
-        ImGui.EndDisabled();
-        GUI.Tooltip(collisionFile != null
-            ? LOC.Get("VIEWPORT_Menubar_Map_Lighting_From_Collision_TT", collisionFile)
-            : LOC.Get("VIEWPORT_Menubar_Map_Lighting_From_Collision_None_TT"));
-
-        // Weathers: the WW of the area's mAA_BB_CCWW files, named by the WeatherParam rows that use them
-        var weathers = maps.SelectMany(m => bank.ListWeathers(m.Name)).Distinct().OrderBy(w => w).ToList();
-
+    /// <summary>
+    /// The weathers: the WW of the area's mAA_BB_CCWW files, named by the WeatherParam rows that use them
+    /// </summary>
+    private static void WeatherCombo(GparamLightingBank bank, List<int> weathers)
+    {
         if (weathers.Count > 0)
         {
             string WeatherLabel(int weather) => weather <= 0
@@ -607,7 +844,13 @@ public class ViewportRenderingTool
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Weather_TT"));
         }
+    }
 
+    /// <summary>
+    /// The time of day the GPARAMs are read at, and in Elden Ring whether the volumes' bakes follow it
+    /// </summary>
+    private static void TimeOfDaySettings(ProjectEntry project, bool hasVolumes)
+    {
         DPI.ApplyInputWidth();
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Hours")}##mapLightingHours",
             ref CFG.Current.Viewport_Map_Lighting_Hours, 0.0f, 24.0f, "%.2f");
@@ -626,21 +869,19 @@ public class ViewportRenderingTool
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Timezone_TT", GparamLighting.TimeKeys[i], i));
         }
 
-        if (view.Project.Descriptor.ProjectType is ProjectType.ER && view.IrradianceVolumeBank.CanUse())
+        if (project.Descriptor.ProjectType is ProjectType.ER && hasVolumes)
         {
             ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Follow_Bakes")}##mapLightingFollowBakes",
                 ref CFG.Current.Viewport_Map_Lighting_Follow_Bakes);
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Follow_Bakes_TT"));
         }
+    }
 
-        ImGui.Separator();
-
-        if (maps.Count == 0)
-        {
-            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
-            return;
-        }
-
+    /// <summary>
+    /// What a map's GPARAMs give, for the scene and for models, and where each value came from
+    /// </summary>
+    private static void LightingTable(GparamLightingBank bank, string mapId, string file)
+    {
         var hours = CFG.Current.Viewport_Map_Lighting_Hours;
         var off = LOC.Get("VIEWPORT_Menubar_Map_Lighting_Off");
 
@@ -648,73 +889,69 @@ public class ViewportRenderingTool
             ? $"{GparamLightingBank.FormatColor(light.Diffuse)} {GparamLightingBank.FormatAngle(light.Angle)}{(light.FollowCamera ? " cam" : "")}"
             : off;
 
-        foreach (var map in maps)
+        var scene = bank.Resolve(mapId, file, GparamLightingBank.SceneLightSetId, hours);
+        var model = bank.Resolve(mapId, file, GparamLightingBank.ModelLightSetId, hours);
+
+        ImGui.Text(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Map", mapId, scene.File));
+
+        if (!ImGui.BeginTable($"##mapLighting_{mapId}", 4,
+            ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit))
+            return;
+
+        ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Value"));
+        ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Scene", GparamLightingBank.SceneLightSetId));
+        ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Models", GparamLightingBank.ModelLightSetId));
+        ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Source"));
+        ImGui.TableHeadersRow();
+
+        void Row(string key, string sceneText, string modelText, string field)
         {
-            var file = bank.ChooseFile(map.Name, chosen);
-            var scene = bank.Resolve(map.Name, file, GparamLightingBank.SceneLightSetId, hours);
-            var model = bank.Resolve(map.Name, file, GparamLightingBank.ModelLightSetId, hours);
-
-            ImGui.Text(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Map", map.Name, scene.File));
-
-            if (!ImGui.BeginTable($"##mapLighting_{map.Name}", 4,
-                ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit))
-                continue;
-
-            ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Value"));
-            ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Scene", GparamLightingBank.SceneLightSetId));
-            ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Models", GparamLightingBank.ModelLightSetId));
-            ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Source"));
-            ImGui.TableHeadersRow();
-
-            void Row(string key, string sceneText, string modelText, string field)
-            {
-                ImGui.TableNextRow();
-                ImGui.TableNextColumn();
-                ImGui.Text(LOC.Get(key));
-                ImGui.TableNextColumn();
-                ImGui.Text(sceneText);
-                ImGui.TableNextColumn();
-                ImGui.Text(modelText);
-                ImGui.TableNextColumn();
-                ImGui.Text(scene.Sources.TryGetValue(field, out var source) ? source : LOC.Get("VIEWPORT_Menubar_Map_Lighting_Default"));
-            }
-
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_Sun",
-                GparamLightingBank.FormatColor(scene.Sun.Diffuse), GparamLightingBank.FormatColor(model.Sun.Diffuse),
-                "Directional Light DiffColor0");
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_Sun_Specular",
-                GparamLightingBank.FormatColor(scene.Sun.Specular), GparamLightingBank.FormatColor(model.Sun.Specular),
-                "Directional Light SpecColor0");
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_Sun_Angle",
-                GparamLightingBank.FormatAngle(scene.Sun.Angle), GparamLightingBank.FormatAngle(model.Sun.Angle),
-                "Directional Light Angle0");
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_Light1", Light(scene.Light1), Light(model.Light1),
-                "Directional Light DiffColor1");
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_LocalLight1", Light(scene.LocalLight1), Light(model.LocalLight1),
-                "Directional Light LocalLight DiffColor1");
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_LocalLight2", Light(scene.LocalLight2), Light(model.LocalLight2),
-                "Directional Light LocalLight DiffColor2");
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_Hemi_Up",
-                GparamLightingBank.FormatColor(scene.HemiUp), GparamLightingBank.FormatColor(model.HemiUp),
-                "Directional Light Hemi Color Up");
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_Hemi_Down",
-                GparamLightingBank.FormatColor(scene.HemiDown), GparamLightingBank.FormatColor(model.HemiDown),
-                "Directional Light Hemi Color Down");
-
-            // The groups below have no model set, so both columns are the same
-            var exposure = $"{scene.Exposure:0.###}";
-            var autoExposure = scene.AutoExposure ? $"{scene.MiddleGray:0.###}" : off;
-            var envMap = $"{scene.EnvMapSaturate:0.###}, {GparamLightingBank.FormatColor(scene.EnvMapScale)}";
-            var background = GparamLightingBank.FormatColor(scene.BackgroundColor);
-
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_Exposure", exposure, exposure, "GS Presents - ToneMap-Exposure");
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_Auto_Exposure", autoExposure, autoExposure,
-                "GS Presents - ToneMap-Enable AutoExposure");
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_EnvMap", envMap, envMap, "EnvironmentConfig EnvMapColorConvert Saturate");
-            Row("VIEWPORT_Menubar_Map_Lighting_Row_Background", background, background, "GS - BG Color-Data");
-
-            ImGui.EndTable();
+            ImGui.TableNextRow();
+            ImGui.TableNextColumn();
+            ImGui.Text(LOC.Get(key));
+            ImGui.TableNextColumn();
+            ImGui.Text(sceneText);
+            ImGui.TableNextColumn();
+            ImGui.Text(modelText);
+            ImGui.TableNextColumn();
+            ImGui.Text(scene.Sources.TryGetValue(field, out var source) ? source : LOC.Get("VIEWPORT_Menubar_Map_Lighting_Default"));
         }
+
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_Sun",
+            GparamLightingBank.FormatColor(scene.Sun.Diffuse), GparamLightingBank.FormatColor(model.Sun.Diffuse),
+            "Directional Light DiffColor0");
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_Sun_Specular",
+            GparamLightingBank.FormatColor(scene.Sun.Specular), GparamLightingBank.FormatColor(model.Sun.Specular),
+            "Directional Light SpecColor0");
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_Sun_Angle",
+            GparamLightingBank.FormatAngle(scene.Sun.Angle), GparamLightingBank.FormatAngle(model.Sun.Angle),
+            "Directional Light Angle0");
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_Light1", Light(scene.Light1), Light(model.Light1),
+            "Directional Light DiffColor1");
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_LocalLight1", Light(scene.LocalLight1), Light(model.LocalLight1),
+            "Directional Light LocalLight DiffColor1");
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_LocalLight2", Light(scene.LocalLight2), Light(model.LocalLight2),
+            "Directional Light LocalLight DiffColor2");
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_Hemi_Up",
+            GparamLightingBank.FormatColor(scene.HemiUp), GparamLightingBank.FormatColor(model.HemiUp),
+            "Directional Light Hemi Color Up");
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_Hemi_Down",
+            GparamLightingBank.FormatColor(scene.HemiDown), GparamLightingBank.FormatColor(model.HemiDown),
+            "Directional Light Hemi Color Down");
+
+        // The groups below have no model set, so both columns are the same
+        var exposure = $"{scene.Exposure:0.###}";
+        var autoExposure = scene.AutoExposure ? $"{scene.MiddleGray:0.###}" : off;
+        var envMap = $"{scene.EnvMapSaturate:0.###}, {GparamLightingBank.FormatColor(scene.EnvMapScale)}";
+        var background = GparamLightingBank.FormatColor(scene.BackgroundColor);
+
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_Exposure", exposure, exposure, "GS Presents - ToneMap-Exposure");
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_Auto_Exposure", autoExposure, autoExposure,
+            "GS Presents - ToneMap-Enable AutoExposure");
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_EnvMap", envMap, envMap, "EnvironmentConfig EnvMapColorConvert Saturate");
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_Background", background, background, "GS - BG Color-Data");
+
+        ImGui.EndTable();
     }
 
     /// <summary>

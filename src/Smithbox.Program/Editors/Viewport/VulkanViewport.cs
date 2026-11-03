@@ -157,6 +157,26 @@ public class VulkanViewport : IViewport
             ViewPipeline.UseMapLighting = Owner is MapUniverse;
             ViewPipeline.UseMapLights = Owner is MapUniverse;
 
+            // The Model and Time Act Editors have no map, so they borrow the lighting and a volume of one
+            var environmentProject = owner switch
+            {
+                ModelUniverse model => model.Project,
+                TimeActUniverse timeAct => timeAct.Project,
+                _ => null
+            };
+
+            if (environmentProject?.Handler.ViewportEnvironment is { } environment && environment.CanUse())
+            {
+                ViewPipeline.UseMapLighting = true;
+                ViewPipeline.MapLightingSource = () => environment.ActiveLighting;
+
+                if (environment.Table != null)
+                {
+                    ViewPipeline.UseIrradianceVolumes = true;
+                    ViewPipeline.VolumeTable = environment.Table;
+                }
+            }
+
             ViewportCamera.UpdateProjectionMatrix();
 
             // The scene is drawn into the pipeline's HDR target, which is the size of the viewport, on the

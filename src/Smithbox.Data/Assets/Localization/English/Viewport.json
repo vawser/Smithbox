@@ -1091,6 +1091,58 @@
     {
       "Key": "VIEWPORT_Rendering_Shadow_Inactive",
       "Text": "No shadows are being drawn."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_Map",
+      "Text": "Lighting Map"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_Map_TT",
+      "Text": "The map whose GPARAM lighting and irradiance bake light this editor's viewports, as it has no map of its own. Lit with: {0}. Shared by the Model and Time Act Editors."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_Map_Default",
+      "Text": "Default ({0})"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_No_Map",
+      "Text": "The project has no map to borrow lighting from."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_Volume",
+      "Text": "Volume"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_Volume_TT",
+      "Text": "The irradiance volume of the map's bake to light with. Automatic takes the one whose average light is the median of the map's, among those with the most bakes."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_Volume_Auto",
+      "Text": "Automatic ({0})"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_Volume_Entry",
+      "Text": "{0:D4}: {1} bakes, light {2:0.###}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_Volume_Size",
+      "Text": "Volume Size"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_Volume_Size_TT",
+      "Text": "The size of the box the volume is stretched over, centred on the origin. The volume's own box isn't read, so this isn't the game's scale; a smaller box shows more of the volume's variation across the model."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_No_Volume",
+      "Text": "The map has no irradiance volumes."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_Volume_Status",
+      "Text": "Lit by {0} volume {1}, bake {2}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Environment_Volume_Loading",
+      "Text": "Loading {0} volume {1}, bake {2}..."
     }
   ]
 }

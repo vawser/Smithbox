@@ -67,16 +67,29 @@ public class SceneRenderPipeline
     public uint EnvMapTexture = 0;
 
     /// <summary>
-    ///     Whether models are lit by the irradiance volumes of <see cref="SceneRenderer.IrradianceVolumes" />. Only the
-    ///     Map Editor's viewports are, as the table holds the volumes of its loaded maps.
+    ///     Whether models are lit by the irradiance volumes of <see cref="VolumeTable" />
     /// </summary>
     public bool UseIrradianceVolumes = false;
 
     /// <summary>
-    ///     Whether the sun and the exposure come from <see cref="SceneRenderer.MapLighting" /> instead of the viewport's
-    ///     own settings. Only the Map Editor's viewports do, as it holds the lighting of their loaded maps.
+    ///     The irradiance volumes this pipeline lights with: the Map Editor's loaded maps in
+    ///     <see cref="SceneRenderer.IrradianceVolumes" /> by default, or the borrowed bake of the Model and Time Act
+    ///     Editors' viewport environment
+    /// </summary>
+    public IrradianceVolumeTable VolumeTable;
+
+    /// <summary>
+    ///     Whether the sun and the exposure come from <see cref="MapLightingSource" /> instead of the viewport's own
+    ///     settings
     /// </summary>
     public bool UseMapLighting = false;
+
+    /// <summary>
+    ///     The GPARAM lighting this pipeline is lit with under <see cref="UseMapLighting" />: the Map Editor's loaded
+    ///     maps in <see cref="SceneRenderer.MapLighting" /> by default, or the default map of the Model and Time Act
+    ///     Editors' viewport environment
+    /// </summary>
+    public Func<GparamLighting> MapLightingSource;
 
     /// <summary>
     ///     Whether models are lit by the map's lights in <see cref="SceneRenderer.MapLights" />. Only the Map Editor's
@@ -86,8 +99,11 @@ public class SceneRenderPipeline
 
     /// <summary>The map lighting this pipeline is lit with this frame, or null if it uses its own settings</summary>
     public GparamLighting ActiveMapLighting => UseMapLighting && CFG.Current.Viewport_Map_Lighting
-        ? SceneRenderer.MapLighting
+        ? MapLightingSource != null ? MapLightingSource() : SceneRenderer.MapLighting
         : null;
+
+    /// <summary>The irradiance volume table this pipeline reads, see <see cref="VolumeTable" /></summary>
+    public IrradianceVolumeTable ActiveVolumeTable => VolumeTable ?? SceneRenderer.IrradianceVolumes;
 
     /// <summary>
     ///     The viewport's background as linear light, which <see cref="Target" /> is cleared to. With map lighting it is
@@ -312,9 +328,10 @@ public class SceneRenderPipeline
         var collisionOpacity = Math.Clamp(CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
         var navVolumeSliceHeight = NavVolumeSlice.Height;
         var navVolumeSliceFlags = NavVolumeSlice.Flags;
+        var volumeTable = ActiveVolumeTable;
         var useIrradianceVolumes = UseIrradianceVolumes && CFG.Current.Viewport_GI_Enable;
         var irradianceExposure = CFG.Current.Viewport_GI_Intensity *
-            (CFG.Current.Viewport_GI_Auto_Exposure ? SceneRenderer.IrradianceVolumes.AutoExposure : 1.0f);
+            (CFG.Current.Viewport_GI_Auto_Exposure ? volumeTable.AutoExposure : 1.0f);
         var irradianceFlags = CFG.Current.Viewport_GI_Normalize_Reflections ? 1u : 0u;
 
         // The map's GPARAM lighting is in the game's units, as the volumes' light is, so both take the GPARAM's
@@ -419,8 +436,8 @@ public class SceneRenderPipeline
             SceneParams.NavVolumeSliceFlags = navVolumeSliceFlags;
 
             // Read here, on the upload, so the count only covers entries whose data is already on the GPU
-            SceneParams.IrradianceVolumeStart = SceneRenderer.IrradianceVolumes.Start;
-            SceneParams.IrradianceVolumeCount = useIrradianceVolumes ? SceneRenderer.IrradianceVolumes.Count : 0;
+            SceneParams.IrradianceVolumeStart = volumeTable.Start;
+            SceneParams.IrradianceVolumeCount = useIrradianceVolumes ? volumeTable.Count : 0;
             SceneParams.IrradianceVolumeExposure = irradianceExposure;
             SceneParams.IrradianceVolumeFlags = irradianceFlags;
 

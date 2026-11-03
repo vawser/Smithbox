@@ -268,19 +268,29 @@ public class GparamLightingBank
         if (map == null)
             return null;
 
-        var file = ChooseFile(map.Name, CFG.Current.Viewport_Map_Lighting_File);
+        return ResolveCached(map.Name, CFG.Current.Viewport_Map_Lighting_File);
+    }
+
+    /// <summary>
+    /// The scene's lighting of one map, with the model set in <see cref="GparamLighting.Models" />, looked up in
+    /// <paramref name="chosen" /> first as <see cref="ChooseFile" /> picks it, at the viewport menu's time of day.
+    /// Only resolved again when the map, the file or the time changes.
+    /// </summary>
+    public GparamLighting ResolveCached(string mapId, string chosen)
+    {
+        var file = ChooseFile(mapId, chosen);
         var hours = CFG.Current.Viewport_Map_Lighting_Hours;
 
         var cached = ViewportLighting;
 
-        if (cached != null && ViewportLightingMap == map.Name &&
+        if (cached != null && ViewportLightingMap == mapId &&
             string.Equals(cached.File, file, StringComparison.OrdinalIgnoreCase) && cached.Hours == hours)
             return cached;
 
-        cached = Resolve(map.Name, file, SceneLightSetId, hours);
-        cached.Models = Resolve(map.Name, file, ModelLightSetId, hours);
+        cached = Resolve(mapId, file, SceneLightSetId, hours);
+        cached.Models = Resolve(mapId, file, ModelLightSetId, hours);
 
-        ViewportLightingMap = map.Name;
+        ViewportLightingMap = mapId;
         ViewportLighting = cached;
 
         return cached;
@@ -301,7 +311,8 @@ public class GparamLightingBank
 
         if (entry != null)
         {
-            var fs = Project.Handler.MapData.PrimaryBank.TargetFS;
+            // The project's own, which the Map Editor's bank reads too, so this works without the Map Editor
+            var fs = Project.VFS.FS;
 
             try
             {
