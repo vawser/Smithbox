@@ -277,6 +277,11 @@ public sealed class ProjectileSimulation
         public int Index;
         public Vector3 Position;
         public Vector3 Direction;
+
+        // As fired, since Position and Direction move on
+        public Vector3 Spawn;
+        public Vector3 Aim;
+
         public Vector3 Drift;
         public Vector3 Heading;
         public float Speed;
@@ -392,10 +397,10 @@ public sealed class ProjectileSimulation
     private void Fire(BulletDefinition definition, float time, Vector3 position, Vector3 forward, float? speed,
         ProjectileOrigin origin, int parent, int generation)
     {
-        // These are only out of reach for want of a target
-        Result.Ignored |= Settings.SimulateTarget
-            ? definition.Ignored & ~(BulletIgnoredBehavior.Homing | BulletIgnoredBehavior.EmitPosition | BulletIgnoredBehavior.Arc)
-            : definition.Ignored;
+        // These are only out of reach for want of a target, or of something to aim at
+        Result.Ignored |= definition.Ignored & (Settings.SimulateTarget
+            ? ~(BulletIgnoredBehavior.Homing | BulletIgnoredBehavior.EmitPosition | BulletIgnoredBehavior.Arc)
+            : definition.NoLockTargetDistance != 0 ? ~BulletIgnoredBehavior.Homing : BulletIgnoredBehavior.None);
 
         for (var volley = 0; volley < definition.VolleyCount; volley++)
         {
@@ -606,6 +611,11 @@ public sealed class ProjectileSimulation
                 Position = shot.Position,
                 Direction = shot.Direction,
                 Heading = shot.Direction,
+
+                // For no-lock homing aims
+                Spawn = shot.Position,
+                Aim = shot.Direction,
+
                 Speed = shot.Speed ?? definition.InitialSpeed,
                 Life = definition.Life < 0 ? float.MaxValue : definition.Life + Random(definition.LifeRandom),
                 NextInterval = definition.IntervalWait + GetInterval(definition),
@@ -753,14 +763,23 @@ public sealed class ProjectileSimulation
     {
         BulletDefinition definition = shot.Definition;
 
-        if (!Settings.SimulateTarget || shot.HomingStopped || shot.Age < definition.HomingBeginTime ||
+        if (shot.HomingStopped || shot.Age < definition.HomingBeginTime ||
             shot.Travelled < definition.HomingBeginDistance ||
             definition.HomingRateY <= 0 && definition.HomingRateX <= 0)
         {
             return;
         }
 
-        Vector3 toTarget = Target + shot.AimOffset - shot.Position;
+        var reach = definition.NoLockTargetDistance < 0 ? definition.Range : definition.NoLockTargetDistance;
+
+        if (!Settings.SimulateTarget && reach <= 0)
+        {
+            return;
+        }
+
+        // With nothing locked on, a homing bullet also locks on to a virtual point
+        Vector3 aimPoint = Settings.SimulateTarget ? Target : shot.Spawn + shot.Aim * reach;
+        Vector3 toTarget = aimPoint + shot.AimOffset - shot.Position;
         var distance = toTarget.Length();
 
         // A bullet can start on top of the target, which leaves nothing to aim at for now

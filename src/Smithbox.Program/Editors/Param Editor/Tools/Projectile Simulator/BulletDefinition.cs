@@ -129,6 +129,9 @@ public sealed class BulletDefinition
     public float HomingOffset { get; init; }
     public float HomingHeightOffset { get; init; }
 
+    // How far ahead a bullet aims with no target. Off at 0, and -1 falls back on the row's own range
+    public float NoLockTargetDistance { get; init; }
+
     // Volleys are fired one after the other, and each one is made up of shots fired at the same time
     public int VolleyCount { get; init; } = 1;
     public float VolleyInterval { get; init; }
@@ -289,6 +292,7 @@ public sealed class BulletDefinition
             HomingStopRange = Float(row, 0, "hormingStopRange", "homingStopRange"),
             HomingOffset = Float(row, 0, "hormingOffsetRange", "homingOffsetRange"),
             HomingHeightOffset = Float(row, 0, "targetYOffsetRange"),
+            NoLockTargetDistance = Float(row, 0, "nolockTargetDist"),
 
             VolleyCount = Math.Max(1, Int(row, 1, "numShoot")),
             VolleyInterval = Float(row, 0, "shootInterval"),
