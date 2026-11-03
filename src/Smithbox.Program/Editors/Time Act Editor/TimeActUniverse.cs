@@ -15,6 +15,12 @@ public class TimeActUniverse : IUniverse
     public RenderScene RenderScene;
     public bool HasProcessedModelLoad;
 
+    /// <summary>
+    /// Whether a model has been loaded in this view, so the viewport environment (map lighting and irradiance
+    /// volume) is only loaded once there is something for it to light
+    /// </summary>
+    public bool HasLoadedModel;
+
     public ViewportSelection Selection { get; }
     private Task task;
     private List<Task> Tasks = new();
@@ -70,6 +76,7 @@ public class TimeActUniverse : IUniverse
         SetupTextureLoadList(modelWrapper.Name.ToLower(), modelWrapper.Parent);
 
         modelWrapper.Container = newContainer;
+        HasLoadedModel = true;
 
         // The model of a composite character is only a skeleton, so the rest of it comes from the part models
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering &&

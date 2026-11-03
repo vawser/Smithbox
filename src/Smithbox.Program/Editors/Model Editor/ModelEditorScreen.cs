@@ -301,8 +301,10 @@ public class ModelEditorScreen : EditorScreen
 
         activeView.ViewportWindow.Update(dt);
 
-        // The map lighting and irradiance volume the viewports borrow
-        Project.Handler.ViewportEnvironment.Update();
+        // The map lighting and irradiance volume the viewports borrow, loaded once a model is, as reading the map's
+        // volumes and GPARAM on the editor's first frame froze it
+        if (activeView.Universe.HasLoadedModel)
+            Project.Handler.ViewportEnvironment.Update();
     }
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)
