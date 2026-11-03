@@ -53,7 +53,9 @@ public class ToneMapPass
 
     private DeviceBuffer ParamBuffer;
     private ResourceSet ResourceSet;
-    private int TargetVersion = -1;
+    // The texture ResourceSet reads: the scene target's color, or the post-processing chain's output. A resized
+    // target or chain makes new textures, so the reference tells when the set is stale.
+    private Texture BoundSource;
     private ToneMapParam Params;
 
     /// <summary>
@@ -91,18 +93,20 @@ public class ToneMapPass
     }
 
     /// <summary>
-    ///     Draws <paramref name="target" /> into the bound framebuffer, whose outputs are <paramref name="outputs" />,
+    ///     Draws <paramref name="source" /> into the bound framebuffer, whose outputs are <paramref name="outputs" />,
     ///     at <paramref name="offset" />. The viewport must already cover where it goes.
     /// </summary>
-    public unsafe void Draw(GraphicsDevice gd, CommandList cl, SceneTarget target, OutputDescription outputs,
+    /// <param name="source">The linear light to tone map: the scene target's color, or what
+    /// <see cref="PostProcessChain.Run" /> returned for it</param>
+    public unsafe void Draw(GraphicsDevice gd, CommandList cl, Texture source, OutputDescription outputs,
         Vector2 offset, GparamLighting lighting)
     {
-        if (target.Color == null)
+        if (source == null)
         {
             return;
         }
 
-        EnsureResources(gd, target);
+        EnsureResources(gd, source);
 
         var (op, whitePoint) = Resolve(lighting);
 
@@ -115,7 +119,7 @@ public class ToneMapPass
         cl.Draw(3, 1, 0, 0);
     }
 
-    private unsafe void EnsureResources(GraphicsDevice gd, SceneTarget target)
+    private unsafe void EnsureResources(GraphicsDevice gd, Texture source)
     {
         ResourceFactory factory = gd.ResourceFactory;
 
@@ -130,7 +134,7 @@ public class ToneMapPass
         ParamBuffer ??= factory.CreateBuffer(new BufferDescription((uint)sizeof(ToneMapParam),
             VkBufferUsageFlags.UniformBuffer | VkBufferUsageFlags.TransferDst, VmaMemoryUsage.Auto, 0));
 
-        if (TargetVersion == target.Version && ResourceSet != null)
+        if (ReferenceEquals(BoundSource, source) && ResourceSet != null)
         {
             return;
         }
@@ -140,9 +144,9 @@ public class ToneMapPass
             SceneRenderer.DisposeAfterFramesInFlight(ResourceSet);
         }
 
-        ResourceSet = factory.CreateResourceSet(new ResourceSetDescription(Layout, ParamBuffer, target.Color,
+        ResourceSet = factory.CreateResourceSet(new ResourceSetDescription(Layout, ParamBuffer, source,
             gd.PointSampler));
-        TargetVersion = target.Version;
+        BoundSource = source;
     }
 
     private static Pipeline GetPipeline(GraphicsDevice gd, OutputDescription outputs)

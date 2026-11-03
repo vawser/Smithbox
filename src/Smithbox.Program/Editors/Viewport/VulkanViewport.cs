@@ -191,12 +191,18 @@ public class VulkanViewport : IViewport
             // are kept as they are
             ViewPipeline.SetOverlayViewportSetupAction((d, cl) =>
             {
+                // The screen effects run on the scene first, binding their own targets
+                var frameLighting = ViewPipeline.ActiveMapLighting;
+                var toneMapSource = IsViewportVisible
+                    ? ViewPipeline.PostProcess.Run(d, cl, ViewPipeline.Target, frameLighting)
+                    : null;
+
                 cl.SetFramebuffer(Device.SwapchainFramebuffer);
                 cl.SetViewport(0, RenderViewport);
                 if (IsViewportVisible)
                 {
-                    ViewPipeline.ToneMap.Draw(d, cl, ViewPipeline.Target, Device.SwapchainFramebuffer.OutputDescription,
-                        new Vector2(RenderViewport.X, RenderViewport.Y), ViewPipeline.ActiveMapLighting);
+                    ViewPipeline.ToneMap.Draw(d, cl, toneMapSource, Device.SwapchainFramebuffer.OutputDescription,
+                        new Vector2(RenderViewport.X, RenderViewport.Y), frameLighting);
                 }
                 IsViewportVisible = false;
                 cl.ClearDepthStencil(0);

@@ -126,6 +126,21 @@ public class ViewportRenderingTool
 
                     ImGui.EndTabItem();
                 }
+
+                if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_Post_Effects")}##viewportRenderingPostEffects"))
+                {
+                    var bank = mapUniverse.View.GparamLightingBank;
+                    var chosen = CFG.Current.Viewport_Map_Lighting_File;
+                    var maps = mapUniverse.View.Project.Handler.MapData.PrimaryBank.Maps.Values
+                        .Select(w => w.MapContainer)
+                        .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
+                        .Select(m => (m.Name, bank.ChooseFile(m.Name, chosen)))
+                        .ToList();
+
+                    PostEffectsTab(viewport, bank, maps);
+
+                    ImGui.EndTabItem();
+                }
             }
 
             if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_BTL_Lights")}##viewportRenderingBtlLights"))
@@ -151,6 +166,21 @@ public class ViewportRenderingTool
             if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
             {
                 EnvironmentLightingTab(viewport, environment);
+
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_Post_Effects")}##viewportRenderingPostEffects"))
+            {
+                var bank = environment.LightingBank;
+                var maps = environment.MapId != null
+                    ? new List<(string, string)>
+                    {
+                        (environment.MapId, bank.ChooseFile(environment.MapId, CFG.Current.Viewport_Environment_Lighting_File))
+                    }
+                    : new List<(string, string)>();
+
+                PostEffectsTab(viewport, bank, maps);
 
                 ImGui.EndTabItem();
             }
@@ -950,6 +980,168 @@ public class ViewportRenderingTool
             "GS Presents - ToneMap-Enable AutoExposure");
         Row("VIEWPORT_Menubar_Map_Lighting_Row_EnvMap", envMap, envMap, "EnvironmentConfig EnvMapColorConvert Saturate");
         Row("VIEWPORT_Menubar_Map_Lighting_Row_Background", background, background, "GS - BG Color-Data");
+
+        ImGui.EndTable();
+    }
+
+    /// <summary>
+    /// The screen effects the maps' GPARAMs ask for (Documentation/Post Processing/Plan.md): which of them the
+    /// viewport draws, and per map what its files give and where each value came from
+    /// </summary>
+    private static void PostEffectsTab(VulkanViewport viewport, GparamLightingBank bank, List<(string MapId, string File)> maps)
+    {
+        // Applies at once, as the chain runs every frame
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Effects_Enable")}##postEffectsEnable", ref CFG.Current.Viewport_Post_Effects);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Effects_Enable_TT"));
+
+        var chain = viewport.ViewPipeline?.PostProcess;
+
+        if (chain != null)
+        {
+            ImGui.Text(chain.LastActive.Count > 0
+                ? LOC.Get("VIEWPORT_Rendering_Post_Effects_Active", string.Join(", ", chain.LastActive))
+                : LOC.Get("VIEWPORT_Rendering_Post_Effects_None_Active"));
+        }
+
+        ImGui.Separator();
+
+        if (maps.Count == 0)
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
+            return;
+        }
+
+        foreach (var (mapId, file) in maps)
+        {
+            PostEffectsTable(bank, mapId, file);
+        }
+    }
+
+    /// <summary>
+    /// What a map's GPARAMs give for each screen effect, at ID 0 and the menu's time of day
+    /// </summary>
+    private static void PostEffectsTable(GparamLightingBank bank, string mapId, string file)
+    {
+        var lighting = bank.Resolve(mapId, file, GparamLightingBank.SceneLightSetId, CFG.Current.Viewport_Map_Lighting_Hours);
+        var effects = lighting.PostEffects;
+        var off = LOC.Get("VIEWPORT_Menubar_Map_Lighting_Off");
+
+        ImGui.Text(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Map", mapId, lighting.File));
+
+        if (!ImGui.BeginTable($"##postEffects_{mapId}", 3,
+            ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit))
+            return;
+
+        ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Rendering_Post_Effects_Column_Effect"));
+        ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Value"));
+        ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Source"));
+        ImGui.TableHeadersRow();
+
+        void Row(string key, string value, string field)
+        {
+            ImGui.TableNextRow();
+            ImGui.TableNextColumn();
+            ImGui.Text(LOC.Get(key));
+            ImGui.TableNextColumn();
+            ImGui.Text(value);
+            ImGui.TableNextColumn();
+            ImGui.Text(lighting.Sources.TryGetValue(field, out var source) ? source : LOC.Get("VIEWPORT_Menubar_Map_Lighting_Default"));
+        }
+
+        string Color(Vector4 c) => GparamLightingBank.FormatColor(c);
+
+        var exposure = effects.AutoExposure;
+        Row("VIEWPORT_Rendering_Post_Row_Auto_Exposure",
+            lighting.AutoExposure
+                ? LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Value", $"{lighting.MiddleGray:0.###}",
+                    $"{exposure.AdaptionMin:0.###}", $"{exposure.AdaptionMax:0.###}",
+                    $"{exposure.LightAdaptSpeed:0.###}", $"{exposure.DarkAdaptSpeed:0.###}")
+                : off,
+            "GS Presents - ToneMap-Enable AutoExposure");
+
+        var bloom = effects.Bloom;
+        Row("VIEWPORT_Rendering_Post_Row_Bloom",
+            bloom.Enabled
+                ? LOC.Get("VIEWPORT_Rendering_Post_Bloom_Value", bloom.NumLevels, $"{bloom.Threshold:0.###}",
+                    $"{bloom.Luminance:0.###}", $"{bloom.Alpha:0.###}")
+                : off,
+            "Gs Presents【Bloom】 Enable");
+
+        var glow = effects.Glow;
+        Row("VIEWPORT_Rendering_Post_Row_Glow",
+            glow.Enabled
+                ? LOC.Get("VIEWPORT_Rendering_Post_Glow_Value", glow.NumLevels, $"{glow.FinalColorScale:0.###}",
+                    $"{glow.BlurRgbScale:0.###}", $"{glow.BlurAlphaScale:0.###}")
+                : off,
+            "Glow Filter-Glow Enable");
+
+        var shaft = effects.LightShaft;
+        var shaftFrom = shaft.EnableRefLight
+            ? LOC.Get("VIEWPORT_Rendering_Post_Light_Shaft_From_Light", shaft.LightBankId, shaft.LightId)
+            : GparamLightingBank.FormatAngle(shaft.Angle);
+        Row("VIEWPORT_Rendering_Post_Row_Light_Shaft",
+            shaft.Enabled
+                ? LOC.Get("VIEWPORT_Rendering_Post_Light_Shaft_Value", shaftFrom, $"{shaft.SkyMaskSizeAngle:0.###}",
+                    $"{shaft.BlurRange:0.###}", shaft.BlurCount)
+                : off,
+            "GS Presents - LightShaft Enable");
+
+        var fog = effects.VolumetricFog;
+        Row("VIEWPORT_Rendering_Post_Row_Volumetric_Fog",
+            fog.Enabled
+                ? LOC.Get("VIEWPORT_Rendering_Post_Volumetric_Fog_Value", fog.VolumeWidth, fog.VolumeDepth,
+                    $"{fog.NearDepth:0.###}", $"{fog.FarDepth:0.###}")
+                : off,
+            "VolumetricFog Enable");
+        Row("VIEWPORT_Rendering_Post_Row_Height_Fog",
+            LOC.Get("VIEWPORT_Rendering_Post_Height_Fog_Value", $"{fog.FixedDensity:G3}", $"{fog.HeightFogDensityScale:G3}",
+                $"{fog.HeightFogDistribution:G3}", $"{fog.HeightFogOffset:0.###}", $"{fog.ScatteringG:0.###}"),
+            "VolumetricFog Global HeightFogDensity Scale");
+        Row("VIEWPORT_Rendering_Post_Row_Fog_Sky", Color(fog.SkyColor), "VolumetricFog SkyLight SkyColor");
+        Row("VIEWPORT_Rendering_Post_Row_Fog_Sun",
+            LOC.Get("VIEWPORT_Rendering_Post_Fog_Sun_Value", Color(fog.DirectColor), Color(fog.OppositeColor)),
+            "VolumetricFog DirLight DirectColor");
+
+        var ssao = effects.Ssao;
+        Row("VIEWPORT_Rendering_Post_Row_Ssao",
+            LOC.Get("VIEWPORT_Rendering_Post_Ssao_Value", $"{ssao.Scale:0.###}", $"{ssao.Offset:0.###}",
+                $"{ssao.KernelMin:0.###}", $"{ssao.KernelMax:0.###}", $"{ssao.DepthFadeStart:0.###}"),
+            "SSAO - Edit-Ver2 AO Scale");
+        var weights = ssao.LightWeights;
+        Row("VIEWPORT_Rendering_Post_Row_Ssao_Weights",
+            $"({weights.X:0.###}, {weights.Y:0.###}, {weights.Z:0.###}, {weights.W:0.###})",
+            "Directional Light SsaoWeight0");
+
+        var ssr = effects.Ssr;
+        Row("VIEWPORT_Rendering_Post_Row_Ssr",
+            ssr.Enabled
+                ? LOC.Get("VIEWPORT_Rendering_Post_Ssr_Value", $"{ssr.ShininessRejectThreshold:0.###}",
+                    $"{ssr.FresnelRejectThreshold:0.###}", $"{ssr.FadeToViewerStart:0.###}")
+                : off,
+            "SSR Enable");
+
+        var aa = effects.AntiAlias;
+        Row("VIEWPORT_Rendering_Post_Row_Anti_Alias",
+            aa.Enabled
+                ? LOC.Get("VIEWPORT_Rendering_Post_Anti_Alias_Value", aa.Type, $"{aa.FxaaSpanMax:0.###}", aa.JitterCount,
+                    $"{aa.FeedbackWeight:0.###}")
+                : off,
+            "AntiAlias - AntiAliasType");
+
+        var grading = effects.ColorGrading;
+        Row("VIEWPORT_Rendering_Post_Row_Color_Grading",
+            grading.Enabled && grading.LutSourceId >= 0
+                ? LOC.Get("VIEWPORT_Rendering_Post_Color_Grading_Value", grading.LutSourceId)
+                : off,
+            "Yebis-LutSourceId");
+
+        var wet = effects.Wet;
+        Row("VIEWPORT_Rendering_Post_Row_Wet",
+            wet.AlbedoRate > 0.0f || wet.ShininessRate > 0.0f
+                ? LOC.Get("VIEWPORT_Rendering_Post_Wet_Value", $"{wet.AlbedoRate:0.###}", Color(wet.OverrideAlbedo),
+                    $"{wet.ShininessRate:0.###}", $"{wet.OverrideShininess:0.###}")
+                : off,
+            "Wet-AlbedoRate");
 
         ImGui.EndTable();
     }

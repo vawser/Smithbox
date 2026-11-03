@@ -41,6 +41,23 @@ public static class ShaderHelper
         return (vs, fs);
     }
 
+    /// <summary>The compute shader <paramref name="name" />.comp.spv, see <see cref="ComputePass" /></summary>
+    public static Shader LoadComputeSPIRV(GraphicsDevice gd, ResourceFactory factory, string name)
+    {
+        var bytes = LoadBytecode(name, VkShaderStageFlags.Compute);
+        var debug = false;
+#if DEBUG
+        debug = true;
+#endif
+        Shader shader = factory.CreateFromSpirv(
+            new ShaderDescription(VkShaderStageFlags.Compute, bytes, "main", debug),
+            GetOptions(gd));
+
+        shader.Name = name + "-Compute";
+
+        return shader;
+    }
+
     private static CrossCompileOptions GetOptions(GraphicsDevice gd)
     {
         SpecializationConstant[] specializations = GetSpecializations(gd);
@@ -68,7 +85,12 @@ public static class ShaderHelper
 
     public static byte[] LoadBytecode(string setName, VkShaderStageFlags stage)
     {
-        var stageExt = stage == VkShaderStageFlags.Vertex ? "vert" : "frag";
+        var stageExt = stage switch
+        {
+            VkShaderStageFlags.Vertex => "vert",
+            VkShaderStageFlags.Compute => "comp",
+            _ => "frag"
+        };
         var name = setName.Replace('\\', Path.DirectorySeparatorChar) + "." + stageExt;
 
         var bytecodeExtension = GetBytecodeExtension();

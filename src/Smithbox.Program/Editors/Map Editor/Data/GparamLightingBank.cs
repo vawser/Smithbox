@@ -37,6 +37,17 @@ public class GparamLightingBank
     private const string SettingInfoKey = "Setting Info[Yebis]";
     private const string ShadowKey = "ShadowParam ParamEditor";
 
+    // The screen effects' groups, see GparamPostEffects
+    private const string BloomKey = "Bloom[Yebis]";
+    private const string GlowKey = "Glow Filter-Editor";
+    private const string LightShaftKey = "LightShaft[Yebis]";
+    private const string VolumetricFogKey = "VolumetricFog ParamEditor";
+    private const string SsaoKey = "SSAO Editor";
+    private const string SsrKey = "SSR ParamEditor";
+    private const string AntiAliasKey = "Anti-Alias-Editor";
+    private const string ColorGradingKey = "ColorGrading[Yebis]";
+    private const string WetKey = "Wet ParamEditor";
+
     // The shared GPARAMs a field is looked for in when the map's own file doesn't have it
     private static readonly string[] SharedFiles = { "mapbase", "default" };
 
@@ -418,7 +429,155 @@ public class GparamLightingBank
         // Setting Info
         lighting.BackgroundColor = reader.Get(SettingInfoKey, "GS - BG Color-Data", 0, lighting.BackgroundColor);
 
+        ReadPostEffects(reader, lightSetId, lighting.PostEffects);
+
         return lighting;
+    }
+
+    /// <summary>
+    /// The screen effects' groups, at ID 0, except the LightSet's SSAO weights, which are per light set
+    /// </summary>
+    private static void ReadPostEffects(FieldReader reader, int lightSetId, GparamPostEffects effects)
+    {
+        var exposure = effects.AutoExposure;
+        exposure.LightAdaptSpeed = reader.Get(ToneMapKey, "GS Presents - ToneMap-AutoExposure LightAdapt Speed", 0, exposure.LightAdaptSpeed);
+        exposure.DarkAdaptSpeed = reader.Get(ToneMapKey, "GS Presents - ToneMap-AutoExposure DarkAdapt Speed", 0, exposure.DarkAdaptSpeed);
+        exposure.CenterWeight = reader.Get(ToneMapKey, "GS Presents - ToneMap-AutoExposure Center Weight", 0, exposure.CenterWeight);
+        exposure.AdaptionMax = reader.Get(ToneMapKey, "GS Presents - ToneMap-AutoExposure Adaption Max", 0, exposure.AdaptionMax);
+        exposure.AdaptionMin = reader.Get(ToneMapKey, "GS Presents - ToneMap-AutoExposure Adaption Min", 0, exposure.AdaptionMin);
+
+        // The enable's key has full-width brackets in the files
+        var bloom = effects.Bloom;
+        bloom.Enabled = reader.Get(BloomKey, "Gs Presents【Bloom】 Enable", 0, bloom.Enabled);
+        bloom.NumLevels = reader.Get(BloomKey, "Gs Presents-GlareNumLevels", 0, bloom.NumLevels);
+        bloom.Luminance = reader.Get(BloomKey, "Gs Presents-Glare Luminance", 0, bloom.Luminance);
+        bloom.Threshold = reader.Get(BloomKey, "Gs Presents-Glare Threshold", 0, bloom.Threshold);
+        bloom.Alpha = reader.Get(BloomKey, "Gs Presents-GlareBloom Alpha", 0, bloom.Alpha);
+        bloom.GaussianRadiusScale = reader.Get(BloomKey, "Gs Presents-GlareBloom GaussianRadiusScale", 0, bloom.GaussianRadiusScale);
+        bloom.SaturateControl = reader.Get(BloomKey, "Gs Presents-GlareBloom Sturate Ctrl", 0, bloom.SaturateControl);
+        bloom.Smooth = reader.Get(BloomKey, "Gs Presents-GlareBloom Smooth", 0, bloom.Smooth);
+
+        var glow = effects.Glow;
+        glow.Enabled = reader.Get(GlowKey, "Glow Filter-Glow Enable", 0, glow.Enabled);
+        glow.NumLevels = reader.Get(GlowKey, "Glow Filter - Glow NumLevels", 0, glow.NumLevels);
+        glow.BlurSmoothness = reader.Get(GlowKey, "Glow Filter - Blur Smoothness", 0, glow.BlurSmoothness);
+        glow.FinalColorScale = reader.Get(GlowKey, "New Glow Filter-Glow - FinalColorScale", 0, glow.FinalColorScale);
+        glow.BlurSampleScale = reader.Get(GlowKey, "Glow Filter-Glow - BlurSampleScale", 0, glow.BlurSampleScale);
+        glow.BlurRgbScale = reader.Get(GlowKey, "Glow Filter-Glow - Blur RgbScale", 0, glow.BlurRgbScale);
+        glow.BlurAlphaScale = reader.Get(GlowKey, "Glow Filter-Glow - Blur AlphaScale", 0, glow.BlurAlphaScale);
+
+        var shaft = effects.LightShaft;
+        shaft.Enabled = reader.Get(LightShaftKey, "GS Presents - LightShaft Enable", 0, shaft.Enabled);
+        shaft.Angle = reader.Get(LightShaftKey, "GS Presents - LightShaft Angle", 0, shaft.Angle, isAngle: true);
+        shaft.EnableRefLight = reader.Get(LightShaftKey, "GS Presents - LightShaft EnableRefLight", 0, shaft.EnableRefLight);
+        shaft.LightBankId = reader.Get(LightShaftKey, "GS Presents - LightShaft LightBankId", 0, shaft.LightBankId);
+        shaft.LightId = reader.Get(LightShaftKey, "GS Presents - LightShaft LightId", 0, shaft.LightId);
+        shaft.HighQualitySkyMask = reader.Get(LightShaftKey, "GS Presents - LightShaft HighQualitySkyMask", 0, shaft.HighQualitySkyMask);
+        shaft.SkyMaskMode = reader.Get(LightShaftKey, "GS Presents - LightShaft SkyMaskMode", 0, shaft.SkyMaskMode);
+        shaft.MaskDepthThreshold = reader.Get(LightShaftKey, "GS Presents - LightShaft MaskDepthThreshold", 0, shaft.MaskDepthThreshold);
+        shaft.SkyMaskSizeAngle = reader.Get(LightShaftKey, "GS Presents - LightShaft SkyMaskSizeAngle", 0, shaft.SkyMaskSizeAngle);
+        shaft.SkyMaskCenterPower = reader.Get(LightShaftKey, "GS Presents - LightShaft SkyMaskCenterPower", 0, shaft.SkyMaskCenterPower);
+        shaft.SkyMultiplyColor = reader.Get(LightShaftKey, "GS Presents - Sky Multiply Color", 0, shaft.SkyMultiplyColor);
+        shaft.SkyAddColor = reader.Get(LightShaftKey, "GS Presents - Sky Add Color", 0, shaft.SkyAddColor);
+        shaft.SkyColorSaturate = reader.Get(LightShaftKey, "GS Presents - LightShaft SkyColorSaturate", 0, shaft.SkyColorSaturate);
+        shaft.SkyColorThreshold = reader.Get(LightShaftKey, "GS Presents - LightShaft SkyColorThreshold", 0, shaft.SkyColorThreshold);
+        shaft.ExposureInfluenceAddColor = reader.Get(LightShaftKey, "GS Presents - ExposureInfluenceRate AddColor", 0, shaft.ExposureInfluenceAddColor);
+        shaft.ParallelBeginAngle = reader.Get(LightShaftKey, "GS Presents - Parallel mode begin ang", 0, shaft.ParallelBeginAngle);
+        shaft.ParallelEndAngle = reader.Get(LightShaftKey, "GS Presents - Parallel mode end ang", 0, shaft.ParallelEndAngle);
+        shaft.FadeOutBeginAngle = reader.Get(LightShaftKey, "GS Presents - Fade out begin ang", 0, shaft.FadeOutBeginAngle);
+        shaft.FadeOutEndAngle = reader.Get(LightShaftKey, "GS Presents - Fade out end ang", 0, shaft.FadeOutEndAngle);
+        shaft.BlurRange = reader.Get(LightShaftKey, "GS Presents - ShaftBlurRange", 0, shaft.BlurRange);
+        shaft.BlurRangeParallel = reader.Get(LightShaftKey, "GS Presents - LightShaft ShaftBlurRange for Parallel", 0, shaft.BlurRangeParallel);
+        shaft.BlurFalloff = reader.Get(LightShaftKey, "GS Presents - LightShaft ShaftBlurFallOff", 0, shaft.BlurFalloff);
+        shaft.BlurCount = reader.Get(LightShaftKey, "GS Presents - LightShaft ShaftBlurCount", 0, shaft.BlurCount);
+
+        var fog = effects.VolumetricFog;
+        fog.Enabled = reader.Get(VolumetricFogKey, "VolumetricFog Enable", 0, fog.Enabled);
+        fog.VolumeWidth = reader.Get(VolumetricFogKey, "VolumetricFog VolumeWidth", 0, fog.VolumeWidth);
+        fog.VolumeDepth = reader.Get(VolumetricFogKey, "VolumetricFog VolumeDepth", 0, fog.VolumeDepth);
+        fog.NearDepth = reader.Get(VolumetricFogKey, "VolumetricFog NearDepth", 0, fog.NearDepth);
+        fog.FarDepth = reader.Get(VolumetricFogKey, "VolumetricFog FarDepth", 0, fog.FarDepth);
+        fog.FogEndDepth = reader.Get(VolumetricFogKey, "VolumetricFog FogEndDepth", 0, fog.FogEndDepth);
+        fog.EnableAnalyticalFog = reader.Get(VolumetricFogKey, "VolumetricFog EnableAnalyticalFog", 0, fog.EnableAnalyticalFog);
+        fog.FixedDensity = reader.Get(VolumetricFogKey, "VolumetricFog Global FixedDensity", 0, fog.FixedDensity);
+        fog.ScatteringG = reader.Get(VolumetricFogKey, "VolumetricFog Global ScatteringG", 0, fog.ScatteringG);
+        fog.LocalLightScale = reader.Get(VolumetricFogKey, "VolumetricFog Global LocalLightScale", 0, fog.LocalLightScale);
+        fog.LocalLightDistScale = reader.Get(VolumetricFogKey, "VolumetricFog Global LocalLightDistScale", 0, fog.LocalLightDistScale);
+        fog.HeightFogDistribution = reader.Get(VolumetricFogKey, "VolumetricFog Global HeightFogDistribution", 0, fog.HeightFogDistribution);
+        fog.HeightFogOffset = reader.Get(VolumetricFogKey, "VolumetricFog Global HeightFogOffset", 0, fog.HeightFogOffset);
+        fog.HeightFogDensityScale = reader.Get(VolumetricFogKey, "VolumetricFog Global HeightFogDensity Scale", 0, fog.HeightFogDensityScale);
+        fog.AbsorptionScale = reader.Get(VolumetricFogKey, "VolumetricFog Global AbsorptionScale", 0, fog.AbsorptionScale);
+        fog.SkyColor = reader.Get(VolumetricFogKey, "VolumetricFog SkyLight SkyColor", 0, fog.SkyColor);
+        fog.SkyHeightAtten = reader.Get(VolumetricFogKey, "VolumetricFog SkyLight HeightAtten", 0, fog.SkyHeightAtten);
+        fog.SkyStartDistance = reader.Get(VolumetricFogKey, "VolumetricFog SkyLight StartDist", 0, fog.SkyStartDistance);
+        fog.DirLightBankId = reader.Get(VolumetricFogKey, "VolumetricFog DirLight LightBankId", 0, fog.DirLightBankId);
+        fog.DirLightId = reader.Get(VolumetricFogKey, "VolumetricFog DirLight LightId", 0, fog.DirLightId);
+        fog.DirectColor = reader.Get(VolumetricFogKey, "VolumetricFog DirLight DirectColor", 0, fog.DirectColor);
+        fog.OppositeColor = reader.Get(VolumetricFogKey, "VolumetricFog DirLight OppositeColor", 0, fog.OppositeColor);
+        fog.DirHeightAtten = reader.Get(VolumetricFogKey, "VolumetricFog DirLight HeightAtten", 0, fog.DirHeightAtten);
+        fog.DirStartDistance = reader.Get(VolumetricFogKey, "VolumetricFog DirLight StartDist", 0, fog.DirStartDistance);
+        fog.ShadowSampleCount = reader.Get(VolumetricFogKey, "VolumetricFog DirLight ShadowSampleCount", 0, fog.ShadowSampleCount);
+        fog.SampleCount = reader.Get(VolumetricFogKey, "VolumetricFog Config SampleCount", 0, fog.SampleCount);
+
+        var ssao = effects.Ssao;
+        ssao.UseNormal = reader.Get(SsaoKey, "SSAO - Edit-UseNormal", 0, ssao.UseNormal);
+        ssao.UseReprojection = reader.Get(SsaoKey, "SSAO - Edit-UseReProj", 0, ssao.UseReprojection);
+        ssao.SampleOffset = reader.Get(SsaoKey, "SSAO - Edit-Ver2 Sample Offset", 0, ssao.SampleOffset);
+        ssao.Scale = reader.Get(SsaoKey, "SSAO - Edit-Ver2 AO Scale", 0, ssao.Scale);
+        ssao.Offset = reader.Get(SsaoKey, "SSAO - Edit-Ver2 AO Offset", 0, ssao.Offset);
+        ssao.KernelBaseDistance = reader.Get(SsaoKey, "SSAO - Edit-Ver2 Kernel Scale Base Dist", 0, ssao.KernelBaseDistance);
+        ssao.KernelMin = reader.Get(SsaoKey, "SSAO - Edit-Ver2 Kernel Scale Min", 0, ssao.KernelMin);
+        ssao.KernelMax = reader.Get(SsaoKey, "SSAO - Edit-Ver2 Kernel Scale Max", 0, ssao.KernelMax);
+        ssao.DepthFadeStart = reader.Get(SsaoKey, "SSAO - Edit-Ver2 DepthFadeStart", 0, ssao.DepthFadeStart);
+        ssao.DepthFadeRange = reader.Get(SsaoKey, "SSAO - Edit-Ver2 DepthFadeRange", 0, ssao.DepthFadeRange);
+        ssao.PrecisionDepth = reader.Get(SsaoKey, "SSAO - Edit-Ver2 PrecisionDepth", 0, ssao.PrecisionDepth);
+        ssao.DepthRejectRate = reader.Get(SsaoKey, "SSAO - Edit-Ver2 Depth Reject Rate", 0, ssao.DepthRejectRate);
+        ssao.GeomBentOffset = reader.Get(SsaoKey, "SSAO - Edit-Ver2 Geom Bent Offset", 0, ssao.GeomBentOffset);
+        ssao.LightWeights = new Vector4(
+            reader.Get(LightSetKey, "Directional Light SsaoWeight0", lightSetId, ssao.LightWeights.X),
+            reader.Get(LightSetKey, "Directional Light SsaoWeight1", lightSetId, ssao.LightWeights.Y),
+            reader.Get(LightSetKey, "Directional Light SsaoWeight2", lightSetId, ssao.LightWeights.Z),
+            reader.Get(LightSetKey, "Directional Light SsaoWeight3", lightSetId, ssao.LightWeights.W));
+
+        var ssr = effects.Ssr;
+        ssr.Enabled = reader.Get(SsrKey, "SSR Enable", 0, ssr.Enabled);
+        ssr.TraverseMode = reader.Get(SsrKey, "SSR TraverseMode", 0, ssr.TraverseMode);
+        ssr.ShininessRejectThreshold = reader.Get(SsrKey, "SSR Shininess Reject Threshold", 0, ssr.ShininessRejectThreshold);
+        ssr.DepthRejectThreshold = reader.Get(SsrKey, "SSR Depth Reject Threshold", 0, ssr.DepthRejectThreshold);
+        ssr.FadeToViewerStart = reader.Get(SsrKey, "SSR Fade To Viewer Start", 0, ssr.FadeToViewerStart);
+        ssr.FresnelRejectThreshold = reader.Get(SsrKey, "SSR Fresnel Reject Threshold", 0, ssr.FresnelRejectThreshold);
+        ssr.StepScaleMin = reader.Get(SsrKey, "SSR Ray Trace Step Scale Min", 0, ssr.StepScaleMin);
+        ssr.StepScaleMax = reader.Get(SsrKey, "SSR Ray Trace Step Scale Max", 0, ssr.StepScaleMax);
+        ssr.MipScale = reader.Get(SsrKey, "SSR Display Mip Scale", 0, ssr.MipScale);
+        ssr.MipOffset = reader.Get(SsrKey, "SSR Display Mip Offset", 0, ssr.MipOffset);
+        ssr.DepthFadeRange = reader.Get(SsrKey, "SSR Depth Fade Range", 0, ssr.DepthFadeRange);
+        ssr.CrackDetectFactor = reader.Get(SsrKey, "SSR Geom Crack Detect Factor", 0, ssr.CrackDetectFactor);
+        ssr.BlurSigma = reader.Get(SsrKey, "SSR Tex Blur Sigma", 0, ssr.BlurSigma);
+        ssr.BlurSigmaMip = reader.Get(SsrKey, "SSR Tex Blur Sigma for Mip", 0, ssr.BlurSigmaMip);
+
+        var aa = effects.AntiAlias;
+        aa.Enabled = reader.Get(AntiAliasKey, "Yebis-Anti-Alias Enable", 0, aa.Enabled);
+        aa.Type = reader.Get(AntiAliasKey, "AntiAlias - AntiAliasType", 0, aa.Type);
+        aa.FxaaAlpha = reader.Get(AntiAliasKey, "AntiAlias - fFxaaAlpha", 0, aa.FxaaAlpha);
+        aa.FxaaReduceMin = reader.Get(AntiAliasKey, "AntiAlias - FxaaReduceMin", 0, aa.FxaaReduceMin);
+        aa.FxaaReduceMul = reader.Get(AntiAliasKey, "AntiAlias - FxaaReduceMul", 0, aa.FxaaReduceMul);
+        aa.FxaaSpanMax = reader.Get(AntiAliasKey, "AntiAlias - FxaaSpanMax", 0, aa.FxaaSpanMax);
+        aa.FeedbackWeight = reader.Get(AntiAliasKey, "AntiAlias - FeedbackWeight", 0, aa.FeedbackWeight);
+        aa.JitterCount = reader.Get(AntiAliasKey, "AntiAlias - JitterCount", 0, aa.JitterCount);
+        aa.SharpenIntensity = reader.Get(AntiAliasKey, "AntiAlias - SharpenIntensity", 0, aa.SharpenIntensity);
+        aa.SharpenRangeMin = reader.Get(AntiAliasKey, "AntiAlias - SharpenRangeMin", 0, aa.SharpenRangeMin);
+        aa.SharpenRangeMax = reader.Get(AntiAliasKey, "AntiAlias - SharpenRangeMax", 0, aa.SharpenRangeMax);
+
+        var grading = effects.ColorGrading;
+        grading.Enabled = reader.Get(ColorGradingKey, "Yebis-ColorGrading-Enable", 0, grading.Enabled);
+        grading.LutSourceId = reader.Get(ColorGradingKey, "Yebis-LutSourceId", 0, grading.LutSourceId);
+        grading.FadeTime = reader.Get(ColorGradingKey, "ColorGrading FadeTime", 0, grading.FadeTime);
+
+        var wet = effects.Wet;
+        wet.OverrideAlbedo = reader.Get(WetKey, "Wet-OverrideAlbedo", 0, wet.OverrideAlbedo);
+        wet.OverrideShininess = reader.Get(WetKey, "Wet-OverrideShininess", 0, wet.OverrideShininess);
+        wet.AlbedoRate = reader.Get(WetKey, "Wet-AlbedoRate", 0, wet.AlbedoRate);
+        wet.ShininessRate = reader.Get(WetKey, "Wet-ShininessRate", 0, wet.ShininessRate);
     }
 
     private static void ReadLight(FieldReader reader, int id, GparamDirectionalLight light,

@@ -1167,6 +1167,138 @@
     {
       "Key": "VIEWPORT_Rendering_Environment_Volume_Loading",
       "Text": "Loading {0} volume {1}, bake {2}..."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tab_Post_Effects",
+      "Text": "Post Effects"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Effects_Enable",
+      "Text": "Draw Screen Effects"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Effects_Enable_TT",
+      "Text": "Draws the screen effects of the map's GPARAMs between the scene and the tone map: bloom, fog, light shafts and others, each with a switch of its own once it is drawn. Off: the scene goes straight to the tone map."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Effects_Active",
+      "Text": "Drawing: {0}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Effects_None_Active",
+      "Text": "No screen effects are drawn yet. The table shows what the GPARAMs ask for."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Effects_Column_Effect",
+      "Text": "Effect"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Auto_Exposure",
+      "Text": "Auto Exposure"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Auto_Exposure_Value",
+      "Text": "middle gray {0}, adapting {1} to {2} EV at {3} / {4}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Bloom",
+      "Text": "Bloom"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Bloom_Value",
+      "Text": "{0} levels, threshold {1}, luminance {2}, alpha {3}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Glow",
+      "Text": "Glow"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Glow_Value",
+      "Text": "{0} levels, final scale {1}, RGB scale {2}, alpha scale {3}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Light_Shaft",
+      "Text": "Light Shafts"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Light_Shaft_Value",
+      "Text": "from {0}, sky mask {1} rad, blur {2} x {3}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Light_Shaft_From_Light",
+      "Text": "light {0} #{1}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Volumetric_Fog",
+      "Text": "Volumetric Fog"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Volumetric_Fog_Value",
+      "Text": "{0} cells across, {1} slices, {2} to {3} m"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Height_Fog",
+      "Text": "Height Fog"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Height_Fog_Value",
+      "Text": "density {0} + {1} x exp(-{2} x (y - {3})), scattering g {4}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Fog_Sky",
+      "Text": "Fog Sky Light"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Fog_Sun",
+      "Text": "Fog Sun Light"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Fog_Sun_Value",
+      "Text": "{0} towards, {1} away"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Ssao",
+      "Text": "SSAO"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Ssao_Value",
+      "Text": "scale {0}, offset {1}, kernel {2} to {3} px, fading from {4} m"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Ssao_Weights",
+      "Text": "SSAO Light Weights"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Ssr",
+      "Text": "SSR"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Ssr_Value",
+      "Text": "shininess over {0}, fresnel over {1}, fade to viewer {2}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Anti_Alias",
+      "Text": "Anti-Alias"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Anti_Alias_Value",
+      "Text": "type {0}, FXAA span {1}, {2} jitters, feedback {3}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Color_Grading",
+      "Text": "Color Grading"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Color_Grading_Value",
+      "Text": "LUT {0}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Row_Wet",
+      "Text": "Wet"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Wet_Value",
+      "Text": "albedo {0} towards {1}, shininess {2} towards {3}"
     }
   ]
 }

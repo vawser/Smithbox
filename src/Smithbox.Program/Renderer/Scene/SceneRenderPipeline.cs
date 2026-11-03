@@ -30,6 +30,9 @@ public class SceneRenderPipeline
 
     public ToneMapPass ToneMap { get; } = new();
 
+    /// <summary>The screen effects run on <see cref="Target" /> before <see cref="ToneMap" /> reads it</summary>
+    public PostProcessChain PostProcess { get; } = new();
+
     /// <summary>The copy of <see cref="Target" />'s depth that transparent draws read</summary>
     public SceneDepth SceneDepth { get; } = new();
 

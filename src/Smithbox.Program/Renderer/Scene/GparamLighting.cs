@@ -117,6 +117,9 @@ public class GparamLighting
     // Setting Info
     public Vector4 BackgroundColor = new(0.5f, 0.5f, 0.5f, 0.5f);
 
+    /// <summary>The screen effects, resolved through the same files; see <see cref="GparamPostEffects" /></summary>
+    public GparamPostEffects PostEffects = new();
+
     /// <summary>
     /// Where each value came from, as "file #id", keyed by the GPARAM field key. Fields left at their default
     /// have no entry.

@@ -1313,6 +1313,10 @@ public class CFG
     public float Viewport_ToneMap_Exposure = 1.0f;
     public float Viewport_ToneMap_White_Point = 1.5f;
 
+    // Whether the viewports' screen effects run (bloom, fog, light shafts... see PostProcessChain), from the map
+    // GPARAM's groups. Each effect has its own switch as it is added.
+    public bool Viewport_Post_Effects = true;
+
     // Sun shadows: cascaded shadow maps whose splits, fade and bias come from the map's GPARAM Shadows group, or
     // Elden Ring's mapbase without map lighting. The resolution is that of one cascade; the map holds four.
     public bool Viewport_Shadows = true;
