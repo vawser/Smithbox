@@ -632,23 +632,20 @@ public sealed class ProjectileSimulation
         if (shot.Age >= definition.AccelStartTime && shot.Age < definition.AccelEndTime)
         {
             shot.Speed += accel * StepTime;
-
-            // Rows can start outside of these limits, as they only matter once the speed is changing
-            if (accel > 0 && definition.MaxSpeed > 0)
-            {
-                shot.Speed = Math.Min(shot.Speed, definition.MaxSpeed);
-            }
-            else if (accel < 0)
-            {
-                shot.Speed = Math.Max(shot.Speed, definition.MinSpeed);
-            }
         }
 
-        // Rows with their speed locked fly straight, whatever their gravity says. Vacuum Slice and
-        // Founding Rain of Stars have a gravity of 999, which is what ground-seeking bullets use
-        var speedLocked = definition.MinSpeed > 0 && definition.MinSpeed == definition.MaxSpeed;
+        // Limits hold every step, and rows can start outside of them
+        if (definition.MaxSpeed > 0)
+        {
+            shot.Speed = Math.Min(shot.Speed, definition.MaxSpeed);
+        }
 
-        if (shot.Age >= definition.GravityStartTime && !speedLocked)
+        if (definition.MinSpeed > 0)
+        {
+            shot.Speed = Math.Max(shot.Speed, definition.MinSpeed);
+        }
+
+        if (shot.Age >= definition.GravityStartTime)
         {
             shot.Fall += gravity * StepTime;
         }
