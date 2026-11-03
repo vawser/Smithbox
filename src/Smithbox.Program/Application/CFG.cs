@@ -1278,8 +1278,11 @@ public class CFG
     public float Viewport_Map_Lighting_Exposure_Scale = 1.0f;
 
     // Whether the GPARAM's hemisphere light adds to the irradiance volumes' light, as well as lighting what they
-    // don't cover; unknown which the game does
-    public bool Viewport_Map_Lighting_Hemi_Inside_Volumes = false;
+    // don't cover; compared with the game, it does
+    public bool Viewport_Map_Lighting_Hemi_Inside_Volumes = true;
+
+    // Whether the viewport's background takes the GPARAM's BG color instead of Viewport_Bg_Color
+    public bool Viewport_Map_Lighting_Background = true;
 
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);

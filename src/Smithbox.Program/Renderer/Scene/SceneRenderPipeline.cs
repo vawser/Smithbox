@@ -67,6 +67,29 @@ public class SceneRenderPipeline
         : null;
 
     /// <summary>
+    ///     The viewport's background with map lighting: the GPARAM's BG color, which is in the game's units like its
+    ///     lights, so it takes their exposure and the shaders' gamma (a square root) to reach the screen. Null to keep
+    ///     the background color of the settings.
+    /// </summary>
+    public Vector4? MapBackgroundColor
+    {
+        get
+        {
+            var lighting = ActiveMapLighting;
+
+            if (lighting == null || !CFG.Current.Viewport_Map_Lighting_Background)
+                return null;
+
+            var bg = lighting.BackgroundColor;
+            var exposure = lighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale;
+            var linear = Vector3.Max(new Vector3(bg.X, bg.Y, bg.Z) * bg.W * exposure, Vector3.Zero);
+            var display = Vector3.Min(Vector3.SquareRoot(linear), Vector3.One);
+
+            return new Vector4(display, 1.0f);
+        }
+    }
+
+    /// <summary>
     ///     A light that follows the camera, handy for looking at dark interiors. Off by default.
     ///     Its position is set every frame; the rest can be changed freely.
     /// </summary>

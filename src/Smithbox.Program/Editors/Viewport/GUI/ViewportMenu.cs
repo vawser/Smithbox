@@ -687,6 +687,10 @@ public class ViewportMenu
             ref CFG.Current.Viewport_Map_Lighting_Hemi_Inside_Volumes);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Hemi_Inside_Volumes_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Background")}##mapLightingBackground",
+            ref CFG.Current.Viewport_Map_Lighting_Background);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Background_TT"));
+
         var active = SceneRenderer.MapLighting;
 
         if (CFG.Current.Viewport_Map_Lighting)

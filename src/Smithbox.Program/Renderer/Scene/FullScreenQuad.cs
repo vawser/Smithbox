@@ -114,11 +114,14 @@ public class FullScreenQuad
         _disposeCollector.DisposeAll();
     }
 
-    public void Render(GraphicsDevice gd, CommandList cl)
+    /// <summary>
+    /// Fills the viewport with <paramref name="color" />, or the viewport background color of the settings if null
+    /// </summary>
+    public void Render(GraphicsDevice gd, CommandList cl, Vector4? color = null)
     {
-        var color = CFG.Current.Viewport_Bg_Color;
+        var background = CFG.Current.Viewport_Bg_Color;
 
-        UpdateQuadParams(gd, new Vector4(color.X, color.Y, color.Z, 1.0f));
+        UpdateQuadParams(gd, color ?? new Vector4(background.X, background.Y, background.Z, 1.0f));
 
         cl.SetPipeline(_pipeline);
         cl.SetGraphicsResourceSet(0, QuadParamResourceSet);

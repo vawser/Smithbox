@@ -446,7 +446,15 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Hemi_Inside_Volumes_TT",
-      "Text": "The GPARAM's hemisphere light (sky color from above, ground color from below) lights what the irradiance volumes don't cover, and the reflections. With this on it also adds to the volumes' light. It is not known which the game does, so compare with the game."
+      "Text": "The GPARAM's hemisphere light (sky color from above, ground color from below) lights what the irradiance volumes don't cover, and the reflections. With this on it also adds to the volumes' light, which matches the game."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Background",
+      "Text": "Use the GPARAM's Background Color"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Background_TT",
+      "Text": "Fill the viewport's background with the BG color of the map's GPARAM (Setting Info), at the GPARAM's exposure, instead of the background color of the settings."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Active",

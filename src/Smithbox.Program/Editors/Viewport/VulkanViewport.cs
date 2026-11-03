@@ -165,7 +165,7 @@ public class VulkanViewport : IViewport
                 cl.SetViewport(0, RenderViewport);
                 if (IsViewportVisible)
                 {
-                    ClearQuad.Render(d, cl);
+                    ClearQuad.Render(d, cl, ViewPipeline.MapBackgroundColor);
                 }
                 IsViewportVisible = false;
             });
