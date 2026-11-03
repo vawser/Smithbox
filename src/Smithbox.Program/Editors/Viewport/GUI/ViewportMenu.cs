@@ -42,9 +42,19 @@ public class ViewportMenu
 
     public void SceneParamsGui()
     {
+        // The map's GPARAMs give the sun instead, see Render > Map Lighting
+        var sunFromMap = Parent.ViewPipeline.ActiveMapLighting != null;
+
+        if (sunFromMap)
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_Scene_Sun_From_Map"));
+        }
+
+        ImGui.BeginDisabled(sunFromMap);
         ImGui.SliderFloat4(
-            $"{LOC.Get("VIEWPORT_Menubar_Scene_Light_Direction")}##lightDirection", 
+            $"{LOC.Get("VIEWPORT_Menubar_Scene_Light_Direction")}##lightDirection",
             ref Parent.ViewPipeline.SceneParams.LightDirection, -1, 1);
+        ImGui.EndDisabled();
 
         ImGui.SliderFloat(
             $"{LOC.Get("VIEWPORT_Menubar_Scene_Direct_Light_Mult")}##directLightMult",
@@ -61,6 +71,8 @@ public class ViewportMenu
         ImGui.Separator();
 
         // The sun is the light the direction above belongs to
+        ImGui.BeginDisabled(sunFromMap);
+
         var sunColor = new Vector3(
             Parent.ViewPipeline.SceneParams.SunColor.X,
             Parent.ViewPipeline.SceneParams.SunColor.Y,
@@ -74,6 +86,8 @@ public class ViewportMenu
         }
 
         ImGui.SliderFloat("Sun Intensity##sunIntensity", ref Parent.ViewPipeline.SceneParams.SunColor.W, 0, 5);
+
+        ImGui.EndDisabled();
 
         // A light that follows the camera, for lighting up dark interiors
         SceneLight cameraLight = Parent.ViewPipeline.CameraLight;
@@ -558,12 +572,19 @@ public class ViewportMenu
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Enable")}##giEnable", ref CFG.Current.Viewport_GI_Enable);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Enable_TT"));
 
+        // With map lighting, the volumes take the GPARAM's exposure, as the sun does
+        var exposureFromMap = Parent.ViewPipeline.ActiveMapLighting != null;
+
+        ImGui.BeginDisabled(exposureFromMap);
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure")}##giAutoExposure", ref CFG.Current.Viewport_GI_Auto_Exposure);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure_TT", SceneRenderer.IrradianceVolumes.AutoExposure));
+        ImGui.EndDisabled();
+        GUI.Tooltip(exposureFromMap
+            ? LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure_Map_TT")
+            : LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure_TT", SceneRenderer.IrradianceVolumes.AutoExposure));
 
         DPI.ApplyInputWidth();
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_GI_Intensity")}##giIntensity", ref CFG.Current.Viewport_GI_Intensity,
-            0.0f, CFG.Current.Viewport_GI_Auto_Exposure ? 4.0f : 200.0f);
+            0.0f, CFG.Current.Viewport_GI_Auto_Exposure || exposureFromMap ? 4.0f : 200.0f);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Intensity_TT"));
 
         DPI.ApplyInputWidth();
@@ -653,7 +674,23 @@ public class ViewportMenu
     {
         var bank = view.GparamLightingBank;
 
-        ImGui.Text(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Read_Only"));
+        // These apply at once, as the lighting is resolved every frame
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Enable")}##mapLightingEnable", ref CFG.Current.Viewport_Map_Lighting);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Enable_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Exposure_Scale")}##mapLightingExposureScale",
+            ref CFG.Current.Viewport_Map_Lighting_Exposure_Scale, 0.0f, 4.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Exposure_Scale_TT"));
+
+        var active = SceneRenderer.MapLighting;
+
+        if (CFG.Current.Viewport_Map_Lighting)
+        {
+            ImGui.Text(active != null
+                ? LOC.Get("VIEWPORT_Menubar_Map_Lighting_Active", active.File, active.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale)
+                : LOC.Get("VIEWPORT_Menubar_Map_Lighting_None"));
+        }
 
         ImGui.Separator();
 

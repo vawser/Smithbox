@@ -78,4 +78,13 @@ public unsafe struct SceneParam
 
     /// <summary>1: scale the environment map's reflections by the volumes' light</summary>
     public uint IrradianceVolumeFlags;
+
+    /// <summary>1: the sun comes from the map's GPARAMs, see <see cref="GparamLighting" /></summary>
+    public uint MapLightingFlags;
+
+    /// <summary>
+    ///     Color (rgb) and intensity (a) of the sun's highlights. The same as <see cref="SunColor" /> unless the map's
+    ///     GPARAM gives its own.
+    /// </summary>
+    public Vector4 SunSpecColor;
 }

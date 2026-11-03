@@ -1274,6 +1274,9 @@ public class CFG
     public string Viewport_Map_Lighting_File = "";
     public float Viewport_Map_Lighting_Hours = 4.0f;
 
+    // Scales the GPARAM's exposure, for maps where the game's auto exposure would set it differently
+    public float Viewport_Map_Lighting_Exposure_Scale = 1.0f;
+
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
 

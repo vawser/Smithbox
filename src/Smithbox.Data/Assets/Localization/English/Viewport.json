@@ -425,8 +425,36 @@
       "Text": "Map Lighting"
     },
     {
-      "Key": "VIEWPORT_Menubar_Map_Lighting_Read_Only",
-      "Text": "The lighting the map's GPARAMs give. Shown for checking: the viewport doesn't light with it yet."
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Enable",
+      "Text": "Light with the Map's GPARAMs"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Enable_TT",
+      "Text": "Take the sun's direction, color and intensity, and the exposure, from the map's GPARAMs, as the game does. The irradiance volumes then take the same exposure instead of their auto exposure. With several maps loaded, the first by name with its own GPARAM lights them all."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Exposure_Scale",
+      "Text": "Exposure Scale"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Exposure_Scale_TT",
+      "Text": "Multiplies the GPARAM's exposure. Most maps switch on the game's auto exposure, which adjusts the exposure to what is on screen; Smithbox uses the GPARAM's value as it is, so some maps may look too bright or too dark."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Active",
+      "Text": "Lit from {0}, exposure {1:0.###}"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_None",
+      "Text": "No loaded map has its own GPARAM, so the viewport's own sun is used."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Sun_From_Map",
+      "Text": "The sun comes from the map's GPARAMs (Render > Map Lighting)."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Auto_Exposure_Map_TT",
+      "Text": "Not used while the map's GPARAMs light the viewport: the volumes take the GPARAM's exposure, as the sun does."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_File",

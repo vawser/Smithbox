@@ -72,6 +72,12 @@ public static class SceneRenderer
     /// The irradiance volumes to light the Map Editor's models with, kept in the material buffer
     /// </summary>
     public static IrradianceVolumeTable IrradianceVolumes { get; private set; }
+
+    /// <summary>
+    ///     The lighting of the Map Editor's loaded maps from their GPARAMs, or null when it isn't used. Set every frame
+    ///     by the Map Editor, and read by the pipelines with <see cref="SceneRenderPipeline.UseMapLighting" />.
+    /// </summary>
+    public static GparamLighting MapLighting { get; set; }
     private static int _nextBuffer => (_currentBuffer + 1) % BUFFER_COUNT;
     private static int _prevBuffer => (_currentBuffer - 1 + BUFFER_COUNT) % BUFFER_COUNT;
 

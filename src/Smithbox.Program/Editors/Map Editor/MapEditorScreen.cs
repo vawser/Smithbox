@@ -549,6 +549,12 @@ public class MapEditorScreen : EditorScreen
             CFG.Current.Viewport_GI_Bake_Blend ? CFG.Current.Viewport_GI_Blend_Bake : -1,
             CFG.Current.Viewport_GI_Blend_Ratio);
 
+        // The sun and exposure of the loaded maps' GPARAMs, shared by all views
+        SceneRenderer.MapLighting = activeView.GparamLightingBank.ResolveForViewport(
+            activeView.Project.Handler.MapData.PrimaryBank.Maps.Values
+                .Select(w => w.MapContainer)
+                .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded));
+
         // Throw any exceptions that ocurred during async map loading, in any view.
         // Cleared before throwing so a handled exception is not rethrown every frame.
         foreach (var view in ViewHandler.Views)

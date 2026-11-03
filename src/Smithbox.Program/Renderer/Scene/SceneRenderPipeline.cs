@@ -56,6 +56,17 @@ public class SceneRenderPipeline
     public bool UseIrradianceVolumes = false;
 
     /// <summary>
+    ///     Whether the sun and the exposure come from <see cref="SceneRenderer.MapLighting" /> instead of the viewport's
+    ///     own settings. Only the Map Editor's viewports do, as it holds the lighting of their loaded maps.
+    /// </summary>
+    public bool UseMapLighting = false;
+
+    /// <summary>The map lighting this pipeline is lit with this frame, or null if it uses its own settings</summary>
+    public GparamLighting ActiveMapLighting => UseMapLighting && CFG.Current.Viewport_Map_Lighting
+        ? SceneRenderer.MapLighting
+        : null;
+
+    /// <summary>
     ///     A light that follows the camera, handy for looking at dark interiors. Off by default.
     ///     Its position is set every frame; the rest can be changed freely.
     /// </summary>
@@ -101,6 +112,7 @@ public class SceneRenderPipeline
         SceneParams.EnableTinting = 1;
         SceneParams.DitherOpacity = 0.5f;
         SceneParams.SunColor = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+        SceneParams.SunSpecColor = SceneParams.SunColor;
         SceneParams.LightCount = 0;
         SceneParams.CollisionOpacity = 1.0f;
 
@@ -224,6 +236,25 @@ public class SceneRenderPipeline
             (CFG.Current.Viewport_GI_Auto_Exposure ? SceneRenderer.IrradianceVolumes.AutoExposure : 1.0f);
         var irradianceFlags = CFG.Current.Viewport_GI_Normalize_Reflections ? 1u : 0u;
 
+        // The map's GPARAM lighting is in the game's units, as the volumes' light is, so both take the GPARAM's
+        // exposure instead of the volumes' auto exposure. The viewport's own sun settings are left as they are,
+        // so they come back when map lighting is switched off.
+        var mapLighting = ActiveMapLighting;
+        var mapLightDirection = Vector4.Zero;
+        var mapSunColor = Vector4.Zero;
+        var mapSunSpecColor = Vector4.Zero;
+
+        if (mapLighting != null)
+        {
+            var exposure = mapLighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale;
+            var sun = mapLighting.Sun;
+
+            mapLightDirection = new Vector4(sun.Direction, 0.0f);
+            mapSunColor = new Vector4(sun.Diffuse.X, sun.Diffuse.Y, sun.Diffuse.Z, sun.Diffuse.W * exposure);
+            mapSunSpecColor = new Vector4(sun.Specular.X, sun.Specular.Y, sun.Specular.Z, sun.Specular.W * exposure);
+            irradianceExposure = CFG.Current.Viewport_GI_Intensity * exposure;
+        }
+
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
             SceneParams.Projection = proj;
@@ -265,7 +296,22 @@ public class SceneRenderPipeline
                 }
             }
 
-            cl.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
+            SceneParams.MapLightingFlags = mapLighting != null ? 1u : 0u;
+            SceneParams.SunSpecColor = SceneParams.SunColor;
+
+            if (mapLighting == null)
+            {
+                cl.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
+                return;
+            }
+
+            // A copy, so the viewport's own sun stays in SceneParams for its sliders
+            var uploaded = SceneParams;
+            uploaded.LightDirection = mapLightDirection;
+            uploaded.SunColor = mapSunColor;
+            uploaded.SunSpecColor = mapSunSpecColor;
+
+            cl.UpdateBuffer(SceneParamBuffer, 0, ref uploaded, (uint)sizeof(SceneParam));
         });
     }
 

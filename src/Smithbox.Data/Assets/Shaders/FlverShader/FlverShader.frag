@@ -139,6 +139,9 @@ struct sceneParams
 	uint irradianceVolumeCount;
 	float irradianceVolumeExposure; // scales the volumes' light to the viewport's
 	uint irradianceVolumeFlags;     // 1: scale reflections by the volumes' light
+
+	uint mapLightingFlags;          // 1: the sun comes from the map's GPARAMs
+	vec4 sunSpecColor;              // the sun's highlights, rgb: color, a: intensity
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -679,8 +682,9 @@ struct Surface
 	vec3 V;
 };
 
-// Light arriving from direction L (pointing from the surface towards the light) with the given radiance
-vec3 ShadeLight(Surface s, vec3 L, vec3 radiance)
+// Light arriving from direction L (pointing from the surface towards the light), with the radiance it lights
+// surfaces with and the radiance of its highlights, which a GPARAM sun gives separately
+vec3 ShadeLight(Surface s, vec3 L, vec3 radiance, vec3 specularRadiance)
 {
 	float LdotN = clamp(dot(s.N, L), 0.0, 1.0);
 
@@ -694,7 +698,7 @@ vec3 ShadeLight(Surface s, vec3 L, vec3 radiance)
 		vec3 diffuse = s.diffuse * LdotN;
 		// no highlight on the side facing away from the light
 		vec3 specular = s.F0 * pow(NdotH, 4.0) * (LdotN > 0.0 ? 1.0 : 0.0);
-		return (diffuse + specular) * radiance;
+		return diffuse * radiance + specular * specularRadiance;
 	}
 
 	// PBR model
@@ -708,7 +712,7 @@ vec3 ShadeLight(Surface s, vec3 L, vec3 radiance)
 	vec3 specular = D * F * pow(LdotN, LdotNPower);
 	vec3 diffuse = s.diffuse * LdotN * (1.0 - s.F0);
 
-	return (diffuse + specular) * radiance;
+	return diffuse * radiance + specular * specularRadiance;
 }
 
 // Works out the direction to, and the radiance from, a scene light at a point in the world
@@ -1211,7 +1215,8 @@ void main()
 	surface.V = viewVec;
 
 	// The sun, then every light in the scene
-	vec3 direct = ShadeLight(surface, -sunDir, sceneparam.sunColor.rgb * sceneparam.sunColor.a);
+	vec3 direct = ShadeLight(surface, -sunDir, sceneparam.sunColor.rgb * sceneparam.sunColor.a,
+		sceneparam.sunSpecColor.rgb * sceneparam.sunSpecColor.a);
 
 	uint lightCount = min(sceneparam.lightCount, uint(MAX_SCENE_LIGHTS));
 	for (uint i = 0; i < lightCount; i++)
@@ -1220,7 +1225,7 @@ void main()
 		vec3 radiance = LightRadiance(sceneparam.lights[i], fsin_worldpos, L);
 		if (dot(radiance, radiance) > 0.0)
 		{
-			direct += ShadeLight(surface, L, radiance);
+			direct += ShadeLight(surface, L, radiance, radiance);
 		}
 	}
 

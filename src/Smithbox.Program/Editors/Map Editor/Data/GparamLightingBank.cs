@@ -107,6 +107,47 @@ public class GparamLightingBank
         {
             Files.Clear();
         }
+
+        ViewportLighting = null;
+    }
+
+    // The last lighting given to the viewports, and what it was resolved from
+    private GparamLighting ViewportLighting;
+    private string ViewportLightingMap;
+
+    /// <summary>
+    /// The scene's lighting for the Map Editor's viewports: that of the first of the loaded maps (by name) with
+    /// its own GPARAM, with the file and time of day the viewport menu chose. Null if map lighting is off or no
+    /// loaded map has a GPARAM. Only resolved again when one of those changes.
+    /// </summary>
+    public GparamLighting ResolveForViewport(IEnumerable<MapContainer> maps)
+    {
+        if (!CanUse() || !CFG.Current.Viewport_Map_Lighting)
+            return null;
+
+        var files = Project.Locator.GparamFiles.Entries;
+
+        var map = maps
+            .OrderBy(m => m.Name, StringComparer.OrdinalIgnoreCase)
+            .FirstOrDefault(m => files.Any(e => e.Filename.Equals(GetDefaultFile(m.Name), StringComparison.OrdinalIgnoreCase)));
+
+        if (map == null)
+            return null;
+
+        var file = ChooseFile(map.Name, CFG.Current.Viewport_Map_Lighting_File);
+        var hours = CFG.Current.Viewport_Map_Lighting_Hours;
+
+        var cached = ViewportLighting;
+
+        if (cached != null && ViewportLightingMap == map.Name && cached.File == file && cached.Hours == hours)
+            return cached;
+
+        cached = Resolve(map.Name, file, SceneLightSetId, hours);
+
+        ViewportLightingMap = map.Name;
+        ViewportLighting = cached;
+
+        return cached;
     }
 
     private GPARAM GetFile(string name)
@@ -227,31 +268,6 @@ public class GparamLightingBank
 
         if (followKey != null)
             light.FollowCamera = reader.Get(LightSetKey, followKey, id, light.FollowCamera);
-    }
-
-    /// <summary>
-    /// Temporary diagnostics, see Gparam Lighting.md Phase 1: the files a map's lighting comes from and the scene's
-    /// lighting at the viewport's time of day
-    /// </summary>
-    public void LogMap(MapContainer map)
-    {
-        if (!CanUse() || map == null)
-            return;
-
-        var file = ChooseFile(map.Name, CFG.Current.Viewport_Map_Lighting_File);
-
-        var l = Resolve(map.Name, file, SceneLightSetId, CFG.Current.Viewport_Map_Lighting_Hours);
-
-        string Source(string key) => l.Sources.TryGetValue(key, out var s) ? s : "-";
-
-        Smithbox.Log(this, LOC.Get("MAP_Lighting_Load_Summary",
-            map.Name,
-            string.Join(" ", ListFiles(map.Name)),
-            l.File,
-            l.Hours,
-            FormatColor(l.Sun.Diffuse), FormatAngle(l.Sun.Angle), Source("Directional Light DiffColor0"),
-            FormatColor(l.HemiUp), FormatColor(l.HemiDown),
-            l.Exposure, l.AutoExposure, l.MiddleGray, Source("GS Presents - ToneMap-Exposure")));
     }
 
     public static string FormatColor(Vector4 c) => $"({c.X:0.###}, {c.Y:0.###}, {c.Z:0.###}) x {c.W:0.###}";
