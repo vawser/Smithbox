@@ -324,7 +324,7 @@ none of them.
 Check: a debug view (Post Effects > Show: Normals / Roughness / Indirect) that draws each attachment. Nothing else
 changes; nav meshes and collisions still draw.
 
-### Phase 4 as built (2026-11-03; not yet checked in the app)
+### Phase 4 as built (2026-11-03; checked in the app 2026-11-03)
 
 - **The attachments** (`SceneTarget.cs`):
   - `Surface`, RGBA16F: xy the world normal (octahedral, -1..1), z roughness, w specular (the largest of F0's
@@ -377,6 +377,50 @@ the common case), then add a second attachment term if the game clearly darkens 
 
 Check: ER m10_00_00_00: dark contact shadows where walls meet floors and under ledges, in volume-lit interiors as
 well as outside; sunlit faces not darkened. Toggle off: exactly Phase 4's image.
+
+### Phase 5 as built (2026-11-03; not yet checked in the app)
+
+**Survey.** Only `mapbase`, `default` and 43 others have SSAO; m10, m30 and m60 don't, so ER maps take mapbase:
+Sample Offset 5, AO Scale 1.5, AO Offset -0.25, Kernel Scale Base Dist 100, Min 2, Max 5, DepthFadeStart 3800 over
+100, PrecisionDepth 4000, Depth Reject Rate 0.02, UseNormal on. The files that do have it mostly fill IDs 10-130, not
+0 (LightSet-like); only ID 0 is read, as before.
+
+**The pass** (`SsaoPass.cs`, `Ssao.vert/frag`) is the chain's first pass, before auto exposure, so the exposure is
+measured on the darkened scene. It also runs without map lighting, on mapbase's values. Its steps:
+1. **Occlusion**, at half size: 16 taps on a golden-angle spiral, turned per pixel by interleaved gradient noise.
+   - Positions come from the scene depth.
+   - The normal comes from `Surface`, or from the depth's slope where no flver drew or UseNormal is off.
+   - A tap occludes by `max(dot(v̂, N) - 0.05, 0)`, falling off with distance out to the kernel's world radius.
+   - raw = `2 × sum / 16`; the occlusion is `saturate(raw × AO Scale + AO Offset) × the viewport's Strength`.
+   - It fades out from DepthFadeStart over DepthFadeRange and is gone past PrecisionDepth.
+2. **Blur**, across then down: 9 taps, weighted down where the depth differs by more than Depth Reject Rate × depth.
+3. **Composite**: `scene - Indirect × occlusion`, upsampled with depth-aware weights. Only the ambient is taken
+   away.
+
+**How the values are read** (a reading, not decoded from the game):
+- The kernel radius is `Sample Offset × clamp(Base Dist / depth, Min, Max)` pixels at 1080p, scaled to the viewport's
+  height. With mapbase that is 25 px up to 20 m and 10 px from 50 m on.
+- Depth Reject Rate is taken as the blur's depth tolerance; in the game it is probably the temporal history's.
+- Not used: UseReProj, PrevFrame Strength/Depth Aware (temporal), Geom Bent Offset, EnableUpScale, PreventGhost, and
+  the LightSet's `SsaoWeight0-3`. The directional lights are not darkened.
+
+**Known interplay:** the volumetric fog is already in the image, so a fogged pixel loses its ambient as if it weren't
+fogged. This is small near the camera, where the fog is thin.
+
+CFG `Viewport_Post_Ssao` (on) and `Viewport_Post_Ssao_Strength` (1), in Post Effects. Show: Ambient Occlusion displays
+the blurred visibility.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| ER m10_00_00_00, map lighting on, Show: Ambient Occlusion | Look at a courtyard corner and under a ledge | White open surfaces, soft grey where walls meet floors, in corners and under overhangs; no banding or dotted pattern | Everything grey: the occlusion is too strong, report it. Speckles: the blur's depth tolerance. Shadows offset from the geometry: the Y flip in WorldPosition |
+| Same, Show: Image | Toggle SSAO | Corners and creases darken a little; sunlit faces don't change | Sunlit faces darken: the Indirect attachment holds direct light |
+| Same | Walk close to a wall, then back off | The darkening keeps its size on the wall, not getting huge up close | Halos round near objects: the radius at short range |
+| A volume-lit interior (m10 or a catacomb) | Toggle SSAO | Clear darkening in corners, since ambient is most of the light there | |
+| Edges of a building against the sky | Show: Ambient Occlusion | No dark halo on the sky side | |
+| Strength 0 | | Exactly as with SSAO off | |
+| Map lighting off, Model Editor | | Contact shading on the model where parts meet | |
 
 ### Phase 6: SSR
 

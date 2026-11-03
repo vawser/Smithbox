@@ -1273,6 +1273,26 @@
       "Text": "Indirect Light"
     },
     {
+      "Key": "VIEWPORT_Rendering_Post_Surface_View_Occlusion",
+      "Text": "Ambient Occlusion"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Ssao_Enable",
+      "Text": "SSAO"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Ssao_Enable_TT",
+      "Text": "Darkens the ambient light in creases and where surfaces meet, with the GPARAM SSAO group's values (Elden Ring's maps all take mapbase's). Only the indirect light is taken away, so sunlit faces keep their sun. Runs with or without map lighting."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Ssao_Strength",
+      "Text": "Strength"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Ssao_Strength_TT",
+      "Text": "The viewport's own scale on how much SSAO darkens, on top of the GPARAM's AO Scale and AO Offset. 1 is the GPARAM as read."
+    },
+    {
       "Key": "VIEWPORT_Rendering_Post_Fog_Local_Lights_Enable",
       "Text": "Map Lights in Fog"
     },

@@ -3,21 +3,23 @@
 // Shows one of the scene target's surface attachments in place of the image, see SurfaceViewPass.cs. Normals,
 // roughness and specular are display values, which the tone map passes through (it squares them back here first,
 // as it takes a square root); the indirect light is light, tone mapped as the scene is. Pixels no flver drew show
-// as a dark grey.
+// as a dark grey. The ambient occlusion is SSAO's visibility, white where open.
 
 #define VIEW_NORMALS 1
 #define VIEW_ROUGHNESS 2
 #define VIEW_SPECULAR 3
 #define VIEW_INDIRECT 4
+#define VIEW_OCCLUSION 5
 
 layout(set = 0, binding = 0) uniform SurfaceViewParams
 {
-	vec4 settings; // x: what to show
+	vec4 settings; // x: what to show, y: 1 if SSAO ran this frame
 } params;
 
 layout(set = 0, binding = 1) uniform texture2D surface;
 layout(set = 0, binding = 2) uniform texture2D indirect;
 layout(set = 0, binding = 3) uniform sampler pointSampler;
+layout(set = 0, binding = 4) uniform texture2D occlusion; // SSAO's half size visibility
 
 layout(location = 0) out vec4 fsout_color;
 
@@ -36,6 +38,13 @@ void main()
 {
 	ivec2 pixel = ivec2(gl_FragCoord.xy);
 	int view = int(params.settings.x + 0.5);
+
+	if (view == VIEW_OCCLUSION)
+	{
+		float visibility = params.settings.y > 0.5 ? texelFetch(sampler2D(occlusion, pointSampler), pixel / 2, 0).r : 0.1;
+		fsout_color = vec4(vec3(visibility * visibility), 1.0);
+		return;
+	}
 
 	if (view == VIEW_INDIRECT)
 	{

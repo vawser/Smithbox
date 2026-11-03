@@ -37,7 +37,10 @@ public class SceneRenderPipeline
     public AutoExposurePass AutoExposure { get; } = new();
 
     /// <summary>The debug view of the scene target's surface attachments, the last of <see cref="PostProcess" />'s passes</summary>
-    public SurfaceViewPass SurfaceView { get; } = new();
+    public SurfaceViewPass SurfaceView { get; }
+
+    /// <summary>The ambient occlusion, the first of <see cref="PostProcess" />'s passes</summary>
+    public SsaoPass Ssao { get; }
 
     /// <summary>The anti-aliasing after the tone map, see <see cref="FxaaPass" /></summary>
     public FxaaPass Fxaa { get; } = new();
@@ -164,7 +167,12 @@ public class SceneRenderPipeline
         Scene = scene;
         Device = device;
 
-        // Auto exposure first, so the passes after it see this frame's adjustment
+        Ssao = new SsaoPass(this);
+        SurfaceView = new SurfaceViewPass(Ssao);
+
+        // SSAO darkens the scene itself, so it goes before the auto exposure measures it. Auto exposure next, so
+        // the passes after it see this frame's adjustment.
+        PostProcess.Add(Ssao);
         PostProcess.Add(AutoExposure);
         PostProcess.Add(new LightShaftPass(this, AutoExposure));
         PostProcess.Add(new BloomPass(AutoExposure));

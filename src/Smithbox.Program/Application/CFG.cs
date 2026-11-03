@@ -1331,6 +1331,10 @@ public class CFG
     // The GPARAM's LightShaft group: rays from the sun where the sky shows through
     public bool Viewport_Post_Light_Shafts = true;
 
+    // The GPARAM's SSAO, and the viewport's scale on how much it darkens
+    public bool Viewport_Post_Ssao = true;
+    public float Viewport_Post_Ssao_Strength = 1.0f;
+
     // A debug view of the scene's surface attachments in place of the image, see SurfaceView: 0 for none
     public int Viewport_Post_Surface_View = 0;
 

@@ -13,7 +13,8 @@ public enum SurfaceView
     Normals = 1,
     Roughness = 2,
     Specular = 3,
-    Indirect = 4
+    Indirect = 4,
+    AmbientOcclusion = 5
 }
 
 /// <summary>
@@ -31,6 +32,15 @@ public class SurfaceViewPass : PostProcessPass
     private ResourceSet ResourceSet;
     private int BoundVersion = -1;
     private SceneTarget BoundTarget;
+    private Texture BoundOcclusion;
+
+    private readonly SsaoPass Ssao;
+
+    /// <param name="ssao">The pipeline's SSAO, whose visibility the ambient occlusion view shows</param>
+    public SurfaceViewPass(SsaoPass ssao)
+    {
+        Ssao = ssao;
+    }
 
     public override string Name => "Surface View";
 
@@ -53,7 +63,7 @@ public class SurfaceViewPass : PostProcessPass
 
         EnsureResources(gd, frame.Target);
 
-        var settings = new Vector4((float)view, 0.0f, 0.0f, 0.0f);
+        var settings = new Vector4((float)view, Ssao.Ran ? 1.0f : 0.0f, 0.0f, 0.0f);
         cl.UpdateBuffer(ParamBuffer, 0, ref settings, (uint)sizeof(Vector4));
         cl.Barrier(VkPipelineStageFlags2.Transfer, VkAccessFlags2.TransferWrite,
             VkPipelineStageFlags2.FragmentShader, VkAccessFlags2.UniformRead);
@@ -79,6 +89,8 @@ public class SurfaceViewPass : PostProcessPass
             new ResourceLayoutElementDescription("Indirect", VkDescriptorType.SampledImage,
                 VkShaderStageFlags.Fragment),
             new ResourceLayoutElementDescription("PointSampler", VkDescriptorType.Sampler,
+                VkShaderStageFlags.Fragment),
+            new ResourceLayoutElementDescription("Occlusion", VkDescriptorType.SampledImage,
                 VkShaderStageFlags.Fragment)));
 
         if (Pipeline == null)
@@ -102,7 +114,11 @@ public class SurfaceViewPass : PostProcessPass
         ParamBuffer ??= factory.CreateBuffer(new BufferDescription((uint)sizeof(Vector4),
             VkBufferUsageFlags.UniformBuffer | VkBufferUsageFlags.TransferDst, VmaMemoryUsage.Auto, 0));
 
-        if (ResourceSet != null && ReferenceEquals(BoundTarget, target) && BoundVersion == target.Version)
+        // Before SSAO first runs there is no visibility; the indirect light stands in, and isn't shown
+        var occlusion = Ssao.Visibility ?? target.Indirect;
+
+        if (ResourceSet != null && ReferenceEquals(BoundTarget, target) && BoundVersion == target.Version &&
+            ReferenceEquals(BoundOcclusion, occlusion))
         {
             return;
         }
@@ -113,8 +129,9 @@ public class SurfaceViewPass : PostProcessPass
         }
 
         ResourceSet = factory.CreateResourceSet(new ResourceSetDescription(Layout, ParamBuffer, target.Surface,
-            target.Indirect, gd.PointSampler));
+            target.Indirect, gd.PointSampler, occlusion));
         BoundTarget = target;
         BoundVersion = target.Version;
+        BoundOcclusion = occlusion;
     }
 }
