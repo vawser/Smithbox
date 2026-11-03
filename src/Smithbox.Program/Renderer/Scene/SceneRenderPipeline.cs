@@ -163,6 +163,7 @@ public class SceneRenderPipeline
 
         // Auto exposure first, so the passes after it see this frame's adjustment
         PostProcess.Add(AutoExposure);
+        PostProcess.Add(new LightShaftPass(this, AutoExposure));
         PostProcess.Add(new BloomPass(AutoExposure));
 
         ResourceFactory factory = device.ResourceFactory;

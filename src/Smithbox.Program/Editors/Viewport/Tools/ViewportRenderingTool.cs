@@ -1024,6 +1024,10 @@ public class ViewportRenderingTool
         ImGui.Unindent();
         ImGui.EndDisabled();
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Light_Shafts_Enable")}##postLightShafts",
+            ref CFG.Current.Viewport_Post_Light_Shafts);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Light_Shafts_Enable_TT"));
+
         ImGui.EndDisabled();
 
         var pipeline = viewport.ViewPipeline;

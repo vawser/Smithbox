@@ -30,9 +30,8 @@
 - Add Object Mass Edit that allows for addition/deletion of map objects programmatically
 
 - Renderer:
+    - Fix decal textures
     - Introduce GPARAM elements
-        - Fog
-        - VolumetricFog
         - Cloud Shadow
         - SSAO
         - AO

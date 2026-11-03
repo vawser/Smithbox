@@ -200,7 +200,7 @@ Check: ER m10_00_00_00 at t4: distant towers hazed with a faint green-grey (SkyC
 thinning with height. Looking towards the sun the haze is brighter than away from it. With volumetric fog, shafts of
 shadow through the courtyard archways.
 
-### Phase 2 as built (2026-11-03; not yet checked in the app)
+### Phase 2 as built (2026-11-03; checked in the app 2026-11-03)
 
 Steps 1 and 2 were built as one: the froxel volume is the fog, and the analytic part only covers what lies past it.
 
@@ -267,6 +267,51 @@ switch to a directional blur when the light is far off screen.
 
 Check: ER m60_42_36_00 at t8 facing the sun through trees: rays fanning from the sun disc; none in m10_00_00_00
 (disabled there).
+
+### Phase 3 as built (2026-11-03; checked in the app 2026-11-03)
+
+**Survey.** Every m60 tile resolves to `m60_00_0000`. There:
+- `EnableRefLight` is on with bank 160000000 at every time, so the scene sun is used.
+- `Sky Multiply Color` and `Sky Add Color` have intensity (w) **0 at t4, t8, t12 and from t15 on**. Their w is 1 only
+  at t0 (Add) and t11.5 (both).
+- So m60 shows shafts only towards t11.5 (rising from t8, gone again at t12) and around t0. The plan's "t8" check
+  would show nothing.
+- `capturemap` and the 34 files with `<1, 0.85, 0.85, 3>` have stronger multipliers.
+- m10 has the group off.
+
+**The pass** (`LightShaftPass.cs`, `LightShaft.vert/frag`) runs in the chain after auto exposure and before bloom,
+so the brightest shafts also glow. Its steps:
+1. **Mask** at half size, written out in Mask(). A pixel counts as sky where the scene depth is 0 or past
+   `MaskDepthThreshold`. It is weighted by `((cos(ray, sun) - cos(SizeAngle)) / (1 - cos(SizeAngle)))^CenterPower`.
+   Its colour is the sky over `SkyColorThreshold` (judged after the auto exposure), greyed by `SkyColorSaturate`,
+   times Multiply.rgb × w, plus Add.rgb × w.
+2. **Blur**, `ShaftBlurCount` (1-4) passes of 16 taps each:
+   - Each pass covers 1/16 of the one before.
+   - The taps run towards the sun's point on screen, over `min(ShaftBlurRange / 4, 1)` of the way.
+   - The weights are `exp(-ShaftBlurFallOff × t)` along the whole length.
+   - Between the Parallel mode angles (the sun's angle from the camera's forward), the blur turns to a fixed direction
+     across the screen, `ShaftBlurRange for Parallel` long. It is always parallel with the sun behind the camera.
+3. **Composite**: scene + shafts × `1 - smoothstep(Fade out begin, end, angle)`.
+
+**How the values are read** (a reading, not decoded from the game):
+- `Sky Add Color` takes `1 + (exposure - 1) × ExposureInfluenceRate AddColor` of the GPARAM exposure. The Multiply
+  colour scales the sky, which already has the exposure in it.
+- Not used: `HighQualitySkyMask`, `SkyMaskMode` (0 everywhere), and `Angle` while `EnableRefLight` is set.
+- Weather overlays, which override Light Shaft in 57 files, are still not in the resolve chain.
+
+CFG `Viewport_Post_Light_Shafts` (on), with a switch in Post Effects.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| ER m60_42_36_00 at t11 (between t8 and t11.5), map lighting on | Face the sun with trees or a ruin in front of it | "Drawing:" lists Light Shafts; pale rays fan out from the sun round the silhouettes | Nothing: Multiply/Add w read as intensity is wrong, report the Post Effects table's Light Shaft row. Rays pointing away from the sun: the screen Y flip in `ToScreen` |
+| Same, t8 or t15 | | No visible rays (w is 0) | Visible: the colours aren't scaled by w |
+| Same, t11 | Turn until the sun is 40-80° off to the side | The rays turn into parallel streaks across the screen | Streaks pointing the wrong way: the parallel direction's sign |
+| Same | Turn the sun behind you (past 90-120°) | The shafts fade out completely | |
+| Same | Toggle Light Shafts | Only the rays change | Whole image shifts or gets brighter: the composite reads the wrong texture |
+| m10_00_00_00 | | Light Shafts not listed (group off) | |
+| Resize, split viewports | | Rays stay on the sun in each viewport | |
 
 ### Phase 4: screen outputs for normals and indirect light
 

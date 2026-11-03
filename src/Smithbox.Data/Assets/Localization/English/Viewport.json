@@ -1237,6 +1237,14 @@
       "Text": "Shades the fog's sunlight with the sun's shadow maps, which gives shafts of shadow through gaps. Needs Shadows on."
     },
     {
+      "Key": "VIEWPORT_Rendering_Post_Light_Shafts_Enable",
+      "Text": "Light Shafts"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Light_Shafts_Enable_TT",
+      "Text": "Where the GPARAM's LightShaft group is on, rays fan out from the sun where the sky shows round it, colored by Sky Multiply Color and Sky Add Color, whose intensity (w) is 0 at many times of day. Needs map lighting."
+    },
+    {
       "Key": "VIEWPORT_Rendering_Post_Fog_Local_Lights_Enable",
       "Text": "Map Lights in Fog"
     },
