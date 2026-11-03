@@ -211,14 +211,18 @@ public class GparamBank : IDisposable
             }
         }
 
-        if (fileEntry.Extension == "gparambnd")
+        var saved = fileEntry.Extension == "gparambnd"
+            ? HandleContainerFile(fileEntry, wrapper)
+            : HandleExternalFile(fileEntry, wrapper);
+
+        // The Map Editor keeps its own copies of the GPARAMs it reads
+        if (saved)
         {
-            return HandleContainerFile(fileEntry, wrapper);
+            Project.Handler.MapData?.FogVolumeBank?.ClearSettingsCache();
+            Project.Handler.MapData?.GparamLightingBank?.ClearCache();
         }
-        else
-        {
-            return HandleExternalFile(fileEntry, wrapper);
-        }
+
+        return saved;
     }
 
     private bool HandleContainerFile(FileDictionaryEntry fileEntry, GparamWrapper wrapper)

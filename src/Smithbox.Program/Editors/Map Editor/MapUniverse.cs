@@ -154,6 +154,7 @@ public class MapUniverse : IUniverse
                 View.MultiPlayerWallBank.LoadMPW(newMap);
                 View.FogVolumeBank.LoadFVB(newMap);
                 View.IrradianceVolumeBank.LoadMap(newMap);
+                View.GparamLightingBank.LogMap(newMap);
                 View.MapLimitBank.LoadMSLD(newMap);
                 View.LightAtlasBank.LoadBTAB(newMap);
                 View.LightProbeBank.LoadBTPB(newMap);

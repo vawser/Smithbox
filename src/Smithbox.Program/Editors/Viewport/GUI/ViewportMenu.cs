@@ -521,6 +521,16 @@ public class ViewportMenu
                         ImGui.EndMenu();
                     }
                 }
+
+                if (mapUniverse.View.GparamLightingBank.CanUse())
+                {
+                    if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##mapLightingMenuHeader"))
+                    {
+                        MapLightingMenu(mapUniverse.View);
+
+                        ImGui.EndMenu();
+                    }
+                }
             }
 
             if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Parts")}##partsMenuHeader"))
@@ -633,6 +643,138 @@ public class ViewportMenu
             view.IrradianceVolumeIdTool.FocusRequested = true;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Open_Tool_TT"));
+    }
+
+    /// <summary>
+    /// The lighting the loaded maps' GPARAMs give (AC6, ER, NR), for the scene and for models, and where each value
+    /// came from. Read only for now, see Gparam Lighting.md.
+    /// </summary>
+    private void MapLightingMenu(MapEditorView view)
+    {
+        var bank = view.GparamLightingBank;
+
+        ImGui.Text(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Read_Only"));
+
+        ImGui.Separator();
+
+        var maps = view.Project.Handler.MapData.PrimaryBank.Maps.Values
+            .Select(w => w.MapContainer)
+            .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
+            .ToList();
+
+        // The files of every loaded map's area; a file only applies to the maps of its area
+        var files = maps.SelectMany(m => bank.ListFiles(m.Name)).Distinct(StringComparer.OrdinalIgnoreCase).ToList();
+        var ownLabel = LOC.Get("VIEWPORT_Menubar_Map_Lighting_File_Own");
+        var chosen = CFG.Current.Viewport_Map_Lighting_File;
+
+        DPI.ApplyInputWidth();
+        if (ImGui.BeginCombo($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_File")}##mapLightingFile",
+            string.IsNullOrEmpty(chosen) ? ownLabel : chosen))
+        {
+            if (ImGui.Selectable($"{ownLabel}##mapLightingFileOwn", string.IsNullOrEmpty(chosen)))
+            {
+                CFG.Current.Viewport_Map_Lighting_File = "";
+            }
+
+            foreach (var file in files)
+            {
+                if (ImGui.Selectable($"{file}##mapLightingFile_{file}", file.Equals(chosen, StringComparison.OrdinalIgnoreCase)))
+                {
+                    CFG.Current.Viewport_Map_Lighting_File = file;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_File_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Hours")}##mapLightingHours",
+            ref CFG.Current.Viewport_Map_Lighting_Hours, 0.0f, 24.0f, "%.2f");
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Hours_TT"));
+
+        ImGui.Separator();
+
+        if (maps.Count == 0)
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
+            return;
+        }
+
+        var hours = CFG.Current.Viewport_Map_Lighting_Hours;
+        var off = LOC.Get("VIEWPORT_Menubar_Map_Lighting_Off");
+
+        string Light(GparamDirectionalLight light) => light.Enabled && light.Diffuse.W > 0.0f
+            ? $"{GparamLightingBank.FormatColor(light.Diffuse)} {GparamLightingBank.FormatAngle(light.Angle)}{(light.FollowCamera ? " cam" : "")}"
+            : off;
+
+        foreach (var map in maps)
+        {
+            var file = GparamLightingBank.ChooseFile(map.Name, chosen);
+            var scene = bank.Resolve(map.Name, file, GparamLightingBank.SceneLightSetId, hours);
+            var model = bank.Resolve(map.Name, file, GparamLightingBank.ModelLightSetId, hours);
+
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Map", map.Name, scene.File));
+
+            if (!ImGui.BeginTable($"##mapLighting_{map.Name}", 4,
+                ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit))
+                continue;
+
+            ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Value"));
+            ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Scene", GparamLightingBank.SceneLightSetId));
+            ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Models", GparamLightingBank.ModelLightSetId));
+            ImGui.TableSetupColumn(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Column_Source"));
+            ImGui.TableHeadersRow();
+
+            void Row(string key, string sceneText, string modelText, string field)
+            {
+                ImGui.TableNextRow();
+                ImGui.TableNextColumn();
+                ImGui.Text(LOC.Get(key));
+                ImGui.TableNextColumn();
+                ImGui.Text(sceneText);
+                ImGui.TableNextColumn();
+                ImGui.Text(modelText);
+                ImGui.TableNextColumn();
+                ImGui.Text(scene.Sources.TryGetValue(field, out var source) ? source : LOC.Get("VIEWPORT_Menubar_Map_Lighting_Default"));
+            }
+
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_Sun",
+                GparamLightingBank.FormatColor(scene.Sun.Diffuse), GparamLightingBank.FormatColor(model.Sun.Diffuse),
+                "Directional Light DiffColor0");
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_Sun_Specular",
+                GparamLightingBank.FormatColor(scene.Sun.Specular), GparamLightingBank.FormatColor(model.Sun.Specular),
+                "Directional Light SpecColor0");
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_Sun_Angle",
+                GparamLightingBank.FormatAngle(scene.Sun.Angle), GparamLightingBank.FormatAngle(model.Sun.Angle),
+                "Directional Light Angle0");
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_Light1", Light(scene.Light1), Light(model.Light1),
+                "Directional Light DiffColor1");
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_LocalLight1", Light(scene.LocalLight1), Light(model.LocalLight1),
+                "Directional Light LocalLight DiffColor1");
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_LocalLight2", Light(scene.LocalLight2), Light(model.LocalLight2),
+                "Directional Light LocalLight DiffColor2");
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_Hemi_Up",
+                GparamLightingBank.FormatColor(scene.HemiUp), GparamLightingBank.FormatColor(model.HemiUp),
+                "Directional Light Hemi Color Up");
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_Hemi_Down",
+                GparamLightingBank.FormatColor(scene.HemiDown), GparamLightingBank.FormatColor(model.HemiDown),
+                "Directional Light Hemi Color Down");
+
+            // The groups below have no model set, so both columns are the same
+            var exposure = $"{scene.Exposure:0.###}";
+            var autoExposure = scene.AutoExposure ? $"{scene.MiddleGray:0.###}" : off;
+            var envMap = $"{scene.EnvMapSaturate:0.###}, {GparamLightingBank.FormatColor(scene.EnvMapScale)}";
+            var background = GparamLightingBank.FormatColor(scene.BackgroundColor);
+
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_Exposure", exposure, exposure, "GS Presents - ToneMap-Exposure");
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_Auto_Exposure", autoExposure, autoExposure,
+                "GS Presents - ToneMap-Enable AutoExposure");
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_EnvMap", envMap, envMap, "EnvironmentConfig EnvMapColorConvert Saturate");
+            Row("VIEWPORT_Menubar_Map_Lighting_Row_Background", background, background, "GS - BG Color-Data");
+
+            ImGui.EndTable();
+        }
     }
 
     /// <summary>

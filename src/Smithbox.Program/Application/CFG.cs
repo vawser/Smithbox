@@ -1268,6 +1268,12 @@ public class CFG
     // Whether the environment map's reflections are scaled by the volumes' light, as the game does
     public bool Viewport_GI_Normalize_Reflections = true;
 
+    // Lighting map viewports from the map's GPARAMs (AC6, ER, NR): the file looked in first ("" for mAA_BB_0000),
+    // and the time of day on the GPARAMs' TimeOfDay scale, whose first daytime key is 4
+    public bool Viewport_Map_Lighting = true;
+    public string Viewport_Map_Lighting_File = "";
+    public float Viewport_Map_Lighting_Hours = 4.0f;
+
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
 

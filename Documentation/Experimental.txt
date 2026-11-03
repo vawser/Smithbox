@@ -19,3 +19,6 @@
    
 - World Map Tile editor
 - MapInfoTex editor
+
+- First-person Mode for Map Editor (player perspective)
+    - Would require collision checks and movement handling

@@ -421,6 +421,110 @@
       "Text": "Scale the environment map's reflections by how bright the volumes' light is at each point compared with the volume's average, as the game does, so reflections darken in shadow and brighten in lit areas."
     },
     {
+      "Key": "VIEWPORT_Menubar_Header_Map_Lighting",
+      "Text": "Map Lighting"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Read_Only",
+      "Text": "The lighting the map's GPARAMs give. Shown for checking: the viewport doesn't light with it yet."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_File",
+      "Text": "GPARAM"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_File_TT",
+      "Text": "The GPARAM each value is looked for in first. Values it doesn't have come from mapbase, then default."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_File_Own",
+      "Text": "Each map's own (mAA_BB_0000)"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Hours",
+      "Text": "Time of Day"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Hours_TT",
+      "Text": "The time on the GPARAMs' TimeOfDay scale. Elden Ring keys its lighting at 0, 4, 8, 12, 15, 21 and 22.5, where 0 is morning, 12 evening and 15 night."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Map",
+      "Text": "{0}: from {1}"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Column_Value",
+      "Text": "Value"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Column_Scene",
+      "Text": "Scene (LightSet {0})"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Column_Models",
+      "Text": "Models (LightSet {0})"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Column_Source",
+      "Text": "Scene value from"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Default",
+      "Text": "default value"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Off",
+      "Text": "off"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_Sun",
+      "Text": "Sun"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_Sun_Specular",
+      "Text": "Sun highlights"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_Sun_Angle",
+      "Text": "Sun angle"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_Light1",
+      "Text": "Light 1"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_LocalLight1",
+      "Text": "Local light 1"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_LocalLight2",
+      "Text": "Local light 2"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_Hemi_Up",
+      "Text": "Hemisphere up"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_Hemi_Down",
+      "Text": "Hemisphere down"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_Exposure",
+      "Text": "Exposure"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_Auto_Exposure",
+      "Text": "Auto exposure (middle gray)"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_EnvMap",
+      "Text": "Envmap saturate, scale"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Row_Background",
+      "Text": "Background"
+    },
+    {
       "Key": "VIEWPORT_Menubar_GI_GPU_Textures",
       "Text": "Volume textures on the GPU: {0}"
     },
