@@ -1,4 +1,5 @@
 ﻿#nullable enable
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using SoulsFormats.Utilities;
 using StudioCore.Developer;
@@ -1045,6 +1046,75 @@ public class FlverResource : IResource, IDisposable
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Makes every index point at a vertex of the mesh. The GPU reads whatever an index points at,
+    /// and an index past the last vertex can read past the end of the vertex buffer and lose the device.
+    /// Strips keep their restart values, which the pipeline restarts on. Lists have no restart,
+    /// so a triangle with a bad index is collapsed onto its first vertex instead.
+    /// </summary>
+    private void SanitizeIndices(FlverSubmesh dest, Span<ushort> fs16, Span<int> fs32)
+    {
+        var vertexCount = dest.VertexCount;
+        var fixedCount = 0;
+
+        foreach (var faceset in dest.MeshFacesets)
+        {
+            if (faceset.IsTriangleStrip)
+            {
+                for (var i = 0; i < faceset.IndexCount; i++)
+                {
+                    var offset = faceset.IndexOffset + i;
+
+                    if (faceset.Is32Bit)
+                    {
+                        if (fs32[offset] != -1 && (uint)fs32[offset] >= (uint)vertexCount)
+                        {
+                            fs32[offset] = -1;
+                            fixedCount++;
+                        }
+                    }
+                    else if (fs16[offset] != 0xFFFF && fs16[offset] >= vertexCount)
+                    {
+                        fs16[offset] = 0xFFFF;
+                        fixedCount++;
+                    }
+                }
+
+                continue;
+            }
+
+            for (var t = 0; t + 2 < faceset.IndexCount; t += 3)
+            {
+                var offset = faceset.IndexOffset + t;
+                var bad = false;
+
+                for (var k = 0; k < 3; k++)
+                {
+                    var idx = faceset.Is32Bit ? (uint)fs32[offset + k] : fs16[offset + k];
+                    bad |= idx >= (uint)vertexCount;
+                }
+
+                if (!bad)
+                    continue;
+
+                for (var k = 0; k < 3; k++)
+                {
+                    if (faceset.Is32Bit)
+                        fs32[offset + k] = 0;
+                    else
+                        fs16[offset + k] = 0;
+                }
+
+                fixedCount++;
+            }
+        }
+
+        if (fixedCount > 0)
+        {
+            Smithbox.Log(this, $"{Context?.QualifiedName}: {fixedCount} triangles or strip indices pointed past the {vertexCount} vertices of their mesh and were removed.", LogLevel.Warning);
+        }
     }
 
     /// <summary>
@@ -2699,6 +2769,7 @@ public class FlverResource : IResource, IDisposable
             dest.MeshFacesets.Add(newFaceSet);
         }
 
+        SanitizeIndices(dest, fs16, fs32);
         AddDetailStats(dest, pvhandle, fs16, fs32);
 
         dest.GeomBuffer.UnmapVBuffer();
@@ -2869,6 +2940,7 @@ public class FlverResource : IResource, IDisposable
             idxoffset += faceset.Indices.Count;
         }
 
+        SanitizeIndices(dest, fs16, fs32);
         AddDetailStats(dest, pvhandle, fs16, fs32);
 
         dest.GeomBuffer.UnmapVBuffer();
@@ -3149,7 +3221,7 @@ public class FlverResource : IResource, IDisposable
                 else
                 {
                     var idx = br.ReadInt32();
-                    if (idx > vertexCount)
+                    if (idx >= vertexCount)
                     {
                         fs32[newFaceSet.IndexOffset + i] = -1;
                     }
@@ -3166,6 +3238,7 @@ public class FlverResource : IResource, IDisposable
             idxoffset += newFaceSet.IndexCount;
         }
 
+        SanitizeIndices(dest, fs16, fs32);
         AddDetailStats(dest, pvhandle, fs16, fs32);
 
         dest.GeomBuffer.UnmapIBuffer();

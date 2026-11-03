@@ -129,6 +129,9 @@ namespace Veldrid
             var inputAssemblyCI = new VkPipelineInputAssemblyStateCreateInfo
             {
                 topology = description.PrimitiveTopology,
+                // Strips mark their ends with the highest index. Without restart that index is read as a vertex
+                primitiveRestartEnable = description.PrimitiveTopology is VkPrimitiveTopology.TriangleStrip
+                    or VkPrimitiveTopology.LineStrip,
             };
 
             // Vertex Input State
