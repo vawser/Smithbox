@@ -1956,6 +1956,9 @@ namespace Veldrid
 
             var deviceFeatures = new VkPhysicalDeviceFeatures
             {
+                // Out of range vertex fetches and storage buffer reads give back zeros or in-range data, rather than
+                // reading past the buffer and losing the device. A stray index or stale instance can then only draw wrong.
+                robustBufferAccess = _physicalDeviceFeatures.robustBufferAccess,
                 samplerAnisotropy = _physicalDeviceFeatures.samplerAnisotropy,
                 fillModeNonSolid = _physicalDeviceFeatures.fillModeNonSolid,
                 geometryShader = _physicalDeviceFeatures.geometryShader,

@@ -482,7 +482,11 @@ void main()
 	vec3 localNormal = vec3(normal);
 
 #ifdef MATERIAL_DEFORM
-	deformData deform = deformdata[(idata[gl_InstanceIndex].materialID.x & MATERIAL_ID_MASK) + 3u];
+	// Stale instance data can hold any material, and reading past the material buffer loses the device
+	uint deformIndex = (idata[gl_InstanceIndex].materialID.x & MATERIAL_ID_MASK) + 3u;
+	deformData deform = deformIndex < uint(deformdata.length())
+		? deformdata[deformIndex]
+		: deformData(vec4(0.0), vec4(0.0), uvec2(0u), vec2(0.0));
 
 	if (c_deformer == DEFORM_VAT && HasFeature(FEATURE_VERTEX_ANIMATION))
 	{
