@@ -293,6 +293,14 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_EntryFileList && View.EntryFileListTool.CanUse())
+        {
+            if (ToolSections.Header("Entry File Lists"))
+            {
+                View.EntryFileListTool.OnToolWindow();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
         {
             View.GridTool.OnToolWindow();
@@ -411,6 +419,15 @@ public class MapToolWindow
                 CFG.Current.Interface_MapEditor_Tool_LoadList = !CFG.Current.Interface_MapEditor_Tool_LoadList;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_LoadList);
+
+            if (View.EntryFileListTool.CanUse())
+            {
+                if (ImGui.MenuItem("Entry File Lists"))
+                {
+                    CFG.Current.Interface_MapEditor_Tool_EntryFileList = !CFG.Current.Interface_MapEditor_Tool_EntryFileList;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_EntryFileList);
+            }
 
             if (ImGui.MenuItem("Viewport Configuration"))
             {

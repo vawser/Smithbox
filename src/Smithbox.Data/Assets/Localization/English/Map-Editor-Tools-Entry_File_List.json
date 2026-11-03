@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_Entry_File_List_Saved",
+      "Text": "Saved entry file list {0}."
+    },
+    {
+      "Key": "MAP_Entry_File_List_Failed_Find",
+      "Text": "Failed to find entry file list {0}."
+    },
+    {
+      "Key": "MAP_Entry_File_List_Failed_Read",
+      "Text": "Failed to read entry file list {0}."
+    },
+    {
+      "Key": "MAP_Entry_File_List_Failed_Write",
+      "Text": "Failed to write entry file list {0}."
+    }
+  ]
+}

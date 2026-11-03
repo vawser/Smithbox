@@ -609,10 +609,11 @@ public class MapEditorScreen : EditorScreen
             {
                 activeView.Universe.SaveAllMaps();
 
-                // Load list edits are kept per view, so each view's are saved
+                // Load list and entry file list edits are kept per view, so each view's are saved
                 foreach (var view in ViewHandler.Views)
                 {
                     view.LoadListTool.SaveModified();
+                    view.EntryFileListTool.SaveModified();
                 }
             }
         }
