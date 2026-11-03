@@ -619,6 +619,11 @@ public class MapContentView
         {
             key = $"Edge {e.Parent.ChildIndex(e)}";
         }
+        // The entity that holds a whole navmesh file goes by the file
+        else if (e.WrappedObject is NVA or NVA_ER)
+        {
+            key = e == map.NavVolumeParent ? $"{map.Name}.nvva" : $"{map.Name}.nva";
+        }
 
         // Main selectable
         if (e is MsbEntity me)

@@ -134,7 +134,15 @@ public class MapHavokPropertyView
     {
         var mapID = View.Selection.SelectedMapID;
 
+        // Only the navmesh entries have a model, not e.g. the entity holding the whole NVA
         PropertyInfo prop = ent.WrappedObject.GetType().GetProperty("ModelID");
+
+        if (prop == null)
+        {
+            GUI.WrappedText("Select a navmesh entry to edit its navmesh file.");
+            return;
+        }
+
         var value = prop.GetValue(ent.WrappedObject);
 
         if (value == null)

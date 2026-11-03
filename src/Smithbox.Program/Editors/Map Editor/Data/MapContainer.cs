@@ -65,11 +65,14 @@ public class MapContainer : ObjectContainer
     [XmlIgnore]
     public Entity AssetConfigurationParent = null;
 
+    /// <summary>
+    /// Wraps the whole NVA, which is saved as it is held. Its children are the entries drawn in the viewport
+    /// </summary>
     [XmlIgnore]
     public Entity NavmeshParent = null;
 
     /// <summary>
-    /// The nav volume for flying movement (AC6), whose entries are held apart from the navmesh as they are saved to the NVVA
+    /// The nav volume for flying movement (AC6). As for the navmesh, it wraps the whole NVVA
     /// </summary>
     [XmlIgnore]
     public Entity NavVolumeParent = null;
@@ -157,13 +160,13 @@ public class MapContainer : ObjectContainer
     }
 
     /// <summary>
-    /// Nav volume entries are the same types as navmesh entries, so they are told apart by their parent
+    /// Nav volume entries are the same types as navmesh entries, so they are told apart by the volume's root
     /// </summary>
     private static bool IsNavVolumeEntity(Entity ent)
     {
         return ent.Container is MapContainer map
             && map.NavVolumeParent != null
-            && ent.Parent == map.NavVolumeParent;
+            && (ent == map.NavVolumeParent || ent.Parent == map.NavVolumeParent);
     }
 
     /// <summary>
@@ -518,93 +521,72 @@ public class MapContainer : ObjectContainer
         AssetConfigurationParent = acbParent;
     }
 
+    // The navmesh files are held whole by one entity each, like the havok files are, and edited through its
+    // properties. Some sections have an entry for every navmesh face, hundreds of thousands in a map, so they
+    // can't be given entities. Only the entries drawn in the viewport are, which wrap the same objects as the file
+
     public void LoadNVA(string mapName, NVA nva)
     {
-        var nvaParent = CreateNavmeshParent(mapName);
+        var nvaRoot = CreateNavmeshRoot(nva);
 
         foreach (var curNavmesh in nva.NavmeshInfoEntries)
         {
-            AddNavmeshInfo(nvaParent, mapName, curNavmesh, $@"n{curNavmesh.ModelID:D6}");
+            AddNavmeshInfo(nvaRoot, mapName, curNavmesh, $@"n{curNavmesh.ModelID:D6}");
         }
-
-        AddNavmeshEntries(nvaParent, nva.FaceDataEntries);
-        AddNavmeshEntries(nvaParent, nva.NodeBankEntries);
-        AddNavmeshEntries(nvaParent, nva.ConnectorEntries);
 
         foreach (var curEntry in nva.LevelConnectorEntries)
         {
-            AddLevelConnector(nvaParent, curEntry);
+            AddLevelConnector(nvaRoot, curEntry);
         }
 
-        if (nva.Version == NVA.NVAVersion.EldenRing)
-        {
-            AddNavmeshEntries(nvaParent, nva.Section10Entries);
-            AddNavmeshEntries(nvaParent, nva.Section11Entries);
-            AddNavmeshEntries(nvaParent, nva.Section13Entries);
-        }
-
-        NavmeshParent = nvaParent;
+        NavmeshParent = nvaRoot;
     }
 
     // ER specific
     public void LoadNVA(string mapName, NVA_ER nva)
     {
-        var nvaParent = CreateNavmeshParent(mapName);
+        var nvaRoot = CreateNavmeshRoot(nva);
 
         foreach (var curNavmesh in nva.Navmeshes)
         {
-            AddNavmeshInfo(nvaParent, mapName, curNavmesh, $@"n{curNavmesh.ModelID:D6}");
+            AddNavmeshInfo(nvaRoot, mapName, curNavmesh, $@"n{curNavmesh.ModelID:D6}");
         }
-
-        AddNavmeshEntries(nvaParent, nva.FaceDatas);
-        AddNavmeshEntries(nvaParent, nva.NodeBanks);
-        AddNavmeshEntries(nvaParent, nva.Connectors);
 
         foreach (var curEntry in nva.LevelConnectors)
         {
-            AddLevelConnector(nvaParent, curEntry);
+            AddLevelConnector(nvaRoot, curEntry);
         }
 
-        AddNavmeshEntries(nvaParent, nva.Entries10);
-        AddNavmeshEntries(nvaParent, nva.Entries11);
-        AddNavmeshEntries(nvaParent, nva.Entries13);
-
-        NavmeshParent = nvaParent;
+        NavmeshParent = nvaRoot;
     }
 
     // AC6 specific
     public void LoadNVVA(string mapName, NVA_ER nvva)
     {
-        var nvvaParent = CreateNavmeshParent($"{mapName} (NVVA)");
+        var nvvaRoot = CreateNavmeshRoot(nvva);
 
         // There is a single entry, for the one volume of the map
         foreach (var curVolume in nvva.Navmeshes)
         {
-            AddNavVolumeInfo(nvvaParent, mapName, curVolume);
+            AddNavVolumeInfo(nvvaRoot, mapName, curVolume);
         }
-
-        AddNavmeshEntries(nvvaParent, nvva.FaceDatas);
-        AddNavmeshEntries(nvvaParent, nvva.NodeBanks);
-        AddNavmeshEntries(nvvaParent, nvva.Connectors);
 
         foreach (var curEntry in nvva.LevelConnectors)
         {
-            AddLevelConnector(nvvaParent, curEntry, RenderFilter.NavVolume);
+            AddLevelConnector(nvvaRoot, curEntry, RenderFilter.NavVolume);
         }
 
-        AddNavmeshEntries(nvvaParent, nvva.Entries10);
-        AddNavmeshEntries(nvvaParent, nvva.Entries11);
-
-        NavVolumeParent = nvvaParent;
+        NavVolumeParent = nvvaRoot;
     }
 
-    private MsbEntity CreateNavmeshParent(string mapName)
+    private MsbEntity CreateNavmeshRoot(object file)
     {
-        var nvaParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
+        var nvaRoot = CreateNavmeshEntity(file);
 
-        MapOffsetNode.AddChild(nvaParent);
+        Objects.Add(nvaRoot);
+        MapOffsetNode.AddChild(nvaRoot);
 
-        return nvaParent;
+        return nvaRoot;
     }
 
     private MsbEntity CreateNavmeshEntity(object entry)
@@ -620,18 +602,6 @@ public class MapContainer : ObjectContainer
     {
         Objects.Add(newEntity);
         nvaParent.AddChild(newEntity);
-    }
-
-    private void AddNavmeshEntries(Entity nvaParent, IEnumerable<object> entries)
-    {
-        // Not every version has every section, e.g. AC6 has no Section 13
-        if (entries == null)
-            return;
-
-        foreach (var curEntry in entries)
-        {
-            AttachNavmeshEntity(nvaParent, CreateNavmeshEntity(curEntry));
-        }
     }
 
     // The render meshes below take the entity's world matrix before it is parented, as the original loaders did

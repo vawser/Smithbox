@@ -9,6 +9,7 @@ using System.Collections;
 using System.Drawing;
 using System.Numerics;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -914,9 +915,8 @@ public class MapMsbPropertyView
                 }
                 ImGui.PopID();
             }
-            else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
+            else if (GetListElementType(typ) is Type arrtyp)
             {
-                Type arrtyp = typ.GetGenericArguments()[0];
                 PropEditorGenericList(selection, entSelection, firstEnt, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
             }
             else if (typ.IsClass && typ == typeof(MSB.Shape))
@@ -1051,12 +1051,6 @@ public class MapMsbPropertyView
                 }
 
                 ImGui.PopID();
-            }
-            else if (typ.BaseType != null && typ.BaseType.IsGenericType
-                && typ.BaseType.GetGenericTypeDefinition() == typeof(List<>))
-            {
-                Type arrtyp = typ.BaseType.GetGenericArguments()[0];
-                PropEditorGenericList(selection, entSelection, firstEnt, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
             }
             else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
             {
@@ -1787,6 +1781,27 @@ public class MapMsbPropertyView
         _changingObject = set;
     }
 
+    /// <summary>
+    /// The element type of a list, or null if the type isn't one. Lists such as the NVA sections derive from
+    /// List through a base of their own, so the whole hierarchy is checked
+    /// </summary>
+    private static Type GetListElementType(Type type)
+    {
+        for (Type t = type; t != null; t = t.BaseType)
+        {
+            if (t.IsGenericType && t.GetGenericTypeDefinition() == typeof(List<>))
+                return t.GetGenericArguments()[0];
+        }
+
+        return null;
+    }
+
+    // Lists longer than this, e.g. the face data of an NVA, start closed and are drawn a page at a time,
+    // as drawing every entry each frame would stall the editor
+    private const int ListPageSize = 100;
+
+    private readonly ConditionalWeakTable<IList, StrongBox<int>> _listPages = new();
+
     private void PropEditorGenericList(
         ViewportSelection selection,
         IEnumerable<Entity> entSelection,
@@ -1802,6 +1817,13 @@ public class MapMsbPropertyView
     {
         var list = (IList)prop.GetValue(obj);
 
+        var isPaged = list != null && list.Count > ListPageSize;
+
+        if (isPaged)
+        {
+            treeFlags &= ~ImGuiTreeNodeFlags.DefaultOpen;
+        }
+
         var open = ImGui.TreeNodeEx($@"{fieldName}", treeFlags);
         ShowFieldHint(obj, prop, fieldDescription);
         ImGui.NextColumn();
@@ -1816,6 +1838,12 @@ public class MapMsbPropertyView
                 View.ViewportActionManager.ExecuteAction(action);
             }
             GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
+
+            if (isPaged)
+            {
+                ImGui.SameLine();
+                ImGui.Text($"{list.Count} entries");
+            }
         }
         ImGui.NextColumn();
 
@@ -1825,7 +1853,38 @@ public class MapMsbPropertyView
             {
                 var removeIndex = -1;
 
-                for (var i = 0; i < list.Count; i++)
+                var start = 0;
+                var end = list.Count;
+
+                if (isPaged)
+                {
+                    var page = _listPages.GetOrCreateValue(list);
+                    var pageCount = (list.Count + ListPageSize - 1) / ListPageSize;
+
+                    // Entries can be removed while a later page is shown
+                    page.Value = Math.Clamp(page.Value, 0, pageCount - 1);
+
+                    start = page.Value * ListPageSize;
+                    end = Math.Min(start + ListPageSize, list.Count);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text($"Entries {start}-{end - 1}");
+                    ImGui.NextColumn();
+
+                    var shownPage = page.Value + 1;
+                    ImGui.SetNextItemWidth(-1);
+                    if (ImGui.InputInt($"##listPage", ref shownPage))
+                    {
+                        page.Value = Math.Clamp(shownPage - 1, 0, pageCount - 1);
+                    }
+                    GUI.Tooltip($"Page of {pageCount}");
+                    ImGui.NextColumn();
+
+                    // The entries of a long list would all open with the list
+                    treeFlags &= ~ImGuiTreeNodeFlags.DefaultOpen;
+                }
+
+                for (var i = start; i < end; i++)
                 {
                     ImGui.PushID(i);
                     var idx = i;
