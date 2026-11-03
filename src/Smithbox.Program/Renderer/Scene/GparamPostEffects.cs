@@ -181,6 +181,12 @@ public class GparamAntiAlias
     public float SharpenIntensity = 0.25f;
     public float SharpenRangeMin = -2.0f;
     public float SharpenRangeMax = 2.0f;
+
+    /// <summary>FBWeightBorderDepth(0-2): the view depths between the four bands of FBWeightCancelByDepth</summary>
+    public Vector3 BorderDepth = new(60.0f, 250.0f, 800.0f);
+
+    /// <summary>FBWeightCancelByDepth(0-3): how much of FeedbackWeight each depth band takes away, nearest first</summary>
+    public Vector4 CancelByDepth = new(0.0f, 0.2f, 0.4f, 0.8f);
 }
 
 /// <summary>

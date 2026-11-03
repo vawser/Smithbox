@@ -51,6 +51,12 @@ public class FxaaPass
             return false;
         }
 
+        // An Anti-Alias Type of TAA has TaaPass instead, where it runs
+        if (TaaPass.Wants(lighting))
+        {
+            return false;
+        }
+
         return (lighting?.PostEffects.AntiAlias ?? DefaultSettings).Enabled;
     }
 

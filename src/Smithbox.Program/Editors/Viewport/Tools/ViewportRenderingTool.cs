@@ -1009,6 +1009,9 @@ public class ViewportRenderingTool
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Bloom_Enable")}##postBloom", ref CFG.Current.Viewport_Post_Bloom);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Bloom_Enable_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Taa_Enable")}##postTaa", ref CFG.Current.Viewport_Post_Taa);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Taa_Enable_TT"));
+
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Fxaa_Enable")}##postFxaa", ref CFG.Current.Viewport_Post_Fxaa);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Fxaa_Enable_TT"));
 

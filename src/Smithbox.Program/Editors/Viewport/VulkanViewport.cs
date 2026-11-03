@@ -150,6 +150,9 @@ public class VulkanViewport : IViewport
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
 
+            // The screen effects run here, TAA among them, which the scene is jittered for
+            ViewPipeline.AllowTaa = true;
+
             // The irradiance volume table holds the Map Editor's loaded maps
             ViewPipeline.UseIrradianceVolumes = Owner is MapUniverse;
 

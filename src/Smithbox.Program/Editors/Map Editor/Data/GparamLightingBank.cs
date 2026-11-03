@@ -670,6 +670,15 @@ public class GparamLightingBank
         aa.SharpenIntensity = reader.Get(AntiAliasKey, "AntiAlias - SharpenIntensity", 0, aa.SharpenIntensity);
         aa.SharpenRangeMin = reader.Get(AntiAliasKey, "AntiAlias - SharpenRangeMin", 0, aa.SharpenRangeMin);
         aa.SharpenRangeMax = reader.Get(AntiAliasKey, "AntiAlias - SharpenRangeMax", 0, aa.SharpenRangeMax);
+        aa.BorderDepth = new Vector3(
+            reader.Get(AntiAliasKey, "AntiAlias - FBWeightBorderDepth(0)", 0, aa.BorderDepth.X),
+            reader.Get(AntiAliasKey, "AntiAlias - FBWeightBorderDepth(1)", 0, aa.BorderDepth.Y),
+            reader.Get(AntiAliasKey, "AntiAlias - FBWeightBorderDepth(2)", 0, aa.BorderDepth.Z));
+        aa.CancelByDepth = new Vector4(
+            reader.Get(AntiAliasKey, "AntiAlias - FBWeightCancelByDepth(0)", 0, aa.CancelByDepth.X),
+            reader.Get(AntiAliasKey, "AntiAlias - FBWeightCancelByDepth(1)", 0, aa.CancelByDepth.Y),
+            reader.Get(AntiAliasKey, "AntiAlias - FBWeightCancelByDepth(2)", 0, aa.CancelByDepth.Z),
+            reader.Get(AntiAliasKey, "AntiAlias - FBWeightCancelByDepth(3)", 0, aa.CancelByDepth.W));
 
         var grading = effects.ColorGrading;
         grading.Enabled = reader.Get(ColorGradingKey, "Yebis-ColorGrading-Enable", 0, grading.Enabled);

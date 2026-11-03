@@ -1329,6 +1329,9 @@ public class CFG
     public bool Viewport_Post_Bloom = true;
     public bool Viewport_Post_Fxaa = true;
 
+    // The GPARAM's TAA (Anti-Alias Type 5, as Elden Ring's mapbase has), which replaces FXAA where it runs
+    public bool Viewport_Post_Taa = true;
+
     // The GPARAM's VolumetricFog (Elden Ring's distance and height fog), with the sun's shadows through it and the
     // map's lights in it
     public bool Viewport_Post_Volumetric_Fog = true;

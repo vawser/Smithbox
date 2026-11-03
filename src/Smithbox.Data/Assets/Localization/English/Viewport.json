@@ -1226,7 +1226,15 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fxaa_Enable_TT",
-      "Text": "Smooths jagged edges after the tone map, with the GPARAM Anti-Alias group's FXAA values (Elden Ring's mapbase without map lighting). Used whatever the Anti-Alias Type is, until there is TAA."
+      "Text": "Smooths jagged edges after the tone map, with the GPARAM Anti-Alias group's FXAA values (Elden Ring's mapbase without map lighting). Used for every Anti-Alias Type but TAA's (5), and for that too when TAA is off."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Taa_Enable",
+      "Text": "TAA"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Taa_Enable_TT",
+      "Text": "Where the GPARAM Anti-Alias group's type is TAA (5, Elden Ring's mapbase), the scene is drawn a sub-pixel off each frame over JitterCount frames and blended into a history, by Feedback Weight, less with depth, and sharpened by Sharpen Intensity. Smooths edges, grass and SSAO/SSR noise while the camera is still; replaces FXAA."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Volumetric_Fog_Enable",

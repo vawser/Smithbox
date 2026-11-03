@@ -45,6 +45,22 @@ public class SceneRenderPipeline
     /// <summary>The screen space reflections, after <see cref="Ssao" /></summary>
     public SsrPass Ssr { get; }
 
+    /// <summary>The temporal anti-aliasing, after <see cref="Ssr" /></summary>
+    public TaaPass Taa { get; }
+
+    /// <summary>
+    ///     Whether this pipeline's scene may be jittered for <see cref="Taa" />: only where <see cref="PostProcess" />
+    ///     runs, which is the viewports'. A pipeline that tone maps its target without the chain (model previews)
+    ///     would show the jitter as a shake.
+    /// </summary>
+    public bool AllowTaa { get; set; }
+
+    /// <summary>The camera's projection without the TAA jitter, which <see cref="SceneParams" />'s has in it</summary>
+    public Matrix4x4 UnjitteredProjection { get; private set; } = Matrix4x4.Identity;
+
+    // Counts the frames for the jitter sequence
+    private long JitterFrame;
+
     /// <summary>The anti-aliasing after the tone map, see <see cref="FxaaPass" /></summary>
     public FxaaPass Fxaa { get; } = new();
 
@@ -172,12 +188,16 @@ public class SceneRenderPipeline
 
         Ssao = new SsaoPass(this);
         Ssr = new SsrPass(this);
+        Taa = new TaaPass(this);
         SurfaceView = new SurfaceViewPass(Ssao, Ssr);
 
         // SSAO and SSR change the scene's own light, so they go before the auto exposure measures it. Auto exposure
         // next, so the passes after it see this frame's adjustment.
         PostProcess.Add(Ssao);
         PostProcess.Add(Ssr);
+
+        // Smooths their noise along with the edges
+        PostProcess.Add(Taa);
         PostProcess.Add(AutoExposure);
         PostProcess.Add(new LightShaftPass(this, AutoExposure));
         PostProcess.Add(new BloomPass(AutoExposure));
@@ -378,6 +398,32 @@ public class SceneRenderPipeline
         // exposure instead of the volumes' auto exposure. The viewport's own sun settings are left as they are,
         // so they come back when map lighting is switched off.
         var mapLighting = ActiveMapLighting;
+
+        // TAA's sub-pixel jitter, in the scene's projection only: the overlays, drawn after, and the shadow
+        // cascades, which are fitted to the view, keep the steady one. None while a click is picking, so what is
+        // under the cursor is what it selects.
+        var renderProj = proj;
+        if (AllowTaa && TaaPass.Wants(mapLighting) && !_pickingEnabled && Target.Width > 0 && Target.Height > 0)
+        {
+            var count = (mapLighting?.PostEffects.AntiAlias ?? new GparamAntiAlias()).JitterCount;
+            var jitter = TaaPass.JitterFor(JitterFrame++, count);
+            var ndcX = jitter.X * 2.0f / Target.Width;
+            var ndcY = jitter.Y * 2.0f / Target.Height;
+
+            // A perspective's clip x and y are divided by w = depth x M34, so the offset is scaled by it to stay the
+            // same on screen; an orthographic projection keeps w at 1
+            if (MathF.Abs(proj.M34) > 1e-6f)
+            {
+                renderProj.M31 += ndcX * proj.M34;
+                renderProj.M32 += ndcY * proj.M34;
+            }
+            else
+            {
+                renderProj.M41 += ndcX;
+                renderProj.M42 += ndcY;
+            }
+        }
+
         var mapLightDirection = Vector4.Zero;
         var mapSunColor = Vector4.Zero;
         var mapSunSpecColor = Vector4.Zero;
@@ -445,7 +491,7 @@ public class SceneRenderPipeline
         Shadows?.Update(castShadows, view, proj, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z),
             mapLighting?.Shadow ?? DefaultShadow);
 
-        Fog.Prepare(view, proj, mapLighting, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z));
+        Fog.Prepare(view, renderProj, mapLighting, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z));
 
         // Wet surfaces, from the chosen weather's Wet values
         var wet = mapLighting?.PostEffects.Wet;
@@ -466,7 +512,8 @@ public class SceneRenderPipeline
 
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
-            SceneParams.Projection = proj;
+            SceneParams.Projection = renderProj;
+            UnjitteredProjection = proj;
             SceneParams.View = view;
             SceneParams.EyePosition = new Vector4(eye, 0.0f);
             SceneParams.EnvMap = EnvMapTexture;
@@ -556,6 +603,7 @@ public class SceneRenderPipeline
             Shadows?.Upload(cl, uploaded);
 
             var overlay = uploaded;
+            overlay.Projection = proj;
             overlay.CursorPosition[0] = cursorx;
             overlay.CursorPosition[1] = cursory;
             cl.UpdateBuffer(OverlayParamBuffer, 0, ref overlay, (uint)sizeof(SceneParam));

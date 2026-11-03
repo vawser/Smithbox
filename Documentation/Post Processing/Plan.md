@@ -570,7 +570,7 @@ Check:
 Check: ER m60 tile with a rain weather (WW 20 or 30): ground darker and glossier, more so with weather 30; sheltered
 interiors unchanged once the rain mask is in.
 
-### Phase 8 as built (2026-11-03; not yet checked in the app)
+### Phase 8 as built (2026-11-03; checked in the app 2026-11-03)
 
 **Survey.**
 - The exe's formats are `m%02u_%02u_%04u_WeatherBase` and `m%02u_%02u_%04u_WeatherOutdoor`. ER ships only m00_00
@@ -632,6 +632,57 @@ Jitter off while picking, so selection IDs stay stable.
 
 Check: ER m60 grass and fences stable while the camera is still, without smearing when it moves; clicking still
 selects the right object.
+
+### Phase 9 as built (2026-11-03; checked in the app 2026-11-03)
+
+**Survey.**
+- mapbase: Type 5, FeedbackWeight 0.95, JitterCount 8, SharpenIntensity 0.25 (range -2..2).
+- FBWeightBorderDepth(0-2) 60 / 250 / 800, FBWeightCancelByDepth(0-3) 0 / 0.2 / 0.4 / 0.8.
+- default: Type 4, with weather IDs 10/11 at Type 5 and feedback 0.85.
+- Also present but not used: Subpixel/CB feedback weights, FeedbackWeightScale(None/0-2), RejectedPixelBlurIntensity,
+  EnableMotionVectorDilation, EnableStencilMask, and DLAA's Threshold/Ramda/Epsilon (Type 4 is presumably DLAA).
+
+**The jitter** (`SceneRenderPipeline.UpdateSceneParameters`):
+- When `AllowTaa` (set by `VulkanViewport` only, as only viewports run the chain) and `TaaPass.Wants` (Post Effects,
+  TAA switch, AA Enable, Type 5).
+- Frame N's offset is Halton(2, 3) at index (N mod JitterCount) + 1, minus 0.5 pixel.
+- Added to the projection as `M31/M32 += ndc × M34` (perspective, so the offset survives the divide by w) or
+  `M41/M42 += ndc` (orthographic).
+- The scene, its depth, the fog and every pass reading `SceneParams.Projection` use the jittered one. The overlays'
+  copy and the shadow cascades use the steady one (`UnjitteredProjection`). There is no jitter while a click is
+  picking.
+
+**The pass** (`TaaPass.cs`, `Taa.vert/frag`) runs after SSR, before auto exposure, so SSAO/SSR noise is smoothed and
+bloom sees the resolved image.
+- The history is read where the pixel was last frame: its world position from the scene depth with the unjittered
+  inverse, through last frame's unjittered view-projection.
+- It is clipped towards the 3x3 neighbourhood's YCoCg box centre.
+- The current pixel is sharpened against the 3x3 mean by SharpenIntensity, the change limited to SharpenRange × the
+  mean's luminance.
+- Feedback is `FeedbackWeight × (1 - CancelByDepth[band])`, the bands blended ±10% round each border.
+- The blend is luminance weighted (`1 / (1 + Y)`).
+- No history off screen, on the first frame, after a resize, or when TAA didn't run the frame before.
+- The result is copied into `TAA History` for the next frame.
+- FXAA's `IsActive` is false wherever TAA is wanted.
+- CFG `Viewport_Post_Taa` (on), in Post Effects above FXAA.
+
+**How the values are read** (a reading, not decoded from the game): the depth-band reading of BorderDepth/CancelByDepth,
+and SharpenRange as a luminance-relative limit.
+
+**Known gaps:** no motion vectors, so animated characters and moving objects lean on the clip and ghost a little when
+moving fast; the viewport is jittered only when something redraws it every frame.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| ER m60_42_36_00, camera still | Look at grass, fences and distant trees | Edges smooth and steady; "Drawing:" lists TAA and not FXAA | Shimmer or a visible shake: the history isn't read, or the jitter reaches the tone map. Whole image shaking by a pixel: the jitter isn't being undone in the reprojection |
+| Same | Orbit and fly the camera | No smearing trails behind edges; fine detail softens a little while moving and sharpens when stopped | Ghost trails: the reprojection is off, report which way they lead (a Y flip) |
+| Same | Toggle TAA | With it off, FXAA's edges come back | |
+| Gizmos, selection outline, grid | | Steady, not shaking | Shaking: the overlay copy still has the jitter |
+| Click objects | | The one under the cursor is selected | |
+| Show: Normals (or another view) | | Steady | |
+| Resize, split viewports, Model Editor with a borrowed map | | No smears after a resize; each viewport steady | |
 
 ## Verification maps
 
