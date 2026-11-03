@@ -34,7 +34,7 @@ public enum ToneMapSetting
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct ToneMapParam
 {
-    /// <summary>x: exposure, y: <see cref="ToneMapOperator" />, z: white point, w: unused</summary>
+    /// <summary>x: exposure, y: <see cref="ToneMapOperator" />, z: white point, w: 1 to apply the auto exposure</summary>
     public Vector4 Settings;
 
     /// <summary>xy: where the scene target's first pixel is drawn in the framebuffer</summary>
@@ -56,6 +56,7 @@ public class ToneMapPass
     // The texture ResourceSet reads: the scene target's color, or the post-processing chain's output. A resized
     // target or chain makes new textures, so the reference tells when the set is stale.
     private Texture BoundSource;
+    private DeviceBuffer BoundExposureState;
     private ToneMapParam Params;
 
     /// <summary>
@@ -98,19 +99,22 @@ public class ToneMapPass
     /// </summary>
     /// <param name="source">The linear light to tone map: the scene target's color, or what
     /// <see cref="PostProcessChain.Run" /> returned for it</param>
+    /// <param name="autoExposure">The pipeline's auto exposure, whose adjustment is applied if it ran this frame</param>
     public unsafe void Draw(GraphicsDevice gd, CommandList cl, Texture source, OutputDescription outputs,
-        Vector2 offset, GparamLighting lighting)
+        Vector2 offset, GparamLighting lighting, AutoExposurePass autoExposure = null)
     {
         if (source == null)
         {
             return;
         }
 
-        EnsureResources(gd, source);
+        var applyAutoExposure = autoExposure is { Applied: true };
+        EnsureResources(gd, source, applyAutoExposure ? autoExposure.StateBuffer : AutoExposurePass.GetNeutralState(gd));
 
         var (op, whitePoint) = Resolve(lighting);
 
-        Params.Settings = new Vector4(Math.Max(CFG.Current.Viewport_ToneMap_Exposure, 0.0f), (float)op, whitePoint, 0.0f);
+        Params.Settings = new Vector4(Math.Max(CFG.Current.Viewport_ToneMap_Exposure, 0.0f), (float)op, whitePoint,
+            applyAutoExposure ? 1.0f : 0.0f);
         Params.Offset = new Vector4(offset, 0.0f, 0.0f);
         cl.UpdateBuffer(ParamBuffer, 0, ref Params, (uint)sizeof(ToneMapParam));
 
@@ -119,7 +123,7 @@ public class ToneMapPass
         cl.Draw(3, 1, 0, 0);
     }
 
-    private unsafe void EnsureResources(GraphicsDevice gd, Texture source)
+    private unsafe void EnsureResources(GraphicsDevice gd, Texture source, DeviceBuffer exposureState)
     {
         ResourceFactory factory = gd.ResourceFactory;
 
@@ -129,12 +133,15 @@ public class ToneMapPass
             new ResourceLayoutElementDescription("SceneColor", VkDescriptorType.SampledImage,
                 VkShaderStageFlags.Fragment),
             new ResourceLayoutElementDescription("SceneSampler", VkDescriptorType.Sampler,
+                VkShaderStageFlags.Fragment),
+            new ResourceLayoutElementDescription("ExposureState", VkDescriptorType.StorageBuffer,
                 VkShaderStageFlags.Fragment)));
 
         ParamBuffer ??= factory.CreateBuffer(new BufferDescription((uint)sizeof(ToneMapParam),
             VkBufferUsageFlags.UniformBuffer | VkBufferUsageFlags.TransferDst, VmaMemoryUsage.Auto, 0));
 
-        if (ReferenceEquals(BoundSource, source) && ResourceSet != null)
+        if (ReferenceEquals(BoundSource, source) && ReferenceEquals(BoundExposureState, exposureState) &&
+            ResourceSet != null)
         {
             return;
         }
@@ -145,8 +152,9 @@ public class ToneMapPass
         }
 
         ResourceSet = factory.CreateResourceSet(new ResourceSetDescription(Layout, ParamBuffer, source,
-            gd.PointSampler));
+            gd.PointSampler, exposureState));
         BoundSource = source;
+        BoundExposureState = exposureState;
     }
 
     private static Pipeline GetPipeline(GraphicsDevice gd, OutputDescription outputs)

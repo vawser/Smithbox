@@ -1186,7 +1186,39 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Effects_None_Active",
-      "Text": "No screen effects are drawn yet. The table shows what the GPARAMs ask for."
+      "Text": "No screen effects are drawn. They need the map's lighting (Map Lighting tab), and FXAA its switch."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Auto_Exposure_Enable",
+      "Text": "Auto Exposure"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Auto_Exposure_Enable_TT",
+      "Text": "Where the GPARAM's Tone Map switches auto exposure on, adjusts the exposure to what is on screen: by Middle Gray minus the scene's mean log2 light, within Adaption Min to Max, at the adapt speeds. Off: the GPARAM's Exposure as it is."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Auto_Exposure_Status",
+      "Text": "Auto exposure: scene mean {0} (log2), adjusted {1} EV towards {2}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Auto_Exposure_Status_TT",
+      "Text": "The scene's mean is in the game's light units, before any exposure. If the image looks too dark or bright against the game, report these numbers with the map and time."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Bloom_Enable",
+      "Text": "Bloom"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Bloom_Enable_TT",
+      "Text": "Where the GPARAM's Bloom group is on, blurs what is brighter than Glare Threshold over Glare Num Levels levels and adds it at Bloom Alpha."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Fxaa_Enable",
+      "Text": "FXAA"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Fxaa_Enable_TT",
+      "Text": "Smooths jagged edges after the tone map, with the GPARAM Anti-Alias group's FXAA values (Elden Ring's mapbase without map lighting). Used whatever the Anti-Alias Type is, until there is TAA."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Effects_Column_Effect",

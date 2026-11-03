@@ -1317,6 +1317,11 @@ public class CFG
     // GPARAM's groups. Each effect has its own switch as it is added.
     public bool Viewport_Post_Effects = true;
 
+    // The GPARAM's auto exposure (Tone Map), bloom (Bloom's Glare fields), and FXAA after the tone map (Anti-Alias)
+    public bool Viewport_Post_Auto_Exposure = true;
+    public bool Viewport_Post_Bloom = true;
+    public bool Viewport_Post_Fxaa = true;
+
     // Sun shadows: cascaded shadow maps whose splits, fade and bias come from the map's GPARAM Shadows group, or
     // Elden Ring's mapbase without map lighting. The resolution is that of one cascade; the map holds four.
     public bool Viewport_Shadows = true;

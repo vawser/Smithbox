@@ -139,6 +139,49 @@ The cheap, screen-only effects; they prove the chain and set the brightness the 
 Check: ER m60_42_36_00 at t4 looking at the sun-lit sky then into a cave: exposure brightens over a second or two.
 Bright sky and lamps get a soft halo, nothing else does. Edges of a fence or banner stop crawling.
 
+### Phase 1 as built (2026-11-03; not yet checked in the app)
+
+- **Auto exposure** (`AutoExposurePass.cs`, `AutoExposure.comp`): the chain's first pass, measuring only
+  (`PostProcessPass.WritesImage` false; the chain now also calls `BeginFrame` on every pass). One 16 x 16 group takes
+  a 64 x 64 grid of the scene, divides the GPARAM exposure back out (so it measures game units), and averages log2
+  luminance weighted by `exp(-CenterWeight x r²)` from the centre. Target = `clamp(MiddleGray - mean, AdaptionMin,
+  AdaptionMax)` EV; the GPARAM's Exposure is taken to be right for a scene whose mean is Middle Gray. The adapt
+  speeds are read as the share of the gap closed per 1/30 s (LightAdapt when going darker). The state stays in a
+  storage buffer on the GPU from frame to frame; the tone map multiplies by `exp2(ev)` (`ToneMapParam.Settings.w`),
+  and a neutral buffer is bound when the pass didn't run (model previews, auto exposure off). A readback each few
+  frames feeds the menu. Changed from the plan: a weighted mean, not a histogram.
+  Runs only with map lighting and the file's `Enable AutoExposure` on.
+- **Bloom** (`BloomPass.cs`, `Bloom.vert/frag`): prefilter at half size (13-tap with Karis weights, then the
+  threshold on the auto-exposed colour with a soft knee of `Threshold x 0.5 x Smooth`, x Luminance, desaturated by
+  `Sturate Ctrl`), `NumLevels` (1-8) half-size downsamples, then upsamples where each level is its own texture
+  (down level + 3x3 tent of the level below, spread by `GaussianRadiusScale`), and a composite of
+  `scene + sum x Alpha / NumLevels`. The bloom is divided back by the auto exposure so the tone map exposes it with
+  the scene. Not used: `FeedbackWeight` (temporal). Only value ID 0 is read, so files that switch bloom on by weather
+  ID and off at 0 show none.
+- **FXAA** (`FxaaPass.cs`, `Fxaa.vert/frag`): Lottes' original FXAA, whose Reduce Min/Mul and Span Max are exactly
+  the GPARAM's fields; Alpha blends it in. When active, the tone map draws into an RGBA8 image the size of the scene
+  (`FxaaPass.ImageOutputs`) and FXAA draws that to the swapchain at the viewport's offset. Runs with or without map
+  lighting (mapbase's values then), whatever `AntiAliasType` says.
+- Veldrid quirks met: binding a framebuffer begins its render pass with the contents discarded, so bloom can't blend
+  into a level; `UpdateBuffer` is a staging copy with no barrier, and ends any open render pass, so passes update
+  their parameters first and then put one barrier (transfer -> uniform read) before drawing or dispatching.
+- CFG `Viewport_Post_Auto_Exposure`, `Viewport_Post_Bloom`, `Viewport_Post_Fxaa` (all on), switches in Post Effects,
+  plus "Auto exposure: scene mean X (log2), adjusted Y EV towards Z".
+- Shaders compiled with `glslangValidator -V`; the app is built from Smithbox.Vulkan.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| ER m10_00_00_00, time 4 | Look around the courtyard | Post Effects says "Drawing: Auto Exposure, Bloom, FXAA"; the status line shows a mean around -3 to -6 and an adjustment within -0.5..+0.4 EV | Mean far outside that: report it; the scene isn't in the units assumed |
+| Same | Look at the bright sky, then into a dark doorway | The image dims a little against the sky and brightens a little in the dark, easing over about a second, never more than half a stop | Jumps: speeds are not per 1/30 s. Too strong or the wrong way: the formula's sign |
+| Same | Toggle Auto Exposure | At most half a stop of difference | |
+| A lamp or the sun-lit sky | | A soft glow round the brightest parts only; dull surfaces unchanged | Everything glows: the threshold is in the wrong units |
+| Same | Toggle Bloom | Only the glow goes | Image shifts or flips: a texture is read mirrored |
+| Fences, banners, railings | Toggle FXAA | Stair-stepped edges smoothed, text and gizmo lines (drawn after) unchanged | Image offset or doubled in a split viewport: the FXAA offset |
+| Map lighting off, or the Model Editor without a borrowed map | | Only FXAA in "Drawing:"; the image exactly as before apart from edges | |
+| Resize the viewport, use two viewports | | No black frames, no stretched image | |
+
 ### Phase 2: height fog, then volumetric fog
 
 1. Analytic height fog (fullscreen, at the depth capture point so it lands before transparents): density

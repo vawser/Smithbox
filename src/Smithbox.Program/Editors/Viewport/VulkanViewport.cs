@@ -197,12 +197,31 @@ public class VulkanViewport : IViewport
                     ? ViewPipeline.PostProcess.Run(d, cl, ViewPipeline.Target, frameLighting)
                     : null;
 
+                // With FXAA the tone map goes into its image first, and FXAA takes that to the screen
+                var fxaa = IsViewportVisible && ViewPipeline.Fxaa.IsActive(frameLighting);
+
+                if (fxaa)
+                {
+                    ViewPipeline.Fxaa.BeginImage(d, cl, ViewPipeline.Target);
+                    ViewPipeline.ToneMap.Draw(d, cl, toneMapSource, FxaaPass.ImageOutputs, Vector2.Zero,
+                        frameLighting, ViewPipeline.AutoExposure);
+                }
+
                 cl.SetFramebuffer(Device.SwapchainFramebuffer);
                 cl.SetViewport(0, RenderViewport);
                 if (IsViewportVisible)
                 {
-                    ViewPipeline.ToneMap.Draw(d, cl, toneMapSource, Device.SwapchainFramebuffer.OutputDescription,
-                        new Vector2(RenderViewport.X, RenderViewport.Y), frameLighting);
+                    var offset = new Vector2(RenderViewport.X, RenderViewport.Y);
+
+                    if (fxaa)
+                    {
+                        ViewPipeline.Fxaa.Draw(d, cl, Device.SwapchainFramebuffer.OutputDescription, offset, frameLighting);
+                    }
+                    else
+                    {
+                        ViewPipeline.ToneMap.Draw(d, cl, toneMapSource, Device.SwapchainFramebuffer.OutputDescription,
+                            offset, frameLighting, ViewPipeline.AutoExposure);
+                    }
                 }
                 IsViewportVisible = false;
                 cl.ClearDepthStencil(0);

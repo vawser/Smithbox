@@ -39,6 +39,17 @@ public abstract class PostProcessPass
     /// <summary>For the checkpoints and the menu</summary>
     public abstract string Name { get; }
 
+    /// <summary>
+    ///     False for a pass that only measures the image (auto exposure): it is handed no destination, and the next
+    ///     pass reads the same source
+    /// </summary>
+    public virtual bool WritesImage => true;
+
+    /// <summary>Called on every pass at the start of each frame's <see cref="PostProcessChain.Run" />, active or not</summary>
+    public virtual void BeginFrame()
+    {
+    }
+
     /// <summary>Whether the pass runs this frame; a pass that doesn't leaves the image as it was</summary>
     public abstract bool IsActive(GparamLighting lighting);
 
@@ -82,6 +93,11 @@ public class PostProcessChain
     {
         LastActive.Clear();
 
+        foreach (var pass in Passes)
+        {
+            pass.BeginFrame();
+        }
+
         var source = target.Color;
 
         if (source == null || !CFG.Current.Viewport_Post_Effects)
@@ -98,9 +114,17 @@ public class PostProcessChain
                 continue;
             }
 
+            cl.SetCheckpoint($"Post process: {pass.Name}");
+
+            if (!pass.WritesImage)
+            {
+                pass.Run(gd, cl, new PostProcessFrame { Target = target, Source = source, Lighting = lighting });
+                LastActive.Add(pass.Name);
+                continue;
+            }
+
             EnsureTextures(gd, target.Width, target.Height);
 
-            cl.SetCheckpoint($"Post process: {pass.Name}");
             pass.Run(gd, cl, new PostProcessFrame
             {
                 Target = target,

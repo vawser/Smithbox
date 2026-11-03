@@ -1,0 +1,107 @@
+#version 450
+
+// Auto exposure of the GPARAM Tone Map group, see AutoExposurePass.cs. One group measures the scene's mean log2
+// luminance over a 64 x 64 grid, weighted towards the centre by Center Weight, in the game's light units (the
+// target has the GPARAM exposure in it, which is divided out). The exposure is moved by
+// clamp(Middle Gray - mean, Adaption Min, Adaption Max) EV, approached at the adapt speeds, and kept in the state
+// buffer from frame to frame for the tone map (and bloom) to read.
+//
+// How the game uses these values isn't known; this reading has the GPARAM's Exposure as the exposure of a scene
+// whose mean is Middle Gray, which fits the values (Middle Gray -6 to -8 is about the mean light of a map in game
+// units, and the adaption range is under an EV).
+
+layout(local_size_x = 16, local_size_y = 16) in;
+
+#define GRID 64
+#define SAMPLES_PER_THREAD 4
+
+layout(set = 0, binding = 0) uniform AutoExposureParams
+{
+	vec4 exposure; // x: middle gray, y: adaption min, z: adaption max, w: center weight
+	vec4 adapt;    // x: seconds since the last frame, y: light adapt speed, z: dark adapt speed, w: GPARAM exposure
+	vec4 control;  // x: 1 to jump straight to the target
+} params;
+
+layout(set = 0, binding = 1) uniform texture2D sceneColor;
+layout(set = 0, binding = 2) uniform sampler sceneSampler;
+
+layout(set = 0, binding = 3, std430) buffer ExposureState
+{
+	float ev;       // the adjustment the tone map applies, in EV
+	float targetEv; // where it is heading
+	float meanLog;  // the measured mean log2 luminance, in game units
+	float valid;    // 0 until the first measurement
+} state;
+
+shared float sharedLog[256];
+shared float sharedWeight[256];
+
+float Luminance(vec3 color)
+{
+	return dot(color, vec3(0.2126, 0.7152, 0.0722));
+}
+
+void main()
+{
+	uint index = gl_LocalInvocationIndex;
+	float baseExposure = max(params.adapt.w, 1e-6);
+
+	float sumLog = 0.0;
+	float sumWeight = 0.0;
+
+	for (int y = 0; y < SAMPLES_PER_THREAD; y++)
+	{
+		for (int x = 0; x < SAMPLES_PER_THREAD; x++)
+		{
+			vec2 cell = vec2(gl_LocalInvocationID.xy * SAMPLES_PER_THREAD + uvec2(x, y));
+			vec2 uv = (cell + 0.5) / float(GRID);
+
+			vec3 color = max(textureLod(sampler2D(sceneColor, sceneSampler), uv, 0.0).rgb, vec3(0.0)) / baseExposure;
+			float luminance = max(Luminance(color), 1e-6);
+
+			vec2 fromCenter = uv - 0.5;
+			float weight = exp(-params.exposure.w * dot(fromCenter, fromCenter));
+
+			sumLog += log2(luminance) * weight;
+			sumWeight += weight;
+		}
+	}
+
+	sharedLog[index] = sumLog;
+	sharedWeight[index] = sumWeight;
+	barrier();
+
+	for (uint stride = 128u; stride > 0u; stride >>= 1u)
+	{
+		if (index < stride)
+		{
+			sharedLog[index] += sharedLog[index + stride];
+			sharedWeight[index] += sharedWeight[index + stride];
+		}
+		barrier();
+	}
+
+	if (index != 0u)
+	{
+		return;
+	}
+
+	float meanLog = sharedLog[0] / max(sharedWeight[0], 1e-6);
+	float targetEv = clamp(params.exposure.x - meanLog, params.exposure.y, params.exposure.z);
+
+	float ev = targetEv;
+
+	if (params.control.x < 0.5 && state.valid > 0.5)
+	{
+		// The speeds are taken as the share of the way closed per thirtieth of a second: going darker is adapting
+		// to light, going brighter to the dark
+		float speed = clamp(targetEv < state.ev ? params.adapt.y : params.adapt.z, 0.0, 1.0);
+		float rate = 1.0 - pow(1.0 - speed, params.adapt.x * 30.0);
+		ev = mix(state.ev, targetEv, rate);
+	}
+
+	state.ev = ev;
+	state.targetEv = targetEv;
+	state.meanLog = meanLog;
+	state.valid = 1.0;
+}

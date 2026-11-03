@@ -994,13 +994,41 @@ public class ViewportRenderingTool
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Effects_Enable")}##postEffectsEnable", ref CFG.Current.Viewport_Post_Effects);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Effects_Enable_TT"));
 
-        var chain = viewport.ViewPipeline?.PostProcess;
+        ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Effects);
 
-        if (chain != null)
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Enable")}##postAutoExposure",
+            ref CFG.Current.Viewport_Post_Auto_Exposure);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Enable_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Bloom_Enable")}##postBloom", ref CFG.Current.Viewport_Post_Bloom);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Bloom_Enable_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Fxaa_Enable")}##postFxaa", ref CFG.Current.Viewport_Post_Fxaa);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Fxaa_Enable_TT"));
+
+        ImGui.EndDisabled();
+
+        var pipeline = viewport.ViewPipeline;
+
+        if (pipeline != null)
         {
-            ImGui.Text(chain.LastActive.Count > 0
-                ? LOC.Get("VIEWPORT_Rendering_Post_Effects_Active", string.Join(", ", chain.LastActive))
+            var active = pipeline.PostProcess.LastActive.ToList();
+
+            if (pipeline.Fxaa.IsActive(pipeline.ActiveMapLighting))
+                active.Add("FXAA");
+
+            ImGui.Text(active.Count > 0
+                ? LOC.Get("VIEWPORT_Rendering_Post_Effects_Active", string.Join(", ", active))
                 : LOC.Get("VIEWPORT_Rendering_Post_Effects_None_Active"));
+
+            // Read back from the GPU, a few frames behind
+            if (pipeline.AutoExposure.Applied)
+            {
+                var state = pipeline.AutoExposure.LastState;
+                ImGui.Text(LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Status", $"{state.MeanLog:0.##}",
+                    $"{state.Ev:+0.00;-0.00}", $"{state.TargetEv:+0.00;-0.00}"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Status_TT"));
+            }
         }
 
         ImGui.Separator();

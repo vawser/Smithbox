@@ -33,6 +33,12 @@ public class SceneRenderPipeline
     /// <summary>The screen effects run on <see cref="Target" /> before <see cref="ToneMap" /> reads it</summary>
     public PostProcessChain PostProcess { get; } = new();
 
+    /// <summary>The first of <see cref="PostProcess" />'s passes, whose adjustment the tone map and bloom read</summary>
+    public AutoExposurePass AutoExposure { get; } = new();
+
+    /// <summary>The anti-aliasing after the tone map, see <see cref="FxaaPass" /></summary>
+    public FxaaPass Fxaa { get; } = new();
+
     /// <summary>The copy of <see cref="Target" />'s depth that transparent draws read</summary>
     public SceneDepth SceneDepth { get; } = new();
 
@@ -151,6 +157,10 @@ public class SceneRenderPipeline
     {
         Scene = scene;
         Device = device;
+
+        // Auto exposure first, so the passes after it see this frame's adjustment
+        PostProcess.Add(AutoExposure);
+        PostProcess.Add(new BloomPass(AutoExposure));
 
         ResourceFactory factory = device.ResourceFactory;
 

@@ -11,12 +11,21 @@
 
 layout(set = 0, binding = 0) uniform ToneMapParams
 {
-	vec4 settings; // x: exposure, y: operator, z: white point
+	vec4 settings; // x: exposure, y: operator, z: white point, w: 1 to apply the auto exposure
 	vec4 offset;   // xy: where the target's first pixel is drawn
 } params;
 
 layout(set = 0, binding = 1) uniform texture2D sceneColor;
 layout(set = 0, binding = 2) uniform sampler sceneSampler;
+
+// The auto exposure's state, see AutoExposure.comp
+layout(set = 0, binding = 3, std430) readonly buffer ExposureState
+{
+	float ev;
+	float targetEv;
+	float meanLog;
+	float valid;
+} exposureState;
 
 layout(location = 0) out vec4 fsout_color;
 
@@ -56,7 +65,14 @@ void main()
 	ivec2 size = textureSize(sampler2D(sceneColor, sceneSampler), 0);
 	ivec2 pixel = clamp(ivec2(gl_FragCoord.xy - params.offset.xy), ivec2(0), size - 1);
 
-	vec3 color = max(texelFetch(sampler2D(sceneColor, sceneSampler), pixel, 0).rgb, vec3(0.0)) * params.settings.x;
+	float exposure = params.settings.x;
+
+	if (params.settings.w > 0.5)
+	{
+		exposure *= exp2(exposureState.ev);
+	}
+
+	vec3 color = max(texelFetch(sampler2D(sceneColor, sceneSampler), pixel, 0).rgb, vec3(0.0)) * exposure;
 
 	int op = int(params.settings.y + 0.5);
 
