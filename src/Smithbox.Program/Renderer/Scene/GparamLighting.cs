@@ -74,8 +74,8 @@ public class GparamLighting
     public Dictionary<string, string> Sources = new(StringComparer.Ordinal);
 
     /// <summary>
-    /// The direction a light with this GPARAM angle travels in. Unverified (Gparam Lighting.md, Phase 2): the
-    /// elevations in the game's files are all negative, so negative is taken to point down.
+    /// The direction a light with this GPARAM angle travels in: negative elevations point down, as all the game's
+    /// files have them. Checked against the game in the Map Editor (Gparam Lighting.md, Phase 2).
     /// </summary>
     public static Vector3 AngleToDirection(Vector2 angle)
     {

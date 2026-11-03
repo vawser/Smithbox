@@ -243,6 +243,11 @@ public class SceneRenderPipeline
         var mapLightDirection = Vector4.Zero;
         var mapSunColor = Vector4.Zero;
         var mapSunSpecColor = Vector4.Zero;
+        var mapHemiUp = Vector4.Zero;
+        var mapHemiDown = Vector4.Zero;
+        var mapEnvMapScale = Vector4.One;
+        var mapEnvMapSaturate = 1.0f;
+        var mapLightingFlags = 0u;
 
         if (mapLighting != null)
         {
@@ -253,6 +258,14 @@ public class SceneRenderPipeline
             mapSunColor = new Vector4(sun.Diffuse.X, sun.Diffuse.Y, sun.Diffuse.Z, sun.Diffuse.W * exposure);
             mapSunSpecColor = new Vector4(sun.Specular.X, sun.Specular.Y, sun.Specular.Z, sun.Specular.W * exposure);
             irradianceExposure = CFG.Current.Viewport_GI_Intensity * exposure;
+
+            // The shader takes these as plain rgb, so the intensity and exposure are folded in here
+            mapHemiUp = new Vector4(new Vector3(mapLighting.HemiUp.X, mapLighting.HemiUp.Y, mapLighting.HemiUp.Z) * mapLighting.HemiUp.W * exposure, 1.0f);
+            mapHemiDown = new Vector4(new Vector3(mapLighting.HemiDown.X, mapLighting.HemiDown.Y, mapLighting.HemiDown.Z) * mapLighting.HemiDown.W * exposure, 1.0f);
+            mapEnvMapScale = new Vector4(new Vector3(mapLighting.EnvMapScale.X, mapLighting.EnvMapScale.Y, mapLighting.EnvMapScale.Z) * mapLighting.EnvMapScale.W, 1.0f);
+            mapEnvMapSaturate = mapLighting.EnvMapSaturate;
+
+            mapLightingFlags = 1u | (CFG.Current.Viewport_Map_Lighting_Hemi_Inside_Volumes ? 2u : 0u);
         }
 
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
@@ -296,8 +309,12 @@ public class SceneRenderPipeline
                 }
             }
 
-            SceneParams.MapLightingFlags = mapLighting != null ? 1u : 0u;
+            SceneParams.MapLightingFlags = mapLightingFlags;
             SceneParams.SunSpecColor = SceneParams.SunColor;
+            SceneParams.HemiUp = mapHemiUp;
+            SceneParams.HemiDown = mapHemiDown;
+            SceneParams.EnvMapScale = mapEnvMapScale;
+            SceneParams.EnvMapSaturate = mapEnvMapSaturate;
 
             if (mapLighting == null)
             {

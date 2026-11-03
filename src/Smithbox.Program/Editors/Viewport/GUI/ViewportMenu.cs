@@ -683,6 +683,10 @@ public class ViewportMenu
             ref CFG.Current.Viewport_Map_Lighting_Exposure_Scale, 0.0f, 4.0f);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Exposure_Scale_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Hemi_Inside_Volumes")}##mapLightingHemiInsideVolumes",
+            ref CFG.Current.Viewport_Map_Lighting_Hemi_Inside_Volumes);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Hemi_Inside_Volumes_TT"));
+
         var active = SceneRenderer.MapLighting;
 
         if (CFG.Current.Viewport_Map_Lighting)

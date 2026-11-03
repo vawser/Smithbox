@@ -79,7 +79,10 @@ public unsafe struct SceneParam
     /// <summary>1: scale the environment map's reflections by the volumes' light</summary>
     public uint IrradianceVolumeFlags;
 
-    /// <summary>1: the sun comes from the map's GPARAMs, see <see cref="GparamLighting" /></summary>
+    /// <summary>
+    ///     1: the sun, and the ambient light and reflections outside the irradiance volumes, come from the map's
+    ///     GPARAMs, see <see cref="GparamLighting" />. 2: the hemisphere also adds to the volumes' light.
+    /// </summary>
     public uint MapLightingFlags;
 
     /// <summary>
@@ -87,4 +90,19 @@ public unsafe struct SceneParam
     ///     GPARAM gives its own.
     /// </summary>
     public Vector4 SunSpecColor;
+
+    /// <summary>The GPARAM's hemisphere light from above and from below, rgb already multiplied by intensity and exposure</summary>
+    public Vector4 HemiUp;
+    public Vector4 HemiDown;
+
+    /// <summary>The GPARAM's EnvMapColorConvert scale for reflections, rgb already multiplied by w</summary>
+    public Vector4 EnvMapScale;
+
+    /// <summary>The GPARAM's EnvMapColorConvert saturation for reflections: 0 grey, 1 unchanged</summary>
+    public float EnvMapSaturate;
+
+    // Fills the last 16 byte row, as the shaders lay the struct out
+    public float MapLightingPad0;
+    public float MapLightingPad1;
+    public float MapLightingPad2;
 }

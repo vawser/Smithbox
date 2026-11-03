@@ -140,8 +140,14 @@ struct sceneParams
 	float irradianceVolumeExposure; // scales the volumes' light to the viewport's
 	uint irradianceVolumeFlags;     // 1: scale reflections by the volumes' light
 
-	uint mapLightingFlags;          // 1: the sun comes from the map's GPARAMs
+	uint mapLightingFlags;          // 1: lit by the map's GPARAMs, 2: the hemisphere adds to the volumes' light
 	vec4 sunSpecColor;              // the sun's highlights, rgb: color, a: intensity
+
+	// The map's GPARAM hemisphere light, rgb already multiplied by intensity and exposure
+	vec4 hemiUp;
+	vec4 hemiDown;
+	vec4 envMapScale;               // reflections' color scale, rgb
+	float envMapSaturate;           // reflections' saturation, 0 grey, 1 unchanged
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -877,12 +883,34 @@ vec3 VolumeIrradiance(vec3 P, vec3 N, out float coverage, out float reflectionSc
 	return E * sceneparam.irradianceVolumeExposure;
 }
 
-// Light from the environment map, or the irradiance volumes where there are some
+// Whether the map's GPARAMs light the scene, see GparamLighting
+bool MapLighting()
+{
+	return (sceneparam.mapLightingFlags & 1u) != 0u;
+}
+
+// The map's GPARAM hemisphere light arriving from direction D: its up color from above, its down color from below
+vec3 Hemisphere(vec3 D)
+{
+	return mix(sceneparam.hemiDown.rgb, sceneparam.hemiUp.rgb, clamp(D.y * 0.5 + 0.5, 0.0, 1.0));
+}
+
+// Ambient light from direction N where there are no volumes: the map's hemisphere when its GPARAMs light the
+// scene, otherwise the environment map
+vec3 AmbientBase(vec3 N)
+{
+	if (MapLighting())
+		return Hemisphere(N);
+
+	return textureLod(
+		samplerCube(globalTexturesCube[nonuniformEXT(int(sceneparam.envmap))], linearSampler),
+		vec3(N * vec3(1, 1, -1)), 5).xyz;
+}
+
+// Light from the environment map or the map's hemisphere, or the irradiance volumes where there are some
 vec3 IndirectLight(Surface s)
 {
-	vec3 ambientDiffuse = textureLod(
-		samplerCube(globalTexturesCube[nonuniformEXT(int(sceneparam.envmap))], linearSampler),
-		vec3(s.N * vec3(1, 1, -1)), 5).xyz;
+	vec3 ambientDiffuse = AmbientBase(s.N);
 
 	// Where there are volumes, reflections are scaled by how bright the volumes' light is there compared with
 	// their average, so they darken in shadow; reflectionScale is already 1 outside every volume
@@ -892,6 +920,11 @@ vec3 IndirectLight(Surface s)
 	{
 		float coverage;
 		vec3 volumeLight = VolumeIrradiance(fsin_worldpos, s.N, coverage, reflectionScale);
+
+		// Unknown whether the game adds the hemisphere inside the volumes too, so it is a choice
+		if (MapLighting() && (sceneparam.mapLightingFlags & 2u) != 0u)
+			volumeLight += Hemisphere(s.N);
+
 		ambientDiffuse = mix(ambientDiffuse, volumeLight, coverage);
 
 		if ((sceneparam.irradianceVolumeFlags & 1u) == 0u)
@@ -909,9 +942,23 @@ vec3 IndirectLight(Surface s)
 	// PBR model
 	float envMip = min(6.0, -(1.0 - s.roughness) * 6.5 + 6.5);
 	vec3 reflectVec = reflect(-s.V, s.N);
-	vec3 ambientSpec = textureLod(
-		samplerCube(globalTexturesCube[nonuniformEXT(int(sceneparam.envmap))], linearSampler),
-		vec3(reflectVec * vec3(1, 1, -1)), envMip).xyz;
+	vec3 ambientSpec;
+
+	if (MapLighting())
+	{
+		// The hemisphere stands in for the map's environment maps, which aren't loaded, with the GPARAM's
+		// color conversion of them: towards grey by the saturation, then scaled
+		ambientSpec = Hemisphere(reflectVec);
+		float luminance = dot(ambientSpec, vec3(0.299, 0.587, 0.114));
+		ambientSpec = mix(vec3(luminance), ambientSpec, sceneparam.envMapSaturate) * sceneparam.envMapScale.rgb;
+	}
+	else
+	{
+		ambientSpec = textureLod(
+			samplerCube(globalTexturesCube[nonuniformEXT(int(sceneparam.envmap))], linearSampler),
+			vec3(reflectVec * vec3(1, 1, -1)), envMip).xyz;
+	}
+
 	ambientSpec *= sceneparam.ambientLightMult * reflectionScale;
 
 	float NdotV = max(abs(clamp(dot(s.V, s.N), 0.0, 1.0)), Epsilon);
@@ -1007,9 +1054,7 @@ vec4 WaterVolume(Surface s, vec3 reflection, float thickness)
 	float NdotV = clamp(dot(s.N, s.V), 0.0, 1.0);
 	float fresnel = 0.02 + 0.98 * pow(1.0 - NdotV, 5.0);
 
-	vec3 sky = textureLod(
-		samplerCube(globalTexturesCube[nonuniformEXT(int(sceneparam.envmap))], linearSampler),
-		vec3(s.N * vec3(1, 1, -1)), 5).xyz * sceneparam.ambientLightMult * sceneparam.indirectLightMult;
+	vec3 sky = AmbientBase(s.N) * sceneparam.ambientLightMult * sceneparam.indirectLightMult;
 
 	vec3 sunDir = dot(sceneparam.lightDirection.xyz, sceneparam.lightDirection.xyz) > 1e-10
 		? normalize(sceneparam.lightDirection.xyz) : vec3(0.0, -1.0, 0.0);

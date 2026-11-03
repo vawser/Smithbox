@@ -430,7 +430,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Enable_TT",
-      "Text": "Take the sun's direction, color and intensity, and the exposure, from the map's GPARAMs, as the game does. The irradiance volumes then take the same exposure instead of their auto exposure. With several maps loaded, the first by name with its own GPARAM lights them all."
+      "Text": "Take the sun's direction, color and intensity, the hemisphere ambient light, and the exposure from the map's GPARAMs, as the game does. The irradiance volumes then take the same exposure instead of their auto exposure, and the hemisphere replaces the grey environment map for ambient light and reflections. With several maps loaded, the first by name with its own GPARAM lights them all."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Exposure_Scale",
@@ -439,6 +439,14 @@
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Exposure_Scale_TT",
       "Text": "Multiplies the GPARAM's exposure. Most maps switch on the game's auto exposure, which adjusts the exposure to what is on screen; Smithbox uses the GPARAM's value as it is, so some maps may look too bright or too dark."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Hemi_Inside_Volumes",
+      "Text": "Add the Hemisphere Inside Volumes"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Hemi_Inside_Volumes_TT",
+      "Text": "The GPARAM's hemisphere light (sky color from above, ground color from below) lights what the irradiance volumes don't cover, and the reflections. With this on it also adds to the volumes' light. It is not known which the game does, so compare with the game."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Active",

@@ -3,10 +3,6 @@
     {
       "Key": "MAP_Lighting_Failed_Read_GPARAM",
       "Text": "Failed to read the GPARAM {0} for map lighting."
-    },
-    {
-      "Key": "MAP_Lighting_Load_Summary",
-      "Text": "Lighting of {0}: GPARAMs [{1}], looked up in {2} at time {3}. Sun {4} at angle {5} from {6}. Hemisphere up {7}, down {8}. Exposure {9}, auto exposure {10} (middle gray {11}) from {12}."
     }
   ]
 }

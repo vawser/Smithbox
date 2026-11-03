@@ -1277,6 +1277,10 @@ public class CFG
     // Scales the GPARAM's exposure, for maps where the game's auto exposure would set it differently
     public float Viewport_Map_Lighting_Exposure_Scale = 1.0f;
 
+    // Whether the GPARAM's hemisphere light adds to the irradiance volumes' light, as well as lighting what they
+    // don't cover; unknown which the game does
+    public bool Viewport_Map_Lighting_Hemi_Inside_Volumes = false;
+
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
 
