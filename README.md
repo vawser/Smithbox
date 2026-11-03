@@ -15,6 +15,7 @@ Smithbox is a modding tool for Elden Ring, Elden Ring: Nightreign, Armored Core 
 - **Texture Viewer**: a simple to use viewer for looking and extracting textures.
 - **File Browser**: a browser of the files contained within the data directory, plus the project directory. Allows easy extraction.
 - **Havok Editor**: an editor for editing HKX files. Supports ER and NR projects only.
+- **Time Act Editor: an editor for editing TAE files. Includes animation playback.
 
 You no longer need to unpack a game for any of the editors.
 
@@ -117,4 +118,4 @@ Smithbox utilises the following libraries and projects:
 * A 4GB (8GB recommended) of VRAM if modding DS3/BB/Sekiro/ER maps due to huge map sizes.
 
 ## AI Disclaimer
-Elements of the code and metadata for this project have been produced with AI tools.
+Claude Code with Opus 5.5 has been used to generate code and metadata within Smithbox.
