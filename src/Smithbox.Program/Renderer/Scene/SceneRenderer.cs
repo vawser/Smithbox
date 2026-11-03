@@ -834,13 +834,18 @@ public static class SceneRenderer
         /// </summary>
         /// <param name="cl"></param>
         /// <param name="sceneParams">The scene parameters to draw with, or null for the pipeline's own</param>
-        public void SubmitBatches(CommandList cl, SceneRenderPipeline pipeline, ResourceSet sceneParams)
+        /// <param name="capturesDepth">Whether the queue copies scene depth, which is then done after the last draw
+        /// if no transparent draw came to have it done before</param>
+        public void SubmitBatches(CommandList cl, SceneRenderPipeline pipeline, ResourceSet sceneParams,
+            bool capturesDepth = false)
         {
             // If renderset is -1, no work has actually been uploaded to the gpu yet
             if (_renderSet == -1)
             {
                 return;
             }
+
+            var captured = false;
 
             // Dispatch indirect calls for each batch
             var c = _batchCount[_renderSet] > 0 ? _batchCount[_renderSet] - 1 : 0;
@@ -849,6 +854,7 @@ public static class SceneRenderer
                 if (i == _depthCaptureBatch[_renderSet])
                 {
                     pipeline.CaptureSceneDepth(cl);
+                    captured = true;
                 }
 
                 cl.SetCheckpoint($"Draw batch {i + 1} of {_batchCount[_renderSet]}: {_batches[(MAX_BATCH * _renderSet) + i]._pipeline.Name}");
@@ -896,6 +902,12 @@ public static class SceneRenderer
                     cl.DrawIndexedIndirect(_indirectBuffer, _batches[(MAX_BATCH * _renderSet) + i]._batchStart * 20,
                         count, 20);
                 }
+            }
+
+            // With nothing transparent the copy is still wanted, for the fog laid over the scene with it
+            if (capturesDepth && !captured)
+            {
+                pipeline.CaptureSceneDepth(cl);
             }
         }
 
@@ -1101,7 +1113,7 @@ public static class SceneRenderer
             //Device.WaitForFence(_resourcesUpdatedFence[_nextBuffer], ulong.MaxValue - 1);
             ctx = Profiler.TracyCZoneN(1, "RenderQueue::Execute submit draw");
             drawCommandList.PushDebugGroup($@"{Name}: Draw");
-            _drawEncoders[_currentBuffer].SubmitBatches(drawCommandList, Pipeline, SceneParamSet);
+            _drawEncoders[_currentBuffer].SubmitBatches(drawCommandList, Pipeline, SceneParamSet, CapturesSceneDepth);
             drawCommandList.PopDebugGroup();
             Profiler.TracyCZoneEnd(ctx);
             watch.Stop();

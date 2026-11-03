@@ -1,0 +1,377 @@
+#version 450
+
+// The GPARAM VolumetricFog group, see VolumetricFogPass.cs. Fills a volume of froxels: VolumeWidth cells across the
+// view, as many down as keep them square, and VolumeDepth slices between NearDepth and FarDepth, spaced evenly in
+// log depth as the game's are. Each thread walks one column of cells from the camera outwards, gathering the light
+// the fog scatters towards the camera and the light it lets through, and stores both at the far side of each slice;
+// VolumetricFog.frag reads the volume at each pixel's depth.
+//
+// How the game turns the values into fog isn't known; this is a reading of them:
+// - density: Global FixedDensity + HeightFogDensity Scale x exp(-HeightFogDistribution x (y - HeightFogOffset))
+//   per metre, with AbsorptionScale adding to how much light it takes away, but not to how much it scatters
+// - SkyLight SkyColor: light from all around, the same from every direction
+// - DirLight DirectColor and OppositeColor: the sun's light seen looking towards it and away from it, blended by a
+//   Henyey-Greenstein phase with Global ScatteringG; shadowed by the sun's cascades
+// - HeightAtten fades each light with height above HeightFogOffset, StartDist keeps it off the first metres
+// - the map's lights add their light by Global LocalLightScale, over their range times LocalLightDistScale
+// The colors have the GPARAM exposure folded in on the CPU, as the map lighting's do.
+
+layout(local_size_x = 8, local_size_y = 8) in;
+
+#define MAX_SCENE_LIGHTS 16
+#define MAX_STEPS 16
+#define LIGHT_DIRECTIONAL 0
+#define LIGHT_SPOT 2
+
+// True when clip space Y points down the screen, see ShaderHelper.GetSpecializations
+layout (constant_id = 100) const bool c_clipSpaceYInverted = false;
+
+struct sceneLight
+{
+	vec4 positionRange;  // xyz: position, w: range (0 = no limit)
+	vec4 directionType;  // xyz: direction the light travels, w: type
+	vec4 colorIntensity; // rgb: color, a: intensity
+	vec4 spot;           // x: cos(inner angle), y: cos(outer angle), z: 1 to fade across the range
+};
+
+struct mapDirectionalLight
+{
+	vec4 direction;
+	vec4 color;
+	vec4 specColor;
+};
+
+struct sceneParams
+{
+	mat4 projection;
+	mat4 view;
+	vec4 eye;
+	vec4 lightDirection;
+	ivec4 curserPosition;
+	uint envmap;
+
+	float ambientLightMult;
+	float directLightMult;
+	float indirectLightMult;
+	float emissiveMapMult;
+	float sceneBrightness;
+	float simpleFlverBrightness;
+	float simpleFlverSaturation;
+	vec4 selectionColor;
+	vec4 outlineColor;
+	uint EnableDithering;
+	uint EnableTinting;
+	float ditherOpacity;
+
+	uint lightCount;
+	vec4 sunColor;
+	sceneLight lights[MAX_SCENE_LIGHTS];
+
+	float materialTime;
+	float windPeriod;
+	uint materialFeatures;
+	uint sceneDepthTexture;
+
+	vec4 wind;
+	float collisionOpacity;
+	float navVolumeSliceHeight;
+	uint navVolumeSliceFlags;
+
+	uint irradianceVolumeStart;
+	uint irradianceVolumeCount;
+	float irradianceVolumeExposure;
+	uint irradianceVolumeFlags;
+
+	uint mapLightingFlags;
+	vec4 sunSpecColor;
+
+	vec4 hemiUp;
+	vec4 hemiDown;
+	vec4 envMapScale;
+	float envMapSaturate;
+
+	mapDirectionalLight modelLights[4];
+	vec4 modelHemiUp;
+	vec4 modelHemiDown;
+
+	uint mapLightStart;
+	uint mapLightCount;
+
+	mat4 shadowMatrices[4];
+	vec4 shadowSplits;
+	vec4 shadowTexelSizes;
+	vec4 shadowDepthScales;
+	uint shadowTexture;
+	uint shadowCascadeCount;
+	float shadowFadeStart;
+	float shadowFadeEnd;
+	float shadowDepthBias;
+	float shadowSlopeBias;
+	float shadowCascadeFade;
+	float shadowStrength;
+	float shadowMapSize;
+};
+
+// Laid out as VolumetricFogParam
+struct fogParams
+{
+	mat4 clipToWorld;  // the inverse of the camera's view and projection
+	vec4 volume;       // x: cells across, y: cells down, z: slices, w: steps through each slice
+	vec4 depthRange;   // x: near depth, y: far depth, z: log(far / near), w: fog end depth
+	vec4 density;      // x: fixed density, y: height fog density scale, z: distribution, w: height offset
+	vec4 extinction;   // x: how much more light is taken away than scattered, from AbsorptionScale
+	vec4 sky;          // rgb: sky light, w: height attenuation
+	vec4 direct;       // rgb: sun light looking towards the sun, w: height attenuation
+	vec4 opposite;     // rgb: sun light looking away from it, w: ScatteringG
+	vec4 start;        // x: sky start distance, y: sun start distance, z: local light scale, w: local light range scale
+	vec4 sun;          // xyz: the direction the sun's light travels, w: 1 to shadow it
+	vec4 flags;        // x: 1 to add the map's lights, y: 1 for the analytic fog past the far depth, zw: target size
+};
+
+layout(set = 0, binding = 0) uniform FogParamBuffer
+{
+	fogParams fog;
+};
+
+layout(set = 0, binding = 1) uniform SceneParamBuffer
+{
+	sceneParams sceneparam;
+};
+
+layout(set = 0, binding = 2) uniform texture2D shadowMap;
+layout(set = 0, binding = 3) uniform sampler pointSampler;
+
+struct mapLight
+{
+	sceneLight light;
+	vec4 specular;
+};
+
+layout(set = 0, binding = 4, std140) readonly buffer mapLights
+{
+	mapLight maplightdata[];
+};
+
+// rgb: light scattered towards the camera up to the far side of the slice, a: the share of the light behind let through
+layout(set = 0, binding = 5, rgba16f) uniform writeonly image3D volume;
+
+// The world position on the ray of a cell, from clip space
+vec3 Unproject(vec2 ndc, float depth)
+{
+	vec4 world = fog.clipToWorld * vec4(ndc, depth, 1.0);
+	return world.xyz / world.w;
+}
+
+// Distance from the camera along its axis, as VolumetricFog.frag and the shadows measure it
+float ViewDepth(vec3 worldPos)
+{
+	return abs((sceneparam.view * vec4(worldPos, 1.0)).z);
+}
+
+float Density(float y)
+{
+	float height = clamp(-fog.density.z * (y - fog.density.w), -80.0, 80.0);
+	return clamp(fog.density.x + fog.density.y * exp(height), 0.0, 4.0);
+}
+
+// Henyey-Greenstein, scaled to 1 looking straight at the light
+float Phase(float cosAngle, float g)
+{
+	float gg = g * g;
+	float peak = (1.0 - gg) / pow(max(1.0 - g, 1e-3), 3.0);
+	return (1.0 - gg) / pow(max(1.0 + gg - 2.0 * g * cosAngle, 1e-6), 1.5) / peak;
+}
+
+// From 0 before a light's start distance to 1 a metre on
+float StartRamp(float distance, float start)
+{
+	return clamp(distance - start + 1.0, 0.0, 1.0);
+}
+
+float HeightAttenuation(float y, float attenuation)
+{
+	return exp(-max(attenuation, 0.0) * max(y - fog.density.w, 0.0));
+}
+
+// How much of the sun reaches a point of the fog: one texel of the cascade the point falls in, faded out where
+// the shadows end, as FlverShader.frag's SunShadow is
+float SunShadow(vec3 worldPos, float viewDepth)
+{
+	if (fog.sun.w < 0.5 || sceneparam.shadowTexture == 0u || sceneparam.shadowCascadeCount == 0u ||
+		viewDepth >= sceneparam.shadowFadeEnd)
+	{
+		return 1.0;
+	}
+
+	int count = int(min(sceneparam.shadowCascadeCount, 4u));
+	int cascade = count - 1;
+
+	for (int i = 0; i < count; i++)
+	{
+		if (viewDepth < sceneparam.shadowSplits[i])
+		{
+			cascade = i;
+			break;
+		}
+	}
+
+	vec4 clip = sceneparam.shadowMatrices[cascade] * vec4(worldPos, 1.0);
+	vec3 ndc = clip.xyz / clip.w;
+
+	if (any(greaterThan(abs(ndc.xy), vec2(1.0))) || ndc.z > 1.0)
+	{
+		return 1.0;
+	}
+
+	int size = int(sceneparam.shadowMapSize) / 2;
+	ivec2 low = ivec2(cascade % 2, cascade / 2) * size;
+	ivec2 texel = clamp(ivec2((ndc.xy * 0.5 + 0.5) * float(size)) + low, low, low + size - 1);
+
+	float stored = texelFetch(sampler2D(shadowMap, pointSampler), texel, 0).r;
+	float bias = sceneparam.shadowTexelSizes[cascade] * sceneparam.shadowDepthScales[cascade];
+	float lit = ndc.z + bias >= stored ? 1.0 : 0.0;
+
+	lit = mix(lit, 1.0, smoothstep(sceneparam.shadowFadeStart, sceneparam.shadowFadeEnd, viewDepth));
+
+	return mix(1.0, lit, sceneparam.shadowStrength);
+}
+
+// The light the map's lights put into the fog at a point, as FlverShader.frag's LightAttenuation falls off,
+// over the range scaled by LocalLightDistScale
+vec3 MapLights(vec3 worldPos)
+{
+	vec3 total = vec3(0.0);
+	float rangeScale = max(fog.start.w, 1e-3);
+
+	for (uint i = 0u; i < sceneparam.mapLightCount; i++)
+	{
+		uint index = sceneparam.mapLightStart + i;
+		vec4 positionRange = maplightdata[index].light.positionRange;
+		vec4 directionType = maplightdata[index].light.directionType;
+		int type = int(directionType.w + 0.5);
+
+		// The sun is the fog's DirLight already
+		if (type == LIGHT_DIRECTIONAL)
+			continue;
+
+		float range = positionRange.w * rangeScale;
+		vec3 toLight = positionRange.xyz - worldPos;
+		float dist2 = dot(toLight, toLight);
+
+		if (range > 0.0 && dist2 > range * range)
+			continue;
+
+		vec4 spot = maplightdata[index].light.spot;
+		vec4 colorIntensity = maplightdata[index].light.colorIntensity;
+		float dist = sqrt(dist2);
+		float attenuation;
+
+		if (spot.z > 0.5 && range > 0.0)
+		{
+			float fade = clamp(1.0 - dist / range, 0.0, 1.0);
+			attenuation = fade * fade;
+		}
+		else
+		{
+			attenuation = 1.0 / (dist2 + 1.0);
+			if (range > 0.0)
+			{
+				float window = clamp(1.0 - pow(dist / range, 4.0), 0.0, 1.0);
+				attenuation *= window * window;
+			}
+		}
+
+		if (type == LIGHT_SPOT)
+		{
+			float cosAngle = dot(-toLight / max(dist, 1e-4), normalize(directionType.xyz));
+			attenuation *= smoothstep(spot.y, spot.x, cosAngle);
+		}
+
+		total += colorIntensity.rgb * colorIntensity.a * attenuation;
+	}
+
+	return total * fog.start.z;
+}
+
+void main()
+{
+	ivec3 size = ivec3(fog.volume.xyz);
+	ivec2 cell = ivec2(gl_GlobalInvocationID.xy);
+
+	if (cell.x >= size.x || cell.y >= size.y)
+	{
+		return;
+	}
+
+	// The cell's centre in clip space. With the standard clip Y, Veldrid flips the viewport, so clip +Y is the top
+	// row of the target, which is gl_FragCoord.y 0 in VolumetricFog.frag
+	vec2 uv = (vec2(cell) + 0.5) / vec2(size.xy);
+	vec2 ndc = vec2(uv.x * 2.0 - 1.0, c_clipSpaceYInverted ? uv.y * 2.0 - 1.0 : 1.0 - uv.y * 2.0);
+
+	// Two points on the ray, so a point at any view depth is found along the line between them. Depth is
+	// reversed, 1 at the near plane.
+	vec3 eye = sceneparam.eye.xyz;
+	vec3 a = Unproject(ndc, 1.0);
+	vec3 b = Unproject(ndc, 0.5);
+	float depthA = ViewDepth(a);
+	float depthB = ViewDepth(b);
+	vec3 perDepth = (b - a) / max(abs(depthB - depthA), 1e-6) * sign(depthB - depthA);
+
+	// Metres along the ray per metre of view depth
+	float rayScale = length(perDepth);
+	vec3 rayDir = perDepth / max(rayScale, 1e-6);
+
+	vec3 sunTravel = dot(fog.sun.xyz, fog.sun.xyz) > 1e-10 ? normalize(fog.sun.xyz) : vec3(0.0, -1.0, 0.0);
+	float sunPhase = Phase(dot(rayDir, -sunTravel), fog.opposite.w);
+	vec3 sunColor = mix(fog.opposite.rgb, fog.direct.rgb, sunPhase);
+	bool localLights = fog.flags.x > 0.5 && sceneparam.mapLightCount > 0u;
+
+	// Each column starts at a different point of its steps, so the slices don't show as bands
+	float jitter = fract(52.9829189 * fract(0.06711056 * float(cell.x) + 0.00583715 * float(cell.y)));
+	int steps = clamp(int(fog.volume.w), 1, MAX_STEPS);
+
+	float near = fog.depthRange.x;
+	float logRatio = fog.depthRange.z;
+
+	vec3 scattered = vec3(0.0);
+	float transmittance = 1.0;
+	float sliceStart = near;
+
+	for (int slice = 0; slice < size.z; slice++)
+	{
+		float sliceEnd = near * exp(logRatio * float(slice + 1) / float(size.z));
+		float stepDepth = (sliceEnd - sliceStart) / float(steps);
+
+		vec3 lights = vec3(0.0);
+		if (localLights)
+		{
+			float middle = 0.5 * (sliceStart + sliceEnd);
+			lights = MapLights(a + perDepth * (middle - depthA));
+		}
+
+		for (int i = 0; i < steps; i++)
+		{
+			float depth = sliceStart + (float(i) + jitter) * stepDepth;
+			vec3 worldPos = a + perDepth * (depth - depthA);
+			float distance = length(worldPos - eye);
+
+			float density = Density(worldPos.y);
+			if (density <= 0.0)
+				continue;
+
+			vec3 light = fog.sky.rgb * HeightAttenuation(worldPos.y, fog.sky.w) * StartRamp(distance, fog.start.x);
+			light += sunColor * SunShadow(worldPos, depth) * HeightAttenuation(worldPos.y, fog.direct.w) *
+				StartRamp(distance, fog.start.y);
+			light += lights;
+
+			// What a step scatters, less what the fog takes away within the step
+			float extinction = density * (1.0 + fog.extinction.x);
+			float stepTransmittance = exp(-extinction * stepDepth * rayScale);
+			scattered += transmittance * light * density * (1.0 - stepTransmittance) / max(extinction, 1e-6);
+			transmittance *= stepTransmittance;
+		}
+
+		imageStore(volume, ivec3(cell, slice), vec4(scattered, transmittance));
+		sliceStart = sliceEnd;
+	}
+}

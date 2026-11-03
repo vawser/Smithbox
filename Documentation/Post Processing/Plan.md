@@ -200,6 +200,63 @@ Check: ER m10_00_00_00 at t4: distant towers hazed with a faint green-grey (SkyC
 thinning with height. Looking towards the sun the haze is brighter than away from it. With volumetric fog, shafts of
 shadow through the courtyard archways.
 
+### Phase 2 as built (2026-11-03; not yet checked in the app)
+
+Steps 1 and 2 were built as one: the froxel volume is the fog, and the analytic part only covers what lies past it.
+
+- **Volumetric fog** (`VolumetricFogPass.cs`, `VolumetricFog.comp`, `VolumetricFog.vert/frag`), one per
+  `SceneRenderPipeline` (`Fog`). Not a `PostProcessChain` pass: it runs inside the scene, in
+  `SceneRenderPipeline.CaptureSceneDepth`, right after the depth copy that the transparent draws read.
+  - `Prepare` (in `UpdateSceneParameters`) works out the parameters from the camera and the map lighting: colours x
+    intensity (w) x GPARAM exposure, as the map lights are.
+  - `Apply` updates them (which ends the scene's render pass), dispatches the compute, then draws a fullscreen
+    triangle into the HDR target with blend `scene x a + rgb`. The draw carries on with the target's contents (the
+    depth copy leaves the framebuffer bound), and Veldrid moves the volume to a sampled layout before its render pass
+    resumes.
+  - `SubmitBatches` now copies depth after the last draw when no transparent draw caused it, so scenes without
+    transparents get fog too.
+- **The volume:** `VolumeWidth` cells across, as many down as keep them square (54 at 16:9), `VolumeDepth` slices
+  spaced evenly in log depth from `NearDepth` to `FarDepth`. RGBA16F: light scattered so far, and transmittance.
+  - One thread per column marches out from the camera, `SampleCount` steps per slice (jittered per column), and
+    stores the totals at each slice's far side.
+  - The fragment reads it at the pixel's depth, fading in from the camera before the first slice.
+- **How the values are read** (a reading, not decoded from the game):
+  - density = `FixedDensity + HeightFogDensity Scale x exp(-HeightFogDistribution x (y - HeightFogOffset))` per
+    metre, capped at 4; `AbsorptionScale` (its average) adds to extinction only.
+  - `SkyColor` is the same from every direction.
+  - The sun's light is `mix(OppositeColor, DirectColor, HG(view.sun, ScatteringG) / HG(1))`, shadowed by one texel
+    of the cascade the point falls in.
+  - `HeightAtten` fades a light above `HeightFogOffset`; `StartDist` keeps it off the first metres.
+  - Map lights: the BTL table near the camera (`SceneRenderer.MapLights`), x `LocalLightScale`, range x
+    `LocalLightDistScale`, evaluated once per slice.
+  - Past `FarDepth`, with `EnableAnalyticalFog`, 8 steps out to `FogEndDepth`, sky and unshadowed sun only. Pixels
+    with no depth (sky) take the whole range.
+- The compute binds its own set (the scene params buffer, the shadow map itself via the new
+  `ShadowCascades.MapTexture`, the material buffer for the map lights, and the volume as a storage image), because
+  the texture pools and the material buffer layout are only visible to the vertex and fragment stages.
+- CFG `Viewport_Post_Volumetric_Fog`, `Viewport_Post_Fog_Shadows`, `Viewport_Post_Fog_Local_Lights` (all on),
+  switches in Post Effects; "Drawing:" lists Volumetric Fog first.
+- Not done, from the plan:
+  - Transparents (water, glass) are drawn over the fog unfogged. The 3D texture could go in
+    `globalTexturesVolume` (set 3, binding 1) for FlverShader to read, but that pool is fragment-only, which fits.
+  - `DirLight LightBankId/LightId` are ignored: the scene sun is used.
+  - `ShadowSampleCount` is unused: `SampleCount` steps are shadowed.
+  - Step 3 (FogVolume boxes into the froxels) remains.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| ER m10_00_00_00, time 4, map lighting on | Look across the castle | "Drawing:" starts with Volumetric Fog; distant towers hazed green-grey, near walls clear | Whole screen grey or black: report HeightFogOffset and the camera's height (density formula or units). Nothing at all: the fog switch, or ER's `VolumetricFog Enable` |
+| Same | Fly up 50-100 m, then down into a low courtyard | Haze thins higher up, thickens lower | The other way round: the sign of Distribution |
+| Same | Look towards the sun, then away | Brighter and warmer towards it (DirectColor), dimmer away (OppositeColor) | Same both ways: the phase isn't applied |
+| Same, Shadows on | Look through archways towards the sun | Darker streaks of fog in the shadows of walls and arches | Shadows that slide with the camera, or upside down: the Y flip in the compute's clip coordinates |
+| Same | Toggle Sun Shadows in Fog | Only the streaks go | |
+| An interior with torches (m10 or a catacomb) | Toggle Map Lights in Fog | A glow in the air round lights | Blown out: the BTL units differ from the fog's, report Local Light Scale |
+| A pool or window | | Water and glass not hazed (known gap); no seam or halo round them | |
+| Toggle Volumetric Fog | | Only the haze changes; frame time drops a little | |
+| Resize, split viewports, Model Editor with a borrowed map | | Fog matches the view in each; no stretching | |
+
 ### Phase 3: light shafts
 
 Screen-space radial blur from the light's screen position: sky mask where depth > `MaskDepthThreshold`, shaped by

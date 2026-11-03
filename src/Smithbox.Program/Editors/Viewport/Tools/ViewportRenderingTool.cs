@@ -1006,13 +1006,37 @@ public class ViewportRenderingTool
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Fxaa_Enable")}##postFxaa", ref CFG.Current.Viewport_Post_Fxaa);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Fxaa_Enable_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Volumetric_Fog_Enable")}##postVolumetricFog",
+            ref CFG.Current.Viewport_Post_Volumetric_Fog);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Volumetric_Fog_Enable_TT"));
+
+        ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Volumetric_Fog);
+        ImGui.Indent();
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Fog_Shadows_Enable")}##postFogShadows",
+            ref CFG.Current.Viewport_Post_Fog_Shadows);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Fog_Shadows_Enable_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Fog_Local_Lights_Enable")}##postFogLocalLights",
+            ref CFG.Current.Viewport_Post_Fog_Local_Lights);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Fog_Local_Lights_Enable_TT"));
+
+        ImGui.Unindent();
+        ImGui.EndDisabled();
+
         ImGui.EndDisabled();
 
         var pipeline = viewport.ViewPipeline;
 
         if (pipeline != null)
         {
-            var active = pipeline.PostProcess.LastActive.ToList();
+            // The fog is drawn with the scene, before the chain
+            var active = new List<string>();
+
+            if (pipeline.Fog.Drawn)
+                active.Add(pipeline.Fog.Name);
+
+            active.AddRange(pipeline.PostProcess.LastActive);
 
             if (pipeline.Fxaa.IsActive(pipeline.ActiveMapLighting))
                 active.Add("FXAA");

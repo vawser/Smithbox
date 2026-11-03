@@ -1221,6 +1221,30 @@
       "Text": "Smooths jagged edges after the tone map, with the GPARAM Anti-Alias group's FXAA values (Elden Ring's mapbase without map lighting). Used whatever the Anti-Alias Type is, until there is TAA."
     },
     {
+      "Key": "VIEWPORT_Rendering_Post_Volumetric_Fog_Enable",
+      "Text": "Volumetric Fog"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Volumetric_Fog_Enable_TT",
+      "Text": "Where the GPARAM's VolumetricFog group is on, hazes the scene with its height fog out to Far Depth (and to Fog End Depth with Enable Analytical Fog), lit by the Sky Light and Dir Light colors. Needs map lighting. Water and glass are drawn over the fog, unfogged for now."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Fog_Shadows_Enable",
+      "Text": "Sun Shadows in Fog"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Fog_Shadows_Enable_TT",
+      "Text": "Shades the fog's sunlight with the sun's shadow maps, which gives shafts of shadow through gaps. Needs Shadows on."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Fog_Local_Lights_Enable",
+      "Text": "Map Lights in Fog"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Fog_Local_Lights_Enable_TT",
+      "Text": "Adds the map's lights near the camera to the fog, by Local Light Scale, over their range times Local Light Dist Scale."
+    },
+    {
       "Key": "VIEWPORT_Rendering_Post_Effects_Column_Effect",
       "Text": "Effect"
     },

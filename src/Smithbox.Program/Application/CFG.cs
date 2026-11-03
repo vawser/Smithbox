@@ -1322,6 +1322,12 @@ public class CFG
     public bool Viewport_Post_Bloom = true;
     public bool Viewport_Post_Fxaa = true;
 
+    // The GPARAM's VolumetricFog (Elden Ring's distance and height fog), with the sun's shadows through it and the
+    // map's lights in it
+    public bool Viewport_Post_Volumetric_Fog = true;
+    public bool Viewport_Post_Fog_Shadows = true;
+    public bool Viewport_Post_Fog_Local_Lights = true;
+
     // Sun shadows: cascaded shadow maps whose splits, fade and bias come from the map's GPARAM Shadows group, or
     // Elden Ring's mapbase without map lighting. The resolution is that of one cascade; the map holds four.
     public bool Viewport_Shadows = true;

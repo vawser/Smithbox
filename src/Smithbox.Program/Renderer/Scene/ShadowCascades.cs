@@ -81,6 +81,9 @@ public class ShadowCascades
     /// <summary>The shadow map's index in the global texture pool, or 0 if there are no shadows this frame</summary>
     public uint TextureIndex => ActiveCount > 0 ? Handle?.TexHandle ?? 0 : 0;
 
+    /// <summary>The shadow map itself, for passes that bind it directly, or null if there are no shadows this frame</summary>
+    public Texture MapTexture => ActiveCount > 0 ? Map : null;
+
     /// <summary>The whole map's size in texels: two cascades to a side</summary>
     public float MapSize => Resolution * 2.0f;
 

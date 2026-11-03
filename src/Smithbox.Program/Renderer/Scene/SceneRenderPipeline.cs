@@ -42,6 +42,9 @@ public class SceneRenderPipeline
     /// <summary>The copy of <see cref="Target" />'s depth that transparent draws read</summary>
     public SceneDepth SceneDepth { get; } = new();
 
+    /// <summary>The GPARAM's distance and height fog, laid over the scene when its depth is copied</summary>
+    public VolumetricFogPass Fog { get; } = new();
+
     /// <summary>The sun's shadow maps, or null for a pipeline drawn without shadows</summary>
     public ShadowCascades Shadows { get; }
 
@@ -269,10 +272,14 @@ public class SceneRenderPipeline
         _overlayQueue.IsOffscreen = true;
     }
 
-    /// <summary>Copies <see cref="Target" />'s depth for the transparent draws that follow, see <see cref="SceneDepth" /></summary>
+    /// <summary>
+    ///     Copies <see cref="Target" />'s depth for the transparent draws that follow, see <see cref="SceneDepth" />,
+    ///     and lays the fog over the opaque draws, which reads it
+    /// </summary>
     public void CaptureSceneDepth(CommandList cl)
     {
         SceneDepth.Capture(Device, cl, Target.Depth);
+        Fog.Apply(Device, cl, this);
     }
 
     public void SetViewportSetupAction(Action<GraphicsDevice, CommandList> action)
@@ -417,6 +424,8 @@ public class SceneRenderPipeline
 
         Shadows?.Update(castShadows, view, proj, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z),
             mapLighting?.Shadow ?? DefaultShadow);
+
+        Fog.Prepare(view, proj, mapLighting, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z));
 
         var shadowParams = Shadows?.Parameters ?? default;
         var shadowCount = (uint)(Shadows?.ActiveCount ?? 0);
