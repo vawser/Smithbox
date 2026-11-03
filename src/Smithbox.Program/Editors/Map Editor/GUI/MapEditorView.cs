@@ -120,6 +120,7 @@ public class MapEditorView : IEditorView
     public DestructionGenerationTool DestructionGenerationTool;
     public LoadListTool LoadListTool;
     public EntryFileListTool EntryFileListTool;
+    public PartsTokenIdListTool PartsTokenIdListTool;
 
     public ResourceListTool ResourceListTool;
 
@@ -213,6 +214,7 @@ public class MapEditorView : IEditorView
         DestructionGenerationTool = new DestructionGenerationTool(this, project);
         LoadListTool = new LoadListTool(this, project);
         EntryFileListTool = new EntryFileListTool(this, project);
+        PartsTokenIdListTool = new PartsTokenIdListTool(this, project);
 
         ResourceListTool = new ResourceListTool();
 

@@ -301,6 +301,14 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_PartsTokenIdList && View.PartsTokenIdListTool.CanUse())
+        {
+            if (ToolSections.Header("Parts Token ID Lists"))
+            {
+                View.PartsTokenIdListTool.OnToolWindow();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
         {
             View.GridTool.OnToolWindow();
@@ -427,6 +435,15 @@ public class MapToolWindow
                     CFG.Current.Interface_MapEditor_Tool_EntryFileList = !CFG.Current.Interface_MapEditor_Tool_EntryFileList;
                 }
                 GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_EntryFileList);
+            }
+
+            if (View.PartsTokenIdListTool.CanUse())
+            {
+                if (ImGui.MenuItem("Parts Token ID Lists"))
+                {
+                    CFG.Current.Interface_MapEditor_Tool_PartsTokenIdList = !CFG.Current.Interface_MapEditor_Tool_PartsTokenIdList;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_PartsTokenIdList);
             }
 
             if (ImGui.MenuItem("Viewport Configuration"))

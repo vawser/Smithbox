@@ -1,0 +1,20 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_Parts_Token_ID_List_Saved",
+      "Text": "Saved parts token ID lists {0}."
+    },
+    {
+      "Key": "MAP_Parts_Token_ID_List_Failed_Find",
+      "Text": "Failed to find parts token ID lists {0}."
+    },
+    {
+      "Key": "MAP_Parts_Token_ID_List_Failed_Read",
+      "Text": "Failed to read parts token ID lists {0}."
+    },
+    {
+      "Key": "MAP_Parts_Token_ID_List_Failed_Write",
+      "Text": "Failed to write parts token ID lists {0}."
+    }
+  ]
+}

@@ -45,6 +45,11 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary EntryFileListFiles = new();
     public FileDictionary LoadListFiles = new();
 
+    /// <summary>
+    /// The parts token ID lists of the maps (AC6)
+    /// </summary>
+    public FileDictionary PartsTokenIdListFiles = new();
+
     public FileDictionary GparamFiles = new();
     public FileDictionary TextFiles = new();
 
@@ -355,6 +360,7 @@ public class ProjectFileLocator : IDisposable
         var timeActFiles = new HashSet<FileDictionaryEntry>();
         var entryFileListFiles = new HashSet<FileDictionaryEntry>();
         var loadListFiles = new HashSet<FileDictionaryEntry>();
+        var partsTokenIdListFiles = new HashSet<FileDictionaryEntry>();
 
         var havokAnimationFiles = new HashSet<FileDictionaryEntry>();
         var havokBehaviorFiles = new HashSet<FileDictionaryEntry>();
@@ -492,6 +498,12 @@ public class ProjectFileLocator : IDisposable
                 loadListFiles.Add(entry);
             }
 
+            // Parts Token ID List (AC6)
+            if (projectType is ProjectType.AC6 && ext == "ptidlbnd" && !isSd)
+            {
+                partsTokenIdListFiles.Add(entry);
+            }
+
             // Gparam
             if (folder.StartsWith("/param") && ext == "gparam" && !isSd)
             gparamFiles.Add(entry);
@@ -595,6 +607,7 @@ public class ProjectFileLocator : IDisposable
         TimeActFiles.Entries = timeActFiles;
         EntryFileListFiles.Entries = entryFileListFiles;
         LoadListFiles.Entries = loadListFiles;
+        PartsTokenIdListFiles.Entries = partsTokenIdListFiles;
 
         HavokAnimationFiles.Entries = havokAnimationFiles;
         HavokBehaviorFiles.Entries = havokBehaviorFiles;
@@ -773,6 +786,7 @@ public class ProjectFileLocator : IDisposable
         LightProbeFiles = null;
         GparamFiles = null;
         LoadListFiles = null;
+        PartsTokenIdListFiles = null;
         TextFiles = null;
         MTD_Files = null;
         MATBIN_Files = null;
