@@ -357,6 +357,30 @@
       "Text": "Global Illumination"
     },
     {
+      "Key": "VIEWPORT_Menubar_GI_Enable",
+      "Text": "Light with Irradiance Volumes"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Enable_TT",
+      "Text": "Light models inside environment boxes with the map's baked irradiance volumes, instead of the environment map. Outside every box, models keep the environment map's light."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Auto_Exposure",
+      "Text": "Auto Exposure"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Auto_Exposure_TT",
+      "Text": "The volumes' light is in the game's own units. Auto exposure scales it so the volumes' average matches the viewport's default ambient light. Current exposure: {0:F1}"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Intensity",
+      "Text": "Intensity"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Intensity_TT",
+      "Text": "Multiplies the volumes' light. With Auto Exposure off this is the exposure itself; around 25 matches typical maps."
+    },
+    {
       "Key": "VIEWPORT_Menubar_GI_Bake",
       "Text": "Bake"
     },

@@ -242,6 +242,9 @@ public class IrradianceVolumeBank
 
     private IrradianceVolumeData[] _tableEntries = new IrradianceVolumeData[IrradianceVolumeTable.Capacity];
 
+    // The light of the viewport's default environment map, which models are lit by outside the volumes
+    private const double AmbientTarget = 0.5;
+
     /// <summary>
     /// Rebuild the volume table the shaders light with, from the loaded maps' linked boxes whose four textures of
     /// the bake are on the GPU. Done every frame, so moved, resized or relinked boxes follow at once; the table is
@@ -255,6 +258,8 @@ public class IrradianceVolumeBank
             return;
 
         var found = new List<(IrradianceVolumeData Data, int Priority, float Size)>();
+        var luminanceSum = 0.0;
+        var luminanceCount = 0;
 
         if (CanUse())
         {
@@ -268,7 +273,18 @@ public class IrradianceVolumeBank
                 foreach (var entity in map.Regions)
                 {
                     if (TryBuildEntry(map.Name, entity, volumes, bake, out var data, out var priority, out var size))
+                    {
                         found.Add((data, priority, size));
+
+                        // The IVINFO's L0 is the volume's average luminance
+                        var luminance = volumes.Infos[((int)data.Info.X, bake)].ShLuminance.W;
+
+                        if (luminance > 0)
+                        {
+                            luminanceSum += luminance;
+                            luminanceCount++;
+                        }
+                    }
                 }
             }
         }
@@ -282,6 +298,10 @@ public class IrradianceVolumeBank
             _tableEntries[i] = found[i].Data;
 
         ShadedVolumeCount = count;
+
+        // Their average light becomes the viewport's default ambient light, 0.5
+        table.AutoExposure = luminanceCount > 0 ? (float)(AmbientTarget / (luminanceSum / luminanceCount)) : 1.0f;
+
         table.Upload(_tableEntries, count);
     }
 

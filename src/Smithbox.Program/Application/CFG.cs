@@ -1255,6 +1255,11 @@ public class CFG
     // The bake of the irradiance volumes to light maps with (AC6, ER, NR), the NN of mAA_BB_CC_DD_envmap_NN
     public int Viewport_GI_Bake = 0;
 
+    // Whether models are lit by the irradiance volumes, and how brightly
+    public bool Viewport_GI_Enable = true;
+    public bool Viewport_GI_Auto_Exposure = true;
+    public float Viewport_GI_Intensity = 1.0f;
+
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
 

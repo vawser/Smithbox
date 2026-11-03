@@ -544,6 +544,18 @@ public class ViewportMenu
     /// </summary>
     private void GlobalIlluminationMenu(MapEditorView view)
     {
+        // These apply at once, as they are passed in the scene params every frame
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Enable")}##giEnable", ref CFG.Current.Viewport_GI_Enable);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Enable_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure")}##giAutoExposure", ref CFG.Current.Viewport_GI_Auto_Exposure);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Auto_Exposure_TT", SceneRenderer.IrradianceVolumes.AutoExposure));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_GI_Intensity")}##giIntensity", ref CFG.Current.Viewport_GI_Intensity,
+            0.0f, CFG.Current.Viewport_GI_Auto_Exposure ? 4.0f : 200.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Intensity_TT"));
+
         DPI.ApplyInputWidth();
         if (ImGui.InputInt($"{LOC.Get("VIEWPORT_Menubar_GI_Bake")}##giBake", ref CFG.Current.Viewport_GI_Bake))
         {

@@ -219,7 +219,9 @@ public class SceneRenderPipeline
         var collisionOpacity = Math.Clamp(CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
         var navVolumeSliceHeight = NavVolumeSlice.Height;
         var navVolumeSliceFlags = NavVolumeSlice.Flags;
-        var useIrradianceVolumes = UseIrradianceVolumes;
+        var useIrradianceVolumes = UseIrradianceVolumes && CFG.Current.Viewport_GI_Enable;
+        var irradianceExposure = CFG.Current.Viewport_GI_Intensity *
+            (CFG.Current.Viewport_GI_Auto_Exposure ? SceneRenderer.IrradianceVolumes.AutoExposure : 1.0f);
 
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
@@ -249,6 +251,7 @@ public class SceneRenderPipeline
             // Read here, on the upload, so the count only covers entries whose data is already on the GPU
             SceneParams.IrradianceVolumeStart = SceneRenderer.IrradianceVolumes.Start;
             SceneParams.IrradianceVolumeCount = useIrradianceVolumes ? SceneRenderer.IrradianceVolumes.Count : 0;
+            SceneParams.IrradianceVolumeExposure = irradianceExposure;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)

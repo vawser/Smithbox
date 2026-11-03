@@ -137,6 +137,7 @@ struct sceneParams
 	// The irradiance volumes to light with: entries of volumedata, see IrradianceVolumeTable
 	uint irradianceVolumeStart;
 	uint irradianceVolumeCount;
+	float irradianceVolumeExposure; // scales the volumes' light to the viewport's
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -745,12 +746,100 @@ vec3 LightRadiance(sceneLight light, vec3 worldPos, out vec3 L)
 	return color * attenuation;
 }
 
-// Light from the environment map
+// ---------------------------------------------------------------------------------------------
+// Irradiance volumes (AC6, ER, NR), as the game's GXEnvMapRegion and forward flver shaders read them.
+// See Documentation/Full GI/Shaders.md.
+// ---------------------------------------------------------------------------------------------
+
+// A texel holds one band of the light's spherical harmonics for each color channel, signed around 0.5,
+// with alpha as a base 2 exponent
+vec3 DecodeVolumeTexel(vec4 t)
+{
+	return (t.rgb - 0.5) * (exp2((t.a - 0.5) * 20.0) * 2.0);
+}
+
+vec4 SampleVolume(uint tex, vec3 uvw)
+{
+	return textureLod(sampler3D(globalTexturesVolume[nonuniformEXT(tex)], linearSampler), uvw, 0.0);
+}
+
+// The game's non-linear evaluation of L1 spherical harmonics for one channel, which stays positive and
+// keeps the contrast of a strongly directional light
+float EvaluateSHChannel(float L0, vec3 L1, vec3 N)
+{
+	L0 = max(L0, 0.0);
+
+	float len = length(L1);
+	vec3 dir = len > 0.0 ? L1 / len : vec3(0.0);
+
+	float q = clamp((dot(N, dir) + 1.0) * 0.5, 0.0, 1.0);
+	float R1 = clamp(len / (L0 + 1e-5), 0.0, 1.0);
+	float p = 1.0 + 2.0 * R1;
+	float a = clamp((1.0 - R1) / (1.0 + R1), 0.0, 1.0);
+
+	return max(L0 * (a + (1.0 - a) * (p + 1.0) * pow(q, p)), 0.0);
+}
+
+// The light arriving at a point from the volumes around it, and how much of it is covered by them.
+// Volumes are in drawing order, coarse first, and each fades in over the ones before it.
+vec3 VolumeIrradiance(vec3 P, vec3 N, out float coverage)
+{
+	vec3 E = vec3(0.0);
+	coverage = 0.0;
+
+	for (uint i = 0u; i < sceneparam.irradianceVolumeCount; i++)
+	{
+		irradianceVolumeData v = volumedata[sceneparam.irradianceVolumeStart + i];
+
+		vec3 local = (v.worldToLocal * vec4(P, 1.0)).xyz;
+
+		// Fade in from the faces, over the distance in metres the box gives
+		vec3 d3 = (1.0 - abs(local)) * v.extentsFade.xyz;
+		float d = min(d3.x, min(d3.y, d3.z));
+
+		if (d < 0.0)
+			continue;
+
+		float fade = smoothstep(0.0, 1.0, clamp(d * v.extentsFade.w, 0.0, 1.0));
+
+		// One voxel along the normal, so a surface isn't lit by the voxels behind it, then held to the outer
+		// voxel centres, as the game does and as the repeating sampler needs
+		vec3 counts = max(v.voxelCountsScale.xyz, vec3(1.0));
+		vec3 uvw = local * 0.5 + 0.5;
+		uvw += normalize(mat3(v.worldToLocal) * N) / counts;
+		uvw = clamp(uvw, 0.5 / counts, 1.0 - 0.5 / counts);
+
+		vec3 X = DecodeVolumeTexel(SampleVolume(v.textures.x, uvw)) * 0.5;
+		vec3 Y = DecodeVolumeTexel(SampleVolume(v.textures.y, uvw)) * 0.5;
+		vec3 Z = DecodeVolumeTexel(SampleVolume(v.textures.z, uvw)) * 0.5;
+		vec3 W = DecodeVolumeTexel(SampleVolume(v.textures.w, uvw));
+
+		vec3 Ev = vec3(
+			EvaluateSHChannel(W.r, vec3(X.r, Y.r, Z.r), N),
+			EvaluateSHChannel(W.g, vec3(X.g, Y.g, Z.g), N),
+			EvaluateSHChannel(W.b, vec3(X.b, Y.b, Z.b), N)) * v.voxelCountsScale.w;
+
+		E = mix(E, Ev, fade);
+		coverage = mix(coverage, 1.0, fade);
+	}
+
+	return E * sceneparam.irradianceVolumeExposure;
+}
+
+// Light from the environment map, or the irradiance volumes where there are some
 vec3 IndirectLight(Surface s)
 {
 	vec3 ambientDiffuse = textureLod(
 		samplerCube(globalTexturesCube[nonuniformEXT(int(sceneparam.envmap))], linearSampler),
 		vec3(s.N * vec3(1, 1, -1)), 5).xyz;
+
+	if (sceneparam.irradianceVolumeCount > 0u)
+	{
+		float coverage;
+		vec3 volumeLight = VolumeIrradiance(fsin_worldpos, s.N, coverage);
+		ambientDiffuse = mix(ambientDiffuse, volumeLight, coverage);
+	}
+
 	ambientDiffuse *= sceneparam.ambientLightMult;
 
 	// traditional phong model

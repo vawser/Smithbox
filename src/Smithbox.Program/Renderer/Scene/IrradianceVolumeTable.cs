@@ -31,6 +31,12 @@ public class IrradianceVolumeTable
     /// <summary>How many entries the shader reads. Only updated once their data is on the GPU.</summary>
     public uint Count { get; private set; }
 
+    /// <summary>
+    /// The exposure that brings the volumes' average light to the viewport's default ambient light, as the
+    /// game's light is in its own HDR units
+    /// </summary>
+    public float AutoExposure { get; set; } = 1.0f;
+
     public void Upload(IrradianceVolumeData[] entries, int count)
     {
         count = Math.Min(count, Capacity);

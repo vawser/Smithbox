@@ -72,4 +72,7 @@ public unsafe struct SceneParam
 
     /// <summary>How many irradiance volumes to light with, 0 outside the Map Editor</summary>
     public uint IrradianceVolumeCount;
+
+    /// <summary>Scales the volumes' light, which is in the game's units, to the viewport's</summary>
+    public float IrradianceVolumeExposure;
 }
