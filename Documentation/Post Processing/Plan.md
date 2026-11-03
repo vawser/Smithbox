@@ -754,7 +754,7 @@ up close are unchanged.
 Risk: the transparents' pipelines are cached per material and specialization constant. The fog code needs no new
 constant, only new uniforms, so nothing has to be rebuilt.
 
-### Phase 11 as built (2026-11-03; not yet checked in the app)
+### Phase 11 as built (2026-11-03; checked in the app 2026-11-03)
 
 **The volume in the pool.** `VolumetricFogPass` allocates a `GlobalVolumeTexturePool` handle with its first volume
 and refills it when the volume is recreated. The pool then owns the volume and retires the old one, as with
@@ -820,6 +820,49 @@ keeps doing the bright sky.
 Risk: FinalColorScale 5 × RgbScale 1.5 may be far too strong if the game's emissive is in other units. The
 composite's scale is the one number to tune against the game. Transparent emissives (fire, effects) don't write the
 attachment, so they don't glow.
+
+### Phase 12 as built (2026-11-03; not yet checked in the app)
+
+- **The attachment:** `SceneTarget.Glow` (B10G11R11 float), the sixth: depth plus five colours. It is cleared to
+  black. `WithSurface` gives every scene pipeline a fifth extra entry: written by opaque flvers, `NoWrite` for the
+  rest.
+- **FlverShader:** the emissive texture × colour and the magma glow are now gathered into `glow`, which is added to
+  `litColor` as before and written as `fsout_glow` (location 4). All 16 variants were rebuilt.
+- **Changed from the plan:** no separate blur helper or `GlowPass`. `BloomPass` takes a `glow` switch, and the chain
+  has a second instance after Bloom. Its differences:
+  - The first step is a plain 13-tap downsample of `SceneTarget.Glow` (`ModeDownsample`), with no threshold, knee,
+    saturation control or auto exposure.
+  - Glow NumLevels levels (7, capped at 8).
+  - The up chain's spread is BlurSampleScale × Blur Smoothness.
+  - The composite is `scene + sum × Blur RgbScale × Strength / levels`. It was built with `× FinalColorScale` (5) as
+    well, which made c2030's egg bloom into a white disc. Strength 0.2 was judged right by eye, which is RgbScale
+    (1.5) on its own, so FinalColorScale was taken out.
+  - FinalColorScale and Blur AlphaScale aren't used.
+  - It shares Bloom's shader and pipeline.
+- CFG `Viewport_Post_Glow` (on) and `Viewport_Post_Glow_Strength` (1), in Post Effects under Bloom.
+- Show: Glow displays the attachment, tone mapped.
+
+**First check, and a temporary diagnostic.** Show: Glow was black everywhere in m14_00_00_00. A diagnostic (since
+removed; its log class is in `.archive`) coloured each opaque flver by what its glow was made of, and logged every
+emissive material and texture as it loaded. It found:
+- The Glow attachment is written by every opaque flver.
+- The emissive materials are opaque, and their textures load with GPU indices.
+- c2030's egg (`C[c2030]_Egg`, emissive 1,1,1) shows its glow.
+- m14's view simply had no emissive surfaces. Its few emissive materials are `M[AMSN]_Emissive`,
+  `M[ARSN]_em_Glow`, `AEG099_510_EX` and part of `m14_00_650`. The blue glintstone look comes mostly from lights and
+  transparent crystals, which aren't emissive and don't write the attachment.
+- The plan's "Raya Lucaria glows" was a guess, not something the data said.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| Model Editor: c2030 (the egg) or c3181 (its weapon, emissive 2.4) | Show: Glow | Only the emissive parts lit, the rest black (confirmed for the egg) | Black everywhere: nothing writes the attachment. The whole model: the glow takes the lit color |
+| Same, with a borrowed map's lighting (the group needs map lighting), Show: Image | Toggle Glow | A soft halo round the emissive parts, also when the scene is dim; nothing else changes | Halos far too strong: report what Strength looks right (the FinalColorScale × RgbScale reading). A shifted or doubled halo: the downsample's texel size |
+| An ER map piece listed as `M[AMSN]_Emissive` or `M[ARSN]_em_Glow` (lamps, braziers), map lighting on | Look at it up close | The same soft halo round its emissive parts | |
+| Same | Toggle Bloom with Glow on | Bloom keeps the bright sky and highlights; Glow keeps the emissives | |
+| m60 in daylight | | Little change, as few things there glow | |
+| Map lighting off | | No glow (the group needs map lighting) | |
 
 ### Phase 13: rain mask
 

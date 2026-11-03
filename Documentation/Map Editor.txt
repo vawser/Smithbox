@@ -29,7 +29,11 @@
 - Add 'camera path' authoring for new camera hkxs for cutscenes
 - Add Object Mass Edit that allows for addition/deletion of map objects programmatically
 
+
 - Renderer:
+    - See what can be applied backwards to SDT/BB/DS3/DS2/DS1R
     - Fix decal textures
     - Fix:
         - TAA causes shimmering on water textures
+        
+- Make Model/Time Act Editor only load the GI resources when a model/time act is loaded

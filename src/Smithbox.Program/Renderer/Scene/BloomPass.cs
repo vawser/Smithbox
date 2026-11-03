@@ -43,6 +43,10 @@ public class BloomPass : PostProcessPass
 
     private readonly AutoExposurePass AutoExposure;
 
+    // True for the Glow Filter, see the constructor
+    private readonly bool IsGlow;
+    private Texture BoundGlow;
+
     // Level i is half of level i - 1, the first half the scene
     private readonly List<Texture> Down = new();
     private readonly List<Framebuffer> DownFramebuffers = new();
@@ -60,29 +64,59 @@ public class BloomPass : PostProcessPass
     private DeviceBuffer BoundExposureState;
     private (uint Width, uint Height, int Levels) BoundSize;
 
-    public BloomPass(AutoExposurePass autoExposure)
+    /// <param name="glow">
+    ///     The GPARAM Glow Filter instead: the same chain fed by <see cref="SceneTarget.Glow" />, the light surfaces
+    ///     give off themselves, rather than by what is over a threshold, so emissive parts glow however bright the
+    ///     scene round them is. Glow NumLevels levels; BlurSampleScale x Blur Smoothness spreads them; the sum is
+    ///     added at Blur RgbScale over the levels, which matched the game by eye. FinalColorScale and Blur AlphaScale
+    ///     aren't used. A reading of the values, not the game's code.
+    /// </param>
+    public BloomPass(AutoExposurePass autoExposure, bool glow = false)
     {
         AutoExposure = autoExposure;
+        IsGlow = glow;
     }
 
-    public override string Name => "Bloom";
+    public override string Name => IsGlow ? "Glow" : "Bloom";
 
     public override bool IsActive(GparamLighting lighting)
     {
-        return CFG.Current.Viewport_Post_Bloom && lighting is { PostEffects.Bloom.Enabled: true };
+        return IsGlow
+            ? CFG.Current.Viewport_Post_Glow && lighting is { PostEffects.Glow.Enabled: true }
+            : CFG.Current.Viewport_Post_Bloom && lighting is { PostEffects.Bloom.Enabled: true };
     }
 
     public override unsafe void Run(GraphicsDevice gd, CommandList cl, PostProcessFrame frame)
     {
-        var bloom = frame.Effects.Bloom;
-        var levels = Math.Clamp(bloom.NumLevels, 1, MaxLevels);
+        int levels;
+        Vector4 settings;
+        Vector4 shape;
+
+        if (IsGlow)
+        {
+            var glow = frame.Effects.Glow;
+            levels = Math.Clamp(glow.NumLevels, 1, MaxLevels);
+
+            // No threshold and no saturation control: what glows, glows
+            settings = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+            // Blur RgbScale alone: with FinalColorScale (5) too, the egg of c2030 bloomed into a white disc, and a
+            // fifth of that was judged right by eye against the game, which is RgbScale on its own
+            shape = new Vector4(0.0f, Math.Max(glow.BlurSampleScale * glow.BlurSmoothness, 0.0f),
+                Math.Max(glow.BlurRgbScale * CFG.Current.Viewport_Post_Glow_Strength, 0.0f),
+                1.0f / levels);
+        }
+        else
+        {
+            var bloom = frame.Effects.Bloom;
+            levels = Math.Clamp(bloom.NumLevels, 1, MaxLevels);
+
+            var knee = Math.Max(bloom.Threshold, 1e-3f) * 0.5f * Math.Max(bloom.Smooth, 0.0f);
+            settings = new Vector4(0.0f, bloom.Threshold, knee, bloom.Luminance);
+            shape = new Vector4(bloom.SaturateControl, Math.Max(bloom.GaussianRadiusScale, 0.0f), bloom.Alpha,
+                1.0f / levels);
+        }
 
         EnsureResources(gd, frame, levels);
-
-        var knee = Math.Max(bloom.Threshold, 1e-3f) * 0.5f * Math.Max(bloom.Smooth, 0.0f);
-        var settings = new Vector4(0.0f, bloom.Threshold, knee, bloom.Luminance);
-        var shape = new Vector4(bloom.SaturateControl, Math.Max(bloom.GaussianRadiusScale, 0.0f), bloom.Alpha,
-            1.0f / levels);
 
         // Every step's parameters first: each update is a copy, which can't happen inside the render passes below
         for (var i = 0; i < Steps.Count; i++)
@@ -173,7 +207,7 @@ public class BloomPass : PostProcessPass
             CreateLevels(gd, target.Width, target.Height, levels);
         }
         else if (ReferenceEquals(BoundSource, frame.Source) && ReferenceEquals(BoundDestination, frame.Destination) &&
-                 ReferenceEquals(BoundExposureState, exposureState))
+                 ReferenceEquals(BoundExposureState, exposureState) && ReferenceEquals(BoundGlow, target.Glow))
         {
             return;
         }
@@ -193,7 +227,15 @@ public class BloomPass : PostProcessPass
             Steps.Add(new Step(mode, framebuffer, width, height, filtered.Width, filtered.Height, set));
         }
 
-        AddStep(ModePrefilter, DownFramebuffers[0], Down[0].Width, Down[0].Height, frame.Source, frame.Source, frame.Source);
+        // Bloom thresholds the image; the glow is a plain downsample of what glows
+        if (IsGlow)
+        {
+            AddStep(ModeDownsample, DownFramebuffers[0], Down[0].Width, Down[0].Height, target.Glow, target.Glow, target.Glow);
+        }
+        else
+        {
+            AddStep(ModePrefilter, DownFramebuffers[0], Down[0].Width, Down[0].Height, frame.Source, frame.Source, frame.Source);
+        }
 
         for (var i = 1; i < levels; i++)
         {
@@ -214,6 +256,7 @@ public class BloomPass : PostProcessPass
         BoundSource = frame.Source;
         BoundDestination = frame.Destination;
         BoundExposureState = exposureState;
+        BoundGlow = target.Glow;
     }
 
     private void CreateLevels(GraphicsDevice gd, uint width, uint height, int levels)

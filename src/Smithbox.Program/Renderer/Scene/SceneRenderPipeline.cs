@@ -202,6 +202,9 @@ public class SceneRenderPipeline
         PostProcess.Add(new LightShaftPass(this, AutoExposure));
         PostProcess.Add(new BloomPass(AutoExposure));
 
+        // The Glow Filter, the same chain fed by what surfaces give off themselves
+        PostProcess.Add(new BloomPass(AutoExposure, glow: true));
+
         // Last, as it replaces the image
         PostProcess.Add(SurfaceView);
 

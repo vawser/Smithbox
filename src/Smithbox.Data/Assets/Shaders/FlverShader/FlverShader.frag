@@ -109,6 +109,7 @@ layout(location = 0) out vec4 fsout_color;
 layout(location = 1) out vec4 fsout_surface;  // xy: normal, octahedral, z: roughness, w: specular
 layout(location = 2) out vec4 fsout_indirect; // rgb: the indirect diffuse light in the color
 layout(location = 3) out vec4 fsout_reflection; // rgb: the environment's reflection (indirect specular) in the color
+layout(location = 4) out vec4 fsout_glow;       // rgb: the light the surface gives off itself, emissive and magma
 
 struct sceneLight
 {
@@ -1690,19 +1691,24 @@ void main()
 		}
 	}
 
-	// Materials without an emissive texture have the black default, which is index 2
+	// What the surface gives off itself, kept apart for the glow filter as well as added to the color.
+	// Materials without an emissive texture have the black default, which is index 2.
+	vec3 glow = vec3(0.0);
+
 	uint emissiveTex = MaterialValue(ROW_EXTRA, 1);
 	if (emissiveTex != 2u && HasFeature(FEATURE_EMISSIVE))
 	{
 		effectsData effects = effectsdata[g_mat + 2u];
 		vec3 emissive = SampleAt(emissiveTex, 0, effects.emissiveTiling.xy, effects.emissiveTiling.zw).rgb;
-		litColor += emissive * effects.emissiveColor.xyz * sceneparam.emissiveMapMult;
+		glow += emissive * effects.emissiveColor.xyz * sceneparam.emissiveMapMult;
 	}
 
 	if (c_magma && HasFeature(FEATURE_MAGMA))
 	{
-		litColor += MagmaGlow() * sceneparam.emissiveMapMult;
+		glow += MagmaGlow() * sceneparam.emissiveMapMult;
 	}
+
+	litColor += glow;
 
 #ifdef SELECTED
 	if (sceneparam.EnableTinting == 1)
@@ -1744,4 +1750,5 @@ void main()
 		max(g_indirectDiffuse, vec3(0.0)) * sceneparam.indirectLightMult * sceneparam.sceneBrightness, 1.0);
 	fsout_reflection = vec4(unlit ? vec3(0.0) :
 		max(g_indirectSpecular, vec3(0.0)) * sceneparam.indirectLightMult * sceneparam.sceneBrightness, 1.0);
+	fsout_glow = vec4(max(glow, vec3(0.0)), 1.0);
 }

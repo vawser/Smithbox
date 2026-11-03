@@ -16,7 +16,8 @@ public enum SurfaceView
     Indirect = 4,
     AmbientOcclusion = 5,
     Reflection = 6,
-    ScreenReflections = 7
+    ScreenReflections = 7,
+    Glow = 8
 }
 
 /// <summary>
@@ -81,7 +82,8 @@ public class SurfaceViewPass : PostProcessPass
         cl.SetGraphicsResourceSet(0, ResourceSet);
         cl.Draw(3, 1, 0, 0);
 
-        ShowsDisplayValues = view is not (SurfaceView.Indirect or SurfaceView.Reflection or SurfaceView.ScreenReflections);
+        ShowsDisplayValues = view is not (SurfaceView.Indirect or SurfaceView.Reflection or SurfaceView.ScreenReflections
+            or SurfaceView.Glow);
     }
 
     private unsafe void EnsureResources(GraphicsDevice gd, SceneTarget target)
@@ -102,6 +104,8 @@ public class SurfaceViewPass : PostProcessPass
             new ResourceLayoutElementDescription("Reflection", VkDescriptorType.SampledImage,
                 VkShaderStageFlags.Fragment),
             new ResourceLayoutElementDescription("ScreenReflections", VkDescriptorType.SampledImage,
+                VkShaderStageFlags.Fragment),
+            new ResourceLayoutElementDescription("Glow", VkDescriptorType.SampledImage,
                 VkShaderStageFlags.Fragment)));
 
         if (Pipeline == null)
@@ -141,7 +145,7 @@ public class SurfaceViewPass : PostProcessPass
         }
 
         ResourceSet = factory.CreateResourceSet(new ResourceSetDescription(Layout, ParamBuffer, target.Surface,
-            target.Indirect, gd.PointSampler, occlusion, target.Reflection, reflections));
+            target.Indirect, gd.PointSampler, occlusion, target.Reflection, reflections, target.Glow));
         BoundTarget = target;
         BoundVersion = target.Version;
         BoundOcclusion = occlusion;

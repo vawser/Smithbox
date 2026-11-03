@@ -1327,6 +1327,10 @@ public class CFG
     // The GPARAM's auto exposure (Tone Map), bloom (Bloom's Glare fields), and FXAA after the tone map (Anti-Alias)
     public bool Viewport_Post_Auto_Exposure = true;
     public bool Viewport_Post_Bloom = true;
+
+    // The GPARAM's Glow Filter, round what surfaces give off themselves, and the viewport's scale on it
+    public bool Viewport_Post_Glow = true;
+    public float Viewport_Post_Glow_Strength = 1.0f;
     public bool Viewport_Post_Fxaa = true;
 
     // The GPARAM's TAA (Anti-Alias Type 5, as Elden Ring's mapbase has), which replaces FXAA where it runs

@@ -1317,6 +1317,26 @@
       "Text": "Screen Reflections"
     },
     {
+      "Key": "VIEWPORT_Rendering_Post_Surface_View_Glow",
+      "Text": "Glow"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Glow_Enable",
+      "Text": "Glow"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Glow_Enable_TT",
+      "Text": "Where the GPARAM's Glow Filter is on (Elden Ring's mapbase, so every map), what surfaces give off themselves (emissive textures, magma) is blurred over Glow NumLevels levels and added round them, however bright the scene is. Only opaque models glow. Needs map lighting."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Glow_Strength",
+      "Text": "Strength"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Glow_Strength_TT",
+      "Text": "The viewport's own scale on the glow, on top of the GPARAM's Blur RgbScale. 1 is the GPARAM as read."
+    },
+    {
       "Key": "VIEWPORT_Rendering_Post_Ssr_Enable",
       "Text": "SSR"
     },

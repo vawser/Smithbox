@@ -9,11 +9,12 @@ namespace StudioCore.Renderer;
 ///     the size of its viewport, as binding a framebuffer discards what it held; a target shared by the viewports
 ///     would lose one viewport's draws whenever another, or a shadow pass, bound something else in between.
 ///     <para>
-///         Beside the color are two attachments that only opaque flver draws write, for the screen space effects:
+///         Beside the color are attachments that only opaque flver draws write, for the screen space effects:
 ///         <see cref="Surface" /> (the normal, roughness and specular), <see cref="Indirect" /> (the ambient light
-///         the surface's diffuse took, so ambient occlusion can take it away again) and <see cref="Reflection" /> (the
-///         environment's reflection in it, so screen space reflections can replace it). Every other pipeline drawing
-///         here leaves them alone, see <see cref="WithSurface" />.
+///         the surface's diffuse took, so ambient occlusion can take it away again), <see cref="Reflection" /> (the
+///         environment's reflection in it, so screen space reflections can replace it) and <see cref="Glow" /> (the
+///         light it gives off itself, emissive and magma, for the glow filter). Every other pipeline drawing here
+///         leaves them alone, see <see cref="WithSurface" />.
 ///     </para>
 /// </summary>
 public class SceneTarget
@@ -28,6 +29,9 @@ public class SceneTarget
 
     /// <summary>The indirect specular light (the environment's reflection) in the color's units</summary>
     public const VkFormat ReflectionFormat = VkFormat.B10G11R11UfloatPack32;
+
+    /// <summary>The light the surface gives off itself (emissive textures, magma), in the color's units</summary>
+    public const VkFormat GlowFormat = VkFormat.B10G11R11UfloatPack32;
 
     /// <summary>What <see cref="Surface" /> is cleared to: a roughness below 0 marks a pixel no flver drew</summary>
     public static readonly RgbaFloat NoSurface = new(0.0f, 0.0f, -1.0f, 0.0f);
@@ -46,12 +50,14 @@ public class SceneTarget
         new OutputAttachmentDescription(ColorFormat),
         new OutputAttachmentDescription(SurfaceFormat),
         new OutputAttachmentDescription(IndirectFormat),
-        new OutputAttachmentDescription(ReflectionFormat));
+        new OutputAttachmentDescription(ReflectionFormat),
+        new OutputAttachmentDescription(GlowFormat));
 
     public Texture Color { get; private set; }
     public Texture Surface { get; private set; }
     public Texture Indirect { get; private set; }
     public Texture Reflection { get; private set; }
+    public Texture Glow { get; private set; }
     public Texture Depth { get; private set; }
     public Framebuffer Framebuffer { get; private set; }
 
@@ -81,16 +87,16 @@ public class SceneTarget
 
     /// <summary>
     ///     <paramref name="blend" />, a single attachment's blend for the color, with the entries for
-    ///     <see cref="Surface" />, <see cref="Indirect" /> and <see cref="Reflection" /> after it. A pipeline needs one
-    ///     per attachment; those that don't <paramref name="writesSurface" /> have nothing written, so the shaders
-    ///     without the outputs can draw here as before.
+    ///     <see cref="Surface" />, <see cref="Indirect" />, <see cref="Reflection" /> and <see cref="Glow" /> after it.
+    ///     A pipeline needs one per attachment; those that don't <paramref name="writesSurface" /> have nothing
+    ///     written, so the shaders without the outputs can draw here as before.
     /// </summary>
     public static BlendStateDescription WithSurface(BlendStateDescription blend, bool writesSurface = false)
     {
         var extra = writesSurface ? BlendAttachmentDescription.Disabled : BlendAttachmentDescription.NoWrite;
 
         return new BlendStateDescription(blend.BlendFactor, blend.AlphaToCoverageEnabled, blend.AttachmentStates[0],
-            extra, extra, extra);
+            extra, extra, extra, extra);
     }
 
     /// <summary><paramref name="constants" /> with the output space of <paramref name="set" />'s target added</summary>
@@ -123,6 +129,7 @@ public class SceneTarget
             SceneRenderer.DisposeAfterFramesInFlight(Surface);
             SceneRenderer.DisposeAfterFramesInFlight(Indirect);
             SceneRenderer.DisposeAfterFramesInFlight(Reflection);
+            SceneRenderer.DisposeAfterFramesInFlight(Glow);
             SceneRenderer.DisposeAfterFramesInFlight(Depth);
         }
 
@@ -145,9 +152,10 @@ public class SceneTarget
         Surface = CreateColor(SurfaceFormat, "Scene Surface");
         Indirect = CreateColor(IndirectFormat, "Scene Indirect Diffuse");
         Reflection = CreateColor(ReflectionFormat, "Scene Reflection");
+        Glow = CreateColor(GlowFormat, "Scene Glow");
         Depth = device.ResourceFactory.CreateTexture(ref depthDescription);
         Depth.Name = "Scene HDR Depth";
-        Framebuffer = device.ResourceFactory.CreateFramebuffer(new FramebufferDescription(Depth, Color, Surface, Indirect, Reflection));
+        Framebuffer = device.ResourceFactory.CreateFramebuffer(new FramebufferDescription(Depth, Color, Surface, Indirect, Reflection, Glow));
         Version++;
 
         return true;
@@ -165,6 +173,7 @@ public class SceneTarget
         cl.ClearColorTarget(1, NoSurface);
         cl.ClearColorTarget(2, RgbaFloat.Black);
         cl.ClearColorTarget(3, RgbaFloat.Black);
+        cl.ClearColorTarget(4, RgbaFloat.Black);
         cl.ClearDepthStencil(0);
     }
 }
