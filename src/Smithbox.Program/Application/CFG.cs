@@ -1331,6 +1331,9 @@ public class CFG
     // The GPARAM's LightShaft group: rays from the sun where the sky shows through
     public bool Viewport_Post_Light_Shafts = true;
 
+    // A debug view of the scene's surface attachments in place of the image, see SurfaceView: 0 for none
+    public int Viewport_Post_Surface_View = 0;
+
     // Sun shadows: cascaded shadow maps whose splits, fade and bias come from the map's GPARAM Shadows group, or
     // Elden Ring's mapbase without map lighting. The resolution is that of one cascade; the map holds four.
     public bool Viewport_Shadows = true;

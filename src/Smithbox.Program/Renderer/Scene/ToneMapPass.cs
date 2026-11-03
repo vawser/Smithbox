@@ -100,21 +100,23 @@ public class ToneMapPass
     /// <param name="source">The linear light to tone map: the scene target's color, or what
     /// <see cref="PostProcessChain.Run" /> returned for it</param>
     /// <param name="autoExposure">The pipeline's auto exposure, whose adjustment is applied if it ran this frame</param>
+    /// <param name="passThrough">Whether the source is a debug view of display values, squared, which is shown as
+    /// it is: no exposure and no curve, just the square root</param>
     public unsafe void Draw(GraphicsDevice gd, CommandList cl, Texture source, OutputDescription outputs,
-        Vector2 offset, GparamLighting lighting, AutoExposurePass autoExposure = null)
+        Vector2 offset, GparamLighting lighting, AutoExposurePass autoExposure = null, bool passThrough = false)
     {
         if (source == null)
         {
             return;
         }
 
-        var applyAutoExposure = autoExposure is { Applied: true };
+        var applyAutoExposure = !passThrough && autoExposure is { Applied: true };
         EnsureResources(gd, source, applyAutoExposure ? autoExposure.StateBuffer : AutoExposurePass.GetNeutralState(gd));
 
-        var (op, whitePoint) = Resolve(lighting);
+        var (op, whitePoint) = passThrough ? (ToneMapOperator.Clamp, 1.0f) : Resolve(lighting);
+        var exposure = passThrough ? 1.0f : Math.Max(CFG.Current.Viewport_ToneMap_Exposure, 0.0f);
 
-        Params.Settings = new Vector4(Math.Max(CFG.Current.Viewport_ToneMap_Exposure, 0.0f), (float)op, whitePoint,
-            applyAutoExposure ? 1.0f : 0.0f);
+        Params.Settings = new Vector4(exposure, (float)op, whitePoint, applyAutoExposure ? 1.0f : 0.0f);
         Params.Offset = new Vector4(offset, 0.0f, 0.0f);
         cl.UpdateBuffer(ParamBuffer, 0, ref Params, (uint)sizeof(ToneMapParam));
 

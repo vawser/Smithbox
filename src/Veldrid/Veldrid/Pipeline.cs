@@ -50,7 +50,9 @@ namespace Veldrid
                     dstAlphaBlendFactor = vdDesc.DestinationAlphaFactor,
                     alphaBlendOp = vdDesc.AlphaFunction,
                     blendEnable = vdDesc.BlendEnabled,
-                    colorWriteMask = VkColorComponentFlags.R | VkColorComponentFlags.G | VkColorComponentFlags.B | VkColorComponentFlags.A
+                    colorWriteMask = vdDesc.ColorWriteDisabled
+                        ? VkColorComponentFlags.None
+                        : VkColorComponentFlags.R | VkColorComponentFlags.G | VkColorComponentFlags.B | VkColorComponentFlags.A
                 };
                 attachmentsPtr[i] = attachmentState;
             }

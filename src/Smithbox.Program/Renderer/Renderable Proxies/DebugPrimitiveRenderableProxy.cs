@@ -381,7 +381,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         // Build default pipeline
         GraphicsPipelineDescription pipelineDescription = new();
 
-        pipelineDescription.BlendState = BlendStateDescription.SingleAlphaBlend;
+        pipelineDescription.BlendState = SceneTarget.BlendFor(_renderablesSet, BlendStateDescription.SingleAlphaBlend);
 
         pipelineDescription.DepthStencilState = _translucent
             ? DepthStencilStateDescription.DepthOnlyGreaterEqualRead

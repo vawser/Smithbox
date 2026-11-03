@@ -755,7 +755,10 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         // Build default pipeline
         GraphicsPipelineDescription pipelineDescription = new();
-        pipelineDescription.BlendState = _meshProvider.BlendState;
+
+        // Opaque flvers write the normal, roughness and indirect light beside the color, for the screen space effects
+        pipelineDescription.BlendState = SceneTarget.BlendFor(_renderablesSet, _meshProvider.BlendState,
+            UsesFlverShader && !_meshProvider.IsTransparent);
         pipelineDescription.DepthStencilState = _meshProvider.DepthWrite
             ? DepthStencilStateDescription.DepthOnlyGreaterEqual
             : DepthStencilStateDescription.DepthOnlyGreaterEqualRead;
@@ -856,7 +859,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         if (_renderOutline && CFG.Current.Viewport_Enable_Selection_Outline)
         {
-            pipelineDescription.BlendState = BlendStateDescription.SingleOverrideBlend;
+            pipelineDescription.BlendState = SceneTarget.BlendFor(_renderablesSet, BlendStateDescription.SingleOverrideBlend);
             pipelineDescription.DepthStencilState = DepthStencilStateDescription.DepthOnlyGreaterEqual;
             pipelineDescription.RasterizerState = new RasterizerStateDescription(
                 _meshProvider.SelectedUseBackface

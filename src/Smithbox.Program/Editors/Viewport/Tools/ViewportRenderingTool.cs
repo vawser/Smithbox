@@ -1028,6 +1028,20 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Post_Light_Shafts);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Light_Shafts_Enable_TT"));
 
+        string[] surfaceViews =
+        {
+            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_None"),
+            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Normals"),
+            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Roughness"),
+            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Specular"),
+            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Indirect")
+        };
+
+        ImGui.SetNextItemWidth(200.0f);
+        ImGui.Combo($"{LOC.Get("VIEWPORT_Rendering_Post_Surface_View")}##postSurfaceView",
+            ref CFG.Current.Viewport_Post_Surface_View, surfaceViews, surfaceViews.Length);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Surface_View_TT"));
+
         ImGui.EndDisabled();
 
         var pipeline = viewport.ViewPipeline;

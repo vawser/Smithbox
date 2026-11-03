@@ -204,7 +204,7 @@ public class VulkanViewport : IViewport
                 {
                     ViewPipeline.Fxaa.BeginImage(d, cl, ViewPipeline.Target);
                     ViewPipeline.ToneMap.Draw(d, cl, toneMapSource, FxaaPass.ImageOutputs, Vector2.Zero,
-                        frameLighting, ViewPipeline.AutoExposure);
+                        frameLighting, ViewPipeline.AutoExposure, ViewPipeline.SurfaceView.ShowsDisplayValues);
                 }
 
                 cl.SetFramebuffer(Device.SwapchainFramebuffer);
@@ -220,7 +220,7 @@ public class VulkanViewport : IViewport
                     else
                     {
                         ViewPipeline.ToneMap.Draw(d, cl, toneMapSource, Device.SwapchainFramebuffer.OutputDescription,
-                            offset, frameLighting, ViewPipeline.AutoExposure);
+                            offset, frameLighting, ViewPipeline.AutoExposure, ViewPipeline.SurfaceView.ShowsDisplayValues);
                     }
                 }
                 IsViewportVisible = false;

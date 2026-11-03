@@ -324,6 +324,49 @@ none of them.
 Check: a debug view (Post Effects > Show: Normals / Roughness / Indirect) that draws each attachment. Nothing else
 changes; nav meshes and collisions still draw.
 
+### Phase 4 as built (2026-11-03; not yet checked in the app)
+
+- **The attachments** (`SceneTarget.cs`):
+  - `Surface`, RGBA16F: xy the world normal (octahedral, -1..1), z roughness, w specular (the largest of F0's
+    channels; the flver shader is specular/F0, not metalness).
+  - `Indirect`, B10G11R11 float: the indirect diffuse light in the colour's units, x `indirectLightMult` and scene
+    brightness.
+  - `BeginScene` clears Surface to `(0, 0, -1, 0)`, so roughness < 0 marks pixels no flver drew, and Indirect to black.
+- **Veldrid fork:** `BlendAttachmentDescription.ColorWriteDisabled` (new, default false, part of equality and the
+  hash) sets a colour write mask of 0, with a `NoWrite` preset. Veldrid always wrote RGBA before, and a shader with no
+  output for an attachment would leave undefined values in it.
+- **Every scene pipeline** pads its blend to three entries with `SceneTarget.BlendFor(set, blend, writesSurface)`, or
+  `WithSurface` for the fog pass. Overlay pipelines, which draw to the swapchain, are left as they were.
+  - Only `MeshRenderableProxy`'s main and picking pipelines for opaque FlverShader meshes write the two attachments
+    (`UsesFlverShader && !IsTransparent`).
+  - Every other pipeline drawing into the target has `NoWrite` for both: collision, nav, SimpleFlver, the selection
+    outline, debug primitives, FogVolume boxes, volumetric fog, and transparent flvers.
+  - The shadow pipeline keeps no colour attachments.
+- **FlverShader.frag** has two new outputs, `fsout_surface` (location 1) and `fsout_indirect` (location 2):
+  - `IndirectLight` keeps its diffuse term in `g_indirectDiffuse`, for both the Phong and PBR paths.
+  - Unlit surfaces write no indirect light.
+  - All 16 variants were rebuilt with the variant compiler.
+- **Debug view** (`SurfaceViewPass.cs`, `SurfaceView.vert/frag`): the chain's last pass, CFG `Viewport_Post_Surface_View`
+  (Post Effects > Show: Image / Normals / Roughness / Specular / Indirect Light). It needs Post Effects on, but not map
+  lighting.
+  - Normals, roughness and specular are shown as display values: `ToneMapPass.Draw(passThrough)` drops the exposure,
+    curve and auto exposure.
+  - Indirect light is tone mapped as the scene is.
+  - Pixels with no surface are dark grey.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| Any ER map, Show: Image | Look around | Exactly as before, including collisions, nav meshes, the grid, gizmos, FogVolume boxes, fog, shafts, selection outlines | Black or missing meshes, or a validation error: a pipeline left with one blend entry |
+| Show: Normals | | Smooth pastel colours: floors facing up the same colour everywhere, walls by facing, normal-map detail visible; sky and collision dark grey | Flat single colour: the output isn't written. Speckled noise: a pipeline writing without the outputs |
+| Show: Roughness | | Polished stone and metal darker, cloth and dirt lighter | |
+| Show: Specular | | Mostly dark (F0 near 0.04), metals bright | |
+| Show: Indirect Light | m10 interior and outdoors, map lighting on | The ambient on surfaces without the sun's direct light: shadowed sides keep their light, sunlit faces show only the fill | Black everywhere: the attachment isn't reached |
+| Water, glass, foliage cards with transparency | Show: Normals | The scene behind shows through (transparents don't write) | |
+| Select an object | Show: Image | Outline and tint as before | |
+| Model Editor, Time Act Editor viewports | | Draw as before | |
+
 ### Phase 5: SSAO
 
 Half-res, from depth and the normal attachment: hemisphere samples with kernel radius `Kernel Scale Min/Max` pixels

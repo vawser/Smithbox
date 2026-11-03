@@ -100,6 +100,11 @@ layout(location = 12) flat in uint fsin_flags;
 
 layout(location = 0) out vec4 fsout_color;
 
+// Beside the color in the HDR target, for the screen space effects, see SceneTarget.cs. Only opaque draws have them
+// written; elsewhere the pipeline leaves them alone, or there is no attachment for them.
+layout(location = 1) out vec4 fsout_surface;  // xy: normal, octahedral, z: roughness, w: specular
+layout(location = 2) out vec4 fsout_indirect; // rgb: the indirect diffuse light in the color
+
 struct sceneLight
 {
 	vec4 positionRange;  // xyz: position, w: range (0 = no limit)
@@ -442,6 +447,7 @@ void UpdatePickingBuffer(ivec2 pos, uint64_t identity, float z)
 uint g_mat;
 bool g_modelLit = false; // lit by the model set of the map's GPARAM, see ModelLit
 vec2 g_uv[2];
+vec3 g_indirectDiffuse = vec3(0.0); // the diffuse part of IndirectLight, before the scene multipliers
 vec2 g_dx[2];
 vec2 g_dy[2];
 float g_weight[MAX_LAYERS];
@@ -736,6 +742,14 @@ vec3 MagmaGlow()
 // Lighting
 // ---------------------------------------------------------------------------------------------
 
+// A unit vector folded onto the octahedron and flattened to -1..1 on each axis
+vec2 OctahedralEncode(vec3 n)
+{
+	n /= abs(n.x) + abs(n.y) + abs(n.z);
+	vec2 folded = (1.0 - abs(n.yx)) * vec2(n.x >= 0.0 ? 1.0 : -1.0, n.y >= 0.0 ? 1.0 : -1.0);
+	return n.z >= 0.0 ? n.xy : folded;
+}
+
 struct Surface
 {
 	vec3 diffuse;
@@ -1009,7 +1023,8 @@ vec3 IndirectLight(Surface s)
 	// traditional phong model
 	if (c_gameID == GAME_DES || c_gameID == GAME_DS1_PTDE)
 	{
-		return s.diffuse * ambientDiffuse;
+		g_indirectDiffuse = s.diffuse * ambientDiffuse;
+		return g_indirectDiffuse;
 	}
 
 	// PBR model
@@ -1039,6 +1054,7 @@ vec3 IndirectLight(Surface s)
 	vec3 aF = pow(1.0 - NdotV, 5.0) * gloss * gloss * (1.0 - s.F0) + s.F0;
 
 	vec3 indirectDiffuse = s.diffuse * ambientDiffuse * (1.0 - s.F0);
+	g_indirectDiffuse = indirectDiffuse;
 	vec3 indirectSpecular = ambientSpec * aF;
 	float reflectionThing = clamp(dot(reflectVec, s.N) + 1.0, 0.0, 1.0);
 	indirectSpecular *= reflectionThing * reflectionThing;
@@ -1583,4 +1599,10 @@ void main()
 	}
 
 	fsout_color = vec4(finalColor, alpha);
+
+	// Unlit surfaces take no ambient light, so ambient occlusion has nothing to take from them
+	bool unlit = c_surface == SURFACE_UNLIT && HasFeature(FEATURE_UNLIT);
+	fsout_surface = vec4(OctahedralEncode(surface.N), surface.roughness, max(F0.r, max(F0.g, F0.b)));
+	fsout_indirect = vec4(unlit ? vec3(0.0) :
+		max(g_indirectDiffuse, vec3(0.0)) * sceneparam.indirectLightMult * sceneparam.sceneBrightness, 1.0);
 }

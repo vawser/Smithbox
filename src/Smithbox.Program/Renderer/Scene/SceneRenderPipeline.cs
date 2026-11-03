@@ -36,6 +36,9 @@ public class SceneRenderPipeline
     /// <summary>The first of <see cref="PostProcess" />'s passes, whose adjustment the tone map and bloom read</summary>
     public AutoExposurePass AutoExposure { get; } = new();
 
+    /// <summary>The debug view of the scene target's surface attachments, the last of <see cref="PostProcess" />'s passes</summary>
+    public SurfaceViewPass SurfaceView { get; } = new();
+
     /// <summary>The anti-aliasing after the tone map, see <see cref="FxaaPass" /></summary>
     public FxaaPass Fxaa { get; } = new();
 
@@ -165,6 +168,9 @@ public class SceneRenderPipeline
         PostProcess.Add(AutoExposure);
         PostProcess.Add(new LightShaftPass(this, AutoExposure));
         PostProcess.Add(new BloomPass(AutoExposure));
+
+        // Last, as it replaces the image
+        PostProcess.Add(SurfaceView);
 
         ResourceFactory factory = device.ResourceFactory;
 

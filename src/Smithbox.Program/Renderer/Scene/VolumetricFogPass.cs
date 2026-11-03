@@ -244,9 +244,9 @@ public class VolumetricFogPass
             (Shader vs, Shader fs) = StaticResourceCache.GetShaders(gd, factory, "VolumetricFog");
 
             // scene x the fog's alpha (what it lets through) + the fog's light; the target's alpha is kept
-            var blend = new BlendStateDescription(RgbaFloat.Black, new BlendAttachmentDescription(true,
+            var blend = SceneTarget.WithSurface(new BlendStateDescription(RgbaFloat.Black, new BlendAttachmentDescription(true,
                 VkBlendFactor.One, VkBlendFactor.SrcAlpha, VkBlendOp.Add,
-                VkBlendFactor.Zero, VkBlendFactor.One, VkBlendOp.Add));
+                VkBlendFactor.Zero, VkBlendFactor.One, VkBlendOp.Add)));
 
             ResourceLayout sceneParamLayout = StaticResourceCache.GetResourceLayout(factory,
                 StaticResourceCache.SceneParamLayoutDescription);

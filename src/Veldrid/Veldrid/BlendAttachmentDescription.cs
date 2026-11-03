@@ -36,6 +36,26 @@ namespace Veldrid
         /// Controls the function used to combine the source and destination alpha factors.
         /// </summary>
         public VkBlendOp AlphaFunction;
+        /// <summary>
+        /// When true, nothing is written to the color attachment (a color write mask of 0), so a shader that has no
+        /// output for it leaves it as it was. False, the default, writes all four components.
+        /// </summary>
+        public bool ColorWriteDisabled;
+
+        /// <summary>
+        /// Describes a blend attachment state that leaves its color attachment untouched.
+        /// </summary>
+        public static readonly BlendAttachmentDescription NoWrite = new BlendAttachmentDescription
+        {
+            BlendEnabled = false,
+            SourceColorFactor = VkBlendFactor.One,
+            DestinationColorFactor = VkBlendFactor.Zero,
+            ColorFunction = VkBlendOp.Add,
+            SourceAlphaFactor = VkBlendFactor.One,
+            DestinationAlphaFactor = VkBlendFactor.Zero,
+            AlphaFunction = VkBlendOp.Add,
+            ColorWriteDisabled = true,
+        };
 
         /// <summary>
         /// Constructs a new <see cref="BlendAttachmentDescription"/>.
@@ -163,7 +183,7 @@ namespace Veldrid
             return BlendEnabled.Equals(other.BlendEnabled) && SourceColorFactor == other.SourceColorFactor
                 && DestinationColorFactor == other.DestinationColorFactor && ColorFunction == other.ColorFunction
                 && SourceAlphaFactor == other.SourceAlphaFactor && DestinationAlphaFactor == other.DestinationAlphaFactor
-                && AlphaFunction == other.AlphaFunction;
+                && AlphaFunction == other.AlphaFunction && ColorWriteDisabled == other.ColorWriteDisabled;
         }
 
         /// <summary>
@@ -179,7 +199,8 @@ namespace Veldrid
                 (int)ColorFunction,
                 (int)SourceAlphaFactor,
                 (int)DestinationAlphaFactor,
-                (int)AlphaFunction);
+                (int)AlphaFunction,
+                ColorWriteDisabled.GetHashCode());
         }
     }
 }

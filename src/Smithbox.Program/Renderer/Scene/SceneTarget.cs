@@ -8,10 +8,25 @@ namespace StudioCore.Renderer;
 ///     color, with its own depth. <see cref="ToneMapPass" /> takes it to the screen. Each pipeline has one of its own,
 ///     the size of its viewport, as binding a framebuffer discards what it held; a target shared by the viewports
 ///     would lose one viewport's draws whenever another, or a shadow pass, bound something else in between.
+///     <para>
+///         Beside the color are two attachments that only opaque flver draws write, for the screen space effects:
+///         <see cref="Surface" /> (the normal, roughness and specular) and <see cref="Indirect" /> (the ambient light
+///         the surface's diffuse took, so ambient occlusion can take it away again). Every other pipeline drawing here
+///         leaves them alone, see <see cref="WithSurface" />.
+///     </para>
 /// </summary>
 public class SceneTarget
 {
     public const VkFormat ColorFormat = VkFormat.R16G16B16A16Sfloat;
+
+    /// <summary>xy: the world normal, octahedral, z: roughness, w: specular (the largest of F0's channels)</summary>
+    public const VkFormat SurfaceFormat = VkFormat.R16G16B16A16Sfloat;
+
+    /// <summary>The indirect diffuse light in the color's units</summary>
+    public const VkFormat IndirectFormat = VkFormat.B10G11R11UfloatPack32;
+
+    /// <summary>What <see cref="Surface" /> is cleared to: a roughness below 0 marks a pixel no flver drew</summary>
+    public static readonly RgbaFloat NoSurface = new(0.0f, 0.0f, -1.0f, 0.0f);
 
     /// <summary>The depth format of the swapchain, which <see cref="SceneDepth" /> copies need to match</summary>
     public const VkFormat DepthFormat = VkFormat.D32Sfloat;
@@ -24,9 +39,13 @@ public class SceneTarget
 
     public static readonly OutputDescription Outputs = new(
         new OutputAttachmentDescription(DepthFormat),
-        new OutputAttachmentDescription(ColorFormat));
+        new OutputAttachmentDescription(ColorFormat),
+        new OutputAttachmentDescription(SurfaceFormat),
+        new OutputAttachmentDescription(IndirectFormat));
 
     public Texture Color { get; private set; }
+    public Texture Surface { get; private set; }
+    public Texture Indirect { get; private set; }
     public Texture Depth { get; private set; }
     public Framebuffer Framebuffer { get; private set; }
 
@@ -43,6 +62,29 @@ public class SceneTarget
     public static OutputDescription OutputsFor(GraphicsDevice gd, MeshRenderables set)
     {
         return set.RenderableSystemIndex == 0 ? Outputs : gd.SwapchainFramebuffer.OutputDescription;
+    }
+
+    /// <summary>
+    ///     <paramref name="blend" />, a single attachment's blend, for the outputs of <paramref name="set" />: in this
+    ///     target it gets the surface attachments too, see <see cref="WithSurface" />
+    /// </summary>
+    public static BlendStateDescription BlendFor(MeshRenderables set, BlendStateDescription blend, bool writesSurface = false)
+    {
+        return set.RenderableSystemIndex == 0 ? WithSurface(blend, writesSurface) : blend;
+    }
+
+    /// <summary>
+    ///     <paramref name="blend" />, a single attachment's blend for the color, with the entries for
+    ///     <see cref="Surface" /> and <see cref="Indirect" /> after it. A pipeline needs one per attachment; those that
+    ///     don't <paramref name="writesSurface" /> have nothing written, so the shaders without the outputs can draw
+    ///     here as before.
+    /// </summary>
+    public static BlendStateDescription WithSurface(BlendStateDescription blend, bool writesSurface = false)
+    {
+        var extra = writesSurface ? BlendAttachmentDescription.Disabled : BlendAttachmentDescription.NoWrite;
+
+        return new BlendStateDescription(blend.BlendFactor, blend.AlphaToCoverageEnabled, blend.AttachmentStates[0],
+            extra, extra);
     }
 
     /// <summary><paramref name="constants" /> with the output space of <paramref name="set" />'s target added</summary>
@@ -72,22 +114,32 @@ public class SceneTarget
         {
             SceneRenderer.DisposeAfterFramesInFlight(Framebuffer);
             SceneRenderer.DisposeAfterFramesInFlight(Color);
+            SceneRenderer.DisposeAfterFramesInFlight(Surface);
+            SceneRenderer.DisposeAfterFramesInFlight(Indirect);
             SceneRenderer.DisposeAfterFramesInFlight(Depth);
         }
 
-        TextureDescription colorDescription = TextureDescription.Texture2D(width, height, 1, 1, ColorFormat,
-            VkImageUsageFlags.ColorAttachment | VkImageUsageFlags.Sampled | VkImageUsageFlags.TransferSrc,
-            VkImageCreateFlags.None, VkImageTiling.Optimal, VkSampleCountFlags.Count1);
+        Texture CreateColor(VkFormat format, string name)
+        {
+            TextureDescription description = TextureDescription.Texture2D(width, height, 1, 1, format,
+                VkImageUsageFlags.ColorAttachment | VkImageUsageFlags.Sampled | VkImageUsageFlags.TransferSrc,
+                VkImageCreateFlags.None, VkImageTiling.Optimal, VkSampleCountFlags.Count1);
+
+            var texture = device.ResourceFactory.CreateTexture(ref description);
+            texture.Name = name;
+            return texture;
+        }
 
         TextureDescription depthDescription = TextureDescription.Texture2D(width, height, 1, 1, DepthFormat,
             VkImageUsageFlags.DepthStencilAttachment | VkImageUsageFlags.TransferSrc,
             VkImageCreateFlags.None, VkImageTiling.Optimal, VkSampleCountFlags.Count1);
 
-        Color = device.ResourceFactory.CreateTexture(ref colorDescription);
-        Color.Name = "Scene HDR Color";
+        Color = CreateColor(ColorFormat, "Scene HDR Color");
+        Surface = CreateColor(SurfaceFormat, "Scene Surface");
+        Indirect = CreateColor(IndirectFormat, "Scene Indirect Diffuse");
         Depth = device.ResourceFactory.CreateTexture(ref depthDescription);
         Depth.Name = "Scene HDR Depth";
-        Framebuffer = device.ResourceFactory.CreateFramebuffer(new FramebufferDescription(Depth, Color));
+        Framebuffer = device.ResourceFactory.CreateFramebuffer(new FramebufferDescription(Depth, Color, Surface, Indirect));
         Version++;
 
         return true;
@@ -102,6 +154,8 @@ public class SceneTarget
         cl.SetFramebuffer(Framebuffer);
         cl.SetFullViewport(0);
         cl.ClearColorTarget(0, background);
+        cl.ClearColorTarget(1, NoSurface);
+        cl.ClearColorTarget(2, RgbaFloat.Black);
         cl.ClearDepthStencil(0);
     }
 }

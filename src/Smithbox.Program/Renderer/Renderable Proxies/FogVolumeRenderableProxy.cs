@@ -268,7 +268,7 @@ public class FogVolumeRenderableProxy : RenderableProxy, IResourceEventListener
             Tuple<Shader, Shader> shaders = StaticResourceCache.GetShaders(gd, factory, _box.ShaderName).ToTuple();
 
             GraphicsPipelineDescription pipelineDescription = new();
-            pipelineDescription.BlendState = BlendStateDescription.SingleAlphaBlend;
+            pipelineDescription.BlendState = SceneTarget.BlendFor(_renderablesSet, BlendStateDescription.SingleAlphaBlend);
 
             // The shader finds what is in front of the fog from the scene depth itself
             pipelineDescription.DepthStencilState = DepthStencilStateDescription.Disabled;
