@@ -2,10 +2,35 @@
 # Map Editor TODO
 #----------------------------------------------------
 
+- Analyze of NVA, NVC and the havok navmesh/collisions themselves to uncover understand of how they work (i.e. gates, jumps, togglable sections, etc)
+
+- Collision editing:
+    - Allow triangle add/subtract:
+        - Define the three points with temporary filled wireframe spheres
+        - Commit shape, with option to auto-weld the edge closest to another existing edge
+        - Include options for large planes of pre-defined triangles to make it easy to expand flat collision (i.e. add a walkway or wall)
+
+    - Allow triangle vertex drag:
+        - Allow existing triangle vertices to be dragged (all directions), limiting cross over with an edge
+        - Add paint tool that uses adjustable sized illed wireframe sphere to paint height (add/reduce)
+
 - Navmesh editing
+    - Allow triangle add/subtract:
+        - Define the three points with temporary filled wireframe spheres
+        - Commit shape, with option to auto-weld the edge closest to another existing edge
+        - Include options for large planes of pre-defined triangles to make it easy to expand flat collision (i.e. add a walkway or wall)
+        
 - Display of navmesh feature: i.e. jump spots
 
-- Added some kind of detection for LOD-only assets/map-pieces so we can add a toggle for hiding them quickly
+- NVC: navmesh connectors?
+- ONAV: oNav?
+    
+- FVB: FogVolumeBank? requires format implemetation
+    - Implement fog in Map Editor:
+        - Appear as fog unselected, when selected, display gray wire-framed box matching bounds + the fog
+- IVInfo: Irradiance Volume Info: requires format implementation
+- EnvMap: how they are applied and how they'd be integrated into the renderer
+
 - Get gizmos to work in Orthographic/Oblique view mode
 - Add 'camera path' authoring for new camera hkxs for cutscenes
 - Add Object Mass Edit that allows for addition/deletion of map objects programmatically
@@ -15,11 +40,5 @@
     - GIIV
     - EnvMaps
 
-- Investigate:
-    - FVB: FogVolumeBank? requires format implemetation
-    - IVInfo: Irradiance Volume Info: requires format implementation
-    - EnvMap: how they are applied and how they'd be integrated into the renderer
-    - NVC: navmesh connectors?
-    - ONAV: oNav?
     
     
