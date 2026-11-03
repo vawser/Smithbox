@@ -1301,6 +1301,9 @@ public class CFG
     // Wet surfaces in a weather that wets them, from the GPARAM's Wet group
     public bool Viewport_Post_Wet = true;
 
+    // Whether wet surfaces are kept dry under roofs, by a depth map of the scene seen from above
+    public bool Viewport_Post_Wet_Rain_Mask = true;
+
     // Elden Ring: whether the irradiance volumes' bakes follow the time of day (bake N is timezone N), loading the
     // bakes they need as the time moves, instead of the Global Illumination tab's bake settings
     public bool Viewport_Map_Lighting_Follow_Bakes = true;

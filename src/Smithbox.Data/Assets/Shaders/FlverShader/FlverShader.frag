@@ -219,6 +219,13 @@ struct sceneParams
 	vec4 fogDirect;          // rgb: sun light towards the sun, w: height attenuation
 	vec4 fogOpposite;        // rgb: sun light away from it, w: ScatteringG
 	vec4 fogSun;             // xyz: the direction the sun's light travels
+
+	// What the rain reaches, see RainOcclusion.cs: the scene's depth seen straight down round the camera
+	mat4 rainMatrix;         // world to the map: xy -1..1 across, z the depth, 1 at the top
+	uint rainTexture;        // index in globalTextures, 0 when it isn't read
+	float rainMapSize;       // texels across
+	float rainTexelSize;     // meters per texel
+	float rainDepthScale;    // depth per meter of height
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -1315,6 +1322,54 @@ float ShadowCompare(ivec2 texel, ivec2 low, ivec2 high, float depth)
 	return depth >= stored ? 1.0 : 0.0;
 }
 
+// 1 if the rain map's texel is no higher than depth: nothing above the point
+float RainCompare(ivec2 texel, float depth)
+{
+	int last = int(sceneparam.rainMapSize) - 1;
+	texel = clamp(texel, ivec2(0), ivec2(last));
+	float stored = texelFetch(sampler2D(globalTextures[nonuniformEXT(sceneparam.rainTexture)], linearSampler),
+		texel, 0).r;
+
+	return depth >= stored ? 1.0 : 0.0;
+}
+
+// How much rain reaches a point, from 0 under cover to 1 in the open, from the scene's depth seen from above (see
+// RainOcclusion.cs). The point is moved out along its face by a texel and a half, so a wall reads the ground in front of
+// it rather than its own top, and half a meter up, plus more on slopes, so a surface doesn't cover itself. Filtered over
+// 2x2 texels, and faded to 1 (open) over the last tenth of the square, past which nothing is known.
+float RainExposure(vec3 worldPos, vec3 faceNormal)
+{
+	if (sceneparam.rainTexture == 0u)
+	{
+		return 1.0;
+	}
+
+	vec3 offsetPos = worldPos + faceNormal * sceneparam.rainTexelSize * 1.5;
+	vec3 map = (sceneparam.rainMatrix * vec4(offsetPos, 1.0)).xyz;
+	float edge = max(abs(map.x), abs(map.y));
+
+	// Outside the square, or above or below the height it covers
+	if (edge >= 1.0 || map.z > 1.0 || map.z < 0.0)
+	{
+		return 1.0;
+	}
+
+	float up = clamp(faceNormal.y, 0.0, 1.0);
+	float slope = clamp(sqrt(1.0 - up * up) / max(up, 0.05), 0.0, 8.0);
+	float depth = map.z + (0.5 + sceneparam.rainTexelSize * slope) * sceneparam.rainDepthScale;
+
+	vec2 coord = (map.xy * 0.5 + 0.5) * sceneparam.rainMapSize - 0.5;
+	ivec2 base = ivec2(floor(coord));
+	vec2 f = coord - vec2(base);
+
+	float exposed = mix(
+		mix(RainCompare(base, depth), RainCompare(base + ivec2(1, 0), depth), f.x),
+		mix(RainCompare(base + ivec2(0, 1), depth), RainCompare(base + ivec2(1, 1), depth), f.x),
+		f.y);
+
+	return mix(exposed, 1.0, smoothstep(0.9, 1.0, edge));
+}
+
 // How lit a point is in one cascade, from 0 in shadow to 1. Filtered over a 3x3 texel tent, made of 4x4 fetches
 // weighted by where the point falls between texels, so the edges are smooth however the camera moves.
 float SampleCascade(int cascade, vec3 worldPos, float bias)
@@ -1576,13 +1631,18 @@ void main()
 	normalMap = normalize(fsin_worldToTangent * normalMap);
 
 	// In rain, what faces the sky darkens and turns glossier, walls half as much, and what faces down not at all.
-	// Nothing knows what is sheltered, so interiors under a roof are wet too.
+	// What is under a roof stays dry, by the rain map.
 	vec3 albedo = diffuseColor.xyz * diffuseAlpha.xyz;
 	if (sceneparam.wetAlbedo.a > 0.0 || sceneparam.wetShininess.y > 0.0)
 	{
 		vec3 faceNormal = normalize(fsin_worldToTangent[2]) * (gl_FrontFacing ? 1.0 : -1.0);
 		float exposed = (IsWater() || (c_surface == SURFACE_UNLIT && HasFeature(FEATURE_UNLIT)))
 			? 0.0 : smoothstep(-0.3, 0.3, faceNormal.y);
+
+		if (exposed > 0.0)
+		{
+			exposed *= RainExposure(fsin_worldpos, faceNormal);
+		}
 
 		albedo = mix(albedo, sceneparam.wetAlbedo.rgb, sceneparam.wetAlbedo.a * exposed);
 		roughness = 1.0 - mix(1.0 - roughness, clamp(sceneparam.wetShininess.x, 0.0, 1.0),

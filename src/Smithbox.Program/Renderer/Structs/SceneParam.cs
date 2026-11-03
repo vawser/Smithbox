@@ -205,6 +205,23 @@ public unsafe struct SceneParam
     public Vector4 FogDirect;
     public Vector4 FogOpposite;
     public Vector4 FogSun;
+
+    // What the rain reaches, see RainOcclusion: a depth map of the scene seen straight down round the camera
+
+    /// <summary>World to the rain map's texture space: xy -1..1 across the square, z the depth, 1 at the top</summary>
+    public Matrix4x4 RainMatrix;
+
+    /// <summary>The rain map's index in the global texture pool, 0 when wet surfaces don't read it</summary>
+    public uint RainTexture;
+
+    /// <summary>The rain map's side in texels</summary>
+    public float RainMapSize;
+
+    /// <summary>Meters per rain map texel</summary>
+    public float RainTexelSize;
+
+    /// <summary>The rain map's depth per meter of height</summary>
+    public float RainDepthScale;
 }
 
 /// <summary>A directional light of the map's GPARAM, as the shaders read it</summary>

@@ -1266,7 +1266,23 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Wet_Enable_TT",
-      "Text": "In a weather whose WeatherParam wets things (Wet Time above 0), surfaces facing the sky darken towards the GPARAM Wet group's Override Albedo and turn glossier towards Override Shininess, by Albedo Rate and Shininess Rate; walls half as much. Sheltered places aren't known, so interiors get wet too. Needs a weather and Outdoor Weather."
+      "Text": "In a weather whose WeatherParam wets things (Wet Time above 0), surfaces facing the sky darken towards the GPARAM Wet group's Override Albedo and turn glossier towards Override Shininess, by Albedo Rate and Shininess Rate; walls half as much. Needs a weather and Outdoor Weather."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Wet_Rain_Mask_Enable",
+      "Text": "Dry Under Cover"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Wet_Rain_Mask_Enable_TT",
+      "Text": "Keeps surfaces under roofs, arches and tree canopies dry, from a depth map of the scene seen straight down over 256 m round the camera. It is drawn again when the camera moves 32 m or the map's models change. Past the square, everything facing the sky is wet."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Wet_Rain_Mask_Status",
+      "Text": "Rain mask: round x {0}, z {1}, drawn {2} times"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Wet_Rain_Mask_Status_TT",
+      "Text": "Where the map of what the rain reaches was last drawn round. The count should only go up as the camera moves 32 m or models load, not every frame."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Light_Shafts_Enable",

@@ -284,6 +284,41 @@ public class MeshRenderables : Renderables
         }
     }
 
+    /// <summary>
+    ///     A hash of the shadow casters <see cref="SubmitShadowCasters" /> would take without culling, and their
+    ///     bounds: it changes when one is added, removed, shown, hidden or moved. <see cref="RainOcclusion" /> draws
+    ///     its map again when it does.
+    /// </summary>
+    public int ShadowCasterSignature(RenderFilter filter, DrawGroup dispGroup)
+    {
+        var alwaysVis = dispGroup == null || dispGroup.AlwaysVisible;
+        HashCode hash = new();
+
+        for (var i = 0; i < _topIndex; i++)
+        {
+            if (!cVisible[i]._valid || !cVisible[i]._visible || cShadowPipelines[i] == null)
+            {
+                continue;
+            }
+
+            if ((cSceneVis[i]._renderFilter & filter) == 0)
+            {
+                continue;
+            }
+
+            if (!alwaysVis && cSceneVis[i]._drawGroup != null && !cSceneVis[i]._drawGroup.IsInDisplayGroup(dispGroup))
+            {
+                continue;
+            }
+
+            hash.Add(i);
+            hash.Add(cBounds[i].Min);
+            hash.Add(cBounds[i].Max);
+        }
+
+        return hash.ToHashCode();
+    }
+
     public void CullRenderables(BoundingFrustum frustum)
     {
         for (var i = 0; i < _topIndex; i++)

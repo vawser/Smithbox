@@ -604,7 +604,7 @@ interiors unchanged once the rain mask is in.
 WetTime), and only up-facing surfaces get the full effect.
 
 **Known gaps:**
-- No rain mask, so roofed interiors get wet too.
+- No rain mask, so roofed interiors get wet too. Fixed in Phase 13.
 - Fog volume boxes (FogVolumeBank) still read only the map's file, not the overlays, which override FogVolume in 42
   files. Fixed in Phase 10.
 - `DistViewWeatherGparamOverrideWeight` (WeatherParam) is not used. It belongs to the telescope view
@@ -888,6 +888,57 @@ it. Flying the camera about doesn't make the wet patches shimmer or step.
 
 Risk: map pieces with open roofs (a broken ceiling) are wet beneath, which is right. Very thin roofs could leak
 through the bias. Tree canopies are alpha tested in the shadow pass, so dappled wetness under trees is expected.
+
+### Phase 13 as built (2026-11-03; not yet checked in the app)
+
+**The map** (`RainOcclusion.cs`), one per `SceneRenderPipeline` that has shadows (`Rain`), registered after the
+cascades and before the scene's queue:
+- 2048² D32, orthographic, straight down (+X right, +Z up the map). It covers 256 m round the camera, snapped to its
+  0.125 m texels, and 1000 m above and below it, reversed depth (1 at the top).
+- Its own `RenderQueue` and `SceneParam` buffer (the viewport's with the top-down view), drawing the shadow casters
+  inside its square with their `_shadowPipeline`.
+- Used only while the Wet rates are above 0 (a wetting weather, Wet Surfaces on) and the new switch is on.
+- Drawn again when the camera is more than 32 m from where it was drawn, or when
+  `MeshRenderables.ShadowCasterSignature` changes. Changed from the plan: that is a hash of the casters' indices
+  and bounds, not a counter, so showing, hiding and moving pieces also redraws it, and streaming maps redraw it as
+  they load.
+- **How a redraw keeps the map between frames.** A queue draws what was put in it the frame before, and binding a
+  framebuffer in Veldrid discards what it holds. So a redraw puts the casters in for three frames, clears and draws
+  the map on the middle two, and moves the shaders' matrix to the new view on the first of those. On the frames on
+  either side, any casters still in the queue are sent to a 1 × 1 depth sink. On every other frame the map isn't
+  bound at all.
+
+**Scene params** gain, after the fog: `RainMatrix`, `RainTexture` (0 when unused), `RainMapSize`, `RainTexelSize` and
+`RainDepthScale`.
+
+**FlverShader:** `RainExposure(worldPos, faceNormal)` multiplies the wet factor.
+- The point is moved 1.5 texels out along its face, so a wall reads the ground in front of it, not its own top.
+- It is raised by half a metre plus a texel × slope, so a surface doesn't cover itself.
+- 1 where the map's depth at the point is no higher than the point, filtered over 2×2 texels.
+- Faded to 1 (wet) over the last tenth of the square. 1 outside it, or above or below its height range.
+- All 16 variants were rebuilt.
+
+CFG `Viewport_Post_Wet_Rain_Mask` (on), "Dry Under Cover" under Wet Surfaces. While it is in use, the line "Rain
+mask: round x, z, drawn N times" sits under "Drawing:". The Wet Surfaces tooltip no longer says interiors get wet.
+
+**Known gaps:**
+- Characters and assets cast too, so there is a dry patch under each enemy.
+- Pieces hidden by the render filter don't cover anything.
+- The square's edge falls back to facing-only wetness, so a long roofed hall more than about 115 m away is wet until
+  the camera comes nearer.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| ER m60_42_36_00, map lighting on, Weather 20 (Rain), Outdoor Weather on | Look round a ruin with a roof or an arch | Open ground and roof tops darker and glossier, as in Phase 8. The ground under the roof or arch is dry, with a soft edge at the drip line | Everything dry: the depth compare is the wrong way round, or the map isn't drawn (check the status line). Dry patch displaced or mirrored: the Y flip in the lookup |
+| Same | Toggle Dry Under Cover | Only the sheltered ground changes | |
+| Same | Look at walls in the open | Wet about as much as before (half) | Walls dry or striped: the 1.5 texel push along the face isn't enough |
+| Same | Look under trees | Dappled wetness, drier under thick canopies | |
+| Same | Fly slowly, then over 32 m | The status line's count goes up once each 32 m, not every frame; the wet patches don't shimmer or step | Count rising every frame: the signature changes each frame (report it). One frame of wrong wetness at each redraw: the frame offset assumed for the queues |
+| A legacy dungeon interior or cave reached through m60, with Rain | | The floors inside stay dry, without turning Outdoor Weather off | Wet inside: the ceiling is more than 1000 m above, or the pieces aren't casters |
+| Same | Fly well above a large building (over 128 m from its middle) | Its covered parts may turn wet past the square's edge (known gap) | |
+| Weather 0 or 1 | | No status line: the map isn't drawn when nothing is wet | |
 
 ## Verification maps
 

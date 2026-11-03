@@ -73,6 +73,9 @@ public class SceneRenderPipeline
     /// <summary>The sun's shadow maps, or null for a pipeline drawn without shadows</summary>
     public ShadowCascades Shadows { get; }
 
+    /// <summary>What the rain reaches, for wet surfaces, or null for a pipeline drawn without shadows</summary>
+    public RainOcclusion Rain { get; }
+
     // Scene Parameters
     public DeviceBuffer SceneParamBuffer { get; }
     public ResourceSet SceneParamResourceSet { get; }
@@ -289,6 +292,7 @@ public class SceneRenderPipeline
         if (shadows)
         {
             Shadows = new ShadowCascades(device, this);
+            Rain = new RainOcclusion(device, this);
         }
 
         // The scene goes into the pipeline's own HDR target, on the offscreen list, so it is drawn before the
@@ -513,6 +517,14 @@ public class SceneRenderPipeline
             ? new Vector4(wet.OverrideShininess, Math.Clamp(wet.ShininessRate, 0.0f, 1.0f) * wetness, 0.0f, 0.0f)
             : Vector4.Zero;
 
+        // The map of what the rain reaches, drawn again only when the camera has moved far or the casters changed
+        var wetting = wetAlbedo.W > 0.0f || wetShininess.Y > 0.0f;
+        var rainMask = wetting && CFG.Current.Viewport_Post_Wet_Rain_Mask;
+        Rain?.Update(rainMask, eye,
+            rainMask ? Scene.OpaqueRenderables.ShadowCasterSignature(Scene.DrawFilter, Scene.DisplayGroup) : 0);
+        var rainTexture = Rain?.TextureIndex ?? 0;
+        var rainMatrix = Rain?.Lookup ?? Matrix4x4.Identity;
+
         var shadowParams = Shadows?.Parameters ?? default;
         var shadowCount = (uint)(Shadows?.ActiveCount ?? 0);
         var shadowTexture = Shadows?.TextureIndex ?? 0;
@@ -597,6 +609,12 @@ public class SceneRenderPipeline
             SceneParams.WetAlbedo = wetAlbedo;
             SceneParams.WetShininess = wetShininess;
 
+            SceneParams.RainMatrix = rainMatrix;
+            SceneParams.RainTexture = rainTexture;
+            SceneParams.RainMapSize = RainOcclusion.Resolution;
+            SceneParams.RainTexelSize = RainOcclusion.TexelSize;
+            SceneParams.RainDepthScale = RainOcclusion.DepthScale;
+
             SceneParams.FogVolumeTexture = fogVolume;
             SceneParams.FogNear = fog.DepthRange.X;
             SceneParams.FogLogRatio = fog.DepthRange.Z;
@@ -623,6 +641,7 @@ public class SceneRenderPipeline
 
             cl.UpdateBuffer(SceneParamBuffer, 0, ref uploaded, (uint)sizeof(SceneParam));
             Shadows?.Upload(cl, uploaded);
+            Rain?.Upload(cl, uploaded);
 
             var overlay = uploaded;
             overlay.Projection = proj;
@@ -660,6 +679,7 @@ public class SceneRenderPipeline
     {
         Scene.Render(_renderQueue, _overlayQueue, frustum, this);
         Shadows?.Submit(Scene.OpaqueRenderables, Scene.DrawFilter, Scene.DisplayGroup);
+        Rain?.Submit(Scene.OpaqueRenderables, Scene.DrawFilter, Scene.DisplayGroup);
     }
 
     /// <summary>

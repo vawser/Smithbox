@@ -1060,6 +1060,14 @@ public class ViewportRenderingTool
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Wet_Enable")}##postWet", ref CFG.Current.Viewport_Post_Wet);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Wet_Enable_TT"));
 
+        ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Wet);
+        ImGui.Indent();
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Wet_Rain_Mask_Enable")}##postWetRainMask",
+            ref CFG.Current.Viewport_Post_Wet_Rain_Mask);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Wet_Rain_Mask_Enable_TT"));
+        ImGui.Unindent();
+        ImGui.EndDisabled();
+
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Ssao_Enable")}##postSsao", ref CFG.Current.Viewport_Post_Ssao);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Ssao_Enable_TT"));
 
@@ -1130,6 +1138,13 @@ public class ViewportRenderingTool
                 ImGui.Text(LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Status", $"{state.MeanLog:0.##}",
                     $"{state.Ev:+0.00;-0.00}", $"{state.TargetEv:+0.00;-0.00}"));
                 GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Status_TT"));
+            }
+
+            if (pipeline.Rain is { Active: true, HasContent: true } rain)
+            {
+                ImGui.Text(LOC.Get("VIEWPORT_Rendering_Post_Wet_Rain_Mask_Status", $"{rain.Center.X:0}",
+                    $"{rain.Center.Z:0}", rain.DrawCount));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Wet_Rain_Mask_Status_TT"));
             }
         }
 
