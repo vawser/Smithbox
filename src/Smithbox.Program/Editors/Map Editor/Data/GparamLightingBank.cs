@@ -94,8 +94,8 @@ public class GparamLightingBank
     }
 
     /// <summary>
-    /// The GPARAM to look a map's lighting up in first: the chosen file if it belongs to the map's area, else the
-    /// map's own; then, if a weather is chosen and the area has a file for it, that file's weather version
+    /// The GPARAM to look a map's lighting up in first: the chosen file if the project has it, from any area, else
+    /// the map's own; then, if a weather is chosen and there is a file for it, that file's weather version
     /// (mAA_BB_CCWW, WW being WeatherParam's GparamId)
     /// </summary>
     public string ChooseFile(string mapId, string chosen)
@@ -105,9 +105,7 @@ public class GparamLightingBank
         if (own == null)
             return null;
 
-        var file = !string.IsNullOrEmpty(chosen) && chosen.StartsWith(own.Substring(0, 7), StringComparison.OrdinalIgnoreCase)
-            ? chosen
-            : own;
+        var file = !string.IsNullOrEmpty(chosen) && HasFile(chosen) ? chosen : own;
 
         var weather = CFG.Current.Viewport_Map_Lighting_Weather;
 
@@ -115,11 +113,20 @@ public class GparamLightingBank
         {
             var withWeather = $"{file.Substring(0, 9)}{weather:D2}";
 
-            if (ListFiles(mapId).Contains(withWeather, StringComparer.OrdinalIgnoreCase))
+            if (HasFile(withWeather))
                 return withWeather;
         }
 
         return file;
+    }
+
+    /// <summary>
+    /// Whether the project has a GPARAM of this name
+    /// </summary>
+    public bool HasFile(string name)
+    {
+        return Project.Locator.GparamFiles.Entries
+            .Any(e => e.Filename.Equals(name, StringComparison.OrdinalIgnoreCase));
     }
 
     /// <summary>
@@ -208,6 +215,18 @@ public class GparamLightingBank
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .OrderBy(n => n.Length)
             .ThenBy(n => n, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+    }
+
+    /// <summary>
+    /// Every GPARAM of the project, by name, for lighting a map with another area's
+    /// </summary>
+    public List<string> ListAllFiles()
+    {
+        return Project.Locator.GparamFiles.Entries
+            .Select(e => e.Filename)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderBy(n => n, StringComparer.OrdinalIgnoreCase)
             .ToList();
     }
 

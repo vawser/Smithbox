@@ -21,6 +21,9 @@ public class ViewportRenderingTool
 
     private float GrassDensity = CFG.Current.MapEditor_Grass_Density;
 
+    // The Map Lighting tab's GPARAM list filter
+    private string GparamFilter = "";
+
     public ViewportRenderingTool(Func<VulkanViewport> getViewport)
     {
         GetViewport = getViewport;
@@ -402,25 +405,54 @@ public class ViewportRenderingTool
             .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
             .ToList();
 
-        // The files of every loaded map's area; a file only applies to the maps of its area
+        // The files of every loaded map's area first, then any other of the project's, which lights every map
         var files = maps.SelectMany(m => bank.ListFiles(m.Name)).Distinct(StringComparer.OrdinalIgnoreCase).ToList();
         var ownLabel = LOC.Get("VIEWPORT_Menubar_Map_Lighting_File_Own");
         var chosen = CFG.Current.Viewport_Map_Lighting_File;
 
         DPI.ApplyInputWidth();
         if (ImGui.BeginCombo($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_File")}##mapLightingFile",
-            string.IsNullOrEmpty(chosen) ? ownLabel : chosen))
+            string.IsNullOrEmpty(chosen) ? ownLabel : chosen, ImGuiComboFlags.HeightLarge))
         {
+            if (ImGui.IsWindowAppearing())
+                ImGui.SetKeyboardFocusHere();
+
+            ImGui.InputTextWithHint("##mapLightingFileFilter", LOC.Get("VIEWPORT_Menubar_Map_Lighting_File_Filter"),
+                ref GparamFilter, 255);
+
+            bool Matches(string file) => string.IsNullOrEmpty(GparamFilter) ||
+                file.Contains(GparamFilter, StringComparison.OrdinalIgnoreCase);
+
+            void FileSelectable(string file)
+            {
+                if (ImGui.Selectable($"{file}##mapLightingFile_{file}", file.Equals(chosen, StringComparison.OrdinalIgnoreCase)))
+                {
+                    CFG.Current.Viewport_Map_Lighting_File = file;
+                }
+            }
+
             if (ImGui.Selectable($"{ownLabel}##mapLightingFileOwn", string.IsNullOrEmpty(chosen)))
             {
                 CFG.Current.Viewport_Map_Lighting_File = "";
             }
 
-            foreach (var file in files)
+            foreach (var file in files.Where(Matches))
             {
-                if (ImGui.Selectable($"{file}##mapLightingFile_{file}", file.Equals(chosen, StringComparison.OrdinalIgnoreCase)))
+                FileSelectable(file);
+            }
+
+            var others = bank.ListAllFiles()
+                .Where(f => !files.Contains(f, StringComparer.OrdinalIgnoreCase) && Matches(f))
+                .ToList();
+
+            if (others.Count > 0)
+            {
+                ImGui.Separator();
+                ImGui.TextDisabled(LOC.Get("VIEWPORT_Menubar_Map_Lighting_File_Other_Areas"));
+
+                foreach (var file in others)
                 {
-                    CFG.Current.Viewport_Map_Lighting_File = file;
+                    FileSelectable(file);
                 }
             }
 

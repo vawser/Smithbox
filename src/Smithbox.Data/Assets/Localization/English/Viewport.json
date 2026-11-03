@@ -578,7 +578,15 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_File_TT",
-      "Text": "The GPARAM each value is looked for in first. Values it doesn't have come from mapbase, then default."
+      "Text": "The GPARAM each value is looked for in first. Values it doesn't have come from mapbase, then default.\nAny of the project's GPARAMs can be chosen: one from another area lights every loaded map."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_File_Filter",
+      "Text": "Filter..."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_File_Other_Areas",
+      "Text": "Other areas"
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_File_Own",
