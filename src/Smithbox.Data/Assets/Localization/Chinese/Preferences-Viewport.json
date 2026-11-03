@@ -237,6 +237,14 @@
       "Text": "导航网格门：基础色"
     },
     {
+      "Key": "PREF_Viewport_Collision_Opacity",
+      "Text": "碰撞与导航网格：不透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Collision_Opacity_TT",
+      "Text": "碰撞与导航网格表面的不透明度。低于 1.0 时，可以透过它们看到后方的表面，包括其自身的背面。"
+    },
+    {
       "Key": "PREF_Viewport_Box_Region_Base_Color",
       "Text": "盒区域：基础色"
     },

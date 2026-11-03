@@ -341,6 +341,10 @@
       "Text": "Scene Lighting"
     },
     {
+      "Key": "VIEWPORT_Menubar_Header_Parts",
+      "Text": "Parts"
+    },
+    {
       "Key": "VIEWPORT_Menubar_Header_Environment_Map",
       "Text": "Environment Map"
     },

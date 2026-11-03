@@ -245,6 +245,14 @@
       "Text": "Navmesh Gate: Base Color"
     },
     {
+      "Key": "PREF_Viewport_Collision_Opacity",
+      "Text": "Collision & Navmesh: Opacity"
+    },
+    {
+      "Key": "PREF_Viewport_Collision_Opacity_TT",
+      "Text": "How opaque the faces of collision and navmeshes are. Below 1.0, faces behind them, including their own far side, show through."
+    },
+    {
       "Key": "PREF_Viewport_Box_Region_Base_Color",
       "Text": "Box Region: Base Color"
     },

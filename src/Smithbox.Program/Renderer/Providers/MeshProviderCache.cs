@@ -112,6 +112,26 @@ public static class MeshProviderCache
         }
     }
 
+    /// <summary>
+    ///     Rebuilds every collision and navmesh renderable, see <see cref="CollisionTransparency" />.
+    ///     Submeshes are rebuilt by their parent proxies.
+    /// </summary>
+    public static void RebuildCollisionRenderables()
+    {
+        List<MeshProvider> providers;
+        lock (_lock)
+        {
+            providers = _cache.Values
+                .Where(p => p is CollisionMeshProvider or NavmeshProvider or HavokNavmeshProvider)
+                .ToList();
+        }
+
+        foreach (MeshProvider provider in providers)
+        {
+            provider.RebuildListeners();
+        }
+    }
+
     private static T GetOrAdd<T>(IResourceHandle handle, string uid, Func<T> create) where T : MeshProvider
     {
         lock (_lock)

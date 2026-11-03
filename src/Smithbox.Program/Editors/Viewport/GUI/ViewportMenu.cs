@@ -513,6 +513,17 @@ public class ViewportMenu
                 }
             }
 
+            if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Parts")}##partsMenuHeader"))
+            {
+                // Applies at once, as the collision shaders read it every frame
+                DPI.ApplyInputWidth();
+                ImGui.SliderFloat($"{LOC.Get("PREF_Viewport_Collision_Opacity")}##collisionOpacity",
+                    ref CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
+                GUI.Tooltip(LOC.Get("PREF_Viewport_Collision_Opacity_TT"));
+
+                ImGui.EndMenu();
+            }
+
             ImGui.EndMenu();
         }
     }

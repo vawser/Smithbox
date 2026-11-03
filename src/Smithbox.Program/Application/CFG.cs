@@ -1241,6 +1241,7 @@ public class CFG
     public Vector3 Viewport_Connect_Collision_Color = new Vector3(146, 57, 158);
     public Vector3 Viewport_Navmesh_Color = new Vector3(157, 53, 255);
     public Vector3 Viewport_Navmesh_Gate_Color = new Vector3(50, 220, 0);
+    public float Viewport_Collision_Opacity = 1.0f;
 
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);

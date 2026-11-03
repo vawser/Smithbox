@@ -66,6 +66,7 @@ public static class PreferencesUtil
         CFG.Current.Viewport_Connect_Collision_Color = CFG.Default.Viewport_Connect_Collision_Color;
         CFG.Current.Viewport_Navmesh_Color = CFG.Default.Viewport_Navmesh_Color;
         CFG.Current.Viewport_Navmesh_Gate_Color = CFG.Default.Viewport_Navmesh_Gate_Color;
+        CFG.Current.Viewport_Collision_Opacity = CFG.Default.Viewport_Collision_Opacity;
 
         CFG.Current.Viewport_Box_Region_Base_Color = CFG.Default.Viewport_Box_Region_Base_Color;
         CFG.Current.Viewport_Box_Region_Highlight_Color = CFG.Default.Viewport_Box_Region_Highlight_Color;

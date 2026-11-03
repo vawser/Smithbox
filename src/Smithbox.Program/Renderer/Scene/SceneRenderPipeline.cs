@@ -96,6 +96,7 @@ public class SceneRenderPipeline
         SceneParams.DitherOpacity = 0.5f;
         SceneParams.SunColor = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
         SceneParams.LightCount = 0;
+        SceneParams.CollisionOpacity = 1.0f;
 
         device.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
 
@@ -208,6 +209,9 @@ public class SceneRenderPipeline
         Vector4 wind = MaterialClock.Wind;
         var sceneDepth = _renderQueue.CapturesSceneDepth ? SceneDepth.TextureIndex : 0;
 
+        CollisionTransparency.Refresh();
+        var collisionOpacity = Math.Clamp(CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
+
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
             SceneParams.Projection = proj;
@@ -229,6 +233,7 @@ public class SceneRenderPipeline
             SceneParams.MaterialFeatures = (uint)MaterialClock.Features;
             SceneParams.SceneDepthTexture = sceneDepth;
             SceneParams.Wind = wind;
+            SceneParams.CollisionOpacity = collisionOpacity;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)

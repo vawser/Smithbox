@@ -5,6 +5,9 @@
 
 - Bug: "prop iconID 102" crashes: seems linked to field view, adding in 102 as a value stops the crash
 
+- Params:
+    - Improve how Table params are handled
+
 - Tools:
     - Weapon Generator:
         - Allow for easy generation of infusion weapon sets

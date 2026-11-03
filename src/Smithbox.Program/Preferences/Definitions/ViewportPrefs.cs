@@ -588,6 +588,12 @@ public class ViewportPrefs
                 {
                     CFG.Current.Viewport_Navmesh_Gate_Color = Utils.GetRgbColor(curColor);
                 }
+
+                DPI.ApplyInputWidth();
+                ImGui.SliderFloat(
+                    $"{LOC.Get("PREF_Viewport_Collision_Opacity")}##Viewport_Collision_Opacity",
+                    ref CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
+                GUI.Tooltip(LOC.Get("PREF_Viewport_Collision_Opacity_TT"));
             }
         };
     }

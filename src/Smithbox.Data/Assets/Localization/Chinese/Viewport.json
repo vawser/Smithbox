@@ -209,6 +209,10 @@
       "Text": "场景光照"
     },
     {
+      "Key": "VIEWPORT_Menubar_Header_Parts",
+      "Text": "部件"
+    },
+    {
       "Key": "VIEWPORT_Menubar_Header_Environment_Map",
       "Text": "环境贴图"
     },

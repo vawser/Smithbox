@@ -141,6 +141,20 @@ public abstract class MeshProvider
         }
     }
 
+    /// <summary>
+    ///     Rebuilds the renderables of every proxy drawing this mesh, for when the pipeline state it gives has changed
+    /// </summary>
+    public void RebuildListeners()
+    {
+        foreach (IMeshProviderEventListener l in SnapshotListeners())
+        {
+            if (l is RenderableProxy proxy)
+            {
+                proxy.ScheduleRenderableConstruction();
+            }
+        }
+    }
+
     protected void NotifyAvailable()
     {
         foreach (IMeshProviderEventListener l in SnapshotListeners())

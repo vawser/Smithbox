@@ -57,4 +57,7 @@ public unsafe struct SceneParam
 
     /// <summary>xy is the world XZ direction the wind blows in, z its steady force and w the force of its waves</summary>
     public Vector4 Wind;
+
+    /// <summary>How opaque collision and navmesh faces are, see <see cref="CollisionTransparency" /></summary>
+    public float CollisionOpacity;
 }

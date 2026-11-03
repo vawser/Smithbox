@@ -10,6 +10,16 @@ layout(location = 0) out vec4 fsout_color;
 
 layout (constant_id = 99) const bool c_picking = false;
 
+#define MAX_SCENE_LIGHTS 16
+
+struct sceneLight
+{
+	vec4 positionRange;
+	vec4 directionType;
+	vec4 colorIntensity;
+	vec4 spot;
+};
+
 struct sceneParams
 {
 	mat4 projection;
@@ -24,6 +34,26 @@ struct sceneParams
 	float indirectLightMult;
 	float emissiveMapMult;
 	float sceneBrightness;
+	float simpleFlverBrightness;
+	float simpleFlverSaturation;
+	vec4 selectionColor;
+	vec4 outlineColor;
+	uint EnableDithering;
+	uint EnableTinting;
+	float ditherOpacity;
+
+	// Only here to reach collisionOpacity, which comes after them
+	uint lightCount;
+	vec4 sunColor;
+	sceneLight lights[MAX_SCENE_LIGHTS];
+
+	float materialTime;
+	float windPeriod;
+	uint materialFeatures;
+	uint sceneDepthTexture;
+	vec4 wind;
+
+	float collisionOpacity;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -117,5 +147,5 @@ void main()
 
 	vec3 diffuse = vec3(clamp(abs(dot(-view, normal)), 0.0, 1.0));
 	vec3 ambient = vec3(1.0, 1.0, 1.0);
-	fsout_color = vec4(FocusGrey(diffuse * color.xyz * 0.8 + ambient * color.xyz * 0.2), color.a);
+	fsout_color = vec4(FocusGrey(diffuse * color.xyz * 0.8 + ambient * color.xyz * 0.2), color.a * sceneparam.collisionOpacity);
 }

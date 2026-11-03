@@ -34,7 +34,13 @@ public class CollisionSubmeshProvider : MeshProvider
 
     public override SpecializationConstant[] SpecializationConstants => new SpecializationConstant[0];
 
-    public override VkCullModeFlags CullMode => VkCullModeFlags.Back;
+    public override VkCullModeFlags CullMode => VkCullModeFlags.None;
+
+    public override BlendStateDescription BlendState => CollisionTransparency.BlendState;
+
+    public override bool DepthWrite => CollisionTransparency.DepthWrite;
+
+    public override bool IsTransparent => CollisionTransparency.IsTransparent;
 
     public override VkFrontFace FrontFace => _resource.Get().FrontFace;
 
