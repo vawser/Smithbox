@@ -265,6 +265,7 @@ public sealed class ProjectileSimulation
         BulletDefinition Definition,
         Vector3 Position,
         Vector3 Direction,
+        Vector3 Aim,
         float? Speed,
         ProjectileOrigin Origin,
         int Parent,
@@ -279,7 +280,7 @@ public sealed class ProjectileSimulation
         public Vector3 Direction;
 
         // As fired, since Position and Direction move on
-        public Vector3 Spawn;
+        public Vector3 FiredFrom;
         public Vector3 Aim;
 
         // One vector, so a turn swings the fall with it and a limit caps the whole
@@ -439,7 +440,8 @@ public sealed class ProjectileSimulation
 
                 Vector3 direction = RotateFrom(facing, float.DegreesToRadians(angleY), float.DegreesToRadians(angleX));
 
-                Pending.Enqueue(new PendingShot(definition, start, direction, shotSpeed, origin, parent, generation), due);
+                Pending.Enqueue(new PendingShot(definition, start, direction, facing, shotSpeed, origin, parent,
+                    generation), due);
             }
         }
     }
@@ -609,9 +611,9 @@ public sealed class ProjectileSimulation
                 Position = shot.Position,
                 Direction = shot.Direction,
 
-                // For no-lock homing aims
-                Spawn = shot.Position,
-                Aim = shot.Direction,
+                // Where it was aimed, which leaves out the row's own launch angle
+                FiredFrom = shot.Position,
+                Aim = shot.Aim,
 
                 Velocity = shot.Direction * (shot.Speed ?? definition.InitialSpeed),
                 Life = definition.Life < 0 ? float.MaxValue : definition.Life + Random(definition.LifeRandom),
@@ -638,7 +640,8 @@ public sealed class ProjectileSimulation
 
         if (shot.Age >= definition.AccelStartTime && shot.Age < definition.AccelEndTime)
         {
-            shot.Velocity += shot.Direction * (accel * StepTime);
+            // Along the way it is going, not the way it points: gravity pulls those apart
+            shot.Velocity += Normalize(shot.Velocity, shot.Direction) * (accel * StepTime);
         }
 
         // Limits hold every step, and rows can start outside of them
@@ -752,7 +755,8 @@ public sealed class ProjectileSimulation
 
     /// <summary>
     ///     Turns the bullet towards the target. Left and right turn separately from up and down, as rows can
-    ///     limit them differently. Gravity is left out of this, so a heavy bullet can drop short of what it aims at.
+    ///     limit them differently. Nothing is aimed high to make up for gravity, so a heavy bullet can still
+    ///     drop short of the point it turns towards.
     /// </summary>
     private void Home(ActiveShot shot)
     {
@@ -773,7 +777,7 @@ public sealed class ProjectileSimulation
         }
 
         // With nothing locked on, a homing bullet also locks on to a virtual point
-        Vector3 aimPoint = Settings.SimulateTarget ? Target : shot.Spawn + shot.Aim * reach;
+        Vector3 aimPoint = Settings.SimulateTarget ? Target : shot.FiredFrom + shot.Aim * reach;
         Vector3 toTarget = aimPoint + shot.AimOffset - shot.Position;
         var distance = toTarget.Length();
 
