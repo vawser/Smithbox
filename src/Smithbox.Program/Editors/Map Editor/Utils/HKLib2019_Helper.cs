@@ -150,6 +150,10 @@ public static class HKLib2019_Helper
         var vertices = new List<Vector3>();
         var indices = new List<int>();
 
+        // Some meshes hold primitives and shared vertex indices but no vertices, so there is nothing to draw
+        if (tree.m_packedVertices.Count == 0 && tree.m_sharedVertices.Count == 0)
+            return (vertices, indices);
+
         foreach (Section section in tree.m_sections)
         {
             var offset = new Vector3(section.m_codecParms[0], section.m_codecParms[1], section.m_codecParms[2]);

@@ -8,7 +8,7 @@
 public sealed class ResourceLoadContext
 {
     public ResourceLoadContext(ResourcePool pool, string entryPath, string containerPath, long order,
-        bool isConnectCollision = false)
+        bool isConnectCollision = false, HavokCompendiumSource compendium = null)
     {
         Pool = pool;
         EntryPath = entryPath ?? "";
@@ -17,6 +17,7 @@ public sealed class ResourceLoadContext
         Name = ResourceName.Normalize(FileName);
         Order = order;
         IsConnectCollision = isConnectCollision;
+        Compendium = compendium;
     }
 
     /// <summary>The pool the resource is being loaded into. Dependencies (e.g. textures) are looked up here.</summary>
@@ -45,6 +46,12 @@ public sealed class ResourceLoadContext
     ///     The caller asked for this to be loaded as connect collision (see <see cref="LoadOptions.IsConnectCollision" />).
     /// </summary>
     public bool IsConnectCollision { get; }
+
+    /// <summary>
+    ///     The Havok type compendium of the binder the entry is in, which its tagfile may refer to for its types.
+    ///     Null if the binder has none.
+    /// </summary>
+    public HavokCompendiumSource Compendium { get; }
 
     /// <summary>Human readable origin, used for logging and tooling.</summary>
     public string QualifiedName => $"{Pool?.Name}:{EntryPath}";

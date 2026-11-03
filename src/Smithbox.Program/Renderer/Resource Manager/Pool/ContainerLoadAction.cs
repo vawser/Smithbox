@@ -172,6 +172,11 @@ internal sealed class ContainerLoadAction
 
     private void LoadBinder(BinderReader binder, string containerPath, int depth)
     {
+        // Map collision tagfiles refer to the compendium of their binder for their types
+        HavokCompendiumSource? compendium = Options.Types.HasFlag(ResourceType.CollisionHKX)
+            ? HavokCompendiumSource.Find(binder)
+            : null;
+
         for (var i = 0; i < binder.Files.Count(); i++)
         {
             BinderFileHeader header = binder.Files[i];
@@ -216,7 +221,8 @@ internal sealed class ContainerLoadAction
                     continue;
                 }
 
-                var ctx = new ResourceLoadContext(Pool, entryPath, containerPath, order, Options.IsConnectCollision);
+                var ctx = new ResourceLoadContext(Pool, entryPath, containerPath, order, Options.IsConnectCollision,
+                    compendium);
                 if (!Options.Accepts(ctx.Name) || !WantsLoad(ctx, kind))
                 {
                     continue;

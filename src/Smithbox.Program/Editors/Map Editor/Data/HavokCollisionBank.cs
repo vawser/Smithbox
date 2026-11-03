@@ -1,4 +1,5 @@
-﻿using HKLib.hk2018;
+﻿using Havok.Shared;
+using HKLib.hk2018;
 using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
 using StudioCore.Editors.Common;
@@ -24,6 +25,16 @@ public class HavokCollisionBank
     public Dictionary<string, HKLib.hk2019.hkRootLevelContainer> AC6Containers = new();
 
     public Dictionary<string, List<string>> MapCollisions = new();
+
+    /// <summary>
+    /// The map and type of the binder each listed ER, NR or AC6 collision file is in, keyed by file name.
+    /// </summary>
+    private Dictionary<string, (string MapId, string Type)> CollisionBinders = new();
+
+    /// <summary>
+    /// The ER, NR or AC6 collision binders which have been read into HavokContainers or AC6Containers.
+    /// </summary>
+    private HashSet<string> ReadBinders = new();
 
     private bool ObjectCollisionVisible = false;
 
@@ -109,10 +120,14 @@ public class HavokCollisionBank
         RefreshCollision();
     }
 
+    /// <summary>
+    /// Releases the read collision. ER, NR and AC6 collision is read again the next time it is asked for.
+    /// </summary>
     public void Clear()
     {
         HavokContainers.Clear();
         AC6Containers.Clear();
+        ReadBinders.Clear();
 
         lock (TagContainers)
         {
@@ -126,15 +141,18 @@ public class HavokCollisionBank
         if (!CFG.Current.MapEditor_ModelLoad_Collisions)
             return;
 
-        if (Project.Descriptor.ProjectType is ProjectType.ER 
-            or ProjectType.NR)
+        // The viewport reads its own collision, so these are only listed here and read when they are first asked for
+        if (Project.Descriptor.ProjectType is ProjectType.ER
+            or ProjectType.NR
+            or ProjectType.AC6)
         {
             if (!MapCollisions.ContainsKey(mapId))
                 MapCollisions.Add(mapId, new List<string>());
 
-            LoadMapCollision(mapId, "h");
-            LoadMapCollision(mapId, "l");
-            LoadMapCollision(mapId, "f");
+            foreach (var type in GetCollisionBinderTypes())
+            {
+                ListMapCollision(mapId, type);
+            }
         }
 
         if (Project.Descriptor.ProjectType is ProjectType.SDT)
@@ -145,95 +163,88 @@ public class HavokCollisionBank
             LoadTagMapCollision(mapId, "h");
             LoadTagMapCollision(mapId, "l");
         }
+    }
 
-        if (Project.Descriptor.ProjectType is ProjectType.AC6)
+    private static IEnumerable<string> GetCollisionBinderTypes()
+    {
+        yield return "h";
+        yield return "l";
+        yield return "f";
+    }
+
+    /// <summary>
+    /// Gets the collision of an ER, NR or AC6 map, e.g. l30_00_00_00_000100.hkx.dcx. Its binder is read the first
+    /// time one of its files is asked for. Null if the file isn't in a loaded map.
+    /// </summary>
+    public IRootContainer GetHKLibContainer(string fileName)
+    {
+        if (CollisionBinders.TryGetValue(fileName, out var binder) &&
+            ReadBinders.Add(GetBinderKey(binder.MapId, binder.Type)))
         {
-            if (!MapCollisions.ContainsKey(mapId))
-                MapCollisions.Add(mapId, new List<string>());
-
-            LoadAC6MapCollision(mapId, "h");
-            LoadAC6MapCollision(mapId, "l");
-            LoadAC6MapCollision(mapId, "f");
+            ReadMapCollision(binder.MapId, binder.Type);
         }
+
+        return HavokContainers.TryGetValue(fileName, out var container)
+            ? container
+            : AC6Containers.GetValueOrDefault(fileName);
     }
 
-    /// <summary>
-    /// Gets the collision of an AC6 map, e.g. l03_20_00_00_000100.hkx.dcx. Null if it isn't loaded.
-    /// </summary>
-    public HKLib.hk2019.hkRootLevelContainer GetAC6Container(string fileName)
-    {
-        return AC6Containers.GetValueOrDefault(fileName);
-    }
+    private static string GetBinderKey(string mapId, string type) => $"{mapId}:{type}";
 
     /// <summary>
-    /// Reads the collision of an AC6 map. These are Havok 2019 tagfiles that refer to a compendium held in the
-    /// same binder.
+    /// Opens the collision binder of one type of a map, from the project if it has its own copy.
+    /// Null if the map has no binder of this type.
     /// </summary>
-    private void LoadAC6MapCollision(string mapId, string type)
+    private BXF4Reader OpenCollisionBinder(string mapId, string type)
     {
-        using var __scope = Profiler.TracyZoneAuto();
-
         var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
         var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
 
         if (!Project.VFS.FS.FileExists(bdtPath) || !Project.VFS.FS.FileExists(bhdPath))
         {
             Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_HKXBND", bdtPath));
-            return;
+            return null;
         }
+
+        var bdtData = Project.VFS.ProjectFS.FileExists(bdtPath)
+            ? Project.VFS.ProjectFS.ReadFile(bdtPath)
+            : Project.VFS.FS.ReadFile(bdtPath);
+        var bhdData = Project.VFS.ProjectFS.FileExists(bhdPath)
+            ? Project.VFS.ProjectFS.ReadFile(bhdPath)
+            : Project.VFS.FS.ReadFile(bhdPath);
+
+        if (bdtData == null || bhdData == null)
+            return null;
+
+        return new BXF4Reader((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+    }
+
+    private static List<BinderFileHeader> GetCollisionFiles(BinderReader binder)
+    {
+        return binder.Files
+            .Where(e => e.Name.Contains(".hkx.dcx") && e.Name.Split('\\').Length == 2)
+            .ToList();
+    }
+
+    /// <summary>
+    /// Lists the collision files in one binder of a map, without reading them.
+    /// </summary>
+    private void ListMapCollision(string mapId, string type)
+    {
+        var binderKey = GetBinderKey(mapId, type);
 
         try
         {
-            var bdtData = Project.VFS.ProjectFS.FileExists(bdtPath)
-                ? Project.VFS.ProjectFS.ReadFile(bdtPath)
-                : Project.VFS.FS.ReadFile(bdtPath);
-            var bhdData = Project.VFS.ProjectFS.FileExists(bhdPath)
-                ? Project.VFS.ProjectFS.ReadFile(bhdPath)
-                : Project.VFS.FS.ReadFile(bhdPath);
+            using var binder = OpenCollisionBinder(mapId, type);
 
-            if (bdtData == null || bhdData == null)
+            if (binder == null)
                 return;
 
-            using var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-            var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
-
-            var compendiumFile = packedBinder.Files.FirstOrDefault(e => e.Name.Contains(".compendium"));
-            if (compendiumFile != null)
+            foreach (var file in GetCollisionFiles(binder))
             {
-                using var compendiumStream = new MemoryStream(DCX.Decompress(compendiumFile.Bytes).ToArray());
-                serializer.LoadCompendium(compendiumStream);
-            }
+                var name = file.Name.Split('\\')[1];
 
-            var files = packedBinder.Files
-                .Where(e => e.Name.Contains(".hkx.dcx") && e.Name.Split('\\').Length == 2)
-                .ToList();
-
-            // The files don't depend on each other, so they are read in parallel.
-            // Reads only share the compendium, so one serializer serves every thread.
-            var containers = new HKLib.hk2019.hkRootLevelContainer[files.Count];
-
-            Parallel.For(0, files.Count, i =>
-            {
-                var name = files[i].Name.Split('\\')[1];
-
-                try
-                {
-                    using var stream = new MemoryStream(DCX.Decompress(files[i].Bytes).ToArray());
-                    containers[i] = (HKLib.hk2019.hkRootLevelContainer)serializer.Read(stream);
-                }
-                catch (Exception ex)
-                {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", name), ex);
-                }
-            });
-
-            // Added in binder order on this thread, as the containers are read elsewhere without a lock
-            for (int i = 0; i < files.Count; i++)
-            {
-                var name = files[i].Name.Split('\\')[1];
-
-                if (containers[i] != null && AC6Containers.TryAdd(name, containers[i]))
+                if (CollisionBinders.TryAdd(name, (mapId, type)))
                 {
                     MapCollisions[mapId].Add(name);
                 }
@@ -241,7 +252,66 @@ public class HavokCollisionBank
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", bdtPath), e);
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", binderKey), e);
+        }
+    }
+
+    /// <summary>
+    /// Reads the collision files in one binder of an ER, NR or AC6 map. These are tagfiles which refer to a
+    /// compendium held in the same binder, Havok 2018 for ER and NR, Havok 2019 for AC6.
+    /// </summary>
+    private void ReadMapCollision(string mapId, string type)
+    {
+        using var __scope = Profiler.TracyZoneAuto();
+
+        var isAC6 = Project.Descriptor.ProjectType is ProjectType.AC6;
+
+        try
+        {
+            using var binder = OpenCollisionBinder(mapId, type);
+
+            if (binder == null)
+                return;
+
+            // The binder reads its files through one position, so they are taken out here and then read in
+            // parallel, as they don't depend on each other
+            var compendium = HavokCompendiumSource.Find(binder);
+            var files = GetCollisionFiles(binder)
+                .Select(file => (Name: file.Name.Split('\\')[1], Bytes: binder.ReadFile(file)))
+                .ToList();
+
+            var containers = new IRootContainer[files.Count];
+
+            Parallel.For(0, files.Count, i =>
+            {
+                try
+                {
+                    containers[i] = isAC6
+                        ? HKLibTagfileReader.Read2019(files[i].Bytes, compendium)
+                        : HKLibTagfileReader.Read2018(files[i].Bytes, compendium);
+                }
+                catch (Exception ex)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", files[i].Name), ex);
+                }
+            });
+
+            for (int i = 0; i < files.Count; i++)
+            {
+                switch (containers[i])
+                {
+                    case HKLib.hk2019.hkRootLevelContainer ac6Container:
+                        AC6Containers.TryAdd(files[i].Name, ac6Container);
+                        break;
+                    case hkRootLevelContainer container:
+                        HavokContainers.TryAdd(files[i].Name, container);
+                        break;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", GetBinderKey(mapId, type)), e);
         }
     }
 
@@ -338,6 +408,7 @@ public class HavokCollisionBank
         {
             HavokContainers.Remove(name);
             AC6Containers.Remove(name);
+            CollisionBinders.Remove(name);
 
             lock (TagContainers)
             {
@@ -345,106 +416,12 @@ public class HavokCollisionBank
             }
         }
 
+        foreach (var type in GetCollisionBinderTypes())
+        {
+            ReadBinders.Remove(GetBinderKey(mapId, type));
+        }
+
         MapCollisions.Remove(mapId);
-    }
-
-    private void LoadMapCollision(string mapId, string type)
-    {
-        using var __scope = Profiler.TracyZoneAuto();
-        byte[] CompendiumBytes = null;
-
-        var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
-        var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
-
-        if (Project.VFS.FS.FileExists(bdtPath) && Project.VFS.FS.FileExists(bhdPath))
-        {
-            try
-            {
-                var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-                var bhdData = Project.VFS.FS.ReadFile(bhdPath);
-
-                if (Project.VFS.ProjectFS.FileExists(bdtPath))
-                {
-                    bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-                }
-                if (Project.VFS.ProjectFS.FileExists(bhdPath))
-                {
-                    bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-                }
-
-                if (bdtData == null || bhdData == null)
-                    return;
-
-                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                HavokBinarySerializer serializer = new HavokBinarySerializer();
-
-                // Get compendium
-                foreach (var file in packedBinder.Files)
-                {
-                    if (file.Name.Contains(".compendium.dcx"))
-                    {
-                        CompendiumBytes = DCX.Decompress(file.Bytes).ToArray();
-                    }
-                }
-
-                if (CompendiumBytes != null)
-                {
-                    using MemoryStream memoryStream = new MemoryStream(CompendiumBytes);
-                    serializer.LoadCompendium(memoryStream);
-                }
-
-                var files = packedBinder.Files
-                    .Where(e => e.Name.Contains(".hkx.dcx") && e.Name.Split('\\').Length == 2)
-                    .ToList();
-
-                // The files don't depend on each other, so they are read in parallel.
-                // Reads only share the compendium, so one serializer serves every thread.
-                var containers = new hkRootLevelContainer[files.Count];
-
-                Parallel.For(0, files.Count, i =>
-                {
-                    var name = files[i].Name.Split('\\')[1];
-
-                    try
-                    {
-                        using var memoryStream = new MemoryStream(DCX.Decompress(files[i].Bytes).ToArray());
-
-                        try
-                        {
-                            containers[i] = (hkRootLevelContainer)serializer.Read(memoryStream);
-                        }
-                        catch (InvalidDataException ex)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", name), ex);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
-                    }
-                });
-
-                // Added in binder order on this thread, as the containers are read elsewhere without a lock
-                for (int i = 0; i < files.Count; i++)
-                {
-                    var name = files[i].Name.Split('\\')[1];
-
-                    if (containers[i] != null && HavokContainers.TryAdd(name, containers[i]))
-                    {
-                        MapCollisions[mapId].Add(name);
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", bdtPath), e);
-            }
-        }
-        else
-        {
-            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_HKXBND", bdtPath));
-        }
     }
 
     public void RefreshCollision()

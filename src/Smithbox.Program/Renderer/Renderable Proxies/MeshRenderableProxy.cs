@@ -35,7 +35,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     public RenderFilter _drawfilter = RenderFilter.All;
 
     public DrawGroup _drawgroups = new();
-    public ResourceSet? _perObjectResourceSet;
     public Pipeline? _pickingPipeline;
 
     public Pipeline? _pipeline;
@@ -689,12 +688,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                     VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment,
                     VkDescriptorBindingFlags.None)));
 
-        _perObjectResourceSet = StaticResourceCache.GetResourceSet(factory, new ResourceSetDescription(
-            mainPerObjectLayout,
-            _worldBufferInstances > 0
-                ? SceneRenderer.GrassInstanceAllocator.Value.BackingBuffer
-                : SceneRenderer.UniformBufferAllocator.BackingBuffer));
-
         // Build default pipeline
         GraphicsPipelineDescription pipelineDescription = new();
         pipelineDescription.BlendState = _meshProvider.BlendState;
@@ -745,7 +738,10 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         // Rest of draw parameters
         meshcomp._indexFormat = _meshProvider.Is32Bit ? VkIndexType.Uint32 : VkIndexType.Uint16;
-        meshcomp._objectResourceSet = _perObjectResourceSet;
+        meshcomp._objectBuffer = _worldBufferInstances > 0
+            ? SceneRenderer.GrassInstanceAllocator.Value
+            : SceneRenderer.UniformBufferAllocator;
+        meshcomp._objectLayout = mainPerObjectLayout;
         meshcomp._bufferIndex = geombuffer.BufferIndex;
 
         // Instantiate renderable

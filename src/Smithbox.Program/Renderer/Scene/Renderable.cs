@@ -26,7 +26,10 @@ public struct VisibleValidComponent
 public struct MeshDrawParametersComponent
 {
     public SceneRenderer.IndirectDrawIndexedArgumentsPacked _indirectArgs;
-    public ResourceSet _objectResourceSet;
+    // The buffer holding the per-object data, and the layout it is read in. Its resource set is looked up at draw
+    // time, as the buffer is replaced when it grows.
+    public GPUBufferAllocator _objectBuffer;
+    public ResourceLayout _objectLayout;
     public VkIndexType _indexFormat;
     public int _bufferIndex;
 }

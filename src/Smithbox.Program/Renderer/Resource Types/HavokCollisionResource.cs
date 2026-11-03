@@ -44,26 +44,18 @@ public class HavokCollisionResource : IResource, IDisposable
         DetermineColor(ctx);
 
         // HKLib - ER
-        if (curProject.Descriptor.ProjectType is ProjectType.ER 
+        if (curProject.Descriptor.ProjectType is ProjectType.ER
             or ProjectType.NR
             or ProjectType.DB_NT
             or ProjectType.DB)
         {
-            var success = IsAssetCollision(ctx)
-                ? HandleHKLibAssetLoad(bytes)
-                : HandleHKLibLoad(curProject, ctx);
-
-            if (!success)
+            if (!HandleHKLibLoad(bytes, ctx))
                 return false;
         }
         // HKLib 2019 - AC6
         else if (curProject.Descriptor.ProjectType is ProjectType.AC6)
         {
-            var success = IsAssetCollision(ctx)
-                ? HandleHKLib2019AssetLoad(bytes)
-                : HandleHKLib2019Load(curProject, ctx);
-
-            if (!success)
+            if (!HandleHKLib2019Load(bytes, ctx))
                 return false;
         }
         // HKX2 tagfile - SDT
@@ -126,15 +118,13 @@ public class HavokCollisionResource : IResource, IDisposable
             or ProjectType.DB_NT
             or ProjectType.DB)
         {
-            var success = HandleHKLibLoad(curProject, ctx);
-
-            if (!success)
+            if (!TryReadFile(curProject, relativePath, out var fileData) || !HandleHKLibLoad(fileData, ctx))
                 return false;
         }
         // HKLib 2019 - AC6
         else if (curProject.Descriptor.ProjectType is ProjectType.AC6)
         {
-            if (!HandleHKLib2019Load(curProject, ctx))
+            if (!TryReadFile(curProject, relativePath, out var fileData) || !HandleHKLib2019Load(fileData, ctx))
                 return false;
         }
         // HKX2 tagfile - SDT
@@ -252,47 +242,61 @@ public class HavokCollisionResource : IResource, IDisposable
         return ctx.ContainerPath.Contains(".geomhkxbnd", StringComparison.OrdinalIgnoreCase);
     }
 
-    /// <summary>
-    /// Asset collision isn't tied to a loaded map, so it isn't held by the HavokCollisionBank and is read here.
-    /// </summary>
-    public bool HandleHKLibAssetLoad(Memory<byte> bytes)
+    private bool TryReadFile(ProjectEntry curProject, string relativePath, out Memory<byte> data)
     {
-        var data = DCX.Is(bytes) ? DCX.Decompress(bytes) : bytes;
+        data = default;
 
-        using var stream = new MemoryStream(data.ToArray());
+        try
+        {
+            var fileData = curProject.VFS.FS.ReadFile(relativePath);
 
-        var serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
+            if (fileData == null)
+                return false;
 
-        ER_HKX = (HKLib.hk2018.hkRootLevelContainer)serializer.Read(stream);
-
-        return true;
+            data = fileData.Value;
+            return true;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this,
+                LOC.Get("REND_HavokCollisionResource_Load_Failed", relativePath), e);
+            return false;
+        }
     }
 
     /// <summary>
-    /// AC6 asset collision holds its own types, unlike map collision which refers to a compendium.
+    /// Reads ER collision. Map collision refers to the compendium of its binder for its types, while asset collision
+    /// holds its own.
     /// </summary>
-    public bool HandleHKLib2019AssetLoad(Memory<byte> bytes)
+    public bool HandleHKLibLoad(Memory<byte> bytes, ResourceLoadContext ctx)
     {
-        var data = DCX.Is(bytes) ? DCX.Decompress(bytes) : bytes;
+        try
+        {
+            ER_HKX = HKLibTagfileReader.Read2018(bytes, ctx.Compendium);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("REND_HavokCollisionResource_Load_Failed", ctx.FileName), e);
+            return false;
+        }
 
-        using var stream = new MemoryStream(data.ToArray());
-
-        var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
-
-        AC6_HKX = (HKLib.hk2019.hkRootLevelContainer)serializer.Read(stream);
-
-        return true;
+        return ER_HKX != null;
     }
 
     /// <summary>
-    /// AC6 map collision refers to a compendium in its binder, so it is read by the HavokCollisionBank when the map
-    /// is loaded.
+    /// Reads AC6 collision, which is Havok 2019. As with ER, map collision refers to the compendium of its binder.
     /// </summary>
-    public bool HandleHKLib2019Load(ProjectEntry curProject, ResourceLoadContext ctx)
+    public bool HandleHKLib2019Load(Memory<byte> bytes, ResourceLoadContext ctx)
     {
-        var activeView = curProject.Handler.MapEditor?.ViewHandler.ActiveView;
-
-        AC6_HKX = activeView?.HavokCollisionBank.GetAC6Container(ctx.FileName);
+        try
+        {
+            AC6_HKX = HKLibTagfileReader.Read2019(bytes, ctx.Compendium);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("REND_HavokCollisionResource_Load_Failed", ctx.FileName), e);
+            return false;
+        }
 
         return AC6_HKX != null;
     }
@@ -326,34 +330,6 @@ public class HavokCollisionResource : IResource, IDisposable
         }
 
         return Hkx2 != null;
-    }
-
-    public bool HandleHKLibLoad(ProjectEntry curProject, ResourceLoadContext ctx)
-    {
-        if (curProject.Handler.MapEditor == null)
-            return false;
-
-        var activeView = curProject.Handler.MapEditor.ViewHandler.ActiveView;
-
-        if(activeView == null) 
-            return false;
-
-        // Map collision: each type is read from its own binder, so the
-        // file name already carries the prefix of its type (h, l or f)
-        var filename = ctx.FileName;
-
-        // Map collision for ER refers to a compendium in its binder,
-        // so it is read by the HavokCollisionBank when the map is loaded
-        if (activeView.HavokCollisionBank.HavokContainers.ContainsKey(filename))
-        {
-            ER_HKX = activeView.HavokCollisionBank.HavokContainers[filename];
-        }
-        else
-        {
-            return false;
-        }
-
-        return true;
     }
 
     /// <summary>

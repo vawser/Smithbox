@@ -24,6 +24,11 @@ public class GPUBufferAllocator
     private ResourceLayout _bufferLayout;
     private ResourceSet _bufferResourceSet;
 
+    // Per-object resource set over the backing buffer, for renderables that read from it in their own layout.
+    // Recreated when the backing buffer is replaced, so draws must ask for it each frame rather than keep it.
+    private ResourceSet _objectResourceSet;
+    private ResourceLayout _objectResourceLayout;
+
     private readonly VkAccessFlags2 _dstAccessFlags = VkAccessFlags2.None;
 
     private DeviceBuffer _stagingBuffer;
@@ -95,20 +100,79 @@ public class GPUBufferAllocator
         _allocator = new FreeListAllocator(size);
     }
 
-    private void CreateResourceSet()
+    /// <summary>
+    ///     Makes the resource set over the current backing buffer and returns the one it replaces, which the caller
+    ///     disposes once no frame uses it. The layout is made once and kept: pipelines are built with it, and are
+    ///     cached for the life of the program.
+    /// </summary>
+    private ResourceSet CreateResourceSet()
     {
         if (!_hasResourceSet)
-            return;
+            return null;
 
-        // Dispose old resource set if it exists
-        _bufferResourceSet?.Dispose();
-        _bufferLayout?.Dispose();
+        if (_bufferLayout == null)
+        {
+            ResourceLayoutDescription layoutdesc = new(
+                new ResourceLayoutElementDescription(_name, VkDescriptorType.StorageBuffer, _stages));
+            _bufferLayout = SceneRenderer.Factory.CreateResourceLayout(layoutdesc);
+        }
 
-        ResourceLayoutDescription layoutdesc = new(
-            new ResourceLayoutElementDescription(_name, VkDescriptorType.StorageBuffer, _stages));
-        _bufferLayout = SceneRenderer.Factory.CreateResourceLayout(layoutdesc);
+        ResourceSet old = _bufferResourceSet;
         ResourceSetDescription rsdesc = new(_bufferLayout, _backingBuffer);
         _bufferResourceSet = SceneRenderer.Factory.CreateResourceSet(rsdesc);
+        return old;
+    }
+
+    // Set by a resize: the contents of the replaced buffer still have to be copied into the new one, and the
+    // replaced objects disposed once that copy has run
+    private DeviceBuffer _migrateFrom;
+    private uint _migrateSize;
+    private readonly List<IDisposable> _migrateDisposals = new();
+
+    /// <summary>
+    ///     Copies the replaced buffer's contents into the current one, if a resize left that to do. Every write to the
+    ///     backing buffer calls this first on the command list it writes with, so the copy comes before any write to the
+    ///     new buffer. Were it to come after, it would overwrite those writes with older data.
+    /// </summary>
+    private void MigrateIfPending(CommandList cl)
+    {
+        DeviceBuffer from;
+        uint size;
+        DeviceBuffer to;
+        IDisposable[] disposals;
+
+        lock (_allocationLock)
+        {
+            if (_migrateFrom == null)
+            {
+                return;
+            }
+
+            from = _migrateFrom;
+            size = _migrateSize;
+            to = _backingBuffer;
+            disposals = _migrateDisposals.ToArray();
+            _migrateFrom = null;
+            _migrateDisposals.Clear();
+        }
+
+        cl.CopyBuffer(from, 0, to, 0, size);
+
+        // Later writes are transfers too, so they wait on the copy as well as the shaders do
+        cl.BufferBarrier(to,
+            VkPipelineStageFlags2.Transfer,
+            VkAccessFlags2.TransferWrite,
+            VkPipelineStageFlags2.AllGraphics | VkPipelineStageFlags2.Transfer,
+            _dstAccessFlags | VkAccessFlags2.TransferWrite | VkAccessFlags2.TransferRead);
+
+        // Dispose the replaced objects after the copy has been submitted
+        SceneRenderer.AddBackgroundUploadTask((d, c) =>
+        {
+            foreach (IDisposable obj in disposals)
+            {
+                obj.Dispose();
+            }
+        });
     }
 
     private void ResizeBuffer(uint newSize)
@@ -135,26 +199,30 @@ public class GPUBufferAllocator
                 VmaAllocationCreateFlags.Mapped);
             _stagingBuffer = SceneRenderer.Factory.CreateBuffer(desc);
 
-            // Copy old data to new buffers
-            SceneRenderer.AddBackgroundUploadTask((device, cl) =>
+            // Sets over the old buffer go with it; the next draw makes one over the new buffer
+            if (_objectResourceSet != null)
             {
-                // Copy backing buffer contents
-                cl.CopyBuffer(oldBackingBuffer, 0, _backingBuffer, 0, oldSize);
+                _migrateDisposals.Add(_objectResourceSet);
+                _objectResourceSet = null;
+            }
 
-                // Add barrier to ensure copy completes
-                cl.BufferBarrier(_backingBuffer,
-                    VkPipelineStageFlags2.Transfer,
-                    VkAccessFlags2.TransferWrite,
-                    VkPipelineStageFlags2.AllGraphics,
-                    _dstAccessFlags);
+            if (_migrateFrom == null)
+            {
+                // The old buffer holds the data, so it is copied into the new one
+                _migrateFrom = oldBackingBuffer;
+                _migrateSize = oldSize;
+            }
+            else
+            {
+                // Grown again before the last copy ran, so nothing was written to the buffer being replaced:
+                // the data is still all in the one the pending copy reads from, which is now copied here instead
+                _migrateDisposals.Add(oldBackingBuffer);
+            }
 
-                // Dispose old buffers after copy completes
-                SceneRenderer.AddBackgroundUploadTask((d, c) =>
-                {
-                    oldBackingBuffer.Dispose();
-                    oldStagingBuffer.Dispose();
-                });
-            });
+            _migrateDisposals.Add(oldStagingBuffer);
+
+            // Runs the copy if no write to the new buffer has already done so
+            SceneRenderer.AddBackgroundUploadTask((device, cl) => MigrateIfPending(cl));
 
             // Update allocator
             var oldAllocator = _allocator;
@@ -173,9 +241,10 @@ public class GPUBufferAllocator
             BufferSize = newSize;
 
             // Recreate resource set if needed
-            if (_hasResourceSet)
+            ResourceSet oldResourceSet = CreateResourceSet();
+            if (oldResourceSet != null)
             {
-                CreateResourceSet();
+                _migrateDisposals.Add(oldResourceSet);
             }
         }
     }
@@ -197,7 +266,6 @@ public class GPUBufferAllocator
 
                 // Log the resize
                 // Console.WriteLine($"GPUBufferAllocator: Resizing buffer from {BufferSize / (1024.0 * 1024.0):F2}MB to {growthSize / (1024.0 * 1024.0):F2}MB");
-
                 // Resize and try again
                 ResizeBuffer(growthSize);
 
@@ -256,6 +324,26 @@ public class GPUBufferAllocator
         return _bufferLayout;
     }
 
+    /// <summary>
+    ///     A resource set over the current backing buffer in the given layout. The buffer is replaced when it grows,
+    ///     which also replaces this set, so it is looked up for each draw rather than stored.
+    /// </summary>
+    public ResourceSet GetObjectResourceSet(ResourceLayout layout)
+    {
+        lock (_allocationLock)
+        {
+            if (_objectResourceSet == null || _objectResourceLayout != layout)
+            {
+                _objectResourceSet?.Dispose();
+                _objectResourceSet = SceneRenderer.Factory.CreateResourceSet(
+                    new ResourceSetDescription(layout, _backingBuffer));
+                _objectResourceLayout = layout;
+            }
+
+            return _objectResourceSet;
+        }
+    }
+
     public void BindAsResourceSet(CommandList cl, uint slot)
     {
         if (_bufferResourceSet != null)
@@ -305,6 +393,7 @@ public class GPUBufferAllocator
         {
             SceneRenderer.AddBackgroundUploadTask((device, cl) =>
             {
+                _allocator.MigrateIfPending(cl);
                 device.UpdateBuffer(_allocator._stagingBuffer, AllocationStart, data);
                 cl.CopyBuffer(_allocator._stagingBuffer, AllocationStart, _allocator._backingBuffer,
                     AllocationStart, AllocationSize);
@@ -317,6 +406,7 @@ public class GPUBufferAllocator
 
         public void FillBuffer<T>(CommandList cl, T[] data) where T : struct
         {
+            _allocator.MigrateIfPending(cl);
             cl.UpdateBuffer(_allocator._backingBuffer, AllocationStart, data);
         }
 
@@ -324,6 +414,7 @@ public class GPUBufferAllocator
         {
             SceneRenderer.AddBackgroundUploadTask((device, cl) =>
             {
+                _allocator.MigrateIfPending(cl);
                 cl.UpdateBuffer(_allocator._backingBuffer, AllocationStart, ref data);
                 if (completionHandler != null)
                 {
@@ -334,6 +425,7 @@ public class GPUBufferAllocator
 
         public void FillBuffer<T>(GraphicsDevice d, CommandList cl, ref T data) where T : struct
         {
+            _allocator.MigrateIfPending(cl);
             d.UpdateBuffer(_allocator._stagingBuffer, AllocationStart, data);
             cl.CopyBuffer(_allocator._stagingBuffer,
                 AllocationStart,
@@ -349,6 +441,7 @@ public class GPUBufferAllocator
 
         public void FillBuffer<T>(GraphicsDevice d, CommandList cl, T[] data) where T : struct
         {
+            _allocator.MigrateIfPending(cl);
             d.UpdateBuffer(_allocator._stagingBuffer, AllocationStart, data);
             cl.CopyBuffer(_allocator._stagingBuffer,
                 AllocationStart,
@@ -366,6 +459,7 @@ public class GPUBufferAllocator
         {
             SceneRenderer.AddBackgroundUploadTask((device, cl) =>
             {
+                _allocator.MigrateIfPending(cl);
                 cl.UpdateBuffer(_allocator._backingBuffer, AllocationStart, data, size);
                 completionHandler.Invoke();
             });
@@ -942,25 +1036,48 @@ public class VertexIndexBufferAllocator
         {
             if (!disposedValue)
             {
-                if (_buffer != null)
+                VertexIndexBufferAllocator allocator = _allocator;
+                VertexIndexBuffer buffer = _buffer;
+
+                if (buffer != null)
                 {
-                    _allocator._allocations.Remove(this);
-                    _buffer._handleCount--;
-                    if (_vfilled)
+                    var flush = false;
+
+                    // Handles are disposed on any thread, the finalizer's included, while others are being allocated,
+                    // so the counts are changed under the allocation lock as they are in Allocate. A lost update would
+                    // free a buffer that is still drawn from.
+                    lock (allocator._allocationLock)
                     {
-                        Interlocked.Decrement(ref _buffer._vfillCount);
+                        allocator._allocations.Remove(this);
+                        buffer._handleCount--;
+
+                        if (_vfilled)
+                        {
+                            Interlocked.Decrement(ref buffer._vfillCount);
+                        }
+
+                        if (_ifilled)
+                        {
+                            Interlocked.Decrement(ref buffer._ifillCount);
+                        }
+
+                        if (buffer._handleCount <= 0 && buffer.AllocStatus == VertexIndexBuffer.Status.Resident)
+                        {
+                            buffer._backingVertBuffer.Dispose();
+                            buffer._backingIndexBuffer.Dispose();
+                            allocator._buffers[buffer.BufferIndex] = null;
+                        }
+                        else if (buffer.AllocStatus == VertexIndexBuffer.Status.Staging)
+                        {
+                            flush = true;
+                        }
                     }
 
-                    if (_ifilled)
+                    // A staging buffer is uploaded once all of its handles are filled, so this handle going away
+                    // unfilled may be what the upload was waiting for
+                    if (flush)
                     {
-                        Interlocked.Decrement(ref _buffer._ifillCount);
-                    }
-
-                    if (_buffer._handleCount <= 0 && _buffer.AllocStatus == VertexIndexBuffer.Status.Resident)
-                    {
-                        _buffer._backingVertBuffer.Dispose();
-                        _buffer._backingIndexBuffer.Dispose();
-                        _allocator._buffers[_buffer.BufferIndex] = null;
+                        buffer.FlushIfNeeded();
                     }
 
                     _buffer = null;

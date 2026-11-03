@@ -116,10 +116,7 @@ public class MapHavokPropertyView
             fullName = $"f{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
         }
 
-        // AC6 collision is Havok 2019, so it is held apart from the 2018 collision
-        IRootContainer curCollision = View.HavokCollisionBank.HavokContainers.TryGetValue(fullName, out var erCollision)
-            ? erCollision
-            : View.HavokCollisionBank.GetAC6Container(fullName);
+        IRootContainer curCollision = View.HavokCollisionBank.GetHKLibContainer(fullName);
 
         if (curCollision != null)
         {
@@ -173,10 +170,7 @@ public class MapHavokPropertyView
             fullName = $"o{mapID.Replace("m", "")}_{modelID}";
         }
 
-        // AC6 navmeshes are Havok 2019, so they are held apart from the 2018 navmeshes
-        IRootContainer curNavmesh = View.HavokNavmeshBank.HKX3_Containers.TryGetValue(fullName, out var erNavmesh)
-            ? erNavmesh
-            : View.HavokNavmeshBank.AC6_Containers.GetValueOrDefault(fullName);
+        IRootContainer curNavmesh = View.HavokNavmeshBank.GetContainer(fullName);
 
         if (curNavmesh != null)
         {

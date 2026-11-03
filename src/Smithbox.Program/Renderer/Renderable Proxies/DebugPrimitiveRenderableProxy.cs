@@ -31,7 +31,6 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     private bool _overdraw;
     private bool _pickable = true;
     private bool _translucent;
-    protected ResourceSet? _perObjectResourceSet;
     protected Pipeline? _pickingPipeline;
 
     protected Pipeline? _pipeline;
@@ -379,10 +378,6 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
                     VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment,
                     VkDescriptorBindingFlags.None)));
 
-        _perObjectResourceSet = StaticResourceCache.GetResourceSet(factory, new ResourceSetDescription(
-            mainPerObjectLayout,
-            SceneRenderer.UniformBufferAllocator.BackingBuffer));
-
         // Build default pipeline
         GraphicsPipelineDescription pipelineDescription = new();
 
@@ -445,7 +440,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
 
         // Rest of draw parameters
         meshcomp._indexFormat = _debugPrimitive.Is32Bit ? VkIndexType.Uint32 : VkIndexType.Uint16;
-        meshcomp._objectResourceSet = _perObjectResourceSet;
+        meshcomp._objectBuffer = SceneRenderer.UniformBufferAllocator;
+        meshcomp._objectLayout = mainPerObjectLayout;
         meshcomp._bufferIndex = geombuffer.BufferIndex;
 
         // Instantiate renderable

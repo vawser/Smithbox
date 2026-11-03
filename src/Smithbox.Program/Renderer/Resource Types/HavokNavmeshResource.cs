@@ -51,35 +51,9 @@ public class HavokNavmeshResource : IResource, IDisposable
             Root_HKX2 = (hkRootLevelContainer)des.Deserialize(br);
         }
 
-        // HKLib 2019 - AC6
-        if (curProject.Descriptor.ProjectType is ProjectType.AC6 && !HandleAC6Load(curProject, ctx))
+        if (!HandleHKLibLoad(curProject, bytes, ctx))
         {
             return false;
-        }
-
-        if (curProject.Descriptor.ProjectType is ProjectType.ER 
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
-        {
-            if (curProject.Handler.MapEditor == null)
-                return false;
-
-            var activeView = curProject.Handler.MapEditor.ViewHandler.ActiveView;
-
-            if (activeView == null)
-                return false;
-
-            var filename = Path.GetFileNameWithoutExtension(ctx.FileName);
-
-            if (activeView.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
-            {
-                Root_HKX3 = activeView.HavokNavmeshBank.HKX3_Containers[filename];
-            }
-            else
-            {
-                return false;
-            }
         }
 
         return LoadInternal(al);
@@ -104,31 +78,7 @@ public class HavokNavmeshResource : IResource, IDisposable
                 var des = new PackFileDeserializer();
                 Root_HKX2 = (hkRootLevelContainer)des.Deserialize(new BinaryReaderEx(false, fileData.Value));
             }
-            else if (curProject.Descriptor.ProjectType is ProjectType.ER 
-                or ProjectType.NR
-                or ProjectType.DB_NT
-                or ProjectType.DB)
-            {
-                if (curProject.Handler.MapEditor == null)
-                    return false;
-
-                var activeView = curProject.Handler.MapEditor.ViewHandler.ActiveView;
-
-                if (activeView == null)
-                    return false;
-
-                var filename = Path.GetFileNameWithoutExtension(ctx.FileName);
-
-                if (activeView.HavokNavmeshBank.HKX3_Containers.ContainsKey(filename))
-                {
-                    Root_HKX3 = activeView.HavokNavmeshBank.HKX3_Containers[filename];
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else if (curProject.Descriptor.ProjectType is ProjectType.AC6 && !HandleAC6Load(curProject, ctx))
+            else if (!HandleHKLibLoad(curProject, fileData.Value, ctx))
             {
                 return false;
             }
@@ -143,20 +93,35 @@ public class HavokNavmeshResource : IResource, IDisposable
     }
 
     /// <summary>
-    /// AC6 navmeshes are Havok 2019, read by the HavokNavmeshBank when the map is loaded
+    /// Reads the navmesh of the projects that use HKLib: Havok 2018 for ER, Havok 2019 for AC6.
+    /// Each file holds its own types. Other projects have nothing to read here.
     /// </summary>
-    private bool HandleAC6Load(ProjectEntry curProject, ResourceLoadContext ctx)
+    private bool HandleHKLibLoad(ProjectEntry curProject, Memory<byte> bytes, ResourceLoadContext ctx)
     {
-        var activeView = curProject.Handler.MapEditor?.ViewHandler.ActiveView;
+        try
+        {
+            if (curProject.Descriptor.ProjectType is ProjectType.AC6)
+            {
+                Root_HKX3_2019 = HKLibTagfileReader.Read2019(bytes);
+                return Root_HKX3_2019 != null;
+            }
 
-        if (activeView == null)
+            if (curProject.Descriptor.ProjectType is ProjectType.ER
+                or ProjectType.NR
+                or ProjectType.DB_NT
+                or ProjectType.DB)
+            {
+                Root_HKX3 = HKLibTagfileReader.Read2018(bytes);
+                return Root_HKX3 != null;
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("REND_HavokNavmeshResource_Load_Failed", ctx.FileName), e);
             return false;
+        }
 
-        var filename = Path.GetFileNameWithoutExtension(ctx.FileName);
-
-        Root_HKX3_2019 = activeView.HavokNavmeshBank.AC6_Containers.GetValueOrDefault(filename);
-
-        return Root_HKX3_2019 != null;
+        return true;
     }
 
     private bool LoadInternal(AccessLevel al)
@@ -504,7 +469,7 @@ public class HavokNavmeshResource : IResource, IDisposable
         foreach (NavmeshFace f in faces)
         {
             // Simple formula for indices count for a triangulation of a poly
-            indexCount += (f.NumEdges - 2) * 3;
+            indexCount += Math.Max(f.NumEdges - 2, 0) * 3;
         }
 
         // indexCount already counts each triangle's 3 indices, and every index gets its own vertex
@@ -515,97 +480,105 @@ public class HavokNavmeshResource : IResource, IDisposable
         GeomBuffer =
             SceneRenderer.GeometryBufferAllocator.Allocate(
                 vbuffersize, buffersize, (int)NavmeshLayout.SizeInBytes, 4);
-        var MeshIndices = new Span<int>(GeomBuffer.MapIBuffer().ToPointer(), IndexCount);
-        var MeshVertices =
-            new Span<NavmeshLayout>(GeomBuffer.MapVBuffer().ToPointer(), VertexCount);
-        PickingVertices = new Vector3[VertexCount];
-        PickingIndices = new int[IndexCount];
 
-        ResourceFactory factory = SceneRenderer.Factory;
-
-        var idx = 0;
-
-        var maxcluster = 0;
-
-        for (var id = 0; id < faces.Count; id++)
+        // The allocator only uploads a buffer once everything allocated in it is filled, so this is always marked
+        // filled, even if reading fails, or nothing else in the buffer would be drawn
+        try
         {
-            if (faces[id].ClusterIndex > maxcluster)
-            {
-                maxcluster = faces[id].ClusterIndex;
-            }
+            var MeshIndices = new Span<int>(GeomBuffer.MapIBuffer().ToPointer(), IndexCount);
+            var MeshVertices =
+                new Span<NavmeshLayout>(GeomBuffer.MapVBuffer().ToPointer(), VertexCount);
+            PickingVertices = new Vector3[VertexCount];
+            PickingIndices = new int[IndexCount];
 
-            var sedge = faces[id].StartEdgeIndex;
-            var ecount = faces[id].NumEdges;
+            ResourceFactory factory = SceneRenderer.Factory;
 
-            // Use simple algorithm for convex polygon trianglization
-            for (var t = 0; t < ecount - 2; t++)
+            var idx = 0;
+
+            var maxcluster = 0;
+
+            for (var id = 0; id < faces.Count; id++)
             {
-                if (ecount > 3)
+                if (faces[id].ClusterIndex > maxcluster)
                 {
-                    //ecount = ecount;
+                    maxcluster = faces[id].ClusterIndex;
                 }
 
-                var end = t + 2 >= ecount ? sedge : sedge + t + 2;
-                Vector4 vert1 = verts[edgeVertices[sedge]];
-                Vector4 vert2 = verts[edgeVertices[sedge + t + 1]];
-                Vector4 vert3 = verts[edgeVertices[end]];
+                var sedge = faces[id].StartEdgeIndex;
+                var ecount = faces[id].NumEdges;
 
-                MeshVertices[idx] = new NavmeshLayout();
-                MeshVertices[idx + 1] = new NavmeshLayout();
-                MeshVertices[idx + 2] = new NavmeshLayout();
+                // Use simple algorithm for convex polygon trianglization
+                for (var t = 0; t < ecount - 2; t++)
+                {
+                    if (ecount > 3)
+                    {
+                        //ecount = ecount;
+                    }
 
-                MeshVertices[idx].Position = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                MeshVertices[idx + 1].Position = new Vector3(vert2.X, vert2.Y, vert2.Z);
-                MeshVertices[idx + 2].Position = new Vector3(vert3.X, vert3.Y, vert3.Z);
-                PickingVertices[idx] = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                PickingVertices[idx + 1] = new Vector3(vert2.X, vert2.Y, vert2.Z);
-                PickingVertices[idx + 2] = new Vector3(vert3.X, vert3.Y, vert3.Z);
-                Vector3 n = Vector3.Normalize(Vector3.Cross(
-                    MeshVertices[idx + 2].Position - MeshVertices[idx].Position,
-                    MeshVertices[idx + 1].Position - MeshVertices[idx].Position));
-                MeshVertices[idx].Normal[0] = (sbyte)(n.X * 127.0f);
-                MeshVertices[idx].Normal[1] = (sbyte)(n.Y * 127.0f);
-                MeshVertices[idx].Normal[2] = (sbyte)(n.Z * 127.0f);
-                MeshVertices[idx + 1].Normal[0] = (sbyte)(n.X * 127.0f);
-                MeshVertices[idx + 1].Normal[1] = (sbyte)(n.Y * 127.0f);
-                MeshVertices[idx + 1].Normal[2] = (sbyte)(n.Z * 127.0f);
-                MeshVertices[idx + 2].Normal[0] = (sbyte)(n.X * 127.0f);
-                MeshVertices[idx + 2].Normal[1] = (sbyte)(n.Y * 127.0f);
-                MeshVertices[idx + 2].Normal[2] = (sbyte)(n.Z * 127.0f);
+                    var end = t + 2 >= ecount ? sedge : sedge + t + 2;
+                    Vector4 vert1 = verts[edgeVertices[sedge]];
+                    Vector4 vert2 = verts[edgeVertices[sedge + t + 1]];
+                    Vector4 vert3 = verts[edgeVertices[end]];
 
-                MeshVertices[idx].Color[0] = 157;
-                MeshVertices[idx].Color[1] = 53;
-                MeshVertices[idx].Color[2] = 255;
-                MeshVertices[idx].Color[3] = 255;
-                MeshVertices[idx + 1].Color[0] = 157;
-                MeshVertices[idx + 1].Color[1] = 53;
-                MeshVertices[idx + 1].Color[2] = 255;
-                MeshVertices[idx + 1].Color[3] = 255;
-                MeshVertices[idx + 2].Color[0] = 157;
-                MeshVertices[idx + 2].Color[1] = 53;
-                MeshVertices[idx + 2].Color[2] = 255;
-                MeshVertices[idx + 2].Color[3] = 255;
+                    MeshVertices[idx] = new NavmeshLayout();
+                    MeshVertices[idx + 1] = new NavmeshLayout();
+                    MeshVertices[idx + 2] = new NavmeshLayout();
 
-                MeshVertices[idx].Barycentric[0] = 0;
-                MeshVertices[idx].Barycentric[1] = 0;
-                MeshVertices[idx + 1].Barycentric[0] = 1;
-                MeshVertices[idx + 1].Barycentric[1] = 0;
-                MeshVertices[idx + 2].Barycentric[0] = 0;
-                MeshVertices[idx + 2].Barycentric[1] = 1;
+                    MeshVertices[idx].Position = new Vector3(vert1.X, vert1.Y, vert1.Z);
+                    MeshVertices[idx + 1].Position = new Vector3(vert2.X, vert2.Y, vert2.Z);
+                    MeshVertices[idx + 2].Position = new Vector3(vert3.X, vert3.Y, vert3.Z);
+                    PickingVertices[idx] = new Vector3(vert1.X, vert1.Y, vert1.Z);
+                    PickingVertices[idx + 1] = new Vector3(vert2.X, vert2.Y, vert2.Z);
+                    PickingVertices[idx + 2] = new Vector3(vert3.X, vert3.Y, vert3.Z);
+                    Vector3 n = Vector3.Normalize(Vector3.Cross(
+                        MeshVertices[idx + 2].Position - MeshVertices[idx].Position,
+                        MeshVertices[idx + 1].Position - MeshVertices[idx].Position));
+                    MeshVertices[idx].Normal[0] = (sbyte)(n.X * 127.0f);
+                    MeshVertices[idx].Normal[1] = (sbyte)(n.Y * 127.0f);
+                    MeshVertices[idx].Normal[2] = (sbyte)(n.Z * 127.0f);
+                    MeshVertices[idx + 1].Normal[0] = (sbyte)(n.X * 127.0f);
+                    MeshVertices[idx + 1].Normal[1] = (sbyte)(n.Y * 127.0f);
+                    MeshVertices[idx + 1].Normal[2] = (sbyte)(n.Z * 127.0f);
+                    MeshVertices[idx + 2].Normal[0] = (sbyte)(n.X * 127.0f);
+                    MeshVertices[idx + 2].Normal[1] = (sbyte)(n.Y * 127.0f);
+                    MeshVertices[idx + 2].Normal[2] = (sbyte)(n.Z * 127.0f);
 
-                MeshIndices[idx] = idx;
-                MeshIndices[idx + 1] = idx + 1;
-                MeshIndices[idx + 2] = idx + 2;
-                PickingIndices[idx] = idx;
-                PickingIndices[idx + 1] = idx + 1;
-                PickingIndices[idx + 2] = idx + 2;
+                    MeshVertices[idx].Color[0] = 157;
+                    MeshVertices[idx].Color[1] = 53;
+                    MeshVertices[idx].Color[2] = 255;
+                    MeshVertices[idx].Color[3] = 255;
+                    MeshVertices[idx + 1].Color[0] = 157;
+                    MeshVertices[idx + 1].Color[1] = 53;
+                    MeshVertices[idx + 1].Color[2] = 255;
+                    MeshVertices[idx + 1].Color[3] = 255;
+                    MeshVertices[idx + 2].Color[0] = 157;
+                    MeshVertices[idx + 2].Color[1] = 53;
+                    MeshVertices[idx + 2].Color[2] = 255;
+                    MeshVertices[idx + 2].Color[3] = 255;
 
-                idx += 3;
+                    MeshVertices[idx].Barycentric[0] = 0;
+                    MeshVertices[idx].Barycentric[1] = 0;
+                    MeshVertices[idx + 1].Barycentric[0] = 1;
+                    MeshVertices[idx + 1].Barycentric[1] = 0;
+                    MeshVertices[idx + 2].Barycentric[0] = 0;
+                    MeshVertices[idx + 2].Barycentric[1] = 1;
+
+                    MeshIndices[idx] = idx;
+                    MeshIndices[idx + 1] = idx + 1;
+                    MeshIndices[idx + 2] = idx + 2;
+                    PickingIndices[idx] = idx;
+                    PickingIndices[idx + 1] = idx + 1;
+                    PickingIndices[idx + 2] = idx + 2;
+
+                    idx += 3;
+                }
             }
         }
-
-        GeomBuffer.UnmapIBuffer();
-        GeomBuffer.UnmapVBuffer();
+        finally
+        {
+            GeomBuffer.UnmapIBuffer();
+            GeomBuffer.UnmapVBuffer();
+        }
 
         if (VertexCount > 0)
         {
@@ -658,50 +631,58 @@ public class HavokNavmeshResource : IResource, IDisposable
         var vbuffersize = (uint)GraphVertexCount * lsize;
 
         CostGraphGeomBuffer = SceneRenderer.GeometryBufferAllocator.Allocate(vbuffersize, buffersize, (int)lsize, 4);
-        var MeshIndices = new Span<int>(CostGraphGeomBuffer.MapIBuffer().ToPointer(), GraphIndexCount);
-        var MeshVertices =
-            new Span<PositionColor>(CostGraphGeomBuffer.MapVBuffer().ToPointer(), GraphVertexCount);
         var vertPos = new Vector3[indexCount * 2];
 
-        var idx = 0;
-
-        for (var id = 0; id < nodes.Count; id++)
+        // The allocator only uploads a buffer once everything allocated in it is filled, so this is always marked
+        // filled, even if reading fails, or nothing else in the buffer would be drawn
+        try
         {
-            var sedge = nodes[id].StartEdgeIndex;
-            var ecount = nodes[id].NumEdges;
+            var MeshIndices = new Span<int>(CostGraphGeomBuffer.MapIBuffer().ToPointer(), GraphIndexCount);
+            var MeshVertices =
+                new Span<PositionColor>(CostGraphGeomBuffer.MapVBuffer().ToPointer(), GraphVertexCount);
 
-            for (var e = 0; e < ecount; e++)
+            var idx = 0;
+
+            for (var id = 0; id < nodes.Count; id++)
             {
-                Vector4 vert1 = positions[id];
-                Vector4 vert2 =
-                    positions[edgeTargets[nodes[id].StartEdgeIndex + e]];
+                var sedge = nodes[id].StartEdgeIndex;
+                var ecount = nodes[id].NumEdges;
 
-                MeshVertices[idx] = new PositionColor();
-                MeshVertices[idx + 1] = new PositionColor();
+                for (var e = 0; e < ecount; e++)
+                {
+                    Vector4 vert1 = positions[id];
+                    Vector4 vert2 =
+                        positions[edgeTargets[nodes[id].StartEdgeIndex + e]];
 
-                MeshVertices[idx].Position = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                MeshVertices[idx + 1].Position = new Vector3(vert2.X, vert2.Y, vert2.Z);
-                vertPos[idx] = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                vertPos[idx + 1] = new Vector3(vert2.X, vert2.Y, vert2.Z);
+                    MeshVertices[idx] = new PositionColor();
+                    MeshVertices[idx + 1] = new PositionColor();
 
-                MeshVertices[idx].Color[0] = 235;
-                MeshVertices[idx].Color[1] = 200;
-                MeshVertices[idx].Color[2] = 255;
-                MeshVertices[idx].Color[3] = 255;
-                MeshVertices[idx + 1].Color[0] = 235;
-                MeshVertices[idx + 1].Color[1] = 200;
-                MeshVertices[idx + 1].Color[2] = 255;
-                MeshVertices[idx + 1].Color[3] = 255;
+                    MeshVertices[idx].Position = new Vector3(vert1.X, vert1.Y, vert1.Z);
+                    MeshVertices[idx + 1].Position = new Vector3(vert2.X, vert2.Y, vert2.Z);
+                    vertPos[idx] = new Vector3(vert1.X, vert1.Y, vert1.Z);
+                    vertPos[idx + 1] = new Vector3(vert2.X, vert2.Y, vert2.Z);
 
-                MeshIndices[idx] = idx;
-                MeshIndices[idx + 1] = idx + 1;
+                    MeshVertices[idx].Color[0] = 235;
+                    MeshVertices[idx].Color[1] = 200;
+                    MeshVertices[idx].Color[2] = 255;
+                    MeshVertices[idx].Color[3] = 255;
+                    MeshVertices[idx + 1].Color[0] = 235;
+                    MeshVertices[idx + 1].Color[1] = 200;
+                    MeshVertices[idx + 1].Color[2] = 255;
+                    MeshVertices[idx + 1].Color[3] = 255;
 
-                idx += 2;
+                    MeshIndices[idx] = idx;
+                    MeshIndices[idx + 1] = idx + 1;
+
+                    idx += 2;
+                }
             }
         }
-
-        CostGraphGeomBuffer.UnmapIBuffer();
-        CostGraphGeomBuffer.UnmapVBuffer();
+        finally
+        {
+            CostGraphGeomBuffer.UnmapIBuffer();
+            CostGraphGeomBuffer.UnmapVBuffer();
+        }
 
         if (GraphVertexCount > 0)
         {

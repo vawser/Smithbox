@@ -1,4 +1,5 @@
-﻿using HKLib.hk2018;
+﻿using Havok.Shared;
+using HKLib.hk2018;
 using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
 using StudioCore.Renderer;
@@ -20,6 +21,16 @@ public class HavokNavmeshBank
     /// </summary>
     public Dictionary<string, HKLib.hk2019.hkRootLevelContainer> AC6_Containers = new();
 
+    /// <summary>
+    /// The loaded ER, NR or AC6 maps whose navmeshes haven't been read yet
+    /// </summary>
+    private HashSet<string> UnreadMaps = new();
+
+    /// <summary>
+    /// The navmeshes read for each map, so they can be released when it is unloaded
+    /// </summary>
+    private Dictionary<string, List<string>> MapNavmeshes = new();
+
     public HavokNavmeshBank(ProjectEntry project)
     {
         Project = project;
@@ -40,20 +51,50 @@ public class HavokNavmeshBank
         return false;
     }
 
+    /// <summary>
+    /// The viewport reads its own navmeshes, so the navmeshes of a map are only read here when one is first asked for.
+    /// </summary>
     public void OnLoadMap(string mapId)
     {
-        using var __scope = Profiler.TracyZoneAuto();
-
         if (Project.Descriptor.ProjectType is ProjectType.ER
             or ProjectType.AC6
             or ProjectType.NR)
         {
-            LoadHavokNavmeshModels(mapId);
+            UnreadMaps.Add(mapId);
         }
+    }
+
+    /// <summary>
+    /// Gets an ER, NR or AC6 navmesh, e.g. n30_00_00_00_000100, reading the navmeshes of its map the first time
+    /// one of them is asked for. Null if the navmesh isn't in a loaded map.
+    /// </summary>
+    public IRootContainer GetContainer(string name)
+    {
+        // Navmeshes are named after their map, e.g. n30_00_00_00_000100 is in m30_00_00_00
+        foreach (var mapId in UnreadMaps.Where(m => name.AsSpan(1).StartsWith(m.AsSpan(1))).ToList())
+        {
+            UnreadMaps.Remove(mapId);
+            ReadHavokNavmeshModels(mapId);
+        }
+
+        return HKX3_Containers.TryGetValue(name, out var container)
+            ? container
+            : AC6_Containers.GetValueOrDefault(name);
     }
 
     public void OnUnloadMap(string mapId)
     {
+        UnreadMaps.Remove(mapId);
+
+        if (MapNavmeshes.Remove(mapId, out var navmeshNames))
+        {
+            foreach (var name in navmeshNames)
+            {
+                HKX3_Containers.Remove(name);
+                AC6_Containers.Remove(name);
+            }
+        }
+
         if (Project.Descriptor.ProjectType is ProjectType.ER
             or ProjectType.AC6
             or ProjectType.NR)
@@ -71,8 +112,10 @@ public class HavokNavmeshBank
         }
     }
 
-    private void LoadHavokNavmeshModels(string mapId)
+    private void ReadHavokNavmeshModels(string mapId)
     {
+        using var __scope = Profiler.TracyZoneAuto();
+
         var binderEntry = Project.Locator.FileDictionary.Entries.FirstOrDefault(
             e => e.Filename == mapId &&
             e.Extension == "nvmhktbnd");
@@ -94,51 +137,44 @@ public class HavokNavmeshBank
                 if (binderData == null)
                     return;
 
-                var binder = new BND4Reader(binderData.Value);
+                using var binder = new BND4Reader(binderData.Value);
 
-                // The binder is read on this thread, then the files are read in parallel as they don't depend on each other
+                // The binder reads its files through one position, so they are taken out here and then read in
+                // parallel, as they don't depend on each other. Each file holds its own types.
                 var files = binder.Files
-                    .Select(file => (Name: Path.GetFileNameWithoutExtension(file.Name), Bytes: binder.ReadFile(file).ToArray()))
+                    .Select(file => (Name: Path.GetFileNameWithoutExtension(file.Name), Bytes: binder.ReadFile(file)))
                     .ToList();
 
-                var containers = new object[files.Count];
+                var isAC6 = Project.Descriptor.ProjectType is ProjectType.AC6;
+                var containers = new IRootContainer[files.Count];
 
                 Parallel.For(0, files.Count, i =>
                 {
-                    var name = files[i].Name;
-
                     try
                     {
-                        using (MemoryStream memoryStream = new MemoryStream(files[i].Bytes))
-                        {
-                            try
-                            {
-                                containers[i] = ReadNavmeshFile(memoryStream);
-                            }
-                            catch (InvalidDataException ex)
-                            {
-                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA_HKX", name), ex);
-                            }
-                        }
+                        containers[i] = isAC6
+                            ? HKLibTagfileReader.Read2019(files[i].Bytes)
+                            : HKLibTagfileReader.Read2018(files[i].Bytes);
                     }
                     catch (Exception ex)
                     {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_NVA_HKX", name), ex);
+                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA_HKX", files[i].Name), ex);
                     }
                 });
 
-                // Added in binder order on this thread, as the containers are read elsewhere without a lock
+                var navmeshNames = MapNavmeshes.TryGetValue(mapId, out var names) ? names : MapNavmeshes[mapId] = new();
+
                 for (int i = 0; i < files.Count; i++)
                 {
-                    switch (containers[i])
+                    var added = containers[i] switch
                     {
-                        case HKLib.hk2019.hkRootLevelContainer ac6Container:
-                            AC6_Containers.TryAdd(files[i].Name, ac6Container);
-                            break;
-                        case hkRootLevelContainer container:
-                            HKX3_Containers.TryAdd(files[i].Name, container);
-                            break;
-                    }
+                        HKLib.hk2019.hkRootLevelContainer ac6Container => AC6_Containers.TryAdd(files[i].Name, ac6Container),
+                        hkRootLevelContainer container => HKX3_Containers.TryAdd(files[i].Name, container),
+                        _ => false
+                    };
+
+                    if (added)
+                        navmeshNames.Add(files[i].Name);
                 }
             }
             catch (Exception e)
@@ -150,19 +186,6 @@ public class HavokNavmeshBank
         {
             Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_NVA_HKXBND", binderEntry.Path));
         }
-    }
-
-    /// <summary>
-    /// Reads a navmesh file of the binder, with the HKLib version the project uses. Each file holds its own types.
-    /// </summary>
-    private object ReadNavmeshFile(Stream stream)
-    {
-        if (Project.Descriptor.ProjectType is ProjectType.AC6)
-        {
-            return (HKLib.hk2019.hkRootLevelContainer)new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer().Read(stream);
-        }
-
-        return (hkRootLevelContainer)new HavokBinarySerializer().Read(stream);
     }
 
     /// <summary>

@@ -234,6 +234,24 @@ public static class SceneRenderer
         _asyncTransfersPendingQueue.Enqueue((dest, source, dstAccessFlags, onFinished));
     }
 
+    private static int _failedWorkItemsLogged;
+
+    private static void RunWorkItem(Action<GraphicsDevice, CommandList> action, CommandList cl)
+    {
+        try
+        {
+            action?.Invoke(Device, cl);
+        }
+        catch (Exception e)
+        {
+            // Only the first few are logged, as a task that fails every frame would flood the log
+            if (_failedWorkItemsLogged++ < 10)
+            {
+                Smithbox.LogError(typeof(SceneRenderer), $"Background render task failed: {action?.Method.DeclaringType?.FullName}.{action?.Method.Name}", e);
+            }
+        }
+    }
+
     public static Fence Frame(CommandList drawCommandList, bool backgroundOnly)
     {
         var sw = Stopwatch.StartNew();
@@ -268,9 +286,11 @@ public static class SceneRenderer
 
         var workitems = work.Count();
         Profiler.___tracy_c_zone_context ctx4 = Profiler.TracyCZoneN(1, $@"Perform {workitems} background work items");
+        // The queue has already been cleared, so a task that throws must not stop the rest of it running,
+        // or the uploads and descriptor updates after it are lost
         while (work.Count() > 0)
         {
-            work.Dequeue().Invoke(Device, mainCommandList);
+            RunWorkItem(work.Dequeue(), mainCommandList);
             //work.Dequeue().Invoke(Device, drawCommandList);
         }
 
@@ -294,7 +314,7 @@ public static class SceneRenderer
         // but we will process a minimum of 500 items per frame to ensure forward progress when loading.
         while (LowPriorityBackgroundUploadQueue.Count() > 0 && (workdone < 500 || sw.ElapsedMilliseconds <= 12))
         {
-            LowPriorityBackgroundUploadQueue.Dequeue()?.Invoke(Device, mainCommandList);
+            RunWorkItem(LowPriorityBackgroundUploadQueue.Dequeue(), mainCommandList);
             workdone++;
         }
 
@@ -714,14 +734,15 @@ public static class SceneRenderer
                 throw new Exception(LOC.Get("REND_SceneRenderer_Invalid_Buffer_Index"));
             }
 
+            ResourceSet objectRS = drawparams._objectBuffer.GetObjectResourceSet(drawparams._objectLayout);
+
             _indirectStagingBuffer[_indirectDrawCount[_stagingSet]] = drawparams._indirectArgs;
             _indirectDrawCount[_stagingSet]++;
 
             // Determine if we need a new batch
             if (_batchCount[_stagingSet] == 0 || _startNewBatch ||
                 _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet] - 1]._pipeline != pipeline ||
-                _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet] - 1]._objectRS !=
-                drawparams._objectResourceSet ||
+                _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet] - 1]._objectRS != objectRS ||
                 _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet] - 1]._indexFormat !=
                 drawparams._indexFormat ||
                 _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet] - 1]._bufferIndex !=
@@ -741,8 +762,7 @@ public static class SceneRenderer
                 _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet]]._bufferIndex =
                     drawparams._bufferIndex;
                 _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet]]._pipeline = pipeline;
-                _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet]]._objectRS =
-                    drawparams._objectResourceSet;
+                _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet]]._objectRS = objectRS;
                 _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet]]._indexFormat =
                     drawparams._indexFormat;
                 _batches[(MAX_BATCH * _stagingSet) + _batchCount[_stagingSet]]._batchStart =
