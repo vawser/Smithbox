@@ -16,7 +16,7 @@ Use C# when writing temporary tools.
 Remember to escape characters when using regex with bash or in the shell.
 
 # Verification
-Do not try to verify changes by launching the program. Pass to the user and tell them what to check for. If additional information is needed during this step, include tempoary changes to print additional diagnosics to a log that the user can pass back.
+Do not try to verify changes by launching the program. Pass to the user and tell them what to check for. If additional information is needed during this step, include temporary changes to print additional diagnostics to a log that the user can pass back.
 
 # Process
 If a decision is needed, ask one decision at a time, with 2 to 4 concrete options, one marked recommended, a short rationale each. Use the structured-choice tool if one is available; otherwise ask in one short message.
