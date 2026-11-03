@@ -75,4 +75,7 @@ public unsafe struct SceneParam
 
     /// <summary>Scales the volumes' light, which is in the game's units, to the viewport's</summary>
     public float IrradianceVolumeExposure;
+
+    /// <summary>1: scale the environment map's reflections by the volumes' light</summary>
+    public uint IrradianceVolumeFlags;
 }

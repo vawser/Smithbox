@@ -1260,6 +1260,14 @@ public class CFG
     public bool Viewport_GI_Auto_Exposure = true;
     public float Viewport_GI_Intensity = 1.0f;
 
+    // Blending towards a second bake, as the game does between times of day; its textures load with the map
+    public bool Viewport_GI_Bake_Blend = false;
+    public int Viewport_GI_Blend_Bake = 1;
+    public float Viewport_GI_Blend_Ratio = 0.5f;
+
+    // Whether the environment map's reflections are scaled by the volumes' light, as the game does
+    public bool Viewport_GI_Normalize_Reflections = true;
+
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
 

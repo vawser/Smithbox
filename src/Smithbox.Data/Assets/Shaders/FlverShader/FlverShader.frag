@@ -138,6 +138,7 @@ struct sceneParams
 	uint irradianceVolumeStart;
 	uint irradianceVolumeCount;
 	float irradianceVolumeExposure; // scales the volumes' light to the viewport's
+	uint irradianceVolumeFlags;     // 1: scale reflections by the volumes' light
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -172,11 +173,19 @@ layout(set = 4, binding = 0, std140) buffer materials
 // starting at entry sceneparam.irradianceVolumeStart.
 struct irradianceVolumeData
 {
+	vec4 boundsMin;         // xyz: world bounds of the box, tested first
+	vec4 boundsMax;
 	mat4 worldToLocal;      // world to the volume's box, -1 to 1 on each axis
 	vec4 extentsFade;       // xyz: half the box size in metres, w: 1 / fade distance
 	vec4 voxelCountsScale;  // xyz: voxel counts, w: diffuse scale
-	uvec4 textures;         // X, Y, Z, W in globalTexturesVolume
-	vec4 info;              // x: volume ID, y: bake, z: priority
+	uvec4 bake0;            // X, Y, Z, W in globalTexturesVolume
+	uvec4 bake1;            // the same for the bake blended towards
+	vec4 shLuminance0;      // the IVINFO of each bake, its average light
+	vec4 shLuminance1;
+	vec4 info;              // x: volume ID, y: bake, z: bake blended towards, w: how far towards it
+	vec4 params;            // x: reflection scale
+	vec4 reserved0;
+	vec4 reserved1;
 };
 
 layout(set = 4, binding = 0, std140) buffer irradianceVolumes
@@ -780,16 +789,51 @@ float EvaluateSHChannel(float L0, vec3 L1, vec3 N)
 	return max(L0 * (a + (1.0 - a) * (p + 1.0) * pow(q, p)), 0.0);
 }
 
-// The light arriving at a point from the volumes around it, and how much of it is covered by them.
-// Volumes are in drawing order, coarse first, and each fades in over the ones before it.
-vec3 VolumeIrradiance(vec3 P, vec3 N, out float coverage)
+// The light of one bake of a volume at uvw, and how much its reflections are scaled by, as the game's
+// GXEnvMapRegion pass does: the luminance of the light here, from the cheap linear evaluation, over the volume's
+// average from its IVINFO (none if the IVINFO's L0 is 0 or less)
+vec3 SampleVolumeBake(uvec4 tex, vec3 uvw, vec3 N, vec4 shLuminance, out float reflectionScale)
+{
+	// The L1 bands are stored at twice their value
+	vec3 X = DecodeVolumeTexel(SampleVolume(tex.x, uvw)) * 0.5;
+	vec3 Y = DecodeVolumeTexel(SampleVolume(tex.y, uvw)) * 0.5;
+	vec3 Z = DecodeVolumeTexel(SampleVolume(tex.z, uvw)) * 0.5;
+	vec3 W = DecodeVolumeTexel(SampleVolume(tex.w, uvw));
+
+	reflectionScale = 1.0;
+
+	if (shLuminance.w > 0.0)
+	{
+		vec3 linearLight = max(W + X * N.x + Y * N.y + Z * N.z, vec3(0.0));
+		float luminance = dot(linearLight, vec3(0.299, 0.587, 0.114));
+		float average = max(dot(shLuminance, vec4(0.5 * N, 1.0)), 0.0);
+		reflectionScale = luminance / (average + 1e-5);
+	}
+
+	return vec3(
+		EvaluateSHChannel(W.r, vec3(X.r, Y.r, Z.r), N),
+		EvaluateSHChannel(W.g, vec3(X.g, Y.g, Z.g), N),
+		EvaluateSHChannel(W.b, vec3(X.b, Y.b, Z.b), N));
+}
+
+// The light arriving at a point from the volumes around it, how much of it is covered by them, and how much
+// the reflections there are scaled by. Volumes are in drawing order, coarse first, and each fades in over the
+// ones before it.
+vec3 VolumeIrradiance(vec3 P, vec3 N, out float coverage, out float reflectionScale)
 {
 	vec3 E = vec3(0.0);
 	coverage = 0.0;
+	reflectionScale = 1.0;
 
 	for (uint i = 0u; i < sceneparam.irradianceVolumeCount; i++)
 	{
-		irradianceVolumeData v = volumedata[sceneparam.irradianceVolumeStart + i];
+		uint index = sceneparam.irradianceVolumeStart + i;
+
+		// Most volumes are far from any given point, so only their bounds are read for those
+		if (any(lessThan(P, volumedata[index].boundsMin.xyz)) || any(greaterThan(P, volumedata[index].boundsMax.xyz)))
+			continue;
+
+		irradianceVolumeData v = volumedata[index];
 
 		vec3 local = (v.worldToLocal * vec4(P, 1.0)).xyz;
 
@@ -809,17 +853,20 @@ vec3 VolumeIrradiance(vec3 P, vec3 N, out float coverage)
 		uvw += normalize(mat3(v.worldToLocal) * N) / counts;
 		uvw = clamp(uvw, 0.5 / counts, 1.0 - 0.5 / counts);
 
-		vec3 X = DecodeVolumeTexel(SampleVolume(v.textures.x, uvw)) * 0.5;
-		vec3 Y = DecodeVolumeTexel(SampleVolume(v.textures.y, uvw)) * 0.5;
-		vec3 Z = DecodeVolumeTexel(SampleVolume(v.textures.z, uvw)) * 0.5;
-		vec3 W = DecodeVolumeTexel(SampleVolume(v.textures.w, uvw));
+		float k;
+		vec3 Ev = SampleVolumeBake(v.bake0, uvw, N, v.shLuminance0, k);
 
-		vec3 Ev = vec3(
-			EvaluateSHChannel(W.r, vec3(X.r, Y.r, Z.r), N),
-			EvaluateSHChannel(W.g, vec3(X.g, Y.g, Z.g), N),
-			EvaluateSHChannel(W.b, vec3(X.b, Y.b, Z.b), N)) * v.voxelCountsScale.w;
+		// Blend towards a second bake, as the game does between times of day
+		if (v.info.w > 0.0)
+		{
+			float k1;
+			vec3 E1 = SampleVolumeBake(v.bake1, uvw, N, v.shLuminance1, k1);
+			Ev = mix(Ev, E1, v.info.w);
+			k = mix(k, k1, v.info.w);
+		}
 
-		E = mix(E, Ev, fade);
+		E = mix(E, Ev * v.voxelCountsScale.w, fade);
+		reflectionScale = mix(reflectionScale, k * v.params.x, fade);
 		coverage = mix(coverage, 1.0, fade);
 	}
 
@@ -833,11 +880,18 @@ vec3 IndirectLight(Surface s)
 		samplerCube(globalTexturesCube[nonuniformEXT(int(sceneparam.envmap))], linearSampler),
 		vec3(s.N * vec3(1, 1, -1)), 5).xyz;
 
+	// Where there are volumes, reflections are scaled by how bright the volumes' light is there compared with
+	// their average, so they darken in shadow; reflectionScale is already 1 outside every volume
+	float reflectionScale = 1.0;
+
 	if (sceneparam.irradianceVolumeCount > 0u)
 	{
 		float coverage;
-		vec3 volumeLight = VolumeIrradiance(fsin_worldpos, s.N, coverage);
+		vec3 volumeLight = VolumeIrradiance(fsin_worldpos, s.N, coverage, reflectionScale);
 		ambientDiffuse = mix(ambientDiffuse, volumeLight, coverage);
+
+		if ((sceneparam.irradianceVolumeFlags & 1u) == 0u)
+			reflectionScale = 1.0;
 	}
 
 	ambientDiffuse *= sceneparam.ambientLightMult;
@@ -854,7 +908,7 @@ vec3 IndirectLight(Surface s)
 	vec3 ambientSpec = textureLod(
 		samplerCube(globalTexturesCube[nonuniformEXT(int(sceneparam.envmap))], linearSampler),
 		vec3(reflectVec * vec3(1, 1, -1)), envMip).xyz;
-	ambientSpec *= sceneparam.ambientLightMult;
+	ambientSpec *= sceneparam.ambientLightMult * reflectionScale;
 
 	float NdotV = max(abs(clamp(dot(s.V, s.N), 0.0, 1.0)), Epsilon);
 	float gloss = 1.0 - s.roughness;

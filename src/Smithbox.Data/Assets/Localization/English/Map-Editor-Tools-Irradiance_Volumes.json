@@ -14,7 +14,7 @@
     },
     {
       "Key": "MAP_GI_Tool_Description",
-      "Text": "Each environment box (EnvMapEffectBox) lights the area inside it with a baked irradiance volume. Smithbox finds a box's volume by its volume ID property only. Vanilla boxes leave that property at -1, and the game then reads the ID from the last three digits of the name, so these boxes have no volume in Smithbox. Fill Volume IDs writes the ID the game already uses into the property, which changes nothing in game and keeps the link if the box is renamed. One undo reverts it."
+      "Text": "Each environment box (EnvMapEffectBox) lights the area inside it with a baked irradiance volume. Boxes are linked to volumes as the game links them: by the volume ID property when it is 0 or more, or else by the last three characters of the name (Env_Box203 is volume 203). The game skips boxes that aren't a Box shape or whose name isn't exactly 10 characters. Vanilla boxes leave the property at -1; Fill Volume IDs writes the ID the name gives into it, which changes nothing in game but keeps the link if the box is renamed. One undo reverts it."
     },
     {
       "Key": "MAP_GI_Tool_Description_AC6",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "MAP_GI_Tool_Map_Summary",
-      "Text": "{0} volume infos. Environment boxes: {1}, linked {2}, unlinked {3}, linked without a volume {4}."
+      "Text": "{0} volume infos. Environment boxes: {1}, linked {2}, unlinked {3}, linked without a volume {4}, skipped by the game {5}."
     },
     {
       "Key": "MAP_GI_Tool_Fill",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "MAP_GI_Tool_Fill_TT",
-      "Text": "Set the volume ID property of the unlinked boxes to the ID the game reads from their names. The map is marked as changed and is not saved until you save it."
+      "Text": "Set the volume ID property of the boxes that leave it at -1 to the ID their name gives. The game then finds the same volume, through the property. The map is marked as changed and is not saved until you save it."
     },
     {
       "Key": "MAP_GI_Tool_Fill_Log",
@@ -45,36 +45,40 @@
       "Text": "Box"
     },
     {
+      "Key": "MAP_GI_Tool_Column_Property",
+      "Text": "ID Property"
+    },
+    {
       "Key": "MAP_GI_Tool_Column_Id",
-      "Text": "Volume ID"
+      "Text": "Volume"
     },
     {
       "Key": "MAP_GI_Tool_Column_Status",
       "Text": "Status"
     },
     {
-      "Key": "MAP_GI_Tool_Status_Linked",
-      "Text": "Linked"
+      "Key": "MAP_GI_Tool_Status_Linked_Name",
+      "Text": "Linked by name"
     },
     {
-      "Key": "MAP_GI_Tool_Status_No_Volume",
-      "Text": "Linked, but the map has no volume with this ID"
+      "Key": "MAP_GI_Tool_Status_Linked_Name_No_Volume",
+      "Text": "Linked by name, but the map has no volume with this ID"
+    },
+    {
+      "Key": "MAP_GI_Tool_Status_Linked_Property",
+      "Text": "Linked by the ID property, which the game uses over the name"
+    },
+    {
+      "Key": "MAP_GI_Tool_Status_Linked_Property_No_Volume",
+      "Text": "Linked by the ID property, but the map has no volume with this ID"
     },
     {
       "Key": "MAP_GI_Tool_Status_Unlinked",
-      "Text": "No volume ID"
-    },
-    {
-      "Key": "MAP_GI_Tool_Status_Fillable",
-      "Text": "No volume ID; fill would set {0}"
-    },
-    {
-      "Key": "MAP_GI_Tool_Status_Fillable_No_Volume",
-      "Text": "No volume ID; fill would set {0}, but the map has no volume with that ID"
+      "Text": "No volume"
     },
     {
       "Key": "MAP_GI_Tool_Status_Not_Digits",
-      "Text": "No volume ID, and the name doesn't end in three digits, so it isn't filled"
+      "Text": "The name doesn't end in three digits, so the game reads some other number from it."
     },
     {
       "Key": "MAP_GI_Tool_Status_Skipped_Shape",

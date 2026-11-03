@@ -563,9 +563,30 @@ public class ViewportMenu
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Bake_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Bake_Blend")}##giBakeBlend", ref CFG.Current.Viewport_GI_Bake_Blend);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Bake_Blend_TT"));
+
+        if (CFG.Current.Viewport_GI_Bake_Blend)
+        {
+            DPI.ApplyInputWidth();
+            if (ImGui.InputInt($"{LOC.Get("VIEWPORT_Menubar_GI_Blend_Bake")}##giBlendBake", ref CFG.Current.Viewport_GI_Blend_Bake))
+            {
+                CFG.Current.Viewport_GI_Blend_Bake = Math.Clamp(CFG.Current.Viewport_GI_Blend_Bake, 0, 99);
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Blend_Bake_TT"));
+
+            DPI.ApplyInputWidth();
+            ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio")}##giBlendRatio", ref CFG.Current.Viewport_GI_Blend_Ratio, 0.0f, 1.0f);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio_TT"));
+        }
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections")}##giNormalizeReflections", ref CFG.Current.Viewport_GI_Normalize_Reflections);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections_TT"));
+
         ImGui.Separator();
 
         var unlinked = 0;
+        var skipped = 0;
         var anyMap = false;
 
         foreach (var wrapper in view.Project.Handler.MapData.PrimaryBank.Maps.Values)
@@ -585,6 +606,7 @@ public class ViewportMenu
                 summary.Linked, summary.Boxes));
 
             unlinked += summary.Unlinked;
+            skipped += summary.SkippedByGame;
         }
 
         if (!anyMap)
@@ -597,19 +619,20 @@ public class ViewportMenu
         ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Shaded_Volumes", view.IrradianceVolumeBank.ShadedVolumeCount, IrradianceVolumeTable.Capacity));
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Shaded_Volumes_TT"));
 
-        if (unlinked > 0 && view.IrradianceVolumeBank.HasNameFallback())
-        {
-            ImGui.Separator();
-            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Unlinked", unlinked));
+        ImGui.Separator();
 
-            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_GI_Open_Tool")}##giOpenTool"))
-            {
-                CFG.Current.Interface_MapEditor_ToolWindow = true;
-                CFG.Current.Interface_MapEditor_Tool_Validation = true;
-                view.IrradianceVolumeIdTool.FocusRequested = true;
-            }
-            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Open_Tool_TT"));
+        if (unlinked > 0 || skipped > 0)
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Unlinked", unlinked, skipped));
         }
+
+        if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_GI_Open_Tool")}##giOpenTool"))
+        {
+            CFG.Current.Interface_MapEditor_ToolWindow = true;
+            CFG.Current.Interface_MapEditor_Tool_Validation = true;
+            view.IrradianceVolumeIdTool.FocusRequested = true;
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Open_Tool_TT"));
     }
 
     /// <summary>

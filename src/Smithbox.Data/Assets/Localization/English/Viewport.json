@@ -389,6 +389,38 @@
       "Text": "The bake of the irradiance volumes to light the maps with, the NN of the map's envmap_NN files. Bakes are probably times of day; most Nightreign maps only have bake 0. A change applies the next time a map is loaded."
     },
     {
+      "Key": "VIEWPORT_Menubar_GI_Bake_Blend",
+      "Text": "Blend Bakes"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Bake_Blend_TT",
+      "Text": "Blend the volumes' light towards a second bake, as the game does between times of day. The second bake's textures load with the map, so switching this on or changing the bake applies the next time a map is loaded."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Blend_Bake",
+      "Text": "Blend Towards Bake"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Blend_Bake_TT",
+      "Text": "The bake to blend towards. Volumes that don't have it keep the first bake's light."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Blend_Ratio",
+      "Text": "Blend Ratio"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Blend_Ratio_TT",
+      "Text": "How far towards the second bake: 0 is the first bake, 1 the second. Applies at once."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Normalize_Reflections",
+      "Text": "Normalize Reflections"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_GI_Normalize_Reflections_TT",
+      "Text": "Scale the environment map's reflections by how bright the volumes' light is at each point compared with the volume's average, as the game does, so reflections darken in shadow and brighten in lit areas."
+    },
+    {
       "Key": "VIEWPORT_Menubar_GI_GPU_Textures",
       "Text": "Volume textures on the GPU: {0}"
     },
@@ -410,15 +442,15 @@
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Unlinked",
-      "Text": "{0} environment boxes have no volume ID."
+      "Text": "Environment boxes without a volume: {0}, skipped by the game: {1}"
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Open_Tool",
-      "Text": "Fill Volume IDs..."
+      "Text": "Volume Links..."
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Open_Tool_TT",
-      "Text": "Open the Irradiance Volumes tab of the Validation tools, which can fill these boxes' volume ID property."
+      "Text": "Open the Irradiance Volumes tab of the Validation tools, which lists each environment box's volume and can fill their volume ID property from their names."
     },
     {
       "Key": "VIEWPORT_Menubar_Header_Gizmos",

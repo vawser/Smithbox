@@ -4,15 +4,16 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System.Collections.Generic;
 using System.Linq;
+using static StudioCore.Editors.MapEditor.IrradianceVolumeBank;
 
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// Lists the EnvMapEffectBoxes of the loaded maps with their irradiance volume links, and in ER and NR offers to
-/// fill the volume ID property of boxes that leave it at -1, as every vanilla box does.
-/// The game reads those boxes' IDs from their names, so filling the property with the same ID changes nothing in
-/// game, but makes the link survive a rename. This is the only place Smithbox reads a box's name for its volume,
-/// and only as the source of that one-off, undoable write.
+/// Lists the EnvMapEffectBoxes of the loaded maps with the irradiance volume each is linked to, found as the
+/// game finds it (<see cref="IrradianceVolumeBank.ResolveVolumeId" />), and points out boxes the game skips.
+/// In ER and NR it can also fill the ID property of boxes that leave it at -1, as every vanilla box does, with
+/// the ID their name gives. That changes nothing in game, as the property then holds the same ID, but keeps the
+/// link if the box is renamed. One undo reverts it.
 /// </summary>
 public class IrradianceVolumeIdTool
 {
@@ -32,42 +33,6 @@ public class IrradianceVolumeIdTool
 
     private IrradianceVolumeBank Bank => View.IrradianceVolumeBank;
 
-    /// <summary>
-    /// Why the game's name rule gives no ID for a box
-    /// </summary>
-    public enum NameIssue
-    {
-        None,
-        NotBox,
-        NameLength,
-        NotDigits
-    }
-
-    /// <summary>
-    /// The ID the game reads from an ER/NR box's name when its ID property is -1: it loads only Box shapes with
-    /// names of exactly 10 characters (e.g. Env_Box203), and takes characters 7 to 9 as a decimal number
-    /// </summary>
-    public static NameIssue ReadIdFromName(IMsbRegion region, out short id)
-    {
-        id = -1;
-
-        if (region.Shape is not MSB.Shape.Box)
-            return NameIssue.NotBox;
-
-        var name = region.Name;
-
-        if (name == null || name.Length != 10)
-            return NameIssue.NameLength;
-
-        // The game doesn't check these are digits, but anything else gives an ID that is meaningless to fill
-        if (!char.IsAsciiDigit(name[7]) || !char.IsAsciiDigit(name[8]) || !char.IsAsciiDigit(name[9]))
-            return NameIssue.NotDigits;
-
-        id = (short)((name[7] - '0') * 100 + (name[8] - '0') * 10 + (name[9] - '0'));
-
-        return NameIssue.None;
-    }
-
     private IEnumerable<MapContainer> LoadedMaps()
     {
         return Project.Handler.MapData.PrimaryBank.Maps.Values
@@ -78,11 +43,11 @@ public class IrradianceVolumeIdTool
 
     private static IEnumerable<Entity> Boxes(MapContainer map)
     {
-        return map.Regions.Where(e => IrradianceVolumeBank.GetVolumeIdProperty(e.WrappedObject) != null);
+        return map.Regions.Where(e => GetVolumeIdProperty(e.WrappedObject) != null);
     }
 
     /// <summary>
-    /// The boxes of a map whose ID property is -1 and whose name gives the game an ID
+    /// The boxes of a map whose ID property is -1 and whose name gives an ID
     /// </summary>
     private List<(Entity Entity, short Id)> GetFillable(MapContainer map)
     {
@@ -93,7 +58,7 @@ public class IrradianceVolumeIdTool
 
         foreach (var entity in Boxes(map))
         {
-            if (IrradianceVolumeBank.GetVolumeId(entity.WrappedObject) >= 0)
+            if (GetVolumeId(entity.WrappedObject) >= 0)
                 continue;
 
             if (ReadIdFromName((IMsbRegion)entity.WrappedObject, out var id) == NameIssue.None)
@@ -132,7 +97,8 @@ public class IrradianceVolumeIdTool
 
         GUI.SimpleHeader(map.Name, "");
         GUI.WrappedText(LOC.Get("MAP_GI_Tool_Map_Summary",
-            volumes?.Infos.Count ?? 0, summary.Boxes, summary.Linked, summary.Unlinked, summary.LinkedWithoutVolume));
+            volumes?.Infos.Count ?? 0, summary.Boxes, summary.Linked, summary.Unlinked, summary.LinkedWithoutVolume,
+            summary.SkippedByGame));
 
         var fillable = GetFillable(map);
 
@@ -145,9 +111,10 @@ public class IrradianceVolumeIdTool
             GUI.Tooltip(LOC.Get("MAP_GI_Tool_Fill_TT"));
         }
 
-        if (ImGui.BeginTable($"##boxes_{map.Name}", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.Resizable))
+        if (ImGui.BeginTable($"##boxes_{map.Name}", 4, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.Resizable))
         {
             ImGui.TableSetupColumn(LOC.Get("MAP_GI_Tool_Column_Box"));
+            ImGui.TableSetupColumn(LOC.Get("MAP_GI_Tool_Column_Property"));
             ImGui.TableSetupColumn(LOC.Get("MAP_GI_Tool_Column_Id"));
             ImGui.TableSetupColumn(LOC.Get("MAP_GI_Tool_Column_Status"));
             ImGui.TableHeadersRow();
@@ -155,7 +122,8 @@ public class IrradianceVolumeIdTool
             foreach (var entity in Boxes(map))
             {
                 var region = (IMsbRegion)entity.WrappedObject;
-                var id = IrradianceVolumeBank.GetVolumeId(region) ?? -1;
+                var property = GetVolumeId(region) ?? -1;
+                var id = Bank.ResolveVolumeId(region, out var source);
 
                 ImGui.TableNextRow();
 
@@ -167,10 +135,13 @@ public class IrradianceVolumeIdTool
                 }
 
                 ImGui.TableNextColumn();
-                ImGui.Text(id.ToString());
+                ImGui.Text(property.ToString());
 
                 ImGui.TableNextColumn();
-                ImGui.TextWrapped(GetStatus(region, id, volumes));
+                ImGui.Text(id >= 0 ? id.ToString() : "-");
+
+                ImGui.TableNextColumn();
+                ImGui.TextWrapped(GetStatus(region, id, source, volumes));
             }
 
             ImGui.EndTable();
@@ -179,35 +150,33 @@ public class IrradianceVolumeIdTool
         GUI.Spacer();
     }
 
-    private string GetStatus(IMsbRegion region, short id, IrradianceVolumeBank.MapVolumes volumes)
+    private string GetStatus(IMsbRegion region, short id, LinkSource source, MapVolumes volumes)
     {
-        var issue = NameIssue.None;
-        short nameId = -1;
-
         if (Bank.HasNameFallback())
-            issue = ReadIdFromName(region, out nameId);
-
-        if (issue is NameIssue.NotBox or NameIssue.NameLength)
         {
-            return LOC.Get(issue == NameIssue.NotBox ? "MAP_GI_Tool_Status_Skipped_Shape" : "MAP_GI_Tool_Status_Skipped_Name");
+            var issue = ReadIdFromName(region, out _);
+
+            if (issue == NameIssue.NotBox)
+                return LOC.Get("MAP_GI_Tool_Status_Skipped_Shape");
+
+            if (issue == NameIssue.NameLength)
+                return LOC.Get("MAP_GI_Tool_Status_Skipped_Name");
         }
 
-        if (id >= 0)
-        {
-            return volumes != null && volumes.HasVolume(id)
-                ? LOC.Get("MAP_GI_Tool_Status_Linked")
-                : LOC.Get("MAP_GI_Tool_Status_No_Volume");
-        }
-
-        if (!Bank.HasNameFallback())
+        if (id < 0)
             return LOC.Get("MAP_GI_Tool_Status_Unlinked");
 
-        if (issue == NameIssue.NotDigits)
-            return LOC.Get("MAP_GI_Tool_Status_Not_Digits");
+        var hasVolume = volumes != null && volumes.HasVolume(id);
 
-        return volumes != null && volumes.HasVolume(nameId)
-            ? LOC.Get("MAP_GI_Tool_Status_Fillable", nameId)
-            : LOC.Get("MAP_GI_Tool_Status_Fillable_No_Volume", nameId);
+        var status = source == LinkSource.Name
+            ? LOC.Get(hasVolume ? "MAP_GI_Tool_Status_Linked_Name" : "MAP_GI_Tool_Status_Linked_Name_No_Volume")
+            : LOC.Get(hasVolume ? "MAP_GI_Tool_Status_Linked_Property" : "MAP_GI_Tool_Status_Linked_Property_No_Volume");
+
+        // The game doesn't check the name's last three characters are digits
+        if (source == LinkSource.Name && ReadIdFromName(region, out _) == NameIssue.NotDigits)
+            status += " " + LOC.Get("MAP_GI_Tool_Status_Not_Digits");
+
+        return status;
     }
 
     /// <summary>
@@ -219,7 +188,7 @@ public class IrradianceVolumeIdTool
 
         foreach (var (entity, id) in fillable)
         {
-            var prop = IrradianceVolumeBank.GetVolumeIdProperty(entity.WrappedObject);
+            var prop = GetVolumeIdProperty(entity.WrappedObject);
             actions.Add(new PropChangeAction(entity, prop, entity.WrappedObject, id));
         }
 

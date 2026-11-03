@@ -222,6 +222,7 @@ public class SceneRenderPipeline
         var useIrradianceVolumes = UseIrradianceVolumes && CFG.Current.Viewport_GI_Enable;
         var irradianceExposure = CFG.Current.Viewport_GI_Intensity *
             (CFG.Current.Viewport_GI_Auto_Exposure ? SceneRenderer.IrradianceVolumes.AutoExposure : 1.0f);
+        var irradianceFlags = CFG.Current.Viewport_GI_Normalize_Reflections ? 1u : 0u;
 
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
@@ -252,6 +253,7 @@ public class SceneRenderPipeline
             SceneParams.IrradianceVolumeStart = SceneRenderer.IrradianceVolumes.Start;
             SceneParams.IrradianceVolumeCount = useIrradianceVolumes ? SceneRenderer.IrradianceVolumes.Count : 0;
             SceneParams.IrradianceVolumeExposure = irradianceExposure;
+            SceneParams.IrradianceVolumeFlags = irradianceFlags;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)

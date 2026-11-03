@@ -545,7 +545,9 @@ public class MapEditorScreen : EditorScreen
             activeView.Project.Handler.MapData.PrimaryBank.Maps.Values
                 .Select(w => w.MapContainer)
                 .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded),
-            CFG.Current.Viewport_GI_Bake);
+            CFG.Current.Viewport_GI_Bake,
+            CFG.Current.Viewport_GI_Bake_Blend ? CFG.Current.Viewport_GI_Blend_Bake : -1,
+            CFG.Current.Viewport_GI_Blend_Ratio);
 
         // Throw any exceptions that ocurred during async map loading, in any view.
         // Cleared before throwing so a handled exception is not rethrown every frame.

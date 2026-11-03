@@ -24,9 +24,6 @@
 
 - NVC: navmesh connectors?
 - ONAV: oNav?
-    
-- IVInfo: Irradiance Volume Info: requires format implementation
-- EnvMap: how they are applied and how they'd be integrated into the renderer
 
 - Get gizmos to work in Orthographic/Oblique view mode
 - Add 'camera path' authoring for new camera hkxs for cutscenes
@@ -35,8 +32,6 @@
 - Lighting:
     - Introduce GPARAM elements
     - Introduce shadows
-    - GIIV
-    - EnvMaps
 
     
     

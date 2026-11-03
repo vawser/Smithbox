@@ -17,9 +17,9 @@ namespace StudioCore.Editors.MapEditor;
 /// A volume is placed by an EnvMapEffectBox region, which its texture fills exactly, and has one bake per
 /// envmap file index (probably times of day). Each bake has an IVINFO in the map's ivinfobnd and four 3D
 /// textures, GIIV####_##_W/X/Y/Z, in the map's envmap TPFs.
-/// A box is linked to its volume by a property only, never by its name: EnvMapEffectBox_UnkT32 in AC6,
-/// UnkT0A in ER and Unk0A in NR. The game reads ER/NR IDs from the name when that property is -1, as every
-/// vanilla box has it, which IrradianceVolumeIdTool can write into the property.
+/// Boxes are linked to volumes as the game links them, see <see cref="ResolveVolumeId" />: in ER and NR by the
+/// ID property (UnkT0A in ER, Unk0A in NR) when it is 0 or more, or else by the name (Env_Box203 is volume 203);
+/// every vanilla box leaves the property at -1. In AC6 by the EnvMapEffectBox_UnkT32 property.
 /// See Documentation/Full GI for how the game uses this data.
 /// </summary>
 public class IrradianceVolumeBank
@@ -216,11 +216,102 @@ public class IrradianceVolumeBank
     }
 
     /// <summary>
-    /// The volume ID a region holds, or null if it is not an EnvMapEffectBox. Negative means no volume.
+    /// The value of a region's volume ID property, or null if it is not an EnvMapEffectBox. Negative means none.
     /// </summary>
     public static short? GetVolumeId(object region)
     {
         return GetVolumeIdProperty(region)?.GetValue(region) as short?;
+    }
+
+    /// <summary>
+    /// Why a box's name gives no volume ID
+    /// </summary>
+    public enum NameIssue
+    {
+        None,
+        NotBox,
+        NameLength,
+        NotDigits
+    }
+
+    /// <summary>
+    /// The ID an ER/NR box's name gives, by the game's rule: it loads only Box shapes with names of exactly
+    /// 10 characters (e.g. Env_Box203), and takes characters 7 to 9 as a decimal number
+    /// </summary>
+    public static NameIssue ReadIdFromName(IMsbRegion region, out short id)
+    {
+        id = -1;
+
+        if (region.Shape is not MSB.Shape.Box)
+            return NameIssue.NotBox;
+
+        var name = region.Name;
+
+        if (name == null || name.Length != 10)
+            return NameIssue.NameLength;
+
+        // The game doesn't check these are digits, but anything else gives an ID that means nothing
+        if (!char.IsAsciiDigit(name[7]) || !char.IsAsciiDigit(name[8]) || !char.IsAsciiDigit(name[9]))
+            return NameIssue.NotDigits;
+
+        id = (short)((name[7] - '0') * 100 + (name[8] - '0') * 10 + (name[9] - '0'));
+
+        return NameIssue.None;
+    }
+
+    /// <summary>
+    /// Where a box's volume ID came from
+    /// </summary>
+    public enum LinkSource
+    {
+        None,
+        Name,
+        Property
+    }
+
+    /// <summary>
+    /// The volume a box is linked to, as the game finds it. -1 if it has none, the game skips the box, or the
+    /// region is not an EnvMapEffectBox.
+    /// ER/NR (traced in eldenring.exe): boxes that aren't a Box shape or whose name isn't exactly 10 characters
+    /// are skipped; the ID is characters 7 to 9 of the name, unless the ID property is 0 or more, which wins.
+    /// AC6: the ID property.
+    /// </summary>
+    public short ResolveVolumeId(object region, out LinkSource source)
+    {
+        source = LinkSource.None;
+
+        var property = GetVolumeId(region);
+
+        if (property == null)
+            return -1;
+
+        if (!HasNameFallback())
+        {
+            if (property < 0)
+                return -1;
+
+            source = LinkSource.Property;
+            return property.Value;
+        }
+
+        if (IsSkippedByGame(region))
+            return -1;
+
+        if (property >= 0)
+        {
+            source = LinkSource.Property;
+            return property.Value;
+        }
+
+        // The game's arithmetic, which doesn't check for digits: other characters give some other number
+        var name = ((IMsbRegion)region).Name;
+        var nameId = (name[7] - '0') * 100 + (name[8] - '0') * 10 + (name[9] - '0');
+
+        if (nameId < 0 || nameId > short.MaxValue)
+            return -1;
+
+        source = LinkSource.Name;
+        return (short)nameId;
     }
 
     /// <summary>
@@ -250,7 +341,9 @@ public class IrradianceVolumeBank
     /// the bake are on the GPU. Done every frame, so moved, resized or relinked boxes follow at once; the table is
     /// only uploaded when it changes.
     /// </summary>
-    public void UpdateGpuTable(IEnumerable<MapContainer> maps, int bake)
+    /// <param name="blendBake">The bake to blend towards, as the game does between times of day, or -1</param>
+    /// <param name="blendRatio">How far towards it, 0 to 1</param>
+    public void UpdateGpuTable(IEnumerable<MapContainer> maps, int bake, int blendBake, float blendRatio)
     {
         var table = SceneRenderer.IrradianceVolumes;
 
@@ -272,7 +365,8 @@ public class IrradianceVolumeBank
 
                 foreach (var entity in map.Regions)
                 {
-                    if (TryBuildEntry(map.Name, entity, volumes, bake, out var data, out var priority, out var size))
+                    if (TryBuildEntry(map.Name, entity, volumes, bake, blendBake, blendRatio,
+                            out var data, out var priority, out var size))
                     {
                         found.Add((data, priority, size));
 
@@ -305,21 +399,13 @@ public class IrradianceVolumeBank
         table.Upload(_tableEntries, count);
     }
 
-    private bool TryBuildEntry(string mapId, Entity entity, MapVolumes volumes, int bake,
-        out IrradianceVolumeData data, out int priority, out float size)
+    /// <summary>
+    /// The four textures of a volume's bake, if all are on the GPU in the volume pool
+    /// </summary>
+    private static bool TryGetBakeTextures(string mapId, int id, int bake, out TexturePool.TextureHandle[] textures)
     {
-        data = default;
-        priority = 0;
-        size = 0;
-
-        var region = entity.WrappedObject;
-        var id = GetVolumeId(region);
-
-        if (id == null || id < 0 || IsSkippedByGame(region) || !volumes.HasVolume(id.Value, bake))
-            return false;
-
-        var textures = new TexturePool.TextureHandle[4];
-        var names = GetTextureNames(mapId, id.Value, bake);
+        textures = new TexturePool.TextureHandle[4];
+        var names = GetTextureNames(mapId, id, bake);
 
         for (var i = 0; i < 4; i++)
         {
@@ -334,8 +420,42 @@ public class IrradianceVolumeBank
             textures[i] = gpu;
         }
 
+        return true;
+    }
+
+    private bool TryBuildEntry(string mapId, Entity entity, MapVolumes volumes, int bake, int blendBake,
+        float blendRatio, out IrradianceVolumeData data, out int priority, out float size)
+    {
+        data = default;
+        priority = 0;
+        size = 0;
+
+        var region = entity.WrappedObject;
+        var id = ResolveVolumeId(region, out _);
+
+        // AC6 boxes aren't checked by name, so their shape is checked here; the region's scale is a Box's size
+        if (id < 0 || region is not IMsbRegion { Shape: MSB.Shape.Box } || !volumes.HasVolume(id, bake))
+            return false;
+
+        if (!TryGetBakeTextures(mapId, id, bake, out var textures))
+            return false;
+
+        // The bake to blend towards, if the volume has it and its textures are loaded; otherwise the first again
+        var blendTextures = textures;
+        var blendInfo = volumes.Infos[(id, bake)];
+        var ratio = 0.0f;
+
+        if (blendBake >= 0 && blendBake != bake && blendRatio > 0 && volumes.HasVolume(id, blendBake)
+            && TryGetBakeTextures(mapId, id, blendBake, out var loaded))
+        {
+            blendTextures = loaded;
+            blendInfo = volumes.Infos[(id, blendBake)];
+            ratio = Math.Clamp(blendRatio, 0.0f, 1.0f);
+        }
+
         float fadeDistance;
         float diffuseScale;
+        float specularScale;
 
         switch (region)
         {
@@ -343,17 +463,22 @@ public class IrradianceVolumeBank
                 fadeDistance = er.FadeDistance;
                 priority = er.Priority;
                 diffuseScale = er.AmbientDiffuseIntensity;
+                specularScale = er.AmbientSpecularIntensity;
                 break;
             case MSB_NR.Region.EnvMapEffectBox nr:
                 fadeDistance = nr.FadeDistance;
                 priority = nr.Priority;
                 diffuseScale = nr.AmbientDiffuseIntensity;
+                specularScale = nr.AmbientSpecularIntensity;
                 break;
             case MSB_AC6.Region.EnvMapEffectBox ac6:
-                // The same layout as ER's: TransitionDist is the fade distance, UnkT09 the priority
+                // The same layout as ER's: TransitionDist is the fade distance, UnkT09 the priority.
+                // SpecularLightMult sits where ER's specular intensity does, but reaches 8, so it isn't used
+                // until it is confirmed to scale the reflections.
                 fadeDistance = ac6.TransitionDist;
                 priority = ac6.EnvMapEffectBox_UnkT09;
                 diffuseScale = 1.0f;
+                specularScale = 1.0f;
                 break;
             default:
                 return false;
@@ -371,11 +496,35 @@ public class IrradianceVolumeBank
         data.WorldToLocal = inverse * Matrix4x4.CreateScale(2.0f) * Matrix4x4.CreateTranslation(0.0f, -1.0f, 0.0f);
         data.ExtentsFade = new Vector4(scale * 0.5f, fadeDistance > 0 ? 1.0f / fadeDistance : 1.0e4f);
         data.VoxelCountsScale = new Vector4(textures[0].Width, textures[0].Height, textures[0].Depth, diffuseScale);
-        data.TextureX = textures[0].TexHandle;
-        data.TextureY = textures[1].TexHandle;
-        data.TextureZ = textures[2].TexHandle;
-        data.TextureW = textures[3].TexHandle;
-        data.Info = new Vector4(id.Value, bake, priority, 0);
+
+        data.Bake0X = textures[0].TexHandle;
+        data.Bake0Y = textures[1].TexHandle;
+        data.Bake0Z = textures[2].TexHandle;
+        data.Bake0W = textures[3].TexHandle;
+        data.Bake1X = blendTextures[0].TexHandle;
+        data.Bake1Y = blendTextures[1].TexHandle;
+        data.Bake1Z = blendTextures[2].TexHandle;
+        data.Bake1W = blendTextures[3].TexHandle;
+
+        data.ShLuminance0 = volumes.Infos[(id, bake)].ShLuminance;
+        data.ShLuminance1 = blendInfo.ShLuminance;
+        data.Info = new Vector4(id, bake, ratio > 0 ? blendBake : bake, ratio);
+        data.Params = new Vector4(specularScale, 0, 0, 0);
+
+        // World bounds of the unit box's corners, so the shader can skip the volume before any other work
+        var min = new Vector3(float.MaxValue);
+        var max = new Vector3(float.MinValue);
+
+        for (var c = 0; c < 8; c++)
+        {
+            var corner = new Vector3((c & 1) == 0 ? -0.5f : 0.5f, (c & 2) == 0 ? 0.0f : 1.0f, (c & 4) == 0 ? -0.5f : 0.5f);
+            var p = Vector3.Transform(corner, world);
+            min = Vector3.Min(min, p);
+            max = Vector3.Max(max, p);
+        }
+
+        data.BoundsMin = new Vector4(min, 0);
+        data.BoundsMax = new Vector4(max, 0);
 
         size = MathF.Abs(scale.X * scale.Y * scale.Z);
 
@@ -398,9 +547,7 @@ public class IrradianceVolumeBank
 
         foreach (var entity in map.Regions)
         {
-            var id = GetVolumeId(entity.WrappedObject);
-
-            if (id == null)
+            if (GetVolumeId(entity.WrappedObject) == null)
                 continue;
 
             summary.Boxes++;
@@ -408,11 +555,13 @@ public class IrradianceVolumeBank
             if (IsSkippedByGame(entity.WrappedObject))
                 summary.SkippedByGame++;
 
+            var id = ResolveVolumeId(entity.WrappedObject, out _);
+
             if (id < 0)
             {
                 summary.Unlinked++;
             }
-            else if (volumes == null || !volumes.HasVolume(id.Value))
+            else if (volumes == null || !volumes.HasVolume(id))
             {
                 summary.LinkedWithoutVolume++;
             }
