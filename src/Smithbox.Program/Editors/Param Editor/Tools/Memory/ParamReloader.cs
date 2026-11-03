@@ -660,9 +660,11 @@ public class ParamReloader
         var canHotReload = CanReloadMemoryParams(activeView.GetPrimaryBank());
         if (canHotReload)
         {
+            // Far model params are loose map files, not part of the in-memory regulation
             ReloadMemoryParams(
                 activeView.GetPrimaryBank(),
-                activeView.GetPrimaryBank().Params.Keys.ToArray());
+                activeView.GetPrimaryBank().Params.Keys
+                    .Where(e => !activeView.GetPrimaryBank().FarModelParams.ContainsKey(e)).ToArray());
         }
         else
         {

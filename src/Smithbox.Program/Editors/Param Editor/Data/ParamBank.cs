@@ -39,6 +39,12 @@ public class ParamBank : IDisposable
 
     public Dictionary<string, StructParam> StayParams = new();
 
+    /// <summary>
+    /// SDT far model params: param name -> path of the loose map file it was loaded from.
+    /// The params themselves live in _params so the normal row and field editors work on them.
+    /// </summary>
+    public Dictionary<string, string> FarModelParams = new();
+
     public IReadOnlyDictionary<string, Param> Params
     {
         get
@@ -1630,7 +1636,49 @@ public class ParamBank : IDisposable
             }
         }
 
+        LoadFarModelParams_SDT();
+
         return successfulLoad;
+    }
+
+    /// <summary>
+    /// Far model params are loose per-map files: map/mXX_XX_XX_XX/mXX_XX_XX_XX_farmodel.param.dcx
+    /// </summary>
+    private void LoadFarModelParams_SDT()
+    {
+        FarModelParams = new();
+
+        foreach (var mapId in TargetFS.FsRoot.GetDirectory("map")?.EnumerateDirectoryNames() ?? [])
+        {
+            var paramName = $"{mapId}_farmodel";
+            var paramPath = $"map/{mapId}/{paramName}.param.dcx";
+
+            if (!TargetFS.FileExists(paramPath) || _params.ContainsKey(paramName))
+            {
+                continue;
+            }
+
+            try
+            {
+                var curParam = Param.Read(TargetFS.GetFile(paramPath).GetData());
+
+                if (!Project.Handler.ParamData.ParamDefs.TryGetValue(curParam.ParamType ?? "", out var def))
+                {
+                    Smithbox.LogError(this, LOC.Get("PARAM_Data_Missing_ParamDef_ParamType", paramName, curParam.ParamType));
+                    continue;
+                }
+
+                curParam.ApplyParamdef(def, _paramVersion, paramName);
+
+                _params.Add(paramName, curParam);
+                FarModelParams.Add(paramName, paramPath);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("PARAM_Data_Failed_to_Load_FarModelParam", paramPath, Name), e);
+            }
+        }
     }
 
     private bool SaveParameters_SDT()
@@ -1687,6 +1735,17 @@ public class ParamBank : IDisposable
             }
 
             ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
+        }
+
+        // Far model params are written back to their loose map files
+        foreach (var (paramName, paramPath) in FarModelParams)
+        {
+            if (!ShouldWriteLooseParam(paramName) || !Params.TryGetValue(paramName, out Param farModelParam))
+            {
+                continue;
+            }
+
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, paramPath, farModelParam);
         }
 
         if (CFG.Current.ParamEditor_Row_Name_Strip_SDT)

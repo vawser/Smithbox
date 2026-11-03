@@ -93,6 +93,10 @@
       "Text": "Failed to load stay param: {0}"
     },
     {
+      "Key": "PARAM_Data_Failed_to_Load_FarModelParam",
+      "Text": "Failed to load far model param at {0} for {1}"
+    },
+    {
       "Key": "PARAM_Data_Setup_ParamDefs_PASS",
       "Text": "Setup PARAM definitions."
     },

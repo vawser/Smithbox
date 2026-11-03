@@ -1,0 +1,48 @@
+{
+  "Param": "FAR_MODEL_PARAM_ST",
+  "Type": "FAR_MODEL_PARAM_ST",
+  "Name": "FAR_MODEL_PARAM_ST",
+  "Description": "Per-map distant view (far model) table. Each Group row names a far model map piece; the rows that follow list the normal map pieces or models it stands in for. Row order is significant: blank fields inherit from the row above.",
+  "Fields": [
+    {
+      "Field": "farPartsName",
+      "Name": "Far Part Name",
+      "Description": "Name of the far model map piece. If blank, the value from the row above is used."
+    },
+    {
+      "Field": "nearParsMapID_Area",
+      "Name": "Near Part Map: Area",
+      "Description": "Area of the map the normal parts belong to (the XX in mXX_YY_ZZ_WW). If -1, the value from the row above is used; on the first row this means the same map as the far part."
+    },
+    {
+      "Field": "nearParsMapID_Block",
+      "Name": "Near Part Map: Block",
+      "Description": "Block of the map the normal parts belong to (the YY in mXX_YY_ZZ_WW). If -1, the value from the row above is used; on the first row this means the same map as the far part."
+    },
+    {
+      "Field": "nearParsMapID_Map",
+      "Name": "Near Part Map: Map",
+      "Description": "Map index of the map the normal parts belong to (the ZZ in mXX_YY_ZZ_WW). If -1, the value from the row above is used; on the first row this means the same map as the far part."
+    },
+    {
+      "Field": "nearParsMapID_Alt",
+      "Name": "Near Part Map: Alt",
+      "Description": "Alt index of the map the normal parts belong to (the WW in mXX_YY_ZZ_WW). If -1, the value from the row above is used; on the first row this means the same map as the far part."
+    },
+    {
+      "Field": "nearPartsItemType",
+      "Name": "Near Part Entry Type",
+      "Description": "What Near Part Name refers to: a group, a part to add, or a part or model to exclude. 'Same as Above' continues the list started by the previous row."
+    },
+    {
+      "Field": "dmy0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "nearPartsName",
+      "Name": "Near Part Name",
+      "Description": "Normal map piece name, group name (for Group rows), or excluded model name, depending on the entry type."
+    }
+  ]
+}

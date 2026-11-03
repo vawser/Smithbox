@@ -148,6 +148,16 @@ public class ParamListWindow
                 "PARAM_ParamWindow_ToggleStayParams_Hint");
         }
 
+        if (Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            // Toggle: Far Model Params
+            GUI.DisplayToggleButton("farModelParamToggle", Icons.Map,
+                ref CFG.Current.ParamEditor_Param_List_Display_FarModelParams,
+                "PARAM_ParamWindow_ToggleFarModelParams_Hidden",
+                "PARAM_ParamWindow_ToggleFarModelParams_Visible",
+                "PARAM_ParamWindow_ToggleFarModelParams_Hint");
+        }
+
         ImGui.EndChild();
     }
 
@@ -253,6 +263,16 @@ public class ParamListWindow
             }
         });
 
+        // SDT Far Model Params are shown in their own section instead of the main list
+        var farModelParams = Project.Handler.ParamData.PrimaryBank.FarModelParams;
+        List<string> farModelKeyList = new();
+
+        if (farModelParams.Count > 0)
+        {
+            farModelKeyList = paramKeyList.Where(farModelParams.ContainsKey).ToList();
+            paramKeyList = paramKeyList.Where(e => !farModelParams.ContainsKey(e)).ToList();
+        }
+
         // Param Categories
         var categoryObj = Editor.Project.Handler.ParamData.ParamCategories;
         var categories = Editor.Project.Handler.ParamData.ParamCategories.Categories;
@@ -355,6 +375,16 @@ public class ParamListWindow
                 ImGuiTreeNodeFlags.DefaultOpen))
         {
             DisplayStayParams(doFocus, scrollTo);
+        }
+
+        // SDT Far Model Params: grouped like the other categories
+        if (Project.Descriptor.ProjectType is ProjectType.SDT
+            && CFG.Current.ParamEditor_Param_List_Display_FarModelParams
+            && farModelKeyList.Count > 0
+            && ImGui.CollapsingHeader($"{LOC.Get("PARAM_ParamWindow_Category_FarModelParams")}##farModelParamCategory",
+                ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            DisplayParamList(farModelKeyList, farModelKeyList, doFocus, scrollTo);
         }
 
         ImGui.EndChild();

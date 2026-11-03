@@ -73,6 +73,22 @@
       "Text": "Stay Params"
     },
     {
+      "Key": "PARAM_ParamWindow_ToggleFarModelParams_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleFarModelParams_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleFarModelParams_Hint",
+      "Text": "Toggle the display of far model params.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Category_FarModelParams",
+      "Text": "Far Model Params"
+    },
+    {
       "Key": "PARAM_ParamWindow_Category_General",
       "Text": "General"
     },

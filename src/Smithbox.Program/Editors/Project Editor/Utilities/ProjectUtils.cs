@@ -269,8 +269,7 @@ public class ProjectUtils
                 else
                 {
                     var currentCompression = ParamSaveCompression.GetCurrentOverride();
-                    byte[] bytes = null;
-                    bytes = item.Write(currentCompression);
+                    toFs.WriteFile(assetPath + ".temp", item.Write(currentCompression));
                 }
             }
 
