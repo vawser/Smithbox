@@ -509,6 +509,55 @@ transition and is ignored.
 Check: ER m60_42_36_00 dragging the time 4 -> 12 -> 15: the grade shifts warmer towards evening and cooler at night,
 on top of the sun's colour change.
 
+### Phase 7 as built (2026-11-03; not yet checked in the app)
+
+**Where the LUTs are.** `/map/mAA/common/mAA_cgrading.tpf.dcx`, one TPF per area (20 areas, 101 LUTs):
+- Each texture is named `mAA_BB_CGradingNNNN`, where NNNN is the LutSourceId.
+- Each is an uncompressed 16 x 256 RGBA8 DDS (R mask 0xFF): a 16³ cube with red across, green down each 16 x 16
+  slice, and blue from slice to slice.
+- `m60_00_CGrading0000` isn't an identity. Red runs 0, 15, 30, 46 … 240, 255, a slight curve.
+
+**The IDs are shared between areas**, so every area's TPF is loaded. Testing "own area only" left 121 of 199 file/ID
+pairs unresolved:
+- `m10_00_0900` uses 1, 2, 4 and 5, which exist only as `m60_00_*`.
+- `m20_00` uses 5000-5003, from `m61_00`.
+- `m11_00_0900` and `m16_00` use 2002, from `m60_00`.
+- The IDs still missing after that are the weather overlays' (0201, 0110…), which aren't in the resolve chain.
+
+**Survey.**
+- mapbase and default have the group off (-1). m10 and m14 use 0.
+- m60 uses 1 (t0), 2 (t4, t8), 4 (t11.5, t12) and 5 (t15 on). m11 uses 101.
+- The Tone Map group's ColorH/S/V and Color Grading ColorShift/ColorScale are neutral (H 0, S 1, V 1, `<1,1,1,0>`)
+  in nearly every file. About 15 key ColorH to 1 at t8 and about 14 key ColorV to 1.2 at t4. **Not implemented.**
+
+**Built:**
+- `ColorGradingLuts.cs` loads m00-m99's TPFs once through the project VFS, from `GparamLightingBank.GetLuts`, and
+  packs every LUT side by side into a 16N x 256 RGBA8 atlas. `Find(area, id)` prefers the area's own LUT, then the
+  same mAA, then any.
+- `FieldReader.GetKeys` returns the keys either side of the time and the blend. `Interpolate` now shares
+  `Neighbours` with it. `GparamColorGrading` gains NextLutSourceId, Blend, Luts, Slot and NextSlot. The area looked
+  up is the resolved file's mAA_BB.
+- `ToneMapPass`/`ToneMap.frag`: after the square root, the display colour is looked up trilinearly in both slots
+  and blended. The atlas is uploaded once, as a static, and replaced if the bank's LUTs change; a 1 x 1 texture is
+  bound without them. No grading in pass-through debug views.
+- CFG `Viewport_Post_Color_Grading` (on), in Post Effects. The table's Color Grading row shows each ID with the
+  texture it resolved to, e.g. `2 (m60_00_CGrading0002) to 4 (m60_00_CGrading0004), 0.88 of the way`, or "not
+  found".
+- Hypothesis: the LUTs are indexed by the display colour Smithbox writes (the tone map's square root). If the game
+  indexes in sRGB or before its own curve, the grade will look a little off in the darks.
+- `FadeTime` (a gameplay transition) is ignored.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| ER m60_42_36_00, map lighting on | Post Effects table | Color Grading row: at t8 `2 (m60_00_CGrading0002)`, at t10 `2 (...) to 4 (...), 0.57 of the way`, at t16 `5 (...)` | "not found": the atlas didn't load or the name pattern differs |
+| Same | Toggle Color Grading at t8, t12, t16 | A tint and contrast change that differs between the times; no banding in skies | Strong colour cast or posterised gradients: the slice order or the index space is wrong |
+| Same | Drag the time slowly from t8 to t11.5 | The grade shifts smoothly, no jump | A jump: the blend isn't applied |
+| ER m10_00_00_00 | Toggle | A subtle change from `m10_00_CGrading0000` | |
+| ER m11_00_00_00 (Leyndell) | | The row reads `101 (m11_00_CGrading0101)`, and toggling changes the image | |
+| Map lighting off, Model Editor | | No change | |
+
 ### Phase 8: Wet
 
 1. Resolve chain: the chosen weather (`WeatherParam.GparamId`) adds `m00_00_WWWW_weatheroutdoor` (outdoor maps) or

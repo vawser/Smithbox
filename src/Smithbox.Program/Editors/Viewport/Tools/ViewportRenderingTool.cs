@@ -1006,6 +1006,10 @@ public class ViewportRenderingTool
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Fxaa_Enable")}##postFxaa", ref CFG.Current.Viewport_Post_Fxaa);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Fxaa_Enable_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Color_Grading_Enable")}##postColorGrading",
+            ref CFG.Current.Viewport_Post_Color_Grading);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Color_Grading_Enable_TT"));
+
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Volumetric_Fog_Enable")}##postVolumetricFog",
             ref CFG.Current.Viewport_Post_Volumetric_Fog);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Volumetric_Fog_Enable_TT"));
@@ -1225,10 +1229,19 @@ public class ViewportRenderingTool
                 : off,
             "AntiAlias - AntiAliasType");
 
+        // Each ID with the texture it was found as, then the blend from the first towards the second
         var grading = effects.ColorGrading;
+
+        string LutName(int id, int slot) => slot >= 0 && grading.Luts != null
+            ? $"{id} ({grading.Luts.Entries[slot].Owner}_CGrading{id:D4})"
+            : LOC.Get("VIEWPORT_Rendering_Post_Color_Grading_Missing", id);
+
         Row("VIEWPORT_Rendering_Post_Row_Color_Grading",
             grading.Enabled && grading.LutSourceId >= 0
-                ? LOC.Get("VIEWPORT_Rendering_Post_Color_Grading_Value", grading.LutSourceId)
+                ? grading.NextLutSourceId != grading.LutSourceId
+                    ? LOC.Get("VIEWPORT_Rendering_Post_Color_Grading_Blend", LutName(grading.LutSourceId, grading.Slot),
+                        LutName(grading.NextLutSourceId, grading.NextSlot), $"{grading.Blend:0.##}")
+                    : LOC.Get("VIEWPORT_Rendering_Post_Color_Grading_Value", LutName(grading.LutSourceId, grading.Slot))
                 : off,
             "Yebis-LutSourceId");
 

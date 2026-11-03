@@ -183,12 +183,31 @@ public class GparamAntiAlias
     public float SharpenRangeMax = 2.0f;
 }
 
-/// <summary>ColorGrading[Yebis]: a LUT by ID, which mapbase leaves off (-1)</summary>
+/// <summary>
+/// ColorGrading[Yebis]: a LUT by ID, which mapbase leaves off (-1), see <see cref="ColorGradingLuts" />. LutSourceId
+/// can change through the day; between two keys the LUTs either side are blended.
+/// </summary>
 public class GparamColorGrading
 {
     public bool Enabled = false;
+
+    /// <summary>The ID at the key before the time of day</summary>
     public int LutSourceId = -1;
+
+    /// <summary>The ID at the key after it, the same as <see cref="LutSourceId" /> with one key</summary>
+    public int NextLutSourceId = -1;
+
+    /// <summary>How far from <see cref="LutSourceId" /> towards <see cref="NextLutSourceId" /></summary>
+    public float Blend = 0.0f;
+
     public float FadeTime = 1.0f;
+
+    /// <summary>The LUTs the IDs are looked up in, null if there are none</summary>
+    public ColorGradingLuts Luts;
+
+    /// <summary>The slots in <see cref="Luts" /> of the two IDs, -1 where there is no such LUT</summary>
+    public int Slot = -1;
+    public int NextSlot = -1;
 }
 
 /// <summary>

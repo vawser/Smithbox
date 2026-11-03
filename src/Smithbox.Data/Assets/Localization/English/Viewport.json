@@ -1429,6 +1429,22 @@
       "Text": "LUT {0}"
     },
     {
+      "Key": "VIEWPORT_Rendering_Post_Color_Grading_Blend",
+      "Text": "LUT {0} to {1}, {2} of the way"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Color_Grading_Missing",
+      "Text": "{0} (not found)"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Color_Grading_Enable",
+      "Text": "Color Grading"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Color_Grading_Enable_TT",
+      "Text": "Where the GPARAM's ColorGrading group is on, the image goes through the LUT its LutSourceId names, from the maps' mAA_cgrading textures, blending between the two LUTs either side of the time of day. Needs map lighting."
+    },
+    {
       "Key": "VIEWPORT_Rendering_Post_Row_Wet",
       "Text": "Wet"
     },

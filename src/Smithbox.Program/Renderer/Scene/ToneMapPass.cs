@@ -39,17 +39,27 @@ public struct ToneMapParam
 
     /// <summary>xy: where the scene target's first pixel is drawn in the framebuffer</summary>
     public Vector4 Offset;
+
+    /// <summary>x: 1 to grade, y: the first LUT's slot, z: the second's, w: how far towards it</summary>
+    public Vector4 Grading;
 }
 
 /// <summary>
 ///     Takes a <see cref="SceneTarget" /> to a display framebuffer: the exposure, a tone mapping curve, and the
-///     square root the shaders used to finish with as their gamma. One per <see cref="SceneRenderPipeline" />, as each
-///     reads its own target; the pipelines are shared between those drawing to the same outputs.
+///     square root the shaders used to finish with as their gamma, then the map's color grading LUT (see
+///     <see cref="ColorGradingLuts" />). One per <see cref="SceneRenderPipeline" />, as each reads its own target; the
+///     pipelines are shared between those drawing to the same outputs, and the LUT atlas between them all.
 /// </summary>
 public class ToneMapPass
 {
     private static readonly Dictionary<OutputDescription, Pipeline> Pipelines = new();
     private static ResourceLayout Layout;
+
+    // The LUTs on the GPU, made from the last ColorGradingLuts drawn with, and a 1 x 1 texture bound without them
+    private static Texture LutAtlas;
+    private static ColorGradingLuts LutAtlasSource;
+    private static Texture NoLuts;
+    private static Sampler LutSampler;
 
     private DeviceBuffer ParamBuffer;
     private ResourceSet ResourceSet;
@@ -57,6 +67,7 @@ public class ToneMapPass
     // target or chain makes new textures, so the reference tells when the set is stale.
     private Texture BoundSource;
     private DeviceBuffer BoundExposureState;
+    private Texture BoundLuts;
     private ToneMapParam Params;
 
     /// <summary>
@@ -111,13 +122,25 @@ public class ToneMapPass
         }
 
         var applyAutoExposure = !passThrough && autoExposure is { Applied: true };
-        EnsureResources(gd, source, applyAutoExposure ? autoExposure.StateBuffer : AutoExposurePass.GetNeutralState(gd));
+
+        // The LUTs either side of the time of day; with only one found, both are it
+        var grading = lighting?.PostEffects.ColorGrading;
+        var grade = !passThrough && CFG.Current.Viewport_Post_Effects && CFG.Current.Viewport_Post_Color_Grading &&
+                    grading is { Enabled: true, Luts: not null } && (grading.Slot >= 0 || grading.NextSlot >= 0);
+        var slot = grade ? grading.Slot >= 0 ? grading.Slot : grading.NextSlot : 0;
+        var nextSlot = grade ? grading.NextSlot >= 0 ? grading.NextSlot : slot : 0;
+
+        EnsureResources(gd, source, applyAutoExposure ? autoExposure.StateBuffer : AutoExposurePass.GetNeutralState(gd),
+            grade ? GetLutAtlas(gd, grading.Luts) : GetNoLuts(gd));
 
         var (op, whitePoint) = passThrough ? (ToneMapOperator.Clamp, 1.0f) : Resolve(lighting);
         var exposure = passThrough ? 1.0f : Math.Max(CFG.Current.Viewport_ToneMap_Exposure, 0.0f);
 
         Params.Settings = new Vector4(exposure, (float)op, whitePoint, applyAutoExposure ? 1.0f : 0.0f);
         Params.Offset = new Vector4(offset, 0.0f, 0.0f);
+        Params.Grading = grade
+            ? new Vector4(1.0f, slot, nextSlot, Math.Clamp(grading.Blend, 0.0f, 1.0f))
+            : Vector4.Zero;
         cl.UpdateBuffer(ParamBuffer, 0, ref Params, (uint)sizeof(ToneMapParam));
 
         cl.SetPipeline(GetPipeline(gd, outputs));
@@ -125,25 +148,15 @@ public class ToneMapPass
         cl.Draw(3, 1, 0, 0);
     }
 
-    private unsafe void EnsureResources(GraphicsDevice gd, Texture source, DeviceBuffer exposureState)
+    private unsafe void EnsureResources(GraphicsDevice gd, Texture source, DeviceBuffer exposureState, Texture luts)
     {
         ResourceFactory factory = gd.ResourceFactory;
-
-        Layout ??= factory.CreateResourceLayout(new ResourceLayoutDescription(
-            new ResourceLayoutElementDescription("ToneMapParams", VkDescriptorType.UniformBuffer,
-                VkShaderStageFlags.Fragment),
-            new ResourceLayoutElementDescription("SceneColor", VkDescriptorType.SampledImage,
-                VkShaderStageFlags.Fragment),
-            new ResourceLayoutElementDescription("SceneSampler", VkDescriptorType.Sampler,
-                VkShaderStageFlags.Fragment),
-            new ResourceLayoutElementDescription("ExposureState", VkDescriptorType.StorageBuffer,
-                VkShaderStageFlags.Fragment)));
 
         ParamBuffer ??= factory.CreateBuffer(new BufferDescription((uint)sizeof(ToneMapParam),
             VkBufferUsageFlags.UniformBuffer | VkBufferUsageFlags.TransferDst, VmaMemoryUsage.Auto, 0));
 
         if (ReferenceEquals(BoundSource, source) && ReferenceEquals(BoundExposureState, exposureState) &&
-            ResourceSet != null)
+            ReferenceEquals(BoundLuts, luts) && ResourceSet != null)
         {
             return;
         }
@@ -153,10 +166,89 @@ public class ToneMapPass
             SceneRenderer.DisposeAfterFramesInFlight(ResourceSet);
         }
 
-        ResourceSet = factory.CreateResourceSet(new ResourceSetDescription(Layout, ParamBuffer, source,
-            gd.PointSampler, exposureState));
+        ResourceSet = factory.CreateResourceSet(new ResourceSetDescription(GetLayout(factory), ParamBuffer, source,
+            gd.PointSampler, exposureState, luts, LutSampler));
         BoundSource = source;
         BoundExposureState = exposureState;
+        BoundLuts = luts;
+    }
+
+    private static ResourceLayout GetLayout(ResourceFactory factory)
+    {
+        Layout ??= factory.CreateResourceLayout(new ResourceLayoutDescription(
+            new ResourceLayoutElementDescription("ToneMapParams", VkDescriptorType.UniformBuffer,
+                VkShaderStageFlags.Fragment),
+            new ResourceLayoutElementDescription("SceneColor", VkDescriptorType.SampledImage,
+                VkShaderStageFlags.Fragment),
+            new ResourceLayoutElementDescription("SceneSampler", VkDescriptorType.Sampler,
+                VkShaderStageFlags.Fragment),
+            new ResourceLayoutElementDescription("ExposureState", VkDescriptorType.StorageBuffer,
+                VkShaderStageFlags.Fragment),
+            new ResourceLayoutElementDescription("LutAtlas", VkDescriptorType.SampledImage,
+                VkShaderStageFlags.Fragment),
+            new ResourceLayoutElementDescription("LutSampler", VkDescriptorType.Sampler,
+                VkShaderStageFlags.Fragment)));
+
+        return Layout;
+    }
+
+    private static Sampler GetLutSampler(ResourceFactory factory)
+    {
+        if (LutSampler == null)
+        {
+            SamplerDescription description = SamplerDescription.Linear;
+            description.AddressModeU = VkSamplerAddressMode.ClampToEdge;
+            description.AddressModeV = VkSamplerAddressMode.ClampToEdge;
+            description.AddressModeW = VkSamplerAddressMode.ClampToEdge;
+            LutSampler = factory.CreateSampler(ref description);
+        }
+
+        return LutSampler;
+    }
+
+    /// <summary>The atlas of <paramref name="luts" /> on the GPU, uploaded again only when they are another set</summary>
+    private static Texture GetLutAtlas(GraphicsDevice gd, ColorGradingLuts luts)
+    {
+        GetLutSampler(gd.ResourceFactory);
+
+        if (LutAtlas != null && ReferenceEquals(LutAtlasSource, luts))
+        {
+            return LutAtlas;
+        }
+
+        // A frame that is still executing can be reading the old atlas
+        if (LutAtlas != null)
+        {
+            SceneRenderer.DisposeAfterFramesInFlight(LutAtlas);
+        }
+
+        LutAtlas = CreateLutTexture(gd, luts.Atlas, (uint)luts.Width, ColorGradingLuts.Height, "Color Grading LUTs");
+        LutAtlasSource = luts;
+
+        return LutAtlas;
+    }
+
+    private static Texture GetNoLuts(GraphicsDevice gd)
+    {
+        GetLutSampler(gd.ResourceFactory);
+        return NoLuts ??= CreateLutTexture(gd, new byte[] { 255, 255, 255, 255 }, 1, 1, "No Color Grading LUTs");
+    }
+
+    private static unsafe Texture CreateLutTexture(GraphicsDevice gd, byte[] pixels, uint width, uint height, string name)
+    {
+        TextureDescription description = TextureDescription.Texture2D(width, height, 1, 1, VkFormat.R8G8B8A8Unorm,
+            VkImageUsageFlags.Sampled | VkImageUsageFlags.TransferDst, VkImageCreateFlags.None, VkImageTiling.Optimal,
+            VkSampleCountFlags.Count1);
+
+        var texture = gd.ResourceFactory.CreateTexture(ref description);
+        texture.Name = name;
+
+        fixed (byte* data = pixels)
+        {
+            gd.UpdateTexture(texture, (IntPtr)data, (uint)pixels.Length, 0, 0, 0, width, height, 1, 0, 0);
+        }
+
+        return texture;
     }
 
     private static Pipeline GetPipeline(GraphicsDevice gd, OutputDescription outputs)
@@ -175,7 +267,7 @@ public class ToneMapPass
             VkPrimitiveTopology.TriangleList,
             new ShaderSetDescription(Array.Empty<VertexLayoutDescription>(), new[] { vs, fs },
                 ShaderHelper.GetSpecializations(gd)),
-            new[] { Layout },
+            new[] { GetLayout(gd.ResourceFactory) },
             outputs);
 
         pipeline = gd.ResourceFactory.CreateGraphicsPipeline(ref description);

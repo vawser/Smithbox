@@ -431,7 +431,39 @@ public class GparamLightingBank
 
         ReadPostEffects(reader, lightSetId, lighting.PostEffects);
 
+        // The LUTs are looked up in the area of the file read first, whose IDs they are
+        var grading = lighting.PostEffects.ColorGrading;
+        var lutArea = file != null && file.Length >= 6 && file[0] is 'm' or 'M' ? file.Substring(0, 6) : GetArea(mapId);
+        grading.Luts = GetLuts();
+        grading.Slot = grading.Luts?.Find(lutArea, grading.LutSourceId) ?? -1;
+        grading.NextSlot = grading.Luts?.Find(lutArea, grading.NextLutSourceId) ?? -1;
+
         return lighting;
+    }
+
+    private ColorGradingLuts Luts;
+    private bool LutsLoaded;
+
+    /// <summary>The game's color grading LUTs, read once, see <see cref="ColorGradingLuts" />. Null if there are none.</summary>
+    private ColorGradingLuts GetLuts()
+    {
+        lock (Files)
+        {
+            if (LutsLoaded)
+                return Luts;
+        }
+
+        var fs = Project.VFS.FS;
+        var luts = ColorGradingLuts.Load(
+            path => fs.FileExists(path) ? fs.ReadFile(path) : null,
+            (path, e) => Smithbox.LogError(this, LOC.Get("MAP_Lighting_Failed_Read_LUT", path), e));
+
+        lock (Files)
+        {
+            Luts = luts.Count > 0 ? luts : null;
+            LutsLoaded = true;
+            return Luts;
+        }
     }
 
     /// <summary>
@@ -570,7 +602,8 @@ public class GparamLightingBank
 
         var grading = effects.ColorGrading;
         grading.Enabled = reader.Get(ColorGradingKey, "Yebis-ColorGrading-Enable", 0, grading.Enabled);
-        grading.LutSourceId = reader.Get(ColorGradingKey, "Yebis-LutSourceId", 0, grading.LutSourceId);
+        (grading.LutSourceId, grading.NextLutSourceId, grading.Blend) =
+            reader.GetKeys(ColorGradingKey, "Yebis-LutSourceId", 0, grading.LutSourceId);
         grading.FadeTime = reader.Get(ColorGradingKey, "ColorGrading FadeTime", 0, grading.FadeTime);
 
         var wet = effects.Wet;
@@ -665,13 +698,53 @@ public class GparamLightingBank
         }
 
         /// <summary>
-        /// The value at a time of day: between the keys either side of it, wrapping from the last key of the day
-        /// round to the first. Numbers and vectors are blended; anything else takes the earlier key.
+        /// The values of a field at the keys either side of the time of day, and how far between them it is, for a
+        /// value that can't be blended itself, such as an ID whose two things are blended instead. Looked up along
+        /// the chain as <see cref="Get{T}" /> does.
         /// </summary>
-        internal static object Interpolate(List<GPARAM.IFieldValue> values, float hours, bool isAngle)
+        public (T Previous, T Next, float Blend) GetKeys<T>(string groupKey, string fieldKey, int id, T fallback)
+        {
+            foreach (var (name, gparam) in Chain)
+            {
+                var field = gparam.Params.FirstOrDefault(p => p.Key == groupKey)?.Fields
+                    .FirstOrDefault(f => f.Key == fieldKey);
+
+                if (field == null)
+                    continue;
+
+                var usedId = id;
+                var values = field.Values.Where(v => v.ID == id).ToList();
+
+                if (values.Count == 0 && id != 0)
+                {
+                    usedId = 0;
+                    values = field.Values.Where(v => v.ID == 0).ToList();
+                }
+
+                if (values.Count == 0)
+                    continue;
+
+                var (previous, next, t) = Neighbours(values, Hours);
+
+                if (!TryConvert(previous.Value, fallback, out T a) || !TryConvert(next.Value, fallback, out T b))
+                    continue;
+
+                Sources[fieldKey] = $"{name} #{usedId}";
+                return (a, b, t);
+            }
+
+            return (fallback, fallback, 0.0f);
+        }
+
+        /// <summary>
+        /// The keys either side of a time of day, wrapping from the last key of the day round to the first, and how
+        /// far from the first to the second it is. The same key twice, at 0, when there is only one.
+        /// </summary>
+        private static (GPARAM.IFieldValue Previous, GPARAM.IFieldValue Next, float Blend) Neighbours(
+            List<GPARAM.IFieldValue> values, float hours)
         {
             if (values.Count == 1)
-                return values[0].Value;
+                return (values[0], values[0], 0.0f);
 
             var keys = values.OrderBy(v => v.TimeOfDay).ToList();
 
@@ -683,9 +756,23 @@ public class GparamLightingBank
             var span = ((next.TimeOfDay - previous.TimeOfDay) % 24.0f + 24.0f) % 24.0f;
 
             if (span <= 0.0f || ReferenceEquals(previous, next))
-                return previous.Value;
+                return (previous, previous, 0.0f);
 
             var t = (((hours - previous.TimeOfDay) % 24.0f + 24.0f) % 24.0f) / span;
+
+            return (previous, next, t);
+        }
+
+        /// <summary>
+        /// The value at a time of day: between the keys either side of it, wrapping from the last key of the day
+        /// round to the first. Numbers and vectors are blended; anything else takes the earlier key.
+        /// </summary>
+        internal static object Interpolate(List<GPARAM.IFieldValue> values, float hours, bool isAngle)
+        {
+            var (previous, next, t) = Neighbours(values, hours);
+
+            if (ReferenceEquals(previous, next))
+                return previous.Value;
 
             return Lerp(previous.Value, next.Value, t, isAngle);
         }
