@@ -265,6 +265,7 @@ public sealed class ProjectileSimulation
         BulletDefinition Definition,
         Vector3 Position,
         Vector3 Direction,
+        Vector3 Aim,
         float? Speed,
         ProjectileOrigin Origin,
         int Parent,
@@ -277,10 +278,13 @@ public sealed class ProjectileSimulation
         public int Index;
         public Vector3 Position;
         public Vector3 Direction;
-        public Vector3 Drift;
-        public Vector3 Heading;
-        public float Speed;
-        public float Fall;
+
+        // As fired, since Position and Direction move on
+        public Vector3 FiredFrom;
+        public Vector3 Aim;
+
+        // One vector, so a turn swings the fall with it and a limit caps the whole
+        public Vector3 Velocity;
         public float Age;
         public float Travelled;
         public float Life;
@@ -392,10 +396,10 @@ public sealed class ProjectileSimulation
     private void Fire(BulletDefinition definition, float time, Vector3 position, Vector3 forward, float? speed,
         ProjectileOrigin origin, int parent, int generation)
     {
-        // These are only out of reach for want of a target
-        Result.Ignored |= Settings.SimulateTarget
-            ? definition.Ignored & ~(BulletIgnoredBehavior.Homing | BulletIgnoredBehavior.EmitPosition | BulletIgnoredBehavior.Arc)
-            : definition.Ignored;
+        // These are only out of reach for want of a target, or of something to aim at
+        Result.Ignored |= definition.Ignored & (Settings.SimulateTarget
+            ? ~(BulletIgnoredBehavior.Homing | BulletIgnoredBehavior.EmitPosition | BulletIgnoredBehavior.Arc)
+            : definition.NoLockTargetDistance != 0 ? ~BulletIgnoredBehavior.Homing : BulletIgnoredBehavior.None);
 
         for (var volley = 0; volley < definition.VolleyCount; volley++)
         {
@@ -436,7 +440,8 @@ public sealed class ProjectileSimulation
 
                 Vector3 direction = RotateFrom(facing, float.DegreesToRadians(angleY), float.DegreesToRadians(angleX));
 
-                Pending.Enqueue(new PendingShot(definition, start, direction, shotSpeed, origin, parent, generation), due);
+                Pending.Enqueue(new PendingShot(definition, start, direction, facing, shotSpeed, origin, parent,
+                    generation), due);
             }
         }
     }
@@ -605,8 +610,12 @@ public sealed class ProjectileSimulation
                 Index = Result.Tracks.Count - 1,
                 Position = shot.Position,
                 Direction = shot.Direction,
-                Heading = shot.Direction,
-                Speed = shot.Speed ?? definition.InitialSpeed,
+
+                // Where it was aimed, which leaves out the row's own launch angle
+                FiredFrom = shot.Position,
+                Aim = shot.Aim,
+
+                Velocity = shot.Direction * (shot.Speed ?? definition.InitialSpeed),
                 Life = definition.Life < 0 ? float.MaxValue : definition.Life + Random(definition.LifeRandom),
                 NextInterval = definition.IntervalWait + GetInterval(definition),
                 AimOffset = Vector3.UnitY * definition.HomingHeightOffset +
@@ -631,42 +640,33 @@ public sealed class ProjectileSimulation
 
         if (shot.Age >= definition.AccelStartTime && shot.Age < definition.AccelEndTime)
         {
-            shot.Speed += accel * StepTime;
-
-            // Rows can start outside of these limits, as they only matter once the speed is changing
-            if (accel > 0 && definition.MaxSpeed > 0)
-            {
-                shot.Speed = Math.Min(shot.Speed, definition.MaxSpeed);
-            }
-            else if (accel < 0)
-            {
-                shot.Speed = Math.Max(shot.Speed, definition.MinSpeed);
-            }
+            // Along the way it is going, not the way it points: gravity pulls those apart
+            shot.Velocity += Normalize(shot.Velocity, shot.Direction) * (accel * StepTime);
         }
 
-        // Rows with their speed locked fly straight, whatever their gravity says. Vacuum Slice and
-        // Founding Rain of Stars have a gravity of 999, which is what ground-seeking bullets use
-        var speedLocked = definition.MinSpeed > 0 && definition.MinSpeed == definition.MaxSpeed;
+        // Limits hold every step, and rows can start outside of them
+        var speed = shot.Velocity.Length();
+        var limit = MathF.Max(definition.MinSpeed,
+            definition.MaxSpeed > 0 ? MathF.Min(speed, definition.MaxSpeed) : speed);
 
-        if (shot.Age >= definition.GravityStartTime && !speedLocked)
+        if (limit != speed)
         {
-            shot.Fall += gravity * StepTime;
+            shot.Velocity = Normalize(shot.Velocity, shot.Direction) * limit;
+        }
+
+        if (shot.Age >= definition.GravityStartTime)
+        {
+            shot.Velocity -= Vector3.UnitY * (gravity * StepTime);
         }
 
         Vector3 flat = new(shot.Direction.X, 0, shot.Direction.Z);
 
         if (flat.LengthSquared() > Epsilon)
         {
-            shot.Drift += Vector3.Normalize(flat) * definition.ExternalForce * StepTime;
+            shot.Velocity += Vector3.Normalize(flat) * (definition.ExternalForce * StepTime);
         }
 
-        Vector3 velocity = shot.Direction * shot.Speed + shot.Drift - Vector3.UnitY * shot.Fall;
-        Vector3 next = shot.Position + velocity * StepTime;
-
-        if (velocity.LengthSquared() > Epsilon)
-        {
-            shot.Heading = Vector3.Normalize(velocity);
-        }
+        Vector3 next = shot.Position + shot.Velocity * StepTime;
 
         var radius = shot.Track.GetRadius(Time);
 
@@ -748,22 +748,37 @@ public sealed class ProjectileSimulation
         return MathF.Max(radius, definition.Attack?.Radius ?? 0);
     }
 
+    private static Vector3 Normalize(Vector3 value, Vector3 fallback)
+    {
+        return value.LengthSquared() > Epsilon ? Vector3.Normalize(value) : fallback;
+    }
+
     /// <summary>
     ///     Turns the bullet towards the target. Left and right turn separately from up and down, as rows can
-    ///     limit them differently. Gravity is left out of this, so a heavy bullet can drop short of what it aims at.
+    ///     limit them differently. Nothing is aimed high to make up for gravity, so a heavy bullet can still
+    ///     drop short of the point it turns towards.
     /// </summary>
     private void Home(ActiveShot shot)
     {
         BulletDefinition definition = shot.Definition;
 
-        if (!Settings.SimulateTarget || shot.HomingStopped || shot.Age < definition.HomingBeginTime ||
+        if (shot.HomingStopped || shot.Age < definition.HomingBeginTime ||
             shot.Travelled < definition.HomingBeginDistance ||
             definition.HomingRateY <= 0 && definition.HomingRateX <= 0)
         {
             return;
         }
 
-        Vector3 toTarget = Target + shot.AimOffset - shot.Position;
+        var reach = definition.NoLockTargetDistance < 0 ? definition.Range : definition.NoLockTargetDistance;
+
+        if (!Settings.SimulateTarget && reach <= 0)
+        {
+            return;
+        }
+
+        // With nothing locked on, a homing bullet also locks on to a virtual point
+        Vector3 aimPoint = Settings.SimulateTarget ? Target : shot.FiredFrom + shot.Aim * reach;
+        Vector3 toTarget = aimPoint + shot.AimOffset - shot.Position;
         var distance = toTarget.Length();
 
         // A bullet can start on top of the target, which leaves nothing to aim at for now
@@ -781,15 +796,18 @@ public sealed class ProjectileSimulation
 
         Vector3 wanted = toTarget / distance;
 
+        // A turn starts from where the bullet is going, fall included
+        Vector3 heading = Normalize(shot.Velocity, shot.Direction);
+
         if (definition.HomingStopAngle > 0 &&
-            float.RadiansToDegrees(MathF.Acos(Math.Clamp(Vector3.Dot(shot.Direction, wanted), -1, 1))) > definition.HomingStopAngle)
+            float.RadiansToDegrees(MathF.Acos(Math.Clamp(Vector3.Dot(heading, wanted), -1, 1))) > definition.HomingStopAngle)
         {
             shot.HomingStopped = true;
             return;
         }
 
-        var yaw = MathF.Atan2(shot.Direction.X, shot.Direction.Z);
-        var pitch = MathF.Asin(Math.Clamp(shot.Direction.Y, -1, 1));
+        var yaw = MathF.Atan2(heading.X, heading.Z);
+        var pitch = MathF.Asin(Math.Clamp(heading.Y, -1, 1));
 
         var yawChange = MathF.IEEERemainder(MathF.Atan2(wanted.X, wanted.Z) - yaw, MathF.Tau);
         var pitchChange = MathF.Asin(Math.Clamp(wanted.Y, -1, 1)) - pitch;
@@ -799,6 +817,9 @@ public sealed class ProjectileSimulation
 
         shot.Direction = GetDirection(yaw + Math.Clamp(yawChange, -maxYaw, maxYaw),
             pitch + Math.Clamp(pitchChange, -maxPitch, maxPitch));
+
+        // Turning only costs the bullet its heading, not the speed it has
+        shot.Velocity = shot.Direction * shot.Velocity.Length();
     }
 
     private void Emit(ActiveShot shot)
@@ -880,7 +901,7 @@ public sealed class ProjectileSimulation
                 : hitLocation ?? shot.Position;
 
             Fire(child, time, source, GetChildForward(shot, child, impactNormal),
-                definition.ChildInheritsSpeed ? shot.Speed : null, origin, shot.Index, shot.Track.Generation + 1);
+                definition.ChildInheritsSpeed ? shot.Velocity.Length() : null, origin, shot.Index, shot.Track.Generation + 1);
         }
     }
 
@@ -894,7 +915,7 @@ public sealed class ProjectileSimulation
         switch (shot.Definition.ChildPosture)
         {
             case BulletChildPosture.Horizontal:
-                Vector3 flat = new(shot.Heading.X, 0, shot.Heading.Z);
+                Vector3 flat = new(shot.Velocity.X, 0, shot.Velocity.Z);
 
                 return flat.LengthSquared() > Epsilon ? Vector3.Normalize(flat) : Vector3.UnitZ;
 
@@ -902,7 +923,7 @@ public sealed class ProjectileSimulation
                 return impactNormal.Value;
 
             default:
-                return shot.Heading;
+                return Normalize(shot.Velocity, shot.Direction);
         }
     }
 
