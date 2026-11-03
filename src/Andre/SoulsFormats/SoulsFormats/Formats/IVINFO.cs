@@ -6,7 +6,10 @@ namespace SoulsFormats
     /// An Armored Core VI, Elden Ring and Nightreign file that accompanies one baked irradiance volume of a map.
     /// The volume itself is a set of four 3D BC7 textures named GIIV####_##_W, _X, _Y and _Z in the map's envmap
     /// TPFs, holding the L0 and L1 spherical harmonic bands of the indirect light; this file shares the volume's
-    /// name and holds a single summary of that light.
+    /// name and holds the volume's average light as one luminance spherical harmonic.
+    /// The deferred GXEnvMapRegion shaders use it to normalise the region's reflection cubemap: the cubemap sample is
+    /// scaled by the luminance of the volume's light at the pixel divided by this average, so reflections darken in
+    /// shadowed parts of the volume and brighten in lit ones.
     /// Files are packed by quality level into ivinfobnds, such as m10_00_00_00_high.ivinfobnd.dcx.
     /// Extension: .ivInfo
     /// </summary>
@@ -23,15 +26,15 @@ namespace SoulsFormats
         public int Version { get; set; }
 
         /// <summary>
-        /// Appears to be the volume's light as a single set of luminance spherical harmonic coefficients, with the
-        /// L1 band in XYZ and the L0 band in W. W is non-negative in nearly all files and Y is the largest of the L1
-        /// terms in most, as expected of the vertical light of a Y-up world. Volumes that share an ID but differ in
-        /// their last index, such as GIIV0500_00 to _05, hold almost identical values.
+        /// The volume's average light as a luminance spherical harmonic, loaded into g_ivShLuminance0 or 1 of the
+        /// CB_ENVMAP_REGION constant buffer. The L1 band is in XYZ and the L0 band in W, and the shader evaluates it
+        /// for a world normal n as max(0, W + 0.5 * dot(XYZ, n)), so the length of XYZ never exceeds twice W.
+        /// A W of zero or less turns the cubemap normalisation off for the volume.
         /// </summary>
-        public Vector4 Irradiance { get; set; }
+        public Vector4 ShLuminance { get; set; }
 
         /// <summary>
-        /// Unknown; 0 in Armored Core VI and 1 in Elden Ring and Nightreign.
+        /// Unknown; 0 in Armored Core VI and 1 in Elden Ring and Nightreign. It is not passed to the shaders.
         /// </summary>
         public float Unk18 { get; set; }
 
@@ -41,7 +44,7 @@ namespace SoulsFormats
         public IVINFO()
         {
             Version = 1;
-            Irradiance = Vector4.Zero;
+            ShLuminance = Vector4.Zero;
             Unk18 = 1;
         }
 
@@ -72,7 +75,7 @@ namespace SoulsFormats
             br.BigEndian = false;
             Version = br.AssertInt32(1);
             br.AssertInt32(0);
-            Irradiance = br.ReadVector4();
+            ShLuminance = br.ReadVector4();
             Unk18 = br.ReadSingle();
         }
 
@@ -84,7 +87,7 @@ namespace SoulsFormats
             bw.BigEndian = false;
             bw.WriteInt32(Version);
             bw.WriteInt32(0);
-            bw.WriteVector4(Irradiance);
+            bw.WriteVector4(ShLuminance);
             bw.WriteSingle(Unk18);
         }
 
@@ -93,7 +96,7 @@ namespace SoulsFormats
         /// </summary>
         public override string ToString()
         {
-            return $"{Irradiance} {Unk18}";
+            return $"{ShLuminance} {Unk18}";
         }
     }
 }
