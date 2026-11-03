@@ -509,7 +509,7 @@ transition and is ignored.
 Check: ER m60_42_36_00 dragging the time 4 -> 12 -> 15: the grade shifts warmer towards evening and cooler at night,
 on top of the sun's colour change.
 
-### Phase 7 as built (2026-11-03; not yet checked in the app)
+### Phase 7 as built (2026-11-03; checked in the app 2026-11-03)
 
 **Where the LUTs are.** `/map/mAA/common/mAA_cgrading.tpf.dcx`, one TPF per area (20 areas, 101 LUTs):
 - Each texture is named `mAA_BB_CGradingNNNN`, where NNNN is the LutSourceId.

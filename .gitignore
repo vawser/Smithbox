@@ -373,9 +373,6 @@ src/Smithbox.Data/Assets/Shaders/FlverShader/build_shader.bat
 Documentation/DS2/MapStudio.macbin
 /.claude
 .mcp.json
-CLAUDE.md
 /.archive
 /DSAnimStudio
 /Smithbox.Release/Output
-/Documentation/Full GI
-/Documentation/Post Processing
