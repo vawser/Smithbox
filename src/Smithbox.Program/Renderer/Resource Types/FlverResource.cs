@@ -1345,18 +1345,44 @@ public class FlverResource : IResource, IDisposable
     }
 
     /// <summary>
-    /// Characters (c####) are lit by the model set of the map's GPARAM LightSet instead of the scene's, as the game
-    /// lights them. Flagged in the material, see <see cref="Material.ModelLightingFlag" />.
+    /// Characters are lit by the model set of the map's GPARAM LightSet instead of the scene's, as the game lights
+    /// them. Flagged in the material, see <see cref="Material.ModelLightingFlag" />.
     /// </summary>
     private void MarkModelLighting(FlverMaterial dest)
     {
-        var name = Context?.Name;
+        if (IsCharacterModel(Context))
+        {
+            dest.MaterialData.uvSet |= Material.ModelLightingFlag;
+        }
+    }
 
-        if (name == null || name.Length < 5 || char.ToLowerInvariant(name[0]) != 'c' ||
-            !char.IsDigit(name[1]) || !char.IsDigit(name[2]) || !char.IsDigit(name[3]) || !char.IsDigit(name[4]))
-            return;
+    /// <summary>
+    /// Whether a FLVER belongs to a character: a c#### model, or a part from the parts folder. Characters built
+    /// from parts, such as c0000 (players, and the ACs of Armored Core VI), are drawn from those parts instead of
+    /// their own FLVER, see CharacterComposition. The parts folder only holds bodies and equipment.
+    /// </summary>
+    private static bool IsCharacterModel(ResourceLoadContext? ctx)
+    {
+        if (ctx == null)
+            return false;
 
-        dest.MaterialData.uvSet |= Material.ModelLightingFlag;
+        var name = ctx.Name;
+
+        if (name.Length >= 5 && char.ToLowerInvariant(name[0]) == 'c' &&
+            char.IsDigit(name[1]) && char.IsDigit(name[2]) && char.IsDigit(name[3]) && char.IsDigit(name[4]))
+            return true;
+
+        // parts/xx_x_0000.partsbnd.dcx, or loose files under parts/
+        foreach (var path in new[] { ctx.ContainerPath, ctx.EntryPath })
+        {
+            var normalized = path.Replace('\\', '/').TrimStart('/');
+
+            if (normalized.Contains(".partsbnd", StringComparison.OrdinalIgnoreCase) ||
+                normalized.StartsWith("parts/", StringComparison.OrdinalIgnoreCase))
+                return true;
+        }
+
+        return false;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

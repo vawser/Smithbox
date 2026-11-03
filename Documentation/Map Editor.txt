@@ -34,5 +34,5 @@
     - Introduce shadows
 
     
-- Move all of the viewport menu Render submenu elements into a new Viewport Rendering tools window section
-    - Each sub menu should be a tab within this section.
+Move all of the viewport menu Render submenu elements into a new Viewport Rendering tools window section.
+Each sub menu should be a tab within this section.
