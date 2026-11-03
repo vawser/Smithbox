@@ -87,7 +87,7 @@ public class MapContainer : ObjectContainer
     public Entity MapLimitParent = null;
 
     /// <summary>
-    /// The fog volume banks of the map (ER, NR), one per FVB file. Their children are the volumes.
+    /// The fog volume banks of the map (AC6, ER, NR), one per FVB file. Their children are the volumes.
     /// </summary>
     [XmlIgnore]
     public List<Entity> FogVolumeParents;

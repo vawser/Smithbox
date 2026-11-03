@@ -25,9 +25,6 @@
 - NVC: navmesh connectors?
 - ONAV: oNav?
     
-- FVB: FogVolumeBank? requires format implemetation
-    - Implement fog in Map Editor:
-        - Appear as fog unselected, when selected, display gray wire-framed box matching bounds + the fog
 - IVInfo: Irradiance Volume Info: requires format implementation
 - EnvMap: how they are applied and how they'd be integrated into the renderer
 

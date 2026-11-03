@@ -39,7 +39,7 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary MultiPlayerWallFiles = new();
 
     /// <summary>
-    /// The fog volume banks of the maps (ER, NR)
+    /// The fog volume banks of the maps (AC6, ER, NR)
     /// </summary>
     public FileDictionary FogVolumeFiles = new();
 
@@ -460,7 +460,7 @@ public class ProjectFileLocator : IDisposable
             if (isMap && ext == "mpw" && !isSd)
                 multiPlayerWallFiles.Add(entry);
 
-            // Fog volumes (ER, NR)
+            // Fog volumes (AC6, ER, NR)
             if (isMap && ext == "fvb" && !isSd)
                 fogVolumeFiles.Add(entry);
 

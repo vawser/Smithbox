@@ -44,7 +44,7 @@ public enum MapFileType
     MSLD = 1 << 12,
 
     /// <summary>
-    /// The FVB files of a map, its fog volumes (ER, NR)
+    /// The FVB files of a map, its fog volumes (AC6, ER, NR)
     /// </summary>
     FVB = 1 << 13
 }

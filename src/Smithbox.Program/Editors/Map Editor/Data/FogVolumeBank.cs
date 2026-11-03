@@ -10,12 +10,12 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// Holds the FVB files of Elden Ring and Nightreign maps, which place the boxes of volumetric fog. A map can have
-/// several, named after its MSB with a suffix (e.g. m31_06_00_00_0000 and _0002). A file is read when its map is
-/// loaded, and its volumes become entities of the map.
+/// Holds the FVB files of Armored Core VI, Elden Ring and Nightreign maps, which place the boxes of volumetric fog.
+/// A map can have several, named after its MSB with a suffix (e.g. m31_06_00_00_0000 and _0002). A file is read
+/// when its map is loaded, and its volumes become entities of the map.
 /// The settings a volume is drawn with are the row of its FogID in the "FogVolume ParamEditor" group of a GPARAM:
-/// the map's own GPARAM (mAA_BB_0000), or else mapbase. The weather GPARAMs can also hold the row, but the
-/// default weather is used here.
+/// the map's own GPARAM (mAA_BB_0000), or else mapbase (ER, NR), or else another GPARAM of the map, such as
+/// m41_00_0100 in AC6. The weather GPARAMs can also hold the row, but the default weather is used here.
 /// </summary>
 public class FogVolumeBank
 {
@@ -36,7 +36,7 @@ public class FogVolumeBank
 
     public bool CanUse()
     {
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.NR)
             return true;
 
         return false;
@@ -193,14 +193,24 @@ public class FogVolumeBank
     }
 
     /// <summary>
-    /// The settings of a fog ID for a map: the row in the map's own GPARAM, or else in mapbase
+    /// The settings of a fog ID for a map: the row in the map's own GPARAM, or else in mapbase, or else in the
+    /// map's other GPARAMs
     /// </summary>
     public FogVolumeSettings GetSettings(string mapId, int fogId)
     {
         if (!CanUse() || mapId == null || mapId.Length < 6)
             return FogVolumeSettings.Default;
 
-        foreach (var gparamName in new[] { $"{mapId.Substring(0, 6)}_0000", "mapbase" })
+        var mapPrefix = mapId.Substring(0, 6);
+
+        // The map's other GPARAMs: the plain ones (mAA_BB_0100) before those for events and weather
+        var otherGparams = Project.Locator.GparamFiles.Entries
+            .Select(e => e.Filename)
+            .Where(n => n.StartsWith($"{mapPrefix}_", StringComparison.OrdinalIgnoreCase))
+            .OrderBy(n => n.Length)
+            .ThenBy(n => n, StringComparer.OrdinalIgnoreCase);
+
+        foreach (var gparamName in new[] { $"{mapPrefix}_0000", "mapbase" }.Concat(otherGparams))
         {
             var group = GetFogGroup(gparamName);
 
@@ -280,7 +290,23 @@ public class FogVolumeBank
 
             var value = field.Values.FirstOrDefault(v => v.ID == fogId) ?? field.Values.FirstOrDefault(v => v.ID == 0);
 
-            return value?.Value is T t ? t : fallback;
+            if (value?.Value is T t)
+                return t;
+
+            // Some files store a field as another number type, e.g. HeightFallOff as an int in AC6
+            if (value?.Value is IConvertible && fallback is IConvertible)
+            {
+                try
+                {
+                    return (T)Convert.ChangeType(value.Value, typeof(T));
+                }
+                catch (Exception)
+                {
+                    return fallback;
+                }
+            }
+
+            return fallback;
         }
 
         return new FogVolumeSettings

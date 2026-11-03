@@ -6,10 +6,3 @@
   Gparam Editor
   Map Editor
   
-# ER
-m12_08_00_00
-
-m10_01_00_00
-
-# NR
-m19_00_00_00

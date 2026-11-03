@@ -5,9 +5,9 @@ using System.Numerics;
 namespace SoulsFormats
 {
     /// <summary>
-    /// An Elden Ring and Nightreign file that places the volumetric fog boxes of a map. Each volume is an oriented box
-    /// that takes its settings from the FogVolume group of a GPARAM, with optional height and colour map textures
-    /// and a list of typed properties.
+    /// An Armored Core VI, Elden Ring and Nightreign file that places the volumetric fog boxes of a map. Each volume
+    /// is an oriented box that takes its settings from the FogVolume group of a GPARAM, with optional height and
+    /// colour map textures and a list of typed properties.
     /// Extension: .fvb
     /// </summary>
     public class FVB : SoulsFile<FVB>
@@ -18,7 +18,8 @@ namespace SoulsFormats
         private const int HeaderSize = 0x3C;
 
         /// <summary>
-        /// The format version: 1 in Elden Ring, 2 in Nightreign, which adds two texture slots to each volume.
+        /// The format version: 1 in Armored Core VI and Elden Ring, 2 in Nightreign, which adds two texture slots to
+        /// each volume.
         /// </summary>
         public int Version { get; set; }
 
@@ -131,8 +132,8 @@ namespace SoulsFormats
         }
 
         /// <summary>
-        /// A typed value attached to a volume. Elden Ring volumes have only property 0; Nightreign volumes have
-        /// properties 0, 10, 11 and 20 to 29.
+        /// A typed value attached to a volume. Armored Core VI volumes have none; Elden Ring volumes have only
+        /// property 0; Nightreign volumes have properties 0, 10, 11 and 20 to 29.
         /// </summary>
         public class Property
         {
@@ -399,6 +400,10 @@ namespace SoulsFormats
                     offsets.Texture2 = WriteTexture(ColorMapName);
                     offsets.Texture3 = WriteTexture(TextureName3);
                 }
+
+                // Armored Core VI volumes have no properties, and an offset of 0 for the empty list
+                if (Properties.Count == 0)
+                    return offsets;
 
                 offsets.Properties = (int)bw.Position - HeaderSize;
                 int valueOffset = offsets.Properties + Properties.Count * 0x10;

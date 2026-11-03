@@ -84,7 +84,7 @@ public class ViewportFiltersAction
             FilterCheckbox(scene, "Multiplayer Wall", RenderFilter.MultiPlayerWall);
         }
 
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.NR)
         {
             FilterCheckbox(scene, "Fog Volume", RenderFilter.FogVolume);
         }
