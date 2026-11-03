@@ -75,7 +75,7 @@ in every scene shader) lands once, before the two effects that need it.
 Check: Post Effects lists, for ER m60_42_36_00 at t4: Light Shaft on, LUT 2, Glare threshold 1; for m10_00_00_00:
 Light Shaft off, height fog density 0.004. The image is unchanged.
 
-### Phase 0 as built (2026-11-03; not yet checked in the app)
+### Phase 0 as built (2026-11-03; checked in the app 2026-11-03)
 
 - `Renderer/Scene/PostProcessChain.cs`: `PostProcessPass` (`Name`, `IsActive(lighting)`, `Run(gd, cl, frame)`),
   `PostProcessFrame` (target, source, destination texture and its colour-only framebuffer, lighting),
@@ -139,7 +139,7 @@ The cheap, screen-only effects; they prove the chain and set the brightness the 
 Check: ER m60_42_36_00 at t4 looking at the sun-lit sky then into a cave: exposure brightens over a second or two.
 Bright sky and lamps get a soft halo, nothing else does. Edges of a fence or banner stop crawling.
 
-### Phase 1 as built (2026-11-03; not yet checked in the app)
+### Phase 1 as built (2026-11-03; checked in the app 2026-11-03)
 
 - **Auto exposure** (`AutoExposurePass.cs`, `AutoExposure.comp`): the chain's first pass, measuring only
   (`PostProcessPass.WritesImage` false; the chain now also calls `BeginFrame` on every pass). One 16 x 16 group takes
