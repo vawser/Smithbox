@@ -340,7 +340,7 @@ public class CFG
     public bool MapEditor_BasicFilter_DummyEnemy = true;
     public bool MapEditor_BasicFilter_DummyAsset = true;
     public bool MapEditor_BasicFilter_Region = true;
-    public bool MapEditor_BasicFilter_Light = true;
+    public bool MapEditor_BasicFilter_Light = false;
     public bool MapEditor_BasicFilter_Collision = true;
     public bool MapEditor_BasicFilter_ConnectCollision = true;
     public bool MapEditor_BasicFilter_ObjectCollision = false;

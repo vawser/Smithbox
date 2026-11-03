@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,6 @@ namespace StudioCore.Editors.MapEditor;
 public class RegionFilters
 {
     private MapEditorView View;
-
-    public List<bool> RegionVisibilityTruth { get; set; }
 
     private Dictionary<Type, string> RegionTypes_DS2 = new Dictionary<Type, string>()
     {
@@ -199,250 +198,178 @@ public class RegionFilters
         { typeof(MSB_NR.Region.Other), "MAP_Filters_NR_Other" },
     };
 
+    /// <summary>
+    /// The number of loaded regions of each type, and how many of them are visible. Read from the regions
+    /// themselves each frame, so it is always right, including for maps loaded after a type was hidden.
+    /// </summary>
+    private readonly Dictionary<Type, (int Total, int Visible)> RegionStates = new();
+
     public RegionFilters(MapEditorView view)
     {
         View = view;
-
-        SetupTruthList(true);
     }
 
-    public void OnProjectChanged()
+    /// <summary>
+    /// The region types the filters cover for this project, or null if it is not supported
+    /// </summary>
+    private Dictionary<Type, string> GetRegionTypes()
     {
-        SetupTruthList(true);
-    }
-
-    public void SetupTruthList(bool defaultValue)
-    {
-        switch (View.Project.Descriptor.ProjectType)
+        return View.Project.Descriptor.ProjectType switch
         {
-            // Supported Project Types
-            case ProjectType.DS2:
-            case ProjectType.DS2S:
-                RegionVisibilityTruth = Enumerable.Repeat(defaultValue, RegionTypes_DS2.Count).ToList();
-                break;
-            case ProjectType.DS3:
-                RegionVisibilityTruth = Enumerable.Repeat(defaultValue, RegionTypes_DS3.Count).ToList();
-                break;
-            case ProjectType.SDT:
-                RegionVisibilityTruth = Enumerable.Repeat(defaultValue, RegionTypes_SDT.Count).ToList();
-                break;
-            case ProjectType.ER:
-                RegionVisibilityTruth = Enumerable.Repeat(defaultValue, RegionTypes_ER.Count).ToList();
-                break;
-            case ProjectType.AC6:
-                RegionVisibilityTruth = Enumerable.Repeat(defaultValue, RegionTypes_AC6.Count).ToList();
-                break;
-            case ProjectType.NR:
-                RegionVisibilityTruth = Enumerable.Repeat(defaultValue, RegionTypes_NR.Count).ToList();
-                break;
-            case ProjectType.DB_NT:
-            case ProjectType.DB:
-                break;
-            default: break;
+            ProjectType.DS2 or ProjectType.DS2S => RegionTypes_DS2,
+            ProjectType.DS3 => RegionTypes_DS3,
+            ProjectType.SDT => RegionTypes_SDT,
+            ProjectType.ER => RegionTypes_ER,
+            ProjectType.AC6 => RegionTypes_AC6,
+            ProjectType.NR => RegionTypes_NR,
+            _ => null
+        };
+    }
+
+    private IEnumerable<Entity> GetLoadedRegions()
+    {
+        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
+        {
+            var map = entry.Value.MapContainer;
+
+            if (map == null)
+                continue;
+
+            foreach (var child in map.RootObject.Children)
+            {
+                if (child is MsbEntity { Type: MsbEntityType.Region } && child.WrappedObject != null)
+                {
+                    yield return child;
+                }
+            }
         }
     }
 
+    private void UpdateRegionStates()
+    {
+        RegionStates.Clear();
+
+        foreach (var region in GetLoadedRegions())
+        {
+            var type = region.WrappedObject.GetType();
+
+            RegionStates.TryGetValue(type, out var state);
+            RegionStates[type] = (state.Total + 1, state.Visible + (region.EditorVisible ? 1 : 0));
+        }
+    }
+
+    private bool TryGetTypeVisibility(Type regionType, out bool visible)
+    {
+        visible = false;
+
+        if (!RegionStates.TryGetValue(regionType, out var state))
+            return false;
+
+        // A partly hidden type shows as hidden, so a click makes all of it visible
+        visible = state.Visible == state.Total;
+        return true;
+    }
+
+    public void SetRegionTypeVisible(Type regionType, bool visible)
+    {
+        foreach (var region in GetLoadedRegions())
+        {
+            if (region.WrappedObject.GetType() == regionType)
+            {
+                region.EditorVisible = visible;
+            }
+        }
+
+        View.DelayPicking();
+    }
+
+    public void SetAllRegionsVisible(bool visible)
+    {
+        foreach (var region in GetLoadedRegions())
+        {
+            region.EditorVisible = visible;
+        }
+
+        View.DelayPicking();
+    }
+
+    /// <summary>
+    /// Filter menu
+    /// </summary>
     public void DisplayOptions()
     {
-        switch (View.Project.Descriptor.ProjectType)
-        {
-            // Supported Project Types
-            case ProjectType.DS2:
-            case ProjectType.DS2S:
-                HandleGranularRegionToggles_DS2();
-                break;
-            case ProjectType.DS3:
-                HandleGranularRegionToggles_DS3();
-                break;
-            case ProjectType.SDT:
-                HandleGranularRegionToggles_SDT();
-                break;
-            case ProjectType.ER:
-                HandleGranularRegionToggles_ER();
-                break;
-            case ProjectType.AC6:
-                HandleGranularRegionToggles_AC6();
-                break;
-            case ProjectType.NR:
-                HandleGranularRegionToggles_NR();
-                break;
-            case ProjectType.DB_NT:
-            case ProjectType.DB:
-                break;
-            default: break;
-        }
-    }
+        var regionTypes = GetRegionTypes();
 
-    private void HandleGranularRegionToggles_DS2()
-    {
-        DisplayCommonToggles();
+        if (regionTypes == null)
+            return;
 
-        for(int i = 0; i < RegionTypes_DS2.Count; i++)
-        {
-            var type = RegionTypes_DS2.ElementAt(i).Key;
-            var locKey = RegionTypes_DS2.ElementAt(i).Value;
+        UpdateRegionStates();
 
-            DisplayIndividualToggle(type, LOC.Get(locKey), i);
-        }
-    }
-    private void HandleGranularRegionToggles_DS3()
-    {
-        DisplayCommonToggles();
-
-        for (int i = 0; i < RegionTypes_DS3.Count; i++)
-        {
-            var type = RegionTypes_DS3.ElementAt(i).Key;
-            var locKey = RegionTypes_DS3.ElementAt(i).Value;
-
-            DisplayIndividualToggle(type, LOC.Get(locKey), i);
-        }
-    }
-
-    private void HandleGranularRegionToggles_SDT()
-    {
-        DisplayCommonToggles();
-
-        for (int i = 0; i < RegionTypes_SDT.Count; i++)
-        {
-            var type = RegionTypes_SDT.ElementAt(i).Key;
-            var locKey = RegionTypes_SDT.ElementAt(i).Value;
-
-            DisplayIndividualToggle(type, LOC.Get(locKey), i);
-        }
-    }
-
-    private void HandleGranularRegionToggles_ER()
-    {
-        DisplayCommonToggles();
-
-        for (int i = 0; i < RegionTypes_ER.Count; i++)
-        {
-            var type = RegionTypes_ER.ElementAt(i).Key;
-            var locKey = RegionTypes_ER.ElementAt(i).Value;
-
-            DisplayIndividualToggle(type, LOC.Get(locKey), i);
-        }
-    }
-
-    private void HandleGranularRegionToggles_AC6()
-    {
-        DisplayCommonToggles();
-
-        for (int i = 0; i < RegionTypes_AC6.Count; i++)
-        {
-            var type = RegionTypes_AC6.ElementAt(i).Key;
-            var locKey = RegionTypes_AC6.ElementAt(i).Value;
-
-            DisplayIndividualToggle(type, LOC.Get(locKey), i);
-        }
-    }
-
-    private void HandleGranularRegionToggles_NR()
-    {
-        DisplayCommonToggles();
-
-        for (int i = 0; i < RegionTypes_NR.Count; i++)
-        {
-            var type = RegionTypes_NR.ElementAt(i).Key;
-            var locKey = RegionTypes_NR.ElementAt(i).Value;
-
-            DisplayIndividualToggle(type, LOC.Get(locKey), i);
-        }
-    }
-
-    public void DisplayCommonToggles()
-    {
         // Make All Regions Invisible
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Common_Toggle_Region_Visibility_OFF")}##toggleCommonOff"))
         {
-            foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
-            {
-                if (entry.Value.MapContainer != null)
-                {
-                    foreach (var child in entry.Value.MapContainer.RootObject.Children)
-                    {
-                        if (child.WrappedObject is MSB_AC6.Region or MSBE.Region or MSBS.Region or MSB3.Region or MSB2.Region)
-                        {
-                            child.EditorVisible = false;
-                            SetupTruthList(false);
-                        }
-                    }
-                }
-            }
-
-            View.DelayPicking();
+            SetAllRegionsVisible(false);
         }
         GUI.Tooltip(LOC.Get("MAP_Filters_Common_Toggle_Region_Visibility_OFF_TT"));
 
         // Make All Regions Visible
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Common_Toggle_Region_Visibility_ON")}##toggleCommonOn"))
         {
-            foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
-            {
-                if (entry.Value.MapContainer != null)
-                {
-                    foreach (var child in entry.Value.MapContainer.RootObject.Children)
-                    {
-                        if (child.WrappedObject is MSB_AC6.Region or MSBE.Region or MSBS.Region or MSB3.Region or MSB2.Region or MSB_NR.Region)
-                        {
-                            child.EditorVisible = true;
-                            SetupTruthList(true);
-                        }
-                    }
-                }
-            }
-
-            View.DelayPicking();
+            SetAllRegionsVisible(true);
         }
         GUI.Tooltip(LOC.Get("MAP_Filters_Common_Toggle_Region_Visibility_ON_TT"));
 
         ImGui.Separator();
-    }
 
-    public void DisplayIndividualToggle(Type regionType, string name, int truthIndex)
-    {
-        var show = false;
-
-        // Only show if region type is present
-        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
+        foreach (var (regionType, locKey) in regionTypes)
         {
-            if (entry.Value.MapContainer != null)
-            {
-                foreach (var child in entry.Value.MapContainer.RootObject.Children)
-                {
-                    if (child.WrappedObject.GetType() == regionType)
-                    {
-                        show = true;
-                        break;
-                    }
-                }
-            }
-        }
+            // Only show if region type is present
+            if (!TryGetTypeVisibility(regionType, out var visible))
+                continue;
 
-        if (show)
-        {
-            // Toggle X
+            var name = LOC.Get(locKey);
+
             if (ImGui.MenuItem(LOC.Get("MAP_Filters_Toggle_Action", name)))
             {
-                foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
-                {
-                    if (entry.Value.MapContainer != null)
-                    {
-                        foreach (var child in entry.Value.MapContainer.RootObject.Children)
-                        {
-                            if (child.WrappedObject.GetType() == regionType)
-                            {
-                                child.EditorVisible = !child.EditorVisible;
-                                RegionVisibilityTruth[truthIndex] = child.EditorVisible;
-                            }
-                        }
-                    }
-                }
-
-                View.DelayPicking();
+                SetRegionTypeVisible(regionType, !visible);
             }
             GUI.Tooltip(LOC.Get("MAP_Filters_Specific_Toggle_TT", name));
-            GUI.ShowActiveStatus(RegionVisibilityTruth[truthIndex]);
+            GUI.ShowActiveStatus(visible);
+        }
+    }
+
+    /// <summary>
+    /// Tool window
+    /// </summary>
+    public void DisplayToolWindowOptions()
+    {
+        var regionTypes = GetRegionTypes();
+
+        if (regionTypes == null)
+        {
+            GUI.WrappedText("Not supported for this project type.");
+            return;
+        }
+
+        UpdateRegionStates();
+
+        GUI.MultiButtonInput("regionVisActions",
+            "showRegions", "Show All", "Make every loaded region visible.", () => SetAllRegionsVisible(true),
+            "hideRegions", "Hide All", "Make every loaded region invisible.", () => SetAllRegionsVisible(false));
+
+        foreach (var (regionType, locKey) in regionTypes)
+        {
+            // Only show if region type is present
+            if (!TryGetTypeVisibility(regionType, out var visible))
+                continue;
+
+            var name = LOC.Get(locKey);
+
+            if (ImGui.Checkbox($"{name}##regionFilter{regionType.Name}", ref visible))
+            {
+                SetRegionTypeVisible(regionType, visible);
+            }
+            GUI.Tooltip($"Toggle the visibility of regions of the {name} type.");
         }
     }
 }

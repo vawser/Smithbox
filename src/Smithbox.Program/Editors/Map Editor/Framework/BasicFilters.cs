@@ -13,130 +13,58 @@ public class BasicFilters
     {
         View = view;
 
-        // On setup, pre-toggle the filters based on the CFG vars so we can persist these filters between sessions.
-        if(!CFG.Current.MapEditor_BasicFilter_MapPiece)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.MapPiece);
-        }
+        // On setup, set the filters from the CFG vars so we can persist these filters between sessions.
+        // Each is set outright rather than toggled, as the stored filter may not agree with the CFG vars.
+        var scene = View.ViewportHandler.ActiveViewport.RenderScene;
 
-        if (!CFG.Current.MapEditor_BasicFilter_Object)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Object);
-        }
+        scene.SetDrawFilter(RenderFilter.MapPiece, CFG.Current.MapEditor_BasicFilter_MapPiece);
+        scene.SetDrawFilter(RenderFilter.Object, CFG.Current.MapEditor_BasicFilter_Object);
+        scene.SetDrawFilter(RenderFilter.Character, CFG.Current.MapEditor_BasicFilter_Character);
+        scene.SetDrawFilter(RenderFilter.DummyEnemy, CFG.Current.MapEditor_BasicFilter_DummyEnemy);
+        scene.SetDrawFilter(RenderFilter.DummyAsset, CFG.Current.MapEditor_BasicFilter_DummyAsset);
+        scene.SetDrawFilter(RenderFilter.Region, CFG.Current.MapEditor_BasicFilter_Region);
+        scene.SetDrawFilter(RenderFilter.Light, CFG.Current.MapEditor_BasicFilter_Light);
+        scene.SetDrawFilter(RenderFilter.Collision, CFG.Current.MapEditor_BasicFilter_Collision);
+        scene.SetDrawFilter(RenderFilter.ConnectCollision, CFG.Current.MapEditor_BasicFilter_ConnectCollision);
+        scene.SetDrawFilter(RenderFilter.ObjectCollision, CFG.Current.MapEditor_BasicFilter_ObjectCollision);
+        scene.SetDrawFilter(RenderFilter.Grass, CFG.Current.MapEditor_BasicFilter_Grass);
+        scene.SetDrawFilter(RenderFilter.EdgePoint, CFG.Current.MapEditor_BasicFilter_EdgePoint);
+        scene.SetDrawFilter(RenderFilter.Wall, CFG.Current.MapEditor_BasicFilter_Wall);
+        scene.SetDrawFilter(RenderFilter.Navmesh, CFG.Current.MapEditor_BasicFilter_Navmesh);
+        scene.SetDrawFilter(RenderFilter.NavVolume, CFG.Current.MapEditor_BasicFilter_NavVolume);
+        scene.SetDrawFilter(RenderFilter.SpeedTree, CFG.Current.MapEditor_BasicFilter_SpeedTree);
+        scene.SetDrawFilter(RenderFilter.AutoInvade, CFG.Current.MapEditor_BasicFilter_InvasionPoint);
+        scene.SetDrawFilter(RenderFilter.MultiPlayerWall, CFG.Current.MapEditor_BasicFilter_MultiPlayerWall);
+    }
 
-        if (!CFG.Current.MapEditor_BasicFilter_Character)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Character);
-        }
+    /// <summary>
+    /// Store the current filters in the CFG vars. Call this after any change to the draw filter, from any UI,
+    /// so the stored state is always the shown state.
+    /// </summary>
+    public void StoreFilterState()
+    {
+        var filter = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter;
 
-        // The stored filter may predate these two, so they can't be toggled
-        if (CFG.Current.MapEditor_BasicFilter_DummyEnemy)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.DummyEnemy;
-        }
-        else
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.DummyEnemy;
-        }
+        CFG.Current.MapEditor_BasicFilter_MapPiece = filter.HasFlag(RenderFilter.MapPiece);
+        CFG.Current.MapEditor_BasicFilter_Object = filter.HasFlag(RenderFilter.Object);
+        CFG.Current.MapEditor_BasicFilter_Character = filter.HasFlag(RenderFilter.Character);
+        CFG.Current.MapEditor_BasicFilter_DummyEnemy = filter.HasFlag(RenderFilter.DummyEnemy);
+        CFG.Current.MapEditor_BasicFilter_DummyAsset = filter.HasFlag(RenderFilter.DummyAsset);
+        CFG.Current.MapEditor_BasicFilter_Region = filter.HasFlag(RenderFilter.Region);
+        CFG.Current.MapEditor_BasicFilter_Light = filter.HasFlag(RenderFilter.Light);
+        CFG.Current.MapEditor_BasicFilter_Collision = filter.HasFlag(RenderFilter.Collision);
+        CFG.Current.MapEditor_BasicFilter_ConnectCollision = filter.HasFlag(RenderFilter.ConnectCollision);
+        CFG.Current.MapEditor_BasicFilter_ObjectCollision = filter.HasFlag(RenderFilter.ObjectCollision);
+        CFG.Current.MapEditor_BasicFilter_Grass = filter.HasFlag(RenderFilter.Grass);
+        CFG.Current.MapEditor_BasicFilter_EdgePoint = filter.HasFlag(RenderFilter.EdgePoint);
+        CFG.Current.MapEditor_BasicFilter_Wall = filter.HasFlag(RenderFilter.Wall);
+        CFG.Current.MapEditor_BasicFilter_Navmesh = filter.HasFlag(RenderFilter.Navmesh);
+        CFG.Current.MapEditor_BasicFilter_NavVolume = filter.HasFlag(RenderFilter.NavVolume);
+        CFG.Current.MapEditor_BasicFilter_SpeedTree = filter.HasFlag(RenderFilter.SpeedTree);
+        CFG.Current.MapEditor_BasicFilter_InvasionPoint = filter.HasFlag(RenderFilter.AutoInvade);
+        CFG.Current.MapEditor_BasicFilter_MultiPlayerWall = filter.HasFlag(RenderFilter.MultiPlayerWall);
 
-        if (CFG.Current.MapEditor_BasicFilter_DummyAsset)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.DummyAsset;
-        }
-        else
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.DummyAsset;
-        }
-
-        if (!CFG.Current.MapEditor_BasicFilter_Region)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Region);
-        }
-
-        if (!CFG.Current.MapEditor_BasicFilter_Light)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Light);
-        }
-
-        if (!CFG.Current.MapEditor_BasicFilter_Collision)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Collision);
-        }
-
-        if (!CFG.Current.MapEditor_BasicFilter_ConnectCollision)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.ConnectCollision);
-        }
-
-        // This one is off by default, but RenderFilter.All in the stored filter includes it, so it can't be toggled
-        if (CFG.Current.MapEditor_BasicFilter_ObjectCollision)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.ObjectCollision;
-        }
-        else
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.ObjectCollision;
-        }
-
-        // Same as the above
-        if (CFG.Current.MapEditor_BasicFilter_Grass)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.Grass;
-        }
-        else
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.Grass;
-        }
-
-        // Same as the above
-        if (CFG.Current.MapEditor_BasicFilter_EdgePoint)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.EdgePoint;
-        }
-        else
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.EdgePoint;
-        }
-
-        // Same as the above
-        if (CFG.Current.MapEditor_BasicFilter_Wall)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.Wall;
-        }
-        else
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.Wall;
-        }
-
-        if (!CFG.Current.MapEditor_BasicFilter_Navmesh)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
-        }
-
-        // Off by default, and the stored filter may predate it, like the object collisions
-        if (CFG.Current.MapEditor_BasicFilter_NavVolume)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter |= RenderFilter.NavVolume;
-        }
-        else
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter &= ~RenderFilter.NavVolume;
-        }
-
-        if (!CFG.Current.MapEditor_BasicFilter_SpeedTree)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.SpeedTree);
-        }
-
-        if (!CFG.Current.MapEditor_BasicFilter_InvasionPoint)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.AutoInvade);
-        }
-
-        if (!CFG.Current.MapEditor_BasicFilter_MultiPlayerWall)
-        {
-            View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.MultiPlayerWall);
-        }
+        CFG.Current.LastSceneFilter = filter;
     }
 
     public void Display()
@@ -146,8 +74,8 @@ public class BasicFilters
         // Map Piece
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Map_Pieces_Title")}##toggleFilter_MapPiece"))
         {
-            CFG.Current.MapEditor_BasicFilter_MapPiece = !CFG.Current.MapEditor_BasicFilter_MapPiece;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.MapPiece);
+            StoreFilterState();
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.MapPiece);
@@ -163,8 +91,8 @@ public class BasicFilters
             // Asset
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Assets_Title")}##toggleFilter_Asset"))
             {
-                CFG.Current.MapEditor_BasicFilter_Object = !CFG.Current.MapEditor_BasicFilter_Object;
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Object);
+                StoreFilterState();
                 View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Object);
@@ -176,8 +104,8 @@ public class BasicFilters
             // Object
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Objects_Title")}##toggleFilter_Object"))
             {
-                CFG.Current.MapEditor_BasicFilter_Object = !CFG.Current.MapEditor_BasicFilter_Object;
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Object);
+                StoreFilterState();
                 View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Object);
@@ -188,8 +116,8 @@ public class BasicFilters
         // Character
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Characters_Title")}##toggleFilter_Character"))
         {
-            CFG.Current.MapEditor_BasicFilter_Character = !CFG.Current.MapEditor_BasicFilter_Character;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Character);
+            StoreFilterState();
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Character);
@@ -208,7 +136,7 @@ public class BasicFilters
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Dummy_Enemies_Title")}##toggleFilter_DummyEnemy"))
             {
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.DummyEnemy);
-                CFG.Current.MapEditor_BasicFilter_DummyEnemy = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.DummyEnemy);
+                StoreFilterState();
                 View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.DummyEnemy);
@@ -223,7 +151,7 @@ public class BasicFilters
             if (ImGui.MenuItem($"{dummyAssetTitle}##toggleFilter_DummyAsset"))
             {
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.DummyAsset);
-                CFG.Current.MapEditor_BasicFilter_DummyAsset = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.DummyAsset);
+                StoreFilterState();
                 View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.DummyAsset);
@@ -236,8 +164,8 @@ public class BasicFilters
         // Region
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Regions_Title")}##toggleFilter_Region"))
         {
-            CFG.Current.MapEditor_BasicFilter_Region = !CFG.Current.MapEditor_BasicFilter_Region;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Region);
+            StoreFilterState();
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Region);
@@ -247,8 +175,8 @@ public class BasicFilters
         // Light
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Lights_Title")}##toggleFilter_Light"))
         {
-            CFG.Current.MapEditor_BasicFilter_Light = !CFG.Current.MapEditor_BasicFilter_Light;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Light);
+            StoreFilterState();
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Light);
@@ -258,8 +186,8 @@ public class BasicFilters
         // Collision
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Collisions_Title")}##toggleFilter_Collision"))
         {
-            CFG.Current.MapEditor_BasicFilter_Collision = !CFG.Current.MapEditor_BasicFilter_Collision;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Collision);
+            StoreFilterState();
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
@@ -269,8 +197,8 @@ public class BasicFilters
         // Collision
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Connect_Collisions_Title")}##toggleFilter_ConnectCollision"))
         {
-            CFG.Current.MapEditor_BasicFilter_ConnectCollision = !CFG.Current.MapEditor_BasicFilter_ConnectCollision;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.ConnectCollision);
+            StoreFilterState();
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.ConnectCollision);
@@ -285,7 +213,7 @@ public class BasicFilters
         if (ImGui.MenuItem($"{objectCollisionTitle}##toggleFilter_ObjectCollision"))
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.ObjectCollision);
-            CFG.Current.MapEditor_BasicFilter_ObjectCollision = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.ObjectCollision);
+            StoreFilterState();
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.ObjectCollision);
@@ -298,7 +226,7 @@ public class BasicFilters
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Grass_Title")}##toggleFilter_Grass"))
         {
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Grass);
-            CFG.Current.MapEditor_BasicFilter_Grass = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Grass);
+            StoreFilterState();
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Grass);
@@ -311,7 +239,7 @@ public class BasicFilters
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Edge_Points_Title")}##toggleFilter_EdgePoint"))
             {
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.EdgePoint);
-                CFG.Current.MapEditor_BasicFilter_EdgePoint = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.EdgePoint);
+                StoreFilterState();
                 View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.EdgePoint);
@@ -321,7 +249,7 @@ public class BasicFilters
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Walls_Title")}##toggleFilter_Wall"))
             {
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Wall);
-                CFG.Current.MapEditor_BasicFilter_Wall = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Wall);
+                StoreFilterState();
                 View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Wall);
@@ -332,8 +260,8 @@ public class BasicFilters
         // Navmesh
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Navmeshes_Title")}##toggleFilter_Navmesh"))
         {
-            CFG.Current.MapEditor_BasicFilter_Navmesh = !CFG.Current.MapEditor_BasicFilter_Navmesh;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
+            StoreFilterState();
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Navmesh);
@@ -346,7 +274,7 @@ public class BasicFilters
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Nav_Volumes_Title")}##toggleFilter_NavVolume"))
             {
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.NavVolume);
-                CFG.Current.MapEditor_BasicFilter_NavVolume = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.NavVolume);
+                StoreFilterState();
                 View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.NavVolume);
@@ -357,8 +285,8 @@ public class BasicFilters
         // Speed Trees
         if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Speed_Trees_Title")}##toggleFilter_SpeedTree"))
         {
-            CFG.Current.MapEditor_BasicFilter_SpeedTree = !CFG.Current.MapEditor_BasicFilter_SpeedTree;
             View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.SpeedTree);
+            StoreFilterState();
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.SpeedTree);
@@ -370,8 +298,8 @@ public class BasicFilters
         {
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Invasion_Points_Title")}##toggleFilter_InvasionPoint"))
             {
-                CFG.Current.MapEditor_BasicFilter_InvasionPoint = !CFG.Current.MapEditor_BasicFilter_InvasionPoint;
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.AutoInvade);
+                StoreFilterState();
                 View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
@@ -380,8 +308,8 @@ public class BasicFilters
 
             if (ImGui.MenuItem($"{LOC.Get("MAP_Filters_Multiplayer_Walls_Title")}##toggleFilter_MultiPlayerWall"))
             {
-                CFG.Current.MapEditor_BasicFilter_MultiPlayerWall = !CFG.Current.MapEditor_BasicFilter_MultiPlayerWall;
                 View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.MultiPlayerWall);
+                StoreFilterState();
                 View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.MultiPlayerWall);

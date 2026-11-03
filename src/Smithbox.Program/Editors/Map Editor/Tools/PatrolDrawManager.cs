@@ -22,7 +22,11 @@ public class PatrolDrawManager
 
     private MapEditorView View;
 
-    private bool PatrolsVisualised = false;
+    /// <summary>
+    /// Whether the routes are drawn. Set by Generate and Clear, so the shortcut, the filter menu
+    /// and the tool window all see the same state.
+    /// </summary>
+    public bool IsVisible { get; private set; } = false;
 
     public PatrolDrawManager(MapEditorView view)
     {
@@ -36,16 +40,16 @@ public class PatrolDrawManager
 
         if (InputManager.IsPressed(KeybindID.MapEditor_Toggle_Patrol_Route_Visuals))
         {
-            if (!PatrolsVisualised)
+            if (!IsVisible)
             {
-                PatrolsVisualised = true;
                 Generate();
             }
             else
             {
                 Clear();
-                PatrolsVisualised = false;
             }
+
+            View.DelayPicking();
         }
     }
 
@@ -85,6 +89,8 @@ public class PatrolDrawManager
     public void Generate()
     {
         Clear();
+
+        IsVisible = true;
 
         foreach (var map in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
@@ -260,5 +266,7 @@ public class PatrolDrawManager
             }
         }
         _drawEntities.Clear();
+
+        IsVisible = false;
     }
 }

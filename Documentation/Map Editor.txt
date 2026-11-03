@@ -3,7 +3,6 @@
 #----------------------------------------------------
 
 - Supoert AEP (MSB prefabs) (DB)
-- Support for NVVA (AC6 flying nav)
 - Support for MSLD (AC6)
 - Support for PTIDL (Parts token ID list) (AC6)
 

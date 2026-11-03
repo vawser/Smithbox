@@ -128,12 +128,15 @@ public class GameVisibilityAction
     {
         GUI.WrappedText("Use these actions to adjust the in-game visibility of map objects.");
 
-        GUI.Spacer();
-        GUI.SimpleHeader("Dummy", "Toggle the dummy state type for selected map objects. Note: conversion into a dummy type will cause property data loss.");
+        if (SupportsDummyConversion())
+        {
+            GUI.Spacer();
+            GUI.SimpleHeader("Dummy", "Toggle the dummy state type for selected map objects. Note: conversion into a dummy type will cause property data loss.");
 
-        GUI.MultiButtonInput("dummyActions",
-            "makeDummy", "Convert to Dummy Type", "", MakeObjectDummy,
-            "makeNormal", "Convert to Normal Type", "", MakeObjectNormal);
+            GUI.MultiButtonInput("dummyActions",
+                "makeDummy", "Convert to Dummy Type", "Convert the selected enemies, objects and assets into their dummy types, which the game does not load.", MakeObjectDummy,
+                "makeNormal", "Convert to Normal Type", "Convert the selected dummy enemies, objects and assets back into their normal types.", MakeObjectNormal);
+        }
 
         if (Project.Descriptor.ProjectType is ProjectType.ER)
         {
@@ -141,9 +144,14 @@ public class GameVisibilityAction
             GUI.SimpleHeader("Game Presence", "Toggle the game presence type for selected map objects. Game Presence can be used to hide a map object without losing property data.");
 
             GUI.MultiButtonInput("gamePresActions",
-                "makeVisible", "Make Visible", "", EnableObjectGamePresence,
-                "makeHidden", "Make Hidden", "", DisableObjectGamePresence);
+                "makeVisible", "Make Visible", "Set GameEditionDisable to 0 on the selected parts, so they appear in game.", EnableObjectGamePresence,
+                "makeHidden", "Make Hidden", "Set GameEditionDisable to 1 on the selected parts, so they are hidden in game.", DisableObjectGamePresence);
         }
+    }
+
+    private bool SupportsDummyConversion()
+    {
+        return Project.Descriptor.ProjectType is not (ProjectType.DS2 or ProjectType.DS2S or ProjectType.DB);
     }
 
     public void MakeObjectDummy()
@@ -175,30 +183,7 @@ public class GameVisibilityAction
         {
             if (targetType == GameVisibilityType.GameEditionDisable)
             {
-                if (targetState == GameVisibilityState.Disable)
-                {
-                    List<MsbEntity> sourceList = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
-                    foreach (MsbEntity s in sourceList)
-                    {
-                        if (View.Project.Descriptor.ProjectType == ProjectType.ER)
-                        {
-                            s.SetPropertyValue("GameEditionDisable", (uint)1);
-                            MapContainer.MarkEntityDirty(s);
-                        }
-                    }
-                }
-                if (targetState == GameVisibilityState.Enable)
-                {
-                    List<MsbEntity> sourceList = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
-                    foreach (MsbEntity s in sourceList)
-                    {
-                        if (View.Project.Descriptor.ProjectType == ProjectType.ER)
-                        {
-                            s.SetPropertyValue("GameEditionDisable", (uint)0);
-                            MapContainer.MarkEntityDirty(s);
-                        }
-                    }
-                }
+                ChangeGamePresence(targetState == GameVisibilityState.Disable ? 1u : 0u);
             }
 
             if (targetType == GameVisibilityType.DummyObject)
@@ -224,6 +209,31 @@ public class GameVisibilityAction
 
         View.DelayPicking();
     }
+    /// <summary>
+    /// Only ER parts have the field, so regions and events in the selection are left alone
+    /// </summary>
+    private void ChangeGamePresence(uint value)
+    {
+        if (View.Project.Descriptor.ProjectType != ProjectType.ER)
+            return;
+
+        HashSet<Entity> parts = View.ViewportSelection.GetFilteredSelection<MsbEntity>()
+            .Where(x => x.WrappedObject is MSBE.Part)
+            .Cast<Entity>()
+            .ToHashSet();
+
+        if (parts.Count == 0)
+        {
+            Smithbox.LogError<GameVisibilityAction>("No part selected.");
+            return;
+        }
+
+        var prop = typeof(MSBE.Part).GetProperty(nameof(MSBE.Part.GameEditionDisable));
+        var action = new PropMultChangeAction(View, prop, parts, value);
+
+        View.ViewportActionManager.ExecuteAction(action);
+    }
+
     public void ChangeMapObjectType(string[] sourceTypes, string[] targetTypes)
     {
         Type msbclass;
@@ -236,11 +246,6 @@ public class GameVisibilityAction
             case ProjectType.DS1R:
                 msbclass = typeof(MSB1);
                 break;
-            case ProjectType.DS2:
-            case ProjectType.DS2S:
-                msbclass = typeof(MSB2);
-                //break;
-                return; //idk how ds2 dummies should work
             case ProjectType.DS3:
                 msbclass = typeof(MSB3);
                 break;
@@ -262,10 +267,10 @@ public class GameVisibilityAction
             case ProjectType.DB_NT:
                 msbclass = typeof(MSB_DB_NT);
                 break;
-            case ProjectType.DB:
-                throw new ArgumentException("type must be valid");
+            // DS2 has no dummy types, and DB has no MSB class yet
             default:
-                throw new ArgumentException("type must be valid");
+                Smithbox.LogError<GameVisibilityAction>("Dummy conversion is not supported for this project type.");
+                return;
         }
         List<MsbEntity> sourceList = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
 

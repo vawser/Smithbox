@@ -6,7 +6,6 @@ using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Veldrid.MetalBindings;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -42,21 +41,22 @@ public class EditorVisibilityAction
             {
                 ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
             }
+        }
 
-            if (InputManager.IsPressed(KeybindID.MapEditor_Global_Visibility_Flip))
-            {
-                ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
-            }
+        // These act on every loaded map object, so they don't need a selection
+        if (InputManager.IsPressed(KeybindID.MapEditor_Global_Visibility_Flip))
+        {
+            ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
+        }
 
-            if (InputManager.IsPressed(KeybindID.MapEditor_Global_Visibility_Enable))
-            {
-                ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
-            }
+        if (InputManager.IsPressed(KeybindID.MapEditor_Global_Visibility_Enable))
+        {
+            ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
+        }
 
-            if (InputManager.IsPressed(KeybindID.MapEditor_Global_Visibility_Disable))
-            {
-                ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
-            }
+        if (InputManager.IsPressed(KeybindID.MapEditor_Global_Visibility_Disable))
+        {
+            ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
         }
     }
 
@@ -150,7 +150,7 @@ public class EditorVisibilityAction
         if (ImGui.BeginMenu("Toggle Editor Visibility by Tag"))
         {
             ImGui.InputText("##targetTag", ref CFG.Current.Toolbar_Tag_Visibility_Target, 255);
-            GUI.Tooltip("Specific which tag the map objects will be filtered by.");
+            GUI.Tooltip("Specify which tag the map objects will be filtered by.");
 
             if (ImGui.MenuItem("Enable Visibility"))
             {
@@ -346,13 +346,17 @@ public class EditorVisibilityAction
 
         if (targetType == EditorVisibilityType.All)
         {
+            // The bank holds every map in the game, not just the loaded ones
+            if (!Project.Handler.MapData.PrimaryBank.Maps.Values.Any(x => x.MapContainer != null))
+            {
+                Smithbox.LogError<EditorVisibilityAction>("No map loaded.");
+                return;
+            }
+
             foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
             {
                 if (entry.Value.MapContainer == null)
-                {
-                    Smithbox.LogError<EditorVisibilityAction>("No map loaded.");
                     continue;
-                }
 
                 foreach (Entity obj in entry.Value.MapContainer.Objects)
                 {
@@ -372,88 +376,70 @@ public class EditorVisibilityAction
     }
     public void ApplyEditorVisibilityChangeByTag()
     {
+        if (!Project.Handler.MapData.PrimaryBank.Maps.Values.Any(x => x.MapContainer != null))
+        {
+            Smithbox.LogError<EditorVisibilityAction>("No map loaded.");
+            return;
+        }
+
+        var target = CFG.Current.Toolbar_Tag_Visibility_Target;
+
+        // Built once, so each part is a lookup rather than a walk over thousands of aliases
+        var taggedAssets = GetTaggedAliasIDs(ProjectAliasType.Assets, target);
+        var taggedMapPieces = GetTaggedAliasIDs(ProjectAliasType.MapPieces, target);
+
         foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
         {
-            if (entry.Value.MapContainer == null)
-            {
-                Smithbox.LogError<EditorVisibilityAction>("No map loaded.");
+            var map = entry.Value.MapContainer;
+
+            if (map == null)
                 continue;
-            }
 
-            foreach (Entity obj in entry.Value.MapContainer.Objects)
+            foreach (Entity obj in map.Objects)
             {
-                if (EntityHelper.IsPart(obj))
+                if (!EntityHelper.IsPart(obj))
+                    continue;
+
+                var modelName = obj.GetPropertyValue<string>("ModelName");
+
+                if (string.IsNullOrEmpty(modelName))
+                    continue;
+
+                // Map piece aliases are per map (m10_00_00_00_000004), but the model name is not (m000004)
+                var mapPieceID = $"{map.Name}_{modelName.TrimStart('m', 'M')}";
+
+                if (!taggedAssets.Contains(modelName) && !taggedMapPieces.Contains(mapPieceID))
+                    continue;
+
+                if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
                 {
-                    if (Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
-                    {
-                        foreach (var assetEntry in assetAliases)
-                        {
-                            var modelName = obj.GetPropertyValue<string>("ModelName");
-
-                            if (assetEntry.ID == modelName)
-                            {
-                                bool change = false;
-
-                                foreach (var tag in assetEntry.Tags)
-                                {
-                                    if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
-                                        change = true;
-                                }
-
-                                if (change)
-                                {
-                                    if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
-                                    {
-                                        obj.EditorVisible = true;
-                                    }
-                                    if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
-                                    {
-                                        obj.EditorVisible = false;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    if (Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
-                    {
-                        foreach (var mapPieceEntry in mapPieceAliases)
-                        {
-                            var entryName = $"m{mapPieceEntry.ID.Split("_").Last()}";
-                            var modelName = obj.GetPropertyValue<string>("ModelName");
-
-                            if (entryName == modelName)
-                            {
-                                bool change = false;
-
-                                foreach (var tag in mapPieceEntry.Tags)
-                                {
-                                    if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
-                                        change = true;
-                                }
-
-                                if (change)
-                                {
-                                    if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
-                                    {
-                                        obj.EditorVisible = true;
-                                    }
-                                    if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
-                                    {
-                                        obj.EditorVisible = false;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    if (obj is MsbEntity msbEnt)
-                    {
-                        msbEnt.AssignDrawable();
-                    }
-                    obj.UpdateRenderModel();
+                    obj.EditorVisible = true;
+                }
+                if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
+                {
+                    obj.EditorVisible = false;
                 }
             }
         }
+
+        View.DelayPicking();
+    }
+
+    private HashSet<string> GetTaggedAliasIDs(ProjectAliasType aliasType, string tag)
+    {
+        var ids = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        if (Project.Handler.ProjectData.Aliases.TryGetValue(aliasType, out List<AliasEntry> aliases))
+        {
+            foreach (var alias in aliases)
+            {
+                if (alias.ID != null && alias.Tags != null && alias.Tags.Contains(tag))
+                {
+                    ids.Add(alias.ID);
+                }
+            }
+        }
+
+        return ids;
     }
 }

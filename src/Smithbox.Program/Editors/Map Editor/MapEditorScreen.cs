@@ -261,7 +261,7 @@ public class MapEditorScreen : EditorScreen
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
 
-                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
+                    activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
                 }
 
@@ -269,7 +269,7 @@ public class MapEditorScreen : EditorScreen
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
 
-                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
+                    activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
                 }
 
@@ -277,7 +277,7 @@ public class MapEditorScreen : EditorScreen
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
 
-                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
+                    activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
                 }
 
@@ -285,7 +285,7 @@ public class MapEditorScreen : EditorScreen
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
 
-                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
+                    activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
                 }
 
@@ -293,7 +293,7 @@ public class MapEditorScreen : EditorScreen
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
 
-                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
+                    activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
                 }
 
@@ -301,7 +301,7 @@ public class MapEditorScreen : EditorScreen
                 {
                     activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
 
-                    CFG.Current.LastSceneFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
+                    activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
                 }
 
