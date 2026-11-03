@@ -837,6 +837,30 @@
       "Text": "Whether to cull objects in the viewport outside of the camera frustum."
     },
     {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Global_Illumination",
+      "Text": "Enable Global Illumination"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Global_Illumination_TT",
+      "Text": "Whether models are lit by the baked irradiance volumes. When off, they take the ambient light outside the volumes instead. The same switch as the Global Illumination tab of the Rendering tool."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Lighting",
+      "Text": "Enable Lighting"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Lighting_TT",
+      "Text": "Whether the viewports are lit by the map's GPARAM lighting: its sun, hemisphere, exposure, tone map and background. When off, the Scene Lighting tab's own sun and settings are used. The same switch as the Map Lighting tab of the Rendering tool."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Shadows",
+      "Text": "Enable Shadows"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Shadows_TT",
+      "Text": "Whether the sun casts shadows. When off, the shadow maps aren't drawn. The same switch as the Shadows tab of the Rendering tool."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Model_Masks",
       "Text": "Enable Model Masks"
     },

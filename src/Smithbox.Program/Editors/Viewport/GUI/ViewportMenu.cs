@@ -468,6 +468,34 @@ public class ViewportMenu
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Culling_TT"));
 
+            // The same switches as the Rendering tool's tabs; the pipeline reads them every frame. GI and map
+            // lighting are only offered where the viewport has them (AC6, ER, NR).
+            var pipeline = Parent.ViewPipeline;
+
+            if (pipeline?.UseIrradianceVolumes == true)
+            {
+                if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Global_Illumination")}##giToggle", CFG.Current.Viewport_GI_Enable))
+                {
+                    CFG.Current.Viewport_GI_Enable = !CFG.Current.Viewport_GI_Enable;
+                }
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Global_Illumination_TT"));
+            }
+
+            if (pipeline?.UseMapLighting == true)
+            {
+                if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Lighting")}##lightingToggle", CFG.Current.Viewport_Map_Lighting))
+                {
+                    CFG.Current.Viewport_Map_Lighting = !CFG.Current.Viewport_Map_Lighting;
+                }
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Lighting_TT"));
+            }
+
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Shadows")}##shadowsToggle", CFG.Current.Viewport_Shadows))
+            {
+                CFG.Current.Viewport_Shadows = !CFG.Current.Viewport_Shadows;
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Shadows_TT"));
+
             if (Owner is MapUniverse mapUniverse)
             {
                 if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Model_Masks")}##modelMaskToggle", CFG.Current.Viewport_Enable_Model_Masks))
