@@ -157,14 +157,14 @@ public class GparamSsr
     public float DepthRejectThreshold = 10000.0f;
     public float FadeToViewerStart = 0.1f;
     public float FresnelRejectThreshold = 0.15f;
-    public float StepScaleMin = 1.0f;
-    public float StepScaleMax = 1.0f;
+    public float StepScaleMin = 6.0f;
+    public float StepScaleMax = 10.0f;
     public float MipScale = 1.0f;
     public float MipOffset = 0.0f;
-    public float DepthFadeRange = 1.0f;
-    public float CrackDetectFactor = 0.0f;
-    public float BlurSigma = 1.0f;
-    public float BlurSigmaMip = 1.0f;
+    public float DepthFadeRange = 10.0f;
+    public float CrackDetectFactor = 1.02f;
+    public float BlurSigma = 0.0f;
+    public float BlurSigmaMip = 4.0f;
 }
 
 /// <summary>Anti-Alias-Editor. Elden Ring's mapbase has <see cref="Type" /> 5 and default 4; their meaning isn't known.</summary>

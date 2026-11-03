@@ -159,7 +159,8 @@ public class PostProcessChain
             }
 
             TextureDescription description = TextureDescription.Texture2D(width, height, 1, 1, SceneTarget.ColorFormat,
-                VkImageUsageFlags.ColorAttachment | VkImageUsageFlags.Sampled | VkImageUsageFlags.Storage,
+                VkImageUsageFlags.ColorAttachment | VkImageUsageFlags.Sampled | VkImageUsageFlags.Storage |
+                VkImageUsageFlags.TransferSrc,
                 VkImageCreateFlags.None, VkImageTiling.Optimal, VkSampleCountFlags.Count1);
 
             Textures[i] = gd.ResourceFactory.CreateTexture(ref description);

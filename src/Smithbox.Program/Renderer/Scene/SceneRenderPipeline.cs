@@ -42,6 +42,9 @@ public class SceneRenderPipeline
     /// <summary>The ambient occlusion, the first of <see cref="PostProcess" />'s passes</summary>
     public SsaoPass Ssao { get; }
 
+    /// <summary>The screen space reflections, after <see cref="Ssao" /></summary>
+    public SsrPass Ssr { get; }
+
     /// <summary>The anti-aliasing after the tone map, see <see cref="FxaaPass" /></summary>
     public FxaaPass Fxaa { get; } = new();
 
@@ -168,11 +171,13 @@ public class SceneRenderPipeline
         Device = device;
 
         Ssao = new SsaoPass(this);
-        SurfaceView = new SurfaceViewPass(Ssao);
+        Ssr = new SsrPass(this);
+        SurfaceView = new SurfaceViewPass(Ssao, Ssr);
 
-        // SSAO darkens the scene itself, so it goes before the auto exposure measures it. Auto exposure next, so
-        // the passes after it see this frame's adjustment.
+        // SSAO and SSR change the scene's own light, so they go before the auto exposure measures it. Auto exposure
+        // next, so the passes after it see this frame's adjustment.
         PostProcess.Add(Ssao);
+        PostProcess.Add(Ssr);
         PostProcess.Add(AutoExposure);
         PostProcess.Add(new LightShaftPass(this, AutoExposure));
         PostProcess.Add(new BloomPass(AutoExposure));

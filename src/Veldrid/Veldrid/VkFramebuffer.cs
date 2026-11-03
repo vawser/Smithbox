@@ -33,7 +33,9 @@ namespace Veldrid
         {
             _gd = gd;
 
-            StackList<VkAttachmentDescription2> attachments = new StackList<VkAttachmentDescription2>();
+            // 56 bytes each, so the default 256 byte list holds only four: a scene target's depth and four colors
+            // would overrun it. Size512Bytes holds 1024 bytes, as in Pipeline.cs.
+            StackList<VkAttachmentDescription2, Size512Bytes> attachments = new StackList<VkAttachmentDescription2, Size512Bytes>();
 
             uint colorAttachmentCount = (uint)ColorTargets.Count;
             StackList<VkAttachmentReference2> colorAttachmentRefs = new StackList<VkAttachmentReference2>();

@@ -1040,6 +1040,18 @@ public class ViewportRenderingTool
         ImGui.Unindent();
         ImGui.EndDisabled();
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Ssr_Enable")}##postSsr", ref CFG.Current.Viewport_Post_Ssr);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Ssr_Enable_TT"));
+
+        ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Ssr);
+        ImGui.Indent();
+        ImGui.SetNextItemWidth(200.0f);
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Post_Ssr_Strength")}##postSsrStrength",
+            ref CFG.Current.Viewport_Post_Ssr_Strength, 0.0f, 1.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Ssr_Strength_TT"));
+        ImGui.Unindent();
+        ImGui.EndDisabled();
+
         string[] surfaceViews =
         {
             LOC.Get("VIEWPORT_Rendering_Post_Surface_View_None"),
@@ -1047,7 +1059,9 @@ public class ViewportRenderingTool
             LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Roughness"),
             LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Specular"),
             LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Indirect"),
-            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Occlusion")
+            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Occlusion"),
+            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Reflection"),
+            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Screen_Reflections")
         };
 
         ImGui.SetNextItemWidth(200.0f);

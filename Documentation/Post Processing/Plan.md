@@ -378,7 +378,7 @@ the common case), then add a second attachment term if the game clearly darkens 
 Check: ER m10_00_00_00: dark contact shadows where walls meet floors and under ledges, in volume-lit interiors as
 well as outside; sunlit faces not darkened. Toggle off: exactly Phase 4's image.
 
-### Phase 5 as built (2026-11-03; not yet checked in the app)
+### Phase 5 as built (2026-11-03; checked in the app 2026-11-03)
 
 **Survey.** Only `mapbase`, `default` and 43 others have SSAO; m10, m30 and m60 don't, so ER maps take mapbase:
 Sample Offset 5, AO Scale 1.5, AO Offset -0.25, Kernel Scale Base Dist 100, Min 2, Max 5, DepthFadeStart 3800 over
@@ -433,6 +433,71 @@ the normal attachment).
 
 Check: ER m10_00_00_00 courtyard puddles and polished floors reflect nearby walls, falling back to the sky colour at
 screen edges. In a file with `SSR Enable` false, none.
+
+### Phase 6 as built (2026-11-03; checked in the app 2026-11-03, in m14)
+
+**Survey.** As with SSAO, m10 and m60 have no SSR, so ER maps take mapbase:
+- Shininess Reject 0.35, Fresnel Reject 0.15, Fade To Viewer Start 0.1.
+- Step Scale 6-10, Depth Fade Range 10, Crack Detect 1.02.
+- Display Mip Scale 1 / Offset 0, Blur Sigma 0, Blur Sigma for Mip 4.
+- `GparamSsr`'s defaults were not mapbase's (steps 1/1, fade 1, crack 0) and are now.
+
+**A fifth attachment:** `SceneTarget.Reflection` (B10G11R11 float), the indirect specular that FlverShader adds (the
+hemisphere, or the env map without map lighting, times its Fresnel term). Written as `fsout_reflection`, location 3,
+by opaque flvers only; `WithSurface` gives every pipeline a fourth entry. All 16 variants were rebuilt.
+Five attachments overran `VkFramebuffer`'s 256 byte `StackList<VkAttachmentDescription2>` (56 bytes each, so four
+fit); it is now `StackList<..., Size512Bytes>`, as Pipeline.cs already had for its own list.
+
+**The pass** (`SsrPass.cs`, `Ssr.vert/frag`) runs after SSAO and before auto exposure; without map lighting it uses
+mapbase's values. Its steps:
+1. **Copy** the image into `SSR Color Mips` (RGBA16F, up to 8 mips) and `GenerateMipmaps`. The chain's textures gained
+   `TransferSrc` for this.
+2. **Trace**, at half size:
+   - A pixel is left out if shininess < 0.35, Schlick's Fresnel `F0 + (1 - F0)(1 - N·V)⁵` (F0 = the largest
+     channel) < 0.15, or the depth > Depth Reject Threshold. The flver shader's own term, which has a gloss² on it,
+     was tried first: that counts roughness twice and rejected nearly everything.
+   - The camera's forward, which the ray's depths are measured along, is found in the shader from `clipToWorld`, so
+     it agrees with the depth buffer whatever the view matrix's handedness.
+   - The reflected ray is Depth Fade Range (10 m) long, cut at 0.2 m in front of the camera.
+   - It is marched in screen pixels, with steps growing from Step Scale Min to Max (at 1080p, scaled to the viewport),
+     at most 64 of them.
+   - A hit is where the ray goes behind the scene by less than `depth × Crack Detect Factor + 5 cm`, refined 5 times by
+     halving.
+   - Fades: `1 - smoothstep(Fade To Viewer Start, +0.25, R·V)` for rays coming back at the camera, the last 8% of the
+     screen at its edges, and the second half of the ray's length.
+   - The colour is read at mip `Offset + Scale × 6.5 × roughness`, the flver shader's own env map mip curve. It is
+     stored premultiplied by its weight, so the bilinear upsample doesn't darken.
+3. **Composite**: `scene + (traced × Fresnel - Reflection) × weight × Strength`, with the flver shader's Fresnel term
+   (gloss² and all), as the Reflection it takes out was weighted with it. A hit swaps the environment's reflection for
+   the screen's; a miss leaves it as it was.
+
+**How the values are read** (a reading, not decoded from the game):
+- Unused: TraverseMode (Hi-Z, 0 in mapbase; the trace is linear), Blur Sigma / Blur Sigma for Mip (the mips are the
+  hardware's box chain).
+- Depth Fade Range is read as the ray's length. Crack Detect is read as the hit's depth tolerance.
+
+**Known gaps:**
+- Water and glass are transparent, so they write no surface and get no SSR.
+- With F0 near 0.04, Fresnel Reject 0.15 leaves most dielectric surfaces out except at grazing angles (about 70° or
+  more from the normal). This is probably what the game does too.
+- m10's floors are dirt and rough flagstone, past Shininess Reject, so Stormveil shows almost no SSR until Wet
+  (Phase 8) raises the shininess in rain. A temporary per-pixel diagnostic confirmed it (floors rejected as too rough,
+  walls seen head on as Fresnel too low), and was removed once m14's polished floors reflected correctly.
+
+CFG `Viewport_Post_Ssr` (on) and `Viewport_Post_Ssr_Strength` (1), in Post Effects. Show gains Environment Reflection
+(the attachment) and Screen Reflections (the trace), both tone mapped.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| ER m14_00_00_00 (Raya Lucaria; m10's floors are too rough), Show: Screen Reflections | Look along a polished floor towards walls, low and grazing | The walls appear mirrored in the floor, softer on rougher stone; black where nothing is hit | Reflections offset, sliding or upside down: the Y flip in `ToPixels`. Speckled streaks: the hit tolerance |
+| Same, Show: Image | Toggle SSR | Grazing floors show the walls in place of the sky/hemisphere tint; surfaces seen head on barely change | Whole image brighter: the environment's reflection isn't taken off |
+| Same | Pan so the reflected wall leaves the screen | The reflection fades back to the environment's at the edge, without a hard line | |
+| Show: Environment Reflection | | Brighter on grazing, glossy surfaces; dark on rough ones | Black: the attachment isn't written |
+| Strength 0 | | Exactly as with SSR off | |
+| Model Editor without map lighting | | Glossy armour reflects nearby parts at grazing angles, the env map elsewhere | |
+| Resize, split viewports | | Reflections stay on their surfaces | |
 
 ### Phase 7: colour grading
 

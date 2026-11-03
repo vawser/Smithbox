@@ -1335,6 +1335,10 @@ public class CFG
     public bool Viewport_Post_Ssao = true;
     public float Viewport_Post_Ssao_Strength = 1.0f;
 
+    // The GPARAM's SSR, and the viewport's scale on how much of the environment's reflection it replaces
+    public bool Viewport_Post_Ssr = true;
+    public float Viewport_Post_Ssr_Strength = 1.0f;
+
     // A debug view of the scene's surface attachments in place of the image, see SurfaceView: 0 for none
     public int Viewport_Post_Surface_View = 0;
 

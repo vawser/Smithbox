@@ -1277,6 +1277,30 @@
       "Text": "Ambient Occlusion"
     },
     {
+      "Key": "VIEWPORT_Rendering_Post_Surface_View_Reflection",
+      "Text": "Environment Reflection"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Surface_View_Screen_Reflections",
+      "Text": "Screen Reflections"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Ssr_Enable",
+      "Text": "SSR"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Ssr_Enable_TT",
+      "Text": "Where the GPARAM's SSR group is on, glossy surfaces reflect what is on screen in place of the environment's reflection, with its reject thresholds, ray steps and fades (Elden Ring's maps all take mapbase's). Where a ray finds nothing, the environment's reflection stays. Water and glass, which are transparent, aren't reflective yet. Runs with or without map lighting."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Ssr_Strength",
+      "Text": "Strength"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Ssr_Strength_TT",
+      "Text": "How much of the environment's reflection SSR replaces where its rays hit: 1 all of it, as read from the GPARAM, 0 none."
+    },
+    {
       "Key": "VIEWPORT_Rendering_Post_Ssao_Enable",
       "Text": "SSAO"
     },

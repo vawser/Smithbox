@@ -3,23 +3,28 @@
 // Shows one of the scene target's surface attachments in place of the image, see SurfaceViewPass.cs. Normals,
 // roughness and specular are display values, which the tone map passes through (it squares them back here first,
 // as it takes a square root); the indirect light is light, tone mapped as the scene is. Pixels no flver drew show
-// as a dark grey. The ambient occlusion is SSAO's visibility, white where open.
+// as a dark grey. The ambient occlusion is SSAO's visibility, white where open; the reflection is the environment's
+// in the Reflection attachment, and the screen reflections SSR's trace, both light, tone mapped.
 
 #define VIEW_NORMALS 1
 #define VIEW_ROUGHNESS 2
 #define VIEW_SPECULAR 3
 #define VIEW_INDIRECT 4
 #define VIEW_OCCLUSION 5
+#define VIEW_REFLECTION 6
+#define VIEW_SCREEN_REFLECTIONS 7
 
 layout(set = 0, binding = 0) uniform SurfaceViewParams
 {
-	vec4 settings; // x: what to show, y: 1 if SSAO ran this frame
+	vec4 settings; // x: what to show, y: 1 if SSAO ran this frame, z: 1 if SSR did
 } params;
 
 layout(set = 0, binding = 1) uniform texture2D surface;
 layout(set = 0, binding = 2) uniform texture2D indirect;
 layout(set = 0, binding = 3) uniform sampler pointSampler;
 layout(set = 0, binding = 4) uniform texture2D occlusion; // SSAO's half size visibility
+layout(set = 0, binding = 5) uniform texture2D reflection; // SceneTarget.Reflection
+layout(set = 0, binding = 6) uniform texture2D screenReflections; // SSR's half size trace, color x weight
 
 layout(location = 0) out vec4 fsout_color;
 
@@ -38,6 +43,19 @@ void main()
 {
 	ivec2 pixel = ivec2(gl_FragCoord.xy);
 	int view = int(params.settings.x + 0.5);
+
+	if (view == VIEW_REFLECTION)
+	{
+		fsout_color = vec4(texelFetch(sampler2D(reflection, pointSampler), pixel, 0).rgb, 1.0);
+		return;
+	}
+
+	if (view == VIEW_SCREEN_REFLECTIONS)
+	{
+		vec3 traced = params.settings.z > 0.5 ? texelFetch(sampler2D(screenReflections, pointSampler), pixel / 2, 0).rgb : vec3(0.0);
+		fsout_color = vec4(traced, 1.0);
+		return;
+	}
 
 	if (view == VIEW_OCCLUSION)
 	{

@@ -14,14 +14,17 @@ public enum SurfaceView
     Roughness = 2,
     Specular = 3,
     Indirect = 4,
-    AmbientOcclusion = 5
+    AmbientOcclusion = 5,
+    Reflection = 6,
+    ScreenReflections = 7
 }
 
 /// <summary>
-///     A debug view of the scene target's surface attachments (<see cref="SceneTarget.Surface" /> and
-///     <see cref="SceneTarget.Indirect" />), drawn last in the chain in place of the image, so what SSAO and SSR read
-///     can be checked by eye. Normals, roughness and specular are shown as they are, with the tone map passed through
-///     (<see cref="ShowsDisplayValues" />); the indirect light is tone mapped as the scene is.
+///     A debug view of the scene target's surface attachments (<see cref="SceneTarget.Surface" />,
+///     <see cref="SceneTarget.Indirect" /> and <see cref="SceneTarget.Reflection" />) and of what SSAO and SSR made
+///     of them, drawn last in the chain in place of the image, so they can be checked by eye. Normals, roughness,
+///     specular and the occlusion are shown as they are, with the tone map passed through
+///     (<see cref="ShowsDisplayValues" />); the light views are tone mapped as the scene is.
 /// </summary>
 public class SurfaceViewPass : PostProcessPass
 {
@@ -33,13 +36,17 @@ public class SurfaceViewPass : PostProcessPass
     private int BoundVersion = -1;
     private SceneTarget BoundTarget;
     private Texture BoundOcclusion;
+    private Texture BoundReflections;
 
     private readonly SsaoPass Ssao;
+    private readonly SsrPass Ssr;
 
     /// <param name="ssao">The pipeline's SSAO, whose visibility the ambient occlusion view shows</param>
-    public SurfaceViewPass(SsaoPass ssao)
+    /// <param name="ssr">The pipeline's SSR, whose trace the screen reflections view shows</param>
+    public SurfaceViewPass(SsaoPass ssao, SsrPass ssr)
     {
         Ssao = ssao;
+        Ssr = ssr;
     }
 
     public override string Name => "Surface View";
@@ -63,7 +70,7 @@ public class SurfaceViewPass : PostProcessPass
 
         EnsureResources(gd, frame.Target);
 
-        var settings = new Vector4((float)view, Ssao.Ran ? 1.0f : 0.0f, 0.0f, 0.0f);
+        var settings = new Vector4((float)view, Ssao.Ran ? 1.0f : 0.0f, Ssr.Ran ? 1.0f : 0.0f, 0.0f);
         cl.UpdateBuffer(ParamBuffer, 0, ref settings, (uint)sizeof(Vector4));
         cl.Barrier(VkPipelineStageFlags2.Transfer, VkAccessFlags2.TransferWrite,
             VkPipelineStageFlags2.FragmentShader, VkAccessFlags2.UniformRead);
@@ -74,7 +81,7 @@ public class SurfaceViewPass : PostProcessPass
         cl.SetGraphicsResourceSet(0, ResourceSet);
         cl.Draw(3, 1, 0, 0);
 
-        ShowsDisplayValues = view != SurfaceView.Indirect;
+        ShowsDisplayValues = view is not (SurfaceView.Indirect or SurfaceView.Reflection or SurfaceView.ScreenReflections);
     }
 
     private unsafe void EnsureResources(GraphicsDevice gd, SceneTarget target)
@@ -91,6 +98,10 @@ public class SurfaceViewPass : PostProcessPass
             new ResourceLayoutElementDescription("PointSampler", VkDescriptorType.Sampler,
                 VkShaderStageFlags.Fragment),
             new ResourceLayoutElementDescription("Occlusion", VkDescriptorType.SampledImage,
+                VkShaderStageFlags.Fragment),
+            new ResourceLayoutElementDescription("Reflection", VkDescriptorType.SampledImage,
+                VkShaderStageFlags.Fragment),
+            new ResourceLayoutElementDescription("ScreenReflections", VkDescriptorType.SampledImage,
                 VkShaderStageFlags.Fragment)));
 
         if (Pipeline == null)
@@ -114,11 +125,12 @@ public class SurfaceViewPass : PostProcessPass
         ParamBuffer ??= factory.CreateBuffer(new BufferDescription((uint)sizeof(Vector4),
             VkBufferUsageFlags.UniformBuffer | VkBufferUsageFlags.TransferDst, VmaMemoryUsage.Auto, 0));
 
-        // Before SSAO first runs there is no visibility; the indirect light stands in, and isn't shown
+        // Before SSAO or SSR first runs there is nothing of theirs; the indirect light stands in, and isn't shown
         var occlusion = Ssao.Visibility ?? target.Indirect;
+        var reflections = Ssr.Result ?? target.Indirect;
 
         if (ResourceSet != null && ReferenceEquals(BoundTarget, target) && BoundVersion == target.Version &&
-            ReferenceEquals(BoundOcclusion, occlusion))
+            ReferenceEquals(BoundOcclusion, occlusion) && ReferenceEquals(BoundReflections, reflections))
         {
             return;
         }
@@ -129,9 +141,10 @@ public class SurfaceViewPass : PostProcessPass
         }
 
         ResourceSet = factory.CreateResourceSet(new ResourceSetDescription(Layout, ParamBuffer, target.Surface,
-            target.Indirect, gd.PointSampler, occlusion));
+            target.Indirect, gd.PointSampler, occlusion, target.Reflection, reflections));
         BoundTarget = target;
         BoundVersion = target.Version;
         BoundOcclusion = occlusion;
+        BoundReflections = reflections;
     }
 }

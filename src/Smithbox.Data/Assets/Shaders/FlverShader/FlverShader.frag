@@ -104,6 +104,7 @@ layout(location = 0) out vec4 fsout_color;
 // written; elsewhere the pipeline leaves them alone, or there is no attachment for them.
 layout(location = 1) out vec4 fsout_surface;  // xy: normal, octahedral, z: roughness, w: specular
 layout(location = 2) out vec4 fsout_indirect; // rgb: the indirect diffuse light in the color
+layout(location = 3) out vec4 fsout_reflection; // rgb: the environment's reflection (indirect specular) in the color
 
 struct sceneLight
 {
@@ -448,6 +449,7 @@ uint g_mat;
 bool g_modelLit = false; // lit by the model set of the map's GPARAM, see ModelLit
 vec2 g_uv[2];
 vec3 g_indirectDiffuse = vec3(0.0); // the diffuse part of IndirectLight, before the scene multipliers
+vec3 g_indirectSpecular = vec3(0.0); // and its specular part
 vec2 g_dx[2];
 vec2 g_dy[2];
 float g_weight[MAX_LAYERS];
@@ -1058,6 +1060,7 @@ vec3 IndirectLight(Surface s)
 	vec3 indirectSpecular = ambientSpec * aF;
 	float reflectionThing = clamp(dot(reflectVec, s.N) + 1.0, 0.0, 1.0);
 	indirectSpecular *= reflectionThing * reflectionThing;
+	g_indirectSpecular = indirectSpecular;
 
 	return indirectDiffuse + indirectSpecular;
 }
@@ -1605,4 +1608,6 @@ void main()
 	fsout_surface = vec4(OctahedralEncode(surface.N), surface.roughness, max(F0.r, max(F0.g, F0.b)));
 	fsout_indirect = vec4(unlit ? vec3(0.0) :
 		max(g_indirectDiffuse, vec3(0.0)) * sceneparam.indirectLightMult * sceneparam.sceneBrightness, 1.0);
+	fsout_reflection = vec4(unlit ? vec3(0.0) :
+		max(g_indirectSpecular, vec3(0.0)) * sceneparam.indirectLightMult * sceneparam.sceneBrightness, 1.0);
 }
