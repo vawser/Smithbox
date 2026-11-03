@@ -31,6 +31,5 @@
 
 - Renderer:
     - Fix decal textures
-    - Introduce GPARAM elements
-        - Cloud Shadow
-        - Sea Waves
+    - Fix:
+        - TAA causes shimmering on water textures

@@ -1034,6 +1034,10 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Post_Fog_Local_Lights);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Fog_Local_Lights_Enable_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Fog_Transparents_Enable")}##postFogTransparents",
+            ref CFG.Current.Viewport_Post_Fog_Transparents);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Fog_Transparents_Enable_TT"));
+
         ImGui.Unindent();
         ImGui.EndDisabled();
 

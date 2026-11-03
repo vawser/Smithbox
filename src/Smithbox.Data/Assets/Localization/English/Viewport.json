@@ -1242,7 +1242,15 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Volumetric_Fog_Enable_TT",
-      "Text": "Where the GPARAM's VolumetricFog group is on, hazes the scene with its height fog out to Far Depth (and to Fog End Depth with Enable Analytical Fog), lit by the Sky Light and Dir Light colors. Needs map lighting. Water and glass are drawn over the fog, unfogged for now."
+      "Text": "Where the GPARAM's VolumetricFog group is on, hazes the scene with its height fog out to Far Depth (and to Fog End Depth with Enable Analytical Fog), lit by the Sky Light and Dir Light colors. Needs map lighting."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Fog_Transparents_Enable",
+      "Text": "Fog on Water and Glass"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Fog_Transparents_Enable_TT",
+      "Text": "Transparent flvers (water, glass, foliage cards) fog themselves at their own depth with the same fog, as they are drawn over the fogged scene. Alpha blended ones get the fog's light too; additive ones are only dimmed."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fog_Shadows_Enable",

@@ -493,6 +493,11 @@ public class SceneRenderPipeline
 
         Fog.Prepare(view, renderProj, mapLighting, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z));
 
+        // For the transparent draws, which come after the fog's own pass this frame
+        var fogVolume = CFG.Current.Viewport_Post_Fog_Transparents ? Fog.VolumeTextureIndex : 0;
+        var fog = Fog.Parameters;
+        var fogTargetSize = new Vector2(Target.Width, Target.Height);
+
         // Wet surfaces, from the chosen weather's Wet values
         var wet = mapLighting?.PostEffects.Wet;
         var wetness = CFG.Current.Viewport_Post_Effects && CFG.Current.Viewport_Post_Wet && wet != null
@@ -588,6 +593,20 @@ public class SceneRenderPipeline
 
             SceneParams.WetAlbedo = wetAlbedo;
             SceneParams.WetShininess = wetShininess;
+
+            SceneParams.FogVolumeTexture = fogVolume;
+            SceneParams.FogNear = fog.DepthRange.X;
+            SceneParams.FogLogRatio = fog.DepthRange.Z;
+            SceneParams.FogSlices = fog.Volume.Z;
+            // The end is only past the far depth with EnableAnalyticalFog, as the fog's own pass reads it
+            SceneParams.FogRange = new Vector4(fog.DepthRange.Y, fog.Flags.Y > 0.5f ? fog.DepthRange.W : 0.0f,
+                fogTargetSize.X, fogTargetSize.Y);
+            SceneParams.FogDensity = fog.Density;
+            SceneParams.FogExtinction = fog.Extinction;
+            SceneParams.FogSky = fog.Sky;
+            SceneParams.FogDirect = fog.Direct;
+            SceneParams.FogOpposite = fog.Opposite;
+            SceneParams.FogSun = fog.Sun;
 
             // A copy, so the viewport's own sun stays in SceneParams for its sliders
             var uploaded = SceneParams;

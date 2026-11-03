@@ -183,6 +183,28 @@ public unsafe struct SceneParam
 
     /// <summary>x: the shininess wet surfaces lean towards, y: how far (ShininessRate times the wetness)</summary>
     public Vector4 WetShininess;
+
+    // The volumetric fog, for transparent draws to fog themselves with, see VolumetricFogPass. The fog's own pass
+    // lays it over the opaque draws.
+
+    /// <summary>The fog volume's index in the volume texture pool, 0 when there is no fog this frame</summary>
+    public uint FogVolumeTexture;
+
+    /// <summary>The volume's near depth, log(far / near), and its slices</summary>
+    public float FogNear;
+    public float FogLogRatio;
+    public float FogSlices;
+
+    /// <summary>x: far depth, y: the fog's end depth past it (0 for no analytic part), zw: the target's size</summary>
+    public Vector4 FogRange;
+
+    /// <summary>The fog's density, sky, sun and phase, as <see cref="VolumetricFogParam" /> has them</summary>
+    public Vector4 FogDensity;
+    public Vector4 FogExtinction;
+    public Vector4 FogSky;
+    public Vector4 FogDirect;
+    public Vector4 FogOpposite;
+    public Vector4 FogSun;
 }
 
 /// <summary>A directional light of the map's GPARAM, as the shaders read it</summary>

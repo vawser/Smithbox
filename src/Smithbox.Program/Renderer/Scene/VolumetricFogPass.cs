@@ -69,6 +69,7 @@ public class VolumetricFogPass
 
     private DeviceBuffer ParamBuffer;
     private Texture Volume;
+    private TexturePool.TextureHandle VolumeHandle;
     private ResourceSet ComputeSet;
     private ResourceSet DrawSet;
 
@@ -83,6 +84,15 @@ public class VolumetricFogPass
 
     /// <summary>Whether the fog was laid over the scene in the last frame drawn</summary>
     public bool Drawn { get; private set; }
+
+    /// <summary>
+    ///     The volume's index in the volume texture pool, for the transparent flvers drawn after the fog this frame,
+    ///     or 0 if the fog won't be drawn: the volume would hold another frame's
+    /// </summary>
+    public uint VolumeTextureIndex => Pending ? VolumeHandle?.TexHandle ?? 0 : 0;
+
+    /// <summary>This frame's parameters, valid when <see cref="VolumeTextureIndex" /> is not 0</summary>
+    public VolumetricFogParam Parameters => Params;
 
     /// <summary>The volume's cells across, down and its slices, as last drawn</summary>
     public (int Width, int Height, int Depth) VolumeSize { get; private set; }
@@ -272,18 +282,17 @@ public class VolumetricFogPass
 
         if (Volume == null || Volume.Width != size.Item1 || Volume.Height != size.Item2 || Volume.Depth != size.Item3)
         {
-            // A frame that is still executing can be reading the old volume
-            if (Volume != null)
-            {
-                SceneRenderer.DisposeAfterFramesInFlight(Volume);
-            }
-
             TextureDescription description = TextureDescription.Texture3D((uint)size.Item1, (uint)size.Item2,
                 (uint)size.Item3, 1, VkFormat.R16G16B16A16Sfloat, VkImageUsageFlags.Storage | VkImageUsageFlags.Sampled,
                 VkImageCreateFlags.None, VkImageTiling.Optimal);
             Volume = factory.CreateTexture(ref description);
             Volume.Name = "Volumetric Fog Volume";
             recreate = true;
+
+            // In the volume pool too, for the transparent flvers to fog themselves with. The pool owns the volume
+            // from here, and retires the one it replaces once no frame reads it.
+            VolumeHandle ??= SceneRenderer.GlobalVolumeTexturePool.AllocateTextureDescriptor();
+            VolumeHandle?.FillWithGPUTexture(Volume);
         }
 
         var shadowMap = pipeline.Shadows?.MapTexture ?? NoShadowMap;

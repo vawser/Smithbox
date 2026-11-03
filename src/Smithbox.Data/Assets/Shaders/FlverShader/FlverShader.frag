@@ -43,6 +43,10 @@ layout (constant_id = 7) const bool c_blendFromRecipe = false;
 #endif
 
 layout (constant_id = 6) const bool c_transparent = false;
+
+// The material's MaterialBlending: 0 opaque, 1 alpha, 2 add, 3 subtract
+layout (constant_id = 11) const int c_blending = 0;
+#define BLENDING_ALPHA 1
 layout (constant_id = 8) const bool c_detail = false;
 layout (constant_id = 9) const bool c_magma = false;
 layout (constant_id = 10) const int c_surface = 0;
@@ -201,6 +205,19 @@ struct sceneParams
 	// The GPARAM Wet group in a weather that wets, see SceneParam.cs; the rates are 0 when it is dry
 	vec4 wetAlbedo;          // rgb: the albedo wet surfaces lean towards, a: how far
 	vec4 wetShininess;       // x: the shininess they lean towards, y: how far
+
+	// The volumetric fog, for transparent draws, see VolumetricFogPass.cs and SceneParam.cs
+	uint fogVolumeTexture;   // index in globalTexturesVolume, 0 for no fog this frame
+	float fogNear;           // the volume's near depth
+	float fogLogRatio;       // log(far / near)
+	float fogSlices;
+	vec4 fogRange;           // x: far depth, y: end depth past it (0 for none), zw: the target's size
+	vec4 fogDensity;         // x: fixed, y: height scale, z: distribution, w: height offset
+	vec4 fogExtinction;      // x: extra extinction from AbsorptionScale
+	vec4 fogSky;             // rgb: sky light, w: height attenuation
+	vec4 fogDirect;          // rgb: sun light towards the sun, w: height attenuation
+	vec4 fogOpposite;        // rgb: sun light away from it, w: ScatteringG
+	vec4 fogSun;             // xyz: the direction the sun's light travels
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -1080,6 +1097,96 @@ vec3 IndirectLight(Surface s)
 // The share of the light that scattering sends back up: the shaders' 1 / (4 pi), times the pi lighting leaves out here
 #define WATER_SCATTER_PHASE 0.25
 
+// ---------------------------------------------------------------------------------------------
+// Fog on transparent draws
+// ---------------------------------------------------------------------------------------------
+
+// The volumetric fog between the camera and this transparent pixel, as VolumetricFog.frag finds it for the opaque
+// scene: the froxel volume at the pixel's own depth, and past the volume's far depth the same fog marched out to the
+// pixel. rgb: light scattered towards the camera, a: the share of the pixel let through.
+
+float FogDensity(float y)
+{
+	float height = clamp(-sceneparam.fogDensity.z * (y - sceneparam.fogDensity.w), -80.0, 80.0);
+	return clamp(sceneparam.fogDensity.x + sceneparam.fogDensity.y * exp(height), 0.0, 4.0);
+}
+
+float FogPhase(float cosAngle, float g)
+{
+	float gg = g * g;
+	float peak = (1.0 - gg) / pow(max(1.0 - g, 1e-3), 3.0);
+	return (1.0 - gg) / pow(max(1.0 + gg - 2.0 * g * cosAngle, 1e-6), 1.5) / peak;
+}
+
+float FogHeightAttenuation(float y, float attenuation)
+{
+	return exp(-max(attenuation, 0.0) * max(y - sceneparam.fogDensity.w, 0.0));
+}
+
+#define FOG_FAR_STEPS 8
+
+vec4 FogAtPixel(vec3 worldPos)
+{
+	uint index = sceneparam.fogVolumeTexture;
+	if (index == 0u || index >= 2048u)
+		return vec4(0.0, 0.0, 0.0, 1.0);
+
+	float depth = abs((sceneparam.view * vec4(worldPos, 1.0)).z);
+	float far = sceneparam.fogRange.x;
+	float slices = max(sceneparam.fogSlices, 1.0);
+
+	// The volume at min(depth, far): slice i holds the fog up to its far side, faded in from the camera before the
+	// first. The sampler wraps, so the coordinates are kept half a texel inside.
+	float s = log(max(min(depth, far), sceneparam.fogNear) / sceneparam.fogNear) / max(sceneparam.fogLogRatio, 1e-6) * slices;
+	float sliceIndex = clamp(s - 1.0, 0.0, slices - 1.0);
+
+	vec3 size = vec3(textureSize(sampler3D(globalTexturesVolume[nonuniformEXT(index)], linearSampler), 0));
+	vec3 uvw = vec3(gl_FragCoord.xy / max(sceneparam.fogRange.zw, vec2(1.0)), (sliceIndex + 0.5) / slices);
+	uvw = clamp(uvw, 0.5 / size, 1.0 - 0.5 / size);
+
+	vec4 fog = textureLod(sampler3D(globalTexturesVolume[nonuniformEXT(index)], linearSampler), uvw, 0.0);
+	fog = s < 1.0 ? mix(vec4(0.0, 0.0, 0.0, 1.0), fog, clamp(s, 0.0, 1.0)) : fog;
+
+	// With EnableAnalyticalFog, marched on from the far depth to the pixel, lit by the sky and the unshadowed sun
+	float end = sceneparam.fogRange.y;
+	if (end > far && depth > far)
+	{
+		vec3 eye = sceneparam.eye.xyz;
+		vec3 toPixel = worldPos - eye;
+		vec3 rayDir = normalize(toPixel);
+		float rayScale = length(toPixel) / max(depth, 1e-4);
+
+		vec3 sunTravel = dot(sceneparam.fogSun.xyz, sceneparam.fogSun.xyz) > 1e-10
+			? normalize(sceneparam.fogSun.xyz) : vec3(0.0, -1.0, 0.0);
+		vec3 sunColor = mix(sceneparam.fogOpposite.rgb, sceneparam.fogDirect.rgb,
+			FogPhase(dot(rayDir, -sunTravel), sceneparam.fogOpposite.w));
+
+		float to = min(depth, end);
+		float stepDepth = (to - far) / float(FOG_FAR_STEPS);
+		vec3 scattered = vec3(0.0);
+		float transmittance = 1.0;
+
+		for (int i = 0; i < FOG_FAR_STEPS; i++)
+		{
+			float d = far + (float(i) + 0.5) * stepDepth;
+			vec3 p = eye + toPixel * (d / max(depth, 1e-4));
+			float density = FogDensity(p.y);
+
+			vec3 light = sceneparam.fogSky.rgb * FogHeightAttenuation(p.y, sceneparam.fogSky.w) +
+				sunColor * FogHeightAttenuation(p.y, sceneparam.fogDirect.w);
+
+			float extinction = density * (1.0 + sceneparam.fogExtinction.x);
+			float stepTransmittance = exp(-extinction * stepDepth * rayScale);
+			scattered += transmittance * light * density * (1.0 - stepTransmittance) / max(extinction, 1e-6);
+			transmittance *= stepTransmittance;
+		}
+
+		fog = vec4(fog.rgb + fog.a * scattered, fog.a * transmittance);
+	}
+
+	return fog;
+}
+
 bool IsWater()
 {
 	return c_surface == SURFACE_WATER && HasFeature(FEATURE_WATER);
@@ -1605,6 +1712,15 @@ void main()
 		litColor = mix(litColor, litColor * tint, strength);
 	}
 #endif
+
+	// Transparents are drawn over the fogged scene, so they fog themselves to their own depth. Alpha blending
+	// lets the fog's light through by the alpha, as the scene behind has it; an additive or subtractive one only
+	// dims, as its light would be added again on each layer.
+	if (c_transparent && c_linearOutput && sceneparam.fogVolumeTexture != 0u)
+	{
+		vec4 fog = FogAtPixel(fsin_worldpos);
+		litColor = max(litColor, vec3(0.0)) * fog.a + (c_blending == BLENDING_ALPHA ? fog.rgb : vec3(0.0));
+	}
 
 	vec3 finalColor = sqrt(max(litColor, vec3(0.0)));
 

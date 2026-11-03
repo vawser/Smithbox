@@ -807,6 +807,8 @@ public class FlverResource : IResource, IDisposable
         }
 
         specConstants.Add(new SpecializationConstant(6, dest.Blending != MaterialBlending.Opaque));
+        // How it blends, so a transparent material fogs itself as its blending needs (an additive one only dims)
+        specConstants.Add(new SpecializationConstant(11, (uint)dest.Blending));
         specConstants.Add(new SpecializationConstant(8, hasDetail));
         specConstants.Add(new SpecializationConstant(9, hasMagma));
         specConstants.Add(new SpecializationConstant(10, (uint)(dest.Definition?.Surface ?? MaterialSurface.Standard)));

@@ -1338,6 +1338,9 @@ public class CFG
     public bool Viewport_Post_Fog_Shadows = true;
     public bool Viewport_Post_Fog_Local_Lights = true;
 
+    // Whether transparent flvers (water, glass) are fogged at their own depth, as the opaque scene behind them is
+    public bool Viewport_Post_Fog_Transparents = true;
+
     // The GPARAM's LightShaft group: rays from the sun where the sky shows through
     public bool Viewport_Post_Light_Shafts = true;
 

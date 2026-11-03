@@ -754,6 +754,46 @@ up close are unchanged.
 Risk: the transparents' pipelines are cached per material and specialization constant. The fog code needs no new
 constant, only new uniforms, so nothing has to be rebuilt.
 
+### Phase 11 as built (2026-11-03; not yet checked in the app)
+
+**The volume in the pool.** `VolumetricFogPass` allocates a `GlobalVolumeTexturePool` handle with its first volume
+and refills it when the volume is recreated. The pool then owns the volume and retires the old one, as with
+`SceneDepth`, so the pass no longer disposes it itself.
+- `VolumeTextureIndex` is the handle's index while the fog will draw this frame (`Pending`), else 0.
+- `Parameters` exposes this frame's `VolumetricFogParam`.
+
+**Scene params** gain, at the end after Wet:
+- `FogVolumeTexture`, `FogNear`, `FogLogRatio` and `FogSlices` (one row).
+- `FogRange`: far, end (0 without EnableAnalyticalFog), and the target's size.
+- The density, extinction, sky, direct, opposite/g and sun vectors, copied from the fog's parameters in
+  `UpdateSceneParameters`.
+
+**FlverShader:**
+- `FogAtPixel(worldPos)` reads `globalTexturesVolume[index]` at `gl_FragCoord / size` and the fragment's view depth
+  (`abs(view × p).z`, as the fog's compute measures it). The slices and the fade-in before the first one are as
+  `VolumetricFog.frag` has them. The coordinates are kept half a texel inside, as `linearSampler` wraps.
+- Past the far depth, with an end beyond it, it does the same 8-step analytic march along eye -> pixel.
+- Applied to `litColor` just before the square root, for `c_transparent` in the HDR target only:
+  `litColor × T + (alpha blended ? S : 0)`.
+- New constant `c_blending` (id 11, `MaterialBlending`, set in `FlverResource`): additive and subtractive materials
+  only dim, so the fog's light isn't added once per layer. Water is alpha blended, so it takes both: over the
+  fogged scene behind it, the fog's light comes out right at any alpha.
+- All 16 variants were rebuilt.
+
+CFG `Viewport_Post_Fog_Transparents` (on), "Fog on Water and Glass" under Volumetric Fog; the fog's tooltip no longer
+calls it a gap.
+
+Check:
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| ER m60_42_36_00 at t4, map lighting on | Look across a lake or the sea in the distance | Water hazes at the same distance as the shore round it, with no clear band or seam where they meet | Water much brighter than the shore far off: S added twice. Water unchanged: the index is 0 or the volume isn't in the pool |
+| Same | Toggle Fog on Water and Glass | Only the transparents change | |
+| Same | Toggle Volumetric Fog | Shore and water fog and clear together | |
+| Up close: glass, foliage cards, waterfalls | | Barely changed (little fog in the first metres) | Speckles or a wrong slice: the uvw clamp |
+| Fire, effects or other additive materials far off | | Fade into the haze, not glowing through it brighter than before | Brighter with fog on: c_blending isn't reaching the shader |
+| Resize the viewport | | No flash of wrong fog on the water | |
+
 ### Phase 12: Glow Filter
 
 1. **What it glows** (a reading, not decoded from the game): Yebis's Glow is a second bloom fed only by what glows
