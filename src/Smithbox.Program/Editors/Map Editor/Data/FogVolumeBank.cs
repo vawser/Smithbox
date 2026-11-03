@@ -15,8 +15,9 @@ namespace StudioCore.Editors.MapEditor;
 /// A map can have several, named after its MSB with a suffix (e.g. m31_06_00_00_0000 and _0002). A file is read
 /// when its map is loaded, and its volumes become entities of the map.
 /// The settings a volume is drawn with are the row of its FogID in the "FogVolume ParamEditor" group of the GPARAMs
-/// the map lighting uses (<see cref="GparamLightingBank" />): the file, weather and time of day chosen in
-/// Viewport Rendering > Map Lighting, then the area's own (mAA_BB_0000, after GparamRefSettings), mapbase (ER, NR),
+/// the map lighting uses (<see cref="GparamLightingBank" />): the chosen weather's shared overlays (Elden Ring's
+/// m00_00_WWWW_weatheroutdoor and _weatherbase, see <see cref="GparamLightingBank.GetWeatherOverlays" />), the file,
+/// weather and time of day chosen in Viewport Rendering > Map Lighting, then the area's own (mAA_BB_0000, after GparamRefSettings), mapbase (ER, NR),
 /// default, and the area's other GPARAMs, such as m41_00_0100 in AC6. Each field is looked up in each file with the
 /// row in turn, so a weather file only needs the fields it changes, and is interpolated through the day.
 /// </summary>
@@ -202,7 +203,7 @@ public class FogVolumeBank
     public int SettingsVersion { get; private set; }
 
     // What the settings were last looked up with, and the version volumes were last refreshed to
-    private (bool Lighting, string File, int Weather, float Hours)? SettingsInputs;
+    private (bool Lighting, string File, int Weather, bool Outdoor, float Hours)? SettingsInputs;
     private int RefreshedVersion = -1;
 
     /// <summary>
@@ -218,9 +219,15 @@ public class FogVolumeBank
         var own = lighting.GetDefaultFile(mapId);
         var chosen = CFG.Current.Viewport_Map_Lighting ? lighting.ChooseFile(mapId, CFG.Current.Viewport_Map_Lighting_File) : own;
 
-        // The area's other GPARAMs come in ListFiles' order: the plain ones (mAA_BB_0100) before those for events
-        // and weather
-        var names = new[] { chosen, own, "mapbase", "default" }
+        // The chosen weather's shared overlays first, as the map lighting reads them: Elden Ring's outdoor ones set
+        // the overworld's shared fog IDs (1101, 1160, 1300, 1307). The area's other GPARAMs come last, in ListFiles'
+        // order: the plain ones (mAA_BB_0100) before those for events and weather.
+        var overlays = CFG.Current.Viewport_Map_Lighting
+            ? lighting.GetWeatherOverlays(CFG.Current.Viewport_Map_Lighting_Weather)
+            : new List<string>();
+
+        var names = overlays
+            .Concat(new[] { chosen, own, "mapbase", "default" })
             .Concat(lighting.ListFiles(mapId))
             .Where(n => !string.IsNullOrEmpty(n))
             .Distinct(StringComparer.OrdinalIgnoreCase);
@@ -251,7 +258,8 @@ public class FogVolumeBank
             return;
 
         var inputs = (CFG.Current.Viewport_Map_Lighting, CFG.Current.Viewport_Map_Lighting_File ?? "",
-            CFG.Current.Viewport_Map_Lighting_Weather, CFG.Current.Viewport_Map_Lighting_Hours);
+            CFG.Current.Viewport_Map_Lighting_Weather, CFG.Current.Viewport_Map_Lighting_Weather_Outdoor,
+            CFG.Current.Viewport_Map_Lighting_Hours);
 
         if (SettingsInputs != inputs)
         {

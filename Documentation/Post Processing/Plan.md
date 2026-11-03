@@ -606,9 +606,10 @@ WetTime), and only up-facing surfaces get the full effect.
 **Known gaps:**
 - No rain mask, so roofed interiors get wet too.
 - Fog volume boxes (FogVolumeBank) still read only the map's file, not the overlays, which override FogVolume in 42
-  files.
-- `DistViewWeatherGparamOverrideWeight` (WeatherParam), probably a partial blend of the overlay over distant views, is
-  not used: the overlay replaces the map's values outright.
+  files. Fixed in Phase 10.
+- `DistViewWeatherGparamOverrideWeight` (WeatherParam) is not used. It belongs to the telescope view
+  (`CSDistViewManager` in the exe), so in the normal view the overlay replacing the map's values outright is right;
+  see "The gaps left after Phase 9".
 
 Check:
 
@@ -683,6 +684,127 @@ Check:
 | Click objects | | The one under the cursor is selected | |
 | Show: Normals (or another view) | | Steady | |
 | Resize, split viewports, Model Editor with a borrowed map | | No smears after a resize; each viewport steady | |
+
+## The gaps left after Phase 9
+
+Written 2026-11-03, once Phases 0-9 were checked in the app. TAA motion vectors are left out on purpose.
+
+### What was found before planning
+
+| Gap | Finding | Consequence |
+|---|---|---|
+| Weather overlays' partial blend (`DistViewWeatherGparamOverrideWeight`) | "DistView" in the exe is `CSDistViewManager`, with `DistView/ItemList`, `DistView/Cursor` and `OpenDistViewMark`: the telescope view, where the player puts map markers. It isn't distant geometry. | The weight is how much the weather overrides the telescope view. In the normal view the overlay replacing the map's values outright is right. **Closed without code**; only the note in Phase 8 changes. |
+| Fog volume boxes and weather | `FogVolumeBank` resolves `[chosen, own, mapbase, default]` (FogVolumeBank.cs:223). The outdoor overlays set fog volume IDs 1101, 1160, 1300 and 1307 (42-46 files each), the shared overworld ones. | A small change, Phase 10 |
+| Transparents unfogged | Water and glass are drawn after the fog (Phase 2). The volume can be put in `globalTexturesVolume` (set 3, binding 1), which FlverShader's fragment stage already reads for the irradiance volumes. | Phase 11 |
+| Glow Filter | On in mapbase at ID 0, and no map file overrides it, so it applies to **every** ER map. Mapbase: 7 levels, Blur Smoothness 1.2, FinalColorScale 5, BlurSampleScale 1, Blur RgbScale 1.5, Blur AlphaScale 1. Already resolved into `GparamGlow`. FlverShader adds emissive textures and magma straight into the colour (FlverShader.frag, around line 1587), so nothing keeps them apart. | Phase 12, a sixth attachment and a blur chain |
+| No rain mask | Nothing knows what is under a roof. The shadow cascades already render the scene's opaque depth from a direction (`ShadowCascades`, a `RenderQueue` with its own `SceneParamSet` and the meshes' `_shadowPipeline`). | Phase 13, a top-down depth map |
+
+The order puts the smallest and safest first, and the new render pass (the rain mask) last.
+
+### Phase 10: weather overlays for fog volume boxes
+
+1. `FogVolumeBank`'s name list becomes `GetWeatherOverlays(weather)` + `[chosen, own, mapbase, default]`, using the
+   same method as the lighting bank, so the Outdoor Weather switch applies to both.
+2. The settings key that `FogVolumeBank.Update` compares already includes the weather. It gains
+   `Viewport_Map_Lighting_Weather_Outdoor`, so ticking it re-resolves the boxes.
+3. The Phase 8 notes: replace the DistView gap with the finding above.
+
+Check: ER m60_42_36_00 with a fog volume box of ID 1101/1160/1300/1307 in view (the Map Editor's FogVolume list shows
+the IDs). Weather 20 changes its density or colour; Outdoor Weather off brings back the map's.
+
+### Phase 10 as built (2026-11-03; checked in the app 2026-11-03)
+
+- `FogVolumeBank.GetSettings` puts `GparamLightingBank.GetWeatherOverlays(weather)` before
+  `[chosen, own, mapbase, default]` and the area's other files. It only does this with map lighting on, as the chosen
+  file only applies then, so both banks read the overlays and the Outdoor Weather switch in the same way.
+- The overlays are read by `GetFogGroup` like any project GPARAM.
+- The key `Update` compares gains `Viewport_Map_Lighting_Weather_Outdoor`, so ticking it re-resolves the boxes. The
+  weather and time were already in it.
+- The class doc names the overlays.
+- The Phase 8 DistView note was replaced with the telescope finding.
+
+Check: as above. Also: with no weather, or a weather without an outdoor overlay (e.g. 0 or 1), the boxes look as they
+did before.
+
+### Phase 11: fog on transparents
+
+1. **The volume in the pool.** `VolumetricFogPass` allocates a handle in `SceneRenderer.GlobalVolumeTexturePool` and
+   fills it with `Volume` (as `IrradianceVolumeBank` does with its bakes), refilled when the volume is recreated.
+   It frees the handle when the pass is disposed.
+2. **Scene params**, appended at the end as Wet was:
+   - `FogVolumeTexture`, the pool index, 0 when the fog didn't run this frame.
+   - `FogDepth`: near, log(far / near), slices, and 1 for the analytic far part.
+   - The far part's density, sky and sun terms. Those are already in `VolumetricFogParam`, so either duplicate the
+     few needed (density, sky, direct/opposite, ScatteringG, sun) or bind the fog's parameter buffer to the flver
+     pipelines. Duplicating is preferred: the flver layout stays as it is.
+   - `SceneRenderPipeline` fills them from `Fog` after `Prepare`.
+3. **FlverShader** gets a shared `ApplyFog(color, alpha)`, for `c_transparent` only:
+   - It reads the volume at `gl_FragCoord.xy / size` and the fragment's own view depth, as `VolumetricFog.frag`'s
+     `SampleVolume` does. The analytic march past FarDepth is copied too, if FogEnd > Far.
+   - Alpha-blended: `rgb × T + S`.
+   - Additive or blend-mask materials, and water (whose own volume already darkens behind it): `rgb × T` only.
+     Adding S there would add the fog's light a second time over the fogged background.
+4. The volume is written by the compute at the depth copy, before the transparents draw, and is already in a
+   sampled layout for the fog's own draw, so no new barrier is needed.
+
+Check: ER m10_00_00_00 or m60 at t4, looking at distant water or a lake. Water hazes at the same distance as the
+shore around it, with no clear seam. Toggling Volumetric Fog fogs and unfogs both together. Glass and foliage cards
+up close are unchanged.
+
+Risk: the transparents' pipelines are cached per material and specialization constant. The fog code needs no new
+constant, only new uniforms, so nothing has to be rebuilt.
+
+### Phase 12: Glow Filter
+
+1. **What it glows** (a reading, not decoded from the game): Yebis's Glow is a second bloom fed only by what glows
+   itself, not by brightness. "Blur RgbScale" and "Blur AlphaScale" suggest a colour and a mask term. The source is
+   taken to be the emissive light FlverShader adds (emissive textures × colour, magma), with AlphaScale scaling the
+   mask the glow is masked by (taken as 1, the whole emissive).
+2. **A sixth attachment**, `SceneTarget.Glow` (B10G11R11 float): `fsout_glow` at location 4, the emissive and magma
+   terms before they are added to `litColor`. Opaque flvers only, with the same write mask rule as the other surface
+   attachments (`WithSurface` gains one entry). The Veldrid `StackList` already holds up to 18 attachments.
+3. **The blur:**
+   - Factor `BloomPass`'s down/up chain into a shared helper. It takes a source, a level count, a radius and
+     smoothness, and returns the summed level.
+   - `GlowPass` feeds it `Glow` downsampled from the start: NumLevels (7) levels, BlurSampleScale as the tap radius,
+     Blur Smoothness as the up-chain's spread.
+   - The composite is `scene + sum × Blur RgbScale × FinalColorScale / NumLevels`, divided by the auto exposure as
+     bloom's is.
+   - In the chain after Bloom.
+4. CFG `Viewport_Post_Glow`, a Post Effects switch, and Show: Glow (the attachment) in the debug view.
+
+Check: ER m30_xx (a catacomb) or Raya Lucaria (m14). Lamps, candles and glintstone glow softly round their emissive
+parts, also where they are no brighter than the scene. Toggling Glow leaves the rest of the image as it was; Bloom
+keeps doing the bright sky.
+
+Risk: FinalColorScale 5 × RgbScale 1.5 may be far too strong if the game's emissive is in other units. The
+composite's scale is the one number to tune against the game. Transparent emissives (fire, effects) don't write the
+attachment, so they don't glow.
+
+### Phase 13: rain mask
+
+1. **`RainOcclusion`**, modelled on `ShadowCascades`:
+   - One 2048² D32 depth map, orthographic, looking straight down.
+   - It covers a 256 m square centred on the camera, snapped to its texel grid so it doesn't swim as the camera
+     moves.
+   - Its own `RenderQueue` with a `SceneParamSet`, drawing the opaque renderables with their existing
+     `_shadowPipeline`. The shadow pass already outputs depth only, with alpha-tested foliage.
+   - Registered before the scene's queue, as the cascades are.
+2. **Only when it matters:** drawn only while the Wet values are non-zero and Wet Surfaces is on. It is drawn again
+   only when the camera has moved more than 32 m from where it was last drawn, or the map's renderables have changed
+   (a counter on `MeshRenderables`). Static map geometry doesn't need it every frame.
+3. **Scene params:** the top-down matrix, the map's index in the pool, and a bias. FlverShader's wet factor gets
+   `× Exposed(worldPos)`: 1 where the map's depth at the point's XZ is at or below the point's height plus a bias, and
+   0 under something. Filtered over 2×2 texels and faded over the last 10% of the square so the edge doesn't show.
+   Outside the square it falls back to the facing-only factor.
+4. Self-shadowing of the surface by itself: the bias is half a metre plus the slope, as the sun's shadows use.
+
+Check: ER m60_42_36_00 with Rain: open ground, roofs and the tops of walls wet. The ground under a roof, an arch or a
+tree canopy dry. A cave or a legacy dungeon interior stays dry, so Outdoor Weather doesn't have to be turned off for
+it. Flying the camera about doesn't make the wet patches shimmer or step.
+
+Risk: map pieces with open roofs (a broken ceiling) are wet beneath, which is right. Very thin roofs could leak
+through the bias. Tree canopies are alpha tested in the shadow pass, so dappled wetness under trees is expected.
 
 ## Verification maps
 
