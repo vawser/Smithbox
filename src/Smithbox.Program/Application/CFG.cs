@@ -525,6 +525,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_TreasureMaker = false;
     public bool Interface_MapEditor_Tool_WorldMapLayoutGenerator = false;
     public bool Interface_MapEditor_Tool_GridConfiguration = true;
+    public bool Interface_MapEditor_Tool_ViewportRendering = true;
     public bool Interface_MapEditor_Tool_ModelBrowser = true;
     public bool Interface_MapEditor_Tool_Animation = true;
     public bool Interface_MapEditor_Tool_DisplayGroups = true;
@@ -634,6 +635,7 @@ public class CFG
     // Tools
     public bool Interface_ModelEditor_Tool_CreateAction = true;
     public bool Interface_ModelEditor_Tool_ModelGridConfiguration = true;
+    public bool Interface_ModelEditor_Tool_ViewportRendering = true;
     public bool Interface_ModelEditor_Tool_ModelInsight = true;
     public bool Interface_ModelEditor_Tool_ModelInstanceFinder = true;
     public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
@@ -663,6 +665,7 @@ public class CFG
     public bool AutomaticSave_TimeActEditor = true;
 
     public bool Interface_TimeActEditor_Tool_ResourceMonitor = true;
+    public bool Interface_TimeActEditor_Tool_ViewportRendering = true;
     public bool Interface_TimeActEditor_Tool_CharacterPreview = true;
     public bool Interface_TimeActEditor_Tool_ModelMaskToggler = true;
 
@@ -1292,7 +1295,7 @@ public class CFG
     public int Viewport_Map_Lighting_Weather = 0;
 
     // Elden Ring: whether the irradiance volumes' bakes follow the time of day (bake N is timezone N), loading the
-    // bakes they need as the time moves, instead of the GI menu's bake settings
+    // bakes they need as the time moves, instead of the Global Illumination tab's bake settings
     public bool Viewport_Map_Lighting_Follow_Bakes = true;
 
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);

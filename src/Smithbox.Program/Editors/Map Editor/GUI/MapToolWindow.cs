@@ -191,7 +191,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_Validation)
         {
-            // The viewport's Global Illumination menu asks for the irradiance volume tab
+            // The Viewport Rendering section's Global Illumination tab asks for the irradiance volume tab
             if (View.IrradianceVolumeIdTool.FocusRequested)
                 ImGui.SetNextItemOpen(true);
 
@@ -331,6 +331,11 @@ public class MapToolWindow
             View.GridTool.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_ViewportRendering)
+        {
+            View.RenderingTool.OnToolWindow();
+        }
+
         if (CFG.Current.Interface_MapEditor_ResourceList)
         {
             View.ResourceListTool.Display("mapEditor", View.Universe);
@@ -396,6 +401,12 @@ public class MapToolWindow
                 CFG.Current.Interface_MapEditor_Tool_GridConfiguration = !CFG.Current.Interface_MapEditor_Tool_GridConfiguration;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_GridConfiguration);
+
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Rendering_Tool_Header")}##toggleViewportRenderingTool"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_ViewportRendering = !CFG.Current.Interface_MapEditor_Tool_ViewportRendering;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_ViewportRendering);
 
             if (ImGui.MenuItem("Model Browser"))
             {

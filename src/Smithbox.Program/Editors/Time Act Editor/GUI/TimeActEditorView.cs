@@ -43,6 +43,7 @@ public class TimeActEditorView : IEditorView
 
     // Tools
     public ViewportGridTool GridTool;
+    public ViewportRenderingTool RenderingTool;
     public ResourceListTool ResourceListTool;
     public ModelCharacterPreview CharacterPreview;
     public ModelMaskToggler MaskToggler;
@@ -80,6 +81,7 @@ public class TimeActEditorView : IEditorView
 
         // Tools
         GridTool = new ViewportGridTool(ViewportGridEditor.TimeAct);
+        RenderingTool = new ViewportRenderingTool(() => ViewportWindow?.Viewport as VulkanViewport);
         ResourceListTool = new ResourceListTool();
         CharacterPreview = new ModelCharacterPreview(project, GetCharacterPreviewTarget);
         MaskToggler = new ModelMaskToggler(project, GetModelMaskTarget);

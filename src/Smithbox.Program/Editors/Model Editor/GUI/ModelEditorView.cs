@@ -42,6 +42,7 @@ public class ModelEditorView : IEditorView
 
     // Tools
     public ViewportGridTool GridTool;
+    public ViewportRenderingTool RenderingTool;
     //public ModelInsightView ModelInsightMenu;
     public ModelInstanceFinder ModelInstanceFinder;
     public ModelMaskToggler ModelMaskToggler;
@@ -90,6 +91,7 @@ public class ModelEditorView : IEditorView
 
         // Tools
         GridTool = new ViewportGridTool(ViewportGridEditor.Model);
+        RenderingTool = new ViewportRenderingTool(() => ViewportWindow?.Viewport as VulkanViewport);
         //ModelInsightMenu = new ModelInsightView(this, Project);
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
         ModelMaskToggler = new ModelMaskToggler(Project, GetModelMaskTarget);

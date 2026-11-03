@@ -79,6 +79,11 @@ public class ModelToolWindow
             View.GridTool.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_ModelEditor_Tool_ViewportRendering)
+        {
+            View.RenderingTool.OnToolWindow();
+        }
+
         if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
         {
             View.ModelInstanceFinder.OnToolWindow();
@@ -103,6 +108,13 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration = !CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration);
+
+            // Viewport Rendering
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Rendering_Tool_Header")}##toggleViewportRenderingTool"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_ViewportRendering = !CFG.Current.Interface_ModelEditor_Tool_ViewportRendering;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ViewportRendering);
 
             // Model Instance Finder
             if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Instance_Finder")}##toggleInstanceFinder"))

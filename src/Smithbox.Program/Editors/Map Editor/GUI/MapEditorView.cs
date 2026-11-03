@@ -110,6 +110,7 @@ public class MapEditorView : IEditorView
     public WorldMapTool WorldMapTool;
     public EntityIdentifierTool EntityIdentifierTool;
     public ViewportGridTool GridTool;
+    public ViewportRenderingTool RenderingTool;
     public MapAnimationTool MapAnimationTool;
     public WorldMapLayoutTool WorldMapLayoutTool;
     public MapListFilterTool MapListFilterTool;
@@ -206,6 +207,7 @@ public class MapEditorView : IEditorView
         NavmeshBuilderTool = new NavmeshBuilderTool(this, project);
         EntityIdentifierTool = new EntityIdentifierTool(this, project);
         GridTool = new ViewportGridTool(ViewportGridEditor.Map);
+        RenderingTool = new ViewportRenderingTool(GetCurrentViewport);
         MapAnimationTool = new MapAnimationTool(this, project);
         WorldMapTool = new WorldMapTool(this, project);
         WorldMapLayoutTool = new WorldMapLayoutTool(this, project);

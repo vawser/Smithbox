@@ -514,7 +514,15 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Scene_Sun_From_Map",
-      "Text": "The sun comes from the map's GPARAMs (Render > Map Lighting)."
+      "Text": "The sun comes from the map's GPARAMs (the Map Lighting tab)."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tool_Header",
+      "Text": "Viewport Rendering"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Tool_No_Viewport",
+      "Text": "No viewport is open."
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Auto_Exposure_Map_TT",

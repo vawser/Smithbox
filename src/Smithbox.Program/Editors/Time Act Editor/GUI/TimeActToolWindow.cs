@@ -45,6 +45,11 @@ public class TimeActToolWindow
             View.MaskToggler.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_TimeActEditor_Tool_ViewportRendering)
+        {
+            View.RenderingTool.OnToolWindow();
+        }
+
         if (CFG.Current.Interface_TimeActEditor_Tool_ResourceMonitor)
         {
             View.ResourceListTool.Display("timeActEditor", View.Universe);
@@ -71,6 +76,13 @@ public class TimeActToolWindow
                 CFG.Current.Interface_TimeActEditor_Tool_ModelMaskToggler = !CFG.Current.Interface_TimeActEditor_Tool_ModelMaskToggler;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_ModelMaskToggler);
+
+            // Viewport Rendering
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Rendering_Tool_Header")}##toggleViewportRenderingTool"))
+            {
+                CFG.Current.Interface_TimeActEditor_Tool_ViewportRendering = !CFG.Current.Interface_TimeActEditor_Tool_ViewportRendering;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_ViewportRendering);
 
             // Resource Monitor
             if (ImGui.MenuItem($"{LOC.Get("TAE_ToolWindow_View_Toggle_Resource_Monitor")}##resourceMonitorToggle"))

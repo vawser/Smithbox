@@ -197,7 +197,7 @@ public class IrradianceVolumeBank
     private (int From, int To, float Ratio)? FollowedBakes;
 
     /// <summary>
-    /// Whether the bakes follow the map lighting's time of day instead of the GI menu's settings. Only Elden Ring's
+    /// Whether the bakes follow the map lighting's time of day instead of the Global Illumination tab's settings. Only Elden Ring's
     /// bakes are known to match the GPARAM timezones (bake N = timezone N).
     /// </summary>
     public bool BakesFollowTime => Project.Descriptor.ProjectType is ProjectType.ER &&
@@ -205,7 +205,7 @@ public class IrradianceVolumeBank
 
     /// <summary>
     /// The bakes whose envmap files are loaded with a map: those of the time of day when the bakes follow it,
-    /// otherwise the GI menu's bake and the bake it blends towards
+    /// otherwise the Global Illumination tab's bake and the bake it blends towards
     /// </summary>
     public HashSet<int> GetBakesToLoad()
     {
