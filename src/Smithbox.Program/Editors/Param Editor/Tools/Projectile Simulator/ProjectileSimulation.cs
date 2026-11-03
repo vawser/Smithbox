@@ -282,10 +282,8 @@ public sealed class ProjectileSimulation
         public Vector3 Spawn;
         public Vector3 Aim;
 
-        public Vector3 Drift;
-        public Vector3 Heading;
-        public float Speed;
-        public float Fall;
+        // One vector, so a turn swings the fall with it and a limit caps the whole
+        public Vector3 Velocity;
         public float Age;
         public float Travelled;
         public float Life;
@@ -610,13 +608,12 @@ public sealed class ProjectileSimulation
                 Index = Result.Tracks.Count - 1,
                 Position = shot.Position,
                 Direction = shot.Direction,
-                Heading = shot.Direction,
 
                 // For no-lock homing aims
                 Spawn = shot.Position,
                 Aim = shot.Direction,
 
-                Speed = shot.Speed ?? definition.InitialSpeed,
+                Velocity = shot.Direction * (shot.Speed ?? definition.InitialSpeed),
                 Life = definition.Life < 0 ? float.MaxValue : definition.Life + Random(definition.LifeRandom),
                 NextInterval = definition.IntervalWait + GetInterval(definition),
                 AimOffset = Vector3.UnitY * definition.HomingHeightOffset +
@@ -641,39 +638,32 @@ public sealed class ProjectileSimulation
 
         if (shot.Age >= definition.AccelStartTime && shot.Age < definition.AccelEndTime)
         {
-            shot.Speed += accel * StepTime;
+            shot.Velocity += shot.Direction * (accel * StepTime);
         }
 
         // Limits hold every step, and rows can start outside of them
-        if (definition.MaxSpeed > 0)
-        {
-            shot.Speed = Math.Min(shot.Speed, definition.MaxSpeed);
-        }
+        var speed = shot.Velocity.Length();
+        var limit = MathF.Max(definition.MinSpeed,
+            definition.MaxSpeed > 0 ? MathF.Min(speed, definition.MaxSpeed) : speed);
 
-        if (definition.MinSpeed > 0)
+        if (limit != speed)
         {
-            shot.Speed = Math.Max(shot.Speed, definition.MinSpeed);
+            shot.Velocity = Normalize(shot.Velocity, shot.Direction) * limit;
         }
 
         if (shot.Age >= definition.GravityStartTime)
         {
-            shot.Fall += gravity * StepTime;
+            shot.Velocity -= Vector3.UnitY * (gravity * StepTime);
         }
 
         Vector3 flat = new(shot.Direction.X, 0, shot.Direction.Z);
 
         if (flat.LengthSquared() > Epsilon)
         {
-            shot.Drift += Vector3.Normalize(flat) * definition.ExternalForce * StepTime;
+            shot.Velocity += Vector3.Normalize(flat) * (definition.ExternalForce * StepTime);
         }
 
-        Vector3 velocity = shot.Direction * shot.Speed + shot.Drift - Vector3.UnitY * shot.Fall;
-        Vector3 next = shot.Position + velocity * StepTime;
-
-        if (velocity.LengthSquared() > Epsilon)
-        {
-            shot.Heading = Vector3.Normalize(velocity);
-        }
+        Vector3 next = shot.Position + shot.Velocity * StepTime;
 
         var radius = shot.Track.GetRadius(Time);
 
@@ -755,6 +745,11 @@ public sealed class ProjectileSimulation
         return MathF.Max(radius, definition.Attack?.Radius ?? 0);
     }
 
+    private static Vector3 Normalize(Vector3 value, Vector3 fallback)
+    {
+        return value.LengthSquared() > Epsilon ? Vector3.Normalize(value) : fallback;
+    }
+
     /// <summary>
     ///     Turns the bullet towards the target. Left and right turn separately from up and down, as rows can
     ///     limit them differently. Gravity is left out of this, so a heavy bullet can drop short of what it aims at.
@@ -797,15 +792,18 @@ public sealed class ProjectileSimulation
 
         Vector3 wanted = toTarget / distance;
 
+        // A turn starts from where the bullet is going, fall included
+        Vector3 heading = Normalize(shot.Velocity, shot.Direction);
+
         if (definition.HomingStopAngle > 0 &&
-            float.RadiansToDegrees(MathF.Acos(Math.Clamp(Vector3.Dot(shot.Direction, wanted), -1, 1))) > definition.HomingStopAngle)
+            float.RadiansToDegrees(MathF.Acos(Math.Clamp(Vector3.Dot(heading, wanted), -1, 1))) > definition.HomingStopAngle)
         {
             shot.HomingStopped = true;
             return;
         }
 
-        var yaw = MathF.Atan2(shot.Direction.X, shot.Direction.Z);
-        var pitch = MathF.Asin(Math.Clamp(shot.Direction.Y, -1, 1));
+        var yaw = MathF.Atan2(heading.X, heading.Z);
+        var pitch = MathF.Asin(Math.Clamp(heading.Y, -1, 1));
 
         var yawChange = MathF.IEEERemainder(MathF.Atan2(wanted.X, wanted.Z) - yaw, MathF.Tau);
         var pitchChange = MathF.Asin(Math.Clamp(wanted.Y, -1, 1)) - pitch;
@@ -815,6 +813,9 @@ public sealed class ProjectileSimulation
 
         shot.Direction = GetDirection(yaw + Math.Clamp(yawChange, -maxYaw, maxYaw),
             pitch + Math.Clamp(pitchChange, -maxPitch, maxPitch));
+
+        // Turning only costs the bullet its heading, not the speed it has
+        shot.Velocity = shot.Direction * shot.Velocity.Length();
     }
 
     private void Emit(ActiveShot shot)
@@ -896,7 +897,7 @@ public sealed class ProjectileSimulation
                 : hitLocation ?? shot.Position;
 
             Fire(child, time, source, GetChildForward(shot, child, impactNormal),
-                definition.ChildInheritsSpeed ? shot.Speed : null, origin, shot.Index, shot.Track.Generation + 1);
+                definition.ChildInheritsSpeed ? shot.Velocity.Length() : null, origin, shot.Index, shot.Track.Generation + 1);
         }
     }
 
@@ -910,7 +911,7 @@ public sealed class ProjectileSimulation
         switch (shot.Definition.ChildPosture)
         {
             case BulletChildPosture.Horizontal:
-                Vector3 flat = new(shot.Heading.X, 0, shot.Heading.Z);
+                Vector3 flat = new(shot.Velocity.X, 0, shot.Velocity.Z);
 
                 return flat.LengthSquared() > Epsilon ? Vector3.Normalize(flat) : Vector3.UnitZ;
 
@@ -918,7 +919,7 @@ public sealed class ProjectileSimulation
                 return impactNormal.Value;
 
             default:
-                return shot.Heading;
+                return Normalize(shot.Velocity, shot.Direction);
         }
     }
 
