@@ -159,16 +159,35 @@ public static class HKLib2019_Helper
             var offset = new Vector3(section.m_codecParms[0], section.m_codecParms[1], section.m_codecParms[2]);
             var scale = new Vector3(section.m_codecParms[3], section.m_codecParms[4], section.m_codecParms[5]);
 
-            Vector3 GetVertex(byte index)
+            // Some meshes (e.g. fsnpCustomParamCompressedMeshShape in AC6) reference vertices that aren't stored,
+            // so a vertex that can't be resolved drops its primitive rather than the whole mesh
+            bool TryGetVertex(byte index, out Vector3 vertex)
             {
+                vertex = default;
+
                 if (index < section.m_numPackedVertices)
                 {
-                    return data.DecompressPackedVertex(
-                        tree.m_packedVertices[(int)(index + section.m_firstPackedVertexIndex)], scale, offset);
+                    int packedIndex = (int)(index + section.m_firstPackedVertexIndex);
+
+                    if (packedIndex >= tree.m_packedVertices.Count)
+                        return false;
+
+                    vertex = data.DecompressPackedVertex(tree.m_packedVertices[packedIndex], scale, offset);
+                    return true;
                 }
 
-                var sharedIndex = tree.m_sharedVerticesIndex[(int)(index + section.m_firstSharedVertexIndex - section.m_numPackedVertices)];
-                return data.DecompressSharedVertex(tree.m_sharedVertices[sharedIndex], tree.m_domain.m_min, tree.m_domain.m_max);
+                int sharedIndexIndex = (int)(index + section.m_firstSharedVertexIndex - section.m_numPackedVertices);
+
+                if (sharedIndexIndex >= tree.m_sharedVerticesIndex.Count)
+                    return false;
+
+                int sharedIndex = tree.m_sharedVerticesIndex[sharedIndexIndex];
+
+                if (sharedIndex >= tree.m_sharedVertices.Count)
+                    return false;
+
+                vertex = data.DecompressSharedVertex(tree.m_sharedVertices[sharedIndex], tree.m_domain.m_min, tree.m_domain.m_max);
+                return true;
             }
 
             for (int i = 0; i < section.m_numPrimitives; i++)
@@ -179,15 +198,26 @@ public static class HKLib2019_Helper
                 if (primitive[0] == 0xDE && primitive[1] == 0xAD && primitive[2] == 0xDE && primitive[3] == 0xAD)
                     continue;
 
+                bool isQuad = primitive[2] != primitive[3];
+
+                if (!TryGetVertex(primitive[0], out var a) || !TryGetVertex(primitive[1], out var b) ||
+                    !TryGetVertex(primitive[2], out var c))
+                    continue;
+
+                var d = default(Vector3);
+
+                if (isQuad && !TryGetVertex(primitive[3], out d))
+                    continue;
+
                 int first = vertices.Count;
-                vertices.Add(GetVertex(primitive[0]));
-                vertices.Add(GetVertex(primitive[1]));
-                vertices.Add(GetVertex(primitive[2]));
+                vertices.Add(a);
+                vertices.Add(b);
+                vertices.Add(c);
                 indices.AddRange(new[] { first, first + 1, first + 2 });
 
-                if (primitive[2] != primitive[3])
+                if (isQuad)
                 {
-                    vertices.Add(GetVertex(primitive[3]));
+                    vertices.Add(d);
                     indices.AddRange(new[] { first, first + 2, first + 3 });
                 }
             }
