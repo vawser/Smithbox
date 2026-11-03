@@ -29,7 +29,7 @@ public class MapLightCollector
     // The light entities of each loaded map, found again when the map's objects change in number
     private readonly Dictionary<MapContainer, (int ObjectCount, List<MsbEntity> Lights)> MapLights = new();
 
-    private SceneLightData[] Entries = new SceneLightData[SceneLightTable.Capacity];
+    private readonly MapLightData[] Entries = new MapLightData[SceneLightTable.Capacity];
 
     /// <summary>How many lights were in range last frame, before the limit</summary>
     public int InRangeCount { get; private set; }
@@ -62,7 +62,7 @@ public class MapLightCollector
         }
 
         var selected = View.ViewportSelection.GetSelection().OfType<MsbEntity>().ToHashSet();
-        var found = new List<(float Distance, SceneLightData Data)>();
+        var found = new List<(float Distance, MapLightData Data)>();
 
         var radius = Math.Max(CFG.Current.Viewport_BTL_Light_Radius, 0.0f);
         var intensityScale = GetIntensityScale();
@@ -82,7 +82,7 @@ public class MapLightCollector
                     continue;
 
                 // Selected lights come first, then the nearest
-                found.Add((isSelected ? -1.0f : distance, CreateLight(btlLight, world, intensityScale).ToGpu()));
+                found.Add((isSelected ? -1.0f : distance, CreateLight(btlLight, world, intensityScale).ToMapGpu()));
             }
         }
 
@@ -159,6 +159,9 @@ public class MapLightCollector
             Direction = Vector3.TransformNormal(Vector3.UnitZ, world),
             Color = ToLinearColor(btlLight.DiffuseColor),
             Intensity = btlLight.DiffusePower * intensityScale,
+            // BTL gives the highlights their own color and power, on the same scale as the diffuse light
+            SpecularColor = ToLinearColor(btlLight.SpecularColor),
+            SpecularIntensity = btlLight.SpecularPower * intensityScale,
             Range = btlLight.Radius,
             FadeAcrossRange = true,
             InnerConeAngleDegrees = outerAngle * InnerConeRatio,

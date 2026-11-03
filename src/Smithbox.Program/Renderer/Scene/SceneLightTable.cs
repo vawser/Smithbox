@@ -14,7 +14,7 @@ public class SceneLightTable
     /// <summary>The most lights shaded at once. Each pixel loops over all of them, skipping those out of range.</summary>
     public const int Capacity = 1024;
 
-    private static readonly int EntrySize = Marshal.SizeOf<SceneLightData>();
+    private const int EntrySize = MapLightData.Size;
 
     private readonly GPUBufferAllocator.GPUBufferHandle _allocation;
 
@@ -33,7 +33,7 @@ public class SceneLightTable
     /// <summary>How many entries the shader reads. Only updated once their data is on the GPU.</summary>
     public uint Count { get; private set; }
 
-    public void Upload(SceneLightData[] entries, int count)
+    public void Upload(MapLightData[] entries, int count)
     {
         count = Math.Min(count, Capacity);
 

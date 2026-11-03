@@ -59,6 +59,25 @@ public class SceneLight
     /// <summary>Spot lights: angle from the center of the cone at which the light has faded to nothing</summary>
     public float OuterConeAngleDegrees { get; set; } = 35.0f;
 
+    /// <summary>
+    ///     Linear RGB color of the light's highlights, as BTL lights give it. Null for the same as <see cref="Color" />.
+    ///     Only lights in <see cref="SceneLightTable" /> have their own; the scene params' lights use the color.
+    /// </summary>
+    public Vector3? SpecularColor { get; set; }
+
+    /// <summary>Multiplier on <see cref="SpecularColor" />. Null for the same as <see cref="Intensity" />.</summary>
+    public float? SpecularIntensity { get; set; }
+
+    /// <summary>The light with its highlights, as <see cref="SceneLightTable" /> holds it</summary>
+    internal MapLightData ToMapGpu()
+    {
+        return new MapLightData
+        {
+            Light = ToGpu(),
+            Specular = new Vector4(SpecularColor ?? Color, Math.Max(SpecularIntensity ?? Intensity, 0.0f))
+        };
+    }
+
     internal SceneLightData ToGpu()
     {
         Vector3 direction = Direction.LengthSquared() > 1e-10f ? Vector3.Normalize(Direction) : -Vector3.UnitY;
@@ -90,6 +109,22 @@ public struct SceneLightData
     public Vector4 DirectionType;
     public Vector4 ColorIntensity;
     public Vector4 Spot;
+}
+
+/// <summary>
+///     A light of <see cref="SceneLightTable" /> as the shaders read it, with its own highlights. Must match mapLight in
+///     FlverShader.frag: a sceneLight and a vec4, 80 bytes. Kept apart from <see cref="SceneLightData" /> so the scene
+///     params' light array, which every shader's copy of them lays out, is unchanged.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MapLightData
+{
+    public const int Size = 80;
+
+    public SceneLightData Light;
+
+    /// <summary>rgb: color of the highlights, a: their intensity</summary>
+    public Vector4 Specular;
 }
 
 /// <summary>

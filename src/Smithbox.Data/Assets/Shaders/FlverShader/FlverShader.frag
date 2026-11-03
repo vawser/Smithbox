@@ -220,10 +220,17 @@ layout(set = 4, binding = 0, std140) buffer irradianceVolumes
     readonly irradianceVolumeData volumedata[];
 };
 
+// A light of the map, with the color and intensity of its highlights, which BTL gives separately
+struct mapLight
+{
+	sceneLight light;
+	vec4 specular;   // rgb: color of the highlights, a: their intensity
+};
+
 // The map's lights near the camera, in the same buffer, see SceneLightTable
 layout(set = 4, binding = 0, std140) buffer mapLights
 {
-    readonly sceneLight maplightdata[];
+    readonly mapLight maplightdata[];
 };
 
 // The entry after a material in the same buffer
@@ -746,16 +753,16 @@ vec3 ShadeLight(Surface s, vec3 L, vec3 radiance, vec3 specularRadiance)
 	return diffuse * radiance + specular * specularRadiance;
 }
 
-// Works out the direction to, and the radiance from, a scene light at a point in the world
-vec3 LightRadiance(sceneLight light, vec3 worldPos, out vec3 L)
+// Works out the direction to a scene light at a point in the world, and how much of its light reaches it, from
+// its distance and cone, leaving out its color
+float LightAttenuation(sceneLight light, vec3 worldPos, out vec3 L)
 {
 	int type = int(light.directionType.w + 0.5);
-	vec3 color = light.colorIntensity.rgb * light.colorIntensity.a;
 
 	if (type == LIGHT_DIRECTIONAL)
 	{
 		L = -normalize(light.directionType.xyz);
-		return color;
+		return 1.0;
 	}
 
 	vec3 toLight = light.positionRange.xyz - worldPos;
@@ -787,7 +794,13 @@ vec3 LightRadiance(sceneLight light, vec3 worldPos, out vec3 L)
 		attenuation *= smoothstep(light.spot.y, light.spot.x, cosAngle);
 	}
 
-	return color * attenuation;
+	return attenuation;
+}
+
+// Works out the direction to, and the radiance from, a scene light at a point in the world
+vec3 LightRadiance(sceneLight light, vec3 worldPos, out vec3 L)
+{
+	return light.colorIntensity.rgb * light.colorIntensity.a * LightAttenuation(light, worldPos, L);
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -1334,21 +1347,23 @@ void main()
 	for (uint i = 0u; i < sceneparam.mapLightCount; i++)
 	{
 		uint index = sceneparam.mapLightStart + i;
-		vec4 positionRange = maplightdata[index].positionRange;
+		vec4 positionRange = maplightdata[index].light.positionRange;
 		vec3 toLight = positionRange.xyz - fsin_worldpos;
 
 		if (positionRange.w > 0.0 && dot(toLight, toLight) > positionRange.w * positionRange.w &&
-			int(maplightdata[index].directionType.w + 0.5) != LIGHT_DIRECTIONAL)
+			int(maplightdata[index].light.directionType.w + 0.5) != LIGHT_DIRECTIONAL)
 			continue;
 
 		// Copied out, as the buffer's readonly entries can't be passed to a function
-		sceneLight light = maplightdata[index];
+		mapLight light = maplightdata[index];
 
 		vec3 L;
-		vec3 radiance = LightRadiance(light, fsin_worldpos, L);
-		if (dot(radiance, radiance) > 0.0)
+		float attenuation = LightAttenuation(light.light, fsin_worldpos, L);
+		if (attenuation > 0.0)
 		{
-			direct += ShadeLight(surface, L, radiance, radiance);
+			vec3 radiance = light.light.colorIntensity.rgb * light.light.colorIntensity.a * attenuation;
+			vec3 specularRadiance = light.specular.rgb * light.specular.a * attenuation;
+			direct += ShadeLight(surface, L, radiance, specularRadiance);
 		}
 	}
 
