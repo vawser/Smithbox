@@ -183,7 +183,13 @@ public class HavokSelection
         {
             case HavokCategoryMode.Animation:
             case HavokCategoryMode.Navmesh:
-                alias = AliasHelper.GetAnimationAlias(Project, rawName);
+                // The cache is cleared whenever another binder is selected, so its character applies to every file.
+                // Split anibnds such as c0000_a00_hi belong to the character at the start of their name.
+                var binderName = BinderFileEntry?.Filename ?? "";
+                var character = System.Text.RegularExpressions.Regex.Match(binderName, @"^c\d{4}",
+                    System.Text.RegularExpressions.RegexOptions.IgnoreCase).Value;
+
+                alias = AliasHelper.GetAnimationAlias(Project, character, rawName);
                 break;
         }
 

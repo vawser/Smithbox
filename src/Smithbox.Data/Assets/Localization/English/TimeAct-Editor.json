@@ -743,6 +743,22 @@
     {
       "Key": "TAE_AnimationWindow_Export_Failed",
       "Text": "Failed to export animation file: {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Alias_Display_TT",
+      "Text": "Aliases: {0}\nClick to change to: {1}\nHidden aliases can still be searched for in the filter."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Alias_Display_Wrap",
+      "Text": "Display and Wrap"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Alias_Display_Truncate",
+      "Text": "Display and Truncate"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Alias_Display_Hide",
+      "Text": "Hide"
     }
   ]
 }

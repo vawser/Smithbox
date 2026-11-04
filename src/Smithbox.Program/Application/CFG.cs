@@ -5,6 +5,7 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
+using StudioCore.Editors.TimeActEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System.Drawing;
@@ -681,6 +682,7 @@ public class CFG
     public bool TimeActEditor_Display_Event_Markers = true;
     public bool TimeActEditor_Display_Attack_Capsules = true;
     public float TimeActEditor_Event_Marker_Size = 1f;
+    public TimeActAliasDisplayMode TimeActEditor_Animation_List_Alias_Display = TimeActAliasDisplayMode.Wrap;
 
     #endregion
 

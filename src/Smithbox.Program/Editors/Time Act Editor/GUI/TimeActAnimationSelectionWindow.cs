@@ -47,14 +47,120 @@ public class TimeActAnimationSelectionWindow
             LOC.Get("TAE_SelectionWindow_Animation_Header"),
             LOC.Get("TAE_SelectionWindow_Animation_Header_TT"));
 
-        EditorFilters.DisplayFramedListFilter("timeActEditor_AnimationList_Filter",
-            ref AnimationListFilter, ref ExactAnimationFilter);
+        DisplayHeader();
 
         ImGui.BeginChild($"AnimationListSection", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         DisplayAnimationList();
 
         ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// The filter, with a button after it that steps through the ways aliases are shown
+    /// </summary>
+    private void DisplayHeader()
+    {
+        const string id = "timeActEditor_AnimationList_Filter";
+
+        ImGui.BeginChild($"framedListFilter_{id}", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplaySearchbar(id, ref AnimationListFilter, ref ExactAnimationFilter);
+
+        ImGui.SameLine();
+
+        var mode = CFG.Current.TimeActEditor_Animation_List_Alias_Display;
+        var next = GetNextAliasDisplayMode(mode);
+
+        var icon = mode switch
+        {
+            TimeActAliasDisplayMode.Truncate => Icons.TextWidth,
+            TimeActAliasDisplayMode.Hide => Icons.EyeSlash,
+            _ => Icons.Paragraph
+        };
+
+        ImGui.AlignTextToFramePadding();
+        if (ImGui.Button($"{icon}##timeActAnimationAliasDisplay"))
+        {
+            CFG.Current.TimeActEditor_Animation_List_Alias_Display = next;
+        }
+        GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Alias_Display_TT",
+            GetAliasDisplayModeName(mode), GetAliasDisplayModeName(next)));
+
+        ImGui.EndChild();
+    }
+
+    private static TimeActAliasDisplayMode GetNextAliasDisplayMode(TimeActAliasDisplayMode mode) => mode switch
+    {
+        TimeActAliasDisplayMode.Wrap => TimeActAliasDisplayMode.Truncate,
+        TimeActAliasDisplayMode.Truncate => TimeActAliasDisplayMode.Hide,
+        _ => TimeActAliasDisplayMode.Wrap
+    };
+
+    private static string GetAliasDisplayModeName(TimeActAliasDisplayMode mode) => mode switch
+    {
+        TimeActAliasDisplayMode.Truncate => LOC.Get("TAE_AnimationWindow_Alias_Display_Truncate"),
+        TimeActAliasDisplayMode.Hide => LOC.Get("TAE_AnimationWindow_Alias_Display_Hide"),
+        _ => LOC.Get("TAE_AnimationWindow_Alias_Display_Wrap")
+    };
+
+    /// <summary>
+    /// Shows the alias after the animation's name, as the header's toggle has it
+    /// </summary>
+    private static void DisplayAlias(string alias)
+    {
+        if (alias == "")
+            return;
+
+        switch (CFG.Current.TimeActEditor_Animation_List_Alias_Display)
+        {
+            case TimeActAliasDisplayMode.Wrap:
+                GUI.DisplayAlias(alias, true);
+                break;
+
+            case TimeActAliasDisplayMode.Truncate:
+                ImGui.SameLine();
+
+                var available = ImGui.GetContentRegionAvail().X;
+                var text = TruncateToWidth(alias, available);
+
+                ImGui.TextColored(UI.Current.ImGui_AliasName_Text, text);
+
+                // The whole alias is shown on hover when it had to be cut short
+                if (text.Length != alias.Length)
+                {
+                    GUI.Tooltip(alias);
+                }
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Cuts the text short with an ellipsis so it fits the width, finding the longest start that does
+    /// </summary>
+    private static string TruncateToWidth(string text, float width)
+    {
+        if (ImGui.CalcTextSize(text).X <= width)
+            return text;
+
+        const string ellipsis = "...";
+
+        if (ImGui.CalcTextSize(ellipsis).X > width)
+            return "";
+
+        int low = 0, high = text.Length;
+
+        while (low < high)
+        {
+            var mid = (low + high + 1) / 2;
+
+            if (ImGui.CalcTextSize(text[..mid].TrimEnd() + ellipsis).X <= width)
+                low = mid;
+            else
+                high = mid - 1;
+        }
+
+        return text[..low].TrimEnd() + ellipsis;
     }
 
     public void DisplayAnimationList()
@@ -87,7 +193,9 @@ public class TimeActAnimationSelectionWindow
 
                 var selected = View.Selection.SelectedAnimation == animation;
 
-                var alias = AliasHelper.GetAnimationAlias(Project, name);
+                var alias = CFG.Current.TimeActEditor_Animation_List_Alias_Display == TimeActAliasDisplayMode.Hide
+                    ? ""
+                    : AliasHelper.GetAnimationAlias(Project, source.Name, name);
 
                 var hasPendingFile = source.PendingAnimationFiles.ContainsKey(
                     entry.GetFullAnimationID(animation, source.AnimationCategorySize));
@@ -114,10 +222,7 @@ public class TimeActAnimationSelectionWindow
                     dropTarget = animation;
                 }
 
-                if (alias != "")
-                {
-                    GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
-                }
+                DisplayAlias(alias);
             }
         }
 
@@ -157,7 +262,7 @@ public class TimeActAnimationSelectionWindow
         CachedFilteredAnimations = entry.TimeAct.Animations
             .Select(e => (Animation: e, Name: source.GetAnimationName(entry, e)))
             .Where(e => EditorFilters.IsMatch(AnimationListFilter, e.Name, ExactAnimationFilter,
-                AliasHelper.GetAnimationAlias(Project, e.Name), true, true))
+                AliasHelper.GetAnimationAlias(Project, source.Name, e.Name), true, true))
             .ToList();
 
         return CachedFilteredAnimations;

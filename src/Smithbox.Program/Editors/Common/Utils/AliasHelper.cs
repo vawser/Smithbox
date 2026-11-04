@@ -83,8 +83,63 @@ public static class AliasHelper
 
     public static string GetAnimationAlias(ProjectEntry project, string name)
     {
-        project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Animations, out var aliases);
-        return aliases?.FirstOrDefault(e => e.ID.ToLower() == name.ToLower())?.Name ?? string.Empty;
+        return GetAnimationAlias(project, null, name);
+    }
+
+    // There is an alias for every animation of every character, so they are looked up through an index.
+    // It is rebuilt when the list is replaced or grows or shrinks, as when aliases are reloaded or edited.
+    private static List<AliasEntry> AnimationAliasSource;
+    private static int AnimationAliasCount;
+    private static Dictionary<string, AliasEntry> AnimationAliasIndex;
+
+    /// <summary>
+    /// Gets the alias of an animation, such as a000_003000. The aliases of a character are stored under its name
+    /// (c0000_a000_003000) and go first, then those of the characters it shares its animations with (c2041 plays
+    /// those of c2040), then an alias for the animation in every character.
+    /// </summary>
+    public static string GetAnimationAlias(ProjectEntry project, string character, string name)
+    {
+        if (!project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Animations, out var aliases) || aliases == null)
+            return string.Empty;
+
+        var index = GetAnimationAliasIndex(aliases);
+
+        if (index.Count == 0)
+            return string.Empty;
+
+        if (!string.IsNullOrEmpty(character))
+        {
+            foreach (var setName in StudioCore.Renderer.AnimationPackage.GetAnimationSetNames(
+                StudioCore.Renderer.AnimatedModelKind.Character, character))
+            {
+                if (index.TryGetValue($"{setName}_{name}", out var characterAlias))
+                    return characterAlias.Name ?? string.Empty;
+            }
+        }
+
+        return index.TryGetValue(name, out var alias) ? alias.Name ?? string.Empty : string.Empty;
+    }
+
+    private static Dictionary<string, AliasEntry> GetAnimationAliasIndex(List<AliasEntry> aliases)
+    {
+        if (AnimationAliasIndex != null && AnimationAliasSource == aliases && AnimationAliasCount == aliases.Count)
+            return AnimationAliasIndex;
+
+        var index = new Dictionary<string, AliasEntry>(aliases.Count, StringComparer.OrdinalIgnoreCase);
+
+        foreach (var entry in aliases)
+        {
+            if (entry?.ID != null)
+            {
+                index.TryAdd(entry.ID, entry);
+            }
+        }
+
+        AnimationAliasSource = aliases;
+        AnimationAliasCount = aliases.Count;
+        AnimationAliasIndex = index;
+
+        return index;
     }
 
     public static string GetCharacterAlias(ProjectEntry project, string name)
