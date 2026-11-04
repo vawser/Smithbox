@@ -482,6 +482,10 @@ public class MaterialDefinition
     public int AlphaRef { get; set; }
     public bool CullNone { get; set; }
     public bool DisableDepthWrite { get; set; }
+
+    /// <summary>A mesh laid on top of another surface, such as a stain or crack, that shares its depth</summary>
+    public bool MeshDecal { get; set; }
+
     public float[] DiffuseColor { get; set; } = [1, 1, 1];
 
     /// <summary>All of the material's values, keyed by name without the shader prefix</summary>
@@ -568,6 +572,7 @@ public class MaterialDefinition
         AlphaRef = (int)GetFirst("g_AlphaRef", 0);
         CullNone = GetFirst("g_GX_PrimCullNone", 0) != 0;
         DisableDepthWrite = GetFirst("g_GX_bDisableDepthWrite", 0) != 0;
+        MeshDecal = GetFirst("g_GX_bMeshDecal", 0) != 0;
 
         if (Params.TryGetValue("g_DiffuseMapColor", out var color) && color.Length >= 3)
         {

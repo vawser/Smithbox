@@ -665,6 +665,26 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         _worldBufferInstances = 0;
     }
 
+    // The depth is reversed, so a positive bias pulls a decal toward the camera. The depth is a float, where a unit of
+    // constant bias is a step of the depth's own size: this is a fixed fraction of the distance, about a millimetre
+    // at ten metres. The slope keeps a decal seen at a glancing angle in front.
+    private const float DecalDepthBiasConstant = 1024f;
+    private const float DecalDepthBiasSlope = 2f;
+
+    /// <summary>
+    /// A mesh decal lies on another surface at the same depth, and would fight with it without a bias
+    /// </summary>
+    private RasterizerStateDescription WithDecalBias(RasterizerStateDescription state)
+    {
+        if (_meshProvider.IsDecal)
+        {
+            state.DepthBiasConstant = DecalDepthBiasConstant;
+            state.DepthBiasSlope = DecalDepthBiasSlope;
+        }
+
+        return state;
+    }
+
     public override unsafe void ConstructRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp)
     {
         // If we were unregistered before construction time, don't construct now
@@ -785,12 +805,12 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         pipelineDescription.DepthStencilState = _meshProvider.DepthWrite
             ? DepthStencilStateDescription.DepthOnlyGreaterEqual
             : DepthStencilStateDescription.DepthOnlyGreaterEqualRead;
-        pipelineDescription.RasterizerState = new RasterizerStateDescription(
+        pipelineDescription.RasterizerState = WithDecalBias(new RasterizerStateDescription(
             _meshProvider.CullMode,
             _meshProvider.FillMode,
             _meshProvider.FrontFace,
             true,
-            false);
+            false));
         pipelineDescription.PrimitiveTopology = _meshProvider.Topology;
         pipelineDescription.ShaderSet = new ShaderSetDescription(
             mainVertexLayouts,
@@ -884,14 +904,14 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         {
             pipelineDescription.BlendState = SceneTarget.BlendFor(_renderablesSet, BlendStateDescription.SingleOverrideBlend);
             pipelineDescription.DepthStencilState = DepthStencilStateDescription.DepthOnlyGreaterEqual;
-            pipelineDescription.RasterizerState = new RasterizerStateDescription(
+            pipelineDescription.RasterizerState = WithDecalBias(new RasterizerStateDescription(
                 _meshProvider.SelectedUseBackface
                     ? _meshProvider.CullMode == VkCullModeFlags.Front ? VkCullModeFlags.Back : VkCullModeFlags.Front
                     : _meshProvider.CullMode,
                 _meshProvider.FillMode,
                 _meshProvider.FrontFace,
                 true,
-                false);
+                false));
 
             // A mesh that deforms needs its outline to deform with it, which only the flver shader can do
             var outlineShader = _meshProvider.ShaderName.Contains("_deform") ? @"FlverShader\FlverShader_deform_outline" : "SimpleFlver_Outline";

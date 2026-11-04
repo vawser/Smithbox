@@ -744,6 +744,7 @@ public class FlverResource : IResource, IDisposable
         };
 
         dest.DepthWrite = dest.Blending == MaterialBlending.Opaque && !definition.DisableDepthWrite;
+        dest.MeshDecal = definition.MeshDecal;
     }
 
     /// <summary>
@@ -3815,6 +3816,11 @@ public class FlverResource : IResource, IDisposable
 
         public MaterialBlending Blending = MaterialBlending.Opaque;
         public bool DepthWrite = true;
+
+        /// <summary>
+        /// Lies on another surface at the same depth, so it is pulled toward the camera to be drawn over it
+        /// </summary>
+        public bool MeshDecal;
 
         /// <summary>
         /// How many of a mesh's UV sets to read. The last that fits goes in the second UV slot of a vertex,

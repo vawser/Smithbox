@@ -28,6 +28,15 @@ namespace Veldrid
         /// Controls whether the scissor test is enabled.
         /// </summary>
         public bool ScissorTestEnabled;
+        /// <summary>
+        /// Constant depth bias added to each fragment, in units of the depth format's smallest step.
+        /// Depth bias is enabled when this or <see cref="DepthBiasSlope"/> is non-zero.
+        /// </summary>
+        public float DepthBiasConstant;
+        /// <summary>
+        /// Depth bias scaled by the primitive's depth slope.
+        /// </summary>
+        public float DepthBiasSlope;
 
         /// <summary>
         /// Constructs a new RasterizerStateDescription.
@@ -49,6 +58,8 @@ namespace Veldrid
             FrontFace = frontFace;
             DepthClipEnabled = depthClipEnabled;
             ScissorTestEnabled = scissorTestEnabled;
+            DepthBiasConstant = 0;
+            DepthBiasSlope = 0;
         }
 
         /// <summary>
@@ -100,7 +111,9 @@ namespace Veldrid
                 && FillMode == other.FillMode
                 && FrontFace == other.FrontFace
                 && DepthClipEnabled.Equals(other.DepthClipEnabled)
-                && ScissorTestEnabled.Equals(other.ScissorTestEnabled);
+                && ScissorTestEnabled.Equals(other.ScissorTestEnabled)
+                && DepthBiasConstant.Equals(other.DepthBiasConstant)
+                && DepthBiasSlope.Equals(other.DepthBiasSlope);
         }
 
         /// <summary>
@@ -114,7 +127,9 @@ namespace Veldrid
                 (int)FillMode,
                 (int)FrontFace,
                 DepthClipEnabled.GetHashCode(),
-                ScissorTestEnabled.GetHashCode());
+                ScissorTestEnabled.GetHashCode(),
+                DepthBiasConstant.GetHashCode(),
+                DepthBiasSlope.GetHashCode());
         }
     }
 }

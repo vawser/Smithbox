@@ -68,6 +68,8 @@ public unsafe class FlverSubmeshProvider : MeshProvider
     public override bool IsTransparent =>
         _resource.Get().GPUMeshes[_meshIndex].Material.Blending != MaterialBlending.Opaque;
 
+    public override bool IsDecal => _resource.Get().GPUMeshes[_meshIndex].Material.MeshDecal;
+
     public override VkFrontFace FrontFace => VkFrontFace.CounterClockwise;
 
     public override VkPrimitiveTopology Topology =>

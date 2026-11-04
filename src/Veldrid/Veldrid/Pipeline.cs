@@ -76,6 +76,9 @@ namespace Veldrid
                 polygonMode = rsDesc.FillMode,
                 depthClampEnable = !rsDesc.DepthClipEnabled,
                 frontFace = rsDesc.FrontFace,
+                depthBiasEnable = rsDesc.DepthBiasConstant != 0 || rsDesc.DepthBiasSlope != 0,
+                depthBiasConstantFactor = rsDesc.DepthBiasConstant,
+                depthBiasSlopeFactor = rsDesc.DepthBiasSlope,
                 lineWidth = 1f
             };
 

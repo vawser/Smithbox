@@ -76,6 +76,11 @@ public abstract class MeshProvider
     /// </summary>
     public virtual bool IsTransparent => false;
 
+    /// <summary>
+    ///     Whether this mesh lies on another surface at the same depth, and needs a depth bias to be drawn over it
+    /// </summary>
+    public virtual bool IsDecal => false;
+
     // Mesh data
     public virtual bool Is32Bit => false;
 
