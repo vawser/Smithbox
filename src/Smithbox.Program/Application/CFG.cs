@@ -1237,6 +1237,8 @@ public class CFG
     public bool Viewport_Grid_Display_Axis_Lines = true;
     public float Viewport_Grid_Opacity = 1.0f;
     public float Viewport_Grid_Fade_Distance = 2000f;
+    public float Viewport_Grid_Line_Width = 1f;
+    public float Viewport_Grid_Hidden_Opacity = 0f;
 
     // Camera
     public float Viewport_Camera_FOV { get; set; } = 60.0f;

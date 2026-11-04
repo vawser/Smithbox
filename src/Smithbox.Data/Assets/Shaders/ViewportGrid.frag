@@ -14,9 +14,14 @@ struct materialData
 	float gridCells;
 	// Distance from the camera where the grid has faded out, 0 for no fade
 	float fadeDistance;
-	// Bit 0: draw the axis lines through the grid's center
+	// Bit 0: draw the axis lines through the grid's origin
 	// Bits 16-31: squares between major lines, 0 or 1 for none
 	uint flags;
+	// Where the quad's center is, in squares from the grid's origin, when the grid follows the camera. Whole squares.
+	vec2 offset;
+	// Scales the line widths, 1 for the widths below
+	float lineWidth;
+	float pad;
 };
 
 layout(set = 4, binding = 0, std140) buffer materials
@@ -67,19 +72,25 @@ void main()
 	float fadeDistance = matdata[fsin_mat].fadeDistance;
 	uint flags = matdata[fsin_mat].flags;
 	float majorInterval = float(flags >> 16);
+	vec2 offset = matdata[fsin_mat].offset;
+	float lineWidth = max(matdata[fsin_mat].lineWidth, 0.25);
 
-	// The plane is one square larger than the grid, so that the outer lines aren't cut in half by its edge
+	// The plane is one square larger than the grid, so that the outer lines aren't cut in half by its edge.
+	// cell is relative to the quad's center; the offset is whole squares, so the lines line up without it, and
+	// leaving it out keeps the precision of a grid far from its origin.
 	vec2 cell = fsin_plane * (gridCells + 1.0);
 	vec2 cellsPerPixel = vec2(
 		length(vec2(dFdx(cell.x), dFdy(cell.x))),
 		length(vec2(dFdx(cell.y), dFdy(cell.y))));
 
-	float lines = gridCoverage(cell, cellsPerPixel, c_minorWidth);
+	float lines = gridCoverage(cell, cellsPerPixel, c_minorWidth * lineWidth);
 
 	// Major lines are spaced further apart, so they keep showing after the minor lines fade out
 	if (majorInterval > 1.0)
 	{
-		float major = gridCoverage(cell / majorInterval, cellsPerPixel / majorInterval, c_majorWidth);
+		// The major lines are every majorInterval squares from the grid's origin
+		vec2 majorCell = (cell + mod(offset, majorInterval)) / majorInterval;
+		float major = gridCoverage(majorCell, cellsPerPixel / majorInterval, c_majorWidth * lineWidth);
 		lines = max(lines * c_minorAlphaWithMajor, major);
 	}
 
@@ -90,7 +101,8 @@ void main()
 	// Axis lines don't fade as their squares shrink, as there is only one of each
 	if ((flags & c_flagAxisLines) != 0u)
 	{
-		vec2 axis = lineCoverage(abs(cell) / cellsPerPixel, c_axisWidth);
+		// The axes run through the grid's origin, not the quad's center
+		vec2 axis = lineCoverage(abs(cell + offset) / cellsPerPixel, c_axisWidth * lineWidth);
 
 		// axis.x is the line where x = 0, which runs along Z
 		color = mix(color, c_axisZColor, axis.x);

@@ -101,6 +101,42 @@
       "Text": "The rotation of the grid on the Z-axis."
     },
     {
+      "Key": "VIEWPORT_GridConfig_Grids_Header",
+      "Text": "Grids"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Grids_Header_TT",
+      "Text": "The grids of this editor. Tick a grid to show it, and click its name to edit it below."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Selector_Visible_TT",
+      "Text": "Show this grid in the viewport."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Selector_Grid_TT",
+      "Text": "Edit this grid. Holding Ctrl while dragging the gizmo snaps to the grid being edited."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Selector_Moving_TT",
+      "Text": "The gizmo is moving this grid."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Selector_Snap_TT",
+      "Text": "Holding Ctrl while dragging the gizmo snaps to this grid."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Width_Label",
+      "Text": "Width: {0}"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Follow_Camera",
+      "Text": "Follow Camera"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Follow_Camera_TT",
+      "Text": "Keep the drawn part of this grid centered under the camera, so it never runs out however far you travel. Grid Size then sets how far it reaches from the camera.\n\nThe lines and axes stay where the grid's position puts them, and snapping is unchanged."
+    },
+    {
       "Key": "VIEWPORT_GridConfig_Placement_Header",
       "Text": "Grid Placement"
     },
@@ -223,6 +259,22 @@
     {
       "Key": "VIEWPORT_GridConfig_Opacity_TT",
       "Text": "The opacity of the grid lines."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Hidden_Opacity",
+      "Text": "Hidden Opacity"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Hidden_Opacity_TT",
+      "Text": "Show the parts of the grid hidden behind geometry, at this fraction of the grid's opacity.\n\nSet to 0 to hide them, as normal."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Line_Width",
+      "Text": "Line Width"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Line_Width_TT",
+      "Text": "Scales the width of the grid lines. At 1, lines are 1 pixel wide, major lines 1.5 and axis lines 2."
     },
     {
       "Key": "VIEWPORT_GridConfig_Fade_Distance",

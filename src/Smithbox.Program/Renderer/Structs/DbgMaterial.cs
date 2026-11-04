@@ -29,6 +29,22 @@ public unsafe struct DbgMaterial
     /// </summary>
     public uint GridFlags;
 
+    /// <summary>
+    /// Where the center of a <see cref="DbgPrimGridPlane" />'s quad is, in squares from the grid's origin. Non-zero
+    /// when the grid follows the camera, so its lines stay where the grid's origin puts them.
+    /// </summary>
+    public float GridOffsetX;
+
+    /// <inheritdoc cref="GridOffsetX" />
+    public float GridOffsetZ;
+
+    /// <summary>Scales the line widths of a <see cref="DbgPrimGridPlane" />, 1 for the default widths</summary>
+    public float GridLineWidth;
+
+    // Keeps the size a multiple of 16 bytes, the stride of the shaders' material arrays. 32 bytes in all, see
+    // DebugWire.frag and ViewportGrid.frag.
+    private uint pad;
+
     public Color Color
     {
         set

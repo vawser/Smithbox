@@ -2,14 +2,6 @@
 # Time Act Editor TODO
 #----------------------------------------------------
 
-- Viewport:
-    - Improve grid
-        - Add sub-grid mesh between large tiles
-        - Add primary axis lines (different color to grid)
-        - Adjust shader so it is more of a circle rather than going to infinity in the cardinal directions
-        - Apply changes to Model Editor as well
-        - Apply changes (except primary axis lines) to Map Editor grid as well
-
 - Tools:
     - Search
         - Supports:

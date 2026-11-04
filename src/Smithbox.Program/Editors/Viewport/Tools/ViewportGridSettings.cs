@@ -26,6 +26,12 @@ public class ViewportGridSettings
     /// <summary>Euler rotation in degrees, applied in the order of <see cref="Renderer.Transform.EulerToQuaternion" /></summary>
     public Vector3 Rotation = Vector3.Zero;
 
+    /// <summary>
+    /// Keeps the drawn part of the grid centered under the camera, so it never runs out. The lines stay where
+    /// <see cref="Position" /> puts them.
+    /// </summary>
+    public bool FollowCamera = false;
+
     // Adjust to Grid, see AdjustToGridAction
     public bool SnapPosition_X = true;
     public bool SnapPosition_Y = true;

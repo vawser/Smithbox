@@ -20,6 +20,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     private float _gridCells;
     private int _gridMajorInterval;
     private float _gridFadeDistance;
+    private Vector2 _gridOffset;
+    private float _gridLineWidth = 1f;
     private bool _gridAxisLines;
 
     private RenderFilter _drawfilter = RenderFilter.All;
@@ -34,6 +36,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     private bool _overdraw;
     private bool _pickable = true;
     private bool _translucent;
+    private bool _occludedOnly;
     protected Pipeline? _pickingPipeline;
 
     protected Pipeline? _pipeline;
@@ -71,6 +74,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         _highlightedColor = clone._highlightedColor;
         _pickable = clone._pickable;
         _translucent = clone._translucent;
+        _occludedOnly = clone._occludedOnly;
         if (clone._hasColorVariance)
         {
             ColorHelper.ApplyColorVariance(this);
@@ -137,6 +141,43 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
             }
 
             _gridMajorInterval = value;
+            ScheduleRenderableUpdate();
+        }
+    }
+
+    /// <summary>
+    /// Where the center of a <see cref="DbgPrimGridPlane" />'s quad is, in whole squares from the grid's origin
+    /// along its X and Z. Set when the grid follows the camera.
+    /// </summary>
+    public Vector2 GridOffset
+    {
+        get => _gridOffset;
+        set
+        {
+            if (_gridOffset == value)
+            {
+                return;
+            }
+
+            _gridOffset = value;
+            ScheduleRenderableUpdate();
+        }
+    }
+
+    /// <summary>
+    /// Scales the line widths of a <see cref="DbgPrimGridPlane" />, 1 for the default widths.
+    /// </summary>
+    public float GridLineWidth
+    {
+        get => _gridLineWidth;
+        set
+        {
+            if (_gridLineWidth == value)
+            {
+                return;
+            }
+
+            _gridLineWidth = value;
             ScheduleRenderableUpdate();
         }
     }
@@ -287,6 +328,24 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
             var old = _translucent;
             _translucent = value;
             if (_registered && _translucent != old)
+            {
+                ScheduleRenderableConstruction();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Draws only the parts of this primitive that are hidden behind other surfaces, and doesn't write depth.
+    /// Paired with a normal copy of the primitive, this shows what is behind geometry, usually more faintly.
+    /// </summary>
+    public bool RenderOccludedOnly
+    {
+        get => _occludedOnly;
+        set
+        {
+            var old = _occludedOnly;
+            _occludedOnly = value;
+            if (_registered && _occludedOnly != old)
             {
                 ScheduleRenderableConstruction();
             }
@@ -450,9 +509,12 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
 
         pipelineDescription.BlendState = SceneTarget.BlendFor(_renderablesSet, BlendStateDescription.SingleAlphaBlend);
 
-        pipelineDescription.DepthStencilState = _translucent
-            ? DepthStencilStateDescription.DepthOnlyGreaterEqualRead
-            : DepthStencilStateDescription.DepthOnlyGreaterEqual;
+        // The depth is reversed, so a hidden fragment is one with less depth than what is already drawn
+        pipelineDescription.DepthStencilState = _occludedOnly
+            ? new DepthStencilStateDescription(true, false, VkCompareOp.Less)
+            : _translucent
+                ? DepthStencilStateDescription.DepthOnlyGreaterEqualRead
+                : DepthStencilStateDescription.DepthOnlyGreaterEqual;
 
         pipelineDescription.RasterizerState = new RasterizerStateDescription(
             _debugPrimitive.CullMode,
@@ -541,6 +603,9 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         colmat.Color = CurrentColor;
         colmat.GridCells = _gridCells;
         colmat.GridFadeDistance = _gridFadeDistance;
+        colmat.GridOffsetX = _gridOffset.X;
+        colmat.GridOffsetZ = _gridOffset.Y;
+        colmat.GridLineWidth = _gridLineWidth;
         colmat.GridFlags = GridFlags;
         _materialBuffer.FillBuffer(gd, cl, ref colmat);
 
@@ -581,6 +646,9 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         colmat.Color = CurrentColor;
         colmat.GridCells = _gridCells;
         colmat.GridFadeDistance = _gridFadeDistance;
+        colmat.GridOffsetX = _gridOffset.X;
+        colmat.GridOffsetZ = _gridOffset.Y;
+        colmat.GridLineWidth = _gridLineWidth;
         colmat.GridFlags = GridFlags;
 
         _materialBuffer.FillBuffer(gd, cl, ref colmat);

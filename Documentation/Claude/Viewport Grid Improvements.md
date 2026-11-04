@@ -158,6 +158,19 @@ recovery.
   square corners of the grid shown in the grid tool (only the grid axes the drag runs along, grid
   captured at drag start so a grid moving itself snaps to its start). Rotation snaps to
   `Viewport_Gizmo_Snap_Rotation_Step` (default 15, slider in the Gizmos menu).
+- C2 + C3 + C5 + C6 implemented: a Grids table at the top of the grid tool (visibility checkbox,
+  name to select, moving/snap icon) replaces the Toggle Visibility and View X Grid buttons. Square
+  size and grid size are clamped in the UI, and the grid's full width is shown.
+- B7 implemented as per-grid `FollowCamera`: the quad is moved under the camera in whole squares
+  (grid space) and the offset is passed to the shader so major and axis lines stay on the grid's
+  origin. `DbgMaterial` grew from 16 to 32 bytes for the offset; `DebugWire.frag`'s material struct
+  was padded to match.
+- B4 implemented as shared `Viewport_Grid_Line_Width` (scales all line widths, in the spare
+  `DbgMaterial` slot).
+- B6 "draw over geometry" implemented as shared `Viewport_Grid_Hidden_Opacity` (default 0 = off): a
+  second proxy per grid with `RenderOccludedOnly` (depth test Less, no write) draws only the hidden
+  parts at reduced opacity.
+- All plan items are now done.
 - New-config default for the Map secondary grid is now Rotation X 90 (was Position X 90, a typo);
   existing configs keep their values.
 

@@ -32,9 +32,14 @@ layout(set = 0, binding = 0) uniform SceneParamBuffer
     sceneParams sceneparam;
 };
 
+// DbgMaterial in DbgMaterial.cs, 32 bytes. Only the color is used here; the rest is for ViewportGrid.frag.
 struct materialData
 {
 	uint32_t color;
+	uint32_t pad0;
+	uint32_t pad1;
+	uint32_t pad2;
+	uvec4 pad3;
 };
 
 layout(set = 4, binding = 0, std140) buffer materials

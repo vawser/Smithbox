@@ -792,9 +792,9 @@ public class VulkanViewport : IViewport
 
     private void UpdateGrids(ViewportGridEditor editor, bool isEditorFocused)
     {
-        PrimaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Primary));
-        SecondaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Secondary));
-        TertiaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Tertiary));
+        PrimaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Primary), ViewportCamera.CameraTransform.Position);
+        SecondaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Secondary), ViewportCamera.CameraTransform.Position);
+        TertiaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Tertiary), ViewportCamera.CameraTransform.Position);
     }
 
     public void DelayPicking()

@@ -39,18 +39,20 @@ public class ViewportGridTool
         {
             ImGui.BeginChild("ViewportGridToolSection", ImGuiChildFlags.Borders);
 
+            // Grids
+            GUI.SimpleHeader(
+                LOC.Get("VIEWPORT_GridConfig_Grids_Header"),
+                LOC.Get("VIEWPORT_GridConfig_Grids_Header_TT"));
+
+            DisplayGridSelector();
+
             var grid = ViewportGridConfig.Get(Editor, CurrentGridType);
 
             // Current Grid
+            GUI.Spacer();
             GUI.SimpleHeader(
                 LOC.Get($"VIEWPORT_GridConfig_{CurrentGridType}_Grid_Header"),
                 LOC.Get($"VIEWPORT_GridConfig_{CurrentGridType}_Grid_Header_TT"));
-
-            GUI.MultiButtonInput("gridVisibility",
-                "toggleGrid",
-                LOC.Get("VIEWPORT_GridConfig_Action_Toggle_Grid_Visibility"),
-                LOC.Get("VIEWPORT_GridConfig_Action_Toggle_Grid_Visibility_TT"),
-                ToggleCurrentGrid);
 
             // Placement
             GUI.Spacer();
@@ -116,7 +118,11 @@ public class ViewportGridTool
                 LOC.Get("VIEWPORT_GridConfig_Square_Size_Header"),
                 LOC.Get("VIEWPORT_GridConfig_Square_Size_Header_TT"));
 
-            ImGui.InputFloat("##SquareSize", ref grid.SectionSize);
+            if (ImGui.InputFloat("##SquareSize", ref grid.SectionSize))
+            {
+                // The smallest square ViewportGrid draws, so the value shown is the one used
+                grid.SectionSize = Math.Max(grid.SectionSize, 0.001f);
+            }
             GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Square_Size_Input_TT"));
 
             // Grid Size
@@ -125,8 +131,18 @@ public class ViewportGridTool
                 LOC.Get("VIEWPORT_GridConfig_Size"),
                 LOC.Get("VIEWPORT_GridConfig_Size_TT"));
 
-            ImGui.InputInt("##GridSize", ref grid.Size);
+            if (ImGui.InputInt("##GridSize", ref grid.Size))
+            {
+                grid.Size = Math.Max(grid.Size, 1);
+            }
             GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Size_Input_TT"));
+
+            // Size is the squares either side of the center, so the grid is twice that across
+            ImGui.TextUnformatted(LOC.Get("VIEWPORT_GridConfig_Width_Label",
+                $"{2f * grid.Size * grid.SectionSize:0.###}"));
+
+            ImGui.Checkbox($"{LOC.Get("VIEWPORT_GridConfig_Follow_Camera")}##gridFollowCamera", ref grid.FollowCamera);
+            GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Follow_Camera_TT"));
 
             // Shared by every grid
             GUI.Spacer();
@@ -149,6 +165,14 @@ public class ViewportGridTool
                 ref CFG.Current.Viewport_Grid_Opacity, 0.05f, 1.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp);
             GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Opacity_TT"));
 
+            ImGui.SliderFloat($"{LOC.Get("VIEWPORT_GridConfig_Hidden_Opacity")}##gridHiddenOpacity",
+                ref CFG.Current.Viewport_Grid_Hidden_Opacity, 0f, 1.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp);
+            GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Hidden_Opacity_TT"));
+
+            ImGui.SliderFloat($"{LOC.Get("VIEWPORT_GridConfig_Line_Width")}##gridLineWidth",
+                ref CFG.Current.Viewport_Grid_Line_Width, 0.5f, 4.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp);
+            GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Line_Width_TT"));
+
             if (ImGui.InputFloat($"{LOC.Get("VIEWPORT_GridConfig_Fade_Distance")}##gridFadeDistance",
                 ref CFG.Current.Viewport_Grid_Fade_Distance))
             {
@@ -156,43 +180,72 @@ public class ViewportGridTool
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Fade_Distance_TT"));
 
-            // Actions
-            GUI.Spacer();
-            GUI.SimpleHeader(
-                LOC.Get("VIEWPORT_GridConfig_Actions_Header"),
-                LOC.Get("VIEWPORT_GridConfig_Actions_Header_TT"));
-
-            GUI.MultiButtonInput("gridActions",
-                "setGridToPrimary",
-                LOC.Get("VIEWPORT_GridConfig_View_Primary_Grid_Action"),
-                LOC.Get("VIEWPORT_GridConfig_View_Primary_Grid_Action_TT"),
-                ViewPrimaryGrid,
-
-                "setGridToSecondary",
-                LOC.Get("VIEWPORT_GridConfig_View_Secondary_Grid_Action"),
-                LOC.Get("VIEWPORT_GridConfig_View_Secondary_Grid_Action_TT"),
-                ViewSecondaryGrid,
-
-                "setGridToTertiary",
-                LOC.Get("VIEWPORT_GridConfig_View_Tertiary_Grid_Action"),
-                LOC.Get("VIEWPORT_GridConfig_View_Tertiary_Grid_Action_TT"),
-                ViewTertiaryGrid);
-
             ImGui.EndChild();
         }
     }
 
-    public void ViewPrimaryGrid()
+    /// <summary>
+    /// One row per grid: its visibility, its name (click to show its settings below), and what it is used for.
+    /// </summary>
+    private void DisplayGridSelector()
     {
-        SetCurrentGrid(ViewportGridType.Primary);
-    }
-    public void ViewSecondaryGrid()
-    {
-        SetCurrentGrid(ViewportGridType.Secondary);
-    }
-    public void ViewTertiaryGrid()
-    {
-        SetCurrentGrid(ViewportGridType.Tertiary);
+        var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV;
+
+        if (!ImGui.BeginTable("gridSelectorTable", 3, tableFlags))
+        {
+            return;
+        }
+
+        ImGui.TableSetupColumn("Visible", ImGuiTableColumnFlags.WidthFixed);
+        ImGui.TableSetupColumn("Grid", ImGuiTableColumnFlags.WidthStretch);
+        ImGui.TableSetupColumn("Status", ImGuiTableColumnFlags.WidthFixed);
+
+        foreach (var type in Enum.GetValues<ViewportGridType>())
+        {
+            var grid = ViewportGridConfig.Get(Editor, type);
+            var isCurrent = type == CurrentGridType;
+
+            ImGui.TableNextRow();
+            ImGui.PushID($"gridSelector{type}");
+
+            // Visibility
+            ImGui.TableSetColumnIndex(0);
+            var display = grid.Display;
+            if (ImGui.Checkbox("##visible", ref display))
+            {
+                SetGridVisibility(type, display);
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Selector_Visible_TT"));
+
+            // Name
+            ImGui.TableSetColumnIndex(1);
+            if (ImGui.Selectable(LOC.Get($"VIEWPORT_GridConfig_{type}_Grid_Header"), isCurrent))
+            {
+                SetCurrentGrid(type);
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Selector_Grid_TT"));
+
+            // Status: the gizmo moves this grid, or snaps to it
+            ImGui.TableSetColumnIndex(2);
+            if (ViewportGridMovement.IsMoving(Editor, type))
+            {
+                ImGui.TextUnformatted(Icons.Arrows);
+                GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Selector_Moving_TT"));
+            }
+            else if (isCurrent && grid.Display)
+            {
+                ImGui.TextUnformatted(Icons.Magnet);
+                GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Selector_Snap_TT"));
+            }
+            else
+            {
+                ImGui.TextUnformatted(" ");
+            }
+
+            ImGui.PopID();
+        }
+
+        ImGui.EndTable();
     }
 
     private void SetCurrentGrid(ViewportGridType type)
@@ -206,13 +259,12 @@ public class ViewportGridTool
         CurrentGridType = type;
     }
 
-    public void ToggleCurrentGrid()
+    private void SetGridVisibility(ViewportGridType type, bool display)
     {
-        var grid = ViewportGridConfig.Get(Editor, CurrentGridType);
+        ViewportGridConfig.Get(Editor, type).Display = display;
 
-        grid.Display = !grid.Display;
-
-        if (!grid.Display && ViewportGridMovement.IsMoving(Editor, CurrentGridType))
+        // The gizmo is only shown on a visible grid
+        if (!display && ViewportGridMovement.IsMoving(Editor, type))
         {
             ViewportGridMovement.Stop(Editor);
         }
