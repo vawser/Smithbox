@@ -160,6 +160,23 @@ layout(location = 9) flat out uint fsin_entityid;
 #endif
 // 1: the instance receives no shadows
 layout(location = 12) flat out uint fsin_flags;
+#ifdef MATERIAL_BLEND
+	// DS3's lightmaps (the variants with the second UV set): the instance's entry in the lightmap table plus 1, 0
+	// for none, and its rotation from the model's space to the world's, for the lightmap's light direction
+	layout(location = 13) flat out uint fsin_lightmap;
+	layout(location = 14) flat out mat3 fsin_modelToWorld;
+#endif
+
+// materialID.z of a static instance with a lightmap: InstanceData.LightmapFlag and the entry
+#define SKIN_KIND_MASK 0xC0000000u
+#define SKIN_KIND_LIGHTMAP 0x40000000u
+
+// Whether materialID.z animates the instance, rather than naming its lightmap or being 0
+bool IsAnimated()
+{
+	uint z = idata[gl_InstanceIndex].materialID.z;
+	return z != 0u && (z & SKIN_KIND_MASK) != SKIN_KIND_LIGHTMAP;
+}
 
 // The top bit of the instance's material ID is a flag, MeshRenderableProxy.NoShadowMaterialFlag
 #define MATERIAL_ID_MASK 0x7FFFFFFFu
@@ -521,6 +538,12 @@ void main()
 	fsin_flags = (idata[gl_InstanceIndex].materialID.x & MATERIAL_NO_SHADOW) != 0u ? 1u : 0u;
 	fsin_entityid = idata[gl_InstanceIndex].materialID.w;
 
+#ifdef MATERIAL_BLEND
+	uint skinKind = idata[gl_InstanceIndex].materialID.z;
+	fsin_lightmap = (skinKind & SKIN_KIND_MASK) == SKIN_KIND_LIGHTMAP ? (skinKind & ~SKIN_KIND_MASK) + 1u : 0u;
+	fsin_modelToWorld = mat3(w);
+#endif
+
 	mat4 bone = GetBoneMatrix();
 	vec4 worldPos = w * bone * vec4(localPosition, 1.0);
 
@@ -548,7 +571,7 @@ void main()
 
 	// Normals need the inverse transpose of the world matrix to stay correct under non-uniform scale.
 	// Tangents are directions along the surface, so they use the matrix itself.
-	mat3 wm = mat3(idata[gl_InstanceIndex].materialID.z != 0u ? w * bone : w);
+	mat3 wm = mat3(IsAnimated() ? w * bone : w);
 	mat3 normalMatrix = wm;
 	if (abs(determinant(wm)) > 1e-12)
 	{

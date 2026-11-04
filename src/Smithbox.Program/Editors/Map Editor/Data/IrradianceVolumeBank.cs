@@ -33,9 +33,13 @@ public class IrradianceVolumeBank
 
     private readonly Dictionary<string, MapVolumes> Maps = new(StringComparer.OrdinalIgnoreCase);
 
+    /// <summary>DS3 and Bloodborne's light probe grids, which go into the same table as volumes</summary>
+    public LightProbeGridBank ProbeGrids;
+
     public IrradianceVolumeBank(ProjectEntry project)
     {
         Project = project;
+        ProbeGrids = new LightProbeGridBank(project);
     }
 
     public bool CanUse()
@@ -587,6 +591,9 @@ public class IrradianceVolumeBank
                 }
             }
         }
+
+        // DS3 and Bloodborne's light probe grids, lit with as volumes
+        ProbeGrids.AppendEntries(maps, found);
 
         // Coarse first, so finer volumes blend over them, as nested boxes do in game
         found.Sort((a, b) => a.Priority != b.Priority ? a.Priority.CompareTo(b.Priority) : b.Size.CompareTo(a.Size));

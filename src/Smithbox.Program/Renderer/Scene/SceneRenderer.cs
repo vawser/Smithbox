@@ -76,6 +76,9 @@ public static class SceneRenderer
     /// <summary>The Map Editor's BTL lights near the camera, filled every frame, see <see cref="SceneLightTable" /></summary>
     public static SceneLightTable MapLights { get; private set; }
 
+    /// <summary>DS3's lightmaps of the map pieces, see LightmapTable and DolLightmapBank</summary>
+    public static LightmapTable Lightmaps { get; private set; }
+
     /// <summary>
     ///     The lighting of the Map Editor's loaded maps from their GPARAMs, or null when it isn't used. Set every frame
     ///     by the Map Editor, and read by the pipelines with <see cref="SceneRenderPipeline.UseMapLighting" />.
@@ -128,6 +131,7 @@ public static class SceneRenderer
             VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment);
         IrradianceVolumes = new IrradianceVolumeTable(MaterialBufferAllocator);
         MapLights = new SceneLightTable(MaterialBufferAllocator);
+        Lightmaps = new LightmapTable(MaterialBufferAllocator);
         BoneBufferAllocator = new GPUBufferAllocator("bones", CFG.Current.Viewport_Limit_Buffer_Flver_Bone * 64,
             VkBufferUsageFlags.StorageBuffer, 64, VkShaderStageFlags.Vertex);
         // Material texture indices are 16 bit, so this can go up to TexturePool.MaxTextureCount (65536).

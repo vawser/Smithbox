@@ -69,7 +69,10 @@ public class PathBuilder
                     i++;
                     var id = p[i];
 
-                    relPath = Path.Combine("map", mid, $"{mid}_{id}.tpfbhd");
+                    // DS3's lightmaps of its map pieces (the DOL textures), every map of the area in one binder
+                    relPath = id == "gienv"
+                        ? Path.Combine("map", mid, $"gi_env_{mid}.tpfbhd")
+                        : Path.Combine("map", mid, $"{mid}_{id}.tpfbhd");
                 }
             }
             // Map

@@ -70,6 +70,17 @@ public sealed class GparamProfile
     public bool HasTimezones { get; private init; }
 
     /// <summary>
+    ///     The game lights its models with BTPB light probes (DS3, Bloodborne), which the shaders use in place of the
+    ///     GPARAM hemisphere inside the probe grids (see LightProbeGridBank). DS3's shaders have no hemisphere term.
+    /// </summary>
+    public bool HasLightProbes { get; private init; }
+
+    /// <summary>
+    ///     The game lights its map pieces with the DOL lightmaps of map/mAA/gi_env_mAA.tpfbhd (DS3), see DolLightmapBank
+    /// </summary>
+    public bool HasDolLightmaps { get; private init; }
+
+    /// <summary>
     ///     A scale on the volumetric fog's density (after its GameScale), for the part of it the game's code sets and
     ///     that isn't traced. Sekiro: 0.1, matched by eye against the game in m11_00_00_00 (2026-11-04).
     /// </summary>
@@ -175,6 +186,8 @@ public sealed class GparamProfile
         ProjectType.DS3 => new GparamProfile
         {
             Supported = true,
+            HasLightProbes = true,
+            HasDolLightmaps = true,
             Exposure = GparamExposureModel.Yebis,
             HasSsr = false,
             HasVolumetricFog = false,
@@ -187,6 +200,7 @@ public sealed class GparamProfile
         {
             Supported = true,
             SharedFiles = new[] { "default" },
+            HasLightProbes = true,
             Exposure = GparamExposureModel.Yebis,
             HasSsr = false,
             HasVolumetricFog = false,

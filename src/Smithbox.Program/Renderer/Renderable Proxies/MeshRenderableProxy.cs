@@ -56,6 +56,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     public GPUBufferAllocator.GPUBufferHandle? _worldBuffer;
 
     private ModelAnimator? _animator;
+    private LightmapBinding? _lightmap;
 
     private Matrix4x4 _attachTransform = Matrix4x4.Identity;
 
@@ -148,6 +149,27 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
             {
                 sm.Animator = value;
+            }
+        }
+    }
+
+    /// <summary>
+    ///     The lightmap entries of this mesh's materials, DS3's DOL textures of the part (see DolLightmapBank). Null for
+    ///     none. Only read for lightmapped materials of static meshes.
+    /// </summary>
+    public LightmapBinding? Lightmap
+    {
+        get => _lightmap;
+        set
+        {
+            if (ReferenceEquals(_lightmap, value))
+                return;
+
+            _lightmap = value;
+            ScheduleRenderableUpdate();
+            foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
+            {
+                sm.Lightmap = value;
             }
         }
     }
@@ -431,6 +453,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             child.InstanceTransforms = _instanceTransforms;
             child.CastsShadow = _castsShadow;
             child.ReceivesShadow = _receivesShadow;
+            child.Lightmap = _lightmap;
 
             // Children are created once the provider has loaded (async), which can be after the
             // outline was requested on this proxy. Without this they never get the selection outline.
@@ -1003,6 +1026,13 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                     dat.WorldMatrix = transform.Value * _attachTransform * _world;
                 }
             }
+        }
+
+        // A static, lightmapped material: its lightmap entry where an animated mesh keeps its skin
+        if (dat.SkinReference == 0 && _lightmap != null && _meshProvider is FlverSubmeshProvider { Material: { UsesLightmap: true } material } &&
+            _lightmap.TryGetEntry(material.MaterialName, out var lightmapEntry))
+        {
+            dat.SkinReference = InstanceData.LightmapFlag | lightmapEntry;
         }
 
         dat.EntityID = GetPackedEntityID(_renderablesSet.RenderableSystemIndex, _renderable);

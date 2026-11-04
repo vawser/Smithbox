@@ -92,6 +92,9 @@ public unsafe class FlverSubmeshProvider : MeshProvider
     /// </summary>
     public int MeshIndex => _meshIndex;
 
+    /// <summary>The submesh's material, for its name and whether it is lightmapped</summary>
+    public FlverResource.FlverMaterial? Material => _resource.Get()?.GPUMeshes[_meshIndex].Material;
+
     public override bool TryLock()
     {
         return true;

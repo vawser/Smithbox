@@ -126,6 +126,13 @@ public class GparamLighting
     // Setting Info
     public Vector4 BackgroundColor = new(0.5f, 0.5f, 0.5f, 0.5f);
 
+    // Dominant Light Map (DS3): the lightmaps of its map pieces and its light probes. Sharpness Offset is added to
+    // the lightmap's sharpness; the colors are RGB Scale x R/G/B Scale and SH Color Scale x SH R/G/B Scale, as
+    // the game's shaders read them (FC_DominantSharpnesOffset, FC_DominantColorScale x FC_DominantRgbScale)
+    public float DominantSharpnessOffset = 0.0f;
+    public Vector3 DominantColor = Vector3.One;
+    public Vector3 ShColor = Vector3.One;
+
     /// <summary>The screen effects, resolved through the same files; see <see cref="GparamPostEffects" /></summary>
     public GparamPostEffects PostEffects = new();
 

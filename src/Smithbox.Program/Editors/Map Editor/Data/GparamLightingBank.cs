@@ -37,6 +37,7 @@ public class GparamLightingBank
     private const string EnvironmentConfigKey = "EnvironmentConfig ParamEditor";
     private const string SettingInfoKey = "Setting Info[Yebis]";
     private const string ShadowKey = "ShadowParam ParamEditor";
+    private const string DominantKey = "DominantLightMap:Editor";
 
     // The screen effects' groups, see GparamPostEffects
     private const string BloomKey = "Bloom[Yebis]";
@@ -498,6 +499,17 @@ public class GparamLightingBank
 
         // Setting Info
         lighting.BackgroundColor = reader.Get(SettingInfoKey, "GS - BG Color-Data", 0, lighting.BackgroundColor);
+
+        // Dominant Light Map (DS3)
+        lighting.DominantSharpnessOffset = reader.Get(DominantKey, "Dominant Param  Dominant Sharpness Offset", 0, lighting.DominantSharpnessOffset);
+        lighting.DominantColor = reader.Get(DominantKey, "Dominant Param  Dominant Sharpness RGB Scale", 0, 1.0f) * new Vector3(
+            reader.Get(DominantKey, "Dominant Param  Dominant Sharpness R Scale", 0, 1.0f),
+            reader.Get(DominantKey, "Dominant Param  Dominant Sharpness G Scale", 0, 1.0f),
+            reader.Get(DominantKey, "Dominant Param  Dominant Sharpness B Scale", 0, 1.0f));
+        lighting.ShColor = reader.Get(DominantKey, "Dominant Param  SH Color Scale", 0, 1.0f) * new Vector3(
+            reader.Get(DominantKey, "Dominant Param  SH R Scale", 0, 1.0f),
+            reader.Get(DominantKey, "Dominant Param  SH G Scale", 0, 1.0f),
+            reader.Get(DominantKey, "Dominant Param  SH B Scale", 0, 1.0f));
 
         ReadPostEffects(reader, lightSetId, lighting.PostEffects);
 

@@ -324,6 +324,110 @@ Built: `GparamProfile.FogDensityScale` and `BloomScale`, 0.1 and 0.5 for SDT, 1 
 | Same, at t0 (game scale 12) and t6 (1.25) | Compare with the game | Both still match | One is off: report the Density Scale that fits it, and the GameScale rule changes |
 | ER, NR, AC6 | | Unchanged | |
 
+### DS3 too bright: tone curve and light probes (reported 2026-11-04; built, not yet checked in the app)
+
+What the game's shaders say (DS3 `shader/*.shaderbnd.dcx`, ivtool `shaders`, `fxc -dumpbin`):
+- **Tone curve.** `ToneMap_WriteFilmicToneMappingTablePS` writes Hejl and Burgess-Dawson's filmic curve,
+  `x' = max(x - 0.004, 0)`, `x'(6.2x' + 0.5) / (x'(6.2x' + 1.7) + 0.06)`, raised to 2.2 / `Yebis-Gamma` (2.2 in the
+  files, so 1). Its output is display values. `ToneMap_TabledToneMapLUTPS` indexes it with `x / (x + 0.2)` of the
+  scene x `g_ToneMapSceneLumScale` x the adapted exposure (1 with auto exposure off: `ToneMapVS` writes 1), plus the
+  glare x `g_GlareLuminance`. `g_ToneMapSceneLumScale` is set by the game's code, so how `Yebis-ToneMapExposure` is
+  turned into it is not known.
+- **No hemisphere.** No DS3 shader has a hemisphere constant. The forward FLVER shaders light with: ambient
+  `max(dot((n, 1), aSh[c]), 0) x albedo` (per instance, `cbInstanceData.aSh[3]`), the IBL cubemap, sun x
+  `ShLightMask.x`, local lights 1-2 as squared half-Lambert. The deferred `GXEnvMapRegion_IvDiff` reads
+  `g_ShVolumeR/G/B/A` (3D, plain float) the same way, x `g_envMapDiffuseColorScale`. So the GPARAM hemisphere, which
+  Smithbox used as all the ambient (0.5 x 1 x exposure 2.3), is not what lights DS3 surfaces.
+- **BTPB groups are grids.** `Unk10/14/18` probe counts (31 x 4 x 7 = 868, 18 x 3 x 10 = 540), `Unk1C/20/24`
+  spacing (2 m; 1.5 or 5 in some), `Unk28` the first probe. Coefficients are integers (L0 0-2800), `LightMask`
+  0-1022 of 1024.
+- **Map pieces have lightmaps too**, named differently: `map/mAA/gi_env_mAA.tpfbhd` (10,016 files in m30) holds
+  `<area>_m<piece>_gi_NNNN_00_dol_00/01` BC7 textures, read as `g_DOLTexture`/`g_DOLTexture2` by the 348
+  `GXFlver_*DOL*` shaders: DOL 1 is the colour (squared, x `FC_DominantRgbScale` x `ColorScale`), DOL 2 a dominant
+  light direction (rotated by the instance's `vDominantRotateParam`) and a sharpness (+ `DominantSharpnesOffset`)
+  splitting the light into a directional part (x N.L) and an ambient part. UVs are the second set, through
+  `atlasUvScaleOffset` (BTAB). Not built: the follow-up for map pieces.
+
+Built (decided with the user: the probes first):
+- `ToneMapOperator.YebisFilmic` (`ToneMap.frag`, no square root after it), chosen by `GparamLighting.YebisFilmicMode`,
+  which `ReadExposure` sets for `Yebis-ToneType` 2 (DS3, BB).
+- `LightProbeGridBank` (on `IrradianceVolumeBank.ProbeGrids`): per loaded map, the groups of its `_0000` BTPB
+  (the first otherwise) as four R32G32B32A32 3D textures each in the volume pool, probes placed by position. W = L0
+  rgb and LightMask, Y/Z/X = coefficients 3-5, 6-8, 9-11, all / 1024. Entries in the irradiance volume table with
+  `Params.y` = 1, a box from half a spacing before the first probe to half after the last, fading over one spacing,
+  coarse grids first.
+- `FlverShader.frag`: probe entries are read linearly, `max(W + X n.x + Y n.y + Z n.z, 0)`; reflections are scaled
+  by the probes' luminance over the hemisphere's (0-2), so they darken indoors; `g_probeSunMask` (W's alpha, faded)
+  scales the sun, for which `IndirectLight` now runs before the sun. `GparamProfile.HasLightProbes` (DS3, BB) keeps
+  the hemisphere out of the volumes; outside every grid it is still the ambient.
+
+Hypotheses: the coefficients' 1/1024 scale (L0 ~500 outdoors gives 0.49, close to the hemisphere's 0.5); bands
+1-3 being Y (up), Z, X with no sign flips; the `_0000` file being the one to use (m30_00 also has `_0001`).
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| DS3 m30_00_00_00 (High Wall), map lighting on | Look at interiors and covered walkways | Darker than outside, and no sunlight inside (LightMask) | Interiors as bright as before: the grids aren't loaded; check the light probes are visible in the Map Editor |
+| Same | Outdoors, compare with the game | Shading from above brighter than from below, overall nearer the game | Lit from below or one side: a band's axis or sign is wrong (say which way); too bright or dark overall: report the Exposure Scale that matches |
+| Same | Walk a probe group's edge | A soft change over about 2 m, no hard seam | A hard edge: the box or fade is off |
+| Same | Highlights and bright sky | Highlights roll off softer than before (Hejl) | |
+| ER, AC6, NR, SDT | | Unchanged (no probes, their own curves) | |
+
+### DS3 map piece lightmaps (DOL) (2026-11-04; built, not yet checked in the app)
+
+The data (gi_env_m30, m30_00 BTAB and FLVERs, DS3 DXBC):
+- **Names.** `AABBCCDD_mXXXXXX_gi_NNNN_00_dol_0K[_atlasIII][_l]`. AABBCCDD is the map (30000000 = m30_00_00_00),
+  mXXXXXX the part's model, NNNN the bake (the map's `_0000` / `_0001` BTAB and BTPB), K 0 or 1 for DOL 1 / 2, III
+  the BTAB `AtlasID` of an instanced piece, `_l` a low-detail copy. The binder holds every map of the area.
+- **BTAB.** 2,370 entries in m30_00 `_0000`: `PartName` (m000518_1000), `MaterialName` (the FLVER material, o001290),
+  `AtlasID` 0-7, `UVScale`/`UVOffset`. m000518 only has `_atlas000` textures. A piece without entries uses its own,
+  whole.
+- **FLVERs.** Map piece materials (`M[ARSN]_l.mtd`) list `g_DOLTexture1`/`g_DOLTexture2` with paths naming those
+  textures (`...\30000000_m000518_gi_0000_00_dol_00.tif`).
+- **Vertex shader.** `uv = UV1 x atlasUvScaleOffset.xy + .zw` (the instance's).
+- **Pixel shader** (`GXFlver_ColDifSpcBumpDOL_Fwd`): DOL 1 rgb squared x `FC_TexHdrScaleParam` (the TPF entry's
+  FloatStruct: m000500 0.274, 0.295, 0.398) x `FC_DominantRgbScale` x `FC_DominantColorScale`; DOL 2 rgb x 2 - 1 is
+  a direction in the model's space, turned by the instance's quaternion `vDominantRotateParam`; sharpness =
+  saturate(DOL 2 alpha + `FC_DominantSharpnesOffset`); light = color x sharpness x N.L + color x (1 - sharpness),
+  times (1 - specular color) for energy. The sun is scaled by DOL 1 alpha x `ShLightMask.x`. Final: albedo x (lights
+  + DOL light x AO) + specular.
+- **GPARAM** `DominantLightMap:Editor`, m30_00_0000: Sharpness Min 0.5, Offset 0.55, Exponant 1.25, RGB Scale 0.5,
+  R/G/B 1; SH Color Scale 0.5, SH R/G/B 1 (m40: Offset 1, RGB Scale 1.2, R/G/B 0.6/0.8/1). `cb9[12]` = (Min, Offset,
+  Exponent, RGB Scale), `cb9[13]` = R/G/B. Min and Exponent aren't used by this shader. SH Color Scale is taken to
+  scale the probes' SH, as `aSh` is the only other SH.
+
+Built:
+- Loading: `PathBuilder` `map/tex/{mAA}/gienv` -> `map/mAA/gi_env_mAA.tpfbhd`; `TextureLocator.GetDolLightmapVirtualPath`;
+  `MapResourceHandler.SetupTextureLoadLists` queues it with the map's textures (DS3, `Viewport_Map_Lightmaps`). The
+  whole binder loads, every map and bake of the area (about 40 MB for m30).
+- Materials: `FlverMaterial.UsesLightmap` from a `DOLTexture` sampler (the FLVER's or the MTD's); such a material
+  is drawn with `FlverShader_blend` and the UV2 layout, with `c_layerCount` 1, for its second UV set.
+- `LightmapTable` (material buffer, 16,384 x 48 bytes; entry 0 the Dominant values) and `LightmapBinding` (a part's
+  entries by material name). `SceneParam.LightmapStart` takes the old `MapLightPad0`.
+- `MeshRenderableProxy.Lightmap`, passed to its submeshes; a static instance of a lightmapped material puts
+  `InstanceData.LightmapFlag | entry` in `SkinReference` (animated ones use 1 or the high bit).
+- `DolLightmapBank` (on MapData, run by `MapEditorScreen.Update` after the lighting): reads each area's binder index
+  once in the background (names, and DOL 1's FloatStruct HDR scales); per loaded MSB3 map piece, BTAB's `_0000`
+  entries by part give an atlas per material, else the piece's own textures; once both textures are on the GPU an
+  entry is made and the part's mesh gets the binding. Parts no longer loaded give theirs back.
+- `GparamLighting.DominantSharpnessOffset`, `DominantColor`, `ShColor`. The probe grids are now x `ShColor`
+  (halving them in m30).
+- `FlverShader.vert`: `IsAnimated()` ignores the lightmap flag; the UV2 variants pass `fsin_lightmap` and
+  `fsin_modelToWorld`. `FlverShader.frag`: `LightmapIrradiance` as above (without the 1 - specular factors, which
+  the PBR model handles its own way), replacing the probes or hemisphere for the pixel, its DOL 1 alpha the sun's
+  mask, reflections scaled by its luminance against the hemisphere's.
+
+Hypotheses: SH Color Scale scales the probes; the low bits of the material texture rows are untouched (the lightmap
+fields of `Material` stay unused); bake 0000.
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| DS3 m30_00_00_00, map lighting on | Load the map, wait for its textures | Map pieces lit unevenly: darker in corners and under overhangs, brighter facing open sky, no sunlight indoors | Flat as before: the lightmaps aren't found. Report the Post Effects / log for "lightmaps", and whether Viewport_Map_Lightmaps is on |
+| Same | A courtyard or street | Shadows baked on the ground where buildings block the sun, matching the cascades | Lit everywhere or nowhere: DOL 1 alpha is read the other way |
+| Same | Bookshelves and repeated props (BTAB atlas pieces) | Each copy lit for where it stands, not all the same | Smeared or wrong patches: the atlas UV scale/offset or V flip is off |
+| Same | Faces turned towards a window | Brighter on the side facing it | Brighter on the far side: DOL 2's direction is flipped or in the wrong space |
+| Same | Characters and objects | Still lit by the probes (half as bright as before, from SH Color Scale 0.5) | Too dark now: SH Color Scale doesn't apply to the probes |
+| ER, SDT, BB | | Unchanged | |
+
 ## Suggested order
 
 | Step | Games | Cost | Visible gain |

@@ -636,6 +636,13 @@ public class FlverResource : IResource, IDisposable
             return;
         }
 
+        // DS3's lightmaps, g_DOLTexture and g_DOLTexture2: their textures are the map's, found per part
+        if (texType != null && texType.Contains("DOLTexture", StringComparison.OrdinalIgnoreCase))
+        {
+            dest.UsesLightmap = true;
+            return;
+        }
+
         // Only what follows the slot says what this is: the rest is the shader's name, which can be M[...]_Emissive_Glow
         var samplerName = texType?[(texType.LastIndexOf("Texture2D_", StringComparison.Ordinal) + 1)..];
 
@@ -773,6 +780,10 @@ public class FlverResource : IResource, IDisposable
             dest.Shading.DiffuseAlpha *= new Vector4(new Vector3(1 / 4.55f), 1);
         }
 
+        // Also from the material's own samplers, in case the model doesn't list the lightmaps it has no paths for
+        dest.UsesLightmap |= dest.Definition?.Samplers.Exists(s =>
+            s.Type != null && s.Type.Contains("DOLTexture", StringComparison.OrdinalIgnoreCase)) == true;
+
         if (deformer != MaterialDeformer.None || knownBlend)
         {
             dest.ShaderName = layers.IsBlended ? @"FlverShader\FlverShader_deform_blend" : @"FlverShader\FlverShader_deform";
@@ -785,6 +796,12 @@ public class FlverResource : IResource, IDisposable
         }
         else if (layers.IsBlended)
         {
+            dest.ShaderName = @"FlverShader\FlverShader_blend";
+            dest.LayoutType = MeshLayoutType.LayoutUV2;
+        }
+        else if (dest.UsesLightmap && CFG.Current.Viewport_Map_Lightmaps)
+        {
+            // The blend variant for its second UV set, the lightmap's, with one layer, so nothing is blended
             dest.ShaderName = @"FlverShader\FlverShader_blend";
             dest.LayoutType = MeshLayoutType.LayoutUV2;
         }
@@ -804,6 +821,11 @@ public class FlverResource : IResource, IDisposable
             specConstants.Add(new SpecializationConstant(4, (uint)Math.Clamp(layers.LayerCount, 2, Material.MaxLayers)));
             specConstants.Add(new SpecializationConstant(5, knownBlend && !hasRecipe));
             specConstants.Add(new SpecializationConstant(7, hasRecipe));
+        }
+        else if (dest.ShaderName == @"FlverShader\FlverShader_blend")
+        {
+            // A lightmapped material drawn with the blend variant: one layer, which then takes all the weight
+            specConstants.Add(new SpecializationConstant(4, 1u));
         }
 
         specConstants.Add(new SpecializationConstant(6, dest.Blending != MaterialBlending.Opaque));
@@ -3784,6 +3806,12 @@ public class FlverResource : IResource, IDisposable
 
         /// <summary>The material has no albedo texture, so <see cref="AlbedoTint"/> is its whole color</summary>
         public bool AlbedoFromColor;
+
+        /// <summary>
+        ///     The material samples DS3's lightmaps (g_DOLTexture), which come from the map rather than the model, so it
+        ///     is drawn with the second UV set for them (see DolLightmapBank)
+        /// </summary>
+        public bool UsesLightmap;
 
         public MaterialBlending Blending = MaterialBlending.Opaque;
         public bool DepthWrite = true;

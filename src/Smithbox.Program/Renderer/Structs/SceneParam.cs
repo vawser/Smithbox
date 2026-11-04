@@ -125,8 +125,13 @@ public unsafe struct SceneParam
     /// <summary>How many of the map's lights to light with, 0 outside the Map Editor</summary>
     public uint MapLightCount;
 
+    /// <summary>
+    ///     The first entry of <see cref="SceneRenderer.Lightmaps" /> in the material buffer. Sits in what was padding,
+    ///     so only FlverShader.frag, which reads it, names it; the other shaders' copies still see a pad.
+    /// </summary>
+    public uint LightmapStart;
+
     // Fills the last 16 byte row, as the shaders lay the struct out
-    public uint MapLightPad0;
     public uint MapLightPad1;
 
     /// <summary>

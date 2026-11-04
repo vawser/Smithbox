@@ -1284,6 +1284,10 @@ public class CFG
     // don't cover; compared with the game, it does
     public bool Viewport_Map_Lighting_Hemi_Inside_Volumes = true;
 
+    // DS3's lightmaps of its map pieces (the DOL textures of gi_env_mAA), loaded with the map and lighting the pieces
+    // in place of the light probes, see DolLightmapBank
+    public bool Viewport_Map_Lightmaps = true;
+
     // Whether the viewport's background takes the GPARAM's BG color instead of Viewport_Bg_Color
     public bool Viewport_Map_Lighting_Background = true;
 

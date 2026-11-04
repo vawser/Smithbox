@@ -99,6 +99,11 @@ layout(location = 9) flat in uint fsin_entityid;
 #endif
 // 1: the instance receives no shadows, an MSB part's IsShadowDest
 layout(location = 12) flat in uint fsin_flags;
+#ifdef MATERIAL_BLEND
+	// DS3's lightmaps: the entry in lightmapdata plus 1 (0 for none), and the model's rotation into the world
+	layout(location = 13) flat in uint fsin_lightmap;
+	layout(location = 14) flat in mat3 fsin_modelToWorld;
+#endif
 
 #define INSTANCE_NO_SHADOW 1u
 
@@ -187,6 +192,8 @@ struct sceneParams
 	// The map's lights near the camera: entries of maplightdata, see SceneLightTable
 	uint mapLightStart;
 	uint mapLightCount;
+	// DS3's lightmaps: entries of lightmapdata, see LightmapTable (padding in the other shaders' copies)
+	uint lightmapStart;
 
 	// The sun's cascaded shadow maps, see ShadowCascades.cs. Depth is reversed: 1 nearest the sun.
 	mat4 shadowMatrices[4];  // world to each cascade's clip space
@@ -273,6 +280,20 @@ struct irradianceVolumeData
 	vec4 params;            // x: reflection scale
 	vec4 reserved0;
 	vec4 reserved1;
+};
+
+// A lightmap of a part (DS3's DOL textures), laid out as LightmapData. Entry 0 holds the GPARAM's Dominant Light
+// Map values: uvScaleOffset.x the sharpness offset, hdrScale.rgb the color scale. See LightmapTable.
+struct lightmapData
+{
+	uvec4 textures;      // x: DOL 1 (color, sun shadow in alpha), y: DOL 2 (direction, sharpness in alpha)
+	vec4 uvScaleOffset;  // the second UV set's scale (xy) and offset (zw) into the texture
+	vec4 hdrScale;       // rgb: DOL 1's HDR scale
+};
+
+layout(set = 4, binding = 0, std140) buffer lightmaps
+{
+    readonly lightmapData lightmapdata[];
 };
 
 layout(set = 4, binding = 0, std140) buffer irradianceVolumes
@@ -479,6 +500,7 @@ bool g_modelLit = false; // lit by the model set of the map's GPARAM, see ModelL
 vec2 g_uv[2];
 vec3 g_indirectDiffuse = vec3(0.0); // the diffuse part of IndirectLight, before the scene multipliers
 vec3 g_indirectSpecular = vec3(0.0); // and its specular part
+float g_probeSunMask = 1.0; // the share of the sun DS3 and Bloodborne's light probes let through here
 vec2 g_dx[2];
 vec2 g_dy[2];
 float g_weight[MAX_LAYERS];
@@ -934,6 +956,10 @@ vec3 SampleVolumeBake(uvec4 tex, vec3 uvw, vec3 N, vec4 shLuminance, out float r
 		EvaluateSHChannel(W.b, vec3(X.b, Y.b, Z.b), N));
 }
 
+// Defined below, for the light probe grids
+bool MapLighting();
+vec3 Hemisphere(vec3 D);
+
 // The light arriving at a point from the volumes around it, how much of it is covered by them, and how much
 // the reflections there are scaled by. Volumes are in drawing order, coarse first, and each fades in over the
 // ones before it.
@@ -970,6 +996,34 @@ vec3 VolumeIrradiance(vec3 P, vec3 N, out float coverage, out float reflectionSc
 		vec3 uvw = local * 0.5 + 0.5;
 		uvw += normalize(mat3(v.worldToLocal) * N) / counts;
 		uvw = clamp(uvw, 0.5 / counts, 1.0 - 0.5 / counts);
+
+		// A light probe grid (DS3, Bloodborne; see LightProbeGridBank): plain float bands, read linearly as the
+		// game's GXEnvMapRegion_IvDiff does, with the share of the sun that reaches it in W's alpha
+		if (v.params.y > 0.5)
+		{
+			vec4 W = SampleVolume(v.bake0.w, uvw);
+			vec3 X = SampleVolume(v.bake0.x, uvw).rgb;
+			vec3 Y = SampleVolume(v.bake0.y, uvw).rgb;
+			vec3 Z = SampleVolume(v.bake0.z, uvw).rgb;
+			// Times the GPARAM's Dominant Light Map SH color, which the entry keeps where a volume keeps its IVINFO
+			vec3 Ep = max(W.rgb + X * N.x + Y * N.y + Z * N.z, vec3(0.0)) * v.voxelCountsScale.w * v.shLuminance0.rgb;
+
+			// Reflections stand in for the game's cubemaps with the hemisphere, so they follow how bright the
+			// probes are here against it, darkening indoors
+			float kp = 1.0;
+			if (MapLighting())
+			{
+				float hemi = dot(Hemisphere(N), vec3(0.299, 0.587, 0.114));
+				float probe = dot(Ep * sceneparam.irradianceVolumeExposure, vec3(0.299, 0.587, 0.114));
+				kp = clamp(probe / max(hemi, 1e-4), 0.0, 2.0);
+			}
+
+			E = mix(E, Ep, fade);
+			reflectionScale = mix(reflectionScale, kp, fade);
+			coverage = mix(coverage, 1.0, fade);
+			g_probeSunMask = mix(g_probeSunMask, clamp(W.a, 0.0, 1.0), fade);
+			continue;
+		}
 
 		float k;
 		vec3 Ev = SampleVolumeBake(v.bake0, uvw, N, v.shLuminance0, k);
@@ -1025,6 +1079,35 @@ vec3 AmbientBase(vec3 N)
 		vec3(N * vec3(1, 1, -1)), 5).xyz;
 }
 
+#ifdef MATERIAL_BLEND
+// The light of a DS3 map piece's lightmap at the pixel, as the game's GXFlver_*DOL* shaders read it (DS3 DXBC): DOL 1's
+// color squared, times its HDR scale and the GPARAM's Dominant Light Map color; DOL 2's direction (the model's space,
+// x 2 - 1) and its sharpness plus the GPARAM's offset, which splits the light into a part from that direction and a
+// part from all around. DOL 1's alpha is how much of the sun reaches here, which the game scales the sun by.
+vec3 LightmapIrradiance(vec3 N, out float sunMask)
+{
+	lightmapData lm = lightmapdata[sceneparam.lightmapStart + fsin_lightmap - 1u];
+	lightmapData globals = lightmapdata[sceneparam.lightmapStart];
+
+	vec2 uv = g_uv[1] * lm.uvScaleOffset.xy + lm.uvScaleOffset.zw;
+
+	vec4 dol1 = texture(sampler2D(globalTextures[nonuniformEXT(TextureIndex(lm.textures.x))], linearSampler), uv);
+	vec4 dol2 = texture(sampler2D(globalTextures[nonuniformEXT(TextureIndex(lm.textures.y))], linearSampler), uv);
+
+	sunMask = clamp(dol1.a, 0.0, 1.0);
+
+	vec3 color = dol1.rgb * dol1.rgb * lm.hdrScale.rgb * globals.hdrScale.rgb;
+
+	vec3 dir = fsin_modelToWorld * (dol2.rgb * 2.0 - 1.0);
+	dir = dot(dir, dir) > 1e-8 ? normalize(dir) : N;
+
+	float sharpness = clamp(dol2.a + globals.uvScaleOffset.x, 0.0, 1.0);
+
+	vec3 E = color * sharpness * clamp(dot(dir, N), 0.0, 1.0) + color * (1.0 - sharpness);
+	return E * sceneparam.irradianceVolumeExposure;
+}
+#endif
+
 // Light from the environment map or the map's hemisphere, or the irradiance volumes where there are some
 vec3 IndirectLight(Surface s)
 {
@@ -1048,6 +1131,25 @@ vec3 IndirectLight(Surface s)
 		if ((sceneparam.irradianceVolumeFlags & 1u) == 0u)
 			reflectionScale = 1.0;
 	}
+
+#ifdef MATERIAL_BLEND
+	// A DS3 map piece's lightmap is all of its light from around, in place of the probes or the hemisphere, and
+	// its shadow of the sun replaces theirs
+	if (fsin_lightmap != 0u)
+	{
+		float sunMask;
+		ambientDiffuse = LightmapIrradiance(s.N, sunMask);
+		g_probeSunMask = sunMask;
+
+		// Reflections follow how bright the lightmap is against the hemisphere they stand in for
+		reflectionScale = 1.0;
+		if (MapLighting() && (sceneparam.irradianceVolumeFlags & 1u) != 0u)
+		{
+			float hemi = dot(Hemisphere(s.N), vec3(0.299, 0.587, 0.114));
+			reflectionScale = clamp(dot(ambientDiffuse, vec3(0.299, 0.587, 0.114)) / max(hemi, 1e-4), 0.0, 2.0);
+		}
+	}
+#endif
 
 	ambientDiffuse *= sceneparam.ambientLightMult;
 
@@ -1670,6 +1772,11 @@ void main()
 	geometryNormal = gl_FrontFacing ? geometryNormal : -geometryNormal;
 	float sunShadow = SunShadow(fsin_worldpos, geometryNormal, sunDir);
 
+	// The indirect light first, as DS3 and Bloodborne's light probes found with it also say how much of the sun
+	// reaches here (their LightMask, as the game's shaders scale the sun by ShLightMask)
+	vec3 indirect = IndirectLight(surface);
+	sunShadow *= g_probeSunMask;
+
 	// The sun, then every light in the scene
 	vec3 direct = vec3(0.0);
 
@@ -1729,8 +1836,6 @@ void main()
 			direct += ShadeLight(surface, L, radiance, specularRadiance);
 		}
 	}
-
-	vec3 indirect = IndirectLight(surface);
 
 	vec3 litColor = (direct * sceneparam.directLightMult + indirect * sceneparam.indirectLightMult) *
 		sceneparam.sceneBrightness;

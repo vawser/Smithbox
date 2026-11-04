@@ -10,7 +10,17 @@ public struct InstanceData
     public uint MaterialID;
     public uint BoneStartIndex;
 
-    // How an animated mesh fetches its bones, see GetBoneMatrix in the vertex shaders
+    /// <summary>
+    ///     In <see cref="SkinReference" /> of a static instance: the low bits are its entry in
+    ///     <see cref="SceneRenderer.Lightmaps" />. Animated instances use 1 or the high bit, so the two never meet.
+    /// </summary>
+    public const uint LightmapFlag = 0x40000000;
+
+    /// <summary>The bits of <see cref="SkinReference" /> that say what it holds</summary>
+    public const uint SkinReferenceKindMask = 0xC0000000;
+
+    // How an animated mesh fetches its bones, see GetBoneMatrix in the vertex shaders; for a static one, its
+    // lightmap entry with LightmapFlag, or 0
     public uint SkinReference;
     public uint EntityID;
 }

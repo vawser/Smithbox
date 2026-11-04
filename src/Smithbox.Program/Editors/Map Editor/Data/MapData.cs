@@ -51,6 +51,7 @@ public class MapData : IDisposable
     public MapLimitBank MapLimitBank;
     public LightAtlasBank LightAtlasBank;
     public LightProbeBank LightProbeBank;
+    public DolLightmapBank DolLightmapBank;
     public AssetConfigurationBank AssetConfigurationBank;
     public BreakDataGenerator BreakDataGenerator;
 
@@ -101,6 +102,7 @@ public class MapData : IDisposable
         MapLimitBank = new MapLimitBank(Project);
         LightAtlasBank = new LightAtlasBank(Project);
         LightProbeBank = new LightProbeBank(Project);
+        DolLightmapBank = new DolLightmapBank(Project);
         AssetConfigurationBank = new AssetConfigurationBank(Project);
         BreakDataGenerator = new BreakDataGenerator(Project);
 

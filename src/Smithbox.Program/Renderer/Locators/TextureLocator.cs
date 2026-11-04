@@ -182,6 +182,19 @@ public static class TextureLocator
     /// <summary>
     /// An envmap file of a map (AC6, ER, NR), which holds its irradiance volumes, e.g. m10_00_00_00_envmap_00_high_00
     /// </summary>
+    /// <summary>
+    /// DS3's binder of the lightmaps of an area's map pieces, map/mAA/gi_env_mAA.tpfbhd, whose textures are named
+    /// AABBCCDD_mXXXXXX_gi_NNNN_00_dol_0K, see DolLightmapBank
+    /// </summary>
+    public static ResourceDescriptor GetDolLightmapVirtualPath(string mapId)
+    {
+        ResourceDescriptor ad = new();
+
+        ad.AssetArchiveVirtualPath = $@"map/tex/{mapId.Substring(0, 3)}/gienv";
+
+        return ad;
+    }
+
     public static ResourceDescriptor GetEnvMapTextureVirtualPath(string mapId, string fileName)
     {
         ResourceDescriptor ad = new();

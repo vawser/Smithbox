@@ -195,8 +195,17 @@ public class MapResourceHandler
             }
         }
 
+        // DS3's lightmaps of the area's map pieces, one binder for every map of the area, see DolLightmapBank
+        if (CFG.Current.Viewport_Map_Lightmaps && GparamProfile.For(View.Project.Descriptor.ProjectType).HasDolLightmaps)
+        {
+            var lightmaps = TextureLocator.GetDolLightmapVirtualPath(AdjustedMapID);
+
+            if (lightmaps.IsValid())
+                LoadList_Map_Texture.Add(lightmaps);
+        }
+
         // AAT
-        if (View.Project.Descriptor.ProjectType is ProjectType.ER 
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER
             or ProjectType.AC6 
             or ProjectType.NR
             or ProjectType.DB_NT

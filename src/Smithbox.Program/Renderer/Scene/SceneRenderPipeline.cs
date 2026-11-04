@@ -459,7 +459,9 @@ public class SceneRenderPipeline
             mapEnvMapScale = new Vector4(new Vector3(mapLighting.EnvMapScale.X, mapLighting.EnvMapScale.Y, mapLighting.EnvMapScale.Z) * mapLighting.EnvMapScale.W, 1.0f);
             mapEnvMapSaturate = mapLighting.EnvMapSaturate;
 
-            mapLightingFlags = 1u | (CFG.Current.Viewport_Map_Lighting_Hemi_Inside_Volumes ? 2u : 0u);
+            // DS3 and Bloodborne's probe grids are the whole ambient where they are; their shaders have no hemisphere
+            var hemiInsideVolumes = CFG.Current.Viewport_Map_Lighting_Hemi_Inside_Volumes && !GparamProfile.Current.HasLightProbes;
+            mapLightingFlags = 1u | (hemiInsideVolumes ? 2u : 0u);
 
             // Characters take the model set: its own sun, the fill lights, and its hemisphere
             var models = mapLighting.Models;
@@ -565,6 +567,7 @@ public class SceneRenderPipeline
             // As with the volumes, read here so the count only covers lights already on the GPU
             SceneParams.MapLightStart = SceneRenderer.MapLights.Start;
             SceneParams.MapLightCount = UseMapLights ? SceneRenderer.MapLights.Count : 0;
+            SceneParams.LightmapStart = SceneRenderer.Lightmaps?.Start ?? 0;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)
