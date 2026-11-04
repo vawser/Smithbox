@@ -1,0 +1,3721 @@
+## 0 ChrActionFlag uses=358101 functions=172 steps=12939
+  +00 mov:UInt32x4  @140427C31,140428EAA  [s32 FlagType]
+  +04 movss:Float32x2  @14042894E  [f32 ArgA]
+  +08 mov:UInt32x3  @140427C63,140427C93  [s32 ArgB]
+  +0C movzx:UInt8x2  @140427E10  [u8 ArgC]
+  +0E movzx:UInt16x2  @140427C13,140428E8D  [s16 StateInfo]
+        -> call 1404FA450 arg2   shared with 1:StateInfo, 2:StateInfo, 95:StateInfo, 96:StateInfo, 129:StateInfo
+  ctx: +18 +20 +14
+  effect: d1 call 1404FA450 on ChrIns+178 (a2=+0E)
+  effect: d1 ActionFlagModule+40 |= 0x20
+  effect: d1 ChrIns+58+EA = 0x1
+  effect: d1 call 140437B10 on DataModule
+  effect: d2 call 14043D2F0 on DataModule
+  effect: d1 call 1403EA1E0 on ChrIns
+  effect: d2 call 1404FA450 on ChrIns+178
+  effect: d2 ChrIns+240 = 0x0
+  effect: d2 call 14049AA50 on ChrIns
+  effect: d3 call 14266E4A0 on ChrIns
+  effect: d3 call 140498DD0 on ChrIns
+  effect: d5 vcall ChrIns+8::vf10
+  effect: d4 call 14266E5D0 on ChrIns
+  effect: d5 ChrIns+10 = reg
+  effect: d2 call 1403C66B0 on ChrIns+58
+  effect: d1 ActionFlagModule+40 |= reg
+  effect: d1 ActionFlagModule+40 |= 0x40000000
+  effect: d1 call 140480E10 on ThrowModule
+  effect: d1 call 1404081A0 on ActionRequestModule
+  effect: d2 ActionRequestModule+100 &= 0xFFFFFBFF
+  effect: d2 ActionRequestModule+100 |= reg
+  effect: d1 call 14048B340 on WheelRotModule
+  effect: d2 WheelRotModule+81 = 0x1
+  effect: d1 ActionFlagModule+40 |= 0x10
+  effect: d1 call 14045FF00 on PhysicsModule
+  effect: d2 PhysicsModule+3E1 = 0x1
+  effect: d1 call 1402CA700 on ChrIns
+  effect: d1 call 14045FF40 on PhysicsModule
+  effect: d2 PhysicsModule+108 = reg
+  effect: d1 call 14045FC10 on PhysicsModule
+  effect: d2 PhysicsModule+1C0 = reg
+  effect: d1 ActionRequestModule+100 |= 0x100
+  effect: d1 ActionRequestModule+100 |= 0x80
+  effect: d1 call 1403EF0F0 on ChrIns
+  effect: d2 vcall ChrIns::vf69
+  effect: d1 call 1404080B0 on ActionRequestModule
+  effect: d2 ActionRequestModule+A0 |= reg
+  effect: d2 call 1404088F0 on BoneMoveModule
+  effect: d3 call 140408850 on BoneMoveModule
+  effect: d4 call 140408C00 on BoneMoveModule
+  note: unresolved indirect jump at 0x141EBD43F
+  note: unresolved indirect jump at 0x1403EF0FF
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x1458E8F43
+  note: unresolved indirect jump at 0x1405175EF
+  note: unresolved indirect jump at 0x14051760F
+  unread: +0D ArgD
+
+## 1 AttackBehavior uses=25035 functions=44 steps=2401
+  +00 mov:UInt32x3 test:UInt32x2  @140426DD3,140426E18,140426E8E  [s32 AttackType]
+        compared to: bit-65,1,2,3,62,63,65,66
+        -> call 140442EE0 arg4   shared with 307:Condition0x64_GetWeaponData
+        -> call 1404467A0 arg4   shared with 307:Condition0x64_GetWeaponData
+        -> call 140443471 arg4   shared with 307:Condition0x64_GetWeaponData
+        -> call 1424FEAE0 arg4   shared with 307:Condition0x64_GetWeaponData, 606:FadeOut
+        -> call 1424FF290 arg4   shared with 307:Condition0x64_GetWeaponData, 606:FadeOut
+        -> call 14264ECE4 arg4   shared with 307:Condition0x64_GetWeaponData, 606:FadeOut
+  +04 mov:UInt32x1  @140426DCC  [s32 AttackIndex]
+  +08 mov:UInt32x3  @140426D68,140426E03  [s32 BehaviorJudgeID]
+        -> call 140430570 arg2   shared with 304:BehaviorJudgeID, 307:BehaviorJudgeID
+        -> call 1403F4560 arg2   shared with 304:BehaviorJudgeID, 307:BehaviorJudgeID
+        -> call 1424FEAE0 arg2   shared with 14:Jumptable0-5, 606:JigglerId, 609:SpEffectID_IsExist
+        -> call 1424FF290 arg2   shared with 14:Jumptable0-5, 606:JigglerId, 609:SpEffectID_IsExist
+        -> call 14264ECE4 arg2   shared with 14:Jumptable0-5, 606:JigglerId, 609:SpEffectID_IsExist
+  +0C movsx:Int8x1  @140426D7B  [s8 DirectionType]
+        -> store 140426CB0 +FFFFFFFFFFFFFFD7
+  +0D movzx:UInt8x2  @140426D31  [u8 Source]
+        compared to: 1
+  +0E movzx:UInt16x1  @140426D10  [s16 StateInfo]
+        -> call 1404FA450 arg2   shared with 0:StateInfo, 2:StateInfo, 95:StateInfo, 96:StateInfo, 129:StateInfo
+  ctx: +18 +1A +20 +10
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1404FA450 on ChrIns+178 (a2=+0E)
+  effect: d1 call 140442EE0 on DamageModule (a4=+00)
+  effect: d2 call 1404467A0 on DamageModule (a4=+00)
+  effect: d3 call 14044A6B0 on KnockBackModule
+  effect: d4 call 14044A610 on KnockBackModule
+  effect: d5 call 14044A8B0 on KnockBackModule
+  effect: d5 KnockBackModule+18 = reg
+  effect: d5 KnockBackModule+10 = reg
+  effect: d5 KnockBackModule+8 = reg
+  effect: d3 KnockBackModule+10 += 0x10
+  effect: d2 call 14043D2E0 on DamageModule
+  effect: d2 DamageModule+6C = 0x0
+  effect: d2 DamageModule+90 = 0x1
+  effect: d2 call 1403EEDC0 on ChrIns
+  effect: d2 call 14049BC30 on ChrIns
+  effect: d3 call 14266E4A0 on ChrIns
+  effect: d3 call 140499500 on ChrIns
+  effect: d5 vcall ChrIns+8::vf10
+  effect: d4 call 14266E5D0 on ChrIns
+  effect: d5 ChrIns+10 = reg
+  effect: d2 call 1403F4560 on ChrIns (a2=+08)
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 2 BulletBehavior uses=10611 functions=82 steps=24994
+  +00 mov:UInt32x6  @140427664,140427709  [s32 DummyPolyID]
+  +08 mov:UInt32x7  @14042754B,1404276A1,14042770E  [s32 BehaviorJudgeID]
+        -> call 1403C37C0 arg3
+        -> call 1404304D0 arg3
+        -> call 1403F4560 arg3
+  +0C movzx:UInt8x4  @140427641  [u8 AttachmentType]
+        -> call 140427660 arg2
+        -> call 140430470 arg2
+        -> call 142652700 arg2
+  +0D cmp:UInt8x5  @140427495,140427660  [b Enable]
+        compared to: 1,0
+  +0E movzx:UInt16x1  @14042749F  [s16 StateInfo]
+        -> call 1404FA450 arg2   shared with 0:StateInfo, 1:StateInfo, 95:StateInfo, 96:StateInfo, 129:StateInfo
+  +10 movsx:Int8x2  @140427691  [s8 Offset]
+  +12 movzx:UInt8x4  @140427645  [u8 <unnamed>]  <== UNNAMED
+  +13 movzx:UInt8x2  @1404274E8  [u8 Source]
+        compared to: 1
+  ctx: +18 +1A +20 +10 +30 +28
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1404FA450 on ChrIns+178 (a2=+0E)
+  effect: d1 call 140656200 on ChrIns
+  effect: d1 call 1403C2D70 on ChrIns
+  effect: d2 call 1403F4560 on ChrIns (a3=+08)
+  effect: d1 call 1403F4270 on ChrIns
+  effect: d1 call 14065ABC0 on ChrIns
+  effect: d2 call 140656200 on ChrIns
+  effect: d2 call 1403BE3C0 on ChrIns+638
+  effect: d2 call 140659F90 on ChrIns
+  note: unresolved indirect jump at 0x1403BE467
+  unread: +04 AttackIndex, +11 <unnamed>
+
+## 5 CommonBehavior uses=9511 functions=34 steps=2010
+  +00 mov:UInt32x2  @140427066  [s32 AttackIndex (0-8)]
+  +04 mov:UInt32x2  @140427034  [s32 BehaviorJudgeID]
+        -> call 140442EE0 arg3
+        -> call 1404467A0 arg3
+        -> call 14044A6B0 arg3
+        -> call 1404468CB arg3
+        -> store 140442EE0 +38
+        -> call 140D26FA0 arg2
+  +08 movzx:UInt8x1  @140427008  [b <unnamed>]  <== UNNAMED
+        compared to: 1
+  ctx: +18 +1A
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 140442EE0 on DamageModule (a3=+04)
+  effect: d2 call 1404467A0 on DamageModule (a3=+04)
+  effect: d3 call 14044A6B0 on KnockBackModule
+  effect: d4 call 14044A610 on KnockBackModule
+  effect: d5 call 14044A8B0 on KnockBackModule
+  effect: d5 KnockBackModule+18 = reg
+  effect: d5 KnockBackModule+10 = reg
+  effect: d5 KnockBackModule+8 = reg
+  effect: d3 KnockBackModule+10 += 0x10
+  effect: d3 call 14044A6B0 on KnockBackModule (a3=+04)
+  effect: d2 call 14043D2E0 on DamageModule
+  effect: d2 DamageModule+6C = 0x0
+  effect: d2 DamageModule+90 = 0x1
+  note: unresolved indirect jump at 0x141EC4958
+
+## 14 Event14 uses=1507 functions=30 steps=1988
+  +00 movsx:Int8x4 movzx:UInt8x1  @14042BAFE,14042BAD9,14042BAA2  [u8 <unnamed>]  <== UNNAMED
+        compared to: 5
+        -> call 1403C66A0 arg2
+        -> call 140C80200 arg3
+        -> call 140C7FE30 arg3
+        -> call 1403C7DA0 arg2
+        -> call 1403C5810 arg2
+        -> call 1403C5830 arg2
+  +01 movsx:Int8x1  @14042B70A  [u8 Jumptable0-5]  <== SIGNED
+        compared to: 5
+        -> call 1424FEAE0 arg2   shared with 1:BehaviorJudgeID, 606:JigglerId, 609:SpEffectID_IsExist
+        -> call 1424FF290 arg2   shared with 1:BehaviorJudgeID, 606:JigglerId, 609:SpEffectID_IsExist
+        -> call 14264ECE4 arg2   shared with 1:BehaviorJudgeID, 606:JigglerId, 609:SpEffectID_IsExist
+  +02 movsx:Int8x1 cmp:UInt8x1  @14042B8C5,14042B9FF  [u8 <unnamed>]  <== UNNAMED  <== SIGNED
+        compared to: 0
+  +04 movss:Float32x1  @14042B9C4  [f32 <unnamed>]  <== UNNAMED
+        -> call 1403C5750 farg3
+        -> call 1424FEAE0 farg3
+        -> call 1424FF290 farg3
+        -> call 14264ECE4 farg3
+  +08 movss:Float32x1  @14042BA42  [f32 <unnamed>]  <== UNNAMED
+        -> call 1403C5750 farg4
+        -> call 140C79CD0 farg4
+        -> call 141EBDEC0 farg4
+        -> call 141EBEBE0 farg4
+        -> call 141EBCF90 farg4
+        -> call 141EBD170 farg4
+  +0C movss:Float32x1  @14042B758  [f32 <unnamed>]  <== UNNAMED
+        -> call 1401B80D0 farg4
+  +10 movss:Float32x1  @14042B762  [f32 <unnamed>]  <== UNNAMED
+  +14 movss:Float32x1  @14042BA62  [f32 <unnamed>]  <== UNNAMED
+        -> call 1403C5750 farg2
+        -> call 1424FEAE0 farg2
+        -> call 1424FF290 farg2
+        -> call 14264ECE4 farg2
+  +18 movss:Float32x1  @14042BA55  [f32 <unnamed>]  <== UNNAMED
+        -> call 1403C5750 farg1
+        -> call 1424FEAE0 farg1
+        -> call 1424FF290 farg1
+        -> call 14264ECE4 farg1
+  ctx: +18 +19 +20 +14 +1A
+  effect: d1 call 14041BB10 on BehaviorModule
+  effect: d2 call 1458E8F23 on BehaviorModule
+  effect: d1 call 1403C66A0 on ChrIns+58 (a2=+00)
+  effect: d1 call 1403C7DA0 on ChrIns+58 (a2=+00)
+  effect: d1 call 1403C5810 on ChrIns+58 (a2=+00)
+  effect: d1 call 1403C5750 on ChrIns+58 (a1=+18f,a2=+14f,a3=+04f,a4=+08f)
+  effect: d2 call 1403C66B0 on ChrIns+58
+  effect: d1 call 1403C5750 on ChrIns+58 (a3=+04f,a4=+08f)
+  effect: d1 call 1403C5830 on ChrIns+58 (a2=+00)
+  note: unresolved indirect jump at 0x1458E8F43
+  note: unresolved indirect jump at 0x141EC4958
+
+## 16 Blend uses=50039 functions=2 steps=45
+  ctx: +18
+
+## 17 Event17 uses=4 functions=2 steps=45
+  ctx: +18
+
+## 24 [DS1, Disabled]QueueTransitionAnimation uses=12 functions=2 steps=45
+  ctx: +18
+  unread: +00 <unnamed>, +04 <unnamed>, +08 <unnamed>, +0C <unnamed>
+
+## 32 SetWeaponStyle uses=169 functions=41 steps=14039
+  +00 mov:UInt32x1 cmp:UInt32x3  @140426B34,140426B3F,140426B51  [s32 WeaponStyle]
+        compared to: 3,2
+  ctx: +18
+  effect: d1 call 140655FC0 on ChrIns
+  effect: d2 call 1404F79B0 on ChrIns+178
+  effect: d3 call 1404FC5E0 on ChrIns+178
+  effect: d4 call 1404FE4E0 on ChrIns+178
+  effect: d5 ChrIns+178+28 = reg
+  effect: d4 ChrIns+178+8 = reg
+  effect: d2 call 14049C8B0 on ChrIns
+  effect: d3 call 14266E4A0 on ChrIns
+  effect: d1 call 140655FF0 on ChrIns
+  effect: d2 call 1404F7AB0 on ChrIns+178
+  effect: d2 call 14049C920 on ChrIns
+  effect: d1 call 1403F77C0 on ChrIns
+  effect: d2 ChrIns+1C5 &= 0xFD
+  effect: d2 ChrIns+1C5 |= reg
+  effect: d1 call 140659FC0 on ChrIns
+  effect: d2 call 1403F4270 on ChrIns
+  effect: d2 call 1403BF4F0 on ChrIns+638
+  effect: d3 call 1403BE700 on ChrIns+638
+  effect: d1 ChrIns+5D0 = 0x1
+  note: unresolved indirect jump at 0x141EC4958
+
+## 33 SwitchWeapon uses=131 functions=30 steps=13345
+  +00 mov:UInt32x2  @14042D612  [s32 WeaponSlotID]
+        compared to: 2,6,1,3
+        -> call 1404C57C0 arg2
+  ctx: +18
+  effect: d1 call 1403F0560 on ChrIns
+  effect: d2 call 1403C6F50 on ChrIns+58
+  effect: d1 call 1403F4270 on ChrIns
+  effect: d1 call 1403F77C0 on ChrIns
+  effect: d2 ChrIns+1C5 &= 0xFD
+  effect: d2 ChrIns+1C5 |= reg
+  effect: d1 call 140655FF0 on ChrIns
+  effect: d2 call 1404F7AB0 on ChrIns+178
+  effect: d3 call 1404FC5E0 on ChrIns+178
+  effect: d4 call 1404FE4E0 on ChrIns+178
+  effect: d5 ChrIns+178+28 = reg
+  effect: d4 ChrIns+178+8 = reg
+  effect: d2 call 14049C920 on ChrIns
+  effect: d3 call 14266E4A0 on ChrIns
+  effect: d1 call 140655FC0 on ChrIns
+  effect: d2 call 1404F79B0 on ChrIns+178
+  effect: d2 call 14049C8B0 on ChrIns
+  effect: d1 call 140659FC0 on ChrIns
+  effect: d2 call 1403F4270 on ChrIns
+  effect: d2 call 1403BF4F0 on ChrIns+638
+  effect: d3 call 1403BE700 on ChrIns+638
+  effect: d1 ChrIns+5D0 = 0x1
+  note: unresolved indirect jump at 0x1403BE467
+
+## 34 UnequipCrossbowBolt uses=110 functions=19 steps=12530
+  +00 cmp:UInt8x1  @14042C3B4  [s32 HandType]  <== SIZE 1 vs 4
+  ctx: +18
+  effect: d1 call 140659FC0 on ChrIns
+  effect: d2 call 1403F4270 on ChrIns
+  effect: d2 call 1403BF4F0 on ChrIns+638
+  effect: d3 call 1403BE700 on ChrIns+638
+  effect: d1 call 140659F90 on ChrIns
+  note: unresolved indirect jump at 0x1403BE467
+
+## 35 EquipCrossbowBolt uses=50 functions=19 steps=12530
+  +00 cmp:UInt8x1  @14042C2D4  [s32 HandType]  <== SIZE 1 vs 4
+  ctx: +18
+  effect: d1 call 140659FC0 on ChrIns
+  effect: d2 call 1403F4270 on ChrIns
+  effect: d2 call 1403BF4F0 on ChrIns+638
+  effect: d3 call 1403BE700 on ChrIns+638
+  effect: d1 call 140659F90 on ChrIns
+  note: unresolved indirect jump at 0x1403BE467
+
+## 64 CastHighlightedMagic uses=1921 functions=35 steps=2033
+  +00 mov:UInt32x1  @14042A4F6  [s32 DummyPolyID]
+  +04 cmp:UInt8x1  @14042A51F  [b <unnamed>]  <== UNNAMED
+  +05 movzx:UInt8x1  @14042A4FC  [u8 <unnamed>]  <== UNNAMED
+  +08 movsx:Int8x1  @14042A439  [u8 RefType]  <== SIGNED
+        compared to: 9
+        -> call 140D40DE0 arg3
+        -> call 1403C0C50 arg3
+        -> call 140D413A0 arg3
+        -> call 141EC4940 arg3   shared with 5:BehaviorJudgeID
+        -> call 141EC4870 arg3   shared with 5:BehaviorJudgeID
+        -> call 141EC8100 arg3   shared with 5:BehaviorJudgeID
+  +09 cmp:UInt8x2  @14042A4C4,14042A528  [u8 <unnamed>]  <== UNNAMED
+        compared to: 0
+  +0A movsx:Int16x1  @14042A4CF  [s16 <unnamed>]  <== UNNAMED
+        -> call 1403C0690 arg2
+        -> call 140443770 arg4
+        -> call 1424FEAE0 arg4   shared with 1:AttackType, 307:Condition0x64_GetWeaponData, 606:FadeOut
+        -> call 1424FF290 arg4   shared with 1:AttackType, 307:Condition0x64_GetWeaponData, 606:FadeOut
+        -> call 14264ECE4 arg4   shared with 1:AttackType, 307:Condition0x64_GetWeaponData, 606:FadeOut
+        -> call 141EC4940 arg4   shared with 1:AttackType, 122:FFXID, 138:DummyPolyID, 307:Condition0x64_GetWeaponData
+  +0C movsx:Int8x1  @14042A43E  [s8 <unnamed>]  <== UNNAMED
+        -> store 14042A390 +80
+  +0D movzx:UInt8x1  @14042A3F1  [s8 <unnamed>]  <== UNNAMED
+        compared to: 1
+  ctx: +18 +1A +20 +10
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403C1460 on ChrIns (a3=+08)
+  note: unresolved indirect jump at 0x140D40E16
+  note: unresolved indirect jump at 0x141EC4958
+  unread: +06 ChrBulletSharedHitSlot
+
+## 65 ConsumeCurrentGoods uses=173 functions=72 steps=5501
+  +00 mov:UInt32x2  @1403C3624  [s32 <unnamed>]  <== UNNAMED
+  +05 movzx:UInt8x1  @14042CB60  [u8 DirectionChanger]
+        -> store 14042CAD0 +160
+        -> call 1403C35F0 arg4
+        -> call 1403EEE40 arg4
+  +08 cmp:UInt8x3  @14042CB3C,1403C3752  [b UnkFlag]
+        compared to: 1,0
+  +09 movsx:Int8x6  @14042CCC1,14042CDEE,1403C36E0  [u8 <unnamed>]  <== UNNAMED  <== SIGNED
+        -> store 14042CAD0 +170
+  ctx: +18 +20 +10
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 14042DDA0 on ChrIns
+  effect: d1 call 1403F4270 on ChrIns
+  effect: d1 call 1403F4BA0 on ChrIns
+  effect: d2 call 1403EEE40 on ChrIns
+  effect: d3 call 1403F4270 on ChrIns
+  effect: d3 call 1406581F0 on ChrIns
+  effect: d3 call 1406576A0 on ChrIns
+  effect: d3 call 140656D30 on ChrIns
+  effect: d3 call 140474F50 on RideModule
+  effect: d3 call 1403F4890 on ChrIns
+  effect: d3 call 1404525D0 on LadderModule
+  effect: d4 call 14043D2E0 on LadderModule
+  effect: d3 call 140658200 on ChrIns
+  effect: d4 call 14065FB50 on ChrIns
+  effect: d5 call 1401B76E0 on ChrIns
+  effect: d5 call 1403F1A40 on ChrIns
+  effect: d6 call 1403F19A0 on ChrIns
+  effect: d7 call 1403C7000 on ChrIns+58
+  effect: d7 call 1404554F0 on MaterialModule
+  effect: d6 call 140474E40 on RideModule
+  effect: d6 call 140474B90 on RideModule
+  effect: d4 call 140A61E40 on ChrIns
+  effect: d3 call 140658290 on ChrIns
+  effect: d4 call 140A61E00 on ChrIns
+  effect: d3 call 140658330 on ChrIns
+  effect: d4 call 140A61E20 on ChrIns
+  effect: d2 call 1403F4270 on ChrIns
+  effect: d1 call 1403C35F0 on ChrIns
+  effect: d1 call 1403C35F0 on ChrIns (a4=+05)
+  note: unresolved indirect jump at 0x141EC4958
+  unread: +04 HandType, +06 ChrBulletSharedHitSlot
+
+## 66 AddSpEffect_Multiplayer uses=36539 functions=74 steps=6109
+  +00 mov:UInt32x1  @14042C5D8  [s32 SpEffectID]
+        compared to: 503041
+        -> call 1404FA7F0 arg2   shared with 67:SpEffectID, 122:SpEffectID, 123:SpEffectId, 601:SpEffectID_Exist, 607:SpEffectID_Exist, 609:SpEffectID_IsExist
+        -> store 1404FA7F0 +8   shared with 67:SpEffectID, 122:SpEffectID, 123:SpEffectId, 601:SpEffectID_Exist, 607:SpEffectID_Exist, 609:SpEffectID_IsExist
+        -> call 1403E8DC0 arg2   shared with 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+        -> call 1404FFB40 arg2   shared with 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+        -> call 1403E8E70 arg2   shared with 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+        -> call 141EC4940 arg2   shared with 5:BehaviorJudgeID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1404FA7F0 on ChrIns+178 (a2=+00)
+  effect: d1 call 1403E8DC0 on ChrIns (a2=+00)
+  effect: d2 call 1403E8E70 on ChrIns (a2=+00)
+  effect: d3 call 1403F2F80 on ChrIns
+  effect: d3 call 1403F4270 on ChrIns
+  effect: d3 call 1403FB0A0 on ChrIns (a2=+00)
+  effect: d4 call 1404FB790 on ChrIns+178 (a2=+00)
+  effect: d5 call 1404FD390 on ChrIns+178 (a2=+00)
+  effect: d6 call 1403F1C90 on ChrIns
+  effect: d7 call 1404FA450 on ChrIns+178
+  effect: d7 call 14049C330 on ChrIns
+  effect: d7 call 14049C2E0 on ChrIns
+  effect: d6 call 1404FD540 on ChrIns+178
+  effect: d6 call 1403F4B80 on ChrIns
+  effect: d6 call 140406A80 on ActionFlagModule
+  effect: d6 call 1403F45A0 on ChrIns
+  effect: d5 call 1404FDF40 on ChrIns+178 (a2=+00)
+  effect: d6 call 1404FCF70 on ChrIns+178 (a2=+00)
+  effect: d6 call 1404FC4A0 on ChrIns+178
+  effect: d7 ChrIns+178+8 = reg
+  effect: d6 call 1404FC380 on ChrIns+178 (a2=+00)
+  effect: d6 call 1404FC530 on ChrIns+178
+  effect: d6 ChrIns+178+20 = reg
+  effect: d6 call 1404FC1F0 on ChrIns+178
+  effect: d7 ChrIns+178+28 = reg
+  effect: d6 call 1404FC5E0 on ChrIns+178
+  effect: d7 call 1404FE4E0 on ChrIns+178
+  effect: d6 call 1404FCED0 on ChrIns+178 (a2=+00)
+  effect: d6 call 1404FE4E0 on ChrIns+178
+  effect: d6 call 1404FC420 on ChrIns+178
+  effect: d6 call 1404FE5F0 on ChrIns+178
+  effect: d7 ChrIns+178+28 = 0x0
+  effect: d7 call 1404FE633 on ChrIns+178
+  effect: d4 call 14043E0E0 on ResistModule
+  effect: d5 call 14043D2E0 on ResistModule
+  effect: d5 call 14043EC20 on ResistModule
+  effect: d5 call 14043DE90 on ResistModule
+  effect: d6 ResistModule+B8 |= reg
+  effect: d6 call 14043F000 on ResistModule
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 67 AddSpEffect uses=43702 functions=74 steps=6109
+  +00 mov:UInt32x1  @14042C5D8  [s32 SpEffectID]
+        compared to: 503041
+        -> call 1404FA7F0 arg2   shared with 66:SpEffectID, 122:SpEffectID, 123:SpEffectId, 601:SpEffectID_Exist, 607:SpEffectID_Exist, 609:SpEffectID_IsExist
+        -> store 1404FA7F0 +8   shared with 66:SpEffectID, 122:SpEffectID, 123:SpEffectId, 601:SpEffectID_Exist, 607:SpEffectID_Exist, 609:SpEffectID_IsExist
+        -> call 1403E8DC0 arg2   shared with 66:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+        -> call 1404FFB40 arg2   shared with 66:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+        -> call 1403E8E70 arg2   shared with 66:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+        -> call 141EC4940 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1404FA7F0 on ChrIns+178 (a2=+00)
+  effect: d1 call 1403E8DC0 on ChrIns (a2=+00)
+  effect: d2 call 1403E8E70 on ChrIns (a2=+00)
+  effect: d3 call 1403F2F80 on ChrIns
+  effect: d3 call 1403F4270 on ChrIns
+  effect: d3 call 1403FB0A0 on ChrIns (a2=+00)
+  effect: d4 call 1404FB790 on ChrIns+178 (a2=+00)
+  effect: d5 call 1404FD390 on ChrIns+178 (a2=+00)
+  effect: d6 call 1403F1C90 on ChrIns
+  effect: d7 call 1404FA450 on ChrIns+178
+  effect: d7 call 14049C330 on ChrIns
+  effect: d7 call 14049C2E0 on ChrIns
+  effect: d6 call 1404FD540 on ChrIns+178
+  effect: d6 call 1403F4B80 on ChrIns
+  effect: d6 call 140406A80 on ActionFlagModule
+  effect: d6 call 1403F45A0 on ChrIns
+  effect: d5 call 1404FDF40 on ChrIns+178 (a2=+00)
+  effect: d6 call 1404FCF70 on ChrIns+178 (a2=+00)
+  effect: d6 call 1404FC4A0 on ChrIns+178
+  effect: d7 ChrIns+178+8 = reg
+  effect: d6 call 1404FC380 on ChrIns+178 (a2=+00)
+  effect: d6 call 1404FC530 on ChrIns+178
+  effect: d6 ChrIns+178+20 = reg
+  effect: d6 call 1404FC1F0 on ChrIns+178
+  effect: d7 ChrIns+178+28 = reg
+  effect: d6 call 1404FC5E0 on ChrIns+178
+  effect: d7 call 1404FE4E0 on ChrIns+178
+  effect: d6 call 1404FCED0 on ChrIns+178 (a2=+00)
+  effect: d6 call 1404FE4E0 on ChrIns+178
+  effect: d6 call 1404FC420 on ChrIns+178
+  effect: d6 call 1404FE5F0 on ChrIns+178
+  effect: d7 ChrIns+178+28 = 0x0
+  effect: d7 call 1404FE633 on ChrIns+178
+  effect: d4 call 14043E0E0 on ResistModule
+  effect: d5 call 14043D2E0 on ResistModule
+  effect: d5 call 14043EC20 on ResistModule
+  effect: d5 call 14043DE90 on ResistModule
+  effect: d6 ResistModule+B8 |= reg
+  effect: d6 call 14043F000 on ResistModule
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 95 [DS3]SpawnOneShotFFX_Ember uses=0 functions=18 steps=27012
+  +00 mov:UInt32x1  @1404A8B39  [s32 FFXID]
+        -> store 1404A8B30 +4   shared with 96:FFXID
+  +04 mov:UInt32x1  @1404A8B3E  [s32 DummyPolyID]
+        -> store 1404A8B30 +8   shared with 96:DummyPolyID
+  +08 mov:UInt32x1  @1404A8B30  [s32 SlotID]
+        -> store 1404A8B30 +0   shared with 96:SlotID
+  +0C cmp:UInt8x1  @1404A8B47  [b IsIgnoreDummyPolyAngle]
+        compared to: 0
+  +0D cmp:UInt8x1  @1404A8B55  [b IsFollowDummyPoly]
+        compared to: 0
+  +0E cmp:UInt8x1  @1404A8B33  [b IsRestrictToDummyPoly]
+        compared to: 0
+  +0F movzx:UInt8x1  @1404A8B69  [u8 ExtraSpawnCondition]
+        -> store 1404A8B30 +10   shared with 96:ExtraSpawnCondition
+  +10 movzx:UInt16x1  @14042FED2  [s16 StateInfo]
+        -> call 1404FA450 arg2   shared with 0:StateInfo, 1:StateInfo, 2:StateInfo, 96:StateInfo, 129:StateInfo
+  ctx: +18 +1A
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403F4940 on ChrIns
+  effect: d2 call 1404FA450 on ChrIns+178 (a2=+10)
+  effect: d2 call 14049B720 on ChrIns
+  effect: d3 call 140499A90 on ChrIns
+  effect: d4 call 14266E550 on ChrIns
+  effect: d5 ChrIns+20+0 = ?
+  effect: d4 call 14266E4A0 on ChrIns
+  effect: d4 call 140499170 on ChrIns
+  effect: d6 vcall ChrIns+8::vf10
+  effect: d5 call 14266E5D0 on ChrIns
+  effect: d6 ChrIns+10 = reg
+  effect: d4 call 14266E510 on ChrIns
+  effect: d5 call 14013E2C0 on ChrIns
+  effect: d6 call 14013E380 on ChrIns
+  effect: d7 call 14013E450 on ChrIns
+  effect: d6 ChrIns+10+0 = reg
+  effect: d6 ChrIns+10+10 = reg
+  effect: d6 ChrIns+10 += 0x18
+  effect: d3 ChrIns+20+0 = ?
+  note: unresolved indirect jump at 0x141EBD43F
+  unread: +12 <unnamed>, +14 <unnamed>
+
+## 96 SpawnOneShotFFX uses=25708 functions=18 steps=26984
+  +00 mov:UInt32x1  @1404A8B39  [s32 FFXID]
+        -> store 1404A8B30 +4   shared with 95:FFXID
+  +04 mov:UInt32x1  @1404A8B3E  [s32 DummyPolyID]
+        -> store 1404A8B30 +8   shared with 95:DummyPolyID
+  +08 mov:UInt32x1  @1404A8B30  [s32 SlotID]
+        -> store 1404A8B30 +0   shared with 95:SlotID
+  +0C cmp:UInt8x1  @1404A8B47  [b IsIgnoreDummyPolyAngle]
+        compared to: 0
+  +0D cmp:UInt8x1  @1404A8B55  [b IsFollowDummyPoly]
+        compared to: 0
+  +0E cmp:UInt8x1  @1404A8B33  [b IsRestrictToDummyPoly]
+        compared to: 0
+  +0F movzx:UInt8x1  @1404A8B69  [u8 ExtraSpawnCondition]
+        -> store 1404A8B30 +10   shared with 95:ExtraSpawnCondition
+  +10 movzx:UInt16x1  @14042FED2  [s16 StateInfo]
+        -> call 1404FA450 arg2   shared with 0:StateInfo, 1:StateInfo, 2:StateInfo, 95:StateInfo, 129:StateInfo
+  ctx: +18 +1A
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403F4940 on ChrIns
+  effect: d2 call 1404FA450 on ChrIns+178 (a2=+10)
+  effect: d2 call 14049B720 on ChrIns
+  effect: d3 call 140499A90 on ChrIns
+  effect: d4 call 14266E550 on ChrIns
+  effect: d5 ChrIns+20+0 = ?
+  effect: d4 call 14266E4A0 on ChrIns
+  effect: d4 call 140499170 on ChrIns
+  effect: d6 vcall ChrIns+8::vf10
+  effect: d5 call 14266E5D0 on ChrIns
+  effect: d6 ChrIns+10 = reg
+  effect: d4 call 14266E510 on ChrIns
+  effect: d5 call 14013E2C0 on ChrIns
+  effect: d6 call 14013E380 on ChrIns
+  effect: d7 call 14013E450 on ChrIns
+  effect: d6 ChrIns+10+0 = reg
+  effect: d6 ChrIns+10+10 = reg
+  effect: d6 ChrIns+10 += 0x18
+  effect: d3 ChrIns+20+0 = ?
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 104 [DS3]SpawnFFX_104 uses=0 functions=11 steps=329
+  +00 mov:UInt32x1  @1404A8EB0  [s32 FFXID]
+        -> store 1404A8EB0 +4
+  +04 mov:UInt32x1  @1404A8EB9  [s32 DummyPolyID]
+        -> store 1404A8EB0 +8
+  +08 cmp:UInt32x1  @140429E7C  [s32 SlotID]
+        compared to: 0
+  +0C cmp:UInt8x1  @1404A8EB2  [b IsIgnoreDummyPolyAngle]
+        compared to: 0
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403F4940 on ChrIns
+  effect: d1 call 14049B6C0 on ChrIns
+  effect: d2 call 14266E4A0 on ChrIns
+  effect: d2 call 140499170 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 110 SpawnFFX_General uses=123 functions=11 steps=316
+  +00 mov:UInt32x1  @1404A8F60  [s32 FFXID]
+        -> store 1404A8F60 +0
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403F4940 on ChrIns
+  effect: d1 call 14049B6C0 on ChrIns
+  effect: d2 call 14266E4A0 on ChrIns
+  effect: d2 call 140499170 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 112 SpawnFFX_FloorDetermined uses=112811 functions=22 steps=1016
+  +04 mov:UInt32x2  @140429BA8,140429C72  [s32 DummyPolyID]
+        -> call 14049AB60 arg4
+        -> call 14044F460 arg4
+        -> call 1404A4470 arg4
+        -> store 1404A4470 +3C
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403F3AC0 on ChrIns
+  effect: d1 call 1404A43E0 on ChrIns
+  effect: d2 call 1403F2D30 on ChrIns
+  effect: d2 call 1403FEA50 on ChrIns
+  effect: d1 call 14049AB60 on ChrIns (a4=+04)
+  effect: d2 call 140498E50 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  effect: d1 call 1404FAB50 on ChrIns+178
+  effect: d1 call 1404F71B0 on ChrIns+178
+  note: unresolved indirect jump at 0x141EBD43F
+  unread: +00 FFXID, +08 <unnamed>
+
+## 113 UnkType113 uses=2237 functions=2 steps=45
+  ctx: +18
+
+## 114 SpawnFFX_GoodsAndMagic uses=489 functions=17 steps=638
+  +04 movsx:Int16x2  @1404A8959  [s16 DummyPolySource]
+  +06 movsx:Int16x2  @1404A895D  [s16 DummyPolyID]
+        -> call 140B67340 arg3   shared with 115:DummyPolyID, 118:DummyPolyBladeBaseID, 118:DummyPolyBladeTipID, 138:DummyPolyID
+  +08 cmp:UInt32x1 mov:UInt32x1  @14042A624,1404A88F9  [s32 SlotID]
+        compared to: 0
+        -> store 1404A88D0 +0   shared with 115:SlotID
+  +0C cmp:UInt8x3  @1404A898A  [b IsIgnoreDummyPolyAngle]
+        compared to: 0
+  +0D movzx:UInt8x1  @1404A8907  [u8 ParamType]
+        compared to: 1
+  +0E movzx:UInt8x2  @1404A8916,1404A893B  [u8 SFXIndexID]
+        -> call 14047BFD0 arg3   shared with 115:SFXIndexID
+        -> call 14043D2E0 arg3   shared with 115:SFXIndexID, 129:OverrideSoundType, 129:OverrideSoundID, 129:SoundID, 133:SoundID, 134:SoundID
+        -> call 14047BB40 arg3   shared with 115:SFXIndexID
+  +0F cmp:UInt8x3  @1404A8992  [b IsFollowDummyPoly]
+        compared to: 0
+  +10 cmp:UInt8x3  @1404A899A  [b IsRestrictToDummyPoly]
+        compared to: 0
+  +11 movzx:UInt8x3  @1404A89A1  [u8 TimerType]
+        -> store 1404A88D0 +10   shared with 115:TimerType
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d3 call 14047BFD0 on SfxModule (a3=+0E)
+  effect: d4 call 14043D2E0 on SfxModule (a3=+0E)
+  effect: d3 call 14047BB40 on SfxModule (a3=+0E)
+  effect: d4 call 14043D2E0 on SfxModule
+  effect: d1 call 14049B5F0 on ChrIns
+  effect: d2 call 14266E4A0 on ChrIns
+  effect: d2 call 1404990F0 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EBD43F
+  unread: +00 FFXID_Deprecated
+
+## 115 SpawnFFX_GoodsAndMagicEX uses=720 functions=17 steps=638
+  +04 movsx:Int16x2  @1404A8959  [s16 DummyPolySource]
+  +06 movsx:Int16x2  @1404A895D  [s16 DummyPolyID]
+        -> call 140B67340 arg3   shared with 114:DummyPolyID, 118:DummyPolyBladeBaseID, 118:DummyPolyBladeTipID, 138:DummyPolyID
+  +08 cmp:UInt32x1 mov:UInt32x1  @1404290BF,1404A88F9  [s32 SlotID]
+        compared to: 0
+        -> store 1404A88D0 +0   shared with 114:SlotID
+  +0C cmp:UInt8x3  @1404A898A  [b IsIgnoreDummyPolyAngle]
+        compared to: 0
+  +0D movzx:UInt8x1  @1404A8907  [u8 ParamType]
+        compared to: 1
+  +0E movzx:UInt8x2  @1404A8916,1404A893B  [u8 SFXIndexID]
+        -> call 14047BFD0 arg3   shared with 114:SFXIndexID
+        -> call 14043D2E0 arg3   shared with 114:SFXIndexID, 129:OverrideSoundType, 129:OverrideSoundID, 129:SoundID, 133:SoundID, 134:SoundID
+        -> call 14047BB40 arg3   shared with 114:SFXIndexID
+  +0F cmp:UInt8x3  @1404A8992  [b IsFollowDummyPoly]
+        compared to: 0
+  +10 cmp:UInt8x3  @1404A899A  [b IsRestrictToDummyPoly]
+        compared to: 0
+  +11 movzx:UInt8x3  @1404A89A1  [u8 TimerType]
+        -> store 1404A88D0 +10   shared with 114:TimerType
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d3 call 14047BFD0 on SfxModule (a3=+0E)
+  effect: d4 call 14043D2E0 on SfxModule (a3=+0E)
+  effect: d3 call 14047BB40 on SfxModule (a3=+0E)
+  effect: d4 call 14043D2E0 on SfxModule
+  effect: d1 call 14049B5F0 on ChrIns
+  effect: d2 call 14266E4A0 on ChrIns
+  effect: d2 call 1404990F0 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EBD43F
+  unread: +00 FFXID_Deprecated
+
+## 116 SpawnFFX_Throw uses=6 functions=10 steps=255
+  +00 add:UInt32x1  @1404AE553  [s32 FFXID]
+  +04 mov:UInt32x1  @1404AE54C  [s32 DummyPolyID]
+  +08 cmp:UInt32x2 mov:UInt32x1  @14042C88E,1404AE53A,1404AE555  [s32 SlotID]
+        compared to: 0
+        -> store 1404AE500 +0
+  +0C cmp:UInt8x1  @1404AE532  [b IsRepeat]
+        compared to: 0
+  ctx: +18
+  effect: d2 call 1404551D0 on MaterialModule
+  effect: d1 call 14049BBD0 on ChrIns
+  effect: d2 call 14266E4A0 on ChrIns
+  effect: d2 call 140499480 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EBD43F
+  unread: +0D <unnamed>, +0E <unnamed>, +0F <unnamed>
+
+## 117 SpawnFFX_ThrowDirection uses=99 functions=25 steps=27080
+  +00 mov:UInt32x1  @1404A9076  [s32 ThrowDirectionSFXIndex]
+        compared to: 31
+        -> call 140D54520 arg3
+        -> call 1401B9540 arg3   shared with 792:FootSFXIndex
+  +04 mov:UInt32x1  @1404A9093  [s32 DummyPolyID]
+        -> store 1404A8F90 +8
+  +08 mov:UInt32x1  @1404A908E  [s32 SlotID]
+        -> store 1404A8F90 +0
+  +0C cmp:UInt8x1  @1404A8FBA  [b IsIgnoreDummyPolyAngle]
+        compared to: 0
+  +0D cmp:UInt8x1  @1404A8FD3  [b IsFollowDummyPoly]
+        compared to: 0
+  +0E cmp:UInt8x1  @1404A8FA1  [b IsRestrictToDummyPoly]
+        compared to: 0
+  +0F movzx:UInt8x1  @1404A8FA8  [u8 ExtraSpawnCondition]
+  ctx: +18
+  effect: d2 call 140480D10 on ThrowModule
+  effect: d2 call 140454F80 on MaterialModule
+  effect: d3 call 14043D2E0 on MaterialModule
+  effect: d2 call 1404551F0 on MaterialModule
+  effect: d2 call 140480CF0 on ThrowModule
+  effect: d2 call 1404551D0 on MaterialModule
+  effect: d1 call 14049B7E0 on ChrIns
+  effect: d2 call 140499C10 on ChrIns
+  effect: d3 call 14266E550 on ChrIns
+  effect: d4 ChrIns+20+0 = ?
+  effect: d3 call 14266E4A0 on ChrIns
+  effect: d3 call 140499800 on ChrIns
+  effect: d5 vcall ChrIns+8::vf10
+  effect: d4 call 14266E5D0 on ChrIns
+  effect: d5 ChrIns+10 = reg
+  effect: d3 call 14266E510 on ChrIns
+  effect: d4 call 14013E2C0 on ChrIns
+  effect: d5 call 14013E380 on ChrIns
+  effect: d6 call 14013E450 on ChrIns
+  effect: d7 call 14013E510 on ChrIns
+  effect: d7 call 14013E630 on ChrIns+8
+  effect: d7 ChrIns+18 = reg
+  effect: d7 ChrIns+10 = reg
+  effect: d7 ChrIns+8 = reg
+  effect: d5 ChrIns+10+0 = reg
+  effect: d5 ChrIns+10+10 = reg
+  effect: d5 ChrIns+10 += 0x18
+  effect: d2 ChrIns+20+0 = ?
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 118 SpawnFFX_Blade uses=2890 functions=11 steps=558
+  +00 mov:UInt32x1  @1404AF4B0  [s32 FFXID]
+  +04 movsx:Int16x1  @1404AF4B2  [s16 DummyPolySource]
+  +06 movsx:Int16x1  @1404AF4BB  [s16 DummyPolyBladeBaseID]
+        -> call 140B67340 arg3   shared with 114:DummyPolyID, 115:DummyPolyID, 138:DummyPolyID
+  +08 movsx:Int16x1  @1404AF4BF  [s16 DummyPolyBladeTipID]
+        -> call 140B67340 arg3   shared with 114:DummyPolyID, 115:DummyPolyID, 138:DummyPolyID
+  +0A cmp:UInt16x1 movsx:Int16x1  @14042723F,1404AF4B6  [s16 SlotID]
+        compared to: 0
+        -> store 1404AF490 +0
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 14049BC30 on ChrIns
+  effect: d2 call 14266E4A0 on ChrIns
+  effect: d2 call 140499500 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 119 SpawnFFX_Body_ForEventDuration uses=317 functions=18 steps=670
+  +04 mov:UInt32x1  @1404AE173  [s32 DummyPolyID]
+  +08 cmp:UInt32x2 mov:UInt32x1  @140426C1F,1404AE162,1404AE17A  [s32 SlotID]
+        compared to: 0
+        -> store 1404AE110 +0
+  +0C cmp:UInt8x1  @1404AE15A  [b IsRepeat]
+        compared to: 0
+  +0D movzx:UInt8x1  @140426C44  [u8 <unnamed>]  <== UNNAMED
+        compared to: 1
+  ctx: +18 +1A
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d2 call 140656200 on ChrIns
+  effect: d1 call 14049BBD0 on ChrIns
+  effect: d2 call 14266E4A0 on ChrIns
+  effect: d2 call 140499480 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x141EBD43F
+  unread: +00 FFXID
+
+## 120 SpawnFFX_ChrType uses=1481 functions=13 steps=728
+  +00 mov:UInt32x2  @1404A8D34,1404A8DEE  [s32 FFXID_ForAll]
+        -> store 1404A8D20 +4
+  +04 mov:UInt32x1  @1404A8E3A  [s32 FFXID_ForHost]
+        -> store 1404A8D20 +4
+  +08 mov:UInt32x1  @1404A8E59  [s32 FFXID_ForRoleParam1_FurledFinger]
+        -> store 1404A8D20 +4
+  +0C mov:UInt32x1  @1404A8E54  [s32 FFXID_ForRoleParam2_Duelist]
+        -> store 1404A8D20 +4
+  +10 mov:UInt32x1  @1404A8D81  [s32 FFXID_ForRoleParam20001_FurledFinger]
+        -> store 1404A8D20 +4
+  +14 mov:UInt32x1  @1404A8D91  [s32 FFXID_ForRoleParam20002_FurledFinger]
+        -> store 1404A8D20 +4
+  +18 mov:UInt32x1  @1404A8DA1  [s32 FFXID_ForRoleParam30001_Duelist]
+        -> store 1404A8D20 +4
+  +1C mov:UInt32x1  @1404A8DB1  [s32 FFXID_ForRoleParam30002_Duelist]
+        -> store 1404A8D20 +4
+  +20 mov:UInt32x1  @1404A8E0D  [s32 FFXID_ForRoleParam10001_Hunter]
+        -> store 1404A8D20 +4
+  +24 mov:UInt32x1  @1404A8DE1  [s32 FFXID_ForRoleParam90001_Hunter]
+        -> store 1404A8D20 +4
+  +28 mov:UInt32x1  @1404A8DC1  [s32 FFXID_ForRoleParam60002_Hunter]
+        -> store 1404A8D20 +4
+  +2C mov:UInt32x1  @1404A8DD1  [s32 FFXID_ForRoleParam70002_BloodyFinger]
+        -> store 1404A8D20 +4
+  +30 mov:UInt32x12  @1404A8E5C  [s32 DummyPolyID]
+        -> store 1404A8D20 +8
+  +34 cmp:UInt32x1 mov:UInt32x12  @140429DE8,1404A8E63  [s32 SlotID]
+        compared to: 0
+        -> store 1404A8D20 +0
+  +38 cmp:UInt8x12  @1404A8E5F  [b IsRepeat]
+        compared to: 0
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d2 call 1403EEE40 on ChrIns
+  effect: d2 call 1403F1440 on ChrIns
+  effect: d2 call 1403F0980 on ChrIns
+  effect: d1 call 14049B6C0 on ChrIns
+  effect: d2 call 14266E4A0 on ChrIns
+  effect: d2 call 140499170 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 121 [DS3]SpawnFFX_121 uses=0 functions=10 steps=267
+  +00 mov:UInt32x1  @1404AE361  [s32 FFXID]
+  +04 movsx:Int16x1  @1404AE359  [s16 DummyPolyID]
+  +06 cmp:UInt8x2 movsx:Int8x1  @14042914F,1404AE347,1404AE366  [b <unnamed>]  <== UNNAMED
+        compared to: 0
+        -> store 1404AE330 +0
+  +07 movsx:Int8x1  @140429153  [u8 <unnamed>]  <== UNNAMED  <== SIGNED
+        compared to: 1
+  +08 cmp:UInt8x1  @1404AE33F  [s32 <unnamed>]  <== SIZE 1 vs 4  <== UNNAMED  <== ASSERTED 0
+        compared to: 0
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 14049BBD0 on ChrIns
+  effect: d2 call 14266E4A0 on ChrIns
+  effect: d2 call 140499480 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 122 [DS3]SpawnFFX_BySpEffect1 uses=0 functions=28 steps=1019
+  +00 mov:UInt32x2  @1404AE20D,1404AE2C1  [s32 FFXID]
+        -> call 141EC4940 arg4   shared with 1:AttackType, 138:DummyPolyID, 307:Condition0x64_GetWeaponData
+        -> call 141EC4870 arg4   shared with 1:AttackType, 138:DummyPolyID, 307:Condition0x64_GetWeaponData
+        -> call 141EC8100 arg4   shared with 1:AttackType, 138:DummyPolyID, 307:Condition0x64_GetWeaponData
+        -> call 141ECA780 arg4   shared with 1:AttackType, 307:Condition0x64_GetWeaponData
+        -> call 1424FED08 arg4   shared with 1:AttackType, 307:Condition0x64_GetWeaponData, 307:PCBehaviorType
+        -> call 1424FEDCC arg4   shared with 1:AttackType, 307:Condition0x64_GetWeaponData, 307:PCBehaviorType
+  +04 movsx:Int16x2  @1404AE2E8  [s16 DummyPolyID]
+  +06 movzx:UInt16x1  @1404AE274  [s16 <unnamed>]  <== UNNAMED
+        -> call 140607630 arg3
+        -> call 1403EFA90 arg3
+  +08 cmp:UInt8x3 movsx:Int8x2  @1404273E4,1404AE2D7,1404AE2F0  [u8 <unnamed>]  <== UNNAMED  <== SIGNED
+        compared to: 0
+        -> store 1404AE1F0 +0
+  +09 cmp:UInt8x1  @1404AE210  [b IsEnable]
+        compared to: 0
+  +0A movsx:Int16x1  @1404273E8  [s16 SpEffectID]
+        -> call 1404FA7F0 arg2   shared with 66:SpEffectID, 67:SpEffectID, 123:SpEffectId, 601:SpEffectID_Exist, 607:SpEffectID_Exist, 609:SpEffectID_IsExist
+        -> store 1404FA7F0 +8   shared with 66:SpEffectID, 67:SpEffectID, 123:SpEffectId, 601:SpEffectID_Exist, 607:SpEffectID_Exist, 609:SpEffectID_IsExist
+  +0C cmp:UInt8x2  @1404AE2D0  [u8 <unnamed>]  <== UNNAMED
+        compared to: 0
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1404FA7F0 on ChrIns+178 (a2=+0A)
+  effect: d2 call 140454F80 on MaterialModule
+  effect: d3 call 14043D2E0 on MaterialModule
+  effect: d3 call 1403EFA90 on ChrIns (a3=+06)
+  effect: d3 call 1403EFA90 on ChrIns
+  effect: d2 call 140454F80 on MaterialModule (a4=+00)
+  effect: d3 call 14043D2E0 on MaterialModule (a4=+00)
+  effect: d1 call 14049BBD0 on ChrIns
+  effect: d2 call 14266E4A0 on ChrIns
+  effect: d2 call 140499480 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 123 [DS3]SpawnFFX_BySpEffect2 uses=0 functions=67 steps=23602
+  +00 mov:UInt32x2  @1404272EB  [s32 <unnamed>]  <== UNNAMED
+  +04 mov:UInt32x1  @1404272FC  [s32 <unnamed>]  <== UNNAMED
+  +08 movzx:UInt8x1  @140427307  [u8 <unnamed>]  <== UNNAMED
+  +09 movzx:UInt8x1  @14042730F  [u8 <unnamed>]  <== UNNAMED
+  +0A movsx:Int16x1  @1404272CF  [s16 SpEffectId]
+        -> call 1404FA7F0 arg2   shared with 66:SpEffectID, 67:SpEffectID, 122:SpEffectID, 601:SpEffectID_Exist, 607:SpEffectID_Exist, 609:SpEffectID_IsExist
+        -> store 1404FA7F0 +8   shared with 66:SpEffectID, 67:SpEffectID, 122:SpEffectID, 601:SpEffectID_Exist, 607:SpEffectID_Exist, 609:SpEffectID_IsExist
+  +0E movzx:UInt8x1  @14042731E  [u8 <unnamed>]  <== UNNAMED
+  +0F movzx:UInt8x1  @140427332  [u8 <unnamed>]  <== UNNAMED
+  ctx: +18 +10 +20 +30
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1404FA7F0 on ChrIns+178 (a2=+0A)
+  effect: d2 call 1403EEE40 on ChrIns
+  effect: d2 call 1404FA450 on ChrIns+178
+  effect: d2 call 140656200 on ChrIns
+  effect: d2 call 1403C2D70 on ChrIns
+  effect: d3 call 1403F4560 on ChrIns
+  effect: d2 call 1403F4270 on ChrIns
+  effect: d2 call 14065ABC0 on ChrIns
+  effect: d3 call 140656200 on ChrIns
+  effect: d3 call 1403BE3C0 on ChrIns+638
+  effect: d3 call 140659F90 on ChrIns
+  note: unresolved indirect jump at 0x1403BE467
+  unread: +0C <unnamed>, +0D <unnamed>
+
+## 128 Wwise_PlaySound_CenterBody uses=581 functions=2 steps=45
+  ctx: +18
+  unread: +00 SoundType, +04 SoundID
+
+## 129 Wwise_PlaySound_BySlot uses=536986 functions=47 steps=10072
+  +00 mov:UInt32x2  @14042B0BA  [s32 SoundType]
+        compared to: 8,9,1,5
+        -> store 14042B010 +77
+        -> call 140455620 arg2   shared with 132:SoundType, 133:SoundType, 134:SoundType
+        -> call 14043D2E0 arg2   shared with 132:SoundType, 133:SoundType, 134:SoundType, 606:JigglerId, 902:RideStateAgain?
+        -> call 140691490 arg1   shared with 132:SoundType, 133:SoundType, 134:SoundType
+        -> call 140455560 arg2   shared with 132:SoundType, 133:SoundType, 134:SoundType
+        -> call 1406913F0 arg1   shared with 132:SoundType, 133:SoundType, 134:SoundType
+  +04 mov:UInt32x4  @14042B0EA  [s32 SoundID]
+        compared to: 7410
+        -> call 140455620 arg3   shared with 133:SoundID, 134:SoundID
+        -> call 14043D2E0 arg3   shared with 114:SFXIndexID, 115:SFXIndexID, 133:SoundID, 134:SoundID
+        -> call 140691490 arg2   shared with 133:SoundID, 134:SoundID
+        -> call 1404C8750 arg2   shared with 133:SoundID, 134:SoundID
+        -> call 140455560 arg3   shared with 133:SoundID, 134:SoundID
+        -> call 1406913F0 arg2   shared with 133:SoundID, 134:SoundID
+  +08 mov:UInt32x2  @14042B1A1  [s32 DummyPolyID]
+        -> store 14042B010 +FFFFFFFFFFFFFFCF
+        -> store 14042B010 +77
+        -> store 14042B010 +67
+  +0C mov:UInt32x2  @14042B0C0  [s32 SlotID]
+        -> store 14042B010 +7F
+  +10 movzx:UInt16x1  @14042B09C  [s16 StateInfo]
+        -> call 1404FA450 arg2   shared with 0:StateInfo, 1:StateInfo, 2:StateInfo, 95:StateInfo, 96:StateInfo
+  +12 movzx:UInt8x2  @14042B1B4  [u8 PlaybackBehaviorType]
+  +13 cmp:UInt8x2  @14042B1A8  [b <unnamed>]  <== UNNAMED
+  +14 mov:UInt32x2  @14042B24B  [s32 OverrideSoundType]
+        compared to: 8,9,1
+        -> call 140455620 arg2   shared with 132:SoundType, 133:SoundType, 134:SoundType
+        -> call 140455620 arg3   shared with 133:SoundID, 134:SoundID
+        -> call 14043D2E0 arg2   shared with 132:SoundType, 133:SoundType, 134:SoundType, 606:JigglerId, 902:RideStateAgain?
+        -> call 14043D2E0 arg3   shared with 114:SFXIndexID, 115:SFXIndexID, 133:SoundID, 134:SoundID
+        -> call 140691490 arg1   shared with 132:SoundType, 133:SoundType, 134:SoundType
+        -> call 140691490 arg2   shared with 133:SoundID, 134:SoundID
+  +18 mov:UInt32x2  @14042B25E  [s32 OverrideSoundID]
+        -> call 140455560 arg3   shared with 133:SoundID, 134:SoundID
+        -> call 14043D2E0 arg3   shared with 114:SFXIndexID, 115:SFXIndexID, 133:SoundID, 134:SoundID
+        -> call 1406913F0 arg2   shared with 133:SoundID, 134:SoundID
+  +1C movzx:UInt8x4  @14042B0F6  [s8 SoundIDOffsetType]
+        compared to: 255,1
+        -> call 140430430 arg2
+  ctx: +18 +1A +19
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403F48B0 on ChrIns
+  effect: d2 call 14048D8A0 on ChrIns+28
+  effect: d2 call 1403FE7C0 on ChrIns
+  effect: d1 call 1404FA450 on ChrIns+178 (a2=+10)
+  effect: d1 call 140455620 on MaterialModule
+  effect: d2 call 14043D2E0 on MaterialModule
+  effect: d1 call 140455560 on MaterialModule
+  effect: d2 call 140454F00 on MaterialModule
+  effect: d3 call 14043D2E0 on MaterialModule
+  effect: d2 call 1404550A0 on MaterialModule
+  effect: d2 call 140455050 on MaterialModule
+  effect: d2 call 1404383D0 on DataModule
+  effect: d3 call 14043D2E0 on DataModule
+  effect: d3 call 1404379C0 on DataModule
+  effect: d4 call 140436C30 on DataModule
+  effect: d5 call 14043D2E0 on DataModule
+  effect: d3 call 140436320 on HitStopModule
+  effect: d4 call 140436050 on HitStopModule
+  effect: d5 call 140436010 on HitStopModule
+  effect: d6 call 140439C50 on HitStopModule
+  effect: d7 call 140439FD0 on HitStopModule
+  effect: d5 HitStopModule+10 = ?
+  effect: d2 call 1403F14E0 on ChrIns
+  effect: d2 call 1403E9580 on ChrIns
+  effect: d1 call 140455620 on MaterialModule (a2=+14,a3=+14)
+  effect: d2 call 14043D2E0 on MaterialModule (a2=+14,a3=+14)
+  effect: d1 call 140455560 on MaterialModule (a2=+14,a3=+18)
+  effect: d2 call 14043D2E0 on MaterialModule (a3=+18)
+  effect: d1 call 1404553C0 on MaterialModule
+  effect: d2 call 140436C30 on DataModule
+  effect: d1 call 14049BAB0 on ChrIns
+  effect: d1 call 140455620 on MaterialModule (a2=+00,a3=+04)
+  effect: d2 call 14043D2E0 on MaterialModule (a2=+00,a3=+04)
+  effect: d1 call 140455560 on MaterialModule (a2=+00,a3=+04)
+  effect: d2 call 14043D2E0 on MaterialModule (a3=+04)
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x14251FED5
+
+## 132 [DS3]PlaySound_Weapon uses=0 functions=39 steps=9025
+  +00 mov:UInt32x1  @14042C0D3  [s32 SoundType]
+        compared to: 8,9,1
+        -> call 140455620 arg2   shared with 129:OverrideSoundType, 129:SoundType, 133:SoundType, 134:SoundType
+        -> call 14043D2E0 arg2   shared with 129:OverrideSoundType, 129:SoundType, 133:SoundType, 134:SoundType, 606:JigglerId, 902:RideStateAgain?
+        -> call 140691490 arg1   shared with 129:OverrideSoundType, 129:SoundType, 133:SoundType, 134:SoundType
+        -> call 140455560 arg2   shared with 129:OverrideSoundType, 129:SoundType, 133:SoundType, 134:SoundType
+        -> call 1406913F0 arg1   shared with 129:OverrideSoundType, 129:SoundType, 133:SoundType, 134:SoundType
+  +04 mov:UInt32x2  @14042C0F0  [s32 SoundID]
+        -> store 14042C050 +67
+  +08 mov:UInt32x1  @14042C1A9  [s32 <unnamed>]  <== UNNAMED
+        -> store 14042C050 +67
+  +0C mov:UInt32x1  @14042C0D6  [s32 <unnamed>]  <== UNNAMED
+        -> call 14049BAB0 arg2
+  +10 movzx:UInt8x1  @14042C1B6  []  <== NO FIELD
+  +11 cmp:UInt8x1  @14042C1AD  []  <== NO FIELD
+        compared to: 0
+  +12 movzx:UInt8x2  @14042C0FB  []  <== NO FIELD
+        compared to: 1
+        -> call 140430430 arg2   shared with 129:SoundIDOffsetType
+  ctx: +18 +1A +19
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403F48B0 on ChrIns
+  effect: d2 call 14048D8A0 on ChrIns+28
+  effect: d2 call 1403FE7C0 on ChrIns
+  effect: d1 call 140455620 on MaterialModule (a2=+00)
+  effect: d2 call 14043D2E0 on MaterialModule (a2=+00)
+  effect: d1 call 140455560 on MaterialModule (a2=+00)
+  effect: d2 call 14043D2E0 on MaterialModule
+  effect: d2 call 1404383D0 on DataModule
+  effect: d3 call 14043D2E0 on DataModule
+  effect: d3 call 1404379C0 on DataModule
+  effect: d4 call 140436C30 on DataModule
+  effect: d5 call 14043D2E0 on DataModule
+  effect: d3 call 140436320 on HitStopModule
+  effect: d4 call 140436050 on HitStopModule
+  effect: d5 call 140436010 on HitStopModule
+  effect: d6 call 140439C50 on HitStopModule
+  effect: d7 call 140439FD0 on HitStopModule
+  effect: d5 HitStopModule+10 = ?
+  effect: d2 call 140436C30 on DataModule
+  effect: d2 call 1403F14E0 on ChrIns
+  effect: d2 call 1403E9580 on ChrIns
+  effect: d1 call 14049BAB0 on ChrIns (a2=+0C)
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x14251FED5
+
+## 133 Wwise_PlaySound_Unk133 uses=1240 functions=27 steps=2407
+  +00 mov:UInt32x1  @14042B575  [s32 SoundType]
+        compared to: 8,9,1
+        -> call 140455620 arg2   shared with 129:OverrideSoundType, 129:SoundType, 132:SoundType, 134:SoundType
+        -> call 14043D2E0 arg2   shared with 129:OverrideSoundType, 129:SoundType, 132:SoundType, 134:SoundType, 606:JigglerId, 902:RideStateAgain?
+        -> call 140691490 arg1   shared with 129:OverrideSoundType, 129:SoundType, 132:SoundType, 134:SoundType
+        -> call 140455560 arg2   shared with 129:OverrideSoundType, 129:SoundType, 132:SoundType, 134:SoundType
+        -> call 1406913F0 arg1   shared with 129:OverrideSoundType, 129:SoundType, 132:SoundType, 134:SoundType
+  +04 mov:UInt32x3  @14042B58C,14042B5A7  [s32 SoundID]
+        -> call 140455620 arg3   shared with 129:OverrideSoundType, 129:SoundID, 134:SoundID
+        -> call 14043D2E0 arg3   shared with 114:SFXIndexID, 115:SFXIndexID, 129:OverrideSoundType, 129:OverrideSoundID, 129:SoundID, 134:SoundID
+        -> call 140691490 arg2   shared with 129:OverrideSoundType, 129:SoundID, 134:SoundID
+        -> call 1404C8750 arg2   shared with 129:OverrideSoundType, 129:SoundID, 134:SoundID
+        -> call 140455560 arg3   shared with 129:OverrideSoundID, 129:SoundID, 134:SoundID
+        -> call 1406913F0 arg2   shared with 129:OverrideSoundID, 129:SoundID, 134:SoundID
+  +08 mov:UInt32x1  @14042B5C7  [s32 SlotID]
+  +0C cmp:UInt8x1  @14042B5CA  [u8 UnkVal]
+        compared to: 0
+  +0D cmp:UInt8x1  @14042B542  [u8 <unnamed>]  <== UNNAMED
+        compared to: 0
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403F48B0 on ChrIns
+  effect: d2 call 14048D8A0 on ChrIns+28
+  effect: d2 call 1403FE7C0 on ChrIns
+  effect: d1 call 140455620 on MaterialModule (a2=+00,a3=+04)
+  effect: d2 call 14043D2E0 on MaterialModule (a2=+00,a3=+04)
+  effect: d1 call 140455560 on MaterialModule (a2=+00,a3=+04)
+  effect: d2 call 14043D2E0 on MaterialModule (a3=+04)
+  effect: d2 call 14043D2E0 on MaterialModule
+  effect: d2 call 1404383D0 on DataModule
+  effect: d3 call 14043D2E0 on DataModule
+  effect: d3 call 1404379C0 on DataModule
+  effect: d4 call 140436C30 on DataModule
+  effect: d5 call 14043D2E0 on DataModule
+  effect: d3 call 140436320 on HitStopModule
+  effect: d4 call 140436050 on HitStopModule
+  effect: d5 call 140436010 on HitStopModule
+  effect: d6 call 140439C50 on HitStopModule
+  effect: d7 call 140439FD0 on HitStopModule
+  effect: d5 HitStopModule+10 = ?
+  effect: d2 call 140436C30 on DataModule
+  effect: d2 call 1403F14E0 on ChrIns
+  effect: d2 call 1403E9580 on ChrIns
+  note: unresolved indirect jump at 0x14251FED5
+
+## 134 Wwise_PlaySound_Unk134 uses=645 functions=41 steps=2748
+  +00 mov:UInt32x1  @14042B40C  [s32 SoundType]
+        compared to: 8,9,1
+        -> call 140455620 arg2   shared with 129:OverrideSoundType, 129:SoundType, 132:SoundType, 133:SoundType
+        -> call 14043D2E0 arg2   shared with 129:OverrideSoundType, 129:SoundType, 132:SoundType, 133:SoundType, 606:JigglerId, 902:RideStateAgain?
+        -> call 140691490 arg1   shared with 129:OverrideSoundType, 129:SoundType, 132:SoundType, 133:SoundType
+        -> call 140455560 arg2   shared with 129:OverrideSoundType, 129:SoundType, 132:SoundType, 133:SoundType
+        -> call 1406913F0 arg1   shared with 129:OverrideSoundType, 129:SoundType, 132:SoundType, 133:SoundType
+  +04 mov:UInt32x2  @14042B42A,14042B445  [s32 SoundID]
+        -> call 140455620 arg3   shared with 129:OverrideSoundType, 129:SoundID, 133:SoundID
+        -> call 14043D2E0 arg3   shared with 114:SFXIndexID, 115:SFXIndexID, 129:OverrideSoundType, 129:OverrideSoundID, 129:SoundID, 133:SoundID
+        -> call 140691490 arg2   shared with 129:OverrideSoundType, 129:SoundID, 133:SoundID
+        -> call 1404C8750 arg2   shared with 129:OverrideSoundType, 129:SoundID, 133:SoundID
+        -> call 140455560 arg3   shared with 129:OverrideSoundID, 129:SoundID, 133:SoundID
+        -> call 1406913F0 arg2   shared with 129:OverrideSoundID, 129:SoundID, 133:SoundID
+  +08 mov:UInt32x1  @14042B465  [s32 <unnamed>]  <== UNNAMED
+  +0C movss:Float32x1  @14042B468  [f32 <unnamed>]  <== UNNAMED
+        -> call 1404AD960 farg4
+        -> call 1403F55A0 farg4
+        -> call 1403C7B90 farg4
+        -> call 141EC4940 farg4
+        -> call 141EC4870 farg4
+        -> call 141EC8100 farg4
+  +10 movss:Float32x1  @14042B46D  [f32 <unnamed>]  <== UNNAMED
+        -> call 1404AD960 farg1
+        -> call 1424FEAE0 farg1
+        -> call 1424FF290 farg1
+        -> call 14264ECE4 farg1
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403F48B0 on ChrIns
+  effect: d2 call 14048D8A0 on ChrIns+28
+  effect: d2 call 1403FE7C0 on ChrIns
+  effect: d1 call 140455620 on MaterialModule (a2=+00,a3=+04)
+  effect: d2 call 14043D2E0 on MaterialModule (a2=+00,a3=+04)
+  effect: d1 call 140455560 on MaterialModule (a2=+00,a3=+04)
+  effect: d2 call 14043D2E0 on MaterialModule (a3=+04)
+  effect: d2 call 14043D2E0 on MaterialModule
+  effect: d1 call 1404AD960 on ChrIns (a1=+10f,a4=+0Cf)
+  effect: d2 call 1403F55A0 on ChrIns (a4=+0Cf)
+  effect: d3 call 1403C7B90 on ChrIns+58 (a4=+0Cf)
+  effect: d2 call 140436E50 on DataModule
+  effect: d3 call 14043D2E0 on DataModule
+  effect: d3 DataModule+B8 = ?
+  effect: d3 call 140436C30 on DataModule
+  effect: d4 call 14043D2E0 on DataModule
+  effect: d3 call 140435FD0 on KnockBackModule
+  effect: d4 call 140439BF0 on KnockBackModule
+  effect: d5 call 140439EB0 on KnockBackModule
+  effect: d3 DataModule+B8 = reg
+  note: unresolved indirect jump at 0x14251FED5
+  note: unresolved indirect jump at 0x141EC4958
+
+## 137 [DS3]DecalParamID_CenterBody uses=0 functions=9 steps=445
+  +00 mov:UInt32x1  @14042FB40  [s32 DecalParamID]
+        compared to: -1
+        -> call 1403F5580 arg3   shared with 138:DecalParamID, 10137:DecalParamId, 10138:DecalParamId
+  ctx: +18 +19
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d2 call 1403F5580 on ChrIns
+  effect: d2 call 1403F5580 on ChrIns (a3=+00)
+
+## 138 DecalParamID_DummyPoly uses=1595 functions=17 steps=1040
+  +00 mov:UInt32x1  @14042FBE4  [s32 DecalParamID]
+        compared to: -1
+        -> call 1403F5580 arg3   shared with 137:DecalParamID, 10137:DecalParamId, 10138:DecalParamId
+  +04 mov:UInt32x1  @14042FC58  [s32 DummyPolyID]
+        -> call 1403E50A0 arg4
+        -> call 140D38D60 arg4
+        -> call 140D3A2A0 arg4
+        -> call 141EC4940 arg4   shared with 1:AttackType, 122:FFXID, 307:Condition0x64_GetWeaponData
+        -> call 141EC4870 arg4   shared with 1:AttackType, 122:FFXID, 307:Condition0x64_GetWeaponData
+        -> call 141EC8100 arg4   shared with 1:AttackType, 122:FFXID, 307:Condition0x64_GetWeaponData
+  ctx: +18 +19
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d2 call 1403F5580 on ChrIns
+  effect: d2 call 1403F5580 on ChrIns (a3=+00)
+  note: unresolved indirect jump at 0x141EC4958
+
+## 139 DecalParamID_Unk uses=6479 functions=18 steps=866
+  +00 mov:UInt32x1  @14042FD45  [s32 DecalParamID]
+  +04 movzx:UInt16x1  @14042FCCF  [u16 DummyPolyID1]
+  +06 movsx:Int16x1  @14042FCED  [u16 DummyPolyID2]  <== SIGNED
+  +08 movzx:UInt16x1  @14042FCD9  [u16 DummyPolyID3]
+  +0A movsx:Int16x1  @14042FCF6  [u16 DummyPolyID4]  <== SIGNED
+  +0C movzx:UInt16x1  @14042FCE3  [u16 DummyPolyID5]
+  +0E movsx:Int16x1  @14042FCFF  [u16 DummyPolyID6]  <== SIGNED
+  ctx: +18 +19
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d2 call 1404A43E0 on ChrIns
+  effect: d3 call 1403F2D30 on ChrIns
+  effect: d3 call 1403FEA50 on ChrIns
+  effect: d2 call 1403EFC50 on ChrIns
+  effect: d3 call 140455050 on MaterialModule
+  effect: d4 call 14043D2E0 on MaterialModule
+  effect: d2 call 1403F5580 on ChrIns
+
+## 144 RumbleCam_Local uses=12105 functions=11 steps=304
+  +00 movsx:Int16x1  @14042BF66  [s16 RumbleCamID]
+        -> call 140567BC0 arg2   shared with 145:RumbleCamID
+        -> call 140D62310 arg2   shared with 145:RumbleCamID
+        -> store 140D62310 +0   shared with 145:RumbleCamID
+  +02 movsx:Int16x1  @14042BF69  [u16 DummyPolyID]  <== SIGNED
+        -> store 14042BF00 +FFFFFFFFFFFFFF97
+  +04 movss:Float32x1  @14042BF6D  [f32 FalloffStart]
+  +08 movss:Float32x1  @14042BF72  [f32 FalloffEnd]
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403EF8F0 on ChrIns
+  effect: d1 call 1403F1200 on ChrIns
+
+## 145 RumbleCam_Global uses=2828 functions=8 steps=230
+  +00 movsx:Int16x1  @140429D00  [s16 RumbleCamID]
+        -> call 14042D980 arg3
+        -> call 140567BC0 arg2   shared with 144:RumbleCamID
+        -> call 140D62310 arg2   shared with 144:RumbleCamID
+        -> store 140D62310 +0   shared with 144:RumbleCamID
+  +02 movsx:Int16x1  @140429CFC  [u16 Condition]  <== SIGNED
+        compared to: 1
+        -> call 1403F4270 arg2   shared with 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+  ctx: +18
+  effect: d1 call 1403F4270 on ChrIns (a2=+02)
+  effect: d1 call 1403F4040 on ChrIns
+  unread: +04 <unnamed>
+
+## 150 SetLockCamParam_Self uses=92 functions=5 steps=91
+  +00 mov:UInt32x1  @1404277AC  [s32 LockCamParamID]
+        -> call 14067BD60 arg1
+        -> store 14067BD60 +4C
+  ctx: +18
+  effect: d1 call 1403F4270 on ChrIns
+
+## 151 SetCameraFollow_DummyPoly uses=126 functions=5 steps=91
+  +00 mov:UInt32x1  @14042794C  [s32 DummyPolyID]
+        -> call 14067BD80 arg1
+        -> store 14067BD80 +50
+  ctx: +18
+  effect: d1 call 1403F4270 on ChrIns
+
+## 152 CameraZoomOut uses=188 functions=7 steps=133
+  +00 movss:Float32x2  @1404278FA,14042790A  [f32 CameraDistance]
+        -> call 14067BAC0 farg1
+        -> store 14067BAC0 +58
+        -> call 14067BAA0 farg1
+        -> store 14067BAA0 +58
+  +04 movss:Float32x1  @140427905  [f32 <unnamed>]  <== UNNAMED
+        -> call 14067BAA0 farg2
+        -> store 14067BAA0 +5C
+  +08 movss:Float32x1  @140427918  [f32 <unnamed>]  <== UNNAMED
+        -> call 14067BA80 farg1
+        -> store 14067BA80 +64
+  +0C movss:Float32x1  @140427913  [f32 <unnamed>]  <== UNNAMED
+        -> call 14067BA80 farg2
+        -> store 14067BA80 +68
+  +10 movzx:UInt8x1  @1404278B7  [u8 Type]
+        compared to: 1
+        -> call 14067BAC0 arg1
+        -> call 14067BAA0 arg1
+  +11 cmp:UInt8x1  @1404278B3  [b <unnamed>]  <== UNNAMED
+        compared to: 0
+  ctx: +18 +20 +14
+  effect: d1 call 1403F4270 on ChrIns
+
+## 153 ForceCameraDirection uses=22 functions=5 steps=164
+  +00 movd:UInt32x3  @140427841  [s32 VerticalAngle]
+  +04 movd:UInt32x3  @14042783C  [s32 HorizontalAngle]
+  +08 mov:UInt32x1  @1404277F6  [s32 MethodType]
+  +0C cmp:UInt8x3  @140427849  [u8 VerticalEnabled]
+        compared to: 0
+  +0D cmp:UInt8x3  @140427838  [u8 HorizontalEnabled]
+        compared to: 0
+  ctx: +18 +20 +14
+  effect: d1 call 1403F4270 on ChrIns
+
+## 155 SetLockCamParam_Target uses=43 functions=2 steps=50
+  +00 mov:UInt32x1  @14042E912  [s32 LockCamParamID]
+  ctx: +18
+  effect: d0 ActionFlagModule+1E4 = field +00
+
+## 160 [DS3]SekiroCode4 uses=0 functions=2 steps=45
+  ctx: +18
+
+## 161 [DS3]DecalOnLanding uses=0 functions=2 steps=45
+  ctx: +18
+
+## 192 [DS3]DebugFadeOut uses=0 functions=2 steps=48
+  +00 mov:UInt32x1  @14042E928  [f32 FadeOut]
+  ctx: +18
+  effect: d0 ChrIns+240 = field +00
+
+## 193 SetOpacityKeyframe uses=6287 functions=5 steps=117
+  +00 subss:Float32x1 addss:Float32x1  @1404298A4,1404298D5  [f32 OpacityAtEventStart]
+  +04 movss:Float32x1  @14042989F  [f32 OpacityAtEventEnd]
+  +08 cmp:UInt8x1  @1404298FF  [u8 <unnamed>]  <== UNNAMED
+        compared to: 0
+  ctx: +18 +20 +14 +1A
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 ChrIns+238 = field +04
+  effect: d1 call 14042990C on ChrIns
+  effect: d1 vcall ChrIns::vf171
+  note: unresolved indirect jump at 0x140429958
+
+## 196 [DS3]DebugStringPrint_C_ARSN_BumpBlendDecal uses=0 functions=15 steps=603
+  +00 movss:Float32x1  @14042AA52  [f32 <unnamed>]  <== UNNAMED
+        -> call 140B650E0 farg2
+        -> store 140B650E0 +4
+  +04 movss:Float32x1  @14042AA92  [f32 <unnamed>]  <== UNNAMED
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +08 movss:Float32x1  @14042AAA6  [f32 <unnamed>]  <== UNNAMED
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +0C movss:Float32x1  @14042AADE  [f32 <unnamed>]  <== UNNAMED
+        -> call 140B650E0 farg2
+        -> store 140B650E0 +4
+  +10 movss:Float32x1  @14042AAF5  [f32 <unnamed>]  <== UNNAMED
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +14 movss:Float32x1  @14042AB09  [f32 <unnamed>]  <== UNNAMED
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +18 movzx:UInt16x1  @14042AA60  [u16 <unnamed>]  <== UNNAMED
+  ctx: +18
+  effect: d1 call 14043BEC0 on ModelParamModifierModule
+  effect: d2 call 140B66AD0 on UnkE0Module
+  effect: d2 call 140B66B30 on UnkE0Module
+  effect: d2 call 14043C970 on ModelParamModifierModule
+  effect: d3 call 140B668F0 on UnkE0Module
+  effect: d4 call 140B66DB0 on UnkE0Module
+  effect: d5 call 140B66CF0 on UnkE0Module
+  effect: d6 call 140B67050 on UnkE0Module
+  effect: d6 UnkE0Module+18 = reg
+  effect: d6 UnkE0Module+10 = reg
+  effect: d6 UnkE0Module+8 = reg
+  effect: d4 UnkE0Module+10 += 0xD8
+
+## 197 [DS3]FadeOut uses=21 functions=3 steps=70
+  +00 subss:Float32x1 addss:Float32x1  @14042A002,14042A01F  [f32 GhostMain]
+  +04 movss:Float32x1  @140429FFC  [f32 GhostSub]
+  ctx: +18 +20 +14
+  effect: d1 ChrIns+238 = field +04
+  effect: d1 ActionFlagModule+40 |= 0x2000000
+
+## 198 ModelParamModifier_198 uses=514 functions=32 steps=1310
+  +00 movsx:Int16x1  @140B66126  [s16 <unnamed>]  <== UNNAMED
+        -> store 140B66120 +4
+  +04 cmp:UInt32x1 mov:UInt32x1  @14042A786,140B6612C  [s32 <unnamed>]  <== UNNAMED
+        compared to: -1,99
+        -> store 140B66120 +18
+        -> call 140D41BF0 arg1
+        -> call 140D41BB0 arg1
+        -> call 140D41A40 arg2
+        -> call 141EC4940 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+        -> call 141EC4870 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+  +08 movups:Packed128_Float32x1  @140B658B3  [f32 <unnamed>]  <== UNNAMED
+  +18 mov:UInt32x1  @140B658BA  [f32 <unnamed>]  <== UNNAMED
+        -> store 140B658B0 +14
+  +1C movss:Float32x1  @140B66385  [f32 <unnamed>]  <== UNNAMED
+        -> store 140B66360 +48
+        -> call 140B65EF0 farg1
+        -> call 140B658B0 farg1
+        -> call 140B65820 farg1
+        -> call 140B65140 farg1
+  +20 mov:UInt32x2  @140B66394  [f32 <unnamed>]  <== UNNAMED
+        -> store 140B66360 +4C
+  +24 movups:Packed128_Float32x2  @140B658B3  [f32 <unnamed>]  <== UNNAMED
+  +34 mov:UInt32x2  @140B658BA  [f32 <unnamed>]  <== UNNAMED
+        -> store 140B658B0 +14
+  +38 movzx:UInt8x2  @140B663A3  [u8 <unnamed>]  <== UNNAMED
+        -> call 140B65EF0 arg2
+        -> call 140B65820 arg2
+        -> call 140B65140 arg4
+        -> call 140B65890 arg2
+        -> call 140B65890 arg4
+  +39 cmp:UInt8x1  @140B66371  [u8 <unnamed>]  <== UNNAMED
+        compared to: 0
+  +3C mov:UInt32x1  @140B6612F  [s32 <unnamed>]  <== UNNAMED
+        -> store 140B66120 +C
+        -> call 140D41BF0 arg3
+        -> call 140D41BB0 arg3
+        -> call 140D41A40 arg3
+        -> call 141EC4940 arg3   shared with 5:BehaviorJudgeID, 64:RefType
+        -> call 141EC4870 arg3   shared with 5:BehaviorJudgeID, 64:RefType
+  ctx: +18 +20
+  effect: d1 call 14043BA90 on ModelParamModifierModule
+  effect: d2 call 140B66B00 on UnkE0Module
+  effect: d1 call 14043B9E0 on ModelParamModifierModule
+  effect: d2 call 140B66A30 on UnkE0Module
+  effect: d1 call 14043BEC0 on ModelParamModifierModule
+  effect: d2 call 140B66AD0 on UnkE0Module
+  effect: d2 call 140B66B30 on UnkE0Module
+  effect: d2 call 14043C970 on ModelParamModifierModule
+  effect: d3 call 140B668F0 on UnkE0Module
+  effect: d4 call 140B66DB0 on UnkE0Module
+  effect: d5 call 140B66CF0 on UnkE0Module
+  effect: d6 call 140B67050 on UnkE0Module
+  effect: d6 UnkE0Module+18 = reg
+  effect: d6 UnkE0Module+10 = reg
+  effect: d6 UnkE0Module+8 = reg
+  effect: d4 UnkE0Module+10 += 0xD8
+  note: unresolved indirect jump at 0x141EC4958
+  unread: +3A <unnamed>, +3B <unnamed>
+
+## 199 [DS3]ModelParamModifier_199 uses=0 functions=28 steps=7195
+  +00 movsx:Int16x1  @140B660D6  [s16 <unnamed>]  <== UNNAMED
+        -> store 140B660D0 +4
+  +04 cmp:UInt32x1 mov:UInt32x1  @14042A676,140B660DC  [s32 <unnamed>]  <== UNNAMED  <== ASSERTED 0
+        compared to: -1,99
+        -> store 140B660D0 +18
+        -> call 140D41BF0 arg1
+        -> call 140D41BB0 arg1
+        -> call 140D41A40 arg2
+        -> call 141EC4940 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+        -> call 141EC4870 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+  +08 addss:Float32x1  @140B6624B  [s32 <unnamed>]  <== UNNAMED  <== ASSERTED 0  <== FLOAT, template s32
+  +0C addss:Float32x1  @140B6624B  [s32 <unnamed>]  <== UNNAMED  <== ASSERTED 0  <== FLOAT, template s32
+  +10 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +14 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +18 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +1C movups:Packed128_Float32x1 addss:Float32x1  @140B658B3,140B6624B  []  <== NO FIELD
+  +20 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +24 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +28 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +2C mov:UInt32x1 addss:Float32x1  @140B658BA,140B6624B  []  <== NO FIELD
+        -> store 140B658B0 +14
+  +30 movups:Packed128_Float32x1 addss:Float32x1  @140B658B3,140B6624B  []  <== NO FIELD
+  +34 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +38 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +3C addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +40 mov:UInt32x1 addss:Float32x1  @140B658BA,140B6624B  []  <== NO FIELD
+        -> store 140B658B0 +14
+  +44 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +48 mov:UInt32x1 addss:Float32x1  @140B66200,140B6624B  []  <== NO FIELD
+        -> store 140B661C0 +4C
+  +4C addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +4D movzx:UInt8x174  @140B66283  []  <== NO FIELD
+  +4E cmp:UInt8x1  @140B661D7  []  <== NO FIELD
+        compared to: 0
+  +50 mov:UInt32x1 addss:Float32x1  @140B660DF,140B6624B  []  <== NO FIELD
+        -> store 140B660D0 +C
+        -> call 140D41BF0 arg3
+        -> call 140D41BB0 arg3
+        -> call 140D41A40 arg3
+        -> call 141EC4940 arg3   shared with 5:BehaviorJudgeID, 64:RefType
+        -> call 141EC4870 arg3   shared with 5:BehaviorJudgeID, 64:RefType
+  +54 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +58 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +5C addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +60 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +64 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +68 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +6C addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +70 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +74 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +78 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +7C addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +80 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +84 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +88 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +8C addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +90 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +94 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +98 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +9C addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +A0 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +A4 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +A8 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +AC addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +B0 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +B4 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +B8 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +BC addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +C0 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +C4 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +C8 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +CC addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +D0 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +D4 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +D8 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +DC addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +E0 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +E4 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +E8 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +EC addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +F0 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +F4 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +F8 addss:Float32x1  @140B6624B  []  <== NO FIELD
+  +FC addss:Float32x1  @140B6624B  []  <== NO FIELD
+  ctx: +18 +20
+  effect: d1 call 14043BA90 on ModelParamModifierModule
+  effect: d2 call 140B66B00 on UnkE0Module
+  effect: d1 call 14043B9E0 on ModelParamModifierModule
+  effect: d2 call 140B66A30 on UnkE0Module
+  effect: d1 call 14043BEC0 on ModelParamModifierModule
+  effect: d2 call 140B66AD0 on UnkE0Module
+  effect: d2 call 140B66B30 on UnkE0Module
+  effect: d2 call 14043C970 on ModelParamModifierModule
+  effect: d3 call 140B668F0 on UnkE0Module
+  effect: d4 call 140B66DB0 on UnkE0Module
+  effect: d5 call 140B66CF0 on UnkE0Module
+  effect: d6 call 140B67050 on UnkE0Module
+  effect: d6 UnkE0Module+18 = reg
+  effect: d6 UnkE0Module+10 = reg
+  effect: d6 UnkE0Module+8 = reg
+  effect: d4 UnkE0Module+10 += 0xD8
+  note: unresolved indirect jump at 0x141EC4958
+
+## 200 [DS3]ModelParamModifier_200 uses=0 functions=33 steps=8550
+  +00 movsx:Int16x1  @140B66176  [s16 <unnamed>]  <== UNNAMED
+        -> store 140B66170 +4
+  +04 cmp:UInt32x1 mov:UInt32x1  @14042A896,140B6617C  [s32 <unnamed>]  <== UNNAMED  <== ASSERTED 0
+        compared to: -1,99
+        -> store 140B66170 +18
+        -> call 140D41BF0 arg1
+        -> call 140D41BB0 arg1
+        -> call 140D41A40 arg2
+        -> call 141EC4940 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+        -> call 141EC4870 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+  +08 movss:Float32x1  @140B6644F  [s32 <unnamed>]  <== UNNAMED  <== ASSERTED 0  <== FLOAT, template s32
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +0C movss:Float32x1  @140B6644F  [s32 <unnamed>]  <== UNNAMED  <== ASSERTED 0  <== FLOAT, template s32
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +10 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +14 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +18 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +1C movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +20 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +24 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +28 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +2C movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +30 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +34 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +38 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +3C movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +40 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +44 mov:UInt32x1 movss:Float32x1  @140B6640C,140B6644F  []  <== NO FIELD
+        -> store 140B663E0 +4C
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +48 movups:Packed128_Float32x1 movss:Float32x1  @140B658B3,140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +4C movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +50 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +54 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +58 mov:UInt32x1 movss:Float32x1  @140B658BA,140B6644F  []  <== NO FIELD
+        -> store 140B658B0 +14
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +5C movzx:UInt8x1 movss:Float32x1  @140B6641D,140B6644F  []  <== NO FIELD
+        -> call 140B65EF0 arg2
+        -> call 140B65820 arg2
+        -> call 140B65140 arg4
+        -> call 140B65890 arg2
+        -> call 140B65890 arg4
+        -> call 140B658A0 farg3
+  +60 mov:UInt32x1 movss:Float32x1  @140B6617F,140B6644F  []  <== NO FIELD
+        -> store 140B66170 +C
+        -> call 140D41BF0 arg3
+        -> call 140D41BB0 arg3
+        -> call 140D41A40 arg3
+        -> call 141EC4940 arg3   shared with 5:BehaviorJudgeID, 64:RefType
+        -> call 141EC4870 arg3   shared with 5:BehaviorJudgeID, 64:RefType
+  +64 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +68 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +6C movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +70 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +74 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +78 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +7C movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +80 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +84 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +88 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +8C movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +90 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +94 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +98 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +9C movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +A0 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +A4 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +A8 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +AC movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +B0 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +B4 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +B8 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +BC movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +C0 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +C4 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +C8 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +CC movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +D0 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +D4 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +D8 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +DC movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +E0 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +E4 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +E8 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +EC movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +F0 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +F4 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +F8 movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  +FC movss:Float32x1  @140B6644F  []  <== NO FIELD
+        -> call 140B658A0 farg3
+        -> store 140B658A0 +4
+  ctx: +18 +20
+  effect: d1 call 14043BA90 on ModelParamModifierModule
+  effect: d2 call 140B66B00 on UnkE0Module
+  effect: d1 call 14043B9E0 on ModelParamModifierModule
+  effect: d2 call 140B66A30 on UnkE0Module
+  effect: d1 call 14043BEC0 on ModelParamModifierModule
+  effect: d2 call 140B66AD0 on UnkE0Module
+  effect: d2 call 140B66B30 on UnkE0Module
+  effect: d2 call 14043C970 on ModelParamModifierModule
+  effect: d3 call 140B668F0 on UnkE0Module
+  effect: d4 call 140B66DB0 on UnkE0Module
+  effect: d5 call 140B66CF0 on UnkE0Module
+  effect: d6 call 140B67050 on UnkE0Module
+  effect: d6 UnkE0Module+18 = reg
+  effect: d6 UnkE0Module+10 = reg
+  effect: d6 UnkE0Module+8 = reg
+  effect: d4 UnkE0Module+10 += 0xD8
+  note: unresolved indirect jump at 0x141EC4958
+
+## 224 SetTurnSpeed uses=67616 functions=5 steps=152
+  +00 movss:Float32x2  @14042CA95  [f32 TurnSpeed]
+        -> call 140407020 farg2
+  +04 cmp:UInt8x1  @14042CA79  [b IsLockOnCheck]
+        compared to: 1
+  +05 movzx:UInt8x2  @14042CAA6  [u8 NewUnkArg]
+        -> call 140407020 arg3
+  ctx: +18 +1A
+  effect: d1 call 1403F42B0 on ChrIns
+  effect: d1 call 140407020 on ActionFlagModule (a2=+00f,a3=+05)
+  effect: d2 ActionFlagModule+84 = field +00
+  effect: d2 ActionFlagModule+91 = field +05
+  effect: d2 ActionFlagModule+90 = reg
+  effect: d1 call 140407020 on ActionFlagModule (a2=+00f)
+  effect: d2 ActionFlagModule+91 = reg
+
+## 225 SetSPRegenRatePercent uses=11127 functions=2 steps=50
+  +00 movzx:UInt8x1  @14042E999  [u8 RegenRatePercent]
+        -> store 14042E780 +14
+  ctx: +18
+
+## 226 SetKnockbackPercent uses=11113 functions=3 steps=54
+  +00 movzx:UInt8x1  @14042E9C7  [u8 KnockbackPercent]
+  ctx: +18
+  effect: d0 call 140450EF0 on KnockBackModule
+  effect: d1 KnockBackModule+48 = reg
+
+## 227 EventEzStateFlag<HKS_env301> uses=1265 functions=2 steps=57
+  +00 mov:UInt32x1  @14042EA04  [s32 EzStateFlagID]
+        compared to: 31
+  ctx: +18
+
+## 228 RagdollReviveTime uses=2731 functions=6 steps=108
+  +00 subss:Float32x1 addss:Float32x1  @140429213,140429223  [f32 WeightAtEventStart]
+  +04 movss:Float32x1  @14042920E  [f32 WeightAtEventEnd]
+        -> call 1403C8A00 farg3
+  ctx: +18 +20 +14
+  effect: d1 call 14041BB10 on BehaviorModule
+  effect: d2 call 1458E8F23 on BehaviorModule
+  effect: d1 call 1403C8A00 on ChrIns+58 (a3=+04f)
+  effect: d2 ChrIns+58+128 = 0x0
+  effect: d2 ChrIns+58+12C = reg
+  effect: d2 ChrIns+58+128 = reg
+  note: unresolved indirect jump at 0x1458E8F43
+
+## 229 SpawnAISoundAlternative uses=1 functions=9 steps=156
+  +00 mov:UInt32x1  @140425E71  [s32 AISoundID]
+        -> call 140348B00 arg2   shared with 237:AISoundID
+        -> store 140348B00 +0   shared with 237:AISoundID
+  ctx: +18
+  effect: d1 call 1403F0E20 on ChrIns
+  effect: d2 call 1403C7000 on ChrIns+58
+
+## 230 [DS3]SetFPRegenRatePercent uses=0 functions=2 steps=45
+  +00 movzx:UInt8x1  @14042E9B4  [u8 RegenRatePercent]
+        -> store 14042E780 +15
+  ctx: +18
+
+## 231 RequestMsgMapList uses=30 functions=3 steps=51
+  +00 mov:UInt32x1  @14042EA38  [s32 EzStateRequestID]
+        -> call 14043B080 arg2
+  ctx: +18
+  effect: d0 call 14043B080 on EventModule (a2=+00)
+  effect: d1 EventModule+38 = field +00
+
+## 232 [PastGames]AllowVerticalTorsoAim uses=0 functions=4 steps=84
+  +00 movsx:Int8x1  @140406C1E  [u8 UpwardAngleLimit]  <== SIGNED
+  +01 movsx:Int8x1  @140406C28  [u8 DownwardAngleLimit]  <== SIGNED
+  +02 movsx:Int8x1  @140406C33  [u8 UpwardAngleThreshold]  <== SIGNED
+  +03 movsx:Int8x1  @140406C3E  [u8 DownwardAngleThreshold]  <== SIGNED
+  ctx: +18
+  effect: d1 call 140406C10 on ActionFlagModule
+  effect: d2 ActionFlagModule+40 |= reg
+  effect: d2 ActionFlagModule+238 = field +00
+  effect: d2 ActionFlagModule+23A = field +01
+  effect: d2 ActionFlagModule+240 = field +02
+  effect: d2 ActionFlagModule+242 = field +03
+  effect: d2 ActionFlagModule+23C = reg
+  effect: d2 ActionFlagModule+244 = reg
+
+## 233 ChangeChrDrawMask uses=2050 functions=8 steps=370
+  +00 movzx:UInt8x1  @140429651  [s8 Mask0]
+  ctx: +18
+  unread: +01 Mask1, +02 Mask2, +03 Mask3, +04 Mask4, +05 Mask5, +06 Mask6, +07 Mask7, +08 Mask8, +09 Mask9, +0A Mask10, +0B Mask11, +0C Mask12, +0D Mask13, +0E Mask14, +0F Mask15, +10 Mask16, +11 Mask17, +12 Mask18, +13 Mask19, +14 Mask20, +15 Mask21, +16 Mask22, +17 Mask23, +18 Mask24, +19 Mask25, +1A Mask26, +1B Mask27, +1C Mask28, +1D Mask29, +1E Mask30, +1F Mask31
+
+## 234 [PastGames]AddOffsetToNextAnimID uses=0 functions=5 steps=63
+  +00 mov:UInt32x1  @14042EA76  [s32 Offset]
+        -> call 1403EA1A0 arg2
+        -> call 1403C6EA0 arg2
+        -> call 1403C4CD0 arg3
+        -> store 1403C4CD0 +8
+  ctx: +18
+  effect: d0 call 1403EA1A0 on ChrIns (a2=+00)
+  effect: d1 call 1403C6EA0 on ChrIns+58 (a2=+00)
+
+## 235 Event235 uses=18 functions=4 steps=90
+  ctx: +18
+  effect: d1 call 1403C7BC0 on ChrIns+58
+  unread: +00 Mask0, +01 Mask1, +02 Mask2, +03 Mask3, +04 Mask4, +05 Mask5, +06 Mask6, +07 Mask7, +08 Mask8, +09 Mask9, +0A Mask10, +0B Mask11, +0C Mask12, +0D Mask13, +0E Mask14, +0F Mask15, +10 Mask16, +11 Mask17, +12 Mask18, +13 Mask19, +14 Mask20, +15 Mask21, +16 Mask22, +17 Mask23, +18 Mask24, +19 Mask25, +1A Mask26, +1B Mask27, +1C Mask28, +1D Mask29, +1E Mask30, +1F Mask31
+
+## 236 RootMotionReduction uses=59 functions=3 steps=90
+  +00 subss:Float32x1 addss:Float32x1  @14042D4CC,14042D500  [f32 ReductionAtEventStart]
+  +04 movss:Float32x1  @14042D4C6  [f32 ReductionAtEventEnd]
+        -> store 14042D490 +2C
+  +08 movzx:UInt8x1  @14042D4F7  [u8 ReductionType]
+        compared to: 1
+  ctx: +18 +20 +14
+
+## 237 SpawnAISound uses=2562 functions=9 steps=151
+  +00 mov:UInt32x1  @140426AA1  [s32 AISoundID]
+        -> call 140348B00 arg2   shared with 229:AISoundID
+        -> store 140348B00 +0   shared with 229:AISoundID
+  ctx: +18
+  effect: d1 call 1403F0E20 on ChrIns
+  effect: d2 call 1403C7000 on ChrIns+58
+
+## 238 SetBulletAimAngle uses=1080 functions=4 steps=75
+  +00 movups:Packed128_Float32x1  @140406BFE  [s16 UpLimitAngle]
+  ctx: +18
+  effect: d1 call 140406BF0 on ActionFlagModule
+  effect: d2 ActionFlagModule+40 |= reg
+  effect: d2 ActionFlagModule+238 = reg
+
+## 300 ActivateJumpTableEarly uses=71323 functions=21 steps=1388
+  +00 movsx:Int16x1  @1404261FD  [s16 JumpTableID_ToActivateEarly]
+  +02 movsx:Int16x1  @14042FF30  [s16 JumpTable2ID_ToJudgeHowEarly]
+  +04 subss:Float32x1 addss:Float32x1  @1404261CB,1404261F0  [f32 Parameter1]
+  +08 movss:Float32x1  @1404261C5  [f32 Parameter2]
+        -> call 14045FC10 farg2
+  ctx: +18 +20 +14
+  effect: d1 call 14045FC10 on PhysicsModule (a2=+08f)
+  effect: d2 PhysicsModule+1C0 = field +08
+  effect: d2 vcall MagicModule::vf2
+  effect: d2 vcall DamageModule::vf20
+  effect: d2 vcall ChrIns::vf128
+  effect: d2 vcall ChrIns::vf127
+  effect: d1 call 1403EF0F0 on ChrIns
+  effect: d2 vcall ChrIns::vf69
+  effect: d1 call 1404080B0 on ActionRequestModule
+  effect: d2 ActionRequestModule+A0 |= reg
+  effect: d2 call 1404088F0 on BoneMoveModule
+  effect: d3 call 140408850 on BoneMoveModule
+  effect: d4 call 140408C00 on BoneMoveModule
+  effect: d4 BoneMoveModule+18 = reg
+  effect: d4 BoneMoveModule+10 = reg
+  effect: d4 BoneMoveModule+8 = reg
+  effect: d2 BoneMoveModule+10 += 0x10
+  effect: d2 ActionRequestModule+A0 &= reg
+  effect: d1 ActionFlagModule+40 |= 0x4000000
+  effect: d1 call 140408100 on ActionRequestModule
+  effect: d2 ActionRequestModule+100 &= 0xFFFFFFFFFFFFFFF7
+  effect: d2 ActionRequestModule+100 |= reg
+  effect: d1 ActionRequestModule+100 |= 0x200
+  effect: d1 PhysicsModule+1CC = field +08
+  effect: d1 call 1404081C0 on ActionRequestModule
+  effect: d2 ActionRequestModule+100 &= 0xFFFFFFFFFFFFFFFD
+  effect: d1 ActionRequestModule+100 |= 0x10
+  note: unresolved indirect jump at 0x14042FFAF
+  note: unresolved indirect jump at 0x14042FF86
+  note: unresolved indirect jump at 0x14042FF6E
+  note: unresolved indirect jump at 0x14042FF61
+  note: unresolved indirect jump at 0x1403EF0FF
+  unread: +0C <unnamed>, +0E StateInfo
+
+## 301 [DS1]Unknown301 uses=0 functions=2 steps=40
+  ctx: +18
+  unread: +00 <unnamed>, +04 <unnamed>, +08 <unnamed>, +0C <unnamed>
+
+## 302 AddSpEffect_DragonForm uses=97 functions=83 steps=6861
+  +00 mov:UInt32x1  @14042EB03  [s32 SpEffectID]
+        compared to: 503041
+        -> call 1403E8DC0 arg2   shared with 66:SpEffectID, 67:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+        -> call 1404FFB40 arg2   shared with 66:SpEffectID, 67:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+        -> call 1403E8E70 arg2   shared with 66:SpEffectID, 67:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+        -> call 141EC4940 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+        -> call 141EC4870 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+        -> call 141EC8100 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP, 401:SpEffectID
+  ctx: +18
+  effect: d0 call 1403E8DC0 on ChrIns (a2=+00)
+  effect: d1 call 1403E8E70 on ChrIns (a2=+00)
+  effect: d2 call 1403F2F80 on ChrIns
+  effect: d2 call 1403F4270 on ChrIns
+  effect: d2 call 1403FB0A0 on ChrIns (a2=+00)
+  effect: d3 call 1404FB790 on ChrIns+178 (a2=+00)
+  effect: d4 call 1404FD390 on ChrIns+178 (a2=+00)
+  effect: d5 call 1403F1C90 on ChrIns
+  effect: d6 call 1404FA450 on ChrIns+178
+  effect: d6 call 14049C330 on ChrIns
+  effect: d7 call 14266E470 on ChrIns
+  effect: d6 call 14049C2E0 on ChrIns
+  effect: d5 call 1404FD540 on ChrIns+178
+  effect: d5 call 1403F4B80 on ChrIns
+  effect: d5 call 140406A80 on ActionFlagModule
+  effect: d5 call 1403F45A0 on ChrIns
+  effect: d7 call 1403F1C90 on ChrIns
+  effect: d4 call 1404FDF40 on ChrIns+178 (a2=+00)
+  effect: d5 call 1404FCF70 on ChrIns+178 (a2=+00)
+  effect: d5 call 1404FC4A0 on ChrIns+178
+  effect: d6 ChrIns+178+8 = reg
+  effect: d5 call 1404FC380 on ChrIns+178 (a2=+00)
+  effect: d5 call 1404FC530 on ChrIns+178
+  effect: d5 ChrIns+178+20 = reg
+  effect: d5 call 1404FC1F0 on ChrIns+178
+  effect: d6 ChrIns+178+28 = reg
+  effect: d5 call 1404FC5E0 on ChrIns+178
+  effect: d6 call 1404FE4E0 on ChrIns+178
+  effect: d7 ChrIns+178+28 = reg
+  effect: d5 call 1404FCED0 on ChrIns+178 (a2=+00)
+  effect: d5 call 1404FE4E0 on ChrIns+178
+  effect: d5 call 1404FC420 on ChrIns+178
+  effect: d5 call 1404FE5F0 on ChrIns+178
+  effect: d6 ChrIns+178+28 = 0x0
+  effect: d6 call 1404FE633 on ChrIns+178
+  effect: d3 call 14043E0E0 on ResistModule
+  effect: d4 call 14043D2E0 on ResistModule
+  effect: d4 call 14043EC20 on ResistModule
+  effect: d4 call 14043DE90 on ResistModule
+  effect: d5 ResistModule+B8 |= reg
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 303 [DS3]Behavior_303 uses=0 functions=12 steps=486
+  +00 mov:UInt32x1  @14042EB48  [s32 StayAnimType]
+        compared to: 10
+        -> call 14041C340 arg2   shared with 601:AnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041DEB0 arg3   shared with 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041EBD0 arg3   shared with 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> store 14041EBD0 +8   shared with 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041EC60 arg4   shared with 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 1401283F0 arg4   shared with 307:PCBehaviorType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1
+  ctx: +18
+  effect: d0 call 14041C340 on BehaviorModule (a2=+00)
+  effect: d1 call 14041DEB0 on BehaviorModule (a3=+00)
+  effect: d2 call 14041EBD0 on BehaviorModule (a3=+00)
+  effect: d2 Module+16B8+C8 = ?
+  effect: d2 call 14041EC60 on BehaviorModule (a4=+00)
+
+## 304 ThrowAttackBehavior uses=718 functions=8 steps=329
+  +00 movsx:Int16x1  @14042C770  [u16 <unnamed>]  <== UNNAMED  <== SIGNED
+        -> call 140440220 arg3
+        -> call 14043D2E0 arg3   shared with 114:SFXIndexID, 115:SFXIndexID, 129:OverrideSoundType, 129:OverrideSoundID, 129:SoundID, 133:SoundID
+  +02 movzx:UInt8x1  @14042C721  [s16 Index]  <== SIZE 1 vs 2
+        compared to: 1
+  +04 mov:UInt32x2  @14042C74E,14042C78A  [s32 BehaviorJudgeID]
+        -> call 140430570 arg2   shared with 1:BehaviorJudgeID, 307:BehaviorJudgeID
+        -> call 1403F4560 arg2   shared with 1:BehaviorJudgeID, 307:BehaviorJudgeID
+  ctx: +18 +1A
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 140440220 on DamageModule (a3=+00)
+  effect: d2 call 14043D2E0 on DamageModule (a3=+00)
+  effect: d2 call 14043D2E0 on DamageModule
+  effect: d2 call 1403F4560 on ChrIns (a2=+04)
+
+## 307 PCBehavior uses=2360 functions=46 steps=2611
+  +00 movsx:Int16x2 test:UInt16x3 movzx:UInt16x1  @14042AC25,14042AC96,14042AD10  [u16 Condition0x64_GetWeaponData]
+        compared to: 63
+        -> call 140442EE0 arg4   shared with 1:AttackType
+        -> call 1404467A0 arg4   shared with 1:AttackType
+        -> call 140443471 arg4   shared with 1:AttackType
+        -> call 1424FEAE0 arg4   shared with 1:AttackType, 606:FadeOut
+        -> call 1424FF290 arg4   shared with 1:AttackType, 606:FadeOut
+        -> call 14264ECE4 arg4   shared with 1:AttackType, 606:FadeOut
+  +02 movsx:Int16x2  @14042AC21  [u16 Offset]  <== SIGNED
+  +04 mov:UInt32x1  @14042ABE1  [s32 PCBehaviorType]
+        compared to: bit4
+        -> call 140430570 arg4
+        -> call 1403F4560 arg4
+        -> call 1401283F0 arg4   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1
+        -> call 141EBDEC0 arg4   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1
+        -> call 141EBEBE0 arg4   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1
+        -> call 141EBCF90 arg4   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1
+  +08 mov:UInt32x3  @14042ABE8,14042AC79  [s32 BehaviorJudgeID]
+        -> call 140430570 arg2   shared with 1:BehaviorJudgeID, 304:BehaviorJudgeID
+        -> call 1403F4560 arg2   shared with 1:BehaviorJudgeID, 304:BehaviorJudgeID
+        -> call 1401283F0 arg2
+        -> call 141EBDEC0 arg2   shared with 606:JigglerId
+        -> call 141EBEBE0 arg2   shared with 606:JigglerId
+        -> call 141EBCF90 arg2   shared with 606:JigglerId
+  +0C movzx:UInt8x1  @14042ABB2  [s32 <unnamed>]  <== SIZE 1 vs 4  <== UNNAMED  <== ASSERTED 0
+        compared to: 1
+  ctx: +18 +1A
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 140442EE0 on DamageModule (a4=+00)
+  effect: d2 call 1404467A0 on DamageModule (a4=+00)
+  effect: d3 call 14044A6B0 on KnockBackModule
+  effect: d4 call 14044A610 on KnockBackModule
+  effect: d5 call 14044A8B0 on KnockBackModule
+  effect: d5 KnockBackModule+18 = reg
+  effect: d5 KnockBackModule+10 = reg
+  effect: d5 KnockBackModule+8 = reg
+  effect: d3 KnockBackModule+10 += 0x10
+  effect: d2 call 14043D2E0 on DamageModule
+  effect: d2 DamageModule+6C = 0x0
+  effect: d2 DamageModule+90 = 0x1
+  effect: d2 call 1403EEDC0 on ChrIns
+  effect: d2 call 14049BC30 on ChrIns
+  effect: d3 call 14266E4A0 on ChrIns
+  effect: d3 call 140499500 on ChrIns
+  effect: d5 vcall ChrIns+8::vf10
+  effect: d4 call 14266E5D0 on ChrIns
+  effect: d5 ChrIns+10 = reg
+  effect: d2 call 1403F4560 on ChrIns (a2=+08)
+  effect: d2 call 1403F4560 on ChrIns (a2=+08,a4=+04)
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 310 ChrClothState uses=827 functions=21 steps=1877
+  +00 movzx:UInt8x1  @140429027  [u8 <unnamed>]  <== UNNAMED
+        compared to: 64,32,96
+        -> call 14042D9F0 arg2
+  +01 movzx:UInt8x1  @140429045  [u8 <unnamed>]  <== UNNAMED
+        compared to: 1
+        -> call 1403F9FF0 arg3
+        -> call 14049A640 arg3
+        -> call 1404A1C60 arg3
+        -> call 140C4E800 arg3
+        -> store 140C4E800 +1C
+        -> call 140C4E8A8 arg3
+  ctx: +18
+  effect: d1 call 1403F9FF0 on ChrIns (a3=+01)
+  effect: d2 call 14049A640 on ChrIns (a3=+01)
+  effect: d3 call 14266E4A0 on ChrIns
+  effect: d3 call 140498C50 on ChrIns
+  effect: d5 vcall ChrIns+8::vf10
+  effect: d4 call 14266E5D0 on ChrIns
+  effect: d5 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 311 Event311 uses=103 functions=21 steps=2013
+  +00 movzx:UInt8x1  @14042AFDB  [u8 <unnamed>]  <== UNNAMED
+        compared to: 7
+        -> call 1403FA000 arg2
+        -> call 14049A6B0 arg2
+        -> call 14266E4A0 arg3   shared with 341:Offset
+        -> store 14266E4A0 +8   shared with 341:Offset
+        -> call 140498C50 arg2
+        -> store 140498C50 +8
+  +01 movzx:UInt8x1  @14042AFB7  [u8 <unnamed>]  <== UNNAMED
+        compared to: 64,32,96
+        -> call 14042D9F0 arg2
+  +02 movzx:UInt8x1  @14042AFD6  [u8 <unnamed>]  <== UNNAMED
+        compared to: 1
+        -> call 1403FA000 arg4
+        -> call 14049A6B0 arg4
+        -> call 14266E4A0 arg4   shared with 341:Offset, 910:LookatDummyPolyIDEnd
+        -> call 1404A1C60 arg3
+        -> call 140C4E800 arg3
+        -> store 140C4E800 +1C
+  ctx: +18
+  effect: d1 call 1403FA000 on ChrIns (a2=+00,a4=+02)
+  effect: d2 call 14049A6B0 on ChrIns (a4=+02)
+  effect: d3 call 14266E4A0 on ChrIns (a4=+02)
+  effect: d3 call 140498C50 on ChrIns
+  effect: d5 vcall ChrIns+8::vf10
+  effect: d4 call 14266E5D0 on ChrIns
+  effect: d5 ChrIns+10 = reg
+  effect: d2 call 14049A6B0 on ChrIns (a2=+00,a4=+02)
+  effect: d3 call 14266E4A0 on ChrIns (a3=+00,a4=+02)
+  effect: d3 call 140498C50 on ChrIns (a2=+00)
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 312 Event312 uses=3261 functions=3 steps=118
+  +00 cmp:UInt8x1  @14042EBA3  [b Mask0]
+        compared to: 0
+  ctx: +18
+  effect: d0 call 14041C380 on BehaviorModule
+  effect: d1 BehaviorModule+1680 |= reg
+  unread: +01 Mask1, +02 Mask2, +03 Mask3, +04 Mask4, +05 Mask5, +06 Mask6, +07 Mask7, +08 Mask8, +09 Mask9, +0A Mask10, +0B Mask11, +0C Mask12, +0D Mask13, +0E Mask14, +0F Mask15, +10 Mask16, +11 Mask17, +12 Mask18, +13 Mask19, +14 Mask20, +15 Mask21, +16 Mask22, +17 Mask23, +18 Mask24, +19 Mask25, +1A Mask26, +1B Mask27, +1C Mask28, +1D Mask29, +1E Mask30, +1F Mask31
+
+## 320 PlayerInputCheck uses=384 functions=6 steps=505
+  +00 cmp:UInt8x1  @140427A0A  [b EnableAct_R1_R2_LightKick_HeavyKick]
+        compared to: 0
+  +01 cmp:UInt8x2  @140427A14  [b EnableAct_L1_L2]
+        compared to: 0
+  +02 cmp:UInt8x2  @140427A22  [b EnableAct_Guard]
+        compared to: 0
+  +03 cmp:UInt8x4  @140427A4C  [b EnableAct_SpMove_Backstep_Rolling_Jump]
+        compared to: 0
+  +04 cmp:UInt8x7  @140427AAE  [b EnableAct_UseItem]
+        compared to: 0
+  +05 cmp:UInt8x9  @140427AD8  [b EnableAct_MagicR_MagicL]
+        compared to: 0
+  +06 cmp:UInt8x9  @140427B35  [b EnableAct_ChangeStyle_ChangeStyleLeft_ChangeWeaponR_ChangeWeaponL_Gesture]
+        compared to: 0
+  ctx: +18
+  effect: d2 call 140408140 on ActionRequestModule
+  effect: d3 ActionRequestModule+98 |= reg
+  effect: d3 ActionRequestModule+98 &= reg
+  effect: d1 call 140408140 on ActionRequestModule
+
+## 330 WeaponArtFPConsumption uses=718 functions=18 steps=671
+  ctx: +18
+  effect: d0 call 14047FC80 on SwordArtsModule
+  effect: d1 call 1404802A0 on SwordArtsModule
+  effect: d2 call 14043D2E0 on SwordArtsModule
+  effect: d1 call 14043D2E0 on SwordArtsModule
+  effect: d1 SwordArtsModule+10 = 0x0
+  note: unresolved indirect jump at 0x141EC4958
+
+## 331 AddSpEffect_WeaponArts uses=130 functions=84 steps=11177
+  +00 mov:UInt32x1  @14042EC23  [s32 SpEffectID_EnoughFP]
+        compared to: 503041
+        -> call 1403E8DC0 arg2   shared with 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID
+        -> call 1404FFB40 arg2   shared with 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID
+        -> call 1403E8E70 arg2   shared with 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID
+        -> call 141EC4940 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID, 609:SpEffectID_IsExist
+        -> call 141EC4870 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID, 609:SpEffectID_IsExist
+        -> call 141EC8100 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID, 609:SpEffectID_IsExist
+  +04 mov:UInt32x1  @14042EC23  [s32 SpEffectID_NotEnoughFP]
+        compared to: 503041
+        -> call 1403E8DC0 arg2   shared with 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID
+        -> call 1404FFB40 arg2   shared with 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID
+        -> call 1403E8E70 arg2   shared with 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID
+        -> call 141EC4940 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID, 609:SpEffectID_IsExist
+        -> call 141EC4870 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID, 609:SpEffectID_IsExist
+        -> call 141EC8100 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 401:SpEffectID, 609:SpEffectID_IsExist
+  ctx: +18
+  effect: d0 call 1403E8DC0 on ChrIns (a2=+04)
+  effect: d1 call 1403E8E70 on ChrIns (a2=+04)
+  effect: d2 call 1403F2F80 on ChrIns
+  effect: d2 call 1403F4270 on ChrIns
+  effect: d2 call 1403FB0A0 on ChrIns (a2=+04)
+  effect: d3 call 1404FB790 on ChrIns+178 (a2=+04)
+  effect: d4 call 1404FD390 on ChrIns+178 (a2=+04)
+  effect: d5 call 1403F1C90 on ChrIns
+  effect: d6 call 1404FA450 on ChrIns+178
+  effect: d6 call 14049C330 on ChrIns
+  effect: d7 call 14266E470 on ChrIns
+  effect: d6 call 14049C2E0 on ChrIns
+  effect: d5 call 1404FD540 on ChrIns+178
+  effect: d5 call 1403F4B80 on ChrIns
+  effect: d5 call 140406A80 on ActionFlagModule
+  effect: d5 call 1403F45A0 on ChrIns
+  effect: d7 call 1403F1C90 on ChrIns
+  effect: d4 call 1404FDF40 on ChrIns+178 (a2=+04)
+  effect: d5 call 1404FCF70 on ChrIns+178 (a2=+04)
+  effect: d5 call 1404FC4A0 on ChrIns+178
+  effect: d6 ChrIns+178+8 = reg
+  effect: d5 call 1404FC380 on ChrIns+178 (a2=+04)
+  effect: d5 call 1404FC530 on ChrIns+178
+  effect: d5 ChrIns+178+20 = reg
+  effect: d5 call 1404FC1F0 on ChrIns+178
+  effect: d6 ChrIns+178+28 = reg
+  effect: d5 call 1404FC5E0 on ChrIns+178
+  effect: d6 call 1404FE4E0 on ChrIns+178
+  effect: d7 ChrIns+178+28 = reg
+  effect: d5 call 1404FCED0 on ChrIns+178 (a2=+04)
+  effect: d5 call 1404FE4E0 on ChrIns+178
+  effect: d5 call 1404FC420 on ChrIns+178
+  effect: d5 call 1404FE5F0 on ChrIns+178
+  effect: d6 ChrIns+178+28 = 0x0
+  effect: d6 call 1404FE633 on ChrIns+178
+  effect: d3 call 14043E0E0 on ResistModule
+  effect: d4 call 14043D2E0 on ResistModule
+  effect: d4 call 14043EC20 on ResistModule
+  effect: d4 call 14043DE90 on ResistModule
+  effect: d5 ResistModule+B8 |= reg
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 332 WeaponArtWeaponStyleCheck uses=5 functions=2 steps=59
+  ctx: +18
+  effect: d0 ActionFlagModule+40 |= reg
+
+## 339 HavokUnk_339 uses=154 functions=3 steps=69
+  +00 mov:UInt32x1  @14042BDE6  [s32 <unnamed>]  <== UNNAMED
+        -> store 14042BDC0 +C
+  +04 mov:UInt32x1  @14042BDEC  [s32 <unnamed>]  <== UNNAMED
+        -> store 14042BDC0 +10
+  ctx: +18 +1A
+
+## 340 RelatedToLoot_340 uses=2 functions=17 steps=802
+  +00 mov:UInt32x4  @14042A0F3,14042A12F  [s32 <unnamed>]  <== UNNAMED
+  +04 movzx:UInt8x4  @14042A100,14042A13C  [u8 <unnamed>]  <== UNNAMED
+  +05 movzx:UInt8x2  @14042A0DF  [u8 FuncType]
+        compared to: 1
+        -> call 14042A0DF arg1
+        -> call 14042A0DF arg4
+        -> call 1403F56A0 arg4
+  +06 movzx:UInt8x1  @14042A0C8  [u8 <unnamed>]  <== UNNAMED
+  ctx: +18
+  effect: d1 call 1403F03A0 on ChrIns
+  effect: d2 call 140437920 on DataModule
+  effect: d1 call 1403F0400 on ChrIns
+  effect: d1 call 1403F56A0 on ChrIns
+  effect: d2 call 1403FED50 on ChrIns
+  effect: d3 ChrIns+1C6 |= reg
+
+## 341 ChrSlotSys_341 uses=3706 functions=13 steps=829
+  +00 movsx:Int8x1  @140429ED0  [s8 Offset]
+        -> call 140429ED9 arg4
+        -> call 14049B3C0 arg2
+        -> call 14049B3C0 arg4
+        -> call 14266E4A0 arg3
+        -> call 14266E4A0 arg4   shared with 910:LookatDummyPolyIDEnd
+        -> store 14266E4A0 +8
+  ctx: +18 +1A +20 +10 +19 +14
+  effect: d1 call 14049B3C0 on ChrIns
+  effect: d2 call 14266E4A0 on ChrIns
+  effect: d2 call 140498ED0 on ChrIns
+  effect: d4 vcall ChrIns+8::vf10
+  effect: d3 call 14266E5D0 on ChrIns
+  effect: d4 ChrIns+10 = reg
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 342 ActionFlag_342 uses=250 functions=2 steps=62
+  +00 movsx:Int16x1  @14042ED10  [u16 <unnamed>]  <== UNNAMED  <== SIGNED
+  ctx: +18
+  effect: d0 ActionFlagModule+208 = reg
+
+## 343 DoSomethingAndDebugDisplay_343 uses=38 functions=13 steps=690
+  +00 mov:UInt32x1  @14042BBA2  [s32 <unnamed>]  <== UNNAMED
+        -> store 14042BB50 +FFFFFFFFFFFFFFA7
+  +04 movss:Float32x2  @14042BBEE  [f32 <unnamed>]  <== UNNAMED
+        -> call 1402DCF00 farg4
+  +08 addss:Float32x2  @14042BBF3  [f32 <unnamed>]  <== UNNAMED
+  +0C movss:Float32x2  @14042BBDB  [f32 <unnamed>]  <== UNNAMED
+        -> call 1403F4740 farg1
+        -> store 14042BB50 +B
+        -> call 1403F2C80 farg1
+        -> call 141F06BCB farg1
+  ctx: +18
+  effect: d1 call 1403F0E20 on ChrIns
+  effect: d2 call 1403C7000 on ChrIns+58
+  effect: d1 call 1403F2C80 on ChrIns
+  effect: d2 call 141F06BCB on ChrIns
+  effect: d1 call 1403F2C80 on ChrIns (a1=+0Cf)
+  effect: d2 call 141F06BCB on ChrIns (a1=+0Cf)
+  note: unresolved indirect jump at 0x141F06BDA
+
+## 344 havok_344 uses=22 functions=4 steps=92
+  +00 subss:Float32x1 addss:Float32x1  @14042C54B,14042C587  [f32 Value1AtEventStart]
+  +04 movss:Float32x1  @14042C545  [f32 Value1AtEventEnd]
+        -> call 1403C8000 farg1
+  +08 subss:Float32x1 addss:Float32x1  @14042C511,14042C57D  [f32 Value2AtEventStart]
+  +0C movss:Float32x1  @14042C50B  [f32 Value2AtEventEnd]
+        -> call 1403C8000 farg2
+  ctx: +18 +20 +14
+  effect: d1 call 1403C8000 on ChrIns+58 (a1=+04f,a2=+0Cf)
+  effect: d2 ChrIns+58+340 = field +0C
+  effect: d2 ChrIns+58+344 = reg
+
+## 401 AddSpEffect_Multiplayer_401 uses=267 functions=83 steps=6867
+  +00 mov:UInt32x1  @14042EB24  [s32 SpEffectID]
+        compared to: 503041
+        -> call 1403E8DC0 arg2   shared with 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+        -> call 1404FFB40 arg2   shared with 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+        -> call 1403E8E70 arg2   shared with 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+        -> call 141EC4940 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+        -> call 141EC4870 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+        -> call 141EC8100 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+  ctx: +18
+  effect: d0 call 1403E8DC0 on ChrIns (a2=+00)
+  effect: d1 call 1403E8E70 on ChrIns (a2=+00)
+  effect: d2 call 1403F2F80 on ChrIns
+  effect: d2 call 1403F4270 on ChrIns
+  effect: d2 call 1403FB0A0 on ChrIns (a2=+00)
+  effect: d3 call 1404FB790 on ChrIns+178 (a2=+00)
+  effect: d4 call 1404FD390 on ChrIns+178 (a2=+00)
+  effect: d5 call 1403F1C90 on ChrIns
+  effect: d6 call 1404FA450 on ChrIns+178
+  effect: d6 call 14049C330 on ChrIns
+  effect: d7 call 14266E470 on ChrIns
+  effect: d6 call 14049C2E0 on ChrIns
+  effect: d5 call 1404FD540 on ChrIns+178
+  effect: d5 call 1403F4B80 on ChrIns
+  effect: d5 call 140406A80 on ActionFlagModule
+  effect: d5 call 1403F45A0 on ChrIns
+  effect: d7 call 1403F1C90 on ChrIns
+  effect: d4 call 1404FDF40 on ChrIns+178 (a2=+00)
+  effect: d5 call 1404FCF70 on ChrIns+178 (a2=+00)
+  effect: d5 call 1404FC4A0 on ChrIns+178
+  effect: d6 ChrIns+178+8 = reg
+  effect: d5 call 1404FC380 on ChrIns+178 (a2=+00)
+  effect: d5 call 1404FC530 on ChrIns+178
+  effect: d5 ChrIns+178+20 = reg
+  effect: d5 call 1404FC1F0 on ChrIns+178
+  effect: d6 ChrIns+178+28 = reg
+  effect: d5 call 1404FC5E0 on ChrIns+178
+  effect: d6 call 1404FE4E0 on ChrIns+178
+  effect: d7 ChrIns+178+28 = reg
+  effect: d5 call 1404FCED0 on ChrIns+178 (a2=+00)
+  effect: d5 call 1404FE4E0 on ChrIns+178
+  effect: d5 call 1404FC420 on ChrIns+178
+  effect: d5 call 1404FE5F0 on ChrIns+178
+  effect: d6 ChrIns+178+28 = 0x0
+  effect: d6 call 1404FE633 on ChrIns+178
+  effect: d3 call 14043E0E0 on ResistModule
+  effect: d4 call 14043D2E0 on ResistModule
+  effect: d4 call 14043EC20 on ResistModule
+  effect: d4 call 14043DE90 on ResistModule
+  effect: d5 ResistModule+B8 |= reg
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 500 Event500 uses=8910 functions=4 steps=74
+  +00 movzx:UInt8x1  @14042EC81  [u8 FlagIndex]
+        compared to: 32
+        -> call 1403C5820 arg2
+        -> call 140473340 arg2
+  +01 movzx:UInt8x1  @14042EC91  [u8 Index]
+        -> call 1403C5820 arg3
+        -> call 140473340 arg3
+        -> store 140473340 +14
+  ctx: +18
+  effect: d0 call 1403C5820 on ChrIns+58 (a2=+00,a3=+01)
+
+## 511 ActionFlag_511 uses=647 functions=3 steps=57
+  +00 movzx:UInt8x1  @14042ECAD  [u8 <unnamed>]  <== UNNAMED
+        -> call 140407060 arg2
+  ctx: +18
+  effect: d0 call 140407060 on ActionFlagModule (a2=+00)
+  effect: d1 ActionFlagModule+20C = field +00
+
+## 522 SetSpecialLockOnParameter uses=0 functions=2 steps=56
+  +00 mov:UInt32x1  @14042ECDA  [f32 TargetChrParameter]
+  ctx: +18
+  effect: d0 ActionFlagModule+1E0 = field +00
+  unread: +04 <unnamed>, +08 <unnamed>, +0C <unnamed>
+
+## 600 EnableBehaviorFlags uses=529 functions=3 steps=61
+  +00 mov:UInt32x1  @14042ED5F  [s32 Mask (0-63)]
+        compared to: 63
+        -> call 140416EF0 arg2
+  ctx: +18
+  effect: d0 call 140416EF0 on BehaviorDataModule (a2=+00)
+  effect: d1 BehaviorDataModule+308 = reg
+
+## 601 SetAdditiveAnim uses=6391 functions=12 steps=752
+  +00 mov:UInt32x2  @140425F23  [s32 AnimType]
+        compared to: 10
+        -> call 14041C340 arg2   shared with 303:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041DEB0 arg3   shared with 303:StayAnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041EBD0 arg3   shared with 303:StayAnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> store 14041EBD0 +8   shared with 303:StayAnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041EC60 arg4   shared with 303:StayAnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 1401283F0 arg4   shared with 303:StayAnimType, 307:PCBehaviorType, 602:StayAnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1
+  +04 subss:Float32x2 addss:Float32x2  @140425F51,140425F62  [f32 WeightAtEventStart]
+  +08 movss:Float32x2  @140425F4C  [f32 WeightAtEventEnd]
+        -> call 14041C340 farg3
+        -> call 14041DEB0 farg3   shared with 602:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> call 14041DEB0 farg4   shared with 602:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> call 14041EBD0 farg3   shared with 602:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> call 14041EBD0 farg4   shared with 602:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> store 14041DEB0 +4   shared with 602:WeightAtEventEnd, 607:WeightAtEventEnd
+  +0C mov:UInt32x1  @140425EF2  [s32 SpEffectID_Exist]
+        -> call 1404FA7F0 arg2   shared with 66:SpEffectID, 67:SpEffectID, 122:SpEffectID, 123:SpEffectId, 607:SpEffectID_Exist, 609:SpEffectID_IsExist
+        -> store 1404FA7F0 +8   shared with 66:SpEffectID, 67:SpEffectID, 122:SpEffectID, 123:SpEffectId, 607:SpEffectID_Exist, 609:SpEffectID_IsExist
+  ctx: +18 +20 +14
+  effect: d1 call 1404FA7F0 on ChrIns+178 (a2=+0C)
+  effect: d1 call 14041C340 on BehaviorModule (a2=+00,a3=+08f)
+  effect: d2 call 14041DEB0 on BehaviorModule (a3=+00,a3=+08f,a4=+08f)
+  effect: d3 call 14041EBD0 on BehaviorModule (a3=+00,a3=+08f,a4=+08f)
+  effect: d3 Module+16B8+C8 = ?
+  effect: d3 call 14041EC60 on BehaviorModule (a4=+00)
+
+## 602 [DS3]Event602 uses=0 functions=11 steps=474
+  +00 mov:UInt32x1  @14042AE4C  [s32 StayAnimType]
+        compared to: 5
+        -> call 14041C4B0 arg2
+        -> call 14041DEB0 arg3   shared with 303:StayAnimType, 601:AnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041EBD0 arg3   shared with 303:StayAnimType, 601:AnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> store 14041EBD0 +8   shared with 303:StayAnimType, 601:AnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041EC60 arg4   shared with 303:StayAnimType, 601:AnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 1401283F0 arg4   shared with 303:StayAnimType, 307:PCBehaviorType, 601:AnimType, 605:VariableID, 607:StayAnimType, 609:StayAnimType1
+  +04 subss:Float32x1 addss:Float32x1  @14042AE2F,14042AE40  [f32 WeightAtEventStart]
+  +08 movss:Float32x1  @14042AE2A  [f32 WeightAtEventEnd]
+        -> call 14041C4B0 farg3
+        -> call 14041DEB0 farg3   shared with 601:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> call 14041DEB0 farg4   shared with 601:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> call 14041EBD0 farg3   shared with 601:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> call 14041EBD0 farg4   shared with 601:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> store 14041DEB0 +4   shared with 601:WeightAtEventEnd, 607:WeightAtEventEnd
+  ctx: +18 +20 +14
+  effect: d1 call 14041C4B0 on BehaviorModule (a2=+00,a3=+08f)
+  effect: d2 call 14041DEB0 on BehaviorModule (a3=+00,a3=+08f,a4=+08f)
+  effect: d3 call 14041EBD0 on BehaviorModule (a3=+00,a3=+08f,a4=+08f)
+  effect: d3 Module+16B8+C8 = ?
+  effect: d3 call 14041EC60 on BehaviorModule (a4=+00)
+
+## 603 [ExePatch]DebugAnimSpeed uses=382 functions=4 steps=78
+  ctx: +18
+  note: unresolved indirect jump at 0x145A8E7B2
+  unread: +00 AnimSpeed
+
+## 604 [ExePatch]TestParam uses=95 functions=21 steps=667
+  +00 movss:Float32x1  @140429360  [f32 <unnamed>]  <== UNNAMED
+  +04 subss:Float32x1 addss:Float32x1  @14042939B,1404293D8  [f32 ValueAtEventStart]
+  +08 movss:Float32x1  @140429396  [f32 ValueAtEventEnd]
+        -> call 14045FF40 farg2
+  ctx: +18 +20 +14
+  effect: d3 call 14051445A on ChrIns
+  effect: d4 call 1453BEF5F on ChrIns
+  effect: d1 call 14045FF40 on PhysicsModule (a2=+08f)
+  effect: d2 PhysicsModule+108 = field +08
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x1453BEF7E
+
+## 605 SetTimeActEditorHavokVariable uses=29377 functions=11 steps=530
+  +00 movzx:UInt8x1  @140427133  [b Unk00]
+        compared to: 1
+        -> call 14041C500 arg3
+  +04 mov:UInt32x1  @14042718B  [s32 VariableID]
+        compared to: 99
+        -> call 14041C500 arg2
+        -> call 14041DEB0 arg3   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041EBD0 arg3   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> store 14041EBD0 +8   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041EC60 arg4   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 607:StayAnimType, 609:StayAnimType1, 609:StayAnimType2
+        -> call 1401283F0 arg4   shared with 303:StayAnimType, 307:PCBehaviorType, 601:AnimType, 602:StayAnimType, 607:StayAnimType, 609:StayAnimType1
+  +08 subss:Float32x1 addss:Float32x1  @1404271BA,1404271CB  [f32grad ValueGradient]  <== SIZE 4 vs 8
+  +0C movss:Float32x1  @1404271B5  [f32grad ValueGradient]  <== MID-FIELD of +08  <== SIZE 4 vs 8
+        -> call 14041C500 farg3
+        -> call 14041DEB0 farg3   shared with 601:WeightAtEventEnd, 602:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> call 14041DEB0 farg4   shared with 601:WeightAtEventEnd, 602:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> call 14041EBD0 farg3   shared with 601:WeightAtEventEnd, 602:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> call 14041EBD0 farg4   shared with 601:WeightAtEventEnd, 602:WeightAtEventEnd, 607:WeightAtEventEnd
+        -> store 14041DEB0 +4   shared with 601:WeightAtEventEnd, 602:WeightAtEventEnd, 607:WeightAtEventEnd
+  ctx: +18 +20 +14
+  effect: d1 call 14041C500 on BehaviorModule (a2=+04,a3=+00,a3=+0Cf)
+  effect: d2 call 14041DEB0 on BehaviorModule (a3=+04,a3=+0Cf,a4=+0Cf)
+  effect: d3 call 14041EBD0 on BehaviorModule (a3=+04,a3=+0Cf,a4=+0Cf)
+  effect: d3 Module+16B8+C8 = ?
+  effect: d3 call 14041EC60 on BehaviorModule (a4=+04)
+
+## 606 JiggleModifier uses=2 functions=15 steps=535
+  +00 movzx:UInt8x1  @14042A1A0  [u8 JigglerId]
+        -> call 140416F10 arg2
+        -> store 140416F10 +0
+        -> call 1404164E0 arg2
+        -> call 141EBDEC0 arg2   shared with 307:BehaviorJudgeID
+        -> call 141EBEBE0 arg2   shared with 307:BehaviorJudgeID
+        -> call 141EBCF90 arg2   shared with 307:BehaviorJudgeID
+  +04 movzx:UInt16x1  @14042A1A9  [u16 FadeIn]
+        -> call 140416F10 arg3
+        -> store 140416F10 +C
+  +06 movzx:UInt16x1  @14042A1A4  [u16 FadeOut]
+        -> call 140416F10 arg4
+        -> call 14043D2E0 arg4   shared with 122:FFXID
+        -> call 1424FEAE0 arg4   shared with 1:AttackType, 307:Condition0x64_GetWeaponData
+        -> call 1424FF290 arg4   shared with 1:AttackType, 307:Condition0x64_GetWeaponData
+        -> call 14264ECE4 arg4   shared with 1:AttackType, 307:Condition0x64_GetWeaponData
+        -> store 140416F10 +E
+  ctx: +18
+  effect: d1 call 140416F10 on BehaviorDataModule (a2=+00,a3=+04,a4=+06)
+  effect: d2 call 14043D2E0 on BehaviorDataModule (a4=+06)
+  effect: d2 Module+318+A8 = ?
+  effect: d2 call 14043D2E0 on BehaviorDataModule (a2=+00,a4=+06)
+  unread: +01 <unnamed>, +02 <unnamed>, +03 <unnamed>
+
+## 607 [DS3]AdditiveAnimPlaybackUnk_607 uses=73 functions=12 steps=752
+  +00 mov:UInt32x2  @14042AEB3  [s32 StayAnimType]
+        compared to: 10
+        -> call 14041C4D0 arg2
+        -> call 14041DEB0 arg3   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041EBD0 arg3   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 609:StayAnimType1, 609:StayAnimType2
+        -> store 14041EBD0 +8   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 609:StayAnimType1, 609:StayAnimType2
+        -> call 14041EC60 arg4   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 609:StayAnimType1, 609:StayAnimType2
+        -> call 1401283F0 arg4   shared with 303:StayAnimType, 307:PCBehaviorType, 601:AnimType, 602:StayAnimType, 605:VariableID, 609:StayAnimType1
+  +04 subss:Float32x2 addss:Float32x2  @14042AEE1,14042AEF2  [f32 WeightAtEventStart]
+  +08 movss:Float32x2  @14042AEDC  [f32 WeightAtEventEnd]
+        -> call 14041C4D0 farg3
+        -> call 14041DEB0 farg3   shared with 601:WeightAtEventEnd, 602:WeightAtEventEnd
+        -> call 14041DEB0 farg4   shared with 601:WeightAtEventEnd, 602:WeightAtEventEnd
+        -> call 14041EBD0 farg3   shared with 601:WeightAtEventEnd, 602:WeightAtEventEnd
+        -> call 14041EBD0 farg4   shared with 601:WeightAtEventEnd, 602:WeightAtEventEnd
+        -> store 14041DEB0 +4   shared with 601:WeightAtEventEnd, 602:WeightAtEventEnd
+  +0C mov:UInt32x1  @14042AE82  [s32 SpEffectID_Exist]
+        -> call 1404FA7F0 arg2   shared with 66:SpEffectID, 67:SpEffectID, 122:SpEffectID, 123:SpEffectId, 601:SpEffectID_Exist, 609:SpEffectID_IsExist
+        -> store 1404FA7F0 +8   shared with 66:SpEffectID, 67:SpEffectID, 122:SpEffectID, 123:SpEffectId, 601:SpEffectID_Exist, 609:SpEffectID_IsExist
+  ctx: +18 +20 +14
+  effect: d1 call 1404FA7F0 on ChrIns+178 (a2=+0C)
+  effect: d1 call 14041C4D0 on BehaviorModule (a2=+00,a3=+08f)
+  effect: d2 call 14041DEB0 on BehaviorModule (a3=+00,a3=+08f,a4=+08f)
+  effect: d3 call 14041EBD0 on BehaviorModule (a3=+00,a3=+08f,a4=+08f)
+  effect: d3 Module+16B8+C8 = ?
+  effect: d3 call 14041EC60 on BehaviorModule (a4=+00)
+
+## 608 AnimSpeedGradient uses=1240 functions=4 steps=84
+  +00 subss:Float32x1 addss:Float32x1  @140426A46,140426A6D  [f32 SpeedAtStart]
+  +04 movss:Float32x1  @140426A33  [f32 SpeedAtEnd]
+        -> call 14041C370 farg2
+  ctx: +18 +20 +14
+  effect: d1 call 14041C370 on BehaviorModule (a2=+04f)
+  effect: d2 BehaviorModule+15C4 = field +04
+
+## 609 AdditiveAnimPlaybackUnk_609 uses=14 functions=28 steps=1587
+  +00 movsx:Int16x2  @1404260F6,14042612D  [u16 StayAnimType1]  <== SIGNED
+        compared to: 10
+        -> call 14041C340 arg2   shared with 303:StayAnimType, 601:AnimType
+        -> call 14041DEB0 arg3   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType
+        -> call 14041EBD0 arg3   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType
+        -> store 14041EBD0 +8   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType
+        -> call 14041EC60 arg4   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType
+        -> call 1401283F0 arg4   shared with 303:StayAnimType, 307:PCBehaviorType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType
+  +02 movsx:Int16x1  @140426141  [u16 StayAnimType2]  <== SIGNED
+        compared to: 10
+        -> call 14041C340 arg2   shared with 303:StayAnimType, 601:AnimType
+        -> call 14041DEB0 arg3   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType
+        -> call 14041EBD0 arg3   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType
+        -> store 14041EBD0 +8   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType
+        -> call 14041EC60 arg4   shared with 303:StayAnimType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType
+        -> call 1401283F0 arg4   shared with 303:StayAnimType, 307:PCBehaviorType, 601:AnimType, 602:StayAnimType, 605:VariableID, 607:StayAnimType
+  +04 subss:Float32x1 addss:Float32x1  @140426080,1404260A7  [f32 WeightAtEventStart]
+  +08 movss:Float32x1  @14042607A  [f32 WeightAtEventEnd]
+  +0C mov:UInt32x1  @140425FBD  [s32 SpEffectID_IsExist]
+        -> call 1404FA7F0 arg2   shared with 66:SpEffectID, 67:SpEffectID, 122:SpEffectID, 123:SpEffectId, 601:SpEffectID_Exist, 607:SpEffectID_Exist
+        -> store 1404FA7F0 +8   shared with 66:SpEffectID, 67:SpEffectID, 122:SpEffectID, 123:SpEffectId, 601:SpEffectID_Exist, 607:SpEffectID_Exist
+        -> call 141EC4940 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+        -> call 141EC4870 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+        -> call 141EC8100 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+        -> call 141ECA780 arg2   shared with 5:BehaviorJudgeID, 66:SpEffectID, 67:SpEffectID, 302:SpEffectID, 331:SpEffectID_NotEnoughFP, 331:SpEffectID_EnoughFP
+  ctx: +18 +14 +20
+  effect: d1 call 1404FA7F0 on ChrIns+178 (a2=+0C)
+  effect: d1 call 1403F0E20 on ChrIns
+  effect: d2 call 1403C7000 on ChrIns+58
+  effect: d1 call 14041C340 on BehaviorModule (a2=+00)
+  effect: d2 call 14041DEB0 on BehaviorModule (a3=+00)
+  effect: d3 call 14041EBD0 on BehaviorModule (a3=+00)
+  effect: d3 Module+16B8+C8 = ?
+  effect: d3 call 14041EC60 on BehaviorModule (a4=+00)
+  effect: d1 call 14041C340 on BehaviorModule (a2=+02)
+  effect: d2 call 14041DEB0 on BehaviorModule (a3=+02)
+  effect: d3 call 14041EBD0 on BehaviorModule (a3=+02)
+  effect: d3 call 14041EC60 on BehaviorModule (a4=+02)
+  note: unresolved indirect jump at 0x141EC4958
+
+## 700 EnableTwistModifier uses=47625 functions=6 steps=212
+  +00 movups:Packed128_Float32x1  @14042A336  [f32 UpLimitAngle]
+  +10 mov:UInt32x1  @14042A33A  [s32 ModifierID]
+  +14 movzx:UInt8x1  @14042A34A  [u8 TargetType]
+  +15 movzx:UInt8x1  @14042A35D  [s8 TwistPriority]
+  +18 movups:Packed128_Float32x1  @14042A358  [f32 UpMinimumAngle]
+  ctx: +18
+  effect: d1 call 140416E10 on BehaviorDataModule
+  effect: d1 call 140417200 on BehaviorDataModule
+  effect: d2 call 1404179E0 on ModelParamModifierModule
+  effect: d3 ModelParamModifierModule+1C8 = ?
+  effect: d2 BehaviorDataModule+1E2 = 0x1
+  effect: d2 BehaviorDataModule+1E0 = reg
+
+## 702 BehaviorDataUnk702 uses=11 functions=20 steps=1084
+  +00 movss:Float32x1  @14042EE05  [f32 <unnamed>]  <== UNNAMED
+        -> call 140417150 farg2
+        -> call 141EBCD00 farg2
+        -> call 141EBCE30 farg2
+        -> call 141F21BB0 farg2
+        -> call 141F221B0 farg2
+        -> call 141ECA780 farg2
+  +04 mov:UInt32x1  @14042EDFD  [s32 Unk2]
+  ctx: +18
+  effect: d0 call 140417150 on BehaviorDataModule (a2=+00f)
+  effect: d1 Module+2A8+48 = ?
+
+## 703 FixedRotationDirection uses=2967 functions=3 steps=69
+  +00 cmp:UInt8x1  @1404299E0  [b IsEnable]
+        compared to: 0
+  ctx: +18
+  effect: d1 BehaviorDataModule+1E3 = 0x1
+
+## 704 ChrTurnSpeedEX uses=1 functions=3 steps=69
+  +00 movss:Float32x1  @140429559  [f32 SpeedDefault]
+  +04 movss:Float32x1  @140429553  [f32 SpeedExtra]
+  +08 movss:Float32x1  @14042954D  [f32 SpeedBoost]
+  ctx: +18
+  effect: d1 ActionFlagModule+40 |= 0x10000
+  effect: d1 ActionFlagModule+94 = field +00
+  effect: d1 ActionFlagModule+98 = field +04
+  effect: d1 ActionFlagModule+9C = field +08
+
+## 705 FacingAngleCorrection uses=1224 functions=3 steps=66
+  +00 movss:Float32x1  @14042BE0D  [f32 CorrectionRate]
+  ctx: +18
+  effect: d1 ActionFlagModule+40 |= 0x1000000
+  effect: d1 ActionFlagModule+A8 = field +00
+
+## 706 ChrTurnSpeed_ForLock uses=125 functions=4 steps=98
+  +00 movss:Float32x1  @14042A282  [f32 TurnSpeed]
+        -> call 140406D00 farg2
+  +04 movzx:UInt8x1  @14042A294  [s32 <unnamed>]  <== SIZE 1 vs 4  <== UNNAMED
+        -> call 140406D00 arg3
+  ctx: +18 +1A
+  effect: d1 call 140406D00 on ActionFlagModule (a2=+00f,a3=+04)
+  effect: d2 ActionFlagModule+88 = field +00
+  effect: d2 ActionFlagModule+92 = field +04
+  effect: d2 ActionFlagModule+90 = reg
+  effect: d1 call 140406D00 on ActionFlagModule (a2=+00f)
+  effect: d2 ActionFlagModule+92 = reg
+
+## 707 ManualAttackAiming uses=32 functions=2 steps=58
+  ctx: +18
+  effect: d0 ActionFlagModule+40 |= reg
+
+## 710 HideEquippedWeapon uses=1499 functions=4 steps=97
+  +00 cmp:UInt8x1  @14042D2EF  [b LeftHand]
+  +01 cmp:UInt8x1  @14042D2FA  [b RightHand]
+  +02 cmp:UInt8x1  @14042D306  [b LeftHand_WithScabbard]
+  +03 cmp:UInt8x1  @14042D31C  [b RightHand_WithScabbard]
+  ctx: +18
+  effect: d1 call 140407000 on ActionFlagModule
+  effect: d2 ActionFlagModule+48 = reg
+
+## 711 HideModelMask uses=5423 functions=4 steps=7944
+  +00 movzx:UInt8x1  @14042D272  [b Mask0]
+  +01 movzx:UInt8x1  @14042D272  [b Mask1]
+  +02 movzx:UInt8x1  @14042D272  [b Mask2]
+  +03 movzx:UInt8x1  @14042D272  [b Mask3]
+  +04 movzx:UInt8x1  @14042D272  [b Mask4]
+  +05 movzx:UInt8x1  @14042D272  [b Mask5]
+  +06 movzx:UInt8x1  @14042D272  [b Mask6]
+  +07 movzx:UInt8x1  @14042D272  [b Mask7]
+  +08 movzx:UInt8x1  @14042D272  [b Mask8]
+  +09 movzx:UInt8x1  @14042D272  [b Mask9]
+  +0A movzx:UInt8x1  @14042D272  [b Mask10]
+  +0B movzx:UInt8x1  @14042D272  [b Mask11]
+  +0C movzx:UInt8x1  @14042D272  [b Mask12]
+  +0D movzx:UInt8x1  @14042D272  [b Mask13]
+  +0E movzx:UInt8x1  @14042D272  [b Mask14]
+  +0F movzx:UInt8x1  @14042D272  [b Mask15]
+  +10 movzx:UInt8x1  @14042D272  [b Mask16]
+  +11 movzx:UInt8x1  @14042D272  [b Mask17]
+  +12 movzx:UInt8x1  @14042D272  [b Mask18]
+  +13 movzx:UInt8x1  @14042D272  [b Mask19]
+  +14 movzx:UInt8x1  @14042D272  [b Mask20]
+  +15 movzx:UInt8x1  @14042D272  [b Mask21]
+  +16 movzx:UInt8x1  @14042D272  [b Mask22]
+  +17 movzx:UInt8x1  @14042D272  [b Mask23]
+  +18 movzx:UInt8x1  @14042D272  [b Mask24]
+  +19 movzx:UInt8x1  @14042D272  [b Mask25]
+  +1A movzx:UInt8x1  @14042D272  [b Mask26]
+  +1B movzx:UInt8x1  @14042D272  [b Mask27]
+  +1C movzx:UInt8x1  @14042D272  [b Mask28]
+  +1D movzx:UInt8x1  @14042D272  [b Mask29]
+  +1E movzx:UInt8x1  @14042D272  [b Mask30]
+  +1F movzx:UInt8x1  @14042D272  [b Mask31]
+  +20 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +21 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +22 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +23 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +24 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +25 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +26 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +27 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +28 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +29 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +2A movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +2B movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +2C movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +2D movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +2E movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +2F movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +30 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +31 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +32 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +33 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +34 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +35 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +36 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +37 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +38 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +39 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +3A movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +3B movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +3C movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +3D movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +3E movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +3F movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +40 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +41 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +42 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +43 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +44 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +45 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +46 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +47 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +48 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +49 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +4A movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +4B movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +4C movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +4D movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +4E movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +4F movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +50 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +51 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +52 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +53 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +54 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +55 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +56 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +57 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +58 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +59 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +5A movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +5B movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +5C movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +5D movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +5E movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +5F movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +60 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +61 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +62 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +63 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +64 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +65 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +66 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +67 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +68 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +69 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +6A movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +6B movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +6C movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +6D movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +6E movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +6F movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +70 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +71 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +72 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +73 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +74 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +75 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +76 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +77 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +78 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +79 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +7A movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +7B movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +7C movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +7D movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +7E movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +7F movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +80 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +81 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +82 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +83 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +84 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +85 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +86 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +87 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +88 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +89 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +8A movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +8B movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +8C movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +8D movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +8E movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +8F movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +90 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +91 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +92 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +93 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +94 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +95 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +96 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +97 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +98 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +99 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +9A movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +9B movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +9C movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +9D movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +9E movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +9F movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +A0 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +A1 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +A2 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +A3 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +A4 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +A5 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +A6 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +A7 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +A8 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +A9 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +AA movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +AB movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +AC movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +AD movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +AE movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +AF movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +B0 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +B1 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +B2 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +B3 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +B4 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +B5 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +B6 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +B7 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +B8 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +B9 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +BA movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +BB movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +BC movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +BD movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +BE movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +BF movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +C0 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +C1 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +C2 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +C3 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +C4 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +C5 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +C6 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +C7 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +C8 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +C9 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +CA movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +CB movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +CC movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +CD movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +CE movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +CF movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +D0 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +D1 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +D2 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +D3 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +D4 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +D5 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +D6 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +D7 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +D8 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +D9 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +DA movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +DB movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +DC movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +DD movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +DE movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +DF movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +E0 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +E1 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +E2 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +E3 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +E4 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +E5 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +E6 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +E7 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +E8 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +E9 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +EA movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +EB movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +EC movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +ED movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +EE movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +EF movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +F0 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +F1 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +F2 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +F3 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +F4 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +F5 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +F6 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +F7 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +F8 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +F9 movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +FA movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +FB movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +FC movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +FD movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +FE movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  +FF movzx:UInt8x1  @14042D272  []  <== NO FIELD
+  ctx: +18
+  effect: d1 call 140407000 on ActionFlagModule
+  effect: d2 ActionFlagModule+48 = reg
+
+## 712 OverrideWeaponModelLocations uses=4809 functions=4 steps=160
+  +00 movzx:UInt8x1  @140406F44  [u8 RHModel0AbsorpPosParamCondition]
+  +01 movzx:UInt8x1  @140406F4A  [s8 RHModel0ChangeType]
+        compared to: 4
+  +02 movzx:UInt8x1  @140406F55  [u8 RHModel1AbsorpPosParamCondition]
+  +03 movzx:UInt8x1  @140406F5C  [s8 RHModel1ChangeType]
+        compared to: 4
+  +04 movzx:UInt8x1  @140406F67  [u8 RHModel2AbsorpPosParamCondition]
+  +05 movzx:UInt8x1  @140406F6E  [s8 RHModel2ChangeType]
+        compared to: 4
+  +06 movzx:UInt8x1  @140406F79  [u8 RHModel3AbsorpPosParamCondition]
+  +07 movzx:UInt8x1  @140406F80  [s8 RHModel3ChangeType]
+        compared to: 4
+  +08 movzx:UInt8x1  @140406F8B  [u8 LHModel0AbsorpPosParamCondition]
+  +09 movzx:UInt8x1  @140406F92  [s8 LHModel0ChangeType]
+        compared to: 4
+  +0A movzx:UInt8x1  @140406F9D  [u8 LHModel1AbsorpPosParamCondition]
+  +0B movzx:UInt8x1  @140406FA4  [s8 LHModel1ChangeType]
+        compared to: 4
+  +0C movzx:UInt8x1  @140406FAF  [u8 LHModel2AbsorpPosParamCondition]
+  +0D movzx:UInt8x1  @140406FB6  [s8 LHModel2ChangeType]
+        compared to: 4
+  +0E movzx:UInt8x1  @140406FC1  [u8 LHModel3AbsorpPosParamCondition]
+  +0F movzx:UInt8x1  @140406FC8  [s8 LHModel3ChangeType]
+        compared to: 4
+  +10 cmp:UInt8x1  @14042D455  [u8 IsEnabledWhile1Handing]
+        compared to: 0
+  +11 cmp:UInt8x1  @14042D44A  [u8 IsEnabledWhile2HandingRightWeapon]
+  +12 cmp:UInt8x1  @14042D44F  [u8 IsEnabledWhile2HandingLeftWeapon]
+        compared to: 0
+  ctx: +18
+  effect: d1 call 140406F40 on ActionFlagModule
+  effect: d2 ActionFlagModule+78 = 0x1
+  effect: d2 ActionFlagModule+70 = field +00
+  effect: d2 ActionFlagModule+71 = field +01
+  effect: d2 ActionFlagModule+72 = field +02
+  effect: d2 ActionFlagModule+73 = field +03
+  effect: d2 ActionFlagModule+74 = field +04
+  effect: d2 ActionFlagModule+75 = field +05
+  effect: d2 ActionFlagModule+76 = field +06
+  effect: d2 ActionFlagModule+77 = field +07
+  effect: d2 ActionFlagModule+68 = field +08
+  effect: d2 ActionFlagModule+69 = field +09
+  effect: d2 ActionFlagModule+6A = field +0A
+  effect: d2 ActionFlagModule+6B = field +0B
+  effect: d2 ActionFlagModule+6C = field +0C
+  effect: d2 ActionFlagModule+6D = field +0D
+  effect: d2 ActionFlagModule+6E = field +0E
+  effect: d2 ActionFlagModule+6F = field +0F
+
+## 713 ShowModelMask uses=466 functions=4 steps=7944
+  +00 movzx:UInt8x1  @14042D1F2  [b Mask0]
+  +01 movzx:UInt8x1  @14042D1F2  [b Mask1]
+  +02 movzx:UInt8x1  @14042D1F2  [b Mask2]
+  +03 movzx:UInt8x1  @14042D1F2  [b Mask3]
+  +04 movzx:UInt8x1  @14042D1F2  [b Mask4]
+  +05 movzx:UInt8x1  @14042D1F2  [b Mask5]
+  +06 movzx:UInt8x1  @14042D1F2  [b Mask6]
+  +07 movzx:UInt8x1  @14042D1F2  [b Mask7]
+  +08 movzx:UInt8x1  @14042D1F2  [b Mask8]
+  +09 movzx:UInt8x1  @14042D1F2  [b Mask9]
+  +0A movzx:UInt8x1  @14042D1F2  [b Mask10]
+  +0B movzx:UInt8x1  @14042D1F2  [b Mask11]
+  +0C movzx:UInt8x1  @14042D1F2  [b Mask12]
+  +0D movzx:UInt8x1  @14042D1F2  [b Mask13]
+  +0E movzx:UInt8x1  @14042D1F2  [b Mask14]
+  +0F movzx:UInt8x1  @14042D1F2  [b Mask15]
+  +10 movzx:UInt8x1  @14042D1F2  [b Mask16]
+  +11 movzx:UInt8x1  @14042D1F2  [b Mask17]
+  +12 movzx:UInt8x1  @14042D1F2  [b Mask18]
+  +13 movzx:UInt8x1  @14042D1F2  [b Mask19]
+  +14 movzx:UInt8x1  @14042D1F2  [b Mask20]
+  +15 movzx:UInt8x1  @14042D1F2  [b Mask21]
+  +16 movzx:UInt8x1  @14042D1F2  [b Mask22]
+  +17 movzx:UInt8x1  @14042D1F2  [b Mask23]
+  +18 movzx:UInt8x1  @14042D1F2  [b Mask24]
+  +19 movzx:UInt8x1  @14042D1F2  [b Mask25]
+  +1A movzx:UInt8x1  @14042D1F2  [b Mask26]
+  +1B movzx:UInt8x1  @14042D1F2  [b Mask27]
+  +1C movzx:UInt8x1  @14042D1F2  [b Mask28]
+  +1D movzx:UInt8x1  @14042D1F2  [b Mask29]
+  +1E movzx:UInt8x1  @14042D1F2  [b Mask30]
+  +1F movzx:UInt8x1  @14042D1F2  [b Mask31]
+  +20 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +21 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +22 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +23 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +24 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +25 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +26 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +27 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +28 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +29 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +2A movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +2B movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +2C movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +2D movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +2E movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +2F movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +30 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +31 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +32 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +33 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +34 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +35 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +36 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +37 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +38 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +39 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +3A movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +3B movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +3C movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +3D movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +3E movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +3F movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +40 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +41 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +42 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +43 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +44 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +45 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +46 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +47 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +48 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +49 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +4A movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +4B movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +4C movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +4D movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +4E movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +4F movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +50 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +51 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +52 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +53 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +54 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +55 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +56 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +57 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +58 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +59 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +5A movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +5B movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +5C movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +5D movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +5E movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +5F movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +60 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +61 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +62 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +63 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +64 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +65 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +66 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +67 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +68 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +69 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +6A movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +6B movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +6C movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +6D movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +6E movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +6F movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +70 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +71 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +72 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +73 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +74 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +75 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +76 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +77 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +78 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +79 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +7A movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +7B movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +7C movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +7D movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +7E movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +7F movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +80 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +81 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +82 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +83 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +84 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +85 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +86 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +87 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +88 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +89 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +8A movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +8B movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +8C movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +8D movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +8E movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +8F movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +90 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +91 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +92 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +93 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +94 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +95 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +96 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +97 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +98 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +99 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +9A movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +9B movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +9C movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +9D movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +9E movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +9F movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +A0 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +A1 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +A2 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +A3 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +A4 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +A5 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +A6 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +A7 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +A8 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +A9 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +AA movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +AB movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +AC movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +AD movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +AE movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +AF movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +B0 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +B1 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +B2 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +B3 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +B4 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +B5 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +B6 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +B7 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +B8 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +B9 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +BA movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +BB movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +BC movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +BD movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +BE movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +BF movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +C0 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +C1 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +C2 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +C3 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +C4 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +C5 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +C6 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +C7 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +C8 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +C9 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +CA movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +CB movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +CC movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +CD movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +CE movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +CF movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +D0 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +D1 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +D2 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +D3 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +D4 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +D5 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +D6 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +D7 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +D8 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +D9 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +DA movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +DB movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +DC movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +DD movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +DE movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +DF movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +E0 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +E1 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +E2 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +E3 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +E4 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +E5 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +E6 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +E7 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +E8 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +E9 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +EA movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +EB movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +EC movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +ED movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +EE movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +EF movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +F0 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +F1 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +F2 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +F3 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +F4 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +F5 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +F6 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +F7 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +F8 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +F9 movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +FA movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +FB movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +FC movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +FD movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +FE movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  +FF movzx:UInt8x1  @14042D1F2  []  <== NO FIELD
+  ctx: +18
+  effect: d1 call 140406FE0 on ActionFlagModule
+  effect: d2 ActionFlagModule+58 = reg
+
+## 714 StaggerModuleUnk714 uses=38 functions=2 steps=71
+  +00 cmp:UInt8x1  @14042EF2F  [u8 <unnamed>]  <== UNNAMED
+        compared to: 0
+  ctx: +18
+  effect: d0 ActionFlagModule+21C |= 0x20
+  effect: d0 ActionFlagModule+21C |= 0x40
+
+## 715 [DS3]WepAbsorpPos uses=0 functions=5 steps=156
+  +00 movzx:UInt8x2  @14042D3D0  [u8 <unnamed>]  <== UNNAMED
+        compared to: 4
+        -> call 140406CE0 arg2
+  +01 movzx:UInt8x2  @14042D3E3  [u8 <unnamed>]  <== UNNAMED  <== ASSERTED 0
+  +02 cmp:UInt8x1  @14042D3AF  [u8 <unnamed>]  <== UNNAMED  <== ASSERTED 0
+        compared to: 0
+  +03 cmp:UInt8x1  @14042D3C5  [u8 <unnamed>]  <== UNNAMED  <== ASSERTED 0
+        compared to: 0
+  +04 cmp:UInt8x1  @14042D3BA  [s32 <unnamed>]  <== SIZE 1 vs 4  <== UNNAMED
+        compared to: 0
+  ctx: +18
+  effect: d1 call 140406CF0 on ActionFlagModule (a2=+FFFFFFFFFFFFFFFF)
+  effect: d1 call 140406CE0 on ActionFlagModule (a2=+00)
+  unread: +08 <unnamed>, +0C <unnamed>, +10 <unnamed>, +14 <unnamed>, +18 <unnamed>
+
+## 716 [DS3]HksEngineFlag716 uses=0 functions=2 steps=57
+  ctx: +18
+  effect: d0 ActionFlagModule+40 |= 0x400000
+  unread: +00 <unnamed>, +04 <unnamed>, +08 <unnamed>, +0C <unnamed>
+
+## 717 ActionFlagUnk717 uses=447 functions=5 steps=160
+  +00 movss:Float32x2  @1404295C5  [f32 <unnamed>]  <== UNNAMED
+        -> call 140406BB0 farg2
+  +04 cmp:UInt8x1  @1404295A9  [b State]
+        compared to: 1
+  +05 movzx:UInt8x2  @1404295D6  [u8 <unnamed>]  <== UNNAMED
+        -> call 140406BB0 arg3
+  ctx: +18 +1A
+  effect: d1 call 1403F42B0 on ChrIns
+  effect: d1 call 140406BB0 on ActionFlagModule (a2=+00f,a3=+05)
+  effect: d2 ActionFlagModule+8C = field +00
+  effect: d2 ActionFlagModule+93 = field +05
+  effect: d2 ActionFlagModule+90 = reg
+  effect: d1 call 140406BB0 on ActionFlagModule (a2=+00f)
+  effect: d2 ActionFlagModule+93 = reg
+
+## 718 Event718 uses=1554 functions=2 steps=57
+  ctx: +18
+  effect: d0 ActionFlagModule+40 |= 0x800000
+
+## 730 ActionFlagUnk_730 uses=232 functions=3 steps=84
+  +00 movd:UInt32x1  @140427977  [f32 <unnamed>]  <== UNNAMED
+  +04 movd:UInt32x1  @1404279A5  [f32 <unnamed>]  <== UNNAMED
+  ctx: +18 +20 +14
+  effect: d1 ActionFlagModule+A0 = reg
+
+## 731 ActionFlagUnk_731 uses=581 functions=2 steps=64
+  +00 mov:UInt32x1  @14042EFB2  [s32 <unnamed>]  <== UNNAMED
+  ctx: +18
+  effect: d0 ActionFlagModule+A4 = field +00
+
+## 740 Unk740 uses=390 functions=2 steps=64
+  ctx: +18
+  effect: d0 ActionFlagModule+40 |= 0x10000000
+
+## 760 BoostRootMotionToReachTarget uses=2636 functions=4 steps=108
+  +00 movzx:UInt8x1  @1404270C6  [b IsEnable]
+  +04 movss:Float32x1  @1404270E4  [f32 ReferenceDist]
+        -> call 140406B50 farg3
+  +08 movss:Float32x1  @1404270DC  [f32 EnableRangeMin]
+        -> call 140406B50 farg4
+  +0C movss:Float32x1  @1404270EF  [f32 EnableRangeMax]
+        -> call 140406B50 farg1
+  +10 movss:Float32x2  @1404270D4  [f32 ArriveAngleFromTarget]
+        -> call 140406B50 farg2
+  +14 movss:Float32x2  @1404270CD  [f32 ArriveDistFromTarget]
+  ctx: +18
+  effect: d1 call 140406B50 on ActionFlagModule (a1=+0Cf,a2=+10f,a3=+04f,a4=+08f)
+  effect: d2 ActionFlagModule+B4 = reg
+  effect: d2 ActionFlagModule+40 = reg
+  effect: d2 ActionFlagModule+AC = field +04
+  effect: d2 ActionFlagModule+B0 = field +08
+  effect: d2 ActionFlagModule+B8 = reg
+  effect: d2 ActionFlagModule+BC = reg
+
+## 761 AIModule_761 uses=311 functions=4 steps=83
+  ctx: +18 +20
+  effect: d0 call 140435440 on AiModule
+  effect: d1 call 14043D2E0 on AiModule
+
+## 770 [DS3]ActionFlag_770_ChangeBonsPos? uses=0 functions=16 steps=846
+  +00 mov:UInt32x1  @14042AF55  [s32 <unnamed>]  <== UNNAMED
+  +04 movss:Float32x1  @14042AF4B  [f32 <unnamed>]  <== UNNAMED
+        -> call 140406E80 farg1
+        -> call 140407190 farg1
+        -> call 141EBCD00 farg1
+        -> call 141EBCE30 farg1
+        -> call 141F21BB0 farg1
+        -> call 141F221B0 farg1
+  +08 movzx:UInt8x1  @14042AF41  [u8 <unnamed>]  <== UNNAMED
+  ctx: +18
+  effect: d1 call 140406E80 on ActionFlagModule (a1=+04f)
+  effect: d2 call 140407190 on UnkC8Module (a1=+04f)
+  effect: d3 UnkC8Module+108 = ?
+
+## 771 [DS3]FixBone uses=0 functions=4 steps=227
+  +00 movzx:UInt8x1  @14042F0AE  [u8 <unnamed>]  <== UNNAMED
+        -> call 140406D40 arg2
+        -> store 140406D40 +0
+  ctx: +18
+  effect: d0 call 140406D40 on ActionFlagModule (a2=+00)
+  effect: d1 UnkC8Module+108 = ?
+
+## 781 TurnLowerBody uses=322 functions=4 steps=89
+  +00 movzx:UInt8x1  @140428F94  [u8 TurnState]
+        compared to: 1,2,3
+  ctx: +18
+  effect: d1 ActionFlagModule+40 |= reg
+  effect: d1 call 1403F7580 on ChrIns
+  effect: d2 ChrIns+BC = reg
+
+## 782 AiReplanningCtrlReset uses=60 functions=2 steps=58
+  ctx: +18
+  effect: d0 ActionFlagModule+40 |= reg
+
+## 785 [DS3]SpawnChrFinderBullet uses=0 functions=14 steps=628
+  +00 movss:Float32x1  @14042A9CA  [f32 DetectionRange]
+        -> call 1403C2B00 farg4
+        -> call 1403F3A00 farg4
+        -> store 1403C2B00 +FFFFFFFFFFFFFF84
+        -> call 140689180 farg4
+        -> call 1403E97A0 farg4
+        -> call 1403E97F0 farg4
+  +04 mov:UInt32x1  @14042A9DA  [s32 DummypolyID]
+        -> call 1403C2B00 arg3
+        -> call 1403F3A00 arg3
+        -> call 140689180 arg3
+  +08 mov:UInt32x1  @14042A9E1  [s32 BulletID]
+        -> call 1403C2B00 arg2
+        -> call 140689180 arg2
+  +0C cmp:UInt8x1  @14042A9D2  [b IsCompareChrType]
+  +0D cmp:UInt8x1  @14042A9C3  [u8 TargetNum]
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1403C2B00 on ChrIns (a2=+08,a3=+04,a4=+00f)
+
+## 787 ActionFlag_787 uses=8767 functions=3 steps=75
+  +00 movss:Float32x1  @140406C96  [f32 <unnamed>]  <== UNNAMED
+  +04 movss:Float32x1  @140406CA6  [f32 <unnamed>]  <== UNNAMED
+  +08 movss:Float32x1  @140406CB7  [f32 <unnamed>]  <== UNNAMED
+  +0C mov:UInt32x1  @140406CC8  [f32 <unnamed>]  <== UNNAMED
+  +10 cmp:UInt8x1  @140406CD1  [b State]
+        compared to: 0
+  ctx: +18
+  effect: d0 call 140406C80 on ActionFlagModule
+  effect: d1 ActionFlagModule+40 |= reg
+  effect: d1 ActionFlagModule+224 = field +00
+  effect: d1 ActionFlagModule+228 = field +04
+  effect: d1 ActionFlagModule+22C = field +08
+  effect: d1 ActionFlagModule+230 = field +0C
+  effect: d1 ActionFlagModule+234 = reg
+
+## 788 Event788 uses=230 functions=2 steps=58
+  ctx: +18
+  effect: d0 ActionFlagModule+40 |= reg
+
+## 789 Event789 uses=41 functions=2 steps=58
+  ctx: +18
+  effect: d0 ActionFlagModule+40 |= reg
+
+## 790 DisableDefaultWeaponTrail uses=1588 functions=2 steps=57
+  ctx: +18
+  effect: d0 ActionFlagModule+40 |= 0x8000000
+
+## 791 PartDamageAdditiveBlendInvalid uses=1122 functions=2 steps=58
+  ctx: +18
+  effect: d0 ActionFlagModule+40 |= reg
+
+## 792 FootSfxParam_Entity uses=44660 functions=35 steps=27694
+  +00 movzx:UInt16x2  @1404A8C7D,1404A8CB2  [u16 FootSFXIndex]
+        compared to: 199
+        -> call 140D3C420 arg3
+        -> call 1401B9540 arg3   shared with 117:ThrowDirectionSFXIndex
+        -> call 1404A8BA0 arg2
+  +04 mov:UInt32x1  @1404A8CCD  [s32 DummyPolyID]
+        -> store 1404A8BC0 +8
+  +08 mov:UInt32x1  @1404A8CC5  [s32 SlotID]
+        -> store 1404A8BC0 +0
+  +0C cmp:UInt8x1  @1404A8BF4  [b IsIgnoreDummyPolyAngle]
+        compared to: 0
+  +0D cmp:UInt8x1  @1404A8BFC  [b IsFollowDummyPoly]
+        compared to: 0
+  +0E cmp:UInt8x1  @1404A8BEC  [b IsRestrictToDummyPoly]
+        compared to: 0
+  +0F movzx:UInt8x1  @1404A8C04  [u8 ExtraSpawnCondition]
+        -> store 1404A8BC0 +10
+  ctx: +18
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d1 call 1404A43E0 on ChrIns
+  effect: d2 call 1403F2D30 on ChrIns
+  effect: d2 call 1403FEA50 on ChrIns
+  effect: d2 call 140455050 on MaterialModule
+  effect: d3 call 14043D2E0 on MaterialModule
+  effect: d1 call 14049B720 on ChrIns
+  effect: d2 call 140499A90 on ChrIns
+  effect: d3 call 14266E550 on ChrIns
+  effect: d4 ChrIns+20+0 = ?
+  effect: d3 call 14266E4A0 on ChrIns
+  effect: d3 call 140499170 on ChrIns
+  effect: d5 vcall ChrIns+8::vf10
+  effect: d4 call 14266E5D0 on ChrIns
+  effect: d5 ChrIns+10 = reg
+  effect: d3 call 14266E510 on ChrIns
+  effect: d4 call 14013E2C0 on ChrIns
+  effect: d5 call 14013E380 on ChrIns
+  effect: d6 call 14013E450 on ChrIns
+  effect: d7 call 14013E510 on ChrIns
+  effect: d7 call 14013E630 on ChrIns+8
+  effect: d7 ChrIns+18 = reg
+  effect: d7 ChrIns+10 = reg
+  effect: d7 ChrIns+8 = reg
+  effect: d5 ChrIns+10+0 = reg
+  effect: d5 ChrIns+10+10 = reg
+  effect: d5 ChrIns+10 += 0x18
+  effect: d2 ChrIns+20+0 = ?
+  note: unresolved indirect jump at 0x141EC4958
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 795 DS3Poise uses=1567 functions=17 steps=754
+  +00 movzx:UInt8x3  @14042CA30  [u8 ToughnessParamID]
+        -> call 140487470 arg2
+  +01 movzx:UInt8x1  @14042C931  [u8 ToughnessType]
+        compared to: 2,3
+  +02 movzx:UInt8x1  @14042C9B9  [u16 <unnamed>]  <== SIZE 1 vs 2  <== UNNAMED  <== ASSERTED 0
+        compared to: 1
+        -> call 140430430 arg2   shared with 129:SoundIDOffsetType
+  +04 mov:UInt32x1  @14042C8F8  [f32 DamageRatio]
+  ctx: +18 +1A
+  effect: d1 ToughnessModule+28 = 0x1
+  effect: d1 ToughnessModule+24 = field +04
+  effect: d1 call 14042DDA0 on ChrIns
+  effect: d1 call 140487470 on ToughnessModule (a2=+00)
+  effect: d2 ToughnessModule+1C = field +00
+  effect: d1 ToughnessModule+2D = 0x1
+  note: unresolved indirect jump at 0x141EC4958
+
+## 800 [ExePatch]DebugMovementMultiplier uses=928 functions=4 steps=69
+  +00 movss:Float32x1  @140429259  [f32 MovDistMultiplier]
+        -> call 140406620 farg2
+  +04 movss:Float32x1  @140429253  [f32 CamTurnDistMultiplier]
+        -> call 140406620 farg3
+  +08 movss:Float32x1  @14042924D  [f32 LadderDistMultiplier]
+        -> call 140406620 farg4
+  ctx: +18
+  effect: d1 call 140406620 on ActionFlagModule (a2=+00f,a3=+04f,a4=+08f)
+  effect: d2 ActionFlagModule+1F8 = field +00
+  effect: d2 ActionFlagModule+1FC = field +04
+  effect: d2 ActionFlagModule+200 = field +08
+
+## 900 AttachChrToRidingMount uses=205 functions=4 steps=155
+  +00 cmp:UInt8x1  @14042F94F  [u8 Enabled]
+        compared to: 0
+  ctx: +18
+  effect: d0 call 140475720 on RideModule
+  effect: d1 call 14043D2E0 on RideModule
+  effect: d1 RideModule+161 = 0x0
+  effect: d1 RideModule+163 = 0x0
+  unread: +04 Unk
+
+## 901 TransferCameraControlToMount uses=27 functions=4 steps=59
+  +00 cmp:UInt8x1  @14042F9BD  [u8 Enabled]
+        compared to: 0
+  ctx: +18
+  effect: d0 call 140475890 on RideModule
+
+## 902 UnkRideTurningEvent902 uses=4309 functions=21 steps=734
+  +00 mov:UInt32x1  @14042BE92  [s32 RideStateAgain?]
+        compared to: 3
+        -> call 140432860 arg2
+        -> call 140432700 arg2
+        -> call 14043D2E0 arg2   shared with 129:OverrideSoundType, 129:SoundType, 132:SoundType, 133:SoundType, 134:SoundType, 606:JigglerId
+        -> call 14043279A arg2
+  +04 mov:UInt32x1  @14042BE79  [s32 RideUnk]
+        -> call 140432860 arg4
+  +08 movsx:Int8x1  @14042BE6B  [u8 RideState]  <== SIGNED
+        compared to: 3
+  ctx: +18
+  effect: d1 call 140474B90 on RideModule
+  note: unresolved indirect jump at 0x141EC4958
+
+## 903 Havok_ThrowUnk903 uses=755 functions=24 steps=1593
+  +00 movss:Float32x6  @140429728,14042974B,140429828  [f32 <unnamed>]  <== UNNAMED
+        -> call 1403F4350 farg1
+        -> call 141EC4940 farg1
+        -> call 141EC4870 farg1
+        -> call 141EC8100 farg1
+        -> call 141ECA780 farg1
+        -> call 1424FED08 farg1
+  +04 cmp:UInt8x1  @140429718  [b UnkState]
+        compared to: 0
+  ctx: +18 +20 +14
+  effect: d1 ChrIns+58+2E4 = reg
+  effect: d1 ChrIns+58+2EC = field +00
+  effect: d1 ChrIns+58+2F1 = 0x1
+  effect: d1 ChrIns+58+2E8 = field +00
+  effect: d1 ChrIns+58+2F0 = 0x1
+  effect: d1 call 1403F4350 on ChrIns (a1=+00f)
+  effect: d2 call 140474B90 on RideModule
+  effect: d2 call 1403F41E0 on ChrIns
+  effect: d2 call 14037C670 on ChrIns
+  effect: d1 call 1403F4350 on ChrIns
+  note: unresolved indirect jump at 0x141EC4958
+
+## 904 UnkHkAi904 uses=249 functions=11 steps=278
+  +00 mov:UInt32x1  @14042D11E  [s32 <unnamed>]  <== UNNAMED
+        -> call 1424FEAE0 arg2   shared with 1:BehaviorJudgeID, 14:Jumptable0-5, 606:JigglerId, 609:SpEffectID_IsExist
+        -> call 1424FF290 arg2   shared with 1:BehaviorJudgeID, 14:Jumptable0-5, 606:JigglerId, 609:SpEffectID_IsExist
+        -> call 14264ECE4 arg2   shared with 1:BehaviorJudgeID, 14:Jumptable0-5, 606:JigglerId, 609:SpEffectID_IsExist
+  ctx: +18
+  effect: d1 call 1403EEB80 on ChrIns
+  effect: d2 call 1403C6E70 on ChrIns+58
+  effect: d1 call 1403FA660 on ChrIns
+  effect: d2 call 1403C9250 on ChrIns+58
+  effect: d3 ChrIns+58+FC |= 0x3
+  effect: d3 ChrIns+58+100 = reg
+  effect: d3 ChrIns+58+110 = reg
+  effect: d2 ChrIns+2E7 |= 0x2
+  effect: d2 call 1402E52D0 on ChrIns+1F0
+  effect: d3 ChrIns+1F0+0 = reg
+  effect: d3 ChrIns+1F0+8 = reg
+  effect: d3 ChrIns+1F0+18 = 0xFFFFFFFFFFFFFFFF
+  effect: d3 ChrIns+1F0+10 = 0xFFFFFFFFFFFFFFFF
+  effect: d3 ChrIns+1F0+20 = 0xFFFFFFFFFFFFFFFF
+  effect: d2 ChrIns+1C6 |= 0x80
+  effect: d2 ChrIns+C8 = 0x1
+  effect: d2 ChrIns+350 = 0x3F800000
+
+## 905 UnkHkAiPos905 uses=19 functions=31 steps=1075
+  ctx: +18
+  effect: d1 call 14045DEE0 on PhysicsModule
+  effect: d1 call 1403F0E20 on ChrIns
+  effect: d2 call 1403C7000 on ChrIns+58
+  effect: d1 call 1403EEB80 on ChrIns
+  effect: d2 call 1403C6E70 on ChrIns+58
+  effect: d1 call 1403FA660 on ChrIns
+  effect: d2 call 1403C9250 on ChrIns+58
+  effect: d3 ChrIns+58+FC |= 0x3
+  effect: d3 ChrIns+58+100 = reg
+  effect: d3 ChrIns+58+110 = reg
+  effect: d2 ChrIns+2E7 |= 0x2
+  effect: d2 call 1402E52D0 on ChrIns+1F0
+  effect: d3 ChrIns+1F0+0 = reg
+  effect: d3 ChrIns+1F0+8 = reg
+  effect: d3 ChrIns+1F0+18 = 0xFFFFFFFFFFFFFFFF
+  effect: d3 ChrIns+1F0+10 = 0xFFFFFFFFFFFFFFFF
+  effect: d3 ChrIns+1F0+20 = 0xFFFFFFFFFFFFFFFF
+  effect: d2 ChrIns+1C6 |= 0x80
+  effect: d2 ChrIns+C8 = 0x1
+  effect: d2 ChrIns+350 = 0x3F800000
+  effect: d1 ChrIns+58+2E4 = reg
+  effect: d1 ChrIns+58+2EC = reg
+  effect: d1 ChrIns+58+2F0 = 0x101
+  effect: d1 ChrIns+58+2E8 = reg
+  effect: d1 call 1403F4350 on ChrIns
+  effect: d2 call 140474B90 on RideModule
+  effect: d2 call 1403F41E0 on ChrIns
+  effect: d2 call 14037C670 on ChrIns
+  note: unresolved indirect jump at 0x141EC4958
+
+## 906 RideStartUpChrAttachment uses=5 functions=5 steps=93
+  ctx: +18 +20 +14
+  effect: d1 call 140475670 on RideModule
+  effect: d2 RideModule+168 = reg
+  effect: d2 RideModule+161 = reg
+  effect: d2 RideModule+162 = 0x1
+
+## 907 PhysicsClassUnk907 uses=5269 functions=3 steps=63
+  +00 movss:Float32x1  @14042F28B  [f32 <unnamed>]  <== UNNAMED
+        -> call 14045FEF0 farg2
+  ctx: +18
+  effect: d0 call 14045FEF0 on PhysicsModule (a2=+00f)
+  effect: d1 PhysicsModule+398 = field +00
+  unread: +04 <unnamed>, +08 <unnamed>, +0C <unnamed>
+
+## 908 BehaviorDataUnk908 uses=122 functions=4 steps=87
+  +00 movss:Float32x1  @14042A2D5  [f32 Unk1]
+        -> call 140417130 farg2
+  +04 movss:Float32x1  @14042A2EA  [f32 Unk2]
+        -> call 140417130 farg3
+  +08 movss:Float32x1  @14042A2E4  [f32 Unk3]
+        -> call 140417130 farg4
+  ctx: +18 +1A
+  effect: d1 call 140417130 on BehaviorDataModule (a2=+00f,a3=+04f,a4=+08f)
+  effect: d2 BehaviorDataModule+23C = field +00
+  effect: d2 BehaviorDataModule+240 = field +04
+  effect: d2 BehaviorDataModule+244 = field +08
+  effect: d2 BehaviorDataModule+248 = 0x1
+  effect: d1 call 140417130 on BehaviorDataModule (a2=+00f)
+  effect: d2 BehaviorDataModule+240 = reg
+  effect: d2 BehaviorDataModule+244 = reg
+
+## 910 Unk910 uses=3095 functions=6 steps=173
+  +00 mov:UInt32x1  @14042999C  [s32 LockonDummyPolyID]
+        -> call 140499F60 arg2
+        -> call 14049D0F0 arg2
+        -> store 14049D0F0 +FFFFFFFFFFFFFFD8
+  +04 mov:UInt32x1  @140429998  [s32 LookatDummyPolyIDStart]
+        -> call 140499F60 arg3
+        -> call 14049D0F0 arg3
+        -> store 14049D0F0 +FFFFFFFFFFFFFFDC
+  +08 mov:UInt32x1  @14042997B  [s32 LookatDummyPolyIDEnd]
+        -> call 140499F60 arg4
+        -> call 14266E4A0 arg4   shared with 341:Offset
+        -> call 14049D0F0 arg4
+        -> store 14049D0F0 +FFFFFFFFFFFFFFE0
+  ctx: +18 +20 +14
+  effect: d1 call 140499F60 on ChrIns (a2=+00,a3=+04,a4=+08)
+  effect: d2 call 14266E4A0 on ChrIns (a4=+08)
+
+## 911 Unk910 uses=1102 functions=4 steps=88
+  +00 movss:Float32x1  @14042BEDE  [f32 <unnamed>]  <== UNNAMED
+        -> call 1403C8310 farg2
+  +04 movss:Float32x1  @14042BED9  [f32 <unnamed>]  <== UNNAMED
+        -> call 1403C8310 farg3
+  ctx: +18
+  effect: d1 call 1403C8310 on ChrIns+58 (a2=+00f,a3=+04f)
+  effect: d2 ChrIns+58+31C = field +00
+  effect: d2 ChrIns+58+320 = field +04
+  effect: d2 ChrIns+58+318 = 0x1
+
+## 10096 Sfx? uses=0 functions=17 steps=26897
+  +00 mov:UInt32x1  @1404A8B39  [s32 <unnamed>]  <== UNNAMED
+        -> store 1404A8B30 +4   shared with 95:FFXID, 96:FFXID
+  +04 mov:UInt32x1  @1404A8B3E  [s32 <unnamed>]  <== UNNAMED
+        -> store 1404A8B30 +8   shared with 95:DummyPolyID, 96:DummyPolyID
+  +08 mov:UInt32x1  @1404A8B30  [s32 <unnamed>]  <== UNNAMED
+        -> store 1404A8B30 +0   shared with 95:SlotID, 96:SlotID
+  +0C cmp:UInt8x1  @1404A8B47  [s32 <unnamed>]  <== SIZE 1 vs 4  <== UNNAMED
+        compared to: 0
+  +0D cmp:UInt8x1  @1404A8B55  [s32 <unnamed>]  <== MID-FIELD of +0C  <== SIZE 1 vs 4  <== UNNAMED
+        compared to: 0
+  +0E cmp:UInt8x1  @1404A8B33  [s32 <unnamed>]  <== MID-FIELD of +0C  <== SIZE 1 vs 4  <== UNNAMED
+        compared to: 0
+  +0F movzx:UInt8x1  @1404A8B69  [s32 <unnamed>]  <== MID-FIELD of +0C  <== SIZE 1 vs 4  <== UNNAMED
+        -> store 1404A8B30 +10   shared with 95:ExtraSpawnCondition, 96:ExtraSpawnCondition
+  +10 movzx:UInt16x1  @14042FED2  []  <== NO FIELD
+        -> call 1404FA450 arg2   shared with 0:StateInfo, 1:StateInfo, 2:StateInfo, 95:StateInfo, 96:StateInfo, 129:StateInfo
+  ctx: +18 +1A
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d2 call 1404FA450 on ChrIns+178 (a2=+10)
+  effect: d2 call 14049B720 on ChrIns
+  effect: d3 call 140499A90 on ChrIns
+  effect: d4 call 14266E550 on ChrIns
+  effect: d5 ChrIns+20+0 = ?
+  effect: d4 call 14266E4A0 on ChrIns
+  effect: d4 call 140499170 on ChrIns
+  effect: d6 vcall ChrIns+8::vf10
+  effect: d5 call 14266E5D0 on ChrIns
+  effect: d6 ChrIns+10 = reg
+  effect: d4 call 14266E510 on ChrIns
+  effect: d5 call 14013E2C0 on ChrIns
+  effect: d6 call 14013E380 on ChrIns
+  effect: d7 call 14013E450 on ChrIns
+  effect: d6 ChrIns+10+0 = reg
+  effect: d6 ChrIns+10+10 = reg
+  effect: d6 ChrIns+10 += 0x18
+  effect: d3 ChrIns+20+0 = ?
+  note: unresolved indirect jump at 0x141EBD43F
+
+## 10130 PlaySound_WanderGhost_Unused uses=0 functions=3 steps=54
+  ctx: +18
+  effect: d0 call 1403EEE40 on ChrIns
+  unread: +00 <unnamed>, +04 <unnamed>, +08 <unnamed>, +0C <unnamed>
+
+## 10137 DebugDecal1 uses=0 functions=9 steps=447
+  +00 mov:UInt32x1  @14042FB40  [s32 DecalParamId]
+        compared to: -1
+        -> call 1403F5580 arg3   shared with 137:DecalParamID, 138:DecalParamID, 10138:DecalParamId
+  ctx: +18 +19
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d2 call 1403F5580 on ChrIns
+  effect: d2 call 1403F5580 on ChrIns (a3=+00)
+  unread: +04 <unnamed>, +08 <unnamed>, +0C <unnamed>
+
+## 10138 DebugDecal2 uses=0 functions=17 steps=1044
+  +00 mov:UInt32x1  @14042FBE4  [s32 DecalParamId]
+        compared to: -1
+        -> call 1403F5580 arg3   shared with 137:DecalParamID, 138:DecalParamID, 10137:DecalParamId
+  +04 mov:UInt32x1  @14042FC58  [s32 <unnamed>]  <== UNNAMED
+        -> call 1403E50A0 arg4   shared with 138:DummyPolyID
+        -> call 140D38D60 arg4   shared with 138:DummyPolyID
+        -> call 140D3A2A0 arg4   shared with 138:DummyPolyID
+        -> call 141EC4940 arg4   shared with 1:AttackType, 122:FFXID, 138:DummyPolyID, 307:Condition0x64_GetWeaponData
+        -> call 141EC4870 arg4   shared with 1:AttackType, 122:FFXID, 138:DummyPolyID, 307:Condition0x64_GetWeaponData
+        -> call 141EC8100 arg4   shared with 1:AttackType, 122:FFXID, 138:DummyPolyID, 307:Condition0x64_GetWeaponData
+  ctx: +18 +19
+  effect: d1 call 1403EEE40 on ChrIns
+  effect: d2 call 1403F5580 on ChrIns
+  effect: d2 call 1403F5580 on ChrIns (a3=+00)
+  note: unresolved indirect jump at 0x141EC4958
+  unread: +08 <unnamed>, +0C <unnamed>
+

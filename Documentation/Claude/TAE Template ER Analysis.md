@@ -48,7 +48,7 @@ the event. 601's `WeightAtEventStart/End` reads this way, so other fields with t
 
 | Event | Field | Before | After | Evidence |
 |---|---|---|---|---|
-| 0 ChrActionFlag | FlagType enum | 125 entries | + 13, 43, 126, 127, 129, 130, 133, 136–138, 140–142 | Used by the game (e.g. 129 ×869, 142 ×683) and handled by the flag switch, except 13. 126/136 call the same toggle with `false`, 129/135 with `true`. 127/130 call the physics module (`chr+190→+68`) |
+| 0 ChrActionFlag | FlagType enum | 125 entries | + 13, 43, 126–131, 133, 136–142 | Used by the game. **Corrected in the second pass:** the flag switch runs `dec eax` before its bounds check, so the case numbers first reported were one too low. See "Second pass" |
 | 1 AttackBehavior | AttackType enum | 0,1,2,62,64 | + 3, 63, 65, 66 | The game compares against 1,2,3,62,63,65,66. 3 is used ×61. Names with `?` follow ERNR and aren't confirmed |
 | 1 | DirectionType | u8 | s8 | `movsx` |
 | 2 BulletBehavior | +10 Offset | s16 | s8 + u8 | `movsx byte`, read only if time act version ≥ 0x25 |
@@ -87,24 +87,82 @@ All other event sizes are unchanged (checked with `sizecheck`).
 * `report` with the new template: no broken asserts, no enum values missing, no ints that look like floats.
 * SoulsFormats `TAE.Template.ReadXMLFile` reads all 153 events and builds their default bytes.
 
-## Still unnamed
+## Second pass: names from the modules the events touch
 
-These are read by the game, but nothing found names them. The trace (`out/trace.txt`) has the reads, constants and sinks
-for each.
+The first pass left about 150 fields unnamed. The second pass names every field, and renames events with placeholder
+or misleading names. The decisions, each with its evidence, are in `Tools/TaeTemplateSurvey/er_names.txt` (fields) and
+`er_names2.txt` (events), applied with `TaeTemplateSurvey apply <template> <spec>`.
 
-* 2 `+12` (u8: 255, 0, 1, 2…; packed next to AttachmentType into the bullet spawn struct)
-* 14: all of it (a jump table with six floats; `+04/+08/+14/+18` are passed together to `0x1403C5750`)
-* 64 `+04 +05 +09 +0A +0C +0D`, 65 `+00 +09`
-* 133 `+0D`, 134 `+08 +0C +10`
-* 152 `+04 +08 +0C +11` (stored to the camera at `+5C`, `+64`, `+68`)
-* 193 `+08`, 198 (copied whole into a model parameter modifier), 300 `+0C` (not read)
-* 304 `+00`, 307 `+0C`, 310, 311, 339, 340, 342, 343, 511, 702, 706 `+04`, 714
-* 717 `+00 +05`, 730, 731, 787 `+00..+0C` (stored to the ActionFlag module at `+224..+230`), 907, 911
+### New evidence sources
 
-Event names were left alone, as `TimeActEventResolver` matches on `FFX` and `PlaySound` in them.
+* **Module tracking in the tracer.** `this+18h` is the character, `chr+190h` its module bag, and `[bag+X]` a module.
+  The tracer now tags these pointers and logs each write, call and virtual call on them (the `effect:` lines in
+  `out/trace2.txt`). `chr+58h` is ChrCtrl.
+* **The module bag layout from the exe.** The builder at `0x1403FE190` calls `setSlot(bag, slot, module)`
+  (`0x1404C5A10`) once per module. The class of each module comes from the vtable written in its create function
+  (`TaeTemplateSurvey modules`). 24 slots were recovered this way, all matching `ChrInsModuleContainer` in
+  fromsoftware-rs, so the crate's layout is used for the other slots.
+* **fromsoftware-rs** (`C:\Users\benja\Programming\Rust\fromsoftware-rs-main`). Its module structs name the fields
+  that the handlers write, e.g. `CSChrActionFlagModule`, `GameMan`, `ChrCtrl`, `CSChrPhysicsModule` and
+  `EnableTwistModifierArgs`. Its RVA table matches this exe for functions: 302 tail-jumps to `chr_ins_apply_speffect`
+  (`0x3E8DC0`), and 343 calls `cs_ez_draw_draw_dodecadron`.
+
+### Cross-checks between the exe and the crate
+
+| Event | The exe writes | Crate field |
+|---|---|---|
+| 224 `+00/+05` | ActionFlag `+84/+91` | `turn_speed`, `turn_speed_priority` |
+| 706 `+00/+04` | ActionFlag `+88/+92` | `lock_on_turn_speed`, `lock_on_turn_speed_priority` |
+| 717 `+00/+05` | ActionFlag `+8C/+93` | `joint_turn_speed`, `joint_turn_speed_priority` ("717 SetJointTurnSpeed") |
+| 800 | ActionFlag `+1F8..+200` | `mov/cam_turn/ladder_dist_multiplier` ("800 SetMovementMultiplier") |
+| 342 | ActionFlag `+208` | `sa_durability_multiplier` ("342 SetSaDurabilityMultiplier") |
+| 511 | ActionFlag `+20C` | `sp_effect_wet_condition_depth` (Default / LowerBody / FullBody) |
+| 152 | GameMan `+58 +5C +64 +68 +6D` | `camera_zoom_target_dist_mult`, `cam_override_lerp_factor`, `cam_timed_override_duration`, `cam_zoom_override_lerp_factor`, `cam_override_check_collisions` |
+| 193 `+04` | ChrIns `+238` | `opacity_keyframes_multiplier` |
+| 604 `+04/+08` | Physics `+108` | `ground_offset` (ChrActionFlag 128 calls the same setter with 0.1) |
+| 700 `+15` | twist modifier args | `EnableTwistModifierArgs.rank` |
+| ChrActionFlag 132 / 143 | ActionFlag `+40` bit 4 / bit 5 | `jump_frames_lower_body_iframes` / `pve_only_iframes`, which confirms the `dec eax` fix |
+
+### Naming convention
+
+* A name from the crate or the code path where one was found (above, and in the spec's comments).
+* `Unk<offset>`: the game reads the field, but its meaning wasn't found. The spec says where the value goes.
+* `Unused<offset>`: the game never reads the field. `TimeAct-Meta.json` marks the `Unused` prefix as obsolete, so the
+  editor dims these fields.
+
+### Other findings
+
+* 129 `+13` and 133 `+0C` are the same flag (`UseChrSoundEmitter`). It is argument 5 of the play function `0x1404AD760`,
+  and makes the sound go through the character's emitter (DataModule, `0x1404383D0`) instead of the global one.
+* 133 plays only when the GrassHit module (`bag+118h`) changes state, so it is now `Wwise_PlaySound_GrassHit`. `+0D` set
+  to anything but 0 turns it off.
+* 10096 is handled (`cmp eax,2770h`). It uses 96's spawner and layout, under the opposite gate (`0x1404C8810` true),
+  so it now has 96's fields. 10130, 10137 and 10138 fall to the default case.
+* ChrActionFlag 13, 43 and 126 aren't in the flag switch, so the game reads them elsewhere.
+* The `[DS3]` / `[PastGames]` / `[ExePatch]` tags were dropped. The ER dispatcher has a case for every one of these events.
+
+### Smithbox changes
+
+* `TimeActEventResolver` picks effect and sound visuals by their fields (`FFXID*` / `ThrowDirectionSFXIndex`, and
+  `SoundID`) rather than by `FFX` / `PlaySound` in the event name. It falls back to the name for templates that don't
+  name those fields yet. Events that showed a marker before still do.
+* `TimeAct-Meta.json`: `OverrideSoundID` uses the Sounds aliases, `UseChrSoundEmitter` is a checkbox, and the
+  `Unused` prefix is obsolete.
+
+### Verified
+
+* `sizecheck`: no event changed size in the second pass.
+* `roundtrip`: 0 of 1,630,738 events change.
+* `report`: no issues. `unnamed`: no fields left without a name, apart from asserted padding.
+* `Smithbox.Program` builds.
+
+### Events with no evidence for a better name
+
+17, 24, 113 and 301 aren't handled by either dispatcher. 235, 340, 341, 500, 702, 714, 730, 731, 761, 787–789,
+902–905 and 908 keep their existing hint names. Their traced effects are in `out/trace2.txt`.
 
 ## Follow-ups
 
-* The same tool should work for Nightreign (`nightreign.exe`) and AC6 (`armoredcore6.exe`). Only the dispatcher
+* The same tools should work for Nightreign (`nightreign.exe`) and AC6 (`armoredcore6.exe`). Only the dispatcher
   addresses would differ, and `exe` mode finds them.
-* Several fields could get names by reading the functions they reach (listed in the trace).
+* Most `Unk` fields could be named by following the function they reach one level further.

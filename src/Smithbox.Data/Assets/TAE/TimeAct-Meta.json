@@ -46,6 +46,22 @@
       "Field": "SoundID",
       "Alias": "Sounds",
       "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+    },
+    {
+      "Field": "OverrideSoundID",
+      "Alias": "Sounds",
+      "Description": "Played in place of SoundID when it can be found. Its OverrideSoundType decides which bank it comes from. Only read for newer time acts."
+    },
+    {
+      "Field": "UseChrSoundEmitter",
+      "IsBool": true,
+      "Description": "Plays the sound through the character's own emitter, rather than the global one."
+    },
+    {
+      "Field": "Unused",
+      "IsPrefix": true,
+      "Obsolete": true,
+      "Description": "The game doesn't read this field."
     }
   ]
 }

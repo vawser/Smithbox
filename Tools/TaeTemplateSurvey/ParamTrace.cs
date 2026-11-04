@@ -8,7 +8,7 @@ using System.Text;
 /// </summary>
 public static class ParamTrace
 {
-    public enum Kind { Ctx, Param, Type, Value }
+    public enum Kind { Ctx, Param, Type, Value, This, Chr, Bag, Module, ChrSub, Vtbl }
 
     public readonly record struct Tag(Kind Kind, long Value);
 
@@ -47,6 +47,7 @@ public static class ParamTrace
         public HashSet<ulong> Functions = new();
         public List<(long Offset, string Sink)> Sinks = new();
         public List<(long Offset, string Const)> Consts = new();
+        public List<string> Effects = new();
         public int Steps;
     }
 
@@ -130,12 +131,14 @@ public static class ParamTrace
                 var flow = ins.FlowControl;
 
                 RecordMemory(ins, s, result, depth);
+                RecordObjectWrite(s, ins, result, depth);
 
                 if (flow == FlowControl.Return || ins.Mnemonic == Mnemonic.Int3 || ins.Mnemonic == Mnemonic.Ud2)
                     break;
 
                 if (flow == FlowControl.Call)
                 {
+                    RecordObjectCall(s, ins, result, depth);
                     if (ins.Op0Kind == OpKind.NearBranch64)
                     {
                         var callee = ins.NearBranchTarget;
@@ -163,6 +166,7 @@ public static class ParamTrace
                     // a jump out of the function is a tail call
                     if (rva < fb || rva >= fe)
                     {
+                        RecordObjectCall(s, ins, result, depth);
                         RecordCallSinks(s, target, result);
                         var cs = ArgState(s);
                         cs.Rsp = 0;
@@ -177,6 +181,7 @@ public static class ParamTrace
 
                 if (flow == FlowControl.IndirectBranch)
                 {
+                    RecordObjectCall(s, ins, result, depth);
                     if (switches.TryGetValue(ins.IP, out var sw))
                     {
                         if (s.TypeSwitch)
@@ -255,6 +260,98 @@ public static class ParamTrace
             if (s.Regs.TryGetValue(FloatArgs[i], out var f) && f.Kind == Kind.Value)
                 result.Sinks.Add((f.Value, $"call {callee:X} farg{i + 1}"));
         }
+    }
+
+    /// <summary>
+    /// The modules of a character's bag (chr+190h). Offsets read from the bag builder at 0x1403FE190, with
+    /// the slots it doesn't create directly taken from fromsoftware-rs ChrInsModuleContainer.
+    /// </summary>
+    public static readonly Dictionary<long, string> Modules = new()
+    {
+        [0x00] = "Data", [0x08] = "ActionFlag", [0x10] = "BehaviorScript", [0x18] = "TimeAct", [0x20] = "Resist",
+        [0x28] = "Behavior", [0x30] = "BehaviorSync", [0x38] = "Ai", [0x40] = "SuperArmor", [0x48] = "Toughness",
+        [0x50] = "Talk", [0x58] = "Event", [0x60] = "Magic", [0x68] = "Physics", [0x70] = "Fall", [0x78] = "Ladder",
+        [0x80] = "ActionRequest", [0x88] = "Throw", [0x90] = "HitStop", [0x98] = "Damage", [0xA0] = "Material",
+        [0xA8] = "KnockBack", [0xB0] = "Sfx", [0xB8] = "Vfx", [0xC0] = "BehaviorData", [0xC8] = "UnkC8",
+        [0xD0] = "ModelParamModifier", [0xD8] = "Dripping", [0xE0] = "UnkE0", [0xE8] = "Ride", [0xF0] = "BoneMove",
+        [0xF8] = "Wet", [0x100] = "AutoHoming", [0x108] = "AboveShadowTest", [0x110] = "SwordArts",
+        [0x118] = "GrassHit", [0x120] = "WheelRot", [0x128] = "CliffWind", [0x130] = "NavimeshCostEffect",
+    };
+
+    static bool IsObject(Kind k) => k is Kind.This or Kind.Chr or Kind.Bag or Kind.Module or Kind.ChrSub;
+
+    static string ObjName(Tag t) => t.Kind switch
+    {
+        Kind.This => "TimeActModule",
+        Kind.Chr => "ChrIns",
+        Kind.Bag => "Modules",
+        Kind.Module => Modules.TryGetValue(t.Value, out var n) ? n + "Module" : $"Module+{t.Value:X}",
+        Kind.ChrSub => $"ChrIns+{t.Value:X}",
+        _ => t.Kind.ToString()
+    };
+
+    // a vtable tag keeps its owner: the kind in the high bits, the offset in the low
+    static Tag VtblOf(Tag owner) => new(Kind.Vtbl, ((long)owner.Kind << 32) | (owner.Value & 0xFFFFFFFF));
+    static Tag OwnerOf(Tag vt) => new((Kind)(vt.Value >> 32), (int)(vt.Value & 0xFFFFFFFF));
+
+    /// <summary>
+    /// Loads of the character and its modules: this+18h is the character, chr+190h its modules
+    /// </summary>
+    static Tag? ObjectLoad(Tag bt, long d)
+    {
+        return bt.Kind switch
+        {
+            Kind.This when d == 0x18 => new Tag(Kind.Chr, 0),
+            Kind.Chr when d == 0x190 => new Tag(Kind.Bag, 0),
+            Kind.Chr when d == 0 => VtblOf(bt),
+            Kind.Chr => new Tag(Kind.ChrSub, d),
+            Kind.Bag => new Tag(Kind.Module, d),
+            Kind.Module or Kind.ChrSub or Kind.This when d == 0 => VtblOf(bt),
+            _ => null
+        };
+    }
+
+    static void RecordObjectCall(State s, Instruction ins, Result result, int depth)
+    {
+        string fieldArgs()
+        {
+            var parts = new List<string>();
+            for (var i = 0; i < 4; i++)
+            {
+                if (s.Regs.TryGetValue(Args[i], out var a) && a.Kind == Kind.Value) parts.Add($"a{i + 1}=+{a.Value:X2}");
+                if (s.Regs.TryGetValue(FloatArgs[i], out var f) && f.Kind == Kind.Value) parts.Add($"a{i + 1}=+{f.Value:X2}f");
+            }
+            return parts.Count > 0 ? " (" + string.Join(",", parts) + ")" : "";
+        }
+
+        if (ins.Op0Kind == OpKind.NearBranch64)
+        {
+            if (s.Regs.TryGetValue("RCX", out var rcx) && IsObject(rcx.Kind) && rcx.Kind != Kind.This)
+            {
+                var v = Rtti.VirtualOf.TryGetValue(ins.NearBranchTarget, out var vf) ? $" [{vf.Class.Replace("CS::", "")}::vf{vf.Index}]" : "";
+                result.Effects.Add($"d{depth} call {ins.NearBranchTarget:X} on {ObjName(rcx)}{v}{fieldArgs()}");
+            }
+        }
+        else if (ins.Op0Kind == OpKind.Memory && ins.MemoryIndex == Register.None && s.Regs.TryGetValue(Key(ins.MemoryBase), out var vt) && vt.Kind == Kind.Vtbl)
+        {
+            result.Effects.Add($"d{depth} vcall {ObjName(OwnerOf(vt))}::vf{ins.MemoryDisplacement64 / 8}{fieldArgs()}");
+        }
+    }
+
+    static void RecordObjectWrite(State s, Instruction ins, Result result, int depth)
+    {
+        if (ins.Op0Kind != OpKind.Memory || ins.MemoryIndex != Register.None) return;
+        var bt = BaseTag(s, ins);
+        if (bt == null || !IsObject(bt.Value.Kind) || bt.Value.Kind == Kind.Bag) return;
+        var m = ins.Mnemonic;
+        if (m is Mnemonic.Cmp or Mnemonic.Test or Mnemonic.Bt) return;
+
+        string value = "?";
+        if (ins.OpCount > 1 && IsImm(ins.Op1Kind)) value = $"0x{ins.GetImmediate(1):X}";
+        else if (ins.OpCount > 1 && ins.Op1Kind == OpKind.Register)
+            value = s.Regs.TryGetValue(Key(ins.Op1Register), out var v) ? (v.Kind == Kind.Value ? $"field +{v.Value:X2}" : v.Kind.ToString()) : "reg";
+        var op = m switch { Mnemonic.Or => "|=", Mnemonic.And => "&=", Mnemonic.Bts => "bts", Mnemonic.Btr => "btr", Mnemonic.Add or Mnemonic.Addss => "+=", _ => "=" };
+        result.Effects.Add($"d{depth} {ObjName(bt.Value)}+{ins.MemoryDisplacement64:X} {op} {value}");
     }
 
     static bool IsImm(OpKind k) => k is OpKind.Immediate8 or OpKind.Immediate8to32 or OpKind.Immediate32 or OpKind.Immediate8to64 or OpKind.Immediate32to64 or OpKind.Immediate16 or OpKind.Immediate8to16;
@@ -446,6 +543,12 @@ public static class ParamTrace
             if (ins.MemoryBase == Register.RSP && ins.MemorySize.GetSize() == 8 && s.Regs.TryGetValue(StackKey(s, ins), out var st))
             {
                 s.Regs[dst] = st;
+                return;
+            }
+
+            if (bt != null && IsObject(bt.Value.Kind) && ins.MemoryIndex == Register.None && ins.MemorySize.GetSize() == 8 && ObjectLoad(bt.Value, (long)ins.MemoryDisplacement64) is { } ot)
+            {
+                s.Regs[dst] = ot;
                 return;
             }
 

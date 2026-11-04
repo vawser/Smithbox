@@ -1,0 +1,38 @@
+# Second pass: event names. The ER dispatcher has a case for every bracket-tagged event, so the tags are dropped.
+E 95 SpawnOneShotFFX_Ember
+E 104 SpawnFFX_104
+E 121 SpawnFFX_121
+E 122 SpawnFFX_BySpEffect1
+E 123 SpawnFFX_BySpEffect2
+E 132 PlaySound_Weapon
+E 137 DecalParamID_CenterBody
+E 160 SekiroCode4
+E 161 DecalOnLanding
+E 192 DebugFadeOut
+E 196 DebugStringPrint_C_ARSN_BumpBlendDecal
+E 197 FadeOut
+E 199 ModelParamModifier_199
+E 200 ModelParamModifier_200
+E 230 SetFPRegenRatePercent
+E 232 AllowVerticalTorsoAim
+E 234 AddOffsetToNextAnimID
+E 303 Behavior_303
+E 603 DebugAnimSpeed
+E 715 WepAbsorpPos
+E 716 HksEngineFlag716
+E 785 SpawnChrFinderBullet
+E 771 FixBone
+# 770 calls the same ActionFlag setter path into module bag+C8 as 771 FixBone
+E 770 ChangeBonePosition
+# 311 compares a byte to 32/64/96 and passes it to 0x14042D9F0, as 310 ChrClothState does
+E 311 ChrClothStateEx
+# 312 ORs its 32 masks into BehaviorModule+1680
+E 312 SetBehaviorMask
+# 344 writes its two lerped values to ChrCtrl+340/+344
+E 344 SetChrCtrlUnk340
+# 602/607/609 lerp an additive animation weight like 601, 607/609 only while a SpEffect is present
+E 602 SetAdditiveAnim_602
+E 607 SetAdditiveAnimIfSpEffect
+E 609 SetAdditiveAnim2IfSpEffect
+# 198 copies its fields into the ModelParamModifier module
+E 198 ModelParamModifier

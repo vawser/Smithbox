@@ -1,0 +1,293 @@
+# Names for TAE.Template.ER.xml, applied with: TaeTemplateSurvey apply <template> er_names.txt
+# Evidence: exe = eldenring.exe trace (out/trace2.txt), crate = fromsoftware-rs eldenring, data = game time acts.
+# Unused<off> = the game never reads the field. Unk<off> = the game reads it but its meaning wasn't found.
+
+# ---- ChrActionFlag (0) FlagType entries. The flag switch subtracts 1 first (dec eax), cases 1..143.
+N 0 00 13 13: Unknown (not in the flag switch, read elsewhere)
+N 0 00 43 43: Unknown (not in the flag switch, read elsewhere)
+N 0 00 126 126: Unknown (not in the flag switch, read elsewhere)
+N 0 00 127 127: Unknown Toggle Off (same handler as 137)
+N 0 00 128 128: Set Ground Offset 0.1 (Physics Module)
+N 0 00 129 129: Action Modifier Flag 34
+N 0 00 130 130: Unknown Toggle On (same handler as 136)
+N 0 00 131 131: Physics Module Ground Offset Reset?
+N 0 00 133 133: WheelRot Module
+N 0 00 136 136: Unknown Toggle On (same handler as 130)
+N 0 00 137 137: Unknown Toggle Off (same handler as 127)
+N 0 00 138 138: Action Modifier Flag 43
+N 0 00 139 139: Action Modifier Flag 30
+N 0 00 140 140: Action Modifier Flag 49
+N 0 00 141 141: Unknown (Data Module)
+N 0 00 142 142: ChrCtrl Flag EA
+
+# ---- 2 BulletBehavior: +12 is packed next to AttachmentType into the bullet spawn struct. +11 isn't read.
+F 2 11 Unused11
+F 2 12 Unk12
+
+# ---- 5 CommonBehavior: +08 is read as a byte and compared to 1
+F 5 08 Unk08
+
+# ---- 14: passes a mode and four floats to ChrCtrl functions on its ragdoll (ChrCtrl+28 = ragdoll_ins, crate),
+# transformed by ChrCtrl's model matrix (+230..+260)
+E 14 ChrCtrlRagdoll
+F 14 00 Mode
+F 14 02 Unk02
+F 14 04 Unk04
+F 14 08 Unk08
+F 14 0C Unk0C
+F 14 10 Unk10
+F 14 14 Unk14
+F 14 18 Unk18
+
+# ---- 24 isn't handled by ER
+F 24 00 Unused00
+F 24 04 Unused04
+F 24 08 Unused08
+F 24 0C Unused0C
+
+# ---- 64 CastHighlightedMagic: built into a magic spawn struct
+F 64 04 Unk04
+F 64 05 Unk05
+F 64 09 Unk09
+F 64 0A Unk0A
+F 64 0C Unk0C
+F 64 0D Unk0D
+
+# ---- 65 ConsumeCurrentGoods
+F 65 00 Unk00
+F 65 09 Unk09
+
+F 95 12 Unused12
+F 95 14 Unused14
+F 112 08 Unused08
+F 116 0D Unused0D
+F 116 0E Unused0E
+F 116 0F Unused0F
+F 119 0D Unk0D
+F 121 06 Unk06
+F 121 07 Unk07
+F 122 06 Unk06
+F 122 08 Unk08
+F 122 0C Unk0C
+F 123 00 Unk00
+F 123 04 Unk04
+F 123 08 Unk08
+F 123 09 Unk09
+F 123 0C Unused0C
+F 123 0D Unused0D
+F 123 0E Unk0E
+F 123 0F Unk0F
+
+# ---- 129/133: arg 5 of the play function 0x1404AD760: true plays through the character's own emitter
+# (DataModule, 0x1404383D0), false through the global path. Set on 99% of 129s.
+F 129 13 UseChrSoundEmitter
+F 133 0C UseChrSoundEmitter b
+# 133 only plays when the GrassHit module (bag+118h) changes state, and does nothing when +0D isn't 0
+E 133 Wwise_PlaySound_GrassHit
+F 133 0D IsDisabled
+
+F 132 08 Unk08
+F 132 0C Unk0C
+
+# ---- 134: +0C and +10 are passed to its play function 0x1404AD960 with the sound
+F 134 08 Unk08
+F 134 0C Unk0C
+F 134 10 Unk10
+
+# ---- 139: one decal on up to six dummy polys
+E 139 DecalParamID_MultiDummyPoly
+
+F 145 04 Unused04
+
+# ---- 152 CameraZoomOut, stored to GameMan ([143D709A8h]); names from crate GameMan
+F 152 00 TargetDistMultiplier
+F 152 04 LerpFactor
+F 152 08 TimedOverrideDuration
+F 152 0C ZoomOverrideLerpFactor
+F 152 11 CheckCollisions
+N 152 10 0 0: Simple Lerp
+N 152 10 1 1: Ease Out Quadratic
+
+# ---- 193: when +08 is 0 the event clears bit 0 of its opacity flags
+F 193 08 Unk08
+
+F 196 00 Unk00
+F 196 04 Unk04
+F 196 08 Unk08
+F 196 0C Unk0C
+F 196 10 Unk10
+F 196 14 Unk14
+F 196 18 Unk18
+
+# ---- 198: copied into the ModelParamModifier module. +04 is checked against -1 and 99, +3C is passed with it
+F 198 00 Unk00
+F 198 04 ModifierID
+F 198 08 Unk08
+F 198 0C Unk0C
+F 198 10 Unk10
+F 198 14 Unk14
+F 198 18 Unk18
+F 198 1C Unk1C
+F 198 20 Unk20
+F 198 24 Unk24
+F 198 28 Unk28
+F 198 2C Unk2C
+F 198 30 Unk30
+F 198 34 Unk34
+F 198 38 Unk38
+F 198 39 Unk39
+F 198 3A Unused3A
+F 198 3B Unused3B
+F 198 3C Unk3C
+F 199 00 Unk00
+F 200 00 Unk00
+
+# ---- 300: +04/+08 are a lerp (subss/addss, then movss), passed to the physics module for some JumpTable2 types
+F 300 04 ValueAtEventStart
+F 300 08 ValueAtEventEnd
+F 300 0C Unused0C
+
+F 301 00 Unused00
+F 301 04 Unused04
+F 301 08 Unused08
+F 301 0C Unused0C
+
+# ---- 304: +00 is passed to the DamageModule (0x140440220) with the throw
+F 304 00 Unk00 s16
+
+# ---- 310/311: both compare a byte to 32/64/96 and pass it to 0x14042D9F0
+F 310 00 Unk00
+F 310 01 Unk01
+F 311 00 Unk00
+F 311 01 Unk01
+F 311 02 Unk02
+
+# ---- 339: stored into ChrCtrlModifier data (ChrCtrl+C8 → +0C/+10, crate ChrCtrlModifierData unk4/unk8), and
+# sets bit 11 of its HKS flags. Needs time act version >= 0x1F
+E 339 SetChrCtrlModifierValues
+F 339 00 Value1
+F 339 04 Value2
+
+F 340 00 Unk00
+F 340 04 Unk04
+F 340 06 Unk06
+
+# ---- 342 → ActionFlag+208 sa_durability_multiplier (crate)
+E 342 SetSaDurabilityMultiplier
+F 342 00 SaDurabilityMultiplier s16
+
+F 343 00 Unk00
+F 343 04 DebugDrawRadius   # farg4 of cs_ez_draw_draw_dodecadron (crate RVA 0x2DCF00)
+F 343 08 Unk08
+F 343 0C Unk0C
+
+# ---- 511 → ActionFlag+20C sp_effect_wet_condition_depth (crate)
+E 511 SetSpEffectWetConditionDepth
+F 511 00 WetConditionDepth
+N 511 00 0 0: Default
+N 511 00 1 1: Lower Body
+N 511 00 2 2: Full Body
+
+F 522 04 Unused04
+F 522 08 Unused08
+F 522 0C Unused0C
+
+# ---- 604: the lerped value goes to the physics module's ground offset (+108, crate ground_offset)
+E 604 SetGroundOffset
+F 604 00 Unk00
+F 604 04 GroundOffsetAtEventStart
+F 604 08 GroundOffsetAtEventEnd
+
+F 606 01 Unused01
+F 606 02 Unused02
+F 606 03 Unused03
+
+F 702 00 Unk00
+
+# ---- 706 → ActionFlag+88 lock_on_turn_speed and +92 its priority (crate)
+S 706 04 s8:TurnSpeedPriority u8:=0 u8:=0 u8:=0
+
+# ---- 224 → ActionFlag+84 turn_speed and +91 turn_speed_priority (crate)
+F 224 05 TurnSpeedPriority s8
+
+F 714 00 Unk00
+
+F 715 00 Unk00
+F 715 04 Unk04
+F 715 08 Unused08
+F 715 0C Unused0C
+F 715 10 Unused10
+F 715 14 Unused14
+F 715 18 Unused18
+F 716 00 Unused00
+F 716 04 Unused04
+F 716 08 Unused08
+F 716 0C Unused0C
+
+# ---- 717 → ActionFlag+8C joint_turn_speed and +93 its priority (crate: "717 SetJointTurnSpeed")
+E 717 SetJointTurnSpeed
+F 717 00 JointTurnSpeed
+F 717 05 TurnSpeedPriority s8
+
+# ---- ActionFlag modifier bits (+40), and fields the crate has as unknown
+E 718 SetActionModifierFlag23
+E 740 SetActionModifierFlag28
+F 730 00 Unk00
+F 730 04 Unk04
+F 731 00 Unk00
+
+F 770 00 Unk00
+F 770 04 Unk04
+F 770 08 Unk08
+F 771 00 Unk00
+
+# ---- 787 → ActionFlag+224..+230 (crate unk220)
+F 787 00 Unk00
+F 787 04 Unk04
+F 787 08 Unk08
+F 787 0C Unk0C
+
+# ---- 795 overrides the toughness: the param goes through 0x140487470 into the Toughness module, the ratio to +24,
+# and +2D (crate trigger_max_toughness_update) is set. +02 is passed to 0x140430430, as 129's SoundIDOffsetType is
+E 795 SetToughnessParam
+S 795 02 u8:Source u8:=0
+
+# ---- 800: crate "800 SetMovementMultiplier", ActionFlag+1F8..+200
+E 800 SetMovementMultiplier
+
+# ---- 903: +00 is written to ChrCtrl+2E8 and +2EC (crate unk2e4), with +2F0/+2F1 set to 1
+F 903 00 Value
+
+F 904 00 Unk00
+
+# ---- 907 → physics module +398 (crate unk398)
+E 907 SetPhysicsUnk398
+F 907 00 Value
+F 907 04 Unused04
+F 907 08 Unused08
+F 907 0C Unused0C
+
+E 910 ChangeLockonLookat
+
+# ---- 911 → ChrCtrl+31C/+320 (crate unk318), with +318 set to 1
+E 911 SetChrCtrlUnk31C
+F 911 00 Value1
+F 911 04 Value2
+
+# ---- 10096 is handled (cmp eax,2770h in the dispatcher): the same spawner and reads as 96, under the opposite
+# gate (0x1404C8810 true, where 96 needs it false). 10130, 10137 and 10138 fall to the default case
+E 10096 SpawnOneShotFFX_10096
+F 10096 00 FFXID
+F 10096 04 DummyPolyID
+F 10096 08 SlotID
+S 10096 0C b:IsIgnoreDummyPolyAngle b:IsFollowDummyPoly b:IsRestrictToDummyPoly u8:ExtraSpawnCondition
+F 10130 00 Unused00
+F 10130 04 Unused04
+F 10130 08 Unused08
+F 10130 0C Unused0C
+F 10137 04 Unused04
+F 10137 08 Unused08
+F 10137 0C Unused0C
+F 10138 04 Unused04
+F 10138 08 Unused08
+F 10138 0C Unused0C

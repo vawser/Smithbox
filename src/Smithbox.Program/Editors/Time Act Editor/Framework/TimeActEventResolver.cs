@@ -98,19 +98,39 @@ public class TimeActEventResolver
             return ResolveBullet(ev, container);
         }
 
-        var name = ev.TypeName ?? "";
-
-        if (name.Contains("FFX", StringComparison.OrdinalIgnoreCase))
+        if (IsEffectEvent(ev))
         {
             return ResolveMarker(ev, container, TimeActVisualKind.Effect, EffectRadius);
         }
 
-        if (name.Contains("PlaySound", StringComparison.OrdinalIgnoreCase))
+        if (IsSoundEvent(ev))
         {
             return ResolveMarker(ev, container, TimeActVisualKind.Sound, SoundRadius);
         }
 
         return null;
+    }
+
+    // Parameters that only effect or sound events have. Events are told apart by these first, so renaming an
+    // event in a template doesn't change what it displays.
+    private static readonly string[] EffectParameterPrefixes = { "FFXID", "ThrowDirectionSFXIndex" };
+    private const string SoundParameter = "SoundID";
+
+    private static bool IsEffectEvent(TAE.Event ev)
+    {
+        if (ev.Parameters!.Values.Keys.Any(k => EffectParameterPrefixes.Any(p => k.StartsWith(p, StringComparison.OrdinalIgnoreCase))))
+            return true;
+
+        // Templates that don't name the parameter yet
+        return (ev.TypeName ?? "").Contains("FFX", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool IsSoundEvent(TAE.Event ev)
+    {
+        if (ev.Parameters!.Values.ContainsKey(SoundParameter))
+            return true;
+
+        return (ev.TypeName ?? "").Contains("PlaySound", StringComparison.OrdinalIgnoreCase);
     }
 
     private TimeActEventVisual ResolveMarker(TAE.Event ev, TimeActContainer container, TimeActVisualKind kind, float radius)

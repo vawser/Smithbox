@@ -85,6 +85,30 @@ else if (mode == "roundtrip")
 {
     RoundTrip.Run(args[1], args[2]);
 }
+else if (mode == "modules")
+{
+    ExeScan.Load(args[1]);
+    Rtti.Load();
+    foreach (var (o, c) in Rtti.BagSlots(0x1403FE190, 0x1404C5A10, new ulong[] { 0x14043D370, 0x14043D380, 0x141EBD430, 0x1404C5960 }).OrderBy(x => x.Key)) Console.WriteLine($"  +{o:X3} {c}");
+}
+else if (mode == "vt")
+{
+    ExeScan.Load(args[1]);
+    Rtti.Load();
+    foreach (var a in args.Skip(2)) { var va = Convert.ToUInt64(a, 16); Console.WriteLine($"{a}: {(Rtti.VtableClass.TryGetValue(va, out var c) ? c : "-")} {(Rtti.VirtualOf.TryGetValue(va, out var v) ? v.Class + "::vf" + v.Index : "")}"); }
+}
+else if (mode == "unnamed")
+{
+    Unnamed.Run(args[1], args[2]);
+}
+else if (mode == "evidence")
+{
+    Evidence.Run(args[1], args[2]);
+}
+else if (mode == "apply")
+{
+    Apply.Run(args[1], args[2]);
+}
 else if (mode == "exe")
 {
     ExeScan.Run(args[1], args[2], args.Length > 3 ? args[3] : null);

@@ -1,0 +1,900 @@
+1403FE190  push    rbp
+1403FE192  push    rsi
+1403FE193  push    rdi
+1403FE194  mov     rbp,rsp
+1403FE197  sub     rsp,30h
+1403FE19B  mov     qword ptr [rbp-10h],0FFFFFFFFFFFFFFFEh
+1403FE1A3  mov     [rsp+60h],rbx
+1403FE1A8  mov     rdi,rcx
+1403FE1AB  mov     r8,[143D8E380h]
+1403FE1B2  mov     [rbp+20h],r8
+1403FE1B6  mov     edx,8
+1403FE1BB  mov     ecx,200h
+1403FE1C0  call    0000000141EBD430h
+1403FE1C5  mov     [rbp+28h],rax
+1403FE1C9  xor     esi,esi
+1403FE1CB  test    rax,rax
+1403FE1CE  je      short 00000001403FE1DAh
+1403FE1D0  mov     rcx,rax
+1403FE1D3  call    00000001404C5960h
+1403FE1D8  jmp     short 00000001403FE1DDh
+1403FE1DA  mov     rax,rsi
+1403FE1DD  mov     [rdi+190h],rax
+1403FE1E4  lea     rcx,[rbp+20h]
+1403FE1E8  call    000000014043D370h
+1403FE1ED  nop
+1403FE1EE  mov     rdx,rdi
+1403FE1F1  mov     rcx,rax
+1403FE1F4  call    000000014043D3C0h
+1403FE1F9  mov     rbx,rax
+1403FE1FC  lea     rcx,[rbp+20h]
+1403FE200  call    000000014043D380h
+1403FE205  mov     r8,rbx
+1403FE208  mov     edx,1
+1403FE20D  mov     rcx,[rdi+190h]
+1403FE214  call    00000001404C5A10h
+1403FE219  lea     rcx,[rbp+20h]
+1403FE21D  call    000000014043D370h
+1403FE222  nop
+1403FE223  mov     rdx,rdi
+1403FE226  mov     rcx,rax
+1403FE229  call    000000014043D550h
+1403FE22E  mov     rbx,rax
+1403FE231  lea     rcx,[rbp+20h]
+1403FE235  call    000000014043D380h
+1403FE23A  mov     r8,rbx
+1403FE23D  mov     edx,2
+1403FE242  mov     rcx,[rdi+190h]
+1403FE249  call    00000001404C5A10h
+1403FE24E  lea     rcx,[rbp+20h]
+1403FE252  call    000000014043D370h
+1403FE257  nop
+1403FE258  mov     rdx,rdi
+1403FE25B  mov     rcx,rax
+1403FE25E  call    000000014043D5F0h
+1403FE263  mov     rbx,rax
+1403FE266  lea     rcx,[rbp+20h]
+1403FE26A  call    000000014043D380h
+1403FE26F  mov     r8,rbx
+1403FE272  xor     edx,edx
+1403FE274  mov     rcx,[rdi+190h]
+1403FE27B  call    00000001404C5A10h
+1403FE280  lea     rcx,[rbp+20h]
+1403FE284  call    000000014043D370h
+1403FE289  nop
+1403FE28A  mov     rdx,rdi
+1403FE28D  mov     rcx,rax
+1403FE290  call    000000014043DB40h
+1403FE295  mov     rbx,rax
+1403FE298  lea     rcx,[rbp+20h]
+1403FE29C  call    000000014043D380h
+1403FE2A1  mov     r8,rbx
+1403FE2A4  mov     edx,4
+1403FE2A9  mov     rcx,[rdi+190h]
+1403FE2B0  call    00000001404C5A10h
+1403FE2B5  lea     rcx,[rbp+20h]
+1403FE2B9  call    000000014043D370h
+1403FE2BE  nop
+1403FE2BF  mov     rdx,rdi
+1403FE2C2  mov     rcx,rax
+1403FE2C5  call    000000014043D500h
+1403FE2CA  mov     rbx,rax
+1403FE2CD  lea     rcx,[rbp+20h]
+1403FE2D1  call    000000014043D380h
+1403FE2D6  mov     r8,rbx
+1403FE2D9  mov     edx,5
+1403FE2DE  mov     rcx,[rdi+190h]
+1403FE2E5  call    00000001404C5A10h
+1403FE2EA  lea     rcx,[rbp+20h]
+1403FE2EE  call    000000014043D370h
+1403FE2F3  nop
+1403FE2F4  mov     rdx,rdi
+1403FE2F7  mov     rcx,rax
+1403FE2FA  call    000000014043D4B0h
+1403FE2FF  mov     rbx,rax
+1403FE302  lea     rcx,[rbp+20h]
+1403FE306  call    000000014043D380h
+1403FE30B  mov     r8,rbx
+1403FE30E  mov     edx,18h
+1403FE313  mov     rcx,[rdi+190h]
+1403FE31A  call    00000001404C5A10h
+1403FE31F  lea     rcx,[rbp+20h]
+1403FE323  call    000000014043D370h
+1403FE328  nop
+1403FE329  mov     rdx,rdi
+1403FE32C  mov     rcx,rax
+1403FE32F  call    000000014043D5A0h
+1403FE334  mov     rbx,rax
+1403FE337  lea     rcx,[rbp+20h]
+1403FE33B  call    000000014043D380h
+1403FE340  mov     r8,rbx
+1403FE343  mov     edx,6
+1403FE348  mov     rcx,[rdi+190h]
+1403FE34F  call    00000001404C5A10h
+1403FE354  lea     rcx,[rbp+20h]
+1403FE358  call    000000014043D370h
+1403FE35D  nop
+1403FE35E  mov     rdx,rdi
+1403FE361  mov     rcx,rax
+1403FE364  call    000000014043DC80h
+1403FE369  mov     rbx,rax
+1403FE36C  lea     rcx,[rbp+20h]
+1403FE370  call    000000014043D380h
+1403FE375  mov     r8,rbx
+1403FE378  mov     edx,3
+1403FE37D  mov     rcx,[rdi+190h]
+1403FE384  call    00000001404C5A10h
+1403FE389  lea     rcx,[rbp+20h]
+1403FE38D  call    000000014043D370h
+1403FE392  nop
+1403FE393  mov     rdx,rdi
+1403FE396  mov     rcx,rax
+1403FE399  call    000000014043D460h
+1403FE39E  mov     rbx,rax
+1403FE3A1  lea     rcx,[rbp+20h]
+1403FE3A5  call    000000014043D380h
+1403FE3AA  mov     r8,rbx
+1403FE3AD  mov     edx,7
+1403FE3B2  mov     rcx,[rdi+190h]
+1403FE3B9  call    00000001404C5A10h
+1403FE3BE  lea     rcx,[rbp+20h]
+1403FE3C2  call    000000014043D370h
+1403FE3C7  nop
+1403FE3C8  mov     rdx,rdi
+1403FE3CB  mov     rcx,rax
+1403FE3CE  call    000000014043D870h
+1403FE3D3  mov     rbx,rax
+1403FE3D6  lea     rcx,[rbp+20h]
+1403FE3DA  call    000000014043D380h
+1403FE3DF  mov     r8,rbx
+1403FE3E2  mov     edx,12h
+1403FE3E7  mov     rcx,[rdi+190h]
+1403FE3EE  call    00000001404C5A10h
+1403FE3F3  lea     rcx,[rbp+20h]
+1403FE3F7  call    000000014043D370h
+1403FE3FC  nop
+1403FE3FD  mov     rdx,rdi
+1403FE400  mov     rcx,rax
+1403FE403  call    000000014043DC30h
+1403FE408  mov     rbx,rax
+1403FE40B  lea     rcx,[rbp+20h]
+1403FE40F  call    000000014043D380h
+1403FE414  mov     r8,rbx
+1403FE417  mov     edx,0Ah
+1403FE41C  mov     rcx,[rdi+190h]
+1403FE423  call    00000001404C5A10h
+1403FE428  lea     rcx,[rbp+20h]
+1403FE42C  call    000000014043D370h
+1403FE431  nop
+1403FE432  mov     rdx,rdi
+1403FE435  mov     rcx,rax
+1403FE438  call    000000014043D7D0h
+1403FE43D  mov     rbx,rax
+1403FE440  lea     rcx,[rbp+20h]
+1403FE444  call    000000014043D380h
+1403FE449  mov     r8,rbx
+1403FE44C  mov     edx,0Bh
+1403FE451  mov     rcx,[rdi+190h]
+1403FE458  call    00000001404C5A10h
+1403FE45D  lea     rcx,[rbp+20h]
+1403FE461  call    000000014043D370h
+1403FE466  nop
+1403FE467  mov     rdx,rdi
+1403FE46A  mov     rcx,rax
+1403FE46D  call    000000014043D910h
+1403FE472  mov     rbx,rax
+1403FE475  lea     rcx,[rbp+20h]
+1403FE479  call    000000014043D380h
+1403FE47E  mov     r8,rbx
+1403FE481  mov     edx,0Dh
+1403FE486  mov     rcx,[rdi+190h]
+1403FE48D  call    00000001404C5A10h
+1403FE492  lea     rcx,[rbp+20h]
+1403FE496  call    000000014043D370h
+1403FE49B  nop
+1403FE49C  mov     rdx,rdi
+1403FE49F  mov     rcx,rax
+1403FE4A2  call    000000014043D410h
+1403FE4A7  mov     rbx,rax
+1403FE4AA  lea     rcx,[rbp+20h]
+1403FE4AE  call    000000014043D380h
+1403FE4B3  mov     r8,rbx
+1403FE4B6  mov     edx,10h
+1403FE4BB  mov     rcx,[rdi+190h]
+1403FE4C2  call    00000001404C5A10h
+1403FE4C7  lea     rcx,[rbp+20h]
+1403FE4CB  call    000000014043D370h
+1403FE4D0  nop
+1403FE4D1  mov     rdx,rdi
+1403FE4D4  mov     rcx,rax
+1403FE4D7  call    000000014043D820h
+1403FE4DC  mov     rbx,rax
+1403FE4DF  lea     rcx,[rbp+20h]
+1403FE4E3  call    000000014043D380h
+1403FE4E8  mov     r8,rbx
+1403FE4EB  mov     edx,0Eh
+1403FE4F0  mov     rcx,[rdi+190h]
+1403FE4F7  call    00000001404C5A10h
+1403FE4FC  lea     rcx,[rbp+20h]
+1403FE500  call    000000014043D370h
+1403FE505  nop
+1403FE506  mov     rdx,rdi
+1403FE509  mov     rcx,rax
+1403FE50C  call    000000014043DB90h
+1403FE511  mov     rbx,rax
+1403FE514  lea     rcx,[rbp+20h]
+1403FE518  call    000000014043D380h
+1403FE51D  mov     r8,rbx
+1403FE520  mov     edx,1Dh
+1403FE525  mov     rcx,[rdi+190h]
+1403FE52C  call    00000001404C5A10h
+1403FE531  lea     rcx,[rbp+20h]
+1403FE535  call    000000014043D370h
+1403FE53A  nop
+1403FE53B  mov     rdx,rdi
+1403FE53E  mov     rcx,rax
+1403FE541  call    000000014043DBE0h
+1403FE546  mov     rbx,rax
+1403FE549  lea     rcx,[rbp+20h]
+1403FE54D  call    000000014043D380h
+1403FE552  mov     r8,rbx
+1403FE555  mov     edx,16h
+1403FE55A  mov     rcx,[rdi+190h]
+1403FE561  call    00000001404C5A10h
+1403FE566  lea     rcx,[rbp+20h]
+1403FE56A  call    000000014043D370h
+1403FE56F  nop
+1403FE570  mov     rdx,rdi
+1403FE573  mov     rcx,rax
+1403FE576  call    000000014043DCD0h
+1403FE57B  mov     rbx,rax
+1403FE57E  lea     rcx,[rbp+20h]
+1403FE582  call    000000014043D380h
+1403FE587  mov     r8,rbx
+1403FE58A  mov     edx,17h
+1403FE58F  mov     rcx,[rdi+190h]
+1403FE596  call    00000001404C5A10h
+1403FE59B  mov     r8,[143D8E380h]
+1403FE5A2  mov     [rbp+20h],r8
+1403FE5A6  mov     edx,8
+1403FE5AB  lea     ecx,[rdx+30h]
+1403FE5AE  call    0000000141EBD430h
+1403FE5B3  mov     [rbp+28h],rax
+1403FE5B7  test    rax,rax
+1403FE5BA  je      short 00000001403FE5C9h
+1403FE5BC  mov     rdx,rdi
+1403FE5BF  mov     rcx,rax
+1403FE5C2  call    000000014043B4F0h
+1403FE5C7  jmp     short 00000001403FE5CCh
+1403FE5C9  mov     rax,rsi
+1403FE5CC  mov     r8,rax
+1403FE5CF  mov     edx,1Ah
+1403FE5D4  mov     rcx,[rdi+190h]
+1403FE5DB  call    00000001404C5A10h
+1403FE5E0  mov     r8,[143D8E380h]
+1403FE5E7  mov     [rbp+20h],r8
+1403FE5EB  mov     edx,8
+1403FE5F0  lea     ecx,[rdx+18h]
+1403FE5F3  call    0000000141EBD430h
+1403FE5F8  mov     [rbp+28h],rax
+1403FE5FC  test    rax,rax
+1403FE5FF  je      short 00000001403FE60Eh
+1403FE601  mov     rdx,rdi
+1403FE604  mov     rcx,rax
+1403FE607  call    000000014044D8A0h
+1403FE60C  jmp     short 00000001403FE611h
+1403FE60E  mov     rax,rsi
+1403FE611  mov     r8,rax
+1403FE614  mov     edx,1Bh
+1403FE619  mov     rcx,[rdi+190h]
+1403FE620  call    00000001404C5A10h
+1403FE625  mov     r8,[143D8E380h]
+1403FE62C  mov     [rbp+20h],r8
+1403FE630  mov     edx,8
+1403FE635  lea     ecx,[rdx+18h]
+1403FE638  call    0000000141EBD430h
+1403FE63D  mov     [rbp+28h],rax
+1403FE641  test    rax,rax
+1403FE644  je      short 00000001403FE653h
+1403FE646  mov     rdx,rdi
+1403FE649  mov     rcx,rax
+1403FE64C  call    000000014047FAD0h
+1403FE651  jmp     short 00000001403FE656h
+1403FE653  mov     rax,rsi
+1403FE656  mov     r8,rax
+1403FE659  mov     edx,22h
+1403FE65E  mov     rcx,[rdi+190h]
+1403FE665  call    00000001404C5A10h
+1403FE66A  mov     r8,[143D8E380h]
+1403FE671  mov     [rbp+20h],r8
+1403FE675  mov     edx,8
+1403FE67A  mov     ecx,1F0h
+1403FE67F  call    0000000141EBD430h
+1403FE684  mov     [rbp+28h],rax
+1403FE688  test    rax,rax
+1403FE68B  je      short 00000001403FE69Ah
+1403FE68D  mov     rdx,rdi
+1403FE690  mov     rcx,rax
+1403FE693  call    0000000140431420h
+1403FE698  jmp     short 00000001403FE69Dh
+1403FE69A  mov     rax,rsi
+1403FE69D  mov     r8,rax
+1403FE6A0  mov     edx,1Eh
+1403FE6A5  mov     rcx,[rdi+190h]
+1403FE6AC  call    00000001404C5A10h
+1403FE6B1  mov     r8,[143D8E380h]
+1403FE6B8  mov     [rbp+20h],r8
+1403FE6BC  mov     edx,8
+1403FE6C1  lea     ecx,[rdx+68h]
+1403FE6C4  call    0000000141EBD430h
+1403FE6C9  mov     [rbp+28h],rax
+1403FE6CD  test    rax,rax
+1403FE6D0  je      short 00000001403FE6E6h
+1403FE6D2  mov     r8,rdi
+1403FE6D5  mov     rdx,[143D8E3A8h]
+1403FE6DC  mov     rcx,rax
+1403FE6DF  call    0000000140489800h
+1403FE6E4  jmp     short 00000001403FE6E9h
+1403FE6E6  mov     rax,rsi
+1403FE6E9  mov     r8,rax
+1403FE6EC  mov     edx,1Fh
+1403FE6F1  mov     rcx,[rdi+190h]
+1403FE6F8  call    00000001404C5A10h
+1403FE6FD  mov     r8,[143D8E380h]
+1403FE704  mov     [rbp+20h],r8
+1403FE708  mov     edx,8
+1403FE70D  mov     ecx,0A8h
+1403FE712  call    0000000141EBD430h
+1403FE717  mov     [rbp+28h],rax
+1403FE71B  test    rax,rax
+1403FE71E  je      short 00000001403FE734h
+1403FE720  mov     r8,rdi
+1403FE723  mov     rdx,[143D8E3A8h]
+1403FE72A  mov     rcx,rax
+1403FE72D  call    0000000140408E00h
+1403FE732  jmp     short 00000001403FE737h
+1403FE734  mov     rax,rsi
+1403FE737  mov     r8,rax
+1403FE73A  mov     edx,20h
+1403FE73F  mov     rcx,[rdi+190h]
+1403FE746  call    00000001404C5A10h
+1403FE74B  mov     r8,[143D8E380h]
+1403FE752  mov     [rbp+20h],r8
+1403FE756  mov     edx,10h
+1403FE75B  lea     ecx,[rdx+50h]
+1403FE75E  call    0000000141EBD430h
+1403FE763  mov     [rbp+28h],rax
+1403FE767  test    rax,rax
+1403FE76A  je      short 00000001403FE781h
+1403FE76C  mov     r8,rdi
+1403FE76F  mov     rdx,[143D8E3A8h]
+1403FE776  mov     rcx,rax
+1403FE779  call    0000000140405410h
+1403FE77E  mov     rsi,rax
+1403FE781  mov     r8,rsi
+1403FE784  mov     edx,21h
+1403FE789  mov     rcx,[rdi+190h]
+1403FE790  mov     rbx,[rsp+60h]
+1403FE795  add     rsp,30h
+1403FE799  pop     rdi
+1403FE79A  pop     rsi
+1403FE79B  pop     rbp
+1403FE79C  jmp     near ptr 00000001404C5A10h
+1403FE7A1  mov     rcx,rax
+1403FE7A4  mov     [144849DE0h],rax
+1403FE7AB  jmp     near ptr 0000000140E516F1h
+1403FE7B0  mov     rcx,[rcx+50h]
+1403FE7B4  test    rcx,rcx
+1403FE7B7  jne     near ptr 00000001409F2080h
+1403FE7BD  xor     al,al
+1403FE7BF  ret
+1403FE7C0  mov     rax,[rcx+10h]
+1403FE7C4  mov     r8,rcx
+1403FE7C7  movzx   r9d,byte ptr [rax+0Ah]
+1403FE7CC  test    r9b,1
+1403FE7D0  jne     short 00000001403FE829h
+1403FE7D2  cmp     byte ptr [rax+8],4
+1403FE7D6  jne     short 00000001403FE829h
+1403FE7D8  test    r9b,2
+1403FE7DC  je      short 00000001403FE7EFh
+1403FE7DE  mov     rax,[rcx+58h]
+1403FE7E2  mov     rcx,[rax+0C8h]
+1403FE7E9  test    byte ptr [rcx+24h],1
+1403FE7ED  je      short 00000001403FE829h
+1403FE7EF  test    byte ptr [r8+1CAh],1
+1403FE7F7  jne     short 00000001403FE829h
+1403FE7F9  test    r9b,4
+1403FE7FD  je      short 00000001403FE810h
+1403FE7FF  mov     rax,[r8+58h]
+1403FE803  mov     rcx,[rax+0C8h]
+1403FE80A  test    byte ptr [rcx+24h],1
+1403FE80E  je      short 00000001403FE829h
+1403FE810  mov     eax,[r8+0B4h]
+1403FE817  cmp     eax,0FFFFFFFFh
+1403FE81A  je      short 00000001403FE829h
+1403FE81C  test    edx,edx
+1403FE81E  jns     short 00000001403FE823h
+1403FE820  xor     al,al
+1403FE822  ret
+1403FE823  cmp     edx,eax
+1403FE825  setle   al
+1403FE828  ret
+1403FE829  mov     al,1
+1403FE82B  ret
+1403FE82C  nop
+1403FE82D  add     bl,al
+1403FE82F  jne     short 00000001403FE7B4h
+1403FE831  mov     ecx,1C0h
+1403FE836  add     [rax-75h],cl
+1403FE839  sal     dword ptr [rdi+rcx*2+48h],1
+1403FE83D  mov     eax,[rcx+10h]
+1403FE840  movzx   r8d,byte ptr [rax+0Ah]
+1403FE845  test    r8b,1
+1403FE849  jne     short 00000001403FE88Bh
+1403FE84B  cmp     byte ptr [rax+8],4
+1403FE84F  jne     short 00000001403FE88Bh
+1403FE851  test    r8b,2
+1403FE855  je      short 00000001403FE868h
+1403FE857  mov     rax,[rcx+58h]
+1403FE85B  mov     rcx,[rax+0C8h]
+1403FE862  test    byte ptr [rcx+24h],1
+1403FE866  je      short 00000001403FE88Bh
+1403FE868  test    byte ptr [rdx+1CAh],1
+1403FE86F  jne     short 00000001403FE88Bh
+1403FE871  test    r8b,4
+1403FE875  je      short 00000001403FE888h
+1403FE877  mov     rcx,[rdx+58h]
+1403FE87B  mov     rdx,[rcx+0C8h]
+1403FE882  test    byte ptr [rdx+24h],1
+1403FE886  je      short 00000001403FE88Bh
+1403FE888  xor     al,al
+1403FE88A  ret
+1403FE88B  mov     al,1
+1403FE88D  ret
+1403FE88E  int     3
+1403FE88F  xor     eax,[rcx+14646479h]
+1403FE895  add     [rax],al
+1403FE897  sete    al
+1403FE89A  ret
+1403FE89B  int     3
+1403FE89C  lea     rcx,[1A4817450h]
+1403FE8A3  xor     dl,dl
+1403FE8A5  cmp     eax,1195h
+1403FE8AA  ja      short 00000001403FE917h
+1403FE8AC  cmp     eax,1194h
+1403FE8B1  jae     near ptr 00000001403FE957h
+1403FE8B7  cmp     eax,0C6Dh
+1403FE8BC  ja      short 00000001403FE8F8h
+1403FE8BE  je      near ptr 00000001403FE957h
+1403FE8C4  cmp     eax,852h
+1403FE8C9  ja      short 00000001403FE8E6h
+1403FE8CB  je      near ptr 00000001403FE957h
+1403FE8D1  sub     eax,7EEh
+1403FE8D6  je      short 00000001403FE957h
+1403FE8D8  sub     eax,14h
+1403FE8DB  je      short 00000001403FE957h
+1403FE8DD  cmp     eax,3Ch
+1403FE8E0  je      short 00000001403FE957h
+1403FE8E2  movzx   eax,dl
+1403FE8E5  ret
+1403FE8E6  cmp     eax,8E0h
+1403FE8EB  je      short 00000001403FE957h
+1403FE8ED  cmp     eax,0BEAh
+1403FE8F2  je      short 00000001403FE957h
+1403FE8F4  movzx   eax,dl
+1403FE8F7  ret
+1403FE8F8  sub     eax,0CB3h
+1403FE8FD  je      short 00000001403FE957h
+1403FE8FF  sub     eax,1C1h
+1403FE904  je      short 00000001403FE957h
+1403FE906  sub     eax,10Eh
+1403FE90B  je      short 00000001403FE957h
+1403FE90D  sub     eax,50h
+1403FE910  je      short 00000001403FE957h
+1403FE912  cmp     eax,14h
+1403FE915  jmp     short 00000001403FE955h
+1403FE917  cmp     eax,1298h
+1403FE91C  ja      short 00000001403FE949h
+1403FE91E  je      short 00000001403FE957h
+1403FE920  add     eax,0FFFFEE67h
+1403FE925  cmp     eax,0E1h
+1403FE92A  ja      short 00000001403FE959h
+1403FE92C  lea     r8,[140000000h]
+1403FE933  movzx   eax,byte ptr [r8+rax+3FE968h]
+1403FE93C  mov     ecx,[r8+rax*4+3FE960h]
+1403FE944  add     rcx,r8
+1403FE947  jmp     rcx
+1403FE949  cmp     eax,12C0h
+1403FE94E  je      short 00000001403FE957h
+1403FE950  cmp     eax,1464h
+1403FE955  jne     short 00000001403FE959h
+1403FE957  mov     dl,1
+1403FE959  movzx   eax,dl
+1403FE95C  ret
+1403FE95D  nop     dword ptr [rax]
+1403FE960  push    rdi
+1403FE961  jmp     near ptr 000000012998E9A5h
+1403FE966  (bad)
+1403FE968  add     [rcx],al
+1403FE96A  add     [rcx],eax
+1403FE96C  add     [rcx],eax
+1403FE96E  add     [rcx],eax
+1403FE970  add     [rcx],eax
+1403FE972  add     [rcx],eax
+1403FE974  add     [rcx],eax
+1403FE976  add     [rax],eax
+1403FE978  add     [rcx],eax
+1403FE97A  add     [rcx],eax
+1403FE97C  add     [rcx],eax
+1403FE97E  add     [rcx],eax
+1403FE980  add     [rcx],eax
+1403FE982  add     [rcx],eax
+1403FE984  add     [rcx],eax
+1403FE986  add     [rcx],eax
+1403FE988  add     [rcx],eax
+1403FE98A  add     [rcx],eax
+1403FE98C  add     [rcx],eax
+1403FE98E  add     [rcx],eax
+1403FE990  add     [rcx],eax
+1403FE992  add     [rcx],eax
+1403FE994  add     [rax],eax
+1403FE996  add     [rcx],eax
+1403FE998  add     [rcx],eax
+1403FE99A  add     [rcx],eax
+1403FE99C  add     [rcx],eax
+1403FE99E  add     [rax],eax
+1403FE9A0  add     [rcx],eax
+1403FE9A2  add     [rcx],eax
+1403FE9A4  add     [rcx],eax
+1403FE9A6  add     [rcx],eax
+1403FE9A8  add     [rcx],eax
+1403FE9AA  add     [rcx],eax
+1403FE9AC  add     [rcx],eax
+1403FE9AE  add     [rcx],eax
+1403FE9B0  add     [rcx],eax
+1403FE9B2  add     [rcx],eax
+1403FE9B4  add     [rcx],eax
+1403FE9B6  add     [rcx],eax
+1403FE9B8  add     [rcx],eax
+1403FE9BA  add     [rcx],eax
+1403FE9BC  add     [rcx],eax
+1403FE9BE  add     [rcx],eax
+1403FE9C0  add     [rcx],eax
+1403FE9C2  add     [rcx],eax
+1403FE9C4  add     [rcx],eax
+1403FE9C6  add     [rcx],eax
+1403FE9C8  add     [rax],eax
+1403FE9CA  add     [rcx],eax
+1403FE9CC  add     [rcx],eax
+1403FE9CE  add     [rcx],eax
+1403FE9D0  add     [rcx],eax
+1403FE9D2  add     [rcx],eax
+1403FE9D4  add     [rcx],eax
+1403FE9D6  add     [rcx],eax
+1403FE9D8  add     [rcx],eax
+1403FE9DA  add     [rcx],eax
+1403FE9DC  add     [rcx],eax
+1403FE9DE  add     [rcx],eax
+1403FE9E0  add     [rcx],eax
+1403FE9E2  add     [rcx],eax
+1403FE9E4  add     [rax],eax
+1403FE9E6  add     [rcx],eax
+1403FE9E8  add     [rcx],eax
+1403FE9EA  add     [rcx],eax
+1403FE9EC  add     [rcx],eax
+1403FE9EE  add     [rcx],eax
+1403FE9F0  add     [rcx],eax
+1403FE9F2  add     [rcx],eax
+1403FE9F4  add     [rcx],eax
+1403FE9F6  add     [rcx],eax
+1403FE9F8  add     [rcx],eax
+1403FE9FA  add     [rcx],eax
+1403FE9FC  add     [rcx],eax
+1403FE9FE  add     [rcx],eax
+1403FEA00  add     [rcx],eax
+1403FEA02  add     [rcx],eax
+1403FEA04  add     [rcx],eax
+1403FEA06  add     [rcx],eax
+1403FEA08  add     [rcx],eax
+1403FEA0A  add     [rcx],eax
+1403FEA0C  add     [rcx],eax
+1403FEA0E  add     [rcx],eax
+1403FEA10  add     [rcx],eax
+1403FEA12  add     [rcx],eax
+1403FEA14  add     [rcx],eax
+1403FEA16  add     [rax],eax
+1403FEA18  add     [rcx],eax
+1403FEA1A  add     [rcx],eax
+1403FEA1C  add     [rcx],eax
+1403FEA1E  add     [rcx],eax
+1403FEA20  add     [rcx],eax
+1403FEA22  add     [rcx],eax
+1403FEA24  add     [rcx],eax
+1403FEA26  add     [rcx],eax
+1403FEA28  add     [rcx],eax
+1403FEA2A  add     [rcx],eax
+1403FEA2C  add     [rcx],eax
+1403FEA2E  add     [rcx],eax
+1403FEA30  add     [rcx],eax
+1403FEA32  add     [rcx],eax
+1403FEA34  add     [rax],eax
+1403FEA36  add     [rcx],eax
+1403FEA38  add     [rcx],eax
+1403FEA3A  add     [rcx],eax
+1403FEA3C  add     [rcx],eax
+1403FEA3E  add     [rax],eax
+1403FEA40  add     [rcx],al
+1403FEA42  add     [rcx],eax
+1403FEA44  add     [rcx],eax
+1403FEA46  add     [rcx],eax
+1403FEA48  add     [rax],eax
+1403FEA4A  adc     rdi,[rcx+22h]
+1403FEA4E  int     3
+1403FEA4F  or      eax,[rax+53h]
+1403FEA52  sub     rsp,20h
+1403FEA56  mov     rax,[143D6D228h]
+1403FEA5D  mov     rbx,rcx
+1403FEA60  test    rax,rax
+1403FEA63  jne     short 00000001403FEA93h
+1403FEA65  lea     rcx,[143D61E68h]
+1403FEA6C  call    0000000141EC4940h
+1403FEA71  mov     r9,rax
+1403FEA74  lea     r8,[1432980B8h]  ; [1432980B8] f=-0 i=-1774554331
+1403FEA7B  mov     edx,0B4h
+1403FEA80  lea     rcx,[1429CCAA0h]  ; "w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4"
+1403FEA87  call    0000000141EBCD00h
+1403FEA8C  mov     rax,[143D6D228h]
+1403FEA93  cmp     byte ptr [rax+0Ah],0
+1403FEA97  je      short 00000001403FEAFDh
+1403FEA99  mov     rax,[rbx+10h]
+1403FEA9D  movzx   edx,byte ptr [rax+0Ah]
+1403FEAA1  test    dl,1
+1403FEAA4  jne     short 00000001403FEAF5h
+1403FEAA6  cmp     byte ptr [rax+8],4
+1403FEAAA  jne     short 00000001403FEAF5h
+1403FEAAC  test    dl,2
+1403FEAAF  je      short 00000001403FEAC2h
+1403FEAB1  mov     rax,[rbx+58h]
+1403FEAB5  mov     rcx,[rax+0C8h]
+1403FEABC  test    byte ptr [rcx+24h],1
+1403FEAC0  je      short 00000001403FEAF5h
+1403FEAC2  test    byte ptr [rbx+1CAh],1
+1403FEAC9  jne     short 00000001403FEAF5h
+1403FEACB  test    dl,4
+1403FEACE  je      short 00000001403FEAE1h
+1403FEAD0  mov     rax,[rbx+58h]
+1403FEAD4  mov     rcx,[rax+0C8h]
+1403FEADB  test    byte ptr [rcx+24h],1
+1403FEADF  je      short 00000001403FEAF5h
+1403FEAE1  cmp     dword ptr [rbx+0B4h],4
+1403FEAE8  ja      short 00000001403FEAF5h
+1403FEAEA  mov     eax,1
+1403FEAEF  add     rsp,20h
+1403FEAF3  pop     rbx
+1403FEAF4  ret
+1403FEAF5  xor     eax,eax
+1403FEAF7  add     rsp,20h
+1403FEAFB  pop     rbx
+1403FEAFC  ret
+1403FEAFD  mov     al,1
+1403FEAFF  add     rsp,20h
+1403FEB03  pop     rbx
+1403FEB04  ret
+1403FEB05  mov     rcx,[rdi]
+1403FEB08  mov     rax,[rcx]
+1403FEB0B  jmp     near ptr 00000001401E201Ah
+1403FEB10  push    rdi
+1403FEB12  sub     rsp,20h
+1403FEB16  test    byte ptr [rcx+1C8h],1
+1403FEB1D  mov     rdi,rdx
+1403FEB20  je      short 00000001403FEB7Bh
+1403FEB22  mov     rax,[rcx+190h]
+1403FEB29  mov     [rsp+30h],rbx
+1403FEB2E  mov     rcx,[rax]
+1403FEB31  call    00000001404379A0h
+1403FEB36  mov     rbx,rax
+1403FEB39  cmp     dword ptr [rax],0FFFFFFFFh
+1403FEB3C  je      short 00000001403FEB6Eh
+1403FEB3E  mov     rcx,rax
+1403FEB41  call    00000001406622E0h
+1403FEB46  test    al,al
+1403FEB48  je      short 00000001403FEB5Ch
+1403FEB4A  mov     rcx,rdi
+1403FEB4D  mov     rbx,[rsp+30h]
+1403FEB52  add     rsp,20h
+1403FEB56  pop     rdi
+1403FEB57  jmp     near ptr 00000001406622E0h
+1403FEB5C  mov     eax,[rdi]
+1403FEB5E  cmp     [rbx],eax
+1403FEB60  mov     rbx,[rsp+30h]
+1403FEB65  sete    al
+1403FEB68  add     rsp,20h
+1403FEB6C  pop     rdi
+1403FEB6D  ret
+1403FEB6E  mov     al,1
+1403FEB70  mov     rbx,[rsp+30h]
+1403FEB75  add     rsp,20h
+1403FEB79  pop     rdi
+1403FEB7A  ret
+1403FEB7B  mov     al,1
+1403FEB7D  add     rsp,20h
+1403FEB81  pop     rdi
+1403FEB82  ret
+1403FEB83  nop
+1403FEB84  mov     edi,ecx
+1403FEB86  adc     dl,[rdx+6Ah]
+1403FEB89  mov     cl,19h
+1403FEB8B  xor     esi,ecx
+1403FEB8D  push    rsi
+1403FEB8E  stosb
+1403FEB8F  loope   00000001403FEBD9h
+1403FEB91  mov     [rsp+8],ebx
+1403FEB95  mov     [rsp+10h],rbp
+1403FEB9A  mov     [rsp+18h],rsi
+1403FEB9F  mov     [rsp+20h],rdi
+1403FEBA4  push    r14
+1403FEBA6  sub     rsp,30h
+1403FEBAA  mov     rax,[rcx+190h]
+1403FEBB1  mov     rsi,rcx
+1403FEBB4  xor     ebx,ebx
+1403FEBB6  mov     r14,rdx
+1403FEBB9  mov     [rsp+20h],ebx
+1403FEBBD  xor     bpl,bpl
+1403FEBC0  xor     dil,dil
+1403FEBC3  mov     rcx,[rax+78h]
+1403FEBC7  call    00000001404525D0h
+1403FEBCC  test    al,al
+1403FEBCE  je      short 00000001403FEBD8h
+1403FEBD0  mov     dil,3
+1403FEBD3  jmp     near ptr 00000001403FECCAh
+1403FEBD8  test    byte ptr [rsi+1C6h],4
+1403FEBDF  jne     short 00000001403FEC5Ch
+1403FEBE1  mov     rcx,[143D6D018h]
+1403FEBE8  test    rcx,rcx
+1403FEBEB  je      short 00000001403FEC03h
+1403FEBED  mov     ebx,2
+1403FEBF2  mov     [rsp+20h],ebx
+1403FEBF6  cmp     [rcx+1E508h],rsi
+1403FEBFD  jne     short 00000001403FEC03h
+1403FEBFF  mov     al,1
+1403FEC01  jmp     short 00000001403FEC05h
+1403FEC03  xor     al,al
+1403FEC05  test    bl,2
+1403FEC08  je      short 00000001403FEC11h
+1403FEC0A  and     ebx,0FFFFFFFDh
+1403FEC0D  mov     [rsp+20h],ebx
+1403FEC11  test    al,al
+1403FEC13  je      short 00000001403FEC58h
+1403FEC15  or      ebx,1
+1403FEC18  mov     [rsp+20h],ebx
+1403FEC1C  test    rcx,rcx
+1403FEC1F  jne     short 00000001403FEC4Fh
+1403FEC21  lea     rcx,[143D61E6Ch]
+1403FEC28  call    0000000141EC4940h
+1403FEC2D  mov     r9,rax
+1403FEC30  lea     r8,[1432980B8h]  ; [1432980B8] f=-0 i=-1774554331
+1403FEC37  mov     edx,0B4h
+1403FEC3C  lea     rcx,[1429CCAA0h]  ; "w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4"
+1403FEC43  call    0000000141EBCD00h
+1403FEC48  mov     rcx,[143D6D018h]
+1403FEC4F  call    0000000140509C10h
+1403FEC54  test    al,al
+1403FEC56  jne     short 00000001403FEC5Ch
+1403FEC58  xor     al,al
+1403FEC5A  jmp     short 00000001403FEC5Eh
+1403FEC5C  mov     al,1
+1403FEC5E  test    bl,1
+1403FEC61  je      short 00000001403FEC6Ah
+1403FEC63  and     ebx,0FFFFFFFEh
+1403FEC66  mov     [rsp+20h],ebx
+1403FEC6A  test    al,al
+1403FEC6C  je      short 00000001403FEC73h
+1403FEC6E  mov     dil,1
+1403FEC71  jmp     short 00000001403FECCAh
+1403FEC73  mov     rax,[rsi+190h]
+1403FEC7A  mov     rcx,[rax+68h]
+1403FEC7E  cmp     byte ptr [rcx+1D1h],0
+1403FEC85  je      short 00000001403FECC7h
+1403FEC87  add     rcx,260h
+1403FEC8E  call    0000000140472B50h
+1403FEC93  test    al,al
+1403FEC95  jne     short 00000001403FECC7h
+1403FEC97  mov     rax,[rsi+190h]
+1403FEC9E  mov     rcx,[rax+68h]
+1403FECA2  cmp     byte ptr [rcx+92h],0
+1403FECA9  je      short 00000001403FECC7h
+1403FECAB  call    00000001403F4A20h
+1403FECB0  test    al,al
+1403FECB2  jne     short 00000001403FECC7h
+1403FECB4  test    byte ptr [rsi+1C6h],20h
+1403FECBB  jne     short 00000001403FECC2h
+1403FECBD  mov     dil,4
+1403FECC0  jmp     short 00000001403FECCAh
+1403FECC2  mov     bpl,1
+1403FECC5  jmp     short 00000001403FECCAh
+1403FECC7  mov     dil,2
+1403FECCA  mov     rbx,[rsp+40h]
+1403FECCF  mov     rax,r14
+1403FECD2  mov     rsi,[rsp+50h]
+1403FECD7  mov     [r14],bpl
+1403FECDA  mov     rbp,[rsp+48h]
+1403FECDF  mov     [r14+1],dil
+1403FECE3  mov     rdi,[rsp+58h]
+1403FECE8  add     rsp,30h
+1403FECEC  pop     r14
+1403FECEE  ret
+1403FECEF  nop
+1403FECF0  sub     rsp,28h
+1403FECF4  call    0000000141ECA780h
+1403FECF9  mov     rax,[143D6A210h]
+1403FED00  test    rax,rax
+1403FED03  jne     short 00000001403FED17h
+1403FED05  mov     [143D6A218h],al
+1403FED0B  call    00000001403EA370h
+1403FED10  mov     [143D6A210h],rax
+1403FED17  add     rsp,28h
+1403FED1B  ret
+1403FED1C  nop
+1403FED1D  mov     rcx,[rax-75h]
+1403FED22  push    r8
+1403FED24  test    rax,rax
+1403FED27  je      short 00000001403FED30h
+1403FED29  mov     byte ptr [rax+140h],1
+1403FED30  ret
+1403FED31  mov     rcx,[rbx+578h]
+1403FED38  mov     rax,[rcx]
+1403FED3B  jmp     near ptr 00000001414CB5E6h
+1403FED40  ret     0
+1403FED43  nop
+1403FED44  xor     eax,eax
+1403FED46  mov     ecx,7
+1403FED4B  mov     [rbp-8],rax
+1403FED4F  mov     [rsp+18h],rbp
+1403FED55  mov     [rsp+20h],rsi
+1403FED5A  push    rdi
+1403FED5B  push    r14
+1403FED5D  push    r15
+1403FED5F  sub     rsp,50h
+1403FED63  xor     r15b,r15b
+1403FED66  movzx   esi,r9b
+1403FED6A  test    byte ptr [rcx+1C6h],1
+1403FED71  movzx   ebp,r8b
+1403FED75  mov     r14d,edx
+1403FED78  mov     rdi,rcx
+1403FED7B  jne     near ptr 00000001403FEE7Eh
+1403FED81  mov     rcx,[143D6D018h]
+1403FED88  test    rcx,rcx
+1403FED8B  jne     short 00000001403FEDBBh
+1403FED8D  lea     rcx,[143D61E6Ch]
+1403FED94  call    0000000141EC4940h
+1403FED99  mov     r9,rax
+1403FED9C  lea     r8,[1432980B8h]  ; [1432980B8] f=-0 i=-1774554331
+1403FEDA3  mov     edx,0B4h
+1403FEDA8  lea     rcx,[1429CCAA0h]  ; "w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4"
+1403FEDAF  call    0000000141EBCD00h
+1403FEDB4  mov     rcx,[143D6D018h]
+1403FEDBB  call    0000000140509C00h
+1403FEDC0  test    al,al
+1403FEDC2  jne     near ptr 00000001403FEE7Eh
+1403FEDC8  mov     rcx,[143D6EAE0h]
+1403FEDCF  mov     [rsp+78h],rbx
+1403FEDD4  mov     rbx,[rdi+8]
+1403FEDD8  test    rcx,rcx
+1403FEDDB  jne     short 00000001403FEE0Bh
+1403FEDDD  lea     rcx,[143D61E6Bh]
+1403FEDE4  call    0000000141EC4940h
+1403FEDE9  mov     r9,rax
+1403FEDEC  lea     r8,[1432980B8h]  ; [1432980B8] f=-0 i=-1774554331
+1403FEDF3  mov     edx,0B4h
+1403FEDF8  lea     rcx,[1429CCAA0h]  ; "w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4"
+1403FEDFF  call    0000000141EBCD00h
+1403FEE04  mov     rcx,[143D6EAE0h]
+1403FEE0B  mov     eax,[rsp+0A8h]
+1403FEE12  mov     r9d,r14d
+1403FEE15  movsx   edx,byte ptr [rsp+0A0h]
+1403FEE1D  mov     r8,rbx
+1403FEE20  movss   xmm0,dword ptr [rsp+98h]
+1403FEE29  mov     [rsp+48h],eax
+1403FEE2D  mov     eax,[rsp+90h]
+1403FEE34  mov     [rsp+40h],edx
+1403FEE38  lea     rdx,[rsp+70h]

@@ -88,6 +88,7 @@ public static class ExeScan
     public static void Disasm(string exe, ulong start, int count)
     {
         Load(exe);
+        Rtti.Load();
         var formatter = new MasmFormatter();
         formatter.Options.FirstOperandCharIndex = 8;
         var output = new StringOutput();
@@ -110,6 +111,7 @@ public static class ExeScan
                 {
                     var f = BitConverter.ToSingle(Image, (int)fo);
                     var s = ReadString(a);
+                    if (Rtti.VtableClass.TryGetValue(a, out var vcls)) s = "vtable " + vcls;
                     extra = s != null ? $"  ; \"{s}\"" : $"  ; [{a:X}] f={f:0.####} i={BitConverter.ToInt32(Image, (int)fo)}";
                 }
             }
@@ -301,6 +303,10 @@ public static class ExeScan
                         bias = -(long)(int)b.Immediate32;
                     else if (b.Mnemonic == Mnemonic.Sub && b.Op0Kind == OpKind.Register && b.Op0Register.GetFullRegister() == indexReg && b.Op1Kind != OpKind.Register)
                         bias = (int)b.Immediate32;
+                    else if (b.Mnemonic == Mnemonic.Dec && b.Op0Kind == OpKind.Register && b.Op0Register.GetFullRegister() == indexReg)
+                        bias = 1;
+                    else if (b.Mnemonic == Mnemonic.Inc && b.Op0Kind == OpKind.Register && b.Op0Register.GetFullRegister() == indexReg)
+                        bias = -1;
                 }
                 break;
             }

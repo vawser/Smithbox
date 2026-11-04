@@ -10,6 +10,7 @@ public static class ExeReport
     {
         ExeScan.Load(exe);
         ParamTrace.Init();
+        Rtti.Load();
 
         var template = TemplateReader.Read(templateFile);
         var used = Cache.Read(cacheFile).GroupBy(e => e.Type).ToDictionary(g => g.Key, g => g.ToList());
@@ -22,10 +23,10 @@ public static class ExeReport
             var r = new ParamTrace.Result();
             foreach (var d in dispatchers)
             {
-                var one = ParamTrace.Trace(d, type, new() { ["RDX"] = new ParamTrace.Tag(ParamTrace.Kind.Ctx, 0) });
+                var one = ParamTrace.Trace(d, type, new() { ["RDX"] = new ParamTrace.Tag(ParamTrace.Kind.Ctx, 0), ["RCX"] = new ParamTrace.Tag(ParamTrace.Kind.This, 0) });
                 r.Accesses.AddRange(one.Accesses); r.CtxAccesses.AddRange(one.CtxAccesses);
                 r.Notes.UnionWith(one.Notes); r.Functions.UnionWith(one.Functions); r.Steps += one.Steps;
-                r.Sinks.AddRange(one.Sinks); r.Consts.AddRange(one.Consts);
+                r.Sinks.AddRange(one.Sinks); r.Consts.AddRange(one.Consts); r.Effects.AddRange(one.Effects);
             }
             results[type] = r;
         }
@@ -95,6 +96,7 @@ public static class ExeReport
             var ctx = r.CtxAccesses.Where(a => a.Offset != 0 && a.Offset != 8).Select(a => $"+{a.Offset:X}").Distinct();
             if (ctx.Any()) sb.AppendLine($"  ctx: {string.Join(" ", ctx)}");
 
+            foreach (var e in r.Effects.Distinct().Where(e => !e.Contains("TimeActModule")).Take(40)) sb.AppendLine($"  effect: {e}");
             foreach (var n in r.Notes.Take(8)) sb.AppendLine($"  note: {n}");
 
             // template fields the game never read
