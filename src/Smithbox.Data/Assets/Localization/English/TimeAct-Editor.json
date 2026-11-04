@@ -1442,7 +1442,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Edit_Animations_Not_Supported",
-      "Text": "Editing animations isn't supported yet. Set the target to Events to edit their times and parameters."
+      "Text": "Editing animations isn't supported yet. Set the target to Events to edit their times and parameters, or pick Delete to remove the animations."
     },
     {
       "Key": "TAE_MassEditTool_Steps_Header",
@@ -1731,6 +1731,78 @@
     {
       "Key": "TAE_MassEditTool_Edit_Finding",
       "Text": "Still finding matches ({0} so far). The edit can be built once the find is done."
+    },
+    {
+      "Key": "TAE_MassEditTool_Action_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "TAE_MassEditTool_Deletions_Header",
+      "Text": "Deletions"
+    },
+    {
+      "Key": "TAE_MassEditTool_Deletions_Header_TT",
+      "Text": "Everything Delete will remove: every match. A single undo puts them all back."
+    },
+    {
+      "Key": "TAE_MassEditTool_Delete_Nothing",
+      "Text": "There are no matches to delete."
+    },
+    {
+      "Key": "TAE_MassEditTool_Delete_Summary_Events",
+      "Text": "{0} events in {1} animations will be deleted."
+    },
+    {
+      "Key": "TAE_MassEditTool_Delete_Summary_Animations",
+      "Text": "{0} animations will be deleted, along with the {1} events in them."
+    },
+    {
+      "Key": "TAE_MassEditTool_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "TAE_MassEditTool_Delete_Events_TT",
+      "Text": "Deletes every matched event. A single undo puts them all back where they were."
+    },
+    {
+      "Key": "TAE_MassEditTool_Delete_Animations_TT",
+      "Text": "Deletes every matched animation and its events. A single undo puts them all back where they were."
+    },
+    {
+      "Key": "TAE_MassEditTool_Delete_Confirm_Title",
+      "Text": "Delete Animations"
+    },
+    {
+      "Key": "TAE_MassEditTool_Delete_Confirm_Text",
+      "Text": "Delete {0} animations, and the {1} events in them? A single undo puts them back."
+    },
+    {
+      "Key": "TAE_MassEditTool_Delete_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "TAE_MassEditTool_Delete_Cancel_TT",
+      "Text": "Leaves the animations as they are."
+    },
+    {
+      "Key": "TAE_MassEditTool_Deleted_Events",
+      "Text": "Deleted {0} events."
+    },
+    {
+      "Key": "TAE_MassEditTool_Deleted_Animations",
+      "Text": "Deleted {0} animations."
+    },
+    {
+      "Key": "TAE_MassEditTool_Deleted_Stale",
+      "Text": "{0} matches had already gone since Find was pressed, and were skipped."
+    },
+    {
+      "Key": "TAE_MassEditTool_Deleted_Events_Log",
+      "Text": "Mass edit deleted {0} events. {1} matches had already gone and were skipped."
+    },
+    {
+      "Key": "TAE_MassEditTool_Deleted_Animations_Log",
+      "Text": "Mass edit deleted {0} animations. {1} matches had already gone and were skipped."
     }
   ]
 }

@@ -86,6 +86,7 @@ public partial class TimeActMassEditTool
         EditFields = null;
         ReadableCache = new();
         AppliedResult = null;
+        DeleteResult = null;
     }
 
     private void DisplayEdit(TAE.Template.BankTemplate template)
@@ -130,6 +131,12 @@ public partial class TimeActMassEditTool
         }
         GUI.Tooltip(LOC.Get("TAE_MassEditTool_Action_Header_TT"));
 
+        if (Action is TimeActMassEditAction.Delete)
+        {
+            DisplayDelete();
+            return;
+        }
+
         if (ResultTarget is TimeActMassEditTarget.Animations)
         {
             GUI.WrappedText(LOC.Get("TAE_MassEditTool_Edit_Animations_Not_Supported"));
@@ -157,6 +164,7 @@ public partial class TimeActMassEditTool
     private static string GetActionName(TimeActMassEditAction action) => action switch
     {
         TimeActMassEditAction.Edit => LOC.Get("TAE_MassEditTool_Action_Edit"),
+        TimeActMassEditAction.Delete => LOC.Get("TAE_MassEditTool_Action_Delete"),
         _ => $"{action}"
     };
 
@@ -503,7 +511,7 @@ public partial class TimeActMassEditTool
     /// </summary>
     private void UpdatePlan(TAE.Template.BankTemplate template)
     {
-        if (AppliedResult != null)
+        if (HasApplied)
             return;
 
         if (Plan != null && PlanStepsVersion == StepsVersion && PlanFor == Results && PlanForCount == Results.Count)
@@ -530,18 +538,8 @@ public partial class TimeActMassEditTool
             LOC.Get("TAE_MassEditTool_Changes_Header_TT"),
             ref ShowChangesList);
 
-        if (AppliedResult != null)
-        {
-            GUI.WrappedText(LOC.Get("TAE_MassEditTool_Applied", AppliedResult.Applied));
-
-            if (AppliedResult.Stale > 0)
-            {
-                GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("TAE_MassEditTool_Applied_Stale", AppliedResult.Stale));
-            }
-
-            GUI.WrappedText(LOC.Get("TAE_MassEditTool_Applied_Find_Again"));
+        if (DisplayAppliedResult())
             return;
-        }
 
         if (Plan == null || !Steps.Any(e => e.Field != ""))
         {

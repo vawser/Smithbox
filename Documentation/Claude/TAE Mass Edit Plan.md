@@ -128,7 +128,7 @@ the preview stale, so Apply always does exactly what was shown.
 | 0 | **Extract the query engine** from `TimeActSearchTool` into `Tools/Query`, no behaviour change — **done 2026-11-04**, awaiting check | Local/Global Search behave exactly as before |
 | 1 | **Tool skeleton**: CFG flag `Interface_TimeActEditor_Tool_MassEdit`, View menu toggle, section, Scope/Target/Filter, Find + match list — **done 2026-11-04**, awaiting check. See *Phase 1 notes* below | Matches list and jump, for local scopes |
 | 2 | **Edit** for events: builder, planner, preview old → new, apply as one compound action — **done 2026-11-04**, awaiting check. See *Phase 2 notes* | Edits undo/redo in one step; skipped rows explained |
-| 3 | **Delete** for events and animations | Undo restores order and selection |
+| 3 | **Delete** for events and animations — **done 2026-11-04**, awaiting check. See *Phase 3 notes* | Undo restores order and selection |
 | 4 | **Create** events (per animation / alongside event) | New events have correct groups, defaults and Unk04 |
 | 5 | **All Sources** scope: adopt read copies, dirty marking, Save All path, undo caveat. The runner discards the `ReadTimeActs()` list after querying a source; it needs an option to hand that full list back per source (constraint 1) | Edited unopened sources save without losing other time acts |
 | 6 | Extras: animation property edits, duplicate animations, "Send to Mass Edit" button on Search results, comparison operators back-ported to Search | — |
@@ -178,6 +178,23 @@ the preview stale, so Apply always does exactly what was shown.
   the forward-order undo of `ViewportCompoundAction` is safe. Phases 3–4 (index-based) still need grouping per
   animation (constraint 4).
 - **Deferred:** the plain-words read-back of the whole edit, and *snap to frames*. The summary line gives the counts.
+
+### Phase 3 notes
+
+- **New actions** in `Framework/TimeActMassEditActions.cs`: `TimeActMassDeleteEventsAction` and
+  `TimeActMassDeleteAnimationsAction`. Each holds one group per animation (or per time act), removes from the back
+  and reinserts from the front, so constraint 4 holds in a single action rather than a compound.
+- **Why not reuse the single-delete actions.** `TimeActDeleteEventsAction.Undo` sets the selection to its own
+  events; with one per animation, the last undone group would win and leave events of an unselected animation
+  selected. The mass actions snapshot the selection when they execute and restore exactly that.
+- **Selected animation deleted:** the animation now in its place is selected (as the single delete does), or the
+  selection is cleared if none are left. Undo selects it again, with its events.
+- **Confirm:** animations only, via a modal opened outside the button callback (the popup must be opened and
+  drawn under the same ID stack). Event deletes go straight through; undo covers them.
+- **Re-check:** each match is resolved again with `TryResolve`; anything already gone is counted as stale.
+- **Preview** is the matches themselves, sharing the Find tab's list filter. Event groups are left in place, as the
+  single delete does.
+- After a delete, both Edit and Delete stay disabled until Find is pressed again (`HasApplied`).
 
 ## 5. Verification (for the user, per phase)
 
