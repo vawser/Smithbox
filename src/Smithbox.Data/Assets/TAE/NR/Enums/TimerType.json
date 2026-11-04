@@ -1,0 +1,38 @@
+{
+  "Key": "TimerType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "TimerType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Default"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: UseTimer With Default Time"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: UseTimer Without Default Time"
+        }
+      ]
+    }
+  ]
+}

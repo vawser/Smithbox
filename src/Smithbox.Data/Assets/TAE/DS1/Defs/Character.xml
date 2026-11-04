@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<action_template game="DS1">
+  <action id="0" name="ChrActionFlag">
+    <s32 name="FlagType" enum="FlagType" />
+    <f32 name="ArgA" />
+    <s32 name="ArgB" />
+    <u8 name="ArgC" />
+    <u8 name="ArgD" />
+    <s16 name="ArgE" />
+  </action>
+  <action id="1" name="AttackBehavior">
+    <s32 name="AttackType" enum="AttackType" />
+    <s32 name="AttackIndex" />
+    <s32 name="BehaviorJudgeID" />
+  </action>
+  <action id="2" name="BulletBehavior">
+    <s32 name="DummyPolyID" />
+    <s32 />
+    <s32 name="BehaviorJudgeID" />
+    <u8 name="AttachmentType" />
+    <b name="Enable" />
+    <s16 name="StateInfo" />
+  </action>
+  <action id="5" name="CommonBehavior">
+    <s32 name="AttackIndex (0-8)" />
+    <s32 name="BehaviorJudgeID" />
+  </action>
+  <action id="16" name="Blend" />
+  <action id="24" name="QueueTransitionAnimation">
+    <s32 name="Playback Type" enum="Playback_Type" />
+    <s32 name="Destination Anim ID" />
+    <s32 name="Transition Anim ID" />
+    <s32 />
+  </action>
+  <action id="32" name="SetWeaponStyle">
+    <s32 name="WeaponStyle" enum="WeaponStyle" />
+  </action>
+  <action id="33" name="SwitchWeapon">
+    <s32 name="WeaponSlotID" />
+  </action>
+  <action id="34" name="UnequipCrossbowBolt">
+    <s32 name="HandType" enum="HandType" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="35" name="EquipCrossbowBolt">
+    <s32 name="HandType" enum="HandType" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="64" name="CastHighlightedMagic">
+    <s32 name="DummyPolyID" />
+    <b name="Is???" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+  </action>
+  <action id="65" name="ConsumeCurrentGoods">
+    <s32 name="DummyPolyID" />
+  </action>
+  <action id="66" name="AddSpEffect_Multiplayer">
+    <s32 name="SpEffectID" />
+  </action>
+  <action id="67" name="AddSpEffect">
+    <s32 name="SpEffectID" />
+  </action>
+  <action id="96" name="SpawnOneShotFFX">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="99" name="SpawnFFX_99">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="100" name="SpawnFFX_100">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="101" name="SpawnFFX_General">
+    <s32 name="FFXID" />
+  </action>
+  <action id="104" name="SpawnFFX_Unk104">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="108" name="SpawnFFX_108">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="109" name="SpawnFFX_109">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="110" name="SpawnFFX_110">
+    <s32 name="FFXID" />
+  </action>
+  <action id="112" name="SpawnFFX_ByFloor">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+  </action>
+  <action id="114" name="SpawnFFX_GoodsAndMagic">
+    <s32 name="FFXID" />
+    <s16 name="DummyPolySource" enum="DummyPolySource" />
+    <s16 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="115" name="SpawnFFX_GoodsAndMagic2">
+    <s32 name="FFXID" />
+    <s16 name="DummyPolySource" enum="DummyPolySource" />
+    <s16 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="116" name="SpawnFFX_116">
+    <s32 name="FFXID_Plus_SomeShortFromMemory" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="118" name="SpawnFFX_Blade">
+    <s32 name="FFXID" />
+    <s16 name="DummyPolySource" enum="DummyPolySource" />
+    <s16 name="DummyPolyBladeBaseID" />
+    <s16 name="DummyPolyBladeTipID" />
+    <s16 name="SlotID" />
+  </action>
+  <action id="119" name="SpawnFFX_Body_ForEventDuration">
+    <s32 name="FFXID" />
+    <s16 name="DummyPolyID" />
+    <s16 />
+    <s32 name="RepeatType" enum="RepeatType" />
+  </action>
+  <action id="120" name="SpawnFFX_ChrType">
+    <s32 name="FFXID_MAIN" />
+    <s32 name="FFXID_GreyGhost" />
+    <s32 name="FFXID_WhiteGhost" />
+    <s32 name="FFXID_BlackGhost" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="121" name="SpawnFFX_121">
+    <s32 name="FFXID" />
+    <s16 name="DummyPolyID" />
+    <u8 />
+    <u8 />
+  </action>
+  <action id="128" name="PlaySound_CenterBody">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+  </action>
+  <action id="129" name="PlaySound_BySlot">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="130" name="PlaySound_ByDummyPoly_PlayerVoice">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+  </action>
+  <action id="144" name="RumbleCam_Local">
+    <s16 name="RumbleCamID" />
+    <u16 name="DummyPolyID" />
+    <f32 name="FalloffStart" />
+    <f32 name="FalloffEnd" />
+  </action>
+  <action id="145" name="RumbleCam_Global">
+    <s16 name="RumbleCamID" />
+    <u16 name="Condition" enum="Condition" />
+  </action>
+  <action id="192" name="DebugFadeOut">
+    <f32 name="FadeOut" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="193" name="SetOpacityKeyframe">
+    <f32 name="OpacityAtEventStart" />
+    <f32 name="OpacityAtEventEnd" />
+  </action>
+  <action id="224" name="SetTurnSpeed">
+    <f32 name="TurnSpeed" />
+  </action>
+  <action id="225" name="SetSPRegenRatePercent">
+    <u8 name="RegenRatePercent" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+  </action>
+  <action id="226" name="SetKnockbackPercent">
+    <u8 name="KnockbackPercent" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+  </action>
+  <action id="227" name="EventEzStateFlag&lt;ESD_env301&gt;">
+    <s32 name="EzStateFlagID" />
+  </action>
+  <action id="228" name="RagdollReviveTime">
+    <f32 name="ReviveTimerExtra" />
+    <f32 name="ReviveTimer" />
+  </action>
+  <action id="229" name="SpawnAISound">
+    <s32 name="AISoundID" />
+  </action>
+  <action id="230" name="SetMPRegenRatePercent">
+    <u8 name="RegenRatePercent" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+  </action>
+  <action id="231" name="SendEzStateRequest">
+    <s32 name="EzStateRequestID" />
+  </action>
+  <action id="232" name="AllowVerticalTorsoAim">
+    <u8 name="UpwardAngleLimit" />
+    <u8 name="DownwardAngleLimit" />
+    <u8 name="UpwardAngleThreshold" />
+    <u8 name="DownwardAngleThreshold" />
+  </action>
+  <action id="233" name="ChangeChrDrawMask">
+    <u8 name="Mask0" />
+    <u8 name="Mask1" />
+    <u8 name="Mask2" />
+    <u8 name="Mask3" />
+    <u8 name="Mask4" />
+    <u8 name="Mask5" />
+    <u8 name="Mask6" />
+    <u8 name="Mask7" />
+  </action>
+  <action id="234" name="AddOffsetToNextAnimID">
+    <s32 name="Offset" />
+  </action>
+  <action id="235" name="Action235">
+    <b name="Mask0" />
+    <b name="Mask1" />
+    <b name="Mask2" />
+    <b name="Mask3" />
+    <b name="Mask4" />
+    <b name="Mask5" />
+    <b name="Mask6" />
+    <b name="Mask7" />
+  </action>
+  <action id="236" name="RootMotionReduction">
+    <f32 name="ReductionAtEventStart" />
+    <f32 name="ReductionAtEventEnd" />
+    <u8 name="ReductionType" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+  </action>
+  <action id="300" name="ChrActionGradient">
+    <s16 name="OutputType" enum="OutputType" />
+    <s16 name="InputType" enum="InputType" />
+    <f32grad name="InputGradient" />
+    <s16 assert="0" />
+    <s16 assert="0" />
+  </action>
+  <action id="301" name="Event301">
+    <s32 />
+  </action>
+  <action id="302" name="AddSpEffect_DragonForm">
+    <s32 name="SpEffectID" />
+  </action>
+  <action id="303" name="PlayAnimation">
+    <s32 name="AnimID" />
+  </action>
+  <action id="304" name="ThrowAttackBehavior">
+    <u16 />
+    <s16 name="Index" />
+    <s32 name="BehaviorJudgeID" />
+  </action>
+  <action id="305" name="AdditionalPoiseMult">
+    <f32 name="AdditionalMult" />
+  </action>
+  <action id="306" name="SetPhysicsDampen">
+    <f32grad name="Dampening" />
+    <s32 name="Mask" />
+  </action>
+  <action id="307" name="PCBehavior">
+    <u16 />
+    <u16 />
+    <s32 name="PCBehaviorType" />
+    <s32 name="BehaviorJudgeID" />
+  </action>
+  <action id="308" name="Action308">
+    <f32 />
+  </action>
+  <action id="401" name="AddSpEffect_Multiplayer_401">
+    <s32 name="SpEffectID" />
+  </action>
+  <action id="500" name="IgnoreHitsPartsMask">
+    <u8 name="HitPartsMaskID" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+  </action>
+  <action id="7000" name="NF_MoveTowardTarget_Old">
+    <f32grad name="Speed" />
+    <f32 name="ZOffset" />
+  </action>
+  <action id="7001" name="NF_Test_SetUpperBodyAnim">
+    <s32 name="AnimID" />
+    <s32 name="LayerIndex" />
+    <f32 />
+  </action>
+  <action id="7002" name="NF_SpawnSfxEx">
+    <s32 name="SFX Function Type" enum="SFX_Function_Type" />
+    <s32 name="FFXID" />
+    <s16 name="DummyPolyID" />
+    <s32 name="TimerID" />
+    <s8 name="UnknownSByte" />
+    <b name="UnknownFlag" />
+  </action>
+  <action id="7003" name="[Unfinished]NF_PlaySoundEx">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <s32 name="RequiredSpEffectID" />
+  </action>
+  <action id="7004" name="[Unfinished]NF_SpawnEntityPlayingSpecificAnimation">
+    <u8 name="SpawnFromCharacter" enum="SpawnFromCharacter" />
+    <s32 name="SpawnDummyPolyID" />
+    <f32 name="SpawnOffsetX" />
+    <f32 name="SpawnOffsetY" />
+    <f32 name="SpawnOffsetZ" />
+    <s32 name="EntityIDRangeStart" />
+    <s32 name="EntityIDRangeEnd" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <s32 name="RequiredSpEffectID" />
+  </action>
+  <action id="7005" name="NF_AdvancedTracking">
+    <f32grad name="Speed" />
+    <f32grad name="Offset" />
+  </action>
+  <action id="7006" name="NF_AdvancedTracking_Cos180">
+    <f32grad name="Speed" />
+    <f32grad name="Offset" />
+  </action>
+  <action id="7007" name="NF_MoveRelative">
+    <f32 name="SpeedAtEventStart.X" />
+    <f32 name="SpeedAtEventStart.Y" />
+    <f32 name="SpeedAtEventStart.Z" />
+    <f32 name="SpeedAtEventEnd.X" />
+    <f32 name="SpeedAtEventEnd.Y" />
+    <f32 name="SpeedAtEventEnd.Z" />
+    <u8 name="MoveRelativeTo" enum="MoveRelativeTo" />
+    <b name="CancelIfNoTarget" />
+    <u8 name="CurveType" enum="CurveType" />
+  </action>
+  <action id="7008" name="NF_ManipulateCamera">
+    <u8 name="CurveType" enum="CurveType" />
+    <f32grad name="CamDistTarget" />
+    <f32grad name="CamVerticalOffset" />
+    <f32grad name="FOV" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="7009" name="NF_TempBreakLockonAndKeepTarget" />
+  <action id="7010" name="NF_DebugSpeedGradient">
+    <f32grad name="Speed" />
+    <u8 name="CurveType" enum="CurveType" />
+  </action>
+  <action id="7011" name="NF_Approach">
+    <f32grad name="Speed" group="Approach" />
+    <f32grad name="Dist" group="Approach" />
+    <f32grad name="Dampening" group="Approach" />
+    <f32grad name="Speed" group="Leave" />
+    <f32grad name="Dist" group="Leave" />
+    <f32grad name="Dampening" group="Leave" />
+  </action>
+  <action id="7012" name="NF_Teleport">
+    <f32grad name="HorizontalAngle" group="Location Relative to Target" />
+    <f32grad name="VerticalAngle" group="Location Relative to Target" />
+    <f32grad name="Distance" group="Location Relative to Target" />
+    <b name="Turn to face target" />
+    <s32 name="Required SpEffect" />
+  </action>
+  <action id="7013" name="NF_TEST_MoveTargetToDummyPoly">
+    <s32 name="SelfDummyPolyID" />
+    <s32 name="TargetDummyPolyID" />
+    <f32grad name="Speed" />
+    <f32grad name="Dampening" />
+    <b name="Match Rotation X" />
+    <b name="Match Rotation Y" />
+    <b name="Match Rotation Z" />
+    <u8 />
+    <s32 />
+  </action>
+  <action id="7014" name="NF_ForcePlayAnimation">
+    <s32 name="CharacterType" enum="CharacterType" />
+    <s32 name="AnimationID" />
+    <u8 name="Flags" />
+  </action>
+  <action id="7015" name="NF_TEST_PlaySound">
+    <s32 name="SlotNo" />
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 />
+    <s32 name="DummyPolyID" />
+    <u8 />
+  </action>
+  <action id="7016" name="NF_JumpingOntoRideMotionBlendZX">
+    <f32grad name="Blend" />
+  </action>
+  <action id="7017" name="[X]NF_PlayerRootMotionMultEx">
+    <f32grad name="X" />
+    <f32grad name="Y" />
+    <f32grad name="Z" />
+  </action>
+  <action id="7018" name="NF_JumpingOntoRideMotionBlendY">
+    <f32grad name="Blend" />
+  </action>
+  <action id="7019" name="NF_Action303_PlayAnimation_Ex">
+    <s32 name="CharacterType" enum="CharacterType" />
+    <s32 name="AnimationID" />
+    <s32 name="AnimLayerType" />
+    <f32 name="Weight Maybe" />
+  </action>
+  <action id="7020" name="NF_SetAnimLayerDirectly">
+    <s32 name="CharacterType" enum="CharacterType" />
+    <s32 name="AnimationID" />
+    <s32 name="AnimLayerType" enum="AnimLayerType" />
+    <u8 name="LockIntoAnim" />
+    <f32 />
+    <f32 />
+  </action>
+  <action id="7021" name="NF_SetTurnSpeedGradient">
+    <f32grad name="TurnSpeed" />
+    <u8 name="CurveType" enum="CurveType" />
+  </action>
+  <action id="7022" name="NF_BlendToLockedAtkAim">
+    <u8 name="CurveType" enum="CurveType" />
+    <b name="DontSetDisableRotationFlag" />
+    <f32 name="StickNotPushedHeadingOffset" />
+    <u8 name="Reserved0x2" />
+    <u8 name="Reserved0x3" />
+  </action>
+  <action id="7023" name="NF_AddSpEffectFlag">
+    <s32 name="SpEffectID" />
+    <b name="AddEveryFrameNotJustFirstFrame" />
+    <b name="DoNotRemoveSpEffectAtEndOfEvent" />
+  </action>
+  <action id="7024" name="NF_SetDeathStay" />
+  <action id="7025" name="NF_LockRotation_ExceptIfDodgeCancel" />
+  <action id="7026" name="NF_UpdateBloodlustDodgeRootMotionFlag" />
+  <action id="7027" name="NF_ProperRootMotionMult">
+    <f32grad name="Mult" />
+  </action>
+  <action id="7028" name="NF_ScaleRootMotionToReachTarget">
+    <f32 name="OriginalDist" />
+    <f32 name="BufferDistance" />
+    <f32 name="MaxDist" />
+  </action>
+  <action id="7029" name="NF_SetTaeExtraAnim">
+    <s32 name="AnimID" />
+    <f32grad name="Weight" />
+    <f32 name="LerpS" />
+  </action>
+  <action id="7030" name="NF_AdditiveBlendAttackAim">
+    <f32grad name="Weight" />
+    <s32 name="AimUpAnimID" />
+    <s32 name="AimDownAnimID" />
+    <f32 name="SelfAimReferenceY" />
+  </action>
+  <action id="7031" name="NF_PlayDummyPolyFollowSound">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 name="DummyPolyID" />
+    <f32 name="Lifetime" />
+  </action>
+  <action id="7032" name="NF_SpeedGradient">
+    <f32grad name="Speed" />
+    <u8 name="CurveType" enum="CurveType" />
+  </action>
+  <action id="7033" name="NF_CameraOverrideNew_Distance">
+    <f32grad name="Distance" />
+    <u8 name="CurveType" enum="CurveType" />
+  </action>
+  <action id="7034" name="NF_CameraOverrideNew_Fov">
+    <f32grad name="Fov" />
+    <u8 name="CurveType" enum="CurveType" />
+  </action>
+  <action id="7035" name="NF_CameraOverrideNew_Height">
+    <f32grad name="Height" />
+    <u8 name="CurveType" enum="CurveType" />
+  </action>
+  <action id="7036" name="NF_SwapUpcomingAnimID">
+    <s32 name="From" />
+    <s32 name="To" />
+  </action>
+  <action id="7037" name="NF_StopDummyPolyFollowSoundByID">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+  </action>
+  <action id="7038" name="NF_StopAllDummyPolyFollowSounds" />
+  <action id="7039" name="NF_RemoveSpEffect">
+    <s32 name="SpEffectID" />
+    <b name="Continuous" />
+  </action>
+  <action id="7040" name="NF_AllowSuperCancel">
+    <s32 name="SuperCancelTypeID" />
+  </action>
+  <action id="7041" name="NF_StartBreathingSound">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 name="DummyPolyID" />
+    <f32 name="Lifetime" />
+    <f32grad name="RepeatIntervalRandRange" />
+    <s32 name="BreathingInstanceID" />
+  </action>
+  <action id="7042" name="NF_PauseBreathingSound">
+    <s32 name="BreathingInstanceID" />
+  </action>
+  <action id="7043" name="NF_StopBreathingSound">
+    <s32 name="BreathingInstanceID" />
+  </action>
+  <action id="7044" name="NF_LocalPlayer_SpeedUpCameraTracking">
+    <f32grad name="Blend" />
+    <u8 name="CurveType" enum="CurveType" />
+  </action>
+  <action id="7045" name="NF_SetTaeExtraAnim_Keep">
+    <s32 name="AnimID" />
+    <f32grad name="Weight" />
+    <f32 name="LerpS" />
+  </action>
+  <action id="7046" name="NF_HardcodedArklusLaserMotion">
+    <f32grad name="Blend" />
+  </action>
+  <action id="7047" name="NF_SetAnimLayerWeight">
+    <s32 name="AnimLayerType" enum="AnimLayerType" />
+    <f32grad name="Blend" />
+  </action>
+  <action id="7048" name="NF_PlayerDodgeStep" />
+  <action id="7049" name="NF_HandleUmbrusEffigyUse" />
+  <action id="7050" name="NF_EndAnimationLayer">
+    <s32 name="AnimLayerType" enum="AnimLayerType" />
+  </action>
+  <action id="7051" name="NF_Approach_RelativeDir">
+    <f32grad name="Speed" group="Approach" />
+    <f32grad name="Dist" group="Approach" />
+    <f32grad name="Dampening" group="Approach" />
+    <f32grad name="Speed" group="Leave" />
+    <f32grad name="Dist" group="Leave" />
+    <f32grad name="Dampening" group="Leave" />
+  </action>
+  <action id="7052" name="NF_PlayDummyPolyFollowSoundEx">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 name="DummyPolyID" />
+    <f32 name="LifetimeMin" />
+    <f32 name="LifetimeMax" />
+    <s32 name="ExInfoID" />
+    <f32 name="CooldownMin" />
+    <f32 name="CooldownMax" />
+    <b name="RepeatDuringAction" />
+    <b name="StopAllSoundsWhenActionEnds" />
+  </action>
+</action_template>

@@ -1,0 +1,29 @@
+{
+  "Key": "ConsumeCurrentGoods_HandType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ConsumeCurrentGoods_HandType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: RightHand"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: LeftHand"
+        }
+      ]
+    }
+  ]
+}

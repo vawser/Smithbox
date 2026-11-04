@@ -1,0 +1,47 @@
+{
+  "Key": "RefType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RefType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0 : RefId1"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1 : RefId2"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2 : RefId3"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3 : RefId4"
+        }
+      ]
+    }
+  ]
+}

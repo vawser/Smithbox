@@ -1,0 +1,29 @@
+{
+  "Key": "Condition",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Condition"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Unconditional"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: OnGround"
+        }
+      ]
+    }
+  ]
+}

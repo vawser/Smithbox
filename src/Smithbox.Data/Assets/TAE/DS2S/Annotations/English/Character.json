@@ -1,0 +1,67 @@
+{
+  "Fields": [
+    {
+      "Field": "SpEffectID",
+      "IsPrefix": true,
+      "Name": "",
+      "Description": "The SpEffectParam row to apply."
+    },
+    {
+      "Field": "BulletID",
+      "Name": "",
+      "Description": "The Bullet row to fire."
+    },
+    {
+      "Field": "DecalParamID",
+      "Name": "",
+      "Description": "The DecalParam row to place."
+    },
+    {
+      "Field": "LockCamParamID",
+      "Name": "",
+      "Description": "The LockCamParam row to use while locked on."
+    },
+    {
+      "Field": "ToughnessParamID",
+      "Name": "",
+      "Description": "The ToughnessParam row to use."
+    },
+    {
+      "Field": "AISoundID",
+      "Name": "",
+      "Description": "The AiSoundParam row of the sound that AI can hear."
+    },
+    {
+      "Field": "RumbleCamID",
+      "Name": "",
+      "Description": "The CameraRumbleParam row to play."
+    },
+    {
+      "Field": "FFXID",
+      "IsPrefix": true,
+      "Name": "",
+      "Description": "The ID of the visual effect."
+    },
+    {
+      "Field": "SoundID",
+      "Name": "",
+      "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+    },
+    {
+      "Field": "OverrideSoundID",
+      "Name": "",
+      "Description": "Played in place of SoundID when it can be found. Its OverrideSoundType decides which bank it comes from. Only read for newer time acts."
+    },
+    {
+      "Field": "UseChrSoundEmitter",
+      "Name": "",
+      "Description": "Plays the sound through the character's own emitter, rather than the global one."
+    },
+    {
+      "Field": "Unused",
+      "IsPrefix": true,
+      "Name": "",
+      "Description": "The game doesn't read this field."
+    }
+  ]
+}

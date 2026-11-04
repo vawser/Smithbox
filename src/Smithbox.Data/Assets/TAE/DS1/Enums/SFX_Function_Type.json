@@ -1,0 +1,65 @@
+{
+  "Key": "SFX_Function_Type",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SFX_Function_Type"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SpawnFFX_TypeA(TimerID, FFXID, DummyPolyID, UnknownFlag)"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SpawnFFX_TypeB(TimerID, FFXID, UnknownSByte, DummyPolyID, UnknownFlag)"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SpawnFFX_TypeC(TimerID, FFXID, UnknownSByte, DummyPolyID, UnknownFlag)"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SpawnFFX_TypeD(TimerID, FFXID, UnknownSByte, DummyPolyID, UnknownFlag)"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SpawnFFX_TypeE(TimerID, FFXID, UnknownSByte, DummyPolyID, UnknownFlag)"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SpawnFFX_TypeF(TimerID, FFXID, UnknownSByte, DummyPolyID, UnknownFlag)"
+        }
+      ]
+    }
+  ]
+}

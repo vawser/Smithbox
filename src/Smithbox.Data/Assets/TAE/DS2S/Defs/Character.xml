@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<action_template game="SOTFS">
+  <action id="201" name="Event201">
+    <s32 name="ID" />
+    <s32 assert="0" />
+    <s16 assert="0" />
+    <s16 name="DummyPolyID" />
+    <s32 />
+    <s16 />
+    <s16 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="2200" name="Event2200">
+    <s32 name="ID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="2202" name="ShootBullet">
+    <s32 name="BulletID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="2301" name="Event2301">
+    <s32 name="ID1" />
+    <s32 name="ID2" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="110210" name="Event110210">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="111000" name="Event111000">
+    <f32 />
+    <s32 />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="111400" name="Event111400">
+    <f32 />
+    <s32 />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="120200" name="Event120200">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="270001" name="Event270001">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="280100" name="SetChrTurnRate?">
+    <f32 name="TurnRate?" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+</action_template>

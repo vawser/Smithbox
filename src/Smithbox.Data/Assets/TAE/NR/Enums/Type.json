@@ -1,0 +1,29 @@
+{
+  "Key": "Type",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Type"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Simple Lerp"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Ease Out Quadratic"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Key": "Playback_Type",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Playback_Type"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Wait For Anim End"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Match Playback Time"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: Immediate"
+        }
+      ]
+    }
+  ]
+}

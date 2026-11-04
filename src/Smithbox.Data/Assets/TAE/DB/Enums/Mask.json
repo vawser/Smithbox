@@ -1,0 +1,38 @@
+{
+  "Key": "Mask",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Mask"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Off"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: On"
+        }
+      ]
+    },
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "-1: No Change"
+        }
+      ]
+    }
+  ]
+}

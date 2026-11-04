@@ -1,0 +1,38 @@
+{
+  "Key": "MoveRelativeTo",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MoveRelativeTo"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Self Facing Direction"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Direction To Target"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: Direction To Target If Possible\r\nOtherwise Self Facing Direction"
+        }
+      ]
+    }
+  ]
+}

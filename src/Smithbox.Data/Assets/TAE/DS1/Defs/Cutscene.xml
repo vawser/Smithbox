@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<action_template game="DS1">
+  <action id="0" name="FadeScreenInFromColor">
+    <u8 name="Red" />
+    <u8 name="Green" />
+    <u8 name="Blue" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="1" name="FadeScreenOutToColor">
+    <u8 name="Red" />
+    <u8 name="Green" />
+    <u8 name="Blue" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="20" name="Remo20">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="24" name="Remo24">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="96" name="SpawnOneShotFFX">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <s32 />
+  </action>
+  <action id="102" name="Remo102">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="128" name="PlaySound_Remo">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="130" name="PlaySound_Remo_PlayerVoice">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="160" name="RemoSetOpacityKeyframe">
+    <u8 name="OpacityByteAtEventStart" />
+    <u8 name="OpacityByteAtEventEnd" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="161" name="Remo161" />
+  <action id="162" name="Remo162">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="183" name="Remo183">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="176" name="Remo176">
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="180" name="Remo180">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="196" name="Remo196">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="197" name="Remo197">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="198" name="Remo198">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="199" name="Remo199">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="200" name="Remo200">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="208" name="Remo208">
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="209" name="Remo209">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="210" name="Remo210">
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="217" name="Remo217">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="219" name="Remo219">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="224" name="Remo224">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="225" name="Remo225">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="232" name="Remo232">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="233" name="Remo233">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="234" name="Remo234">
+    <s16 />
+    <s16 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+</action_template>

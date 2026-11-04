@@ -1,0 +1,47 @@
+{
+  "Key": "Flag",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Flag"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Disable Collision"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: Disable Hit"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3: Disable Collision and Hit"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4: Enable?"
+        }
+      ]
+    }
+  ]
+}

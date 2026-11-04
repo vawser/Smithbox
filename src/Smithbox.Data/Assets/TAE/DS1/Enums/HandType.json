@@ -1,0 +1,38 @@
+{
+  "Key": "HandType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "HandType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "-1: Both Hands"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Left Hand"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Right Hand"
+        }
+      ]
+    }
+  ]
+}

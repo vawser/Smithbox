@@ -1,0 +1,38 @@
+{
+  "Key": "RideState",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RideState"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Reins"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: L_Stirrup"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: R_Stirrup"
+        }
+      ]
+    }
+  ]
+}

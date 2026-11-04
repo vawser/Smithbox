@@ -1,0 +1,38 @@
+{
+  "Key": "MethodType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MethodType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Rotate Closest"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Rotate Counterclockwise"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: Rotate Clockwise"
+        }
+      ]
+    }
+  ]
+}

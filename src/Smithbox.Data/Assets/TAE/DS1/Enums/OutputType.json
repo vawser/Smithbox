@@ -1,0 +1,101 @@
+{
+  "Key": "OutputType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OutputType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4: Flag 4 - RH Anim Cancel"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "11: Flag 11 - Movement Anim Cancel"
+        }
+      ]
+    },
+    {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "16: Flag 16 - LH Atk Anim Cancel"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "22: Flag 22 - LH Guard Anim Cancel"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "26: Flag 26 - Dodge Anim Cancel"
+        }
+      ]
+    },
+    {
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "27: Gravity Multiplier"
+        }
+      ]
+    },
+    {
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "29: Flag 29 - Magic Anim Cancel"
+        }
+      ]
+    },
+    {
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "31: Flag 31 - Goods Anim Cancel"
+        }
+      ]
+    },
+    {
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "32: Flag 32 - Generic Anim Cancel"
+        }
+      ]
+    },
+    {
+      "Key": "93",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "93: Unknown Action Flag"
+        }
+      ]
+    }
+  ]
+}

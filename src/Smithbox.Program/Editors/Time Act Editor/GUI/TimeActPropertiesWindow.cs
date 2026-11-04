@@ -262,13 +262,15 @@ public class TimeActPropertiesWindow
                     if (parameter.ValueToAssert != null)
                         continue;
 
-                    var meta = Project.Handler.TimeActData.GetFieldMeta(ev.Type, parameter.Name);
+                    var meta = Project.Handler.TimeActData.GetFieldMeta(ev, parameter.Name);
 
                     if (meta?.Obsolete == true && CFG.Current.TimeActEditor_Hide_Obsolete_Fields)
                         continue;
 
+                    var annotation = Project.Handler.TimeActData.GetFieldAnnotation(ev, parameter.Name);
+
                     // Both names match, whichever is on show
-                    if (!EditorFilters.IsMatch(PropertiesFilter, parameter.Name, ExactPropertiesFilter, meta?.AltName ?? ""))
+                    if (!EditorFilters.IsMatch(PropertiesFilter, parameter.Name, ExactPropertiesFilter, annotation?.Name ?? ""))
                         continue;
 
                     ImGui.PushID(key);
@@ -677,7 +679,7 @@ public class TimeActPropertiesWindow
     private void DisplayParameter(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter, TimeActField meta)
     {
         var value = ev.Parameters[key];
-        var name = Project.Handler.TimeActData.GetFieldDisplayName(ev.Type, parameter.Name);
+        var name = Project.Handler.TimeActData.GetFieldDisplayName(ev, parameter.Name);
         var isObsolete = meta?.Obsolete == true;
 
         if (parameter.EnumEntries != null)
@@ -697,7 +699,7 @@ public class TimeActPropertiesWindow
                 SetParameter(ev, key, ticked);
             }
 
-            DisplayParameterTooltip(parameter, meta);
+            DisplayParameterTooltip(ev, parameter, meta);
             DisplayParameterContextMenu(ev, key, parameter, meta, value);
             return;
         }
@@ -714,7 +716,7 @@ public class TimeActPropertiesWindow
                 SetParameter(ev, key, Convert.ChangeType(ticked ? 1 : 0, value.GetType()));
             }
 
-            DisplayParameterTooltip(parameter, meta);
+            DisplayParameterTooltip(ev, parameter, meta);
             DisplayParameterContextMenu(ev, key, parameter, meta, value);
             return;
         }
@@ -730,7 +732,7 @@ public class TimeActPropertiesWindow
             FieldText[key] = text;
         }
 
-        DisplayParameterTooltip(parameter, meta);
+        DisplayParameterTooltip(ev, parameter, meta);
 
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
@@ -757,15 +759,16 @@ public class TimeActPropertiesWindow
     /// <summary>
     /// The tooltip of a parameter gives the name that isn't on show, its type, what it does, and its default
     /// </summary>
-    private void DisplayParameterTooltip(TAE.Template.ParameterTemplate parameter, TimeActField meta)
+    private void DisplayParameterTooltip(TAE.Event ev, TAE.Template.ParameterTemplate parameter, TimeActField meta)
     {
         var lines = new List<string>();
+        var annotation = Project.Handler.TimeActData.GetFieldAnnotation(ev, parameter.Name);
 
-        if (meta != null && meta.AltName.Length > 0)
+        if (annotation != null && annotation.Name.Length > 0)
         {
             lines.Add(CFG.Current.TimeActEditor_Field_Name_Mode is TimeActFieldNameMode.Annotation
                 ? LOC.Get("TAE_PropertiesWindow_Field_Internal_Name", parameter.Name)
-                : LOC.Get("TAE_PropertiesWindow_Field_Annotation_Name", meta.AltName));
+                : LOC.Get("TAE_PropertiesWindow_Field_Annotation_Name", annotation.Name));
         }
 
         lines.Add(parameter.Type.ToString());
@@ -775,9 +778,9 @@ public class TimeActPropertiesWindow
             lines.Add(LOC.Get("TAE_PropertiesWindow_Field_Obsolete"));
         }
 
-        if (meta != null && meta.Description.Length > 0)
+        if (annotation != null && annotation.Description.Length > 0)
         {
-            lines.Add(meta.Description);
+            lines.Add(annotation.Description);
         }
 
         if (meta != null && meta.DefaultValue.Length > 0)
@@ -971,7 +974,7 @@ public class TimeActPropertiesWindow
             ImGui.EndCombo();
         }
 
-        DisplayParameterTooltip(parameter, meta);
+        DisplayParameterTooltip(ev, parameter, meta);
         DisplayParameterContextMenu(ev, key, parameter, meta, value);
     }
 

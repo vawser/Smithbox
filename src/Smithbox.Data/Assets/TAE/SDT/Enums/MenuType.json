@@ -1,0 +1,29 @@
+{
+  "Key": "MenuType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MenuType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: LevelUp"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Rebirth Stats"
+        }
+      ]
+    }
+  ]
+}

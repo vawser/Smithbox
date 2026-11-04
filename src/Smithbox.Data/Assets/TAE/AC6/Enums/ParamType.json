@@ -1,0 +1,29 @@
+{
+  "Key": "ParamType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ParamType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: MagicParam"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: EquipParamGoods"
+        }
+      ]
+    }
+  ]
+}

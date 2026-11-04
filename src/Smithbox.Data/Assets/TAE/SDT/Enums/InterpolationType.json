@@ -1,0 +1,38 @@
+{
+  "Key": "InterpolationType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "InterpolationType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Closest Interpolation"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Clockwise Interpolation"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: Counterclockwise Interpolation"
+        }
+      ]
+    }
+  ]
+}

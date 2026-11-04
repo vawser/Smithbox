@@ -1,0 +1,38 @@
+{
+  "Key": "Unnamed",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Unnamed"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "255"
+        }
+      ]
+    }
+  ]
+}

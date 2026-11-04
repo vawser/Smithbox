@@ -1,0 +1,38 @@
+{
+  "Key": "DummyPolySource",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DummyPolySource"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Body"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Left Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: Right Weapon"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "Key": "SoundIDOffsetType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SoundIDOffsetType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "-1: No Offset"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Unknown0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Unknown1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: EquipParamWeapon.seIdOffset"
+        }
+      ]
+    }
+  ]
+}

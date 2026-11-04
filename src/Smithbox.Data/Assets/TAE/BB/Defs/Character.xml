@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="utf-8"?>
+<action_template game="BB">
+  <action id="0" name="ChrActionFlag">
+    <s32 name="FlagType" enum="FlagType" />
+    <f32 name="ArgA" />
+    <s32 name="ArgB" />
+    <u8 name="ArgC" />
+    <u8 name="ArgD" />
+    <s16 name="ArgE" />
+  </action>
+  <action id="1" name="InvokeAttackBehavior">
+    <s32 name="AttackType" enum="AttackType" />
+    <s32 name="AttackIndex" />
+    <s32 name="BehaviorJudgeID" />
+    <u8 name="DirectionType" />
+    <u8 />
+    <s16 name="StateInfo" />
+  </action>
+  <action id="2" name="InvokeBulletBehavior">
+    <s32 name="DummyPolyID" />
+    <s32 />
+    <s32 name="BehaviorJudgeID" />
+    <u8 name="AttachmentType" />
+    <b name="Enable" />
+    <s16 name="StateInfo" />
+    <s16 name="Offset" />
+    <s16 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="5" name="InvokeCommonBehavior">
+    <s32 name="AttackIndex (0-8)" />
+    <s32 name="BehaviorJudgeID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="9" name="Event9">
+    <u8 />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="16" name="Blend" />
+  <action id="17" name="Event17">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="24" name="AnimationQueue">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="32" name="SetWeaponStyle">
+    <s32 name="WeaponStyle" enum="WeaponStyle" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="33" name="SwitchWeapon">
+    <s32 name="WeaponSlotID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="34" name="UnequipCrossbowBolt">
+    <s32 name="HandType" enum="UnequipCrossbowBolt_HandType" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="35" name="EquipCrossbowBolt">
+    <s32 name="HandType" enum="UnequipCrossbowBolt_HandType" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="64" name="CastHighlightedMagic">
+    <s32 name="DummyPolyID" />
+    <b name="Is???" />
+    <u8 />
+    <u16 name="ChrBulletSharedHitSlot" />
+    <u8 name="RefType" enum="RefType" />
+    <s8 name="Is!??" />
+    <s8 name="Is!!?" />
+    <u16 />
+    <s32 assert="0" />
+  </action>
+  <action id="65" name="ConsumeCurrentGoods">
+    <s32 />
+    <u8 name="HandType" enum="ConsumeCurrentGoods_HandType" />
+    <u8 name="DirectionChanger" />
+    <u16 name="ChrBulletSharedHitSlot" />
+    <b name="Is???" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="66" name="AddSpEffect_Multiplayer">
+    <s32 name="SpEffectID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="67" name="AddSpEffect">
+    <s32 name="SpEffectID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="95" name="SpawnOneShotFFX_Ember">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <b name="IsIgnoreDummyPolyAngle" />
+    <b name="IsFollowDummyPoly" />
+    <b name="IsRestrictToDummyPoly" />
+    <u8 name="ExtraSpawnCondition" />
+  </action>
+  <action id="96" name="SpawnOneShotFFX">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <b name="IsIgnoreDummyPolyAngle" />
+    <b name="IsFollowDummyPoly" />
+    <b name="IsRestrictToDummyPoly" />
+    <u8 name="ExtraSpawnCondition" />
+  </action>
+  <action id="99" name="SpawnRepeatingFFX">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <s32 assert="0" />
+  </action>
+  <action id="100" name="SpawnRepeatingFFX100">
+    <s32 name="FFXID" />
+    <s32 name="DummypolyID" />
+    <s32 name="SlotID" />
+    <s32 name="Unk0C" />
+  </action>
+  <action id="101" name="DisableRepeatingFFX101">
+    <s32 name="SlotID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="108" name="SpawnFFXBody108">
+    <s32 name="FFXID" />
+    <s32 name="DummypolyID" />
+    <s32 name="SlotID" />
+    <s32 name="Unk0C" assert="0" />
+  </action>
+  <action id="109" name="SpawnRepeatingFFX109">
+    <s32 name="FFXID" />
+    <s32 name="DummypolyID" />
+    <s32 name="SlotID" />
+    <s32 name="Unk0C" />
+  </action>
+  <action id="110" name="DisableRepeatingFFX110">
+    <s32 name="SlotID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="112" name="SpawnFFX_FloorDetermined">
+    <s32 name="FFXID" />
+    <s16 name="DummyPolyID" />
+    <s16 />
+    <s32 />
+    <s32 assert="0" />
+  </action>
+  <action id="113" name="InvokeFootSfxOnLanding">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="114" name="SpawnFFX_GoodsAndMagic">
+    <s32 name="FFXID_Deprecated" />
+    <s16 name="DummyPolySource" enum="DummyPolySource" />
+    <s16 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <b name="IsIgnoreDummyPolyAngle" />
+    <u8 name="ParamType" enum="ParamType" />
+    <u8 name="SFXIndexID" enum="SFXIndexID" />
+    <b name="IsFollowDummyPoly" />
+    <b name="IsRestrictToDummyPoly" />
+    <u8 name="TimerType" enum="TimerType" />
+    <s16 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="115" name="SpawnFFX_GoodsAndMagicEX">
+    <s32 name="FFXID_Deprecated" />
+    <s16 name="DummyPolySource" enum="DummyPolySource" />
+    <s16 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <b name="IsIgnoreDummyPolyAngle" />
+    <u8 name="ParamType" enum="ParamType" />
+    <u8 name="SFXIndexID" enum="SFXIndexID" />
+    <b name="IsFollowDummyPoly" />
+    <b name="IsRestrictToDummyPoly" />
+    <u8 name="TimerType" enum="TimerType" />
+    <s16 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="116" name="SpawnFFX_Throw">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="RepeatType" enum="RepeatType" />
+    <b name="IsRepeat" />
+    <u8 />
+    <u8 />
+    <u8 />
+  </action>
+  <action id="117" name="SpawnFFX_ThrowDirection">
+    <s32 name="ThrowDirectionSFXIndex" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <b name="IsIgnoreDummyPolyAngle" />
+    <b name="IsFollowDummyPoly" />
+    <b name="IsRestrictToDummyPoly" />
+    <u8 name="ExtraSpawnCondition" />
+  </action>
+  <action id="118" name="SpawnFFX_Blade">
+    <s32 name="FFXID" />
+    <s16 name="DummyPolySource" enum="DummyPolySource" />
+    <s16 name="DummyPolyBladeBaseID" />
+    <s16 name="DummyPolyBladeTipID" />
+    <s16 name="SlotID" />
+    <s32 assert="0" />
+  </action>
+  <action id="119" name="SpawnFFX_Body_ForEventDuration">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="RepeatType" enum="RepeatType" />
+    <b name="IsRepeat" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+  </action>
+  <action id="120" name="SpawnFFX_ChrType">
+    <s32 name="FFXID_MAIN" />
+    <s32 name="FFXID_GreyGhost" />
+    <s32 name="FFXID_WhiteGhost" />
+    <s32 name="FFXID_BlackGhost" />
+    <s32 name="FFXID_WhiteGhost_Sun" />
+    <s32 name="FFXID_BlackGhost_Sun" />
+    <s32 name="FFXID_WhiteGhost_Berserker" />
+    <s32 name="FFXID_BlackGhost_Berserker" />
+    <s32 name="FFXID_WhiteGhost_DarkmoonAlter" />
+    <s32 name="FFXID_WhiteGhost_Darkmoon" />
+    <s32 name="FFXID_FarronWolf" />
+    <s32 name="FFXID_Aldrich" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <b name="IsRepeat" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u32 assert="0" />
+  </action>
+  <action id="121" name="SpawnFFX_121">
+    <s32 name="FFXID" />
+    <s16 name="DummyPolyID" />
+    <b />
+    <u8 />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="122" name="SpawnFFX_BySpEffect1">
+    <s32 name="FFXID" />
+    <s16 name="DummyPolyID" />
+    <s16 />
+    <u8 />
+    <b name="IsEnable" />
+    <s16 name="SpEffectID" />
+    <u8 />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+  </action>
+  <action id="123" name="SpawnFFX_BySpEffect2">
+    <s32 />
+    <s32 />
+    <u8 />
+    <u8 />
+    <s16 name="SpEffectId" />
+    <u8 />
+    <b />
+    <u8 />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="128" name="PlaySound_CenterBody">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="129" name="PlaySound_BySlot">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <s16 assert="0" />
+    <s16 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="130" name="PlaySound_ByDummyPoly_PlayerVoice">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="131" name="PlaySound_ByDummypoly">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 name="DummyPolyID" />
+    <s32 assert="0" />
+  </action>
+  <action id="132" name="PlaySound_Weapon">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="136" name="Type136">
+    <u32 name="Decal Tex ID" />
+    <s16 name="Possible DummyPoly?" />
+    <s16 name="Possible DummyPoly?" />
+    <s32 />
+    <f32 />
+    <u16 />
+    <u16 />
+    <u16 />
+    <u16 />
+    <u16 />
+    <u16 />
+    <u16 />
+    <u16 />
+  </action>
+  <action id="137" name="InvokeDecalParamID_CenterBody">
+    <s32 name="DecalParamID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="138" name="InvokeDecalParamID_DummyPoly">
+    <s32 name="DecalParamID" />
+    <s32 name="DummyPolyID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="144" name="InvokeRumbleCam_Local">
+    <s16 name="RumbleCamID" />
+    <u16 name="DummyPolyID" />
+    <f32 name="FalloffStart" />
+    <f32 name="FalloffEnd" />
+    <s32 assert="0" />
+  </action>
+  <action id="145" name="InvokeRumbleCam_Global">
+    <s16 name="RumbleCamID" />
+    <u16 name="Condition" enum="Condition" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="150" name="SetLockCamParam">
+    <s32 name="LockCamParamID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="151" name="SetLockCamParam_Boss">
+    <s32 name="LockCamParamID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="160" name="SekiroCode4">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="161" name="InvokeDecalOnLanding">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="192" name="InvokeDebugFadeOut">
+    <f32 name="FadeOut" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="193" name="SetOpacityKeyframe">
+    <f32 name="OpacityAtEventStart" />
+    <f32 name="OpacityAtEventEnd" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="194" name="InvokeWindState?">
+    <u16 />
+    <u16 />
+    <s16 name="StringIndex" />
+    <u16 />
+    <f32 />
+    <s32 assert="0" />
+  </action>
+  <action id="195" name="EnableBlurFeedback">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="196" name="DebugStringPrint_C_ARSN_BumpBlendDecal">
+    <s64 />
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+    <b />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="197" name="InvokeFadeOut">
+    <f32 name="GhostMain" />
+    <f32 name="GhostSub" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="224" name="SetTurnSpeed">
+    <f32 name="TurnSpeed" />
+    <b name="IsLockOnCheck" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="225" name="SetSPRegenRatePercent">
+    <u8 name="RegenRatePercent" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="226" name="SetKnockbackPercent">
+    <u8 name="KnockbackPercent" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="227" name="InvokeEventEzStateFlag&lt;HKS_env301&gt;">
+    <s32 name="EzStateFlagID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="228" name="RagdollReviveTime">
+    <f32 name="ReviveTimerExtra" />
+    <f32 name="ReviveTimer" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="229" name="SpawnAISoundIdle">
+    <s32 name="AISoundID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="230" name="SetFPRegenRatePercent">
+    <u8 name="RegenRatePercent" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="231" name="SendEzStateRequest">
+    <s32 name="EzStateRequestID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="232" name="AllowVerticalTorsoAim">
+    <u8 name="UpwardAngleLimit" />
+    <u8 name="DownwardAngleLimit" />
+    <u8 name="UpwardAngleThreshold" />
+    <u8 name="DownwardAngleThreshold" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="233" name="ChangeChrDrawMask">
+    <u8 name="Mask0" enum="Mask" />
+    <u8 name="Mask1" enum="Mask" />
+    <u8 name="Mask2" enum="Mask" />
+    <u8 name="Mask3" enum="Mask" />
+    <u8 name="Mask4" enum="Mask" />
+    <u8 name="Mask5" enum="Mask" />
+    <u8 name="Mask6" enum="Mask" />
+    <u8 name="Mask7" enum="Mask" />
+    <u8 name="Mask8" enum="Mask" />
+    <u8 name="Mask9" enum="Mask" />
+    <u8 name="Mask10" enum="Mask" />
+    <u8 name="Mask11" enum="Mask" />
+    <u8 name="Mask12" enum="Mask" />
+    <u8 name="Mask13" enum="Mask" />
+    <u8 name="Mask14" enum="Mask" />
+    <u8 name="Mask15" enum="Mask" />
+  </action>
+  <action id="234" name="AddOffsetToNextAnimID">
+    <s32 name="Offset" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="235" name="Event235">
+    <b name="Mask1" />
+    <b name="Mask2" />
+    <b name="Mask3" />
+    <b name="Mask4" />
+    <b name="Mask5" />
+    <b name="Mask6" />
+    <b name="Mask7" />
+    <b name="Mask8" />
+    <b name="Mask9" />
+    <b name="Mask10" />
+    <b name="Mask11" />
+    <b name="Mask12" />
+    <b name="Mask13" />
+    <b name="Mask14" />
+    <b name="Mask15" />
+    <b name="Mask16" />
+    <b name="Mask17" />
+    <b name="Mask18" />
+    <b name="Mask19" />
+    <b name="Mask20" />
+    <b name="Mask21" />
+    <b name="Mask22" />
+    <b name="Mask23" />
+    <b name="Mask24" />
+    <b name="Mask25" />
+    <b name="Mask26" />
+    <b name="Mask27" />
+    <b name="Mask28" />
+    <b name="Mask29" />
+    <b name="Mask30" />
+    <b name="Mask31" />
+    <b name="Mask32" />
+  </action>
+  <action id="236" name="RootMotionReduction">
+    <f32 name="ReductionAtEventStart" />
+    <f32 name="ReductionAtEventEnd" />
+    <u8 name="ReductionType" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="237" name="ChangeChrDrawMaskBB2">
+    <u8 name="Mask 0" enum="Mask" />
+    <u8 name="Mask 1" enum="Mask" />
+    <u8 name="Mask 2" enum="Mask" />
+    <u8 name="Mask 3" enum="Mask" />
+    <u8 name="Mask 4" enum="Mask" />
+    <u8 name="Mask 5" enum="Mask" />
+    <u8 name="Mask 6" enum="Mask" />
+    <u8 name="Mask 7" enum="Mask" />
+    <u8 name="Mask 8" enum="Mask" />
+    <u8 name="Mask 9" enum="Mask" />
+    <u8 name="Mask 10" enum="Mask" />
+    <u8 name="Mask 11" enum="Mask" />
+    <u8 name="Mask 12" enum="Mask" />
+    <u8 name="Mask 13" enum="Mask" />
+    <u8 name="Mask 14" enum="Mask" />
+    <u8 name="Mask 15" enum="Mask" />
+    <u8 name="Mask 16" enum="Mask" />
+    <u8 name="Mask 17" enum="Mask" />
+    <u8 name="Mask 18" enum="Mask" />
+    <u8 name="Mask 19" enum="Mask" />
+    <u8 name="Mask 20" enum="Mask" />
+    <u8 name="Mask 21" enum="Mask" />
+    <u8 name="Mask 22" enum="Mask" />
+    <u8 name="Mask 23" enum="Mask" />
+    <u8 name="Mask 24" enum="Mask" />
+    <u8 name="Mask 25" enum="Mask" />
+    <u8 name="Mask 26" enum="Mask" />
+    <u8 name="Mask 27" enum="Mask" />
+    <u8 name="Mask 28" enum="Mask" />
+    <u8 name="Mask 29" enum="Mask" />
+    <u8 name="Mask 30" enum="Mask" />
+    <u8 name="Mask 31" enum="Mask" />
+  </action>
+  <action id="300" name="ActivateJumpTableEarly">
+    <s16 name="JumpTableID_ToActivateEarly" />
+    <s16 name="JumpTable2ID_ToJudgeHowEarly" enum="JumpTable2ID_ToJudgeHowEarly" />
+    <f32 name="Parameter1" />
+    <f32 name="Parameter2" />
+    <s16 />
+    <s16 name="StateInfo" />
+  </action>
+  <action id="301" name="Event301">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="302" name="AddSpEffect_DragonForm">
+    <s32 name="SpEffectID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="303" name="PlayAnimation">
+    <s32 name="AnimationID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="304" name="InvokeThrowAttackBehavior">
+    <u16 />
+    <s16 name="Index" />
+    <s32 name="BehaviorJudgeID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="305" name="ExtraSuperArmorDurabilityMult">
+    <f32 name="Multiplier" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="306" name="Event306">
+    <f32 />
+    <f32 />
+    <u8 name="Flags" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="307" name="InvokePCBehavior">
+    <u16 name="Condition0x64_GetWeaponData" />
+    <u16 name="Offset" />
+    <s32 name="PCBehaviorType" />
+    <s32 name="BehaviorJudgeID" />
+    <s32 assert="0" />
+  </action>
+  <action id="308" name="Event308">
+    <f32 />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="310" name="InvokeChrClothState">
+    <u8 />
+    <u8 />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="311" name="Event311">
+    <u8 />
+    <u8 />
+    <u8 />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="312" name="Event312">
+    <b name="Mask1" />
+    <b name="Mask2" />
+    <b name="Mask3" />
+    <b name="Mask4" />
+    <b name="Mask5" />
+    <b name="Mask6" />
+    <b name="Mask7" />
+    <b name="Mask8" />
+    <b name="Mask9" />
+    <b name="Mask10" />
+    <b name="Mask11" />
+    <b name="Mask12" />
+    <b name="Mask13" />
+    <b name="Mask14" />
+    <b name="Mask15" />
+    <b name="Mask16" />
+    <b name="Mask17" />
+    <b name="Mask18" />
+    <b name="Mask19" />
+    <b name="Mask20" />
+    <b name="Mask21" />
+    <b name="Mask22" />
+    <b name="Mask23" />
+    <b name="Mask24" />
+    <b name="Mask25" />
+    <b name="Mask26" />
+    <b name="Mask27" />
+    <b name="Mask28" />
+    <b name="Mask29" />
+    <b name="Mask30" />
+    <b name="Mask31" />
+    <b name="Mask32" />
+  </action>
+  <action id="313" name="AdditiveAnim">
+    <s32 name="AnimType" enum="AnimType" />
+    <f32grad name="Weight" />
+    <f32 />
+  </action>
+  <action id="314" name="SpawnAISoundMovement">
+    <s32 name="AISoundParamID" />
+    <s32 name="Unk04" assert="0" />
+    <s32 name="Unk08" assert="0" />
+    <s32 name="Unk0C" assert="0" />
+  </action>
+  <action id="315" name="EnableTwistModifier">
+    <f32 name="UpLimitAngle" />
+    <f32 name="DownLimitAngle" />
+    <f32 name="RightLimitAngle" />
+    <f32 name="LeftLimitAngle" />
+    <s32 name="ModifierID" />
+    <u8 name="Unk04" />
+    <u8 name="Unk04" />
+    <u8 name="Unk04" />
+    <u8 name="Unk04" />
+    <f32 name="UpMinimumAngle" />
+    <f32 name="DownMinimumAngle" />
+    <f32 name="RightMinimumAngle" />
+    <f32 name="LeftMinimumAngle" />
+    <s32 name="Unk08" />
+    <s32 name="Unk0C" />
+  </action>
+  <action id="316" name="InvokeFixedRotationDirection">
+    <b name="IsEnable" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="317" name="Type317">
+    <b />
+    <b />
+    <b />
+    <b />
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <action id="318" name="InvokeGunBehavior">
+    <s32 />
+    <s32 />
+    <s32 name="BehaviorSubID" />
+    <u8 name="DirectionType" />
+    <u8 name="Unk0D" />
+    <s16 name="StateInfo" />
+  </action>
+  <action id="319" name="ConsumeBloodVial">
+    <b />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <u8 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="320" name="PlayerInputCheck">
+    <b name="EnableAct_R1_R2_LightKick_HeavyKick" />
+    <b name="EnableAct_L1_L2" />
+    <b name="EnableAct_Guard" />
+    <b name="EnableAct_SpMove_Backstep_Rolling_Jump" />
+    <b name="EnableAct_UseItem" />
+    <b name="EnableAct_MagicR_MagicL" />
+    <b name="EnableAct_ChangeStyle_ChangeStyleLeft_ChangeWeaponR_ChangeWeaponL_Gesture" />
+    <u8 />
+    <f32 />
+    <f32 />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="321" name="Invoke Player Throw">
+    <s16 name="DummyPoly?" />
+    <s16 name="pad0" />
+    <s16 name="Behavior Judge ID" />
+    <s16 name="pad1" />
+  </action>
+  <action id="322" name="Type322">
+    <u8 assert="0" enum="Unnamed" />
+    <u8 assert="0" enum="Unnamed" />
+    <u8 assert="0" enum="Unnamed" />
+    <u8 assert="0" enum="Unnamed" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="323" name="Type323">
+    <f32 name="SomeFloat?" />
+  </action>
+  <action id="324" name="MultiplayerDisconnectRequest">
+    <s32 />
+    <s32 />
+  </action>
+  <action id="330" name="WeaponArtFPConsumption">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="331" name="AddSpEffect_WeaponArts">
+    <s32 name="SpEffectID" />
+    <s32 name="SpEffectID_LowFP" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="332" name="InvokeWeaponArtWeaponStyleCheck">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="401" name="AddSpEffect_Multiplayer_401">
+    <s32 name="SpEffectID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="402" name="InvokeWind">
+    <s32 name="WindParamID" />
+    <u16 />
+    <u16 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="500" name="IgnoreHitsPartsMask">
+    <u8 name="NPCPartID" />
+    <u8 assert="0" />
+    <u16 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="501" name="Type501">
+    <u8 name="NPCPartID" />
+    <u8 name="Unk01" />
+    <u16 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="10096" name="InvokeSfx?">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 assert="0" />
+  </action>
+  <action id="10130" name="PlaySound_WanderGhost">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 assert="0" />
+  </action>
+  <action id="10137" name="InvokeDebugDecal1">
+    <s32 name="DecalParamId" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="10138" name="InvokeDebugDecal2">
+    <s32 name="DecalParamId" />
+    <s32 />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+</action_template>

@@ -1,0 +1,38 @@
+{
+  "Key": "CharacterType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CharacterType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Self"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Target"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: Local Player"
+        }
+      ]
+    }
+  ]
+}

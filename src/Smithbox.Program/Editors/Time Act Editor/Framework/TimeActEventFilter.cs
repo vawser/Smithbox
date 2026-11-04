@@ -127,7 +127,7 @@ public class TimeActEventFilter
             if (parameter.ValueToAssert != null)
                 continue;
 
-            if (fieldName != null && !IsFieldNameMatch(ev.Type, parameter.Name, fieldName))
+            if (fieldName != null && !IsFieldNameMatch(ev, parameter.Name, fieldName))
                 continue;
 
             if (!ev.Parameters.Values.TryGetValue(key, out var value) || value == null)
@@ -140,12 +140,12 @@ public class TimeActEventFilter
         return false;
     }
 
-    private bool IsFieldNameMatch(int eventType, string parameterName, string fieldName)
+    private bool IsFieldNameMatch(TAE.Event ev, string parameterName, string fieldName)
     {
         if (parameterName.Contains(fieldName, StringComparison.OrdinalIgnoreCase))
             return true;
 
-        var altName = Project?.Handler?.TimeActData?.GetFieldMeta(eventType, parameterName)?.AltName;
+        var altName = Project?.Handler?.TimeActData?.GetFieldAnnotation(ev, parameterName)?.Name;
 
         return !string.IsNullOrEmpty(altName) && altName.Contains(fieldName, StringComparison.OrdinalIgnoreCase);
     }

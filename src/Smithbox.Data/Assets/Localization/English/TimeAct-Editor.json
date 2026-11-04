@@ -77,6 +77,18 @@
       "Text": "Failed to read the time act meta: {0}"
     },
     {
+      "Key": "TAE_Data_Failed_To_Read_Annotations",
+      "Text": "Failed to read the time act annotations: {0}"
+    },
+    {
+      "Key": "TAE_Data_Failed_To_Read_Enum",
+      "Text": "Failed to read the time act enum: {0}"
+    },
+    {
+      "Key": "TAE_Data_Missing_Enum",
+      "Text": "The time act def {0} names an enum that doesn't exist: {1}"
+    },
+    {
       "Key": "TAE_Data_Failed_To_Read_Template",
       "Text": "Failed to read time act template: {0}"
     },

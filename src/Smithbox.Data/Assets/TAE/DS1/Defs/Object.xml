@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<action_template game="DS1">
+  <action id="0" name="ChrActionFlag">
+    <s32 name="FlagType" enum="FlagType" />
+    <!-- THE ARGS BELOW ARE MATCHED TO KEYWORDS IN THE ENUM VALUES ABOVE DO NOT CHANGE LOL -->
+    <f32 name="ArgA" />
+    <s32 name="ArgB" />
+    <u8 name="ArgC" />
+    <u8 name="ArgD" />
+    <s16 name="ArgE" />
+  </action>
+  <action id="3" name="NULL">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="96" name="InvokeOneShotFFX_0x1406711F0">
+    <s32 name="FFXID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="SlotID" />
+    <b name="IsIgnoreDummyPolyAngle" />
+    <b name="IsFollowDummyPoly" />
+    <b name="IsRestrictToDummyPoly" />
+    <u8 name="ExtraSpawnCondition" />
+  </action>
+  <action id="128" name="PlaySound_General">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="129" name="PlaySound_Extra">
+    <s32 name="SoundType" enum="SoundType" />
+    <s32 name="SoundID" />
+    <s32 name="DummyPolyID" />
+    <s32 name="TimerID (probably)" />
+  </action>
+  <action id="193" name="SetOpacityKeyframe">
+    <f32 name="GhostVal1" />
+    <f32 name="GhostVal2" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+  <action id="400" name="0x140655DD0">
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+    <s32 assert="0" />
+  </action>
+</action_template>

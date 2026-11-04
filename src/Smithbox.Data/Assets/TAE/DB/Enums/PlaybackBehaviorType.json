@@ -1,0 +1,38 @@
+{
+  "Key": "PlaybackBehaviorType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PlaybackBehaviorType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Play Until Sound Ends"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Play Until Event Ends Then Cutoff"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: Unknown - Used on Torrent Double Jump"
+        }
+      ]
+    }
+  ]
+}

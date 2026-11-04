@@ -5,36 +5,41 @@ using System.Text.Json.Serialization;
 namespace StudioCore.Editors.TimeActEditor;
 
 /// <summary>
-/// Describes what the parameters of events refer to. Parameters go by their names in the
-/// event templates, as the same name means the same thing across the events and the games.
-/// Names that differ in meaning between events, such as Unk04, can be limited to the events they apply to.
+/// An entry that applies to the parameters of a name. Parameters go by their names in the event defs,
+/// as the same name means the same thing across the events. Names that differ in meaning between events,
+/// such as Unk04, can be limited to the events they apply to.
+/// </summary>
+public interface ITimeActFieldMatch
+{
+    string Field { get; }
+
+    /// <summary>
+    /// Also applies to the parameters that start with the name, such as SpEffectID_LowFP
+    /// </summary>
+    bool IsPrefix { get; }
+
+    /// <summary>
+    /// The event types the entry applies to. Empty applies it to every event with a parameter of that name.
+    /// An entry for the event's type goes before one for every event.
+    /// </summary>
+    List<int> EventTypes { get; }
+}
+
+/// <summary>
+/// TAE/{Game}/Meta/{Def}.json: what the parameters of the events in a def refer to, and how they are edited
 /// </summary>
 public class TimeActMeta
 {
     public List<TimeActField> Fields { get; set; } = new();
 }
 
-public class TimeActField
+public class TimeActField : ITimeActFieldMatch
 {
     public string Field { get; set; } = "";
 
-    /// <summary>
-    /// Also applies to the parameters that start with the name, such as SpEffectID_LowFP
-    /// </summary>
     public bool IsPrefix { get; set; } = false;
 
-    /// <summary>
-    /// The event types the entry applies to. Empty applies it to every event with a parameter of that name.
-    /// An entry for the event's type goes before one for every event.
-    /// </summary>
     public List<int> EventTypes { get; set; } = new();
-
-    /// <summary>
-    /// The annotated name shown in place of the internal one, when annotations are on
-    /// </summary>
-    public string AltName { get; set; } = "";
-
-    public string Description { get; set; } = "";
 
     /// <summary>
     /// The params the value is a row of, separated by commas
@@ -72,6 +77,30 @@ public class TimeActField
     public string DefaultValue { get; set; } = "";
 }
 
+/// <summary>
+/// TAE/{Game}/Annotations/{Language}/{Def}.json: the annotated names and descriptions of the parameters
+/// </summary>
+public class TimeActAnnotations
+{
+    public List<TimeActFieldAnnotation> Fields { get; set; } = new();
+}
+
+public class TimeActFieldAnnotation : ITimeActFieldMatch
+{
+    public string Field { get; set; } = "";
+
+    public bool IsPrefix { get; set; } = false;
+
+    public List<int> EventTypes { get; set; } = new();
+
+    /// <summary>
+    /// The annotated name shown in place of the internal one, when annotations are on
+    /// </summary>
+    public string Name { get; set; } = "";
+
+    public string Description { get; set; } = "";
+}
+
 [JsonSourceGenerationOptions(
     WriteIndented = true,
     GenerationMode = JsonSourceGenerationMode.Metadata,
@@ -79,6 +108,8 @@ public class TimeActField
 
 [JsonSerializable(typeof(TimeActMeta))]
 [JsonSerializable(typeof(TimeActField))]
+[JsonSerializable(typeof(TimeActAnnotations))]
+[JsonSerializable(typeof(TimeActFieldAnnotation))]
 [JsonSerializable(typeof(List<int>))]
 
 internal partial class TimeActEditorJsonSerializerContext : JsonSerializerContext

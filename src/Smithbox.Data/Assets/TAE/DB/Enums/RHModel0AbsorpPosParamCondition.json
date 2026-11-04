@@ -1,0 +1,38 @@
+{
+  "Key": "RHModel0AbsorpPosParamCondition",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RHModel0AbsorpPosParamCondition"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: Default"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Sheath"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: Dual Offhand"
+        }
+      ]
+    }
+  ]
+}

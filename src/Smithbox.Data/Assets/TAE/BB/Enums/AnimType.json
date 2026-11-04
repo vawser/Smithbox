@@ -1,0 +1,29 @@
+{
+  "Key": "AnimType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "AnimType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: a000_000010"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: a000_000011"
+        }
+      ]
+    }
+  ]
+}

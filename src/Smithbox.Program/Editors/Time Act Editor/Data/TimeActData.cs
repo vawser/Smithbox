@@ -1,5 +1,7 @@
 ﻿using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,13 +16,33 @@ public class TimeActData : IDisposable
 
     public TimeActBank PrimaryBank;
 
-    // Keyed by file name. A template that failed to load stays null.
-    private Dictionary<string, TAE.Template.BankTemplate> Templates = new();
+    /// <summary>
+    /// The metadata of the game, laid out as the param metadata is:
+    /// TAE/{Game}/Defs/{Def}.xml holds the event layouts, with internal names,
+    /// TAE/{Game}/Enums/{Key}.json the enums the defs name,
+    /// TAE/{Game}/Meta/{Def}.json what the fields refer to and how they are edited,
+    /// and TAE/{Game}/Annotations/{Language}/{Def}.json the annotated names of the fields.
+    /// </summary>
+    private class TimeActDef
+    {
+        public string Name;
+        public TAE.Template.BankTemplate Template;
+        public TimeActMeta Meta = new();
+        public TimeActAnnotations Annotations = new();
+    }
 
-    public TimeActMeta Meta = new();
+    // Keyed by def name. A def whose template failed to load has a null template.
+    private Dictionary<string, TimeActDef> Defs = new();
+
+    // The def each event layout came from, so that an event finds its meta
+    private Dictionary<TAE.Template.EventTemplate, TimeActDef> EventDefs = new();
+
+    // Shared by the defs of the game. Read on first use.
+    private Dictionary<string, ParamEnumEntry> Enums;
 
     // Parameters are looked up every frame while they are on display
-    private Dictionary<(int EventType, string Name), TimeActField> FieldMetaCache = new();
+    private Dictionary<(TAE.Template.EventTemplate Event, string Name), TimeActField> FieldMetaCache = new();
+    private Dictionary<(TAE.Template.EventTemplate Event, string Name), TimeActFieldAnnotation> FieldAnnotationCache = new();
 
     public TimeActData(ProjectEntry project)
     {
@@ -29,8 +51,6 @@ public class TimeActData : IDisposable
     public async Task<bool> Setup()
     {
         await Task.Yield();
-
-        LoadMeta();
 
         PrimaryBank = new("Primary", Project, Project.VFS.FS);
 
@@ -50,56 +70,78 @@ public class TimeActData : IDisposable
         return primaryBankTaskResult;
     }
 
-    private void LoadMeta()
-    {
-        var path = Path.Join(AppContext.BaseDirectory, "Assets", "TAE", "TimeAct-Meta.json");
-
-        try
-        {
-            Meta = JsonSerializer.Deserialize(File.ReadAllText(path), TimeActEditorJsonSerializerContext.Default.TimeActMeta)
-                ?? new TimeActMeta();
-        }
-        catch (Exception e)
-        {
-            Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_Meta", path), e);
-        }
-    }
-
     /// <summary>
-    /// Gets the meta of a parameter of an event type, or null if there is none. Entries limited to the event type
-    /// go before those for every event, and within each, an exact match goes before a prefix.
+    /// Gets the meta of a parameter of an event, or null if there is none
     /// </summary>
-    public TimeActField GetFieldMeta(int eventType, string parameterName)
+    public TimeActField GetFieldMeta(TAE.Event ev, string parameterName)
     {
-        if (!FieldMetaCache.TryGetValue((eventType, parameterName), out var field))
+        var eventTemplate = ev?.Template;
+
+        if (eventTemplate == null)
+            return null;
+
+        if (!FieldMetaCache.TryGetValue((eventTemplate, parameterName), out var field))
         {
-            bool IsExact(TimeActField e) => e.Field.Equals(parameterName, StringComparison.OrdinalIgnoreCase);
-            bool IsPrefix(TimeActField e) => e.IsPrefix && parameterName.StartsWith(e.Field, StringComparison.OrdinalIgnoreCase);
+            field = EventDefs.TryGetValue(eventTemplate, out var def)
+                ? FindField(def.Meta.Fields, ev.Type, parameterName)
+                : null;
 
-            bool IsForType(TimeActField e) => e.EventTypes?.Contains(eventType) == true;
-            bool IsForAll(TimeActField e) => e.EventTypes == null || e.EventTypes.Count == 0;
-
-            field = Meta.Fields.FirstOrDefault(e => IsForType(e) && IsExact(e))
-                ?? Meta.Fields.FirstOrDefault(e => IsForType(e) && IsPrefix(e))
-                ?? Meta.Fields.FirstOrDefault(e => IsForAll(e) && IsExact(e))
-                ?? Meta.Fields.FirstOrDefault(e => IsForAll(e) && IsPrefix(e));
-
-            FieldMetaCache[(eventType, parameterName)] = field;
+            FieldMetaCache[(eventTemplate, parameterName)] = field;
         }
 
         return field;
     }
 
     /// <summary>
-    /// The name a parameter is shown with: its annotation when there is one and annotations are on,
-    /// or else the name in the event template
+    /// Gets the annotation of a parameter of an event, or null if there is none
     /// </summary>
-    public string GetFieldDisplayName(int eventType, string parameterName)
+    public TimeActFieldAnnotation GetFieldAnnotation(TAE.Event ev, string parameterName)
+    {
+        var eventTemplate = ev?.Template;
+
+        if (eventTemplate == null)
+            return null;
+
+        if (!FieldAnnotationCache.TryGetValue((eventTemplate, parameterName), out var field))
+        {
+            field = EventDefs.TryGetValue(eventTemplate, out var def)
+                ? FindField(def.Annotations.Fields, ev.Type, parameterName)
+                : null;
+
+            FieldAnnotationCache[(eventTemplate, parameterName)] = field;
+        }
+
+        return field;
+    }
+
+    /// <summary>
+    /// Entries limited to the event type go before those for every event, and within each,
+    /// an exact match goes before a prefix
+    /// </summary>
+    private static T FindField<T>(List<T> fields, int eventType, string parameterName) where T : class, ITimeActFieldMatch
+    {
+        bool IsExact(T e) => e.Field.Equals(parameterName, StringComparison.OrdinalIgnoreCase);
+        bool IsPrefix(T e) => e.IsPrefix && parameterName.StartsWith(e.Field, StringComparison.OrdinalIgnoreCase);
+
+        bool IsForType(T e) => e.EventTypes?.Contains(eventType) == true;
+        bool IsForAll(T e) => e.EventTypes == null || e.EventTypes.Count == 0;
+
+        return fields.FirstOrDefault(e => IsForType(e) && IsExact(e))
+            ?? fields.FirstOrDefault(e => IsForType(e) && IsPrefix(e))
+            ?? fields.FirstOrDefault(e => IsForAll(e) && IsExact(e))
+            ?? fields.FirstOrDefault(e => IsForAll(e) && IsPrefix(e));
+    }
+
+    /// <summary>
+    /// The name a parameter is shown with: its annotation when there is one and annotations are on,
+    /// or else the internal name in the event def
+    /// </summary>
+    public string GetFieldDisplayName(TAE.Event ev, string parameterName)
     {
         if (CFG.Current.TimeActEditor_Field_Name_Mode is TimeActFieldNameMode.Annotation &&
-            GetFieldMeta(eventType, parameterName) is { AltName.Length: > 0 } meta)
+            GetFieldAnnotation(ev, parameterName) is { Name.Length: > 0 } annotation)
         {
-            return meta.AltName;
+            return annotation.Name;
         }
 
         return parameterName;
@@ -115,49 +157,184 @@ public class TimeActData : IDisposable
     /// </summary>
     public TAE.Template.BankTemplate GetTemplate(TimeActContainerWrapper source)
     {
-        var filename = GetTemplateFilename(source);
+        var defName = GetDefName(source);
 
-        if (filename == null)
+        if (defName == null || GetGameFolder() == null)
             return null;
 
-        if (!Templates.TryGetValue(filename, out var template))
+        if (!Defs.TryGetValue(defName, out var def))
+        {
+            def = LoadDef(defName);
+            Defs[defName] = def;
+        }
+
+        return def.Template;
+    }
+
+    /// <summary>
+    /// Object time acts in Dark Souls have their own events. Every other time act uses the character def.
+    /// </summary>
+    private string GetDefName(TimeActContainerWrapper source)
+    {
+        return Project.Descriptor.ProjectType switch
+        {
+            ProjectType.DS1 or ProjectType.DS1R when source.Name.StartsWith('o') => "Object",
+            ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS3 or
+                ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR or
+                ProjectType.DB or ProjectType.DB_NT => "Character",
+            _ => null
+        };
+    }
+
+    /// <summary>
+    /// The folder under Assets/TAE with the metadata of the project's game. The remaster shares the time acts
+    /// of Dark Souls, and both Duskbloods types share one set.
+    /// </summary>
+    private string GetGameFolder()
+    {
+        var game = Project.Descriptor.ProjectType switch
+        {
+            ProjectType.DS1R => ProjectType.DS1,
+            ProjectType.DB_NT => ProjectType.DB,
+            var type => type
+        };
+
+        var folder = Path.Join(AppContext.BaseDirectory, "Assets", "TAE", ProjectUtils.GetGameDirectory(game));
+
+#if DEBUG
+        if (CFG.Current.Developer_Enable_Tools)
+        {
+            folder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, "src", "Smithbox.Data", "Assets", "TAE",
+                ProjectUtils.GetGameDirectory(game));
+        }
+#endif
+
+        return Directory.Exists(folder) ? folder : null;
+    }
+
+    private TimeActDef LoadDef(string defName)
+    {
+        var folder = GetGameFolder();
+        var def = new TimeActDef { Name = defName };
+
+        var defPath = Path.Join(folder, "Defs", $"{defName}.xml");
+
+        try
+        {
+            def.Template = TAE.Template.ReadXMLFile(defPath, key => ResolveEnum(defName, key))[0];
+
+            foreach (var eventTemplate in def.Template.Values)
+            {
+                EventDefs[eventTemplate] = def;
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_Template", defPath), e);
+        }
+
+        var metaPath = Path.Join(folder, "Meta", $"{defName}.json");
+
+        if (File.Exists(metaPath))
         {
             try
             {
-                var path = Path.Join(AppContext.BaseDirectory, "Assets", "TAE", filename);
-
-                template = TAE.Template.ReadXMLFile(path)[0];
+                def.Meta = JsonSerializer.Deserialize(File.ReadAllText(metaPath),
+                    TimeActEditorJsonSerializerContext.Default.TimeActMeta) ?? new TimeActMeta();
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_Template", filename), e);
+                Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_Meta", metaPath), e);
             }
-
-            Templates[filename] = template;
         }
 
-        return template;
+        var annotationPath = GetAnnotationPath(folder, defName);
+
+        if (annotationPath != null)
+        {
+            try
+            {
+                def.Annotations = JsonSerializer.Deserialize(File.ReadAllText(annotationPath),
+                    TimeActEditorJsonSerializerContext.Default.TimeActAnnotations) ?? new TimeActAnnotations();
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_Annotations", annotationPath), e);
+            }
+        }
+
+        return def;
     }
 
-    private string GetTemplateFilename(TimeActContainerWrapper source)
+    /// <summary>
+    /// The annotations in the language picked for the param annotations, or else in English
+    /// </summary>
+    private static string GetAnnotationPath(string folder, string defName)
     {
-        var isObject = source.Name.StartsWith('o');
-
-        return Project.Descriptor.ProjectType switch
+        foreach (var language in new[] { CFG.Current.ParamEditor_Annotation_Language, "English" })
         {
-            ProjectType.DES => "TAE.Template.DES.xml",
-            ProjectType.DS1 or ProjectType.DS1R => isObject ? "TAE.Template.DS1.OBJ.xml" : "TAE.Template.DS1.xml",
-            ProjectType.BB => "TAE.Template.BB.xml",
-            ProjectType.DS3 => "TAE.Template.DS3.xml",
-            ProjectType.SDT => "TAE.Template.SDT.xml",
-            ProjectType.ER => "TAE.Template.ER.xml",
-            ProjectType.AC6 => "TAE.Template.AC6.xml",
-            ProjectType.NR => "TAE.Template.ERNR.xml",
-            // Duskbloods keeps the template it shared with Nightreign before that was checked against nightreign.exe,
-            // as its own time acts don't fit the Nightreign layouts
-            ProjectType.DB or ProjectType.DB_NT => "TAE.Template.DB.xml",
-            _ => null
-        };
+            if (string.IsNullOrEmpty(language))
+                continue;
+
+            var path = Path.Join(folder, "Annotations", language, $"{defName}.json");
+
+            if (File.Exists(path))
+                return path;
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// The options of an enum a def names, in their order in the file. They are named in the annotation language
+    /// when they have a name in it, and otherwise in English.
+    /// </summary>
+    private IEnumerable<KeyValuePair<string, string>> ResolveEnum(string defName, string key)
+    {
+        Enums ??= LoadEnums();
+
+        if (!Enums.TryGetValue(key, out var entry))
+        {
+            Smithbox.LogError(this, LOC.Get("TAE_Data_Missing_Enum", defName, key));
+            return null;
+        }
+
+        string NameOf(ParamEnumOption option) =>
+            option.Names.FirstOrDefault(n => n.Language == CFG.Current.ParamEditor_Annotation_Language)?.Text
+            ?? option.Names.FirstOrDefault(n => n.Language == "English")?.Text
+            ?? option.Names.FirstOrDefault()?.Text
+            ?? option.Key;
+
+        return entry.Options.Select(o => new KeyValuePair<string, string>(NameOf(o), o.Key)).ToList();
+    }
+
+    private Dictionary<string, ParamEnumEntry> LoadEnums()
+    {
+        var enums = new Dictionary<string, ParamEnumEntry>();
+        var folder = Path.Join(GetGameFolder(), "Enums");
+
+        if (!Directory.Exists(folder))
+            return enums;
+
+        foreach (var path in Directory.EnumerateFiles(folder, "*.json"))
+        {
+            try
+            {
+                var entry = JsonSerializer.Deserialize(File.ReadAllText(path),
+                    ParamEditorJsonSerializerContext.Default.ParamEnumEntry);
+
+                if (entry?.Key != null)
+                {
+                    enums.TryAdd(entry.Key, entry);
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_Enum", path), e);
+            }
+        }
+
+        return enums;
     }
 
     #region Dispose

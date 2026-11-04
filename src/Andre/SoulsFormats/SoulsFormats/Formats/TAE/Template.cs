@@ -26,7 +26,13 @@ namespace SoulsFormats
 
             }
 
-            private Template(XmlDocument xml)
+            /// <summary>
+            /// Looks up the options of an enum that a parameter names with its 'enum' attribute, as (name, value text)
+            /// pairs in display order. Returns null when there is no enum by that key.
+            /// </summary>
+            public delegate IEnumerable<KeyValuePair<string, string>> EnumResolver(string enumKey);
+
+            private Template(XmlDocument xml, EnumResolver enumResolver = null)
                 : base()
             {
                 // DS Anim Studio templates call events actions, and list them without any banks
@@ -39,7 +45,7 @@ namespace SoulsFormats
 
                 foreach (XmlNode bankNode in bankNodes.Count > 0 ? bankNodes.Cast<XmlNode>() : new[] { templateNode })
                 {
-                    var newBank = new BankTemplate(bankNode, out long basedOn);
+                    var newBank = new BankTemplate(bankNode, enumResolver, out long basedOn);
                     basedOnMap.Add(newBank, basedOn);
                     if (ContainsKey(newBank.ID))
                     {
@@ -71,6 +77,17 @@ namespace SoulsFormats
                 var xml = new XmlDocument();
                 xml.Load(path);
                 return new Template(xml);
+            }
+
+            /// <summary>
+            /// Read a TAE template from an XML file whose parameters name their enums with an 'enum' attribute,
+            /// rather than listing the entries inline.
+            /// </summary>
+            public static Template ReadXMLFile(string path, EnumResolver enumResolver)
+            {
+                var xml = new XmlDocument();
+                xml.Load(path);
+                return new Template(xml, enumResolver);
             }
 
             /// <summary>
@@ -106,7 +123,7 @@ namespace SoulsFormats
                 /// </summary>
                 public string Name;
 
-                internal BankTemplate(XmlNode bankNode, out long basedOn)
+                internal BankTemplate(XmlNode bankNode, EnumResolver enumResolver, out long basedOn)
                     : base()
                 {
                     ID = long.Parse(bankNode.Attributes["id"]?.InnerText ?? "0");
@@ -120,7 +137,7 @@ namespace SoulsFormats
                     {
                         try
                         {
-                            var newEvent = new EventTemplate(ID, eventNode);
+                            var newEvent = new EventTemplate(ID, eventNode, enumResolver);
                             if (ContainsKey(newEvent.ID))
                             {
                                 throw new Exception($"TAE Bank Template has more than one event with ID {newEvent.ID}.");
@@ -548,16 +565,38 @@ namespace SoulsFormats
                         .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
                 }
 
-                internal ParameterTemplate(long bankId, long eventId, long paramIndex, XmlNode paramNode, int offset)
+                /// <summary>
+                /// The key of the enum the entries came from, when the template names one rather than listing them inline.
+                /// </summary>
+                public string EnumKey = null;
+
+                internal ParameterTemplate(long bankId, long eventId, long paramIndex, XmlNode paramNode, int offset,
+                    EnumResolver enumResolver = null)
                 {
                     Type = (ParamType)Enum.Parse(typeof(ParamType), paramNode.Name);
 
                     NameGroup = paramNode.Attributes["group"]?.InnerText;
                     Name = paramNode.Attributes["name"]?.InnerText ?? $"Unk{offset:X2}";
-                    
+
                     // Load enum entries before doing default value so you can make the default value an enum entry.
+                    EnumKey = paramNode.Attributes["enum"]?.InnerText;
                     var enumNodes = paramNode.SelectNodes("entry");
-                    if (enumNodes.Count > 0)
+                    if (EnumKey != null && enumResolver?.Invoke(EnumKey) is { } enumOptions)
+                    {
+                        EnumEntries = new Dictionary<string, object>();
+                        foreach (var (entryName, entryValue) in enumOptions)
+                        {
+                            try
+                            {
+                                EnumEntries.Add(entryName, StringToValue(entryValue));
+                            }
+                            catch (Exception ex)
+                            {
+                                throw new Exception($"Bank {bankId} -> Event {eventId} -> Parameter '{Name}'\n    Enum '{EnumKey}' option '{entryName}' has a value '{entryValue}' that doesn't fit {Type}.\n\n\n{ex}");
+                            }
+                        }
+                    }
+                    else if (enumNodes.Count > 0)
                     {
                         EnumEntries = new Dictionary<string, object>();
                         foreach (XmlNode entryNode in paramNode.SelectNodes("entry"))
@@ -689,7 +728,7 @@ namespace SoulsFormats
                     return result;
                 }
 
-                internal EventTemplate(long bankId, XmlNode eventNode)
+                internal EventTemplate(long bankId, XmlNode eventNode, EnumResolver enumResolver = null)
                     : base()
                 {
                     ID = int.Parse(eventNode.Attributes["id"].InnerText);
@@ -700,7 +739,7 @@ namespace SoulsFormats
                     {
                         if (paramNode.Name == "#comment")
                             continue;
-                        var newParam = new ParameterTemplate(bankId, ID, i++, paramNode, offset);
+                        var newParam = new ParameterTemplate(bankId, ID, i++, paramNode, offset, enumResolver);
                         var paramSize = newParam.GetByteCount();
 
                         // Unnamed parameters are told apart by their offset, and some templates repeat a name

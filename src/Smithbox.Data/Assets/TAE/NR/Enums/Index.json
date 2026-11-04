@@ -1,0 +1,47 @@
+{
+  "Key": "Index",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Index"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: 0"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: 0x02000045 or 0x02000049"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3: 0x02000042"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4: 0x02000012"
+        }
+      ]
+    }
+  ]
+}

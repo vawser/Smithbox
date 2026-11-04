@@ -1,0 +1,47 @@
+{
+  "Key": "IdleBlendArea",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "IdleBlendArea"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0: None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1: Upper Body"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2: Left Leg"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3: Right Leg"
+        }
+      ]
+    }
+  ]
+}
