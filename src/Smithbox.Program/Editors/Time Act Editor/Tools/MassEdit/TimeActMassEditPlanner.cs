@@ -58,6 +58,42 @@ public class TimeActMassEditPlan
 }
 
 /// <summary>
+/// Where new events go
+/// </summary>
+public enum TimeActMassEditPlacement
+{
+    /// <summary>
+    /// One event in each animation among the matches, at the given times
+    /// </summary>
+    InEachAnimation,
+
+    /// <summary>
+    /// One event next to each matched event, at its times moved by the given offsets
+    /// </summary>
+    AlongsideEachEvent
+}
+
+/// <summary>
+/// What to create. The times are in seconds; for <see cref="TimeActMassEditPlacement.AlongsideEachEvent"/> they
+/// are offsets from the start and end of each matched event.
+/// </summary>
+public record TimeActCreateSettings(TAE.Template.EventTemplate EventTemplate, TimeActMassEditPlacement Placement,
+    float Start, float End, bool SkipExisting);
+
+/// <summary>
+/// An event to add, made ready with its parameters when the plan is made
+/// </summary>
+public record TimeActPlannedCreate(TimeActQueryMatch Match, TimeActEntry Entry, TAE.Animation Animation, TAE.Event Event);
+
+public class TimeActMassCreatePlan
+{
+    public List<TimeActPlannedCreate> Creates = new();
+    public List<TimeActPlannedSkip> Skips = new();
+
+    public int AnimationCount;
+}
+
+/// <summary>
 /// Works out what an edit does to each match. Nothing is changed: events without their template applied are
 /// read through copies, which are cached for as long as the matches are kept.
 /// </summary>
@@ -189,6 +225,149 @@ public class TimeActMassEditPlanner
         }
     }
 
+    #region Create
+    /// <summary>
+    /// Makes the events to add. Each starts from the template's defaults, then takes the value the meta gives
+    /// as usual for each field, then the steps, which can set or change any parameter.
+    /// </summary>
+    public TimeActMassCreatePlan PlanCreate(IReadOnlyList<TimeActQueryMatch> matches, TimeActCreateSettings settings,
+        IReadOnlyList<TimeActMassEditStep> steps)
+    {
+        var plan = new TimeActMassCreatePlan();
+        var eventTemplate = settings.EventTemplate;
+
+        if (eventTemplate == null)
+            return plan;
+
+        var activeSteps = steps.Where(e => e.HasField).ToList();
+
+        // One event to each animation, or one to each matched event
+        var targets = settings.Placement is TimeActMassEditPlacement.InEachAnimation
+            ? matches.GroupBy(e => (e.Entry, e.Animation)).Select(e => e.First()).ToList()
+            : matches.Where(e => e.Event != null).ToList();
+
+        var animations = new HashSet<TAE.Animation>();
+        var planned = new HashSet<(TAE.Animation, float, float)>();
+
+        foreach (var match in targets)
+        {
+            var animation = match.Animation;
+            var timeAct = match.Entry.TimeAct;
+
+            if (timeAct == null)
+                continue;
+
+            float start, end;
+
+            if (settings.Placement is TimeActMassEditPlacement.AlongsideEachEvent)
+            {
+                start = match.Event.StartTime + settings.Start;
+                end = match.Event.EndTime + settings.End;
+            }
+            else
+            {
+                start = settings.Start;
+                end = settings.End;
+            }
+
+            if (end < start)
+            {
+                plan.Skips.Add(new TimeActPlannedSkip(match, LOC.Get("TAE_MassEditTool_Skip_End_Before_Start")));
+                continue;
+            }
+
+            // Two matched events at the same times would otherwise each get the same new event
+            if (settings.SkipExisting && !planned.Add((animation, start, end)))
+            {
+                plan.Skips.Add(new TimeActPlannedSkip(match, LOC.Get("TAE_MassEditTool_Skip_Has_Same_Event")));
+                continue;
+            }
+
+            if (settings.SkipExisting && HasExisting(animation, eventTemplate.ID, settings.Placement, start, end))
+            {
+                plan.Skips.Add(new TimeActPlannedSkip(match, LOC.Get(settings.Placement is TimeActMassEditPlacement.InEachAnimation
+                    ? "TAE_MassEditTool_Skip_Has_Type"
+                    : "TAE_MassEditTool_Skip_Has_Same_Event")));
+                continue;
+            }
+
+            if (!TryCreateEvent(animation, timeAct.BigEndian, eventTemplate, start, end, activeSteps, out var ev, out var reason))
+            {
+                plan.Skips.Add(new TimeActPlannedSkip(match, reason));
+                continue;
+            }
+
+            plan.Creates.Add(new TimeActPlannedCreate(match, match.Entry, animation, ev));
+            animations.Add(animation);
+        }
+
+        plan.AnimationCount = animations.Count;
+
+        return plan;
+    }
+
+    /// <summary>
+    /// Whether the animation already has the event: any of the type when adding one to each animation, or one of
+    /// the type at the same times when adding one next to each event
+    /// </summary>
+    public static bool HasExisting(TAE.Animation animation, int type, TimeActMassEditPlacement placement, float start, float end)
+    {
+        return placement is TimeActMassEditPlacement.InEachAnimation
+            ? animation.Events.Any(e => e.Type == type)
+            : animation.Events.Any(e => e.Type == type && e.StartTime == start && e.EndTime == end);
+    }
+
+    private bool TryCreateEvent(TAE.Animation animation, bool bigEndian, TAE.Template.EventTemplate eventTemplate,
+        float start, float end, List<TimeActMassEditStep> steps, out TAE.Event ev, out string reason)
+    {
+        reason = null;
+
+        // The meaning of this field is unknown, so go by how the type is used elsewhere in the animation,
+        // as the graph does when it adds an event
+        var unk04 = animation.Events.FirstOrDefault(e => e.Type == eventTemplate.ID)?.Unk04 ?? 0;
+
+        ev = new TAE.Event(start, end, eventTemplate.ID, unk04, bigEndian, eventTemplate);
+
+        if (ev.Parameters == null)
+        {
+            reason = LOC.Get("TAE_MassEditTool_Skip_No_Template");
+            return false;
+        }
+
+        var data = Project.Handler.TimeActData;
+
+        foreach (var (key, parameter) in ev.Parameters.Template)
+        {
+            if (parameter.ValueToAssert != null)
+                continue;
+
+            var meta = data.GetFieldMeta(eventTemplate, parameter.Name);
+
+            if (meta != null && meta.DefaultValue.Length > 0 && TryParseValue(parameter, meta.DefaultValue, out var value))
+            {
+                ev.Parameters[key] = value;
+            }
+        }
+
+        var working = new WorkingEvent { Start = start, End = end };
+
+        foreach (var step in steps)
+        {
+            reason = ApplyParameterStep(step, ev, working);
+
+            if (reason != null)
+                return false;
+        }
+
+        foreach (var (key, _, _, current) in working.Parameters.Values)
+        {
+            ev.Parameters[key] = current;
+        }
+
+        return true;
+    }
+    #endregion
+
     #region Times
     /// <summary>
     /// Returns the reason the step can't be applied, or null
@@ -242,7 +421,7 @@ public class TimeActMassEditPlanner
         return LOC.Get("TAE_MassEditTool_Skip_Invalid_Operator");
     }
 
-    private static string FormatTime(float time)
+    public static string FormatTime(float time)
     {
         var frames = time / TimeActMassEditFields.FrameDuration;
 

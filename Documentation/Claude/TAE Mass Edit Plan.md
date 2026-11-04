@@ -129,7 +129,7 @@ the preview stale, so Apply always does exactly what was shown.
 | 1 | **Tool skeleton**: CFG flag `Interface_TimeActEditor_Tool_MassEdit`, View menu toggle, section, Scope/Target/Filter, Find + match list — **done 2026-11-04**, awaiting check. See *Phase 1 notes* below | Matches list and jump, for local scopes |
 | 2 | **Edit** for events: builder, planner, preview old → new, apply as one compound action — **done 2026-11-04**, awaiting check. See *Phase 2 notes* | Edits undo/redo in one step; skipped rows explained |
 | 3 | **Delete** for events and animations — **done 2026-11-04**, awaiting check. See *Phase 3 notes* | Undo restores order and selection |
-| 4 | **Create** events (per animation / alongside event) | New events have correct groups, defaults and Unk04 |
+| 4 | **Create** events (per animation / alongside event) — **done 2026-11-04**, awaiting check. See *Phase 4 notes* | New events have correct groups, defaults and Unk04 |
 | 5 | **All Sources** scope: adopt read copies, dirty marking, Save All path, undo caveat. The runner discards the `ReadTimeActs()` list after querying a source; it needs an option to hand that full list back per source (constraint 1) | Edited unopened sources save without losing other time acts |
 | 6 | Extras: animation property edits, duplicate animations, "Send to Mass Edit" button on Search results, comparison operators back-ported to Search | — |
 
@@ -195,6 +195,25 @@ the preview stale, so Apply always does exactly what was shown.
 - **Preview** is the matches themselves, sharing the Find tab's list filter. Event groups are left in place, as the
   single delete does.
 - After a delete, both Edit and Delete stay disabled until Find is pressed again (`HasApplied`).
+
+### Phase 4 notes
+
+- **Files.** `TimeActMassEditTool.Create.cs` (partial: New Event, Placement, Times, Options, Parameters,
+  New Events), `TimeActMassEditPlanner.PlanCreate`, and `TimeActMassAddEventsAction` in
+  `Framework/TimeActMassEditActions.cs`.
+- **Placement.** *In each matched animation* (absolute times, one per distinct animation) or *Alongside each
+  matched event* (the event's own start/end plus offsets; Events target only).
+- **Values.** Each new event is built at plan time with `new TAE.Event(..., template)` (template defaults), then
+  `TimeActField.DefaultValue` from the meta, then the Parameters steps, which reuse `ApplyParameterStep`. So
+  *add 5* in a Create step means 5 more than the default.
+- **Unk04** follows the graph's rule per animation; **groups** are made per animation as `TimeActAddEventsAction`
+  does, inside `TimeActMassAddEventsAction`.
+- **Selection** is left alone on create (a single add selects the new event, which across many animations means
+  nothing); undo restores it without the new events. Undo runs groups in reverse.
+- **Skip where it already exists** (on by default): any event of the type in the animation, or for *alongside*,
+  one of the type at the same times — including duplicates among the new events themselves. It is checked again
+  on apply; places that gained the event in between count as stale.
+- **Steps builder** now takes its list (`DisplaySteps(steps, fields)`), shared by Edit and Create.
 
 ## 5. Verification (for the user, per phase)
 

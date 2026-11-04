@@ -20,7 +20,7 @@ public partial class TimeActMassEditTool
 
     private const string DeleteConfirmId = "###massEditConfirmDelete";
 
-    private bool HasApplied => AppliedResult != null || DeleteResult != null;
+    private bool HasApplied => AppliedResult != null || DeleteResult != null || CreateResult != null;
 
     /// <summary>
     /// Shows what the last apply did. Returns true if anything has been applied since Find, as the matches no
@@ -46,6 +46,15 @@ public partial class TimeActMassEditTool
             if (DeleteResult.Stale > 0)
             {
                 GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("TAE_MassEditTool_Deleted_Stale", DeleteResult.Stale));
+            }
+        }
+        else if (CreateResult != null)
+        {
+            GUI.WrappedText(LOC.Get("TAE_MassEditTool_Created", CreateResult.Created, CreateResult.Animations));
+
+            if (CreateResult.Stale > 0)
+            {
+                GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("TAE_MassEditTool_Created_Stale", CreateResult.Stale));
             }
         }
         else

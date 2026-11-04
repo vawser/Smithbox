@@ -87,6 +87,7 @@ public partial class TimeActMassEditTool
         ReadableCache = new();
         AppliedResult = null;
         DeleteResult = null;
+        ClearCreatePlan();
     }
 
     private void DisplayEdit(TAE.Template.BankTemplate template)
@@ -137,6 +138,12 @@ public partial class TimeActMassEditTool
             return;
         }
 
+        if (Action is TimeActMassEditAction.Create)
+        {
+            DisplayCreate(template);
+            return;
+        }
+
         if (ResultTarget is TimeActMassEditTarget.Animations)
         {
             GUI.WrappedText(LOC.Get("TAE_MassEditTool_Edit_Animations_Not_Supported"));
@@ -154,7 +161,7 @@ public partial class TimeActMassEditTool
 
         var fields = GetEditFields(template);
 
-        DisplaySteps(fields);
+        DisplaySteps(Steps, fields);
 
         UpdatePlan(template);
 
@@ -165,6 +172,7 @@ public partial class TimeActMassEditTool
     {
         TimeActMassEditAction.Edit => LOC.Get("TAE_MassEditTool_Action_Edit"),
         TimeActMassEditAction.Delete => LOC.Get("TAE_MassEditTool_Action_Delete"),
+        TimeActMassEditAction.Create => LOC.Get("TAE_MassEditTool_Action_Create"),
         _ => $"{action}"
     };
 
@@ -231,13 +239,16 @@ public partial class TimeActMassEditTool
     #endregion
 
     #region Steps
-    private void DisplaySteps(List<EditField> fields)
+    /// <summary>
+    /// The rows of steps, which edit the matches, or set the parameters of the events Create adds
+    /// </summary>
+    private void DisplaySteps(List<StepInput> steps, List<EditField> fields)
     {
         StepInput removed = null;
 
-        for (int i = 0; i < Steps.Count; i++)
+        for (int i = 0; i < steps.Count; i++)
         {
-            var step = Steps[i];
+            var step = steps[i];
 
             if (i > 0)
             {
@@ -269,7 +280,7 @@ public partial class TimeActMassEditTool
 
         if (removed != null)
         {
-            Steps.Remove(removed);
+            steps.Remove(removed);
             StepsChanged();
         }
 
@@ -279,7 +290,7 @@ public partial class TimeActMassEditTool
             LOC.Get("TAE_MassEditTool_Step_Add_TT"),
             () =>
             {
-                Steps.Add(new());
+                steps.Add(new());
                 StepsChanged();
             });
     }
@@ -554,7 +565,7 @@ public partial class TimeActMassEditTool
             GUI.WrappedText(LOC.Get("TAE_MassEditTool_Changes_Unchanged", Plan.Unchanged));
         }
 
-        DisplaySkips(template);
+        DisplaySkips(Plan.Skips, template);
 
         var stale = IsStale();
 
@@ -631,16 +642,16 @@ public partial class TimeActMassEditTool
     // Skipped matches are only listed up to this many under each reason
     private const int MaxSkipsShown = 200;
 
-    private void DisplaySkips(TAE.Template.BankTemplate template)
+    private void DisplaySkips(List<TimeActPlannedSkip> allSkips, TAE.Template.BankTemplate template)
     {
-        if (Plan.Skips.Count == 0)
+        if (allSkips.Count == 0)
             return;
 
-        GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("TAE_MassEditTool_Changes_Skipped", Plan.Skips.Count));
+        GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("TAE_MassEditTool_Changes_Skipped", allSkips.Count));
 
         var reasonIndex = 0;
 
-        foreach (var group in Plan.Skips.GroupBy(e => e.Reason))
+        foreach (var group in allSkips.GroupBy(e => e.Reason))
         {
             var skips = group.ToList();
 

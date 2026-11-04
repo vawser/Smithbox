@@ -87,6 +87,110 @@ public class TimeActMassDeleteEventsAction : ViewportAction
 }
 
 /// <summary>
+/// Adds events to the end of many animations at once, for the mass edit. Animations that use event groups get a
+/// group for each type they have none for, as a single add does. The selection is left as it is, and put back
+/// as it was on undo, without the new events.
+/// </summary>
+public class TimeActMassAddEventsAction : ViewportAction
+{
+    private class Group
+    {
+        public TimeActEntry Entry;
+        public TAE.Animation Animation;
+        public List<TAE.Event> Events;
+        public List<TAE.EventGroup> NewGroups = new();
+
+        // Where the events went, worked out each time they are added
+        public int Index;
+    }
+
+    private readonly TimeActSelection Selection;
+    private readonly List<Group> Groups = new();
+
+    private List<TAE.Event> SelectionBefore = new();
+
+    public int EventCount => Groups.Sum(e => e.Events.Count);
+
+    public TimeActMassAddEventsAction(TimeActSelection selection,
+        IEnumerable<(TimeActEntry Entry, TAE.Animation Animation, List<TAE.Event> Events)> groups)
+    {
+        Selection = selection;
+
+        foreach (var (entry, animation, events) in groups)
+        {
+            if (events.Count == 0)
+                continue;
+
+            var group = new Group { Entry = entry, Animation = animation, Events = events };
+
+            // Only animations that use groups need one, as older files leave them out entirely
+            if (animation.EventGroups.Count > 0)
+            {
+                foreach (var ev in events)
+                {
+                    ev.Group = animation.Events.FirstOrDefault(e => e.Type == ev.Type && e.Group != null)?.Group
+                        ?? animation.EventGroups.FirstOrDefault(e => e.GroupType == ev.Type)
+                        ?? group.NewGroups.FirstOrDefault(e => e.GroupType == ev.Type);
+
+                    if (ev.Group == null)
+                    {
+                        var eventGroup = new TAE.EventGroup(ev.Type);
+                        eventGroup.GroupData.DataType = (TAE.EventGroup.EventGroupDataType)ev.Type;
+
+                        group.NewGroups.Add(eventGroup);
+                        ev.Group = eventGroup;
+                    }
+                }
+            }
+
+            Groups.Add(group);
+        }
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        SelectionBefore = Selection.SelectedEvents.ToList();
+
+        foreach (var group in Groups)
+        {
+            group.Index = group.Animation.Events.Count;
+
+            group.Animation.EventGroups.AddRange(group.NewGroups);
+            group.Animation.Events.InsertRange(group.Index, group.Events);
+
+            group.Entry.IsDirty = true;
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        // In reverse, so a later group in the same animation is taken out before the positions of an earlier one
+        for (int i = Groups.Count - 1; i >= 0; i--)
+        {
+            var group = Groups[i];
+
+            group.Animation.Events.RemoveRange(group.Index, group.Events.Count);
+
+            foreach (var eventGroup in group.NewGroups)
+            {
+                group.Animation.EventGroups.Remove(eventGroup);
+            }
+
+            group.Entry.IsDirty = true;
+        }
+
+        var added = Groups.SelectMany(e => e.Events).ToHashSet();
+
+        Selection.SelectedEvents.Clear();
+        Selection.SelectedEvents.AddRange(SelectionBefore.Where(e => !added.Contains(e)));
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+/// <summary>
 /// Removes animations from many time acts at once, for the mass edit, in the same way as
 /// <see cref="TimeActMassDeleteEventsAction"/>. If the selected animation goes, the one that took its place is
 /// selected, as a single delete does. Undo puts the selected animation and events back as they were.

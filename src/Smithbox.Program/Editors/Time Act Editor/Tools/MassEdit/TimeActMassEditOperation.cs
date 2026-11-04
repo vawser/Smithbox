@@ -9,7 +9,8 @@ namespace StudioCore.Editors.TimeActEditor;
 public enum TimeActMassEditAction
 {
     Edit,
-    Delete
+    Delete,
+    Create
 }
 
 /// <summary>

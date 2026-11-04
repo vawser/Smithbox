@@ -1803,6 +1803,162 @@
     {
       "Key": "TAE_MassEditTool_Deleted_Animations_Log",
       "Text": "Mass edit deleted {0} animations. {1} matches had already gone and were skipped."
+    },
+    {
+      "Key": "TAE_MassEditTool_Action_Create",
+      "Text": "Create"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Event_Header",
+      "Text": "New Event"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Event_Header_TT",
+      "Text": "The type of event to add."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Pick_Event_Type",
+      "Text": "Pick an event type..."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Pick_Event",
+      "Text": "Pick the type of event to add."
+    },
+    {
+      "Key": "TAE_MassEditTool_Placement_Header",
+      "Text": "Placement"
+    },
+    {
+      "Key": "TAE_MassEditTool_Placement_Header_TT",
+      "Text": "Where the new events go."
+    },
+    {
+      "Key": "TAE_MassEditTool_Placement_Each_Animation",
+      "Text": "In each matched animation"
+    },
+    {
+      "Key": "TAE_MassEditTool_Placement_Each_Animation_TT",
+      "Text": "Adds one event to each animation among the matches, at the times given."
+    },
+    {
+      "Key": "TAE_MassEditTool_Placement_Each_Event",
+      "Text": "Alongside each matched event"
+    },
+    {
+      "Key": "TAE_MassEditTool_Placement_Each_Event_TT",
+      "Text": "Adds one event next to each matched event, at its times moved by the offsets given."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Times_Header",
+      "Text": "Times"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Times_Header_TT",
+      "Text": "When the new events start and end. Empty counts as 0."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Offsets_Header_TT",
+      "Text": "How far the new events start and end from the start and end of each matched event. Empty counts as 0, which gives the same times."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Start_Hint",
+      "Text": "Start"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_End_Hint",
+      "Text": "End"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Start_TT",
+      "Text": "When the new events start."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_End_TT",
+      "Text": "When the new events end."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Start_Offset_Hint",
+      "Text": "Start offset"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_End_Offset_Hint",
+      "Text": "End offset"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Start_Offset_TT",
+      "Text": "Added to the start time of each matched event. Negative values start earlier."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_End_Offset_TT",
+      "Text": "Added to the end time of each matched event. Negative values end earlier."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Options_Header_TT",
+      "Text": "Whether to leave out the places that already have the event."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Skip_Existing",
+      "Text": "Skip where it already exists"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Skip_Existing_Type_TT",
+      "Text": "Leaves out animations that already have an event of this type."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Skip_Existing_Same_TT",
+      "Text": "Leaves out places that already have an event of this type at the same times."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Parameters_Header",
+      "Text": "Parameters"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Parameters_Header_TT",
+      "Text": "The new events start with the default value of each field. Steps here set or change any of them."
+    },
+    {
+      "Key": "TAE_MassEditTool_Creations_Header",
+      "Text": "New Events"
+    },
+    {
+      "Key": "TAE_MassEditTool_Creations_Header_TT",
+      "Text": "Every event Create will add. A single undo takes them all back out."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Invalid_Times",
+      "Text": "The times must be numbers."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Summary",
+      "Text": "{0} events will be added to {1} animations."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create",
+      "Text": "Create"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_TT",
+      "Text": "Adds the events listed below. A single undo takes them all back out."
+    },
+    {
+      "Key": "TAE_MassEditTool_Created",
+      "Text": "Added {0} events to {1} animations."
+    },
+    {
+      "Key": "TAE_MassEditTool_Created_Stale",
+      "Text": "{0} places had changed since the preview was made, and were left out."
+    },
+    {
+      "Key": "TAE_MassEditTool_Created_Log",
+      "Text": "Mass edit added {0} events to {1} animations. {2} places had changed since the preview and were left out."
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_Has_Type",
+      "Text": "The animation already has an event of this type"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_Has_Same_Event",
+      "Text": "An event of this type is already there at the same times"
     }
   ]
 }
