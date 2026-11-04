@@ -1,55 +1,750 @@
 {
-  "Fields": [
+  "Events": [
     {
-      "Field": "SpEffectID",
-      "IsPrefix": true,
-      "ParamRef": "SpEffectParam"
+      "ID": 2,
+      "Event": "BulletBehavior",
+      "Fields": [
+        {
+          "Field": "Unused11",
+          "Obsolete": true
+        }
+      ]
     },
     {
-      "Field": "BulletID",
-      "ParamRef": "Bullet"
+      "ID": 24,
+      "Event": "[DS1, Disabled]QueueTransitionAnimation",
+      "Fields": [
+        {
+          "Field": "Unused00",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused04",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused08",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0C",
+          "Obsolete": true
+        }
+      ]
     },
     {
-      "Field": "DecalParamID",
-      "ParamRef": "DecalParam"
+      "ID": 66,
+      "Event": "AddSpEffect_Multiplayer",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
     },
     {
-      "Field": "LockCamParamID",
-      "ParamRef": "LockCamParam"
+      "ID": 67,
+      "Event": "AddSpEffect",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
     },
     {
-      "Field": "ToughnessParamID",
-      "ParamRef": "ToughnessParam"
+      "ID": 95,
+      "Event": "SpawnOneShotFFX_Ember",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "Unused12",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused14",
+          "Obsolete": true
+        }
+      ]
     },
     {
-      "Field": "AISoundID",
-      "ParamRef": "AiSoundParam"
+      "ID": 96,
+      "Event": "SpawnOneShotFFX",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "RumbleCamID",
-      "ParamRef": "CameraRumbleParam"
+      "ID": 104,
+      "Event": "SpawnFFX_104",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "FFXID",
-      "IsPrefix": true,
-      "Alias": "Particles"
+      "ID": 110,
+      "Event": "SpawnFFX_General",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "SoundID",
-      "Alias": "Sounds"
+      "ID": 112,
+      "Event": "SpawnFFX_FloorDetermined",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "Unused08",
+          "Obsolete": true
+        }
+      ]
     },
     {
-      "Field": "OverrideSoundID",
-      "Alias": "Sounds"
+      "ID": 114,
+      "Event": "SpawnFFX_GoodsAndMagic",
+      "Fields": [
+        {
+          "Field": "FFXID_Deprecated",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "UseChrSoundEmitter",
-      "IsBool": true
+      "ID": 115,
+      "Event": "SpawnFFX_GoodsAndMagicEX",
+      "Fields": [
+        {
+          "Field": "FFXID_Deprecated",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "Unused",
-      "IsPrefix": true,
-      "Obsolete": true
+      "ID": 116,
+      "Event": "SpawnFFX_Throw",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "Unused0D",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0E",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0F",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 118,
+      "Event": "SpawnFFX_Blade",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
+    },
+    {
+      "ID": 119,
+      "Event": "SpawnFFX_Body_ForEventDuration",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
+    },
+    {
+      "ID": 120,
+      "Event": "SpawnFFX_ChrType",
+      "Fields": [
+        {
+          "Field": "FFXID_ForAll",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForHost",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam1_FurledFinger",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam2_Duelist",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam20001_FurledFinger",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam20002_FurledFinger",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam30001_Duelist",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam30002_Duelist",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam10001_Hunter",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam90001_Hunter",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam60002_Hunter",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam70002_BloodyFinger",
+          "Alias": "Particles"
+        }
+      ]
+    },
+    {
+      "ID": 121,
+      "Event": "SpawnFFX_121",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
+    },
+    {
+      "ID": 122,
+      "Event": "SpawnFFX_BySpEffect1",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "SpEffectID",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 123,
+      "Event": "SpawnFFX_BySpEffect2",
+      "Fields": [
+        {
+          "Field": "SpEffectId",
+          "ParamRef": "SpEffectParam"
+        },
+        {
+          "Field": "Unused0C",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0D",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 128,
+      "Event": "Wwise_PlaySound_CenterBody",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        }
+      ]
+    },
+    {
+      "ID": 129,
+      "Event": "Wwise_PlaySound_BySlot",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        },
+        {
+          "Field": "UseChrSoundEmitter",
+          "IsBool": true
+        },
+        {
+          "Field": "OverrideSoundID",
+          "Alias": "Sounds"
+        }
+      ]
+    },
+    {
+      "ID": 132,
+      "Event": "PlaySound_Weapon",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        }
+      ]
+    },
+    {
+      "ID": 133,
+      "Event": "Wwise_PlaySound_GrassHit",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        },
+        {
+          "Field": "UseChrSoundEmitter",
+          "IsBool": true
+        }
+      ]
+    },
+    {
+      "ID": 134,
+      "Event": "Wwise_PlaySound_Unk134",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        }
+      ]
+    },
+    {
+      "ID": 137,
+      "Event": "DecalParamID_CenterBody",
+      "Fields": [
+        {
+          "Field": "DecalParamID",
+          "ParamRef": "DecalParam"
+        }
+      ]
+    },
+    {
+      "ID": 138,
+      "Event": "DecalParamID_DummyPoly",
+      "Fields": [
+        {
+          "Field": "DecalParamID",
+          "ParamRef": "DecalParam"
+        }
+      ]
+    },
+    {
+      "ID": 139,
+      "Event": "DecalParamID_MultiDummyPoly",
+      "Fields": [
+        {
+          "Field": "DecalParamID",
+          "ParamRef": "DecalParam"
+        }
+      ]
+    },
+    {
+      "ID": 144,
+      "Event": "RumbleCam_Local",
+      "Fields": [
+        {
+          "Field": "RumbleCamID",
+          "ParamRef": "CameraRumbleParam"
+        }
+      ]
+    },
+    {
+      "ID": 145,
+      "Event": "RumbleCam_Global",
+      "Fields": [
+        {
+          "Field": "RumbleCamID",
+          "ParamRef": "CameraRumbleParam"
+        },
+        {
+          "Field": "Unused04",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 150,
+      "Event": "SetLockCamParam_Self",
+      "Fields": [
+        {
+          "Field": "LockCamParamID",
+          "ParamRef": "LockCamParam"
+        }
+      ]
+    },
+    {
+      "ID": 155,
+      "Event": "SetLockCamParam_Target",
+      "Fields": [
+        {
+          "Field": "LockCamParamID",
+          "ParamRef": "LockCamParam"
+        }
+      ]
+    },
+    {
+      "ID": 198,
+      "Event": "ModelParamModifier",
+      "Fields": [
+        {
+          "Field": "Unused3A",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused3B",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 229,
+      "Event": "SpawnAISoundAlternative",
+      "Fields": [
+        {
+          "Field": "AISoundID",
+          "ParamRef": "AiSoundParam"
+        }
+      ]
+    },
+    {
+      "ID": 237,
+      "Event": "SpawnAISound",
+      "Fields": [
+        {
+          "Field": "AISoundID",
+          "ParamRef": "AiSoundParam"
+        }
+      ]
+    },
+    {
+      "ID": 300,
+      "Event": "ActivateJumpTableEarly",
+      "Fields": [
+        {
+          "Field": "Unused0C",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 301,
+      "Event": "[DS1]Unknown301",
+      "Fields": [
+        {
+          "Field": "Unused00",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused04",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused08",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0C",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 302,
+      "Event": "AddSpEffect_DragonForm",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 304,
+      "Event": "ThrowAttackBehavior",
+      "Fields": [
+        {
+          "Field": "Unused03",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 331,
+      "Event": "AddSpEffect_WeaponArts",
+      "Fields": [
+        {
+          "Field": "SpEffectID_EnoughFP",
+          "ParamRef": "SpEffectParam"
+        },
+        {
+          "Field": "SpEffectID_NotEnoughFP",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 401,
+      "Event": "AddSpEffect_Multiplayer_401",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 522,
+      "Event": "SetSpecialLockOnParameter",
+      "Fields": [
+        {
+          "Field": "Unused04",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused08",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0C",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 601,
+      "Event": "SetAdditiveAnim",
+      "Fields": [
+        {
+          "Field": "SpEffectID_Exist",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 606,
+      "Event": "JiggleModifier",
+      "Fields": [
+        {
+          "Field": "Unused01",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused02",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused03",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 607,
+      "Event": "SetAdditiveAnimIfSpEffect",
+      "Fields": [
+        {
+          "Field": "SpEffectID_Exist",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 609,
+      "Event": "SetAdditiveAnim2IfSpEffect",
+      "Fields": [
+        {
+          "Field": "SpEffectID_IsExist",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 715,
+      "Event": "WepAbsorpPos",
+      "Fields": [
+        {
+          "Field": "Unused08",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0C",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused10",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused14",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused18",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 716,
+      "Event": "HksEngineFlag716",
+      "Fields": [
+        {
+          "Field": "Unused00",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused04",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused08",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0C",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 785,
+      "Event": "SpawnChrFinderBullet",
+      "Fields": [
+        {
+          "Field": "BulletID",
+          "ParamRef": "Bullet"
+        }
+      ]
+    },
+    {
+      "ID": 795,
+      "Event": "SetToughnessParam",
+      "Fields": [
+        {
+          "Field": "ToughnessParamID",
+          "ParamRef": "ToughnessParam"
+        }
+      ]
+    },
+    {
+      "ID": 907,
+      "Event": "SetPhysicsUnk398",
+      "Fields": [
+        {
+          "Field": "Unused04",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused08",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0C",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 10096,
+      "Event": "SpawnOneShotFFX_10096",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
+    },
+    {
+      "ID": 10130,
+      "Event": "PlaySound_WanderGhost_Unused",
+      "Fields": [
+        {
+          "Field": "Unused00",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused04",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused08",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0C",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 10137,
+      "Event": "DebugDecal1",
+      "Fields": [
+        {
+          "Field": "DecalParamId",
+          "ParamRef": "DecalParam"
+        },
+        {
+          "Field": "Unused04",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused08",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0C",
+          "Obsolete": true
+        }
+      ]
+    },
+    {
+      "ID": 10138,
+      "Event": "DebugDecal2",
+      "Fields": [
+        {
+          "Field": "DecalParamId",
+          "ParamRef": "DecalParam"
+        },
+        {
+          "Field": "Unused04",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused08",
+          "Obsolete": true
+        },
+        {
+          "Field": "Unused0C",
+          "Obsolete": true
+        }
+      ]
     }
   ]
 }

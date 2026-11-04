@@ -1,55 +1,34 @@
 {
-  "Fields": [
+  "Events": [
     {
-      "Field": "SpEffectID",
-      "IsPrefix": true,
-      "ParamRef": "SpEffectParam"
+      "ID": 96,
+      "Event": "SpawnOneShotFFX",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "BulletID",
-      "ParamRef": "Bullet"
+      "ID": 128,
+      "Event": "PlaySound_Remo",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        }
+      ]
     },
     {
-      "Field": "DecalParamID",
-      "ParamRef": "DecalParam"
-    },
-    {
-      "Field": "LockCamParamID",
-      "ParamRef": "LockCamParam"
-    },
-    {
-      "Field": "ToughnessParamID",
-      "ParamRef": "ToughnessParam"
-    },
-    {
-      "Field": "AISoundID",
-      "ParamRef": "AiSoundParam"
-    },
-    {
-      "Field": "RumbleCamID",
-      "ParamRef": "CameraRumbleParam"
-    },
-    {
-      "Field": "FFXID",
-      "IsPrefix": true,
-      "Alias": "Particles"
-    },
-    {
-      "Field": "SoundID",
-      "Alias": "Sounds"
-    },
-    {
-      "Field": "OverrideSoundID",
-      "Alias": "Sounds"
-    },
-    {
-      "Field": "UseChrSoundEmitter",
-      "IsBool": true
-    },
-    {
-      "Field": "Unused",
-      "IsPrefix": true,
-      "Obsolete": true
+      "ID": 130,
+      "Event": "PlaySound_Remo_PlayerVoice",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        }
+      ]
     }
   ]
 }

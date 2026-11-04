@@ -1,67 +1,2255 @@
 {
-  "Fields": [
+  "Events": [
     {
-      "Field": "SpEffectID",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The SpEffectParam row to apply."
+      "ID": 0,
+      "Event": "ChrActionFlag",
+      "Fields": [
+        {
+          "Field": "FlagType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgA",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgB",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgC",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgD",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgE",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "BulletID",
-      "Name": "",
-      "Description": "The Bullet row to fire."
+      "ID": 1,
+      "Event": "AttackBehavior",
+      "Fields": [
+        {
+          "Field": "AttackType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "AttackIndex",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "DecalParamID",
-      "Name": "",
-      "Description": "The DecalParam row to place."
+      "ID": 2,
+      "Event": "BulletBehavior",
+      "Fields": [
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "AttachmentType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Enable",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "StateInfo",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "LockCamParamID",
-      "Name": "",
-      "Description": "The LockCamParam row to use while locked on."
+      "ID": 5,
+      "Event": "CommonBehavior",
+      "Fields": [
+        {
+          "Field": "AttackIndex (0-8)",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "ToughnessParamID",
-      "Name": "",
-      "Description": "The ToughnessParam row to use."
+      "ID": 16,
+      "Event": "Blend",
+      "Fields": []
     },
     {
-      "Field": "AISoundID",
-      "Name": "",
-      "Description": "The AiSoundParam row of the sound that AI can hear."
+      "ID": 24,
+      "Event": "QueueTransitionAnimation",
+      "Fields": [
+        {
+          "Field": "Playback Type",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Destination Anim ID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Transition Anim ID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "RumbleCamID",
-      "Name": "",
-      "Description": "The CameraRumbleParam row to play."
+      "ID": 32,
+      "Event": "SetWeaponStyle",
+      "Fields": [
+        {
+          "Field": "WeaponStyle",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "FFXID",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The ID of the visual effect."
+      "ID": 33,
+      "Event": "SwitchWeapon",
+      "Fields": [
+        {
+          "Field": "WeaponSlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "SoundID",
-      "Name": "",
-      "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+      "ID": 34,
+      "Event": "UnequipCrossbowBolt",
+      "Fields": [
+        {
+          "Field": "HandType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "OverrideSoundID",
-      "Name": "",
-      "Description": "Played in place of SoundID when it can be found. Its OverrideSoundType decides which bank it comes from. Only read for newer time acts."
+      "ID": 35,
+      "Event": "EquipCrossbowBolt",
+      "Fields": [
+        {
+          "Field": "HandType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "UseChrSoundEmitter",
-      "Name": "",
-      "Description": "Plays the sound through the character's own emitter, rather than the global one."
+      "ID": 64,
+      "Event": "CastHighlightedMagic",
+      "Fields": [
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Is???",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "Unused",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The game doesn't read this field."
+      "ID": 65,
+      "Event": "ConsumeCurrentGoods",
+      "Fields": [
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 66,
+      "Event": "AddSpEffect_Multiplayer",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        }
+      ]
+    },
+    {
+      "ID": 67,
+      "Event": "AddSpEffect",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        }
+      ]
+    },
+    {
+      "ID": 96,
+      "Event": "SpawnOneShotFFX",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 99,
+      "Event": "SpawnFFX_99",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 100,
+      "Event": "SpawnFFX_100",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 101,
+      "Event": "SpawnFFX_General",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        }
+      ]
+    },
+    {
+      "ID": 104,
+      "Event": "SpawnFFX_Unk104",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 108,
+      "Event": "SpawnFFX_108",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 109,
+      "Event": "SpawnFFX_109",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 110,
+      "Event": "SpawnFFX_110",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        }
+      ]
+    },
+    {
+      "ID": 112,
+      "Event": "SpawnFFX_ByFloor",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 114,
+      "Event": "SpawnFFX_GoodsAndMagic",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolySource",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 115,
+      "Event": "SpawnFFX_GoodsAndMagic2",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolySource",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 116,
+      "Event": "SpawnFFX_116",
+      "Fields": [
+        {
+          "Field": "FFXID_Plus_SomeShortFromMemory",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 118,
+      "Event": "SpawnFFX_Blade",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolySource",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyBladeBaseID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyBladeTipID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 119,
+      "Event": "SpawnFFX_Body_ForEventDuration",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk06",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RepeatType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 120,
+      "Event": "SpawnFFX_ChrType",
+      "Fields": [
+        {
+          "Field": "FFXID_MAIN",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_GreyGhost",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_WhiteGhost",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_BlackGhost",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 121,
+      "Event": "SpawnFFX_121",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk06",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk07",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 128,
+      "Event": "PlaySound_CenterBody",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        }
+      ]
+    },
+    {
+      "ID": 129,
+      "Event": "PlaySound_BySlot",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 130,
+      "Event": "PlaySound_ByDummyPoly_PlayerVoice",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 144,
+      "Event": "RumbleCam_Local",
+      "Fields": [
+        {
+          "Field": "RumbleCamID",
+          "Name": "",
+          "Description": "The CameraRumbleParam row to play."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "FalloffStart",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "FalloffEnd",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 145,
+      "Event": "RumbleCam_Global",
+      "Fields": [
+        {
+          "Field": "RumbleCamID",
+          "Name": "",
+          "Description": "The CameraRumbleParam row to play."
+        },
+        {
+          "Field": "Condition",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 192,
+      "Event": "DebugFadeOut",
+      "Fields": [
+        {
+          "Field": "FadeOut",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 193,
+      "Event": "SetOpacityKeyframe",
+      "Fields": [
+        {
+          "Field": "OpacityAtEventStart",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "OpacityAtEventEnd",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 224,
+      "Event": "SetTurnSpeed",
+      "Fields": [
+        {
+          "Field": "TurnSpeed",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 225,
+      "Event": "SetSPRegenRatePercent",
+      "Fields": [
+        {
+          "Field": "RegenRatePercent",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 226,
+      "Event": "SetKnockbackPercent",
+      "Fields": [
+        {
+          "Field": "KnockbackPercent",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 227,
+      "Event": "EventEzStateFlag<ESD_env301>",
+      "Fields": [
+        {
+          "Field": "EzStateFlagID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 228,
+      "Event": "RagdollReviveTime",
+      "Fields": [
+        {
+          "Field": "ReviveTimerExtra",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ReviveTimer",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 229,
+      "Event": "SpawnAISound",
+      "Fields": [
+        {
+          "Field": "AISoundID",
+          "Name": "",
+          "Description": "The AiSoundParam row of the sound that AI can hear."
+        }
+      ]
+    },
+    {
+      "ID": 230,
+      "Event": "SetMPRegenRatePercent",
+      "Fields": [
+        {
+          "Field": "RegenRatePercent",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 231,
+      "Event": "SendEzStateRequest",
+      "Fields": [
+        {
+          "Field": "EzStateRequestID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 232,
+      "Event": "AllowVerticalTorsoAim",
+      "Fields": [
+        {
+          "Field": "UpwardAngleLimit",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DownwardAngleLimit",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "UpwardAngleThreshold",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DownwardAngleThreshold",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 233,
+      "Event": "ChangeChrDrawMask",
+      "Fields": [
+        {
+          "Field": "Mask0",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask1",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask2",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask3",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask4",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask5",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask6",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask7",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 234,
+      "Event": "AddOffsetToNextAnimID",
+      "Fields": [
+        {
+          "Field": "Offset",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 235,
+      "Event": "Action235",
+      "Fields": [
+        {
+          "Field": "Mask0",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask1",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask2",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask3",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask4",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask5",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask6",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask7",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 236,
+      "Event": "RootMotionReduction",
+      "Fields": [
+        {
+          "Field": "ReductionAtEventStart",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ReductionAtEventEnd",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ReductionType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 300,
+      "Event": "ChrActionGradient",
+      "Fields": [
+        {
+          "Field": "OutputType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "InputType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "InputGradient",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 301,
+      "Event": "Event301",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 302,
+      "Event": "AddSpEffect_DragonForm",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        }
+      ]
+    },
+    {
+      "ID": 303,
+      "Event": "PlayAnimation",
+      "Fields": [
+        {
+          "Field": "AnimID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 304,
+      "Event": "ThrowAttackBehavior",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Index",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 305,
+      "Event": "AdditionalPoiseMult",
+      "Fields": [
+        {
+          "Field": "AdditionalMult",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 306,
+      "Event": "SetPhysicsDampen",
+      "Fields": [
+        {
+          "Field": "Dampening",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 307,
+      "Event": "PCBehavior",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "PCBehaviorType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 308,
+      "Event": "Action308",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 401,
+      "Event": "AddSpEffect_Multiplayer_401",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        }
+      ]
+    },
+    {
+      "ID": 500,
+      "Event": "IgnoreHitsPartsMask",
+      "Fields": [
+        {
+          "Field": "HitPartsMaskID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7000,
+      "Event": "NF_MoveTowardTarget_Old",
+      "Fields": [
+        {
+          "Field": "Speed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ZOffset",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7001,
+      "Event": "NF_Test_SetUpperBodyAnim",
+      "Fields": [
+        {
+          "Field": "AnimID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LayerIndex",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7002,
+      "Event": "NF_SpawnSfxEx",
+      "Fields": [
+        {
+          "Field": "SFX Function Type",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "TimerID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "UnknownSByte",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "UnknownFlag",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7003,
+      "Event": "[Unfinished]NF_PlaySoundEx",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RequiredSpEffectID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7004,
+      "Event": "[Unfinished]NF_SpawnEntityPlayingSpecificAnimation",
+      "Fields": [
+        {
+          "Field": "SpawnFromCharacter",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpawnDummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpawnOffsetX",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpawnOffsetY",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpawnOffsetZ",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "EntityIDRangeStart",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "EntityIDRangeEnd",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RequiredSpEffectID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7005,
+      "Event": "NF_AdvancedTracking",
+      "Fields": [
+        {
+          "Field": "Speed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Offset",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7006,
+      "Event": "NF_AdvancedTracking_Cos180",
+      "Fields": [
+        {
+          "Field": "Speed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Offset",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7007,
+      "Event": "NF_MoveRelative",
+      "Fields": [
+        {
+          "Field": "SpeedAtEventStart.X",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpeedAtEventStart.Y",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpeedAtEventStart.Z",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpeedAtEventEnd.X",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpeedAtEventEnd.Y",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpeedAtEventEnd.Z",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "MoveRelativeTo",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CancelIfNoTarget",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CurveType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7008,
+      "Event": "NF_ManipulateCamera",
+      "Fields": [
+        {
+          "Field": "CurveType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CamDistTarget",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CamVerticalOffset",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "FOV",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7009,
+      "Event": "NF_TempBreakLockonAndKeepTarget",
+      "Fields": []
+    },
+    {
+      "ID": 7010,
+      "Event": "NF_DebugSpeedGradient",
+      "Fields": [
+        {
+          "Field": "Speed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CurveType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7011,
+      "Event": "NF_Approach",
+      "Fields": [
+        {
+          "Field": "Speed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Dist",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Dampening",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Speed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Dist",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Dampening",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7012,
+      "Event": "NF_Teleport",
+      "Fields": [
+        {
+          "Field": "HorizontalAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "VerticalAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Distance",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Turn to face target",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Required SpEffect",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7013,
+      "Event": "NF_TEST_MoveTargetToDummyPoly",
+      "Fields": [
+        {
+          "Field": "SelfDummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "TargetDummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Speed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Dampening",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Match Rotation X",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Match Rotation Y",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Match Rotation Z",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk1B",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk1C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7014,
+      "Event": "NF_ForcePlayAnimation",
+      "Fields": [
+        {
+          "Field": "CharacterType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "AnimationID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Flags",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7015,
+      "Event": "NF_TEST_PlaySound",
+      "Fields": [
+        {
+          "Field": "SlotNo",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk14",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7016,
+      "Event": "NF_JumpingOntoRideMotionBlendZX",
+      "Fields": [
+        {
+          "Field": "Blend",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7017,
+      "Event": "[X]NF_PlayerRootMotionMultEx",
+      "Fields": [
+        {
+          "Field": "X",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Y",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Z",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7018,
+      "Event": "NF_JumpingOntoRideMotionBlendY",
+      "Fields": [
+        {
+          "Field": "Blend",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7019,
+      "Event": "NF_Action303_PlayAnimation_Ex",
+      "Fields": [
+        {
+          "Field": "CharacterType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "AnimationID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "AnimLayerType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Weight Maybe",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7020,
+      "Event": "NF_SetAnimLayerDirectly",
+      "Fields": [
+        {
+          "Field": "CharacterType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "AnimationID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "AnimLayerType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LockIntoAnim",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0D",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk11",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7021,
+      "Event": "NF_SetTurnSpeedGradient",
+      "Fields": [
+        {
+          "Field": "TurnSpeed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CurveType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7022,
+      "Event": "NF_BlendToLockedAtkAim",
+      "Fields": [
+        {
+          "Field": "CurveType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DontSetDisableRotationFlag",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "StickNotPushedHeadingOffset",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Reserved0x2",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Reserved0x3",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7023,
+      "Event": "NF_AddSpEffectFlag",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        },
+        {
+          "Field": "AddEveryFrameNotJustFirstFrame",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DoNotRemoveSpEffectAtEndOfEvent",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7024,
+      "Event": "NF_SetDeathStay",
+      "Fields": []
+    },
+    {
+      "ID": 7025,
+      "Event": "NF_LockRotation_ExceptIfDodgeCancel",
+      "Fields": []
+    },
+    {
+      "ID": 7026,
+      "Event": "NF_UpdateBloodlustDodgeRootMotionFlag",
+      "Fields": []
+    },
+    {
+      "ID": 7027,
+      "Event": "NF_ProperRootMotionMult",
+      "Fields": [
+        {
+          "Field": "Mult",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7028,
+      "Event": "NF_ScaleRootMotionToReachTarget",
+      "Fields": [
+        {
+          "Field": "OriginalDist",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BufferDistance",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "MaxDist",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7029,
+      "Event": "NF_SetTaeExtraAnim",
+      "Fields": [
+        {
+          "Field": "AnimID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Weight",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LerpS",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7030,
+      "Event": "NF_AdditiveBlendAttackAim",
+      "Fields": [
+        {
+          "Field": "Weight",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "AimUpAnimID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "AimDownAnimID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SelfAimReferenceY",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7031,
+      "Event": "NF_PlayDummyPolyFollowSound",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Lifetime",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7032,
+      "Event": "NF_SpeedGradient",
+      "Fields": [
+        {
+          "Field": "Speed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CurveType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7033,
+      "Event": "NF_CameraOverrideNew_Distance",
+      "Fields": [
+        {
+          "Field": "Distance",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CurveType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7034,
+      "Event": "NF_CameraOverrideNew_Fov",
+      "Fields": [
+        {
+          "Field": "Fov",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CurveType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7035,
+      "Event": "NF_CameraOverrideNew_Height",
+      "Fields": [
+        {
+          "Field": "Height",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CurveType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7036,
+      "Event": "NF_SwapUpcomingAnimID",
+      "Fields": [
+        {
+          "Field": "From",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "To",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7037,
+      "Event": "NF_StopDummyPolyFollowSoundByID",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        }
+      ]
+    },
+    {
+      "ID": 7038,
+      "Event": "NF_StopAllDummyPolyFollowSounds",
+      "Fields": []
+    },
+    {
+      "ID": 7039,
+      "Event": "NF_RemoveSpEffect",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        },
+        {
+          "Field": "Continuous",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7040,
+      "Event": "NF_AllowSuperCancel",
+      "Fields": [
+        {
+          "Field": "SuperCancelTypeID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7041,
+      "Event": "NF_StartBreathingSound",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Lifetime",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RepeatIntervalRandRange",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BreathingInstanceID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7042,
+      "Event": "NF_PauseBreathingSound",
+      "Fields": [
+        {
+          "Field": "BreathingInstanceID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7043,
+      "Event": "NF_StopBreathingSound",
+      "Fields": [
+        {
+          "Field": "BreathingInstanceID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7044,
+      "Event": "NF_LocalPlayer_SpeedUpCameraTracking",
+      "Fields": [
+        {
+          "Field": "Blend",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CurveType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7045,
+      "Event": "NF_SetTaeExtraAnim_Keep",
+      "Fields": [
+        {
+          "Field": "AnimID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Weight",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LerpS",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7046,
+      "Event": "NF_HardcodedArklusLaserMotion",
+      "Fields": [
+        {
+          "Field": "Blend",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7047,
+      "Event": "NF_SetAnimLayerWeight",
+      "Fields": [
+        {
+          "Field": "AnimLayerType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Blend",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7048,
+      "Event": "NF_PlayerDodgeStep",
+      "Fields": []
+    },
+    {
+      "ID": 7049,
+      "Event": "NF_HandleUmbrusEffigyUse",
+      "Fields": []
+    },
+    {
+      "ID": 7050,
+      "Event": "NF_EndAnimationLayer",
+      "Fields": [
+        {
+          "Field": "AnimLayerType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7051,
+      "Event": "NF_Approach_RelativeDir",
+      "Fields": [
+        {
+          "Field": "Speed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Dist",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Dampening",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Speed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Dist",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Dampening",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 7052,
+      "Event": "NF_PlayDummyPolyFollowSoundEx",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LifetimeMin",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LifetimeMax",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ExInfoID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CooldownMin",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CooldownMax",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RepeatDuringAction",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "StopAllSoundsWhenActionEnds",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     }
   ]
 }

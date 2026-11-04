@@ -1,55 +1,468 @@
 {
-  "Fields": [
+  "Events": [
     {
-      "Field": "SpEffectID",
-      "IsPrefix": true,
-      "ParamRef": "SpEffectParam"
+      "ID": 66,
+      "Event": "AddSpEffect_Multiplayer",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
     },
     {
-      "Field": "BulletID",
-      "ParamRef": "Bullet"
+      "ID": 67,
+      "Event": "AddSpEffect",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
     },
     {
-      "Field": "DecalParamID",
-      "ParamRef": "DecalParam"
+      "ID": 95,
+      "Event": "[DS3]SpawnOneShotFFX_Ember",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "LockCamParamID",
-      "ParamRef": "LockCamParam"
+      "ID": 96,
+      "Event": "SpawnOneShotFFX",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "ToughnessParamID",
-      "ParamRef": "ToughnessParam"
+      "ID": 104,
+      "Event": "[DS3]SpawnFFX_104",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "AISoundID",
-      "ParamRef": "AiSoundParam"
+      "ID": 110,
+      "Event": "SpawnFFX_General",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "RumbleCamID",
-      "ParamRef": "CameraRumbleParam"
+      "ID": 112,
+      "Event": "SpawnFFX_FloorDetermined",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "FFXID",
-      "IsPrefix": true,
-      "Alias": "Particles"
+      "ID": 114,
+      "Event": "SpawnFFX_GoodsAndMagic",
+      "Fields": [
+        {
+          "Field": "FFXID_Deprecated",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "SoundID",
-      "Alias": "Sounds"
+      "ID": 115,
+      "Event": "SpawnFFX_GoodsAndMagicEX",
+      "Fields": [
+        {
+          "Field": "FFXID_Deprecated",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "OverrideSoundID",
-      "Alias": "Sounds"
+      "ID": 116,
+      "Event": "SpawnFFX_Throw",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "UseChrSoundEmitter",
-      "IsBool": true
+      "ID": 118,
+      "Event": "SpawnFFX_Blade",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
     },
     {
-      "Field": "Unused",
-      "IsPrefix": true,
-      "Obsolete": true
+      "ID": 119,
+      "Event": "SpawnFFX_Arrow",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
+    },
+    {
+      "ID": 120,
+      "Event": "SpawnFFX_ChrType",
+      "Fields": [
+        {
+          "Field": "FFXID_ForAll",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForHost",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam1_FurledFinger",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam2_Duelist",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam20001_FurledFinger",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam20002_FurledFinger",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam30001_Duelist",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam30002_Duelist",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam10001_Hunter",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam90001_Hunter",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam60002_Hunter",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "FFXID_ForRoleParam70002_BloodyFinger",
+          "Alias": "Particles"
+        }
+      ]
+    },
+    {
+      "ID": 121,
+      "Event": "[DS3]SpawnFFX_121",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        }
+      ]
+    },
+    {
+      "ID": 122,
+      "Event": "[DS3]SpawnFFX_BySpEffect1",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Alias": "Particles"
+        },
+        {
+          "Field": "SpEffectID",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 123,
+      "Event": "[DS3]SpawnFFX_BySpEffect2",
+      "Fields": [
+        {
+          "Field": "SpEffectId",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 128,
+      "Event": "Wwise_PlaySound_CenterBody",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        }
+      ]
+    },
+    {
+      "ID": 129,
+      "Event": "Wwise_PlaySound_BySlot",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        }
+      ]
+    },
+    {
+      "ID": 132,
+      "Event": "[DS3]PlaySound_Weapon",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        }
+      ]
+    },
+    {
+      "ID": 133,
+      "Event": "Wwise_PlaySound_Unk133",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        }
+      ]
+    },
+    {
+      "ID": 134,
+      "Event": "Wwise_PlaySound_Unk134",
+      "Fields": [
+        {
+          "Field": "SoundID",
+          "Alias": "Sounds"
+        }
+      ]
+    },
+    {
+      "ID": 137,
+      "Event": "[DS3]DecalParamID_CenterBody",
+      "Fields": [
+        {
+          "Field": "DecalParamID",
+          "ParamRef": "DecalParam"
+        }
+      ]
+    },
+    {
+      "ID": 138,
+      "Event": "DecalParamID_DummyPoly",
+      "Fields": [
+        {
+          "Field": "DecalParamID",
+          "ParamRef": "DecalParam"
+        }
+      ]
+    },
+    {
+      "ID": 139,
+      "Event": "DecalParamID_Unk",
+      "Fields": [
+        {
+          "Field": "DecalParamID",
+          "ParamRef": "DecalParam"
+        }
+      ]
+    },
+    {
+      "ID": 144,
+      "Event": "RumbleCam_Local",
+      "Fields": [
+        {
+          "Field": "RumbleCamID",
+          "ParamRef": "CameraRumbleParam"
+        }
+      ]
+    },
+    {
+      "ID": 145,
+      "Event": "RumbleCam_Global",
+      "Fields": [
+        {
+          "Field": "RumbleCamID",
+          "ParamRef": "CameraRumbleParam"
+        }
+      ]
+    },
+    {
+      "ID": 150,
+      "Event": "SetLockCamParam_Self",
+      "Fields": [
+        {
+          "Field": "LockCamParamID",
+          "ParamRef": "LockCamParam"
+        }
+      ]
+    },
+    {
+      "ID": 155,
+      "Event": "SetLockCamParam_Target",
+      "Fields": [
+        {
+          "Field": "LockCamParamID",
+          "ParamRef": "LockCamParam"
+        }
+      ]
+    },
+    {
+      "ID": 229,
+      "Event": "SpawnAISoundAlternative",
+      "Fields": [
+        {
+          "Field": "AISoundID",
+          "ParamRef": "AiSoundParam"
+        }
+      ]
+    },
+    {
+      "ID": 237,
+      "Event": "SpawnAISound",
+      "Fields": [
+        {
+          "Field": "AISoundID",
+          "ParamRef": "AiSoundParam"
+        }
+      ]
+    },
+    {
+      "ID": 302,
+      "Event": "AddSpEffect_DragonForm",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 331,
+      "Event": "AddSpEffect_WeaponArts",
+      "Fields": [
+        {
+          "Field": "SpEffectID_EnoughFP",
+          "ParamRef": "SpEffectParam"
+        },
+        {
+          "Field": "SpEffectID_NotEnoughFP",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 401,
+      "Event": "AddSpEffect_Multiplayer_401",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 607,
+      "Event": "[DS3]AdditiveAnimPlaybackUnk_607",
+      "Fields": [
+        {
+          "Field": "SpEffectID_Exist",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 609,
+      "Event": "AdditiveAnimPlaybackUnk_609",
+      "Fields": [
+        {
+          "Field": "SpEffectID_IsExist",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 785,
+      "Event": "[DS3]SpawnChrFinderBullet",
+      "Fields": [
+        {
+          "Field": "BulletID",
+          "ParamRef": "Bullet"
+        }
+      ]
+    },
+    {
+      "ID": 795,
+      "Event": "DS3Poise",
+      "Fields": [
+        {
+          "Field": "ToughnessParamID",
+          "ParamRef": "ToughnessParam"
+        }
+      ]
+    },
+    {
+      "ID": 1008,
+      "Event": "InvokeHeroMixcraft",
+      "Fields": [
+        {
+          "Field": "SpEffectID_Magic",
+          "ParamRef": "SpEffectParam"
+        },
+        {
+          "Field": "SpEffectID_Fire",
+          "ParamRef": "SpEffectParam"
+        },
+        {
+          "Field": "SpEffectID_Lightning",
+          "ParamRef": "SpEffectParam"
+        },
+        {
+          "Field": "SpEffectID_Holy",
+          "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 10137,
+      "Event": "DebugDecal1",
+      "Fields": [
+        {
+          "Field": "DecalParamId",
+          "ParamRef": "DecalParam"
+        }
+      ]
+    },
+    {
+      "ID": 10138,
+      "Event": "DebugDecal2",
+      "Fields": [
+        {
+          "Field": "DecalParamId",
+          "ParamRef": "DecalParam"
+        }
+      ]
     }
   ]
 }

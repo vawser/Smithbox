@@ -20,8 +20,9 @@ public class TimeActData : IDisposable
     /// The metadata of the game, laid out as the param metadata is:
     /// TAE/{Game}/Defs/{Def}.xml holds the event layouts, with internal names,
     /// TAE/{Game}/Enums/{Key}.json the enums the defs name,
-    /// TAE/{Game}/Meta/{Def}.json what the fields refer to and how they are edited,
-    /// and TAE/{Game}/Annotations/{Language}/{Def}.json the annotated names of the fields.
+    /// TAE/{Game}/Meta/{Def}.json what the fields of each event refer to and how they are edited,
+    /// and TAE/{Game}/Annotations/{Language}/{Def}.json the annotated names of the fields of each event.
+    /// Meta and annotations are keyed by event ID and the internal name of the field.
     /// </summary>
     private class TimeActDef
     {
@@ -29,6 +30,32 @@ public class TimeActData : IDisposable
         public TAE.Template.BankTemplate Template;
         public TimeActMeta Meta = new();
         public TimeActAnnotations Annotations = new();
+
+        // Keyed by event type and the internal name of the parameter
+        public Dictionary<(int EventType, string Field), TimeActField> MetaFields = new();
+        public Dictionary<(int EventType, string Field), TimeActFieldAnnotation> AnnotationFields = new();
+
+        public void BuildIndex()
+        {
+            MetaFields.Clear();
+            AnnotationFields.Clear();
+
+            foreach (var ev in Meta.Events)
+            {
+                foreach (var field in ev.Fields)
+                {
+                    MetaFields.TryAdd((ev.ID, field.Field), field);
+                }
+            }
+
+            foreach (var ev in Annotations.Events)
+            {
+                foreach (var field in ev.Fields)
+                {
+                    AnnotationFields.TryAdd((ev.ID, field.Field), field);
+                }
+            }
+        }
     }
 
     // Keyed by def name. A def whose template failed to load has a null template.
@@ -39,10 +66,6 @@ public class TimeActData : IDisposable
 
     // Shared by the defs of the game. Read on first use.
     private Dictionary<string, ParamEnumEntry> Enums;
-
-    // Parameters are looked up every frame while they are on display
-    private Dictionary<(TAE.Template.EventTemplate Event, string Name), TimeActField> FieldMetaCache = new();
-    private Dictionary<(TAE.Template.EventTemplate Event, string Name), TimeActFieldAnnotation> FieldAnnotationCache = new();
 
     public TimeActData(ProjectEntry project)
     {
@@ -75,21 +98,10 @@ public class TimeActData : IDisposable
     /// </summary>
     public TimeActField GetFieldMeta(TAE.Event ev, string parameterName)
     {
-        var eventTemplate = ev?.Template;
-
-        if (eventTemplate == null)
+        if (ev?.Template is not { } eventTemplate || !EventDefs.TryGetValue(eventTemplate, out var def))
             return null;
 
-        if (!FieldMetaCache.TryGetValue((eventTemplate, parameterName), out var field))
-        {
-            field = EventDefs.TryGetValue(eventTemplate, out var def)
-                ? FindField(def.Meta.Fields, ev.Type, parameterName)
-                : null;
-
-            FieldMetaCache[(eventTemplate, parameterName)] = field;
-        }
-
-        return field;
+        return def.MetaFields.GetValueOrDefault((ev.Type, parameterName));
     }
 
     /// <summary>
@@ -97,39 +109,10 @@ public class TimeActData : IDisposable
     /// </summary>
     public TimeActFieldAnnotation GetFieldAnnotation(TAE.Event ev, string parameterName)
     {
-        var eventTemplate = ev?.Template;
-
-        if (eventTemplate == null)
+        if (ev?.Template is not { } eventTemplate || !EventDefs.TryGetValue(eventTemplate, out var def))
             return null;
 
-        if (!FieldAnnotationCache.TryGetValue((eventTemplate, parameterName), out var field))
-        {
-            field = EventDefs.TryGetValue(eventTemplate, out var def)
-                ? FindField(def.Annotations.Fields, ev.Type, parameterName)
-                : null;
-
-            FieldAnnotationCache[(eventTemplate, parameterName)] = field;
-        }
-
-        return field;
-    }
-
-    /// <summary>
-    /// Entries limited to the event type go before those for every event, and within each,
-    /// an exact match goes before a prefix
-    /// </summary>
-    private static T FindField<T>(List<T> fields, int eventType, string parameterName) where T : class, ITimeActFieldMatch
-    {
-        bool IsExact(T e) => e.Field.Equals(parameterName, StringComparison.OrdinalIgnoreCase);
-        bool IsPrefix(T e) => e.IsPrefix && parameterName.StartsWith(e.Field, StringComparison.OrdinalIgnoreCase);
-
-        bool IsForType(T e) => e.EventTypes?.Contains(eventType) == true;
-        bool IsForAll(T e) => e.EventTypes == null || e.EventTypes.Count == 0;
-
-        return fields.FirstOrDefault(e => IsForType(e) && IsExact(e))
-            ?? fields.FirstOrDefault(e => IsForType(e) && IsPrefix(e))
-            ?? fields.FirstOrDefault(e => IsForAll(e) && IsExact(e))
-            ?? fields.FirstOrDefault(e => IsForAll(e) && IsPrefix(e));
+        return def.AnnotationFields.GetValueOrDefault((ev.Type, parameterName));
     }
 
     /// <summary>
@@ -262,6 +245,8 @@ public class TimeActData : IDisposable
                 Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_Annotations", annotationPath), e);
             }
         }
+
+        def.BuildIndex();
 
         return def;
     }

@@ -1,67 +1,917 @@
 {
-  "Fields": [
+  "Events": [
     {
-      "Field": "SpEffectID",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The SpEffectParam row to apply."
+      "ID": 0,
+      "Event": "FadeScreenInFromColor",
+      "Fields": [
+        {
+          "Field": "Red",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Green",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Blue",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "BulletID",
-      "Name": "",
-      "Description": "The Bullet row to fire."
+      "ID": 1,
+      "Event": "FadeScreenOutToColor",
+      "Fields": [
+        {
+          "Field": "Red",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Green",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Blue",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "DecalParamID",
-      "Name": "",
-      "Description": "The DecalParam row to place."
+      "ID": 20,
+      "Event": "Remo20",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "LockCamParamID",
-      "Name": "",
-      "Description": "The LockCamParam row to use while locked on."
+      "ID": 24,
+      "Event": "Remo24",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "ToughnessParamID",
-      "Name": "",
-      "Description": "The ToughnessParam row to use."
+      "ID": 96,
+      "Event": "SpawnOneShotFFX",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "AISoundID",
-      "Name": "",
-      "Description": "The AiSoundParam row of the sound that AI can hear."
+      "ID": 102,
+      "Event": "Remo102",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "RumbleCamID",
-      "Name": "",
-      "Description": "The CameraRumbleParam row to play."
+      "ID": 128,
+      "Event": "PlaySound_Remo",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "FFXID",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The ID of the visual effect."
+      "ID": 130,
+      "Event": "PlaySound_Remo_PlayerVoice",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "SoundID",
-      "Name": "",
-      "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+      "ID": 160,
+      "Event": "RemoSetOpacityKeyframe",
+      "Fields": [
+        {
+          "Field": "OpacityByteAtEventStart",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "OpacityByteAtEventEnd",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "OverrideSoundID",
-      "Name": "",
-      "Description": "Played in place of SoundID when it can be found. Its OverrideSoundType decides which bank it comes from. Only read for newer time acts."
+      "ID": 161,
+      "Event": "Remo161",
+      "Fields": []
     },
     {
-      "Field": "UseChrSoundEmitter",
-      "Name": "",
-      "Description": "Plays the sound through the character's own emitter, rather than the global one."
+      "ID": 162,
+      "Event": "Remo162",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "Unused",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The game doesn't read this field."
+      "ID": 176,
+      "Event": "Remo176",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk06",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0A",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk10",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk14",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk18",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk1C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 180,
+      "Event": "Remo180",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 183,
+      "Event": "Remo183",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 196,
+      "Event": "Remo196",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 197,
+      "Event": "Remo197",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 198,
+      "Event": "Remo198",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 199,
+      "Event": "Remo199",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 200,
+      "Event": "Remo200",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 208,
+      "Event": "Remo208",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk06",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0A",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0E",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk10",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk12",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk14",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk16",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk18",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk1C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 209,
+      "Event": "Remo209",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk10",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk14",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk18",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk1C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 210,
+      "Event": "Remo210",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk06",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0A",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk10",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk14",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk18",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk1C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 217,
+      "Event": "Remo217",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 219,
+      "Event": "Remo219",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 224,
+      "Event": "Remo224",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 225,
+      "Event": "Remo225",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 232,
+      "Event": "Remo232",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 233,
+      "Event": "Remo233",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 234,
+      "Event": "Remo234",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     }
   ]
 }

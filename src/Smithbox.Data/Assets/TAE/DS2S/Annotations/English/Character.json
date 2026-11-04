@@ -1,67 +1,126 @@
 {
-  "Fields": [
+  "Events": [
     {
-      "Field": "SpEffectID",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The SpEffectParam row to apply."
+      "ID": 201,
+      "Event": "Event201",
+      "Fields": [
+        {
+          "Field": "ID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk10",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "BulletID",
-      "Name": "",
-      "Description": "The Bullet row to fire."
+      "ID": 2200,
+      "Event": "Event2200",
+      "Fields": [
+        {
+          "Field": "ID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "DecalParamID",
-      "Name": "",
-      "Description": "The DecalParam row to place."
+      "ID": 2202,
+      "Event": "ShootBullet",
+      "Fields": [
+        {
+          "Field": "BulletID",
+          "Name": "",
+          "Description": "The Bullet row to fire."
+        }
+      ]
     },
     {
-      "Field": "LockCamParamID",
-      "Name": "",
-      "Description": "The LockCamParam row to use while locked on."
+      "ID": 2301,
+      "Event": "Event2301",
+      "Fields": [
+        {
+          "Field": "ID1",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ID2",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "ToughnessParamID",
-      "Name": "",
-      "Description": "The ToughnessParam row to use."
+      "ID": 110210,
+      "Event": "Event110210",
+      "Fields": []
     },
     {
-      "Field": "AISoundID",
-      "Name": "",
-      "Description": "The AiSoundParam row of the sound that AI can hear."
+      "ID": 111000,
+      "Event": "Event111000",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "RumbleCamID",
-      "Name": "",
-      "Description": "The CameraRumbleParam row to play."
+      "ID": 111400,
+      "Event": "Event111400",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "FFXID",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The ID of the visual effect."
+      "ID": 120200,
+      "Event": "Event120200",
+      "Fields": []
     },
     {
-      "Field": "SoundID",
-      "Name": "",
-      "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+      "ID": 270001,
+      "Event": "Event270001",
+      "Fields": []
     },
     {
-      "Field": "OverrideSoundID",
-      "Name": "",
-      "Description": "Played in place of SoundID when it can be found. Its OverrideSoundType decides which bank it comes from. Only read for newer time acts."
-    },
-    {
-      "Field": "UseChrSoundEmitter",
-      "Name": "",
-      "Description": "Plays the sound through the character's own emitter, rather than the global one."
-    },
-    {
-      "Field": "Unused",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The game doesn't read this field."
+      "ID": 280100,
+      "Event": "SetChrTurnRate?",
+      "Fields": [
+        {
+          "Field": "TurnRate?",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     }
   ]
 }

@@ -16,6 +16,9 @@ using System.Xml.Linq;
 //
 // Usage: TaeMetaSplit <Assets/TAE folder>
 
+if (args.Length > 0 && args[0] == "per-event")
+    return PerEvent.Run(args.Length > 1 ? args[1] : @"..\..\src\Smithbox.Data\Assets\TAE");
+
 var root = args.Length > 0 ? args[0] : @"..\..\src\Smithbox.Data\Assets\TAE";
 root = Path.GetFullPath(root);
 

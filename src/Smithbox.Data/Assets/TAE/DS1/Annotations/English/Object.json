@@ -1,67 +1,149 @@
 {
-  "Fields": [
+  "Events": [
     {
-      "Field": "SpEffectID",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The SpEffectParam row to apply."
+      "ID": 0,
+      "Event": "ChrActionFlag",
+      "Fields": [
+        {
+          "Field": "FlagType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgA",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgB",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgC",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgD",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgE",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "BulletID",
-      "Name": "",
-      "Description": "The Bullet row to fire."
+      "ID": 3,
+      "Event": "NULL",
+      "Fields": []
     },
     {
-      "Field": "DecalParamID",
-      "Name": "",
-      "Description": "The DecalParam row to place."
+      "ID": 96,
+      "Event": "InvokeOneShotFFX_0x1406711F0",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsIgnoreDummyPolyAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsFollowDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsRestrictToDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ExtraSpawnCondition",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "LockCamParamID",
-      "Name": "",
-      "Description": "The LockCamParam row to use while locked on."
+      "ID": 128,
+      "Event": "PlaySound_General",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        }
+      ]
     },
     {
-      "Field": "ToughnessParamID",
-      "Name": "",
-      "Description": "The ToughnessParam row to use."
+      "ID": 129,
+      "Event": "PlaySound_Extra",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "TimerID (probably)",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "AISoundID",
-      "Name": "",
-      "Description": "The AiSoundParam row of the sound that AI can hear."
+      "ID": 193,
+      "Event": "SetOpacityKeyframe",
+      "Fields": [
+        {
+          "Field": "GhostVal1",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "GhostVal2",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "RumbleCamID",
-      "Name": "",
-      "Description": "The CameraRumbleParam row to play."
-    },
-    {
-      "Field": "FFXID",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The ID of the visual effect."
-    },
-    {
-      "Field": "SoundID",
-      "Name": "",
-      "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
-    },
-    {
-      "Field": "OverrideSoundID",
-      "Name": "",
-      "Description": "Played in place of SoundID when it can be found. Its OverrideSoundType decides which bank it comes from. Only read for newer time acts."
-    },
-    {
-      "Field": "UseChrSoundEmitter",
-      "Name": "",
-      "Description": "Plays the sound through the character's own emitter, rather than the global one."
-    },
-    {
-      "Field": "Unused",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The game doesn't read this field."
+      "ID": 400,
+      "Event": "0x140655DD0",
+      "Fields": []
     }
   ]
 }

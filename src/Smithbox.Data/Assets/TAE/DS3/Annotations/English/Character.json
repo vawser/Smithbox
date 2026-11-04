@@ -1,67 +1,3447 @@
 {
-  "Fields": [
+  "Events": [
     {
-      "Field": "SpEffectID",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The SpEffectParam row to apply."
+      "ID": 0,
+      "Event": "ChrActionFlag",
+      "Fields": [
+        {
+          "Field": "FlagType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgA",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgB",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgC",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArgD",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "StateInfo",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "BulletID",
-      "Name": "",
-      "Description": "The Bullet row to fire."
+      "ID": 1,
+      "Event": "AttackBehavior",
+      "Fields": [
+        {
+          "Field": "AttackType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "AttackIndex",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DirectionType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0D",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "StateInfo",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "DecalParamID",
-      "Name": "",
-      "Description": "The DecalParam row to place."
+      "ID": 2,
+      "Event": "BulletBehavior",
+      "Fields": [
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "AttachmentType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Enable",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "StateInfo",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Offset",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "LockCamParamID",
-      "Name": "",
-      "Description": "The LockCamParam row to use while locked on."
+      "ID": 5,
+      "Event": "CommonBehavior",
+      "Fields": [
+        {
+          "Field": "AttackIndex (0-8)",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "ToughnessParamID",
-      "Name": "",
-      "Description": "The ToughnessParam row to use."
+      "ID": 9,
+      "Event": "Event9",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "AISoundID",
-      "Name": "",
-      "Description": "The AiSoundParam row of the sound that AI can hear."
+      "ID": 16,
+      "Event": "Blend",
+      "Fields": []
     },
     {
-      "Field": "RumbleCamID",
-      "Name": "",
-      "Description": "The CameraRumbleParam row to play."
+      "ID": 17,
+      "Event": "Event17",
+      "Fields": []
     },
     {
-      "Field": "FFXID",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The ID of the visual effect."
+      "ID": 24,
+      "Event": "AnimationQueue",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "SoundID",
-      "Name": "",
-      "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+      "ID": 32,
+      "Event": "SetWeaponStyle",
+      "Fields": [
+        {
+          "Field": "WeaponStyle",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "OverrideSoundID",
-      "Name": "",
-      "Description": "Played in place of SoundID when it can be found. Its OverrideSoundType decides which bank it comes from. Only read for newer time acts."
+      "ID": 33,
+      "Event": "SwitchWeapon",
+      "Fields": [
+        {
+          "Field": "WeaponSlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "UseChrSoundEmitter",
-      "Name": "",
-      "Description": "Plays the sound through the character's own emitter, rather than the global one."
+      "ID": 34,
+      "Event": "UnequipCrossbowBolt",
+      "Fields": [
+        {
+          "Field": "HandType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     },
     {
-      "Field": "Unused",
-      "IsPrefix": true,
-      "Name": "",
-      "Description": "The game doesn't read this field."
+      "ID": 35,
+      "Event": "EquipCrossbowBolt",
+      "Fields": [
+        {
+          "Field": "HandType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 64,
+      "Event": "CastHighlightedMagic",
+      "Fields": [
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Is???",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk05",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ChrBulletSharedHitSlot",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RefType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Is!??",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Is!!?",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0B",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 65,
+      "Event": "ConsumeCurrentGoods",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "HandType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DirectionChanger",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ChrBulletSharedHitSlot",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Is???",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 66,
+      "Event": "AddSpEffect_Multiplayer",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        }
+      ]
+    },
+    {
+      "ID": 67,
+      "Event": "AddSpEffect",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        }
+      ]
+    },
+    {
+      "ID": 95,
+      "Event": "SpawnOneShotFFX_Ember",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsIgnoreDummyPolyAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsFollowDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsRestrictToDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ExtraSpawnCondition",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 96,
+      "Event": "SpawnOneShotFFX",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsIgnoreDummyPolyAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsFollowDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsRestrictToDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ExtraSpawnCondition",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 99,
+      "Event": "SpawnRepeatingFFX",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 100,
+      "Event": "SpawnFFX_100_BB",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 101,
+      "Event": "SpawnFFX_General_BB",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        }
+      ]
+    },
+    {
+      "ID": 110,
+      "Event": "SpawnFFX_General",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        }
+      ]
+    },
+    {
+      "ID": 112,
+      "Event": "SpawnFFX_FloorDetermined",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk06",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 113,
+      "Event": "FootSfxOnLanding",
+      "Fields": []
+    },
+    {
+      "ID": 114,
+      "Event": "SpawnFFX_GoodsAndMagic",
+      "Fields": [
+        {
+          "Field": "FFXID_Deprecated",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolySource",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsIgnoreDummyPolyAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ParamType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SFXIndexID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsFollowDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsRestrictToDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "TimerType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 115,
+      "Event": "SpawnFFX_GoodsAndMagicEX",
+      "Fields": [
+        {
+          "Field": "FFXID_Deprecated",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolySource",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsIgnoreDummyPolyAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ParamType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SFXIndexID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsFollowDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsRestrictToDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "TimerType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 116,
+      "Event": "SpawnFFX_Throw",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RepeatType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsRepeat",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0D",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0E",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0F",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 117,
+      "Event": "SpawnFFX_ThrowDirection",
+      "Fields": [
+        {
+          "Field": "ThrowDirectionSFXIndex",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsIgnoreDummyPolyAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsFollowDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsRestrictToDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ExtraSpawnCondition",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 118,
+      "Event": "SpawnFFX_Blade",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolySource",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyBladeBaseID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyBladeTipID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 119,
+      "Event": "SpawnFFX_Body_ForEventDuration",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RepeatType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsRepeat",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 120,
+      "Event": "SpawnFFX_ChrType",
+      "Fields": [
+        {
+          "Field": "FFXID_MAIN",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_GreyGhost",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_WhiteGhost",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_BlackGhost",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_WhiteGhost_Sun",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_BlackGhost_Sun",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_WhiteGhost_Berserker",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_BlackGhost_Berserker",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_WhiteGhost_DarkmoonAlter",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_WhiteGhost_Darkmoon",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_FarronWolf",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "FFXID_Aldrich",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsRepeat",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 121,
+      "Event": "SpawnFFX_121",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk06",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk07",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 122,
+      "Event": "SpawnFFX_BySpEffect1",
+      "Fields": [
+        {
+          "Field": "FFXID",
+          "Name": "",
+          "Description": "The ID of the visual effect."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk06",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsEnable",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 123,
+      "Event": "SpawnFFX_BySpEffect2",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk09",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpEffectId",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0D",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0E",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 128,
+      "Event": "PlaySound_CenterBody",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        }
+      ]
+    },
+    {
+      "ID": 129,
+      "Event": "PlaySound_BySlot",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "StateInfo",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 130,
+      "Event": "PlaySound_ByDummyPoly_PlayerVoice",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 131,
+      "Event": "PlaySound_ByDummypoly",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 132,
+      "Event": "PlaySound_Weapon",
+      "Fields": [
+        {
+          "Field": "SoundType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SoundID",
+          "Name": "",
+          "Description": "The ID of the sound. Its SoundType decides which bank it comes from."
+        }
+      ]
+    },
+    {
+      "ID": 137,
+      "Event": "DecalParamID_CenterBody",
+      "Fields": [
+        {
+          "Field": "DecalParamID",
+          "Name": "",
+          "Description": "The DecalParam row to place."
+        }
+      ]
+    },
+    {
+      "ID": 138,
+      "Event": "DecalParamID_DummyPoly",
+      "Fields": [
+        {
+          "Field": "DecalParamID",
+          "Name": "",
+          "Description": "The DecalParam row to place."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 144,
+      "Event": "RumbleCam_Local",
+      "Fields": [
+        {
+          "Field": "RumbleCamID",
+          "Name": "",
+          "Description": "The CameraRumbleParam row to play."
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "FalloffStart",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "FalloffEnd",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 145,
+      "Event": "RumbleCam_Global",
+      "Fields": [
+        {
+          "Field": "RumbleCamID",
+          "Name": "",
+          "Description": "The CameraRumbleParam row to play."
+        },
+        {
+          "Field": "Condition",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 150,
+      "Event": "SetLockCamParam",
+      "Fields": [
+        {
+          "Field": "LockCamParamID",
+          "Name": "",
+          "Description": "The LockCamParam row to use while locked on."
+        }
+      ]
+    },
+    {
+      "ID": 151,
+      "Event": "SetLockCamParam_Boss",
+      "Fields": [
+        {
+          "Field": "LockCamParamID",
+          "Name": "",
+          "Description": "The LockCamParam row to use while locked on."
+        }
+      ]
+    },
+    {
+      "ID": 160,
+      "Event": "SekiroCode4",
+      "Fields": []
+    },
+    {
+      "ID": 161,
+      "Event": "DecalOnLanding",
+      "Fields": []
+    },
+    {
+      "ID": 192,
+      "Event": "DebugFadeOut",
+      "Fields": [
+        {
+          "Field": "FadeOut",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 193,
+      "Event": "SetOpacityKeyframe",
+      "Fields": [
+        {
+          "Field": "OpacityAtEventStart",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "OpacityAtEventEnd",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 194,
+      "Event": "WindState?",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "StringIndex",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk06",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 195,
+      "Event": "EnableBlurFeedback",
+      "Fields": []
+    },
+    {
+      "ID": 196,
+      "Event": "DebugStringPrint_C_ARSN_BumpBlendDecal",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk10",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk14",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk18",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 197,
+      "Event": "FadeOut",
+      "Fields": [
+        {
+          "Field": "GhostMain",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "GhostSub",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 224,
+      "Event": "SetTurnSpeed",
+      "Fields": [
+        {
+          "Field": "TurnSpeed",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsLockOnCheck",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 225,
+      "Event": "SetSPRegenRatePercent",
+      "Fields": [
+        {
+          "Field": "RegenRatePercent",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 226,
+      "Event": "SetKnockbackPercent",
+      "Fields": [
+        {
+          "Field": "KnockbackPercent",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 227,
+      "Event": "EventEzStateFlag<HKS_env301>",
+      "Fields": [
+        {
+          "Field": "EzStateFlagID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 228,
+      "Event": "RagdollReviveTime",
+      "Fields": [
+        {
+          "Field": "ReviveTimerExtra",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ReviveTimer",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 229,
+      "Event": "SpawnAISound",
+      "Fields": [
+        {
+          "Field": "AISoundID",
+          "Name": "",
+          "Description": "The AiSoundParam row of the sound that AI can hear."
+        }
+      ]
+    },
+    {
+      "ID": 230,
+      "Event": "SetFPRegenRatePercent",
+      "Fields": [
+        {
+          "Field": "RegenRatePercent",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 231,
+      "Event": "SendEzStateRequest",
+      "Fields": [
+        {
+          "Field": "EzStateRequestID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 232,
+      "Event": "AllowVerticalTorsoAim",
+      "Fields": [
+        {
+          "Field": "UpwardAngleLimit",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DownwardAngleLimit",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "UpwardAngleThreshold",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DownwardAngleThreshold",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 233,
+      "Event": "ChangeChrDrawMask",
+      "Fields": [
+        {
+          "Field": "Mask0",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask1",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask2",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask3",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask4",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask5",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask6",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask7",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask8",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask9",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask10",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask11",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask12",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask13",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask14",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask15",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask16",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask17",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask18",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask19",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask20",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask21",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask22",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask23",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask24",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask25",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask26",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask27",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask28",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask29",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask30",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask31",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 234,
+      "Event": "AddOffsetToNextAnimID",
+      "Fields": [
+        {
+          "Field": "Offset",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 235,
+      "Event": "Event235",
+      "Fields": [
+        {
+          "Field": "Mask0",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask1",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask2",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask3",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask4",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask5",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask6",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask7",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask8",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask9",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask10",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask11",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask12",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask13",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask14",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask15",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask16",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask17",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask18",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask19",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask20",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask21",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask22",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask23",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask24",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask25",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask26",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask27",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask28",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask29",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask30",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask31",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 236,
+      "Event": "RootMotionReduction",
+      "Fields": [
+        {
+          "Field": "ReductionAtEventStart",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ReductionAtEventEnd",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ReductionType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 237,
+      "Event": "SpawnAISound2",
+      "Fields": [
+        {
+          "Field": "AISoundID",
+          "Name": "",
+          "Description": "The AiSoundParam row of the sound that AI can hear."
+        }
+      ]
+    },
+    {
+      "ID": 300,
+      "Event": "ActivateJumpTableEarly",
+      "Fields": [
+        {
+          "Field": "JumpTableID_ToActivateEarly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "JumpTable2ID_ToJudgeHowEarly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Parameter1",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Parameter2",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "StateInfo",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 301,
+      "Event": "Event301",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 302,
+      "Event": "AddSpEffect_DragonForm",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        }
+      ]
+    },
+    {
+      "ID": 303,
+      "Event": "PlayAnimation",
+      "Fields": [
+        {
+          "Field": "AnimationID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 304,
+      "Event": "ThrowAttackBehavior",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Index",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 305,
+      "Event": "ExtraSuperArmorDurabilityMult",
+      "Fields": [
+        {
+          "Field": "Multiplier",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 306,
+      "Event": "Event306",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Flags",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 307,
+      "Event": "PCBehavior",
+      "Fields": [
+        {
+          "Field": "Condition0x64_GetWeaponData",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Offset",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "PCBehaviorType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 308,
+      "Event": "Event308",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 310,
+      "Event": "ChrClothState",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk01",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 311,
+      "Event": "Event311",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk01",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk02",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 312,
+      "Event": "Event312",
+      "Fields": [
+        {
+          "Field": "Mask0",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask1",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask2",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask3",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask4",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask5",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask6",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask7",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask8",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask9",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask10",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask11",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask12",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask13",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask14",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask15",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask16",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask17",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask18",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask19",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask20",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask21",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask22",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask23",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask24",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask25",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask26",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask27",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask28",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask29",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask30",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask31",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 320,
+      "Event": "PlayerInputCheck",
+      "Fields": [
+        {
+          "Field": "EnableAct_R1_R2_LightKick_HeavyKick",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "EnableAct_L1_L2",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "EnableAct_Guard",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "EnableAct_SpMove_Backstep_Rolling_Jump",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "EnableAct_UseItem",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "EnableAct_MagicR_MagicL",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "EnableAct_ChangeStyle_ChangeStyleLeft_ChangeWeaponR_ChangeWeaponL_Gesture",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 330,
+      "Event": "WeaponArtFPConsumption",
+      "Fields": []
+    },
+    {
+      "ID": 331,
+      "Event": "AddSpEffect_WeaponArts",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        },
+        {
+          "Field": "SpEffectID_LowFP",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        }
+      ]
+    },
+    {
+      "ID": 332,
+      "Event": "WeaponArtWeaponStyleCheck",
+      "Fields": []
+    },
+    {
+      "ID": 401,
+      "Event": "AddSpEffect_Multiplayer_401",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        }
+      ]
+    },
+    {
+      "ID": 402,
+      "Event": "Wind",
+      "Fields": [
+        {
+          "Field": "WindParamID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 500,
+      "Event": "Event500",
+      "Fields": [
+        {
+          "Field": "FlagIndex",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Index",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 510,
+      "Event": "FullBodyWet",
+      "Fields": []
+    },
+    {
+      "ID": 520,
+      "Event": "IfLockedOn_Set??",
+      "Fields": []
+    },
+    {
+      "ID": 521,
+      "Event": "SetChrTurnRateEX",
+      "Fields": [
+        {
+          "Field": "TurnRate",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 522,
+      "Event": "SetSpecialLockOnParameter",
+      "Fields": [
+        {
+          "Field": "TargetChrParameter",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 600,
+      "Event": "EnableBehaviorFlags",
+      "Fields": [
+        {
+          "Field": "Mask (0-63)",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 601,
+      "Event": "SetAdditiveAnim",
+      "Fields": [
+        {
+          "Field": "AnimType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "WeightAtEventStart",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "WeightAtEventEnd",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 602,
+      "Event": "Event602",
+      "Fields": [
+        {
+          "Field": "StayAnimType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 603,
+      "Event": "DebugAnimSpeed",
+      "Fields": [
+        {
+          "Field": "AnimSpeed",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 604,
+      "Event": "TestParam",
+      "Fields": []
+    },
+    {
+      "ID": 605,
+      "Event": "SetTimeActEditorHavokVariable",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "VariableID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ValueGradient",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 606,
+      "Event": "JiggleModifier",
+      "Fields": [
+        {
+          "Field": "JigglerId",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "FadeIn",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "FadeOut",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 700,
+      "Event": "EnableTwistModifier",
+      "Fields": [
+        {
+          "Field": "UpLimitAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DownLimitAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RightLimitAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LeftLimitAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ModifierID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "TargetType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "UpMinimumAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DownMinimumAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RightMinimumAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LeftMinimumAngle",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 703,
+      "Event": "FixedRotationDirection",
+      "Fields": [
+        {
+          "Field": "IsEnable",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 704,
+      "Event": "ChrTurnSpeedEX",
+      "Fields": [
+        {
+          "Field": "SpeedDefault",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpeedExtra",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SpeedBoost",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 705,
+      "Event": "FacingAngleCorrection",
+      "Fields": [
+        {
+          "Field": "CorrectionRate",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 706,
+      "Event": "ChrTurnSpeed_ForLock",
+      "Fields": [
+        {
+          "Field": "TurnSpeed",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 707,
+      "Event": "ManualAttackAiming",
+      "Fields": []
+    },
+    {
+      "ID": 710,
+      "Event": "HideEquippedWeapon",
+      "Fields": [
+        {
+          "Field": "LeftHand",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RightHand",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LeftHand_WithScabbard",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RightHand_WithScabbard",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 711,
+      "Event": "HideModelMask",
+      "Fields": [
+        {
+          "Field": "Mask0",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask1",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask2",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask3",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask4",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask5",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask6",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask7",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask8",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask9",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask10",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask11",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask12",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask13",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask14",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask15",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask16",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask17",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask18",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask19",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask20",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask21",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask22",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask23",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask24",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask25",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask26",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask27",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask28",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask29",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask30",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask31",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 712,
+      "Event": "OverrideWeaponModelLocations",
+      "Fields": [
+        {
+          "Field": "RHModel0AbsorpPosParamCondition",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RHModel0ChangeType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RHModel1AbsorpPosParamCondition",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RHModel1ChangeType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RHModel2AbsorpPosParamCondition",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RHModel2ChangeType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RHModel3AbsorpPosParamCondition",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "RHModel3ChangeType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LHModel0AbsorpPosParamCondition",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LHModel0ChangeType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LHModel1AbsorpPosParamCondition",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LHModel1ChangeType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LHModel2AbsorpPosParamCondition",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LHModel2ChangeType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LHModel3AbsorpPosParamCondition",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LHModel3ChangeType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsEnabledWhile1Handing",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsEnabledWhile2HandingRightWeapon",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsEnabledWhile2HandingLeftWeapon",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 713,
+      "Event": "ShowModelMask",
+      "Fields": [
+        {
+          "Field": "Mask0",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask1",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask2",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask3",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask4",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask5",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask6",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask7",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask8",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask9",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask10",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask11",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask12",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask13",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask14",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask15",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask16",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask17",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask18",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask19",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask20",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask21",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask22",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask23",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask24",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask25",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask26",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask27",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask28",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask29",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask30",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Mask31",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 714,
+      "Event": "StaggerModuleUnk",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 715,
+      "Event": "WepAbsorpPos",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Pad1",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Pad2",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Pad3",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk0C",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk10",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk14",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk18",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 720,
+      "Event": "CultCatchAttach",
+      "Fields": [
+        {
+          "Field": "FlagIndex0-1",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 730,
+      "Event": "OnlyForNon_c0000Enemies",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 740,
+      "Event": "Startbit_0x1409A9A40",
+      "Fields": []
+    },
+    {
+      "ID": 760,
+      "Event": "BoostRootMotionToReachTarget",
+      "Fields": [
+        {
+          "Field": "IsEnable",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ReferenceDist",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "EnableRangeMin",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "EnableRangeMax",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArriveAngleFromTarget",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ArriveDistFromTarget",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 770,
+      "Event": "ChangeBonePos",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 771,
+      "Event": "FixBone",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 772,
+      "Event": "ChangeBonePosEX",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 780,
+      "Event": "AddHeight",
+      "Fields": [
+        {
+          "Field": "Height",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 781,
+      "Event": "TurnLowerBody",
+      "Fields": [
+        {
+          "Field": "TurnState",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 782,
+      "Event": "AiReplanningCtrlReset",
+      "Fields": []
+    },
+    {
+      "ID": 785,
+      "Event": "SpawnChrFinderBullet",
+      "Fields": [
+        {
+          "Field": "DetectionRange",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummypolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "BulletID",
+          "Name": "",
+          "Description": "The Bullet row to fire."
+        },
+        {
+          "Field": "IsCompareChrType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "TargetNum",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 786,
+      "Event": "SetMaxUndurationAngle",
+      "Fields": [
+        {
+          "Field": "MaxUndurationAngle",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 790,
+      "Event": "DisableDefaultWeaponTrail",
+      "Fields": []
+    },
+    {
+      "ID": 791,
+      "Event": "PartDamageAdditiveBlendInvalid",
+      "Fields": []
+    },
+    {
+      "ID": 792,
+      "Event": "FootSfxParam_Entity",
+      "Fields": [
+        {
+          "Field": "FootSFXIndex",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DummyPolyID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "SlotID",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsIgnoreDummyPolyAngle",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsFollowDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "IsRestrictToDummyPoly",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "ExtraSpawnCondition",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 793,
+      "Event": "CultWeaponValue",
+      "Fields": [
+        {
+          "Field": "WeaponValue",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 794,
+      "Event": "CultFlag",
+      "Fields": []
+    },
+    {
+      "ID": 795,
+      "Event": "DS3Poise",
+      "Fields": [
+        {
+          "Field": "ToughnessParamID",
+          "Name": "",
+          "Description": "The ToughnessParam row to use."
+        },
+        {
+          "Field": "ToughnessType",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "DamageRatio",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 796,
+      "Event": "Menu",
+      "Fields": [
+        {
+          "Field": "MenuType",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 797,
+      "Event": "AddSpEffect_CultRitualCompletion",
+      "Fields": [
+        {
+          "Field": "SpEffectID",
+          "Name": "",
+          "Description": "The SpEffectParam row to apply."
+        }
+      ]
+    },
+    {
+      "ID": 798,
+      "Event": "CultCompletionSfxValue",
+      "Fields": [
+        {
+          "Field": "CultSfxValue",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 799,
+      "Event": "CultExecution",
+      "Fields": []
+    },
+    {
+      "ID": 800,
+      "Event": "DebugMovementMultiplier",
+      "Fields": [
+        {
+          "Field": "MovDistMultiplier",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "CamTurnDistMultiplier",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "LadderDistMultiplier",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 10096,
+      "Event": "Sfx?",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 10130,
+      "Event": "PlaySound_WanderGhost",
+      "Fields": [
+        {
+          "Field": "Unk00",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        },
+        {
+          "Field": "Unk08",
+          "Name": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": 10137,
+      "Event": "DebugDecal1",
+      "Fields": [
+        {
+          "Field": "DecalParamId",
+          "Name": "",
+          "Description": "The DecalParam row to place."
+        }
+      ]
+    },
+    {
+      "ID": 10138,
+      "Event": "DebugDecal2",
+      "Fields": [
+        {
+          "Field": "DecalParamId",
+          "Name": "",
+          "Description": "The DecalParam row to place."
+        },
+        {
+          "Field": "Unk04",
+          "Name": "",
+          "Description": ""
+        }
+      ]
     }
   ]
 }
