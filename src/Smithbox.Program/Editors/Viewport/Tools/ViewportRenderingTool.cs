@@ -1574,13 +1574,10 @@ public class ViewportRenderingTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Shader_Types"), LOC.Get("VIEWPORT_Rendering_Section_Shader_Types_TT"));
 
-        ImGui.BeginDisabled(!gameMode);
-
+        // Shader types apply in Editor mode too, so they stay usable there
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Unlit", ref CFG.Current.Viewport_Material_Unlit);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Water", ref CFG.Current.Viewport_Material_Water);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Fur", ref CFG.Current.Viewport_Material_Fur);
-
-        ImGui.EndDisabled();
 
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Wind"), LOC.Get("VIEWPORT_Rendering_Section_Wind_TT"));

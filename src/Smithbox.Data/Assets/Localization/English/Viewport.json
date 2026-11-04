@@ -1702,7 +1702,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Materials_Game_Mode_Only",
-      "Text": "Editor render mode switches off everything but layer blending, grass and collision opacity. Switch to Game mode to change the rest."
+      "Text": "Editor render mode switches off everything but layer blending, the shader types, grass and collision opacity. Switch to Game mode to change the rest."
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Settings",

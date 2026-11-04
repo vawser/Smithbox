@@ -59,19 +59,15 @@ public static class MaterialClock
 
     /// <summary>
     /// The features that are switched on. Editor mode draws materials plainly whatever the Materials tab says, see
-    /// <see cref="RenderMode" />, except for layer blending: without it blended terrain shows only its base layer,
-    /// which hides what the ground actually looks like.
+    /// <see cref="RenderMode" />, except for layer blending and the shader types: without layer blending blended
+    /// terrain shows only its base layer, and without the shader types sky, clouds, flames, water and fur draw as
+    /// ordinary surfaces, both of which hide what the scene actually looks like.
     /// </summary>
     public static MaterialFeatures Features
     {
         get
         {
             var current = MaterialFeatures.None;
-
-            if (!RenderMode.IsGame)
-            {
-                return CFG.Current.Viewport_Material_Layer_Blending ? MaterialFeatures.LayerBlending : current;
-            }
 
             void Add(bool enabled, MaterialFeatures feature)
             {
@@ -81,18 +77,25 @@ public static class MaterialClock
                 }
             }
 
+            // Kept in both modes
+            Add(CFG.Current.Viewport_Material_Layer_Blending, MaterialFeatures.LayerBlending);
+            Add(CFG.Current.Viewport_Material_Unlit, MaterialFeatures.Unlit);
+            Add(CFG.Current.Viewport_Material_Water, MaterialFeatures.Water);
+            Add(CFG.Current.Viewport_Material_Fur, MaterialFeatures.Fur);
+
+            if (!RenderMode.IsGame)
+            {
+                return current;
+            }
+
             Add(CFG.Current.Viewport_Material_Wind, MaterialFeatures.Wind);
             Add(CFG.Current.Viewport_Material_Vertex_Animation, MaterialFeatures.VertexAnimation);
             Add(CFG.Current.Viewport_Material_Sway, MaterialFeatures.Sway);
             Add(CFG.Current.Viewport_Material_Birds, MaterialFeatures.Birds);
-            Add(CFG.Current.Viewport_Material_Layer_Blending, MaterialFeatures.LayerBlending);
             Add(CFG.Current.Viewport_Material_Overlays, MaterialFeatures.Overlays);
             Add(CFG.Current.Viewport_Material_Magma, MaterialFeatures.Magma);
             Add(CFG.Current.Viewport_Material_Emissive, MaterialFeatures.Emissive);
             Add(CFG.Current.Viewport_Material_UV_Scroll, MaterialFeatures.UvScroll);
-            Add(CFG.Current.Viewport_Material_Unlit, MaterialFeatures.Unlit);
-            Add(CFG.Current.Viewport_Material_Water, MaterialFeatures.Water);
-            Add(CFG.Current.Viewport_Material_Fur, MaterialFeatures.Fur);
 
             return current;
         }
