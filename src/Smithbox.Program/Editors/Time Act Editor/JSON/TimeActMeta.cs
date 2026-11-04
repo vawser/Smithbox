@@ -51,6 +51,13 @@ public class TimeActField
     public string ProjectEnum { get; set; } = "";
 
     /// <summary>
+    /// The value is a behavior judge ID, linked to the BehaviorParam rows it picks (BehaviorParam_PC for c0000).
+    /// "Variation": the ID is added to the behavior variation of the attacker (the weapon, or the NpcParam row).
+    /// "Common": the ID is the row ID as it is.
+    /// </summary>
+    public string BehaviorRef { get; set; } = "";
+
+    /// <summary>
     /// A number that is only ever 0 or 1, so it is edited with a checkbox
     /// </summary>
     public bool IsBool { get; set; } = false;

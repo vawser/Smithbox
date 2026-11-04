@@ -1,12 +1,36 @@
 {
   "Events": [
     {
+      "ID": 1,
+      "Event": "InvokeAttackBehavior",
+      "Fields": [
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Variation"
+        }
+      ]
+    },
+    {
       "ID": 2,
       "Event": "InvokeBulletBehavior",
       "Fields": [
         {
           "Field": "StateInfo",
           "ProjectEnum": "SP_EFFECT_TYPE"
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Variation"
+        }
+      ]
+    },
+    {
+      "ID": 5,
+      "Event": "InvokeCommonBehavior",
+      "Fields": [
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Common"
         }
       ]
     },
@@ -303,6 +327,16 @@
         {
           "Field": "AnimID",
           "Alias": "Animations"
+        }
+      ]
+    },
+    {
+      "ID": 307,
+      "Event": "InvokePCBehavior",
+      "Fields": [
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Variation"
         }
       ]
     },

@@ -537,6 +537,18 @@
       "Text": "No alias"
     },
     {
+      "Key": "TAE_PropertiesWindow_Behavior_More_Rows",
+      "Text": "+{0} more (right-click)"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Behavior_Unnamed_Row",
+      "Text": "{0}: Unnamed Row"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Behavior_Link_TT",
+      "Text": "The behavior rows this judge ID can pick, best first. For c0000 the first row follows the weapon held in the viewport.\nCtrl+click to go to the first row, Ctrl+Shift+click to open it in a new view, or right-click to go to any of them."
+    },
+    {
       "Key": "TAE_PropertiesWindow_Field_Info_Header",
       "Text": "Information"
     },

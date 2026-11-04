@@ -7,6 +7,10 @@
         {
           "Field": "StateInfo",
           "ProjectEnum": "SP_EFFECT_TYPE"
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Variation"
         }
       ]
     },
@@ -17,6 +21,20 @@
         {
           "Field": "StateInfo",
           "ProjectEnum": "SP_EFFECT_TYPE"
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Variation"
+        }
+      ]
+    },
+    {
+      "ID": 5,
+      "Event": "InvokeCommonBehavior",
+      "Fields": [
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Common"
         }
       ]
     },
@@ -395,6 +413,16 @@
         {
           "Field": "AnimationID",
           "Alias": "Animations"
+        }
+      ]
+    },
+    {
+      "ID": 307,
+      "Event": "InvokePCBehavior",
+      "Fields": [
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Variation"
         }
       ]
     },

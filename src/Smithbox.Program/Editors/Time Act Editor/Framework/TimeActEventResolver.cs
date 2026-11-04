@@ -284,37 +284,54 @@ public class TimeActEventResolver
 
         var weaponId = weaponPart >= 0 ? container.CharacterAppearance!.Parts[weaponPart].EquipParamId : -1;
 
+        foreach (var id in GetPlayerBehaviorIds(weaponId, judge, false))
+        {
+            if (GetRow(BehaviorParamPc, id) is { } row)
+            {
+                return row;
+            }
+        }
+
+        failure = LOC.Get(weaponPart < 0 ? "TAE_EventDisplay_No_Weapon" : "TAE_EventDisplay_No_Behavior", judge);
+        return null;
+    }
+
+    /// <summary>
+    /// The BehaviorParam_PC rows a judge ID may pick, best first: those of the variation of the weapon,
+    /// then those of its base weapon, then the row without a variation and the row of the ID as it is,
+    /// which attacks that don't involve a weapon, such as kicks, use.
+    /// </summary>
+    private IEnumerable<int> GetPlayerBehaviorIds(int weaponId, int judge, bool withoutWeapon)
+    {
         var behaviorBase = PlayerBehaviorBase;
+        var variationJudge = judge;
 
         // Elden Ring keeps a further category in the thousands of the ID
         if (_project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR && judge is >= 1000 and <= 9999)
         {
             behaviorBase = PlayerBehaviorBase * (judge / 1000);
-            judge %= 1000;
+            variationJudge = judge % 1000;
         }
+
+        var hasWeapon = false;
 
         if (GetRow("EquipParamWeapon", weaponId) is { } weapon)
         {
             var variation = CharacterComposition.GetValue(weapon, "behaviorVariationId");
 
             // Upgraded weapons and infusions fall back on the base version of the weapon
-            foreach (var candidate in new[] { variation, variation / 100 * 100, 0 })
-            {
-                if (GetRow(BehaviorParamPc, behaviorBase + candidate * VariationScale + judge) is { } row)
-                {
-                    return row;
-                }
-            }
+            yield return behaviorBase + variation * VariationScale + variationJudge;
+            yield return behaviorBase + variation / 100 * 100 * VariationScale + variationJudge;
+            hasWeapon = true;
         }
 
-        // Attacks that don't involve a weapon, such as kicks, have rows of their own
-        if (GetRow(BehaviorParamPc, judge) is { } common)
+        // The row without a variation is only a fallback for a weapon, unless every row is wanted
+        if (hasWeapon || withoutWeapon)
         {
-            return common;
+            yield return behaviorBase + variationJudge;
         }
 
-        failure = LOC.Get(weaponPart < 0 ? "TAE_EventDisplay_No_Weapon" : "TAE_EventDisplay_No_Behavior", judge);
-        return null;
+        yield return judge;
     }
 
     private const string BehaviorParamPc = "BehaviorParam_PC";
@@ -340,6 +357,65 @@ public class TimeActEventResolver
 
         failure = LOC.Get("TAE_EventDisplay_No_Behavior", judge);
         return null;
+    }
+
+    /// <summary>
+    /// The param a behavior judge ID of a character refers to: the player has a param of its own
+    /// </summary>
+    public static string GetBehaviorParamName(string characterName)
+    {
+        return CharacterComposition.IsComposite(characterName) ? BehaviorParamPc : "BehaviorParam";
+    }
+
+    /// <summary>
+    /// Gets the BehaviorParam rows a judge ID can pick, best first, for the quick links of the properties.
+    /// A variation judge ID is added to the variation of the attacker: the weapon the character holds in
+    /// the viewport, if it holds one, for the player, and every NpcParam row of the character otherwise.
+    /// A common one is the row ID as it is.
+    /// </summary>
+    /// <param name="ev">The event, whose Source picks the hand of the weapon.</param>
+    /// <param name="characterName">The character the time act belongs to, such as c0000.</param>
+    /// <param name="container">The character in the viewport, if it is the one the time act belongs to.</param>
+    /// <param name="judge">The judge ID.</param>
+    /// <param name="common">Whether the judge ID is the row ID as it is.</param>
+    public List<Param.Row> GetBehaviorRows(TAE.Event ev, string characterName, TimeActContainer? container,
+        long judge, bool common)
+    {
+        var rows = new List<Param.Row>();
+
+        if (_project.Handler.ParamData?.PrimaryBank?.Params == null || judge is < int.MinValue or > int.MaxValue)
+            return rows;
+
+        var paramName = GetBehaviorParamName(characterName);
+        var id = (int)judge;
+
+        IEnumerable<int> ids;
+
+        if (common)
+        {
+            ids = new[] { id };
+        }
+        else if (CharacterComposition.IsComposite(characterName))
+        {
+            var weaponPart = container != null ? GetSourceWeapon(ev, container) : -1;
+            var weaponId = weaponPart >= 0 ? container!.CharacterAppearance!.Parts[weaponPart].EquipParamId : -1;
+
+            ids = GetPlayerBehaviorIds(weaponId, id, true);
+        }
+        else
+        {
+            ids = GetNpcVariations(characterName).Select(v => NpcBehaviorBase + v * VariationScale + id);
+        }
+
+        foreach (var rowId in ids.Distinct())
+        {
+            if (GetRow(paramName, rowId) is { } row && !rows.Contains(row))
+            {
+                rows.Add(row);
+            }
+        }
+
+        return rows;
     }
 
     /// <summary>

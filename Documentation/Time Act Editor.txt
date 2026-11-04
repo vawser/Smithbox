@@ -5,7 +5,6 @@
 - Properties:
     - Expand meta:
         - Attack/Bullet/Common/PC behavior links
-        - State Info (param enum support)
 
 - Viewport:
     - Improve grid

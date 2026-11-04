@@ -77,6 +77,22 @@ public class TimeActEventDisplay
         return container != null ? GetVisual(ev, container)?.Status : null;
     }
 
+    /// <summary>
+    /// Gets the BehaviorParam rows a judge ID of an event can pick, best first. The character in the viewport
+    /// gives the weapon of the player, when it is the character the time act belongs to.
+    /// </summary>
+    public List<Andre.Formats.Param.Row> GetBehaviorRows(TAE.Event ev, string characterName, long judge, bool common)
+    {
+        var container = _view.Selection.SelectedTimeActModelWrapper?.Container;
+
+        if (container != null && !string.Equals(container.Name, characterName, StringComparison.OrdinalIgnoreCase))
+        {
+            container = null;
+        }
+
+        return _resolver.GetBehaviorRows(ev, characterName, container, judge, common);
+    }
+
     private TimeActEventVisual? GetVisual(TAE.Event ev, TimeActContainer container)
     {
         if (!_visuals.TryGetValue(ev, out var visual))

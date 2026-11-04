@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -841,6 +842,7 @@ public class TimeActPropertiesWindow
             return;
 
         DisplayParamReference(ev, key, meta);
+        DisplayBehaviorReference(ev, key, meta);
         DisplayProjectEnum(ev, key, meta);
         DisplayAlias(ev, key, meta);
     }
@@ -887,6 +889,119 @@ public class TimeActPropertiesWindow
                 SetParameter(ev, key, newValue);
             }
         }
+    }
+
+    // More rows than this are left to the context menu
+    private const int BehaviorHintRows = 4;
+    private const int BehaviorMenuRows = 32;
+
+    /// <summary>
+    /// The BehaviorParam rows a behavior judge ID picks, as quick links: ctrl-click goes to the best one,
+    /// and the context menu goes to any of them. The judge ID isn't the row ID, so the rows come from the
+    /// behavior variation of the character rather than from a param reference.
+    /// </summary>
+    private void DisplayBehaviorReference(TAE.Event ev, string key, TimeActField meta)
+    {
+        if (meta.BehaviorRef == "" || !CFG.Current.ParamEditor_Field_List_Display_References ||
+            Project.Handler.ParamEditor?.ViewHandler.ActiveView is not { } paramView ||
+            View.Selection.SelectedTimeActContainerWrapper is not { } source)
+        {
+            return;
+        }
+
+        object value = ev.Parameters[key];
+
+        if (!IsInteger(value))
+            return;
+
+        var paramName = TimeActEventResolver.GetBehaviorParamName(source.Name);
+
+        if (paramView.GetPrimaryBank().Params is not { } bank || !bank.ContainsKey(paramName))
+            return;
+
+        var common = meta.BehaviorRef.Equals("Common", StringComparison.OrdinalIgnoreCase);
+        var rows = View.Playback.EventDisplay.GetBehaviorRows(ev, source.Name, Convert.ToInt64(value), common);
+
+        ImGui.TableNextRow();
+
+        ImGui.TableSetColumnIndex(0);
+        ParamReferenceHelper.Label(paramView, new List<ParamRef> { new(null, paramName) }, null);
+
+        ImGui.TableSetColumnIndex(1);
+        ImGui.BeginGroup();
+
+        if (rows.Count == 0)
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted("---");
+            ImGui.PopStyleColor();
+        }
+        else
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
+
+            foreach (var row in rows.Take(BehaviorHintRows))
+            {
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted(GetBehaviorRowName(row));
+            }
+
+            ImGui.PopStyleColor();
+
+            if (rows.Count > BehaviorHintRows)
+            {
+                ImGui.TextDisabled(LOC.Get("TAE_PropertiesWindow_Behavior_More_Rows", rows.Count - BehaviorHintRows));
+            }
+        }
+
+        ImGui.EndGroup();
+
+        if (rows.Count > 0)
+        {
+            GUI.Tooltip(LOC.Get("TAE_PropertiesWindow_Behavior_Link_TT"));
+
+            if (ImGui.IsItemClicked(ImGuiMouseButton.Left) && InputManager.HasCtrlDown())
+            {
+                var view = InputManager.HasShiftDown() ? "new" : "-1";
+                EditorCommandQueue.AddCommand($@"param/select/{view}/{paramName}/{rows[0].ID}");
+            }
+        }
+
+        if (rows.Count > 0 && ImGui.BeginPopupContextItem("##behaviorRefContextMenu"))
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+
+            var index = 0;
+
+            foreach (var row in rows.Take(BehaviorMenuRows))
+            {
+                var name = GetBehaviorRowName(row);
+
+                if (ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_ParamRef_Go_To_Action", name)}##behaviorGoTo{index}"))
+                {
+                    EditorCommandQueue.AddCommand($@"param/select/-1/{paramName}/{row.ID}");
+                }
+
+                if (ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_ParamRef_Go_To_New_View_Action", name)}##behaviorGoToNew{index}"))
+                {
+                    EditorCommandQueue.AddCommand($@"param/select/new/{paramName}/{row.ID}");
+                }
+
+                index++;
+            }
+
+            ImGui.PopStyleColor();
+
+            ImGui.EndPopup();
+        }
+    }
+
+    private static string GetBehaviorRowName(Andre.Formats.Param.Row row)
+    {
+        return string.IsNullOrWhiteSpace(row.Name)
+            ? LOC.Get("TAE_PropertiesWindow_Behavior_Unnamed_Row", row.ID)
+            : $"{row.ID}: {row.Name}";
     }
 
     /// <summary>

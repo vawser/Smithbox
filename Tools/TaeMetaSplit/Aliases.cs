@@ -25,19 +25,25 @@ static class Aliases
     /// Field name pattern -> meta key and value. Every rule that matches is applied, each to its own key.
     /// Only integer fields without an inline enum are tagged.
     /// </summary>
-    static readonly (Regex Field, string Key, string Value)[] Rules =
+    static readonly (Regex Field, string Key, string Value, Regex Event)[] Rules =
     [
         // Visual effects: every FFX ID, whichever character type it is for
-        (new("^FFXID"), "Alias", "Particles"),
+        (new("^FFXID"), "Alias", "Particles", null),
 
         // Sounds played by the event. The sound type picks the bank, the alias names the ID.
-        (new("^(Override)?SoundID$"), "Alias", "Sounds"),
+        (new("^(Override)?SoundID$"), "Alias", "Sounds", null),
 
         // Animations of the character the time act belongs to
-        (new("(?i)^(AnimationID|AnimID|AimUpAnimID|AimDownAnimID|Destination Anim ID|Transition Anim ID)$"), "Alias", "Animations"),
+        (new("(?i)^(AnimationID|AnimID|AimUpAnimID|AimDownAnimID|Destination Anim ID|Transition Anim ID)$"), "Alias", "Animations", null),
 
         // The SpEffect state the event is limited to, from the enum the param editor shares
-        (new(@"^StateInfo( \([0-9A-F]+\))?$"), "ProjectEnum", "SP_EFFECT_TYPE"),
+        (new(@"^StateInfo( \([0-9A-F]+\))?$"), "ProjectEnum", "SP_EFFECT_TYPE", null),
+
+        // Behavior judge IDs, which the attacker's behavior variation turns into a BehaviorParam row
+        (new("^BehaviorJudgeID$"), "BehaviorRef", "Variation", new("^(Invoke)?(Attack|Bullet|PC)Behavior$")),
+
+        // Common behaviors use the judge ID as the row ID
+        (new("^BehaviorJudgeID$"), "BehaviorRef", "Common", new("^(Invoke)?CommonBehavior$")),
     ];
 
     public static int Survey(string root)
@@ -82,7 +88,7 @@ static class Aliases
                     if (p.ValueToAssert != null || p.EnumEntries != null || !IsInteger(p.Type))
                         continue;
 
-                    foreach (var rule in Rules.Where(r => r.Field.IsMatch(p.Name)))
+                    foreach (var rule in Rules.Where(r => r.Field.IsMatch(p.Name) && (r.Event == null || r.Event.IsMatch(ev.Name ?? ""))))
                     {
                         var field = FindField(meta, eventId, p.Name);
 
