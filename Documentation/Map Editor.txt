@@ -29,8 +29,3 @@
 - Add 'camera path' authoring for new camera hkxs for cutscenes
 - Add Object Mass Edit that allows for addition/deletion of map objects programmatically
 
-
-- Renderer:
-    - Fix decal textures for ER
-    
-    m002000

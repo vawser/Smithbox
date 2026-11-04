@@ -1,10 +1,12 @@
 ﻿using Andre.IO.VFS;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ModelEditor;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -52,7 +54,135 @@ public class TimeActContainerWrapper
     /// <summary>
     /// Whether any of the time acts have changes that are yet to be saved
     /// </summary>
-    public bool HasUnsavedTimeActs => TimeActs.Any(e => e.IsDirty);
+    public bool HasUnsavedTimeActs => HasStructuralChanges || TimeActs.Any(e => e.IsDirty);
+
+    /// <summary>
+    /// Whether time acts have been added or removed since the source was last saved
+    /// </summary>
+    public bool HasStructuralChanges { get; set; } = false;
+
+    /// <summary>
+    /// Raised whenever a time act is added or removed, so lists built from them know to rebuild
+    /// </summary>
+    public int TimeActsVersion { get; private set; } = 0;
+
+    /// <summary>
+    /// Gets the first free category after the time act, for a copy of it.
+    /// Empty placeholders in the binder aren't listed, so their slot is taken over by the copy.
+    /// </summary>
+    public int GetFreeBindIndex(TimeActEntry entry)
+    {
+        var index = entry.BindIndex + 1;
+
+        while (TimeActs.Any(e => e.BindIndex == index))
+        {
+            index++;
+        }
+
+        return index;
+    }
+
+    /// <summary>
+    /// Adds a time act, keeping the list in the order of the binder IDs. Returns the position it went in.
+    /// </summary>
+    public int InsertTimeAct(TimeActEntry entry, int index = -1)
+    {
+        if (index < 0 || index > TimeActs.Count)
+        {
+            index = TimeActs.FindIndex(e => e.BinderID > entry.BinderID);
+
+            if (index < 0)
+                index = TimeActs.Count;
+        }
+
+        TimeActs.Insert(index, entry);
+        HasStructuralChanges = true;
+        TimeActsVersion++;
+
+        return index;
+    }
+
+    /// <summary>
+    /// Puts a time act back in order after its binder ID has changed
+    /// </summary>
+    public void ResortTimeAct(TimeActEntry entry)
+    {
+        TimeActs.Remove(entry);
+
+        InsertTimeAct(entry);
+    }
+
+    /// <summary>
+    /// The number of digits after the 'a' of a time act name, which matches the names already in the source
+    /// </summary>
+    public int NameDigits
+    {
+        get
+        {
+            return 3;
+        }
+    }
+
+    private static readonly Regex TimeActNameRegex = new(@"^a(\d+)$");
+
+    public string FormatTimeActName(int bindIndex)
+    {
+        return $"a{bindIndex.ToString($"D{NameDigits}")}";
+    }
+
+    /// <summary>
+    /// Gets the category a time act name stands for. The name must be 'a' followed by the digits the source uses.
+    /// </summary>
+    public bool TryParseTimeActName(string name, out int bindIndex)
+    {
+        bindIndex = -1;
+
+        var match = TimeActNameRegex.Match(name ?? "");
+
+        if (!match.Success || match.Groups[1].Value.Length != NameDigits)
+            return false;
+
+        bindIndex = int.Parse(match.Groups[1].Value);
+
+        return true;
+    }
+
+    /// <summary>
+    /// Checks a name for a time act, returning the reason it can't be used, or null if it can.
+    /// The time act being renamed is allowed to keep its own name.
+    /// </summary>
+    public string ValidateTimeActName(string name, TimeActEntry renamed = null)
+    {
+        if (!TryParseTimeActName(name, out var bindIndex))
+            return LOC.Get("TAE_Name_Invalid_Mask", $"a{new string('X', NameDigits)}");
+
+        if (TimeActs.Any(e => e != renamed && e.BindIndex == bindIndex))
+            return LOC.Get("TAE_Name_Already_Exists", name);
+
+        return null;
+    }
+
+    /// <summary>
+    /// Swaps one time act for another in the same position
+    /// </summary>
+    public void ReplaceTimeAct(TimeActEntry oldEntry, TimeActEntry newEntry)
+    {
+        var index = TimeActs.IndexOf(oldEntry);
+
+        if (index < 0)
+            return;
+
+        TimeActs[index] = newEntry;
+        HasStructuralChanges = true;
+        TimeActsVersion++;
+    }
+
+    public void RemoveTimeAct(TimeActEntry entry)
+    {
+        TimeActs.Remove(entry);
+        HasStructuralChanges = true;
+        TimeActsVersion++;
+    }
 
     public void PopulateTimeActList()
     {
@@ -104,9 +234,7 @@ public class TimeActContainerWrapper
     /// </summary>
     public void SaveTimeActs()
     {
-        var modified = TimeActs.Where(e => e.IsDirty && e.TimeAct != null).ToList();
-
-        if (modified.Count == 0)
+        if (!HasUnsavedTimeActs)
             return;
 
         using var binder = ReadBinderFile(SourcePath);
@@ -119,35 +247,74 @@ public class TimeActContainerWrapper
 
         var nestedFile = FindNestedAnibnd(binder);
 
+        List<(TimeActEntry Entry, byte[] Bytes)> written;
+
         if (nestedFile == null)
         {
-            UpdateTimeActFiles(binder, modified);
+            written = UpdateTimeActFiles(binder);
         }
         else
         {
             using var anibnd = ReadBinder(nestedFile.Bytes);
 
-            UpdateTimeActFiles(anibnd, modified);
+            written = UpdateTimeActFiles(anibnd);
 
             nestedFile.Bytes = anibnd is BND3 bnd3 ? bnd3.Write() : ((BND4)anibnd).Write();
         }
 
         WriteBinderFile(binder, SourcePath);
 
-        foreach (var entry in modified)
+        foreach (var (entry, bytes) in written)
         {
-            entry.IsDirty = false;
+            entry.MarkSaved(bytes);
         }
+
+        HasStructuralChanges = false;
     }
 
-    private void UpdateTimeActFiles(IBinder binder, List<TimeActEntry> modified)
+    /// <summary>
+    /// The list of time acts is the source of truth: the files of deleted time acts are removed,
+    /// and the files of new ones are added.
+    /// </summary>
+    private List<(TimeActEntry Entry, byte[] Bytes)> UpdateTimeActFiles(IBinder binder)
     {
-        foreach (var entry in modified)
-        {
-            var file = binder.Files.First(e => e.ID == entry.BinderID);
+        var written = new List<(TimeActEntry Entry, byte[] Bytes)>();
 
-            file.Bytes = entry.TimeAct.Write();
+        var listedIDs = TimeActs.Select(e => e.BinderID).ToHashSet();
+
+        // Empty placeholders were never listed, so they are kept
+        binder.Files.RemoveAll(e => e.Name.ToLower().Contains(".tae") && e.Bytes.Length >= 4 && !listedIDs.Contains(e.ID));
+
+        foreach (var entry in TimeActs)
+        {
+            var file = binder.Files.FirstOrDefault(e => e.ID == entry.BinderID);
+
+            // Unchanged time acts are left as they are, unless they are new to the binder
+            if (file != null && !entry.IsDirty)
+                continue;
+
+            var bytes = entry.GetBytes();
+
+            if (file == null)
+            {
+                file = new BinderFile(entry.BinderFlags, entry.BinderID, entry.BinderFileName, bytes)
+                {
+                    CompressionType = entry.CompressionType
+                };
+
+                var index = binder.Files.FindIndex(e => e.ID > entry.BinderID);
+
+                binder.Files.Insert(index < 0 ? binder.Files.Count : index, file);
+            }
+            else
+            {
+                file.Bytes = bytes;
+            }
+
+            written.Add((entry, bytes));
         }
+
+        return written;
     }
 
     private static BinderFile FindNestedAnibnd(IBinder binder)
@@ -198,7 +365,7 @@ public class TimeActContainerWrapper
             if (file.Name.ToLower().Contains(".tae") && file.Bytes.Length >= 4)
             {
                 entries.Add(new TimeActEntry(FilePathUtils.GetPureFilename(file.Name), file.ID, file.ID % firstID,
-                    file.Bytes.ToArray()));
+                    file.Bytes.ToArray(), file.Name, file.Flags, file.CompressionType));
             }
         }
     }

@@ -662,6 +662,7 @@ public class CFG
 
     public bool TimeActEditor_Allow_Unmodified_Save = false;
     public bool TimeActEditor_Allow_Automatic_Save = true;
+    public string TimeActEditor_Export_Directory = "";
     public bool AutomaticSave_TimeActEditor = true;
 
     public bool Interface_TimeActEditor_Tool_ResourceMonitor = true;

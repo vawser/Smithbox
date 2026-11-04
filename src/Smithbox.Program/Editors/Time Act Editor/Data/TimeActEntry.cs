@@ -10,13 +10,13 @@ namespace StudioCore.Editors.TimeActEditor;
 /// </summary>
 public class TimeActEntry
 {
-    public string Name { get; }
-    public int BinderID { get; }
+    public string Name { get; private set; }
+    public int BinderID { get; private set; }
 
     /// <summary>
     /// The position of this file among the time acts of the binder, which is the category of its animations
     /// </summary>
-    public int BindIndex { get; }
+    public int BindIndex { get; private set; }
 
     public TAE TimeAct { get; private set; }
 
@@ -27,17 +27,98 @@ public class TimeActEntry
     /// </summary>
     public bool IsDirty { get; set; } = false;
 
+    /// <summary>
+    /// The full name, flags and compression of the binder file, so a copy can be added alongside it
+    /// </summary>
+    public string BinderFileName { get; private set; }
+    public Binder.FileFlags BinderFlags { get; }
+    public DCX.Type CompressionType { get; }
+
     private Memory<byte> Data;
 
     // A character has hundreds of thousands of events, so they are only prepared once they are looked at
     private HashSet<TAE.Animation> TemplatedAnimations = new();
 
-    public TimeActEntry(string name, int binderID, int bindIndex, Memory<byte> data)
+    public TimeActEntry(string name, int binderID, int bindIndex, Memory<byte> data,
+        string binderFileName, Binder.FileFlags binderFlags, DCX.Type compressionType)
     {
         Name = name;
         BinderID = binderID;
         BindIndex = bindIndex;
         Data = data;
+        BinderFileName = binderFileName;
+        BinderFlags = binderFlags;
+        CompressionType = compressionType;
+    }
+
+    /// <summary>
+    /// Gets the bytes of the .tae file, including any changes that are yet to be saved.
+    /// The stored bytes are used otherwise, as they are exact.
+    /// </summary>
+    public byte[] GetBytes()
+    {
+        if (IsDirty && TimeAct != null)
+            return TimeAct.Write();
+
+        return Data.ToArray();
+    }
+
+    /// <summary>
+    /// Called once the bytes have been written to the binder, so they become the stored version
+    /// </summary>
+    public void MarkSaved(byte[] bytes)
+    {
+        Data = bytes;
+        IsDirty = false;
+    }
+
+    /// <summary>
+    /// Creates a copy of this time act under another category. The copy is marked as modified, so it is written on save.
+    /// </summary>
+    public TimeActEntry Duplicate(string name, int bindIndex)
+    {
+        return CreateSibling(name, bindIndex, GetBytes());
+    }
+
+    /// <summary>
+    /// Creates a time act alongside this one in the binder, sharing its folder, flags and compression
+    /// </summary>
+    public TimeActEntry CreateSibling(string name, int bindIndex, Memory<byte> data)
+    {
+        var entry = new TimeActEntry(name, BinderID - BindIndex + bindIndex, bindIndex, data,
+            GetBinderFileName(name), BinderFlags, CompressionType);
+
+        entry.IsDirty = true;
+
+        return entry;
+    }
+
+    /// <summary>
+    /// Moves the time act to another category. The binder file is renamed when the source is saved.
+    /// </summary>
+    public void Rename(string name, int bindIndex)
+    {
+        BinderFileName = GetBinderFileName(name);
+        BinderID = BinderID - BindIndex + bindIndex;
+        BindIndex = bindIndex;
+        Name = name;
+
+        // Written again under its new ID, as the file of the old ID is removed
+        IsDirty = true;
+    }
+
+    /// <summary>
+    /// The binder path of a time act with another name, in the same folder as this one
+    /// </summary>
+    private string GetBinderFileName(string name)
+    {
+        if (BinderFileName == null)
+            return $"{name}.tae";
+
+        var filename = System.IO.Path.GetFileName(BinderFileName);
+
+        return BinderFileName.Substring(0, BinderFileName.Length - filename.Length)
+            + $"{name}{System.IO.Path.GetExtension(BinderFileName)}";
     }
 
     public void Load()

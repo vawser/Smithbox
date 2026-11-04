@@ -315,6 +315,114 @@
     {
       "Key": "TAE_Data_Setup_Primary_Bank_PASS",
       "Text": "Setup the Primary Bank."
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Duplicate_TT",
+      "Text": "Adds a copy of this time act under the next free category. The binder is updated when the source is saved."
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Delete_TT",
+      "Text": "Removes this time act. The binder is updated when the source is saved."
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Export_TT",
+      "Text": "Writes this time act as a .tae file, including any unsaved changes, to a folder named after its source within the export folder.\nExport folder: {0}"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Set_Export_Folder",
+      "Text": "Set Export Folder"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Set_Export_Folder_TT",
+      "Text": "Selects the folder that time acts are exported to.\nExport folder: {0}"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Open_Export_Folder",
+      "Text": "Open Export Folder"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Export_Folder_Unset",
+      "Text": "None"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Dialog_Select_Export_Folder",
+      "Text": "Select Time Act Export Folder"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Dialog_Overwrite_File",
+      "Text": "{0} already exists. Overwrite it?"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Duplicated",
+      "Text": "Duplicated time act {0} as {1}"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Exported",
+      "Text": "Exported time act: {0}"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Export_Failed",
+      "Text": "Failed to export time act: {0}"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Rename",
+      "Text": "Rename"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Rename_TT",
+      "Text": "The new name of the time act, in the form {0}. The number is the category of its animations, so it must not be used by another time act.\nIt is renamed once you press Enter or leave the field. The binder is updated when the source is saved."
+    },
+    {
+      "Key": "TAE_SelectionWindow_Renamed",
+      "Text": "Renamed time act {0} to {1}"
+    },
+    {
+      "Key": "TAE_Name_Invalid_Mask",
+      "Text": "The name must be in the form {0}, where X is a digit."
+    },
+    {
+      "Key": "TAE_Name_Already_Exists",
+      "Text": "{0} is already used by another time act."
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Import",
+      "Text": "Import"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Context_Import_TT",
+      "Text": "Adds a .tae file to this source. If the file's name is a free time act name it is kept, and if it is already used you can replace that time act. Otherwise it goes in the next free category. The binder is updated when the source is saved."
+    },
+    {
+      "Key": "TAE_SelectionWindow_Dialog_Select_Import_File",
+      "Text": "Select Time Act File"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Dialog_Import_Replace",
+      "Text": "{0} already exists.\n\nYes: replace {0} with the imported file.\nNo: add it under the next free name instead."
+    },
+    {
+      "Key": "TAE_SelectionWindow_Imported",
+      "Text": "Imported {0} as time act {1}"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Import_Failed",
+      "Text": "Failed to read time act file: {0}"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Import_Wrong_Format",
+      "Text": "Can't import {0}: it is in the {1} format, but this source uses {2}."
     }
   ]
 }
