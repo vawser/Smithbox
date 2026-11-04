@@ -769,6 +769,36 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Map_Lighting_Hemi_Inside_Volumes);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Hemi_Inside_Volumes_TT"));
 
+        // DS3's lightmaps, applied when a map is next loaded (the materials pick their shader then)
+        if (GparamProfile.Current.HasDolLightmaps)
+        {
+            ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Lightmaps")}##mapLightingLightmaps",
+                ref CFG.Current.Viewport_Map_Lightmaps);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Lightmaps_TT"));
+
+            ImGui.BeginDisabled(!CFG.Current.Viewport_Map_Lightmaps);
+            ImGui.Indent();
+            ImGui.SetNextItemWidth(200.0f);
+            ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Lightmap_Intensity")}##mapLightingLightmapIntensity",
+                ref CFG.Current.Viewport_Map_Lightmap_Intensity, 0.0f, 32.0f, "%.2f", ImGuiSliderFlags.Logarithmic);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Lightmap_Intensity_TT"));
+            ImGui.Unindent();
+            ImGui.EndDisabled();
+        }
+
+        string[] debugViews =
+        {
+            LOC.Get("VIEWPORT_Menubar_Map_Lighting_Debug_Off"),
+            LOC.Get("VIEWPORT_Menubar_Map_Lighting_Debug_Source"),
+            LOC.Get("VIEWPORT_Menubar_Map_Lighting_Debug_Ambient"),
+            LOC.Get("VIEWPORT_Menubar_Map_Lighting_Debug_Sun_Mask")
+        };
+
+        DPI.ApplyInputWidth();
+        ImGui.Combo($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Debug_View")}##mapLightingDebugView",
+            ref CFG.Current.Viewport_Lighting_Debug_View, debugViews, debugViews.Length);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Debug_View_TT"));
+
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Background")}##mapLightingBackground",
             ref CFG.Current.Viewport_Map_Lighting_Background);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Background_TT"));

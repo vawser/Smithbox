@@ -194,6 +194,7 @@ struct sceneParams
 	uint mapLightCount;
 	// DS3's lightmaps: entries of lightmapdata, see LightmapTable (padding in the other shaders' copies)
 	uint lightmapStart;
+	uint lightingDebugView; // CFG.Viewport_Lighting_Debug_View, see SceneParam.LightingDebugView
 
 	// The sun's cascaded shadow maps, see ShadowCascades.cs. Depth is reversed: 1 nearest the sun.
 	mat4 shadowMatrices[4];  // world to each cascade's clip space
@@ -501,6 +502,10 @@ vec2 g_uv[2];
 vec3 g_indirectDiffuse = vec3(0.0); // the diffuse part of IndirectLight, before the scene multipliers
 vec3 g_indirectSpecular = vec3(0.0); // and its specular part
 float g_probeSunMask = 1.0; // the share of the sun DS3 and Bloodborne's light probes let through here
+// For the lighting debug view: where the light from around came from (0 the hemisphere or environment map, 1 the
+// volumes or light probes, 2 a lightmap, 3 a lightmapped material without its lightmap), and that light
+uint g_lightSource = 0u;
+vec3 g_ambientRaw = vec3(0.0);
 vec2 g_dx[2];
 vec2 g_dy[2];
 float g_weight[MAX_LAYERS];
@@ -1080,6 +1085,9 @@ vec3 AmbientBase(vec3 N)
 }
 
 #ifdef MATERIAL_BLEND
+// fsin_lightmap of a lightmapped material whose part found no lightmap: InstanceData.MissingLightmap plus 1
+#define LIGHTMAP_MISSING 0x40000000u
+
 // The light of a DS3 map piece's lightmap at the pixel, as the game's GXFlver_*DOL* shaders read it (DS3 DXBC): DOL 1's
 // color squared, times its HDR scale and the GPARAM's Dominant Light Map color; DOL 2's direction (the model's space,
 // x 2 - 1) and its sharpness plus the GPARAM's offset, which splits the light into a part from that direction and a
@@ -1128,6 +1136,9 @@ vec3 IndirectLight(Surface s)
 
 		ambientDiffuse = mix(ambientDiffuse, volumeLight, coverage);
 
+		if (coverage > 0.5)
+			g_lightSource = 1u;
+
 		if ((sceneparam.irradianceVolumeFlags & 1u) == 0u)
 			reflectionScale = 1.0;
 	}
@@ -1135,11 +1146,16 @@ vec3 IndirectLight(Surface s)
 #ifdef MATERIAL_BLEND
 	// A DS3 map piece's lightmap is all of its light from around, in place of the probes or the hemisphere, and
 	// its shadow of the sun replaces theirs
-	if (fsin_lightmap != 0u)
+	if (fsin_lightmap == LIGHTMAP_MISSING)
+	{
+		g_lightSource = 3u;
+	}
+	else if (fsin_lightmap != 0u)
 	{
 		float sunMask;
 		ambientDiffuse = LightmapIrradiance(s.N, sunMask);
 		g_probeSunMask = sunMask;
+		g_lightSource = 2u;
 
 		// Reflections follow how bright the lightmap is against the hemisphere they stand in for
 		reflectionScale = 1.0;
@@ -1151,6 +1167,7 @@ vec3 IndirectLight(Surface s)
 	}
 #endif
 
+	g_ambientRaw = ambientDiffuse;
 	ambientDiffuse *= sceneparam.ambientLightMult;
 
 	// traditional phong model
@@ -1839,6 +1856,22 @@ void main()
 
 	vec3 litColor = (direct * sceneparam.directLightMult + indirect * sceneparam.indirectLightMult) *
 		sceneparam.sceneBrightness;
+
+	// The lighting debug view, see SceneParam.LightingDebugView
+	if (sceneparam.lightingDebugView == 1u)
+	{
+		const vec3 sources[4] = vec3[4](vec3(1.0, 0.1, 0.1), vec3(0.15, 0.35, 1.0), vec3(0.1, 1.0, 0.1), vec3(1.0, 0.9, 0.0));
+		// Shaded a little by facing, so the shapes still read
+		litColor = sources[min(g_lightSource, 3u)] * (0.35 + 0.65 * clamp(surface.N.y * 0.5 + 0.5, 0.0, 1.0));
+	}
+	else if (sceneparam.lightingDebugView == 2u)
+	{
+		litColor = g_ambientRaw;
+	}
+	else if (sceneparam.lightingDebugView == 3u)
+	{
+		litColor = vec3(g_probeSunMask);
+	}
 
 	if (c_surface == SURFACE_UNLIT && HasFeature(FEATURE_UNLIT))
 	{

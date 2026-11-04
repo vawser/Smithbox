@@ -428,6 +428,39 @@ fields of `Material` stay unused); bake 0000.
 | Same | Characters and objects | Still lit by the probes (half as bright as before, from SH Color Scale 0.5) | Too dark now: SH Color Scale doesn't apply to the probes |
 | ER, SDT, BB | | Unchanged | |
 
+Result (2026-11-04, user screenshot): far towers and walls flat and washed out, many nearer pieces nearly black, the
+courtyard floor blue. Not yet explained: pieces without their lightmap lit by the hemisphere and full sun, and pieces
+with it too dark, would both fit.
+
+Diagnostics added: Viewport Rendering > Map Lighting > "Lighting Debug View" (`CFG.Viewport_Lighting_Debug_View`,
+`SceneParam.LightingDebugView`, the last pad word): Source (green lightmap, blue probes/volumes, red hemisphere,
+yellow a lightmapped material whose part found none, marked by `InstanceData.MissingLightmap`), Ambient (the light
+from around alone), Sun Mask. A "Lightmaps" checkbox there too. The `DolLightmapBank` log lines report each area's
+texture count and each map's lit pieces.
+
+Debug views (m30_00_00_00, 2026-11-04): Source mostly green, the big towers yellow; Sun Mask black on nearly every
+lightmapped piece; Ambient shaded plausibly but dim. Findings:
+- **The yellow towers were BTAB pieces.** Every part has exactly one BTAB entry (2,370 of 2,370 in m30_00 `_0000`), and
+  its `MaterialName` is one of the model's materials (m000518 has five, its entries name o001290). Matching by material
+  left the rest without a lightmap. Fixed: the atlas lights every material of the part. Of the other pieces, 372 find
+  their own textures; 223 in 69 models have none (m009031 x112, m009030 x35, m001779 x2 have DOL samplers but no
+  textures; the rest have no DOL samplers).
+- **DOL 1 alpha is near 0 everywhere** (decoded with DirectXTexNet, over used texels: mean 0.001-0.004, max
+  0.05-0.75), and the shader does scale the sun by it (`r11.w` is still DOL 1's alpha there). So the game's dynamic
+  sun barely reaches map pieces; the bake carries the sun's light. Kept as is.
+- **DOL 2 is not what the reading assumed**: rgb means 0.05-0.1, max 0.5, alpha near 0, not a direction around 0.5.
+  With alpha 0 the sharpness is the GPARAM offset alone (0.55 in m30). Open.
+- **The lightmaps come out far too dark**: DOL 1 rgb averages 0.03-0.15 over used texels, so color =
+  0.154² x 0.3 (FloatStruct) x 0.5 (RGB Scale) is about 0.004, against the probes' 0.25 outdoors. How the game makes
+  `FC_TexHdrScaleParam` from the FloatStruct (Unk00 1020) isn't traced. Added `GparamProfile.LightmapScale` (1 for now)
+  and Map Lighting > Lightmaps > Intensity (`Viewport_Map_Lightmap_Intensity`, 0-32, logarithmic), folded into the
+  table's entry 0.
+
+| Where | Do | Report |
+|---|---|---|
+| DS3 m30_00_00_00, Source view | Reload the map | The towers green now |
+| Same, lit | Move Intensity until the map pieces match the game | The value; whether it differs between dark and bright areas (if it does, the square or the FloatStruct use is wrong rather than a scale) |
+
 ## Suggested order
 
 | Step | Games | Cost | Visible gain |

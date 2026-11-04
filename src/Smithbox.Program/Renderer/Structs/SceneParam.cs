@@ -131,8 +131,12 @@ public unsafe struct SceneParam
     /// </summary>
     public uint LightmapStart;
 
-    // Fills the last 16 byte row, as the shaders lay the struct out
-    public uint MapLightPad1;
+    /// <summary>
+    ///     What FlverShader.frag draws in place of the lit color, CFG.Viewport_Lighting_Debug_View: 0 the lit color,
+    ///     1 where the light from around comes from, 2 that light alone, 3 the share of the sun let through. Also in
+    ///     what was padding.
+    /// </summary>
+    public uint LightingDebugView;
 
     /// <summary>
     ///     World to shadow map clip space of each cascade, see <see cref="ShadowCascades" />. The shadow map's depth

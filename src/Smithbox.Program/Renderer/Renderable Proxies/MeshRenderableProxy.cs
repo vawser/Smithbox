@@ -1029,10 +1029,13 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         }
 
         // A static, lightmapped material: its lightmap entry where an animated mesh keeps its skin
-        if (dat.SkinReference == 0 && _lightmap != null && _meshProvider is FlverSubmeshProvider { Material: { UsesLightmap: true } material } &&
-            _lightmap.TryGetEntry(material.MaterialName, out var lightmapEntry))
+        if (dat.SkinReference == 0 && _meshProvider is FlverSubmeshProvider { Material: { UsesLightmap: true } material })
         {
-            dat.SkinReference = InstanceData.LightmapFlag | lightmapEntry;
+            // Without an entry it is marked missing, which only the lighting debug view shows
+            dat.SkinReference = InstanceData.LightmapFlag |
+                                (_lightmap != null && _lightmap.TryGetEntry(material.MaterialName, out var lightmapEntry)
+                                    ? lightmapEntry
+                                    : InstanceData.MissingLightmap);
         }
 
         dat.EntityID = GetPackedEntityID(_renderablesSet.RenderableSystemIndex, _renderable);

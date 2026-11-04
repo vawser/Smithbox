@@ -81,6 +81,12 @@ public sealed class GparamProfile
     public bool HasDolLightmaps { get; private init; }
 
     /// <summary>
+    ///     A scale on the DOL lightmaps' light, for the part of it the game's code sets (how the TPF's FloatStruct becomes
+    ///     FC_TexHdrScaleParam) and that isn't traced. 1 until matched against the game.
+    /// </summary>
+    public float LightmapScale { get; private init; } = 1.0f;
+
+    /// <summary>
     ///     A scale on the volumetric fog's density (after its GameScale), for the part of it the game's code sets and
     ///     that isn't traced. Sekiro: 0.1, matched by eye against the game in m11_00_00_00 (2026-11-04).
     /// </summary>

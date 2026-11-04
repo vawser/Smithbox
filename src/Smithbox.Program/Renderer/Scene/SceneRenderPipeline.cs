@@ -568,6 +568,7 @@ public class SceneRenderPipeline
             SceneParams.MapLightStart = SceneRenderer.MapLights.Start;
             SceneParams.MapLightCount = UseMapLights ? SceneRenderer.MapLights.Count : 0;
             SceneParams.LightmapStart = SceneRenderer.Lightmaps?.Start ?? 0;
+            SceneParams.LightingDebugView = (uint)Math.Clamp(CFG.Current.Viewport_Lighting_Debug_View, 0, 3);
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)

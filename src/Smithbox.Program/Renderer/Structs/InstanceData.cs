@@ -16,6 +16,12 @@ public struct InstanceData
     /// </summary>
     public const uint LightmapFlag = 0x40000000;
 
+    /// <summary>
+    ///     With <see cref="LightmapFlag" />: a lightmapped material whose part found no lightmap, for the lighting debug
+    ///     view; lit as if it had none
+    /// </summary>
+    public const uint MissingLightmap = 0x3FFFFFFF;
+
     /// <summary>The bits of <see cref="SkinReference" /> that say what it holds</summary>
     public const uint SkinReferenceKindMask = 0xC0000000;
 

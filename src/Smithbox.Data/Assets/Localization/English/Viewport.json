@@ -449,6 +449,46 @@
       "Text": "The GPARAM's hemisphere light (sky color from above, ground color from below) lights what the irradiance volumes don't cover, and the reflections. With this on it also adds to the volumes' light, which matches the game."
     },
     {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Lightmaps",
+      "Text": "Lightmaps"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Lightmaps_TT",
+      "Text": "Light DS3's map pieces with their lightmaps (the DOL textures of gi_env), as the game does, in place of the light probes. Applies to maps loaded after it is changed."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Lightmap_Intensity",
+      "Text": "Intensity"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Lightmap_Intensity_TT",
+      "Text": "The viewport's scale on the lightmaps' light. How the game scales them isn't known, so match the map pieces against the game (or against the light-probe-lit objects beside them) and report the value."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Debug_View",
+      "Text": "Lighting Debug View"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Debug_View_TT",
+      "Text": "Draws a part of the map lighting in place of the lit image. Source: where each surface's light from around comes from, green a lightmap, blue light probes or irradiance volumes, red the hemisphere, yellow a lightmapped material whose part found no lightmap. Ambient: that light alone, without the surface's color. Sun Mask: how much of the sun each surface lets through, white all, black none."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Debug_Off",
+      "Text": "Off"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Debug_Source",
+      "Text": "Source"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Debug_Ambient",
+      "Text": "Ambient"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Debug_Sun_Mask",
+      "Text": "Sun Mask"
+    },
+    {
       "Key": "VIEWPORT_Menubar_Map_Lighting_From_Collision",
       "Text": "Use the Selected Collision's GPARAM"
     },

@@ -152,7 +152,11 @@ public class DolLightmapBank
             Parts.Remove(entity);
         }
 
-        table.SetGlobals(lighting?.DominantSharpnessOffset ?? 0.0f, lighting?.DominantColor ?? Vector3.One);
+        // The game's scale of the lightmaps isn't known, so the profile's and the viewport's go on the GPARAM's color
+        var scale = GparamProfile.For(Project.Descriptor.ProjectType).LightmapScale *
+                    Math.Max(CFG.Current.Viewport_Map_Lightmap_Intensity, 0.0f);
+
+        table.SetGlobals(lighting?.DominantSharpnessOffset ?? 0.0f, (lighting?.DominantColor ?? Vector3.One) * scale);
         table.Upload();
     }
 
@@ -172,43 +176,30 @@ public class DolLightmapBank
 
         var prefix = $"{code}_{model}_gi_{Bake}_00_dol_";
 
-        // An instanced piece: one atlas per material
+        // An instanced piece: its place in an atlas. Every part has one BTAB entry (2,370 of 2,370 in m30_00), whose
+        // MaterialName is only one of the model's materials, so the atlas lights all of them
         if (atlas.TryGetValue(piece.Name, out var entries) && entries.Count > 0)
         {
-            var resolved = new List<(string Material, LightmapData Data)>();
+            var entry = entries[0];
+            var suffix = $"_atlas{entry.AtlasID:D3}";
+            var color = $"{prefix}00{suffix}";
+            var direction = $"{prefix}01{suffix}";
 
-            foreach (var entry in entries)
+            if (index.Names.Contains(color) && index.Names.Contains(direction))
             {
-                var suffix = $"_atlas{entry.AtlasID:D3}";
-                var color = $"{prefix}00{suffix}";
-                var direction = $"{prefix}01{suffix}";
-
-                if (!index.Names.Contains(color) || !index.Names.Contains(direction))
-                    continue;
-
                 if (!TryGetTexture(color, out var colorTexture) || !TryGetTexture(direction, out var directionTexture))
                     return false;
 
-                resolved.Add((entry.MaterialName, new LightmapData
+                if (table.Add(new LightmapData
+                    {
+                        ColorTexture = colorTexture,
+                        DirectionTexture = directionTexture,
+                        UvScaleOffset = new Vector4(entry.UVScale, entry.UVOffset.X, entry.UVOffset.Y),
+                        HdrScale = new Vector4(index.HdrScales.GetValueOrDefault(color, Vector3.One), 1.0f)
+                    }) is { } added)
                 {
-                    ColorTexture = colorTexture,
-                    DirectionTexture = directionTexture,
-                    UvScaleOffset = new Vector4(entry.UVScale, entry.UVOffset.X, entry.UVOffset.Y),
-                    HdrScale = new Vector4(index.HdrScales.GetValueOrDefault(color, Vector3.One), 1.0f)
-                }));
-            }
-
-            if (resolved.Count > 0)
-            {
-                var binding = new LightmapBinding();
-
-                foreach (var (material, data) in resolved)
-                {
-                    if (table.Add(data) is { } added)
-                        binding.Add(material, added);
+                    state.Binding = LightmapBinding.ForAll(added);
                 }
-
-                state.Binding = binding;
             }
 
             state.Done = true;

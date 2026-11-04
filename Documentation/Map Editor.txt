@@ -31,9 +31,11 @@
 
 
 - Renderer:
-    - Add simple toggle between 'Editor' and 'Game' rendering modes:
+    - Add simple toggle between 'Editor', 'Game' rendering modes:
         - Editor is fullbright and ignores most of the new rendering features.
         - Game follows the settings in the viewport rendering menu for the new rendering features.
+    - Add toggle between Texturing (Diffuse) and Texturing (Normal)
+        - Texturing (Normal) uses the Normals image output
     - Refine the viewport rendering menu
     - See what can be applied backwards to SDT/BB/DS3/DS2/DS1R
     - Fix decal textures for ER

@@ -1288,6 +1288,15 @@ public class CFG
     // in place of the light probes, see DolLightmapBank
     public bool Viewport_Map_Lightmaps = true;
 
+    // The viewport's scale on DS3's lightmaps, on top of the game's own (GparamProfile.LightmapScale), to match the
+    // game while the game's scale of them isn't known
+    public float Viewport_Map_Lightmap_Intensity = 1.0f;
+
+    // A debug view of the map lighting in the flver shader: 0 off, 1 the source of the light from around (green
+    // lightmap, blue light probes or volumes, red hemisphere, yellow a lightmapped material without its lightmap),
+    // 2 that light alone, 3 the share of the sun let through
+    public int Viewport_Lighting_Debug_View = 0;
+
     // Whether the viewport's background takes the GPARAM's BG color instead of Viewport_Bg_Color
     public bool Viewport_Map_Lighting_Background = true;
 
