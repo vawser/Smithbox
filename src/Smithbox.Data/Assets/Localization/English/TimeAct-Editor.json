@@ -233,6 +233,14 @@
       "Text": "Copy Event"
     },
     {
+      "Key": "TAE_GraphWindow_Event_Filter",
+      "Text": "Filter events..."
+    },
+    {
+      "Key": "TAE_GraphWindow_Event_Filter_TT",
+      "Text": "Events that don't match are drawn duller.\n\nField Value: events with a field whose name contains Field, set to Value. For example: SpEffectID 450\nField=Value: the same, for field names with spaces in them.\nValue: events with any field set to Value. For example: 450\nAny other text: events whose name contains it. For example: Invoke, or [96] for an event type.\n\nNumbers match by value, so hex fields can be searched in decimal, and enum fields by name or number."
+    },
+    {
       "Key": "TAE_GraphWindow_Select_All",
       "Text": "Select All"
     },

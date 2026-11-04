@@ -2,10 +2,6 @@
 # Time Act Editor TODO
 #----------------------------------------------------
 
-- Action Graph:
-    - Select all action
-    - Filter: grays out non-matches. Can filter by event name, or value of parameters (i.e. 45 would match to the SpEffectID of a AddSpEffect_Multiplayer event)
-    
 - Properties:
     - Expand meta:
         - Aliases (param aliases support)

@@ -84,6 +84,10 @@ public class TimeActGraphWindow
     private float AddEventTime;
     private string AddEventFilter = "";
 
+    // Events that don't pass it are drawn duller, rather than hidden, so the rest of the timeline stays in view
+    private readonly TimeActEventFilter EventFilter = new();
+    private string EventFilterText = "";
+
     public TimeActGraphWindow(TimeActEditorView view, ProjectEntry project)
     {
         View = view;
@@ -95,6 +99,7 @@ public class TimeActGraphWindow
     public void Display(float width, float height)
     {
         DisplayToolbar();
+        DisplayEventFilter();
 
         var flags = ImGuiWindowFlags.HorizontalScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
 
@@ -164,6 +169,18 @@ public class TimeActGraphWindow
             ImGui.SameLine();
             ImGui.TextDisabled(LOC.Get("TAE_GraphWindow_Read_Only"));
         }
+    }
+
+    private void DisplayEventFilter()
+    {
+        ImGui.SetNextItemWidth(-1);
+
+        if (ImGui.InputTextWithHint("##graphEventFilter", LOC.Get("TAE_GraphWindow_Event_Filter"), ref EventFilterText, 255))
+        {
+            EventFilter.SetText(EventFilterText);
+        }
+
+        GUI.Tooltip(LOC.Get("TAE_GraphWindow_Event_Filter_TT"));
     }
 
     public void DisplayEventGraph()
@@ -715,6 +732,7 @@ public class TimeActGraphWindow
         var drawList = ImGui.GetWindowDrawList();
 
         var textColor = ImGui.GetColorU32(ImGuiCol.Text);
+        var dullTextColor = ImGui.GetColorU32(ImGuiCol.TextDisabled);
         var lineColor = ImGui.GetColorU32(ImGuiCol.Border);
         var rowColor = ImGui.GetColorU32(ImGuiCol.FrameBg);
         var headerColor = ImGui.GetColorU32(ImGuiCol.TitleBg);
@@ -769,7 +787,10 @@ public class TimeActGraphWindow
             if (max.X < tracksMin.X || min.X > viewMax.X || max.Y < tracksMin.Y || min.Y > viewMax.Y)
                 continue;
 
-            drawList.AddRectFilled(min, max, GetEventColor(ev.Type));
+            var eventName = GetEventName(ev, template);
+            var isDull = !EventFilter.IsMatch(ev, eventName);
+
+            drawList.AddRectFilled(min, max, GetEventColor(ev.Type, isDull));
 
             if (View.Selection.IsEventSelected(ev))
             {
@@ -783,7 +804,7 @@ public class TimeActGraphWindow
             }
 
             drawList.PushClipRect(min, Vector2.Min(max, viewMax), true);
-            drawList.AddText(min + new Vector2(3, 2), textColor, GetEventName(ev, template));
+            drawList.AddText(min + new Vector2(3, 2), isDull ? dullTextColor : textColor, eventName);
             drawList.PopClipRect();
         }
 
@@ -867,10 +888,14 @@ public class TimeActGraphWindow
     }
 
     /// <summary>
-    /// Gives each type of event a colour of its own, spread out so that nearby IDs don't look alike
+    /// Gives each type of event a colour of its own, spread out so that nearby IDs don't look alike.
+    /// Dull colours are for events that don't pass the filter: mostly grey and darker, but with a hint of the type left.
     /// </summary>
-    private static uint GetEventColor(int type)
+    private static uint GetEventColor(int type, bool dull = false)
     {
+        const float DullGreyAmount = 0.75f;
+        const float DullDarken = 0.55f;
+
         const float GoldenRatio = 0.618034f;
         const float Saturation = 0.45f;
         const float Value = 0.55f;
@@ -890,6 +915,13 @@ public class TimeActGraphWindow
         };
 
         var color = (new Vector3(1 - Saturation) + rgb * Saturation) * Value;
+
+        if (dull)
+        {
+            var grey = new Vector3((color.X + color.Y + color.Z) / 3);
+
+            color = Vector3.Lerp(color, grey, DullGreyAmount) * DullDarken;
+        }
 
         return ImGui.ColorConvertFloat4ToU32(new Vector4(color, 1));
     }
