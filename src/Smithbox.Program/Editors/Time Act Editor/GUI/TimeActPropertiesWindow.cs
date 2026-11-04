@@ -50,8 +50,7 @@ public class TimeActPropertiesWindow
             LOC.Get("TAE_PropertiesWindow_List_Header"),
             LOC.Get("TAE_PropertiesWindow_List_Header_TT"));
 
-        EditorFilters.DisplayFramedListFilter("timeActEditor_Properties_Filter",
-            ref PropertiesFilter, ref ExactPropertiesFilter);
+        DisplayHeader();
 
         if (!ImGui.BeginTabBar("##timeActPropertiesTabs"))
             return;
@@ -115,6 +114,53 @@ public class TimeActPropertiesWindow
 
         ImGui.EndTabBar();
     }
+
+    /// <summary>
+    /// The filter, with buttons after it for how the parameters are named, and whether unused ones are shown
+    /// </summary>
+    private void DisplayHeader()
+    {
+        const string id = "timeActEditor_Properties_Filter";
+
+        ImGui.BeginChild($"framedListFilter_{id}", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplaySearchbar(id, ref PropertiesFilter, ref ExactPropertiesFilter);
+
+        // Field Name Mode
+        ImGui.SameLine();
+
+        var mode = CFG.Current.TimeActEditor_Field_Name_Mode;
+        var next = mode is TimeActFieldNameMode.Annotation ? TimeActFieldNameMode.Internal : TimeActFieldNameMode.Annotation;
+
+        ImGui.AlignTextToFramePadding();
+        if (ImGui.Button($"{(mode is TimeActFieldNameMode.Annotation ? Icons.Book : Icons.Code)}##timeActFieldNameMode"))
+        {
+            CFG.Current.TimeActEditor_Field_Name_Mode = next;
+        }
+        GUI.Tooltip(LOC.Get("TAE_PropertiesWindow_Field_Name_Mode_TT",
+            GetFieldNameModeName(mode), GetFieldNameModeName(next)));
+
+        // Obsolete Fields
+        ImGui.SameLine();
+
+        var hidden = CFG.Current.TimeActEditor_Hide_Obsolete_Fields;
+
+        if (ImGui.Button($"{(hidden ? Icons.EyeSlash : Icons.Eye)}##timeActHideObsoleteFields"))
+        {
+            CFG.Current.TimeActEditor_Hide_Obsolete_Fields = !hidden;
+        }
+        GUI.Tooltip(LOC.Get(hidden
+            ? "TAE_PropertiesWindow_Obsolete_Fields_Hidden_TT"
+            : "TAE_PropertiesWindow_Obsolete_Fields_Shown_TT"));
+
+        ImGui.EndChild();
+    }
+
+    private static string GetFieldNameModeName(TimeActFieldNameMode mode) => mode switch
+    {
+        TimeActFieldNameMode.Internal => LOC.Get("TAE_PropertiesWindow_Field_Name_Mode_Internal"),
+        _ => LOC.Get("TAE_PropertiesWindow_Field_Name_Mode_Annotation")
+    };
 
     private enum PropertiesTab
     {
@@ -216,11 +262,26 @@ public class TimeActPropertiesWindow
                     if (parameter.ValueToAssert != null)
                         continue;
 
-                    if (!EditorFilters.IsMatch(PropertiesFilter, parameter.Name, ExactPropertiesFilter))
+                    var meta = Project.Handler.TimeActData.GetFieldMeta(ev.Type, parameter.Name);
+
+                    if (meta?.Obsolete == true && CFG.Current.TimeActEditor_Hide_Obsolete_Fields)
                         continue;
 
-                    DisplayParameter(ev, key, parameter);
-                    DisplayParameterMeta(ev, key, parameter);
+                    // Both names match, whichever is on show
+                    if (!EditorFilters.IsMatch(PropertiesFilter, parameter.Name, ExactPropertiesFilter, meta?.AltName ?? ""))
+                        continue;
+
+                    ImGui.PushID(key);
+
+                    DisplayParameter(ev, key, parameter, meta);
+                    DisplayParameterMeta(ev, key, meta);
+
+                    ImGui.PopID();
+
+                    if (meta?.Separator == true)
+                    {
+                        DisplaySeparatorRow();
+                    }
                 }
             }
 
@@ -613,19 +674,21 @@ public class TimeActPropertiesWindow
         }
     }
 
-    private void DisplayParameter(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter)
+    private void DisplayParameter(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter, TimeActField meta)
     {
         var value = ev.Parameters[key];
+        var name = Project.Handler.TimeActData.GetFieldDisplayName(ev.Type, parameter.Name);
+        var isObsolete = meta?.Obsolete == true;
 
         if (parameter.EnumEntries != null)
         {
-            DisplayEnumParameter(ev, key, parameter, value);
+            DisplayEnumParameter(ev, key, parameter, meta, name, value);
             return;
         }
 
         if (parameter.Type is TAE.Template.ParamType.b)
         {
-            BeginRow(parameter.Name);
+            BeginRow(name, isObsolete);
 
             var ticked = (bool)value;
 
@@ -634,10 +697,31 @@ public class TimeActPropertiesWindow
                 SetParameter(ev, key, ticked);
             }
 
+            DisplayParameterTooltip(parameter, meta);
+            DisplayParameterContextMenu(ev, key, parameter, meta, value);
             return;
         }
 
-        var text = BeginField(parameter.Name, key, parameter.ValueToString(value));
+        // A number that is only ever 0 or 1
+        if (meta?.IsBool == true && IsInteger(value))
+        {
+            BeginRow(name, isObsolete);
+
+            var ticked = Convert.ToInt64(value) != 0;
+
+            if (ImGui.Checkbox($"##{key}", ref ticked))
+            {
+                SetParameter(ev, key, Convert.ChangeType(ticked ? 1 : 0, value.GetType()));
+            }
+
+            DisplayParameterTooltip(parameter, meta);
+            DisplayParameterContextMenu(ev, key, parameter, meta, value);
+            return;
+        }
+
+        BeginRow(name, isObsolete);
+
+        var text = FieldText.TryGetValue(key, out var typed) ? typed : parameter.ValueToString(value);
 
         ImGui.SetNextItemWidth(-1);
 
@@ -646,9 +730,7 @@ public class TimeActPropertiesWindow
             FieldText[key] = text;
         }
 
-        var description = Project.Handler.TimeActData.GetFieldMeta(parameter.Name)?.Description;
-
-        GUI.Tooltip(string.IsNullOrEmpty(description) ? parameter.Type.ToString() : $"{parameter.Type}\n{description}");
+        DisplayParameterTooltip(parameter, meta);
 
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
@@ -663,22 +745,100 @@ public class TimeActPropertiesWindow
                 Smithbox.Log(this, LOC.Get("TAE_PropertiesWindow_Invalid_Value", text, parameter.Type));
             }
         }
+
+        DisplayParameterContextMenu(ev, key, parameter, meta, value);
+    }
+
+    private static bool IsInteger(object value)
+    {
+        return value is byte or sbyte or short or ushort or int or uint or long or ulong;
     }
 
     /// <summary>
-    /// Adds a row under a parameter that refers to something, showing what it refers to
+    /// The tooltip of a parameter gives the name that isn't on show, its type, what it does, and its default
     /// </summary>
-    private void DisplayParameterMeta(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter)
+    private void DisplayParameterTooltip(TAE.Template.ParameterTemplate parameter, TimeActField meta)
     {
-        if (Project.Handler.TimeActData.GetFieldMeta(parameter.Name) is not { } meta)
+        var lines = new List<string>();
+
+        if (meta != null && meta.AltName.Length > 0)
+        {
+            lines.Add(CFG.Current.TimeActEditor_Field_Name_Mode is TimeActFieldNameMode.Annotation
+                ? LOC.Get("TAE_PropertiesWindow_Field_Internal_Name", parameter.Name)
+                : LOC.Get("TAE_PropertiesWindow_Field_Annotation_Name", meta.AltName));
+        }
+
+        lines.Add(parameter.Type.ToString());
+
+        if (meta != null && meta.Obsolete)
+        {
+            lines.Add(LOC.Get("TAE_PropertiesWindow_Field_Obsolete"));
+        }
+
+        if (meta != null && meta.Description.Length > 0)
+        {
+            lines.Add(meta.Description);
+        }
+
+        if (meta != null && meta.DefaultValue.Length > 0)
+        {
+            lines.Add(LOC.Get("TAE_PropertiesWindow_Field_Default", meta.DefaultValue));
+        }
+
+        GUI.Tooltip(string.Join("\n", lines));
+    }
+
+    /// <summary>
+    /// The right-click menu of a parameter, which can put it back to its default
+    /// </summary>
+    private void DisplayParameterContextMenu(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter,
+        TimeActField meta, object value)
+    {
+        if (meta == null || meta.DefaultValue.Length == 0)
             return;
 
-        ImGui.PushID(key);
+        if (!ImGui.BeginPopupContextItem($"##{key}_contextMenu"))
+            return;
+
+        object defaultValue = null;
+
+        try
+        {
+            defaultValue = parameter.StringToValue(meta.DefaultValue);
+        }
+        catch (Exception e) when (e is FormatException or OverflowException or IndexOutOfRangeException)
+        {
+        }
+
+        ImGui.BeginDisabled(defaultValue == null || defaultValue.Equals(value));
+
+        if (ImGui.MenuItem(LOC.Get("TAE_PropertiesWindow_Field_Reset_To_Default", meta.DefaultValue)))
+        {
+            FieldText.Remove(key);
+            SetParameter(ev, key, defaultValue);
+        }
+
+        ImGui.EndDisabled();
+
+        if (defaultValue == null)
+        {
+            GUI.Tooltip(LOC.Get("TAE_PropertiesWindow_Field_Invalid_Default", meta.DefaultValue, parameter.Type));
+        }
+
+        ImGui.EndPopup();
+    }
+
+    /// <summary>
+    /// Adds rows under a parameter that refers to something, showing what it refers to
+    /// </summary>
+    private void DisplayParameterMeta(TAE.Event ev, string key, TimeActField meta)
+    {
+        if (meta == null)
+            return;
 
         DisplayParamReference(ev, key, meta);
+        DisplayProjectEnum(ev, key, meta);
         DisplayAlias(ev, key, meta);
-
-        ImGui.PopID();
     }
 
     private void DisplayParamReference(TAE.Event ev, string key, TimeActField meta)
@@ -725,6 +885,43 @@ public class TimeActPropertiesWindow
         }
     }
 
+    /// <summary>
+    /// The name of the value in the project enum, which can be right-clicked to pick another
+    /// </summary>
+    private void DisplayProjectEnum(TAE.Event ev, string key, TimeActField meta)
+    {
+        if (meta.ProjectEnum == "" || !CFG.Current.ParamEditor_Field_List_Display_Enums)
+            return;
+
+        var projectEnum = ProjectEnumHelper.GetEnum(Project, meta.ProjectEnum);
+
+        if (projectEnum == null)
+            return;
+
+        object value = ev.Parameters[key];
+        object newValue = null;
+
+        ImGui.TableNextRow();
+
+        ImGui.TableSetColumnIndex(0);
+        ProjectEnumHelper.Label(Project, meta.ProjectEnum);
+
+        ImGui.TableSetColumnIndex(1);
+        ProjectEnumHelper.Hint(Project, meta.ProjectEnum, $"{value}");
+
+        if (ImGui.BeginPopupContextItem("##projectEnumContextMenu"))
+        {
+            var changed = ProjectEnumHelper.ContextMenu(projectEnum, value, ref newValue);
+
+            ImGui.EndPopup();
+
+            if (changed && newValue != null)
+            {
+                SetParameter(ev, key, newValue);
+            }
+        }
+    }
+
     private void DisplayAlias(TAE.Event ev, string key, TimeActField meta)
     {
         if (!Enum.TryParse(meta.Alias, out ProjectAliasType aliasType))
@@ -743,17 +940,29 @@ public class TimeActPropertiesWindow
         ImGui.PopStyleColor();
     }
 
-    private void DisplayEnumParameter(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter, object value)
+    private static void DisplaySeparatorRow()
     {
-        BeginRow(parameter.Name);
+        ImGui.TableNextRow();
+
+        ImGui.TableSetColumnIndex(0);
+        ImGui.Separator();
+
+        ImGui.TableSetColumnIndex(1);
+        ImGui.Separator();
+    }
+
+    private void DisplayEnumParameter(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter,
+        TimeActField meta, string name, object value)
+    {
+        BeginRow(name, meta?.Obsolete == true);
 
         ImGui.SetNextItemWidth(-1);
 
         if (ImGui.BeginCombo($"##{key}", parameter.ValueToString(value)))
         {
-            foreach (var (name, entryValue) in parameter.EnumEntries)
+            foreach (var (entryName, entryValue) in parameter.EnumEntries)
             {
-                if (ImGui.Selectable(name, entryValue.Equals(value)))
+                if (ImGui.Selectable(entryName, entryValue.Equals(value)))
                 {
                     SetParameter(ev, key, entryValue);
                 }
@@ -761,6 +970,9 @@ public class TimeActPropertiesWindow
 
             ImGui.EndCombo();
         }
+
+        DisplayParameterTooltip(parameter, meta);
+        DisplayParameterContextMenu(ev, key, parameter, meta, value);
     }
 
     /// <summary>
@@ -800,13 +1012,24 @@ public class TimeActPropertiesWindow
         }
     }
 
-    private static void BeginRow(string name)
+    /// <summary>
+    /// Starts a row with its name. Obsolete fields have their name dimmed, as the game doesn't read them.
+    /// </summary>
+    private static void BeginRow(string name, bool isDimmed = false)
     {
         ImGui.TableNextRow();
 
         ImGui.TableSetColumnIndex(0);
         ImGui.AlignTextToFramePadding();
-        ImGui.Text(name);
+
+        if (isDimmed)
+        {
+            ImGui.TextDisabled(name);
+        }
+        else
+        {
+            ImGui.Text(name);
+        }
 
         ImGui.TableSetColumnIndex(1);
     }

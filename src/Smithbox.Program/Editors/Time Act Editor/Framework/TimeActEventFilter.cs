@@ -18,6 +18,9 @@ namespace StudioCore.Editors.TimeActEditor;
 /// </summary>
 public class TimeActEventFilter
 {
+    // For the annotated names of the fields, which match as well as the internal ones
+    private readonly ProjectEntry Project;
+
     private string Text = "";
 
     // The filter is parsed once whenever the text changes, as it is tested against every event each frame
@@ -25,6 +28,11 @@ public class TimeActEventFilter
     private string FieldName;
     private string FieldValue;
     private string SingleValue;
+
+    public TimeActEventFilter(ProjectEntry project)
+    {
+        Project = project;
+    }
 
     public bool IsActive => Query.Length > 0;
 
@@ -105,10 +113,10 @@ public class TimeActEventFilter
     }
 
     /// <summary>
-    /// Whether any field of the event has the value, among the fields whose name contains the one given,
-    /// or among all of them if no name is given
+    /// Whether any field of the event has the value, among the fields whose internal or annotated name
+    /// contains the one given, or among all of them if no name is given
     /// </summary>
-    private static bool HasField(TAE.Event ev, string fieldName, string valueText)
+    private bool HasField(TAE.Event ev, string fieldName, string valueText)
     {
         if (ev.Parameters == null)
             return false;
@@ -119,7 +127,7 @@ public class TimeActEventFilter
             if (parameter.ValueToAssert != null)
                 continue;
 
-            if (fieldName != null && !parameter.Name.Contains(fieldName, StringComparison.OrdinalIgnoreCase))
+            if (fieldName != null && !IsFieldNameMatch(ev.Type, parameter.Name, fieldName))
                 continue;
 
             if (!ev.Parameters.Values.TryGetValue(key, out var value) || value == null)
@@ -130,6 +138,16 @@ public class TimeActEventFilter
         }
 
         return false;
+    }
+
+    private bool IsFieldNameMatch(int eventType, string parameterName, string fieldName)
+    {
+        if (parameterName.Contains(fieldName, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        var altName = Project?.Handler?.TimeActData?.GetFieldMeta(eventType, parameterName)?.AltName;
+
+        return !string.IsNullOrEmpty(altName) && altName.Contains(fieldName, StringComparison.OrdinalIgnoreCase);
     }
 
     private static bool IsValueMatch(TAE.Template.ParameterTemplate parameter, object value, string valueText)

@@ -85,13 +85,15 @@ public class TimeActGraphWindow
     private string AddEventFilter = "";
 
     // Events that don't pass it are drawn duller, rather than hidden, so the rest of the timeline stays in view
-    private readonly TimeActEventFilter EventFilter = new();
+    private readonly TimeActEventFilter EventFilter;
     private string EventFilterText = "";
 
     public TimeActGraphWindow(TimeActEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+
+        EventFilter = new TimeActEventFilter(project);
     }
 
     private bool CanEdit => Project.Handler.TimeActData.CanSaveTimeActs;

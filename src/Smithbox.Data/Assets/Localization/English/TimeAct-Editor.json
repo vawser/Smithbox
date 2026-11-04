@@ -489,6 +489,50 @@
       "Text": "{0} events of different types are selected. Only the first is shown, and changes apply to it alone."
     },
     {
+      "Key": "TAE_PropertiesWindow_Field_Name_Mode_TT",
+      "Text": "Parameter names: {0}\nClick to switch to: {1}"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_Name_Mode_Annotation",
+      "Text": "Display Annotation Name"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_Name_Mode_Internal",
+      "Text": "Display Internal Name"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Obsolete_Fields_Shown_TT",
+      "Text": "Obsolete parameters are shown, dimmed.\nClick to hide them."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Obsolete_Fields_Hidden_TT",
+      "Text": "Obsolete parameters are hidden.\nClick to show them."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_Internal_Name",
+      "Text": "Internal Name: {0}"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_Annotation_Name",
+      "Text": "Annotation Name: {0}"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_Obsolete",
+      "Text": "Obsolete: the game doesn't read this value."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_Default",
+      "Text": "Default: {0}"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_Reset_To_Default",
+      "Text": "Reset to Default ({0})"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_Invalid_Default",
+      "Text": "The default value {0} in the meta is not a valid {1}."
+    },
+    {
       "Key": "TAE_PropertiesWindow_Animation_Header",
       "Text": "Animation: {0}"
     },

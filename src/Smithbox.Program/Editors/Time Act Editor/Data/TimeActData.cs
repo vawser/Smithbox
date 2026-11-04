@@ -20,7 +20,7 @@ public class TimeActData : IDisposable
     public TimeActMeta Meta = new();
 
     // Parameters are looked up every frame while they are on display
-    private Dictionary<string, TimeActField> FieldMetaCache = new();
+    private Dictionary<(int EventType, string Name), TimeActField> FieldMetaCache = new();
 
     public TimeActData(ProjectEntry project)
     {
@@ -66,19 +66,43 @@ public class TimeActData : IDisposable
     }
 
     /// <summary>
-    /// Gets the meta of an event parameter, or null if there is none. An exact match goes first.
+    /// Gets the meta of a parameter of an event type, or null if there is none. Entries limited to the event type
+    /// go before those for every event, and within each, an exact match goes before a prefix.
     /// </summary>
-    public TimeActField GetFieldMeta(string parameterName)
+    public TimeActField GetFieldMeta(int eventType, string parameterName)
     {
-        if (!FieldMetaCache.TryGetValue(parameterName, out var field))
+        if (!FieldMetaCache.TryGetValue((eventType, parameterName), out var field))
         {
-            field = Meta.Fields.FirstOrDefault(e => e.Field.Equals(parameterName, StringComparison.OrdinalIgnoreCase))
-                ?? Meta.Fields.FirstOrDefault(e => e.IsPrefix && parameterName.StartsWith(e.Field, StringComparison.OrdinalIgnoreCase));
+            bool IsExact(TimeActField e) => e.Field.Equals(parameterName, StringComparison.OrdinalIgnoreCase);
+            bool IsPrefix(TimeActField e) => e.IsPrefix && parameterName.StartsWith(e.Field, StringComparison.OrdinalIgnoreCase);
 
-            FieldMetaCache[parameterName] = field;
+            bool IsForType(TimeActField e) => e.EventTypes?.Contains(eventType) == true;
+            bool IsForAll(TimeActField e) => e.EventTypes == null || e.EventTypes.Count == 0;
+
+            field = Meta.Fields.FirstOrDefault(e => IsForType(e) && IsExact(e))
+                ?? Meta.Fields.FirstOrDefault(e => IsForType(e) && IsPrefix(e))
+                ?? Meta.Fields.FirstOrDefault(e => IsForAll(e) && IsExact(e))
+                ?? Meta.Fields.FirstOrDefault(e => IsForAll(e) && IsPrefix(e));
+
+            FieldMetaCache[(eventType, parameterName)] = field;
         }
 
         return field;
+    }
+
+    /// <summary>
+    /// The name a parameter is shown with: its annotation when there is one and annotations are on,
+    /// or else the name in the event template
+    /// </summary>
+    public string GetFieldDisplayName(int eventType, string parameterName)
+    {
+        if (CFG.Current.TimeActEditor_Field_Name_Mode is TimeActFieldNameMode.Annotation &&
+            GetFieldMeta(eventType, parameterName) is { AltName.Length: > 0 } meta)
+        {
+            return meta.AltName;
+        }
+
+        return parameterName;
     }
 
     /// <summary>
