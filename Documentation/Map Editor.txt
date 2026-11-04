@@ -31,11 +31,6 @@
 
 
 - Renderer:
-    - Add simple toggle between 'Editor', 'Game' rendering modes:
-        - Editor is fullbright and ignores most of the new rendering features.
-        - Game follows the settings in the viewport rendering menu for the new rendering features.
-    - Add toggle between Texturing (Diffuse) and Texturing (Normal)
-        - Texturing (Normal) uses the Normals image output
     - Refine the viewport rendering menu
     
     - Fix decal textures for ER

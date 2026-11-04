@@ -86,6 +86,21 @@ public static class ResourceLoadTracker
     }
 
     /// <summary>
+    ///     Whether a session is open: a map, prefab or model is being loaded as a whole, rather than one resource
+    ///     being requested on its own
+    /// </summary>
+    public static bool HasActiveSession
+    {
+        get
+        {
+            lock (_lock)
+            {
+                return _sessions.Count > 0;
+            }
+        }
+    }
+
+    /// <summary>
     ///     Gets the name of the first session, and how many others are running alongside it.
     /// </summary>
     public static string GetSessionName(out int otherSessions)

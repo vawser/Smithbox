@@ -232,12 +232,17 @@ public static class SceneRenderer
     ///     Whether a load is in progress: from when a load job starts until its resources have been loaded,
     ///     uploaded and published to the texture pools. While it is, the scene isn't drawn: textures are allocated,
     ///     filled and written into the descriptor tables over many frames, and drawing part way through that has lost
-    ///     the device (SDT, Hirada Estate). Only a load job starts this. The uploads and descriptor writes of
-    ///     selecting or changing a render filter don't, as those would blank the viewport for a frame each time.
+    ///     the device (SDT, Hirada Estate). Only the jobs of an active reload start this: a session of
+    ///     <see cref="ResourceLoadTracker" />, opened by loading a map, a prefab or a model as a whole. A resource
+    ///     requested on its own, such as the new mesh or texture of a model whose name was changed, is drawn through
+    ///     as before, as are the uploads and descriptor writes of selecting or changing a render filter, as those
+    ///     would blank the viewport for a frame each time.
     /// </summary>
     private static bool IsLoading()
     {
-        if (ResourceManager.ActiveJobProgress.Count > 0)
+        var jobsRunning = ResourceManager.ActiveJobProgress.Count > 0;
+
+        if (jobsRunning && ResourceLoadTracker.HasActiveSession)
         {
             _loadInProgress = true;
             return true;
@@ -248,8 +253,10 @@ public static class SceneRenderer
             return false;
         }
 
-        // The jobs are done, but the device lost came after them, while their uploads were still queued
-        _loadInProgress = LowPriorityBackgroundUploadQueue.Count > 0
+        // The session has ended, but its jobs can still be finishing, and the device lost came after them, while
+        // their uploads were still queued
+        _loadInProgress = jobsRunning
+                          || LowPriorityBackgroundUploadQueue.Count > 0
                           || LowPriorityBackgroundUploadQueueBackfill.Count > 0
                           || !_asyncTransfersPendingQueue.IsEmpty
                           || _asyncTransfers.Count > 0
