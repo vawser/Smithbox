@@ -80,7 +80,7 @@ public class TimeActEditorView : IEditorView
         ToolWindow = new(this, project);
 
         // Tools
-        GridTool = new ViewportGridTool(ViewportGridEditor.TimeAct);
+        GridTool = new ViewportGridTool(ViewportGridEditor.TimeAct, () => ViewportWindow?.Viewport as VulkanViewport);
         RenderingTool = new ViewportRenderingTool(() => ViewportWindow?.Viewport as VulkanViewport);
         ResourceListTool = new ResourceListTool();
         CharacterPreview = new ModelCharacterPreview(project, GetCharacterPreviewTarget);

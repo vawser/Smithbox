@@ -32,6 +32,11 @@ public class VulkanViewport : IViewport
     public ViewportGrid SecondaryGrid;
     public ViewportGrid TertiaryGrid;
 
+    /// <summary>
+    /// Gizmo target for grid movement mode, see <see cref="ViewportGridMovement" />.
+    /// </summary>
+    private ViewportGridGizmoTarget GridGizmoTarget;
+
     public RenderScene RenderScene;
     public ViewportSelection ViewportSelection;
     public SceneRenderPipeline ViewPipeline;
@@ -342,6 +347,8 @@ public class VulkanViewport : IViewport
         Ray ray = GetRay(pos.X - X, pos.Y - Y);
         CursorX = (int)pos.X; // - X;
         CursorY = (int)pos.Y; // - Y;
+
+        UpdateGizmoTarget();
 
         Gizmos.Update(ray, CanInteract && MouseInViewport(), IsActiveViewport);
 
@@ -713,21 +720,73 @@ public class VulkanViewport : IViewport
         return true;
     }
 
+    /// <summary>
+    /// The grid editor this viewport belongs to, and whether that editor is focused. False if it has no grids.
+    /// </summary>
+    private bool TryGetGridEditor(out ViewportGridEditor editor, out bool isEditorFocused)
+    {
+        switch (Owner)
+        {
+            case MapUniverse mapUniverse:
+                editor = ViewportGridEditor.Map;
+                isEditorFocused = mapUniverse.Project.Handler.FocusedEditor is MapEditorScreen;
+                return true;
+
+            case ModelUniverse modelUniverse:
+                editor = ViewportGridEditor.Model;
+                isEditorFocused = modelUniverse.Project.Handler.FocusedEditor is ModelEditorScreen;
+                return true;
+
+            case TimeActUniverse timeActUniverse:
+                editor = ViewportGridEditor.TimeAct;
+                isEditorFocused = timeActUniverse.Project.Handler.FocusedEditor is TimeActEditorScreen;
+                return true;
+        }
+
+        editor = default;
+        isEditorFocused = false;
+        return false;
+    }
+
+    /// <summary>
+    /// Points the gizmo at the moving grid while grid movement mode is on, otherwise at the selection.
+    /// </summary>
+    private void UpdateGizmoTarget()
+    {
+        if (Gizmos == null)
+        {
+            return;
+        }
+
+        Gizmos.SnapGrid = null;
+
+        if (TryGetGridEditor(out var editor, out var isEditorFocused))
+        {
+            GridGizmoTarget ??= new ViewportGridGizmoTarget(editor);
+
+            // Snap to the grid shown in the grid tool, while it is drawn
+            var snapGrid = ViewportGridConfig.Get(editor, ViewportGridConfig.GetCurrentGrid(editor));
+            if (isEditorFocused && snapGrid.Display)
+            {
+                Gizmos.SnapGrid = snapGrid;
+            }
+
+            // The grids are only drawn while their editor is focused, see ViewportGrid.Update
+            if (isEditorFocused && GridGizmoTarget.HasTarget)
+            {
+                Gizmos.Target = GridGizmoTarget;
+                return;
+            }
+        }
+
+        Gizmos.Target = null;
+    }
+
     public void UpdateGrids()
     {
-        if (Owner is MapUniverse mapUniverse)
+        if (TryGetGridEditor(out var editor, out var isEditorFocused))
         {
-            UpdateGrids(ViewportGridEditor.Map, mapUniverse.Project.Handler.FocusedEditor is MapEditorScreen);
-        }
-
-        if (Owner is ModelUniverse modelUniverse)
-        {
-            UpdateGrids(ViewportGridEditor.Model, modelUniverse.Project.Handler.FocusedEditor is ModelEditorScreen);
-        }
-
-        if (Owner is TimeActUniverse timeActUniverse)
-        {
-            UpdateGrids(ViewportGridEditor.TimeAct, timeActUniverse.Project.Handler.FocusedEditor is TimeActEditorScreen);
+            UpdateGrids(editor, isEditorFocused);
         }
     }
 

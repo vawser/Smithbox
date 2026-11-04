@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -154,135 +155,45 @@ public class AdjustToGridAction
         }
         GUI.Tooltip("The target grid to adjust against.");
 
-        // Primary
-        if (CurrentTargetGrid is ViewportTargetGridType.Primary)
+        var grid = GetGrid(CurrentTargetGrid);
+
+        GUI.SimpleHeader("Position", "Position", "The position axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
+
+        ImGui.Checkbox("X##posX", ref grid.SnapPosition_X);
+        ImGui.SameLine();
+
+        ImGui.Checkbox("Y##posY", ref grid.SnapPosition_Y);
+        ImGui.SameLine();
+
+        ImGui.Checkbox("Z##posZ", ref grid.SnapPosition_Z);
+
+        GUI.SimpleHeader("Rotation", "Rotation", "The rotation axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
+
+        ImGui.Checkbox("X##rotX", ref grid.SnapRotation_X);
+        ImGui.SameLine();
+
+        ImGui.Checkbox("Y##rotY", ref grid.SnapRotation_Y);
+        ImGui.SameLine();
+
+        ImGui.Checkbox("Z##rotZ", ref grid.SnapRotation_Z);
+
+        GUI.SimpleHeader("Root Axis", "Root Axis", "The axis to treat as the 'floor'.", UI.Current.ImGui_Default_Text_Color);
+
+        if (ImGui.BeginCombo($"##targetAxis", grid.RootAxis.GetDisplayName()))
         {
-            var curRootAxis = CFG.Current.MapEditor_PrimaryGrid_Configure_RootAxis;
-
-            GUI.SimpleHeader("Position", "Position", "The position axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
-
-            ImGui.Checkbox("X##posX", ref CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyPosition_X);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Y##posY", ref CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyPosition_Y);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Z##posZ", ref CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyPosition_Z);
-
-            GUI.SimpleHeader("Rotation", "Rotation", "The rotation axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
-
-            ImGui.Checkbox("X##rotX", ref CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyRotation_X);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Y##rotY", ref CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyRotation_Y);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Z##rotZ", ref CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyRotation_Z);
-
-            GUI.SimpleHeader("Root Axis", "Root Axis", "The axis to treat as the 'floor'.", UI.Current.ImGui_Default_Text_Color);
-
-            if (ImGui.BeginCombo($"##targetAxis", curRootAxis.GetDisplayName()))
+            foreach (var entry in Enum.GetValues(typeof(ViewportGridRootAxis)))
             {
-                foreach (var entry in Enum.GetValues(typeof(ViewportGridRootAxis)))
+                var curEnum = (ViewportGridRootAxis)entry;
+
+                if (ImGui.Selectable($"{curEnum.GetDisplayName()}", grid.RootAxis == curEnum))
                 {
-                    var curEnum = (ViewportGridRootAxis)entry;
-
-                    if (ImGui.Selectable($"{curEnum.GetDisplayName()}", curRootAxis == curEnum))
-                    {
-                        CFG.Current.MapEditor_PrimaryGrid_Configure_RootAxis = curEnum;
-                    }
+                    grid.RootAxis = curEnum;
                 }
-
-                ImGui.EndCombo();
             }
-            GUI.Tooltip("The target axis to use when rooting the entity. This is the axis that is treated as the 'floor'.");
+
+            ImGui.EndCombo();
         }
-        // Secondary
-        else if (CurrentTargetGrid is ViewportTargetGridType.Secondary)
-        {
-            var curRootAxis = CFG.Current.MapEditor_SecondaryGrid_Configure_RootAxis;
-
-            GUI.SimpleHeader("Position", "Position", "The position axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
-
-            ImGui.Checkbox("X##posX", ref CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyPosition_X);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Y##posY", ref CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyPosition_Y);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Z##posZ", ref CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyPosition_Z);
-
-            GUI.SimpleHeader("Rotation", "Rotation", "The rotation axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
-
-            ImGui.Checkbox("X##rotX", ref CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyRotation_X);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Y##rotY", ref CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyRotation_Y);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Z##rotZ", ref CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyRotation_Z);
-
-            GUI.SimpleHeader("Root Axis", "Root Axis", "The axis to treat as the 'floor'.", UI.Current.ImGui_Default_Text_Color);
-
-            if (ImGui.BeginCombo($"##targetAxis", curRootAxis.GetDisplayName()))
-            {
-                foreach (var entry in Enum.GetValues(typeof(ViewportGridRootAxis)))
-                {
-                    var curEnum = (ViewportGridRootAxis)entry;
-
-                    if (ImGui.Selectable($"{curEnum.GetDisplayName()}", curRootAxis == curEnum))
-                    {
-                        CFG.Current.MapEditor_SecondaryGrid_Configure_RootAxis = curEnum;
-                    }
-                }
-
-                ImGui.EndCombo();
-            }
-            GUI.Tooltip("The target axis to use when rooting the entity. This is the axis that is treated as the 'floor'.");
-        }
-        // Tertiary
-        else if (CurrentTargetGrid is ViewportTargetGridType.Tertiary)
-        {
-            var curRootAxis = CFG.Current.MapEditor_TertiaryGrid_Configure_RootAxis;
-
-            GUI.SimpleHeader("Position", "Position", "The position axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
-
-            ImGui.Checkbox("X##posX", ref CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyPosition_X);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Y##posY", ref CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyPosition_Y);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Z##posZ", ref CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyPosition_Z);
-
-            GUI.SimpleHeader("Rotation", "Rotation", "The rotation axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
-
-            ImGui.Checkbox("X##rotX", ref CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyRotation_X);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Y##rotY", ref CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyRotation_Y);
-            ImGui.SameLine();
-
-            ImGui.Checkbox("Z##rotZ", ref CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyRotation_Z);
-
-            GUI.SimpleHeader("Root Axis", "Root Axis", "The axis to treat as the 'floor'.", UI.Current.ImGui_Default_Text_Color);
-
-            if (ImGui.BeginCombo($"##targetAxis", curRootAxis.GetDisplayName()))
-            {
-                foreach (var entry in Enum.GetValues(typeof(ViewportGridRootAxis)))
-                {
-                    var curEnum = (ViewportGridRootAxis)entry;
-
-                    if (ImGui.Selectable($"{curEnum.GetDisplayName()}", curRootAxis == curEnum))
-                    {
-                        CFG.Current.MapEditor_TertiaryGrid_Configure_RootAxis = curEnum;
-                    }
-                }
-
-                ImGui.EndCombo();
-            }
-            GUI.Tooltip("The target axis to use when rooting the entity. This is the axis that is treated as the 'floor'.");
-        }
+        GUI.Tooltip("The target axis to use when rooting the entity. This is the axis that is treated as the 'floor'.");
 
         if (ImGui.Button("Adjust Selection to Grid", DPI.WholeWidthButton(550f * DPI.UIScale(), 24)))
         {
@@ -290,51 +201,27 @@ public class AdjustToGridAction
         }
     }
 
+    private static ViewportGridSettings GetGrid(ViewportTargetGridType targetGrid)
+    {
+        return ViewportGridConfig.Get(ViewportGridEditor.Map, targetGrid switch
+        {
+            ViewportTargetGridType.Secondary => ViewportGridType.Secondary,
+            ViewportTargetGridType.Tertiary => ViewportGridType.Tertiary,
+            _ => ViewportGridType.Primary
+        });
+    }
+
     /// <summary>
     /// Effect
     /// </summary>
     public void AdjustSelectionToGrid(ViewportTargetGridType targetGrid)
     {
-        if (targetGrid is ViewportTargetGridType.Primary)
-        {
-            ApplyGridTransform(
-                CFG.Current.MapEditor_PrimaryGrid_Configure_RootAxis,
-                CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyPosition_X,
-                CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyPosition_Y,
-                CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyPosition_Z,
-                CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyRotation_X,
-                CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyRotation_Y,
-                CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyRotation_Z);
-        }
-        else if (targetGrid is ViewportTargetGridType.Secondary)
-        {
-            ApplyGridTransform(
-                CFG.Current.MapEditor_SecondaryGrid_Configure_RootAxis,
-                CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyPosition_X,
-                CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyPosition_Y,
-                CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyPosition_Z,
-                CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyRotation_X,
-                CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyRotation_Y,
-                CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyRotation_Z);
-        }
-        else if (targetGrid is ViewportTargetGridType.Tertiary)
-        {
-            ApplyGridTransform(
-                CFG.Current.MapEditor_TertiaryGrid_Configure_RootAxis,
-                CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyPosition_X,
-                CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyPosition_Y,
-                CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyPosition_Z,
-                CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyRotation_X,
-                CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyRotation_Y,
-                CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyRotation_Z);
-        }
+        ApplyGridTransform(GetGrid(targetGrid));
 
         View.DelayPicking();
     }
 
-    public void ApplyGridTransform(ViewportGridRootAxis curRootAxis,
-        bool applyPosX, bool applyPosY, bool applyPosZ,
-        bool applyRotX, bool applyRotY, bool applyRotZ)
+    public void ApplyGridTransform(ViewportGridSettings grid)
     {
         if (View.ViewportSelection.IsSelection())
         {
@@ -343,10 +230,7 @@ public class AdjustToGridAction
             {
                 sel.ClearTemporaryTransform(false);
 
-                var transform = GetGridTransform(sel, curRootAxis,
-                    applyPosX, applyPosY, applyPosZ,
-                    applyRotX, applyRotY, applyRotZ);
-                actlist.Add(sel.GetUpdateTransformAction(transform));
+                actlist.Add(sel.GetUpdateTransformAction(GetGridTransform(sel, grid)));
             }
 
             ViewportCompoundAction action = new(actlist);
@@ -359,80 +243,28 @@ public class AdjustToGridAction
         }
     }
 
-    public Transform GetGridTransform(Entity sel,
-        ViewportGridRootAxis curRootAxis,
-        bool applyPosX, bool applyPosY, bool applyPosZ,
-        bool applyRotX, bool applyRotY, bool applyRotZ)
+    public Transform GetGridTransform(Entity sel, ViewportGridSettings grid)
     {
         Transform objT = sel.GetLocalTransform();
 
         var newTransform = Transform.Default;
-        var newPos = objT.Position;
-        var newRot = objT.Rotation;
-        var newScale = objT.Scale;
 
-        Vector3 gridOrigin = new Vector3(
-            CFG.Current.MapEditor_PrimaryGrid_Position_X,
-            CFG.Current.MapEditor_PrimaryGrid_Position_Y,
-            CFG.Current.MapEditor_PrimaryGrid_Position_Z);
+        // The same transform the grid is drawn with, so objects snap to the plane that is shown
+        var gridTransform = ViewportGridMovement.GetGridTransform(grid);
+        var sectionSize = Math.Max(grid.SectionSize, 0.001f);
 
-        Quaternion gridRotation =
-            Quaternion.CreateFromYawPitchRoll(
-                CFG.Current.MapEditor_PrimaryGrid_Rotation_Y * MathF.PI / 180f,
-                CFG.Current.MapEditor_PrimaryGrid_Rotation_X * MathF.PI / 180f,
-                CFG.Current.MapEditor_PrimaryGrid_Rotation_Z * MathF.PI / 180f);
-
-        var sectionSize = CFG.Current.MapEditor_PrimaryGrid_SectionSize;
-
-        if (CurrentTargetGrid is ViewportTargetGridType.Secondary)
-        {
-            gridOrigin = new Vector3(
-            CFG.Current.MapEditor_SecondaryGrid_Position_X,
-            CFG.Current.MapEditor_SecondaryGrid_Position_Y,
-            CFG.Current.MapEditor_SecondaryGrid_Position_Z);
-
-            gridRotation =
-            Quaternion.CreateFromYawPitchRoll(
-                CFG.Current.MapEditor_SecondaryGrid_Rotation_Y * MathF.PI / 180f,
-                CFG.Current.MapEditor_SecondaryGrid_Rotation_X * MathF.PI / 180f,
-                CFG.Current.MapEditor_SecondaryGrid_Rotation_Z * MathF.PI / 180f);
-
-            sectionSize = CFG.Current.MapEditor_SecondaryGrid_SectionSize;
-        }
-
-        if (CurrentTargetGrid is ViewportTargetGridType.Tertiary)
-        {
-            gridOrigin = new Vector3(
-            CFG.Current.MapEditor_TertiaryGrid_Position_X,
-            CFG.Current.MapEditor_TertiaryGrid_Position_Y,
-            CFG.Current.MapEditor_TertiaryGrid_Position_Z);
-
-            gridRotation =
-            Quaternion.CreateFromYawPitchRoll(
-                CFG.Current.MapEditor_TertiaryGrid_Rotation_Y * MathF.PI / 180f,
-                CFG.Current.MapEditor_TertiaryGrid_Rotation_X * MathF.PI / 180f,
-                CFG.Current.MapEditor_TertiaryGrid_Rotation_Z * MathF.PI / 180f);
-
-
-            sectionSize = CFG.Current.MapEditor_TertiaryGrid_SectionSize;
-        }
-
-        // Get new position for entity
-        newPos = SnapPositionToGrid(newPos,
-            gridOrigin,
-            gridRotation,
+        newTransform.Position = SnapPositionToGrid(objT.Position,
+            gridTransform.Position,
+            gridTransform.Rotation,
             sectionSize,
-            curRootAxis,
-            applyPosX, applyPosY, applyPosZ);
+            grid.RootAxis,
+            grid.SnapPosition_X, grid.SnapPosition_Y, grid.SnapPosition_Z);
 
-        // Get new rotation for entity
-        newRot = SnapRotationToGrid(newRot,
-            gridRotation,
-            applyRotX, applyRotY, applyRotZ);
+        newTransform.Rotation = SnapRotationToGrid(objT.Rotation,
+            gridTransform.Rotation,
+            grid.SnapRotation_X, grid.SnapRotation_Y, grid.SnapRotation_Z);
 
-        newTransform.Position = newPos;
-        newTransform.Rotation = newRot;
-        newTransform.Scale = newScale;
+        newTransform.Scale = objT.Scale;
 
         return newTransform;
     }
@@ -453,7 +285,7 @@ public class AdjustToGridAction
         Vector3 localPos = Vector3.Transform(position, gridLocal);
 
         float snappedX = applyX ? (float)Math.Round(localPos.X / sectionSize) * sectionSize : localPos.X;
-        float snappedY = applyZ ? (float)Math.Round(localPos.Y / sectionSize) * sectionSize : localPos.Y;
+        float snappedY = applyY ? (float)Math.Round(localPos.Y / sectionSize) * sectionSize : localPos.Y;
         float snappedZ = applyZ ? (float)Math.Round(localPos.Z / sectionSize) * sectionSize : localPos.Z;
 
         // Handles the axis that is to be treated as the 'floor'

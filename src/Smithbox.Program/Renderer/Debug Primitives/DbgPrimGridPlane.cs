@@ -14,6 +14,11 @@ public class DbgPrimGridPlane : DbgPrimSolid
 
     public override string ShaderName => "ViewportGrid";
 
+    // A grid placed on a floor would flicker with it. Same bias as mesh decals, see MeshRenderableProxy:
+    // about a millimetre at ten metres, with the slope keeping it in front at glancing angles.
+    public override float DepthBiasConstant => 1024f;
+    public override float DepthBiasSlope => 2f;
+
     public DbgPrimGridPlane()
     {
         AddQuad(

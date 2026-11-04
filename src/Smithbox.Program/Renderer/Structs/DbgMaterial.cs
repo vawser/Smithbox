@@ -20,7 +20,14 @@ public unsafe struct DbgMaterial
     /// <summary>Squares either side of the center of a <see cref="DbgPrimGridPlane" /></summary>
     public float GridCells;
 
-    public fixed int pad[2];
+    /// <summary>Distance from the camera where a <see cref="DbgPrimGridPlane" /> has faded out, 0 for no fade</summary>
+    public float GridFadeDistance;
+
+    /// <summary>
+    /// Flags of a <see cref="DbgPrimGridPlane" />. Bit 0: draw the axis lines through its center.
+    /// Bits 16-31: squares between major lines, 0 or 1 for none.
+    /// </summary>
+    public uint GridFlags;
 
     public Color Color
     {

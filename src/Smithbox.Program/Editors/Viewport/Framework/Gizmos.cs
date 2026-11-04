@@ -33,9 +33,33 @@ public class Gizmos
 
     private VulkanViewport Viewport;
 
+    /// <summary>
+    /// The default target, the viewport selection.
+    /// </summary>
+    public readonly SelectionGizmoTarget SelectionTarget;
+
+    /// <summary>
+    /// The target the gizmo moves. Set to null to move the selection.
+    /// </summary>
+    public IGizmoTarget Target { get; set; }
+
+    // The target and mode a drag started with, kept until the drag ends
+    private IGizmoTarget DragTarget;
+    private GizmoState.GizmosMode DragMode;
+
+    /// <summary>
+    /// The grid that translation snaps to while snapping is held, or null for none.
+    /// </summary>
+    public ViewportGridSettings SnapGrid { get; set; }
+
+    // The snap grid as it was when the drag started. A grid moving itself snaps to where it started.
+    private Transform DragSnapGrid;
+    private float DragSnapSize;
+
     public Gizmos(VulkanViewport viewport, MeshRenderables renderlist)
     {
         Viewport = viewport;
+        SelectionTarget = new SelectionGizmoTarget(viewport);
 
         TranslationGizmo = new(renderlist);
         RotationGizmo = new(renderlist);
@@ -44,6 +68,72 @@ public class Gizmos
     public bool IsMouseBusy()
     {
         return IsTransforming;
+    }
+
+    private IGizmoTarget ActiveTarget => Target ?? SelectionTarget;
+
+    /// <summary>
+    /// The gizmo mode for a target. Scale falls back to translate on targets that can't be scaled.
+    /// </summary>
+    private static GizmoState.GizmosMode GetMode(IGizmoTarget target)
+    {
+        if (GizmoState.Mode == GizmoState.GizmosMode.Scale && !target.AllowScale)
+        {
+            return GizmoState.GizmosMode.Translate;
+        }
+
+        return GizmoState.Mode;
+    }
+
+    /// <summary>
+    /// Snapping is held while dragging: translation snaps to the snap grid's squares, rotation to
+    /// <see cref="CFG.Viewport_Gizmo_Snap_Rotation_Step" />.
+    /// </summary>
+    private static bool IsSnapping()
+    {
+        return InputManager.HasCtrlDown();
+    }
+
+    /// <summary>
+    /// Snaps a position to the corners of the snap grid's squares, in the grid's own space. Only the grid axes the
+    /// dragged gizmo axes run along are snapped, so dragging along one axis doesn't move the others.
+    /// </summary>
+    private Vector3 SnapTranslation(Vector3 position)
+    {
+        var toGrid = Quaternion.Inverse(DragSnapGrid.Rotation);
+        var local = Vector3.Transform(position - DragSnapGrid.Position, toGrid);
+
+        var snapX = false;
+        var snapY = false;
+        var snapZ = false;
+
+        void MarkDragAxis(Vector3 gizmoAxis)
+        {
+            var dir = Vector3.Transform(Vector3.Transform(gizmoAxis, OriginalTransform.Rotation), toGrid);
+            const float threshold = 0.01f;
+
+            snapX |= MathF.Abs(dir.X) > threshold;
+            snapY |= MathF.Abs(dir.Y) > threshold;
+            snapZ |= MathF.Abs(dir.Z) > threshold;
+        }
+
+        switch (TransformAxis)
+        {
+            case GizmoState.Axis.PosX: MarkDragAxis(Vector3.UnitX); break;
+            case GizmoState.Axis.PosY: MarkDragAxis(Vector3.UnitY); break;
+            case GizmoState.Axis.PosZ: MarkDragAxis(Vector3.UnitZ); break;
+            case GizmoState.Axis.PosXY: MarkDragAxis(Vector3.UnitX); MarkDragAxis(Vector3.UnitY); break;
+            case GizmoState.Axis.PosXZ: MarkDragAxis(Vector3.UnitX); MarkDragAxis(Vector3.UnitZ); break;
+            case GizmoState.Axis.PosYZ: MarkDragAxis(Vector3.UnitY); MarkDragAxis(Vector3.UnitZ); break;
+        }
+
+        float Snap(float value) => MathF.Round(value / DragSnapSize) * DragSnapSize;
+
+        if (snapX) local.X = Snap(local.X);
+        if (snapY) local.Y = Snap(local.Y);
+        if (snapZ) local.Z = Snap(local.Z);
+
+        return DragSnapGrid.Position + Vector3.Transform(local, DragSnapGrid.Rotation);
     }
 
     public void Update(Ray ray, bool canCaptureMouse, bool isActiveViewport = true)
@@ -57,7 +147,8 @@ public class Gizmos
             return;
         }
 
-        var canTransform = true;
+        var target = IsTransforming ? DragTarget : ActiveTarget;
+        var mode = IsTransforming ? DragMode : GetMode(target);
 
         TranslationGizmo.UpdateColor();
         RotationGizmo.UpdateColor();
@@ -68,18 +159,9 @@ public class Gizmos
             if (!InputManager.IsMouseDown(MousebindID.Viewport_Gizmo_Interaction_Action))
             {
                 IsTransforming = false;
-                List<ViewportAction> actlist = new();
-                foreach (Entity sel in Viewport.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
-                {
-                    sel.ClearTemporaryTransform(false);
 
-                    var includeScale = GizmoState.Mode == GizmoState.GizmosMode.Scale;
-
-                    actlist.Add(sel.GetUpdateTransformAction(ProjectTransformDelta(sel), includeScale));
-                }
-
-                ViewportCompoundAction action = new(actlist);
-                Viewport.ActionManager.ExecuteAction(action);
+                DragTarget.Commit(OriginalTransform, CurrentTransform, DragMode);
+                DragTarget = null;
 
                 // Add a cooldown to normal picking so
                 // the user doesn't accidently clear their selection
@@ -88,7 +170,7 @@ public class Gizmos
             else
             {
                 // Translate
-                if (GizmoState.Mode == GizmoState.GizmosMode.Translate)
+                if (mode == GizmoState.GizmosMode.Translate)
                 {
                     Vector3 delta;
                     if (TransformAxis == GizmoState.Axis.PosXY || TransformAxis == GizmoState.Axis.PosXZ || TransformAxis == GizmoState.Axis.PosYZ)
@@ -101,9 +183,14 @@ public class Gizmos
                     }
 
                     CurrentTransform.Position = OriginalTransform.Position + delta;
+
+                    if (IsSnapping() && DragSnapSize > 0f)
+                    {
+                        CurrentTransform.Position = SnapTranslation(CurrentTransform.Position);
+                    }
                 }
                 // Rotation
-                else if (GizmoState.Mode == GizmoState.GizmosMode.Rotate)
+                else if (mode == GizmoState.GizmosMode.Rotate)
                 {
                     Vector3 axis = Vector3.Zero;
                     switch (TransformAxis)
@@ -128,11 +215,17 @@ public class Gizmos
                     var x = Math.Max(-1.0f, Math.Min(1.0f, Vector3.Dot(delta, side)));
                     var angle = (float)Math.Atan2(x, y);
 
-                    //CurrentTransform.EulerRotation.Y = OriginalTransform.EulerRotation.Y + angle;
+                    var step = CFG.Current.Viewport_Gizmo_Snap_Rotation_Step;
+                    if (IsSnapping() && step > 0f)
+                    {
+                        var stepRadians = Utils.DegToRadians(step);
+                        angle = MathF.Round(angle / stepRadians) * stepRadians;
+                    }
+
                     CurrentTransform.Rotation = Quaternion.Normalize(Quaternion.CreateFromAxisAngle(axis, angle) * OriginalTransform.Rotation);
                 }
                 // Scale
-                else if(GizmoState.Mode == GizmoState.GizmosMode.Scale)
+                else if (mode == GizmoState.GizmosMode.Scale)
                 {
                     float newProj = GizmoHelper.GetAxisScaleProjection(ray, OriginalTransform, TransformAxis);
                     float ratio = newProj / OriginalScaleProjection;
@@ -149,117 +242,82 @@ public class Gizmos
                     CurrentTransform.Scale = scale;
                 }
 
-                if (Viewport.ViewportSelection.IsFilteredSelection<Entity>())
-                {
-                    //Selection.GetSingleSelection().SetTemporaryTransform(CurrentTransform);
-                    foreach (Entity sel in Viewport.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
-                    {
-                        sel.SetTemporaryTransform(ProjectTransformDelta(sel));
-                    }
-                }
+                DragTarget.Preview(OriginalTransform, CurrentTransform, DragMode);
             }
         }
 
-        if (!IsTransforming)
+        var hasTarget = IsTransforming || target.HasTarget;
+
+        if (!IsTransforming && hasTarget)
         {
-            if (Viewport.ViewportSelection.IsFilteredSelection<Entity>(o => o.HasTransform))
+            OriginalTransform = target.GetTransform();
+
+            var hoveredAxis = GizmoState.Axis.None;
+            switch (mode)
             {
-                if (Viewport.ViewportSelection.IsSingleFilteredSelection<Entity>(o => o.HasTransform))
-                {
-                    var sel = Viewport.ViewportSelection.GetSingleFilteredSelection<Entity>(o => o.HasTransform);
-                    OriginalTransform = sel.GetRootLocalTransform();
-                    if (GizmoState.Origin == GizmoState.GizmosOrigin.BoundingBox && sel.RenderSceneMesh != null)
-                    {
-                        OriginalTransform.Position = sel.RenderSceneMesh.GetBounds().GetCenter();
-                    }
-                }
-                else
-                {
-                    // Average the positions of the selections and use rotation of first
-                    Vector3 accumPos = Vector3.Zero;
-                    HashSet<Entity> sels = Viewport.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
-                    foreach (Entity sel in sels)
-                    {
-                        if (GizmoState.Origin == GizmoState.GizmosOrigin.BoundingBox && sel.RenderSceneMesh != null)
-                        {
-                            accumPos += sel.RenderSceneMesh.GetBounds().GetCenter();
-                        }
-                        else
-                        {
-                            accumPos += sel.GetRootLocalTransform().Position;
-                        }
-                    }
-
-                    OriginalTransform = new Transform(
-                        accumPos / sels.Count(),
-                        sels.First().GetRootLocalTransform().EulerRotation
-                    );
-                }
-
-                if (GizmoState.Space == GizmoState.GizmosSpace.World)
-                {
-                    OriginalTransform.Rotation = Quaternion.Identity;
-                }
-
-                var hoveredAxis = GizmoState.Axis.None;
-                switch (GizmoState.Mode)
-                {
-                    case GizmoState.GizmosMode.Translate:
-                        hoveredAxis = TranslationGizmo.HandleHoveredAxis(ray);
-                        break;
-                    case GizmoState.GizmosMode.Rotate:
-                        hoveredAxis = RotationGizmo.HandleHoveredAxis(ray);
-                        break;
-                    case GizmoState.GizmosMode.Scale:
-                        hoveredAxis = ScaleGizmo.HandleHoveredAxis(ray);
-                        break;
-                }
-
-                if (canCaptureMouse && InputManager.IsMouseDown(MousebindID.Viewport_Gizmo_Interaction_Action))
-                {
-                    if (hoveredAxis != GizmoState.Axis.None)
-                    {
-                        IsTransforming = true;
-                        TransformAxis = hoveredAxis;
-                        CurrentTransform = OriginalTransform;
-
-                        switch (GizmoState.Mode)
-                        {
-                            case GizmoState.GizmosMode.Translate:
-                                {
-                                    if (TransformAxis == GizmoState.Axis.PosXY || TransformAxis == GizmoState.Axis.PosXZ ||
-                                        TransformAxis == GizmoState.Axis.PosYZ)
-                                    {
-                                        OriginProjection = GizmoHelper.GetDoubleAxisProjection(ray, OriginalTransform, TransformAxis);
-                                    }
-                                    else
-                                    {
-                                        OriginProjection = GizmoHelper.GetSingleAxisProjection(ray, OriginalTransform, TransformAxis);
-                                    }
-                                }
-                                break;
-                            case GizmoState.GizmosMode.Rotate:
-                                {
-                                    OriginProjection = GizmoHelper.GetAxisPlaneProjection(ray, OriginalTransform, TransformAxis);
-                                }
-                                break;
-                            case GizmoState.GizmosMode.Scale:
-                                {
-                                    OriginalScaleProjection = GizmoHelper.GetAxisScaleProjection(ray, OriginalTransform, TransformAxis);
-                                }
-                                break;
-                        }
-                    }
-                }
+                case GizmoState.GizmosMode.Translate:
+                    hoveredAxis = TranslationGizmo.HandleHoveredAxis(ray);
+                    break;
+                case GizmoState.GizmosMode.Rotate:
+                    hoveredAxis = RotationGizmo.HandleHoveredAxis(ray);
+                    break;
+                case GizmoState.GizmosMode.Scale:
+                    hoveredAxis = ScaleGizmo.HandleHoveredAxis(ray);
+                    break;
             }
-            else
+
+            if (canCaptureMouse && InputManager.IsMouseDown(MousebindID.Viewport_Gizmo_Interaction_Action))
             {
-                canTransform = false;
+                if (hoveredAxis != GizmoState.Axis.None)
+                {
+                    IsTransforming = true;
+                    DragTarget = target;
+                    DragMode = mode;
+                    TransformAxis = hoveredAxis;
+                    CurrentTransform = OriginalTransform;
+
+                    if (SnapGrid != null)
+                    {
+                        DragSnapGrid = ViewportGridMovement.GetGridTransform(SnapGrid);
+                        DragSnapSize = Math.Max(SnapGrid.SectionSize, 0f);
+                    }
+                    else
+                    {
+                        DragSnapSize = 0f;
+                    }
+
+                    switch (mode)
+                    {
+                        case GizmoState.GizmosMode.Translate:
+                            {
+                                if (TransformAxis == GizmoState.Axis.PosXY || TransformAxis == GizmoState.Axis.PosXZ ||
+                                    TransformAxis == GizmoState.Axis.PosYZ)
+                                {
+                                    OriginProjection = GizmoHelper.GetDoubleAxisProjection(ray, OriginalTransform, TransformAxis);
+                                }
+                                else
+                                {
+                                    OriginProjection = GizmoHelper.GetSingleAxisProjection(ray, OriginalTransform, TransformAxis);
+                                }
+                            }
+                            break;
+                        case GizmoState.GizmosMode.Rotate:
+                            {
+                                OriginProjection = GizmoHelper.GetAxisPlaneProjection(ray, OriginalTransform, TransformAxis);
+                            }
+                            break;
+                        case GizmoState.GizmosMode.Scale:
+                            {
+                                OriginalScaleProjection = GizmoHelper.GetAxisScaleProjection(ray, OriginalTransform, TransformAxis);
+                            }
+                            break;
+                    }
+                }
             }
         }
 
         // Update gizmos transform and visibility
-        if (Viewport.ViewportSelection.IsFilteredSelection<Entity>() && canTransform)
+        if (hasTarget)
         {
             Vector3 center;
             Quaternion rot;
@@ -281,24 +339,9 @@ public class Gizmos
             RotationGizmo.UpdateTransform(center, rot, scale);
             ScaleGizmo.UpdateTransform(center, rot, scale);
 
-            switch(GizmoState.Mode)
-            {
-                case GizmoState.GizmosMode.Translate:
-                    TranslationGizmo.SetVisibility(true);
-                    RotationGizmo.SetVisibility(false);
-                    ScaleGizmo.SetVisibility(false);
-                    break;
-                case GizmoState.GizmosMode.Rotate:
-                    TranslationGizmo.SetVisibility(false);
-                    RotationGizmo.SetVisibility(true);
-                    ScaleGizmo.SetVisibility(false);
-                    break;
-                case GizmoState.GizmosMode.Scale:
-                    TranslationGizmo.SetVisibility(false);
-                    RotationGizmo.SetVisibility(false);
-                    ScaleGizmo.SetVisibility(true);
-                    break;
-            }
+            TranslationGizmo.SetVisibility(mode == GizmoState.GizmosMode.Translate);
+            RotationGizmo.SetVisibility(mode == GizmoState.GizmosMode.Rotate);
+            ScaleGizmo.SetVisibility(mode == GizmoState.GizmosMode.Scale);
         }
         else
         {
@@ -306,42 +349,6 @@ public class Gizmos
             RotationGizmo.SetVisibility(false);
             ScaleGizmo.SetVisibility(false);
         }
-    }
-
-    /// <summary>
-    /// Calculate position of selection as its being moved
-    /// </summary>
-    private Transform ProjectTransformDelta(Entity sel)
-    {
-        Transform objt = sel.GetLocalTransform();
-        Transform rootT = sel.GetRootTransform();
-
-        Quaternion deltaRot = CurrentTransform.Rotation * Quaternion.Inverse(OriginalTransform.Rotation);
-
-        Vector3 deltaPos = Vector3.Transform(
-            CurrentTransform.Position - OriginalTransform.Position,
-            Quaternion.Inverse(rootT.Rotation));
-
-        objt.Rotation = deltaRot * objt.Rotation;
-
-        // TODO: fix rotation gizmo being wrong due to root object transform node rotation
-        Vector3 rotateCenterOffset = Vector3.Transform(rootT.Position, rootT.Rotation);
-        //rotateCenterOffset = OriginalTransform.Position;
-        //rotateCenterOffset = Vector3.Zero;
-
-        Vector3 posdif = objt.Position - OriginalTransform.Position + rotateCenterOffset;
-
-        posdif = Vector3.Transform(
-            Vector3.Transform(posdif, Quaternion.Conjugate(OriginalTransform.Rotation)),
-            CurrentTransform.Rotation);
-
-        objt.Position = OriginalTransform.Position + posdif;
-        objt.Position += deltaPos - rotateCenterOffset;
-
-        Vector3 deltaScale = CurrentTransform.Scale / OriginalTransform.Scale;
-        objt.Scale *= deltaScale;
-
-        return objt;
     }
 }
 
@@ -718,4 +725,4 @@ public static class GizmoHelper
     {
         return Color.FromArgb((int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));
     }
-}
+}

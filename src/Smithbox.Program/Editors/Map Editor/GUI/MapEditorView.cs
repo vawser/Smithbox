@@ -206,7 +206,7 @@ public class MapEditorView : IEditorView
         PrefabTool = new PrefabTool(this, project);
         NavmeshBuilderTool = new NavmeshBuilderTool(this, project);
         EntityIdentifierTool = new EntityIdentifierTool(this, project);
-        GridTool = new ViewportGridTool(ViewportGridEditor.Map);
+        GridTool = new ViewportGridTool(ViewportGridEditor.Map, GetCurrentViewport);
         RenderingTool = new ViewportRenderingTool(GetCurrentViewport);
         MapAnimationTool = new MapAnimationTool(this, project);
         WorldMapTool = new WorldMapTool(this, project);

@@ -39,6 +39,10 @@ public static class GizmoState
             }
         }
 
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Gizmo_Menu_Input_Snap_Rotation_Step")}##gizmoSnapRotationStep",
+            ref CFG.Current.Viewport_Gizmo_Snap_Rotation_Step, 0f, 90f, "%.1f", ImGuiSliderFlags.AlwaysClamp);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Input_Snap_Rotation_Step_TT"));
+
         if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Gizmo_Menu_Header_Mode")}##modeMenuHeader"))
         {
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Translate")}##translateAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Translation_Mode)))

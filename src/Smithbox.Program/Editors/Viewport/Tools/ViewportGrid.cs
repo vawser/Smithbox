@@ -1,3 +1,4 @@
+using StudioCore.Application;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -23,12 +24,14 @@ public class ViewportGrid
         Grid.Visible = false;
     }
 
-    private Color GetViewGridColor(Vector3 color)
+    private static Color GetViewGridColor(Vector3 color, float opacity)
     {
-        return Color.FromArgb((int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));
+        static int ToByte(float value) => (int)(Math.Clamp(value, 0f, 1f) * 255);
+
+        return Color.FromArgb(ToByte(opacity), ToByte(color.X), ToByte(color.Y), ToByte(color.Z));
     }
 
-    public void Update(bool isEditorFocused, ViewportGridConfig config)
+    public void Update(bool isEditorFocused, ViewportGridSettings config)
     {
         if (config.Display && isEditorFocused)
         {
@@ -38,16 +41,14 @@ public class ViewportGrid
             // One square larger than the grid, see ViewportGrid.frag
             var planeScale = (cells + 1) * sectionSize;
 
-            Grid.BaseColor = GetViewGridColor(config.Color);
+            Grid.BaseColor = GetViewGridColor(config.Color, CFG.Current.Viewport_Grid_Opacity);
             Grid.GridCells = cells;
+            Grid.GridMajorInterval = CFG.Current.Viewport_Grid_Major_Line_Interval;
+            Grid.GridFadeDistance = Math.Max(CFG.Current.Viewport_Grid_Fade_Distance, 0f);
+            Grid.GridAxisLines = CFG.Current.Viewport_Grid_Display_Axis_Lines;
             Grid.Visible = true;
-            Grid.World = Matrix4x4.CreateScale(planeScale, 1, planeScale) * new Transform(
-                config.PositionX,
-                config.PositionY,
-                config.PositionZ,
-                Utils.DegToRadians(config.RotationX),
-                Utils.DegToRadians(config.RotationY),
-                Utils.DegToRadians(config.RotationZ)).WorldMatrix;
+            Grid.World = Matrix4x4.CreateScale(planeScale, 1, planeScale) *
+                ViewportGridMovement.GetGridTransform(config).WorldMatrix;
         }
         else
         {

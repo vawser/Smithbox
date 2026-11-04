@@ -42,6 +42,15 @@ public interface IDbgPrim : IDisposable
 
     public VkPrimitiveTopology Topology { get; }
 
+    /// <summary>
+    /// Pipeline depth bias, for primitives that lie on other surfaces. The depth is reversed, so a positive bias
+    /// pulls the primitive toward the camera.
+    /// </summary>
+    public float DepthBiasConstant => 0f;
+
+    /// <inheritdoc cref="DepthBiasConstant" />
+    public float DepthBiasSlope => 0f;
+
     // Mesh data
     public bool Is32Bit => false;
 

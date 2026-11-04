@@ -101,6 +101,62 @@
       "Text": "The rotation of the grid on the Z-axis."
     },
     {
+      "Key": "VIEWPORT_GridConfig_Placement_Header",
+      "Text": "Grid Placement"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Placement_Header_TT",
+      "Text": "Move and rotate the grid in the viewport."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Action_Move_Grid",
+      "Text": "Move Grid"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Action_Stop_Move_Grid",
+      "Text": "Stop Moving Grid"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Action_Move_Grid_TT",
+      "Text": "Toggle grid movement mode. While active, the viewport gizmo is placed at the center of this grid and moves or rotates the grid instead of the selection.\n\nUse the gizmo translate and rotate modes to switch between moving and rotating. Grid moves cannot be undone."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Action_Move_Grid_To_Selection",
+      "Text": "Move Grid to Selection"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Action_Move_Grid_To_Selection_TT",
+      "Text": "Move the center of this grid to the current selection."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Action_Align_Grid_To_Selection",
+      "Text": "Align Grid to Selection"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Action_Align_Grid_To_Selection_TT",
+      "Text": "Rotate this grid to match the rotation of the current selection."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Action_Reset_Grid_Position",
+      "Text": "Reset Position"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Action_Reset_Grid_Position_TT",
+      "Text": "Move this grid back to the world origin."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Action_Reset_Grid_Rotation",
+      "Text": "Reset Rotation"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Action_Reset_Grid_Rotation_TT",
+      "Text": "Clear the rotation of this grid."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Move_Grid_Hidden_Warning",
+      "Text": "This grid is hidden, so the gizmo is moving the selection."
+    },
+    {
       "Key": "VIEWPORT_GridConfig_Color_Header",
       "Text": "Grid Color"
     },
@@ -135,6 +191,46 @@
     {
       "Key": "VIEWPORT_GridConfig_Size_Input_TT",
       "Text": "The number of grid squares either side of the center of the grid."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Shared_Header",
+      "Text": "All Grids"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Shared_Header_TT",
+      "Text": "Settings shared by every grid in every editor."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Major_Line_Interval",
+      "Text": "Major Line Interval"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Major_Line_Interval_TT",
+      "Text": "The number of grid squares between major lines. Major lines are drawn brighter and stay visible further away than the other lines.\n\nSet to 0 or 1 to disable major lines."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Display_Axis_Lines",
+      "Text": "Display Axis Lines"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Display_Axis_Lines_TT",
+      "Text": "Draw the grid's own X axis in red and Z axis in blue through its center, so its orientation is visible after rotating it."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Opacity",
+      "Text": "Opacity"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Opacity_TT",
+      "Text": "The opacity of the grid lines."
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Fade_Distance",
+      "Text": "Fade Distance"
+    },
+    {
+      "Key": "VIEWPORT_GridConfig_Fade_Distance_TT",
+      "Text": "The distance from the camera at which the grid has faded out. The fade starts at half this distance.\n\nSet to 0 to disable the fade."
     },
     {
       "Key": "VIEWPORT_GridConfig_Actions_Header",

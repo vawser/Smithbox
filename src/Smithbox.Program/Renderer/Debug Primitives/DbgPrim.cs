@@ -117,6 +117,12 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
     public abstract VkPrimitiveTopology Topology { get; }
     public abstract uint VertexSize { get; }
 
+    /// <inheritdoc cref="IDbgPrim.DepthBiasConstant" />
+    public virtual float DepthBiasConstant => 0f;
+
+    /// <inheritdoc cref="IDbgPrim.DepthBiasSlope" />
+    public virtual float DepthBiasSlope => 0f;
+
     public int IndexCount => throw new NotImplementedException();
 
     protected List<short> Indices = new();

@@ -45,6 +45,11 @@ public class TimeActToolWindow
             View.MaskToggler.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_TimeActEditor_Tool_GridConfiguration)
+        {
+            View.GridTool.OnToolWindow();
+        }
+
         if (CFG.Current.Interface_TimeActEditor_Tool_ViewportRendering)
         {
             View.RenderingTool.OnToolWindow();
@@ -76,6 +81,13 @@ public class TimeActToolWindow
                 CFG.Current.Interface_TimeActEditor_Tool_ModelMaskToggler = !CFG.Current.Interface_TimeActEditor_Tool_ModelMaskToggler;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_ModelMaskToggler);
+
+            // Grid Configuration
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_GridConfig_Header")}##toggleGridConfigurationTool"))
+            {
+                CFG.Current.Interface_TimeActEditor_Tool_GridConfiguration = !CFG.Current.Interface_TimeActEditor_Tool_GridConfiguration;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_GridConfiguration);
 
             // Viewport Rendering
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Rendering_Tool_Header")}##toggleViewportRenderingTool"))

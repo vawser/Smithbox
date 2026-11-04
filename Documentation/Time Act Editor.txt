@@ -2,10 +2,6 @@
 # Time Act Editor TODO
 #----------------------------------------------------
 
-- Properties:
-    - Expand meta:
-        - Attack/Bullet/Common/PC behavior links
-
 - Viewport:
     - Improve grid
         - Add sub-grid mesh between large tiles

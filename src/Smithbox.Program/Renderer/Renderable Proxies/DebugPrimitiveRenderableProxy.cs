@@ -18,6 +18,9 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     private readonly MeshRenderables _renderablesSet;
     private Color _baseColor = Color.Gray;
     private float _gridCells;
+    private int _gridMajorInterval;
+    private float _gridFadeDistance;
+    private bool _gridAxisLines;
 
     private RenderFilter _drawfilter = RenderFilter.All;
 
@@ -107,10 +110,74 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         get => _gridCells;
         set
         {
+            if (_gridCells == value)
+            {
+                return;
+            }
+
             _gridCells = value;
             ScheduleRenderableUpdate();
         }
     }
+
+    /// <summary>
+    /// Squares between the major lines of a <see cref="DbgPrimGridPlane" />, 0 or 1 for none.
+    /// </summary>
+    public int GridMajorInterval
+    {
+        get => _gridMajorInterval;
+        set
+        {
+            // Packed into 16 bits of the grid flags
+            value = Math.Clamp(value, 0, ushort.MaxValue);
+
+            if (_gridMajorInterval == value)
+            {
+                return;
+            }
+
+            _gridMajorInterval = value;
+            ScheduleRenderableUpdate();
+        }
+    }
+
+    /// <summary>
+    /// Distance from the camera where a <see cref="DbgPrimGridPlane" /> has faded out, 0 for no fade.
+    /// </summary>
+    public float GridFadeDistance
+    {
+        get => _gridFadeDistance;
+        set
+        {
+            if (_gridFadeDistance == value)
+            {
+                return;
+            }
+
+            _gridFadeDistance = value;
+            ScheduleRenderableUpdate();
+        }
+    }
+
+    /// <summary>
+    /// Draws the axis lines through the center of a <see cref="DbgPrimGridPlane" />.
+    /// </summary>
+    public bool GridAxisLines
+    {
+        get => _gridAxisLines;
+        set
+        {
+            if (_gridAxisLines == value)
+            {
+                return;
+            }
+
+            _gridAxisLines = value;
+            ScheduleRenderableUpdate();
+        }
+    }
+
+    private uint GridFlags => (_gridAxisLines ? 1u : 0u) | ((uint)_gridMajorInterval << 16);
 
     public override Matrix4x4 World
     {
@@ -392,7 +459,11 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
             _debugPrimitive.FillMode,
             _debugPrimitive.FrontFace,
             true,
-            false);
+            false)
+        {
+            DepthBiasConstant = _debugPrimitive.DepthBiasConstant,
+            DepthBiasSlope = _debugPrimitive.DepthBiasSlope
+        };
 
         pipelineDescription.PrimitiveTopology = _debugPrimitive.Topology;
 
@@ -469,6 +540,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         DbgMaterial colmat = new();
         colmat.Color = CurrentColor;
         colmat.GridCells = _gridCells;
+        colmat.GridFadeDistance = _gridFadeDistance;
+        colmat.GridFlags = GridFlags;
         _materialBuffer.FillBuffer(gd, cl, ref colmat);
 
         // Selectable
@@ -507,6 +580,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         DbgMaterial colmat = new();
         colmat.Color = CurrentColor;
         colmat.GridCells = _gridCells;
+        colmat.GridFadeDistance = _gridFadeDistance;
+        colmat.GridFlags = GridFlags;
 
         _materialBuffer.FillBuffer(gd, cl, ref colmat);
 

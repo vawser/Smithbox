@@ -6,6 +6,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
+using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System.Drawing;
@@ -668,6 +669,7 @@ public class CFG
 
     public bool Interface_TimeActEditor_Tool_ResourceMonitor = true;
     public bool Interface_TimeActEditor_Tool_ViewportRendering = true;
+    public bool Interface_TimeActEditor_Tool_GridConfiguration = true;
     public bool Interface_TimeActEditor_Tool_CharacterPreview = true;
     public bool Interface_TimeActEditor_Tool_ModelMaskToggler = true;
 
@@ -1227,6 +1229,15 @@ public class CFG
     public bool Viewport_Render_Gizmos = true;
     public float Viewport_Gizmo_Size_Distance_Scale = 0.04f;
 
+    // Degrees per step while snapping a gizmo rotation (Ctrl held), 0 for none
+    public float Viewport_Gizmo_Snap_Rotation_Step = 15f;
+
+    // Viewport Grids (shared by every grid)
+    public int Viewport_Grid_Major_Line_Interval = 10;
+    public bool Viewport_Grid_Display_Axis_Lines = true;
+    public float Viewport_Grid_Opacity = 1.0f;
+    public float Viewport_Grid_Fade_Distance = 2000f;
+
     // Camera
     public float Viewport_Camera_FOV { get; set; } = 60.0f;
     public float Viewport_Camera_MoveSpeed_Slow { get; set; } = 1.0f;
@@ -1533,123 +1544,10 @@ public class CFG
     public bool Viewport_Enable_Box_Selection_Light = true;
     public bool Viewport_Enable_Box_Selection_Region = true;
 
-    // Map Editor: Primary Grid
-    public bool MapEditor_DisplayPrimaryGrid = false;
-    public int MapEditor_PrimaryGrid_Size = 1000;
-    public float MapEditor_PrimaryGrid_SectionSize = 10;
-    public Vector3 MapEditor_PrimaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float MapEditor_PrimaryGrid_Position_X = 0;
-    public float MapEditor_PrimaryGrid_Position_Y = 0;
-    public float MapEditor_PrimaryGrid_Position_Z = 0;
-
-    public float MapEditor_PrimaryGrid_Rotation_X = 0;
-    public float MapEditor_PrimaryGrid_Rotation_Y = 0;
-    public float MapEditor_PrimaryGrid_Rotation_Z = 0;
-
-    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_X = true;
-    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_Y = true;
-    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_Z = true;
-
-    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_X = true;
-    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_Y = true;
-    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_Z = true;
-
-    public ViewportGridRootAxis MapEditor_PrimaryGrid_Configure_RootAxis = ViewportGridRootAxis.Y;
-
-    // Map Editor: Secondary Grid
-    public bool MapEditor_DisplaySecondaryGrid = false;
-    public int MapEditor_SecondaryGrid_Size = 1000;
-    public float MapEditor_SecondaryGrid_SectionSize = 10;
-    public Vector3 MapEditor_SecondaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float MapEditor_SecondaryGrid_Position_X = 90;
-    public float MapEditor_SecondaryGrid_Position_Y = 0;
-    public float MapEditor_SecondaryGrid_Position_Z = 0;
-
-    public float MapEditor_SecondaryGrid_Rotation_X = 0;
-    public float MapEditor_SecondaryGrid_Rotation_Y = 0;
-    public float MapEditor_SecondaryGrid_Rotation_Z = 0;
-
-    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_X = true;
-    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_Y = true;
-    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_Z = true;
-
-    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_X = true;
-    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_Y = true;
-    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_Z = true;
-
-    public ViewportGridRootAxis MapEditor_SecondaryGrid_Configure_RootAxis = ViewportGridRootAxis.X;
-
-    // Map Editor: Tertiary Grid
-    public bool MapEditor_DisplayTertiaryGrid = false;
-    public int MapEditor_TertiaryGrid_Size = 1000;
-    public float MapEditor_TertiaryGrid_SectionSize = 10;
-    public Vector3 MapEditor_TertiaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float MapEditor_TertiaryGrid_Position_X = 0;
-    public float MapEditor_TertiaryGrid_Position_Y = 0;
-    public float MapEditor_TertiaryGrid_Position_Z = 0;
-
-    public float MapEditor_TertiaryGrid_Rotation_X = 0;
-    public float MapEditor_TertiaryGrid_Rotation_Y = 0;
-    public float MapEditor_TertiaryGrid_Rotation_Z = 90;
-
-    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_X = true;
-    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_Y = true;
-    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_Z = true;
-
-    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_X = true;
-    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_Y = true;
-    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_Z = true;
-
-    public ViewportGridRootAxis MapEditor_TertiaryGrid_Configure_RootAxis = ViewportGridRootAxis.Z;
-
-    // Model Editor: Primary Grid
-    public bool ModelEditor_DisplayPrimaryGrid = false;
-    public int ModelEditor_PrimaryGrid_Size = 1000;
-    public float ModelEditor_PrimaryGrid_SectionSize = 10;
-
-    public Vector3 ModelEditor_PrimaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float ModelEditor_PrimaryGrid_Position_X = 0;
-    public float ModelEditor_PrimaryGrid_Position_Y = 0;
-    public float ModelEditor_PrimaryGrid_Position_Z = 0;
-
-    public float ModelEditor_PrimaryGrid_Rotation_X = 0;
-    public float ModelEditor_PrimaryGrid_Rotation_Y = 0;
-    public float ModelEditor_PrimaryGrid_Rotation_Z = 0;
-
-    // Model Editor: Secondary Grid
-    public bool ModelEditor_DisplaySecondaryGrid = false;
-    public int ModelEditor_SecondaryGrid_Size = 1000;
-    public float ModelEditor_SecondaryGrid_SectionSize = 10;
-
-    public Vector3 ModelEditor_SecondaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float ModelEditor_SecondaryGrid_Position_X = 0;
-    public float ModelEditor_SecondaryGrid_Position_Y = 0;
-    public float ModelEditor_SecondaryGrid_Position_Z = 0;
-
-    public float ModelEditor_SecondaryGrid_Rotation_X = 90;
-    public float ModelEditor_SecondaryGrid_Rotation_Y = 0;
-    public float ModelEditor_SecondaryGrid_Rotation_Z = 0;
-
-    // Model Editor: Tertiary Grid
-    public bool ModelEditor_DisplayTertiaryGrid = false;
-    public int ModelEditor_TertiaryGrid_Size = 1000;
-    public float ModelEditor_TertiaryGrid_SectionSize = 10;
-
-    public Vector3 ModelEditor_TertiaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public float ModelEditor_TertiaryGrid_Position_X = 0;
-    public float ModelEditor_TertiaryGrid_Position_Y = 0;
-    public float ModelEditor_TertiaryGrid_Position_Z = 0;
-
-    public float ModelEditor_TertiaryGrid_Rotation_X = 0;
-    public float ModelEditor_TertiaryGrid_Rotation_Y = 0;
-    public float ModelEditor_TertiaryGrid_Rotation_Z = 90;
-
+    // Viewport grids, see ViewportGridSettings
+    public ViewportGridSet MapEditor_Grids = new();
+    public ViewportGridSet ModelEditor_Grids = new();
+    public ViewportGridSet TimeActEditor_Grids = new();
 
     // Anim Editor: Primary Grid
     public bool AnimEditor_DisplayPrimaryGrid = false;
@@ -1745,6 +1643,8 @@ public class CFG
                 {
                     throw new Exception($"{LOC.Get("SYS_CFG_Failed_To_Deserialize", file)}");
                 }
+
+                MigrateGridSettings(filestring);
             }
             catch (Exception e)
             {
@@ -1753,6 +1653,21 @@ public class CFG
                 Current = new CFG();
                 Save();
             }
+        }
+    }
+
+    /// <summary>
+    /// Moves the grid settings of older configs into the grid sets. A failure only loses the old grid settings.
+    /// </summary>
+    private static void MigrateGridSettings(string json)
+    {
+        try
+        {
+            ViewportGridSettingsMigration.Migrate(Current, json);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError<CFG>("Failed to migrate the viewport grid settings.", e);
         }
     }
 

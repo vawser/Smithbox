@@ -90,7 +90,7 @@ public class ModelEditorView : IEditorView
         ToolView = new(this, project);
 
         // Tools
-        GridTool = new ViewportGridTool(ViewportGridEditor.Model);
+        GridTool = new ViewportGridTool(ViewportGridEditor.Model, () => ViewportWindow?.Viewport as VulkanViewport);
         RenderingTool = new ViewportRenderingTool(() => ViewportWindow?.Viewport as VulkanViewport);
         //ModelInsightMenu = new ModelInsightView(this, Project);
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);

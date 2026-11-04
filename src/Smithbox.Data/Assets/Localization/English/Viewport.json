@@ -793,6 +793,14 @@
       "Text": "Size"
     },
     {
+      "Key": "VIEWPORT_Gizmo_Menu_Input_Snap_Rotation_Step",
+      "Text": "Snap Rotation Step"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Input_Snap_Rotation_Step_TT",
+      "Text": "Hold Ctrl while dragging the gizmo to snap.\n\nRotation snaps to steps of this many degrees (0 to disable). Translation snaps to the squares of the grid shown in the Grid Configuration tool, while that grid is visible."
+    },
+    {
       "Key": "VIEWPORT_Gizmo_Menu_Header_Mode",
       "Text": "Mode"
     },
