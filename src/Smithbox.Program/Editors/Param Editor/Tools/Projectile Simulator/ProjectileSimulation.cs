@@ -638,10 +638,23 @@ public sealed class ProjectileSimulation
         var accel = inRange ? definition.AccelInRange : definition.AccelOutRange;
         var gravity = inRange ? definition.GravityInRange : definition.GravityOutRange;
 
+        // Pushed level along the heading, and once a step rather than per second
+        Vector3 flat = new(shot.Direction.X, 0, shot.Direction.Z);
+
+        if (flat.LengthSquared() > Epsilon)
+        {
+            shot.Velocity += Vector3.Normalize(flat) * definition.ExternalForce;
+        }
+
         if (shot.Age >= definition.AccelStartTime && shot.Age < definition.AccelEndTime)
         {
             // Along the way it is going, not the way it points: gravity pulls those apart
             shot.Velocity += Normalize(shot.Velocity, shot.Direction) * (accel * StepTime);
+        }
+
+        if (shot.Age >= definition.GravityStartTime)
+        {
+            shot.Velocity -= Vector3.UnitY * (gravity * StepTime);
         }
 
         // Limits hold every step, and rows can start outside of them
@@ -652,18 +665,6 @@ public sealed class ProjectileSimulation
         if (limit != speed)
         {
             shot.Velocity = Normalize(shot.Velocity, shot.Direction) * limit;
-        }
-
-        if (shot.Age >= definition.GravityStartTime)
-        {
-            shot.Velocity -= Vector3.UnitY * (gravity * StepTime);
-        }
-
-        Vector3 flat = new(shot.Direction.X, 0, shot.Direction.Z);
-
-        if (flat.LengthSquared() > Epsilon)
-        {
-            shot.Velocity += Vector3.Normalize(flat) * (definition.ExternalForce * StepTime);
         }
 
         Vector3 next = shot.Position + shot.Velocity * StepTime;
