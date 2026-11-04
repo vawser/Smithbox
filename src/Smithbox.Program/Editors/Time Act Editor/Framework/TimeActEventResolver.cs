@@ -3,6 +3,7 @@ using Andre.Formats;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MetadataEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -111,23 +112,20 @@ public class TimeActEventResolver
         return null;
     }
 
-    // Parameters that only effect or sound events have. Events are told apart by these first, so renaming an
-    // event in a template doesn't change what it displays.
-    private static readonly string[] EffectParameterPrefixes = { "FFXID", "ThrowDirectionSFXIndex" };
-    private const string SoundParameter = "SoundID";
-
-    private static bool IsEffectEvent(TAE.Event ev)
+    // Effect and sound events are the ones with a parameter the meta tags with the Particles or Sounds alias.
+    // They are told apart by that first, so renaming an event in a def doesn't change what it displays.
+    private bool IsEffectEvent(TAE.Event ev)
     {
-        if (ev.Parameters!.Values.Keys.Any(k => EffectParameterPrefixes.Any(p => k.StartsWith(p, StringComparison.OrdinalIgnoreCase))))
+        if (_project.Handler.TimeActData?.HasAliasField(ev, ProjectAliasType.Particles) == true)
             return true;
 
-        // Templates that don't name the parameter yet
+        // Events whose effect isn't an alias, such as SpawnFFX_ThrowDirection, and defs without meta
         return (ev.TypeName ?? "").Contains("FFX", StringComparison.OrdinalIgnoreCase);
     }
 
-    private static bool IsSoundEvent(TAE.Event ev)
+    private bool IsSoundEvent(TAE.Event ev)
     {
-        if (ev.Parameters!.Values.ContainsKey(SoundParameter))
+        if (_project.Handler.TimeActData?.HasAliasField(ev, ProjectAliasType.Sounds) == true)
             return true;
 
         return (ev.TypeName ?? "").Contains("PlaySound", StringComparison.OrdinalIgnoreCase);

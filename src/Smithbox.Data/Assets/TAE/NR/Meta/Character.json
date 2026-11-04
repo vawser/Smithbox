@@ -1,6 +1,36 @@
 {
   "Events": [
     {
+      "ID": 0,
+      "Event": "ChrActionFlag",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
+      "ID": 1,
+      "Event": "AttackBehavior",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "Event": "BulletBehavior",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
       "ID": 24,
       "Event": "[DS1, Disabled]QueueTransitionAnimation",
       "Fields": [
@@ -57,6 +87,10 @@
         {
           "Field": "Unused14",
           "Obsolete": true
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },
@@ -67,6 +101,10 @@
         {
           "Field": "FFXID",
           "Alias": "Particles"
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },
@@ -287,6 +325,10 @@
         {
           "Field": "OverrideSoundID",
           "Alias": "Sounds"
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },
@@ -447,6 +489,10 @@
         {
           "Field": "Unused01",
           "Obsolete": true
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },
@@ -477,6 +523,10 @@
         {
           "Field": "Unused0C",
           "Obsolete": true
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },
@@ -1107,6 +1157,10 @@
         {
           "Field": "Unused0C",
           "Obsolete": true
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },
@@ -1257,6 +1311,10 @@
         {
           "Field": "FFXID",
           "Alias": "Particles"
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },

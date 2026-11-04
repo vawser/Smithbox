@@ -533,6 +533,10 @@
       "Text": "Obsolete: the game doesn't read this value."
     },
     {
+      "Key": "TAE_PropertiesWindow_Alias_Not_Found",
+      "Text": "No alias"
+    },
+    {
       "Key": "TAE_PropertiesWindow_Field_Info_Header",
       "Text": "Information"
     },

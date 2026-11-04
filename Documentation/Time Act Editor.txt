@@ -4,7 +4,6 @@
 
 - Properties:
     - Expand meta:
-        - Aliases (param aliases support)
         - Attack/Bullet/Common/PC behavior links
         - State Info (param enum support)
 

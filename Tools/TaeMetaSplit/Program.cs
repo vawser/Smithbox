@@ -19,6 +19,12 @@ using System.Xml.Linq;
 if (args.Length > 0 && args[0] == "per-event")
     return PerEvent.Run(args.Length > 1 ? args[1] : @"..\..\src\Smithbox.Data\Assets\TAE");
 
+if (args.Length > 0 && args[0] == "survey")
+    return Aliases.Survey(args.Length > 1 ? args[1] : @"..\..\src\Smithbox.Data\Assets\TAE");
+
+if (args.Length > 0 && args[0] == "tag-aliases")
+    return Aliases.Tag(args.Length > 1 ? args[1] : @"..\..\src\Smithbox.Data\Assets\TAE");
+
 var root = args.Length > 0 ? args[0] : @"..\..\src\Smithbox.Data\Assets\TAE";
 root = Path.GetFullPath(root);
 

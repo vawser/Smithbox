@@ -1,6 +1,46 @@
 {
   "Events": [
     {
+      "ID": 0,
+      "Event": "ChrActionFlag",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
+      "ID": 1,
+      "Event": "AttackBehavior",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "Event": "BulletBehavior",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
+      "ID": 4,
+      "Event": "BulletBehavior_Midair",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
       "ID": 66,
       "Event": "AddSpEffect_Multiplayer",
       "Fields": [
@@ -37,6 +77,10 @@
         {
           "Field": "FFXID",
           "Alias": "Particles"
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },
@@ -265,6 +309,10 @@
         {
           "Field": "SoundID",
           "Alias": "Sounds"
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },
@@ -469,6 +517,10 @@
         {
           "Field": "FFXID",
           "Alias": "Particles"
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },

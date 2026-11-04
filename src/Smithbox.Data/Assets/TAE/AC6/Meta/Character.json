@@ -1,6 +1,36 @@
 {
   "Events": [
     {
+      "ID": 0,
+      "Event": "ChrActionFlag",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
+      "ID": 1,
+      "Event": "AttackBehavior",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "Event": "BulletBehavior",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
       "ID": 66,
       "Event": "AddSpEffect_Multiplayer",
       "Fields": [
@@ -27,6 +57,10 @@
         {
           "Field": "FFXID",
           "Alias": "Particles"
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },
@@ -37,6 +71,10 @@
         {
           "Field": "FFXID",
           "Alias": "Particles"
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },
@@ -225,6 +263,10 @@
         {
           "Field": "SoundID",
           "Alias": "Sounds"
+        },
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
         }
       ]
     },
@@ -349,12 +391,32 @@
       ]
     },
     {
+      "ID": 300,
+      "Event": "ActivateJumpTableEarly",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
       "ID": 302,
       "Event": "AddSpEffect_DragonForm",
       "Fields": [
         {
           "Field": "SpEffectID",
           "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 303,
+      "Event": "SetAnimOverlay303",
+      "Fields": [
+        {
+          "Field": "AnimID",
+          "Alias": "Animations"
         }
       ]
     },

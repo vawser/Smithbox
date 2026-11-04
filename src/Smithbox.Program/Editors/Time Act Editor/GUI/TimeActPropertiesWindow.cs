@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -925,22 +926,162 @@ public class TimeActPropertiesWindow
         }
     }
 
+    /// <summary>
+    /// The alias of the value, under the field, which can be right-clicked to pick another from the aliases
+    /// </summary>
     private void DisplayAlias(TAE.Event ev, string key, TimeActField meta)
     {
-        if (!Enum.TryParse(meta.Alias, out ProjectAliasType aliasType))
+        if (meta.Alias == "" || !CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
 
-        var alias = Project.GetAliasName(aliasType, $"{ev.Parameters[key]}");
-
-        if (alias == "")
+        if (!Enum.TryParse(meta.Alias, out ProjectAliasType aliasType) || aliasType is ProjectAliasType.None)
             return;
+
+        if (!Project.Handler.ProjectData.Aliases.TryGetValue(aliasType, out var aliases) || aliases == null)
+            return;
+
+        object value = ev.Parameters[key];
+
+        if (!IsInteger(value))
+            return;
+
+        var source = View.Selection.SelectedTimeActContainerWrapper;
+        var alias = GetAliasName(aliasType, aliases, source, Convert.ToInt64(value));
 
         ImGui.TableNextRow();
 
-        ImGui.TableSetColumnIndex(1);
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
-        ImGui.TextUnformatted(alias);
+        ImGui.TableSetColumnIndex(0);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
+        ImGui.TextUnformatted($"   {LOC.Get(aliasType.GetDisplayName())}");
         ImGui.PopStyleColor();
+
+        ImGui.TableSetColumnIndex(1);
+
+        if (alias != "")
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+            ImGui.TextUnformatted(alias);
+            ImGui.PopStyleColor();
+        }
+        else
+        {
+            ImGui.TextDisabled(LOC.Get("TAE_PropertiesWindow_Alias_Not_Found"));
+        }
+
+        if (ImGui.BeginPopupContextItem("##aliasContextMenu"))
+        {
+            object newValue = null;
+            var choices = GetAliasChoices(aliasType, aliases, source);
+            var changed = AliasEnumHelper.ContextMenu(null, choices, value, ref newValue);
+
+            ImGui.EndPopup();
+
+            if (changed && newValue != null)
+            {
+                SetParameter(ev, key, newValue);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Animation aliases belong to a character and are named by the HKX file (c0000_a000_003000), so the value is
+    /// looked up as an animation of the time act's character. Character aliases are named c1000 for the value 1000.
+    /// Every other alias is named by the value itself.
+    /// </summary>
+    private string GetAliasName(ProjectAliasType aliasType, List<AliasEntry> aliases, TimeActContainerWrapper source, long id)
+    {
+        if (id < 0)
+            return "";
+
+        return aliasType switch
+        {
+            ProjectAliasType.Animations => source == null ? "" :
+                AliasHelper.GetAnimationAlias(Project, source.Name, source.FormatAnimationName(id)),
+            ProjectAliasType.Characters =>
+                aliases.FirstOrDefault(e => TryParseAliasNumber(e.ID, out var n) && n == id)?.Name ?? "",
+            _ => AliasHelper.GetAliasName(aliases, $"{id}")
+        };
+    }
+
+    // The aliases offered by the right-click menu, with the value each stands for as its ID
+    private (ProjectAliasType Type, List<AliasEntry> Source, int Count, string Character) AliasChoicesKey;
+    private List<AliasEntry> AliasChoices = new();
+
+    private static readonly Regex AnimationAliasRegex = new(@"(?:^|_)a(\d+)_(\d+)$", RegexOptions.Compiled);
+
+    private List<AliasEntry> GetAliasChoices(ProjectAliasType aliasType, List<AliasEntry> aliases, TimeActContainerWrapper source)
+    {
+        var cacheKey = (aliasType, aliases, aliases.Count, source?.Name);
+
+        if (AliasChoicesKey == cacheKey)
+            return AliasChoices;
+
+        var choices = new List<AliasEntry>();
+
+        if (aliasType is ProjectAliasType.Animations)
+        {
+            // The character's own animations, then those of the sets it plays, then those named for every character
+            var prefixes = source == null ? new List<string>() :
+                StudioCore.Renderer.AnimationPackage.GetAnimationSetNames(StudioCore.Renderer.AnimatedModelKind.Character, source.Name)
+                    .Select(set => $"{set}_")
+                    .ToList();
+
+            var seen = new HashSet<long>();
+
+            foreach (var prefix in prefixes.Append(""))
+            {
+                foreach (var entry in aliases)
+                {
+                    if (entry?.ID == null)
+                        continue;
+
+                    var isMatch = prefix == ""
+                        ? entry.ID.StartsWith('a')
+                        : entry.ID.StartsWith(prefix, StringComparison.OrdinalIgnoreCase);
+
+                    if (!isMatch)
+                        continue;
+
+                    var match = AnimationAliasRegex.Match(entry.ID);
+
+                    if (!match.Success)
+                        continue;
+
+                    var size = (long)Math.Pow(10, match.Groups[2].Value.Length);
+                    var id = long.Parse(match.Groups[1].Value) * size + long.Parse(match.Groups[2].Value);
+
+                    if (seen.Add(id))
+                    {
+                        choices.Add(new AliasEntry { ID = $"{id}", Name = entry.Name, Description = entry.Description, Tags = entry.Tags });
+                    }
+                }
+            }
+        }
+        else
+        {
+            foreach (var entry in aliases)
+            {
+                if (entry?.ID != null && TryParseAliasNumber(entry.ID, out var id))
+                {
+                    choices.Add(new AliasEntry { ID = $"{id}", Name = entry.Name, Description = entry.Description, Tags = entry.Tags });
+                }
+            }
+        }
+
+        AliasChoicesKey = cacheKey;
+        AliasChoices = choices;
+
+        return choices;
+    }
+
+    /// <summary>
+    /// The number an alias stands for: its ID, or its ID after a letter prefix such as the c of c1000
+    /// </summary>
+    private static bool TryParseAliasNumber(string aliasId, out long number)
+    {
+        var digits = aliasId.TrimStart('c', 'C');
+
+        return long.TryParse(digits, out number);
     }
 
     private static void DisplaySeparatorRow()

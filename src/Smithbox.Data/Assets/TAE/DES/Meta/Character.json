@@ -1,6 +1,30 @@
 {
   "Events": [
     {
+      "ID": 2,
+      "Event": "BulletBehavior",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
+      "ID": 24,
+      "Event": "QueueTransitionAnimation",
+      "Fields": [
+        {
+          "Field": "Destination Anim ID",
+          "Alias": "Animations"
+        },
+        {
+          "Field": "Transition Anim ID",
+          "Alias": "Animations"
+        }
+      ]
+    },
+    {
       "ID": 66,
       "Event": "AddSpEffect_Multiplayer",
       "Fields": [
@@ -253,12 +277,32 @@
       ]
     },
     {
+      "ID": 300,
+      "Event": "ActivateJumpTableEarly",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
       "ID": 302,
       "Event": "AddSpEffect_DragonForm",
       "Fields": [
         {
           "Field": "SpEffectID",
           "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 303,
+      "Event": "PlayAnimation",
+      "Fields": [
+        {
+          "Field": "AnimID",
+          "Alias": "Animations"
         }
       ]
     },

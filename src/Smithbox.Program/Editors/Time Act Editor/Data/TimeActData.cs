@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using System;
@@ -102,6 +103,25 @@ public class TimeActData : IDisposable
             return null;
 
         return def.MetaFields.GetValueOrDefault((ev.Type, parameterName));
+    }
+
+    /// <summary>
+    /// Whether the meta tags any parameter of the event with the alias type, such as the FFXID of an effect event
+    /// </summary>
+    public bool HasAliasField(TAE.Event ev, ProjectAliasType aliasType)
+    {
+        if (ev?.Parameters == null)
+            return false;
+
+        var alias = aliasType.ToString();
+
+        foreach (var parameter in ev.Parameters.Template.Values)
+        {
+            if (GetFieldMeta(ev, parameter.Name) is { } meta && meta.Alias == alias)
+                return true;
+        }
+
+        return false;
     }
 
     /// <summary>

@@ -1,6 +1,30 @@
 {
   "Events": [
     {
+      "ID": 2,
+      "Event": "BulletBehavior",
+      "Fields": [
+        {
+          "Field": "StateInfo",
+          "ProjectEnum": "SP_EFFECT_TYPE"
+        }
+      ]
+    },
+    {
+      "ID": 24,
+      "Event": "QueueTransitionAnimation",
+      "Fields": [
+        {
+          "Field": "Destination Anim ID",
+          "Alias": "Animations"
+        },
+        {
+          "Field": "Transition Anim ID",
+          "Alias": "Animations"
+        }
+      ]
+    },
+    {
       "ID": 66,
       "Event": "AddSpEffect_Multiplayer",
       "Fields": [
@@ -263,12 +287,32 @@
       ]
     },
     {
+      "ID": 303,
+      "Event": "PlayAnimation",
+      "Fields": [
+        {
+          "Field": "AnimID",
+          "Alias": "Animations"
+        }
+      ]
+    },
+    {
       "ID": 401,
       "Event": "AddSpEffect_Multiplayer_401",
       "Fields": [
         {
           "Field": "SpEffectID",
           "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 7001,
+      "Event": "NF_Test_SetUpperBodyAnim",
+      "Fields": [
+        {
+          "Field": "AnimID",
+          "Alias": "Animations"
         }
       ]
     },
@@ -293,6 +337,16 @@
       ]
     },
     {
+      "ID": 7014,
+      "Event": "NF_ForcePlayAnimation",
+      "Fields": [
+        {
+          "Field": "AnimationID",
+          "Alias": "Animations"
+        }
+      ]
+    },
+    {
       "ID": 7015,
       "Event": "NF_TEST_PlaySound",
       "Fields": [
@@ -303,12 +357,56 @@
       ]
     },
     {
+      "ID": 7019,
+      "Event": "NF_Action303_PlayAnimation_Ex",
+      "Fields": [
+        {
+          "Field": "AnimationID",
+          "Alias": "Animations"
+        }
+      ]
+    },
+    {
+      "ID": 7020,
+      "Event": "NF_SetAnimLayerDirectly",
+      "Fields": [
+        {
+          "Field": "AnimationID",
+          "Alias": "Animations"
+        }
+      ]
+    },
+    {
       "ID": 7023,
       "Event": "NF_AddSpEffectFlag",
       "Fields": [
         {
           "Field": "SpEffectID",
           "ParamRef": "SpEffectParam"
+        }
+      ]
+    },
+    {
+      "ID": 7029,
+      "Event": "NF_SetTaeExtraAnim",
+      "Fields": [
+        {
+          "Field": "AnimID",
+          "Alias": "Animations"
+        }
+      ]
+    },
+    {
+      "ID": 7030,
+      "Event": "NF_AdditiveBlendAttackAim",
+      "Fields": [
+        {
+          "Field": "AimUpAnimID",
+          "Alias": "Animations"
+        },
+        {
+          "Field": "AimDownAnimID",
+          "Alias": "Animations"
         }
       ]
     },
@@ -349,6 +447,16 @@
         {
           "Field": "SoundID",
           "Alias": "Sounds"
+        }
+      ]
+    },
+    {
+      "ID": 7045,
+      "Event": "NF_SetTaeExtraAnim_Keep",
+      "Fields": [
+        {
+          "Field": "AnimID",
+          "Alias": "Animations"
         }
       ]
     },
