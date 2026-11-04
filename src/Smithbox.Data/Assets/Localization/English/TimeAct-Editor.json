@@ -1067,6 +1067,670 @@
     {
       "Key": "TAE_AnimationWindow_Alias_Display_Hide",
       "Text": "Hide"
+    },
+    {
+      "Key": "TAE_ToolWindow_View_Toggle_Mass_Edit",
+      "Text": "Mass Edit"
+    },
+    {
+      "Key": "TAE_MassEditTool_Header",
+      "Text": "Mass Edit"
+    },
+    {
+      "Key": "TAE_MassEditTool_Hint",
+      "Text": "Find animations or events in the selected source with the filter below, then change every match at once. Leave any part of the filter empty to match everything in the scope."
+    },
+    {
+      "Key": "TAE_MassEditTool_Not_Supported",
+      "Text": "Time acts can't be saved for this game, so they can't be mass edited."
+    },
+    {
+      "Key": "TAE_MassEditTool_No_Source",
+      "Text": "Select a source to mass edit its time acts."
+    },
+    {
+      "Key": "TAE_MassEditTool_No_Template",
+      "Text": "There are no event templates for this game."
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_Header",
+      "Text": "Scope"
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_Header_TT",
+      "Text": "Where to look for the animations or events to edit."
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_Selected_Events",
+      "Text": "Selected Events"
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_Selected_Events_TT",
+      "Text": "Only the events selected in the graph."
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_Current_Animation",
+      "Text": "Current Animation"
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_Current_Animation_TT",
+      "Text": "The selected animation."
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_Current_TimeAct",
+      "Text": "Current Time Act"
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_Current_TimeAct_TT",
+      "Text": "Every animation of the selected time act."
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_Current_Source",
+      "Text": "Current Source"
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_Current_Source_TT",
+      "Text": "Every time act of the selected source."
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_No_Events",
+      "Text": "Select one or more events in the graph to use this scope."
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_No_Animation",
+      "Text": "Select an animation to use this scope."
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_No_TimeAct",
+      "Text": "Select a time act to use this scope."
+    },
+    {
+      "Key": "TAE_MassEditTool_Target_Header",
+      "Text": "Target"
+    },
+    {
+      "Key": "TAE_MassEditTool_Target_Header_TT",
+      "Text": "Whether the edit applies to events, or to whole animations."
+    },
+    {
+      "Key": "TAE_MassEditTool_Target_Events",
+      "Text": "Events"
+    },
+    {
+      "Key": "TAE_MassEditTool_Target_Animations",
+      "Text": "Animations"
+    },
+    {
+      "Key": "TAE_MassEditTool_Animation_Header",
+      "Text": "Animation"
+    },
+    {
+      "Key": "TAE_MassEditTool_Animation_Header_TT",
+      "Text": "Matches the name, alias or properties of an animation. Leave it empty to match every animation."
+    },
+    {
+      "Key": "TAE_MassEditTool_Any_Hint",
+      "Text": "Any"
+    },
+    {
+      "Key": "TAE_MassEditTool_Event_Header",
+      "Text": "Event Type"
+    },
+    {
+      "Key": "TAE_MassEditTool_Event_Header_TT",
+      "Text": "The type of event to match. Pick one from the list, or type in the list to match events by their name or ID as text."
+    },
+    {
+      "Key": "TAE_MassEditTool_Event_Header_Animations_TT",
+      "Text": "Only matches animations that have an event of this type. Pick one from the list, or type in the list to match events by their name or ID as text."
+    },
+    {
+      "Key": "TAE_MassEditTool_Event_Filter_Hint",
+      "Text": "Type to filter..."
+    },
+    {
+      "Key": "TAE_MassEditTool_Event_Filter_TT",
+      "Text": "Narrows the list of event types. The text can also be used as the filter itself, with the option below."
+    },
+    {
+      "Key": "TAE_MassEditTool_Event_Any",
+      "Text": "Any event type"
+    },
+    {
+      "Key": "TAE_MassEditTool_Event_Match_Text",
+      "Text": "Any type whose name or ID matches \"{0}\""
+    },
+    {
+      "Key": "TAE_MassEditTool_Event_Match_Text_TT",
+      "Text": "Matches the text against the name and ID of each event, as the search does, rather than picking a single type."
+    },
+    {
+      "Key": "TAE_MassEditTool_Event_Text_Preview",
+      "Text": "Name or ID contains \"{0}\""
+    },
+    {
+      "Key": "TAE_MassEditTool_Event_Text_Exact_Preview",
+      "Text": "Name or ID is \"{0}\""
+    },
+    {
+      "Key": "TAE_MassEditTool_Conditions_Header",
+      "Text": "Conditions"
+    },
+    {
+      "Key": "TAE_MassEditTool_Conditions_Header_TT",
+      "Text": "Conditions on the fields of the target. Every condition must be met. Pick an event type above to pick from its parameters."
+    },
+    {
+      "Key": "TAE_MassEditTool_Field_TT",
+      "Text": "The field to check. A picked field is matched exactly; a typed field name is matched as text, so it can match fields of several event types."
+    },
+    {
+      "Key": "TAE_MassEditTool_Field_Filter_Hint",
+      "Text": "Type to filter..."
+    },
+    {
+      "Key": "TAE_MassEditTool_Field_Filter_TT",
+      "Text": "Narrows the list of fields. The text can also be used as a field name to match, with the option below."
+    },
+    {
+      "Key": "TAE_MassEditTool_Field_Any",
+      "Text": "Any field"
+    },
+    {
+      "Key": "TAE_MassEditTool_Field_Match_Text",
+      "Text": "Any field whose name matches \"{0}\""
+    },
+    {
+      "Key": "TAE_MassEditTool_Field_Match_Text_TT",
+      "Text": "Matches the text against the internal name and the annotated name of each field."
+    },
+    {
+      "Key": "TAE_MassEditTool_Field_Text_Preview",
+      "Text": "Field name contains \"{0}\""
+    },
+    {
+      "Key": "TAE_MassEditTool_Field_Text_Exact_Preview",
+      "Text": "Field name is \"{0}\""
+    },
+    {
+      "Key": "TAE_MassEditTool_Field_Pick_Event_Type",
+      "Text": "Pick an event type to choose from its parameters."
+    },
+    {
+      "Key": "TAE_MassEditTool_Comparison_Contains",
+      "Text": "contains"
+    },
+    {
+      "Key": "TAE_MassEditTool_Comparison_Contains_TT",
+      "Text": "The value contains the text, or the name of its enum entry does."
+    },
+    {
+      "Key": "TAE_MassEditTool_Comparison_Equals_TT",
+      "Text": "The value is the same. Numbers are compared as numbers, so 1 matches 1.0 but not 10."
+    },
+    {
+      "Key": "TAE_MassEditTool_Comparison_Not_Equals_TT",
+      "Text": "The value is not the same. Numbers are compared as numbers."
+    },
+    {
+      "Key": "TAE_MassEditTool_Comparison_Between",
+      "Text": "between"
+    },
+    {
+      "Key": "TAE_MassEditTool_Comparison_Between_TT",
+      "Text": "The value is a number within the range, including both ends. Either end can be left empty."
+    },
+    {
+      "Key": "TAE_MassEditTool_Comparison_Number_TT",
+      "Text": "The value is a number, compared with the one given."
+    },
+    {
+      "Key": "TAE_MassEditTool_Value_TT",
+      "Text": "The value to compare with. Leave it empty to match any value."
+    },
+    {
+      "Key": "TAE_MassEditTool_Value_Typed_TT",
+      "Text": "The value to compare with, as a {0}. Leave it empty to match any value."
+    },
+    {
+      "Key": "TAE_MassEditTool_Value_Between_TT",
+      "Text": "The ends of the range. Either can be left empty."
+    },
+    {
+      "Key": "TAE_MassEditTool_Value_Low_Hint",
+      "Text": "From"
+    },
+    {
+      "Key": "TAE_MassEditTool_Value_High_Hint",
+      "Text": "To"
+    },
+    {
+      "Key": "TAE_MassEditTool_Value_Any",
+      "Text": "Any value"
+    },
+    {
+      "Key": "TAE_MassEditTool_Value_True",
+      "Text": "True"
+    },
+    {
+      "Key": "TAE_MassEditTool_Value_False",
+      "Text": "False"
+    },
+    {
+      "Key": "TAE_MassEditTool_Value_On",
+      "Text": "On (1)"
+    },
+    {
+      "Key": "TAE_MassEditTool_Value_Off",
+      "Text": "Off (0)"
+    },
+    {
+      "Key": "TAE_MassEditTool_Condition_Add",
+      "Text": "Add Condition"
+    },
+    {
+      "Key": "TAE_MassEditTool_Condition_Add_TT",
+      "Text": "Adds another condition. Every condition must be met."
+    },
+    {
+      "Key": "TAE_MassEditTool_Condition_Remove_TT",
+      "Text": "Removes this condition."
+    },
+    {
+      "Key": "TAE_MassEditTool_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "TAE_MassEditTool_Options_Header_TT",
+      "Text": "How the typed text is matched."
+    },
+    {
+      "Key": "TAE_MassEditTool_Exact",
+      "Text": "Exact Match"
+    },
+    {
+      "Key": "TAE_MassEditTool_Exact_TT",
+      "Text": "Typed text must equal what it is matched against, rather than be part of it."
+    },
+    {
+      "Key": "TAE_MassEditTool_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TAE_MassEditTool_Actions_Header_TT",
+      "Text": "Find the matches of the filter."
+    },
+    {
+      "Key": "TAE_MassEditTool_Find",
+      "Text": "Find"
+    },
+    {
+      "Key": "TAE_MassEditTool_Find_TT",
+      "Text": "Finds everything in the scope that matches the filter."
+    },
+    {
+      "Key": "TAE_MassEditTool_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "TAE_MassEditTool_Clear_TT",
+      "Text": "Clears the filter and the matches."
+    },
+    {
+      "Key": "TAE_MassEditTool_Progress_Header",
+      "Text": "Progress"
+    },
+    {
+      "Key": "TAE_MassEditTool_Progress_Header_TT",
+      "Text": "How far the find has got."
+    },
+    {
+      "Key": "TAE_MassEditTool_Progress",
+      "Text": "{0} / {1} time acts"
+    },
+    {
+      "Key": "TAE_MassEditTool_Finding",
+      "Text": "Finding in {0}"
+    },
+    {
+      "Key": "TAE_MassEditTool_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "TAE_MassEditTool_Cancel_TT",
+      "Text": "Stops the find. The matches found so far are kept."
+    },
+    {
+      "Key": "TAE_MassEditTool_Matches_Header",
+      "Text": "Matches"
+    },
+    {
+      "Key": "TAE_MassEditTool_Matches_Header_TT",
+      "Text": "Everything the edit will apply to. Click a match to jump to it."
+    },
+    {
+      "Key": "TAE_MassEditTool_Matches_Events",
+      "Text": "{0} events in {1} animations"
+    },
+    {
+      "Key": "TAE_MassEditTool_Matches_Animations",
+      "Text": "{0} animations"
+    },
+    {
+      "Key": "TAE_MassEditTool_Matches_Filtered",
+      "Text": "({0} shown)"
+    },
+    {
+      "Key": "TAE_MassEditTool_Matches_Stale",
+      "Text": "The filter or selection has changed since Find was pressed. Press Find again to update the matches."
+    },
+    {
+      "Key": "TAE_MassEditTool_Jump_TT",
+      "Text": "Jumps to this match."
+    },
+    {
+      "Key": "TAE_MassEditTool_Action_Header",
+      "Text": "Action"
+    },
+    {
+      "Key": "TAE_MassEditTool_Action_Header_TT",
+      "Text": "What to do to the matches."
+    },
+    {
+      "Key": "TAE_MassEditTool_Action_Edit",
+      "Text": "Edit"
+    },
+    {
+      "Key": "TAE_MassEditTool_Edit_Animations_Not_Supported",
+      "Text": "Editing animations isn't supported yet. Set the target to Events to edit their times and parameters."
+    },
+    {
+      "Key": "TAE_MassEditTool_Steps_Header",
+      "Text": "Steps"
+    },
+    {
+      "Key": "TAE_MassEditTool_Steps_Header_TT",
+      "Text": "The changes to make to each matched event, in order. Each step works on the value the step before it left."
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Pick_Field",
+      "Text": "Pick a field..."
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Field_TT",
+      "Text": "The field to change. The list holds the times, and the parameters of the event types among the matches."
+    },
+    {
+      "Key": "TAE_MassEditTool_Field_Times",
+      "Text": "Start and End Time"
+    },
+    {
+      "Key": "TAE_MassEditTool_Field_Event_Count",
+      "Text": "(in {0} events)"
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Pick_Value",
+      "Text": "Pick a value..."
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Value_TT",
+      "Text": "The value the step uses."
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Value_Typed_TT",
+      "Text": "The value the step uses. Set takes a {0} as the Properties window does; the other operations take a plain number."
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Value_Hint",
+      "Text": "Value"
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Factor_Hint",
+      "Text": "Factor"
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Frames_Hint",
+      "Text": "Frames"
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Seconds_Hint",
+      "Text": "Seconds"
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Frames",
+      "Text": "Frames"
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Frames_TT",
+      "Text": "Whether the time is in frames, at 30 to the second, rather than in seconds."
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Add",
+      "Text": "Add Step"
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Add_TT",
+      "Text": "Adds another step, applied after the ones above it."
+    },
+    {
+      "Key": "TAE_MassEditTool_Step_Remove_TT",
+      "Text": "Removes this step."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Set",
+      "Text": "set to"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Set_TT",
+      "Text": "Replaces the value."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Add",
+      "Text": "add"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Add_TT",
+      "Text": "Adds to the value."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Subtract",
+      "Text": "subtract"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Subtract_TT",
+      "Text": "Takes away from the value."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Multiply",
+      "Text": "multiply by"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Multiply_TT",
+      "Text": "Multiplies the value. Whole numbers are rounded."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Divide",
+      "Text": "divide by"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Divide_TT",
+      "Text": "Divides the value. Whole numbers are rounded."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_At_Least",
+      "Text": "at least"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_At_Least_TT",
+      "Text": "Raises the value to this if it is lower."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_At_Most",
+      "Text": "at most"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_At_Most_TT",
+      "Text": "Lowers the value to this if it is higher."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Reset",
+      "Text": "reset to default"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Reset_TT",
+      "Text": "Sets the value the field usually has, as the Properties window's reset does."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Toggle",
+      "Text": "toggle"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Toggle_TT",
+      "Text": "Turns the value on if it is off, and off if it is on."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Shift",
+      "Text": "shift by"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Shift_TT",
+      "Text": "Moves the event earlier or later, keeping its length."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Scale",
+      "Text": "scale by"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Scale_TT",
+      "Text": "Multiplies both times, stretching or squeezing the event and its distance from the start."
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Set_Length",
+      "Text": "set length to"
+    },
+    {
+      "Key": "TAE_MassEditTool_Operator_Set_Length_TT",
+      "Text": "Moves the end time so the event lasts this long."
+    },
+    {
+      "Key": "TAE_MassEditTool_Changes_Header",
+      "Text": "Changes"
+    },
+    {
+      "Key": "TAE_MassEditTool_Changes_Header_TT",
+      "Text": "Every change the edit will make. Apply makes exactly these changes, as one action that a single undo takes back."
+    },
+    {
+      "Key": "TAE_MassEditTool_Changes_No_Steps",
+      "Text": "Pick a field in a step to see the changes it makes."
+    },
+    {
+      "Key": "TAE_MassEditTool_Changes_Summary",
+      "Text": "{0} changes to {1} events in {2} animations"
+    },
+    {
+      "Key": "TAE_MassEditTool_Changes_Unchanged",
+      "Text": "{0} events already have these values, and are left as they are."
+    },
+    {
+      "Key": "TAE_MassEditTool_Changes_Skipped",
+      "Text": "{0} events can't be edited, and will be left as they are:"
+    },
+    {
+      "Key": "TAE_MassEditTool_Changes_Skipped_More",
+      "Text": "... and {0} more"
+    },
+    {
+      "Key": "TAE_MassEditTool_Changes_Stale",
+      "Text": "The filter or selection has changed since Find was pressed. Press Find again before applying."
+    },
+    {
+      "Key": "TAE_MassEditTool_Apply",
+      "Text": "Apply"
+    },
+    {
+      "Key": "TAE_MassEditTool_Apply_TT",
+      "Text": "Makes the changes listed below. A single undo takes them all back."
+    },
+    {
+      "Key": "TAE_MassEditTool_Applied",
+      "Text": "Applied the edit to {0} events."
+    },
+    {
+      "Key": "TAE_MassEditTool_Applied_Stale",
+      "Text": "{0} events were changed after the preview was made, and were left as they are."
+    },
+    {
+      "Key": "TAE_MassEditTool_Applied_Find_Again",
+      "Text": "Press Find again to make another edit."
+    },
+    {
+      "Key": "TAE_MassEditTool_Applied_Log",
+      "Text": "Mass edit applied to {0} events. {1} events had changed since the preview and were left as they are."
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_No_Template",
+      "Text": "No template fits this event exactly, so its parameters can't be edited"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_No_Field",
+      "Text": "The event type has no field {0}"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_Invalid_Value",
+      "Text": "\"{0}\" isn't a valid {1}"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_Invalid_Number",
+      "Text": "\"{0}\" isn't a number"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_Not_Number",
+      "Text": "The field isn't a number"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_Out_Of_Range",
+      "Text": "{0} is out of range for a {1}"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_Divide_By_Zero",
+      "Text": "Can't divide by zero"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_No_Default",
+      "Text": "The field has no default value"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_End_Before_Start",
+      "Text": "The end time would be before the start time"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_Invalid_Operator",
+      "Text": "The operation doesn't apply to this field"
+    },
+    {
+      "Key": "TAE_MassEditTool_Tab_Find",
+      "Text": "Find"
+    },
+    {
+      "Key": "TAE_MassEditTool_Tab_Find_TT",
+      "Text": "Choose what to edit: the scope, the target and the filter."
+    },
+    {
+      "Key": "TAE_MassEditTool_Tab_Edit",
+      "Text": "Edit"
+    },
+    {
+      "Key": "TAE_MassEditTool_Tab_Edit_TT",
+      "Text": "Choose what to change in the matches, preview the changes, and apply them."
+    },
+    {
+      "Key": "TAE_MassEditTool_Edit_No_Matches",
+      "Text": "Press Find in the Find tab to choose what to edit."
+    },
+    {
+      "Key": "TAE_MassEditTool_Edit_Finding",
+      "Text": "Still finding matches ({0} so far). The edit can be built once the find is done."
     }
   ]
 }

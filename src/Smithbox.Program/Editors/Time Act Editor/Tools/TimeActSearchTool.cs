@@ -1,15 +1,9 @@
 using Hexa.NET.ImGui;
-using SoulsFormats;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.ModelEditor;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Numerics;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -28,8 +22,8 @@ public enum TimeActSearchMode
 
 /// <summary>
 /// Finds animations and events by their names, properties, fields and values. Each result jumps to what it found,
-/// selecting the source, time act, animation and event. The search runs in the background, as a global search
-/// reads the time acts of every source.
+/// selecting the source, time act, animation and event. The matching is done by <see cref="TimeActQueryRunner"/>,
+/// in the background, as a global search reads the time acts of every source.
 /// </summary>
 public class TimeActSearchTool
 {
@@ -43,55 +37,11 @@ public class TimeActSearchTool
         AllTimeActs
     }
 
-    /// <summary>
-    /// What was found. The references are to the objects searched, which for a source that wasn't open are copies
-    /// read for the search, so the IDs and positions are kept as well to find them again once the source is opened.
-    /// </summary>
-    private record SearchResult(
-        TimeActContainerWrapper Source, ModelListType ListType,
-        TimeActEntry Entry, string EntryName, int BindIndex,
-        TAE.Animation Animation, long AnimationID,
-        TAE.Event Event, int EventIndex, int EventType,
-        string Label);
-
-    /// <summary>
-    /// A source to search, with what is needed of the editor taken beforehand, as the search runs off the main thread
-    /// </summary>
-    private record SearchSource(TimeActContainerWrapper Source, ModelListType ListType,
-        List<TimeActEntry> Entries, TAE.Template.BankTemplate Template);
-
-    /// <summary>
-    /// The inputs as they were when the search started, as they can be edited while it runs
-    /// </summary>
-    private record SearchQuery(string Animation, string Event, string Field, string Value, bool Exact)
-    {
-        public bool HasAnimation => !string.IsNullOrWhiteSpace(Animation);
-        public bool HasEvent => !string.IsNullOrWhiteSpace(Event);
-        public bool HasField => !string.IsNullOrWhiteSpace(Field);
-        public bool HasValue => !string.IsNullOrWhiteSpace(Value);
-    }
-
-    /// <summary>
-    /// A search in progress. The results are passed over through the queue and picked up as the tool is drawn.
-    /// </summary>
-    private class SearchRun
-    {
-        public readonly CancellationTokenSource Cancellation = new();
-        public readonly ConcurrentQueue<SearchResult> Found = new();
-
-        public volatile int Progress;
-        public volatile int Total;
-        public volatile string Status = "";
-        public volatile bool Done;
-        public volatile bool Truncated;
-
-        public int Count;
-    }
-
     // The results stop here, as a value such as 0 is found in nearly every event
     private const int MaxResults = 10000;
 
     private readonly string Id;
+    private readonly TimeActQueryRunner Runner;
 
     private SearchScope Scope = SearchScope.CurrentTimeAct;
     private string AnimationText = "";
@@ -100,9 +50,9 @@ public class TimeActSearchTool
     private string ValueText = "";
     private bool Exact = false;
 
-    private SearchRun Run;
+    private TimeActQueryRun Run;
     // Each result with the label it is listed under, which the filter matches
-    private record ResultRow(SearchResult Result, string Label);
+    private record ResultRow(TimeActQueryMatch Result, string Label);
 
     private List<ResultRow> Results;
     private TimeActContainerWrapper ResultSource;
@@ -126,6 +76,7 @@ public class TimeActSearchTool
         Mode = mode;
 
         Id = mode is TimeActSearchMode.Local ? "local" : "global";
+        Runner = new TimeActQueryRunner(view, project);
     }
 
     public void OnToolWindow()
@@ -220,7 +171,7 @@ public class TimeActSearchTool
         GUI.Tooltip(LOC.Get("TAE_SearchTool_Exact_TT"));
 
         var query = GetQuery();
-        var hasQuery = query.HasAnimation || query.HasEvent || query.HasField || query.HasValue;
+        var hasQuery = query.HasAny;
 
         // Actions
         GUI.Spacer();
@@ -282,16 +233,16 @@ public class TimeActSearchTool
         _ => $"{scope}"
     };
 
-    private SearchQuery GetQuery()
+    private TimeActQuery GetQuery()
     {
-        return new SearchQuery(AnimationText.Trim(), EventText.Trim(), FieldText.Trim(), ValueText.Trim(), Exact);
+        return new TimeActQuery(AnimationText.Trim(), EventText.Trim(), FieldText.Trim(), ValueText.Trim(), Exact);
     }
     #endregion
 
     #region Search
     private void CancelRun()
     {
-        Run?.Cancellation.Cancel();
+        Run?.Cancel();
         Run = null;
     }
 
@@ -311,8 +262,7 @@ public class TimeActSearchTool
     {
         ClearResults();
 
-        var data = Project.Handler.TimeActData;
-        var sources = new List<SearchSource>();
+        List<TimeActQuerySource> sources;
 
         if (Mode is TimeActSearchMode.Local)
         {
@@ -320,26 +270,14 @@ public class TimeActSearchTool
                 ? selectedSource.TimeActs.ToList()
                 : View.Selection.SelectedTimeAct != null ? [View.Selection.SelectedTimeAct] : [];
 
-            sources.Add(new SearchSource(selectedSource, GetListType(selectedSource), entries, data.GetTemplate(selectedSource)));
+            sources = [Runner.GetLocalSource(selectedSource, entries)];
 
             ShowSourceInLabel = false;
             ShowTimeActInLabel = Scope is SearchScope.AllTimeActs;
         }
         else
         {
-            var bank = data.PrimaryBank;
-
-            foreach (var (listType, list) in new[] { (ModelListType.Character, bank.GetCharacters()), (ModelListType.Asset, bank.GetAssets()) })
-            {
-                foreach (var source in list.OrderBy(e => e.Name))
-                {
-                    // An open source, or one with unsaved changes, is searched as it is in the editor.
-                    // The rest are read again for the search, without being opened.
-                    var entries = source.TimeActs.Count > 0 ? source.TimeActs.ToList() : null;
-
-                    sources.Add(new SearchSource(source, listType, entries, data.GetTemplate(source)));
-                }
-            }
+            sources = Runner.GetGlobalSources();
 
             ShowSourceInLabel = true;
             ShowTimeActInLabel = true;
@@ -348,375 +286,8 @@ public class TimeActSearchTool
         Results = new();
         ResultSource = selectedSource;
 
-        var run = new SearchRun();
-        var query = GetQuery();
-
         // A local search counts its time acts, as there is only the one source
-        run.Total = Mode is TimeActSearchMode.Local ? sources[0].Entries.Count : sources.Count;
-
-        Run = run;
-
-        var token = run.Cancellation.Token;
-
-        Task.Run(() =>
-        {
-            try
-            {
-                Search(run, query, sources, token);
-            }
-            catch (OperationCanceledException)
-            {
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("TAE_SearchTool_Failed"), e);
-            }
-            finally
-            {
-                run.Done = true;
-            }
-        }, token);
-    }
-
-    private ModelListType GetListType(TimeActContainerWrapper source)
-    {
-        return Project.Handler.TimeActData.PrimaryBank.GetAssets().Contains(source)
-            ? ModelListType.Asset
-            : ModelListType.Character;
-    }
-
-    private void Search(SearchRun run, SearchQuery query, List<SearchSource> sources, CancellationToken token)
-    {
-        var countEntries = Mode is TimeActSearchMode.Local;
-
-        foreach (var item in sources)
-        {
-            token.ThrowIfCancellationRequested();
-
-            run.Status = item.Source.Name;
-
-            List<TimeActEntry> entries;
-
-            try
-            {
-                entries = item.Entries ?? item.Source.ReadTimeActs();
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_Source", item.Source.SourcePath), e);
-
-                run.Progress++;
-                continue;
-            }
-
-            foreach (var entry in entries)
-            {
-                token.ThrowIfCancellationRequested();
-
-                if (countEntries)
-                {
-                    run.Status = $"{item.Source.Name} {entry.Name}";
-                }
-
-                try
-                {
-                    if (!SearchTimeAct(run, query, item, entry, token))
-                        return;
-                }
-                catch (OperationCanceledException)
-                {
-                    throw;
-                }
-                catch (Exception e)
-                {
-                    // The open time act can be edited while it is searched, which can upset the lists being read
-                    Smithbox.LogError(this, LOC.Get("TAE_SearchTool_TimeAct_Failed", item.Source.Name, entry.Name), e);
-                }
-
-                if (countEntries)
-                {
-                    run.Progress++;
-                }
-            }
-
-            if (!countEntries)
-            {
-                run.Progress++;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Returns false once there are as many results as are kept
-    /// </summary>
-    private bool SearchTimeAct(SearchRun run, SearchQuery query, SearchSource item, TimeActEntry entry, CancellationToken token)
-    {
-        entry.Load();
-
-        if (entry.TimeAct == null)
-            return true;
-
-        var source = item.Source;
-
-        // Only the animations are listed when nothing is asked of the events
-        var searchEvents = query.HasEvent || query.HasField || query.HasValue;
-
-        foreach (var animation in entry.TimeAct.Animations.ToArray())
-        {
-            token.ThrowIfCancellationRequested();
-
-            var animationName = source.GetAnimationName(entry, animation);
-
-            if (!MatchAnimation(query, source, animation, animationName, out var animationMatch))
-                continue;
-
-            if (!searchEvents)
-            {
-                var label = animationMatch != null ? $"{animationName}  ({animationMatch})" : animationName;
-
-                if (!AddResult(run, CreateResult(item, entry, animation, null, -1, label)))
-                    return false;
-
-                continue;
-            }
-
-            // A field or value on its own can be found in the properties of the animation, as well as in its events
-            if (!query.HasEvent &&
-                MatchFields(query, GetAnimationProperties(animation), out var propertyMatch))
-            {
-                if (!AddResult(run, CreateResult(item, entry, animation, null, -1, $"{animationName}  {propertyMatch}")))
-                    return false;
-            }
-
-            var events = animation.Events.ToArray();
-
-            for (int i = 0; i < events.Length; i++)
-            {
-                var ev = events[i];
-                var eventName = GetEventName(ev, item.Template);
-
-                if (!MatchText(query, query.Event, eventName, $"{ev.Type}"))
-                    continue;
-
-                // Events whose template hasn't been applied yet are read through a copy, so the time act is left as it is
-                var readable = entry.GetReadableEvent(ev, item.Template);
-
-                if (!MatchFields(query, GetEventFields(readable), out var fieldMatch))
-                    continue;
-
-                var label = fieldMatch != null
-                    ? $"{animationName}  {eventName}  {fieldMatch}"
-                    : $"{animationName}  {eventName}";
-
-                if (!AddResult(run, CreateResult(item, entry, animation, ev, i, label)))
-                    return false;
-            }
-        }
-
-        return true;
-    }
-
-    private static SearchResult CreateResult(SearchSource item, TimeActEntry entry, TAE.Animation animation,
-        TAE.Event ev, int eventIndex, string label)
-    {
-        return new SearchResult(item.Source, item.ListType,
-            entry, entry.Name, entry.BindIndex,
-            animation, animation.ID,
-            ev, eventIndex, ev?.Type ?? -1,
-            label);
-    }
-
-    private static bool AddResult(SearchRun run, SearchResult result)
-    {
-        if (run.Count >= MaxResults)
-        {
-            run.Truncated = true;
-            return false;
-        }
-
-        run.Count++;
-        run.Found.Enqueue(result);
-
-        return true;
-    }
-
-    /// <summary>
-    /// Matches the name and alias of an animation, or failing those the values of its properties.
-    /// Gives the property that matched, or null if it was the name.
-    /// </summary>
-    private bool MatchAnimation(SearchQuery query, TimeActContainerWrapper source, TAE.Animation animation, string name, out string match)
-    {
-        match = null;
-
-        if (!query.HasAnimation)
-            return true;
-
-        var alias = AliasHelper.GetAnimationAlias(Project, source.Name, name);
-
-        if (MatchText(query, query.Animation, name, alias))
-            return true;
-
-        foreach (var field in GetAnimationProperties(animation))
-        {
-            if (MatchText(query, query.Animation, field.Value))
-            {
-                match = $"{field.DisplayName}: {field.Value}";
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private readonly record struct SearchField(string Name, string DisplayName, string Value, string EnumName);
-
-    private static IEnumerable<SearchField> GetAnimationProperties(TAE.Animation animation)
-    {
-        yield return new("ID", LOC.Get("TAE_PropertiesWindow_Animation_ID"), $"{animation.ID}", null);
-
-        if (!string.IsNullOrEmpty(animation.AnimFileName))
-            yield return new("AnimFileName", LOC.Get("TAE_PropertiesWindow_Animation_File_Name"), animation.AnimFileName, null);
-
-        switch (animation.MiniHeader)
-        {
-            case TAE.Animation.AnimMiniHeader.Standard standard:
-                if (standard.ImportsHKX)
-                {
-                    yield return new("ImportHKXSourceAnimID", LOC.Get("TAE_PropertiesWindow_Animation_Import_HKX_Source"),
-                        $"{standard.ImportHKXSourceAnimID}", null);
-                }
-                break;
-
-            case TAE.Animation.AnimMiniHeader.ImportOtherAnim import:
-                yield return new("ImportFromAnimID", LOC.Get("TAE_PropertiesWindow_Animation_Import_From"),
-                    $"{import.ImportFromAnimID}", null);
-                break;
-        }
-    }
-
-    private IEnumerable<SearchField> GetEventFields(TAE.Event ev)
-    {
-        yield return new("StartTime", LOC.Get("TAE_PropertiesWindow_Start_Time"), FormatValue(ev.StartTime), null);
-        yield return new("EndTime", LOC.Get("TAE_PropertiesWindow_End_Time"), FormatValue(ev.EndTime), null);
-
-        if (ev.Parameters == null)
-            yield break;
-
-        var data = Project.Handler.TimeActData;
-
-        foreach (var (key, parameter) in ev.Parameters.Template)
-        {
-            // Fixed values aren't parameters as such, so they aren't shown in the properties either
-            if (parameter.ValueToAssert != null)
-                continue;
-
-            var value = ev.Parameters[key];
-            var annotation = data.GetFieldAnnotation(ev, parameter.Name)?.Name;
-            var displayName = data.GetFieldDisplayName(ev, parameter.Name);
-
-            string enumName = null;
-
-            if (parameter.EnumEntries != null)
-            {
-                enumName = parameter.EnumEntries.FirstOrDefault(e => Equals(e.Value, value)).Key;
-            }
-
-            // The annotation is matched as well as the internal name, whichever is on show
-            var name = string.IsNullOrEmpty(annotation) || annotation == parameter.Name
-                ? parameter.Name
-                : $"{parameter.Name}\n{annotation}";
-
-            yield return new(name, displayName, FormatValue(value), enumName);
-        }
-    }
-
-    /// <summary>
-    /// Matches the field and value inputs against a set of fields. A field and a value must match on the same one.
-    /// Gives the field that matched.
-    /// </summary>
-    private static bool MatchFields(SearchQuery query, IEnumerable<SearchField> fields, out string match)
-    {
-        match = null;
-
-        if (!query.HasField && !query.HasValue)
-            return true;
-
-        foreach (var field in fields)
-        {
-            if (query.HasField && !MatchFieldName(query, field.Name))
-                continue;
-
-            if (query.HasValue && !MatchValue(query, field.Value, field.EnumName))
-                continue;
-
-            var shown = field.EnumName != null ? $"{field.EnumName} ({field.Value})" : field.Value;
-
-            match = $"{field.DisplayName} = {shown}";
-            return true;
-        }
-
-        return false;
-    }
-
-    /// <summary>
-    /// The internal name and the annotation of a field are held together, split by a line break
-    /// </summary>
-    private static bool MatchFieldName(SearchQuery query, string name)
-    {
-        return MatchText(query, query.Field, name.Split('\n'));
-    }
-
-    private static bool MatchValue(SearchQuery query, string value, string enumName)
-    {
-        // Numbers are compared as numbers when exact, so 1 finds 1.0
-        if (query.Exact &&
-            double.TryParse(query.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out var inputNumber) &&
-            double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out var valueNumber))
-        {
-            return inputNumber == valueNumber;
-        }
-
-        return MatchText(query, query.Value, value, enumName);
-    }
-
-    /// <summary>
-    /// Whether any of the texts contains the input, or equals it when the search is exact
-    /// </summary>
-    private static bool MatchText(SearchQuery query, string input, params string[] texts)
-    {
-        if (string.IsNullOrWhiteSpace(input))
-            return true;
-
-        foreach (var text in texts)
-        {
-            if (string.IsNullOrEmpty(text))
-                continue;
-
-            if (query.Exact ? text.Trim().Equals(input, StringComparison.OrdinalIgnoreCase)
-                            : text.Contains(input, StringComparison.OrdinalIgnoreCase))
-                return true;
-        }
-
-        return false;
-    }
-
-    private static string FormatValue(object value) => value switch
-    {
-        null => "",
-        IFormattable formattable => formattable.ToString(null, CultureInfo.InvariantCulture),
-        _ => value.ToString()
-    };
-
-    private static string GetEventName(TAE.Event ev, TAE.Template.BankTemplate template)
-    {
-        var name = ev.TypeName;
-
-        if (name == null && template != null && template.TryGetValue(ev.Type, out var eventTemplate))
-        {
-            name = eventTemplate.Name;
-        }
-
-        return name != null ? $"[{ev.Type}] {name}" : $"[{ev.Type}]";
+        Run = Runner.Start(GetQuery(), sources, Mode is TimeActSearchMode.Local, MaxResults);
     }
     #endregion
 
@@ -758,7 +329,7 @@ public class TimeActSearchTool
             CancelRun);
     }
 
-    private string GetResultLabel(SearchResult result)
+    private string GetResultLabel(TimeActQueryMatch result)
     {
         var label = result.Label;
 
@@ -806,7 +377,7 @@ public class TimeActSearchTool
         var clipper = new ImGuiListClipper();
         clipper.Begin(filtered.Count);
 
-        SearchResult jumpTarget = null;
+        TimeActQueryMatch jumpTarget = null;
 
         var selection = View.Selection;
 
@@ -842,7 +413,7 @@ public class TimeActSearchTool
 
         if (jumpTarget != null)
         {
-            Jump(jumpTarget);
+            Runner.Jump(jumpTarget);
         }
     }
 
@@ -874,75 +445,6 @@ public class TimeActSearchTool
         CheckedResultCount = Results.Count;
 
         return FilteredResults;
-    }
-
-    /// <summary>
-    /// Opens the source of a result if it isn't open, then selects its time act, animation and event,
-    /// and moves the playback to the start of the event
-    /// </summary>
-    private void Jump(SearchResult result)
-    {
-        var selection = View.Selection;
-        var source = result.Source;
-
-        if (selection.SelectedTimeActContainerWrapper != source)
-        {
-            View.SourceWindow.SelectSource(source);
-            View.SourceWindow.ScrollTo(source, result.ListType);
-        }
-
-        // An unopened source was searched through copies, so what was found is looked up again by its IDs
-        var entry = source.TimeActs.Contains(result.Entry)
-            ? result.Entry
-            : source.TimeActs.FirstOrDefault(e => e.BindIndex == result.BindIndex && e.Name == result.EntryName);
-
-        entry?.Load();
-
-        var animation = entry?.TimeAct == null ? null
-            : entry.TimeAct.Animations.Contains(result.Animation) ? result.Animation
-            : entry.TimeAct.Animations.FirstOrDefault(e => e.ID == result.AnimationID);
-
-        TAE.Event ev = null;
-
-        if (animation != null && result.EventIndex >= 0)
-        {
-            if (animation.Events.Contains(result.Event))
-            {
-                ev = result.Event;
-            }
-            else if (result.EventIndex < animation.Events.Count && animation.Events[result.EventIndex].Type == result.EventType)
-            {
-                ev = animation.Events[result.EventIndex];
-            }
-        }
-
-        // The result may have been removed since, or moved by an edit
-        if (animation == null || (result.EventIndex >= 0 && ev == null))
-        {
-            Smithbox.LogError(this, LOC.Get("TAE_SearchTool_Stale_Result"));
-            return;
-        }
-
-        if (selection.SelectedTimeAct != entry)
-        {
-            selection.SelectedTimeAct = entry;
-            View.SelectionWindow.ScrollTo(entry);
-        }
-
-        if (selection.SelectedAnimation != animation)
-        {
-            View.AnimationSelectionWindow.SelectAnimation(animation);
-        }
-
-        View.AnimationSelectionWindow.ScrollTo(animation);
-
-        if (ev != null)
-        {
-            selection.SelectedEvent = ev;
-
-            View.Playback.Pause();
-            View.Playback.Seek(ev.StartTime);
-        }
     }
     #endregion
 }

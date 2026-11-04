@@ -65,6 +65,13 @@ GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Square_Size_Input_TT"));
 ```
 
 - Write a one-line comment naming each group above it (`// Square Size`), so the layout can be read from the code.
+- For a group whose body is a long list, use `GUI.ConditionalHeader(title, tooltip, ref bool show)` instead. It adds
+  an eye toggle that hides the list. Keep the counts, warnings and action buttons outside the toggle, so hiding the
+  list never hides what the user needs to act.
+- A tool with stages that each need the full height (for example Find, then Edit, in `TimeActMassEditTool`) can
+  split them into an `ImGui.BeginTabBar` inside its section child. Work that runs in the background, such as
+  picking up results, must run before the tab bar, so it keeps going while another tab is open. A tab that depends
+  on another one says what to do there, instead of showing empty.
 - Use `GUI.TitleHeader` for the title of a whole editor window, not inside a tool. It is hidden when title
   headers are turned off.
 

@@ -136,6 +136,42 @@ public class TimeActData : IDisposable
     }
 
     /// <summary>
+    /// Gets the meta of a parameter of an event template, for when there is no event to hand, such as in a picker
+    /// </summary>
+    public TimeActField GetFieldMeta(TAE.Template.EventTemplate eventTemplate, string parameterName)
+    {
+        if (eventTemplate == null || !EventDefs.TryGetValue(eventTemplate, out var def))
+            return null;
+
+        return def.MetaFields.GetValueOrDefault((eventTemplate.ID, parameterName));
+    }
+
+    /// <summary>
+    /// Gets the annotation of a parameter of an event template, for when there is no event to hand
+    /// </summary>
+    public TimeActFieldAnnotation GetFieldAnnotation(TAE.Template.EventTemplate eventTemplate, string parameterName)
+    {
+        if (eventTemplate == null || !EventDefs.TryGetValue(eventTemplate, out var def))
+            return null;
+
+        return def.AnnotationFields.GetValueOrDefault((eventTemplate.ID, parameterName));
+    }
+
+    /// <summary>
+    /// The name a parameter of an event template is shown with, as <see cref="GetFieldDisplayName(TAE.Event, string)"/>
+    /// </summary>
+    public string GetFieldDisplayName(TAE.Template.EventTemplate eventTemplate, string parameterName)
+    {
+        if (CFG.Current.TimeActEditor_Field_Name_Mode is TimeActFieldNameMode.Annotation &&
+            GetFieldAnnotation(eventTemplate, parameterName) is { Name.Length: > 0 } annotation)
+        {
+            return annotation.Name;
+        }
+
+        return parameterName;
+    }
+
+    /// <summary>
     /// The name a parameter is shown with: its annotation when there is one and annotations are on,
     /// or else the internal name in the event def
     /// </summary>
