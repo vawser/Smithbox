@@ -30,8 +30,9 @@ public class TimeActEditorScreen : EditorScreen
 
     public TimeActEditorShortcuts Shortcuts;
 
-    // Kept here rather than on a view, so that it can be pasted anywhere in the editor
-    public TAE.Event CopiedEvent;
+    // Kept here rather than on a view, so that they can be pasted anywhere in the editor.
+    // They keep the times they were copied with, so that pasting can keep their spacing.
+    public List<TAE.Event> CopiedEvents = new();
 
     public TimeActEditorScreen(ProjectEntry project)
     {

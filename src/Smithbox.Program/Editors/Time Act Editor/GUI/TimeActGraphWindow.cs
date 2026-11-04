@@ -44,10 +44,13 @@ public class TimeActGraphWindow
         Playhead,
         Move,
         ResizeStart,
-        ResizeEnd
+        ResizeEnd,
+        Box
     }
 
     private readonly record struct Placement(TAE.Event Event, int Row);
+
+    private readonly record struct DragOriginal(TAE.Event Event, float Start, float End);
 
     public TimeActEditorView View;
     public ProjectEntry Project;
@@ -55,10 +58,22 @@ public class TimeActGraphWindow
     private float Zoom = 1;
 
     private DragMode Drag = DragMode.None;
+
+    // The event under the cursor when the drag began. Every selected event moves along with it.
     private TAE.Event DragEvent;
     private float DragGrabTime;
-    private float DragOriginalStart;
-    private float DragOriginalEnd;
+    private List<DragOriginal> DragOriginals = new();
+
+    // A plain click on an event that is part of a larger selection keeps the rest selected, so they can
+    // be dragged together. If the click doesn't turn into a drag, only that event stays selected.
+    private TAE.Event ClickCollapseEvent;
+
+    // Box selection. The start is kept in timeline space, so it stays put if the graph scrolls.
+    private float BoxStartTime;
+    private float BoxStartY;
+    private List<TAE.Event> BoxBaseSelection = new();
+    private Vector2 BoxMin;
+    private Vector2 BoxMax;
 
     private List<Placement> LayoutPlacements;
     private List<string> LayoutRowLabels;
@@ -242,30 +257,88 @@ public class TimeActGraphWindow
             }
             else
             {
-                View.Selection.SelectedEvent = hoveredEvent;
+                var io = ImGui.GetIO();
+                var selection = View.Selection;
 
-                if (hoveredEvent != null && CanEdit)
+                if (hoveredEvent == null)
                 {
-                    Drag = mouse.X - TimeToX(hoveredEvent.StartTime) < EdgeGrabWidth ? DragMode.ResizeStart
-                        : GetBarEnd(hoveredEvent) - mouse.X < EdgeGrabWidth && !IsOpenEnded(hoveredEvent) ? DragMode.ResizeEnd
-                        : DragMode.Move;
+                    // Ctrl or Shift adds the boxed events to what is already selected
+                    if (!io.KeyCtrl && !io.KeyShift)
+                    {
+                        selection.SelectedEvents.Clear();
+                    }
 
-                    DragEvent = hoveredEvent;
-                    DragGrabTime = XToTime(mouse.X);
-                    DragOriginalStart = hoveredEvent.StartTime;
-                    DragOriginalEnd = hoveredEvent.EndTime;
+                    Drag = DragMode.Box;
+                    BoxStartTime = XToTime(mouse.X);
+                    BoxStartY = mouse.Y - origin.Y;
+                    BoxBaseSelection = new List<TAE.Event>(selection.SelectedEvents);
+                    BoxMin = BoxMax = mouse;
+                }
+                else if (io.KeyCtrl)
+                {
+                    // Ctrl toggles the event in or out of the selection
+                    if (!selection.SelectedEvents.Remove(hoveredEvent))
+                    {
+                        selection.SelectedEvents.Add(hoveredEvent);
+                    }
+                }
+                else
+                {
+                    if (!selection.IsEventSelected(hoveredEvent))
+                    {
+                        if (io.KeyShift)
+                        {
+                            selection.SelectedEvents.Add(hoveredEvent);
+                        }
+                        else
+                        {
+                            selection.SelectedEvent = hoveredEvent;
+                        }
+                    }
+                    else if (!io.KeyShift && selection.SelectedEvents.Count > 1)
+                    {
+                        if (CanEdit)
+                        {
+                            ClickCollapseEvent = hoveredEvent;
+                        }
+                        else
+                        {
+                            selection.SelectedEvent = hoveredEvent;
+                        }
+                    }
+
+                    if (CanEdit)
+                    {
+                        Drag = mouse.X - TimeToX(hoveredEvent.StartTime) < EdgeGrabWidth ? DragMode.ResizeStart
+                            : GetBarEnd(hoveredEvent) - mouse.X < EdgeGrabWidth && !IsOpenEnded(hoveredEvent) ? DragMode.ResizeEnd
+                            : DragMode.Move;
+
+                        DragEvent = hoveredEvent;
+                        DragGrabTime = XToTime(mouse.X);
+                        DragOriginals = selection.SelectedEvents
+                            .Select(e => new DragOriginal(e, e.StartTime, e.EndTime))
+                            .ToList();
+                    }
                 }
             }
         }
 
-        if (Drag != DragMode.None)
+        if (Drag == DragMode.Box)
+        {
+            UpdateBoxSelection(placements, mouse, origin, rowHeight, TimeToX, RowToY, GetBarEnd, TimeToX(timelineEnd));
+        }
+        else if (Drag != DragMode.None)
         {
             UpdateDrag(XToTime(mouse.X), frameDuration);
         }
 
         if (hovered && ImGui.IsMouseClicked(ImGuiMouseButton.Right) && !overRuler && !overGutter)
         {
-            View.Selection.SelectedEvent = hoveredEvent;
+            // Right-clicking one of the selected events keeps the selection, so the menu acts on all of them
+            if (hoveredEvent == null || !View.Selection.IsEventSelected(hoveredEvent))
+            {
+                View.Selection.SelectedEvent = hoveredEvent;
+            }
 
             if (hoveredEvent != null)
             {
@@ -295,6 +368,14 @@ public class TimeActGraphWindow
 
         DrawGraph(placements, rowLabels, template, viewPos, viewSize, origin, gutter, ruler, rowHeight,
             frameDuration, frameWidth, firstFrame, lastFrame);
+
+        if (Drag == DragMode.Box)
+        {
+            var drawList = ImGui.GetWindowDrawList();
+
+            drawList.AddRectFilled(BoxMin, BoxMax, ImGui.GetColorU32(ImGuiCol.CheckMark, 0.15f));
+            drawList.AddRect(BoxMin, BoxMax, ImGui.GetColorU32(ImGuiCol.CheckMark));
+        }
 
         KeepPlayheadInView(viewSize, gutter, frameWidth, frameDuration, firstFrame);
 
@@ -441,53 +522,131 @@ public class TimeActGraphWindow
         // Events move by whole frames, so a click that doesn't drag leaves them exactly where they were
         var delta = Snap(time - DragGrabTime);
 
-        var isOpenEnded = IsOpenEnded(DragEvent);
+        var timelineStart = LayoutFirstFrame * frameDuration;
 
         // An event can already sit before the timeline, if the frames there are hidden
-        var firstAllowed = Math.Min(LayoutFirstFrame * frameDuration, DragOriginalStart);
+        float FirstAllowed(DragOriginal original) => Math.Min(timelineStart, original.Start);
 
         if (delta == 0)
         {
-            DragEvent.StartTime = DragOriginalStart;
-            DragEvent.EndTime = DragOriginalEnd;
+            foreach (var original in DragOriginals)
+            {
+                original.Event.StartTime = original.Start;
+                original.Event.EndTime = original.End;
+            }
             return;
         }
 
         switch (Drag)
         {
             case DragMode.Move:
-                var start = Math.Max(DragOriginalStart + delta, firstAllowed);
-
-                DragEvent.StartTime = start;
-
-                // The placeholder has to stay as it is, or the event will stop short of the end
-                if (!isOpenEnded)
+                // The selection stops as one at the start of the timeline, so the events keep their spacing
+                foreach (var original in DragOriginals)
                 {
-                    DragEvent.EndTime = start + DragOriginalEnd - DragOriginalStart;
+                    delta = Math.Max(delta, FirstAllowed(original) - original.Start);
+                }
+
+                foreach (var original in DragOriginals)
+                {
+                    var start = original.Start + delta;
+
+                    original.Event.StartTime = start;
+
+                    // The placeholder has to stay as it is, or the event will stop short of the end
+                    if (!IsOpenEnded(original.Event))
+                    {
+                        original.Event.EndTime = start + original.End - original.Start;
+                    }
                 }
                 break;
 
             case DragMode.ResizeStart:
-                DragEvent.StartTime = Math.Clamp(DragOriginalStart + delta, firstAllowed, Math.Max(DragOriginalEnd - frameDuration, firstAllowed));
+                foreach (var original in DragOriginals)
+                {
+                    var firstAllowed = FirstAllowed(original);
+
+                    original.Event.StartTime = Math.Clamp(original.Start + delta, firstAllowed,
+                        Math.Max(original.End - frameDuration, firstAllowed));
+                }
                 break;
 
             case DragMode.ResizeEnd:
-                DragEvent.EndTime = Math.Max(DragOriginalEnd + delta, DragOriginalStart + frameDuration);
+                foreach (var original in DragOriginals)
+                {
+                    // Events that last until the end of the animation have no end to move
+                    if (IsOpenEnded(original.Event))
+                        continue;
+
+                    original.Event.EndTime = Math.Max(original.End + delta, original.Start + frameDuration);
+                }
                 break;
         }
     }
 
     private void EndDrag()
     {
-        if (DragEvent != null &&
-            (DragEvent.StartTime != DragOriginalStart || DragEvent.EndTime != DragOriginalEnd))
+        var actions = DragOriginals
+            .Where(e => e.Event.StartTime != e.Start || e.Event.EndTime != e.End)
+            .Select(e => (ViewportAction)new TimeActMoveEventAction(View.Selection.SelectedTimeAct, e.Event,
+                e.Start, e.End, e.Event.StartTime, e.Event.EndTime))
+            .ToList();
+
+        if (actions.Count == 1)
         {
-            View.ViewportActionManager.ExecuteAction(new TimeActMoveEventAction(View.Selection.SelectedTimeAct, DragEvent,
-                DragOriginalStart, DragOriginalEnd, DragEvent.StartTime, DragEvent.EndTime));
+            View.ViewportActionManager.ExecuteAction(actions[0]);
+        }
+        else if (actions.Count > 1)
+        {
+            View.ViewportActionManager.ExecuteAction(new ViewportCompoundAction(actions));
+        }
+        else if (ClickCollapseEvent != null)
+        {
+            View.Selection.SelectedEvent = ClickCollapseEvent;
         }
 
         Drag = DragMode.None;
         DragEvent = null;
+        DragOriginals.Clear();
+        ClickCollapseEvent = null;
+    }
+
+    /// <summary>
+    /// Selects every event the box touches, on top of whatever was selected when the box was started
+    /// </summary>
+    private void UpdateBoxSelection(List<Placement> placements, Vector2 mouse, Vector2 origin, float rowHeight,
+        Func<float, float> timeToX, Func<int, float> rowToY, Func<TAE.Event, float> getBarEnd, float timelineEndX)
+    {
+        if (!ImGui.IsMouseDown(ImGuiMouseButton.Left))
+        {
+            Drag = DragMode.None;
+            BoxBaseSelection.Clear();
+            return;
+        }
+
+        var start = new Vector2(timeToX(BoxStartTime), origin.Y + BoxStartY);
+
+        BoxMin = Vector2.Min(start, mouse);
+        BoxMax = Vector2.Max(start, mouse);
+
+        var selected = new List<TAE.Event>(BoxBaseSelection);
+
+        foreach (var placement in placements)
+        {
+            var ev = placement.Event;
+
+            var minX = timeToX(ev.StartTime);
+            var maxX = Math.Min(getBarEnd(ev), timelineEndX);
+            var minY = rowToY(placement.Row);
+            var maxY = minY + rowHeight;
+
+            if (minX < BoxMax.X && maxX > BoxMin.X && minY < BoxMax.Y && maxY > BoxMin.Y && !selected.Contains(ev))
+            {
+                selected.Add(ev);
+            }
+        }
+
+        View.Selection.SelectedEvents.Clear();
+        View.Selection.SelectedEvents.AddRange(selected);
     }
 
     private void HandleShortcuts()
@@ -500,9 +659,14 @@ public class TimeActGraphWindow
             View.Playback.TogglePlaying();
         }
 
+        if (InputManager.IsPressed(KeybindID.SelectAll) && Drag == DragMode.None)
+        {
+            SelectAllEvents();
+        }
+
         if (InputManager.IsPressed(KeybindID.Delete))
         {
-            DeleteSelectedEvent();
+            DeleteSelectedEvents();
         }
 
         if (InputManager.IsPressed(KeybindID.Duplicate))
@@ -521,15 +685,27 @@ public class TimeActGraphWindow
         }
     }
 
-    private void DeleteSelectedEvent()
+    /// <summary>
+    /// Selects every event, in the order they appear on the graph
+    /// </summary>
+    private void SelectAllEvents()
+    {
+        if (LayoutPlacements == null)
+            return;
+
+        View.Selection.SelectedEvents.Clear();
+        View.Selection.SelectedEvents.AddRange(LayoutPlacements.Select(e => e.Event));
+    }
+
+    private void DeleteSelectedEvents()
     {
         var selection = View.Selection;
 
-        if (selection.SelectedEvent == null || !CanEdit)
+        if (selection.SelectedEvents.Count == 0 || !CanEdit || Drag != DragMode.None)
             return;
 
-        View.ViewportActionManager.ExecuteAction(new TimeActAddEventAction(selection, selection.SelectedTimeAct,
-            selection.SelectedAnimation, selection.SelectedEvent, true));
+        View.ViewportActionManager.ExecuteAction(new TimeActDeleteEventsAction(selection, selection.SelectedTimeAct,
+            selection.SelectedAnimation, selection.SelectedEvents));
     }
 
     private void DrawGraph(List<Placement> placements, List<string> rowLabels, TAE.Template.BankTemplate template,
@@ -595,9 +771,15 @@ public class TimeActGraphWindow
 
             drawList.AddRectFilled(min, max, GetEventColor(ev.Type));
 
-            if (ev == View.Selection.SelectedEvent)
+            if (View.Selection.IsEventSelected(ev))
             {
                 drawList.AddRect(min, max, selectedColor, 0, ImDrawFlags.None, 2);
+
+                // The primary event is the one the properties show, so it gets a second outline inside the first
+                if (ev == View.Selection.SelectedEvent && View.Selection.SelectedEvents.Count > 1)
+                {
+                    drawList.AddRect(min + new Vector2(2, 2), max - new Vector2(2, 2), textColor);
+                }
             }
 
             drawList.PushClipRect(min, Vector2.Min(max, viewMax), true);
@@ -728,90 +910,112 @@ public class TimeActGraphWindow
     }
 
     /// <summary>
-    /// Places a copy of the selected event straight after it, with the same length and parameters
+    /// Places a copy of the selected events at the same times as them. As they overlap their sources,
+    /// the layout puts each copy on a row of its own within the track.
     /// </summary>
     private void DuplicateSelectedEvent()
     {
-        var source = View.Selection.SelectedEvent;
+        var sources = View.Selection.SelectedEvents;
 
-        if (source == null)
+        if (sources.Count == 0)
             return;
 
-        var frameDuration = View.Playback.FrameDuration;
-
-        // Events that last until the end of the animation have no end to go after
-        var offset = IsOpenEnded(source)
-            ? DefaultEventFrames * frameDuration
-            : Math.Max(source.EndTime - source.StartTime, frameDuration);
-
-        AddCopyOfEvent(source, source.StartTime + offset);
+        AddCopiesOfEvents(sources, 0);
     }
 
     /// <summary>
-    /// Stores a copy of the selected event. Later edits to the event don't carry over to it,
-    /// and it doesn't depend on the source, so it can be pasted into any time act of the project.
+    /// Stores a copy of the selected events. Later edits to the events don't carry over to the copies,
+    /// and they don't depend on the source, so they can be pasted into any time act of the project.
     /// </summary>
     private void CopySelectedEvent()
     {
         var selection = View.Selection;
 
-        if (selection.SelectedEvent == null)
+        if (selection.SelectedEvents.Count == 0)
             return;
 
-        View.Editor.CopiedEvent = selection.SelectedEvent.GetClone(selection.SelectedTimeAct.TimeAct.BigEndian);
+        var bigEndian = selection.SelectedTimeAct.TimeAct.BigEndian;
+
+        View.Editor.CopiedEvents = selection.SelectedEvents.Select(e => e.GetClone(bigEndian)).ToList();
     }
 
+    /// <summary>
+    /// Pastes the copied events so that the earliest of them starts at the time given, and the rest keep their spacing
+    /// </summary>
     private void PasteEvent(float time)
     {
-        if (View.Editor.CopiedEvent == null || View.Selection.SelectedAnimation == null)
+        var copied = View.Editor.CopiedEvents;
+
+        if (copied.Count == 0 || View.Selection.SelectedAnimation == null)
             return;
 
-        AddCopyOfEvent(View.Editor.CopiedEvent, time);
+        AddCopiesOfEvents(copied, time - copied.Min(e => e.StartTime));
     }
 
-    private void AddCopyOfEvent(TAE.Event source, float startTime)
+    private void AddCopiesOfEvents(IReadOnlyList<TAE.Event> sources, float offset)
     {
         if (!CanEdit)
             return;
 
         var selection = View.Selection;
+        var bigEndian = selection.SelectedTimeAct.TimeAct.BigEndian;
 
-        var copy = source.GetClone(selection.SelectedTimeAct.TimeAct.BigEndian);
+        var copies = new List<TAE.Event>(sources.Count);
 
-        copy.StartTime = startTime;
+        foreach (var source in sources)
+        {
+            var copy = source.GetClone(bigEndian);
 
-        // The placeholder has to stay as it is, or the copy will stop short of the end
-        copy.EndTime = IsOpenEnded(source) ? source.EndTime : startTime + source.EndTime - source.StartTime;
+            copy.StartTime = source.StartTime + offset;
 
-        View.ViewportActionManager.ExecuteAction(new TimeActAddEventAction(selection, selection.SelectedTimeAct,
-            selection.SelectedAnimation, copy));
+            // The placeholder has to stay as it is, or the copy will stop short of the end
+            copy.EndTime = IsOpenEnded(source) ? source.EndTime : source.EndTime + offset;
+
+            copies.Add(copy);
+        }
+
+        View.ViewportActionManager.ExecuteAction(new TimeActAddEventsAction(selection, selection.SelectedTimeAct,
+            selection.SelectedAnimation, copies));
     }
 
     private void DisplayEventMenu()
     {
         if (ImGui.BeginPopup("##graphEventMenu"))
         {
-            if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Copy_Event")}##copyEvent", InputManager.GetHint(KeybindID.Copy)))
+            var selectedCount = View.Selection.SelectedEvents.Count;
+
+            if (ImGui.MenuItem($"{GetCountLabel("TAE_GraphWindow_Copy_Event", selectedCount)}##copyEvent",
+                InputManager.GetHint(KeybindID.Copy)))
             {
                 CopySelectedEvent();
             }
 
             ImGui.BeginDisabled(!CanEdit);
 
-            if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Duplicate_Event")}##duplicateEvent", InputManager.GetHint(KeybindID.Duplicate)))
+            if (ImGui.MenuItem($"{GetCountLabel("TAE_GraphWindow_Duplicate_Event", selectedCount)}##duplicateEvent",
+                InputManager.GetHint(KeybindID.Duplicate)))
             {
                 DuplicateSelectedEvent();
             }
 
-            if (ImGui.Selectable($"{LOC.Get("TAE_GraphWindow_Delete_Event")}##deleteEvent"))
+            if (ImGui.MenuItem($"{GetCountLabel("TAE_GraphWindow_Delete_Event", selectedCount)}##deleteEvent",
+                InputManager.GetHint(KeybindID.Delete)))
             {
-                DeleteSelectedEvent();
+                DeleteSelectedEvents();
             }
 
             ImGui.EndDisabled();
 
             ImGui.EndPopup();
         }
+    }
+
+    /// <summary>
+    /// The singular label, or its plural with a count when there is more than one event. The plural key ends in an s.
+    /// </summary>
+    private static string GetCountLabel(string singularKey, int count)
+    {
+        return count > 1 ? LOC.Get($"{singularKey}s", count) : LOC.Get(singularKey);
     }
 
     private void DisplayAddEventMenu(TAE.Template.BankTemplate template)
@@ -822,9 +1026,12 @@ public class TimeActGraphWindow
 
         if (ImGui.BeginPopup("##graphAddEventMenu"))
         {
-            if (View.Editor.CopiedEvent != null)
+            var copiedCount = View.Editor.CopiedEvents.Count;
+
+            if (copiedCount > 0)
             {
-                if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Paste_Event")}##pasteEvent", InputManager.GetHint(KeybindID.Paste)))
+                if (ImGui.MenuItem($"{GetCountLabel("TAE_GraphWindow_Paste_Event", copiedCount)}##pasteEvent",
+                    InputManager.GetHint(KeybindID.Paste)))
                 {
                     PasteEvent(AddEventTime);
 

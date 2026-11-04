@@ -233,16 +233,32 @@
       "Text": "Copy Event"
     },
     {
+      "Key": "TAE_GraphWindow_Copy_Events",
+      "Text": "Copy {0} Events"
+    },
+    {
       "Key": "TAE_GraphWindow_Paste_Event",
       "Text": "Paste Event"
+    },
+    {
+      "Key": "TAE_GraphWindow_Paste_Events",
+      "Text": "Paste {0} Events"
     },
     {
       "Key": "TAE_GraphWindow_Duplicate_Event",
       "Text": "Duplicate Event"
     },
     {
+      "Key": "TAE_GraphWindow_Duplicate_Events",
+      "Text": "Duplicate {0} Events"
+    },
+    {
       "Key": "TAE_GraphWindow_Delete_Event",
       "Text": "Delete Event"
+    },
+    {
+      "Key": "TAE_GraphWindow_Delete_Events",
+      "Text": "Delete {0} Events"
     },
     {
       "Key": "TAE_GraphWindow_Frame",
@@ -451,6 +467,14 @@
     {
       "Key": "TAE_PropertiesWindow_No_Event_Selected",
       "Text": "No event is selected."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Multiple_Events_Same_Type",
+      "Text": "{0} events of the same type are selected. The values shown are those of the first, and changes apply to all of them."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Multiple_Events_Different_Type",
+      "Text": "{0} events of different types are selected. Only the first is shown, and changes apply to it alone."
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_Header",

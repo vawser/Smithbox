@@ -24,6 +24,10 @@ public class TimeActPropertiesWindow
     private Dictionary<string, string> FieldText = new();
     private TAE.Event FieldTextEvent;
 
+    // The events an edit to the event properties goes to: every selected event when they share a type,
+    // or else only the primary one
+    private List<TAE.Event> EventTargets = new();
+
     // The same, for the properties of the time act itself
     private Dictionary<string, string> TimeActFieldText = new();
     private TimeActEntry TimeActFieldTextEntry;
@@ -173,12 +177,36 @@ public class TimeActPropertiesWindow
             FieldText.Clear();
         }
 
+        var selected = View.Selection.SelectedEvents;
+        var sameType = View.Selection.AreSelectedEventsSameType();
+
+        EventTargets.Clear();
+
+        if (sameType)
+        {
+            EventTargets.AddRange(selected);
+        }
+        else
+        {
+            EventTargets.Add(ev);
+        }
+
+        if (selected.Count > 1)
+        {
+            GUI.WrappedText(sameType
+                ? LOC.Get("TAE_PropertiesWindow_Multiple_Events_Same_Type", selected.Count)
+                : LOC.Get("TAE_PropertiesWindow_Multiple_Events_Different_Type", selected.Count));
+
+            GUI.Spacer();
+        }
+
         ImGui.BeginDisabled(!Project.Handler.TimeActData.CanSaveTimeActs);
 
         if (ImGui.BeginTable("##eventProperties", 2, ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV))
         {
-            DisplayTimeField(ev, "TAE_PropertiesWindow_Start_Time", ev.StartTime, value => (value, ev.EndTime));
-            DisplayTimeField(ev, "TAE_PropertiesWindow_End_Time", ev.EndTime, value => (ev.StartTime, value));
+            // Each event keeps its own other end, so setting the start of several doesn't line up their ends
+            DisplayTimeField("TAE_PropertiesWindow_Start_Time", ev.StartTime, (target, value) => (value, target.EndTime));
+            DisplayTimeField("TAE_PropertiesWindow_End_Time", ev.EndTime, (target, value) => (target.StartTime, value));
 
             if (ev.Parameters != null)
             {
@@ -550,7 +578,7 @@ public class TimeActPropertiesWindow
         return true;
     }
 
-    private void DisplayTimeField(TAE.Event ev, string nameKey, float value, Func<float, (float Start, float End)> apply)
+    private void DisplayTimeField(string nameKey, float value, Func<TAE.Event, float, (float Start, float End)> apply)
     {
         var text = BeginField(LOC.Get(nameKey), nameKey, value.ToString());
 
@@ -567,10 +595,20 @@ public class TimeActPropertiesWindow
 
             if (float.TryParse(text, out var newValue))
             {
-                var (start, end) = apply(newValue);
+                var actions = new List<ViewportAction>();
 
-                View.ViewportActionManager.ExecuteAction(new TimeActMoveEventAction(View.Selection.SelectedTimeAct, ev,
-                    ev.StartTime, ev.EndTime, start, end));
+                foreach (var target in EventTargets)
+                {
+                    var (start, end) = apply(target, newValue);
+
+                    if (start == target.StartTime && end == target.EndTime)
+                        continue;
+
+                    actions.Add(new TimeActMoveEventAction(View.Selection.SelectedTimeAct, target,
+                        target.StartTime, target.EndTime, start, end));
+                }
+
+                ExecuteActions(actions);
             }
         }
     }
@@ -725,12 +763,41 @@ public class TimeActPropertiesWindow
         }
     }
 
+    /// <summary>
+    /// Sets the parameter on every event being edited. The value comes from the field of the primary event,
+    /// which is passed along so that it is clear where it was read from.
+    /// </summary>
     private void SetParameter(TAE.Event ev, string key, object value)
     {
-        if (value.Equals(ev.Parameters[key]))
-            return;
+        var actions = new List<ViewportAction>();
 
-        View.ViewportActionManager.ExecuteAction(new TimeActSetParameterAction(View.Selection.SelectedTimeAct, ev, key, value));
+        foreach (var target in EventTargets.Count > 0 ? EventTargets : [ev])
+        {
+            if (target.Parameters == null || !target.Parameters.Values.ContainsKey(key))
+                continue;
+
+            if (value.Equals(target.Parameters[key]))
+                continue;
+
+            actions.Add(new TimeActSetParameterAction(View.Selection.SelectedTimeAct, target, key, value));
+        }
+
+        ExecuteActions(actions);
+    }
+
+    /// <summary>
+    /// Edits to several events go in as one action, so that a single undo takes them all back
+    /// </summary>
+    private void ExecuteActions(List<ViewportAction> actions)
+    {
+        if (actions.Count == 1)
+        {
+            View.ViewportActionManager.ExecuteAction(actions[0]);
+        }
+        else if (actions.Count > 1)
+        {
+            View.ViewportActionManager.ExecuteAction(new ViewportCompoundAction(actions));
+        }
     }
 
     private static void BeginRow(string name)
