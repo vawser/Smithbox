@@ -1006,8 +1006,28 @@ public class TimeActGraphWindow
 
             ImGui.EndDisabled();
 
+            ImGui.Separator();
+
+            DisplaySelectAllMenuItem();
+
             ImGui.EndPopup();
         }
+    }
+
+    /// <summary>
+    /// Selecting is not an edit, so this stays available when the time acts are read-only
+    /// </summary>
+    private bool DisplaySelectAllMenuItem()
+    {
+        if (!ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Select_All")}##selectAllEvents",
+            InputManager.GetHint(KeybindID.SelectAll)))
+        {
+            return false;
+        }
+
+        SelectAllEvents();
+
+        return true;
     }
 
     /// <summary>
@@ -1026,6 +1046,16 @@ public class TimeActGraphWindow
 
         if (ImGui.BeginPopup("##graphAddEventMenu"))
         {
+            if (View.Selection.SelectedAnimation?.Events.Count > 0)
+            {
+                if (DisplaySelectAllMenuItem())
+                {
+                    ImGui.CloseCurrentPopup();
+                }
+
+                ImGui.Separator();
+            }
+
             var copiedCount = View.Editor.CopiedEvents.Count;
 
             if (copiedCount > 0)

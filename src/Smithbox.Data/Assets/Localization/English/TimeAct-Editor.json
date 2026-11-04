@@ -233,6 +233,10 @@
       "Text": "Copy Event"
     },
     {
+      "Key": "TAE_GraphWindow_Select_All",
+      "Text": "Select All"
+    },
+    {
       "Key": "TAE_GraphWindow_Copy_Events",
       "Text": "Copy {0} Events"
     },

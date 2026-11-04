@@ -3,11 +3,6 @@
 #----------------------------------------------------
 
 - Action Graph:
-    - Multi-select
-        - If same, allow edits to apply change to all members of selection (displaying first entry in the properties window)
-        - If different, only display first entry in properties window and edit normally.
-        - Include support for Duplicate/Delete/Copy/Paste
-    - Drag select
     - Select all action
     - Filter: grays out non-matches. Can filter by event name, or value of parameters (i.e. 45 would match to the SpEffectID of a AddSpEffect_Multiplayer event)
     
