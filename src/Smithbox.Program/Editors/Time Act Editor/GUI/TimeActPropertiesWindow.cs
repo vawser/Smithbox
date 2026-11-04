@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
@@ -680,7 +681,6 @@ public class TimeActPropertiesWindow
     {
         var value = ev.Parameters[key];
         var name = Project.Handler.TimeActData.GetFieldDisplayName(ev, parameter.Name);
-        var isObsolete = meta?.Obsolete == true;
 
         if (parameter.EnumEntries != null)
         {
@@ -690,7 +690,7 @@ public class TimeActPropertiesWindow
 
         if (parameter.Type is TAE.Template.ParamType.b)
         {
-            BeginRow(name, isObsolete);
+            BeginParameterRow(ev, key, parameter, meta, name);
 
             var ticked = (bool)value;
 
@@ -707,7 +707,7 @@ public class TimeActPropertiesWindow
         // A number that is only ever 0 or 1
         if (meta?.IsBool == true && IsInteger(value))
         {
-            BeginRow(name, isObsolete);
+            BeginParameterRow(ev, key, parameter, meta, name);
 
             var ticked = Convert.ToInt64(value) != 0;
 
@@ -721,7 +721,7 @@ public class TimeActPropertiesWindow
             return;
         }
 
-        BeginRow(name, isObsolete);
+        BeginParameterRow(ev, key, parameter, meta, name);
 
         var text = FieldText.TryGetValue(key, out var typed) ? typed : parameter.ValueToString(value);
 
@@ -957,7 +957,7 @@ public class TimeActPropertiesWindow
     private void DisplayEnumParameter(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter,
         TimeActField meta, string name, object value)
     {
-        BeginRow(name, meta?.Obsolete == true);
+        BeginParameterRow(ev, key, parameter, meta, name);
 
         ImGui.SetNextItemWidth(-1);
 
@@ -1035,6 +1035,90 @@ public class TimeActPropertiesWindow
         }
 
         ImGui.TableSetColumnIndex(1);
+    }
+
+    /// <summary>
+    /// The name cell of a parameter. Hovering it gives the annotation: the other name and the description.
+    /// Right-clicking it lists both names and the description, and copies either name.
+    /// </summary>
+    private void BeginParameterRow(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter,
+        TimeActField meta, string name)
+    {
+        ImGui.TableNextRow();
+
+        ImGui.TableSetColumnIndex(0);
+        ImGui.AlignTextToFramePadding();
+
+        if (meta?.Obsolete == true)
+        {
+            ImGui.TextDisabled(name);
+        }
+        else
+        {
+            ImGui.Text(name);
+        }
+
+        DisplayParameterTooltip(ev, parameter, meta);
+        DisplayParameterNameContextMenu(ev, key, parameter);
+
+        ImGui.TableSetColumnIndex(1);
+    }
+
+    private void DisplayParameterNameContextMenu(TAE.Event ev, string key, TAE.Template.ParameterTemplate parameter)
+    {
+        if (!ImGui.BeginPopupContextItem($"##{key}_nameContextMenu"))
+            return;
+
+        var annotation = Project.Handler.TimeActData.GetFieldAnnotation(ev, parameter.Name);
+        var annotationName = annotation?.Name ?? "";
+        var description = annotation?.Description ?? "";
+
+        if (ImGui.BeginMenu($"{LOC.Get("TAE_PropertiesWindow_Field_Info_Header")}##{key}_infoMenu"))
+        {
+            ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f),
+                LOC.Get("TAE_PropertiesWindow_Field_Internal_Name", parameter.Name));
+
+            if (annotationName.Length > 0)
+            {
+                ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f),
+                    LOC.Get("TAE_PropertiesWindow_Field_Annotation_Name", annotationName));
+            }
+            else
+            {
+                ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 0.7f),
+                    LOC.Get("TAE_PropertiesWindow_Field_No_Annotation_Name"));
+            }
+
+            if (description.Length > 0)
+            {
+                ImGui.PushTextWrapPos(ImGui.GetFontSize() * 30);
+                ImGui.TextColored(new Vector4(.4f, .7f, 1f, 1f), description);
+                ImGui.PopTextWrapPos();
+            }
+            else
+            {
+                ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 0.7f),
+                    LOC.Get("TAE_PropertiesWindow_Field_No_Description"));
+            }
+
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.MenuItem($"{LOC.Get("TAE_PropertiesWindow_Field_Copy_Internal_Name")}##{key}_copyInternalName"))
+        {
+            PlatformUtils.Instance.SetClipboardText(parameter.Name);
+        }
+
+        ImGui.BeginDisabled(annotationName.Length == 0);
+
+        if (ImGui.MenuItem($"{LOC.Get("TAE_PropertiesWindow_Field_Copy_Annotation_Name")}##{key}_copyAnnotationName"))
+        {
+            PlatformUtils.Instance.SetClipboardText(annotationName);
+        }
+
+        ImGui.EndDisabled();
+
+        ImGui.EndPopup();
     }
 
     private string BeginField(string name, string key, string value)

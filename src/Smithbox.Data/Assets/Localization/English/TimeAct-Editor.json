@@ -533,6 +533,26 @@
       "Text": "Obsolete: the game doesn't read this value."
     },
     {
+      "Key": "TAE_PropertiesWindow_Field_Info_Header",
+      "Text": "Information"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_No_Annotation_Name",
+      "Text": "No annotation name."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_No_Description",
+      "Text": "No description."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_Copy_Internal_Name",
+      "Text": "Copy Internal Name"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Field_Copy_Annotation_Name",
+      "Text": "Copy Annotation Name"
+    },
+    {
       "Key": "TAE_PropertiesWindow_Field_Default",
       "Text": "Default: {0}"
     },
