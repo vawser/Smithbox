@@ -28,6 +28,9 @@ public struct TaaParam
 
     /// <summary>xy: the scene's size</summary>
     public Vector4 Sizes;
+
+    /// <summary>xy: this frame's jitter in NDC, z: last frame's depth's texture index, w: 1 if it can be read</summary>
+    public Vector4 Jitter;
 }
 
 /// <summary>
@@ -53,6 +56,12 @@ public class TaaPass : PostProcessPass
     private readonly SceneRenderPipeline Owner;
 
     private Texture History;
+
+    // The scene's depth as it was when the history was written, to tell where something moved; there are no motion
+    // vectors to say so
+    private readonly SceneDepth PreviousDepth = new();
+    private bool HasPreviousDepth;
+
     private DeviceBuffer ParamBuffer;
     private ResourceSet ResourceSet;
 
@@ -130,6 +139,16 @@ public class TaaPass : PostProcessPass
 
         // A history from another size, or from before TAA was off, would smear what is no longer there
         var useHistory = HasHistory && RanLastFrame && !resized;
+        var usePreviousDepth = useHistory && HasPreviousDepth && PreviousDepth.TextureIndex != 0 &&
+            Owner.SceneDepth.TextureIndex != 0;
+
+        // The jitter the scene was drawn with, from the two projections it was uploaded with, so it is the one
+        // this frame's image has whatever frame the pipeline's counter is on. See SceneRenderPipeline's jitter.
+        var unjittered = Owner.UnjitteredProjection;
+        var jitter = MathF.Abs(unjittered.M34) > 1e-6f
+            ? new Vector2((projection.M31 - unjittered.M31) / unjittered.M34,
+                (projection.M32 - unjittered.M32) / unjittered.M34)
+            : new Vector2(projection.M41 - unjittered.M41, projection.M42 - unjittered.M42);
 
         var param = new TaaParam
         {
@@ -141,7 +160,8 @@ public class TaaPass : PostProcessPass
             Cancel = aa.CancelByDepth,
             // GLSL reads the matrix as uploaded, so its [c][r] is M(c+1)(r+1) here
             Depth = new Vector4(projection.M33, projection.M43, projection.M34, Owner.SceneDepth.TextureIndex),
-            Sizes = new Vector4(target.Width, target.Height, 0.0f, 0.0f)
+            Sizes = new Vector4(target.Width, target.Height, 0.0f, 0.0f),
+            Jitter = new Vector4(jitter, PreviousDepth.TextureIndex, usePreviousDepth ? 1.0f : 0.0f)
         };
 
         cl.UpdateBuffer(ParamBuffer, 0, ref param, (uint)sizeof(TaaParam));
@@ -157,6 +177,14 @@ public class TaaPass : PostProcessPass
 
         // This frame is next frame's history. The copy ends the render pass, and leaves both textures readable.
         cl.CopyTexture(frame.Destination, 0, 0, 0, 0, 0, History, 0, 0, 0, 0, 0, target.Width, target.Height, 1, 1);
+
+        // And this frame's depth is next frame's, to find what moved. The scene's own, as the copy it reads this
+        // frame is left readable and would be taken out of that.
+        if (target.Depth != null)
+        {
+            PreviousDepth.Capture(gd, cl, target.Depth);
+            HasPreviousDepth = PreviousDepth.TextureIndex != 0;
+        }
 
         PreviousViewProjection = viewProjection;
         HasHistory = true;
@@ -223,6 +251,7 @@ public class TaaPass : PostProcessPass
             History.Name = "TAA History";
 
             HasHistory = false;
+            HasPreviousDepth = false;
             resized = true;
         }
 

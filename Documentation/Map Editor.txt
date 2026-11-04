@@ -31,7 +31,5 @@
 
 
 - Renderer:
-    - Refine the viewport rendering menu
-    
     - Fix decal textures for ER
     - TAA shimmering (add motion vectors?)
