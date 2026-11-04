@@ -29,6 +29,17 @@ public class ViewportRenderingTool
     // The Map Lighting tab's GPARAM list filter
     private string GparamFilter = "";
 
+    /// <summary>
+    /// Set to open the section the next time the tool window is drawn, as the viewport's Settings menu does
+    /// </summary>
+    public bool FocusRequested;
+
+    // The tabs' less-used sections, which each tab shows or hides with the eye on its header. They are shared by the
+    // tabs, so showing the status in one shows it in all of them.
+    private bool ShowStatus = true;
+    private bool ShowResolvedValues = false;
+    private bool ShowDebug = false;
+
     public ViewportRenderingTool(Func<VulkanViewport> getViewport)
     {
         GetViewport = getViewport;
@@ -36,6 +47,12 @@ public class ViewportRenderingTool
 
     public void OnToolWindow()
     {
+        if (FocusRequested)
+        {
+            ImGui.SetNextItemOpen(true);
+            FocusRequested = false;
+        }
+
         if (ToolSections.Header($"{LOC.Get("VIEWPORT_Rendering_Tool_Header")}##viewportRenderingTool"))
         {
             ImGui.BeginChild("viewportRenderingSection", ImGuiChildFlags.Borders);
@@ -73,17 +90,64 @@ public class ViewportRenderingTool
             : null;
     }
 
+    /// <summary>
+    /// The tabs, lighting first as it is what is changed most. Tone mapping is drawn in the Post Effects tab, as
+    /// it is the last step of that chain, and the collision opacity in the Materials tab.
+    /// </summary>
     private void DisplayTabs(VulkanViewport viewport)
     {
-        ImGui.BeginTabBar("viewportRenderingTabs");
+        // A narrow tool window can't fit every tab, so they scroll and can be picked from a list instead
+        ImGui.BeginTabBar("viewportRenderingTabs", ImGuiTabBarFlags.FittingPolicyScroll | ImGuiTabBarFlags.ListPopupButton);
 
-        if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Materials")}##viewportRenderingMaterials"))
+        var mapView = (viewport.Owner as MapUniverse)?.View;
+        var environment = mapView == null ? GetEnvironment(viewport) : null;
+
+        // The GPARAMs the Post Effects tab reads, and the maps it lists, where there are any
+        GparamLightingBank postBank = null;
+        var postMaps = new List<(string MapId, string File)>();
+
+        if (mapView != null && mapView.GparamLightingBank.CanUse())
         {
-            MaterialsTab();
+            postBank = mapView.GparamLightingBank;
+            var chosen = CFG.Current.Viewport_Map_Lighting_File;
+            postMaps = mapView.Project.Handler.MapData.PrimaryBank.Maps.Values
+                .Select(w => w.MapContainer)
+                .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
+                .Select(m => (m.Name, postBank.ChooseFile(m.Name, chosen)))
+                .ToList();
+        }
+        else if (environment != null)
+        {
+            postBank = environment.LightingBank;
 
-            ImGui.EndTabItem();
+            if (environment.MapId != null)
+            {
+                postMaps.Add((environment.MapId,
+                    postBank.ChooseFile(environment.MapId, CFG.Current.Viewport_Environment_Lighting_File)));
+            }
         }
 
+        // Map Lighting
+        if (mapView != null && mapView.GparamLightingBank.CanUse())
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
+            {
+                MapLightingTab(viewport, mapView);
+
+                ImGui.EndTabItem();
+            }
+        }
+        else if (environment != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
+            {
+                EnvironmentLightingTab(viewport, environment);
+
+                ImGui.EndTabItem();
+            }
+        }
+
+        // Scene Lighting
         if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Scene_Lighting")}##viewportRenderingSceneLighting"))
         {
             SceneLightingTab(viewport);
@@ -91,13 +155,38 @@ public class ViewportRenderingTool
             ImGui.EndTabItem();
         }
 
-        if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_Tone_Map")}##viewportRenderingToneMap"))
+        // Global Illumination
+        if (mapView != null && mapView.IrradianceVolumeBank.CanUse())
         {
-            ToneMapTab(viewport);
+            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Global_Illumination")}##viewportRenderingGlobalIllumination"))
+            {
+                GlobalIlluminationTab(viewport, mapView);
 
-            ImGui.EndTabItem();
+                ImGui.EndTabItem();
+            }
+        }
+        else if (environment?.Table != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Global_Illumination")}##viewportRenderingGlobalIllumination"))
+            {
+                EnvironmentGlobalIlluminationTab(viewport, environment);
+
+                ImGui.EndTabItem();
+            }
         }
 
+        // BTL Lights
+        if (mapView != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_BTL_Lights")}##viewportRenderingBtlLights"))
+            {
+                BtlLightsTab(mapView);
+
+                ImGui.EndTabItem();
+            }
+        }
+
+        // Shadows
         if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_Shadows")}##viewportRenderingShadows"))
         {
             ShadowsTab(viewport);
@@ -105,94 +194,18 @@ public class ViewportRenderingTool
             ImGui.EndTabItem();
         }
 
-        // Map Editor
-        if (viewport.Owner is MapUniverse mapUniverse)
+        // Post Effects, with the tone map
+        if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_Post_Effects")}##viewportRenderingPostEffects"))
         {
-            if (mapUniverse.View.IrradianceVolumeBank.CanUse())
-            {
-                if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Global_Illumination")}##viewportRenderingGlobalIllumination"))
-                {
-                    GlobalIlluminationTab(viewport, mapUniverse.View);
+            PostEffectsTab(viewport, postBank, postMaps);
 
-                    ImGui.EndTabItem();
-                }
-            }
-
-            if (mapUniverse.View.GparamLightingBank.CanUse())
-            {
-                if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
-                {
-                    MapLightingTab(viewport, mapUniverse.View);
-
-                    ImGui.EndTabItem();
-                }
-
-                if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_Post_Effects")}##viewportRenderingPostEffects"))
-                {
-                    var bank = mapUniverse.View.GparamLightingBank;
-                    var chosen = CFG.Current.Viewport_Map_Lighting_File;
-                    var maps = mapUniverse.View.Project.Handler.MapData.PrimaryBank.Maps.Values
-                        .Select(w => w.MapContainer)
-                        .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
-                        .Select(m => (m.Name, bank.ChooseFile(m.Name, chosen)))
-                        .ToList();
-
-                    PostEffectsTab(viewport, bank, maps);
-
-                    ImGui.EndTabItem();
-                }
-            }
-
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_BTL_Lights")}##viewportRenderingBtlLights"))
-            {
-                BtlLightsTab(mapUniverse.View);
-
-                ImGui.EndTabItem();
-            }
-        }
-        // Model and Time Act Editors, which borrow a map's
-        else if (GetEnvironment(viewport) is { } environment)
-        {
-            if (environment.Table != null)
-            {
-                if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Global_Illumination")}##viewportRenderingGlobalIllumination"))
-                {
-                    EnvironmentGlobalIlluminationTab(viewport, environment);
-
-                    ImGui.EndTabItem();
-                }
-            }
-
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
-            {
-                EnvironmentLightingTab(viewport, environment);
-
-                ImGui.EndTabItem();
-            }
-
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_Post_Effects")}##viewportRenderingPostEffects"))
-            {
-                var bank = environment.LightingBank;
-                var maps = environment.MapId != null
-                    ? new List<(string, string)>
-                    {
-                        (environment.MapId, bank.ChooseFile(environment.MapId, CFG.Current.Viewport_Environment_Lighting_File))
-                    }
-                    : new List<(string, string)>();
-
-                PostEffectsTab(viewport, bank, maps);
-
-                ImGui.EndTabItem();
-            }
+            ImGui.EndTabItem();
         }
 
-        if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Parts")}##viewportRenderingParts"))
+        // Materials, with the collision opacity
+        if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Materials")}##viewportRenderingMaterials"))
         {
-            // Applies at once, as the collision shaders read it every frame
-            DPI.ApplyInputWidth();
-            ImGui.SliderFloat($"{LOC.Get("PREF_Viewport_Collision_Opacity")}##collisionOpacity",
-                ref CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
-            GUI.Tooltip(LOC.Get("PREF_Viewport_Collision_Opacity_TT"));
+            MaterialsTab();
 
             ImGui.EndTabItem();
         }
@@ -206,13 +219,16 @@ public class ViewportRenderingTool
     /// </summary>
     private void BtlLightsTab(MapEditorView view)
     {
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Gathering"), LOC.Get("VIEWPORT_Rendering_Section_Gathering_TT"));
+
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_BTL_Near_Camera")}##btlNearCamera",
             ref CFG.Current.Viewport_BTL_Lights_Near_Camera);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_BTL_Near_Camera_TT"));
 
         ImGui.BeginDisabled(!CFG.Current.Viewport_BTL_Lights_Near_Camera);
+        ImGui.Indent();
 
-        DPI.ApplyInputWidth();
+        DPI.ApplyInputWidth(IndentedWidth);
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_BTL_Radius")}##btlRadius",
             ref CFG.Current.Viewport_BTL_Light_Radius, 1.0f, 1000.0f, "%.0f m");
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_BTL_Radius_TT"));
@@ -221,6 +237,7 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_BTL_Light_Use_Enable_Distance);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_BTL_Enable_Distance_TT"));
 
+        ImGui.Unindent();
         ImGui.EndDisabled();
 
         DPI.ApplyInputWidth();
@@ -228,8 +245,16 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_BTL_Light_Max_Count, 0, SceneLightTable.Capacity);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_BTL_Max_Count_TT"));
 
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Intensity"), LOC.Get("VIEWPORT_Rendering_Section_Intensity_TT"));
+
         // With map lighting, the lights take the GPARAM's exposure, as the sun does
         var exposureFromMap = SceneRenderer.MapLighting != null;
+
+        if (exposureFromMap)
+        {
+            ImGui.TextDisabled(LOC.Get("VIEWPORT_Rendering_BTL_Intensity_From_Map"));
+        }
 
         ImGui.BeginDisabled(exposureFromMap);
         DPI.ApplyInputWidth();
@@ -241,10 +266,11 @@ public class ViewportRenderingTool
                 SceneRenderer.MapLighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale)
             : LOC.Get("PREF_Viewport_Light_Intensity_Scale_TT"));
 
-        ImGui.Separator();
-
-        var collector = view.ViewportWindow.LightCollector;
-        ImGui.Text(LOC.Get("VIEWPORT_Rendering_BTL_Status", collector.ShadedCount, collector.InRangeCount));
+        if (StatusHeader())
+        {
+            var collector = view.ViewportWindow.LightCollector;
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_BTL_Status", collector.ShadedCount, collector.InRangeCount));
+        }
     }
 
     /// <summary>
@@ -252,82 +278,150 @@ public class ViewportRenderingTool
     /// </summary>
     private void SceneLightingTab(VulkanViewport viewport)
     {
+        var sceneParams = viewport.ViewPipeline.SceneParams;
+
         // The map's GPARAMs give the sun instead, see the Map Lighting tab
         var sunFromMap = viewport.ViewPipeline.ActiveMapLighting != null;
 
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Sun"), LOC.Get("VIEWPORT_Rendering_Section_Sun_TT"));
+
         if (sunFromMap)
         {
-            ImGui.Text(LOC.Get("VIEWPORT_Menubar_Scene_Sun_From_Map"));
+            ImGui.TextDisabled(LOC.Get("VIEWPORT_Menubar_Scene_Sun_From_Map"));
         }
 
         ImGui.BeginDisabled(sunFromMap);
-        ImGui.SliderFloat4(
-            $"{LOC.Get("VIEWPORT_Menubar_Scene_Light_Direction")}##lightDirection",
-            ref viewport.ViewPipeline.SceneParams.LightDirection, -1, 1);
-        ImGui.EndDisabled();
 
-        ImGui.SliderFloat(
-            $"{LOC.Get("VIEWPORT_Menubar_Scene_Direct_Light_Mult")}##directLightMult",
-            ref viewport.ViewPipeline.SceneParams.DirectLightMult, 0, 3);
+        // A direction, so only its first three components are edited
+        var direction = new Vector3(sceneParams.LightDirection.X, sceneParams.LightDirection.Y, sceneParams.LightDirection.Z);
 
-        ImGui.SliderFloat(
-            $"{LOC.Get("VIEWPORT_Menubar_Scene_Indirect_Light_Mult")}##indirectLightMult",
-            ref viewport.ViewPipeline.SceneParams.IndirectLightMult, 0, 3);
+        DPI.ApplyInputWidth();
+        if (ImGui.SliderFloat3($"{LOC.Get("VIEWPORT_Menubar_Scene_Light_Direction")}##lightDirection", ref direction, -1, 1))
+        {
+            viewport.ViewPipeline.SceneParams.LightDirection.X = direction.X;
+            viewport.ViewPipeline.SceneParams.LightDirection.Y = direction.Y;
+            viewport.ViewPipeline.SceneParams.LightDirection.Z = direction.Z;
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Scene_Light_Direction_TT"));
 
-        ImGui.SliderFloat(
-            $"{LOC.Get("VIEWPORT_Menubar_Scene_Light_Brightness")}##brightness",
-            ref viewport.ViewPipeline.SceneParams.SceneBrightness, 0, 5);
+        var sunColor = new Vector3(sceneParams.SunColor.X, sceneParams.SunColor.Y, sceneParams.SunColor.Z);
 
-        ImGui.Separator();
-
-        // The sun is the light the direction above belongs to
-        ImGui.BeginDisabled(sunFromMap);
-
-        var sunColor = new Vector3(
-            viewport.ViewPipeline.SceneParams.SunColor.X,
-            viewport.ViewPipeline.SceneParams.SunColor.Y,
-            viewport.ViewPipeline.SceneParams.SunColor.Z);
-
-        if (ImGui.ColorEdit3("Sun Color##sunColor", ref sunColor))
+        DPI.ApplyInputWidth();
+        if (ImGui.ColorEdit3($"{LOC.Get("VIEWPORT_Rendering_Sun_Color")}##sunColor", ref sunColor))
         {
             viewport.ViewPipeline.SceneParams.SunColor.X = sunColor.X;
             viewport.ViewPipeline.SceneParams.SunColor.Y = sunColor.Y;
             viewport.ViewPipeline.SceneParams.SunColor.Z = sunColor.Z;
         }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Sun_Color_TT"));
 
-        ImGui.SliderFloat("Sun Intensity##sunIntensity", ref viewport.ViewPipeline.SceneParams.SunColor.W, 0, 5);
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Sun_Intensity")}##sunIntensity",
+            ref viewport.ViewPipeline.SceneParams.SunColor.W, 0, 5);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Sun_Intensity_TT"));
 
         ImGui.EndDisabled();
 
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Multipliers"), LOC.Get("VIEWPORT_Rendering_Section_Multipliers_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat(
+            $"{LOC.Get("VIEWPORT_Menubar_Scene_Direct_Light_Mult")}##directLightMult",
+            ref viewport.ViewPipeline.SceneParams.DirectLightMult, 0, 3);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Scene_Direct_Light_Mult_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat(
+            $"{LOC.Get("VIEWPORT_Menubar_Scene_Indirect_Light_Mult")}##indirectLightMult",
+            ref viewport.ViewPipeline.SceneParams.IndirectLightMult, 0, 3);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Scene_Indirect_Light_Mult_TT"));
+
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat(
+            $"{LOC.Get("VIEWPORT_Menubar_Scene_Light_Brightness")}##brightness",
+            ref viewport.ViewPipeline.SceneParams.SceneBrightness, 0, 5);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Scene_Light_Brightness_TT"));
+
         // A light that follows the camera, for lighting up dark interiors
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Camera_Light"), LOC.Get("VIEWPORT_Rendering_Section_Camera_Light_TT"));
+
         SceneLight cameraLight = viewport.ViewPipeline.CameraLight;
 
         var cameraLightEnabled = cameraLight.Enabled;
-        if (ImGui.Checkbox("Camera Light##cameraLightEnabled", ref cameraLightEnabled))
+        if (ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Camera_Light")}##cameraLightEnabled", ref cameraLightEnabled))
         {
             cameraLight.Enabled = cameraLightEnabled;
         }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Camera_Light_TT"));
 
-        if (cameraLight.Enabled)
+        ImGui.BeginDisabled(!cameraLight.Enabled);
+        ImGui.Indent();
+
+        var color = cameraLight.Color;
+        DPI.ApplyInputWidth(IndentedWidth);
+        if (ImGui.ColorEdit3($"{LOC.Get("VIEWPORT_Rendering_Camera_Light_Color")}##cameraLightColor", ref color))
         {
-            var color = cameraLight.Color;
-            if (ImGui.ColorEdit3("Camera Light Color##cameraLightColor", ref color))
-            {
-                cameraLight.Color = color;
-            }
-
-            var intensity = cameraLight.Intensity;
-            if (ImGui.SliderFloat("Camera Light Intensity##cameraLightIntensity", ref intensity, 0, 50))
-            {
-                cameraLight.Intensity = intensity;
-            }
-
-            var range = cameraLight.Range;
-            if (ImGui.SliderFloat("Camera Light Range##cameraLightRange", ref range, 1, 100))
-            {
-                cameraLight.Range = range;
-            }
+            cameraLight.Color = color;
         }
+
+        var intensity = cameraLight.Intensity;
+        DPI.ApplyInputWidth(IndentedWidth);
+        if (ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Camera_Light_Intensity")}##cameraLightIntensity", ref intensity, 0, 50))
+        {
+            cameraLight.Intensity = intensity;
+        }
+
+        var range = cameraLight.Range;
+        DPI.ApplyInputWidth(IndentedWidth);
+        if (ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Camera_Light_Range")}##cameraLightRange", ref range, 1, 100, "%.0f m"))
+        {
+            cameraLight.Range = range;
+        }
+
+        ImGui.Unindent();
+        ImGui.EndDisabled();
+    }
+
+    // The width of a slider under an indented toggle, which the indent would otherwise push past the labels
+    private const float IndentedWidth = 200.0f;
+
+    /// <summary>
+    /// The header of a tab's Status section, true when the section is shown
+    /// </summary>
+    private bool StatusHeader()
+    {
+        GUI.Spacer();
+        GUI.ConditionalHeader(LOC.Get("VIEWPORT_Rendering_Section_Status"), LOC.Get("VIEWPORT_Rendering_Section_Status_TT"),
+            ref ShowStatus);
+
+        return ShowStatus;
+    }
+
+    /// <summary>
+    /// The header of a tab's Resolved Values section, the per-map GPARAM tables, true when the section is shown
+    /// </summary>
+    private bool ResolvedValuesHeader()
+    {
+        GUI.Spacer();
+        GUI.ConditionalHeader(LOC.Get("VIEWPORT_Rendering_Section_Resolved_Values"),
+            LOC.Get("VIEWPORT_Rendering_Section_Resolved_Values_TT"), ref ShowResolvedValues);
+
+        return ShowResolvedValues;
+    }
+
+    /// <summary>
+    /// The header of a tab's Debug section, true when the section is shown. It is shown anyway while a debug view is
+    /// on, so the view can't be left on where nothing says so.
+    /// </summary>
+    private bool DebugHeader(bool debugViewOn)
+    {
+        GUI.Spacer();
+        GUI.ConditionalHeader(LOC.Get("VIEWPORT_Rendering_Section_Debug"), LOC.Get("VIEWPORT_Rendering_Section_Debug_TT"),
+            ref ShowDebug);
+
+        return ShowDebug || debugViewOn;
     }
 
     /// <summary>
@@ -338,43 +432,18 @@ public class ViewportRenderingTool
     {
         GlobalIlluminationSettings(viewport, view.IrradianceVolumeBank.BakesFollowTime);
 
-        ImGui.Separator();
+        var maps = view.Project.Handler.MapData.PrimaryBank.Maps.Values
+            .Select(w => w.MapContainer)
+            .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
+            .ToList();
 
-        var unlinked = 0;
-        var skipped = 0;
-        var anyMap = false;
+        var summaries = maps.Select(m => (Map: m, Summary: view.IrradianceVolumeBank.Summarise(m))).ToList();
+        var unlinked = summaries.Sum(s => s.Summary.Unlinked);
+        var skipped = summaries.Sum(s => s.Summary.SkippedByGame);
 
-        foreach (var wrapper in view.Project.Handler.MapData.PrimaryBank.Maps.Values)
-        {
-            var map = wrapper.MapContainer;
-
-            if (map == null || map.LoadState != MapContentLoadState.Loaded)
-                continue;
-
-            anyMap = true;
-
-            var summary = view.IrradianceVolumeBank.Summarise(map);
-            var volumes = view.IrradianceVolumeBank.GetMap(map.Name);
-
-            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Map_Status",
-                map.Name, volumes?.CountInBake(CFG.Current.Viewport_GI_Bake) ?? 0, CFG.Current.Viewport_GI_Bake,
-                summary.Linked, summary.Boxes));
-
-            unlinked += summary.Unlinked;
-            skipped += summary.SkippedByGame;
-        }
-
-        if (!anyMap)
-        {
-            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
-        }
-
-        // Slot 0 holds the default volume
-        ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_GPU_Textures", Math.Max(0, SceneRenderer.GlobalVolumeTexturePool.AllocatedTextureCount - 1)));
-        ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Shaded_Volumes", view.IrradianceVolumeBank.ShadedVolumeCount, IrradianceVolumeTable.Capacity));
-        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Shaded_Volumes_TT"));
-
-        ImGui.Separator();
+        // Unlinked boxes are a problem to fix, so they are always shown, with the way to fix them
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Linking"), LOC.Get("VIEWPORT_Rendering_Section_Linking_TT"));
 
         if (unlinked > 0 || skipped > 0)
         {
@@ -388,6 +457,28 @@ public class ViewportRenderingTool
             view.IrradianceVolumeIdTool.FocusRequested = true;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Open_Tool_TT"));
+
+        if (StatusHeader())
+        {
+            if (maps.Count == 0)
+            {
+                ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
+            }
+
+            foreach (var (map, summary) in summaries)
+            {
+                var volumes = view.IrradianceVolumeBank.GetMap(map.Name);
+
+                ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Map_Status",
+                    map.Name, volumes?.CountInBake(CFG.Current.Viewport_GI_Bake) ?? 0, CFG.Current.Viewport_GI_Bake,
+                    summary.Linked, summary.Boxes));
+            }
+
+            // Slot 0 holds the default volume
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_GPU_Textures", Math.Max(0, SceneRenderer.GlobalVolumeTexturePool.AllocatedTextureCount - 1)));
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Shaded_Volumes", view.IrradianceVolumeBank.ShadedVolumeCount, IrradianceVolumeTable.Capacity));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Shaded_Volumes_TT"));
+        }
     }
 
     /// <summary>
@@ -398,7 +489,8 @@ public class ViewportRenderingTool
     {
         GlobalIlluminationSettings(viewport, environment.VolumeBank.BakesFollowTime);
 
-        ImGui.Separator();
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Source"), LOC.Get("VIEWPORT_Rendering_Section_Volume_Source_TT"));
 
         EnvironmentMapCombo(environment);
 
@@ -440,21 +532,22 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Environment_Volume_Size, 1.0f, 500.0f, "%.0f m");
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Environment_Volume_Size_TT"));
 
-        ImGui.Separator();
-
-        if (environment.MapId == null || volumes == null || environment.VolumeId < 0)
+        if (StatusHeader())
         {
-            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Environment_No_Volume"));
-        }
-        else if (environment.VolumeShaded)
-        {
-            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Environment_Volume_Status",
-                environment.MapId, environment.VolumeId, environment.Bakes.Bake));
-        }
-        else
-        {
-            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Environment_Volume_Loading",
-                environment.MapId, environment.VolumeId, environment.Bakes.Bake));
+            if (environment.MapId == null || volumes == null || environment.VolumeId < 0)
+            {
+                ImGui.Text(LOC.Get("VIEWPORT_Rendering_Environment_No_Volume"));
+            }
+            else if (environment.VolumeShaded)
+            {
+                ImGui.Text(LOC.Get("VIEWPORT_Rendering_Environment_Volume_Status",
+                    environment.MapId, environment.VolumeId, environment.Bakes.Bake));
+            }
+            else
+            {
+                ImGui.Text(LOC.Get("VIEWPORT_Rendering_Environment_Volume_Loading",
+                    environment.MapId, environment.VolumeId, environment.Bakes.Bake));
+            }
         }
     }
 
@@ -510,6 +603,8 @@ public class ViewportRenderingTool
     /// </summary>
     private static void GlobalIlluminationSettings(VulkanViewport viewport, bool bakesFollowTime)
     {
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Settings"), LOC.Get("VIEWPORT_Rendering_Section_GI_Settings_TT"));
+
         // These apply at once, as they are passed in the scene params every frame
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Enable")}##giEnable", ref CFG.Current.Viewport_GI_Enable);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Enable_TT"));
@@ -529,11 +624,17 @@ public class ViewportRenderingTool
             0.0f, CFG.Current.Viewport_GI_Auto_Exposure || exposureFromMap ? 4.0f : 200.0f);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Intensity_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections")}##giNormalizeReflections", ref CFG.Current.Viewport_GI_Normalize_Reflections);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections_TT"));
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Bakes"), LOC.Get("VIEWPORT_Rendering_Section_Bakes_TT"));
+
         // With the bakes following the map lighting's time of day, the bake settings below aren't used
         if (bakesFollowTime)
         {
             var (from, to, ratio) = GparamLighting.TimezonesAt(CFG.Current.Viewport_Map_Lighting_Hours);
-            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Bakes_Follow_Time", from, to, ratio));
+            ImGui.TextDisabled(LOC.Get("VIEWPORT_Menubar_GI_Bakes_Follow_Time", from, to, ratio));
         }
 
         ImGui.BeginDisabled(bakesFollowTime);
@@ -548,35 +649,35 @@ public class ViewportRenderingTool
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Bake_Blend")}##giBakeBlend", ref CFG.Current.Viewport_GI_Bake_Blend);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Bake_Blend_TT"));
 
-        if (CFG.Current.Viewport_GI_Bake_Blend)
+        ImGui.BeginDisabled(!CFG.Current.Viewport_GI_Bake_Blend);
+        ImGui.Indent();
+
+        DPI.ApplyInputWidth(IndentedWidth);
+        if (ImGui.InputInt($"{LOC.Get("VIEWPORT_Menubar_GI_Blend_Bake")}##giBlendBake", ref CFG.Current.Viewport_GI_Blend_Bake))
         {
-            DPI.ApplyInputWidth();
-            if (ImGui.InputInt($"{LOC.Get("VIEWPORT_Menubar_GI_Blend_Bake")}##giBlendBake", ref CFG.Current.Viewport_GI_Blend_Bake))
-            {
-                CFG.Current.Viewport_GI_Blend_Bake = Math.Clamp(CFG.Current.Viewport_GI_Blend_Bake, 0, 99);
-            }
-            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Blend_Bake_TT"));
-
-            DPI.ApplyInputWidth();
-            ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio")}##giBlendRatio", ref CFG.Current.Viewport_GI_Blend_Ratio, 0.0f, 1.0f);
-            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio_TT"));
+            CFG.Current.Viewport_GI_Blend_Bake = Math.Clamp(CFG.Current.Viewport_GI_Blend_Bake, 0, 99);
         }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Blend_Bake_TT"));
 
+        DPI.ApplyInputWidth(IndentedWidth);
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio")}##giBlendRatio", ref CFG.Current.Viewport_GI_Blend_Ratio, 0.0f, 1.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Blend_Ratio_TT"));
+
+        ImGui.Unindent();
         ImGui.EndDisabled();
 
-        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections")}##giNormalizeReflections", ref CFG.Current.Viewport_GI_Normalize_Reflections);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Normalize_Reflections_TT"));
+        ImGui.EndDisabled();
     }
 
     private static readonly int[] ShadowResolutions = { 1024, 2048, 4096 };
 
     /// <summary>
     /// How the HDR scene is taken to the screen: the map GPARAM's Tone Map group under map lighting, or a fixed curve.
-    /// Applies at once, as the tone map is drawn every frame.
+    /// Applies at once, as the tone map is drawn every frame. The curve in use is in the Post Effects tab's status.
     /// </summary>
-    private void ToneMapTab(VulkanViewport viewport)
+    private static void ToneMapSection()
     {
-        var pipeline = viewport.ViewPipeline;
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Tab_Tone_Map"), LOC.Get("VIEWPORT_Rendering_Section_Tone_Map_TT"));
 
         string[] curves =
         {
@@ -597,12 +698,6 @@ public class ViewportRenderingTool
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Tone_Map_White_Point")}##toneMapWhitePoint",
             ref CFG.Current.Viewport_ToneMap_White_Point, 0.5f, 8.0f);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Tone_Map_White_Point_TT"));
-
-        if (pipeline != null)
-        {
-            var (op, whitePoint) = ToneMapPass.Resolve(pipeline.ActiveMapLighting);
-            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Tone_Map_Active", op, whitePoint));
-        }
     }
 
     /// <summary>
@@ -613,8 +708,12 @@ public class ViewportRenderingTool
     {
         var pipeline = viewport.ViewPipeline;
 
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Shadow_Map"), LOC.Get("VIEWPORT_Rendering_Section_Shadow_Map_TT"));
+
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Shadows")}##shadows", ref CFG.Current.Viewport_Shadows);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Shadows_TT"));
+
+        ImGui.BeginDisabled(!CFG.Current.Viewport_Shadows);
 
         var resolution = Array.IndexOf(ShadowResolutions, CFG.Current.Viewport_Shadow_Resolution);
         string[] resolutionNames = ShadowResolutions.Select(r => r.ToString()).ToArray();
@@ -642,18 +741,23 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Shadows_Use_Msb_Flags);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Shadows_Msb_Flags_TT"));
 
-        var shadows = pipeline?.Shadows;
+        ImGui.EndDisabled();
 
-        if (shadows != null && shadows.ActiveCount > 0)
+        if (StatusHeader())
         {
-            var splits = shadows.Parameters.Splits;
-            var ends = new[] { splits.X, splits.Y, splits.Z, splits.W }.Take(shadows.ActiveCount)
-                .Select(s => s.ToString("0.#"));
-            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Shadow_Active", shadows.ActiveCount, string.Join(", ", ends)));
-        }
-        else
-        {
-            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Shadow_Inactive"));
+            var shadows = pipeline?.Shadows;
+
+            if (shadows != null && shadows.ActiveCount > 0)
+            {
+                var splits = shadows.Parameters.Splits;
+                var ends = new[] { splits.X, splits.Y, splits.Z, splits.W }.Take(shadows.ActiveCount)
+                    .Select(s => s.ToString("0.#"));
+                ImGui.Text(LOC.Get("VIEWPORT_Rendering_Shadow_Active", shadows.ActiveCount, string.Join(", ", ends)));
+            }
+            else
+            {
+                ImGui.Text(LOC.Get("VIEWPORT_Rendering_Shadow_Inactive"));
+            }
         }
     }
 
@@ -665,14 +769,15 @@ public class ViewportRenderingTool
     {
         var bank = view.GparamLightingBank;
 
-        MapLightingSettings(viewport);
-
-        ImGui.Separator();
+        MapLightingSettings();
 
         var maps = view.Project.Handler.MapData.PrimaryBank.Maps.Values
             .Select(w => w.MapContainer)
             .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
             .ToList();
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Source"), LOC.Get("VIEWPORT_Rendering_Section_Lighting_Source_TT"));
 
         // The files of every loaded map's area first, then any other of the project's, which lights every map
         var files = maps.SelectMany(m => bank.ListFiles(m.Name)).Distinct(StringComparer.OrdinalIgnoreCase).ToList();
@@ -700,19 +805,26 @@ public class ViewportRenderingTool
 
         WeatherCombo(bank, maps.SelectMany(m => bank.ListWeathers(m.Name)).Distinct().OrderBy(w => w).ToList());
 
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Time_Of_Day"), LOC.Get("VIEWPORT_Rendering_Section_Time_Of_Day_TT"));
+
         TimeOfDaySettings(view.Project, view.IrradianceVolumeBank.CanUse());
 
-        ImGui.Separator();
+        LightingDebugSection();
 
-        if (maps.Count == 0)
-        {
-            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
-            return;
-        }
+        MapLightingStatus(viewport);
 
-        foreach (var map in maps)
+        if (ResolvedValuesHeader())
         {
-            LightingTable(bank, map.Name, bank.ChooseFile(map.Name, chosen));
+            if (maps.Count == 0)
+            {
+                ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
+            }
+
+            foreach (var map in maps)
+            {
+                LightingTable(bank, map.Name, bank.ChooseFile(map.Name, chosen));
+            }
         }
     }
 
@@ -724,38 +836,49 @@ public class ViewportRenderingTool
     {
         var bank = environment.LightingBank;
 
-        MapLightingSettings(viewport);
+        MapLightingSettings();
 
-        ImGui.Separator();
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Source"), LOC.Get("VIEWPORT_Rendering_Section_Lighting_Source_TT"));
 
         EnvironmentMapCombo(environment);
 
         var mapId = environment.MapId;
+        var chosen = CFG.Current.Viewport_Environment_Lighting_File;
 
         if (mapId == null)
         {
-            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Environment_No_Map"));
-            return;
+            ImGui.TextDisabled(LOC.Get("VIEWPORT_Rendering_Environment_No_Map"));
+        }
+        else
+        {
+            LightingFileCombo(bank, bank.ListFiles(mapId), chosen, file => CFG.Current.Viewport_Environment_Lighting_File = file);
+
+            WeatherCombo(bank, bank.ListWeathers(mapId));
         }
 
-        var chosen = CFG.Current.Viewport_Environment_Lighting_File;
-
-        LightingFileCombo(bank, bank.ListFiles(mapId), chosen, file => CFG.Current.Viewport_Environment_Lighting_File = file);
-
-        WeatherCombo(bank, bank.ListWeathers(mapId));
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Time_Of_Day"), LOC.Get("VIEWPORT_Rendering_Section_Time_Of_Day_TT"));
 
         TimeOfDaySettings(environment.Project, environment.Table != null);
 
-        ImGui.Separator();
+        LightingDebugSection();
 
-        LightingTable(bank, mapId, bank.ChooseFile(mapId, chosen));
+        MapLightingStatus(viewport);
+
+        if (mapId != null && ResolvedValuesHeader())
+        {
+            LightingTable(bank, mapId, bank.ChooseFile(mapId, chosen));
+        }
     }
 
     /// <summary>
     /// The map lighting settings every editor's viewports share
     /// </summary>
-    private static void MapLightingSettings(VulkanViewport viewport)
+    private static void MapLightingSettings()
     {
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Settings"), LOC.Get("VIEWPORT_Rendering_Section_Map_Lighting_Settings_TT"));
+
         // These apply at once, as the lighting is resolved every frame
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Enable")}##mapLightingEnable", ref CFG.Current.Viewport_Map_Lighting);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Enable_TT"));
@@ -769,6 +892,14 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Map_Lighting_Hemi_Inside_Volumes);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Hemi_Inside_Volumes_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Background")}##mapLightingBackground",
+            ref CFG.Current.Viewport_Map_Lighting_Background);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Background_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Model_Lights")}##mapLightingModelLights",
+            ref CFG.Current.Viewport_Map_Lighting_Model_Lights);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Model_Lights_TT", GparamLightingBank.ModelLightSetId));
+
         // DS3's lightmaps, applied when a map is next loaded (the materials pick their shader then)
         if (GparamProfile.Current.HasDolLightmaps)
         {
@@ -778,13 +909,22 @@ public class ViewportRenderingTool
 
             ImGui.BeginDisabled(!CFG.Current.Viewport_Map_Lightmaps);
             ImGui.Indent();
-            ImGui.SetNextItemWidth(200.0f);
+            DPI.ApplyInputWidth(IndentedWidth);
             ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Lightmap_Intensity")}##mapLightingLightmapIntensity",
                 ref CFG.Current.Viewport_Map_Lightmap_Intensity, 0.0f, 32.0f, "%.2f", ImGuiSliderFlags.Logarithmic);
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Lightmap_Intensity_TT"));
             ImGui.Unindent();
             ImGui.EndDisabled();
         }
+    }
+
+    /// <summary>
+    /// The lighting debug views, hidden unless asked for or one is on
+    /// </summary>
+    private void LightingDebugSection()
+    {
+        if (!DebugHeader(CFG.Current.Viewport_Lighting_Debug_View != 0))
+            return;
 
         string[] debugViews =
         {
@@ -798,23 +938,23 @@ public class ViewportRenderingTool
         ImGui.Combo($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Debug_View")}##mapLightingDebugView",
             ref CFG.Current.Viewport_Lighting_Debug_View, debugViews, debugViews.Length);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Debug_View_TT"));
+    }
 
-        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Background")}##mapLightingBackground",
-            ref CFG.Current.Viewport_Map_Lighting_Background);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Background_TT"));
-
-        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Model_Lights")}##mapLightingModelLights",
-            ref CFG.Current.Viewport_Map_Lighting_Model_Lights);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Model_Lights_TT", GparamLightingBank.ModelLightSetId));
+    /// <summary>
+    /// The GPARAM the viewport is lit with, and its exposure
+    /// </summary>
+    private void MapLightingStatus(VulkanViewport viewport)
+    {
+        if (!StatusHeader())
+            return;
 
         var active = viewport.ViewPipeline.ActiveMapLighting;
 
-        if (CFG.Current.Viewport_Map_Lighting)
-        {
-            ImGui.Text(active != null
+        ImGui.Text(!CFG.Current.Viewport_Map_Lighting
+            ? LOC.Get("VIEWPORT_Rendering_Map_Lighting_Disabled")
+            : active != null
                 ? LOC.Get("VIEWPORT_Menubar_Map_Lighting_Active", active.File, active.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale)
                 : LOC.Get("VIEWPORT_Menubar_Map_Lighting_None"));
-        }
     }
 
     /// <summary>
@@ -1024,16 +1164,51 @@ public class ViewportRenderingTool
     }
 
     /// <summary>
-    /// The screen effects the maps' GPARAMs ask for (Documentation/Post Processing/Plan.md): which of them the
-    /// viewport draws, and per map what its files give and where each value came from
+    /// How the image is finished: the tone map, then the screen effects the maps' GPARAMs ask for
+    /// (Documentation/Post Processing/Plan.md), which of them the viewport draws, and per map what its files give and
+    /// where each value came from. Without a GPARAM bank only the tone map is offered.
     /// </summary>
-    private static void PostEffectsTab(VulkanViewport viewport, GparamLightingBank bank, List<(string MapId, string File)> maps)
+    private void PostEffectsTab(VulkanViewport viewport, GparamLightingBank bank, List<(string MapId, string File)> maps)
     {
-        // Applies at once, as the chain runs every frame
+        ToneMapSection();
+
+        if (bank != null)
+        {
+            PostEffectsSettings();
+        }
+
+        PostEffectsStatus(viewport, bank != null);
+
+        if (bank != null && ResolvedValuesHeader())
+        {
+            if (maps.Count == 0)
+            {
+                ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
+            }
+
+            foreach (var (mapId, file) in maps)
+            {
+                PostEffectsTable(bank, mapId, file);
+            }
+        }
+    }
+
+    /// <summary>
+    /// The post effect toggles, grouped by what they act on. These apply at once, as the chain runs every frame.
+    /// </summary>
+    private void PostEffectsSettings()
+    {
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Tab_Post_Effects"), LOC.Get("VIEWPORT_Rendering_Section_Post_Effects_TT"));
+
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Effects_Enable")}##postEffectsEnable", ref CFG.Current.Viewport_Post_Effects);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Effects_Enable_TT"));
 
         ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Effects);
+
+        // Image: exposure, bloom, glow and grading
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Image"), LOC.Get("VIEWPORT_Rendering_Section_Image_TT"));
 
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Enable")}##postAutoExposure",
             ref CFG.Current.Viewport_Post_Auto_Exposure);
@@ -1042,26 +1217,22 @@ public class ViewportRenderingTool
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Bloom_Enable")}##postBloom", ref CFG.Current.Viewport_Post_Bloom);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Bloom_Enable_TT"));
 
-        ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Bloom);
-        ImGui.Indent();
-        ImGui.SetNextItemWidth(200.0f);
-        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Post_Bloom_Strength")}##postBloomStrength",
+        IndentedSlider(CFG.Current.Viewport_Post_Bloom, "VIEWPORT_Rendering_Post_Bloom_Strength", "postBloomStrength",
             ref CFG.Current.Viewport_Post_Bloom_Strength, 0.0f, 2.0f);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Bloom_Strength_TT"));
-        ImGui.Unindent();
-        ImGui.EndDisabled();
 
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Glow_Enable")}##postGlow", ref CFG.Current.Viewport_Post_Glow);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Glow_Enable_TT"));
 
-        ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Glow);
-        ImGui.Indent();
-        ImGui.SetNextItemWidth(200.0f);
-        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Post_Glow_Strength")}##postGlowStrength",
+        IndentedSlider(CFG.Current.Viewport_Post_Glow, "VIEWPORT_Rendering_Post_Glow_Strength", "postGlowStrength",
             ref CFG.Current.Viewport_Post_Glow_Strength, 0.0f, 2.0f);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Glow_Strength_TT"));
-        ImGui.Unindent();
-        ImGui.EndDisabled();
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Color_Grading_Enable")}##postColorGrading",
+            ref CFG.Current.Viewport_Post_Color_Grading);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Color_Grading_Enable_TT"));
+
+        // Anti-aliasing
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Anti_Aliasing"), LOC.Get("VIEWPORT_Rendering_Section_Anti_Aliasing_TT"));
 
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Taa_Enable")}##postTaa", ref CFG.Current.Viewport_Post_Taa);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Taa_Enable_TT"));
@@ -1069,9 +1240,9 @@ public class ViewportRenderingTool
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Fxaa_Enable")}##postFxaa", ref CFG.Current.Viewport_Post_Fxaa);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Fxaa_Enable_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Color_Grading_Enable")}##postColorGrading",
-            ref CFG.Current.Viewport_Post_Color_Grading);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Color_Grading_Enable_TT"));
+        // Atmosphere: fog and light shafts
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Atmosphere"), LOC.Get("VIEWPORT_Rendering_Section_Atmosphere_TT"));
 
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Volumetric_Fog_Enable")}##postVolumetricFog",
             ref CFG.Current.Viewport_Post_Volumetric_Fog);
@@ -1080,7 +1251,7 @@ public class ViewportRenderingTool
         ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Volumetric_Fog);
         ImGui.Indent();
 
-        ImGui.SetNextItemWidth(200.0f);
+        DPI.ApplyInputWidth(IndentedWidth);
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Post_Fog_Density_Scale")}##postFogDensityScale",
             ref CFG.Current.Viewport_Post_Fog_Density_Scale, 0.0f, 2.0f);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Fog_Density_Scale_TT"));
@@ -1104,6 +1275,10 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Post_Light_Shafts);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Light_Shafts_Enable_TT"));
 
+        // Surfaces: wetness, occlusion and reflections
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Surfaces"), LOC.Get("VIEWPORT_Rendering_Section_Surfaces_TT"));
+
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Wet_Enable")}##postWet", ref CFG.Current.Viewport_Post_Wet);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Wet_Enable_TT"));
 
@@ -1118,95 +1293,100 @@ public class ViewportRenderingTool
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Ssao_Enable")}##postSsao", ref CFG.Current.Viewport_Post_Ssao);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Ssao_Enable_TT"));
 
-        ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Ssao);
-        ImGui.Indent();
-        ImGui.SetNextItemWidth(200.0f);
-        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Post_Ssao_Strength")}##postSsaoStrength",
+        IndentedSlider(CFG.Current.Viewport_Post_Ssao, "VIEWPORT_Rendering_Post_Ssao_Strength", "postSsaoStrength",
             ref CFG.Current.Viewport_Post_Ssao_Strength, 0.0f, 2.0f);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Ssao_Strength_TT"));
-        ImGui.Unindent();
-        ImGui.EndDisabled();
 
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Ssr_Enable")}##postSsr", ref CFG.Current.Viewport_Post_Ssr);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Ssr_Enable_TT"));
 
-        ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Ssr);
-        ImGui.Indent();
-        ImGui.SetNextItemWidth(200.0f);
-        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Post_Ssr_Strength")}##postSsrStrength",
+        IndentedSlider(CFG.Current.Viewport_Post_Ssr, "VIEWPORT_Rendering_Post_Ssr_Strength", "postSsrStrength",
             ref CFG.Current.Viewport_Post_Ssr_Strength, 0.0f, 1.0f);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Ssr_Strength_TT"));
-        ImGui.Unindent();
-        ImGui.EndDisabled();
 
-        string[] surfaceViews =
+        // The surface views, hidden unless asked for or one is on
+        if (DebugHeader(CFG.Current.Viewport_Post_Surface_View != 0))
         {
-            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_None"),
-            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Normals"),
-            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Roughness"),
-            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Specular"),
-            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Indirect"),
-            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Occlusion"),
-            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Reflection"),
-            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Screen_Reflections"),
-            LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Glow")
-        };
+            string[] surfaceViews =
+            {
+                LOC.Get("VIEWPORT_Rendering_Post_Surface_View_None"),
+                LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Normals"),
+                LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Roughness"),
+                LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Specular"),
+                LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Indirect"),
+                LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Occlusion"),
+                LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Reflection"),
+                LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Screen_Reflections"),
+                LOC.Get("VIEWPORT_Rendering_Post_Surface_View_Glow")
+            };
 
-        ImGui.SetNextItemWidth(200.0f);
-        ImGui.Combo($"{LOC.Get("VIEWPORT_Rendering_Post_Surface_View")}##postSurfaceView",
-            ref CFG.Current.Viewport_Post_Surface_View, surfaceViews, surfaceViews.Length);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Surface_View_TT"));
+            DPI.ApplyInputWidth();
+            ImGui.Combo($"{LOC.Get("VIEWPORT_Rendering_Post_Surface_View")}##postSurfaceView",
+                ref CFG.Current.Viewport_Post_Surface_View, surfaceViews, surfaceViews.Length);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Surface_View_TT"));
+        }
 
         ImGui.EndDisabled();
+    }
 
+    /// <summary>
+    /// The tone map curve in use and, with post effects, the effects drawn last frame and their read-backs
+    /// </summary>
+    private void PostEffectsStatus(VulkanViewport viewport, bool hasPostEffects)
+    {
         var pipeline = viewport.ViewPipeline;
 
-        if (pipeline != null)
-        {
-            // The fog is drawn with the scene, before the chain
-            var active = new List<string>();
-
-            if (pipeline.Fog.Drawn)
-                active.Add(pipeline.Fog.Name);
-
-            active.AddRange(pipeline.PostProcess.LastActive);
-
-            if (pipeline.Fxaa.IsActive(pipeline.ActiveMapLighting))
-                active.Add("FXAA");
-
-            ImGui.Text(active.Count > 0
-                ? LOC.Get("VIEWPORT_Rendering_Post_Effects_Active", string.Join(", ", active))
-                : LOC.Get("VIEWPORT_Rendering_Post_Effects_None_Active"));
-
-            // Read back from the GPU, a few frames behind
-            if (pipeline.AutoExposure.Applied)
-            {
-                var state = pipeline.AutoExposure.LastState;
-                ImGui.Text(LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Status", $"{state.MeanLog:0.##}",
-                    $"{state.Ev:+0.00;-0.00}", $"{state.TargetEv:+0.00;-0.00}"));
-                GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Status_TT"));
-            }
-
-            if (pipeline.Rain is { Active: true, HasContent: true } rain)
-            {
-                ImGui.Text(LOC.Get("VIEWPORT_Rendering_Post_Wet_Rain_Mask_Status", $"{rain.Center.X:0}",
-                    $"{rain.Center.Z:0}", rain.DrawCount));
-                GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Wet_Rain_Mask_Status_TT"));
-            }
-        }
-
-        ImGui.Separator();
-
-        if (maps.Count == 0)
-        {
-            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
+        if (pipeline == null || !StatusHeader())
             return;
+
+        var (op, whitePoint) = ToneMapPass.Resolve(pipeline.ActiveMapLighting);
+        ImGui.Text(LOC.Get("VIEWPORT_Rendering_Tone_Map_Active", op, whitePoint));
+
+        if (!hasPostEffects)
+            return;
+
+        // The fog is drawn with the scene, before the chain
+        var active = new List<string>();
+
+        if (pipeline.Fog.Drawn)
+            active.Add(pipeline.Fog.Name);
+
+        active.AddRange(pipeline.PostProcess.LastActive);
+
+        if (pipeline.Fxaa.IsActive(pipeline.ActiveMapLighting))
+            active.Add("FXAA");
+
+        ImGui.Text(active.Count > 0
+            ? LOC.Get("VIEWPORT_Rendering_Post_Effects_Active", string.Join(", ", active))
+            : LOC.Get("VIEWPORT_Rendering_Post_Effects_None_Active"));
+
+        // Read back from the GPU, a few frames behind
+        if (pipeline.AutoExposure.Applied)
+        {
+            var state = pipeline.AutoExposure.LastState;
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Status", $"{state.MeanLog:0.##}",
+                $"{state.Ev:+0.00;-0.00}", $"{state.TargetEv:+0.00;-0.00}"));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Auto_Exposure_Status_TT"));
         }
 
-        foreach (var (mapId, file) in maps)
+        if (pipeline.Rain is { Active: true, HasContent: true } rain)
         {
-            PostEffectsTable(bank, mapId, file);
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_Post_Wet_Rain_Mask_Status", $"{rain.Center.X:0}",
+                $"{rain.Center.Z:0}", rain.DrawCount));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Wet_Rain_Mask_Status_TT"));
         }
+    }
+
+    /// <summary>
+    /// A strength slider under its effect's toggle, disabled while the effect is off
+    /// </summary>
+    private static void IndentedSlider(bool enabled, string key, string id, ref float value, float min, float max)
+    {
+        ImGui.BeginDisabled(!enabled);
+        ImGui.Indent();
+        DPI.ApplyInputWidth(IndentedWidth);
+        ImGui.SliderFloat($"{LOC.Get(key)}##{id}", ref value, min, max);
+        GUI.Tooltip(LOC.Get($"{key}_TT"));
+        ImGui.Unindent();
+        ImGui.EndDisabled();
     }
 
     /// <summary>
@@ -1349,56 +1529,80 @@ public class ViewportRenderingTool
     }
 
     /// <summary>
-    /// What the flver shaders do. These apply at once, as the shaders read them every frame
+    /// What the flver shaders do, and how the parts are drawn. These apply at once, as the shaders read them every
+    /// frame.
     /// </summary>
     private void MaterialsTab()
     {
         // Editor mode switches the material features off, all but layer blending, and pauses the animation, so the
         // other toggles and the wind's settings can't change anything there. The grass is geometry, so its density
         // still applies.
-        ImGui.BeginDisabled(!RenderMode.IsGame);
+        var gameMode = RenderMode.IsGame;
+
+        if (!gameMode)
+        {
+            ImGui.TextDisabled(LOC.Get("VIEWPORT_Rendering_Materials_Game_Mode_Only"));
+        }
+
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Animation"), LOC.Get("VIEWPORT_Rendering_Section_Animation_TT"));
+
+        ImGui.BeginDisabled(!gameMode);
 
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Animation", ref CFG.Current.Viewport_Enable_Material_Animation);
-
-        ImGui.Separator();
-
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Wind", ref CFG.Current.Viewport_Material_Wind);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Vertex_Animation", ref CFG.Current.Viewport_Material_Vertex_Animation);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Sway", ref CFG.Current.Viewport_Material_Sway);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Birds", ref CFG.Current.Viewport_Material_Birds);
 
-        ImGui.Separator();
+        ImGui.EndDisabled();
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Surface_Features"), LOC.Get("VIEWPORT_Rendering_Section_Surface_Features_TT"));
 
         // Layer blending applies in Editor mode too, so it stays usable there
-        ImGui.EndDisabled();
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Layer_Blending", ref CFG.Current.Viewport_Material_Layer_Blending);
-        ImGui.BeginDisabled(!RenderMode.IsGame);
+
+        ImGui.BeginDisabled(!gameMode);
 
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Overlays", ref CFG.Current.Viewport_Material_Overlays);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Magma", ref CFG.Current.Viewport_Material_Magma);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Emissive", ref CFG.Current.Viewport_Material_Emissive);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_UV_Scroll", ref CFG.Current.Viewport_Material_UV_Scroll);
 
-        ImGui.Separator();
+        ImGui.EndDisabled();
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Shader_Types"), LOC.Get("VIEWPORT_Rendering_Section_Shader_Types_TT"));
+
+        ImGui.BeginDisabled(!gameMode);
 
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Unlit", ref CFG.Current.Viewport_Material_Unlit);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Water", ref CFG.Current.Viewport_Material_Water);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Fur", ref CFG.Current.Viewport_Material_Fur);
 
-        ImGui.Separator();
+        ImGui.EndDisabled();
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Wind"), LOC.Get("VIEWPORT_Rendering_Section_Wind_TT"));
+
+        ImGui.BeginDisabled(!gameMode);
 
         DPI.ApplyInputWidth();
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Setting_Wind_Strength")}##windStrength", ref CFG.Current.Viewport_Wind_Strength, 0.0f, 5.0f);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wind_Strength_TT"));
 
         DPI.ApplyInputWidth();
-        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Setting_Wind_Direction")}##windDirection", ref CFG.Current.Viewport_Wind_Direction, 0.0f, 360.0f);
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Setting_Wind_Direction")}##windDirection", ref CFG.Current.Viewport_Wind_Direction, 0.0f, 360.0f, "%.0f deg");
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wind_Direction_TT"));
 
         ImGui.EndDisabled();
 
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Display"), LOC.Get("VIEWPORT_Rendering_Section_Display_TT"));
+
         DPI.ApplyInputWidth();
-        ImGui.SliderFloat("Grass Density", ref GrassDensity, 0.1f, 4f);
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Grass_Density")}##grassDensity", ref GrassDensity, 0.1f, 4f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Grass_Density_TT"));
 
         // Each change rebuilds the grass, so it waits for the slider to be let go
         if (ImGui.IsItemDeactivatedAfterEdit())
@@ -1406,6 +1610,11 @@ public class ViewportRenderingTool
             CFG.Current.MapEditor_Grass_Density = GrassDensity;
         }
 
+        // Applies at once, as the collision shaders read it every frame
+        DPI.ApplyInputWidth();
+        ImGui.SliderFloat($"{LOC.Get("PREF_Viewport_Collision_Opacity")}##collisionOpacity",
+            ref CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
+        GUI.Tooltip(LOC.Get("PREF_Viewport_Collision_Opacity_TT"));
     }
 
     private static void MaterialToggle(string key, ref bool value)

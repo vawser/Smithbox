@@ -1607,6 +1607,302 @@
     {
       "Key": "VIEWPORT_Rendering_Post_Wet_Value",
       "Text": "albedo {0} towards {1}, shininess {2} towards {3}, wetness {4}"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Action_Reset_Camera_Settings_TT",
+      "Text": "Puts the clipping distances, field of view, sensitivity, move speeds, pan sensitivity, orthographic size and oblique settings back to their defaults."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Movement",
+      "Text": "Movement"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Movement_TT",
+      "Text": "How fast the camera turns and moves."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Game_Mode_Only",
+      "Text": "Switch to Game render mode to change these:"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Open_Rendering_Tool",
+      "Text": "Rendering Settings..."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Open_Rendering_Tool_TT",
+      "Text": "Opens the Viewport Rendering section of the tool window, which has every lighting, shadow, post effect and material setting."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Light_Direction_TT",
+      "Text": "The direction the sun shines in."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Direct_Light_Mult_TT",
+      "Text": "Multiplies the direct light: the sun and the other lights."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Indirect_Light_Mult_TT",
+      "Text": "Multiplies the indirect light: the ambient and environment light."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Light_Brightness_TT",
+      "Text": "Multiplies the brightness of the whole scene."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Sun_Color",
+      "Text": "Sun Color"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Sun_Color_TT",
+      "Text": "The color of the sun."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Sun_Intensity",
+      "Text": "Sun Intensity"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Sun_Intensity_TT",
+      "Text": "How bright the sun is."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Camera_Light",
+      "Text": "Camera Light"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Camera_Light_TT",
+      "Text": "A point light that follows the camera, for seeing into dark interiors."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Camera_Light_Color",
+      "Text": "Color"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Camera_Light_Intensity",
+      "Text": "Intensity"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Camera_Light_Range",
+      "Text": "Range"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Grass_Density",
+      "Text": "Grass Density"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Grass_Density_TT",
+      "Text": "How many grass blades are drawn. Changing it rebuilds the grass, so it applies when the slider is let go."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Intensity_From_Map",
+      "Text": "Map lighting gives the intensity."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Map_Lighting_Disabled",
+      "Text": "Map lighting is off."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Materials_Game_Mode_Only",
+      "Text": "Editor render mode switches off everything but layer blending, grass and collision opacity. Switch to Game mode to change the rest."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Settings",
+      "Text": "Settings"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Source",
+      "Text": "Source"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Status",
+      "Text": "Status"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Status_TT",
+      "Text": "What the viewport is drawing right now. Click the eye to show or hide this section in every tab."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Resolved_Values",
+      "Text": "Resolved Values"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Resolved_Values_TT",
+      "Text": "Per loaded map, the values its GPARAMs give and the file each comes from. Click the eye to show or hide this section in every tab."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Debug",
+      "Text": "Debug"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Debug_TT",
+      "Text": "Debug views. Click the eye to show or hide this section in every tab. It is always shown while a debug view is on."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Map_Lighting_Settings_TT",
+      "Text": "How the maps' GPARAM lighting is used."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Lighting_Source_TT",
+      "Text": "Which GPARAM file and weather the lighting is read from."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Volume_Source_TT",
+      "Text": "Which map and irradiance volume the lighting is borrowed from."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Time_Of_Day",
+      "Text": "Time of Day"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Time_Of_Day_TT",
+      "Text": "The hour the GPARAMs are read at."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Sun",
+      "Text": "Sun"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Sun_TT",
+      "Text": "The viewport's own sun, used when map lighting doesn't give one."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Multipliers",
+      "Text": "Light Multipliers"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Multipliers_TT",
+      "Text": "Scales applied on top of the light the scene is given."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Camera_Light",
+      "Text": "Camera Light"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Camera_Light_TT",
+      "Text": "A light that follows the camera."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_GI_Settings_TT",
+      "Text": "How the irradiance volumes light the scene."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Bakes",
+      "Text": "Bakes"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Bakes_TT",
+      "Text": "Which of the volumes' bakes is used, and whether two are blended."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Linking",
+      "Text": "Linking"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Linking_TT",
+      "Text": "Whether the loaded maps' EnvMapEffectBoxes are linked to a volume."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Gathering",
+      "Text": "Gathering"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Gathering_TT",
+      "Text": "Which of the loaded maps' BTL lights are used."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Intensity",
+      "Text": "Intensity"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Intensity_TT",
+      "Text": "How bright the BTL lights are."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Shadow_Map",
+      "Text": "Shadow Map"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Shadow_Map_TT",
+      "Text": "The sun's cascaded shadow map."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Tone_Map_TT",
+      "Text": "How the HDR scene is brought down to the screen."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Post_Effects_TT",
+      "Text": "The screen effects the maps' GPARAMs ask for."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Image",
+      "Text": "Image"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Image_TT",
+      "Text": "Exposure, bloom, glow and color grading."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Anti_Aliasing",
+      "Text": "Anti-Aliasing"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Anti_Aliasing_TT",
+      "Text": "How edges are smoothed."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Atmosphere",
+      "Text": "Atmosphere"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Atmosphere_TT",
+      "Text": "Volumetric fog and light shafts."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Surfaces",
+      "Text": "Surfaces"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Surfaces_TT",
+      "Text": "Wetness, ambient occlusion and screen space reflections."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Animation",
+      "Text": "Animation"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Animation_TT",
+      "Text": "The material and vertex animation the shaders play."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Surface_Features",
+      "Text": "Surface Features"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Surface_Features_TT",
+      "Text": "The material features drawn on surfaces."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Shader_Types",
+      "Text": "Shader Types"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Shader_Types_TT",
+      "Text": "The special shaders some materials use."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Wind",
+      "Text": "Wind"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Wind_TT",
+      "Text": "The wind the swaying materials follow."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Display",
+      "Text": "Display"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Section_Display_TT",
+      "Text": "How grass and collisions are drawn."
     }
   ]
 }
