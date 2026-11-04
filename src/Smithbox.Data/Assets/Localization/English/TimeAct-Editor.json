@@ -421,6 +421,202 @@
       "Text": "Failed to read time act file: {0}"
     },
     {
+      "Key": "TAE_PropertiesWindow_TimeAct_Header",
+      "Text": "Time Act: {0}"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Header_TT",
+      "Text": "The properties of the selected time act's header."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Tab_TimeAct",
+      "Text": "TAE"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Tab_Animation",
+      "Text": "Animation"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Tab_Event",
+      "Text": "Event"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_No_TimeAct_Selected",
+      "Text": "No time act is selected."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_No_Animation_Selected",
+      "Text": "No animation is selected."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_No_Event_Selected",
+      "Text": "No event is selected."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Header",
+      "Text": "Animation: {0}"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Header_TT",
+      "Text": "The properties of the selected animation."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Event_Count",
+      "Text": "Events"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Event_Count_TT",
+      "Text": "The number of events in the animation."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_ID_TT",
+      "Text": "The ID of the animation, which its name and motion come from. For player characters this is the ID within the time act's category. It must not be used by another animation of the time act."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_ID_In_Use",
+      "Text": "The animation ID {0} is already used by another animation of this time act."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_File_Name",
+      "Text": "File Name"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_File_Name_TT",
+      "Text": "The animation file name stored with the animation. Its use is unknown, and it is left out of the file when empty."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Mini_Header_Type",
+      "Text": "Type"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Mini_Header_Type_TT",
+      "Text": "Standard animations play their own motion, or import it from another animation's HKX. Import animations take both the motion and all events from another animation.\nChanging the type resets the values below."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Mini_Header_Standard",
+      "Text": "Standard"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Mini_Header_Import",
+      "Text": "Import Other Animation"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Loop_By_Default",
+      "Text": "Loop By Default"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Loop_By_Default_TT",
+      "Text": "Makes the animation loop by default. Only relevant for animations that aren't controlled by ESD or HKS, such as ObjAct animations."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Imports_HKX",
+      "Text": "Imports HKX"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Imports_HKX_TT",
+      "Text": "Whether the motion is taken from the HKX of the animation in Import HKX Source."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Import_HKX_Source",
+      "Text": "Import HKX Source"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Import_HKX_Source_TT",
+      "Text": "The full ID of the animation whose HKX is used. Only used if Imports HKX is ticked."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Allow_Delay_Load",
+      "Text": "Allow Delay Load"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Allow_Delay_Load_TT",
+      "Text": "Whether the animation can be loaded from a delay-load anibnd, such as the c0000_cXXXX.anibnd player throw anibnds."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Import_From",
+      "Text": "Import From"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Import_From_TT",
+      "Text": "The full ID of the animation whose motion and events are used."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Import_Unknown",
+      "Text": "Unknown"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Import_Unknown_TT",
+      "Text": "An unknown value, usually -1."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Format",
+      "Text": "Format"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Format_TT",
+      "Text": "The game format the time act is written in. It can't be changed, as it decides how the rest of the file is laid out."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Format_Big_Endian",
+      "Text": "{0} (Big Endian)"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Animation_Count",
+      "Text": "Animations"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Animation_Count_TT",
+      "Text": "The number of animations in the time act."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_ID_TT",
+      "Text": "The ID stored in the time act's header. This is separate from its name and binder ID, which renaming changes."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Flags",
+      "Text": "Flags"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Flags_TT",
+      "Text": "Eight bytes of unknown flags, typed as hex. Spaces between the bytes are optional."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Event_Bank",
+      "Text": "Event Bank"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Event_Bank_TT",
+      "Text": "The set of events the time act uses. This can differ within a game, and is often different for objects."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Skeleton_Name",
+      "Text": "Skeleton Name"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Skeleton_Name_TT",
+      "Text": "The .hkt skeleton file the time act refers to. Leave it empty to write no name."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Sib_Name",
+      "Text": "SIB Name"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Sib_Name_TT",
+      "Text": "The .sib file the time act refers to. Leave it empty to write no name."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_TimeAct_Invalid_Value",
+      "Text": "'{0}' is not a valid value for {1}"
+    },
+    {
       "Key": "TAE_SelectionWindow_Import_Wrong_Format",
       "Text": "Can't import {0}: it is in the {1} format, but this source uses {2}."
     }

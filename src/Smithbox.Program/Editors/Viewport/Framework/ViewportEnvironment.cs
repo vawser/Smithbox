@@ -49,6 +49,9 @@ public class ViewportEnvironment : IDisposable
     // The settings the map was last resolved from, so the file lists aren't searched every frame
     private string ResolvedFor;
 
+    // Whether the map's volumes are loaded, which they only are in Game mode
+    private bool VolumesLoaded;
+
     private readonly IrradianceVolumeData[] Entries = new IrradianceVolumeData[1];
 
     // The volume textures held, so the Model and Time Act Editors' clearing of unused resources keeps them loaded
@@ -125,6 +128,19 @@ public class ViewportEnvironment : IDisposable
 
         ActiveLighting = LightingBank.ResolveCached(MapId, CFG.Current.Viewport_Environment_Lighting_File);
 
+        // Editor mode draws fullbright, so the volumes are only read, and their textures only held, in Game mode
+        if (!RenderMode.IsGame)
+        {
+            if (VolumesLoaded)
+                UnloadVolumes();
+
+            UploadVolume(null, -1, default);
+            return;
+        }
+
+        if (!VolumesLoaded)
+            LoadVolumes();
+
         var volumes = VolumeBank.GetMap(MapId);
 
         VolumeId = volumes != null && CFG.Current.Viewport_Environment_Volume >= 0 &&
@@ -197,21 +213,39 @@ public class ViewportEnvironment : IDisposable
         if (string.Equals(mapId, MapId, StringComparison.OrdinalIgnoreCase) && MapId != null)
             return;
 
-        if (MapId != null)
+        UnloadVolumes();
+
+        MapId = mapId;
+    }
+
+    /// <summary>
+    /// Reads the map's IVINFOs and picks its median volume; only in Game mode, as Editor mode draws fullbright
+    /// </summary>
+    private void LoadVolumes()
+    {
+        VolumesLoaded = true;
+
+        if (MapId == null)
+            return;
+
+        var volumes = VolumeBank.LoadVolumes(MapId);
+        MedianVolumeId = FindMedianVolume(volumes);
+    }
+
+    /// <summary>
+    /// Lets go of the map's volumes and the textures held for them, so they can be freed
+    /// </summary>
+    private void UnloadVolumes()
+    {
+        if (VolumesLoaded && MapId != null)
             VolumeBank.OnUnloadMap(MapId);
 
         ReleaseTextures(new HashSet<string>());
         Retries.Clear();
 
-        MapId = mapId;
+        VolumesLoaded = false;
         VolumeId = -1;
         MedianVolumeId = -1;
-
-        if (mapId == null)
-            return;
-
-        var volumes = VolumeBank.LoadVolumes(mapId);
-        MedianVolumeId = FindMedianVolume(volumes);
     }
 
     /// <summary>

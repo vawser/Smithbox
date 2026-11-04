@@ -1,10 +1,7 @@
 #----------------------------------------------------
 # Time Act Editor TODO
 #----------------------------------------------------
-- Time Act List:
-    - Duplicate/Delete actions
-    - Export: export the .tae file
-    
+
 - Animations List:
     - Re-name action
     - Edit properties for the TAE.Entry class

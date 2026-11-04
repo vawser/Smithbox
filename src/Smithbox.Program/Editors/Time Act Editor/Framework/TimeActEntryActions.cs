@@ -1,4 +1,5 @@
 using StudioCore.Editors.Common;
+using System;
 using StudioCore.Editors.Viewport;
 
 namespace StudioCore.Editors.TimeActEditor;
@@ -178,5 +179,45 @@ public class TimeActReplaceEntryAction : ViewportAction
         {
             View.SelectionWindow.SelectTimeAct(to);
         }
+    }
+}
+
+/// <summary>
+/// Changes a property of the time act or one of its animations, such as an ID or skeleton name.
+/// The callback runs after each change, for properties that other things depend on.
+/// </summary>
+public class TimeActSetPropertyAction<T> : ViewportAction
+{
+    private readonly TimeActEntry Entry;
+    private readonly Action<T> Set;
+    private readonly T OldValue;
+    private readonly T NewValue;
+    private readonly Action OnChanged;
+
+    public TimeActSetPropertyAction(TimeActEntry entry, Action<T> set, T oldValue, T newValue, Action onChanged = null)
+    {
+        Entry = entry;
+        Set = set;
+        OldValue = oldValue;
+        NewValue = newValue;
+        OnChanged = onChanged;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        Set(NewValue);
+        Entry.IsDirty = true;
+        OnChanged?.Invoke();
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Set(OldValue);
+        Entry.IsDirty = true;
+        OnChanged?.Invoke();
+
+        return ActionEvent.NoEvent;
     }
 }

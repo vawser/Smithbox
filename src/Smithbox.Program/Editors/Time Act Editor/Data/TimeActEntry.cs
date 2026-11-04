@@ -121,6 +121,27 @@ public class TimeActEntry
             + $"{name}{System.IO.Path.GetExtension(BinderFileName)}";
     }
 
+    /// <summary>
+    /// Raised whenever an animation changes its ID, so lists built from the animations know to rebuild
+    /// </summary>
+    public int AnimationsVersion { get; private set; } = 0;
+
+    /// <summary>
+    /// Puts an animation back in ID order after its ID has changed, as the animations are stored sorted
+    /// </summary>
+    public void ResortAnimation(TAE.Animation animation)
+    {
+        var animations = TimeAct.Animations;
+
+        animations.Remove(animation);
+
+        var index = animations.FindIndex(e => e.ID > animation.ID);
+
+        animations.Insert(index < 0 ? animations.Count : index, animation);
+
+        AnimationsVersion++;
+    }
+
     public void Load()
     {
         if (TimeAct != null || LoadFailed)

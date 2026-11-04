@@ -22,6 +22,7 @@ public class TimeActAnimationSelectionWindow
     // A time act can have over a thousand animations, with a name to build for each
     private List<(TAE.Animation Animation, string Name)> CachedFilteredAnimations;
     private TAE CachedAnimationSource;
+    private int CachedAnimationsVersion;
     private string CachedAnimationFilter = "";
     private bool CachedExactAnimationFilter = false;
 
@@ -101,6 +102,7 @@ public class TimeActAnimationSelectionWindow
     {
         if (CachedFilteredAnimations != null &&
             CachedAnimationSource == entry.TimeAct &&
+            CachedAnimationsVersion == entry.AnimationsVersion &&
             CachedAnimationFilter == AnimationListFilter &&
             CachedExactAnimationFilter == ExactAnimationFilter)
         {
@@ -108,6 +110,7 @@ public class TimeActAnimationSelectionWindow
         }
 
         CachedAnimationSource = entry.TimeAct;
+        CachedAnimationsVersion = entry.AnimationsVersion;
         CachedAnimationFilter = AnimationListFilter;
         CachedExactAnimationFilter = ExactAnimationFilter;
 

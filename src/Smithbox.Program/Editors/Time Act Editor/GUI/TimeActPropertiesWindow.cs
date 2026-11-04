@@ -24,6 +24,16 @@ public class TimeActPropertiesWindow
     private Dictionary<string, string> FieldText = new();
     private TAE.Event FieldTextEvent;
 
+    // The same, for the properties of the time act itself
+    private Dictionary<string, string> TimeActFieldText = new();
+    private TimeActEntry TimeActFieldTextEntry;
+    private TAE.Animation TimeActFieldTextAnimation;
+
+    // What was selected last frame, so a new selection can bring its tab forward
+    private TimeActEntry LastSelectedTimeAct;
+    private TAE.Animation LastSelectedAnimation;
+    private TAE.Event LastSelectedEvent;
+
     public TimeActPropertiesWindow(TimeActEditorView view, ProjectEntry project)
     {
         View = view;
@@ -39,20 +49,124 @@ public class TimeActPropertiesWindow
         EditorFilters.DisplayFramedListFilter("timeActEditor_Properties_Filter",
             ref PropertiesFilter, ref ExactPropertiesFilter);
 
-        ImGui.BeginChild($"PropertiesSection", new Vector2(0, 0), ImGuiChildFlags.Borders);
-
-        DisplayProperties();
-
-        ImGui.EndChild();
-    }
-
-    public void DisplayProperties()
-    {
-        var ev = View.Selection.SelectedEvent;
-
-        if (ev == null)
+        if (!ImGui.BeginTabBar("##timeActPropertiesTabs"))
             return;
 
+        var entry = View.Selection.SelectedTimeAct;
+        var animation = View.Selection.SelectedAnimation;
+        var ev = View.Selection.SelectedEvent;
+
+        var focusTab = GetTabToFocus(entry, animation, ev);
+
+        // Time Act
+        if (ImGui.BeginTabItem($"{LOC.Get("TAE_PropertiesWindow_Tab_TimeAct")}##timeActPropertiesTab", GetTabFlags(focusTab, PropertiesTab.TimeAct)))
+        {
+            BeginTabContent("timeAct");
+
+            if (entry?.TimeAct != null)
+            {
+                DisplayTimeActProperties(entry);
+            }
+            else
+            {
+                GUI.WrappedText(LOC.Get("TAE_PropertiesWindow_No_TimeAct_Selected"));
+            }
+
+            EndTabContent();
+        }
+
+        // Animation
+        if (ImGui.BeginTabItem($"{LOC.Get("TAE_PropertiesWindow_Tab_Animation")}##animationPropertiesTab", GetTabFlags(focusTab, PropertiesTab.Animation)))
+        {
+            BeginTabContent("animation");
+
+            if (entry?.TimeAct != null && animation != null)
+            {
+                DisplayAnimationProperties(entry, animation);
+            }
+            else
+            {
+                GUI.WrappedText(LOC.Get("TAE_PropertiesWindow_No_Animation_Selected"));
+            }
+
+            EndTabContent();
+        }
+
+        // Event
+        if (ImGui.BeginTabItem($"{LOC.Get("TAE_PropertiesWindow_Tab_Event")}##eventPropertiesTab", GetTabFlags(focusTab, PropertiesTab.Event)))
+        {
+            BeginTabContent("event");
+
+            if (ev != null)
+            {
+                DisplayEventProperties(ev);
+            }
+            else
+            {
+                GUI.WrappedText(LOC.Get("TAE_PropertiesWindow_No_Event_Selected"));
+            }
+
+            EndTabContent();
+        }
+
+        ImGui.EndTabBar();
+    }
+
+    private enum PropertiesTab
+    {
+        None,
+        TimeAct,
+        Animation,
+        Event
+    }
+
+    /// <summary>
+    /// Gets the tab of whatever was just selected, or None if the selection hasn't changed.
+    /// Selecting a time act also selects its first animation, and selecting an animation clears the event,
+    /// so the outermost change is the one that was picked.
+    /// </summary>
+    private PropertiesTab GetTabToFocus(TimeActEntry entry, TAE.Animation animation, TAE.Event ev)
+    {
+        var tab = PropertiesTab.None;
+
+        if (entry != null && entry != LastSelectedTimeAct)
+        {
+            tab = PropertiesTab.TimeAct;
+        }
+        else if (animation != null && animation != LastSelectedAnimation)
+        {
+            tab = PropertiesTab.Animation;
+        }
+        else if (ev != null && ev != LastSelectedEvent)
+        {
+            tab = PropertiesTab.Event;
+        }
+
+        LastSelectedTimeAct = entry;
+        LastSelectedAnimation = animation;
+        LastSelectedEvent = ev;
+
+        return tab;
+    }
+
+    private static ImGuiTabItemFlags GetTabFlags(PropertiesTab focusTab, PropertiesTab tab)
+    {
+        return focusTab == tab ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
+    }
+
+    private static void BeginTabContent(string id)
+    {
+        ImGui.BeginChild($"PropertiesSection_{id}", new Vector2(0, 0), ImGuiChildFlags.Borders);
+    }
+
+    private static void EndTabContent()
+    {
+        ImGui.EndChild();
+        ImGui.EndTabItem();
+    }
+
+    private void DisplayEventProperties(TAE.Event ev)
+    {
         if (FieldTextEvent != ev)
         {
             FieldTextEvent = ev;
@@ -101,6 +215,339 @@ public class TimeActPropertiesWindow
 
             GUI.WrappedText(Convert.ToHexString(bytes));
         }
+    }
+
+    private delegate bool TryParseValue<T>(string text, out T value);
+
+    /// <summary>
+    /// The properties of the time act's header. The format can't be changed, as it decides how the rest is laid out.
+    /// </summary>
+    private void DisplayTimeActProperties(TimeActEntry entry)
+    {
+        var tae = entry.TimeAct;
+
+        if (TimeActFieldTextEntry != entry)
+        {
+            TimeActFieldTextEntry = entry;
+            TimeActFieldText.Clear();
+        }
+
+        GUI.SimpleHeader(
+            LOC.Get("TAE_PropertiesWindow_TimeAct_Header", entry.Name),
+            LOC.Get("TAE_PropertiesWindow_TimeAct_Header_TT"));
+
+        if (!ImGui.BeginTable("##timeActProperties", 2, ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV))
+            return;
+
+        // Format
+        var format = tae.BigEndian ? LOC.Get("TAE_PropertiesWindow_TimeAct_Format_Big_Endian", tae.Format) : $"{tae.Format}";
+
+        DisplayReadOnlyField("TAE_PropertiesWindow_TimeAct_Format", format);
+
+        // Animation Count
+        DisplayReadOnlyField("TAE_PropertiesWindow_TimeAct_Animation_Count", $"{tae.Animations.Count}");
+
+        ImGui.BeginDisabled(!Project.Handler.TimeActData.CanSaveTimeActs);
+
+        // ID
+        DisplayTimeActField(entry, "TAE_PropertiesWindow_TimeAct_ID", tae.ID, value => $"{value}",
+            int.TryParse, value => tae.ID = value);
+
+        // Flags
+        DisplayTimeActField(entry, "TAE_PropertiesWindow_TimeAct_Flags", tae.Flags, FormatFlags,
+            TryParseFlags, value => tae.Flags = value);
+
+        // Event Bank: not stored in the older formats
+        if (tae.Format is not (TAE.TAEFormat.DS1 or TAE.TAEFormat.DES))
+        {
+            DisplayTimeActField(entry, "TAE_PropertiesWindow_TimeAct_Event_Bank", tae.EventBank, value => $"{value}",
+                long.TryParse, value => tae.EventBank = value);
+        }
+
+        // Skeleton and SIB names: not stored in the Dark Souls II format
+        if (tae.Format is not TAE.TAEFormat.SOTFS)
+        {
+            DisplayTimeActField(entry, "TAE_PropertiesWindow_TimeAct_Skeleton_Name", tae.SkeletonName, value => value ?? "",
+                TryParseName, value => tae.SkeletonName = value);
+
+            DisplayTimeActField(entry, "TAE_PropertiesWindow_TimeAct_Sib_Name", tae.SibName, value => value ?? "",
+                TryParseName, value => tae.SibName = value);
+        }
+
+        ImGui.EndDisabled();
+
+        ImGui.EndTable();
+    }
+
+    private void DisplayReadOnlyField(string nameKey, string value)
+    {
+        var name = LOC.Get(nameKey);
+
+        if (!EditorFilters.IsMatch(PropertiesFilter, name, ExactPropertiesFilter))
+            return;
+
+        BeginRow(name);
+
+        ImGui.TextUnformatted(value);
+        GUI.Tooltip(LOC.Get($"{nameKey}_TT"));
+    }
+
+    /// <summary>
+    /// A text field for a time act or animation property. The value is only changed once the text is done being
+    /// edited and is valid. Values are compared by their text, so arrays are compared by their contents.
+    /// The validation returns the reason a value can't be used, or null if it can.
+    /// </summary>
+    private void DisplayTimeActField<T>(TimeActEntry entry, string nameKey, T value, Func<T, string> format,
+        TryParseValue<T> parse, Action<T> set, Func<T, string> validate = null, Action onChanged = null)
+    {
+        var name = LOC.Get(nameKey);
+
+        if (!EditorFilters.IsMatch(PropertiesFilter, name, ExactPropertiesFilter))
+            return;
+
+        BeginRow(name);
+
+        var valueText = format(value);
+        var text = TimeActFieldText.TryGetValue(nameKey, out var typed) ? typed : valueText;
+
+        ImGui.SetNextItemWidth(-1);
+
+        if (ImGui.InputText($"##{nameKey}", ref text, MaxTextLength))
+        {
+            TimeActFieldText[nameKey] = text;
+        }
+
+        GUI.Tooltip(LOC.Get($"{nameKey}_TT"));
+
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            TimeActFieldText.Remove(nameKey);
+
+            if (!parse(text, out var newValue))
+            {
+                Smithbox.Log(this, LOC.Get("TAE_PropertiesWindow_TimeAct_Invalid_Value", text, name));
+                return;
+            }
+
+            if (format(newValue) == valueText)
+                return;
+
+            if (validate?.Invoke(newValue) is { } error)
+            {
+                Smithbox.Log(this, error);
+                return;
+            }
+
+            View.ViewportActionManager.ExecuteAction(new TimeActSetPropertyAction<T>(entry, set, value, newValue, onChanged));
+        }
+    }
+
+    /// <summary>
+    /// A checkbox for a time act or animation property, which changes the value as soon as it is ticked
+    /// </summary>
+    private void DisplayTimeActCheckbox(TimeActEntry entry, string nameKey, bool value, Action<bool> set,
+        Action onChanged = null)
+    {
+        var name = LOC.Get(nameKey);
+
+        if (!EditorFilters.IsMatch(PropertiesFilter, name, ExactPropertiesFilter))
+            return;
+
+        BeginRow(name);
+
+        var ticked = value;
+
+        if (ImGui.Checkbox($"##{nameKey}", ref ticked))
+        {
+            View.ViewportActionManager.ExecuteAction(new TimeActSetPropertyAction<bool>(entry, set, value, ticked, onChanged));
+        }
+
+        GUI.Tooltip(LOC.Get($"{nameKey}_TT"));
+    }
+
+    /// <summary>
+    /// The properties of the selected animation: its ID, file name and the mini header, which decides
+    /// whether the animation plays its own motion or imports it from another.
+    /// </summary>
+    private void DisplayAnimationProperties(TimeActEntry entry, TAE.Animation animation)
+    {
+        var source = View.Selection.SelectedTimeActContainerWrapper;
+        var tae = entry.TimeAct;
+
+        // The text being typed belongs to the animation it was typed for
+        if (TimeActFieldTextAnimation != animation)
+        {
+            TimeActFieldTextAnimation = animation;
+            TimeActFieldText.Clear();
+        }
+
+        GUI.SimpleHeader(
+            LOC.Get("TAE_PropertiesWindow_Animation_Header", source.GetAnimationName(entry, animation)),
+            LOC.Get("TAE_PropertiesWindow_Animation_Header_TT"));
+
+        if (!ImGui.BeginTable("##animationProperties", 2, ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV))
+            return;
+
+        // Event Count
+        DisplayReadOnlyField("TAE_PropertiesWindow_Animation_Event_Count", $"{animation.Events.Count}");
+
+        ImGui.BeginDisabled(!Project.Handler.TimeActData.CanSaveTimeActs);
+
+        // ID: the animations are kept in ID order, and the name and motion come from it
+        DisplayTimeActField(entry, "TAE_PropertiesWindow_Animation_ID", animation.ID, value => $"{value}",
+            long.TryParse, value => animation.ID = value,
+            validate: value => tae.Animations.Any(e => e != animation && e.ID == value)
+                ? LOC.Get("TAE_PropertiesWindow_Animation_ID_In_Use", value) : null,
+            onChanged: () =>
+            {
+                entry.ResortAnimation(animation);
+                OnAnimationMotionChanged(animation);
+            });
+
+        // File Name
+        DisplayTimeActField(entry, "TAE_PropertiesWindow_Animation_File_Name", animation.AnimFileName, value => value ?? "",
+            TryParseText, value => animation.AnimFileName = value);
+
+        // Mini Header Type
+        DisplayMiniHeaderType(entry, animation);
+
+        switch (animation.MiniHeader)
+        {
+            case TAE.Animation.AnimMiniHeader.Standard standard:
+                DisplayTimeActCheckbox(entry, "TAE_PropertiesWindow_Animation_Loop_By_Default", standard.IsLoopByDefault,
+                    value => standard.IsLoopByDefault = value);
+
+                DisplayTimeActCheckbox(entry, "TAE_PropertiesWindow_Animation_Imports_HKX", standard.ImportsHKX,
+                    value => standard.ImportsHKX = value, () => OnAnimationMotionChanged(animation));
+
+                DisplayTimeActField(entry, "TAE_PropertiesWindow_Animation_Import_HKX_Source", standard.ImportHKXSourceAnimID,
+                    value => $"{value}", int.TryParse, value => standard.ImportHKXSourceAnimID = value,
+                    onChanged: () => OnAnimationMotionChanged(animation));
+
+                // Not stored in the Demon's Souls formats
+                if (tae.Format is not (TAE.TAEFormat.DES or TAE.TAEFormat.DESR))
+                {
+                    DisplayTimeActCheckbox(entry, "TAE_PropertiesWindow_Animation_Allow_Delay_Load", standard.AllowDelayLoad,
+                        value => standard.AllowDelayLoad = value);
+                }
+                break;
+
+            case TAE.Animation.AnimMiniHeader.ImportOtherAnim import:
+                DisplayTimeActField(entry, "TAE_PropertiesWindow_Animation_Import_From", import.ImportFromAnimID,
+                    value => $"{value}", int.TryParse, value => import.ImportFromAnimID = value,
+                    onChanged: () => OnAnimationMotionChanged(animation));
+
+                DisplayTimeActField(entry, "TAE_PropertiesWindow_Animation_Import_Unknown", import.Unknown,
+                    value => $"{value}", int.TryParse, value => import.Unknown = value);
+                break;
+        }
+
+        ImGui.EndDisabled();
+
+        ImGui.EndTable();
+    }
+
+    /// <summary>
+    /// Switching the type replaces the mini header with a new one, so undoing it brings back the old values
+    /// </summary>
+    private void DisplayMiniHeaderType(TimeActEntry entry, TAE.Animation animation)
+    {
+        var nameKey = "TAE_PropertiesWindow_Animation_Mini_Header_Type";
+        var name = LOC.Get(nameKey);
+
+        if (!EditorFilters.IsMatch(PropertiesFilter, name, ExactPropertiesFilter))
+            return;
+
+        BeginRow(name);
+
+        var current = animation.MiniHeader;
+
+        ImGui.SetNextItemWidth(-1);
+
+        if (ImGui.BeginCombo($"##{nameKey}", GetMiniHeaderTypeName(current?.Type)))
+        {
+            foreach (var type in Enum.GetValues<TAE.Animation.MiniHeaderType>())
+            {
+                if (ImGui.Selectable(GetMiniHeaderTypeName(type), current?.Type == type) && current?.Type != type)
+                {
+                    TAE.Animation.AnimMiniHeader header = type is TAE.Animation.MiniHeaderType.Standard
+                        ? new TAE.Animation.AnimMiniHeader.Standard()
+                        : new TAE.Animation.AnimMiniHeader.ImportOtherAnim();
+
+                    View.ViewportActionManager.ExecuteAction(new TimeActSetPropertyAction<TAE.Animation.AnimMiniHeader>(
+                        entry, value => animation.MiniHeader = value, current, header,
+                        () => OnAnimationMotionChanged(animation)));
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+
+        GUI.Tooltip(LOC.Get($"{nameKey}_TT"));
+    }
+
+    private static string GetMiniHeaderTypeName(TAE.Animation.MiniHeaderType? type)
+    {
+        return type switch
+        {
+            TAE.Animation.MiniHeaderType.Standard => LOC.Get("TAE_PropertiesWindow_Animation_Mini_Header_Standard"),
+            TAE.Animation.MiniHeaderType.ImportOtherAnim => LOC.Get("TAE_PropertiesWindow_Animation_Mini_Header_Import"),
+            _ => ""
+        };
+    }
+
+    /// <summary>
+    /// The motion that plays is resolved from the ID and mini header, so it is looked up again
+    /// </summary>
+    private void OnAnimationMotionChanged(TAE.Animation animation)
+    {
+        if (View.Selection.SelectedAnimation == animation)
+        {
+            View.Playback.OnAnimationChanged();
+        }
+    }
+
+    private static bool TryParseText(string text, out string value)
+    {
+        value = text ?? "";
+        return true;
+    }
+
+    private static string FormatFlags(byte[] flags)
+    {
+        return flags == null ? "" : string.Join(" ", flags.Select(e => $"{e:X2}"));
+    }
+
+    /// <summary>
+    /// The flags are always written as 8 bytes, typed as hex with or without spaces
+    /// </summary>
+    private static bool TryParseFlags(string text, out byte[] flags)
+    {
+        flags = null;
+
+        var hex = text.Replace(" ", "");
+
+        if (hex.Length != 16)
+            return false;
+
+        try
+        {
+            flags = Convert.FromHexString(hex);
+            return true;
+        }
+        catch (FormatException)
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// An empty name is left out of the file, as it is when the game has none
+    /// </summary>
+    private static bool TryParseName(string text, out string name)
+    {
+        name = string.IsNullOrEmpty(text) ? null : text;
+        return true;
     }
 
     private void DisplayTimeField(TAE.Event ev, string nameKey, float value, Func<float, (float Start, float End)> apply)
