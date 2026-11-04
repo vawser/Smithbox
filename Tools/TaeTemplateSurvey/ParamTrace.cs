@@ -266,6 +266,24 @@ public static class ParamTrace
     /// The modules of a character's bag (chr+190h). Offsets read from the bag builder at 0x1403FE190, with
     /// the slots it doesn't create directly taken from fromsoftware-rs ChrInsModuleContainer.
     /// </summary>
+    public static long BagOffset = 0x190;
+
+    /// <summary>
+    /// Nightreign keeps the bag at chr+1B8h, with its own modules after +118h (read from its builders at
+    /// 0x1403DE8C0 and 0x140673220)
+    /// </summary>
+    public static void UseNightreign()
+    {
+        BagOffset = 0x1B8;
+        foreach (var (o, n) in new (long, string)[] {
+            (0x118, "GrassHit"), (0x128, "CliffWind"), (0x138, "Hookshot"), (0x140, "WallEdgeLanding"), (0x148, "Skill"),
+            (0x150, "PlayerResonance"), (0x158, "JamaisVu"), (0x160, "NecroBuddy"), (0x168, "RebornBuddy"), (0x170, "BirdMove"),
+            (0x178, "ThrowCounter"), (0x180, "MixcraftMagic"), (0x188, "PostureControl"), (0x190, "Majyuu"),
+            (0x1A0, "FatalDamageDodge"), (0x1A8, "PlayerAnalyzeCam"), (0x1B0, "PlayerJoint"), (0x1B8, "Trans"), (0x1C0, "BonePile") })
+            Modules[o] = n;
+        Modules.Remove(0x120); Modules.Remove(0x130);
+    }
+
     public static readonly Dictionary<long, string> Modules = new()
     {
         [0x00] = "Data", [0x08] = "ActionFlag", [0x10] = "BehaviorScript", [0x18] = "TimeAct", [0x20] = "Resist",
@@ -302,7 +320,7 @@ public static class ParamTrace
         return bt.Kind switch
         {
             Kind.This when d == 0x18 => new Tag(Kind.Chr, 0),
-            Kind.Chr when d == 0x190 => new Tag(Kind.Bag, 0),
+            Kind.Chr when d == BagOffset => new Tag(Kind.Bag, 0),
             Kind.Chr when d == 0 => VtblOf(bt),
             Kind.Chr => new Tag(Kind.ChrSub, d),
             Kind.Bag => new Tag(Kind.Module, d),

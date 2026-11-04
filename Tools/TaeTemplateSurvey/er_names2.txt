@@ -36,3 +36,6 @@ E 607 SetAdditiveAnimIfSpEffect
 E 609 SetAdditiveAnim2IfSpEffect
 # 198 copies its fields into the ModelParamModifier module
 E 198 ModelParamModifier
+# Found while doing NR: 304 +02 is a byte (movzx), and the data's 768 is +03 = 3. NR passes it to the same function as
+# the other Source fields. +03 isn't read.
+S 304 02 u8:Source u8:Unused03

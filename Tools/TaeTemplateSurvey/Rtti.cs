@@ -222,18 +222,21 @@ public static class Rtti
         decoder.IP = builder;
         ulong lastCreate = 0;
         long slot = -1;
+        string inlineClass = null;
 
         for (var i = 0; i < 1200; i++)
         {
             decoder.Decode(out var ins);
             if (ins.Mnemonic == Mnemonic.Mov && ins.Op0Kind == OpKind.Register && ins.Op0Register == Register.EDX && ins.Op1Kind == OpKind.Immediate32) slot = ins.Immediate32;
             if (ins.Mnemonic == Mnemonic.Xor && ins.Op0Kind == OpKind.Register && ins.Op0Register == Register.EDX && ins.Op1Register == Register.EDX) slot = 0;
+            if (ins.Mnemonic == Mnemonic.Lea && ins.IsIPRelativeMemoryOperand && VtableClass.TryGetValue(ins.IPRelativeMemoryAddress, out var ic) && ic.EndsWith("Module")) inlineClass = ic;
             if (ins.Mnemonic != Mnemonic.Call || ins.Op0Kind != OpKind.NearBranch64) continue;
             var t = ins.NearBranchTarget;
             if (t == setSlot)
             {
-                var cls = FindVtable(lastCreate, 3, new HashSet<ulong>()) ?? $"? (create 0x{lastCreate:X})";
+                var cls = inlineClass ?? FindVtable(lastCreate, 3, new HashSet<ulong>()) ?? $"? (create 0x{lastCreate:X})";
                 result[(ulong)slot * 8] = cls;
+                inlineClass = null;
                 continue;
             }
             if (!skip.Contains(t)) lastCreate = t;
@@ -264,7 +267,7 @@ public static class Rtti
         return null;
     }
 
-    static Func<ulong, ulong> ParamTraceFunctions()
+    public static Func<ulong, ulong> ParamTraceFunctions()
     {
         var pdata = ExeScan.Sections.First(s => s.Name == ".pdata");
         var list = new List<(uint, uint)>();

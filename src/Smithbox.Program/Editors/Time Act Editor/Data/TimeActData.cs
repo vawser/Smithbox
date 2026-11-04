@@ -152,7 +152,10 @@ public class TimeActData : IDisposable
             ProjectType.SDT => "TAE.Template.SDT.xml",
             ProjectType.ER => "TAE.Template.ER.xml",
             ProjectType.AC6 => "TAE.Template.AC6.xml",
-            ProjectType.NR or ProjectType.DB or ProjectType.DB_NT => "TAE.Template.ERNR.xml",
+            ProjectType.NR => "TAE.Template.ERNR.xml",
+            // Duskbloods keeps the template it shared with Nightreign before that was checked against nightreign.exe,
+            // as its own time acts don't fit the Nightreign layouts
+            ProjectType.DB or ProjectType.DB_NT => "TAE.Template.DB.xml",
             _ => null
         };
     }

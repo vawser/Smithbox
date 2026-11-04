@@ -25,10 +25,39 @@ public static class Apply
 
             try
             {
+                if (p[0] == "V")
+                {
+                    // V id Name type:Name ... : a new event, after the last one with a lower ID
+                    var id = int.Parse(p[1]);
+                    if (events.ContainsKey(id)) throw new Exception("event exists");
+                    var nev = doc.CreateElement("action");
+                    nev.SetAttribute("id", id.ToString());
+                    nev.SetAttribute("name", p[2]);
+                    AppendFields(doc, nev, p.Skip(3), "\n    ");
+                    nev.AppendChild(doc.CreateWhitespace("\n  "));
+                    var before = events.Where(e => e.Key < id).OrderBy(e => e.Key).LastOrDefault().Value;
+                    var root = doc.DocumentElement;
+                    if (before != null) { root.InsertAfter(nev, before); root.InsertAfter(doc.CreateWhitespace("\n  "), before); }
+                    else { root.PrependChild(nev); root.PrependChild(doc.CreateWhitespace("\n  ")); }
+                    events[id] = nev;
+                    continue;
+                }
+
                 var ev = events[int.Parse(p[1])];
 
                 switch (p[0])
                 {
+                    case "A":
+                    {
+                        // A id type:Name ... : fields added at the end of an event
+                        var last = ev.ChildNodes.OfType<XmlElement>().Last();
+                        var indent = last.PreviousSibling is XmlWhitespace ws ? ws.Value : "\n    ";
+                        var tail = ev.LastChild;
+                        var holder = doc.CreateElement("x");
+                        AppendFields(doc, holder, p.Skip(2), indent);
+                        foreach (XmlNode n in holder.ChildNodes.Cast<XmlNode>().ToList()) ev.InsertBefore(n, tail is XmlWhitespace ? tail : null);
+                        break;
+                    }
                     case "E":
                         ev.SetAttribute("name", string.Join(' ', p.Skip(2)));
                         break;
@@ -111,6 +140,19 @@ public static class Apply
 
         doc.Save(templatePath);
         Console.WriteLine($"applied, {errors} failed");
+    }
+
+    static void AppendFields(XmlDocument doc, XmlElement parent, IEnumerable<string> specs, string indent)
+    {
+        foreach (var s in specs)
+        {
+            var part = s.Split(':', 2);
+            var n = doc.CreateElement(part[0]);
+            if (part.Length > 1 && part[1] == "=0") n.SetAttribute("assert", "0");
+            else if (part.Length > 1 && part[1].Length > 0) n.SetAttribute("name", part[1]);
+            parent.AppendChild(doc.CreateWhitespace(indent));
+            parent.AppendChild(n);
+        }
     }
 
     static XmlElement FieldAt(XmlElement ev, int offset)

@@ -74,8 +74,9 @@ else if (mode == "disasm")
 }
 else if (mode == "trace")
 {
+    if (args.Contains("NR")) ParamTrace.UseNightreign();
     // trace <exe> <dispatcher> <template> <cache> <out> [type]
-    ExeReport.Run(args[1], args[2].Split(",").Select(a => Convert.ToUInt64(a, 16)).ToArray(), args[3], args[4], args[5], args.Length > 6 ? int.Parse(args[6]) : -1);
+    ExeReport.Run(args[1], args[2].Split(",").Select(a => Convert.ToUInt64(a, 16)).ToArray(), args[3], args[4], args[5], args.Length > 6 && int.TryParse(args[6], out var only) ? only : -1);
 }
 else if (mode == "sizecheck")
 {
@@ -89,7 +90,9 @@ else if (mode == "modules")
 {
     ExeScan.Load(args[1]);
     Rtti.Load();
-    foreach (var (o, c) in Rtti.BagSlots(0x1403FE190, 0x1404C5A10, new ulong[] { 0x14043D370, 0x14043D380, 0x141EBD430, 0x1404C5960 }).OrderBy(x => x.Key)) Console.WriteLine($"  +{o:X3} {c}");
+    // modules <exe> : finds the builders; modules <exe> <builder> <setSlot> <skip,...> : reads the slots
+    if (args.Length < 4) Rtti.ModuleBag();
+    else foreach (var (o, c) in Rtti.BagSlots(Convert.ToUInt64(args[2], 16), Convert.ToUInt64(args[3], 16), args.Length > 4 ? args[4].Split(",").Select(a => Convert.ToUInt64(a, 16)).ToArray() : new ulong[0]).OrderBy(x => x.Key)) Console.WriteLine($"  +{o:X3} {c}");
 }
 else if (mode == "vt")
 {
@@ -109,6 +112,24 @@ else if (mode == "apply")
 {
     Apply.Run(args[1], args[2]);
 }
+else if (mode == "func")
+{
+    ExeScan.Load(args[1]);
+    var f = Rtti.ParamTraceFunctions();
+    foreach (var a in args.Skip(2)) Console.WriteLine($"{a} -> {f(Convert.ToUInt64(a, 16)):X}");
+}
+else if (mode == "findcmp")
+{
+    FindCmp.Run(args[1], long.Parse(args[2]));
+}
+else if (mode == "layoutdiff")
+{
+    LayoutDiff.Run(args[1], args[2]);
+}
+else if (mode == "port")
+{
+    Port.Run(args[1], args[2], args[3], args[4], args.Length > 5 ? args[5] : null);
+}
 else if (mode == "exe")
 {
     ExeScan.Run(args[1], args[2], args.Length > 3 ? args[3] : null);
@@ -117,6 +138,7 @@ else if (mode == "exe")
 static VirtualFileSystem BuildFS(Game game, string root)
 {
     var real = new RealVirtualFileSystem(root, false);
+    if (game is Game.DB or Game.DB_NT or Game.BB or Game.DES) return real;
     var binder = ArchiveBinderVirtualFileSystem.FromGameFolder(root, game);
     return new CompundVirtualFileSystem([binder, real]);
 }

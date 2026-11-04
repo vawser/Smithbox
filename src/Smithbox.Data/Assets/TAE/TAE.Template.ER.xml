@@ -1158,7 +1158,8 @@
   </action>
   <action id="304" name="ThrowAttackBehavior">
     <s16 name="Unk00" />
-    <s16 name="Index" />
+    <u8 name="Source" />
+    <u8 name="Unused03" />
     <s32 name="BehaviorJudgeID" />
     <s32 assert="0" />
     <s32 assert="0" />
