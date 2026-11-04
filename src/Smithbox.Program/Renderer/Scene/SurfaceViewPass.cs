@@ -60,14 +60,31 @@ public class SurfaceViewPass : PostProcessPass
         ShowsDisplayValues = false;
     }
 
+    /// <summary>
+    ///     The view shown this frame: the normals under Texturing (Normal), otherwise the Rendering tool's choice,
+    ///     which only applies in Game mode as the rest of its settings do
+    /// </summary>
+    public static SurfaceView CurrentView
+    {
+        get
+        {
+            if (RenderMode.Texturing == ViewportTexturingMode.Normal)
+            {
+                return SurfaceView.Normals;
+            }
+
+            return RenderMode.PostEffects ? (SurfaceView)CFG.Current.Viewport_Post_Surface_View : SurfaceView.None;
+        }
+    }
+
     public override bool IsActive(GparamLighting lighting)
     {
-        return (SurfaceView)CFG.Current.Viewport_Post_Surface_View != SurfaceView.None;
+        return CurrentView != SurfaceView.None;
     }
 
     public override unsafe void Run(GraphicsDevice gd, CommandList cl, PostProcessFrame frame)
     {
-        var view = (SurfaceView)CFG.Current.Viewport_Post_Surface_View;
+        var view = CurrentView;
 
         EnsureResources(gd, frame.Target);
 

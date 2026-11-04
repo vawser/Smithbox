@@ -468,9 +468,18 @@ public class ViewportMenu
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Culling_TT"));
 
+            ImGui.Separator();
+
+            RenderModeMenu();
+
+            ImGui.Separator();
+
             // The same switches as the Rendering tool's tabs; the pipeline reads them every frame. GI and map
-            // lighting are only offered where the viewport has them (AC6, ER, NR).
+            // lighting are only offered where the viewport has them (AC6, ER, NR). Editor mode overrides them all,
+            // so they are shown but can't be changed there.
             var pipeline = Parent.ViewPipeline;
+
+            ImGui.BeginDisabled(!RenderMode.IsGame);
 
             if (pipeline?.UseIrradianceVolumes == true)
             {
@@ -495,6 +504,8 @@ public class ViewportMenu
                 CFG.Current.Viewport_Shadows = !CFG.Current.Viewport_Shadows;
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Shadows_TT"));
+
+            ImGui.EndDisabled();
 
             if (Owner is MapUniverse mapUniverse)
             {
@@ -560,6 +571,43 @@ public class ViewportMenu
 
             ImGui.EndMenu();
         }
+    }
+
+    /// <summary>
+    ///     The render mode (Editor's fullbright or Game's full lighting) and what the textured image shows, each a
+    ///     pair of items of which one is checked
+    /// </summary>
+    private void RenderModeMenu()
+    {
+        var mode = RenderMode.Current;
+
+        if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Render_Mode_Editor")}##renderModeEditor", "", mode == ViewportRenderMode.Editor))
+        {
+            CFG.Current.Viewport_Render_Mode = (int)ViewportRenderMode.Editor;
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Render_Mode_Editor_TT"));
+
+        if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Render_Mode_Game")}##renderModeGame", "", mode == ViewportRenderMode.Game))
+        {
+            CFG.Current.Viewport_Render_Mode = (int)ViewportRenderMode.Game;
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Render_Mode_Game_TT"));
+
+        ImGui.Separator();
+
+        var texturing = RenderMode.Texturing;
+
+        if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Texturing_Diffuse")}##texturingDiffuse", "", texturing == ViewportTexturingMode.Diffuse))
+        {
+            CFG.Current.Viewport_Texturing_Mode = (int)ViewportTexturingMode.Diffuse;
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Texturing_Diffuse_TT"));
+
+        if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Texturing_Normal")}##texturingNormal", "", texturing == ViewportTexturingMode.Normal))
+        {
+            CFG.Current.Viewport_Texturing_Mode = (int)ViewportTexturingMode.Normal;
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Texturing_Normal_TT"));
     }
 
     private void ModelSettingsMenu(Action updateDisplayNodes)

@@ -1873,6 +1873,13 @@ void main()
 		litColor = vec3(g_probeSunMask);
 	}
 
+	// Editor mode's fullbright, see RenderMode: the albedo as it is, lit by nothing
+	bool fullbright = sceneparam.lightingDebugView == 4u;
+	if (fullbright)
+	{
+		litColor = albedo;
+	}
+
 	if (c_surface == SURFACE_UNLIT && HasFeature(FEATURE_UNLIT))
 	{
 		litColor = diffuseColor.rgb * diffuseAlpha.rgb * sceneparam.sceneBrightness * sceneparam.emissiveMapMult;
@@ -1901,15 +1908,16 @@ void main()
 	// Materials without an emissive texture have the black default, which is index 2.
 	vec3 glow = vec3(0.0);
 
+	// Fullbright leaves it out, as it would only wash out the albedo with nothing to tone map it
 	uint emissiveTex = MaterialValue(ROW_EXTRA, 1);
-	if (emissiveTex != 2u && HasFeature(FEATURE_EMISSIVE))
+	if (emissiveTex != 2u && HasFeature(FEATURE_EMISSIVE) && !fullbright)
 	{
 		effectsData effects = effectsdata[g_mat + 2u];
 		vec3 emissive = SampleAt(emissiveTex, 0, effects.emissiveTiling.xy, effects.emissiveTiling.zw).rgb;
 		glow += emissive * effects.emissiveColor.xyz * sceneparam.emissiveMapMult;
 	}
 
-	if (c_magma && HasFeature(FEATURE_MAGMA))
+	if (c_magma && HasFeature(FEATURE_MAGMA) && !fullbright)
 	{
 		glow += MagmaGlow() * sceneparam.emissiveMapMult;
 	}

@@ -200,6 +200,10 @@ public class VulkanViewport : IViewport
                     ? ViewPipeline.PostProcess.Run(d, cl, ViewPipeline.Target, frameLighting)
                     : null;
 
+                // A debug view of display values is shown as it is, and so is Editor mode's fullbright albedo, which
+                // no exposure or curve should change
+                var passThrough = ViewPipeline.SurfaceView.ShowsDisplayValues || !RenderMode.IsGame;
+
                 // With FXAA the tone map goes into its image first, and FXAA takes that to the screen
                 var fxaa = IsViewportVisible && ViewPipeline.Fxaa.IsActive(frameLighting);
 
@@ -207,7 +211,7 @@ public class VulkanViewport : IViewport
                 {
                     ViewPipeline.Fxaa.BeginImage(d, cl, ViewPipeline.Target);
                     ViewPipeline.ToneMap.Draw(d, cl, toneMapSource, FxaaPass.ImageOutputs, Vector2.Zero,
-                        frameLighting, ViewPipeline.AutoExposure, ViewPipeline.SurfaceView.ShowsDisplayValues);
+                        frameLighting, ViewPipeline.AutoExposure, passThrough);
                 }
 
                 cl.SetFramebuffer(Device.SwapchainFramebuffer);
@@ -223,7 +227,7 @@ public class VulkanViewport : IViewport
                     else
                     {
                         ViewPipeline.ToneMap.Draw(d, cl, toneMapSource, Device.SwapchainFramebuffer.OutputDescription,
-                            offset, frameLighting, ViewPipeline.AutoExposure, ViewPipeline.SurfaceView.ShowsDisplayValues);
+                            offset, frameLighting, ViewPipeline.AutoExposure, passThrough);
                     }
                 }
                 IsViewportVisible = false;

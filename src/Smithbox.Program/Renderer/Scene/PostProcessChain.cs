@@ -100,16 +100,19 @@ public class PostProcessChain
 
         var source = target.Color;
 
-        if (source == null || !CFG.Current.Viewport_Post_Effects)
+        if (source == null)
         {
             return source;
         }
 
+        // The surface view is a debug view, not an effect, so it runs whatever the effects switch and render mode
+        // say: Texturing (Normal) is it, and is offered in Editor mode too
+        var effects = RenderMode.PostEffects;
         var next = 0;
 
         foreach (var pass in Passes)
         {
-            if (!pass.IsActive(lighting))
+            if (!(effects || pass is SurfaceViewPass) || !pass.IsActive(lighting))
             {
                 continue;
             }

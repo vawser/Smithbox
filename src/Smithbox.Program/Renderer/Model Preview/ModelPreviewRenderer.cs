@@ -144,7 +144,8 @@ public sealed class ModelPreviewRenderer
             {
                 CaptureThisFrame = false;
                 cl.SetFullViewport(0);
-                Pipeline.ToneMap.Draw(d, cl, Pipeline.Target.Color, Framebuffer.OutputDescription, Vector2.Zero, null);
+                Pipeline.ToneMap.Draw(d, cl, Pipeline.Target.Color, Framebuffer.OutputDescription, Vector2.Zero, null,
+                    passThrough: !RenderMode.IsGame);
                 cl.CopyTexture(ColorTarget, PreviewTexture);
             }
         });

@@ -877,6 +877,38 @@
       "Text": "Whether to render textures in the viewport."
     },
     {
+      "Key": "VIEWPORT_Menubar_Setting_Render_Mode_Editor",
+      "Text": "Rendering Mode: Editor"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Render_Mode_Editor_TT",
+      "Text": "Draws surfaces fullbright, with their textures unlit. Map lighting, global illumination, shadows, fog and post effects are turned off, whatever the Rendering tool says."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Render_Mode_Game",
+      "Text": "Rendering Mode: Game"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Render_Mode_Game_TT",
+      "Text": "Lights the scene as the game does. Map lighting, global illumination, shadows, fog and post effects follow the settings in the Rendering tool."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Texturing_Diffuse",
+      "Text": "Texturing (Diffuse)"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Texturing_Diffuse_TT",
+      "Text": "Shows the textured image."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Texturing_Normal",
+      "Text": "Texturing (Normal)"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Texturing_Normal_TT",
+      "Text": "Shows the surfaces' normals in place of the image: the Normals surface view."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Culling",
       "Text": "Enable Culling"
     },

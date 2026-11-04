@@ -37,6 +37,6 @@
     - Add toggle between Texturing (Diffuse) and Texturing (Normal)
         - Texturing (Normal) uses the Normals image output
     - Refine the viewport rendering menu
-    - See what can be applied backwards to SDT/BB/DS3/DS2/DS1R
+    
     - Fix decal textures for ER
     - TAA shimmering (add motion vectors?)

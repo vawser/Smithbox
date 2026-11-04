@@ -1,8 +1,8 @@
 #----------------------------------------------------
 # Rendering
 #----------------------------------------------------
-- DS3: random crash on High Wall load (flver vertex)
-- NR: random crash on Roundtable Hold (flver vertex)
+- See what can be applied backwards to SDT/BB/DS3/DS2/DS1R
+- Work on refining the DS3 rendering elements (too dark in Game mode)
 
 - DS3: some chrs missing textures: c1280
 - DS3: non-map external resource usage: m903400

@@ -58,13 +58,20 @@ public static class MaterialClock
     }
 
     /// <summary>
-    /// The features that are switched on.
+    /// The features that are switched on. Editor mode draws materials plainly whatever the Materials tab says, see
+    /// <see cref="RenderMode" />, except for layer blending: without it blended terrain shows only its base layer,
+    /// which hides what the ground actually looks like.
     /// </summary>
     public static MaterialFeatures Features
     {
         get
         {
             var current = MaterialFeatures.None;
+
+            if (!RenderMode.IsGame)
+            {
+                return CFG.Current.Viewport_Material_Layer_Blending ? MaterialFeatures.LayerBlending : current;
+            }
 
             void Add(bool enabled, MaterialFeatures feature)
             {
@@ -98,7 +105,8 @@ public static class MaterialClock
     {
         get
         {
-            if (CFG.Current.Viewport_Enable_Material_Animation)
+            // Paused in Editor mode, so Game mode picks the animation up where it was left
+            if (CFG.Current.Viewport_Enable_Material_Animation && RenderMode.IsGame)
             {
                 Clock.Start();
             }

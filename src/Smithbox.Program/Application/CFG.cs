@@ -1184,6 +1184,14 @@ public class CFG
     public float Viewport_Frame_Rate = 60.0f;
     public bool Viewport_Enable_Rendering = true;
     public bool Viewport_Enable_Texturing = true;
+
+    // 0 Editor: fullbright, with the lighting, shadows, GI, fog and screen effects off. 1 Game: those follow the
+    // Rendering tool's settings. See RenderMode.
+    public int Viewport_Render_Mode = 0;
+
+    // 0 Diffuse: the textured image. 1 Normal: the surface's normals in its place, the Normals surface view.
+    public int Viewport_Texturing_Mode = 0;
+
     public bool Viewport_Enable_Material_Animation = true;
     public float Viewport_Wind_Strength = 1.0f;
     public float Viewport_Wind_Direction = 45.0f;

@@ -77,7 +77,7 @@ public class TaaPass : PostProcessPass
     public static bool Wants(GparamLighting lighting)
     {
         var aa = lighting?.PostEffects.AntiAlias ?? Defaults;
-        return CFG.Current.Viewport_Post_Effects && CFG.Current.Viewport_Post_Taa && aa.Enabled && aa.Type == TaaType;
+        return RenderMode.PostEffects && CFG.Current.Viewport_Post_Taa && aa.Enabled && aa.Type == TaaType;
     }
 
     /// <summary>

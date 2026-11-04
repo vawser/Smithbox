@@ -133,7 +133,7 @@ public class ToneMapPass
 
         // The LUTs either side of the time of day; with only one found, both are it
         var grading = lighting?.PostEffects.ColorGrading;
-        var grade = !passThrough && CFG.Current.Viewport_Post_Effects && CFG.Current.Viewport_Post_Color_Grading &&
+        var grade = !passThrough && RenderMode.PostEffects && CFG.Current.Viewport_Post_Color_Grading &&
                     grading is { Enabled: true, Luts: not null } && (grading.Slot >= 0 || grading.NextSlot >= 0);
         var slot = grade ? grading.Slot >= 0 ? grading.Slot : grading.NextSlot : 0;
         var nextSlot = grade ? grading.NextSlot >= 0 ? grading.NextSlot : slot : 0;

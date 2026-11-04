@@ -99,7 +99,7 @@ public class VolumetricFogPass
 
     public static bool IsActive(GparamLighting lighting)
     {
-        return CFG.Current.Viewport_Post_Effects && CFG.Current.Viewport_Post_Volumetric_Fog &&
+        return RenderMode.PostEffects && CFG.Current.Viewport_Post_Volumetric_Fog &&
                lighting is { PostEffects.VolumetricFog.Enabled: true };
     }
 

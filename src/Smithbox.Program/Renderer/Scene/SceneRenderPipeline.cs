@@ -137,8 +137,11 @@ public class SceneRenderPipeline
     /// </summary>
     public bool UseMapLights = false;
 
-    /// <summary>The map lighting this pipeline is lit with this frame, or null if it uses its own settings</summary>
-    public GparamLighting ActiveMapLighting => UseMapLighting && CFG.Current.Viewport_Map_Lighting
+    /// <summary>
+    ///     The map lighting this pipeline is lit with this frame, or null if it uses its own settings. None in Editor
+    ///     mode, which takes the fog, background and screen effects that follow from it along.
+    /// </summary>
+    public GparamLighting ActiveMapLighting => UseMapLighting && CFG.Current.Viewport_Map_Lighting && RenderMode.IsGame
         ? MapLightingSource != null ? MapLightingSource() : SceneRenderer.MapLighting
         : null;
 
@@ -396,7 +399,8 @@ public class SceneRenderPipeline
         var navVolumeSliceHeight = NavVolumeSlice.Height;
         var navVolumeSliceFlags = NavVolumeSlice.Flags;
         var volumeTable = ActiveVolumeTable;
-        var useIrradianceVolumes = UseIrradianceVolumes && CFG.Current.Viewport_GI_Enable;
+        var gameMode = RenderMode.IsGame;
+        var useIrradianceVolumes = UseIrradianceVolumes && CFG.Current.Viewport_GI_Enable && gameMode;
         var irradianceExposure = CFG.Current.Viewport_GI_Intensity *
             (CFG.Current.Viewport_GI_Auto_Exposure ? volumeTable.AutoExposure : 1.0f);
         var irradianceFlags = CFG.Current.Viewport_GI_Normalize_Reflections ? 1u : 0u;
@@ -495,7 +499,7 @@ public class SceneRenderPipeline
         // The cascades follow the sun the shaders light with, and the GPARAM's Shadows group
         var sunDirection = mapLighting != null ? mapLightDirection : SceneParams.LightDirection;
         var sunIntensity = mapLighting != null ? mapSunColor.W : SceneParams.SunColor.W;
-        var castShadows = CFG.Current.Viewport_Shadows && sunIntensity > 0.0f;
+        var castShadows = CFG.Current.Viewport_Shadows && sunIntensity > 0.0f && gameMode;
 
         Shadows?.Update(castShadows, view, proj, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z),
             mapLighting?.Shadow ?? DefaultShadow);
@@ -509,7 +513,7 @@ public class SceneRenderPipeline
 
         // Wet surfaces, from the chosen weather's Wet values
         var wet = mapLighting?.PostEffects.Wet;
-        var wetness = CFG.Current.Viewport_Post_Effects && CFG.Current.Viewport_Post_Wet && wet != null
+        var wetness = RenderMode.PostEffects && CFG.Current.Viewport_Post_Wet && wet != null
             ? Math.Clamp(wet.Wetness, 0.0f, 1.0f)
             : 0.0f;
         var wetAlbedo = wet != null
@@ -568,7 +572,9 @@ public class SceneRenderPipeline
             SceneParams.MapLightStart = SceneRenderer.MapLights.Start;
             SceneParams.MapLightCount = UseMapLights ? SceneRenderer.MapLights.Count : 0;
             SceneParams.LightmapStart = SceneRenderer.Lightmaps?.Start ?? 0;
-            SceneParams.LightingDebugView = (uint)Math.Clamp(CFG.Current.Viewport_Lighting_Debug_View, 0, 3);
+            SceneParams.LightingDebugView = gameMode
+                ? (uint)Math.Clamp(CFG.Current.Viewport_Lighting_Debug_View, 0, 3)
+                : RenderMode.FullbrightDebugView;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)

@@ -1353,6 +1353,11 @@ public class ViewportRenderingTool
     /// </summary>
     private void MaterialsTab()
     {
+        // Editor mode switches the material features off, all but layer blending, and pauses the animation, so the
+        // other toggles and the wind's settings can't change anything there. The grass is geometry, so its density
+        // still applies.
+        ImGui.BeginDisabled(!RenderMode.IsGame);
+
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Animation", ref CFG.Current.Viewport_Enable_Material_Animation);
 
         ImGui.Separator();
@@ -1364,7 +1369,11 @@ public class ViewportRenderingTool
 
         ImGui.Separator();
 
+        // Layer blending applies in Editor mode too, so it stays usable there
+        ImGui.EndDisabled();
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Layer_Blending", ref CFG.Current.Viewport_Material_Layer_Blending);
+        ImGui.BeginDisabled(!RenderMode.IsGame);
+
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Overlays", ref CFG.Current.Viewport_Material_Overlays);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Magma", ref CFG.Current.Viewport_Material_Magma);
         MaterialToggle("VIEWPORT_Menubar_Setting_Material_Emissive", ref CFG.Current.Viewport_Material_Emissive);
@@ -1385,6 +1394,8 @@ public class ViewportRenderingTool
         DPI.ApplyInputWidth();
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Setting_Wind_Direction")}##windDirection", ref CFG.Current.Viewport_Wind_Direction, 0.0f, 360.0f);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wind_Direction_TT"));
+
+        ImGui.EndDisabled();
 
         DPI.ApplyInputWidth();
         ImGui.SliderFloat("Grass Density", ref GrassDensity, 0.1f, 4f);
