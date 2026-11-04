@@ -114,6 +114,9 @@ namespace Veldrid
 
                 vkGetQueueCheckpointDataNV(_queues[i], &count, data);
 
+                long lowest = long.MaxValue;
+                long highest = 0;
+
                 for (uint c = 0; c < count; c++)
                 {
                     long id = (long)data[c].pCheckpointMarker;
@@ -121,6 +124,23 @@ namespace Veldrid
                     string name = stillKnown ? _checkpointNames[id % MaxCheckpoints] : "(overwritten)";
 
                     report.AppendLine($"    #{id} at {data[c].stage}: {name}");
+
+                    if (id > 0)
+                    {
+                        lowest = Math.Min(lowest, id);
+                        highest = Math.Max(highest, id);
+                    }
+                }
+
+                // Every checkpoint between the last one finished and the last one started, as one of those was
+                // executing when the device was lost
+                if (highest > lowest && highest - lowest <= 256 && _nextCheckpoint - lowest < MaxCheckpoints)
+                {
+                    report.AppendLine("    In flight:");
+                    for (long id = lowest + 1; id < highest; id++)
+                    {
+                        report.AppendLine($"      #{id}: {_checkpointNames[id % MaxCheckpoints]}");
+                    }
                 }
             }
         }

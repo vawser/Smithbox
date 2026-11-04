@@ -52,7 +52,8 @@ public class SsrPass : PostProcessPass
     /// <summary>The height the step sizes in pixels are taken to be for</summary>
     private const float ReferenceHeight = 1080.0f;
 
-    private static readonly GparamSsr Defaults = new();
+    // Off when there is no GPARAM in the games before Sekiro, which have no SSR
+    private static GparamSsr Defaults => GparamProfile.Current.Defaults.Ssr;
 
     private static ResourceLayout Layout;
     private static Pipeline Pipeline;

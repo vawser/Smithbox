@@ -31,7 +31,8 @@ public class FxaaPass
     /// <summary>The outputs of <see cref="Framebuffer" />, which the tone map draws to</summary>
     public static readonly OutputDescription ImageOutputs = new(null, new OutputAttachmentDescription(ImageFormat));
 
-    private static readonly GparamAntiAlias DefaultSettings = new();
+    // The game's own when there is no GPARAM: type 4 (FXAA) for those before Sekiro
+    private static GparamAntiAlias DefaultSettings => GparamProfile.Current.Defaults.AntiAlias;
 
     private static readonly Dictionary<OutputDescription, Pipeline> Pipelines = new();
     private static ResourceLayout Layout;

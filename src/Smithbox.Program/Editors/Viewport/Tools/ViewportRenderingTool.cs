@@ -892,8 +892,11 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Map_Lighting_Hours, 0.0f, 24.0f, "%.2f");
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Hours_TT"));
 
-        // The timezones' keys, as the game's cutscenes pick them
-        for (var i = 0; i < GparamLighting.TimeKeys.Length; i++)
+        // The timezones' keys, as the game's cutscenes pick them. Sekiro keys its own hours (0, 2, 4, 6, 12, 18) and
+        // DS3 and BB have one key, so they have the slider alone.
+        var timezones = GparamProfile.For(project.Descriptor.ProjectType).HasTimezones ? GparamLighting.TimeKeys.Length : 0;
+
+        for (var i = 0; i < timezones; i++)
         {
             if (i > 0)
                 ImGui.SameLine();
@@ -981,9 +984,9 @@ public class ViewportRenderingTool
         var envMap = $"{scene.EnvMapSaturate:0.###}, {GparamLightingBank.FormatColor(scene.EnvMapScale)}";
         var background = GparamLightingBank.FormatColor(scene.BackgroundColor);
 
-        Row("VIEWPORT_Menubar_Map_Lighting_Row_Exposure", exposure, exposure, "GS Presents - ToneMap-Exposure");
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_Exposure", exposure, exposure, bank.Profile.ExposureField);
         Row("VIEWPORT_Menubar_Map_Lighting_Row_Auto_Exposure", autoExposure, autoExposure,
-            "GS Presents - ToneMap-Enable AutoExposure");
+            bank.Profile.AutoExposureField);
         Row("VIEWPORT_Menubar_Map_Lighting_Row_EnvMap", envMap, envMap, "EnvironmentConfig EnvMapColorConvert Saturate");
         Row("VIEWPORT_Menubar_Map_Lighting_Row_Background", background, background, "GS - BG Color-Data");
 
@@ -1202,7 +1205,7 @@ public class ViewportRenderingTool
                     $"{exposure.AdaptionMin:0.###}", $"{exposure.AdaptionMax:0.###}",
                     $"{exposure.LightAdaptSpeed:0.###}", $"{exposure.DarkAdaptSpeed:0.###}")
                 : off,
-            "GS Presents - ToneMap-Enable AutoExposure");
+            bank.Profile.AutoExposureField);
 
         var bloom = effects.Bloom;
         Row("VIEWPORT_Rendering_Post_Row_Bloom",

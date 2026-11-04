@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using Vortice.Vulkan;
 using static Vortice.Vulkan.Vulkan;
 using static Veldrid.VulkanUtil;
@@ -422,10 +423,15 @@ namespace Veldrid
         /// </summary>
         public void NextFrame()
         {
-            _currentFrame++;
-            if (_currentFrame >= MaxFramesInFlight)
-                _currentFrame = 0;
-            _perFrameData[_currentFrame].Reset(this);
+            // The next frame's slot is reset before it becomes current. Other threads retire resources into the
+            // current slot at any time, and the reset frees everything in its lists straight away, as the work that
+            // used them has finished. Were the slot made current first, a resource retired during the reset would
+            // be freed at once, while the frame before, which may still be drawing with it, is in flight.
+            int next = _currentFrame + 1;
+            if (next >= MaxFramesInFlight)
+                next = 0;
+            _perFrameData[next].Reset(this);
+            Volatile.Write(ref _currentFrame, next);
         }
         
         /// <summary>
@@ -1998,7 +2004,11 @@ namespace Veldrid
             {
                 synchronization2 = VkBool32.True,
                 dynamicRendering = VkBool32.True,
-                maintenance4 = VkBool32.True
+                maintenance4 = VkBool32.True,
+                // robustBufferAccess doesn't cover images. With this a texelFetch outside the image gives back
+                // zeros rather than reading past it and losing the device, as a pool slot can briefly hold a
+                // smaller texture (the 1x1 default) than the shader expects while its descriptor is written.
+                robustImageAccess = _physicalDeviceFeatures13.robustImageAccess
             };
             deviceFeatures11.pNext = &deviceFeatures12;
             deviceFeatures12.pNext = &deviceFeatures13;

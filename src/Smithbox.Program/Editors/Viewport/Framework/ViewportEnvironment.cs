@@ -75,7 +75,8 @@ public class ViewportEnvironment : IDisposable
 
     public bool CanUse()
     {
-        return LightingBank.CanUse();
+        // The map borrowed is one with irradiance volumes, so only the games with them, though more games have map lighting
+        return LightingBank.CanUse() && VolumeBank.CanUse();
     }
 
     /// <summary>

@@ -12,8 +12,9 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// Reads the lighting of Armored Core VI, Elden Ring and Nightreign maps from their GPARAMs: the sun, hemisphere
-/// ambient and exposure (<see cref="GparamLighting" />).
+/// Reads the lighting of maps from their GPARAMs: the sun, hemisphere ambient and exposure
+/// (<see cref="GparamLighting" />). Armored Core VI, Elden Ring, Nightreign, Sekiro, DS3 and Bloodborne; what differs
+/// between them is in <see cref="GparamProfile" /> (Documentation/Older Games/Analysis.md).
 /// The map's GPARAMs only hold what differs from the shared ones, so each field is looked up in the chosen file
 /// (mAA_BB_0000 by default), then mapbase, then default. Within a file a field holds values by ID, numbered
 /// separately in each group: LightSet's ID 0 is the scene's lighting and 100 the lighting of models, with ID 0 used
@@ -48,9 +49,6 @@ public class GparamLightingBank
     private const string ColorGradingKey = "ColorGrading[Yebis]";
     private const string WetKey = "Wet ParamEditor";
 
-    // The shared GPARAMs a field is looked for in when the map's own file doesn't have it
-    private static readonly string[] SharedFiles = { "mapbase", "default" };
-
     // Each GPARAM read, null if it is missing or couldn't be read
     private readonly Dictionary<string, GPARAM> Files = new(StringComparer.OrdinalIgnoreCase);
 
@@ -59,12 +57,15 @@ public class GparamLightingBank
         Project = project;
     }
 
+    /// <summary>What differs in the project's game: the shared files, the exposure's fields, the effects it has</summary>
+    public GparamProfile Profile => GparamProfile.For(Project.Descriptor.ProjectType);
+
+    /// <summary>The shared GPARAMs a field is looked for in when the map's own file doesn't have it</summary>
+    private string[] SharedFiles => Profile.SharedFiles;
+
     public bool CanUse()
     {
-        if (Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.NR)
-            return true;
-
-        return false;
+        return Profile.Supported;
     }
 
     /// <summary>
@@ -422,12 +423,16 @@ public class GparamLightingBank
 
         var weather = CFG.Current.Viewport_Map_Lighting_Weather;
 
+        var profile = Profile;
+
         var lighting = new GparamLighting
         {
             File = file ?? "",
             LightSetId = lightSetId,
             Hours = hours,
-            WeatherOverlays = GetWeatherOverlays(weather)
+            WeatherOverlays = GetWeatherOverlays(weather),
+            // The effects the game doesn't have start off, so the fields missing from its files leave them off
+            PostEffects = profile.CreateDefaults()
         };
 
         if (!CanUse())
@@ -465,11 +470,8 @@ public class GparamLightingBank
         lighting.HemiUp = reader.Get(LightSetKey, "Directional Light Hemi Color Up", lightSetId, lighting.HemiUp);
         lighting.HemiDown = reader.Get(LightSetKey, "Directional Light Hemi Color Down", lightSetId, lighting.HemiDown);
 
-        // Tone Map
-        lighting.Exposure = reader.Get(ToneMapKey, "GS Presents - ToneMap-Exposure", 0, lighting.Exposure);
-        lighting.AutoExposure = reader.Get(ToneMapKey, "GS Presents - ToneMap-Enable AutoExposure", 0, lighting.AutoExposure);
-        lighting.MiddleGray = reader.Get(ToneMapKey, "GS Presents - ToneMap-AutoExposure Middle Gray", 0, lighting.MiddleGray);
-        lighting.ToneMapMode = reader.Get(ToneMapKey, "GS Presents - ToneMap-ToneMapMode", 0, lighting.ToneMapMode);
+        // Tone Map: the exposure is kept as a linear multiplier and Middle Gray as log2, whichever fields give them
+        ReadExposure(reader, profile, lighting);
         lighting.ReinhardContrast = reader.Get(ToneMapKey, "GS Presents - ToneMap-ReinhardContrast", 0, lighting.ReinhardContrast);
         lighting.ReinhardWhiteBalance = reader.Get(ToneMapKey, "GS Presents - ToneMap-ReinhardWhiteBalance", 0, lighting.ReinhardWhiteBalance);
 
@@ -499,6 +501,9 @@ public class GparamLightingBank
 
         ReadPostEffects(reader, lightSetId, lighting.PostEffects);
 
+        if (profile.Exposure == GparamExposureModel.Yebis)
+            ReadYebisAdaption(reader, lighting);
+
         // The LUTs are looked up in the area of the file read first, whose IDs they are
         // Wet's values are in every weather's overlays; whether the weather wets anything is the WeatherParam's
         lighting.PostEffects.Wet.Wetness = GetWetness(weather);
@@ -525,13 +530,16 @@ public class GparamLightingBank
         }
 
         var fs = Project.VFS.FS;
-        var luts = ColorGradingLuts.Load(
-            path => fs.FileExists(path) ? fs.ReadFile(path) : null,
-            (path, e) => Smithbox.LogError(this, LOC.Get("MAP_Lighting_Failed_Read_LUT", path), e));
+        var pathFormat = Profile.LutPathFormat;
+        var luts = pathFormat == null
+            ? null
+            : ColorGradingLuts.Load(pathFormat,
+                path => fs.FileExists(path) ? fs.ReadFile(path) : null,
+                (path, e) => Smithbox.LogError(this, LOC.Get("MAP_Lighting_Failed_Read_LUT", path), e));
 
         lock (Files)
         {
-            Luts = luts.Count > 0 ? luts : null;
+            Luts = luts is { Count: > 0 } ? luts : null;
             LutsLoaded = true;
             return Luts;
         }
@@ -691,6 +699,74 @@ public class GparamLightingBank
         wet.OverrideShininess = reader.Get(WetKey, "Wet-OverrideShininess", 0, wet.OverrideShininess);
         wet.AlbedoRate = reader.Get(WetKey, "Wet-AlbedoRate", 0, wet.AlbedoRate);
         wet.ShininessRate = reader.Get(WetKey, "Wet-ShininessRate", 0, wet.ShininessRate);
+    }
+
+    /// <summary>
+    /// The exposure as a linear multiplier, whether auto exposure is on, Middle Gray as log2, and the tone curve, from
+    /// the fields <see cref="GparamProfile.Exposure" /> names
+    /// </summary>
+    private static void ReadExposure(FieldReader reader, GparamProfile profile, GparamLighting lighting)
+    {
+        switch (profile.Exposure)
+        {
+            case GparamExposureModel.GsStops:
+            {
+                // Sekiro's run from -8 to 1.5, mostly 0, so they can only be stops
+                var stops = reader.Get(ToneMapKey, "GS Presents - ToneMap-Exposure", 0, 0.0f);
+                lighting.Exposure = MathF.Pow(2.0f, stops);
+                ReadGsAutoExposure(reader, lighting);
+                break;
+            }
+            case GparamExposureModel.Yebis:
+            {
+                // DS3 and BB leave the GS Presents exposure at 0 and set this one, 1.5-5.7
+                lighting.Exposure = reader.Get(ToneMapKey, "Yebis-ToneMapExposure", 0, lighting.Exposure);
+                lighting.AutoExposure = reader.Get(ToneMapKey, "Yebis-AutoExposure", 0, lighting.AutoExposure);
+
+                // A linear key (DS3 0.01-0.028, BB 0.18), so its log2 is comparable with the GS Presents Middle Gray
+                var middleGray = reader.Get(ToneMapKey, "Yebis-MiddleGray", 0, 0.0f);
+                if (middleGray > 0.0f)
+                    lighting.MiddleGray = MathF.Log2(middleGray);
+
+                // Their GS Presents mode is 0 and Yebis-ToneType 2 nearly everywhere, taken to be a filmic curve
+                var toneType = reader.Get(ToneMapKey, "Yebis-ToneType", 0, 2);
+                lighting.ToneMapMode = toneType == 2 ? 7 : 0;
+                break;
+            }
+            default:
+                lighting.Exposure = reader.Get(ToneMapKey, "GS Presents - ToneMap-Exposure", 0, lighting.Exposure);
+                ReadGsAutoExposure(reader, lighting);
+                break;
+        }
+    }
+
+    private static void ReadGsAutoExposure(FieldReader reader, GparamLighting lighting)
+    {
+        lighting.AutoExposure = reader.Get(ToneMapKey, "GS Presents - ToneMap-Enable AutoExposure", 0, lighting.AutoExposure);
+        lighting.MiddleGray = reader.Get(ToneMapKey, "GS Presents - ToneMap-AutoExposure Middle Gray", 0, lighting.MiddleGray);
+        lighting.ToneMapMode = reader.Get(ToneMapKey, "GS Presents - ToneMap-ToneMapMode", 0, lighting.ToneMapMode);
+    }
+
+    /// <summary>
+    /// The Yebis exposure's bounds, linear multipliers (DS3: 0.05 to 10), as the EV either side of the exposure that
+    /// <see cref="GparamAutoExposure" /> holds. The adapt speeds stay the GS Presents ones, which DS3's files also set.
+    /// </summary>
+    private static void ReadYebisAdaption(FieldReader reader, GparamLighting lighting)
+    {
+        var exposure = lighting.Exposure;
+        var settings = lighting.PostEffects.AutoExposure;
+
+        if (exposure <= 0.0f)
+            return;
+
+        var min = reader.Get(ToneMapKey, "Yebis-MinExposure", 0, 0.0f);
+        var max = reader.Get(ToneMapKey, "Yebis-MaxExposure", 0, 0.0f);
+
+        if (min > 0.0f)
+            settings.AdaptionMin = MathF.Log2(min / exposure);
+
+        if (max > 0.0f)
+            settings.AdaptionMax = MathF.Log2(max / exposure);
     }
 
     private static void ReadLight(FieldReader reader, int id, GparamDirectionalLight light,

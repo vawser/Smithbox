@@ -1243,9 +1243,12 @@ float WaterThickness()
 		return WATER_ASSUMED_DEPTH;
 	}
 
+	// Kept within the texture bound, which can be the 1x1 default or an older, smaller copy, see ShadowCompare
+	ivec2 size = textureSize(
+		sampler2D(globalTextures[nonuniformEXT(TextureIndex(sceneparam.sceneDepthTexture))], linearSampler), 0);
 	float stored = texelFetch(
 		sampler2D(globalTextures[nonuniformEXT(TextureIndex(sceneparam.sceneDepthTexture))], linearSampler),
-		ivec2(gl_FragCoord.xy), 0).r;
+		clamp(ivec2(gl_FragCoord.xy), ivec2(0), size - 1), 0).r;
 
 	return max(ViewDepth(stored) - ViewDepth(gl_FragCoord.z), 0.0);
 }
@@ -1315,7 +1318,10 @@ bool IsFur()
 // 1 if the shadow map texel is no nearer the sun than depth, kept within the cascade's square of the map
 float ShadowCompare(ivec2 texel, ivec2 low, ivec2 high, float depth)
 {
-	texel = clamp(texel, low, high);
+	// Also kept within the texture bound. Its slot can hold the 1x1 default until the map's descriptor is written,
+	// and fetching outside an image reads past it, which loses the device
+	ivec2 size = textureSize(sampler2D(globalTextures[nonuniformEXT(sceneparam.shadowTexture)], linearSampler), 0);
+	texel = clamp(clamp(texel, low, high), ivec2(0), size - 1);
 	float stored = texelFetch(sampler2D(globalTextures[nonuniformEXT(sceneparam.shadowTexture)], linearSampler),
 		texel, 0).r;
 
@@ -1325,8 +1331,10 @@ float ShadowCompare(ivec2 texel, ivec2 low, ivec2 high, float depth)
 // 1 if the rain map's texel is no higher than depth: nothing above the point
 float RainCompare(ivec2 texel, float depth)
 {
-	int last = int(sceneparam.rainMapSize) - 1;
-	texel = clamp(texel, ivec2(0), ivec2(last));
+	// Kept within the texture bound as well as the map, see ShadowCompare
+	ivec2 size = textureSize(sampler2D(globalTextures[nonuniformEXT(sceneparam.rainTexture)], linearSampler), 0);
+	ivec2 last = min(ivec2(int(sceneparam.rainMapSize) - 1), size - 1);
+	texel = clamp(texel, ivec2(0), last);
 	float stored = texelFetch(sampler2D(globalTextures[nonuniformEXT(sceneparam.rainTexture)], linearSampler),
 		texel, 0).r;
 

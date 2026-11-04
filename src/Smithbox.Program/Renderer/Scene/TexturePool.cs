@@ -167,6 +167,26 @@ public class TexturePool
     }
 
     /// <summary>
+    ///     True while textures that have been filled are still to be written into the descriptor set. Unlike
+    ///     <see cref="DescriptorTableDirty" />, retired textures ageing out don't count, as that is no loading.
+    /// </summary>
+    public bool HasPendingDescriptorWrites
+    {
+        get
+        {
+            if (Secondary != null && Secondary.HasPendingDescriptorWrites)
+            {
+                return true;
+            }
+
+            lock (_stateLock)
+            {
+                return _fullRebuildRequired || _dirtySlots.Count > 0;
+            }
+        }
+    }
+
+    /// <summary>
     ///     Queue a single descriptor to be rewritten next frame.
     /// </summary>
     internal void MarkSlotDirty(uint slot)

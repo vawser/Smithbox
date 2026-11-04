@@ -6,8 +6,9 @@ using System.Text.RegularExpressions;
 namespace StudioCore.Renderer;
 
 /// <summary>
-///     Elden Ring's color grading LUTs, which the GPARAM ColorGrading[Yebis] group's LutSourceId picks. They are in
-///     <c>/map/mAA/common/mAA_cgrading.tpf.dcx</c>, one TPF per area, as textures named <c>mAA_BB_CGradingNNNN</c>:
+///     The color grading LUTs, which the GPARAM ColorGrading[Yebis] group's LutSourceId picks. In Elden Ring they are
+///     in <c>/map/mAA/common/mAA_cgrading.tpf.dcx</c> (Sekiro and DS3: <c>/map/mAA/mAA_cgrading.tpf.dcx</c>), one TPF
+///     per area, as textures named <c>mAA_BB_CGradingNNNN</c>:
 ///     NNNN is the LutSourceId and mAA_BB the area that owns it. Each is a 16 x 16 x 16 cube laid out as a 16 x 256
 ///     RGBA8 image, sixteen 16 x 16 slices down it: red across, green down a slice, blue from slice to slice. The
 ///     IDs are shared between areas (m10_00_0900 uses m60_00's 0001-0005, m20_00 uses m61_00's 5000-5003), so every
@@ -41,16 +42,18 @@ public class ColorGradingLuts
 
     /// <summary>
     ///     Reads the LUTs from <paramref name="read" />, which returns a file's bytes or null if there is none. Areas
-    ///     m00 to m99 are tried.
+    ///     m00 to m99 are tried, at <paramref name="pathFormat" /> with {0} the area number
+    ///     (<see cref="GparamProfile.LutPathFormat" />: under <c>common/</c> in Elden Ring, AC6 and Nightreign, in the
+    ///     area's folder itself in Sekiro and DS3, with the same textures).
     /// </summary>
-    public static ColorGradingLuts Load(Func<string, Memory<byte>?> read, Action<string, Exception> logError)
+    public static ColorGradingLuts Load(string pathFormat, Func<string, Memory<byte>?> read, Action<string, Exception> logError)
     {
         var luts = new ColorGradingLuts();
         var pixels = new List<byte[]>();
 
         for (var area = 0; area < 100; area++)
         {
-            var path = $"/map/m{area:D2}/common/m{area:D2}_cgrading.tpf.dcx";
+            var path = string.Format(pathFormat, area);
             Memory<byte>? bytes;
 
             try

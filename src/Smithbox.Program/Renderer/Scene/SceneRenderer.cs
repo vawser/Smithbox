@@ -216,6 +216,45 @@ public static class SceneRenderer
     /// <summary>
     /// How much is loaded, for the crash log if the device is lost
     /// </summary>
+    /// <summary>
+    ///     True while the scene's queues draw nothing, as the scene is still loading. See <see cref="IsLoading" />.
+    /// </summary>
+    public static bool SuspendSceneDraws { get; private set; }
+
+    // Set once a load job starts, and kept until the work it leaves behind is done
+    private static bool _loadInProgress;
+
+    /// <summary>
+    ///     Whether a load is in progress: from when a load job starts until its resources have been loaded,
+    ///     uploaded and published to the texture pools. While it is, the scene isn't drawn: textures are allocated,
+    ///     filled and written into the descriptor tables over many frames, and drawing part way through that has lost
+    ///     the device (SDT, Hirada Estate). Only a load job starts this. The uploads and descriptor writes of
+    ///     selecting or changing a render filter don't, as those would blank the viewport for a frame each time.
+    /// </summary>
+    private static bool IsLoading()
+    {
+        if (ResourceManager.ActiveJobProgress.Count > 0)
+        {
+            _loadInProgress = true;
+            return true;
+        }
+
+        if (!_loadInProgress)
+        {
+            return false;
+        }
+
+        // The jobs are done, but the device lost came after them, while their uploads were still queued
+        _loadInProgress = LowPriorityBackgroundUploadQueue.Count > 0
+                          || LowPriorityBackgroundUploadQueueBackfill.Count > 0
+                          || !_asyncTransfersPendingQueue.IsEmpty
+                          || _asyncTransfers.Count > 0
+                          || GlobalTexturePool.HasPendingDescriptorWrites
+                          || GlobalCubeTexturePool.HasPendingDescriptorWrites;
+
+        return _loadInProgress;
+    }
+
     private static string DescribeLoad()
     {
         var materials = MaterialBufferAllocator.GetStats();
@@ -332,6 +371,7 @@ public static class SceneRenderer
 
         Profiler.TracyCZoneEnd(ctx4);
 
+
         // If there's no work swap to the backfill queue to try and find work
         if (LowPriorityBackgroundUploadQueue.Count == 0 ||
             LowPriorityBackgroundUploadQueueBackfill.Count > LowPriorityBackgroundUploadQueue.Count)
@@ -356,6 +396,7 @@ public static class SceneRenderer
 
         sw.Stop();
         Profiler.TracyCZoneEnd(ctx4);
+
 
         ctx4 = Profiler.TracyCZoneN(1, @"Submit background work items");
         Device.SubmitCommands(mainCommandList);
@@ -437,6 +478,8 @@ public static class SceneRenderer
         }
 
         CommandList offscreenCommandList = null;
+
+        SuspendSceneDraws = IsLoading();
 
         for (int i = 0; i < RenderQueues.Count; i++)
         {
@@ -820,10 +863,11 @@ public static class SceneRenderer
             }
             else
             {
-                // Copy the indirect buffer to the gpu
+                // Copy the indirect buffer to the gpu. The copy writes the buffer, so its writes are what the barrier
+                // makes visible to the draws; a TransferRead source here let them read older arguments
                 cl.UpdateBuffer(_indirectBuffer, 0, _indirectStagingBuffer);
                 cl.Barrier(VkPipelineStageFlags2.Transfer,
-                    VkAccessFlags2.TransferRead,
+                    VkAccessFlags2.TransferWrite,
                     VkPipelineStageFlags2.DrawIndirect,
                     VkAccessFlags2.IndirectCommandRead);
             }
@@ -837,7 +881,7 @@ public static class SceneRenderer
         /// <param name="capturesDepth">Whether the queue copies scene depth, which is then done after the last draw
         /// if no transparent draw came to have it done before</param>
         public void SubmitBatches(CommandList cl, SceneRenderPipeline pipeline, ResourceSet sceneParams,
-            bool capturesDepth = false)
+            bool capturesDepth = false, string queueName = null)
         {
             // If renderset is -1, no work has actually been uploaded to the gpu yet
             if (_renderSet == -1)
@@ -857,7 +901,7 @@ public static class SceneRenderer
                     captured = true;
                 }
 
-                cl.SetCheckpoint($"Draw batch {i + 1} of {_batchCount[_renderSet]}: {_batches[(MAX_BATCH * _renderSet) + i]._pipeline.Name}");
+                cl.SetCheckpoint($"{queueName}: Draw batch {i + 1} of {_batchCount[_renderSet]}: {_batches[(MAX_BATCH * _renderSet) + i]._pipeline.Name}");
                 cl.SetPipeline(_batches[(MAX_BATCH * _renderSet) + i]._pipeline);
                 pipeline.BindResources(cl, sceneParams);
                 cl.SetGraphicsResourceSet(1, _batches[(MAX_BATCH * _renderSet) + i]._objectRS);
@@ -1084,6 +1128,14 @@ public static class SceneRenderer
             ctx = Profiler.TracyCZoneN(1, "RenderQueue::Execute encode draws");
             var captureDepth = CapturesSceneDepth;
 
+            // While loading nothing is put in the queue, though its setup above still runs, so its targets are
+            // cleared as usual. The draws are submitted a frame after they are encoded, so the first frame after
+            // loading is still empty.
+            if (SuspendSceneDraws)
+            {
+                Indices.Clear();
+            }
+
             foreach (KeyIndex obj in Indices)
             {
                 if (captureDepth && obj.Key.Value >= RenderKey.BackToFrontStart)
@@ -1113,7 +1165,11 @@ public static class SceneRenderer
             //Device.WaitForFence(_resourcesUpdatedFence[_nextBuffer], ulong.MaxValue - 1);
             ctx = Profiler.TracyCZoneN(1, "RenderQueue::Execute submit draw");
             drawCommandList.PushDebugGroup($@"{Name}: Draw");
-            _drawEncoders[_currentBuffer].SubmitBatches(drawCommandList, Pipeline, SceneParamSet, CapturesSceneDepth);
+            // The draws encoded the frame before are dropped too while loading, so none is drawn part way through it
+            if (!SuspendSceneDraws)
+            {
+                _drawEncoders[_currentBuffer].SubmitBatches(drawCommandList, Pipeline, SceneParamSet, CapturesSceneDepth, Name);
+            }
             drawCommandList.PopDebugGroup();
             Profiler.TracyCZoneEnd(ctx);
             watch.Stop();

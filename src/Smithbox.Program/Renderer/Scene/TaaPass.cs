@@ -43,7 +43,8 @@ public class TaaPass : PostProcessPass
     /// <summary>The Anti-Alias Type that is TAA</summary>
     public const int TaaType = 5;
 
-    private static readonly GparamAntiAlias Defaults = new();
+    // Not TAA when there is no GPARAM in the games before Sekiro, which have none
+    private static GparamAntiAlias Defaults => GparamProfile.Current.Defaults.AntiAlias;
 
     private static ResourceLayout Layout;
     private static Pipeline Pipeline;
