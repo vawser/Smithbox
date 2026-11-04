@@ -379,6 +379,21 @@ public class SceneRenderPipeline
 
         Eye = eye;
 
+        // The Viewport Rendering tool's Scene Lighting settings, kept in the CFG so they persist and every
+        // viewport shares them. Set before the sun is read for the shadows below.
+        var lightDirection = CFG.Current.Viewport_Scene_Light_Direction;
+        var sunColor = CFG.Current.Viewport_Scene_Sun_Color;
+        SceneParams.LightDirection = new Vector4(lightDirection, 0.0f);
+        SceneParams.SunColor = new Vector4(sunColor, CFG.Current.Viewport_Scene_Sun_Intensity);
+        SceneParams.DirectLightMult = CFG.Current.Viewport_Scene_Direct_Light_Mult;
+        SceneParams.IndirectLightMult = CFG.Current.Viewport_Scene_Indirect_Light_Mult;
+        SceneParams.SceneBrightness = CFG.Current.Viewport_Scene_Brightness;
+
+        CameraLight.Enabled = CFG.Current.Viewport_Camera_Light;
+        CameraLight.Color = CFG.Current.Viewport_Camera_Light_Color;
+        CameraLight.Intensity = CFG.Current.Viewport_Camera_Light_Intensity;
+        CameraLight.Range = CFG.Current.Viewport_Camera_Light_Range;
+
         // Lights are gathered here, where the scene can't change under us, and copied in below
         List<SceneLightData> lights = new(SceneLightList.MaxLights);
         if (CameraLight.Enabled)

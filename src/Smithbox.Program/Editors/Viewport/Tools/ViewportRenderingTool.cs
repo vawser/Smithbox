@@ -34,11 +34,8 @@ public class ViewportRenderingTool
     /// </summary>
     public bool FocusRequested;
 
-    // The tabs' less-used sections, which each tab shows or hides with the eye on its header. They are shared by the
-    // tabs, so showing the status in one shows it in all of them.
-    private bool ShowStatus = true;
-    private bool ShowResolvedValues = false;
-    private bool ShowDebug = false;
+    // The tabs' less-used sections, which each tab shows or hides with the eye on its header, are kept in the
+    // settings (Viewport_Rendering_Show_*). They are shared by the tabs, so showing the status in one shows it in all.
 
     public ViewportRenderingTool(Func<VulkanViewport> getViewport)
     {
@@ -274,12 +271,11 @@ public class ViewportRenderingTool
     }
 
     /// <summary>
-    /// The sun, the light multipliers and the camera light of the viewport
+    /// The sun, the light multipliers and the camera light. These are kept in the settings, which every viewport's
+    /// pipeline copies in each frame (SceneRenderPipeline.UpdateSceneParameters).
     /// </summary>
     private void SceneLightingTab(VulkanViewport viewport)
     {
-        var sceneParams = viewport.ViewPipeline.SceneParams;
-
         // The map's GPARAMs give the sun instead, see the Map Lighting tab
         var sunFromMap = viewport.ViewPipeline.ActiveMapLighting != null;
 
@@ -292,32 +288,18 @@ public class ViewportRenderingTool
 
         ImGui.BeginDisabled(sunFromMap);
 
-        // A direction, so only its first three components are edited
-        var direction = new Vector3(sceneParams.LightDirection.X, sceneParams.LightDirection.Y, sceneParams.LightDirection.Z);
-
         DPI.ApplyInputWidth();
-        if (ImGui.SliderFloat3($"{LOC.Get("VIEWPORT_Menubar_Scene_Light_Direction")}##lightDirection", ref direction, -1, 1))
-        {
-            viewport.ViewPipeline.SceneParams.LightDirection.X = direction.X;
-            viewport.ViewPipeline.SceneParams.LightDirection.Y = direction.Y;
-            viewport.ViewPipeline.SceneParams.LightDirection.Z = direction.Z;
-        }
+        ImGui.SliderFloat3($"{LOC.Get("VIEWPORT_Menubar_Scene_Light_Direction")}##lightDirection",
+            ref CFG.Current.Viewport_Scene_Light_Direction, -1, 1);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Scene_Light_Direction_TT"));
 
-        var sunColor = new Vector3(sceneParams.SunColor.X, sceneParams.SunColor.Y, sceneParams.SunColor.Z);
-
         DPI.ApplyInputWidth();
-        if (ImGui.ColorEdit3($"{LOC.Get("VIEWPORT_Rendering_Sun_Color")}##sunColor", ref sunColor))
-        {
-            viewport.ViewPipeline.SceneParams.SunColor.X = sunColor.X;
-            viewport.ViewPipeline.SceneParams.SunColor.Y = sunColor.Y;
-            viewport.ViewPipeline.SceneParams.SunColor.Z = sunColor.Z;
-        }
+        ImGui.ColorEdit3($"{LOC.Get("VIEWPORT_Rendering_Sun_Color")}##sunColor", ref CFG.Current.Viewport_Scene_Sun_Color);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Sun_Color_TT"));
 
         DPI.ApplyInputWidth();
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Sun_Intensity")}##sunIntensity",
-            ref viewport.ViewPipeline.SceneParams.SunColor.W, 0, 5);
+            ref CFG.Current.Viewport_Scene_Sun_Intensity, 0, 5);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Sun_Intensity_TT"));
 
         ImGui.EndDisabled();
@@ -328,57 +310,42 @@ public class ViewportRenderingTool
         DPI.ApplyInputWidth();
         ImGui.SliderFloat(
             $"{LOC.Get("VIEWPORT_Menubar_Scene_Direct_Light_Mult")}##directLightMult",
-            ref viewport.ViewPipeline.SceneParams.DirectLightMult, 0, 3);
+            ref CFG.Current.Viewport_Scene_Direct_Light_Mult, 0, 3);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Scene_Direct_Light_Mult_TT"));
 
         DPI.ApplyInputWidth();
         ImGui.SliderFloat(
             $"{LOC.Get("VIEWPORT_Menubar_Scene_Indirect_Light_Mult")}##indirectLightMult",
-            ref viewport.ViewPipeline.SceneParams.IndirectLightMult, 0, 3);
+            ref CFG.Current.Viewport_Scene_Indirect_Light_Mult, 0, 3);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Scene_Indirect_Light_Mult_TT"));
 
         DPI.ApplyInputWidth();
         ImGui.SliderFloat(
             $"{LOC.Get("VIEWPORT_Menubar_Scene_Light_Brightness")}##brightness",
-            ref viewport.ViewPipeline.SceneParams.SceneBrightness, 0, 5);
+            ref CFG.Current.Viewport_Scene_Brightness, 0, 5);
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Scene_Light_Brightness_TT"));
 
         // A light that follows the camera, for lighting up dark interiors
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Camera_Light"), LOC.Get("VIEWPORT_Rendering_Section_Camera_Light_TT"));
 
-        SceneLight cameraLight = viewport.ViewPipeline.CameraLight;
-
-        var cameraLightEnabled = cameraLight.Enabled;
-        if (ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Camera_Light")}##cameraLightEnabled", ref cameraLightEnabled))
-        {
-            cameraLight.Enabled = cameraLightEnabled;
-        }
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Camera_Light")}##cameraLightEnabled", ref CFG.Current.Viewport_Camera_Light);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Camera_Light_TT"));
 
-        ImGui.BeginDisabled(!cameraLight.Enabled);
+        ImGui.BeginDisabled(!CFG.Current.Viewport_Camera_Light);
         ImGui.Indent();
 
-        var color = cameraLight.Color;
         DPI.ApplyInputWidth(IndentedWidth);
-        if (ImGui.ColorEdit3($"{LOC.Get("VIEWPORT_Rendering_Camera_Light_Color")}##cameraLightColor", ref color))
-        {
-            cameraLight.Color = color;
-        }
+        ImGui.ColorEdit3($"{LOC.Get("VIEWPORT_Rendering_Camera_Light_Color")}##cameraLightColor",
+            ref CFG.Current.Viewport_Camera_Light_Color);
 
-        var intensity = cameraLight.Intensity;
         DPI.ApplyInputWidth(IndentedWidth);
-        if (ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Camera_Light_Intensity")}##cameraLightIntensity", ref intensity, 0, 50))
-        {
-            cameraLight.Intensity = intensity;
-        }
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Camera_Light_Intensity")}##cameraLightIntensity",
+            ref CFG.Current.Viewport_Camera_Light_Intensity, 0, 50);
 
-        var range = cameraLight.Range;
         DPI.ApplyInputWidth(IndentedWidth);
-        if (ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Camera_Light_Range")}##cameraLightRange", ref range, 1, 100, "%.0f m"))
-        {
-            cameraLight.Range = range;
-        }
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Camera_Light_Range")}##cameraLightRange",
+            ref CFG.Current.Viewport_Camera_Light_Range, 1, 100, "%.0f m");
 
         ImGui.Unindent();
         ImGui.EndDisabled();
@@ -394,9 +361,9 @@ public class ViewportRenderingTool
     {
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("VIEWPORT_Rendering_Section_Status"), LOC.Get("VIEWPORT_Rendering_Section_Status_TT"),
-            ref ShowStatus);
+            ref CFG.Current.Viewport_Rendering_Show_Status);
 
-        return ShowStatus;
+        return CFG.Current.Viewport_Rendering_Show_Status;
     }
 
     /// <summary>
@@ -406,9 +373,9 @@ public class ViewportRenderingTool
     {
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("VIEWPORT_Rendering_Section_Resolved_Values"),
-            LOC.Get("VIEWPORT_Rendering_Section_Resolved_Values_TT"), ref ShowResolvedValues);
+            LOC.Get("VIEWPORT_Rendering_Section_Resolved_Values_TT"), ref CFG.Current.Viewport_Rendering_Show_Resolved_Values);
 
-        return ShowResolvedValues;
+        return CFG.Current.Viewport_Rendering_Show_Resolved_Values;
     }
 
     /// <summary>
@@ -419,9 +386,9 @@ public class ViewportRenderingTool
     {
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("VIEWPORT_Rendering_Section_Debug"), LOC.Get("VIEWPORT_Rendering_Section_Debug_TT"),
-            ref ShowDebug);
+            ref CFG.Current.Viewport_Rendering_Show_Debug);
 
-        return ShowDebug || debugViewOn;
+        return CFG.Current.Viewport_Rendering_Show_Debug || debugViewOn;
     }
 
     /// <summary>

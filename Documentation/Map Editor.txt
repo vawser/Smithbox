@@ -32,4 +32,3 @@
 
 - Renderer:
     - Fix decal textures for ER
-    - TAA shimmering (add motion vectors?)

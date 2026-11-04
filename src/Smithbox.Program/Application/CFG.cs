@@ -1404,6 +1404,26 @@ public class CFG
     // Whether MSB parts cast and receive shadows as their IsShadowSrc and IsShadowDest flags say; all do otherwise
     public bool Viewport_Shadows_Use_Msb_Flags = true;
 
+    // The Viewport Rendering tool's Scene Lighting tab: the sun used without map lighting, and the light multipliers.
+    // Copied into every viewport's scene params each frame.
+    public Vector3 Viewport_Scene_Light_Direction = new Vector3(1.0f, -0.5f, 0.0f);
+    public Vector3 Viewport_Scene_Sun_Color = new Vector3(1.0f, 1.0f, 1.0f);
+    public float Viewport_Scene_Sun_Intensity = 1.0f;
+    public float Viewport_Scene_Direct_Light_Mult = 1.0f;
+    public float Viewport_Scene_Indirect_Light_Mult = 1.0f;
+    public float Viewport_Scene_Brightness = 1.0f;
+
+    // The light that follows the camera, for lighting up dark interiors
+    public bool Viewport_Camera_Light = false;
+    public Vector3 Viewport_Camera_Light_Color = new Vector3(1.0f, 1.0f, 1.0f);
+    public float Viewport_Camera_Light_Intensity = 8.0f;
+    public float Viewport_Camera_Light_Range = 25.0f;
+
+    // Whether the Viewport Rendering tool's tabs show their Status, Resolved Values and Debug sections
+    public bool Viewport_Rendering_Show_Status = true;
+    public bool Viewport_Rendering_Show_Resolved_Values = false;
+    public bool Viewport_Rendering_Show_Debug = false;
+
     public Vector3 Viewport_Box_Region_Base_Color = Utils.GetDecimalColor(Color.Blue);
     public Vector3 Viewport_Box_Region_Highlight_Color = Utils.GetDecimalColor(Color.DarkViolet);
 
