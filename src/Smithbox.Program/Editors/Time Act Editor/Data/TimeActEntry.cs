@@ -204,20 +204,29 @@ public class TimeActEntry
         return clone;
     }
 
+    // The search reads time acts in the background, while the editor can be reading the same one
+    private readonly object LoadLock = new();
+
     public void Load()
     {
         if (TimeAct != null || LoadFailed)
             return;
 
-        try
+        lock (LoadLock)
         {
-            TimeAct = TAE.Read(Data);
-        }
-        catch (Exception e)
-        {
-            LoadFailed = true;
+            if (TimeAct != null || LoadFailed)
+                return;
 
-            Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_TimeAct", Name), e);
+            try
+            {
+                TimeAct = TAE.Read(Data);
+            }
+            catch (Exception e)
+            {
+                LoadFailed = true;
+
+                Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_TimeAct", Name), e);
+            }
         }
     }
 
@@ -261,16 +270,39 @@ public class TimeActEntry
 
     private bool IsExactFit(TAE.Event ev, TAE.Template.EventTemplate eventTemplate)
     {
-        var bigEndian = TimeAct.BigEndian;
+        return TryCreateTemplatedClone(ev, eventTemplate, out _);
+    }
 
-        var original = ev.GetParameterBytes(bigEndian);
+    /// <summary>
+    /// Gets an event with its parameters filled in, for reading them without changing the time act:
+    /// the event itself if it already has them, or else a copy with the template applied if it fits exactly.
+    /// Safe to call off the main thread, as the event is only read.
+    /// </summary>
+    public TAE.Event GetReadableEvent(TAE.Event ev, TAE.Template.BankTemplate template)
+    {
+        if (ev.Parameters != null || template == null || !template.TryGetValue(ev.Type, out var eventTemplate))
+            return ev;
+
+        return TryCreateTemplatedClone(ev, eventTemplate, out var clone) ? clone : ev;
+    }
+
+    /// <summary>
+    /// Copies the event and applies the template to the copy, which is kept only if it writes back the same bytes
+    /// </summary>
+    private bool TryCreateTemplatedClone(TAE.Event ev, TAE.Template.EventTemplate eventTemplate, out TAE.Event clone)
+    {
+        clone = null;
+
+        var bigEndian = TimeAct.BigEndian;
 
         try
         {
-            var clone = ev.GetClone(bigEndian);
-            clone.ApplyTemplate(bigEndian, eventTemplate, true);
+            var original = ev.GetParameterBytes(bigEndian);
 
-            var written = clone.GetParameterBytes(bigEndian);
+            var copy = ev.GetClone(bigEndian);
+            copy.ApplyTemplate(bigEndian, eventTemplate, true);
+
+            var written = copy.GetParameterBytes(bigEndian);
 
             // The lengths can differ by the padding that goes unused, which is always zero
             for (int i = 0; i < Math.Max(original.Length, written.Length); i++)
@@ -282,6 +314,7 @@ public class TimeActEntry
                     return false;
             }
 
+            clone = copy;
             return true;
         }
         catch (Exception)

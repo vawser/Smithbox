@@ -25,6 +25,10 @@ public class TimeActSourceWindow
     private string CachedFilter = "";
     private bool CachedExactFilter = false;
 
+    // The source to bring into view the next time the list is drawn, such as one jumped to from a search
+    private TimeActContainerWrapper ScrollTarget;
+    private ModelListType ScrollTargetList;
+
     public TimeActSourceWindow(TimeActEditorView view, ProjectEntry project)
     {
         View = view;
@@ -61,7 +65,7 @@ public class TimeActSourceWindow
         ImGui.BeginTabBar("sourceTabs");
 
         // Characters
-        if (ImGui.BeginTabItem($"{LOC.Get("TAE_SourceWindow_Tab_Characters")}##characterTab"))
+        if (ImGui.BeginTabItem($"{LOC.Get("TAE_SourceWindow_Tab_Characters")}##characterTab", GetTabFlags(ModelListType.Character)))
         {
             ImGui.BeginChild($"characterSourceList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
@@ -82,7 +86,7 @@ public class TimeActSourceWindow
             name = LOC.Get("TAE_SourceWindow_Tab_Assets");
         }
 
-        if (ImGui.BeginTabItem($"{name}##objectTab"))
+        if (ImGui.BeginTabItem($"{name}##objectTab", GetTabFlags(ModelListType.Asset)))
         {
             ImGui.BeginChild($"assetSourceList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
@@ -135,6 +139,18 @@ public class TimeActSourceWindow
         var clipper = new ImGuiListClipper();
         clipper.Begin(filteredSources.Count);
 
+        var scrollIndex = ScrollTarget != null && ScrollTargetList == listType ? filteredSources.IndexOf(ScrollTarget) : -1;
+
+        if (scrollIndex >= 0)
+        {
+            clipper.IncludeItemByIndex(scrollIndex);
+        }
+        else if (ScrollTargetList == listType)
+        {
+            // A hidden source can't be brought into view
+            ScrollTarget = null;
+        }
+
         while (clipper.Step())
         {
             for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
@@ -150,6 +166,12 @@ public class TimeActSourceWindow
                 if (ImGui.Selectable($"{labelName}##timeActSourceEntry{listType}{i}", selected))
                 {
                     SelectSource(source);
+                }
+
+                if (source == ScrollTarget)
+                {
+                    ImGui.SetScrollHereY();
+                    ScrollTarget = null;
                 }
 
                 if (_arrowKeyPressed && ImGui.IsItemFocused() && !selected)
@@ -172,7 +194,21 @@ public class TimeActSourceWindow
     /// <summary>
     /// Lists the time acts of the source, and displays its model in the viewport.
     /// </summary>
-    private void SelectSource(TimeActContainerWrapper source)
+    /// <summary>
+    /// Brings a source into view in the list once it is next drawn, switching to the tab it is listed in
+    /// </summary>
+    public void ScrollTo(TimeActContainerWrapper source, ModelListType listType)
+    {
+        ScrollTarget = source;
+        ScrollTargetList = listType;
+    }
+
+    private ImGuiTabItemFlags GetTabFlags(ModelListType listType)
+    {
+        return ScrollTarget != null && ScrollTargetList == listType ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
+    }
+
+    public void SelectSource(TimeActContainerWrapper source)
     {
         var selection = View.Selection;
 

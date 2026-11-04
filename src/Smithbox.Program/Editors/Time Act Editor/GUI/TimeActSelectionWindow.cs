@@ -34,6 +34,9 @@ public class TimeActSelectionWindow
     private TimeActEntry RenameTarget;
     private string RenameBuffer = "";
 
+    // The time act to bring into view the next time the list is drawn, such as one jumped to from a search
+    private TimeActEntry ScrollTarget;
+
     public TimeActSelectionWindow(TimeActEditorView view, ProjectEntry project)
     {
         View = view;
@@ -73,6 +76,18 @@ public class TimeActSelectionWindow
         var clipper = new ImGuiListClipper();
         clipper.Begin(filteredTimeActs.Count);
 
+        var scrollIndex = ScrollTarget != null ? filteredTimeActs.IndexOf(ScrollTarget) : -1;
+
+        // A hidden time act can't be brought into view
+        if (scrollIndex < 0)
+        {
+            ScrollTarget = null;
+        }
+        else
+        {
+            clipper.IncludeItemByIndex(scrollIndex);
+        }
+
         while (clipper.Step())
         {
             for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
@@ -88,6 +103,12 @@ public class TimeActSelectionWindow
                 if (ImGui.Selectable($"{labelName}##timeActEntry{entry.BinderID}", selected))
                 {
                     SelectTimeAct(entry);
+                }
+
+                if (entry == ScrollTarget)
+                {
+                    ImGui.SetScrollHereY();
+                    ScrollTarget = null;
                 }
 
                 // The animation count isn't known until the time act has been read
@@ -402,6 +423,14 @@ public class TimeActSelectionWindow
         View.Selection.SelectedEvent = null;
 
         View.Playback.OnAnimationChanged();
+    }
+
+    /// <summary>
+    /// Brings a time act into view in the list, once it is next drawn
+    /// </summary>
+    public void ScrollTo(TimeActEntry entry)
+    {
+        ScrollTarget = entry;
     }
 
     public void SelectTimeAct(TimeActEntry entry)

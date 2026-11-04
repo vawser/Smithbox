@@ -47,6 +47,8 @@ public class TimeActEditorView : IEditorView
     public ResourceListTool ResourceListTool;
     public ModelCharacterPreview CharacterPreview;
     public ModelMaskToggler MaskToggler;
+    public TimeActSearchTool LocalSearchTool;
+    public TimeActSearchTool GlobalSearchTool;
 
     public TimeActEditorView(TimeActEditorScreen editor, ProjectEntry project, int imguiId)
     {
@@ -85,6 +87,8 @@ public class TimeActEditorView : IEditorView
         ResourceListTool = new ResourceListTool();
         CharacterPreview = new ModelCharacterPreview(project, GetCharacterPreviewTarget);
         MaskToggler = new ModelMaskToggler(project, GetModelMaskTarget);
+        LocalSearchTool = new TimeActSearchTool(this, project, TimeActSearchMode.Local);
+        GlobalSearchTool = new TimeActSearchTool(this, project, TimeActSearchMode.Global);
     }
 
     private ModelMaskTarget GetModelMaskTarget()

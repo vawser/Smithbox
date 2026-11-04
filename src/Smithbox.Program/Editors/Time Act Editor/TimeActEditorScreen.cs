@@ -41,6 +41,8 @@ public class TimeActEditorScreen : EditorScreen
         ViewHandler = new TimeActEditorViewHandler(this, project);
         CommandQueue = new TimeActCommandQueue(this, project);
         Shortcuts = new TimeActEditorShortcuts(this, project);
+
+        
     }
 
     public void OnGUI(string[] commands)

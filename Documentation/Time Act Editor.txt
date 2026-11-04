@@ -3,13 +3,6 @@
 #----------------------------------------------------
 
 - Tools:
-    - Search
-        - Supports:
-            - Animations
-            - Usage of Events
-            - Usage of values in paramters of events
-        - Include list of results, with quick links to jump to selection of animation/event
-        
     - Mass Edit:
         - The user experience of this interface is important. Internals can be similar to param Mass Edit.
         - Conditions - filter by:

@@ -349,6 +349,186 @@
       "Text": "Resource Monitor"
     },
     {
+      "Key": "TAE_ToolWindow_View_Toggle_Local_Search",
+      "Text": "Local Search"
+    },
+    {
+      "Key": "TAE_ToolWindow_View_Toggle_Global_Search",
+      "Text": "Global Search"
+    },
+    {
+      "Key": "TAE_SearchTool_Local_Header",
+      "Text": "Local Search"
+    },
+    {
+      "Key": "TAE_SearchTool_Global_Header",
+      "Text": "Global Search"
+    },
+    {
+      "Key": "TAE_SearchTool_Local_Hint",
+      "Text": "Find animations and events in the selected source by their names, properties, fields and values. Fill in any of the inputs: empty ones are ignored, and the rest must all match. Click a result to jump to it."
+    },
+    {
+      "Key": "TAE_SearchTool_Global_Hint",
+      "Text": "Find animations and events in every source of the project by their names, properties, fields and values. Fill in any of the inputs: empty ones are ignored, and the rest must all match. Click a result to open its source and jump to it."
+    },
+    {
+      "Key": "TAE_SearchTool_Global_Scanning",
+      "Text": "The sources are still being found ({0} / {1}), so a search now won't cover them all."
+    },
+    {
+      "Key": "TAE_SearchTool_Progress",
+      "Text": "{0} / {1}"
+    },
+    {
+      "Key": "TAE_SearchTool_Searching",
+      "Text": "Searching {0}..."
+    },
+    {
+      "Key": "TAE_SearchTool_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "TAE_SearchTool_Cancel_TT",
+      "Text": "Stops the search. The results found so far are kept."
+    },
+    {
+      "Key": "TAE_SearchTool_Search_TT",
+      "Text": "Runs the search. Leaving an input after changing it, or pressing Enter in it, does the same."
+    },
+    {
+      "Key": "TAE_SearchTool_Clear_TT",
+      "Text": "Empties the inputs and the results."
+    },
+    {
+      "Key": "TAE_SearchTool_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "TAE_SearchTool_Options_Header_TT",
+      "Text": "How the inputs are matched."
+    },
+    {
+      "Key": "TAE_SearchTool_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TAE_SearchTool_Actions_Header_TT",
+      "Text": "Run the search, or start over."
+    },
+    {
+      "Key": "TAE_SearchTool_Progress_Header",
+      "Text": "Progress"
+    },
+    {
+      "Key": "TAE_SearchTool_Progress_Header_TT",
+      "Text": "The search runs in the background. Results are listed as they are found."
+    },
+    {
+      "Key": "TAE_SearchTool_Results_Header",
+      "Text": "Results"
+    },
+    {
+      "Key": "TAE_SearchTool_Results_Header_TT",
+      "Text": "Click a result to jump to it. The filter narrows the list down without searching again."
+    },
+    {
+      "Key": "TAE_SearchTool_Results_Filtered",
+      "Text": "({0} shown)"
+    },
+    {
+      "Key": "TAE_SearchTool_Failed",
+      "Text": "The search failed."
+    },
+    {
+      "Key": "TAE_SearchTool_TimeAct_Failed",
+      "Text": "Failed to search {1} of {0}."
+    },
+    {
+      "Key": "TAE_SearchTool_No_Source",
+      "Text": "Select a source to search."
+    },
+    {
+      "Key": "TAE_SearchTool_Scope",
+      "Text": "Scope"
+    },
+    {
+      "Key": "TAE_SearchTool_Scope_TT",
+      "Text": "Search the selected time act only, or every time act of the selected source."
+    },
+    {
+      "Key": "TAE_SearchTool_Scope_Current",
+      "Text": "Current Time Act"
+    },
+    {
+      "Key": "TAE_SearchTool_Scope_All",
+      "Text": "All Time Acts"
+    },
+    {
+      "Key": "TAE_SearchTool_Animation",
+      "Text": "Animation"
+    },
+    {
+      "Key": "TAE_SearchTool_Animation_TT",
+      "Text": "Matches the animation name and alias, or the values of its properties: ID, file name and the animation it imports."
+    },
+    {
+      "Key": "TAE_SearchTool_Event",
+      "Text": "Event"
+    },
+    {
+      "Key": "TAE_SearchTool_Event_TT",
+      "Text": "Matches the event type ID or name."
+    },
+    {
+      "Key": "TAE_SearchTool_Field",
+      "Text": "Field"
+    },
+    {
+      "Key": "TAE_SearchTool_Field_TT",
+      "Text": "Matches the internal or annotated name of an event field, including the start and end times. Without an event, the animation properties are matched too."
+    },
+    {
+      "Key": "TAE_SearchTool_Value",
+      "Text": "Value"
+    },
+    {
+      "Key": "TAE_SearchTool_Value_TT",
+      "Text": "Matches the value of any event field or animation property, or the name of an enum value. When a field is also given, the value must be in that field."
+    },
+    {
+      "Key": "TAE_SearchTool_Exact",
+      "Text": "Exact Match"
+    },
+    {
+      "Key": "TAE_SearchTool_Exact_TT",
+      "Text": "Inputs must equal the text rather than be contained in it. Numbers are compared as numbers, so 1 finds 1.0."
+    },
+    {
+      "Key": "TAE_SearchTool_Search",
+      "Text": "Search"
+    },
+    {
+      "Key": "TAE_SearchTool_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "TAE_SearchTool_Results",
+      "Text": "{0} results"
+    },
+    {
+      "Key": "TAE_SearchTool_Results_Truncated",
+      "Text": "Over {0} results; only the first {0} are shown. Narrow the search to see the rest."
+    },
+    {
+      "Key": "TAE_SearchTool_Jump_TT",
+      "Text": "Jump to this result."
+    },
+    {
+      "Key": "TAE_SearchTool_Stale_Result",
+      "Text": "The search result no longer exists. Search again."
+    },
+    {
       "Key": "TAE_Data_Setup_Primary_Bank_FAIL",
       "Text": "Failed to setup the Primary Bank."
     },

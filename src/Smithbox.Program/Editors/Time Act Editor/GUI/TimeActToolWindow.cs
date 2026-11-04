@@ -33,6 +33,16 @@ public class TimeActToolWindow
 
         Sections.Begin();
 
+        if (CFG.Current.Interface_TimeActEditor_Tool_LocalSearch)
+        {
+            View.LocalSearchTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_TimeActEditor_Tool_GlobalSearch)
+        {
+            View.GlobalSearchTool.OnToolWindow();
+        }
+
         if (CFG.Current.Interface_TimeActEditor_Tool_CharacterPreview)
         {
             View.CharacterPreview.OnToolWindow();
@@ -68,6 +78,20 @@ public class TimeActToolWindow
         // View
         if (ImGui.BeginMenu($"{LOC.Get("TAE_ToolWindow_View_Header")}##viewMenuHeader"))
         {
+            // Local Search
+            if (ImGui.MenuItem($"{LOC.Get("TAE_ToolWindow_View_Toggle_Local_Search")}##localSearchToolToggle"))
+            {
+                CFG.Current.Interface_TimeActEditor_Tool_LocalSearch = !CFG.Current.Interface_TimeActEditor_Tool_LocalSearch;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_LocalSearch);
+
+            // Global Search
+            if (ImGui.MenuItem($"{LOC.Get("TAE_ToolWindow_View_Toggle_Global_Search")}##globalSearchToolToggle"))
+            {
+                CFG.Current.Interface_TimeActEditor_Tool_GlobalSearch = !CFG.Current.Interface_TimeActEditor_Tool_GlobalSearch;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_GlobalSearch);
+
             // Character Preview
             if (ImGui.MenuItem($"{LOC.Get("TAE_ToolWindow_View_Toggle_Character_Preview")}##characterPreviewToggle"))
             {

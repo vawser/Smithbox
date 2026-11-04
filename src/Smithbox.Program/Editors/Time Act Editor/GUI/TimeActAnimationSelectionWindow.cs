@@ -35,6 +35,9 @@ public class TimeActAnimationSelectionWindow
     // The animation being dragged to another position
     private TAE.Animation DragSourceAnimation;
 
+    // The animation to bring into view the next time the list is drawn, such as one jumped to from a search
+    private TAE.Animation ScrollTarget;
+
     public TimeActAnimationSelectionWindow(TimeActEditorView view, ProjectEntry project)
     {
         View = view;
@@ -185,6 +188,18 @@ public class TimeActAnimationSelectionWindow
         var clipper = new ImGuiListClipper();
         clipper.Begin(filteredAnimations.Count);
 
+        var scrollIndex = ScrollTarget != null ? filteredAnimations.FindIndex(e => e.Animation == ScrollTarget) : -1;
+
+        // A hidden animation can't be brought into view
+        if (scrollIndex < 0)
+        {
+            ScrollTarget = null;
+        }
+        else
+        {
+            clipper.IncludeItemByIndex(scrollIndex);
+        }
+
         while (clipper.Step())
         {
             for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
@@ -205,6 +220,12 @@ public class TimeActAnimationSelectionWindow
                 if (ImGui.Selectable($"{labelName}##timeActAnimation{animation.ID}", selected))
                 {
                     SelectAnimation(animation);
+                }
+
+                if (animation == ScrollTarget)
+                {
+                    ImGui.SetScrollHereY();
+                    ScrollTarget = null;
                 }
 
                 if (_arrowKeyPressed && ImGui.IsItemFocused() && !selected)
@@ -743,6 +764,14 @@ public class TimeActAnimationSelectionWindow
         View.Selection.SelectedEvent = null;
 
         View.Playback.OnAnimationChanged();
+    }
+
+    /// <summary>
+    /// Brings an animation into view in the list, once it is next drawn
+    /// </summary>
+    public void ScrollTo(TAE.Animation animation)
+    {
+        ScrollTarget = animation;
     }
 
     public void SelectAnimation(TAE.Animation animation)
