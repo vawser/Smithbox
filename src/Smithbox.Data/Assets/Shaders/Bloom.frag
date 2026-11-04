@@ -2,11 +2,12 @@
 
 // The GPARAM Bloom group (fields named Glare), see BloomPass.cs. Each draw is one step, picked by the mode:
 //
-// 0 prefilter: the scene into the first level at half size, keeping what is over Glare Threshold after the auto
-//   exposure, with a soft knee from GlareBloom Smooth, scaled by Glare Luminance
+// 0 prefilter: the scene into the first level at half size, keeping the share of its luma over Glare Threshold after
+//   the auto exposure, as the game's bright pass does, scaled by Glare Luminance
 // 1 downsample: a level into the next, half its size, with a 13-tap filter
-// 2 upsample: a level plus the level below it, spread by a tent filter scaled by GaussianRadiusScale
-// 3 composite: the scene plus the first level's sum, x GlareBloom Alpha, averaged over the levels
+// 2 upsample: a level plus the level below it at a weight (a half for the bloom, 1 for the glow), spread by a tent
+//   filter scaled by GaussianRadiusScale
+// 3 composite: the scene plus the first level's sum, x GlareBloom Alpha, over the sum of the levels' weights
 //
 // Every texture is read by where the pixel is in the target being drawn, so nothing depends on the viewport's flip.
 // The bloom is kept in the scene's units (the auto exposure is divided back out), so the tone map exposes both alike.
@@ -115,14 +116,12 @@ vec3 Prefilter(vec3 color)
 	float exposure = exp2(exposureState.ev);
 	vec3 exposed = color * exposure;
 
+	// As the game's ToneMap_BrightPassPS does it (Sekiro DXBC, Nightreign DXIL): the Rec. 601 luma over the
+	// threshold, as a share of the luma, with no knee. Taking the brightest channel instead let saturated colours
+	// bloom too much.
 	float threshold = params.settings.y;
-	float knee = params.settings.z;
-	float brightness = max(exposed.r, max(exposed.g, exposed.b));
-
-	// The soft knee: a quadratic from threshold - knee up to threshold + knee, then linear
-	float soft = clamp(brightness - threshold + knee, 0.0, 2.0 * knee);
-	soft = soft * soft / (4.0 * knee + 1e-5);
-	float contribution = max(soft, brightness - threshold) / max(brightness, 1e-5);
+	float brightness = dot(exposed, vec3(0.29891, 0.58661, 0.11448));
+	float contribution = max(brightness - threshold, 0.0) / (brightness + 1e-4);
 
 	vec3 bright = exposed * contribution * params.settings.w;
 	bright = mix(bright, vec3(Luminance(bright)), clamp(params.shape.x, 0.0, 1.0));
@@ -147,7 +146,9 @@ void main()
 	}
 	else if (mode == MODE_UPSAMPLE)
 	{
-		color = SampleA(uv) + UpsampleTent(uv, params.sizes.xy, params.shape.y);
+		// Each coarser level at settings.z of the weight of the one above: a half for the bloom, as the game's
+		// ToneMap_BloomCompositePS adds its levels (1, 1/2, 1/4; Sekiro DXBC, Nightreign DXIL), 1 for the glow
+		color = SampleA(uv) + params.settings.z * UpsampleTent(uv, params.sizes.xy, params.shape.y);
 	}
 	else
 	{

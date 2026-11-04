@@ -99,6 +99,11 @@ public class GparamLightShaft
 public class GparamVolumetricFog
 {
     public bool Enabled = true;
+    /// <summary>
+    ///     VolumetricFog GameScale: 1 in Nightreign, 1-12 through the day in Sekiro. Applied by the game's code, which
+    ///     isn't traced; taken to divide the density (see VolumetricFogPass)
+    /// </summary>
+    public float GameScale = 1.0f;
     public int VolumeWidth = 96;
     public int VolumeDepth = 24;
     public float NearDepth = 0.1f;

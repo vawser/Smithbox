@@ -604,6 +604,7 @@ public class GparamLightingBank
 
         var fog = effects.VolumetricFog;
         fog.Enabled = reader.Get(VolumetricFogKey, "VolumetricFog Enable", 0, fog.Enabled);
+        fog.GameScale = reader.Get(VolumetricFogKey, "VolumetricFog GameScale", 0, fog.GameScale);
         fog.VolumeWidth = reader.Get(VolumetricFogKey, "VolumetricFog VolumeWidth", 0, fog.VolumeWidth);
         fog.VolumeDepth = reader.Get(VolumetricFogKey, "VolumetricFog VolumeDepth", 0, fog.VolumeDepth);
         fog.NearDepth = reader.Get(VolumetricFogKey, "VolumetricFog NearDepth", 0, fog.NearDepth);
@@ -728,9 +729,10 @@ public class GparamLightingBank
                 if (middleGray > 0.0f)
                     lighting.MiddleGray = MathF.Log2(middleGray);
 
-                // Their GS Presents mode is 0 and Yebis-ToneType 2 nearly everywhere, taken to be a filmic curve
+                // Their GS Presents mode is 0 and Yebis-ToneType 2 nearly everywhere: the filmic table DS3's tone map
+                // passes use (ToneMap_WriteFilmicToneMappingTablePS, ToneMap_TabledToneMapLUTPS)
                 var toneType = reader.Get(ToneMapKey, "Yebis-ToneType", 0, 2);
-                lighting.ToneMapMode = toneType == 2 ? 7 : 0;
+                lighting.ToneMapMode = toneType == 2 ? GparamLighting.YebisFilmicMode : 0;
                 break;
             }
             default:

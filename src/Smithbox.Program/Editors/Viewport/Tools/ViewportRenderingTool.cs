@@ -1012,6 +1012,15 @@ public class ViewportRenderingTool
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Bloom_Enable")}##postBloom", ref CFG.Current.Viewport_Post_Bloom);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Bloom_Enable_TT"));
 
+        ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Bloom);
+        ImGui.Indent();
+        ImGui.SetNextItemWidth(200.0f);
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Post_Bloom_Strength")}##postBloomStrength",
+            ref CFG.Current.Viewport_Post_Bloom_Strength, 0.0f, 2.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Bloom_Strength_TT"));
+        ImGui.Unindent();
+        ImGui.EndDisabled();
+
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Glow_Enable")}##postGlow", ref CFG.Current.Viewport_Post_Glow);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Glow_Enable_TT"));
 
@@ -1040,6 +1049,11 @@ public class ViewportRenderingTool
 
         ImGui.BeginDisabled(!CFG.Current.Viewport_Post_Volumetric_Fog);
         ImGui.Indent();
+
+        ImGui.SetNextItemWidth(200.0f);
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_Post_Fog_Density_Scale")}##postFogDensityScale",
+            ref CFG.Current.Viewport_Post_Fog_Density_Scale, 0.0f, 2.0f);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_Post_Fog_Density_Scale_TT"));
 
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_Post_Fog_Shadows_Enable")}##postFogShadows",
             ref CFG.Current.Viewport_Post_Fog_Shadows);
@@ -1243,7 +1257,8 @@ public class ViewportRenderingTool
             "VolumetricFog Enable");
         Row("VIEWPORT_Rendering_Post_Row_Height_Fog",
             LOC.Get("VIEWPORT_Rendering_Post_Height_Fog_Value", $"{fog.FixedDensity:G3}", $"{fog.HeightFogDensityScale:G3}",
-                $"{fog.HeightFogDistribution:G3}", $"{fog.HeightFogOffset:0.###}", $"{fog.ScatteringG:0.###}"),
+                $"{fog.HeightFogDistribution:G3}", $"{fog.HeightFogOffset:0.###}", $"{fog.ScatteringG:0.###}",
+                $"{fog.GameScale:0.###}"),
             "VolumetricFog Global HeightFogDensity Scale");
         Row("VIEWPORT_Rendering_Post_Row_Fog_Sky", Color(fog.SkyColor), "VolumetricFog SkyLight SkyColor");
         Row("VIEWPORT_Rendering_Post_Row_Fog_Sun",

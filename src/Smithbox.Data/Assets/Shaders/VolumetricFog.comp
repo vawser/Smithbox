@@ -8,7 +8,8 @@
 //
 // How the game turns the values into fog isn't known; this is a reading of them:
 // - density: Global FixedDensity + HeightFogDensity Scale x exp(-HeightFogDistribution x (y - HeightFogOffset))
-//   per metre, with AbsorptionScale adding to how much light it takes away, but not to how much it scatters
+//   per metre, levelling off at twice the scale below the offset as the game's shader does (see Density), with
+//   AbsorptionScale adding to how much light it takes away, but not to how much it scatters
 // - SkyLight SkyColor: light from all around, the same from every direction
 // - DirLight DirectColor and OppositeColor: the sun's light seen looking towards it and away from it, blended by a
 //   Henyey-Greenstein phase with Global ScatteringG; shadowed by the sun's cascades
@@ -168,10 +169,14 @@ float ViewDepth(vec3 worldPos)
 	return abs((sceneparam.view * vec4(worldPos, 1.0)).z);
 }
 
+// As the game's GXVolumetricFog_WriteInScattering does it (Sekiro DXBC, Nightreign DXIL): z = Distribution x the
+// height above HeightFogOffset, and the height fog is exp(-z) above the offset and 2 - exp(z) below it, so it
+// levels off at twice the Density Scale rather than growing without end under the offset
 float Density(float y)
 {
-	float height = clamp(-fog.density.z * (y - fog.density.w), -80.0, 80.0);
-	return clamp(fog.density.x + fog.density.y * exp(height), 0.0, 4.0);
+	float z = clamp(fog.density.z * (y - fog.density.w), -80.0, 80.0);
+	float height = z >= 0.0 ? exp(-z) : 2.0 - exp(z);
+	return max(fog.density.x + fog.density.y * height, 0.0);
 }
 
 // Henyey-Greenstein, scaled to 1 looking straight at the light

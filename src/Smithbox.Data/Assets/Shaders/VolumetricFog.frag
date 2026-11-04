@@ -111,10 +111,14 @@ vec3 Unproject(vec2 ndc, float depth)
 	return world.xyz / world.w;
 }
 
+// As the game's GXVolumetricFog_WriteInScattering does it (Sekiro DXBC, Nightreign DXIL): z = Distribution x the
+// height above HeightFogOffset, and the height fog is exp(-z) above the offset and 2 - exp(z) below it, so it
+// levels off at twice the Density Scale rather than growing without end under the offset
 float Density(float y)
 {
-	float height = clamp(-fog.density.z * (y - fog.density.w), -80.0, 80.0);
-	return clamp(fog.density.x + fog.density.y * exp(height), 0.0, 4.0);
+	float z = clamp(fog.density.z * (y - fog.density.w), -80.0, 80.0);
+	float height = z >= 0.0 ? exp(-z) : 2.0 - exp(z);
+	return max(fog.density.x + fog.density.y * height, 0.0);
 }
 
 float Phase(float cosAngle, float g)

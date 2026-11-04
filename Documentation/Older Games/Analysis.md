@@ -251,6 +251,79 @@ pick their own IDs (approach 4).
 | ER m10_00_00_00, AC6, NR | Everything | As before: timezone buttons, the GS exposure, TAA in ER's mapbase | |
 | DS1R or DS2 Map Editor; any older game's Model Editor | Post Effects | No SSR or TAA | |
 
+### SDT fog too dense, bloom too strong (reported 2026-11-04; fixed, not yet checked in the app)
+
+SDT's values sit far from ER's: m11_00_0000 has `HeightFogDensity Scale` 0.075-1 (ER m10: 0.004), `HeightFogOffset`
+-85 to -150 with Ashina's valley below it, `FixedDensity` up to 0.015, and Bloom `Glare Threshold` 0-0.075 with
+`Alpha` 0.4-1 (ER: 1 and 0.25). The game's shaders were read (Sekiro `shader/*.shaderbnd.dcx` with ivtool `shaders`,
+`fxc -dumpbin` for its DXBC; Nightreign's DXIL with `dxc -dumpbin` to check the later engine):
+
+- **Height fog** (`GXVolumetricFog_WriteInScattering`): `z = g_HeightFogParam.x x dot(position, g_HeightFactor)`,
+  then `density = Global.x + local + g_HeightFogParam.y x (z >= 0 ? exp(-z) : 2 - exp(z))`. Below the offset the
+  fog levels off at twice the scale. Smithbox grew it as `exp(-z)` without limit (clamped at 4 per metre), so every
+  froxel under Ashina's offset was opaque. The same code is in Nightreign, so the fix applies to every game.
+- **Bloom bright pass** (`ToneMap_BrightPassPS`): `L = dot(c, (0.29891, 0.58661, 0.11448))`,
+  `c x max(L - T, 0) / (L + 0.0001)`, then a mix towards luma by `BloomBoostColor.w` and x `BloomBoostColor.rgb`. No
+  knee. Smithbox measured the brightest channel with a soft knee, which blooms more, above all on saturated colours.
+  Identical in Nightreign.
+- Not settled: SDT's `VolumetricFog GameScale` (1-12 through the day; not in ER) isn't a shader constant, so it is
+  applied on the CPU in a way not traced, and is still ignored. The composite weights the levels 1, 1/2, 1/4 and x
+  `g_vBloomFinalColor`, also set on the CPU; Smithbox still averages its levels x Alpha.
+
+Changed: `Density` in `VolumetricFog.comp` and `VolumetricFog.frag`; `Prefilter` in `Bloom.frag` (BloomPass passes
+no knee). SPIR-V rebuilt with glslangValidator.
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| SDT m11_00_00_00 | Look down into the valley at a few times of day | Mist in the valley that thins with height, through which the far side shows; not a solid wall | Still solid: GameScale probably divides the density; report the time and how it looks |
+| Same | Toggle Bloom | Softer than before; bright skies and lit surfaces glow, coloured lamps less than before | Still too strong: the composite's CPU-side scale; say roughly how much stronger than the game |
+| ER m10_00_00_00, m60 tiles | Fog and bloom on | Much as before; less fog only where the camera looks below a map's height fog offset, slightly less bloom on saturated lights | |
+
+Result (2026-11-04): fog still too dense, bloom still too strong in SDT.
+
+### Second pass: GameScale, level weights, calibration sliders (2026-11-04; not yet checked in the app)
+
+Read further:
+- `GXVolumetricFog_SolveVolumetricFog`: each slice's density and light are scaled by `exp(log depth of the slice) x
+  PreComputed.x` (slice thickness), and the transmittance is `exp(-sum)`. In-scatter is attenuated by
+  `exp(-sum x ExtinctionScale)` per channel. `PreComputed`, `Global`, `g_HeightFactor` and `g_HeightFogParam` are
+  CPU-set. Nothing named GameScale is in any fog shader.
+- `GameScale`: Nightreign's mapbase has 1. In SDT it is 1 in 27 files, and keyed through the day in the others
+  (m11_00_0000: 12, 1.7, 1.25, 2.5, 1, 1 at t0-t22). Never below 1.
+- `ToneMap_BloomCompositePS` (Sekiro and Nightreign): `(A + B / 2 + C / 4) x g_vBloomFinalColor`. The tone map adds
+  the glare x `g_GlareLuminance.x` to the exposed scene. The CPU-set scale is unknown.
+- The fog strings in sekiro.exe have neither RIP-relative references nor absolute pointers (searched at 4-byte
+  steps): the code that reads them is in its protected sections, as with Nightreign. Not traceable with ivtool.
+
+Built (decided with the user: the likeliest reading plus sliders):
+- `GparamVolumetricFog.GameScale` (`VolumetricFog GameScale`, default 1). `VolumetricFogPass` multiplies
+  FixedDensity and HeightFogDensity Scale by `Viewport_Post_Fog_Density_Scale / GameScale`. Hypothesis.
+- Bloom: the upsample adds each coarser level at `Settings.z` of the one above, 0.5 for the bloom (the game's
+  1, 1/2, 1/4) and 1 for the glow (as matched by eye before). The composite divides by the weights' sum, so a flat
+  bright area still blooms by Alpha. Alpha x `Viewport_Post_Bloom_Strength`.
+- Post Effects: "Strength" under Bloom and "Density Scale" under Volumetric Fog (0-2, default 1). The Height Fog row
+  shows the game scale.
+
+| Where | Do | Report |
+|---|---|---|
+| SDT m11_00_00_00, a view you know from the game | Set the time to match it; move Density Scale until the fog matches | The Density Scale, the time, and the Height Fog row (its game scale) |
+| Same, at another time with a different game scale (t0: 12, t6: 1.25) | The same | Whether the same Density Scale fits: if it does, dividing by GameScale is right; if it changes with the game scale, it isn't |
+| Same | Move Bloom Strength until the bloom matches | The value; whether it differs between times (Alpha is 1 at t0-t4, 0.4 at t6) |
+| ER m10_00_00_00 | Both sliders at 1 | As before; if anything less wide a bloom haze round very bright areas | 
+
+Result (2026-11-04, SDT m11_00_00_00): matched with Bloom Strength 0.5 and Fog Density Scale 0.1. Only one time of
+day was reported, so whether dividing by GameScale is right is still open (a second time with a different game scale
+would show it).
+
+Built: `GparamProfile.FogDensityScale` and `BloomScale`, 0.1 and 0.5 for SDT, 1 elsewhere, applied in
+`VolumetricFogPass` and `BloomPass` before the viewport's sliders, so the sliders at 1 now mean "as matched".
+
+| Where | Do | Expect | If wrong |
+|---|---|---|---|
+| SDT m11_00_00_00 | Set both sliders back to 1 (they are saved in the settings at 0.5 and 0.1) | The fog and bloom as matched | |
+| Same, at t0 (game scale 12) and t6 (1.25) | Compare with the game | Both still match | One is off: report the Density Scale that fits it, and the GameScale rule changes |
+| ER, NR, AC6 | | Unchanged | |
+
 ## Suggested order
 
 | Step | Games | Cost | Visible gain |

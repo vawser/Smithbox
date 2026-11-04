@@ -1353,6 +1353,22 @@
       "Text": "The viewport's own scale on the glow, on top of the GPARAM's Blur RgbScale. 1 is the GPARAM as read."
     },
     {
+      "Key": "VIEWPORT_Rendering_Post_Bloom_Strength",
+      "Text": "Strength"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Bloom_Strength_TT",
+      "Text": "The viewport's own scale on the bloom, on top of the GPARAM's GlareBloom Alpha and the game's own scale (Sekiro 0.5, matched against the game). 1 is the game as matched. The game sets part of its bloom's strength in its code, which isn't known, so if a game's bloom looks too strong or weak, set this to match and report the value."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Fog_Density_Scale",
+      "Text": "Density Scale"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Post_Fog_Density_Scale_TT",
+      "Text": "The viewport's own scale on the fog's density, on top of the GPARAM's (already divided by its GameScale, which Sekiro sets to 1-12) and the game's own scale (Sekiro 0.1, matched against the game). 1 is the game as matched. If a game's fog looks too thick or thin, set this to match and report the value, with the time of day and the game scale the Post Effects table shows."
+    },
+    {
       "Key": "VIEWPORT_Rendering_Post_Ssr_Enable",
       "Text": "SSR"
     },
@@ -1446,7 +1462,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Height_Fog_Value",
-      "Text": "density {0} + {1} x exp(-{2} x (y - {3})), scattering g {4}"
+      "Text": "density {0} + {1} x exp(-{2} x (y - {3})), levelling off at 2 x {1} below {3}; over game scale {5}; scattering g {4}"
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Row_Fog_Sky",

@@ -18,7 +18,13 @@ public enum ToneMapOperator
     Reinhard = 1,
 
     /// <summary>The ACES filmic curve, as fitted by Narkowicz</summary>
-    Filmic = 2
+    Filmic = 2,
+
+    /// <summary>
+    ///     DS3's and Bloodborne's Yebis filmic table (ToneMap_WriteFilmicToneMappingTablePS): Hejl and Burgess-Dawson's
+    ///     curve, whose output is already display encoded, so no square root follows
+    /// </summary>
+    YebisFilmic = 3
 }
 
 /// <summary>The viewport setting for tone mapping, CFG.Viewport_ToneMap</summary>
@@ -94,12 +100,14 @@ public class ToneMapPass
         }
 
         // ToneMapMode 8 is "Reinhard Contrast and White Balance", which every Elden Ring GPARAM uses, and 7 the
-        // filmic contrast. The others shift colors in ways that aren't known, so are left clipped.
+        // filmic contrast; YebisFilmicMode is DS3 and BB's Yebis-ToneType 2. The others shift colors in ways that aren't
+        // known, so are left clipped.
         return lighting.ToneMapMode switch
         {
             8 => (ToneMapOperator.Reinhard,
                 Math.Max(lighting.ReinhardContrast * lighting.ReinhardWhiteBalance, 1e-3f)),
             7 => (ToneMapOperator.Filmic, whitePoint),
+            GparamLighting.YebisFilmicMode => (ToneMapOperator.YebisFilmic, whitePoint),
             _ => (ToneMapOperator.Clamp, whitePoint)
         };
     }

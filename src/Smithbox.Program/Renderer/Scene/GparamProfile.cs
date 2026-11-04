@@ -70,6 +70,18 @@ public sealed class GparamProfile
     public bool HasTimezones { get; private init; }
 
     /// <summary>
+    ///     A scale on the volumetric fog's density (after its GameScale), for the part of it the game's code sets and
+    ///     that isn't traced. Sekiro: 0.1, matched by eye against the game in m11_00_00_00 (2026-11-04).
+    /// </summary>
+    public float FogDensityScale { get; private init; } = 1.0f;
+
+    /// <summary>
+    ///     A scale on the bloom (over GlareBloom Alpha), for g_vBloomFinalColor, which the game's code sets and that
+    ///     isn't traced. Sekiro: 0.5, matched by eye against the game in m11_00_00_00 (2026-11-04).
+    /// </summary>
+    public float BloomScale { get; private init; } = 1.0f;
+
+    /// <summary>
     ///     The path of an area's color grading TPF, with {0} the area number (see <see cref="ColorGradingLuts" />). Null if
     ///     the game's LUTs can't be read.
     /// </summary>
@@ -156,7 +168,9 @@ public sealed class GparamProfile
         {
             Supported = true,
             Exposure = GparamExposureModel.GsStops,
-            LutPathFormat = LutInArea
+            LutPathFormat = LutInArea,
+            FogDensityScale = 0.1f,
+            BloomScale = 0.5f
         },
         ProjectType.DS3 => new GparamProfile
         {

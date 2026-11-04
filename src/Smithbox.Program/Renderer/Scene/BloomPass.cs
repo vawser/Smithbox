@@ -11,10 +11,10 @@ namespace StudioCore.Renderer;
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct BloomParam
 {
-    /// <summary>x: mode, y: threshold, z: knee, w: luminance</summary>
+    /// <summary>x: mode, y: threshold, z: the weight of each coarser level against the one above, w: luminance</summary>
     public Vector4 Settings;
 
-    /// <summary>x: saturation control, y: radius scale, z: alpha, w: 1 / level count</summary>
+    /// <summary>x: saturation control, y: radius scale, z: alpha, w: 1 / the sum of the levels' weights</summary>
     public Vector4 Shape;
 
     /// <summary>xy: the size of a texel of the texture filtered, zw: the size of the target drawn</summary>
@@ -97,8 +97,8 @@ public class BloomPass : PostProcessPass
             var glow = frame.Effects.Glow;
             levels = Math.Clamp(glow.NumLevels, 1, MaxLevels);
 
-            // No threshold and no saturation control: what glows, glows
-            settings = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+            // No threshold and no saturation control: what glows, glows. Its levels are added evenly, as matched by eye.
+            settings = new Vector4(0.0f, 0.0f, 1.0f, 1.0f);
             // Blur RgbScale alone: with FinalColorScale (5) too, the egg of c2030 bloomed into a white disc, and a
             // fifth of that was judged right by eye against the game, which is RgbScale on its own
             shape = new Vector4(0.0f, Math.Max(glow.BlurSampleScale * glow.BlurSmoothness, 0.0f),
@@ -110,10 +110,16 @@ public class BloomPass : PostProcessPass
             var bloom = frame.Effects.Bloom;
             levels = Math.Clamp(bloom.NumLevels, 1, MaxLevels);
 
-            var knee = Math.Max(bloom.Threshold, 1e-3f) * 0.5f * Math.Max(bloom.Smooth, 0.0f);
-            settings = new Vector4(0.0f, bloom.Threshold, knee, bloom.Luminance);
-            shape = new Vector4(bloom.SaturateControl, Math.Max(bloom.GaussianRadiusScale, 0.0f), bloom.Alpha,
-                1.0f / levels);
+            // The game adds each coarser level at half the weight of the one above (ToneMap_BloomCompositePS), and
+            // scales the sum by g_vBloomFinalColor, set by its code (not traced); here Alpha over the weights' sum, so
+            // a flat area blooms by Alpha, times the game's own scale (Sekiro 0.5, matched by eye) and the viewport's
+            const float levelWeight = 0.5f;
+            var weightSum = (1.0f - MathF.Pow(levelWeight, levels)) / (1.0f - levelWeight);
+            var strength = GparamProfile.Current.BloomScale * CFG.Current.Viewport_Post_Bloom_Strength;
+
+            settings = new Vector4(0.0f, bloom.Threshold, levelWeight, bloom.Luminance);
+            shape = new Vector4(bloom.SaturateControl, Math.Max(bloom.GaussianRadiusScale, 0.0f),
+                Math.Max(bloom.Alpha * strength, 0.0f), 1.0f / weightSum);
         }
 
         EnsureResources(gd, frame, levels);

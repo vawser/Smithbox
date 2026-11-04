@@ -12,6 +12,7 @@
 #define OPERATOR_CLAMP 0
 #define OPERATOR_REINHARD 1
 #define OPERATOR_FILMIC 2
+#define OPERATOR_YEBIS_FILMIC 3
 
 layout(set = 0, binding = 0) uniform ToneMapParams
 {
@@ -86,6 +87,15 @@ vec3 Filmic(vec3 color)
 	return (color * (a * color + b)) / (color * (c * color + d) + e);
 }
 
+// DS3's and Bloodborne's filmic table, as ToneMap_WriteFilmicToneMappingTablePS writes it (DS3 DXBC): Hejl and
+// Burgess-Dawson's curve, which ends in display values (its gamma is built in). The table then raises it to
+// 2.2 / Yebis-Gamma, 2.2 in their files, so to the power 1.
+vec3 YebisFilmic(vec3 color)
+{
+	vec3 x = max(color - 0.004, vec3(0.0));
+	return (x * (6.2 * x + 0.5)) / (x * (6.2 * x + 1.7) + 0.06);
+}
+
 void main()
 {
 	ivec2 size = textureSize(sampler2D(sceneColor, sceneSampler), 0);
@@ -111,7 +121,9 @@ void main()
 		color = Filmic(color);
 	}
 
-	vec3 display = sqrt(clamp(color, 0.0, 1.0));
+	vec3 display = op == OPERATOR_YEBIS_FILMIC
+		? clamp(YebisFilmic(color), 0.0, 1.0)
+		: sqrt(clamp(color, 0.0, 1.0));
 
 	if (params.grading.x > 0.5)
 	{

@@ -103,6 +103,12 @@ public class GparamLighting
     public bool AutoExposure = false;
     public float MiddleGray = -7.0f;
 
+    /// <summary>
+    ///     A <see cref="ToneMapMode" /> of Smithbox's own, outside the GPARAM's values: DS3 and Bloodborne's Yebis-ToneType 2,
+    ///     the filmic table (see <see cref="ToneMapOperator.YebisFilmic" />)
+    /// </summary>
+    public const int YebisFilmicMode = 1002;
+
     /// <summary>The TONE_MAP_MODE: 8, "Reinhard Contrast and White Balance", in every Elden Ring GPARAM</summary>
     public int ToneMapMode = 8;
     public float ReinhardContrast = 1.35f;

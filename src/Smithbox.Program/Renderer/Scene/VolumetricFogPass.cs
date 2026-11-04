@@ -129,12 +129,18 @@ public class VolumetricFogPass
         var far = Math.Max(fog.FarDepth, near * 1.01f);
         var absorption = (fog.AbsorptionScale.X + fog.AbsorptionScale.Y + fog.AbsorptionScale.Z) / 3.0f;
 
+        // GameScale (1 in Nightreign, 1-12 in Sekiro) isn't in the game's shaders, so its code applies it; taken to
+        // divide the density, untraced. Then the game's own scale (Sekiro 0.1, matched by eye), and the viewport's.
+        var densityScale = GparamProfile.Current.FogDensityScale *
+                           Math.Max(CFG.Current.Viewport_Post_Fog_Density_Scale, 0.0f) / Math.Max(fog.GameScale, 1e-3f);
+
         Params = new VolumetricFogParam
         {
             ClipToWorld = clipToWorld,
             Volume = new Vector4(width, height, slices, Math.Clamp(fog.SampleCount, 1, 16)),
             DepthRange = new Vector4(near, far, MathF.Log(far / near), Math.Max(fog.FogEndDepth, far)),
-            Density = new Vector4(Math.Max(fog.FixedDensity, 0.0f), Math.Max(fog.HeightFogDensityScale, 0.0f),
+            Density = new Vector4(Math.Max(fog.FixedDensity, 0.0f) * densityScale,
+                Math.Max(fog.HeightFogDensityScale, 0.0f) * densityScale,
                 fog.HeightFogDistribution, fog.HeightFogOffset),
             Extinction = new Vector4(Math.Max(absorption, 0.0f), 0.0f, 0.0f, 0.0f),
             Sky = new Vector4(Light(fog.SkyColor, exposure), fog.SkyHeightAtten),

@@ -1331,6 +1331,10 @@ public class CFG
     public bool Viewport_Post_Auto_Exposure = true;
     public bool Viewport_Post_Bloom = true;
 
+    // The viewport's scale on the bloom, over the GPARAM's GlareBloom Alpha, to match a game whose CPU-side bloom
+    // scale isn't known (Sekiro)
+    public float Viewport_Post_Bloom_Strength = 1.0f;
+
     // The GPARAM's Glow Filter, round what surfaces give off themselves, and the viewport's scale on it
     public bool Viewport_Post_Glow = true;
     public float Viewport_Post_Glow_Strength = 1.0f;
@@ -1344,6 +1348,10 @@ public class CFG
     public bool Viewport_Post_Volumetric_Fog = true;
     public bool Viewport_Post_Fog_Shadows = true;
     public bool Viewport_Post_Fog_Local_Lights = true;
+
+    // The viewport's scale on the fog's density, over the GPARAM's, to match a game whose CPU-side density scale
+    // isn't known (Sekiro's GameScale)
+    public float Viewport_Post_Fog_Density_Scale = 1.0f;
 
     // Whether transparent flvers (water, glass) are fogged at their own depth, as the opaque scene behind them is
     public bool Viewport_Post_Fog_Transparents = true;
