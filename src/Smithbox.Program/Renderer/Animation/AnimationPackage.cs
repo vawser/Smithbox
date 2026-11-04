@@ -118,7 +118,7 @@ public sealed class AnimationPackage : IDisposable
     ///     Variants of a character share the animations of a base character: c2041 plays the set of
     ///     c2040, and c3020 that of c3000. The nearest set wins, starting with the character itself.
     /// </summary>
-    private static IEnumerable<string> GetAnimationSetNames(AnimatedModelKind kind, string modelName)
+    public static IEnumerable<string> GetAnimationSetNames(AnimatedModelKind kind, string modelName)
     {
         yield return modelName;
 
@@ -177,7 +177,7 @@ public sealed class AnimationPackage : IDisposable
     ///     Character animations sit next to the chrbnd. The base anibnd holds the skeleton, and later
     ///     games split the clips off into sibling binders such as c2010_div00 or c0300_a000_00.
     /// </summary>
-    private static IEnumerable<string> FindCharacterBinders(VirtualFileSystem fs, string containerPath,
+    public static IEnumerable<string> FindCharacterBinders(VirtualFileSystem fs, string containerPath,
         string modelName)
     {
         var folder = Path.GetDirectoryName(containerPath)?.Replace('\\', '/').Trim('/') ?? "";

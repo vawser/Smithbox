@@ -142,6 +142,68 @@ public class TimeActEntry
         AnimationsVersion++;
     }
 
+    /// <summary>
+    /// Called whenever animations are added, removed or reordered, so lists built from them know to rebuild
+    /// </summary>
+    public void MarkAnimationsChanged()
+    {
+        AnimationsVersion++;
+    }
+
+    /// <summary>
+    /// Gets the first animation ID from the given one onwards that no animation of this time act uses
+    /// </summary>
+    public long GetFreeAnimationID(long start)
+    {
+        var id = Math.Max(start, 0);
+
+        var used = TimeAct.Animations.Select(e => e.ID).ToHashSet();
+
+        while (used.Contains(id))
+        {
+            id++;
+        }
+
+        return id;
+    }
+
+    /// <summary>
+    /// Creates a copy of an animation under another ID. The events are copied along with the groups they belong to.
+    /// </summary>
+    public TAE.Animation CloneAnimation(TAE.Animation animation, long id, string animFileName)
+    {
+        var bigEndian = TimeAct.BigEndian;
+
+        var clone = new TAE.Animation(id, animation.MiniHeader?.GetClone(), animFileName);
+
+        var groups = new Dictionary<TAE.EventGroup, TAE.EventGroup>();
+
+        foreach (var group in animation.EventGroups)
+        {
+            var groupClone = group.GetClone();
+
+            groups[group] = groupClone;
+            clone.EventGroups.Add(groupClone);
+        }
+
+        foreach (var ev in animation.Events)
+        {
+            var eventClone = ev.GetClone(bigEndian);
+
+            if (ev.Group != null && groups.TryGetValue(ev.Group, out var groupClone))
+            {
+                eventClone.Group = groupClone;
+            }
+
+            clone.Events.Add(eventClone);
+        }
+
+        // The events are copied with their templates, so the copy is ready to edit
+        TemplatedAnimations.Add(clone);
+
+        return clone;
+    }
+
     public void Load()
     {
         if (TimeAct != null || LoadFailed)
@@ -165,7 +227,12 @@ public class TimeActEntry
     /// </summary>
     public long GetFullAnimationID(TAE.Animation animation, int categorySize)
     {
-        return animation.ID >= categorySize ? animation.ID : BindIndex * categorySize + animation.ID;
+        return GetFullAnimationID(animation.ID, categorySize);
+    }
+
+    public long GetFullAnimationID(long animationID, int categorySize)
+    {
+        return animationID >= categorySize ? animationID : (long)BindIndex * categorySize + animationID;
     }
 
     /// <summary>

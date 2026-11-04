@@ -54,7 +54,18 @@ public class TimeActContainerWrapper
     /// <summary>
     /// Whether any of the time acts have changes that are yet to be saved
     /// </summary>
-    public bool HasUnsavedTimeActs => HasStructuralChanges || TimeActs.Any(e => e.IsDirty);
+    public bool HasUnsavedTimeActs => HasStructuralChanges || TimeActs.Any(e => e.IsDirty) || PendingAnimationFiles.Count > 0;
+
+    /// <summary>
+    /// Animation HKX files that have been imported, keyed by their full animation ID.
+    /// They are written into their binders when the source is saved.
+    /// </summary>
+    public Dictionary<long, TimeActPendingAnimationFile> PendingAnimationFiles { get; } = new();
+
+    /// <summary>
+    /// Characters keep their animations in anibnds next to the chrbnd, while objects and assets nest them in their container
+    /// </summary>
+    public bool IsCharacter => SourcePath.TrimStart('/').StartsWith("chr", StringComparison.OrdinalIgnoreCase);
 
     /// <summary>
     /// Whether time acts have been added or removed since the source was last saved
@@ -198,10 +209,55 @@ public class TimeActContainerWrapper
     /// </summary>
     public string GetAnimationName(TimeActEntry entry, TAE.Animation animation)
     {
+        return FormatAnimationName(entry.GetFullAnimationID(animation, AnimationCategorySize));
+    }
+
+    /// <summary>
+    /// Gets the name of the HKX file of a full animation ID, such as a000_003000
+    /// </summary>
+    public string FormatAnimationName(long id)
+    {
         var size = AnimationCategorySize;
-        var id = entry.GetFullAnimationID(animation, size);
 
         return size == 10000 ? $"a{id / size:D2}_{id % size:D4}" : $"a{id / size:D3}_{id % size:D6}";
+    }
+
+    // Binder IDs of later games have this added on top of the animation ID
+    private const int FirstAnimationBinderID = 1000000000;
+
+    /// <summary>
+    /// Gets the binder ID that the HKX file of a full animation ID is stored under
+    /// </summary>
+    public int GetAnimationBinderID(long id)
+    {
+        return UsesBinder3() ? (int)id : FirstAnimationBinderID + (int)id;
+    }
+
+    /// <summary>
+    /// Whether a binder file is the HKX of an animation, rather than a skeleton or other havok data.
+    /// Gives the full animation ID of the file if it is.
+    /// </summary>
+    public bool TryGetAnimationID(int binderID, string fileName, out long id)
+    {
+        id = -1;
+
+        if (!fileName.Contains(".hkx", StringComparison.OrdinalIgnoreCase))
+            return false;
+
+        if (UsesBinder3())
+        {
+            if (binderID < 0 || binderID > 999999)
+                return false;
+
+            id = binderID;
+            return true;
+        }
+
+        if (binderID < FirstAnimationBinderID)
+            return false;
+
+        id = binderID - FirstAnimationBinderID;
+        return true;
     }
 
     /// <summary>
@@ -230,46 +286,157 @@ public class TimeActContainerWrapper
     }
 
     /// <summary>
-    /// Writes the modified time acts into the source container
+    /// Writes the modified time acts into the source container, and the imported animation files into
+    /// the containers they belong in. For a character these can be the anibnds split off from the source.
     /// </summary>
     public void SaveTimeActs()
     {
         if (!HasUnsavedTimeActs)
             return;
 
-        using var binder = ReadBinderFile(SourcePath);
+        var timeActsChanged = HasStructuralChanges || TimeActs.Any(e => e.IsDirty);
+
+        var paths = new List<string>();
+
+        if (timeActsChanged)
+        {
+            paths.Add(SourcePath);
+        }
+
+        foreach (var path in PendingAnimationFiles.Values.SelectMany(e => e.BinderPaths))
+        {
+            if (!paths.Contains(path, StringComparer.OrdinalIgnoreCase))
+            {
+                paths.Add(path);
+            }
+        }
+
+        var failed = false;
+
+        foreach (var path in paths)
+        {
+            var updateTimeActs = timeActsChanged && path.Equals(SourcePath, StringComparison.OrdinalIgnoreCase);
+
+            var animationFiles = PendingAnimationFiles.Values
+                .Where(e => e.BinderPaths.Contains(path, StringComparer.OrdinalIgnoreCase))
+                .ToList();
+
+            if (!SaveBinder(path, updateTimeActs, animationFiles))
+            {
+                failed = true;
+            }
+        }
+
+        // Writing a file again only replaces it, so whatever failed is kept for the next save
+        if (!failed)
+        {
+            PendingAnimationFiles.Clear();
+        }
+    }
+
+    private bool SaveBinder(string path, bool updateTimeActs, List<TimeActPendingAnimationFile> animationFiles)
+    {
+        using var binder = ReadBinderFile(path);
 
         if (binder == null)
         {
-            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", SourcePath));
-            return;
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Find_Binder", path));
+            return false;
         }
 
         var nestedFile = FindNestedAnibnd(binder);
 
-        List<(TimeActEntry Entry, byte[] Bytes)> written;
+        var written = new List<(TimeActEntry Entry, byte[] Bytes)>();
 
         if (nestedFile == null)
         {
-            written = UpdateTimeActFiles(binder);
+            UpdateFiles(binder);
         }
         else
         {
             using var anibnd = ReadBinder(nestedFile.Bytes);
 
-            written = UpdateTimeActFiles(anibnd);
+            UpdateFiles(anibnd);
 
             nestedFile.Bytes = anibnd is BND3 bnd3 ? bnd3.Write() : ((BND4)anibnd).Write();
         }
 
-        WriteBinderFile(binder, SourcePath);
+        WriteBinderFile(binder, path);
 
         foreach (var (entry, bytes) in written)
         {
             entry.MarkSaved(bytes);
         }
 
-        HasStructuralChanges = false;
+        if (updateTimeActs)
+        {
+            HasStructuralChanges = false;
+        }
+
+        return true;
+
+        void UpdateFiles(IBinder target)
+        {
+            if (updateTimeActs)
+            {
+                written = UpdateTimeActFiles(target);
+            }
+
+            foreach (var file in animationFiles)
+            {
+                UpdateAnimationFile(target, file);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Replaces the HKX file of an animation, or adds it alongside the animation files already in the binder,
+    /// sharing the folder, flags and compression of the one closest to it
+    /// </summary>
+    private void UpdateAnimationFile(IBinder binder, TimeActPendingAnimationFile animationFile)
+    {
+        var binderID = GetAnimationBinderID(animationFile.ID);
+
+        var file = binder.Files.FirstOrDefault(e => e.ID == binderID);
+
+        if (file != null)
+        {
+            file.Bytes = animationFile.Bytes;
+            return;
+        }
+
+        var sibling = binder.Files
+            .Where(e => TryGetAnimationID(e.ID, e.Name, out _))
+            .OrderBy(e => Math.Abs((long)e.ID - binderID))
+            .FirstOrDefault()
+            ?? binder.Files.FirstOrDefault(e => e.Name.Contains(".hkx", StringComparison.OrdinalIgnoreCase));
+
+        var name = $"{FormatAnimationName(animationFile.ID)}.hkx";
+        var flags = Binder.FileFlags.Flag1;
+        var compression = DCX.Type.Zlib;
+
+        if (sibling != null)
+        {
+            var siblingName = System.IO.Path.GetFileName(sibling.Name);
+
+            name = sibling.Name.Substring(0, sibling.Name.Length - siblingName.Length) + name;
+            flags = sibling.Flags;
+            compression = sibling.CompressionType;
+        }
+        else if (binder.Files.FirstOrDefault() is { } first)
+        {
+            flags = first.Flags;
+            compression = first.CompressionType;
+        }
+
+        file = new BinderFile(flags, binderID, name, animationFile.Bytes)
+        {
+            CompressionType = compression
+        };
+
+        var index = binder.Files.FindIndex(e => e.ID > binderID);
+
+        binder.Files.Insert(index < 0 ? binder.Files.Count : index, file);
     }
 
     /// <summary>

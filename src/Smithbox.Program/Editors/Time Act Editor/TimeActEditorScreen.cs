@@ -337,9 +337,24 @@ public class TimeActEditorScreen : EditorScreen
 
             try
             {
+                var wroteAnimationFiles = source.PendingAnimationFiles.Count > 0;
+
                 source.SaveTimeActs();
 
                 Smithbox.Log(this, LOC.Get("TAE_Editor_Saved_Source", source.Name));
+
+                // The animations are read from the binders, so they are read again to play the imported files
+                if (wroteAnimationFiles)
+                {
+                    foreach (var view in ViewHandler.Views)
+                    {
+                        if (view?.Selection.SelectedTimeActContainerWrapper != source)
+                            continue;
+
+                        view.Playback.Clear();
+                        view.Playback.OnAnimationChanged();
+                    }
+                }
             }
             catch (Exception e)
             {

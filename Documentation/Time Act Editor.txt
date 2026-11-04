@@ -2,14 +2,6 @@
 # Time Act Editor TODO
 #----------------------------------------------------
 
-- Animations List:
-    - Re-name action
-    - Edit properties for the TAE.Entry class
-    - Create/Duplicate/Delete actions
-    - Sort action
-    - Drag and drop re-order
-    - Export: export the animation .hkx file (include mass export option)
-    
 - Action Graph:
     - Multi-select
         - If same, allow edits to apply change to all members of selection (displaying first entry in the properties window)

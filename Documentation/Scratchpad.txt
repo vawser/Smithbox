@@ -6,3 +6,4 @@
   Gparam Editor
   Map Editor
   
+Go through all the editors and do a functionality analysis, plus feature refinement sweep

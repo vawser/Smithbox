@@ -619,6 +619,130 @@
     {
       "Key": "TAE_SelectionWindow_Import_Wrong_Format",
       "Text": "Can't import {0}: it is in the {1} format, but this source uses {2}."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Create",
+      "Text": "Create"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Create_TT",
+      "Text": "Adds an empty animation after the selected one, under the next free ID."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Duplicate_TT",
+      "Text": "Adds a copy of this animation and its events after it, under the next free ID. Its HKX file is not copied."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Delete_TT",
+      "Text": "Removes this animation from the time act. Its HKX file is left in place."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Sort",
+      "Text": "Sort"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Sort_TT",
+      "Text": "Puts the animations in ID order, which is the order the game stores them in."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Import_HKX",
+      "Text": "Import HKX"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Import_HKX_TT",
+      "Text": "Imports a .hkx file as the motion of this animation, stored under its own ID. It replaces the existing file, or is added to the container that holds the other animations of its category. The container is updated when the source is saved."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Export_HKX",
+      "Text": "Export HKX"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Export_HKX_TT",
+      "Text": "Writes the .hkx file this animation plays to a hkx folder within the folder of its source, in the export folder. An animation that imports another exports the file it imports. Unsaved imports are included.\nExport folder: {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Export_All_HKX",
+      "Text": "Export All HKX"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Export_All_HKX_TT",
+      "Text": "Writes the .hkx files of every animation in the list, as it is filtered, to a hkx folder within the folder of its source, in the export folder. Animations that import the same file share it.\nExport folder: {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Drag_TT",
+      "Text": "Move {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Created",
+      "Text": "Created animation {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Duplicated",
+      "Text": "Duplicated animation {0} as {1}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Deleted",
+      "Text": "Deleted animation {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Sorted",
+      "Text": "Sorted the animations of {0} by ID"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Dialog_Select_Import_File",
+      "Text": "Select Animation HKX File"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Dialog_Import_Replace",
+      "Text": "{0} already has a HKX file. Replace it with the imported file?"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Import_Failed",
+      "Text": "Failed to read animation file: {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Import_Shared_Set",
+      "Text": "{0} has no HKX files of its own, as it plays the animations of another character. Import the file into that character instead."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Imported",
+      "Text": "Imported {0} as the HKX file of {1}. It is written to {2} when the source is saved."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Import_Uses_Other",
+      "Text": "{0} imports the motion of {1}, so it keeps playing that one until the import is turned off in its properties."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Read_Failed",
+      "Text": "Failed to read the animation containers of {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_No_Animation_File",
+      "Text": "No HKX file could be found for {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Dialog_Overwrite_Files",
+      "Text": "{0} of the HKX files already exist in {1}. Overwrite them?"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Exported",
+      "Text": "Exported animation file: {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Exported_All",
+      "Text": "Exported {0} animation files to {1}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Export_Failed",
+      "Text": "Failed to export animation file: {0}"
     }
   ]
 }

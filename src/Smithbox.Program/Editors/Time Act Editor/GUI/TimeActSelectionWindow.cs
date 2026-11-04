@@ -342,14 +342,14 @@ public class TimeActSelectionWindow
         Smithbox.Log(this, LOC.Get("TAE_SelectionWindow_Duplicated", entry.Name, copy.Name));
     }
 
-    private static string GetExportFolderLabel()
+    public static string GetExportFolderLabel()
     {
         var folder = CFG.Current.TimeActEditor_Export_Directory;
 
         return string.IsNullOrEmpty(folder) ? LOC.Get("TAE_SelectionWindow_Export_Folder_Unset") : folder;
     }
 
-    private static bool SelectExportFolder()
+    public static bool SelectExportFolder()
     {
         if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("TAE_SelectionWindow_Dialog_Select_Export_Folder"), out var folder))
             return false;
