@@ -1,0 +1,11 @@
+## 96 SpawnOneShotFFX uses=25708 functions=8 steps=312
+  +00 mov:UInt32x1  @1404A8B39  [s32 FFXID]
+  +04 mov:UInt32x1  @1404A8B3E  [s32 DummyPolyID]
+  +08 mov:UInt32x1  @1404A8B30  [s32 SlotID]
+  +0C cmp:UInt8x1  @1404A8B47  [b IsIgnoreDummyPolyAngle]
+  +0D cmp:UInt8x1  @1404A8B55  [b IsFollowDummyPoly]
+  +0E cmp:UInt8x1  @1404A8B33  [b IsRestrictToDummyPoly]
+  +0F movzx:UInt8x1  @1404A8B69  [u8 ExtraSpawnCondition]
+  +10 movzx:UInt16x1  @14042FED2  [s16 StateInfo]
+  ctx: +18 +1A
+
