@@ -509,8 +509,15 @@ public class GparamPropertyEditor
         // COLOR
         else if (field is ColorField colorField)
         {
+            // DS2 stores its colour bytes as BGRA, but SoulsFormats reads them as RGBA,
+            // so Color.R holds blue and Color.B holds red. Swap them for display and back on write.
+            bool isBgr = Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S;
+
             Color raw = colorField.Values[idx].Value;
-            Vector4 fieldValue = new(raw.R / 255.0f, raw.G / 255.0f, raw.B / 255.0f, raw.A / 255.0f);
+            byte red = isBgr ? raw.B : raw.R;
+            byte blue = isBgr ? raw.R : raw.B;
+
+            Vector4 fieldValue = new(red / 255.0f, raw.G / 255.0f, blue / 255.0f, raw.A / 255.0f);
             Vector4 colorInput = fieldValue;
             oldValue = fieldValue;
 
@@ -518,11 +525,14 @@ public class GparamPropertyEditor
 
             if (ImGui.ColorEdit4($"##value{idx}", ref colorInput, flags))
             {
+                int inRed = (int)(colorInput.X * 255.0f);
+                int inBlue = (int)(colorInput.Z * 255.0f);
+
                 Color trueColorInput = Color.FromArgb(
                     (int)(colorInput.W * 255.0f),
-                    (int)(colorInput.X * 255.0f),
+                    isBgr ? inBlue : inRed,
                     (int)(colorInput.Y * 255.0f),
-                    (int)(colorInput.Z * 255.0f)
+                    isBgr ? inRed : inBlue
                     );
 
                 newValue = trueColorInput;
