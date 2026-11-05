@@ -314,7 +314,7 @@ So every getter pairs an Asset field with a Collision field. Retail values confi
 | AssetUnk1 `+05` | `DisableTorrent` | already named (`DisableTorrentAssetOnly`) |
 | AssetUnk1 `+06` | `UnkT4E` | cross-referenced |
 | AssetUnk1 `+0C` | `+37h` (now `UnkT37`) | cross-referenced |
-| AssetUnk1 `+10` | `+38h` (now `UnkT38`) | cross-referenced |
+| AssetUnk1 `+10` | `+38h` (now `LegacyPlayRegionID`, fourth pass) | cross-referenced |
 | AssetUnk1 `+1C` | `UnkT30` | cross-referenced |
 | AssetUnk1 `+20` | `EnableFastTravelEventFlagID` | **`EnableFastTravelEventFlagID`** |
 | AssetUnk1 `+24` (int; was two shorts) | `LocationTextID` | **`LocationTextID`** (e.g. 63002, 68501) |
@@ -330,6 +330,39 @@ So every getter pairs an Asset field with a Collision field. Retail values confi
 
 Collision gained `UnkT37` (byte, 0) and `UnkT38` (int, -1), which SoulsFormats had asserted. Round trip is still
 identical to the baseline.
+
+## Collision values on the character (fourth pass: consumer tracing, group A)
+
+Method and tooling: `MSBE Consumer Tracing Plan.md`. `1403F67E0` copies the settings of the collision (or asset)
+a character stands on into `CS::ChrIns +2E0..+2F8`. The consumers reach the player through
+`[[143D6D018h]+1E508h]` (`WorldChrMan` main player): `watch … 'G:143D6D018+1E508=CS::PlayerIns'`.
+
+| Collision field | ChrIns | consumer | result |
+|---|---|---|---|
+| `UnkT02` | `+2E1` | `140DB1A00` (sound update): signed byte, `<0` keeps the default, 0/1/2 → `140DC6EF0(mode)` on `CS::MoWwiseManImp`, which sets Wwise states `Outdoor`/`IndoorHalf`/`IndoorAll` of `OutdoorIndoor`, `OutdoorIndoorForEnv`, `OutdoorIndoorForRain`; also RTPC #5 | **`OutdoorIndoorType`**. Retail 255 ×4431, 2 ×254 (m12 underground), 1 ×42 (Leyndell interiors), 0 ×10 |
+| `UnkT03` | `+2E6` | same function: cached at `+318h` (overridable by `+438h`), passed to `140DC7300`, which formats `"_%d"` and sets Wwise state group `EasyOcclusionID` | **`EasyOcclusionID`**, bool → byte. Retail 0 ×4732, 1 ×5 |
+| `UnkT38` | `+2F4` (via getter `CF4EF0`) | getter: parts param version `< 0x33` → `+38h`, `0x33+` → `+20h` (PlayRegionID); consumer `1403E98B0` is the play region lookup | **`LegacyPlayRegionID`**. All 1,347 retail MSBs are version ≥ 0x33 (51–74), so retail reads PlayRegionID; UnkT38 is always -1 |
+| `UnkT1C` | `+2F0` | `14062B6F0` (`CSEventWorldAreaTimeCtrl` step) reads it with LocationTextID: overridable by `[[143D75A40h]+14Ch]`; `-1` → `abs(LocationTextID)`; then an area-table override (`[x+C8h]+10h`); cached at `+E4h` | stays **Unk**, summary added. Retail: -1, `== LocationTextID` or `== abs(LocationTextID)` (negative LocationTextID with a positive UnkT1C in m12/m15). Trail stops at the area table (virtual lookup) |
+| `UnkT4C` | `+2E5` | `1406D7E90`: 1 adds, 2 subtracts an offset before comparing a float against a threshold + 10 | stays **Unk**, summary added. Retail 0/1/2, only m21, m25, m39 |
+
+AssetUnk4 is the asset's copy of the first collision bytes (getters `CF43A0`, `CF4470`): `+0` is the switch
+(**`OverrideCollisionSoundSettings`**; `OverrideCollisionSettings` is already AssetUnk1's), `+2` is
+**`OutdoorIndoorType`** (parts version ≥ 0x32), `+3` is **`EasyOcclusionID`** (≥ 0x36). Meta: new enums
+`MSB_COLLISION_OUTDOOR_INDOOR_TYPE` / `MSB_ASSET_OUTDOOR_INDOOR_TYPE`. Round trip: identical to the baseline.
+
+## PlatoonInfo flags named from Lua bindings (group H)
+
+The platoon object has no RTTI class; `watch … '0x140353CA0:0=S:Platoon'` traces it. Both bytes are copied into it
+by the setup function `140353CA0`, and each has exactly one setter, called only from a `CS::CSAiPlatoonFunc` Lua
+binding (registered through `DLConcreteMethodInvoker` with its name string):
+
+| field | platoon object | setter | Lua binding | result |
+|---|---|---|---|---|
+| `State` (`+4`) | `+7C9` | `140353B40` | `SetReflectState` (`14035CDA0`, registered at `14009311B`) | name kept; summary: the initial reflect state |
+| `UnkT05` (`+5`) | `+7CB` | `140353B10` | `SetEnableDeactiveMove` (`14035CC10`, registered at `14009318B`) | **`EnableDeactiveMove`** (byte, shown as bool). Readers in the platoon update (`140354DA0`, `1403556D0`) test it against 0 |
+
+Retail: State 0 ×574 / 1 ×397; EnableDeactiveMove 1 on two platoons (both State 0). Round trip identical to the
+baseline.
 
 ## Status
 

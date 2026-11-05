@@ -1,4 +1,4 @@
-using Iced.Intel;
+﻿using Iced.Intel;
 public static class Extra
 {
     static List<(ulong Begin, ulong End)> _funcs;
@@ -182,6 +182,27 @@ public static class Extra
                     }
                     return;
                 }
+            case "raw":
+                {
+                    // raw <exe> <va> <count> [filter]: linear disassembly that doesn't stop at returns
+                    var va = Convert.ToUInt64(args[2].Replace("0x", ""), 16);
+                    var fo = Exe.FileOffset(va);
+                    var dec = Iced.Intel.Decoder.Create(64, new ByteArrayCodeReader(Exe.Image, (int)fo, 0x40000));
+                    dec.IP = va;
+                    var n = args.Length > 3 ? int.Parse(args[3]) : 200;
+                    for (var i = 0; i < n; i++)
+                    {
+                        dec.Decode(out var ins);
+                        var s = Exe.Format(ins);
+                        if (args.Length <= 4 || s.Contains(args[4], StringComparison.OrdinalIgnoreCase)) Console.WriteLine(s);
+                    }
+                    return;
+                }
+            case "owner":
+            case "identity":
+            case "watch":
+                Objects.Run(mode, args);
+                return;
             case "layout":
                 Layout.Dump(args[2]);
                 return;

@@ -970,14 +970,16 @@ namespace SoulsFormats
                 public int PlatoonIDScriptActivate { get; set; }
 
                 /// <summary>
-                /// The default state of the platoon; 0 or 1 in retail. The game reads it as a byte flag.
+                /// The initial reflect state of the platoon; 0 or 1 in retail. AI scripts change it later with the
+                /// platoon Lua function SetReflectState.
                 /// </summary>
                 public byte State { get; set; }
 
                 /// <summary>
-                /// Unknown flag; 1 on two retail platoons. Read by the game.
+                /// The initial value of the platoon's enable-deactive-move flag (0 or 1), which AI scripts change later
+                /// with the platoon Lua function SetEnableDeactiveMove. 1 on two retail platoons.
                 /// </summary>
-                public byte UnkT05 { get; set; }
+                public byte EnableDeactiveMove { get; set; }
 
                 /// <summary>
                 /// Unknown; not read by the game.
@@ -1025,7 +1027,7 @@ namespace SoulsFormats
                 {
                     PlatoonIDScriptActivate = br.ReadInt32();
                     State = br.ReadByte();
-                    UnkT05 = br.ReadByte();
+                    EnableDeactiveMove = br.ReadByte();
                     UnkT06 = br.ReadByte();
                     UseMemberEntityIDs = br.ReadByte();
                     MemberEntityIDs = br.ReadInt32s(2);
@@ -1036,7 +1038,7 @@ namespace SoulsFormats
                 {
                     bw.WriteInt32(PlatoonIDScriptActivate);
                     bw.WriteByte(State);
-                    bw.WriteByte(UnkT05);
+                    bw.WriteByte(EnableDeactiveMove);
                     bw.WriteByte(UnkT06);
                     bw.WriteByte(UseMemberEntityIDs);
                     bw.WriteInt32s(MemberEntityIDs);

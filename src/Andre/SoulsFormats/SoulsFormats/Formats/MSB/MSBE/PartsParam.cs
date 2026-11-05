@@ -2026,14 +2026,16 @@ namespace SoulsFormats
                 public byte UnkT01 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Sound space of a character standing on this collision: 0 outdoor, 1 half indoor, 2 fully indoor
+                /// (Wwise states Outdoor, IndoorHalf, IndoorAll of OutdoorIndoor, OutdoorIndoorForEnv and
+                /// OutdoorIndoorForRain). 255 keeps the default.
                 /// </summary>
-                public byte UnkT02 { get; set; }
+                public byte OutdoorIndoorType { get; set; } = 255;
 
                 /// <summary>
-                /// Unknown.
+                /// Wwise state of EasyOcclusionID ("_N") while a character stands on this collision. 0 or 1 in retail.
                 /// </summary>
-                public bool UnkT03 { get; set; }
+                public byte EasyOcclusionID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2056,12 +2058,15 @@ namespace SoulsFormats
                 public int LocationTextID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. A second place-name text ID read with LocationTextID when a character steps onto this
+                /// collision; -1 falls back to the absolute value of LocationTextID. In retail it is -1, LocationTextID,
+                /// or its absolute value.
                 /// </summary>
                 public int UnkT1C { get; set; }
 
                 /// <summary>
-                /// Used to determine invasion eligibility.
+                /// Used to determine invasion eligibility. Read for parts param version 0x33 and later; older versions
+                /// read LegacyPlayRegionID instead.
                 /// </summary>
                 public int PlayRegionID { get; set; }
 
@@ -2103,9 +2108,10 @@ namespace SoulsFormats
                 public byte UnkT37 { get; set; }
 
                 /// <summary>
-                /// Unknown. Always -1 in retail; read by the game (an asset's AssetStruct1_Unk10 falls back to it).
+                /// The play region ID for parts param versions below 0x33; newer versions read PlayRegionID. Always -1
+                /// in retail (every retail MSB is version 0x33 or later). An asset's AssetStruct1_Unk10 falls back to it.
                 /// </summary>
-                public int UnkT38 { get; set; } = -1;
+                public int LegacyPlayRegionID { get; set; } = -1;
 
                 /// <summary>
                 /// Unknown.
@@ -2128,7 +2134,9 @@ namespace SoulsFormats
                 public uint EnableFastTravelEventFlagID { get; set; }
 
                 /// <summary>
-                /// Unknown. 0, 1 or 2 in retail; read by its own getter.
+                /// Unknown. 0, 1 or 2 in retail (only in m21, m25 and m39). Copied to the character standing on the
+                /// collision; 1 adds and 2 subtracts an offset in a per-frame comparison of a float against a threshold
+                /// (1406D7E90).
                 /// </summary>
                 public byte UnkT4C { get; set; }
 
@@ -2174,8 +2182,8 @@ namespace SoulsFormats
                 {
                     HitFilterID = br.ReadByte();
                     UnkT01 = br.ReadByte();
-                    UnkT02 = br.ReadByte();
-                    UnkT03 = br.ReadBoolean();
+                    OutdoorIndoorType = br.ReadByte();
+                    EasyOcclusionID = br.ReadByte();
                     UnkT04 = br.ReadSingle();
                     UnkT06 = br.ReadInt32();
                     br.AssertInt32(0);
@@ -2193,7 +2201,7 @@ namespace SoulsFormats
                     GparamOverride = br.ReadByte();
                     DisableTorrent = br.ReadBoolean();
                     UnkT37 = br.ReadByte();
-                    UnkT38 = br.ReadInt32();
+                    LegacyPlayRegionID = br.ReadInt32();
                     UnkT3C = br.ReadInt16();
                     UnkT3E = br.ReadInt16();
                     UnkT40 = br.ReadSingle();
@@ -2216,8 +2224,8 @@ namespace SoulsFormats
                 {
                     bw.WriteByte((byte)HitFilterID);
                     bw.WriteByte(UnkT01);
-                    bw.WriteByte(UnkT02);
-                    bw.WriteBoolean(UnkT03);
+                    bw.WriteByte(OutdoorIndoorType);
+                    bw.WriteByte(EasyOcclusionID);
                     bw.WriteSingle(UnkT04);
                     bw.WriteInt32(UnkT06);
                     bw.WriteInt32(0);
@@ -2235,7 +2243,7 @@ namespace SoulsFormats
                     bw.WriteByte(GparamOverride);
                     bw.WriteBoolean(DisableTorrent);
                     bw.WriteByte(UnkT37);
-                    bw.WriteInt32(UnkT38);
+                    bw.WriteInt32(LegacyPlayRegionID);
                     bw.WriteInt16(UnkT3C);
                     bw.WriteInt16(UnkT3E);
                     bw.WriteSingle(UnkT40);
@@ -2769,7 +2777,7 @@ namespace SoulsFormats
                     public byte AssetStruct1_Unk0C { get; set; }
 
                     /// <summary>
-                    /// Unknown. The asset's own value of Collision UnkT38. Always -1 in retail.
+                    /// The asset's own value of Collision LegacyPlayRegionID (play region ID for parts param versions below 0x33). Always -1 in retail.
                     /// </summary>
                     public int AssetStruct1_Unk10 { get; set; } = -1;
 
@@ -3180,14 +3188,16 @@ namespace SoulsFormats
                 }
 
                 /// <summary>
-                /// Unknown.
+                /// Sound settings of the asset for a character standing on it; the same values as the start of a
+                /// collision's type data.
                 /// </summary>
                 public class AssetUnkStruct4
                 {
                     /// <summary>
-                    /// Unknown.
+                    /// If set, a character standing on the asset uses OutdoorIndoorType and EasyOcclusionID from here;
+                    /// otherwise from the collision the asset refers to.
                     /// </summary>
-                    public bool AssetUnkStruct4_Unk00 { get; set; }
+                    public bool OverrideCollisionSoundSettings { get; set; }
 
                     /// <summary>
                     /// Unknown.
@@ -3195,14 +3205,14 @@ namespace SoulsFormats
                     public byte AssetUnkStruct4_Unk01 { get; set; }
 
                     /// <summary>
-                    /// Unknown.
+                    /// The asset's own Collision.OutdoorIndoorType. Read for parts param version 0x32 and later.
                     /// </summary>
-                    public byte AssetUnkStruct4_Unk02 { get; set; }
+                    public byte OutdoorIndoorType { get; set; } = 255;
 
                     /// <summary>
-                    /// Unknown.
+                    /// The asset's own Collision.EasyOcclusionID. Read for parts param version 0x36 and later.
                     /// </summary>
-                    public bool AssetUnkStruct4_Unk03 { get; set; }
+                    public byte EasyOcclusionID { get; set; }
 
                     /// <summary>
                     /// Creates an AssetUnkStruct4 with default values.
@@ -3219,10 +3229,10 @@ namespace SoulsFormats
 
                     internal AssetUnkStruct4(BinaryReaderEx br)
                     {
-                        AssetUnkStruct4_Unk00 = br.ReadBoolean();
+                        OverrideCollisionSoundSettings = br.ReadBoolean();
                         AssetUnkStruct4_Unk01 = br.ReadByte();
-                        AssetUnkStruct4_Unk02 = br.ReadByte();
-                        AssetUnkStruct4_Unk03 = br.ReadBoolean();
+                        OutdoorIndoorType = br.ReadByte();
+                        EasyOcclusionID = br.ReadByte();
                         br.AssertInt32(0);
                         br.AssertInt32(0);
                         br.AssertInt32(0);
@@ -3242,10 +3252,10 @@ namespace SoulsFormats
 
                     internal void Write(BinaryWriterEx bw)
                     {
-                        bw.WriteBoolean(AssetUnkStruct4_Unk00);
+                        bw.WriteBoolean(OverrideCollisionSoundSettings);
                         bw.WriteByte(AssetUnkStruct4_Unk01);
-                        bw.WriteByte(AssetUnkStruct4_Unk02);
-                        bw.WriteBoolean(AssetUnkStruct4_Unk03);
+                        bw.WriteByte(OutdoorIndoorType);
+                        bw.WriteByte(EasyOcclusionID);
                         bw.WriteInt32(0);
                         bw.WriteInt32(0);
                         bw.WriteInt32(0);

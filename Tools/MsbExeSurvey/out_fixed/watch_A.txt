@@ -1,0 +1,131 @@
+﻿== CS::ChrIns +2EC: 2 accesses (0 reads)
+  W 1403F67E0  1403F6AC2  mov     [r15+2ECh],eax
+  W 1403F67E0  1403F6DD8  mov     [r15+2ECh],eax
+  -- same offset and size, object not identified: 25 (n/m: other CS::ChrIns fields through the same register)
+  ?R 7/24 140EBBFC0  140EBC061  mov     eax,[rdi+2ECh]  -> store [RSI+2EC]; store [RSI+2F0]; store [RSI+2F4]; store [RSI+308]; store [RSI+2F8]; store [RSI+2FC]
+  ?W 7/22 140EBBFC0  140EBC067  mov     [rsi+2ECh],eax
+  ?R 4/13 140BA1CB0  140BA1E26  mov     eax,[rbx+2ECh]  -> store [RDI+2EC]; store [RDI+2F0]; store [RDI+2F4]; ret
+  ?W 4/13 140BA1CB0  140BA1E2C  mov     [rdi+2ECh],eax
+  ?R 3/6 140ABB970  140ABBB56  movss   xmm7,dword ptr [rdi+2ECh]  -> comiss; arg2 of 140AB8ED0
+  ?W 3/6 140ABB970  140ABBB92  mov     dword ptr [rdi+2ECh],0BF800000h
+  ?W 2/5 14042CF00  14042D02B  movss   dword ptr [rcx+2ECh],xmm8
+  ?R 2/2 14062BA8E [arg0=FD4::CS::VCSEventWorldAreaTimeCtrl::?$FD4StepBase|CS::CS::VCSEventWorldAreaTimeCtrl::?$CSStepLocal]  14062BB52  mov     ebx,[r15+2ECh]
+  ?R 2/2 14062BA8E [arg0=FD4::CS::VCSEventWorldAreaTimeCtrl::?$FD4StepBase|CS::CS::VCSEventWorldAreaTimeCtrl::?$CSStepLocal]  14062BC62  mov     eax,[r15+2ECh]  -> cmp -1; or with
+  ?W 2/3 140ABB270  140ABB28F  mov     dword ptr [rcx+2ECh],0BF800000h
+  ?W 1/1 1404D9F00  1404DA64C  movss   dword ptr [rcx+2ECh],xmm0
+  ?R 1/1 1404D9F00  1404DAD09  movss   xmm0,dword ptr [rax+2ECh]  -> stack 20
+  ?R 1/1 1404F9AA0  1404F9AC8  movss   xmm0,dword ptr [rcx+2ECh]  -> comiss
+  ?W 1/2 141A5DCD0  141A5EB31  mov     dword ptr [rcx+2ECh],42C80000h
+  ?W 0/0 140429600  14042973A  movss   dword ptr [r8+2ECh],xmm0
+  ?W 0/0 140429600  140429775  movss   dword ptr [r8+2ECh],xmm0
+  ?W 0/0 1404E7790  1404E7E0E  movss   dword ptr [rdx+2ECh],xmm6
+  ?W 0/2 1406E79D0  1406E7A66  mov     [rcx+2ECh],eax
+  ?R 0/0 140B8DBD0  140B8E01C  mov     eax,[rdi+2ECh]  -> store [RSI+2EC]; store [RSI+2F0]; store [RSI+2F4]; ret
+  ?W 0/0 140B8DBD0  140B8E022  mov     [rsi+2ECh],eax
+  ?R 0/0 140B93350  140B936E7  movss   xmm0,dword ptr [rdx+2ECh]  -> comiss; subss; addss with; subss with
+  ?R 0/0 141B62340(GuiFramework::E::?$TGUIOnOffTweaker#4) [arg0=GuiFramework::E::?$TGUIOnOffTweaker]  141B6254D  movss   xmm3,dword ptr [rdi+2ECh]
+  ?R 0/0 141C5DCD0  141C5DE00  mov     eax,[rcx+2ECh]  -> store [RDX+3C]; ret
+  ?W 0/0 141D03D87  141D05860  movss   dword ptr [rsi+2ECh],xmm0
+  ?R 0/0 141D03D87  141D085E0  mov     eax,[rdi+2ECh]  -> store [RBX+428]; store [RBX+42C]; store [RBX+430]; store [RBX+434]; store [RBX+4B4]; store [RBX+480]
+== CS::ChrIns +2E1: 2 accesses (0 reads)
+  W 1403F67E0  1403F6A7E  mov     [r15+2E1h],al
+  W 1403F67E0  1403F6DA9  mov     [r15+2E1h],cl
+  -- same offset and size, object not identified: 2 (n/m: other CS::ChrIns fields through the same register)
+  ?R 0/0 1403F3D90  1403F3D9E  movzx   ecx,byte ptr [rbx+2E1h]  -> cmp 255; test
+  ?R 0/0 140DB11D0  140DB1E05  movzx   eax,byte ptr [r14+2E1h]  -> test; sub 1; cmp 1
+== CS::ChrIns +2E5: 2 accesses (0 reads)
+  W 1403F67E0  1403F6B9A  mov     [r15+2E5h],al
+  W 1403F67E0  1403F6E4C  mov     [r15+2E5h],al
+  -- same offset and size, object not identified: 4 (n/m: other CS::ChrIns fields through the same register)
+  ?R 2/2 140ABB970  140ABB99C  cmp     byte ptr [rcx+2E5h],0  -> cmp 0
+  ?W 2/2 140ABB970  140ABB9A9  mov     byte ptr [rcx+2E5h],0
+  ?W 1/6 140ABB720  140ABB757  mov     byte ptr [rcx+2E5h],1
+  ?R 0/0 1406D7E90  1406D81D0  movzx   eax,byte ptr [r8+2E5h]  -> cmp 1
+== CS::ChrIns +2E6: 2 accesses (0 reads)
+  W 1403F67E0  1403F6BBB  mov     [r15+2E6h],al
+  W 1403F67E0  1403F6E5B  mov     [r15+2E6h],al
+  -- same offset and size, object not identified: 10 (n/m: other CS::ChrIns fields through the same register)
+  ?W 74/130 1403E6E30  1403E71F5  mov     byte ptr [rdi+2E6h],0
+  ?W 4/8 140ABABB0  140ABAC4D  mov     byte ptr [rbx+2E6h],0
+  ?R 3/4 140436C30  140436D09  movzx   ecx,byte ptr [r14+2E6h]  -> store [RDX+318]; mov 8
+  ?R 3/6 140ABB970  140ABBB36  cmp     byte ptr [rdi+2E6h],0  -> cmp 0
+  ?W 3/6 140ABB970  140ABBB4A  mov     byte ptr [rdi+2E6h],0
+  ?W 2/3 140ABB270  140ABB285  mov     byte ptr [rcx+2E6h],0
+  ?W 2/2 140ABB2E0  140ABB2E8  mov     byte ptr [rcx+2E6h],1
+  ?R 0/0 140439540  1404396D6  movzx   eax,byte ptr [r14+2E6h]  -> store [RDX+318]; xor; and 1; xor; store [RDI+19A]; test
+  ?R 0/0 140439540  1404399EF  movzx   eax,byte ptr [r14+2E6h]  -> store [RCX+318]; and 1; cmp
+  ?R 0/0 140DB11D0  140DB235A  movzx   ebx,byte ptr [r14+2E6h]  -> store [RDI+318]; store [RDI+318]; arg1 of 140DC7300
+== CS::ChrIns +2F0: 2 accesses (0 reads)
+  W 1403F67E0  1403F6AE5  mov     [r15+2F0h],eax
+  W 1403F67E0  1403F6DC9  mov     [r15+2F0h],eax
+  -- same offset and size, object not identified: 41 (n/m: other CS::ChrIns fields through the same register)
+  ?R 13/82 141D1C130(FFX::FFX::VFXSingleAppearanceMultiTextureBillboard::?$FXAppearanceClusterAdapter#7) [arg0=FFX::FFX::VFXSingleAppearanceMultiTextureBillboard::?$FXAppearanceClusterAdapter]  141D1F76D  cmp     [r15+2F0h],ebx
+  ?R 13/82 141D1C130(FFX::FFX::VFXSingleAppearanceMultiTextureBillboard::?$FXAppearanceClusterAdapter#7) [arg0=FFX::FFX::VFXSingleAppearanceMultiTextureBillboard::?$FXAppearanceClusterAdapter]  141D1F7C2  cmp     ebx,[r15+2F0h]
+  ?R 11/37 141CE2310(FFX::FFX::VFXSingleAppearanceModel::?$FXAppearanceClusterAdapter#7) [arg0=FFX::FFX::VFXSingleAppearanceModel::?$FXAppearanceClusterAdapter]  141CE408C  cmp     [r15+2F0h],ebx
+  ?R 11/37 141CE2310(FFX::FFX::VFXSingleAppearanceModel::?$FXAppearanceClusterAdapter#7) [arg0=FFX::FFX::VFXSingleAppearanceModel::?$FXAppearanceClusterAdapter]  141CE40D4  cmp     ebx,[r15+2F0h]
+  ?R 10/39 141CDEEA0(GXFFX::GXFfxAppearanceModel#8) [arg0=GXFFX::GXFfxAppearanceModel]  141CE09F9  cmp     [rdi+2F0h],ebx
+  ?R 10/39 141CDEEA0(GXFFX::GXFfxAppearanceModel#8) [arg0=GXFFX::GXFfxAppearanceModel]  141CE0A44  cmp     ebx,[rdi+2F0h]
+  ?R 10/58 141D15B7A  141D15F0B  cmp     [r14+2F0h],esi
+  ?R 10/58 141D15B7A  141D15F63  cmp     edi,[r14+2F0h]
+  ?R 10/58 141D162FF  141D1A0D5  cmp     [r14+2F0h],esi
+  ?R 10/58 141D162FF  141D1A123  cmp     edi,[r14+2F0h]
+  ?R 8/59 141D1C130(FFX::FFX::VFXSingleAppearanceMultiTextureBillboard::?$FXAppearanceClusterAdapter#7) [arg0=FFX::FFX::VFXSingleAppearanceMultiTextureBillboard::?$FXAppearanceClusterAdapter]  141D1C9D2  cmp     [r12+2F0h],r15d
+  ?R 8/59 141D1C130(FFX::FFX::VFXSingleAppearanceMultiTextureBillboard::?$FXAppearanceClusterAdapter#7) [arg0=FFX::FFX::VFXSingleAppearanceMultiTextureBillboard::?$FXAppearanceClusterAdapter]  141D1CA24  cmp     r15d,[r12+2F0h]
+  ?R 7/24 140EBBFC0  140EBC06D  mov     eax,[rdi+2F0h]  -> store [RSI+2F0]; store [RSI+2F4]; store [RSI+308]; store [RSI+2F8]; store [RSI+2FC]; store [RSI+300]
+  ?W 7/22 140EBBFC0  140EBC073  mov     [rsi+2F0h],eax
+  ?R 7/29 141CE2310(FFX::FFX::VFXSingleAppearanceModel::?$FXAppearanceClusterAdapter#7) [arg0=FFX::FFX::VFXSingleAppearanceModel::?$FXAppearanceClusterAdapter]  141CE2C3B  cmp     [r13+2F0h],r15d
+  ?R 7/29 141CE2310(FFX::FFX::VFXSingleAppearanceModel::?$FXAppearanceClusterAdapter#7) [arg0=FFX::FFX::VFXSingleAppearanceModel::?$FXAppearanceClusterAdapter]  141CE2C84  cmp     r15d,[r13+2F0h]
+  ?W 7/41 14225EF70  14225F117  mov     [rbx+2F0h],edi
+  ?R 4/13 140BA1CB0  140BA1E32  mov     eax,[rbx+2F0h]  -> store [RDI+2F0]; store [RDI+2F4]; ret
+  ?W 4/13 140BA1CB0  140BA1E38  mov     [rdi+2F0h],eax
+  ?R 4/17 141D13C10(FFX::FFX::VFXSingleAppearanceBillboard::?$FXAppearanceClusterAdapter#4+1) [arg0=FFX::FFX::VFXSingleAppearanceBillboard::?$FXAppearanceClusterAdapter|GXFFX::GXFfxAppearanceBillboardEx]  141D13E06  cmp     [rdi+2F0h],ebx
+  ?R 4/17 141D13C10(FFX::FFX::VFXSingleAppearanceBillboard::?$FXAppearanceClusterAdapter#4+1) [arg0=FFX::FFX::VFXSingleAppearanceBillboard::?$FXAppearanceClusterAdapter|GXFFX::GXFfxAppearanceBillboardEx]  141D13E4A  cmp     ebx,[rdi+2F0h]
+  ?W 4/13 14227B06E  14227B1D6  movss   dword ptr [rbx+2F0h],xmm0
+  ?W 3/11 1411631E0  141163224  mov     dword ptr [rbx+2F0h],1
+  ?R 3/3 141CEC1A0  141CEC684  cmp     [rbx+2F0h],edi
+  ?R 3/3 141CEC1A0  141CEC6C7  cmp     edi,[rbx+2F0h]
+  ?R 2/2 14062BA8E [arg0=FD4::CS::VCSEventWorldAreaTimeCtrl::?$FD4StepBase|CS::CS::VCSEventWorldAreaTimeCtrl::?$CSStepLocal]  14062BD17  mov     esi,[r15+2F0h]
+  ?R 2/2 1406E7830  1406E785D  movss   xmm0,dword ptr [rdx+2F0h]  -> ret
+  ?R 1/1 1403FFBA0(CS::ChrIns#31+3) [arg0=CS::ChrIns|CS::EnemyIns]  14040015C  mov     edx,[rcx+2F0h]  -> test
+  ?R 1/1 1404F9050  1404F9078  movss   xmm0,dword ptr [rcx+2F0h]  -> comiss
+  ?W 1/2 141A5DCD0  141A5EB3B  mov     dword ptr [rcx+2F0h],43160000h
+  ?R 0/0 140B8DBD0  140B8E028  mov     eax,[rdi+2F0h]  -> store [RSI+2F0]; store [RSI+2F4]; ret
+  ?W 0/0 140B8DBD0  140B8E02E  mov     [rsi+2F0h],eax
+  ?R 0/0 140B93350  140B9370E  movss   xmm4,dword ptr [rdx+2F0h]  -> subss with; addss; subss; mulss; addss
+  ?W 0/0 141406022  141406052  mov     [rbx+2F0h],eax
+  ?W 0/0 141A57360(GXSR::GXLightSet#0) [arg0=GXSR::GXLightSet]  141A5783A  mov     dword ptr [rdi+2F0h],3F800000h
+  ?W 0/0 141D03D87  141D0588B  movss   dword ptr [rsi+2F0h],xmm0
+  ?R 0/0 141D03D87  141D085EC  mov     eax,[rdi+2F0h]  -> store [RBX+42C]; store [RBX+430]; store [RBX+434]; store [RBX+4B4]; store [RBX+480]; store [RBX+484]
+  ?R 0/0 1424405C7  142440621  cmp     [rax+2F0h],r12d
+  ?R 0/0 1424405C7  142440632  movsxd  r9,dword ptr [rbx+2F0h]  -> arg3 of 142460A20
+  ?R 0/0 1424405C7  142440670  mov     r14d,[rbx+2F0h]
+== CS::ChrIns +2F4: 2 accesses (0 reads)
+  W 1403F67E0  1403F6B08  mov     [r15+2F4h],eax
+  W 1403F67E0  1403F6DE7  mov     [r15+2F4h],eax
+  -- same offset and size, object not identified: 26 (n/m: other CS::ChrIns fields through the same register)
+  ?R 7/24 140EBBFC0  140EBC079  mov     eax,[rdi+2F4h]  -> store [RSI+2F4]; store [RSI+308]; store [RSI+2F8]; store [RSI+2FC]; store [RSI+300]; store [RSI+304]
+  ?W 7/22 140EBBFC0  140EBC07F  mov     [rsi+2F4h],eax
+  ?W 7/41 14225EF70  14225F129  mov     [rbx+2F4h],edi
+  ?R 6/98 141DBFA6F  141DBFD3E  mov     eax,[rbx+2F4h]  -> store [RBX+5E8]; store [RBX+5B8]; store [RBX+5BC]; store [RBX+5D8]; store [RBX+5DC]
+  ?R 4/13 140BA1CB0  140BA1E3E  mov     eax,[rbx+2F4h]  -> store [RDI+2F4]; ret
+  ?W 4/13 140BA1CB0  140BA1E49  mov     [rdi+2F4h],eax
+  ?W 4/13 14227B06E  14227B1EB  movss   dword ptr [rbx+2F4h],xmm1
+  ?W 3/11 1411631E0  14116321A  mov     dword ptr [rbx+2F4h],1
+  ?R 2/2 1406E7830  1406E7866  movss   xmm0,dword ptr [rdx+2F4h]  -> ret
+  ?R 2/20 14234D5C0  14234D688  cmp     dword ptr [rcx+2F4h],11h  -> cmp 17
+  ?W 2/20 14234D5C0  14234D69B  mov     dword ptr [rcx+2F4h],11h
+  ?R 1/1 140DB11D0  140DB167A  cmp     [rdi+2F4h],ebp
+  ?W 1/1 140DB11D0  140DB169B  mov     [rdi+2F4h],ebp
+  ?R 1/1 1414AFCE0(hkbCharacterControllerModifier#14) [arg0=hkbCharacterControllerModifier]  1414AFE85  movsxd  rax,dword ptr [rcx+2F4h]  -> add; test; ret
+  ?W 1/2 141A5DCD0  141A5EB45  mov     dword ptr [rcx+2F4h],3F800000h
+  ?W 1/2 141C5E320  141C5F621  add     [rdi+2F4h],eax
+  ?R 0/1 1403E98B0  1403E98DE  mov     esi,[rcx+2F4h]
+  ?R 0/0 140500960  140500968  movd    xmm1,dword ptr [rax+2F4h]  -> cvtdq2ps
+  ?R 0/0 140B8DBD0  140B8E034  mov     eax,[rdi+2F4h]  -> store [RSI+2F4]; ret
+  ?W 0/0 140B8DBD0  140B8E03F  mov     [rsi+2F4h],eax
+  ?R 0/0 140D9CBC0  140D9D842  mov     r12d,[rcx+2F4h]
+  ?R 0/0 141466AC0(hkbCharacterControllerDriver#19) [arg0=hkbCharacterControllerDriver]  141466C6C  movsxd  rcx,dword ptr [rdx+2F4h]
+  ?W 0/0 141D03D87  141D058B3  movss   dword ptr [rsi+2F4h],xmm0
+  ?R 0/0 141D03D87  141D085F8  mov     eax,[rdi+2F4h]  -> store [RBX+430]; store [RBX+434]; store [RBX+4B4]; store [RBX+480]; store [RBX+484]; store [RBX+488]
+  ?R 0/0 1424405C7  14244067E  movsxd  rax,dword ptr [rbx+2F4h]  -> test; arg2 of 1424604C0
+  ?W 0/0 1424405C7  1424406A3  mov     [rbx+2F4h],r12d

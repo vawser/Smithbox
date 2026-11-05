@@ -10,11 +10,12 @@
     
     <State
     AltName="Platoon State"
-    Wiki="The default state for this ensemble; 0 or 1." />
+    Wiki="The initial reflect state of this ensemble; 0 or 1. AI scripts change it later with the platoon Lua function SetReflectState." />
 
-    <UnkT05
-    AltName="Unknown: 0x5"
-    Wiki="" />
+    <EnableDeactiveMove
+    AltName="Enable Deactive Move"
+    Wiki="The initial value of the platoon's enable-deactive-move flag, which AI scripts change later with the platoon Lua function SetEnableDeactiveMove. ON for two retail platoons."
+    IsBool="" />
 
     <UnkT06
     AltName="Unknown: 0x6"

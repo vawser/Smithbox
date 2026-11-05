@@ -13,13 +13,14 @@
     AltName="Unknown: 0x1"
     Wiki="" />
     
-    <UnkT02
-    AltName="Unknown: 0x2"
-    Wiki="" />
-    
-    <UnkT03
-    AltName="Unknown: 0x3"
-    Wiki="" />
+    <OutdoorIndoorType
+    AltName="Outdoor/Indoor Type"
+    Wiki="Sound space while standing on this collision: 0 outdoor, 1 half indoor, 2 fully indoor (Wwise OutdoorIndoor states). 255 keeps the default."
+    Enum="MSB_COLLISION_OUTDOOR_INDOOR_TYPE" />
+
+    <EasyOcclusionID
+    AltName="Easy Occlusion ID"
+    Wiki="Wwise EasyOcclusionID state (_N) while standing on this collision. 0 or 1 in retail." />
     
     <UnkT04
     AltName="Unknown: 0x4"
@@ -40,7 +41,8 @@
     
     <UnkT1C
     AltName="Unknown: 0x1C"
-    Wiki="" />
+    Wiki="A second place-name text ID read with Location Text ID; -1 falls back to the absolute value of Location Text ID."
+    FmgRef="Title_Locations" />
     
     <PlayRegionID
     AltName="Play Region ID"
@@ -76,9 +78,10 @@
     AltName="Unknown: 0x37"
     Wiki="Always 0 in retail. An asset's own value of it is AssetStruct1 Unknown: 0xC." />
 
-    <UnkT38
-    AltName="Unknown: 0x38"
-    Wiki="Always -1 in retail. An asset's own value of it is AssetStruct1 Unknown: 0x10." />
+    <LegacyPlayRegionID
+    AltName="Legacy Play Region ID"
+    Wiki="Play region ID read only for parts param versions below 0x33 (all retail MSBs are newer, so Play Region ID is used). Always -1 in retail. An asset's own value of it is AssetStruct1 Unknown: 0x10."
+    ParamRef="PlayRegionParam" />
     
     <UnkT3C
     AltName="Unknown: 0x3C"
@@ -98,7 +101,7 @@
     
     <UnkT4C
     AltName="Unknown: 0x4C"
-    Wiki="" />
+    Wiki="0, 1 or 2 in retail (m21, m25, m39). Copied to the character standing on the collision; 1 adds and 2 subtracts an offset in a per-frame threshold check." />
 
     <UnkT4D
     AltName="Unknown: 0x4D"
@@ -135,6 +138,12 @@
         <Option Value="2" Name="Type 2" />
         <Option Value="3" Name="Type 3" />
         <Option Value="4" Name="Type 4" />
+    </Enum>
+    <Enum Name="MSB_COLLISION_OUTDOOR_INDOOR_TYPE">
+        <Option Value="0" Name="Outdoor" />
+        <Option Value="1" Name="Indoor (Half)" />
+        <Option Value="2" Name="Indoor (All)" />
+        <Option Value="255" Name="Default" />
     </Enum>
   </Enums>
 </MSBMETA>

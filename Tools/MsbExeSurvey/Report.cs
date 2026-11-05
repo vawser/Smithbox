@@ -1,3 +1,4 @@
+using Iced.Intel;
 using System.Text;
 
 /// <summary>
@@ -134,5 +135,60 @@ public static class Report
             }
         }
         File.WriteAllText(Path.Combine(dir, "getters.tsv"), sb.ToString());
+        Destinations(dir, getters, calls);
+    }
+
+    /// <summary>
+    /// For each getter of an unnamed field, where its result goes at each call site: the first store of the returned
+    /// register (object register and offset, in the caller), the call it is passed to, or what it is compared with
+    /// </summary>
+    static void Destinations(string dir, Dictionary<ulong, string> getters, Dictionary<ulong, List<ulong>> calls)
+    {
+        var sb = new StringBuilder();
+        foreach (var (fn, fields) in getters.OrderBy(k => k.Key))
+        {
+            if (!fields.Contains("Unk")) continue;
+            foreach (var site in calls.GetValueOrDefault(fn) ?? new())
+            {
+                var caller = Extra.FuncStart(site);
+                var cls = Exe.VirtualOf.TryGetValue(caller, out var v) ? $"{v[0].Class}#{v[0].Index}" : "";
+                var live = new HashSet<Iced.Intel.Register> { Iced.Intel.Register.RAX };
+                var found = new List<string>();
+                var fo = Exe.FileOffset(site);
+                var dec = Iced.Intel.Decoder.Create(64, new Iced.Intel.ByteArrayCodeReader(Exe.Image, (int)fo, 0x200));
+                dec.IP = site;
+                dec.Decode(out _); // the call itself
+                for (var i = 0; i < 24 && found.Count < 3; i++)
+                {
+                    dec.Decode(out var ins);
+                    bool Reads(int op) => ins.GetOpKind(op) == Iced.Intel.OpKind.Register && live.Contains(ins.GetOpRegister(op).GetFullRegister());
+                    if (ins.FlowControl is Iced.Intel.FlowControl.Call)
+                    {
+                        var t = ins.Op0Kind == Iced.Intel.OpKind.NearBranch64 ? ins.NearBranchTarget : 0;
+                        var argRegs = new[] { Iced.Intel.Register.RCX, Iced.Intel.Register.RDX, Iced.Intel.Register.R8, Iced.Intel.Register.R9,
+                                              Iced.Intel.Register.ZMM0, Iced.Intel.Register.ZMM1, Iced.Intel.Register.ZMM2, Iced.Intel.Register.ZMM3 };
+                        var arg = Array.FindIndex(argRegs, r => live.Contains(r));
+                        if (arg >= 0)
+                        {
+                            var tn = t != 0 && Exe.VirtualOf.TryGetValue(t, out var tv) ? $"({tv[0].Class}#{tv[0].Index})" : "";
+                            found.Add($"arg{arg % 4} of {t:X}{tn}");
+                        }
+                        break;
+                    }
+                    if (ins.FlowControl is not (Iced.Intel.FlowControl.Next or Iced.Intel.FlowControl.ConditionalBranch)) break;
+                    if (ins.OpCount > 1 && ins.Op0Kind == Iced.Intel.OpKind.Memory && Reads(1) && ins.MemoryBase != Iced.Intel.Register.RSP)
+                        found.Add($"store [{ins.MemoryBase}+{ins.MemoryDisplacement64:X}]");
+                    else if (ins.OpCount > 1 && ins.Op0Kind == Iced.Intel.OpKind.Register && Reads(0) && ins.Mnemonic is Iced.Intel.Mnemonic.Cmp or Iced.Intel.Mnemonic.Test)
+                        found.Add(ins.GetOpKind(1) is Iced.Intel.OpKind.Register or Iced.Intel.OpKind.Memory ? ins.Mnemonic.ToString().ToLower() : $"{ins.Mnemonic.ToString().ToLower()} {(long)ins.GetImmediate(1)}");
+                    // the value moving to another register
+                    if (ins.OpCount > 1 && ins.Op0Kind == Iced.Intel.OpKind.Register && Reads(1) && ins.Mnemonic is Iced.Intel.Mnemonic.Mov or Iced.Intel.Mnemonic.Movzx or Iced.Intel.Mnemonic.Movsx or Iced.Intel.Mnemonic.Movsxd or Iced.Intel.Mnemonic.Movss or Iced.Intel.Mnemonic.Movaps)
+                        live.Add(ins.Op0Register.GetFullRegister());
+                    else if (ins.OpCount > 0 && ins.Op0Kind == Iced.Intel.OpKind.Register && !Reads(0) && ins.Mnemonic is not (Iced.Intel.Mnemonic.Cmp or Iced.Intel.Mnemonic.Test))
+                        live.Remove(ins.Op0Register.GetFullRegister());
+                }
+                sb.AppendLine($"{fields}\t{fn:X}\t{site:X}\t{caller:X}\t{cls}\t{string.Join("; ", found)}");
+            }
+        }
+        File.WriteAllText(Path.Combine(dir, "destinations.tsv"), sb.ToString());
     }
 }

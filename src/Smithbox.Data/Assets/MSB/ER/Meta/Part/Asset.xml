@@ -334,23 +334,31 @@ This value replaces BB in the gparam file lookup. 255 for none." />
     AltName="Unknown Struct 4"
     Wiki="" />
     
-    <AssetUnkStruct4_Unk00
-    AltName="Unknown: 0x0"
-    Wiki="" />
+    <OverrideCollisionSoundSettings
+    AltName="Override Collision Sound Settings"
+    Wiki="If ON, a character standing on the asset uses the Outdoor/Indoor Type and Easy Occlusion ID below; otherwise those of the collision the asset refers to."
+    IsBool="" />
     
     <AssetUnkStruct4_Unk01
     AltName="Unknown: 0x1"
     Wiki="" />
     
-    <AssetUnkStruct4_Unk02
-    AltName="Unknown: 0x2"
-    Wiki="" />
+    <OutdoorIndoorType
+    AltName="Outdoor/Indoor Type"
+    Wiki="The asset's own Collision Outdoor/Indoor Type: 0 outdoor, 1 half indoor, 2 fully indoor. 255 keeps the default."
+    Enum="MSB_ASSET_OUTDOOR_INDOOR_TYPE" />
     
-    <AssetUnkStruct4_Unk03
-    AltName="Unknown: 0x3"
-    Wiki="" />
+    <EasyOcclusionID
+    AltName="Easy Occlusion ID"
+    Wiki="The asset's own Collision Easy Occlusion ID (Wwise EasyOcclusionID state _N)." />
   </Field>
   
   <Enums>
+    <Enum Name="MSB_ASSET_OUTDOOR_INDOOR_TYPE">
+        <Option Value="0" Name="Outdoor" />
+        <Option Value="1" Name="Indoor (Half)" />
+        <Option Value="2" Name="Indoor (All)" />
+        <Option Value="255" Name="Default" />
+    </Enum>
   </Enums>
 </MSBMETA>

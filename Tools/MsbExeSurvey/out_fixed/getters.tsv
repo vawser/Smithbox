@@ -288,7 +288,7 @@
     140AB9274 in 140AB9170 game  
 140CF4EB0	CSMsbPartsHit	Part+68() Part.Type+18(LocationTextID)	1 callers
     1403F6DD3 in 1403F67A0 game  
-140CF4EF0	CSMsbPartsHit	Part+68() Part.Type+20(PlayRegionID) Part.Type+38()	5 callers
+140CF4EF0	CSMsbPartsHit	Part+68() Part.Type+20(PlayRegionID) Part.Type+38(LegacyPlayRegionID)	5 callers
     1401D66E3 in 1401D4DC0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
     1403F6DE2 in 1403F67A0 game  
     140A0CFEC in 140A0CA80 game  vector<T> too long
@@ -308,10 +308,10 @@
     1403F6DC4 in 1403F67A0 game  
 140CF50C0	CSMsbPartsHit	Part+78() Part.SceneGparam+10(SceneGparamConfigStruct.TransitionTime)	1 callers
     140AB9242 in 140AB9170 game  
-140CF50F0	CSMsbPartsHit	Part+68() Part.Type+2(UnkT02)	2 callers
+140CF50F0	CSMsbPartsHit	Part+68() Part.Type+2(OutdoorIndoorType)	2 callers
     1403F6DA1 in 1403F67A0 game  
     140DBEFCA in 140DBDE20 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
-140CF5130	CSMsbPartsHit	Part+68() Part.Type+3(UnkT03)	1 callers
+140CF5130	CSMsbPartsHit	Part+68() Part.Type+3(EasyOcclusionID)	1 callers
     1403F6E56 in 1403F67A0 game  
 140CF5170	CSMsbPartsHit	Part+68() Part.Type+35(GparamOverride)	1 callers
     14062C1BC in 14062B2A0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
@@ -343,7 +343,7 @@
     1403541C6 in 140353CA0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h | Tried to create container with incompatible heap.
 140CF6020	CSMsbEvent	Event+20() Event.Type+8(MinInterval/ObjActID/ActivateGoodsID)	1 callers
     1403545F6 in 140353CA0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h | Tried to create container with incompatible heap.
-140CF6080	CSMsbEvent	Event+20() Event.Type+5(MinGenNum/EventFlagID/UnkT05)	1 callers
+140CF6080	CSMsbEvent	Event+20() Event.Type+5(MinGenNum/EventFlagID/EnableDeactiveMove)	1 callers
     1403541E9 in 140353CA0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h | Tried to create container with incompatible heap.
 140CF60A0	CSMsbEvent	Event+20() Event.Type+4(MinGenNum/EventFlagID/State)	1 callers
     1403541B8 in 140353CA0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h | Tried to create container with incompatible heap.

@@ -8,7 +8,7 @@ Event.Entity	0x8	4	EntityID	game,CSMsbEvent	9	14036B770 14036BB90 14036BEB7 140C
 Event.Type	0x0	2/1/4	MaxNum [Generator] | ObjActEntityID [ObjAct] | HostEntityID [PseudoMultiplayer,OnlinePseudoMultiplayer] | PlatoonIDScriptActivate [PlatoonInfo] | PatrolType [PatrolInfo]	game,CSMsbEvent	11	14036BB90 14036BEB7 14036C000 140518910 1406AEC80 140CF5FE0	ret x7; test x4; arg3 140CFC020 x3; and 536870911 x3; or 1610612736 x3; store [RSP+D0] x3; arg3 140CEFBE0 x2; or -1 x2
 Event.Type	0x3	1	LimitNum [Generator] | ObjActEntityID [ObjAct] | HostEntityID [PseudoMultiplayer,OnlinePseudoMultiplayer] | PlatoonIDScriptActivate [PlatoonInfo] | UseAllWalkRegions [PatrolInfo]	game	3	14036BB90 14036BC45 14036B760	cmp 0 x3
 Event.Type	0x4	4/1	MinGenNum [Generator] | EventFlagID [PseudoMultiplayer,OnlinePseudoMultiplayer] | State [PlatoonInfo] | SignPuddleParamID [SignPool] | TriggerEventFlagID [RetryPoint]	game,CSMsbEvent	4	140518910 1406AEC80 140CF60A0 140CF6150	cmp 0 x2; cmp -1 x2; arg3 140CEFBE0
-Event.Type	0x5	1	MinGenNum [Generator] | EventFlagID [PseudoMultiplayer,OnlinePseudoMultiplayer] | UnkT05 [PlatoonInfo] | SignPuddleParamID [SignPool] | TriggerEventFlagID [RetryPoint]	CSMsbEvent	1	140CF6080	cmp 0
+Event.Type	0x5	1	MinGenNum [Generator] | EventFlagID [PseudoMultiplayer,OnlinePseudoMultiplayer] | EnableDeactiveMove [PlatoonInfo] | SignPuddleParamID [SignPool] | TriggerEventFlagID [RetryPoint]	CSMsbEvent	1	140CF6080	cmp 0
 Event.Type	0x7	1	MaxGenNum [Generator] | EventFlagID [PseudoMultiplayer,OnlinePseudoMultiplayer] | UseMemberEntityIDs [PlatoonInfo] | SignPuddleParamID [SignPool] | TriggerEventFlagID [RetryPoint]	CSMsbEvent	1	140CF60C0	cmp 0
 Event.Type	0x8	4	MinInterval [Generator] | ObjActID [ObjAct] | ActivateGoodsID [PseudoMultiplayer,OnlinePseudoMultiplayer] | MemberEntityIDs[0] [PlatoonInfo] | RetryDistance [RetryPoint]	game,CSMsbEvent,MsbResCap	6	1405EF6D0 140CF6020 1405EF790 1405EF890 140CF61A0 140CFA4C1	cmp -1 x5; ret x2; xor; arg1 140CFB150
 Event.Type	0xC	2	MaxInterval [Generator] | StateType [ObjAct] | CeremonyID [PseudoMultiplayer,OnlinePseudoMultiplayer] | MemberEntityIDs[1] [PlatoonInfo]	CSMsbEvent	1	140CF6180	ret; or -1
@@ -99,8 +99,8 @@ Part.TileLoad	0xC	4	TileLoadConfig.TileLoadConfig_Unk0C	CSMsbPartsGeom	1	140CF34
 Part.TileLoad	0x10	8	TileLoadConfig.TileLoadConfig_Unk10	MsbResCap	1	140CFB150	xor
 Part.TileLoad	0x14	4	TileLoadConfig.CullingHeightBehavior	CSMsbParts	1	140CF0A50	test; ret
 Part.Type	0x1	1	UnkT01 [Asset]	CSMsbPartsGeom	1	140CF3210	ret
-Part.Type	0x2	1	UnkT02 [Collision,Asset]	CSMsbPartsHit,CSMsbPartsGeom	2	140CF50F0 140CF4B10	ret
-Part.Type	0x3	1	UnkT03 [Collision]	CSMsbPartsHit	1	140CF5130	ret; xor
+Part.Type	0x2	1	OutdoorIndoorType [Collision] | UnkT02 [Asset]	CSMsbPartsHit,CSMsbPartsGeom	2	140CF50F0 140CF4B10	ret
+Part.Type	0x3	1	EasyOcclusionID [Collision]	CSMsbPartsHit	1	140CF5130	ret; xor
 Part.Type	0x4	4	UnkT04 [Collision] | MapID[0] [ConnectCollision]	game	1	140437770	ret; xor
 Part.Type	0x8	4/8	UnkT06 [Collision] | UnkT08 [ConnectCollision,Asset]	CSMsbPartsGeom,CSMsbPartsHit	3	140CF3610 140CF4FB0 140CF3320	store W.Parts+0; ret; test
 Part.Type	0xC	4	NPCParamID [Enemy,DummyEnemy]	CSMsbPartsEne	3	140CF16E0 140CF1780 140CF1800	or -1 x3; arg1 140D44440 x2; ret
@@ -122,7 +122,7 @@ Part.Type	0x34	1/4	UnkT34 [Collision,Asset]	CSMsbPartsGeom,CSMsbPartsHit	3	140CF
 Part.Type	0x35	1	GparamOverride [Collision] | UnkT35 [Asset]	CSMsbPartsGeom,CSMsbPartsHit	2	140CF46E0 140CF5170	store W.Parts+0; ret; or -1
 Part.Type	0x36	1	UnkT36 [Asset]	CSMsbPartsGeom	1	140CF2800	cmp 0
 Part.Type	0x37	1	UnkT37 [Asset]	CSMsbPartsGeom	1	140CF30D0	store W.Parts+0
-Part.Type	0x38	4	BackupEventAnimID [Enemy,DummyEnemy]	CSMsbPartsEne,CSMsbPartsGeom,CSMsbPartsHit	3	140CF1760 140CF3870 140CF4EF0	ret x2; or -1 x2; arg1 140A61EE0
+Part.Type	0x38	4	BackupEventAnimID [Enemy,DummyEnemy] | LegacyPlayRegionID [Collision]	CSMsbPartsEne,CSMsbPartsGeom,CSMsbPartsHit	3	140CF1760 140CF3870 140CF4EF0	ret x2; or -1 x2; arg1 140A61EE0
 Part.Type	0x40	4	SpEffectSetParamID[0] [Enemy,DummyEnemy]	CSMsbPartsEne	1	140CF18D0	store [RSP+20]
 Part.Type	0x44	4	SpEffectSetParamID[1] [Enemy,DummyEnemy]	CSMsbPartsEne	1	140CF18D0	store [RSP+24]
 Part.Type	0x48	4	SpEffectSetParamID[2] [Enemy,DummyEnemy]	CSMsbPartsEne,CSMsbPartsGeom	28	140CF18D0 140CF2800 140CF2900 140CF2A00 140CF2AD0 140CF2BC0	cmp -1 x25; test x16; store [RSP+28]; store W.Parts+0; ret; or -1
@@ -138,7 +138,7 @@ Part.Type	0x68	8		CSMsbPartsGeom	12	140CF2800 140CF2900 140CF2CE0 140CF2FB0 140C
 Part.Type	0x70	8		CSMsbPartsGeom	2	140CF3DC0 140CF4160	cmp 0 x2
 Part.Type	0x78	8		CSMsbPartsGeom,game	14	140CF2510 140CF2A00 140CF2AD0 140CF2BC0 140CF2E70 140CF3610	cmp 0 x8
 Part.Type	0x80	8		CSMsbPartsGeom	3	140CF43A0 140CF4470 140CF4560	cmp 0 x2
-Part.Type.68	0x0	1	AssetUnk1.AssetStruct1_Unk00 [Asset]	CSMsbPartsGeom	11	140CF2800 140CF2900 140CF2CE0 140CF2FB0 140CF30D0 140CF3230	cmp 0 x21
+Part.Type.68	0x0	1	AssetUnk1.OverrideCollisionSettings [Asset]	CSMsbPartsGeom	11	140CF2800 140CF2900 140CF2CE0 140CF2FB0 140CF30D0 140CF3230	cmp 0 x21
 Part.Type.68	0x4	1	AssetUnk1.AssetStruct1_Unk04 [Asset]	CSMsbPartsGeom	1	140CF2900	cmp 0
 Part.Type.68	0x5	1	AssetUnk1.DisableTorrentAssetOnly [Asset]	CSMsbPartsGeom	1	140CF2800	cmp 0
 Part.Type.68	0x6	2	AssetUnk1.AssetStruct1_Unk06 [Asset]	CSMsbPartsGeom	1	140CF3350	store W.Parts+0
@@ -146,19 +146,19 @@ Part.Type.68	0xC	1	AssetUnk1.AssetStruct1_Unk0C [Asset]	CSMsbPartsGeom	1	140CF30
 Part.Type.68	0x10	4	AssetUnk1.AssetStruct1_Unk10 [Asset]	CSMsbPartsGeom	1	140CF3870	arg1 140CF1180
 Part.Type.68	0x14	2		CSMsbPartsGeom	1	140CF2CE0	store W.Parts+0 x2
 Part.Type.68	0x1C	4	AssetUnk1.AssetStruct1_Unk1C [Asset]	CSMsbPartsGeom	1	140CF47E0	store W.Parts+0
-Part.Type.68	0x20	4	AssetUnk1.AssetStruct1_Unk20 [Asset]	CSMsbPartsGeom	1	140CF3510	store W.Parts+0
-Part.Type.68	0x24	4	AssetUnk1.AssetStruct1_Unk24 [Asset]	CSMsbPartsGeom	1	140CF2FB0	store W.Parts+0
+Part.Type.68	0x20	4	AssetUnk1.EnableFastTravelEventFlagID [Asset]	CSMsbPartsGeom	1	140CF3510	store W.Parts+0
+Part.Type.68	0x24	4	AssetUnk1.LocationTextID [Asset]	CSMsbPartsGeom	1	140CF2FB0	store W.Parts+0
 Part.Type.68	0x28	4	AssetUnk1.AssetStruct1_Unk28 [Asset]	CSMsbPartsGeom	1	140CF4040	store W.Parts+0
-Part.Type.68	0x2C	4	AssetUnk1.AssetStruct1_Unk2C [Asset]	CSMsbPartsGeom	1	140CF3230	store W.Parts+0
+Part.Type.68	0x2C	4	AssetUnk1.PlayRegionID [Asset]	CSMsbPartsGeom	1	140CF3230	store W.Parts+0
 Part.Type.70	0x0	1	AssetUnk2.AssetUnkStruct2_Unk00 [Asset]	CSMsbPartsGeom	2	140CF3DC0 140CF4160	cmp 0 x4
 Part.Type.70	0x4	4	AssetUnk2.AssetUnkStruct2_Unk04 [Asset]	CSMsbPartsGeom	1	140CF3DC0	test x2; cmovns x2
 Part.Type.70	0x8	4	AssetUnk2.AssetUnkStruct2_Unk08 [Asset]	CSMsbPartsGeom	1	140CF3DC0	test; cmovns
 Part.Type.70	0x14	4	AssetUnk2.AssetUnkStruct2_Unk14 [Asset]	CSMsbPartsGeom	1	140CF4160	
 Part.Type.70	0x1C	1	AssetUnk2.AssetUnkStruct2_Unk1C [Asset]	CSMsbPartsGeom	1	140CF4160	test x2
-Part.Type.78	0x0	1/4	AssetUnk3.AssetUnkStruct3_Unk00 [Asset]	CSMsbPartsGeom,game	10	140CF2A00 140CF2AD0 140CF2BC0 140CF2E70 140CF3610 140CF3730	cmp 0 x18; ret; cmp 4
+Part.Type.78	0x0	1/4	AssetUnk3.OverrideCollisionGparamSettings [Asset]	CSMsbPartsGeom,game	10	140CF2A00 140CF2AD0 140CF2BC0 140CF2E70 140CF3610 140CF3730	cmp 0 x18; ret; cmp 4
 Part.Type.78	0x4	4	AssetUnk3.AssetUnkStruct3_Unk04 [Asset]	CSMsbPartsGeom	1	140CF3F40	store W.Parts+0
 Part.Type.78	0x8	1	AssetUnk3.AssetUnkStruct3_Unk08 [Asset]	CSMsbPartsGeom	1	140CF2E70	store W.Parts+0
-Part.Type.78	0x9	1	AssetUnk3.AssetUnkStruct3_Unk09 [Asset]	CSMsbPartsGeom	1	140CF46E0	store W.Parts+0
+Part.Type.78	0x9	1	AssetUnk3.GparamOverride [Asset]	CSMsbPartsGeom	1	140CF46E0	store W.Parts+0
 Part.Type.78	0xA	1	AssetUnk3.AssetUnkStruct3_Unk0A [Asset]	CSMsbPartsGeom	1	140CF2BC0	store W.Parts+0
 Part.Type.78	0xB	1	AssetUnk3.AssetUnkStruct3_Unk0B [Asset]	CSMsbPartsGeom	1	140CF2A00	store W.Parts+0
 Part.Type.78	0xC	2	AssetUnk3.AssetUnkStruct3_Unk0C [Asset]	CSMsbPartsGeom	1	140CF2E70	store W.Parts+0
@@ -168,10 +168,10 @@ Part.Type.78	0x10	4	AssetUnk3.AssetUnkStruct3_Unk10 [Asset]	CSMsbPartsGeom	1	140
 Part.Type.78	0x24	1	AssetUnk3.AssetUnkStruct3_Unk24 [Asset]	CSMsbPartsGeom	1	140CF4B50	cmp 30; add 300; arg0 14067A140; arg1 14067A140
 Part.Type.78	0x25	1	AssetUnk3.AssetUnkStruct3_Unk25 [Asset]	CSMsbPartsGeom	1	140CF4B50	cmp 1
 Part.Type.78	0x28	4	AssetUnk3.AssetUnkStruct3_Unk28 [Asset]	CSMsbPartsGeom	1	140CF3610	store W.Parts+0
-Part.Type.80	0x0	1	AssetUnk4.AssetUnkStruct4_Unk00 [Asset]	CSMsbPartsGeom	3	140CF43A0 140CF4470 140CF4560	cmp 0 x6
+Part.Type.80	0x0	1	AssetUnk4.OverrideCollisionSoundSettings [Asset]	CSMsbPartsGeom	3	140CF43A0 140CF4470 140CF4560	cmp 0 x6
 Part.Type.80	0x1	1	AssetUnk4.AssetUnkStruct4_Unk01 [Asset]	CSMsbPartsGeom	1	140CF4560	store W.Parts+0
-Part.Type.80	0x2	1	AssetUnk4.AssetUnkStruct4_Unk02 [Asset]	CSMsbPartsGeom	1	140CF43A0	store W.Parts+0
-Part.Type.80	0x3	1	AssetUnk4.AssetUnkStruct4_Unk03 [Asset]	CSMsbPartsGeom	1	140CF4470	store W.Parts+0
+Part.Type.80	0x2	1	AssetUnk4.OutdoorIndoorType [Asset]	CSMsbPartsGeom	1	140CF43A0	store W.Parts+0
+Part.Type.80	0x3	1	AssetUnk4.EasyOcclusionID [Asset]	CSMsbPartsGeom	1	140CF4470	store W.Parts+0
 Part.Unk11	0x0	4	UnkStruct11.UnkStruct11_Unk00	CSMsbPartsHit	1	140CF4E10	store [RSP+0]; xor
 Part.Unk11	0x4	4	UnkStruct11.UnkStruct11_Unk04	CSMsbPartsGeom,CSMsbPartsMap	2	140CF3850 140CF53F0	ret x2; xor x2
 Part.Unk8	0x0	1	UnkStruct8.UnkStruct8_Unk00	CSMsbParts	1	140CF10E0	cmp 0

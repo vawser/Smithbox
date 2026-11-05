@@ -1,4 +1,4 @@
-using Andre.Core;
+﻿using Andre.Core;
 using Andre.IO.VFS;
 using SoulsFormats;
 using System.Security.Cryptography;
@@ -78,8 +78,27 @@ if (args.Length > 2 && args[2] == "stats")
             Add("Collision DisplayGroupStruct.Condition bytes", v == -1 ? "-1" : $"{v & 0xFF} {(v >> 8) & 0xFF} {(v >> 16) & 0xFF} {(v >> 24) & 0xFF}");
             if (v != -1 && v != 0) Add("Collision Condition (own map)", $"{path.Split('/').Last()[..12]} -> m{v & 0xFF:D2}_{(v >> 8) & 0xFF:D2}_{(v >> 16) & 0xFF:D2}");
         }
+        // group A (consumer tracing): collision values copied into ChrIns +2E0..+2F8
+        Add("A PartsParam version", msb.Parts.Version);
+        foreach (var c in msb.Parts.Collisions)
+        {
+            Add("A Collision UnkT02 (indoor type?)", c.OutdoorIndoorType);
+            Add("A Collision UnkT03 (easy occlusion?)", c.EasyOcclusionID);
+            Add("A Collision UnkT4C", c.UnkT4C);
+            Add("A Collision UnkT1C vs LocationTextID", c.UnkT1C == -1 ? "-1" : c.UnkT1C == c.LocationTextID ? "== LocationTextID" : c.UnkT1C == Math.Abs(c.LocationTextID) ? "== |LocationTextID|" : "other");
+            if (c.UnkT1C != -1) Add("A Collision UnkT1C examples", $"{map} {c.Name} T1C={c.UnkT1C} loc={c.LocationTextID}");
+            Add("A Collision PlayRegionID / UnkT38", $"{(c.PlayRegionID == -1 ? "-1" : "set")} / {(c.LegacyPlayRegionID == -1 ? "-1" : "set")}");
+            if (c.PlayRegionID != -1 && c.PlayRegionID != 0) Add("A Collision PlayRegionID examples", $"{map} {c.Name} {c.PlayRegionID}");
+            if (c.UnkT4C != 0) Add("A Collision UnkT4C examples", $"{map} {c.Name} = {c.UnkT4C}");
+            if (c.OutdoorIndoorType != 255 && c.OutdoorIndoorType != 0) Add("A Collision UnkT02 examples", $"{map} {c.Name} = {c.OutdoorIndoorType}");
+        }
+        foreach (var a in msb.Parts.Assets)
+        {
+            var u4 = a.AssetUnk4;
+            Add("A AssetUnk4 Unk00 / Unk02 / Unk03", $"{u4.OverrideCollisionSoundSettings} / {u4.OutdoorIndoorType} / {u4.EasyOcclusionID}");
+        }
         foreach (var p in msb.Events.PlatoonInfo)
-            Add("Platoon State bytes", $"{p.State} {p.UnkT05} {p.UnkT06} {p.UseMemberEntityIDs} ids {p.MemberEntityIDs[0]},{p.MemberEntityIDs[1]}");
+            Add("Platoon State bytes", $"{p.State} {p.EnableDeactiveMove} {p.UnkT06} {p.UseMemberEntityIDs} ids {p.MemberEntityIDs[0]},{p.MemberEntityIDs[1]}");
     }
     foreach (var (k, h) in hist)
     {
