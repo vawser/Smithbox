@@ -137,12 +137,23 @@ public class ProjectEditorHandler : IDisposable
         _textureDataTask = TextureData.Setup();
         tasks.Add(_textureDataTask);
 
-        // Material data (shared dependency)
-        _materialDataTask = Task.Run(async () =>
+        // Material data (shared dependency of the map, model and time act viewports, and the Material Editor).
+        // Only started when something uses it, and always awaited: InitializeEditors reads MaterialData, which an
+        // unawaited task might not have assigned yet.
+        var needsMaterialData =
+            initType is ProjectInitType.ProjectDefined ||
+            (initType is ProjectInitType.MapEditorOnly && Project.Descriptor.EnableMapEditor);
+
+        if (needsMaterialData)
         {
-            MaterialData = new(Project);
-            return await MaterialData.Setup();
-        });
+            _materialDataTask = Task.Run(async () =>
+            {
+                MaterialData = new(Project);
+                return await MaterialData.Setup();
+            });
+
+            tasks.Add(_materialDataTask);
+        }
 
         // Map
         if (Project.Descriptor.EnableMapEditor &&
@@ -151,7 +162,6 @@ public class ProjectEditorHandler : IDisposable
             MapData = new(Project);
             _mapDataTask = MapData.Setup();
             tasks.Add(_mapDataTask);
-            tasks.Add(_materialDataTask);
         }
 
         // Model
@@ -161,7 +171,6 @@ public class ProjectEditorHandler : IDisposable
             ModelData = new(Project);
             _modelDataTask = ModelData.Setup();
             tasks.Add(_modelDataTask);
-            tasks.Add(_materialDataTask);
         }
 
         // Time Act
@@ -171,7 +180,6 @@ public class ProjectEditorHandler : IDisposable
             TimeActData = new(Project);
             _timeActDataTask = TimeActData.Setup();
             tasks.Add(_timeActDataTask);
-            tasks.Add(_materialDataTask);
         }
 
         // Param
@@ -220,55 +228,31 @@ public class ProjectEditorHandler : IDisposable
 
     public void LogDataResults()
     {
-        if (_projectDataTask?.Result == true)
-            Smithbox.Log(this, LOC.Get("PROJECT_Data_Setup_Project_Data_PASS"));
+        LogDataResult(_commonDataTask, "PROJECT_Data_Setup_Common_Data_PASS", "PROJECT_Data_Setup_Common_Data_FAIL");
+        LogDataResult(_projectDataTask, "PROJECT_Data_Setup_Project_Data_PASS", "PROJECT_Data_Setup_Project_Data_FAIL");
+        LogDataResult(_mapDataTask, "PROJECT_Data_Setup_Map_Data_PASS", "PROJECT_Data_Setup_Map_Data_FAIL");
+        LogDataResult(_modelDataTask, "PROJECT_Data_Setup_Model_Data_PASS", "PROJECT_Data_Setup_Model_Data_FAIL");
+        LogDataResult(_timeActDataTask, "PROJECT_Data_Setup_TimeAct_Data_PASS", "PROJECT_Data_Setup_TimeAct_Data_FAIL");
+        LogDataResult(_materialDataTask, "PROJECT_Data_Setup_Material_Data_PASS", "PROJECT_Data_Setup_Material_Data_FAIL");
+        LogDataResult(_paramDataTask, "PROJECT_Data_Setup_Param_Data_PASS", "PROJECT_Data_Setup_Param_Data_FAIL");
+        LogDataResult(_textDataTask, "PROJECT_Data_Setup_Text_Data_PASS", "PROJECT_Data_Setup_Text_Data_FAIL");
+        LogDataResult(_gparamDataTask, "PROJECT_Data_Setup_Gparam_Data_PASS", "PROJECT_Data_Setup_Gparam_Data_FAIL");
+        LogDataResult(_textureDataTask, "PROJECT_Data_Setup_Texture_Data_PASS", "PROJECT_Data_Setup_Texture_Data_FAIL");
+        LogDataResult(_havokDataTask, "PROJECT_Data_Setup_Havok_Data_PASS", "PROJECT_Data_Setup_Havok_Data_FAIL");
+    }
+
+    /// <summary>
+    /// Logs a data task's outcome, as an error if it failed. Tasks that weren't started are skipped.
+    /// </summary>
+    private void LogDataResult(Task<bool> task, string passKey, string failKey)
+    {
+        if (task == null)
+            return;
+
+        if (task.IsCompletedSuccessfully && task.Result)
+            Smithbox.Log(this, LOC.Get(passKey));
         else
-            Smithbox.LogError(this, LOC.Get("PROJECT_Data_Setup_Project_Data_FAIL"));
-
-        if (_mapDataTask != null)
-            Smithbox.Log(this, _mapDataTask.Result
-                ? LOC.Get("PROJECT_Data_Setup_Map_Data_PASS")
-                : LOC.Get("PROJECT_Data_Setup_Map_Data_FAIL"));
-
-        if (_modelDataTask != null)
-            Smithbox.Log(this, _modelDataTask.Result
-                ? LOC.Get("PROJECT_Data_Setup_Model_Data_PASS")
-                : LOC.Get("PROJECT_Data_Setup_Model_Data_FAIL"));
-
-        if (_timeActDataTask != null)
-            Smithbox.Log(this, _timeActDataTask.Result
-                ? LOC.Get("PROJECT_Data_Setup_TimeAct_Data_PASS")
-                : LOC.Get("PROJECT_Data_Setup_TimeAct_Data_FAIL"));
-
-        if (_materialDataTask != null)
-            Smithbox.Log(this, _materialDataTask.Result
-                ? LOC.Get("PROJECT_Data_Setup_Material_Data_PASS")
-                : LOC.Get("PROJECT_Data_Setup_Material_Data_FAIL"));
-
-        if (_paramDataTask != null)
-            Smithbox.Log(this, _paramDataTask.Result
-                ? LOC.Get("PROJECT_Data_Setup_Param_Data_PASS")
-                : LOC.Get("PROJECT_Data_Setup_Param_Data_FAIL"));
-
-        if (_textDataTask != null)
-            Smithbox.Log(this, _textDataTask.Result
-                ? LOC.Get("PROJECT_Data_Setup_Text_Data_PASS")
-                : LOC.Get("PROJECT_Data_Setup_Text_Data_FAIL"));
-
-        if (_gparamDataTask != null)
-            Smithbox.Log(this, _gparamDataTask.Result
-                ? LOC.Get("PROJECT_Data_Setup_Gparam_Data_PASS")
-                : LOC.Get("PROJECT_Data_Setup_Gparam_Data_FAIL"));
-
-        if (_textureDataTask != null)
-            Smithbox.Log(this, _textureDataTask.Result
-                ? LOC.Get("PROJECT_Data_Setup_Texture_Data_PASS")
-                : LOC.Get("PROJECT_Data_Setup_Texture_Data_FAIL"));
-
-        if (_havokDataTask != null)
-            Smithbox.Log(this, _havokDataTask.Result
-                ? LOC.Get("PROJECT_Data_Setup_Havok_Data_PASS")
-                : LOC.Get("PROJECT_Data_Setup_Havok_Data_FAIL"));
+            Smithbox.LogError(this, LOC.Get(failKey));
     }
 
     public void InitializeEditors(ProjectInitType initType)
@@ -319,7 +303,8 @@ public class ProjectEditorHandler : IDisposable
         }
 
         if (MaterialData != null &&
-            Project.Descriptor.EnableMaterialEditor)
+            Project.Descriptor.EnableMaterialEditor &&
+            initType is ProjectInitType.ProjectDefined)
         {
             MaterialEditor = new MaterialEditorScreen(Project);
             firstEditor ??= MaterialEditor;
@@ -346,10 +331,12 @@ public class ProjectEditorHandler : IDisposable
     {
         ModelPreviewCache.Release(Project);
 
+        CommonData?.Dispose();
         ProjectData?.Dispose();
 
         MapData?.Dispose();
         ModelData?.Dispose();
+        TimeActData?.Dispose();
         ParamData?.Dispose();
         TextData?.Dispose();
         GparamData?.Dispose();

@@ -242,10 +242,11 @@ public class ProjectOrchestrator : IDisposable
         return;
     }
 
-    public void CreateProject(ProjectDescriptor newProjectDescriptor)
+    public ProjectEntry CreateProject(ProjectDescriptor newProjectDescriptor)
     {
-        var newProject = new ProjectEntry(); 
+        var newProject = new ProjectEntry();
         newProject.Descriptor = ProjectDescriptor.CreateNew(newProjectDescriptor);
+        newProject.Descriptor.ProjectName = newProject.Descriptor.ProjectName.Trim();
 
         Projects.Add(newProject);
 
@@ -255,15 +256,66 @@ public class ProjectOrchestrator : IDisposable
         {
             _ = StartupProject(newProject);
         }
+        else
+        {
+            Smithbox.Log(this, LOC.Get("PROJECT_Setup_Create_Not_Loaded_Loading"));
+        }
+
+        return newProject;
     }
 
-    public void UpdateProject(ProjectEntry project, ProjectDescriptor newProjectDescriptor)
+    /// <summary>
+    /// Applies the edited settings to the project and saves it. The project is reloaded only if it is the open one.
+    /// </summary>
+    /// <remarks>
+    /// Only the settings the configuration form edits are copied, so state changed elsewhere since the form was
+    /// filled (pins, auto-load) is kept, and the form keeps its own descriptor rather than sharing the live one.
+    /// </remarks>
+    public void UpdateProject(ProjectEntry project, ProjectDescriptor editedDescriptor)
     {
-        project.Descriptor = newProjectDescriptor;
+        project.Descriptor.ApplyConfiguration(editedDescriptor);
 
         SaveProject(project);
 
+        if (project != SelectedProject)
+            return;
+
+        if (IsProjectLoading)
+        {
+            Smithbox.Log(this, LOC.Get("PROJECT_Setup_Update_Deferred_Loading"));
+            return;
+        }
+
         _ = ReloadProject(project);
+    }
+
+    /// <summary>
+    /// Removes a project from Smithbox. The files in its project directory are not touched.
+    /// </summary>
+    public void RemoveProject(ProjectEntry project)
+    {
+        if (project == null)
+            return;
+
+        var file = Path.Combine(ProjectUtils.GetProjectsFolder(), $"{project.Descriptor.ProjectGUID}.json");
+
+        if (File.Exists(file))
+        {
+            File.Delete(file);
+        }
+
+        if (project == SelectedProject)
+        {
+            UnloadProject(project);
+        }
+        else if (project.Initialized || project.IsInitializing)
+        {
+            project.Dispose();
+        }
+
+        Projects.Remove(project);
+
+        ProjectEditor.OnProjectRemoved(project);
     }
 
     /// <summary>
@@ -291,6 +343,10 @@ public class ProjectOrchestrator : IDisposable
     /// </remarks>
     private async Task<bool> LoadProject(ProjectEntry curProject, bool assignAutoLoad, Action onLoaded)
     {
+        // Checked before the open project is disposed, so a project that can't load leaves the open one in place
+        if (!curProject.ValidateForInit())
+            return false;
+
         var oldProject = SelectedProject;
 
         Smithbox.Instance.SetProgramName(curProject);
@@ -299,15 +355,24 @@ public class ProjectOrchestrator : IDisposable
 
         if (oldProject != null)
         {
+            // Deselected first, so nothing draws the disposed project while the new one loads
+            SelectedProject = null;
+            oldProject.IsSelected = false;
+
             oldProject.Dispose();
             ResourceManager.ClearAllPools();
         }
+
+        // A full load replaces any auxiliary (comparison-only) initialization
+        curProject.IsAuxiliary = false;
 
         IsProjectLoading = true;
         LoadingProject = curProject;
 
         try
         {
+            LoadProgress = default;
+
             SetProgress(new ProjectLoadProgress
             {
                 PhaseLabel = LOC.Get("PROJECT_Setup_Project_Phase_Start"),
@@ -315,9 +380,16 @@ public class ProjectOrchestrator : IDisposable
                 Percent = 0f
             });
 
-            LoadProgress = default;
+            if (!await curProject.Init(ReportProgress))
+            {
+                RunOnMainThread(() =>
+                {
+                    Smithbox.Instance.ResetProgramName();
+                    EndProjectLoad();
+                });
 
-            await curProject.Init(ReportProgress);
+                return false;
+            }
         }
         catch (Exception e)
         {
@@ -437,6 +509,13 @@ public class ProjectOrchestrator : IDisposable
 
     public async Task<bool> LoadAuxiliaryProject(ProjectEntry targetProject, ProjectInitType initType, bool reloadProject)
     {
+        // The open project is already fully initialized; re-initializing it for one editor would replace its editors
+        if (targetProject == SelectedProject && targetProject.Initialized)
+            return true;
+
+        if (!targetProject.Initialized)
+            targetProject.IsAuxiliary = true;
+
         if (reloadProject)
         {
             await targetProject.Init(ReportProgress, true, initType);
@@ -459,12 +538,15 @@ public class ProjectOrchestrator : IDisposable
         if (isSelected)
             SelectedProject = null;
 
+        project.IsSelected = false;
         project.Dispose();
 
         if (isSelected)
+        {
             ResourceManager.ClearAllPools();
 
-        Smithbox.Instance.ResetProgramName();
+            Smithbox.Instance.ResetProgramName();
+        }
     }
 
     /// <summary>
@@ -488,36 +570,46 @@ public class ProjectOrchestrator : IDisposable
             }
         }
     }
-    public void CreateProjectFromLegacyJson(string path)
+    public ProjectEntry CreateProjectFromLegacyJson(string path)
     {
+        ProjectDescriptor newProjectDescriptor = null;
+
         // Unfortunately the PinnedRows/PinnedFields have been saved as both List and Dictionary,
         // so we need to fallback to the incorrect form if the correct form fails deserialization.
+        // Only the reading is retried: creating the project twice would register it twice.
         try
         {
             var jsonText = File.ReadAllText(path);
 
-            var legacyDescriptor = JsonSerializer.Deserialize(jsonText, ProjectJsonSerializerContext.Default.LegacyProjectDescriptor);
-
-            var newProjectDescriptor = new ProjectDescriptor(legacyDescriptor, path);
-
-            CreateProject(newProjectDescriptor);
-        }
-        catch (Exception)
-        {
             try
             {
-                var jsonText = File.ReadAllText(path);
+                var legacyDescriptor = JsonSerializer.Deserialize(jsonText, ProjectJsonSerializerContext.Default.LegacyProjectDescriptor);
 
+                newProjectDescriptor = new ProjectDescriptor(legacyDescriptor, path);
+            }
+            catch (Exception)
+            {
                 var legacyDescriptor = JsonSerializer.Deserialize(jsonText, ProjectJsonSerializerContext.Default.LegacyProjectDescriptorAlt);
 
-                var newProjectDescriptor = new ProjectDescriptor(legacyDescriptor, path);
+                newProjectDescriptor = new ProjectDescriptor(legacyDescriptor, path);
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Read_Legacy_Project_FAIL", path), e);
 
-                CreateProject(newProjectDescriptor);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Read_Legacy_Project_FAIL", path), e);
-            }
+            return null;
+        }
+
+        try
+        {
+            return CreateProject(newProjectDescriptor);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Read_Legacy_Project_FAIL", path), e);
+
+            return null;
         }
     }
 

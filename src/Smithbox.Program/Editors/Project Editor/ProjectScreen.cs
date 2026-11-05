@@ -218,8 +218,8 @@ public class ProjectScreen
 
         foreach (var project in projectList)
         {
-            // Skip these as they are handled above
-            if (project.Descriptor.FolderTag != "")
+            // Projects initialized only for another project's comparison data aren't open projects
+            if (project.IsAuxiliary)
                 continue;
 
             var isMatch = EditorFilters.IsMatch(LoadedListFilter, project.Descriptor.ProjectName, ExactLoadedListFilter);
@@ -510,34 +510,28 @@ public class ProjectScreen
 
         if (ImGui.BeginPopupContextItem($"##contextMenu_{project.Descriptor.ProjectGUID}_{imguiKey}"))
         {
-            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Load")}##loadAction", false, !project.Initialized))
+            // The orchestrator selects the project once it has loaded; selecting it here first would make the load
+            // treat it as the project to replace, leaving the open one undisposed
+            var isOpen = project.Initialized && !project.IsAuxiliary;
+
+            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Load")}##loadAction", false, !isOpen && !orchestrator.IsProjectLoading))
             {
-                orchestrator.SelectedProject = project;
-
-                if (!orchestrator.IsProjectLoading)
-                {
-                    _ = orchestrator.StartupProject(project);
-                }
-
-                SelectedLoadedEntry = project;
-                ConfigureMenu.EditorMode = ProjectEditorMode.Edit;
+                LoadProjectAction(project);
             }
 
-            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Reload")}##reloadAction", false, project.Initialized))
+            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Reload")}##reloadAction", false, isOpen && !orchestrator.IsProjectLoading))
             {
-                orchestrator.SelectedProject = project;
-
-                if (!orchestrator.IsProjectLoading)
-                {
-                    _ = orchestrator.ReloadProject(project);
-                }
+                _ = orchestrator.ReloadProject(project);
             }
 
-            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Unload")}##unloadAction", false, project.Initialized))
+            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Unload")}##unloadAction", false, isOpen))
             {
                 orchestrator.UnloadProject(project);
 
-                ConfigureMenu.EditorMode = ProjectEditorMode.Create;
+                if (SelectedLoadedEntry == project)
+                    SelectedLoadedEntry = null;
+
+                ConfigureMenu.SetupForCreation();
             }
 
             if (ImGui.BeginMenu($"{LOC.Get("PROJECT_Configuration_Global_Context_Header_Information")}##infoHeader"))
@@ -556,18 +550,36 @@ public class ProjectScreen
 
     public void LoadSelectedProjectAction()
     {
-        var project = SelectedAvaliableEntry;
+        LoadProjectAction(SelectedAvaliableEntry);
+    }
+
+    private void LoadProjectAction(ProjectEntry project)
+    {
         var orchestrator = Smithbox.Orchestrator;
 
-        orchestrator.SelectedProject = project;
+        if (project == null || orchestrator.IsProjectLoading)
+            return;
 
-        if (!orchestrator.IsProjectLoading)
+        _ = orchestrator.StartupProject(project, () =>
         {
-            _ = orchestrator.StartupProject(project);
-        }
+            SelectedLoadedEntry = project;
+            ConfigureMenu.SetupForEdit(project);
+        });
+    }
 
-        SelectedLoadedEntry = project;
-        ConfigureMenu.EditorMode = ProjectEditorMode.Edit;
+    /// <summary>
+    /// Clears every reference the screen holds to a project removed from Smithbox, so it can't be saved back.
+    /// </summary>
+    public void OnProjectRemoved(ProjectEntry project)
+    {
+        if (SelectedLoadedEntry == project)
+            SelectedLoadedEntry = null;
+
+        if (SelectedAvaliableEntry == project)
+            SelectedAvaliableEntry = null;
+
+        if (ConfigureMenu.Project == project)
+            ConfigureMenu.SetupForCreation();
     }
 
     public void DisplayProjectCreator()

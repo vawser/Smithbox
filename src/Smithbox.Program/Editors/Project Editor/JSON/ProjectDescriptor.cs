@@ -75,25 +75,28 @@ public class ProjectDescriptor
         DataPath = legacyDescriptor.GameRoot;
         ProjectType = legacyDescriptor.GameType;
 
-        AutoSelect = true;
+        // Left to the auto-load assignment on load, so only one project ends up marked
+        AutoSelect = false;
         ImportedParamRowNames = false;
 
-        EnableMapEditor = true;
-        EnableModelEditor = true;
-        EnableTextEditor = true;
-        EnableParamEditor = true;
-        EnableGparamEditor = true;
-        EnableTextureViewer = true;
-        EnableMaterialEditor = true;
-        EnableFileBrowser = true;
-        EnableAnimEditor = true;
-        EnableHavokEditor = true;
-        EnableTimeActEditor = true;
-
-        EnableExternalMaterialData = true;
+        EnableAllEditors();
 
         FolderTag = "";
+
+        if (legacyDescriptor.PinnedParams != null)
+            PinnedParams = new List<string>(legacyDescriptor.PinnedParams);
+
+        if (legacyDescriptor.PinnedRows != null)
+            PinnedRows = legacyDescriptor.PinnedRows.ToDictionary(e => e.Key, e => new List<int>(e.Value ?? new()));
+
+        if (legacyDescriptor.PinnedFields != null)
+            PinnedFields = legacyDescriptor.PinnedFields.ToDictionary(e => e.Key, e => new List<string>(e.Value ?? new()));
     }
+
+    /// <remarks>
+    /// The list form of the pinned rows and fields doesn't say which param they belong to, so only the pinned params
+    /// are carried over.
+    /// </remarks>
     public ProjectDescriptor(LegacyProjectDescriptorAlt legacyDescriptor, string projectPath)
     {
         ProjectGUID = Guid.NewGuid();
@@ -102,24 +105,42 @@ public class ProjectDescriptor
         DataPath = legacyDescriptor.GameRoot;
         ProjectType = legacyDescriptor.GameType;
 
-        AutoSelect = true;
+        AutoSelect = false;
         ImportedParamRowNames = false;
 
-        EnableMapEditor = true;
-        EnableModelEditor = true;
-        EnableTextEditor = true;
-        EnableParamEditor = true;
-        EnableGparamEditor = true;
-        EnableTextureViewer = true;
-        EnableMaterialEditor = true;
-        EnableFileBrowser = true;
-        EnableAnimEditor = true;
-        EnableHavokEditor = true;
-        EnableTimeActEditor = true;
-
-        EnableExternalMaterialData = true;
+        EnableAllEditors();
 
         FolderTag = "";
+
+        if (legacyDescriptor.PinnedParams != null)
+            PinnedParams = new List<string>(legacyDescriptor.PinnedParams);
+    }
+
+    /// <summary>
+    /// Copies the settings the project configuration form edits from <paramref name="edited"/>. Identity (GUID) and
+    /// state kept by other editors (pins, auto-load, imported row names) are left as they are.
+    /// </summary>
+    public void ApplyConfiguration(ProjectDescriptor edited)
+    {
+        ProjectName = edited.ProjectName.Trim();
+        ProjectPath = edited.ProjectPath;
+        DataPath = edited.DataPath;
+        ProjectType = edited.ProjectType;
+
+        FolderTag = edited.FolderTag;
+
+        EnableMapEditor = edited.EnableMapEditor;
+        EnableModelEditor = edited.EnableModelEditor;
+        EnableTextEditor = edited.EnableTextEditor;
+        EnableParamEditor = edited.EnableParamEditor;
+        EnableGparamEditor = edited.EnableGparamEditor;
+        EnableTextureViewer = edited.EnableTextureViewer;
+        EnableMaterialEditor = edited.EnableMaterialEditor;
+        EnableFileBrowser = edited.EnableFileBrowser;
+        EnableAnimEditor = edited.EnableAnimEditor;
+        EnableHavokEditor = edited.EnableHavokEditor;
+        EnableTimeActEditor = edited.EnableTimeActEditor;
+        EnableExternalMaterialData = edited.EnableExternalMaterialData;
     }
 
     public ProjectDescriptor Clone()

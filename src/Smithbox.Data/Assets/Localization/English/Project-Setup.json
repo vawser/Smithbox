@@ -119,6 +119,14 @@
     {
       "Key": "PROJECT_Setup_Read_Legacy_Project_FAIL",
       "Text": "Failed to read legacy project JSON: {0}"
+    },
+    {
+      "Key": "PROJECT_Setup_Create_Not_Loaded_Loading",
+      "Text": "[Project] Created the project. It was not loaded, as another project is loading."
+    },
+    {
+      "Key": "PROJECT_Setup_Update_Deferred_Loading",
+      "Text": "[Project] Saved the project changes. Reload the project once the current load finishes to apply them."
     }
   ]
 }

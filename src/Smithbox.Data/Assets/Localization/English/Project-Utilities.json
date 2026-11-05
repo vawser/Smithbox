@@ -27,6 +27,14 @@
     {
       "Key": "PROJECT_Util_Failed_To_Delete",
       "Text": "[Project] Failed to delete: {0}"
+    },
+    {
+      "Key": "PROJECT_Util_ME3_Create_Profile_FAIL",
+      "Text": "[ME3] Failed to create the ME3 profile: {0}"
+    },
+    {
+      "Key": "PROJECT_Util_ME3_Launch_FAIL",
+      "Text": "[ME3] Failed to launch the ME3 profile: {0}"
     }
   ]
 }

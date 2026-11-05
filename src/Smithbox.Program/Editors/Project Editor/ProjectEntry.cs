@@ -6,6 +6,7 @@ using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Logger;
 using StudioCore.Renderer;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -27,6 +28,12 @@ public class ProjectEntry
     public bool IsCreatingEditors { get; private set; }
 
     public bool IsSelected = false;
+
+    /// <summary>
+    /// Initialized only for another project's comparison data (see <see cref="ProjectOrchestrator.LoadAuxiliaryProject"/>),
+    /// with only some of its editors. Not offered as an open project.
+    /// </summary>
+    public bool IsAuxiliary = false;
 
     public int AutomaticSaveInterval = 60;
     public DateTime _nextAutoSaveTime = DateTime.MinValue;
@@ -124,29 +131,42 @@ public class ProjectEntry
         }
     }
 
-    public async Task<bool> Init(Action<ProjectLoadProgress> reportProgress, bool silent = false, ProjectInitType initType = ProjectInitType.ProjectDefined)
+    /// <summary>
+    /// Checks the descriptor can be initialized, logging why not.
+    /// </summary>
+    public bool ValidateForInit()
     {
-        // Sanity checks
-        if(Descriptor.ProjectType is ProjectType.Undefined)
+        if (Descriptor.ProjectType is ProjectType.Undefined)
         {
-            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Undefined_Type"));
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Undefined_Type"), LogPriority.High);
 
             return false;
         }
 
-        if(!Directory.Exists(Descriptor.ProjectPath))
+        if (!Directory.Exists(Descriptor.ProjectPath))
         {
-            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Bad_Project_Path", Descriptor.ProjectPath));
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Bad_Project_Path", Descriptor.ProjectPath), LogPriority.High);
 
             return false;
         }
 
         if (!Directory.Exists(Descriptor.DataPath))
         {
-            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Bad_Data_Path", Descriptor.DataPath));
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Bad_Data_Path", Descriptor.DataPath), LogPriority.High);
 
             return false;
         }
+
+        return true;
+    }
+
+    public async Task<bool> Init(Action<ProjectLoadProgress> reportProgress, bool silent = false, ProjectInitType initType = ProjectInitType.ProjectDefined)
+    {
+        if (!ValidateForInit())
+            return false;
+
+        // Re-initializing (a reload, or an auxiliary project loaded again) replaces the previous parts, so release them
+        Dispose();
 
         Initialized = false;
         IsInitializing = true;
@@ -370,10 +390,10 @@ public class ProjectEntry
             var rootDllPath = Path.Join(Descriptor.DataPath, "oo2core_6_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_6_win64.dll");
 #elif OSX
-            var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.6.dylib");
+            var rootDllPath = Path.Join(Descriptor.DataPath, "liboo2coremac64.2.6.dylib");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.6.dylib");
 #elif LINUX
-            var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.6");
+            var rootDllPath = Path.Join(Descriptor.DataPath, "liboo2corelinux64.so.6");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.6");
 #endif
 
@@ -392,10 +412,10 @@ public class ProjectEntry
             var rootDllPath = Path.Join(Descriptor.DataPath, "oo2core_8_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_8_win64.dll");
 #elif OSX
-            var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.8.dylib");
+            var rootDllPath = Path.Join(Descriptor.DataPath, "liboo2coremac64.2.8.dylib");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.8.dylib");
 #elif LINUX
-            var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.8");
+            var rootDllPath = Path.Join(Descriptor.DataPath, "liboo2corelinux64.so.8");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.8");
 #endif
 
@@ -415,10 +435,10 @@ public class ProjectEntry
             var rootDllPath = Path.Join(Descriptor.DataPath, "oo2core_9_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_9_win64.dll");
 #elif OSX
-            var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.9.dylib");
+            var rootDllPath = Path.Join(Descriptor.DataPath, "liboo2coremac64.2.9.dylib");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.9.dylib");
 #elif LINUX
-            var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.9");
+            var rootDllPath = Path.Join(Descriptor.DataPath, "liboo2corelinux64.so.9");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.9");
 #endif
 

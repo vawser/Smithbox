@@ -1,6 +1,7 @@
 ﻿using Andre.IO.VFS;
 using SoulsFormats;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Logger;
 
 namespace StudioCore.Application;
 
@@ -51,19 +52,7 @@ public class ProjectUtils
 
     public static void DeleteProject(ProjectEntry curProject)
     {
-        string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-
-        // Delete the project file
-        var filename = Path.Join(localAppDataPath, "Smithbox", "Projects", $"{curProject.Descriptor.ProjectGUID}.json");
-
-        if (File.Exists(filename))
-        {
-            File.Delete(filename);
-        }
-
-        // Unload the project editor stuff
-        Smithbox.Orchestrator.SelectedProject = null;
-        Smithbox.Orchestrator.Projects.Remove(curProject);
+        Smithbox.Orchestrator.RemoveProject(curProject);
     }
 
     public static string GetBaseFolder()
@@ -136,14 +125,40 @@ public class ProjectUtils
         throw new InvalidOperationException(LOC.Get("PROJECT_Util_Missing_Suitable_VFS"));
     }
 
-    public static void WriteWithBackup<T>(ProjectEntry curProject, string assetPath, T item,
+    /// <summary>
+    /// Whether <paramref name="path"/> is <paramref name="directory"/> or somewhere inside it.
+    /// </summary>
+    public static bool IsSameOrInsideDirectory(string path, string directory)
+    {
+        if (string.IsNullOrWhiteSpace(path) || string.IsNullOrWhiteSpace(directory))
+            return false;
+
+        try
+        {
+            var fullPath = Path.TrimEndingDirectorySeparator(Path.GetFullPath(path));
+            var fullDirectory = Path.TrimEndingDirectorySeparator(Path.GetFullPath(directory));
+
+            if (fullPath.Equals(fullDirectory, StringComparison.OrdinalIgnoreCase))
+                return true;
+
+            return fullPath.StartsWith(fullDirectory + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase);
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+
+    /// <returns>Whether the file was written. A failure is logged as an error.</returns>
+    public static bool WriteWithBackup<T>(ProjectEntry curProject, string assetPath, T item,
         params object[] writeparms) where T : SoulsFile<T>, new()
     {
-        WriteWithBackup(curProject, curProject.VFS.FS, curProject.VFS.ProjectFS, assetPath, item,
+        return WriteWithBackup(curProject, curProject.VFS.FS, curProject.VFS.ProjectFS, assetPath, item,
             curProject.Descriptor.ProjectType, writeparms);
     }
 
-    public static void WriteWithBackup<T>(ProjectEntry curProject, VirtualFileSystem vanillaFs, VirtualFileSystem toFs, string assetPath,
+    /// <returns>Whether the file was written. A failure is logged as an error.</returns>
+    public static bool WriteWithBackup<T>(ProjectEntry curProject, VirtualFileSystem vanillaFs, VirtualFileSystem toFs, string assetPath,
         T item, ProjectType gameType = ProjectType.Undefined, params object[] writeparms) where T : SoulsFile<T>, new()
     {
         try
@@ -153,7 +168,9 @@ public class ProjectUtils
                 if(toFs.FileExists(assetPath))
                 {
                     var filename = Path.GetFileName(assetPath);
-                    var timestamp = $"{DateTime.Now.Year.ToString()}-{DateTime.Now.Month.ToString()}-{DateTime.Now.Day.ToString()}_{DateTime.Now.Hour.ToString()}-{DateTime.Now.Minute.ToString()}-{DateTime.Now.Second.ToString()}";
+
+                    // Zero-padded so the backup folders sort chronologically
+                    var timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
 
                     var writeDir = Path.Join($"{curProject.Descriptor.ProjectPath}", ".backup", $"{timestamp}");
                     var writePath = Path.Join($"{curProject.Descriptor.ProjectPath}", ".backup", $"{timestamp}", $"{filename}");
@@ -254,11 +271,18 @@ public class ProjectUtils
                     {
                         toFs.Copy(bhdPath, bhdPath + ".prev");
                     }
+
+                    if (toFs.FileExists(assetPath))
+                    {
+                        toFs.Copy(assetPath, assetPath + ".prev");
+                    }
                 }
 
+                // Both halves are replaced, or the header would index a data file it wasn't written with
                 toFs.Move(bhdPath + ".temp", bhdPath);
+                toFs.Move(assetPath + ".temp", assetPath);
 
-                return;
+                return true;
             }
             else
             {
@@ -287,10 +311,16 @@ public class ProjectUtils
                 }
             }
             toFs.Move(assetPath + ".temp", assetPath);
+
+            return true;
         }
         catch (Exception e)
         {
-            Smithbox.Log<ProjectUtils>(LOC.Get("PROJECT_Util_Failed_To_Save", $"{Path.GetFileName(assetPath)} - {e}"));
+            // An error, not a plain log line: a locked file (e.g. the game is running) must not look like a save
+            Smithbox.LogError<ProjectUtils>(
+                LOC.Get("PROJECT_Util_Failed_To_Save", Path.GetFileName(assetPath)), LogPriority.High, e);
+
+            return false;
         }
     }
 

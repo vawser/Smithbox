@@ -88,8 +88,9 @@ public class ProjectVFS : IDisposable
             VanillaFS = EmptyVirtualFileSystem.Instance;
         }
 
-        // PTDE File System
-        if (Directory.Exists(CFG.Current.PTDE_Data_Path))
+        // PTDE File System: only DS1R reads from it (the PTDE collisions and navmeshes), so other games' lookups
+        // must not fall through to the PTDE files
+        if (Project.Descriptor.ProjectType is ProjectType.DS1R && Directory.Exists(CFG.Current.PTDE_Data_Path))
         {
             PTDE_FS = new RealVirtualFileSystem(CFG.Current.PTDE_Data_Path, false);
             fileSystems.Add(PTDE_FS);

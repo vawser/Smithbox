@@ -395,6 +395,18 @@
     {
       "Key": "PROJECT_Configuration_View_Project_Enums",
       "Text": "Project Enums"
+    },
+    {
+      "Key": "PROJECT_Configuration_Dialog_Delete_Project",
+      "Text": "Remove the project \"{0}\" from Smithbox?\n\nOnly the Smithbox project entry is removed. The files in the project directory are not touched."
+    },
+    {
+      "Key": "PROJECT_Configuration_Dialog_No_Backup_Files",
+      "Text": "No backup files were found in the project directory."
+    },
+    {
+      "Key": "PROJECT_Configuration_Dialog_Backup_Bak_Excluded",
+      "Text": "\n\n.bak files are kept, as the project directory is the game directory and they hold the original game files."
     }
   ]
 }

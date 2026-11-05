@@ -125,7 +125,7 @@ public class ProjectConfigureMenu
             if (EditorMode is ProjectEditorMode.Edit)
                 GUI.WrappedText(LOC.Get("PROJECT_Configuration_Project_Creation_Block_Edit"));
 
-            if (Descriptor.ProjectName == "")
+            if (string.IsNullOrWhiteSpace(Descriptor.ProjectName))
                 GUI.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Name"));
 
             if (!Directory.Exists(Descriptor.ProjectPath))
@@ -187,7 +187,11 @@ public class ProjectConfigureMenu
 
     public void CreateProjectAction()
     {
-        Smithbox.Orchestrator.CreateProject(Descriptor);
+        var newProject = Smithbox.Orchestrator.CreateProject(Descriptor);
+
+        // Switch to editing the new project, so pressing Create again doesn't register a duplicate
+        Editor.SelectedAvaliableEntry = newProject;
+        SetupForEdit(newProject);
     }
 
     public void UpdateProjectAction()
@@ -197,7 +201,14 @@ public class ProjectConfigureMenu
 
     public void DeleteProjectAction()
     {
-        ProjectUtils.DeleteProject(Project);
+        var dialog = PlatformUtils.Instance.MessageBox(
+            LOC.Get("PROJECT_Configuration_Dialog_Delete_Project", Project.Descriptor.ProjectName),
+            LOC.Get("SYS_Warning_Header"), MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+        if (dialog is DialogResult.OK)
+        {
+            ProjectUtils.DeleteProject(Project);
+        }
     }
 
     public void LaunchModAction()
@@ -207,22 +218,20 @@ public class ProjectConfigureMenu
 
     public void CreateProfileAction()
     {
-        if (CFG.Current.Project_ME3_Profile_Directory != "")
-        {
-            ModEngineHandler.CreateME3Profile(Project);
-        }
-        else
+        if (CFG.Current.Project_ME3_Profile_Directory == "")
         {
             var profilePath = "";
             var result =
                 PlatformUtils.Instance.OpenFolderDialog(
                     LOC.Get("PROJECT_Configuration_Dialog_Select_ME3_Profile_Dir"), out profilePath);
 
-            if (result)
-            {
-                CFG.Current.Project_ME3_Profile_Directory = profilePath;
-            }
+            if (!result)
+                return;
+
+            CFG.Current.Project_ME3_Profile_Directory = profilePath;
         }
+
+        ModEngineHandler.CreateME3Profile(Project);
     }
 
     public void DeleteBackupFilesAction()
@@ -233,6 +242,26 @@ public class ProjectConfigureMenu
             return;
 
         var filesToDelete = ProjectUtils.GetBackupFiles(root);
+
+        // .bak files are only written into the game directory, where they are the unmodified originals. When the
+        // project directory is (or is inside) the game directory, they are the only copy, so they are kept.
+        var keepOriginals = ProjectUtils.IsSameOrInsideDirectory(root, Project.Descriptor.DataPath);
+
+        if (keepOriginals)
+        {
+            filesToDelete = filesToDelete
+                .Where(e => !Path.GetExtension(e).Equals(".bak", StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+
+        if (filesToDelete.Count == 0)
+        {
+            PlatformUtils.Instance.MessageBox(
+                LOC.Get("PROJECT_Configuration_Dialog_No_Backup_Files"),
+                LOC.Get("SYS_Warning_Header"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            return;
+        }
 
         var fileList = "";
 
@@ -251,8 +280,13 @@ public class ProjectConfigureMenu
             }
         }
 
+        if (keepOriginals)
+        {
+            fileList = fileList + LOC.Get("PROJECT_Configuration_Dialog_Backup_Bak_Excluded");
+        }
+
         var dialog = PlatformUtils.Instance.MessageBox(
-            LOC.Get("PROJECT_Configuration_Dialog_Delete_Backup_Files_List", fileList), 
+            LOC.Get("PROJECT_Configuration_Dialog_Delete_Backup_Files_List", fileList),
             LOC.Get("SYS_Warning_Header"), MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
         if (dialog is DialogResult.OK)
@@ -568,7 +602,26 @@ public class ProjectConfigureMenu
 
     public void OpenProjectDirectory()
     {
-        Process.Start("explorer.exe", Descriptor.ProjectPath);
+        OpenDirectory(Descriptor.ProjectPath);
+    }
+
+    /// <summary>
+    /// Opens a directory in the platform's file manager. Does nothing for an empty or missing path, rather than
+    /// opening a default location.
+    /// </summary>
+    private void OpenDirectory(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path) || !Directory.Exists(path))
+            return;
+
+        try
+        {
+            using var process = Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, $"Failed to open the directory \"{path}\".", e);
+        }
     }
 
     public void SelectDataDirectory()
@@ -598,23 +651,20 @@ public class ProjectConfigureMenu
     }
     public void OpenDataDirectory()
     {
-        Process.Start("explorer.exe", Descriptor.DataPath);
+        OpenDirectory(Descriptor.DataPath);
     }
 
     private bool AllowCreation()
     {
         bool isAllowed = true;
 
-        if (Descriptor.ProjectName == "")
+        if (string.IsNullOrWhiteSpace(Descriptor.ProjectName))
             isAllowed = false;
 
         if (!Directory.Exists(Descriptor.ProjectPath))
             isAllowed = false;
 
         if (!Directory.Exists(Descriptor.DataPath))
-            isAllowed = false;
-
-        if (Descriptor.ProjectName == "")
             isAllowed = false;
 
         if (Descriptor.ProjectType is ProjectType.Undefined)
@@ -635,10 +685,11 @@ public class ProjectConfigureMenu
         SteamExecutable_AC6 = SteamGameLocator.FindGameExecutable(1888160, "Game\\armoredcore6.exe");
         SteamExecutable_NR = SteamGameLocator.FindGameExecutable(2622380, "Game\\nightreign.exe");
 
-        // If we find the PTDE install, auto-set the PTDE path for DS1R.
+        // If we find the PTDE install, auto-set the PTDE path for DS1R. FindGameExecutable already returns the
+        // executable's directory (DATA), which is where the PTDE files are read from.
         if(!string.IsNullOrEmpty(SteamExecutable_DS1) && CFG.Current.PTDE_Data_Path == "")
         {
-            var dir = Path.GetDirectoryName(Path.GetFullPath(SteamExecutable_DS1));
+            var dir = Path.GetFullPath(SteamExecutable_DS1);
             if(Directory.Exists(dir))
             {
                 CFG.Current.PTDE_Data_Path = dir;

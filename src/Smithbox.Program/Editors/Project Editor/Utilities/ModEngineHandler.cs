@@ -20,6 +20,48 @@ public static class ModEngineHandler
         return false;
     }
 
+    /// <summary>
+    /// The profile name for a project: its name, made safe for a file name, followed by its GUID.
+    /// </summary>
+    private static string GetProfileName(ProjectEntry curProject)
+    {
+        var name = curProject.Descriptor.ProjectName.Trim();
+
+        foreach (var c in Path.GetInvalidFileNameChars())
+        {
+            name = name.Replace(c, '_');
+        }
+
+        return $"{name}-{curProject.Descriptor.ProjectGUID}";
+    }
+
+    /// <summary>
+    /// Finds the project's profile in the profile directory. Matched by the GUID suffix, so a profile made before
+    /// the project was renamed is still found.
+    /// </summary>
+    /// <returns>The profile's path, or null if there is none.</returns>
+    public static string FindME3Profile(ProjectEntry curProject)
+    {
+        var profileDir = CFG.Current.Project_ME3_Profile_Directory;
+
+        if (string.IsNullOrEmpty(profileDir) || !Directory.Exists(profileDir))
+            return null;
+
+        var exactPath = Path.Combine(profileDir, $"{GetProfileName(curProject)}.me3");
+
+        if (File.Exists(exactPath))
+            return exactPath;
+
+        try
+        {
+            return Directory.EnumerateFiles(profileDir, $"*-{curProject.Descriptor.ProjectGUID}.me3").FirstOrDefault();
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
+
     public static void CreateME3Profile(ProjectEntry curProject)
     {
         if (CFG.Current.Project_ME3_Profile_Directory == "")
@@ -27,12 +69,12 @@ public static class ModEngineHandler
 
         if (!Directory.Exists(CFG.Current.Project_ME3_Profile_Directory))
         {
-            Smithbox.Log(typeof(ModEngineHandler), 
+            Smithbox.Log(typeof(ModEngineHandler),
                 LOC.Get("PROJECT_Util_ME3_Profile_Missing"));
             return;
         }
 
-        var projectName = $"{curProject.Descriptor.ProjectName}-{curProject.Descriptor.ProjectGUID}";
+        var projectName = GetProfileName(curProject);
         var absPath = $"{curProject.Descriptor.ProjectPath}".Replace(@"\", "/"); // Correct backslash to forward slash
         var gametype = "nr";
 
@@ -58,21 +100,35 @@ public static class ModEngineHandler
 
         var profileString = $"profileVersion = \"v1\"\r\nnatives = []\r\n\r\n[[packages]] \r\nid = \"{projectName}\" \r\nsource = \"{absPath}\" \r\n\r\n[[supports]]\r\ngame = \"{gametype}\"\r\n";
 
-        var writePath = $"{CFG.Current.Project_ME3_Profile_Directory}/{projectName}.me3";
+        var writePath = Path.Combine(CFG.Current.Project_ME3_Profile_Directory, $"{projectName}.me3");
 
-        File.WriteAllText(writePath, profileString);
+        try
+        {
+            File.WriteAllText(writePath, profileString);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(typeof(ModEngineHandler), LOC.Get("PROJECT_Util_ME3_Create_Profile_FAIL", writePath), e);
+        }
     }
+
+    // ME3ProfileExists is called every frame by the configuration menu, so the directory search is cached briefly
+    private static Guid _cachedProfileGuid;
+    private static bool _cachedProfileExists;
+    private static DateTime _cachedProfileTime;
 
     public static bool ME3ProfileExists(ProjectEntry curProject)
     {
-        var projectName = $"{curProject.Descriptor.ProjectName}-{curProject.Descriptor.ProjectGUID}";
+        var now = DateTime.UtcNow;
 
-        var readPath = $"{CFG.Current.Project_ME3_Profile_Directory}/{projectName}.me3";
+        if (_cachedProfileGuid != curProject.Descriptor.ProjectGUID || now - _cachedProfileTime > TimeSpan.FromSeconds(1))
+        {
+            _cachedProfileGuid = curProject.Descriptor.ProjectGUID;
+            _cachedProfileExists = FindME3Profile(curProject) != null;
+            _cachedProfileTime = now;
+        }
 
-        if (File.Exists(readPath))
-            return true;
-
-        return false;
+        return _cachedProfileExists;
     }
 
     public static void LaunchME3Mod(ProjectEntry curProject)
@@ -83,32 +139,34 @@ public static class ModEngineHandler
         if (!Directory.Exists(CFG.Current.Project_ME3_Profile_Directory))
             return;
 
-        var projectName = $"{curProject.Descriptor.ProjectName}-{curProject.Descriptor.ProjectGUID}";
+        var targetFile = FindME3Profile(curProject);
 
-        var readPath = CFG.Current.Project_ME3_Profile_Directory;
-
-        var targetFile = Path.Combine(readPath, $"{projectName}.me3");
-
-        if (File.Exists(targetFile))
+        if (targetFile != null)
         {
+            // Output isn't redirected: nothing reads it, and a full pipe would stall ME3
             var startInfo = new ProcessStartInfo
             {
                 FileName = "cmd.exe",
                 WorkingDirectory = CFG.Current.Project_ME3_Profile_Directory,
                 UseShellExecute = false,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
                 CreateNoWindow = true
             };
 
             startInfo.ArgumentList.Add("/c");
-            startInfo.ArgumentList.Add($"{projectName}.me3");
+            startInfo.ArgumentList.Add(Path.GetFileName(targetFile));
 
-            Process.Start(startInfo);
+            try
+            {
+                using var process = Process.Start(startInfo);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(typeof(ModEngineHandler), LOC.Get("PROJECT_Util_ME3_Launch_FAIL", targetFile), e);
+            }
         }
         else
         {
-            Smithbox.Log(typeof(ModEngineHandler), LOC.Get("PROJECT_Util_ME3_Find_Profile_FAIL", readPath));
+            Smithbox.Log(typeof(ModEngineHandler), LOC.Get("PROJECT_Util_ME3_Find_Profile_FAIL", CFG.Current.Project_ME3_Profile_Directory));
         }
     }
 }

@@ -146,7 +146,7 @@ public class ProjectFileLocator : IDisposable
             {
                 PhaseLabel = LOC.Get("PROJECT_Setup_Locator_Init_Project"),
                 StepLabel = LOC.Get("PROJECT_Setup_Locator_Compile_Root_Dir"),
-                Percent = 0.5f
+                Percent = 0.25f
             });
         }
 
@@ -191,7 +191,7 @@ public class ProjectFileLocator : IDisposable
             {
                 PhaseLabel = LOC.Get("PROJECT_Setup_Locator_Init_Project"),
                 StepLabel = LOC.Get("PROJECT_Setup_Locator_Compile_Project_Dir"),
-                Percent = 0.25f
+                Percent = 0.3f
             });
         }
 
@@ -214,13 +214,28 @@ public class ProjectFileLocator : IDisposable
             {
                 PhaseLabel = LOC.Get("PROJECT_Setup_Locator_Init_Project"),
                 StepLabel = LOC.Get("PROJECT_Setup_Locator_Compile_Editor_Dir"),
-                Percent = 0.3f
+                Percent = 0.35f
             });
         }
 
         CompileDictionaries();
 
         return;
+    }
+
+    private static readonly string[] ScanExcludedExtensions = [".bak", ".prev", ".temp"];
+
+    private static bool IsExcludedFromScan(string relativePath)
+    {
+        foreach (var part in relativePath.Split('/', StringSplitOptions.RemoveEmptyEntries).SkipLast(1))
+        {
+            if (part.StartsWith('.'))
+                return true;
+        }
+
+        var ext = Path.GetExtension(relativePath);
+
+        return ScanExcludedExtensions.Any(e => e.Equals(ext, StringComparison.OrdinalIgnoreCase));
     }
 
     private FileDictionary BuildProjectFileDictionary(string projectPath, FileDictionary existingDict, ProjectType type)
@@ -252,6 +267,11 @@ public class ProjectFileLocator : IDisposable
 
             // Skip any new base dir files
             if (relativeFolder == "/")
+                continue;
+
+            // Skip Smithbox's own files and the save leftovers: dot folders (.smithbox, .backup, .git) and the
+            // backup/temporary copies written next to saved files
+            if (IsExcludedFromScan(relativePath))
                 continue;
 
             if (CFG.Current.Project_Scan_Directory_Strict_Mode)
