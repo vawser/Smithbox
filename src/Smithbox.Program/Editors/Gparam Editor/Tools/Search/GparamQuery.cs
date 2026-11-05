@@ -35,13 +35,74 @@ public enum GparamQueryValueTarget
 }
 
 /// <summary>
+/// What a query finds: files, groups, fields, or the value rows of fields
+/// </summary>
+public enum GparamQueryLevel
+{
+    File,
+    Group,
+    Field,
+    Value
+}
+
+/// <summary>
+/// What a query asks of the files, groups, fields and values it goes through. It is read off the main thread while
+/// the query runs, so an implementation must not change once the query has started.
+/// </summary>
+public interface IGparamQueryFilter
+{
+    /// <summary>
+    /// The level the matches are at. The levels above it only narrow down what is gone through.
+    /// </summary>
+    GparamQueryLevel Level { get; }
+
+    bool MatchFile(GparamQueryMatcher matcher, FileDictionaryEntry fileEntry, string alias);
+
+    bool MatchGroup(GparamQueryMatcher matcher, GPARAM.Param group);
+
+    bool MatchField(GparamQueryMatcher matcher, string groupKey, GPARAM.IField field);
+
+    /// <summary>
+    /// Whether a value row matches. Gives what to show after its ID in the label, and its value as text.
+    /// </summary>
+    bool MatchValue(GparamQueryMatcher matcher, string groupKey, GPARAM.IField field, GPARAM.IFieldValue value,
+        out string label, out string valueText);
+}
+
+/// <summary>
 /// The inputs of a search as they were when it started, as the tool's inputs can be edited while it runs.
 /// The deepest level given decides what is found: groups, fields, or the value rows of fields.
 /// </summary>
 public record GparamQuery(string File, string Group, string Field, string Value, bool Exact,
     GparamQueryComparison Comparison = GparamQueryComparison.Contains, string Value2 = "",
-    GparamQueryValueTarget ValueTarget = GparamQueryValueTarget.Value)
+    GparamQueryValueTarget ValueTarget = GparamQueryValueTarget.Value) : IGparamQueryFilter
 {
+    public GparamQueryLevel Level => HasValue ? GparamQueryLevel.Value
+        : HasField ? GparamQueryLevel.Field
+        : HasGroup ? GparamQueryLevel.Group
+        : GparamQueryLevel.File;
+
+    public bool MatchFile(GparamQueryMatcher matcher, FileDictionaryEntry fileEntry, string alias)
+        => matcher.MatchFile(this, fileEntry, alias);
+
+    public bool MatchGroup(GparamQueryMatcher matcher, GPARAM.Param group)
+        => matcher.MatchGroup(this, group);
+
+    public bool MatchField(GparamQueryMatcher matcher, string groupKey, GPARAM.IField field)
+        => matcher.MatchField(this, groupKey, field);
+
+    public bool MatchValue(GparamQueryMatcher matcher, string groupKey, GPARAM.IField field, GPARAM.IFieldValue value,
+        out string label, out string valueText)
+    {
+        var matched = matcher.MatchValue(this, groupKey, field, value, out valueText);
+
+        label = ValueTarget is GparamQueryValueTarget.Value
+            ? $"= {valueText}"
+            : $"{GparamQueryRunner.GetValueTargetName(ValueTarget)} = {valueText}";
+
+        return matched;
+    }
+
     public bool HasFile => !string.IsNullOrWhiteSpace(File);
     public bool HasGroup => !string.IsNullOrWhiteSpace(Group);
     public bool HasField => !string.IsNullOrWhiteSpace(Field);
@@ -154,6 +215,41 @@ public class GparamQueryMatcher
         FieldInfo[(groupKey, fieldKey)] = info;
 
         return info;
+    }
+
+    /// <summary>
+    /// The value an enum option of the field stands for, looked up by the option's name. False if the field has
+    /// no enum, or no option by that name.
+    /// </summary>
+    public bool TryGetEnumValue(string groupKey, string fieldKey, string name, out string valueText)
+    {
+        valueText = null;
+
+        var names = GetFieldInfo(groupKey, fieldKey).EnumNames;
+
+        if (names == null || string.IsNullOrWhiteSpace(name))
+            return false;
+
+        name = name.Trim();
+
+        foreach (var (value, optionName) in names)
+        {
+            if (string.Equals(optionName, name, StringComparison.OrdinalIgnoreCase))
+            {
+                valueText = value;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// The enum options of a field as (name, value) pairs, or null if it has none
+    /// </summary>
+    public List<(string Name, string Value)> GetEnumOptions(string groupKey, string fieldKey)
+    {
+        return GetFieldInfo(groupKey, fieldKey).EnumNames?.Select(e => (e.Value, e.Key)).ToList();
     }
 
     /// <summary>

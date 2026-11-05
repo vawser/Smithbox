@@ -241,6 +241,14 @@
       "Text": "({0} shown)"
     },
     {
+      "Key": "GPARAM_SearchTool_Send_To_Mass_Edit",
+      "Text": "Send to Mass Edit"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Send_To_Mass_Edit_TT",
+      "Text": "Finds these results again in the Mass Edit, to edit, delete or duplicate all of them at once."
+    },
+    {
       "Key": "GPARAM_SearchTool_Jump_TT",
       "Text": "Jump to this result."
     },

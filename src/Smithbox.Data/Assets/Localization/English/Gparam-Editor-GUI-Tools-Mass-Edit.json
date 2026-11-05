@@ -1,0 +1,620 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_MassEditTool_Header",
+      "Text": "Mass Edit"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Hint",
+      "Text": "Find value rows, fields or groups, then edit, delete or duplicate all of them at once. Find them in the Find tab, then choose what to do with them in the Edit tab, which shows every change before it is applied. The whole edit is one undo step."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Tab_Find",
+      "Text": "Find"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Tab_Find_TT",
+      "Text": "Choose what to act on."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Tab_Edit",
+      "Text": "Edit"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Tab_Edit_TT",
+      "Text": "Choose what to do with the matches, check the changes, and apply them."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_No_File",
+      "Text": "Select a file, or use the All Files scope."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_Header",
+      "Text": "Scope"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_Header_TT",
+      "Text": "Where to look for the matches."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_No_Group",
+      "Text": "Select a group to use this scope."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_No_Field",
+      "Text": "Select a field to use this scope."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_No_Values",
+      "Text": "Select one or more values to use this scope."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_Selected_Values",
+      "Text": "Selected Values"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_Selected_Values_TT",
+      "Text": "The values selected in the value list."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_Selected_Field",
+      "Text": "Selected Field"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_Selected_Field_TT",
+      "Text": "Every value of the selected field."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_Selected_Group",
+      "Text": "Selected Group"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_Selected_Group_TT",
+      "Text": "Every field of the selected group."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_Selected_File",
+      "Text": "Selected File"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_Selected_File_TT",
+      "Text": "Every group of the selected file."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_All_Files",
+      "Text": "All Files"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Scope_All_Files_TT",
+      "Text": "Every file of the project. Files that aren't open are read for the find, and opened when the edit is applied."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Target_Header",
+      "Text": "Target"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Target_Header_TT",
+      "Text": "What the mass edit acts on. Values can be edited, deleted or duplicated; fields and groups can be deleted."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Target_Values",
+      "Text": "Values"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Target_Fields",
+      "Text": "Fields"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Target_Groups",
+      "Text": "Groups"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_File",
+      "Text": "File"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_File_TT",
+      "Text": "Matches the file name or alias. Leave empty for every file."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Group",
+      "Text": "Group"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Group_TT",
+      "Text": "Matches the internal or annotated name of a group. Leave empty for every group."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field",
+      "Text": "Field"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_TT",
+      "Text": "Matches the internal or annotated name of a field. Leave empty for every field."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Conditions_Header",
+      "Text": "Conditions"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Conditions_Header_TT",
+      "Text": "Conditions on the value rows. Each compares the value, ID or time of day of a row. A row must meet every condition; an empty one is ignored."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Condition_Value_Hint",
+      "Text": "Any value"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Condition_Add",
+      "Text": "Add Condition"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Condition_Add_TT",
+      "Text": "Adds another condition, which the rows must meet as well."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Condition_Remove_TT",
+      "Text": "Removes this condition."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Options_Header_TT",
+      "Text": "How the inputs are matched."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Actions_Header_TT",
+      "Text": "Find the matches, or start over."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Find",
+      "Text": "Find"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Find_TT",
+      "Text": "Finds everything the scope, target, filter and conditions pick out. The matches are listed below, and can then be edited in the Edit tab."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Clear_TT",
+      "Text": "Empties the inputs and the matches."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Matches_Header",
+      "Text": "Matches"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Matches_Header_TT",
+      "Text": "What the mass edit will act on. Click a match to jump to it. The filter narrows the list down without changing what is acted on."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Matches_Values",
+      "Text": "{0} values in {1} fields"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Matches_Fields",
+      "Text": "{0} fields"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Matches_Groups",
+      "Text": "{0} groups"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Matches_Files",
+      "Text": "across {0} files"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Matches_Stale",
+      "Text": "The inputs or the selection have changed since Find. Find again before editing."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Edit_No_Matches",
+      "Text": "Find the matches in the Find tab first."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Edit_Finding",
+      "Text": "Still finding the matches ({0} so far)..."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Action_Header",
+      "Text": "Action"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Action_Header_TT",
+      "Text": "What to do with the matches."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Action_Edit",
+      "Text": "Edit"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Action_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Action_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Steps_Header",
+      "Text": "Steps"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Steps_Header_TT",
+      "Text": "Each step changes one part of every matched row. The steps are applied in order, each to what the step before it left. A row is changed by every step or by none."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Step_Pick_Field",
+      "Text": "Pick a field..."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Step_Field_TT",
+      "Text": "The part of each row this step changes."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Step_Remove_TT",
+      "Text": "Removes this step."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Step_Add",
+      "Text": "Add Step"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Step_Add_TT",
+      "Text": "Adds another step, applied after the ones above it."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Step_Value_Hint",
+      "Text": "Value..."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Step_Factor_Hint",
+      "Text": "Factor..."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Step_Pick_Value",
+      "Text": "Pick a value..."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Step_Value_TT",
+      "Text": "The value, as the row's type takes it: a number, true or false, text, or the name or value of an enum option. Vectors and colours take their components split by commas, colours as R, G, B, A. For arithmetic on a vector or colour, one number applies to every component, or give one per component."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Step_Number_TT",
+      "Text": "A number. IDs are rounded to whole numbers."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_Value",
+      "Text": "Value"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_Value_TT",
+      "Text": "The value of the row."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_Component_1",
+      "Text": "Value: X / R"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_Component_2",
+      "Text": "Value: Y / G"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_Component_3",
+      "Text": "Value: Z / B"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_Component_4",
+      "Text": "Value: W / A"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_Component_TT",
+      "Text": "One component of a vector or colour value. Rows whose value isn't a vector or colour, or has fewer components, are skipped."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_ID_TT",
+      "Text": "The ID of the row. IDs must stay unique within a field, so a row whose new ID would be taken is skipped."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_Time_Of_Day",
+      "Text": "Time of Day"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Field_Time_Of_Day_TT",
+      "Text": "The time of day of the row."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Set",
+      "Text": "Set"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Set_TT",
+      "Text": "Sets the field to the value."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Add",
+      "Text": "Add"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Add_TT",
+      "Text": "Adds the number to the field."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Subtract",
+      "Text": "Subtract"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Subtract_TT",
+      "Text": "Subtracts the number from the field."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Multiply",
+      "Text": "Multiply By"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Multiply_TT",
+      "Text": "Multiplies the field by the factor."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Divide",
+      "Text": "Divide By"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Divide_TT",
+      "Text": "Divides the field by the factor."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_At_Least",
+      "Text": "At Least"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_At_Least_TT",
+      "Text": "Raises the field to the number if it is below it."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_At_Most",
+      "Text": "At Most"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_At_Most_TT",
+      "Text": "Lowers the field to the number if it is above it."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Toggle",
+      "Text": "Toggle"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Operator_Toggle_TT",
+      "Text": "Flips a bool, or turns a number of 0 into 1 and any other number into 0."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Value_True",
+      "Text": "True"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Value_False",
+      "Text": "False"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Changes_Header",
+      "Text": "Changes"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Changes_Header_TT",
+      "Text": "Every change the edit will make. Click one to jump to its row."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Changes_No_Steps",
+      "Text": "Add a step and pick its field to see the changes."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Changes_Summary",
+      "Text": "{0} changes to {1} values in {2} fields."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Changes_Unchanged",
+      "Text": "{0} matches are left as they are by the steps."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Changes_Skipped",
+      "Text": "{0} matches will be skipped:"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Changes_Skipped_More",
+      "Text": "...and {0} more."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Changes_Stale",
+      "Text": "The inputs or the selection have changed since Find. Find again before applying."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Apply",
+      "Text": "Apply"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Apply_TT",
+      "Text": "Makes every change listed, as one action that a single undo takes back."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Applied",
+      "Text": "Edited {0} values."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Applied_Stale",
+      "Text": "{0} matches had changed since Find, or no longer exist, and were left alone."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Applied_Save_All",
+      "Text": "The edit covers files other than the selected one. Use {0} to save all of them."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Applied_Find_Again",
+      "Text": "Find again to make another edit."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Applied_Log",
+      "Text": "Mass edit applied to {0} targets ({1} stale)."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Deletions_Header",
+      "Text": "Deletions"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Deletions_Header_TT",
+      "Text": "What the delete will remove."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Delete_Nothing",
+      "Text": "There are no matches to delete."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Delete_Summary_Values",
+      "Text": "{0} values in {1} fields will be deleted."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Delete_Summary_Fields",
+      "Text": "{0} fields will be deleted, with their values."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Delete_Summary_Groups",
+      "Text": "{0} groups will be deleted, with their fields and values."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Delete_TT",
+      "Text": "Deletes every match, as one action that a single undo puts back."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Delete_Confirm_Title",
+      "Text": "Delete Matches"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Delete_Confirm_Fields",
+      "Text": "Delete {0} fields and all of their values?"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Delete_Confirm_Groups",
+      "Text": "Delete {0} groups and all of their fields and values?"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Delete_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Delete_Cancel_TT",
+      "Text": "Leaves the matches as they are."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Deleted_Values",
+      "Text": "Deleted {0} values."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Deleted_Fields",
+      "Text": "Deleted {0} fields."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Deleted_Groups",
+      "Text": "Deleted {0} groups."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Duplicate_Offset_Header",
+      "Text": "ID Offset"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Duplicate_Offset_Header_TT",
+      "Text": "Each copy takes the ID of its value plus this offset. An ID the field already uses moves up to the next free one."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Duplicate_Offset_Hint",
+      "Text": "Offset..."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Duplicate_Invalid_Offset",
+      "Text": "The offset must be a whole number."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Duplicates_Header",
+      "Text": "Duplicates"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Duplicates_Header_TT",
+      "Text": "Every copy the duplicate will add, with the ID it will take. Click one to jump to the value it copies."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Duplicate_Summary",
+      "Text": "{0} values will be duplicated."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Duplicate_Moved",
+      "Text": "{0} copies take the next free ID, as the offset ID is taken."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Duplicate_TT",
+      "Text": "Adds a copy of every matched value after the values it copies, as one action that a single undo takes back."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Duplicated",
+      "Text": "Duplicated {0} values."
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Skip_ID_Taken",
+      "Text": "The new ID {0} would be taken by another value of the field"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Skip_Invalid_Value",
+      "Text": "'{0}' isn't a valid {1} value"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Skip_Invalid_Number",
+      "Text": "'{0}' isn't a number"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Skip_Not_Number",
+      "Text": "The value isn't a number, vector or colour"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Skip_Not_Vector",
+      "Text": "The value isn't a vector or colour"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Skip_Not_Toggle",
+      "Text": "The value can't be toggled"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Skip_No_Component",
+      "Text": "The value has no component {0}, only {1}"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Skip_Component_Count",
+      "Text": "{0} numbers given for a value of {1} components"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Skip_Divide_By_Zero",
+      "Text": "Division by zero"
+    },
+    {
+      "Key": "GPARAM_MassEditTool_Skip_Out_Of_Range",
+      "Text": "{0} is out of range for {1}"
+    }
+  ]
+}

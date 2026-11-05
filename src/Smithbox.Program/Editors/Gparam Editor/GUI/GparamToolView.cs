@@ -12,6 +12,7 @@ public class GparamToolView
 
     public GparamSearchTool LocalSearchTool;
     public GparamSearchTool GlobalSearchTool;
+    public GparamMassEditTool MassEditTool;
     public GparamDataTransferTool DataTransferTool;
 
     private ToolSections Sections = new();
@@ -23,6 +24,7 @@ public class GparamToolView
 
         LocalSearchTool = new(view, project, GparamSearchMode.Local);
         GlobalSearchTool = new(view, project, GparamSearchMode.Global);
+        MassEditTool = new(view, project);
         DataTransferTool = new(view, project);
     }
 
@@ -76,6 +78,12 @@ public class GparamToolView
         {
             // Global Search
             GlobalSearchTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_GparamEditor_Tool_MassEdit)
+        {
+            // Mass Edit
+            MassEditTool.OnToolWindow();
         }
 
         if (CFG.Current.Interface_GparamEditor_Tool_QuickEdit)
@@ -138,6 +146,13 @@ public class GparamToolView
                 CFG.Current.Interface_GparamEditor_Tool_GlobalSearch = !CFG.Current.Interface_GparamEditor_Tool_GlobalSearch;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_GlobalSearch);
+
+            // Mass Edit
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_Tools_View_Mass_Edit")}##massEditToggle"))
+            {
+                CFG.Current.Interface_GparamEditor_Tool_MassEdit = !CFG.Current.Interface_GparamEditor_Tool_MassEdit;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_MassEdit);
 
             ImGui.Separator();
 

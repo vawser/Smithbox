@@ -55,6 +55,10 @@ public class GparamSearchTool
     private bool Exact = false;
     private bool UniqueValues = false;
 
+    // What the results were found with, so they can be handed to the mass edit
+    private GparamQuery ResultQuery;
+    private GparamMassEditScope ResultScope;
+
     private GparamQueryRun Run;
 
     // Each result with the label it is listed under, which the filter matches
@@ -490,6 +494,14 @@ public class GparamSearchTool
         Results = new();
         ResultSource = selectedFile;
 
+        ResultQuery = query;
+        ResultScope = Mode is GparamSearchMode.Global ? GparamMassEditScope.AllFiles : Scope switch
+        {
+            SearchScope.SelectedGroup => GparamMassEditScope.SelectedGroup,
+            SearchScope.SelectedField => GparamMassEditScope.SelectedField,
+            _ => GparamMassEditScope.SelectedFile
+        };
+
         // A local search counts its groups, as there is only the one file
         Run = Runner.Start(query, sources, Mode is GparamSearchMode.Local, MaxResults);
     }
@@ -569,6 +581,17 @@ public class GparamSearchTool
 
         if (Results.Count == 0)
             return;
+
+        // The results can be edited all at once, by finding them again in the mass edit. A file match has
+        // nothing the mass edit acts on.
+        if (ResultQuery != null && ResultQuery.Level is not GparamQueryLevel.File)
+        {
+            GUI.MultiButtonInput($"gparamSearchSendActions_{Id}",
+                $"gparamSearchSend_{Id}",
+                LOC.Get("GPARAM_SearchTool_Send_To_Mass_Edit"),
+                LOC.Get("GPARAM_SearchTool_Send_To_Mass_Edit_TT"),
+                () => View.ToolView.MassEditTool.LoadQuery(ResultQuery, ResultScope));
+        }
 
         EditorFilters.DisplayFramedListFilter($"gparamSearchResultFilter_{Id}", ref ResultFilter, ref ExactResultFilter);
 

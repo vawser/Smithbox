@@ -4,8 +4,5 @@
 
 - Expand the amount of GPARAM elements considered by the renderer
 
-- Replace Quick Edit with proper Mass Edit system
-
-
 - Verify read/write GPARAM for all project types
 - Bug: DS2 fog color values are inverted (BGR, not RGB)

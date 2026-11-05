@@ -103,7 +103,7 @@ public class GparamQueryRunner
     /// Starts the query on a background task. The progress counts the groups when countGroups is set,
     /// for a query of one file, or else the files.
     /// </summary>
-    public GparamQueryRun Start(GparamQuery query, List<GparamQuerySource> sources, bool countGroups, int maxResults)
+    public GparamQueryRun Start(IGparamQueryFilter query, List<GparamQuerySource> sources, bool countGroups, int maxResults)
     {
         var run = new GparamQueryRun
         {
@@ -136,7 +136,7 @@ public class GparamQueryRunner
         return run;
     }
 
-    private void Run(GparamQueryRun run, GparamQueryMatcher matcher, GparamQuery query, List<GparamQuerySource> sources,
+    private void Run(GparamQueryRun run, GparamQueryMatcher matcher, IGparamQueryFilter query, List<GparamQuerySource> sources,
         bool countGroups, CancellationToken token)
     {
         var bank = Project.Handler.GparamData.PrimaryBank;
@@ -147,14 +147,14 @@ public class GparamQueryRunner
 
             run.Status = item.FileEntry.Filename;
 
-            if (!matcher.MatchFile(query, item.FileEntry, item.Alias))
+            if (!query.MatchFile(matcher, item.FileEntry, item.Alias))
             {
                 run.Progress++;
                 continue;
             }
 
             // A file matched on its own, with nothing asked of its groups, so it needn't be read
-            if (!query.MatchesGroups)
+            if (query.Level is GparamQueryLevel.File)
             {
                 if (!AddMatch(run, CreateMatch(item, null, -1, null, -1, null, -1, null, Label(item, null))))
                     return;
@@ -220,7 +220,7 @@ public class GparamQueryRunner
     /// <summary>
     /// Returns false once there are as many matches as are kept
     /// </summary>
-    private bool QueryGroup(GparamQueryRun run, GparamQueryMatcher matcher, GparamQuery query, GparamQuerySource item,
+    private bool QueryGroup(GparamQueryRun run, GparamQueryMatcher matcher, IGparamQueryFilter query, GparamQuerySource item,
         GPARAM.Param group, int groupIndex, CancellationToken token)
     {
         if (group == null)
@@ -229,12 +229,12 @@ public class GparamQueryRunner
         if (item.GroupKey != null && group.Key != item.GroupKey)
             return true;
 
-        if (!matcher.MatchGroup(query, group))
+        if (!query.MatchGroup(matcher, group))
             return true;
 
         var groupName = matcher.GetGroupName(group.Key);
 
-        if (!query.MatchesFields)
+        if (query.Level is GparamQueryLevel.Group)
         {
             return AddMatch(run, CreateMatch(item, group, groupIndex, null, -1, null, -1, null, Label(item, groupName)));
         }
@@ -253,12 +253,12 @@ public class GparamQueryRunner
             if (item.FieldKey != null && field.Key != item.FieldKey)
                 continue;
 
-            if (!matcher.MatchField(query, group.Key, field))
+            if (!query.MatchField(matcher, group.Key, field))
                 continue;
 
             var fieldName = matcher.GetFieldName(group.Key, field.Key);
 
-            if (!query.HasValue)
+            if (query.Level is GparamQueryLevel.Field)
             {
                 if (!AddMatch(run, CreateMatch(item, group, groupIndex, field, f, null, -1, null,
                     Label(item, $"{groupName}  >  {fieldName}"))))
@@ -276,14 +276,12 @@ public class GparamQueryRunner
                 if (value == null)
                     continue;
 
-                if (!matcher.MatchValue(query, group.Key, field, value, out var shown))
+                if (!query.MatchValue(matcher, group.Key, field, value, out var match, out var valueText))
                     continue;
 
-                var label = query.ValueTarget is GparamQueryValueTarget.Value
-                    ? $"{groupName}  >  {fieldName}  [{value.ID}] = {shown}"
-                    : $"{groupName}  >  {fieldName}  [{value.ID}]  {GetValueTargetName(query.ValueTarget)} = {shown}";
+                var label = $"{groupName}  >  {fieldName}  [{value.ID}]  {match}";
 
-                if (!AddMatch(run, CreateMatch(item, group, groupIndex, field, f, value, v, shown, Label(item, label))))
+                if (!AddMatch(run, CreateMatch(item, group, groupIndex, field, f, value, v, valueText, Label(item, label))))
                     return false;
             }
         }
@@ -396,14 +394,25 @@ public class GparamQueryRunner
         out int fieldIndex, out GPARAM.IField field,
         out int valueIndex, out GPARAM.IFieldValue value)
     {
+        return TryResolve(View.Selection.GetSelectedGparam(), match,
+            out groupIndex, out group, out fieldIndex, out field, out valueIndex, out value);
+    }
+
+    /// <summary>
+    /// Finds what a match points to in the given GPARAM, which must be the one of the match's file as the bank
+    /// has it now
+    /// </summary>
+    public static bool TryResolve(GPARAM gparam, GparamQueryMatch match,
+        out int groupIndex, out GPARAM.Param group,
+        out int fieldIndex, out GPARAM.IField field,
+        out int valueIndex, out GPARAM.IFieldValue value)
+    {
         groupIndex = -1;
         group = null;
         fieldIndex = -1;
         field = null;
         valueIndex = -1;
         value = null;
-
-        var gparam = View.Selection.GetSelectedGparam();
 
         if (gparam == null)
             return false;

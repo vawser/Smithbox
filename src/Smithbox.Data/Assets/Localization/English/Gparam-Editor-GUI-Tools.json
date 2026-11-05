@@ -33,6 +33,10 @@
       "Text": "Global Search"
     },
     {
+      "Key": "GPARAM_Tools_View_Mass_Edit",
+      "Text": "Mass Edit"
+    },
+    {
       "Key": "GPARAM_Tools_View_Data_Transfer",
       "Text": "Data Transfer"
     }
