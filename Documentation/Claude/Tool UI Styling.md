@@ -137,6 +137,25 @@ with a tooltip.
   colour (bright red) for real problems, not for notes.
 - Take colours from `UI.Current` rather than hard-coding them. Scale pixel sizes with `DPI.UIScale()`.
 
+## Modals
+
+- A modal with wrapped text needs a set width. With `ImGuiWindowFlags.AlwaysAutoResize` alone, the window sizes
+  itself to its content while `GUI.WrappedText` wraps at the window's width, so the text never wraps and the window
+  runs off screen (worst with file paths). Set the width every frame and leave the height at 0, which still fits the
+  content:
+
+```csharp
+ImGui.SetNextWindowSize(new Vector2(460, 0) * DPI.UIScale(), ImGuiCond.Always);
+
+if (ImGui.BeginPopupModal(title, ref open, ImGuiWindowFlags.AlwaysAutoResize))
+```
+
+- A modal that the user may want to resize (e.g. one with a list) drops `AlwaysAutoResize` and sets its size with
+  `ImGuiCond.Appearing` instead.
+- Open a modal from a context menu by setting a flag, and call `ImGui.OpenPopup` and `BeginPopupModal` together,
+  outside the menu, in a place drawn every frame (see `GparamFileList.DisplayDeleteConfirm`,
+  `GparamTransferCommands.DisplayPopups`). The `###id` part of the title is the ID, so the visible title can change.
+
 ## Long work
 
 Work that takes noticeable time runs on a background task (`Task.Run`), never in the draw loop:

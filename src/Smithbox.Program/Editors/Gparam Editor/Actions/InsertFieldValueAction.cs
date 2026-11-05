@@ -7,7 +7,8 @@ using System.Linq;
 namespace StudioCore.Editors.GparamEditor;
 
 /// <summary>
-/// Import a value: it replaces the target value (overwrite), or is inserted after it (append).
+/// Import a value: it replaces the target value (overwrite), or is inserted after it (append), or before it
+/// (append with insertBefore). With no target, an appended value goes at the end.
 /// Edits the field in place and keeps its Capacity in step with its values, which the writer relies on.
 /// </summary>
 public class InsertFieldValueAction : EditorAction
@@ -27,6 +28,9 @@ public class InsertFieldValueAction : EditorAction
 
     private bool Overwrite { get; set; }
 
+    // Append before the target rather than after it
+    private bool InsertBefore { get; set; }
+
     // Fixed on the first execute, so redo repeats it exactly
     private bool Placed { get; set; } = false;
     private int InsertIndex { get; set; }
@@ -35,8 +39,10 @@ public class InsertFieldValueAction : EditorAction
 
     public InsertFieldValueAction(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry,
         GPARAM gparam, GPARAM.Param param, GPARAM.IField field, GPARAM.IFieldValue value, GPARAM.IFieldValue newValue,
-        bool overwrite)
+        bool overwrite, bool insertBefore = false)
     {
+        InsertBefore = insertBefore;
+
         Project = project;
         View = view;
 
@@ -82,7 +88,9 @@ public class InsertFieldValueAction : EditorAction
                 Smithbox.Log(this, $"Value ID {requested} is already used in {Field.Key}: the imported value uses ID {NewValue.ID}.");
             }
 
-            InsertIndex = targetIndex < 0 ? Field.Values.Count : targetIndex + 1;
+            InsertIndex = targetIndex < 0
+                ? Field.Values.Count
+                : InsertBefore ? targetIndex : targetIndex + 1;
         }
 
         StoredParamExtras = GparamUtils.SnapshotParamExtras(Data);

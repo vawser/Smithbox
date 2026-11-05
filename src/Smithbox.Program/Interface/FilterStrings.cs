@@ -12,6 +12,9 @@ public static class FilterStrings
     // Project file (project.json)|PROJECT.JSON
     public static string ProjectJsonFilter = "json";
 
+    // Gparam transfer payload (*.json)
+    public static string GparamJsonFilter = "json";
+
     // Regulation file (regulation.bin)|REGULATION.BIN
     public static string RegulationBinFilter = "bin";
 

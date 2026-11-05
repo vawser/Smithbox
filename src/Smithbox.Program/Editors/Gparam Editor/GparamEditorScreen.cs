@@ -55,12 +55,6 @@ public class GparamEditorScreen : EditorScreen
             EditMenu();
             ViewMenu();
 
-            var activeView = ViewHandler.ActiveView;
-            if(activeView != null)
-            {
-                activeView.ToolView.DisplayDropdown();
-            }
-
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
             {
                 ImGui.Separator();
@@ -97,6 +91,26 @@ public class GparamEditorScreen : EditorScreen
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_SaveAll_TT"));
 
             ImGui.Separator();
+
+            var activeView = ViewHandler.ActiveView;
+
+            if (activeView != null)
+            {
+                var transfer = activeView.ToolView.DataTransferTool.Commands;
+
+                // Import from File
+                transfer.ImportMenuItem();
+
+                // Export GPARAM to File
+                if (ImGui.MenuItem($"{LOC.Get("GPARAM_Transfer_Export_Action_Gparam")}##exportGparamAction", "", false,
+                    transfer.CanCopy(GparamTransferKind.Gparam)))
+                {
+                    transfer.ExportToFile(GparamTransferKind.Gparam);
+                }
+                GUI.Tooltip(LOC.Get("GPARAM_Transfer_Export_Action_TT"));
+
+                ImGui.Separator();
+            }
 
             // Allow Unmodified Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
@@ -156,9 +170,32 @@ public class GparamEditorScreen : EditorScreen
 
                 ImGui.Separator();
 
+                var transfer = activeView.ToolView.DataTransferTool.Commands;
+
+                // Copy GPARAM
+                if (ImGui.MenuItem($"{LOC.Get("GPARAM_Transfer_Copy_Action_Gparam")}##copyGparamAction",
+                    "", false, transfer.CanCopy(GparamTransferKind.Gparam)))
+                {
+                    transfer.Copy(GparamTransferKind.Gparam);
+                }
+                GUI.Tooltip(LOC.Get("GPARAM_Transfer_Copy_Action_TT"));
+
+                // Paste, Paste Special (Import from File is in the File menu)
+                transfer.PasteMenuItems(false);
+
+                ImGui.Separator();
+
                 // Groups
                 if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Groups_Header")}##groupsHeader"))
                 {
+                    // Copy Group
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Transfer_Copy_Action_Group")}##copyGroupAction",
+                        InputManager.GetHint(KeybindID.Copy), false, transfer.CanCopy(GparamTransferKind.Group)))
+                    {
+                        transfer.Copy(GparamTransferKind.Group);
+                    }
+                    GUI.Tooltip(LOC.Get("GPARAM_Transfer_Copy_Action_TT"));
+
                     // Add All Missing Groups
                     if (ImGui.MenuItem($"{LOC.Get("GPARAM_Groups_Add_All_Missing")}##addAllMissingAction", "", false, activeView.GroupListView.CanAddGroups()))
                     {
@@ -179,6 +216,14 @@ public class GparamEditorScreen : EditorScreen
                 // Fields
                 if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Fields_Header")}##fieldsHeader"))
                 {
+                    // Copy Field
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Transfer_Copy_Action_Field")}##copyFieldAction",
+                        InputManager.GetHint(KeybindID.Copy), false, transfer.CanCopy(GparamTransferKind.Field)))
+                    {
+                        transfer.Copy(GparamTransferKind.Field);
+                    }
+                    GUI.Tooltip(LOC.Get("GPARAM_Transfer_Copy_Action_TT"));
+
                     // Add All Missing Fields
                     // No shortcut hint: the Add key opens the field list's add menu, to pick which to add
                     if (ImGui.MenuItem($"{LOC.Get("GPARAM_Fields_Add_All_Missing")}##addAllMissingFieldsAction", "", false, activeView.FieldListView.CanAddFields()))
@@ -200,6 +245,14 @@ public class GparamEditorScreen : EditorScreen
                 // Values
                 if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Values_Header")}##valuesHeader"))
                 {
+                    // Copy Values
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Transfer_Copy_Action_Values")}##copyValuesAction",
+                        InputManager.GetHint(KeybindID.Copy), false, transfer.CanCopy(GparamTransferKind.Values)))
+                    {
+                        transfer.Copy(GparamTransferKind.Values);
+                    }
+                    GUI.Tooltip(LOC.Get("GPARAM_Transfer_Copy_Action_TT"));
+
                     if (ImGui.MenuItem($"{LOC.Get("GPARAM_Values_Duplicate")}##duplicateAction", InputManager.GetHint(KeybindID.Duplicate), false, activeView.FieldValueListView.CanAffectValues()))
                     {
                         activeView.FieldValueListView.AddValuesShortcut();

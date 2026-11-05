@@ -1,0 +1,504 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_Transfer_Kind_Gparam",
+      "Text": "GPARAM"
+    },
+    {
+      "Key": "GPARAM_Transfer_Kind_Group",
+      "Text": "group"
+    },
+    {
+      "Key": "GPARAM_Transfer_Kind_Field",
+      "Text": "field"
+    },
+    {
+      "Key": "GPARAM_Transfer_Kind_Values",
+      "Text": "values"
+    },
+    {
+      "Key": "GPARAM_Transfer_Parse_Empty",
+      "Text": "There is no data to read."
+    },
+    {
+      "Key": "GPARAM_Transfer_Parse_Not_Json",
+      "Text": "The data isn't valid JSON."
+    },
+    {
+      "Key": "GPARAM_Transfer_Parse_Unknown",
+      "Text": "The data isn't a GPARAM, group, field or values export."
+    },
+    {
+      "Key": "GPARAM_Transfer_Parse_Invalid",
+      "Text": "The data couldn't be read: {0}"
+    },
+    {
+      "Key": "GPARAM_Transfer_Parse_Newer_Version",
+      "Text": "The data was made by a newer Smithbox (format version {0}; this version reads up to {1})."
+    },
+    {
+      "Key": "GPARAM_Transfer_Parse_No_Items",
+      "Text": "The data holds nothing to apply."
+    },
+    {
+      "Key": "GPARAM_Transfer_Parse_Item_Invalid",
+      "Text": "The data holds a {0} that couldn't be read."
+    },
+    {
+      "Key": "GPARAM_Transfer_Need_File",
+      "Text": "Select a GPARAM file first."
+    },
+    {
+      "Key": "GPARAM_Transfer_Need_Group",
+      "Text": "Select a group first."
+    },
+    {
+      "Key": "GPARAM_Transfer_Need_Field",
+      "Text": "Select a field first."
+    },
+    {
+      "Key": "GPARAM_Transfer_Need_Values",
+      "Text": "Select one or more values first."
+    },
+    {
+      "Key": "GPARAM_Transfer_Warning_Other_Game",
+      "Text": "The data is from {0}, but this project is {1}. Check the result in game."
+    },
+    {
+      "Key": "GPARAM_Transfer_Describe_Gparam",
+      "Text": "Replaced the contents of {0}."
+    },
+    {
+      "Key": "GPARAM_Transfer_Describe_Keyed",
+      "Text": "Applied {0} data to {3}: {1} replaced, {2} added."
+    },
+    {
+      "Key": "GPARAM_Transfer_Describe_Values_Replace",
+      "Text": "Replaced {0} value(s) in {1}."
+    },
+    {
+      "Key": "GPARAM_Transfer_Describe_Values_Append",
+      "Text": "Added {0} value(s) at the end of {1}."
+    },
+    {
+      "Key": "GPARAM_Transfer_Describe_Values_Insert",
+      "Text": "Inserted {0} value(s) into {1}, after ID {2}."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Field_Need_Group",
+      "Text": "The data is a field: select the group to put it in."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Values_Need_Field",
+      "Text": "The data is values: select the field to put them in."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Values_Wrong_Type",
+      "Text": "The values are {0}, but {1} holds {2} values."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Values_Count_Mismatch",
+      "Text": "The data holds {0} value(s), but {1} are selected. Select as many values as the data holds to replace them."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Duplicate_Keys",
+      "Text": "The data holds the same {0} key more than once."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Nothing_Missing",
+      "Text": "Every {0} in the data is already in {1}: nothing to add."
+    },
+    {
+      "Key": "GPARAM_Transfer_Describe_Add_Missing",
+      "Text": "Applied {0} data to {3}: {1} added, {2} skipped as already present."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Replace_Selected_One",
+      "Text": "Replace Selected takes one {0}, but the data holds {1}."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Replace_Selected_Key_Used",
+      "Text": "{0} already has a {1} with the key {2}. Use Match Key to replace that one instead."
+    },
+    {
+      "Key": "GPARAM_Transfer_Describe_Replace_Selected",
+      "Text": "Replaced {0} with {1} in {2}."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Values_Duplicate_Ids",
+      "Text": "The data holds the same value ID more than once, so it can't be matched by ID."
+    },
+    {
+      "Key": "GPARAM_Transfer_Describe_Values_By_Id",
+      "Text": "Applied values to {2} by ID: {0} replaced, {1} added."
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_File_ReplaceAll",
+      "Text": "Replace All"
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_File_Merge",
+      "Text": "Merge Groups"
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Keyed_MatchKey",
+      "Text": "Match Key"
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Keyed_AddMissing",
+      "Text": "Add Missing Only"
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Keyed_ReplaceSelected",
+      "Text": "Replace Selected"
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Values_InsertAfter",
+      "Text": "Insert After Selection"
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Values_ReplaceSelection",
+      "Text": "Replace Selection"
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Values_ReplaceById",
+      "Text": "Match ID"
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_File_ReplaceAll_TT",
+      "Text": "Replace every group in the selected file with the pasted GPARAM's. Asks first."
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_File_Merge_TT",
+      "Text": "Replace the groups whose key the pasted GPARAM has, add the ones the file is missing, and keep the rest."
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Keyed_MatchKey_TT",
+      "Text": "Replace the entry with the same key, or add it if there is none."
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Keyed_AddMissing_TT",
+      "Text": "Add only the entries whose key is missing. Existing entries are left alone."
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Keyed_ReplaceSelected_TT",
+      "Text": "Replace the selected entry with the pasted one, in its place, even if their keys differ. Takes one entry."
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Values_InsertAfter_TT",
+      "Text": "Insert the values after the last selected value, or at the end if none is selected. IDs already used are renumbered."
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Values_ReplaceSelection_TT",
+      "Text": "Replace the selected values, in order. Select as many values as were copied."
+    },
+    {
+      "Key": "GPARAM_Transfer_Mode_Values_ReplaceById_TT",
+      "Text": "Replace the value with the same ID, or insert it in ID order if the field has no value with that ID."
+    },
+    {
+      "Key": "GPARAM_Transfer_Copied",
+      "Text": "Copied {0} to the clipboard ({1} item(s))."
+    },
+    {
+      "Key": "GPARAM_Transfer_Clipboard_Not_Payload",
+      "Text": "The clipboard doesn't hold GPARAM data: {0}"
+    },
+    {
+      "Key": "GPARAM_Transfer_Copy_Action_Gparam",
+      "Text": "Copy GPARAM"
+    },
+    {
+      "Key": "GPARAM_Transfer_Copy_Action_Group",
+      "Text": "Copy Group"
+    },
+    {
+      "Key": "GPARAM_Transfer_Copy_Action_Field",
+      "Text": "Copy Field"
+    },
+    {
+      "Key": "GPARAM_Transfer_Copy_Action_Values",
+      "Text": "Copy Values"
+    },
+    {
+      "Key": "GPARAM_Transfer_Copy_Action_TT",
+      "Text": "Copy to the clipboard, to paste into this or another GPARAM. The data is JSON text, so it can also be pasted into a text editor."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Action",
+      "Text": "Paste"
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Action_TT",
+      "Text": "Paste the clipboard where it belongs: a GPARAM or groups into the selected file, fields into the selected group, values into the selected field.\n\nDefault modes:\n{0}"
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Action",
+      "Text": "Paste Special..."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Action_TT",
+      "Text": "Choose how the clipboard is pasted, and see what it will do first."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Title",
+      "Text": "Paste Special"
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Hint",
+      "Text": "The result follows the selection: change it in the lists while this window is open."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Clipboard_Header",
+      "Text": "Data"
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Clipboard_Header_TT",
+      "Text": "What will be pasted, read when this window was opened."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Mode_Header",
+      "Text": "Mode"
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Mode_Header_TT",
+      "Text": "How the data is placed."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Save_Default",
+      "Text": "Use this mode for Paste"
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Save_Default_TT",
+      "Text": "Make this mode the default that Paste and Ctrl+V use for this kind of data."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Result_Header",
+      "Text": "Result"
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Result_Header_TT",
+      "Text": "What pasting will do with the current selection."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Apply",
+      "Text": "Paste"
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Apply_TT",
+      "Text": "Paste with the chosen mode. Can be undone."
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "GPARAM_Transfer_Paste_Special_Cancel_TT",
+      "Text": "Close without pasting."
+    },
+    {
+      "Key": "GPARAM_Transfer_Source_Unknown",
+      "Text": "unknown source"
+    },
+    {
+      "Key": "GPARAM_Transfer_Describe_Payload",
+      "Text": "Kind: {0}\nItems: {1}\nTaken from: {2} ({3})\nRead from: {4}"
+    },
+    {
+      "Key": "GPARAM_Transfer_Describe_Payload_Legacy",
+      "Text": "An export from an older Smithbox: where it came from isn't recorded."
+    },
+    {
+      "Key": "GPARAM_Transfer_Confirm_Title",
+      "Text": "Replace GPARAM"
+    },
+    {
+      "Key": "GPARAM_Transfer_Confirm_Text",
+      "Text": "Replace every group in {0} with the groups from {1}?\n\nThis can be undone."
+    },
+    {
+      "Key": "GPARAM_Transfer_Confirm_Apply",
+      "Text": "Replace"
+    },
+    {
+      "Key": "GPARAM_Transfer_Confirm_Apply_TT",
+      "Text": "Replace the file's contents."
+    },
+    {
+      "Key": "GPARAM_Transfer_Confirm_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "GPARAM_Transfer_Confirm_Cancel_TT",
+      "Text": "Leave the file as it is."
+    },
+    {
+      "Key": "GPARAM_Transfer_Export_Action_Gparam",
+      "Text": "Export GPARAM to File..."
+    },
+    {
+      "Key": "GPARAM_Transfer_Export_Action_Group",
+      "Text": "Export Group to File..."
+    },
+    {
+      "Key": "GPARAM_Transfer_Export_Action_Field",
+      "Text": "Export Field to File..."
+    },
+    {
+      "Key": "GPARAM_Transfer_Export_Action_Values",
+      "Text": "Export Values to File..."
+    },
+    {
+      "Key": "GPARAM_Transfer_Export_Action_TT",
+      "Text": "Save to a JSON file you name, to share or keep. Holds the same data as Copy."
+    },
+    {
+      "Key": "GPARAM_Transfer_Import_Action",
+      "Text": "Import from File..."
+    },
+    {
+      "Key": "GPARAM_Transfer_Import_Action_TT",
+      "Text": "Open an exported JSON file (a GPARAM, groups, a field or values) and choose how it goes into the selection. Exports from older Smithbox versions work too."
+    },
+    {
+      "Key": "GPARAM_Transfer_Dialog_Export",
+      "Text": "Export GPARAM JSON"
+    },
+    {
+      "Key": "GPARAM_Transfer_Import_Title",
+      "Text": "Import from File"
+    },
+    {
+      "Key": "GPARAM_Transfer_Origin_Clipboard",
+      "Text": "the clipboard"
+    },
+    {
+      "Key": "GPARAM_Transfer_Origin_File",
+      "Text": "the file {0}"
+    },
+    {
+      "Key": "GPARAM_Transfer_Dialog_Import",
+      "Text": "Select GPARAM JSON"
+    },
+    {
+      "Key": "GPARAM_Transfer_File_Read_Failed",
+      "Text": "Failed to read {0}."
+    },
+    {
+      "Key": "GPARAM_Transfer_File_Not_Payload",
+      "Text": "{0} can't be imported: {1}"
+    },
+    {
+      "Key": "GPARAM_Transfer_File_Write_Failed",
+      "Text": "Failed to export to {0}."
+    },
+    {
+      "Key": "GPARAM_Transfer_File_Written",
+      "Text": "Exported {0}: {1}"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Hint",
+      "Text": "Load data once, then apply it to as many files, groups or fields as needed: select each target in the lists and press Apply."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Data_Header",
+      "Text": "Data"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Data_Header_TT",
+      "Text": "The data held by this panel. It stays until cleared or replaced, whatever is copied in the meantime."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_No_Data",
+      "Text": "Nothing loaded. Copy something in the lists, then load it from the clipboard, or load an exported file."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Load_Clipboard",
+      "Text": "Load from Clipboard"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Load_Clipboard_TT",
+      "Text": "Hold what the clipboard has: data copied with Copy GPARAM, Group, Field or Values."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Load_File",
+      "Text": "Load from File..."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Load_File_TT",
+      "Text": "Hold the data of an exported JSON file. Exports from older Smithbox versions work too."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Clear_TT",
+      "Text": "Let go of the held data."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Items_Header",
+      "Text": "Items ({0})"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Items_Header_TT",
+      "Text": "What the data holds."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Item_Group",
+      "Text": "{0} ({1}): {2} field(s)"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Item_Field",
+      "Text": "{0} ({1}): {2}, {3} value(s)"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Item_Value",
+      "Text": "ID {0}: {1}"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Mode_Header",
+      "Text": "Mode"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Mode_Header_TT",
+      "Text": "How the data is placed. This is the same setting Paste uses for this kind of data."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Result_Header",
+      "Text": "Result"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Result_Header_TT",
+      "Text": "What Apply will do with the current selection."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Apply",
+      "Text": "Apply"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Apply_TT",
+      "Text": "Apply the data to the current selection. Can be undone. The data stays held, to apply again elsewhere."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Save",
+      "Text": "Save to File..."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Save_TT",
+      "Text": "Save the held data to a JSON file."
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Copy_Json",
+      "Text": "Copy to Clipboard"
+    },
+    {
+      "Key": "GPARAM_Transfer_Panel_Copy_Json_TT",
+      "Text": "Put the held data on the clipboard, to paste it in the lists or into a text editor."
+    }
+  ]
+}

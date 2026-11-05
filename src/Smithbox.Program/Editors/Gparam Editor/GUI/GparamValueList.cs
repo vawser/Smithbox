@@ -326,6 +326,14 @@ public class GparamValueList
         GUI.Tooltip(LOC.Get("GPARAM_ValueList_Empty_Selectable_TT"));
 
         ImGui.EndGroup();
+
+        // Paste, Paste Special: copied values go into the field even when it has none yet
+        if (ImGui.BeginPopupContextItem($"##Gparam_PropId_Empty_Context"))
+        {
+            View.ToolView.DataTransferTool.Commands.PasteMenuItems();
+
+            ImGui.EndPopup();
+        }
     }
 
     /// <summary>
@@ -352,12 +360,8 @@ public class GparamValueList
         View.ActionManager.ExecuteAction(action);
     }
 
-    private string OverrideFileName = "";
-
     public void ContextMenu(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group, IField field, IFieldValue value, int index)
     {
-        bool overwrite = CFG.Current.GparamEditor_Data_Import_Overwrite;
-
         if (View.Selection.IsValueSelected(index))
         {
             if (ImGui.BeginPopupContextItem($"##Gparam_PropId_Context"))
@@ -400,29 +404,10 @@ public class GparamValueList
 
                 ImGui.Separator();
 
-                // Import
-                if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Import_Action")}"))
-                {
-                    View.ToolView.DataTransferTool.ImportValue(Project, View, fileEntry, data, group, field, value, overwrite);
-                }
-                GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Import_Action_TT"));
-
-                // Export
-                if (ImGui.BeginMenu($"{LOC.Get("GPARAM_ValueList_Context_Export_Header")}##exportHeader"))
-                {
-                    ImGui.InputTextWithHint("##overrideFilename", 
-                        LOC.Get("GPARAM_ValueList_Context_Export_Filename_Hint"), 
-                        ref OverrideFileName, 255);
-                    GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Export_Filename_TT"));
-
-                    if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Export_File_Action")}##exportFileAction"))
-                    {
-                        View.ToolView.DataTransferTool.ExportValueFile(fileEntry, data, group, field, value, OverrideFileName);
-                    }
-                    GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Export_File_Action_TT"));
-
-                    ImGui.EndMenu();
-                }
+                // Copy, Paste, Paste Special, Export to File, Import from File. Copy and Export take the same
+                // values as Duplicate and Delete.
+                View.ToolView.DataTransferTool.Commands.ContextMenuItems(GparamTransferKind.Values,
+                    GparamTransferTarget.FromSelection(View.Selection).WithValues(targets));
 
                 ImGui.Separator();
 
@@ -483,6 +468,9 @@ public class GparamValueList
             {
                 DeleteValuesShortcut();
             }
+
+            // Copy, Paste
+            View.ToolView.DataTransferTool.Commands.Shortcuts(GparamTransferKind.Values);
         }
     }
 

@@ -1064,7 +1064,14 @@ public class CFG
 
     public ColorEditDisplayMode GparamEditor_Color_Edit_Mode = ColorEditDisplayMode.RGB;
 
-    public bool GparamEditor_Data_Import_Overwrite = false;
+    // Transfer: the folder the last export or import used, where the file dialogs open
+    public string GparamEditor_Transfer_Last_Folder = "";
+
+    // Transfer: the paste mode for each payload kind (see GparamPasteModes)
+    public GparamFilePasteMode GparamEditor_Transfer_File_Mode = GparamFilePasteMode.ReplaceAll;
+    public GparamKeyedPasteMode GparamEditor_Transfer_Group_Mode = GparamKeyedPasteMode.MatchKey;
+    public GparamKeyedPasteMode GparamEditor_Transfer_Field_Mode = GparamKeyedPasteMode.MatchKey;
+    public GparamValuePasteMode GparamEditor_Transfer_Values_Mode = GparamValuePasteMode.InsertAfter;
 
     // Windows
     public bool Interface_GparamEditor_FileList = true;

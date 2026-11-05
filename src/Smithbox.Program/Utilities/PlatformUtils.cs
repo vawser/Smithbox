@@ -183,6 +183,31 @@ public abstract unsafe class PlatformUtils
         return dialogResult.IsOk;
     }
 
+    /// <summary>
+    /// Open file dialog starting in a folder. A folder that doesn't exist is ignored.
+    /// </summary>
+    public bool OpenFileDialog(string title, IReadOnlyList<string> filters, string defaultFolder, out string path)
+    {
+        var start = !string.IsNullOrEmpty(defaultFolder) && System.IO.Directory.Exists(defaultFolder) ? defaultFolder : null;
+
+        NativeFileDialogSharp.DialogResult dialogResult = Dialog.FileOpen(CombineNdlFilters(filters, false), start);
+        path = dialogResult.Path;
+        return dialogResult.IsOk;
+    }
+
+    /// <summary>
+    /// Save file dialog starting in a folder. A folder that doesn't exist is ignored. The dialog can't pre-fill a
+    /// file name.
+    /// </summary>
+    public bool SaveFileDialog(string title, IReadOnlyList<string> filters, string defaultFolder, out string path)
+    {
+        var start = !string.IsNullOrEmpty(defaultFolder) && System.IO.Directory.Exists(defaultFolder) ? defaultFolder : null;
+
+        NativeFileDialogSharp.DialogResult dialogResult = Dialog.FileSave(CombineNdlFilters(filters, true), start);
+        path = dialogResult.Path;
+        return dialogResult.IsOk;
+    }
+
     public bool OpenFolderDialog(string title, out string path)
     {
         NativeFileDialogSharp.DialogResult dialogResult = Dialog.FolderPicker();

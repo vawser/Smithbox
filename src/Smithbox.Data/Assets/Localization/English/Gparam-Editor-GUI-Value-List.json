@@ -117,34 +117,6 @@
       "Text": "Delete the value row."
     },
     {
-      "Key": "GPARAM_ValueList_Context_Import_Action",
-      "Text": "Import"
-    },
-    {
-      "Key": "GPARAM_ValueList_Context_Import_Action_TT",
-      "Text": "Import a GPARAM Value json to overwrite this entry."
-    },
-    {
-      "Key": "GPARAM_ValueList_Context_Export_Header",
-      "Text": "Export"
-    },
-    {
-      "Key": "GPARAM_ValueList_Context_Export_Filename_Hint",
-      "Text": "Enter the filename..."
-    },
-    {
-      "Key": "GPARAM_ValueList_Context_Export_Filename_TT",
-      "Text": "Define the filename for the exported GPARAM Value file."
-    },
-    {
-      "Key": "GPARAM_ValueList_Context_Export_File_Action",
-      "Text": "Export File"
-    },
-    {
-      "Key": "GPARAM_ValueList_Context_Export_File_Action_TT",
-      "Text": "Export this currently selected GPARAM Value to JSON."
-    },
-    {
       "Key": "GPARAM_ValueList_Context_Copy_ID_Action",
       "Text": "Copy ID"
     },

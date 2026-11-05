@@ -105,6 +105,12 @@ public class GparamFileList
 
             DisplayFileSelectable(entry.Key, entry.Value, i);
         }
+
+        // Copy (the whole GPARAM), Paste
+        if (FocusManager.IsFocus(EditorFocusContext.GparamEditor_FileList))
+        {
+            View.ToolView.DataTransferTool.Commands.Shortcuts(GparamTransferKind.Gparam);
+        }
     }
 
     private void DisplayFileSelectable(FileDictionaryEntry fileEntry, GparamWrapper wrapper, int index)
@@ -183,8 +189,6 @@ public class GparamFileList
         ContextMenu(fileEntry, curGparam);
     }
 
-    private string OverrideFileName = "";
-
     public void ContextMenu(FileDictionaryEntry fileEntry, GPARAM curGparam)
     {
         if (!View.Selection.IsSelectedFile(fileEntry))
@@ -215,29 +219,8 @@ public class GparamFileList
 
             ImGui.Separator();
 
-            // Import
-            if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Import_Action")}##importAction"))
-            {
-                View.ToolView.DataTransferTool.ImportGPARAM(Project, View, fileEntry, curGparam);
-            }
-            GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Import_Action_TT"));
-
-            // Export
-            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FileList_Context_Export_Header")}##exportHeader"))
-            {
-                ImGui.InputTextWithHint("##overrideFilename",
-                    LOC.Get("GPARAM_FileList_Context_Export_Filename_Hint"), ref OverrideFileName, 255);
-                GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Export_Filename_TT"));
-
-                // Export File
-                if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Export_Action")}##exportAction"))
-                {
-                    View.ToolView.DataTransferTool.ExportGparamFile(fileEntry, curGparam, OverrideFileName);
-                }
-                GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Export_Action_TT"));
-
-                ImGui.EndMenu();
-            }
+            // Copy, Paste, Paste Special, Export to File, Import from File
+            View.ToolView.DataTransferTool.Commands.ContextMenuItems(GparamTransferKind.Gparam);
 
             ImGui.Separator();
 
@@ -436,6 +419,11 @@ public class GparamFileList
 
         var open = true;
         var confirmed = false;
+
+        // A fixed width: auto-resize alone sizes the window to its content, and wrapped text sizes itself to the
+        // window, so the text (with its file path) never wraps and the window runs off screen. A height of 0 still
+        // fits the content.
+        ImGui.SetNextWindowSize(new Vector2(460, 0) * DPI.UIScale(), ImGuiCond.Always);
 
         if (ImGui.BeginPopupModal($"{LOC.Get("GPARAM_FileList_Delete_Confirm_Title")}{DeleteConfirmId}",
             ref open, ImGuiWindowFlags.AlwaysAutoResize))

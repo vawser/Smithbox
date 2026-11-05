@@ -33,34 +33,6 @@
       "Text": "Delete the selected field."
     },
     {
-      "Key": "GPARAM_FieldList_Context_Import_Action",
-      "Text": "Import"
-    },
-    {
-      "Key": "GPARAM_FieldList_Context_Import_Action_TT",
-      "Text": "Import a GPARAM Field json to overwrite this entry."
-    },
-    {
-      "Key": "GPARAM_FieldList_Context_Export_Header",
-      "Text": "Export"
-    },
-    {
-      "Key": "GPARAM_FieldList_Context_Export_Filename_Hint",
-      "Text": "Enter the filename for exported file..."
-    },
-    {
-      "Key": "GPARAM_FieldList_Context_Export_Filename_TT",
-      "Text": "Define the filename for the exported GPARAM Field file."
-    },
-    {
-      "Key": "GPARAM_FieldList_Context_Export_File_Action",
-      "Text": "Export File"
-    },
-    {
-      "Key": "GPARAM_FieldList_Context_Export_File_Action_TT",
-      "Text": "Export this currently selected GPARAM Field to JSON."
-    },
-    {
       "Key": "GPARAM_FieldList_Context_Copy_Key_Action",
       "Text": "Copy Key"
     },

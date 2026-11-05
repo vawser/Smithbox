@@ -184,5 +184,9 @@ public class GparamEditorView : IEditorView
 
             ImGui.End();
         }
+
+        // Paste Special and the Replace All confirmation: drawn here, outside the list windows, as any list's menu,
+        // the Edit menu or a key can open them
+        ToolView.DataTransferTool.Commands.DisplayPopups();
     }
 }

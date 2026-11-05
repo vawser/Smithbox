@@ -7,6 +7,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 /// <summary>
 /// Import a group: it replaces the file's group with the same key, or is added at the end.
+/// With a replace target, it takes that group's place instead, whatever its key.
 /// Edits the GPARAM in place, so the objects older undo steps hold stay the live ones.
 /// </summary>
 public class ImportParamAction : EditorAction
@@ -20,12 +21,16 @@ public class ImportParamAction : EditorAction
 
     private GPARAM.Param NewGroup { get; set; }
 
+    // The group to replace in place, whatever its key; null to match by key
+    private GPARAM.Param ReplaceTarget { get; set; }
+
     // The group it replaced, if any
     private GPARAM.Param ReplacedGroup { get; set; }
 
     private List<GPARAM.UnkParamExtra> StoredParamExtras { get; set; } = new();
 
-    public ImportParamAction(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM gparam, GPARAM.Param param, GPARAM.Param newGroup)
+    public ImportParamAction(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM gparam, GPARAM.Param param, GPARAM.Param newGroup,
+        GPARAM.Param replaceTarget = null)
     {
         Project = project;
         View = view;
@@ -34,6 +39,7 @@ public class ImportParamAction : EditorAction
 
         Data = gparam;
         NewGroup = newGroup;
+        ReplaceTarget = replaceTarget;
 
         // Lists the writer needs, which the JSON may leave out
         NewGroup.Fields ??= new List<GPARAM.IField>();
@@ -47,10 +53,16 @@ public class ImportParamAction : EditorAction
 
     public override ActionEvent Execute()
     {
+        var index = ReplaceTarget != null
+            ? Data.Params.IndexOf(ReplaceTarget)
+            : Data.Params.FindIndex(e => e != null && e.Key == NewGroup.Key);
+
+        // The group to replace is gone (e.g. deleted since): nothing to do
+        if (ReplaceTarget != null && index < 0)
+            return ActionEvent.NoEvent;
+
         StoredParamExtras = GparamUtils.SnapshotParamExtras(Data);
         var previousParams = new List<GPARAM.Param>(Data.Params);
-
-        var index = Data.Params.FindIndex(e => e != null && e.Key == NewGroup.Key);
 
         if (index >= 0)
         {
@@ -77,16 +89,17 @@ public class ImportParamAction : EditorAction
     {
         var index = Data.Params.IndexOf(NewGroup);
 
-        if (index >= 0)
+        // Execute did nothing (its replace target was gone)
+        if (index < 0)
+            return ActionEvent.NoEvent;
+
+        if (ReplacedGroup != null)
         {
-            if (ReplacedGroup != null)
-            {
-                Data.Params[index] = ReplacedGroup;
-            }
-            else
-            {
-                Data.Params.RemoveAt(index);
-            }
+            Data.Params[index] = ReplacedGroup;
+        }
+        else
+        {
+            Data.Params.RemoveAt(index);
         }
 
         Data.UnkParamExtras = StoredParamExtras;

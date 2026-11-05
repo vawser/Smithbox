@@ -1,783 +1,280 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
-using System.IO;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Editors.GparamEditor;
 
+/// <summary>
+/// The Data Transfer section of the Tools window: a staging panel. It holds one payload (loaded from the clipboard
+/// or a file), shows what is in it and what applying it to the current selection will do, and applies it, as many
+/// times and to as many targets as wanted.
+/// </summary>
+/// <remarks>
+/// It also owns the transfer service and the commands every other entry point uses (the list context menus, the
+/// File and Edit menus, the keybinds).
+/// </remarks>
 public class GparamDataTransferTool
 {
     private GparamEditorView View;
     private ProjectEntry Project;
 
-    public GparamImportType ImportType = GparamImportType.Overwrite;
+    public GparamTransferService Transfer;
+    public GparamTransferCommands Commands;
 
-    public string ExportDirectory = "";
-    public string ExportString = "";
+    // The staged payload, where it came from, and a label per item for the preview
+    private GparamTransferPayload Payload;
+    private string PayloadOrigin = "";
+    private List<string> ItemLabels = new();
+
+    private bool ShowItems = true;
+
+    // The last check, and what it was made for: checking materialises the payload, too much to do every frame
+    private GparamTransferCheck Check;
+    private object CheckKey;
+    private bool CheckDirty = true;
 
     public GparamDataTransferTool(GparamEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+
+        Transfer = new GparamTransferService(view, project);
+        Commands = new GparamTransferCommands(view, project, Transfer);
+
+        // An edit or undo can change what the payload would do (e.g. a group it would add now exists)
+        View.ActionManager.ActionPerformed += () => CheckDirty = true;
     }
 
-    public void Display()
+    public void OnToolWindow()
     {
-        ImGui.BeginChild("DataTransferSection", ImGuiChildFlags.Borders);
+        if (!ToolSections.Header($"{LOC.Get("GPARAM_Tools_Data_Transfer")}##dataTransferHeader"))
+            return;
 
-        ImGui.BeginTabBar("dataTransferTabs");
+        ImGui.BeginChild("GparamDataTransferSection", ImGuiChildFlags.Borders);
 
-        ImportTab();
-        ExportTab();
-
-        ImGui.EndTabBar();
+        Display();
 
         ImGui.EndChild();
     }
 
-    public void DisplayDropdown()
+    private void Display()
     {
-        if (ImGui.BeginMenu("Data Transfer"))
+        GUI.WrappedText(LOC.Get("GPARAM_Transfer_Panel_Hint"));
+
+        // Data
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("GPARAM_Transfer_Panel_Data_Header"), LOC.Get("GPARAM_Transfer_Panel_Data_Header_TT"));
+
+        if (Payload == null)
         {
-            ImportMenu();
-            ExportMenu();
-
-            ImGui.EndMenu();
-        }
-    }
-
-    #region Import
-    public void ImportTab()
-    {
-        var selection = View.Selection;
-        var fileEntry = selection?.SelectedFileEntry;
-        var curGparam = selection?.GetSelectedGparam();
-        var curParam = selection.GetSelectedGroup();
-        var curField = selection.GetSelectedField();
-        var curValue = selection.GetSelectedValue();
-
-        if (ImGui.BeginTabItem($"Import"))
-        {
-            GUI.WrappedText("Use this section to import JSON data, applying the data to your current project.");
-
-            GUI.Spacer();
-            GUI.SimpleHeader("Value Import Type", "Determines how the data is applied.");
-
-            GUI.SetInputWidth();
-            if (ImGui.BeginCombo("##importType", ImportType.GetDisplayName()))
-            {
-                foreach (var entry in Enum.GetValues(typeof(GparamImportType)))
-                {
-                    var curImportType = (GparamImportType)entry;
-
-                    if (ImGui.Selectable($"{curImportType.GetDisplayName()}", curImportType == ImportType))
-                    {
-                        ImportType = curImportType;
-                    }
-                }
-
-                ImGui.EndCombo();
-            }
-
-            GUI.Spacer();
-            GUI.SimpleHeader("Actions", "");
-
-            GUI.MultiButtonInput("importActions",
-                "importGparam", "Import GPARAM", "", ImportGparamAction,
-                "importGroup", "Import Group", "", ImportGroupAction,
-                "importField", "Import Field", "", ImportFieldAction,
-                "importValue", "Import Value", "", ImportValueAction);
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void ImportGparamAction()
-    {
-        var selection = View.Selection;
-        var fileEntry = selection?.SelectedFileEntry;
-        var curGparam = selection?.GetSelectedGparam();
-
-        if (curGparam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No file has been selected.");
-            return;
-        }
-
-        if (ImportGPARAM(Project, View, fileEntry, curGparam))
-            Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {fileEntry.Filename} with the JSON data.");
-    }
-
-    public void ImportGroupAction()
-    {
-        var selection = View.Selection;
-        var fileEntry = selection?.SelectedFileEntry;
-        var curGparam = selection?.GetSelectedGparam();
-        var curParam = selection.GetSelectedGroup();
-
-        if (curGparam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No file has been selected.");
-            return;
-        }
-
-        if (curParam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No group has been selected.");
-            return;
-        }
-
-        if (ImportGroup(Project, View, fileEntry, curGparam, curParam))
-            Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {curParam.Name} with the JSON data.");
-    }
-
-    public void ImportFieldAction()
-    {
-        var selection = View.Selection;
-        var fileEntry = selection?.SelectedFileEntry;
-        var curGparam = selection?.GetSelectedGparam();
-        var curParam = selection.GetSelectedGroup();
-        var curField = selection.GetSelectedField();
-
-        if (curGparam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No file has been selected.");
-            return;
-        }
-
-        if (curParam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No group has been selected.");
-            return;
-        }
-
-        if (curField == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No field has been selected.");
-            return;
-        }
-
-        if (ImportField(Project, View, fileEntry, curGparam, curParam, curField))
-            Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {curField.Name} with the JSON data.");
-    }
-
-    public void ImportValueAction()
-    {
-        var selection = View.Selection;
-        var fileEntry = selection?.SelectedFileEntry;
-        var curGparam = selection?.GetSelectedGparam();
-        var curParam = selection.GetSelectedGroup();
-        var curField = selection.GetSelectedField();
-        var curValue = selection.GetSelectedValue();
-
-        if (curGparam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No file has been selected.");
-            return;
-        }
-
-        if (curParam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No group has been selected.");
-            return;
-        }
-
-        if (curField == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No field has been selected.");
-            return;
-        }
-
-        if (curValue == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No value has been selected.");
-            return;
-        }
-
-        if (ImportType is GparamImportType.Overwrite)
-        {
-            if (ImportValue(Project, View, fileEntry, curGparam, curParam, curField, curValue, true))
-                Smithbox.Log<GparamDataTransferTool>($"Overwritten the {curValue.ID} with in the value list of {curField.Name} with the JSON data.");
-        }
-        else if(ImportType is GparamImportType.Append)
-        {
-            if (ImportValue(Project, View, fileEntry, curGparam, curParam, curField, curValue, false))
-                Smithbox.Log<GparamDataTransferTool>($"Appends the JSON data to the value list of {curField.Name}");
-        }
-
-    }
-
-    public void ImportMenu()
-    {
-        var selection = View.Selection;
-        var fileEntry = selection?.SelectedFileEntry;
-        var curGparam = selection?.GetSelectedGparam();
-        var curParam = selection.GetSelectedGroup();
-        var curField = selection.GetSelectedField();
-        var curValue = selection.GetSelectedValue();
-
-        bool hasFile = fileEntry != null;
-        bool hasParam = hasFile && curParam != null;
-        bool hasField = hasParam && curField != null;
-        bool hasValue = hasField && curValue != null;
-
-        bool overwrite = CFG.Current.GparamEditor_Data_Import_Overwrite;
-
-        if (ImGui.BeginMenu("Import", hasFile))
-        {
-            // GPARAM (full file)
-            if (ImGui.MenuItem("GPARAM"))
-            {
-                ImportGPARAM(Project, View, fileEntry, curGparam);
-            }
-            GUI.Tooltip("Replace the entire GPARAM from a previously exported JSON file.");
-
-            // Param
-            if (ImGui.MenuItem("Param", hasParam))
-            {
-                ImportGroup(Project, View, fileEntry, curGparam, curParam);
-            }
-            GUI.Tooltip("Replace the selected Param from a previously exported JSON file.");
-
-            // Field
-            if (ImGui.MenuItem("Field", hasField))
-            {
-                ImportField(Project, View, fileEntry, curGparam, curParam, curField);
-            }
-            GUI.Tooltip("Replace the selected Field from a previously exported JSON file.");
-
-            // Field Value
-            if (ImGui.MenuItem("Field Value", hasValue))
-            {
-                ImportValue(Project, View, fileEntry, curGparam, curParam, curField, curValue, overwrite);
-            }
-            GUI.Tooltip("Replace the selected Field Value from a previously exported JSON file.");
-
-            ImGui.Checkbox("Overwrite Value on Import", ref CFG.Current.GparamEditor_Data_Import_Overwrite);
-            GUI.Tooltip("If enabled, the imported data will overwrite existing values with the same ID. Only applies to values.");
-
-
-            ImGui.EndMenu();
-        }
-    }
-
-    /// <summary>
-    /// Ask for a JSON file and parse it. Returns null if the dialog was cancelled, or the file isn't JSON of the
-    /// expected kind (the error is logged).
-    /// </summary>
-    private T ReadImportJson<T>(string dialogTitle, string kind, System.Func<string, T> parse) where T : class
-    {
-        var dialog = PlatformUtils.Instance.OpenFileDialog(dialogTitle, out var path);
-
-        if (!dialog || path == null || !path.EndsWith(".json") || !Path.Exists(path))
-            return null;
-
-        try
-        {
-            var json = File.ReadAllText(path);
-            var result = parse(json);
-
-            if (result == null)
-            {
-                Smithbox.LogError<GparamDataTransferTool>($"{path} doesn't hold a GPARAM {kind}.");
-            }
-
-            return result;
-        }
-        catch (Exception e)
-        {
-            Smithbox.LogError<GparamDataTransferTool>($"{path} couldn't be read as a GPARAM {kind}.", e);
-            return null;
-        }
-    }
-
-    /// <summary>
-    /// Replace the contents of the GPARAM with a JSON file's. Returns whether anything was imported.
-    /// </summary>
-    public bool ImportGPARAM(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam)
-    {
-        var newData = ReadImportJson("Select GPARAM JSON", "file", GPARAMJson.FromJson);
-
-        if (newData == null)
-            return false;
-
-        if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            newData.WideStrings = false;
+            GUI.WrappedText(LOC.Get("GPARAM_Transfer_Panel_No_Data"));
         }
         else
         {
-            newData.WideStrings = true;
+            GUI.WrappedText(GparamTransferCommands.DescribePayload(Payload, PayloadOrigin));
         }
 
-        var action = new ImportGparamAction(project, view, fileEntry, curGparam, newData);
-        view.ActionManager.ExecuteAction(action);
+        GUI.ConditionalMultiButtonInput("dataTransferLoadActions",
+            "dataTransferLoadClipboard", LOC.Get("GPARAM_Transfer_Panel_Load_Clipboard"), LOC.Get("GPARAM_Transfer_Panel_Load_Clipboard_TT"),
+            LoadFromClipboard, true,
 
-        return true;
-    }
+            "dataTransferLoadFile", LOC.Get("GPARAM_Transfer_Panel_Load_File"), LOC.Get("GPARAM_Transfer_Panel_Load_File_TT"),
+            LoadFromFile, true,
 
-    /// <summary>
-    /// Import a group from a JSON file: it replaces the group with the same key, or is added. Returns whether
-    /// anything was imported.
-    /// </summary>
-    public bool ImportGroup(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam)
-    {
-        var newParam = ReadImportJson("Select Param JSON", "group", GPARAMJson.ParamFromJson);
+            "dataTransferClear", LOC.Get("GPARAM_Transfer_Panel_Clear"), LOC.Get("GPARAM_Transfer_Panel_Clear_TT"),
+            Clear, Payload != null);
 
-        if (newParam == null)
-            return false;
+        if (Payload == null)
+            return;
 
-        var action = new ImportParamAction(project, view, fileEntry, curGparam, curParam, newParam);
-        view.ActionManager.ExecuteAction(action);
+        DisplayItems();
 
-        return true;
-    }
+        // Mode: the same setting Paste uses
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("GPARAM_Transfer_Panel_Mode_Header"), LOC.Get("GPARAM_Transfer_Panel_Mode_Header_TT"));
 
-    /// <summary>
-    /// Import a field from a JSON file: it replaces the field with the same key, or is added. Returns whether
-    /// anything was imported.
-    /// </summary>
-    public bool ImportField(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam, GPARAM.IField curField)
-    {
-        var newField = ReadImportJson("Select Field JSON", "field", GPARAMJson.FieldFromJson);
+        var modes = GparamPasteModes.FromConfig();
+        var newModes = GparamTransferCommands.ModeCombo(Payload.Kind, modes);
 
-        if (newField == null)
-            return false;
-
-        var action = new ImportFieldAction(project, view, fileEntry, curGparam, curParam, curField, newField);
-        view.ActionManager.ExecuteAction(action);
-
-        return true;
-    }
-
-    /// <summary>
-    /// Import a value from a JSON file: it replaces the value, or is added after it. Returns whether anything was
-    /// imported.
-    /// </summary>
-    public bool ImportValue(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam, GPARAM.IField curField, GPARAM.IFieldValue curValue, bool overwrite)
-    {
-        var newValue = ReadImportJson("Select Field Value JSON", "value", GPARAMJson.FieldValueFromJson);
-
-        if (newValue == null)
-            return false;
-
-        // A value of another type (e.g. a float into an int field) can't go in the field's list
-        if (!curField.AcceptsValue(newValue))
+        if (newModes != modes)
         {
-            Smithbox.LogError<GparamDataTransferTool>(
-                $"The value is a {newValue.GetType().GetGenericArguments()[0].Name} but {curField.Key} holds {GparamUtils.GetReadableObjectTypeName(curField)} values.");
-            return false;
+            GparamTransferCommands.SaveDefault(Payload.Kind, newModes);
+            modes = newModes;
         }
 
-        var action = new InsertFieldValueAction(project, view, fileEntry, curGparam, curParam, curField, curValue, newValue, overwrite);
-        view.ActionManager.ExecuteAction(action);
+        // Result
+        var target = GparamTransferTarget.FromSelection(View.Selection);
+        var check = GetCheck(target, modes);
 
-        return true;
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("GPARAM_Transfer_Panel_Result_Header"), LOC.Get("GPARAM_Transfer_Panel_Result_Header_TT"));
+
+        if (check.CanApply)
+        {
+            GUI.WrappedText(check.Description);
+        }
+        else
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, check.Error);
+        }
+
+        if (check.Warning != null)
+        {
+            GUI.WrappedText(check.Warning);
+        }
+
+        // Actions
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("GPARAM_Transfer_Panel_Actions_Header"), "");
+
+        GUI.ConditionalMultiButtonInput("dataTransferPanelActions",
+            "dataTransferApply", LOC.Get("GPARAM_Transfer_Panel_Apply"), LOC.Get("GPARAM_Transfer_Panel_Apply_TT"),
+            () => Commands.Apply(Payload, target, modes), check.CanApply,
+
+            "dataTransferSave", LOC.Get("GPARAM_Transfer_Panel_Save"), LOC.Get("GPARAM_Transfer_Panel_Save_TT"),
+            () => Commands.SaveToFile(Payload), true,
+
+            "dataTransferCopyJson", LOC.Get("GPARAM_Transfer_Panel_Copy_Json"), LOC.Get("GPARAM_Transfer_Panel_Copy_Json_TT"),
+            () => PlatformUtils.Instance.SetClipboardText(Payload.ToJson()), true);
+    }
+
+    private void DisplayItems()
+    {
+        GUI.Spacer();
+        GUI.ConditionalHeader(LOC.Get("GPARAM_Transfer_Panel_Items_Header", ItemLabels.Count),
+            LOC.Get("GPARAM_Transfer_Panel_Items_Header_TT"), ref ShowItems);
+
+        if (!ShowItems)
+            return;
+
+        // Up to 8 rows tall, scrolling past that
+        var rowHeight = ImGui.GetTextLineHeightWithSpacing();
+        var height = Math.Min(ItemLabels.Count, 8) * rowHeight + ImGui.GetStyle().WindowPadding.Y * 2;
+
+        ImGui.BeginChild("dataTransferItems", new Vector2(0, height), ImGuiChildFlags.Borders);
+
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(ItemLabels.Count);
+
+        while (clipper.Step())
+        {
+            for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
+            {
+                ImGui.TextUnformatted(ItemLabels[i]);
+            }
+        }
+
+        clipper.End();
+
+        ImGui.EndChild();
+    }
+
+    #region Load
+
+    private void LoadFromClipboard()
+    {
+        var payload = Commands.ReadClipboardPayload(out var origin);
+
+        if (payload != null)
+            Stage(payload, origin);
+    }
+
+    private void LoadFromFile()
+    {
+        var payload = Commands.ReadFile(out var origin);
+
+        if (payload != null)
+            Stage(payload, origin);
+    }
+
+    private void Stage(GparamTransferPayload payload, string origin)
+    {
+        Payload = payload;
+        PayloadOrigin = origin;
+        ItemLabels = BuildItemLabels(payload);
+        CheckDirty = true;
+    }
+
+    private void Clear()
+    {
+        Payload = null;
+        PayloadOrigin = "";
+        ItemLabels = new();
+        Check = null;
+        CheckKey = null;
+    }
+
+    /// <summary>
+    /// One line per item, made once when the payload is staged.
+    /// </summary>
+    private List<string> BuildItemLabels(GparamTransferPayload payload)
+    {
+        switch (payload.Kind)
+        {
+            case GparamTransferKind.Gparam:
+                return (payload.GetGparam()?.Params ?? new List<GPARAM.Param>())
+                    .Where(e => e != null)
+                    .Select(GroupLabel)
+                    .ToList();
+
+            case GparamTransferKind.Group:
+                return payload.GetGroups().Select(GroupLabel).ToList();
+
+            case GparamTransferKind.Field:
+                return payload.GetFields().Select(e => FieldLabel(payload.Source?.Group, e)).ToList();
+
+            case GparamTransferKind.Values:
+                return payload.GetValues().Select(ValueLabel).ToList();
+        }
+
+        return new List<string>();
+    }
+
+    private string GroupLabel(GPARAM.Param group)
+    {
+        var name = GparamMetaUtils.GetGroupName(Project, group.Key) ?? group.Key;
+
+        return LOC.Get("GPARAM_Transfer_Panel_Item_Group", name, group.Key, group.Fields?.Count ?? 0);
+    }
+
+    private string FieldLabel(string groupKey, GPARAM.IField field)
+    {
+        // The name needs the group, which legacy exports don't record
+        var name = groupKey != null ? GparamMetaUtils.GetFieldName(Project, groupKey, field.Key) ?? field.Key : field.Key;
+
+        return LOC.Get("GPARAM_Transfer_Panel_Item_Field", name, field.Key,
+            GparamUtils.GetReadableObjectTypeName(field), field.Values?.Count ?? 0);
+    }
+
+    private static string ValueLabel(GPARAM.IFieldValue value)
+    {
+        var text = Convert.ToString(value.Value, CultureInfo.InvariantCulture) ?? "";
+
+        return LOC.Get("GPARAM_Transfer_Panel_Item_Value", value.ID, text);
     }
 
     #endregion
 
-    #region Export
-    public void ExportTab()
+    private GparamTransferCheck GetCheck(GparamTransferTarget target, GparamPasteModes modes)
     {
-        if (ImGui.BeginTabItem($"Export"))
+        // The check depends on the mode, on what is selected, and on the data (see CheckDirty)
+        var key = (Payload, modes, target.FileEntry, target.Group, target.Field,
+            target.Values.Count, target.Values.FirstOrDefault(), target.Values.LastOrDefault());
+
+        if (Check == null || CheckDirty || !Equals(CheckKey, key))
         {
-            GUI.WrappedText("Use this section to export JSON data from your current project.");
-
-            GUI.Spacer();
-            GUI.SimpleHeader("Export Directory", "The directory to export the CSV data to.");
-            GUI.SinglelineTextInput("csvExportDir", ref ExportDirectory);
-
-            GUI.MultiButtonInput("csvExportDir",
-                "setDirectory", "Set Export Directory", "", SetExportDirectory,
-                "openDirectory", "Open Export Directory", "", OpenExportDirectory);
-
-            GUI.Spacer();
-            GUI.SimpleHeader("Output", "");
-            // Has to use TextUnformatted as the CSV output string can be massive,
-            // and it exceeds the internal buffers used by InputTextMultiline
-            ImGui.BeginChild("OutputTextSection", new Vector2(0, 250), ImGuiChildFlags.Borders);
-            ImGui.TextUnformatted(ExportString);
-            ImGui.EndChild();
-
-            GUI.MultiButtonInput("csvOutputActions",
-                "copyToClipboard", "Copy to Clipboard", "Copy the output to the clibpaord", CopyOutputToClipboard);
-
-            GUI.Spacer();
-            GUI.SimpleHeader("Actions", "");
-
-            GUI.MultiButtonInput("exportActions",
-                "exportGparam", "Export Selected GPARAM", "", ExportGparamAction,
-                "exportGroup", "Export Selected Group", "", ExportGroupAction,
-                "exportField", "Export Selected Field", "", ExportFieldAction,
-                "exportValue", "Export Selected Value", "", ExportValueAction);
-
-
-            ImGui.EndTabItem();
+            Check = Transfer.Check(Payload, target, modes);
+            CheckKey = key;
+            CheckDirty = false;
         }
+
+        return Check;
     }
-
-    public void SetExportDirectory()
-    {
-        string path;
-        var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Destination", out path);
-        if (result)
-        {
-            ExportDirectory = path;
-        }
-    }
-    public void CopyOutputToClipboard()
-    {
-        PlatformUtils.Instance.SetClipboardText(ExportString);
-    }
-
-    public void OpenExportDirectory()
-    {
-        Process.Start("explorer.exe", ExportDirectory);
-    }
-
-    public void ExportGparamAction()
-    {
-        var selection = View.Selection;
-        var fileEntry = selection?.SelectedFileEntry;
-        var curGparam = selection?.GetSelectedGparam();
-
-        if (curGparam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No file has been selected.");
-            return;
-        }
-
-        ExportGparamFile(fileEntry, curGparam);
-    }
-
-    public void ExportGroupAction()
-    {
-
-        var selection = View.Selection;
-        var fileEntry = selection?.SelectedFileEntry;
-        var curGparam = selection?.GetSelectedGparam();
-        var curParam = selection.GetSelectedGroup();
-
-        if (curGparam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No file has been selected.");
-            return;
-        }
-
-        if (curParam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No group has been selected.");
-            return;
-        }
-
-        ExportGroupFile(fileEntry, curGparam, curParam);
-    }
-
-    public void ExportFieldAction()
-    {
-
-        var selection = View.Selection;
-        var fileEntry = selection?.SelectedFileEntry;
-        var curGparam = selection?.GetSelectedGparam();
-        var curParam = selection.GetSelectedGroup();
-        var curField = selection.GetSelectedField();
-
-        if (curGparam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No file has been selected.");
-            return;
-        }
-
-        if (curParam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No group has been selected.");
-            return;
-        }
-
-        if (curField == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No field has been selected.");
-            return;
-        }
-
-        ExportFieldFile(fileEntry, curGparam, curParam, curField);
-    }
-
-    public void ExportValueAction()
-    {
-
-        var selection = View.Selection;
-        var fileEntry = selection?.SelectedFileEntry;
-        var curGparam = selection?.GetSelectedGparam();
-        var curParam = selection.GetSelectedGroup();
-        var curField = selection.GetSelectedField();
-        var curValue = selection.GetSelectedValue();
-
-        if (curGparam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No file has been selected.");
-            return;
-        }
-
-        if (curParam == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No group has been selected.");
-            return;
-        }
-
-        if (curField == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No field has been selected.");
-            return;
-        }
-
-        if (curValue == null)
-        {
-            Smithbox.LogError<GparamDataTransferTool>("No value has been selected.");
-            return;
-        }
-
-        ExportValueFile(fileEntry, curGparam, curParam, curField, curValue);
-    }
-
-    public void ExportMenu()
-    {
-        var selection = View.Selection;
-        var fileEntry = selection?.SelectedFileEntry;
-        var curGparam = selection?.GetSelectedGparam();
-        var curParam = selection.GetSelectedGroup();
-        var curField = selection.GetSelectedField();
-        var curValue = selection.GetSelectedValue();
-
-        bool hasFile = fileEntry != null;
-        bool hasParam = hasFile && curParam != null;
-        bool hasField = hasParam && curField != null;
-        bool hasValue = hasField && curValue != null;
-
-        if (ImGui.BeginMenu("Export", hasFile))
-        {
-            // GPARAM (full file)
-            if (ImGui.MenuItem("GPARAM"))
-            {
-                ExportDirectory = ""; // Clear this so the user is always prompted to select location 
-                ExportGparamFile(fileEntry, curGparam);
-            }
-            GUI.Tooltip("Export the entire GPARAM to a JSON file.");
-
-            // Param
-            if (ImGui.MenuItem("Param", hasParam))
-            {
-                ExportDirectory = ""; // Clear this so the user is always prompted to select location
-                ExportGroupFile(fileEntry, curGparam, curParam);
-            }
-            GUI.Tooltip("Export the selected Param to a JSON file.");
-
-            // Field
-            if (ImGui.MenuItem("Field", hasField))
-            {
-                ExportDirectory = ""; // Clear this so the user is always prompted to select location
-                ExportFieldFile(fileEntry, curGparam, curParam, curField);
-            }
-            GUI.Tooltip("Export the selected Field to a JSON file.");
-
-            // Field Value
-            if (ImGui.MenuItem("Field Value", hasValue))
-            {
-                ExportDirectory = ""; // Clear this so the user is always prompted to select location
-                ExportValueFile(fileEntry, curGparam, curParam, curField, curValue);
-            }
-            GUI.Tooltip("Export the selected Field Value to a JSON file.");
-
-            ImGui.EndMenu();
-        }
-    }
-    private string SanitizeFilename(string name)
-    {
-        var invalid = Path.GetInvalidFileNameChars();
-        return string.Concat(name.Split(invalid)).Replace(' ', '_');
-    }
-
-    public void ExportGparamFile(FileDictionaryEntry fileEntry, GPARAM curGparam, string overrideFileName = "")
-    {
-        if (ExportDirectory == "")
-        {
-            var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Export Folder", out var folder);
-
-            if (dialog)
-            {
-                ExportDirectory = folder;
-            }
-        }
-
-        if(Directory.Exists(ExportDirectory))
-        {
-            var json = GPARAMJson.ToJson(curGparam);
-
-            var fileName = $"{fileEntry.Filename}.{fileEntry.Extension}.json";
-            if (overrideFileName != "")
-            {
-                fileName = $"{overrideFileName}.json";
-            }
-
-            var exportPath = Path.Combine(ExportDirectory, fileName);
-
-            try
-            {
-                File.WriteAllText(exportPath, json);
-            }
-            catch (Exception e)
-            {
-                // e.g. an override name with characters a file name can't hold, or a folder that has gone
-                Smithbox.LogError<GparamDataTransferTool>($"Failed to export to {exportPath}.", e);
-                return;
-            }
-
-            ExportString = json;
-
-            Smithbox.Log<GparamDataTransferTool>($"Exported GPARAM: {exportPath}.");
-        }
-    }
-
-    public void ExportGroupFile(FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam, string overrideFileName = "")
-    {
-        if (ExportDirectory == "")
-        {
-            var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Export Folder", out var folder);
-
-            if (dialog)
-            {
-                ExportDirectory = folder;
-            }
-        }
-
-        if (Directory.Exists(ExportDirectory))
-        {
-            var json = GPARAMJson.ToJson(curParam);
-            var safeName = SanitizeFilename(curParam.Key);
-
-            var fileName = $"{fileEntry.Filename}.{fileEntry.Extension}.param.{safeName}.json";
-            if (overrideFileName != "")
-            {
-                fileName = $"{overrideFileName}.json";
-            }
-
-            var exportPath = Path.Combine(ExportDirectory, fileName);
-
-            try
-            {
-                File.WriteAllText(exportPath, json);
-            }
-            catch (Exception e)
-            {
-                // e.g. an override name with characters a file name can't hold, or a folder that has gone
-                Smithbox.LogError<GparamDataTransferTool>($"Failed to export to {exportPath}.", e);
-                return;
-            }
-
-            ExportString = json;
-
-            Smithbox.Log<GparamDataTransferTool>($"Exported GPARAM group: {exportPath}.");
-        }
-    }
-
-    public void ExportFieldFile(FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam, GPARAM.IField curField, string overrideFileName = "")
-    {
-        if (ExportDirectory == "")
-        {
-            var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Export Folder", out var folder);
-
-            if (dialog)
-            {
-                ExportDirectory = folder;
-            }
-        }
-
-        if (Directory.Exists(ExportDirectory))
-        {
-            var json = GPARAMJson.ToJson(curField);
-            var safeName = SanitizeFilename(curField.Key);
-
-            var fileName = $"{fileEntry.Filename}.{fileEntry.Extension}.field.{safeName}.json";
-            if (overrideFileName != "")
-            {
-                fileName = $"{overrideFileName}.json";
-            }
-
-            var exportPath = Path.Combine(ExportDirectory, fileName);
-
-            try
-            {
-                File.WriteAllText(exportPath, json);
-            }
-            catch (Exception e)
-            {
-                // e.g. an override name with characters a file name can't hold, or a folder that has gone
-                Smithbox.LogError<GparamDataTransferTool>($"Failed to export to {exportPath}.", e);
-                return;
-            }
-
-            ExportString = json;
-
-            Smithbox.Log<GparamDataTransferTool>($"Exported GPARAM field: {exportPath}.");
-        }
-    }
-
-    public void ExportValueFile(FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam, GPARAM.IField curField, GPARAM.IFieldValue curValue, string overrideFileName = "")
-    {
-        if (ExportDirectory == "")
-        {
-            var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Export Folder", out var folder);
-
-            if (dialog)
-            {
-                ExportDirectory = folder;
-            }
-        }
-
-        if (Directory.Exists(ExportDirectory))
-        {
-            var discriminator = GPARAMJson.GetFieldTypeDiscriminator(curField);
-            var json = GPARAMJson.ToJson(curValue, discriminator);
-            var safeName = SanitizeFilename(curField.Key);
-
-            var fileName = $"{fileEntry.Filename}.{fileEntry.Extension}.value.{safeName}.{curValue.ID}.json";
-            if (overrideFileName != "")
-            {
-                fileName = $"{overrideFileName}.json";
-            }
-
-            var exportPath = Path.Combine(ExportDirectory, fileName);
-
-            try
-            {
-                File.WriteAllText(exportPath, json);
-            }
-            catch (Exception e)
-            {
-                // e.g. an override name with characters a file name can't hold, or a folder that has gone
-                Smithbox.LogError<GparamDataTransferTool>($"Failed to export to {exportPath}.", e);
-                return;
-            }
-
-            ExportString = json;
-
-            Smithbox.Log<GparamDataTransferTool>($"Exported GPARAM value: {exportPath}.");
-        }
-    }
-    #endregion
-}
-
-public enum GparamImportType
-{
-    [Display(Name ="Overwrite")]
-    Overwrite,
-    
-    [Display(Name = "Append")]
-    Append
 }

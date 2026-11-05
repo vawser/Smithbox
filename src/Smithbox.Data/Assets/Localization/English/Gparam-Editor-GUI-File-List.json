@@ -49,34 +49,6 @@
       "Text": "Delete your project's copy of this GPARAM.\n\nIf the game has this file, it goes back to the game's version; otherwise it is removed from the list. Asks first."
     },
     {
-      "Key": "GPARAM_FileList_Context_Import_Action",
-      "Text": "Import"
-    },
-    {
-      "Key": "GPARAM_FileList_Context_Import_Action_TT",
-      "Text": "Import a GPARAM json to overwrite this entry."
-    },
-    {
-      "Key": "GPARAM_FileList_Context_Export_Header",
-      "Text": "Export"
-    },
-    {
-      "Key": "GPARAM_FileList_Context_Export_Filename_Hint",
-      "Text": "Enter the filename for the exported GPARAM..."
-    },
-    {
-      "Key": "GPARAM_FileList_Context_Export_Filename_TT",
-      "Text": "Define the filename for the exported file."
-    },
-    {
-      "Key": "GPARAM_FileList_Context_Export_Action",
-      "Text": "Export File"
-    },
-    {
-      "Key": "GPARAM_FileList_Context_Export_Action_TT",
-      "Text": "Export this currently selected GPARAM to JSON."
-    },
-    {
       "Key": "GPARAM_FileList_Context_Copy_Name_Action",
       "Text": "Copy Name"
     },

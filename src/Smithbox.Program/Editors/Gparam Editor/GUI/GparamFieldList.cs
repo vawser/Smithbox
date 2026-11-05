@@ -210,8 +210,6 @@ public class GparamFieldList
         DummyContextMenu(fileEntry, data, group);
     }
 
-    private string OverrideFileName = "";
-
     public void ContextMenu(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param param, GPARAM.IField field, int index)
     {
         var fieldIndex = View.Selection._selectedParamFieldIndex;
@@ -239,29 +237,8 @@ public class GparamFieldList
 
             ImGui.Separator();
 
-            // Import
-            if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Import_Action")}"))
-            {
-                View.ToolView.DataTransferTool.ImportField(Project, View, fileEntry, data, param, field);
-            }
-            GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Import_Action_TT"));
-
-            // Export
-            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FieldList_Context_Export_Header")}"))
-            {
-                ImGui.InputTextWithHint("##overrideFilename", 
-                    LOC.Get("GPARAM_FieldList_Context_Export_Filename_Hint"),
-                    ref OverrideFileName, 255);
-                GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Export_Filename_TT"));
-
-                if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Export_File_Action")}##exportFile"))
-                {
-                    View.ToolView.DataTransferTool.ExportFieldFile(fileEntry, data, param, field, OverrideFileName);
-                }
-                GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Export_File_Action_TT"));
-
-                ImGui.EndMenu();
-            }
+            // Copy, Paste, Paste Special, Export to File, Import from File
+            View.ToolView.DataTransferTool.Commands.ContextMenuItems(GparamTransferKind.Field);
 
             ImGui.Separator();
 
@@ -313,6 +290,11 @@ public class GparamFieldList
             // Add
             AddFieldMenu(data, group);
 
+            ImGui.Separator();
+
+            // Paste, Paste Special: copied fields go into the group even when no field is shown
+            View.ToolView.DataTransferTool.Commands.PasteMenuItems();
+
             ImGui.EndPopup();
         }
     }
@@ -332,6 +314,9 @@ public class GparamFieldList
             {
                 DeleteFieldsShortcut();
             }
+
+            // Copy, Paste
+            View.ToolView.DataTransferTool.Commands.Shortcuts(GparamTransferKind.Field);
         }
     }
 

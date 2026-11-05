@@ -7,6 +7,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 /// <summary>
 /// Import a field: it replaces the group's field with the same key, or is added at the end.
+/// With a replace target, it takes that field's place instead, whatever its key.
 /// Edits the group in place, so the objects older undo steps hold stay the live ones.
 /// </summary>
 public class ImportFieldAction : EditorAction
@@ -22,12 +23,16 @@ public class ImportFieldAction : EditorAction
 
     private GPARAM.IField NewField { get; set; }
 
+    // The field to replace in place, whatever its key; null to match by key
+    private GPARAM.IField ReplaceTarget { get; set; }
+
     // The field it replaced, if any
     private GPARAM.IField ReplacedField { get; set; }
 
     private List<GPARAM.UnkParamExtra> StoredParamExtras { get; set; } = new();
 
-    public ImportFieldAction(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM gparam, GPARAM.Param param, GPARAM.IField field, GPARAM.IField newField)
+    public ImportFieldAction(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM gparam, GPARAM.Param param, GPARAM.IField field, GPARAM.IField newField,
+        GPARAM.IField replaceTarget = null)
     {
         Project = project;
         View = view;
@@ -37,6 +42,7 @@ public class ImportFieldAction : EditorAction
         Data = gparam;
         Param = param;
         NewField = newField;
+        ReplaceTarget = replaceTarget;
 
         // The JSON's capacity may not match its values, and the writer trusts it
         NewField.SyncCapacity();
@@ -44,9 +50,15 @@ public class ImportFieldAction : EditorAction
 
     public override ActionEvent Execute()
     {
-        StoredParamExtras = GparamUtils.SnapshotParamExtras(Data);
+        var index = ReplaceTarget != null
+            ? Param.Fields.IndexOf(ReplaceTarget)
+            : Param.Fields.FindIndex(e => e != null && e.Key == NewField.Key);
 
-        var index = Param.Fields.FindIndex(e => e != null && e.Key == NewField.Key);
+        // The field to replace is gone (e.g. deleted since): nothing to do
+        if (ReplaceTarget != null && index < 0)
+            return ActionEvent.NoEvent;
+
+        StoredParamExtras = GparamUtils.SnapshotParamExtras(Data);
 
         if (index >= 0)
         {
@@ -71,16 +83,17 @@ public class ImportFieldAction : EditorAction
     {
         var index = Param.Fields.IndexOf(NewField);
 
-        if (index >= 0)
+        // Execute did nothing (its replace target was gone)
+        if (index < 0)
+            return ActionEvent.NoEvent;
+
+        if (ReplacedField != null)
         {
-            if (ReplacedField != null)
-            {
-                Param.Fields[index] = ReplacedField;
-            }
-            else
-            {
-                Param.Fields.RemoveAt(index);
-            }
+            Param.Fields[index] = ReplacedField;
+        }
+        else
+        {
+            Param.Fields.RemoveAt(index);
         }
 
         Data.UnkParamExtras = StoredParamExtras;

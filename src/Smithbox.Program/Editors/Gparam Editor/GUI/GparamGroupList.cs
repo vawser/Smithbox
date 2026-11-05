@@ -217,12 +217,9 @@ public class GparamGroupList
         DummyContextMenu(fileEntry, data);
     }
 
-    private string OverrideFileName = "";
-
     private void ContextMenu(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group, int index)
     {
         var groupIndex = View.Selection._selectedParamGroupIndex;
-        bool overwrite = CFG.Current.GparamEditor_Data_Import_Overwrite;
 
         if (index != groupIndex)
             return;
@@ -247,30 +244,8 @@ public class GparamGroupList
 
             ImGui.Separator();
 
-            // Import
-            if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Import_Action")}##importAction"))
-            {
-                View.ToolView.DataTransferTool.ImportGroup(Project, View, fileEntry, data, group);
-            }
-            GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Import_Action_TT"));
-
-            // Export
-            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_GroupList_Context_Export_Header")}##exportHeader"))
-            {
-                ImGui.InputTextWithHint("##overrideFilename", 
-                    LOC.Get("GPARAM_GroupList_Context_Export_Filename_Hint"),
-                    ref OverrideFileName, 255);
-                GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Export_Filename_TT"));
-
-                // Export File
-                if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Export_File_Action")}##exportFile"))
-                {
-                    View.ToolView.DataTransferTool.ExportGroupFile(fileEntry, data, group, OverrideFileName);
-                }
-                GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Export_File_Action_TT"));
-
-                ImGui.EndMenu();
-            }
+            // Copy, Paste, Paste Special, Export to File, Import from File
+            View.ToolView.DataTransferTool.Commands.ContextMenuItems(GparamTransferKind.Group);
 
             ImGui.Separator();
 
@@ -322,6 +297,11 @@ public class GparamGroupList
             // Add
             AddGroupMenu(data);
 
+            ImGui.Separator();
+
+            // Paste, Paste Special: copied groups go into the file even when no group is shown
+            View.ToolView.DataTransferTool.Commands.PasteMenuItems();
+
             ImGui.EndPopup();
         }
     }
@@ -341,6 +321,9 @@ public class GparamGroupList
             {
                 DeleteGroupsShortcut();
             }
+
+            // Copy, Paste
+            View.ToolView.DataTransferTool.Commands.Shortcuts(GparamTransferKind.Group);
         }
     }
 

@@ -10,7 +10,8 @@ namespace StudioCore.Editors.GparamEditor;
 
 public static class GPARAMJson
 {
-    private static JsonSerializerOptions Options = new()
+    // Shared with GparamTransferPayload, so the envelope's items use the same converters
+    public static readonly JsonSerializerOptions Options = new()
     {
         WriteIndented = true,
         IncludeFields = false,
@@ -24,57 +25,6 @@ public static class GPARAMJson
             new ByteArrayConverter()
         }
     };
-
-    // GPARAM (full file)
-    public static string ToJson(GPARAM gparam)
-    {
-        return JsonSerializer.Serialize(gparam, Options);
-    }
-
-    public static GPARAM FromJson(string json)
-    {
-        return JsonSerializer.Deserialize<GPARAM>(json, Options);
-    }
-
-    // GPARAM.Param
-    public static string ToJson(GPARAM.Param param)
-    {
-        return JsonSerializer.Serialize(param, Options);
-    }
-
-    public static GPARAM.Param ParamFromJson(string json)
-    {
-        return JsonSerializer.Deserialize<GPARAM.Param>(json, Options);
-    }
-
-    // GPARAM.IField
-    public static string ToJson(GPARAM.IField field)
-    {
-        return JsonSerializer.Serialize(field, Options);
-    }
-
-    public static GPARAM.IField FieldFromJson(string json)
-    {
-        return JsonSerializer.Deserialize<GPARAM.IField>(json, Options);
-    }
-
-    // GPARAM.IFieldValue
-    public class FieldValueWrapper
-    {
-        /// <summary>
-        /// The field-type discriminator string (e.g. "float", "color", "vec3").
-        /// Matches the values used on <see cref="GPARAM.IField"/>'s
-        /// [JsonDerivedType] attributes.
-        /// </summary>
-        public string FieldType { get; set; }
-
-        /// <summary>
-        /// The serialised <see cref="GPARAM.IFieldValue"/> payload stored as a
-        /// raw JSON element so it can be re-deserialised into the correct
-        /// concrete <c>FieldValue&lt;T&gt;</c> type on import.
-        /// </summary>
-        public JsonElement Value { get; set; }
-    }
 
     /// <summary>
     /// Maps a field-type discriminator string to its concrete
@@ -100,57 +50,25 @@ public static class GPARAMJson
         { "string", typeof(GPARAM.FieldValue<string>)  },
     };
 
-    /// <summary>
-    /// Serialises a single <see cref="GPARAM.IFieldValue"/> together with a
-    /// <paramref name="fieldTypeDiscriminator"/> so it can be reconstructed
-    /// without its parent field context.
-    /// </summary>
-    /// <param name="value">The value to export.</param>
-    /// <param name="fieldTypeDiscriminator">
-    /// The discriminator string of the parent <see cref="GPARAM.IField"/>
-    /// (e.g. "float", "color").  Pass the value from the parent field's
-    /// <c>[JsonDerivedType]</c> attribute.
-    /// </param>
-    public static string ToJson(GPARAM.IFieldValue value, string fieldTypeDiscriminator)
-    {
-        // Serialise the value payload into a JsonElement first.
-        var rawBytes = JsonSerializer.SerializeToUtf8Bytes(value, value.GetType(), Options);
-        var payload = JsonSerializer.Deserialize<JsonElement>(rawBytes);
-
-        var wrapper = new FieldValueWrapper
-        {
-            FieldType = fieldTypeDiscriminator,
-            Value = payload
-        };
-
-        return JsonSerializer.Serialize(wrapper, Options);
-    }
-
-    /// <summary>
-    /// Deserialises a <see cref="GPARAM.IFieldValue"/> that was previously
-    /// exported with <see cref="ToJson(GPARAM.IFieldValue, string)"/>.
-    /// </summary>
-    public static GPARAM.IFieldValue FieldValueFromJson(string json)
-    {
-        var wrapper = JsonSerializer.Deserialize<FieldValueWrapper>(json, Options)
-            ?? throw new JsonException("Failed to deserialise FieldValueWrapper.");
-
-        if (!FieldValueTypeMap.TryGetValue(wrapper.FieldType, out var concreteType))
-            throw new NotSupportedException($"Unknown field type discriminator: '{wrapper.FieldType}'.");
-
-        var rawBytes = JsonSerializer.SerializeToUtf8Bytes(wrapper.Value);
-        return (GPARAM.IFieldValue)JsonSerializer.Deserialize(rawBytes, concreteType, Options)
-            ?? throw new JsonException($"Failed to deserialise FieldValue<T> for type '{wrapper.FieldType}'.");
-    }
-
     // -------------------------------------------------------------------------
     // Helpers
     // -------------------------------------------------------------------------
 
     /// <summary>
+    /// The concrete <see cref="GPARAM.IFieldValue"/> type for a field type discriminator (e.g. "float").
+    /// </summary>
+    public static Type GetFieldValueType(string fieldTypeDiscriminator)
+    {
+        if (fieldTypeDiscriminator == null || !FieldValueTypeMap.TryGetValue(fieldTypeDiscriminator, out var type))
+            throw new NotSupportedException($"Unknown field type discriminator: '{fieldTypeDiscriminator}'.");
+
+        return type;
+    }
+
+    /// <summary>
     /// Returns the JSON discriminator string for a concrete
     /// <see cref="GPARAM.IField"/> instance (e.g. "float", "color").
-    /// Used when building a <see cref="FieldValueWrapper"/> from the editor.
+    /// Stored on a values payload, so the values can be read back without their field.
     /// </summary>
     public static string GetFieldTypeDiscriminator(GPARAM.IField field)
     {

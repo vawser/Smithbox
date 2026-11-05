@@ -62,10 +62,7 @@ public class GparamToolView
         if (CFG.Current.Interface_GparamEditor_Tool_DataTransfer)
         {
             // Data Transfer
-            if (ToolSections.Header($"{LOC.Get("GPARAM_Tools_Data_Transfer")}##dataTransferHeader"))
-            {
-                DataTransferTool.Display();
-            }
+            DataTransferTool.OnToolWindow();
         }
 
         if (CFG.Current.Interface_GparamEditor_Tool_LocalSearch)
@@ -87,16 +84,6 @@ public class GparamToolView
         }
 
         Sections.End();
-    }
-
-    public void DisplayDropdown()
-    {
-        if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Tools_Menu")}##toolsHeader"))
-        {
-            DataTransferTool.DisplayDropdown();
-
-            ImGui.EndMenu();
-        }
     }
 
     public void ViewMenu()
