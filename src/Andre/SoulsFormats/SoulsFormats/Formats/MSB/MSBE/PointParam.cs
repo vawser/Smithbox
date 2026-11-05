@@ -557,9 +557,24 @@ namespace SoulsFormats
             public int MapID { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Unknown. The game reads it as a byte.
             /// </summary>
-            public int UnkS04 { get; set; }
+            public byte UnkS04 { get; set; }
+
+            /// <summary>
+            /// Unknown; not read by the game.
+            /// </summary>
+            public byte UnkS05 { get; set; }
+
+            /// <summary>
+            /// Unknown; not read by the game.
+            /// </summary>
+            public byte UnkS06 { get; set; }
+
+            /// <summary>
+            /// Unknown; not read by the game.
+            /// </summary>
+            public byte UnkS07 { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -678,7 +693,10 @@ namespace SoulsFormats
                 // Unk4
                 br.Position = start + unkOffset4;
                 MapID = br.ReadInt32();
-                UnkS04 = br.ReadInt32();
+                UnkS04 = br.ReadByte();
+                UnkS05 = br.ReadByte();
+                UnkS06 = br.ReadByte();
+                UnkS07 = br.ReadByte();
                 br.AssertInt32(0);
                 UnkS0C = br.ReadInt32();
                 br.AssertInt32(0);
@@ -764,7 +782,10 @@ namespace SoulsFormats
 
                 bw.FillInt64("Unk4Offset", bw.Position - start);
                 bw.WriteInt32(MapID);
-                bw.WriteInt32(UnkS04);
+                bw.WriteByte(UnkS04);
+                bw.WriteByte(UnkS05);
+                bw.WriteByte(UnkS06);
+                bw.WriteByte(UnkS07);
                 bw.WriteInt32(0);
                 bw.WriteInt32(UnkS0C);
                 bw.WriteInt32(0);
@@ -1892,9 +1913,29 @@ namespace SoulsFormats
                 /// </summary>
                 public int WeatherLotParamID { get; set; }
 
+                /// <summary>
+                /// Unknown. Always -1 in retail; the loader sets it to -1 for MSB versions before 0x42.
+                /// </summary>
+                public int UnkT04 { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown. The loader sets UnkT08..UnkT0A to -1 for MSB versions before 0x4A.
+                /// </summary>
                 public sbyte UnkT08 { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
                 public sbyte UnkT09 { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
                 public sbyte UnkT0A { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
                 public sbyte UnkT0B { get; set; }
 
                 /// <summary>
@@ -1907,7 +1948,7 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     WeatherLotParamID = br.ReadInt32();
-                    br.AssertInt32(-1);
+                    UnkT04 = br.ReadInt32();
                     UnkT08 = br.ReadSByte();
                     UnkT09 = br.ReadSByte();
                     UnkT0A = br.ReadSByte();
@@ -1922,7 +1963,7 @@ namespace SoulsFormats
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(WeatherLotParamID);
-                    bw.WriteInt32(-1);
+                    bw.WriteInt32(UnkT04);
                     bw.WriteSByte(UnkT08);
                     bw.WriteSByte(UnkT09);
                     bw.WriteSByte(UnkT0A);

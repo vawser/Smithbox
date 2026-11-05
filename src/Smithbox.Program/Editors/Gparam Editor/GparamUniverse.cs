@@ -589,9 +589,15 @@ public class GparamUniverse : IUniverse
             };
         }
 
-        var source = ReadFlag("IsShadowSrc") ?? ReadFlag("ShadowSource") ?? true;
-        var only = ReadFlag("IsShadowOnly") ?? false;
-        var dest = ReadFlag("IsShadowDest") ?? ReadFlag("ShadowDest") ?? true;
+        // Elden Ring: an override byte, then the value it applies (see MsbEntity.RefreshShadowFlags)
+        bool? Overridden(string over, string value, bool fallback)
+            => ReadFlag(over) is bool on ? (on ? ReadFlag(value) ?? fallback : fallback) : null;
+
+        var source = Overridden("OverrideDirLightShadowSrc", "IsDirLightShadowSrc", true)
+            ?? ReadFlag("IsShadowSrc") ?? ReadFlag("ShadowSource") ?? true;
+        var only = Overridden("OverrideShadowOnly", "IsShadowOnly", false) ?? ReadFlag("IsShadowOnly") ?? false;
+        var dest = Overridden("OverrideShadowDest", "IsShadowDest", true)
+            ?? ReadFlag("IsShadowDest") ?? ReadFlag("ShadowDest") ?? true;
 
         mesh.CastsShadow = source || only;
         mesh.ReceivesShadow = dest;

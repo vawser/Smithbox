@@ -7,9 +7,17 @@
     <UnkT00
     AltName="Unknown: 0x0"
     Wiki="" />
+
+    <UnkT01
+    AltName="Unknown: 0x1"
+    Wiki="" />
   
     <UnkT02
     AltName="Unknown: 0x2"
+    Wiki="" />
+
+    <UnkT08
+    AltName="Unknown: 0x8"
     Wiki="" />
     
     <UnkT10
@@ -23,6 +31,10 @@
     <UnkT12
     AltName="Unknown: 0x12"
     Wiki="" />
+
+    <UnkT13
+    AltName="Unknown: 0x13"
+    Wiki="" />
     
     <AssetSfxParamRelativeID
     AltName="Model Particle Offset ID"
@@ -35,6 +47,18 @@
     <UnkT24
     AltName="Unknown: 0x24"
     Wiki="" />
+
+    <UnkT25
+    AltName="Unknown: 0x25"
+    Wiki="" />
+
+    <UnkT26
+    AltName="Unknown: 0x26"
+    Wiki="" />
+
+    <UnkT27
+    AltName="Unknown: 0x27"
+    Wiki="" />
     
     <UnkT28
     AltName="Unknown: 0x28"
@@ -46,6 +70,18 @@
     
     <UnkT34
     AltName="Unknown: 0x34"
+    Wiki="" />
+
+    <UnkT35
+    AltName="Unknown: 0x35"
+    Wiki="" />
+
+    <UnkT36
+    AltName="Unknown: 0x36"
+    Wiki="" />
+
+    <UnkT37
+    AltName="Unknown: 0x37"
     Wiki="" />
     
     <PartNames
@@ -62,6 +98,10 @@
     
     <UnkT51
     AltName="Unknown: 0x51"
+    Wiki="" />
+
+    <UnkT52
+    AltName="Unknown: 0x52"
     Wiki="" />
     
     <UnkT53
@@ -101,6 +141,10 @@
     <AssetStruct1_Unk00
     AltName="Unknown: 0x0"
     Wiki="" />
+
+    <AssetStruct1_Unk01
+    AltName="Unknown: 0x1"
+    Wiki="Not read by the game." />
     
     <AssetStruct1_Unk04
     AltName="Unknown: 0x4"
@@ -111,9 +155,25 @@
     AltName="Disable Torrent"
     Wiki="If ON, Torrent cannot be summoned on this asset." 
     IsBool="" />
+
+    <AssetStruct1_Unk06
+    AltName="Unknown: 0x6"
+    Wiki="" />
+
+    <AssetStruct1_Unk0C
+    AltName="Unknown: 0xC"
+    Wiki="" />
+
+    <AssetStruct1_Unk10
+    AltName="Unknown: 0x10"
+    Wiki="" />
     
     <AssetStruct1_Unk1C
     AltName="Unknown: 0x1C"
+    Wiki="" />
+
+    <AssetStruct1_Unk20
+    AltName="Unknown: 0x20"
     Wiki="" />
     
     <AssetStruct1_Unk24
@@ -140,9 +200,25 @@
     <AssetUnkStruct2_Unk00
     AltName="Unknown: 0x0"
     Wiki="" />
+
+    <AssetUnkStruct2_Unk01
+    AltName="Unknown: 0x1"
+    Wiki="Not read by the game." />
+
+    <AssetUnkStruct2_Unk02
+    AltName="Unknown: 0x2"
+    Wiki="Not read by the game." />
+
+    <AssetUnkStruct2_Unk03
+    AltName="Unknown: 0x3"
+    Wiki="Not read by the game." />
     
     <AssetUnkStruct2_Unk04
     AltName="Unknown: 0x4"
+    Wiki="" />
+
+    <AssetUnkStruct2_Unk08
+    AltName="Unknown: 0x8"
     Wiki="" />
     
     <AssetUnkStruct2_Unk14
@@ -173,9 +249,25 @@
     <AssetUnkStruct3_Unk00
     AltName="Unknown: 0x0"
     Wiki="" />
+
+    <AssetUnkStruct3_Unk01
+    AltName="Unknown: 0x1"
+    Wiki="Not read by the game." />
+
+    <AssetUnkStruct3_Unk02
+    AltName="Unknown: 0x2"
+    Wiki="Not read by the game." />
+
+    <AssetUnkStruct3_Unk03
+    AltName="Unknown: 0x3"
+    Wiki="Not read by the game." />
     
     <AssetUnkStruct3_Unk04
     AltName="Unknown: 0x4"
+    Wiki="" />
+
+    <AssetUnkStruct3_Unk08
+    AltName="Unknown: 0x8"
     Wiki="" />
     
     <AssetUnkStruct3_Unk09
@@ -196,6 +288,10 @@
     
     <AssetUnkStruct3_Unk0E
     AltName="Unknown: 0x0E"
+    Wiki="" />
+
+    <AssetUnkStruct3_Unk0F
+    AltName="Unknown: 0xF"
     Wiki="" />
     
     <AssetUnkStruct3_Unk10

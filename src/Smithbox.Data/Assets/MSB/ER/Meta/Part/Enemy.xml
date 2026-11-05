@@ -18,6 +18,10 @@
     AltName="Talk Script ID"
     Wiki="The ID of a talk ESD used by the character." 
     TalkAlias="" />
+
+    <UnkT14
+    AltName="Unknown: 0x14"
+    Wiki="" />
     
     <UnkT15
     AltName="Unknown: 0x15"
@@ -55,6 +59,18 @@
     
     <UnkT28
     AltName="Unknown: 0x28"
+    Wiki="" />
+
+    <UnkT29
+    AltName="Unknown: 0x29"
+    Wiki="" />
+
+    <UnkT2A
+    AltName="Unknown: 0x2A"
+    Wiki="" />
+
+    <UnkT2B
+    AltName="Unknown: 0x2B"
     Wiki="" />
     
     <ChrActivateCondParamID

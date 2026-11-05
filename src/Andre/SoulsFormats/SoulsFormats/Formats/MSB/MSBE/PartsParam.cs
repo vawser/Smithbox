@@ -217,84 +217,93 @@ namespace SoulsFormats
             public byte isUsePartsDrawParamID { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// The PartsDrawParam row used when isUsePartsDrawParamID is set; -1 for none. The draw flags below fall back to it
+            /// when their override is off.
             /// </summary>
-            public ushort PartsDrawParamID { get; set; }
+            public int PartsDrawParamID { get; set; } = -1;
+
+            // The draw flags come in pairs: when the override byte is set the part uses the value byte, otherwise the
+            // PartsDrawParam row's field (CSMsbParts getters at 0x140CF0210..0x140CF08A0 in eldenring.exe).
 
             /// <summary>
-            /// Unknown.
+            /// If set, IsPointLightShadowSrc is used instead of the draw param's isPointLightShadowSrc.
             /// </summary>
-            public sbyte IsPointLightShadowSrc { get; set; }
+            public byte OverridePointLightShadowSrc { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Whether the part casts point light shadows, when OverridePointLightShadowSrc is set.
             /// </summary>
-            public byte UnkE0B { get; set; }
+            public byte IsPointLightShadowSrc { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// If set, IsDirLightShadowSrc is used instead of the draw param's isDirLightShadowSrc (default on).
             /// </summary>
-            public bool IsShadowSrc { get; set; }
+            public byte OverrideDirLightShadowSrc { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Whether the part casts the sun's shadow, when OverrideDirLightShadowSrc is set.
             /// </summary>
-            public byte IsStaticShadowSrc { get; set; }
+            public byte IsDirLightShadowSrc { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// If set, IsShadowDest is used instead of the draw param's isShadowDst (default on).
             /// </summary>
-            public byte IsCascade3ShadowSrc { get; set; }
+            public byte OverrideShadowDest { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Whether shadows fall on the part, when OverrideShadowDest is set.
             /// </summary>
-            public byte UnkE0F { get; set; }
+            public byte IsShadowDest { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Unknown; not read by the game.
             /// </summary>
-            public byte UnkE10 { get; set; }
+            public byte UnkE12 { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Unknown; not read by the game.
             /// </summary>
-            public bool IsShadowDest { get; set; }
+            public byte UnkE13 { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// If set, IsShadowOnly is used instead of the draw param's isShadowOnly.
             /// </summary>
-            public bool IsShadowOnly { get; set; }
+            public byte OverrideShadowOnly { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Whether the part is drawn only into shadows, when OverrideShadowOnly is set.
             /// </summary>
-            public bool DrawByReflectCam { get; set; }
+            public byte IsShadowOnly { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// If set, DrawByReflectCam is used instead of the draw param's drawByReflectCam.
             /// </summary>
-            public bool DrawOnlyReflectCam { get; set; }
+            public byte OverrideDrawByReflectCam { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Whether the part is drawn by the reflection camera, when OverrideDrawByReflectCam is set.
             /// </summary>
-            public byte EnableOnAboveShadow { get; set; }
+            public byte DrawByReflectCam { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// If set, DrawOnlyReflectCam is used instead of the draw param's drawOnlyReflectCam.
             /// </summary>
-            public bool DisablePointLightEffect { get; set; }
+            public byte OverrideDrawOnlyReflectCam { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Whether the part is drawn only by the reflection camera, when OverrideDrawOnlyReflectCam is set.
             /// </summary>
-            public byte UnkE17 { get; set; }
+            public byte DrawOnlyReflectCam { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Unknown; not read by the game.
             /// </summary>
-            public int UnkE18 { get; set; }
+            public byte UnkE1A { get; set; }
+
+            /// <summary>
+            /// Unknown; not read by the game.
+            /// </summary>
+            public byte UnkE1B { get; set; }
 
             /// <summary>
             /// Allows multiple parts to be identified by the same entity ID.
@@ -302,12 +311,12 @@ namespace SoulsFormats
             public uint[] EntityGroupIDs { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Unknown. -1 when unused.
             /// </summary>
             public short UnkE3C { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Unknown. Becomes a render flag of the part (byte 2 bit 0 of its draw flags).
             /// </summary>
             public byte UnkE3E { get; set; }
 
@@ -473,22 +482,23 @@ namespace SoulsFormats
                 br.AssertByte(0);
                 br.AssertByte(0);
                 br.AssertByte(0); // Former lantern ID
-                PartsDrawParamID = br.ReadUInt16();
-                IsPointLightShadowSrc = br.ReadSByte(); // Seems to be 0 or -1
-                UnkE0B = br.ReadByte();
-                IsShadowSrc = br.ReadBoolean();
-                IsStaticShadowSrc = br.ReadByte();
-                IsCascade3ShadowSrc = br.ReadByte();
-                UnkE0F = br.ReadByte();
-                UnkE10 = br.ReadByte();
-                IsShadowDest = br.ReadBoolean();
-                IsShadowOnly = br.ReadBoolean(); // Seems to always be 0
-                DrawByReflectCam = br.ReadBoolean();
-                DrawOnlyReflectCam = br.ReadBoolean();
-                EnableOnAboveShadow = br.ReadByte();
-                DisablePointLightEffect = br.ReadBoolean();
-                UnkE17 = br.ReadByte();
-                UnkE18 = br.ReadInt32();
+                PartsDrawParamID = br.ReadInt32();
+                OverridePointLightShadowSrc = br.ReadByte();
+                IsPointLightShadowSrc = br.ReadByte();
+                OverrideDirLightShadowSrc = br.ReadByte();
+                IsDirLightShadowSrc = br.ReadByte();
+                OverrideShadowDest = br.ReadByte();
+                IsShadowDest = br.ReadByte();
+                UnkE12 = br.ReadByte();
+                UnkE13 = br.ReadByte();
+                OverrideShadowOnly = br.ReadByte();
+                IsShadowOnly = br.ReadByte();
+                OverrideDrawByReflectCam = br.ReadByte();
+                DrawByReflectCam = br.ReadByte();
+                OverrideDrawOnlyReflectCam = br.ReadByte();
+                DrawOnlyReflectCam = br.ReadByte();
+                UnkE1A = br.ReadByte();
+                UnkE1B = br.ReadByte();
                 EntityGroupIDs = br.ReadUInt32s(8);
                 UnkE3C = br.ReadInt16();
                 UnkE3E = br.ReadByte();
@@ -666,22 +676,23 @@ namespace SoulsFormats
                 bw.WriteByte(0);
                 bw.WriteByte(0);
                 bw.WriteByte(0);
-                bw.WriteUInt16(PartsDrawParamID);
-                bw.WriteSByte(IsPointLightShadowSrc);
-                bw.WriteByte(UnkE0B);
-                bw.WriteBoolean(IsShadowSrc);
-                bw.WriteByte(IsStaticShadowSrc);
-                bw.WriteByte(IsCascade3ShadowSrc);
-                bw.WriteByte(UnkE0F);
-                bw.WriteByte(UnkE10);
-                bw.WriteBoolean(IsShadowDest);
-                bw.WriteBoolean(IsShadowOnly);
-                bw.WriteBoolean(DrawByReflectCam);
-                bw.WriteBoolean(DrawOnlyReflectCam);
-                bw.WriteByte(EnableOnAboveShadow);
-                bw.WriteBoolean(DisablePointLightEffect);
-                bw.WriteByte(UnkE17);
-                bw.WriteInt32(UnkE18);
+                bw.WriteInt32(PartsDrawParamID);
+                bw.WriteByte(OverridePointLightShadowSrc);
+                bw.WriteByte(IsPointLightShadowSrc);
+                bw.WriteByte(OverrideDirLightShadowSrc);
+                bw.WriteByte(IsDirLightShadowSrc);
+                bw.WriteByte(OverrideShadowDest);
+                bw.WriteByte(IsShadowDest);
+                bw.WriteByte(UnkE12);
+                bw.WriteByte(UnkE13);
+                bw.WriteByte(OverrideShadowOnly);
+                bw.WriteByte(IsShadowOnly);
+                bw.WriteByte(OverrideDrawByReflectCam);
+                bw.WriteByte(DrawByReflectCam);
+                bw.WriteByte(OverrideDrawOnlyReflectCam);
+                bw.WriteByte(DrawOnlyReflectCam);
+                bw.WriteByte(UnkE1A);
+                bw.WriteByte(UnkE1B);
                 bw.WriteUInt32s(EntityGroupIDs);
                 bw.WriteInt16(UnkE3C);
                 bw.WriteByte(UnkE3E);
@@ -738,34 +749,54 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// The part's display and draw groups, with an alternate set of each the loader can swap or merge in.
+            /// Layout from MsbResCap loading in eldenring.exe (0x140CF9B62): for MapPiece, Enemy, Collision and Asset parts.
             /// </summary>
             public class DisplayDataStruct
             {
                 /// <summary>
-                /// Unknown.
+                /// Groups this part shows when it is the collision the player stands on (collisions), or the groups it
+                /// belongs to for display.
                 /// </summary>
                 public uint[] DisplayGroups { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Display groups that replace or are merged into DisplayGroups when UseAltGroups is set.
+                /// </summary>
+                public uint[] AltDisplayGroups { get; set; }
+
+                /// <summary>
+                /// When merging, the DisplayGroups bits set here are kept; the rest come from AltDisplayGroups.
+                /// </summary>
+                public uint[] AltDisplayGroupsMask { get; set; }
+
+                /// <summary>
+                /// Draw groups the part belongs to: it is drawn while any of them is shown. A collision is always also
+                /// in its own display groups.
                 /// </summary>
                 public uint[] DrawGroups { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Draw groups merged into DrawGroups when UseAltGroups is set.
                 /// </summary>
-                public uint[] CollisionMask { get; set; }
+                public uint[] AltDrawGroups { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// When merging, the DrawGroups bits set here are kept; the rest come from AltDrawGroups.
                 /// </summary>
-                public byte Condition1 { get; set; }
+                public uint[] AltDrawGroupsMask { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// If set, the alternate groups are never merged in, only swapped in whole (see UseAltGroups).
                 /// </summary>
-                public byte Condition2 { get; set; }
+                public byte NoAltGroupMerge { get; set; }
+
+                /// <summary>
+                /// Enables the alternate groups. On load, when a GameMan state byte (+B71h) is 1 the display groups are
+                /// replaced by AltDisplayGroups; otherwise, unless that byte is -1 or NoAltGroupMerge is set, both sets
+                /// are merged in through their masks.
+                /// </summary>
+                public byte UseAltGroups { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -788,19 +819,16 @@ namespace SoulsFormats
                 public short UnkC6 { get; set; }
 
                 /// <summary>
-                /// Creates an UnkStruct1 with default values.
+                /// Creates a DisplayDataStruct with default values.
                 /// </summary>
                 public DisplayDataStruct()
                 {
                     DisplayGroups = new uint[8];
+                    AltDisplayGroups = new uint[8];
+                    AltDisplayGroupsMask = new uint[8];
                     DrawGroups = new uint[8];
-                    CollisionMask = new uint[32];
-                    Condition1 = 0;
-                    Condition2 = 0;
-                    UnkC2 = 0;
-                    UnkC3 = 0;
-                    UnkC4 = 0;
-                    UnkC6 = 0;
+                    AltDrawGroups = new uint[8];
+                    AltDrawGroupsMask = new uint[8];
                 }
 
                 /// <summary>
@@ -808,20 +836,26 @@ namespace SoulsFormats
                 /// </summary>
                 public DisplayDataStruct DeepCopy()
                 {
-                    var unk1 = (DisplayDataStruct)MemberwiseClone();
-                    unk1.DisplayGroups = (uint[])DisplayGroups.Clone();
-                    unk1.DrawGroups = (uint[])DrawGroups.Clone();
-                    unk1.CollisionMask = (uint[])CollisionMask.Clone();
-                    return unk1;
+                    var copy = (DisplayDataStruct)MemberwiseClone();
+                    copy.DisplayGroups = (uint[])DisplayGroups.Clone();
+                    copy.AltDisplayGroups = (uint[])AltDisplayGroups.Clone();
+                    copy.AltDisplayGroupsMask = (uint[])AltDisplayGroupsMask.Clone();
+                    copy.DrawGroups = (uint[])DrawGroups.Clone();
+                    copy.AltDrawGroups = (uint[])AltDrawGroups.Clone();
+                    copy.AltDrawGroupsMask = (uint[])AltDrawGroupsMask.Clone();
+                    return copy;
                 }
 
                 internal DisplayDataStruct(BinaryReaderEx br)
                 {
                     DisplayGroups = br.ReadUInt32s(8);
+                    AltDisplayGroups = br.ReadUInt32s(8);
+                    AltDisplayGroupsMask = br.ReadUInt32s(8);
                     DrawGroups = br.ReadUInt32s(8);
-                    CollisionMask = br.ReadUInt32s(32);
-                    Condition1 = br.ReadByte();
-                    Condition2 = br.ReadByte();
+                    AltDrawGroups = br.ReadUInt32s(8);
+                    AltDrawGroupsMask = br.ReadUInt32s(8);
+                    NoAltGroupMerge = br.ReadByte();
+                    UseAltGroups = br.ReadByte();
                     UnkC2 = br.ReadByte();
                     UnkC3 = br.ReadByte();
                     UnkC4 = br.ReadInt16(); // Always -1 in retail
@@ -832,10 +866,13 @@ namespace SoulsFormats
                 internal void Write(BinaryWriterEx bw)
                 {
                     bw.WriteUInt32s(DisplayGroups);
+                    bw.WriteUInt32s(AltDisplayGroups);
+                    bw.WriteUInt32s(AltDisplayGroupsMask);
                     bw.WriteUInt32s(DrawGroups);
-                    bw.WriteUInt32s(CollisionMask);
-                    bw.WriteByte(Condition1);
-                    bw.WriteByte(Condition2);
+                    bw.WriteUInt32s(AltDrawGroups);
+                    bw.WriteUInt32s(AltDrawGroupsMask);
+                    bw.WriteByte(NoAltGroupMerge);
+                    bw.WriteByte(UseAltGroups);
                     bw.WriteByte(UnkC2);
                     bw.WriteByte(UnkC3);
                     bw.WriteInt16(UnkC4);
@@ -850,7 +887,7 @@ namespace SoulsFormats
             public class DisplayGroupStruct
             {
                 /// <summary>
-                /// Unknown.
+                /// Unknown. The game reads it both as an int and as separate bytes 0, 1 and 2.
                 /// </summary>
                 public int Condition { get; set; }
 
@@ -1178,9 +1215,9 @@ namespace SoulsFormats
             public class UnkStruct8
             {
                 /// <summary>
-                /// Unknown.
+                /// Unknown. 0 or 1; the game reads it as a byte.
                 /// </summary>
-                public int UnkStruct8_Unk00 { get; set; }
+                public byte UnkStruct8_Unk00 { get; set; }
 
                 /// <summary>
                 /// Creates an UnkStruct7 with default values.
@@ -1197,7 +1234,10 @@ namespace SoulsFormats
 
                 internal UnkStruct8(BinaryReaderEx br)
                 {
-                    UnkStruct8_Unk00 = br.AssertInt32([0, 1]);
+                    UnkStruct8_Unk00 = br.ReadByte();
+                    br.AssertByte(0);
+                    br.AssertByte(0);
+                    br.AssertByte(0);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -1209,7 +1249,10 @@ namespace SoulsFormats
 
                 internal void Write(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkStruct8_Unk00);
+                    bw.WriteByte(UnkStruct8_Unk00);
+                    bw.WriteByte(0);
+                    bw.WriteByte(0);
+                    bw.WriteByte(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -1226,9 +1269,29 @@ namespace SoulsFormats
             public class UnkStruct9
             {
                 /// <summary>
-                /// Unknown.
+                /// Unknown. The game reads it as a byte and compares it to 1, 2 and 3.
                 /// </summary>
-                public int UnkStruct9_Unk00 { get; set; }
+                public byte UnkStruct9_Unk00 { get; set; }
+
+                /// <summary>
+                /// Unknown; not read by the game.
+                /// </summary>
+                public byte UnkStruct9_Unk01 { get; set; }
+
+                /// <summary>
+                /// Unknown; not read by the game.
+                /// </summary>
+                public byte UnkStruct9_Unk02 { get; set; }
+
+                /// <summary>
+                /// Unknown; not read by the game.
+                /// </summary>
+                public byte UnkStruct9_Unk03 { get; set; }
+
+                /// <summary>
+                /// Unknown. Read by the MSB loader.
+                /// </summary>
+                public int UnkStruct9_Unk04 { get; set; }
 
                 /// <summary>
                 /// Creates an UnkStruct7 with default values.
@@ -1245,8 +1308,11 @@ namespace SoulsFormats
 
                 internal UnkStruct9(BinaryReaderEx br)
                 {
-                    UnkStruct9_Unk00 = br.ReadInt32();
-                    br.AssertInt32(0);
+                    UnkStruct9_Unk00 = br.ReadByte();
+                    UnkStruct9_Unk01 = br.ReadByte();
+                    UnkStruct9_Unk02 = br.ReadByte();
+                    UnkStruct9_Unk03 = br.ReadByte();
+                    UnkStruct9_Unk04 = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -1257,8 +1323,11 @@ namespace SoulsFormats
 
                 internal void Write(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkStruct9_Unk00);
-                    bw.WriteInt32(0);
+                    bw.WriteByte(UnkStruct9_Unk00);
+                    bw.WriteByte(UnkStruct9_Unk01);
+                    bw.WriteByte(UnkStruct9_Unk02);
+                    bw.WriteByte(UnkStruct9_Unk03);
+                    bw.WriteInt32(UnkStruct9_Unk04);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -1279,9 +1348,24 @@ namespace SoulsFormats
                 public byte[] MapID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. The game reads it as a byte.
                 /// </summary>
-                public int TileLoadConfig_Unk04 { get; set; }
+                public byte TileLoadConfig_Unk04 { get; set; }
+
+                /// <summary>
+                /// Unknown; not read by the game.
+                /// </summary>
+                public byte TileLoadConfig_Unk05 { get; set; }
+
+                /// <summary>
+                /// Unknown; not read by the game.
+                /// </summary>
+                public byte TileLoadConfig_Unk06 { get; set; }
+
+                /// <summary>
+                /// Unknown; not read by the game.
+                /// </summary>
+                public byte TileLoadConfig_Unk07 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1319,7 +1403,10 @@ namespace SoulsFormats
                 internal TileLoadConfig(BinaryReaderEx br)
                 {
                     MapID = br.ReadBytes(4);
-                    TileLoadConfig_Unk04 = br.ReadInt32();
+                    TileLoadConfig_Unk04 = br.ReadByte();
+                    TileLoadConfig_Unk05 = br.ReadByte();
+                    TileLoadConfig_Unk06 = br.ReadByte();
+                    TileLoadConfig_Unk07 = br.ReadByte();
                     br.AssertInt32(0);
                     TileLoadConfig_Unk0C = br.ReadInt32();
                     TileLoadConfig_Unk10 = br.AssertInt32([0, 1]);
@@ -1331,7 +1418,10 @@ namespace SoulsFormats
                 internal void Write(BinaryWriterEx bw)
                 {
                     bw.WriteBytes(MapID);
-                    bw.WriteInt32(TileLoadConfig_Unk04);
+                    bw.WriteByte(TileLoadConfig_Unk04);
+                    bw.WriteByte(TileLoadConfig_Unk05);
+                    bw.WriteByte(TileLoadConfig_Unk06);
+                    bw.WriteByte(TileLoadConfig_Unk07);
                     bw.WriteInt32(0);
                     bw.WriteInt32(TileLoadConfig_Unk0C);
                     bw.WriteInt32(TileLoadConfig_Unk10);
@@ -1553,6 +1643,11 @@ namespace SoulsFormats
                 public int TalkID { get; set; }
 
                 /// <summary>
+                /// Unknown. Always 0 in retail; read by the game (getter 0x140CF17C0).
+                /// </summary>
+                public byte UnkT14 { get; set; }
+
+                /// <summary>
                 /// Unknown.
                 /// </summary>
                 public bool UnkT15 { get; set; }
@@ -1587,9 +1682,25 @@ namespace SoulsFormats
                 public int UnkT24 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Hour of the in-game clock the enemy starts appearing at. When the four ActivateTime values are all 0, the
+                /// times of its ChrActivateConditionParam row are used instead (e.g. 20:00-05:00 for night-only enemies).
                 /// </summary>
-                public int UnkT28 { get; set; }
+                public byte ActivateTimeStartHour { get; set; }
+
+                /// <summary>
+                /// Minute of the in-game clock the enemy starts appearing at.
+                /// </summary>
+                public byte ActivateTimeStartMinute { get; set; }
+
+                /// <summary>
+                /// Hour of the in-game clock the enemy stops appearing at.
+                /// </summary>
+                public byte ActivateTimeEndHour { get; set; }
+
+                /// <summary>
+                /// Minute of the in-game clock the enemy stops appearing at.
+                /// </summary>
+                public byte ActivateTimeEndMinute { get; set; }
 
                 /// <summary>
                 /// ID in ChrActivateConditionParam that affects enemy appearance conditions.
@@ -1657,7 +1768,7 @@ namespace SoulsFormats
                     ThinkParamID = br.ReadInt32();
                     NPCParamID = br.ReadInt32();
                     TalkID = br.ReadInt32();
-                    br.AssertByte(0);
+                    UnkT14 = br.ReadByte();
                     UnkT15 = br.ReadBoolean();
                     PlatoonID = br.ReadInt16();
                     CharaInitID = br.ReadInt32();
@@ -1665,7 +1776,10 @@ namespace SoulsFormats
                     WalkRouteIndex = br.ReadInt16();
                     br.AssertInt16(0);
                     UnkT24 = br.ReadInt32();
-                    UnkT28 = br.ReadInt32();
+                    ActivateTimeStartHour = br.ReadByte();
+                    ActivateTimeStartMinute = br.ReadByte();
+                    ActivateTimeEndHour = br.ReadByte();
+                    ActivateTimeEndMinute = br.ReadByte();
                     ChrActivateCondParamID = br.ReadInt32();
                     br.AssertInt32(0);
                     UnkT34 = br.ReadInt32();
@@ -1700,7 +1814,7 @@ namespace SoulsFormats
                     bw.WriteInt32(ThinkParamID);
                     bw.WriteInt32(NPCParamID);
                     bw.WriteInt32(TalkID);
-                    bw.WriteByte(0);
+                    bw.WriteByte(UnkT14);
                     bw.WriteBoolean(UnkT15);
                     bw.WriteInt16(PlatoonID);
                     bw.WriteInt32(CharaInitID);
@@ -1708,7 +1822,10 @@ namespace SoulsFormats
                     bw.WriteInt16(WalkRouteIndex);
                     bw.WriteInt16(0);
                     bw.WriteInt32(UnkT24);
-                    bw.WriteInt32(UnkT28);
+                    bw.WriteByte(ActivateTimeStartHour);
+                    bw.WriteByte(ActivateTimeStartMinute);
+                    bw.WriteByte(ActivateTimeEndHour);
+                    bw.WriteByte(ActivateTimeEndMinute);
                     bw.WriteInt32(ChrActivateCondParamID);
                     bw.WriteInt32(0);
                     bw.WriteInt32(UnkT34);
@@ -2001,9 +2118,14 @@ namespace SoulsFormats
                 public uint EnableFastTravelEventFlagID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. 0, 1 or 2 in retail; read by its own getter.
                 /// </summary>
-                public short UnkT4C { get; set; }
+                public byte UnkT4C { get; set; }
+
+                /// <summary>
+                /// Unknown. Always 0 in retail; read by its own getter.
+                /// </summary>
+                public byte UnkT4D { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2067,7 +2189,8 @@ namespace SoulsFormats
                     UnkT40 = br.ReadSingle();
                     br.AssertInt32(0);
                     EnableFastTravelEventFlagID = br.ReadUInt32();
-                    UnkT4C = br.AssertInt16([0, 1, 2]);
+                    UnkT4C = br.ReadByte();
+                    UnkT4D = br.ReadByte();
                     UnkT4E = br.ReadInt16();
                 }
 
@@ -2108,7 +2231,8 @@ namespace SoulsFormats
                     bw.WriteSingle(UnkT40);
                     bw.WriteInt32(0);
                     bw.WriteUInt32(EnableFastTravelEventFlagID);
-                    bw.WriteInt16(UnkT4C);
+                    bw.WriteByte(UnkT4C);
+                    bw.WriteByte(UnkT4D);
                     bw.WriteInt16(UnkT4E);
                 }
 
@@ -2438,13 +2562,24 @@ namespace SoulsFormats
                 public UnkStruct11 UnkStruct11 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown; not read by the game.
                 /// </summary>
-                public short UnkT00 { get; set; }
+                public byte UnkT00 { get; set; }
+
+                /// <summary>
+                /// Unknown. Read by its own getter.
+                /// </summary>
+                public byte UnkT01 { get; set; }
+
                 /// <summary>
                 /// Unknown.
                 /// </summary>
                 public short UnkT02 { get; set; }
+
+                /// <summary>
+                /// Unknown. Always 0 in retail; the game tests it.
+                /// </summary>
+                public long UnkT08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2462,6 +2597,12 @@ namespace SoulsFormats
                 public byte UnkT12 { get; set; }
 
                 /// <summary>
+                /// Overrides the asset geometry param's excludeActivateRatio_PS4 (Grid or Legacy) when not 0. Only read when
+                /// running as the PS4 build; 0 in retail.
+                /// </summary>
+                public byte ExcludeActivateRatioOverride_PS4 { get; set; }
+
+                /// <summary>
                 /// Value added onto model ID determining AssetModelSfxParam to use.
                 /// </summary>
                 public short AssetSfxParamRelativeID { get; set; }
@@ -2474,7 +2615,22 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT24 { get; set; }
+                public byte UnkT24 { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
+                public byte UnkT25 { get; set; }
+
+                /// <summary>
+                /// Unknown. Read by the game.
+                /// </summary>
+                public byte UnkT26 { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
+                public byte UnkT27 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2489,10 +2645,26 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT34 { get; set; }
+                public byte UnkT34 { get; set; }
 
                 /// <summary>
                 /// Unknown.
+                /// </summary>
+                public byte UnkT35 { get; set; }
+
+                /// <summary>
+                /// Unknown. Read by the game.
+                /// </summary>
+                public byte UnkT36 { get; set; }
+
+                /// <summary>
+                /// Unknown. Read by the game.
+                /// </summary>
+                public byte UnkT37 { get; set; }
+
+                /// <summary>
+                /// Parts referenced by the asset. [4] and [5] are its Collision: the game uses [5] if set, else [4], and
+                /// reads that collision's type data (e.g. DisableTorrent). On open-world tiles the loader clears both.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] PartNames { get; set; }
@@ -2505,9 +2677,16 @@ namespace SoulsFormats
                 public bool UnkT50 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown category, 0, 1 or 2 (0 for nearly all retail assets). 1 and 2 put the asset in two separate instance
+                /// lists of the geometry manager, checked next to DisableRTAO.
                 /// </summary>
                 public byte UnkT51 { get; set; }
+
+                /// <summary>
+                /// Overrides the asset geometry param's excludeActivateRatio_Xboxone (Grid or Legacy) when not 0. Only read when
+                /// running as the Xbox One build, for MSB version 0x45 and later; 0 in retail.
+                /// </summary>
+                public byte ExcludeActivateRatioOverride_XboxOne { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2548,9 +2727,14 @@ namespace SoulsFormats
                 public class AssetUnkStruct1
                 {
                     /// <summary>
-                    /// Unknown.
+                    /// Unknown. Read by the game.
                     /// </summary>
-                    public short AssetStruct1_Unk00 { get; set; }
+                    public byte AssetStruct1_Unk00 { get; set; }
+
+                    /// <summary>
+                    /// Unknown; not read by the game.
+                    /// </summary>
+                    public byte AssetStruct1_Unk01 { get; set; }
 
                     /// <summary>
                     /// Unknown.
@@ -2563,9 +2747,29 @@ namespace SoulsFormats
                     public bool DisableTorrentAssetOnly { get; set; }
 
                     /// <summary>
+                    /// Unknown. Always -1 in retail; read by the game.
+                    /// </summary>
+                    public short AssetStruct1_Unk06 { get; set; } = -1;
+
+                    /// <summary>
+                    /// Unknown. Always 0 in retail; read by the game as a byte.
+                    /// </summary>
+                    public byte AssetStruct1_Unk0C { get; set; }
+
+                    /// <summary>
+                    /// Unknown. Always -1 in retail; read by the game.
+                    /// </summary>
+                    public int AssetStruct1_Unk10 { get; set; } = -1;
+
+                    /// <summary>
                     /// Unknown.
                     /// </summary>
                     public int AssetStruct1_Unk1C { get; set; }
+
+                    /// <summary>
+                    /// Unknown. Always 0 in retail; read by the game.
+                    /// </summary>
+                    public int AssetStruct1_Unk20 { get; set; }
 
                     /// <summary>
                     /// Unknown.
@@ -2602,18 +2806,22 @@ namespace SoulsFormats
 
                     internal AssetUnkStruct1(BinaryReaderEx br)
                     {
-                        AssetStruct1_Unk00 = br.ReadInt16();
+                        AssetStruct1_Unk00 = br.ReadByte();
+                        AssetStruct1_Unk01 = br.ReadByte();
                         br.AssertInt16(-1);
                         AssetStruct1_Unk04 = br.ReadBoolean();
                         DisableTorrentAssetOnly = br.ReadBoolean();
-                        br.AssertInt16(-1);
+                        AssetStruct1_Unk06 = br.ReadInt16();
                         br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(-1);
+                        AssetStruct1_Unk0C = br.ReadByte();
+                        br.AssertByte(0);
+                        br.AssertByte(0);
+                        br.AssertByte(0);
+                        AssetStruct1_Unk10 = br.ReadInt32();
                         br.AssertInt32(-1);
                         br.AssertInt32(-1);
                         AssetStruct1_Unk1C = br.ReadInt32();
-                        br.AssertInt32(0);
+                        AssetStruct1_Unk20 = br.ReadInt32();
                         AssetStruct1_Unk24 = br.ReadInt16();
                         AssetStruct1_Unk26 = br.ReadInt16();
                         AssetStruct1_Unk28 = br.ReadInt32();
@@ -2626,18 +2834,22 @@ namespace SoulsFormats
 
                     internal void Write(BinaryWriterEx bw)
                     {
-                        bw.WriteInt16(AssetStruct1_Unk00);
+                        bw.WriteByte(AssetStruct1_Unk00);
+                        bw.WriteByte(AssetStruct1_Unk01);
                         bw.WriteInt16(-1);
                         bw.WriteBoolean(AssetStruct1_Unk04);
                         bw.WriteBoolean(DisableTorrentAssetOnly);
-                        bw.WriteInt16(-1);
+                        bw.WriteInt16(AssetStruct1_Unk06);
                         bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(-1);
+                        bw.WriteByte(AssetStruct1_Unk0C);
+                        bw.WriteByte(0);
+                        bw.WriteByte(0);
+                        bw.WriteByte(0);
+                        bw.WriteInt32(AssetStruct1_Unk10);
                         bw.WriteInt32(-1);
                         bw.WriteInt32(-1);
                         bw.WriteInt32(AssetStruct1_Unk1C);
-                        bw.WriteInt32(0);
+                        bw.WriteInt32(AssetStruct1_Unk20);
                         bw.WriteInt16(AssetStruct1_Unk24);
                         bw.WriteInt16(AssetStruct1_Unk26);
                         bw.WriteInt32(AssetStruct1_Unk28);
@@ -2655,14 +2867,34 @@ namespace SoulsFormats
                 public class AssetUnkStruct2
                 {
                     /// <summary>
-                    /// Unknown.
+                    /// Unknown. Read by the game as a byte.
                     /// </summary>
-                    public int AssetUnkStruct2_Unk00 { get; set; }
+                    public byte AssetUnkStruct2_Unk00 { get; set; }
+
+                    /// <summary>
+                    /// Unknown; not read by the game.
+                    /// </summary>
+                    public byte AssetUnkStruct2_Unk01 { get; set; }
+
+                    /// <summary>
+                    /// Unknown; not read by the game.
+                    /// </summary>
+                    public byte AssetUnkStruct2_Unk02 { get; set; }
+
+                    /// <summary>
+                    /// Unknown; not read by the game.
+                    /// </summary>
+                    public byte AssetUnkStruct2_Unk03 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
                     public int AssetUnkStruct2_Unk04 { get; set; }
+
+                    /// <summary>
+                    /// Unknown. Always -1 in retail; read by the game (sign tested).
+                    /// </summary>
+                    public int AssetUnkStruct2_Unk08 { get; set; } = -1;
 
                     /// <summary>
                     /// Unknown.
@@ -2704,9 +2936,12 @@ namespace SoulsFormats
 
                     internal AssetUnkStruct2(BinaryReaderEx br)
                     {
-                        AssetUnkStruct2_Unk00 = br.ReadInt32();
+                        AssetUnkStruct2_Unk00 = br.ReadByte();
+                        AssetUnkStruct2_Unk01 = br.ReadByte();
+                        AssetUnkStruct2_Unk02 = br.ReadByte();
+                        AssetUnkStruct2_Unk03 = br.ReadByte();
                         AssetUnkStruct2_Unk04 = br.ReadInt32();
-                        br.AssertInt32(-1);
+                        AssetUnkStruct2_Unk08 = br.ReadInt32();
                         br.AssertInt32(0);
                         br.AssertInt32(0);
                         AssetUnkStruct2_Unk14 = br.ReadSingle();
@@ -2727,9 +2962,12 @@ namespace SoulsFormats
 
                     internal void Write(BinaryWriterEx bw)
                     {
-                        bw.WriteInt32(AssetUnkStruct2_Unk00);
+                        bw.WriteByte(AssetUnkStruct2_Unk00);
+                        bw.WriteByte(AssetUnkStruct2_Unk01);
+                        bw.WriteByte(AssetUnkStruct2_Unk02);
+                        bw.WriteByte(AssetUnkStruct2_Unk03);
                         bw.WriteInt32(AssetUnkStruct2_Unk04);
-                        bw.WriteInt32(-1);
+                        bw.WriteInt32(AssetUnkStruct2_Unk08);
                         bw.WriteInt32(0);
                         bw.WriteInt32(0);
                         bw.WriteSingle(AssetUnkStruct2_Unk14);
@@ -2755,14 +2993,34 @@ namespace SoulsFormats
                 public class AssetUnkStruct3
                 {
                     /// <summary>
-                    /// Unknown.
+                    /// Unknown. Read by the game as a byte.
                     /// </summary>
-                    public int AssetUnkStruct3_Unk00 { get; set; }
+                    public byte AssetUnkStruct3_Unk00 { get; set; }
+
+                    /// <summary>
+                    /// Unknown; not read by the game.
+                    /// </summary>
+                    public byte AssetUnkStruct3_Unk01 { get; set; }
+
+                    /// <summary>
+                    /// Unknown; not read by the game.
+                    /// </summary>
+                    public byte AssetUnkStruct3_Unk02 { get; set; }
+
+                    /// <summary>
+                    /// Unknown; not read by the game.
+                    /// </summary>
+                    public byte AssetUnkStruct3_Unk03 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
                     public float AssetUnkStruct3_Unk04 { get; set; }
+
+                    /// <summary>
+                    /// Unknown. Always -1 in retail; read by the game.
+                    /// </summary>
+                    public sbyte AssetUnkStruct3_Unk08 { get; set; } = -1;
 
                     /// <summary>
                     /// Unknown.
@@ -2785,9 +3043,14 @@ namespace SoulsFormats
                     public short AssetUnkStruct3_Unk0C { get; set; }
 
                     /// <summary>
-                    /// Unknown.
+                    /// Unknown. Read by the game as a byte.
                     /// </summary>
-                    public short AssetUnkStruct3_Unk0E { get; set; }
+                    public byte AssetUnkStruct3_Unk0E { get; set; }
+
+                    /// <summary>
+                    /// Unknown. Read by the game as a byte.
+                    /// </summary>
+                    public byte AssetUnkStruct3_Unk0F { get; set; }
 
                     /// <summary>
                     /// Unknown.
@@ -2849,14 +3112,18 @@ namespace SoulsFormats
 
                     internal AssetUnkStruct3(BinaryReaderEx br)
                     {
-                        AssetUnkStruct3_Unk00 = br.ReadInt32();
+                        AssetUnkStruct3_Unk00 = br.ReadByte();
+                        AssetUnkStruct3_Unk01 = br.ReadByte();
+                        AssetUnkStruct3_Unk02 = br.ReadByte();
+                        AssetUnkStruct3_Unk03 = br.ReadByte();
                         AssetUnkStruct3_Unk04 = br.ReadSingle();
-                        br.AssertSByte(-1);
+                        AssetUnkStruct3_Unk08 = br.ReadSByte();
                         AssetUnkStruct3_Unk09 = br.ReadByte();
                         AssetUnkStruct3_Unk0A = br.ReadByte();
                         AssetUnkStruct3_Unk0B = br.ReadByte();
                         AssetUnkStruct3_Unk0C = br.ReadInt16();
-                        AssetUnkStruct3_Unk0E = br.ReadInt16();
+                        AssetUnkStruct3_Unk0E = br.ReadByte();
+                        AssetUnkStruct3_Unk0F = br.ReadByte();
                         AssetUnkStruct3_Unk10 = br.ReadSingle();
                         DisableWhenMapLoadedMapID = br.ReadSBytes(4);
                         AssetUnkStruct3_Unk18 = br.ReadInt32();
@@ -2876,14 +3143,18 @@ namespace SoulsFormats
 
                     internal void Write(BinaryWriterEx bw)
                     {
-                        bw.WriteInt32(AssetUnkStruct3_Unk00);
+                        bw.WriteByte(AssetUnkStruct3_Unk00);
+                        bw.WriteByte(AssetUnkStruct3_Unk01);
+                        bw.WriteByte(AssetUnkStruct3_Unk02);
+                        bw.WriteByte(AssetUnkStruct3_Unk03);
                         bw.WriteSingle(AssetUnkStruct3_Unk04);
-                        bw.WriteSByte(-1);
+                        bw.WriteSByte(AssetUnkStruct3_Unk08);
                         bw.WriteByte(AssetUnkStruct3_Unk09);
                         bw.WriteByte(AssetUnkStruct3_Unk0A);
                         bw.WriteByte(AssetUnkStruct3_Unk0B);
                         bw.WriteInt16(AssetUnkStruct3_Unk0C);
-                        bw.WriteInt16(AssetUnkStruct3_Unk0E);
+                        bw.WriteByte(AssetUnkStruct3_Unk0E);
+                        bw.WriteByte(AssetUnkStruct3_Unk0F);
                         bw.WriteSingle(AssetUnkStruct3_Unk10);
                         bw.WriteSBytes(DisableWhenMapLoadedMapID);
                         bw.WriteInt32(AssetUnkStruct3_Unk18);
@@ -3053,29 +3324,35 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt16();
+                    UnkT00 = br.ReadByte();
+                    UnkT01 = br.ReadByte();
                     UnkT02 = br.AssertInt16([0, 1]);
                     br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
+                    UnkT08 = br.ReadInt64();
                     UnkT10 = br.ReadByte();
                     ApplyDestructionToAdjacentAssets = br.ReadBoolean();
                     UnkT12 = br.ReadByte();
-                    br.AssertByte(0);
+                    ExcludeActivateRatioOverride_PS4 = br.ReadByte();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     AssetSfxParamRelativeID = br.ReadInt16();
                     UnkT1E = br.ReadInt16();
                     br.AssertInt32(-1);
-                    UnkT24 = br.ReadInt32();
+                    UnkT24 = br.ReadByte();
+                    UnkT25 = br.ReadByte();
+                    UnkT26 = br.ReadByte();
+                    UnkT27 = br.ReadByte();
                     UnkT28 = br.ReadInt32();
                     br.AssertInt32(0);
                     UnkT30 = br.ReadInt32();
-                    UnkT34 = br.ReadInt32();
+                    UnkT34 = br.ReadByte();
+                    UnkT35 = br.ReadByte();
+                    UnkT36 = br.ReadByte();
+                    UnkT37 = br.ReadByte();
                     PartIndices = br.ReadInt32s(6);
                     UnkT50 = br.ReadBoolean();
                     UnkT51 = br.ReadByte();
-                    br.AssertByte(0);
+                    ExcludeActivateRatioOverride_XboxOne = br.ReadByte();
                     UnkT53 = br.ReadByte();
                     UnkT54PartIndex = br.ReadInt32();
                     UnkModelMaskAndAnimID = br.ReadInt32();
@@ -3106,29 +3383,35 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt16(UnkT00);
+                    bw.WriteByte(UnkT00);
+                    bw.WriteByte(UnkT01);
                     bw.WriteInt16(UnkT02);
                     bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
+                    bw.WriteInt64(UnkT08);
                     bw.WriteByte(UnkT10);
                     bw.WriteBoolean(ApplyDestructionToAdjacentAssets);
                     bw.WriteByte(UnkT12);
-                    bw.WriteByte(0);
+                    bw.WriteByte(ExcludeActivateRatioOverride_PS4);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt16(AssetSfxParamRelativeID);
                     bw.WriteInt16(UnkT1E);
                     bw.WriteInt32(-1);
-                    bw.WriteInt32(UnkT24);
+                    bw.WriteByte(UnkT24);
+                    bw.WriteByte(UnkT25);
+                    bw.WriteByte(UnkT26);
+                    bw.WriteByte(UnkT27);
                     bw.WriteInt32(UnkT28);
                     bw.WriteInt32(0);
                     bw.WriteInt32(UnkT30);
-                    bw.WriteInt32(UnkT34);
+                    bw.WriteByte(UnkT34);
+                    bw.WriteByte(UnkT35);
+                    bw.WriteByte(UnkT36);
+                    bw.WriteByte(UnkT37);
                     bw.WriteInt32s(PartIndices);
                     bw.WriteBoolean(UnkT50);
                     bw.WriteByte(UnkT51);
-                    bw.WriteByte(0);
+                    bw.WriteByte(ExcludeActivateRatioOverride_XboxOne);
                     bw.WriteByte(UnkT53);
                     bw.WriteInt32(UnkT54PartIndex);
                     bw.WriteInt32(UnkModelMaskAndAnimID);

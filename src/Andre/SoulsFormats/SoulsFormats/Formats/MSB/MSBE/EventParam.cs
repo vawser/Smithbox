@@ -253,9 +253,24 @@ namespace SoulsFormats
             public byte UnkE0C { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Unknown. The game reads it as a byte.
             /// </summary>
-            public int UnkS04 { get; set; }
+            public byte UnkS04 { get; set; }
+
+            /// <summary>
+            /// Unknown; not read by the game.
+            /// </summary>
+            public byte UnkS05 { get; set; }
+
+            /// <summary>
+            /// Unknown; not read by the game.
+            /// </summary>
+            public byte UnkS06 { get; set; }
+
+            /// <summary>
+            /// Unknown; not read by the game.
+            /// </summary>
+            public byte UnkS07 { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -333,7 +348,10 @@ namespace SoulsFormats
                 // Unk3
                 br.Position = start + unk3Offset;
                 MapID = br.ReadInt32();
-                UnkS04 = br.ReadInt32();
+                UnkS04 = br.ReadByte();
+                UnkS05 = br.ReadByte();
+                UnkS06 = br.ReadByte();
+                UnkS07 = br.ReadByte();
                 UnkS08 = br.ReadInt32();
                 UnkS0C = br.ReadInt32();
                 br.AssertInt32(0);
@@ -392,7 +410,10 @@ namespace SoulsFormats
 
                 bw.FillInt64("Unk3Offset", bw.Position - start);
                 bw.WriteInt32(MapID);
-                bw.WriteInt32(UnkS04);
+                bw.WriteByte(UnkS04);
+                bw.WriteByte(UnkS05);
+                bw.WriteByte(UnkS06);
+                bw.WriteByte(UnkS07);
                 bw.WriteInt32(UnkS08);
                 bw.WriteInt32(UnkS0C);
                 bw.WriteInt32(0);

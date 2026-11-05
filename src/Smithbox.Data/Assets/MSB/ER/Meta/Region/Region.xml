@@ -51,6 +51,18 @@
     <UnkS04
     AltName="Unknown: 0x4"
     Wiki="" />
+
+    <UnkS05
+    AltName="Unknown: 0x5"
+    Wiki="Not read by the game." />
+
+    <UnkS06
+    AltName="Unknown: 0x6"
+    Wiki="Not read by the game." />
+
+    <UnkS07
+    AltName="Unknown: 0x7"
+    Wiki="Not read by the game." />
     
     <UnkS0C
     AltName="Unknown: 0x0C"

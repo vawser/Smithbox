@@ -225,9 +225,36 @@ fine.)
   `dis`/`fdis` before relying on it. Rows from the MSB translation units (`CSMsbParts*`, `CSMsbPoint`, `CSMsbEvent`,
   `MsbResCap`) are reliable.
 
+## Applied to SoulsFormats (MSBE) and Smithbox
+
+Renamed to the exe meaning; old ER names are not kept. Round trip (`Tools/MsbRoundTrip`, run from `src/Smithbox.Data`):
+1,346 of 1,347 ER MSBs are byte-perfect before and after. `m61_51_45_00` already differed before (8 bytes longer at
+`0xB3C0`) and is unchanged.
+
+* **Part entity:** `PartsDrawParamID` is now `int` (it covers the old `IsPointLightShadowSrc` sbyte and `UnkE0B`).
+  `0C..19h` are six `Override*` / value byte pairs (`OverridePointLightShadowSrc`/`IsPointLightShadowSrc`,
+  `OverrideDirLightShadowSrc`/`IsDirLightShadowSrc`, `OverrideShadowDest`/`IsShadowDest`, `UnkE12`/`UnkE13`,
+  `OverrideShadowOnly`/`IsShadowOnly`, `OverrideDrawByReflectCam`/`DrawByReflectCam`,
+  `OverrideDrawOnlyReflectCam`/`DrawOnlyReflectCam`, `UnkE1A`/`UnkE1B`). Removed: `IsShadowSrc`, `IsStaticShadowSrc`,
+  `IsCascade3ShadowSrc`, `UnkE0F`, `UnkE10`, `EnableOnAboveShadow`, `DisablePointLightEffect`, `UnkE17`, `UnkE18`.
+* **DisplayDataStruct:** `DisplayGroups`, `AltDisplayGroups`, `AltDisplayGroupsMask`, `DrawGroups` (now `+60h`),
+  `AltDrawGroups`, `AltDrawGroupsMask`, `NoAltGroupMerge` (was Condition1), `UseAltGroups` (was Condition2).
+  `CollisionMask` is gone.
+* **Splits** into bytes: TileLoad `Unk04..07`, `UnkStruct8_Unk00` (byte), `UnkStruct9_Unk00..03`, Asset
+  `UnkT00/01`, `UnkT24..27`, `UnkT34..37`, `AssetStruct1_Unk00/01`, `AssetUnkStruct2_Unk00..03`,
+  `AssetUnkStruct3_Unk00..03`, `AssetUnkStruct3_Unk0E/0F`, Enemy `UnkT28..2B`, Collision `UnkT4C/4D`, region/event
+  `UnkS04..07`.
+* **New properties** (were asserted constants, with the same defaults): `UnkStruct9_Unk04`, Asset `UnkT08` (long),
+  `UnkT13`, `UnkT52`, `AssetStruct1_Unk06` (-1), `_Unk0C`, `_Unk10` (-1), `_Unk20`, `AssetUnkStruct2_Unk08` (-1),
+  `AssetUnkStruct3_Unk08` (-1), Enemy `UnkT14`, WeatherOverride `UnkT04` (-1).
+* Left as they are: `DisplayGroupStruct.Condition` (read both as an int and as bytes) and the event type-data bytes
+  (they differ per event type and haven't been checked per type).
+* Smithbox: the ER meta (`src/Smithbox.Data` and the Output copy) has entries for all of the above. Sun-shadow
+  display (`MsbEntity.RefreshShadowFlags`, `GparamUniverse`) uses the override pairs for ER. The map editor's render
+  groups now read the real draw groups, because `DrawGroups` is at `+60h`.
+
 ## Suggested next steps
 
-1. Fix the SoulsFormats layouts in §1, §2, §6 and §7. Each must round-trip all ER MSBs byte-identically before and after.
-2. Correct the names and wikis in `Assets/MSB/ER/Meta`, and point the map editor's draw groups at `+60h`.
-3. Trace the callers in `getters.tsv` for the remaining unnamed reads (UnkE3E, UnkE3C, Asset `UnkT51`/`+52h`, Enemy
-   `UnkT28` bytes) to name them.
+1. Trace the callers in `getters.tsv` for the remaining unnamed reads (UnkE3E, UnkE3C, Asset `UnkT51`/`UnkT52`, Enemy
+   `UnkT28..2B`) to name them.
+2. Check the event type-data bytes per event type, then split the ones that are really bytes.

@@ -8,6 +8,10 @@
     AltName="Weather Lot Param ID"
     Wiki="Determines which WeatherLotParam ID to use."
     ParamRef="WeatherLotParam" />
+
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="-1 when unused." />
   
     <UnkT08
     AltName="Unknown: 0x8"

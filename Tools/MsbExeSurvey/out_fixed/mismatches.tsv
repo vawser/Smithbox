@@ -1,0 +1,10 @@
+NO PROPERTY	Event.Entity	0x4	4		game	test; arg3 140CFC020	1405EF6D0
+SPLIT	Event.Type	0x3	1		game	inside LimitNum(2)/ObjActEntityID(4)/HostEntityID(4)/PlatoonIDScriptActivate(4)	14036BB90
+SPLIT	Event.Type	0x4	1		CSMsbEvent	inside MinGenNum(2)/EventFlagID(4)/State(4)/SignPuddleParamID(4)/TriggerEventFlagID(4)	140CF60A0
+SPLIT	Event.Type	0x5	1		CSMsbEvent	inside MinGenNum(2)/EventFlagID(4)/State(4)/SignPuddleParamID(4)/TriggerEventFlagID(4)	140CF6080
+SPLIT	Event.Type	0x7	1		CSMsbEvent	inside MaxGenNum(2)/EventFlagID(4)/State(4)/SignPuddleParamID(4)/TriggerEventFlagID(4)	140CF60C0
+SPLIT	Part.DisplayGroup	0x0	1		MsbResCap	inside DisplayGroupStruct.Condition(4)	140CF890E
+SPLIT	Part.DisplayGroup	0x1	1		MsbResCap	inside DisplayGroupStruct.Condition(4)	140CF890E
+SPLIT	Part.DisplayGroup	0x2	1		MsbResCap	inside DisplayGroupStruct.Condition(4)	140CF890E
+NO PROPERTY	Part.Type	0x20	2	Part.Enemy,Part.DummyEnemy	game,CSMsbPartsEne	store [R13+15C]; ret; or -1	1403664F0
+NO PROPERTY	Point.Entity	0x0	4		CSMsbPoint	ret; or -1; test	140CFDC50

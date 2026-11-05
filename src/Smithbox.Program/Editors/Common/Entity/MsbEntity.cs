@@ -148,8 +148,9 @@ public class MsbEntity : Entity
 
     /// <summary>
     /// Has the part's mesh cast and receive the sun's shadow as its MSB flags say: IsShadowSrc (ShadowSource in DS3
-    /// and BB) or IsShadowOnly to cast, IsShadowDest (ShadowDest) to receive. A format without the flags, and every
-    /// part when Viewport_Shadows_Use_Msb_Flags is off, does both.
+    /// and BB) or IsShadowOnly to cast, IsShadowDest (ShadowDest) to receive. In Elden Ring each flag only counts when
+    /// its Override byte is set (IsDirLightShadowSrc for the sun); otherwise the part's draw param decides, taken here
+    /// as its usual value. A format without the flags, and every part when Viewport_Shadows_Use_Msb_Flags is off, does both.
     /// </summary>
     private void RefreshShadowFlags()
     {
@@ -163,9 +164,15 @@ public class MsbEntity : Entity
             return;
         }
 
-        var source = ReadShadowFlag("IsShadowSrc") ?? ReadShadowFlag("ShadowSource") ?? true;
-        var only = ReadShadowFlag("IsShadowOnly") ?? false;
-        var dest = ReadShadowFlag("IsShadowDest") ?? ReadShadowFlag("ShadowDest") ?? true;
+        // Elden Ring: an override byte, then the value it applies
+        bool? Overridden(string over, string value, bool fallback)
+            => ReadShadowFlag(over) is bool on ? (on ? ReadShadowFlag(value) ?? fallback : fallback) : null;
+
+        var source = Overridden("OverrideDirLightShadowSrc", "IsDirLightShadowSrc", true)
+            ?? ReadShadowFlag("IsShadowSrc") ?? ReadShadowFlag("ShadowSource") ?? true;
+        var only = Overridden("OverrideShadowOnly", "IsShadowOnly", false) ?? ReadShadowFlag("IsShadowOnly") ?? false;
+        var dest = Overridden("OverrideShadowDest", "IsShadowDest", true)
+            ?? ReadShadowFlag("IsShadowDest") ?? ReadShadowFlag("ShadowDest") ?? true;
 
         mesh.CastsShadow = source || only;
         mesh.ReceivesShadow = dest;

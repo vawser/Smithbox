@@ -1194,7 +1194,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Shadows_Msb_Flags_TT",
-      "Text": "Whether parts cast shadows as their IsShadowSrc or IsShadowOnly says, and receive them as their IsShadowDest says (ShadowSource and ShadowDest in DS3 and Bloodborne). Otherwise every part does both. Applies to parts as they are loaded or edited, so reload the map to apply it to all of them."
+      "Text": "Whether parts cast shadows as their IsShadowSrc or IsShadowOnly says, and receive them as their IsShadowDest says (ShadowSource and ShadowDest in DS3 and Bloodborne; in Elden Ring the Is Sun Shadow Source, Is Shadow Only and Is Shadow Destination flags, each only when its override is on). Otherwise every part does both. Applies to parts as they are loaded or edited, so reload the map to apply it to all of them."
     },
     {
       "Key": "VIEWPORT_Rendering_Shadow_Active",
