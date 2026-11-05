@@ -3,5 +3,3 @@
 #----------------------------------------------------
 
 - Expand the amount of GPARAM elements considered by the renderer
-
-- Verify read/write GPARAM for all project types
