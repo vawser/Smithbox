@@ -66,6 +66,30 @@ public class GparamBank : IDisposable
     {
         await Task.Yield();
 
+        return LoadGraphicsParamNow(fileEntry);
+    }
+
+    /// <summary>
+    /// Drop the file's loaded GPARAM and read it again from the file system, e.g. after the project copy was deleted
+    /// and the vanilla one should show
+    /// </summary>
+    public bool ReloadGraphicsParam(FileDictionaryEntry fileEntry)
+    {
+        if (!Entries.TryGetValue(fileEntry, out var wrapper))
+            return false;
+
+        wrapper.Gparam = null;
+        wrapper.IsDirty = false;
+
+        return LoadGraphicsParamNow(fileEntry);
+    }
+
+    /// <summary>
+    /// Load the file's GPARAM on the calling thread. Selection uses this: none of the work is asynchronous, and
+    /// loading on the caller keeps the selection from being set out of order or against the previous file.
+    /// </summary>
+    public bool LoadGraphicsParamNow(FileDictionaryEntry fileEntry)
+    {
         // If already loaded, just ignore
         if (Entries.Any(e => e.Key.Filename == fileEntry.Filename && e.Key.Extension == fileEntry.Extension && e.Value.IsLoaded()))
         {

@@ -2,27 +2,38 @@
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Numerics;
-using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
 
+/// <summary>
+/// Adds values to a field: either duplicates of existing values (placed after the last of them), or values built by
+/// the caller (placed at the end, e.g. the default value for an empty field).
+/// A value never takes an ID the field already uses: a colliding ID moves up to the next free one.
+/// </summary>
 public class AddValueAction : EditorAction
 {
     private ProjectEntry Project { get; set; }
     private GPARAM Data { get; set; }
     private GPARAM.Param TargetGroup { get; set; }
     private GPARAM.IField TargetField { get; set; }
-    private List<GPARAM.IFieldValue> TargetValues { get; set; }
-    private List<GPARAM.IFieldValue> StoredValues { get; set; } = new();
-    private List<UnkParamExtra> StoredParamExtras { get; set; } = new();
+
+    private List<GPARAM.IFieldValue> SourceValues { get; set; }
+    private List<GPARAM.IFieldValue> PrebuiltValues { get; set; }
 
     private bool UseDuplicateOffset { get; set; }
     private int DuplicateID { get; set; }
     private int DuplicateOffset { get; set; }
 
+    // Built on the first execute and reused by redo, as later actions on the redo stack refer to these objects
+    private List<(int Index, GPARAM.IFieldValue Value)> Inserted { get; set; } = null;
+
+    private List<GPARAM.UnkParamExtra> StoredParamExtras { get; set; } = new();
+
+    /// <summary>
+    /// Duplicate the values. Each copy's ID is <paramref name="duplicateID"/>, or its source's ID plus
+    /// <paramref name="duplicateOffset"/> if <paramref name="useDuplicateOffset"/>, moved up to the next free ID.
+    /// </summary>
     public AddValueAction(ProjectEntry project, GPARAM data, GPARAM.Param group, GPARAM.IField field,
         List<GPARAM.IFieldValue> values, int duplicateID, int duplicateOffset, bool useDuplicateOffset)
     {
@@ -30,21 +41,44 @@ public class AddValueAction : EditorAction
         Data = data;
         TargetGroup = group;
         TargetField = field;
-        TargetValues = values;
+        SourceValues = new List<GPARAM.IFieldValue>(values);
         DuplicateID = duplicateID;
         DuplicateOffset = duplicateOffset;
         UseDuplicateOffset = useDuplicateOffset;
     }
 
+    /// <summary>
+    /// Add these already built values at the end of the field. Their IDs are moved up to the next free one if taken.
+    /// </summary>
+    public AddValueAction(ProjectEntry project, GPARAM data, GPARAM.Param group, GPARAM.IField field,
+        List<GPARAM.IFieldValue> newValues)
+    {
+        Project = project;
+        Data = data;
+        TargetGroup = group;
+        TargetField = field;
+        PrebuiltValues = new List<GPARAM.IFieldValue>(newValues);
+    }
+
     public override ActionEvent Execute()
     {
-        StoredValues = new List<GPARAM.IFieldValue>();
+        if (Inserted == null)
+        {
+            Inserted = PrebuiltValues != null ? PlacePrebuilt() : PlaceDuplicates();
+        }
 
-        DispatchOnField(TargetField, TargetValues, add: true);
+        if (Inserted.Count == 0)
+            return ActionEvent.NoEvent;
 
-        StoredParamExtras = Data.UnkParamExtras.Select(x => x.Clone()).ToList();
+        StoredParamExtras = GparamUtils.SnapshotParamExtras(Data);
 
-        UpdateGroupIndexes(Data);
+        // Lowest first: each index is where the value sits with the earlier ones already in place
+        foreach (var entry in Inserted)
+        {
+            TargetField.InsertValueAt(entry.Index, entry.Value);
+        }
+
+        GparamUtils.RebuildParamExtras(Data);
 
         Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
@@ -53,7 +87,14 @@ public class AddValueAction : EditorAction
 
     public override ActionEvent Undo()
     {
-        DispatchOnField(TargetField, StoredValues, add: false);
+        if (Inserted == null || Inserted.Count == 0)
+            return ActionEvent.NoEvent;
+
+        foreach (var entry in Inserted)
+        {
+            TargetField.RemoveValue(entry.Value);
+        }
+
         Data.UnkParamExtras = StoredParamExtras;
 
         Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
@@ -61,99 +102,62 @@ public class AddValueAction : EditorAction
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    private void DispatchOnField(GPARAM.IField field, List<GPARAM.IFieldValue> values, bool add)
+    private List<(int Index, GPARAM.IFieldValue Value)> PlaceDuplicates()
     {
-        switch (field)
+        var result = new List<(int, GPARAM.IFieldValue)>();
+
+        var sources = SourceValues
+            .Where(e => e != null && TargetField.IndexOfValue(e) >= 0)
+            .OrderBy(e => TargetField.IndexOfValue(e))
+            .ToList();
+
+        if (sources.Count == 0)
+            return result;
+
+        // The copies go straight after the last of the values being copied
+        var insertIndex = sources.Max(e => TargetField.IndexOfValue(e)) + 1;
+
+        var taken = new HashSet<int>();
+
+        foreach (var source in sources)
         {
-            case SbyteField f: Mutate(f.Values, values, add); break;
-            case ByteField f: Mutate(f.Values, values, add); break;
-            case ShortField f: Mutate(f.Values, values, add); break;
-            case UshortField f: Mutate(f.Values, values, add); break;
-            case IntField f: Mutate(f.Values, values, add); break;
-            case UintField f: Mutate(f.Values, values, add); break;
-            case LongField f: Mutate(f.Values, values, add); break;
-            case UlongField f: Mutate(f.Values, values, add); break;
-            case FloatField f: Mutate(f.Values, values, add); break;
-            case DoubleField f: Mutate(f.Values, values, add); break;
-            case BoolField f: Mutate(f.Values, values, add); break;
-            case Vector2Field f: Mutate(f.Values, values, add); break;
-            case Vector3Field f: Mutate(f.Values, values, add); break;
-            case Vector4Field f: Mutate(f.Values, values, add); break;
-            case ColorField f: Mutate(f.Values, values, add); break;
-            case StringField f: Mutate(f.Values, values, add); break;
+            var copy = TargetField.CloneValue(source);
+
+            var requested = UseDuplicateOffset ? source.ID + DuplicateOffset : DuplicateID;
+            copy.ID = GparamUtils.NextFreeValueId(TargetField, requested, taken);
+            taken.Add(copy.ID);
+
+            if (copy.ID != requested)
+            {
+                Smithbox.Log(this, $"Value ID {requested} is already used in {TargetField.Key}: the duplicate uses ID {copy.ID}.");
+            }
+
+            result.Add((insertIndex, copy));
+            insertIndex++;
         }
+
+        return result;
     }
 
-    private void Mutate<T>(List<FieldValue<T>> fieldValues, List<GPARAM.IFieldValue> targets, bool add)
+    private List<(int Index, GPARAM.IFieldValue Value)> PlacePrebuilt()
     {
-        if (add)
+        var result = new List<(int, GPARAM.IFieldValue)>();
+
+        var insertIndex = TargetField.Values.Count;
+        var taken = new HashSet<int>();
+
+        foreach (var value in PrebuiltValues)
         {
-            int insertIndex = -1;
-            foreach (var target in targets)
-            {
-                int idx = fieldValues.IndexOf((FieldValue<T>)target);
-                if (idx > insertIndex)
-                    insertIndex = idx;
-            }
+            if (value == null || !TargetField.AcceptsValue(value))
+                continue;
 
-            insertIndex = insertIndex < 0 ? fieldValues.Count : insertIndex + 1;
+            value.ID = GparamUtils.NextFreeValueId(TargetField, value.ID, taken);
+            taken.Add(value.ID);
 
-            foreach (var target in targets)
-            {
-                var newVal = new FieldValue<T>
-                {
-                    TimeOfDay = target.TimeOfDay,
-                    Value = (T)target.Value,
-                    ID = UseDuplicateOffset ? target.ID + DuplicateOffset : DuplicateID
-                };
-
-                fieldValues.Insert(insertIndex, newVal);
-                StoredValues.Add(newVal);
-                insertIndex++;
-            }
-        }
-        else
-        {
-            foreach (var target in targets)
-            {
-                fieldValues.Remove((FieldValue<T>)target);
-            }
+            result.Add((insertIndex, value));
+            insertIndex++;
         }
 
-        if (TargetField is Field<T> f)
-        {
-            f.Capacity = (short)fieldValues.Count;
-        }
-    }
-
-    private void UpdateGroupIndexes(GPARAM gparam)
-    {
-        var newGroupIndexes = new List<UnkParamExtra>();
-        int idx = 0;
-
-        foreach (var param in gparam.Params)
-        {
-            var entry = new UnkParamExtra
-            {
-                GroupIndex = idx,
-                Unk0c = 0
-            };
-
-            foreach (var field in param.Fields)
-            {
-                foreach (var val in field.Values)
-                {
-                    if (!entry.Ids.Contains(val.ID))
-                    {
-                        entry.Ids.Add(val.ID);
-                    }
-                }
-            }
-
-            newGroupIndexes.Add(entry);
-            ++idx;
-        }
-
-        gparam.UnkParamExtras = newGroupIndexes;
+        return result;
     }
 }

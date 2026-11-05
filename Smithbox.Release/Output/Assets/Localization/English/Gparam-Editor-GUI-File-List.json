@@ -38,7 +38,7 @@
     },
     {
       "Key": "GPARAM_FileList_Context_Copy_As_Action_TT",
-      "Text": "Copy this GPARAM and rename the copied file."
+      "Text": "Copy this GPARAM to a new file in your project, under a new name.\n\nThe copy holds the GPARAM as it is in the editor, unsaved changes included."
     },
     {
       "Key": "GPARAM_FileList_Context_Delete_Action",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "GPARAM_FileList_Context_Delete_Action_TT",
-      "Text": "Delete this GPARAM from your project."
+      "Text": "Delete your project's copy of this GPARAM.\n\nIf the game has this file, it goes back to the game's version; otherwise it is removed from the list. Asks first."
     },
     {
       "Key": "GPARAM_FileList_Context_Import_Action",
@@ -131,6 +131,66 @@
     {
       "Key": "GPARAM_FileList_CopyAs_Missing_Source_Path",
       "Text": "Failed to find the source file: {0}"
+    },
+    {
+      "Key": "GPARAM_FileList_CopyAs_Filename_Invalid",
+      "Text": "Copy As filename contains characters a file name can't hold: {0}"
+    },
+    {
+      "Key": "GPARAM_FileList_CopyAs_Unexpected_Path",
+      "Text": "Copy As couldn't work out the new path, as the file name doesn't start with the GPARAM's name: {0}"
+    },
+    {
+      "Key": "GPARAM_FileList_CopyAs_Exists",
+      "Text": "A GPARAM already exists at {0}. Choose another name."
+    },
+    {
+      "Key": "GPARAM_FileList_CopyAs_Failed",
+      "Text": "Failed to write the copy to {0}."
+    },
+    {
+      "Key": "GPARAM_FileList_CopyAs_Done",
+      "Text": "Copied {0} to {1}."
+    },
+    {
+      "Key": "GPARAM_FileList_Delete_Confirm_Title",
+      "Text": "Delete GPARAM"
+    },
+    {
+      "Key": "GPARAM_FileList_Delete_Confirm_Text_Revert",
+      "Text": "Delete your project's copy of {0}?\n\nThe file goes back to the game's version. Unsaved changes to it are lost, and the undo history is cleared. This can't be undone."
+    },
+    {
+      "Key": "GPARAM_FileList_Delete_Confirm_Text_Remove",
+      "Text": "Delete {0} from your project?\n\nThe game doesn't have this file, so it is removed from the list. Unsaved changes to it are lost, and the undo history is cleared. This can't be undone."
+    },
+    {
+      "Key": "GPARAM_FileList_Delete_Confirm",
+      "Text": "Delete"
+    },
+    {
+      "Key": "GPARAM_FileList_Delete_Confirm_TT",
+      "Text": "Delete the project's copy of the file."
+    },
+    {
+      "Key": "GPARAM_FileList_Delete_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "GPARAM_FileList_Delete_Cancel_TT",
+      "Text": "Keep the file."
+    },
+    {
+      "Key": "GPARAM_FileList_Delete_Failed",
+      "Text": "Failed to delete {0}."
+    },
+    {
+      "Key": "GPARAM_FileList_Delete_Done_Revert",
+      "Text": "Deleted the project's copy of {0}: it now shows the game's version."
+    },
+    {
+      "Key": "GPARAM_FileList_Delete_Done_Remove",
+      "Text": "Deleted {0} from the project."
     }
   ]
 }

@@ -1,11 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -14,36 +10,33 @@ public class AddGroupAction : EditorAction
     private ProjectEntry Project { get; set; }
     private GPARAM Data { get; set; }
 
-    private List<GparamAnnotationEntry> TargetGroups { get; set; } = new();
-    private List<GPARAM.Param> StoredGroups { get; set; } = new();
+    // Built once, so a redo puts back the same objects that later actions on the redo stack refer to
+    private List<GPARAM.Param> NewGroups { get; set; } = new();
 
-    private List<int> StoredIndices { get; set; } = new();
+    private List<GPARAM.UnkParamExtra> StoredParamExtras { get; set; } = new();
 
     public AddGroupAction(ProjectEntry project, GPARAM data, List<GparamAnnotationEntry> groups)
     {
         Project = project;
         Data = data;
-        TargetGroups = groups;
 
-        foreach (var entry in TargetGroups)
+        foreach (var entry in groups)
         {
-            var newParam = GparamConstructUtils.AddNewParam(Project, entry);
-            StoredGroups.Add(newParam);
+            NewGroups.Add(GparamConstructUtils.AddNewParam(Project, entry));
         }
     }
 
     public override ActionEvent Execute()
     {
-        StoredIndices = new List<int>();
+        if (NewGroups.Count == 0)
+            return ActionEvent.NoEvent;
 
-        int insertIndex = Data.Params.Count;
+        StoredParamExtras = GparamUtils.SnapshotParamExtras(Data);
+        var previousParams = new List<GPARAM.Param>(Data.Params);
 
-        foreach (var entry in StoredGroups)
-        {
-            Data.Params.Insert(insertIndex, entry);
-            StoredIndices.Add(insertIndex);
-            insertIndex++;
-        }
+        Data.Params.AddRange(NewGroups);
+
+        GparamUtils.RebuildParamExtras(Data, previousParams);
 
         Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
@@ -52,10 +45,16 @@ public class AddGroupAction : EditorAction
 
     public override ActionEvent Undo()
     {
-        for (int i = StoredIndices.Count - 1; i >= 0; i--)
+        if (NewGroups.Count == 0)
+            return ActionEvent.NoEvent;
+
+        // By reference, not by index, in case the list has moved since
+        foreach (var group in NewGroups)
         {
-            Data.Params.RemoveAt(StoredIndices[i]);
+            Data.Params.Remove(group);
         }
+
+        Data.UnkParamExtras = StoredParamExtras;
 
         Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 

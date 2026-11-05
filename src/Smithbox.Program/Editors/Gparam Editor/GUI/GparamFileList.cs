@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
+using System;
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -16,6 +17,12 @@ public class GparamFileList
 
     private string FileListFilter = "";
     private bool ExactFileListFilter = false;
+
+    // The file the delete confirmation is asking about
+    private FileDictionaryEntry PendingDeleteEntry = null;
+    private bool OpenDeleteConfirm = false;
+
+    private const string DeleteConfirmId = "###gparamFileDeleteConfirm";
 
     public GparamFileList(GparamEditorView view, ProjectEntry project)
     {
@@ -36,6 +43,8 @@ public class GparamFileList
         DisplayFileList();
 
         ImGui.EndChild();
+
+        DisplayDeleteConfirm();
     }
     public void DisplayHeader()
     {
@@ -72,9 +81,12 @@ public class GparamFileList
 
     private void DisplayFileList()
     {
-        for(int i = 0; i < View.Project.Handler.GparamData.PrimaryBank.Entries.Count; i++)
+        // A snapshot: Copy As and Delete change the bank's entries from inside the loop
+        var entries = View.Project.Handler.GparamData.PrimaryBank.Entries.ToList();
+
+        for (int i = 0; i < entries.Count; i++)
         {
-            var entry = View.Project.Handler.GparamData.PrimaryBank.Entries.ElementAt(i);
+            var entry = entries[i];
 
             // For BB, toggle which gparam files are displayed
             if (Project.Descriptor.ProjectType is ProjectType.BB)
@@ -127,7 +139,13 @@ public class GparamFileList
 
         // File row
         // The ## suffix keeps the ImGui ID stable when the dirty marker toggles
-        if (ImGui.Selectable($@" {filename}##gparamFile_{fileEntry.Filename}", fileEntry.Filename == View.Selection._selectedGparamKey))
+        if (ImGui.Selectable($@" {filename}##gparamFile_{fileEntry.Filename}.{fileEntry.Extension}", View.Selection.IsSelectedFile(fileEntry)))
+        {
+            View.Selection.SetFileSelection(fileEntry);
+        }
+
+        // Right-click selects the row too, so its context menu opens on it
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Right) && !View.Selection.IsSelectedFile(fileEntry))
         {
             View.Selection.SetFileSelection(fileEntry);
         }
@@ -162,9 +180,7 @@ public class GparamFileList
 
     public void ContextMenu(FileDictionaryEntry fileEntry, GPARAM curGparam)
     {
-        var fileKey = View.Selection._selectedGparamKey;
-
-        if (fileEntry.Filename != fileKey)
+        if (!View.Selection.IsSelectedFile(fileEntry))
             return;
 
         if (ImGui.BeginPopupContextItem($"##Gparam_File_Context"))
@@ -172,7 +188,7 @@ public class GparamFileList
             // Copy as
             if(ImGui.BeginMenu($"{LOC.Get("GPARAM_FileList_Context_Copy_As_Header")}##copyAsHeader"))
             {
-                CopyAsMenu();
+                CopyAsMenu(fileEntry);
 
                 ImGui.EndMenu();
             }
@@ -183,7 +199,9 @@ public class GparamFileList
             {
                 if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Delete_Action")}##deleteAction"))
                 {
-                    DeleteGparamFile(fileEntry);
+                    // Asked in a modal, opened outside this popup once it has closed
+                    PendingDeleteEntry = fileEntry;
+                    OpenDeleteConfirm = true;
                 }
                 GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Delete_Action_TT"));
             }
@@ -200,7 +218,7 @@ public class GparamFileList
             // Export
             if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FileList_Context_Export_Header")}##exportHeader"))
             {
-                ImGui.InputTextWithHint("##overrideFilename", 
+                ImGui.InputTextWithHint("##overrideFilename",
                     LOC.Get("GPARAM_FileList_Context_Export_Filename_Hint"), ref OverrideFileName, 255);
                 GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Export_Filename_TT"));
 
@@ -256,11 +274,12 @@ public class GparamFileList
         }
     }
 
+    #region Copy As
     private string CopyAsFileName = "";
 
-    public void CopyAsMenu()
+    public void CopyAsMenu(FileDictionaryEntry source)
     {
-        ImGui.InputTextWithHint("##copyAsFileNameInput", 
+        ImGui.InputTextWithHint("##copyAsFileNameInput",
             LOC.Get("GPARAM_FileList_Context_CopyAs_Filename_Hint"),
             ref CopyAsFileName, 255);
 
@@ -269,70 +288,260 @@ public class GparamFileList
         // Submit
         if(ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_CopyAs_Submit")}##copyAsSubmit"))
         {
-            if(CopyAsFileName == "")
-            {
-                Smithbox.LogError<GparamFileList>(
-                    LOC.Get("GPARAM_FileList_CopyAs_Filename_Empty"));
-            }
-            else
-            {
-                // Then actually copy the file
-                var oldPath = View.Selection.SelectedFileEntry.Path;
-                var srcPath = Path.Join(ProjectFileLocator.NormalizePath(Project.Descriptor.ProjectPath), oldPath);
-
-                // Fallback to the vanilla version if there isn't an existing project-edited version
-                if(!File.Exists(srcPath))
-                {
-                    srcPath = Path.Join(ProjectFileLocator.NormalizePath(Project.Descriptor.DataPath), oldPath);
-                }
-
-                if(!File.Exists(srcPath))
-                {
-                    Smithbox.LogError<GparamFileList>(
-                        LOC.Get("GPARAM_FileList_CopyAs_Missing_Source_Path", srcPath));
-                }
-                else
-                {
-                    // Add the new file to the internal structures so it is immediately editable
-                    var oldName = View.Selection.SelectedFileEntry.Filename;
-                    var newFileEntry = View.Selection.SelectedFileEntry.Clone();
-                    newFileEntry.Path = newFileEntry.Path.Replace(oldName, CopyAsFileName);
-                    newFileEntry.Filename = newFileEntry.Filename.Replace(oldName, CopyAsFileName);
-
-                    Project.Locator.GparamFiles.Entries.Add(newFileEntry);
-                    Project.Handler.GparamData.PrimaryBank.Entries.Add(newFileEntry, new GparamWrapper(newFileEntry));
-
-                    var copyPath = Path.Join(ProjectFileLocator.NormalizePath(Project.Descriptor.ProjectPath), newFileEntry.Path);
-
-                    File.Copy(srcPath, copyPath);
-                }
-            }
+            CopyAs(source, CopyAsFileName.Trim());
         }
     }
 
-    // Only allow files in the project directory to be deleted.
+    /// <summary>
+    /// Write a copy of the file under a new name into the project, and add it to the list.
+    /// The copy holds the GPARAM as it is in the editor, unsaved changes included, or the file as it is on disk if it
+    /// hasn't been opened. It is read through the VFS, so a file only in the game archives can be copied too.
+    /// </summary>
+    private void CopyAs(FileDictionaryEntry source, string newName)
+    {
+        var bank = Project.Handler.GparamData.PrimaryBank;
+        var oldName = source.Filename;
+
+        if (newName == "")
+        {
+            Smithbox.LogError<GparamFileList>(LOC.Get("GPARAM_FileList_CopyAs_Filename_Empty"));
+            return;
+        }
+
+        if (newName.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
+        {
+            Smithbox.LogError<GparamFileList>(LOC.Get("GPARAM_FileList_CopyAs_Filename_Invalid", newName));
+            return;
+        }
+
+        // The new path differs from the old in the file name only: the leading name part is swapped,
+        // keeping the folder and the extensions (e.g. .gparam.dcx)
+        var slash = source.Path.LastIndexOf('/');
+        var folder = slash >= 0 ? source.Path[..(slash + 1)] : "";
+        var oldFileName = slash >= 0 ? source.Path[(slash + 1)..] : source.Path;
+
+        if (!oldFileName.StartsWith(oldName, StringComparison.OrdinalIgnoreCase))
+        {
+            Smithbox.LogError<GparamFileList>(LOC.Get("GPARAM_FileList_CopyAs_Unexpected_Path", source.Path));
+            return;
+        }
+
+        var newPath = folder + newName + oldFileName[oldName.Length..];
+
+        var nameTaken = bank.Entries.Keys.Any(e =>
+            string.Equals(e.Filename, newName, StringComparison.OrdinalIgnoreCase) && e.Extension == source.Extension);
+
+        if (nameTaken || Project.VFS.FS.FileExists(newPath))
+        {
+            Smithbox.LogError<GparamFileList>(LOC.Get("GPARAM_FileList_CopyAs_Exists", newPath));
+            return;
+        }
+
+        try
+        {
+            var data = BuildCopyData(source, oldName, newName);
+
+            if (data == null)
+            {
+                Smithbox.LogError<GparamFileList>(LOC.Get("GPARAM_FileList_CopyAs_Missing_Source_Path", source.Path));
+                return;
+            }
+
+            // Creates the folder in the project if it isn't there yet
+            Project.VFS.ProjectFS.WriteFile(newPath, data);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError<GparamFileList>(LOC.Get("GPARAM_FileList_CopyAs_Failed", newPath), e);
+            return;
+        }
+
+        // Only now the file exists: add it so it is immediately editable
+        var newFileEntry = source.Clone();
+        newFileEntry.Path = newPath;
+        newFileEntry.Filename = newName;
+
+        Project.Locator.GparamFiles.Entries.Add(newFileEntry);
+        bank.Entries.Add(newFileEntry, new GparamWrapper(newFileEntry));
+
+        View.Selection.SetFileSelection(newFileEntry);
+
+        Smithbox.Log<GparamFileList>(LOC.Get("GPARAM_FileList_CopyAs_Done", oldName, newPath));
+    }
+
+    /// <summary>
+    /// The bytes of the copy, or null if the source can't be read
+    /// </summary>
+    private byte[] BuildCopyData(FileDictionaryEntry source, string oldName, string newName)
+    {
+        var bank = Project.Handler.GparamData.PrimaryBank;
+        bank.Entries.TryGetValue(source, out var wrapper);
+
+        var loaded = wrapper?.Gparam;
+
+        // BB container: the GPARAM inside is found by its name, so it is renamed too, or the copy would never load
+        if (source.Extension == "gparambnd")
+        {
+            var bndData = Project.VFS.FS.ReadFile(source.Path);
+
+            if (bndData == null)
+                return null;
+
+            var binder = BND4.Read(bndData.Value);
+
+            var inner = binder.Files.FirstOrDefault(e => Path.GetFileNameWithoutExtension(e.Name) == oldName);
+
+            if (inner == null)
+                return null;
+
+            if (loaded != null)
+            {
+                inner.Bytes = loaded.Write();
+            }
+
+            var innerFileName = Path.GetFileName(inner.Name);
+            var innerFolder = inner.Name[..^innerFileName.Length];
+
+            inner.Name = innerFolder + newName + innerFileName[oldName.Length..];
+
+            return binder.Write();
+        }
+
+        // Loose file: the editor's GPARAM keeps the compression it was read with
+        if (loaded != null)
+        {
+            return loaded.Write();
+        }
+
+        return Project.VFS.FS.ReadFile(source.Path)?.ToArray();
+    }
+    #endregion
+
+    #region Delete
+    /// <summary>
+    /// Only files the project holds can be deleted
+    /// </summary>
     private bool IsDeletableGparamFile(FileDictionaryEntry entry)
     {
-        var srcPath = Path.Join(ProjectFileLocator.NormalizePath(Project.Descriptor.ProjectPath), entry.Path);
-
-        if(File.Exists(srcPath))
-        {
-            return true;
-        }
-
-        return false;
+        return Project.VFS.ProjectFS.FileExists(entry.Path);
     }
 
+    private void DisplayDeleteConfirm()
+    {
+        if (OpenDeleteConfirm)
+        {
+            OpenDeleteConfirm = false;
+            ImGui.OpenPopup($"{LOC.Get("GPARAM_FileList_Delete_Confirm_Title")}{DeleteConfirmId}");
+        }
+
+        var open = true;
+        var confirmed = false;
+
+        if (ImGui.BeginPopupModal($"{LOC.Get("GPARAM_FileList_Delete_Confirm_Title")}{DeleteConfirmId}",
+            ref open, ImGuiWindowFlags.AlwaysAutoResize))
+        {
+            var entry = PendingDeleteEntry;
+            var hasVanilla = entry != null && Project.VFS.VanillaFS.FileExists(entry.Path);
+
+            GUI.WrappedText(LOC.Get(hasVanilla
+                ? "GPARAM_FileList_Delete_Confirm_Text_Revert"
+                : "GPARAM_FileList_Delete_Confirm_Text_Remove",
+                entry?.Path ?? ""));
+
+            var cancelled = false;
+
+            GUI.MultiButtonInput("gparamFileDeleteConfirmActions",
+                "gparamFileDeleteConfirm",
+                LOC.Get("GPARAM_FileList_Delete_Confirm"),
+                LOC.Get("GPARAM_FileList_Delete_Confirm_TT"),
+                () => confirmed = true,
+
+                "gparamFileDeleteCancel",
+                LOC.Get("GPARAM_FileList_Delete_Cancel"),
+                LOC.Get("GPARAM_FileList_Delete_Cancel_TT"),
+                () => cancelled = true);
+
+            if (confirmed || cancelled)
+            {
+                ImGui.CloseCurrentPopup();
+            }
+
+            ImGui.EndPopup();
+        }
+
+        if (confirmed && PendingDeleteEntry != null)
+        {
+            DeleteGparamFile(PendingDeleteEntry);
+        }
+
+        if (confirmed || !open)
+        {
+            PendingDeleteEntry = null;
+        }
+    }
+
+    /// <summary>
+    /// Delete the project's copy of the file. If the game data has the file too, the entry stays and shows the
+    /// vanilla file from then on; if the file was the project's own (e.g. made with Copy As), the entry goes.
+    /// </summary>
     private void DeleteGparamFile(FileDictionaryEntry entry)
     {
-        var srcPath = Path.Join(ProjectFileLocator.NormalizePath(Project.Descriptor.ProjectPath), entry.Path);
+        var bank = Project.Handler.GparamData.PrimaryBank;
 
-        if (File.Exists(srcPath))
+        try
         {
-            File.Delete(srcPath);
+            Project.VFS.ProjectFS.Delete(entry.Path);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError<GparamFileList>(LOC.Get("GPARAM_FileList_Delete_Failed", entry.Path), e);
+            return;
         }
 
-        Project.Locator.GparamFiles.Entries.Remove(entry);
-        Project.Handler.GparamData.PrimaryBank.Entries.Remove(entry);
+        var hasVanilla = Project.VFS.VanillaFS.FileExists(entry.Path);
+
+        if (hasVanilla)
+        {
+            // Read again on next use, now from the vanilla file
+            if (bank.Entries.TryGetValue(entry, out var wrapper))
+            {
+                wrapper.Gparam = null;
+                wrapper.IsDirty = false;
+            }
+        }
+        else
+        {
+            Project.Locator.GparamFiles.Entries.Remove(entry);
+            bank.Entries.Remove(entry);
+        }
+
+        // The undo steps of every view may refer to the deleted GPARAM, which nothing displays or saves any more
+        foreach (var view in View.Editor.ViewHandler.TexViews)
+        {
+            view.ActionManager.Clear();
+        }
+
+        // The Map, Model and Time Act Editors keep their own copies of the GPARAMs they read
+        Project.Handler.MapData?.FogVolumeBank?.ClearSettingsCache();
+        Project.Handler.MapData?.GparamLightingBank?.ClearCache();
+        Project.Handler.ExistingViewportEnvironment?.LightingBank.ClearCache();
+
+        // Every view's selection is checked against the bank each frame, so the others clear themselves.
+        // This one shows the vanilla file in its place, if there is one.
+        if (View.Selection.IsSelectedFile(entry))
+        {
+            View.Selection.ResetSelection();
+            View.Selection.SelectedFileEntry = null;
+
+            if (hasVanilla)
+            {
+                View.Selection.SetFileSelection(entry);
+            }
+        }
+
+        Smithbox.Log<GparamFileList>(LOC.Get(hasVanilla
+            ? "GPARAM_FileList_Delete_Done_Revert"
+            : "GPARAM_FileList_Delete_Done_Remove", entry.Path));
     }
+    #endregion
 }

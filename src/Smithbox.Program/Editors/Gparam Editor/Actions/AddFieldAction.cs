@@ -1,12 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.GparamEditor;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -15,37 +10,35 @@ public class AddFieldAction : EditorAction
     private ProjectEntry Project { get; set; }
     private GPARAM Data { get; set; }
     private GPARAM.Param TargetGroup { get; set; }
-    private List<GparamAnnotationFieldEntry> TargetFields { get; set; }
-    private List<GPARAM.IField> StoredFields { get; set; } = new();
 
-    private List<int> StoredIndices { get; set; } = new();
+    // Built once, so a redo puts back the same objects that later actions on the redo stack refer to
+    private List<GPARAM.IField> NewFields { get; set; } = new();
+
+    private List<GPARAM.UnkParamExtra> StoredParamExtras { get; set; } = new();
 
     public AddFieldAction(ProjectEntry project, GPARAM data, GPARAM.Param group, List<GparamAnnotationFieldEntry> fields)
     {
         Project = project;
         Data = data;
         TargetGroup = group;
-        TargetFields = fields;
 
-        foreach (var entry in TargetFields)
+        foreach (var entry in fields)
         {
-            var newField = GparamConstructUtils.AddNewField(entry);
-            StoredFields.Add(newField);
+            NewFields.Add(GparamConstructUtils.AddNewField(entry));
         }
     }
 
     public override ActionEvent Execute()
     {
-        StoredIndices = new List<int>();
+        if (NewFields.Count == 0)
+            return ActionEvent.NoEvent;
 
-        int insertIndex = TargetGroup.Fields.Count;
+        StoredParamExtras = GparamUtils.SnapshotParamExtras(Data);
 
-        foreach (var entry in StoredFields)
-        {
-            TargetGroup.Fields.Insert(insertIndex, entry);
-            StoredIndices.Add(insertIndex);
-            insertIndex++;
-        }
+        TargetGroup.Fields.AddRange(NewFields);
+
+        // Each new field brings a value with ID 0, which the group may not have listed yet
+        GparamUtils.RebuildParamExtras(Data);
 
         Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
@@ -54,10 +47,16 @@ public class AddFieldAction : EditorAction
 
     public override ActionEvent Undo()
     {
-        for (int i = StoredIndices.Count - 1; i >= 0; i--)
+        if (NewFields.Count == 0)
+            return ActionEvent.NoEvent;
+
+        // By reference, not by index, in case the list has moved since
+        foreach (var field in NewFields)
         {
-            TargetGroup.Fields.RemoveAt(StoredIndices[i]);
+            TargetGroup.Fields.Remove(field);
         }
+
+        Data.UnkParamExtras = StoredParamExtras;
 
         Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 

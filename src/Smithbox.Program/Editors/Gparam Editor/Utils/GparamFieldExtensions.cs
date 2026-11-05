@@ -174,6 +174,149 @@ public static class GparamFieldExtensions
             default:
                 throw new NotSupportedException($"Cannot set value for unknown field type: {field.GetType().Name}");
         }
+
+        // The writer writes Capacity as the value count
+        field.SyncCapacity();
+    }
+
+    /// <summary>
+    /// The field's typed value list, as a non-generic list. Every Field&lt;T&gt;.Values is a List&lt;FieldValue&lt;T&gt;&gt;,
+    /// which checks the element type itself on insert.
+    /// </summary>
+    public static System.Collections.IList ValueList(this GPARAM.IField field)
+    {
+        return field switch
+        {
+            GPARAM.SbyteField f => f.Values,
+            GPARAM.ShortField f => f.Values,
+            GPARAM.IntField f => f.Values,
+            GPARAM.LongField f => f.Values,
+            GPARAM.ByteField f => f.Values,
+            GPARAM.UshortField f => f.Values,
+            GPARAM.UintField f => f.Values,
+            GPARAM.UlongField f => f.Values,
+            GPARAM.FloatField f => f.Values,
+            GPARAM.DoubleField f => f.Values,
+            GPARAM.BoolField f => f.Values,
+            GPARAM.Vector2Field f => f.Values,
+            GPARAM.Vector3Field f => f.Values,
+            GPARAM.Vector4Field f => f.Values,
+            GPARAM.ColorField f => f.Values,
+            GPARAM.StringField f => f.Values,
+            _ => throw new NotSupportedException($"Unknown field type: {field.GetType().Name}")
+        };
+    }
+
+    /// <summary>
+    /// Set the field's Capacity to its value count. GPARAM.Write writes Capacity as the count and Read reads exactly
+    /// that many values, so the two must match or the saved file is corrupt.
+    /// </summary>
+    public static void SyncCapacity(this GPARAM.IField field)
+    {
+        var count = (short)field.Values.Count;
+
+        switch (field)
+        {
+            case GPARAM.SbyteField f: f.Capacity = count; break;
+            case GPARAM.ShortField f: f.Capacity = count; break;
+            case GPARAM.IntField f: f.Capacity = count; break;
+            case GPARAM.LongField f: f.Capacity = count; break;
+            case GPARAM.ByteField f: f.Capacity = count; break;
+            case GPARAM.UshortField f: f.Capacity = count; break;
+            case GPARAM.UintField f: f.Capacity = count; break;
+            case GPARAM.UlongField f: f.Capacity = count; break;
+            case GPARAM.FloatField f: f.Capacity = count; break;
+            case GPARAM.DoubleField f: f.Capacity = count; break;
+            case GPARAM.BoolField f: f.Capacity = count; break;
+            case GPARAM.Vector2Field f: f.Capacity = count; break;
+            case GPARAM.Vector3Field f: f.Capacity = count; break;
+            case GPARAM.Vector4Field f: f.Capacity = count; break;
+            case GPARAM.ColorField f: f.Capacity = count; break;
+            case GPARAM.StringField f: f.Capacity = count; break;
+        }
+    }
+
+    /// <summary>
+    /// Whether the value is of the field's value type (e.g. a FieldValue&lt;float&gt; for a FloatField)
+    /// </summary>
+    public static bool AcceptsValue(this GPARAM.IField field, GPARAM.IFieldValue value)
+    {
+        if (field == null || value == null)
+            return false;
+
+        var listType = field.ValueList().GetType();
+
+        return listType.IsGenericType && listType.GetGenericArguments()[0] == value.GetType();
+    }
+
+    /// <summary>
+    /// Insert the value at the index (clamped to the list) and keep Capacity in step
+    /// </summary>
+    public static void InsertValueAt(this GPARAM.IField field, int index, GPARAM.IFieldValue value)
+    {
+        var list = field.ValueList();
+
+        index = Math.Clamp(index, 0, list.Count);
+
+        list.Insert(index, value);
+        field.SyncCapacity();
+    }
+
+    /// <summary>
+    /// Remove the value (by reference) and keep Capacity in step. Returns the index it was at, or -1.
+    /// </summary>
+    public static int RemoveValue(this GPARAM.IField field, GPARAM.IFieldValue value)
+    {
+        var index = field.IndexOfValue(value);
+
+        if (index == -1)
+            return -1;
+
+        field.ValueList().RemoveAt(index);
+        field.SyncCapacity();
+
+        return index;
+    }
+
+    /// <summary>
+    /// Replace the value at the index and keep Capacity in step
+    /// </summary>
+    public static void ReplaceValueAt(this GPARAM.IField field, int index, GPARAM.IFieldValue value)
+    {
+        field.ValueList()[index] = value;
+        field.SyncCapacity();
+    }
+
+    /// <summary>
+    /// A new value of the field's type holding the type's default (empty for strings)
+    /// </summary>
+    public static GPARAM.IFieldValue CreateDefaultValue(this GPARAM.IField field, int id)
+    {
+        GPARAM.IFieldValue value = field switch
+        {
+            GPARAM.SbyteField => new GPARAM.FieldValue<sbyte>(),
+            GPARAM.ShortField => new GPARAM.FieldValue<short>(),
+            GPARAM.IntField => new GPARAM.FieldValue<int>(),
+            GPARAM.LongField => new GPARAM.FieldValue<long>(),
+            GPARAM.ByteField => new GPARAM.FieldValue<byte>(),
+            GPARAM.UshortField => new GPARAM.FieldValue<ushort>(),
+            GPARAM.UintField => new GPARAM.FieldValue<uint>(),
+            GPARAM.UlongField => new GPARAM.FieldValue<ulong>(),
+            GPARAM.FloatField => new GPARAM.FieldValue<float>(),
+            GPARAM.DoubleField => new GPARAM.FieldValue<double>(),
+            GPARAM.BoolField => new GPARAM.FieldValue<bool>(),
+            GPARAM.Vector2Field => new GPARAM.FieldValue<Vector2>(),
+            GPARAM.Vector3Field => new GPARAM.FieldValue<Vector3>(),
+            GPARAM.Vector4Field => new GPARAM.FieldValue<Vector4>(),
+            GPARAM.ColorField => new GPARAM.FieldValue<Color>(),
+            GPARAM.StringField => new GPARAM.FieldValue<string>() { Value = "" },
+            _ => throw new NotSupportedException($"Unknown field type: {field.GetType().Name}")
+        };
+
+        value.ID = id;
+        value.TimeOfDay = 0;
+
+        return value;
     }
 
     private static GPARAM.Field<T> CloneTypedField<T>(GPARAM.Field<T> source)

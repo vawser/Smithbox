@@ -107,6 +107,14 @@
     {
       "Key": "GPARAM_FieldList_Field_Submit",
       "Text": "Submit"
+    },
+    {
+      "Key": "GPARAM_FieldList_Fields_To_Add_Toggle_All",
+      "Text": "Toggle All"
+    },
+    {
+      "Key": "GPARAM_FieldList_Fields_To_Add_Toggle_All_TT",
+      "Text": "Tick every field, or untick them all if all are ticked."
     }
   ]
 }

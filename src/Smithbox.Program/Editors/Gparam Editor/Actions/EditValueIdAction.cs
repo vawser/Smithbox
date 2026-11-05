@@ -44,7 +44,7 @@ public class EditValueIdAction : EditorAction
 
         StoredParamExtras = Data.UnkParamExtras.Select(x => x.Clone()).ToList();
 
-        UpdateGroupIndexes(Data);
+        GparamUtils.RebuildParamExtras(Data);
 
         Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
@@ -63,35 +63,5 @@ public class EditValueIdAction : EditorAction
         Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
-    }
-    private void UpdateGroupIndexes(GPARAM gparam)
-    {
-        var newGroupIndexes = new List<UnkParamExtra>();
-        int idx = 0;
-
-        foreach (var group in gparam.Params)
-        {
-            var entry = new UnkParamExtra
-            {
-                GroupIndex = idx,
-                Unk0c = 0
-            };
-
-            foreach (var field in group.Fields)
-            {
-                foreach (var val in field.Values)
-                {
-                    if (!entry.Ids.Contains(val.ID))
-                    {
-                        entry.Ids.Add(val.ID);
-                    }
-                }
-            }
-
-            newGroupIndexes.Add(entry);
-            ++idx;
-        }
-
-        gparam.UnkParamExtras = newGroupIndexes;
     }
 }

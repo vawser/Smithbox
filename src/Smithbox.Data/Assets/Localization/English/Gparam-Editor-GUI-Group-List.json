@@ -123,6 +123,10 @@
     {
       "Key": "GPARAM_GroupList_Field_Submit",
       "Text": "Submit"
+    },
+    {
+      "Key": "GPARAM_GroupList_Groups_To_Add_Toggle_All_TT",
+      "Text": "Tick every group, or untick them all if all are ticked."
     }
   ]
 }

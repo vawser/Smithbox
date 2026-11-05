@@ -71,6 +71,9 @@ public class GparamEditorView : IEditorView
         // An edit, or its undo, changes the lighting the viewport shows
         ActionManager.ActionPerformed += ViewportWindow.MarkLightingDirty;
 
+        // So a list drawn later in the same frame as an edit doesn't act on stale indices
+        ActionManager.ActionPerformed += Selection.Reconcile;
+
         ViewportPreviewTool = new GparamViewportPreviewTool(this, Project);
         RenderingTool = new ViewportRenderingTool(() => ViewportWindow?.Viewport as VulkanViewport);
         GridTool = new ViewportGridTool(ViewportGridEditor.Gparam, () => ViewportWindow?.Viewport as VulkanViewport);
@@ -80,6 +83,10 @@ public class GparamEditorView : IEditorView
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
+        // Re-find the selection's indices from its keys before anything draws. Done every frame rather than on this
+        // view's ActionPerformed, as edits from another view, the quick edit or an import change the data too.
+        Selection.Reconcile();
+
         // Files
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_GparamEditorView);

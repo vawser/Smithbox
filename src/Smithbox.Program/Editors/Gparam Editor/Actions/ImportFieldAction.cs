@@ -1,14 +1,14 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
+/// <summary>
+/// Import a field: it replaces the group's field with the same key, or is added at the end.
+/// Edits the group in place, so the objects older undo steps hold stay the live ones.
+/// </summary>
 public class ImportFieldAction : EditorAction
 {
     private ProjectEntry Project { get; set; }
@@ -16,17 +16,16 @@ public class ImportFieldAction : EditorAction
 
     private FileDictionaryEntry FileEntry { get; set; }
 
-    private GPARAM CurrentGparam { get; set; }
-    private GPARAM StoredGparam { get; set; }
+    private GPARAM Data { get; set; }
 
     private GPARAM.Param Param { get; set; }
 
-    private GPARAM.IField CurrentField { get; set; }
     private GPARAM.IField NewField { get; set; }
-    private GPARAM.IField StoredField { get; set; }
-    private int FieldIndex { get; set; }
 
-    private bool Overwrite = false;
+    // The field it replaced, if any
+    private GPARAM.IField ReplacedField { get; set; }
+
+    private List<GPARAM.UnkParamExtra> StoredParamExtras { get; set; } = new();
 
     public ImportFieldAction(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM gparam, GPARAM.Param param, GPARAM.IField field, GPARAM.IField newField)
     {
@@ -35,71 +34,59 @@ public class ImportFieldAction : EditorAction
 
         FileEntry = fileEntry;
 
-        CurrentGparam = gparam;
-
-        StoredGparam = gparam.Clone();
-
+        Data = gparam;
         Param = param;
-
-        CurrentField = field;
         NewField = newField;
-        StoredField = param.CloneField(field);
 
-        FieldIndex = param.Fields.IndexOf(field);
-
+        // The JSON's capacity may not match its values, and the writer trusts it
+        NewField.SyncCapacity();
     }
 
     public override ActionEvent Execute()
     {
-        if (NewField != null)
-        {
-            // Overwrite existing field if imported field is a match
-            if (Param.Fields.Any(e => e.Key == NewField.Key))
-            {
-                Overwrite = true;
-                var target = Param.Fields.First(e => e.Key == NewField.Key);
-                FieldIndex = Param.Fields.IndexOf(target);
-            }
-        }
+        StoredParamExtras = GparamUtils.SnapshotParamExtras(Data);
 
-        if (Overwrite)
+        var index = Param.Fields.FindIndex(e => e != null && e.Key == NewField.Key);
+
+        if (index >= 0)
         {
-            Param.Fields[FieldIndex] = NewField;
+            ReplacedField = Param.Fields[index];
+            Param.Fields[index] = NewField;
         }
         else
         {
+            ReplacedField = null;
             Param.Fields.Add(NewField);
         }
 
-        MarkAsDirty();
+        // The imported values' IDs may differ from the replaced field's
+        GparamUtils.RebuildParamExtras(Data);
+
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
     }
 
     public override ActionEvent Undo()
     {
-        CurrentGparam = StoredGparam;
+        var index = Param.Fields.IndexOf(NewField);
 
-        var target = Project.Handler.GparamData.PrimaryBank.Entries.GetValueOrDefault(FileEntry);
-
-        if (target != null)
+        if (index >= 0)
         {
-            target.Gparam = StoredGparam;
-            target.IsDirty = true;
+            if (ReplacedField != null)
+            {
+                Param.Fields[index] = ReplacedField;
+            }
+            else
+            {
+                Param.Fields.RemoveAt(index);
+            }
         }
 
-        View.Selection.ResetSelection();
+        Data.UnkParamExtras = StoredParamExtras;
+
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
-    }
-
-    private void MarkAsDirty()
-    {
-        var target = Project.Handler.GparamData.PrimaryBank.Entries.GetValueOrDefault(FileEntry);
-
-        if (target != null)
-        {
-            target.IsDirty = true;
-        }
     }
 }

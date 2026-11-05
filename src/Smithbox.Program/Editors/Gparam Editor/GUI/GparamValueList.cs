@@ -219,6 +219,13 @@ public class GparamValueList
             View.Selection.SetGparamFieldValue(index, value);
         }
 
+        // Right-click selects the row too, so its context menu opens on it.
+        // A row already in the multi-selection keeps it, so the menu can act on all of them.
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Right) && !isSelected)
+        {
+            View.Selection.SelectSingleFieldValue(index, value);
+        }
+
         ContextMenu(fileEntry, data, group, field, value, index);
     }
 
@@ -314,37 +321,28 @@ public class GparamValueList
         ImGui.EndGroup();
     }
 
+    /// <summary>
+    /// Give an empty field a default value. It is added to the existing field, rather than the field being rebuilt,
+    /// so the field object stays the one older undo steps refer to and the add itself can be undone.
+    /// </summary>
     private void AddNewValue(FileDictionaryEntry fileEntry, GPARAM data, Param group, IField field)
     {
-        // Get the annotation for this field so we can seed to new value properly
-        var potentialGroups = Project.Handler.GparamData.Annotations.Entries.FirstOrDefault(
-            e => e.Key.Name == CFG.Current.GparamEditor_Annotation_Language);
-
-        if (potentialGroups.Value == null)
+        if (data == null || group == null || field == null)
             return;
 
-        GparamAnnotationFieldEntry addValueAnnotation = null;
+        // The lowest ID the group's other fields use, so the value lines up with the group's existing sets; else 0
+        var otherIds = group.Fields
+            .Where(e => e != null && e != field)
+            .SelectMany(e => e.Values)
+            .Select(e => e.ID)
+            .ToList();
 
-        var groups = potentialGroups.Value.Params.ToList();
-        foreach (var curGroup in groups)
-        {
-            if (curGroup.ID == group.Key)
-            {
-                foreach (var curField in curGroup.Fields)
-                {
-                    if (curField.ID == field.Key)
-                    {
-                        addValueAnnotation = curField;
-                    }
-                }
-            }
-        }
+        var id = otherIds.Count > 0 ? otherIds.Min() : 0;
 
-        if (addValueAnnotation != null)
-        {
-            var action = new ReplaceFieldAction(Project, data, group, new List<GparamAnnotationFieldEntry>() { addValueAnnotation } );
-            View.ActionManager.ExecuteAction(action);
-        }
+        var newValue = field.CreateDefaultValue(id);
+
+        var action = new AddValueAction(Project, data, group, field, new List<IFieldValue>() { newValue });
+        View.ActionManager.ExecuteAction(action);
     }
 
     private string OverrideFileName = "";
@@ -353,10 +351,14 @@ public class GparamValueList
     {
         bool overwrite = CFG.Current.GparamEditor_Data_Import_Overwrite;
 
-        if (index == View.Selection._selectedFieldValueIndex)
+        if (View.Selection.IsValueSelected(index))
         {
             if (ImGui.BeginPopupContextItem($"##Gparam_PropId_Context"))
             {
+                // Duplicate and Delete act on the whole multi-selection when the clicked row is part of it,
+                // like their keybinds do
+                var targets = ContextTargets(field, value);
+
                 // Duplicate
                 if (ImGui.BeginMenu($"{LOC.Get("GPARAM_ValueList_Context_Duplicate_Header")}##duplicateHeader"))
                 {
@@ -373,7 +375,7 @@ public class GparamValueList
                     // Submit
                     if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Dupe_Submit_Action")}##submitAction"))
                     {
-                        AddValues(data, group, field, new List<GPARAM.IFieldValue>() { value }, false);
+                        AddValues(data, group, field, targets, false);
                     }
                     GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Dupe_Submit_Action_TT"));
 
@@ -383,7 +385,7 @@ public class GparamValueList
                 // Delete
                 if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Delete_Action")}##deleteAction"))
                 {
-                    DeleteValues(data, group, field, new List<GPARAM.IFieldValue>() { value });
+                    DeleteValues(data, group, field, targets);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -427,7 +429,8 @@ public class GparamValueList
                 // Copy Value
                 if (ImGui.MenuItem($"{LOC.Get("GPARAM_ValueList_Context_Copy_Value_Action")}##copyValueAction"))
                 {
-                    ImGui.SetClipboardText($"{value.Value.ToString()}");
+                    // Invariant, so a copied 0.5 reads the same everywhere (not 0,5 in some locales)
+                    ImGui.SetClipboardText(System.Convert.ToString(value.Value, System.Globalization.CultureInfo.InvariantCulture) ?? "");
                 }
                 GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Copy_Value_Action_TT"));
 
@@ -486,41 +489,97 @@ public class GparamValueList
 
     private void Shortcuts(GPARAM data, GPARAM.Param group, IField field)
     {
-        var values = View.Selection.GetSelectedValues();
-
         if (FocusManager.IsFocus(EditorFocusContext.GparamEditor_Properties))
         {
             // Duplicate
             if (InputManager.IsPressed(KeybindID.Duplicate))
             {
-                AddValues(data, group, field, values, true);
+                AddValuesShortcut();
             }
 
             // Delete
             if (InputManager.IsPressed(KeybindID.Delete))
             {
-                DeleteValues(data, group, field, values);
+                DeleteValuesShortcut();
             }
         }
     }
 
+    /// <summary>
+    /// What a context-menu action applies to: the multi-selection if the clicked value is in it, else that value
+    /// </summary>
+    private List<IFieldValue> ContextTargets(IField field, IFieldValue clicked)
+    {
+        var selected = ValuesInField(field, View.Selection.GetSelectedValues());
+
+        if (selected.Count > 1 && selected.Any(e => ReferenceEquals(e, clicked)))
+            return selected;
+
+        return new List<IFieldValue>() { clicked };
+    }
+
+    /// <summary>
+    /// The entries that are really values of the field: drops nulls and values a stale selection still holds
+    /// </summary>
+    private static List<IFieldValue> ValuesInField(IField field, List<IFieldValue> entries)
+    {
+        if (field == null || entries == null)
+            return new List<IFieldValue>();
+
+        return entries.Where(e => e != null && field.IndexOfValue(e) >= 0).ToList();
+    }
+
     public void AddValues(GPARAM data, Param group, IField field, List<IFieldValue> entries, bool useDuplicateOffset)
     {
+        if (data == null || group == null || field == null)
+            return;
+
+        var targets = ValuesInField(field, entries);
+
+        // Nothing to duplicate: don't put an empty action on the undo stack or mark the file as modified
+        if (targets.Count == 0)
+            return;
+
         var duplicateID = View.Selection.DuplicateValueID;
         var duplicateOffset = View.Selection.DuplicateValueOffset;
 
-        var action = new AddValueAction(Project, data, group, field, entries, duplicateID, duplicateOffset, useDuplicateOffset);
+        var action = new AddValueAction(Project, data, group, field, targets, duplicateID, duplicateOffset, useDuplicateOffset);
         View.ActionManager.ExecuteAction(action);
     }
 
     public void DeleteValues(GPARAM data, Param group, IField field, List<IFieldValue> entries)
     {
-        var action = new DeleteValueAction(Project, data, group, field, entries);
+        if (data == null || group == null || field == null)
+            return;
+
+        // A target no longer in the field would be inserted again by the undo
+        var targets = ValuesInField(field, entries);
+
+        if (targets.Count == 0)
+            return;
+
+        var action = new DeleteValueAction(Project, data, group, field, targets);
         View.ActionManager.ExecuteAction(action);
+    }
+
+    /// <summary>
+    /// A field is selected and at least one of its values is selected
+    /// </summary>
+    public bool CanAffectValues()
+    {
+        var field = View.Selection.GetSelectedField();
+
+        if (View.Selection.GetSelectedGparam() == null || View.Selection.GetSelectedGroup() == null || field == null)
+            return false;
+
+        return ValuesInField(field, View.Selection.GetSelectedValues()).Count > 0;
     }
 
     public void AddValuesShortcut()
     {
+        if (!CanAffectValues())
+            return;
+
         var data = View.Selection.GetSelectedGparam();
         var group = View.Selection.GetSelectedGroup();
         var field = View.Selection.GetSelectedField();
@@ -531,6 +590,9 @@ public class GparamValueList
 
     public void DeleteValuesShortcut()
     {
+        if (!CanAffectValues())
+            return;
+
         var data = View.Selection.GetSelectedGparam();
         var group = View.Selection.GetSelectedGroup();
         var field = View.Selection.GetSelectedField();

@@ -109,9 +109,8 @@ public class GparamDataTransferTool
             return;
         }
 
-        ImportGPARAM(Project, View, fileEntry, curGparam);
-
-        Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {fileEntry.Filename} with the JSON data.");
+        if (ImportGPARAM(Project, View, fileEntry, curGparam))
+            Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {fileEntry.Filename} with the JSON data.");
     }
 
     public void ImportGroupAction()
@@ -133,9 +132,8 @@ public class GparamDataTransferTool
             return;
         }
 
-        ImportGroup(Project, View, fileEntry, curGparam, curParam);
-
-        Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {curParam.Name} with the JSON data.");
+        if (ImportGroup(Project, View, fileEntry, curGparam, curParam))
+            Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {curParam.Name} with the JSON data.");
     }
 
     public void ImportFieldAction()
@@ -164,9 +162,8 @@ public class GparamDataTransferTool
             return;
         }
 
-        ImportField(Project, View, fileEntry, curGparam, curParam, curField);
-
-        Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {curField.Name} with the JSON data.");
+        if (ImportField(Project, View, fileEntry, curGparam, curParam, curField))
+            Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {curField.Name} with the JSON data.");
     }
 
     public void ImportValueAction()
@@ -204,13 +201,13 @@ public class GparamDataTransferTool
 
         if (ImportType is GparamImportType.Overwrite)
         {
-            ImportValue(Project, View, fileEntry, curGparam, curParam, curField, curValue, true);
-            Smithbox.Log<GparamDataTransferTool>($"Overwritten the {curValue.ID} with in the value list of {curField.Name} with the JSON data.");
+            if (ImportValue(Project, View, fileEntry, curGparam, curParam, curField, curValue, true))
+                Smithbox.Log<GparamDataTransferTool>($"Overwritten the {curValue.ID} with in the value list of {curField.Name} with the JSON data.");
         }
         else if(ImportType is GparamImportType.Append)
         {
-            ImportValue(Project, View, fileEntry, curGparam, curParam, curField, curValue, false);
-            Smithbox.Log<GparamDataTransferTool>($"Appends the JSON data to the value list of {curField.Name}");
+            if (ImportValue(Project, View, fileEntry, curGparam, curParam, curField, curValue, false))
+                Smithbox.Log<GparamDataTransferTool>($"Appends the JSON data to the value list of {curField.Name}");
         }
 
     }
@@ -269,72 +266,118 @@ public class GparamDataTransferTool
         }
     }
 
-    public void ImportGPARAM(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam)
+    /// <summary>
+    /// Ask for a JSON file and parse it. Returns null if the dialog was cancelled, or the file isn't JSON of the
+    /// expected kind (the error is logged).
+    /// </summary>
+    private T ReadImportJson<T>(string dialogTitle, string kind, System.Func<string, T> parse) where T : class
     {
-        var dialog = PlatformUtils.Instance.OpenFileDialog("Select GPARAM JSON", out var path);
+        var dialog = PlatformUtils.Instance.OpenFileDialog(dialogTitle, out var path);
 
-        if (dialog && path.EndsWith(".json") && Path.Exists(path))
+        if (!dialog || path == null || !path.EndsWith(".json") || !Path.Exists(path))
+            return null;
+
+        try
         {
             var json = File.ReadAllText(path);
-            var newData = GPARAMJson.FromJson(json);
+            var result = parse(json);
 
-            if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (result == null)
             {
-                newData.WideStrings = false;
-            }
-            else
-            {
-                newData.WideStrings = true;
+                Smithbox.LogError<GparamDataTransferTool>($"{path} doesn't hold a GPARAM {kind}.");
             }
 
-            var action = new ImportGparamAction(project, view, fileEntry, curGparam, newData);
-            view.ActionManager.ExecuteAction(action);
+            return result;
         }
-
-        // Clear selection
-        view.Selection.ResetGparamFileSelection();
-    }
-
-    public void ImportGroup(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam)
-    {
-        var dialog = PlatformUtils.Instance.OpenFileDialog("Select Param JSON", out var path);
-
-        if (dialog && path.EndsWith(".json") && Path.Exists(path))
+        catch (Exception e)
         {
-            var json = File.ReadAllText(path);
-            var newParam = GPARAMJson.ParamFromJson(json);
-
-            var action = new ImportParamAction(project, view, fileEntry, curGparam, curParam, newParam);
-            view.ActionManager.ExecuteAction(action);
+            Smithbox.LogError<GparamDataTransferTool>($"{path} couldn't be read as a GPARAM {kind}.", e);
+            return null;
         }
     }
 
-    public void ImportField(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam, GPARAM.IField curField)
+    /// <summary>
+    /// Replace the contents of the GPARAM with a JSON file's. Returns whether anything was imported.
+    /// </summary>
+    public bool ImportGPARAM(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam)
     {
-        var dialog = PlatformUtils.Instance.OpenFileDialog("Select Field JSON", out var path);
+        var newData = ReadImportJson("Select GPARAM JSON", "file", GPARAMJson.FromJson);
 
-        if (dialog && path.EndsWith(".json") && Path.Exists(path))
+        if (newData == null)
+            return false;
+
+        if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            var json = File.ReadAllText(path);
-            var newField = GPARAMJson.FieldFromJson(json);
-
-            var action = new ImportFieldAction(project, view, fileEntry, curGparam, curParam, curField, newField);
-            view.ActionManager.ExecuteAction(action);
+            newData.WideStrings = false;
         }
+        else
+        {
+            newData.WideStrings = true;
+        }
+
+        var action = new ImportGparamAction(project, view, fileEntry, curGparam, newData);
+        view.ActionManager.ExecuteAction(action);
+
+        return true;
     }
 
-    public void ImportValue(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam, GPARAM.IField curField, GPARAM.IFieldValue curValue, bool overwrite)
+    /// <summary>
+    /// Import a group from a JSON file: it replaces the group with the same key, or is added. Returns whether
+    /// anything was imported.
+    /// </summary>
+    public bool ImportGroup(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam)
     {
-        var dialog = PlatformUtils.Instance.OpenFileDialog("Select Field Value JSON", out var path);
+        var newParam = ReadImportJson("Select Param JSON", "group", GPARAMJson.ParamFromJson);
 
-        if (dialog && path.EndsWith(".json") && Path.Exists(path))
+        if (newParam == null)
+            return false;
+
+        var action = new ImportParamAction(project, view, fileEntry, curGparam, curParam, newParam);
+        view.ActionManager.ExecuteAction(action);
+
+        return true;
+    }
+
+    /// <summary>
+    /// Import a field from a JSON file: it replaces the field with the same key, or is added. Returns whether
+    /// anything was imported.
+    /// </summary>
+    public bool ImportField(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam, GPARAM.IField curField)
+    {
+        var newField = ReadImportJson("Select Field JSON", "field", GPARAMJson.FieldFromJson);
+
+        if (newField == null)
+            return false;
+
+        var action = new ImportFieldAction(project, view, fileEntry, curGparam, curParam, curField, newField);
+        view.ActionManager.ExecuteAction(action);
+
+        return true;
+    }
+
+    /// <summary>
+    /// Import a value from a JSON file: it replaces the value, or is added after it. Returns whether anything was
+    /// imported.
+    /// </summary>
+    public bool ImportValue(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM curGparam, GPARAM.Param curParam, GPARAM.IField curField, GPARAM.IFieldValue curValue, bool overwrite)
+    {
+        var newValue = ReadImportJson("Select Field Value JSON", "value", GPARAMJson.FieldValueFromJson);
+
+        if (newValue == null)
+            return false;
+
+        // A value of another type (e.g. a float into an int field) can't go in the field's list
+        if (!curField.AcceptsValue(newValue))
         {
-            var json = File.ReadAllText(path);
-            var newValue = GPARAMJson.FieldValueFromJson(json);
-
-            var action = new InsertFieldValueAction(project, view, fileEntry, curGparam, curParam, curField, curValue, newValue, overwrite);
-            view.ActionManager.ExecuteAction(action);
+            Smithbox.LogError<GparamDataTransferTool>(
+                $"The value is a {newValue.GetType().GetGenericArguments()[0].Name} but {curField.Key} holds {GparamUtils.GetReadableObjectTypeName(curField)} values.");
+            return false;
         }
+
+        var action = new InsertFieldValueAction(project, view, fileEntry, curGparam, curParam, curField, curValue, newValue, overwrite);
+        view.ActionManager.ExecuteAction(action);
+
+        return true;
     }
 
     #endregion
@@ -583,7 +626,17 @@ public class GparamDataTransferTool
             }
 
             var exportPath = Path.Combine(ExportDirectory, fileName);
-            File.WriteAllText(exportPath, json);
+
+            try
+            {
+                File.WriteAllText(exportPath, json);
+            }
+            catch (Exception e)
+            {
+                // e.g. an override name with characters a file name can't hold, or a folder that has gone
+                Smithbox.LogError<GparamDataTransferTool>($"Failed to export to {exportPath}.", e);
+                return;
+            }
 
             ExportString = json;
 
@@ -615,7 +668,17 @@ public class GparamDataTransferTool
             }
 
             var exportPath = Path.Combine(ExportDirectory, fileName);
-            File.WriteAllText(exportPath, json);
+
+            try
+            {
+                File.WriteAllText(exportPath, json);
+            }
+            catch (Exception e)
+            {
+                // e.g. an override name with characters a file name can't hold, or a folder that has gone
+                Smithbox.LogError<GparamDataTransferTool>($"Failed to export to {exportPath}.", e);
+                return;
+            }
 
             ExportString = json;
 
@@ -647,7 +710,17 @@ public class GparamDataTransferTool
             }
 
             var exportPath = Path.Combine(ExportDirectory, fileName);
-            File.WriteAllText(exportPath, json);
+
+            try
+            {
+                File.WriteAllText(exportPath, json);
+            }
+            catch (Exception e)
+            {
+                // e.g. an override name with characters a file name can't hold, or a folder that has gone
+                Smithbox.LogError<GparamDataTransferTool>($"Failed to export to {exportPath}.", e);
+                return;
+            }
 
             ExportString = json;
 
@@ -680,7 +753,17 @@ public class GparamDataTransferTool
             }
 
             var exportPath = Path.Combine(ExportDirectory, fileName);
-            File.WriteAllText(exportPath, json);
+
+            try
+            {
+                File.WriteAllText(exportPath, json);
+            }
+            catch (Exception e)
+            {
+                // e.g. an override name with characters a file name can't hold, or a folder that has gone
+                Smithbox.LogError<GparamDataTransferTool>($"Failed to export to {exportPath}.", e);
+                return;
+            }
 
             ExportString = json;
 

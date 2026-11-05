@@ -148,13 +148,14 @@ public class GparamDataFinder
 
     private void SelectResult(GparamEditorView view, GparamSearchResult result)
     {
-        view.Selection.SelectedFileEntry = result.FileEntry;
+        // Through the selection's own setters, so each level's index, key and anchor value stay consistent
+        var fileEntry = Project.Handler.GparamData.PrimaryBank.Entries.Keys.FirstOrDefault(e =>
+            e.Filename == result.FileEntry.Filename && e.Extension == result.FileEntry.Extension);
 
-        var targetEntry = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename
-         == result.FileEntry.Filename && e.Key.Extension == result.FileEntry.Extension);
+        if (fileEntry == null)
+            return;
 
-        view.Selection._selectedGparamKey = targetEntry.Key.Filename;
-        view.Selection._selectedGparam = targetEntry.Value.Gparam;
+        view.Selection.SetFileSelection(fileEntry);
 
         // Select group
         if (view.Selection.IsFileSelected())
@@ -165,8 +166,7 @@ public class GparamDataFinder
             {
                 if (data.Params[i].Key == result.Group.Key)
                 {
-                    view.Selection._selectedParamGroupKey = data.Params[i].Key;
-                    view.Selection._selectedParamGroupIndex = i;
+                    view.Selection.SetGparamGroup(i, data.Params[i]);
 
                     break;
                 }
@@ -182,8 +182,7 @@ public class GparamDataFinder
             {
                 if (group.Fields[i].Key == result.Field.Key)
                 {
-                    view.Selection._selectedParamFieldKey = group.Fields[i].Key;
-                    view.Selection._selectedParamFieldIndex = i;
+                    view.Selection.SetGparamField(i, group.Fields[i]);
 
                     break;
                 }
@@ -199,9 +198,7 @@ public class GparamDataFinder
             {
                 if (field.Values[i].ID == result.Value.ID)
                 {
-                    view.Selection._selectedFieldValueKey = field.Values[i].ID;
-                    view.Selection._selectedFieldValueIndex = i;
-                    view.Selection.DuplicateValueID = field.Values[i].ID;
+                    view.Selection.SelectSingleFieldValue(i, field.Values[i]);
 
                     break;
                 }

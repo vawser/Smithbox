@@ -160,14 +160,14 @@ public class GparamEditorScreen : EditorScreen
                 if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Groups_Header")}##groupsHeader"))
                 {
                     // Add All Missing Groups
-                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Groups_Add_All_Missing")}##addAllMissingAction", InputManager.GetHint(KeybindID.Add)))
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Groups_Add_All_Missing")}##addAllMissingAction", "", false, activeView.GroupListView.CanAddGroups()))
                     {
                         activeView.GroupListView.AddGroupsShortcut();
                     }
                     GUI.Tooltip(LOC.Get("GPARAM_Groups_Add_All_Missing_TT"));
 
                     // Delete Selected Group
-                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Groups_Delete")}##deleteGroupAction", InputManager.GetHint(KeybindID.Delete)))
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Groups_Delete")}##deleteGroupAction", InputManager.GetHint(KeybindID.Delete), false, activeView.GroupListView.CanDeleteGroups()))
                     {
                         activeView.GroupListView.DeleteGroupsShortcut();
                     }
@@ -179,15 +179,16 @@ public class GparamEditorScreen : EditorScreen
                 // Fields
                 if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Fields_Header")}##fieldsHeader"))
                 {
-                    // Duplicate
-                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Fields_Duplicate")}##duplicateAction", InputManager.GetHint(KeybindID.Duplicate)))
+                    // Add All Missing Fields
+                    // No shortcut hint: the Add key opens the field list's add menu, to pick which to add
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Fields_Add_All_Missing")}##addAllMissingFieldsAction", "", false, activeView.FieldListView.CanAddFields()))
                     {
                         activeView.FieldListView.AddFieldsShortcut();
                     }
-                    GUI.Tooltip(LOC.Get("GPARAM_Fields_Duplicate_TT"));
+                    GUI.Tooltip(LOC.Get("GPARAM_Fields_Add_All_Missing_TT"));
 
                     // Delete
-                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Fields_Delete")}##deleteAction", InputManager.GetHint(KeybindID.Delete)))
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Fields_Delete")}##deleteAction", InputManager.GetHint(KeybindID.Delete), false, activeView.FieldListView.CanDeleteFields()))
                     {
                         activeView.FieldListView.DeleteFieldsShortcut();
                     }
@@ -199,13 +200,13 @@ public class GparamEditorScreen : EditorScreen
                 // Values
                 if (ImGui.BeginMenu($"{LOC.Get("GPARAM_Values_Header")}##valuesHeader"))
                 {
-                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Values_Duplicate")}##duplicateAction", InputManager.GetHint(KeybindID.Duplicate)))
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Values_Duplicate")}##duplicateAction", InputManager.GetHint(KeybindID.Duplicate), false, activeView.FieldValueListView.CanAffectValues()))
                     {
                         activeView.FieldValueListView.AddValuesShortcut();
                     }
                     GUI.Tooltip(LOC.Get("GPARAM_Values_Duplicate_TT"));
 
-                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Values_Delete")}##deleteAction", InputManager.GetHint(KeybindID.Delete)))
+                    if (ImGui.MenuItem($"{LOC.Get("GPARAM_Values_Delete")}##deleteAction", InputManager.GetHint(KeybindID.Delete), false, activeView.FieldValueListView.CanAffectValues()))
                     {
                         activeView.FieldValueListView.DeleteValuesShortcut();
                     }

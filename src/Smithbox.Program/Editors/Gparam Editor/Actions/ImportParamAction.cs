@@ -1,14 +1,14 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
+/// <summary>
+/// Import a group: it replaces the file's group with the same key, or is added at the end.
+/// Edits the GPARAM in place, so the objects older undo steps hold stay the live ones.
+/// </summary>
 public class ImportParamAction : EditorAction
 {
     private ProjectEntry Project { get; set; }
@@ -16,14 +16,14 @@ public class ImportParamAction : EditorAction
 
     private FileDictionaryEntry FileEntry { get; set; }
 
-    private GPARAM CurrentGparam { get; set; }
-    private GPARAM StoredGparam { get; set; }
+    private GPARAM Data { get; set; }
 
     private GPARAM.Param NewGroup { get; set; }
-    private GPARAM.Param CurrentGroup { get; set; }
-    private int ParamIndex { get; set; }
 
-    private bool Overwrite = false;
+    // The group it replaced, if any
+    private GPARAM.Param ReplacedGroup { get; set; }
+
+    private List<GPARAM.UnkParamExtra> StoredParamExtras { get; set; } = new();
 
     public ImportParamAction(ProjectEntry project, GparamEditorView view, FileDictionaryEntry fileEntry, GPARAM gparam, GPARAM.Param param, GPARAM.Param newGroup)
     {
@@ -32,63 +32,66 @@ public class ImportParamAction : EditorAction
 
         FileEntry = fileEntry;
 
-        CurrentGparam = gparam;
-
-        StoredGparam = gparam.Clone();
-
-        CurrentGroup = param;
+        Data = gparam;
         NewGroup = newGroup;
 
-        ParamIndex = gparam.Params.IndexOf(param);
+        // Lists the writer needs, which the JSON may leave out
+        NewGroup.Fields ??= new List<GPARAM.IField>();
+        NewGroup.Comments ??= new List<string>();
+
+        foreach (var field in NewGroup.Fields)
+        {
+            field?.SyncCapacity();
+        }
     }
 
     public override ActionEvent Execute()
     {
-        if (NewGroup != null)
-        {
-            // Overwrite existing group if imported group is a match
-            if (CurrentGparam.Params.Any(e => e.Key == NewGroup.Key))
-            {
-                Overwrite = true;
-                var target = CurrentGparam.Params.First(e => e.Key == NewGroup.Key);
-                ParamIndex = CurrentGparam.Params.IndexOf(target);
-            }
-        }
+        StoredParamExtras = GparamUtils.SnapshotParamExtras(Data);
+        var previousParams = new List<GPARAM.Param>(Data.Params);
 
-        if (Overwrite)
+        var index = Data.Params.FindIndex(e => e != null && e.Key == NewGroup.Key);
+
+        if (index >= 0)
         {
-            CurrentGparam.Params[ParamIndex] = NewGroup;
+            ReplacedGroup = Data.Params[index];
+            Data.Params[index] = NewGroup;
+
+            // The replaced group's extra entry carries over to the group that takes its place
+            previousParams[index] = NewGroup;
         }
         else
         {
-            CurrentGparam.Params.Add(NewGroup);
+            ReplacedGroup = null;
+            Data.Params.Add(NewGroup);
         }
 
-        var wrapper = Project.Handler.GparamData.PrimaryBank.Entries.GetValueOrDefault(FileEntry);
+        GparamUtils.RebuildParamExtras(Data, previousParams);
 
-        if (wrapper != null)
-        {
-            wrapper.IsDirty = true;
-        }
-
-        View.Selection.ResetSelection();
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
     }
 
     public override ActionEvent Undo()
     {
-        CurrentGparam = StoredGparam;
+        var index = Data.Params.IndexOf(NewGroup);
 
-        var target = Project.Handler.GparamData.PrimaryBank.Entries.GetValueOrDefault(FileEntry);
-
-        if (target != null)
+        if (index >= 0)
         {
-            target.Gparam = StoredGparam;
-            target.IsDirty = true;
+            if (ReplacedGroup != null)
+            {
+                Data.Params[index] = ReplacedGroup;
+            }
+            else
+            {
+                Data.Params.RemoveAt(index);
+            }
         }
 
-        View.Selection.ResetSelection();
+        Data.UnkParamExtras = StoredParamExtras;
+
+        Project.Handler.GparamData.PrimaryBank.MarkAsDirty(Data);
 
         return ActionEvent.ObjectAddedRemoved;
     }

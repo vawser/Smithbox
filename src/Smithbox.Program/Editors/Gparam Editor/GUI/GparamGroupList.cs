@@ -72,34 +72,62 @@ public class GparamGroupList
             return;
 
         // Available groups
+        var shownCount = 0;
+
         for (int i = 0; i < data.Params.Count; i++)
         {
             var curGroup = data.Params[i];
 
-            DisplayGroupSelectable(fileEntry, data, curGroup, i);
+            if (DisplayGroupSelectable(fileEntry, data, curGroup, i))
+                shownCount++;
         }
 
-        if(data.Params.Count == 0)
+        // With no rows, there would be nowhere to right-click to add groups: e.g. when every group is empty and empty
+        // groups are hidden, or the search matches nothing
+        if (shownCount == 0)
         {
             DisplayDummySelectable(fileEntry, data);
         }
 
+        DisplayAddPopup(data);
+
         Shortcuts(data, group);
     }
 
-    private void DisplayGroupSelectable(FileDictionaryEntry fileEntry, GPARAM data, Param group, int index)
+    private const string AddPopupId = "##gparamGroupAddPopup";
+
+    /// <summary>
+    /// The add menu, opened at the mouse by the Add key
+    /// </summary>
+    private void DisplayAddPopup(GPARAM data)
     {
+        if (ImGui.BeginPopup(AddPopupId))
+        {
+            AddGroupMenu(data);
+
+            ImGui.EndPopup();
+        }
+    }
+
+    /// <summary>
+    /// Returns whether the row was shown (it may be hidden by the search or the empty group toggle)
+    /// </summary>
+    private bool DisplayGroupSelectable(FileDictionaryEntry fileEntry, GPARAM data, Param group, int index)
+    {
+        if (group == null)
+            return false;
+
         var selected = index == View.Selection._selectedParamGroupIndex;
         var groupName = GetGroupName(group);
         var groupDesc = GetGroupDescription(group);
 
         if (!DisplayEmptyGroup(group))
-            return;
+            return false;
 
         var isMatch = EditorFilters.IsMatch(GroupListFilter, group.Name, ExactGroupListFilter, groupName);
 
         if (!isMatch)
-            return;
+            return false;
 
         ImGui.BeginGroup();
 
@@ -114,6 +142,13 @@ public class GparamGroupList
 
         // Group row
         if (ImGui.Selectable($@" {groupName}##{group.Key}", selected))
+        {
+            View.Selection.SetGparamGroup(index, group);
+            View.FieldListView.InvalidateAddOptions();
+        }
+
+        // Right-click selects the row too, so its context menu opens on it
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Right) && !selected)
         {
             View.Selection.SetGparamGroup(index, group);
             View.FieldListView.InvalidateAddOptions();
@@ -156,6 +191,8 @@ public class GparamGroupList
         ImGui.EndGroup();
 
         ContextMenu(fileEntry, data, group, index);
+
+        return true;
     }
 
     private void DisplayDummySelectable(FileDictionaryEntry fileEntry, GPARAM data)
@@ -286,30 +323,16 @@ public class GparamGroupList
     {
         if (FocusManager.IsFocus(EditorFocusContext.GparamEditor_GroupList))
         {
-            // Add
-            if (InputManager.IsPressed(KeybindID.Add))
+            // Add: open the add menu, to pick which groups to add (Edit > Groups adds all of them)
+            if (InputManager.IsPressed(KeybindID.Add) && CanAddGroups())
             {
-                PopulateAddOptions();
-
-                for (int i = 0; i < AddOptions.Count; i++)
-                {
-                    var curOption = AddOptions[i];
-                    var curAnnotation = curOption.Annotation;
-
-                    // Ignore existing groups, we only want to allow adding missing groups
-                    if (data.Params.Any(e => e.Key == curAnnotation.ID))
-                        continue;
-
-                    curOption.ToAdd = true;
-                }
-
-                AddNewGroups(data, AddOptions);
+                ImGui.OpenPopup(AddPopupId);
             }
 
             // Delete
             if (InputManager.IsPressed(KeybindID.Delete))
             {
-                DeleteGroups(data, new List<GPARAM.Param>() { entry });
+                DeleteGroupsShortcut();
             }
         }
     }
@@ -362,7 +385,12 @@ public class GparamGroupList
         return false;
     }
 
-    private List<GroupAddEntry> AddOptions = null;
+    private List<GroupAddEntry> AddOptions = new();
+
+    // The annotation language the add options were built for, so they are rebuilt if it changes
+    private string AddOptionsLanguage = null;
+    private bool AddOptionsBuilt = false;
+
     public void AddGroupMenu(GPARAM data)
     {
         PopulateAddOptions();
@@ -375,22 +403,22 @@ public class GparamGroupList
             LOC.Get("GPARAM_GroupList_Groups_To_Add_Header"),
             LOC.Get("GPARAM_GroupList_Groups_To_Add_Header_TT"));
 
-        // Toggle All
-        if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Groups_To_Add_Toggle_All")}##toggleAll"))
+        // Toggle All: ticks every missing group, or unticks them all if they all are ticked already
+        // (flipping each one would leave a mixed set mixed)
+        var missingOptions = AddOptions
+            .Where(e => !data.Params.Any(p => p != null && p.Key == e.Annotation.ID))
+            .ToList();
+
+        if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Groups_To_Add_Toggle_All")}##toggleAll", false, ImGuiSelectableFlags.NoAutoClosePopups))
         {
-            for (int i = 0; i < AddOptions.Count; i++)
+            var tickAll = missingOptions.Any(e => !e.ToAdd);
+
+            foreach (var option in missingOptions)
             {
-                var curOption = AddOptions[i];
-
-                var curAnnotation = curOption.Annotation;
-
-                // Ignore existing groups, we only want to allow adding missing groups
-                if (data.Params.Any(e => e.Key == curAnnotation.ID))
-                    continue;
-
-                curOption.ToAdd = !curOption.ToAdd;
+                option.ToAdd = tickAll;
             }
         }
+        GUI.Tooltip(LOC.Get("GPARAM_GroupList_Groups_To_Add_Toggle_All_TT"));
 
         for (int i = 0; i < AddOptions.Count; i++)
         {
@@ -400,10 +428,11 @@ public class GparamGroupList
             var curAnnotation = curOption.Annotation;
 
             // Ignore existing groups, we only want to allow adding missing groups
-            if (data.Params.Any(e => e.Key == curAnnotation.ID))
+            if (data.Params.Any(e => e != null && e.Key == curAnnotation.ID))
                 continue;
 
-            ImGui.Checkbox($"{curAnnotation.Name}", ref curState);
+            // The ID keeps two annotations with the same display name apart
+            ImGui.Checkbox($"{curAnnotation.Name}##{curAnnotation.ID}", ref curState);
             if(ImGui.IsItemDeactivatedAfterEdit())
             {
                 curOption.ToAdd = curState;
@@ -432,44 +461,54 @@ public class GparamGroupList
         }
     }
 
+    /// <summary>
+    /// Build the add options from the annotations, once per annotation language.
+    /// Always leaves a list behind: empty if the language has no annotations.
+    /// </summary>
     private void PopulateAddOptions()
     {
-        // We only ever build the add options once.
-        if (AddOptions == null)
+        var language = CFG.Current.GparamEditor_Annotation_Language;
+
+        if (AddOptionsBuilt && AddOptionsLanguage == language)
+            return;
+
+        AddOptionsBuilt = true;
+        AddOptionsLanguage = language;
+        AddOptions = new();
+
+        var potentialGroups = Project.Handler.GparamData.Annotations.Entries.FirstOrDefault(e => e.Key.Name == language);
+
+        if (potentialGroups.Value == null)
+            return;
+
+        var options = potentialGroups.Value.Params.Where(e => e.IsObsolete == false).ToList();
+        foreach (var optEntry in options)
         {
-            var potentialGroups = Project.Handler.GparamData.Annotations.Entries.FirstOrDefault(e => e.Key.Name == CFG.Current.GparamEditor_Annotation_Language);
+            var addEntry = new GroupAddEntry();
+            addEntry.Annotation = optEntry;
+            addEntry.ToAdd = false;
 
-            if (potentialGroups.Value == null)
-                return;
-
-            AddOptions = new();
-
-            var options = potentialGroups.Value.Params.Where(e => e.IsObsolete == false).ToList();
-            foreach (var optEntry in options)
-            {
-                var addEntry = new GroupAddEntry();
-                addEntry.Annotation = optEntry;
-                addEntry.ToAdd = false;
-
-                AddOptions.Add(addEntry);
-            }
+            AddOptions.Add(addEntry);
         }
-
     }
 
     public void AddNewGroups(GPARAM data, List<GroupAddEntry> groups)
     {
-        var newGroups = groups.Where(e => e.ToAdd == true).ToList();
+        if (data == null)
+            return;
 
         var entries = new List<GparamAnnotationEntry>();
 
-        foreach(var entry in newGroups)
+        foreach(var entry in groups)
         {
-            if(entry.ToAdd)
-            {
-                var annotationEntry = entry.Annotation;
-                entries.Add(annotationEntry);
-            }
+            if (!entry.ToAdd)
+                continue;
+
+            // A tick left over from another file can name a group this file already has
+            if (data.Params.Any(e => e != null && e.Key == entry.Annotation.ID))
+                continue;
+
+            entries.Add(entry.Annotation);
         }
 
         AddGroups(data, entries);
@@ -483,18 +522,50 @@ public class GparamGroupList
 
     public void AddGroups(GPARAM data, List<GparamAnnotationEntry> entries)
     {
+        // Nothing to add: don't put an empty action on the undo stack or mark the file as modified
+        if (data == null || entries == null || entries.Count == 0)
+            return;
+
         var action = new AddGroupAction(Project, data, entries);
         View.ActionManager.ExecuteAction(action);
     }
 
     public void DeleteGroups(GPARAM data, List<GPARAM.Param> entries)
     {
-        var action = new DeleteGroupAction(Project, data, entries);
+        if (data == null || entries == null)
+            return;
+
+        // Only groups actually in the file: a null or stale target would be re-inserted by the undo
+        var targets = entries.Where(e => e != null && data.Params.Contains(e)).ToList();
+
+        if (targets.Count == 0)
+            return;
+
+        var action = new DeleteGroupAction(Project, data, targets);
         View.ActionManager.ExecuteAction(action);
+    }
+
+    /// <summary>
+    /// A file is selected, so there is somewhere to add missing groups to
+    /// </summary>
+    public bool CanAddGroups()
+    {
+        return View.Selection.GetSelectedGparam() != null;
+    }
+
+    /// <summary>
+    /// A group is selected and still in its file
+    /// </summary>
+    public bool CanDeleteGroups()
+    {
+        return View.Selection.GetSelectedGparam() != null && View.Selection.GetSelectedGroup() != null;
     }
 
     public void AddGroupsShortcut()
     {
+        if (!CanAddGroups())
+            return;
+
         var data = View.Selection.GetSelectedGparam();
 
         PopulateAddOptions();
@@ -505,7 +576,7 @@ public class GparamGroupList
             var curAnnotation = curOption.Annotation;
 
             // Ignore existing groups, we only want to allow adding missing groups
-            if (data.Params.Any(e => e.Key == curAnnotation.ID))
+            if (data.Params.Any(e => e != null && e.Key == curAnnotation.ID))
                 continue;
 
             curOption.ToAdd = true;
@@ -516,6 +587,9 @@ public class GparamGroupList
 
     public void DeleteGroupsShortcut()
     {
+        if (!CanDeleteGroups())
+            return;
+
         var data = View.Selection.GetSelectedGparam();
         var group = View.Selection.GetSelectedGroup();
 

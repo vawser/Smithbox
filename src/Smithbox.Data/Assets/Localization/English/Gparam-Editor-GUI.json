@@ -87,6 +87,14 @@
     {
       "Key": "GPARAM_View_Toggle_Tools",
       "Text": "Tools"
+    },
+    {
+      "Key": "GPARAM_Fields_Add_All_Missing",
+      "Text": "Add All Missing Fields"
+    },
+    {
+      "Key": "GPARAM_Fields_Add_All_Missing_TT",
+      "Text": "Add any and all missing fields of the selected group.\n\nTo pick which fields to add, press the Add key in the field list."
     }
   ]
 }
