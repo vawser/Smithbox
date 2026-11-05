@@ -15,7 +15,16 @@ namespace StudioCore.Interface;
 // Short name for readability in usage
 public static class LOC
 {
-    private static LocalizationLanguages Languages;
+    private static LocalizationLanguages Languages = new();
+
+    // Matches the English entry of Languages.json, for when that file can't be read
+    private static readonly LocalizationLanguageEntry FallbackLanguage = new()
+    {
+        Key = "SYS_Language_English",
+        Name = "English",
+        Folder = "English",
+        UICulture = "en"
+    };
 
     private static Dictionary<string, string> Localization = new();
     private static Dictionary<string, string> FallbackLocalization = new();
@@ -42,6 +51,16 @@ public static class LOC
             }
         }
 
+        // A missing, unreadable or empty Languages.json must still leave English to fall back to
+        Languages ??= new LocalizationLanguages();
+        Languages.Languages ??= new();
+        Languages.Languages.RemoveAll(e => e == null);
+
+        if (!Languages.Languages.Any(e => e.Name == FallbackLanguage.Name))
+        {
+            Languages.Languages.Insert(0, FallbackLanguage);
+        }
+
         if(!Startup.Current.SetProgramLanguage)
         {
             CultureInfo currentUICulture = CultureInfo.CurrentUICulture;
@@ -66,47 +85,34 @@ public static class LOC
         // Selected Language
         var curLang = Languages.Languages.FirstOrDefault(e => e.Name == Startup.Current.Program_Language);
 
-        if (curLang == null)
+        if (curLang == null || string.IsNullOrEmpty(curLang.Folder))
         {
             // Default to English if the selected language is not found
-            curLang = LanguageList.FirstOrDefault(e => e.Name == "English");
+            curLang = LanguageList.FirstOrDefault(e => e.Name == FallbackLanguage.Name && !string.IsNullOrEmpty(e.Folder))
+                ?? FallbackLanguage;
             Startup.Current.Program_Language = curLang.Name;
         }
 
         var languageDir = Path.Combine(AppContext.BaseDirectory, "Assets", "Localization", curLang.Folder);
 
-        if(!Directory.Exists(languageDir))
-        {
-            Directory.CreateDirectory(languageDir);
-        }
-
-        foreach(var file in Directory.EnumerateFiles(languageDir))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(file);
-                var locEntry = JsonSerializer.Deserialize(filestring, LOCSerializerContext.Default.LocalizationEntry);
-
-                foreach (var entry in locEntry.Entries)
-                {
-                    Localization.TryAdd(entry.Key, entry.Text);
-                }
-            }
-            catch (Exception)
-            {
-                //Smithbox.LogError(typeof(LOC), "Failed to read localization file..", e);
-            }
-        }
+        ReadEntries(languageDir, Localization);
 
         // Fallback
-        var fallbackLanguageDir = Path.Combine(AppContext.BaseDirectory, "Assets", "Localization", "English");
+        var fallbackLanguageDir = Path.Combine(AppContext.BaseDirectory, "Assets", "Localization", FallbackLanguage.Folder);
 
-        if (!Directory.Exists(fallbackLanguageDir))
-        {
-            Directory.CreateDirectory(fallbackLanguageDir);
-        }
+        ReadEntries(fallbackLanguageDir, FallbackLocalization);
+    }
 
-        foreach (var file in Directory.EnumerateFiles(fallbackLanguageDir))
+    /// <summary>
+    /// Adds the entries of every localization file in a language folder. A missing folder is skipped rather than
+    /// created, as the install folder may not be writable.
+    /// </summary>
+    private static void ReadEntries(string languageDir, Dictionary<string, string> target)
+    {
+        if (!Directory.Exists(languageDir))
+            return;
+
+        foreach (var file in Directory.EnumerateFiles(languageDir))
         {
             try
             {
@@ -115,7 +121,7 @@ public static class LOC
 
                 foreach (var entry in locEntry.Entries)
                 {
-                    FallbackLocalization.TryAdd(entry.Key, entry.Text);
+                    target.TryAdd(entry.Key, entry.Text);
                 }
             }
             catch (Exception)
@@ -198,4 +204,4 @@ public class LocalizationTextEntry
     public string Text { get; set; }
 }
 
-#endregion
+#endregion

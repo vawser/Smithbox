@@ -39,7 +39,7 @@ public class Startup
         if (!File.Exists(startupFile))
         {
             Current = new Startup();
-            Save();
+            TrySave();
         }
         else
         {
@@ -47,14 +47,35 @@ public class Startup
             {
                 var filestring = File.ReadAllText(startupFile);
                 Current = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.Startup);
+
+                // A file holding just "null" deserializes without an error
+                if (Current == null)
+                {
+                    throw new JsonException("Startup.json deserialized to null.");
+                }
             }
             catch (Exception)
             {
                 //Smithbox.LogError<Startup>("Startup configuration failed to load, default configuration has been restored.", e);
 
                 Current = new Startup();
-                Save();
+                TrySave();
             }
+        }
+    }
+
+    /// <summary>
+    /// Saves without throwing. This runs before there is a logger or window, and the defaults are already in
+    /// memory, so a folder that can't be written to shouldn't stop Smithbox from starting.
+    /// </summary>
+    private static void TrySave()
+    {
+        try
+        {
+            Save();
+        }
+        catch (Exception)
+        {
         }
     }
     public static void Save()

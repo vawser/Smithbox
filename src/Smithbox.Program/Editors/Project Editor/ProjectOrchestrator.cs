@@ -8,6 +8,7 @@ using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -27,6 +28,14 @@ public class ProjectOrchestrator : IDisposable
     public ProjectEntry SelectedProject;
 
     public bool IsProjectLoading = false;
+
+    /// <summary>
+    /// The project being started or reloaded, if any. Read by the crash recovery to stop a project that crashed
+    /// while loading from being loaded automatically again.
+    /// </summary>
+    public volatile ProjectEntry LoadingProject;
+
+    private readonly ConcurrentQueue<Action> _mainThreadActions = new();
     public bool FinishedProjectLoad = false;
 
     public ProjectLoadProgress LoadProgress;
@@ -55,6 +64,9 @@ public class ProjectOrchestrator : IDisposable
 
     public void Update(float dt, uint mainDockspaceID)
     {
+        // First, so the frame draws the state the finished loads left
+        RunMainThreadActions();
+
         ProjectEditor.OnGUI(mainDockspaceID);
         ProjectMetadataEditor.OnGUI(mainDockspaceID);
 
@@ -160,6 +172,19 @@ public class ProjectOrchestrator : IDisposable
 
     private async Task LoadExistingProjects()
     {
+        // Started without being awaited, so a failure has to be reported here or it is lost
+        try
+        {
+            await LoadExistingProjectsCore();
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, "Failed to load the existing projects.", LogPriority.High, e);
+        }
+    }
+
+    private async Task LoadExistingProjectsCore()
+    {
         // Read all the stored project jsons and create an existing Project dict
         var projectJsonList = GetStoredProjectJsonList();
 
@@ -197,26 +222,20 @@ public class ProjectOrchestrator : IDisposable
 
         if (CFG.Current.Project_Enable_Auto_Load)
         {
-            if (Projects.Count > 0)
+            // Only one project can be open, so the first marked for auto-load is used. A snapshot is iterated, as
+            // the user can add projects while this one loads.
+            var projectEntry = Projects.ToList().FirstOrDefault(e => e.Descriptor.AutoSelect);
+
+            if (projectEntry != null && !IsProjectLoading)
             {
-                foreach (var projectEntry in Projects)
+                // StartupProject has already selected it; this points the project screen at it, on the main thread
+                await StartupProject(projectEntry, () =>
                 {
-                    if (projectEntry.Descriptor.AutoSelect)
-                    {
-                        if (!IsProjectLoading)
-                        {
-                            await StartupProject(projectEntry);
+                    ProjectEditor.SelectedLoadedEntry = projectEntry;
+                    ProjectEditor.SelectedAvaliableEntry = projectEntry;
 
-                            SelectedProject = projectEntry;
-                            SelectedProject.IsSelected = true;
-
-                            ProjectEditor.SelectedLoadedEntry = projectEntry;
-                            ProjectEditor.SelectedAvaliableEntry = projectEntry;
-
-                            ProjectEditor.ConfigureMenu.SetupForEdit(projectEntry);
-                        }
-                    }
-                }
+                    ProjectEditor.ConfigureMenu.SetupForEdit(projectEntry);
+                });
             }
         }
 
@@ -247,7 +266,30 @@ public class ProjectOrchestrator : IDisposable
         _ = ReloadProject(project);
     }
 
-    public async Task<bool> StartupProject(ProjectEntry curProject)
+    /// <summary>
+    /// Loads a project and selects it.
+    /// </summary>
+    /// <param name="onLoaded">Run on the main thread once the project is selected.</param>
+    /// <returns>Whether the project loaded.</returns>
+    public Task<bool> StartupProject(ProjectEntry curProject, Action onLoaded = null)
+    {
+        return LoadProject(curProject, CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment, onLoaded);
+    }
+
+    public Task ReloadProject(ProjectEntry curProject)
+    {
+        return LoadProject(curProject, false, null);
+    }
+
+    /// <summary>
+    /// Initializes a project, then selects it on the main thread.
+    /// </summary>
+    /// <remarks>
+    /// The banks load in parallel and their continuations resume on thread pool threads, while the UI reads the
+    /// selection every frame. So only the loading runs off the main thread: selecting the project is queued and
+    /// applied at the start of the next <see cref="Update"/>.
+    /// </remarks>
+    private async Task<bool> LoadProject(ProjectEntry curProject, bool assignAutoLoad, Action onLoaded)
     {
         var oldProject = SelectedProject;
 
@@ -262,18 +304,62 @@ public class ProjectOrchestrator : IDisposable
         }
 
         IsProjectLoading = true;
+        LoadingProject = curProject;
 
-        SetProgress(new ProjectLoadProgress
+        try
         {
-            PhaseLabel = LOC.Get("PROJECT_Setup_Project_Phase_Start"),
-            StepLabel = LOC.Get("PROJECT_Setup_Project_Step_Preparing"),
-            Percent = 0f
+            SetProgress(new ProjectLoadProgress
+            {
+                PhaseLabel = LOC.Get("PROJECT_Setup_Project_Phase_Start"),
+                StepLabel = LOC.Get("PROJECT_Setup_Project_Step_Preparing"),
+                Percent = 0f
+            });
+
+            LoadProgress = default;
+
+            await curProject.Init(ReportProgress);
+        }
+        catch (Exception e)
+        {
+            // Callers don't await this, so without the catch the failure would vanish and leave the load
+            // popup open, with every further load refused
+            LogProjectLoadFailure(curProject, e);
+
+            RunOnMainThread(EndProjectLoad);
+
+            return false;
+        }
+
+        // Continuations run asynchronously so awaiting callers don't run inside the queue drain
+        var selected = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        RunOnMainThread(() =>
+        {
+            try
+            {
+                SelectLoadedProject(curProject, assignAutoLoad);
+
+                onLoaded?.Invoke();
+
+                selected.SetResult(true);
+            }
+            catch (Exception e)
+            {
+                LogProjectLoadFailure(curProject, e);
+
+                selected.SetResult(false);
+            }
+            finally
+            {
+                EndProjectLoad();
+            }
         });
 
-        LoadProgress = default;
+        return await selected.Task;
+    }
 
-        await curProject.Init(ReportProgress);
-
+    private void SelectLoadedProject(ProjectEntry curProject, bool assignAutoLoad)
+    {
         foreach (var tEntry in Projects)
         {
             tEntry.IsSelected = false;
@@ -286,7 +372,7 @@ public class ProjectOrchestrator : IDisposable
         // Used for the DCX heuristic
         BinaryReaderEx.CurrentProjectType = $"{curProject.Descriptor.ProjectType}";
 
-        if (CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment)
+        if (assignAutoLoad)
         {
             SetAsAutoLoad(curProject);
         }
@@ -298,10 +384,39 @@ public class ProjectOrchestrator : IDisposable
             Percent = 1f
         });
 
-        IsProjectLoading = false;
         FinishedProjectLoad = true;
+    }
 
-        return true;
+    private void EndProjectLoad()
+    {
+        IsProjectLoading = false;
+        LoadingProject = null;
+    }
+
+    /// <summary>
+    /// Queues an action to run on the main thread, at the start of the next <see cref="Update"/>.
+    /// </summary>
+    public void RunOnMainThread(Action action)
+    {
+        _mainThreadActions.Enqueue(action);
+    }
+
+    private void RunMainThreadActions()
+    {
+        // Only what was queued before this frame, so an action that queues another can't stall the frame
+        var count = _mainThreadActions.Count;
+
+        for (int i = 0; i < count && _mainThreadActions.TryDequeue(out var action); i++)
+        {
+            action();
+        }
+    }
+
+    private void LogProjectLoadFailure(ProjectEntry curProject, Exception e)
+    {
+        Smithbox.LogError(this,
+            $"Failed to load project \"{curProject.Descriptor?.ProjectName}\".",
+            LogPriority.High, e);
     }
 
     public void SetAsAutoLoad(ProjectEntry curProject)
@@ -350,57 +465,6 @@ public class ProjectOrchestrator : IDisposable
             ResourceManager.ClearAllPools();
 
         Smithbox.Instance.ResetProgramName();
-    }
-
-    public async Task ReloadProject(ProjectEntry curProject)
-    {
-        var oldProject = SelectedProject;
-
-        Smithbox.Instance.SetProgramName(curProject);
-
-        CreateLegacyProjectJSON(curProject);
-
-        // Signal shutdown to existing project if it is loaded
-        if (oldProject != null)
-        {
-            SelectedProject.Dispose();
-            ResourceManager.ClearAllPools();
-        }
-
-        IsProjectLoading = true;
-
-        SetProgress(new ProjectLoadProgress
-        {
-            PhaseLabel = LOC.Get("PROJECT_Setup_Project_Phase_Start"),
-            StepLabel = LOC.Get("PROJECT_Setup_Project_Step_Preparing"),
-            Percent = 0f
-        });
-
-        LoadProgress = default;
-
-        await curProject.Init(ReportProgress);
-
-        foreach (var tEntry in Projects)
-        {
-            tEntry.IsSelected = false;
-        }
-
-        curProject.IsSelected = true;
-
-        SelectedProject = curProject;
-
-        // Used for the DCX heuristic
-        BinaryReaderEx.CurrentProjectType = $"{curProject.Descriptor.ProjectType}";
-
-        SetProgress(new ProjectLoadProgress
-        {
-            PhaseLabel = LOC.Get("PROJECT_Setup_Project_Phase_Complete"),
-            StepLabel = "",
-            Percent = 1f
-        });
-
-        IsProjectLoading = false;
-        FinishedProjectLoad = true;
     }
 
     /// <summary>

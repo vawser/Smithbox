@@ -73,6 +73,10 @@ public class Smithbox
 
         _version = version;
 
+        // The logger comes first: everything below, including the configuration loading in Setup, may log, and
+        // the log windows only receive the events logged after they subscribe
+        SetupLogging();
+
         if(ProgramType is ProgramType.Editor)
         {
             _programTitle = $"{LOC.Get("PROGRAM_TITLE")} - {_version}";
@@ -101,62 +105,11 @@ public class Smithbox
 
         Setup();
 
-        if (CurrentBackend is RenderingBackend.OpenGL)
-        {
-            _context = new OpenGLCompatGraphicsContext();
-        }
-
-        if (CurrentBackend is RenderingBackend.Vulkan)
-        {
-            try
-            {
-                _context = new VulkanGraphicsContext();
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogWarning(this, 
-                    LOC.Get("SYS_VULKAN_CONTEXT_FAILED"), ex);
-
-                _context = new OpenGLCompatGraphicsContext();
-                CurrentBackend = RenderingBackend.OpenGL;
-            }
-        }
-
-        //set up logging
-        if (LogsProvider is null)
-        {
-            LogsProvider = new TaskLogsProvider();
-            SbLoggerFactory = LoggerFactory.Create(builder =>
-            {
-                builder.AddProvider(LogsProvider);
-#if DEBUG
-                builder.AddConsole();
-#endif
-            });
-            SbLogger = SbLoggerFactory.CreateLogger<Smithbox>();
-            SoulsFormats.Util.Logging.LoggerFactory = SbLoggerFactory;
-            Andre.Core.AndreLogging.LoggerFactory = SbLoggerFactory;
-        }
-
-        ActionLogger = new(
-            "LOG_Action_Log",
-            evt => evt.Level is not (LogLevel.Warning or LogLevel.Error),
-            //fade time is calculated to be the configured fade time in frames, but we need ms.
-            () => (enabled: CFG.Current.Logger_Enable_Action_Log, fadeTime: (int)(CFG.Current.Logger_Action_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
-        );
-        WarningLogger = new(
-            "LOG_Error_Log",
-            evt => evt.Level is LogLevel.Warning or LogLevel.Error,
-            () => (enabled: CFG.Current.Logger_Enable_Warning_Log, fadeTime: (int)(CFG.Current.Logger_Warning_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
-        );
-        HighPriorityLogSubscription = TaskLogs.Subscribe(
-            evt => evt.Priority == LogPriority.High
-        );
-
         // The bindings are loaded in Setup, before there was a logger to report on them
         InputManager.FlushPendingLogs();
 
-        _context.Initialize();
+        CreateGraphicsContext();
+
         _context.Window.Title = _programTitle;
 
         PlatformUtils.InitializeWindows(_context.Window.SdlWindowHandle);
@@ -191,8 +144,8 @@ public class Smithbox
             {
                 var dialog = PlatformUtils.Instance.MessageBox(
                     LOC.Get("SYS_OpenGL_Warning_Text"),
-                    LOC.Get("SYS_OpenGL_Warning_Caption"), 
-                    MessageBoxButtons.OKCancel, 
+                    LOC.Get("SYS_OpenGL_Warning_Caption"),
+                    MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Warning);
 
                 if(dialog is DialogResult.OK)
@@ -202,6 +155,85 @@ public class Smithbox
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Creates and initializes the graphics context. Vulkan falls back to OpenGL if it can't be initialized.
+    /// </summary>
+    private void CreateGraphicsContext()
+    {
+        if (CurrentBackend is RenderingBackend.Vulkan)
+        {
+            // Vulkan can only fail in Initialize, where the window and graphics device are created
+            var vulkanContext = new VulkanGraphicsContext();
+
+            try
+            {
+                vulkanContext.Initialize();
+                _context = vulkanContext;
+
+                return;
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogWarning(this,
+                    LOC.Get("SYS_VULKAN_CONTEXT_FAILED"), ex);
+
+                // A failure after the window was created leaves it open, so it is closed before the OpenGL one opens
+                try
+                {
+                    vulkanContext.Dispose();
+
+                    if (vulkanContext.Window is { Exists: true })
+                    {
+                        vulkanContext.Window.Close();
+                    }
+                }
+                catch (Exception disposeEx)
+                {
+                    Smithbox.LogWarning(this, "Failed to clean up the Vulkan context.", disposeEx);
+                }
+
+                CurrentBackend = RenderingBackend.OpenGL;
+            }
+        }
+
+        _context = new OpenGLCompatGraphicsContext();
+        _context.Initialize();
+    }
+
+    private void SetupLogging()
+    {
+        if (LogsProvider is null)
+        {
+            LogsProvider = new TaskLogsProvider();
+            SbLoggerFactory = LoggerFactory.Create(builder =>
+            {
+                builder.AddProvider(LogsProvider);
+#if DEBUG
+                builder.AddConsole();
+#endif
+            });
+            SbLogger = SbLoggerFactory.CreateLogger<Smithbox>();
+            SoulsFormats.Util.Logging.LoggerFactory = SbLoggerFactory;
+            Andre.Core.AndreLogging.LoggerFactory = SbLoggerFactory;
+        }
+
+        // The settings are read when the logs are drawn, so CFG doesn't need to be loaded yet
+        ActionLogger = new(
+            "LOG_Action_Log",
+            evt => evt.Level is not (LogLevel.Warning or LogLevel.Error),
+            //fade time is calculated to be the configured fade time in frames, but we need ms.
+            () => (enabled: CFG.Current.Logger_Enable_Action_Log, fadeTime: (int)(CFG.Current.Logger_Action_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
+        );
+        WarningLogger = new(
+            "LOG_Error_Log",
+            evt => evt.Level is LogLevel.Warning or LogLevel.Error,
+            () => (enabled: CFG.Current.Logger_Enable_Warning_Log, fadeTime: (int)(CFG.Current.Logger_Warning_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
+        );
+        HighPriorityLogSubscription = TaskLogs.Subscribe(
+            evt => evt.Priority == LogPriority.High
+        );
     }
 
     private void Setup()
@@ -247,6 +279,8 @@ public class Smithbox
     /// </summary>
     private void Exit()
     {
+        // Holds the language picked on the first launch, which is otherwise only saved from the preferences
+        Startup.Save();
         CFG.Save();
         UI.Save();
         InputManager.SaveKeybinds();
@@ -387,7 +421,7 @@ public class Smithbox
 
         if (ProgramType is ProgramType.Editor)
         {
-            if (_soapstoneService != null)
+            if (_soapstoneService != null && Startup.Current.System_Enable_Soapstone_Server)
             {
                 TaskManager.LiveTask task = new(
                     "system_setupSoapstoneServer",
@@ -419,7 +453,8 @@ public class Smithbox
             }
             else
             {
-                _desiredFrameLengthSeconds = 1.0 / CFG.Current.Viewport_Frame_Rate;
+                // Clamped to the preference slider's range: a hand-edited 0 would make the frame limiter wait forever
+                _desiredFrameLengthSeconds = 1.0 / Math.Clamp(CFG.Current.Viewport_Frame_Rate, 20.0f, 240.0f);
             }
 
             var currentFrameTicks = sw.ElapsedTicks;
@@ -444,11 +479,9 @@ public class Smithbox
 
             Update((float)deltaSeconds);
 
+            // The shutdown after the loop saves everything, so closing here only leaves the loop
             if (!_context.Window.Exists)
             {
-                Orchestrator.Exit();
-                Exit();
-
                 break;
             }
 
@@ -486,9 +519,26 @@ public class Smithbox
     public void AttemptSaveOnCrash()
     {
         using var __tracy = Profiler.TracyZoneAuto();
+
+        // A project that crashes while loading would crash every launch if it stayed set to auto-load
+        var loadingProject = Orchestrator?.LoadingProject;
+
+        if (loadingProject?.Descriptor is { AutoSelect: true })
+        {
+            try
+            {
+                loadingProject.Descriptor.AutoSelect = false;
+                Orchestrator.SaveProject(loadingProject);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to clear the auto-load of the crashed project : " + e.Message);
+            }
+        }
+
         if (!_initialLoadComplete)
         {
-            // Program crashed on initial load, clear recent project to let the user launch the program next time without issue.
+            // Program crashed on initial load, save the configuration so the next launch starts from it
             try
             {
                 Startup.Save();

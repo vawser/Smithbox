@@ -205,7 +205,11 @@ public static class TaskManager
                     TaskAction.Invoke();
                     if (TaskName != "")
                     {
-                        Smithbox.Log(this, $"{TaskName} {TaskCompletedMessage}",
+                        // A passive task logs its completed message when it starts, as it is meant to run until
+                        // Smithbox closes, so a passive task that ends has stopped
+                        var message = PassiveTask ? TaskFailedMessage : TaskCompletedMessage;
+
+                        Smithbox.Log(this, $"{TaskName} {message}",
                         LogLevel.Information, LogPriority);
                     }
                 }

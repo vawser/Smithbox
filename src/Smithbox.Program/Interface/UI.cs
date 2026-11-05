@@ -223,8 +223,8 @@ public class UI
 
         if (!File.Exists(file))
         {
-            Current = new UI();
-            Save();
+            // Saving defaults here would overwrite the user's Interface.json, so the saved interface is used instead
+            LoadDefault();
         }
         else
         {
@@ -243,8 +243,7 @@ public class UI
             {
                 Smithbox.LogError<UI>(LOC.Get("INTERFACE_Theme_Failed_Read", file), e);
 
-                Current = new UI();
-                Save();
+                LoadDefault();
             }
         }
     }
