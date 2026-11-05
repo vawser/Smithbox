@@ -96,7 +96,9 @@ static object ReadRoot(Game game, byte[] bytes, byte[] compendium)
         }
         default:
         {
-            var serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
+            var serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer(game == Game.NR
+                ? HKLib.Reflection.hk2018.HavokTypeRegistry.Nightreign
+                : HKLib.Reflection.hk2018.HavokTypeRegistry.Instance);
             if (compendium != null)
                 serializer.LoadCompendium(new MemoryStream(compendium));
             return serializer.Read(new MemoryStream(bytes));

@@ -70,7 +70,7 @@ HKX2 (`HKX2.hkbBehaviorGraphStringData`) has event, attribute, variable and char
 
 Not covered:
 - **AC6:** its behbnds hold FromSoftware `.bhv` files and a `.tae`, not Havok behavior graphs, so AC6 isn't a target for this work.
-- **NR:** HKLib can't read NR's main behaviors (`Incorrect hash encountered for type CustomManualSelectorGenerator`), so the editor can't open them either. That's outside this plan.
+- **NR:** ~~HKLib can't read NR's main behaviors~~ Fixed (2026-11-05). NR's `CustomManualSelectorGenerator` adds `isBasePoseAnim` (hkBool, offset 198, hash 624531992); every other type in NR's 551 behavior files matches the ER registry (`Tools/HkTypeDiff`). HKLib now has `HavokTypeRegistry.Nightreign` (base registry + `Res/HavokTypeRegistry20180100_NR.xml` overlay), which `HavokTagSerializer.Create` uses for NR projects. All 551 NR and 817 ER files read, write and reread with every CMSG field intact; 181,075 of NR's 182,959 CMSGs have `isBasePoseAnim` set, so it isn't padding. The NR survey now runs with no read failures.
 
 1. **`HavokBehaviorSymbols`** (new, `Data/`): built in `HavokBehaviorView.SetupBehaviorView` from the graph root, and rebuilt where that already reruns (file change, structural edit). It holds:
    - event names, variable names, character property names and animation names (each as index → name, plus reverse lookups)

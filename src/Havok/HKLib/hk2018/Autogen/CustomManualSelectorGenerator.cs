@@ -28,6 +28,9 @@ public class CustomManualSelectorGenerator : hkbGenerator, hkbVerifiable, ICusto
 
     public CustomManualSelectorGenerator.RideSync m_rideSync;
 
+    // Nightreign only (HavokTypeRegistry.Nightreign); Elden Ring files don't have it.
+    public bool m_isBasePoseAnim;
+
 
     public enum ChangeTypeOfSelectedIndexAfterActivate : int
     {

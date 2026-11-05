@@ -19,11 +19,13 @@ var gameName = args[0];
 var game = Enum.Parse<Game>(gameName);
 var filter = new Regex(args.Length > 1 ? args[1] : ".", RegexOptions.IgnoreCase);
 var maxBinders = args.Length > 2 ? int.Parse(args[2]) : 5;
+var roundtrip = args.Contains("--roundtrip");
+int rtOk = 0, rtFail = 0, cmsgTotal = 0, basePoseTrue = 0;
 
 var real = new RealVirtualFileSystem(gamePaths[gameName], false);
 using VirtualFileSystem fs = new CompundVirtualFileSystem([ArchiveBinderVirtualFileSystem.FromGameFolder(gamePaths[gameName], game), real]);
 
-var registry = HavokTypeRegistry.Instance;
+var registry = args.Contains("--base") || game != Game.NR ? HavokTypeRegistry.Instance : HavokTypeRegistry.Nightreign;
 var reported = new HashSet<string>();
 var ser = new HavokBinarySerializer();
 MethodInfo M(string n) => typeof(HavokBinarySerializer).GetMethod(n, BindingFlags.NonPublic | BindingFlags.Instance)!;
@@ -42,8 +44,69 @@ foreach (var path in binders)
         if (!name.Contains("/Behaviors/", StringComparison.OrdinalIgnoreCase) || !name.Contains(".hkx", StringComparison.OrdinalIgnoreCase)) continue;
         var bytes = name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase) ? DCX.Decompress(file.Bytes).ToArray() : file.Bytes.ToArray();
         Console.WriteLine($"== {path} :: {Path.GetFileName(name)}");
-        try { Diff(bytes); } catch (Exception e) { Console.WriteLine($"  failed: {e.GetType().Name}: {e.Message}"); }
+        try
+        {
+            if (roundtrip) Roundtrip(bytes);
+            else Diff(bytes);
+        }
+        catch (Exception e) { Console.WriteLine($"  failed: {e.GetType().Name}: {e.Message}"); }
     }
+}
+
+if (roundtrip)
+    Console.WriteLine($"TOTAL files ok {rtOk}, failed {rtFail}; CMSG {cmsgTotal}, isBasePoseAnim true {basePoseTrue}");
+
+// Reads with the game's registry, writes, rereads, and checks every CMSG field survived. Also checks the
+// written type hash: rereading verifies THSH against the same registry, and the other registry must reject it.
+void Roundtrip(byte[] bytes)
+{
+    var gameReg = game == Game.NR ? HavokTypeRegistry.Nightreign : HavokTypeRegistry.Instance;
+    var otherReg = game == Game.NR ? HavokTypeRegistry.Instance : HavokTypeRegistry.Nightreign;
+
+    var a = (HKLib.hk2018.hkRootLevelContainer)new HavokBinarySerializer(gameReg).Read(new MemoryStream(bytes));
+    var ms = new MemoryStream();
+    new HavokBinarySerializer(gameReg).Write(a, ms);
+    var written = ms.ToArray();
+    var b = (HKLib.hk2018.hkRootLevelContainer)new HavokBinarySerializer(gameReg).Read(new MemoryStream(written));
+
+    var ca = CollectCmsg(a);
+    var cb = CollectCmsg(b);
+    string Sig(HKLib.hk2018.CustomManualSelectorGenerator c) =>
+        $"{c.m_name}|{c.m_animId}|{c.m_offsetType}|{c.m_animeEndEventType}|{c.m_enableScript}|{c.m_enableTae}|{c.m_changeTypeOfSelectedIndexAfterActivate}|{c.m_checkAnimEndSlotNo}|{c.m_replanningAI}|{c.m_rideSync}|{c.m_isBasePoseAnim}|{c.m_generators.Count}";
+    var sa = ca.Select(Sig).OrderBy(x => x).ToList();
+    var sb = cb.Select(Sig).OrderBy(x => x).ToList();
+
+    bool otherRejects = false;
+    if (ca.Count > 0)
+    {
+        try { new HavokBinarySerializer(otherReg).Read(new MemoryStream(written)); }
+        catch (InvalidDataException) { otherRejects = true; }
+    }
+
+    int trues = ca.Count(c => c.m_isBasePoseAnim);
+    cmsgTotal += ca.Count;
+    basePoseTrue += trues;
+    bool ok = sa.SequenceEqual(sb) && (ca.Count == 0 || otherRejects);
+    if (ok) rtOk++; else rtFail++;
+    Console.WriteLine($"  {(ok ? "ok" : "MISMATCH")}: CMSG {ca.Count}, isBasePoseAnim true {trues}, size {bytes.Length} -> {written.Length}, other registry rejects: {otherRejects}");
+}
+
+static List<HKLib.hk2018.CustomManualSelectorGenerator> CollectCmsg(object root)
+{
+    var found = new HashSet<object>(ReferenceEqualityComparer.Instance);
+    var result = new List<HKLib.hk2018.CustomManualSelectorGenerator>();
+    var stack = new Stack<object>();
+    stack.Push(root);
+    while (stack.Count > 0)
+    {
+        var o = stack.Pop();
+        if (o == null || o is string || o.GetType().IsPrimitive || o.GetType().IsEnum || !found.Add(o)) continue;
+        if (o is HKLib.hk2018.CustomManualSelectorGenerator c) result.Add(c);
+        if (o is System.Collections.IEnumerable list) { foreach (var x in list) stack.Push(x); continue; }
+        foreach (var f in o.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public))
+            if (!f.FieldType.IsPrimitive && !f.FieldType.IsEnum && f.FieldType != typeof(string)) stack.Push(f.GetValue(o));
+    }
+    return result;
 }
 
 void Diff(byte[] bytes)

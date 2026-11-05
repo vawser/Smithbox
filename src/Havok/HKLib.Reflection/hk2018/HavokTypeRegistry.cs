@@ -21,11 +21,22 @@ public class HavokTypeRegistry
 
     public static readonly HavokTypeRegistry Instance = LoadDefault();
 
-    private static HavokTypeRegistry LoadDefault() 
+    private static readonly Lazy<HavokTypeRegistry> NightreignRegistry = new(() =>
+        Load(GetResPath("HavokTypeRegistry20180100.xml"), GetResPath("HavokTypeRegistry20180100_NR.xml")));
+
+    /// <summary>
+    /// The 2018 registry with Elden Ring Nightreign's type changes applied. NR's
+    /// CustomManualSelectorGenerator has an extra isBasePoseAnim field, so it has a different hash and layout.
+    /// Use this registry to read and write NR files; the default <see cref="Instance" /> matches Elden Ring.
+    /// </summary>
+    public static HavokTypeRegistry Nightreign => NightreignRegistry.Value;
+
+    private static string GetResPath(string fileName) =>
+        Path.Join(AppDomain.CurrentDomain.BaseDirectory, "Res", fileName);
+
+    private static HavokTypeRegistry LoadDefault()
     {
-        string basePath = AppDomain.CurrentDomain.BaseDirectory;
-        string typeRegPath = Path.Join(basePath, "Res", "HavokTypeRegistry20180100.xml");
-        return Load(typeRegPath);
+        return Load(GetResPath("HavokTypeRegistry20180100.xml"));
     }
 
     public HavokTypeRegistry(IReadOnlyList<HavokType> types)
@@ -68,6 +79,53 @@ public class HavokTypeRegistry
         XElement typeRegistry = XElement.Load(path);
         HavokType[] types = Load(typeRegistry);
         return new HavokTypeRegistry(types);
+    }
+
+    /// <summary>
+    /// Loads a registry, then replaces types with those in an overlay file. Each overlay HavokType element
+    /// replaces the base element with the same Id, and must have the same Name. Type references in the overlay
+    /// use the base registry's Ids.
+    /// </summary>
+    public static HavokTypeRegistry Load(string path, string overlayPath)
+    {
+        if (!File.Exists(path))
+        {
+            throw new ArgumentException("The specified file does not exist", nameof(path));
+        }
+
+        if (!File.Exists(overlayPath))
+        {
+            throw new ArgumentException("The specified file does not exist", nameof(overlayPath));
+        }
+
+        XElement typeRegistry = XElement.Load(path);
+        ApplyOverlay(typeRegistry, XElement.Load(overlayPath));
+        HavokType[] types = Load(typeRegistry);
+        return new HavokTypeRegistry(types);
+    }
+
+    private static void ApplyOverlay(XElement typeRegistry, XElement overlay)
+    {
+        Dictionary<string, XElement> baseTypes = typeRegistry.Elements().SelectMany(x => x.Elements())
+            .ToDictionary(x => x.Attribute("Id")!.Value);
+
+        foreach (XElement type in overlay.Elements("HavokType"))
+        {
+            string id = type.Attribute("Id")!.Value;
+            if (!baseTypes.TryGetValue(id, out XElement? baseType))
+            {
+                throw new InvalidDataException($"Overlay type Id {id} is not in the base registry.");
+            }
+
+            string name = type.Attribute("Name")!.Value;
+            if (baseType.Attribute("Name")!.Value != name)
+            {
+                throw new InvalidDataException(
+                    $"Overlay type Id {id} is \"{name}\", but the base registry has \"{baseType.Attribute("Name")!.Value}\".");
+            }
+
+            baseType.ReplaceWith(new XElement(type));
+        }
     }
 
     private static HavokType[] Load(XElement typeRegistry)

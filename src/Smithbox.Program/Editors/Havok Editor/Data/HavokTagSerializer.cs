@@ -10,9 +10,13 @@ public abstract class HavokTagSerializer
 {
     public static HavokTagSerializer Create(ProjectEntry project)
     {
-        return HavokTypeUtils.IsHKX3_2019(project)
-            ? new HavokTagSerializer2019()
-            : new HavokTagSerializer2018();
+        if (HavokTypeUtils.IsHKX3_2019(project))
+            return new HavokTagSerializer2019();
+
+        // NR changes CustomManualSelectorGenerator, so its files need the NR type registry
+        return project.Descriptor.ProjectType is ProjectType.NR
+            ? new HavokTagSerializer2018(HKLib.Reflection.hk2018.HavokTypeRegistry.Nightreign)
+            : new HavokTagSerializer2018(HKLib.Reflection.hk2018.HavokTypeRegistry.Instance);
     }
 
     /// <summary>
@@ -30,7 +34,12 @@ public abstract class HavokTagSerializer
 
 public class HavokTagSerializer2018 : HavokTagSerializer
 {
-    private readonly HKLib.Serialization.hk2018.Binary.HavokBinarySerializer _serializer = new();
+    private readonly HKLib.Serialization.hk2018.Binary.HavokBinarySerializer _serializer;
+
+    public HavokTagSerializer2018(HKLib.Reflection.hk2018.HavokTypeRegistry typeRegistry)
+    {
+        _serializer = new(typeRegistry);
+    }
 
     public override bool UsesBinderCompendium => false;
 

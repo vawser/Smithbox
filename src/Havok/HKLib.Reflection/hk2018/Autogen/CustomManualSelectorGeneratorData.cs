@@ -180,6 +180,13 @@ internal class CustomManualSelectorGeneratorData : HavokData<CustomManualSelecto
                 }
                 return false;
             }
+            case "m_isBasePoseAnim":
+            case "isBasePoseAnim":
+            {
+                if (instance.m_isBasePoseAnim is not TGet castValue) return false;
+                value = castValue;
+                return true;
+            }
             default:
             return false;
         }
@@ -357,6 +364,13 @@ internal class CustomManualSelectorGeneratorData : HavokData<CustomManualSelecto
                     return true;
                 }
                 return false;
+            }
+            case "m_isBasePoseAnim":
+            case "isBasePoseAnim":
+            {
+                if (value is not bool castValue) return false;
+                instance.m_isBasePoseAnim = castValue;
+                return true;
             }
             default:
             return false;

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Elden Ring Nightreign changes to HavokTypeRegistry20180100.xml, applied by HavokTypeRegistry.Nightreign.
+  Each HavokType replaces the base type with the same Id. Type references use the base registry's Ids.
+  Found by comparing the types embedded in every NR behavior file with the base registry (Tools/HkTypeDiff);
+  this is the only type that differs.
+-->
+<HavokTypeRegistryOverlay Base="20180100" Game="NR">
+  <!-- Adds isBasePoseAnim (hkBool) at 198, in what is padding in Elden Ring -->
+  <HavokType Id="92" Name="CustomManualSelectorGenerator" Parent="3601" Optionals="1283491401" Format="7" SubType="0" Size="280" Alignment="8" Flags="0" Version="0" Hash="624531992">
+    <Members>
+      <Member Name="generators" Type="3361" Offset="152" Flags="32" />
+      <Member Name="offsetType" Type="78" Offset="168" Flags="32" />
+      <Member Name="animId" Type="1685" Offset="172" Flags="32" />
+      <Member Name="animeEndEventType" Type="77" Offset="176" Flags="32" />
+      <Member Name="enableScript" Type="1675" Offset="180" Flags="32" />
+      <Member Name="enableTae" Type="1675" Offset="181" Flags="32" />
+      <Member Name="changeTypeOfSelectedIndexAfterActivate" Type="76" Offset="182" Flags="32" />
+      <Member Name="generatorChangedTransitionEffect" Type="3359" Offset="184" Flags="32" />
+      <Member Name="checkAnimEndSlotNo" Type="1685" Offset="192" Flags="32" />
+      <Member Name="replanningAI" Type="75" Offset="196" Flags="32" />
+      <Member Name="rideSync" Type="74" Offset="197" Flags="32" />
+      <Member Name="isBasePoseAnim" Type="1675" Offset="198" Flags="32" />
+      <Member Name="endEvent" Type="3648" Offset="200" Flags="37" />
+      <Member Name="preLocalTime" Type="2023" Offset="224" Flags="37" />
+      <Member Name="localTime" Type="2023" Offset="228" Flags="37" />
+      <Member Name="animeDuration" Type="2023" Offset="232" Flags="37" />
+      <Member Name="argTaeId" Type="1685" Offset="236" Flags="37" />
+      <Member Name="scriptGenerator" Type="4263" Offset="240" Flags="37" />
+      <Member Name="stateId" Type="1685" Offset="248" Flags="37" />
+      <Member Name="isFirstUpdate" Type="1675" Offset="252" Flags="37" />
+      <Member Name="isAnimTest" Type="1675" Offset="253" Flags="37" />
+      <Member Name="isSelfTransition" Type="1675" Offset="254" Flags="37" />
+      <Member Name="currentGeneratorIndex" Type="1686" Offset="256" Flags="35" />
+      <Member Name="generatorIndexAtActivate" Type="1686" Offset="258" Flags="35" />
+      <Member Name="activeTransitions" Type="4228" Offset="264" Flags="35" />
+    </Members>
+  </HavokType>
+</HavokTypeRegistryOverlay>
