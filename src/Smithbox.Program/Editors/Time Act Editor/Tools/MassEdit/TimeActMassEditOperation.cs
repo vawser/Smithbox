@@ -57,7 +57,12 @@ public enum TimeActMassEditFieldKind
     /// <summary>
     /// A value that isn't a single number, such as bytes or a gradient, which can only be set
     /// </summary>
-    Other
+    Other,
+
+    /// <summary>
+    /// Text, such as the file name of an animation, which can only be set
+    /// </summary>
+    Text
 }
 
 /// <summary>

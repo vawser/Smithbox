@@ -130,8 +130,8 @@ the preview stale, so Apply always does exactly what was shown.
 | 2 | **Edit** for events: builder, planner, preview old → new, apply as one compound action — **done 2026-11-04**, awaiting check. See *Phase 2 notes* | Edits undo/redo in one step; skipped rows explained |
 | 3 | **Delete** for events and animations — **done 2026-11-04**, awaiting check. See *Phase 3 notes* | Undo restores order and selection |
 | 4 | **Create** events (per animation / alongside event) — **done 2026-11-04**, awaiting check. See *Phase 4 notes* | New events have correct groups, defaults and Unk04 |
-| 5 | **All Sources** scope: adopt read copies, dirty marking, Save All path, undo caveat. The runner discards the `ReadTimeActs()` list after querying a source; it needs an option to hand that full list back per source (constraint 1) | Edited unopened sources save without losing other time acts |
-| 6 | Extras: animation property edits, duplicate animations, "Send to Mass Edit" button on Search results, comparison operators back-ported to Search | — |
+| 5 | **All Sources** scope: adopt read copies, dirty marking, Save All path, undo caveat — **done 2026-11-04**, awaiting check. See *Phase 5 notes* | Edited unopened sources save without losing other time acts |
+| 6 | Extras: animation property edits, duplicate animations, "Send to Mass Edit" button on Search results, comparison operators back-ported to Search — **done 2026-11-05**, awaiting check. See *Phase 6 notes* | — |
 
 ### Phase 1 notes
 
@@ -214,6 +214,52 @@ the preview stale, so Apply always does exactly what was shown.
   one of the type at the same times — including duplicates among the new events themselves. It is checked again
   on apply; places that gained the event in between count as stale.
 - **Steps builder** now takes its list (`DisplaySteps(steps, fields)`), shared by Edit and Create.
+
+### Phase 5 notes
+
+- **Read lists.** `TimeActQueryRunner.Start(..., keepReadEntries: true)` keeps, in `TimeActQueryRun.ReadEntries`,
+  the whole `ReadTimeActs()` list of each unopened source **that had a match** (not every source, which would hold
+  the whole project's time acts).
+- **Adoption** (`TimeActMassEditTool.AdoptReadSources`) runs at the start of every apply (Edit, Delete, Create):
+  a source still unopened (`TimeActs.Count == 0`) is given its read list, the same objects the matches point at.
+  A source opened since Find keeps its own list; `TryResolve` re-finds the matches in it by IDs and position.
+  Once edited, the entries are dirty, so `SelectSource` keeps them, and *Save All Modified* writes them.
+- **Templates per source.** The filter has `Templates` (source → template), and the planner, applier and labels
+  take `TemplateFor(source)`. Create skips sources whose template doesn't hold the picked event template
+  (e.g. Dark Souls objects). The pickers use the selected source's template, or the first character's when no
+  source is selected; All Sources no longer needs a selected source.
+- **Matches kept across jumps.** Global matches aren't cleared when the selected source changes (local ones
+  still are), since jumping between sources is how they're reviewed.
+- **Warnings.** The Edit tab warns that undo lasts only until another source is selected (D1); after applying,
+  it reminds that *Save* only saves the selected source and to use *Save All Modified*.
+- **Labels** show source and time act; progress counts sources.
+- **Undo of an adoption.** Undo restores the values, but the source keeps the adopted list and stays marked as
+  changed (as any undo in this editor leaves `IsDirty` set). Saving then writes the original values back.
+
+### Phase 6 notes
+
+- **Animation properties** (`TimeActAnimationFields.cs`): file name, loop by default, imports HKX, import HKX
+  source, allow delay load (Standard mini header), import from, import unknown (Import mini header). Each has a
+  getter/setter used by both the planner and the applier; the getter is null when the mini header lacks the
+  field, which is a skip. Applied with `TimeActSetPropertyAction<object>`; fields that pick the motion refresh the
+  playback if their animation is on show. **The ID and the mini header type are left out**: IDs would clash in
+  bulk (duplication covers new IDs), and switching the type replaces the header with fresh defaults.
+- **Change rows** (`TimeActPlannedChange`) now carry the match directly, so events and animations share the
+  preview. `TimeActMassEditPlan.TargetCount` counts both.
+- **Duplicate animations**: Create, with the Animations target, offers *Copies of the animations*: ID + offset,
+  skip or *use the next free ID* when taken (checked against the time act and the other copies, again at apply).
+  File names are renamed by `TimeActAnimationSelectionWindow.GetAnimFileName` (now public), as the single
+  Duplicate does. The copies are cloned at apply, so they hold the events then. `TimeActMassAddAnimationsAction`
+  inserts each in ID order; undo clears the selection if it was on a copy.
+- **Send to Mass Edit**: a button under the Search results. `TimeActMassEditTool.LoadQuery` copies the search's
+  inputs as typed text (field/value become one condition; an exact *contains* becomes *equals*), maps the scope
+  (current time act → Current Time Act, all time acts → Current Source, global → All Sources), shows the tool,
+  brings the Find tab forward and runs Find on its next draw. **Difference:** a search with only a field/value also
+  lists animations whose *properties* match; with the Events target, Mass Edit finds only the events.
+- **Search comparisons**: the Value input has the comparison combo. *Contains* (the default) behaves exactly as
+  before, including the Exact toggle; the others go through `TimeActMassEditFilter.Compare`, so numbers compare
+  as numbers. A *between* with only its upper end now counts as a value, in both tools.
+- **Still deferred:** the plain-words read-back of an edit, and *snap to frames*.
 
 ## 5. Verification (for the user, per phase)
 

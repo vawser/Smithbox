@@ -23,7 +23,8 @@ public enum TimeActMassEditScope
     SelectedEvents,
     CurrentAnimation,
     CurrentTimeAct,
-    CurrentSource
+    CurrentSource,
+    AllSources
 }
 
 /// <summary>
@@ -50,7 +51,11 @@ public record TimeActMassEditCondition(string Field, bool PickedField, TimeActMa
     string Value, string Value2)
 {
     public bool HasField => !string.IsNullOrWhiteSpace(Field);
-    public bool HasValue => !string.IsNullOrWhiteSpace(Value);
+    /// <summary>
+    /// A range can be given by its upper end alone
+    /// </summary>
+    public bool HasValue => !string.IsNullOrWhiteSpace(Value) ||
+        (Comparison is TimeActMassEditComparison.Between && !string.IsNullOrWhiteSpace(Value2));
 
     /// <summary>
     /// A condition with neither a field nor a value asks nothing
@@ -85,9 +90,10 @@ public class TimeActMassEditFilter : ITimeActQueryFilter
     public IReadOnlySet<TAE.Event> LimitEvents { get; init; }
 
     /// <summary>
-    /// The template of the source, which names events that don't carry their own name
+    /// The template of each source, which names events that don't carry their own name. Sources can use different
+    /// templates, such as the objects of Dark Souls.
     /// </summary>
-    public TAE.Template.BankTemplate Template { get; init; }
+    public IReadOnlyDictionary<TimeActContainerWrapper, TAE.Template.BankTemplate> Templates { get; init; }
 
     // The typed text is matched as the search matches it
     private TimeActQuery textQuery;
@@ -115,7 +121,9 @@ public class TimeActMassEditFilter : ITimeActQueryFilter
         }
 
         // An animation can be picked by the events it has
-        if (HasEventFilter && !animation.Events.Any(e => MatchEventType(matcher, e, null)))
+        var template = Templates?.GetValueOrDefault(source);
+
+        if (HasEventFilter && !animation.Events.Any(e => MatchEventType(matcher, e, null, template)))
             return false;
 
         if (!MatchConditions(TimeActQueryMatcher.GetAnimationProperties(animation).ToList(), out var conditionMatch))
@@ -134,7 +142,15 @@ public class TimeActMassEditFilter : ITimeActQueryFilter
         return false;
     }
 
+    /// <summary>
+    /// The runner gives the name of the event, from the template of its source
+    /// </summary>
     public bool MatchEventType(TimeActQueryMatcher matcher, TAE.Event ev, string eventName)
+    {
+        return MatchEventType(matcher, ev, eventName, null);
+    }
+
+    private bool MatchEventType(TimeActQueryMatcher matcher, TAE.Event ev, string eventName, TAE.Template.BankTemplate template)
     {
         if (LimitEvents != null && !LimitEvents.Contains(ev))
             return false;
@@ -146,7 +162,7 @@ public class TimeActMassEditFilter : ITimeActQueryFilter
             return true;
 
         // The name is only worked out when it is needed, as an animation is checked against all of its events
-        eventName ??= TimeActQueryMatcher.GetEventName(ev, Template);
+        eventName ??= TimeActQueryMatcher.GetEventName(ev, template);
 
         return matcher.MatchEvent(TextQuery, ev, eventName);
     }

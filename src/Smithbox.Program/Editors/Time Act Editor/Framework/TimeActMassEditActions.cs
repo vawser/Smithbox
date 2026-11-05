@@ -191,6 +191,69 @@ public class TimeActMassAddEventsAction : ViewportAction
 }
 
 /// <summary>
+/// Adds animations to many time acts at once, for the mass edit, each in its place in ID order. The selection is
+/// left as it is; undo clears it if it was on one of the new animations.
+/// </summary>
+public class TimeActMassAddAnimationsAction : ViewportAction
+{
+    private readonly TimeActEditorView View;
+    private readonly List<(TimeActEntry Entry, List<TAE.Animation> Animations)> Groups;
+
+    public int AnimationCount => Groups.Sum(e => e.Animations.Count);
+
+    public TimeActMassAddAnimationsAction(TimeActEditorView view,
+        IEnumerable<(TimeActEntry Entry, List<TAE.Animation> Animations)> groups)
+    {
+        View = view;
+        Groups = groups.Where(e => e.Animations.Count > 0).ToList();
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        foreach (var (entry, added) in Groups)
+        {
+            var animations = entry.TimeAct.Animations;
+
+            foreach (var animation in added)
+            {
+                var index = animations.FindIndex(e => e.ID > animation.ID);
+
+                animations.Insert(index < 0 ? animations.Count : index, animation);
+            }
+
+            entry.IsDirty = true;
+            entry.MarkAnimationsChanged();
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        var removed = new HashSet<TAE.Animation>();
+
+        foreach (var (entry, added) in Groups)
+        {
+            foreach (var animation in added)
+            {
+                entry.TimeAct.Animations.Remove(animation);
+                removed.Add(animation);
+            }
+
+            entry.IsDirty = true;
+            entry.MarkAnimationsChanged();
+        }
+
+        if (View.Selection.SelectedAnimation != null && removed.Contains(View.Selection.SelectedAnimation))
+        {
+            View.AnimationSelectionWindow.ClearSelection();
+        }
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+/// <summary>
 /// Removes animations from many time acts at once, for the mass edit, in the same way as
 /// <see cref="TimeActMassDeleteEventsAction"/>. If the selected animation goes, the one that took its place is
 /// selected, as a single delete does. Undo puts the selected animation and events back as they were.

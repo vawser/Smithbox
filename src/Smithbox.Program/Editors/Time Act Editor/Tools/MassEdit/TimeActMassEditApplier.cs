@@ -1,6 +1,7 @@
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -15,7 +16,8 @@ public static class TimeActMassEditApplier
     /// Each event is checked against the values it had when the plan was made. An event changed since, by hand or
     /// by another edit, is left alone and counted as stale, so the edit never builds on values it didn't show.
     /// </summary>
-    public static Result Apply(TimeActEditorView view, TimeActMassEditPlan plan, TAE.Template.BankTemplate template)
+    public static Result Apply(TimeActEditorView view, TimeActMassEditPlan plan,
+        System.Func<TimeActContainerWrapper, TAE.Template.BankTemplate> templateFor)
     {
         var actions = new List<ViewportAction>();
 
@@ -40,7 +42,7 @@ public static class TimeActMassEditApplier
             {
                 // The parameters only exist once the template is on the event. Templates are only applied where
                 // they write the event back exactly, which is what the plan read the values through.
-                entry.ApplyTemplate(animation, template);
+                entry.ApplyTemplate(animation, templateFor(planned.Match.Source));
 
                 if (!HasOldValues(ev, planned))
                 {
@@ -57,6 +59,41 @@ public static class TimeActMassEditApplier
             foreach (var parameter in planned.Parameters)
             {
                 actions.Add(new TimeActSetParameterAction(entry, ev, parameter.Key, parameter.NewValue));
+            }
+
+            applied++;
+        }
+
+        foreach (var planned in plan.Animations)
+        {
+            if (!TimeActQueryRunner.TryResolve(planned.Match, out var entry, out var animation, out _))
+            {
+                stale++;
+                continue;
+            }
+
+            if (planned.Values.Any(e => !Equals(e.Field.Get(animation), e.OldValue)))
+            {
+                stale++;
+                continue;
+            }
+
+            foreach (var (field, oldValue, newValue) in planned.Values)
+            {
+                var target = animation;
+
+                // The motion that plays is worked out from these, so it is looked up again if it is on show
+                System.Action onChanged = field.ChangesMotion
+                    ? () =>
+                    {
+                        if (view.Selection.SelectedAnimation == target)
+                        {
+                            view.Playback.OnAnimationChanged();
+                        }
+                    }
+                    : null;
+
+                actions.Add(new TimeActSetPropertyAction<object>(entry, value => field.Set(target, value), oldValue, newValue, onChanged));
             }
 
             applied++;

@@ -63,8 +63,11 @@ public partial class TimeActMassEditTool
 
     private List<ResultRow> Results;
     private HashSet<TAE.Animation> ResultAnimations;
+    private HashSet<TimeActContainerWrapper> ResultSources;
     private TimeActContainerWrapper ResultSource;
+    private bool ResultsGlobal;
     private TimeActMassEditTarget ResultTarget;
+    private bool ShowSourceInLabel;
     private bool ShowTimeActInLabel;
 
     private string ResultFilter = "";
@@ -113,27 +116,37 @@ public partial class TimeActMassEditTool
 
         var source = View.Selection.SelectedTimeActContainerWrapper;
 
-        // The matches point into the source they were found in
-        if (Results != null && ResultSource != source)
+        // Local matches point into the source they were found in. Matches across all sources are kept while
+        // the user jumps between them, which is how they are looked at.
+        if (Results != null && !ResultsGlobal && ResultSource != source)
         {
             ClearResults();
         }
 
-        if (source == null)
-        {
-            GUI.WrappedText(LOC.Get("TAE_MassEditTool_No_Source"));
-            return;
-        }
+        // The pickers list the event types of the selected source, or of the first one when none is selected
+        var template = GetPickerTemplate(source);
 
-        var template = Project.Handler.TimeActData.GetTemplate(source);
+        // A search handed its query over
+        if (PendingFind)
+        {
+            PendingFind = false;
+
+            if (GetScopeUnavailableReason() == null)
+            {
+                StartFind(source, template);
+            }
+        }
 
         // Picked up whichever tab is open, so a find keeps going while the Edit tab is shown
         PickUpResults();
 
         if (ImGui.BeginTabBar("##massEditTabs"))
         {
+            var findFlags = SelectFindTab ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
+            SelectFindTab = false;
+
             // Find
-            if (ImGui.BeginTabItem($"{LOC.Get("TAE_MassEditTool_Tab_Find")}##massEditTabFind"))
+            if (ImGui.BeginTabItem($"{LOC.Get("TAE_MassEditTool_Tab_Find")}##massEditTabFind", findFlags))
             {
                 DisplayScope();
                 DisplayTarget();
@@ -167,6 +180,66 @@ public partial class TimeActMassEditTool
     private void Changed()
     {
         InputsVersion++;
+    }
+
+    // Set by a search handing its query over, so Find runs on the next draw and the Find tab is brought forward
+    private bool PendingFind;
+    private bool SelectFindTab;
+
+    /// <summary>
+    /// Takes over the inputs of a search, so its results can be edited all at once. The search's text inputs
+    /// become typed text here, matched as the search matches them: the field and value become a condition, with
+    /// an exact search's contains turned into equals. The tool is shown, and Find runs once it is next drawn.
+    /// </summary>
+    public void LoadQuery(TimeActQuery query, TimeActMassEditScope scope)
+    {
+        Scope = scope;
+        Target = query.MatchesEvents ? TimeActMassEditTarget.Events : TimeActMassEditTarget.Animations;
+
+        AnimationText = query.Animation ?? "";
+        EventType = null;
+        EventText = query.Event ?? "";
+        EventTypeFilter = "";
+        Exact = query.Exact;
+
+        var condition = new ConditionInput();
+
+        if (query.HasField || query.HasValue)
+        {
+            condition.Field = query.Field ?? "";
+            condition.PickedField = false;
+            condition.Comparison = query.Comparison is TimeActMassEditComparison.Contains
+                ? query.Exact ? TimeActMassEditComparison.Equals : TimeActMassEditComparison.Contains
+                : query.Comparison;
+            condition.Value = query.Value ?? "";
+            condition.Value2 = query.Value2 ?? "";
+        }
+
+        Conditions = [condition];
+
+        Changed();
+        ClearResults();
+
+        CFG.Current.Interface_TimeActEditor_Tool_MassEdit = true;
+
+        PendingFind = true;
+        SelectFindTab = true;
+    }
+
+    /// <summary>
+    /// The event templates of a source. Sources can differ, such as the objects of Dark Souls, so every match is
+    /// read and edited with the templates of its own source.
+    /// </summary>
+    private TAE.Template.BankTemplate TemplateFor(TimeActContainerWrapper source)
+    {
+        return source == null ? null : Project.Handler.TimeActData.GetTemplate(source);
+    }
+
+    private TAE.Template.BankTemplate GetPickerTemplate(TimeActContainerWrapper source)
+    {
+        source ??= Project.Handler.TimeActData.PrimaryBank?.GetCharacters().FirstOrDefault();
+
+        return TemplateFor(source);
     }
 
     #region Scope and Target
@@ -213,6 +286,13 @@ public partial class TimeActMassEditTool
         {
             GUI.WrappedText(unavailable);
         }
+
+        // The list of sources is still being filled in, so some would be left out
+        if (Scope is TimeActMassEditScope.AllSources &&
+            Project.Handler.TimeActData.PrimaryBank is { IsScanning: true } bank)
+        {
+            GUI.WrappedText(LOC.Get("TAE_SearchTool_Global_Scanning", bank.ScanProgress, bank.ScanTotal));
+        }
     }
 
     /// <summary>
@@ -221,6 +301,9 @@ public partial class TimeActMassEditTool
     private string GetScopeUnavailableReason()
     {
         var selection = View.Selection;
+
+        if (Scope is not TimeActMassEditScope.AllSources && selection.SelectedTimeActContainerWrapper == null)
+            return LOC.Get("TAE_MassEditTool_No_Source");
 
         return Scope switch
         {
@@ -242,6 +325,7 @@ public partial class TimeActMassEditTool
         TimeActMassEditScope.CurrentAnimation => LOC.Get("TAE_MassEditTool_Scope_Current_Animation"),
         TimeActMassEditScope.CurrentTimeAct => LOC.Get("TAE_MassEditTool_Scope_Current_TimeAct"),
         TimeActMassEditScope.CurrentSource => LOC.Get("TAE_MassEditTool_Scope_Current_Source"),
+        TimeActMassEditScope.AllSources => LOC.Get("TAE_MassEditTool_Scope_All_Sources"),
         _ => $"{scope}"
     };
 
@@ -251,6 +335,7 @@ public partial class TimeActMassEditTool
         TimeActMassEditScope.CurrentAnimation => LOC.Get("TAE_MassEditTool_Scope_Current_Animation_TT"),
         TimeActMassEditScope.CurrentTimeAct => LOC.Get("TAE_MassEditTool_Scope_Current_TimeAct_TT"),
         TimeActMassEditScope.CurrentSource => LOC.Get("TAE_MassEditTool_Scope_Current_Source_TT"),
+        TimeActMassEditScope.AllSources => LOC.Get("TAE_MassEditTool_Scope_All_Sources_TT"),
         _ => ""
     };
 
@@ -794,7 +879,7 @@ public partial class TimeActMassEditTool
         GUI.Tooltip(LOC.Get("TAE_MassEditTool_Value_TT"));
     }
 
-    private static string GetComparisonName(TimeActMassEditComparison comparison) => comparison switch
+    public static string GetComparisonName(TimeActMassEditComparison comparison) => comparison switch
     {
         TimeActMassEditComparison.Contains => LOC.Get("TAE_MassEditTool_Comparison_Contains"),
         TimeActMassEditComparison.Equals => "=",
@@ -807,7 +892,7 @@ public partial class TimeActMassEditTool
         _ => $"{comparison}"
     };
 
-    private static string GetComparisonTooltip(TimeActMassEditComparison comparison) => comparison switch
+    public static string GetComparisonTooltip(TimeActMassEditComparison comparison) => comparison switch
     {
         TimeActMassEditComparison.Contains => LOC.Get("TAE_MassEditTool_Comparison_Contains_TT"),
         TimeActMassEditComparison.Equals => LOC.Get("TAE_MassEditTool_Comparison_Equals_TT"),
@@ -869,7 +954,9 @@ public partial class TimeActMassEditTool
 
         Results = null;
         ResultAnimations = null;
+        ResultSources = null;
         ResultSource = null;
+        ResultsGlobal = false;
         FoundVersion = -1;
 
         ClearPlan();
@@ -883,10 +970,22 @@ public partial class TimeActMassEditTool
         ClearResults();
 
         var selection = View.Selection;
+        var global = Scope is TimeActMassEditScope.AllSources;
 
-        var entries = Scope is TimeActMassEditScope.CurrentSource
-            ? source.TimeActs.ToList()
-            : [selection.SelectedTimeAct];
+        List<TimeActQuerySource> sources;
+
+        if (global)
+        {
+            sources = Runner.GetGlobalSources();
+        }
+        else
+        {
+            var entries = Scope is TimeActMassEditScope.CurrentSource
+                ? source.TimeActs.ToList()
+                : [selection.SelectedTimeAct];
+
+            sources = [Runner.GetLocalSource(source, entries)];
+        }
 
         HashSet<TAE.Animation> limitAnimations = Scope is TimeActMassEditScope.SelectedEvents or TimeActMassEditScope.CurrentAnimation
             ? [selection.SelectedAnimation]
@@ -904,24 +1003,48 @@ public partial class TimeActMassEditTool
             EventText = EventText.Trim(),
             Conditions = Conditions.Select(e => e.ToCondition()).ToList(),
             Exact = Exact,
-            Template = template,
+            Templates = sources.GroupBy(e => e.Source).ToDictionary(e => e.Key, e => e.First().Template),
             LimitAnimations = limitAnimations,
             LimitEvents = limitEvents
         };
 
         Results = new();
         ResultAnimations = new();
+        ResultSources = new();
         ResultSource = source;
+        ResultsGlobal = global;
         ResultTarget = Target;
-        ShowTimeActInLabel = Scope is TimeActMassEditScope.CurrentSource;
+        ShowSourceInLabel = global;
+        ShowTimeActInLabel = Scope is TimeActMassEditScope.CurrentSource or TimeActMassEditScope.AllSources;
 
         FoundVersion = InputsVersion;
         FoundTimeAct = selection.SelectedTimeAct;
         FoundAnimation = selection.SelectedAnimation;
         FoundEvents = selection.SelectedEvents.ToArray();
 
-        // Every match is kept, as the edit is applied to all of them
-        Run = Runner.Start(filter, [Runner.GetLocalSource(source, entries)], true, 0);
+        // Every match is kept, as the edit is applied to all of them. Across all sources, the time acts read for
+        // the sources that aren't open are kept too, as the edit is made to those copies.
+        Run = Runner.Start(filter, sources, !global, 0, keepReadEntries: global);
+    }
+
+    /// <summary>
+    /// Hands the time acts read for each unopened source that had a match over to the source, so the edit is made
+    /// to what the matches point at, and saving writes it. The whole list is handed over: saving removes the files
+    /// of time acts that aren't in it. A source opened since Find already has its own, and the matches are looked
+    /// up again in those.
+    /// </summary>
+    private void AdoptReadSources()
+    {
+        if (Run == null || !Run.KeepReadEntries)
+            return;
+
+        foreach (var (source, entries) in Run.ReadEntries)
+        {
+            if (source.TimeActs.Count == 0)
+            {
+                source.TimeActs = entries;
+            }
+        }
     }
 
     /// <summary>
@@ -948,6 +1071,37 @@ public partial class TimeActMassEditTool
 
     #region Results
     /// <summary>
+    /// Puts the time act in front of a label when the matches span time acts, and the source when they span sources
+    /// </summary>
+    private string PrefixLabel(TimeActQueryMatch match, string label)
+    {
+        if (ShowTimeActInLabel)
+            label = $"{match.EntryName}  {label}";
+
+        if (ShowSourceInLabel)
+            label = $"{match.Source.Name}  {label}";
+
+        return label;
+    }
+
+    /// <summary>
+    /// How many matches there are, and in how many animations and sources
+    /// </summary>
+    private string GetMatchCountText()
+    {
+        var text = ResultTarget is TimeActMassEditTarget.Events
+            ? LOC.Get("TAE_MassEditTool_Matches_Events", Results.Count, ResultAnimations.Count)
+            : LOC.Get("TAE_MassEditTool_Matches_Animations", Results.Count);
+
+        if (ResultsGlobal)
+        {
+            text = $"{text} {LOC.Get("TAE_MassEditTool_Matches_Sources", ResultSources.Count)}";
+        }
+
+        return text;
+    }
+
+    /// <summary>
     /// Picks up what has been found so far
     /// </summary>
     private void PickUpResults()
@@ -962,8 +1116,9 @@ public partial class TimeActMassEditTool
             if (Results == null)
                 continue;
 
-            Results.Add(new ResultRow(match, ShowTimeActInLabel ? $"{match.EntryName}  {match.Label}" : match.Label));
+            Results.Add(new ResultRow(match, PrefixLabel(match, match.Label)));
             ResultAnimations.Add(match.Animation);
+            ResultSources.Add(match.Source);
         }
     }
 
@@ -986,7 +1141,7 @@ public partial class TimeActMassEditTool
         var total = Math.Max(run.Total, 1);
         var fraction = Math.Clamp((float)run.Progress / total, 0, 1);
 
-        ImGui.ProgressBar(fraction, new Vector2(-1, 0), LOC.Get("TAE_MassEditTool_Progress", run.Progress, run.Total));
+        ImGui.ProgressBar(fraction, new Vector2(-1, 0), LOC.Get(ResultsGlobal ? "TAE_MassEditTool_Progress_Sources" : "TAE_MassEditTool_Progress", run.Progress, run.Total));
 
         GUI.WrappedText(LOC.Get("TAE_MassEditTool_Finding", run.Status));
 
@@ -1009,9 +1164,7 @@ public partial class TimeActMassEditTool
             LOC.Get("TAE_MassEditTool_Matches_Header_TT"),
             ref ShowMatchesList);
 
-        var countText = ResultTarget is TimeActMassEditTarget.Events
-            ? LOC.Get("TAE_MassEditTool_Matches_Events", Results.Count, ResultAnimations.Count)
-            : LOC.Get("TAE_MassEditTool_Matches_Animations", Results.Count);
+        var countText = GetMatchCountText();
 
         var filtered = GetFilteredResults();
 

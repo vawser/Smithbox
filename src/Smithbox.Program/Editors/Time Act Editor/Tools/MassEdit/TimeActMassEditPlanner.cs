@@ -30,9 +30,19 @@ public class TimeActPlannedEvent
 }
 
 /// <summary>
-/// One line of the preview: one field of one event, from its old value to its new one
+/// An animation an edit changes: each property, with the value it had when the edit was planned
 /// </summary>
-public record TimeActPlannedChange(TimeActPlannedEvent Event, string Field, string OldText, string NewText);
+public class TimeActPlannedAnimation
+{
+    public TimeActQueryMatch Match;
+
+    public List<(TimeActAnimationField Field, object OldValue, object NewValue)> Values = new();
+}
+
+/// <summary>
+/// One line of the preview: one field of one event or animation, from its old value to its new one
+/// </summary>
+public record TimeActPlannedChange(TimeActQueryMatch Match, string Field, string OldText, string NewText);
 
 /// <summary>
 /// A match the edit can't be applied to, and why
@@ -46,7 +56,13 @@ public record TimeActPlannedSkip(TimeActQueryMatch Match, string Reason);
 public class TimeActMassEditPlan
 {
     public List<TimeActPlannedEvent> Events = new();
+    public List<TimeActPlannedAnimation> Animations = new();
     public List<TimeActPlannedChange> Changes = new();
+
+    /// <summary>
+    /// How many events or animations the edit changes
+    /// </summary>
+    public int TargetCount => Events.Count + Animations.Count;
     public List<TimeActPlannedSkip> Skips = new();
 
     /// <summary>
@@ -85,6 +101,18 @@ public record TimeActCreateSettings(TAE.Template.EventTemplate EventTemplate, Ti
 /// </summary>
 public record TimeActPlannedCreate(TimeActQueryMatch Match, TimeActEntry Entry, TAE.Animation Animation, TAE.Event Event);
 
+/// <summary>
+/// A copy of an animation to add, under its new ID and file name. The copy itself is made when it is applied,
+/// so it holds the events the animation has then.
+/// </summary>
+public record TimeActPlannedDuplicate(TimeActQueryMatch Match, long NewID, string FileName);
+
+public class TimeActMassDuplicatePlan
+{
+    public List<TimeActPlannedDuplicate> Duplicates = new();
+    public List<TimeActPlannedSkip> Skips = new();
+}
+
 public class TimeActMassCreatePlan
 {
     public List<TimeActPlannedCreate> Creates = new();
@@ -117,7 +145,7 @@ public class TimeActMassEditPlanner
     }
 
     public TimeActMassEditPlan Plan(IReadOnlyList<TimeActQueryMatch> matches, IReadOnlyList<TimeActMassEditStep> steps,
-        TAE.Template.BankTemplate template, Dictionary<TAE.Event, TAE.Event> readableCache)
+        Func<TimeActContainerWrapper, TAE.Template.BankTemplate> templateFor, Dictionary<TAE.Event, TAE.Event> readableCache)
     {
         var plan = new TimeActMassEditPlan();
         var activeSteps = steps.Where(e => e.HasField).ToList();
@@ -129,14 +157,22 @@ public class TimeActMassEditPlanner
 
         foreach (var match in matches)
         {
+            // A match without an event is an animation, whose properties are edited
             if (match.Event == null)
+            {
+                if (PlanAnimation(plan, match, activeSteps))
+                {
+                    animations.Add(match.Animation);
+                }
+
                 continue;
+            }
 
             var original = match.Event;
 
             if (!readableCache.TryGetValue(original, out var readable))
             {
-                readable = match.Entry.GetReadableEvent(original, template);
+                readable = match.Entry.GetReadableEvent(original, templateFor(match.Source));
                 readableCache[original] = readable;
             }
 
@@ -204,13 +240,13 @@ public class TimeActMassEditPlanner
     {
         if (planned.OldStart != planned.NewStart)
         {
-            plan.Changes.Add(new TimeActPlannedChange(planned, LOC.Get("TAE_PropertiesWindow_Start_Time"),
+            plan.Changes.Add(new TimeActPlannedChange(planned.Match, LOC.Get("TAE_PropertiesWindow_Start_Time"),
                 FormatTime(planned.OldStart), FormatTime(planned.NewStart)));
         }
 
         if (planned.OldEnd != planned.NewEnd)
         {
-            plan.Changes.Add(new TimeActPlannedChange(planned, LOC.Get("TAE_PropertiesWindow_End_Time"),
+            plan.Changes.Add(new TimeActPlannedChange(planned.Match, LOC.Get("TAE_PropertiesWindow_End_Time"),
                 FormatTime(planned.OldEnd), FormatTime(planned.NewEnd)));
         }
 
@@ -218,12 +254,209 @@ public class TimeActMassEditPlanner
 
         foreach (var parameter in planned.Parameters)
         {
-            plan.Changes.Add(new TimeActPlannedChange(planned,
+            plan.Changes.Add(new TimeActPlannedChange(planned.Match,
                 data.GetFieldDisplayName(readable, parameter.Parameter.Name),
                 FormatParameter(parameter.Parameter, parameter.OldValue),
                 FormatParameter(parameter.Parameter, parameter.NewValue)));
         }
     }
+
+    #region Animations
+    /// <summary>
+    /// Works out the steps for an animation's properties. Returns true if the animation is changed.
+    /// As with events, the animation takes every step or none.
+    /// </summary>
+    private bool PlanAnimation(TimeActMassEditPlan plan, TimeActQueryMatch match, List<TimeActMassEditStep> steps)
+    {
+        var animation = match.Animation;
+        var values = new Dictionary<string, (TimeActAnimationField Field, object Old, object Current)>();
+
+        foreach (var step in steps)
+        {
+            var field = TimeActAnimationFields.Find(step.Field);
+
+            if (field == null)
+            {
+                plan.Skips.Add(new TimeActPlannedSkip(match, LOC.Get("TAE_MassEditTool_Skip_No_Field", step.Field)));
+                return false;
+            }
+
+            if (!values.TryGetValue(field.Name, out var state))
+            {
+                var value = field.Get(animation);
+
+                // The mini header decides which properties the animation has
+                if (value == null)
+                {
+                    plan.Skips.Add(new TimeActPlannedSkip(match, LOC.Get("TAE_MassEditTool_Skip_No_Animation_Field", LOC.Get(field.LabelKey))));
+                    return false;
+                }
+
+                state = (field, value, value);
+            }
+
+            if (!TryApplyAnimationStep(step, field, state.Current, out var result, out var reason))
+            {
+                plan.Skips.Add(new TimeActPlannedSkip(match, reason));
+                return false;
+            }
+
+            values[field.Name] = (field, state.Old, result);
+        }
+
+        var planned = new TimeActPlannedAnimation { Match = match };
+
+        foreach (var (field, old, current) in values.Values)
+        {
+            if (!Equals(old, current))
+            {
+                planned.Values.Add((field, old, current));
+            }
+        }
+
+        if (planned.Values.Count == 0)
+        {
+            plan.Unchanged++;
+            return false;
+        }
+
+        plan.Animations.Add(planned);
+
+        foreach (var (field, old, current) in planned.Values)
+        {
+            plan.Changes.Add(new TimeActPlannedChange(match, LOC.Get(field.LabelKey),
+                FormatAnimationValue(old), FormatAnimationValue(current)));
+        }
+
+        return true;
+    }
+
+    private static bool TryApplyAnimationStep(TimeActMassEditStep step, TimeActAnimationField field, object current,
+        out object result, out string reason)
+    {
+        result = null;
+        reason = null;
+
+        switch (step.Operator)
+        {
+            case TimeActMassEditOperator.Set:
+                switch (field.Kind)
+                {
+                    case TimeActMassEditFieldKind.Text:
+                        result = step.Value ?? "";
+                        return true;
+
+                    case TimeActMassEditFieldKind.Bool:
+                        if (bool.TryParse(step.Value, out var flag))
+                        {
+                            result = flag;
+                            return true;
+                        }
+
+                        reason = LOC.Get("TAE_MassEditTool_Skip_Invalid_Value", step.Value, "bool");
+                        return false;
+                }
+                break;
+
+            case TimeActMassEditOperator.Toggle:
+                if (current is bool value)
+                {
+                    result = !value;
+                    return true;
+                }
+
+                reason = LOC.Get("TAE_MassEditTool_Skip_Invalid_Operator");
+                return false;
+        }
+
+        // Set on a number, and the arithmetic
+        if (!TryToNumber(current, out var number))
+        {
+            reason = LOC.Get("TAE_MassEditTool_Skip_Not_Number");
+            return false;
+        }
+
+        if (!TryParseNumber(step.Value, out var operand))
+        {
+            reason = LOC.Get("TAE_MassEditTool_Skip_Invalid_Number", step.Value);
+            return false;
+        }
+
+        if (!TryApplyNumber(step.Operator, number, operand, out var computed, out reason))
+            return false;
+
+        if (!TryFromNumber(computed, current, out result))
+        {
+            reason = LOC.Get("TAE_MassEditTool_Skip_Out_Of_Range", FormatNumber(computed), current.GetType().Name);
+            return false;
+        }
+
+        return true;
+    }
+
+    private static string FormatAnimationValue(object value) => value switch
+    {
+        string text => $"\"{text}\"",
+        _ => TimeActQueryMatcher.FormatValue(value)
+    };
+    #endregion
+
+    #region Duplicate
+    /// <summary>
+    /// Works out the new ID of a copy of each matched animation: its ID plus the offset. An ID already in use,
+    /// by the time act or by another copy, is skipped, or moved on to the next free one if asked.
+    /// </summary>
+    public TimeActMassDuplicatePlan PlanDuplicates(IReadOnlyList<TimeActQueryMatch> matches, long offset, bool useNextFree)
+    {
+        var plan = new TimeActMassDuplicatePlan();
+        var used = new Dictionary<TimeActEntry, HashSet<long>>();
+
+        foreach (var match in matches.GroupBy(e => (e.Entry, e.Animation)).Select(e => e.First()))
+        {
+            var entry = match.Entry;
+
+            if (entry.TimeAct == null)
+                continue;
+
+            if (!used.TryGetValue(entry, out var ids))
+            {
+                ids = entry.TimeAct.Animations.Select(e => e.ID).ToHashSet();
+                used[entry] = ids;
+            }
+
+            var id = match.Animation.ID + offset;
+
+            if (id < 0)
+            {
+                plan.Skips.Add(new TimeActPlannedSkip(match, LOC.Get("TAE_MassEditTool_Skip_Negative_ID", id)));
+                continue;
+            }
+
+            if (ids.Contains(id))
+            {
+                if (!useNextFree)
+                {
+                    plan.Skips.Add(new TimeActPlannedSkip(match, LOC.Get("TAE_MassEditTool_Skip_ID_In_Use")));
+                    continue;
+                }
+
+                while (ids.Contains(id))
+                {
+                    id++;
+                }
+            }
+
+            ids.Add(id);
+
+            var fileName = TimeActAnimationSelectionWindow.GetAnimFileName(match.Source, entry, match.Animation, id,
+                match.Animation.AnimFileName);
+
+            plan.Duplicates.Add(new TimeActPlannedDuplicate(match, id, fileName));
+        }
+
+        return plan;
+    }
+    #endregion
 
     #region Create
     /// <summary>
@@ -231,7 +464,7 @@ public class TimeActMassEditPlanner
     /// as usual for each field, then the steps, which can set or change any parameter.
     /// </summary>
     public TimeActMassCreatePlan PlanCreate(IReadOnlyList<TimeActQueryMatch> matches, TimeActCreateSettings settings,
-        IReadOnlyList<TimeActMassEditStep> steps)
+        IReadOnlyList<TimeActMassEditStep> steps, Func<TimeActContainerWrapper, TAE.Template.BankTemplate> templateFor)
     {
         var plan = new TimeActMassCreatePlan();
         var eventTemplate = settings.EventTemplate;
@@ -256,6 +489,14 @@ public class TimeActMassEditPlanner
 
             if (timeAct == null)
                 continue;
+
+            // The event type is picked from one template, which a source with templates of its own may not share
+            if (templateFor(match.Source) is not { } sourceTemplate ||
+                !sourceTemplate.TryGetValue(eventTemplate.ID, out var sourceEventTemplate) || sourceEventTemplate != eventTemplate)
+            {
+                plan.Skips.Add(new TimeActPlannedSkip(match, LOC.Get("TAE_MassEditTool_Skip_Other_Templates")));
+                continue;
+            }
 
             float start, end;
 

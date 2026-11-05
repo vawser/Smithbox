@@ -20,7 +20,7 @@ public partial class TimeActMassEditTool
 
     private const string DeleteConfirmId = "###massEditConfirmDelete";
 
-    private bool HasApplied => AppliedResult != null || DeleteResult != null || CreateResult != null;
+    private bool HasApplied => AppliedResult != null || DeleteResult != null || CreateResult != null || DuplicateResult != null;
 
     /// <summary>
     /// Shows what the last apply did. Returns true if anything has been applied since Find, as the matches no
@@ -57,9 +57,25 @@ public partial class TimeActMassEditTool
                 GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("TAE_MassEditTool_Created_Stale", CreateResult.Stale));
             }
         }
+        else if (DuplicateResult != null)
+        {
+            GUI.WrappedText(LOC.Get("TAE_MassEditTool_Duplicated", DuplicateResult.Created));
+
+            if (DuplicateResult.Stale > 0)
+            {
+                GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("TAE_MassEditTool_Created_Stale", DuplicateResult.Stale));
+            }
+        }
         else
         {
             return false;
+        }
+
+        // Save only writes the selected source, so an edit across sources needs the menu's Save All
+        if (ResultsGlobal)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color,
+                LOC.Get("TAE_MassEditTool_Applied_Save_All", LOC.Get("EDITOR_Menubar_Action_SaveAll")));
         }
 
         GUI.WrappedText(LOC.Get("TAE_MassEditTool_Applied_Find_Again"));
@@ -226,6 +242,8 @@ public partial class TimeActMassEditTool
     {
         if (Results == null || IsStale())
             return;
+
+        AdoptReadSources();
 
         var stale = 0;
         var deleted = 0;

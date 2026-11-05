@@ -430,7 +430,7 @@ public class TimeActAnimationSelectionWindow
     /// The file name of an animation often holds its own name, which is changed to the name of the new ID.
     /// Otherwise the fallback is used.
     /// </summary>
-    private static string GetAnimFileName(TimeActContainerWrapper source, TimeActEntry entry, TAE.Animation template,
+    public static string GetAnimFileName(TimeActContainerWrapper source, TimeActEntry entry, TAE.Animation template,
         long id, string fallback)
     {
         var fileName = template?.AnimFileName;

@@ -31,10 +31,15 @@ public partial class TimeActMassEditTool
     }
 
     /// <summary>
-    /// A field that the steps can edit: the times, and the parameters of the event types among the matches
+    /// A field that the steps can edit: the times, and the parameters of the event types among the matches, or
+    /// the properties of the matched animations. HasDefault is false for fields with no default to reset to.
     /// </summary>
     private record EditField(string Name, string DisplayName, TimeActMassEditFieldKind Kind,
-        TAE.Template.ParameterTemplate Parameter, int EventCount);
+        TAE.Template.ParameterTemplate Parameter, int EventCount, bool HasDefault = true)
+    {
+        public IReadOnlyList<TimeActMassEditOperator> Operators =>
+            TimeActMassEditFields.GetOperators(Kind).Where(e => HasDefault || e != TimeActMassEditOperator.ResetToDefault).ToList();
+    }
 
     private TimeActMassEditAction Action = TimeActMassEditAction.Edit;
     private List<StepInput> Steps = [new()];
@@ -105,9 +110,14 @@ public partial class TimeActMassEditTool
         }
 
         // What the edit works on, as the matches are in the other tab
-        GUI.WrappedText(ResultTarget is TimeActMassEditTarget.Events
-            ? LOC.Get("TAE_MassEditTool_Matches_Events", Results.Count, ResultAnimations.Count)
-            : LOC.Get("TAE_MassEditTool_Matches_Animations", Results.Count));
+        GUI.WrappedText(GetMatchCountText());
+
+        // The undo history is cleared when another source is selected, so an edit across sources can only be
+        // undone until then
+        if (ResultsGlobal)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("TAE_MassEditTool_Global_Undo_Warning"));
+        }
 
         // Action
         GUI.Spacer();
@@ -141,12 +151,6 @@ public partial class TimeActMassEditTool
         if (Action is TimeActMassEditAction.Create)
         {
             DisplayCreate(template);
-            return;
-        }
-
-        if (ResultTarget is TimeActMassEditTarget.Animations)
-        {
-            GUI.WrappedText(LOC.Get("TAE_MassEditTool_Edit_Animations_Not_Supported"));
             return;
         }
 
@@ -186,6 +190,21 @@ public partial class TimeActMassEditTool
         if (EditFields != null && EditFieldsFor == Results && EditFieldsForCount == Results.Count)
             return EditFields;
 
+        // Animations have their properties, as many of the matches as have each one
+        if (ResultTarget is TimeActMassEditTarget.Animations)
+        {
+            EditFields = TimeActAnimationFields.All
+                .Select(field => new EditField(field.Name, LOC.Get(field.LabelKey), field.Kind, null,
+                    Results.Count(e => field.Get(e.Match.Animation) != null), HasDefault: false))
+                .Where(e => e.EventCount > 0)
+                .ToList();
+
+            EditFieldsFor = Results;
+            EditFieldsForCount = Results.Count;
+
+            return EditFields;
+        }
+
         var fields = new List<EditField>
         {
             new(TimeActMassEditFields.Times, LOC.Get("TAE_MassEditTool_Field_Times"), TimeActMassEditFieldKind.Times, null, Results.Count),
@@ -193,20 +212,21 @@ public partial class TimeActMassEditTool
             new(TimeActMassEditFields.EndTime, LOC.Get("TAE_PropertiesWindow_End_Time"), TimeActMassEditFieldKind.Time, null, Results.Count)
         };
 
-        if (template != null)
         {
+            // Each match's type is looked up in the templates of its own source, as sources can differ
             var typeCounts = Results
                 .Where(e => e.Match.Event != null)
-                .GroupBy(e => e.Match.Event.Type)
-                .OrderBy(e => e.Key)
-                .Select(e => (Type: e.Key, Count: e.Count()));
+                .GroupBy(e => (Template: TemplateFor(e.Match.Source) ?? template, e.Match.Event.Type))
+                .Where(e => e.Key.Template != null)
+                .OrderBy(e => e.Key.Type)
+                .Select(e => (e.Key.Template, e.Key.Type, Count: e.Count()));
 
             var data = Project.Handler.TimeActData;
             var index = new Dictionary<string, int>();
 
-            foreach (var (type, count) in typeCounts)
+            foreach (var (sourceTemplate, type, count) in typeCounts)
             {
-                if (!template.TryGetValue(type, out var eventTemplate))
+                if (!sourceTemplate.TryGetValue(type, out var eventTemplate))
                     continue;
 
                 foreach (var parameter in eventTemplate.Values)
@@ -333,7 +353,7 @@ public partial class TimeActMassEditTool
                         step.Field = candidate.Name;
                         step.FieldFilter = "";
 
-                        var operators = TimeActMassEditFields.GetOperators(candidate.Kind);
+                        var operators = candidate.Operators;
 
                         if (!operators.Contains(step.Operator))
                         {
@@ -354,7 +374,7 @@ public partial class TimeActMassEditTool
 
     private void DisplayStepOperator(StepInput step, int index, EditField field)
     {
-        var operators = TimeActMassEditFields.GetOperators(field.Kind);
+        var operators = field.Operators;
 
         if (!operators.Contains(step.Operator))
         {
@@ -531,7 +551,7 @@ public partial class TimeActMassEditTool
         var matches = Results.Select(e => e.Match).ToList();
         var steps = Steps.Select(e => e.ToStep()).ToList();
 
-        Plan = Planner.Plan(matches, steps, template, ReadableCache);
+        Plan = Planner.Plan(matches, steps, TemplateFor, ReadableCache);
         PlanStepsVersion = StepsVersion;
         PlanFor = Results;
         PlanForCount = Results.Count;
@@ -558,7 +578,9 @@ public partial class TimeActMassEditTool
             return;
         }
 
-        GUI.WrappedText(LOC.Get("TAE_MassEditTool_Changes_Summary", Plan.Changes.Count, Plan.Events.Count, Plan.AnimationCount));
+        GUI.WrappedText(ResultTarget is TimeActMassEditTarget.Animations
+            ? LOC.Get("TAE_MassEditTool_Changes_Summary_Animations", Plan.Changes.Count, Plan.Animations.Count)
+            : LOC.Get("TAE_MassEditTool_Changes_Summary", Plan.Changes.Count, Plan.Events.Count, Plan.AnimationCount));
 
         if (Plan.Unchanged > 0)
         {
@@ -582,7 +604,7 @@ public partial class TimeActMassEditTool
             LOC.Get("TAE_MassEditTool_Apply"),
             LOC.Get("TAE_MassEditTool_Apply_TT"),
             () => apply = true,
-            !stale && Plan.Events.Count > 0);
+            !stale && Plan.TargetCount > 0);
 
         // Applying drops the plan, so the rest of the section, which draws the plan, waits for the next frame
         if (apply)
@@ -615,16 +637,18 @@ public partial class TimeActMassEditTool
 
                 if (ImGui.Button($"{Icons.LocationArrow}##massEditChangeJump{index}"))
                 {
-                    jumpTarget = change.Event.Match;
+                    jumpTarget = change.Match;
                 }
                 GUI.Tooltip(LOC.Get("TAE_MassEditTool_Jump_TT"));
 
                 ImGui.SameLine();
 
                 if (ImGui.Selectable($"{GetChangeLabel(index, template)}##massEditChange{index}",
-                    View.Selection.IsEventSelected(change.Event.Match.Event)))
+                    change.Match.Event != null
+                        ? View.Selection.IsEventSelected(change.Match.Event)
+                        : View.Selection.SelectedAnimation == change.Match.Animation))
                 {
-                    jumpTarget = change.Event.Match;
+                    jumpTarget = change.Match;
                 }
             }
         }
@@ -683,10 +707,10 @@ public partial class TimeActMassEditTool
     {
         var animationName = match.Source.GetAnimationName(match.Entry, match.Animation);
         var label = match.Event != null
-            ? $"{animationName}  {TimeActQueryMatcher.GetEventName(match.Event, template)}"
+            ? $"{animationName}  {TimeActQueryMatcher.GetEventName(match.Event, TemplateFor(match.Source) ?? template)}"
             : animationName;
 
-        return ShowTimeActInLabel ? $"{match.EntryName}  {label}" : label;
+        return PrefixLabel(match, label);
     }
 
     private string GetChangeLabel(int index, TAE.Template.BankTemplate template)
@@ -695,7 +719,7 @@ public partial class TimeActMassEditTool
             return ChangeLabels[index];
 
         var change = Plan.Changes[index];
-        var label = $"{GetMatchLabel(change.Event.Match, template)}  {change.Field}: {change.OldText} -> {change.NewText}";
+        var label = $"{GetMatchLabel(change.Match, template)}  {change.Field}: {change.OldText} -> {change.NewText}";
 
         ChangeLabels[index] = label;
 
@@ -734,7 +758,9 @@ public partial class TimeActMassEditTool
         if (Plan == null || IsStale())
             return;
 
-        var result = TimeActMassEditApplier.Apply(View, Plan, template);
+        AdoptReadSources();
+
+        var result = TimeActMassEditApplier.Apply(View, Plan, TemplateFor);
 
         Smithbox.Log(this, LOC.Get("TAE_MassEditTool_Applied_Log", result.Applied, result.Stale));
 

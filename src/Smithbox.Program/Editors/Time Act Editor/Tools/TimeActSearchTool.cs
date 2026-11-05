@@ -48,7 +48,13 @@ public class TimeActSearchTool
     private string EventText = "";
     private string FieldText = "";
     private string ValueText = "";
+    private string Value2Text = "";
+    private TimeActMassEditComparison Comparison = TimeActMassEditComparison.Contains;
     private bool Exact = false;
+
+    // What the results were found with, so they can be handed to the mass edit
+    private TimeActQuery ResultQuery;
+    private TimeActMassEditScope ResultScope;
 
     private TimeActQueryRun Run;
     // Each result with the label it is listed under, which the filter matches
@@ -159,7 +165,7 @@ public class TimeActSearchTool
         search |= InputSection("TAE_SearchTool_Animation", $"##timeActSearchAnimation_{Id}", ref AnimationText);
         search |= InputSection("TAE_SearchTool_Event", $"##timeActSearchEvent_{Id}", ref EventText);
         search |= InputSection("TAE_SearchTool_Field", $"##timeActSearchField_{Id}", ref FieldText);
-        search |= InputSection("TAE_SearchTool_Value", $"##timeActSearchValue_{Id}", ref ValueText);
+        search |= DisplayValueInput();
 
         // Options
         GUI.Spacer();
@@ -201,6 +207,7 @@ public class TimeActSearchTool
         EventText = "";
         FieldText = "";
         ValueText = "";
+        Value2Text = "";
 
         ClearResults();
     }
@@ -226,6 +233,69 @@ public class TimeActSearchTool
         return ImGui.IsItemDeactivatedAfterEdit();
     }
 
+    /// <summary>
+    /// The value, with how it is compared. Contains matches the text as before; the others compare numbers as
+    /// numbers, as the mass edit does. Returns true when an input is left after it was changed.
+    /// </summary>
+    private bool DisplayValueInput()
+    {
+        var search = false;
+
+        // Value
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("TAE_SearchTool_Value"),
+            LOC.Get("TAE_SearchTool_Value_TT"));
+
+        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X * 0.35f);
+
+        if (ImGui.BeginCombo($"##timeActSearchComparison_{Id}", TimeActMassEditTool.GetComparisonName(Comparison)))
+        {
+            foreach (var comparison in Enum.GetValues<TimeActMassEditComparison>())
+            {
+                if (ImGui.Selectable($"{TimeActMassEditTool.GetComparisonName(comparison)}##timeActSearchComparison_{Id}_{comparison}",
+                    Comparison == comparison))
+                {
+                    Comparison = comparison;
+                }
+                GUI.Tooltip(TimeActMassEditTool.GetComparisonTooltip(comparison));
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(TimeActMassEditTool.GetComparisonTooltip(Comparison));
+
+        ImGui.SameLine();
+
+        if (Comparison is TimeActMassEditComparison.Between)
+        {
+            var width = (ImGui.GetContentRegionAvail().X - ImGui.GetStyle().ItemSpacing.X) / 2;
+
+            ImGui.SetNextItemWidth(width);
+            ImGui.InputTextWithHint($"##timeActSearchValue_{Id}", LOC.Get("TAE_MassEditTool_Value_Low_Hint"), ref ValueText, 255);
+            GUI.Tooltip(LOC.Get("TAE_MassEditTool_Value_Between_TT"));
+
+            search |= ImGui.IsItemDeactivatedAfterEdit();
+
+            ImGui.SameLine();
+            ImGui.SetNextItemWidth(-1);
+            ImGui.InputTextWithHint($"##timeActSearchValue2_{Id}", LOC.Get("TAE_MassEditTool_Value_High_Hint"), ref Value2Text, 255);
+            GUI.Tooltip(LOC.Get("TAE_MassEditTool_Value_Between_TT"));
+
+            search |= ImGui.IsItemDeactivatedAfterEdit();
+        }
+        else
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.InputText($"##timeActSearchValue_{Id}", ref ValueText, 255);
+            GUI.Tooltip(LOC.Get("TAE_SearchTool_Value_TT"));
+
+            search |= ImGui.IsItemDeactivatedAfterEdit();
+        }
+
+        return search;
+    }
+
     private static string GetScopeName(SearchScope scope) => scope switch
     {
         SearchScope.CurrentTimeAct => LOC.Get("TAE_SearchTool_Scope_Current"),
@@ -235,7 +305,8 @@ public class TimeActSearchTool
 
     private TimeActQuery GetQuery()
     {
-        return new TimeActQuery(AnimationText.Trim(), EventText.Trim(), FieldText.Trim(), ValueText.Trim(), Exact);
+        return new TimeActQuery(AnimationText.Trim(), EventText.Trim(), FieldText.Trim(), ValueText.Trim(), Exact,
+            Comparison, Value2Text.Trim());
     }
     #endregion
 
@@ -285,6 +356,11 @@ public class TimeActSearchTool
 
         Results = new();
         ResultSource = selectedSource;
+
+        ResultQuery = GetQuery();
+        ResultScope = Mode is TimeActSearchMode.Global ? TimeActMassEditScope.AllSources
+            : Scope is SearchScope.AllTimeActs ? TimeActMassEditScope.CurrentSource
+            : TimeActMassEditScope.CurrentTimeAct;
 
         // A local search counts its time acts, as there is only the one source
         Run = Runner.Start(GetQuery(), sources, Mode is TimeActSearchMode.Local, MaxResults);
@@ -369,6 +445,16 @@ public class TimeActSearchTool
 
         if (Results.Count == 0)
             return;
+
+        // The results can be edited all at once, by finding them again in the mass edit
+        if (Project.Handler.TimeActData.CanSaveTimeActs && ResultQuery != null)
+        {
+            GUI.MultiButtonInput($"timeActSearchSendActions_{Id}",
+                $"timeActSearchSend_{Id}",
+                LOC.Get("TAE_SearchTool_Send_To_Mass_Edit"),
+                LOC.Get("TAE_SearchTool_Send_To_Mass_Edit_TT"),
+                () => View.MassEditTool.LoadQuery(ResultQuery, ResultScope));
+        }
 
         EditorFilters.DisplayFramedListFilter($"timeActSearchResultFilter_{Id}", ref ResultFilter, ref ExactResultFilter);
 

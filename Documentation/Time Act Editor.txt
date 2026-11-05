@@ -3,18 +3,6 @@
 #----------------------------------------------------
 
 - Tools:
-    - Mass Edit:
-        - The user experience of this interface is important. Internals can be similar to param Mass Edit.
-        - Conditions - filter by:
-            - Animation
-            - Event (and parameters + values)
-        
-        - Commands - apply edits (for X animations, or if X event is present with Y parameter value)
-            - Value Change: set/add/subtract/multiply/divide
-            - Add Event
-            - Delete Event
-            - Move Event: adjusts frame timing
-            
     - Combo Builder:
         - User can define a set of animations for X model
         - Combo builder can then allow them to be played in order

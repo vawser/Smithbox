@@ -52,6 +52,8 @@ public partial class TimeActMassEditTool
         CreateLabels = null;
         FilteredCreates = null;
         CreateResult = null;
+
+        ClearDuplicatePlan();
     }
 
     private void DisplayCreate(TAE.Template.BankTemplate template)
@@ -61,6 +63,10 @@ public partial class TimeActMassEditTool
             GUI.WrappedText(LOC.Get("TAE_MassEditTool_No_Template"));
             return;
         }
+
+        // Animations can be copied rather than given events
+        if (DisplayCreateKind())
+            return;
 
         // Animations only take new events at given times, as there are no events to place them by
         if (ResultTarget is TimeActMassEditTarget.Animations && Placement is not TimeActMassEditPlacement.InEachAnimation)
@@ -344,7 +350,7 @@ public partial class TimeActMassEditTool
         var settings = new TimeActCreateSettings(eventTemplate, Placement, start, end, CreateSkipExisting);
 
         CreatePlan = Planner.PlanCreate(Results.Select(e => e.Match).ToList(), settings,
-            CreateSteps.Select(e => e.ToStep()).ToList());
+            CreateSteps.Select(e => e.ToStep()).ToList(), TemplateFor);
 
         CreateLabels = new string[CreatePlan.Creates.Count];
     }
@@ -497,6 +503,8 @@ public partial class TimeActMassEditTool
     {
         if (CreatePlan == null || IsStale())
             return;
+
+        AdoptReadSources();
 
         var groups = new Dictionary<(TimeActEntry, TAE.Animation), List<TAE.Event>>();
         var stale = 0;

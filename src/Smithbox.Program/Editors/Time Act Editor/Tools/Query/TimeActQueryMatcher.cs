@@ -159,6 +159,13 @@ public class TimeActQueryMatcher
 
     public static bool MatchValue(TimeActQuery query, string value, string enumName)
     {
+        // The other comparisons work as they do in the mass edit: numbers as numbers, text as text
+        if (query.Comparison is not TimeActMassEditComparison.Contains)
+        {
+            return TimeActMassEditFilter.Compare(
+                new TimeActMassEditCondition("", false, query.Comparison, query.Value, query.Value2), value, enumName);
+        }
+
         // Numbers are compared as numbers when exact, so 1 finds 1.0
         if (query.Exact &&
             double.TryParse(query.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out var inputNumber) &&

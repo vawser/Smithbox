@@ -30,6 +30,19 @@ public class TimeActQueryRun
 
     public int Count;
 
+    /// <summary>
+    /// Whether to keep the time acts read for sources that weren't open, see <see cref="ReadEntries"/>
+    /// </summary>
+    public bool KeepReadEntries;
+
+    /// <summary>
+    /// The whole list of time acts read for each unopened source that had a match. The matches point into these
+    /// copies, so an edit is made to them, and the list is given to the source to save. It must be the whole
+    /// list: saving removes the files of time acts that aren't in it. Sources without a match aren't kept, as
+    /// holding every source would hold every time act of the project.
+    /// </summary>
+    public readonly ConcurrentDictionary<TimeActContainerWrapper, List<TimeActEntry>> ReadEntries = new();
+
     public void Cancel() => Cancellation.Cancel();
 }
 
@@ -97,11 +110,13 @@ public class TimeActQueryRunner
     /// Starts the query on a background task. The progress counts the time acts when countEntries is set,
     /// for a query of one source, or else the sources.
     /// </summary>
-    public TimeActQueryRun Start(ITimeActQueryFilter query, List<TimeActQuerySource> sources, bool countEntries, int maxResults)
+    public TimeActQueryRun Start(ITimeActQueryFilter query, List<TimeActQuerySource> sources, bool countEntries, int maxResults,
+        bool keepReadEntries = false)
     {
         var run = new TimeActQueryRun
         {
             MaxResults = maxResults,
+            KeepReadEntries = keepReadEntries,
             Total = countEntries ? sources.Sum(e => e.Entries?.Count ?? 0) : sources.Count
         };
 
@@ -152,6 +167,8 @@ public class TimeActQueryRunner
                 continue;
             }
 
+            var countBefore = run.Count;
+
             foreach (var entry in entries)
             {
                 token.ThrowIfCancellationRequested();
@@ -164,7 +181,10 @@ public class TimeActQueryRunner
                 try
                 {
                     if (!QueryTimeAct(run, query, item, entry, token))
+                    {
+                        KeepEntries(run, item, entries, countBefore);
                         return;
+                    }
                 }
                 catch (OperationCanceledException)
                 {
@@ -182,10 +202,20 @@ public class TimeActQueryRunner
                 }
             }
 
+            KeepEntries(run, item, entries, countBefore);
+
             if (!countEntries)
             {
                 run.Progress++;
             }
+        }
+    }
+
+    private static void KeepEntries(TimeActQueryRun run, TimeActQuerySource item, List<TimeActEntry> entries, int countBefore)
+    {
+        if (run.KeepReadEntries && item.Entries == null && run.Count > countBefore)
+        {
+            run.ReadEntries[item.Source] = entries;
         }
     }
 

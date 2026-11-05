@@ -43,12 +43,18 @@ public interface ITimeActQueryFilter
 /// <summary>
 /// The inputs of a search as they were when it started, as the tool's inputs can be edited while it runs
 /// </summary>
-public record TimeActQuery(string Animation, string Event, string Field, string Value, bool Exact) : ITimeActQueryFilter
+public record TimeActQuery(string Animation, string Event, string Field, string Value, bool Exact,
+    TimeActMassEditComparison Comparison = TimeActMassEditComparison.Contains, string Value2 = "") : ITimeActQueryFilter
 {
     public bool HasAnimation => !string.IsNullOrWhiteSpace(Animation);
     public bool HasEvent => !string.IsNullOrWhiteSpace(Event);
     public bool HasField => !string.IsNullOrWhiteSpace(Field);
-    public bool HasValue => !string.IsNullOrWhiteSpace(Value);
+
+    /// <summary>
+    /// A range can be given by its upper end alone
+    /// </summary>
+    public bool HasValue => !string.IsNullOrWhiteSpace(Value) ||
+        (Comparison is TimeActMassEditComparison.Between && !string.IsNullOrWhiteSpace(Value2));
 
     public bool HasAny => HasAnimation || HasEvent || HasField || HasValue;
 

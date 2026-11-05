@@ -1078,7 +1078,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Hint",
-      "Text": "Find animations or events in the selected source with the filter below, then change every match at once. Leave any part of the filter empty to match everything in the scope."
+      "Text": "Find animations or events in the selected source, or in every source, with the filter below, then change every match at once. Leave any part of the filter empty to match everything in the scope."
     },
     {
       "Key": "TAE_MassEditTool_Not_Supported",
@@ -1442,7 +1442,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Edit_Animations_Not_Supported",
-      "Text": "Editing animations isn't supported yet. Set the target to Events to edit their times and parameters, or pick Delete to remove the animations."
+      "Text": "Editing animations isn't supported for this target."
     },
     {
       "Key": "TAE_MassEditTool_Steps_Header",
@@ -1959,6 +1959,126 @@
     {
       "Key": "TAE_MassEditTool_Skip_Has_Same_Event",
       "Text": "An event of this type is already there at the same times"
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_All_Sources",
+      "Text": "All Sources"
+    },
+    {
+      "Key": "TAE_MassEditTool_Scope_All_Sources_TT",
+      "Text": "Every time act of every source in the project. Sources that aren't open are read for the find, and only those with matches are kept. This can take a while."
+    },
+    {
+      "Key": "TAE_MassEditTool_Matches_Sources",
+      "Text": "across {0} sources"
+    },
+    {
+      "Key": "TAE_MassEditTool_Progress_Sources",
+      "Text": "{0} / {1} sources"
+    },
+    {
+      "Key": "TAE_MassEditTool_Global_Undo_Warning",
+      "Text": "This edit spans sources. It can be undone until another source is selected, as the undo history is cleared then."
+    },
+    {
+      "Key": "TAE_MassEditTool_Applied_Save_All",
+      "Text": "The edited sources are marked as changed. Use File > {0} to save them all, as Save only saves the selected source."
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_Other_Templates",
+      "Text": "This source uses other event templates, which don't have this event type"
+    },
+    {
+      "Key": "TAE_MassEditTool_Changes_Summary_Animations",
+      "Text": "{0} changes to {1} animations"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_No_Animation_Field",
+      "Text": "The animation has no {0}, as its mini header is of the other type"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Kind_Header",
+      "Text": "What to Create"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Kind_Header_TT",
+      "Text": "Whether to add events to the matched animations, or to make copies of them."
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Kind_Events",
+      "Text": "New events in the animations"
+    },
+    {
+      "Key": "TAE_MassEditTool_Create_Kind_Copies",
+      "Text": "Copies of the animations"
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicate_Offset_Header",
+      "Text": "ID Offset"
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicate_Offset_Header_TT",
+      "Text": "Each copy takes the ID of its animation plus this. The file name is renamed to match, as Duplicate does for one animation."
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicate_Offset_Hint",
+      "Text": "Offset"
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicate_Options_Header_TT",
+      "Text": "What to do when the new ID is already in use."
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicate_Next_Free",
+      "Text": "Use the next free ID"
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicate_Next_Free_TT",
+      "Text": "When the new ID is taken, the copy takes the next free one after it. Otherwise the animation is skipped."
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicates_Header",
+      "Text": "Copies"
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicates_Header_TT",
+      "Text": "Every copy Create will make, from its animation to its new ID. A single undo takes them all back out."
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicate_Invalid_Offset",
+      "Text": "The ID offset must be a whole number."
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicate_Summary",
+      "Text": "{0} animations will be copied."
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicate_TT",
+      "Text": "Makes the copies listed below, with their events. A single undo takes them all back out."
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicated",
+      "Text": "Made {0} copies."
+    },
+    {
+      "Key": "TAE_MassEditTool_Duplicated_Log",
+      "Text": "Mass edit made {0} animation copies. {1} had changed since the preview and were left out."
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_ID_In_Use",
+      "Text": "The new ID is already in use"
+    },
+    {
+      "Key": "TAE_MassEditTool_Skip_Negative_ID",
+      "Text": "The new ID would be {0}, below zero"
+    },
+    {
+      "Key": "TAE_SearchTool_Send_To_Mass_Edit",
+      "Text": "Send to Mass Edit"
+    },
+    {
+      "Key": "TAE_SearchTool_Send_To_Mass_Edit_TT",
+      "Text": "Fills in the Mass Edit filter from this search and finds the results there, so they can be edited, deleted or added to all at once."
     }
   ]
 }
