@@ -713,6 +713,10 @@ public class HavokPropertyView
 
         if (havokMeta != null)
         {
+            // A field another game added to a shared class isn't in this project's files
+            if (!HavokMetaHelper.IsFieldInProject(havokMeta, prop.Name, Project))
+                return false;
+
             var isRawData = HavokMetaHelper.IsRawData(havokMeta, prop.Name);
 
             if (!CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields)
@@ -852,6 +856,9 @@ public class HavokPropertyView
 
         // Fields driven by a variable binding
         HavokPropertyDecorators.BehaviorBindingRow(View, prop, containerObj, arrayIndex);
+
+        // A clip's animation, a CMSG's animation ID: what the character has for it
+        HavokPropertyDecorators.BehaviorAnimationRow(View, havokMeta, prop, oldval);
 
         UpdateProperty(prop, containerObj, oldval, newval, changed, committed, arrayIndex, classIndex);
 

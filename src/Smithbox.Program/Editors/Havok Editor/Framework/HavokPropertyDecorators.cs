@@ -259,6 +259,118 @@ public static class HavokPropertyDecorators
         }
     }
 
+    /// <summary>
+    /// A row under a clip's animation name or a CMSG's animation ID, showing what the character has for it:
+    /// the time act entry and animation file for a clip (with a link to the Time Act Editor),
+    /// the categories with a time act entry for a CMSG's ID.
+    /// </summary>
+    public static void BehaviorAnimationRow(HavokEditorView view, HavokClass havokMeta, FieldInfo prop, object val)
+    {
+        var fieldMeta = havokMeta?.Fields.FirstOrDefault(f => f.Field == prop.Name);
+
+        if (fieldMeta == null || !(fieldMeta.AnimationName || fieldMeta.AnimationID) || val == null)
+            return;
+
+        var animations = view.PropertyView.BehaviorView.Animations;
+
+        if (animations == null)
+            return;
+
+        // Name column
+        ImGui.NextColumn();
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextDisabled($"  {LOC.Get("HAVOK_BehaviorIndex_Role_Animation")}");
+
+        // Value column
+        ImGui.NextColumn();
+        ImGui.AlignTextToFramePadding();
+
+        if (!animations.IsReady)
+        {
+            ImGui.TextDisabled(LOC.Get("HAVOK_AnimationRow_Loading", animations.Character));
+        }
+        else if (animations.Error != null)
+        {
+            ImGui.TextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("HAVOK_AnimationRow_Load_Failed", animations.Character));
+            GUI.Tooltip(animations.Error);
+        }
+        else if (fieldMeta.AnimationName)
+        {
+            DisplayClipAnimation(animations, val as string ?? "");
+        }
+        else
+        {
+            DisplaySelectorAnimation(animations, Convert.ToInt64(val));
+        }
+
+        // Type column
+        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        {
+            ImGui.NextColumn();
+        }
+    }
+
+    private static void DisplayClipAnimation(HavokAnimationIndex animations, string animationName)
+    {
+        if (!HavokAnimationIndex.TryParseAnimationName(animationName, animations.CategorySize, out var fullId))
+        {
+            ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("HAVOK_AnimationRow_Not_An_Animation_Name"));
+            return;
+        }
+
+        var hasTimeAct = animations.TryGetTimeAct(fullId, out var timeActName);
+        var hasFile = animations.HasAnimationFile(animationName);
+
+        var timeActText = hasTimeAct
+            ? LOC.Get("HAVOK_AnimationRow_Time_Act", timeActName)
+            : LOC.Get("HAVOK_AnimationRow_No_Time_Act");
+        var fileText = hasFile
+            ? LOC.Get("HAVOK_AnimationRow_File")
+            : LOC.Get("HAVOK_AnimationRow_No_File");
+
+        // Missing isn't an error: shared graphs (c9997) name animations most characters don't have
+        var color = hasTimeAct && hasFile ? UI.Current.ImGui_AliasName_Text : UI.Current.ImGui_Warning_Text_Color;
+
+        ImGui.TextColored(color, $"{timeActText}  ·  {fileText}");
+        GUI.Tooltip(LOC.Get("HAVOK_AnimationRow_Clip_TT", animations.Character, animationName));
+
+        if (hasTimeAct)
+        {
+            ImGui.SameLine();
+
+            if (ImGui.SmallButton($"{LOC.Get("HAVOK_AnimationRow_Open_Time_Act")}##openTimeAct"))
+            {
+                EditorCommandQueue.AddCommand($"tae/select/{animations.Character}/{fullId}");
+            }
+
+            GUI.Tooltip(LOC.Get("HAVOK_AnimationRow_Open_Time_Act_TT", animationName));
+        }
+    }
+
+    private static void DisplaySelectorAnimation(HavokAnimationIndex animations, long animationID)
+    {
+        var categories = animations.GetCategories(animationID);
+
+        if (categories.Count == 0)
+        {
+            ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("HAVOK_AnimationRow_Selector_None"));
+            GUI.Tooltip(LOC.Get("HAVOK_AnimationRow_Selector_TT", animations.Character));
+            return;
+        }
+
+        const int shown = 6;
+
+        var names = categories.Select(c => animations.FormatAnimationName(c, animationID)).ToList();
+        var text = string.Join(", ", names.Take(shown));
+
+        if (names.Count > shown)
+            text += $", +{names.Count - shown}";
+
+        ImGui.TextColored(UI.Current.ImGui_AliasName_Text, LOC.Get("HAVOK_AnimationRow_Selector", names.Count, text));
+        GUI.Tooltip($"{LOC.Get("HAVOK_AnimationRow_Selector_TT", animations.Character)}\n\n{string.Join("\n", names.Take(60))}" +
+            (names.Count > 60 ? "\n..." : ""));
+    }
+
     private static string GetRoleName(HavokIndexRole role)
     {
         return role switch

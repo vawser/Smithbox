@@ -26,6 +26,13 @@ public class HavokField
     public bool IsRawData { get; set; } = false;
     public string ParamRef { get; set; } = "";
 
+    /// <summary>
+    /// The project types whose files have this field (ProjectType names, e.g. "NR"). Empty for all.
+    /// For fields one game added to a class shared with another, like NR's CustomManualSelectorGenerator.m_isBasePoseAnim
+    /// in the hk2018 classes ER also uses: elsewhere the field isn't saved, so it's hidden.
+    /// </summary>
+    public List<string> ProjectTypes { get; set; } = new();
+
     // Tags: Clip Generator
     public bool ClipGeneratorFlags { get; set; } = false;
     public bool AnimationInternalID { get; set; } = false;
@@ -34,6 +41,10 @@ public class HavokField
     public bool EventID { get; set; } = false;
     public bool VariableIndex { get; set; } = false;
     public bool StateID { get; set; } = false;
+
+    // Tags: Animations (checked against the character's time acts and animation files)
+    public bool AnimationName { get; set; } = false;
+    public bool AnimationID { get; set; } = false;
 }
 
 public static class HavokMetaHelper
@@ -140,6 +151,21 @@ public static class HavokMetaHelper
             return HavokIndexRole.State;
 
         return HavokIndexRole.None;
+    }
+
+    /// <summary>
+    /// Whether the field is in this project's files (see <see cref="HavokField.ProjectTypes"/>)
+    /// </summary>
+    public static bool IsFieldInProject(HavokClass havokMeta, string internalName, ProjectEntry project)
+    {
+        var entry = havokMeta?.Fields.FirstOrDefault(f => f.Field == internalName);
+
+        if (entry == null || entry.ProjectTypes.Count == 0)
+            return true;
+
+        var projectType = project.Descriptor.ProjectType.ToString();
+
+        return entry.ProjectTypes.Any(t => string.Equals(t, projectType, StringComparison.OrdinalIgnoreCase));
     }
 
     public static bool IsRawData(HavokClass havokMeta, string internalName)

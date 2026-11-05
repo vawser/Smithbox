@@ -1,0 +1,17 @@
+{
+  "Type": "HKLib.hk2018.CustomManualSelectorGenerator",
+  "Fields": [
+      {
+          "Field": "m_animId",
+          "Name": "Animation ID",
+          "Description": "The animation ID within a category (3000 for a000_003000). With an offset type other than None, the game adds the category at runtime, so the same ID can play from several time acts.",
+          "AnimationID": true
+      },
+      {
+          "Field": "m_isBasePoseAnim",
+          "Name": "Is Base Pose Animation",
+          "Description": "Nightreign only. True on almost every Nightreign selector (181,075 of 182,959 in the game files). Elden Ring files don't have this field.",
+          "ProjectTypes": [ "NR" ]
+      }
+  ]
+}

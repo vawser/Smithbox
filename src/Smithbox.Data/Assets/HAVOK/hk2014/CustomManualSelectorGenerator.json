@@ -1,0 +1,11 @@
+{
+  "Type": "HKX2.CustomManualSelectorGenerator",
+  "Fields": [
+      {
+          "Field": "m_animId",
+          "Name": "Animation ID",
+          "Description": "The animation ID within a category (3000 for a000_003000). With an offset type other than None, the game adds the category at runtime, so the same ID can play from several time acts.",
+          "AnimationID": true
+      }
+  ]
+}

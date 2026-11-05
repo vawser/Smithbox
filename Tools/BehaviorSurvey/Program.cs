@@ -21,6 +21,31 @@ var maxBinders = args.Length > 2 ? int.Parse(args[2]) : 5;
 
 using var fs = BuildFS(game, gamePaths[gameName]);
 
+if (args.Length > 3 && args[3] == "taedump")
+{
+    // taedump: the anibnd time acts of the first matching chr, and its clip names by time act
+    var p = fs.GetFileNamesMatching("/chr", @"(?i)\.anibnd(\.dcx)?$").Select(x => x.Replace('\\', '/')).Where(x => filter.IsMatch(x)).OrderBy(x => x).ToList();
+    if (args[1].StartsWith("/")) p = new List<string> { args[1] };
+    foreach (var ap in p.Take(maxBinders))
+    {
+        var raw0 = fs.ReadFile(ap).Value.ToArray();
+        var b0 = BND4.Read(DCX.Is(raw0) ? DCX.Decompress(raw0).ToArray() : raw0);
+        Console.WriteLine($"{ap}: {b0.Files.Count} files, marker 9999999: {b0.Files.Any(f => f.ID == 9999999)}");
+        foreach (var f in b0.Files.Where(f => !f.Name.Contains(".hkx", StringComparison.OrdinalIgnoreCase)).Take(30))
+        {
+            string info = "";
+            if (f.Name.ToLower().Contains(".tae") && f.Bytes.Length >= 4)
+            {
+                try { var t = TAE.Read(f.Bytes); info = $"tae id {t.ID} anims {t.Animations.Count} first [{string.Join(",", t.Animations.Take(5).Select(a => a.ID))}] skeleton {t.SkeletonName} sib {t.SibName}"; } catch (Exception e) { info = "read fail " + e.Message; }
+            }
+            Console.WriteLine($"  [{f.ID}] {f.Name} ({f.Bytes.Length}) {info}");
+        }
+        var hkx = b0.Files.Where(f => f.Name.Contains(".hkx", StringComparison.OrdinalIgnoreCase)).ToList();
+        Console.WriteLine($"  hkx files: {hkx.Count}, sample: {string.Join(", ", hkx.Take(6).Select(f => $"[{f.ID}] {Path.GetFileName(f.Name)}"))}");
+    }
+    return;
+}
+
 var binders = fs.GetFileNamesMatching("/chr", @"(?i)\.behbnd(\.dcx)?$")
     .Select(p => p.Replace('\\', '/'))
     .Distinct(StringComparer.OrdinalIgnoreCase)
@@ -45,6 +70,10 @@ foreach (var path in binders)
     if (!bnd.Files.Any(f => f.Name.Contains("/Behaviors/", StringComparison.OrdinalIgnoreCase) || f.Name.Contains("\\Behaviors\\", StringComparison.OrdinalIgnoreCase)))
         Console.WriteLine($"  {path}: no Behaviors folder; extensions: {string.Join(", ", bnd.Files.GroupBy(f => Path.GetExtension(f.Name.Replace(".dcx", ""))).Select(g => $"{g.Key} x{g.Count()}"))}; hkx: {string.Join(", ", bnd.Files.Where(f => f.Name.Contains(".hkx")).Take(5).Select(f => f.Name))}");
 
+    var timeActs = ReadTimeActs(fs, game, path);
+    var animFiles = ReadAnimationFiles(fs, path);
+    if (Environment.GetEnvironmentVariable("BS_DEBUG") == "1") Console.WriteLine($"  DEBUG {path}: anim files {animFiles?.Count ?? -1}, time acts {timeActs?.Count ?? -1}");
+
     foreach (var file in bnd.Files)
     {
         var name = file.Name.Replace('\\', '/');
@@ -67,7 +96,7 @@ foreach (var path in binders)
         }
 
         Console.WriteLine($"== {path} :: {Path.GetFileName(name)}");
-        var survey = new Survey();
+        var survey = new Survey { TimeActs = timeActs, AnimFiles = animFiles, FileKind = Path.GetFileName(name).StartsWith("c9997", StringComparison.OrdinalIgnoreCase) ? "c9997" : (Path.GetFileNameWithoutExtension(name).Split('.')[0].Equals(Path.GetFileName(path).Split('.')[0], StringComparison.OrdinalIgnoreCase) ? "own" : "other") };
         survey.Run(root);
         survey.Print(detail: true);
         total.Merge(survey);
@@ -106,6 +135,74 @@ static object ReadRoot(Game game, byte[] bytes, byte[] compendium)
     }
 }
 
+// The time acts of the chr's anibnd, as the Time Act Editor reads them (TimeActContainerWrapper.AddTimeActs):
+// time act number -> full animation IDs (number * 1,000,000 + animation ID, unless the ID is already full).
+// Null if the chr has no anibnd.
+static Dictionary<int, HashSet<long>> ReadTimeActs(VirtualFileSystem fs, Game game, string behbndPath)
+{
+    var anibndPath = Regex.Replace(behbndPath, @"\.behbnd", ".anibnd", RegexOptions.IgnoreCase);
+
+    if (!fs.FileExists(anibndPath))
+        return null;
+
+    var raw = fs.ReadFile(anibndPath).Value.ToArray();
+    var bnd = BND4.Read(DCX.Is(raw) ? DCX.Decompress(raw).ToArray() : raw);
+    var firstID = bnd.Files.Any(f => f.ID == 9999999) ? 5000000 : 3000000;
+    var result = new Dictionary<int, HashSet<long>>();
+
+    foreach (var file in bnd.Files)
+    {
+        if (!file.Name.ToLower().Contains(".tae") || file.Bytes.Length < 4)
+            continue;
+
+        var number = file.ID % firstID;
+        var ids = new HashSet<long>();
+
+        try
+        {
+            var tae = TAE.Read(file.Bytes);
+            foreach (var animation in tae.Animations)
+                ids.Add(animation.ID >= 1000000 ? animation.ID : (long)number * 1000000 + animation.ID);
+        }
+        catch
+        {
+            continue;
+        }
+
+        result[number] = ids;
+    }
+
+    return result;
+}
+
+// The animation HKX files (aXXX_YYYYYY, lower case) in the chr's anibnd and the anibnds split from it
+// (cXXXX_div00..., and the player's c0000_aXX_... files). Null if there are none.
+static HashSet<string> ReadAnimationFiles(VirtualFileSystem fs, string behbndPath)
+{
+    var chr = Path.GetFileName(behbndPath).Split('.')[0];
+    var paths = fs.GetFileNamesMatching("/chr", $@"(?i)(^|/){chr}(_[^./]+)?\.anibnd(\.dcx)?$").Select(p => p.Replace('\\', '/')).ToList();
+    if (Environment.GetEnvironmentVariable("BS_DEBUG") == "1") Console.WriteLine($"  DEBUG anibnds for {chr}: {string.Join(", ", paths.Take(10))}");
+    var main = $"/chr/{chr}.anibnd.dcx";
+    if (fs.FileExists(main) && !paths.Contains(main)) paths.Add(main);
+
+    var result = new HashSet<string>();
+    foreach (var p in paths.Distinct())
+    {
+        try
+        {
+            var raw = fs.ReadFile(p).Value.ToArray();
+            var bnd = BND4.Read(DCX.Is(raw) ? DCX.Decompress(raw).ToArray() : raw);
+            foreach (var f in bnd.Files)
+            {
+                var stem = Path.GetFileName(f.Name.Replace('\\', '/')).Split('.')[0].ToLowerInvariant();
+                if (Regex.IsMatch(stem, @"^a\d+_\d+$")) result.Add(stem);
+            }
+        }
+        catch { }
+    }
+    return result.Count > 0 ? result : null;
+}
+
 static VirtualFileSystem BuildFS(Game game, string root)
 {
     var real = new RealVirtualFileSystem(root, false);
@@ -139,6 +236,11 @@ class Survey
     readonly List<object> All = new();
 
     // Counters (name -> count), and example lists
+    public Dictionary<int, HashSet<long>> TimeActs;
+    public HashSet<string> AnimFiles;
+    public string FileKind = "";
+    HashSet<long> AllAnimations;
+
     public readonly SortedDictionary<string, long> Counts = new();
     public readonly SortedDictionary<string, List<string>> Examples = new();
 
@@ -295,6 +397,69 @@ class Survey
                 }
                 else { Count("clip.internalId OUT OF RANGE"); Example("clip internalId out of range", $"{internalId} (list {animNames.Count})"); }
                 Example("clip m_animationName", animName ?? "null");
+            }
+
+            // Phase 3: clips and CMSGs against the chr's time acts
+    void CheckTimeActs(object obj, string tn)
+    {
+        if (TimeActs == null)
+        {
+            if (tn == "hkbClipGenerator") Count("tae.no anibnd for chr");
+            return;
+        }
+
+        // Every full animation ID the chr's time acts have (a player has one time act per category;
+        // an enemy has one time act whose animations carry the category in their ID)
+        AllAnimations ??= TimeActs.Values.SelectMany(v => v).ToHashSet();
+        if (TimeActs.Count == 1) Count("tae.chr with 1 time act (per clip)");
+
+        if (tn == "hkbClipGenerator")
+        {
+            var name = Get(obj, "m_animationName") as string ?? "";
+            var m = Regex.Match(name, @"^a(\d+)_(\d+)$");
+            if (!m.Success) { Count("tae.clip name not aXXX_YYYYYY"); Example("tae clip odd names", name); return; }
+            var full = int.Parse(m.Groups[1].Value) * 1000000L + long.Parse(m.Groups[2].Value);
+            var holders = TimeActs.Where(t => t.Value.Contains(full)).Select(t => t.Key).ToList();
+            if (AnimFiles != null) Count($"anim.hkx [{FileKind}] " + (AnimFiles.Contains(name.ToLowerInvariant()) ? "exists" : "MISSING") + (holders.Count > 0 ? ", has TAE entry" : ", no TAE entry"));
+            if (AnimFiles != null && !AnimFiles.Contains(name.ToLowerInvariant()) && FileKind == "own") Example("anim hkx missing [own]", name, 25);
+            if (holders.Count == 1) Count("tae.clip found in exactly 1 time act");
+            else if (holders.Count > 1) { Count("tae.clip found in SEVERAL time acts"); Example("tae clip several", $"{name}: {string.Join(",", holders.Take(5))}"); }
+            else
+            {
+                // Under an AnimIdOffset/category CMSG the clip's own category may be a placeholder
+                var parentCmsg = Parents.GetValueOrDefault(obj)?.Select(p => p.Parent).FirstOrDefault(p => p.GetType().Name == "CustomManualSelectorGenerator");
+                var offset = Get(parentCmsg, "m_offsetType")?.ToString() ?? "no CMSG";
+                Count($"tae.clip NOT FOUND (parent CMSG offset {offset})");
+                Example($"tae clip not found ({offset})", name);
+            }
+        }
+
+        if (tn == "CustomManualSelectorGenerator")
+        {
+            var animId = GetInt(obj, "m_animId");
+            var offset = Get(obj, "m_offsetType")?.ToString() ?? "?";
+            var categories = AllAnimations.Where(id => id % 1000000 == animId).Select(id => id / 1000000).Distinct().OrderBy(c => c).ToList();
+            var bucket = categories.Count switch { 0 => "0", 1 => "1", < 5 => "2-4", _ => "5+" };
+            Count($"tae.cmsg {offset}: animId in {bucket} categories");
+            if (categories.Count > 0) Example($"tae cmsg {offset} categories", $"{animId}: {string.Join(",", categories.Take(6))}", 6);
+
+            // The CMSG's clips: are they all the same animation, or one per category?
+            var clipNames = ((IList)Get(obj, "m_generators")).Cast<object>().Where(g => g?.GetType().Name == "hkbClipGenerator")
+                .Select(g => Get(g, "m_animationName") as string ?? "").ToList();
+            var lowerMatch = clipNames.All(n => Regex.Match(n, @"^a\d+_(\d+)$") is { Success: true } mm && int.Parse(mm.Groups[1].Value) == animId);
+            Count(lowerMatch ? "tae.cmsg all clips' lower id == animId" : "tae.cmsg some clip lower id DIFFERS");
+            Example($"tae cmsg {offset} clips", $"{animId}: {string.Join(",", clipNames.Take(5))}", 6);
+        }
+    }
+
+            CheckTimeActs(obj, tn);
+
+    // NR's extra CMSG field: how it's used, and what else is set on CMSGs that have it
+            if (tn == "CustomManualSelectorGenerator" && Get(obj, "m_isBasePoseAnim") is bool basePose)
+            {
+                Count($"cmsg.isBasePoseAnim {basePose}");
+                if (basePose)
+                    Example("cmsg base pose", $"{Get(obj, "m_name")} anim {Get(obj, "m_animId")} offset {Get(obj, "m_offsetType")} gens {((IList)Get(obj, "m_generators")).Count} tae {Get(obj, "m_enableTae")}", 15);
             }
 
             if (tn == "hkbStateMachine")

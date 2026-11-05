@@ -18,11 +18,19 @@ public class HavokBehaviorView
     public HavokStateMachineView StateMachineView;
     public HavokVariableView VariableView;
     public HavokOutlineView OutlineView;
+    public HavokAnimationTableView AnimationTableView;
+    public HavokProblemsView ProblemsView;
 
     /// <summary>
     /// The names the file's indices refer to, or null if the shown file isn't a behavior graph
     /// </summary>
     public HavokBehaviorSymbols Symbols;
+
+    /// <summary>
+    /// The animations of the character the shown behavior belongs to (its time act entries and animation files),
+    /// loaded in the background, or null if the shown file isn't a behavior graph
+    /// </summary>
+    public HavokAnimationIndex Animations;
 
     public HavokBehaviorView(HavokEditorView view, ProjectEntry project)
     {
@@ -34,18 +42,23 @@ public class HavokBehaviorView
         StateMachineView = new(view, this, project);
         VariableView = new(view, this, project);
         OutlineView = new(view, this, project);
+        AnimationTableView = new(view, this, project);
+        ProblemsView = new(view, this, project);
     }
 
     public void ResetSelection()
     {
         IsBehaviorGraph = false;
         Symbols = null;
+        Animations = null;
 
         AnimationClipView.ResetSelection();
         AnimationSelectorView.ResetSelection();
         StateMachineView.ResetSelection();
         VariableView.ResetSelection();
         OutlineView.ResetSelection();
+        AnimationTableView.ResetSelection();
+        ProblemsView.ResetSelection();
     }
 
     public void SetupBehaviorView(object sourceObject)
@@ -57,6 +70,11 @@ public class HavokBehaviorView
         // Built for any version (it reads fields by name), but only for behavior files, since it walks the whole file
         Symbols = View.Selection.CategoryMode is HavokCategoryMode.Behavior
             ? HavokBehaviorSymbols.Build(sourceObject, View.PropertyCache.GetCachedHavokFields)
+            : null;
+
+        // A behbnd is named after its character (c0000.behbnd), and its shared c9997.hkx belongs to it too
+        Animations = Symbols != null
+            ? HavokAnimationIndex.Get(Project, View.Selection.BinderFileEntry?.Filename)
             : null;
 
         if (HavokTypeUtils.IsHKX3(Project))
@@ -79,6 +97,8 @@ public class HavokBehaviorView
         StateMachineView.Setup(sourceObject);
         VariableView.Setup(sourceObject);
         OutlineView.Setup(sourceObject);
+        AnimationTableView.Setup(sourceObject);
+        ProblemsView.Setup(sourceObject);
     }
 
     public void Draw(object sourceObject)
@@ -136,10 +156,12 @@ public class HavokBehaviorView
         if (ImGui.BeginTabBar("behaviorTabs", ImGuiTabBarFlags.FittingPolicyResizeDown))
         {
             OutlineView.DisplayTab();
+            AnimationTableView.DisplayTab();
             StateMachineView.DisplayTab();
             AnimationSelectorView.DisplayTab();
             AnimationClipView.DisplayTab();
             VariableView.DisplayTab();
+            ProblemsView.DisplayTab();
 
             ImGui.EndTabBar();
         }
@@ -157,6 +179,10 @@ public class HavokBehaviorView
         if (OutlineView.CanDisplayProperties())
         {
             OutlineView.DisplayProperties();
+        }
+        else if (AnimationTableView.CanDisplayProperties())
+        {
+            AnimationTableView.DisplayProperties();
         }
         else if (StateMachineView.CanDisplayProperties())
         {
@@ -188,6 +214,9 @@ public class HavokBehaviorView
     {
         if (OutlineView.CanDisplayProperties())
             return OutlineView.Selected;
+
+        if (AnimationTableView.CanDisplayProperties())
+            return AnimationTableView.Selected;
 
         if (StateMachineView.CanDisplayProperties())
             return StateMachineView.SelectedStateMachines.FirstOrDefault();

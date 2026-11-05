@@ -2235,6 +2235,18 @@
     {
       "Key": "TAE_AnimationWindow_Context_Add_To_Combo_TT",
       "Text": "Adds this animation to the end of the combo in the Combo Builder tool."
+    },
+    {
+      "Key": "TAE_Command_Select_Source_Scanning",
+      "Text": "{0} isn't listed in the Time Act Editor yet, as its sources are still being found. Try again in a moment."
+    },
+    {
+      "Key": "TAE_Command_Select_Source_Missing",
+      "Text": "{0} has no time acts in the Time Act Editor."
+    },
+    {
+      "Key": "TAE_Command_Select_Animation_Missing",
+      "Text": "{1} has no time act entry for {0}."
     }
   ]
 }

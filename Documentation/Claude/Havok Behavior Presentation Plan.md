@@ -23,7 +23,7 @@ This plan moves the editor from showing **how the file is stored** to showing **
 - **Shared interfaces** (`Havok/Havok.Shared/Interfaces.cs`): `IRootContainer`, `IClipGenerator`, `IStateMachine`, `ICustomManualSelectorGenerator`. These are empty markers. The views still branch on `HKLib.hk2018` vs `HKX2` and duplicate the code for each.
 - `Hexa.NET.ImNodes` 2.2.7 is already referenced by `Smithbox.Program.csproj` (not used by the Havok Editor yet).
 
-### Where the names live (hk2018, ER/AC6/NR)
+### Where the names live (hk2018: ER and NR)
 
 | Index field | Name source |
 |---|---|
@@ -43,30 +43,32 @@ HKX2 (`HKX2.hkbBehaviorGraphStringData`) has event, attribute, variable and char
 **Highest value for the effort. Every later phase reads from this.**
 
 > **Status (2026-11-05): implemented, not yet checked in the app. `Smithbox.Program` builds.**
-> - `Data/HavokBehaviorSymbols.cs` reads everything by field name, so it covers hk2018, hk2019 (AC6) and HKX2 (DS3) with no version branches. Names are read from the file each time, so renames show at once. The parent map and binding-set list are rebuilt on structural edits (with the other behavior tab lists). Only built for the Behavior category.
+> - `Data/HavokBehaviorSymbols.cs` reads everything by field name, so it covers hk2018 (ER, and NR through the NR type registry) and HKX2 (DS3) with no version branches. Names are read from the file each time, so renames show at once. The parent map and binding-set list are rebuilt on structural edits (with the other behavior tab lists). Only built for the Behavior category.
 > - Field roles use meta JSON tags (decided): `EventID`, `VariableIndex`, `StateID` on `HavokField`. New meta files for `hkbStateMachine`, `hkbStateMachine+TransitionInfo`, `hkbEvent`, `hkbEventProperty` and `hkbVariableBindingSet+Binding` (hk2018), plus their HKX2 counterparts (hk2014). `CharacterPropertyIndex` wasn't needed: a binding's `VariableIndex` resolves to a character property when its binding type says so.
 > - Corrected after the game-data survey (below): binding rows now also match compound paths (`field:index/field`), animation names show as the file name, and five more event fields are tagged.
-> - `m_fromNestedStateId` / `m_toNestedStateId` aren't resolved. They are 0 on every transition in ER and DS3, so this doesn't matter in practice.
+> - `m_fromNestedStateId` / `m_toNestedStateId` aren't resolved. They are 0 on every transition in ER, NR and DS3, so this doesn't matter in practice.
+> - NR: no NR-specific code was needed. Its one type change, `CustomManualSelectorGenerator.m_isBasePoseAnim`, is tagged `ProjectTypes: ["NR"]` in a new `hk2018/CustomManualSelectorGenerator.json`, so the property grid hides it in other projects (ER files don't store it). `HavokField.ProjectTypes` is new and is checked in `HavokPropertyView.DisplayProperty`.
 
 ### Game data survey (2026-11-05)
 
-`Tools/BehaviorSurvey` reads behavior files through the VFS and checks these assumptions. Run it with the working directory at `src/Smithbox.Data`: `BehaviorSurvey <GAME> <binder regex> [max binders]`. Covered: ER (400 binders, 5.9M objects), DS3 (60 binders), with no read failures.
+`Tools/BehaviorSurvey` reads behavior files through the VFS and checks these assumptions. Run it with the working directory at `src/Smithbox.Data`: `BehaviorSurvey <GAME> <binder regex> [max binders]`. Covered, with no read failures: ER (400 binders, 5.9M objects), NR (276 binders, 4.3M objects, read with `HavokTypeRegistry.Nightreign`) and DS3 (60 binders). NR gives the same result as ER on every row below.
 
 | Assumption | Result |
 |---|---|
-| `TransitionInfo.m_eventId` indexes `m_eventNames` | All 305,769 in range (ER); all 43,669 (DS3) |
+| `TransitionInfo.m_eventId` indexes `m_eventNames` | All 305,769 in range (ER); all 219,886 (NR); all 43,669 (DS3) |
 | `m_toStateId` is a state ID in the owning state machine (via `StateInfo.m_transitions` or `m_wildcardTransitions`) | All resolve (ER and DS3) |
 | `m_startStateId` is a state in the same machine | All resolve |
 | `m_fromNestedStateId` / `m_toNestedStateId` | Always 0 |
 | `hkbEvent` / `hkbEventProperty.m_id`, the state machine's `…EventId` fields, `m_syncVariableIndex` | Always -1 in ER and DS3 (tagged anyway; mods may set them) |
 | Other event fields | Found and tagged: `TimeInterval.m_enterEventId` / `m_exitEventId`, `hkbManualSelectorGenerator.m_endOfClipEventId`, `hkbEventDrivenBlendingObject.m_onEventId` / `m_offEventId` (DS3: on `hkbLayer`). Some are set in ER `c0000`. |
-| `m_animationInternalId` indexes `m_animationNames` | Yes, but the names are **file paths** (`..\..\..\..\Model\chr\c0000\hkx\a000\a000_003000.hkx`). The file stem equals the clip's `m_animationName` in all 1,095,705 ER clips. DS3 (HKX2) has no animation names. |
-| Binding `m_memberPath` format | The field name without `m_`, with case ignored (`selectedGeneratorIndex`, `DownLimitAngle`), or compound: `field:index/field` from the bindable down (`twistParam:0/onGain`, `hands:1/controlData/targetHandle`). All 54,317 ER and 13,244 DS3 compound paths resolve to a real field. Only `isActive` / `currentStateId` on `hkbStateMachine` (runtime members) match no serialised field. |
+| `m_animationInternalId` indexes `m_animationNames` | Yes, but the names are **file paths** (`..\..\..\..\Model\chr\c0000\hkx\a000\a000_003000.hkx`). The file stem equals the clip's `m_animationName` in all 1,095,705 ER and 793,577 NR clips. DS3 (HKX2) has no animation names. |
+| Binding `m_memberPath` format | The field name without `m_`, with case ignored (`selectedGeneratorIndex`, `DownLimitAngle`), or compound: `field:index/field` from the bindable down (`twistParam:0/onGain`, `hands:1/controlData/targetHandle`). All 54,317 ER, 37,433 NR and 13,244 DS3 compound paths resolve to a real field. Only `isActive` / `currentStateId` on `hkbStateMachine` (runtime members) match no serialised field. |
 | Binding indices in range, with type 1 = character property | All in range. Type 1 is common (ER: 62,977 of 143,365). |
 | Parallel arrays (`eventInfos`, `variableInfos`, `variableBounds`, initial word values) | Always the same length as the names, except `variableBounds`, which is empty in 113 ER files |
 | Duplicate state IDs | None |
+| NR `CustomManualSelectorGenerator.m_isBasePoseAnim` | True on 181,075 of 182,959 NR CMSGs; false on the other 1,884. It's always false in ER, where it isn't stored. Its meaning isn't known, so the outline doesn't label it. Phase 3's animation table should show it as a column for NR. Phase 4's *Add animation* should copy it from an existing CMSG rather than use the default `false`. |
 | Sharing | Transition effects are heavily shared (one `CustomTransitionEffect` in 1,163 places). Clip generators are often shared in ER `c0000` (4,839); CMSGs sometimes (360 in ER). |
-| Outline reachability (Phase 2 rules) | Every generator is reachable from the `hkbBehaviorGraph` root in ER and DS3, once `hkbGeneratorTransitionEffect` is treated as a node and `hkbManualSelectorTransitionEffect` is looked through |
+| Outline reachability (Phase 2 rules) | Every generator is reachable from the `hkbBehaviorGraph` root in ER, NR and DS3, once `hkbGeneratorTransitionEffect` is treated as a node and `hkbManualSelectorTransitionEffect` is looked through |
 
 Not covered:
 - **AC6:** its behbnds hold FromSoftware `.bhv` files and a `.tae`, not Havok behavior graphs, so AC6 isn't a target for this work.
@@ -106,6 +108,35 @@ Not covered:
 **Done when:** you can go from the root state machine to a clip and back without opening a raw `m_states` list, and you can see before editing whether a generator is shared.
 
 ## Phase 3: Task views and validation
+
+> **Status (2026-11-05): implemented, not yet checked in the app. `Smithbox.Program` builds.** D3 decided: link + validate. The validation part changed after the survey (below).
+> - **Animation index** (`Data/HavokAnimationIndex.cs`): for the behbnd's character, the full animation IDs its time acts have entries for (read with `TimeActContainerWrapper`, as the Time Act Editor reads them) and the animation files in all its anibnds (`cXXXX`, `cXXXX_divNN`, `c0000_aXX_…`). Loaded in the background, kept per character for the session, with *Reload Animations* in the Animations tab. Unsaved Time Act Editor changes aren't included.
+> - **Animation rows**: new meta tags `AnimationName` (`hkbClipGenerator.m_animationName`) and `AnimationID` (`CustomManualSelectorGenerator.m_animId`), hk2018 and hk2014.
+>   - A clip shows "Time act aXXX / No time act entry · Animation file / No animation file", plus **Open in Time Act Editor**. That sends `tae/select/{chr}/{full id}`, a new command in `TimeActCommandQueue`, which selects the source, time act and animation as the search tool's jump does.
+>   - A CMSG shows the categories with a time act entry for its ID.
+> - **Animations tab** (`HavokAnimationTableView.cs`): one row per CMSG.
+>   - Columns: name, animation ID, offset type, state, clip count, time act categories, clips with a file, and *Base Pose* (NR only).
+>   - Search covers name, ID and state. It can be sorted (by a combo, since no table in the codebase uses ImGui sort specs) and filtered to *Missing files only*.
+>   - Click a row to edit the selector; double-click to show it in the Outline.
+> - **Problems tab** (`Utilities/HavokBehaviorValidator.cs`, `HavokProblemsView.cs`): checked when first shown for a file, and with *Check*. Clicking a problem shows it in the Outline. It checks:
+>   - every `EventID` / `VariableIndex` / `StateID` field (from the meta tags)
+>   - the lengths of the lists kept alongside the name lists
+>   - duplicate state IDs
+>   - clip internal ID against animation name (hk2018)
+>   - binding member paths, skipping the runtime members `isActive` / `currentStateId`
+>
+>   Every vanilla ER, NR and DS3 file passes all of these in the survey, so a vanilla file should list nothing. It isn't run after Save yet.
+> - **Dropped:** "missing animation" and "missing time act entry" checks. See the survey below. `m_enableTae` / `m_enableScript` columns were left out to keep the table narrow; they are on the selector's property grid.
+
+### Animation survey (2026-11-05)
+
+| Assumption | Result |
+|---|---|
+| `aXXX` in a clip's animation name is a time act number | **Only for the player.** `c0000` has one time act per category (642 in ER). An enemy has one time act (`c3000.tae`, binder ID 5000000) whose animations carry the category in a full ID (`1012000` = `a001_012000`). `TimeActContainerWrapper.TryFindAnimation(fullId)` handles both. |
+| Clips name animations the character has | **Often not.** Enemies' clips are almost all in the behbnd's shared `c9997.hkx`. Of those, ER 99,522 (49%), NR 127,938 (61%) and DS3 309,596 (95%) have no animation file for that character, most with no time act entry either. Player `c0000` (ER): 9,824 of 24,282 clips have no file. So a missing animation isn't reported as an error; the Animations tab and the clip rows show it instead. |
+| A missing time act entry means a broken clip | No. A time act only lists animations with events. ER `c0000` has 27 clips with a file but no entry, and 9,121 with an entry but no file. |
+| A CMSG's clips share its `m_animId` | Yes: the lower part of every clip's name equals the CMSG's ID (ER: all but 1 of 260,259; NR: all but 17). |
+| A CMSG's ID maps to one time act | No. With an offset type, the same ID has entries in several categories (ER `WeaponCategoryRight`: mostly 5+), so the CMSG row lists them rather than linking one. |
 
 1. **Animation table** (FromSoftware specific): one row per CMSG. Columns: `m_animId`, CMSG name, owning state (and its state machine), child clip names, the TAE it resolves to, `m_enableTae` / `m_enableScript`. It can be searched and sorted. Double-click jumps to the CMSG in the outline. A "Open TAE" link appears if the TAE editor can be targeted (see decision D3).
 2. **Validation pass** (`Utilities/HavokBehaviorValidator.cs`): run it on demand and after Save, with results in a list you can click to jump to the problem. Checks:

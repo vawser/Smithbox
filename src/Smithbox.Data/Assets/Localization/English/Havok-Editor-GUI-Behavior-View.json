@@ -17,6 +17,214 @@
       "Text": "Variables"
     },
     {
+      "Key": "HAVOK_BehaviorView_Tab_Animations",
+      "Text": "Animations"
+    },
+    {
+      "Key": "HAVOK_BehaviorView_Tab_Problems",
+      "Text": "Problems"
+    },
+    {
+      "Key": "HAVOK_BehaviorView_Tab_Problems_Count",
+      "Text": "Problems ({0})"
+    },
+    {
+      "Key": "HAVOK_AnimationIndex_Load_Failed",
+      "Text": "Couldn't read the animations of {0}."
+    },
+    {
+      "Key": "HAVOK_AnimationRow_Loading",
+      "Text": "Reading the animations of {0}..."
+    },
+    {
+      "Key": "HAVOK_AnimationRow_Load_Failed",
+      "Text": "Couldn't read the animations of {0}"
+    },
+    {
+      "Key": "HAVOK_AnimationRow_Not_An_Animation_Name",
+      "Text": "Not an animation name (aXXX_YYYYYY)"
+    },
+    {
+      "Key": "HAVOK_AnimationRow_Time_Act",
+      "Text": "Time act {0}"
+    },
+    {
+      "Key": "HAVOK_AnimationRow_No_Time_Act",
+      "Text": "No time act entry"
+    },
+    {
+      "Key": "HAVOK_AnimationRow_File",
+      "Text": "Animation file"
+    },
+    {
+      "Key": "HAVOK_AnimationRow_No_File",
+      "Text": "No animation file"
+    },
+    {
+      "Key": "HAVOK_AnimationRow_Clip_TT",
+      "Text": "What {0} has for {1}: a time act entry (its events), and an animation file in its anibnds.\n\nA missing one isn't always a mistake. Shared graphs like c9997 name animations most characters don't have, and the game skips those."
+    },
+    {
+      "Key": "HAVOK_AnimationRow_Open_Time_Act",
+      "Text": "Open in Time Act Editor"
+    },
+    {
+      "Key": "HAVOK_AnimationRow_Open_Time_Act_TT",
+      "Text": "Show {0} in the Time Act Editor."
+    },
+    {
+      "Key": "HAVOK_AnimationRow_Selector",
+      "Text": "In {0} time act categories: {1}"
+    },
+    {
+      "Key": "HAVOK_AnimationRow_Selector_None",
+      "Text": "No time act entry has this ID"
+    },
+    {
+      "Key": "HAVOK_AnimationRow_Selector_TT",
+      "Text": "The animations of {0} with a time act entry for this ID. With an offset type other than None, the game picks the category at runtime (from the weapon, stance or magic), so any of these can play."
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Sort_File",
+      "Text": "Sort: File Order"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Sort_Name",
+      "Text": "Sort: Name"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Sort_AnimationID",
+      "Text": "Sort: Animation ID"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Sort_State",
+      "Text": "Sort: State"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Sort_TT",
+      "Text": "The order of the rows."
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Only_Missing",
+      "Text": "Missing files only"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Only_Missing_TT",
+      "Text": "Only show selectors with a clip whose animation file this character doesn't have."
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Reload",
+      "Text": "Reload Animations"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Reload_TT",
+      "Text": "Read the animations of {0} again, for changes made since they were read (unsaved Time Act Editor changes aren't included).\n\nTime act entries: {1}\nAnimation files: {2}"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Column_Selector",
+      "Text": "Selector"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Column_Animation_ID",
+      "Text": "Anim ID"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Column_Offset",
+      "Text": "Offset Type"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Column_State",
+      "Text": "State"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Column_Clips",
+      "Text": "Clips"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Column_Time_Acts",
+      "Text": "Time Acts"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Column_Files",
+      "Text": "Files"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Column_Base_Pose",
+      "Text": "Base Pose"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Yes",
+      "Text": "Yes"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_No",
+      "Text": "No"
+    },
+    {
+      "Key": "HAVOK_AnimationTable_Row_TT",
+      "Text": "Click to edit this selector. Double-click to show it in the Outline.\n\nTime Acts: the categories with a time act entry for the animation ID.\nFiles: the clips whose animation file this character has."
+    },
+    {
+      "Key": "HAVOK_ProblemsView_Check",
+      "Text": "Check"
+    },
+    {
+      "Key": "HAVOK_ProblemsView_Check_TT",
+      "Text": "Check the file again.\n\nChecked: event, variable, character property and state indices; the lengths of the lists kept alongside the name lists; duplicate state IDs; clip internal IDs against their animation names; binding member paths.\n\nThe game's own files pass every check, so anything listed comes from an edit."
+    },
+    {
+      "Key": "HAVOK_ProblemsView_None",
+      "Text": "No problems found."
+    },
+    {
+      "Key": "HAVOK_ProblemsView_Count",
+      "Text": "{0} problems found."
+    },
+    {
+      "Key": "HAVOK_ProblemsView_Entry_TT",
+      "Text": "On: {0}\n\nClick to show it in the Outline."
+    },
+    {
+      "Key": "HAVOK_Validator_Index_Missing",
+      "Text": "{0}: no {1} has the index {2}"
+    },
+    {
+      "Key": "HAVOK_Validator_Length_Mismatch",
+      "Text": "{0} has {1} entries, but {2} has {3}"
+    },
+    {
+      "Key": "HAVOK_Validator_Duplicate_State_ID",
+      "Text": "State ID {0} is used by more than one state: {1}"
+    },
+    {
+      "Key": "HAVOK_Validator_Internal_ID_Missing",
+      "Text": "m_animationInternalId {0} is past the end of the animation names ({1})"
+    },
+    {
+      "Key": "HAVOK_Validator_Internal_ID_Mismatch",
+      "Text": "m_animationInternalId {0} is {1}, but m_animationName is {2}"
+    },
+    {
+      "Key": "HAVOK_Validator_Binding_Path",
+      "Text": "Binding \"{0}\" doesn't lead to a field: {1}"
+    },
+    {
+      "Key": "HAVOK_Validator_Binding_Path_No_Field",
+      "Text": "no field {0} on {1}"
+    },
+    {
+      "Key": "HAVOK_Validator_Binding_Path_Not_List",
+      "Text": "{0} isn't a list"
+    },
+    {
+      "Key": "HAVOK_Validator_Binding_Path_Past_End",
+      "Text": "{0}:{1} is past the end ({2} entries)"
+    },
+    {
+      "Key": "HAVOK_Validator_Binding_Path_Null",
+      "Text": "{0} is empty"
+    },
+    {
       "Key": "HAVOK_BehaviorView_Tab_Outline",
       "Text": "Outline"
     },

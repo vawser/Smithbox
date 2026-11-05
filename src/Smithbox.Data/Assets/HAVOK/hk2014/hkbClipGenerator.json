@@ -11,7 +11,8 @@
       {
           "Field": "m_animationName",
           "Name": "Animation Name",
-          "Description": ""
+          "Description": "The animation the clip plays (aXXX_YYYYYY). The row below shows whether the character has a time act entry and an animation file for it.",
+          "AnimationName": true
       },
       {
           "Field": "m_userPartitionMask",

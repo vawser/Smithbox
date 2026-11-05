@@ -30,5 +30,60 @@ public class TimeActCommandQueue
 
         if (commands.Length <= 0)
             return;
+
+        // Select an animation: "tae/select/{character}/{full animation ID}", e.g. tae/select/c0000/3000
+        // (sent by the Havok Editor's behavior views)
+        if (commands[0] == "select" && commands.Length >= 3)
+        {
+            SelectAnimation(activeView, commands[1], commands[2]);
+        }
+    }
+
+    /// <summary>
+    /// Selects a character's source, then the time act and animation with a full animation ID,
+    /// as the search tool's jump does
+    /// </summary>
+    private void SelectAnimation(TimeActEditorView view, string character, string animationID)
+    {
+        var bank = Project.Handler.TimeActData?.PrimaryBank;
+
+        var source = bank?.GetCharacters()
+            .FirstOrDefault(e => e.Name.Equals(character, StringComparison.OrdinalIgnoreCase));
+
+        if (source == null)
+        {
+            // The sources are found in the background, so a character may not be listed yet
+            Smithbox.LogError(this, LOC.Get(bank is { IsScanning: true }
+                ? "TAE_Command_Select_Source_Scanning" : "TAE_Command_Select_Source_Missing", character));
+            return;
+        }
+
+        if (view.Selection.SelectedTimeActContainerWrapper != source)
+        {
+            view.SourceWindow.SelectSource(source);
+            view.SourceWindow.ScrollTo(source, ModelListType.Character);
+        }
+
+        if (!long.TryParse(animationID, out var id))
+            return;
+
+        if (!source.TryFindAnimation(id, out var entry, out var animation))
+        {
+            Smithbox.LogError(this, LOC.Get("TAE_Command_Select_Animation_Missing", source.FormatAnimationName(id), character));
+            return;
+        }
+
+        if (view.Selection.SelectedTimeAct != entry)
+        {
+            view.Selection.SelectedTimeAct = entry;
+            view.SelectionWindow.ScrollTo(entry);
+        }
+
+        if (view.Selection.SelectedAnimation != animation)
+        {
+            view.AnimationSelectionWindow.SelectAnimation(animation);
+        }
+
+        view.AnimationSelectionWindow.ScrollTo(animation);
     }
 }

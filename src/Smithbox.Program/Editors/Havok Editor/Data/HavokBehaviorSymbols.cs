@@ -36,6 +36,21 @@ public class HavokBehaviorSymbols
     public List<object> BindingSets { get; } = new();
 
     /// <summary>
+    /// Every CustomManualSelectorGenerator in the file, in the order they were found
+    /// </summary>
+    public List<object> Selectors { get; } = new();
+
+    /// <summary>
+    /// Every hkbClipGenerator in the file
+    /// </summary>
+    public List<object> Clips { get; } = new();
+
+    /// <summary>
+    /// Every object in the file
+    /// </summary>
+    public IEnumerable<object> Objects => AllObjects;
+
+    /// <summary>
     /// Every hkbBehaviorGraph in the file: the roots of the outline
     /// </summary>
     public List<object> BehaviorGraphs { get; } = new();
@@ -121,6 +136,12 @@ public class HavokBehaviorSymbols
                     break;
                 case "hkbBehaviorGraph":
                     BehaviorGraphs.Add(obj);
+                    break;
+                case "CustomManualSelectorGenerator":
+                    Selectors.Add(obj);
+                    break;
+                case "hkbClipGenerator":
+                    Clips.Add(obj);
                     break;
             }
 
@@ -481,6 +502,22 @@ public class HavokBehaviorSymbols
     }
 
     /// <summary>
+    /// The state the object is in: the nearest StateInfo above it, or null
+    /// </summary>
+    public object FindOwningState(object obj)
+    {
+        var visited = new HashSet<object>(ReferenceEqualityComparer.Instance);
+
+        for (var current = GetPreferredParent(obj); current != null && visited.Add(current); current = GetPreferredParent(current))
+        {
+            if (current.GetType().Name is "StateInfo" or "hkbStateMachineStateInfo")
+                return current;
+        }
+
+        return null;
+    }
+
+    /// <summary>
     /// The outline nodes above the node, up to the root, so the outline can open them to show it
     /// </summary>
     public HashSet<object> GetOutlinePath(object node)
@@ -641,6 +678,63 @@ public class HavokBehaviorSymbols
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// Follows a member path ("field", "field:index/field/...") down from the bindable, and says whether it ends
+    /// on a field. Gives the reason if it doesn't. Field names are matched without m_ and ignoring case,
+    /// which resolves every path in the ER, NR and DS3 files.
+    /// </summary>
+    public static bool TryResolveMemberPath(object bindable, string path, out string reason)
+    {
+        reason = "";
+        var current = bindable;
+        var segments = path.Split('/');
+
+        for (var i = 0; i < segments.Length; i++)
+        {
+            var parts = segments[i].Split(':');
+            var field = current.GetType().GetFields(FieldFlags)
+                .FirstOrDefault(f => string.Equals(BareName(f.Name), parts[0], StringComparison.OrdinalIgnoreCase));
+
+            if (field == null)
+            {
+                reason = LOC.Get("HAVOK_Validator_Binding_Path_No_Field", parts[0], current.GetType().Name);
+                return false;
+            }
+
+            var value = field.GetValue(current);
+
+            if (parts.Length > 1)
+            {
+                if (value is not IList list || !int.TryParse(parts[1], out var index))
+                {
+                    reason = LOC.Get("HAVOK_Validator_Binding_Path_Not_List", parts[0]);
+                    return false;
+                }
+
+                if (index < 0 || index >= list.Count)
+                {
+                    reason = LOC.Get("HAVOK_Validator_Binding_Path_Past_End", parts[0], index, list.Count);
+                    return false;
+                }
+
+                value = list[index];
+            }
+
+            if (i == segments.Length - 1)
+                return true;
+
+            if (value == null)
+            {
+                reason = LOC.Get("HAVOK_Validator_Binding_Path_Null", segments[i]);
+                return false;
+            }
+
+            current = value;
+        }
+
+        return true;
     }
 
     private static object FindBindingByPath(object bindable, string path)
