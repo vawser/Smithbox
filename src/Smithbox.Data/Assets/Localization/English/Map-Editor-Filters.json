@@ -457,8 +457,8 @@
       "Text": "Auto Draw Group Point"
     },
     {
-      "Key": "MAP_Filters_ER_Group_Defeat_Reward",
-      "Text": "Group Defeat Reward"
+      "Key": "MAP_Filters_ER_Group_Placement_Point",
+      "Text": "Group Placement Point"
     },
     {
       "Key": "MAP_Filters_ER_Map_Point_Discovery_Override",

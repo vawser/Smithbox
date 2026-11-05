@@ -11,7 +11,7 @@
     
     <UnkT02
     AltName="Unknown: 0x2"
-    Wiki="" />
+    Wiki="0 or 2 (2 on seven hint messages). Stored with the Message ID in the blood message and read together with it." />
     
     <Hidden
     AltName="Is Hidden"

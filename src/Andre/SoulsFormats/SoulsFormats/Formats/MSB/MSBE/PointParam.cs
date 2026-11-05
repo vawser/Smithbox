@@ -31,7 +31,7 @@ namespace SoulsFormats
             MapPoint = 33,
             WeatherOverride = 35,
             AutoDrawGroupPoint = 36,
-            GroupDefeatReward = 37,
+            GroupPlacementPoint = 37,
             MapPointDiscoveryOverride = 38,
             MapPointParticipationOverride = 39,
             Hitset = 40,
@@ -165,7 +165,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.GroupDefeatReward> GroupDefeatRewards { get; set; }
+            public List<Region.GroupPlacementPoint> GroupPlacementPoints { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -278,7 +278,7 @@ namespace SoulsFormats
                 MapPoints = new List<Region.MapPoint>();
                 WeatherOverrides = new List<Region.WeatherOverride>();
                 AutoDrawGroupPoints = new List<Region.AutoDrawGroupPoint>();
-                GroupDefeatRewards = new List<Region.GroupDefeatReward>();
+                GroupPlacementPoints = new List<Region.GroupPlacementPoint>();
                 MapPointDiscoveryOverrides = new List<Region.MapPointDiscoveryOverride>();
                 MapPointParticipationOverrides = new List<Region.MapPointParticipationOverride>();
                 Hitsets = new List<Region.Hitset>();
@@ -325,7 +325,7 @@ namespace SoulsFormats
                     case Region.MapPoint r: MapPoints.Add(r); break;
                     case Region.WeatherOverride r: WeatherOverrides.Add(r); break;
                     case Region.AutoDrawGroupPoint r: AutoDrawGroupPoints.Add(r); break;
-                    case Region.GroupDefeatReward r: GroupDefeatRewards.Add(r); break;
+                    case Region.GroupPlacementPoint r: GroupPlacementPoints.Add(r); break;
                     case Region.MapPointDiscoveryOverride r: MapPointDiscoveryOverrides.Add(r); break;
                     case Region.MapPointParticipationOverride r: MapPointParticipationOverrides.Add(r); break;
                     case Region.Hitset r: Hitsets.Add(r); break;
@@ -362,7 +362,7 @@ namespace SoulsFormats
                     SpawnPoints, Messages, EnvironmentMapEffectBoxes, WindAreas,
                     Connections, PatrolRoute22s, BuddySummonPoints, DisableTumbleweeds, MufflingBoxes,
                     MufflingPortals, SoundRegions, MufflingPlanes, PatrolRoutes,
-                    MapPoints, WeatherOverrides, AutoDrawGroupPoints, GroupDefeatRewards,
+                    MapPoints, WeatherOverrides, AutoDrawGroupPoints, GroupPlacementPoints,
                     MapPointDiscoveryOverrides, MapPointParticipationOverrides, Hitsets,
                     FastTravelRestriction, WeatherCreateAssetPoints, PlayAreas, EnvironmentMapOutputs,
                     MountJumps, Dummies, FallPreventionRemovals, NavmeshCuttings, MapNameOverrides,
@@ -438,8 +438,8 @@ namespace SoulsFormats
                     case RegionType.AutoDrawGroupPoint:
                         return AutoDrawGroupPoints.EchoAdd(new Region.AutoDrawGroupPoint(br));
 
-                    case RegionType.GroupDefeatReward:
-                        return GroupDefeatRewards.EchoAdd(new Region.GroupDefeatReward(br));
+                    case RegionType.GroupPlacementPoint:
+                        return GroupPlacementPoints.EchoAdd(new Region.GroupPlacementPoint(br));
 
                     case RegionType.MapPointDiscoveryOverride:
                         return MapPointDiscoveryOverrides.EchoAdd(new Region.MapPointDiscoveryOverride(br));
@@ -1208,7 +1208,8 @@ namespace SoulsFormats
                 public short MessageID { get; set; }
 
                 /// <summary>
-                /// Unknown. Always 0 or 2.
+                /// Unknown. Always 0 or 2 (2 on seven hint messages). Copied into the blood message instance right after
+                /// MessageID (CS::BloodMessageIns +30h, MessageID at +2Ch), and the two are read together as one value.
                 /// </summary>
                 public short UnkT02 { get; set; }
 
@@ -2022,27 +2023,26 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// A group placement point (the game's CSMsbPointGroupPlacementPoint): a group of enemies, placed from a
+            /// RandomAppearParam row and tied to platoons, that gives a reward when all of them are defeated.
             /// </summary>
-            public class GroupDefeatReward : Region
+            public class GroupPlacementPoint : Region
             {
-                private protected override RegionType Type => RegionType.GroupDefeatReward;
+                private protected override RegionType Type => RegionType.GroupPlacementPoint;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// RandomAppearParam row the group's enemies are placed from; 0 for none. 7 of the 12 distinct retail
+                /// values are rows; the other 5 are on test points.
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public int RandomAppearParamID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// PlatoonInfo events of the group (up to 4); the game checks a defeated character's platoon against them.
                 /// </summary>
-                public int UnkT04 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT08 { get; set; }
+                [MSBReference(ReferenceType = typeof(Event))]
+                public string[] PlatoonEventNames { get; set; }
+                private int[] PlatoonEventIndices { get; set; }
 
                 /// <summary>
                 /// References to enemies to defeat to receive the reward.
@@ -2052,14 +2052,12 @@ namespace SoulsFormats
                 private int[] PartIndices { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown parts (up to 8; assets in retail, three regions use them), resolved by the game to their
+                /// entities.
                 /// </summary>
-                public int UnkT34 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT38 { get; set; }
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string[] UnkPartNames { get; set; }
+                private int[] UnkPartIndices { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2067,38 +2065,31 @@ namespace SoulsFormats
                 public int EstusFlaskRecoveryID { get; set; }
 
                 /// <summary>
-                /// Creates a GroupDefeatReward with default values.
+                /// Creates a GroupPlacementPoint with default values.
                 /// </summary>
-                public GroupDefeatReward() : base($"{nameof(Region)}: {nameof(GroupDefeatReward)}")
+                public GroupPlacementPoint() : base($"{nameof(Region)}: {nameof(GroupPlacementPoint)}")
                 {
+                    PlatoonEventNames = new string[4];
                     PartNames = new string[8];
+                    UnkPartNames = new string[8];
                 }
 
                 private protected override void DeepCopyTo(Region region)
                 {
-                    var reward = (GroupDefeatReward)region;
+                    var reward = (GroupPlacementPoint)region;
+                    reward.PlatoonEventNames = (string[])PlatoonEventNames.Clone();
                     reward.PartNames = (string[])PartNames.Clone();
+                    reward.UnkPartNames = (string[])UnkPartNames.Clone();
                 }
 
-                internal GroupDefeatReward(BinaryReaderEx br) : base(br) { }
+                internal GroupPlacementPoint(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
-                    UnkT04 = br.ReadInt32();
-                    UnkT08 = br.ReadInt32();
-                    br.AssertInt32(-1);
-                    br.AssertInt32(-1);
+                    RandomAppearParamID = br.ReadInt32();
+                    PlatoonEventIndices = br.ReadInt32s(4);
                     PartIndices = br.ReadInt32s(8);
-
-                    UnkT34 = br.ReadInt32();
-                    UnkT38 = br.ReadInt32();
-                    br.AssertInt32(-1);
-                    br.AssertInt32(-1);
-                    br.AssertInt32(-1);
-                    br.AssertInt32(-1);
-                    br.AssertInt32(-1);
-                    br.AssertInt32(-1);
+                    UnkPartIndices = br.ReadInt32s(8);
                     EstusFlaskRecoveryID = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -2106,21 +2097,10 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
-                    bw.WriteInt32(UnkT04);
-                    bw.WriteInt32(UnkT08);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(-1);
+                    bw.WriteInt32(RandomAppearParamID);
+                    bw.WriteInt32s(PlatoonEventIndices);
                     bw.WriteInt32s(PartIndices);
-
-                    bw.WriteInt32(UnkT34);
-                    bw.WriteInt32(UnkT38);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(-1);
+                    bw.WriteInt32s(UnkPartIndices);
                     bw.WriteInt32(EstusFlaskRecoveryID);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -2129,16 +2109,19 @@ namespace SoulsFormats
                 internal override void GetNames(Entries entries)
                 {
                     base.GetNames(entries);
+                    PlatoonEventNames = MSB.FindNames(entries.Events, PlatoonEventIndices);
                     PartNames = MSB.FindNames(entries.Parts, PartIndices);
+                    UnkPartNames = MSB.FindNames(entries.Parts, UnkPartIndices);
                 }
 
                 internal override void GetIndices(Entries entries)
                 {
                     base.GetIndices(entries);
+                    PlatoonEventIndices = MSB.FindIndices(this, entries.Events, PlatoonEventNames);
                     PartIndices = MSB.FindIndices(this, entries.Parts, PartNames);
+                    UnkPartIndices = MSB.FindIndices(this, entries.Parts, UnkPartNames);
                 }
             }
-
             /// <summary>
             /// Unknown.
             /// </summary>

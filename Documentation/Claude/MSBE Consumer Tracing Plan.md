@@ -207,6 +207,15 @@ characters; 13 = the `mAA_BB_CC_DD-` prefix on all 97,838 retail uses). Summarie
 the source map's `CS::HitIns` list), `_Unk10`, UnkStruct9 `_Unk00` (render-flag bits) and the grass shorts.
 Remaining open groups: G (regions, needs the coverage fix first), I, J.
 
+### 2026-11-05: group G, first part
+
+The planned coverage fix (seed `CSMsbPoint` subclass virtuals) doesn't fit how regions are read: only 9 of ~40 types
+have a subclass, and type data is read by small (often indexed) getters whose type is fixed by the caller. Done:
+GroupPlacementPoint, formerly GroupDefeatReward (`RandomAppearParamID`, `PlatoonEventNames[4]`, `UnkPartNames[8]`, replacing UnkT00/T04/T08/T34/T38
+and eight asserted -1s) and a Message `UnkT02` summary. **Next:** attribute region getters through the 22 typed casts
+(`mov edx,<type>; jmp 140CFE230`) and their callers, then work through the other region types the same way.
+Remaining groups: rest of G, I, J.
+
 ### Known limits
 
 * `Extra.FuncStart` merges chained `.pdata` fragments, so leaf functions and tail-called neighbours are reported

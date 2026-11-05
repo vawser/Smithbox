@@ -93,7 +93,7 @@ public class RegionFilters
         { typeof(MSBE.Region.MapPoint), "MAP_Filters_ER_Map_Point" },
         { typeof(MSBE.Region.WeatherOverride), "MAP_Filters_ER_Weather_Override" },
         { typeof(MSBE.Region.AutoDrawGroupPoint), "MAP_Filters_ER_Auto_Draw_Group_Point" },
-        { typeof(MSBE.Region.GroupDefeatReward), "MAP_Filters_ER_Group_Defeat_Reward" },
+        { typeof(MSBE.Region.GroupPlacementPoint), "MAP_Filters_ER_Group_Placement_Point" },
         { typeof(MSBE.Region.MapPointDiscoveryOverride), "MAP_Filters_ER_Map_Point_Discovery_Override" },
         { typeof(MSBE.Region.MapPointParticipationOverride), "MAP_Filters_ER_Map_Point_Participation_Override" },
         { typeof(MSBE.Region.Hitset), "MAP_Filters_ER_Hitset" },

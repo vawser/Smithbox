@@ -551,7 +551,7 @@ public static class MsbCategories
                 ["MapPoint"] = typeof(MSBE.Region.MapPoint),
                 ["WeatherOverride"] = typeof(MSBE.Region.WeatherOverride),
                 ["AutoDrawGroupPoint"] = typeof(MSBE.Region.AutoDrawGroupPoint),
-                ["GroupDefeatReward"] = typeof(MSBE.Region.GroupDefeatReward),
+                ["GroupPlacementPoint"] = typeof(MSBE.Region.GroupPlacementPoint),
                 ["MapPointDiscoveryOverride"] = typeof(MSBE.Region.MapPointDiscoveryOverride),
                 ["MapPointParticipationOverride"] = typeof(MSBE.Region.MapPointParticipationOverride),
                 ["Hitset"] = typeof(MSBE.Region.Hitset),

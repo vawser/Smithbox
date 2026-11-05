@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="A group placement point: a group of enemies, placed from a RandomAppearParam row and tied to platoons, that gives a reward when all of them are defeated." />
+  
+  <Field>
+    <RandomAppearParamID
+    AltName="Random Appear Param ID"
+    Wiki="RandomAppearParam row the group's enemies are placed from; 0 for none."
+    ParamRef="RandomAppearParam" />
+
+    <PlatoonEventNames
+    AltName="Platoon Event Name"
+    Wiki="PlatoonInfo events of the group (up to 4); a defeated character's platoon is checked against them."
+    MapRef="Event-PlatoonInfo"
+    ArrayProperty="" />
+
+    <PlatoonEventIndices
+    IndexProperty="" />
+
+    <PartNames
+    AltName="Part Name"
+    Wiki="References to enemies to defeat to receive the reward."
+    MapRef="Part-Part"
+    ArrayProperty="" />
+
+    <PartIndices
+    IndexProperty="" />
+
+    <UnkPartNames
+    AltName="Unknown Part Name"
+    Wiki="Unknown parts (assets in retail, used by three regions); the game resolves them to their entities."
+    MapRef="Part-Part"
+    ArrayProperty="" />
+
+    <UnkPartIndices
+    IndexProperty="" />
+
+    <EstusFlaskRecoveryID
+    AltName="Estus Recovery on Defeat"
+    Wiki="The estus recovery values to use when the group is defeated."
+    ParamRef="HPEstusFlaskRecoveryParam,MPEstusFlaskRecoveryParam" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

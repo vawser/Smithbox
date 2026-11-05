@@ -410,6 +410,33 @@ Round trip identical to the baseline. Stats: `Tools/MsbExeSurvey/out_fixed/stats
 Also fixed: the meta key `GrassConfigStruct_Unk1A` didn't match the property `GrassConfigStruct_Unk1a`.
 Round trip identical to the baseline. Stats: `Tools/MsbExeSurvey/out_fixed/stats_DEF.txt`.
 
+## Regions (eighth pass: group G)
+
+**How regions are read.** Unlike parts, the game hardly ever reads region type data through the wrapper chain
+(`idiom 18,58` finds 12 reads in the whole exe). It uses small getters in the `CSMsbPoint` unit, several of them
+**indexed** (`getter(point, &out, i)` with a count getter returning a constant). The region type is decided by the
+caller, so the survey's `Point.Type` rows list every type with a field at that offset. Only nine region types have
+their own `CSMsbPoint` subclass, so seeding subclass virtuals (the plan's coverage fix) covers little. The useful
+anchor is the 22 typed casts `mov edx,<type>; jmp 140CFE230` (one per type: 4, 9, 21, 27–30, 33, 35, 37–39, 41,
+45–47, 51–55). Next tooling step: attribute each getter to the types of the casts its callers use.
+
+**GroupPlacementPoint (type 37, the exe's `CSMsbPointGroupPlacementPoint`; renamed from GroupDefeatReward, along with the `GroupDefeatRewards` list, the meta file and the Map Editor filter).** Getters `D08EB0` (`+0`), `D08D60`
+(`+4`, ×4), `D089D0` (`+14`, ×8), `D08B70` (`+34`, ×8), `D08D40` (`+54`). Consumer `140A714A0`, called from `ChrIns`
+code that also reads EstusFlaskRecoveryID:
+
+| exe layout | consumer | SF before | retail | result |
+|---|---|---|---|---|
+| `+0` int | `140D32030` → SoloParamRepository index 0x82 = RandomAppearParam | `UnkT00` | 0, or 12 distinct values; 7 are RandomAppearParam rows, 5 are on test points | **`RandomAppearParamID`** |
+| `+4` 4 ints | event-table index (`[MRC+88h]`), checked for type 0x0F (PlatoonInfo); then platoon membership (`14037C150`, `140353390`) | `UnkT04`, `UnkT08`, two asserted -1 | all 191 set values are PlatoonInfo event indices | **`PlatoonEventNames[4]`** (Event references) |
+| `+14` 8 ints | part → character via WorldChrMan; dead-flag check (`+22Dh` bit 2) | `PartNames` | — | unchanged |
+| `+34` 8 ints | part index → entity (`140CEFBE0`) | `UnkT34`, `UnkT38`, six asserted -1 | three regions, all Asset parts | **`UnkPartNames[8]`** (Part references) |
+
+**Message (type 9).** Getters `140D0A5C0`–`140D0A780`, sole caller `1401B96B0` (blood-message creation, `CS::BloodMessageIns`).
+`UnkT02` (0, or 2 on seven hint messages) is copied right after MessageID (`+30h`/`+2Ch`), and the two are read as one 8-byte
+value into the message-composition structs. Summary only.
+
+Round trip identical to the baseline. Stats: `Tools/MsbExeSurvey/out_fixed/stats_G.txt`.
+
 ## PlatoonInfo flags named from Lua bindings (group H)
 
 The platoon object has no RTTI class; `watch … '0x140353CA0:0=S:Platoon'` traces it. Both bytes are copied into it

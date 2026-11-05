@@ -1,4 +1,4 @@
-﻿using Andre.Core;
+using Andre.Core;
 using Andre.IO.VFS;
 using SoulsFormats;
 using System.Security.Cryptography;
@@ -152,6 +152,19 @@ if (args.Length > 2 && args[2] == "stats")
             var g = p.GetType().GetProperty("GrassConfigStruct")?.GetValue(p) as MSBE.Part.GrassConfigStruct;
             if (g != null) Add("E Grass Unk18 / Unk1a", $"{t} {g.GrassConfigStruct_Unk18} / {g.GrassConfigStruct_Unk1a}");
         }
+        // group G: regions
+        foreach (var r in msb.Regions.GroupPlacementPoints)
+        {
+            Add("G GroupPlacementPoint RandomAppearParamID", r.RandomAppearParamID == 0 ? "0" : "set");
+            if (r.RandomAppearParamID != 0) Add("G GroupPlacementPoint T00 values", r.RandomAppearParamID);
+            Add("G GroupPlacementPoint platoon events", string.Join(",", r.PlatoonEventNames.Select(n => n == null ? "-" : msb.Events.GetEntries().First(x => x.Name == n).GetType().Name)));
+            Add("G GroupPlacementPoint unk parts", string.Join(",", r.UnkPartNames.Where(n => n != null)));
+        }
+        foreach (var r in msb.Regions.Messages)
+        {
+            Add("G Message UnkT02", r.UnkT02);
+            if (r.UnkT02 != 0 && r.UnkT02 != -1) Add("G Message UnkT02 examples", $"{map} {r.Name} msg={r.MessageID} t02={r.UnkT02}");
+        }
         foreach (var p in msb.Events.PlatoonInfo)
             Add("Platoon State bytes", $"{p.State} {p.EnableDeactiveMove} {p.UnkT06} {p.UseMemberEntityIDs} ids {p.MemberEntityIDs[0]},{p.MemberEntityIDs[1]}");
     }
@@ -232,6 +245,14 @@ if (args.Length > 2 && args[2] == "stats")
         foreach (var r in PARAM.Read(lot.Bytes).Rows) Add("C reg ItemLotParam_map row IDs", r.ID);
     }
     catch (Exception e) { Add("C regulation error", e.Message); }
+    try
+    {
+        var reg3 = SFUtil.DecryptERRegulation(Path.Combine(root, "regulation.bin"));
+        var ra = reg3.Files.First(x => x.Name.EndsWith("RandomAppearParam.param", StringComparison.OrdinalIgnoreCase));
+        foreach (var r in PARAM.Read(ra.Bytes).Rows) Add("G reg RandomAppearParam row IDs", r.ID);
+    }
+    catch (Exception e) { Add("G regulation error", e.Message); }
+    Member("G GroupPlacementPoint T00 values", "G reg RandomAppearParam row IDs");
     Member("C Asset UnkT30 values", "C reg ItemLotParam_map row IDs");
     Member("C Asset int +34 values", "C reg ItemLotParam_map row IDs");
     Member("B UnkT06 values", "B reg MapGridCreateHeightDetailLimitInfo row IDs (first 400)");

@@ -453,11 +453,6 @@ Point.FastTravelRestriction	Point.Unk4	0x7	UnkS07	-
 Point.FastTravelRestriction	Point.Unk4	0xC	UnkS0C	READ
 Point.GroupDefeatReward	Point	0x40	Unk40	-
 Point.GroupDefeatReward	Point.Entity	0x8	UnkE08	-
-Point.GroupDefeatReward	Point.Type	0x0	UnkT00	READ
-Point.GroupDefeatReward	Point.Type	0x4	UnkT04	READ
-Point.GroupDefeatReward	Point.Type	0x8	UnkT08	READ
-Point.GroupDefeatReward	Point.Type	0x34	UnkT34	READ
-Point.GroupDefeatReward	Point.Type	0x38	UnkT38	-
 Point.GroupDefeatReward	Point.Unk4	0x4	UnkS04	READ
 Point.GroupDefeatReward	Point.Unk4	0x5	UnkS05	-
 Point.GroupDefeatReward	Point.Unk4	0x6	UnkS06	-
