@@ -71,14 +71,14 @@ public class TextEditorScreen : EditorScreen
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fileMenuHeader"))
         {
             // Save
-            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction", $"{InputManager.GetHint(KeybindID.Save)}"))
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction"))
             {
                 Save();
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_Save_TT"));
 
-            // Save All
-            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##saveAllAction"))
+            // Save All (the Save keybind runs this)
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##saveAllAction", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 SaveAll();
             }
@@ -118,10 +118,7 @@ public class TextEditorScreen : EditorScreen
                 // Undo
                 if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
-                    if (activeView.ActionManager.CanUndo())
-                    {
-                        activeView.ActionManager.UndoAction();
-                    }
+                    activeView.UndoAndReveal();
                 }
 
                 // Undo All
@@ -136,10 +133,7 @@ public class TextEditorScreen : EditorScreen
                 // Redo
                 if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
-                    if (activeView.ActionManager.CanRedo())
-                    {
-                        activeView.ActionManager.RedoAction();
-                    }
+                    activeView.RedoAndReveal();
                 }
                 ImGui.Separator();
 
@@ -192,7 +186,7 @@ public class TextEditorScreen : EditorScreen
     /// <summary>
     /// Save currently selected FMG container
     /// </summary>
-    public async void Save(bool autoSave = false)
+    public void Save(bool autoSave = false)
     {
         var activeView = ViewHandler.ActiveView;
 
@@ -217,11 +211,11 @@ public class TextEditorScreen : EditorScreen
                 {
                     if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                     {
-                        await Project.Handler.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
+                        Project.Handler.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
                     }
                     else
                     {
-                        await Project.Handler.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
+                        Project.Handler.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
                     }
                 }
                 catch (Exception ex)
@@ -244,13 +238,13 @@ public class TextEditorScreen : EditorScreen
     /// <summary>
     /// Save all modified FMG containers
     /// </summary>
-    public async void SaveAll(bool autoSave = false)
+    public void SaveAll(bool autoSave = false)
     {
         if (autoSave && CFG.Current.TextEditor_Allow_Automatic_Save || !autoSave)
         {
             try
             {
-                await Project.Handler.TextData.PrimaryBank.SaveTextFiles();
+                Project.Handler.TextData.PrimaryBank.SaveTextFiles();
             }
             catch (Exception ex)
             {
@@ -270,8 +264,8 @@ public class TextEditorScreen : EditorScreen
 
     public void RefreshFmgTextCache()
     {
-        var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
+        var activeView = Project.Handler.ParamEditor?.ViewHandler?.ActiveView;
 
-        activeView.RefreshDecorators();
+        activeView?.RefreshDecorators();
     }
 }

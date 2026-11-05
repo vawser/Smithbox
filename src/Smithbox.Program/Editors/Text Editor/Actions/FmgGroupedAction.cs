@@ -18,6 +18,8 @@ public class FmgGroupedAction : EditorAction
 
     public bool HasActions => Actions.Any();
 
+    public IReadOnlyList<EditorAction> GetActions() => Actions;
+
     public void SetPostExecutionAction(Action<bool> action)
     {
         PostExecutionAction = action;
@@ -26,13 +28,23 @@ public class FmgGroupedAction : EditorAction
     public override ActionEvent Execute()
     {
         var evt = ActionEvent.NoEvent;
-        for (var i = 0; i < Actions.Count; i++)
+
+        // One diff-cache rebuild for the whole group instead of one per sub-action
+        TextDifferenceManager.BeginBatch();
+        try
         {
-            EditorAction act = Actions[i];
-            if (act != null)
+            for (var i = 0; i < Actions.Count; i++)
             {
-                evt |= act.Execute();
+                EditorAction act = Actions[i];
+                if (act != null)
+                {
+                    evt |= act.Execute();
+                }
             }
+        }
+        finally
+        {
+            TextDifferenceManager.EndBatch();
         }
 
         if (PostExecutionAction != null)
@@ -46,13 +58,22 @@ public class FmgGroupedAction : EditorAction
     public override ActionEvent Undo()
     {
         var evt = ActionEvent.NoEvent;
-        for (var i = Actions.Count - 1; i >= 0; i--)
+
+        TextDifferenceManager.BeginBatch();
+        try
         {
-            EditorAction act = Actions[i];
-            if (act != null)
+            for (var i = Actions.Count - 1; i >= 0; i--)
             {
-                evt |= act.Undo();
+                EditorAction act = Actions[i];
+                if (act != null)
+                {
+                    evt |= act.Undo();
+                }
             }
+        }
+        finally
+        {
+            TextDifferenceManager.EndBatch();
         }
 
         if (PostExecutionAction != null)

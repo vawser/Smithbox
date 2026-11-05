@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -137,7 +137,7 @@ public class TextContainerList
             }
 
             // Talk Sub-Header
-            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_ContainerList_DS2_Talk")}##{name}_common", flags))
+            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_ContainerList_DS2_Talk")}##{name}_talk", flags))
             {
                 foreach (var (fileEntry, info) in orderedList)
                 {
@@ -221,7 +221,9 @@ public class TextContainerList
             }
 
             // Script row
-            if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Filename}{index}", index == View.Selection.SelectedContainerKey))
+            // Selected and identified by the file entry itself: the display index depended on
+            // which DS2 headers were expanded, so the highlight moved when one collapsed.
+            if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Path}", View.Selection.SelectedFileDictionaryEntry == entry))
             {
                 View.Selection.SelectFileContainer(entry, wrapper, index);
             }
@@ -242,14 +244,14 @@ public class TextContainerList
             }
 
             // Only apply to selection
-            if (View.Selection.SelectedContainerKey != -1)
+            if (View.Selection.SelectedFileDictionaryEntry != null)
             {
-                if (View.Selection.SelectedContainerKey == index)
+                if (View.Selection.SelectedFileDictionaryEntry == entry)
                 {
                     ContextMenu(wrapper);
                 }
 
-                if (View.Selection.FocusFileSelection && View.Selection.SelectedContainerKey == index)
+                if (View.Selection.FocusFileSelection && View.Selection.SelectedFileDictionaryEntry == entry)
                 {
                     View.Selection.FocusFileSelection = false;
                     ImGui.SetScrollHereY();
@@ -318,7 +320,7 @@ public class TextContainerList
                 // Path
                 if (ImGui.Selectable($"{LOC.Get("TEXT_ContainerList_Context_Path", info.FileEntry.Path)}##copyPath"))
                 {
-                    ImGui.SetClipboardText(info.FileEntry.Filename);
+                    ImGui.SetClipboardText(info.FileEntry.Path);
                 }
 
                 ImGui.Separator();

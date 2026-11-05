@@ -348,7 +348,8 @@ public class ProjectEntry
                     {
                         if (Handler.TextEditor != null)
                         {
-                            Handler.TextEditor.Save(true);
+                            // All changed containers, matching the Text Editor's Save keybind
+                            Handler.TextEditor.SaveAll(true);
                         }
                     }
 

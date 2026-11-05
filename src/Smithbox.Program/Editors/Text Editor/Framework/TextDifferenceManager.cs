@@ -29,16 +29,60 @@ public class TextDifferenceManager
 
     private bool CacheFilled = false;
 
+    // Batching: inside a grouped action every sub-action called TrackFmgDifferences,
+    // rebuilding the whole cache each time (5k duplicated entries = 5k full rebuilds).
+    // While a batch is open, requests are recorded and run once when it closes.
+    // UI thread only, like all action execution.
+    private static int BatchDepth = 0;
+    private static readonly HashSet<TextDifferenceManager> PendingManagers = new();
+
+    public static void BeginBatch()
+    {
+        BatchDepth++;
+    }
+
+    public static void EndBatch()
+    {
+        if (BatchDepth == 0)
+            return;
+
+        BatchDepth--;
+
+        if (BatchDepth > 0 || PendingManagers.Count == 0)
+            return;
+
+        var pending = PendingManagers.ToList();
+        PendingManagers.Clear();
+
+        foreach (var manager in pending)
+        {
+            manager.TrackFmgDifferences();
+        }
+    }
+
     /// <summary>
     /// Generate difference truth for currently selected FMG
     /// </summary>
     public void TrackFmgDifferences(int setFmgId = -1)
     {
+        // Defer selection-based rebuilds while a batch is open. Explicit FMG requests
+        // (from the exporter) still run immediately, as their caller reads the result.
+        if (BatchDepth > 0 && setFmgId == -1)
+        {
+            PendingManagers.Add(this);
+            return;
+        }
+
         CacheFilled = false;
         AdditionCache = new();
         DifferenceCache = new();
 
         if (Parent.Selection.SelectedContainerWrapper == null)
+            return;
+
+        // No FMG selected (and none passed in): nothing to compare.
+        // Undo/redo with no FMG selected used to throw here.
+        if (Parent.Selection.SelectedFmgWrapper == null && setFmgId == -1)
             return;
 
         // Leave empty if disabled
@@ -52,7 +96,7 @@ public class TextDifferenceManager
         var containerName = Parent.Selection.SelectedContainerWrapper.FileEntry.Filename;
 
         // Fmg ID for comparison is selected FMG
-        var fmgID = Parent.Selection.SelectedFmgWrapper.ID;
+        var fmgID = Parent.Selection.SelectedFmgWrapper?.ID ?? -1;
 
         // Set the ID to passed instead of selected if called from the FmgExporter
         if(setFmgId != -1)

@@ -151,22 +151,48 @@ public class GlobalTextReplacement
             LOC.Get("TEXT_TextReplacement_Header_Preview_List"),
             LOC.Get("TEXT_TextReplacement_Header_Preview_List_TT"));
 
+        if (replacementResults.Count > 0)
+        {
+            // Counts and selection buttons stay outside the list, so they're always visible
+            var includedCount = replacementResults.Count(r => r.Included);
+
+            GUI.WrappedText(LOC.Get("TEXT_TextReplacement_Preview_List_Hint"));
+            GUI.WrappedText(LOC.Get("TEXT_TextReplacement_Preview_Selected_Count", includedCount, replacementResults.Count));
+
+            GUI.MultiButtonInput("replacePreviewSelection",
+                "selectAllResults",
+                LOC.Get("TEXT_TextReplacement_Select_All"),
+                LOC.Get("TEXT_TextReplacement_Select_All_TT"),
+                () => SetAllIncluded(true),
+
+                "selectNoResults",
+                LOC.Get("TEXT_TextReplacement_Select_None"),
+                LOC.Get("TEXT_TextReplacement_Select_None_TT"),
+                () => SetAllIncluded(false));
+        }
+
         ImGui.BeginChild("previewSection", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         if (replacementResults.Count > 0)
         {
-            GUI.WrappedText(LOC.Get("TEXT_TextReplacement_Preview_List_Hint"));
+            // Clipped: a broad pattern can match thousands of entries
+            var clipper = new ImGuiListClipper();
+            clipper.Begin(replacementResults.Count);
 
-            foreach (var result in replacementResults)
+            while (clipper.Step())
+            for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
             {
-                // Ignore results from unused containers if in Simple mode
-                if (CFG.Current.TextEditor_Container_List_Hide_Unused_Containers)
+                var result = replacementResults[i];
+
+                // Per-result opt out: unticked entries are left unchanged by Apply
+                var included = result.Included;
+                if (ImGui.Checkbox($"##replaceInclude{i}", ref included))
                 {
-                    if (result.ContainerWrapper.IsContainerUnused())
-                    {
-                        continue;
-                    }
+                    result.Included = included;
                 }
+                GUI.Tooltip(LOC.Get("TEXT_TextReplacement_Include_TT"));
+
+                ImGui.SameLine();
 
                 var foundText = result.Entry.Text;
                 if (foundText != null)
@@ -200,11 +226,14 @@ public class GlobalTextReplacement
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";
 
-                if (ImGui.Selectable(displayText))
+                if (ImGui.Selectable($"{displayText}##replaceResult{i}"))
                 {
                     EditorCommandQueue.AddCommand($"text/select/{category}/{result.ContainerName}/{result.FmgName}/{result.Entry.ID}");
                 }
+                GUI.Tooltip(LOC.Get("TEXT_TextReplacement_Preview_Entry_TT", result.Entry.Text, result.NewText));
             }
+
+            clipper.End();
         }
         else if (hasAlreadySearched)
         {
@@ -216,41 +245,14 @@ public class GlobalTextReplacement
         ImGui.EndChild();
     }
 
-    public void PreviewEdit()
+    /// <summary>
+    /// The one regex used by both Preview and Apply, so they always agree.
+    /// Ignore case is a regex option rather than lowercasing the pattern, which turned
+    /// escapes like \S, \D and \W into \s, \d and \w. No ExplicitCapture, so $1 works.
+    /// </summary>
+    private Regex BuildSearchRegex()
     {
-        try
-        {
-            var match = Regex.Match("example", searchTerm);
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError<GlobalTextReplacement>(LOC.Get("TEXT_TextReplacement_Invalid_Regex_Search"), ex);
-            return;
-        }
-
-        try
-        {
-            var match = Regex.Match("example", replaceTerm);
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError<GlobalTextReplacement>(LOC.Get("TEXT_TextReplacement_Invalid_Regex_Replace"), ex);
-            return;
-        }
-
-        hasAlreadySearched = true;
-        replacementResults = TextFinder.GetReplacementResult(View, searchTerm, filterType, matchType, ignoreCase);
-    }
-
-    public void ClearPreview()
-    {
-        hasAlreadySearched = false;
-        replacementResults.Clear();
-    }
-
-    public void ApplyReplacement()
-    {
-        RegexOptions options = RegexOptions.CultureInvariant | RegexOptions.ExplicitCapture;
+        RegexOptions options = RegexOptions.CultureInvariant;
 
         if (ignoreCase)
         {
@@ -269,18 +271,108 @@ public class GlobalTextReplacement
             options = options | RegexOptions.IgnorePatternWhitespace;
         }
 
-        List<EditorAction> actions = new List<EditorAction>();
+        return new Regex(searchTerm, options);
+    }
 
-        string searchText = searchTerm;
-        string replaceText = replaceTerm;
+    public void PreviewEdit()
+    {
+        Regex searchRegex;
+
+        try
+        {
+            searchRegex = BuildSearchRegex();
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError<GlobalTextReplacement>(LOC.Get("TEXT_TextReplacement_Invalid_Regex_Search"), ex);
+            return;
+        }
+
+        // The replacement term is a substitution string, not a pattern, so it isn't
+        // validated as a regex: "(" or "[" are valid replacements.
+
+        hasAlreadySearched = true;
+
+        var results = TextFinder.GetReplacementResult(View, searchRegex, searchTerm, filterType, matchType);
+
+        replacementResults = new List<ReplacementResult>();
+
+        foreach (var result in results)
+        {
+            result.NewText = searchRegex.Replace(result.Entry.Text, replaceTerm);
+
+            // Only list entries the replacement would actually change
+            if (result.NewText != result.Entry.Text)
+            {
+                replacementResults.Add(result);
+            }
+        }
+    }
+
+    private void SetAllIncluded(bool included)
+    {
+        foreach (var result in replacementResults)
+        {
+            result.Included = included;
+        }
+    }
+
+    public void ClearPreview()
+    {
+        hasAlreadySearched = false;
+        replacementResults.Clear();
+    }
+
+    public void ApplyReplacement()
+    {
+        if (replacementResults.Count == 0)
+        {
+            Smithbox.Log(this, LOC.Get("TEXT_TextReplacement_Preview_Required"));
+            return;
+        }
+
+        Regex searchRegex;
+
+        try
+        {
+            searchRegex = BuildSearchRegex();
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError<GlobalTextReplacement>(LOC.Get("TEXT_TextReplacement_Invalid_Regex_Search"), ex);
+            return;
+        }
+
+        List<EditorAction> actions = new List<EditorAction>();
 
         foreach (var result in replacementResults)
         {
-            var newText = Regex.Replace(result.Entry.Text, searchText, replaceText, options);
+            // Unticked in the preview
+            if (!result.Included)
+                continue;
+
+            if (result.Entry.Text == null)
+                continue;
+
+            // Recompute from the current text, in case the entry was edited since the preview
+            var newText = searchRegex.Replace(result.Entry.Text, replaceTerm);
+
+            if (newText == result.Entry.Text)
+                continue;
+
             actions.Add(new ChangeFmgEntryText(View, result.ContainerWrapper, result.Entry, newText));
         }
 
-        var groupedAction = new FmgGroupedAction(actions);
-        View.ActionManager.ExecuteAction(groupedAction);
+        if (actions.Count > 0)
+        {
+            var groupedAction = new FmgGroupedAction(actions);
+            View.ActionManager.ExecuteAction(groupedAction);
+        }
+
+        Smithbox.Log(this, LOC.Get("TEXT_TextReplacement_Applied", actions.Count));
+
+        // The preview is now stale; clear it so a second click can't apply the replacement again.
+        replacementResults.Clear();
+        hasAlreadySearched = false;
     }
 }

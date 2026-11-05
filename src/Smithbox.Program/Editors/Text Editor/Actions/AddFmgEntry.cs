@@ -1,15 +1,19 @@
-﻿using SoulsFormats;
+using SoulsFormats;
 using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.TextEditor;
 
-public class AddFmgEntry : EditorAction
+public class AddFmgEntry : EditorAction, ITextActionTarget
 {
+    // ITextActionTarget: lets undo/redo select what this action changed
+    public TextContainerWrapper TargetContainer => Info;
+    public FMG TargetFmg => Fmg;
+    public FMG.Entry TargetEntry => NewEntry;
+
     private TextEditorView Parent;
 
     private FMG Fmg;
     private FMG.Entry NewEntry;
-    private int InsertionIndex;
 
     private TextContainerWrapper Info;
 
@@ -22,33 +26,16 @@ public class AddFmgEntry : EditorAction
         Fmg = sourceEntry.Parent;
         NewEntry = newEntry;
         NewEntry.ID = newID;
-        InsertionIndex = -1;
 
         IgnoreDiffCheck = ignoreDiffCheck;
-
-        for (int i = 0; i < Fmg.Entries.Count; i++)
-        {
-            var curEntry = Fmg.Entries[i];
-
-            // Insert below this entry
-            if (curEntry.ID > newID)
-            {
-                InsertionIndex = i;
-                break;
-            }
-        }
     }
 
     public override ActionEvent Execute()
     {
-        if (InsertionIndex != -1)
-        {
-            Fmg.Entries.Insert(InsertionIndex, NewEntry);
-        }
-        else
-        {
-            Fmg.Entries.Add(NewEntry);
-        }
+        // Position is resolved now rather than at construction, so batches of adds
+        // and lists re-sorted by a save still land in ID order.
+        var insertionIndex = FmgEntryUtils.GetSortedInsertionIndex(Fmg, NewEntry.ID);
+        Fmg.Entries.Insert(insertionIndex, NewEntry);
 
         Info.MarkDirty(Fmg);
 
@@ -62,14 +49,8 @@ public class AddFmgEntry : EditorAction
 
     public override ActionEvent Undo()
     {
-        if (InsertionIndex != -1)
-        {
-            Fmg.Entries.RemoveAt(InsertionIndex);
-        }
-        else
-        {
-            Fmg.Entries.Remove(NewEntry);
-        }
+        // Remove by reference: the entry may have moved since Execute.
+        Fmg.Entries.Remove(NewEntry);
 
         Info.MarkDirty(Fmg);
 

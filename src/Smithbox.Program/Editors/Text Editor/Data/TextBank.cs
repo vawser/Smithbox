@@ -1,4 +1,4 @@
-﻿using Andre.IO.VFS;
+using Andre.IO.VFS;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
@@ -22,18 +22,31 @@ public class TextBank : IDisposable
 
     public ConcurrentDictionary<FileDictionaryEntry, TextContainerWrapper> Containers = new();
 
-    public TextBank(string name, ProjectEntry project, VirtualFileSystem targetFs)
+    /// <summary>
+    /// The text files to load. Normally the owning project's; for an auxiliary bank,
+    /// the auxiliary project's, so files that only exist there are loaded too.
+    /// </summary>
+    private FileDictionary SourceFiles;
+
+    public TextBank(string name, ProjectEntry project, VirtualFileSystem targetFs, FileDictionary sourceFiles = null)
     {
         Project = project;
         Name = name;
         TargetFS = targetFs;
+        SourceFiles = sourceFiles;
     }
 
     public async Task<bool> Setup()
     {
         var tasks = new List<Task>();
 
-        foreach (var entry in Project.Locator.TextFiles.Entries)
+        var files = SourceFiles;
+
+        // Fall back to the owning project's list if the source list wasn't populated
+        if (files?.Entries == null || files.Entries.Count == 0)
+            files = Project.Locator.TextFiles;
+
+        foreach (var entry in files.Entries)
         {
             if (entry.Extension == "msgbnd")
             {
@@ -198,6 +211,9 @@ public class TextBank : IDisposable
             }
 
             container.FmgWrappers = fmgWrappers;
+
+            // Newly loaded text can satisfy lookups that were cached as misses
+            TextFinder.InvalidateCache();
         }
         else
         {
@@ -257,6 +273,8 @@ public class TextBank : IDisposable
                 }
 
                 Containers.TryAdd(entry, containerWrapper);
+
+                TextFinder.InvalidateCache();
             }
             catch (Exception e)
             {
@@ -276,7 +294,12 @@ public class TextBank : IDisposable
     /// <summary>
     /// Save all modified FMG Containers
     /// </summary>
-    public async Task<bool> SaveTextFiles()
+    /// <remarks>
+    /// Runs synchronously on the calling (UI) thread. FMG.Write sorts each FMG's entry
+    /// list in place, so writing on a worker thread raced the UI drawing and editing
+    /// the same lists, and could clear the dirty flag of an edit made mid-save.
+    /// </remarks>
+    public bool SaveTextFiles()
     {
         var success = true;
 
@@ -288,18 +311,12 @@ public class TextBank : IDisposable
 
             if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                Task<bool> saveTask = SaveLooseFmg(fileEntry, containerInfo);
-                bool saveTaskResult = await saveTask;
-
-                if (!saveTaskResult)
+                if (!SaveLooseFmg(fileEntry, containerInfo))
                     success = false;
             }
             else
             {
-                Task<bool> saveTask = SaveFmgContainer(fileEntry, containerInfo);
-                bool saveTaskResult = await saveTask;
-
-                if (!saveTaskResult)
+                if (!SaveFmgContainer(fileEntry, containerInfo))
                     success = false;
             }
         }
@@ -310,10 +327,8 @@ public class TextBank : IDisposable
     /// <summary>
     /// Save passed FMG container
     /// </summary>
-    public async Task<bool> SaveFmgContainer(FileDictionaryEntry entry, TextContainerWrapper containerWrapper)
+    public bool SaveFmgContainer(FileDictionaryEntry entry, TextContainerWrapper containerWrapper)
     {
-        await Task.Yield();
-
         if (entry == null || containerWrapper == null || containerWrapper.FmgWrappers == null)
             return false;
 
@@ -488,10 +503,8 @@ public class TextBank : IDisposable
     /// <summary>
     /// Saved passed loose FMG file
     /// </summary>
-    public async Task<bool> SaveLooseFmg(FileDictionaryEntry entry, TextContainerWrapper containerWrapper)
+    public bool SaveLooseFmg(FileDictionaryEntry entry, TextContainerWrapper containerWrapper)
     {
-        await Task.Yield();
-
         if (entry == null || containerWrapper == null || containerWrapper.FmgWrappers == null)
             return false;
 

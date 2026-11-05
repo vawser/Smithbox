@@ -1,16 +1,29 @@
-﻿using SoulsFormats;
+using SoulsFormats;
 using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.TextEditor;
 
-public class DeleteFmgEntry : EditorAction
+public class DeleteFmgEntry : EditorAction, ITextActionTarget
 {
+    // ITextActionTarget: lets undo/redo select what this action changed
+    public TextContainerWrapper TargetContainer => Info;
+    public FMG TargetFmg => Fmg;
+    public FMG.Entry TargetEntry => Entry;
+
     private TextEditorView Parent;
 
     private FMG Fmg;
+
+    /// <summary>
+    /// The deleted entry itself (not a copy), so earlier actions on the undo stack
+    /// that reference it still apply to the entry that undo puts back.
+    /// </summary>
     private FMG.Entry Entry;
-    private FMG.Entry OldEntry;
-    private int InsertionIndex;
+
+    /// <summary>
+    /// Where the entry was when it was removed; -1 if it wasn't in the list.
+    /// </summary>
+    private int RemovedIndex = -1;
 
     private TextContainerWrapper Info;
 
@@ -20,24 +33,18 @@ public class DeleteFmgEntry : EditorAction
         Info = info;
         Fmg = currentFmg;
         Entry = entry;
-        OldEntry = entry.Clone();
-        InsertionIndex = Fmg.Entries.Count;
-
-        for (int i = 0; i < Fmg.Entries.Count; i++)
-        {
-            var curEntry = Fmg.Entries[i];
-
-            if (curEntry.ID == entry.ID)
-            {
-                InsertionIndex = i;
-            }
-        }
     }
 
     public override ActionEvent Execute()
     {
-        Fmg.Entries.RemoveAt(InsertionIndex);
-        Info.MarkDirty(Fmg);
+        // Find the exact entry by reference, so duplicate IDs can't select the wrong one.
+        RemovedIndex = Fmg.Entries.IndexOf(Entry);
+
+        if (RemovedIndex != -1)
+        {
+            Fmg.Entries.RemoveAt(RemovedIndex);
+            Info.MarkDirty(Fmg);
+        }
 
         Parent.DifferenceManager.TrackFmgDifferences();
 
@@ -46,8 +53,14 @@ public class DeleteFmgEntry : EditorAction
 
     public override ActionEvent Undo()
     {
-        Fmg.Entries.Insert(InsertionIndex, OldEntry);
-        Info.MarkDirty(Fmg);
+        if (RemovedIndex != -1)
+        {
+            // Clamp in case the list shrank since; order is cosmetic as saves write by ID.
+            var index = RemovedIndex > Fmg.Entries.Count ? Fmg.Entries.Count : RemovedIndex;
+
+            Fmg.Entries.Insert(index, Entry);
+            Info.MarkDirty(Fmg);
+        }
 
         Parent.DifferenceManager.TrackFmgDifferences();
 

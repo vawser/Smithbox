@@ -65,6 +65,10 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
     /// </summary>
     public void MarkDirty(FMG fmg)
     {
+        // Every text action (and its undo) comes through here, so this is where
+        // the Param Editor's text lookup cache learns that the data changed.
+        TextFinder.InvalidateCache();
+
         if (FmgWrappers == null)
             return;
 

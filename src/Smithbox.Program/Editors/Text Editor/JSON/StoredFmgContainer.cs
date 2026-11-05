@@ -27,6 +27,13 @@ public class StoredFmgContainer
 {
     public string Name { get; set; }
 
+    /// <summary>
+    /// The container file the text was exported from (e.g. item_dlc02), and its language.
+    /// Optional: older exports don't have them.
+    /// </summary>
+    public string SourceContainer { get; set; }
+    public string SourceCategory { get; set; }
+
     public List<StoredFmgWrapper> FmgWrappers { get; set; }
 
     public StoredFmgContainer() { }

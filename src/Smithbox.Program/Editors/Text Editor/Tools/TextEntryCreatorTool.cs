@@ -115,6 +115,9 @@ public class TextEntryCreatorTool
         {
             var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(entry);
 
+            if (fmgEntryGroup == null)
+                return;
+
             if (AllowParameterUpdate)
             {
                 NewEntry_BaseID = entry.ID;
@@ -126,17 +129,12 @@ public class TextEntryCreatorTool
                     NewEntry_CreateDescription = fmgEntryGroup.SupportsDescription;
                     NewEntry_CreateEffect = fmgEntryGroup.SupportsEffect;
 
-                    if (fmgEntryGroup.Title != null && fmgEntryGroup.Title.Text != null)
-                        NewEntry_TitleText = fmgEntryGroup.Title.Text;
-
-                    if (fmgEntryGroup.Summary != null && fmgEntryGroup.Summary.Text != null)
-                        NewEntry_SummaryText = fmgEntryGroup.Summary.Text;
-
-                    if (fmgEntryGroup.Description != null && fmgEntryGroup.Description.Text != null)
-                        NewEntry_DescriptionText = fmgEntryGroup.Description.Text;
-
-                    if (fmgEntryGroup.Effect != null && fmgEntryGroup.Effect.Text != null)
-                        NewEntry_EffectText = fmgEntryGroup.Effect.Text;
+                    // Clear fields the newly selected entry doesn't have, rather than keeping
+                    // the previous entry's summary/description/effect text
+                    NewEntry_TitleText = fmgEntryGroup.Title?.Text ?? "";
+                    NewEntry_SummaryText = fmgEntryGroup.Summary?.Text ?? "";
+                    NewEntry_DescriptionText = fmgEntryGroup.Description?.Text ?? "";
+                    NewEntry_EffectText = fmgEntryGroup.Effect?.Text ?? "";
                 }
                 else
                 {

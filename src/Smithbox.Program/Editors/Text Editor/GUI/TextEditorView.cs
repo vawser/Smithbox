@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.TextEditor;
@@ -36,6 +36,7 @@ public class TextEditorView : IEditorView
     public TextEntryCreatorTool TextEntryCreator;
     public TextExporterModal TextExportModal;
     public TextDuplicatePopup TextDuplicatePopup;
+    public TextDeleteConfirmPopup TextDeleteConfirmPopup;
 
     public FmgExporter FmgExporter;
     public FmgImporter FmgImporter;
@@ -64,6 +65,7 @@ public class TextEditorView : IEditorView
         TextEntryCreator = new TextEntryCreatorTool(this, Project);
         TextExportModal = new TextExporterModal(this, Project);
         TextDuplicatePopup = new TextDuplicatePopup(this, Project);
+        TextDeleteConfirmPopup = new TextDeleteConfirmPopup(this, Project);
 
         FmgExporter = new FmgExporter(this, Project);
         FmgImporter = new FmgImporter(this, Project);
@@ -73,8 +75,47 @@ public class TextEditorView : IEditorView
         TextFindMenu = new TextFindMenu(this, Project);
     }
 
+    /// <summary>
+    /// Undo the last action, then select what it changed.
+    /// </summary>
+    public void UndoAndReveal()
+    {
+        if (!ActionManager.CanUndo())
+            return;
+
+        var target = TextActionTargetUtils.GetFirstTarget(ActionManager.PeekUndoAction());
+        var countBefore = ActionManager.UndoCount;
+
+        ActionManager.UndoAction();
+
+        // Only reveal if the undo actually ran (the execution guard can refuse it)
+        if (ActionManager.UndoCount < countBefore)
+            Selection.RevealTarget(target);
+    }
+
+    /// <summary>
+    /// Redo the last undone action, then select what it changed.
+    /// </summary>
+    public void RedoAndReveal()
+    {
+        if (!ActionManager.CanRedo())
+            return;
+
+        var target = TextActionTargetUtils.GetFirstTarget(ActionManager.PeekRedoAction());
+        var countBefore = ActionManager.UndoCount;
+
+        ActionManager.RedoAction();
+
+        if (ActionManager.UndoCount > countBefore)
+            Selection.RevealTarget(target);
+    }
+
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
+        // Each panel sets the focus context (which decides what Delete, Ctrl+D, Insert
+        // and Alt+D act on) when it is the focused window, i.e. the one last clicked
+        // or tabbed into. It used to follow the mouse hover, so shortcuts changed target
+        // as the mouse crossed panels.
         // Container List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_TextEditorView);
@@ -83,7 +124,7 @@ public class TextEditorView : IEditorView
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            if (ImGui.IsWindowFocused(ImGuiFocusedFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.TextEditor_FileList);
                 Editor.ViewHandler.ActiveView = this;
@@ -102,7 +143,7 @@ public class TextEditorView : IEditorView
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            if (ImGui.IsWindowFocused(ImGuiFocusedFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.TextEditor_FileList);
                 Editor.ViewHandler.ActiveView = this;
@@ -121,7 +162,7 @@ public class TextEditorView : IEditorView
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            if (ImGui.IsWindowFocused(ImGuiFocusedFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.TextEditor_EntryList);
                 Editor.ViewHandler.ActiveView = this;
@@ -140,7 +181,7 @@ public class TextEditorView : IEditorView
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            if (ImGui.IsWindowFocused(ImGuiFocusedFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.TextEditor_EntryContents);
                 Editor.ViewHandler.ActiveView = this;
@@ -161,7 +202,7 @@ public class TextEditorView : IEditorView
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
 
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                if (ImGui.IsWindowFocused(ImGuiFocusedFlags.ChildWindows))
                 {
                     FocusManager.SetFocus(EditorFocusContext.TextEditor_Tools);
                     Editor.ViewHandler.ActiveView = this;
@@ -175,6 +216,7 @@ public class TextEditorView : IEditorView
 
         TextEntryCreator.Display();
         TextDuplicatePopup.Display();
+        TextDeleteConfirmPopup.Display();
         FmgImporter.OnGui();
         FmgExporter.OnGui();
 

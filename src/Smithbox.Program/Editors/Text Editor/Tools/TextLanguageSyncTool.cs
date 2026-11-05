@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -212,7 +212,7 @@ public class TextLanguageSyncTool
             }
         }
 
-        var compandAction = new CompoundAction(actions);
+        var compandAction = new FmgGroupedAction(actions);
         View.ActionManager.ExecuteAction(compandAction);
     }
 
@@ -250,10 +250,10 @@ public class TextLanguageSyncTool
                     }
                 }
 
-                if (entry.Value.FmgWrappers == null)
-                {
-                    _ = Project.Handler.TextData.PrimaryBank.LoadFmgWrappersAsync(entry.Value);
-                }
+                // No preload here: this runs every frame while the menu is open, and an async
+                // load per frame would race on the same container. SyncLanguage loads both
+                // containers synchronously when the sync is actually run. (The old preload only
+                // fired on a null list, which BND containers never have, so it never ran.)
 
                 if (syncSrcWrapper.FmgWrappers == null)
                     proceed = false;
@@ -282,7 +282,7 @@ public class TextLanguageSyncTool
                     {
                         var actions = SyncLanguage(syncTargetWrapper, syncSrcWrapper, targetFmgId);
 
-                        var compandAction = new CompoundAction(actions);
+                        var compandAction = new FmgGroupedAction(actions);
                         View.ActionManager.ExecuteAction(compandAction);
                     }
                     GUI.Tooltip(
@@ -298,6 +298,10 @@ public class TextLanguageSyncTool
     private List<EditorAction> SyncLanguage(TextContainerWrapper syncTargetContainerWrapper, TextContainerWrapper syncSrcContainerWrapper, int targetFmgId = -1)
     {
         List<EditorAction> actions = new();
+
+        var addedCount = 0;
+
+        var syncSrcDisplayName = LOC.Get(syncSrcContainerWrapper.ContainerDisplayCategory.GetDisplayName());
 
         if (syncTargetContainerWrapper.FmgWrappers == null || syncTargetContainerWrapper.FmgWrappers.Count == 0)
         {
@@ -324,27 +328,36 @@ public class TextLanguageSyncTool
                     {
                         var result = FmgDifferenceFinder.GetFmgDifferenceResult(View, vanillaSrcWrapper, syncSrcWrapper);
 
+                        // One ID map per target FMG (first entry wins), instead of a linear scan per source entry
+                        var targetById = new Dictionary<int, FMG.Entry>();
+                        foreach (var targetFmgEntry in syncTargetWrapper.File.Entries)
+                        {
+                            targetById.TryAdd(targetFmgEntry.ID, targetFmgEntry);
+                        }
+
                         foreach (var syncSrcEntry in syncSrcWrapper.File.Entries)
                         {
-                            var parentEntry = syncTargetWrapper.File.Entries.First();
-
                             // Addition
                             if (CFG.Current.TextEditor_LanguageSync_IncludeUniqueEntries && result.AdditionCache.ContainsKey(syncSrcEntry.ID))
                             {
                                 var newText = result.AdditionCache[syncSrcEntry.ID];
 
                                 // Guard against multiple usage, if the entry ID already exists, we can assume the addition has already occured
-                                if (!syncTargetWrapper.File.Entries.Any(e => e.ID == syncSrcEntry.ID))
+                                if (!targetById.ContainsKey(syncSrcEntry.ID))
                                 {
                                     var newEntry = new FMG.Entry(syncTargetWrapper.File, syncSrcEntry.ID, newText);
+                                    targetById[syncSrcEntry.ID] = newEntry;
+                                    addedCount++;
 
+                                    // newEntry's Parent is the target FMG, so it doubles as the source entry.
+                                    // (Using Entries.First() here threw on an empty target FMG.)
                                     actions.Add(
-                                        new AddFmgEntry(View, syncTargetContainerWrapper, parentEntry, newEntry, syncSrcEntry.ID));
+                                        new AddFmgEntry(View, syncTargetContainerWrapper, newEntry, newEntry, syncSrcEntry.ID));
                                 }
                                 // If already added, handle like a modified entry
                                 else
                                 {
-                                    var targetEntry = syncTargetWrapper.File.Entries.FirstOrDefault(e => e.ID == syncSrcEntry.ID);
+                                    targetById.TryGetValue(syncSrcEntry.ID, out var targetEntry);
 
                                     if (targetEntry != null)
                                     {
@@ -356,7 +369,7 @@ public class TextLanguageSyncTool
                             // Modified
                             else if (CFG.Current.TextEditor_LanguageSync_IncludeModifiedEntries && result.ModifiedCache.ContainsKey(syncSrcEntry.ID))
                             {
-                                var targetEntry = syncTargetWrapper.File.Entries.FirstOrDefault(e => e.ID == syncSrcEntry.ID);
+                                targetById.TryGetValue(syncSrcEntry.ID, out var targetEntry);
 
                                 if (targetEntry != null)
                                 {
@@ -367,7 +380,7 @@ public class TextLanguageSyncTool
                             // Any
                             else if (CFG.Current.TextEditor_LanguageSync_IncludeDefaultEntries && result.DefaultCache.ContainsKey(syncSrcEntry.ID))
                             {
-                                var targetEntry = syncTargetWrapper.File.Entries.FirstOrDefault(e => e.ID == syncSrcEntry.ID);
+                                targetById.TryGetValue(syncSrcEntry.ID, out var targetEntry);
 
                                 if (targetEntry != null)
                                 {
@@ -379,16 +392,23 @@ public class TextLanguageSyncTool
 
                         actions.Add(new SortFmgList(syncTargetWrapper));
                     }
+                    else
+                    {
+                        // Without the vanilla source there's nothing to diff against; say so
+                        // rather than reporting a successful sync that changed nothing
+                        Smithbox.LogWarning(this, LOC.Get("TEXT_LanguageSync_No_Vanilla_Source", syncSrcWrapper.Name, syncSrcDisplayName));
+                    }
                 }
             }
         }
 
         var syncTargetDisplayName = LOC.Get(syncTargetContainerWrapper.ContainerDisplayCategory.GetDisplayName());
-        var syncSrcDisplayName = LOC.Get(syncSrcContainerWrapper.ContainerDisplayCategory.GetDisplayName());
+
+        var changedCount = actions.Count(a => a is ChangeFmgEntryText);
 
         Smithbox.Log(this,
-            LOC.Get("TEXT_LanguageSync_Sync_Operation_PASS",
-            syncTargetDisplayName, syncTargetContainerWrapper.FileEntry.Filename, syncSrcDisplayName));
+            LOC.Get("TEXT_LanguageSync_Sync_Operation_Counts",
+            syncTargetDisplayName, syncTargetContainerWrapper.FileEntry.Filename, syncSrcDisplayName, addedCount, changedCount));
 
         return actions;
     }
@@ -410,6 +430,16 @@ public class TextLanguageSyncTool
         }
 
         if (vanillaContainer.Value == null)
+            return null;
+
+        // The vanilla bank only loads the primary language's FMGs at startup;
+        // load other languages on demand so syncing from them isn't a silent no-op.
+        if (vanillaContainer.Value.FmgWrappers == null || vanillaContainer.Value.FmgWrappers.Count == 0)
+        {
+            Project.Handler.TextData.VanillaBank.LoadFmgWrappers(vanillaContainer.Value);
+        }
+
+        if (vanillaContainer.Value.FmgWrappers == null)
             return null;
 
         var vanillaFmg = vanillaContainer.Value.FmgWrappers

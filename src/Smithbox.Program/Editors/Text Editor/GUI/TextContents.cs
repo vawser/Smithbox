@@ -1,7 +1,11 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.Common;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using System.Text;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -30,6 +34,15 @@ public class TextContents
 
         ImGui.BeginChild("FmgEntryContents", ImGuiChildFlags.Borders);
 
+        // Preview toggle
+        var previewIcon = CFG.Current.TextEditor_Contents_Show_Text_Preview ? Icons.Eye : Icons.EyeSlash;
+        if (ImGui.Button($"{previewIcon}##toggleTextPreview", DPI.IconButtonSize))
+        {
+            CFG.Current.TextEditor_Contents_Show_Text_Preview = !CFG.Current.TextEditor_Contents_Show_Text_Preview;
+        }
+        GUI.Tooltip(LOC.Get("TEXT_Contents_Preview_Toggle_TT",
+            LOC.Get(CFG.Current.TextEditor_Contents_Show_Text_Preview ? "TEXT_Contents_Preview_Shown" : "TEXT_Contents_Preview_Hidden")));
+
         if (Parent.Selection._selectedFmgEntry != null)
         {
             DisplayEditor();
@@ -41,9 +54,32 @@ public class TextContents
     /// <summary>
     /// Group Editor: ID and Text edit inputs for all associated entries + the main one
     /// </summary>
+    // The entry group was rebuilt every frame (4 linear FMG scans). Reuse it until the
+    // selected entry, the selected FMG, or the text data changes.
+    private FMG.Entry _groupCacheEntry;
+    private TextFmgWrapper _groupCacheFmg;
+    private int _groupCacheVersion = -1;
+    private FmgEntryGroup _groupCache;
+
+    private FmgEntryGroup GetCachedEntryGroup(FMG.Entry entry)
+    {
+        var version = TextFinder.CurrentDataVersion;
+        var fmg = Parent.Selection.SelectedFmgWrapper;
+
+        if (_groupCache == null || _groupCacheEntry != entry || _groupCacheFmg != fmg || _groupCacheVersion != version)
+        {
+            _groupCache = Parent.EntryGroupManager.GetEntryGroup(entry);
+            _groupCacheEntry = entry;
+            _groupCacheFmg = fmg;
+            _groupCacheVersion = version;
+        }
+
+        return _groupCache;
+    }
+
     public void DisplayEditor()
     {
-        var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(Parent.Selection._selectedFmgEntry);
+        var fmgEntryGroup = GetCachedEntryGroup(Parent.Selection._selectedFmgEntry);
 
         if (fmgEntryGroup != null)
         {
@@ -62,6 +98,107 @@ public class TextContents
     private int _idCache = -1;
     private string _textCache = "";
 
+    /// <summary>
+    /// Buffer size for the text inputs, in UTF-8 bytes. A fixed 2000 truncated longer
+    /// entries as soon as they were edited (about 660 CJK characters).
+    /// </summary>
+    // Last refused ID change, shown under the ID field while that entry stays selected
+    private string _idError;
+    private FMG.Entry _idErrorEntry;
+
+    private void DisplayIdError()
+    {
+        if (_idError == null)
+            return;
+
+        // Selecting another entry dismisses it
+        if (_idErrorEntry != Parent.Selection._selectedFmgEntry)
+        {
+            _idError = null;
+            _idErrorEntry = null;
+            return;
+        }
+
+        GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, _idError);
+    }
+
+    /// <summary>
+    /// Hover readout of the text length; the byte count is what the input buffer limits.
+    /// </summary>
+    private static void ShowLengthTooltip(string text)
+    {
+        if (!ImGui.IsItemHovered())
+            return;
+
+        text ??= "";
+        GUI.Tooltip(LOC.Get("TEXT_Contents_Text_Length_TT", text.Length, Encoding.UTF8.GetByteCount(text)));
+    }
+
+    /// <summary>
+    /// Wrapped, markup-highlighted copy of the text under its box (the box itself can't wrap).
+    /// </summary>
+    private static void ShowPreview(string id, string text)
+    {
+        if (!CFG.Current.TextEditor_Contents_Show_Text_Preview)
+            return;
+
+        TextMarkupPreview.Display(id, text);
+    }
+
+    private static nuint GetEditBufferSize(string text)
+    {
+        var byteCount = Encoding.UTF8.GetByteCount(text ?? "");
+        return (nuint)Math.Max(2000, byteCount + 4096);
+    }
+
+    /// <summary>
+    /// Change the ID of the entry and, when grouped, its associated entries.
+    /// Returns without changing anything (and logs why) if the ID collides
+    /// and duplicate IDs aren't allowed.
+    /// </summary>
+    private void ApplyIdChange(List<FMG.Entry> targets, int newId)
+    {
+        targets = targets.Where(e => e != null).ToList();
+
+        if (targets.Count == 0 || targets.All(e => e.ID == newId))
+            return;
+
+        if (!CFG.Current.TextEditor_Text_Entry_Allow_Duplicate_ID)
+        {
+            // Check every FMG the change writes to, ignoring the entries being changed
+            foreach (var target in targets)
+            {
+                var others = Parent.ActionHandler.GetGroupFmgs(target);
+                var collision = others
+                    .SelectMany(f => f.Entries)
+                    .FirstOrDefault(e => e.ID == newId && !targets.Contains(e));
+
+                if (collision != null)
+                {
+                    var message = LOC.Get("TEXT_Contents_ID_Collision", newId, collision.Parent?.Name ?? "");
+                    Smithbox.LogWarning(this, message);
+
+                    // Also shown under the ID field, where the user is looking
+                    _idError = message;
+                    _idErrorEntry = Parent.Selection._selectedFmgEntry;
+                    return;
+                }
+            }
+        }
+
+        _idError = null;
+        _idErrorEntry = null;
+
+        var actions = new List<EditorAction>();
+
+        foreach (var target in targets)
+        {
+            actions.Add(new ChangeFmgEntryID(Parent, Parent.Selection.SelectedContainerWrapper, target, newId));
+        }
+
+        Parent.ActionManager.ExecuteAction(new FmgGroupedAction(actions));
+    }
+
     public void DisplayGroupedTextInput(FMG.Entry entry, FmgEntryGroup fmgEntryGroup)
     {
         var windowWidth = ImGui.GetWindowWidth();
@@ -73,11 +210,9 @@ public class TextContents
         var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
         var selectedEntry = Parent.Selection._selectedFmgEntry;
 
-        // We assume Title always exists
-        if (fmgEntryGroup.Title == null)
-        {
-            return;
-        }
+        // The Title entry may not exist (e.g. a description with no name entry).
+        // This used to return early and leave the panel blank, so the
+        // "Add Title Entry" button below could never show.
 
         if (ImGui.BeginTable($"fmgEditTableGrouped", 2, ImGuiTableFlags.SizingFixedFit))
         {
@@ -85,10 +220,10 @@ public class TextContents
             ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
             //ImGui.TableHeadersRow();
 
-            // ID
-            if (fmgEntryGroup.Title != null)
+            // ID: shown from the title when it exists, otherwise from the selected entry
             {
-                var curId = fmgEntryGroup.Title.ID;
+                var idSource = fmgEntryGroup.Title ?? entry;
+                var curId = idSource.ID;
 
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
@@ -105,49 +240,20 @@ public class TextContents
 
                 var idCommit = ImGui.IsItemDeactivatedAfterEdit();
 
-                // Update the ID if it was changed and the id input was exited
+                // Update the ID of every entry in the group once the input is exited
                 if (idCommit)
                 {
-                    var proceed = true;
-
-                    // If duplicate IDs are disallowed, then don't apply the ID action changes if there is a match
-                    if (!CFG.Current.TextEditor_Text_Entry_Allow_Duplicate_ID)
+                    ApplyIdChange(new List<FMG.Entry>
                     {
-                        var parentFmg = fmgEntryGroup.Title.Parent;
-                        foreach (var fmgEntry in parentFmg.Entries)
-                        {
-                            if (fmgEntry.ID == _idCache)
-                            {
-                                proceed = false;
-                            }
-                        }
-                    }
-
-                    if (proceed)
-                    {
-                        List<EditorAction> actions = new List<EditorAction>();
-
-                        if (fmgEntryGroup.Title != null)
-                        {
-                            actions.Add(new ChangeFmgEntryID(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Title, _idCache));
-                        }
-                        if (fmgEntryGroup.Summary != null)
-                        {
-                            actions.Add(new ChangeFmgEntryID(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Summary, _idCache));
-                        }
-                        if (fmgEntryGroup.Description != null)
-                        {
-                            actions.Add(new ChangeFmgEntryID(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Description, _idCache));
-                        }
-                        if (fmgEntryGroup.Effect != null)
-                        {
-                            actions.Add(new ChangeFmgEntryID(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Effect, _idCache));
-                        }
-
-                        var groupAction = new FmgGroupedAction(actions);
-                        Parent.ActionManager.ExecuteAction(groupAction);
-                    }
+                        fmgEntryGroup.Title,
+                        fmgEntryGroup.Summary,
+                        fmgEntryGroup.Description,
+                        fmgEntryGroup.Effect,
+                        entry
+                    }.Distinct().ToList(), _idCache);
                 }
+
+                DisplayIdError();
             }
 
             // Title
@@ -158,7 +264,8 @@ public class TextContents
                 if (curText == null)
                     curText = "";
 
-                height = 32 * DPI.UIScale();
+                // Grows for multi-line titles (was a fixed 32px)
+                height = Math.Max(32f, ImGui.CalcTextSize(curText).Y + 16f) * DPI.UIScale();
 
                 ImGui.TableNextRow();
 
@@ -168,12 +275,14 @@ public class TextContents
 
                 ImGui.TableSetColumnIndex(1);
 
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Title", ref curText, 2000, new Vector2(-1, height)))
+                if (ImGui.InputTextMultiline($"##fmgTextInput_Title", ref curText, GetEditBufferSize(curText), new Vector2(-1, height)))
                 {
                     _textCache = curText;
                 }
 
                 var titleTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+                ShowLengthTooltip(curText);
+                ShowPreview("title", curText);
 
                 // Title Text
                 if (fmgEntryGroup.Title != null && titleTextCommit)
@@ -215,12 +324,14 @@ public class TextContents
 
                 ImGui.TableSetColumnIndex(1);
 
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Summary", ref curText, 2000, new Vector2(-1, height)))
+                if (ImGui.InputTextMultiline($"##fmgTextInput_Summary", ref curText, GetEditBufferSize(curText), new Vector2(-1, height)))
                 {
                     _textCache = curText;
                 }
 
                 var summaryTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+                ShowLengthTooltip(curText);
+                ShowPreview("summary", curText);
 
                 if (fmgEntryGroup.Summary != null && summaryTextCommit)
                 {
@@ -261,12 +372,14 @@ public class TextContents
 
                 ImGui.TableSetColumnIndex(1);
 
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Description", ref curText, 2000, new Vector2(-1, height)))
+                if (ImGui.InputTextMultiline($"##fmgTextInput_Description", ref curText, GetEditBufferSize(curText), new Vector2(-1, height)))
                 {
                     _textCache = curText;
                 }
 
                 var descriptionTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+                ShowLengthTooltip(curText);
+                ShowPreview("description", curText);
 
                 if (fmgEntryGroup.Description != null && descriptionTextCommit)
                 {
@@ -307,12 +420,14 @@ public class TextContents
 
                 ImGui.TableSetColumnIndex(1);
 
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Effect", ref curText, 2000, new Vector2(-1, height)))
+                if (ImGui.InputTextMultiline($"##fmgTextInput_Effect", ref curText, GetEditBufferSize(curText), new Vector2(-1, height)))
                 {
                     _textCache = curText;
                 }
 
                 var effectTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+                ShowLengthTooltip(curText);
+                ShowPreview("effect", curText);
 
                 if (fmgEntryGroup.Effect != null && effectTextCommit)
                 {
@@ -373,9 +488,11 @@ public class TextContents
 
             if (idCommit)
             {
-                var action = new ChangeFmgEntryID(Parent, Parent.Selection.SelectedContainerWrapper, entry, _idCache);
-                Parent.ActionManager.ExecuteAction(action);
+                // Same duplicate-ID rule as grouped mode (this path had no check)
+                ApplyIdChange(new List<FMG.Entry> { entry }, _idCache);
             }
+
+            DisplayIdError();
 
             // Text
             var curText = entry.Text;
@@ -394,12 +511,14 @@ public class TextContents
 
             ImGui.TableSetColumnIndex(1);
 
-            if (ImGui.InputTextMultiline($"##fmgTextInputBasic", ref curText, 2000, new Vector2(-1, height)))
+            if (ImGui.InputTextMultiline($"##fmgTextInputBasic", ref curText, GetEditBufferSize(curText), new Vector2(-1, height)))
             {
                 _textCache = curText;
             }
 
             var textCommit = ImGui.IsItemDeactivatedAfterEdit();
+                ShowLengthTooltip(curText);
+                ShowPreview("basic", curText);
             if (textCommit)
             {
                 var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, entry, _textCache);

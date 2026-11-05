@@ -41,11 +41,11 @@ public class TextData : IDisposable
 
         if (!descriptorTaskResult)
         {
-            Smithbox.LogError(this, LOC.Get("TEXT_Data_FMG_Descriptor_Setup_PASS"));
+            Smithbox.LogError(this, LOC.Get("TEXT_Data_FMG_Descriptor_Setup_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, LOC.Get("TEXT_Data_FMG_Descriptor_Setup_FAIL"));
+            Smithbox.Log(this, LOC.Get("TEXT_Data_FMG_Descriptor_Setup_PASS"));
         }
 
         // Templates
@@ -94,7 +94,10 @@ public class TextData : IDisposable
     {
         await Smithbox.Orchestrator.LoadAuxiliaryProject(targetProject, ProjectInitType.TextEditorOnly, reloadProject);
 
-        var newAuxBank = new TextBank($"{targetProject.Descriptor.ProjectName}",Project, targetProject.VFS.FS);
+        // Enumerate the auxiliary project's own text files (it used the main project's list,
+        // so files only present in the auxiliary project were never loaded)
+        var newAuxBank = new TextBank($"{targetProject.Descriptor.ProjectName}", Project, targetProject.VFS.FS,
+            targetProject.Locator?.TextFiles);
 
         // Aux Bank
         Task<bool> auxBankTask = newAuxBank.Setup();
@@ -102,7 +105,7 @@ public class TextData : IDisposable
 
         if (!auxBankTaskResult)
         {
-            Smithbox.LogError(this, LOC.Get("TEXT_Data_Vanilla_Bank_Setup_FAIL", targetProject.Descriptor.ProjectName));
+            Smithbox.LogError(this, LOC.Get("TEXT_Data_Aux_Bank_Setup_FAIL", targetProject.Descriptor.ProjectName));
         }
 
         if (AuxBanks.ContainsKey(targetProject.Descriptor.ProjectName))

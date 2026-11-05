@@ -135,6 +135,46 @@
     {
       "Key": "TEXT_TextReplacement_Invalid_Regex_Replace",
       "Text": "Invalid regex in replacement filter."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Preview_Count",
+      "Text": "{0} entries will change."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Preview_Selected_Count",
+      "Text": "{0} of {1} entries selected to change."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Select_All",
+      "Text": "Select All"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Select_All_TT",
+      "Text": "Tick every entry in the preview list, so Apply changes all of them."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Select_None",
+      "Text": "Select None"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Select_None_TT",
+      "Text": "Untick every entry in the preview list, so you can tick only the ones to change."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Include_TT",
+      "Text": "Change this entry when the replacement is applied."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Preview_Entry_TT",
+      "Text": "Before:\n{0}\n\nAfter:\n{1}"
+    },
+    {
+      "Key": "TEXT_TextReplacement_Applied",
+      "Text": "Replaced text in {0} entries. Preview again to see any remaining matches."
+    },
+    {
+      "Key": "TEXT_TextReplacement_Preview_Required",
+      "Text": "Preview the edit first: Apply only changes the entries in the preview list."
     }
   ]
 }

@@ -992,6 +992,9 @@ public class CFG
     public bool TextEditor_Text_Entry_Enable_Grouped_Entries = true;
     public bool TextEditor_Text_Entry_Allow_Duplicate_ID = false;
 
+    // Wrapped, markup-highlighted preview under each Contents text box
+    public bool TextEditor_Contents_Show_Text_Preview = true;
+
     public bool TextEditor_Text_Clipboard_Escape_New_Lines = true;
     public bool TextEditor_Text_Clipboard_Include_ID = true;
 

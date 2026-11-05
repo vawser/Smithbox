@@ -17,6 +17,34 @@
       "Text": "Focus the currently selected entry.\nAction Shortcut: {0}\nPopup Shortcut: {1}"
     },
     {
+      "Key": "TEXT_DeleteConfirm_Title",
+      "Text": "Delete Entries"
+    },
+    {
+      "Key": "TEXT_DeleteConfirm_Message",
+      "Text": "Delete {0} selected entries?"
+    },
+    {
+      "Key": "TEXT_DeleteConfirm_Message_Associated",
+      "Text": "Delete {0} selected entries and {1} associated entries (title, summary, description or effect text in the linked files)?"
+    },
+    {
+      "Key": "TEXT_DeleteConfirm_Undo_Hint",
+      "Text": "This can be undone with {0}."
+    },
+    {
+      "Key": "TEXT_DeleteConfirm_Action_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "TEXT_DeleteConfirm_Action_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "TEXT_EntryList_Filter_Commands_TT",
+      "Text": "Filter by ID or text.\n\nSpecial filters:\n  modified - entries whose text differs from vanilla (or are new)\n  unique - entries that only exist in this project\n\nRow colours use the same two categories: unique entries and modified entries each have their own colour (set in the interface colour settings)."
+    },
+    {
       "Key": "TEXT_EntryList_Column_Header_ID",
       "Text": "ID"
     },

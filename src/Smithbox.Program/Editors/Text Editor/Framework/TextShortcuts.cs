@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
+using System.Linq;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -22,10 +23,11 @@ public class TextShortcuts
     {
         var activeView = Editor.ViewHandler.ActiveView;
 
-        // Save
+        // Save: every container with unsaved changes (marked *), not just the selected one.
+        // Global Replace, Language Sync and Import change many containers at once.
         if (InputManager.IsPressed(KeybindID.Save))
         {
-            Editor.Save();
+            Editor.SaveAll();
         }
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
@@ -33,33 +35,38 @@ public class TextShortcuts
             CFG.Current.Interface_TextEditor_ToolWindow = !CFG.Current.Interface_TextEditor_ToolWindow;
         }
 
+        // While a text box has keyboard focus (search bar, entry text, ID input),
+        // its keys belong to the text box: Delete, Ctrl+Z, Ctrl+D and Insert
+        // must not also act on the entry list.
+        if (ImGui.GetIO().WantTextInput)
+            return;
+
         if (activeView != null)
         {
-            // Undo
+            // Undo / Redo: each selects the entry it changed afterwards
             if (activeView.ActionManager.CanUndo())
             {
                 if (InputManager.IsPressed(KeybindID.Undo))
                 {
-                    activeView.ActionManager.UndoAction();
+                    activeView.UndoAndReveal();
                 }
 
                 if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
                 {
-                    activeView.ActionManager.UndoAction();
+                    activeView.UndoAndReveal();
                 }
             }
 
-            // Redo
             if (activeView.ActionManager.CanRedo())
             {
                 if (InputManager.IsPressed(KeybindID.Redo))
                 {
-                    activeView.ActionManager.RedoAction();
+                    activeView.RedoAndReveal();
                 }
 
                 if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
                 {
-                    activeView.ActionManager.RedoAction();
+                    activeView.RedoAndReveal();
                 }
             }
 
@@ -75,7 +82,7 @@ public class TextShortcuts
                 // Configurable Duplicate
                 if (InputManager.IsPressed(KeybindID.TextEditor_Configurable_Duplicate))
                 {
-                    ImGui.OpenPopup("textDuplicatePopup");
+                    activeView.TextDuplicatePopup.OpenRequested = true;
                 }
 
                 // Standard Duplicate
@@ -123,22 +130,19 @@ public class TextShortcuts
                 {
                     var tEntry = fmg.Entries[j];
 
-                    var input = activeView.TextEntryList.EntryListFilter;
-                    var exactMatch = activeView.TextEntryList.ExactEntryListFilter;
-
-                    var isMatch = EditorFilters.IsMatch(
-                        input, tEntry.ID.ToString(), exactMatch, tEntry.Text);
-
-                    // Ignore normal match if a special conditional commands has been used
-                    if (activeView.TextEntryList.UsedMatchCommands(input))
-                    {
-                        isMatch = activeView.TextEntryList.HandleMatchCommands(input, tEntry);
-                    }
-
-                    if (isMatch)
+                    // Same check as the list itself, so hidden null entries aren't selected
+                    if (activeView.TextEntryList.IsEntryVisible(tEntry))
                     {
                         multiselect.StoredEntries.Add(j, tEntry);
                     }
+                }
+
+                // Give Delete/Duplicate a primary selection to work from
+                if (multiselect.StoredEntries.Count > 0 && activeView.Selection._selectedFmgEntryIndex == -1)
+                {
+                    var first = multiselect.StoredEntries.First();
+                    activeView.Selection._selectedFmgEntryIndex = first.Key;
+                    activeView.Selection._selectedFmgEntry = first.Value;
                 }
             }
         }

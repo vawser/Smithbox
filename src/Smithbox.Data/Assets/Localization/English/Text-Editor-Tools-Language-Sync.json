@@ -111,6 +111,14 @@
     {
       "Key": "TEXT_LanguageSync_Sync_Operation_PASS",
       "Text": "Synced {0} {1} with {2} version."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Sync_Operation_Counts",
+      "Text": "Synced {0} {1} with {2} version: {3} entries added, {4} entries changed."
+    },
+    {
+      "Key": "TEXT_LanguageSync_No_Vanilla_Source",
+      "Text": "Skipped text file {0}: no vanilla {1} version was found to compare against, so its changes can't be worked out."
     }
   ]
 }

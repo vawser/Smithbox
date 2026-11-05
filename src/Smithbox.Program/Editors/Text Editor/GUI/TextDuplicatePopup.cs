@@ -12,6 +12,14 @@ public class TextDuplicatePopup
     private int DuplicateAmount = 1;
     private bool AutoAdjustOffset = true;
 
+    /// <summary>
+    /// Set by the shortcut handler; the popup is opened from Display() instead.
+    /// ImGui popup IDs include the window ID stack, so OpenPopup has to run inside
+    /// the same view window as BeginPopup. Opening it from TextShortcuts.Monitor()
+    /// (editor-window level) targeted a different ID and the popup never appeared.
+    /// </summary>
+    public bool OpenRequested = false;
+
     public TextDuplicatePopup(TextEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -20,6 +28,12 @@ public class TextDuplicatePopup
 
     public void Display()
     {
+        if (OpenRequested)
+        {
+            OpenRequested = false;
+            ImGui.OpenPopup("textDuplicatePopup");
+        }
+
         if (ImGui.BeginPopup("textDuplicatePopup"))
         {
             // Offset
@@ -44,12 +58,17 @@ public class TextDuplicatePopup
             // Submit
             if (ImGui.Button($"{LOC.Get("TEXT_DuplicateModal_Action_Submit")}###submitAction", DPI.StandardButtonSize))
             {
-                int offset = -1;
-                var validOffset = int.TryParse(DuplicateOffset, out offset);
-
-                if (validOffset)
+                if (int.TryParse(DuplicateOffset, out var offset))
                 {
-                    Parent.ActionHandler.DuplicateEntriesPopup(offset, DuplicateAmount, AutoAdjustOffset);
+                    var amount = DuplicateAmount < 1 ? 1 : DuplicateAmount;
+
+                    Parent.ActionHandler.DuplicateEntriesPopup(offset, amount, AutoAdjustOffset);
+
+                    ImGui.CloseCurrentPopup();
+                }
+                else
+                {
+                    Smithbox.LogWarning(this, LOC.Get("TEXT_DuplicateModal_Invalid_Offset"));
                 }
             }
 

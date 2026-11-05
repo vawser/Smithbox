@@ -164,6 +164,14 @@ public class FmgExporter
         storedFmgContainer.Name = storedName;
         storedFmgContainer.FmgWrappers = new List<StoredFmgWrapper>();
 
+        // Record where the text came from, so the import menu can show it and warn on a mismatch
+        var sourceContainer = View.Selection.SelectedContainerWrapper;
+        if (sourceContainer != null)
+        {
+            storedFmgContainer.SourceContainer = sourceContainer.FileEntry.Filename;
+            storedFmgContainer.SourceCategory = sourceContainer.ContainerDisplayCategory.ToString();
+        }
+
         // Container
         if (CurrentExportType is ExportType.Container)
         {

@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -248,8 +248,10 @@ public class TextFileList
 
                         if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "")
                         {
-                            HandleFmgView(fmgInfo);
-                            if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                            // Only attach the tooltip to a row that was drawn; a filtered-out
+                            // row would otherwise put it on the previous item
+                            var drawn = HandleFmgView(fmgInfo);
+                            if (drawn && Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                             {
                                 GUI.Tooltip(LOC.Get("TEXT_FileList_Base_Priority_TT"));
                             }
@@ -272,8 +274,10 @@ public class TextFileList
 
                         if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 1")
                         {
-                            HandleFmgView(fmgInfo);
-                            if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                            // Only attach the tooltip to a row that was drawn; a filtered-out
+                            // row would otherwise put it on the previous item
+                            var drawn = HandleFmgView(fmgInfo);
+                            if (drawn && Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                             {
                                 GUI.Tooltip(LOC.Get("TEXT_FileList_DLC1_Priority_TT"));
                             }
@@ -296,8 +300,10 @@ public class TextFileList
 
                         if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 2")
                         {
-                            HandleFmgView(fmgInfo);
-                            if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                            // Only attach the tooltip to a row that was drawn; a filtered-out
+                            // row would otherwise put it on the previous item
+                            var drawn = HandleFmgView(fmgInfo);
+                            if (drawn && Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                             {
                                 GUI.Tooltip(LOC.Get("TEXT_FileList_DLC2_Priority_TT"));
                             }
@@ -308,7 +314,8 @@ public class TextFileList
         }
     }
 
-    private void HandleFmgView(TextFmgWrapper info)
+    /// <returns>True if the row was drawn (it matched the filter).</returns>
+    private bool HandleFmgView(TextFmgWrapper info)
     {
         var id = info.ID;
         var fmgName = info.Name;
@@ -347,7 +354,7 @@ public class TextFileList
             }
 
             // Script row
-            if (ImGui.Selectable($"{labelName}##{id}{selectableName}", id == View.Selection.SelectedFmgKey))
+            if (ImGui.Selectable($"{labelName}##{id}{selectableName}", View.Selection.SelectedFmgWrapper == info))
             {
                 View.Selection.SelectFmg(info);
             }
@@ -368,20 +375,26 @@ public class TextFileList
             }
 
             // Only apply to selection
-            if (View.Selection.SelectedFmgKey != -1)
+            // Compare wrappers, not IDs: loose DS2 FMGs all have ID -1, the same value as
+            // 'nothing selected', so they never got a context menu.
+            if (View.Selection.SelectedFmgWrapper != null)
             {
-                if (View.Selection.SelectedFmgKey == id)
+                if (View.Selection.SelectedFmgWrapper == info)
                 {
                     ContextMenu(info);
                 }
 
-                if (View.Selection.FocusFmgSelection && View.Selection.SelectedFmgKey == id)
+                if (View.Selection.FocusFmgSelection && View.Selection.SelectedFmgWrapper == info)
                 {
                     View.Selection.FocusFmgSelection = false;
                     ImGui.SetScrollHereY();
                 }
             }
+
+            return true;
         }
+
+        return false;
     }
 
     public void ContextMenu(TextFmgWrapper fmgInfo)

@@ -1,14 +1,22 @@
-﻿using SoulsFormats;
+using SoulsFormats;
 using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.TextEditor;
 
-public class DuplicateFmgEntry : EditorAction
+public class DuplicateFmgEntry : EditorAction, ITextActionTarget
 {
+    // ITextActionTarget: lets undo/redo select what this action changed
+    public TextContainerWrapper TargetContainer => Info;
+    public FMG TargetFmg => Fmg;
+    public FMG.Entry TargetEntry => NewEntry;
+
     private TextEditorView Parent;
     private FMG Fmg;
+
+    /// <summary>
+    /// Created once, so redo re-inserts the same object that later actions reference.
+    /// </summary>
     private FMG.Entry NewEntry;
-    private int InsertionIndex;
 
     private TextContainerWrapper Info;
 
@@ -19,23 +27,12 @@ public class DuplicateFmgEntry : EditorAction
         Fmg = currentFmg;
         NewEntry = entry.Clone();
         NewEntry.ID = newID;
-        InsertionIndex = Fmg.Entries.Count;
-
-        for (int i = 0; i < Fmg.Entries.Count; i++)
-        {
-            var curEntry = Fmg.Entries[i];
-
-            if(curEntry.ID > NewEntry.ID)
-            {
-                InsertionIndex = i;
-                break;
-            }
-        }
     }
 
     public override ActionEvent Execute()
     {
-        Fmg.Entries.Insert(InsertionIndex, NewEntry);
+        var insertionIndex = FmgEntryUtils.GetSortedInsertionIndex(Fmg, NewEntry.ID);
+        Fmg.Entries.Insert(insertionIndex, NewEntry);
         Info.MarkDirty(Fmg);
 
         Parent.DifferenceManager.TrackFmgDifferences();
@@ -45,7 +42,7 @@ public class DuplicateFmgEntry : EditorAction
 
     public override ActionEvent Undo()
     {
-        Fmg.Entries.RemoveAt(InsertionIndex);
+        Fmg.Entries.Remove(NewEntry);
         Info.MarkDirty(Fmg);
 
         Parent.DifferenceManager.TrackFmgDifferences();

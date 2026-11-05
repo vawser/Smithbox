@@ -33,6 +33,26 @@
       "Text": "Attempted to add stored text with existing key: {0}"
     },
     {
+      "Key": "TEXT_Importer_Source_TT",
+      "Text": "Exported from {0} ({1})."
+    },
+    {
+      "Key": "TEXT_Importer_Source_Unknown_TT",
+      "Text": "Source container not recorded (exported by an older version)."
+    },
+    {
+      "Key": "TEXT_Importer_Container_Mismatch",
+      "Text": "{0} was exported from {1}, but is being imported into {2}. Only text files that match by ID and name are imported."
+    },
+    {
+      "Key": "TEXT_Importer_Import_Result",
+      "Text": "Imported {0}: {1} entries added, {2} entries changed."
+    },
+    {
+      "Key": "TEXT_Importer_No_Matching_FMG",
+      "Text": "Imported {0}: no text file in it matches the selected text file (by ID and name)."
+    },
+    {
       "Key": "TEXT_Importer_Failed_JSON_String_Deserialization",
       "Text": "Failed to deserialize JSON file string."
     },

@@ -1,6 +1,26 @@
 {
   "Entries": [
     {
+      "Key": "TEXT_Contents_ID_Collision",
+      "Text": "ID {0} already exists in {1}; the ID was not changed (Allow Duplicate ID is off)."
+    },
+    {
+      "Key": "TEXT_Contents_Preview_Toggle_TT",
+      "Text": "Show a wrapped preview under each text box, with markup tags dimmed and <font color> text in its colour. The text boxes themselves can't wrap.\n\nCurrent mode:\n{0}"
+    },
+    {
+      "Key": "TEXT_Contents_Preview_Shown",
+      "Text": "Shown"
+    },
+    {
+      "Key": "TEXT_Contents_Preview_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "TEXT_Contents_Text_Length_TT",
+      "Text": "{0} characters, {1} bytes (UTF-8)"
+    },
+    {
       "Key": "TEXT_Contents_Header_Contents",
       "Text": "Text Content"
     },

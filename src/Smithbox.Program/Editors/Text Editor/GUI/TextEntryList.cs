@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using Hexa.NET.ImGuizmo;
 using Org.BouncyCastle.Asn1.X509;
 using SoulsFormats;
@@ -68,6 +68,9 @@ public class TextEntryList
 
         EditorFilters.DisplaySearchbar("textEditor_EntryList",
             ref EntryListFilter, ref ExactEntryListFilter);
+
+        // The 'modified' / 'unique' filter commands weren't mentioned anywhere in the UI
+        GUI.Tooltip(LOC.Get("TEXT_EntryList_Filter_Commands_TT"));
 
         // Focus after clearing
         if (ImGui.IsItemEdited())
@@ -158,32 +161,42 @@ public class TextEntryList
 
     public void DisplayEntryList()
     {
+        // Keep index-keyed selections pointing at the same entry objects after
+        // adds, deletes, reorders, undo or a save re-sorting the list.
+        Parent.Selection.RevalidateEntrySelection();
+
         for (int i = 0; i < Parent.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
         {
             var entry = Parent.Selection.SelectedFmgWrapper.File.Entries[i];
             var id = entry.ID;
             var contents = entry.Text;
 
-            var isMatch = EditorFilters.IsMatch(
-                EntryListFilter, entry.ID.ToString(), ExactEntryListFilter, entry.Text);
-
-            if(!CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries)
-            {
-                if (entry.Text == null)
-                    continue;
-            }
-
-            // Ignore normal match if a special conditional commands has been used
-            if (UsedMatchCommands(EntryListFilter))
-            {
-                isMatch = HandleMatchCommands(EntryListFilter, entry);
-            }
-
-            if (isMatch)
+            if (IsEntryVisible(entry))
             {
                 DisplayEntryRow(entry, id, contents, i);
             }
         }
+    }
+
+    /// <summary>
+    /// Whether the entry is shown in the entry list: passes the search filter (or the
+    /// 'modified'/'unique' commands) and isn't a hidden null entry.
+    /// Every action that works on "the listed entries" (select all, range select,
+    /// auto-select, copy) uses this, so none of them reach rows the user can't see.
+    /// </summary>
+    public bool IsEntryVisible(FMG.Entry entry)
+    {
+        if (!CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries && entry.Text == null)
+            return false;
+
+        // Ignore normal match if a special conditional commands has been used
+        if (UsedMatchCommands(EntryListFilter))
+        {
+            return HandleMatchCommands(EntryListFilter, entry);
+        }
+
+        return EditorFilters.IsMatch(
+            EntryListFilter, entry.ID.ToString(), ExactEntryListFilter, entry.Text);
     }
 
     public void DisplayEntryRow(FMG.Entry entry, int id, string contents, int index)
@@ -198,8 +211,6 @@ public class TextEntryList
         DisplayEntryRowName(entry, id, contents, index);
 
     }
-
-    private FMG.Entry DragSourceEntry;
 
     public void DisplayEntryRowID(FMG.Entry entry, int id, string contents, int index)
     {
@@ -228,63 +239,14 @@ public class TextEntryList
         }
         if (ImGui.IsItemFocused())
         {
-            if (InputManager.HasArrowSelection())
+            if (InputManager.HasArrowSelection() || HasPageNavigation())
             {
                 Parent.Selection.SelectNextFmgEntry = true;
             }
         }
 
-        // Drag source
-        if (ImGui.BeginDragDropSource(ImGuiDragDropFlags.None))
-        {
-            DragSourceEntry = entry;
-            unsafe
-            {
-                byte dummy = 0;
-                ImGui.SetDragDropPayload("FMG_ENTRY", &dummy, 1);
-            }
-            ImGui.Text(LOC.Get("TEXT_EntryList_Drag_Drop_Text", entry.ID));
-            ImGui.EndDragDropSource();
-        }
-
-        // Drop target
-        if (ImGui.BeginDragDropTarget())
-        {
-            unsafe
-            {
-                var fmg = Parent.Selection.SelectedFmgWrapper.File;
-                var payload = ImGui.AcceptDragDropPayload("FMG_ENTRY");
-                if (!payload.IsNull && DragSourceEntry != null && DragSourceEntry != entry)
-                {
-                    int dropTargetIndex = fmg.Entries.IndexOf(entry);
-
-                    if (dropTargetIndex >= 0)
-                    {
-                        List<FMG.Entry> entriesToMove;
-                        var selectedEntries = Parent.Selection.FmgEntryMultiselect.StoredEntries;
-
-                        entriesToMove = selectedEntries.Values.ToList();
-
-                        // If the user is viewing in grouped mode,
-                        // we need to handle each of the possible associated entries
-                        // so the assumed behavior of moving the title moves the other entries too.
-                        if (CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
-                        {
-                            FmgEntryUtils.ReorderFmgEntryGroup(Parent, Parent.Selection.SelectedFmgWrapper, fmg, entriesToMove, dropTargetIndex);
-                        }
-                        else
-                        {
-                            var action = new ReorderEntryAction(Parent.Selection.SelectedContainerWrapper, fmg, entriesToMove, dropTargetIndex);
-                            Parent.ActionManager.ExecuteAction(action);
-                        }
-                    }
-
-                    DragSourceEntry = null;
-                }
-            }
-
-            ImGui.EndDragDropTarget();
-        }
+        // No drag-to-reorder: FMG files are always written sorted by ID (FMG.Write sorts
+        // the entry list), so a dragged order was lost on save and never reached the game.
 
         // Context Menu / Shortcuts
         if (Parent.Selection.IsFmgEntrySelected(index))
@@ -331,7 +293,7 @@ public class TextEntryList
         }
         if (ImGui.IsItemFocused())
         {
-            if (InputManager.HasArrowSelection())
+            if (InputManager.HasArrowSelection() || HasPageNavigation())
             {
                 Parent.Selection.SelectNextFmgEntry = true;
             }
@@ -342,6 +304,16 @@ public class TextEntryList
         {
             ContextMenu("name", index, Parent.Selection.SelectedFmgWrapper, entry, isSelected);
         }
+    }
+
+    /// <summary>
+    /// Page Up/Down and Home/End: ImGui's keyboard navigation already moves focus for these;
+    /// flagging them like the arrow keys makes the newly focused row become the selection.
+    /// </summary>
+    private static bool HasPageNavigation()
+    {
+        return ImGui.IsKeyPressed(ImGuiKey.PageUp) || ImGui.IsKeyPressed(ImGuiKey.PageDown) ||
+               ImGui.IsKeyPressed(ImGuiKey.Home) || ImGui.IsKeyPressed(ImGuiKey.End);
     }
 
     public string FormatDisplayName(string contents)

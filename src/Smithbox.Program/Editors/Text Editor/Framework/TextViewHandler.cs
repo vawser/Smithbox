@@ -149,7 +149,8 @@ public class TextViewHandler
                         }
                     }
 
-                    ImGui.EndMenu();
+                    // Closes BeginPopupContextItem (was EndMenu, which unbalanced ImGui's stack)
+                    ImGui.EndPopup();
                 }
             }
 

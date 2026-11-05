@@ -1,15 +1,19 @@
-﻿using SoulsFormats;
+using SoulsFormats;
 using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.TextEditor;
 
-public class AddAssociatedEntry : EditorAction
+public class AddAssociatedEntry : EditorAction, ITextActionTarget
 {
+    // ITextActionTarget: lets undo/redo select what this action changed
+    public TextContainerWrapper TargetContainer => Info;
+    public FMG TargetFmg => Fmg;
+    public FMG.Entry TargetEntry => NewEntry;
+
     private TextEditorView Parent;
 
     private FMG Fmg;
     private FMG.Entry NewEntry;
-    private int InsertionIndex;
 
     private TextContainerWrapper Info;
 
@@ -19,24 +23,14 @@ public class AddAssociatedEntry : EditorAction
         Info = info;
         Fmg = targetFmg;
         NewEntry = newEntry;
-        InsertionIndex = 0;
-
-        for (int i = 0; i < Fmg.Entries.Count; i++)
-        {
-            var curEntry = Fmg.Entries[i];
-
-            // Insert below this entry
-            if (curEntry.ID > NewEntry.ID)
-            {
-                InsertionIndex = i;
-                break;
-            }
-        }
     }
 
     public override ActionEvent Execute()
     {
-        Fmg.Entries.Insert(InsertionIndex, NewEntry);
+        // Falls back to the end of the list when no entry has a higher ID
+        // (this used to insert at index 0).
+        var insertionIndex = FmgEntryUtils.GetSortedInsertionIndex(Fmg, NewEntry.ID);
+        Fmg.Entries.Insert(insertionIndex, NewEntry);
         Info.MarkDirty(Fmg);
 
         Parent.DifferenceManager.TrackFmgDifferences();
@@ -46,7 +40,7 @@ public class AddAssociatedEntry : EditorAction
 
     public override ActionEvent Undo()
     {
-        Fmg.Entries.RemoveAt(InsertionIndex);
+        Fmg.Entries.Remove(NewEntry);
         Info.MarkDirty(Fmg);
 
         Parent.DifferenceManager.TrackFmgDifferences();

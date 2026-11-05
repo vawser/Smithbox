@@ -1,11 +1,16 @@
-﻿using SoulsFormats;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.TextEditor;
 
-public class ChangeFmgEntryText : EditorAction
+public class ChangeFmgEntryText : EditorAction, ITextActionTarget
 {
+    // ITextActionTarget: lets undo/redo select what this action changed
+    public TextContainerWrapper TargetContainer => Info;
+    public FMG TargetFmg => Entry.Parent;
+    public FMG.Entry TargetEntry => Entry;
+
     private TextEditorView Parent;
     private FMG.Entry Entry;
     private string NewText;

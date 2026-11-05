@@ -120,9 +120,16 @@ public class TextEntryGroupManager
         return null;
     }
 
-    public FmgEntryGroup GetEntryGroup(FMG.Entry entry)
+    /// <param name="lookup">
+    /// Optional ID index, shared across one bulk operation. Without it each call scans
+    /// the associated FMGs linearly, which made Select All + Delete/Duplicate O(n²).
+    /// </param>
+    public FmgEntryGroup GetEntryGroup(FMG.Entry entry, FmgEntryLookup lookup = null)
     {
-        if (Parent.Selection.SelectedContainerWrapper == null)
+        if (entry == null)
+            return null;
+
+        if (Parent.Selection.SelectedContainerWrapper?.FmgWrappers == null)
             return null;
 
         if (Parent.Selection.SelectedFmgWrapper == null)
@@ -130,7 +137,7 @@ public class TextEntryGroupManager
 
         return new FmgEntryGroup(this,
             Parent.Selection.SelectedContainerWrapper,
-            Parent.Selection.SelectedFmgWrapper, entry);
+            Parent.Selection.SelectedFmgWrapper, entry, lookup);
     }
 
     /// <summary>
@@ -139,6 +146,15 @@ public class TextEntryGroupManager
     /// </summary>
     /// <returns></returns>
     public List<EntryGroupAssociation> GetGroupings()
+    {
+        // The groupings depend only on the project type, which a view never changes.
+        // They were rebuilt (with boxing enum conversions) several times per frame.
+        return _groupings ??= BuildGroupings();
+    }
+
+    private List<EntryGroupAssociation> _groupings;
+
+    private List<EntryGroupAssociation> BuildGroupings()
     {
         List<EntryGroupAssociation> groupings = new();
 
@@ -929,7 +945,25 @@ public class EntryGroupAssociation
         {
             SupportsEffect = true;
         }
+
+        TitleID = ToBinderID(titleEnum);
+        SummaryID = ToBinderID(summaryEnum);
+        DescriptionID = ToBinderID(descriptionEnum);
+        EffectID = ToBinderID(effectEnum);
     }
+
+    /// <summary>
+    /// Binder ID used for a slot the group doesn't have. Convert.ToInt32(null) is 0,
+    /// so an empty slot used to match a real FMG with binder ID 0.
+    /// </summary>
+    public const int NoBinderID = int.MinValue;
+
+    private static int ToBinderID(Enum value) => value == null ? NoBinderID : Convert.ToInt32(value);
+
+    private readonly int TitleID;
+    private readonly int SummaryID;
+    private readonly int DescriptionID;
+    private readonly int EffectID;
 
     public string GetTitleEnumName()
     {
@@ -937,7 +971,7 @@ public class EntryGroupAssociation
     }
     public int GetTitleEnumID()
     {
-        return Convert.ToInt32(Title);
+        return TitleID;
     }
 
     public string GetSummaryEnumName()
@@ -946,7 +980,7 @@ public class EntryGroupAssociation
     }
     public int GetSummaryEnumID()
     {
-        return Convert.ToInt32(Summary);
+        return SummaryID;
     }
 
     public string GetDescriptionEnumName()
@@ -955,7 +989,7 @@ public class EntryGroupAssociation
     }
     public int GetDescriptionEnumID()
     {
-        return Convert.ToInt32(Description);
+        return DescriptionID;
     }
 
     public string GetEffectEnumName()
@@ -964,7 +998,7 @@ public class EntryGroupAssociation
     }
     public int GetEffectEnumID()
     {
-        return Convert.ToInt32(Effect);
+        return EffectID;
     }
 }
 
@@ -991,11 +1025,16 @@ public class FmgEntryGroup
     /// </summary>
     public bool SupportsGrouping = false;
 
-    public FmgEntryGroup(TextEntryGroupManager entryManager, 
+    private readonly FmgEntryLookup Lookup;
+
+    public FmgEntryGroup(TextEntryGroupManager entryManager,
         TextContainerWrapper containerInfo,
         TextFmgWrapper selectedFmgInfo,
-        FMG.Entry baseEntry)
+        FMG.Entry baseEntry,
+        FmgEntryLookup lookup = null)
     {
+        Lookup = lookup;
+
         var targetBinderID = selectedFmgInfo.ID;
 
         var associationGroup = entryManager.GetGroupings()
@@ -1042,10 +1081,19 @@ public class FmgEntryGroup
 
     public FMG.Entry SetGroupEntry(TextContainerWrapper containerInfo, int targetBndId, FMG.Entry baseEntry)
     {
+        // The group has no FMG for this slot
+        if (targetBndId == EntryGroupAssociation.NoBinderID)
+            return null;
+
         foreach (var fmg in containerInfo.FmgWrappers)
         {
             if (fmg.ID == targetBndId)
             {
+                if (Lookup != null)
+                {
+                    return Lookup.Find(fmg.File, baseEntry.ID);
+                }
+
                 for(var i = 0; i < fmg.File.Entries.Count; i++)
                 { 
                     var curEntry = fmg.File.Entries[i];
@@ -1058,5 +1106,35 @@ public class FmgEntryGroup
         }
 
         return null;
+    }
+}
+
+/// <summary>
+/// Lazily built ID → entry index per FMG, for one bulk operation (Delete, Duplicate).
+/// Matches the linear scan: the first entry with an ID wins. Only valid while the
+/// FMGs aren't modified, so build a new one per operation, before running its actions.
+/// </summary>
+public class FmgEntryLookup
+{
+    private readonly Dictionary<FMG, Dictionary<int, FMG.Entry>> Index = new(ReferenceEqualityComparer.Instance);
+
+    public FMG.Entry Find(FMG fmg, int id)
+    {
+        if (fmg == null)
+            return null;
+
+        if (!Index.TryGetValue(fmg, out var map))
+        {
+            map = new Dictionary<int, FMG.Entry>(fmg.Entries.Count);
+
+            foreach (var entry in fmg.Entries)
+            {
+                map.TryAdd(entry.ID, entry);
+            }
+
+            Index[fmg] = map;
+        }
+
+        return map.TryGetValue(id, out var found) ? found : null;
     }
 }

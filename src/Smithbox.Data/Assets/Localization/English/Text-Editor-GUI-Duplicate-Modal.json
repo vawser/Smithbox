@@ -27,6 +27,14 @@
     {
       "Key": "TEXT_DuplicateModal_Action_Submit",
       "Text": "Submit"
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Skipped_Collisions",
+      "Text": "Skipped {0} duplicates whose new ID already exists (Allow Duplicate ID is off)."
+    },
+    {
+      "Key": "TEXT_DuplicateModal_Invalid_Offset",
+      "Text": "The offset must be a whole number."
     }
   ]
 }
