@@ -1,0 +1,260 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_SearchTool_Local_Header",
+      "Text": "Local Search"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Global_Header",
+      "Text": "Global Search"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Local_Hint",
+      "Text": "Find groups, fields and values in the selected file by their names and values. Fill in any of the inputs: empty ones are ignored, and the rest must all match. The deepest input given decides what is found: groups, fields, or the values of fields. Click a result to jump to it."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Global_Hint",
+      "Text": "Find files, groups, fields and values in every file of the project by their names and values. Fill in any of the inputs: empty ones are ignored, and the rest must all match. The deepest input given decides what is found: files, groups, fields, or the values of fields. Click a result to open its file and jump to it."
+    },
+    {
+      "Key": "GPARAM_SearchTool_No_File",
+      "Text": "Select a file to search."
+    },
+    {
+      "Key": "GPARAM_SearchTool_No_Group",
+      "Text": "Select a group to search."
+    },
+    {
+      "Key": "GPARAM_SearchTool_No_Field",
+      "Text": "Select a field to search."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Scope",
+      "Text": "Scope"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Scope_TT",
+      "Text": "Search the whole of the selected file, or only the selected group or field."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Scope_File",
+      "Text": "Selected File"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Scope_Group",
+      "Text": "Selected Group"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Scope_Field",
+      "Text": "Selected Field"
+    },
+    {
+      "Key": "GPARAM_SearchTool_File",
+      "Text": "File"
+    },
+    {
+      "Key": "GPARAM_SearchTool_File_TT",
+      "Text": "Matches the file name or alias."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Group",
+      "Text": "Group"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Group_TT",
+      "Text": "Matches the internal or annotated name of a group."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Field",
+      "Text": "Field"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Field_TT",
+      "Text": "Matches the internal or annotated name of a field."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Value",
+      "Text": "Value"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Value_TT",
+      "Text": "Matches the value rows of fields: their value, ID or time of day, as chosen on the left. A value also matches by the name of its enum option. Vectors and colours are written as numbers split by commas, colours as R, G, B, A."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Value_Target_TT",
+      "Text": "Which part of a value row the value is matched against."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Value_Target_Value",
+      "Text": "Value"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Value_Target_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Value_Target_Time_Of_Day",
+      "Text": "Time of Day"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Comparison_Contains",
+      "Text": "Contains"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Comparison_Between",
+      "Text": "Between"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Comparison_Contains_TT",
+      "Text": "The value contains the text. With Exact Match, it must equal it, and numbers are compared as numbers."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Comparison_Equals_TT",
+      "Text": "The value equals the input. Numbers are compared as numbers, so 1 finds 1.0. A vector or colour equals a list of the same count of numbers, or a single number that any of its components equals."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Comparison_Not_Equals_TT",
+      "Text": "The value doesn't equal the input."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Comparison_Less_TT",
+      "Text": "The value is less than the number. For a vector or colour, any of its components."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Comparison_Less_Or_Equal_TT",
+      "Text": "The value is less than or equal to the number. For a vector or colour, any of its components."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Comparison_Greater_TT",
+      "Text": "The value is greater than the number. For a vector or colour, any of its components."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Comparison_Greater_Or_Equal_TT",
+      "Text": "The value is greater than or equal to the number. For a vector or colour, any of its components."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Comparison_Between_TT",
+      "Text": "The value is between the two numbers, inclusive. For a vector or colour, any of its components."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Value_Low_Hint",
+      "Text": "From..."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Value_High_Hint",
+      "Text": "To..."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Value_Between_TT",
+      "Text": "The range, inclusive. Either end can be left empty."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Options_Header_TT",
+      "Text": "How the inputs are matched, and the results listed."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Exact",
+      "Text": "Exact Match"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Exact_TT",
+      "Text": "Inputs must equal the text rather than be contained in it. Numbers are compared as numbers, so 1 finds 1.0."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Unique_Values",
+      "Text": "Unique Values Only"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Unique_Values_TT",
+      "Text": "List only the first result of each value found, to see which values are in use."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Actions_Header_TT",
+      "Text": "Run the search, or start over."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Search",
+      "Text": "Search"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Search_TT",
+      "Text": "Runs the search. Leaving an input after changing it, or pressing Enter in it, does the same."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Clear_TT",
+      "Text": "Empties the inputs and the results."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Progress_Header",
+      "Text": "Progress"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Progress_Header_TT",
+      "Text": "The search runs in the background. Results are listed as they are found."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Progress",
+      "Text": "{0} / {1}"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Searching",
+      "Text": "Searching {0}..."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Cancel_TT",
+      "Text": "Stops the search. The results found so far are kept."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Results_Header",
+      "Text": "Results"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Results_Header_TT",
+      "Text": "Click a result to jump to it. The filter narrows the list down without searching again."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Results",
+      "Text": "{0} results"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Results_Truncated",
+      "Text": "Over {0} results; only the first {0} are shown. Narrow the search to see the rest."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Results_Filtered",
+      "Text": "({0} shown)"
+    },
+    {
+      "Key": "GPARAM_SearchTool_Jump_TT",
+      "Text": "Jump to this result."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Stale_Result",
+      "Text": "The search result no longer exists. Search again."
+    },
+    {
+      "Key": "GPARAM_SearchTool_Failed",
+      "Text": "The search failed."
+    },
+    {
+      "Key": "GPARAM_SearchTool_File_Failed",
+      "Text": "Failed to search {0}."
+    }
+  ]
+}

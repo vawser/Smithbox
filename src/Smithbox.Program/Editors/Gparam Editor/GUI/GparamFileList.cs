@@ -144,6 +144,13 @@ public class GparamFileList
             View.Selection.SetFileSelection(fileEntry);
         }
 
+        // Scroll to a file jumped to from a tool
+        if (View.Selection.FocusFile && View.Selection.IsSelectedFile(fileEntry))
+        {
+            View.Selection.FocusFile = false;
+            ImGui.SetScrollHereY(0.5f);
+        }
+
         // Right-click selects the row too, so its context menu opens on it
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right) && !View.Selection.IsSelectedFile(fileEntry))
         {
@@ -260,12 +267,12 @@ public class GparamFileList
                 }
                 GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Target_In_Quick_Edit_TT"));
 
-                // Target in Data Finder
-                if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Target_In_Data_Finder")}##dataFinderTarget"))
+                // Target in Global Search: a local search has the selected file only
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Target_In_Global_Search")}##globalSearchTarget"))
                 {
-                    View.ToolView.DataFinder.UpdateFileFilter(fileEntry.Filename);
+                    View.ToolView.GlobalSearchTool.TargetFile(fileEntry.Filename);
                 }
-                GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Target_In_Data_Finder_TT"));
+                GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Target_In_Global_Search_TT"));
 
                 ImGui.EndMenu();
             }

@@ -105,12 +105,12 @@
       "Text": "Add this file to the File Filter in the Quick Edit window."
     },
     {
-      "Key": "GPARAM_FileList_Context_Target_In_Data_Finder",
-      "Text": "Target in Data Finder"
+      "Key": "GPARAM_FileList_Context_Target_In_Global_Search",
+      "Text": "Target in Global Search"
     },
     {
-      "Key": "GPARAM_FileList_Context_Target_In_Data_Finder_TT",
-      "Text": "Add this file to the File Filter in the Data Finder window."
+      "Key": "GPARAM_FileList_Context_Target_In_Global_Search_TT",
+      "Text": "Fill the Global Search with this file, to find it in every file of the project."
     },
     {
       "Key": "GPARAM_FileList_Context_CopyAs_Filename_Hint",

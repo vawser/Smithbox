@@ -142,6 +142,13 @@ public class GparamFieldList
             View.Selection.SetGparamField(index, field);
         }
 
+        // Scroll to a field jumped to from a tool
+        if (selected && View.Selection.FocusField)
+        {
+            View.Selection.FocusField = false;
+            ImGui.SetScrollHereY(0.5f);
+        }
+
         // Right-click selects the row too, so its context menu opens on it
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right) && !selected)
         {
@@ -285,12 +292,19 @@ public class GparamFieldList
                 }
                 GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Target_In_Quick_Edit_TT"));
 
-                // Target in Data Finder
-                if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Target_In_Data_Finder")}##targetDataFinder"))
+                // Target in Local Search
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Target_In_Local_Search")}##targetLocalSearch"))
                 {
-                    View.ToolView.DataFinder.UpdateFieldFilter(field.Key);
+                    View.ToolView.LocalSearchTool.TargetField(field.Key);
                 }
-                GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Target_In_Data_Finder_TT"));
+                GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Target_In_Local_Search_TT"));
+
+                // Target in Global Search
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Target_In_Global_Search")}##targetGlobalSearch"))
+                {
+                    View.ToolView.GlobalSearchTool.TargetField(field.Key);
+                }
+                GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Target_In_Global_Search_TT"));
 
                 ImGui.EndMenu();
             }

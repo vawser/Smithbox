@@ -96,107 +96,90 @@ public class GparamBank : IDisposable
             return true;
         }
 
-        if (Entries.Any(e => e.Key.Filename == fileEntry.Filename && e.Key.Extension == fileEntry.Extension))
+        var key = Entries.Keys.FirstOrDefault(e => e.Filename == fileEntry.Filename && e.Extension == fileEntry.Extension);
+
+        if (key == null)
+            return false;
+
+        if (!TryReadGraphicsParam(key, out var gparam))
+            return false;
+
+        if (gparam != null)
         {
-            var scriptEntry = Entries.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename && e.Key.Extension == fileEntry.Extension);
-
-            if (scriptEntry.Key != null)
-            {
-                var key = scriptEntry.Key;
-
-                // Container
-                if (scriptEntry.Key.Extension == "gparambnd")
-                {
-                    if (TargetFS.FileExists(key.Path))
-                    {
-                        var bnd = TargetFS.ReadFile(key.Path);
-
-                        var binder = new BND4Reader(bnd.Value);
-
-                        var file = binder.Files.FirstOrDefault(e => Path.GetFileNameWithoutExtension(e.Name) == scriptEntry.Key.Filename);
-
-                        // Internal File
-                        if (file != null)
-                        {
-                            try
-                            {
-                                var gparamData = binder.ReadFile(file);
-
-                                try
-                                {
-                                    var gparam = GPARAM.Read(gparamData);
-
-                                    Entries[key].Gparam = gparam;
-                                    Entries[key].IsDirty = false;
-                                }
-                                catch (Exception e)
-                                {
-                                    Smithbox.LogError(this, 
-                                        LOC.Get("EDITOR_Data_Failed_Read_Internal_File", file.Name), e);
-
-                                    return false;
-                                }
-                            }
-                            catch (Exception e)
-                            {
-                                Smithbox.LogError(this,
-                                    LOC.Get("EDITOR_Data_Failed_Read_Internal_File", file.Name), e);
-                                return false;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Smithbox.LogError(this, 
-                            LOC.Get("EDITOR_Data_Failed_Locate_Container", key.Path));
-
-                        return false;
-                    }
-                }
-                // External File
-                else
-                {
-                    if (TargetFS.FileExists(key.Path))
-                    {
-                        try
-                        {
-                            var gparamData = TargetFS.ReadFile(key.Path);
-
-                            try
-                            {
-                                var gparam = GPARAM.Read(gparamData.Value);
-
-                                Entries[key].Gparam = gparam;
-                                Entries[key].IsDirty = false;
-                            }
-                            catch (Exception e)
-                            {
-                                Smithbox.LogError(this,
-                                    LOC.Get("EDITOR_Data_Failed_Read_External_File", key.Path), e);
-
-                                return false;
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this,
-                                LOC.Get("EDITOR_Data_Failed_Read_External_File", key.Path), e);
-
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        Smithbox.LogError(this,
-                            LOC.Get("EDITOR_Data_Failed_Locate_External_File", key.Path));
-
-                        return false;
-                    }
-                }
-            }
+            Entries[key].Gparam = gparam;
+            Entries[key].IsDirty = false;
         }
-        else
+
+        return true;
+    }
+
+    /// <summary>
+    /// Read the file's GPARAM from the file system without storing it in the bank, so the search can read files
+    /// that aren't open, off the main thread, without opening them. Returns false on failure (logged); the GPARAM is
+    /// null if a container doesn't hold the file.
+    /// </summary>
+    public bool TryReadGraphicsParam(FileDictionaryEntry key, out GPARAM gparam)
+    {
+        gparam = null;
+
+        // Container
+        if (key.Extension == "gparambnd")
         {
+            if (!TargetFS.FileExists(key.Path))
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("EDITOR_Data_Failed_Locate_Container", key.Path));
+
+                return false;
+            }
+
+            var bnd = TargetFS.ReadFile(key.Path);
+
+            var binder = new BND4Reader(bnd.Value);
+
+            var file = binder.Files.FirstOrDefault(e => Path.GetFileNameWithoutExtension(e.Name) == key.Filename);
+
+            // Internal File
+            if (file == null)
+                return true;
+
+            try
+            {
+                var gparamData = binder.ReadFile(file);
+
+                gparam = GPARAM.Read(gparamData);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this,
+                    LOC.Get("EDITOR_Data_Failed_Read_Internal_File", file.Name), e);
+
+                return false;
+            }
+
+            return true;
+        }
+
+        // External File
+        if (!TargetFS.FileExists(key.Path))
+        {
+            Smithbox.LogError(this,
+                LOC.Get("EDITOR_Data_Failed_Locate_External_File", key.Path));
+
+            return false;
+        }
+
+        try
+        {
+            var gparamData = TargetFS.ReadFile(key.Path);
+
+            gparam = GPARAM.Read(gparamData.Value);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this,
+                LOC.Get("EDITOR_Data_Failed_Read_External_File", key.Path), e);
+
             return false;
         }
 

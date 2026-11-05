@@ -10,7 +10,8 @@ public class GparamToolView
     private GparamEditorView View;
     private ProjectEntry Project;
 
-    public GparamDataFinder DataFinder;
+    public GparamSearchTool LocalSearchTool;
+    public GparamSearchTool GlobalSearchTool;
     public GparamDataTransferTool DataTransferTool;
 
     private ToolSections Sections = new();
@@ -20,7 +21,8 @@ public class GparamToolView
         View = view;
         Project = project;
 
-        DataFinder = new(view, project);
+        LocalSearchTool = new(view, project, GparamSearchMode.Local);
+        GlobalSearchTool = new(view, project, GparamSearchMode.Global);
         DataTransferTool = new(view, project);
     }
 
@@ -64,13 +66,16 @@ public class GparamToolView
             }
         }
 
-        if (CFG.Current.Interface_GparamEditor_Tool_Finder)
+        if (CFG.Current.Interface_GparamEditor_Tool_LocalSearch)
         {
-            // Data Finder
-            if (ToolSections.Header($"{LOC.Get("GPARAM_Tools_Data_Finder")}##dataFinderHeader"))
-            {
-                DataFinder.Display();
-            }
+            // Local Search
+            LocalSearchTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_GparamEditor_Tool_GlobalSearch)
+        {
+            // Global Search
+            GlobalSearchTool.OnToolWindow();
         }
 
         if (CFG.Current.Interface_GparamEditor_Tool_QuickEdit)
@@ -120,12 +125,19 @@ public class GparamToolView
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_QuickEdit);
 
-            // Data Finder
-            if (ImGui.MenuItem($"{LOC.Get("GPARAM_Tools_View_Data_Finder")}##dataFinderToggle"))
+            // Local Search
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_Tools_View_Local_Search")}##localSearchToggle"))
             {
-                CFG.Current.Interface_GparamEditor_Tool_Finder = !CFG.Current.Interface_GparamEditor_Tool_Finder;
+                CFG.Current.Interface_GparamEditor_Tool_LocalSearch = !CFG.Current.Interface_GparamEditor_Tool_LocalSearch;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_Finder);
+            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_LocalSearch);
+
+            // Global Search
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_Tools_View_Global_Search")}##globalSearchToggle"))
+            {
+                CFG.Current.Interface_GparamEditor_Tool_GlobalSearch = !CFG.Current.Interface_GparamEditor_Tool_GlobalSearch;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_GlobalSearch);
 
             ImGui.Separator();
 

@@ -43,6 +43,7 @@ public class GparamSelection
     public bool FocusFile = false;
     public bool FocusGroup = false;
     public bool FocusField = false;
+    public bool FocusValue = false;
 
     public GparamSelection(GparamEditorView view, ProjectEntry project)
     {

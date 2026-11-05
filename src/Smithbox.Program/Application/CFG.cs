@@ -1076,7 +1076,8 @@ public class CFG
     public bool Interface_GparamEditor_ToolWindow = true;
     public bool Interface_GparamEditor_Tool_DataTransfer = true;
     public bool Interface_GparamEditor_Tool_QuickEdit = true;
-    public bool Interface_GparamEditor_Tool_Finder = true;
+    public bool Interface_GparamEditor_Tool_LocalSearch = true;
+    public bool Interface_GparamEditor_Tool_GlobalSearch = true;
     public bool Interface_GparamEditor_Tool_ViewportPreview = true;
     public bool Interface_GparamEditor_Tool_ViewportRendering = true;
     public bool Interface_GparamEditor_Tool_GridConfiguration = true;

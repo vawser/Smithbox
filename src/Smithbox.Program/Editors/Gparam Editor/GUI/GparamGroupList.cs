@@ -147,6 +147,13 @@ public class GparamGroupList
             View.FieldListView.InvalidateAddOptions();
         }
 
+        // Scroll to a group jumped to from a tool
+        if (selected && View.Selection.FocusGroup)
+        {
+            View.Selection.FocusGroup = false;
+            ImGui.SetScrollHereY(0.5f);
+        }
+
         // Right-click selects the row too, so its context menu opens on it
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right) && !selected)
         {
@@ -294,12 +301,19 @@ public class GparamGroupList
                 }
                 GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Target_In_Quick_Edit_TT"));
 
-                // Target in Data Finder
-                if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Target_In_Data_Finder")}##dataFinderTarget"))
+                // Target in Local Search
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Target_In_Local_Search")}##localSearchTarget"))
                 {
-                    View.ToolView.DataFinder.UpdateGroupFilter(group.Key);
+                    View.ToolView.LocalSearchTool.TargetGroup(group.Key);
                 }
-                GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Target_In_Data_Finder_TT"));
+                GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Target_In_Local_Search_TT"));
+
+                // Target in Global Search
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Target_In_Global_Search")}##globalSearchTarget"))
+                {
+                    View.ToolView.GlobalSearchTool.TargetGroup(group.Key);
+                }
+                GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Target_In_Global_Search_TT"));
 
                 ImGui.EndMenu();
             }

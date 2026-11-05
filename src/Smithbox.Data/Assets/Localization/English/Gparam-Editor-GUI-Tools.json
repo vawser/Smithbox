@@ -5,10 +5,6 @@
       "Text": "Data Transfer"
     },
     {
-      "Key": "GPARAM_Tools_Data_Finder",
-      "Text": "Data Finder"
-    },
-    {
       "Key": "GPARAM_Tools_Quick_Edit",
       "Text": "Quick Edit"
     },
@@ -29,8 +25,12 @@
       "Text": "Quick Edit"
     },
     {
-      "Key": "GPARAM_Tools_View_Data_Finder",
-      "Text": "Data Finder"
+      "Key": "GPARAM_Tools_View_Local_Search",
+      "Text": "Local Search"
+    },
+    {
+      "Key": "GPARAM_Tools_View_Global_Search",
+      "Text": "Global Search"
     },
     {
       "Key": "GPARAM_Tools_View_Data_Transfer",

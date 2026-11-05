@@ -173,12 +173,20 @@
       "Text": "Add this value to the Value Filter in the Quick Edit window."
     },
     {
-      "Key": "GPARAM_ValueList_Context_Target_In_Data_Finder",
-      "Text": "Target in Data Finder"
+      "Key": "GPARAM_ValueList_Context_Target_In_Local_Search",
+      "Text": "Target in Local Search"
     },
     {
-      "Key": "GPARAM_ValueList_Context_Target_In_Data_Finder_TT",
-      "Text": "Add this value to the Value Filter in the Data Finder window."
+      "Key": "GPARAM_ValueList_Context_Target_In_Local_Search_TT",
+      "Text": "Fill the Local Search with this value's ID, group and field, to find it in the selected file."
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Target_In_Global_Search",
+      "Text": "Target in Global Search"
+    },
+    {
+      "Key": "GPARAM_ValueList_Context_Target_In_Global_Search_TT",
+      "Text": "Fill the Global Search with this value's ID, group and field, to find it in every file of the project."
     }
   ]
 }

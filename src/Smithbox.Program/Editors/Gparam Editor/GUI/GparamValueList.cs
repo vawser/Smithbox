@@ -219,6 +219,13 @@ public class GparamValueList
             View.Selection.SetGparamFieldValue(index, value);
         }
 
+        // Scroll to a value jumped to from a tool
+        if (View.Selection.FocusValue && View.Selection._selectedFieldValueIndex == index)
+        {
+            View.Selection.FocusValue = false;
+            ImGui.SetScrollHereY(0.5f);
+        }
+
         // Right-click selects the row too, so its context menu opens on it.
         // A row already in the multi-selection keeps it, so the menu can act on all of them.
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right) && !isSelected)
@@ -459,25 +466,19 @@ public class GparamValueList
                     }
                     GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Target_In_Quick_Edit_TT"));
 
-                    // Target in Data Finder
-                    if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Target_In_Data_Finder")}##targetDataFinder"))
+                    // Target in Local Search
+                    if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Target_In_Local_Search")}##targetLocalSearch"))
                     {
-                        var fieldIndex = -1;
-                        for (int i = 0; i < field.Values.Count; i++)
-                        {
-                            if (field.Values[i] == value)
-                            {
-                                fieldIndex = i;
-                                break;
-                            }
-                        }
-
-                        if (fieldIndex != -1)
-                        {
-                            View.ToolView.DataFinder.UpdateValueRowFilter(fieldIndex);
-                        }
+                        View.ToolView.LocalSearchTool.TargetValue(group.Key, field.Key, value.ID);
                     }
-                    GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Target_In_Data_Finder_TT"));
+                    GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Target_In_Local_Search_TT"));
+
+                    // Target in Global Search
+                    if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Target_In_Global_Search")}##targetGlobalSearch"))
+                    {
+                        View.ToolView.GlobalSearchTool.TargetValue(group.Key, field.Key, value.ID);
+                    }
+                    GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Target_In_Global_Search_TT"));
 
                     ImGui.EndMenu();
                 }
