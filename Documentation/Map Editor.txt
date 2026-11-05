@@ -27,5 +27,7 @@
 
 - Get gizmos to work in Orthographic/Oblique view mode
 - Add 'camera path' authoring for new camera hkxs for cutscenes
-- Add Object Mass Edit that allows for addition/deletion of map objects programmatically
+
+- Add Local / Global Search impl from Time Act Editor
+- Add Mass Edit impl from Time Act Editor
 

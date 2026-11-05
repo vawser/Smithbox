@@ -144,9 +144,103 @@ public class ModelEditorView : IEditorView
         }
     }
 
+    /// <summary>
+    /// Loads a model into this view in place of the one it has loaded. A model can only be loaded in one view at a
+    /// time, as its objects wrap the FLVER held by the shared model bank.
+    /// Returns false if the model is loaded in another view.
+    /// </summary>
+    public bool LoadModel(ModelWrapper wrapper)
+    {
+        if (wrapper == null)
+            return false;
+
+        var ownerView = wrapper.Container?.View;
+
+        if (ownerView != null && ownerView != this)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_View_Model_Open_In_Other_View", wrapper.Name, ownerView.ViewIndex));
+            return false;
+        }
+
+        // Also unloads the model itself when it is being reloaded
+        Selection.SelectedModelWrapper?.Unload();
+
+        Selection.SelectedModelWrapper = wrapper;
+
+        ViewportActionManager.Clear();
+        ActionManager.Clear();
+
+        wrapper.Load(this);
+
+        return true;
+    }
+
+    /// <summary>
+    /// How many selected objects the editing actions can act on: the model root is not one of them
+    /// </summary>
+    public int GetEditableSelectionCount()
+    {
+        var container = Selection.SelectedModelWrapper?.Container;
+
+        return container != null ? ModelIndexRemapper.GetEditableSelection(this, container).Count : 0;
+    }
+
+    /// <summary>
+    /// Unloads a model loaded in this view. Models loaded in other views are left alone.
+    /// </summary>
+    public void UnloadModel(ModelWrapper wrapper)
+    {
+        if (wrapper == null)
+            return;
+
+        var ownerView = wrapper.Container?.View;
+
+        if (ownerView != null && ownerView != this)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_View_Model_Open_In_Other_View", wrapper.Name, ownerView.ViewIndex));
+            return;
+        }
+
+        if (Selection.SelectedModelWrapper == wrapper)
+        {
+            Selection.SelectedModelWrapper = null;
+        }
+
+        wrapper.Unload();
+    }
+
+    /// <summary>
+    /// Unloads every model loaded in this view, for when the view is closed. Unsaved changes are kept in the bank.
+    /// </summary>
+    public void UnloadAllModels()
+    {
+        ModelAnimationTool.StopAll();
+
+        var bank = Project.Handler.ModelData?.PrimaryBank;
+
+        if (bank != null)
+        {
+            var ownedModels = bank.Models.Values
+                .SelectMany(e => e.Models)
+                .Where(e => e.Container?.View == this)
+                .ToList();
+
+            foreach (var model in ownedModels)
+            {
+                UnloadModel(model);
+            }
+        }
+
+        Selection.SelectedModelWrapper = null;
+        Selection.SelectedModelContainerWrapper = null;
+    }
+
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
         ViewportFilters.Update();
+
+        // Done before the panels are drawn, as the File List that requests it may not be visible
+        FileList.ProcessPendingLoad();
 
         if (CFG.Current.Interface_ModelEditor_EditorDisplayType is EditorDisplayType.Windows)
         {

@@ -53,6 +53,14 @@
       "Text": "Editing Multiple Objects.\nChanges will be applied to all selected objects."
     },
     {
+      "Key": "MODEL_Properties_Mixed_Types",
+      "Text": "The selection contains objects of different types ({0}). Select objects of a single type to edit them together."
+    },
+    {
+      "Key": "MODEL_Properties_Search_Hint_TT",
+      "Text": "Search matches the field names.\n\nStart the search with val: to match field values instead, e.g. val:1000.\nWith the exact match box ticked, the value must match in full."
+    },
+    {
       "Key": "MODEL_Properties_Select_to_Edit",
       "Text": "Select a map object to edit its properties."
     },

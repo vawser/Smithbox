@@ -19,16 +19,25 @@ public class ModelPropertyChangeAction : ViewportAction
     public bool UpdateRenderModel = false;
     public bool ClearName { get; set; }
 
+    /// <param name="ownerObject">The object holding the property, when known. Searching for it by index from the
+    /// entity only keeps the innermost index, so it can find the wrong object in deeply nested data.</param>
     public ModelPropertyChangeAction(ModelEditorView view, PropertyInfo prop, HashSet<Entity> changedEnts, object newval,
-        int index = -1, int classIndex = -1, bool clearName = true)
+        int index = -1, int classIndex = -1, bool clearName = true, object ownerObject = null)
     {
         View = view;
 
         ClearName = clearName;
         ChangedEnts = changedEnts;
+
+        // The owner drawn in the property view is exact, but only applies to the single entity it was drawn from
+        var useOwner = ownerObject != null && changedEnts.Count == 1 &&
+            prop.DeclaringType != null && prop.DeclaringType.IsInstanceOfType(ownerObject);
+
         foreach (Entity o in changedEnts)
         {
-            var propObj = PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, index, classIndex, false);
+            var propObj = useOwner
+                ? ownerObject
+                : PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, index, classIndex, false);
             if (propObj != null)
             {
                 var change = new PropertyChange

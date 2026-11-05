@@ -15,6 +15,14 @@
     {
       "Key": "MODEL_FileList_Context_Unload_Action",
       "Text": "Unload"
+    },
+    {
+      "Key": "MODEL_FileList_Open_In_View",
+      "Text": "[Open in View {0}]"
+    },
+    {
+      "Key": "MODEL_View_Model_Open_In_Other_View",
+      "Text": "Model '{0}' is already open in View {1}. Unload it there, or close that view, to open it here."
     }
   ]
 }

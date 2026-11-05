@@ -570,6 +570,7 @@ public class CFG
 
     public bool ModelEditor_Contents_Auto_Open_Tree = false;
     public bool ModelEditor_Contents_NodeNameInMeshEntry = true;
+    public bool ModelEditor_Contents_Node_Hierarchy = false;
 
     public bool ModelEditor_ViewMeshes = true;
     public bool ModelEditor_ViewDummyPolys = true;

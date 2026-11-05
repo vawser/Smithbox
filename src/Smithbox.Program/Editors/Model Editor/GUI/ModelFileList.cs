@@ -44,6 +44,33 @@ public class ModelFileList
         ImGui.EndChild();
     }
 
+    /// <summary>
+    /// Loads the model requested by picking a container in the Source List. This runs every frame, as the File List
+    /// itself may not be drawn (such as when it is a hidden tab).
+    /// </summary>
+    public void ProcessPendingLoad()
+    {
+        if (!ApplyAutoLoadFirst && !ApplyAutoSelectPass)
+            return;
+
+        var autoLoadFirst = ApplyAutoLoadFirst && CFG.Current.ModelEditor_Files_AutoLoadFirstEntry;
+        var autoSelect = ApplyAutoSelectPass;
+
+        ApplyAutoLoadFirst = false;
+        ApplyAutoSelectPass = false;
+
+        var container = View.Selection.SelectedModelContainerWrapper;
+
+        if (container == null || container.Models.Count == 0)
+            return;
+
+        // A container with a single model always loads it; otherwise only if the first is to be loaded automatically
+        if (autoLoadFirst || (autoSelect && container.Models.Count == 1))
+        {
+            View.LoadModel(container.Models.First());
+        }
+    }
+
     public void DisplayModelSelectionList()
     {
         if (View.Selection.SelectedModelContainerWrapper == null)
@@ -79,73 +106,30 @@ public class ModelFileList
                 displayedName = $"{displayedName}*";
             }
 
+            // Mark models loaded in another view, as they can't be loaded here as well
+            var ownerView = curWrapper.Container?.View;
+
+            if (ownerView != null && ownerView != View)
+            {
+                displayedName = $"{displayedName} {LOC.Get("MODEL_FileList_Open_In_View", ownerView.ViewIndex)}";
+            }
+
+            // Loads the same way as the Source List: on a single click, or a double click if that is required there
+            var requireDoubleClick = CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick;
+
             if (ImGui.Selectable($"{displayedName}##modelSelectListEntry{i}", selected, ImGuiSelectableFlags.AllowDoubleClick))
             {
-                if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                var isLoadClick = requireDoubleClick
+                    ? ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left)
+                    : !selected || curWrapper.Container == null;
+
+                if (isLoadClick)
                 {
-                    if(View.Selection.SelectedModelWrapper != null)
-                    {
-                        View.Selection.SelectedModelWrapper.Unload();
-                    }
-
-                    View.Selection.SelectedModelWrapper = curWrapper;
-
-                    View.ViewportActionManager.Clear();
-                    View.ActionManager.Clear();
-
-                    curWrapper.Load();
+                    View.LoadModel(curWrapper);
                 }
             }
 
             DisplayContextMenu(curWrapper);
-        }
-
-        if (ApplyAutoLoadFirst)
-        {
-            ApplyAutoLoadFirst = false;
-
-            if (CFG.Current.ModelEditor_Files_AutoLoadFirstEntry)
-            {
-                if (container.Models.Count > 0)
-                {
-                    var first = container.Models.First();
-
-                    if (View.Selection.SelectedModelWrapper != null)
-                    {
-                        View.Selection.SelectedModelWrapper.Unload();
-                    }
-
-                    View.Selection.SelectedModelWrapper = first;
-
-                    View.ViewportActionManager.Clear();
-                    View.ActionManager.Clear();
-
-                    first.Load();
-                }
-            }
-        }
-
-        if (ApplyAutoSelectPass)
-        {
-            ApplyAutoSelectPass = false;
-
-            if (container.Models.Count == 1)
-            {
-                foreach (var wrapper in container.Models)
-                {
-                    if (View.Selection.SelectedModelWrapper != null)
-                    {
-                        View.Selection.SelectedModelWrapper.Unload();
-                    }
-
-                    View.Selection.SelectedModelWrapper = wrapper;
-
-                    View.ViewportActionManager.Clear();
-                    View.ActionManager.Clear();
-
-                    wrapper.Load();
-                }
-            }
         }
     }
 
@@ -156,25 +140,13 @@ public class ModelFileList
             // Load
             if (ImGui.Selectable($"{LOC.Get("MODEL_FileList_Context_Load_Action")}##loadAction"))
             {
-                if (View.Selection.SelectedModelWrapper != null)
-                {
-                    View.Selection.SelectedModelWrapper.Unload();
-                }
-
-                View.Selection.SelectedModelWrapper = wrapper;
-
-                View.ViewportActionManager.Clear();
-                View.ActionManager.Clear();
-
-                wrapper.Load();
+                View.LoadModel(wrapper);
             }
 
             // Unload
             if (ImGui.Selectable($"{LOC.Get("MODEL_FileList_Context_Unload_Action")}##unloadAction"))
             {
-                View.Selection.SelectedModelWrapper = null;
-
-                wrapper.Unload();
+                View.UnloadModel(wrapper);
             }
 
             ImGui.EndPopup();

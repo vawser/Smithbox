@@ -1,4 +1,5 @@
-﻿using StudioCore.Application;
+﻿using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,9 @@ public class DeleteModelObjectAction : ViewportAction
 
     private bool Captured = false;
 
+    // The node links and FLVER indices rewritten by the last execution, in the order they were changed
+    private readonly List<IndexChangeRecord> IndexChanges = new();
+
     public DeleteModelObjectAction(
         ModelEditorView view,
         ProjectEntry project,
@@ -36,9 +40,9 @@ public class DeleteModelObjectAction : ViewportAction
         View = view;
         Project = project;
 
-        Targets = targets
-            .Where(t => !targets.Any(o => t != o && IsDescendantOf(t, o)))
-            .ToList();
+        // Every target is removed from the objects, children included: a child left among the objects would still
+        // be saved, referring to the deleted parent node
+        Targets = targets.Distinct().ToList();
     }
 
     public override ActionEvent Execute(bool isRedo = false)
@@ -47,6 +51,27 @@ public class DeleteModelObjectAction : ViewportAction
         {
             CaptureState();
             Captured = true;
+        }
+
+        var containers = GetModelContainers();
+
+        // The materials and nodes as they were, for rewriting the references to those left after the removal
+        var materialsBefore = containers.ToDictionary(c => c, ModelIndexRemapper.GetMaterials);
+        var nodesBefore = containers.ToDictionary(c => c, ModelIndexRemapper.GetNodes);
+
+        IndexChanges.Clear();
+
+        // Deleted nodes are taken out of their sibling chains first, while the chains still use the old indices
+        var nodeLinks = new IndexChangeRecord();
+        IndexChanges.Add(nodeLinks);
+
+        foreach (var r in Records)
+        {
+            if (r.Container is ModelContainer container && r.Entity.WrappedObject is FLVER.Node node)
+            {
+                var nodes = nodesBefore[container];
+                ModelIndexRemapper.UnlinkNode(nodes, nodes.IndexOf(node), nodeLinks);
+            }
         }
 
         foreach (var group in Records
@@ -64,6 +89,13 @@ public class DeleteModelObjectAction : ViewportAction
             Remove(r);
         }
 
+        foreach (var container in containers)
+        {
+            IndexChanges.Add(ModelIndexRemapper.Remap(container, materialsBefore[container], nodesBefore[container]));
+
+            container.RefreshTypeLists();
+        }
+
         View.ViewportSelection.ClearSelection();
 
         return ActionEvent.ObjectAddedRemoved;
@@ -71,6 +103,13 @@ public class DeleteModelObjectAction : ViewportAction
 
     public override ActionEvent Undo()
     {
+        for (var i = IndexChanges.Count - 1; i >= 0; i--)
+        {
+            IndexChanges[i].Revert();
+        }
+
+        IndexChanges.Clear();
+
         foreach (var group in Records
             .Where(r => r.Container != null)
             .GroupBy(r => r.Container))
@@ -86,6 +125,11 @@ public class DeleteModelObjectAction : ViewportAction
             Restore(r);
         }
 
+        foreach (var container in GetModelContainers())
+        {
+            container.RefreshTypeLists();
+        }
+
         View.ViewportSelection.ClearSelection();
         foreach (var r in Records)
         {
@@ -93,6 +137,11 @@ public class DeleteModelObjectAction : ViewportAction
         }
 
         return ActionEvent.ObjectAddedRemoved;
+    }
+
+    private List<ModelContainer> GetModelContainers()
+    {
+        return Records.Select(r => r.Container).OfType<ModelContainer>().Distinct().ToList();
     }
 
     private void CaptureState()
@@ -171,17 +220,5 @@ public class DeleteModelObjectAction : ViewportAction
         {
             e.RenderSceneMesh.RenderSelectionOutline = true;
         }
-    }
-
-    private bool IsDescendantOf(Entity child, Entity potentialParent)
-    {
-        var p = child.Parent;
-        while (p != null)
-        {
-            if (p == potentialParent)
-                return true;
-            p = p.Parent;
-        }
-        return false;
     }
 }

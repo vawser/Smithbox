@@ -51,6 +51,10 @@
     {
       "Key": "MODEL_Framework_Filter_Collision_TT",
       "Text": "Toggle the display of collision."
+    },
+    {
+      "Key": "MODEL_Command_Invalid_Select_Index",
+      "Text": "Model select command ignored: '{0}' is not an index."
     }
   ]
 }

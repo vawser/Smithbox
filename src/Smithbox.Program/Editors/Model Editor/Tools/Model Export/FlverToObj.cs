@@ -64,7 +64,11 @@ public static class FlverToObj
     /// Optional transform applied to positions and normals, see <see cref="BuildTransform"/>.
     /// If omitted, the FLVER coordinates are written unchanged.
     /// </param>
-    public static void Convert(FLVER2 flver, string outputObjPath, IList<MaterialNaming> materialNaming = null, bool flipUVsForOBJ = true, Matrix4x4? transform = null)
+    /// <param name="meshSelection">
+    /// Optional per-mesh flags: meshes whose flag is false are left out. Meshes beyond the end of the list are written.
+    /// </param>
+    public static void Convert(FLVER2 flver, string outputObjPath, IList<MaterialNaming> materialNaming = null, bool flipUVsForOBJ = true, Matrix4x4? transform = null,
+        IReadOnlyList<bool> meshSelection = null)
     {
         string mtlPath = Path.ChangeExtension(outputObjPath, ".mtl");
         string mtlFileName = Path.GetFileName(mtlPath);
@@ -93,6 +97,9 @@ public static class FlverToObj
         {
             FLVER2.Mesh mesh = flver.Meshes[meshIndex];
             if (mesh.Vertices == null || mesh.Vertices.Count == 0)
+                continue;
+
+            if (meshSelection != null && meshIndex < meshSelection.Count && !meshSelection[meshIndex])
                 continue;
 
             bool hasUVs = mesh.Vertices[0].UVs != null && mesh.Vertices[0].UVs.Count > 0;

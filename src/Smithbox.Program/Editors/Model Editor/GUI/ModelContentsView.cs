@@ -126,6 +126,19 @@ public class ModelContentsView : IActionEventHandler
 
         GUI.Tooltip(LOC.Get("MODEL_Contents_TreeState_TT", autoTreeMode));
 
+        // Node Hierarchy
+        ImGui.SameLine();
+        if (ImGui.Button($"{Icons.Sitemap}##toggleNodeHierarchy"))
+        {
+            CFG.Current.ModelEditor_Contents_Node_Hierarchy = !CFG.Current.ModelEditor_Contents_Node_Hierarchy;
+        }
+
+        var hierarchyMode = CFG.Current.ModelEditor_Contents_Node_Hierarchy
+            ? LOC.Get("MODEL_Contents_Node_Hierarchy_On")
+            : LOC.Get("MODEL_Contents_Node_Hierarchy_Off");
+
+        GUI.Tooltip(LOC.Get("MODEL_Contents_Node_Hierarchy_TT", hierarchyMode));
+
         ImGui.EndChild();
     }
 
@@ -150,8 +163,14 @@ public class ModelContentsView : IActionEventHandler
             treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
         }
 
-        var selected = View.ViewportSelection.GetSelection().Contains(modelRoot) || 
+        var selected = View.ViewportSelection.GetSelection().Contains(modelRoot) ||
             View.ViewportSelection.GetSelection().Contains(modelRef);
+
+        // Go To opens the model so its target can be reached
+        if (View.ViewportSelection.GotoTreeTarget is Entity gotoTarget && gotoTarget.Container == container)
+        {
+            ImGui.SetNextItemOpen(true);
+        }
 
         if (selected)
         {
@@ -204,50 +223,87 @@ public class ModelContentsView : IActionEventHandler
     {
         View.EntityTypeCache.AddModelToCache(container);
 
+        var isFiltering = !string.IsNullOrWhiteSpace(ContentTreeFilter);
+        var gotoTarget = View.ViewportSelection.GotoTreeTarget as Entity;
+
         foreach (KeyValuePair<ModelEntityType, Dictionary<Type, List<ModelEntity>>> cats in
                  View.EntityTypeCache._cachedTypeView[container.Name].OrderBy(q => q.Key.ToString()))
         {
-            if (cats.Value.Count > 0)
-            {
-                ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow;
+            var entries = cats.Value.OrderBy(q => q.Key.Name).SelectMany(q => q.Value).ToList();
 
-                if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree)
+            if (entries.Count == 0)
+            {
+                // Empty categories only get in the way of the results while filtering
+                if (!isFiltering)
                 {
-                    treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
+                    ImGui.Text($@"   {cats.Key.ToString()}");
                 }
 
-                if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
+                continue;
+            }
+
+            var matchCount = isFiltering
+                ? entries.Select((e, i) => GetEntryLabel(container, e, i))
+                    .Count(label => EditorFilters.IsMatch(ContentTreeFilter, label, ExactContentTreeFilter))
+                : entries.Count;
+
+            if (isFiltering && matchCount == 0)
+                continue;
+
+            var countText = isFiltering ? $"{matchCount}/{entries.Count}" : $"{entries.Count}";
+
+            ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow;
+
+            // Filtering opens the categories, so the matches can be seen
+            if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree || isFiltering)
+            {
+                treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
+            }
+
+            // Go To opens the category holding its target
+            if (gotoTarget != null && entries.Any(e => e == gotoTarget || IsAncestorOf(e, gotoTarget)))
+            {
+                ImGui.SetNextItemOpen(true);
+            }
+
+            if (ImGui.TreeNodeEx($"{cats.Key} ({countText})###category_{cats.Key}", treeflags))
+            {
+                // The flat list is kept while filtering, as matches can be nested deep within the hierarchy
+                var useHierarchy = cats.Key == ModelEntityType.Node
+                    && CFG.Current.ModelEditor_Contents_Node_Hierarchy
+                    && !isFiltering;
+
+                if (useHierarchy)
                 {
-                    foreach (KeyValuePair<Type, List<ModelEntity>> typ in cats.Value.OrderBy(q => q.Key.Name))
+                    HierarchyView(container, container.RootObject, entries);
+                }
+                else
+                {
+                    for (var index = 0; index < entries.Count; index++)
                     {
-                        if (typ.Value.Count > 0)
-                        {
-                            int index = 0;
+                        var obj = entries[index];
 
-                            foreach (var obj in typ.Value)
-                            {
-                                if (CanDisplayModelObject(container, obj))
-                                {
-                                    ModelObjectSelectable(container, obj, index);
-                                }
-
-                                index++;
-                            }
-                        }
-                        else
+                        if (CanDisplayModelObject(container, obj))
                         {
-                            ImGui.Text($@"   {typ.Key}");
+                            ModelObjectSelectable(container, obj, index);
                         }
                     }
-
-                    ImGui.TreePop();
                 }
-            }
-            else
-            {
-                ImGui.Text($@"   {cats.Key.ToString()}");
+
+                ImGui.TreePop();
             }
         }
+    }
+
+    private static bool IsAncestorOf(Entity ancestor, Entity entity)
+    {
+        for (var parent = entity?.Parent; parent != null; parent = parent.Parent)
+        {
+            if (parent == ancestor)
+                return true;
+        }
+
+        return false;
     }
 
     private void DisplayTopContextMenu(ModelContainer map, bool selected)
@@ -280,7 +336,8 @@ public class ModelContentsView : IActionEventHandler
 
         if (ImGui.IsMouseDoubleClicked(0) && _pendingClick != null && modelRoot == _pendingClick)
         {
-            View.ViewportWindow.Viewport?.FramePosition(modelRoot.GetLocalTransform().Position, 10f);
+            // Frames the whole model
+            View.FrameAction.FrameCurrentEntity(modelRoot);
         }
 
         if ((_pendingClick == modelRoot || modelRef.Equals(_pendingClick)) && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
@@ -329,21 +386,32 @@ public class ModelContentsView : IActionEventHandler
         }
     }
 
-    private void HierarchyView(ModelContainer container, Entity entity)
+    /// <summary>
+    /// Lists the children of an entity as a tree. At the model root, only the entries passed in are listed, as the
+    /// root also holds the meshes, materials and so on.
+    /// </summary>
+    private void HierarchyView(ModelContainer container, Entity entity, List<ModelEntity> rootEntries = null)
     {
-        foreach (Entity obj in entity.Children)
+        var allowed = rootEntries != null ? new HashSet<Entity>(rootEntries) : null;
+
+        foreach (Entity obj in entity.Children.ToList())
         {
-            if (obj is Entity e)
-            {
-                ModelObjectSelectable(container, e, -1, true);
-            }
+            if (allowed != null && !allowed.Contains(obj))
+                continue;
+
+            var index = obj.WrappedObject is FLVER.Dummy
+                ? container.Dummies.IndexOf(obj)
+                : container.Nodes.IndexOf(obj);
+
+            ModelObjectSelectable(container, obj, index, true);
         }
     }
 
-    private unsafe void ModelObjectSelectable(ModelContainer container, Entity e, int index = -1, bool hierarchial = false)
+    /// <summary>
+    /// The text an object is listed under, which the filter also matches against
+    /// </summary>
+    private string GetEntryLabel(ModelContainer container, Entity e, int index)
     {
-        var scale = DPI.UIScale();
-
         var key = $"{LOC.Get("MODEL_Contents_Entry_Title")} {index}";
 
         if (e.SupportsName)
@@ -433,6 +501,15 @@ public class ModelContentsView : IActionEventHandler
             }
         }
 
+        return key;
+    }
+
+    private unsafe void ModelObjectSelectable(ModelContainer container, Entity e, int index = -1, bool hierarchial = false)
+    {
+        var scale = DPI.UIScale();
+
+        var key = GetEntryLabel(container, e, index);
+
         // Main selectable
         if (e is ModelEntity me)
         {
@@ -472,7 +549,13 @@ public class ModelContentsView : IActionEventHandler
                 treeflags |= ImGuiTreeNodeFlags.Selected;
             }
 
-            nodeopen = ImGui.TreeNodeEx(e.PrettyName, treeflags);
+            // Go To opens the nodes above its target
+            if (View.ViewportSelection.GotoTreeTarget is Entity gotoTarget && IsAncestorOf(e, gotoTarget))
+            {
+                ImGui.SetNextItemOpen(true);
+            }
+
+            nodeopen = ImGui.TreeNodeEx($"{key}##{e.PrettyName}", treeflags);
             if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(0))
             {
                 if (e.RenderSceneMesh != null)
@@ -623,9 +706,10 @@ public class ModelContentsView : IActionEventHandler
                 // mixed states whenever the entries didn't all start out the same.
                 var newVisibleState = !entity.EditorVisible;
 
-                foreach (var entry in container.RootObject.Children)
+                // All the objects, as bones and dummies are mostly parented to other bones rather than the root
+                foreach (var entry in container.Objects)
                 {
-                    if (entry.WrappedObject.GetType() == entity.WrappedObject.GetType())
+                    if (entry.WrappedObject?.GetType() == entity.WrappedObject?.GetType())
                     {
                         entry.EditorVisible = newVisibleState;
                     }

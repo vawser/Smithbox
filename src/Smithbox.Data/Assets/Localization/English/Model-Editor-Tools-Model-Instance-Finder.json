@@ -57,6 +57,18 @@
       "Text": "Search through all maps for instances of the specified model name."
     },
     {
+      "Key": "MODEL_InstanceFinder_Reading_Maps",
+      "Text": "Reading maps... {0} / {1}"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Refresh_Action",
+      "Text": "Refresh and Search"
+    },
+    {
+      "Key": "MODEL_InstanceFinder_Refresh_Action_TT",
+      "Text": "Read all the maps again, to include changes made since they were last read, then search them."
+    },
+    {
       "Key": "MODEL_InstanceFinder_Results_Header",
       "Text": "Results"
     },

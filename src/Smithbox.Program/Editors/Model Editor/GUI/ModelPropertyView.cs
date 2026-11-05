@@ -46,6 +46,12 @@ public class ModelPropertyView
 
         EditorFilters.DisplaySearchbar("propSearch_ModelEditor", ref PropertyListFilter, ref ExactPropertyListFilter);
 
+        // Explains the value search, which can't be found otherwise
+        ImGui.SameLine();
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextDisabled(Icons.QuestionCircle);
+        GUI.Tooltip(LOC.Get("MODEL_Properties_Search_Hint_TT"));
+
         // Toggle: Community Names
         GUI.DisplayToggleButton("communityNameToggle", Icons.Book, 
             ref CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names,
@@ -124,12 +130,11 @@ public class ModelPropertyView
         {
             Entity firstEnt = entSelection.First();
 
+            // Only the child begun above is ended here: the window and its colours belong to the caller
             if (firstEnt.WrappedObject == null)
             {
                 ImGui.Text(LOC.Get("MODEL_Properties_Select_to_Edit"));
                 ImGui.EndChild();
-                ImGui.End();
-                ImGui.PopStyleColor(2);
                 return;
             }
 
@@ -150,8 +155,11 @@ public class ModelPropertyView
         var first = entities.First();
         var type = types.First();
 
+        // Only objects of one type can be edited together
         if (types.Count() > 1)
         {
+            GUI.WrappedText(LOC.Get("MODEL_Properties_Mixed_Types",
+                string.Join(", ", types.Select(t => t.Name))));
             return;
         }
 
@@ -276,7 +284,7 @@ public class ModelPropertyView
                 {
                     PropContextRowOpener("arrayTypeCol");
 
-                    ImGui.Text(type.FullName);
+                    ImGui.Text(typ.FullName);
 
                     DisplayContextMenu(fieldName, fieldDescription, prop);
 
@@ -303,7 +311,7 @@ public class ModelPropertyView
                             {
                                 PropContextRowOpener("arrayTypeEntryCol");
 
-                                ImGui.Text(type.FullName);
+                                ImGui.Text(arrtyp.FullName);
 
                                 DisplayContextMenu(fieldName, fieldDescription, prop);
 
@@ -324,7 +332,7 @@ public class ModelPropertyView
                             // Handle property display (and search filtering)
                             if (DisplayProperty(classMeta, obj, prop, type, isMeshData))
                             {
-                                PropGenericFieldRow(classMeta, selection, entSelection, prop, typ.GetElementType(), a.GetValue(i), $@"{fieldName}[{i}]", fieldDescription, i, classIndex);
+                                PropGenericFieldRow(classMeta, selection, entSelection, prop, typ.GetElementType(), a.GetValue(i), $@"{fieldName}[{i}]", fieldDescription, i, classIndex, owner: obj);
                             }
                         }
 
@@ -362,7 +370,7 @@ public class ModelPropertyView
                     {
                         PropContextRowOpener("classTypeCol");
 
-                        ImGui.Text(type.FullName);
+                        ImGui.Text(typ.FullName);
 
                         DisplayContextMenu(fieldName, fieldDescription, prop);
 
@@ -383,7 +391,7 @@ public class ModelPropertyView
                 // Handle property display (and search filtering)
                 if (DisplayProperty(classMeta, obj, prop, type, isMeshData))
                 {
-                    PropGenericFieldRow(classMeta, selection, entSelection, prop, typ, prop.GetValue(obj), $"{fieldName}", fieldDescription, classIndex);
+                    PropGenericFieldRow(classMeta, selection, entSelection, prop, typ, prop.GetValue(obj), $"{fieldName}", fieldDescription, -1, classIndex, owner: obj);
                 }
 
                 ImGui.PopID();
@@ -404,7 +412,8 @@ public class ModelPropertyView
         string description,
         int arrayIndex = -1,
         int classIndex = -1,
-        Action onRemove = null
+        Action onRemove = null,
+        object owner = null
     )
     {
         PropContextRowOpener("nameCol");
@@ -454,12 +463,12 @@ public class ModelPropertyView
         {
             ImGui.NextColumn();
 
-            var reflectedType = prop.ReflectedType;
-            if (reflectedType != null)
+            // The type of the value itself: for list and array entries, that of the element
+            if (type != null)
             {
                 PropContextRowOpener("typecol");
 
-                ImGui.Text(reflectedType.FullName);
+                ImGui.Text(type.FullName);
             }
         }
 
@@ -467,7 +476,7 @@ public class ModelPropertyView
         ModelPropertyDecorators.NodeRefRow(View, classMeta, prop, oldval, ref newval);
         ModelPropertyDecorators.MaterialRefRow(View, classMeta, prop, oldval, ref newval);
 
-        UpdateProperty(prop, entSelection, oldval, newval, changed, committed, arrayIndex, classIndex);
+        UpdateProperty(prop, entSelection, oldval, newval, changed, committed, arrayIndex, classIndex, owner);
 
         ImGui.NextColumn();
     }
@@ -661,7 +670,8 @@ public class ModelPropertyView
                             ImGui.TreePop();
                         }
                     }
-                    if (elementType.IsClass && elementType != typeof(string) && !elementType.IsArray)
+                    // A list of lists is drawn above, and must not be drawn again as a class
+                    else if (elementType.IsClass && elementType != typeof(string) && !elementType.IsArray)
                     {
                         var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
                         GUI.Tooltip(fieldDescription);
@@ -744,7 +754,7 @@ public class ModelPropertyView
                         // Handle property display (and search filtering)
                         if (DisplayProperty(classMeta, obj, prop, elementType, isMeshData))
                         {
-                            PropGenericFieldRow(classMeta, selection, entSelection, prop, elementType, elem, $@"{fieldName}[{i}]", fieldDescription, i, classIndex, OnRemove);
+                            PropGenericFieldRow(classMeta, selection, entSelection, prop, elementType, elem, $@"{fieldName}[{i}]", fieldDescription, i, classIndex, OnRemove, obj);
                         }
                     }
 
@@ -938,10 +948,10 @@ public class ModelPropertyView
             // Copy Field Type
             if (ImGui.Selectable($"{LOC.Get("MODEL_PropertyView_Context_Action_Copy_Type")}##CopyPropType"))
             {
-                var reflectedType = prop.ReflectedType;
-                if (reflectedType != null)
+                var propertyType = prop?.PropertyType;
+                if (propertyType != null)
                 {
-                    PlatformUtils.Instance.SetClipboardText(reflectedType.FullName);
+                    PlatformUtils.Instance.SetClipboardText(propertyType.FullName);
                 }
             }
             GUI.Tooltip(LOC.Get("MODEL_PropertyView_Context_Action_Copy_Type_TT"));
@@ -1124,54 +1134,56 @@ public class ModelPropertyView
                 ImGui.EndDisabled();
             }
         }
+        else if (typ == typeof(Vector4))
+        {
+            var val = (Vector4)oldval;
+            if (ImGui.DragFloat4("##value", ref val, 0.1f))
+            {
+                newval = val;
+                isChanged = true;
+            }
+        }
+        else if (typ == typeof(double))
+        {
+            var val = (double)oldval;
+            if (ImGui.InputDouble("##value", ref val))
+            {
+                newval = val;
+                isChanged = true;
+            }
+        }
+        else if (typ == typeof(ulong))
+        {
+            var val = (ulong)oldval;
+            var strval = $@"{val}";
+
+            var input = new InputTextHandler(strval);
+
+            if (input.Draw("##value", out string newValue))
+            {
+                if (ulong.TryParse(newValue, out val))
+                {
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+        }
         else if (typ.BaseType == typeof(Enum))
         {
             Array enumVals = typ.GetEnumValues();
             var enumNames = typ.GetEnumNames();
             var intVals = new int[enumVals.Length];
 
-            if (typ.GetEnumUnderlyingType() == typeof(byte))
+            // The numbers are only shown beside the names, so any underlying type will do
+            for (var i = 0; i < enumVals.Length; i++)
             {
-                for (var i = 0; i < enumVals.Length; i++)
-                {
-                    intVals[i] = (byte)enumVals.GetValue(i);
-                }
-
-                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
-                {
-                    newval = val;
-                    isChanged = true;
-                }
+                intVals[i] = GetEnumDisplayNumber(enumVals.GetValue(i));
             }
-            else if (typ.GetEnumUnderlyingType() == typeof(int))
-            {
-                for (var i = 0; i < enumVals.Length; i++)
-                {
-                    intVals[i] = (int)enumVals.GetValue(i);
-                }
 
-                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
-                {
-                    newval = val;
-                    isChanged = true;
-                }
-            }
-            else if (typ.GetEnumUnderlyingType() == typeof(uint))
+            if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
             {
-                for (var i = 0; i < enumVals.Length; i++)
-                {
-                    intVals[i] = (int)(uint)enumVals.GetValue(i);
-                }
-
-                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
-                {
-                    newval = val;
-                    isChanged = true;
-                }
-            }
-            else
-            {
-                ImGui.Text("ImplementMe");
+                newval = val;
+                isChanged = true;
             }
         }
         else if (typ == typeof(Color))
@@ -1258,6 +1270,18 @@ public class ModelPropertyView
         return false;
     }
 
+    private static int GetEnumDisplayNumber(object enumValue)
+    {
+        var underlying = Convert.ChangeType(enumValue, Enum.GetUnderlyingType(enumValue.GetType()));
+
+        return underlying switch
+        {
+            ulong u => unchecked((int)u),
+            IConvertible c => unchecked((int)c.ToInt64(null)),
+            _ => 0
+        };
+    }
+
     public float Clamp01(float v) => MathF.Max(0f, MathF.Min(1f, v));
     public Vector4 Clamp01(Vector4 v)
     {
@@ -1289,7 +1313,7 @@ public class ModelPropertyView
     }
 
     private void UpdateProperty(object prop, IEnumerable<Entity> selection,  object oldval, object newval, 
-        bool changed, bool committed, int arrayindex, int classIndex)
+        bool changed, bool committed, int arrayindex, int classIndex, object owner = null)
     {
         foreach (var ent in selection)
         {
@@ -1302,7 +1326,7 @@ public class ModelPropertyView
 
         if (changed)
         {
-            ChangePropertyMultiple(prop, selection, oldval, newval, ref committed, arrayindex, classIndex);
+            ChangePropertyMultiple(prop, selection, oldval, newval, ref committed, arrayindex, classIndex, owner);
 
             foreach (var ent in selection)
             {
@@ -1326,8 +1350,10 @@ public class ModelPropertyView
             }
         }
     }
+    /// <param name="owner">The object the property belongs to, as drawn. Used for a single selection, where it is
+    /// exact; a multiple selection has to find the matching object within each entity.</param>
     private void ChangePropertyMultiple(object prop, IEnumerable<Entity> ents, object oldval, object newval, ref bool committed,
-        int arrayindex = -1, int classIndex = -1)
+        int arrayindex = -1, int classIndex = -1, object owner = null)
     {
         if (prop == _changingPropery && _lastUncommittedAction != null &&
             View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
@@ -1350,7 +1376,7 @@ public class ModelPropertyView
             }
         }
 
-        action = new ModelPropertyChangeAction(View, (PropertyInfo)prop, set, newval, arrayindex, classIndex);
+        action = new ModelPropertyChangeAction(View, (PropertyInfo)prop, set, newval, arrayindex, classIndex, ownerObject: owner);
 
         View.ViewportActionManager.ExecuteAction(action);
 

@@ -174,24 +174,27 @@ public class ModelContainerWrapper
             or ProjectType.DB_NT
             or ProjectType.DB)
         {
-            // '/map/m30/m30_00_00_00/...'
-            if(parts.Length >= 3)
+            // '/map/m30/m30_00_00_00/...' splits into "", "map", "m30", "m30_00_00_00", ...
+            if (parts.Length > 3)
             {
                 MapID = parts[3];
             }
         }
+        else if (Project.Descriptor.ProjectType is ProjectType.DS2
+            or ProjectType.DS2S)
+        {
+            // DS2 keeps the map pieces of a map in one container named after the map
+            if (parts.Length > 3)
+            {
+                MapID = FilePathUtils.GetPureFilename(parts[3]);
+            }
+        }
         else
         {
-            // '/map/m30_00_00_00/...'
-            if (parts.Length >= 2)
+            // '/map/m30_00_00_00/...' splits into "", "map", "m30_00_00_00", ...
+            if (parts.Length > 2)
             {
                 MapID = parts[2];
-
-                if(Project.Descriptor.ProjectType is ProjectType.DS2 
-                    or ProjectType.DS2S)
-                {
-                    MapID = FilePathUtils.GetPureFilename(parts[3]);
-                }
             }
         }
     }
@@ -402,8 +405,19 @@ public class ModelWrapper
     /// </summary>
     public bool IsDirty { get; set; } = false;
 
-    public void Load()
+    /// <summary>
+    /// Load the model into a view. Use <see cref="ModelEditorView.LoadModel"/>, which also handles the selection and
+    /// the model the view had loaded before.
+    /// </summary>
+    public void Load(ModelEditorView view)
     {
+        // The objects of a loaded model wrap the FLVER, so it must not be read again underneath them
+        if (Container != null)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Universe_Model_Already_Loaded", Name));
+            return;
+        }
+
         // Disable the visualisation of these when the file changes
         CFG.Current.DisplayEdgePoints = false;
 
@@ -416,14 +430,7 @@ public class ModelWrapper
         // FLVER
         if (FLVER != null)
         {
-            var modelEditor = Parent.Project.Handler.ModelEditor;
-
-            var activeView = modelEditor.ViewHandler.ActiveView;
-
-            if (activeView != null)
-            {
-                activeView.Universe.LoadModel(this);
-            }
+            view.Universe.LoadModel(this);
         }
     }
 
@@ -850,18 +857,17 @@ public class ModelWrapper
             UpdateFLVER();
         }
 
-        var modelEditor = Parent.Project.Handler.ModelEditor;
+        // The model is unloaded from the view it was loaded into, which need not be the active one
+        var ownerView = Container?.View;
 
-        var activeView = modelEditor.ViewHandler.ActiveView;
-
-        if (activeView != null)
+        if (ownerView != null)
         {
-            activeView.ViewportActionManager.Clear();
-            activeView.ActionManager.Clear();
+            ownerView.ViewportActionManager.Clear();
+            ownerView.ActionManager.Clear();
 
-            activeView.EntityTypeCache.InvalidateCache();
+            ownerView.EntityTypeCache.InvalidateCache();
 
-            activeView.Universe.UnloadModel(this);
+            ownerView.Universe.UnloadModel(this);
         }
     }
 

@@ -36,6 +36,11 @@ public class ModelAnimationTool
         _panel.Update();
     }
 
+    public void StopAll()
+    {
+        _panel.StopAll();
+    }
+
     public void OnToolWindow()
     {
         if (ToolSections.Header($"{LOC.Get("MODEL_Animation_Header")}##modelAnimationHeader"))

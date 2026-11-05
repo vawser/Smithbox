@@ -3,6 +3,10 @@
     {
       "Key": "MODEL_Action_Order_Map_Object_Error",
       "Text": "You can only order one map object at a time."
+    },
+    {
+      "Key": "MODEL_Action_Delete_Blocked",
+      "Text": "Can't delete: other parts of the model still refer to the selected materials or nodes. Remove or change these references first:\n{0}"
     }
   ]
 }

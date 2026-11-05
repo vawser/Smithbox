@@ -9,6 +9,8 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -32,11 +34,22 @@ public class ModelInstanceFinder
 
     private bool SetupSearch = true;
 
+    // Whether the maps in MapList were read from the project files
+    private bool? _cachedTargetProjectFiles = null;
+
     public Dictionary<string, IMsb> MapList = new Dictionary<string, IMsb>();
+
+    // The background read of the maps, and its progress
+    private Task<Dictionary<string, IMsb>> _readTask;
+    private int _readCount;
+    private int _readTotal;
+    private bool _searchPending;
 
     public void OnToolWindow()
     {
         var windowWidth = ImGui.GetWindowWidth();
+
+        UpdateMapRead();
 
         // Model Instance Finder
         if (ToolSections.Header($"{LOC.Get("MODEL_InstanceFinder_Header")}##modelInstanceFinder"))
@@ -77,7 +90,12 @@ public class ModelInstanceFinder
                 "search",
                 LOC.Get("MODEL_InstanceFinder_Search_Action"),
                 LOC.Get("MODEL_InstanceFinder_Search_Action_TT"),
-                SearchMaps);
+                SearchMaps,
+
+                "refresh",
+                LOC.Get("MODEL_InstanceFinder_Refresh_Action"),
+                LOC.Get("MODEL_InstanceFinder_Refresh_Action_TT"),
+                RefreshAndSearchMaps);
 
             // Results
             GUI.Spacer();
@@ -93,6 +111,12 @@ public class ModelInstanceFinder
 
     public void DisplayInstances()
     {
+        if (IsReadingMaps)
+        {
+            GUI.WrappedText(LOC.Get("MODEL_InstanceFinder_Reading_Maps", Volatile.Read(ref _readCount), _readTotal));
+            return;
+        }
+
         if (Matches.Count > 0)
         {
             ImGui.BeginChild("ModelInstanceList");
@@ -117,206 +141,145 @@ public class ModelInstanceFinder
         }
     }
 
+    /// <summary>
+    /// Reads the maps again before searching, to pick up maps changed since they were last read
+    /// </summary>
+    public void RefreshAndSearchMaps()
+    {
+        SetupSearch = true;
+
+        SearchMaps();
+    }
+
+    /// <summary>
+    /// Searches the maps for the model. The maps are read once, in the background, and kept for later searches.
+    /// </summary>
     public void SearchMaps()
     {
+        // A search asked for while the maps are being read runs once they have been
+        if (IsReadingMaps)
+        {
+            _searchPending = true;
+            return;
+        }
+
+        // The maps are read once and kept, so they have to be read again from the other files when the target changes
+        if (_cachedTargetProjectFiles != _targetProjectFiles)
+        {
+            SetupSearch = true;
+        }
+
         if (SetupSearch)
         {
             SetupSearch = false;
 
-            var targetFS = View.Project.VFS.VanillaFS;
-            if(_targetProjectFiles)
-            {
-                targetFS = View.Project.VFS.FS;
-            }
+            StartReadingMaps();
 
-            var maps = View.Project.Locator.MapFiles;
-
-            switch (View.Project.Descriptor.ProjectType)
-            {
-                case ProjectType.DES:
-                    foreach (var entry in maps.Entries)
-                    {
-                        try
-                        {
-                            var msbData = targetFS.ReadFile(entry.Path);
-                            var msb = MSBD.Read(msbData.Value);
-
-                            if (!MapList.ContainsKey(entry.Filename))
-                                MapList.Add(entry.Filename, msb);
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
-                        }
-                    }
-                    break;
-                case ProjectType.DS1:
-                case ProjectType.DS1R:
-                    foreach (var entry in maps.Entries)
-                    {
-                        try
-                        {
-                            var msbData = targetFS.ReadFile(entry.Path);
-                            var msb = MSB1.Read(msbData.Value);
-
-                            if (!MapList.ContainsKey(entry.Filename))
-                                MapList.Add(entry.Filename, msb);
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
-                        }
-                    }
-                    break;
-                case ProjectType.DS2:
-                case ProjectType.DS2S:
-                    foreach (var entry in maps.Entries)
-                    {
-                        try
-                        {
-                            var msbData = targetFS.ReadFile(entry.Path);
-                            var msb = MSB2.Read(msbData.Value);
-
-                            if (!MapList.ContainsKey(entry.Filename))
-                                MapList.Add(entry.Filename, msb);
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
-                        }
-                    }
-                    break;
-                case ProjectType.DS3:
-                    foreach (var entry in maps.Entries)
-                    {
-                        try
-                        {
-                            var msbData = targetFS.ReadFile(entry.Path);
-                            var msb = MSB3.Read(msbData.Value);
-
-                            if (!MapList.ContainsKey(entry.Filename))
-                                MapList.Add(entry.Filename, msb);
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
-                        }
-                    }
-                    break;
-                case ProjectType.BB:
-                    foreach (var entry in maps.Entries)
-                    {
-                        try
-                        {
-                            var msbData = targetFS.ReadFile(entry.Path);
-                            var msb = MSBB.Read(msbData.Value);
-
-                            if (!MapList.ContainsKey(entry.Filename))
-                                MapList.Add(entry.Filename, msb);
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
-                        }
-                    }
-                    break;
-                case ProjectType.SDT:
-                    foreach (var entry in maps.Entries)
-                    {
-                        try
-                        {
-                            var msbData = targetFS.ReadFile(entry.Path);
-                            var msb = MSBS.Read(msbData.Value);
-
-                            if (!MapList.ContainsKey(entry.Filename))
-                                MapList.Add(entry.Filename, msb);
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
-                        }
-                    }
-                    break;
-                case ProjectType.ER:
-                    foreach (var entry in maps.Entries)
-                    {
-                        try
-                        {
-                            var msbData = targetFS.ReadFile(entry.Path);
-                            var msb = MSBE.Read(msbData.Value);
-
-                            if (!MapList.ContainsKey(entry.Filename))
-                                MapList.Add(entry.Filename, msb);
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
-                        }
-                    }
-                    break;
-                case ProjectType.AC6:
-                    foreach (var entry in maps.Entries)
-                    {
-                        try
-                        {
-                            var msbData = targetFS.ReadFile(entry.Path);
-                            var msb = MSB_AC6.Read(msbData.Value);
-
-                            if (!MapList.ContainsKey(entry.Filename))
-                                MapList.Add(entry.Filename, msb);
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
-                        }
-                    }
-                    break;
-                case ProjectType.NR:
-                    foreach (var entry in maps.Entries)
-                    {
-                        try
-                        {
-                            var msbData = targetFS.ReadFile(entry.Path);
-                            var msb = MSB_NR.Read(msbData.Value);
-
-                            if (!MapList.ContainsKey(entry.Filename))
-                                MapList.Add(entry.Filename, msb);
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
-                        }
-                    }
-                    break;
-                case ProjectType.DB_NT:
-                    foreach (var entry in maps.Entries)
-                    {
-                        try
-                        {
-                            var msbData = targetFS.ReadFile(entry.Path);
-                            var msb = MSB_DB_NT.Read(msbData.Value);
-
-                            if (!MapList.ContainsKey(entry.Filename))
-                                MapList.Add(entry.Filename, msb);
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
-                        }
-                    }
-                    break;
-                case ProjectType.DB:
-                    // TODO: Duskbloods
-                    break;
-            }
+            _searchPending = true;
+            return;
         }
 
+        CompileAllResults();
+    }
+
+    private bool IsReadingMaps => _readTask != null && !_readTask.IsCompleted;
+
+    /// <summary>
+    /// Reads every map on a background thread, as reading them all takes a while for the larger games
+    /// </summary>
+    private void StartReadingMaps()
+    {
+        _cachedTargetProjectFiles = _targetProjectFiles;
+
+        var targetFS = _targetProjectFiles ? View.Project.VFS.FS : View.Project.VFS.VanillaFS;
+        var entries = View.Project.Locator.MapFiles.Entries.ToList();
+        var projectType = View.Project.Descriptor.ProjectType;
+
+        _readCount = 0;
+        _readTotal = entries.Count;
+
+        _readTask = Task.Run(() =>
+        {
+            var maps = new Dictionary<string, IMsb>();
+
+            foreach (var entry in entries)
+            {
+                try
+                {
+                    var msbData = targetFS.ReadFile(entry.Path);
+
+                    if (msbData != null)
+                    {
+                        var msb = ReadMsb(projectType, msbData.Value);
+
+                        if (msb != null)
+                        {
+                            maps.TryAdd(entry.Filename, msb);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MODEL_InstanceFinder_Log_Failed_MSB_Read", entry.Path), e);
+                }
+
+                Interlocked.Increment(ref _readCount);
+            }
+
+            return maps;
+        });
+    }
+
+    /// <summary>
+    /// Picks up the maps once they have been read, and runs the search waiting on them. Called every frame.
+    /// </summary>
+    private void UpdateMapRead()
+    {
+        if (_readTask == null || !_readTask.IsCompleted)
+            return;
+
+        if (_readTask.IsCompletedSuccessfully)
+        {
+            MapList = _readTask.Result;
+        }
+
+        _readTask = null;
+
+        if (_searchPending)
+        {
+            _searchPending = false;
+
+            CompileAllResults();
+        }
+    }
+
+    private void CompileAllResults()
+    {
         Matches = new();
 
         foreach (KeyValuePair<string, IMsb> entry in MapList)
         {
             CompileResults(entry.Key, entry.Value);
         }
+    }
+
+    private static IMsb ReadMsb(ProjectType projectType, Memory<byte> data)
+    {
+        return projectType switch
+        {
+            ProjectType.DES => MSBD.Read(data),
+            ProjectType.DS1 or ProjectType.DS1R => MSB1.Read(data),
+            ProjectType.DS2 or ProjectType.DS2S => MSB2.Read(data),
+            ProjectType.DS3 => MSB3.Read(data),
+            ProjectType.BB => MSBB.Read(data),
+            ProjectType.SDT => MSBS.Read(data),
+            ProjectType.ER => MSBE.Read(data),
+            ProjectType.AC6 => MSB_AC6.Read(data),
+            ProjectType.NR => MSB_NR.Read(data),
+            ProjectType.DB_NT => MSB_DB_NT.Read(data),
+            // TODO: Duskbloods
+            _ => null
+        };
     }
 
     public void CompileResults(string mapName, IMsb map)

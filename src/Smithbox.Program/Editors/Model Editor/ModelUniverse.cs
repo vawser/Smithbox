@@ -24,7 +24,9 @@ public class ModelUniverse : IUniverse
     public ViewportSelection Selection { get; }
 
     private Task task;
-    private List<Task> Tasks = new();
+
+    // Counts the loads and unloads, so a load that finishes after another has begun knows it is out of date
+    private int _loadGeneration;
 
     private HashSet<ResourceDescriptor> LoadList_MapPiece_Model = new();
     private HashSet<ResourceDescriptor> LoadList_Character_Model = new();
@@ -45,14 +47,8 @@ public class ModelUniverse : IUniverse
         RenderScene = view.RenderScene;
         Selection = view.ViewportSelection;
 
-        if (RenderScene == null)
-        {
-            CFG.Current.Viewport_Enable_Rendering = false;
-        }
-        else
-        {
-            CFG.Current.Viewport_Enable_Rendering = true;
-        }
+        // Viewport_Enable_Rendering is left to the user: the view always has a render scene, and setting it here
+        // switched rendering back on for every editor whenever a view was created
     }
 
     /// <summary>
@@ -101,24 +97,35 @@ public class ModelUniverse : IUniverse
         {
             ResourceLoadTracker.BeginSession(modelWrapper.Name);
 
+            var loadGeneration = ++_loadGeneration;
+
             try
             {
                 ReserveLoadCategories();
 
-                Tasks = LoadTextures(Tasks, newContainer);
-                await Task.WhenAll(Tasks);
-                Tasks = LoadModels(Tasks, newContainer);
-                await Task.WhenAll(Tasks);
+                // Each load keeps its own tasks, so they don't pile up over the life of the view
+                var textureTasks = LoadTextures(new List<Task>(), newContainer);
+                await Task.WhenAll(textureTasks);
 
-                ScheduleTextureRefresh();
+                var modelTasks = LoadModels(new List<Task>(), newContainer);
+                await Task.WhenAll(modelTasks);
+
+                // Another model was loaded or this one unloaded meanwhile, so the refresh is left to that load
+                if (loadGeneration == _loadGeneration)
+                {
+                    ScheduleTextureRefresh();
+                }
+            }
+            catch (Exception e)
+            {
+                // This method is async void, so an exception would otherwise end the program
+                Smithbox.LogError(this, LOC.Get("MODEL_Universe_Model_Load_Failed", modelWrapper.Name), e);
             }
             finally
             {
                 ResourceLoadTracker.EndSession(modelWrapper.Name);
             }
         }
-
-        await Task.WhenAll(Tasks);
     }
 
     /// <summary>
@@ -193,7 +200,7 @@ public class ModelUniverse : IUniverse
         }
 
         // Object / Asset
-        if (CFG.Current.ModelEditor_TextureLoad_Objects)
+        if (CFG.Current.ModelEditor_ModelLoad_Objects)
         {
             if (modelName.StartsWith('o') || (modelName.StartsWith("AEG") || modelName.StartsWith("aeg")))
             {
@@ -462,6 +469,8 @@ public class ModelUniverse : IUniverse
 
     public void UnloadModel(ModelWrapper modelWrapper)
     {
+        _loadGeneration++;
+
         View.ViewportSelection.ClearSelection();
         View.ViewportActionManager.Clear();
         View.ActionManager.Clear();

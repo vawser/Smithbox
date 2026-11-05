@@ -51,6 +51,10 @@
     {
       "Key": "MODEL_Editor_Invalid_Save_Project_Type_DES",
       "Text": "Model Editor is not supported for DES."
+    },
+    {
+      "Key": "MODEL_Editor_Unsaved_Count",
+      "Text": "({0} unsaved)"
     }
   ]
 }

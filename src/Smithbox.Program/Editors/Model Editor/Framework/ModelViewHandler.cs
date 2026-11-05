@@ -85,6 +85,10 @@ public class ModelViewHandler
             return false;
         }
 
+        // The models of this view are bound to its render scene, so they can't outlive it.
+        // Unsaved changes are kept in the model bank, so the models can be loaded again in another view.
+        view.UnloadAllModels();
+
         Views[view.ViewIndex] = null;
 
         if (view == ActiveView || ActiveView == null)
@@ -152,7 +156,7 @@ public class ModelViewHandler
                         }
                     }
 
-                    ImGui.EndMenu();
+                    ImGui.EndPopup();
                 }
             }
 

@@ -71,6 +71,9 @@ public class ModelExportTool
             GUI.WrappedText(LOC.Get("MODEL_ModelExport_Flver_Current_Source_FLVER_None"));
         }
 
+        // The current FLVER is the loaded model's own, which gains or loses meshes when it is saved
+        SelectionMenu.SyncMeshSelection();
+
         if (SelectionMenu.SourceFlver != null)
         {
             GUI.Spacer();
@@ -93,8 +96,7 @@ public class ModelExportTool
             for (int i = 0; i < SelectionMenu.SourceFlver.Meshes.Count; i++)
             {
                 var mesh = SelectionMenu.SourceFlver.Meshes[i];
-                var material = SelectionMenu.SourceFlver.Materials[mesh.MaterialIndex];
-                var label = LOC.Get("MODEL_ModelExport_Flver_Mesh_Entry", i, material.Name, mesh.Vertices.Count);
+                var label = LOC.Get("MODEL_ModelExport_Flver_Mesh_Entry", i, GetMaterialName(mesh), mesh.Vertices.Count);
 
                 var selected = SelectionMenu.FlverMeshSelection[i];
                 if (ImGui.Checkbox($"{label}##flverMesh{i}", ref selected))
@@ -539,6 +541,16 @@ public class ModelExportTool
         return $"hkm_{matName}_{matProp}";
     }
 
+    // A mesh may point at a material that doesn't exist, which the export writes with the default material
+    private string GetMaterialName(SoulsFormats.FLVER2.Mesh mesh)
+    {
+        var materials = SelectionMenu.SourceFlver.Materials;
+
+        return mesh.MaterialIndex >= 0 && mesh.MaterialIndex < materials.Count
+            ? materials[mesh.MaterialIndex].Name
+            : "material_default";
+    }
+
     public void RefreshCollisionMateriaList()
     {
         CollisionMaterials = new();
@@ -548,11 +560,10 @@ public class ModelExportTool
             for (int i = 0; i < SelectionMenu.SourceFlver.Meshes.Count; i++)
             {
                 var mesh = SelectionMenu.SourceFlver.Meshes[i];
-                var material = SelectionMenu.SourceFlver.Materials[mesh.MaterialIndex];
 
                 CollisionMaterials.Add(new CollisionMaterialDef()
                 {
-                    FlverMaterial = material.Name,
+                    FlverMaterial = GetMaterialName(mesh),
                     CollisionMateral = GetDefaultCollisionMaterial()
                 });
             }
@@ -605,11 +616,13 @@ public class ModelExportTool
                 }
             }
 
-            FlverToObj.Convert(curFlver, outputPath, materialNamingList, CFG.Current.ModelExport_FlipUVs, transform);
+            FlverToObj.Convert(curFlver, outputPath, materialNamingList, CFG.Current.ModelExport_FlipUVs, transform,
+                SelectionMenu.FlverMeshSelection);
         }
         else
         {
-            FlverToObj.Convert(curFlver, outputPath, null, CFG.Current.ModelExport_FlipUVs, transform);
+            FlverToObj.Convert(curFlver, outputPath, null, CFG.Current.ModelExport_FlipUVs, transform,
+                SelectionMenu.FlverMeshSelection);
         }
     }
 

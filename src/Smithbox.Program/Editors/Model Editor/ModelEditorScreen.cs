@@ -89,8 +89,15 @@ public class ModelEditorScreen : EditorScreen
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_Save_TT"));
 
-            // Save All
-            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##saveAllAction"))
+            // Save All: also covers the models that were edited and then unloaded, so show how many there are
+            var unsavedCount = Project.Handler.ModelData?.PrimaryBank?.Models.Values
+                .Sum(e => e.Models.Count(m => m.IsDirty)) ?? 0;
+
+            var saveAllLabel = unsavedCount > 0
+                ? $"{LOC.Get("EDITOR_Menubar_Action_SaveAll")} {LOC.Get("MODEL_Editor_Unsaved_Count", unsavedCount)}"
+                : LOC.Get("EDITOR_Menubar_Action_SaveAll");
+
+            if (ImGui.MenuItem($"{saveAllLabel}##saveAllAction"))
             {
                 SaveAll();
             }

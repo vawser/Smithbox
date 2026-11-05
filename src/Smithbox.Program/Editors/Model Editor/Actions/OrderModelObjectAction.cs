@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
 
+/// <summary>
+/// Moves a model object within the objects of its type. Only a single object can be moved at a time.
+/// </summary>
 public class OrderModelObjectAction : ViewportAction
 {
     private ModelEditorView View;
@@ -18,11 +21,16 @@ public class OrderModelObjectAction : ViewportAction
 
     private ModelContainer Container;
     private List<ModelEntity> Selection = new();
-    private List<Entity> StoredObjectOrder = new();
+
+    // The object order before the last execution, or null if it didn't move anything
+    private List<Entity> StoredObjectOrder;
+
+    // The FLVER indices rewritten by the last execution
+    private IndexChangeRecord IndexChanges;
 
     private TreeObjectOrderMovementType MoveSelectionDir;
 
-    public OrderModelObjectAction(ModelEditorView view, ProjectEntry project, 
+    public OrderModelObjectAction(ModelEditorView view, ProjectEntry project,
        ModelContainer container, List<ModelEntity> objects, TreeObjectOrderMovementType moveDir)
     {
         View = view;
@@ -36,193 +44,80 @@ public class OrderModelObjectAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        // TODO: allow this to work with multi-selections
-        // Will require more rigorous validation of the indices
-        if (Selection.Count > 1)
+        StoredObjectOrder = null;
+        IndexChanges = null;
+
+        if (Container == null || Selection.Count != 1)
+            return ActionEvent.NoEvent;
+
+        var curSel = Selection[0];
+        var index = Container.Objects.IndexOf(curSel);
+
+        // The model root and offset node aren't part of the objects, so they can't be moved
+        if (index == -1 || curSel.WrappedObject == null)
+            return ActionEvent.NoEvent;
+
+        var classType = curSel.WrappedObject.GetType();
+
+        bool IsSameType(int i) => Container.Objects[i].WrappedObject?.GetType() == classType;
+
+        // The run of objects of the same type that the selection belongs to
+        var indexStart = index;
+        while (indexStart > 0 && IsSameType(indexStart - 1))
         {
-            Smithbox.LogError(this, LOC.Get("MODEL_Action_Order_Map_Object_Error"));
+            indexStart--;
         }
-        else
+
+        var indexEnd = index;
+        while (indexEnd < Container.Objects.Count - 1 && IsSameType(indexEnd + 1))
         {
-            if (Selection.Count > 0)
-            {
-                var curSel = Selection.First();
-                var ent = (Entity)curSel;
-
-                // Ignore usage if the selection is the map root itself
-                if (Container == null)
-                {
-                    return ActionEvent.ObjectAddedRemoved;
-                }
-
-                // Store previous object order for undo if needed
-                foreach (var entry in Container.Objects)
-                {
-                    StoredObjectOrder.Add(entry);
-                }
-
-                // Get the 'sub-category' for this map object
-                var classType = ent.WrappedObject.GetType();
-
-                if (Container != null)
-                {
-                    int indexStart = -1;
-                    int indexEnd = -1;
-                    bool isStart = false;
-                    bool foundEnd = false;
-
-                    // Find the sub-category start and end indices
-                    for (int i = 0; i < Container.Objects.Count; i++)
-                    {
-                        var curChild = Container.Objects[i];
-
-                        // Grab the end index for this sub-category (if start has already been found)
-                        if (!foundEnd && isStart && curChild.WrappedObject.GetType() != classType)
-                        {
-                            foundEnd = true;
-                            indexEnd = i - 1;
-                        }
-
-                        // Grab the start index for this sub-category
-                        if (curChild.WrappedObject.GetType() == classType)
-                        {
-                            if (!isStart)
-                            {
-                                isStart = true;
-                                indexStart = i;
-                            }
-                        }
-                    }
-
-                    // If we escape the previous loop without setting the indexEnd,
-                    // then it must be the final index
-                    if (indexEnd == -1)
-                    {
-                        indexEnd = Container.Objects.Count - 1;
-                    }
-
-                    if(indexStart == -1)
-                    {
-                        indexStart = 0;
-                    }
-
-                    // Move Up
-                    if (MoveSelectionDir == TreeObjectOrderMovementType.Up)
-                    {
-                        for (int i = indexStart; i <= indexEnd; i++)
-                        {
-                            if (curSel == Container.Objects[i])
-                            {
-                                if (i < Container.Objects.Count)
-                                {
-                                    if (i == indexStart)
-                                    {
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        var prevEntry = Container.Objects[i - 1];
-                                        Container.Objects[i - 1] = curSel;
-                                        Container.Objects[i] = prevEntry;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // Move Down
-                    if (MoveSelectionDir == TreeObjectOrderMovementType.Down)
-                    {
-                        for (int i = indexStart; i <= indexEnd; i++)
-                        {
-                            if (curSel == Container.Objects[i])
-                            {
-                                if (i < Container.Objects.Count)
-                                {
-                                    if (i == indexEnd)
-                                    {
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        var nextEntry = Container.Objects[i + 1];
-                                        Container.Objects[i + 1] = curSel;
-                                        Container.Objects[i] = nextEntry;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // Move to Top
-                    if (MoveSelectionDir == TreeObjectOrderMovementType.Top)
-                    {
-                        int rootIndex = 0;
-
-                        // Find the index for the moved selection
-                        for (int i = indexStart; i <= indexEnd; i++)
-                        {
-                            if (i < Container.Objects.Count && Container.Objects[i] == curSel)
-                            {
-                                rootIndex = i;
-                            }
-                        }
-
-                        // For all entries above it, move them down
-                        for (int i = rootIndex; i >= indexStart; i--)
-                        {
-                            if (i < Container.Objects.Count && i > 0)
-                            {
-                                Container.Objects[i] = Container.Objects[i - 1];
-                            }
-                        }
-                        // Set top index to selection
-                        Container.Objects[indexStart] = curSel;
-                    }
-
-                    // Move to Bottom
-                    if (MoveSelectionDir == TreeObjectOrderMovementType.Bottom)
-                    {
-                        int rootIndex = 0;
-
-                        // Find the index for the moved selection
-                        for (int i = indexStart; i <= indexEnd; i++)
-                        {
-                            if (i < Container.Objects.Count && Container.Objects[i] == curSel)
-                            {
-                                rootIndex = i;
-                            }
-                        }
-
-                        // For all entries below it, move them up
-                        for (int i = rootIndex; i <= indexEnd; i++)
-                        {
-                            Container.Objects[i] = Container.Objects[i + 1];
-                        }
-
-                        // Set top index to selection
-                        Container.Objects[indexEnd] = curSel;
-                    }
-                }
-            }
+            indexEnd++;
         }
+
+        var targetIndex = MoveSelectionDir switch
+        {
+            TreeObjectOrderMovementType.Up => Math.Max(indexStart, index - 1),
+            TreeObjectOrderMovementType.Down => Math.Min(indexEnd, index + 1),
+            TreeObjectOrderMovementType.Top => indexStart,
+            TreeObjectOrderMovementType.Bottom => indexEnd,
+            _ => index
+        };
+
+        if (targetIndex == index)
+            return ActionEvent.NoEvent;
+
+        StoredObjectOrder = new List<Entity>(Container.Objects);
+
+        var materialsBefore = ModelIndexRemapper.GetMaterials(Container);
+        var nodesBefore = ModelIndexRemapper.GetNodes(Container);
+
+        Container.Objects.RemoveAt(index);
+        Container.Objects.Insert(targetIndex, curSel);
+
+        // Meshes, dummies and nodes refer to materials and nodes by position, so follow the moved entry
+        IndexChanges = ModelIndexRemapper.Remap(Container, materialsBefore, nodesBefore);
+
+        Container.RefreshTypeLists();
+        Container.HasUnsavedChanges = true;
 
         return ActionEvent.ObjectAddedRemoved;
     }
 
     public override ActionEvent Undo()
     {
-        if (Selection.Count > 0)
-        {
-            var curSel = Selection.First();
+        if (StoredObjectOrder == null)
+            return ActionEvent.NoEvent;
 
-            if (Container != null)
-            {
-                Container.Objects = StoredObjectOrder;
-            }
-        }
+        IndexChanges?.Revert();
+        IndexChanges = null;
+
+        // Restored into the existing list, as other objects hold on to it
+        Container.Objects.Clear();
+        Container.Objects.AddRange(StoredObjectOrder);
+
+        StoredObjectOrder = null;
+
+        Container.RefreshTypeLists();
 
         return ActionEvent.ObjectAddedRemoved;
     }

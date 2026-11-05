@@ -58,29 +58,32 @@ public class ReorderAction
     /// </summary>
     public void OnContext()
     {
+        // Only a single object, other than the model root, can be moved
+        var flags = View.GetEditableSelectionCount() == 1 ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled;
+
         // Move Up
-        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Up_Title")}##moveUpAction"))
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Up_Title")}##moveUpAction", false, flags))
         {
             ApplyReorder(TreeObjectOrderMovementType.Up);
         }
         GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Reorder_Up_Context_TT", InputManager.GetHint(KeybindID.Reorder_Up)));
 
         // Move Down
-        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Down_Title")}##moveDownAction"))
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Down_Title")}##moveDownAction", false, flags))
         {
             ApplyReorder(TreeObjectOrderMovementType.Down);
         }
         GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Reorder_Down_Context_TT", InputManager.GetHint(KeybindID.Reorder_Down)));
 
         // Move to Top
-        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Top_Title")}##moveToTopAction"))
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Top_Title")}##moveToTopAction", false, flags))
         {
             ApplyReorder(TreeObjectOrderMovementType.Top);
         }
         GUI.Tooltip(LOC.Get("MODEL_Tools_Action_Reorder_Top_Context_TT", InputManager.GetHint(KeybindID.Reorder_Top)));
 
         // Move to Bottom
-        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Bottom_Title")}##moveToBottomAction"))
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Reorder_Bottom_Title")}##moveToBottomAction", false, flags))
         {
             ApplyReorder(TreeObjectOrderMovementType.Bottom);
         }
@@ -92,26 +95,29 @@ public class ReorderAction
     /// </summary>
     public void OnMenu()
     {
+        // Only a single object, other than the model root, can be moved
+        var enabled = View.GetEditableSelectionCount() == 1;
+
         // Move Up
-        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Up_Title")}##moveUpAction", InputManager.GetHint(KeybindID.Reorder_Up)))
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Up_Title")}##moveUpAction", InputManager.GetHint(KeybindID.Reorder_Up), false, enabled))
         {
             ApplyReorder(TreeObjectOrderMovementType.Up);
         }
 
         // Move Down
-        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Down_Title")}##moveDownAction", InputManager.GetHint(KeybindID.Reorder_Down)))
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Down_Title")}##moveDownAction", InputManager.GetHint(KeybindID.Reorder_Down), false, enabled))
         {
             ApplyReorder(TreeObjectOrderMovementType.Down);
         }
 
         // Move to Top
-        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Top_Title")}##moveToTopAction", InputManager.GetHint(KeybindID.Reorder_Top)))
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Top_Title")}##moveToTopAction", InputManager.GetHint(KeybindID.Reorder_Top), false, enabled))
         {
             ApplyReorder(TreeObjectOrderMovementType.Top);
         }
 
         // Move to Bottom
-        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Bottom_Title")}##moveToBottomAction", InputManager.GetHint(KeybindID.Reorder_Bottom)))
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Reorder_Bottom_Title")}##moveToBottomAction", InputManager.GetHint(KeybindID.Reorder_Bottom), false, enabled))
         {
             ApplyReorder(TreeObjectOrderMovementType.Bottom);
         }
@@ -122,25 +128,28 @@ public class ReorderAction
     /// </summary>
     public void ApplyReorder(TreeObjectOrderMovementType direction)
     {
-        if (View.ViewportSelection.IsSelection())
-        {
-            if (View.Selection.SelectedModelWrapper != null)
-            {
-                var container = View.Selection.SelectedModelWrapper.Container;
+        var container = View.Selection.SelectedModelWrapper?.Container;
 
-                if (container != null)
-                {
-                    var selection = View.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
+        if (container == null)
+            return;
 
-                    var action = new OrderModelObjectAction(View, Project, container, selection, direction);
+        // The model root can't be moved, as it isn't one of the model's objects
+        var selection = ModelIndexRemapper.GetEditableSelection(View, container);
 
-                    View.ViewportActionManager.ExecuteAction(action);
-                }
-            }
-        }
-        else
+        if (selection.Count == 0)
         {
             Smithbox.LogError<ReorderAction>(LOC.Get("MODEL_Tools_Log_No_Object_Selected"));
+            return;
         }
+
+        if (selection.Count > 1)
+        {
+            Smithbox.LogError<ReorderAction>(LOC.Get("MODEL_Action_Order_Map_Object_Error"));
+            return;
+        }
+
+        var action = new OrderModelObjectAction(View, Project, container, selection, direction);
+
+        View.ViewportActionManager.ExecuteAction(action);
     }
 }

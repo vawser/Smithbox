@@ -5,6 +5,7 @@ using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
+using Veldrid.Utilities;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -81,11 +82,20 @@ public class FrameAction
         {
             HashSet<Entity> selected = View.ViewportSelection.GetFilteredSelection<Entity>();
 
-            var entity = selected.FirstOrDefault();
+            // Frames all of the selection together
+            BoundingBox? bounds = null;
 
-            if (entity != null && entity.RenderSceneMesh != null)
+            foreach (var entity in selected)
             {
-                View.ViewportWindow.Viewport.FrameBox(entity.RenderSceneMesh.GetBounds(), offset, distance);
+                if (TryGetBounds(entity, out var entityBounds))
+                {
+                    bounds = bounds == null ? entityBounds : BoundingBox.Combine(bounds.Value, entityBounds);
+                }
+            }
+
+            if (bounds != null)
+            {
+                View.ViewportWindow.Viewport?.FrameBox(bounds.Value, offset, distance);
             }
         }
         else
@@ -99,9 +109,33 @@ public class FrameAction
         var offset = CFG.Current.Viewport_Frame_Offset;
         var distance = CFG.Current.Viewport_Frame_Distance;
 
-        if (entity != null && entity.RenderSceneMesh != null)
+        if (TryGetBounds(entity, out var bounds))
         {
-            View.ViewportWindow.Viewport.FrameBox(entity.RenderSceneMesh.GetBounds(), offset, distance);
+            View.ViewportWindow.Viewport?.FrameBox(bounds, offset, distance);
         }
+    }
+
+    /// <summary>
+    /// The bounds of an entity in the viewport. The model root has no mesh of its own, so it uses the bounds of the
+    /// whole model, which are only known once its meshes have loaded.
+    /// </summary>
+    private bool TryGetBounds(Entity entity, out BoundingBox bounds)
+    {
+        bounds = default;
+
+        if (entity == null)
+            return false;
+
+        if (entity.Container is ModelContainer container && entity == container.RootObject)
+        {
+            return container.TryGetMeshBounds(out bounds);
+        }
+
+        if (entity.RenderSceneMesh == null)
+            return false;
+
+        bounds = entity.RenderSceneMesh.GetBounds();
+
+        return true;
     }
 }

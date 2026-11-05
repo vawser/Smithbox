@@ -29,6 +29,15 @@ public static class ModelPropertyDecorators
             activeView = mapEditorView.Project.Handler.ParamEditor.ViewHandler.ActiveView;
         }
 
+        // Param references in the model metadata, such as material and part IDs
+        if (view is ModelEditorView modelEditorView)
+        {
+            if (modelEditorView.Project.Handler.ParamEditor == null)
+                return false;
+
+            activeView = modelEditorView.Project.Handler.ParamEditor.ViewHandler.ActiveView;
+        }
+
         if (activeView == null)
             return false;
 
@@ -41,7 +50,7 @@ public static class ModelPropertyDecorators
             return false;
         }
 
-        if (fieldMeta.ParamRef == "")
+        if (string.IsNullOrEmpty(fieldMeta.ParamRef))
             return false;
 
         List<ParamRef> refs = new()

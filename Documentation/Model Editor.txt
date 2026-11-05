@@ -9,9 +9,10 @@
 - Animation:
     - Add option to hide non-used bones/dummies during animations
 
+
 - EDGE
  - Read map mapbnd for edges and then associate with FLVER on load for map pieces
 
-- Tools:
-    - Add data transfer (JSON) support for Dummy/Nodes
-        - Add export option on Dummy/Nodes header in Model Contents tree
+- Add Local / Global Search impl from Time Act Editor
+- Add Mass Edit impl from Time Act Editor
+- Add Data Transfer (for dummies)

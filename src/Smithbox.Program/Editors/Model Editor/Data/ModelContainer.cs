@@ -30,6 +30,7 @@ public class ModelContainer : ObjectContainer
     public Entity CLM2_Parent = null;
     public Entity HKXPWV_Parent = null;
     public Entity EDGE_Parent = null;
+    public Entity GRASS_Parent = null;
     public Entity FLVER_Parent = null;
 
     // The collision stored alongside the FLVER for objects
@@ -76,8 +77,65 @@ public class ModelContainer : ObjectContainer
         }
     }
 
+    /// <summary>
+    /// The model the objects were read from, for the data the objects don't hold (such as the vertex layouts)
+    /// </summary>
+    public FLVER2 Flver { get; private set; }
+
+    /// <summary>
+    /// The position of each mesh in the FLVER as it was loaded, which is the submesh its drawable is built from.
+    /// Copies of a mesh are drawn from the submesh of the mesh they were copied from.
+    /// </summary>
+    private readonly Dictionary<Entity, int> MeshSourceIndices = new();
+
+    /// <summary>
+    /// Gives a copied object the same kind of drawable as the object it was copied from, so the copy shows in the
+    /// viewport and can be picked there
+    /// </summary>
+    public void AssignClonedDrawable(Entity original, Entity clone, ModelWrapper wrapper)
+    {
+        if (Smithbox.Instance.CurrentBackend is not RenderingBackend.Vulkan || wrapper == null)
+            return;
+
+        if (clone.RenderSceneMesh != null)
+            return;
+
+        switch (clone.WrappedObject)
+        {
+            case FLVER.Dummy:
+                AssignDummyDrawable(clone, wrapper);
+                break;
+
+            case FLVER.Node:
+                AssignNodeDrawable(clone, wrapper);
+                break;
+
+            case FLVER2.Mesh:
+                if (MeshSourceIndices.TryGetValue(original, out var sourceIndex))
+                {
+                    AssignMeshDrawable(clone, wrapper, sourceIndex);
+                    MeshSourceIndices[clone] = sourceIndex;
+                }
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Brings the per-type lists back in line with the objects, after objects have been added, removed or moved.
+    /// The FLVER indices refer to positions in these lists.
+    /// </summary>
+    public void RefreshTypeLists()
+    {
+        Materials = Objects.Where(e => e.WrappedObject is FLVER2.Material).ToList();
+        Nodes = Objects.Where(e => e.WrappedObject is FLVER.Node).ToList();
+        Dummies = Objects.Where(e => e.WrappedObject is FLVER.Dummy).ToList();
+        Meshes = Objects.Where(e => e.WrappedObject is FLVER2.Mesh).ToList();
+    }
+
     public void Load(FLVER2 flver, ModelWrapper wrapper)
     {
+        Flver = flver;
+
         // CLM2
         if (wrapper.CLM2 != null)
         {
@@ -116,7 +174,7 @@ public class ModelContainer : ObjectContainer
         {
             var newObject = new ModelEntity(View.Universe, this, wrapper.GRASS, ModelEntityType.GRASS);
 
-            EDGE_Parent = newObject;
+            GRASS_Parent = newObject;
 
             Objects.Add(newObject);
             RootObject.AddChild(newObject);
@@ -242,6 +300,8 @@ public class ModelContainer : ObjectContainer
             {
                 AssignMeshDrawable(newObject, wrapper, index);
             }
+
+            MeshSourceIndices[newObject] = index;
 
             Meshes.Add(newObject);
             Objects.Add(newObject);

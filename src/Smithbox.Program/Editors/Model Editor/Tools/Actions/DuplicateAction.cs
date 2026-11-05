@@ -44,7 +44,9 @@ public class DuplicateAction
     public void OnContext()
     {
         // Duplicate
-        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Duplicate_Title")}##duplicateAction"))
+        var flags = View.GetEditableSelectionCount() > 0 ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled;
+
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Duplicate_Title")}##duplicateAction", false, flags))
         {
             ApplyDuplicate();
         }
@@ -58,7 +60,8 @@ public class DuplicateAction
     public void OnMenu()
     {
         // Duplicate
-        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Duplicate_Title")}##duplicateAction", InputManager.GetHint(KeybindID.Duplicate)))
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Duplicate_Title")}##duplicateAction", InputManager.GetHint(KeybindID.Duplicate),
+            false, View.GetEditableSelectionCount() > 0))
         {
             ApplyDuplicate();
         }
@@ -73,14 +76,17 @@ public class DuplicateAction
         if (View.Selection.SelectedModelWrapper == null)
             return;
 
-        if (View.Selection.SelectedModelWrapper.Container == null)
+        var container = View.Selection.SelectedModelWrapper.Container;
+
+        if (container == null)
             return;
 
-        if (View.ViewportSelection.IsSelection())
-        {
-            var selection = View.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
+        // The model root can't be duplicated
+        var selection = ModelIndexRemapper.GetEditableSelection(View, container);
 
-            var action = new CloneModelObjectAction(View, Project, View.Selection.SelectedModelWrapper.Container, selection);
+        if (selection.Count > 0)
+        {
+            var action = new CloneModelObjectAction(View, Project, container, selection);
 
             View.ViewportActionManager.ExecuteAction(action);
         }

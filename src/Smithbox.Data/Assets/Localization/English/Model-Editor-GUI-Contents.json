@@ -63,6 +63,18 @@
     {
       "Key": "MODEL_Contents_TreeState_TT",
       "Text": "Toggle the opening behavior of tree nodes.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "MODEL_Contents_Node_Hierarchy_TT",
+      "Text": "Toggle how nodes are listed.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "MODEL_Contents_Node_Hierarchy_On",
+      "Text": "Hierarchy: nodes are nested under their parent node, with their dummies. The flat list is used while filtering."
+    },
+    {
+      "Key": "MODEL_Contents_Node_Hierarchy_Off",
+      "Text": "Flat list"
     }
   ]
 }

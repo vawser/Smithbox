@@ -39,7 +39,9 @@ public class DeleteAction
     public void OnContext()
     {
         // Delete
-        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Delete_Title")}##deleteAction"))
+        var flags = View.GetEditableSelectionCount() > 0 ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled;
+
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Delete_Title")}##deleteAction", false, flags))
         {
             ApplyDelete();
         }
@@ -52,7 +54,8 @@ public class DeleteAction
     public void OnMenu()
     {
         // Delete
-        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Delete_Title")}##deleteAction",  InputManager.GetHint(KeybindID.Delete)))
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Delete_Title")}##deleteAction",  InputManager.GetHint(KeybindID.Delete),
+            false, View.GetEditableSelectionCount() > 0))
         {
             ApplyDelete();
         }
@@ -67,12 +70,25 @@ public class DeleteAction
         if (View.Selection.SelectedModelWrapper == null)
             return;
 
-        if (View.Selection.SelectedModelWrapper.Container == null)
+        var container = View.Selection.SelectedModelWrapper.Container;
+
+        if (container == null)
             return;
 
-        if (View.ViewportSelection.IsSelection())
+        // The model root can't be deleted
+        var selection = ModelIndexRemapper.GetEditableSelection(View, container);
+
+        if (selection.Count > 0)
         {
-            var selection = View.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
+            // Removing a material or node that is still referred to would leave those references dangling
+            var references = ModelIndexRemapper.FindBlockingReferences(container, selection);
+
+            if (references.Count > 0)
+            {
+                Smithbox.LogError<DeleteAction>(LOC.Get("MODEL_Action_Delete_Blocked",
+                    ModelIndexRemapper.DescribeReferences(references)));
+                return;
+            }
 
             var action = new DeleteModelObjectAction(View, Project, selection);
 

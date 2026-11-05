@@ -24,6 +24,10 @@ public class ModelContainerList
 
     private bool UpdateModelSourceList = true;
 
+    private string _previousFilter = "";
+    private bool _previousExactFilter = false;
+    private bool _previousIncludeAlias = false;
+
     private ModelListType CurrentTab = ModelListType.Character;
     private ModelListType _previousTab = ModelListType.Character;
 
@@ -130,7 +134,15 @@ public class ModelContainerList
 
         EditorFilters.DisplaySearchbar("modelEditor_SourceList", ref ContainerListFilter, ref ExactContainerListFilter);
 
-        bool filterChanged = ImGui.IsItemDeactivatedAfterEdit();
+        // Filters as you type, like the other lists, and when the options the filter uses change
+        bool filterChanged = ContainerListFilter != _previousFilter
+            || ExactContainerListFilter != _previousExactFilter
+            || CFG.Current.ModelEditor_Containers_IncludeAliasInSearch != _previousIncludeAlias;
+
+        _previousFilter = ContainerListFilter;
+        _previousExactFilter = ExactContainerListFilter;
+        _previousIncludeAlias = CFG.Current.ModelEditor_Containers_IncludeAliasInSearch;
+
         bool tabChanged = _previousTab != CurrentTab;
 
         GUI.Tooltip(LOC.Get("MODEL_SourceList_Filter_TT"));
@@ -256,9 +268,14 @@ public class ModelContainerList
 
                     if (CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick)
                     {
-                        if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
+                        if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                         {
                             LoadModel(View.Selection.SelectedModelContainerWrapper);
+                        }
+                        else
+                        {
+                            // A single click only lists the models of the container, so one can be picked
+                            View.Selection.SelectedModelContainerWrapper?.PopulateModelList();
                         }
                     }
                     else

@@ -89,17 +89,7 @@ public class ModelCommandQueue
         if (modelEntry == null)
             return;
 
-        if (curView.Selection.SelectedModelWrapper != null)
-        {
-            curView.Selection.SelectedModelWrapper.Unload();
-        }
-
-        curView.Selection.SelectedModelWrapper = modelEntry;
-
-        curView.ViewportActionManager.Clear();
-        curView.ActionManager.Clear();
-
-        modelEntry.Load();
+        curView.LoadModel(modelEntry);
     }
 
     public void HandleSelectCommand(ModelEditorView curView, string[] commands)
@@ -109,11 +99,17 @@ public class ModelCommandQueue
         if (commands[0] != "select")
             return;
 
-        if (commands.Length <= 1)
+        // select/<type>/<index>
+        if (commands.Length <= 2)
             return;
 
         var type = commands[1];
-        var value = commands[2];
+
+        if (!int.TryParse(commands[2], out var index))
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Command_Invalid_Select_Index", commands[2]));
+            return;
+        }
 
         if (curView.Selection.SelectedModelWrapper == null)
             return;
@@ -123,56 +119,18 @@ public class ModelCommandQueue
         if (container == null)
             return;
 
-        if (type == "dummy")
+        var entries = type switch
         {
-            var index = int.Parse(value);
+            "dummy" => container.Dummies,
+            "node" => container.Nodes,
+            "mesh" => container.Meshes,
+            "material" => container.Materials,
+            _ => null
+        };
 
-            for (int i = 0; i < container.Dummies.Count; i++)
-            {
-                if (index == i)
-                {
-                    target = container.Dummies[i];
-                }
-            }
-        }
-
-        if (type == "node")
+        if (entries != null && index >= 0 && index < entries.Count)
         {
-            var index = int.Parse(value);
-
-            for (int i = 0; i < container.Nodes.Count; i++)
-            {
-                if (index == i)
-                {
-                    target = container.Nodes[i];
-                }
-            }
-        }
-
-        if (type == "mesh")
-        {
-            var index = int.Parse(value);
-
-            for (int i = 0; i < container.Meshes.Count; i++)
-            {
-                if (index == i)
-                {
-                    target = container.Meshes[i];
-                }
-            }
-        }
-
-        if (type == "material")
-        {
-            var index = int.Parse(value);
-
-            for (int i = 0; i < container.Materials.Count; i++)
-            {
-                if (index == i)
-                {
-                    target = container.Materials[i];
-                }
-            }
+            target = entries[index];
         }
 
         if (target != null)

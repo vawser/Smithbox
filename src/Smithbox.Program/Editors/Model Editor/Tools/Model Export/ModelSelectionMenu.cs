@@ -363,4 +363,22 @@ public class ModelSelectionMenu
             Smithbox.LogError(this, LOC.Get("MODEL_FlverSelection_Failed_FLVER_Read", currentWrapper.Name), e);
         }
     }
+
+    /// <summary>
+    /// Keeps a flag per mesh of the source FLVER. The current FLVER is shared with the loaded model, so saving a model
+    /// with added or deleted meshes changes its mesh count. New meshes start selected.
+    /// </summary>
+    public void SyncMeshSelection()
+    {
+        if (SourceFlver == null || FlverMeshSelection.Length == SourceFlver.Meshes.Count)
+            return;
+
+        var previous = FlverMeshSelection;
+
+        FlverMeshSelection = new bool[SourceFlver.Meshes.Count];
+        Array.Fill(FlverMeshSelection, true);
+        Array.Copy(previous, FlverMeshSelection, Math.Min(previous.Length, FlverMeshSelection.Length));
+
+        View.ModelExportTool.RefreshCollisionMateriaList();
+    }
 }

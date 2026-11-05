@@ -1,4 +1,5 @@
-﻿using StudioCore.Application;
+﻿using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Renderer;
@@ -17,6 +18,8 @@ public class CloneModelObjectAction : ViewportAction
     private List<ModelEntity> Clonables = new();
     private List<ModelEntity> Clones = new();
 
+    private IndexChangeRecord NodeLinks;
+
     public CloneModelObjectAction(ModelEditorView view, ProjectEntry project, ModelContainer container, List<ModelEntity> objects)
     {
         View = view;
@@ -34,7 +37,9 @@ public class CloneModelObjectAction : ViewportAction
         {
             var newObj = clonesCached ? Clones[i] : (ModelEntity)Clonables[i].Clone();
 
-            Container.Objects.Insert(Container.Objects.IndexOf(Clonables[i]) + 1, newObj);
+            // Copies go after the last object of their type, as the FLVER refers to materials and nodes by their
+            // position: putting a copy between the existing ones would shift what every later index points at
+            Container.Objects.Insert(GetInsertIndex(Clonables[i]), newObj);
 
             if (Clonables[i].Parent != null)
             {
@@ -46,6 +51,14 @@ public class CloneModelObjectAction : ViewportAction
             {
                 Clones.Add(newObj);
                 Container.HasUnsavedChanges = true;
+
+                // Cloning copies the object but not its drawable, without which the copy can't be seen or picked
+                var wrapper = View.Selection.SelectedModelWrapper;
+
+                if (wrapper?.Container == Container)
+                {
+                    Container.AssignClonedDrawable(Clonables[i], newObj, wrapper);
+                }
             }
             else
             {
@@ -57,9 +70,14 @@ public class CloneModelObjectAction : ViewportAction
             }
         }
 
+        LinkClonedNodes();
+
+        Container.RefreshTypeLists();
+
+        // The copies are selected, so that the next edit applies to them rather than the originals
         View.ViewportSelection.ClearSelection();
 
-        foreach (ModelEntity d in Clonables)
+        foreach (ModelEntity d in Clones)
         {
             View.ViewportSelection.AddSelection(d);
         }
@@ -69,11 +87,14 @@ public class CloneModelObjectAction : ViewportAction
 
     public override ActionEvent Undo()
     {
+        NodeLinks?.Revert();
+        NodeLinks = null;
+
         for (var i = 0; i < Clones.Count(); i++)
         {
             Container.Objects.Remove(Clones[i]);
 
-            if (Clones[i] != null)
+            if (Clones[i].Parent != null)
             {
                 Clones[i].Parent.RemoveChild(Clones[i]);
             }
@@ -85,6 +106,8 @@ public class CloneModelObjectAction : ViewportAction
             }
         }
 
+        Container.RefreshTypeLists();
+
         View.ViewportSelection.ClearSelection();
 
         foreach (ModelEntity d in Clonables)
@@ -93,5 +116,40 @@ public class CloneModelObjectAction : ViewportAction
         }
 
         return ActionEvent.ObjectAddedRemoved;
+    }
+
+    /// <summary>
+    /// The position after the last object with the same type as the given object
+    /// </summary>
+    private int GetInsertIndex(ModelEntity source)
+    {
+        var type = source.WrappedObject?.GetType();
+
+        var lastIndex = Container.Objects.FindLastIndex(e => e.WrappedObject?.GetType() == type);
+
+        if (lastIndex == -1)
+        {
+            lastIndex = Container.Objects.IndexOf(source);
+        }
+
+        return lastIndex + 1;
+    }
+
+    /// <summary>
+    /// A copied node keeps the parent of its original, so it is added to the sibling chain of that parent
+    /// </summary>
+    private void LinkClonedNodes()
+    {
+        NodeLinks = new IndexChangeRecord();
+
+        var nodes = ModelIndexRemapper.GetNodes(Container);
+
+        for (var i = 0; i < Clonables.Count; i++)
+        {
+            if (Clonables[i].WrappedObject is FLVER.Node original && Clones[i].WrappedObject is FLVER.Node clone)
+            {
+                ModelIndexRemapper.LinkClonedNode(nodes, original, clone, NodeLinks);
+            }
+        }
     }
 }
