@@ -83,91 +83,120 @@ public class HavokAnimationClipView
     {
         var tblFlags  = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV;
 
+        UpdateFilteredClips();
+
         if (ImGui.BeginTable($"havokBehaviorElementListSection", 2, tblFlags))
         {
-            for (int i = 0; i < AnimationClips.Count; i++)
+            // Only the visible rows are drawn
+            var clipper = new ImGuiListClipper();
+            clipper.Begin(FilteredClips.Count);
+
+            while (clipper.Step())
             {
-                var entry = AnimationClips[i];
-                var entryName = "unknown";
-
-                if (HavokTypeUtils.IsHKX3(Project))
+                for (int row = clipper.DisplayStart; row < clipper.DisplayEnd; row++)
                 {
-                    var curClipGenerator = (HKLib.hk2018.hkbClipGenerator)entry;
-                    entryName = curClipGenerator.m_name ?? "";
+                    var i = FilteredClips[row];
+                    var entry = AnimationClips[i];
+                    var entryName = GetClipName(entry);
 
-                    if (RebuildAliasCache)
+                    var selected = SelectedAnimationClips.Contains(entry);
+
+                    var alias = _aliasCache.GetValueOrDefault(entryName) ?? "";
+
+                    // ID
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    if (ImGui.Selectable($"{entryName}##clipGenerator_{entryName}{i}", selected))
                     {
-                        var id = entryName;
-                        var curAlias = Project.Handler.HavokData.GetHavokObjectName(View.Selection.FilePath, id);
-
-                        _aliasCache.TryAdd(id, curAlias);
+                        if (InputManager.HasCtrlDown())
+                        {
+                            SelectedAnimationClips.Add(entry);
+                        }
+                        else
+                        {
+                            SelectedAnimationClips.Clear();
+                            SelectedAnimationClips.Add(entry);
+                        }
                     }
+
+                    // Alias
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+                    if (ImGui.Selectable($"{alias}##clipGenerator_Alias_{entryName}{i}", selected))
+                    {
+                        if (InputManager.HasCtrlDown())
+                        {
+                            SelectedAnimationClips.Add(entry);
+                        }
+                        else
+                        {
+                            SelectedAnimationClips.Clear();
+                            SelectedAnimationClips.Add(entry);
+                        }
+                    }
+                    ImGui.PopStyleColor(1);
                 }
-                else if (HavokTypeUtils.IsHKX2(Project))
-                {
-                    var curClipGenerator = (HKX2.hkbClipGenerator)entry;
-                    entryName = curClipGenerator.m_name ?? "";
-
-                    if (RebuildAliasCache)
-                    {
-                        var id = entryName;
-                        var curAlias = Project.Handler.HavokData.GetHavokObjectName(View.Selection.FilePath, id);
-
-                        _aliasCache.TryAdd(id, curAlias);
-                    }
-                }
-
-                var selected = SelectedAnimationClips.Contains(entry);
-
-                var alias = _aliasCache.GetValueOrDefault(entryName);
-
-                var isMatch = EditorFilters.IsMatch(Owner.PropFilter, entryName, Owner.ExactPropFilter, alias);
-
-                if (!isMatch)
-                    continue;
-
-                // ID
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
-
-                if (ImGui.Selectable($"{entryName}##clipGenerator_{entryName}{i}", selected))
-                {
-                    if (InputManager.HasCtrlDown())
-                    {
-                        SelectedAnimationClips.Add(entry);
-                    }
-                    else
-                    {
-                        SelectedAnimationClips.Clear();
-                        SelectedAnimationClips.Add(entry);
-                    }
-                }
-
-                // Alias
-                ImGui.TableSetColumnIndex(1);
-
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
-                if (ImGui.Selectable($"{alias}##clipGenerator_Alias_{entryName}{i}", selected))
-                {
-                    if (InputManager.HasCtrlDown())
-                    {
-                        SelectedAnimationClips.Add(entry);
-                    }
-                    else
-                    {
-                        SelectedAnimationClips.Clear();
-                        SelectedAnimationClips.Add(entry);
-                    }
-                }
-                ImGui.PopStyleColor(1);
             }
 
-            if (RebuildAliasCache)
-            {
-                RebuildAliasCache = false;
-            }
+            clipper.End();
 
             ImGui.EndTable();
+        }
+    }
+
+    // Indices into AnimationClips of the rows that pass the filter, rebuilt only when the filter,
+    // the clip list or the aliases change (behavior files can hold thousands of clips)
+    private List<int> FilteredClips = new();
+    private string FilteredFilter;
+    private bool FilteredExact;
+    private bool RefilterClips = true;
+
+    private string GetClipName(IClipGenerator entry)
+    {
+        return entry switch
+        {
+            HKLib.hk2018.hkbClipGenerator hkx3 => hkx3.m_name ?? "",
+            HKX2.hkbClipGenerator hkx2 => hkx2.m_name ?? "",
+            _ => "unknown"
+        };
+    }
+
+    private void UpdateFilteredClips()
+    {
+        if (RebuildAliasCache)
+        {
+            _aliasCache.Clear();
+
+            foreach (var entry in AnimationClips)
+            {
+                var id = GetClipName(entry);
+
+                if (!_aliasCache.ContainsKey(id))
+                    _aliasCache[id] = Project.Handler.HavokData.GetHavokObjectName(View.Selection.FilePath, id);
+            }
+
+            RebuildAliasCache = false;
+            RefilterClips = true;
+        }
+
+        if (!RefilterClips && FilteredFilter == Owner.PropFilter && FilteredExact == Owner.ExactPropFilter)
+            return;
+
+        RefilterClips = false;
+        FilteredFilter = Owner.PropFilter;
+        FilteredExact = Owner.ExactPropFilter;
+
+        FilteredClips.Clear();
+
+        for (int i = 0; i < AnimationClips.Count; i++)
+        {
+            var entryName = GetClipName(AnimationClips[i]);
+            var alias = _aliasCache.GetValueOrDefault(entryName) ?? "";
+
+            if (EditorFilters.IsMatch(Owner.PropFilter, entryName, Owner.ExactPropFilter, alias))
+                FilteredClips.Add(i);
         }
     }
 

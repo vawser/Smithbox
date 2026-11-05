@@ -116,9 +116,15 @@ public class HavokSelection
         }
     }
 
+    /// <summary>
+    /// Bumped whenever the binder aliases are rebuilt, so the binder list knows to re-filter
+    /// </summary>
+    public int BinderAliasVersion = 0;
+
     public void BuildBinderAliasCache(HashSet<FileDictionaryEntry> entries)
     {
         BinderAliasCache.Clear();
+        BinderAliasVersion++;
 
         if (!CFG.Current.HavokEditor_BinderList_Display_Aliases)
             return;

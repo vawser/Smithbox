@@ -21,11 +21,19 @@
     - Include support for more project types (contingent on compatability)
  
 Add support for:
-    - Adding a Havok Variable to a Havok Object that accepts them (i.e. ClipGenerator)
+    - Assign a Havok Variable to a Havok Object that accepts them (i.e. ClipGenerator)
+        - Both in the Outline mode and in the Animation Clips mode
     - Remove a Havok Variable from a Havok Object
-    - Duplicating a CMSG
-    - Deleting a CMSG
+        - Both in the Outline mode and in the Animation Clips mode
+        
+    - Duplicate a CMSG
+        - Both in the Outline mode and in the Animation Selectors mode
+    - Delete CMSG
+        - Both in the Outline mode and in the Animation Selectors mode
+        
+    - Duplicate Havok Variable in Variables mode
+    - Delete Havok Variable in Variables mode
     
-Noted issues:
-    - Frame lag when viewing Animation Clips list (likely due to aliases)
-    - Frame lag when viewing Asset Collision list (likely due to aliases)
+    - Duplicate State Machine in State Machines mode
+        - Duplicates all non-shared children (and assigns them to new object)
+    - Delete State Machine in State Machines mode

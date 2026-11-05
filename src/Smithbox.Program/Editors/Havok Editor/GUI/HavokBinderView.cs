@@ -71,75 +71,112 @@ public class HavokBinderView
         }
     }
 
+    // The filtered binder list, rebuilt only when something it depends on changes.
+    // Asset collision alone has thousands of binders, so filtering every frame stalls the editor.
+    private List<FileDictionaryEntry> FilteredEntries = new();
+    private HashSet<FileDictionaryEntry> FilteredSource;
+    private int FilteredSourceCount = -1;
+    private string FilteredFilter;
+    private bool FilteredExact;
+    private bool FilteredFullPath;
+    private int FilteredCollisionType = -1;
+    private int FilteredAliasVersion = -1;
+
+    private void UpdateFilteredEntries(HashSet<FileDictionaryEntry> entries)
+    {
+        var fullPath = CFG.Current.HavokEditor_BinderList_Display_Full_Path;
+        var collisionType = View.Selection.CategoryMode is HavokCategoryMode.Map_Collision
+            ? CFG.Current.HavokEditor_FileList_Collision_Type_Filter
+            : 0;
+
+        if (FilteredSource == entries
+            && FilteredSourceCount == entries.Count
+            && FilteredFilter == BinderFilter
+            && FilteredExact == ExactBinderFilter
+            && FilteredFullPath == fullPath
+            && FilteredCollisionType == collisionType
+            && FilteredAliasVersion == View.Selection.BinderAliasVersion)
+            return;
+
+        FilteredSource = entries;
+        FilteredSourceCount = entries.Count;
+        FilteredFilter = BinderFilter;
+        FilteredExact = ExactBinderFilter;
+        FilteredFullPath = fullPath;
+        FilteredCollisionType = collisionType;
+        FilteredAliasVersion = View.Selection.BinderAliasVersion;
+
+        FilteredEntries.Clear();
+
+        foreach (var entry in entries)
+        {
+            var displayName = fullPath ? entry.Path : entry.Filename;
+
+            View.Selection.BinderAliasCache.TryGetValue(entry.Filename, out var binderAlias);
+
+            if (!EditorFilters.IsMatch(BinderFilter, displayName, ExactBinderFilter, binderAlias ?? ""))
+                continue;
+
+            if (collisionType == 1 && !entry.Filename.StartsWith("l"))
+                continue;
+
+            if (collisionType == 2 && !entry.Filename.StartsWith("h"))
+                continue;
+
+            if (collisionType == 3 && !entry.Filename.StartsWith("f"))
+                continue;
+
+            FilteredEntries.Add(entry);
+        }
+    }
+
     public void DisplayBinderList(HashSet<FileDictionaryEntry> entries)
     {
         DisplayHeader();
 
         ImGui.BeginChild("havokBinderSection", ImGuiChildFlags.Borders);
 
-        foreach (var entry in entries)
+        UpdateFilteredEntries(entries);
+
+        var bankDict = View.HavokBank.GetBank(View.Selection.CategoryMode);
+
+        // Only the visible rows are drawn (rows are one line each, which the clipper relies on)
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(FilteredEntries.Count);
+
+        while (clipper.Step())
         {
-            var selected = View.Selection.BinderFileEntry == entry;
-            var displayName = entry.Filename;
-
-            if(CFG.Current.HavokEditor_BinderList_Display_Full_Path)
+            for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
             {
-                displayName = entry.Path;
-            }
+                var entry = FilteredEntries[i];
+                var selected = View.Selection.BinderFileEntry == entry;
+                var displayName = FilteredFullPath ? entry.Path : entry.Filename;
 
-            // Normal filter
-            View.Selection.BinderAliasCache.TryGetValue(entry.Filename, out var binderAlias);
-            var isMatch = EditorFilters.IsMatch(BinderFilter, displayName, ExactBinderFilter, binderAlias ?? "");
-
-            if (!isMatch)
-                continue;
-
-            if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
-            {
-                if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 1)
+                // Mark binders that contain files with unsaved changes
+                if (bankDict != null && View.HavokBank.IsBinderDirty(bankDict, entry))
                 {
-                    if (!entry.Filename.StartsWith("l"))
-                        continue;
+                    displayName = $"{displayName}*";
                 }
-                else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 2)
+
+                if (ImGui.Selectable($"{displayName}##binderEntry_{entry.Filename}", selected))
                 {
-                    if (!entry.Filename.StartsWith("h"))
-                        continue;
+                    View.Selection.ClearFileSelection();
+                    View.Selection.BinderFileEntry = entry;
+
+                    View.Selection.ClearFileAliasCache();
+                    PopulateFileList(true);
                 }
-                else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 3)
+
+                if (CFG.Current.HavokEditor_BinderList_Display_Aliases
+                    && View.Selection.BinderAliasCache.TryGetValue(entry.Filename, out var alias))
                 {
-                    if (!entry.Filename.StartsWith("f"))
-                        continue;
-                }
-            }
-
-
-            // Mark binders that contain files with unsaved changes
-            var bankDict = View.HavokBank.GetBank(View.Selection.CategoryMode);
-
-            if (bankDict != null && View.HavokBank.IsBinderDirty(bankDict, entry))
-            {
-                displayName = $"{displayName}*";
-            }
-
-            if (ImGui.Selectable($"{displayName}##binderEntry_{entry.Filename}", selected))
-            {
-                View.Selection.ClearFileSelection();
-                View.Selection.BinderFileEntry = entry;
-
-                View.Selection.ClearFileAliasCache();
-                PopulateFileList(true);
-
-            }
-
-            if (CFG.Current.HavokEditor_BinderList_Display_Aliases)
-            {
-                if (View.Selection.BinderAliasCache.ContainsKey(entry.Filename))
-                {
-                    GUI.DisplayAlias(View.Selection.BinderAliasCache[entry.Filename]);
+                    // Not wrapped: a wrapped alias would make the row taller than the clipper expects
+                    GUI.DisplayAlias(alias, false);
                 }
             }
         }
+
+        clipper.End();
 
         ImGui.EndChild();
     }
