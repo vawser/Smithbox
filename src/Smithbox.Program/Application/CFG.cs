@@ -675,6 +675,7 @@ public class CFG
     public bool Interface_TimeActEditor_Tool_LocalSearch = true;
     public bool Interface_TimeActEditor_Tool_GlobalSearch = true;
     public bool Interface_TimeActEditor_Tool_MassEdit = true;
+    public bool Interface_TimeActEditor_Tool_ComboBuilder = true;
 
     public float TimeActEditor_Graph_Frame_Width = 10f;
     public bool TimeActEditor_DisplayDummies = true;

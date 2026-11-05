@@ -2079,6 +2079,162 @@
     {
       "Key": "TAE_SearchTool_Send_To_Mass_Edit_TT",
       "Text": "Fills in the Mass Edit filter from this search and finds the results there, so they can be edited, deleted or added to all at once."
+    },
+    {
+      "Key": "TAE_ToolWindow_View_Toggle_Combo_Builder",
+      "Text": "Combo Builder"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Header",
+      "Text": "Combo Builder"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Hint",
+      "Text": "Plays a list of animations one after another, to show what a combo looks like. Each step is selected in turn, so the events follow along."
+    },
+    {
+      "Key": "TAE_ComboBuilder_No_Source",
+      "Text": "Select a time act source to build a combo for it."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Add_Header",
+      "Text": "Add"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Add_Header_TT",
+      "Text": "Animations can also be added from the right-click menu of the animation list."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Add_Selected",
+      "Text": "Add Selected Animation"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Add_Selected_TT",
+      "Text": "Adds the selected animation to the end of the combo."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Steps_Header",
+      "Text": "Steps"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Steps_Header_TT",
+      "Text": "The animations of the combo, in the order they play. Each source keeps its own combo for the session."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Empty",
+      "Text": "The combo is empty. Add an animation to start it."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Column_Animation",
+      "Text": "Animation"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Column_Start",
+      "Text": "Start"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Column_End",
+      "Text": "End"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Start_TT",
+      "Text": "The frame the step starts playing from."
+    },
+    {
+      "Key": "TAE_ComboBuilder_End_TT",
+      "Text": "The frame the step cuts to the next one at, such as where the attack can be cancelled. -1 plays the clip to its end."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Play_From_TT",
+      "Text": "Plays the combo from this step."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Move_Up_TT",
+      "Text": "Moves this step earlier in the combo."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Move_Down_TT",
+      "Text": "Moves this step later in the combo."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Remove_TT",
+      "Text": "Removes this step from the combo."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Options_Header_TT",
+      "Text": "How the combo plays."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Loop",
+      "Text": "Loop Combo"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Loop_TT",
+      "Text": "Starts the combo over once the last step ends."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Actions_Header_TT",
+      "Text": "Selecting another animation while the combo plays stops it."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Play",
+      "Text": "Play Combo"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Play_TT",
+      "Text": "Plays the combo from the first step."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Stop",
+      "Text": "Stop Combo"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Stop_TT",
+      "Text": "Stops the combo, and pauses on the current frame."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Clear",
+      "Text": "Clear Combo"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Clear_TT",
+      "Text": "Removes every step from the combo."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Status_Loading",
+      "Text": "Loading step {0} of {1}"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Status_Playing",
+      "Text": "Playing step {0} of {1}"
+    },
+    {
+      "Key": "TAE_ComboBuilder_Status_Paused",
+      "Text": "Paused on step {0} of {1}. Play to carry on."
+    },
+    {
+      "Key": "TAE_ComboBuilder_Animation_Not_Found",
+      "Text": "Combo Builder: animation {0} could not be found, so it was skipped"
+    },
+    {
+      "Key": "TAE_ComboBuilder_No_Animations_Found",
+      "Text": "Combo Builder: none of the animations of the combo could be found"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Add_To_Combo",
+      "Text": "Add to Combo"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Add_To_Combo_TT",
+      "Text": "Adds this animation to the end of the combo in the Combo Builder tool."
     }
   ]
 }

@@ -37,6 +37,10 @@ public class TimeActPlayback
     // Only the latest request plays, however the loads end up finishing
     private int _request;
 
+    // The latest request has yet to pick its clip, and the clip it picked
+    private bool _clipPending;
+    private AnimationEntry? _expectedClip;
+
     private float _time;
     private bool _playing;
 
@@ -50,6 +54,13 @@ public class TimeActPlayback
     /// The selected animation has no clip that could be found
     /// </summary>
     public bool IsClipMissing { get; private set; }
+
+    /// <summary>
+    /// The clip of the selected animation is still on its way to the model. Once this is false, the
+    /// clock runs on the clip, or on the events if there is no clip.
+    /// </summary>
+    public bool IsClipLoading => _clipPending ||
+        !IsClipMissing && (Animator == null || Animator.CurrentAnimation != _expectedClip);
 
     public TimeActEventDisplay EventDisplay { get; }
 
@@ -186,6 +197,16 @@ public class TimeActPlayback
         Seek(0);
     }
 
+    /// <summary>
+    /// Plays from the current time, without starting over at the end as <see cref="TogglePlaying"/> does
+    /// </summary>
+    public void Play()
+    {
+        _autoPlayCountdown = 0;
+        _playing = true;
+        Animator?.SetPlaying(true);
+    }
+
     public void Seek(float time)
     {
         _time = Math.Max(time, 0);
@@ -213,6 +234,8 @@ public class TimeActPlayback
         _time = 0;
         _playing = false;
         _autoPlayCountdown = 0;
+        _clipPending = false;
+        _expectedClip = null;
         IsClipMissing = false;
     }
 
@@ -263,6 +286,9 @@ public class TimeActPlayback
     {
         var request = ++_request;
 
+        _clipPending = false;
+        _expectedClip = null;
+
         var selection = View.Selection;
 
         var source = selection.SelectedTimeActContainerWrapper;
@@ -296,12 +322,17 @@ public class TimeActPlayback
                 ? CharacterComposition.GetAnimatedParts(Project, container.CharacterAppearance!, characterMesh)
                 : null);
 
+        _clipPending = true;
+
         _panel.QueueAnimation(target, package =>
         {
             if (request != _request)
                 return null;
 
             var clip = FindClip(package, source, entry, animation);
+
+            _clipPending = false;
+            _expectedClip = clip;
 
             if (clip == null)
             {

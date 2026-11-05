@@ -331,6 +331,15 @@ public class TimeActAnimationSelectionWindow
 
         ImGui.Separator();
 
+        // Add to Combo
+        if (ImGui.MenuItem($"{LOC.Get("TAE_AnimationWindow_Context_Add_To_Combo")}##addAnimationToCombo"))
+        {
+            View.ComboBuilderTool.AddStep(entry, animation);
+        }
+        GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Context_Add_To_Combo_TT"));
+
+        ImGui.Separator();
+
         ListActions(source, entry, animation);
 
         ImGui.EndPopup();

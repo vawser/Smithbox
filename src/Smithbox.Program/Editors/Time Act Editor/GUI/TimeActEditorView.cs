@@ -50,6 +50,7 @@ public class TimeActEditorView : IEditorView
     public TimeActSearchTool LocalSearchTool;
     public TimeActSearchTool GlobalSearchTool;
     public TimeActMassEditTool MassEditTool;
+    public TimeActComboBuilderTool ComboBuilderTool;
 
     public TimeActEditorView(TimeActEditorScreen editor, ProjectEntry project, int imguiId)
     {
@@ -91,6 +92,7 @@ public class TimeActEditorView : IEditorView
         LocalSearchTool = new TimeActSearchTool(this, project, TimeActSearchMode.Local);
         GlobalSearchTool = new TimeActSearchTool(this, project, TimeActSearchMode.Global);
         MassEditTool = new TimeActMassEditTool(this, project);
+        ComboBuilderTool = new TimeActComboBuilderTool(this, project);
     }
 
     private ModelMaskTarget GetModelMaskTarget()
@@ -132,6 +134,9 @@ public class TimeActEditorView : IEditorView
         ViewportFilters.Update();
 
         Playback.Update();
+
+        // After the playback, so it sees where the clock got to this frame
+        ComboBuilderTool.Update();
 
         DisplayWindows(dockspaceId, viewIndex, doFocus, isActiveView);
 
