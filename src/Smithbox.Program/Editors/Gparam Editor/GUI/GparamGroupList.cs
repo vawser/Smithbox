@@ -103,6 +103,15 @@ public class GparamGroupList
 
         ImGui.BeginGroup();
 
+        // Groups with fields the viewport's renderer reads are coloured, as their fields are
+        var isRendered = CFG.Current.GparamEditor_Highlight_Viewport_Fields &&
+                         View.ViewportWindow.LightingBank.IsRenderedGroup(group.Key);
+
+        if (isRendered)
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_GparamPreviewable_Text);
+        }
+
         // Group row
         if (ImGui.Selectable($@" {groupName}##{group.Key}", selected))
         {
@@ -110,12 +119,22 @@ public class GparamGroupList
             View.FieldListView.InvalidateAddOptions();
         }
 
-        if (CFG.Current.GparamEditor_Group_List_Display_Descriptions)
+        if (isRendered)
         {
-            if (groupDesc != "")
-            {
-                GUI.Tooltip(groupDesc);
-            }
+            ImGui.PopStyleColor();
+        }
+
+        var tooltip = CFG.Current.GparamEditor_Group_List_Display_Descriptions ? groupDesc : "";
+
+        if (isRendered)
+        {
+            var note = LOC.Get("GPARAM_GroupList_Shown_In_Viewport");
+            tooltip = tooltip != "" ? $"{tooltip}\n\n{note}" : note;
+        }
+
+        if (tooltip != "")
+        {
+            GUI.Tooltip(tooltip);
         }
 
         // Arrow Selection

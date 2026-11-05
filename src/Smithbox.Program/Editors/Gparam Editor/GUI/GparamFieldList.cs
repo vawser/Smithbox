@@ -103,18 +103,37 @@ public class GparamFieldList
 
         ImGui.BeginGroup();
 
+        // Fields the viewport's renderer reads are coloured, so the user knows editing them can be previewed
+        var isRendered = CFG.Current.GparamEditor_Highlight_Viewport_Fields &&
+                         View.ViewportWindow.LightingBank.IsRenderedField(group.Key, field.Key);
+
+        if (isRendered)
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_GparamPreviewable_Text);
+        }
+
         // Field row
         if (ImGui.Selectable($@"[{index}] {fieldName}##{field.Key}{index}", selected))
         {
             View.Selection.SetGparamField(index, field);
         }
 
-        if (CFG.Current.GparamEditor_Field_List_Display_Descriptions)
+        if (isRendered)
         {
-            if (fieldDesc != "")
-            {
-                GUI.Tooltip(fieldDesc);
-            }
+            ImGui.PopStyleColor();
+        }
+
+        var tooltip = CFG.Current.GparamEditor_Field_List_Display_Descriptions ? fieldDesc : "";
+
+        if (isRendered)
+        {
+            var note = LOC.Get("GPARAM_FieldList_Shown_In_Viewport");
+            tooltip = tooltip != "" ? $"{tooltip}\n\n{note}" : note;
+        }
+
+        if (tooltip != "")
+        {
+            GUI.Tooltip(tooltip);
         }
 
         // Arrow Selection

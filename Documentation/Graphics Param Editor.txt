@@ -2,9 +2,11 @@
 # Graphics Param Editor TODO
 #----------------------------------------------------
 
-- 3D Preview support
- - Load model
- - Approximate graphical effect from gparam
+- Expand the amount of GPARAM elements considered by the renderer
+
+
+- Improve the Value editing UX
+
 
 - Bug: DS2 fog color values are inverted (BGR, not RGB)
 

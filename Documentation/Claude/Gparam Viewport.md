@@ -35,6 +35,15 @@ GPARAM selected in the editor, including unsaved edits.
 - **Time of day override**: with `GparamEditor_Viewport_Follow_Value_Time` (off by default), the viewport follows
   the selected value's TimeOfDay instead, but only when its field has more than one time key.
 
+## Previewable fields
+
+`GparamLightingBank.FieldReader` records every (group key, field key) it is asked for, per bank. `IsRenderedField`
+and `IsRenderedGroup` resolve the lighting once, with no map or weather, the first time they are called. Every read
+is unconditional, so that one resolve lists all the fields the game's profile reads. The group and field lists draw
+those in `UI.ImGui_GparamPreviewable_Text`, with a tooltip line, behind
+`CFG.GparamEditor_Highlight_Viewport_Fields`. MSB fog volume fields (`FogVolumeBank`) aren't included, as the
+Gparam viewport doesn't draw fog volumes.
+
 ## Baked and placed light (`Editors/Gparam Editor/Framework/GparamMapEnvironment.cs`)
 
 Each view has its own `IrradianceVolumeBank`, `IrradianceVolumeTable` and `DolLightmapBank`. The Map Editor's

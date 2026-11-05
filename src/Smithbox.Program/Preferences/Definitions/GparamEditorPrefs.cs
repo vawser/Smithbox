@@ -96,6 +96,24 @@ public class GparamEditorPrefs
             }
         };
     }
+    public static PreferenceItem GparamEditor_Highlight_Viewport_Fields()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.GparamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.GparamEditor_Field_List,
+
+            Title = "PREF_GparamEditor_Highlight_Viewport_Fields",
+            Description = "PREF_GparamEditor_Highlight_Viewport_Fields_TT",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Highlight_Viewport_Fields);
+            }
+        };
+    }
     #endregion
 
     #region Value List

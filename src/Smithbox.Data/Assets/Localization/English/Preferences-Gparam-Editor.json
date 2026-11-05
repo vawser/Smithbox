@@ -33,6 +33,14 @@
       "Text": "If enabled, the field descriptions are displayed on hover."
     },
     {
+      "Key": "PREF_GparamEditor_Highlight_Viewport_Fields",
+      "Text": "Highlight Fields Shown in the Viewport"
+    },
+    {
+      "Key": "PREF_GparamEditor_Highlight_Viewport_Fields_TT",
+      "Text": "If enabled, the groups and fields the viewport's renderer reads are drawn in the GPARAM Field Shown in Viewport colour, so edits to them can be previewed."
+    },
+    {
       "Key": "PREF_GparamEditor_Value_List_Display_Color_Edit_V4",
       "Text": "Display Color Edit for 4-digit Properties"
     },

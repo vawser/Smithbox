@@ -1,6 +1,14 @@
 {
   "Entries": [
     {
+      "Key": "GPARAM_FieldList_Shown_In_Viewport",
+      "Text": "The viewport's renderer reads this field, so editing it can be previewed there."
+    },
+    {
+      "Key": "GPARAM_GroupList_Shown_In_Viewport",
+      "Text": "The viewport's renderer reads fields of this group, so editing them can be previewed there."
+    },
+    {
       "Key": "GPARAM_Viewport_Map_Not_Found",
       "Text": "The map {0} could not be found in the project."
     },

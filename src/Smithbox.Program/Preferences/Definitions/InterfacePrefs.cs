@@ -841,6 +841,10 @@ public class InterfacePrefs
                     ref UI.Current.ImGui_AliasName_Text, flags);
 
                 ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_GparamPreviewable_Text")}##ImGui_GparamPreviewable_Text",
+                    ref UI.Current.ImGui_GparamPreviewable_Text, flags);
+
+                ImGui.ColorEdit4(
                     $"{LOC.Get("PREF_CE_ImGui_TextEditor_ModifiedTextEntry_Text")}##ImGui_TextEditor_ModifiedTextEntry_Text",
                     ref UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text, flags);
 

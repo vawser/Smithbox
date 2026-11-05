@@ -485,6 +485,10 @@
       "Text": "Alias Text"
     },
     {
+      "Key": "PREF_CE_ImGui_GparamPreviewable_Text",
+      "Text": "GPARAM Field Shown in Viewport Text"
+    },
+    {
       "Key": "PREF_CE_ImGui_TextEditor_ModifiedTextEntry_Text",
       "Text": "Text Entry Row (Modified)"
     },

@@ -50,6 +50,10 @@ public class GparamLightingBank
     private const string ColorGradingKey = "ColorGrading[Yebis]";
     private const string WetKey = "Wet ParamEditor";
 
+    // The groups and fields the lighting is read from, by key, see IsRenderedField
+    private readonly HashSet<(string Group, string Field)> RenderedFields = new();
+    private bool RenderedFieldsListed;
+
     // Each GPARAM read, null if it is missing or couldn't be read
     private readonly Dictionary<string, GPARAM> Files = new(StringComparer.OrdinalIgnoreCase);
 
@@ -318,6 +322,48 @@ public class GparamLightingBank
         ViewportLighting = null;
     }
 
+    /// <summary>
+    /// Whether the renderer reads a field when it lights a viewport with GPARAMs, by its group's and its own key, so
+    /// editing it shows in the viewport. The fields are the ones the lighting has asked for: the first call resolves
+    /// the lighting once, which asks for every field this game's profile reads, whether a file has it or not.
+    /// </summary>
+    public bool IsRenderedField(string groupKey, string fieldKey)
+    {
+        EnsureRenderedFieldsListed();
+
+        lock (RenderedFields)
+        {
+            return RenderedFields.Contains((groupKey, fieldKey));
+        }
+    }
+
+    /// <summary>
+    /// Whether the renderer reads any field of a group, see <see cref="IsRenderedField" />
+    /// </summary>
+    public bool IsRenderedGroup(string groupKey)
+    {
+        EnsureRenderedFieldsListed();
+
+        lock (RenderedFields)
+        {
+            return RenderedFields.Any(f => f.Group == groupKey);
+        }
+    }
+
+    private void EnsureRenderedFieldsListed()
+    {
+        if (RenderedFieldsListed)
+            return;
+
+        RenderedFieldsListed = true;
+
+        if (!CanUse())
+            return;
+
+        // No map and no weather: the shared files alone, which is enough to ask for every field
+        Resolve(null, null, SceneLightSetId, 12.0f, 0);
+    }
+
     // The last lighting given to the viewports, and what it was resolved from
     private GparamLighting ViewportLighting;
     private string ViewportLightingMap;
@@ -464,7 +510,7 @@ public class GparamLightingBank
                 chain.Add((name, gparam));
         }
 
-        var reader = new FieldReader(chain, hours, lighting.Sources);
+        var reader = new FieldReader(chain, hours, lighting.Sources, RenderedFields);
 
         // LightSet
         ReadLight(reader, lightSetId, lighting.Sun, "Directional Light Angle0", "Directional Light DiffColor0",
@@ -837,15 +883,30 @@ public class GparamLightingBank
         private readonly float Hours;
         private readonly Dictionary<string, string> Sources;
 
-        public FieldReader(List<(string Name, GPARAM Gparam)> chain, float hours, Dictionary<string, string> sources)
+        private readonly HashSet<(string Group, string Field)> Rendered;
+
+        public FieldReader(List<(string Name, GPARAM Gparam)> chain, float hours, Dictionary<string, string> sources,
+            HashSet<(string Group, string Field)> rendered)
         {
+            Rendered = rendered;
             Chain = chain;
             Hours = hours;
             Sources = sources;
         }
 
+        // Every field asked for is recorded, whether a file has it or not, so one resolve lists them all
+        private void Record(string groupKey, string fieldKey)
+        {
+            lock (Rendered)
+            {
+                Rendered.Add((groupKey, fieldKey));
+            }
+        }
+
         public T Get<T>(string groupKey, string fieldKey, int id, T fallback, bool isAngle = false)
         {
+            Record(groupKey, fieldKey);
+
             foreach (var (name, gparam) in Chain)
             {
                 var field = gparam.Params.FirstOrDefault(p => p.Key == groupKey)?.Fields
@@ -885,6 +946,8 @@ public class GparamLightingBank
         /// </summary>
         public (T Previous, T Next, float Blend) GetKeys<T>(string groupKey, string fieldKey, int id, T fallback)
         {
+            Record(groupKey, fieldKey);
+
             foreach (var (name, gparam) in Chain)
             {
                 var field = gparam.Params.FirstOrDefault(p => p.Key == groupKey)?.Fields
