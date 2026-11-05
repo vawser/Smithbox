@@ -407,6 +407,86 @@
     {
       "Key": "PROJECT_Configuration_Dialog_Backup_Bak_Excluded",
       "Text": "\n\n.bak files are kept, as the project directory is the game directory and they hold the original game files."
+    },
+    {
+      "Key": "PROJECT_Configuration_Dialog_Delete_Backup_Files_Summary",
+      "Text": "You will delete {0} .bak and {1} .prev files ({2}):\n{3}"
+    },
+    {
+      "Key": "PROJECT_Configuration_Action_Delete_Comprehensive_Backups",
+      "Text": "Delete Timestamped Backups"
+    },
+    {
+      "Key": "PROJECT_Configuration_Action_Delete_Comprehensive_Backups_TT",
+      "Text": "Delete the timestamped backup folders written to the project's .backup folder by the comprehensive backups option."
+    },
+    {
+      "Key": "PROJECT_Configuration_Dialog_No_Comprehensive_Backups",
+      "Text": "No timestamped backups were found in the project's .backup folder."
+    },
+    {
+      "Key": "PROJECT_Configuration_Dialog_Delete_Comprehensive_Backups",
+      "Text": "You will delete {0} timestamped backup folders ({1}), from {2} to {3}."
+    },
+    {
+      "Key": "PROJECT_Configuration_Unsaved_Changes",
+      "Text": "Unsaved changes. Press Update to apply them, or Revert to discard them."
+    },
+    {
+      "Key": "PROJECT_Configuration_Action_Revert_Project",
+      "Text": "Revert"
+    },
+    {
+      "Key": "PROJECT_Configuration_Action_Revert_Project_TT",
+      "Text": "Discard the changes made here, returning the settings to the project's saved values."
+    },
+    {
+      "Key": "PROJECT_Configuration_Warning_Project_In_Data_Dir",
+      "Text": "The project directory is the game directory, or inside it. Saving will overwrite game files; a separate mod directory is recommended."
+    },
+    {
+      "Key": "PROJECT_Configuration_Warning_Duplicate_Project_Path",
+      "Text": "The project \"{0}\" already uses this project directory."
+    },
+    {
+      "Key": "PROJECT_Configuration_Warning_Missing_Game_Executable",
+      "Text": "The data directory doesn't contain {0}. Check it is the game's directory for the selected project type."
+    },
+    {
+      "Key": "PROJECT_Configuration_Action_Use_Steam_Data_Directory",
+      "Text": "Use Steam Install"
+    },
+    {
+      "Key": "PROJECT_Configuration_Action_Use_Steam_Data_Directory_TT",
+      "Text": "Set the data directory to the game's Steam install:\n{0}"
+    },
+    {
+      "Key": "PROJECT_Configuration_Action_Enable_All_Editors",
+      "Text": "Enable All"
+    },
+    {
+      "Key": "PROJECT_Configuration_Action_Enable_All_Editors_TT",
+      "Text": "Enable every editor."
+    },
+    {
+      "Key": "PROJECT_Configuration_Action_Disable_All_Editors",
+      "Text": "Disable All"
+    },
+    {
+      "Key": "PROJECT_Configuration_Action_Disable_All_Editors_TT",
+      "Text": "Disable every editor."
+    },
+    {
+      "Key": "PROJECT_Configuration_Checkbox_Unsupported_TT",
+      "Text": "This editor is not supported for the selected project type."
+    },
+    {
+      "Key": "PROJECT_List_Active_Suffix",
+      "Text": " (Active)"
+    },
+    {
+      "Key": "PROJECT_List_Entry_TT",
+      "Text": "{0}\nProject: {1}\nData: {2}\n\nDouble-click to load the project, or to switch to it if it is already active."
     }
   ]
 }

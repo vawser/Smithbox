@@ -240,120 +240,15 @@ public class ProjectScreen
 
         ImGui.BeginTabBar($"##projectSelectionTabBar_{imguiKey}");
 
-        // Project List
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DES))
+        // One tab per game with projects, in the same order as the project type combo
+        foreach (var projectType in ProjectTypeOrder.Order)
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DES")}##tab_DES_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.DES, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
+            if (!orchestrator.Projects.Any(e => e.Descriptor.ProjectType == projectType))
+                continue;
 
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DS1))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DS1")}##tab_DS1_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get($"EDITOR_Short_Project_Type_{projectType}")}##tab_{projectType}_{imguiKey}"))
             {
-                DisplayProjectListGroup(ProjectType.DS1, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DS1R))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DS1R")}##tab_DS1R_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.DS1R, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DS2))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DS2")}##tab_DS2_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.DS2, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DS2S))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DS2S")}##tab_DS2S_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.DS2S, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DS3))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DS3")}##tab_DS3_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.DS3, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.BB))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_BB")}##tab_BB_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.BB, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.SDT))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_SDT")}##tab_SDT_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.SDT, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.ER))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_ER")}##tab_ER_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.ER, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.AC6))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_AC6")}##tab_AC6_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.AC6, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.NR))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_NR")}##tab_NR_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.NR, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DB_NT))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DB_NT")}##tab_DB_NT_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.DB_NT, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DB))
-        {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DB")}##tab_DB_{imguiKey}"))
-            {
-                DisplayProjectListGroup(ProjectType.DB, imguiKey, isLoaded);
+                DisplayProjectListGroup(projectType, imguiKey, isLoaded);
                 ImGui.EndTabItem();
             }
         }
@@ -466,17 +361,15 @@ public class ProjectScreen
 
         if(isLoaded)
         {
-            if(!project.Initialized)
+            if(!project.IsActive)
                 return;
 
-            var isSelected = SelectedLoadedEntry == project;
+            // Highlights the project the editors show, which can change outside this list (load, unload)
+            var isSelected = orchestrator.SelectedProject == project;
 
             if(ImGui.Selectable($"{displayName}##{selectId}", isSelected))
             {
-                SelectedLoadedEntry = project;
-
-                orchestrator.SelectedProject = project;
-                Smithbox.Instance.SetProgramName(project);
+                orchestrator.SelectProject(project);
 
                 if (CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment)
                 {
@@ -492,6 +385,13 @@ public class ProjectScreen
         else
         {
             var isSelected = SelectedAvaliableEntry == project;
+            var isActive = project.IsActive;
+
+            if (isActive)
+            {
+                displayName = $"{displayName}{LOC.Get("PROJECT_List_Active_Suffix")}";
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
+            }
 
             if (ImGui.Selectable($"{displayName}##{selectId}", isSelected))
             {
@@ -499,9 +399,42 @@ public class ProjectScreen
 
                 ConfigureMenu.SetupForEdit(project);
             }
+
+            if (isActive)
+            {
+                ImGui.PopStyleColor(1);
+            }
+
+            if (ImGui.IsItemHovered())
+            {
+                // Double-click loads the project, or switches to it if it is already active
+                if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                {
+                    if (!isActive)
+                    {
+                        LoadProjectAction(project);
+                    }
+                    else if (orchestrator.SelectedProject != project)
+                    {
+                        orchestrator.SelectProject(project);
+                    }
+                }
+
+                GUI.Tooltip(GetProjectEntryTooltip(project));
+            }
         }
 
         ProjectContextMenu(project, imguiKey);
+    }
+
+    private static string GetProjectEntryTooltip(ProjectEntry project)
+    {
+        var descriptor = project.Descriptor;
+
+        return LOC.Get("PROJECT_List_Entry_TT",
+            LOC.Get(descriptor.ProjectType.GetDisplayName()),
+            descriptor.ProjectPath,
+            descriptor.DataPath);
     }
 
     public void ProjectContextMenu(ProjectEntry project, string imguiKey)
@@ -510,9 +443,8 @@ public class ProjectScreen
 
         if (ImGui.BeginPopupContextItem($"##contextMenu_{project.Descriptor.ProjectGUID}_{imguiKey}"))
         {
-            // The orchestrator selects the project once it has loaded; selecting it here first would make the load
-            // treat it as the project to replace, leaving the open one undisposed
-            var isOpen = project.Initialized && !project.IsAuxiliary;
+            // The orchestrator selects the project once it has loaded. Other active projects stay loaded.
+            var isOpen = project.IsActive;
 
             if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Load")}##loadAction", false, !isOpen && !orchestrator.IsProjectLoading))
             {

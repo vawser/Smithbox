@@ -35,6 +35,12 @@ public class ProjectEntry
     /// </summary>
     public bool IsAuxiliary = false;
 
+    /// <summary>
+    /// Fully loaded and listed under Active Projects. Several projects can be active at once; the selected one is
+    /// the one the editors show.
+    /// </summary>
+    public bool IsActive => Initialized && !IsAuxiliary;
+
     public int AutomaticSaveInterval = 60;
     public DateTime _nextAutoSaveTime = DateTime.MinValue;
 
@@ -136,28 +142,27 @@ public class ProjectEntry
     /// </summary>
     public bool ValidateForInit()
     {
+        return ValidateForInit(out _);
+    }
+
+    /// <param name="reason">Why the project can't be initialized, or null if it can.</param>
+    public bool ValidateForInit(out string reason)
+    {
+        reason = null;
+
         if (Descriptor.ProjectType is ProjectType.Undefined)
-        {
-            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Undefined_Type"), LogPriority.High);
+            reason = LOC.Get("PROJECT_Setup_Failed_Init_Undefined_Type");
+        else if (!Directory.Exists(Descriptor.ProjectPath))
+            reason = LOC.Get("PROJECT_Setup_Failed_Init_Bad_Project_Path", Descriptor.ProjectPath);
+        else if (!Directory.Exists(Descriptor.DataPath))
+            reason = LOC.Get("PROJECT_Setup_Failed_Init_Bad_Data_Path", Descriptor.DataPath);
 
-            return false;
-        }
+        if (reason == null)
+            return true;
 
-        if (!Directory.Exists(Descriptor.ProjectPath))
-        {
-            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Bad_Project_Path", Descriptor.ProjectPath), LogPriority.High);
+        Smithbox.LogError(this, reason, LogPriority.High);
 
-            return false;
-        }
-
-        if (!Directory.Exists(Descriptor.DataPath))
-        {
-            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Bad_Data_Path", Descriptor.DataPath), LogPriority.High);
-
-            return false;
-        }
-
-        return true;
+        return false;
     }
 
     public async Task<bool> Init(Action<ProjectLoadProgress> reportProgress, bool silent = false, ProjectInitType initType = ProjectInitType.ProjectDefined)

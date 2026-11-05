@@ -48,18 +48,22 @@ public class ProjectToolWindow
 
         if (curProject != null && curProject.Initialized && curProject.Handler != null)
         {
-            var paramEditor = curProject.Handler.ParamEditor;
-
-            if (paramEditor != null)
+            if (!CFG.Current.ProjectEditor_Show_Tool_ProjectMerge)
             {
-                var activeView = paramEditor.ViewHandler.ActiveView;
+                // Every tool is toggled off in the Tools menu
+                GUI.WrappedText(LOC.Get("PROJECT_Tools_No_Tools_Enabled"));
+            }
+            else
+            {
+                var activeView = curProject.Handler.ParamEditor?.ViewHandler.ActiveView;
 
                 if (activeView != null)
                 {
-                    if (CFG.Current.ProjectEditor_Show_Tool_ProjectMerge)
-                    {
-                        DisplayProjectMerge(activeView);
-                    }
+                    DisplayProjectMerge(activeView);
+                }
+                else
+                {
+                    GUI.WrappedText(LOC.Get("PROJECT_Tools_Project_Merge_Requires_Param_Editor"));
                 }
             }
         }

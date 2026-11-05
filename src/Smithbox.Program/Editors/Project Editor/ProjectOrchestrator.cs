@@ -90,6 +90,7 @@ public class ProjectOrchestrator : IDisposable
         }
 
         DrawProjectLoadingUI();
+        DrawLoadFailureUI();
     }
 
     /// <summary>
@@ -222,8 +223,8 @@ public class ProjectOrchestrator : IDisposable
 
         if (CFG.Current.Project_Enable_Auto_Load)
         {
-            // Only one project can be open, so the first marked for auto-load is used. A snapshot is iterated, as
-            // the user can add projects while this one loads.
+            // Auto-load marks a single project (SetAsAutoLoad clears the others), so the first marked is used. A
+            // snapshot is iterated, as the user can add projects while this one loads.
             var projectEntry = Projects.ToList().FirstOrDefault(e => e.Descriptor.AutoSelect);
 
             if (projectEntry != null && !IsProjectLoading)
@@ -265,7 +266,7 @@ public class ProjectOrchestrator : IDisposable
     }
 
     /// <summary>
-    /// Applies the edited settings to the project and saves it. The project is reloaded only if it is the open one.
+    /// Applies the edited settings to the project and saves it. The project is reloaded only if it is active.
     /// </summary>
     /// <remarks>
     /// Only the settings the configuration form edits are copied, so state changed elsewhere since the form was
@@ -277,7 +278,7 @@ public class ProjectOrchestrator : IDisposable
 
         SaveProject(project);
 
-        if (project != SelectedProject)
+        if (!project.IsActive)
             return;
 
         if (IsProjectLoading)
@@ -344,23 +345,33 @@ public class ProjectOrchestrator : IDisposable
     private async Task<bool> LoadProject(ProjectEntry curProject, bool assignAutoLoad, Action onLoaded)
     {
         // Checked before the open project is disposed, so a project that can't load leaves the open one in place
-        if (!curProject.ValidateForInit())
-            return false;
+        if (!curProject.ValidateForInit(out var invalidReason))
+        {
+            ShowLoadFailure(curProject, invalidReason);
 
-        var oldProject = SelectedProject;
+            return false;
+        }
 
         Smithbox.Instance.SetProgramName(curProject);
 
         CreateLegacyProjectJSON(curProject);
 
-        if (oldProject != null)
+        // Several projects can be active at once; loading one leaves the others as they are. Only a reload replaces
+        // something: Init releases the project's previous parts itself.
+        if (curProject.Initialized || curProject.IsInitializing)
         {
-            // Deselected first, so nothing draws the disposed project while the new one loads
-            SelectedProject = null;
-            oldProject.IsSelected = false;
+            // Deselected first, so nothing draws the project while its parts are replaced
+            if (SelectedProject == curProject)
+            {
+                SelectedProject = null;
+                curProject.IsSelected = false;
+            }
 
-            oldProject.Dispose();
-            ResourceManager.ClearAllPools();
+            // The pools are shared by every project, so they are only cleared when no other project uses them
+            if (!Projects.Any(e => e != curProject && e.IsActive))
+            {
+                ResourceManager.ClearAllPools();
+            }
         }
 
         // A full load replaces any auxiliary (comparison-only) initialization
@@ -382,6 +393,8 @@ public class ProjectOrchestrator : IDisposable
 
             if (!await curProject.Init(ReportProgress))
             {
+                ShowLoadFailure(curProject, LOC.Get("PROJECT_Load_Failed_Init"));
+
                 RunOnMainThread(() =>
                 {
                     Smithbox.Instance.ResetProgramName();
@@ -396,6 +409,7 @@ public class ProjectOrchestrator : IDisposable
             // Callers don't await this, so without the catch the failure would vanish and leave the load
             // popup open, with every further load refused
             LogProjectLoadFailure(curProject, e);
+            ShowLoadFailure(curProject, e.Message);
 
             RunOnMainThread(EndProjectLoad);
 
@@ -418,6 +432,7 @@ public class ProjectOrchestrator : IDisposable
             catch (Exception e)
             {
                 LogProjectLoadFailure(curProject, e);
+                ShowLoadFailure(curProject, e.Message);
 
                 selected.SetResult(false);
             }
@@ -484,6 +499,48 @@ public class ProjectOrchestrator : IDisposable
         }
     }
 
+    // Set on the main thread; shown in a popup until dismissed
+    private string _loadFailureMessage;
+
+    /// <summary>
+    /// Shows why a project failed to load in a popup, as well as the log.
+    /// </summary>
+    private void ShowLoadFailure(ProjectEntry curProject, string reason)
+    {
+        var message = LOC.Get("PROJECT_Load_Failed_Message", curProject.Descriptor?.ProjectName ?? "", reason ?? "");
+
+        RunOnMainThread(() => _loadFailureMessage = message);
+    }
+
+    private void DrawLoadFailureUI()
+    {
+        // After the loading popup has closed, as only one modal can be open
+        if (_loadFailureMessage == null || IsProjectLoading)
+            return;
+
+        var title = $"{LOC.Get("PROJECT_Load_Failed_Header")}##ProjectLoadFailed";
+
+        if (!ImGui.IsPopupOpen(title))
+            ImGui.OpenPopup(title);
+
+        if (ImGui.BeginPopupModal(title, ImGuiWindowFlags.AlwaysAutoResize))
+        {
+            ImGui.PushTextWrapPos(500.0f * DPI.UIScale());
+            ImGui.TextUnformatted(_loadFailureMessage);
+            ImGui.PopTextWrapPos();
+
+            ImGui.Spacing();
+
+            if (ImGui.Button($"{LOC.Get("PROJECT_Load_Failed_Dismiss")}##dismissLoadFailure"))
+            {
+                _loadFailureMessage = null;
+                ImGui.CloseCurrentPopup();
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
     private void LogProjectLoadFailure(ProjectEntry curProject, Exception e)
     {
         Smithbox.LogError(this,
@@ -509,8 +566,8 @@ public class ProjectOrchestrator : IDisposable
 
     public async Task<bool> LoadAuxiliaryProject(ProjectEntry targetProject, ProjectInitType initType, bool reloadProject)
     {
-        // The open project is already fully initialized; re-initializing it for one editor would replace its editors
-        if (targetProject == SelectedProject && targetProject.Initialized)
+        // An active project is already fully initialized; re-initializing it for one editor would replace its editors
+        if (targetProject.IsActive)
             return true;
 
         if (!targetProject.Initialized)
@@ -541,12 +598,50 @@ public class ProjectOrchestrator : IDisposable
         project.IsSelected = false;
         project.Dispose();
 
-        if (isSelected)
+        // The pools are shared by every project, so they are only cleared when no other project uses them
+        var nextProject = Projects.FirstOrDefault(e => e != project && e.IsActive);
+
+        if (nextProject == null)
         {
             ResourceManager.ClearAllPools();
-
-            Smithbox.Instance.ResetProgramName();
         }
+
+        if (isSelected)
+        {
+            // Another active project takes its place, rather than leaving nothing selected
+            if (nextProject != null)
+            {
+                SelectProject(nextProject);
+            }
+            else
+            {
+                Smithbox.Instance.ResetProgramName();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Makes an active project the one the editors show.
+    /// </summary>
+    public void SelectProject(ProjectEntry project)
+    {
+        foreach (var tEntry in Projects)
+        {
+            tEntry.IsSelected = false;
+        }
+
+        project.IsSelected = true;
+        SelectedProject = project;
+
+        BinaryReaderEx.CurrentProjectType = $"{project.Descriptor.ProjectType}";
+
+        Smithbox.Instance.SetProgramName(project);
+
+        ProjectEditor.SelectedLoadedEntry = project;
+
+        // The metadata edits belong to the previously selected project
+        ProjectMetadataEditor.AliasMenu.ActionManager.Clear();
+        ProjectMetadataEditor.EnumMenu.ActionManager.Clear();
     }
 
     /// <summary>

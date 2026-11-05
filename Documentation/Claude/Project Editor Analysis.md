@@ -26,6 +26,11 @@ gone. The auto-load and Create paths don't pre-set `SelectedProject`, so they ar
 Fix: remove the pre-assignment in the three UI call sites (the orchestrator selects on completion), or capture
 `oldProject` in the UI before assigning.
 
+> **Correction (2026-11-05):** several projects being active at once is intended. The real defects were that
+> `LoadProject` *tried* to dispose the selected project (only the pre-assignment stopped it) and that
+> `ClearAllPools` dropped the shared resource pools while other projects were still active. The fix now keeps
+> every active project loaded; see the fix-status table.
+
 #### B2. Deleting any project unselects the active one, without disposing it
 `ProjectUtils.DeleteProject` (`ProjectUtils.cs:65`) sets `SelectedProject = null` regardless of which project is
 being deleted. Deleting an unrelated, never-loaded project from the Available list makes the open project vanish
@@ -192,7 +197,7 @@ All bugs B1–B27 were addressed. Notes on how:
 
 | Bug | Fix |
 |---|---|
-| B1 | UI no longer pre-assigns `SelectedProject`; `ProjectScreen.LoadProjectAction` loads and sets the form on completion. `LoadProject` deselects the old project before disposing it. |
+| B1 | Multiple active projects are supported. `LoadProject` never disposes other projects; a reload re-initializes only that project (`Init` releases its old parts). `ProjectEntry.IsActive` = initialized and not auxiliary. `ResourceManager.ClearAllPools` only runs when no other project is active (reload/unload). Unloading the selected project selects another active one (`ProjectOrchestrator.SelectProject`). The UI no longer pre-assigns `SelectedProject`. |
 | B2, B3 | New `ProjectOrchestrator.RemoveProject` unloads/disposes only the removed project and calls `ProjectScreen.OnProjectRemoved`, which clears selections and resets the form. Delete asks for confirmation. |
 | B4, B5 | `ProjectDescriptor.ApplyConfiguration` copies only the form-edited fields onto the live descriptor; the form keeps its own clone. |
 | B6 | `WriteWithBackup` returns `bool` and logs failures with `LogError` (High). Existing callers ignore the result. |
@@ -208,8 +213,23 @@ All bugs B1–B27 were addressed. Notes on how:
 | B16 | `.bak` files kept when the project path is the game path or inside it; "no backups" message when empty. |
 | B17–B27 | As described in the table above (paths, PTDE dir, BXF move, timestamp, progress, scan exclusions, ME3 GUID lookup / safe names / no redirect, profile create after picking dir, title reset, data logging, cross-platform directory open). |
 
-Usability items in section 2 were not implemented, except 1 (delete confirmation), 4 (Create → Edit) and the
-whitespace-name part of 6.
+### Usability items (section 2) — all implemented
+
+| # | Implementation |
+|---|---|
+| 1 | Delete Project confirmation (`DeleteProjectAction`). |
+| 2 | Active projects shown green with " (Active)" in the Available list; tooltip shows type, project and data paths. |
+| 3 | Double-click an Available entry to load it, or to switch to it if already active. |
+| 4 | Create switches the form to Edit on the new project. |
+| 5 | `ProjectDescriptor.ConfigurationEquals` drives an "Unsaved changes" note; Update is enabled only with changes; new Revert button. |
+| 6 | Non-blocking warnings: project dir is/inside the game dir, another project uses the same dir, data dir lacks the game's exe (PC games only). Cached on their inputs. Whitespace-only names rejected. |
+| 7 | Changing type only fills an *empty* data dir; new "Use Steam Install" button. |
+| 8 | New projects start as `Undefined` (set in `SetupForCreation`; the class default is unchanged so stored projects are unaffected). |
+| 9 | Load failures (validation, init, exceptions) show a "Project Load Failed" modal with the reason. |
+| 10 | Tools window says when no tools are enabled, or that Project Merge needs the Param Editor. |
+| 11 | Enable All / Disable All buttons; unsupported editors shown disabled with a tooltip. |
+| 12 | Available-list tabs loop over `ProjectTypeOrder.Order` (BB now precedes DS3, matching the combo). |
+| 13 | Backup cleanup dialog shows `.bak`/`.prev` counts and total size with project-relative paths; new "Delete Timestamped Backups" action for `.backup/<timestamp>` folders. |
 
 ## 5. What to check after fixes (manual)
 
@@ -219,3 +239,13 @@ whitespace-name part of 6.
 - Pin a row in the Param Editor, then press Update in the Project Editor: the pin survives.
 - Load a project whose data path was removed: an error is shown and the previous project is still open.
 - Give a loaded project a group tag: it still appears in Active Projects.
+- Load A, then B: both are listed under Active Projects; clicking A switches back to it with its editors intact.
+- Unload the selected project while another is active: the other becomes selected. Reload one: the other's map/model viewports keep their resources.
+- Available list: active projects are green with "(Active)"; hovering shows paths; double-clicking loads or switches.
+- Edit a field: "Unsaved changes" appears, Update enables; Revert restores the saved values.
+- Set the project dir to the game dir: the warning appears. Point the data dir at a wrong folder: the missing-exe warning appears.
+- New project: type shows Undefined; picking a type fills the data dir only if it was empty.
+- Switch type to one without e.g. the Havok Editor: its checkbox is greyed with a tooltip.
+- Load a project whose data dir was removed: the "Project Load Failed" popup appears.
+- Tools window with Project Merge toggled off, or with the Param Editor disabled: an explanatory message shows.
+- Delete Backup Files: dialog shows counts and size. Delete Timestamped Backups: dialog shows folder count, size and date range.

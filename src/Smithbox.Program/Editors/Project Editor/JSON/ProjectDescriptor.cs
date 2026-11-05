@@ -120,6 +120,30 @@ public class ProjectDescriptor
     /// Copies the settings the project configuration form edits from <paramref name="edited"/>. Identity (GUID) and
     /// state kept by other editors (pins, auto-load, imported row names) are left as they are.
     /// </summary>
+    /// <summary>
+    /// Whether the settings the project configuration form edits match <paramref name="other"/>'s.
+    /// </summary>
+    public bool ConfigurationEquals(ProjectDescriptor other)
+    {
+        return ProjectName == other.ProjectName.Trim()
+            && ProjectPath == other.ProjectPath
+            && DataPath == other.DataPath
+            && ProjectType == other.ProjectType
+            && FolderTag == other.FolderTag
+            && EnableMapEditor == other.EnableMapEditor
+            && EnableModelEditor == other.EnableModelEditor
+            && EnableTextEditor == other.EnableTextEditor
+            && EnableParamEditor == other.EnableParamEditor
+            && EnableGparamEditor == other.EnableGparamEditor
+            && EnableTextureViewer == other.EnableTextureViewer
+            && EnableMaterialEditor == other.EnableMaterialEditor
+            && EnableFileBrowser == other.EnableFileBrowser
+            && EnableAnimEditor == other.EnableAnimEditor
+            && EnableHavokEditor == other.EnableHavokEditor
+            && EnableTimeActEditor == other.EnableTimeActEditor
+            && EnableExternalMaterialData == other.EnableExternalMaterialData;
+    }
+
     public void ApplyConfiguration(ProjectDescriptor edited)
     {
         ProjectName = edited.ProjectName.Trim();

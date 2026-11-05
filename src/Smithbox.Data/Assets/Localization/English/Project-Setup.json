@@ -127,6 +127,22 @@
     {
       "Key": "PROJECT_Setup_Update_Deferred_Loading",
       "Text": "[Project] Saved the project changes. Reload the project once the current load finishes to apply them."
+    },
+    {
+      "Key": "PROJECT_Load_Failed_Header",
+      "Text": "Project Load Failed"
+    },
+    {
+      "Key": "PROJECT_Load_Failed_Message",
+      "Text": "The project \"{0}\" could not be loaded.\n\n{1}"
+    },
+    {
+      "Key": "PROJECT_Load_Failed_Init",
+      "Text": "The project failed to initialize. See the log for details."
+    },
+    {
+      "Key": "PROJECT_Load_Failed_Dismiss",
+      "Text": "OK"
     }
   ]
 }
