@@ -286,6 +286,20 @@ namespace Veldrid.Sdl2
 
         public Vector2 MouseDelta => _currentMouseDelta;
 
+        /// <summary>
+        /// Asked before the window closes because the user asked it to (SDL Quit, or the window's close button).
+        /// Return false to keep the window open. Not asked for <see cref="Close"/> or when the OS terminates the app.
+        /// </summary>
+        public Func<bool> CloseRequested;
+
+        private void RequestClose()
+        {
+            if (CloseRequested == null || CloseRequested())
+            {
+                Close();
+            }
+        }
+
         public void Close()
         {
             if (_threadedProcessing)
@@ -409,7 +423,7 @@ namespace Veldrid.Sdl2
             switch ((EventType)ev->Type)
             {
                 case EventType.Quit:
-                    Close();
+                    RequestClose();
                     break;
                 case EventType.AppTerminating:
                     Close();
@@ -844,7 +858,7 @@ namespace Veldrid.Sdl2
                     FocusLost?.Invoke();
                     break;
                 case WindowEventID.Close:
-                    Close();
+                    RequestClose();
                     break;
                 case WindowEventID.Shown:
                     Shown?.Invoke();

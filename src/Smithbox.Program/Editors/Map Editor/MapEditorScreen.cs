@@ -643,6 +643,44 @@ public class MapEditorScreen : EditorScreen
     }
 
 
+    public List<string> GetUnsavedFiles()
+    {
+        var files = new List<string>();
+
+        var bank = Project.Handler.MapData?.PrimaryBank;
+
+        if (bank != null)
+        {
+            files.AddRange(bank.Maps.Values
+                .Select(w => w.MapContainer)
+                .Where(m => m != null && m.HasUnsavedChanges)
+                .Select(m => m.Name));
+        }
+
+        // Kept per view, like the save that writes them
+        foreach (var view in ViewHandler.Views)
+        {
+            if (view == null)
+                continue;
+
+            if (view.LoadListTool?.HasModifiedFiles == true)
+                files.Add(LOC.Get("UNSAVED_Map_Load_List"));
+
+            if (view.EntryFileListTool?.HasModifiedFiles == true)
+                files.Add(LOC.Get("UNSAVED_Map_Entry_File_List"));
+
+            if (view.PartsTokenIdListTool?.HasModifiedFiles == true)
+                files.Add(LOC.Get("UNSAVED_Map_Parts_Token_ID_List"));
+        }
+
+        return files.Distinct().ToList();
+    }
+
+    public void SaveUnsaved()
+    {
+        Save();
+    }
+
     public void HandleSaveException(SavingFailedException e)
     {
         var activeView = ViewHandler.ActiveView;

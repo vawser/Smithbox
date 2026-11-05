@@ -27,6 +27,33 @@ public class ProjectEnumMenu
     public ProjectEnumMenu()
     {
         ActionManager = new();
+
+        // The stack is cleared when another project is selected, so its edits are of the selected project
+        ActionManager.ActionPerformed += () =>
+        {
+            var project = Smithbox.Orchestrator.SelectedProject;
+
+            if (project != null)
+                project.HasUnsavedEnums = true;
+        };
+    }
+
+    /// <summary>
+    /// Saves the enums to the project's own enums if they have unsaved changes, for the unsaved changes prompt.
+    /// Never the base enums, which are part of Smithbox itself.
+    /// </summary>
+    public void SaveUnsavedLocal(ProjectEntry project)
+    {
+        if (project == null || !project.HasUnsavedEnums)
+            return;
+
+        SaveEnums(project, GetLocalEnumFolder(project), LOC.Get("META_EnumMenu_Saved_Project_Aliases"));
+    }
+
+    private static string GetLocalEnumFolder(ProjectEntry project)
+    {
+        return Path.Join(project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM",
+            ProjectUtils.GetGameDirectory(project.Descriptor.ProjectType), "Param Enums");
     }
 
     public void Display()
@@ -806,7 +833,7 @@ public class ProjectEnumMenu
 
     public void SaveLocalEnums()
     {
-        var projectFolder = Path.Join(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectType), "Param Enums");
+        var projectFolder = GetLocalEnumFolder(Smithbox.Orchestrator.SelectedProject);
 
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
@@ -830,8 +857,11 @@ public class ProjectEnumMenu
 
     public void SaveEnums(string targetPath, string saveMessage)
     {
-        var curProject = Smithbox.Orchestrator.SelectedProject;
+        SaveEnums(Smithbox.Orchestrator.SelectedProject, targetPath, saveMessage);
+    }
 
+    private void SaveEnums(ProjectEntry curProject, string targetPath, string saveMessage)
+    {
         if (curProject == null)
             return;
 
@@ -847,7 +877,10 @@ public class ProjectEnumMenu
         if (curProject.Handler.ParamData.Enums.List == null)
             return;
 
-        var enums = Smithbox.Orchestrator.SelectedProject.Handler.ParamData.Enums;
+        var enums = curProject.Handler.ParamData.Enums;
+
+        if (!Directory.Exists(targetPath))
+            Directory.CreateDirectory(targetPath);
 
         foreach (var entry in enums.List)
         {
@@ -866,5 +899,7 @@ public class ProjectEnumMenu
 
             Smithbox.Log<ProjectEnumMenu>(saveMessage);
         }
+
+        curProject.HasUnsavedEnums = false;
     }
 }

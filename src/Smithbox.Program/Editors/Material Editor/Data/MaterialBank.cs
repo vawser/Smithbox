@@ -148,6 +148,61 @@ public class MaterialBank : IDisposable
         return true;
     }
 
+    /// <summary>
+    /// The binder paths and file names of the materials with unsaved changes
+    /// </summary>
+    public List<string> GetDirtyFiles()
+    {
+        var files = new List<string>();
+
+        if (MTDs != null)
+        {
+            foreach (var wrapper in MTDs.Values)
+            {
+                files.AddRange(wrapper.Entries.Values.Where(e => e.IsDirty).Select(e => $"{wrapper.FilePath} : {e.Key}"));
+            }
+        }
+
+        if (MATBINs != null)
+        {
+            foreach (var wrapper in MATBINs.Values)
+            {
+                files.AddRange(wrapper.Entries.Values.Where(e => e.IsDirty).Select(e => $"{wrapper.FilePath} : {e.Key}"));
+            }
+        }
+
+        return files.OrderBy(e => e).ToList();
+    }
+
+    /// <summary>
+    /// Saves every binder holding a material with unsaved changes, without needing a view. Returns false if any
+    /// binder failed to save.
+    /// </summary>
+    public bool SaveAllDirty()
+    {
+        var success = true;
+
+        if (MTDs != null)
+        {
+            foreach (var wrapper in MTDs.Values.Where(e => e.IsDirty()))
+            {
+                if (!wrapper.SaveDirtyFiles())
+                    success = false;
+            }
+        }
+
+        if (MATBINs != null)
+        {
+            foreach (var wrapper in MATBINs.Values.Where(e => e.IsDirty()))
+            {
+                if (!wrapper.SaveDirtyFiles())
+                    success = false;
+            }
+        }
+
+        return success;
+    }
+
     #region Dispose
     public void Dispose()
     {
@@ -168,6 +223,61 @@ public class MaterialBank : IDisposable
         Definitions = null;
     }
     #endregion
+}
+
+internal static class MaterialBinderSave
+{
+    /// <summary>
+    /// Writes the dirty files into their binder and saves it to the project, then clears their dirty marks.
+    /// Unlike the editor's save, this doesn't need a view, so the unsaved changes prompt can save every binder.
+    /// </summary>
+    public static bool SaveDirtyFiles(object owner, ProjectEntry project, VirtualFileSystem targetFS, string filePath,
+        bool isBnd3, IEnumerable<MaterialFileWrapper> files, Func<MaterialFileWrapper, byte[]> write)
+    {
+        var dirty = files.Where(e => e.IsDirty).ToDictionary(e => e.Key);
+
+        if (dirty.Count == 0)
+            return true;
+
+        var containerFileData = targetFS.ReadFile(filePath);
+
+        if (containerFileData == null)
+        {
+            Smithbox.LogError(owner, LOC.Get("EDITOR_Data_Failed_Read_Container", filePath));
+            return false;
+        }
+
+        try
+        {
+            IBinder binder = isBnd3 ? BND3.Read(containerFileData.Value) : BND4.Read(containerFileData.Value);
+
+            foreach (var binderFile in binder.Files)
+            {
+                if (dirty.TryGetValue(binderFile.Name, out var wrapper))
+                {
+                    binderFile.Bytes = write(wrapper);
+                }
+            }
+
+            var writeFile = binder is BND3 bnd3 ? bnd3.Write() : ((BND4)binder).Write();
+
+            project.VFS.ProjectFS.WriteFile(filePath, writeFile);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(owner, LOC.Get("EDITOR_Data_Failed_Write_Container", filePath), ex);
+            return false;
+        }
+
+        foreach (var wrapper in dirty.Values)
+        {
+            wrapper.IsDirty = false;
+        }
+
+        Smithbox.Log(owner, LOC.Get("EDITOR_Data_Save_File", filePath));
+
+        return true;
+    }
 }
 
 /// <summary>
@@ -300,6 +410,17 @@ public class MTDWrapper
         {
             return HandleContainer_BND4(view);
         }
+    }
+
+    /// <summary>
+    /// Saves every modified MTD in this binder, without needing a view
+    /// </summary>
+    public bool SaveDirtyFiles()
+    {
+        var isBnd3 = Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R;
+
+        return MaterialBinderSave.SaveDirtyFiles(this, Project, TargetFS, FilePath, isBnd3,
+            Entries.Values, e => ((MTDFileWrapper)e).MTD.Write());
     }
 
     private bool HandleContainer_BND3(MaterialEditorView view)
@@ -509,6 +630,15 @@ public class MATBINWrapper
         }
 
         return HandleContainer_BND4(view);
+    }
+
+    /// <summary>
+    /// Saves every modified MATBIN in this binder, without needing a view
+    /// </summary>
+    public bool SaveDirtyFiles()
+    {
+        return MaterialBinderSave.SaveDirtyFiles(this, Project, TargetFS, FilePath, false,
+            Entries.Values, e => ((MATBINFileWrapper)e).MATBIN.Write());
     }
 
     private bool HandleContainer_BND4(MaterialEditorView view)

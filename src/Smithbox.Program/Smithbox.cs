@@ -116,6 +116,13 @@ public class Smithbox
 
         Orchestrator = new();
 
+        // Can be asked on the window's event thread, so this only notes the request; the main loop handles it
+        _context.Window.CloseRequested = () =>
+        {
+            _closeRequested = true;
+            return false;
+        };
+
         DPI.UpdateDpi(_context);
         DPI.UIScaleChanged += (_, _) =>
         {
@@ -548,6 +555,38 @@ public class Smithbox
         }
     }
 
+    // Set when the user closes the window; see HandleCloseRequest
+    private volatile bool _closeRequested;
+
+    /// <summary>
+    /// Closes the window the user asked to close, once the unsaved changes prompt allows it. Closing with nothing
+    /// unsaved happens at once, which leaves the main loop after this frame's update.
+    /// </summary>
+    private void HandleCloseRequest()
+    {
+        if (!_closeRequested)
+            return;
+
+        _closeRequested = false;
+
+        if (ProgramType is not ProgramType.Editor || Orchestrator == null)
+        {
+            _context.Window.Close();
+            return;
+        }
+
+        try
+        {
+            Orchestrator.RequestExit(() => _context.Window.Close());
+        }
+        catch (Exception e)
+        {
+            // A failed check must not keep the window from closing
+            Smithbox.LogError(this, LOC.Get("UNSAVED_Check_Failed_Exit"), e);
+            _context.Window.Close();
+        }
+    }
+
     public void Run()
     {
         CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
@@ -612,6 +651,9 @@ public class Smithbox
             InputManager.Update(_context.Window, snapshot, deltaSeconds);
 
             Update((float)deltaSeconds);
+
+            // After the update, so a close goes straight to the check below
+            HandleCloseRequest();
 
             // The shutdown after the loop saves everything, so closing here only leaves the loop
             if (!_context.Window.Exists)

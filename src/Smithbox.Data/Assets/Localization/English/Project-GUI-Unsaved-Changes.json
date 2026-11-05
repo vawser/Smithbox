@@ -1,0 +1,116 @@
+{
+  "Entries": [
+    {
+      "Key": "UNSAVED_Header",
+      "Text": "Unsaved Changes"
+    },
+    {
+      "Key": "UNSAVED_Message_Exit",
+      "Text": "There are unsaved changes. Save them before Smithbox closes?"
+    },
+    {
+      "Key": "UNSAVED_Message_Unload",
+      "Text": "The project \"{0}\" has unsaved changes. Save them before it is unloaded?"
+    },
+    {
+      "Key": "UNSAVED_Message_Reload",
+      "Text": "The project \"{0}\" has unsaved changes. Save them before it is reloaded?"
+    },
+    {
+      "Key": "UNSAVED_Message_Remove",
+      "Text": "The project \"{0}\" has unsaved changes. Save them before it is removed?"
+    },
+    {
+      "Key": "UNSAVED_Save_Incomplete",
+      "Text": "Some changes could not be saved, and are listed below. See the log for why."
+    },
+    {
+      "Key": "UNSAVED_Editor_Entry",
+      "Text": "{0} ({1})"
+    },
+    {
+      "Key": "UNSAVED_Saving",
+      "Text": "Saving..."
+    },
+    {
+      "Key": "UNSAVED_Action_Save_All",
+      "Text": "Save All"
+    },
+    {
+      "Key": "UNSAVED_Action_Save_All_TT",
+      "Text": "Save every listed change, then continue. If any save fails, this prompt stays open."
+    },
+    {
+      "Key": "UNSAVED_Action_Discard_Exit",
+      "Text": "Exit Without Saving"
+    },
+    {
+      "Key": "UNSAVED_Action_Discard_Unload",
+      "Text": "Unload Without Saving"
+    },
+    {
+      "Key": "UNSAVED_Action_Discard_Reload",
+      "Text": "Reload Without Saving"
+    },
+    {
+      "Key": "UNSAVED_Action_Discard_Remove",
+      "Text": "Remove Without Saving"
+    },
+    {
+      "Key": "UNSAVED_Action_Discard_TT",
+      "Text": "Continue and lose the listed changes."
+    },
+    {
+      "Key": "UNSAVED_Action_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "UNSAVED_Action_Cancel_TT",
+      "Text": "Keep the changes and don't continue."
+    },
+    {
+      "Key": "UNSAVED_Save_Failed_Log",
+      "Text": "The {0} failed to save its unsaved changes."
+    },
+    {
+      "Key": "UNSAVED_Check_Failed",
+      "Text": "Failed to check the {0} for unsaved changes."
+    },
+    {
+      "Key": "UNSAVED_Check_Failed_Exit",
+      "Text": "Failed to check for unsaved changes, so Smithbox closed without asking."
+    },
+    {
+      "Key": "UNSAVED_Configuration",
+      "Text": "Project Configuration"
+    },
+    {
+      "Key": "UNSAVED_Configuration_File",
+      "Text": "Settings not yet applied with Update (saved without reloading the project)"
+    },
+    {
+      "Key": "UNSAVED_Metadata_Aliases",
+      "Text": "Project Aliases"
+    },
+    {
+      "Key": "UNSAVED_Metadata_Enums",
+      "Text": "Project Param Enums"
+    },
+    {
+      "Key": "UNSAVED_Metadata_Enums_File",
+      "Text": "Param Enums (saved to the project)"
+    },
+    {
+      "Key": "UNSAVED_Map_Load_List",
+      "Text": "Load List"
+    },
+    {
+      "Key": "UNSAVED_Map_Entry_File_List",
+      "Text": "Entry File List"
+    },
+    {
+      "Key": "UNSAVED_Map_Parts_Token_ID_List",
+      "Text": "Parts Token ID List"
+    }
+  ]
+}

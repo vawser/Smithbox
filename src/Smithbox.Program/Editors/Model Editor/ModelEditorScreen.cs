@@ -359,6 +359,26 @@ public class ModelEditorScreen : EditorScreen
         Smithbox.Instance.SaveConfiguration();
     }
 
+    public List<string> GetUnsavedFiles()
+    {
+        var bank = Project.Handler.ModelData?.PrimaryBank;
+
+        if (bank?.Models == null)
+            return new();
+
+        return bank.Models.Values
+            .SelectMany(c => c.Models)
+            .Where(m => m.IsDirty)
+            .Select(m => m.Name)
+            .Distinct()
+            .ToList();
+    }
+
+    public void SaveUnsaved()
+    {
+        SaveAll();
+    }
+
     /// <summary>
     /// Save all modified models, including those that are not currently loaded
     /// </summary>

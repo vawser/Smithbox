@@ -157,6 +157,19 @@ public class MaterialEditorScreen : EditorScreen
         }
     }
 
+    public List<string> GetUnsavedFiles()
+    {
+        return Project.Handler.MaterialData?.PrimaryBank?.GetDirtyFiles() ?? new();
+    }
+
+    public void SaveUnsaved()
+    {
+        Project.Handler.MaterialData?.PrimaryBank?.SaveAllDirty();
+
+        // Save the configuration JSONs
+        Smithbox.Instance.SaveConfiguration();
+    }
+
     public async void Save(bool autoSave = false)
     {
         var activeView = ViewHandler.ActiveView;

@@ -353,6 +353,50 @@ public class GparamEditorScreen : EditorScreen
         Smithbox.Instance.SaveConfiguration();
     }
 
+    // Matches what SaveAllGraphicsParams writes, so a file it skips can't keep the prompt open
+    public List<string> GetUnsavedFiles()
+    {
+        var bank = Project.Handler.GparamData?.PrimaryBank;
+
+        if (bank?.Entries == null)
+            return new();
+
+        return bank.Entries
+            .Where(e => e.Value != null && e.Value.IsLoaded() && e.Value.IsDirty)
+            .Select(e => e.Key.Path)
+            .OrderBy(e => e)
+            .ToList();
+    }
+
+    private Task _unsavedSave;
+
+    public void SaveUnsaved()
+    {
+        var bank = Project.Handler.GparamData?.PrimaryBank;
+
+        if (bank == null)
+            return;
+
+        // On the main thread, before the files are written on a worker thread
+        Smithbox.Instance.SaveConfiguration();
+
+        _unsavedSave = SaveUnsavedCore(bank);
+    }
+
+    private async Task SaveUnsavedCore(GparamBank bank)
+    {
+        try
+        {
+            await bank.SaveAllGraphicsParams();
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, e.Message, e);
+        }
+    }
+
+    public bool IsSavingUnsaved => _unsavedSave is { IsCompleted: false };
+
     public async void SaveAll(bool autoSave = false)
     {
         if (autoSave && CFG.Current.GparamEditor_Allow_Automatic_Save || !autoSave)

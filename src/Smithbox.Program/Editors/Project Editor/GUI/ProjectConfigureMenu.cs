@@ -63,6 +63,22 @@ public class ProjectConfigureMenu
             && !Project.Descriptor.ConfigurationEquals(Descriptor);
     }
 
+    /// <summary>
+    /// Applies the form's edits to the project and writes its project file, without reloading it. For the unsaved
+    /// changes prompt, before Smithbox closes or the project is unloaded, so the settings take effect on its next
+    /// load. Settings the Update button wouldn't accept are left unapplied, so the prompt lists them again.
+    /// </summary>
+    public void ApplyWithoutReload()
+    {
+        if (!HasUnsavedChanges() || !AllowCreation())
+            return;
+
+        Project.Descriptor.ApplyConfiguration(Descriptor);
+        Smithbox.Orchestrator.SaveProject(Project);
+
+        SetupForEdit(Project);
+    }
+
     public void RevertChangesAction()
     {
         SetupForEdit(Project);
@@ -247,7 +263,20 @@ public class ProjectConfigureMenu
 
     public void UpdateProjectAction()
     {
-        Smithbox.Orchestrator.UpdateProject(Project, Descriptor);
+        var project = Project;
+        var descriptor = Descriptor;
+
+        // An active project is reloaded with the new settings, which would lose its unsaved changes
+        if (!project.IsActive)
+        {
+            Smithbox.Orchestrator.UpdateProject(project, descriptor);
+            return;
+        }
+
+        Smithbox.Orchestrator.RequestProjectAction(project, UnsavedChangesAction.Reload, () =>
+        {
+            Smithbox.Orchestrator.UpdateProject(project, descriptor);
+        });
     }
 
     public void DeleteProjectAction()
@@ -258,7 +287,12 @@ public class ProjectConfigureMenu
 
         if (dialog is DialogResult.OK)
         {
-            ProjectUtils.DeleteProject(Project);
+            var project = Project;
+
+            Smithbox.Orchestrator.RequestProjectAction(project, UnsavedChangesAction.Remove, () =>
+            {
+                ProjectUtils.DeleteProject(project);
+            });
         }
     }
 

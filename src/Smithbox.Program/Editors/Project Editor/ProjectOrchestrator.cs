@@ -91,6 +91,33 @@ public class ProjectOrchestrator : IDisposable
 
         DrawProjectLoadingUI();
         DrawLoadFailureUI();
+
+        // After the loading and load failure popups have closed, as only one modal can be open
+        if (!IsProjectLoading && _loadFailureMessage == null)
+        {
+            UnsavedChangesPrompt.Draw();
+        }
+    }
+
+    /// <summary>
+    /// Asked before Smithbox closes and before a project is unloaded, reloaded or removed
+    /// </summary>
+    public UnsavedChangesPrompt UnsavedChangesPrompt = new();
+
+    /// <summary>
+    /// Closes Smithbox through <paramref name="close"/>, first asking what to do with any unsaved changes
+    /// </summary>
+    public void RequestExit(Action close)
+    {
+        UnsavedChangesPrompt.Request(UnsavedChangesAction.Exit, Projects.ToList(), close);
+    }
+
+    /// <summary>
+    /// Runs <paramref name="action"/> on the project, first asking what to do with its unsaved changes
+    /// </summary>
+    public void RequestProjectAction(ProjectEntry project, UnsavedChangesAction kind, Action action)
+    {
+        UnsavedChangesPrompt.Request(kind, [project], action);
     }
 
     /// <summary>

@@ -3,6 +3,8 @@ using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
+using StudioCore.Utilities;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
@@ -307,6 +309,130 @@ public class ProjectEntry
         return true;
     }
 
+    #region Unsaved Changes
+    /// <summary>
+    /// The alias types changed in the Project Metadata editor since they were last saved. Set by
+    /// <see cref="ProjectAliasMenu"/>, which saves one alias type at a time.
+    /// </summary>
+    public HashSet<ProjectAliasType> UnsavedAliasTypes = new();
+
+    /// <summary>
+    /// Whether the param enums were changed in the Project Metadata editor since they were last saved
+    /// </summary>
+    public bool HasUnsavedEnums;
+
+    /// <summary>
+    /// The editors of this project, for the unsaved changes prompt. Empty unless the project is active.
+    /// </summary>
+    public IEnumerable<EditorScreen> GetEditors()
+    {
+        if (!IsActive || Handler == null)
+            yield break;
+
+        EditorScreen[] editors =
+        [
+            Handler.MapEditor,
+            Handler.ModelEditor,
+            Handler.TimeActEditor,
+            Handler.ParamEditor,
+            Handler.TextEditor,
+            Handler.GparamEditor,
+            Handler.MaterialEditor,
+            Handler.HavokEditor,
+            Handler.TextureViewer,
+            Handler.FileBrowser,
+        ];
+
+        foreach (var editor in editors)
+        {
+            if (editor != null)
+                yield return editor;
+        }
+    }
+
+    /// <summary>
+    /// Whether the project configuration form holds edits of this project not yet applied with Update
+    /// </summary>
+    public bool HasUnsavedConfiguration()
+    {
+        var menu = Smithbox.Orchestrator?.ProjectEditor?.ConfigureMenu;
+
+        return menu != null && menu.Project == this && menu.HasUnsavedChanges();
+    }
+
+    /// <summary>
+    /// The editors with unsaved changes, and the files each lists
+    /// </summary>
+    /// <param name="includeConfiguration">Also the configuration form's unapplied edits, for actions that lose them
+    /// (exit and unload). Checked even for a project that isn't loaded, as the form edits those too.</param>
+    public List<UnsavedEditor> GetUnsavedChanges(bool includeConfiguration = false)
+    {
+        var result = new List<UnsavedEditor>();
+
+        if (includeConfiguration && HasUnsavedConfiguration())
+        {
+            var menu = Smithbox.Orchestrator.ProjectEditor.ConfigureMenu;
+
+            AddUnsaved(result, LOC.Get("UNSAVED_Configuration"),
+                () => HasUnsavedConfiguration() ? [LOC.Get("UNSAVED_Configuration_File")] : new List<string>(),
+                () => menu.ApplyWithoutReload());
+        }
+
+        foreach (var editor in GetEditors())
+        {
+            var screen = editor;
+
+            AddUnsaved(result, screen.EditorName, () => screen.GetUnsavedFiles(), () => screen.SaveUnsaved());
+        }
+
+        // The Project Metadata editor is shared by every project, so its edits are kept on the project
+        if (IsActive)
+        {
+            var metadata = Smithbox.Orchestrator?.ProjectMetadataEditor;
+
+            if (metadata != null)
+            {
+                AddUnsaved(result, LOC.Get("UNSAVED_Metadata_Aliases"),
+                    () => UnsavedAliasTypes.Select(e => LOC.Get(e.GetDisplayName())).OrderBy(e => e).ToList(),
+                    () => metadata.AliasMenu.SaveUnsavedLocal(this));
+
+                AddUnsaved(result, LOC.Get("UNSAVED_Metadata_Enums"),
+                    () => HasUnsavedEnums ? [LOC.Get("UNSAVED_Metadata_Enums_File")] : new List<string>(),
+                    () => metadata.EnumMenu.SaveUnsavedLocal(this));
+            }
+        }
+
+        return result;
+    }
+
+    private void AddUnsaved(List<UnsavedEditor> result, string name, Func<List<string>> getFiles, Action save)
+    {
+        List<string> files;
+
+        try
+        {
+            files = getFiles();
+        }
+        catch (Exception e)
+        {
+            // A failed check must not stop the prompt, or the app couldn't be closed
+            Smithbox.LogError(this, LOC.Get("UNSAVED_Check_Failed", name), e);
+            return;
+        }
+
+        if (files is { Count: > 0 })
+            result.Add(new UnsavedEditor(name, files, save));
+    }
+
+    /// <summary>
+    /// True while a save started by the unsaved changes prompt is still running in any editor
+    /// </summary>
+    public bool IsSavingUnsaved()
+    {
+        return GetEditors().Any(e => e.IsSavingUnsaved);
+    }
+    #endregion
+
     #region Automatic Save
     private bool AutomaticSaveSetup = false;
 
@@ -472,6 +598,10 @@ public class ProjectEntry
 
         Initialized = false;
         IsInitializing = false;
+
+        // The edited aliases and enums were held by the data just released
+        UnsavedAliasTypes.Clear();
+        HasUnsavedEnums = false;
     }
     #endregion
 }

@@ -235,6 +235,26 @@ public class TextEditorScreen : EditorScreen
         }
     }
 
+    // By path, as each language holds files of the same names
+    public List<string> GetUnsavedFiles()
+    {
+        var bank = Project.Handler.TextData?.PrimaryBank;
+
+        if (bank?.Containers == null)
+            return new();
+
+        return bank.Containers
+            .Where(e => e.Value != null && e.Value.IsDirty())
+            .Select(e => e.Key.Path)
+            .OrderBy(e => e)
+            .ToList();
+    }
+
+    public void SaveUnsaved()
+    {
+        SaveAll();
+    }
+
     /// <summary>
     /// Save all modified FMG containers
     /// </summary>

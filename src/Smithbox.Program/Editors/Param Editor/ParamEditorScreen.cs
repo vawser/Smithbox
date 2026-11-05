@@ -498,5 +498,30 @@ public class ParamEditorScreen : EditorScreen
 
         Save();
     }
+
+    public List<string> GetUnsavedFiles()
+    {
+        var bank = Project.Handler.ParamData?.PrimaryBank;
+
+        if (bank == null || !bank.IsDirty())
+            return new();
+
+        var names = (bank.Params?.Keys ?? Enumerable.Empty<string>())
+            .Concat(bank.StayParams.Keys)
+            .Where(bank.IsParamDirty)
+            .Distinct()
+            .OrderBy(e => e)
+            .ToList();
+
+        return names;
+    }
+
+    // Save sets IsSaving before its first await, so the prompt sees the save as running from this call on
+    public void SaveUnsaved()
+    {
+        Save();
+    }
+
+    public bool IsSavingUnsaved => IsSaving;
     #endregion
 }

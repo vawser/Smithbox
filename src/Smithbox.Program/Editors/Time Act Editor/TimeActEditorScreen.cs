@@ -325,6 +325,26 @@ public class TimeActEditorScreen : EditorScreen
         Smithbox.Instance.SaveConfiguration();
     }
 
+    // Only the time acts: the editor doesn't save the models it previews, so their dirty mark isn't counted
+    public List<string> GetUnsavedFiles()
+    {
+        var bank = Project.Handler.TimeActData?.PrimaryBank;
+
+        if (bank == null)
+            return new();
+
+        return bank.GetCharacters().Concat(bank.GetAssets())
+            .Where(e => e != null && e.HasUnsavedTimeActs)
+            .Select(e => e.Name)
+            .Distinct()
+            .ToList();
+    }
+
+    public void SaveUnsaved()
+    {
+        SaveAll();
+    }
+
     private void SaveSources(IEnumerable<TimeActContainerWrapper> sources)
     {
         foreach (var source in sources)

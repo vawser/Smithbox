@@ -26,6 +26,90 @@ public class ProjectAliasMenu
     public ProjectAliasMenu()
     {
         ActionManager = new();
+        ActionManager.ActionPerformed += MarkEditedTypesUnsaved;
+    }
+
+    // The alias types the undo stack holds edits of, and the project they belong to. The stack is cleared when
+    // another project is selected, so the set is reset with it.
+    private readonly HashSet<ProjectAliasType> _editedTypes = new();
+    private ProjectEntry _editedProject;
+
+    /// <summary>
+    /// Runs an edit of the selected alias type, noting the type so undoing it later marks the right one unsaved
+    /// </summary>
+    private void ExecuteAliasAction(EditorAction action)
+    {
+        var project = Smithbox.Orchestrator.SelectedProject;
+
+        if (_editedProject != project)
+        {
+            _editedTypes.Clear();
+            _editedProject = project;
+        }
+
+        if (SelectedAliasType != ProjectAliasType.None)
+            _editedTypes.Add(SelectedAliasType);
+
+        ActionManager.ExecuteAction(action);
+    }
+
+    /// <summary>
+    /// After an edit, undo or redo. Which action an undo reverted isn't reported, so every type the stack has edited
+    /// is marked: at worst an unchanged type is written again on save.
+    /// </summary>
+    private void MarkEditedTypesUnsaved()
+    {
+        var project = Smithbox.Orchestrator.SelectedProject;
+
+        if (project == null || project != _editedProject)
+            return;
+
+        project.UnsavedAliasTypes.UnionWith(_editedTypes);
+    }
+
+    /// <summary>
+    /// Saves every alias type with unsaved changes to the project's own aliases, for the unsaved changes prompt.
+    /// Never the base aliases, which are part of Smithbox itself.
+    /// </summary>
+    public void SaveUnsavedLocal(ProjectEntry project)
+    {
+        var aliases = project?.Handler?.ProjectData?.Aliases;
+
+        if (aliases == null)
+            return;
+
+        var projectFolder = Path.Join(project.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
+
+        if (!Directory.Exists(projectFolder))
+            Directory.CreateDirectory(projectFolder);
+
+        foreach (var aliasType in project.UnsavedAliasTypes.ToList())
+        {
+            // As with the editor's own save, an empty list isn't written
+            if (aliases.TryGetValue(aliasType, out var list) && list.Any())
+            {
+                WriteAliasFile(Path.Combine(projectFolder, $"{aliasType}.json"), list);
+
+                Smithbox.Log<ProjectAliasMenu>(LOC.Get("META_AliasMenu_Saved_Project_Aliases"));
+            }
+
+            project.UnsavedAliasTypes.Remove(aliasType);
+        }
+    }
+
+    private static void WriteAliasFile(string path, List<AliasEntry> aliases)
+    {
+        aliases.Sort();
+
+        var options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true
+        };
+        var json = JsonSerializer.Serialize(aliases, typeof(List<AliasEntry>), options);
+
+        File.WriteAllText(path, json);
     }
 
     public void Display()
@@ -635,7 +719,7 @@ public class ProjectAliasMenu
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeAliasField(curEntry, curEntry.ID, newID, ProjectAliasFieldType.ID);
-                ActionManager.ExecuteAction(action);
+                ExecuteAliasAction(action);
             }
         }
         else
@@ -660,7 +744,7 @@ public class ProjectAliasMenu
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeAliasField(curEntry, curEntry.Name, newName, ProjectAliasFieldType.Name);
-                ActionManager.ExecuteAction(action);
+                ExecuteAliasAction(action);
             }
         }
         else
@@ -686,7 +770,7 @@ public class ProjectAliasMenu
             {
                 var newTagList = newTags.Split(',').ToList();
                 var action = new ChangeAliasField(curEntry, curEntry.Tags, newTagList, ProjectAliasFieldType.Tags);
-                ActionManager.ExecuteAction(action);
+                ExecuteAliasAction(action);
             }
         }
         else
@@ -796,7 +880,7 @@ public class ProjectAliasMenu
             ProjectAliasListOperation.Add,
             index);
 
-        ActionManager.ExecuteAction(action);
+        ExecuteAliasAction(action);
     }
 
     public void DuplicateAliases()
@@ -826,7 +910,7 @@ public class ProjectAliasMenu
             actions.Add(action);
         }
 
-        ActionManager.ExecuteAction(new CompoundAction(actions)); 
+        ExecuteAliasAction(new CompoundAction(actions)); 
         
         //SelectedEntries.Clear();
         //_selectedAliasIndex = -1;
@@ -853,7 +937,7 @@ public class ProjectAliasMenu
             actions.Add(action);
         }
 
-        ActionManager.ExecuteAction(new CompoundAction(actions));
+        ExecuteAliasAction(new CompoundAction(actions));
 
         SelectedEntries.Clear();
         _selectedAliasIndex = -1;
@@ -878,7 +962,7 @@ public class ProjectAliasMenu
             new ChangeAliasList(source, alias, alias, ProjectAliasListOperation.Add, insertIndex)
         };
 
-        ActionManager.ExecuteAction(new CompoundAction(actions));
+        ExecuteAliasAction(new CompoundAction(actions));
 
         SelectedEntries.Clear();
         _selectedAliasIndex = -1;
@@ -993,6 +1077,8 @@ public class ProjectAliasMenu
 
             Smithbox.Log<ProjectAliasMenu>(saveMessage);
         }
+
+        curProject.UnsavedAliasTypes.Remove(SelectedAliasType);
     }
 
     public void SaveIndividualAlias(ProjectAliasType targetType)
@@ -1040,6 +1126,8 @@ public class ProjectAliasMenu
 
             Smithbox.Log<ProjectAliasMenu>(LOC.Get("META_AliasMenu_Saved_Project_Aliases"));
         }
+
+        curProject.UnsavedAliasTypes.Remove(targetType);
     }
 
 

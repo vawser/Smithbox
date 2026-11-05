@@ -1,4 +1,5 @@
-﻿using Veldrid;
+﻿using System.Collections.Generic;
+using Veldrid;
 using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.Common;
@@ -39,6 +40,29 @@ public interface EditorScreen
     {
         // Default
     }
+
+    /// <summary>
+    ///     The files with unsaved changes, listed by the unsaved changes prompt shown before exiting or unloading
+    ///     the project. Empty if nothing is unsaved.
+    /// </summary>
+    public List<string> GetUnsavedFiles()
+    {
+        return new();
+    }
+
+    /// <summary>
+    ///     Starts saving everything <see cref="GetUnsavedFiles"/> lists. A save can finish on a later frame, which
+    ///     <see cref="IsSavingUnsaved"/> reports.
+    /// </summary>
+    public void SaveUnsaved()
+    {
+        // Default
+    }
+
+    /// <summary>
+    ///     True while a save started by <see cref="SaveUnsaved"/> is still running
+    /// </summary>
+    public bool IsSavingUnsaved => false;
 
     /// <summary>
     ///     Draw the main GUI using ImGUI

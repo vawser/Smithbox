@@ -453,17 +453,25 @@ public class ProjectScreen
 
             if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Reload")}##reloadAction", false, isOpen && !orchestrator.IsProjectLoading))
             {
-                _ = orchestrator.ReloadProject(project);
+                orchestrator.RequestProjectAction(project, UnsavedChangesAction.Reload, () =>
+                {
+                    // Checked again, as the prompt can run this on a later frame
+                    if (!orchestrator.IsProjectLoading)
+                        _ = orchestrator.ReloadProject(project);
+                });
             }
 
             if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Unload")}##unloadAction", false, isOpen))
             {
-                orchestrator.UnloadProject(project);
+                orchestrator.RequestProjectAction(project, UnsavedChangesAction.Unload, () =>
+                {
+                    orchestrator.UnloadProject(project);
 
-                if (SelectedLoadedEntry == project)
-                    SelectedLoadedEntry = null;
+                    if (SelectedLoadedEntry == project)
+                        SelectedLoadedEntry = null;
 
-                ConfigureMenu.SetupForCreation();
+                    ConfigureMenu.SetupForCreation();
+                });
             }
 
             if (ImGui.BeginMenu($"{LOC.Get("PROJECT_Configuration_Global_Context_Header_Information")}##infoHeader"))

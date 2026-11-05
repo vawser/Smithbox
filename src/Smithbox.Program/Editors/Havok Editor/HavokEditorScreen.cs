@@ -265,6 +265,25 @@ public class HavokEditorScreen : EditorScreen
         }
     }
 
+    public List<string> GetUnsavedFiles()
+    {
+        return HavokBank?.GetDirtyFiles() ?? new();
+    }
+
+    // Saves from the bank directly, as SaveAll needs an active view
+    public void SaveUnsaved()
+    {
+        if (HavokBank == null)
+            return;
+
+        var bank = HavokBank;
+
+        if (RunSave(() => bank.SaveAllHavokFiles(), ""))
+        {
+            OnSaveComplete();
+        }
+    }
+
     /// <summary>
     /// Run the save, logging any failure. Returns whether anything was written.
     /// </summary>

@@ -100,6 +100,34 @@ public class HavokBank : IDisposable
     {
         return files.Values.Any(e => e.IsDirty);
     }
+
+    /// <summary>
+    /// The binder and internal paths of the files with unsaved changes, for the unsaved changes prompt. Only the
+    /// loaded files, as those are the ones SaveBinder writes.
+    /// </summary>
+    public List<string> GetDirtyFiles()
+    {
+        var result = new List<string>();
+
+        foreach (var category in Enum.GetValues<HavokCategoryMode>())
+        {
+            var bankDict = GetBank(category);
+
+            if (bankDict == null)
+                continue;
+
+            foreach (var (fileEntry, files) in bankDict)
+            {
+                foreach (var (path, wrapper) in files)
+                {
+                    if (wrapper.IsDirty && wrapper.IsLoaded())
+                        result.Add($"{fileEntry.Path} : {path}");
+                }
+            }
+        }
+
+        return result.OrderBy(e => e).ToList();
+    }
     #endregion
 
     #region Populate
