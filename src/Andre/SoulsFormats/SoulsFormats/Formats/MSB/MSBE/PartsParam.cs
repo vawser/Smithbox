@@ -2098,6 +2098,16 @@ namespace SoulsFormats
                 public bool DisableTorrent { get; set; }
 
                 /// <summary>
+                /// Unknown. Always 0 in retail; read by the game (an asset's AssetStruct1_Unk0C falls back to it).
+                /// </summary>
+                public byte UnkT37 { get; set; }
+
+                /// <summary>
+                /// Unknown. Always -1 in retail; read by the game (an asset's AssetStruct1_Unk10 falls back to it).
+                /// </summary>
+                public int UnkT38 { get; set; } = -1;
+
+                /// <summary>
                 /// Unknown.
                 /// </summary>
                 public short UnkT3C { get; set; }
@@ -2182,8 +2192,8 @@ namespace SoulsFormats
                     UnkT34 = br.ReadByte();
                     GparamOverride = br.ReadByte();
                     DisableTorrent = br.ReadBoolean();
-                    br.AssertByte(0);
-                    br.AssertInt32(-1);
+                    UnkT37 = br.ReadByte();
+                    UnkT38 = br.ReadInt32();
                     UnkT3C = br.ReadInt16();
                     UnkT3E = br.ReadInt16();
                     UnkT40 = br.ReadSingle();
@@ -2224,8 +2234,8 @@ namespace SoulsFormats
                     bw.WriteByte(UnkT34);
                     bw.WriteByte(GparamOverride);
                     bw.WriteBoolean(DisableTorrent);
-                    bw.WriteByte(0);
-                    bw.WriteInt32(-1);
+                    bw.WriteByte(UnkT37);
+                    bw.WriteInt32(UnkT38);
                     bw.WriteInt16(UnkT3C);
                     bw.WriteInt16(UnkT3E);
                     bw.WriteSingle(UnkT40);
@@ -2722,14 +2732,16 @@ namespace SoulsFormats
                 public int UnkT64 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The asset's own collision settings. When OverrideCollisionSettings is set the game uses these, otherwise
+                /// the same fields of the Collision part in PartNames[5] (or [4]); each field below names its Collision
+                /// counterpart (getters 0x140CF2800..0x140CF47E0 in eldenring.exe).
                 /// </summary>
                 public class AssetUnkStruct1
                 {
                     /// <summary>
-                    /// Unknown. Read by the game.
+                    /// If set, the fields of this struct are used instead of those of the asset's collision.
                     /// </summary>
-                    public byte AssetStruct1_Unk00 { get; set; }
+                    public byte OverrideCollisionSettings { get; set; }
 
                     /// <summary>
                     /// Unknown; not read by the game.
@@ -2737,59 +2749,55 @@ namespace SoulsFormats
                     public byte AssetStruct1_Unk01 { get; set; }
 
                     /// <summary>
-                    /// Unknown.
+                    /// Unknown. The asset's own value of Collision UnkT26.
                     /// </summary>
                     public bool AssetStruct1_Unk04 { get; set; }
 
                     /// <summary>
-                    /// Disable being able to summon/ride Torrent, but only when asset isn't referencing collision DisableTorrent.
+                    /// Disable being able to summon/ride Torrent; the asset's own value of Collision DisableTorrent.
                     /// </summary>
                     public bool DisableTorrentAssetOnly { get; set; }
 
                     /// <summary>
-                    /// Unknown. Always -1 in retail; read by the game.
+                    /// Unknown. The asset's own value of Collision UnkT4E. Always -1 in retail.
                     /// </summary>
                     public short AssetStruct1_Unk06 { get; set; } = -1;
 
                     /// <summary>
-                    /// Unknown. Always 0 in retail; read by the game as a byte.
+                    /// Unknown. The asset's own value of Collision UnkT37. Always 0 in retail.
                     /// </summary>
                     public byte AssetStruct1_Unk0C { get; set; }
 
                     /// <summary>
-                    /// Unknown. Always -1 in retail; read by the game.
+                    /// Unknown. The asset's own value of Collision UnkT38. Always -1 in retail.
                     /// </summary>
                     public int AssetStruct1_Unk10 { get; set; } = -1;
 
                     /// <summary>
-                    /// Unknown.
+                    /// Unknown. The asset's own value of Collision UnkT30.
                     /// </summary>
                     public int AssetStruct1_Unk1C { get; set; }
 
                     /// <summary>
-                    /// Unknown. Always 0 in retail; read by the game.
+                    /// Disables fast travel unless this event flag is set; the asset's own value of Collision
+                    /// EnableFastTravelEventFlagID.
                     /// </summary>
-                    public int AssetStruct1_Unk20 { get; set; }
+                    public uint EnableFastTravelEventFlagID { get; set; }
 
                     /// <summary>
-                    /// Unknown.
+                    /// Place name text shown when stepping onto the asset; the asset's own value of Collision LocationTextID.
                     /// </summary>
-                    public short AssetStruct1_Unk24 { get; set; }
+                    public int LocationTextID { get; set; } = -1;
 
                     /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public short AssetStruct1_Unk26 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
+                    /// Unknown. The asset's own value of Collision UnkT1C.
                     /// </summary>
                     public int AssetStruct1_Unk28 { get; set; }
 
                     /// <summary>
-                    /// Unknown.
+                    /// Used to determine invasion eligibility; the asset's own value of Collision PlayRegionID.
                     /// </summary>
-                    public int AssetStruct1_Unk2C { get; set; }
+                    public int PlayRegionID { get; set; } = -1;
 
                     /// <summary>
                     /// Creates an AssetUnkStruct1 with default values.
@@ -2806,7 +2814,7 @@ namespace SoulsFormats
 
                     internal AssetUnkStruct1(BinaryReaderEx br)
                     {
-                        AssetStruct1_Unk00 = br.ReadByte();
+                        OverrideCollisionSettings = br.ReadByte();
                         AssetStruct1_Unk01 = br.ReadByte();
                         br.AssertInt16(-1);
                         AssetStruct1_Unk04 = br.ReadBoolean();
@@ -2821,11 +2829,10 @@ namespace SoulsFormats
                         br.AssertInt32(-1);
                         br.AssertInt32(-1);
                         AssetStruct1_Unk1C = br.ReadInt32();
-                        AssetStruct1_Unk20 = br.ReadInt32();
-                        AssetStruct1_Unk24 = br.ReadInt16();
-                        AssetStruct1_Unk26 = br.ReadInt16();
+                        EnableFastTravelEventFlagID = br.ReadUInt32();
+                        LocationTextID = br.ReadInt32();
                         AssetStruct1_Unk28 = br.ReadInt32();
-                        AssetStruct1_Unk2C = br.ReadInt32();
+                        PlayRegionID = br.ReadInt32();
                         br.AssertInt32(0);
                         br.AssertInt32(0);
                         br.AssertInt32(0);
@@ -2834,7 +2841,7 @@ namespace SoulsFormats
 
                     internal void Write(BinaryWriterEx bw)
                     {
-                        bw.WriteByte(AssetStruct1_Unk00);
+                        bw.WriteByte(OverrideCollisionSettings);
                         bw.WriteByte(AssetStruct1_Unk01);
                         bw.WriteInt16(-1);
                         bw.WriteBoolean(AssetStruct1_Unk04);
@@ -2849,11 +2856,10 @@ namespace SoulsFormats
                         bw.WriteInt32(-1);
                         bw.WriteInt32(-1);
                         bw.WriteInt32(AssetStruct1_Unk1C);
-                        bw.WriteInt32(AssetStruct1_Unk20);
-                        bw.WriteInt16(AssetStruct1_Unk24);
-                        bw.WriteInt16(AssetStruct1_Unk26);
+                        bw.WriteUInt32(EnableFastTravelEventFlagID);
+                        bw.WriteInt32(LocationTextID);
                         bw.WriteInt32(AssetStruct1_Unk28);
-                        bw.WriteInt32(AssetStruct1_Unk2C);
+                        bw.WriteInt32(PlayRegionID);
                         bw.WriteInt32(0);
                         bw.WriteInt32(0);
                         bw.WriteInt32(0);
@@ -2993,9 +2999,9 @@ namespace SoulsFormats
                 public class AssetUnkStruct3
                 {
                     /// <summary>
-                    /// Unknown. Read by the game as a byte.
+                    /// If set, the gparam and other fields of this struct are used instead of those of the asset's collision.
                     /// </summary>
-                    public byte AssetUnkStruct3_Unk00 { get; set; }
+                    public byte OverrideCollisionGparamSettings { get; set; }
 
                     /// <summary>
                     /// Unknown; not read by the game.
@@ -3018,42 +3024,42 @@ namespace SoulsFormats
                     public float AssetUnkStruct3_Unk04 { get; set; }
 
                     /// <summary>
-                    /// Unknown. Always -1 in retail; read by the game.
+                    /// Unknown gparam sub-ID; the asset's own value of Collision SceneGparam Unk1C. Only read for MSB versions before 0x31 (then Unk0C).
                     /// </summary>
                     public sbyte AssetUnkStruct3_Unk08 { get; set; } = -1;
 
                     /// <summary>
-                    /// Unknown.
+                    /// Overrides the gparam sub-ID (mXX_XX_AABB, replacing BB) like Collision GparamOverride; 255 for none.
                     /// </summary>
-                    public byte AssetUnkStruct3_Unk09 { get; set; }
+                    public byte GparamOverride { get; set; }
 
                     /// <summary>
-                    /// Unknown.
+                    /// Unknown. The asset's own value of Collision UnkT34.
                     /// </summary>
                     public byte AssetUnkStruct3_Unk0A { get; set; }
 
                     /// <summary>
-                    /// Unknown.
+                    /// Unknown. The asset's own value of Collision SceneGparam Unk1D.
                     /// </summary>
                     public byte AssetUnkStruct3_Unk0B { get; set; }
 
                     /// <summary>
-                    /// Unknown.
+                    /// Unknown gparam sub-ID; the asset's own value of Collision SceneGparam Unk20 (MSB version 0x31 and later). Usually equal to GparamOverride.
                     /// </summary>
                     public short AssetUnkStruct3_Unk0C { get; set; }
 
                     /// <summary>
-                    /// Unknown. Read by the game as a byte.
+                    /// Unknown. The asset's own value of Collision UnkT4C.
                     /// </summary>
                     public byte AssetUnkStruct3_Unk0E { get; set; }
 
                     /// <summary>
-                    /// Unknown. Read by the game as a byte.
+                    /// Unknown. The asset's own value of Collision UnkT4D.
                     /// </summary>
                     public byte AssetUnkStruct3_Unk0F { get; set; }
 
                     /// <summary>
-                    /// Unknown.
+                    /// Unknown. The asset's own value of Collision UnkT4C, as a float.
                     /// </summary>
                     public float AssetUnkStruct3_Unk10 { get; set; }
 
@@ -3112,13 +3118,13 @@ namespace SoulsFormats
 
                     internal AssetUnkStruct3(BinaryReaderEx br)
                     {
-                        AssetUnkStruct3_Unk00 = br.ReadByte();
+                        OverrideCollisionGparamSettings = br.ReadByte();
                         AssetUnkStruct3_Unk01 = br.ReadByte();
                         AssetUnkStruct3_Unk02 = br.ReadByte();
                         AssetUnkStruct3_Unk03 = br.ReadByte();
                         AssetUnkStruct3_Unk04 = br.ReadSingle();
                         AssetUnkStruct3_Unk08 = br.ReadSByte();
-                        AssetUnkStruct3_Unk09 = br.ReadByte();
+                        GparamOverride = br.ReadByte();
                         AssetUnkStruct3_Unk0A = br.ReadByte();
                         AssetUnkStruct3_Unk0B = br.ReadByte();
                         AssetUnkStruct3_Unk0C = br.ReadInt16();
@@ -3143,13 +3149,13 @@ namespace SoulsFormats
 
                     internal void Write(BinaryWriterEx bw)
                     {
-                        bw.WriteByte(AssetUnkStruct3_Unk00);
+                        bw.WriteByte(OverrideCollisionGparamSettings);
                         bw.WriteByte(AssetUnkStruct3_Unk01);
                         bw.WriteByte(AssetUnkStruct3_Unk02);
                         bw.WriteByte(AssetUnkStruct3_Unk03);
                         bw.WriteSingle(AssetUnkStruct3_Unk04);
                         bw.WriteSByte(AssetUnkStruct3_Unk08);
-                        bw.WriteByte(AssetUnkStruct3_Unk09);
+                        bw.WriteByte(GparamOverride);
                         bw.WriteByte(AssetUnkStruct3_Unk0A);
                         bw.WriteByte(AssetUnkStruct3_Unk0B);
                         bw.WriteInt16(AssetUnkStruct3_Unk0C);

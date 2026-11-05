@@ -71,6 +71,14 @@
     AltName="Disable Torrent Usage"
     Wiki="If ON, Torrent cannot be summoned on this collision." 
     IsBool="" />
+
+    <UnkT37
+    AltName="Unknown: 0x37"
+    Wiki="Always 0 in retail. An asset's own value of it is AssetStruct1 Unknown: 0xC." />
+
+    <UnkT38
+    AltName="Unknown: 0x38"
+    Wiki="Always -1 in retail. An asset's own value of it is AssetStruct1 Unknown: 0x10." />
     
     <UnkT3C
     AltName="Unknown: 0x3C"

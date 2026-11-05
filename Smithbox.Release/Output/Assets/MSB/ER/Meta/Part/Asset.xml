@@ -138,9 +138,10 @@
     AltName="Unknown Struct 1"
     Wiki="" />
     
-    <AssetStruct1_Unk00
-    AltName="Unknown: 0x0"
-    Wiki="" />
+    <OverrideCollisionSettings
+    AltName="Override Collision Settings"
+    Wiki="If ON, the asset uses its own collision settings below instead of those of the collision in its Part Name [5] (or [4])."
+    IsBool="" />
 
     <AssetStruct1_Unk01
     AltName="Unknown: 0x1"
@@ -148,7 +149,7 @@
     
     <AssetStruct1_Unk04
     AltName="Unknown: 0x4"
-    Wiki="" 
+    Wiki="The asset's own value of Collision Unknown: 0x26." 
     IsBool="" />
     
     <DisableTorrentAssetOnly
@@ -158,39 +159,38 @@
 
     <AssetStruct1_Unk06
     AltName="Unknown: 0x6"
-    Wiki="" />
+    Wiki="The asset's own value of Collision Unknown: 0x4E." />
 
     <AssetStruct1_Unk0C
     AltName="Unknown: 0xC"
-    Wiki="" />
+    Wiki="The asset's own value of Collision Unknown: 0x37." />
 
     <AssetStruct1_Unk10
     AltName="Unknown: 0x10"
-    Wiki="" />
+    Wiki="The asset's own value of Collision Unknown: 0x38." />
     
     <AssetStruct1_Unk1C
     AltName="Unknown: 0x1C"
-    Wiki="" />
+    Wiki="The asset's own value of Collision Unknown: 0x30." />
 
-    <AssetStruct1_Unk20
-    AltName="Unknown: 0x20"
-    Wiki="" />
+    <EnableFastTravelEventFlagID
+    AltName="Allow Fast Travel Event ID"
+    Wiki="If this event flag ID is OFF, fast travel is blocked when on this asset. The asset's own value of the collision setting." />
     
-    <AssetStruct1_Unk24
-    AltName="Unknown: 0x24"
-    Wiki="" />
+    <LocationTextID
+    AltName="Location Text ID"
+    Wiki="ID of location text to display when stepping onto this asset. The asset's own value of the collision setting."
+    FmgRef="Title_Locations" />
     
-    <AssetStruct1_Unk26
-    AltName="Unknown: 0x26"
-    Wiki="" />
     
     <AssetStruct1_Unk28
     AltName="Unknown: 0x28"
-    Wiki="" />
+    Wiki="The asset's own value of Collision Unknown: 0x1C." />
     
-    <AssetStruct1_Unk2C
-    AltName="Unknown: 0x2C"
-    Wiki="" />
+    <PlayRegionID
+    AltName="Play Region ID"
+    Wiki="Used to determine invasion eligibility. The asset's own value of the collision setting."
+    ParamRef="PlayRegionParam" />
     
     
     <AssetUnk2
@@ -246,9 +246,10 @@
     AltName="Unknown Struct 3"
     Wiki="" />
     
-    <AssetUnkStruct3_Unk00
-    AltName="Unknown: 0x0"
-    Wiki="" />
+    <OverrideCollisionGparamSettings
+    AltName="Override Collision Gparam Settings"
+    Wiki="If ON, the asset uses its own gparam settings below instead of those of the collision in its Part Name [5] (or [4])."
+    IsBool="" />
 
     <AssetUnkStruct3_Unk01
     AltName="Unknown: 0x1"
@@ -268,35 +269,37 @@
 
     <AssetUnkStruct3_Unk08
     AltName="Unknown: 0x8"
-    Wiki="" />
+    Wiki="A gparam sub-ID; the asset's own value of the collision's scene gparam Unknown: 0x1C. Only used by MSB versions before 0x31." />
     
-    <AssetUnkStruct3_Unk09
-    AltName="Unknown: 0x9"
-    Wiki="" />
+    <GparamOverride
+    AltName="Gparam Override"
+    Wiki="Overrides the gparam with this sub-ID.
+mXX_XX_AABB
+This value replaces BB in the gparam file lookup. 255 for none." />
     
     <AssetUnkStruct3_Unk0A
-    AltName="Unknown: 0x0A"
-    Wiki="" />
+    AltName="Unknown: 0xA"
+    Wiki="The asset's own value of Collision Unknown: 0x34." />
     
     <AssetUnkStruct3_Unk0B
-    AltName="Unknown: 0x0B"
-    Wiki="" />
+    AltName="Unknown: 0xB"
+    Wiki="The asset's own value of the collision's scene gparam Unknown: 0x1D." />
     
     <AssetUnkStruct3_Unk0C
-    AltName="Unknown: 0x0C"
-    Wiki="" />
+    AltName="Unknown: 0xC"
+    Wiki="A gparam sub-ID; the asset's own value of the collision's scene gparam Unknown: 0x20. Usually equal to Gparam Override." />
     
     <AssetUnkStruct3_Unk0E
-    AltName="Unknown: 0x0E"
-    Wiki="" />
+    AltName="Unknown: 0xE"
+    Wiki="The asset's own value of Collision Unknown: 0x4C." />
 
     <AssetUnkStruct3_Unk0F
     AltName="Unknown: 0xF"
-    Wiki="" />
+    Wiki="The asset's own value of Collision Unknown: 0x4D." />
     
     <AssetUnkStruct3_Unk10
     AltName="Unknown: 0x10"
-    Wiki="" />
+    Wiki="The asset's own value of Collision Unknown: 0x4C, as a float." />
     
     <DisableWhenMapLoadedMapID
     AltName="Disable Asset on Loaded Map ID"

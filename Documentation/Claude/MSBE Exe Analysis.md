@@ -296,6 +296,41 @@ Retail patterns for the three unnamed fields (from `MsbRoundTrip ... stats`):
 * `UnkE3C` is set on 143 parts, with values in clusters (400s, 800s, 900–999).
 * `UnkT51` is non-zero only on 99 large `AEG010_*`-style assets in `m60_09_12_02` and `m61_11_11_02`/`_12`.
 
+## Asset embedded collision settings (third pass)
+
+AssetUnk1 and AssetUnk3 are the asset's own copy of collision settings. Each CSMsbPartsGeom getter
+(`0x140CF2800..0x140CF47E0`) works the same way:
+* If the struct's switch byte (`+0`) is set, it returns the asset's own field.
+* Otherwise it looks up the Collision part in `PartNames[5]` (else `[4]`), requires part type 5, and returns the
+  matching Collision field.
+* On open-world maps the asset's own value is also used when it has no collision.
+
+So every getter pairs an Asset field with a Collision field. Retail values confirm the named ones.
+
+| Asset field | Collision counterpart | result |
+|---|---|---|
+| AssetUnk1 `+0` | — | **`OverrideCollisionSettings`** (on for 9,201 assets) |
+| AssetUnk1 `+04` | `UnkT26` | cross-referenced |
+| AssetUnk1 `+05` | `DisableTorrent` | already named (`DisableTorrentAssetOnly`) |
+| AssetUnk1 `+06` | `UnkT4E` | cross-referenced |
+| AssetUnk1 `+0C` | `+37h` (now `UnkT37`) | cross-referenced |
+| AssetUnk1 `+10` | `+38h` (now `UnkT38`) | cross-referenced |
+| AssetUnk1 `+1C` | `UnkT30` | cross-referenced |
+| AssetUnk1 `+20` | `EnableFastTravelEventFlagID` | **`EnableFastTravelEventFlagID`** |
+| AssetUnk1 `+24` (int; was two shorts) | `LocationTextID` | **`LocationTextID`** (e.g. 63002, 68501) |
+| AssetUnk1 `+28` | `UnkT1C` | cross-referenced |
+| AssetUnk1 `+2C` | `PlayRegionID` | **`PlayRegionID`** (e.g. 6400002, 2100010) |
+| AssetUnk3 `+0` | — | **`OverrideCollisionGparamSettings`** (on for 5,146 assets) |
+| AssetUnk3 `+08` / `+0C` | SceneGparam `Unk1C` / `Unk20` | same setting, sbyte before MSB version `0x31`, short after; values match GparamOverride |
+| AssetUnk3 `+09` | `GparamOverride` | **`GparamOverride`** (55, 60, 78…; 255 = none) |
+| AssetUnk3 `+0A` | `UnkT34` | cross-referenced |
+| AssetUnk3 `+0B` | SceneGparam `Unk1D` | cross-referenced |
+| AssetUnk3 `+0E`, `+10` (float) | `UnkT4C` | cross-referenced |
+| AssetUnk3 `+0F` | `UnkT4D` | cross-referenced |
+
+Collision gained `UnkT37` (byte, 0) and `UnkT38` (int, -1), which SoulsFormats had asserted. Round trip is still
+identical to the baseline.
+
 ## Status
 
 Static analysis is finished. UnkE3E, UnkE3C and Asset UnkT51 stay unnamed; their meta descriptions give the retail

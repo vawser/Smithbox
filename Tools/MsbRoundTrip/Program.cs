@@ -59,6 +59,18 @@ if (args.Length > 2 && args[2] == "stats")
             Add("UnkE3C by type", $"{p.GetType().Name} {p.UnkE3C}");
         }
         foreach (var a in msb.Parts.Assets)
+        {
+            var u1 = a.AssetUnk1; var u3 = a.AssetUnk3;
+            Add("Asset Unk1 switch +0", u1.OverrideCollisionSettings);
+            if (u1.OverrideCollisionSettings != 0)
+                Add("Asset Unk1 when switch on: Unk24/26 as int (LocationTextID?)", u1.LocationTextID);
+            Add("Asset Unk1 +20 (fast travel flag?)", u1.EnableFastTravelEventFlagID);
+            Add("Asset Unk1 +2C (play region?)", u1.PlayRegionID);
+            Add("Asset Unk3 switch +0", u3.OverrideCollisionGparamSettings);
+            Add("Asset Unk3 +09 (gparam override?)", u3.GparamOverride);
+            Add("Asset Unk3 +08/+0C", $"{u3.AssetUnkStruct3_Unk08} / {u3.AssetUnkStruct3_Unk0C}");
+        }
+        foreach (var a in msb.Parts.Assets)
             if (a.UnkT51 != 0) Add("UnkT51 examples", $"{map} {a.Name} ({a.ModelName}) = {a.UnkT51}");
         foreach (var c in msb.Parts.Collisions)
         {

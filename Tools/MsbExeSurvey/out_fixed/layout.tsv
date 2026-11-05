@@ -1984,6 +1984,7 @@ Event.PlatoonInfo	Event.Unk3	0x7	1	UnkS07	Byte
 Event.PlatoonInfo	Event.Unk3	0x8	4	UnkS08	Int32
 Event.PlatoonInfo	Event.Unk3	0xC	4	UnkS0C	Int32
 Event.PatrolInfo	Event.Type	0x0	1	PatrolType	Byte
+Event.PatrolInfo	Event.Type	0x3	1	UseAllWalkRegions	Byte
 Event.PatrolInfo	Event	0x8	4	EventID	Int32
 Event.PatrolInfo	Event.Entity	0x8	4	EntityID	UInt32
 Event.PatrolInfo	Event	0x14	4	Unk14	Int32
