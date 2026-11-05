@@ -87,7 +87,15 @@ namespace Veldrid
 
             _framebuffer = new VkSwapchainFramebuffer(gd, this, _surface, description.Width, description.Height, description.DepthFormat);
 
-            CreateSwapchain(description.Width, description.Height);
+            // A surface with no area (a minimized window, a locked or disconnected remote session) can't have a
+            // swapchain. Going on without one would acquire from a null swapchain and crash in the driver, so this
+            // fails here instead, where the caller can fall back.
+            if (!CreateSwapchain(description.Width, description.Height))
+            {
+                _framebuffer.Dispose();
+                vkDestroySurfaceKHR(_gd.Instance, _surface);
+                throw new VeldridException("The window has no drawable area, so a Vulkan swapchain can't be created.");
+            }
 
             var fenceCI = new VkFenceCreateInfo
             {
@@ -95,7 +103,23 @@ namespace Veldrid
             };
             vkCreateFence(_gd.Device, &fenceCI, null, out _imageAvailableFence);
 
-            AcquireNextImage(_gd.Device, VkSemaphore.Null, _imageAvailableFence);
+            // The fence is only signalled when an image was acquired. An out of date or suboptimal result recreates
+            // the swapchain and acquires nothing, and waiting on the fence then would never return.
+            var acquired = false;
+            for (var attempt = 0; attempt < 3 && !acquired; attempt++)
+            {
+                acquired = AcquireNextImage(_gd.Device, VkSemaphore.Null, _imageAvailableFence);
+            }
+
+            if (!acquired)
+            {
+                vkDestroyFence(_gd.Device, _imageAvailableFence, null);
+                _framebuffer.Dispose();
+                vkDestroySwapchainKHR(_gd.Device, _deviceSwapchain, null);
+                vkDestroySurfaceKHR(_gd.Instance, _surface);
+                throw new VeldridException("Could not acquire the first image of the Vulkan swapchain.");
+            }
+
             fixed (VkFence* p = &_imageAvailableFence)
             {
                 vkWaitForFences(_gd.Device, 1, p, true, ulong.MaxValue);

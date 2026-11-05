@@ -46,17 +46,27 @@ public class VulkanGraphicsContext : IGraphicsContext
             WindowHeight = CFG.Current.GFX_Display_Height,
             WindowInitialState = WindowState.Maximized
         };
+        WindowPlacement.Sanitize(ref windowCI);
+
         GraphicsDeviceOptions gdOptions = new(false, VkFormat.D32Sfloat, true, true, true, _colorSrgb);
 
 #if DEBUG
         gdOptions.Debug = true;
 #endif
 
-        VeldridStartup.CreateWindowAndGraphicsDevice(
-            windowCI,
-            gdOptions,
-            out _window,
-            out _gd);
+        _window = VeldridStartup.CreateWindow(ref windowCI);
+
+        // A window started minimized (such as from a shortcut set to run minimized) has no area, and a swapchain
+        // can't be created for it, so it is brought up before the graphics device is created
+        if (_window.WindowState == WindowState.Minimized)
+        {
+            _window.WindowState = WindowState.Maximized;
+            Sdl2Events.ProcessEvents();
+            _window.PumpEvents();
+        }
+
+        _gd = VeldridStartup.CreateGraphicsDevice(_window, gdOptions);
+
         _window.Resized += () => _windowResized = true;
         _window.Moved += p => _windowMoved = true;
 
@@ -102,8 +112,12 @@ public class VulkanGraphicsContext : IGraphicsContext
         if (_windowMoved)
         {
             _windowMoved = false;
-            CFG.Current.GFX_Display_X = x;
-            CFG.Current.GFX_Display_Y = y;
+
+            if (WindowPlacement.ShouldSavePosition(_window))
+            {
+                CFG.Current.GFX_Display_X = x;
+                CFG.Current.GFX_Display_Y = y;
+            }
         }
 
         CommandList mainWindowCommandList = _gd.ResourceFactory.CreateCommandList(QueueType.Graphics);

@@ -179,20 +179,33 @@ public class Smithbox
                 Smithbox.LogWarning(this,
                     LOC.Get("SYS_VULKAN_CONTEXT_FAILED"), ex);
 
-                // A failure after the window was created leaves it open, so it is closed before the OpenGL one opens
+                // A failure after the window was created leaves it open, so it is closed before the OpenGL one opens.
+                // Disposing a device that failed can throw too, which must not keep the window open.
                 try
                 {
                     vulkanContext.Dispose();
-
-                    if (vulkanContext.Window is { Exists: true })
-                    {
-                        vulkanContext.Window.Close();
-                    }
                 }
                 catch (Exception disposeEx)
                 {
                     Smithbox.LogWarning(this, "Failed to clean up the Vulkan context.", disposeEx);
                 }
+                finally
+                {
+                    try
+                    {
+                        if (vulkanContext.Window is { Exists: true })
+                        {
+                            vulkanContext.Window.Close();
+                        }
+                    }
+                    catch (Exception closeEx)
+                    {
+                        Smithbox.LogWarning(this, "Failed to close the Vulkan window.", closeEx);
+                    }
+                }
+
+                // The scene renderer was set up with the device that has just been disposed
+                SceneRenderer.Device = null;
 
                 CurrentBackend = RenderingBackend.OpenGL;
             }
@@ -304,60 +317,184 @@ public class Smithbox
         style.TabBorderSize = 0;
     }
 
+    // Set while the fonts are added with the oversampling cut down, to fit the atlas on the GPU
+    private bool _reduceFontOversample;
+
+    private void SetOversample(ImFontConfigPtr cfg, int h, int v)
+    {
+        cfg.OversampleH = _reduceFontOversample ? 1 : h;
+        cfg.OversampleV = _reduceFontOversample ? 1 : v;
+    }
+
     private unsafe void SetupFonts()
     {
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
-        fonts.Clear();
 
         var scaleFine = (float)Math.Round(CFG.Current.Interface_Font_Size * DPI.UIScale());
 
-        ImFontConfigPtr cfg = ImGui.ImFontConfig();
+        // The CJK ranges of the additional fonts hold tens of thousands of glyphs. ImGui makes the atlas at most
+        // 4096 wide and grows it in height, which at a large font size or UI scale can pass the largest texture
+        // the GPU can create. Each step here makes the atlas smaller, until it fits.
+        var maxSize = _context.ImguiRenderer.MaxFontTextureSize;
+        var wideWidth = 1 << (int)Math.Floor(Math.Log2(maxSize));
 
-        AddEnglishFont(fonts, cfg, CFG.Current.English_Font, scaleFine);
-        AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_1, scaleFine);
-        AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_2, scaleFine);
-        AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_3, scaleFine);
-        AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_4, scaleFine);
-        AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_5, scaleFine);
-        AddIconFont(fonts, cfg, scaleFine);
+        (int desiredWidth, bool reduceOversample, bool includeAdditional, string description)[] steps =
+        [
+            (0, false, true, null),
+            (wideWidth, false, true, $"a {wideWidth} wide atlas"),
+            (wideWidth, true, true, $"a {wideWidth} wide atlas without oversampling"),
+            (wideWidth, true, false, "only the English and icon fonts, as the additional fonts don't fit"),
+        ];
+
+        for (var i = 0; i < steps.Length; i++)
+        {
+            var step = steps[i];
+
+            AddFonts(fonts, scaleFine, step.desiredWidth, step.reduceOversample, step.includeAdditional);
+
+            if (!fonts.Build())
+            {
+                Smithbox.LogWarning(this, "The font atlas failed to build.");
+                continue;
+            }
+
+            if (fonts.TexWidth <= maxSize && fonts.TexHeight <= maxSize)
+            {
+                if (step.description != null)
+                {
+                    Smithbox.LogWarning(this,
+                        $"The font atlas is larger than this GPU allows ({maxSize}) at font size {scaleFine}, " +
+                        $"so it was built with {step.description}: {fonts.TexWidth}x{fonts.TexHeight}.");
+                }
+
+                break;
+            }
+
+            if (i == steps.Length - 1)
+            {
+                Smithbox.LogError(this,
+                    $"The font atlas is {fonts.TexWidth}x{fonts.TexHeight}, larger than this GPU allows " +
+                    $"({maxSize}). Lower the font size or UI scale in the preferences.");
+            }
+        }
+
+        _reduceFontOversample = false;
 
         _context.ImguiRenderer.RecreateFontDeviceTexture();
     }
 
-    private unsafe void AddEnglishFont(ImFontAtlasPtr fonts, ImFontConfigPtr cfg, string fontPath, float scale)
+    private unsafe void AddFonts(ImFontAtlasPtr fonts, float scale, int desiredWidth, bool reduceOversample,
+        bool includeAdditional)
     {
-        var englishFontPath = Path.Combine(AppContext.BaseDirectory, fontPath);
+        fonts.Clear();
+        fonts.TexDesiredWidth = desiredWidth;
+        _reduceFontOversample = reduceOversample;
 
-        if (File.Exists(englishFontPath))
+        ImFontConfigPtr cfg = ImGui.ImFontConfig();
+
+        // The first font of an atlas can't be a merge font, so the built-in one stands in when the English font
+        // can't be used. Otherwise a bad font path in the preferences would fail every launch.
+        if (!AddEnglishFont(fonts, cfg, CFG.Current.English_Font, scale))
         {
-            var englishFontData = File.ReadAllBytes(englishFontPath);
+            cfg.MergeMode = false;
+            cfg.GlyphMinAdvanceX = 5.0f;
+            SetOversample(cfg, 3, 2);
+            cfg.SizePixels = scale;
+            fonts.AddFontDefault(cfg);
+        }
+
+        if (includeAdditional)
+        {
+            AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_1, scale);
+            AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_2, scale);
+            AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_3, scale);
+            AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_4, scale);
+            AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_5, scale);
+        }
+
+        AddIconFont(fonts, cfg, scale);
+
+        // The atlas keeps a copy of the config of each font
+        cfg.Destroy();
+    }
+
+    /// <summary>
+    /// Reads a font file, or returns null (with a warning) if it is missing or isn't a TrueType/OpenType font.
+    /// ImGui only parses the data when the atlas is built, where a bad file fails an assert rather than an error.
+    /// </summary>
+    private byte[] TryReadFontFile(string fontPath)
+    {
+        if (string.IsNullOrWhiteSpace(fontPath))
+        {
+            return null;
+        }
+
+        var fullPath = Path.Combine(AppContext.BaseDirectory, fontPath);
+
+        if (!File.Exists(fullPath))
+        {
+            Smithbox.LogWarning(this, $"Font not found, so it was skipped: {fullPath}");
+            return null;
+        }
+
+        byte[] data;
+
+        try
+        {
+            data = File.ReadAllBytes(fullPath);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogWarning(this, $"Font could not be read, so it was skipped: {fullPath}", e);
+            return null;
+        }
+
+        // The tags stb_truetype accepts: TrueType 1.0, 'true', 'OTTO' (CFF) and 'ttcf' (collections)
+        var tag = data.Length >= 4 ? (uint)(data[0] << 24 | data[1] << 16 | data[2] << 8 | data[3]) : 0;
+
+        if (tag is not (0x00010000 or 0x74727565 or 0x4F54544F or 0x74746366))
+        {
+            Smithbox.LogWarning(this, $"File is not a TrueType or OpenType font, so it was skipped: {fullPath}");
+            return null;
+        }
+
+        return data;
+    }
+
+    private unsafe bool AddEnglishFont(ImFontAtlasPtr fonts, ImFontConfigPtr cfg, string fontPath, float scale)
+    {
+        var englishFontData = TryReadFontFile(fontPath);
+
+        if (englishFontData != null)
+        {
             var englishFontPtr = ImGui.MemAlloc((uint)englishFontData.Length);
             Marshal.Copy(englishFontData, 0, (nint)englishFontPtr, englishFontData.Length);
 
             cfg.MergeMode = false;
             cfg.GlyphMinAdvanceX = 5.0f;
-            cfg.OversampleH = 3;
-            cfg.OversampleV = 2;
+            SetOversample(cfg, 3, 2);
 
             fonts.AddFontFromMemoryTTF(englishFontPtr, englishFontData.Length, scale, cfg,
                 fonts.GetGlyphRangesDefault());
+
+            return true;
         }
+
+        return false;
     }
 
     private unsafe void AddAdditionaFont(ImFontAtlasPtr fonts, ImFontConfigPtr cfg, string fontPath, float scale)
     {
-        var additionalFontPath = Path.Combine(AppContext.BaseDirectory, fontPath);
+        var additionalFontData = TryReadFontFile(fontPath);
 
-        if (File.Exists(additionalFontPath))
+        if (additionalFontData != null)
         {
-            var additionalFontData = File.ReadAllBytes(additionalFontPath);
             var additionalFontPtr = ImGui.MemAlloc((uint)additionalFontData.Length);
             Marshal.Copy(additionalFontData, 0, (nint)additionalFontPtr, additionalFontData.Length);
 
             cfg.MergeMode = true;
             cfg.GlyphMinAdvanceX = 7.0f;
-            cfg.OversampleH = 2;
-            cfg.OversampleV = 2;
+            SetOversample(cfg, 2, 2);
 
             ImFontGlyphRangesBuilderPtr glyphRanges = ImGui.ImFontGlyphRangesBuilder();
             glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
@@ -365,7 +502,6 @@ public class Smithbox
 
             Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
 
-            glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
             glyphRanges.AddRanges(fonts.GetGlyphRangesKorean());
             glyphRanges.AddRanges(fonts.GetGlyphRangesThai());
             glyphRanges.AddRanges(fonts.GetGlyphRangesVietnamese());
@@ -382,19 +518,17 @@ public class Smithbox
     {
         string IconFontRelPath = Path.Join("Assets", "Fonts", "forkawesome-webfont.ttf");
 
-        var iconFontPath = Path.Combine(AppContext.BaseDirectory, IconFontRelPath);
+        var iconFontData = TryReadFontFile(IconFontRelPath);
 
-        if (File.Exists(iconFontPath))
+        if (iconFontData != null)
         {
-            var iconFontData = File.ReadAllBytes(iconFontPath);
             var iconFontPtr = ImGui.MemAlloc((uint)iconFontData.Length);
             Marshal.Copy(iconFontData, 0, (nint)iconFontPtr, iconFontData.Length);
 
             // Icon Font
             cfg.MergeMode = true;
             cfg.GlyphMinAdvanceX = 7.0f;
-            cfg.OversampleH = 3;
-            cfg.OversampleV = 3;
+            SetOversample(cfg, 3, 3);
 
             ImFontGlyphRangesBuilderPtr iconGlyphBuilder = ImGui.ImFontGlyphRangesBuilder();
 

@@ -45,6 +45,10 @@ public static class SceneRenderer
     private static int _readbackPendingFence = -1;
 
     private const int BUFFER_COUNT = 3;
+
+    // The range of the FLVER bone buffer limit, in bones of 64 bytes: 64 KiB to 256 MiB
+    private const uint MinBoneLimit = 1024;
+    private const uint MaxBoneLimit = 4 * 1024 * 1024;
     private static readonly List<Fence> _drawFences = new();
     private static int _currentBuffer;
 
@@ -132,7 +136,17 @@ public static class SceneRenderer
         IrradianceVolumes = new IrradianceVolumeTable(MaterialBufferAllocator);
         MapLights = new SceneLightTable(MaterialBufferAllocator);
         Lightmaps = new LightmapTable(MaterialBufferAllocator);
-        BoneBufferAllocator = new GPUBufferAllocator("bones", CFG.Current.Viewport_Limit_Buffer_Flver_Bone * 64,
+        // The limit is typed freely in the preferences. A size of 0 is invalid for a Vulkan buffer, and a large
+        // count would overflow the size, either of which fails startup and silently falls back to OpenGL.
+        var boneLimit = Math.Clamp(CFG.Current.Viewport_Limit_Buffer_Flver_Bone, MinBoneLimit, MaxBoneLimit);
+        if (boneLimit != CFG.Current.Viewport_Limit_Buffer_Flver_Bone)
+        {
+            Smithbox.LogWarning(typeof(SceneRenderer),
+                $"The FLVER bone buffer limit of {CFG.Current.Viewport_Limit_Buffer_Flver_Bone} is outside " +
+                $"{MinBoneLimit} to {MaxBoneLimit}, so {boneLimit} is used.");
+        }
+
+        BoneBufferAllocator = new GPUBufferAllocator("bones", boneLimit * 64,
             VkBufferUsageFlags.StorageBuffer, 64, VkShaderStageFlags.Vertex);
         // Material texture indices are 16 bit, so this can go up to TexturePool.MaxTextureCount (65536).
         // Individual descriptors are updated in place, so a larger pool no longer makes texture loads costlier.

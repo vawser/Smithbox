@@ -88,7 +88,9 @@ namespace Veldrid
             uint scImageCount = 0;
             VkResult result = vkGetSwapchainImagesKHR(_gd.Device, deviceSwapchain, &scImageCount, null);
             CheckResult(result);
-            if (_scImages == null)
+            // A recreated swapchain can have a different number of images, and writing more than the array holds
+            // would overrun it
+            if (_scImages == null || _scImages.Length != scImageCount)
             {
                 _scImages = new VkImage[(int)scImageCount];
             }

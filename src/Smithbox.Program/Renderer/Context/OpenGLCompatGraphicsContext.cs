@@ -33,6 +33,7 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
             WindowHeight = CFG.Current.GFX_Display_Height,
             WindowInitialState = WindowState.Maximized
         };
+        WindowPlacement.Sanitize(ref windowCI);
 
         SdlProvider.InitFlags = Sdl.InitVideo;
         SDL = SdlProvider.SDL.Value;
@@ -83,8 +84,12 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
         {
             _windowResized = false;
 
-            CFG.Current.GFX_Display_Width = width;
-            CFG.Current.GFX_Display_Height = height;
+            // A minimized window reports no area, which isn't a size to open with next time
+            if (width > 0 && height > 0)
+            {
+                CFG.Current.GFX_Display_Width = width;
+                CFG.Current.GFX_Display_Height = height;
+            }
 
             RecreateWindowFramebuffers();
 
@@ -96,8 +101,12 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
         if (_windowMoved)
         {
             _windowMoved = false;
-            CFG.Current.GFX_Display_X = x;
-            CFG.Current.GFX_Display_Y = y;
+
+            if (WindowPlacement.ShouldSavePosition(Window))
+            {
+                CFG.Current.GFX_Display_X = x;
+                CFG.Current.GFX_Display_Y = y;
+            }
         }
 
         GL.Viewport(0, 0, (uint)width, (uint)height);

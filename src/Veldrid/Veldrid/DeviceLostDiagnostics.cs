@@ -68,6 +68,12 @@ namespace Veldrid
                     AppendSection(report, "Memory", AppendMemoryBudget);
                     AppendSection(report, "Application", AppendApplicationState);
 
+                    if (GraphicsDevice.ValidationErrorCount > 0)
+                    {
+                        AppendSection(report, "Validation", r =>
+                            r.AppendLine($"  {GraphicsDevice.ValidationErrorCount} errors, the latest: {GraphicsDevice.LastValidationError}"));
+                    }
+
                     _report = report.ToString();
                 }
 

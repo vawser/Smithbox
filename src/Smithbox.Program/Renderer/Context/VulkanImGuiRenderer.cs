@@ -97,6 +97,51 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
 
         _fontTexture = SceneRenderer.GlobalTexturePool.AllocateTextureDescriptor();
 
+        try
+        {
+            Setup(gd, outputDescription);
+        }
+        catch
+        {
+            // The caller falls back to OpenGL, which creates contexts of its own, so nothing made here is kept
+            DestroyContexts();
+
+            try
+            {
+                Dispose();
+            }
+            catch
+            {
+                // The setup failure is the one that matters
+            }
+
+            throw;
+        }
+    }
+
+    private void DestroyContexts()
+    {
+        if (!plotContext.IsNull)
+        {
+            ImPlot.DestroyContext(plotContext);
+            plotContext = default;
+        }
+
+        if (!nodesContext.IsNull)
+        {
+            ImNodes.DestroyContext(nodesContext);
+            nodesContext = default;
+        }
+
+        if (!guiContext.IsNull)
+        {
+            ImGui.DestroyContext(guiContext);
+            guiContext = default;
+        }
+    }
+
+    private void Setup(GraphicsDevice gd, OutputDescription outputDescription)
+    {
         // Create ImGui context
         guiContext = ImGui.CreateContext(null);
 
@@ -172,16 +217,17 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
     /// </summary>
     public void Dispose()
     {
-        _vertexBuffer.Dispose();
-        _indexBuffer.Dispose();
-        _projMatrixBuffer.Dispose();
-        _fontTexture.Dispose();
-        _vertexShader.Dispose();
-        _fragmentShader.Dispose();
-        _layout.Dispose();
-        _textureLayout.Dispose();
-        _pipeline.Dispose();
-        _mainResourceSet.Dispose();
+        // Null-safe, as it also cleans up after a constructor that failed part way
+        _vertexBuffer?.Dispose();
+        _indexBuffer?.Dispose();
+        _projMatrixBuffer?.Dispose();
+        _fontTexture?.Dispose();
+        _vertexShader?.Dispose();
+        _fragmentShader?.Dispose();
+        _layout?.Dispose();
+        _textureLayout?.Dispose();
+        _pipeline?.Dispose();
+        _mainResourceSet?.Dispose();
 
         foreach (IDisposable resource in _ownedResources)
         {
@@ -202,6 +248,9 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
     {
         RecreateFontDeviceTexture(_gd);
     }
+
+    // Vulkan guarantees at least 4096
+    public int MaxFontTextureSize => (int)Math.Max(4096u, _gd.MaxTextureDimension2D);
 
     /// <summary>
     ///     Updates ImGui input and IO configuration state.

@@ -211,7 +211,7 @@ namespace Veldrid
                 surface = VkSurfaceUtil.CreateSurface(this, _instance, scDesc.Value.Source);
             }
 
-            CreatePhysicalDevice();
+            CreatePhysicalDevice(surface);
             CreateLogicalDevice(surface, options.PreferStandardClipSpaceYDirection, vkOptions);
 
             var allocatorInfo = new VmaAllocatorCreateInfo
@@ -338,7 +338,12 @@ namespace Veldrid
         /// </summary>
         public uint StructuredBufferMinOffsetAlignment => GetStructuredBufferMinOffsetAlignmentCore();
 
-        internal uint GetUniformBufferMinOffsetAlignmentCore() 
+        /// <summary>
+        /// The largest width or height of a 2D texture this device can create.
+        /// </summary>
+        public uint MaxTextureDimension2D => _physicalDeviceProperties.limits.maxImageDimension2D;
+
+        internal uint GetUniformBufferMinOffsetAlignmentCore()
             => (uint)_physicalDeviceProperties.limits.minUniformBufferOffsetAlignment;
         internal uint GetStructuredBufferMinOffsetAlignmentCore()
             => (uint)_physicalDeviceProperties.limits.minStorageBufferOffsetAlignment;
@@ -1338,12 +1343,27 @@ namespace Veldrid
         protected void PlatformDispose()
         {
             WaitForIdle();
+
+            _mainSwapchain?.Dispose();
+            _stagingPool?.Dispose();
+
+            // Buffers and images are only queued for destruction by Dispose, and freed when their frame comes round
+            // again. The wait cycles through every frame, so what the swapchain and staging pool gave up is freed
+            // here, before the allocator and the device that own it are destroyed.
+            WaitForIdle();
+
+            foreach (PerFrameData frame in _perFrameData)
+            {
+                frame.Destroy(this);
+            }
+
+            _asyncTransferCommandListPool?.Dispose();
+
             foreach (VkFence fence in _availableSubmissionFences)
             {
                 vkDestroyFence(_device, fence, null);
             }
 
-            _mainSwapchain?.Dispose();
             if (_debugMessengerHandle != VkDebugUtilsMessengerEXT.Null)
             {
                 vkDestroyDebugUtilsMessengerEXT(_instance, _debugMessengerHandle, null);
@@ -1763,17 +1783,93 @@ namespace Veldrid
 
             string fullMessage = $"[{debugReportFlags}] ({type}) {name}: {message}";
 
+            // This is called from inside the Vulkan driver. An exception can't unwind through an
+            // UnmanagedCallersOnly frame, and throwing here ends the process at once with no crash log, so the
+            // error is only reported. The latest one is kept for the device lost report.
             if (debugReportFlags == VkDebugUtilsMessageSeverityFlagsEXT.Error)
             {
-                throw new VeldridException("A Vulkan validation error was encountered: " + fullMessage);
+                LastValidationError = fullMessage;
+                Interlocked.Increment(ref _validationErrorCount);
+                Console.WriteLine("A Vulkan validation error was encountered: " + fullMessage);
+                Debug.WriteLine("A Vulkan validation error was encountered: " + fullMessage);
+                return 0;
             }
 
             Console.WriteLine(fullMessage);
             return 0;
         }
 
-        private void CreatePhysicalDevice()
+        private static int _validationErrorCount;
+
+        /// <summary>
+        /// The latest Vulkan validation error, or null if there has been none. Only reported in debug builds.
+        /// </summary>
+        public static string LastValidationError { get; private set; }
+
+        /// <summary>
+        /// The number of Vulkan validation errors reported so far. Only reported in debug builds.
+        /// </summary>
+        public static int ValidationErrorCount => Volatile.Read(ref _validationErrorCount);
+
+        /// <summary>
+        /// Whether a GPU can show images in the window: it has VK_KHR_swapchain, and a graphics and compute queue
+        /// family that can present to the surface, which is the queue CreateLogicalDevice needs.
+        /// </summary>
+        private static bool CanPresent(VkPhysicalDevice device, VkSurfaceKHR surface, out string reason)
         {
+            uint extensionCount = 0;
+            vkEnumerateDeviceExtensionProperties(device, null, &extensionCount, null);
+            VkExtensionProperties* extensions = stackalloc VkExtensionProperties[(int)extensionCount];
+            vkEnumerateDeviceExtensionProperties(device, null, &extensionCount, extensions);
+
+            bool hasSwapchain = false;
+            for (int i = 0; i < extensionCount; i++)
+            {
+                if (Util.GetString((byte*)extensions[i].extensionName) == "VK_KHR_swapchain")
+                {
+                    hasSwapchain = true;
+                    break;
+                }
+            }
+
+            if (!hasSwapchain)
+            {
+                reason = "no VK_KHR_swapchain";
+                return false;
+            }
+
+            uint familyCount = 0;
+            vkGetPhysicalDeviceQueueFamilyProperties2(device, &familyCount, null);
+            VkQueueFamilyProperties2* families = stackalloc VkQueueFamilyProperties2[(int)familyCount];
+            for (uint i = 0; i < familyCount; i++)
+            {
+                families[i] = new VkQueueFamilyProperties2();
+            }
+            vkGetPhysicalDeviceQueueFamilyProperties2(device, &familyCount, families);
+
+            const VkQueueFlags required = VkQueueFlags.Graphics | VkQueueFlags.Compute;
+            for (uint i = 0; i < familyCount; i++)
+            {
+                VkQueueFamilyProperties props = families[i].queueFamilyProperties;
+                if (props.queueCount == 0 || (props.queueFlags & required) != required)
+                    continue;
+
+                if (vkGetPhysicalDeviceSurfaceSupportKHR(device, i, surface, out VkBool32 supported) == VkResult.Success
+                    && supported)
+                {
+                    reason = null;
+                    return true;
+                }
+            }
+
+            reason = "no graphics queue can present to the window";
+            return false;
+        }
+
+        private void CreatePhysicalDevice(VkSurfaceKHR surface)
+        {
+            var skipped = new List<string>();
+
             uint deviceCount = 0;
             vkEnumeratePhysicalDevices(_instance, &deviceCount, null);
             if (deviceCount == 0)
@@ -1804,7 +1900,7 @@ namespace Veldrid
                 vkGetPhysicalDeviceProperties(device, out var physicalDeviceProperties);
                 string deviceName;
                 sbyte* utf8NamePtr = physicalDeviceProperties.deviceName;
-                deviceName = Encoding.UTF8.GetString((byte*)utf8NamePtr, (int)VK_MAX_PHYSICAL_DEVICE_NAME_SIZE);
+                deviceName = Encoding.UTF8.GetString((byte*)utf8NamePtr, (int)VK_MAX_PHYSICAL_DEVICE_NAME_SIZE).TrimEnd('\0');
 
                 var deviceVulkan13Features = new VkPhysicalDeviceVulkan13Features
                 {
@@ -1830,10 +1926,16 @@ namespace Veldrid
                     deviceFeatures.features.drawIndirectFirstInstance != VkBool32.True ||
                     deviceFeatures.features.shaderInt64 != VkBool32.True ||
                     deviceFeatures.features.fragmentStoresAndAtomics != VkBool32.True)
+                {
+                    skipped.Add($"{deviceName}: missing core features");
                     continue;
+                }
                 if (deviceVulkan11Features.storageBuffer16BitAccess != VkBool32.True ||
                     deviceVulkan11Features.uniformAndStorageBuffer16BitAccess != VkBool32.True)
+                {
+                    skipped.Add($"{deviceName}: missing Vulkan 1.1 features");
                     continue;
+                }
                 if (
 #if !OSX
                     deviceVulkan12Features.drawIndirectCount != VkBool32.True || //! not supported by metal
@@ -1844,14 +1946,29 @@ namespace Veldrid
                     deviceVulkan12Features.descriptorBindingSampledImageUpdateAfterBind != VkBool32.True ||
                     deviceVulkan12Features.descriptorBindingUpdateUnusedWhilePending != VkBool32.True ||
                     deviceVulkan12Features.shaderSampledImageArrayNonUniformIndexing != VkBool32.True)
+                {
+                    skipped.Add($"{deviceName}: missing Vulkan 1.2 features");
                     continue;
+                }
                 if (deviceVulkan13Features.synchronization2 != VkBool32.True ||
                     deviceVulkan13Features.dynamicRendering != VkBool32.True ||
                     deviceVulkan13Features.maintenance4 != VkBool32.True)
+                {
+                    skipped.Add($"{deviceName}: missing Vulkan 1.3 features");
                     continue;
-                
+                }
+
+                // A GPU that can't show images in the window would fail later in CreateLogicalDevice, where the
+                // next GPU would no longer be tried
+                if (surface != VkSurfaceKHR.Null && !CanPresent(device, surface, out string presentReason))
+                {
+                    skipped.Add($"{deviceName}: {presentReason}");
+                    continue;
+                }
+
                 // We found a physical device with the required features
                 _physicalDevice = device;
+                _physicalDeviceProperties = physicalDeviceProperties;
                 _physicalDeviceMemProperties = physicalDeviceMemProperties;
                 _physicalDeviceFeatures = deviceFeatures.features;
                 _physicalDeviceFeatures11 = deviceVulkan11Features;
@@ -1861,7 +1978,8 @@ namespace Veldrid
             }
 
             throw new VeldridException(
-                "Could not find a supported GPU. Your GPU may be too old or your drivers may be out of date.");
+                "Could not find a supported GPU. Your GPU may be too old or your drivers may be out of date.\n" +
+                string.Join("\n", skipped));
         }
 
         private void CreateLogicalDevice(VkSurfaceKHR surface, bool preferStandardClipY, VulkanDeviceOptions options)

@@ -163,6 +163,9 @@ void main()
         return Marshal.StringToCoTaskMemUTF8(clipboardText);
     }
 
+    // OpenGL 3.3 guarantees at least 1024
+    public int MaxFontTextureSize => Math.Max(1024, GL.GetInteger(GetPName.MaxTextureSize));
+
     public void RecreateFontDeviceTexture()
     {
         ImGuiIOPtr io = ImGui.GetIO();
