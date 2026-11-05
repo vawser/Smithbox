@@ -118,7 +118,6 @@ Part.Asset	Part.TileLoad	0x7	TileLoadConfig.TileLoadConfig_Unk07	-
 Part.Asset	Part.TileLoad	0xC	TileLoadConfig.TileLoadConfig_Unk0C	READ
 Part.Asset	Part.TileLoad	0x10	TileLoadConfig.TileLoadConfig_Unk10	READ
 Part.Asset	Part.Type	0x0	UnkT00	-
-Part.Asset	Part.Type	0x1	UnkT01	READ
 Part.Asset	Part.Type	0x2	UnkT02	READ
 Part.Asset	Part.Type	0x8	UnkT08	READ
 Part.Asset	Part.Type	0x10	UnkT10	READ
@@ -129,11 +128,6 @@ Part.Asset	Part.Type	0x25	UnkT25	-
 Part.Asset	Part.Type	0x26	UnkT26	READ
 Part.Asset	Part.Type	0x27	UnkT27	-
 Part.Asset	Part.Type	0x28	UnkT28	READ
-Part.Asset	Part.Type	0x30	UnkT30	READ
-Part.Asset	Part.Type	0x34	UnkT34	READ
-Part.Asset	Part.Type	0x35	UnkT35	READ
-Part.Asset	Part.Type	0x36	UnkT36	READ
-Part.Asset	Part.Type	0x37	UnkT37	READ
 Part.Asset	Part.Type	0x50	UnkT50	READ
 Part.Asset	Part.Type	0x51	UnkT51	READ
 Part.Asset	Part.Type	0x53	UnkT53	READ
@@ -145,7 +139,7 @@ Part.Asset	Part.Type.68	0x0	AssetUnk1.OverrideCollisionSettings	READ
 Part.Asset	Part.Type.68	0x1	AssetUnk1.AssetStruct1_Unk01	-
 Part.Asset	Part.Type.68	0x4	AssetUnk1.AssetStruct1_Unk04	READ
 Part.Asset	Part.Type.68	0x5	AssetUnk1.DisableTorrentAssetOnly	READ
-Part.Asset	Part.Type.68	0x6	AssetUnk1.AssetStruct1_Unk06	READ
+Part.Asset	Part.Type.68	0x6	AssetUnk1.OpenChrActivateThreshold	READ
 Part.Asset	Part.Type.68	0xC	AssetUnk1.AssetStruct1_Unk0C	READ
 Part.Asset	Part.Type.68	0x10	AssetUnk1.AssetStruct1_Unk10	READ
 Part.Asset	Part.Type.68	0x1C	AssetUnk1.AssetStruct1_Unk1C	READ
@@ -175,8 +169,8 @@ Part.Asset	Part.Type.78	0xA	AssetUnk3.AssetUnkStruct3_Unk0A	READ
 Part.Asset	Part.Type.78	0xB	AssetUnk3.AssetUnkStruct3_Unk0B	READ
 Part.Asset	Part.Type.78	0xC	AssetUnk3.AssetUnkStruct3_Unk0C	READ
 Part.Asset	Part.Type.78	0xE	AssetUnk3.AssetUnkStruct3_Unk0E	READ
-Part.Asset	Part.Type.78	0xF	AssetUnk3.AssetUnkStruct3_Unk0F	READ
-Part.Asset	Part.Type.78	0x10	AssetUnk3.AssetUnkStruct3_Unk10	READ
+Part.Asset	Part.Type.78	0xF	AssetUnk3.TimezonePlayerLightScaleOverride	READ
+Part.Asset	Part.Type.78	0x10	AssetUnk3.PlayerLightScale	READ
 Part.Asset	Part.Type.78	0x14	AssetUnk3.DisableWhenMapLoadedMapID[0]	-
 Part.Asset	Part.Type.78	0x15	AssetUnk3.DisableWhenMapLoadedMapID[1]	-
 Part.Asset	Part.Type.78	0x16	AssetUnk3.DisableWhenMapLoadedMapID[2]	-
@@ -186,7 +180,7 @@ Part.Asset	Part.Type.78	0x1C	AssetUnk3.AssetUnkStruct3_Unk1C	-
 Part.Asset	Part.Type.78	0x20	AssetUnk3.AssetUnkStruct3_Unk20	-
 Part.Asset	Part.Type.78	0x24	AssetUnk3.AssetUnkStruct3_Unk24	READ
 Part.Asset	Part.Type.78	0x25	AssetUnk3.AssetUnkStruct3_Unk25	READ
-Part.Asset	Part.Type.78	0x28	AssetUnk3.AssetUnkStruct3_Unk28	READ
+Part.Asset	Part.Type.78	0x28	AssetUnk3.MapGridCreateHeightDetailLimitInfoID	READ
 Part.Asset	Part.Type.80	0x0	AssetUnk4.OverrideCollisionSoundSettings	READ
 Part.Asset	Part.Type.80	0x1	AssetUnk4.AssetUnkStruct4_Unk01	READ
 Part.Asset	Part.Type.80	0x2	AssetUnk4.OutdoorIndoorType	READ
@@ -223,8 +217,6 @@ Part.Collision	Part.TileLoad	0xC	TileLoadConfig.TileLoadConfig_Unk0C	READ
 Part.Collision	Part.TileLoad	0x10	TileLoadConfig.TileLoadConfig_Unk10	READ
 Part.Collision	Part.Type	0x1	UnkT01	-
 Part.Collision	Part.Type	0x4	UnkT04	READ
-Part.Collision	Part.Type	0x8	UnkT06	READ
-Part.Collision	Part.Type	0x14	UnkT14	READ
 Part.Collision	Part.Type	0x1C	UnkT1C	READ
 Part.Collision	Part.Type	0x24	UnkT24	-
 Part.Collision	Part.Type	0x26	UnkT26	-
@@ -235,8 +227,6 @@ Part.Collision	Part.Type	0x3C	UnkT3C	-
 Part.Collision	Part.Type	0x3E	UnkT3E	-
 Part.Collision	Part.Type	0x40	UnkT40	-
 Part.Collision	Part.Type	0x4C	UnkT4C	READ
-Part.Collision	Part.Type	0x4D	UnkT4D	READ
-Part.Collision	Part.Type	0x4E	UnkT4E	READ
 Part.Collision	Part.Unk11	0x0	UnkStruct11.UnkStruct11_Unk00	READ
 Part.Collision	Part.Unk11	0x4	UnkStruct11.UnkStruct11_Unk04	READ
 Part.Collision	Part.Unk8	0x0	UnkStruct8.UnkStruct8_Unk00	READ

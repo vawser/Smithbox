@@ -97,9 +97,80 @@ if (args.Length > 2 && args[2] == "stats")
             var u4 = a.AssetUnk4;
             Add("A AssetUnk4 Unk00 / Unk02 / Unk03", $"{u4.OverrideCollisionSoundSettings} / {u4.OutdoorIndoorType} / {u4.EasyOcclusionID}");
         }
+        // group B: collision values overriding per-map params
+        foreach (var c in msb.Parts.Collisions)
+        {
+            Add("B Collision UnkT06 (+8) MapGridCreateHeightDetailLimitInfo ID?", c.MapGridCreateHeightDetailLimitInfoID <= 0 ? c.MapGridCreateHeightDetailLimitInfoID.ToString() : "set");
+            if (c.MapGridCreateHeightDetailLimitInfoID > 0) Add("B UnkT06 values", c.MapGridCreateHeightDetailLimitInfoID);
+            Add("B Collision UnkT14 (PlayerLightScale?)", c.PlayerLightScale);
+            Add("B Collision UnkT4D (timezone light 1 on / 2 off?)", c.TimezonePlayerLightScaleOverride);
+            Add("B Collision UnkT4E (OpenChrActivateThreshold?)", c.OpenChrActivateThreshold);
+            Add("B SceneGparam Unk1C / Unk20 (MapRegionID?)", $"{c.SceneGparamConfigStruct.Unk1C} / {c.SceneGparamConfigStruct.Unk20}");
+            if (c.SceneGparamConfigStruct.Unk20 >= 0) Add("B SceneGparam Unk20 values", c.SceneGparamConfigStruct.Unk20);
+            Add("B GparamOverride", c.GparamOverride);
+        }
+        // group C: asset type data read by the CSWorldGeomInfo wrappers
+        foreach (var a in msb.Parts.Assets)
+        {
+            Add("C Asset UnkT01 (collisionType override?)", a.CollisionTypeOverride);
+            Add("C Asset UnkT02 low/high byte", $"{a.UnkT02 & 0xFF} / {(a.UnkT02 >> 8) & 0xFF}");
+            Add("C Asset UnkT08 (pointer?)", a.UnkT08 == 0 ? "0" : "set");
+            Add("C Asset UnkT10", a.UnkT10);
+            Add("C Asset UnkT28 as 4 shorts", a.UnkT28 == 0 ? "0" : $"{a.UnkT28 & 0xFFFF} {(a.UnkT28 >> 16) & 0xFFFF}");
+            Add("C Asset UnkT30 (pick-up lot?)", a.PickUpItemLotParamID <= 0 ? a.PickUpItemLotParamID.ToString() : "set");
+            if (a.PickUpItemLotParamID > 0) Add("C Asset UnkT30 values", a.PickUpItemLotParamID);
+            var t34 = a.BreakItemLotParamID;
+            Add("C Asset int +34 (break lot?)", t34 <= 0 ? t34.ToString() : "set");
+            if (t34 > 0) Add("C Asset int +34 values", t34);
+            Add("C Asset UnkT50", a.UnkT50);
+        }
         foreach (var p in msb.Events.PlatoonInfo)
             Add("Platoon State bytes", $"{p.State} {p.EnableDeactiveMove} {p.UnkT06} {p.UseMemberEntityIDs} ids {p.MemberEntityIDs[0]},{p.MemberEntityIDs[1]}");
     }
+    // the regulation params the group B fields fall back to
+    try
+    {
+        var reg = SFUtil.DecryptERRegulation(Path.Combine(root, "regulation.bin"));
+        var defDir = Path.Combine("Assets", "PARAM", "ER", "Defs");
+        void Param(string file, string def, params string[] fields)
+        {
+            var f = reg.Files.FirstOrDefault(x => x.Name.EndsWith(file + ".param", StringComparison.OrdinalIgnoreCase));
+            if (f == null) { Add("B regulation missing", file); return; }
+            var p = PARAM.Read(f.Bytes);
+            Add($"B reg {file} row count", p.Rows.Count);
+            foreach (var r in p.Rows.Take(400)) Add($"B reg {file} row IDs (first 400)", r.ID);
+            if (fields.Length == 0) return;
+            p.ApplyParamdef(PARAMDEF.XmlDeserialize(Path.Combine(defDir, def + ".xml")));
+            foreach (var r in p.Rows)
+                foreach (var fld in fields) Add($"B reg {file}.{fld}", r[fld]?.Value);
+        }
+        Param("MapDefaultInfoParam", "MapDefaultInfoParam", "PlayerLigntScale", "IsEnableTimezonnePlayerLigntScale", "OpenChrActivateThreshold", "WeatherCreateAssetLimitId");
+        Param("MapGdRegionInfoParam", "MapGdRegionInfo", "mapRegionId");
+        Param("MapGridCreateHeightDetailLimitInfo", "MapGridCreateHeightDetailLimitInfo");
+    }
+    catch (Exception e) { Add("B regulation error", e.Message); }
+
+    // membership: every distinct MSB value against the param values it falls back to
+    void Member(string msbKey, string regKey)
+    {
+        if (!hist.TryGetValue(msbKey, out var m) || !hist.TryGetValue(regKey, out var r)) { Add("B check missing", $"{msbKey} / {regKey}"); return; }
+        foreach (var v in m.Keys) Add($"B check {msbKey} in {regKey}", r.ContainsKey(v) ? "yes" : $"NO {v}");
+    }
+    var rowIds = new Dictionary<string, int>();
+    try
+    {
+        // ItemLotParam_map row IDs, for the lot overrides
+        var reg2 = SFUtil.DecryptERRegulation(Path.Combine(root, "regulation.bin"));
+        var lot = reg2.Files.First(x => x.Name.EndsWith("ItemLotParam_map.param", StringComparison.OrdinalIgnoreCase));
+        foreach (var r in PARAM.Read(lot.Bytes).Rows) Add("C reg ItemLotParam_map row IDs", r.ID);
+    }
+    catch (Exception e) { Add("C regulation error", e.Message); }
+    Member("C Asset UnkT30 values", "C reg ItemLotParam_map row IDs");
+    Member("C Asset int +34 values", "C reg ItemLotParam_map row IDs");
+    Member("B UnkT06 values", "B reg MapGridCreateHeightDetailLimitInfo row IDs (first 400)");
+    Member("B SceneGparam Unk20 values", "B reg MapGdRegionInfoParam.mapRegionId");
+    Member("B GparamOverride", "B reg MapDefaultInfoParam.WeatherCreateAssetLimitId");
+
     foreach (var (k, h) in hist)
     {
         Console.WriteLine($"== {k} ({h.Values.Sum()})");

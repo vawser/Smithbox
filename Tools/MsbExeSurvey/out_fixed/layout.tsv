@@ -464,8 +464,8 @@ Part.Collision	Part.Type	0x1	1	UnkT01	Byte
 Part.Collision	Part.Type	0x2	1	OutdoorIndoorType	Byte
 Part.Collision	Part.Type	0x3	1	EasyOcclusionID	Byte
 Part.Collision	Part.Type	0x4	4	UnkT04	Single
-Part.Collision	Part.Type	0x8	4	UnkT06	Int32
-Part.Collision	Part.Type	0x14	4	UnkT14	Single
+Part.Collision	Part.Type	0x8	4	MapGridCreateHeightDetailLimitInfoID	Int32
+Part.Collision	Part.Type	0x14	4	PlayerLightScale	Single
 Part.Collision	Part.Type	0x18	4	LocationTextID	Int32
 Part.Collision	Part.Type	0x1C	4	UnkT1C	Int32
 Part.Collision	Part.Type	0x20	4	PlayRegionID	Int32
@@ -482,8 +482,8 @@ Part.Collision	Part.Type	0x3E	2	UnkT3E	Int16
 Part.Collision	Part.Type	0x40	4	UnkT40	Single
 Part.Collision	Part.Type	0x48	4	EnableFastTravelEventFlagID	UInt32
 Part.Collision	Part.Type	0x4C	1	UnkT4C	Byte
-Part.Collision	Part.Type	0x4D	1	UnkT4D	Byte
-Part.Collision	Part.Type	0x4E	2	UnkT4E	Int16
+Part.Collision	Part.Type	0x4D	1	TimezonePlayerLightScaleOverride	Byte
+Part.Collision	Part.Type	0x4E	2	OpenChrActivateThreshold	Int16
 Part.Collision	Part	0x8	4	InstanceID	Int32
 Part.Collision	Part	0x20	4	Position.X	Single
 Part.Collision	Part	0x24	4	Position.Y	Single
@@ -998,7 +998,7 @@ Part.Asset	Part.TileLoad	0x14	4	TileLoadConfig.CullingHeightBehavior	Int32
 Part.Asset	Part.Unk11	0x0	4	UnkStruct11.UnkStruct11_Unk00	Int32
 Part.Asset	Part.Unk11	0x4	4	UnkStruct11.UnkStruct11_Unk04	Int32
 Part.Asset	Part.Type	0x0	1	UnkT00	Byte
-Part.Asset	Part.Type	0x1	1	UnkT01	Byte
+Part.Asset	Part.Type	0x1	1	CollisionTypeOverride	Byte
 Part.Asset	Part.Type	0x2	2	UnkT02	Int16
 Part.Asset	Part.Type	0x8	8	UnkT08	Int64
 Part.Asset	Part.Type	0x10	1	UnkT10	Byte
@@ -1012,11 +1012,8 @@ Part.Asset	Part.Type	0x25	1	UnkT25	Byte
 Part.Asset	Part.Type	0x26	1	UnkT26	Byte
 Part.Asset	Part.Type	0x27	1	UnkT27	Byte
 Part.Asset	Part.Type	0x28	4	UnkT28	Int32
-Part.Asset	Part.Type	0x30	4	UnkT30	Int32
-Part.Asset	Part.Type	0x34	1	UnkT34	Byte
-Part.Asset	Part.Type	0x35	1	UnkT35	Byte
-Part.Asset	Part.Type	0x36	1	UnkT36	Byte
-Part.Asset	Part.Type	0x37	1	UnkT37	Byte
+Part.Asset	Part.Type	0x30	4	PickUpItemLotParamID	Int32
+Part.Asset	Part.Type	0x34	4	BreakItemLotParamID	Int32
 Part.Asset	Part.Type	0x50	1	UnkT50	Boolean
 Part.Asset	Part.Type	0x51	1	UnkT51	Byte
 Part.Asset	Part.Type	0x52	1	ExcludeActivateRatioOverride_XboxOne	Byte
@@ -1029,7 +1026,7 @@ Part.Asset	Part.Type.68	0x0	1	AssetUnk1.OverrideCollisionSettings	Byte
 Part.Asset	Part.Type.68	0x1	1	AssetUnk1.AssetStruct1_Unk01	Byte
 Part.Asset	Part.Type.68	0x4	1	AssetUnk1.AssetStruct1_Unk04	Boolean
 Part.Asset	Part.Type.68	0x5	1	AssetUnk1.DisableTorrentAssetOnly	Boolean
-Part.Asset	Part.Type.68	0x6	2	AssetUnk1.AssetStruct1_Unk06	Int16
+Part.Asset	Part.Type.68	0x6	2	AssetUnk1.OpenChrActivateThreshold	Int16
 Part.Asset	Part.Type.68	0xC	1	AssetUnk1.AssetStruct1_Unk0C	Byte
 Part.Asset	Part.Type.68	0x10	4	AssetUnk1.AssetStruct1_Unk10	Int32
 Part.Asset	Part.Type.68	0x1C	4	AssetUnk1.AssetStruct1_Unk1C	Int32
@@ -1059,8 +1056,8 @@ Part.Asset	Part.Type.78	0xA	1	AssetUnk3.AssetUnkStruct3_Unk0A	Byte
 Part.Asset	Part.Type.78	0xB	1	AssetUnk3.AssetUnkStruct3_Unk0B	Byte
 Part.Asset	Part.Type.78	0xC	2	AssetUnk3.AssetUnkStruct3_Unk0C	Int16
 Part.Asset	Part.Type.78	0xE	1	AssetUnk3.AssetUnkStruct3_Unk0E	Byte
-Part.Asset	Part.Type.78	0xF	1	AssetUnk3.AssetUnkStruct3_Unk0F	Byte
-Part.Asset	Part.Type.78	0x10	4	AssetUnk3.AssetUnkStruct3_Unk10	Single
+Part.Asset	Part.Type.78	0xF	1	AssetUnk3.TimezonePlayerLightScaleOverride	Byte
+Part.Asset	Part.Type.78	0x10	4	AssetUnk3.PlayerLightScale	Single
 Part.Asset	Part.Type.78	0x14	1	AssetUnk3.DisableWhenMapLoadedMapID[0]	SByte
 Part.Asset	Part.Type.78	0x15	1	AssetUnk3.DisableWhenMapLoadedMapID[1]	SByte
 Part.Asset	Part.Type.78	0x16	1	AssetUnk3.DisableWhenMapLoadedMapID[2]	SByte
@@ -1070,7 +1067,7 @@ Part.Asset	Part.Type.78	0x1C	4	AssetUnk3.AssetUnkStruct3_Unk1C	Int32
 Part.Asset	Part.Type.78	0x20	4	AssetUnk3.AssetUnkStruct3_Unk20	Int32
 Part.Asset	Part.Type.78	0x24	1	AssetUnk3.AssetUnkStruct3_Unk24	SByte
 Part.Asset	Part.Type.78	0x25	1	AssetUnk3.AssetUnkStruct3_Unk25	Boolean
-Part.Asset	Part.Type.78	0x28	4	AssetUnk3.AssetUnkStruct3_Unk28	Int32
+Part.Asset	Part.Type.78	0x28	4	AssetUnk3.MapGridCreateHeightDetailLimitInfoID	Int32
 Part.Asset	Part.Type.80	0x0	1	AssetUnk4.OverrideCollisionSoundSettings	Boolean
 Part.Asset	Part.Type.80	0x1	1	AssetUnk4.AssetUnkStruct4_Unk01	Byte
 Part.Asset	Part.Type.80	0x2	1	AssetUnk4.OutdoorIndoorType	Byte

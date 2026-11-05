@@ -312,7 +312,7 @@ So every getter pairs an Asset field with a Collision field. Retail values confi
 | AssetUnk1 `+0` | — | **`OverrideCollisionSettings`** (on for 9,201 assets) |
 | AssetUnk1 `+04` | `UnkT26` | cross-referenced |
 | AssetUnk1 `+05` | `DisableTorrent` | already named (`DisableTorrentAssetOnly`) |
-| AssetUnk1 `+06` | `UnkT4E` | cross-referenced |
+| AssetUnk1 `+06` | `UnkT4E` | **`OpenChrActivateThreshold`** (fifth pass) |
 | AssetUnk1 `+0C` | `+37h` (now `UnkT37`) | cross-referenced |
 | AssetUnk1 `+10` | `+38h` (now `LegacyPlayRegionID`, fourth pass) | cross-referenced |
 | AssetUnk1 `+1C` | `UnkT30` | cross-referenced |
@@ -325,8 +325,10 @@ So every getter pairs an Asset field with a Collision field. Retail values confi
 | AssetUnk3 `+09` | `GparamOverride` | **`GparamOverride`** (55, 60, 78…; 255 = none) |
 | AssetUnk3 `+0A` | `UnkT34` | cross-referenced |
 | AssetUnk3 `+0B` | SceneGparam `Unk1D` | cross-referenced |
-| AssetUnk3 `+0E`, `+10` (float) | `UnkT4C` | cross-referenced |
-| AssetUnk3 `+0F` | `UnkT4D` | cross-referenced |
+| AssetUnk3 `+0E` | `UnkT4C` | cross-referenced |
+| AssetUnk3 `+10` (float) | `UnkT14` (not UnkT4C, corrected in the fifth pass) | **`PlayerLightScale`** |
+| AssetUnk3 `+0F` | `UnkT4D` | **`TimezonePlayerLightScaleOverride`** (fifth pass) |
+| AssetUnk3 `+28` | `UnkT06` (`+8`) | **`MapGridCreateHeightDetailLimitInfoID`** (fifth pass) |
 
 Collision gained `UnkT37` (byte, 0) and `UnkT38` (int, -1), which SoulsFormats had asserted. Round trip is still
 identical to the baseline.
@@ -349,6 +351,51 @@ AssetUnk4 is the asset's copy of the first collision bytes (getters `CF43A0`, `C
 (**`OverrideCollisionSoundSettings`**; `OverrideCollisionSettings` is already AssetUnk1's), `+2` is
 **`OutdoorIndoorType`** (parts version ≥ 0x32), `+3` is **`EasyOcclusionID`** (≥ 0x36). Meta: new enums
 `MSB_COLLISION_OUTDOOR_INDOOR_TYPE` / `MSB_ASSET_OUTDOOR_INDOOR_TYPE`. Round trip: identical to the baseline.
+
+## Collision overrides of per-map params (fifth pass: group B)
+
+`14062C110` (called for the area object, `rsi`) resolves the environment settings of the place the player stands
+on. It reads the collision's values (getters in `CSMsbPartsHit`, or the asset's through `CSMsbPartsGeom`) into
+locals, then combines them with the map's rows in three `SoloParamRepository` params (indices from fromsoftware-rs
+`solo_param_repository.rs`; offsets from Smithbox paramdefs):
+
+| MSB field | param it overrides | rule | stored | retail | result |
+|---|---|---|---|---|---|
+| `EnableFastTravelEventFlagID` (via `1407076F0`) | MapDefaultInfoParam (133) `+4 EnableFastTravelEventFlagId` | non-zero wins | `rsi+A0` | — | control ✓ |
+| `GparamOverride` (`+35`) | MapDefaultInfoParam `+0C WeatherCreateAssetLimitId` (s8) | `>= 0` wins | `rsi+A8` → `CSWorldGeomManImp` `1406D3810` → each map block `+24A/+24B`; negative falls back to 50 for DLC areas, else 0 | 12/15 distinct values are WeatherCreateAssetLimitId values; 55, 78 are not | **not renamed**: disagrees with its current gparam description; recorded |
+| `UnkT14` (float) | MapDefaultInfoParam `+2C PlayerLigntScale` (default 1.0) | `>= 0` wins | `rsi+BC` | -1 ×4725, 0 ×12 | **`PlayerLightScale`** |
+| `UnkT4D` | MapDefaultInfoParam `+30 IsEnableTimezonnePlayerLigntScale` | 1 → on, 2 → off, else param | `rsi+C0` | 0 always | **`TimezonePlayerLightScaleOverride`** |
+| `UnkT4E` (short) | MapDefaultInfoParam `+32 OpenChrActivateThreshold` | `>= 0` wins (`140A7A020`) | `[[143D758F8h]+18h]` → `+1Ah` | -1 ×4725, 0 ×12 | **`OpenChrActivateThreshold`** |
+| `UnkT06` (int at `+8`) | MapGridCreateHeightDetailLimitInfo (187) row for the map | `> 0` wins | `rsi+C8` | 703 set; 21/22 distinct values are row IDs (the other, 1310001, looks like a typo of 131001) | **`MapGridCreateHeightDetailLimitInfoID`** |
+| SceneGparam `Unk1C` (sbyte, before parts version 0x31) / `Unk20` (short, 0x31+) | MapGdRegionInfoParam (167) `+4 mapRegionId` | `>= 0` wins | `rsi+C4` | the six most common values (50, 55, 65, 70, 75, 78) are not mapRegionIds | **not renamed**: retail disagrees |
+
+Asset counterparts: AssetUnk1 `+06`, AssetUnk3 `+0F`, `+10`, `+28` (renamed the same). Meta: ParamRefs to
+MapGridCreateHeightDetailLimitInfo, new enums `MSB_COLLISION_TRISTATE_OVERRIDE` / `MSB_ASSET_TRISTATE_OVERRIDE`.
+Defaults of new Collision objects: PlayerLightScale and OpenChrActivateThreshold are now -1 (the retail value).
+Round trip identical to the baseline. Stats: `Tools/MsbExeSurvey/out_fixed/stats_B.txt` (MsbRoundTrip `stats`
+now also reads `regulation.bin`).
+
+## Asset geometry setup (sixth pass: group C)
+
+The setup functions are methods of fromsoftware-rs `CSWorldGeomInfo`: `+8` is the `ASSET_GEOMETORY_PARAM_ST` row,
+`+18h` the `CSMsbPartsGeom` wrapper. Most wrappers return the MSB value, or the param field when the MSB value
+doesn't apply.
+
+| Asset field | consumer | rule | retail | result |
+|---|---|---|---|---|
+| `UnkT01` | `1406C5440` (jump table) | 0 → param `collisionType` (`+0E`); 11–16 → that type; else 0 | 12 on one asset | **`CollisionTypeOverride`** |
+| `UnkT30` | `1406C5C30`, `1406C5EE0` ("can be picked up") | `> 0` replaces `pickUpItemLotParamId` (`+B8`) | -1 (0 ×3) | **`PickUpItemLotParamID`** |
+| int `+34` (was bytes `UnkT34`–`T37`) | `1406C4E90` via getter `CF3470` (dword) | `> 0` replaces `breakItemLotParamId` (`+B0`) | -1 (0 ×3, 3 ×1) | **`BreakItemLotParamID`**, merged (user's choice). The byte reads at `+35`–`+37` the survey lists under Asset are the Geom getters' fallback to the referenced *Collision* (GparamOverride, DisableTorrent, UnkT37) |
+| `UnkT02` | `1406A86E0` via `1406C5EC0` | low byte `!= 0` → helper struct at `GeomIns +4F0h`, instance joins manager list `+580h` | 1 on one asset | Unk, summary |
+| `UnkT08` | getter `CF3320` | pointer to a linked list (type `+0C`, next `+20h`), looks for type 4 | always 0 | Unk, summary |
+| `UnkT10` | `1406BD3B0` | 0 always / 1 if flag / 2 if not flag / 3 never; flag = caller's virtual `#35` result | 0/1/2/3 (~275 assets) | Unk, summary (flag's meaning past hop budget) |
+| `UnkT28` | `1406C23E1` | four shorts; each non-zero → `CSSoundImp::140DAC8A0(map, id, flag)` → Wwise SDK call, ref-counted per (map, id) | 10 on three assets | Unk, summary |
+| `UnkT50` | `1406C6111` | when false and collision type ∈ {0, 11, 12} → `unk17a`; then bit 0 joins the group mask at `+78h` | true ×8,097 | Unk, summary |
+| `UnkE3C` | `1406C6111`, `14071AD80` | copied to `CSWorldGeomInfo +148h` (`unk148`) and grass `+7Ch`; only a swap reads `+148` | — | Unk, summary |
+| `UnkStruct8_Unk00` | `1406C09F0` | non-zero skips the `autoBreakAnimDistance` (`+120h`) setup | — | Unk, summary |
+| `UnkStruct11_Unk04` | `1406A86E0`, `1406C4380` | non-zero → manager list `+428h`; copied to info `+74h` | — | Unk, summary |
+
+Round trip identical to the baseline. Stats: `Tools/MsbExeSurvey/out_fixed/stats_C.txt`.
 
 ## PlatoonInfo flags named from Lua bindings (group H)
 

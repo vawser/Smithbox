@@ -26,13 +26,14 @@
     AltName="Unknown: 0x4"
     Wiki="" />
     
-    <UnkT06
-    AltName="Unknown: 0x6"
-    Wiki="" />
+    <MapGridCreateHeightDetailLimitInfoID
+    AltName="Map Grid Height Detail Limit Info ID"
+    Wiki="MapGridCreateHeightDetailLimitInfo row used while standing on this collision; 0 or less uses the map's own row."
+    ParamRef="MapGridCreateHeightDetailLimitInfo" />
     
-    <UnkT14
-    AltName="Unknown: 0x14"
-    Wiki="" />
+    <PlayerLightScale
+    AltName="Player Light Scale"
+    Wiki="Overrides the map's Player Light Scale (MapDefaultInfoParam) while standing on this collision. Negative keeps the map's value." />
     
     <LocationTextID
     AltName="Location Text ID"
@@ -103,13 +104,14 @@
     AltName="Unknown: 0x4C"
     Wiki="0, 1 or 2 in retail (m21, m25, m39). Copied to the character standing on the collision; 1 adds and 2 subtracts an offset in a per-frame threshold check." />
 
-    <UnkT4D
-    AltName="Unknown: 0x4D"
-    Wiki="" />
+    <TimezonePlayerLightScaleOverride
+    AltName="Timezone Player Light Scale Override"
+    Wiki="Overrides MapDefaultInfoParam Is Enable Timezone Player Light Scale while standing on this collision: 1 on, 2 off, 0 keeps the map's value."
+    Enum="MSB_COLLISION_TRISTATE_OVERRIDE" />
     
-    <UnkT4E
-    AltName="Unknown: 0x4E"
-    Wiki="" />
+    <OpenChrActivateThreshold
+    AltName="Open Character Activate Threshold"
+    Wiki="Overrides MapDefaultInfoParam Open Chr Activate Threshold while standing on this collision. Negative keeps the map's value." />
     
     
   </Field>
@@ -144,6 +146,11 @@
         <Option Value="1" Name="Indoor (Half)" />
         <Option Value="2" Name="Indoor (All)" />
         <Option Value="255" Name="Default" />
+    </Enum>
+    <Enum Name="MSB_COLLISION_TRISTATE_OVERRIDE">
+        <Option Value="0" Name="Map Default" />
+        <Option Value="1" Name="On" />
+        <Option Value="2" Name="Off" />
     </Enum>
   </Enums>
 </MSBMETA>

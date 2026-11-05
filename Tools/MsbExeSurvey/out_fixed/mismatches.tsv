@@ -3,4 +3,6 @@ SPLIT	Part.DisplayGroup	0x0	1		MsbResCap	inside DisplayGroupStruct.Condition(4)	
 SPLIT	Part.DisplayGroup	0x1	1		MsbResCap	inside DisplayGroupStruct.Condition(4)	140CF890E
 SPLIT	Part.DisplayGroup	0x2	1		MsbResCap	inside DisplayGroupStruct.Condition(4)	140CF890E
 NO PROPERTY	Part.Type	0x20	2	Part.Enemy,Part.DummyEnemy	game,CSMsbPartsEne	store [R13+15C]; ret; or -1	1403664F0
+SPLIT	Part.Type	0x36	1	Part.Asset,Part.DummyAsset	CSMsbPartsGeom	inside BreakItemLotParamID(4)	140CF2800
+SPLIT	Part.Type	0x37	1	Part.Asset,Part.DummyAsset	CSMsbPartsGeom	inside BreakItemLotParamID(4)	140CF30D0
 NO PROPERTY	Point.Entity	0x0	4		CSMsbPoint	ret; or -1; test	140CFDC50

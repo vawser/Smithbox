@@ -221,7 +221,7 @@
 140CF2DC4	CSMsbPartsGeom	Part+C()	0 callers
 140CF31D0	CSMsbPartsGeom	Part+68() Part.Type+1C(AssetSfxParamRelativeID)	1 callers
     1406C59C4 in 1406C56D0 game  
-140CF3210	CSMsbPartsGeom	Part+68() Part.Type+1(UnkT01)	1 callers
+140CF3210	CSMsbPartsGeom	Part+68() Part.Type+1(CollisionTypeOverride)	1 callers
     1406C544D in 1406C5440 game  
 140CF3320	CSMsbPartsGeom	Part+68() Part.Type+8(UnkT08)	1 callers
     1406C5B14 in 1406C59E0 game  
@@ -229,7 +229,7 @@
     1406E1548 in 1406E1450 game  
     1406E269A in 1406E2570 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
     1406E2878 in 1406E2570 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
-140CF3470	CSMsbPartsGeom	Part+68() Part.Type+34(UnkT34)	1 callers
+140CF3470	CSMsbPartsGeom	Part+68() Part.Type+34(BreakItemLotParamID)	1 callers
     1406C4E9D in 1406C4E70 game  
 140CF3490	CSMsbPartsGeom	Part+68() Part.Type+13(ExcludeActivateRatioOverride_PS4)	1 callers
     1406CB099 in 1406CAF30 game  
@@ -237,7 +237,7 @@
     1406CB034 in 1406CAF30 game  
     1406CB04B in 1406CAF30 game  
     1406CB059 in 1406CAF30 game  
-140CF3710	CSMsbPartsGeom	Part+68() Part.Type+30(UnkT30)	2 callers
+140CF3710	CSMsbPartsGeom	Part+68() Part.Type+30(PickUpItemLotParamID)	2 callers
     1406C5C3D in 1406C5C30 game  
     1406C5EFF in 1406C5EC0 game  
 140CF3850	CSMsbPartsGeom	Part+A0() Part.Unk11+4(UnkStruct11.UnkStruct11_Unk04)	4 callers
@@ -294,15 +294,15 @@
     140A0CFEC in 140A0CA80 game  vector<T> too long
     140A59167 in 140A58C80 game  Tried to create container with incompatible heap. | w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
     140CBC236 in 140CBB6B0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
-140CF4F60	CSMsbPartsHit	Part+68() Part.Type+4E(UnkT4E)	1 callers
+140CF4F60	CSMsbPartsHit	Part+68() Part.Type+4E(OpenChrActivateThreshold)	1 callers
     14062C1ED in 14062B2A0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
-140CF4FB0	CSMsbPartsHit	Part+68() Part.Type+8(UnkT06/UnkT08)	1 callers
+140CF4FB0	CSMsbPartsHit	Part+68() Part.Type+8(MapGridCreateHeightDetailLimitInfoID/UnkT08)	1 callers
     14062C1F9 in 14062B2A0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
-140CF4FD0	CSMsbPartsHit	Part+68() Part.Type+14(UnkT14)	1 callers
+140CF4FD0	CSMsbPartsHit	Part+68() Part.Type+14(PlayerLightScale)	1 callers
     14062C1D5 in 14062B2A0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
 140CF5000	CSMsbPartsHit	Part+58() Part.DisplayGroup+0(DisplayGroupStruct.Condition)	1 callers
     140706399 in 140705DE0 game  
-140CF5020	CSMsbPartsHit	Part+68() Part.Type+4D(UnkT4D)	1 callers
+140CF5020	CSMsbPartsHit	Part+68() Part.Type+4D(TimezonePlayerLightScaleOverride)	1 callers
     14062C1E2 in 14062B2A0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
 140CF5050	CSMsbPartsHit	Part+68() Part.Type+1C(UnkT1C)	1 callers
     1403F6DC4 in 1403F67A0 game  

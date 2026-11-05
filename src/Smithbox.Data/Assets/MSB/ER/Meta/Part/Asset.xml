@@ -8,21 +8,21 @@
     AltName="Unknown: 0x0"
     Wiki="" />
 
-    <UnkT01
-    AltName="Unknown: 0x1"
-    Wiki="" />
+    <CollisionTypeOverride
+    AltName="Collision Type Override"
+    Wiki="Overrides the asset geometry param Collision Type: 11 to 16 use that type, 0 uses the param's, anything else gives Default." />
   
     <UnkT02
     AltName="Unknown: 0x2"
-    Wiki="" />
+    Wiki="When set, the asset's instance gets a helper struct and joins a geometry manager list. 1 on one retail asset." />
 
     <UnkT08
     AltName="Unknown: 0x8"
-    Wiki="" />
+    Wiki="Always 0 in retail. The game treats it as a pointer to a linked list of entries." />
     
     <UnkT10
     AltName="Unknown: 0x10"
-    Wiki="" />
+    Wiki="A condition on a flag from the owning object: 0 always, 1 only when set, 2 only when not set, 3 never." />
     
     <UnkT11
     AltName="Apply Destruction to Adjacent Assets"
@@ -62,28 +62,18 @@
     
     <UnkT28
     AltName="Unknown: 0x28"
-    Wiki="" />
+    Wiki="Read as four shorts; each non-zero one is registered with the sound manager for the asset's map." />
     
-    <UnkT30
-    AltName="Unknown: 0x30"
-    Wiki="" />
+    <PickUpItemLotParamID
+    AltName="Pick Up Item Lot ID"
+    Wiki="Overrides the asset geometry param pick-up item lot (ItemLotParam_map) when greater than 0."
+    ParamRef="ItemLotParam_map" />
     
-    <UnkT34
-    AltName="Unknown: 0x34"
-    Wiki="" />
+    <BreakItemLotParamID
+    AltName="Break Item Lot ID"
+    Wiki="Overrides the asset geometry param break item lot (ItemLotParam_map) when greater than 0."
+    ParamRef="ItemLotParam_map" />
 
-    <UnkT35
-    AltName="Unknown: 0x35"
-    Wiki="" />
-
-    <UnkT36
-    AltName="Unknown: 0x36"
-    Wiki="" />
-
-    <UnkT37
-    AltName="Unknown: 0x37"
-    Wiki="" />
-    
     <PartNames
     AltName="Part Name"
     Wiki="The part names associated with this collision."
@@ -94,7 +84,8 @@
     
     <UnkT50
     AltName="Unknown: 0x50"
-    Wiki="" />
+    Wiki="When OFF, an asset whose collision type is 0, 11 or 12 is put in group bit 0 of its geometry instance's group mask. ON for 8,097 retail assets."
+    IsBool="" />
     
     <UnkT51
     AltName="Unknown: 0x51"
@@ -157,9 +148,9 @@
     Wiki="If ON, Torrent cannot be summoned on this asset." 
     IsBool="" />
 
-    <AssetStruct1_Unk06
-    AltName="Unknown: 0x6"
-    Wiki="The asset's own value of Collision Unknown: 0x4E." />
+    <OpenChrActivateThreshold
+    AltName="Open Character Activate Threshold"
+    Wiki="The asset's own Collision Open Character Activate Threshold." />
 
     <AssetStruct1_Unk0C
     AltName="Unknown: 0xC"
@@ -293,13 +284,14 @@ This value replaces BB in the gparam file lookup. 255 for none." />
     AltName="Unknown: 0xE"
     Wiki="The asset's own value of Collision Unknown: 0x4C." />
 
-    <AssetUnkStruct3_Unk0F
-    AltName="Unknown: 0xF"
-    Wiki="The asset's own value of Collision Unknown: 0x4D." />
+    <TimezonePlayerLightScaleOverride
+    AltName="Timezone Player Light Scale Override"
+    Wiki="The asset's own Collision Timezone Player Light Scale Override: 1 on, 2 off, 0 keeps the map's value."
+    Enum="MSB_ASSET_TRISTATE_OVERRIDE" />
     
-    <AssetUnkStruct3_Unk10
-    AltName="Unknown: 0x10"
-    Wiki="The asset's own value of Collision Unknown: 0x4C, as a float." />
+    <PlayerLightScale
+    AltName="Player Light Scale"
+    Wiki="The asset's own Collision Player Light Scale. Negative keeps the map's value." />
     
     <DisableWhenMapLoadedMapID
     AltName="Disable Asset on Loaded Map ID"
@@ -326,9 +318,10 @@ This value replaces BB in the gparam file lookup. 255 for none." />
     AltName="Unknown: 0x25"
     Wiki="" />
     
-    <AssetUnkStruct3_Unk28
-    AltName="Unknown: 0x28"
-    Wiki="" />
+    <MapGridCreateHeightDetailLimitInfoID
+    AltName="Map Grid Height Detail Limit Info ID"
+    Wiki="The asset's own Collision Map Grid Height Detail Limit Info ID."
+    ParamRef="MapGridCreateHeightDetailLimitInfo" />
     
     <AssetUnk4
     AltName="Unknown Struct 4"
@@ -359,6 +352,11 @@ This value replaces BB in the gparam file lookup. 255 for none." />
         <Option Value="1" Name="Indoor (Half)" />
         <Option Value="2" Name="Indoor (All)" />
         <Option Value="255" Name="Default" />
+    </Enum>
+    <Enum Name="MSB_ASSET_TRISTATE_OVERRIDE">
+        <Option Value="0" Name="Map Default" />
+        <Option Value="1" Name="On" />
+        <Option Value="2" Name="Off" />
     </Enum>
   </Enums>
 </MSBMETA>

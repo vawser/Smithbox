@@ -311,7 +311,8 @@ namespace SoulsFormats
             public uint[] EntityGroupIDs { get; set; }
 
             /// <summary>
-            /// Unknown. -1 when unused.
+            /// Unknown. -1 when unused. For an asset it is copied into its geometry instance info (CSWorldGeomInfo +148h,
+            /// under a condition) and into the grass setup (+7Ch); no further reader was found statically.
             /// </summary>
             public short UnkE3C { get; set; }
 
@@ -1215,7 +1216,8 @@ namespace SoulsFormats
             public class UnkStruct8
             {
                 /// <summary>
-                /// Unknown. 0 or 1; the game reads it as a byte.
+                /// Unknown. 0 or 1; the game reads it as a byte. For an asset, non-zero skips the setup that uses the
+                /// asset geometry param's autoBreakAnimDistance (break animation when the player comes close).
                 /// </summary>
                 public byte UnkStruct8_Unk00 { get; set; }
 
@@ -1442,7 +1444,8 @@ namespace SoulsFormats
                 public int UnkStruct11_Unk00 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. For an asset, non-zero adds its instance to a list of the geometry manager (+428h); the value
+                /// is also copied into the geometry instance info (+74h).
                 /// </summary>
                 public int UnkStruct11_Unk04 { get; set; }
 
@@ -2043,14 +2046,16 @@ namespace SoulsFormats
                 public float UnkT04 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// MapGridCreateHeightDetailLimitInfo row used while a character stands on this collision; 0 or less
+                /// uses the map's own row.
                 /// </summary>
-                public int UnkT06 { get; set; }
+                public int MapGridCreateHeightDetailLimitInfoID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Overrides MapDefaultInfoParam PlayerLigntScale (the player light intensity) while a character stands
+                /// on this collision; negative keeps the map's value. -1 in retail, 0 on 12 collisions.
                 /// </summary>
-                public float UnkT14 { get; set; }
+                public float PlayerLightScale { get; set; } = -1;
 
                 /// <summary>
                 /// ID of location text to display when stepping onto this collision.
@@ -2141,14 +2146,17 @@ namespace SoulsFormats
                 public byte UnkT4C { get; set; }
 
                 /// <summary>
-                /// Unknown. Always 0 in retail; read by its own getter.
+                /// Overrides MapDefaultInfoParam IsEnableTimezonnePlayerLigntScale while a character stands on this
+                /// collision: 1 enables, 2 disables the time-of-day change of the player light; 0 keeps the map's value.
+                /// Always 0 in retail.
                 /// </summary>
-                public byte UnkT4D { get; set; }
+                public byte TimezonePlayerLightScaleOverride { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Overrides MapDefaultInfoParam OpenChrActivateThreshold while a character stands on this collision;
+                /// negative keeps the map's value. -1 in retail, 0 on 12 collisions.
                 /// </summary>
-                public short UnkT4E { get; set; }
+                public short OpenChrActivateThreshold { get; set; } = -1;
 
                 /// <summary>
                 /// Creates a Collision with default values.
@@ -2185,10 +2193,10 @@ namespace SoulsFormats
                     OutdoorIndoorType = br.ReadByte();
                     EasyOcclusionID = br.ReadByte();
                     UnkT04 = br.ReadSingle();
-                    UnkT06 = br.ReadInt32();
+                    MapGridCreateHeightDetailLimitInfoID = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
-                    UnkT14 = br.ReadSingle();
+                    PlayerLightScale = br.ReadSingle();
                     LocationTextID = br.ReadInt32();
                     UnkT1C = br.ReadInt32();
                     PlayRegionID = br.ReadInt32();
@@ -2208,8 +2216,8 @@ namespace SoulsFormats
                     br.AssertInt32(0);
                     EnableFastTravelEventFlagID = br.ReadUInt32();
                     UnkT4C = br.ReadByte();
-                    UnkT4D = br.ReadByte();
-                    UnkT4E = br.ReadInt16();
+                    TimezonePlayerLightScaleOverride = br.ReadByte();
+                    OpenChrActivateThreshold = br.ReadInt16();
                 }
 
                 private protected override void ReadUnk1(BinaryReaderEx br) => DisplayDataStruct = new DisplayDataStruct(br);
@@ -2227,10 +2235,10 @@ namespace SoulsFormats
                     bw.WriteByte(OutdoorIndoorType);
                     bw.WriteByte(EasyOcclusionID);
                     bw.WriteSingle(UnkT04);
-                    bw.WriteInt32(UnkT06);
+                    bw.WriteInt32(MapGridCreateHeightDetailLimitInfoID);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
-                    bw.WriteSingle(UnkT14);
+                    bw.WriteSingle(PlayerLightScale);
                     bw.WriteInt32(LocationTextID);
                     bw.WriteInt32(UnkT1C);
                     bw.WriteInt32(PlayRegionID);
@@ -2250,8 +2258,8 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteUInt32(EnableFastTravelEventFlagID);
                     bw.WriteByte(UnkT4C);
-                    bw.WriteByte(UnkT4D);
-                    bw.WriteInt16(UnkT4E);
+                    bw.WriteByte(TimezonePlayerLightScaleOverride);
+                    bw.WriteInt16(OpenChrActivateThreshold);
                 }
 
                 private protected override void WriteUnk1(BinaryWriterEx bw) => DisplayDataStruct.Write(bw);
@@ -2585,22 +2593,26 @@ namespace SoulsFormats
                 public byte UnkT00 { get; set; }
 
                 /// <summary>
-                /// Unknown. Read by its own getter.
+                /// Overrides the asset geometry param's collisionType: 11 to 16 use that type, 0 uses the param's,
+                /// anything else gives 0 (default). 12 on one retail asset, 0 elsewhere.
                 /// </summary>
-                public byte UnkT01 { get; set; }
+                public byte CollisionTypeOverride { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. The game reads the low byte as a flag: when set, the asset's instance gets a small helper
+                /// struct (+4F0h) and joins a list of the geometry manager (+580h). 1 on one retail asset.
                 /// </summary>
                 public short UnkT02 { get; set; }
 
                 /// <summary>
-                /// Unknown. Always 0 in retail; the game tests it.
+                /// Unknown. Always 0 in retail. The game treats it as a pointer to a linked list of entries (type at +0Ch,
+                /// next at +20h) and looks for type 4.
                 /// </summary>
                 public long UnkT08 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. A condition on a flag the caller passes (from a virtual of the owning object): 0 always,
+                /// 1 only when it is set, 2 only when it is not, 3 never. 0, 1, 2 or 3 in retail.
                 /// </summary>
                 public byte UnkT10 { get; set; }
 
@@ -2651,34 +2663,22 @@ namespace SoulsFormats
                 public byte UnkT27 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. The game reads it as four shorts; each non-zero one is registered with the sound manager
+                /// (CSSoundImp) for the asset's map, reference-counted per map. 0 in retail except three assets (10).
                 /// </summary>
                 public int UnkT28 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Overrides the asset geometry param's pickUpItemLotParamId (ItemLotParam_map) when greater than 0.
+                /// -1 in retail.
                 /// </summary>
-                public int UnkT30 { get; set; }
+                public int PickUpItemLotParamID { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// Overrides the asset geometry param's breakItemLotParamId (ItemLotParam_map) when greater than 0.
+                /// -1 in retail (one asset has 3, three have 0).
                 /// </summary>
-                public byte UnkT34 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT35 { get; set; }
-
-                /// <summary>
-                /// Unknown. Read by the game.
-                /// </summary>
-                public byte UnkT36 { get; set; }
-
-                /// <summary>
-                /// Unknown. Read by the game.
-                /// </summary>
-                public byte UnkT37 { get; set; }
+                public int BreakItemLotParamID { get; set; } = -1;
 
                 /// <summary>
                 /// Parts referenced by the asset. [4] and [5] are its Collision: the game uses [5] if set, else [4], and
@@ -2690,7 +2690,8 @@ namespace SoulsFormats
                 private int[] PartIndices { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. When not set, an asset whose collision type is 0, 11 or 12 is added to group bit 0 of its
+                /// geometry instance's group mask (CSWorldGeomInfo +78h). True on 8,097 retail assets.
                 /// </summary>
                 public bool UnkT50 { get; set; }
 
@@ -2767,9 +2768,9 @@ namespace SoulsFormats
                     public bool DisableTorrentAssetOnly { get; set; }
 
                     /// <summary>
-                    /// Unknown. The asset's own value of Collision UnkT4E. Always -1 in retail.
+                    /// The asset's own Collision.OpenChrActivateThreshold. Always -1 in retail.
                     /// </summary>
-                    public short AssetStruct1_Unk06 { get; set; } = -1;
+                    public short OpenChrActivateThreshold { get; set; } = -1;
 
                     /// <summary>
                     /// Unknown. The asset's own value of Collision UnkT37. Always 0 in retail.
@@ -2827,7 +2828,7 @@ namespace SoulsFormats
                         br.AssertInt16(-1);
                         AssetStruct1_Unk04 = br.ReadBoolean();
                         DisableTorrentAssetOnly = br.ReadBoolean();
-                        AssetStruct1_Unk06 = br.ReadInt16();
+                        OpenChrActivateThreshold = br.ReadInt16();
                         br.AssertInt32(0);
                         AssetStruct1_Unk0C = br.ReadByte();
                         br.AssertByte(0);
@@ -2854,7 +2855,7 @@ namespace SoulsFormats
                         bw.WriteInt16(-1);
                         bw.WriteBoolean(AssetStruct1_Unk04);
                         bw.WriteBoolean(DisableTorrentAssetOnly);
-                        bw.WriteInt16(AssetStruct1_Unk06);
+                        bw.WriteInt16(OpenChrActivateThreshold);
                         bw.WriteInt32(0);
                         bw.WriteByte(AssetStruct1_Unk0C);
                         bw.WriteByte(0);
@@ -3062,14 +3063,14 @@ namespace SoulsFormats
                     public byte AssetUnkStruct3_Unk0E { get; set; }
 
                     /// <summary>
-                    /// Unknown. The asset's own value of Collision UnkT4D.
+                    /// The asset's own Collision.TimezonePlayerLightScaleOverride (1 on, 2 off, 0 map default).
                     /// </summary>
-                    public byte AssetUnkStruct3_Unk0F { get; set; }
+                    public byte TimezonePlayerLightScaleOverride { get; set; }
 
                     /// <summary>
-                    /// Unknown. The asset's own value of Collision UnkT4C, as a float.
+                    /// The asset's own Collision.PlayerLightScale; negative keeps the map's value.
                     /// </summary>
-                    public float AssetUnkStruct3_Unk10 { get; set; }
+                    public float PlayerLightScale { get; set; }
 
                     /// <summary>
                     /// Disables the asset when the specified map is loaded.
@@ -3102,9 +3103,9 @@ namespace SoulsFormats
                     public bool AssetUnkStruct3_Unk25 { get; set; }
 
                     /// <summary>
-                    /// Unknown.
+                    /// The asset's own Collision.MapGridCreateHeightDetailLimitInfoID; 0 or less uses the map's row.
                     /// </summary>
-                    public int AssetUnkStruct3_Unk28 { get; set; }
+                    public int MapGridCreateHeightDetailLimitInfoID { get; set; }
 
                     /// <summary>
                     /// Creates an AssetUnkStruct3 with default values.
@@ -3137,8 +3138,8 @@ namespace SoulsFormats
                         AssetUnkStruct3_Unk0B = br.ReadByte();
                         AssetUnkStruct3_Unk0C = br.ReadInt16();
                         AssetUnkStruct3_Unk0E = br.ReadByte();
-                        AssetUnkStruct3_Unk0F = br.ReadByte();
-                        AssetUnkStruct3_Unk10 = br.ReadSingle();
+                        TimezonePlayerLightScaleOverride = br.ReadByte();
+                        PlayerLightScale = br.ReadSingle();
                         DisableWhenMapLoadedMapID = br.ReadSBytes(4);
                         AssetUnkStruct3_Unk18 = br.ReadInt32();
                         AssetUnkStruct3_Unk1C = br.ReadInt32();
@@ -3147,7 +3148,7 @@ namespace SoulsFormats
                         AssetUnkStruct3_Unk25 = br.ReadBoolean();
                         br.AssertByte(0);
                         br.AssertByte(0);
-                        AssetUnkStruct3_Unk28 = br.ReadInt32();
+                        MapGridCreateHeightDetailLimitInfoID = br.ReadInt32();
                         br.AssertInt32(0);
                         br.AssertInt32(0);
                         br.AssertInt32(0);
@@ -3168,8 +3169,8 @@ namespace SoulsFormats
                         bw.WriteByte(AssetUnkStruct3_Unk0B);
                         bw.WriteInt16(AssetUnkStruct3_Unk0C);
                         bw.WriteByte(AssetUnkStruct3_Unk0E);
-                        bw.WriteByte(AssetUnkStruct3_Unk0F);
-                        bw.WriteSingle(AssetUnkStruct3_Unk10);
+                        bw.WriteByte(TimezonePlayerLightScaleOverride);
+                        bw.WriteSingle(PlayerLightScale);
                         bw.WriteSBytes(DisableWhenMapLoadedMapID);
                         bw.WriteInt32(AssetUnkStruct3_Unk18);
                         bw.WriteInt32(AssetUnkStruct3_Unk1C);
@@ -3178,7 +3179,7 @@ namespace SoulsFormats
                         bw.WriteBoolean(AssetUnkStruct3_Unk25);
                         bw.WriteByte(0);
                         bw.WriteByte(0);
-                        bw.WriteInt32(AssetUnkStruct3_Unk28);
+                        bw.WriteInt32(MapGridCreateHeightDetailLimitInfoID);
                         bw.WriteInt32(0);
                         bw.WriteInt32(0);
                         bw.WriteInt32(0);
@@ -3341,7 +3342,7 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     UnkT00 = br.ReadByte();
-                    UnkT01 = br.ReadByte();
+                    CollisionTypeOverride = br.ReadByte();
                     UnkT02 = br.AssertInt16([0, 1]);
                     br.AssertInt32(0);
                     UnkT08 = br.ReadInt64();
@@ -3360,11 +3361,8 @@ namespace SoulsFormats
                     UnkT27 = br.ReadByte();
                     UnkT28 = br.ReadInt32();
                     br.AssertInt32(0);
-                    UnkT30 = br.ReadInt32();
-                    UnkT34 = br.ReadByte();
-                    UnkT35 = br.ReadByte();
-                    UnkT36 = br.ReadByte();
-                    UnkT37 = br.ReadByte();
+                    PickUpItemLotParamID = br.ReadInt32();
+                    BreakItemLotParamID = br.ReadInt32();
                     PartIndices = br.ReadInt32s(6);
                     UnkT50 = br.ReadBoolean();
                     UnkT51 = br.ReadByte();
@@ -3400,7 +3398,7 @@ namespace SoulsFormats
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteByte(UnkT00);
-                    bw.WriteByte(UnkT01);
+                    bw.WriteByte(CollisionTypeOverride);
                     bw.WriteInt16(UnkT02);
                     bw.WriteInt32(0);
                     bw.WriteInt64(UnkT08);
@@ -3419,11 +3417,8 @@ namespace SoulsFormats
                     bw.WriteByte(UnkT27);
                     bw.WriteInt32(UnkT28);
                     bw.WriteInt32(0);
-                    bw.WriteInt32(UnkT30);
-                    bw.WriteByte(UnkT34);
-                    bw.WriteByte(UnkT35);
-                    bw.WriteByte(UnkT36);
-                    bw.WriteByte(UnkT37);
+                    bw.WriteInt32(PickUpItemLotParamID);
+                    bw.WriteInt32(BreakItemLotParamID);
                     bw.WriteInt32s(PartIndices);
                     bw.WriteBoolean(UnkT50);
                     bw.WriteByte(UnkT51);

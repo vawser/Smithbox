@@ -198,9 +198,9 @@
     AltName="Unknown: 0x0E"
     Wiki="" />
     
-    <AssetUnkStruct3_Unk10
-    AltName="Unknown: 0x10"
-    Wiki="" />
+    <PlayerLightScale
+    AltName="Player Light Scale"
+    Wiki="The asset's own Collision Player Light Scale. Negative keeps the map's value." />
     
     <DisableWhenMapLoadedMapID
     AltName="Disable Asset on Loaded Map ID"
@@ -227,9 +227,10 @@
     AltName="Unknown: 0x25"
     Wiki="" />
     
-    <AssetUnkStruct3_Unk28
-    AltName="Unknown: 0x28"
-    Wiki="" />
+    <MapGridCreateHeightDetailLimitInfoID
+    AltName="Map Grid Height Detail Limit Info ID"
+    Wiki="The asset's own Collision Map Grid Height Detail Limit Info ID."
+    ParamRef="MapGridCreateHeightDetailLimitInfo" />
     
     <AssetUnk4
     AltName="Unknown Struct 4"

@@ -179,6 +179,27 @@ PlatoonInfo `UnkT05` → `EnableDeactiveMove` (byte, `IsBool` in meta); `State` 
 says it is the initial reflect state (Lua `SetReflectState`). Both meta copies updated; round trip identical to the
 baseline; survey rerun. Evidence: `MSBE Exe Analysis.md`, "PlatoonInfo flags named from Lua bindings".
 
+### 2026-11-05: group B done
+
+The "stack struct" of `14062B2A0` is the locals of `14062C110`. Each Collision value overrides one per-map param
+value (MapDefaultInfoParam, MapGdRegionInfoParam, MapGridCreateHeightDetailLimitInfo). Renamed: `UnkT06` →
+`MapGridCreateHeightDetailLimitInfoID`, `UnkT14` → `PlayerLightScale`, `UnkT4D` →
+`TimezonePlayerLightScaleOverride`, `UnkT4E` → `OpenChrActivateThreshold`, plus their asset copies. SceneGparam
+`Unk1C/Unk20` and `GparamOverride` were not renamed: retail values disagree with what the code suggests
+(mapRegionId; WeatherCreateAssetLimitId). Open question for later: the two share a value set (50, 55, 65, 75, 78),
+so they probably index the same thing. Evidence: `MSBE Exe Analysis.md`, "Collision overrides of per-map params".
+
+Anchor added: SoloParamRepository is `[143D88F78h]`, get-row `140D500F0(repo, index, …)`. The constant in `edx`
+is the fromsoftware-rs index.
+
+### 2026-11-05: group C done
+
+Renamed: Asset `UnkT01` → `CollisionTypeOverride`, `UnkT30` → `PickUpItemLotParamID`, bytes `UnkT34`–`T37` →
+`int BreakItemLotParamID` (merged). Eight more fields got summaries of the observed behaviour but keep `Unk` names;
+most trails end inside the geometry manager's lists or the Wwise SDK. Evidence: `MSBE Exe Analysis.md`, "Asset
+geometry setup". Survey caveat confirmed: Geom getters that fall back to the referenced collision make collision
+offsets show up as Asset reads (`+35`–`+37`); check the getter before trusting an Asset row in `report.tsv`.
+
 ### Known limits
 
 * `Extra.FuncStart` merges chained `.pdata` fragments, so leaf functions and tail-called neighbours are reported
