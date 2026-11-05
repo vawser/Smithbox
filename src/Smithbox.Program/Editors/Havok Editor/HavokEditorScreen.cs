@@ -30,6 +30,8 @@ public class HavokEditorScreen : EditorScreen
 
         HavokBank = new(project);
         HavokBank.GetPinnedWrappers = GetPinnedWrappers;
+        HavokBank.GetPinnedBinders = GetPinnedBinders;
+        HavokBank.PreserveSelections = PreserveSelections;
 
         ViewHandler = new HavokViewHandler(this, project);
 
@@ -52,10 +54,14 @@ public class HavokEditorScreen : EditorScreen
             if (view == null)
                 continue;
 
-            foreach (var action in view.ActionManager.GetHistory().OfType<IHavokFileAction>())
+            foreach (var action in view.ActionManager.GetHistory())
             {
-                if (action.FileWrapper != null)
-                    pinned.Add(action.FileWrapper);
+                if (action is IHavokFileAction { FileWrapper: not null } fileAction)
+                    pinned.Add(fileAction.FileWrapper);
+
+                // File actions can put their recorded wrappers back, so those stay as they are too
+                if (action is IHavokBinderAction binderAction)
+                    pinned.UnionWith(binderAction.Wrappers);
             }
 
             var selected = view.Selection.SelectedFileWrapper;
@@ -65,6 +71,95 @@ public class HavokEditorScreen : EditorScreen
         }
 
         return pinned;
+    }
+
+    /// <summary>
+    /// The binders with file actions in any view's undo/redo history. They keep their in-memory working copy,
+    /// so undoing or redoing those actions applies to the binder they recorded.
+    /// </summary>
+    private HashSet<FileDictionaryEntry> GetPinnedBinders()
+    {
+        var pinned = new HashSet<FileDictionaryEntry>();
+
+        if (ViewHandler == null)
+            return pinned;
+
+        foreach (var view in ViewHandler.Views)
+        {
+            if (view == null)
+                continue;
+
+            foreach (var action in view.ActionManager.GetHistory().OfType<IHavokBinderAction>())
+            {
+                pinned.Add(action.BinderEntry);
+            }
+        }
+
+        return pinned;
+    }
+
+    /// <summary>
+    /// Run a change to a binder's file list (a file action, or its undo/redo) while keeping every view that
+    /// shows the binder on the same files. Selections are held as wrapper objects across the change, then
+    /// re-keyed by the wrappers' new names; files that are gone are dropped from the selection.
+    /// </summary>
+    private void PreserveSelections(FileDictionaryEntry binderEntry, Action change)
+    {
+        var states = new List<(HavokEditorView View, HavokFileWrapper Selected, List<HavokFileWrapper> Soft)>();
+
+        foreach (var view in ViewHandler?.Views ?? new())
+        {
+            if (view == null || !Equals(view.Selection.BinderFileEntry, binderEntry))
+                continue;
+
+            var bankDict = HavokBank.GetBank(view.Selection.CategoryMode);
+            Dictionary<string, HavokFileWrapper> files = null;
+            bankDict?.TryGetValue(binderEntry, out files);
+
+            var soft = view.FileView.SoftSelectEntries
+                .Select(e => files != null && files.TryGetValue(e, out var wrapper) ? wrapper : null)
+                .Where(e => e != null)
+                .ToList();
+
+            states.Add((view, view.Selection.SelectedFileWrapper, soft));
+        }
+
+        change();
+
+        foreach (var (view, selected, soft) in states)
+        {
+            var bankDict = HavokBank.GetBank(view.Selection.CategoryMode);
+            Dictionary<string, HavokFileWrapper> files = null;
+            bankDict?.TryGetValue(binderEntry, out files);
+
+            bool IsPresent(HavokFileWrapper wrapper) =>
+                files != null && files.TryGetValue(wrapper.Key, out var current) && current == wrapper;
+
+            view.FileView.SoftSelectEntries = soft
+                .Where(IsPresent)
+                .Select(e => e.Key)
+                .Distinct()
+                .ToList();
+
+            if (selected != null)
+            {
+                if (IsPresent(selected))
+                {
+                    view.Selection.FilePath = selected.Key;
+                    view.FileView.SetRenameInput(selected.Key);
+                }
+                else
+                {
+                    // ClearFileSelection also clears the multi-selection, so keep what was re-mapped
+                    var keptSoft = view.FileView.SoftSelectEntries;
+
+                    view.Selection.ClearFileSelection();
+                    view.FileView.SoftSelectEntries = keptSoft;
+                }
+            }
+
+            view.BinderView.RebuildFileAliasCache();
+        }
     }
 
     public string EditorName => "Havok Editor##HavokEditor";
@@ -85,12 +180,6 @@ public class HavokEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
-
-            var activeView = ViewHandler.ActiveView;
-            if (activeView != null)
-            {
-                activeView.Tools.DisplayMenu();
-            }
 
             ImGui.EndMenuBar();
         }
@@ -153,10 +242,7 @@ public class HavokEditorScreen : EditorScreen
                 // Undo
                 if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
-                    if (activeView.ActionManager.CanUndo())
-                    {
-                        activeView.ActionManager.UndoAction();
-                    }
+                    activeView.Undo();
                 }
 
                 // Undo All
@@ -171,10 +257,7 @@ public class HavokEditorScreen : EditorScreen
                 // Redo
                 if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
-                    if (activeView.ActionManager.CanRedo())
-                    {
-                        activeView.ActionManager.RedoAction();
-                    }
+                    activeView.Redo();
                 }
             }
 

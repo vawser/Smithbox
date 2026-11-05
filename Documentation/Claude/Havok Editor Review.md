@@ -122,6 +122,24 @@ Nothing outside the editor checks `IsBinderDirty` (the only matches are in this 
 
 ### 1.3 Edge cases (Low)
 
+> **Status (2026-11-05, third pass): every Low item fixed except L13 (needs an in-game check). Plus one new bug, N1. Not yet verified in the app.** `Smithbox.Program` builds. The new loc keys exist in English only.
+> - **L1:** the view tab popup closes with `EndPopup`. **L2:** fixed in the first pass. **L3:** `EndTabBar` is only called when `BeginTabBar` returned true.
+> - **L4:** `ParamRefRow`, `ClipGenFlags` and `ClipGenInternalID` always advance the type column before returning a result, so the rows stay aligned on the frame of a change or while the context menu is open. `ParamRefRow` is shared with the Map Editor's Havok property view, which gets the same fix.
+> - **L5:** the unused `AddVariableBindingSet` was removed.
+> - **L6:** `GetBdtPath` only replaces a trailing `bhd`.
+> - **L7 + U12:** Export asks for a folder each time, starting from the last one used (or the project folder). It keeps the file's own name and extensions, and logs when it replaces an existing file.
+> - **L8:** the file list matches `.hkx`/`.hkx.dcx` case-insensitively. Under the list, a dim line with a tooltip counts the files that aren't shown (such as the compendium).
+> - **L9:** fixed in the second pass.
+> - **L10:** the *Copy Name* tooltip no longer shows the Copy keybind.
+> - **L11:** file aliases are looked up by the bare name, so they show with *Full Path* on and in Behavior mode. The file search also matches aliases.
+> - **L12:** the stub checks `commands.Length` (the other editors' stubs share the pattern and were left alone).
+> - **L14:** the fallback DCX type for an unreadable entry is the game's default (`GetGameDefaultDCXType`, shared with `DetectBinderDCXType`).
+> - **L15:** changing an inclusion, *Toggle All* or *Clear All* re-syncs the watchers. `HavokData.Dispose` disposes every view's reloader, and closing a view disposes its own. Two views watching the same script still both reload it.
+> - **L16:** the remote thread handle is closed. The buffers are released with `MEM_RELEASE` and size 0, but only if the thread finished within the timeout; freeing them under a running thread would crash the game. The 1.07+ code takes its offsets from `EldenRing_WorldChrManStructOffset` (offset, offset, +8, +0x10), the same values as before.
+> - **L17:** the watcher failure uses the `LogError(..., ex)` overload.
+> - **L13 (still open, verify):** ER/NR/DB animation and map collision are read with the compendium but written without it. Changing this alters the output format, so it needs an in-game test before anything changes.
+> - **N1 (new, found during L16; Medium, verify):** `HavokMemoryConsts.GetHexFromString("0x1E668")` failed to parse because of the `0x` prefix, but returned **0** instead of null. So the ER reload read its data pointer from `WorldChrMan + 0` instead of `+ 0x1E668`, and the `?? 0x1E668` fallback never applied. It now strips `0x` and returns null when parsing fails. To check: the ER script reload still works, and preferably works more reliably.
+
 - **L1.** The view tab context menu is opened with `BeginPopupContextItem` but closed with `ImGui.EndMenu()` (`HavokViewHandler.HandleViews`). This should be `EndPopup()` (same as *Text Editor Review* M16).
 - **L2.** `OnSaveComplete` dereferences `MapEditor.ViewHandler.ActiveView` without a null check.
 - **L3.** `HavokBehaviorView.DisplayBehaviorTabs` ignores the return value of `BeginTabBar` and always calls `EndTabBar`.
@@ -145,6 +163,17 @@ Nothing outside the editor checks `IsBinderDirty` (the only matches are in this 
 ## 2. Usability improvements
 
 Ordered roughly by value.
+
+> **Status (2026-11-05, third pass): U2, U9 and U12 were done in earlier passes. U5, U6, U7, U8, U10 and U11 are done now. U1, U3 and U4 decided and done (below). Every usability item is now done.**
+> - **U4 (decided: auto-open matches):** while a property filter is active, `HavokPropEditGeneric` and `PropEditorGenericList` hide fields, array/list entries and nodes with no matching field anywhere below them, and open the nodes that have one. The matching uses the same rules as the drawn rows (`DisplayProperty`: field name, or `val:`, with the raw-data and property-bag toggles). `SubtreeHasMatch` caches its result per object. The cache is cleared when the filter, its toggles or the shown file change, after a structural edit in any view, and, for a `val:` filter, after any edit. Known limits: a reference back up the graph (a cycle) counts as "no match" for the object inside the cycle; matching nodes stay open while the filter is active; and a `val:` search still compares lists of values by their `ToString()` (the existing TODO).
+> - **U3 (decided: jump to the file):** Undo and Redo, from the keybinds and the Edit menu, go through `HavokEditorView.Undo/Redo`. When the action applies to a file or binder other than the one shown, those first select its category, binder and file (`HavokBank.FindWrapper` / `FindBinder`) and log which file was switched to (`HAVOK_Undo_Showing_File` / `_Binder`), then run the undo or redo. The single stack per view is unchanged. *Undo All* doesn't jump. The property view's internal undo while dragging a value doesn't go through this.
+> - **U1 (decided: stage until Save, with undo):** Paste, Delete, Rename, Insert, Compress and Change Compression are now `HavokBinderAction`s. They change an in-memory working copy of the binder, can be undone and redone, and are written on Save like field edits. The binder shows `*` until then, Save All and the unsaved-changes prompt include it, and staged files can be opened, edited, copied and exported before they're saved. Every view's selection follows renames and drops removed files across undo/redo. Export still writes immediately. The second pass's rename map and refresh step (`FileAction.Renames`, `RefreshAfterFileAction`) were replaced by this. The design and its limits are in `Documentation/Claude/Havok File Actions Staging.md`. Main limit: while a binder has a working copy, an outside change to that binder file on disk isn't picked up, and the next Havok save overwrites it. Not yet verified in the app. `Smithbox.Program` builds.
+> - **U5:** right-clicking a file that isn't selected selects it and opens its menu. Right-clicking empty space in the file list offers *Paste*. The Paste shortcut only needs a selected binder now; Copy and Delete still need a selected file.
+> - **U6:** *None* is no longer listed as a category, and the empty *Tools* menu was removed from the menu bar. The Variables tab was left alone; it's still commented out.
+> - **U7:** the property panel shows `binder / file` under its title, with `*` for unsaved changes. The tooltip gives the full internal path.
+> - **U8:** the binder search matches aliases (map, character, part and asset names).
+> - **U10:** the Collision Generator inputs are floats and are stored as they're typed, so *Generate* right after typing uses the new value. Sizes are kept ≥ 0.01, circle segments ≥ 3 and semicircle segments ≥ 2. A 0 size used to throw inside the generator.
+> - **U11:** with more than one file selected, the file list header shows "N selected", with a tooltip saying what that count applies to.
 
 - **U1. Make file actions undoable, or at least confirm them.** Delete, Rename, Insert, Paste and the compression actions write the binder to disk immediately, outside the undo stack, while field edits wait for Save. Options: (a) stage file actions in the bank and write them on Save, with undo (consistent with field edits); (b) keep writing immediately but add a confirmation for Delete and a log line saying the binder was written. (a) is the bigger change but removes the two save models.
 - **U2. Make Ctrl+S save all changed binders.** Save only saves the selected binder, and so does autosave. The Text Editor moved to "Save keybind = Save All (only `*` containers)" (*Text Editor Review* U2), and the same fits here, since the binder list already marks dirty binders with `*`.

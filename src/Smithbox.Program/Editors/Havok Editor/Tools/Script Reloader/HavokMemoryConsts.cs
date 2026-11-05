@@ -23,14 +23,28 @@ public static class HavokMemoryConsts
 
     public static string EldenRing_CrashPatchOffset_WriteBytes = "48 31 D2";
 
+    /// <summary>
+    /// Parse a hex value, with or without a 0x prefix. Returns null if it can't be parsed,
+    /// so callers fall back to their default instead of using 0.
+    /// </summary>
     public static int? GetHexFromString(string str)
     {
-        int? result = null;
+        if (string.IsNullOrWhiteSpace(str))
+            return null;
 
-        int.TryParse(str, System.Globalization.NumberStyles.HexNumber, null, out int asInt);
-        result = asInt;
+        var hex = str.Trim();
 
-        return result;
+        if (hex.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
+        {
+            hex = hex[2..];
+        }
+
+        if (int.TryParse(hex, System.Globalization.NumberStyles.HexNumber, null, out int asInt))
+        {
+            return asInt;
+        }
+
+        return null;
     }
 
     public static byte[] GetByteArrayFromString(string str)

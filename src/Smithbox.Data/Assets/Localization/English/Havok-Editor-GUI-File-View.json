@@ -138,7 +138,7 @@
     },
     {
       "Key": "HAVOK_FileView_ContextAction_CopyName_TT",
-      "Text": "Copy the name of this file to clipboard.\nShortcut: {0}"
+      "Text": "Copy the name of this file to the clipboard."
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Compress",
@@ -195,6 +195,30 @@
     {
       "Key": "HAVOK_FileView_ContextAction_Used_Unsaved_Changes_Log",
       "Text": "Used the unsaved changes of {0}"
+    },
+    {
+      "Key": "HAVOK_FileView_Hidden_Files",
+      "Text": "{0} other file(s) not shown"
+    },
+    {
+      "Key": "HAVOK_FileView_Hidden_Files_TT",
+      "Text": "Only .hkx and .hkx.dcx files are listed. The binder also holds other files, such as a compendium, which can't be edited here."
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_Export_Select_Folder",
+      "Text": "Select the folder to export the files to"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_Export_Replaced_Log",
+      "Text": "Replaced the existing file: {0}"
+    },
+    {
+      "Key": "HAVOK_FileView_Selection_Count",
+      "Text": "{0} selected"
+    },
+    {
+      "Key": "HAVOK_FileView_Selection_Count_TT",
+      "Text": "The number of files the context actions (Delete, Export, Compress, Copy) act on. Ctrl+click a file to add or remove it."
     }
   ]
 }

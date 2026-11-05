@@ -40,6 +40,11 @@ public class HavokFileView
     public List<string> SoftSelectEntries = new();
 
     private FileDictionaryEntry ClipboardBinder;
+
+    /// <summary>
+    /// The folder the last export went to, offered as the start folder for the next one
+    /// </summary>
+    private string LastExportFolder = null;
     private List<string> ClipboardFileList = new();
 
     public HavokFileView(HavokEditorView view, ProjectEntry project)
@@ -133,6 +138,8 @@ public class HavokFileView
 
         if (!IsFileActionQueued)
         {
+            var hiddenFileCount = 0;
+
             foreach (var entry in curBinder)
             {
                 var filepath = entry.Key;
@@ -142,6 +149,16 @@ public class HavokFileView
                 if (entry.Key.Contains(".dcx"))
                 {
                     displayName = Path.GetFileNameWithoutExtension(displayName);
+                }
+
+                // Aliases are keyed by the bare name, before any prefix or full path is applied
+                View.Selection.FileAliasCache.TryGetValue(displayName, out var alias);
+
+                // Only .hkx files are listed; the others (such as the compendium) are counted below the list
+                if (!IsHavokFile(filepath))
+                {
+                    hiddenFileCount++;
+                    continue;
                 }
 
                 if (CFG.Current.HavokEditor_FileList_Display_Full_Path)
@@ -168,14 +185,12 @@ public class HavokFileView
                     }
                 }
 
-                // Normal filter
-                var isMatch = EditorFilters.IsMatch(FileFilter, displayName, ExactFileFilter);
+                // Normal filter (also matches the alias)
+                var isMatch = EditorFilters.IsMatch(FileFilter, displayName, ExactFileFilter, alias ?? "");
 
                 if (!isMatch)
                     continue;
 
-                // Only display .hkx files
-                if (filepath.EndsWith(".hkx") || filepath.EndsWith(".hkx.dcx"))
                 {
                     // Mark files with unsaved changes
                     var labelName = displayName;
@@ -198,19 +213,16 @@ public class HavokFileView
                         }
                         else
                         {
-                            View.Selection.ClearFileSelection();
-
-                            View.Selection.FilePath = filepath;
-                            LoadHavokFile();
-
-                            SetRenameInput(filepath);
-
-                            SoftSelectEntries = new()
-                            {
-                               filepath
-                            };
+                            SelectFile(filepath);
                         }
 
+                    }
+
+                    // Right-clicking a file that isn't selected selects it, so its context menu opens
+                    if (!selected && ImGui.IsItemClicked(ImGuiMouseButton.Right))
+                    {
+                        SelectFile(filepath);
+                        selected = true;
                     }
 
                     if (selected)
@@ -218,14 +230,31 @@ public class HavokFileView
                         DisplayContextMenu(bankDict, View.Selection.BinderFileEntry, filepath, displayName);
                     }
 
-                    if (CFG.Current.HavokEditor_FileList_Display_Aliases)
+                    if (CFG.Current.HavokEditor_FileList_Display_Aliases && alias != null)
                     {
-                        if (View.Selection.FileAliasCache.ContainsKey(displayName))
-                        {
-                            GUI.DisplayAlias(View.Selection.FileAliasCache[displayName]);
-                        }
+                        GUI.DisplayAlias(alias);
                     }
                 }
+            }
+
+            if (hiddenFileCount > 0)
+            {
+                ImGui.TextDisabled(LOC.Get("HAVOK_FileView_Hidden_Files", hiddenFileCount));
+                GUI.Tooltip(LOC.Get("HAVOK_FileView_Hidden_Files_TT"));
+            }
+
+            // Right-clicking empty space offers Paste, so files can be pasted without selecting one first
+            if (ImGui.BeginPopupContextWindow("havokFileListBackground",
+                ImGuiPopupFlags.MouseButtonRight | ImGuiPopupFlags.NoOpenOverItems))
+            {
+                if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Paste")}##pasteBackgroundAction",
+                    false, ClipboardFileList.Count > 0 ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+                {
+                    QueuePaste(bankDict);
+                }
+                GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_Paste_TT", InputManager.GetHint(KeybindID.Paste)));
+
+                ImGui.EndPopup();
             }
         }
         else
@@ -236,6 +265,55 @@ public class HavokFileView
         }
 
         ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Make the file the primary selection (and the only multi-select entry), and load it
+    /// </summary>
+    public void SelectFile(string filepath)
+    {
+        View.Selection.ClearFileSelection();
+
+        View.Selection.FilePath = filepath;
+        LoadHavokFile();
+
+        SetRenameInput(filepath);
+
+        SoftSelectEntries = new()
+        {
+            filepath
+        };
+    }
+
+    /// <summary>
+    /// Queue a paste of the clipboard files into the selected binder
+    /// </summary>
+    private void QueuePaste(Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> bankDict)
+    {
+        if (View.Selection.BinderFileEntry == null || ClipboardFileList.Count == 0)
+            return;
+
+        QueuedFileAction = new FileAction
+        {
+            BankDict = bankDict,
+            BinderEntry = View.Selection.BinderFileEntry,
+            FilePath = View.Selection.FilePath,
+            MultipleFilePaths = SoftSelectEntries,
+            ClipboardBinder = ClipboardBinder,
+            ClipboardFiles = ClipboardFileList,
+            ActionType = FileAction.FileActionType.Paste
+        };
+
+        IsFileActionQueued = true;
+    }
+
+    /// <summary>
+    /// Whether the binder file is a Havok file the editor lists (.hkx or .hkx.dcx, any case)
+    /// </summary>
+    private static bool IsHavokFile(string path)
+    {
+        return path.EndsWith(".hkx", StringComparison.OrdinalIgnoreCase)
+            || path.EndsWith(".hkx.dcx", StringComparison.OrdinalIgnoreCase);
     }
 
     public void DisplayHeader()
@@ -258,15 +336,22 @@ public class HavokFileView
             "HAVOK_FileView_FilePath_Display_Alias_Show",
             "HAVOK_FileView_FilePath_Display_Alias_TT");
 
+        // How many files the context actions (Delete, Export, Compress...) will act on
+        if (SoftSelectEntries.Count > 1)
+        {
+            ImGui.SameLine();
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextDisabled(LOC.Get("HAVOK_FileView_Selection_Count", SoftSelectEntries.Count));
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_Selection_Count_TT"));
+        }
+
         ImGui.EndChild();
     }
 
     public void Shortcuts()
     {
+        // Copy and Delete also need a selected file; that's checked per shortcut
         if (View.Selection.BinderFileEntry == null)
-            return;
-
-        if (View.Selection.FilePath == null)
             return;
 
         var data = View.HavokBank;
@@ -315,30 +400,19 @@ public class HavokFileView
         var filepath = View.Selection.FilePath;
 
         // Copy
-        if (InputManager.IsPressed(KeybindID.Copy))
+        if (filepath != null && InputManager.IsPressed(KeybindID.Copy))
         {
             CopyFile();
         }
 
-        // Paste
+        // Paste (only needs a binder, not a selected file)
         if (InputManager.IsPressed(KeybindID.Paste))
         {
-            QueuedFileAction = new FileAction
-            {
-                BankDict = bankDict,
-                BinderEntry = curBinderEntry,
-                FilePath = filepath,
-                MultipleFilePaths = SoftSelectEntries,
-                ClipboardBinder = ClipboardBinder,
-                ClipboardFiles = ClipboardFileList,
-                ActionType = FileAction.FileActionType.Paste
-            };
-
-            IsFileActionQueued = true;
+            QueuePaste(bankDict);
         }
 
         // Delete
-        if (InputManager.IsPressed(KeybindID.Delete))
+        if (filepath != null && InputManager.IsPressed(KeybindID.Delete))
         {
             QueuedFileAction = new FileAction
             {
@@ -366,7 +440,7 @@ public class HavokFileView
             {
                 PlatformUtils.Instance.SetClipboardText(displayName);
             }
-            GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_CopyName_TT", InputManager.GetHint(KeybindID.Copy)));
+            GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_CopyName_TT"));
 
             // Compress (DCX)
             // Disabled if every selected file is already DCX compressed
@@ -522,16 +596,26 @@ public class HavokFileView
             // Export
             if (ImGui.Selectable($"{LOC.Get("HAVOK_FileView_ContextAction_Export")}##exportAction"))
             {
-                QueuedFileAction = new FileAction
-                {
-                    BankDict = bankDict,
-                    BinderEntry = curBinderEntry,
-                    FilePath = filepath,
-                    MultipleFilePaths = SoftSelectEntries,
-                    ActionType = FileAction.FileActionType.Export
-                };
+                // Ask for the destination each time, starting from the last one used (or the project folder)
+                var defaultFolder = LastExportFolder ?? Project.Descriptor.ProjectPath;
 
-                IsFileActionQueued = true;
+                if (PlatformUtils.Instance.OpenFolderDialog(
+                    LOC.Get("HAVOK_FileView_ContextAction_Export_Select_Folder"), out var exportFolder, defaultFolder))
+                {
+                    LastExportFolder = exportFolder;
+
+                    QueuedFileAction = new FileAction
+                    {
+                        BankDict = bankDict,
+                        BinderEntry = curBinderEntry,
+                        FilePath = filepath,
+                        MultipleFilePaths = SoftSelectEntries,
+                        ExportFolder = exportFolder,
+                        ActionType = FileAction.FileActionType.Export
+                    };
+
+                    IsFileActionQueued = true;
+                }
             }
             GUI.Tooltip(LOC.Get("HAVOK_FileView_ContextAction_Export_TT"));
 
@@ -678,137 +762,44 @@ public class HavokFileView
         }
     }
 
+    // File actions are staged: the bank returns an undoable action that changes the binder's in-memory copy,
+    // and the view's action manager runs it. The binder is written on Save. The bank keeps every view's
+    // selection on the same files while the change (or its undo/redo) runs.
+    private bool IsCombinedCategory => View.HavokBank.IsCombinedCategory(View.Selection.CategoryMode);
+
+    private void ExecuteBinderAction(HavokBinderAction action)
+    {
+        if (action != null)
+        {
+            View.ActionManager.ExecuteAction(action);
+        }
+    }
+
     public void PasteFile(FileAction fileAction)
     {
         var data = View.HavokBank;
 
-        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
-        {
-            data.PasteCombinedHavokFile(fileAction);
-        }
-        else
-        {
-            data.PasteHavokFile(fileAction);
-        }
-
-        RefreshAfterFileAction(fileAction, false);
+        ExecuteBinderAction(IsCombinedCategory
+            ? data.PasteCombinedHavokFile(fileAction)
+            : data.PasteHavokFile(fileAction));
     }
 
     public void DeleteFile(FileAction fileAction)
     {
         var data = View.HavokBank;
 
-        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
-        {
-            data.DeleteCombinedHavokFile(fileAction);
-        }
-        else
-        {
-            data.DeleteHavokFile(fileAction);
-        }
-
-        RefreshAfterFileAction(fileAction, true);
+        ExecuteBinderAction(IsCombinedCategory
+            ? data.DeleteCombinedHavokFile(fileAction)
+            : data.DeleteHavokFile(fileAction));
     }
 
     public void RenameFile(FileAction fileAction)
     {
         var data = View.HavokBank;
 
-        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
-        {
-            data.RenameCombinedHavokFile(fileAction);
-        }
-        else
-        {
-            data.RenameHavokFile(fileAction);
-        }
-
-        RefreshAfterFileAction(fileAction, true);
-    }
-
-    /// <summary>
-    /// Refresh the file list after a file action changed the binder, keeping every view that shows
-    /// this binder pointed at files that still exist: renamed files keep their selection under the new name,
-    /// removed files are dropped from the selection.
-    /// </summary>
-    private void RefreshAfterFileAction(FileAction fileAction, bool clearCache)
-    {
-        var views = View.Editor.ViewHandler.Views
-            .Where(e => e != null
-                && e.Selection.CategoryMode == View.Selection.CategoryMode
-                && Equals(e.Selection.BinderFileEntry, fileAction.BinderEntry))
-            .ToList();
-
-        // Renames first, so the bank sees each view's selected file under its new name and keeps it loaded
-        foreach (var view in views)
-        {
-            view.FileView.ApplyRenames(fileAction.Renames);
-        }
-
-        View.BinderView.PopulateFileList(clearCache);
-
-        foreach (var view in views)
-        {
-            view.FileView.PruneSelection();
-
-            if (view != View)
-            {
-                view.BinderView.RebuildFileAliasCache();
-            }
-        }
-    }
-
-    private void ApplyRenames(Dictionary<string, string> renames)
-    {
-        if (renames.Count == 0)
-            return;
-
-        if (View.Selection.FilePath != null && renames.TryGetValue(View.Selection.FilePath, out var newPath))
-        {
-            View.Selection.FilePath = newPath;
-            SetRenameInput(newPath);
-        }
-
-        SoftSelectEntries = SoftSelectEntries
-            .Select(e => renames.TryGetValue(e, out var renamed) ? renamed : e)
-            .ToList();
-    }
-
-    /// <summary>
-    /// Drop selected files that no longer exist in the binder, and reload the selected file if it was unloaded
-    /// </summary>
-    private void PruneSelection()
-    {
-        var bankDict = View.HavokBank.GetBank(View.Selection.CategoryMode);
-
-        if (bankDict == null || View.Selection.BinderFileEntry == null ||
-            !bankDict.TryGetValue(View.Selection.BinderFileEntry, out var files))
-        {
-            View.Selection.ClearFileSelection();
-            return;
-        }
-
-        SoftSelectEntries = SoftSelectEntries
-            .Where(files.ContainsKey)
-            .Distinct()
-            .ToList();
-
-        if (View.Selection.FilePath == null)
-            return;
-
-        if (!files.TryGetValue(View.Selection.FilePath, out var fileWrapper))
-        {
-            View.Selection.ClearFileSelection();
-            return;
-        }
-
-        if (!fileWrapper.IsLoaded())
-        {
-            View.Selection.AppliedHavokTreeSearch = false;
-            View.PropertyView.BehaviorView.ResetSelection();
-
-            LoadHavokFile();
-        }
+        ExecuteBinderAction(IsCombinedCategory
+            ? data.RenameCombinedHavokFile(fileAction)
+            : data.RenameHavokFile(fileAction));
     }
 
     public void SetRenameInput(string filepath)
@@ -828,22 +819,17 @@ public class HavokFileView
     {
         var data = View.HavokBank;
 
-        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
-        {
-            data.InsertCombinedHavokFile(fileAction);
-        }
-        else
-        {
-            data.InsertHavokFile(fileAction);
-        }
-
-        RefreshAfterFileAction(fileAction, true);
+        ExecuteBinderAction(IsCombinedCategory
+            ? data.InsertCombinedHavokFile(fileAction)
+            : data.InsertHavokFile(fileAction));
     }
+
     public void ExportFile(FileAction fileAction)
     {
         var data = View.HavokBank;
 
-        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
+        // Export writes straight to the chosen folder; it doesn't change the binder
+        if (IsCombinedCategory)
         {
             data.ExportCombinedHavokFile(fileAction);
         }
@@ -851,42 +837,25 @@ public class HavokFileView
         {
             data.ExportHavokFile(fileAction);
         }
-
-        // Export only reads the binder, so the file list doesn't need refreshing
     }
 
     public void CompressFile(FileAction fileAction)
     {
         var data = View.HavokBank;
 
-        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
-        {
-            data.CompressCombinedHavokFile(fileAction);
-        }
-        else
-        {
-            data.CompressHavokFile(fileAction);
-        }
-
         // Compressing renames the entries (.hkx -> .hkx.dcx); the selection follows the new names
-        RefreshAfterFileAction(fileAction, true);
+        ExecuteBinderAction(IsCombinedCategory
+            ? data.CompressCombinedHavokFile(fileAction)
+            : data.CompressHavokFile(fileAction));
     }
 
     public void ChangeCompressionFile(FileAction fileAction)
     {
         var data = View.HavokBank;
 
-        if (View.Selection.CategoryMode is HavokCategoryMode.Map_Collision)
-        {
-            data.ChangeCompressionCombinedHavokFile(fileAction);
-        }
-        else
-        {
-            data.ChangeCompressionHavokFile(fileAction);
-        }
-
-        // File names and contents are unchanged, only the compression of the stored bytes
-        RefreshAfterFileAction(fileAction, true);
+        ExecuteBinderAction(IsCombinedCategory
+            ? data.ChangeCompressionCombinedHavokFile(fileAction)
+            : data.ChangeCompressionHavokFile(fileAction));
     }
 
     public class FileAction
@@ -902,12 +871,12 @@ public class HavokFileView
         public string NewFilename;
         public DCX.Type NewCompressionType = DCX.Type.Unknown;
 
-        public List<NewFileInsert> Inserts = new();
-
         /// <summary>
-        /// Filled in by the bank: the old and new name of every file the action renamed
+        /// Where Export writes the files
         /// </summary>
-        public Dictionary<string, string> Renames = new();
+        public string ExportFolder;
+
+        public List<NewFileInsert> Inserts = new();
 
         public FileDictionaryEntry ClipboardBinder = new();
 

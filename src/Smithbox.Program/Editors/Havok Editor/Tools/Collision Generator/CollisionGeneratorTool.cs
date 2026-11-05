@@ -138,64 +138,59 @@ public class CollisionGeneratorTool
             LOC.Get("HAVOK_CollisionGen_Parameters_Header"),
             LOC.Get("HAVOK_CollisionGen_Parameters_Header_TT"));
 
+        // Values are stored as they're typed, so clicking Generate straight after typing uses the new value.
+        // Sizes can be fractional; sizes and segment counts are kept to values that make a valid shape.
         if (TargetShape is CollisionGeneratorShape.Square)
         {
             var width = SquareInputs.Width;
-            ImGui.InputInt("Width##squareWidth", ref width);
-            if(ImGui.IsItemDeactivatedAfterEdit())
+            if (ImGui.InputFloat("Width##squareWidth", ref width, 0.5f, 1.0f, "%.2f"))
             {
-                SquareInputs.Width = width;
+                SquareInputs.Width = MathF.Max(width, MinShapeSize);
             }
 
             var length = SquareInputs.Length;
-            ImGui.InputInt("Length##squareLength", ref length);
-            if (ImGui.IsItemDeactivatedAfterEdit())
+            if (ImGui.InputFloat("Length##squareLength", ref length, 0.5f, 1.0f, "%.2f"))
             {
-                SquareInputs.Length = length;
+                SquareInputs.Length = MathF.Max(length, MinShapeSize);
             }
         }
 
         if (TargetShape is CollisionGeneratorShape.Triangle)
         {
             var size = TriangleInputs.Size;
-            ImGui.InputInt("Size##triangleSize", ref size);
-            if (ImGui.IsItemDeactivatedAfterEdit())
+            if (ImGui.InputFloat("Size##triangleSize", ref size, 0.5f, 1.0f, "%.2f"))
             {
-                TriangleInputs.Size = size;
+                TriangleInputs.Size = MathF.Max(size, MinShapeSize);
             }
         }
 
         if (TargetShape is CollisionGeneratorShape.Circle)
         {
             var radius = CircleInputs.Radius;
-            ImGui.InputInt("Radius##circleRadius", ref radius);
-            if (ImGui.IsItemDeactivatedAfterEdit())
+            if (ImGui.InputFloat("Radius##circleRadius", ref radius, 0.5f, 1.0f, "%.2f"))
             {
-                CircleInputs.Radius = radius;
+                CircleInputs.Radius = MathF.Max(radius, MinShapeSize);
             }
 
             var segments = CircleInputs.Segments;
-            ImGui.InputInt("Segments##circleSegements", ref segments);
-            if (ImGui.IsItemDeactivatedAfterEdit())
+            if (ImGui.InputInt("Segments##circleSegements", ref segments))
             {
-                CircleInputs.Segments = segments;
+                CircleInputs.Segments = Math.Max(segments, MinCircleSegments);
             }
         }
 
         if (TargetShape is CollisionGeneratorShape.SemiCircle)
         {
             var radius = SemiCircleInputs.Radius;
-            ImGui.InputInt("Radius##semicircleRadius", ref radius);
-            if (ImGui.IsItemDeactivatedAfterEdit())
+            if (ImGui.InputFloat("Radius##semicircleRadius", ref radius, 0.5f, 1.0f, "%.2f"))
             {
-                SemiCircleInputs.Radius = radius;
+                SemiCircleInputs.Radius = MathF.Max(radius, MinShapeSize);
             }
 
             var segments = SemiCircleInputs.Segments;
-            ImGui.InputInt("Segments##semicircleSegements", ref segments);
-            if (ImGui.IsItemDeactivatedAfterEdit())
+            if (ImGui.InputInt("Segments##semicircleSegements", ref segments))
             {
-                SemiCircleInputs.Segments = segments;
+                SemiCircleInputs.Segments = Math.Max(segments, MinSemiCircleSegments);
             }
         }
 
@@ -459,26 +454,34 @@ public class CollisionGeneratorTool
         Down
     }
 
+    /// <summary>
+    /// The smallest size or radius the inputs accept, so a shape never collapses to zero area
+    /// </summary>
+    private const float MinShapeSize = 0.01f;
+
+    private const int MinCircleSegments = 3;
+    private const int MinSemiCircleSegments = 2;
+
     public class SquareParameters
     {
-        public int Length { get; set; } = 1;
-        public int Width { get; set; } = 1;
+        public float Length { get; set; } = 1;
+        public float Width { get; set; } = 1;
     }
 
     public class TriangeParameters
     {
-        public int Size { get; set; } = 1;
+        public float Size { get; set; } = 1;
     }
 
     public class CircleParameters
     {
-        public int Radius { get; set; } = 1;
+        public float Radius { get; set; } = 1;
         public int Segments { get; set; } = 24;
     }
 
     public class SemiCircleParameters
     {
-        public int Radius { get; set; } = 1;
+        public float Radius { get; set; } = 1;
         public int Segments { get; set; } = 24;
     }
 }

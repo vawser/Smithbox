@@ -117,14 +117,16 @@ public class HavokBehaviorView
 
     public void DisplayBehaviorTabs()
     {
-        ImGui.BeginTabBar("behaviorTabs", ImGuiTabBarFlags.FittingPolicyResizeDown);
+        // EndTabBar must only be called when BeginTabBar returned true
+        if (ImGui.BeginTabBar("behaviorTabs", ImGuiTabBarFlags.FittingPolicyResizeDown))
+        {
+            StateMachineView.DisplayTab();
+            AnimationSelectorView.DisplayTab();
+            AnimationClipView.DisplayTab();
+            VariableView.DisplayTab();
 
-        StateMachineView.DisplayTab();
-        AnimationSelectorView.DisplayTab();
-        AnimationClipView.DisplayTab();
-        VariableView.DisplayTab();
-
-        ImGui.EndTabBar();
+            ImGui.EndTabBar();
+        }
     }
 
     public void DisplayTabPropertyHeader()

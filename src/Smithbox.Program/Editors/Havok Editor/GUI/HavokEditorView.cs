@@ -41,13 +41,110 @@ public class HavokEditorView : IEditorView
 
         // ActionPerformed is raised before the action is pushed onto the undo/redo stack,
         // so the stacks are checked on the next frame instead
-        ActionManager.ActionPerformed += () => CheckForStructureChange = true;
+        ActionManager.ActionPerformed += () =>
+        {
+            CheckForStructureChange = true;
+
+            // A val: search matches values, so any edit can change its matches (in every view, as they share files)
+            foreach (var view in Editor.ViewHandler?.Views ?? new())
+            {
+                if (view != null && view.PropertyView.PropFilter.StartsWith("val:"))
+                {
+                    view.PropertyView.InvalidateSearchCache();
+                }
+            }
+        };
 
         CategoryView = new(this, project);
         BinderView = new(this, project);
         FileView = new(this, project);
         PropertyView = new(this, project);
         Tools = new(this, project);
+    }
+
+    /// <summary>
+    /// Undo the last action, first showing the file (or binder) it changes if another one is shown
+    /// </summary>
+    public void Undo()
+    {
+        if (!ActionManager.CanUndo())
+            return;
+
+        ShowActionTarget(ActionManager.PeekUndoAction());
+        ActionManager.UndoAction();
+    }
+
+    /// <summary>
+    /// Redo the last undone action, first showing the file (or binder) it changes if another one is shown
+    /// </summary>
+    public void Redo()
+    {
+        if (!ActionManager.CanRedo())
+            return;
+
+        ShowActionTarget(ActionManager.PeekRedoAction());
+        ActionManager.RedoAction();
+    }
+
+    /// <summary>
+    /// Select the category, binder and file an action applies to, so an undo/redo is never applied out of view.
+    /// Logs which file it switched to.
+    /// </summary>
+    private void ShowActionTarget(EditorAction action)
+    {
+        HavokCategoryMode category;
+        FileDictionaryEntry binderEntry;
+        string filePath = null;
+
+        if (action is IHavokFileAction { FileWrapper: not null } fileAction)
+        {
+            if (!HavokBank.FindWrapper(fileAction.FileWrapper, out category, out binderEntry, out filePath))
+                return;
+        }
+        else if (action is IHavokBinderAction binderAction)
+        {
+            binderEntry = binderAction.BinderEntry;
+
+            if (!HavokBank.FindBinder(binderEntry, out category))
+                return;
+        }
+        else
+        {
+            return;
+        }
+
+        var sameBinder = Selection.CategoryMode == category && Equals(Selection.BinderFileEntry, binderEntry);
+
+        // Already shown (for a file action, the binder is enough)
+        if (sameBinder && (filePath == null || filePath == Selection.FilePath))
+            return;
+
+        if (Selection.CategoryMode != category)
+        {
+            Selection.ClearSelection();
+            Selection.CategoryMode = category;
+            Selection.RebuildBinderAliasCache();
+        }
+
+        if (!sameBinder)
+        {
+            Selection.ClearFileSelection();
+            Selection.BinderFileEntry = binderEntry;
+
+            // No cache clear: the binder is already in the bank, and nothing needs evicting
+            BinderView.PopulateFileList();
+        }
+
+        if (filePath != null)
+        {
+            FileView.SelectFile(filePath);
+
+            Smithbox.Log(this, LOC.Get("HAVOK_Undo_Showing_File", Path.GetFileName(filePath), binderEntry.Filename));
+        }
+        else
+        {
+            Smithbox.Log(this, LOC.Get("HAVOK_Undo_Showing_Binder", binderEntry.Filename));
+        }
     }
 
     private bool CheckForStructureChange = false;
@@ -74,6 +171,7 @@ public class HavokEditorView : IEditorView
             if (view != null)
             {
                 view.Selection.AppliedHavokTreeSearch = false;
+                view.PropertyView.InvalidateSearchCache();
             }
         }
     }

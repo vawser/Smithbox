@@ -167,6 +167,10 @@
     {
       "Key": "HAVOK_Data_Havok_Object_Aliases_Fail_Read",
       "Text": "Failed to read havok object alias file entry: {0}"
+    },
+    {
+      "Key": "HAVOK_Data_Unsaved_File_Actions",
+      "Text": "unsaved file actions (paste, delete, rename, insert or compression)"
     }
   ]
 }

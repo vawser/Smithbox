@@ -22,15 +22,6 @@ public class HavokToolView
         HavokScriptReloader = new(view, project);
     }
 
-    public void DisplayMenu()
-    {
-        if (ImGui.BeginMenu($"{LOC.Get("HAVOK_Tools_Header_Tools")}##toolsMenuHeader"))
-        {
-
-            ImGui.EndMenu();
-        }
-    }
-
     public void Draw()
     {
         if (ImGui.BeginMenuBar())

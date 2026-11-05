@@ -212,12 +212,12 @@ public class HavokData : IDisposable
     #region Dispose
     public void Dispose()
     {
+        // Every view has its own script reloader and file watchers
         if (Project.Handler.HavokEditor != null)
         {
-            var curView = Project.Handler.HavokEditor.ViewHandler.ActiveView;
-            if (curView != null)
+            foreach (var view in Project.Handler.HavokEditor.ViewHandler.Views)
             {
-                curView.Tools.HavokScriptReloader.Dispose();
+                view?.Tools.HavokScriptReloader.Dispose();
             }
         }
     }

@@ -6,6 +6,9 @@ namespace StudioCore.Editors.HavokEditor;
 
 public static class HavokReload
 {
+    private const uint MEM_RELEASE = 0x8000;
+    private const uint WAIT_OBJECT_0 = 0;
+
     public static bool RequestReloadChr(ProjectEntry project, string chrName)
     {
         if (project.Descriptor.ProjectType is ProjectType.ER)
@@ -43,6 +46,9 @@ public static class HavokReload
 
                 if (chrReload != IntPtr.Zero && chrReload_DataSetup != IntPtr.Zero)
                 {
+                    // Set once the remote thread has finished, or if it was never started
+                    var threadFinished = true;
+
                     try
                     {
                         Memory.UpdateEldenRingAobs();
@@ -99,21 +105,43 @@ public static class HavokReload
                         Array.Copy(BitConverter.GetBytes(chrReload_DataSetup.ToInt64()), 0, buffer, 0x2, 0x8);
                         Array.Copy(BitConverter.GetBytes(Memory.EldenRing_WorldChrManPtr.ToInt64()), 0, buffer, 0xC, 0x8);
 
+                        // The 1.07+ code uses the configured struct offset (the reads above use it too):
+                        // [rcx+offset] twice, then [rcx+offset+8] and [rcx+offset+0x10]
+                        if (gameVersion >= 01_07_00_00 && worldChrManStrucOffset is int structOffset)
+                        {
+                            Array.Copy(BitConverter.GetBytes(structOffset), 0, buffer, 23, 4);
+                            Array.Copy(BitConverter.GetBytes(structOffset), 0, buffer, 36, 4);
+                            Array.Copy(BitConverter.GetBytes(structOffset + 0x8), 0, buffer, 50, 4);
+                            Array.Copy(BitConverter.GetBytes(structOffset + 0x10), 0, buffer, 60, 4);
+                        }
+
 
                         Memory.WriteBytes(chrReload, buffer);
 
                         var threadHandle = Kernel32.CreateRemoteThread(Memory.ProcessHandle, IntPtr.Zero, 0, chrReload, IntPtr.Zero, 0, out var threadId);
                         if (threadHandle != IntPtr.Zero)
                         {
-                            Kernel32.WaitForSingleObject(threadHandle, 30000);
+                            threadFinished = Kernel32.WaitForSingleObject(threadHandle, 30000) == WAIT_OBJECT_0;
+                            Kernel32.CloseHandle(threadHandle);
+                        }
+                        else
+                        {
+                            // The code never ran, so nothing in the game refers to the buffers
+                            threadFinished = true;
                         }
 
                         return true;
                     }
                     finally
                     {
-                        Kernel32.VirtualFreeEx(Memory.ProcessHandle, chrReload, 256, 2);
-                        Kernel32.VirtualFreeEx(Memory.ProcessHandle, chrReload_DataSetup, 256, 2);
+                        // Only free the buffers once the game's thread is done with them; freeing them under
+                        // a running thread would crash the game, so a timed-out reload leaves them allocated.
+                        // MEM_RELEASE needs a size of 0.
+                        if (threadFinished)
+                        {
+                            Kernel32.VirtualFreeEx(Memory.ProcessHandle, chrReload, 0, MEM_RELEASE);
+                            Kernel32.VirtualFreeEx(Memory.ProcessHandle, chrReload_DataSetup, 0, MEM_RELEASE);
+                        }
                     }
                 }
             }

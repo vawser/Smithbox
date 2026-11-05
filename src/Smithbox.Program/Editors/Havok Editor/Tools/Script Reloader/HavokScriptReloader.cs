@@ -127,6 +127,8 @@ public class HavokScriptReloader : IDisposable
             {
                 InclusionCache[entry.Key] = true;
             }
+
+            WatchersDirty = true;
         }
         GUI.Tooltip(LOC.Get("HAVOK_ScriptReloader_Inclusion_Toggle_All_TT"));
 
@@ -139,6 +141,8 @@ public class HavokScriptReloader : IDisposable
             {
                 InclusionCache[entry.Key] = false;
             }
+
+            WatchersDirty = true;
         }
         GUI.Tooltip(LOC.Get("HAVOK_ScriptReloader_Inclusion_Clear_All_TT"));
 
@@ -160,6 +164,7 @@ public class HavokScriptReloader : IDisposable
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 InclusionCache[entry.Key] = curValue;
+                WatchersDirty = true;
             }
 
             // Alias
@@ -290,7 +295,7 @@ public class HavokScriptReloader : IDisposable
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, LOC.Get("HAVOK_ScriptReloader_Error_Failed_Create_Watcher", ex));
+            Smithbox.LogError(this, LOC.Get("HAVOK_ScriptReloader_Error_Failed_Create_Watcher"), ex);
             return null;
         }
     }

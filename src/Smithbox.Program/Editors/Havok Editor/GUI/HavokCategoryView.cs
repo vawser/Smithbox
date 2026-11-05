@@ -36,6 +36,11 @@ public class HavokCategoryView
         foreach (var category in Enum.GetValues(typeof(HavokCategoryMode)))
         {
             var curCategory = (HavokCategoryMode)category;
+
+            // None is the "nothing selected" state, not a category to pick
+            if (curCategory is HavokCategoryMode.None)
+                continue;
+
             var selected = View.Selection.CategoryMode == curCategory;
 
             var displayName = LOC.Get(curCategory.GetDisplayName());

@@ -8,113 +8,6 @@ namespace StudioCore.Editors.HavokEditor;
 
 public static class HavokPropertyDecorators
 {
-    public static bool AddVariableBindingSet(ProjectEntry project, IEditorView view, FieldInfo[] fields, Type type, HavokClass classMeta, object sourceObj)
-    {
-        if (HavokTypeUtils.IsHKX3(project))
-        {
-            if (type != typeof(HKLib.hk2018.hkbClipGenerator))
-                return false;
-        }
-
-        if (HavokTypeUtils.IsHKX2(project))
-        {
-            if (type != typeof(HKX2.hkbClipGenerator))
-                return false;
-        }
-
-        if (classMeta == null)
-            return false;
-
-        if (!classMeta.SupportVariableBindings)
-            return false;
-
-        FieldInfo bindingField = null;
-
-        if (HavokTypeUtils.IsHKX3(project))
-        {
-            bindingField = fields.FirstOrDefault(e => e.FieldType == typeof(HKLib.hk2018.hkbVariableBindingSet));
-        }
-        else if (HavokTypeUtils.IsHKX2(project))
-        {
-            bindingField = fields.FirstOrDefault(e => e.FieldType == typeof(HKX2.hkbVariableBindingSet));
-        }
-
-        if (bindingField == null)
-            return false;
-
-        if (view is HavokEditorView havokEditorView)
-        {
-            // Not present
-            if (bindingField.GetValue(sourceObj) == null)
-            {
-                ImGui.Text("Variable Binding Set");
-
-                ImGui.NextColumn();
-
-                if (ImGui.Button("Add##addVariableBindingSet"))
-                {
-                    if (HavokTypeUtils.IsHKX3(project))
-                    {
-                        var newBindingSet = Activator.CreateInstance<HKLib.hk2018.hkbVariableBindingSet>();
-
-                        var action = new HavokChangeField(havokEditorView.Selection.SelectedFileWrapper, bindingField, sourceObj, newBindingSet, -1, -1);
-                        havokEditorView.ActionManager.ExecuteAction(action);
-                    }
-                    else if (HavokTypeUtils.IsHKX2(project))
-                    {
-                        var newBindingSet = Activator.CreateInstance<HKX2.hkbVariableBindingSet>();
-
-                        var action = new HavokChangeField(havokEditorView.Selection.SelectedFileWrapper, bindingField, sourceObj, newBindingSet, -1, -1);
-                        havokEditorView.ActionManager.ExecuteAction(action);
-                    }
-                }
-                GUI.Tooltip("Adds an empty Variable Binding Set to this generator.");
-
-                ImGui.NextColumn();
-
-                if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
-                {
-                    ImGui.NextColumn();
-                }
-            }
-            // Present
-            else
-            {
-                ImGui.Text("Variable Binding Set");
-
-                ImGui.NextColumn();
-
-                if (ImGui.Button("Remove##removeVariableBindingSet"))
-                {
-                    if (HavokTypeUtils.IsHKX3(project))
-                    {
-                        var newBindingSet = Activator.CreateInstance<HKLib.hk2018.hkbVariableBindingSet>();
-
-                        var action = new HavokChangeField(havokEditorView.Selection.SelectedFileWrapper, bindingField, sourceObj, newBindingSet, -1, -1);
-                        havokEditorView.ActionManager.ExecuteAction(action);
-                    }
-                    else if(HavokTypeUtils.IsHKX2(project))
-                    {
-                        var newBindingSet = Activator.CreateInstance<HKX2.hkbVariableBindingSet>();
-
-                        var action = new HavokChangeField(havokEditorView.Selection.SelectedFileWrapper, bindingField, sourceObj, newBindingSet, -1, -1);
-                        havokEditorView.ActionManager.ExecuteAction(action);
-                    }
-                }
-                GUI.Tooltip("Adds an empty Variable Binding Set to this generator.");
-
-                ImGui.NextColumn();
-
-                if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
-                {
-                    ImGui.NextColumn();
-                }
-            }
-        }
-
-        return false;
-    }
-
     public static bool ParamRefRow(IEditorView view, HavokClass havokMeta, FieldInfo prop, object val, ref object newObj)
     {
         ParamEditorView activeView = null;
@@ -161,6 +54,9 @@ public static class HavokPropertyDecorators
 
         ImGui.NextColumn();
 
+        // The context menu result is returned after the type column, so the columns stay aligned while it's open
+        var changed = false;
+
         if (activeView.Project.Handler.ParamEditor != null)
         {
             ParamReferenceHelper.Hint(activeView, refs, null, val);
@@ -168,9 +64,8 @@ public static class HavokPropertyDecorators
 
             if (ImGui.BeginPopupContextItem($"{prop.Name}EnumContextMenu"))
             {
-                var opened = ParamReferenceHelper.ContextMenu(activeView, refs, null, val, ref newObj, null);
+                changed = ParamReferenceHelper.ContextMenu(activeView, refs, null, val, ref newObj, null);
                 ImGui.EndPopup();
-                return opened;
             }
         }
 
@@ -189,7 +84,7 @@ public static class HavokPropertyDecorators
             }
         }
 
-        return false;
+        return changed;
     }
 
     public static bool ClipGenFlags(ProjectEntry project, IEditorView view, HavokClass havokMeta, FieldInfo prop, object val, ref object newObj, object sourceObj, ref object newval)
@@ -249,10 +144,10 @@ public static class HavokPropertyDecorators
             }
         }
 
+        // The type column is still advanced on a change, so the rows below stay aligned
         if (changed)
         {
             newval = (sbyte)flags;
-            return true;
         }
 
         if (view is MapEditorView)
@@ -270,7 +165,7 @@ public static class HavokPropertyDecorators
             }
         }
 
-        return false;
+        return changed;
     }
 
     public static bool ClipGenInternalID(ProjectEntry project, IEditorView view, HavokClass havokMeta, FieldInfo prop, object val, ref object newObj, object sourceObj, ref object newval)
@@ -286,6 +181,8 @@ public static class HavokPropertyDecorators
 
         if (!fieldMeta.AnimationInternalID)
             return false;
+
+        var changed = false;
 
         if (view is HavokEditorView havokEditorView)
         {
@@ -332,22 +229,22 @@ public static class HavokPropertyDecorators
                 if (freeNum == -1)
                 {
                     Smithbox.LogError(typeof(HavokPropertyDecorators), "No free ID to assign.");
-                    return false;
                 }
                 else
                 {
                     newval = (short)(freeNum);
-                    return true;
+                    changed = true;
                 }
             }
             GUI.Tooltip("Set the value to the next available unused ID.");
 
+            // Advanced even after a click, so the rows below stay aligned
             if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
             {
                 ImGui.NextColumn();
             }
         }
 
-        return false;
+        return changed;
     }
 }

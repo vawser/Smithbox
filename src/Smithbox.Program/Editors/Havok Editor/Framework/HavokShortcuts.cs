@@ -38,22 +38,15 @@ public class HavokShortcuts
 
         if (activeView != null)
         {
-            // Undo
-            if (activeView.ActionManager.CanUndo())
+            // Undo / Redo (these first show the file the action changes, if another is shown)
+            if (InputManager.IsPressed(KeybindID.Undo))
             {
-                if (InputManager.IsPressed(KeybindID.Undo))
-                {
-                    activeView.ActionManager.UndoAction();
-                }
+                activeView.Undo();
             }
 
-            // Redo
-            if (activeView.ActionManager.CanRedo())
+            if (InputManager.IsPressed(KeybindID.Redo))
             {
-                if (InputManager.IsPressed(KeybindID.Redo))
-                {
-                    activeView.ActionManager.RedoAction();
-                }
+                activeView.Redo();
             }
 
             if (FocusManager.IsFocus(EditorFocusContext.HavokEditor_CategoryList))

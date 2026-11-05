@@ -88,7 +88,8 @@ public class HavokBinderView
             }
 
             // Normal filter
-            var isMatch = EditorFilters.IsMatch(BinderFilter, displayName, ExactBinderFilter);
+            View.Selection.BinderAliasCache.TryGetValue(entry.Filename, out var binderAlias);
+            var isMatch = EditorFilters.IsMatch(BinderFilter, displayName, ExactBinderFilter, binderAlias ?? "");
 
             if (!isMatch)
                 continue;

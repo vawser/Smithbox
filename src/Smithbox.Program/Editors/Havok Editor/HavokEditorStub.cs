@@ -25,7 +25,7 @@ public class HavokEditorStub : IEditorStub
         if (!EditorConditions.SupportsHavokEditor(Project.Descriptor.ProjectType))
             return;
 
-        if (commands != null && commands[0] == CommandEndpoint)
+        if (commands != null && commands.Length > 0 && commands[0] == CommandEndpoint)
         {
             commands = commands[1..];
             ImGui.SetNextWindowFocus();

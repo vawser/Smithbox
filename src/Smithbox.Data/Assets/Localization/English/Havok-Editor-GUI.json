@@ -27,6 +27,14 @@
     {
       "Key": "HAVOK_Window_View_Toggle_Tools",
       "Text": "Tools"
+    },
+    {
+      "Key": "HAVOK_Undo_Showing_File",
+      "Text": "Showing {0} in {1}, which the undo/redo changes."
+    },
+    {
+      "Key": "HAVOK_Undo_Showing_Binder",
+      "Text": "Showing {0}, whose file list the undo/redo changes."
     }
   ]
 }

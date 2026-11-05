@@ -37,6 +37,8 @@ public class HavokPropertyView
             LOC.Get("HAVOK_PropertyView_Header"),
             LOC.Get("HAVOK_PropertyView_Header_TT"));
 
+        DisplayEditedFile();
+
         var data = View.HavokBank;
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
@@ -103,6 +105,24 @@ public class HavokPropertyView
 
             ImGui.EndChild();
         }
+    }
+
+    /// <summary>
+    /// Shows which binder and file the panel is editing, with * when the file has unsaved changes
+    /// </summary>
+    private void DisplayEditedFile()
+    {
+        var binderEntry = View.Selection.BinderFileEntry;
+        var filePath = View.Selection.FilePath;
+
+        if (binderEntry == null || filePath == null)
+            return;
+
+        var fileName = Path.GetFileName(filePath);
+        var dirty = View.Selection.SelectedFileWrapper?.IsDirty == true ? "*" : "";
+
+        ImGui.TextDisabled($"{binderEntry.Filename} / {fileName}{dirty}");
+        GUI.Tooltip(filePath);
     }
 
     public void DisplayHeader()
@@ -398,9 +418,23 @@ public class HavokPropertyView
             ImGui.PushID(id);
             ImGui.AlignTextToFramePadding();
 
+            // While searching, fields with no match anywhere below them are hidden, and nodes with a match are opened
+            var searching = IsSearching;
+
+            if (searching && !FieldHasMatch(obj, prop, classMeta))
+            {
+                ImGui.PopID();
+                id++;
+                continue;
+            }
+
             if (typ.IsArray)
             {
                 var a = (Array)prop.GetValue(obj);
+
+                if (searching)
+                    ImGui.SetNextItemOpen(true);
+
                 var open = ImGui.TreeNodeEx($@"{fieldName}", treeFlags);
                 GUI.Tooltip(fieldDescription);
                 ImGui.NextColumn();
@@ -424,11 +458,23 @@ public class HavokPropertyView
                         Type arrtyp = typ.GetElementType();
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
+                            var o = a.GetValue(i);
+
+                            if (searching)
+                            {
+                                if (!SubtreeHasMatch(o))
+                                {
+                                    ImGui.PopID();
+                                    continue;
+                                }
+
+                                ImGui.SetNextItemOpen(true);
+                            }
+
                             var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
                             GUI.Tooltip(fieldDescription);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
-                            var o = a.GetValue(i);
                             ImGui.Text("");
                             ImGui.NextColumn();
                             if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
@@ -481,6 +527,9 @@ public class HavokPropertyView
                 var o = prop.GetValue(obj);
                 if (o != null)
                 {
+                    if (searching)
+                        ImGui.SetNextItemOpen(true);
+
                     var open = ImGui.TreeNodeEx($"{fieldName}", treeFlags);
                     GUI.Tooltip(fieldDescription);
                     ImGui.NextColumn();
@@ -521,6 +570,142 @@ public class HavokPropertyView
             id++;
         }
     }
+
+    #region Search
+    /// <summary>
+    /// Whether a property filter is active, so the tree hides fields without matches and opens those with
+    /// </summary>
+    private bool IsSearching => !string.IsNullOrEmpty(PropFilter);
+
+    /// <summary>
+    /// Whether each object has a matching field anywhere below it, for the current filter. Built lazily as the
+    /// tree asks, and cleared when the filter, the shown file or the file's structure changes
+    /// (or, for a val: filter, any edit).
+    /// </summary>
+    private readonly Dictionary<object, bool> SubtreeMatchCache = new(ReferenceEqualityComparer.Instance);
+
+    private string SearchCacheFilter = null;
+    private bool SearchCacheExact = false;
+    private bool SearchCacheRawData = false;
+    private bool SearchCachePropertyBags = false;
+    private object SearchCacheRoot = null;
+
+    /// <summary>
+    /// Forget the cached matches, so they are rebuilt on the next draw
+    /// </summary>
+    public void InvalidateSearchCache()
+    {
+        SubtreeMatchCache.Clear();
+    }
+
+    private void ValidateSearchCache()
+    {
+        var root = View.Selection.SelectedFileWrapper?.Root;
+
+        if (SearchCacheFilter != PropFilter ||
+            SearchCacheExact != ExactPropFilter ||
+            SearchCacheRawData != CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields ||
+            SearchCachePropertyBags != CFG.Current.HavokEditor_Properties_Display_Property_Bags ||
+            !ReferenceEquals(SearchCacheRoot, root))
+        {
+            SubtreeMatchCache.Clear();
+
+            SearchCacheFilter = PropFilter;
+            SearchCacheExact = ExactPropFilter;
+            SearchCacheRawData = CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields;
+            SearchCachePropertyBags = CFG.Current.HavokEditor_Properties_Display_Property_Bags;
+            SearchCacheRoot = root;
+        }
+    }
+
+    /// <summary>
+    /// Whether the object has a field matching the filter, directly or anywhere below it.
+    /// Uses the same rules as the drawn rows (<see cref="DisplayProperty"/>).
+    /// </summary>
+    private bool SubtreeHasMatch(object obj)
+    {
+        if (obj == null)
+            return false;
+
+        ValidateSearchCache();
+
+        if (SubtreeMatchCache.TryGetValue(obj, out var cached))
+            return cached;
+
+        // Recorded first, so a reference back up the graph (a cycle) counts as no match instead of recursing forever
+        SubtreeMatchCache[obj] = false;
+
+        var type = obj.GetType();
+        var meta = HavokMetaHelper.GetMeta(Project, type);
+        var result = false;
+
+        foreach (var field in View.PropertyCache.GetCachedHavokFields(type))
+        {
+            if (FieldHasMatch(obj, field, meta))
+            {
+                result = true;
+                break;
+            }
+        }
+
+        SubtreeMatchCache[obj] = result;
+
+        return result;
+    }
+
+    /// <summary>
+    /// Whether the field (a value, or an object, array or list to look inside) has a match for the filter
+    /// </summary>
+    private bool FieldHasMatch(object obj, FieldInfo prop, HavokClass meta)
+    {
+        var typ = prop.FieldType;
+
+        if (!CFG.Current.HavokEditor_Properties_Display_Property_Bags && typ == typeof(HKLib.hk2018.hkPropertyBag))
+            return false;
+
+        Type elementType = null;
+
+        if (typ.IsArray)
+        {
+            elementType = typ.GetElementType();
+        }
+        else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
+        {
+            elementType = typ.GetGenericArguments()[0];
+        }
+        else if (typ.BaseType != null && typ.BaseType.IsGenericType && typ.BaseType.GetGenericTypeDefinition() == typeof(List<>))
+        {
+            elementType = typ.BaseType.GetGenericArguments()[0];
+        }
+
+        if (elementType != null)
+        {
+            // Lists of objects match through their entries; lists of values match like a value field
+            if (elementType.IsClass && elementType != typeof(string) && !elementType.IsArray)
+            {
+                if (prop.GetValue(obj) is not IEnumerable entries)
+                    return false;
+
+                foreach (var entry in entries)
+                {
+                    if (SubtreeHasMatch(entry))
+                        return true;
+                }
+
+                return false;
+            }
+
+            return DisplayProperty(meta, obj, prop, elementType);
+        }
+
+        if (typ.IsClass && typ != typeof(string))
+        {
+            return SubtreeHasMatch(prop.GetValue(obj));
+        }
+
+        return DisplayProperty(meta, obj, prop, typ);
+    }
+    #endregion
 
     public bool DisplayProperty(HavokClass havokMeta, object propObj, FieldInfo prop, Type type)
     {
@@ -1127,6 +1312,12 @@ public class HavokPropertyView
     {
         var list = (IList)prop.GetValue(obj);
 
+        // The caller has already hidden lists with no match; one with a match is opened
+        var searching = IsSearching;
+
+        if (searching)
+            ImGui.SetNextItemOpen(true);
+
         var open = ImGui.TreeNodeEx($@"{fieldName}", treeFlags);
         GUI.Tooltip(fieldDescription);
         ImGui.NextColumn();
@@ -1186,6 +1377,17 @@ public class HavokPropertyView
 
                     if (elementType.IsClass && elementType != typeof(string) && !elementType.IsArray)
                     {
+                        if (searching)
+                        {
+                            if (!SubtreeHasMatch(elem))
+                            {
+                                ImGui.PopID();
+                                continue;
+                            }
+
+                            ImGui.SetNextItemOpen(true);
+                        }
+
                         var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
                         GUI.Tooltip(fieldDescription);
                         ImGui.NextColumn();
