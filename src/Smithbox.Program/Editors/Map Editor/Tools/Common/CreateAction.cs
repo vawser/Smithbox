@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
+using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,8 @@ public class CreateAction
     public MapEditorView View;
     public ProjectEntry Project;
 
-    public (string, ObjectContainer) TargetMap = ("None", null);
+    // Follows the active map unless another is picked
+    public (string, ObjectContainer) TargetMap = MapTargetPicker.ActiveMap;
     public (string, Entity) TargetBTL = ("None", null);
 
     public List<(string, Type)> EventClasses = new();
@@ -43,12 +45,10 @@ public class CreateAction
     /// </summary>
     public void OnShortcut()
     {
-        if(View.ViewportSelection.IsSelection())
+        // Creating needs a target map and type, not a selection
+        if (InputManager.IsPressed(KeybindID.MapEditor_Create_Map_Object))
         {
-            if (InputManager.IsPressed(KeybindID.MapEditor_Create_Map_Object))
-            {
-                ApplyObjectCreation();
-            }
+            ApplyObjectCreation();
         }
     }
 
@@ -82,32 +82,11 @@ public class CreateAction
         GUI.WrappedText("Use this to create a new map object within the target loaded map.");
 
         GUI.Spacer();
-        GUI.SimpleHeader("Target Map", "The target map to duplicate the current selection to.");
+        GUI.SimpleHeader("Target Map", "The map to create the new map object in. New objects are placed at the placement orb.");
 
-        GUI.SetInputWidth();
-        if (ImGui.BeginCombo("##targetMapSelect", TargetMap.Item1))
-        {
-            foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
-            {
-                var map = entry.Value.MapContainer;
+        MapTargetPicker.Display(View, "targetMapSelect", ref TargetMap);
 
-                if (map == null)
-                    continue;
-
-                var mapID = entry.Key.Filename;
-                var mapName = AliasHelper.GetMapNameAlias(View.Project, mapID);
-                var displayName = $"{mapID}: {mapName}";
-
-                if (ImGui.Selectable(displayName, TargetMap.Item1 == mapID))
-                {
-                    TargetMap = (mapID, map);
-                }
-            }
-
-            ImGui.EndCombo();
-        }
-
-        if (TargetMap != (null, null))
+        if (View.Selection.ResolveTargetMap(TargetMap) != null)
         {
             DisplayBaseTypeSelection();
             DisplaySubTypeSelection();
@@ -117,7 +96,7 @@ public class CreateAction
 
     public void DisplayBaseTypeSelection()
     {
-        var map = (MapContainer)TargetMap.Item2;
+        var map = View.Selection.ResolveTargetMap(TargetMap);
 
         if (map == null)
             return;
@@ -172,7 +151,7 @@ public class CreateAction
 
     public void DisplaySubTypeSelection()
     {
-        var map = (MapContainer)TargetMap.Item2;
+        var map = View.Selection.ResolveTargetMap(TargetMap);
 
         if (map == null)
             return;
@@ -259,7 +238,7 @@ public class CreateAction
 
     public void DisplayActions()
     {
-        var map = (MapContainer)TargetMap.Item2;
+        var map = View.Selection.ResolveTargetMap(TargetMap);
 
         if (map == null)
             return;
@@ -282,13 +261,13 @@ public class CreateAction
             return;
         }
 
-        if (TargetMap == (null, null))
+        var map = View.Selection.ResolveTargetMap(TargetMap);
+
+        if (map == null)
         {
-            Smithbox.LogError<CreateAction>("Selected map is not loaded.");
+            Smithbox.LogError<CreateAction>("No loaded map has been targeted. Pick one in the Create tool first.");
             return;
         }
-
-        var map = (MapContainer)TargetMap.Item2;
 
         if (CFG.Current.Toolbar_Create_Light)
         {
@@ -338,8 +317,38 @@ public class CreateAction
 
         parent ??= map.RootObject;
 
+        PlaceAtPlacementOrb(newent, parent);
+
         EntAddAction act = new(View, map, new List<MsbEntity> { obj }, parent);
         View.ViewportActionManager.ExecuteAction(act);
+    }
+
+    /// <summary>
+    /// Puts a new object at the placement orb rather than the map's origin. The orb is in world space, so the
+    /// position is made local to the parent chain (which, for tiled maps, holds the map's offset).
+    /// The object isn't in a map yet, so this needs no undo of its own.
+    /// </summary>
+    private void PlaceAtPlacementOrb(object wrapped, Entity parent)
+    {
+        var positionProp = wrapped.GetType().GetProperty("Position");
+
+        if (positionProp == null || positionProp.PropertyType != typeof(Vector3) || !positionProp.CanWrite)
+            return;
+
+        if (View.ViewportHandler.ActiveViewport?.Viewport == null)
+            return;
+
+        var world = View.ViewportWindow.GetPlacementPosition();
+
+        var root = Transform.Default;
+        for (var p = parent; p != null; p = p.Parent)
+        {
+            root += p.GetLocalTransform();
+        }
+
+        var local = Vector3.Transform(world - root.Position, Quaternion.Inverse(root.Rotation));
+
+        positionProp.SetValue(wrapped, local);
     }
 
     public void PopulateClassNames()

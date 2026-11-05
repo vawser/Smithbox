@@ -120,8 +120,18 @@ public class MapContainer : ObjectContainer
     [XmlIgnore]
     public MapFileType DirtyFiles { get; private set; } = MapFileType.None;
 
+    /// <summary>
+    /// Why the last save of this map failed, or null if it succeeded (or hasn't been saved).
+    /// Shown in the Map List, as an autosave failure opens no dialog.
+    /// </summary>
+    [XmlIgnore]
+    public string SaveError { get; set; }
+
     public void MarkDirty(MapFileType fileType)
     {
+        // Ties the running action to this map, so unloading the map drops only the history that touched it
+        ViewportActionManager.RecordScope(Name);
+
         if (fileType is MapFileType.None)
             return;
 

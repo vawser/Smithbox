@@ -556,51 +556,71 @@ public class MassEditTool
 
             CFG.Current.MapEditor_IgnoreSaveExceptions = true;
 
-            // Load all maps
-            foreach (var entry in availableList)
-            {
-                View.Universe.LoadMap(entry);
-            }
+            // The maps the user already had open stay open afterwards, with their edits
+            var alreadyLoaded = availableList
+                .Where(id => View.Selection.GetMapContainerFromMapID(id) != null)
+                .ToHashSet();
 
-            // Process each map
-            foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
+            try
             {
-                var wrapper = entry.Value;
-
-                if (wrapper.MapContainer != null)
+                // Load all maps
+                foreach (var entry in availableList)
                 {
-                    var actionList = ProcessSelectionCriteria(wrapper.MapContainer);
+                    if (!alreadyLoaded.Contains(entry))
+                    {
+                        View.Universe.LoadMap(entry);
+                    }
+                }
 
-                    if (actionList.Count > 0)
-                        actionGroups.Add(new MapActionGroup(entry.Key.Filename, actionList));
+                // Process each map
+                foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
+                {
+                    var wrapper = entry.Value;
+
+                    if (wrapper.MapContainer != null)
+                    {
+                        var actionList = ProcessSelectionCriteria(wrapper.MapContainer);
+
+                        if (actionList.Count > 0)
+                            actionGroups.Add(new MapActionGroup(entry.Key.Filename, actionList));
+                    }
+                }
+
+                if (actionGroups.Count > 0)
+                {
+                    var compoundAction = new MassEditGroupAction(View, actionGroups);
+
+                    View.ViewportActionManager.ExecuteAction(compoundAction);
+
+                    universe.SaveAllMaps();
+                }
+
+                // Only the maps this edit loaded are unloaded
+                foreach (var entry in availableList)
+                {
+                    if (!alreadyLoaded.Contains(entry))
+                    {
+                        View.Universe.UnloadMap(entry, collectGarbage: false);
+                    }
                 }
             }
-
-            if (actionGroups.Count > 0)
+            finally
             {
-                var compoundAction = new MassEditGroupAction(View, actionGroups);
+                // Restored on every path, including when nothing matched
+                if (restoreRendering)
+                {
+                    CFG.Current.Viewport_Enable_Rendering = true;
+                }
 
-                View.ViewportActionManager.ExecuteAction(compoundAction);
+                CFG.Current.MapEditor_IgnoreSaveExceptions = false;
+
+                GC.Collect();
             }
-            else
+
+            if (actionGroups.Count == 0)
             {
                 return false;
             }
-
-            universe.SaveAllMaps();
-
-            //universe.UnloadAllMaps();
-            foreach (var entry in availableList)
-            {
-                View.Universe.UnloadMap(entry);
-            }
-
-            if(restoreRendering)
-            {
-                CFG.Current.Viewport_Enable_Rendering = true;
-            }
-
-            CFG.Current.MapEditor_IgnoreSaveExceptions = false;
         }
 
         return true;

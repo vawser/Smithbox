@@ -1,16 +1,24 @@
-﻿using SoulsFormats;
-using StudioCore.Editors.Common;
+﻿using StudioCore.Editors.Common;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace StudioCore.Editors.MapEditor;
 
+/// <summary>
+/// Renames map objects. When updating references, the [MSBReference] name fields of the other objects in the
+/// same map that point to a renamed object are rewritten to its new name, so the MSB still resolves on save.
+/// </summary>
 public class EntRenameAction : ViewportAction
 {
     private readonly MapEditorView View;
     private readonly List<MsbEntity> Entities;
     private readonly List<string> NewNames;
     private readonly List<string> OldNames;
+    private readonly bool UpdateReferences;
+
+    // The reference fields rewritten by the last execute, with the name each is given; undo puts back the name
+    // the slot held when it was found
+    private readonly List<(ReferenceSlot Slot, string NewValue)> ReferenceEdits = new();
 
     public EntRenameAction(MapEditorView view, List<MsbEntity> entities, List<string> newNames, bool reference)
     {
@@ -18,28 +26,49 @@ public class EntRenameAction : ViewportAction
         Entities = entities;
         OldNames = entities.Select(e => e.Name).ToList();
         NewNames = newNames;
+        UpdateReferences = reference;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
     {
+        ReferenceEdits.Clear();
+
+        // Gathered before anything is renamed, so references are matched against the original names
+        if (UpdateReferences)
+        {
+            CollectReferenceEdits();
+        }
+
         foreach (var (entity, name) in Entities.Zip(NewNames))
         {
             Rename(entity, name);
         }
 
-        MapContainer.MarkEntitiesDirty(Entities);
+        foreach (var (slot, newValue) in ReferenceEdits)
+        {
+            slot.Set(newValue);
+        }
+
+        MarkDirty();
+        RebuildReferenceMaps();
 
         return ActionEvent.ObjectAddedRemoved;
     }
 
     public override ActionEvent Undo()
     {
+        foreach (var (slot, _) in ReferenceEdits)
+        {
+            slot.Set(slot.Value);
+        }
+
         foreach (var (entity, name) in Entities.Zip(OldNames))
         {
             Rename(entity, name);
         }
 
-        MapContainer.MarkEntitiesDirty(Entities);
+        MarkDirty();
+        RebuildReferenceMaps();
 
         return ActionEvent.ObjectAddedRemoved;
     }
@@ -48,6 +77,7 @@ public class EntRenameAction : ViewportAction
     {
         var oldName = entity.Name;
         entity.Name = name;
+        entity.CachedAliasName = null;
 
         if (CFG.Current.MapEditor_MapContentGroup_AutoAdjustName)
         {
@@ -55,5 +85,51 @@ public class EntRenameAction : ViewportAction
         }
 
         (entity.Container as MapContainer)?.LightAtlasResolver.AutomaticAdjustment(entity, oldName, name);
+    }
+
+    /// <summary>
+    /// Finds every reference field in the renamed objects' maps that holds the current name of a renamed object
+    /// of the type the field refers to
+    /// </summary>
+    private void CollectReferenceEdits()
+    {
+        var newNameOf = new Dictionary<Entity, string>();
+
+        foreach (var ((entity, newName), oldName) in Entities.Zip(NewNames).Zip(OldNames))
+        {
+            if (entity.Container != null && !string.IsNullOrEmpty(oldName) && oldName != newName)
+            {
+                newNameOf[entity] = newName;
+            }
+        }
+
+        foreach (var group in newNameOf.Keys.GroupBy(e => e.Container))
+        {
+            foreach (var (slot, target) in MsbReferences.FindReferencesTo(group.Key, group))
+            {
+                ReferenceEdits.Add((slot, newNameOf[target]));
+            }
+        }
+    }
+
+    private void MarkDirty()
+    {
+        MapContainer.MarkEntitiesDirty(Entities);
+
+        foreach (var (slot, _) in ReferenceEdits)
+        {
+            MapContainer.MarkEntityDirty(slot.Referrer);
+        }
+    }
+
+    /// <summary>
+    /// The reference maps are built from names, so they are stale after a rename
+    /// </summary>
+    private void RebuildReferenceMaps()
+    {
+        foreach (var container in Entities.Select(e => e.Container).Where(c => c != null).Distinct())
+        {
+            Entity.BuildReferenceMaps(container.Objects);
+        }
     }
 }

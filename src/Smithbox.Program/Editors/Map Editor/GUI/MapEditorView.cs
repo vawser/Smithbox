@@ -242,11 +242,22 @@ public class MapEditorView : IEditorView
             DisplayTabbedPanels(dockspaceId, viewIndex, doFocus, isActiveView);
         }
 
+        Universe.ProcessLoadQueue();
+
+        SyncActiveMapToSelection();
+
         MapListFilterTool.Update();
         LocalSearchView.Update();
         MapAnimationTool.Update();
 
         WorldMapTool.DisplayPopup();
+
+        // The popups that context menus, shortcuts and the Tools window open. Drawn here rather than in the
+        // Tools window so they don't depend on it being shown.
+        DuplicateToMapAction.OnGui();
+        MoveToMapAction.OnGui();
+        SelectAllAction.OnGui();
+        AdjustToGridAction.OnGui();
 
         ViewportSelection.ClearGotoTarget();
     }
@@ -256,7 +267,7 @@ public class MapEditorView : IEditorView
         // Map List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Map List##mapEditor_MapList_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAP_Window_Map_List")}##mapEditor_MapList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -275,7 +286,7 @@ public class MapEditorView : IEditorView
         // Map Contents
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Map Contents##mapEditor_MapContents_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAP_Window_Map_Contents")}##mapEditor_MapContents_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -294,7 +305,7 @@ public class MapEditorView : IEditorView
         // Map Groups
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Map Content Groups##mapEditor_MapGroups_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAP_Window_Map_Content_Groups")}##mapEditor_MapGroups_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -316,7 +327,7 @@ public class MapEditorView : IEditorView
         // Properties
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Properties##mapEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAP_Window_Properties")}##mapEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -337,7 +348,7 @@ public class MapEditorView : IEditorView
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-            if (ImGui.Begin($@"Tools##mapEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("MAP_Window_Tools")}##mapEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -361,14 +372,14 @@ public class MapEditorView : IEditorView
         // Left Panel
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Left Panel##mapEditor_LeftPanel_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAP_Window_Left_Panel")}##mapEditor_LeftPanel_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
             ImGui.BeginTabBar("leftPanelTabs");
 
-            if(ImGui.BeginTabItem("Map List"))
+            if(ImGui.BeginTabItem(LOC.Get("MAP_Window_Map_List")))
             {
                 FocusManager.SetFocus(EditorFocusContext.MapEditor_FileList);
                 Editor.ViewHandler.ActiveView = this;
@@ -378,7 +389,7 @@ public class MapEditorView : IEditorView
                 ImGui.EndTabItem();
             }
 
-            if (ImGui.BeginTabItem("Map Contents"))
+            if (ImGui.BeginTabItem(LOC.Get("MAP_Window_Map_Contents")))
             {
                 FocusManager.SetFocus(EditorFocusContext.MapEditor_ContentTree);
                 Editor.ViewHandler.ActiveView = this;
@@ -388,7 +399,7 @@ public class MapEditorView : IEditorView
                 ImGui.EndTabItem();
             }
 
-            if (ImGui.BeginTabItem("Map Content Groups"))
+            if (ImGui.BeginTabItem(LOC.Get("MAP_Window_Map_Content_Groups")))
             {
                 FocusManager.SetFocus(EditorFocusContext.MapEditor_MapGroups);
                 Editor.ViewHandler.ActiveView = this;
@@ -409,14 +420,14 @@ public class MapEditorView : IEditorView
         // Right Panel
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Right Panel##mapEditor_RightPanel_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAP_Window_Right_Panel")}##mapEditor_RightPanel_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
             ImGui.BeginTabBar("rightPanelTabs");
 
-            if (ImGui.BeginTabItem("Properties"))
+            if (ImGui.BeginTabItem(LOC.Get("MAP_Window_Properties")))
             {
                 FocusManager.SetFocus(EditorFocusContext.MapEditor_Properties);
                 Editor.ViewHandler.ActiveView = this;
@@ -428,7 +439,7 @@ public class MapEditorView : IEditorView
 
             if (CFG.Current.Interface_MapEditor_ToolWindow)
             {
-                if (ImGui.BeginTabItem("Tools"))
+                if (ImGui.BeginTabItem(LOC.Get("MAP_Window_Tools")))
                 {
                     FocusManager.SetFocus(EditorFocusContext.MapEditor_Tools);
                     Editor.ViewHandler.ActiveView = this;
@@ -443,6 +454,31 @@ public class MapEditorView : IEditorView
         }
 
         ImGui.End();
+    }
+
+    private Entity _lastSyncedSelection;
+
+    /// <summary>
+    /// Makes the map of a newly selected object the active map (the one the content tree shows and the
+    /// tools default to). Only done when the selection changes, so picking another map in the Map List
+    /// while an object is still selected isn't undone on the next frame.
+    /// </summary>
+    private void SyncActiveMapToSelection()
+    {
+        var first = ViewportSelection.GetSelection().OfType<Entity>().FirstOrDefault();
+
+        if (first == _lastSyncedSelection)
+            return;
+
+        _lastSyncedSelection = first;
+
+        if (first?.Container is MapContainer map &&
+            map.LoadState is MapContentLoadState.Loaded &&
+            map != Selection.SelectedMapContainer)
+        {
+            Selection.SelectedMapID = map.Name;
+            Selection.SelectedMapContainer = map;
+        }
     }
 
     public void ToggleMapData()
@@ -479,7 +515,7 @@ public class MapEditorView : IEditorView
         }
 
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Map Data##mapEditor_MapData_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAP_Window_Map_Data")}##mapEditor_MapData_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {

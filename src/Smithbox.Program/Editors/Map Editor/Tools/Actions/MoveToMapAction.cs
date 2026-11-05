@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -80,36 +81,18 @@ public class MoveToMapAction
         var sectionHeight = windowSize.Y * 0.25f;
         var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
 
-        GUI.SimpleHeader("Target Map", "Target Map", "The target map to duplicate the current selection to.", UI.Current.ImGui_Default_Text_Color);
+        GUI.SimpleHeader("Target Map", "Target Map", "The target map to move the current selection to.", UI.Current.ImGui_Default_Text_Color);
 
-        ImGui.BeginChild("##mapMoveSelectionSection", sectionSize, ImGuiChildFlags.Borders);
+        MapTargetPicker.Display(View, "moveTargetMapSelect", ref TargetMap);
 
-        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
-        {
-            var mapID = entry.Key.Filename;
-            var map = entry.Value.MapContainer;
+        var targetMap = View.Selection.ResolveTargetMap(TargetMap);
 
-            if (map != null)
-            {
-                if (ImGui.Selectable(mapID, TargetMap.Item1 == mapID))
-                {
-                    TargetMap = (mapID, map);
-                }
-
-                var mapName = AliasHelper.GetMapNameAlias(View.Project, mapID);
-                GUI.DisplayAlias(mapName);
-            }
-        }
-
-        ImGui.EndChild();
-
-        if (TargetMap.Item2 == null)
+        if (targetMap == null)
         {
             GUI.WrappedText("No map has been loaded or targeted.");
         }
         else
         {
-            MapContainer targetMap = (MapContainer)TargetMap.Item2;
 
             var sel = View.ViewportSelection.GetPlacedEntities();
 
@@ -135,7 +118,7 @@ public class MoveToMapAction
                 }
             }
 
-            if (ImGui.Button("Duplicate##dupeToMapAction", DPI.WholeWidthButton(sectionWidth, 24)))
+            if (ImGui.Button("Move##moveToMapAction", DPI.WholeWidthButton(sectionWidth, 24)))
             {
                 MoveToMap(sel, targetMap, TargetBTL.Item2);
             }
@@ -147,7 +130,40 @@ public class MoveToMapAction
     /// </summary>
     public void MoveToMap(List<MsbEntity> selection, MapContainer targetMap, Entity targetBtl)
     {
-        var action = new EntMoveAction(View, selection, true, targetMap, targetBtl);
+        ViewportAction action = new EntMoveAction(View, selection, true, targetMap, targetBtl);
+
+        // MSB references only resolve within a map, so moving breaks those between the moved objects and the
+        // ones left behind, in either direction
+        var moving = selection.Cast<Entity>().ToHashSet();
+        var leaving = selection.Where(e => e.Container != null && e.Container != targetMap).ToList();
+
+        var broken = leaving
+            .GroupBy(e => e.Container)
+            .SelectMany(g =>
+                MsbReferences.FindReferencesTo(g.Key, g).Where(r => !moving.Contains(r.Slot.Referrer))
+                .Concat(MsbReferences.FindReferencesFrom(g.Key, g).Where(r => !moving.Contains(r.Target))))
+            .ToList();
+
+        if (broken.Count > 0)
+        {
+            var result = PlatformUtils.Instance.MessageBox(
+                LOC.Get("MAP_Move_Dialog_Broken_References", broken.Count, MsbReferences.Describe(broken)),
+                LOC.Get("MAP_Options_Dialog_Confirm"),
+                MessageBoxButtons.YesNoCancel);
+
+            if (result == DialogResult.Cancel || result == DialogResult.None)
+                return;
+
+            // Yes clears the references along with the move, in one undo step
+            if (result == DialogResult.Yes)
+            {
+                action = new ViewportCompoundAction(new List<ViewportAction>
+                {
+                    new ClearReferencesAction(broken.Select(r => r.Slot)),
+                    action
+                });
+            }
+        }
 
         View.ViewportActionManager.ExecuteAction(action);
     }

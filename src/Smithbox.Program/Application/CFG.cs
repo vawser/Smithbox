@@ -365,6 +365,7 @@ public class CFG
     public bool Toolbar_Duplicate_Increment_PartNames = false;
     public bool Toolbar_Duplicate_Increment_InstanceID = true;
     public bool Toolbar_Duplicate_Place_at_List_End = false;
+    public bool MapEditor_Paste_At_Placement_Orb = true;
 
     public bool Toolbar_Duplicate_Clear_Entity_ID = false;
     public bool Toolbar_Duplicate_Clear_Entity_Group_IDs = false;
@@ -1558,6 +1559,7 @@ public class CFG
     public bool Viewport_DisplayControls = true;
     public bool Viewport_DisplayRotationIncrement = true;
     public bool Viewport_DisplayTranslationIncrement = true;
+    public bool Viewport_DisplayActiveMap = true;
 
     public bool Viewport_Enable_Box_Selection = true;
     public bool Viewport_Enable_Box_Selection_MapPiece = true;

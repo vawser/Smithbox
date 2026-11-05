@@ -60,6 +60,14 @@ public class ViewportMenu
 
             if (Owner is MapUniverse mapUniverse)
             {
+                if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Active_Map")}##activeMapToggle"))
+                {
+                    CFG.Current.Viewport_DisplayActiveMap = !CFG.Current.Viewport_DisplayActiveMap;
+                    Parent.DelayPicking();
+                }
+                GUI.ShowActiveStatus(CFG.Current.Viewport_DisplayActiveMap);
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Active_Map_TT"));
+
                 if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Translation_Increment")}##translationIncrementToggle"))
                 {
                     CFG.Current.Viewport_DisplayTranslationIncrement = !CFG.Current.Viewport_DisplayTranslationIncrement;

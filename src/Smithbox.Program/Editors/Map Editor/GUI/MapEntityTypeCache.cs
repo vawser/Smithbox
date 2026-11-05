@@ -18,19 +18,54 @@ public class MapEntityTypeCache
         Project = project;
     }
 
+    // The same groupings, in the order the content tree draws them (categories and types by name), so the
+    // tree doesn't re-sort them every frame
+    private Dictionary<string, List<(MsbEntityType Category, List<(Type Type, List<MsbEntity> Entities)> Types)>> _sortedTypeView;
+
     public void InvalidateCache()
     {
         _cachedTypeView = null;
+        _sortedTypeView = null;
     }
 
     public void RemoveMapFromCache(MapContainer container)
     {
         if (_cachedTypeView != null &&
-            container != null && 
+            container != null &&
             _cachedTypeView.ContainsKey(container.Name))
         {
             _cachedTypeView.Remove(container.Name);
         }
+
+        if (container != null)
+        {
+            _sortedTypeView?.Remove(container.Name);
+        }
+    }
+
+    /// <summary>
+    /// The map's objects grouped by category then type, both sorted by name
+    /// </summary>
+    public List<(MsbEntityType Category, List<(Type Type, List<MsbEntity> Entities)> Types)> GetSortedTypeView(MapContainer map)
+    {
+        AddMapToCache(map);
+
+        _sortedTypeView ??= new();
+
+        if (!_sortedTypeView.TryGetValue(map.Name, out var sorted))
+        {
+            sorted = _cachedTypeView[map.Name]
+                .OrderBy(q => q.Key.ToString())
+                .Select(cat => (cat.Key, cat.Value
+                    .OrderBy(t => t.Key.Name)
+                    .Select(t => (t.Key, t.Value))
+                    .ToList()))
+                .ToList();
+
+            _sortedTypeView[map.Name] = sorted;
+        }
+
+        return sorted;
     }
 
     public void AddMapToCache(MapContainer map)
@@ -179,6 +214,9 @@ public class MapEntityTypeCache
                 mapcache[e.Type][typ].Add(e);
             }
         }
+
+        // The sorted view is derived from this one
+        _sortedTypeView?.Remove(map.Name);
 
         // Fill the type cache for this map
         if (!_cachedTypeView.ContainsKey(map.Name))

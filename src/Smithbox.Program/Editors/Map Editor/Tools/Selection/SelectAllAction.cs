@@ -457,7 +457,14 @@ public class SelectAllAction
 
             List<Type> targetTypes = new List<Type>();
 
-            var firstSel = sel.First();
+            // The selection can hold only non-map objects (a reference to an unloaded map)
+            var firstSel = sel.FirstOrDefault();
+
+            if (firstSel == null)
+            {
+                Smithbox.LogError<SelectAllAction>("No map object selected.");
+                return;
+            }
 
             var mapCeremony = firstSel.GetPropertyValue("MapStudioLayer");
             if(mapCeremony == null)

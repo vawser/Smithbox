@@ -5,6 +5,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
+using System.Collections.Concurrent;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 using System.Text.Json;
@@ -25,7 +26,34 @@ public class MapUniverse : IUniverse
     public ExceptionDispatchInfo LoadMapExceptions = null;
 
     public volatile bool HasProcessedMapLoad;
-    public volatile bool IsLoading = false;
+
+    // A count, not a flag: "Load Related Maps" runs several loads at once, and the first to finish
+    // must not report that loading is over
+    private int _activeLoads;
+
+    public bool IsLoading => Volatile.Read(ref _activeLoads) > 0;
+
+    // The maps being loaded right now
+    private readonly ConcurrentDictionary<string, byte> _loadingMaps = new();
+
+    // Loads requested while another was running, started in order once it finishes (UI thread only)
+    private readonly List<(string MapID, bool SelectOnLoad)> _loadQueue = new();
+
+    public bool IsMapLoading(string mapID) => mapID != null && _loadingMaps.ContainsKey(mapID);
+
+    public bool IsMapQueued(string mapID) => _loadQueue.Any(e => e.MapID == mapID);
+
+    public int QueuedLoadCount => _loadQueue.Count;
+
+    /// <summary>
+    /// The maps being loaded right now, for display
+    /// </summary>
+    public IReadOnlyCollection<string> LoadingMaps => _loadingMaps.Keys.ToList();
+
+    /// <summary>
+    /// True while a load is running or waiting in the queue
+    /// </summary>
+    public bool HasPendingLoads => IsLoading || _loadQueue.Count > 0;
 
     public string ModelDataMapID { get; set; }
 
@@ -45,7 +73,26 @@ public class MapUniverse : IUniverse
     {
         if(!allowConcurrentMapLoad && IsLoading)
         {
-            Smithbox.LogError<MapUniverse>(LOC.Get("MAP_Universe_Log_Map_Already_Loading"));
+            // Queued rather than refused, and started when the running load finishes
+            if (!IsMapLoading(mapid) && !IsMapQueued(mapid) && View.Selection.GetMapContainerFromMapID(mapid) == null)
+            {
+                _loadQueue.Add((mapid, selectOnLoad));
+                Smithbox.Log(this, LOC.Get("MAP_Universe_Log_Map_Load_Queued", mapid));
+            }
+
+            return true;
+        }
+
+        // Checked here as well as in LoadMapAsync, so the collision below isn't loaded again for a map
+        // that is already loaded or loading
+        if (IsMapLoading(mapid))
+        {
+            return true;
+        }
+
+        if (View.Selection.GetMapContainerFromMapID(mapid) is { LoadState: MapContentLoadState.Loaded })
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Universe_Log_Map_Already_Loaded", mapid));
             return false;
         }
 
@@ -87,22 +134,27 @@ public class MapUniverse : IUniverse
 
     public async Task<bool> LoadMapAsync(string mapid, bool selectOnLoad = false)
     {
-        IsLoading = true;
-
-        Profiler.TracyFiberEnter("loadMapAsync");
-        using var __loadMapZone = Profiler.TracyZoneAuto();
-
         var fileEntry = View.Selection.GetFileEntryFromMapID(mapid);
         var existingMap = View.Selection.GetMapContainerFromMapID(mapid);
 
-        if (existingMap != null && 
+        if (existingMap != null &&
             existingMap.LoadState is MapContentLoadState.Loaded)
         {
             Smithbox.LogError(this, LOC.Get("MAP_Universe_Log_Map_Already_Loaded", mapid));
-
-            IsLoading = false;
             return false;
         }
+
+        // A load of this map is already running
+        if (!_loadingMaps.TryAdd(mapid, 0))
+        {
+            return false;
+        }
+
+        // Before the first await, so the load counts as running as soon as LoadMap returns
+        Interlocked.Increment(ref _activeLoads);
+
+        Profiler.TracyFiberEnter("loadMapAsync");
+        using var __loadMapZone = Profiler.TracyZoneAuto();
 
         MapContainer newMap = null;
 
@@ -295,51 +347,149 @@ public class MapUniverse : IUniverse
             Profiler.TracyFiberLeave();
 
             ResourceLoadTracker.EndSession(mapid);
-            IsLoading = false;
+
+            _loadingMaps.TryRemove(mapid, out _);
+            Interlocked.Decrement(ref _activeLoads);
         }
 
         return true;
     }
 
     /// <summary>
-    /// Asks the user to confirm discarding unsaved changes, if the map has any
+    /// Starts the next queued load once nothing is loading. Called every frame.
     /// </summary>
-    public bool ConfirmDiscardChanges(MapContainer map)
+    public void ProcessLoadQueue()
     {
-        if (map == null || !map.HasUnsavedChanges)
-            return true;
+        if (IsLoading || _loadQueue.Count == 0)
+            return;
 
-        DialogResult result = PlatformUtils.Instance.MessageBox(
-            LOC.Get("MAP_Universe_Dialog_Unload_Unsaved", map.Name),
-            LOC.Get("MAP_Options_Dialog_Confirm"),
-            MessageBoxButtons.YesNo);
+        var (mapID, selectOnLoad) = _loadQueue[0];
+        _loadQueue.RemoveAt(0);
 
-        return result == DialogResult.Yes;
+        // It may have been loaded some other way while it waited
+        if (View.Selection.GetMapContainerFromMapID(mapID) != null)
+            return;
+
+        LoadMap(mapID, selectOnLoad);
     }
 
     /// <summary>
-    /// Unloads the map, asking first if it has unsaved changes
+    /// Before maps are unloaded (or their view closed): if any have unsaved changes, asks whether to save them
+    /// (Yes), discard them (No) or keep the maps loaded (Cancel). Returns true if the unload should go ahead,
+    /// which after Yes is only if every save succeeded.
+    /// </summary>
+    public bool ConfirmUnload(IEnumerable<MapContainer> maps, string dialogKey = "MAP_Universe_Dialog_Unload_Unsaved")
+    {
+        var unsaved = maps.Where(m => m != null && m.HasUnsavedChanges).ToList();
+
+        if (unsaved.Count == 0)
+            return true;
+
+        DialogResult result = PlatformUtils.Instance.MessageBox(
+            LOC.Get(dialogKey, string.Join(", ", unsaved.Select(m => m.Name))),
+            LOC.Get("MAP_Options_Dialog_Confirm"),
+            MessageBoxButtons.YesNoCancel);
+
+        if (result == DialogResult.No)
+            return true;
+
+        if (result != DialogResult.Yes)
+            return false;
+
+        foreach (var map in unsaved)
+        {
+            try
+            {
+                // Saved by the view that owns it, as its banks hold its collision and navmesh data
+                (map.OwnerView?.Universe ?? this).SaveMap(map);
+            }
+            catch (SavingFailedException e)
+            {
+                View.Editor.HandleSaveException(e);
+                return false;
+            }
+
+            // A save that failed without throwing (exceptions ignored, or a non-MSB file failed) leaves it dirty
+            if (map.HasUnsavedChanges)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Universe_Unload_Save_Incomplete", map.Name));
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Unloads the map, offering to save it first if it has unsaved changes
     /// </summary>
     public void RequestUnloadMap(string mapID)
     {
-        if (!ConfirmDiscardChanges(View.Selection.GetMapContainerFromMapID(mapID)))
+        if (!ConfirmUnload(new[] { View.Selection.GetMapContainerFromMapID(mapID) }))
             return;
 
         UnloadMap(mapID);
     }
 
-    public void UnloadMap(string mapID, bool clearFromList = false)
+    /// <summary>
+    /// Unloads every loaded map, offering to save those with unsaved changes first
+    /// </summary>
+    public void RequestUnloadAllMaps()
+    {
+        var loaded = Project.Handler.MapData.PrimaryBank.Maps.Values
+            .Select(w => w.MapContainer)
+            .Where(m => m != null)
+            .ToList();
+
+        if (loaded.Count == 0)
+            return;
+
+        if (loaded.Any(m => m.HasUnsavedChanges))
+        {
+            if (!ConfirmUnload(loaded))
+                return;
+        }
+        else
+        {
+            // Nothing to lose, but reloading many maps takes a while
+            DialogResult result = PlatformUtils.Instance.MessageBox(
+                LOC.Get("MAP_Options_Dialog_Unload_All"),
+                LOC.Get("MAP_Options_Dialog_Confirm"),
+                MessageBoxButtons.YesNo);
+
+            if (result != DialogResult.Yes)
+                return;
+        }
+
+        UnloadAllMaps();
+    }
+
+    public void UnloadMap(string mapID, bool clearFromList = false, bool collectGarbage = true)
     {
         // The map's selection, undo history and havok data live in the view that loaded it
         var ownerView = View.Selection.GetMapContainerFromMapID(mapID)?.OwnerView;
         if (ownerView != null && ownerView != View)
         {
-            ownerView.Universe.UnloadMap(mapID, clearFromList);
+            ownerView.Universe.UnloadMap(mapID, clearFromList, collectGarbage);
             return;
         }
 
-        View.ViewportSelection.ClearSelection();
-        View.ViewportActionManager.Clear();
+        // A queued load of it is no longer wanted
+        _loadQueue.RemoveAll(e => e.MapID == mapID);
+
+        var unloading = View.Selection.GetMapContainerFromMapID(mapID);
+
+        // Only this map's objects leave the selection, and only the history that touched it is dropped,
+        // so work on the other loaded maps can still be undone
+        if (unloading != null)
+        {
+            foreach (var sel in View.ViewportSelection.GetSelection().OfType<Entity>().Where(e => e.Container == unloading).ToList())
+            {
+                View.ViewportSelection.RemoveSelection(sel);
+            }
+        }
+
+        View.ViewportActionManager.RemoveActionsTouching(mapID);
 
         foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
@@ -387,6 +537,14 @@ public class MapUniverse : IUniverse
             }
         }
 
+        if (collectGarbage)
+        {
+            CollectGarbage();
+        }
+    }
+
+    private static void CollectGarbage()
+    {
         GC.Collect();
         GC.WaitForPendingFinalizers();
         GC.Collect();
@@ -618,10 +776,14 @@ public class MapUniverse : IUniverse
             CheckDupeEntityIDs(map);
 
             map.ClearDirty(MapFileType.MSB);
+            map.SaveError = null;
             Smithbox.Log(this, LOC.Get("MAP_Universe_Save_Map_PASS", curEntry.Filename));
         }
         catch (Exception e)
         {
+            // Kept until the next successful save, so the Map List can show which map failed and why
+            map.SaveError = e.Message;
+
             Smithbox.LogError(this, LOC.Get("MAP_Universe_Save_Map_FAIL", map.Name), e);
 
             if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
@@ -1080,13 +1242,18 @@ public class MapUniverse : IUniverse
 
     public void UnloadAllMaps()
     {
+        _loadQueue.Clear();
+
         foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {
             if (entry.Value.MapContainer != null)
             {
-                UnloadMap(entry.Key.Filename);
+                // One collection at the end rather than two blocking ones per map
+                UnloadMap(entry.Key.Filename, collectGarbage: false);
             }
         }
+
+        CollectGarbage();
     }
 
     public void ScheduleTextureRefresh()

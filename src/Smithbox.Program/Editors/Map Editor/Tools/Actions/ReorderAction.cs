@@ -93,25 +93,41 @@ public class ReorderAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.MenuItem("Move Up", InputManager.GetHint(KeybindID.Reorder_Up)))
+        // Disabled rather than erroring after the click when nothing selected can be reordered
+        var enabled = CanReorderSelection();
+
+        if (ImGui.MenuItem("Move Up", InputManager.GetHint(KeybindID.Reorder_Up), false, enabled))
         {
             ApplyReorder(TreeObjectOrderMovementType.Up);
         }
 
-        if (ImGui.MenuItem("Move Down", InputManager.GetHint(KeybindID.Reorder_Down)))
+        if (ImGui.MenuItem("Move Down", InputManager.GetHint(KeybindID.Reorder_Down), false, enabled))
         {
             ApplyReorder(TreeObjectOrderMovementType.Down);
         }
 
-        if (ImGui.MenuItem("Move to Top", InputManager.GetHint(KeybindID.Reorder_Top)))
+        if (ImGui.MenuItem("Move to Top", InputManager.GetHint(KeybindID.Reorder_Top), false, enabled))
         {
             ApplyReorder(TreeObjectOrderMovementType.Top);
         }
 
-        if (ImGui.MenuItem("Move to Bottom", InputManager.GetHint(KeybindID.Reorder_Bottom)))
+        if (ImGui.MenuItem("Move to Bottom", InputManager.GetHint(KeybindID.Reorder_Bottom), false, enabled))
         {
             ApplyReorder(TreeObjectOrderMovementType.Bottom);
         }
+
+        if (!enabled)
+        {
+            GUI.Tooltip("Select parts, regions or events to reorder them.");
+        }
+    }
+
+    /// <summary>
+    /// Whether the selection has a part, region or event
+    /// </summary>
+    public bool CanReorderSelection()
+    {
+        return View.ViewportSelection.GetFilteredSelection<MsbEntity>().Any(EntReorderAction.IsReorderable);
     }
 
     /// <summary>
@@ -130,6 +146,12 @@ public class ReorderAction
     {
         if (View.ViewportSelection.IsSelection())
         {
+            if (!CanReorderSelection())
+            {
+                View.DelayPicking();
+                return;
+            }
+
             EntReorderAction action = new(View, View.ViewportSelection.GetPlacedEntities(), direction);
 
             View.ViewportActionManager.ExecuteAction(action);

@@ -46,6 +46,12 @@ public class EntDuplicateAction : ViewportAction
     private readonly bool RandomiseRotation;
     private readonly RandomiseRotationDirection RandomRotationDir;
     private readonly float RandomRotationRange;
+    private readonly bool PlaceAtListEnd;
+
+    /// <summary>
+    /// The clones made by the first execute
+    /// </summary>
+    public IReadOnlyList<MsbEntity> CreatedClones => Clones;
 
     public EntDuplicateAction(MapEditorView view, 
         List<MsbEntity> objects, 
@@ -60,8 +66,10 @@ public class EntDuplicateAction : ViewportAction
         bool clearEntityGroupID = false,
         bool randomiseRotation = false,
         RandomiseRotationDirection randomRotationDir = RandomiseRotationDirection.X,
-        float randomRotationRange = 360)
+        float randomRotationRange = 360,
+        bool placeAtListEnd = false)
     {
+        PlaceAtListEnd = placeAtListEnd;
         View = view;
 
         Clonables.AddRange(objects);
@@ -110,8 +118,9 @@ public class EntDuplicateAction : ViewportAction
 
             if (map != null)
             {
-                // Get list of names that exist so our duplicate names don't trample over them
-                if (!objectnames.ContainsKey(Clonables[i].MapID))
+                // Get list of names that exist so our duplicate names don't trample over them.
+                // Keyed by the map the clones go into, as that is where the names must be unique.
+                if (!objectnames.ContainsKey(map.Name))
                 {
                     var nameset = new HashSet<string>();
                     foreach (Entity n in map.Objects)
@@ -119,7 +128,7 @@ public class EntDuplicateAction : ViewportAction
                         nameset.Add(n.Name);
                     }
 
-                    objectnames.Add(Clonables[i].MapID, nameset);
+                    objectnames.Add(map.Name, nameset);
                 }
 
                 MsbEntity newobj;
@@ -134,17 +143,9 @@ public class EntDuplicateAction : ViewportAction
                     newobj = (MsbEntity)Clonables[i].Clone();
                 }
 
-                GenerateUniqueName(Clonables[i], newobj, objectnames);
+                GenerateUniqueName(Clonables[i], newobj, objectnames[map.Name]);
 
-                if (TargetMap == null)
-                {
-                    map.Objects.Insert(map.Objects.IndexOf(Clonables[i]) + 1, newobj);
-                }
-                else
-                {
-                    map.Objects.Insert(map.Objects.IndexOf(Clonables[i]) + 1, newobj);
-                    //map.Objects.Add(newobj);
-                }
+                map.Objects.Insert(GetInsertIndex(map, Clonables[i], PlaceAtListEnd), newobj);
 
                 if (TargetBTL != null && newobj.WrappedObject is BTL.Light)
                 {
@@ -152,14 +153,15 @@ public class EntDuplicateAction : ViewportAction
                 }
                 else if (DuplicateToMap && TargetMap != null)
                 {
-                    // Duping to a targeted map, update parent.
-                    if (TargetMap.MapOffsetNode != null)
+                    // Duping to a targeted map, update parent. The container resolved by ID is used, as
+                    // the one passed in may be from an earlier load of the map.
+                    if (map.MapOffsetNode != null)
                     {
-                        TargetMap.MapOffsetNode.AddChild(newobj);
+                        map.MapOffsetNode.AddChild(newobj);
                     }
                     else
                     {
-                        TargetMap.RootObject.AddChild(newobj);
+                        map.RootObject.AddChild(newobj);
                     }
                 }
                 else if (Clonables[i].Parent != null)
@@ -311,12 +313,39 @@ public class EntDuplicateAction : ViewportAction
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    private void GenerateUniqueName(MsbEntity source, MsbEntity clone, Dictionary<string, HashSet<string>> objectnames)
+    /// <summary>
+    /// Where a clone goes in the target map's object list: straight after its source if the source is in that map
+    /// (unless placing at the list end), otherwise after the last object of the same type (so a pasted or
+    /// duplicated-to-map object joins its type, rather than going to the front of the list, ahead of every other
+    /// object), or at the end if there is none.
+    /// </summary>
+    private static int GetInsertIndex(MapContainer map, MsbEntity source, bool placeAtListEnd)
+    {
+        var sourceIndex = map.Objects.IndexOf(source);
+
+        if (sourceIndex >= 0 && !placeAtListEnd)
+            return sourceIndex + 1;
+
+        var type = source.WrappedObject?.GetType();
+
+        if (type != null)
+        {
+            for (var i = map.Objects.Count - 1; i >= 0; i--)
+            {
+                if (map.Objects[i].WrappedObject?.GetType() == type)
+                    return i + 1;
+            }
+        }
+
+        return map.Objects.Count;
+    }
+
+    private void GenerateUniqueName(MsbEntity source, MsbEntity clone, HashSet<string> names)
     {
         if (source.Name == null)
         {
             clone.Name = "";
-            objectnames[source.MapID].Add(clone.Name);
+            names.Add(clone.Name);
         }
         else
         {
@@ -328,14 +357,14 @@ public class EntDuplicateAction : ViewportAction
                 var baseName = source.Name.Substring(0, source.Name.Length - idstring.Length);
                 var newid = idstring;
 
-                while (objectnames[source.MapID].Contains(baseName + newid))
+                while (names.Contains(baseName + newid))
                 {
                     id++;
                     newid = id.ToString("D" + idstring.Length);
                 }
 
                 clone.Name = baseName + newid;
-                objectnames[source.MapID].Add(clone.Name);
+                names.Add(clone.Name);
             }
             else
             {
@@ -343,14 +372,14 @@ public class EntDuplicateAction : ViewportAction
                 var id = int.Parse(idstring);
                 var newid = idstring;
 
-                while (objectnames[source.MapID].Contains(source.Name + "_" + newid))
+                while (names.Contains(source.Name + "_" + newid))
                 {
                     id++;
                     newid = id.ToString("D" + idstring.Length);
                 }
 
                 clone.Name = source.Name + "_" + newid;
-                objectnames[source.MapID].Add(clone.Name);
+                names.Add(clone.Name);
             }
         }
     }

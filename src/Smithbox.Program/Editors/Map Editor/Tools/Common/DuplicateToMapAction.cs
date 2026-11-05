@@ -56,7 +56,8 @@ public class DuplicateToMapAction
         {
             if (InputManager.IsPressed(KeybindID.MapEditor_Duplicate_To_Map))
             {
-                ImGui.OpenPopup("##DupeToTargetMapPopup");
+                // Opened by OnGui, so the popup is opened and drawn under the same ImGui ID
+                DisplayPopup = true;
             }
         }
     }
@@ -78,13 +79,13 @@ public class DuplicateToMapAction
     /// </summary>
     public void OnMenu()
     {
-        if (ImGui.BeginMenu("Duplicate Selected to Map"))
+        if (ImGui.BeginMenu("Duplicate to Map"))
         {
             DisplayMenu();
 
             ImGui.EndMenu();
         }
-        GUI.Tooltip($"Duplicate the selected map objects into another map.");
+        GUI.Tooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Duplicate_To_Map)}");
     }
 
     /// <summary>
@@ -106,32 +107,16 @@ public class DuplicateToMapAction
         GUI.Spacer();
         GUI.SimpleHeader("Target Map", "The target map to duplicate the current selection to.");
 
-        GUI.SetInputWidth();
-        if (ImGui.BeginCombo("##targetMapSelect", TargetMap.Item1))
+        MapTargetPicker.Display(View, "targetMapSelect", ref TargetMap);
+
+        var targetMap = View.Selection.ResolveTargetMap(TargetMap);
+
+        if (targetMap == null)
         {
-            foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
-            {
-                var map = entry.Value.MapContainer;
-
-                if (map == null)
-                    continue;
-
-                var mapID = entry.Key.Filename;
-                var mapName = AliasHelper.GetMapNameAlias(View.Project, mapID);
-                var displayName = $"{mapID}: {mapName}";
-
-                if (ImGui.Selectable(displayName, TargetMap.Item1 == mapID))
-                {
-                    TargetMap = (mapID, map);
-                }
-            }
-
-            ImGui.EndCombo();
+            GUI.WrappedText("No loaded map has been targeted.");
         }
-
-        if (TargetMap != (null, null))
+        else
         {
-            MapContainer targetMap = (MapContainer)TargetMap.Item2;
             var sel = View.ViewportSelection.GetPlacedEntities();
 
             if (sel.Any(e => e.WrappedObject is BTL.Light))
@@ -168,10 +153,23 @@ public class DuplicateToMapAction
 
     public void DuplicateToMapActions()
     {
-        MapContainer targetMap = (MapContainer)TargetMap.Item2;
+        var targetMap = View.Selection.ResolveTargetMap(TargetMap);
+
+        // Without a target the action would quietly duplicate in place
+        if (targetMap == null)
+        {
+            Smithbox.LogError<DuplicateToMapAction>("No loaded map has been targeted.");
+            return;
+        }
+
         var sel = View.ViewportSelection.GetPlacedEntities();
 
-        DuplicateToMap(sel, targetMap, TargetBTL.Item2);
+        // A BTL picked for an earlier target map belongs to that map
+        var targetBtl = TargetBTL.Item2 != null && targetMap.BTLParents.Contains(TargetBTL.Item2)
+            ? TargetBTL.Item2
+            : null;
+
+        DuplicateToMap(sel, targetMap, targetBtl);
     }
 
     /// <summary>
@@ -201,6 +199,8 @@ public class DuplicateToMapAction
     }
 
     private List<MsbEntity> StoredSelection = new();
+
+    public bool HasCopiedObjects => StoredSelection.Count > 0;
 
     public void OnCopy(MapEditorView activeView)
     {
@@ -237,8 +237,23 @@ public class DuplicateToMapAction
                 clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs,
                 randomiseRotation: CFG.Current.Toolbar_Duplicate_Randomise_Rotation,
                 randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
-                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range); 
+                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range);
 
-        View.ViewportActionManager.ExecuteAction(action);
+        ViewportAction paste = action;
+
+        // Moved in the same undo step, once the clones exist; the orb's position is taken now, at the paste
+        if (CFG.Current.MapEditor_Paste_At_Placement_Orb && View.ViewportHandler.ActiveViewport?.Viewport != null)
+        {
+            var target = View.ViewportWindow.GetPlacementPosition();
+
+            paste = new ViewportCompoundAction(new List<ViewportAction>
+            {
+                action,
+                new DeferredAction(() => PullToCameraAction.BuildMoveToPointAction(action.CreatedClones, target))
+            });
+        }
+
+        View.ViewportActionManager.ExecuteAction(paste);
+        View.DelayPicking();
     }
 }

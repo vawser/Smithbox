@@ -77,7 +77,39 @@ public class DeleteAction
 
             if (mapObjects.Count > 0)
             {
-                EntDeleteAction action = new(View, mapObjects, true);
+                ViewportAction action = new EntDeleteAction(View, mapObjects, true);
+
+                // Objects left behind that refer to the deleted ones would fail the next save
+                var deleted = mapObjects.Cast<Entity>().ToHashSet();
+                var broken = mapObjects
+                    .GroupBy(e => e.Container)
+                    .SelectMany(g => MsbReferences.FindReferencesTo(g.Key, g))
+                    .Where(r => !deleted.Contains(r.Slot.Referrer))
+                    .ToList();
+
+                if (broken.Count > 0)
+                {
+                    var result = PlatformUtils.Instance.MessageBox(
+                        LOC.Get("MAP_Delete_Dialog_Broken_References", broken.Count, MsbReferences.Describe(broken)),
+                        LOC.Get("MAP_Options_Dialog_Confirm"),
+                        MessageBoxButtons.YesNoCancel);
+
+                    if (result == DialogResult.Cancel || result == DialogResult.None)
+                    {
+                        View.DelayPicking();
+                        return;
+                    }
+
+                    // Yes clears the references along with the delete, in one undo step
+                    if (result == DialogResult.Yes)
+                    {
+                        action = new ViewportCompoundAction(new List<ViewportAction>
+                        {
+                            new ClearReferencesAction(broken.Select(r => r.Slot)),
+                            action
+                        });
+                    }
+                }
 
                 View.ViewportActionManager.ExecuteAction(action);
             }

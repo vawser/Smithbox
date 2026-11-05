@@ -110,11 +110,11 @@
     },
     {
       "Key": "MAP_Universe_Dialog_Unload_Unsaved",
-      "Text": "{0} has unsaved changes. Unload it and discard them?"
+      "Text": "These maps have unsaved changes: {0}.\n\nYes: save them, then unload\nNo: unload and discard the changes\nCancel: keep them loaded"
     },
     {
       "Key": "MAP_View_Dialog_Close_Unsaved",
-      "Text": "This view has maps with unsaved changes: {0}. Close the view and discard them?"
+      "Text": "This view has maps with unsaved changes: {0}.\n\nYes: save them, then close the view\nNo: close the view and discard the changes\nCancel: keep the view open"
     },
     {
       "Key": "MAP_Options_Header_List_Filters",
@@ -275,6 +275,130 @@
     {
       "Key": "MAP_Universe_DuplicateCheck_Hit",
       "Text": "Duplicate EntityID: {0} is being used by multiple regions {1} and {2}"
+    },
+    {
+      "Key": "MAP_Window_Map_List",
+      "Text": "Map List"
+    },
+    {
+      "Key": "MAP_Window_Map_Contents",
+      "Text": "Map Contents"
+    },
+    {
+      "Key": "MAP_Window_Map_Content_Groups",
+      "Text": "Map Content Groups"
+    },
+    {
+      "Key": "MAP_Window_Properties",
+      "Text": "Properties"
+    },
+    {
+      "Key": "MAP_Window_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "MAP_Window_Left_Panel",
+      "Text": "Left Panel"
+    },
+    {
+      "Key": "MAP_Window_Right_Panel",
+      "Text": "Right Panel"
+    },
+    {
+      "Key": "MAP_Window_Map_Data",
+      "Text": "Map Data"
+    },
+    {
+      "Key": "MAP_List_Save_Failed_TT",
+      "Text": "The last save of this map failed:\n{0}\n\nIt stays marked until the map saves."
+    },
+    {
+      "Key": "MAP_List_Loading_Marker",
+      "Text": "(Loading…)"
+    },
+    {
+      "Key": "MAP_List_Queued_Marker",
+      "Text": "(Queued)"
+    },
+    {
+      "Key": "MAP_List_Loading_Status",
+      "Text": "Loading {0}"
+    },
+    {
+      "Key": "MAP_List_Loading_Status_Queued",
+      "Text": "Loading {0} ({1} queued)"
+    },
+    {
+      "Key": "MAP_Universe_Log_Map_Load_Queued",
+      "Text": "{0} will load once the current load finishes."
+    },
+    {
+      "Key": "MAP_Universe_Unload_Save_Incomplete",
+      "Text": "{0} still has unsaved changes after saving, so it was kept loaded. Check the log for the file that failed."
+    },
+    {
+      "Key": "MAP_Delete_Dialog_Broken_References",
+      "Text": "{0} references to the objects being deleted will break, and the map will fail to save until they are fixed:\n\n{1}\n\nYes: delete and clear these references\nNo: delete and keep them\nCancel: don't delete"
+    },
+    {
+      "Key": "MAP_Move_Dialog_Broken_References",
+      "Text": "{0} references between the objects being moved and those staying behind will break, as references only work within a map:\n\n{1}\n\nYes: move and clear these references\nNo: move and keep them\nCancel: don't move"
+    },
+    {
+      "Key": "MAP_SaveException_Missing_Reference",
+      "Text": "{0} refers to \"{2}\" in {1}, but no object with that name exists in the map, so the map can't be saved.\n\nYes: clear the reference\nNo: select {0}\nCancel: do nothing"
+    },
+    {
+      "Key": "MAP_SaveException_Reference_Cleared",
+      "Text": "Cleared {1} of {0}. Save again to write the map."
+    },
+    {
+      "Key": "MAP_Autosave_Failed",
+      "Text": "Autosave failed: {0}"
+    },
+    {
+      "Key": "MAP_Target_Picker_Active_Map",
+      "Text": "Active Map ({0})"
+    },
+    {
+      "Key": "MAP_Target_Picker_Active_Map_None",
+      "Text": "Active Map (none)"
+    },
+    {
+      "Key": "MAP_Target_Picker_Active_Map_TT",
+      "Text": "Follows the active map: the map of the last selected object, or the one picked in the Map List."
+    },
+    {
+      "Key": "MAP_Target_Picker_None",
+      "Text": "None"
+    },
+    {
+      "Key": "MAP_Viewport_Context_Paste",
+      "Text": "Paste"
+    },
+    {
+      "Key": "MAP_Viewport_Context_Paste_TT",
+      "Text": "Paste the copied map objects into the active map.\n\nShortcut: {0}"
+    },
+    {
+      "Key": "MAP_Viewport_Context_Frame_Map",
+      "Text": "Frame Active Map"
+    },
+    {
+      "Key": "MAP_Viewport_Context_Frame_Map_TT",
+      "Text": "Frame every visible object of the active map."
+    },
+    {
+      "Key": "MAP_Viewport_Context_Show_All",
+      "Text": "Show All Objects"
+    },
+    {
+      "Key": "MAP_Viewport_Context_Show_All_TT",
+      "Text": "Make every object of the active map visible."
+    },
+    {
+      "Key": "MAP_Actions_Reorder_Nothing_Reorderable",
+      "Text": "Only parts, regions and events can be reordered."
     }
   ]
 }

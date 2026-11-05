@@ -398,32 +398,18 @@ public class MapEditorScreen : EditorScreen
             if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_Header_MapList")}##mapListHeader"))
             {
                 // Unload Current
-                if (ImGui.MenuItem($"{LOC.Get("MAP_Options_Action_Unload_Current")}##unloadCurrentAction"))
+                // Asks only if the map has unsaved changes, offering to save them
+                if (ImGui.MenuItem($"{LOC.Get("MAP_Options_Action_Unload_Current")}##unloadCurrentAction", "", false,
+                    !string.IsNullOrEmpty(activeView?.Selection.SelectedMapID)))
                 {
-                    DialogResult result = PlatformUtils.Instance.MessageBox(
-                        LOC.Get("MAP_Options_Dialog_Unload_Current"), 
-                        LOC.Get("MAP_Options_Dialog_Confirm"), 
-                        MessageBoxButtons.YesNo);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        activeView.Universe.UnloadMap(activeView.Selection.SelectedMapID);
-                    }
+                    activeView.Universe.RequestUnloadMap(activeView.Selection.SelectedMapID);
                 }
                 GUI.Tooltip(LOC.Get("MAP_Options_Action_Unload_Current_TT"));
 
                 // Unload All
                 if (ImGui.MenuItem($"{LOC.Get("MAP_Options_Action_Unload_All")}##unloadAllAction"))
                 {
-                    DialogResult result = PlatformUtils.Instance.MessageBox(
-                        LOC.Get("MAP_Options_Dialog_Unload_All"),
-                        LOC.Get("MAP_Options_Dialog_Confirm"), 
-                        MessageBoxButtons.YesNo);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        activeView.Universe.UnloadAllMaps();
-                    }
+                    activeView?.Universe.RequestUnloadAllMaps();
                 }
                 GUI.Tooltip(LOC.Get("MAP_Options_Action_Unload_All_TT"));
 
@@ -640,7 +626,16 @@ public class MapEditorScreen : EditorScreen
         }
         catch (SavingFailedException e)
         {
-            HandleSaveException(e);
+            if (autoSave)
+            {
+                // No dialog for an autosave: it would reappear every interval until the problem is fixed.
+                // The map is marked in the Map List instead (MapContainer.SaveError).
+                Smithbox.Log(this, LOC.Get("MAP_Autosave_Failed", e.Message), LogLevel.Error, LogPriority.Normal, e.Wrapped);
+            }
+            else
+            {
+                HandleSaveException(e);
+            }
         }
 
         // Save the configuration JSONs
@@ -660,35 +655,42 @@ public class MapEditorScreen : EditorScreen
             Smithbox.Log(this, e.Message,
                 LogLevel.Error, LogPriority.Normal, e.Wrapped);
 
-            DialogResult result = PlatformUtils.Instance.MessageBox(
-                LOC.Get("MAP_SaveException_Error_Log", eRef.Message),
-                LOC.Get("MAP_SaveException_Error_Log_Title"),
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Error);
-            if (result == DialogResult.Yes)
+            // The object holding the reference, and the fields that hold the missing name
+            Entity referrer = Project.Handler.MapData.PrimaryBank.Maps.Values
+                .Select(w => w.MapContainer)
+                .Where(m => m != null)
+                .SelectMany(m => m.Objects)
+                .FirstOrDefault(o => o.WrappedObject == eRef.Referrer);
+
+            if (referrer == null)
             {
-                foreach (var entry in Project.Locator.MapFiles.Entries)
-                {
-                    var currentContainer = activeView.Selection.GetMapContainerFromMapID(entry.Filename);
-
-                    if (currentContainer != null)
-                    {
-                        foreach (Entity obj in currentContainer.Objects)
-                        {
-                            if (obj.WrappedObject == eRef.Referrer)
-                            {
-                                activeView.ViewportSelection.ClearSelection();
-                                activeView.ViewportSelection.AddSelection(obj);
-
-                                activeView.FrameAction.ApplyViewportFrame();
-
-                                return;
-                            }
-                        }
-                    }
-                }
-
                 Smithbox.LogError(this, LOC.Get("MAP_SaveException_Error_MapEntity", eRef.Referrer.Name));
+                return;
+            }
+
+            var slots = MsbReferences.GetSlots(referrer).Where(s => s.Value == eRef.ReferreeName).ToList();
+            var fields = slots.Count > 0 ? string.Join(", ", slots.Select(s => s.FieldName)) : "?";
+
+            DialogResult result = PlatformUtils.Instance.MessageBox(
+                LOC.Get("MAP_SaveException_Missing_Reference", referrer.Name, fields, eRef.ReferreeName),
+                LOC.Get("MAP_SaveException_Error_Log_Title"),
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Error);
+
+            // The object's undo history and selection belong to the view that loaded its map
+            var ownerView = (referrer.Container as MapContainer)?.OwnerView ?? activeView;
+
+            if (result == DialogResult.Yes && slots.Count > 0)
+            {
+                ownerView.ViewportActionManager.ExecuteAction(new ClearReferencesAction(slots));
+                Smithbox.Log(this, LOC.Get("MAP_SaveException_Reference_Cleared", referrer.Name, fields));
+            }
+            else if (result == DialogResult.No || (result == DialogResult.Yes && slots.Count == 0))
+            {
+                ownerView.ViewportSelection.ClearSelection();
+                ownerView.ViewportSelection.AddSelection(referrer);
+
+                ownerView.FrameAction.ApplyViewportFrame();
             }
         }
         else

@@ -203,14 +203,12 @@ public class MapGroupsView
         if (View.ViewportSelection.IsSelection())
         {
             var mapObjects = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
-            var mapContainer = View.Selection.SelectedMapContainer;
-            var btlParent = mapContainer.BTLParents.FirstOrDefault();
-
+            // The group's members can be in any loaded map, so each clone goes into its source's own map
             EntDuplicateAction action = new(
                 view: View,
                 objects: mapObjects,
-                targetMap: mapContainer,
-                targetBTL: btlParent,
+                targetMap: null,
+                targetBTL: null,
                 duplicateToMap: false,
                 createMapGroupEntry: true,
                 incrementEntityID: CFG.Current.Toolbar_Duplicate_Increment_Entity_ID,
@@ -220,7 +218,8 @@ public class MapGroupsView
                 clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs,
                 randomiseRotation: CFG.Current.Toolbar_Duplicate_Randomise_Rotation,
                 randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
-                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range);
+                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range,
+                placeAtListEnd: CFG.Current.Toolbar_Duplicate_Place_at_List_End);
 
             View.ViewportActionManager.ExecuteAction(action);
         }

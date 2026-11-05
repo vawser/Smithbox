@@ -13,7 +13,7 @@ public class EntityIdCheckAction
     public MapEditorView View;
     public ProjectEntry Project;
 
-    public (string, ObjectContainer) TargetMap = ("None", null);
+    public (string, ObjectContainer) TargetMap = MapTargetPicker.ActiveMap;
 
     public EntityIdCheckAction(MapEditorView view, ProjectEntry project)
     {
@@ -54,24 +54,7 @@ public class EntityIdCheckAction
         {
             if (View.Selection.IsAnyMapLoaded())
             {
-                if (ImGui.BeginCombo("##Targeted Map", TargetMap.Item1))
-                {
-                    foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
-                    {
-                        var mapID = entry.Key.Filename;
-                        var container = entry.Value.MapContainer;
-
-                        if (container != null)
-                        {
-                            if (ImGui.Selectable(mapID))
-                            {
-                                TargetMap = (mapID, container);
-                                break;
-                            }
-                        }
-                    }
-                    ImGui.EndCombo();
-                }
+                MapTargetPicker.Display(View, "Targeted Map", ref TargetMap);
 
                 if (ImGui.MenuItem("Check"))
                 {
@@ -102,12 +85,17 @@ public class EntityIdCheckAction
         HashSet<uint> vals = new();
         bool hasError = false;
 
-        if (TargetMap != (null, null))
-        {
-            var loadedMap = (MapContainer)TargetMap.Item2;
+        var loadedMap = View.Selection.ResolveTargetMap(TargetMap);
 
+        if (loadedMap == null)
+        {
+            Smithbox.LogError<EntityIdCheckAction>("No loaded map has been targeted.");
+            return;
+        }
+
+        {
             // Entity ID
-            foreach (var e in loadedMap?.Objects)
+            foreach (var e in loadedMap.Objects)
             {
                 var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
 

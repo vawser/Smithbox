@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
+using Veldrid.Utilities;
 using Vortice.Vulkan;
 
 namespace StudioCore.Editors.MapEditor;
@@ -224,11 +226,25 @@ public class MapViewportView
 
         var curSelection = View.ViewportSelection.GetSelection();
 
-        if (curSelection.Count > 0)
+        if (curSelection.Count == 0)
         {
             if (ImGui.BeginPopup("Viewport Context Menu"))
             {
-                Entity targetedEnt = (Entity)curSelection.First();
+                EmptySelectionContextMenu();
+
+                ImGui.EndPopup();
+            }
+        }
+        else
+        {
+            if (ImGui.BeginPopup("Viewport Context Menu"))
+            {
+                // The items act on the whole selection; this entity only decides which are shown. A part or
+                // region is preferred, as most items apply to those, so a selection that starts with an event
+                // still offers them. The selection can also hold non-entities (a reference to an unloaded map),
+                // in which case the entity-specific items are skipped.
+                Entity targetedEnt = curSelection.OfType<Entity>().FirstOrDefault(e => e.WrappedObject is IMsbPart or IMsbRegion)
+                    ?? curSelection.OfType<Entity>().FirstOrDefault();
 
                 View.DuplicateAction.OnContext();
                 View.DeleteAction.OnContext();
@@ -273,6 +289,73 @@ public class MapViewportView
 
                 ImGui.EndPopup();
             }
+        }
+    }
+
+    /// <summary>
+    /// The context menu when nothing is selected: actions on the active map rather than on a selection
+    /// </summary>
+    private void EmptySelectionContextMenu()
+    {
+        var map = View.Selection.SelectedMapContainer;
+
+        View.CreateAction.OnMenu();
+
+        if (ImGui.Selectable(LOC.Get("MAP_Viewport_Context_Paste"), false,
+            View.DuplicateToMapAction.HasCopiedObjects ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+        {
+            View.DuplicateToMapAction.OnPaste(View);
+        }
+        GUI.Tooltip(LOC.Get("MAP_Viewport_Context_Paste_TT", InputManager.GetHint(KeybindID.Paste)));
+
+        ImGui.Separator();
+
+        if (ImGui.Selectable(LOC.Get("MAP_Viewport_Context_Frame_Map"), false,
+            map != null ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+        {
+            FrameMap(map);
+        }
+        GUI.Tooltip(LOC.Get("MAP_Viewport_Context_Frame_Map_TT"));
+
+        if (ImGui.Selectable(LOC.Get("MAP_Viewport_Context_Show_All"), false,
+            map != null ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+        {
+            foreach (var entry in map.Objects)
+            {
+                entry.EditorVisible = true;
+            }
+        }
+        GUI.Tooltip(LOC.Get("MAP_Viewport_Context_Show_All_TT"));
+    }
+
+    /// <summary>
+    /// Frames the bounds of every drawn object of the map
+    /// </summary>
+    private void FrameMap(MapContainer map)
+    {
+        var viewport = View.ViewportHandler.ActiveViewport?.Viewport;
+
+        if (viewport == null)
+            return;
+
+        BoundingBox? bounds = null;
+
+        foreach (var ent in map.Objects)
+        {
+            if (ent.RenderSceneMesh == null || !ent.EditorVisible)
+                continue;
+
+            var box = ent.RenderSceneMesh.GetBounds();
+            bounds = bounds is BoundingBox b ? BoundingBox.Combine(b, box) : box;
+        }
+
+        if (bounds is BoundingBox all)
+        {
+            viewport.FrameBox(all, new Vector3());
+        }
+        else if (map.RootObject != null)
+        {
+            viewport.FramePosition(map.RootObject.GetLocalTransform().Position, 10f);
         }
     }
 }

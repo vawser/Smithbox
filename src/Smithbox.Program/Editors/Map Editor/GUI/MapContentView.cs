@@ -413,10 +413,8 @@ public class MapContentView
     /// </summary>
     private void TypeView(MapContainer map)
     {
-        View.EntityTypeCache.AddMapToCache(map);
-
-        foreach (KeyValuePair<MsbEntityType, Dictionary<Type, List<MsbEntity>>> cats in
-                 View.EntityTypeCache._cachedTypeView[map.Name].OrderBy(q => q.Key.ToString()))
+        foreach (var cats in View.EntityTypeCache.GetSortedTypeView(map)
+                     .Select(c => new KeyValuePair<MsbEntityType, List<(Type Key, List<MsbEntity> Value)>>(c.Category, c.Types)))
         {
             if (cats.Value.Count > 0)
             {
@@ -437,7 +435,7 @@ public class MapContentView
 
                 if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
                 {
-                    foreach (KeyValuePair<Type, List<MsbEntity>> typ in cats.Value.OrderBy(q => q.Key.Name))
+                    foreach (var typ in cats.Value)
                     {
                         if (typ.Value.Count > 0)
                         {
@@ -559,18 +557,7 @@ public class MapContentView
                             }
                             else if (ImGui.TreeNodeEx(typ.Key.Name, treeflags))
                             {
-                                int index = 0;
-                                foreach (MsbEntity obj in typ.Value)
-                                {
-                                    AliasHelper.UpdateEntityAliasName(View.Project, obj);
-
-                                    if (View.MapContentFilter.ContentFilter(map, obj))
-                                    {
-                                        MapObjectSelectable(map, obj, true, index);
-                                    }
-
-                                    index++;
-                                }
+                                DisplayTypeList(map, typ.Value);
 
                                 ImGui.TreePop();
                             }
@@ -589,6 +576,66 @@ public class MapContentView
                 ImGui.Text($@"   {cats.Key.ToString()}");
             }
         }
+    }
+
+    // Lists shorter than this are drawn in full; clipping only pays off for long ones
+    private const int ClipThreshold = 100;
+
+    /// <summary>
+    /// The objects of one type. Long lists are clipped, so only the visible rows are drawn (and only those
+    /// update their alias names), with the goto target kept in range so the tree can scroll to it.
+    /// </summary>
+    private void DisplayTypeList(MapContainer map, List<MsbEntity> objects)
+    {
+        // The index is the object's position among all objects of its type, as used for unnamed objects' labels
+        var visible = new List<(MsbEntity Entity, int Index)>(objects.Count);
+
+        for (var i = 0; i < objects.Count; i++)
+        {
+            if (View.MapContentFilter.ContentFilter(map, objects[i]))
+            {
+                visible.Add((objects[i], i));
+            }
+        }
+
+        if (visible.Count < ClipThreshold)
+        {
+            foreach (var (obj, index) in visible)
+            {
+                AliasHelper.UpdateEntityAliasName(View.Project, obj);
+                MapObjectSelectable(map, obj, true, index);
+            }
+
+            return;
+        }
+
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(visible.Count);
+
+        var gotoTarget = View.ViewportSelection.GotoTreeTarget;
+
+        if (gotoTarget != null)
+        {
+            var gotoIndex = visible.FindIndex(v => v.Entity == gotoTarget);
+
+            if (gotoIndex >= 0)
+            {
+                clipper.IncludeItemByIndex(gotoIndex);
+            }
+        }
+
+        while (clipper.Step())
+        {
+            for (var i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
+            {
+                var (obj, index) = visible[i];
+
+                AliasHelper.UpdateEntityAliasName(View.Project, obj);
+                MapObjectSelectable(map, obj, true, index);
+            }
+        }
+
+        clipper.End();
     }
 
     /// <summary>

@@ -95,18 +95,10 @@ public class MapViewHandler
             .Where(e => e != null && e.OwnerView == view)
             .ToList();
 
-        var unsavedNames = ownedMaps.Where(e => e.HasUnsavedChanges).Select(e => e.Name).ToList();
-        if (unsavedNames.Count > 0)
+        // Save, discard or keep the view open
+        if (!view.Universe.ConfirmUnload(ownedMaps, "MAP_View_Dialog_Close_Unsaved"))
         {
-            DialogResult result = PlatformUtils.Instance.MessageBox(
-                LOC.Get("MAP_View_Dialog_Close_Unsaved", string.Join(", ", unsavedNames)),
-                LOC.Get("MAP_Options_Dialog_Confirm"),
-                MessageBoxButtons.YesNo);
-
-            if (result != DialogResult.Yes)
-            {
-                return false;
-            }
+            return false;
         }
 
         foreach (var map in ownedMaps)

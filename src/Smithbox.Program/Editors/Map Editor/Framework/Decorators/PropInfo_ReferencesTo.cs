@@ -122,14 +122,14 @@ public static class PropInfo_ReferencesTo
                         {
                             if (ImGui.Selectable("Load Map"))
                             {
-                                view.Universe.LoadMap(mapid);
+                                view.Universe.LoadMap(mapid, true);
                             }
                         }
                         else
                         {
                             if (ImGui.Selectable("Unload Map"))
                             {
-                                view.Universe.UnloadMap(mapid);
+                                view.Universe.RequestUnloadMap(mapid);
                             }
                         }
 

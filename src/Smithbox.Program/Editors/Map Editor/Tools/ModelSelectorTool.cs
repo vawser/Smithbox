@@ -91,12 +91,11 @@ public class ModelSelectorTool
 
         EditorFilters.DisplayFramedListFilter("modelSelector", ref ModelFilter, ref ExactModelFilter);
 
-        var curSelection = View.ViewportSelection.GetSelection();
+        // The selection can hold non-entities (a reference to an unloaded map), which have no model
+        var firstSelection = View.ViewportSelection.GetSelection().OfType<Entity>().FirstOrDefault();
 
-        if (curSelection.Count > 0)
+        if (firstSelection != null)
         {
-            var firstSelection = (Entity)curSelection.First();
-
             if (EntityHelper.IsPartEnemy(firstSelection) || EntityHelper.IsPartDummyEnemy(firstSelection))
             {
                 if (usePreviews)

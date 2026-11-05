@@ -114,10 +114,7 @@ public class MapToolWindow
 
     public void Display()
     {
-        View.DuplicateToMapAction.OnGui();
-        View.MoveToMapAction.OnGui();
-        View.SelectAllAction.OnGui();
-        View.AdjustToGridAction.OnGui();
+        // The action popups are drawn by MapEditorView every frame, so they also open with this window hidden
 
         if (ImGui.BeginMenuBar())
         {

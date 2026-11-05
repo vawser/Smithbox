@@ -627,16 +627,25 @@ public class MapMsbPropertyView
             }
             else
             {
-                var nameList = entities
-                    .GroupBy(e => e.WrappedObject.GetType())
-                    .SelectMany(group =>
-                        group.Select((ent, index) => $"{editName.name}-{group.Key.Name}"
-                    ));
+                // Built in the same order as the entity list, as the action pairs them up by position,
+                // and numbered within each type so no two of the renamed objects share a name
+                var entityList = entities.ToList();
+                var typeCounters = new Dictionary<Type, int>();
+                var nameList = new List<string>(entityList.Count);
+
+                foreach (var ent in entityList)
+                {
+                    var type = ent.WrappedObject.GetType();
+                    typeCounters.TryGetValue(type, out var index);
+                    typeCounters[type] = index + 1;
+
+                    nameList.Add($"{editName.name}-{type.Name}_{index}");
+                }
 
                 View.ViewportActionManager.ExecuteAction(new EntRenameAction(
                     View,
-                    entities.ToList(),
-                    nameList.ToList(),
+                    entityList,
+                    nameList,
                     true
                 ));
             }

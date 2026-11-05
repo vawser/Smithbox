@@ -121,6 +121,9 @@ public class DuplicateAction
         ImGui.Checkbox("Place at List End", ref CFG.Current.Toolbar_Duplicate_Place_at_List_End);
         GUI.Tooltip("When enabled, a duplicated map object is placed at the end of its category list, rather than after its source map object.");
 
+        ImGui.Checkbox("Paste at Placement Orb", ref CFG.Current.MapEditor_Paste_At_Placement_Orb);
+        GUI.Tooltip($"When enabled, pasted map objects are moved so the centre of the group is at the placement orb, keeping their layout. When disabled, they keep the positions they were copied with.\n\nShortcut: {InputManager.GetHint(KeybindID.Paste)}");
+
         ImGui.Checkbox("Randomise Rotation", ref CFG.Current.Toolbar_Duplicate_Randomise_Rotation);
         GUI.Tooltip("When enabled, a duplicated map object's rotation is randomised.");
 
@@ -176,14 +179,13 @@ public class DuplicateAction
             if (mapObjects.Count == 0)
                 return;
 
-            var mapContainer = View.Selection.SelectedMapContainer;
-            var btlParent = mapContainer.BTLParents.FirstOrDefault();
-
+            // Each clone goes into its source's own map, next to its source (lights stay in their own BTL),
+            // rather than into the map picked in the Map List, which need not be the one the objects are in
             EntDuplicateAction action = new(
-                view: View, 
-                objects: mapObjects, 
-                targetMap: mapContainer, 
-                targetBTL: btlParent,
+                view: View,
+                objects: mapObjects,
+                targetMap: null,
+                targetBTL: null,
                 duplicateToMap: false,
                 createMapGroupEntry: false,
                 incrementEntityID: CFG.Current.Toolbar_Duplicate_Increment_Entity_ID,
@@ -193,7 +195,8 @@ public class DuplicateAction
                 clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs,
                 randomiseRotation: CFG.Current.Toolbar_Duplicate_Randomise_Rotation,
                 randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
-                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range);
+                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range,
+                placeAtListEnd: CFG.Current.Toolbar_Duplicate_Place_at_List_End);
 
             View.ViewportActionManager.ExecuteAction(action);
         }

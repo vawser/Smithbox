@@ -40,6 +40,17 @@ public class ViewportOverlay
         // Map Editor
         if (Parent.Owner is MapUniverse mapUniverse)
         {
+            // The map that the content tree shows and new objects go into
+            var activeMap = mapUniverse.View.Selection.SelectedMapContainer;
+
+            if (CFG.Current.Viewport_DisplayActiveMap && activeMap != null)
+            {
+                var alias = AliasHelper.GetMapNameAlias(mapUniverse.View.Project, activeMap.Name);
+                var mapText = string.IsNullOrEmpty(alias) ? activeMap.Name : $"{activeMap.Name}: {alias}";
+
+                ImGui.Text(LOC.Get("VIEWPORT_Overlay_Active_Map", mapText));
+            }
+
             if (CFG.Current.Viewport_DisplayRotationIncrement)
             {
                 mapUniverse.View.RotateAction.DisplayViewportHint();

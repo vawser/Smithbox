@@ -1935,6 +1935,18 @@
     {
       "Key": "VIEWPORT_Rendering_Gparam_GI_Map",
       "Text": "{0}: {1} volumes in bake {2}"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Active_Map",
+      "Text": "Active Map"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Active_Map_TT",
+      "Text": "Show the active map (the map the content tree shows and new objects go into) in the viewport overlay."
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Active_Map",
+      "Text": "Active Map: {0}"
     }
   ]
 }

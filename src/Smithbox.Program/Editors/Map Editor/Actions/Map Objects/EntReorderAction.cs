@@ -6,13 +6,19 @@ using System.Linq;
 
 namespace StudioCore.Editors.MapEditor;
 
-
+/// <summary>
+/// Moves the selected parts, regions and events within the list of objects of their type, which decides their
+/// order in the saved MSB. Several can be moved at once, also across types and maps: within each type the
+/// selected objects move together as a block, keeping their relative order, and the others keep theirs.
+/// </summary>
 public class EntReorderAction : ViewportAction
 {
     private MapEditorView View;
 
     private List<MsbEntity> selection = new();
-    private List<Entity> storedObjectOrder = new();
+
+    // The object order of each map changed by the last execute, for undo
+    private readonly Dictionary<MapContainer, List<Entity>> storedObjectOrders = new();
 
     private TreeObjectOrderMovementType MoveSelectionDir;
 
@@ -24,213 +30,141 @@ public class EntReorderAction : ViewportAction
         MoveSelectionDir = moveDir;
     }
 
+    /// <summary>
+    /// Whether the object's position in its map's list can be changed by this action
+    /// </summary>
+    public static bool IsReorderable(Entity ent)
+    {
+        return ent?.WrappedObject is IMsbPart or IMsbRegion or IMsbEvent;
+    }
+
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = View.Universe;
-
         // Re-captured on every execute (including redo), so it always reflects the order before this action
-        storedObjectOrder.Clear();
+        storedObjectOrders.Clear();
 
-        // TODO: allow this to work with multi-selections
-        // Will require more rigorous validation of the indices
-        if (selection.Count > 1)
+        var reorderable = selection.Where(IsReorderable).ToList();
+
+        if (reorderable.Count == 0)
         {
-            Smithbox.LogError(this,
-                LOC.Get("MAP_Actions_Reorder_Selection_Exceeded"));
+            Smithbox.LogError(this, LOC.Get("MAP_Actions_Reorder_Nothing_Reorderable"));
+            return ActionEvent.NoEvent;
         }
-        else
+
+        foreach (var mapGroup in reorderable.GroupBy(e => View.Selection.GetMapContainerFromMapID(e.MapID)))
         {
-            // Ignore if no selection is present
-            if (selection.Count > 0)
+            var map = mapGroup.Key;
+
+            if (map == null)
+                continue;
+
+            var objects = map.Objects;
+            var snapshot = objects.ToList();
+            var changed = false;
+
+            foreach (var typeGroup in mapGroup.GroupBy(e => e.WrappedObject.GetType()))
             {
-                var curSel = selection.First();
-                var ent = (Entity)curSel;
+                var selected = typeGroup.Cast<Entity>().ToHashSet();
+                var type = typeGroup.Key;
 
-                // Ignore if the selection is a BTL.Light
-                if (ent.WrappedObject is BTL.Light)
-                    return ActionEvent.NoEvent;
-
-                MapContainer mapRoot = View.Selection.GetMapContainerFromMapID(curSel.MapID);
-
-                // Ignore usage if the selection is the map root itself
-                if (mapRoot == null)
+                // The positions of every object of the type, which need not be contiguous in the list
+                // (created, pasted and moved-in objects are appended)
+                var positions = new List<int>();
+                for (var i = 0; i < objects.Count; i++)
                 {
-                    return ActionEvent.ObjectAddedRemoved;
+                    if (objects[i].WrappedObject?.GetType() == type)
+                    {
+                        positions.Add(i);
+                    }
                 }
 
-                // Store previous object order for undo if needed
-                foreach (var entry in mapRoot.Objects)
+                var sequence = positions.Select(i => objects[i]).ToList();
+                var reordered = Reorder(sequence, selected, MoveSelectionDir);
+
+                // Written back into the same positions, so objects of other types don't move
+                for (var k = 0; k < positions.Count; k++)
                 {
-                    storedObjectOrder.Add(entry);
-                }
-
-                // Get the 'sub-category' for this map object
-                var classType = ent.WrappedObject.GetType();
-
-                if (mapRoot != null)
-                {
-                    int indexStart = -1;
-                    int indexEnd = -1;
-                    bool isStart = false;
-                    bool foundEnd = false;
-
-                    // Find the sub-category start and end indices
-                    for (int i = 0; i < mapRoot.Objects.Count; i++)
+                    if (objects[positions[k]] != reordered[k])
                     {
-                        var curChild = mapRoot.Objects[i];
-
-                        // Grab the end index for this sub-category (if start has already been found)
-                        if (!foundEnd && isStart && curChild.WrappedObject.GetType() != classType)
-                        {
-                            foundEnd = true;
-                            indexEnd = i - 1;
-                        }
-
-                        // Grab the start index for this sub-category
-                        if (curChild.WrappedObject.GetType() == classType)
-                        {
-                            if (!isStart)
-                            {
-                                isStart = true;
-                                indexStart = i;
-                            }
-                        }
-                    }
-
-                    // If we escape the previous loop without setting the indexEnd,
-                    // then it must be the final index
-                    if (indexEnd == -1)
-                    {
-                        indexEnd = mapRoot.Objects.Count - 1;
-                    }
-
-                    // Move Up
-                    if (MoveSelectionDir == TreeObjectOrderMovementType.Up)
-                    {
-                        for (int i = indexStart; i <= indexEnd; i++)
-                        {
-                            if (curSel == mapRoot.Objects[i])
-                            {
-                                if (i < mapRoot.Objects.Count)
-                                {
-                                    if (i == indexStart)
-                                    {
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        var prevEntry = mapRoot.Objects[i - 1];
-                                        mapRoot.Objects[i - 1] = curSel;
-                                        mapRoot.Objects[i] = prevEntry;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // Move Down
-                    if (MoveSelectionDir == TreeObjectOrderMovementType.Down)
-                    {
-                        for (int i = indexStart; i <= indexEnd; i++)
-                        {
-                            if (curSel == mapRoot.Objects[i])
-                            {
-                                if (i < mapRoot.Objects.Count)
-                                {
-                                    if (i == indexEnd)
-                                    {
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        var nextEntry = mapRoot.Objects[i + 1];
-                                        mapRoot.Objects[i + 1] = curSel;
-                                        mapRoot.Objects[i] = nextEntry;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // Move to Top
-                    if (MoveSelectionDir == TreeObjectOrderMovementType.Top)
-                    {
-                        int rootIndex = 0;
-
-                        // Find the index for the moved selection
-                        for (int i = indexStart; i <= indexEnd; i++)
-                        {
-                            if (i < mapRoot.Objects.Count && mapRoot.Objects[i] == curSel)
-                            {
-                                rootIndex = i;
-                            }
-                        }
-
-                        // For all entries above it, move them down
-                        for (int i = rootIndex; i >= indexStart; i--)
-                        {
-                            if (i < mapRoot.Objects.Count && i > 0)
-                            {
-                                mapRoot.Objects[i] = mapRoot.Objects[i - 1];
-                            }
-                        }
-                        // Set top index to selection
-                        mapRoot.Objects[indexStart] = curSel;
-                    }
-
-                    // Move to Bottom
-                    if (MoveSelectionDir == TreeObjectOrderMovementType.Bottom)
-                    {
-                        int rootIndex = 0;
-
-                        // Find the index for the moved selection
-                        for (int i = indexStart; i <= indexEnd; i++)
-                        {
-                            if (i < mapRoot.Objects.Count && mapRoot.Objects[i] == curSel)
-                            {
-                                rootIndex = i;
-                            }
-                        }
-
-                        // For all entries below it, move them up
-                        for (int i = rootIndex; i < indexEnd; i++)
-                        {
-                            mapRoot.Objects[i] = mapRoot.Objects[i + 1];
-                        }
-                        // Set top index to selection
-                        mapRoot.Objects[indexEnd] = curSel;
+                        objects[positions[k]] = reordered[k];
+                        changed = true;
                     }
                 }
             }
+
+            if (changed)
+            {
+                storedObjectOrders[map] = snapshot;
+            }
         }
 
-        MapContainer.MarkEntitiesDirty(selection);
+        if (storedObjectOrders.Count == 0)
+        {
+            // Already at the requested end
+            return ActionEvent.NoEvent;
+        }
+
+        MapContainer.MarkEntitiesDirty(reorderable);
 
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    public override ActionEvent Undo()
+    /// <summary>
+    /// The sequence with the selected objects moved as a block, the others keeping their order
+    /// </summary>
+    private static List<Entity> Reorder(List<Entity> sequence, HashSet<Entity> selected, TreeObjectOrderMovementType direction)
     {
-        var universe = View.Universe;
+        var result = sequence.ToList();
 
-        // Nothing was captured if execute bailed out early (multi-selection, BTL light, no map)
-        if (selection.Count > 0 && storedObjectOrder.Count > 0)
+        switch (direction)
         {
-            var curSel = selection.First();
+            // Each selected object passes the unselected one before it; one at the top stops the block
+            case TreeObjectOrderMovementType.Up:
+                for (var i = 1; i < result.Count; i++)
+                {
+                    if (selected.Contains(result[i]) && !selected.Contains(result[i - 1]))
+                    {
+                        (result[i - 1], result[i]) = (result[i], result[i - 1]);
+                    }
+                }
+                break;
 
-            MapContainer mapRoot = View.Selection.GetMapContainerFromMapID(curSel.MapID);
+            case TreeObjectOrderMovementType.Down:
+                for (var i = result.Count - 2; i >= 0; i--)
+                {
+                    if (selected.Contains(result[i]) && !selected.Contains(result[i + 1]))
+                    {
+                        (result[i + 1], result[i]) = (result[i], result[i + 1]);
+                    }
+                }
+                break;
 
-            if (mapRoot != null)
-            {
-                // Restore into the existing list rather than aliasing it to the stored snapshot
-                mapRoot.Objects.Clear();
-                mapRoot.Objects.AddRange(storedObjectOrder);
-            }
+            case TreeObjectOrderMovementType.Top:
+                result = sequence.Where(selected.Contains).Concat(sequence.Where(e => !selected.Contains(e))).ToList();
+                break;
+
+            case TreeObjectOrderMovementType.Bottom:
+                result = sequence.Where(e => !selected.Contains(e)).Concat(sequence.Where(selected.Contains)).ToList();
+                break;
         }
 
-        MapContainer.MarkEntitiesDirty(selection);
+        return result;
+    }
+
+    public override ActionEvent Undo()
+    {
+        // Nothing was captured if execute changed nothing
+        if (storedObjectOrders.Count == 0)
+            return ActionEvent.NoEvent;
+
+        foreach (var (map, order) in storedObjectOrders)
+        {
+            // Restore into the existing list rather than aliasing it to the stored snapshot
+            map.Objects.Clear();
+            map.Objects.AddRange(order);
+        }
+
+        MapContainer.MarkEntitiesDirty(selection.Where(IsReorderable));
 
         return ActionEvent.ObjectAddedRemoved;
     }

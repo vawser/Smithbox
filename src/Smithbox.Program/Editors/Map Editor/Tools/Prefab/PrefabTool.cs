@@ -27,7 +27,8 @@ public class PrefabTool
     public string Prefab_EditName = "";
     public string Prefab_EditFlags = "";
     
-    public (string, ObjectContainer) TargetMap = ("None", null);
+    // Follows the active map unless another is picked
+    public (string, ObjectContainer) TargetMap = MapTargetPicker.ActiveMap;
 
     // How long an import may hold up each frame
     private static readonly TimeSpan ImportFrameBudget = TimeSpan.FromMilliseconds(20);
@@ -85,30 +86,9 @@ public class PrefabTool
         GUI.WrappedText("Use this to import a set of pre-defined map objects into the target loaded map.");
 
         GUI.Spacer();
-        GUI.SimpleHeader("Target Map", "The target map to duplicate the current selection to.");
+        GUI.SimpleHeader("Target Map", "The map to import the prefab into.");
 
-        GUI.SetInputWidth();
-        if (ImGui.BeginCombo("##targetMapSelect", TargetMap.Item1))
-        {
-            foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
-            {
-                var map = entry.Value.MapContainer;
-
-                if (map == null)
-                    continue;
-
-                var mapID = entry.Key.Filename;
-                var mapName = AliasHelper.GetMapNameAlias(View.Project, mapID);
-                var displayName = $"{mapID}: {mapName}";
-
-                if (ImGui.Selectable(displayName, TargetMap.Item1 == mapID))
-                {
-                    TargetMap = (mapID, map);
-                }
-            }
-
-            ImGui.EndCombo();
-        }
+        MapTargetPicker.Display(View, "targetMapSelect", ref TargetMap);
 
         GUI.Spacer();
         GUI.SimpleHeader("Options", "");
@@ -418,7 +398,9 @@ public class PrefabTool
             return;
         }
 
-        if (TargetMap.Item2 is not MapContainer)
+        var targetMap = View.Selection.ResolveTargetMap(TargetMap);
+
+        if (targetMap == null)
         {
             Smithbox.LogError<PrefabTool>("No loaded map has been selected.");
             return;
@@ -434,11 +416,20 @@ public class PrefabTool
         var name = SelectedPrefab.PrefabName;
         var prefabPath = Path.Join(PrefabUtils.GetPrefabStorageDirectory(View.Project), $"{name}.json");
 
-        BeginImport(name, prefabPath, TargetMap.Item2 as MapContainer, prefixName);
+        BeginImport(name, prefabPath, targetMap, prefixName);
     }
 
     public void ImportPrefabFromFileAction()
     {
+        // Checked before the file dialog, as an import with no map would fail after picking the file
+        var targetMap = View.Selection.ResolveTargetMap(TargetMap);
+
+        if (targetMap == null)
+        {
+            Smithbox.LogError<PrefabTool>("No loaded map has been selected.");
+            return;
+        }
+
         var dialog = PlatformUtils.Instance.OpenFileDialog("Select JSON", out var path);
 
         if (dialog && path.EndsWith(".json") && Path.Exists(path))
@@ -450,7 +441,7 @@ public class PrefabTool
                 prefixName = CFG.Current.Prefab_OverrideName;
             }
 
-            BeginImport(Path.GetFileNameWithoutExtension(path), path, TargetMap.Item2 as MapContainer, prefixName);
+            BeginImport(Path.GetFileNameWithoutExtension(path), path, targetMap, prefixName);
         }
 
     }

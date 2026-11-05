@@ -13,7 +13,7 @@ public class EntityRenameAction
     public MapEditorView View;
     public ProjectEntry Project;
 
-    public (string, ObjectContainer) TargetMap = ("None", null);
+    public (string, ObjectContainer) TargetMap = MapTargetPicker.ActiveMap;
 
     public EntityRenameAction(MapEditorView view, ProjectEntry project)
     {
@@ -54,24 +54,7 @@ public class EntityRenameAction
         {
             if (View.Selection.IsAnyMapLoaded())
             {
-                if (ImGui.BeginCombo("##Targeted Map", TargetMap.Item1))
-                {
-                    foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
-                    {
-                        var mapID = entry.Key.Filename;
-                        var container = entry.Value.MapContainer;
-
-                        if (container != null)
-                        {
-                            if (ImGui.Selectable(mapID))
-                            {
-                                TargetMap = (mapID, container);
-                                break;
-                            }
-                        }
-                    }
-                    ImGui.EndCombo();
-                }
+                MapTargetPicker.Display(View, "Targeted Map", ref TargetMap);
 
                 if (ImGui.MenuItem("Apply Japanese Names"))
                 {
@@ -121,12 +104,19 @@ public class EntityRenameAction
         if (!View.Selection.IsAnyMapLoaded())
             return;
 
-        if (TargetMap != (null, null))
+        var loadedMap = View.Selection.ResolveTargetMap(TargetMap);
+
+        if (loadedMap == null)
+        {
+            Smithbox.LogError<EntityRenameAction>("No loaded map has been targeted.");
+            return;
+        }
+
         {
             var actionList = new List<ViewportAction>();
 
-            var loadedMap = (MapContainer)TargetMap.Item2;
-            var mapid = TargetMap.Item1;
+            // From the resolved map, as the target can be "Active Map"
+            var mapid = loadedMap.Name;
 
             List<MapObjectNameInfo> partNames = GetNameListInfo(mapid, "Part");
 

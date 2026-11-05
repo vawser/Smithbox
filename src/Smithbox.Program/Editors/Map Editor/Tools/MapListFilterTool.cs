@@ -99,9 +99,23 @@ public class MapListFilterTool
         if(FilterToDelete != null)
         {
             QuickFilterCollection.Entries.Remove(FilterToDelete);
+
+            if (CurrentFilter == FilterToDelete)
+            {
+                CurrentFilter = null;
+            }
+
             SaveFilterListCollection();
 
             FilterToDelete = null;
+            FilterVersion++;
+        }
+
+        // CurrentFilter is set from several menus, so a change of the active filter is caught here
+        if (_lastCurrentFilter != CurrentFilter)
+        {
+            _lastCurrentFilter = CurrentFilter;
+            FilterVersion++;
         }
     }
 
@@ -175,6 +189,19 @@ public class MapListFilterTool
     public FilterType EditFilter_Type = FilterType.OR;
     public List<string> EditFilter_Filters = new() { "" };
 
+    // The filter set the Edit fields were copied from. The fields are a working copy, so typing doesn't
+    // change the live filter (and so the map list) on every keystroke; each field is applied to the
+    // live filter when its input is deactivated.
+    private MapListFilterSet EditFilter_Source;
+
+    /// <summary>
+    /// Incremented whenever the active filter, or the contents of a filter set, change, so the map list
+    /// knows to rebuild its filtered entries
+    /// </summary>
+    public int FilterVersion { get; private set; }
+
+    private MapListFilterSet _lastCurrentFilter;
+
     public void EditMenu()
     {
         int index = 0;
@@ -192,30 +219,44 @@ public class MapListFilterTool
             {
                 var width = ImGui.GetContentRegionAvail();
 
-                var FilterToEdit = entry;
+                // Taken once when this set's menu opens, not every frame, so edits to the fields stick
+                if (EditFilter_Source != entry)
+                {
+                    EditFilter_Source = entry;
+                    EditFilter_Name = entry.Name ?? "";
+                    EditFilter_Type = entry.Type;
+                    EditFilter_Filters = new List<string>(entry.Entries ?? new List<string>());
 
-                EditFilter_Name = entry.Name;
-                EditFilter_Type = entry.Type;
-                EditFilter_Filters = entry.Entries;
+                    if (EditFilter_Filters.Count == 0)
+                    {
+                        EditFilter_Filters.Add("");
+                    }
+                }
 
                 // Name
                 GUI.SimpleHeader("##titleHeader", "Name", "The name of this filter set.", UI.Current.ImGui_AliasName_Text);
 
                 DPI.ApplyInputWidth(width.X * 0.95f);
                 ImGui.InputText("##filterName", ref EditFilter_Name, 255);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    entry.Name = EditFilter_Name;
+                }
 
                 GUI.SimpleHeader("##filterEntries", "Entries", "The entries that comprise this set.", UI.Current.ImGui_AliasName_Text);
 
                 // Type
-                if (ImGui.BeginCombo($"Match Type##filterType", NewFilter_Type.GetDisplayName()))
+                if (ImGui.BeginCombo($"Match Type##filterType", EditFilter_Type.GetDisplayName()))
                 {
                     foreach (var filterType in Enum.GetValues(typeof(FilterType)))
                     {
                         var curEnum = (FilterType)filterType;
 
-                        if (ImGui.Selectable($"{curEnum.GetDisplayName()}", NewFilter_Type == curEnum))
+                        if (ImGui.Selectable($"{curEnum.GetDisplayName()}", EditFilter_Type == curEnum))
                         {
                             EditFilter_Type = curEnum;
+                            entry.Type = curEnum;
+                            FilterVersion++;
                         }
                     }
 
@@ -227,6 +268,7 @@ public class MapListFilterTool
                 if (ImGui.Button($"{Icons.Plus}##filterAdd", DPI.IconButtonSize))
                 {
                     EditFilter_Filters.Add("");
+                    ApplyEditedEntries(entry);
                 }
                 GUI.Tooltip("Add new filter entry.");
 
@@ -249,41 +291,57 @@ public class MapListFilterTool
                     if (ImGui.Button($"{Icons.Minus}##filterRemove", DPI.IconButtonSize))
                     {
                         EditFilter_Filters.RemoveAt(EditFilter_Filters.Count - 1);
-                        GUI.Tooltip("Remove last filter entry.");
+                        ApplyEditedEntries(entry);
                     }
+                    GUI.Tooltip("Remove last filter entry.");
                 }
 
                 for (int i = 0; i < EditFilter_Filters.Count; i++)
                 {
-                    var curFilter = EditFilter_Filters[i];
-                    var curText = curFilter;
+                    var curText = EditFilter_Filters[i];
 
                     DPI.ApplyInputWidth(width.X * 0.95f);
                     if (ImGui.InputText($"##filterInput{i}", ref curText, 255))
                     {
                         EditFilter_Filters[i] = curText;
                     }
-                    GUI.Tooltip("The filter to add.");
+
+                    // Applied when the input is left, not while typing a pattern
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        ApplyEditedEntries(entry);
+                    }
+                    GUI.Tooltip("A regular expression the map ID is matched against. Applied when you leave the field.");
                 }
 
                 if (ImGui.Button("Edit##editFilterSet", DPI.StandardButtonSize))
                 {
                     entry.Name = EditFilter_Name;
                     entry.Type = EditFilter_Type;
-                    entry.Entries = EditFilter_Filters;
+                    ApplyEditedEntries(entry);
 
                     SaveFilterListCollection();
 
+                    EditFilter_Source = null;
                     DisplayCreation = false;
                     ImGui.CloseCurrentPopup();
                 }
-                GUI.Tooltip("Create this filter set.");
+                GUI.Tooltip("Save this filter set.");
 
                 ImGui.EndMenu();
             }
 
             index++;
         }
+    }
+
+    /// <summary>
+    /// Writes the working copy of the entries to the live filter set
+    /// </summary>
+    private void ApplyEditedEntries(MapListFilterSet entry)
+    {
+        entry.Entries = new List<string>(EditFilter_Filters);
+        FilterVersion++;
     }
 
     public string NewFilter_Name = "";

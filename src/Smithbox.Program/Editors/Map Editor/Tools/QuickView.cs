@@ -31,10 +31,11 @@ public class AutomaticPreviewTool
 
         var curSel = View.ViewportSelection.GetSelection();
 
-        if (curSel.Count > 0)
-        {
-            var firstEnt = (Entity)curSel.First();
+        // The selection can hold non-entities (a reference to an unloaded map), which have no properties to show
+        var firstEnt = curSel.OfType<Entity>().FirstOrDefault();
 
+        if (firstEnt != null)
+        {
             ImGui.BeginTooltip();
 
             var properties = CFG.Current.QuickView_TargetProperties;

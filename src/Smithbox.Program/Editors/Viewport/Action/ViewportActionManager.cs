@@ -37,12 +37,70 @@ public class ViewportActionManager
         }
     }
 
+    // The top-level action being executed, undone or redone, so the data it changes can record itself
+    // on it (actions nested in a compound action record on the compound one)
+    [ThreadStatic]
+    private static ViewportAction RunningAction;
+
+    /// <summary>
+    /// Records that the action currently running changes the scope (e.g. a map ID). Does nothing outside an action.
+    /// </summary>
+    public static void RecordScope(string scope)
+    {
+        if (scope != null)
+        {
+            RunningAction?.TouchedScopes.Add(scope);
+        }
+    }
+
+    private static ActionEvent Run(ViewportAction a, Func<ActionEvent> step)
+    {
+        var previous = RunningAction;
+        RunningAction ??= a;
+
+        try
+        {
+            return step();
+        }
+        finally
+        {
+            RunningAction = previous;
+        }
+    }
+
     public void ExecuteAction(ViewportAction a)
     {
-        NotifyHandlers(a.Execute());
+        NotifyHandlers(Run(a, () => a.Execute()));
         ActionPerformed?.Invoke();
         UndoStack.Push(a);
         RedoStack.Clear();
+    }
+
+    /// <summary>
+    /// Drops the actions that changed the scope from the undo and redo history, keeping the rest in order.
+    /// Actions that recorded no scope are dropped too, as nothing says what they changed.
+    /// </summary>
+    public void RemoveActionsTouching(string scope)
+    {
+        static void Filter(Stack<ViewportAction> stack, string scope)
+        {
+            // A stack enumerates from the top, so reversed this is bottom to top, the order to push them back in
+            var kept = stack
+                .Where(a => a.TouchedScopes.Count > 0 && !a.TouchedScopes.Contains(scope))
+                .Reverse()
+                .ToList();
+
+            stack.Clear();
+
+            foreach (var a in kept)
+            {
+                stack.Push(a);
+            }
+        }
+
+        // ActionPerformed isn't raised, as no data changes; its handlers treat it as an edit
+        Filter(UndoStack, scope);
+        Filter(RedoStack, scope);
     }
 
     public ViewportAction PeekUndoAction()
@@ -63,7 +121,7 @@ public class ViewportActionManager
         }
 
         ViewportAction a = UndoStack.Pop();
-        NotifyHandlers(a.Undo());
+        NotifyHandlers(Run(a, a.Undo));
         ActionPerformed?.Invoke();
         RedoStack.Push(a);
     }
@@ -78,7 +136,7 @@ public class ViewportActionManager
         while (UndoStack.Count() > 0)
         {
             ViewportAction a = UndoStack.Pop();
-            NotifyHandlers(a.Undo());
+            NotifyHandlers(Run(a, a.Undo));
             ActionPerformed?.Invoke();
             RedoStack.Push(a);
         }
@@ -92,7 +150,7 @@ public class ViewportActionManager
         }
 
         ViewportAction a = RedoStack.Pop();
-        NotifyHandlers(a.Execute(true));
+        NotifyHandlers(Run(a, () => a.Execute(true)));
         ActionPerformed?.Invoke();
         UndoStack.Push(a);
     }
