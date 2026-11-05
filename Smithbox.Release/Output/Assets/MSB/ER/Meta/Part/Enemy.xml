@@ -57,21 +57,21 @@
     AltName="Unknown: 0x24"
     Wiki="" />
     
-    <UnkT28
-    AltName="Unknown: 0x28"
-    Wiki="" />
+    <ActivateTimeStartHour
+    AltName="Activate Time: Start Hour"
+    Wiki="Hour of the in-game clock the enemy starts appearing at. When all four activate times are 0, the times of its ChrActivateConditionParam row are used (e.g. 20:00 to 05:00 for night-only enemies)." />
 
-    <UnkT29
-    AltName="Unknown: 0x29"
-    Wiki="" />
+    <ActivateTimeStartMinute
+    AltName="Activate Time: Start Minute"
+    Wiki="Minute of the in-game clock the enemy starts appearing at." />
 
-    <UnkT2A
-    AltName="Unknown: 0x2A"
-    Wiki="" />
+    <ActivateTimeEndHour
+    AltName="Activate Time: End Hour"
+    Wiki="Hour of the in-game clock the enemy stops appearing at." />
 
-    <UnkT2B
-    AltName="Unknown: 0x2B"
-    Wiki="" />
+    <ActivateTimeEndMinute
+    AltName="Activate Time: End Minute"
+    Wiki="Minute of the in-game clock the enemy stops appearing at." />
     
     <ChrActivateCondParamID
     AltName="Character Appearance Condition"

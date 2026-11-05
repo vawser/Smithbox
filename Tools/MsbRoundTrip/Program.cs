@@ -39,17 +39,17 @@ if (args.Length > 2 && args[2] == "stats")
         try { msb = MSBE.Read(fs.ReadFile(path).Value.ToArray()); } catch { continue; }
         foreach (var e in msb.Parts.Enemies.Cast<MSBE.Part.EnemyBase>().Concat(msb.Parts.DummyEnemies))
         {
-            Add("Enemy time", $"{e.UnkT28:D2}:{e.UnkT29:D2}-{e.UnkT2A:D2}:{e.UnkT2B:D2}");
+            Add("Enemy time", $"{e.ActivateTimeStartHour:D2}:{e.ActivateTimeStartMinute:D2}-{e.ActivateTimeEndHour:D2}:{e.ActivateTimeEndMinute:D2}");
             Add("Enemy UnkT14", e.UnkT14);
         }
         foreach (var a in msb.Parts.Assets)
         {
             Add("Asset UnkT51", a.UnkT51);
-            Add("Asset UnkT13", a.UnkT13);
-            Add("Asset UnkT52", a.UnkT52);
+            Add("Asset UnkT13", a.ExcludeActivateRatioOverride_PS4);
+            Add("Asset UnkT52", a.ExcludeActivateRatioOverride_XboxOne);
         }
         foreach (var p in msb.Events.PlatoonInfo)
-            Add("Platoon State bytes", $"{p.State & 0xFF:X2} {(p.State >> 8) & 0xFF:X2} {(p.State >> 16) & 0xFF:X2} {(p.State >> 24) & 0xFF:X2}");
+            Add("Platoon State bytes", $"{p.State} {p.UnkT05} {p.UnkT06} {p.UseMemberEntityIDs} ids {p.MemberEntityIDs[0]},{p.MemberEntityIDs[1]}");
     }
     foreach (var (k, h) in hist)
     {

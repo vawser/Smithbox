@@ -58,6 +58,8 @@ Event.PatrolInfo	Event.Unk3	0x8	UnkS08	-
 Event.PatrolInfo	Event.Unk3	0xC	UnkS0C	READ
 Event.PlatoonInfo	Event	0x14	Unk14	-
 Event.PlatoonInfo	Event.Entity	0xC	UnkE0C	-
+Event.PlatoonInfo	Event.Type	0x5	UnkT05	READ
+Event.PlatoonInfo	Event.Type	0x6	UnkT06	-
 Event.PlatoonInfo	Event.Unk3	0x4	UnkS04	READ
 Event.PlatoonInfo	Event.Unk3	0x5	UnkS05	-
 Event.PlatoonInfo	Event.Unk3	0x6	UnkS06	-
@@ -122,7 +124,6 @@ Part.Asset	Part.Type	0x2	UnkT02	READ
 Part.Asset	Part.Type	0x8	UnkT08	READ
 Part.Asset	Part.Type	0x10	UnkT10	READ
 Part.Asset	Part.Type	0x12	UnkT12	-
-Part.Asset	Part.Type	0x13	UnkT13	READ
 Part.Asset	Part.Type	0x1E	UnkT1E	-
 Part.Asset	Part.Type	0x24	UnkT24	-
 Part.Asset	Part.Type	0x25	UnkT25	-
@@ -136,7 +137,6 @@ Part.Asset	Part.Type	0x36	UnkT36	READ
 Part.Asset	Part.Type	0x37	UnkT37	READ
 Part.Asset	Part.Type	0x50	UnkT50	READ
 Part.Asset	Part.Type	0x51	UnkT51	READ
-Part.Asset	Part.Type	0x52	UnkT52	READ
 Part.Asset	Part.Type	0x53	UnkT53	READ
 Part.Asset	Part.Type	0x58	UnkModelMaskAndAnimID	READ
 Part.Asset	Part.Type	0x5C	UnkT5C	-
@@ -305,10 +305,6 @@ Part.DummyEnemy	Part.TileLoad	0x10	TileLoadConfig.TileLoadConfig_Unk10	READ
 Part.DummyEnemy	Part.Type	0x14	UnkT14	READ
 Part.DummyEnemy	Part.Type	0x15	UnkT15	READ
 Part.DummyEnemy	Part.Type	0x24	UnkT24	-
-Part.DummyEnemy	Part.Type	0x28	UnkT28	READ
-Part.DummyEnemy	Part.Type	0x29	UnkT29	READ
-Part.DummyEnemy	Part.Type	0x2A	UnkT2A	READ
-Part.DummyEnemy	Part.Type	0x2B	UnkT2B	READ
 Part.DummyEnemy	Part.Type	0x34	UnkT34	-
 Part.DummyEnemy	Part.Type	0x3C	UnkT3C	-
 Part.DummyEnemy	Part.Type.78	0x4	UnkT84	-
@@ -332,10 +328,6 @@ Part.Enemy	Part.TileLoad	0x10	TileLoadConfig.TileLoadConfig_Unk10	READ
 Part.Enemy	Part.Type	0x14	UnkT14	READ
 Part.Enemy	Part.Type	0x15	UnkT15	READ
 Part.Enemy	Part.Type	0x24	UnkT24	-
-Part.Enemy	Part.Type	0x28	UnkT28	READ
-Part.Enemy	Part.Type	0x29	UnkT29	READ
-Part.Enemy	Part.Type	0x2A	UnkT2A	READ
-Part.Enemy	Part.Type	0x2B	UnkT2B	READ
 Part.Enemy	Part.Type	0x34	UnkT34	-
 Part.Enemy	Part.Type	0x3C	UnkT3C	-
 Part.Enemy	Part.Type.78	0x4	UnkT84	-

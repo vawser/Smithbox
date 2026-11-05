@@ -174,13 +174,13 @@
     140CF195B in 140CF17C0 CSMsbPartsEne  
 140CF1640	CSMsbPartsEne	Part.Type+2C(ChrActivateCondParamID)	1 callers
     140438B9D in 140438A80 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
-140CF1660	CSMsbPartsEne	Part.Type+2A(UnkT2A)	1 callers
+140CF1660	CSMsbPartsEne	Part.Type+2A(ActivateTimeEndHour)	1 callers
     140438C42 in 140438A80 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
-140CF1680	CSMsbPartsEne	Part.Type+2B(UnkT2B)	1 callers
+140CF1680	CSMsbPartsEne	Part.Type+2B(ActivateTimeEndMinute)	1 callers
     140438C4D in 140438A80 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
-140CF16A0	CSMsbPartsEne	Part.Type+28(UnkT28)	1 callers
+140CF16A0	CSMsbPartsEne	Part.Type+28(ActivateTimeStartHour)	1 callers
     140438C2B in 140438A80 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
-140CF16C0	CSMsbPartsEne	Part.Type+29(UnkT29)	1 callers
+140CF16C0	CSMsbPartsEne	Part.Type+29(ActivateTimeStartMinute)	1 callers
     140438C37 in 140438A80 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
 140CF16E0	CSMsbPartsEne	Part.Type+C(NPCParamID)	0 callers
 140CF1760	CSMsbPartsEne	Part.Type+38(BackupEventAnimID)	1 callers
@@ -231,9 +231,9 @@
     1406E2878 in 1406E2570 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
 140CF3470	CSMsbPartsGeom	Part+68() Part.Type+34(UnkT34)	1 callers
     1406C4E9D in 1406C4E70 game  
-140CF3490	CSMsbPartsGeom	Part+68() Part.Type+13(UnkT13)	1 callers
+140CF3490	CSMsbPartsGeom	Part+68() Part.Type+13(ExcludeActivateRatioOverride_PS4)	1 callers
     1406CB099 in 1406CAF30 game  
-140CF34D0	CSMsbPartsGeom	Part+68() Part.Type+52(UnkT52)	3 callers
+140CF34D0	CSMsbPartsGeom	Part+68() Part.Type+52(ExcludeActivateRatioOverride_XboxOne)	3 callers
     1406CB034 in 1406CAF30 game  
     1406CB04B in 1406CAF30 game  
     1406CB059 in 1406CAF30 game  
@@ -343,11 +343,11 @@
     1403541C6 in 140353CA0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h | Tried to create container with incompatible heap.
 140CF6020	CSMsbEvent	Event+20() Event.Type+8(MinInterval/ObjActID/ActivateGoodsID)	1 callers
     1403545F6 in 140353CA0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h | Tried to create container with incompatible heap.
-140CF6080	CSMsbEvent	Event+20() Event.Type+5(MinGenNum/EventFlagID/State)	1 callers
+140CF6080	CSMsbEvent	Event+20() Event.Type+5(MinGenNum/EventFlagID/UnkT05)	1 callers
     1403541E9 in 140353CA0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h | Tried to create container with incompatible heap.
 140CF60A0	CSMsbEvent	Event+20() Event.Type+4(MinGenNum/EventFlagID/State)	1 callers
     1403541B8 in 140353CA0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h | Tried to create container with incompatible heap.
-140CF60C0	CSMsbEvent	Event+20() Event.Type+7(MaxGenNum/EventFlagID/State)	1 callers
+140CF60C0	CSMsbEvent	Event+20() Event.Type+7(MaxGenNum/EventFlagID/UseMemberEntityIDs)	1 callers
     140354524 in 140353CA0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h | Tried to create container with incompatible heap.
 140CF6150	CSMsbEvent	Event+20() Event.Type+4(MinGenNum/EventFlagID/State)	1 callers
     140608595 in 140608400 game  

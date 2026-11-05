@@ -32,9 +32,9 @@
     AltName="Unknown: 0x12"
     Wiki="" />
 
-    <UnkT13
-    AltName="Unknown: 0x13"
-    Wiki="" />
+    <ExcludeActivateRatioOverride_PS4
+    AltName="Exclude Activate Ratio Override (PS4)"
+    Wiki="Overrides the asset geometry param's PS4 exclude activate ratio when not 0. Only used by the PS4 build." />
     
     <AssetSfxParamRelativeID
     AltName="Model Particle Offset ID"
@@ -98,11 +98,11 @@
     
     <UnkT51
     AltName="Unknown: 0x51"
-    Wiki="" />
+    Wiki="A category, 0, 1 or 2. 1 and 2 put the asset into separate instance lists of the geometry manager." />
 
-    <UnkT52
-    AltName="Unknown: 0x52"
-    Wiki="" />
+    <ExcludeActivateRatioOverride_XboxOne
+    AltName="Exclude Activate Ratio Override (Xbox One)"
+    Wiki="Overrides the asset geometry param's Xbox One exclude activate ratio when not 0. Only used by the Xbox One build." />
     
     <UnkT53
     AltName="Unknown: 0x53"

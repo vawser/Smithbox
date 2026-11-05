@@ -970,12 +970,33 @@ namespace SoulsFormats
                 public int PlatoonIDScriptActivate { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The default state of the platoon; 0 or 1 in retail. The game reads it as a byte flag.
                 /// </summary>
-                public int State { get; set; }
+                public byte State { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown flag; 1 on two retail platoons. Read by the game.
+                /// </summary>
+                public byte UnkT05 { get; set; }
+
+                /// <summary>
+                /// Unknown; not read by the game.
+                /// </summary>
+                public byte UnkT06 { get; set; }
+
+                /// <summary>
+                /// If set, the characters in MemberEntityIDs also join the platoon. 0 in retail.
+                /// </summary>
+                public byte UseMemberEntityIDs { get; set; }
+
+                /// <summary>
+                /// Entity IDs of characters that join the platoon when UseMemberEntityIDs is set; 10000 is the player, 0 or -1
+                /// for none.
+                /// </summary>
+                public int[] MemberEntityIDs { get; set; }
+
+                /// <summary>
+                /// The enemies in the platoon.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] GroupPartsNames { get; set; }
@@ -988,12 +1009,14 @@ namespace SoulsFormats
                 public PlatoonInfo() : base($"{nameof(Event)}: {nameof(PlatoonInfo)}")
                 {
                     GroupPartsNames = new string[32];
+                    MemberEntityIDs = new int[2];
                 }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
                     var groupTour = (PlatoonInfo)evnt;
                     groupTour.GroupPartsNames = (string[])GroupPartsNames.Clone();
+                    groupTour.MemberEntityIDs = (int[])MemberEntityIDs.Clone();
                 }
 
                 internal PlatoonInfo(BinaryReaderEx br) : base(br) { }
@@ -1001,18 +1024,22 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     PlatoonIDScriptActivate = br.ReadInt32();
-                    State = br.ReadInt32();
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
+                    State = br.ReadByte();
+                    UnkT05 = br.ReadByte();
+                    UnkT06 = br.ReadByte();
+                    UseMemberEntityIDs = br.ReadByte();
+                    MemberEntityIDs = br.ReadInt32s(2);
                     GroupPartsIndices = br.ReadInt32s(32);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(PlatoonIDScriptActivate);
-                    bw.WriteInt32(State);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
+                    bw.WriteByte(State);
+                    bw.WriteByte(UnkT05);
+                    bw.WriteByte(UnkT06);
+                    bw.WriteByte(UseMemberEntityIDs);
+                    bw.WriteInt32s(MemberEntityIDs);
                     bw.WriteInt32s(GroupPartsIndices);
                 }
 
@@ -1041,6 +1068,11 @@ namespace SoulsFormats
                 /// Determines patrol behavior. 0 = return to first region on loop, 1 = go through list backwards on loop, etc.
                 /// </summary>
                 public byte PatrolType { get; set; }
+
+                /// <summary>
+                /// If set (always, in retail), all 64 walk regions are used; otherwise only the first 24.
+                /// </summary>
+                public byte UseAllWalkRegions { get; set; } = 1;
 
                 /// <summary>
                 /// Unknown.
@@ -1072,7 +1104,7 @@ namespace SoulsFormats
                     PatrolType = br.ReadByte();
                     br.AssertByte(0);
                     br.AssertByte(0);
-                    br.AssertByte(1);
+                    UseAllWalkRegions = br.ReadByte();
                     br.AssertInt32(-1);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -1084,7 +1116,7 @@ namespace SoulsFormats
                     bw.WriteByte(PatrolType);
                     bw.WriteByte(0);
                     bw.WriteByte(0);
-                    bw.WriteByte(1);
+                    bw.WriteByte(UseAllWalkRegions);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);

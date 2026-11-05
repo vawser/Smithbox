@@ -10,7 +10,25 @@
     
     <State
     AltName="Platoon State"
-    Wiki="The default state for this ensemble." />
+    Wiki="The default state for this ensemble; 0 or 1." />
+
+    <UnkT05
+    AltName="Unknown: 0x5"
+    Wiki="" />
+
+    <UnkT06
+    AltName="Unknown: 0x6"
+    Wiki="Not read by the game." />
+
+    <UseMemberEntityIDs
+    AltName="Use Member Entity IDs"
+    Wiki="If ON, the characters in Member Entity IDs also join the platoon."
+    IsBool="" />
+
+    <MemberEntityIDs
+    AltName="Member Entity ID"
+    Wiki="Entity IDs of characters that join the platoon when Use Member Entity IDs is ON. 10000 is the player; 0 or -1 for none."
+    ArrayProperty="" />
     
     <GroupPartsNames
     AltName="Character Name"
